@@ -2948,7 +2948,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求时间戳。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1753091765496",
           "member": "string",
           "name": "ReqTime",
@@ -2958,7 +2958,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一请求的唯一标记。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5139af2d-442c-4500-837f-9683baba76ae",
           "member": "string",
           "name": "Seq",
@@ -2968,7 +2968,7 @@
         },
         {
           "disabled": false,
-          "document": "参与本次活体一比一的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参与本次活体一比一的身份证号。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "440111199001010000",
           "member": "string",
           "name": "Idcard",
@@ -2978,7 +2978,7 @@
         },
         {
           "disabled": false,
-          "document": "参与本次活体一比一的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参与本次活体一比一的姓名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -2988,7 +2988,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一的相似度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一的相似度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100.00",
           "member": "string",
           "name": "Sim",
@@ -2998,7 +2998,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一是否收费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一是否收费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsNeedCharge",
@@ -3008,7 +3008,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一最终结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一最终结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Errcode",
@@ -3018,7 +3018,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Errmsg",
@@ -3028,7 +3028,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Livestatus",
@@ -3038,7 +3038,7 @@
         },
         {
           "disabled": false,
-          "document": "本次活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Livemsg",
@@ -3048,7 +3048,7 @@
         },
         {
           "disabled": false,
-          "document": "本次一比一结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次一比一结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Comparestatus",
@@ -3058,7 +3058,7 @@
         },
         {
           "disabled": false,
-          "document": "本次一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
           "name": "Comparemsg",
@@ -3068,8 +3068,8 @@
         },
         {
           "disabled": false,
-          "document": "比对库源类型。包括：\n公安商业库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "公安商业库",
+          "document": "<p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "商业库",
           "member": "string",
           "name": "CompareLibType",
           "output_required": true,
@@ -3078,7 +3078,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举活体检测类型：\n0：未知\n1：数字活体\n2：动作活体\n3：静默活体\n4：一闪活体（动作+光线）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "LivenessMode",
@@ -6456,7 +6456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号。\n- 姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。\n- 若都提供了，则按照姓名和身份证号>ImageBase64>ImageUrl的优先级使用参数。",
+          "document": "<p>身份证号。</p><ul><li>姓名和身份证号、ImageBase64、ImageUrl三者必须提供其中之一。</li><li>若都提供了，则按照姓名和身份证号&gt;ImageBase64&gt;ImageUrl的优先级使用参数。</li></ul>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -6465,7 +6465,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -6474,7 +6474,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证人像面的 Base64 值。\n- 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n- 支持的图片大小：所下载图片经Base64编码后不超过 3M。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
+          "document": "<p>身份证人像面的 Base64 值。</p><ul><li>支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。</li><li>支持的图片大小：所下载图片经Base64编码后不超过 3M。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。</li></ul>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -6483,7 +6483,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证人像面的 Url 地址。\n- 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n- 支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n- 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n- 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>身份证人像面的 Url 地址。</p><ul><li>支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。</li><li>支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。</li><li>图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。</li><li>非腾讯云存储的 Url 速度和稳定性可能受一定影响。</li></ul>",
           "example": "https://www.qq.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -6492,12 +6492,21 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警配置。</p><ul><li>仅当使用ImageBase64或者ImageUrl时，告警配置生效</li><li>以下可选字段均为bool 类型，默认false。<ul><li>CopyWarn，复印件告警。</li><li>BorderCheckWarn，边框和框内遮挡告警。</li><li>ReshootWarn，翻拍告警。</li><li>DetectPsWarn，PS检测告警（疑似存在PS痕迹）。</li><li>TempIdWarn，临时身份证告警。</li><li>Quality，图片质量告警（评价图片模糊程度）。</li></ul></li><li>SDK 设置方式参考：Config = Json.stringify({&quot;CopyWarn&quot;:true,&quot;ReshootWarn&quot;:true})。</li><li>API 3.0 Explorer 设置方式参考：Config = {&quot;CopyWarn&quot;:true,&quot;Quality&quot;:true}。</li></ul>",
+          "example": "{\"CopyWarn\":true}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6507,7 +6516,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 姓名和身份证号一致。\n-1: 姓名和身份证号不一致。\n- 不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）。\n-3: 非法姓名（长度、格式等不正确）。\n-4: 证件库服务异常。\n-5: 证件库中无此身份证记录。\n-6: 权威比对系统升级中，请稍后再试。\n-7: 认证次数超过当日限制。",
+          "document": "<p>认证结果码，收费情况如下。</p><ul><li>收费结果码：<br>0: 姓名和身份证号一致。<br>-1: 姓名和身份证号不一致。</li><li>不收费结果码：<br>-2: 非法身份证号（长度、校验位等不正确）。<br>-3: 非法姓名（长度、格式等不正确）。<br>-4: 证件库服务异常。<br>-5: 证件库中无此身份证记录。<br>-6: 权威比对系统升级中，请稍后再试。<br>-7: 认证次数超过当日限制。</li></ul>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -6517,7 +6526,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "姓名和身份证号一致",
           "member": "string",
           "name": "Description",
@@ -6527,7 +6536,7 @@
         },
         {
           "disabled": false,
-          "document": "用于验证的姓名。",
+          "document": "<p>用于验证的姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -6537,7 +6546,7 @@
         },
         {
           "disabled": false,
-          "document": "用于验证的身份证号。",
+          "document": "<p>用于验证的身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -6547,7 +6556,7 @@
         },
         {
           "disabled": false,
-          "document": "OCR得到的性别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的性别。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -6557,7 +6566,7 @@
         },
         {
           "disabled": false,
-          "document": "OCR得到的民族。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的民族。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "汉",
           "member": "string",
           "name": "Nation",
@@ -6567,7 +6576,7 @@
         },
         {
           "disabled": false,
-          "document": "OCR得到的生日。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的生日。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1654/12/20",
           "member": "string",
           "name": "Birth",
@@ -6577,13 +6586,43 @@
         },
         {
           "disabled": false,
-          "document": "OCR得到的地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的地址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "北京市东城区景山前街4号紫禁城敬事房",
           "member": "string",
           "name": "Address",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份证头像照片的base64编码</p>",
+          "example": "/9j/4AAQSk=",
+          "member": "string",
+          "name": "Portrait",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警信息。</p><ul><li>Code 告警码列表和释义：<br>  &#39;-9101&#39;：身份证边框不完整告警。<br>  &#39;-9102&#39;：身份证复印件告警。<br>  &#39;-9103&#39;：身份证翻拍告警。<br>  &#39;-9105&#39;：身份证框内遮挡告警。&#39;<br>  &#39;-9104&#39;：临时身份证告警。<br>  &#39;-9106&#39;：身份证 PS 告警（疑似存在PS痕迹）。<br>  &#39;-9107&#39;：身份证反光告警。<br>  &#39;-9108&#39;：身份证复印件告警（仅黑白复印件）。<br>  &#39;-9109&#39;：身份证有效日期不合法告警。<br>  &#39;-8001&#39;：图片模糊告警。</li><li>多个会用“|” 隔开，如 &quot;-9101|-9106|-9104&quot;。</li></ul>",
+          "example": "-9101|-9106|-9104",
+          "member": "string",
+          "name": "Warnings",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片质量分数。</p><ul><li>当请求Config中配置图片模糊告警该参数才有意义。</li><li><ul><li>取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。</li></ul></li></ul>",
+          "example": "0",
+          "member": "float",
+          "name": "Quality",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8075,8 +8114,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "王博",
           "member": "string",
           "name": "FullName",
           "output_required": false,
@@ -8086,8 +8125,8 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>性别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "男",
           "member": "string",
           "name": "Sex",
           "output_required": false,
@@ -8097,8 +8136,8 @@
         },
         {
           "disabled": false,
-          "document": "民族\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>民族</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "汉",
           "member": "string",
           "name": "Nation",
           "output_required": false,
@@ -8108,8 +8147,8 @@
         },
         {
           "disabled": false,
-          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>生日</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1966/11/2",
           "member": "string",
           "name": "Birthday",
           "output_required": false,
@@ -8119,8 +8158,8 @@
         },
         {
           "disabled": true,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "**",
           "member": "string",
           "name": "Address",
           "output_required": false,
@@ -8130,8 +8169,8 @@
         },
         {
           "disabled": false,
-          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>身份证号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "652***********1234",
           "member": "string",
           "name": "LicenseNumber",
           "output_required": false,
@@ -8141,10 +8180,32 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "西安市****",
           "member": "string",
           "name": "FormattedAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>签发机关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "西安市***公安局",
+          "member": "string",
+          "name": "Authority",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效期限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025.06.24-长期",
+          "member": "string",
+          "name": "ValidDate",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -8251,7 +8312,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "手机号码。",
+          "document": "<p>手机号码。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Mobile",
@@ -8260,7 +8321,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -8275,7 +8336,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 成功。\n-2: 手机号不存在。\n-3: 手机号存在，但无法查询到在网时长。\n\n- 不收费结果码：\n-1: 手机号格式不正确。\n-4: 验证中心服务繁忙。\n-5：认证次数超过当日限制，请次日重试。",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 成功。-2: 手机号不存在。-3: 手机号存在，但无法查询到在网时长。- 不收费结果码：-1: 手机号格式不正确。-4: 验证中心服务繁忙。-5：认证次数超过当日限制，请次日重试。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -8285,7 +8346,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "成功",
           "member": "string",
           "name": "Description",
@@ -8295,7 +8356,7 @@
         },
         {
           "disabled": false,
-          "document": "在网时长区间。\n- 格式为[a,b)，表示在网时长在a个月以上，b个月以下。\n- 若b为+时表示没有上限。",
+          "document": "<p>在网时长区间。</p><ul><li>格式为[a,b)，表示在网时长在a个月以上，b个月以下。</li><li>若b为+时表示没有上限。</li></ul>",
           "example": "[23,+)",
           "member": "string",
           "name": "Range",
@@ -8341,7 +8402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>认证结果码，收费情况如下。</p><ul><li><p>收费结果码：<br>0：成功。</p></li><li><p>不收费结果码：<br>-1：未查询到结果。<br>-2：手机号格式不正确。<br>-3：验证中心服务繁忙。<br>-4：认证次数超过当日限制，请次日重试。</p></li></ul>",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0：成功。- 不收费结果码：-1：未查询到结果。-2：手机号格式不正确。-3：验证中心服务繁忙。-4：认证次数超过当日限制，请次日重试。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -9329,7 +9390,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证件图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件正面图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "CardImageBase64",
@@ -9369,7 +9430,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证件切边裁剪图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件正面切边裁剪图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "CardCutImageBase64",
@@ -9413,6 +9474,16 @@
           "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "HeadImageBase64",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份证件背面图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQS*******",
+          "member": "string",
+          "name": "CardBackImageBase64",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10270,7 +10341,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号。",
+          "document": "<p>身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -10279,7 +10350,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -10288,7 +10359,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号。",
+          "document": "<p>手机号。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Phone",
@@ -10297,7 +10368,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -10312,7 +10383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 认证通过。\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。\n\n- 不收费结果码：\n-6: 手机号码不合法。\n-7: 身份证号码有误。\n-8: 姓名校验不通过。\n-9: 没有记录。\n-11: 验证中心服务繁忙。",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -10322,7 +10393,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商名称。\n- 取值范围为[\"移动\",\"联通\",\"电信\",\"\"]。",
+          "document": "<p>运营商名称。</p><ul><li>取值范围为[&quot;移动&quot;,&quot;联通&quot;,&quot;电信&quot;,&quot;&quot;]。</li></ul>",
           "example": "移动",
           "member": "string",
           "name": "Isp",
@@ -10332,7 +10403,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "业务结果描述。",
           "member": "string",
           "name": "Description",
@@ -10354,7 +10425,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号。",
+          "document": "<p>身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -10363,7 +10434,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -10372,7 +10443,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号。",
+          "document": "<p>手机号。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Phone",
@@ -10381,7 +10452,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -10396,7 +10467,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 认证通过。\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。\n\n- 不收费结果码：\n-6: 手机号码不合法。\n-7: 身份证号码有误。\n-8: 姓名校验不通过。\n-9: 没有记录。\n-11: 验证中心服务繁忙。",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -10406,7 +10477,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商名称。\n- 取值范围为[\"移动\",\"联通\",\"电信\",\"\"]。",
+          "document": "<p>运营商名称。</p><ul><li>取值范围为[&quot;移动&quot;,&quot;联通&quot;,&quot;电信&quot;,&quot;&quot;]。</li></ul>",
           "example": "电信",
           "member": "string",
           "name": "Isp",
@@ -10416,7 +10487,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "比对一致",
           "member": "string",
           "name": "Description",
@@ -10438,7 +10509,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号。",
+          "document": "<p>身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -10447,7 +10518,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -10456,7 +10527,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号。",
+          "document": "<p>手机号。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Phone",
@@ -10465,7 +10536,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -10480,7 +10551,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 认证通过。\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。\n\n- 不收费结果码：\n-6: 手机号码不合法。\n-7: 身份证号码有误。\n-8: 姓名校验不通过。\n-9: 没有记录。\n-11: 验证中心服务繁忙。",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -10490,7 +10561,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商名称。\n- 取值范围为[\"移动\",\"联通\",\"电信\",\"\"]。",
+          "document": "<p>运营商名称。</p><ul><li>取值范围为[&quot;移动&quot;,&quot;联通&quot;,&quot;电信&quot;,&quot;&quot;]。</li></ul>",
           "example": "联通",
           "member": "string",
           "name": "Isp",
@@ -10500,7 +10571,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "比对一致",
           "member": "string",
           "name": "Description",

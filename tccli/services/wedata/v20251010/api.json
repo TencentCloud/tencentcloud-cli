@@ -71825,7 +71825,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrivilegeResource",
           "name": "Resource",
@@ -71836,7 +71836,7 @@
         },
         {
           "disabled": false,
-          "document": "主体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主体</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubjectInfo",
           "name": "SubjectDetails",
@@ -71847,10 +71847,21 @@
         },
         {
           "disabled": false,
-          "document": "权限详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>权限详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrivilegeInfo",
           "name": "PermissionDetails",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>拒绝权限列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrivilegeInfo",
+          "name": "DenyPermissionDetails",
           "output_required": false,
           "required": false,
           "type": "list",

@@ -23719,7 +23719,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新购时表示商品数量，续费与配置变更时固定传1",
+          "document": "<p>新购时表示商品数量，续费与配置变更时固定传1</p>",
           "example": "0",
           "member": "int64",
           "name": "GoodsNum",
@@ -23730,8 +23730,8 @@
         },
         {
           "disabled": false,
-          "document": "商品详情，timeSpan表示购买时间长度，timeUnit表示购买时间单位，pid表示定价公式ID，instances表示资源id，bandwidth表示带宽",
-          "example": "\"\"",
+          "document": "<p>商品详情，timeSpan表示购买时间长度，timeUnit表示购买时间单位，pid表示定价公式ID，instances表示资源id，bandwidth表示带宽</p>",
+          "example": "\"{\\\"buyr\\\":\\\"test\\\",\\\"productCode\\\":\\\"p_trade_t_s\\\",\\\"subProductCode\\\":\\\"sp_trade_t_s\\\",\\\"pid\\\":16994,\\\"timeUnit\\\":\\\"m\\\",\\\"timeSpan\\\":1,\\\"action\\\":\\\"purchase\\\",\\\"succCheck\\\":1,\\\"succ\\\":1,\\\"queryFlowType\\\":1,\\\"region\\\":1}\"",
           "member": "string",
           "name": "GoodsDetail",
           "output_required": true,
@@ -23741,7 +23741,7 @@
         },
         {
           "disabled": false,
-          "document": "订单类型ID，接入计费时由计费后台分配，下单时必传",
+          "document": "<p>订单类型ID，接入计费时由计费后台分配，下单时必传</p>",
           "example": "0",
           "member": "int64",
           "name": "GoodsCategoryId",
@@ -23752,8 +23752,8 @@
         },
         {
           "disabled": false,
-          "document": "地域字母缩写（ap code）",
-          "example": "\"\"",
+          "document": "<p>地域字母缩写（ap code）</p>",
+          "example": "\"ap-others\"",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -23763,8 +23763,8 @@
         },
         {
           "disabled": false,
-          "document": "区域全拼（ap code",
-          "example": "\"\"",
+          "document": "<p>区域全拼（ap code</p>",
+          "example": "\"ap-others-4\"",
           "member": "string",
           "name": "Zone",
           "output_required": false,
@@ -23774,7 +23774,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，没有项目概念则传0",
+          "document": "<p>项目ID，没有项目概念则传0</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -23785,8 +23785,8 @@
         },
         {
           "disabled": false,
-          "document": "付费模式，postPay后付费/prePay预付费/riPay预留实例，下单、续费、变配时必传",
-          "example": "\"\"",
+          "document": "<p>付费模式，postPay后付费/prePay预付费/riPay预留实例，下单、续费、变配时必传</p>",
+          "example": "\"prePay\"",
           "member": "string",
           "name": "PayMode",
           "output_required": false,
@@ -23796,8 +23796,8 @@
         },
         {
           "disabled": false,
-          "document": "服务类型，一般是服务的简称。例如云服务器传cvm，数据库传cdb，云盘传cbs等。后付费开通、变配，退带宽时必传",
-          "example": "\"\"",
+          "document": "<p>服务类型，一般是服务的简称。例如云服务器传cvm，数据库传cdb，云盘传cbs等。后付费开通、变配，退带宽时必传</p>",
+          "example": "\"cvm\"",
           "member": "string",
           "name": "Business",
           "output_required": false,
@@ -23807,7 +23807,7 @@
         },
         {
           "disabled": false,
-          "document": "发货模式，2表示经销商进货，3表示经销商发货",
+          "document": "<p>发货模式，2表示经销商进货，3表示经销商发货</p>",
           "example": "2",
           "member": "int64",
           "name": "DeliverMode",
@@ -23818,8 +23818,8 @@
         },
         {
           "disabled": false,
-          "document": "询价用途.purchase:新购、renew:续费、modify:变配、return:退费、autoRenew：自动续费",
-          "example": "\"\"",
+          "document": "<p>询价用途.purchase:新购、renew:续费、modify:变配、return:退费、autoRenew：自动续费</p>",
+          "example": "\"purchase\"",
           "member": "string",
           "name": "Purpose",
           "output_required": false,
@@ -23829,8 +23829,8 @@
         },
         {
           "disabled": false,
-          "document": "子appId",
-          "example": "\"\"",
+          "document": "<p>子appId</p>",
+          "example": "\"251204891\"",
           "member": "string",
           "name": "SubAppId",
           "output_required": false,
@@ -23840,8 +23840,8 @@
         },
         {
           "disabled": false,
-          "document": "对应midas处申请的offerId",
-          "example": "\"\"",
+          "document": "<p>对应midas处申请的offerId</p>",
+          "example": "\"1450008583\"",
           "member": "string",
           "name": "OfferId",
           "output_required": false,
@@ -23851,8 +23851,8 @@
         },
         {
           "disabled": false,
-          "document": "活动ID，传入活动id需要鉴权",
-          "example": "\"\"",
+          "document": "<p>活动ID，传入活动id需要鉴权</p>",
+          "example": "12334",
           "member": "string",
           "name": "ActivityId",
           "output_required": false,
@@ -23862,13 +23862,24 @@
         },
         {
           "disabled": false,
-          "document": "sku场景下没GoodsCategoryId， sku 场景下必选。\n询价的action,取值范围为\npurchase,renew,modify.\npurchase 新购询价\nrenew  续费询价\nmodify  变配询价",
+          "document": "<p>sku场景下没GoodsCategoryId， sku 场景下必选。<br>询价的action,取值范围为<br>purchase,renew,modify.<br>purchase 新购询价<br>renew  续费询价<br>modify  变配询价</p>",
           "example": "purchase",
           "member": "string",
           "name": "Action",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单类型，默认可不传</p><p>枚举值：</p><ul><li>9： 隐藏订单,该类型订单查询接口默认查不到</li></ul>",
+          "example": "9",
+          "member": "int64",
+          "name": "DealType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

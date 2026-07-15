@@ -1,13 +1,13 @@
-**Example 1: 灾备实例转正**
+**Example 1: 灾备或只读实例转正**
 
-灾备实例转正
+
 
 Input: 
 
 ```
 tccli mongodb PromoteDBInstanceToActive --cli-unfold-argument  \
-    --MasterId cmgo-ggh7rpz5 \
-    --InstanceId cmgo-a7bb6vd7
+    --MasterId cmgo-******** \
+    --InstanceId cmgo-********
 ```
 
 Output: 

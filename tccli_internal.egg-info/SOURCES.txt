@@ -61,12 +61,16 @@ tccli/services/aa/v20200224/api.json
 tccli/services/aa/v20200224/examples.json
 tccli/services/aai/__init__.py
 tccli/services/aai/aai_client.py
+tccli/services/aca/__init__.py
+tccli/services/aca/aca_client.py
 tccli/services/account/__init__.py
 tccli/services/account/account_client.py
 tccli/services/account/v20181225/api.json
 tccli/services/account/v20181225/examples.json
 tccli/services/acp/__init__.py
 tccli/services/acp/acp_client.py
+tccli/services/adp/__init__.py
+tccli/services/adp/adp_client.py
 tccli/services/advisor/__init__.py
 tccli/services/advisor/advisor_client.py
 tccli/services/af/__init__.py
@@ -143,6 +147,8 @@ tccli/services/batch/__init__.py
 tccli/services/batch/batch_client.py
 tccli/services/batch/v20170312/api.json
 tccli/services/batch/v20170312/examples.json
+tccli/services/bcp/__init__.py
+tccli/services/bcp/bcp_client.py
 tccli/services/bcrpc/__init__.py
 tccli/services/bcrpc/bcrpc_client.py
 tccli/services/bda/__init__.py
@@ -435,6 +441,8 @@ tccli/services/ecm/__init__.py
 tccli/services/ecm/ecm_client.py
 tccli/services/ecm/v20190719/api.json
 tccli/services/ecm/v20190719/examples.json
+tccli/services/edgezone/__init__.py
+tccli/services/edgezone/edgezone_client.py
 tccli/services/eiam/__init__.py
 tccli/services/eiam/eiam_client.py
 tccli/services/eiam/v20210420/api.json
@@ -465,6 +473,8 @@ tccli/services/essbasic/v20201222/api.json
 tccli/services/essbasic/v20201222/examples.json
 tccli/services/essbasic/v20210526/api.json
 tccli/services/essbasic/v20210526/examples.json
+tccli/services/evt/__init__.py
+tccli/services/evt/evt_client.py
 tccli/services/facefusion/__init__.py
 tccli/services/facefusion/facefusion_client.py
 tccli/services/facefusion/v20181201/api.json
@@ -485,6 +495,8 @@ tccli/services/ft/__init__.py
 tccli/services/ft/ft_client.py
 tccli/services/ft/v20200304/api.json
 tccli/services/ft/v20200304/examples.json
+tccli/services/fwm/__init__.py
+tccli/services/fwm/fwm_client.py
 tccli/services/ga2/__init__.py
 tccli/services/ga2/ga2_client.py
 tccli/services/gaap/__init__.py
@@ -553,6 +565,8 @@ tccli/services/ig/__init__.py
 tccli/services/ig/ig_client.py
 tccli/services/igtm/__init__.py
 tccli/services/igtm/igtm_client.py
+tccli/services/ihn/__init__.py
+tccli/services/ihn/ihn_client.py
 tccli/services/iir/__init__.py
 tccli/services/iir/iir_client.py
 tccli/services/iir/v20200417/api.json
@@ -753,6 +767,8 @@ tccli/services/pts/v20210728/api.json
 tccli/services/pts/v20210728/examples.json
 tccli/services/qinge/__init__.py
 tccli/services/qinge/qinge_client.py
+tccli/services/quota/__init__.py
+tccli/services/quota/quota_client.py
 tccli/services/ragsearch/__init__.py
 tccli/services/ragsearch/ragsearch_client.py
 tccli/services/rce/__init__.py
@@ -907,6 +923,8 @@ tccli/services/tcss/__init__.py
 tccli/services/tcss/tcss_client.py
 tccli/services/tcv/__init__.py
 tccli/services/tcv/tcv_client.py
+tccli/services/tdai/__init__.py
+tccli/services/tdai/tdai_client.py
 tccli/services/tdapg/__init__.py
 tccli/services/tdapg/tdapg_client.py
 tccli/services/tdcpg/__init__.py
@@ -931,6 +949,8 @@ tccli/services/tencentcloudintl/__init__.py
 tccli/services/tencentcloudintl/tencentcloudintl_client.py
 tccli/services/teo/__init__.py
 tccli/services/teo/teo_client.py
+tccli/services/thds/__init__.py
+tccli/services/thds/thds_client.py
 tccli/services/thpc/__init__.py
 tccli/services/thpc/thpc_client.py
 tccli/services/tia/__init__.py

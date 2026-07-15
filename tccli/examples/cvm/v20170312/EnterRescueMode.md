@@ -7,7 +7,7 @@ Input:
 ```
 tccli cvm EnterRescueMode --cli-unfold-argument  \
     --InstanceId ins-axzc12s \
-    --Password hello123456789
+    --Password Qcloud@TestApi123++
 ```
 
 Output: 

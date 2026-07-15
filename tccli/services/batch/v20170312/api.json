@@ -441,7 +441,7 @@
         {
           "disabled": false,
           "document": "应用程序软件包的远程存储路径",
-          "example": "cos://kelvin-test-1251762227.cos.ap-nanjing.myqcloud.com/batch_test/",
+          "example": "cos://kelvin-test-1251762227.cos.ap-nanjing.myqcloud.com/batch_test/demon_job.tar.gz",
           "member": "string",
           "name": "PackagePath",
           "output_required": false,
@@ -2145,7 +2145,7 @@
         {
           "disabled": false,
           "document": "可用区信息",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -3296,6 +3296,17 @@
           "member": "string",
           "name": "MountOptionParameter",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载COS存储时支持的挂载工具；当前可选值：COSFS、GooseFS-Lite。",
+          "example": "COSFS",
+          "member": "string",
+          "name": "MountType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4713,7 +4724,7 @@
       "usage": "both"
     },
     "Placement": {
-      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机IP等",
+      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机IP，专有预扣资源等",
       "members": [
         {
           "disabled": false,
@@ -4751,7 +4762,7 @@
         {
           "disabled": false,
           "document": "指定母机IP生产子机",
-          "example": "10.0.0.1",
+          "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "HostIps",
           "output_required": false,
@@ -4765,6 +4776,39 @@
           "example": "host-o5i742go",
           "member": "string",
           "name": "HostId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专有资源预扣策略。取值范围：<li>ResourcePool：使用实例资源池进行资源预扣</li>",
+          "example": "ResourcePool",
+          "member": "string",
+          "name": "DedicatedResourcePackTenancy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专有预扣资源ID列表。形如：rpp-7eumgm3l。通过指定专有预扣资源创建实例时，必须同时指定匹配的DedicatedResourcePackTenancy。",
+          "example": "[\"rpp-7eumgm3l\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属的实例资源池机架ID，仅用于出参。",
+          "example": "3F3327994BA4C23134DDCBD7828CD4CC",
+          "member": "string",
+          "name": "RackId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -5089,7 +5133,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>\n<li>LOCAL_BASIC：本地硬盘</li>\n<li>LOCAL_SSD：本地SSD硬盘</li>\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_BSSD：通用型SSD云硬盘</li>\n<li>CLOUD_HSSD：增强型SSD云硬盘</li>\n<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>\n默认取值：当前有库存的硬盘类型。",
+          "document": "<p>系统盘类型。系统盘类型限制详见<a href=\"https://cloud.tencent.com/document/product/213/4952\">存储概述</a>。取值范围：<br></p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><br>默认取值：当前有库存的硬盘类型。",
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
@@ -5100,8 +5144,8 @@
         },
         {
           "disabled": false,
-          "document": "系统盘ID。\n该参数目前仅用于`DescribeInstances`等查询类接口的返回参数，不可用于`RunInstances`等写接口的入参。",
-          "example": "disk-xyzw1234",
+          "document": "<p>系统盘ID。<br>该参数目前仅用于 <a href=\"https://cloud.tencent.com/document/product/213/15728\">DescribeInstances</a> 等查询类接口的返回参数，不可用于 <a href=\"https://cloud.tencent.com/document/product/213/15730\">RunInstances</a> 等写接口的入参。</p>",
+          "example": "disk-xyzw1a3x",
           "member": "string",
           "name": "DiskId",
           "output_required": false,
@@ -5111,7 +5155,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GiB。默认值为 50",
+          "document": "<p>系统盘大小，单位：GiB。默认值为 50</p>",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -5122,7 +5166,7 @@
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属的独享集群ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdc-xxxxxx",
           "member": "string",
           "name": "CdcId",
@@ -5133,11 +5177,33 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。",
+          "document": "<p>磁盘名称，长度不超过128 个字符。</p>",
           "example": "name",
           "member": "string",
           "name": "DiskName",
           "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统盘是否加密。取值范围：true：加密false：不加密默认取值：false该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>",
+          "example": "kms-abcd1234",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6002,7 +6068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778) ，从接口返回中的`VpcId `字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。",
+          "document": "<p>私有网络ID，形如<code>vpc-xxx</code>。有效的VpcId可通过登录<a href=\"https://console.cloud.tencent.com/vpc/vpc?rid=1\">控制台</a>查询；也可以调用接口 <a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a> ，从接口返回中的<code>VpcId</code>字段获取。若在创建子机时VpcId与SubnetId同时传入<code>DEFAULT</code>，则强制使用默认vpc网络。</p>",
           "example": "vpc-2ij",
           "member": "string",
           "name": "VpcId",
@@ -6013,7 +6079,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的`SubnetId `字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
+          "document": "<p>私有网络子网ID，形如<code>subnet-xxx</code>。有效的私有网络子网ID可通过登录<a href=\"https://console.cloud.tencent.com/vpc/subnet?rid=1\">控制台</a>查询；也可以调用接口  <a href=\"https://cloud.tencent.com/document/product/215/15784\">DescribeSubnets</a> ，从接口返回中的<code>SubnetId</code>字段获取。若在创建子机时SubnetId与VpcId同时传入<code>DEFAULT</code>，则强制使用默认vpc网络。</p>",
           "example": "subnet-2ks",
           "member": "string",
           "name": "SubnetId",
@@ -6024,7 +6090,7 @@
         },
         {
           "disabled": false,
-          "document": "是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<li>true：表示用作公网网关</li><li>false：表示不作为公网网关</li>默认取值：false。",
+          "document": "<p>是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<li>true：表示用作公网网关</li><li>false：表示不作为公网网关</li>默认取值：false。</p>",
           "example": "false",
           "member": "bool",
           "name": "AsVpcGateway",
@@ -6035,7 +6101,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。",
+          "document": "<p>私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。</p>",
           "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -6046,13 +6112,35 @@
         },
         {
           "disabled": false,
-          "document": "为弹性网卡指定随机生成的 IPv6 地址数量。",
+          "document": "<p>为弹性网卡指定随机生成的 IPv6 地址数量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ipv6AddressCount",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主网卡开启vRDMA能力</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRdma",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动安装vRDMA驱动</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoInstallRdmaDriver",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

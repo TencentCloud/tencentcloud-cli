@@ -22,7 +22,11 @@ Output:
                 "BudgetConfigs": [
                     {
                         "MaxBudget": 100,
-                        "BudgetDuration": "7d"
+                        "BudgetDuration": "1d"
+                    },
+                    {
+                        "MaxBudget": 1000,
+                        "BudgetDuration": "30d"
                     }
                 ],
                 "RateLimitConfig": {
@@ -30,6 +34,8 @@ Output:
                     "RPM": 60
                 },
                 "Status": "Active",
+                "AssociationModelRouterCount": 1,
+                "AssociationKeyCount": 1,
                 "CreatedTime": "2026-04-14T12:00:00+08:00",
                 "ModifiedTime": "2026-04-14T12:10:00+08:00"
             }

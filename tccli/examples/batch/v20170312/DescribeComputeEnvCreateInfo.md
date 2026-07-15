@@ -78,7 +78,7 @@ Output:
                 "S5.SMALL2"
             ],
             "Zones": [
-                "ap-guangzhou-2"
+                "ap-guangzhou-6"
             ],
             "InstanceChargeType": "POSTPAID_BY_HOUR",
             "EnhancedService": {

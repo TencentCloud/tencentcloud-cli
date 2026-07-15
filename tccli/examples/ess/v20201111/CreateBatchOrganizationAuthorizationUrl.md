@@ -13,7 +13,7 @@ tccli ess CreateBatchOrganizationAuthorizationUrl --cli-unfold-argument  \
     --Operator.ClientIp 8.8.8.8 \
     --SubTaskIds yDCHlUUckpaeefmfUxPr7deu6g5PvvJz yDCHlUUckpaeix9uU0ETNLSzHbAxJxLj \
     --AdminName 典子谦 \
-    --AdminMobile 13200000000 \
+    --AdminMobile 1320****000 \
     --AdminIdCardType ID_CARD \
     --AdminIdCardNumber 620000198802020000 \
     --Endpoint HTTP

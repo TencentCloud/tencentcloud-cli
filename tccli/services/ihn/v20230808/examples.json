@@ -1,0 +1,191 @@
+{
+  "actions": {
+    "AssignIhnGpuServerIp": [
+      {
+        "document": "单卡机器首次调接口申请IP，此时返回请求ID，后续根据请求ID查异步任务信息获取RDMA IP。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIhnGpuServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d\",\n    \"UniqClusterId\": \"hpc-075c399b\",\n    \"IpAddressCount\": 1,\n    \"ClusterInfo\": {\n        \"ClusterType\": 1,\n        \"CdcId\": \"cluster-3e9a1f5d\",\n        \"ChcId\": \"chc-2e4c1a7d\",\n        \"IsPhysicalClusterPreCreated\": false\n    },\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\",\n    \"UsageScenario\": {\n        \"Scenario\": \"CONTAINER\",\n        \"ContainerInfo\": {\n            \"IntMaskForSupportMaxNumbers\": 28,\n            \"HostArchitecture\": \"V1\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"392ca5f5-c815-44f3-8db3-74a53d655505\"\n    }\n}",
+        "title": "单卡机器首次调接口申请RDMA IP"
+      },
+      {
+        "document": "单卡机器非首次调接口申请RDMA IP，此时直接返回RDMA IP信息。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIhnGpuServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d\",\n    \"UniqClusterId\": \"hpc-075c399b\",\n    \"IpAddressCount\": 1,\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\",\n    \"UsageScenario\": {\n        \"Scenario\": \"CONTAINER\",\n        \"ContainerInfo\": {\n            \"IntMaskForSupportMaxNumbers\": 28,\n            \"HostArchitecture\": \"V1\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": 8888,\n        \"GatewayIp\": \"192.81.10.17\",\n        \"InstanceUuid\": \"3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d\",\n        \"Mask\": \"255.255.255.240\",\n        \"ModuleId\": 818181,\n        \"ServerIp\": \"192.81.10.18\",\n        \"Subnet\": \"192.81.10.16\",\n        \"RequestId\": \"d4e06f06-8f61-4cea-9384-12bcfa67f9ae\"\n    }\n}",
+        "title": "单卡机器非首次调接口申请RDMA IP"
+      },
+      {
+        "document": "多卡机器首次调接口申请IP，此时返回请求ID，后续根据请求ID查异步任务信息获取RDMA IP。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIhnGpuServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8321,\n    \"InstanceUuid\": \"b5c7e2a9-4f81-4d3c-9a2b-6e8f3d1c5a94\",\n    \"UniqClusterId\": \"hpc-3d1c5a94\",\n    \"IpAddressCount\": 2,\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"418b05fb-234a-4785-b5b4-9e607aa94193\"\n    }\n}",
+        "title": "多卡机器首次调接口申请RDMA IP"
+      },
+      {
+        "document": "多卡机器非首次调接口申请IP，此时通过IpAddresses字段直接返回RDMA IP列表。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIhnGpuServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8321,\n    \"InstanceUuid\": \"b5c7e2a9-4f81-4d3c-9a2b-6e8f3d1c5a94\",\n    \"UniqClusterId\": \"hpc-3d1c5a94\",\n    \"IpAddressCount\": 2,\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": 8321,\n        \"InstanceUuid\": \"b5c7e2a9-4f81-4d3c-9a2b-6e8f3d1c5a94\",\n        \"IpAddresses\": [\n            {\n                \"GatewayIp\": \"192.81.10.133\",\n                \"Mask\": \"255.255.255.252\",\n                \"ServerIp\": \"192.81.10.134\",\n                \"Subnet\": \"192.81.10.132\"\n            }\n        ],\n        \"ModuleId\": 818181,\n        \"RequestId\": \"7d4e0e16-cde0-4f25-b448-d3e07a4f550b\"\n    }\n}",
+        "title": "多卡机器非首次调接口申请RDMA IP"
+      },
+      {
+        "document": "IB机器申请PKeyId，直接返回PKeyId的值。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIhnGpuServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 919191,\n    \"ClusterId\": 9999,\n    \"InstanceUuid\": \"3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 2\n    },\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": 9999,\n        \"ClusterType\": 2,\n        \"InstanceUuid\": \"3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d\",\n        \"ModuleId\": 919191,\n        \"PKeyId\": 1,\n        \"RequestId\": \"3f5818dc-c789-4186-85dd-7c1f48bea2ea\"\n    }\n}",
+        "title": "IB机器申请PKeyId"
+      }
+    ],
+    "AssignRdmaServerIp": [
+      {
+        "document": "单卡机器首次调接口申请IP，此时返回请求ID，后续根据请求ID查异步任务信息获取RDMA IP。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignRdmaServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n    \"UniqClusterId\": \"hpc-075c288a\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"IntMask\": 30,\n    \"ClusterInfoV2\": false,\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd214b4d-fe3d-498b-9851-d1dad89832c4\"\n    }\n}",
+        "title": "单卡机器首次调接口申请RDMA IP"
+      },
+      {
+        "document": "单卡机器非首次调接口申请RDMA IP，此时直接返回RDMA IP信息。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignRdmaServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36b2\",\n    \"UniqClusterId\": \"hpc-075c288a\",\n    \"IpAddressCount\": 1,\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"IntMask\": 30,\n    \"ClusterInfoV2\": false,\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:48\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": 8888,\n        \"GatewayIp\": \"192.81.1.157\",\n        \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36b2\",\n        \"Mask\": \"255.255.255.252\",\n        \"ModuleId\": 818181,\n        \"ServerIp\": \"192.81.1.158\",\n        \"Subnet\": \"192.81.1.156\",\n        \"RequestId\": \"a6a0cbfb-2b47-46a2-98af-5b4913668d4a\"\n    }\n}",
+        "title": "单卡机器非首次调接口申请RDMA IP"
+      },
+      {
+        "document": "多卡机器首次调接口申请IP，此时返回请求ID，后续根据请求ID查异步任务信息获取RDMA IP。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignRdmaServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n    \"UniqClusterId\": \"hpc-075c288a\",\n    \"IpAddressCount\": 4,\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"IntMask\": 30,\n    \"ClusterInfoV2\": false,\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79a67e57-e6f9-48cd-b29c-fa6fb1db1edb\"\n    }\n}",
+        "title": "多卡机器首次调接口申请RDMA IP"
+      },
+      {
+        "document": "多卡机器非首次调接口申请IP，此时通过IpAddresses字段直接返回RDMA IP列表。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignRdmaServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n    \"UniqClusterId\": \"hpc-075c288a\",\n    \"IpAddressCount\": 4,\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"IntMask\": 30,\n    \"ClusterInfoV2\": false,\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": 8888,\n        \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n        \"IpAddresses\": [\n            {\n                \"GatewayIp\": \"192.81.10.17\",\n                \"Mask\": \"255.255.255.252\",\n                \"ServerIp\": \"192.81.10.18\",\n                \"Subnet\": \"192.81.10.16\"\n            }\n        ],\n        \"ModuleId\": 818181,\n        \"RequestId\": \"55c6cfec-47aa-4403-a3c7-70488c9207bb\"\n    }\n}",
+        "title": "多卡机器非首次调接口申请RDMA IP"
+      },
+      {
+        "document": "IB机器申请PKeyId，直接返回PKeyId的值。",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignRdmaServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 919191,\n    \"ClusterId\": 9999,\n    \"InstanceUuid\": \"a2d8f6c1-5b94-4e72-9f3a-8d6e4b2c7a91\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": 9999,\n        \"ClusterType\": 2,\n        \"InstanceUuid\": \"a2d8f6c1-5b94-4e72-9f3a-8d6e4b2c7a91\",\n        \"ModuleId\": 919191,\n        \"PKeyId\": 1,\n        \"RequestId\": \"6421ce6f-988a-49e9-8661-16260feff57e\"\n    }\n}",
+        "title": "IB机器申请PKeyId"
+      }
+    ],
+    "CreateRdmaServer": [
+      {
+        "document": "IB机器创建服务器",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRdmaServer\n<公共请求参数>\n\n{\n    \"ModuleId\": 919191,\n    \"ClusterId\": 9999,\n    \"InstanceUuid\": \"cb9da3ec-e96e-4fab-ad85-e96e4fabad85\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 2\n    },\n    \"HostIp\": \"8.1.111.9\",\n    \"GUID\": [\n        \"491a7f3c47145acf\"\n    ],\n    \"PKeyId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45052d15-6d19-4f54-8cbb-23951714b273\"\n    }\n}",
+        "title": "IB机器创建服务器"
+      },
+      {
+        "document": "单卡机器创建GPU服务器",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRdmaServer\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36b2\",\n    \"UniqClusterId\": \"hpc-5b944e72\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"HostIp\": \"8.8.111.1\",\n    \"ServerIp\": \"192.81.1.158\",\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\",\n    \"Subnet\": \"192.81.1.156\",\n    \"Mask\": \"255.255.255.252\",\n    \"GatewayIp\": \"192.81.1.157\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa8d6a33-2576-447f-b993-d8bb7df9c4db\"\n    }\n}",
+        "title": "单卡机器创建GPU服务器"
+      },
+      {
+        "document": "多卡机器创建GPU服务器",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRdmaServer\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"HostIp\": \"8.1.111.111\",\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\",\n    \"RdmaIpAddresses\": [\n        {\n            \"ServerIp\": \"192.81.1.174\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c1560ec-5b2e-439c-aa18-c3a26391a555\"\n    }\n}",
+        "title": "多卡机器创建GPU服务器"
+      }
+    ],
+    "DeleteRdmaServer": [
+      {
+        "document": "单卡机器删除GPU服务器",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRdmaServer\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36b2\",\n    \"UniqClusterId\": \"hpc-6f9f36b2\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"ServerIp\": \"192.81.1.158\",\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\",\n    \"Subnet\": \"192.81.1.156\",\n    \"Mask\": \"255.255.255.252\",\n    \"GatewayIp\": \"192.81.1.157\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6f0874e-b5fd-416d-846a-7727c93107b9\"\n    }\n}",
+        "title": "单卡机器删除GPU服务器"
+      },
+      {
+        "document": "多卡机器删除GPU服务器",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRdmaServer\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"RdmaIpAddresses\": [\n        {\n            \"ServerIp\": \"192.81.1.174\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ef451eb-a39f-4152-a41c-7ec6d7d44a47\"\n    }\n}",
+        "title": "多卡机器删除GPU服务器"
+      },
+      {
+        "document": "IB机器删除服务器",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRdmaServer\n<公共请求参数>\n\n{\n    \"ModuleId\": 919191,\n    \"ClusterId\": 9999,\n    \"InstanceUuid\": \"cb9da3ec-e96e-4fab-ad85-e96e4fabad85\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 2\n    },\n    \"GUID\": [\n        \"491a7f3c47145acf\"\n    ],\n    \"PKeyId\": 1,\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51748f4b-3f02-44fd-b86c-224e8414ce50\"\n    }\n}",
+        "title": "IB机器删除服务器"
+      }
+    ],
+    "DescribeRdmaIpPoolSubnet": [
+      {
+        "document": "查询RDMA地址池网段",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRdmaIpPoolSubnet\n<公共请求参数>\n\n{\n    \"ModuleId\": [\n        818181\n    ],\n    \"Offset\": 0,\n    \"Limit\": 9\n}",
+        "output": "{\n    \"Response\": {\n        \"RdmaIpPoolSubnets\": [\n            {\n                \"CreateTime\": \"2025-02-21 17:37:36\",\n                \"IntMask\": 16,\n                \"ModuleId\": 818181,\n                \"Subnet\": \"91.91.0.0\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"41f57646-729b-4130-8a42-fe9d85dd0950\"\n    }\n}",
+        "title": "查询RDMA地址池网段"
+      }
+    ],
+    "DescribeRdmaServers": [
+      {
+        "document": "查询GPU服务器",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRdmaServers\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuids\": [\n        \"075c288a-cd57-4906-b1fb-f2fd6f9f36b2\"\n    ],\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RdmaServers\": [\n            {\n                \"AutoIsolate\": false,\n                \"ClusterId\": 8888,\n                \"GatewayIp\": \"192.81.1.157\",\n                \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36b2\",\n                \"IntMask\": 30,\n                \"Mask\": \"255.255.255.252\",\n                \"ModuleId\": 818181,\n                \"ServerIp\": \"192.81.1.158\",\n                \"Subnet\": \"192.81.1.156\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"44ac5915-8a61-4775-bee1-814deadea13c\"\n    }\n}",
+        "title": "查询GPU服务器"
+      },
+      {
+        "document": "查询IB机型服务器",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRdmaServers\n<公共请求参数>\n\n{\n    \"ModuleId\": 919191,\n    \"ClusterId\": 9999,\n    \"InstanceUuids\": [\n        \"cb9da3ec-e96e-4fab-ad85-e96e4fabad85\"\n    ],\n    \"ClusterInfo\": {\n        \"ClusterType\": 2\n    },\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RdmaServers\": [\n            {\n                \"ClusterId\": 9999,\n                \"GUID\": \"491a7f3c47145acf\",\n                \"InstanceUuid\": \"cb9da3ec-e96e-4fab-ad85-e96e4fabad85\",\n                \"ModuleId\": 919191,\n                \"PKeyId\": 1\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"8a68b5ef-3919-4e28-b4f4-14034fbf116d\"\n    }\n}",
+        "title": "查询IB机型服务器"
+      }
+    ],
+    "DescribeVpcTaskResult": [
+      {
+        "document": "单卡机器查申请IP异步任务信息",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"dd214b4d-fe3d-498b-9851-d1dad89832c4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Output\": {\n            \"ClusterId\": 8888,\n            \"GatewayIp\": \"192.81.1.189\",\n            \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n            \"IntMask\": 30,\n            \"Mask\": \"255.255.255.252\",\n            \"ModuleId\": 818181,\n            \"ServerIp\": \"192.81.1.190\",\n            \"Subnet\": \"192.81.1.188\"\n        },\n        \"Status\": \"SUCCESS\",\n        \"RequestId\": \"0addb58a-0861-4dd5-9ee2-155edadea1bf\"\n    }\n}",
+        "title": "单卡机器查申请IP异步任务信息"
+      },
+      {
+        "document": "多卡机器查申请IP异步任务信息",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"79a67e57-e6f9-48cd-b29c-fa6fb1db1edb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfb91b83-7aca-46d5-a740-683ae65ca39b\",\n        \"Result\": [\n            {\n                \"Output\": \"{\\\"ClusterId\\\": 8888, \\\"GatewayIp\\\": \\\"192.81.1.173\\\", \\\"InstanceUuid\\\": \\\"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\\\", \\\"IntMask\\\": 30, \\\"Mask\\\": \\\"255.255.255.252\\\", \\\"ModuleId\\\": 818181, \\\"ServerIp\\\": \\\"192.81.1.174\\\", \\\"Subnet\\\": \\\"192.81.1.172\\\"}\",\n                \"ResourceId\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n                \"Status\": \"SUCCESS\"\n            },\n            {\n                \"Output\": \"{\\\"ClusterId\\\": 8888, \\\"GatewayIp\\\": \\\"192.81.1.193\\\", \\\"InstanceUuid\\\": \\\"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\\\", \\\"IntMask\\\": 30, \\\"Mask\\\": \\\"255.255.255.252\\\", \\\"ModuleId\\\": 818181, \\\"ServerIp\\\": \\\"192.81.1.194\\\", \\\"Subnet\\\": \\\"192.81.1.192\\\"}\",\n                \"ResourceId\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n                \"Status\": \"SUCCESS\"\n            },\n            {\n                \"Output\": \"{\\\"ClusterId\\\": 8888, \\\"GatewayIp\\\": \\\"192.81.1.181\\\", \\\"InstanceUuid\\\": \\\"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\\\", \\\"IntMask\\\": 30, \\\"Mask\\\": \\\"255.255.255.252\\\", \\\"ModuleId\\\": 818181, \\\"ServerIp\\\": \\\"192.81.1.182\\\", \\\"Subnet\\\": \\\"192.81.1.180\\\"}\",\n                \"ResourceId\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n                \"Status\": \"SUCCESS\"\n            },\n            {\n                \"Output\": \"{\\\"ClusterId\\\": 8888, \\\"GatewayIp\\\": \\\"192.81.1.177\\\", \\\"InstanceUuid\\\": \\\"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\\\", \\\"IntMask\\\": 30, \\\"Mask\\\": \\\"255.255.255.252\\\", \\\"ModuleId\\\": 818181, \\\"ServerIp\\\": \\\"192.81.1.178\\\", \\\"Subnet\\\": \\\"192.81.1.176\\\"}\",\n                \"ResourceId\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n                \"Status\": \"SUCCESS\"\n            }\n        ],\n        \"Status\": \"SUCCESS\"\n    }\n}",
+        "title": "多卡机器查申请IP异步任务信息"
+      },
+      {
+        "document": "查创建服务器、删除服务器等任务信息",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"fa8d6a33-2576-447f-b993-d8bb7df9c4db\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCESS\",\n        \"RequestId\": \"e06d0285-4910-43b0-9965-80c1daa3597e\"\n    }\n}",
+        "title": "查创建服务器、删除服务器等任务信息"
+      }
+    ],
+    "UnassignIhnGpuServerIp": [
+      {
+        "document": "单卡机器退还RDMA IP",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnassignIhnGpuServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d\",\n    \"UniqClusterId\": \"hpc-6f9f36b2\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 1,\n        \"CdcId\": \"cluster-b5c7e2a9\",\n        \"ChcId\": \"chc-4d3c9a2b\",\n        \"IsPhysicalClusterPreCreated\": false\n    },\n    \"ServerIp\": \"192.81.10.18\",\n    \"Subnet\": \"192.81.10.16\",\n    \"Mask\": \"255.255.255.252\",\n    \"GatewayIp\": \"192.81.10.17\",\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbd42b9f-9cff-470a-9b3a-97e0f473c6fa\"\n    }\n}",
+        "title": "单卡机器退还RDMA IP"
+      },
+      {
+        "document": "多卡机器退还RDMA IP",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnassignIhnGpuServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8321,\n    \"InstanceUuid\": \"b5c7e2a9-4f81-4d3c-9a2b-6e8f3d1c5a94\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 1,\n        \"CdcId\": \"cluster-b5c7e2a9\",\n        \"ChcId\": \"chc-4d3c9a2b\",\n        \"IsPhysicalClusterPreCreated\": false\n    },\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\",\n    \"RdmaIpAddresses\": [\n        {\n            \"ServerIp\": \"192.81.10.134\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f6ba582e-db6a-4bfd-8964-7cf151e614ce\"\n    }\n}",
+        "title": "多卡机器退还RDMA IP"
+      },
+      {
+        "document": "IB机器退还PkeyId，注意无需传PkeyId",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnassignIhnGpuServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 919191,\n    \"ClusterId\": 9999,\n    \"InstanceUuid\": \"351a6a34-994b-46a0-932a-a4c67c655830\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aece7980-6d1e-42c9-8ef6-c7e2cc180bc8\"\n    }\n}",
+        "title": "IB机器退还PkeyId"
+      }
+    ],
+    "UnassignRdmaServerIp": [
+      {
+        "document": "单卡机器退还RDMA IP",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnassignRdmaServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n    \"UniqClusterId\": \"hpc-075c288a\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 1\n    },\n    \"ServerIp\": \"192.81.1.190\",\n    \"Subnet\": \"192.81.1.188\",\n    \"Mask\": \"255.255.255.252\",\n    \"GatewayIp\": \"192.81.1.189\",\n    \"DeadlineTimeStamp\": \"2025-02-22 17:50:46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7326e28-298f-4dcb-a2ea-8064eb1dddd5\"\n    }\n}",
+        "title": "单卡机器退还RDMA IP"
+      },
+      {
+        "document": "多卡机器退还RDMA IP",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnassignRdmaServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 818181,\n    \"ClusterId\": 8888,\n    \"InstanceUuid\": \"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\",\n    \"RdmaIpAddresses\": [\n        {\n            \"ServerIp\": \"192.81.1.174\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"25ed9088-74e7-4ce0-8b97-b67774fee2dc\"\n    }\n}",
+        "title": "多卡机器退还RDMA IP"
+      },
+      {
+        "document": "IB机器退还PkeyId，注意无需传PkeyId",
+        "input": "POST / HTTP/1.1\nHost: ihn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnassignRdmaServerIp\n<公共请求参数>\n\n{\n    \"ModuleId\": 919191,\n    \"ClusterId\": 9999,\n    \"InstanceUuid\": \"3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d\",\n    \"ClusterInfo\": {\n        \"ClusterType\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"351a6a34-994b-46a0-932a-a4c67c654729\"\n    }\n}",
+        "title": "IB机器退还PkeyId"
+      }
+    ]
+  },
+  "version": "1.0"
+}

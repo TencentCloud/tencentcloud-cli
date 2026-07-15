@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AcquireEnvironment": {
+      "document": "获取或复用一个 Environment，并返回本次访问需要持有的 EnvironmentLease",
+      "input": "AcquireEnvironmentRequest",
+      "name": "获取或复用一个 Environment",
+      "output": "AcquireEnvironmentResponse",
+      "status": "online"
+    },
     "AcquireOAuth2AccessToken": {
       "document": "Agent 凭 WorkloadIdentityToken 获取第三方服务的 OAuth2 AccessToken。\n●若已有该用户的授权记录，直接返回 AccessToken（必要时自动 refresh）。\n●若尚无授权记录（首次），返回授权引导 URL，引导用户完成 3LO 流程。",
       "input": "AcquireOAuth2AccessTokenRequest",
@@ -26,6 +33,27 @@
       "input": "CreateAPIKeyRequest",
       "name": "创建新的API密钥",
       "output": "CreateAPIKeyResponse",
+      "status": "online"
+    },
+    "CreateAgent": {
+      "document": "创建 Agent 接口",
+      "input": "CreateAgentRequest",
+      "name": "创建  Agent",
+      "output": "CreateAgentResponse",
+      "status": "online"
+    },
+    "CreateAgentVersion": {
+      "document": "创建 Agent Version",
+      "input": "CreateAgentVersionRequest",
+      "name": "创建 Agent Version",
+      "output": "CreateAgentVersionResponse",
+      "status": "online"
+    },
+    "CreateEnvironmentTemplate": {
+      "document": "创建 EnvironmentTemplate",
+      "input": "CreateEnvironmentTemplateRequest",
+      "name": "创建 EnvironmentTemplate",
+      "output": "CreateEnvironmentTemplateResponse",
       "status": "online"
     },
     "CreatePreCacheImageTask": {
@@ -56,6 +84,34 @@
       "output": "DeleteAPIKeyResponse",
       "status": "online"
     },
+    "DeleteAgent": {
+      "document": "删除 Agent",
+      "input": "DeleteAgentRequest",
+      "name": "删除 Agent",
+      "output": "DeleteAgentResponse",
+      "status": "online"
+    },
+    "DeleteAgentVersion": {
+      "document": "删除某个逻辑 Agent 下的一个 AgentVersion。",
+      "input": "DeleteAgentVersionRequest",
+      "name": "删除某个逻辑 Agent 下的一个 AgentVersion",
+      "output": "DeleteAgentVersionResponse",
+      "status": "online"
+    },
+    "DeleteEnvironment": {
+      "document": "删除一个 Environment。\n\n删除 Environment 会释放 EnvironmentLease。",
+      "input": "DeleteEnvironmentRequest",
+      "name": "删除 Environment",
+      "output": "DeleteEnvironmentResponse",
+      "status": "online"
+    },
+    "DeleteEnvironmentTemplate": {
+      "document": "删除 EnvironmentTemplate。",
+      "input": "DeleteEnvironmentTemplateRequest",
+      "name": "删除 EnvironmentTemplate",
+      "output": "DeleteEnvironmentTemplateResponse",
+      "status": "online"
+    },
     "DeleteSandboxTool": {
       "document": "删除沙箱工具",
       "input": "DeleteSandboxToolRequest",
@@ -68,6 +124,76 @@
       "input": "DescribeAPIKeyListRequest",
       "name": "获取API密钥列表",
       "output": "DescribeAPIKeyListResponse",
+      "status": "online"
+    },
+    "DescribeAgent": {
+      "document": "查询 Agent 信息",
+      "input": "DescribeAgentRequest",
+      "name": "查询 Agent 信息",
+      "output": "DescribeAgentResponse",
+      "status": "online"
+    },
+    "DescribeAgentList": {
+      "document": "查询 Agent 列表",
+      "input": "DescribeAgentListRequest",
+      "name": "查询 Agent 列表",
+      "output": "DescribeAgentListResponse",
+      "status": "online"
+    },
+    "DescribeAgentVersion": {
+      "document": "查询单个 AgentVersion 定义",
+      "input": "DescribeAgentVersionRequest",
+      "name": "查询单个 AgentVersion 定义",
+      "output": "DescribeAgentVersionResponse",
+      "status": "online"
+    },
+    "DescribeAgentVersionList": {
+      "document": "查询某个逻辑 Agent 下的 AgentVersion 列表",
+      "input": "DescribeAgentVersionListRequest",
+      "name": "查询某个逻辑 Agent 下的 AgentVersion 列表",
+      "output": "DescribeAgentVersionListResponse",
+      "status": "online"
+    },
+    "DescribeEnvironment": {
+      "document": "查询一个 Environment 详情。",
+      "input": "DescribeEnvironmentRequest",
+      "name": "查询一个 Environment 详情",
+      "output": "DescribeEnvironmentResponse",
+      "status": "online"
+    },
+    "DescribeEnvironmentList": {
+      "document": "查询 Environment 列表",
+      "input": "DescribeEnvironmentListRequest",
+      "name": "查询 Environment 列表",
+      "output": "DescribeEnvironmentListResponse",
+      "status": "online"
+    },
+    "DescribeEnvironmentTemplate": {
+      "document": "查询一个 EnvironmentTemplate 详情。",
+      "input": "DescribeEnvironmentTemplateRequest",
+      "name": "查询一个 EnvironmentTemplate 详情",
+      "output": "DescribeEnvironmentTemplateResponse",
+      "status": "online"
+    },
+    "DescribeEnvironmentTemplateList": {
+      "document": "查询 EnvironmentTemplate 列表。",
+      "input": "DescribeEnvironmentTemplateListRequest",
+      "name": "查询 EnvironmentTemplate 列表",
+      "output": "DescribeEnvironmentTemplateListResponse",
+      "status": "online"
+    },
+    "DescribeExecutionRuntime": {
+      "document": "查询一个 ExecutionRuntime 详情。",
+      "input": "DescribeExecutionRuntimeRequest",
+      "name": "查询 ExecutionRuntime",
+      "output": "DescribeExecutionRuntimeResponse",
+      "status": "online"
+    },
+    "DescribeExecutionRuntimeList": {
+      "document": "查询当前账号下的 ExecutionRuntime 列表。",
+      "input": "DescribeExecutionRuntimeListRequest",
+      "name": "查询 ExecutionRuntime 列表",
+      "output": "DescribeExecutionRuntimeListResponse",
       "status": "online"
     },
     "DescribePreCacheImageTask": {
@@ -91,11 +217,53 @@
       "output": "DescribeSandboxToolListResponse",
       "status": "online"
     },
+    "ModifyAgent": {
+      "document": "修改 Agent",
+      "input": "ModifyAgentRequest",
+      "name": "修改 Agent",
+      "output": "ModifyAgentResponse",
+      "status": "online"
+    },
+    "ModifyEnvironmentTemplate": {
+      "document": "修改 EnvironmentTemplate 的可变字段。",
+      "input": "ModifyEnvironmentTemplateRequest",
+      "name": "修改 EnvironmentTemplate 的可变字段",
+      "output": "ModifyEnvironmentTemplateResponse",
+      "status": "online"
+    },
+    "ModifyExecutionRuntime": {
+      "document": "修改 ExecutionRuntime",
+      "input": "ModifyExecutionRuntimeRequest",
+      "name": "修改 ExecutionRuntime",
+      "output": "ModifyExecutionRuntimeResponse",
+      "status": "online"
+    },
     "PauseSandboxInstance": {
       "document": "暂停沙箱实例",
       "input": "PauseSandboxInstanceRequest",
       "name": "暂停沙箱实例",
       "output": "PauseSandboxInstanceResponse",
+      "status": "online"
+    },
+    "RegisterExecutionRuntime": {
+      "document": "为一个 EXTERNAL Agent 注册 ExecutionRuntime，使该 Agent 可以把后续执行请求调度到这个外部运行时。",
+      "input": "RegisterExecutionRuntimeRequest",
+      "name": "注册 ExecutionRuntime",
+      "output": "RegisterExecutionRuntimeResponse",
+      "status": "online"
+    },
+    "RemoveExecutionRuntime": {
+      "document": "注销一个 ExecutionRuntime，使其从调度集合中移除。",
+      "input": "RemoveExecutionRuntimeRequest",
+      "name": "注销一个 ExecutionRuntime",
+      "output": "RemoveExecutionRuntimeResponse",
+      "status": "online"
+    },
+    "RenewEnvironmentLease": {
+      "document": "续约一个 EnvironmentLease。",
+      "input": "RenewEnvironmentLeaseRequest",
+      "name": "续约一个 EnvironmentLease",
+      "output": "RenewEnvironmentLeaseResponse",
       "status": "online"
     },
     "ResumeSandboxInstance": {
@@ -201,6 +369,80 @@
         }
       ],
       "usage": "both"
+    },
+    "AcquireEnvironmentRequest": {
+      "document": "AcquireEnvironment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate ID。</p>",
+          "example": "envt-a5af17e22cadf5739f0321311aadb1fe",
+          "member": "string",
+          "name": "EnvironmentTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "ag-0c6c69201e87d43229f82b485d69311b",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户侧用户 ID。</p>",
+          "example": "user-a",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户侧 Session ID。</p>",
+          "example": "session-a",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcquireEnvironmentResponse": {
+      "document": "AcquireEnvironment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Environment 信息。</p>",
+          "example": "无",
+          "member": "Environment",
+          "name": "Environment",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentLease 信息。</p>",
+          "example": "无",
+          "member": "EnvironmentLease",
+          "name": "EnvironmentLease",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AcquireOAuth2AccessTokenRequest": {
       "document": "AcquireOAuth2AccessToken请求参数结构体",
@@ -408,6 +650,344 @@
       ],
       "type": "object"
     },
+    "Agent": {
+      "document": "Agent 定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "ag_a1b2c3d4",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 展示名称。</p>",
+          "example": "agent-demo",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 托管类型。</p>",
+          "example": "External",
+          "member": "string",
+          "name": "AgentType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 默认版本。</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "DefaultVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 状态。</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-07-06T08:10:52Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "2026-07-06T08:10:54Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentConfig": {
+      "document": "Agent 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 运行镜像地址。</p>",
+          "example": "ccr.ccs.tencentyun.com/agent-engine/e2e-agent:latest",
+          "member": "string",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器启动命令。</p>",
+          "example": "[\"nginx\"]",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器启动参数。</p>",
+          "example": "[\"-port\"]",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量。</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源规格。</p>",
+          "example": "无",
+          "member": "ResourceConfiguration",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 对外暴露端口。</p>",
+          "example": "无",
+          "member": "PortConfiguration",
+          "name": "Ports",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 健康检查配置。</p>",
+          "example": "无",
+          "member": "AgentHealthCheck",
+          "name": "HealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentHealthCheck": {
+      "document": "Agent 健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>HTTP 健康检查动作。</p>",
+          "example": "无",
+          "member": "AgentHttpGet",
+          "name": "HttpGet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentHttpGet": {
+      "document": "AgentHttpGet 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>健康检查路径。</p>",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查端口。</p>",
+          "example": "80",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查协议。</p>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentVersion": {
+      "document": "Agent 版本配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "agent-673cd78c78ed0d725461bddba9775680",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentVersion 版本号。</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已保存的 Agent 运行配置。</p>",
+          "example": "无",
+          "member": "AgentConfig",
+          "name": "AgentConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已保存的 provider 配置。</p>",
+          "example": "无",
+          "member": "ProviderConfig",
+          "name": "ProviderConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Provider 侧观测状态。</p>",
+          "example": "无",
+          "member": "ProviderStatus",
+          "name": "ProviderStatus",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>AgentVersion 默认使用的 WorkspaceTemplate ID。</p>",
+          "example": "workspace-template-c8d3961c9bafd23383047432394d007a",
+          "member": "string",
+          "name": "DefaultWorkspaceTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认环境模版 ID</p>",
+          "example": "envt-6311dafca27b87a106d00045c570e14c",
+          "member": "string",
+          "name": "DefaultEnvironmentTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentVersion 状态。</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-07-06T07:29:51Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "2026-07-06T07:29:53Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CLSConfig": {
       "document": "沙箱工具日志推送CLS相关配置",
       "members": [
@@ -585,12 +1165,301 @@
       ],
       "type": "object"
     },
+    "CreateAgentRequest": {
+      "document": "CreateAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 展示名称。",
+          "example": "example-agent",
+          "member": "string",
+          "name": "AgentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "Agent 框架类型。",
+          "example": "Strands",
+          "member": "string",
+          "name": "FrameworkType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Agent 托管类型。",
+          "example": "CLOUD",
+          "member": "string",
+          "name": "AgentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "初始 AgentVersion 版本号。",
+          "example": "v1",
+          "member": "string",
+          "name": "InitialVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Agent 运行配置。",
+          "example": "无",
+          "member": "AgentConfig",
+          "name": "AgentConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "Provider 配置。",
+          "example": "无",
+          "member": "ProviderConfig",
+          "name": "ProviderConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "默认使用的 WorkspaceTemplate ID。",
+          "example": "wst-example",
+          "member": "string",
+          "name": "DefaultWorkspaceTemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentResponse": {
+      "document": "CreateAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "逻辑 Agent 信息。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AgentVersion 信息。",
+          "example": "无",
+          "member": "AgentVersion",
+          "name": "AgentVersion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "逻辑 Agent ID。",
+          "example": "agent-test",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "Agent 展示名称。",
+          "example": "agent-test",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "Agent 框架类型。",
+          "example": "Strands",
+          "member": "string",
+          "name": "FrameworkType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "Agent 托管类型。",
+          "example": "Internal",
+          "member": "string",
+          "name": "AgentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "创建时间。",
+          "example": "2026-07-02T11:36:55Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "更新时间。",
+          "example": "2026-07-02T11:36:55Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentVersionRequest": {
+      "document": "CreateAgentVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "ag-0c6c69201e87d43229f82b485d69311b",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentVersion 版本号。</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "AgentVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 运行配置。</p>",
+          "example": "无",
+          "member": "AgentConfig",
+          "name": "AgentConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Provider 配置。</p>",
+          "example": "无",
+          "member": "ProviderConfig",
+          "name": "ProviderConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认环境模版 id</p>",
+          "example": "envt-6311dafca27b87a106d00045c570e14c",
+          "member": "string",
+          "name": "DefaultEnvironmentTemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentVersionResponse": {
+      "document": "CreateAgentVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AgentVersion 信息。</p>",
+          "example": "无",
+          "member": "AgentVersion",
+          "name": "AgentVersion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnvironmentTemplateRequest": {
+      "document": "CreateEnvironmentTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate 展示名称。</p>",
+          "example": "hello",
+          "member": "string",
+          "name": "EnvironmentTemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate 运行配置。</p>",
+          "example": "无",
+          "member": "EnvironmentTemplateConfig",
+          "name": "EnvironmentTemplateConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Provider 配置。</p>",
+          "example": "无",
+          "member": "ProviderConfig",
+          "name": "ProviderConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnvironmentTemplateResponse": {
+      "document": "CreateEnvironmentTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate 信息。</p>",
+          "example": "无",
+          "member": "EnvironmentTemplate",
+          "name": "EnvironmentTemplate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePreCacheImageTaskRequest": {
       "document": "CreatePreCacheImageTask请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -599,12 +1468,39 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当镜像类型 ImageRegistryType 为 custom 时(司内镜像源 csighub/mirrors)时，需要指定镜像凭证 ID</p><p>参数格式：acg-12345678</p>",
+          "example": "agc-qrf0bcug",
+          "member": "string",
+          "name": "ImageRegistryCredentialProviderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热范围(公有云资源池、自研资源池)</p><p>枚举值：</p><ul><li>internal： 内部自研账号仅预热自研资源池</li><li>external： 内领账号仅预热公有云资源池</li></ul>",
+          "example": "[\"internal\"]",
+          "member": "string",
+          "name": "Scopes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热超时时长</p>",
+          "example": "60",
+          "member": "int64",
+          "name": "TimeoutMinutes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -614,7 +1510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -624,7 +1520,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像 Digest",
+          "document": "<p>镜像 Digest</p>",
           "example": "sha256:abcdefg123...",
           "member": "string",
           "name": "ImageDigest",
@@ -634,12 +1530,22 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热范围(公有云资源池、自研资源池)</p><p>枚举值：</p><ul><li>internal： 内部自研账号仅预热自研资源池</li><li>external： 内领账号仅预热公有云资源池</li></ul>",
+          "example": "[\"internal\"]",
+          "member": "string",
+          "name": "Scopes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1148,6 +2054,123 @@
       ],
       "type": "object"
     },
+    "DeleteAgentRequest": {
+      "document": "DeleteAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。可通过 CreateAgent 接口获取。</p>",
+          "example": "ag-69119f95e5ea38890b0f234a2589be11",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentResponse": {
+      "document": "DeleteAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentVersionRequest": {
+      "document": "DeleteAgentVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "ag-0c6c69201e87d43229f82b485d69311b",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentVersion 版本号。</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "AgentVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentVersionResponse": {
+      "document": "DeleteAgentVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentRequest": {
+      "document": "DeleteEnvironment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Environment ID。</p>",
+          "example": "env-98cc7dd5ae144b549575caff7b3ea0a9",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentResponse": {
+      "document": "DeleteEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentTemplateRequest": {
+      "document": "DeleteEnvironmentTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate ID。</p>",
+          "example": "envt-6311dafca27b87a106d00045c570e14c",
+          "member": "string",
+          "name": "EnvironmentTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentTemplateResponse": {
+      "document": "DeleteEnvironmentTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteSandboxToolRequest": {
       "document": "DeleteSandboxTool请求参数结构体",
       "members": [
@@ -1201,6 +2224,534 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentListRequest": {
+      "document": "DescribeAgentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页返回数量。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤条件。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentListResponse": {
+      "document": "DescribeAgentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 列表。",
+          "example": "无",
+          "member": "Agent",
+          "name": "AgentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentRequest": {
+      "document": "DescribeAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "逻辑 Agent ID。",
+          "example": "agent-3f9b005aee935494836fd4a61b7cf1fe",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentResponse": {
+      "document": "DescribeAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "逻辑 Agent 信息。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentVersionListRequest": {
+      "document": "DescribeAgentVersionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "ag-0c6c69201e87d43229f82b485d69311b",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页返回数量。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询过滤条件。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentVersionListResponse": {
+      "document": "DescribeAgentVersionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AgentVersion 列表。</p>",
+          "example": "无",
+          "member": "AgentVersion",
+          "name": "AgentVersionSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果总数。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentVersionRequest": {
+      "document": "DescribeAgentVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "agent-673cd78c78ed0d725461bddba9775680",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentVersion 版本号。</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "AgentVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentVersionResponse": {
+      "document": "DescribeAgentVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AgentVersion 信息。</p>",
+          "example": "无",
+          "member": "AgentVersion",
+          "name": "AgentVersion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentListRequest": {
+      "document": "DescribeEnvironmentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页返回数量。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询过滤条件。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentListResponse": {
+      "document": "DescribeEnvironmentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Environment 列表。</p>",
+          "example": "无",
+          "member": "Environment",
+          "name": "EnvironmentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentRequest": {
+      "document": "DescribeEnvironment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Environment ID。</p>",
+          "example": "env-98cc7dd5ae144b549575caff7b3ea0a9",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentResponse": {
+      "document": "DescribeEnvironment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Environment 信息。</p>",
+          "example": "无",
+          "member": "Environment",
+          "name": "Environment",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentTemplateListRequest": {
+      "document": "DescribeEnvironmentTemplateList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页返回数量。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询过滤条件。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentTemplateListResponse": {
+      "document": "DescribeEnvironmentTemplateList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate 列表。</p>",
+          "example": "无",
+          "member": "EnvironmentTemplate",
+          "name": "EnvironmentTemplateSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果总数。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentTemplateRequest": {
+      "document": "DescribeEnvironmentTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate ID。</p>",
+          "example": "envt-6311dafca27b87a106d00045c570e14c",
+          "member": "string",
+          "name": "EnvironmentTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentTemplateResponse": {
+      "document": "DescribeEnvironmentTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate 信息。</p>",
+          "example": "无",
+          "member": "EnvironmentTemplate",
+          "name": "EnvironmentTemplate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionRuntimeListRequest": {
+      "document": "DescribeExecutionRuntimeList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页返回数量。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询过滤条件。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionRuntimeListResponse": {
+      "document": "DescribeExecutionRuntimeList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime 列表。</p>",
+          "example": "无",
+          "member": "ExecutionRuntime",
+          "name": "ExecutionRuntimeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果总数。</p>",
+          "example": "13",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionRuntimeRequest": {
+      "document": "DescribeExecutionRuntime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime ID。</p>",
+          "example": "runtime-c4f061ef306a4e4d99087e8412784177",
+          "member": "string",
+          "name": "ExecutionRuntimeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionRuntimeResponse": {
+      "document": "DescribeExecutionRuntime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime 信息。</p>",
+          "example": "无",
+          "member": "ExecutionRuntime",
+          "name": "ExecutionRuntime",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1492,6 +3043,527 @@
       ],
       "usage": "both"
     },
+    "Environment": {
+      "document": "Environment 定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境 ID</p>",
+          "example": "env-98cc7dd5ae144b549575caff7b3ea0a9",
+          "member": "string",
+          "name": "EnvironmentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境模板 ID</p>",
+          "example": "envt-a5af17e22cadf5739f0321311aadb1fe",
+          "member": "string",
+          "name": "EnvironmentTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。</p>",
+          "example": "ag-0c6c69201e87d43229f82b485d69311b",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID。</p>",
+          "example": "user-a",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Session ID。</p>",
+          "example": "session-a",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Workspace 使用配置。</p>",
+          "example": "无",
+          "member": "EnvironmentProviderConfig",
+          "name": "ProviderConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Workspace 状态。</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-07-13T07:47:53Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "2026-07-13T07:47:53Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvironmentLease": {
+      "document": "Environment 租约定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境租约 ID</p>",
+          "example": "envl-299dfa51dfe4439b8cc49d534c28df43",
+          "member": "string",
+          "name": "EnvironmentLeaseId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境 ID</p>",
+          "example": "env-98cc7dd5ae144b549575caff7b3ea0a9",
+          "member": "string",
+          "name": "EnvironmentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>WorkspaceLease 过期时间。</p>",
+          "example": "2026-07-13T07:55:12Z",
+          "member": "datetime_iso",
+          "name": "ExpiresTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvironmentProviderConfig": {
+      "document": "Environment 使用配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Provider 类型。</p>",
+          "example": "TENCENT_AGS",
+          "member": "string",
+          "name": "ProviderKind",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Tencent AGS Workspace 使用配置。</p>",
+          "example": "无",
+          "member": "EnvironmentTencentAGSProviderConfig",
+          "name": "TencentAGS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvironmentTemplate": {
+      "document": "EnvironmentTemplate 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境模板 ID</p>",
+          "example": "envt-aa2cd7b592ab25341629691aa343bf97",
+          "member": "string",
+          "name": "EnvironmentTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境模板名称</p>",
+          "example": "hello-2",
+          "member": "string",
+          "name": "EnvironmentTemplateName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境模板配置</p>",
+          "example": "无",
+          "member": "EnvironmentTemplateConfig",
+          "name": "EnvironmentTemplateConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已保存的 provider 配置。</p>",
+          "example": "无",
+          "member": "ProviderConfig",
+          "name": "ProviderConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Provider 侧观测状态。</p>",
+          "example": "无",
+          "member": "ProviderStatus",
+          "name": "ProviderStatus",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>WorkspaceTemplate 状态。</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-07-10T15:45:02Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "2026-07-13T06:56:58Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvironmentTemplateConfig": {
+      "document": "EnvironmentTemplate 运行配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Workspace 镜像地址。</p>",
+          "example": "ccr.ccs.tencentyun.com/ags.dev/go-httpbin:2.19-alpine-with-envd",
+          "member": "string",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Workspace 容器启动命令。</p>",
+          "example": "[\"/bin/bash\"]",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Workspace 容器启动参数。</p>",
+          "example": "[\"-c\"]",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量。</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源规格。</p>",
+          "example": "无",
+          "member": "ResourceConfiguration",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Workspace 对外暴露端口。</p>",
+          "example": "无",
+          "member": "PortConfiguration",
+          "name": "Ports",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Workspace 健康检查配置。</p>",
+          "example": "无",
+          "member": "AgentHealthCheck",
+          "name": "HealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvironmentTencentAGSProviderConfig": {
+      "document": "Tencent AGS Environment 使用配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Tencent AGS Sandbox Instance ID。</p>",
+          "example": "hkelnrm*******************47pimmsmrvoukr",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次 AcquireWorkspace 获取的访问 token。服务端不会把该 token 持久化到 MySQL；后续 acquire 会重新获取 token。</p>",
+          "example": "sit_*******************************************",
+          "member": "string",
+          "name": "AccessToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecutionRuntime": {
+      "document": "ExecutionRuntime",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime ID。由服务端生成。</p>",
+          "example": "er-055d23edf4b342ada9b5867c94013263",
+          "member": "string",
+          "name": "ExecutionRuntimeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的 Agent ID。外部注册 runtime 绑定 EXTERNAL Agent；托管 runtime 绑定对应的托管 Agent。</p>",
+          "example": "ag-88a1bcecc5aa194add6fe760e6a6db15",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度状态。</p>",
+          "example": "DISABLED",
+          "member": "string",
+          "name": "SchedulingStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前活跃 lease 数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ActiveLeaseCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime 活跃 lease 容量。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Capacity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime 访问端点模板。</p>",
+          "example": "无",
+          "member": "ExecutionRuntimeEndpoint",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-07-10T04:07:40Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "2026-07-10T04:07:40Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecutionRuntimeEndpoint": {
+      "document": "ExecutionRuntime 的 Endpoint 结构定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问协议。</p>",
+          "example": "HTTPS",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Host 模板。</p>",
+          "example": "8080-7dkpromwezxrq75dhhb47p2nznn7n6y6umusrs5p.ap-shanghai.tencentags.com",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接端口。</p>",
+          "example": "443",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Host 模板可引用的非敏感路由元数据。</p>",
+          "example": "无",
+          "member": "KeyValue",
+          "name": "Metadata",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "过滤列表规则",
       "members": [
@@ -1609,6 +3681,11 @@
       ],
       "usage": "both"
     },
+    "KeyValue": {
+      "document": "Key Value 信息",
+      "members": [],
+      "usage": "both"
+    },
     "LogConfiguration": {
       "document": "沙箱工具日志采集相关配置",
       "members": [
@@ -1681,6 +3758,180 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyAgentRequest": {
+      "document": "ModifyAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "ag-69119f95e5ea38890b0f234a2589be11",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 展示名称。</p>",
+          "example": "hello-world",
+          "member": "string",
+          "name": "AgentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 默认版本。</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "DefaultVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentResponse": {
+      "document": "ModifyAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent 信息。</p>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvironmentTemplateRequest": {
+      "document": "ModifyEnvironmentTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate ID。</p>",
+          "example": "envt-6311dafca27b87a106d00045c570e14c",
+          "member": "string",
+          "name": "EnvironmentTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate 展示名称。</p>",
+          "example": "hello-2",
+          "member": "string",
+          "name": "EnvironmentTemplateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate 运行配置。</p>",
+          "example": "无",
+          "member": "EnvironmentTemplateConfig",
+          "name": "EnvironmentTemplateConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Provider 配置。</p>",
+          "example": "无",
+          "member": "ProviderConfig",
+          "name": "ProviderConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvironmentTemplateResponse": {
+      "document": "ModifyEnvironmentTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentTemplate 信息。</p>",
+          "example": "无",
+          "member": "EnvironmentTemplate",
+          "name": "EnvironmentTemplate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExecutionRuntimeRequest": {
+      "document": "ModifyExecutionRuntime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime ID。</p>",
+          "example": "runtime-c4f061ef306a4e4d99087e8412784177",
+          "member": "string",
+          "name": "ExecutionRuntimeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>活跃 lease 容量上限。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Capacity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度状态。</p>",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "SchedulingStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExecutionRuntimeResponse": {
+      "document": "ModifyExecutionRuntime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime 信息。</p>",
+          "example": "无",
+          "member": "ExecutionRuntime",
+          "name": "ExecutionRuntime",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "MountOption": {
       "document": "沙箱实例存储挂载配置可选项，用于覆盖沙箱工具的存储配置的部分选项，并提供子路径挂载配置。",
@@ -1907,6 +4158,179 @@
         }
       ],
       "usage": "both"
+    },
+    "ProviderConfig": {
+      "document": "ProviderConfig",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Provider 类型。</p>",
+          "example": "TENCENT_AGS",
+          "member": "string",
+          "name": "ProviderKind",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Tencent AGS provider 配置。</p>",
+          "example": "无",
+          "member": "TencentAGSProviderConfig",
+          "name": "TencentAGS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProviderStatus": {
+      "document": "ProviderStatus",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Tencent AGS provider 观测状态。</p>",
+          "example": "无",
+          "member": "TencentAGSProviderStatus",
+          "name": "TencentAGS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RegisterExecutionRuntimeRequest": {
+      "document": "RegisterExecutionRuntime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑 Agent ID。</p>",
+          "example": "agent-0140c9167cb00da6a0d33e15ead993f8",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度状态。</p>",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "SchedulingStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>活跃 lease 容量上限。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Capacity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部运行时访问端点模板。</p>",
+          "example": "无",
+          "member": "ExecutionRuntimeEndpoint",
+          "name": "Endpoint",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterExecutionRuntimeResponse": {
+      "document": "RegisterExecutionRuntime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime 信息。</p>",
+          "example": "无",
+          "member": "ExecutionRuntime",
+          "name": "ExecutionRuntime",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveExecutionRuntimeRequest": {
+      "document": "RemoveExecutionRuntime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ExecutionRuntime ID。</p>",
+          "example": "runtime-c4f061ef306a4e4d99087e8412784177",
+          "member": "string",
+          "name": "ExecutionRuntimeId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveExecutionRuntimeResponse": {
+      "document": "RemoveExecutionRuntime返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewEnvironmentLeaseRequest": {
+      "document": "RenewEnvironmentLease请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentLease ID。</p>",
+          "example": "envl-299dfa51dfe4439b8cc49d534c28df43",
+          "member": "string",
+          "name": "EnvironmentLeaseId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewEnvironmentLeaseResponse": {
+      "document": "RenewEnvironmentLease返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EnvironmentLease 信息。</p>",
+          "example": "无",
+          "member": "EnvironmentLease",
+          "name": "EnvironmentLease",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResourceConfiguration": {
       "document": "资源配置",
@@ -2571,6 +4995,79 @@
       ],
       "usage": "both"
     },
+    "TencentAGSNetworkConfiguration": {
+      "document": "TencentAGS 网络配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Tencent AGS 网络模式。</p>",
+          "example": "PUBLIC",
+          "member": "string",
+          "name": "NetworkMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TencentAGSProviderConfig": {
+      "document": "TencentAGSProviderConfig",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户提供的 Tencent AGS 角色 ARN。该字段属于 TencentAGS，不属于运行配置。</p>",
+          "example": "qcs::cam::uin/3321337994:roleName/cos-tcr-full-ags",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库类型。</p>",
+          "example": "personal",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Tencent AGS 网络配置。</p>",
+          "example": "无",
+          "member": "TencentAGSNetworkConfiguration",
+          "name": "NetworkConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TencentAGSProviderStatus": {
+      "document": "TencentAGSProviderStatus",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Tencent AGS Sandbox Tool ID。</p>",
+          "example": "sdt-o9kjw8hj",
+          "member": "string",
+          "name": "ToolId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateSandboxInstanceRequest": {
       "document": "UpdateSandboxInstance请求参数结构体",
       "members": [
@@ -2621,8 +5118,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱工具ID",
-          "example": "sdt-dibk4rra",
+          "document": "<p>沙箱工具ID</p>",
+          "example": "sdt-********",
           "member": "string",
           "name": "ToolId",
           "required": true,
@@ -2630,8 +5127,8 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具描述，最大长度200字符",
-          "example": "这是一个沙箱",
+          "document": "<p>沙箱工具描述，最大长度200字符</p>",
+          "example": "沙箱工具一号",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2639,7 +5136,7 @@
         },
         {
           "disabled": false,
-          "document": "网络配置",
+          "document": "<p>网络配置</p>",
           "example": "无",
           "member": "NetworkConfiguration",
           "name": "NetworkConfiguration",
@@ -2648,7 +5145,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -2657,7 +5154,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具自定义配置",
+          "document": "<p>沙箱工具自定义配置</p>",
           "example": "无",
           "member": "CustomConfiguration",
           "name": "CustomConfiguration",

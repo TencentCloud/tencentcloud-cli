@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cvm ModifyDisasterRecoverGroupAttribute --cli-unfold-argument  \
-    --DisasterRecoverGroupId ps-58l1hu01 \
-    --Name 物理机容灾组1
+    --DisasterRecoverGroupId ps-39lmgkht \
+    --Name NewDisasterRecoverGroupName
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6e185c04-116f-47b7-b21c-e13580c5d0f2"
+        "RequestId": "0b184884-c513-4cd3-92c9-d4a69b05f44b"
     }
 }
 ```

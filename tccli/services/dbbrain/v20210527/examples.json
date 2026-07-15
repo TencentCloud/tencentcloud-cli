@@ -72,6 +72,14 @@
         "title": "创建健康报告浏览地址"
       }
     ],
+    "CreateIgnoreDiagRecord": [
+      {
+        "document": "忽略诊断类型",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIgnoreDiagRecord\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-lvgh1oyv\",\n    \"Product\": \"mysql\",\n    \"DiagItem\": \"CpuUsage\",\n    \"Status\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1a04f16-3a03-46c4-a80f-41df480c28b0\"\n    }\n}",
+        "title": "忽略CpuUsage诊断类型"
+      }
+    ],
     "CreateKillTask": [
       {
         "document": "",

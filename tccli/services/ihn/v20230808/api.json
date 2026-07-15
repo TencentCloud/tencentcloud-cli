@@ -1,0 +1,1685 @@
+{
+  "actions": {
+    "AssignIhnGpuServerIp": {
+      "document": "申请GPU服务器IP",
+      "input": "AssignIhnGpuServerIpRequest",
+      "name": "申请IHN GPU服务器IP",
+      "output": "AssignIhnGpuServerIpResponse",
+      "status": "online"
+    },
+    "AssignRdmaServerIp": {
+      "document": "申请GPU服务器IP",
+      "input": "AssignRdmaServerIpRequest",
+      "name": "申请GPU服务器IP",
+      "output": "AssignRdmaServerIpResponse",
+      "status": "online"
+    },
+    "CreateRdmaServer": {
+      "document": "创建GPU服务器。",
+      "input": "CreateRdmaServerRequest",
+      "name": "创建GPU服务器",
+      "output": "CreateRdmaServerResponse",
+      "status": "online"
+    },
+    "DeleteRdmaServer": {
+      "document": "申请GPU服务器IP",
+      "input": "DeleteRdmaServerRequest",
+      "name": "删除GPU服务器",
+      "output": "DeleteRdmaServerResponse",
+      "status": "online"
+    },
+    "DescribeRdmaIpPoolSubnet": {
+      "document": "查询GPU服务器信息。",
+      "input": "DescribeRdmaIpPoolSubnetRequest",
+      "name": "查询RDMA地址池网段",
+      "output": "DescribeRdmaIpPoolSubnetResponse",
+      "status": "online"
+    },
+    "DescribeRdmaServers": {
+      "document": "查询GPU服务器信息。",
+      "input": "DescribeRdmaServersRequest",
+      "name": "查询GPU服务器",
+      "output": "DescribeRdmaServersResponse",
+      "status": "online"
+    },
+    "DescribeVpcTaskResult": {
+      "document": "本接口（DescribeVpcTaskResult）用于查询IHN任务执行结果。",
+      "input": "DescribeVpcTaskResultRequest",
+      "name": "查询IHN异步任务执行结果",
+      "output": "DescribeVpcTaskResultResponse",
+      "status": "online"
+    },
+    "UnassignIhnGpuServerIp": {
+      "document": "释放IHN GPU服务器IP",
+      "input": "UnassignIhnGpuServerIpRequest",
+      "name": "释放IHN GPU服务器IP",
+      "output": "UnassignIhnGpuServerIpResponse",
+      "status": "online"
+    },
+    "UnassignRdmaServerIp": {
+      "document": "释放GPU服务器IP",
+      "input": "UnassignRdmaServerIpRequest",
+      "name": "释放GPU服务器IP",
+      "output": "UnassignRdmaServerIpResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-08-08",
+    "api_brief": "智能高性能网络物理集群、网络实例、GPU服务器等相关接口。",
+    "serviceNameCN": "智能高性能网络",
+    "serviceShortName": "ihn"
+  },
+  "objects": {
+    "AssignIhnGpuServerIpRequest": {
+      "document": "AssignIhnGpuServerIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d",
+          "member": "string",
+          "name": "InstanceUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的字符ID。",
+          "example": "hpc-075c399b",
+          "member": "string",
+          "name": "UniqClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请RDMA IP的数量。默认值为1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IpAddressCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群信息。",
+          "example": "无",
+          "member": "IhnClusterInfo",
+          "name": "ClusterInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务截止时间。",
+          "example": "2025-02-22 17:50:46",
+          "member": "string",
+          "name": "DeadlineTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用场景。",
+          "example": "无",
+          "member": "UsageScenarioInfo",
+          "name": "UsageScenario",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIhnGpuServerIpResponse": {
+      "document": "AssignIhnGpuServerIp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d",
+          "member": "string",
+          "name": "InstanceUuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.10.18",
+          "member": "string",
+          "name": "ServerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。",
+          "example": "192.81.10.17",
+          "member": "string",
+          "name": "GatewayIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.10.16",
+          "member": "string",
+          "name": "Subnet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.240",
+          "member": "string",
+          "name": "Mask",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP列表。批量申请多个RDMA IP时返回此字段。",
+          "example": "无",
+          "member": "RdmaServerIp",
+          "name": "IpAddresses",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物理集群架构类型。0：基于网平网络的架构；1：云自研ROCEv2架构；2：Infiniband架构。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IB（Infiniband）机型GPU服务器申请到的分区键（Partition Key）ID。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PKeyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignRdmaServerIpRequest": {
+      "document": "AssignRdmaServerIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "075c288a-cd57-4906-b1fb-f2fd6f9f36c3",
+          "member": "string",
+          "name": "InstanceUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的字符ID。",
+          "example": "hpc-075c288a",
+          "member": "string",
+          "name": "UniqClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请RDMA IP的数量。默认值为1。",
+          "example": "8",
+          "member": "uint64",
+          "name": "IpAddressCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群信息。",
+          "example": "无",
+          "member": "RdmaClusterInfo",
+          "name": "ClusterInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "申请RDMA IP的掩码长度。范围是28-30。默认值为30。",
+          "example": "30",
+          "member": "uint64",
+          "name": "IntMask",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群附加信息。True：IHN保存了集群信息，通过ModuleId内部查询； False：IHN未保存集群信息；不传此参数：IHN未保存集群信息。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClusterInfoV2",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "任务截止时间。",
+          "example": "2025-02-22 17:50:46",
+          "member": "string",
+          "name": "DeadlineTimeStamp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignRdmaServerIpResponse": {
+      "document": "AssignRdmaServerIp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "30e5d1da-071e-4c21-9a50-d788f834e2c6",
+          "member": "string",
+          "name": "InstanceUuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.1.158",
+          "member": "string",
+          "name": "ServerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。",
+          "example": "192.81.1.157",
+          "member": "string",
+          "name": "GatewayIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.1.156",
+          "member": "string",
+          "name": "Subnet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.252",
+          "member": "string",
+          "name": "Mask",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP列表。批量申请多个RDMA IP时返回此字段。",
+          "example": "无",
+          "member": "RdmaServerIp",
+          "name": "IpAddresses",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物理集群架构类型。0：基于网平网络的架构；1：云自研ROCEv2架构；2：Infiniband架构。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IB（Infiniband）机型GPU服务器申请到的分区键（Partition Key）ID。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PKeyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRdmaServerRequest": {
+      "document": "CreateRdmaServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "cb9da3ec-e96e-4fab-ad85-e96e4fabad85",
+          "member": "string",
+          "name": "InstanceUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器宿主机IP。云托付物理服务器此参数可以传空字符串。",
+          "example": "8.8.111.1",
+          "member": "string",
+          "name": "HostIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的字符ID。",
+          "example": "hpc-5b944e72",
+          "member": "string",
+          "name": "UniqClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群信息。",
+          "example": "无",
+          "member": "RdmaClusterInfo",
+          "name": "ClusterInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群附加信息。True：IHN保存了集群信息，通过ModuleId内部查询； False：IHN未保存集群信息；不传此参数：IHN未保存集群信息。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClusterInfoV2",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器宿主机固资。云托付物理服务器传此参数。",
+          "example": "TYNT200303E0",
+          "member": "string",
+          "name": "HostAssetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IB（Infiniband）机型GPU服务器网卡的全局统一标识（Global Unique Identifier）。",
+          "example": "[\"491a7f3c47145acf\"]",
+          "member": "string",
+          "name": "GUID",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "IB（Infiniband）机型GPU服务器申请到的分区键（Partition Key）ID。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PKeyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.1.158",
+          "member": "string",
+          "name": "ServerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务截止时间。",
+          "example": "2025-02-22 17:50:46",
+          "member": "string",
+          "name": "DeadlineTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.1.156",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.252",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。\t",
+          "example": "192.81.1.157",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动隔离。默认值为False。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoIsolate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP列表。多卡机器传此参数。",
+          "example": "无",
+          "member": "RdmaServerIp",
+          "name": "RdmaIpAddresses",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRdmaServerResponse": {
+      "document": "CreateRdmaServer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRdmaServerRequest": {
+      "document": "DeleteRdmaServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "075c288a-cd57-4906-b1fb-f2fd6f9f36b2",
+          "member": "string",
+          "name": "InstanceUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的字符ID。",
+          "example": "hpc-6f9f36b2",
+          "member": "string",
+          "name": "UniqClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群信息。",
+          "example": "无",
+          "member": "RdmaClusterInfo",
+          "name": "ClusterInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群附加信息。True：IHN保存了集群信息，通过ModuleId内部查询； False：IHN未保存集群信息；不传此参数：IHN未保存集群信息。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClusterInfoV2",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "IB（Infiniband）机型GPU服务器网卡的全局统一标识（Global Unique Identifier）。",
+          "example": "[\"491a7f3c47145acf\"]",
+          "member": "string",
+          "name": "GUID",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "IB（Infiniband）机型GPU服务器申请到的分区键（Partition Key）ID。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PKeyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.1.158",
+          "member": "string",
+          "name": "ServerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务截止时间。",
+          "example": "2025-02-22 17:50:46",
+          "member": "string",
+          "name": "DeadlineTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.1.156",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.252",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。",
+          "example": "192.81.1.157",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP列表。多卡机器传此参数。",
+          "example": "无",
+          "member": "RdmaServerIp",
+          "name": "RdmaIpAddresses",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRdmaServerResponse": {
+      "document": "DeleteRdmaServer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRdmaIpPoolSubnetRequest": {
+      "document": "DescribeRdmaIpPoolSubnet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。\t",
+          "example": "[818181]",
+          "member": "uint64",
+          "name": "ModuleId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求对象个数。默认值为20。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRdmaIpPoolSubnetResponse": {
+      "document": "DescribeRdmaIpPoolSubnet返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "RDMA地址池信息。",
+          "example": "无",
+          "member": "RdmaIpPoolSubnet",
+          "name": "RdmaIpPoolSubnets",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满足查询条件的RDMA地址池信息的总数量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRdmaServersRequest": {
+      "document": "DescribeRdmaServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。\t",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。\t",
+          "example": "[\"cb9da3ec-e96e-4fab-ad85-e96e4fabad85\"]",
+          "member": "string",
+          "name": "InstanceUuids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群信息。",
+          "example": "无",
+          "member": "RdmaClusterInfo",
+          "name": "ClusterInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求对象个数。默认值为20。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRdmaServersResponse": {
+      "document": "DescribeRdmaServers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU服务器信息。",
+          "example": "无",
+          "member": "RdmaServer",
+          "name": "RdmaServers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满足查询条件的GPU服务器信息的总数量。",
+          "example": "8",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcTaskResultRequest": {
+      "document": "DescribeVpcTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务请求返回的RequestId。",
+          "example": "dd214b4d-fe3d-498b-9851-d1dad89832c4",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcTaskResultResponse": {
+      "document": "DescribeVpcTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务执行结果。SUCCESS表示任务执行成功，FAILED表示任务执行失败，RUNNING表示任务执行中。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务执行输出。用于申请单IP的场景。",
+          "example": "无",
+          "member": "RdmaServerIpOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务详细结果。用于批量申请多IP的场景。",
+          "example": "无",
+          "member": "TaskResultDetailInfo",
+          "name": "Result",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IhnClusterInfo": {
+      "document": "IHN RDMA物理集群信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群架构类型。0：基于网平网络的架构；1：云自研ROCEv2架构；2：Infiniband架构。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群（Cloud Dedicated Cluster，CDC）的ID。例如cluster-d8jygb6l。",
+          "example": "cluster-3e9a1f5d",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云托付物理服务器（Cloud Hosting Cluster，CHC）的ID。例如chc-43nzfu3e。",
+          "example": "chc-2e4c1a7d",
+          "member": "string",
+          "name": "ChcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群是否要先购买出来。True: IHN物理集群需预先创建，可以根据moduleId查询到，如CDZ场景。\nFalse: IHN物理集群无需预先创建，如存量HCC物理集群场景。\n不传此参数：IHN物理集群无需预先创建。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPhysicalClusterPreCreated",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "IhnContainerInfo": {
+      "document": "容器信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "容器场景下网卡网段的掩码长度。只支持28和29。默认值为28。",
+          "example": "28",
+          "member": "uint64",
+          "name": "IntMaskForSupportMaxNumbers",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "容器场景的宿主机架构。V1：早期上线的机型，以单网卡为主。\nV2：新上线的多网卡机型，V2场景下只可以申请到对该场景指定投放的RDMA地址。默认值为V1。",
+          "example": "V1",
+          "member": "string",
+          "name": "HostArchitecture",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "RdmaClusterInfo": {
+      "document": "RDMA物理集群信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群架构类型。0：基于网平网络的架构；1：云自研ROCEv2架构；2：Infiniband架构。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "本地专用集群（Cloud Dedicated Cluster，CDC）的ID。例如cluster-d8jygb6l。",
+          "example": "cluster-367b3579",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云托付物理服务器（Cloud Hosting Cluster，CHC）的ID。例如chc-43nzfu3e。",
+          "example": "chc-83038b8c",
+          "member": "string",
+          "name": "ChcId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "RdmaIpPoolSubnet": {
+      "document": "RDMA地址池网段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "ModuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RDMA地址池的网段。",
+          "example": "192.168.0.0",
+          "member": "string",
+          "name": "Subnet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RDMA地址池的掩码长度。",
+          "example": "17",
+          "member": "uint64",
+          "name": "IntMask",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2023-05-06 13:53:53",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RdmaServer": {
+      "document": "GPU服务器信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "cb9da3ec-e96e-4fab-ad85-e96e4fabad85",
+          "member": "string",
+          "name": "InstanceUuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.1.158",
+          "member": "string",
+          "name": "ServerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。",
+          "example": "192.81.1.157",
+          "member": "string",
+          "name": "GatewayIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.1.156",
+          "member": "string",
+          "name": "Subnet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.252",
+          "member": "string",
+          "name": "Mask",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码长度。",
+          "example": "30",
+          "member": "uint64",
+          "name": "IntMask",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动隔离。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoIsolate",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IB（Infiniband）机型GPU服务器网卡的全局统一标识（Global Unique Identifier）。",
+          "example": "491a7f3c47145acf",
+          "member": "string",
+          "name": "GUID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IB（Infiniband）机型GPU服务器申请到的分区键（Partition Key）ID。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PKeyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RdmaServerIp": {
+      "document": "GPU服务器RDMA IP。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.1.154",
+          "member": "string",
+          "name": "ServerIp",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。",
+          "example": "192.81.1.153",
+          "member": "string",
+          "name": "GatewayIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.1.152",
+          "member": "string",
+          "name": "Subnet",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.252",
+          "member": "string",
+          "name": "Mask",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RdmaServerIpOutput": {
+      "document": "GPU服务器RDMA IP异步任务返回信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.1.190",
+          "member": "string",
+          "name": "ServerIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。",
+          "example": "192.81.1.189",
+          "member": "string",
+          "name": "GatewayIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.1.188",
+          "member": "string",
+          "name": "Subnet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.252",
+          "member": "string",
+          "name": "Mask",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。\t",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "075c288a-cd57-4906-b1fb-f2fd6f9f36c3",
+          "member": "string",
+          "name": "InstanceUuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码长度。",
+          "example": "30",
+          "member": "uint64",
+          "name": "IntMask",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskResultDetailInfo": {
+      "document": "异步任务结果详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID。\t",
+          "example": "075c288a-cd57-4906-b1fb-f2fd6f9f36c3",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。\t",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务执行输出。",
+          "example": "{\\\"ClusterId\\\": 8888, \\\"GatewayIp\\\": \\\"192.81.1.173\\\", \\\"InstanceUuid\\\": \\\"075c288a-cd57-4906-b1fb-f2fd6f9f36c3\\\", \\\"IntMask\\\": 30, \\\"Mask\\\": \\\"255.255.255.252\\\", \\\"ModuleId\\\": 818181, \\\"ServerIp\\\": \\\"192.81.1.174\\\", \\\"Subnet\\\": \\\"192.81.1.172\\\"}",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UnassignIhnGpuServerIpRequest": {
+      "document": "UnassignIhnGpuServerIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "3e9a1f5d-7c42-4b89-a6d3-9f8b2e4c1a7d",
+          "member": "string",
+          "name": "InstanceUuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的字符ID。",
+          "example": "hpc-6f9f36b2",
+          "member": "string",
+          "name": "UniqClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群信息。",
+          "example": "无",
+          "member": "IhnClusterInfo",
+          "name": "ClusterInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.10.18",
+          "member": "string",
+          "name": "ServerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.10.16",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.252",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。",
+          "example": "192.81.10.17",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务截止时间。",
+          "example": "2025-02-22 17:50:46",
+          "member": "string",
+          "name": "DeadlineTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP列表。多卡机器传此参数。",
+          "example": "无",
+          "member": "RdmaServerIp",
+          "name": "RdmaIpAddresses",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnassignIhnGpuServerIpResponse": {
+      "document": "UnassignIhnGpuServerIp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnassignRdmaServerIpRequest": {
+      "document": "UnassignRdmaServerIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群模块ID。",
+          "example": "818181",
+          "member": "uint64",
+          "name": "ModuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的数值ID。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器UUID。",
+          "example": "075c288a-cd57-4906-b1fb-f2fd6f9f36c3",
+          "member": "string",
+          "name": "InstanceUuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HPC高性能计算集群的字符ID。",
+          "example": "hpc-075c288a",
+          "member": "string",
+          "name": "UniqClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群信息。",
+          "example": "无",
+          "member": "RdmaClusterInfo",
+          "name": "ClusterInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP。",
+          "example": "192.81.1.190",
+          "member": "string",
+          "name": "ServerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的子网。",
+          "example": "192.81.1.188",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的掩码。",
+          "example": "255.255.255.252",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP的网关。",
+          "example": "192.81.1.189",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务截止时间。",
+          "example": "2025-02-22 17:50:46",
+          "member": "string",
+          "name": "DeadlineTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GPU服务器RDMA IP列表。多卡机器传此参数。",
+          "example": "无",
+          "member": "RdmaServerIp",
+          "name": "RdmaIpAddresses",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnassignRdmaServerIpResponse": {
+      "document": "UnassignRdmaServerIp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UsageScenarioInfo": {
+      "document": "RDMA IP使用场景信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "使用场景。PHYSICAL_MACHINE：物理机；HCC：虚拟机；CONTAINER：容器。",
+          "example": "CONTAINER",
+          "member": "string",
+          "name": "Scenario",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器信息。",
+          "example": "无",
+          "member": "IhnContainerInfo",
+          "name": "ContainerInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

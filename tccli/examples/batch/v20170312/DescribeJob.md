@@ -40,7 +40,7 @@ Output:
                 "CreateTime": "2018-02-07T09:29:09Z"
             }
         ],
-        "Zone": "ap-guangzhou-2",
+        "Zone": "ap-guangzhou-6",
         "TaskMetrics": {
             "PendingCount": 0,
             "FailedCount": 0,

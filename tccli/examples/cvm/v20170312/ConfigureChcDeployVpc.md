@@ -6,22 +6,18 @@ Input:
 
 ```
 tccli cvm ConfigureChcDeployVpc --cli-unfold-argument  \
-    --ChcIds chc-1a2b3c4d chc-adf34aft \
-    --DeployVirtualPrivateCloud.SubnetId "subnet-1234abcd" \
-    --DeployVirtualPrivateCloud.VpcId "vpc-1234abcd8" \
-    --DeployVirtualPrivateCloud.PrivateIpAddresses 10.0.1.2 10.0.1.3 \
-    --DeploySecurityGroupIds sg-8a7f6d5s \
-    --ChcDeployExtraConfig.MiniOsType public \
-    --ChcDeployExtraConfig.BootType x86_legacy \
-    --ChcDeployExtraConfig.BootFile pxelinux.0 \
-    --ChcDeployExtraConfig.NextServerAddress 169.254.68.10
+    --ChcIds chc-ej2pc1yr \
+    --DeployVirtualPrivateCloud.VpcId vpc-oa69jq11 \
+    --DeployVirtualPrivateCloud.SubnetId subnet-ov1xx3u3 \
+    --DeployVirtualPrivateCloud.PrivateIpAddresses 11.97.4.66 \
+    --DeploySecurityGroupIds sg-j9ro1lex
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
+        "RequestId": "a35f2e81-435f-4bb0-898c-35e3bc9cb5f3"
     }
 }
 ```

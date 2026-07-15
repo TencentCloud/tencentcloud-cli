@@ -266,6 +266,13 @@
       "output": "DescribeAccountInstancesResponse",
       "status": "online"
     },
+    "DescribeAccountInstancesInternal": {
+      "document": "本接口（DescribeAccountInstancesInternal）用于公司内部查询一个或多个实例的详细信息。\n\n* 可以根据UUID、APPID、实例 ID、实例的公网 IP 查询实例的详细信息。\n* 过滤信息详细请见过滤器 [Filters](https://cloud.tencent.com/document/product/1207/47576#Filter) 。\n* 如果参数为空，返回当前用户一定数量（Limit 所指定的数量，默认为 20）的实例。\n* 支持查询实例的最新操作（LatestOperation）以及最新操作状态（LatestOperationState）。",
+      "input": "DescribeAccountInstancesInternalRequest",
+      "name": "查看账号实例列表内部接口",
+      "output": "DescribeAccountInstancesInternalResponse",
+      "status": "online"
+    },
     "DescribeAgents": {
       "document": "本接口（DescribeAgents）用于查询Agent列表。",
       "input": "DescribeAgentsRequest",
@@ -6043,6 +6050,71 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAccountInstancesInternalRequest": {
+      "document": "DescribeAccountInstancesInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤器列表。</p><li>uuid</li>按照【实例UUID】进行过滤。类型：String必选：否<li>app-id</li>按照【APPID】进行过滤。类型：Int必选：否<li>instance-id</li>按照【实例ID】进行过滤。类型：String必选：否<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。类型：String必选：否<li>origin-instance-id</li>按照【CVM实例ID】进行过滤。类型：String必选：否<p>每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认为 0。关于<code>Offset</code>的更进一步介绍请参考 API <a href=\"https://cloud.tencent.com/document/product/1207/47578\">简介</a>中的相关小节。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认为 20，最大值为 100。关于<code>Limit</code>的更进一步介绍请参考 API <a href=\"https://cloud.tencent.com/document/product/1207/47578\">简介</a>中的相关小节。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountInstancesInternalResponse": {
+      "document": "DescribeAccountInstancesInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例信息列表</p>",
+          "example": "无",
+          "member": "InternalAccountInstance",
+          "name": "AccountInstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAccountInstancesRequest": {
       "document": "DescribeAccountInstances请求参数结构体",
@@ -15872,6 +15944,432 @@
           "name": "StoppedCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalAccountInstance": {
+      "document": "描述了实例信息，用于内部接口查询实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。</p>",
+          "example": "lhins-bjmss2v3",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐 ID。</p>",
+          "example": "bundle_starter_mc_med2_01",
+          "member": "string",
+          "name": "BundleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像 ID。</p>",
+          "example": "lhbp-qnuz61zs",
+          "member": "string",
+          "name": "BlueprintId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的 CPU 核数，单位：核。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "CPU",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例内存容量，单位：GB 。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称。</p>",
+          "example": "Ubuntu-zguO",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例计费模式。取值范围：<br>PREPAID：表示预付费，即包年包月。</p>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例系统盘信息。</p>",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例主网卡的内网 IP。<br>注意：此字段可能返回 空，表示取不到有效值。</p>",
+          "example": "[\"10.1.0.2\"]",
+          "member": "string",
+          "name": "PrivateAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例主网卡的公网 IP。<br>注意：此字段可能返回 空，表示取不到有效值。</p>",
+          "example": "[\"1.14.57.245\"]",
+          "member": "string",
+          "name": "PublicAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例带宽信息。</p>",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标识。取值范围：<br>NOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费<br>NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。</p>",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例登录设置。</p>",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态。取值范围： </p><li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li><li>DELETING：表示删除中</li><li>FREEZING：表示冻结中</li><li>ENTER_RESCUE_MODE：表示进入救援模式中</li><li>RESCUE_MODE：表示救援模式</li><li>EXIT_RESCUE_MODE：表示退出救援模式中</li>",
+          "example": "SHUTDOWN",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例全局唯一 ID。</p>",
+          "example": "c9b4e6a1-df4c-484b-8878-57196870b560",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的最新操作。例：StopInstances、ResetInstance。注意：此字段可能返回 空值，表示取不到有效值。</p>",
+          "example": "IsolateInstances",
+          "member": "string",
+          "name": "LatestOperation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的最新操作状态。取值范围：<br>SUCCESS：表示操作成功<br>OPERATING：表示操作执行中<br>FAILED：表示操作失败<br>注意：此字段可能返回 空值，表示取不到有效值。</p>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "LatestOperationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例最新操作的唯一请求 ID。<br>注意：此字段可能返回 空值，表示取不到有效值。</p>",
+          "example": "20cd17d2-08ec-42b4-afb0-a0633ec231aa",
+          "member": "string",
+          "name": "LatestOperationRequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。<br>格式为： YYYY-MM-DDThh:mm:ssZ。</p>",
+          "example": "2026-06-03T08:17:50Z",
+          "member": "datetime_iso",
+          "name": "IsolatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。<br>格式为： YYYY-MM-DDThh:mm:ssZ。</p>",
+          "example": "2026-06-03T08:14:44Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。<br>格式为： YYYY-MM-DDThh:mm:ssZ 。</p>",
+          "example": "2026-06-03T08:17:50Z",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统平台类型，如 LINUX_UNIX、WINDOWS。</p>",
+          "example": "LINUX_UNIX",
+          "member": "string",
+          "name": "PlatformType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统平台。</p>",
+          "example": "UBUNTU",
+          "member": "string",
+          "name": "Platform",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统名称。</p>",
+          "example": "Ubuntu Server 22.04 LTS 64bit",
+          "member": "string",
+          "name": "OsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区。</p>",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例绑定的标签列表。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例封禁状态。取值范围：</p><li>NORMAL实例正常。</li><li>NETWORK_RESTRICT：网络封禁。</li>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "InstanceRestrictState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像图标的URL地址。</p>",
+          "example": "https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/tc-console/tea-static-lighthouse/src/styles/slice/Ubuntu.svg",
+          "member": "string",
+          "name": "BlueprintImageUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID，形如vpc-xxx。</p>",
+          "example": "vpc-e3avu0el",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户账号APPID。</p>",
+          "example": "251010674",
+          "member": "int64",
+          "name": "AccountAppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像名。</p>",
+          "example": "ubuntu22",
+          "member": "string",
+          "name": "BlueprintName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户账号UIN。</p>",
+          "example": "75092499",
+          "member": "string",
+          "name": "AccountUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户子账号UIN。</p>",
+          "example": "75092499",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所在地域。</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源大账号APPID</p>",
+          "example": "251437358",
+          "member": "int64",
+          "name": "AccountOriginAppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买来源。<br>&quot;MC&quot;: 控制台。<br>&quot;API&quot;: 云API。<br>其他活动购买来源这里不一一列举，使用时先咨询。</p>",
+          "example": "MC",
+          "member": "string",
+          "name": "PurchaseSource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVM实例ID。</p>",
+          "example": "ins-kr4214a4",
+          "member": "string",
+          "name": "OriginInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建实例后自动执行TAT命令的调用ID。</p>",
+          "example": "inv-w2dwrtg923",
+          "member": "string",
+          "name": "InitInvocationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网IPv6地址列表。</p>",
+          "example": "[\"A35D:************************:D262:420C\"]",
+          "member": "string",
+          "name": "PublicIpv6Addresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述实例是否支持IPv6。</p>",
+          "example": "无",
+          "member": "SupportIpv6Detail",
+          "name": "SupportIpv6Detail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例最新操作的开始时间。</p>",
+          "example": "2026-06-03T08:17:53Z",
+          "member": "datetime_iso",
+          "name": "LatestOperationStartedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示区域。</p>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DisplayArea",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

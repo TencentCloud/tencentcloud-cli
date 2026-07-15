@@ -89,7 +89,7 @@ Output:
                     {
                         "Region": "ap-beijing",
                         "Status": 1,
-                        "Zone": "ap-beijing-2"
+                        "Zone": "ap-beijing-1"
                     },
                     {
                         "Region": "ap-beijing",

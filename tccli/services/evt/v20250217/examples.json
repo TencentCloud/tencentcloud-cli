@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "CompleteApproval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteApproval\n<公共请求参数>\n\n{\n    \"ApprovalId\": \"A202507150000000000000\",\n    \"NodeId\": \"AN202507150000000000000\",\n    \"Result\": 1,\n    \"Opinion\": \"通过\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a057f127-ee97-43fc-9b60-07cd420c1111\"\n    }\n}",
+        "title": "完成审批任务"
+      }
+    ],
+    "CreateRoleUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoleUser\n<公共请求参数>\n\n{\n    \"RoleSystemId\": 81764213873244,\n    \"UserId\": \"user\",\n    \"Username\": \"name\",\n    \"Enabled\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e56eec58-c446-44d0-917b-a0df066a4f50\",\n        \"UserId\": \"user\"\n    }\n}",
+        "title": "创建用户"
+      }
+    ],
+    "DeleteRoleUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoleUser\n<公共请求参数>\n\n{\n    \"RoleSystemId\": 81761812481151,\n    \"UserId\": \"212121\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f7fff7b-d812-4779-891b-5f8385d3b433\"\n    }\n}",
+        "title": "删除自定义用户"
+      }
+    ],
+    "DescribeApproval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApproval\n<公共请求参数>\n\n{\n    \"ApprovalId\": \"A202601281769603240523\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Config\": \"{\\\"key\\\":\\\"v\\\"}\",\n        \"CreateName\": \"test-role-tag\",\n        \"CreateRoleId\": \"4611686018432090389\",\n        \"CreateTime\": \"2026-01-28 20:27:21\",\n        \"Creator\": 0,\n        \"Detail\": \"[{\\\"key\\\":\\\"接口名称\\\",\\\"value\\\":\\\"CreateSecurityGroupWithPolicies\\\"},{\\\"key\\\":\\\"接口描述\\\",\\\"value\\\":\\\"本接口（CreateSecurityGroupWithPolicies）用于创建新的安全组（SecurityGroup），并且可以同时添加安全组规则（SecurityGroupPolicy）。\\\"},{\\\"key\\\":\\\"安全组名称\\\",\\\"value\\\":\\\"test8\\\"},{\\\"key\\\":\\\"安全组备注\\\",\\\"value\\\":\\\"公网放通云主机常用登录及web服务端口，内网全放通。\\\"},{\\\"key\\\":\\\"项目ID\\\",\\\"value\\\":\\\"0\\\"},{\\\"key\\\":\\\"出站规则\\\",\\\"value\\\":\\\"[{\\\\\\\"Action\\\\\\\":\\\\\\\"ACCEPT\\\\\\\"}]\\\"},{\\\"key\\\":\\\"入站规则\\\",\\\"value\\\":\\\"[{\\\\\\\"Action\\\\\\\":\\\\\\\"ACCEPT\\\\\\\",\\\\\\\"PolicyDescription\\\\\\\":\\\\\\\"放通Windows远程登录\\\\\\\",\\\\\\\"Port\\\\\\\":\\\\\\\"1234\\\\\\\",\\\\\\\"Protocol\\\\\\\":\\\\\\\"tcp\\\\\\\"},{\\\\\\\"Action\\\\\\\":\\\\\\\"ACCEPT\\\\\\\",\\\\\\\"PolicyDescription\\\\\\\":\\\\\\\"放通Linux SSH登录\\\\\\\",\\\\\\\"Port\\\\\\\":\\\\\\\"22\\\\\\\",\\\\\\\"Protocol\\\\\\\":\\\\\\\"tcp\\\\\\\"},{\\\\\\\"Action\\\\\\\":\\\\\\\"ACCEPT\\\\\\\",\\\\\\\"PolicyDescription\\\\\\\":\\\\\\\"放通Web服务端口\\\\\\\",\\\\\\\"Port\\\\\\\":\\\\\\\"80,443\\\\\\\",\\\\\\\"Protocol\\\\\\\":\\\\\\\"tcp\\\\\\\"},{\\\\\\\"Action\\\\\\\":\\\\\\\"ACCEPT\\\\\\\",\\\\\\\"PolicyDescription\\\\\\\":\\\\\\\"放通Ping服务\\\\\\\",\\\\\\\"Protocol\\\\\\\":\\\\\\\"icmp\\\\\\\"},{\\\\\\\"Action\\\\\\\":\\\\\\\"ACCEPT\\\\\\\",\\\\\\\"CidrBlock\\\\\\\":\\\\\\\"0.0.0.0/8\\\\\\\",\\\\\\\"PolicyDescription\\\\\\\":\\\\\\\"放通内网\\\\\\\"},{\\\\\\\"Action\\\\\\\":\\\\\\\"ACCEPT\\\\\\\",\\\\\\\"CidrBlock\\\\\\\":\\\\\\\"0.0.0.0/12\\\\\\\",\\\\\\\"PolicyDescription\\\\\\\":\\\\\\\"放通内网\\\\\\\"},{\\\\\\\"Action\\\\\\\":\\\\\\\"ACCEPT\\\\\\\",\\\\\\\"CidrBlock\\\\\\\":\\\\\\\"0.0.0.0/16\\\\\\\",\\\\\\\"PolicyDescription\\\\\\\":\\\\\\\"放通内网\\\\\\\"}]\\\"}]\",\n        \"DetailUrl\": \"https://console.cloud.tencent.com/vpc/security-group?rid=1&rid=10\",\n        \"NodeList\": [\n            {\n                \"ApprovalResult\": [\n                    {\n                        \"Opinion\": \"同意 【通过MOA快速审批】\",\n                        \"Result\": 1,\n                        \"Uin\": 0,\n                        \"UserId\": \"118392\",\n                        \"UserName\": \"tony\"\n                    }\n                ],\n                \"IsDealer\": 2,\n                \"Model\": \"2\",\n                \"NodeId\": \"AN202601281769603240525\",\n                \"Status\": \"Succeed\"\n            }\n        ],\n        \"ReqParam\": \"\",\n        \"Result\": 1,\n        \"Status\": \"Succeed\",\n        \"TicketId\": \"T202601284861465312639\",\n        \"Title\": \"创建安全组及规则dadasd6\",\n        \"RequestId\": \"27fea038-e367-4a54-85c6-ed0ba86bfa54\",\n        \"BypassApplyUserName\": \"t******n\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "PutEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutEvent\n<公共请求参数>\n\n{\n    \"PluginId\": \"plugin-D*******\",\n    \"Data\": \"**\",\n    \"Source\": \"操作审计\",\n    \"TargetUin\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"76db4f4c-9d32-4156-87a6-32a6b7d0a4d9\"\n    }\n}",
+        "title": "推送事件"
+      }
+    ],
+    "PutMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutMessage\n<公共请求参数>\n\n{\n    \"EventId\": \"eevnt-sx1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TicketId\": \"ticket-0a7fdfce-31f3-43ca-8bab-7945f2ca4559\",\n        \"RequestId\": \"388820a6-7225-43bb-80ec-992ad57325c6\"\n    }\n}",
+        "title": "推送消息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

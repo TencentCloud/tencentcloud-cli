@@ -981,7 +981,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据不一致的表详情",
+          "document": "<p>数据不一致的表详情</p>",
           "example": "无",
           "member": "DifferenceDetail",
           "name": "Difference",
@@ -991,7 +991,7 @@
         },
         {
           "disabled": false,
-          "document": "跳过校验的表详情",
+          "document": "<p>跳过校验的表详情</p>",
           "example": "无",
           "member": "SkippedDetail",
           "name": "Skipped",
@@ -1001,7 +1001,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库不一致的详情，mongodb业务用到",
+          "document": "<p>数据库不一致的详情，mongodb业务用到</p>",
           "example": "无",
           "member": "DifferenceAdvancedObjectsDetail",
           "name": "DifferenceAdvancedObjects",
@@ -1011,7 +1011,7 @@
         },
         {
           "disabled": false,
-          "document": "数据不一致的详情，mongodb业务用到",
+          "document": "<p>数据不一致的详情，mongodb业务用到</p>",
           "example": "无",
           "member": "DifferenceDataDetail",
           "name": "DifferenceData",
@@ -1021,7 +1021,7 @@
         },
         {
           "disabled": false,
-          "document": "数据行不一致的详情，mongodb业务用到",
+          "document": "<p>数据行不一致的详情，mongodb业务用到</p>",
           "example": "无",
           "member": "DifferenceRowDetail",
           "name": "DifferenceRow",
@@ -1031,7 +1031,7 @@
         },
         {
           "disabled": false,
-          "document": "表结构不一致详情，pg用",
+          "document": "<p>表结构不一致详情，pg用</p>",
           "example": "无",
           "member": "DifferenceSchemaDetail",
           "name": "DifferenceSchema",
@@ -1041,10 +1041,30 @@
         },
         {
           "disabled": false,
-          "document": "对象owner不一致详情，pg用",
+          "document": "<p>对象owner不一致详情，pg用</p>",
           "example": "无",
           "member": "DifferenceOwnerDetail",
           "name": "DifferenceOwner",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全量阶段表的校验进度。该字段后续逐步取代Difference</p>",
+          "example": "无",
+          "member": "CompareTableInfo",
+          "name": "FullProgress",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>增量阶段表的校验进度</p>",
+          "example": "无",
+          "member": "CompareTableInfo",
+          "name": "IncDifference",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -1257,6 +1277,32 @@
       ],
       "usage": "both"
     },
+    "CompareTableInfo": {
+      "document": "不一致的表的校验结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "不一致表的数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不一致的表的校验结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareTableResult",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CompareTableItem": {
       "document": "用于一致性校验的表配置",
       "members": [
@@ -1317,6 +1363,132 @@
         }
       ],
       "usage": "both"
+    },
+    "CompareTableResult": {
+      "document": "不一致的表的校验结果详情。增量和全量都是这个结构，某些字段对增量没有意义，可以忽略。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "库名",
+          "example": "db1",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "schema名",
+          "example": "schema1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "tab1",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验结果",
+          "example": "different",
+          "member": "string",
+          "name": "Conclusion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验状态。仅全量阶段有意义",
+          "example": "Completed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验进度。仅全量阶段有意义",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不一致行数",
+          "example": "50",
+          "member": "int64",
+          "name": "RowCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该表开始校验的时间",
+          "example": "2025-06-03 12:00:00",
+          "member": "string",
+          "name": "StartedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该表校验结束的时间",
+          "example": "2025-06-03 14:00:00",
+          "member": "string",
+          "name": "FinishedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预计该表校验结束的时间",
+          "example": "2025-06-03 14:00:00",
+          "member": "string",
+          "name": "ExpectedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端行数，如果是行数校验此值有意义",
+          "example": "100",
+          "member": "string",
+          "name": "SrcItem",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标端行数，如果是行数校验此值有意义",
+          "example": "100",
+          "member": "string",
+          "name": "DstItem",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CompareTaskInfo": {
       "document": "数据一致性校验结果",
@@ -2773,7 +2945,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)",
+          "document": "<p>订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -2782,7 +2954,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式，枚举值：0-包年包月，1-按量计费",
+          "document": "<p>付费方式，枚举值：0-包年包月，1-按量计费</p>",
           "example": "0",
           "member": "int64",
           "name": "PayType",
@@ -2791,7 +2963,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1",
+          "document": "<p>购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1</p>",
           "example": "1",
           "member": "int64",
           "name": "Duration",
@@ -2800,7 +2972,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。",
+          "document": "<p>是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoRenew",
@@ -2809,7 +2981,7 @@
         },
         {
           "disabled": false,
-          "document": "购买数量,默认为1，最大为10",
+          "document": "<p>购买数量,默认为1，最大为10</p>",
           "example": "1",
           "member": "int64",
           "name": "Count",
@@ -2818,7 +2990,7 @@
         },
         {
           "disabled": false,
-          "document": "实例资源标签",
+          "document": "<p>实例资源标签</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -2827,7 +2999,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名，自定义",
+          "document": "<p>任务名，自定义</p>",
           "example": "binlog订阅",
           "member": "string",
           "name": "Name",
@@ -2836,7 +3008,16 @@
         },
         {
           "disabled": false,
-          "document": "订阅实例规格，当前仅支持small、medium、large",
+          "document": "<p>数据订阅版本，目前支持kafka和kafkaPro（专业版），如果不填，默认kafkaPro</p>",
+          "example": "kafkaPro",
+          "member": "string",
+          "name": "SubscribeVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>订阅实例规格，当前仅支持small、medium、large</p>",
           "example": "small",
           "member": "string",
           "name": "InstanceClass",
@@ -2851,7 +3032,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID数组",
+          "document": "<p>数据订阅实例的ID数组</p>",
           "example": "[\"subs-b6x64o31tm\"]",
           "member": "string",
           "name": "SubscribeIds",
@@ -4339,7 +4520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
+          "document": "<p>迁移任务 Id，可通过<a href=\"https://cloud.tencent.com/document/product/571/82084\">DescribeMigrationJobs</a>接口获取。</p>",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -4348,7 +4529,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
+          "document": "<p>校验任务 Id，可通过<a href=\"https://cloud.tencent.com/document/product/571/82084\">DescribeMigrationJobs</a>接口获取。</p>",
           "example": "dts-amm1jw5q-cmp-bmuum7jk",
           "member": "string",
           "name": "CompareTaskId",
@@ -4357,7 +4538,7 @@
         },
         {
           "disabled": false,
-          "document": "校验不一致结果的 limit",
+          "document": "<p>校验不一致结果的 limit</p>",
           "example": "10",
           "member": "uint64",
           "name": "DifferenceLimit",
@@ -4366,7 +4547,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致的 Offset",
+          "document": "<p>不一致的 Offset</p>",
           "example": "0",
           "member": "uint64",
           "name": "DifferenceOffset",
@@ -4375,7 +4556,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，不一致的库名",
+          "document": "<p>搜索条件，不一致的库名</p>",
           "example": "db1",
           "member": "string",
           "name": "DifferenceDB",
@@ -4384,7 +4565,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，不一致的表名",
+          "document": "<p>搜索条件，不一致的表名</p>",
           "example": "t1",
           "member": "string",
           "name": "DifferenceTable",
@@ -4393,7 +4574,7 @@
         },
         {
           "disabled": false,
-          "document": "未校验的 Limit",
+          "document": "<p>未校验的 Limit</p>",
           "example": "10",
           "member": "uint64",
           "name": "SkippedLimit",
@@ -4402,7 +4583,7 @@
         },
         {
           "disabled": false,
-          "document": "未校验的 Offset",
+          "document": "<p>未校验的 Offset</p>",
           "example": "0",
           "member": "uint64",
           "name": "SkippedOffset",
@@ -4411,7 +4592,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，未校验的库名",
+          "document": "<p>搜索条件，未校验的库名</p>",
           "example": "db1",
           "member": "string",
           "name": "SkippedDB",
@@ -4420,7 +4601,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，未校验的表名",
+          "document": "<p>搜索条件，未校验的表名</p>",
           "example": "t1",
           "member": "string",
           "name": "SkippedTable",
@@ -4429,7 +4610,7 @@
         },
         {
           "disabled": false,
-          "document": "校验结果未知的 limit",
+          "document": "<p>校验结果未知的 limit</p>",
           "example": "10",
           "member": "int64",
           "name": "UnknownLimit",
@@ -4438,7 +4619,7 @@
         },
         {
           "disabled": false,
-          "document": "校验结果未知的 offset",
+          "document": "<p>校验结果未知的 offset</p>",
           "example": "0",
           "member": "int64",
           "name": "UnknownOffset",
@@ -4447,7 +4628,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，结果未知的库名",
+          "document": "<p>搜索条件，结果未知的库名</p>",
           "example": "db1",
           "member": "string",
           "name": "UnknownDB",
@@ -4456,7 +4637,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，结果未知的表名\t",
+          "document": "<p>搜索条件，结果未知的表名</p>",
           "example": "t1",
           "member": "string",
           "name": "UnknownTable",
@@ -4471,7 +4652,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一致性校验摘要信息",
+          "document": "<p>一致性校验摘要信息</p>",
           "example": "无",
           "member": "CompareAbstractInfo",
           "name": "Abstract",
@@ -4481,7 +4662,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性校验详细信息",
+          "document": "<p>一致性校验详细信息</p>",
           "example": "无",
           "member": "CompareDetailInfo",
           "name": "Detail",
@@ -6446,7 +6627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 Id",
+          "document": "<p>任务 Id</p>",
           "example": "sync-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -6455,7 +6636,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务 Id",
+          "document": "<p>校验任务 Id</p>",
           "example": "sync-amm1jw5q-cmp-bmuum7jk",
           "member": "string",
           "name": "CompareTaskId",
@@ -6464,7 +6645,7 @@
         },
         {
           "disabled": false,
-          "document": "校验不一致结果的 limit",
+          "document": "<p>校验不一致结果的 limit</p>",
           "example": "10",
           "member": "uint64",
           "name": "DifferenceLimit",
@@ -6473,7 +6654,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致的 Offset",
+          "document": "<p>不一致的 Offset</p>",
           "example": "0",
           "member": "uint64",
           "name": "DifferenceOffset",
@@ -6482,7 +6663,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，不一致的库名",
+          "document": "<p>搜索条件，不一致的库名</p>",
           "example": "db1",
           "member": "string",
           "name": "DifferenceDB",
@@ -6491,7 +6672,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，不一致的表名",
+          "document": "<p>搜索条件，不一致的表名</p>",
           "example": "t1",
           "member": "string",
           "name": "DifferenceTable",
@@ -6500,7 +6681,7 @@
         },
         {
           "disabled": false,
-          "document": "未校验的 Limit",
+          "document": "<p>未校验的 Limit</p>",
           "example": "10",
           "member": "uint64",
           "name": "SkippedLimit",
@@ -6509,7 +6690,7 @@
         },
         {
           "disabled": false,
-          "document": "未校验的 Offset",
+          "document": "<p>未校验的 Offset</p>",
           "example": "0",
           "member": "uint64",
           "name": "SkippedOffset",
@@ -6518,7 +6699,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，未校验的库名",
+          "document": "<p>搜索条件，未校验的库名</p>",
           "example": "db1",
           "member": "string",
           "name": "SkippedDB",
@@ -6527,7 +6708,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，未校验的表名",
+          "document": "<p>搜索条件，未校验的表名</p>",
           "example": "t1",
           "member": "string",
           "name": "SkippedTable",
@@ -6536,7 +6717,7 @@
         },
         {
           "disabled": false,
-          "document": "校验结果未知的 limit",
+          "document": "<p>校验结果未知的 limit</p>",
           "example": "10",
           "member": "uint64",
           "name": "UnknownLimit",
@@ -6545,7 +6726,7 @@
         },
         {
           "disabled": false,
-          "document": "校验结果未知的 offset",
+          "document": "<p>校验结果未知的 offset</p>",
           "example": "0",
           "member": "uint64",
           "name": "UnknownOffset",
@@ -6554,7 +6735,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，结果未知的库名",
+          "document": "<p>搜索条件，结果未知的库名</p>",
           "example": "db1",
           "member": "string",
           "name": "UnknownDB",
@@ -6563,7 +6744,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，结果未知的表名",
+          "document": "<p>搜索条件，结果未知的表名</p>",
           "example": "t1",
           "member": "string",
           "name": "UnknownTable",
@@ -6578,7 +6759,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一致性校验摘要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>一致性校验摘要信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompareAbstractInfo",
           "name": "Abstract",
@@ -6588,7 +6769,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性校验详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>一致性校验详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompareDetailInfo",
           "name": "Detail",
@@ -6598,7 +6779,7 @@
         },
         {
           "disabled": false,
-          "document": "增量校验阶段的摘要",
+          "document": "<p>增量校验阶段的摘要</p>",
           "example": "无",
           "member": "IncCompareAbstractInfo",
           "name": "IncAbstract",

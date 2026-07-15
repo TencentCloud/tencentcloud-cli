@@ -7,7 +7,7 @@ Input:
 ```
 tccli monitor DescribePolicyGroupInfo --cli-unfold-argument  \
     --Module monitor \
-    --GroupId '11111
+    --GroupId '1247756
 
 
 {

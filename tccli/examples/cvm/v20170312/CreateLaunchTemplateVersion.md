@@ -7,7 +7,7 @@ Input:
 ```
 tccli cvm CreateLaunchTemplateVersion --cli-unfold-argument  \
     --Placement.Zone ap-guangzhou-6 \
-    --LaunchTemplateId lt-lobxe2yo
+    --LaunchTemplateId lt-f6q777hr
 ```
 
 Output: 

@@ -360,7 +360,7 @@
   },
   "metadata": {
     "apiVersion": "2021-07-01",
-    "api_brief": "腾讯云弹性微服务（TEM）相关接口。",
+    "api_brief": "弹性微服务tem api 向用户提供弹性的计算、存储和网络资源。用户可以使用本文档介绍的 API，并参照相应的示例，对弹性微服务进行相关操作：如创建命名空间、部署服务、配置公网访问等",
     "serviceNameCN": "弹性微服务",
     "serviceShortName": "tem"
   },

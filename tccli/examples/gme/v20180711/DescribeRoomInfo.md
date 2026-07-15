@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gme DescribeRoomInfo --cli-unfold-argument  \
-    --RoomIds 88888 \
-    --StrRoomIds aaaaa \
+    --RoomIds 10086 \
+    --StrRoomIds 10090 \
     --SdkAppId 1400000000
 ```
 
@@ -20,9 +20,9 @@ Output:
             {
                 "RoomId": 0,
                 "Uins": [
-                    1111
+                    100982048
                 ],
-                "StrRoomId": "aaaaa",
+                "StrRoomId": "10090",
                 "StrUins": [
                     ""
                 ]
@@ -41,7 +41,7 @@ Input:
 
 ```
 tccli gme DescribeRoomInfo --cli-unfold-argument  \
-    --RoomIds 11 \
+    --RoomIds 107740 \
     --SdkAppId 1400405451
 ```
 
@@ -54,7 +54,7 @@ Output:
             {
                 "RoomId": 11,
                 "Uins": [
-                    1111
+                    100982048
                 ],
                 "StrRoomId": "",
                 "StrUins": [

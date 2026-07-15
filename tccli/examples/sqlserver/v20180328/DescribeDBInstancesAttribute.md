@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "BlockedThreshold": 0,
+        "SlowLogThreshold": 1000,
         "DrReadableInfo": {
             "DrInstanceId": "mssqldr-oo1",
             "Zone": "ap-guangzhou",

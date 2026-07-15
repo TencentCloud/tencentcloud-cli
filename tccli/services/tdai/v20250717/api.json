@@ -1,0 +1,4203 @@
+{
+  "actions": {
+    "ContinueAgentWork": {
+      "document": "本接口（ContinueAgentWork）用于重启智能体实例的值守任务，通常在用户需要重启时使用。",
+      "input": "ContinueAgentWorkRequest",
+      "name": "重启Agent实例的值守任务工作",
+      "output": "ContinueAgentWorkResponse",
+      "status": "online"
+    },
+    "CreateAgentInstance": {
+      "document": "本接口（CreateAgentInstance）用于创建一个智能体实例，通常在用户购买一个智能体实例时使用。",
+      "input": "CreateAgentInstanceRequest",
+      "name": "创建Agent实例",
+      "output": "CreateAgentInstanceResponse",
+      "status": "online"
+    },
+    "CreateChatCompletion": {
+      "document": "用于创建一次会话的SSE接口",
+      "input": "CreateChatCompletionRequest",
+      "name": "创建一个聊天会话",
+      "output": "CreateChatCompletionResponse",
+      "status": "online"
+    },
+    "CreateMemoryPlusSpace": {
+      "document": "本接口（CreateMemoryPlusSpace）用于创建正式版 Memory 实例。",
+      "input": "CreateMemoryPlusSpaceRequest",
+      "name": "创建正式版 Memory 实例",
+      "output": "CreateMemoryPlusSpaceResponse",
+      "status": "online"
+    },
+    "CreateMemoryProInstance": {
+      "document": "本接口用于开通Memory Pro服务",
+      "input": "CreateMemoryProInstanceRequest",
+      "name": "开通memory pro服务",
+      "output": "CreateMemoryProInstanceResponse",
+      "status": "online"
+    },
+    "DescribeAgentDutyTaskDetail": {
+      "document": "查询智能体值守任务详情",
+      "input": "DescribeAgentDutyTaskDetailRequest",
+      "name": "查询Agent实例值守任务详情",
+      "output": "DescribeAgentDutyTaskDetailResponse",
+      "status": "online"
+    },
+    "DescribeAgentDutyTasks": {
+      "document": "查询智能体值守任务列表",
+      "input": "DescribeAgentDutyTasksRequest",
+      "name": "查询Agent实例值守任务列表",
+      "output": "DescribeAgentDutyTasksResponse",
+      "status": "online"
+    },
+    "DescribeAgentInstance": {
+      "document": "本接口（DescribeAgentInstance）用于查询智能体实例详情，通常在用户查询所购买的所有智能体实例详情时使用。",
+      "input": "DescribeAgentInstanceRequest",
+      "name": "查询指定Agent实例的详细信息",
+      "output": "DescribeAgentInstanceResponse",
+      "status": "online"
+    },
+    "DescribeAgentInstances": {
+      "document": "本接口（DescribeAgentInstances）用于查询智能体实例列表，通常在用户查询所购买的所有智能体列表。",
+      "input": "DescribeAgentInstancesRequest",
+      "name": "查询Agent实例列表",
+      "output": "DescribeAgentInstancesResponse",
+      "status": "online"
+    },
+    "DescribeAgents": {
+      "document": "本接口（DescribeAgents）用于查询智能体列表，通常在用户查询所购买的所有智能体列表。",
+      "input": "DescribeAgentsRequest",
+      "name": "查询智能体列表",
+      "output": "DescribeAgentsResponse",
+      "status": "online"
+    },
+    "DescribeChatDetail": {
+      "document": "本接口（DescribeChatDetail）用于查询对话详情，通常在用户查询会话的历史记录时使用。",
+      "input": "DescribeChatDetailRequest",
+      "name": "获取会话详情",
+      "output": "DescribeChatDetailResponse",
+      "status": "online"
+    },
+    "DescribeChats": {
+      "document": "本接口（DescribeChats）用于查询对话列表，通常在用户查询会话列表时使用。",
+      "input": "DescribeChatsRequest",
+      "name": "获取会话列表",
+      "output": "DescribeChatsResponse",
+      "status": "online"
+    },
+    "DescribeMemoryPlusRecord": {
+      "document": "本接口（DescribeMemoryPlusRecord）用于查询 Memory 实例的记忆数据。",
+      "input": "DescribeMemoryPlusRecordRequest",
+      "name": "查询正式版 Memory 实例记忆数据",
+      "output": "DescribeMemoryPlusRecordResponse",
+      "status": "online"
+    },
+    "DescribeMemoryPlusSpace": {
+      "document": "本接口（DescribeMemoryPlusSpace）用于查询 Memory 正式版实例详情。",
+      "input": "DescribeMemoryPlusSpaceRequest",
+      "name": "查询正式版 Memory 服务详情",
+      "output": "DescribeMemoryPlusSpaceResponse",
+      "status": "online"
+    },
+    "DescribeMemoryPlusSpaces": {
+      "document": "本接口（DescribeMemoryPlusSpaces）用于查询 Memory正式版实例列表。",
+      "input": "DescribeMemoryPlusSpacesRequest",
+      "name": "查询正式版 Memory 实例列表",
+      "output": "DescribeMemoryPlusSpacesResponse",
+      "status": "online"
+    },
+    "DescribeReportUrl": {
+      "document": "智能体报告地址生成并下载",
+      "input": "DescribeReportUrlRequest",
+      "name": "查询实例报告下载链接",
+      "output": "DescribeReportUrlResponse",
+      "status": "online"
+    },
+    "DescribeServiceAccessKey": {
+      "document": "本接口（DescribeServiceAccessKey）用于查询服务访问密钥。",
+      "input": "DescribeServiceAccessKeyRequest",
+      "name": "查询服务访问密钥",
+      "output": "DescribeServiceAccessKeyResponse",
+      "status": "online"
+    },
+    "DestroyMemoryPlusSpace": {
+      "document": "本接口（DestroyMemoryPlusSpace）用于从回收站彻底销毁 Memory 实例。",
+      "input": "DestroyMemoryPlusSpaceRequest",
+      "name": "销毁正式版 Memory 实例",
+      "output": "DestroyMemoryPlusSpaceResponse",
+      "status": "online"
+    },
+    "IsolateAgentInstance": {
+      "document": "本接口（IsolateAgentInstance）用于隔离智能体实例，通常在用户需要隔离智能体实例时使用。",
+      "input": "IsolateAgentInstanceRequest",
+      "name": "隔离Agent实例",
+      "output": "IsolateAgentInstanceResponse",
+      "status": "online"
+    },
+    "IsolateMemoryPlusSpace": {
+      "document": "本接口（IsolateMemoryPlusSpace）用于将正式版 Memory 实例放入回收站隔离。",
+      "input": "IsolateMemoryPlusSpaceRequest",
+      "name": "将 Memory 实例放入回收站",
+      "output": "IsolateMemoryPlusSpaceResponse",
+      "status": "online"
+    },
+    "ModifyAgentInstanceParameters": {
+      "document": "本接口（ModifyAgentInstanceParameters）用于修改智能体实例的参数列表，通常在用户需要配置智能体实例时使用。",
+      "input": "ModifyAgentInstanceParametersRequest",
+      "name": "配置智能体实例参数",
+      "output": "ModifyAgentInstanceParametersResponse",
+      "status": "online"
+    },
+    "ModifyChatTitle": {
+      "document": "本接口（ModifyChatTitle）用于修改会话标题，通常在用户修改会话标题时使用。",
+      "input": "ModifyChatTitleRequest",
+      "name": "修改会话标题",
+      "output": "ModifyChatTitleResponse",
+      "status": "online"
+    },
+    "ModifyMemoryPlusSpace": {
+      "document": "本接口（ModifyMemoryPlusSpace）用于修改正式版 Memory 实例，可修改实例名称与描述。",
+      "input": "ModifyMemoryPlusSpaceRequest",
+      "name": "修改正式版 Memory 实例",
+      "output": "ModifyMemoryPlusSpaceResponse",
+      "status": "online"
+    },
+    "PauseAgentWork": {
+      "document": "本接口（PauseAgentWork）用于暂停智能体实例的值守任务，通常在用户需要暂停时使用。",
+      "input": "PauseAgentWorkRequest",
+      "name": "暂停Agent实例",
+      "output": "PauseAgentWorkResponse",
+      "status": "online"
+    },
+    "RecoverAgentInstance": {
+      "document": "本接口（RecoverAgentInstance）用于解隔离智能体实例，通常在用户需要解隔离智能体实例时使用。",
+      "input": "RecoverAgentInstanceRequest",
+      "name": "解隔离Agent实例",
+      "output": "RecoverAgentInstanceResponse",
+      "status": "online"
+    },
+    "RecoverMemoryPlusSpace": {
+      "document": "本接口（RecoverMemoryPlusSpace）用于从回收站恢复 Memory 实例。",
+      "input": "RecoverMemoryPlusSpaceRequest",
+      "name": "从回收站中恢复正式版 Memory 实例",
+      "output": "RecoverMemoryPlusSpaceResponse",
+      "status": "online"
+    },
+    "RemoveChat": {
+      "document": "本接口（RemoveChat）用于删除会话，通常在用户删除会话时使用。",
+      "input": "RemoveChatRequest",
+      "name": "删除会话",
+      "output": "RemoveChatResponse",
+      "status": "online"
+    },
+    "StartAgentTask": {
+      "document": "该接口用于启动一个智能体的任务",
+      "input": "StartAgentTaskRequest",
+      "name": "启动智能体任务",
+      "output": "StartAgentTaskResponse",
+      "status": "online"
+    },
+    "TerminateAgentInstance": {
+      "document": "本接口（TerminateAgentInstance）用于下线智能体实例，通常在用户需要下线智能体实例时使用。",
+      "input": "TerminateAgentInstanceRequest",
+      "name": "下线Agent实例",
+      "output": "TerminateAgentInstanceResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-07-17",
+    "api_brief": "腾讯云数据库 AI 服务相关 API 接口主要提供 DatabaseClaw 实例的管控操作。",
+    "serviceNameCN": "腾讯云数据库 AI 服务",
+    "serviceShortName": "tdai"
+  },
+  "objects": {
+    "Agent": {
+      "document": "智能体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体Id",
+          "example": "agt-xpcn2t3e",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体名称",
+          "example": "风险SQL治理智能体",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体类型",
+          "example": "aid",
+          "member": "string",
+          "name": "AgentInternalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "架构：共享版-intranet，企业版-userVpc",
+          "example": "intranet",
+          "member": "string",
+          "name": "DeployPlace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体状态",
+          "example": "normal",
+          "member": "string",
+          "name": "AgentStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认版本",
+          "example": "v1.0.0.0",
+          "member": "string",
+          "name": "DefaultVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体模式",
+          "example": "service",
+          "member": "string",
+          "name": "AgentType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "风险SQL治理智能体是一个专注于治理代码中的风险SQL的智能体",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "user",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-07-15 16:06:10",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新者",
+          "example": "user",
+          "member": "string",
+          "name": "Updater",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-07-15 16:06:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentDutyTask": {
+      "document": "智能体值守任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "task-xcasd",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "2025-08-11 10:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务开始运行时间",
+          "example": "2025-08-11 10:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间",
+          "example": "2025-08-11 10:00:00",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对外展示的Extra信息",
+          "example": "[\"appId\"]",
+          "member": "string",
+          "name": "ResultExtraKey",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务的额外敏感信息",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "Extra",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentInstance": {
+      "document": "智能体实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AppId</p>",
+          "example": "1356776679",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主账号Uin</p>",
+          "example": "100042113941",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子账号Uin</p>",
+          "example": "100042268182",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例ID</p>",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例名称</p>",
+          "example": "风险SQL治理Agent实例",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体ID</p>",
+          "example": "agt-xpcn2t3e",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体名称</p>",
+          "example": "风险SQL治理智能体",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体类型</p>",
+          "example": "aid",
+          "member": "string",
+          "name": "AgentInternalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体服务模式</p>",
+          "example": "service",
+          "member": "string",
+          "name": "AgentType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体版本</p>",
+          "example": "v1.0.0.0",
+          "member": "string",
+          "name": "AgentVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例状态</p>",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例参数列表</p>",
+          "example": "无",
+          "member": "Parameter",
+          "name": "Parameters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2025-07-15 16:06:10",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2025-07-15 16:06:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源绑定Tag列表</p>",
+          "example": "无",
+          "member": "TagItem",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例关联的资源</p>",
+          "example": "无",
+          "member": "Resources",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署位置,intranet-共享版，userVpc-专享版</p>",
+          "example": "intranet",
+          "member": "string",
+          "name": "DeployPlace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的告警策略ID。</p>",
+          "example": "[\"Policy-zxas32qq\"]",
+          "member": "string",
+          "name": "PolicyIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "ClawConfigInfo",
+          "name": "ClawConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"view\"]",
+          "member": "string",
+          "name": "AllowedActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "2026-04-13 14:39:00",
+          "member": "string",
+          "name": "LastActiveTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "newnewDescription",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发货进度详情</p>",
+          "example": "无",
+          "member": "CreatingProgress",
+          "name": "CreatingProgress",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CbsResource": {
+      "document": "模型关联的云硬盘资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云硬盘ID",
+          "example": "disk-b69fdqby",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CdbResource": {
+      "document": "sql事前模型部署在用户vpc内时需要创建的cdb资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cdb实例ID",
+          "example": "cdb-euua9297",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChatBrief": {
+      "document": "会话信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号Id",
+          "example": "13579",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号uin",
+          "example": "13579",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号uin",
+          "example": "13579",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体实例ID",
+          "example": "agtins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "chat-xxxxxxxx",
+          "member": "string",
+          "name": "ChatId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "13579",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话标题",
+          "example": "你好",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一条流式ID",
+          "example": "strm-xxxxxxxx",
+          "member": "string",
+          "name": "LastStreamingId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一条流式TokenID",
+          "example": "0",
+          "member": "int64",
+          "name": "LastStreamingTokenId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChatDetail": {
+      "document": "会话详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户消息",
+          "example": "帮我查询最近一个月的历史任务",
+          "member": "string",
+          "name": "UserMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "助手消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateChatCompletionRes",
+          "name": "AssistantMessage",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClawConfigInfo": {
+      "document": "databaseClaw实例配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"postgresql\"]",
+          "member": "string",
+          "name": "DbTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "ClawDeployInfo",
+          "name": "Deploy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClawDeployInfo": {
+      "document": "databaseClaw实例部署详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "vpc-iar32aw9",
+          "member": "string",
+          "name": "UserVpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "subnet-pjbev7x8",
+          "member": "string",
+          "name": "UserSubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "UserVpcRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CodeRepo": {
+      "document": "仓库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代码仓库地址",
+          "example": "https://git.woa.com/calvinliao/tcs-middleware",
+          "member": "string",
+          "name": "RepoUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分支名",
+          "example": "master",
+          "member": "string",
+          "name": "Branch",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Commit信息",
+          "example": "[\"bdbe54afaa7e60b11cd87682bd9ab59c92a489ac\"]",
+          "member": "string",
+          "name": "GitCommitPipelines",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库ORM类型",
+          "example": "goframe",
+          "member": "string",
+          "name": "GitORMType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代码编写语言",
+          "example": "golang",
+          "member": "string",
+          "name": "GitCodeLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ContinueAgentWorkRequest": {
+      "document": "ContinueAgentWork请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，为空时查询所有，如果填写则会根据InstanceId筛选",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Agent任务类型",
+          "example": "sql_precheck",
+          "member": "string",
+          "name": "AgentTaskType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ContinueAgentWorkResponse": {
+      "document": "ContinueAgentWork返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CosResource": {
+      "document": "sql事前模型部署在用户vpc内时需要创建的cos资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos桶名",
+          "example": "tdai-bucket",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAgentInstanceRequest": {
+      "document": "CreateAgentInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能体ID</p>",
+          "example": "agt-xpcn2t3e",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体版本</p>",
+          "example": "v1.0.0.0",
+          "member": "string",
+          "name": "AgentVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名</p>",
+          "example": "风险SQL治理Agent实例",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例的参数列表</p>",
+          "example": "无",
+          "member": "Parameter",
+          "name": "Parameters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源的标签信息</p>",
+          "example": "无",
+          "member": "TagItem",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "Skills",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SoulId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentInstanceResponse": {
+      "document": "CreateAgentInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能体实例ID</p>",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例名称</p>",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChatCompletionRequest": {
+      "document": "CreateChatCompletion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入内容</p>",
+          "example": "请介绍一下你自己",
+          "member": "string",
+          "name": "InputContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "agentins-ctee3glp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话窗口ID，空值表示新的会话</p>",
+          "example": "key-new-chat",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流ID</p>",
+          "example": "strm-1asame8c",
+          "member": "string",
+          "name": "StreamingId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后一条消息的流tokenID，为空表示从头输出</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "LastStreamingTokenId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否隐藏</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsHidden",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否隐藏会话</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsChatHidden",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChatCompletionRes": {
+      "document": "对话接口出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "枚举值，返回的数据类型",
+          "example": "chat.completion.chunk",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息时间戳",
+          "example": "1677652281",
+          "member": "int64",
+          "name": "Created",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出模型",
+          "example": "DeepSeek-R1",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户标识",
+          "example": "124789",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账户标识",
+          "example": "13579",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前账户标识",
+          "example": "13579",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Request ID\n",
+          "example": "xxxx-xxxx-xxxx",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前会话ID",
+          "example": "chat-1357911",
+          "member": "string",
+          "name": "ChatId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前流ID",
+          "example": "strm-11111111",
+          "member": "string",
+          "name": "StreamingId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前任务ID",
+          "example": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息的数据详情",
+          "example": "无",
+          "member": "UploadChoice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateChatCompletionResponse": {
+      "document": "CreateChatCompletion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>枚举值，返回的数据类型</p>",
+          "example": "chat.completion.chunk",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息时间戳</p>",
+          "example": "1677652281",
+          "member": "int64",
+          "name": "Created",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出模型</p>",
+          "example": "DeepSeek-R1",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>124789</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>12345679</p>",
+          "example": "主账户标识",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>12345680</p>",
+          "example": "当前账户标识",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>chat-12345678</p>",
+          "example": "当前会话ID",
+          "member": "string",
+          "name": "ChatId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>strm-32145687</p>",
+          "example": "当前流ID",
+          "member": "string",
+          "name": "StreamingId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前任务ID</p>",
+          "example": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息的数据详情</p>",
+          "example": "无",
+          "member": "UploadChoice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMemoryPlusSpaceRequest": {
+      "document": "CreateMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的自定义名称，用于唯一标识和管理实例。支持 60 个字符内的中英文、数字、中划线（-）及下划线（_）。</p>",
+          "example": "name2",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>emory 实例的简要描述，包括使用场景、用途或背景信息，便于日常运维识别。长度限制为 0-200 个字符。</p>",
+          "example": "description2",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>以键值对（Key-Value）形式为 Memory 实例绑定的标签，用于项目管理、成本分摊、环境隔离等场景。</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次批量创建 Memory 实例的数量。取值范围为 1-50。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费模式。</p><p>枚举值：</p><ul><li>0： 按量计费。</li><li>1： 包年包月。</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包年包月周期</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动续费</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMemoryPlusSpaceResponse": {
+      "document": "CreateMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID 列表。</p>",
+          "example": "[\"mem-hn46****\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMemoryProInstanceRequest": {
+      "document": "CreateMemoryProInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>私有网络id</p>",
+          "example": "vpc-n4c3s8u4",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网id</p>",
+          "example": "subnet-8apk7iir",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组列表</p>",
+          "example": "[\"sg-jml79sef\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>记忆空间上限</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "MemoryLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMemoryProInstanceResponse": {
+      "document": "CreateMemoryProInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>memory pro实例id</p>",
+          "example": "mp-bwf6pfu7",
+          "member": "string",
+          "name": "MemoryProId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vdb数据库实例id</p>",
+          "example": "vdb-43xovn43",
+          "member": "string",
+          "name": "VDBInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatingProgress": {
+      "document": "发货步骤描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总步骤数</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "TotalSteps",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前步骤</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "CurrentStep",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤详情</p>",
+          "example": "无",
+          "member": "CreatingStepInfo",
+          "name": "Steps",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreatingStepInfo": {
+      "document": "发货步骤详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>步骤名称</p>",
+          "example": "CreateTKECluster",
+          "member": "string",
+          "name": "StepName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤描述</p>",
+          "example": "创建TKE集群",
+          "member": "string",
+          "name": "StepDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>步骤状态</p>",
+          "example": "done",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间</p>",
+          "example": "2026-05-06 20:13:06",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息描述</p>",
+          "example": "QueryAddInstances: CVM instance ins-1flbim5k failed",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CvmConfig": {
+      "document": "智能体实例关联的CVM配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "llm",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-qwer1234",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "root密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "********",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeAgentDutyTaskDetailRequest": {
+      "document": "DescribeAgentDutyTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "agent实例ID",
+          "example": "agtins-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "43vsdc-hu834a-srm00",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "chat-h7u9o00s",
+          "member": "string",
+          "name": "ChatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "值守任务类型",
+          "example": "sql_precheck",
+          "member": "string",
+          "name": "AgentTaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务参数列表",
+          "example": "无",
+          "member": "Parameter",
+          "name": "Parameters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDutyTaskDetailResponse": {
+      "document": "DescribeAgentDutyTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详细信息",
+          "example": "无",
+          "member": "AgentDutyTask",
+          "name": "AgentDutyTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDutyTasksRequest": {
+      "document": "DescribeAgentDutyTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "agent实例ID",
+          "example": "agtinst-s7u9342",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "chat-xfwe24",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始位置",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表查询数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务启动时间",
+          "example": "2025-08-11 10:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间",
+          "example": "2025-08-12 10:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "sql_precheck",
+          "member": "string",
+          "name": "AgentTaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务参数",
+          "example": "无",
+          "member": "Parameter",
+          "name": "Parameters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDutyTasksResponse": {
+      "document": "DescribeAgentDutyTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果总数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务详细信息",
+          "example": "无",
+          "member": "AgentDutyTask",
+          "name": "DutyTasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentInstanceRequest": {
+      "document": "DescribeAgentInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，为空时查询所有，如果填写则会根据InstanceId筛选",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentInstanceResponse": {
+      "document": "DescribeAgentInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体实例详情",
+          "example": "Agent实例详情",
+          "member": "AgentInstance",
+          "name": "AgentInstance",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentInstancesRequest": {
+      "document": "DescribeAgentInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始位置",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表查询数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID，为空时查询所有，如果填写则会根据InstanceId筛选</p>",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名，为空时查询所有，如果填写则会根据InstanceName筛选</p>",
+          "example": "风险SQL治理Agent实例",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体ID，为空时查询所有，如果填写则会根据AgentId筛选</p>",
+          "example": "agt-xpcn2t3e",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体名称，为空时查询所有，如果填写则会根据AgentName筛选</p>",
+          "example": "风险SQL治理Agent智能体",
+          "member": "string",
+          "name": "AgentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体类型，为空时查询所有，如果填写则会根据AgentName筛选</p>",
+          "example": "aid",
+          "member": "string",
+          "name": "AgentInternalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例状态，为空时查询所有，如果填写则会根据Status筛选</p>",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签过滤信息</p>",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p>",
+          "example": "database_claw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentInstancesResponse": {
+      "document": "DescribeAgentInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果总数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体实例列表</p>",
+          "example": "无",
+          "member": "AgentInstance",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "StatusItem",
+          "name": "StatusCounts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentsRequest": {
+      "document": "DescribeAgents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始位置",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表查询数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "智能体ID，为空时查询所有，如果填写则会根据AgentId筛选",
+          "example": "agt-xpcn2t3e",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体名称，为空时查询所有，如果填写则会根据AgentName筛选",
+          "example": "风险SQL治理Agent智能体",
+          "member": "string",
+          "name": "AgentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体类型，为空时查询所有，如果填写则会根据AgentName筛选",
+          "example": "aid",
+          "member": "string",
+          "name": "AgentInternalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体状态，为空时查询所有，如果填写则会根据AgentStatus筛选",
+          "example": "normal",
+          "member": "string",
+          "name": "AgentStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否必须存在有效版本,租户端默认传true,表示只显示有默认版本的Agent信息",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedValid",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "架构，共享版-intranet，企业版-userVpc",
+          "example": "intranet",
+          "member": "string",
+          "name": "DeployPlace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentsResponse": {
+      "document": "DescribeAgents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果总数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体列表",
+          "example": "无",
+          "member": "Agent",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChatDetailRequest": {
+      "document": "DescribeChatDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体ID",
+          "example": "agtins-acegikm",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话Id",
+          "example": "chat-acegikm",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流ID",
+          "example": "strm-j92jbf9w",
+          "member": "string",
+          "name": "StreamingId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始拉取的流式TokenID。0表示从该流最早的TokenID开始获取",
+          "example": "0",
+          "member": "int64",
+          "name": "BeginStreamingTokenId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次获取的token数量，默认2000",
+          "example": "2000",
+          "member": "int64",
+          "name": "TokenLimit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChatDetailResponse": {
+      "document": "DescribeChatDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号ID",
+          "example": "1357913",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号Uin",
+          "example": "1357913",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号Uin",
+          "example": "1357913",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体实例ID",
+          "example": "agtins-acegikm",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "chat-xxxxxxxx",
+          "member": "string",
+          "name": "ChatId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一条流式TokenID",
+          "example": "0",
+          "member": "int64",
+          "name": "LastStreamingTokenId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Streaming数量",
+          "example": "0",
+          "member": "int64",
+          "name": "StreamingCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对话流列表",
+          "example": "无",
+          "member": "ChatDetail",
+          "name": "Streamings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChatsRequest": {
+      "document": "DescribeChats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体ID",
+          "example": "agtins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始位置",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表查询数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChatsResponse": {
+      "document": "DescribeChats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果总数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对话流列表",
+          "example": "无",
+          "member": "ChatBrief",
+          "name": "Chats",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusRecordRequest": {
+      "document": "DescribeMemoryPlusRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询的 Memory 实例 ID。</p>",
+          "example": "mem-1lpq****",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询列表的起始位置（偏移量）。用于分页查询，指明从符合条件的第几条数据开始返回。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次查询返回的记录数量上限（分页大小）。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询的记忆类型。</p><ul><li>conversation：L0 原始对话。</li><li>memory：L1 原子记忆。</li><li>scene：L2 场景记忆。</li><li>persona：L3 个性化画像。</li><li>memory/persona：L1 原子记忆-画像型。</li><li>memory/episodic：L1 原子记忆-事件型。</li><li>memory/instruction：L1 原子记忆-指令型。</li></ul>",
+          "example": "conversation",
+          "member": "string",
+          "name": "RecordType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定返回记录中的特定字段。</p>",
+          "example": "[\"recorded_at_ms\"]",
+          "member": "string",
+          "name": "Output",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件，当前仅支持 <strong>RecordType</strong> 为 <strong>conversation</strong> 的 <strong>session_id</strong> 过滤。</p>",
+          "example": "无",
+          "member": "VDBFieldMap",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结果列表的排序规则。</p><ul><li>ASC：升序。</li><li>DESC：降序。</li></ul>",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围的起始时间点。</p>",
+          "example": "2026-05-15 17:55:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围的结束时间点。</p>",
+          "example": "2026-05-15 18:55:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusRecordResponse": {
+      "document": "DescribeMemoryPlusRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果总数量。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询的记忆数据。</p>",
+          "example": "无",
+          "member": "VDBDocument",
+          "name": "Documents",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusSpaceRequest": {
+      "document": "DescribeMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定查询的 Memory 实例 ID。</p>",
+          "example": "mem-asy2****",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusSpaceResponse": {
+      "document": "DescribeMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例 ID。</p>",
+          "example": "mem-asy2****",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的自定义名称。</p>",
+          "example": "批量测试-38",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的简要描述，包括使用场景、用途或背景信息，便于日常运维识别。</p>",
+          "example": "描述1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云账号的 APPID。</p>",
+          "example": "1300257648",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memroy 实例所属地域。</p>",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的标签信息。</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例当前运行状态。</p><ul><li>1：运行中。</li><li>2：创建中。</li><li>3：销毁中。</li><li>4：已销毁。</li><li>5：隔离中。</li><li>6：已隔离。</li><li>7：恢复中。</li></ul>",
+          "example": "6",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例计费模式。</p><ul><li>-1：免费体验。</li><li>0：包年包月。</li><li>1：按量计费。</li></ul>",
+          "example": "-1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动续费</p><p>枚举值：</p><ul><li>0： 不自动续费</li><li>1： 自动续费</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenew",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 版本信息：v1。</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 当前已写入的记忆条数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MemoryUsage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例记忆条数配额上限。</p>",
+          "example": "50000",
+          "member": "int64",
+          "name": "MemoryLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例当前 Credit 的使用数量。</p>",
+          "example": "0",
+          "member": "float",
+          "name": "CreditUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例 Credit 的最大使用数量。</p>",
+          "example": "1000",
+          "member": "float",
+          "name": "CreditLimit",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的内网访问地址。</p>",
+          "example": "https://tdai.apigateway.cd.test.polaris",
+          "member": "string",
+          "name": "AccessUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的外网访问地址。</p>",
+          "example": "https://tdai.apigateway.cd.test.polaris",
+          "member": "string",
+          "name": "WanAccessUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的创建时间。</p>",
+          "example": "2026-05-20T11:53:20+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的到期时间。</p>",
+          "example": "2026-08-15T23:59:59+08:00",
+          "member": "datetime_iso",
+          "name": "ExpiredAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Memory 实例的隔离时间。</p>",
+          "example": "2026-05-21T16:05:24+08:00",
+          "member": "datetime_iso",
+          "name": "IsolatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期销毁时间</p>",
+          "example": "2026-05-28T16:05:24+08:00",
+          "member": "datetime_iso",
+          "name": "DestroyAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusSpacesRequest": {
+      "document": "DescribeMemoryPlusSpaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询列表的起始位置（偏移量）。用于分页查询，指明从符合条件的第几条数据开始返回。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次查询返回的记录数量上限（分页大小）。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询实例名称或者实例id</p>",
+          "example": "[\"搜素名称\"]",
+          "member": "string",
+          "name": "SearchKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p><p>枚举值：</p><ul><li>1： 运行中</li><li>2： 创建中</li><li>3： 删除中</li><li>4： 已删除</li><li>5： 隔离中</li><li>6： 已隔离（进入回收站）</li><li>7： 恢复中（从回收站恢复）</li></ul>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p>",
+          "example": "CreatedAt",
+          "member": "string",
+          "name": "Orderby",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向</p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul>",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMemoryPlusSpacesResponse": {
+      "document": "DescribeMemoryPlusSpaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果总数量。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例列表信息</p>",
+          "example": "无",
+          "member": "MemoryPlusInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReportUrlRequest": {
+      "document": "DescribeReportUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "agentins-xxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "chat-xxxxxx",
+          "member": "string",
+          "name": "ChatId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问答ID",
+          "example": "strm-7j9eo8bb",
+          "member": "string",
+          "name": "StreamingId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "步骤",
+          "example": "步骤名称",
+          "member": "string",
+          "name": "StepName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子步骤",
+          "example": "子步骤名称",
+          "member": "string",
+          "name": "SubStepName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务参数列表",
+          "example": "无",
+          "member": "Parameter",
+          "name": "Parameters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReportUrlResponse": {
+      "document": "DescribeReportUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载地址",
+          "example": "http://xxxx.download",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceAccessKeyRequest": {
+      "document": "DescribeServiceAccessKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定 Memroy 实例 ID。</p>",
+          "example": "tdai-dps-312dfs",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceAccessKeyResponse": {
+      "document": "DescribeServiceAccessKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问密钥。</p>",
+          "example": "vdsafdsafsda",
+          "member": "string",
+          "name": "AuthKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyMemoryPlusSpaceRequest": {
+      "document": "DestroyMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定需要销毁的 Memory 实例 ID 列表。</p>",
+          "example": "[\"mem-hn46****\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyMemoryPlusSpaceResponse": {
+      "document": "DestroyMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExtraInfo": {
+      "document": "智能体值守任务额外信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出参额外信息的Key",
+          "example": "AppId",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额外信息描述",
+          "example": "用户标识",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ExtraInfo的值",
+          "example": "json 字符串",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值的数据结构类型",
+          "example": "string",
+          "member": "string",
+          "name": "ValueType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceInfos": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库实例id",
+          "example": "cdb-jgmilzl8",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "test_database",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表名称",
+          "example": "test_table",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IsolateAgentInstanceRequest": {
+      "document": "IsolateAgentInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，为空时查询所有，如果填写则会根据InstanceId筛选",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateAgentInstanceResponse": {
+      "document": "IsolateAgentInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateMemoryPlusSpaceRequest": {
+      "document": "IsolateMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定需要放入回收站的 Memory 实例 ID 列表。</p>",
+          "example": "[\"mem-hn46****\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateMemoryPlusSpaceResponse": {
+      "document": "IsolateMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MemoryPlusInfo": {
+      "document": "Memory正式版实例列表元素信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "mem-ins-mft8g8st",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "fdsfadsafdsf",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>记忆条数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MemoryUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当月积分数</p>",
+          "example": "44.062",
+          "member": "float",
+          "name": "CreditUsage",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-05-14T16:43:58+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离时间</p>",
+          "example": "2026-05-18T11:51:19+08:00",
+          "member": "datetime_iso",
+          "name": "IsolatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间</p>",
+          "example": "2026-08-15T23:59:59+08:00",
+          "member": "datetime_iso",
+          "name": "ExpiredAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期销毁时间</p>",
+          "example": "2026-05-28T16:05:24+08:00",
+          "member": "datetime_iso",
+          "name": "DestroyAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyAgentInstanceParametersRequest": {
+      "document": "ModifyAgentInstanceParameters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型, 可选，默认default",
+          "example": "default",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新的参数列表",
+          "example": "无",
+          "member": "Parameter",
+          "name": "Parameters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "风险SQL智能体参数列表",
+          "example": "无",
+          "member": "SqlAgentParameter",
+          "name": "SqlAgentParameter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentInstanceParametersResponse": {
+      "document": "ModifyAgentInstanceParameters返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyChatTitleRequest": {
+      "document": "ModifyChatTitle请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体ID",
+          "example": "agtins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话Id",
+          "example": "chat-xxxxxxxx",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "新标题",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyChatTitleResponse": {
+      "document": "ModifyChatTitle返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMemoryPlusSpaceRequest": {
+      "document": "ModifyMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定需要修改的 Memory 实例 ID。</p>",
+          "example": "mem-bsjw****",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定修改后的实例名称。支持 60 个字符内 的中英文、数字、中划线（-）及下划线（_）。</p>",
+          "example": "测试111",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定修改后的实例描述。最多支持 200 个字符。</p>",
+          "example": "描述1111",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMemoryPlusSpaceResponse": {
+      "document": "ModifyMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Parameter": {
+      "document": "智能体实例的参数值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "git_branch",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "master",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "枚举值，可取值包括：string(字符串), int(整型), float(浮点型), bool(布尔型), struct(结构体), array(数组), \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "ValueType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PauseAgentWorkRequest": {
+      "document": "PauseAgentWork请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，为空时查询所有，如果填写则会根据InstanceId筛选",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Agent任务类型",
+          "example": "sql_precheck",
+          "member": "string",
+          "name": "AgentTaskType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PauseAgentWorkResponse": {
+      "document": "PauseAgentWork返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverAgentInstanceRequest": {
+      "document": "RecoverAgentInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，为空时查询所有，如果填写则会根据InstanceId筛选",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverAgentInstanceResponse": {
+      "document": "RecoverAgentInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverMemoryPlusSpaceRequest": {
+      "document": "RecoverMemoryPlusSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定需要恢复的 Memory 实例 ID 列表。</p>",
+          "example": "[\"mem-8z4o****\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包年包月续费周期</p><p>单位：月</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayPeriod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverMemoryPlusSpaceResponse": {
+      "document": "RecoverMemoryPlusSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveChatRequest": {
+      "document": "RemoveChat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体ID",
+          "example": "agtins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话Id",
+          "example": "chat-xxxxxxxx",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveChatResponse": {
+      "document": "RemoveChat返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourceTag": {
+      "document": "资源tag",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "tagkey",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "tagvalue",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Resources": {
+      "document": "sql事前模型部署在用户vpc内时需要绑定和创建的资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能体实例关联的CVM配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CvmConfig",
+          "name": "Cvm",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能体实例关联的CDB配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CdbResource",
+          "name": "Cdb",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能体实例关联的COS配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosResource",
+          "name": "Cos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能体实例关联的TKE配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TkeResource",
+          "name": "Tke",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能体实例关联的云硬盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CbsResource",
+          "name": "Cbs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能体实例关联的vpc",
+          "example": "vpc-network",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc网段",
+          "example": "172.17.0.0/16",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体实例关联的子网",
+          "example": "subnet-45rpdnl9",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-0",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SqlAgentParameter": {
+      "document": "风险SQL智能体参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库实例信息列表",
+          "example": "无",
+          "member": "InstanceInfos",
+          "name": "InstanceInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代码仓库信息",
+          "example": "无",
+          "member": "CodeRepo",
+          "name": "CodeRepo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StartAgentTaskRequest": {
+      "document": "StartAgentTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "agentins-example",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置Token",
+          "example": "QWER",
+          "member": "string",
+          "name": "InstanceToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartAgentTaskResponse": {
+      "document": "StartAgentTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "qwer1234",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StatusItem": {
+      "document": "实例状态描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagFilter": {
+      "document": "通过标签对资源进行过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "负责人",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "[\"bob\"]",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "TagItem": {
+      "document": "资源标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "负责人",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "bob",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TerminateAgentInstanceRequest": {
+      "document": "TerminateAgentInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，为空时查询所有，如果填写则会根据InstanceId筛选",
+          "example": "agentins-efbt5y3h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateAgentInstanceResponse": {
+      "document": "TerminateAgentInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TkeResource": {
+      "document": "sql事前模型部署在用户vpc内时需要创建的tke资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tke集群ID",
+          "example": "cls-juig7fub",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UploadChoice": {
+      "document": "流式输出消息数据体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息索引",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前消息步骤",
+          "example": "1",
+          "member": "int64",
+          "name": "StepNo",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前步骤",
+          "example": "数据处理",
+          "member": "string",
+          "name": "CurrentStep",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量信息",
+          "example": "无",
+          "member": "UploadDelta",
+          "name": "Delta",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束原因",
+          "example": "stop",
+          "member": "string",
+          "name": "FinishReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息，FinishReason为error时有效",
+          "example": "error",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UploadDelta": {
+      "document": "流式接口当前消息数据详细内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤摘要",
+          "example": "正在进行数据处理",
+          "member": "string",
+          "name": "StepBrief",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤详情",
+          "example": "正在处理第一条数据",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VDBDocument": {
+      "document": "vdb数据库文档结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vdb document数据id</p>",
+          "example": "profile:v1:1c7336830c19807078c557cb9484c95f448d338906a395ef71e7ee86e9d55867",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vdb document数据标量字段</p>",
+          "example": "无",
+          "member": "VDBFieldMap",
+          "name": "Fields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VDBFieldMap": {
+      "document": "vdb数据库文档中键值结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vdb document字段名</p>",
+          "example": "created_at_ms",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vdb document字段值</p>",
+          "example": "1776064058717",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vdb document字段类型</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段描述</p>",
+          "example": "文件名",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

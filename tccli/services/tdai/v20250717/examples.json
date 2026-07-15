@@ -1,0 +1,237 @@
+{
+  "actions": {
+    "ContinueAgentWork": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ContinueAgentWork\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\",\n    \"AgentTaskType\": \"sql_precheck\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
+        "title": "重启智能体实例的值守任务"
+      }
+    ],
+    "CreateAgentInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentInstance\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-xpcn2t3e\",\n    \"AgentVersion\": \"v1.0.0.0\",\n    \"InstanceName\": \"agentins-efbt5y3h\",\n    \"Parameters\": [\n        {\n            \"Key\": \"git_branch\",\n            \"Value\": \"master\",\n            \"ValueType\": \"string\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"InstanceId\": \"agentins-efbt5y3h\",\n        \"InstanceName\": \"agentins-efbt5y3h\"\n    }\n}",
+        "title": "创建databaseClaw实例"
+      }
+    ],
+    "CreateChatCompletion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChatCompletion\n<公共请求参数>\n\n{\n    \"InputContent\": \"hello\",\n    \"InstanceId\": \"agentins-f1a2k3e4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Object\": \"chat.completion.chunk\",\n        \"Created\": 1753104696,\n        \"Model\": \"fake-agent\",\n        \"AppId\": 1008611,\n        \"Uin\": \"1008611\",\n        \"OwnerUin\": \"1008611\",\n        \"RequestId\": \"58e4fd58-6d47-5418-17ab-ce5bab7e5318\",\n        \"ChatId\": \"chat-vga0vn5t\",\n        \"StreamingId\": \"strm-lrx2ix8k\",\n        \"TaskId\": \"task-fake-agent-58e4fd58-6d47-5418-17ab-ce5bab7e5318\",\n        \"Choices\": [\n            {\n                \"Index\": 0,\n                \"StepNo\": 0,\n                \"CurrentStep\": \"test1\",\n                \"Delta\": {\n                    \"StepBrief\": \"left\",\n                    \"Content\": \"hello\"\n                },\n                \"FinishReason\": \"\",\n                \"ErrorMessage\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "创建会话示例"
+      }
+    ],
+    "CreateMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"Name\": \"name2\",\n    \"Description\": \"description2\",\n    \"GoodsNum\": 1,\n    \"PayMode\": -1\n}",
+        "output": "{\n    \"Response\": {\n        \"SpaceIds\": [\n            \"mem-hn46****\"\n        ],\n        \"RequestId\": \"f8984e85-c84d-4b84-a481-af3ca3dd212f\"\n    }\n}",
+        "title": "创建 Memory 实例"
+      }
+    ],
+    "CreateMemoryProInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMemoryProInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-n4c3s8u4\",\n    \"SubnetId\": \"subnet-8apk7iir\",\n    \"SecurityGroupIds\": [\n        \"sg-jml79sef\"\n    ],\n    \"MemoryLimit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"MemoryProId\": \"mp-bwf6pfu7\",\n        \"VDBInstanceId\": \"vdb-43xovn43\",\n        \"RequestId\": \"b424b6f5-920b-4901-8bb4-7ddffafde36a\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeAgentDutyTaskDetail": [
+      {
+        "document": "用于查询智能体后台值守任务详情",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChats\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-fq9vp1md\",\n    \"TaskId\": \"task-x89ool0j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentDutyTask\": {\n            \"TaskId\": \"task-x89ool0j\",\n            \"CreateTime\": \"2025-09-01 10:00:00\",\n            \"FinishTime\": \"0000-00-00 00:00:00\",\n            \"Status\": \"running\",\n            \"ResultExtraKey\": [],\n            \"Extra\": []\n        },\n        \"RequestId\": \"4744e0fa-7827-4ae6-8eda-f5de924e1adb\"\n    }\n}",
+        "title": "查询值守任务详情"
+      }
+    ],
+    "DescribeAgentDutyTasks": [
+      {
+        "document": "查询智能体的值守任务列表",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChats\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-fq9vp1md\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DutyTasks\": [],\n        \"RequestId\": \"4744e0fa-7827-4ae6-8eda-f5de924e1adb\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询智能体值守任务列表"
+      }
+    ],
+    "DescribeAgentInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentInstance\": {\n            \"InstanceId\": \"agentins-efbt5y3h\",\n            \"InstanceName\": \"agentins-efbt5y3h\",\n            \"AgentId\": \"agt-xpcn2t3e\",\n            \"AgentName\": \"sqlAgent测试\",\n            \"AgentInternalName\": \"aid\",\n            \"AgentType\": \"chat\",\n            \"AgentVersion\": \"v1.0.0\",\n            \"Status\": \"running\",\n            \"Parameters\": [\n                {\n                    \"Key\": \"git_branch\",\n                    \"Value\": \"master\",\n                    \"ValueType\": \"string\"\n                }\n            ],\n            \"CreateTime\": \"2025-07-15 16:06:10\",\n            \"UpdateTime\": \"2025-07-15 16:06:10\"\n        },\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
+        "title": "查询智能体实例详情"
+      }
+    ],
+    "DescribeAgentInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\",\n    \"InstanceName\": \"agentins-efbt5y3h\",\n    \"AgentId\": \"agt-xpcn2t3e\",\n    \"AgentName\": \"sqlAgent测试\",\n    \"AgentInternalName\": \"aid\",\n    \"Status\": \"running\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"InstanceId\": \"agentins-efbt5y3h\",\n                \"InstanceName\": \"agentins-efbt5y3h\",\n                \"AgentId\": \"agt-xpcn2t3e\",\n                \"AgentName\": \"sqlAgent测试\",\n                \"AgentInternalName\": \"aid\",\n                \"AgentType\": \"chat\",\n                \"AgentVersion\": \"v1.0.0\",\n                \"Status\": \"running\",\n                \"Parameters\": [\n                    {\n                        \"Key\": \"git_branch\",\n                        \"Value\": \"master\",\n                        \"ValueType\": \"string\"\n                    }\n                ],\n                \"CreateTime\": \"2025-07-15 16:06:10\",\n                \"UpdateTime\": \"2025-07-15 16:06:10\"\n            }\n        ],\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询智能体实例列表"
+      }
+    ],
+    "DescribeAgents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgents\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-xpcn2t3e\",\n    \"AgentName\": \"sqlAgent测试\",\n    \"AgentInternalName\": \"aid\",\n    \"AgentStatus\": \"normal\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AgentId\": \"agt-xpcn2t3e\",\n                \"AgentName\": \"sqlAgent测试\",\n                \"AgentInternalName\": \"aid\",\n                \"AgentStatus\": \"normal\",\n                \"DefaultVersion\": \"v1.0.0\",\n                \"AgentType\": \"chat\",\n                \"Description\": \"风险SQL治理Agent\",\n                \"Creator\": \"calvinliao\",\n                \"CreateTime\": \"2025-05-27 20:43:51\",\n                \"Updater\": \"calvinliao\",\n                \"UpdateTime\": \"2025-05-27 20:44:17\"\n            }\n        ],\n        \"RequestId\": \"d8007300-6b36-5418-f3aa-257d7b263031\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询智能体列表"
+      }
+    ],
+    "DescribeChatDetail": [
+      {
+        "document": "查询智能体会话详情",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-rdz3f7ld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 260028736,\n        \"ChatId\": \"\",\n        \"InstanceId\": \"agentins-rdz3f7ld\",\n        \"LastStreamingTokenId\": 0,\n        \"OwnerUin\": \"700001866478\",\n        \"RequestId\": \"dbff2eb8-a957-480d-bc0b-6ce4b494338e\",\n        \"StreamingCount\": 0,\n        \"Streamings\": [],\n        \"Uin\": \"700002010069\"\n    }\n}",
+        "title": "查询智能体会话详情"
+      }
+    ],
+    "DescribeChats": [
+      {
+        "document": "查询智能体历史会话列表",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChats\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-fq9vp1md\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Chats\": [],\n        \"RequestId\": \"4744e0fa-7827-4ae6-8eda-f5de924e1adb\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询智能体历史会话列表"
+      }
+    ],
+    "DescribeMemoryPlusRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMemoryPlusRecord\n<公共请求参数>\n\n{\n    \"SpaceId\": \"mem-1lpq****\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"RecordType\": \"conversation\",\n    \"Filters\": [\n        {\n            \"Name\": \"session_id\",\n            \"Value\": \"barad-1779350361-131\"\n        }\n    ],\n    \"OrderDirection\": \"ASC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Documents\": [\n            {\n                \"Fields\": [\n                    {\n                        \"Description\": \"时间戳\",\n                        \"Name\": \"timestamp\",\n                        \"Type\": \"json.Number\",\n                        \"Value\": \"1779350361451\"\n                    }\n                ],\n                \"Id\": \"msg-cb5bede3****\"\n            }\n        ],\n        \"TotalCount\": 20,\n        \"RequestId\": \"4dfebdaf-c04c-4bcf-9a62-0fbb48879987\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"mem-asy2****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessUrl\": \"https://tdai.apigateway.cd.test.polaris\",\n        \"AppId\": 1300257648,\n        \"CreatedAt\": \"2026-05-20T11:53:20+08:00\",\n        \"CreditLimit\": 1000,\n        \"CreditUsage\": 0,\n        \"Description\": \"\",\n        \"DestroyAt\": \"2026-05-28T16:05:24+08:00\",\n        \"ExpiredAt\": \"2026-08-15T23:59:59+08:00\",\n        \"IsolatedAt\": \"2026-05-21T16:05:24+08:00\",\n        \"MemoryLimit\": 50000,\n        \"MemoryUsage\": 0,\n        \"Name\": \"批量测试-38\",\n        \"PayMode\": -1,\n        \"Region\": \"ap-chengdu\",\n        \"ResourceTags\": [],\n        \"SpaceId\": \"mem-asy2****\",\n        \"Status\": 6,\n        \"Version\": \"v1\",\n        \"WanAccessUrl\": \"https://tdai.apigateway.cd.test.polaris\",\n        \"RequestId\": \"067b2634-c91f-48d7-a6c0-a4edd5a0ad2e\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeMemoryPlusSpaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMemoryPlusSpaces\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreatedAt\": \"2026-05-14T10:34:01+08:00\",\n                \"CreditUsage\": 0,\n                \"MemoryUsage\": 0,\n                \"Name\": \"name3\",\n                \"Region\": \"ap-chengdu\",\n                \"ResourceTags\": null,\n                \"SpaceId\": \"mem-8z4o2g9v\",\n                \"Status\": 1\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"d08df123-f124-4de3-9587-9ce2f915bdb5\"\n    }\n}",
+        "title": "成功查询实例列表"
+      }
+    ],
+    "DescribeReportUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChats\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-fq9vp1md\",\n    \"ChatId\": \"chat-x8ko90ij\",\n    \"StreamingId\": \"strm-tyukoljn\",\n    \"StepName\": \"一级步骤\",\n    \"SubStepName\": \"子步骤\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4744e0fa-7827-4ae6-8eda-f5de924e1adb\",\n        \"DownloadUrl\": \"https://url.download.cn/you/report\"\n    }\n}",
+        "title": "某个子步骤的结果作为报告输出"
+      }
+    ],
+    "DescribeServiceAccessKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceAccessKey\n<公共请求参数>\n\n{\n    \"ServiceId\": \"tdai-dps-8ynwub6x\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthKey\": \"********************************************\",\n        \"RequestId\": \"a8786e2d-c831-4443-a7b1-b53ec4880e74\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DestroyMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"mem-hn46****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba56fc77-f742-4a54-8df8-0f717951b65c\"\n    }\n}",
+        "title": "成功删除单个实例"
+      }
+    ],
+    "IsolateAgentInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateAgentInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
+        "title": "隔离智能体实例"
+      }
+    ],
+    "IsolateMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"mem-hn46****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dcff65d8-7e16-4ded-97c0-0f1c6644f40a\"\n    }\n}",
+        "title": "成功将单个实例放入回收站"
+      }
+    ],
+    "ModifyAgentInstanceParameters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentInstanceParameters\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-551mli9x\",\n    \"SqlAgentParameter\": {\n        \"InstanceInfos\": [\n            {\n                \"Region\": \"ap-chengdu\",\n                \"InstanceId\": \"cdb-jgmilzl8\",\n                \"DatabaseName\": \"\",\n                \"TableName\": \"\"\n            }\n        ],\n        \"CodeRepo\": {\n            \"RepoUrl\": \"git@git.woa.com:calvinliao/test-sql-agent.git\",\n            \"Branch\": \"master\",\n            \"GitCommitPipelines\": [\n                \"bdbe54afaa7e60b11cd87682bd9ab59c92a489ac\"\n            ],\n            \"GitORMType\": \"goframe\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
+        "title": "修改智能体实例的参数列表"
+      }
+    ],
+    "ModifyChatTitle": [
+      {
+        "document": "修改实例中某次会话的标题",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChats\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-fq9vp1md\",\n    \"ChatId\": \"chat-lop96hbx\",\n    \"Title\": \"新标题\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4744e0fa-7827-4ae6-8eda-f5de924e1adb\"\n    }\n}",
+        "title": "修改实例某一次会话的标题"
+      }
+    ],
+    "ModifyMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"mem-bsjw****\",\n    \"Name\": \"测试111\",\n    \"Description\": \"描述1111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52ef7fd5-3cdd-4fe9-b219-8ff958ae01eb\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "PauseAgentWork": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseAgentWork\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\",\n    \"AgentTaskType\": \"sql_precheck\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
+        "title": "暂停智能体实例的值守任务"
+      }
+    ],
+    "RecoverAgentInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverAgentInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
+        "title": "解隔离智能体实例"
+      }
+    ],
+    "RecoverMemoryPlusSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverMemoryPlusSpace\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"mem-8z4o****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b856ae25-2e49-4a2e-887a-c838244b008f\"\n    }\n}",
+        "title": "将单个实例从回收站中恢复"
+      }
+    ],
+    "RemoveChat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChats\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-fq9vp1md\",\n    \"ChatId\": \"chat-lop96hbx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4744e0fa-7827-4ae6-8eda-f5de924e1adb\"\n    }\n}",
+        "title": "删除会话信息"
+      }
+    ],
+    "StartAgentTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAgentTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-1234qwer\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1vogaxgk\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "启动智能体任务"
+      }
+    ],
+    "TerminateAgentInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateAgentInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"agentins-efbt5y3h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a070f1a2-7538-5318-c843-6b47607aa78c\"\n    }\n}",
+        "title": "下线智能体实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

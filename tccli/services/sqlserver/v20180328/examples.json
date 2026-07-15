@@ -32,6 +32,14 @@
         "title": "设置实例移出互通组"
       }
     ],
+    "CloseLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8lv5ti3v\",\n    \"LogType\": \"auditLog\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6807a5b4-ef25-480d-b77b-803d160e2603\"\n    }\n}",
+        "title": "关闭日志"
+      }
+    ],
     "CompleteExpansion": [
       {
         "document": "立即完成实例状态为“升级待切换”的升级操作。",
@@ -74,10 +82,10 @@
     ],
     "CreateBasicDBInstances": [
       {
-        "document": "创建基础版实例",
-        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBasicDBInstances\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-huew581t\",\n    \"AutoRenewFlag\": \"0\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"GoodsNum\": \"1\",\n    \"TimeZone\": \"China Standard Time\",\n    \"DBVersion\": \"2008R2\",\n    \"Storage\": \"20\",\n    \"Period\": \"1\",\n    \"MachineType\": \"CLOUD_PREMIUM\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"StartTime\": \"00:00\",\n    \"Memory\": \"2\",\n    \"SubnetId\": \"subnet-pudyecyk\",\n    \"Span\": \"6\",\n    \"Cpu\": \"1\",\n    \"Weekly\": [\n        \"1\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DealName\": \"20200713383000001111250\",\n        \"RequestId\": \"d84adfca-3ff0-46d2-b400-b5527446df72\"\n    }\n}",
-        "title": "创建基础版实例"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBasicDBInstances\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-2\",\n    \"Cpu\": 2,\n    \"Memory\": 4,\n    \"Storage\": 500,\n    \"MachineType\": \"CLOUD_HSSD\",\n    \"VpcId\": \"vpc-3xq2t5al\",\n    \"SubnetId\": \"subnet-gdy95gfs\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"ProjectId\": 0,\n    \"GoodsNum\": 1,\n    \"DBVersion\": \"2019\",\n    \"Period\": 1,\n    \"AutoRenewFlag\": 1,\n    \"AutoVoucher\": 0,\n    \"SecurityGroupList\": [\n        \"sg-6axwo3lz\"\n    ],\n    \"Weekly\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7\n    ],\n    \"StartTime\": \"03:00\",\n    \"Span\": 4,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"env\",\n            \"TagValue\": \"prod\"\n        }\n    ],\n    \"TimeZone\": \"China Standard Time\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"DiskEncryptFlag\": 0,\n    \"ThroughputPerformance\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20260511A1B2C3\",\n        \"RequestId\": \"8a4c9f2e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "新购基础版实例"
       }
     ],
     "CreateBusinessDBInstances": [
@@ -106,10 +114,10 @@
     ],
     "CreateCloudReadOnlyDBInstances": [
       {
-        "document": "创建基于通用型SSD云硬盘的只读副本",
-        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudReadOnlyDBInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupMaxDelayTime\": \"10\",\n    \"VpcId\": \"vpc-3xq2t5al\",\n    \"GoodsNum\": \"1\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"InstanceId\": \"mssql-6upluvd5\",\n    \"Period\": \"1\",\n    \"Storage\": \"10\",\n    \"ReadOnlyGroupIsOfflineDelay\": \"1\",\n    \"ReadOnlyGroupMinInGroup\": \"1\",\n    \"ReadOnlyGroupName\": \"default_name\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"ReadOnlyGroupType\": \"2\",\n    \"InstanceChargeType\": \"POSTPAID\",\n    \"Memory\": \"2\",\n    \"SubnetId\": \"subnet-gdy95gfs\",\n    \"TimeZone\": \"China Standard Time\",\n    \"ReadOnlyGroupForcedUpgrade\": \"1\",\n    \"Cpu\": 2,\n    \"MachineType\": \"CLOUD_BSSD\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"20200722117963\"\n        ],\n        \"RequestId\": \"0509b6b8-8906-479f-9489-10620ec6d4ce\"\n    }\n}",
-        "title": "创建只读实例"
+        "document": "创建云盘版本只读实例副本",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudReadOnlyDBInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-4cg9922v\",\n    \"Zone\": \"ap-guangzhou-6\",\n    \"ReadOnlyGroupType\": 1,\n    \"Memory\": 4,\n    \"Storage\": 500,\n    \"Cpu\": 2,\n    \"MachineType\": \"CLOUD_HSSD\",\n    \"ReadOnlyGroupForcedUpgrade\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"202301231\"\n        ],\n        \"RequestId\": \"61999983-b0af-4889-b067-xxxxxxxxx\"\n    }\n}",
+        "title": "创建云盘版本只读实例副本"
       }
     ],
     "CreateDB": [
@@ -123,9 +131,17 @@
     "CreateDBInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstances\n<公共请求参数>\n\n{\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"TimeZone\": \"China Standard Time\",\n    \"Storage\": \"100\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"Memory\": \"2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DealName\": \"20200318114212\",\n        \"DealNames\": [\n            \"20200318114212\"\n        ],\n        \"RequestId\": \"2b6f7e2a-e909-4753-84b7-0db3e6099877\"\n    }\n}",
-        "title": "创建实例"
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstances\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-2\",\n    \"Memory\": 4,\n    \"Storage\": 100,\n    \"InstanceChargeType\": \"PREPAID\",\n    \"ProjectId\": 0,\n    \"GoodsNum\": 1,\n    \"DBVersion\": \"2019\",\n    \"SubnetId\": \"subnet-gdy95gfs\",\n    \"VpcId\": \"vpc-3xq2t5al\",\n    \"Period\": 1,\n    \"AutoRenewFlag\": 1,\n    \"AutoVoucher\": 0,\n    \"SecurityGroupList\": [\n        \"sg-6axwo3lz\"\n    ],\n    \"Weekly\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7\n    ],\n    \"StartTime\": \"03:00\",\n    \"Span\": 4,\n    \"MultiZones\": false,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"env\",\n            \"TagValue\": \"prod\"\n        }\n    ],\n    \"TimeZone\": \"China Standard Time\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"MultiNodes\": false,\n    \"AvailabilityStrategy\": \"Sync\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"20260511A1B2C3\"\n        ],\n        \"DealName\": \"20260511A1B2C3\",\n        \"RequestId\": \"8a4c9f2e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "创建物理机双节点"
+      }
+    ],
+    "CreateExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExportTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8lv5ti3v\",\n    \"LogType\": \"auditLog\",\n    \"StartTime\": \"2025-08-14 16:24:24\",\n    \"EndTime\": \"2026-08-14 16:24:24\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f210476a-a621-4bf2-95a9-cd3d6a4dbde5\"\n    }\n}",
+        "title": "创建日志下载任务"
       }
     ],
     "CreateIncrementalMigration": [
@@ -206,6 +222,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteDBInstance\n&InstanceId=mssql-ms2m7vut\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5098dad3-077b-4a3b-9c7d-fb1b0415027b\"\n    }\n}",
         "title": "删除SQL server实例"
+      }
+    ],
+    "DeleteExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExportTask\n<公共请求参数>\n\n{\n    \"LogType\": \"auditLog\",\n    \"FileName\": \"mssql-8eei3sy5_20260316-124617_to_20260316-154617_1773647182589.tar.gz\",\n    \"InstanceId\": \"mssql-8lv5ti3v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c753537d-f095-455b-ace1-6c0790a3ab2d\"\n    }\n}",
+        "title": "删除日志下载任务"
       }
     ],
     "DeleteIncrementalMigration": [
@@ -420,7 +444,7 @@
       {
         "document": "查询实例附属属性",
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstancesAttribute\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-j8kv137v\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BlockedThreshold\": 0,\n        \"DrReadableInfo\": {\n            \"DrInstanceId\": \"mssqldr-oo1\",\n            \"Zone\": \"ap-guangzhou\",\n            \"RoWeight\": 0,\n            \"ReadableStatus\": \"\",\n            \"ReadMode\": \"BalancedReadOnly\",\n            \"SlaveStatus\": \"\",\n            \"UniqSubnetId\": \"\",\n            \"UniqVpcId\": \"\",\n            \"VPort\": 0,\n            \"Vip\": \"\"\n        },\n        \"EventSaveDays\": 7,\n        \"InstanceId\": \"mssql-9pk12q33\",\n        \"OldVipList\": [],\n        \"RegularBackupCounts\": 100,\n        \"RegularBackupEnable\": \"disable\",\n        \"RegularBackupSaveDays\": 123,\n        \"RegularBackupStartTime\": \"2024-06-17\",\n        \"RegularBackupStrategy\": \"years\",\n        \"RequestId\": \"c1bd8e12-4744-4d95-b08e-fbc2d8477c11\",\n        \"SSLConfig\": {\n            \"Encryption\": \"disable\",\n            \"SSLValidity\": 0,\n            \"SSLValidityPeriod\": \"0000-00-00 00:00:00\"\n        },\n        \"TDEConfig\": {\n            \"CertificateAttribution\": \"none\",\n            \"Encryption\": \"disable\",\n            \"QuoteUin\": \"\"\n        },\n        \"XEventStatus\": \"disable\",\n        \"MultiDrReadableInfo\": [\n            {\n                \"DrInstanceId\": \"mssqldr-jia78a\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"SlaveStatus\": \"DR_RUNNING\",\n                \"ReadableStatus\": \"disable\",\n                \"ReadMode\": \"BalancedReadOnly\",\n                \"Vip\": \"\",\n                \"VPort\": 1433,\n                \"UniqVpcId\": \"\",\n                \"UniqSubnetId\": \"\",\n                \"RoWeight\": 1\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BlockedThreshold\": 0,\n        \"SlowLogThreshold\": 1000,\n        \"DrReadableInfo\": {\n            \"DrInstanceId\": \"mssqldr-oo1\",\n            \"Zone\": \"ap-guangzhou\",\n            \"RoWeight\": 0,\n            \"ReadableStatus\": \"\",\n            \"ReadMode\": \"BalancedReadOnly\",\n            \"SlaveStatus\": \"\",\n            \"UniqSubnetId\": \"\",\n            \"UniqVpcId\": \"\",\n            \"VPort\": 0,\n            \"Vip\": \"\"\n        },\n        \"EventSaveDays\": 7,\n        \"InstanceId\": \"mssql-9pk12q33\",\n        \"OldVipList\": [],\n        \"RegularBackupCounts\": 100,\n        \"RegularBackupEnable\": \"disable\",\n        \"RegularBackupSaveDays\": 123,\n        \"RegularBackupStartTime\": \"2024-06-17\",\n        \"RegularBackupStrategy\": \"years\",\n        \"RequestId\": \"c1bd8e12-4744-4d95-b08e-fbc2d8477c11\",\n        \"SSLConfig\": {\n            \"Encryption\": \"disable\",\n            \"SSLValidity\": 0,\n            \"SSLValidityPeriod\": \"0000-00-00 00:00:00\"\n        },\n        \"TDEConfig\": {\n            \"CertificateAttribution\": \"none\",\n            \"Encryption\": \"disable\",\n            \"QuoteUin\": \"\"\n        },\n        \"XEventStatus\": \"disable\",\n        \"MultiDrReadableInfo\": [\n            {\n                \"DrInstanceId\": \"mssqldr-jia78a\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"SlaveStatus\": \"DR_RUNNING\",\n                \"ReadableStatus\": \"disable\",\n                \"ReadMode\": \"BalancedReadOnly\",\n                \"Vip\": \"\",\n                \"VPort\": 1433,\n                \"UniqVpcId\": \"\",\n                \"UniqSubnetId\": \"\",\n                \"RoWeight\": 1\n            }\n        ]\n    }\n}",
         "title": "查询实例mssql-j8kv137v的附属属性"
       }
     ],
@@ -504,6 +528,14 @@
         "title": "DescribeDbTknResource"
       }
     ],
+    "DescribeExportTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExportTasks\n<公共请求参数>\n\n{\n    \"LogType\": \"auditLog\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"InstanceId\": \"mssql-8lv5ti3v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"5191e7bc-df5f-4266-abc8-2df2f2e0c4f3\"\n    }\n}",
+        "title": "查询日志下载任务"
+      }
+    ],
     "DescribeFlowStatus": [
       {
         "document": "",
@@ -579,9 +611,25 @@
     "DescribeInstanceTradeParameter": [
       {
         "document": "查询OnCvm双节点的新购计费参数",
-        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceTradeParameter\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-6\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"InstanceType\": \"cvmHA\",\n    \"Memory\": 4,\n    \"Storage\": 200,\n    \"GoodsNum\": 1,\n    \"SubnetId\": \"subnet-15y3y4eo\",\n    \"VpcId\": \"vpc-hqxhp43z\",\n    \"Period\": 1,\n    \"DBVersion\": \"2008R2\",\n    \"AutoRenewFlag\": 1,\n    \"Weekly\": [\n        \"1\",\n        \"3\",\n        \"5\"\n    ],\n    \"StartTime\": \"01:00\",\n    \"Span\": 3,\n    \"MultiZones\": \"true\",\n    \"Cpu\": 2,\n    \"MachineType\": \"CLOUD_BSSD\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceTradeParameter\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-6\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"InstanceType\": \"cvmHA\",\n    \"Memory\": 4,\n    \"Storage\": 200,\n    \"GoodsNum\": 1,\n    \"SubnetId\": \"subnet-15y3y4eo\",\n    \"VpcId\": \"vpc-hqxhp43z\",\n    \"Period\": 1,\n    \"DBVersion\": \"2008R2\",\n    \"AutoRenewFlag\": 1,\n    \"Weekly\": [\n        1,\n        3,\n        5\n    ],\n    \"StartTime\": \"01:00\",\n    \"Span\": 3,\n    \"MultiZones\": true,\n    \"Cpu\": 2,\n    \"MachineType\": \"CLOUD_BSSD\"\n}",
         "output": "{\n    \"Response\": {\n        \"Parameter\": \"{\\\"uin\\\":\\\"2919041563\\\",\\\"ownerUin\\\":\\\"2919041563\\\",\\\"appId\\\":251000111,\\\"goods\\\":[{\\\"goodsCategoryId\\\":1025890,\\\"goodsNum\\\":1,\\\"payMode\\\":1,\\\"regionId\\\":1,\\\"zoneId\\\":100006,\\\"goodsDetail\\\":{\\\"pid\\\":1019180,\\\"productCode\\\":\\\"p_sqlserver\\\",\\\"subProductCode\\\":\\\"sp_sqlserver_dual_exclusive_cloud\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"m\\\",\\\"productInfo\\\":[{\\\"name\\\":\\\"项目\\\",\\\"value\\\":\\\"default project\\\"},{\\\"name\\\":\\\"配置\\\",\\\"value\\\":\\\"4GB内存，200GB存储空间，0次每秒，SQL Server 2008R2\\\"},{\\\"name\\\":\\\"实例版本\\\",\\\"value\\\":\\\"双机高可用\\\"},{\\\"name\\\":\\\"地域\\\",\\\"value\\\":\\\"广州\\\"},{\\\"name\\\":\\\"所属网络\\\",\\\"value\\\":\\\"三区专属\\\"},{\\\"name\\\":\\\"可用区\\\",\\\"value\\\":\\\"广州六区\\\"},{\\\"name\\\":\\\"RequestSource\\\",\\\"value\\\":\\\"API\\\"}],\\\"autoRenewFlag\\\":1,\\\"goodsNum\\\":1,\\\"type\\\":\\\"CLOUD_BSSD\\\",\\\"version\\\":\\\"2008R2\\\",\\\"subnetId\\\":1604224,\\\"vpcId\\\":74483,\\\"model\\\":3,\\\"weekly\\\":[1,3,5],\\\"startTime\\\":\\\"01:00\\\",\\\"span\\\":3,\\\"RoGroupForcedUpgrade\\\":0,\\\"ResourceTags\\\":null,\\\"waitSwitch\\\":1,\\\"ExtParam\\\":{\\\"token\\\":\\\"\\\",\\\"useragent\\\":\\\"\\\",\\\"referer\\\":\\\"\\\",\\\"from\\\":\\\"\\\"},\\\"collation\\\":\\\"Chinese_PRC_CI_AS\\\",\\\"timeZone\\\":\\\"China Standard Time\\\",\\\"sv_sqlserver_cpu_dual_exclusive_cloud_enterprise\\\":2,\\\"sv_sqlserver_cpu_dual_exclusive_cloud_standard\\\":0,\\\"sv_sqlserver_mem_dual_exclusive_cloud_enterprise\\\":4,\\\"sv_sqlserver_mem_dual_exclusive_cloud_standard\\\":0,\\\"sv_sqlserver_disk_dual_enhancedssd\\\":0,\\\"sv_sqlserver_disk_dual_fastssd\\\":0,\\\"sv_sqlserver_disk_dual_universalssd\\\":200},\\\"platform\\\":1,\\\"projectId\\\":0}]}\\n\",\n        \"RequestId\": \"2a2c00b5-77a8-4eda-be01-3f58230da22e\"\n    }\n}",
         "title": "查询OnCvm双节点的新购计费参数"
+      }
+    ],
+    "DescribeLogInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogInstanceList\n<公共请求参数>\n\n{\n    \"LogType\": \"auditLog\",\n    \"Limit\": 3,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateAt\": \"\",\n                \"Deliver\": \"\",\n                \"DeliverSummary\": null,\n                \"EnableQuery\": \"\",\n                \"HighLogExpireDay\": 0,\n                \"HighStorage\": 0,\n                \"InstanceId\": \"mssql-m7v8e9k9\",\n                \"InstanceInfo\": {\n                    \"Architecture\": \"DOUBLE\",\n                    \"AuditLogHosts\": null,\n                    \"AuditLogStatus\": \"OFF\",\n                    \"AuditLogStatusMessage\": null,\n                    \"HAFlag\": \"ALWAYSON\",\n                    \"InstanceId\": \"mssql-m7v8e9k9\",\n                    \"InstanceName\": \"sqlsvr_auto_usage_20260314040300\",\n                    \"InstanceType\": \"cvmHA\",\n                    \"ProjectId\": 0,\n                    \"ROFlag\": \"\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"RegionId\": 1,\n                    \"Status\": 2,\n                    \"TagList\": null,\n                    \"Type\": \"CLOUD_BSSD\",\n                    \"Version\": \"2017\",\n                    \"VersionName\": \"SQL Server 2017 Enterprise\",\n                    \"Vip\": \"172.16.80.46\",\n                    \"Vport\": null,\n                    \"Zone\": \"ap-guangzhou-7\",\n                    \"ZoneId\": 100007\n                },\n                \"LogExpireDay\": 0,\n                \"LogStorage\": 0,\n                \"LowLogExpireDay\": 0,\n                \"LowStorage\": 0,\n                \"Status\": \"\"\n            }\n        ],\n        \"TotalCount\": 38,\n        \"RequestId\": \"0fc9d9c5-0e51-422c-8f93-707670a9f41f\"\n    }\n}",
+        "title": "查询日志实例列表"
+      }
+    ],
+    "DescribeLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8lv5ti3v\",\n    \"StartTime\": \"2024-08-14 16:24:24\",\n    \"EndTime\": \"2026-08-14 16:24:24\",\n    \"LogType\": \"auditLog\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"95e72033-4d5d-49f9-aa24-45adfafa2d09\"\n    }\n}",
+        "title": "查询日志"
       }
     ],
     "DescribeMaintenanceSpan": [
@@ -740,16 +788,16 @@
       {
         "document": "查询规格的参考价格",
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpecSellStatus\n<公共请求参数>\n\n{\n    \"Currency\": \"CNY\",\n    \"DBVersion\": \"2016SP1\",\n    \"PayMode\": \"POST\",\n    \"Pid\": 1003456,\n    \"SpecIdSet\": [\n        62\n    ],\n    \"Zone\": \"ap-guangzhou-3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DescribeSpecSellStatusSet\": [\n            {\n                \"Architecture\": \"SINGLE\",\n                \"Id\": \"11000036233\",\n                \"InstanceType\": \"SI\",\n                \"MultiZonesStatus\": \"Invalid\",\n                \"PayModeStatus\": \"ALL\",\n                \"Price\": {\n                    \"PostpaidPrice\": 47,\n                    \"PostpaidPriceUnit\": \"H\",\n                    \"PrepaidPrice\": 26000,\n                    \"PrepaidPriceUnit\": \"M\"\n                },\n                \"SpecId\": 62,\n                \"Status\": 1,\n                \"Style\": \"EXCLUSIVE\",\n                \"Version\": \"2016SP1\",\n                \"ZoneStatusSet\": [\n                    {\n                        \"Region\": \"ap-guangzhou\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-guangzhou-3\"\n                    },\n                    {\n                        \"Region\": \"ap-guangzhou\",\n                        \"Status\": 3,\n                        \"Zone\": \"ap-guangzhou-4\"\n                    },\n                    {\n                        \"Region\": \"ap-guangzhou\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-guangzhou-6\"\n                    },\n                    {\n                        \"Region\": \"ap-singapore\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-singapore-2\"\n                    },\n                    {\n                        \"Region\": \"ap-singapore\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-singapore-1\"\n                    },\n                    {\n                        \"Region\": \"ap-hongkong\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-hongkong-2\"\n                    },\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-shanghai-2\"\n                    },\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-shanghai-3\"\n                    },\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-shanghai-4\"\n                    },\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-shanghai-5\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-2\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-3\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-5\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-6\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-7\"\n                    },\n                    {\n                        \"Region\": \"ap-nanjing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-nanjing-1\"\n                    },\n                    {\n                        \"Region\": \"ap-nanjing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-nanjing-2\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"df9508b2-db7c-43ac-91dc-3ba19433ae09\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DescribeSpecSellStatusSet\": [\n            {\n                \"Architecture\": \"SINGLE\",\n                \"Id\": \"11000036233\",\n                \"InstanceType\": \"SI\",\n                \"MultiZonesStatus\": \"Invalid\",\n                \"PayModeStatus\": \"ALL\",\n                \"Price\": {\n                    \"PostpaidPrice\": 47,\n                    \"PostpaidPriceUnit\": \"H\",\n                    \"PrepaidPrice\": 26000,\n                    \"PrepaidPriceUnit\": \"M\"\n                },\n                \"SpecId\": 62,\n                \"Status\": 1,\n                \"Style\": \"EXCLUSIVE\",\n                \"Version\": \"2016SP1\",\n                \"ZoneStatusSet\": [\n                    {\n                        \"Region\": \"ap-guangzhou\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-guangzhou-3\"\n                    },\n                    {\n                        \"Region\": \"ap-guangzhou\",\n                        \"Status\": 3,\n                        \"Zone\": \"ap-guangzhou-4\"\n                    },\n                    {\n                        \"Region\": \"ap-guangzhou\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-guangzhou-6\"\n                    },\n                    {\n                        \"Region\": \"ap-singapore\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-singapore-2\"\n                    },\n                    {\n                        \"Region\": \"ap-singapore\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-singapore-1\"\n                    },\n                    {\n                        \"Region\": \"ap-hongkong\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-hongkong-2\"\n                    },\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-shanghai-2\"\n                    },\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-shanghai-3\"\n                    },\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-shanghai-4\"\n                    },\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-shanghai-5\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-1\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-3\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-5\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-6\"\n                    },\n                    {\n                        \"Region\": \"ap-beijing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-beijing-7\"\n                    },\n                    {\n                        \"Region\": \"ap-nanjing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-nanjing-1\"\n                    },\n                    {\n                        \"Region\": \"ap-nanjing\",\n                        \"Status\": 1,\n                        \"Zone\": \"ap-nanjing-2\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"df9508b2-db7c-43ac-91dc-3ba19433ae09\"\n    }\n}",
         "title": "查询规格的参考价格"
       }
     ],
     "DescribeUpgradeInstanceCheck": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeUpgradeInstanceCheck\n&InstanceId=mssql-30vft2ix\n&Cpu=2\n&Memory=16\n&Storage=256\n&DBVersion=2017\n&HAType=CLUSTER\n&MultiZones=SameZones\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CheckItems\": [\n            {\n                \"CheckName\": \"CK_CPU\",\n                \"CurrentValue\": \"0\",\n                \"IsAffect\": 0,\n                \"Msg\": \"\",\n                \"MsgCode\": 0,\n                \"Passed\": 1\n            },\n            {\n                \"CheckName\": \"CK_MASTER_STORAGE\",\n                \"CurrentValue\": \"\",\n                \"IsAffect\": 0,\n                \"Msg\": \"\",\n                \"MsgCode\": 0,\n                \"Passed\": 1\n            },\n            {\n                \"CheckName\": \"CK_MEMORY\",\n                \"CurrentValue\": \"0\",\n                \"IsAffect\": 0,\n                \"Msg\": \"\",\n                \"MsgCode\": 0,\n                \"Passed\": 1\n            },\n            {\n                \"CheckName\": \"CK_STORAGE\",\n                \"CurrentValue\": \"0\",\n                \"IsAffect\": 0,\n                \"Msg\": \"\",\n                \"MsgCode\": 0,\n                \"Passed\": 1\n            },\n            {\n                \"CheckName\": \"CK_UPGRATE\",\n                \"CurrentValue\": \"MIGRATE\",\n                \"IsAffect\": 1,\n                \"Msg\": \"version 2008 -> 2017 upgrade requires data migration\",\n                \"MsgCode\": 5,\n                \"Passed\": 1\n            }\n        ],\n        \"IsAffect\": 1,\n        \"ModifyMode\": \"up\",\n        \"Passed\": 1,\n        \"RequestId\": \"44416ab3-794e-47e2-840c-f645efc3481c\"\n    }\n}",
-        "title": "检查实例变配"
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpgradeInstanceCheck\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8lv5lbnn\",\n    \"Cpu\": 4,\n    \"Memory\": 16,\n    \"Storage\": 200,\n    \"DBVersion\": \"2019\",\n    \"ThroughputPerformance\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"IsAffect\": 1,\n        \"Passed\": 1,\n        \"ModifyMode\": \"up\",\n        \"CheckItems\": [\n            {\n                \"CheckName\": \"CPU\",\n                \"CurrentValue\": \"2\",\n                \"Passed\": 1,\n                \"IsAffect\": 1,\n                \"Msg\": \"CPU will be upgraded from 2 to 4\",\n                \"MsgCode\": 0\n            },\n            {\n                \"CheckName\": \"Memory\",\n                \"CurrentValue\": \"8\",\n                \"Passed\": 1,\n                \"IsAffect\": 1,\n                \"Msg\": \"Memory will be upgraded from 8GB to 16GB\",\n                \"MsgCode\": 0\n            },\n            {\n                \"CheckName\": \"Storage\",\n                \"CurrentValue\": \"100\",\n                \"Passed\": 1,\n                \"IsAffect\": 1,\n                \"Msg\": \"Storage will be upgraded from 100GB to 200GB\",\n                \"MsgCode\": 0\n            },\n            {\n                \"CheckName\": \"MasterStorage\",\n                \"CurrentValue\": \"\",\n                \"Passed\": 1,\n                \"IsAffect\": 0,\n                \"Msg\": \"\",\n                \"MsgCode\": 0\n            },\n            {\n                \"CheckName\": \"UpGradeType\",\n                \"CurrentValue\": \"\",\n                \"Passed\": 1,\n                \"IsAffect\": 1,\n                \"Msg\": \"Instance will be migrated during the upgrade\",\n                \"MsgCode\": 0\n            }\n        ],\n        \"RequestId\": \"5d2b4b33-11f3-4e70-835f-3478e6575371\"\n    }\n}",
+        "title": "实例变配前的检查"
       }
     ],
     "DescribeUploadBackupInfo": [
@@ -1038,6 +1086,14 @@
         "title": "修改实例参数"
       }
     ],
+    "ModifyLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8eei3sy5\",\n    \"LogType\": \"auditLog\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7d8112c-4b91-42a9-a6e4-2cd202d00f3f\"\n    }\n}",
+        "title": "修改日志"
+      }
+    ],
     "ModifyMaintenanceSpan": [
       {
         "document": "修改实例的可维护时间窗：修改为每周的周一，周二，周三，从0点开始持续6个小时。",
@@ -1098,6 +1154,14 @@
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenInterCommunication\n<公共请求参数>\n\n{\n    \"InstanceIdSet\": [\n        \"mssql-hlh6yka1\",\n        \"mssql-gfh54fg2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"InterInstanceFlowSet\": [\n            {\n                \"FlowId\": 0,\n                \"InstanceId\": \"mssql-hlh6yka1\"\n            },\n            {\n                \"FlowId\": 1253,\n                \"InstanceId\": \"mssql-gfh54fg2\"\n            }\n        ],\n        \"RequestId\": \"fc3376a3-4585-4442-87cd-6076d3b510bc\"\n    }\n}",
         "title": "设置实例加入互通组"
+      }
+    ],
+    "OpenLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-8eei3sy5\",\n    \"LogType\": \"auditLog\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e8e9d3de-b429-460c-9a95-aa2805f42be2\"\n    }\n}",
+        "title": "开启日志"
       }
     ],
     "QueryMigrationCheckProcess": [
@@ -1263,7 +1327,7 @@
     "UpgradeDBInstance": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=UpgradeDBInstance\n&InstanceId=mssql-j8kv137v\n&Memory=4\n&Storage=400\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=UpgradeDBInstance\n&InstanceId=mssql-j8kv137v\n&UpgradeCompatLevel=0\n&Memory=4\n&Storage=400\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\",\n        \"DealName\": \"201806261980\"\n    }\n}",
         "title": "升级实例"
       }

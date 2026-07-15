@@ -11,13 +11,12 @@ tccli ess CreateFlow --cli-unfold-argument  \
     --FlowDescription 2024年西红柿购买合同 \
     --FlowType 采购合同 \
     --Approvers.0.ApproverType 1 \
-    --Approvers.0.Required true \
     --Approvers.0.NotifyType SMS \
     --Approvers.0.ApproverMobile 113200000000 \
     --Approvers.0.ApproverName 典子谦 \
     --DeadLine 1652931170 \
     --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
-    --Unordered true
+    --Unordered True
 ```
 
 Output: 
@@ -30,7 +29,68 @@ Output:
 }
 ```
 
-**Example 2: 创建签署流程**
+**Example 2: 创建含有动态签署人流程，签署方不指定具体的签署人**
+
+创建一个B2C流程，两方签署方不指定具体的签署人
+注：
+`1.签署人相关信息为空，如：姓名、手机号码等`
+`2.FillType需传值为1，表示为动态签署人（不确定具体的签署人），需后续进行补充。`
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR \
+    --FlowName 西瓜购买合同 \
+    --Unordered False \
+    --DeadLine 1604912664 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.Required True \
+    --Approvers.0.ApproverOption.FillType 1 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.Required True \
+    --Approvers.1.ApproverOption.FillType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDRS4UUgygqdcj5pUuO4zjEu602GFIe6",
+        "RequestId": "4zjEBpXdcsHWX"
+    }
+}
+```
+
+**Example 3: 创建含有或签签署人流程，签署方不指定具体的签署人**
+
+创建一个B端签署流程，签署方不指定具体的签署人
+注：
+`1.签署人相关信息为空，如：姓名、手机号码等`
+`2.CustomApproverTag需传值，表示为或签签署人（不确定具体的签署人），需后续进行补充。`
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId yDCp0UUckpay74u2Uxgcd4v1197NeSXv \
+    --FlowName 测试或签合同 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.CustomApproverTag custom_tag \
+    --Approvers.0.OrganizationName 典子谦示例企业
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yD3arUUckpmvkpc7U1UuZIg1D1AlzXVo",
+        "RequestId": "1c5501d6-dd0b-4589-9132-79d8c4adee54"
+    }
+}
+```
+
+**Example 4: 创建签署流程**
 
 创建一个B2C流程
 
@@ -63,35 +123,36 @@ Output:
 }
 ```
 
-**Example 3: 创建含有动态签署人流程，签署方不指定具体的签署人**
+**Example 5: 创建签署流程-开启发起审批流**
 
-创建一个B2C流程，两方签署方不指定具体的签署人
-注：
-`1.签署人相关信息为空，如：姓名、手机号码等`
-`2.FillType需传值为1，表示为动态签署人（不确定具体的签署人），需后续进行补充。`
+
 
 Input: 
 
 ```
 tccli ess CreateFlow --cli-unfold-argument  \
-    --Operator.UserId yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR \
-    --FlowName 西瓜购买合同 \
+    --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
+    --Workflow True \
+    --FlowName 西红柿采购合同 \
     --Unordered False \
     --DeadLine 1604912664 \
     --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
     --Approvers.0.Required True \
-    --Approvers.0.ApproverOption.FillType 1 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
     --Approvers.1.ApproverType 1 \
     --Approvers.1.Required True \
-    --Approvers.1.ApproverOption.FillType 1
+    --Approvers.1.ApproverName 李四 \
+    --Approvers.1.ApproverMobile 15100000000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": "yDRS4UUgygqdcj5pUuO4zjEu602GFIe6",
-        "RequestId": "4zjEBpXdcsHWX"
+        "FlowId": "yDwfGUUckps86q8kUoTIbgRXTZbVk9I2",
+        "RequestId": "001uSHUNDy"
     }
 }
 ```

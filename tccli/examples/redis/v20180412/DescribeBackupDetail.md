@@ -26,7 +26,9 @@ Output:
         "RequestId": "add15b91-8f3c-4ff3-ba52-7c64c9c435ba",
         "ShardNum": 3,
         "StartTime": "2022-12-19 19:41:42",
-        "Status": 2
+        "Status": 2,
+        "DecryptKey": "rFGxk4E**********************U/nWERxvFx+FAY=",
+        "KmsKeyId": "b2f531ee-****-****-b8b2-52540087****"
     }
 }
 ```

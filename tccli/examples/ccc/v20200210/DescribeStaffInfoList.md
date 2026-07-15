@@ -9,7 +9,7 @@ tccli ccc DescribeStaffInfoList --cli-unfold-argument  \
     --ModifiedTime 1590147606 \
     --PageSize 10 \
     --PageNumber 0 \
-    --StaffMail “121223@qq.com” \
+    --StaffMail 121223@qq.com \
     --SdkAppId 1400000000
 ```
 

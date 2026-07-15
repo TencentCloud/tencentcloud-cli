@@ -1986,7 +1986,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。</p>",
+          "document": "<p>访问模式。</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -5998,7 +5998,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>接入模式。nearBy - 就近访问，balance - 均衡分配，默认值：nearBy。</p>",
+          "document": "<p>接入模式。</p><p>枚举值：</p><ul><li>nearBy： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul><p>默认值：nearBy</p>",
           "example": "nearBy",
           "member": "string",
           "name": "AccessMode",
@@ -8451,6 +8451,67 @@
       ],
       "type": "object"
     },
+    "DeliverSummary": {
+      "document": "投递错误",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>投递类型，store（存储类），mq（消息通道）</p>",
+          "example": "store",
+          "member": "string",
+          "name": "DeliverType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递子类型：cls，ckafka。</p>",
+          "example": "CLS",
+          "member": "string",
+          "name": "DeliverSubType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递者</p>",
+          "example": "CLS",
+          "member": "string",
+          "name": "DeliverConsumer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递者名称</p>",
+          "example": "client",
+          "member": "string",
+          "name": "DeliverConsumerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递异常错误</p>",
+          "example": "success",
+          "member": "string",
+          "name": "DeliverError",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeployGroupInfo": {
       "document": "置放群组信息",
       "members": [
@@ -8747,7 +8808,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务的请求 ID。",
+          "document": "<p>异步任务的请求 ID。</p>",
           "example": "f96e4f3c-8fc96c86-2ec79ac8-cb63a7a7",
           "member": "string",
           "name": "AsyncRequestId",
@@ -8762,7 +8823,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行结果。可能的取值：INITIAL - 初始化，RUNNING - 运行中，SUCCESS - 执行成功，FAILED - 执行失败，KILLED - 已终止，REMOVED - 已删除，PAUSED - 终止中。",
+          "document": "<p>任务执行结果。</p><p>枚举值：</p><ul><li>INITIAL： 初始化。</li><li>RUNNING： 运行中。</li><li>SUCCESS： 执行成功。</li><li>FAILED： 执行失败。</li><li>KILLED： 已终止。</li><li>REMOVED： 已删除。</li><li>PAUSED： 终止中。</li><li>UNDEFINED： 任务已创建但未开始执行，在 WaitSwitch = true 场景下，表示任务正在等待维护时间窗到来。</li></ul>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
@@ -8772,7 +8833,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行信息描述。",
+          "document": "<p>任务执行信息描述。</p>",
           "example": "删除库表成功",
           "member": "string",
           "name": "Info",
@@ -8871,7 +8932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例审计开启的状态。1-已开启审计；0-未开启审计。",
+          "document": "<p>实例审计开启的状态。1-已开启审计；0-未开启审计。</p>",
           "example": "1",
           "member": "int64",
           "name": "AuditSwitch",
@@ -8880,8 +8941,8 @@
         },
         {
           "disabled": false,
-          "document": "查询实例列表的过滤条件。",
-          "example": "[{\"Values\": [\"cdb-euu5fkcj\"], \"Name\": \"InstanceId\",\"ExactMatch\": true}]",
+          "document": "<p>查询实例列表的过滤条件。</p>",
+          "example": "无",
           "member": "AuditInstanceFilters",
           "name": "Filters",
           "required": false,
@@ -8889,7 +8950,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的审计规则模式。1-规则审计；0-全审计。",
+          "document": "<p>实例的审计规则模式。1-规则审计；0-全审计。</p>",
           "example": "1",
           "member": "int64",
           "name": "AuditMode",
@@ -8898,7 +8959,7 @@
         },
         {
           "disabled": false,
-          "document": "单次请求返回的数量。默认值为30，最大值为 20000。",
+          "document": "<p>单次请求返回的数量。默认值为30，最大值为 20000。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -8907,7 +8968,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认值为 0。",
+          "document": "<p>偏移量，默认值为 0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -8922,7 +8983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合查询条件的实例总数。",
+          "document": "<p>符合查询条件的实例总数。</p>",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
@@ -8932,8 +8993,8 @@
         },
         {
           "disabled": false,
-          "document": "审计实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"BillingAmount\": 0,\"LowRealStorage\": 0,\"InstanceId\": \"cdb-euu5fkcj\",\"AuditTask\": 1,\"CreateAt\": \"2022-03-02 10:09:08\",\"AuditStatus\": \"1\"...}]",
+          "document": "<p>审计实例详细信息列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "InstanceDbAuditStatus",
           "name": "Items",
           "output_required": true,
@@ -16549,7 +16610,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "cdb-euu5fkcj",
           "member": "string",
           "name": "InstanceId",
@@ -16559,7 +16620,7 @@
         },
         {
           "disabled": false,
-          "document": "审计状态。ON-表示审计已开启，OFF-表示审计关闭",
+          "document": "<p>审计状态。ON-表示审计已开启，OFF-表示审计关闭</p>",
           "example": "ON",
           "member": "string",
           "name": "AuditStatus",
@@ -16569,7 +16630,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。0-无任务；1-审计开启中，2-审计关闭中。",
+          "document": "<p>任务状态。0-无任务；1-审计开启中，2-审计关闭中。</p>",
           "example": "0",
           "member": "uint64",
           "name": "AuditTask",
@@ -16579,7 +16640,7 @@
         },
         {
           "disabled": false,
-          "document": "日志保留时长。支持值包括：\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
+          "document": "<p>日志保留时长。支持值包括：<br>7 - 一周；<br>30 - 一个月；<br>90 - 三个月；<br>180 - 六个月；<br>365 - 一年；<br>1095 - 三年；<br>1825 - 五年。</p>",
           "example": "30",
           "member": "uint64",
           "name": "LogExpireDay",
@@ -16589,7 +16650,7 @@
         },
         {
           "disabled": false,
-          "document": "高频存储时长。支持值包括：\n3 - 3天；\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
+          "document": "<p>高频存储时长。支持值包括：<br>3 - 3天；<br>7 - 一周；<br>30 - 一个月；<br>90 - 三个月；<br>180 - 六个月；<br>365 - 一年；<br>1095 - 三年；<br>1825 - 五年。</p>",
           "example": "7",
           "member": "uint64",
           "name": "HighLogExpireDay",
@@ -16599,7 +16660,7 @@
         },
         {
           "disabled": false,
-          "document": "低频存储时长。单位：天，等于日志保存时长减去高频存储时长。",
+          "document": "<p>低频存储时长。单位：天，等于日志保存时长减去高频存储时长。</p>",
           "example": "23",
           "member": "uint64",
           "name": "LowLogExpireDay",
@@ -16609,7 +16670,7 @@
         },
         {
           "disabled": false,
-          "document": "日志存储量(单位：GB)。",
+          "document": "<p>日志存储量(单位：GB)。</p>",
           "example": "173749.248",
           "member": "float",
           "name": "BillingAmount",
@@ -16619,7 +16680,7 @@
         },
         {
           "disabled": false,
-          "document": "高频存储量(单位：GB)。",
+          "document": "<p>高频存储量(单位：GB)。</p>",
           "example": "45639.68",
           "member": "float",
           "name": "HighRealStorage",
@@ -16629,7 +16690,7 @@
         },
         {
           "disabled": false,
-          "document": "低频存储量(单位：GB)。",
+          "document": "<p>低频存储量(单位：GB)。</p>",
           "example": "128109.568",
           "member": "float",
           "name": "LowRealStorage",
@@ -16639,7 +16700,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为全审计。true-表示全审计。",
+          "document": "<p>是否为全审计（true-表示全审计）</p>",
           "example": "true",
           "member": "bool",
           "name": "AuditAll",
@@ -16649,7 +16710,7 @@
         },
         {
           "disabled": false,
-          "document": "审计开通时间。",
+          "document": "<p>审计开通时间。</p>",
           "example": "2022-10-12 11:41:42",
           "member": "string",
           "name": "CreateAt",
@@ -16659,7 +16720,7 @@
         },
         {
           "disabled": false,
-          "document": "实例相关信息",
+          "document": "<p>实例相关信息</p>",
           "example": "无",
           "member": "AuditInstanceInfo",
           "name": "InstanceInfo",
@@ -16669,7 +16730,7 @@
         },
         {
           "disabled": false,
-          "document": "总存储量(单位：GB)。",
+          "document": "<p>总存储量(单位：GB)。</p>",
           "example": "173749.248",
           "member": "float",
           "name": "RealStorage",
@@ -16679,7 +16740,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含审计策略",
+          "document": "<p>是否包含审计策略</p>",
           "example": "false",
           "member": "bool",
           "name": "OldRule",
@@ -16689,7 +16750,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所应用的规则模板。",
+          "document": "<p>实例所应用的规则模板。</p>",
           "example": "[\"cdb-art-8qx2kcr7\"]",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -16699,7 +16760,7 @@
         },
         {
           "disabled": false,
-          "document": "限免状态",
+          "document": "<p>限免状态</p>",
           "example": "\"TRIAL/EXPIRED/NONE\"",
           "member": "string",
           "name": "TrialStatus",
@@ -16709,7 +16770,7 @@
         },
         {
           "disabled": false,
-          "document": "限免开启时间",
+          "document": "<p>限免开启时间</p>",
           "example": "1",
           "member": "int64",
           "name": "TrialStartTime",
@@ -16719,7 +16780,7 @@
         },
         {
           "disabled": false,
-          "document": "限免持续时间",
+          "document": "<p>限免持续时间</p>",
           "example": "1",
           "member": "int64",
           "name": "TrialDuration",
@@ -16729,7 +16790,7 @@
         },
         {
           "disabled": false,
-          "document": "限免关闭时间",
+          "document": "<p>限免关闭时间</p>",
           "example": "1",
           "member": "int64",
           "name": "TrialCloseTime",
@@ -16739,12 +16800,32 @@
         },
         {
           "disabled": false,
-          "document": "限免期查询日志时长",
+          "document": "<p>限免期查询日志时长</p>",
           "example": "1",
           "member": "int64",
           "name": "TrialDescribeLogHours",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递信息</p>",
+          "example": "无",
+          "member": "DeliverSummary",
+          "name": "DeliverSummary",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启了投递，ON：开启，OFF：关闭</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Deliver",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -21493,7 +21574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组地址ID",
+          "document": "<p>代理组地址ID</p>",
           "example": "proxyaddr-ixw3ll2d",
           "member": "string",
           "name": "ProxyAddressId",
@@ -21503,7 +21584,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "<p>私有网络ID</p>",
           "example": "vpc-ixw3ll2d",
           "member": "string",
           "name": "UniqVpcId",
@@ -21513,7 +21594,7 @@
         },
         {
           "disabled": false,
-          "document": "私有子网ID",
+          "document": "<p>私有子网ID</p>",
           "example": "subnet-ixw3ll2d",
           "member": "string",
           "name": "UniqSubnetId",
@@ -21523,7 +21604,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址",
+          "document": "<p>IP地址</p>",
           "example": "192.0.0.1",
           "member": "string",
           "name": "Vip",
@@ -21533,7 +21614,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "80",
           "member": "uint64",
           "name": "VPort",
@@ -21543,7 +21624,7 @@
         },
         {
           "disabled": false,
-          "document": "权重分配模式；\n系统自动分配：\"system\"， 自定义：\"custom\"",
+          "document": "<p>权重分配模式；<br>系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -21553,7 +21634,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启延迟剔除，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启延迟剔除，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "IsKickOut",
@@ -21563,7 +21644,7 @@
         },
         {
           "disabled": false,
-          "document": "最小保留数量，最小取值：0",
+          "document": "<p>最小保留数量，最小取值：0</p>",
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
@@ -21573,7 +21654,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟剔除阈值，最小取值：0",
+          "document": "<p>延迟剔除阈值，最小取值：0</p>",
           "example": "10",
           "member": "uint64",
           "name": "MaxDelay",
@@ -21583,7 +21664,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加RO，取值：\"true\" | \"false\"",
+          "document": "<p>是否自动添加RO，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoAddRo",
@@ -21593,7 +21674,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是只读，取值：\"true\" | \"false\"",
+          "document": "<p>是否是只读，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
@@ -21603,7 +21684,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务分离",
+          "document": "<p>是否开启事务分离</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -21613,7 +21694,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移",
+          "document": "<p>是否开启故障转移</p>",
           "example": "true",
           "member": "bool",
           "name": "FailOver",
@@ -21623,7 +21704,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池",
+          "document": "<p>是否开启连接池</p>",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -21633,7 +21714,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "代理一区",
           "member": "string",
           "name": "Desc",
@@ -21643,7 +21724,7 @@
         },
         {
           "disabled": false,
-          "document": "实例读权重分配",
+          "document": "<p>实例读权重分配</p>",
           "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
@@ -21653,7 +21734,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式",
+          "document": "<p>接入模式</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -21663,7 +21744,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动负载均衡",
+          "document": "<p>是否开启自动负载均衡</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoLoadBalance",
@@ -21673,7 +21754,7 @@
         },
         {
           "disabled": false,
-          "document": "proxy地址的北极星地址",
+          "document": "<p>proxy地址的北极星地址</p>",
           "example": "andy",
           "member": "string",
           "name": "PolarisAddr",
@@ -21683,7 +21764,7 @@
         },
         {
           "disabled": false,
-          "document": "是否把libra当作ro节点",
+          "document": "<p>是否把libra当作ro节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApNodeAsRoNode",
@@ -21693,12 +21774,22 @@
         },
         {
           "disabled": false,
-          "document": "libra节点故障，是否转发给其他节点",
+          "document": "<p>libra节点故障，是否转发给其他节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApQueryToOtherNode",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址所在地域名</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -25187,7 +25278,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。",
           "example": "false",
           "member": "bool",

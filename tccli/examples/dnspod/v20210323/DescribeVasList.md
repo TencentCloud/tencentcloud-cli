@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "27c8df50-206e-42db-a031-8b7f15c0d2dc",
-        "VasList": [
+        "VASList": [
             {
                 "LimitNumber": 5,
                 "StartedAt": "2022-05-22",

@@ -203,6 +203,13 @@
       "output": "VoicePrintEnrollResponse",
       "status": "online"
     },
+    "VoicePrintGroupList": {
+      "document": "返回注册的说话人分组信息列表",
+      "input": "VoicePrintGroupListRequest",
+      "name": "说话人分组列表",
+      "output": "VoicePrintGroupListResponse",
+      "status": "online"
+    },
     "VoicePrintGroupVerify": {
       "document": "说话人验证1:N接口，可以通过传入一段说话人音频，并且指定已存在的groupId, 和返回topN,  接口返回groupId内所有声纹和传入音频声纹比对打分TopN的结果。",
       "input": "VoicePrintGroupVerifyRequest",
@@ -3088,6 +3095,61 @@
           "member": "VoicePrintBaseData",
           "name": "Data",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintGroupList": {
+      "document": "声纹分组名称列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组名称列表</p>",
+          "example": "[\"group_name\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VoicePrintGroupListRequest": {
+      "document": "VoicePrintGroupList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "VoicePrintGroupListResponse": {
+      "document": "VoicePrintGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回分组名称列表数据</p>",
+          "example": "无",
+          "member": "VoicePrintGroupList",
+          "name": "Data",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },

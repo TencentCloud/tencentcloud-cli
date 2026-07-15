@@ -2265,7 +2265,7 @@
         {
           "disabled": false,
           "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
-          "example": "crs-hnio60jv",
+          "example": "crs-10fvqj29",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2283,7 +2283,7 @@
         {
           "disabled": false,
           "document": "<p>日志检索的起始时间。</p><p>参数格式：YYYY-MM-DD HH:mm:ss，例如 2026-03-06 00:00:00。返回结果中仅包含该时间点及之后的日志。</p>",
-          "example": "2026-03-05 12:42:39",
+          "example": "2026-07-07 19:24:07",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -2292,7 +2292,7 @@
         {
           "disabled": false,
           "document": "<p>日志检索的结束时间。</p><p>参数格式：YYYY-MM-DD HH:mm:ss，例如 2026-03-06 23:59:59。返回结果中仅包含该时间点及之前的日志。</p>",
-          "example": "2026-03-05 16:42:39",
+          "example": "2026-07-08 19:24:07",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2322,6 +2322,16 @@
     "CreateExportTaskResponse": {
       "document": "CreateExportTask返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "crs-10fvqj29_20260707-192407_to_20260708-192407_1783425093786.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3246,7 +3256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID，请登录<a href=\"https://console.cloud.tencent.com/redis/instance/list\">Redis控制台</a>在实例列表复制实例 ID。</p>",
           "example": "crs-4y9t5***",
           "member": "string",
           "name": "InstanceId",
@@ -3255,7 +3265,7 @@
         },
         {
           "disabled": false,
-          "document": "备份 ID，可通过接口 [DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011) 返回的参数 **RedisBackupSet** 获取。",
+          "document": "<p>备份 ID，可通过接口 <a href=\"https://cloud.tencent.com/document/product/239/20011\">DescribeInstanceBackups</a> 返回的参数 <strong>RedisBackupSet</strong> 获取。</p>",
           "example": "67836256600000000****",
           "member": "string",
           "name": "BackupId",
@@ -3270,7 +3280,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份 ID。",
+          "document": "<p>备份 ID。</p>",
           "example": "678362566696298532848117",
           "member": "string",
           "name": "BackupId",
@@ -3280,7 +3290,7 @@
         },
         {
           "disabled": false,
-          "document": "备份开始时间。",
+          "document": "<p>备份开始时间。</p>",
           "example": "\"2022-03-24 11:52:20\"",
           "member": "string",
           "name": "StartTime",
@@ -3290,7 +3300,7 @@
         },
         {
           "disabled": false,
-          "document": "备份结束时间。",
+          "document": "<p>备份结束时间。</p>",
           "example": "\"2022-03-24 11:59:16\"",
           "member": "string",
           "name": "EndTime",
@@ -3300,7 +3310,7 @@
         },
         {
           "disabled": false,
-          "document": "备份方式。 \n\n- 1：手动备份。\n-  0：自动备份。",
+          "document": "<p>备份方式。 </p><ul><li>1：手动备份。</li><li>0：自动备份。</li></ul>",
           "example": "\"1\"",
           "member": "string",
           "name": "BackupType",
@@ -3310,7 +3320,7 @@
         },
         {
           "disabled": false,
-          "document": "备份状态。 \n\n- 1：备份被其它流程锁定。\n- 2：备份正常，没有被任何流程锁定。\n- -1：备份已过期。\n- 3：备份正在被导出。\n- 4：备份导出成功。",
+          "document": "<p>备份状态。 </p><ul><li>1：备份被其它流程锁定。</li><li>2：备份正常，没有被任何流程锁定。</li><li>-1：备份已过期。</li><li>3：备份正在被导出。</li><li>4：备份导出成功。</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -3320,7 +3330,7 @@
         },
         {
           "disabled": false,
-          "document": "备份的备注信息。",
+          "document": "<p>备份的备注信息。</p>",
           "example": "\"mark message\"",
           "member": "string",
           "name": "Remark",
@@ -3330,7 +3340,7 @@
         },
         {
           "disabled": false,
-          "document": "备份是否被锁定。\n\n- 0：未被锁定。\n- 1：已被锁定。",
+          "document": "<p>备份是否被锁定。</p><ul><li>0：未被锁定。</li><li>1：已被锁定。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "Locked",
@@ -3340,7 +3350,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件大小。单位：Byte。",
+          "document": "<p>备份文件大小。单位：Byte。</p>",
           "example": "10240",
           "member": "int64",
           "name": "BackupSize",
@@ -3350,7 +3360,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。",
+          "document": "<p>实例类型。</p>",
           "example": "6",
           "member": "int64",
           "name": "InstanceType",
@@ -3360,7 +3370,7 @@
         },
         {
           "disabled": false,
-          "document": "单分片内存规格大小，单位：MB。",
+          "document": "<p>单分片内存规格大小，单位：MB。</p>",
           "example": "4096",
           "member": "int64",
           "name": "MemSize",
@@ -3370,7 +3380,7 @@
         },
         {
           "disabled": false,
-          "document": "分片数量。",
+          "document": "<p>分片数量。</p>",
           "example": "3",
           "member": "int64",
           "name": "ShardNum",
@@ -3380,12 +3390,52 @@
         },
         {
           "disabled": false,
-          "document": "副本数量。",
+          "document": "<p>副本数量。</p>",
           "example": "1",
           "member": "int64",
           "name": "ReplicasNum",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已加密。</p><p>枚举值：</p><ul><li>true： 已加密</li><li>false： 未加密</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "Encrypted",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解密密钥。</p>",
+          "example": "rFGxk4E**********************U/nWERxvFx+FAY=",
+          "member": "string",
+          "name": "DecryptKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS的密钥ID。</p>",
+          "example": "b2f531ee-****-****-b8b2-52540087****",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密该备份文件的加密算法。</p><p>枚举值：</p><ul><li>AES-256-CBC： 当前仅支持AES-256-CBC</li></ul>",
+          "example": "AES-256-CBC",
+          "member": "string",
+          "name": "KeyAlgorithm",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4044,7 +4094,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页输出的备份列表大小。默认大小为20，最大值为 100。",
+          "document": "<p>每页输出的备份列表大小。默认大小为20，最大值为 100。</p>",
           "example": "5",
           "member": "int64",
           "name": "Limit",
@@ -4053,7 +4103,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
+          "document": "<p>分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4062,7 +4112,7 @@
         },
         {
           "disabled": false,
-          "document": "待操作的实例ID，可通过 DescribeInstance 接口返回值中的 InstanceId 获取。",
+          "document": "<p>待操作的实例ID，可通过 DescribeInstance 接口返回值中的 InstanceId 获取。</p>",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -4071,7 +4121,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表，查询时间最大跨度30天。",
+          "document": "<p>开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表，查询时间最大跨度30天。</p>",
           "example": "2017-02-08 16:46:34",
           "member": "string",
           "name": "BeginTime",
@@ -4080,7 +4130,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表，查询时间最大跨度30天。",
+          "document": "<p>结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表，查询时间最大跨度30天。</p>",
           "example": "2017-02-08 19:09:26",
           "member": "string",
           "name": "EndTime",
@@ -4089,7 +4139,7 @@
         },
         {
           "disabled": false,
-          "document": "备份任务的状态：\n1：备份在流程中。\n2：备份正常。\n3：备份转RDB文件处理中。\n4：已完成RDB转换。\n-1：备份已过期。\n-2：备份已删除。",
+          "document": "<p>备份任务的状态：<br>1：备份在流程中。<br>2：备份正常。<br>3：备份转RDB文件处理中。<br>4：已完成RDB转换。<br>-1：备份已过期。<br>-2：备份已删除。</p>",
           "example": "[2]",
           "member": "int64",
           "name": "Status",
@@ -4098,7 +4148,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称，支持根据实例名称模糊搜索。",
+          "document": "<p>实例名称，支持根据实例名称模糊搜索。</p>",
           "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
@@ -4113,8 +4163,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份总数。",
-          "example": "2",
+          "document": "<p>备份总数。</p>",
+          "example": "3",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -4123,7 +4173,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的备份数组。",
+          "document": "<p>实例的备份数组。</p>",
           "example": "无",
           "member": "RedisBackupSet",
           "name": "BackupSet",
@@ -12585,7 +12635,7 @@
         {
           "disabled": false,
           "document": "<p>SSL地址类型。</p><p>枚举值：</p><ul><li>0： 不限。</li><li>1： 内网IPv4。</li><li>2： 内网IPv6。</li><li>3： 外网。</li><li>-1： 未指定。</li></ul><p>默认值：0</p>",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "AddressType",
           "required": false,
@@ -13082,7 +13132,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份开始时间。",
+          "document": "<p>备份开始时间。</p>",
           "example": "\"2022-03-24 11:52:20\"",
           "member": "string",
           "name": "StartTime",
@@ -13092,7 +13142,7 @@
         },
         {
           "disabled": false,
-          "document": "备份任务ID。",
+          "document": "<p>备份任务ID。</p>",
           "example": "\"999b6b89c60-f01a-11eb-9d37-7d65897b5c22\"",
           "member": "string",
           "name": "BackupId",
@@ -13102,7 +13152,7 @@
         },
         {
           "disabled": false,
-          "document": "备份类型。\n- 1：凌晨系统发起的自动备份。\n- 0：用户发起的手动备份。",
+          "document": "<p>备份类型。</p><ul><li>1：凌晨系统发起的自动备份。</li><li>0：用户发起的手动备份。</li></ul>",
           "example": "\"1\"",
           "member": "string",
           "name": "BackupType",
@@ -13112,7 +13162,7 @@
         },
         {
           "disabled": false,
-          "document": "备份状态。 \n- 1：备份被其它流程锁定。\n- 2：备份正常，没有被任何流程锁定。\n- -1：备份已过期。\n- 3：备份正在被导出。\n- 4：备份导出成功。",
+          "document": "<p>备份状态。 </p><ul><li>1：备份被其它流程锁定。</li><li>2：备份正常，没有被任何流程锁定。</li><li>-1：备份已过期。</li><li>3：备份正在被导出。</li><li>4：备份导出成功。</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -13122,7 +13172,7 @@
         },
         {
           "disabled": false,
-          "document": "备份的备注信息。",
+          "document": "<p>备份的备注信息。</p>",
           "example": "\"描述该备份的信息\"",
           "member": "string",
           "name": "Remark",
@@ -13132,7 +13182,7 @@
         },
         {
           "disabled": false,
-          "document": "备份是否被锁定。\n- 0：未被锁定。\n- 1：已被锁定。",
+          "document": "<p>备份是否被锁定。</p><ul><li>0：未被锁定。</li><li>1：已被锁定。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "Locked",
@@ -13142,7 +13192,7 @@
         },
         {
           "disabled": false,
-          "document": "内部字段，用户可忽略。",
+          "document": "<p>内部字段，用户可忽略。</p>",
           "example": "0",
           "member": "int64",
           "name": "BackupSize",
@@ -13152,7 +13202,7 @@
         },
         {
           "disabled": false,
-          "document": "内部字段，用户可忽略。",
+          "document": "<p>内部字段，用户可忽略。</p>",
           "example": "0",
           "member": "int64",
           "name": "FullBackup",
@@ -13162,7 +13212,7 @@
         },
         {
           "disabled": false,
-          "document": "内部字段，用户可忽略。",
+          "document": "<p>内部字段，用户可忽略。</p>",
           "example": "0",
           "member": "int64",
           "name": "InstanceType",
@@ -13172,7 +13222,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "<p>实例 ID。</p>",
           "example": "crs-7iw94215",
           "member": "string",
           "name": "InstanceId",
@@ -13182,7 +13232,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
@@ -13192,7 +13242,7 @@
         },
         {
           "disabled": false,
-          "document": "本地备份所在地域。",
+          "document": "<p>本地备份所在地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -13202,7 +13252,7 @@
         },
         {
           "disabled": false,
-          "document": "备份结束时间。",
+          "document": "<p>备份结束时间。</p>",
           "example": "\"2022-03-24 11:59:20\"",
           "member": "string",
           "name": "EndTime",
@@ -13212,7 +13262,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件类型。",
+          "document": "<p>备份文件类型。</p>",
           "example": "\"RDB-Redis 5.0\"",
           "member": "string",
           "name": "FileType",
@@ -13222,12 +13272,22 @@
         },
         {
           "disabled": false,
-          "document": "备份文件过期时间。",
+          "document": "<p>备份文件过期时间。</p>",
           "example": "\"2022-03-31 11:52:20\"",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份文件是否加密</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypted",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

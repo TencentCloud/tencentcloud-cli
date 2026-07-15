@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "CreateAPIKey": [
+      {
+        "document": "用于API测试示例",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIKey\n<公共请求参数>\n\n{\n    \"InstanceID\": \"fhir-xxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"APIKey\": {},\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "测试示例"
+      }
+    ],
+    "UpdateFHIRInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFHIRInstance\n<公共请求参数>\n\n{\n    \"InstanceID\": \"fhir-ie80vdnn\",\n    \"Name\": \"MY-FHIR-INSTANCE\",\n    \"Config\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "测试示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

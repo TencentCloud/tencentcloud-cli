@@ -1,0 +1,393 @@
+{
+  "actions": {
+    "CancelIgnorePolicyRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelIgnorePolicyRisk\n<公共请求参数>\n\n{\n    \"RiskId\": \"fb7a6f3ccbcf1de31cb8ac9abb0e5b23\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d48e988-fdd5-472b-97ae-c41e63928257\"\n    }\n}",
+        "title": "取消忽略风险"
+      }
+    ],
+    "CreateAnalyzePolicyTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAnalyzePolicyTask\n<公共请求参数>\n\n{\n    \"Products\": [\n        \"sg\"\n    ],\n    \"MemberIdSet\": [\n        \"mem-1300846651-100011616646\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"552fd3c4-9fb2-4bdb-8fac-dac5fccc1b98\"\n    }\n}",
+        "title": "创建策略分析任务"
+      }
+    ],
+    "CreateEdgeAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_4ae6vv1l7c\",\n    \"Rules\": [\n        {\n            \"OrderIndex\": 1,\n            \"Direction\": 1,\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Port\": \"-1/-1\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"1212322\",\n            \"Scope\": \"all\"\n        },\n        {\n            \"OrderIndex\": 2,\n            \"Direction\": 1,\n            \"SourceContent\": \"bj11\",\n            \"SourceType\": \"location\",\n            \"TargetContent\": \"cfwnat-e366d270\",\n            \"TargetType\": \"instance\",\n            \"Port\": \"-1/-1\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"3232111\",\n            \"Scope\": \"all\",\n            \"BelongMemberId\": \"1300448058\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a4f32a7-aee1-4049-9fe0-4ceeb07f55ce\"\n    }\n}",
+        "title": "创建互联网边界规则"
+      }
+    ],
+    "CreateEdgeAclRuleGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeAclRuleGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"edge\",\n    \"Product\": \"cfw_edge_acl\",\n    \"Rules\": [\n        {\n            \"OrderIndex\": 1,\n            \"Direction\": 1,\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Port\": \"-1/-1\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"1212\",\n            \"Scope\": \"all\"\n        },\n        {\n            \"OrderIndex\": 2,\n            \"Direction\": 1,\n            \"SourceContent\": \"bj11\",\n            \"SourceType\": \"location\",\n            \"TargetContent\": \"cfwnat-e366d270\",\n            \"TargetType\": \"instance\",\n            \"Port\": \"-1/-1\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"3232\",\n            \"Scope\": \"all\",\n            \"BelongMemberId\": \"1300448058\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"fwmrg_4ae6vv1l7c\",\n        \"RequestId\": \"fcb93770-4c26-4b35-9ded-8daec5b99a19\"\n    }\n}",
+        "title": "创建互联网边界规则组"
+      }
+    ],
+    "CreateNatAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_go7u11gs6v\",\n    \"Rules\": [\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"UDP\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 2,\n            \"Scope\": \"cfwnat-e7ad7c24\",\n            \"Direction\": 1,\n            \"Port\": \"-1/-1\",\n            \"Description\": \"444\",\n            \"ParamTemplateId\": \"\",\n            \"BelongMemberId\": \"1300448058\"\n        },\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 3,\n            \"Scope\": \"ALL\",\n            \"Direction\": 1,\n            \"Port\": \"-1/-1\",\n            \"Description\": \"555\",\n            \"ParamTemplateId\": \"\"\n        },\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 1,\n            \"Scope\": \"ALL\",\n            \"Direction\": 0,\n            \"Port\": \"-1/-1\",\n            \"Description\": \"222\",\n            \"ParamTemplateId\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3deaf1ac-6319-4eb6-a989-0b9a13054616\"\n    }\n}",
+        "title": " 添加 NAT 规则"
+      }
+    ],
+    "CreateNatAclRuleGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatAclRuleGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"one\",\n    \"Product\": \"cfw_nat_acl\",\n    \"Rules\": [\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 1,\n            \"Scope\": \"ap-shanghai\",\n            \"Direction\": 1,\n            \"Port\": \"-1/-1\",\n            \"Description\": \"zero\",\n            \"ParamTemplateId\": \"\"\n        },\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"UDP\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 2,\n            \"Scope\": \"cfwnat-e7ad7c24\",\n            \"Direction\": 1,\n            \"Port\": \"-1/-1\",\n            \"Description\": \"222\",\n            \"ParamTemplateId\": \"\",\n            \"BelongMemberId\": \"1300448058\"\n        },\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 3,\n            \"Scope\": \"ALL\",\n            \"Direction\": 1,\n            \"Port\": \"-1/-1\",\n            \"Description\": \"333\",\n            \"ParamTemplateId\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"fwmrg_wrzekq94u7\",\n        \"RequestId\": \"62cbbbe0-bac7-4e18-a85c-94a7784dfd04\"\n    }\n}",
+        "title": "创建NAT 规则组"
+      }
+    ],
+    "CreateSecurityGroupRule": [
+      {
+        "document": "往已存在的规则组添加规则",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg-jvw5ulal\",\n    \"Rules\": [\n        {\n            \"IpVersion\": \"ipv4\",\n            \"SourceContent\": \"lhins-qwgbsmg1\",\n            \"SourceType\": \"instance\",\n            \"DestContent\": \"0.0.0.0/0\",\n            \"DestType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"Port\": \"-1/-1\",\n            \"ServiceTemplateId\": \"\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"1221aaa\",\n            \"OrderIndex\": 1,\n            \"Scope\": \"SG,LH\",\n            \"ProtocolPortType\": 0,\n            \"BelongMemberId\": \"1300448058\"\n        },\n        {\n            \"IpVersion\": \"ipv4\",\n            \"SourceContent\": \"192.168.0.0/16\",\n            \"SourceType\": \"net\",\n            \"DestContent\": \"0.0.0.0/0\",\n            \"DestType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"Port\": \"-1/-1\",\n            \"ServiceTemplateId\": \"\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"232312\",\n            \"OrderIndex\": 2,\n            \"Scope\": \"SG\",\n            \"ProtocolPortType\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a66b372-86ef-488c-b53b-f93951c880a3\"\n    }\n}",
+        "title": "添加规则"
+      }
+    ],
+    "CreateSecurityGroupRuleGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupRuleGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"归属测试组1\",\n    \"Product\": \"enterprise_sg\",\n    \"Rules\": [\n        {\n            \"IpVersion\": \"ipv4\",\n            \"SourceContent\": \"subnet-imemp5hz\",\n            \"SourceType\": \"instance\",\n            \"DestContent\": \"0.0.0.0/0\",\n            \"DestType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"Port\": \"-1/-1\",\n            \"ServiceTemplateId\": \"\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"1221\",\n            \"OrderIndex\": 1,\n            \"Scope\": \"SG\",\n            \"ProtocolPortType\": 0,\n            \"BelongMemberId\": \"1302477603\"\n        },\n        {\n            \"IpVersion\": \"ipv4\",\n            \"SourceContent\": \"192.168.0.0/16\",\n            \"SourceType\": \"net\",\n            \"DestContent\": \"0.0.0.0/0\",\n            \"DestType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"Port\": \"-1/-1\",\n            \"ServiceTemplateId\": \"\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"33333\",\n            \"OrderIndex\": 2,\n            \"Scope\": \"SG\",\n            \"ProtocolPortType\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"fwmrg-jvw5ulal\",\n        \"RequestId\": \"1af65155-debe-49ca-b9d3-cac479b51cc7\"\n    }\n}",
+        "title": "创建规则组"
+      }
+    ],
+    "CreateStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStrategy\n<公共请求参数>\n\n{\n    \"Product\": \"enterprise_sg\",\n    \"ReceiveAccount\": [\n        \"100011616646\"\n    ],\n    \"PreStrategy\": [\n        {\n            \"GroupId\": \"fwmrg-sygzqi8x\",\n            \"Sequence\": 1\n        },\n        {\n            \"GroupId\": \"fwmrg-5gxybcnr\",\n            \"Sequence\": 2\n        }\n    ],\n    \"PostStrategy\": [\n        {\n            \"GroupId\": \"fwmrg-6wq0b6j0\",\n            \"Sequence\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0517848f-e4bf-419e-a26a-724289d0b9ea\"\n    }\n}",
+        "title": "创建下发策略"
+      }
+    ],
+    "CreateVpcAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_aussbmarr2\",\n    \"Rules\": [\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"DestContent\": \"0.0.0.0/0\",\n            \"DestType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 1,\n            \"EdgeId\": \"all\",\n            \"FwGroupId\": \"ccn-c0qmm031\",\n            \"Port\": \"-1/-1\",\n            \"Description\": \"zero\",\n            \"ParamTemplateId\": \"\",\n            \"BelongMemberId\": \"1300448058\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4b0ec1c-82a7-4781-b73e-86c0623187b6\"\n    }\n}",
+        "title": "添加VPC 规则"
+      }
+    ],
+    "CreateVpcAclRuleGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcAclRuleGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"222\",\n    \"Product\": \"cfw_vpc_acl\",\n    \"Rules\": [\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"DestContent\": \"0.0.0.0/0\",\n            \"DestType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 1,\n            \"EdgeId\": \"all\",\n            \"FwGroupId\": \"ccn-c0qmm031\",\n            \"Port\": \"-1/-1\",\n            \"Description\": \"one\",\n            \"ParamTemplateId\": \"\",\n            \"BelongMemberId\": \"1300448058\"\n        },\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"DestContent\": \"0.0.0.0/0\",\n            \"DestType\": \"net\",\n            \"Protocol\": \"ANY\",\n            \"RuleAction\": \"accept\",\n            \"OrderIndex\": 2,\n            \"EdgeId\": \"all\",\n            \"FwGroupId\": \"cfwg-e37fa79c\",\n            \"Port\": \"-1/-1\",\n            \"Description\": \"2222\",\n            \"ParamTemplateId\": \"\",\n            \"BelongMemberId\": \"1300448058\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"fwmrg_0i4eie7e50\",\n        \"RequestId\": \"0573ab58-ad2c-4bf4-9868-43ba0e066db0\"\n    }\n}",
+        "title": "创建 vpc 规则组"
+      }
+    ],
+    "DeleteEdgeAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_4ae6vv1l7c\",\n    \"RuleIds\": [\n        \"7f8d9162-9c3d-4b1f-b3ed-c63e1ce583cb\",\n        \"f5e7b8f7-ed34-489f-a7ce-2f7dc115843e\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3641dba9-c98d-41e5-b128-13a8140adf8f\"\n    }\n}",
+        "title": "删除互联网边界规则"
+      }
+    ],
+    "DeleteNatAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_wrzekq94u7\",\n    \"RuleIds\": [\n        \"50d186fd-6da7-4de3-acbc-8efea0272c76\",\n        \"3196fa67-1f2f-46a1-b341-75edfa5094d3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"32178aa0-b534-4c2f-ac11-818765fb4179\"\n    }\n}",
+        "title": "删除 NAT 规则"
+      }
+    ],
+    "DeleteRuleGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRuleGroup\n<公共请求参数>\n\n{\n    \"GroupIds\": [\n        \"fwmrg_7lonr9wtf2\",\n        \"fwmrg-ibmst8kv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46ff3321-e595-4bd8-a5a1-5d09f7c7a004\"\n    }\n}",
+        "title": "删除规则组"
+      }
+    ],
+    "DeleteSecurityGroupRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_hq19nybggr\",\n    \"RuleIds\": [\n        \"83f3be0b-c46f-4780-bf20-30dd97db5c52\",\n        \"e8ce92d8-4ec1-4f29-8117-d7769521c751\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7bb99beb-c406-43ee-9072-916472427834\"\n    }\n}",
+        "title": "删除规则（规则组管理）"
+      }
+    ],
+    "DeleteStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStrategy\n<公共请求参数>\n\n{\n    \"StrategyIds\": [\n        \"fwms-44n76l18\",\n        \"fwms-zz23s84d\",\n        \"fwms-nwwa678r\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"683c469a-bfa7-42f1-8169-ee3da5d13f31\"\n    }\n}",
+        "title": "删除下发策略"
+      }
+    ],
+    "DeleteVpcAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_aussbmarr2\",\n    \"RuleIds\": [\n        \"e8314eac-7313-4be5-83fc-1a2e05362f1d\",\n        \"1293a7fa-b6ee-4243-9429-8e690ce92057\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c4dc364-63dc-4ed1-9c17-b2dba1c9e1de\"\n    }\n}",
+        "title": "删除VPC 规则"
+      }
+    ],
+    "DescribeEdgeAclRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeAclRules\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg-ww0m4x6493\",\n    \"Direction\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"SourceContent\",\n            \"Values\": [\n                \"河北\"\n            ],\n            \"OperatorType\": 9\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotalCount\": 52,\n        \"RequestId\": \"d33c7277-5e74-4e10-b5c7-8eea9b4cc1d8\",\n        \"Rules\": [\n            {\n                \"CityCode\": 2147483647,\n                \"CityKey\": \"hb13,sx14,ln21,jl22,hlj23,js32,zj33,ah34,fj35,jx36,sd37,hn41,hb42,hn43,gd44,hn46,sc51,gz52,yn53,sx61,gs62,qh63,nmg15,gx45,xz54,nx64,xj65,bj11,tj12,sh31,cq50\",\n                \"CityName\": \"河北省,山西省,辽宁省,吉林省,黑龙江省,江苏省,浙江省,安徽省,福建省,江西省,山东省,河南省,湖北省,湖南省,广东省,海南省,四川省,贵州省,云南省,陕西省,甘肃省,青海省,内蒙古自治区,广西壮族自治区,西藏自治区,宁夏回族自治区,新疆维吾尔自治区,北京市,天津市,上海市,重庆市\",\n                \"CloudCode\": \"\",\n                \"CountryCode\": 1,\n                \"CountryKey\": \"zd\",\n                \"CountryName\": \"全部中国地区\",\n                \"CreateTime\": \"2026-04-15 17:04:00\",\n                \"Description\": \"we\",\n                \"Direction\": 1,\n                \"DnsParseCnt\": 0,\n                \"InstanceName\": \"\",\n                \"Invalid\": 0,\n                \"IsCloud\": 0,\n                \"IsRegion\": 1,\n                \"ParamTemplateId\": \"\",\n                \"ParamTemplateName\": \"\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"HTTPS\",\n                \"RuleAction\": \"accept\",\n                \"RuleId\": \"4e020c5b-d7b4-46e1-93bf-c30f1a2f8275\",\n                \"Scope\": \"serial\",\n                \"Sequence\": 8,\n                \"SourceContent\": \"0.0.0.0/0\",\n                \"SourceName\": \"\",\n                \"SourceType\": \"net\",\n                \"TargetContent\": \"qq.com\",\n                \"TargetName\": \"\",\n                \"TargetType\": \"domain\",\n                \"UpdateTime\": \"2026-04-16 16:16:42\"\n            },\n            {\n                \"CityCode\": 1,\n                \"CityKey\": \"hb13\",\n                \"CityName\": \"河北省\",\n                \"CloudCode\": \"\",\n                \"CountryCode\": 1,\n                \"CountryKey\": \"\",\n                \"CountryName\": \"\",\n                \"CreateTime\": \"2026-04-15 15:59:39\",\n                \"Description\": \"23\",\n                \"Direction\": 1,\n                \"DnsParseCnt\": 0,\n                \"InstanceName\": \"\",\n                \"Invalid\": 0,\n                \"IsCloud\": 0,\n                \"IsRegion\": 1,\n                \"ParamTemplateId\": \"\",\n                \"ParamTemplateName\": \"\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"TCP\",\n                \"RuleAction\": \"accept\",\n                \"RuleId\": \"91092f4e-2d8a-4f33-a53b-7a6aae6f2bd5\",\n                \"Scope\": \"all\",\n                \"Sequence\": 24,\n                \"SourceContent\": \"0.0.0.0/0\",\n                \"SourceName\": \"\",\n                \"SourceType\": \"net\",\n                \"TargetContent\": \"0.0.0.0/0\",\n                \"TargetName\": \"\",\n                \"TargetType\": \"net\",\n                \"UpdateTime\": \"2026-04-16 16:16:42\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询互联网边界规则列表"
+      }
+    ],
+    "DescribeNatAclRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatAclRules\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_9tnz3ksn7v\",\n    \"Direction\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"TargetContent\",\n            \"Values\": [\n                \"河北省\"\n            ],\n            \"OperatorType\": 9\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotalCount\": 10,\n        \"RequestId\": \"23fd42d9-7a67-4a0a-b6f1-e598451d798d\",\n        \"Rules\": [\n            {\n                \"CityCode\": 2146303999,\n                \"CityKey\": \"hb13,sx14,ln21,jl22,hlj23,js32,zj33,ah34,fj35,jx36,sd37,hn41,hb42,hn43,gd44,hn46,sc51,yn53,sx61,qh63,nmg15,gx45,xz54,nx64,xj65,bj11,tj12,sh31,cq50\",\n                \"CityName\": \"河北省,山西省,辽宁省,吉林省,黑龙江省,江苏省,浙江省,安徽省,福建省,江西省,山东省,河南省,湖北省,湖南省,广东省,海南省,四川省,云南省,陕西省,青海省,内蒙古自治区,广西壮族自治区,西藏自治区,宁夏回族自治区,新疆维吾尔自治区,北京市,天津市,上海市,重庆市\",\n                \"CountryCode\": 1,\n                \"CreateTime\": \"2026-04-02 17:16:53\",\n                \"Description\": \"3412\",\n                \"Direction\": 0,\n                \"DnsParseCnt\": 0,\n                \"IsRegion\": 1,\n                \"ParamTemplateId\": \"\",\n                \"ParamTemplateName\": \"\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"ANY\",\n                \"RuleAction\": \"accept\",\n                \"RuleId\": \"ba37feba-4ff5-46c7-b876-77bbc456cdc7\",\n                \"Scope\": \"ALL\",\n                \"ScopeDesc\": \"全局规则\",\n                \"Sequence\": 8,\n                \"SourceContent\": \"43.143.218.25\",\n                \"SourceType\": \"net\",\n                \"TargetContent\": \"0.0.0.0/0\",\n                \"TargetType\": \"net\",\n                \"UpdateTime\": \"2026-04-07 18:15:05\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询 NAT 规则列表"
+      }
+    ],
+    "DescribeOrganMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganMembers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Members\": [\n            {\n                \"AccountGroup\": null,\n                \"AppId\": \"1300846651\",\n                \"CfwInstanceId\": \"\",\n                \"CfwManaged\": 0,\n                \"CfwShareRole\": \"none\",\n                \"CfwShareRoleDisplay\": \"none\",\n                \"CfwSharerAppId\": \"\",\n                \"MemberCreateTime\": \"2022-10-20 15:38:57\",\n                \"MemberId\": \"mem-1300846651-100011949846\",\n                \"Nickname\": \"焦糖小蛋糕\",\n                \"NodeName\": \"Root\",\n                \"PolicyAnalysisEnabled\": 0,\n                \"Role\": \"admin\",\n                \"RoleDisplay\": \"admin\",\n                \"SubAccountCount\": 0\n            },\n            {\n                \"AccountGroup\": {\n                    \"GroupId\": \"acg-rwqqudnm\",\n                    \"GroupName\": \"生产账号组1组\"\n                },\n                \"AppId\": \"1300448058\",\n                \"CfwInstanceId\": \"\",\n                \"CfwManaged\": 0,\n                \"CfwShareRole\": \"none\",\n                \"CfwShareRoleDisplay\": \"none\",\n                \"CfwSharerAppId\": \"\",\n                \"MemberCreateTime\": \"2025-12-22 20:46:59\",\n                \"MemberId\": \"mem-1300846651-100011616646\",\n                \"Nickname\": \"天空之蓝\",\n                \"NodeName\": \"Root\",\n                \"PolicyAnalysisEnabled\": 0,\n                \"Role\": \"delegatedAdmin\",\n                \"RoleDisplay\": \"delegatedAdmin\",\n                \"SubAccountCount\": 0\n            },\n            {\n                \"AccountGroup\": null,\n                \"AppId\": \"1327492904\",\n                \"CfwInstanceId\": \"\",\n                \"CfwManaged\": 0,\n                \"CfwShareRole\": \"none\",\n                \"CfwShareRoleDisplay\": \"none\",\n                \"CfwSharerAppId\": \"\",\n                \"MemberCreateTime\": \"2024-06-24 14:51:35\",\n                \"MemberId\": \"mem-1300846651-100037509558\",\n                \"Nickname\": \"fengqqian\",\n                \"NodeName\": \"Root\",\n                \"PolicyAnalysisEnabled\": 0,\n                \"Role\": \"delegatedAdmin\",\n                \"RoleDisplay\": \"delegatedAdmin\",\n                \"SubAccountCount\": 0\n            },\n            {\n                \"AccountGroup\": null,\n                \"AppId\": \"1314933167\",\n                \"CfwInstanceId\": \"\",\n                \"CfwManaged\": 0,\n                \"CfwShareRole\": \"none\",\n                \"CfwShareRoleDisplay\": \"none\",\n                \"CfwSharerAppId\": \"\",\n                \"MemberCreateTime\": \"2022-11-09 15:09:35\",\n                \"MemberId\": \"mem-1300846651-100028354982\",\n                \"Nickname\": \"少年时\",\n                \"NodeName\": \"Root\",\n                \"PolicyAnalysisEnabled\": 0,\n                \"Role\": \"delegatedAdmin\",\n                \"RoleDisplay\": \"delegatedAdmin\",\n                \"SubAccountCount\": 0\n            },\n            {\n                \"AccountGroup\": null,\n                \"AppId\": \"1315399711\",\n                \"CfwInstanceId\": \"\",\n                \"CfwManaged\": 0,\n                \"CfwShareRole\": \"none\",\n                \"CfwShareRoleDisplay\": \"none\",\n                \"CfwSharerAppId\": \"\",\n                \"MemberCreateTime\": \"2022-11-26 19:29:43\",\n                \"MemberId\": \"mem-1300846651-100028671395\",\n                \"Nickname\": \"美式\",\n                \"NodeName\": \"Root\",\n                \"PolicyAnalysisEnabled\": 0,\n                \"Role\": \"member\",\n                \"RoleDisplay\": \"member\",\n                \"SubAccountCount\": 0\n            },\n            {\n                \"AccountGroup\": null,\n                \"AppId\": \"1314503630\",\n                \"CfwInstanceId\": \"\",\n                \"CfwManaged\": 0,\n                \"CfwShareRole\": \"none\",\n                \"CfwShareRoleDisplay\": \"none\",\n                \"CfwSharerAppId\": \"\",\n                \"MemberCreateTime\": \"2022-10-20 17:04:50\",\n                \"MemberId\": \"mem-1300846651-100027980407\",\n                \"Nickname\": \"测试部门\",\n                \"NodeName\": \"测试的部门1号\",\n                \"PolicyAnalysisEnabled\": 0,\n                \"Role\": \"member\",\n                \"RoleDisplay\": \"member\",\n                \"SubAccountCount\": 0\n            }\n        ],\n        \"RequestId\": \"c4feaf81-782f-43cb-9053-4a5982e84a15\",\n        \"TotalCount\": 6\n    }\n}",
+        "title": "查询集团成员列表"
+      }
+    ],
+    "DescribeOrganSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac3b6531-d7f0-4752-86af-962359fa7ad5\",\n        \"Summary\": {\n            \"AdminCount\": 4,\n            \"AdminInfo\": {\n                \"AppId\": \"1300846651\",\n                \"MemberId\": \"mem-1300846651-100011949846\",\n                \"Nickname\": \"焦糖小蛋糕\",\n                \"Uin\": \"100011949846\"\n            },\n            \"CfwSharerCount\": 1,\n            \"CfwUserCount\": 1,\n            \"GroupName\": \"焦糖小蛋糕\",\n            \"JoinedMemberCount\": 6,\n            \"MemberLimit\": -1,\n            \"MemberLimitDisplay\": \"无上限\"\n        }\n    }\n}",
+        "title": "查询集团概览"
+      }
+    ],
+    "DescribePolicyRiskAccountProductStats": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRiskAccountProductStats\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"OnlyUntreated\",\n            \"Values\": [\n                \"1\"\n            ],\n            \"OperatorType\": 7\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountStats\": [\n            {\n                \"Member\": {\n                    \"AppId\": \"1300448058\",\n                    \"MemberId\": \"mem-1300846651-100011616646\",\n                    \"Nickname\": \"天空之蓝\",\n                    \"Uin\": \"100011616646\"\n                },\n                \"ProductStats\": [\n                    {\n                        \"IgnoredRiskCount\": 55,\n                        \"LastCheckTime\": \"2026-03-26 15:29:52\",\n                        \"PolicyCount\": 1151,\n                        \"Product\": \"sg\",\n                        \"ProductName\": \"安全组\",\n                        \"RectifyRate\": \"0%\",\n                        \"TotalRiskCount\": 152,\n                        \"TreatedRiskCount\": 0,\n                        \"UntreatedRiskCount\": 97\n                    },\n                    {\n                        \"IgnoredRiskCount\": 0,\n                        \"LastCheckTime\": \"2026-03-09 19:42:49\",\n                        \"PolicyCount\": 34,\n                        \"Product\": \"enterprise_sg\",\n                        \"ProductName\": \"企业安全组\",\n                        \"RectifyRate\": \"0%\",\n                        \"TotalRiskCount\": 4,\n                        \"TreatedRiskCount\": 0,\n                        \"UntreatedRiskCount\": 4\n                    }\n                ],\n                \"UntreatedRiskCount\": 101\n            }\n        ],\n        \"RequestId\": \"d4f449f9-921c-43ad-a97a-edb27a2d685a\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询仅待整改"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRiskAccountProductStats\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"OnlyOverdue\",\n            \"Values\": [\n                \"1\"\n            ],\n            \"OperatorType\": 7\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountStats\": [\n            {\n                \"Member\": {\n                    \"AppId\": \"1314503630\",\n                    \"MemberId\": \"mem-1300846651-100027980407\",\n                    \"Nickname\": \"测试部门\",\n                    \"Uin\": \"100027980407\"\n                },\n                \"ProductStats\": [],\n                \"UntreatedRiskCount\": 0\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1300846651\",\n                    \"MemberId\": \"mem-1300846651-100011949846\",\n                    \"Nickname\": \"焦糖小蛋糕\",\n                    \"Uin\": \"100011949846\"\n                },\n                \"ProductStats\": [],\n                \"UntreatedRiskCount\": 0\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1327492904\",\n                    \"MemberId\": \"mem-1300846651-100037509558\",\n                    \"Nickname\": \"fengqqian\",\n                    \"Uin\": \"100037509558\"\n                },\n                \"ProductStats\": [],\n                \"UntreatedRiskCount\": 0\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1315399711\",\n                    \"MemberId\": \"mem-1300846651-100028671395\",\n                    \"Nickname\": \"美式\",\n                    \"Uin\": \"100028671395\"\n                },\n                \"ProductStats\": [],\n                \"UntreatedRiskCount\": 0\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1314933167\",\n                    \"MemberId\": \"mem-1300846651-100028354982\",\n                    \"Nickname\": \"少年时\",\n                    \"Uin\": \"100028354982\"\n                },\n                \"ProductStats\": [],\n                \"UntreatedRiskCount\": 0\n            }\n        ],\n        \"RequestId\": \"82758a29-81f8-466e-a8cd-ea60343d23fe\",\n        \"TotalCount\": 5\n    }\n}",
+        "title": "查询仅超时未体检"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRiskAccountProductStats\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountStats\": [\n            {\n                \"Member\": {\n                    \"AppId\": \"1300448058\",\n                    \"Uin\": \"100000009710\",\n                    \"Nickname\": \"cfw-test\",\n                    \"MemberId\": \"member-001\"\n                },\n                \"UntreatedRiskCount\": 20,\n                \"ProductStats\": [\n                    {\n                        \"Product\": \"enterprise_sg\",\n                        \"ProductName\": \"企业安全组\",\n                        \"PolicyCount\": 200,\n                        \"UntreatedRiskCount\": 20,\n                        \"TotalRiskCount\": 30,\n                        \"TreatedRiskCount\": 5,\n                        \"IgnoredRiskCount\": 5,\n                        \"RectifyRate\": \"0%\",\n                        \"LastCheckTime\": \"2025-10-22 10:00:00\"\n                    },\n                    {\n                        \"Product\": \"sg\",\n                        \"ProductName\": \"安全组\",\n                        \"PolicyCount\": 100,\n                        \"UntreatedRiskCount\": 0,\n                        \"TotalRiskCount\": 0,\n                        \"TreatedRiskCount\": 0,\n                        \"IgnoredRiskCount\": 0,\n                        \"RectifyRate\": \"无需整改\",\n                        \"LastCheckTime\": \"2025-10-22 10:00:00\"\n                    }\n                ]\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1300846651\",\n                    \"Uin\": \"100000009711\",\n                    \"Nickname\": \"cfw-test2\",\n                    \"MemberId\": \"member-002\"\n                },\n                \"UntreatedRiskCount\": 1,\n                \"ProductStats\": [\n                    {\n                        \"Product\": \"sg\",\n                        \"ProductName\": \"安全组\",\n                        \"PolicyCount\": 20,\n                        \"UntreatedRiskCount\": 1,\n                        \"TotalRiskCount\": 1,\n                        \"TreatedRiskCount\": 0,\n                        \"IgnoredRiskCount\": 0,\n                        \"RectifyRate\": \"0%\",\n                        \"LastCheckTime\": \"2025-10-22 10:00:00\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询账号+产品维度风险统计"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRiskAccountProductStats\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Uin\",\n            \"Values\": [\n                \"100011616646\"\n            ],\n            \"OperatorType\": 9\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountStats\": [\n            {\n                \"Member\": {\n                    \"AppId\": \"1300448058\",\n                    \"MemberId\": \"mem-1300846651-100011616646\",\n                    \"Nickname\": \"天空之蓝\",\n                    \"Uin\": \"100011616646\"\n                },\n                \"ProductStats\": [\n                    {\n                        \"IgnoredRiskCount\": 55,\n                        \"LastCheckTime\": \"2026-03-26 15:29:52\",\n                        \"PolicyCount\": 1151,\n                        \"Product\": \"sg\",\n                        \"ProductName\": \"安全组\",\n                        \"RectifyRate\": \"0%\",\n                        \"TotalRiskCount\": 152,\n                        \"TreatedRiskCount\": 0,\n                        \"UntreatedRiskCount\": 97\n                    },\n                    {\n                        \"IgnoredRiskCount\": 0,\n                        \"LastCheckTime\": \"2026-03-09 19:42:49\",\n                        \"PolicyCount\": 34,\n                        \"Product\": \"enterprise_sg\",\n                        \"ProductName\": \"企业安全组\",\n                        \"RectifyRate\": \"0%\",\n                        \"TotalRiskCount\": 4,\n                        \"TreatedRiskCount\": 0,\n                        \"UntreatedRiskCount\": 4\n                    }\n                ],\n                \"UntreatedRiskCount\": 101\n            }\n        ],\n        \"RequestId\": \"de07ff51-a85e-4970-883a-0b73f788eb06\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "根据Uin过滤"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRiskAccountProductStats\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Nickname\",\n            \"Values\": [\n                \"蓝\"\n            ],\n            \"OperatorType\": 9\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountStats\": [\n            {\n                \"Member\": {\n                    \"AppId\": \"1300448058\",\n                    \"MemberId\": \"mem-1300846651-100011616646\",\n                    \"Nickname\": \"天空之蓝\",\n                    \"Uin\": \"100011616646\"\n                },\n                \"ProductStats\": [\n                    {\n                        \"IgnoredRiskCount\": 55,\n                        \"LastCheckTime\": \"2026-03-26 15:29:52\",\n                        \"PolicyCount\": 1151,\n                        \"Product\": \"sg\",\n                        \"ProductName\": \"安全组\",\n                        \"RectifyRate\": \"0%\",\n                        \"TotalRiskCount\": 152,\n                        \"TreatedRiskCount\": 0,\n                        \"UntreatedRiskCount\": 97\n                    },\n                    {\n                        \"IgnoredRiskCount\": 0,\n                        \"LastCheckTime\": \"2026-03-09 19:42:49\",\n                        \"PolicyCount\": 34,\n                        \"Product\": \"enterprise_sg\",\n                        \"ProductName\": \"企业安全组\",\n                        \"RectifyRate\": \"0%\",\n                        \"TotalRiskCount\": 4,\n                        \"TreatedRiskCount\": 0,\n                        \"UntreatedRiskCount\": 4\n                    }\n                ],\n                \"UntreatedRiskCount\": 101\n            }\n        ],\n        \"RequestId\": \"09c2396d-5a7f-4d0b-b54d-eaa11f0729f1\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "根据账号昵称筛选"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRiskAccountProductStats\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AccountStats\": [\n            {\n                \"Member\": {\n                    \"AppId\": \"1300448058\",\n                    \"MemberId\": \"mem-1300846651-100011616646\",\n                    \"Nickname\": \"天空之蓝\",\n                    \"Uin\": \"100011616646\"\n                },\n                \"ProductStats\": [\n                    {\n                        \"IgnoredRiskCount\": 55,\n                        \"IsOverdue\": true,\n                        \"LastCheckTime\": \"2026-03-26 15:29:52\",\n                        \"PolicyCount\": 1151,\n                        \"Product\": \"sg\",\n                        \"ProductName\": \"安全组\",\n                        \"RectifyRate\": \"0%\",\n                        \"SubcategoryIds\": [\n                            \"risk_port_ssh_22\",\n                            \"inbound_accept_any\",\n                            \"exact_duplicate_rules\",\n                            \"merge_rules\",\n                            \"risk_port_rdp_3389\",\n                            \"risk_port_20_21\",\n                            \"overridden_rules\"\n                        ],\n                        \"TotalRiskCount\": 152,\n                        \"TreatedRiskCount\": 0,\n                        \"UntreatedRiskCount\": 97\n                    },\n                    {\n                        \"IgnoredRiskCount\": 0,\n                        \"IsOverdue\": true,\n                        \"LastCheckTime\": \"2026-03-27 11:47:27\",\n                        \"PolicyCount\": 46,\n                        \"Product\": \"enterprise_sg\",\n                        \"ProductName\": \"企业安全组\",\n                        \"RectifyRate\": \"无需整改\",\n                        \"SubcategoryIds\": [],\n                        \"TotalRiskCount\": 24,\n                        \"TreatedRiskCount\": 24,\n                        \"UntreatedRiskCount\": 0\n                    }\n                ],\n                \"RectifyRate\": \"14%\",\n                \"UntreatedRiskCount\": 97\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1300846651\",\n                    \"MemberId\": \"mem-1300846651-100011949846\",\n                    \"Nickname\": \"焦糖小蛋糕\",\n                    \"Uin\": \"100011949846\"\n                },\n                \"ProductStats\": [],\n                \"RectifyRate\": \"无需整改\",\n                \"UntreatedRiskCount\": 0\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1327492904\",\n                    \"MemberId\": \"mem-1300846651-100037509558\",\n                    \"Nickname\": \"fengqqian\",\n                    \"Uin\": \"100037509558\"\n                },\n                \"ProductStats\": [],\n                \"RectifyRate\": \"无需整改\",\n                \"UntreatedRiskCount\": 0\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1315399711\",\n                    \"MemberId\": \"mem-1300846651-100028671395\",\n                    \"Nickname\": \"美式\",\n                    \"Uin\": \"100028671395\"\n                },\n                \"ProductStats\": [],\n                \"RectifyRate\": \"无需整改\",\n                \"UntreatedRiskCount\": 0\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1314933167\",\n                    \"MemberId\": \"mem-1300846651-100028354982\",\n                    \"Nickname\": \"少年时\",\n                    \"Uin\": \"100028354982\"\n                },\n                \"ProductStats\": [],\n                \"RectifyRate\": \"无需整改\",\n                \"UntreatedRiskCount\": 0\n            },\n            {\n                \"Member\": {\n                    \"AppId\": \"1314503630\",\n                    \"MemberId\": \"mem-1300846651-100027980407\",\n                    \"Nickname\": \"测试部门\",\n                    \"Uin\": \"100027980407\"\n                },\n                \"ProductStats\": [],\n                \"RectifyRate\": \"无需整改\",\n                \"UntreatedRiskCount\": 0\n            }\n        ],\n        \"OverdueAccountCount\": 6,\n        \"OverdueProductCount\": 2,\n        \"RequestId\": \"6f57db6e-44a6-4d70-9fae-4b9eef649b3b\",\n        \"TotalCount\": 6\n    }\n}",
+        "title": "默认请求"
+      }
+    ],
+    "DescribeRiskAnalysisDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskAnalysisDetails\n<公共请求参数>\n\n{\n    \"Id\": \"398d5185cb7c4b15e44640a38f78d681\",\n    \"SearchType\": \"analyze\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnterpriseSecurityGroupRuleIPV6\": [],\n        \"RequestId\": \"0831ba3a-9c6d-4b1b-98e2-b92c2499e934\"\n    }\n}",
+        "title": "获取实时分析风险详情"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskAnalysisDetails\n<公共请求参数>\n\n{\n    \"Id\": \"77c4bea5ce631684079e8d6420d535ed\",\n    \"SearchType\": \"analyze\",\n    \"MemberId\": \"mem-tencent-e4f32cfd87465a17\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14e70aa5-d247-47a2-ba74-d67f5d05956b\",\n        \"SecurityGroupPolicy\": [\n            {\n                \"Action\": \"ACCEPT\",\n                \"AddressTemplate\": {\n                    \"AddressGroupId\": \"\",\n                    \"AddressId\": \"\"\n                },\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"Direction\": \"Ingress\",\n                \"Ipv6CidrBlock\": \"\",\n                \"ModifyTime\": \"2026-03-27 17:23:58\",\n                \"PolicyDescription\": \"cdasccsd\",\n                \"PolicyIndex\": 0,\n                \"Port\": \"ALL\",\n                \"Protocol\": \"ALL\",\n                \"Region\": \"ap-shanghai-fsi\",\n                \"SecurityGroupId\": \"\",\n                \"ServiceTemplate\": {\n                    \"ServiceGroupId\": \"\",\n                    \"ServiceId\": \"\"\n                },\n                \"Version\": \"3\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AddressTemplate\": {\n                    \"AddressGroupId\": \"\",\n                    \"AddressId\": \"\"\n                },\n                \"CidrBlock\": \"\",\n                \"Direction\": \"Ingress\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2026-03-16 17:54:26\",\n                \"PolicyDescription\": \"\",\n                \"PolicyIndex\": 1,\n                \"Port\": \"ALL\",\n                \"Protocol\": \"ALL\",\n                \"Region\": \"ap-shanghai-fsi\",\n                \"SecurityGroupId\": \"\",\n                \"ServiceTemplate\": {\n                    \"ServiceGroupId\": \"\",\n                    \"ServiceId\": \"\"\n                },\n                \"Version\": \"3\"\n            }\n        ]\n    }\n}",
+        "title": "查看指定成员的"
+      }
+    ],
+    "DescribeRiskCategoryStats": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskCategoryStats\n<公共请求参数>\n\n{\n    \"Product\": \"enterprise_sg\",\n    \"MemberId\": \"mem-1300846651-100011616646\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CategoryId\": \"deviate_baseline\",\n                \"CategoryName\": \"安全基线偏离规则\",\n                \"Description\": \"检测到入向全放行规则，范围过大\",\n                \"DisposalRate\": 0,\n                \"HasRisk\": 1,\n                \"IgnoredCount\": 0,\n                \"RemediationStatus\": \"Incomplete\",\n                \"RiskLevel\": 2,\n                \"RiskLevelName\": \"高危\",\n                \"RuleCount\": 1,\n                \"SubcategoryId\": \"inbound_accept_any\",\n                \"SubcategoryName\": \"入向全放行规则\",\n                \"Suggestion\": \"检测到入向全放行规则，范围过大。建议根据业务实际需求调整规则，缩小覆盖范围以提升规则精准度。\",\n                \"TreatedCount\": 0,\n                \"UntreatedCount\": 1\n            },\n            {\n                \"CategoryId\": \"invalid_rule\",\n                \"CategoryName\": \"无效规则\",\n                \"Description\": \"规则关联的资产实例、地址模板、资源标签等模板已被部分或全部删除\",\n                \"DisposalRate\": 0,\n                \"HasRisk\": 1,\n                \"IgnoredCount\": 0,\n                \"RemediationStatus\": \"Incomplete\",\n                \"RiskLevel\": 2,\n                \"RiskLevelName\": \"高危\",\n                \"RuleCount\": 1,\n                \"SubcategoryId\": \"loss_of_effect_rules\",\n                \"SubcategoryName\": \"失效规则\",\n                \"Suggestion\": \"检测到规则关联的资产实例、地址模板、或资源标签等模板已被部分删除。建议直接删除该无效规则。\",\n                \"TreatedCount\": 0,\n                \"UntreatedCount\": 1\n            },\n            {\n                \"CategoryId\": \"invalid_rule\",\n                \"CategoryName\": \"无效规则\",\n                \"Description\": \"规则已被优先级更高的规则覆盖\",\n                \"DisposalRate\": 0,\n                \"HasRisk\": 1,\n                \"IgnoredCount\": 0,\n                \"RemediationStatus\": \"Incomplete\",\n                \"RiskLevel\": 0,\n                \"RiskLevelName\": \"低危\",\n                \"RuleCount\": 2,\n                \"SubcategoryId\": \"overridden_rules\",\n                \"SubcategoryName\": \"被高优覆盖规则\",\n                \"Suggestion\": \"检测到规则已被优先级更高的规则覆盖。建议删除被覆盖的无效规则。\",\n                \"TreatedCount\": 0,\n                \"UntreatedCount\": 2\n            }\n        ],\n        \"RequestId\": \"11a97c77-9c0e-468f-b6a2-02b38c121322\",\n        \"Total\": 2\n    }\n}",
+        "title": "查询策略体检风险分类统计数据"
+      }
+    ],
+    "DescribeRiskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Product\": \"enterprise_sg\",\n    \"MemberId\": \"mem-1300846651-100011616646\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyRiskLst\": [\n            {\n                \"Direction\": \"Egress\",\n                \"DisposalTime\": \"\",\n                \"FoundTime\": \"2026-03-04 17:36:12\",\n                \"Id\": \"06c15d97ec325e8e5fe6f10883478360\",\n                \"Product\": \"enterprise_sg\",\n                \"RiskCategory\": \"deviate_baseline\",\n                \"RiskFeature\": \"inbound_accept_any\",\n                \"RiskLevel\": 2,\n                \"RiskReason\": \"108275允许入站任意访问，范围过大\",\n                \"RiskSubCategory\": \"inbound_accept_any\",\n                \"RuleCount\": 1,\n                \"RuleType\": \"ACCEPT\",\n                \"SgId\": [\n                    \"\"\n                ],\n                \"SgRuleId\": [\n                    \"108275\"\n                ],\n                \"Status\": 0,\n                \"Suggestion\": \"检测到入向全放行规则，范围过大。建议根据业务实际需求调整规则，缩小覆盖范围以提升规则精准度。\"\n            },\n            {\n                \"Direction\": \"Egress\",\n                \"DisposalTime\": \"\",\n                \"FoundTime\": \"2026-03-02 22:22:33\",\n                \"Id\": \"a10b189d0974f4f1b4f04fc98187fc4d\",\n                \"Product\": \"enterprise_sg\",\n                \"RiskCategory\": \"invalid_rule\",\n                \"RiskFeature\": \"loss_of_effect_rules\",\n                \"RiskLevel\": 2,\n                \"RiskReason\": \"\",\n                \"RiskSubCategory\": \"loss_of_effect_rules\",\n                \"RuleCount\": 1,\n                \"RuleType\": \"ACCEPT\",\n                \"SgId\": [\n                    \"\"\n                ],\n                \"SgRuleId\": [\n                    \"164108\"\n                ],\n                \"Status\": 0,\n                \"Suggestion\": \"检测到规则关联的资产实例、地址模板、或资源标签模板已被部分删除。建议直接删除该无效规则。\"\n            },\n            {\n                \"Direction\": \"Egress\",\n                \"DisposalTime\": \"\",\n                \"FoundTime\": \"2026-03-04 17:58:46\",\n                \"Id\": \"c987cf88c6c0de2702f06530a0070564\",\n                \"Product\": \"enterprise_sg\",\n                \"RiskCategory\": \"invalid_rule\",\n                \"RiskFeature\": \"overridden_rules_by:108275\",\n                \"RiskLevel\": 0,\n                \"RiskReason\": \"规则（允许 ::/0 -> 2400:ee00:101c:5701:0:9d35:c8f9:d41f:ANY(ANY)）覆盖了1条低优先级规则\",\n                \"RiskSubCategory\": \"overridden_rules\",\n                \"RuleCount\": 2,\n                \"RuleType\": \"ACCEPT\",\n                \"SgId\": [\n                    \"\"\n                ],\n                \"SgRuleId\": [\n                    \"108275\",\n                    \"108276\"\n                ],\n                \"Status\": 0,\n                \"Suggestion\": \"检测到规则已被优先级更高的规则覆盖。建议删除被覆盖的无效规则。\"\n            }\n        ],\n        \"RequestId\": \"ba338963-595a-4d8b-b630-2b646cb97be1\",\n        \"Total\": 3\n    }\n}",
+        "title": "查询用户所有规则的策略问题"
+      }
+    ],
+    "DescribeSecurityGroupRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"b36302b0-3a24-43d7-8d5a-2e24d6e68c89\",\n    \"GroupId\": \"fwmrg-6wq0b6j0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"812242b4-c71a-4a14-a907-1f36e440c53e\",\n        \"Rule\": {\n            \"Detail\": \"1\",\n            \"DstContent\": \"::/0\",\n            \"DstPort\": \"-1/-1\",\n            \"DstType\": \"net\",\n            \"IpVersion\": \"ipv6\",\n            \"Protocol\": \"ANY\",\n            \"ProtocolPortType\": 1,\n            \"Region\": \"\",\n            \"RuleAction\": \"accept\",\n            \"RuleId\": \"b36302b0-3a24-43d7-8d5a-2e24d6e68c89\",\n            \"Scope\": \"SG\",\n            \"Sequence\": 1,\n            \"ServiceTemplateId\": \"ppm-r7gw5s50\",\n            \"SrcContent\": \"2402:4e00:c032:8800:be66:c9b8:2454:0\",\n            \"SrcType\": \"net\"\n        }\n    }\n}",
+        "title": "查询规则详情（规则组管理）"
+      }
+    ],
+    "DescribeSecurityGroupRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupRules\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg-i3pvf19a\",\n    \"Filters\": [\n        {\n            \"Name\": \"RuleId\",\n            \"Values\": [\n                \"6eaf61e\"\n            ],\n            \"OperatorType\": 9\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotalCount\": 7,\n        \"RequestId\": \"d1f4711c-a542-4b7f-9443-7fd31437edd4\",\n        \"Rules\": [\n            {\n                \"BelongMember\": {\n                    \"AppId\": \"1300448058\",\n                    \"MemberId\": \"mem-tencent-e4f32cfd87465a17\",\n                    \"Nickname\": \"天空之蓝\",\n                    \"Uin\": \"100011616646\"\n                },\n                \"Cidr\": \"\",\n                \"Detail\": \"1\",\n                \"DnsParseCount\": {\n                    \"InvalidCount\": 0,\n                    \"ValidCount\": 0\n                },\n                \"Id\": 7884,\n                \"InstanceName\": \"\",\n                \"IpVersion\": \"ipv4\",\n                \"OrderIndex\": 7,\n                \"ParameterName\": \"\",\n                \"Port\": \"-1/-1\",\n                \"PrivateIp\": \"\",\n                \"Protocol\": \"ANY\",\n                \"ProtocolPortName\": \"\",\n                \"PublicIp\": \"\",\n                \"Region\": \"\",\n                \"RuleId\": \"6eaf61e3-2f5f-435c-b3d1-c39dae46a7de\",\n                \"Scope\": \"SG\",\n                \"ServiceTemplateId\": \"\",\n                \"SouCidr\": \"\",\n                \"SouInstanceName\": \"\",\n                \"SouParameterName\": \"\",\n                \"SouPrivateIp\": \"\",\n                \"SouPublicIp\": \"\",\n                \"SourceId\": \"0.0.0.0/0\",\n                \"SourceType\": 0,\n                \"Strategy\": 2,\n                \"TargetId\": \"0.0.0.0/0\",\n                \"TargetType\": 0\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询规则组中规则列表接口"
+      }
+    ],
+    "DescribeStrategies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategies\n<公共请求参数>\n\n{\n    \"Product\": \"enterprise_sg\",\n    \"ExecArea\": \"pre\",\n    \"Filters\": [\n        {\n            \"Name\": \"GroupName\",\n            \"OperatorType\": 9,\n            \"Values\": [\n                \"类型安全组\"\n            ]\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6139ea4e-d67e-4bc6-a122-d71a6a339dac\",\n        \"Strategies\": [\n            {\n                \"CreateBy\": \"100011616646\",\n                \"CreateName\": \"天空之蓝\",\n                \"CreateTime\": \"2026-02-27 19:06:59\",\n                \"ErrMsg\": \"\",\n                \"ErrorType\": \"\",\n                \"ExecArea\": \"pre\",\n                \"GroupId\": \"fwmrg-6wq0b6j0\",\n                \"GroupName\": \"不同类型安全组下发\",\n                \"ReceiveAccount\": [\n                    {\n                        \"Nickname\": \"天空之蓝\",\n                        \"Uin\": \"100011616646\"\n                    }\n                ],\n                \"RuleCount\": 7,\n                \"RuleStatus\": 1,\n                \"Sequence\": 2,\n                \"StrategyId\": \"fwms-ms91jjvy\",\n                \"UpdateBy\": \"100011616646\",\n                \"UpdateName\": \"天空之蓝\",\n                \"UpdateTime\": \"2026-02-27 19:52:50\"\n            },\n            {\n                \"CreateBy\": \"100011616646\",\n                \"CreateName\": \"天空之蓝\",\n                \"CreateTime\": \"2026-02-27 19:22:44\",\n                \"ErrMsg\": \"\",\n                \"ErrorType\": \"\",\n                \"ExecArea\": \"pre\",\n                \"GroupId\": \"fwmrg-6wq0b6j0\",\n                \"GroupName\": \"不同类型安全组下发\",\n                \"ReceiveAccount\": [\n                    {\n                        \"Nickname\": \"天空之蓝\",\n                        \"Uin\": \"100011616646\"\n                    }\n                ],\n                \"RuleCount\": 7,\n                \"RuleStatus\": 1,\n                \"Sequence\": 3,\n                \"StrategyId\": \"fwms-vg9ji1r5\",\n                \"UpdateBy\": \"100011616646\",\n                \"UpdateName\": \"天空之蓝\",\n                \"UpdateTime\": \"2026-02-27 19:52:50\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询策略列表"
+      }
+    ],
+    "DescribeStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategy\n<公共请求参数>\n\n{\n    \"StrategyId\": \"fwms-kmbf8avt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"209ce0d3-c47f-49b9-936c-c35aa2966910\",\n        \"Strategy\": {\n            \"CreateBy\": \"100011616646\",\n            \"CreateName\": \"天空之蓝\",\n            \"CreateTime\": \"2026-02-27 19:22:44\",\n            \"ErrMsg\": \"\",\n            \"ErrorType\": \"\",\n            \"ExecArea\": \"pre\",\n            \"GroupId\": \"fwmrg-5gxybcnr\",\n            \"GroupName\": \"gl测试构造风险\",\n            \"ReceiveAccount\": [\n                {\n                    \"Nickname\": \"天空之蓝\",\n                    \"Uin\": \"100011616646\"\n                }\n            ],\n            \"RuleCount\": 11,\n            \"RuleStatus\": 1,\n            \"Sequence\": 1,\n            \"StrategyId\": \"fwms-kmbf8avt\",\n            \"UpdateBy\": \"100011616646\",\n            \"UpdateName\": \"天空之蓝\",\n            \"UpdateTime\": \"2026-02-27 19:52:50\"\n        }\n    }\n}",
+        "title": "查询策略详情"
+      }
+    ],
+    "DescribeStrategyAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategyAccounts\n<公共请求参数>\n\n{\n    \"Product\": \"enterprise_sg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountGroups\": [\n            {\n                \"BottleneckUin\": \"100011949846\",\n                \"DispatchRuleNum\": 0,\n                \"GroupId\": \"acg-dudjfm6t\",\n                \"GroupName\": \"测试1\",\n                \"MemberCount\": 3,\n                \"Members\": [\n                    {\n                        \"DispatchRuleNum\": 0,\n                        \"MemberId\": \"mem-1300846651-100011949846\",\n                        \"Nickname\": \"焦糖小蛋糕\",\n                        \"OriginRuleNum\": 0,\n                        \"RemainQuota\": 0,\n                        \"TotalQuota\": 0,\n                        \"Uin\": \"100011949846\"\n                    },\n                    {\n                        \"DispatchRuleNum\": 0,\n                        \"MemberId\": \"mem-1300846651-100028354982\",\n                        \"Nickname\": \"少年时\",\n                        \"OriginRuleNum\": 0,\n                        \"RemainQuota\": 0,\n                        \"TotalQuota\": 0,\n                        \"Uin\": \"100028354982\"\n                    },\n                    {\n                        \"DispatchRuleNum\": 0,\n                        \"MemberId\": \"mem-1300846651-100037509558\",\n                        \"Nickname\": \"fengqqian\",\n                        \"OriginRuleNum\": 0,\n                        \"RemainQuota\": 0,\n                        \"TotalQuota\": 0,\n                        \"Uin\": \"100037509558\"\n                    }\n                ],\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0\n            },\n            {\n                \"BottleneckUin\": \"100028671395\",\n                \"DispatchRuleNum\": 0,\n                \"GroupId\": \"acg-ssbkqes9\",\n                \"GroupName\": \"生产测试组\",\n                \"MemberCount\": 1,\n                \"Members\": [\n                    {\n                        \"DispatchRuleNum\": 0,\n                        \"MemberId\": \"mem-1300846651-100028671395\",\n                        \"Nickname\": \"美式\",\n                        \"OriginRuleNum\": 0,\n                        \"RemainQuota\": 0,\n                        \"TotalQuota\": 0,\n                        \"Uin\": \"100028671395\"\n                    }\n                ],\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0\n            },\n            {\n                \"BottleneckUin\": \"\",\n                \"DispatchRuleNum\": 0,\n                \"GroupId\": \"acg-na4l82l3\",\n                \"GroupName\": \"测试2\",\n                \"MemberCount\": 0,\n                \"Members\": [],\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0\n            },\n            {\n                \"BottleneckUin\": \"\",\n                \"DispatchRuleNum\": 0,\n                \"GroupId\": \"acg-uvrarqih\",\n                \"GroupName\": \"<img src='' onerror='alert(\\\"cdasd\\\")' />\",\n                \"MemberCount\": 0,\n                \"Members\": [],\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0\n            }\n        ],\n        \"Accounts\": [\n            {\n                \"DispatchRuleNum\": 0,\n                \"MemberId\": \"mem-1300846651-100027980407\",\n                \"Nickname\": \"2468639187\",\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0,\n                \"Uin\": \"100027980407\"\n            },\n            {\n                \"DispatchRuleNum\": 0,\n                \"MemberId\": \"mem-1300846651-100028354982\",\n                \"Nickname\": \"少年时\",\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0,\n                \"Uin\": \"100028354982\"\n            },\n            {\n                \"DispatchRuleNum\": 0,\n                \"MemberId\": \"mem-1300846651-100028671395\",\n                \"Nickname\": \"美式\",\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0,\n                \"Uin\": \"100028671395\"\n            },\n            {\n                \"DispatchRuleNum\": 0,\n                \"MemberId\": \"mem-1300846651-100037509558\",\n                \"Nickname\": \"fengqqian\",\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0,\n                \"Uin\": \"100037509558\"\n            },\n            {\n                \"DispatchRuleNum\": 0,\n                \"MemberId\": \"mem-1300846651-100011949846\",\n                \"Nickname\": \"焦糖小蛋糕\",\n                \"OriginRuleNum\": 0,\n                \"RemainQuota\": 0,\n                \"TotalQuota\": 0,\n                \"Uin\": \"100011949846\"\n            },\n            {\n                \"DispatchRuleNum\": 0,\n                \"MemberId\": \"mem-1300846651-100011616646\",\n                \"Nickname\": \"天空之蓝\",\n                \"OriginRuleNum\": 17,\n                \"RemainQuota\": 1983,\n                \"TotalQuota\": 2000,\n                \"Uin\": \"100011616646\"\n            }\n        ],\n        \"RequestId\": \"4b6c5bd5-c696-4ce8-a4c0-be583552aaaa\"\n    }\n}",
+        "title": "查询防火墙管理规则下发账号"
+      }
+    ],
+    "DescribeStrategyDispatchStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategyDispatchStatus\n<公共请求参数>\n\n{\n    \"Product\": \"enterprise_sg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DispatchStrategyList\": [\n            \"fwms-kmbf8avt\",\n            \"fwms-ms91jjvy\",\n            \"fwms-vg9ji1r5\"\n        ],\n        \"EndTime\": \"2026-02-27 19:52:50\",\n        \"ErrorMsg\": \"\",\n        \"Progress\": 100,\n        \"RequestId\": \"77659938-d469-4313-ba83-232b66559e1e\",\n        \"RuleGroupNum\": 3,\n        \"StartTime\": \"2026-02-27 19:52:35\",\n        \"Status\": 2\n    }\n}",
+        "title": "查询策略下发状态"
+      }
+    ],
+    "DescribeVpcAclRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAclRules\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg-yltolsxma7\",\n    \"Filters\": [\n        {\n            \"Name\": \"RuleId\",\n            \"Values\": [\n                \"2ceddffe\"\n            ],\n            \"OperatorType\": 9\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotalCount\": 3,\n        \"RequestId\": \"f7d0cafa-6f06-49f5-862f-bf68897a762f\",\n        \"Rules\": [\n            {\n                \"CreateTime\": \"2026-04-13 20:34:47\",\n                \"Description\": \"1212\",\n                \"DestContent\": \"::/0\",\n                \"DestType\": \"net\",\n                \"DnsParseCnt\": 0,\n                \"EdgeId\": \"ALL\",\n                \"FwGroupId\": \"ALL\",\n                \"IpVersion\": \"ipv6\",\n                \"ParamTemplateId\": \"\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"ANY\",\n                \"RuleAction\": \"accept\",\n                \"RuleId\": \"2ceddffe-a328-4bdf-af5f-a02821fab173\",\n                \"Sequence\": 3,\n                \"SourceContent\": \"::/0\",\n                \"SourceType\": \"net\",\n                \"UpdateTime\": \"2026-04-15 11:05:06\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询VPC 规则列表"
+      }
+    ],
+    "DispatchStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DispatchStrategy\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Product\": \"enterprise_sg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef9bf807-fa58-425e-b660-6a35462f281f\"\n    }\n}",
+        "title": "下发策略"
+      }
+    ],
+    "IgnorePolicyRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IgnorePolicyRisk\n<公共请求参数>\n\n{\n    \"RiskId\": \"ff9d17c245741c74e1019d26a60ac6b3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68c302a8-fe7d-4235-836d-b543f3f49ac7\"\n    }\n}",
+        "title": "忽略策略问题"
+      }
+    ],
+    "ModifyEdgeAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_4ae6vv1l7c\",\n    \"Rule\": {\n        \"RuleId\": \"fb65eefd-6a64-4c02-a720-e278d41df8bd\",\n        \"OrderIndex\": 3,\n        \"Direction\": 1,\n        \"SourceContent\": \"0.0.0.0/0\",\n        \"SourceType\": \"net\",\n        \"TargetContent\": \"0.0.0.0/0\",\n        \"TargetType\": \"net\",\n        \"Port\": \"-1/-1\",\n        \"Protocol\": \"TCP\",\n        \"RuleAction\": \"drop\",\n        \"Description\": \"77777\",\n        \"Scope\": \"all\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6664b107-391d-473d-a59a-88502841fa0e\"\n    }\n}",
+        "title": "修改互联网边界规则"
+      }
+    ],
+    "ModifyEdgeAclRuleSequence": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeAclRuleSequence\n<公共请求参数>\n\n{\n    \"Direction\": 1,\n    \"GroupId\": \"fwmrg_4ae6vv1l7c\",\n    \"Sequences\": [\n        {\n            \"OrderIndex\": 1,\n            \"NewOrderIndex\": 2\n        },\n        {\n            \"OrderIndex\": 2,\n            \"NewOrderIndex\": 3\n        },\n        {\n            \"OrderIndex\": 3,\n            \"NewOrderIndex\": 4\n        },\n        {\n            \"OrderIndex\": 4,\n            \"NewOrderIndex\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"025c3756-bf58-408e-b806-2e68ead7f6a0\"\n    }\n}",
+        "title": "互联网边界规则组内规则快速排序"
+      }
+    ],
+    "ModifyNatAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_go7u11gs6v\",\n    \"Rule\": {\n        \"SourceContent\": \"0.0.0.0/0\",\n        \"SourceType\": \"net\",\n        \"TargetContent\": \"0.0.0.0/0\",\n        \"TargetType\": \"net\",\n        \"Protocol\": \"UDP\",\n        \"RuleAction\": \"accept\",\n        \"OrderIndex\": 2,\n        \"Scope\": \"cfwnat-e366d270\",\n        \"Direction\": 1,\n        \"RuleId\": \"5712589f-c85c-4b3e-8917-bc3bb5779133\",\n        \"Port\": \"-1/-1\",\n        \"Description\": \"444\",\n        \"ParamTemplateId\": \"\",\n        \"BelongMemberId\": \"1300448058\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b4f862f-f14a-47e9-8d4d-9ff400989ed4\"\n    }\n}",
+        "title": "修改 NAT 规则"
+      }
+    ],
+    "ModifyNatAclRuleSequence": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatAclRuleSequence\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_wrzekq94u7\",\n    \"Sequences\": [\n        {\n            \"OrderIndex\": 1,\n            \"NewOrderIndex\": 3\n        },\n        {\n            \"OrderIndex\": 2,\n            \"NewOrderIndex\": 1\n        },\n        {\n            \"OrderIndex\": 3,\n            \"NewOrderIndex\": 2\n        }\n    ],\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d8a3017-26bb-4d73-b2e3-58ca0443bb3b\"\n    }\n}",
+        "title": "NAT 规则组内快速排序"
+      }
+    ],
+    "ModifyRuleGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_3zo766tr76\",\n    \"GroupName\": \"gltest3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"776b199e-2954-4d63-b36d-3a12ca06e59d\"\n    }\n}",
+        "title": "修改规则组信息"
+      }
+    ],
+    "ModifySecurityGroupRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg-jvw5ulal\",\n    \"Rule\": {\n        \"IpVersion\": \"ipv4\",\n        \"SourceContent\": \"ins-3nav5p56\",\n        \"SourceType\": \"instance\",\n        \"DestContent\": \"0.0.0.0/0\",\n        \"DestType\": \"net\",\n        \"Protocol\": \"ANY\",\n        \"Port\": \"-1/-1\",\n        \"ServiceTemplateId\": \"\",\n        \"RuleAction\": \"accept\",\n        \"Description\": \"33333333\",\n        \"OrderIndex\": 1,\n        \"RuleId\": \"7394c937-85f9-4b0f-a30f-494d8369e4bd\",\n        \"Scope\": \"SG\",\n        \"ProtocolPortType\": 0,\n        \"BelongMemberId\": \"1302477603\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc7591e4-8fc8-417d-b355-07e7df3e8a19\"\n    }\n}",
+        "title": "修改规则组内规则"
+      }
+    ],
+    "ModifyStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStrategy\n<公共请求参数>\n\n{\n    \"StrategyId\": \"fwms-wsnee2iu\",\n    \"ReceiveAccount\": [\n        \"100011616646\"\n    ],\n    \"Sequence\": 1,\n    \"GroupId\": \"fwmrg-ubr1sci4\",\n    \"ReceiveGroup\": [\n        \"acg-ssbkqes9\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"650cf5bf-8f86-4a21-bfc0-8fc587d415be\"\n    }\n}",
+        "title": "修改策略"
+      }
+    ],
+    "ModifyStrategySequence": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStrategySequence\n<公共请求参数>\n\n{\n    \"Sequences\": [\n        {\n            \"OrderIndex\": 3,\n            \"NewOrderIndex\": 1\n        },\n        {\n            \"OrderIndex\": 1,\n            \"NewOrderIndex\": 3\n        }\n    ],\n    \"ExecArea\": \"pre\",\n    \"Product\": \"enterprise_sg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c05626c7-1fab-4394-842a-393cfa56fa2c\"\n    }\n}",
+        "title": "策略快速排序"
+      }
+    ],
+    "ModifyVpcAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_aussbmarr2\",\n    \"Rule\": {\n        \"SourceContent\": \"10.10.0.0/16\",\n        \"SourceType\": \"net\",\n        \"DestContent\": \"0.0.0.0/0\",\n        \"DestType\": \"net\",\n        \"Protocol\": \"ANY\",\n        \"RuleAction\": \"drop\",\n        \"OrderIndex\": 2,\n        \"EdgeId\": \"all\",\n        \"FwGroupId\": \"ccn-c0qmm031\",\n        \"RuleId\": \"1293a7fa-b6ee-4243-9429-8e690ce92057\",\n        \"Port\": \"-1/-1\",\n        \"Description\": \"two\",\n        \"ParamTemplateId\": \"\",\n        \"BelongMemberId\": \"1300448058\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c3001bf-d642-4dae-8062-b5cd606238fd\"\n    }\n}",
+        "title": "修改VPC 规则"
+      }
+    ],
+    "ModifyVpcAclRuleSequence": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcAclRuleSequence\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_aussbmarr2\",\n    \"Sequences\": [\n        {\n            \"OrderIndex\": 1,\n            \"NewOrderIndex\": 3\n        },\n        {\n            \"OrderIndex\": 2,\n            \"NewOrderIndex\": 1\n        },\n        {\n            \"OrderIndex\": 3,\n            \"NewOrderIndex\": 2\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3034a6c8-1bc4-4e4e-b69b-a11b1468b79e\"\n    }\n}",
+        "title": "VPC 规则组内规则快速排序"
+      }
+    ]
+  },
+  "version": "1.0"
+}

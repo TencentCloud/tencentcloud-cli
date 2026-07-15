@@ -3465,8 +3465,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS版本region的KMS， 导入的密钥材料长度要求为 256 bit。",
-          "example": "YLbjnjPPIYjPb1XhyBYNmcr7yv1YMnfDmuHX8D0qCmUAP3Qi+2URkLJvZ/zCWuJK0Y23/QHX8a8lrKz4WVgUVuoleOriQMNx+AcRkjCegkcqkdJ8BNlaXsNJ67zjSZWDu9qI+bHXEqSIcXcz/l5jdBEum6tYViIDrNKIY6FaLC0Ex7y3eoN5A3YFhQoL7F7upNXZHhogP+YXqLqD7fKzsM8qgMW25qSddlhW4H1s1zOfwfobLAQDXofu9OAZ58Xf8KjnqEoA1Bn60kuJBoqqUV4BqOG3egTqCQaCdcn98oZFPTQpB/SVCE4hENncEV3tNihv2IwjFxSCjZHcJzhYuQ==",
+          "document": "<p>使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS 140-2版本region的KMS， 导入的密钥材料长度要求为 256 bit。</p>",
+          "example": "YLbjnjPPIYjPb1XhyBYNmcr7yv1YMnfDmuHX8D0qCmUAP3Qi+2URkLJvZ/zCWuJK0Y23/QHX8a8lrKz4WVgUVuoleOriQMNx+AcRkjCegkcqkdJ8BNlaXsNJ67zjSZWDu9qI+bHXEqSIcXcz/l5jdBEum6tYViIDrNKIY6FaLC0Ex7y3eoN5A3YFhQoL7F7upNXZHhogP+YXqLqD7ofucJzhYuQ==",
           "member": "string",
           "name": "EncryptedKeyMaterial",
           "required": true,
@@ -3474,7 +3474,7 @@
         },
         {
           "disabled": false,
-          "document": "通过调用GetParametersForImport获得的导入令牌。",
+          "document": "<p>通过调用GetParametersForImport获得的导入令牌。</p>",
           "example": "+b1d61DykcbWNoKUIjj+OQA5M+Iu5BiXfxldNy/wDbZL31mB2+SAA29TZgXBKYXbCts9ULktWZxU6X81O4jRrvmKwKET2gEg4A6koZrJW+KMAzqTazyWtP464EV4/6Gp",
           "member": "string",
           "name": "ImportToken",
@@ -3483,7 +3483,7 @@
         },
         {
           "disabled": false,
-          "document": "指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。",
+          "document": "<p>指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。</p>",
           "example": "93866e69-9755-11ef-8e65-52540089bc41",
           "member": "string",
           "name": "KeyId",
@@ -3492,7 +3492,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。",
+          "document": "<p>密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。</p>",
           "example": "0",
           "member": "uint64",
           "name": "ValidTo",
@@ -3535,7 +3535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CMK的全局唯一标识",
+          "document": "<p>CMK的全局唯一标识</p>",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "KeyId",
@@ -3545,7 +3545,7 @@
         },
         {
           "disabled": false,
-          "document": "作为密钥更容易辨识，更容易被人看懂的别名",
+          "document": "<p>作为密钥更容易辨识，更容易被人看懂的别名</p>",
           "example": "lzctest",
           "member": "string",
           "name": "Alias",
@@ -3555,7 +3555,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥创建时间",
+          "document": "<p>密钥创建时间</p>",
           "example": "1730357927",
           "member": "uint64",
           "name": "CreateTime",
@@ -3565,7 +3565,7 @@
         },
         {
           "disabled": false,
-          "document": "CMK的描述",
+          "document": "<p>CMK的描述</p>",
           "example": "desc",
           "member": "string",
           "name": "Description",
@@ -3575,7 +3575,7 @@
         },
         {
           "disabled": false,
-          "document": "CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived",
+          "document": "<p>CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived</p>",
           "example": "PendingDelete",
           "member": "string",
           "name": "KeyState",
@@ -3585,7 +3585,7 @@
         },
         {
           "disabled": false,
-          "document": "CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC",
+          "document": "<p>CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC</p>",
           "example": "ASYMMETRIC_DECRYPT_RSA_2048",
           "member": "string",
           "name": "KeyUsage",
@@ -3595,7 +3595,7 @@
         },
         {
           "disabled": false,
-          "document": "CMK类型，2 表示符合FIPS标准，4表示符合国密标准",
+          "document": "<p>CMK类型，2 表示符合FIPS 140-2标准，4表示符合国密标准</p><p>枚举值：</p><ul><li>2： 表示符合FIPS 140-2标准</li><li>4： 表示符合国密标准</li></ul>",
           "example": "3",
           "member": "int64",
           "name": "Type",
@@ -3605,7 +3605,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>",
           "example": "700001224410",
           "member": "uint64",
           "name": "CreatorUin",
@@ -3615,7 +3615,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启了密钥轮换功能",
+          "document": "<p>是否开启了密钥轮换功能</p>",
           "example": "true",
           "member": "bool",
           "name": "KeyRotationEnabled",
@@ -3625,7 +3625,7 @@
         },
         {
           "disabled": false,
-          "document": "CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名",
+          "document": "<p>CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名</p>",
           "example": "user",
           "member": "string",
           "name": "Owner",
@@ -3635,7 +3635,7 @@
         },
         {
           "disabled": false,
-          "document": "在密钥轮换开启状态下，下次轮换的时间",
+          "document": "<p>在密钥轮换开启状态下，下次轮换的时间</p>",
           "example": "1761893927",
           "member": "uint64",
           "name": "NextRotateTime",
@@ -3645,7 +3645,7 @@
         },
         {
           "disabled": false,
-          "document": "计划删除的时间",
+          "document": "<p>计划删除的时间</p>",
           "example": "0",
           "member": "uint64",
           "name": "DeletionDate",
@@ -3655,7 +3655,7 @@
         },
         {
           "disabled": false,
-          "document": "CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL",
+          "document": "<p>CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL</p>",
           "example": "EXTERNAL",
           "member": "string",
           "name": "Origin",
@@ -3665,7 +3665,7 @@
         },
         {
           "disabled": false,
-          "document": "在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期",
+          "document": "<p>在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期</p>",
           "example": "0",
           "member": "uint64",
           "name": "ValidTo",
@@ -3675,7 +3675,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID，格式：creatorUin/$creatorUin/$keyId",
+          "document": "<p>资源ID，格式：creatorUin/$creatorUin/$keyId</p>",
           "example": "creatorUin/12345/6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "ResourceId",
@@ -3685,7 +3685,7 @@
         },
         {
           "disabled": false,
-          "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）",
+          "document": "<p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>",
           "example": "cls-hsm-1a2b3c4d",
           "member": "string",
           "name": "HsmClusterId",
@@ -3695,7 +3695,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥轮转周期（天）",
+          "document": "<p>密钥轮转周期（天）</p>",
           "example": "365",
           "member": "uint64",
           "name": "RotateDays",
@@ -3705,7 +3705,7 @@
         },
         {
           "disabled": false,
-          "document": "上次乱转时间（Unix timestamp）",
+          "document": "<p>上次轮转时间（Unix timestamp）</p>",
           "example": "1730716649",
           "member": "uint64",
           "name": "LastRotateTime",
@@ -3715,7 +3715,7 @@
         },
         {
           "disabled": false,
-          "document": " 密钥是否是主副本。0:主本，1:同步副本。",
+          "document": "<p>密钥是否是主副本。0:主本，1:同步副本。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsSyncReplica",
@@ -3725,7 +3725,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的原始地域",
+          "document": "<p>同步的原始地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SourceRegion",
@@ -3735,7 +3735,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。",
+          "document": "<p>密钥同步的状态，0:未同步,1:同步成功,2:同步失败,3:同步中。</p>",
           "example": "1",
           "member": "int64",
           "name": "SyncStatus",
@@ -3745,7 +3745,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的结果描述",
+          "document": "<p>同步的结果描述</p>",
           "example": "success",
           "member": "string",
           "name": "SyncMessages",
@@ -3755,7 +3755,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的开始时间",
+          "document": "<p>同步的开始时间</p>",
           "example": "1730357927",
           "member": "uint64",
           "name": "SyncStartTime",
@@ -3765,7 +3765,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的结束时间",
+          "document": "<p>同步的结束时间</p>",
           "example": "1730357927",
           "member": "uint64",
           "name": "SyncEndTime",
@@ -3775,7 +3775,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的原始集群，如果为空，是公有云公共集群",
+          "document": "<p>同步的原始集群，如果为空，是公有云公共集群</p>",
           "example": "hsm-a1b2c3",
           "member": "string",
           "name": "SourceHsmClusterId",
@@ -3785,7 +3785,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号appId",
+          "document": "<p>成员账号appId</p>",
           "example": "260082377",
           "member": "uint64",
           "name": "AccountAppId",
@@ -3795,7 +3795,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号uin",
+          "document": "<p>成员账号uin</p>",
           "example": "700002334915",
           "member": "uint64",
           "name": "AccountUin",
@@ -3805,7 +3805,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号名称",
+          "document": "<p>成员账号名称</p>",
           "example": "kms-700002334915",
           "member": "string",
           "name": "AccountName",

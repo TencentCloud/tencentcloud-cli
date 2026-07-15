@@ -630,8 +630,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>产品版本。14：极速版。</p>",
-          "example": "14",
+          "document": "<p>实例版本类型。</p><p>枚举值：</p><ul><li>11： 存储版标准架构。</li><li>12： 存储版集群架构。</li><li>13： 极速版标准架构。</li><li>14： 极速版集群架构。</li></ul>",
+          "example": "12",
           "member": "uint64",
           "name": "TypeId",
           "required": true,
@@ -639,7 +639,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>私有网络唯一ID。请登录控制台在私有网络列表查询，如：vpc-azlk3***。</p>",
+          "document": "<p>私有网络唯一ID。<br>请登录控制台在私有网络列表查询，如：vpc-azlk3***。</p>",
           "example": "vpc-azlk31bs",
           "member": "string",
           "name": "UniqVpcId",
@@ -648,7 +648,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>私有网络所属子网唯一ID。请登录控制台在私有网络列表查询，如：subnet-8abje***。</p>",
+          "document": "<p>私有网络所属子网唯一ID。<br>请登录控制台在私有网络列表查询，如：subnet-8abje***。</p>",
           "example": "subnet-8abjechk",
           "member": "string",
           "name": "UniqSubnetId",
@@ -702,7 +702,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>",
+          "document": "<p>实例内存容量，单位：GB。<br>极速版内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p><p>单位：GB</p>",
           "example": "8",
           "member": "int64",
           "name": "MachineMemory",
@@ -729,7 +729,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建实例的名称。仅支持长度小于60的中文、英文或者数字，短划线\"-\"、下划线\"_\"。</p>",
+          "document": "<p>创建实例的名称。<br>仅支持长度小于60的中文、英文或者数字，短划线&quot;-&quot;、下划线&quot;_&quot;。</p>",
           "example": "myInstance",
           "member": "string",
           "name": "InstanceName",
@@ -747,7 +747,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li><li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种。</li><li>不能以\"/\"开头。</li></ul></li></ul></p>",
+          "document": "<p>实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li></p><li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种。</li><li>不能以\"/\"开头。</li></ul></li></ul>",
           "example": "123456MyP@ssword",
           "member": "string",
           "name": "Password",
@@ -792,7 +792,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>极速版，单分片持久化内存容量。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>单位：GB。",
+          "document": "<p>极速版，单分片持久化内存容量。<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p><p>单位：GB。</p>",
           "example": "16",
           "member": "int64",
           "name": "MemSize",
@@ -801,7 +801,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>每个分片硬盘的容量。单位：GB。每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>",
+          "document": "<p>每个分片硬盘的容量。单位：GB。<br>每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>",
           "example": "100",
           "member": "int64",
           "name": "DiskSize",
@@ -810,7 +810,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>",
+          "document": "<p>计算 CPU 核数。CPU 核数与内存为固定搭配，具体信息，请参见<a href=\"https://cloud.tencent.com/document/product/1520/80808\">产品规格</a>。</p>",
           "example": "2",
           "member": "int64",
           "name": "MachineCpu",
@@ -863,7 +863,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>订单号。    </p>",
+          "document": "<p>订单号。</p>",
           "example": "20250925297021530748195",
           "member": "string",
           "name": "DealName",
@@ -1640,7 +1640,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。",
+          "document": "<p>每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -1649,7 +1649,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，取Limit整数倍。\n计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。",
+          "document": "<p>分页偏移量，取Limit整数倍。<br>计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1658,7 +1658,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID，如：kee-6ubh****。",
+          "document": "<p>实例 ID，如：kee-6ubh****。</p>",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
@@ -1667,7 +1667,7 @@
         },
         {
           "disabled": false,
-          "document": "排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul>",
+          "document": "<p>排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul></p>",
           "example": "createtime",
           "member": "string",
           "name": "OrderBy",
@@ -1676,7 +1676,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul>",
+          "document": "<p>排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul></p>",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
@@ -1685,8 +1685,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525",
-          "example": "47525",
+          "document": "<p>私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525</p>",
+          "example": "[\"47525\"]",
           "member": "string",
           "name": "VpcIds",
           "required": false,
@@ -1694,8 +1694,8 @@
         },
         {
           "disabled": false,
-          "document": "子网ID数组，数组下标从0开始，如：56854",
-          "example": "56854",
+          "document": "<p>子网ID数组，数组下标从0开始，如：56854</p>",
+          "example": "[\"56854\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -1703,7 +1703,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID 组成的数组，数组下标从0开始",
+          "document": "<p>项目ID 组成的数组，数组下标从0开始</p>",
           "example": "[1289900]",
           "member": "int64",
           "name": "ProjectIds",
@@ -1712,7 +1712,7 @@
         },
         {
           "disabled": false,
-          "document": "查找关键字，可输入实例的ID或者实例名称。",
+          "document": "<p>查找关键字，可输入实例的ID或者实例名称。</p>",
           "example": "模糊查询实例名称",
           "member": "string",
           "name": "SearchKey",
@@ -1721,7 +1721,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "example_InstanceName",
           "member": "string",
           "name": "InstanceName",
@@ -1730,8 +1730,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk",
-          "example": "vpc-b6fsjaxt",
+          "document": "<p>私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk</p>",
+          "example": "[\"vpc-b6fsjaxt\"]",
           "member": "string",
           "name": "UniqVpcIds",
           "required": false,
@@ -1739,8 +1739,8 @@
         },
         {
           "disabled": false,
-          "document": "子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2",
-          "example": "subnet-gqj66zh0",
+          "document": "<p>子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2</p>",
+          "example": "[\"subnet-gqj66zh0\"]",
           "member": "string",
           "name": "UniqSubnetIds",
           "required": false,
@@ -1748,8 +1748,8 @@
         },
         {
           "disabled": false,
-          "document": "实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>",
-          "example": "1",
+          "document": "<p>实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul></p>",
+          "example": "[1,2]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -1757,8 +1757,8 @@
         },
         {
           "disabled": false,
-          "document": "续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。",
-          "example": "1",
+          "document": "<p>续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "AutoRenew",
           "required": false,
@@ -1766,7 +1766,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>",
+          "document": "<p>计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul></p>",
           "example": "1",
           "member": "string",
           "name": "BillingMode",
@@ -1775,7 +1775,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>",
+          "document": "<p>实例类型。</p><p>枚举值：</p><ul><li>11： 存储版标准架构。</li><li>12： 存储版集群架构。</li><li>13： 极速版标准架构。</li><li>14： 极速版集群架构。</li></ul>",
           "example": "13",
           "member": "int64",
           "name": "Type",
@@ -1784,7 +1784,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键词：支持实例 ID、实例名称、私有网络IP地址。",
+          "document": "<p>搜索关键词：支持实例 ID、实例名称、私有网络IP地址。</p>",
           "example": "[\"kee-dagpcalj\"]",
           "member": "string",
           "name": "SearchKeys",
@@ -1793,8 +1793,8 @@
         },
         {
           "disabled": false,
-          "document": "内部参数，用户可忽略。",
-          "example": "1",
+          "document": "<p>内部参数，用户可忽略。</p>",
+          "example": "[11,12]",
           "member": "int64",
           "name": "TypeList",
           "required": false,
@@ -1802,7 +1802,7 @@
         },
         {
           "disabled": false,
-          "document": "内部参数，用户可忽略。",
+          "document": "<p>内部参数，用户可忽略。</p>",
           "example": "1",
           "member": "string",
           "name": "MonitorVersion",
@@ -1811,8 +1811,8 @@
         },
         {
           "disabled": true,
-          "document": "废弃字段。请使用TagList传参。",
-          "example": "具体参考数据结构。",
+          "document": "<p>废弃字段。请使用TagList传参。</p>",
+          "example": "无",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
           "required": false,
@@ -1820,8 +1820,8 @@
         },
         {
           "disabled": false,
-          "document": "根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。",
-          "example": "keyname",
+          "document": "<p>根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。</p>",
+          "example": "[\"keyname\"]",
           "member": "string",
           "name": "TagKeys",
           "required": false,
@@ -1829,8 +1829,8 @@
         },
         {
           "disabled": false,
-          "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
-          "example": "[{\"TagKey\": \"key1\", \"TagValue\": \"value1\"}]",
+          "document": "<p>根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。</p>",
+          "example": "无",
           "member": "InstanceTagInfo",
           "name": "TagList",
           "required": false,
@@ -1844,7 +1844,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例数",
+          "document": "<p>实例数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -1854,8 +1854,8 @@
         },
         {
           "disabled": false,
-          "document": "实例详细信息列表",
-          "example": "具体参考数据结构。",
+          "document": "<p>实例详细信息列表</p>",
+          "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceSet",
           "output_required": true,
@@ -2714,7 +2714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "实例1",
           "member": "string",
           "name": "InstanceName",
@@ -2724,7 +2724,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "<p>实例 ID。</p>",
           "example": "kee-7asi981q",
           "member": "string",
           "name": "InstanceId",
@@ -2734,7 +2734,7 @@
         },
         {
           "disabled": false,
-          "document": "用户的Appid。",
+          "document": "<p>用户的Appid。</p>",
           "example": "121100000",
           "member": "int64",
           "name": "Appid",
@@ -2744,7 +2744,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID。",
+          "document": "<p>项目 ID。</p>",
           "example": "12",
           "member": "int64",
           "name": "ProjectId",
@@ -2754,7 +2754,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID。<ul><li>1：广州。</li><li>4：上海。</li><li>8：北京。</li></ul>",
+          "document": "<p>地域ID。<ul><li>1：广州。</li><li>4：上海。</li><li>8：北京。</li></ul></p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -2764,7 +2764,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区 ID。",
+          "document": "<p>可用区 ID。</p>",
           "example": "100001",
           "member": "int64",
           "name": "ZoneId",
@@ -2774,7 +2774,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 网络 ID， 如：75101。该参数当前暂保留，可忽略。",
+          "document": "<p>VPC 网络 ID， 如：75101。该参数当前暂保留，可忽略。</p>",
           "example": "75101",
           "member": "int64",
           "name": "VpcId",
@@ -2784,7 +2784,7 @@
         },
         {
           "disabled": false,
-          "document": "实例当前状态。<ul><li>0：待初始化。</li><li>1：实例在流程中。</li><li>2：实例运行中。</li><li>-2：实例已隔离。</li><li>-3：实例待删除。</li></ul>",
+          "document": "<p>实例当前状态。<ul><li>0：待初始化。</li><li>1：实例在流程中。</li><li>2：实例运行中。</li><li>-2：实例已隔离。</li><li>-3：实例待删除。</li></ul></p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -2794,7 +2794,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 网络下子网 ID， 如：46315。该参数当前暂保留，可忽略。",
+          "document": "<p>VPC 网络下子网 ID， 如：46315。该参数当前暂保留，可忽略。</p>",
           "example": "10",
           "member": "int64",
           "name": "SubnetId",
@@ -2804,7 +2804,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 VIP。",
+          "document": "<p>实例 VIP。</p>",
           "example": "10.20.3.1",
           "member": "string",
           "name": "WanIp",
@@ -2814,7 +2814,7 @@
         },
         {
           "disabled": false,
-          "document": "实例端口号。",
+          "document": "<p>实例端口号。</p>",
           "example": "6379",
           "member": "int64",
           "name": "Port",
@@ -2824,7 +2824,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间。",
+          "document": "<p>实例创建时间。</p>",
           "example": "2022-01-15 10:20:00",
           "member": "string",
           "name": "Createtime",
@@ -2834,7 +2834,7 @@
         },
         {
           "disabled": false,
-          "document": "实例持久内存总容量大小，单位：MB。",
+          "document": "<p>实例持久内存总容量大小，单位：MB。</p>",
           "example": "1451",
           "member": "float",
           "name": "Size",
@@ -2844,7 +2844,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>",
+          "document": "<p>实例类型。</p><p>枚举值：</p><ul><li>11： 存储版标准架构。</li><li>12： 存储版集群架构。</li><li>13： 极速版标准架构。</li><li>14： 极速版集群架构。</li></ul>",
           "example": "14",
           "member": "int64",
           "name": "Type",
@@ -2854,7 +2854,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否设置自动续费标识。<ul><li>1：设置自动续费。</li><li>0：未设置自动续费。</li></ul>",
+          "document": "<p>实例是否设置自动续费标识。<ul><li>1：设置自动续费。</li><li>0：未设置自动续费。</li></ul></p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -2864,7 +2864,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间。",
+          "document": "<p>实例到期时间。</p>",
           "example": "2022-02-15 10:20:00",
           "member": "string",
           "name": "DeadlineTime",
@@ -2874,8 +2874,8 @@
         },
         {
           "disabled": false,
-          "document": "存储引擎。",
-          "example": "TendisV2_Storage",
+          "document": "<p>存储引擎。</p>",
+          "example": "Tendis",
           "member": "string",
           "name": "Engine",
           "output_required": true,
@@ -2884,7 +2884,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型。<ul><li>standalone ：标准版。</li><li>cluster ：集群版。</li></ul>",
+          "document": "<p>产品类型。<ul><li>standalone ：标准版。</li><li>cluster ：集群版。</li></ul></p>",
           "example": "cluster",
           "member": "string",
           "name": "ProductType",
@@ -2894,7 +2894,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 网络 ID， 如：vpc-fk33jsf4****。",
+          "document": "<p>VPC 网络 ID， 如：vpc-fk33jsf4****。</p>",
           "example": "vpc-fk33jsf43kgv",
           "member": "string",
           "name": "UniqVpcId",
@@ -2904,7 +2904,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC 网络下子网 ID，如：subnet-fd3j6l3****。",
+          "document": "<p>VPC 网络下子网 ID，如：subnet-fd3j6l3****。</p>",
           "example": "subnet-fd3j6l35mm0",
           "member": "string",
           "name": "UniqSubnetId",
@@ -2914,7 +2914,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>",
+          "document": "<p>计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>",
           "example": "1",
           "member": "int64",
           "name": "BillingMode",
@@ -2924,7 +2924,7 @@
         },
         {
           "disabled": false,
-          "document": "实例运行状态描述：如”实例运行中“。",
+          "document": "<p>实例运行状态描述：如”实例运行中“。</p>",
           "example": "实例运行中",
           "member": "string",
           "name": "InstanceTitle",
@@ -2934,7 +2934,7 @@
         },
         {
           "disabled": false,
-          "document": "计划下线时间。",
+          "document": "<p>计划下线时间。</p>",
           "example": "2022-02-15 10:20:00",
           "member": "string",
           "name": "OfflineTime",
@@ -2944,7 +2944,7 @@
         },
         {
           "disabled": false,
-          "document": "流程中的实例，返回子状态。",
+          "document": "<p>流程中的实例，返回子状态。</p>",
           "example": "0",
           "member": "int64",
           "name": "SubStatus",
@@ -2954,8 +2954,8 @@
         },
         {
           "disabled": false,
-          "document": "反亲和性标签",
-          "example": "anti-affinity: \"true\"",
+          "document": "<p>反亲和性标签</p>",
+          "example": "[\"\\\"anti-affinity\\\": true\"]",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -2964,7 +2964,7 @@
         },
         {
           "disabled": false,
-          "document": "分片大小。",
+          "document": "<p>分片大小。</p>",
           "example": "4096",
           "member": "int64",
           "name": "RedisShardSize",
@@ -2974,7 +2974,7 @@
         },
         {
           "disabled": false,
-          "document": "分片数量。",
+          "document": "<p>分片数量。</p>",
           "example": "3",
           "member": "int64",
           "name": "RedisShardNum",
@@ -2984,7 +2984,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数量。",
+          "document": "<p>副本数量。</p>",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -2994,7 +2994,7 @@
         },
         {
           "disabled": false,
-          "document": "计费 ID。",
+          "document": "<p>计费 ID。</p>",
           "example": "102638",
           "member": "int64",
           "name": "PriceId",
@@ -3004,7 +3004,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间。",
+          "document": "<p>隔离时间。</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "CloseTime",
@@ -3014,7 +3014,7 @@
         },
         {
           "disabled": false,
-          "document": "从节点读取权重。",
+          "document": "<p>从节点读取权重。</p>",
           "example": "1",
           "member": "int64",
           "name": "SlaveReadWeight",
@@ -3024,7 +3024,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的标签信息。",
+          "document": "<p>实例关联的标签信息。</p>",
           "example": "无",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
@@ -3034,7 +3034,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称。",
+          "document": "<p>项目名称。</p>",
           "example": "Default",
           "member": "string",
           "name": "ProjectName",
@@ -3044,7 +3044,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为免密实例；<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>",
+          "document": "<p>是否为免密实例；<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul></p>",
           "example": "true",
           "member": "bool",
           "name": "NoAuth",
@@ -3054,7 +3054,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端连接数。",
+          "document": "<p>客户端连接数。</p>",
           "example": "30000",
           "member": "int64",
           "name": "ClientLimit",
@@ -3064,7 +3064,7 @@
         },
         {
           "disabled": false,
-          "document": "DTS状态（内部参数，用户可忽略）。",
+          "document": "<p>DTS状态（内部参数，用户可忽略）。</p>",
           "example": "0",
           "member": "int64",
           "name": "DtsStatus",
@@ -3074,7 +3074,7 @@
         },
         {
           "disabled": false,
-          "document": "分片带宽上限，单位 MB。",
+          "document": "<p>分片带宽上限，单位 MB。</p>",
           "example": "1800",
           "member": "int64",
           "name": "NetLimit",
@@ -3084,7 +3084,7 @@
         },
         {
           "disabled": false,
-          "document": "免密实例标识（内部参数，用户可忽略）。",
+          "document": "<p>免密实例标识（内部参数，用户可忽略）。</p>",
           "example": "0",
           "member": "int64",
           "name": "PasswordFree",
@@ -3094,7 +3094,7 @@
         },
         {
           "disabled": false,
-          "document": "实例只读标识（内部参数，用户可忽略）。",
+          "document": "<p>实例只读标识（内部参数，用户可忽略）。</p>",
           "example": "0",
           "member": "int64",
           "name": "ReadOnly",
@@ -3104,7 +3104,7 @@
         },
         {
           "disabled": false,
-          "document": "内部参数，用户可忽略。",
+          "document": "<p>内部参数，用户可忽略。</p>",
           "example": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
           "member": "string",
           "name": "Vip6",
@@ -3114,7 +3114,7 @@
         },
         {
           "disabled": false,
-          "document": "内部参数，用户可忽略。",
+          "document": "<p>内部参数，用户可忽略。</p>",
           "example": "内部参数，用户可忽略。",
           "member": "string",
           "name": "RemainBandwidthDuration",
@@ -3124,7 +3124,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的磁盘容量大小。",
+          "document": "<p>实例的磁盘容量大小。</p>",
           "example": "400",
           "member": "int64",
           "name": "DiskSize",
@@ -3134,7 +3134,7 @@
         },
         {
           "disabled": false,
-          "document": "监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>",
+          "document": "<p>监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul></p>",
           "example": "5s",
           "member": "string",
           "name": "MonitorVersion",
@@ -3144,7 +3144,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端最大连接数可设置的最小值。",
+          "document": "<p>客户端最大连接数可设置的最小值。</p>",
           "example": "1000",
           "member": "int64",
           "name": "ClientLimitMin",
@@ -3154,7 +3154,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端最大连接数可设置的最大值。",
+          "document": "<p>客户端最大连接数可设置的最大值。</p>",
           "example": "10000",
           "member": "int64",
           "name": "ClientLimitMax",
@@ -3164,7 +3164,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的节点详细信息。",
+          "document": "<p>实例的节点详细信息。</p>",
           "example": "无",
           "member": "NodeInfo",
           "name": "NodeSet",
@@ -3174,7 +3174,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的地域信息，比如ap-guangzhou。",
+          "document": "<p>实例所在的地域信息，比如ap-guangzhou。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -3184,7 +3184,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存容量，单位：GB。KeeWiDB 内存容量",
+          "document": "<p>实例内存容量，单位：GB。KeeWiDB 内存容量</p>",
           "example": "4",
           "member": "int64",
           "name": "MachineMemory",
@@ -3194,7 +3194,7 @@
         },
         {
           "disabled": false,
-          "document": "单分片磁盘大小，单位：MB",
+          "document": "<p>单分片磁盘大小，单位：MB</p>",
           "example": "143360",
           "member": "int64",
           "name": "DiskShardSize",
@@ -3204,8 +3204,8 @@
         },
         {
           "disabled": false,
-          "document": "3",
-          "example": "磁盘分片数",
+          "document": "<p>分片数量</p>",
+          "example": "3",
           "member": "int64",
           "name": "DiskShardNum",
           "output_required": true,
@@ -3214,8 +3214,8 @@
         },
         {
           "disabled": false,
-          "document": "1",
-          "example": "磁盘副本数",
+          "document": "<p>副本数量</p>",
+          "example": "1",
           "member": "int64",
           "name": "DiskReplicasNum",
           "output_required": true,
@@ -3224,7 +3224,7 @@
         },
         {
           "disabled": false,
-          "document": "数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>",
+          "document": "<p>数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul></p>",
           "example": "ON",
           "member": "string",
           "name": "Compression",
@@ -3436,7 +3436,7 @@
           "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
           "member": "string",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3446,8 +3446,18 @@
           "example": "master",
           "member": "string",
           "name": "NodeRole",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -4457,6 +4467,16 @@
           "name": "NodeId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

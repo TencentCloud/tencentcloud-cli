@@ -665,13 +665,6 @@
       "output": "ReportUsageDataResponse",
       "status": "online"
     },
-    "RollbackPGUserMigrations": {
-      "document": "本接口（RollbackPGUserMigrations）用于按最近 N 条已应用 migration 倒序执行 rollback。",
-      "input": "RollbackPGUserMigrationsRequest",
-      "name": "回滚 Migration",
-      "output": "RollbackPGUserMigrationsResponse",
-      "status": "online"
-    },
     "RunCommands": {
       "document": "本接口（RunCommands）用于执行文档型数据库命令。",
       "input": "RunCommandsRequest",
@@ -1161,6 +1154,24 @@
           "name": "ExternalAppId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义标签</p><p>参数格式：逗号分隔的 key=value 对，key/value 仅允许字母、数字、下划线。k1=v1,k2=v2</p>",
+          "example": "tab********sion=PR***TE",
+          "member": "string",
+          "name": "ExternalTag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要云函数</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "RequireFunction",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6392,7 +6403,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>回滚的sql 语句</p>",
+          "document": "<p>回滚的sql 语句</p><p>deprecated</p>",
           "example": "DROP TABLE IF EXISTS public.test;",
           "member": "string",
           "name": "Rollback",
@@ -6402,7 +6413,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>migration query 语句的checksum值</p><p>由服务端自动生成，同版本 checksum 不一致会拒绝执行</p>",
+          "document": "<p>migration query 语句的checksum值,由服务端自动生成，同版本 checksum 不一致会拒绝执行</p><p>deprecated</p>",
           "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
           "member": "string",
           "name": "Checksum",
@@ -6412,7 +6423,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于标记调用来源</p>",
+          "document": "<p>用于标记调用来源</p><p>deprecated</p>",
           "example": "repair",
           "member": "string",
           "name": "Source",
@@ -6422,7 +6433,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于标记该条migration由谁创建，目前默认调用的用户uin</p>",
+          "document": "<p>用于标记该条migration由谁创建，目前默认调用的用户uin</p><p>deprecated</p>",
           "example": "100019231666",
           "member": "string",
           "name": "CreatedBy",
@@ -6432,7 +6443,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该migration创建时间</p>",
+          "document": "<p>该migration创建时间</p><p>deprecated</p>",
           "example": "2026-05-26T11:34:19+08:00",
           "member": "string",
           "name": "CreatedAt",
@@ -6442,7 +6453,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该migration应用时间</p>",
+          "document": "<p>该migration应用时间</p><p>deprecated</p>",
           "example": "2026-05-26T11:34:19+08:00",
           "member": "string",
           "name": "AppliedAt",
@@ -6452,7 +6463,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该migration执行耗时</p><p>单位：毫秒</p>",
+          "document": "<p>该migration执行耗时</p><p>单位：毫秒</p><p>deprecated</p>",
           "example": "153",
           "member": "int64",
           "name": "DurationMs",
@@ -10732,7 +10743,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>migration query sql 语句checksum</p><p>服务端自动生成，同版本不同checksum会拒绝执行</p>",
+          "document": "<p>migration query sql 语句checksum，服务端自动生成，同版本不同checksum会拒绝执行</p><p>deprecated</p>",
           "example": "eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791",
           "member": "string",
           "name": "Checksum",
@@ -10742,7 +10753,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>应用时间</p>",
+          "document": "<p>应用时间</p><p>deprecated</p>",
           "example": "2026-05-26T11:34:19+08:00",
           "member": "string",
           "name": "AppliedAt",
@@ -10752,7 +10763,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求来源</p>",
+          "document": "<p>请求来源</p><p>deprecated</p>",
           "example": "cloudapi",
           "member": "string",
           "name": "Source",
@@ -10762,7 +10773,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>migration 创建时间</p>",
+          "document": "<p>migration 创建时间</p><p>deprecated</p>",
           "example": "100019231666",
           "member": "string",
           "name": "CreatedBy",
@@ -12225,17 +12236,6 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>数据库引擎版本</p>",
-          "example": "17.6",
-          "member": "string",
-          "name": "Version",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12263,12 +12263,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>标记请求来源</p>",
+          "document": "<p>标记请求来源</p><p>deprecated</p>",
           "example": "cli",
           "member": "string",
           "name": "Source",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许 out-of-order local migrations</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -12933,12 +12942,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>标记请求来源</p>",
+          "document": "<p>标记请求来源</p><p>deprecated</p>",
           "example": "cloudapi",
           "member": "string",
           "name": "Source",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>为true时允许 out-of-order local migrations</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13257,109 +13275,6 @@
         }
       ],
       "usage": "both"
-    },
-    "RollbackPGUserMigrationsRequest": {
-      "document": "RollbackPGUserMigrations请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>云开发环境ID</p>",
-          "example": "pg-ethan06-d9gzgavrt1f14772b",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>",
-          "example": "2",
-          "member": "int64",
-          "name": "LastN",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>",
-          "example": "5000",
-          "member": "int64",
-          "name": "LockTimeoutMs",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>",
-          "example": "300000",
-          "member": "int64",
-          "name": "StatementTimeoutMs",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>标记API调用来源</p>",
-          "example": "cli",
-          "member": "string",
-          "name": "Source",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RollbackPGUserMigrationsResponse": {
-      "document": "RollbackPGUserMigrations返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>任务ID</p><p>可通过DescribeTaskResult 接口查询进度</p>",
-          "example": "task-d9fd1d51",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>已成功回滚并删除 history 的 migration</p>",
-          "example": "无",
-          "member": "MigrationSummary",
-          "name": "RolledBack",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>未提供 Rollback SQL、视为成功并删除 history 的 migration</p>",
-          "example": "无",
-          "member": "MigrationSummary",
-          "name": "SkippedRollbackSql",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>执行 Rollback SQL 失败的 migration，可为空</p>",
-          "example": "无",
-          "member": "MigrationSummary",
-          "name": "Failed",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "RunCommandsRequest": {
       "document": "RunCommands请求参数结构体",

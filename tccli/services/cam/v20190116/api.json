@@ -6638,7 +6638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页数量，默认值是 20，必须大于 0 且小于或等于 200",
+          "document": "<p>每页数量，默认值是 20，必须大于 0 且小于或等于 200</p>",
           "example": "1",
           "member": "uint64",
           "name": "Rp",
@@ -6647,7 +6647,7 @@
         },
         {
           "disabled": false,
-          "document": "页码，默认值是 1，从 1开始，不能大于 200",
+          "document": "<p>页码，默认值是 1，从 1开始，不能大于 200</p>",
           "example": "10",
           "member": "uint64",
           "name": "Page",
@@ -6656,7 +6656,7 @@
         },
         {
           "disabled": false,
-          "document": "可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'",
+          "document": "<p>可取值 &#39;All&#39;、&#39;QCS&#39; 和 &#39;Local&#39;，&#39;All&#39; 获取所有策略，&#39;QCS&#39; 只获取预设策略，&#39;Local&#39; 只获取自定义策略，默认取 &#39;All&#39;</p>",
           "example": "All",
           "member": "string",
           "name": "Scope",
@@ -6665,7 +6665,7 @@
         },
         {
           "disabled": false,
-          "document": "按策略名匹配",
+          "document": "<p>按策略名匹配</p>",
           "example": "name",
           "member": "string",
           "name": "Keyword",
@@ -6680,7 +6680,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略总数",
+          "document": "<p>策略总数</p>",
           "example": "239",
           "member": "uint64",
           "name": "TotalNum",
@@ -6690,7 +6690,7 @@
         },
         {
           "disabled": false,
-          "document": "策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： \npolicyId：策略 id \npolicyName：策略名\naddTime：策略创建时间\ntype：1 表示自定义策略，2 表示预设策略 \ndescription：策略描述 \ncreateMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略\nAttachments: 关联的用户数\nServiceType: 策略关联的产品\nIsAttached: 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略",
+          "document": "<p>策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中：<br>policyId：策略 id<br>policyName：策略名<br>addTime：策略创建时间<br>type：1 表示自定义策略，2 表示预设策略<br>description：策略描述<br>createMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略<br>Attachments: 关联的用户数<br>ServiceType: 策略关联的产品<br>IsAttached: 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>",
           "example": "无",
           "member": "StrategyInfo",
           "name": "List",
@@ -6700,7 +6700,7 @@
         },
         {
           "disabled": false,
-          "document": "保留字段",
+          "document": "<p>保留字段</p>",
           "example": "[\"scf\"]",
           "member": "string",
           "name": "ServiceTypeList",
@@ -8395,7 +8395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>策略ID。</p>",
           "example": "1",
           "member": "uint64",
           "name": "PolicyId",
@@ -8405,7 +8405,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称。",
+          "document": "<p>策略名称。</p>",
           "example": "AdministratorAccess",
           "member": "string",
           "name": "PolicyName",
@@ -8415,7 +8415,7 @@
         },
         {
           "disabled": false,
-          "document": "策略创建时间。",
+          "document": "<p>策略创建时间。</p>",
           "example": "2016-06-02 19:40:09",
           "member": "datetime",
           "name": "AddTime",
@@ -8425,7 +8425,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型。1 表示自定义策略，2 表示预设策略。",
+          "document": "<p>策略类型。1 表示自定义策略，2 表示预设策略。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -8435,7 +8435,7 @@
         },
         {
           "disabled": false,
-          "document": "策略描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>策略描述。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "该策略允许您管理账户内所有用户及其权限、财务相关的信息、云服务资产。",
           "member": "string",
           "name": "Description",
@@ -8445,7 +8445,7 @@
         },
         {
           "disabled": false,
-          "document": "创建来源，1 通过控制台创建, 2 通过策略语法创建。",
+          "document": "<p>创建来源，1 通过控制台创建, 2 通过策略语法创建。</p>",
           "example": "1",
           "member": "uint64",
           "name": "CreateMode",
@@ -8455,7 +8455,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的用户数",
+          "document": "<p>关联的用户数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Attachments",
@@ -8465,7 +8465,7 @@
         },
         {
           "disabled": false,
-          "document": "策略关联的产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>策略关联的产品</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cam",
           "member": "string",
           "name": "ServiceType",
@@ -8475,7 +8475,7 @@
         },
         {
           "disabled": false,
-          "document": "当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "IsAttached",
@@ -8485,7 +8485,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否已下线</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Deactived",
@@ -8495,7 +8495,7 @@
         },
         {
           "disabled": false,
-          "document": "已下线产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>已下线产品列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ccs\"]",
           "member": "string",
           "name": "DeactivedDetail",
@@ -8505,7 +8505,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是服务相关角色策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否是服务相关角色策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "IsServiceLinkedPolicy",
@@ -8515,7 +8515,7 @@
         },
         {
           "disabled": false,
-          "document": "关联策略实体数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联策略实体数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AttachEntityCount",
@@ -8525,7 +8525,7 @@
         },
         {
           "disabled": false,
-          "document": "关联权限边界实体数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联权限边界实体数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AttachEntityBoundaryCount",
@@ -8535,7 +8535,7 @@
         },
         {
           "disabled": false,
-          "document": "最后编辑时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后编辑时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2016-06-02 19:40:09",
           "member": "datetime",
           "name": "UpdateTime",
@@ -8545,12 +8545,22 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限级别</p><p>枚举值：</p><ul><li>Global： 全局权限</li><li>Finance： 财务权限</li><li>CloudProduct： 云产品权限</li></ul>",
+          "example": "Global",
+          "member": "string",
+          "name": "PermissionLevel",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

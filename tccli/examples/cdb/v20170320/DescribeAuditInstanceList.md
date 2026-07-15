@@ -22,7 +22,7 @@ Output:
         "TotalCount": 1,
         "Items": [
             {
-                "InstanceId": "cdb-euu5fkcj",
+                "InstanceId": "cdb-eu***kcj",
                 "AuditStatus": "OFF",
                 "AuditTask": 1,
                 "LogExpireDay": 1,
@@ -47,7 +47,7 @@ Output:
                 "RealStorage": 0,
                 "OldRule": true,
                 "RuleTemplateIds": [
-                    "cdb-art-nuf7ej8d"
+                    "cdb-art-nuf***8d"
                 ]
             }
         ],

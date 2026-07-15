@@ -1552,7 +1552,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cluster-d8htgb6k",
           "member": "string",
           "name": "DedicatedClusterId",
@@ -1561,7 +1561,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像id",
+          "document": "<p>镜像id</p>",
           "example": "img-cxi9luq2",
           "member": "string",
           "name": "ImageId",

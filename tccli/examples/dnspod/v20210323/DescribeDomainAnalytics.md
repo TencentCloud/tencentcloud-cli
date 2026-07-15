@@ -139,11 +139,11 @@ Output:
             }
         ],
         "Info": {
-            "DnsFormat": "HOUR",
-            "DnsTotal": 8358,
+            "DNSFormat": "HOUR",
+            "DNSTotal": 8358,
             "Domain": "zhaodapian.com",
-            "EndDate": "2022-12-01",
-            "StartDate": "2022-12-01"
+            "EndDate": "2022-06-14",
+            "StartDate": "2022-06-14"
         },
         "RequestId": "e0815831-4978-445e-b524-746df0069d39"
     }

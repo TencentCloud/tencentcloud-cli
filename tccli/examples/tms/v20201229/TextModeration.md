@@ -6,58 +6,52 @@ Input:
 
 ```
 tccli tms TextModeration --cli-unfold-argument  \
-    --Content 5Yqg5oiR5aW95Y+LIOe7meS9oOS8mOaDoOWIuA== \
-    --BizType TencentCloudDefault
+    --Content 5L2g55qE5Lil6LCo6K6p5L2g5Y+R546w77yM5Lqn5ZOB57uP55CG5Y+r5YmR6Z2S
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "d636333a-0d14-4962-8287-e6e8af0a10f2",
-        "BizType": "TencentCloudDefault",
-        "Label": "Ad",
-        "SubLabel": "",
+        "RequestId": "be7474bf-bcc6-4f4b-a081-80ac687c040e",
+        "BizType": "content_input",
+        "Label": "Illegal",
+        "SubLabel": "Drug",
         "Suggestion": "Block",
-        "Keywords": [
-            "优惠券"
-        ],
-        "Score": 100,
-        "DataId": "CSFb_MJRV5piaczW",
+        "Keywords": [],
+        "Score": 87,
+        "DataId": "YIumnjV2MZibqk6G",
         "DetailResults": [
             {
-                "Label": "Polity",
-                "SubLabel": "",
-                "Suggestion": "Pass",
-                "Keywords": [],
-                "Score": 0,
-                "LibType": 0,
-                "LibId": "",
-                "LibName": "",
-                "Tags": null,
-                "HitInfos": []
-            },
-            {
-                "Label": "Ad",
-                "SubLabel": "",
+                "Label": "Illegal",
+                "SubLabel": "Drug",
                 "Suggestion": "Block",
-                "Keywords": [
-                    "优惠券"
-                ],
-                "Score": 100,
-                "LibType": 2,
+                "Keywords": [],
+                "Score": 87,
+                "LibType": 0,
                 "LibId": "",
                 "LibName": "",
                 "Tags": null,
                 "HitInfos": [
                     {
                         "Type": "Keyword",
-                        "Keyword": "优惠券",
-                        "LibName": "default_1_0_1256309736_100004528167",
+                        "Keyword": "你好呀",
+                        "LibName": "",
                         "Positions": [
                             {
-                                "Start": 7,
-                                "End": 10
+                                "Start": 0,
+                                "End": 3
+                            }
+                        ]
+                    },
+                    {
+                        "Type": "Model",
+                        "Keyword": "",
+                        "LibName": "",
+                        "Positions": [
+                            {
+                                "Start": 0,
+                                "End": 3
                             }
                         ]
                     }
@@ -76,7 +70,31 @@ Output:
                 "HitInfos": []
             },
             {
-                "Label": "Illegal",
+                "Label": "Ad",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": []
+            },
+            {
+                "Label": "Teenager",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": []
+            },
+            {
+                "Label": "Porn",
                 "SubLabel": "",
                 "Suggestion": "Pass",
                 "Keywords": [],
@@ -100,11 +118,23 @@ Output:
                 "HitInfos": []
             },
             {
-                "Label": "Porn",
+                "Label": "Value",
                 "SubLabel": "",
                 "Suggestion": "Pass",
                 "Keywords": [],
-                "Score": 2,
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": []
+            },
+            {
+                "Label": "Polity",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
                 "LibType": 0,
                 "LibId": "",
                 "LibName": "",
@@ -115,7 +145,21 @@ Output:
         "RiskDetails": null,
         "Extra": "",
         "ContextText": "",
-        "SentimentAnalysis": {}
+        "SentimentAnalysis": {},
+        "HitType": "text_nlp_tianji",
+        "HitSnippetInfos": [
+            {
+                "Snippet": "你好呀",
+                "AtomicName": "",
+                "AtomicId": "",
+                "Positions": [
+                    {
+                        "Start": 0,
+                        "End": 3
+                    }
+                ]
+            }
+        ]
     }
 }
 ```

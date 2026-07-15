@@ -428,7 +428,7 @@
       "status": "online"
     },
     "DescribeLogs": {
-      "document": "日志审计日志查询",
+      "document": "请使用 [日志分析SearchLog接口](https://cloud.tencent.com/document/product/1132/118363)",
       "input": "DescribeLogsRequest",
       "name": "日志审计日志查询",
       "output": "DescribeLogsResponse",
@@ -516,6 +516,20 @@
       "input": "DescribeNatFwVpcDnsLstRequest",
       "name": "展示当前natfw 实例对应的vpc dns开关",
       "output": "DescribeNatFwVpcDnsLstResponse",
+      "status": "online"
+    },
+    "DescribeOfflineExportTask": {
+      "document": "获取日志离线导出任务列表",
+      "input": "DescribeOfflineExportTaskRequest",
+      "name": "获取日志离线导出任务列表",
+      "output": "DescribeOfflineExportTaskResponse",
+      "status": "online"
+    },
+    "DescribeOfflineExportTemporaryCredentials": {
+      "document": "获取日志离线导出任务文件下载临时凭证",
+      "input": "DescribeOfflineExportTemporaryCredentialsRequest",
+      "name": "获取日志离线导出任务文件下载临时凭证",
+      "output": "DescribeOfflineExportTemporaryCredentialsResponse",
       "status": "online"
     },
     "DescribeResourceGroup": {
@@ -649,6 +663,13 @@
       "input": "ExpandCfwVerticalRequest",
       "name": "防火墙垂直扩容",
       "output": "ExpandCfwVerticalResponse",
+      "status": "online"
+    },
+    "ExportLogsOffline": {
+      "document": "日志审计日志离线导出",
+      "input": "ExportLogsOfflineRequest",
+      "name": "日志审计日志离线导出",
+      "output": "ExportLogsOfflineResponse",
       "status": "online"
     },
     "ModifyAcRule": {
@@ -950,6 +971,13 @@
       "input": "RemoveNatAcRuleRequest",
       "name": "删除NAT访问控制规则",
       "output": "RemoveNatAcRuleResponse",
+      "status": "online"
+    },
+    "RemoveOfflineExportTask": {
+      "document": "删除日志离线导出任务",
+      "input": "RemoveOfflineExportTaskRequest",
+      "name": "删除日志离线导出任务",
+      "output": "RemoveOfflineExportTaskResponse",
       "status": "online"
     },
     "RemoveVpcAcRule": {
@@ -1374,8 +1402,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建规则数据",
-          "example": "[ \t\t{ \t\t\t\"Description\": \"rule\", \t\t\t\"DestContent\": \"81.69.8.8\", \t\t\t\"DestType\": \"net\", \t\t\t\"OrderIndex\": \"1\", \t\t\t\"Port\": \"6666\", \t\t\t\"Protocol\": \"UDP\", \t\t\t\"RuleAction\": \"accept\", \t\t\t\"ServiceTemplateId\": \"\", \t\t\t\"SourceContent\": \"81.69.14.119\", \t\t\t\"SourceType\": \"net\" \t\t} \t]",
+          "document": "<p>创建规则数据</p>",
+          "example": "无",
           "member": "SecurityGroupRule",
           "name": "Data",
           "required": true,
@@ -1383,7 +1411,7 @@
         },
         {
           "disabled": false,
-          "document": "添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后",
+          "document": "<p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -1392,7 +1420,7 @@
         },
         {
           "disabled": false,
-          "document": "保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。",
+          "document": "<p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>",
           "example": "123e4567-e89b-12d3-a456-426655440000",
           "member": "string",
           "name": "ClientToken",
@@ -1401,7 +1429,7 @@
         },
         {
           "disabled": false,
-          "document": "（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发",
+          "document": "<p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsDelay",
@@ -1410,7 +1438,7 @@
         },
         {
           "disabled": false,
-          "document": "来源 默认空 覆盖导入是 batch_import_cover",
+          "document": "<p>来源 默认空 覆盖导入是 batch_import_cover</p>",
           "example": "batch_import_cover",
           "member": "string",
           "name": "From",
@@ -1419,7 +1447,7 @@
         },
         {
           "disabled": false,
-          "document": "是否复用rule id，1为是，默认不需要",
+          "document": "<p>是否复用rule id，1为是，默认不需要</p>",
           "example": "1",
           "member": "int64",
           "name": "IsUseId",
@@ -1434,7 +1462,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态值，0：添加成功，非0：添加失败",
+          "document": "<p>状态值，0：添加成功，非0：添加失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -1444,8 +1472,8 @@
         },
         {
           "disabled": false,
-          "document": "添加成功的规则详情",
-          "example": "[ \t\t{ \t\t\t\"RuleUuid\": 31375, \t\t\t\"Sequence\": 1, \t\t\t\"SourceContent\": \"81.69.14.119\", \t\t\t\"DestContent\": \"81.69.9.181\", \t\t\t\"Protocol\": \"UDP\", \t\t\t\"Description\": \"autotest_3\" \t\t} \t]",
+          "document": "<p>添加成功的规则详情</p>",
+          "example": "无",
           "member": "SecurityGroupSimplifyRule",
           "name": "Rules",
           "output_required": true,
@@ -2604,6 +2632,108 @@
       ],
       "type": "object"
     },
+    "ClusterFwPreAccessCheckResult": {
+      "document": "预接入检查结果，序列化后写入 cfw_gwlb_lead_switch.check_result 列",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检查状态，0：进行中，1：通过，2：失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前/最后所处检查项。Status=1（通过）时为 done，Status=2（失败）时为失败的检查项 key，Status=0（进行中）时为正在执行的检查项 key",
+          "example": "done",
+          "member": "string",
+          "name": "CurrentStage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逐条检查项结果列表，按执行顺序追加",
+          "example": "无",
+          "member": "ClusterFwPreAccessCheckStage",
+          "name": "Stages",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略路由配额核算报告，仅在 Status=1（通过）时非空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolicyRoutePreCheckReport",
+          "name": "PolicyRouteReport",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近一次更新时间，格式：YYYY-MM-DD HH:MM:SS",
+          "example": "2026-06-16 14:20:20",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterFwPreAccessCheckStage": {
+      "document": "单个阶段的实时检查状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检查项 key，与发起检查接口返回的 CheckItems[].Stage 一一对应",
+          "example": "nat_policy_route_orchestration",
+          "member": "string",
+          "name": "Stage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该检查项状态，0：进行中，1：通过，2：失败",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败时的错误码（仅 Status=2 时有值）",
+          "example": "LimitExceeded",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败时的具体错误信息（仅 Status=2 时有值）",
+          "example": "策略路由匹配规则数超限",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClusterSwitchDetail": {
       "document": "集群模式防火墙开关数据详情",
       "members": [
@@ -2805,6 +2935,16 @@
           "name": "Progress",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预检查项的结果</p>",
+          "example": "无",
+          "member": "ClusterFwPreAccessCheckResult",
+          "name": "CheckResult",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -7589,7 +7729,17 @@
     },
     "DescribeFwEdgeBarRequest": {
       "document": "DescribeFwEdgeBar请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>前端灰度版本标识，新版本为串行、旁路合并互联网带宽版本</p><p>枚举值：</p><ul><li>new： 新版本为串行、旁路合并互联网带宽版本</li></ul>",
+          "example": "new",
+          "member": "string",
+          "name": "EdgeSwitchVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeFwEdgeBarResponse": {
@@ -7597,7 +7747,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总入站峰值带宽 单位 bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总入站峰值带宽 单位 bps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100000",
           "member": "int64",
           "name": "InFlowMax",
@@ -7607,7 +7757,7 @@
         },
         {
           "disabled": false,
-          "document": "总入站峰值带宽占用规格百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总入站峰值带宽占用规格百分比</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.6",
           "member": "float",
           "name": "InFlowPercent",
@@ -7617,7 +7767,7 @@
         },
         {
           "disabled": false,
-          "document": "总出站峰值带宽 单位 bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总出站峰值带宽 单位 bps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100000",
           "member": "int64",
           "name": "OutFlowMax",
@@ -7627,7 +7777,7 @@
         },
         {
           "disabled": false,
-          "document": "总出站峰值带宽占用规格百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总出站峰值带宽占用规格百分比</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.6",
           "member": "float",
           "name": "OutFlowPercent",
@@ -7637,8 +7787,8 @@
         },
         {
           "disabled": false,
-          "document": "购买带宽 单位 Mps\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100M",
+          "document": "<p>购买带宽 单位 Mps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "int64",
           "name": "Width",
           "output_required": false,
@@ -7647,8 +7797,8 @@
         },
         {
           "disabled": false,
-          "document": "串行带宽 单位 Mps\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "50M",
+          "document": "<p>串行带宽 单位 Mps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
           "member": "int64",
           "name": "SerialWidth",
           "output_required": false,
@@ -7657,7 +7807,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余带宽 单位 Mps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剩余带宽 单位 Mps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
           "name": "UnUsedWidth",
@@ -7667,8 +7817,8 @@
         },
         {
           "disabled": false,
-          "document": "NAT 分配带宽 单位 Mps\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "50M",
+          "document": "<p>NAT 分配带宽 单位 Mps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
           "member": "int64",
           "name": "NatWidth",
           "output_required": false,
@@ -7677,7 +7827,7 @@
         },
         {
           "disabled": false,
-          "document": "0 不开启自动防护\n1 开启自动防护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>0 不开启自动防护<br>1 开启自动防护</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AutoDefence",
@@ -7687,7 +7837,7 @@
         },
         {
           "disabled": false,
-          "document": "开启开关数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开启开关数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "OpenSwitchNum",
@@ -7697,7 +7847,7 @@
         },
         {
           "disabled": false,
-          "document": "开关配额数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开关配额数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
           "name": "SwitchQuota",
@@ -7707,7 +7857,7 @@
         },
         {
           "disabled": false,
-          "document": "串行地域个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>串行地域个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "int64",
           "name": "SerialRegionNum",
@@ -7717,7 +7867,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余通用实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剩余通用实例个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "InstanceQuota",
@@ -7727,7 +7877,7 @@
         },
         {
           "disabled": false,
-          "document": "关闭开关数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关闭开关数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "CloseSwitchNum",
@@ -7737,7 +7887,7 @@
         },
         {
           "disabled": false,
-          "document": "开关总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开关总个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "SwitchNum",
@@ -7747,7 +7897,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定资产数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定资产数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8",
           "member": "int64",
           "name": "AssetNum",
@@ -7757,7 +7907,7 @@
         },
         {
           "disabled": false,
-          "document": "购买配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>购买配额</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100000",
           "member": "int64",
           "name": "BuyWidth",
@@ -7767,7 +7917,7 @@
         },
         {
           "disabled": false,
-          "document": "natfw 实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>natfw 实例个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "NatInstanceNum",
@@ -7777,7 +7927,7 @@
         },
         {
           "disabled": false,
-          "document": "vpcfw 实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>vpcfw 实例个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9",
           "member": "int64",
           "name": "VpcInstanceNum",
@@ -7787,7 +7937,7 @@
         },
         {
           "disabled": false,
-          "document": "旁路防火墙弹性按量计费开关",
+          "document": "<p>旁路防火墙弹性按量计费开关</p>",
           "example": "1",
           "member": "int64",
           "name": "ElasticSwitch",
@@ -7797,7 +7947,7 @@
         },
         {
           "disabled": false,
-          "document": "旁路防火墙弹性带宽上限",
+          "document": "<p>旁路防火墙弹性带宽上限</p>",
           "example": "100",
           "member": "int64",
           "name": "ElasticBandwidth",
@@ -7807,7 +7957,7 @@
         },
         {
           "disabled": false,
-          "document": "串行防火墙弹性总带宽上限",
+          "document": "<p>串行防火墙弹性总带宽上限</p>",
           "example": "100",
           "member": "int64",
           "name": "SerialElasticBandWidth",
@@ -7817,7 +7967,7 @@
         },
         {
           "disabled": false,
-          "document": "串行防火墙弹性按量计费开关",
+          "document": "<p>串行防火墙弹性按量计费开关</p>",
           "example": "1",
           "member": "int64",
           "name": "SerialElasticSwitch",
@@ -7827,7 +7977,7 @@
         },
         {
           "disabled": false,
-          "document": "旁路专用带宽",
+          "document": "<p>旁路专用带宽</p>",
           "example": "100",
           "member": "int64",
           "name": "BypassOnlyBandwidth",
@@ -7837,7 +7987,7 @@
         },
         {
           "disabled": false,
-          "document": "可分配到串行防火墙和NAT防火墙的带宽值，将从旁路防火墙等额扣除",
+          "document": "<p>可分配到串行防火墙和NAT防火墙的带宽值，将从旁路防火墙等额扣除</p>",
           "example": "100",
           "member": "int64",
           "name": "CanUsedBandwidth",
@@ -7847,7 +7997,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙通用实例总数",
+          "document": "<p>防火墙通用实例总数</p>",
           "example": "10",
           "member": "int64",
           "name": "AllInsQuota",
@@ -7857,7 +8007,7 @@
         },
         {
           "disabled": false,
-          "document": "旁路入站峰值带宽，单位bps",
+          "document": "<p>旁路入站峰值带宽，单位bps</p>",
           "example": "1024000",
           "member": "int64",
           "name": "BypassInFlowMax",
@@ -7867,7 +8017,7 @@
         },
         {
           "disabled": false,
-          "document": "旁路出站峰值带宽，单位bps",
+          "document": "<p>旁路出站峰值带宽，单位bps</p>",
           "example": "1024000",
           "member": "int64",
           "name": "BypassOutFlowMax",
@@ -7877,7 +8027,7 @@
         },
         {
           "disabled": false,
-          "document": "旁路入站峰值带宽，规格占比",
+          "document": "<p>旁路入站峰值带宽，规格占比</p>",
           "example": "0.5",
           "member": "float",
           "name": "BypassInFlowPercent",
@@ -7887,7 +8037,7 @@
         },
         {
           "disabled": false,
-          "document": "旁路出站峰值带宽，规格占比",
+          "document": "<p>旁路出站峰值带宽，规格占比</p>",
           "example": "0.5",
           "member": "float",
           "name": "BypassOutFlowPercent",
@@ -7897,7 +8047,7 @@
         },
         {
           "disabled": false,
-          "document": "规格占比最大的串行地域入站峰值带宽，单位bps",
+          "document": "<p>规格占比最大的串行地域入站峰值带宽，单位bps</p>",
           "example": "1024000",
           "member": "int64",
           "name": "SerialRegionInFlowMax",
@@ -7907,7 +8057,7 @@
         },
         {
           "disabled": false,
-          "document": "规格占比最大的串行地域出站峰值带宽，单位bps",
+          "document": "<p>规格占比最大的串行地域出站峰值带宽，单位bps</p>",
           "example": "1024000",
           "member": "int64",
           "name": "SerialRegionOutFlowMax",
@@ -7917,7 +8067,7 @@
         },
         {
           "disabled": false,
-          "document": "串行地域入站峰值带宽，规格占比",
+          "document": "<p>串行地域入站峰值带宽，规格占比</p>",
           "example": "0.5",
           "member": "float",
           "name": "SerialRegionInFlowPercent",
@@ -7927,7 +8077,7 @@
         },
         {
           "disabled": false,
-          "document": "串行地域出站峰值带宽，规格占比",
+          "document": "<p>串行地域出站峰值带宽，规格占比</p>",
           "example": "0.5",
           "member": "float",
           "name": "SerialRegionOutFlowPercent",
@@ -7937,12 +8087,82 @@
         },
         {
           "disabled": false,
-          "document": "规格占比最大的串行地域",
+          "document": "<p>规格占比最大的串行地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MaxSerialRegion",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界防火墙总带宽</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "EdgeWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界弹性带宽开关</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EdgeElasticSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界弹性带宽值</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EdgeElasticBandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界弹性带宽值上限</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EdgeElasticBandwidthLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界弹性计量开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 打开</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "EdgeElasticTrafficSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本账号可用互联网带宽</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "SelfAvailableEdgeWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>NAT集群模式带宽占用总量</p>",
+          "example": "90",
+          "member": "int64",
+          "name": "NatFwClusterWidth",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8383,7 +8603,26 @@
     },
     "DescribeLogStorageStatisticRequest": {
       "document": "DescribeLogStorageStatistic请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p><p>参数格式：2026-07-01 15:02:01</p>",
+          "example": "2026-06-11 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：2026-07-01 15:02:01</p>",
+          "example": "2026-06-12 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeLogStorageStatisticResponse": {
@@ -8391,7 +8630,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回状态码 0 成功 非0不成功",
+          "document": "<p>返回状态码 0 成功 非0不成功</p>",
           "example": "0",
           "member": "int64",
           "name": "ReturnCode",
@@ -8401,7 +8640,7 @@
         },
         {
           "disabled": false,
-          "document": "返回信息  success 成功 其他 不成功",
+          "document": "<p>返回信息  success 成功 其他 不成功</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -8411,7 +8650,7 @@
         },
         {
           "disabled": false,
-          "document": "已使用存储量，单位B",
+          "document": "<p>已使用存储量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "UsedSize",
@@ -8421,7 +8660,7 @@
         },
         {
           "disabled": false,
-          "document": "配额存储总量，单位B",
+          "document": "<p>配额存储总量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "TotalSize",
@@ -8431,7 +8670,7 @@
         },
         {
           "disabled": false,
-          "document": "存储天数",
+          "document": "<p>存储天数</p>",
           "example": "180",
           "member": "int64",
           "name": "StorageDay",
@@ -8441,7 +8680,7 @@
         },
         {
           "disabled": false,
-          "document": "访问控制日志存储量，单位B",
+          "document": "<p>访问控制日志存储量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "AclSize",
@@ -8451,7 +8690,7 @@
         },
         {
           "disabled": false,
-          "document": "入侵防御日志存储量，单位B",
+          "document": "<p>入侵防御日志存储量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "IdsSize",
@@ -8461,7 +8700,7 @@
         },
         {
           "disabled": false,
-          "document": "流量日志存储量，单位B",
+          "document": "<p>流量日志存储量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "NetFlowSize",
@@ -8471,7 +8710,7 @@
         },
         {
           "disabled": false,
-          "document": "操作日志存储量，单位B",
+          "document": "<p>操作日志存储量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "OperateSize",
@@ -8481,7 +8720,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余存储量，单位B",
+          "document": "<p>剩余存储量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "LeftSize",
@@ -8491,7 +8730,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，0后付费，1预付费",
+          "document": "<p>计费模式，0后付费，1预付费</p>",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -8501,7 +8740,7 @@
         },
         {
           "disabled": false,
-          "document": "每日增加日志存储量柱状图",
+          "document": "<p>每日增加日志存储量柱状图</p>",
           "example": "无",
           "member": "StorageHistogram",
           "name": "TimeHistogram",
@@ -8511,7 +8750,7 @@
         },
         {
           "disabled": false,
-          "document": "柱形图格式数据",
+          "document": "<p>柱形图格式数据</p>",
           "example": "无",
           "member": "StorageHistogramShow",
           "name": "TimeHistogramShow",
@@ -8521,7 +8760,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费模式存储状态，0正常，1欠费停止写入",
+          "document": "<p>后付费模式存储状态，0正常，1欠费停止写入</p>",
           "example": "1",
           "member": "int64",
           "name": "ArrearsStopWriting",
@@ -8531,7 +8770,7 @@
         },
         {
           "disabled": false,
-          "document": "NDR流量日志存储量，单位B",
+          "document": "<p>NDR流量日志存储量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "NDRNetFlowSize",
@@ -8541,7 +8780,7 @@
         },
         {
           "disabled": false,
-          "document": "NDR风险日志存储量，单位B",
+          "document": "<p>NDR风险日志存储量，单位B</p>",
           "example": "1024",
           "member": "int64",
           "name": "NDRRiskSize",
@@ -8551,7 +8790,7 @@
         },
         {
           "disabled": false,
-          "document": "NDR日志存储天数",
+          "document": "<p>NDR日志存储天数</p>",
           "example": "30",
           "member": "int64",
           "name": "NDRStorageDay",
@@ -9704,6 +9943,178 @@
       ],
       "type": "object"
     },
+    "DescribeOfflineExportTaskRequest": {
+      "document": "DescribeOfflineExportTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页参数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页参数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID/任务名称</p>",
+          "example": "flow_border_out_31",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfflineExportTaskResponse": {
+      "document": "DescribeOfflineExportTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回状态码 0 成功 非0不成功</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回信息  success 成功 其他 不成功</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>离线导出任务列表</p>",
+          "example": "无",
+          "member": "OfflineExportTask",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剩余导出文件配额，单位B</p>",
+          "example": "1073741824",
+          "member": "int64",
+          "name": "ExportRemainQuota",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出文件配额，单位B</p>",
+          "example": "1073741824",
+          "member": "int64",
+          "name": "ExportQuota",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出数据限制</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "ExportLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfflineExportTemporaryCredentialsRequest": {
+      "document": "DescribeOfflineExportTemporaryCredentials请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "11972",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfflineExportTemporaryCredentialsResponse": {
+      "document": "DescribeOfflineExportTemporaryCredentials返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回状态码 0 成功 非0不成功</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回信息  success 成功 其他 不成功</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时下载链接</p>",
+          "example": "https://export-log-offline-1*********.cos.ap.com",
+          "member": "string",
+          "name": "Link",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceGroupNewRequest": {
       "document": "DescribeResourceGroupNew请求参数结构体",
       "members": [
@@ -10052,7 +10463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "串行地域带宽分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>串行地域带宽分配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SerialRegionInfo",
           "name": "SerialRegionLst",
@@ -10062,8 +10473,8 @@
         },
         {
           "disabled": false,
-          "document": "剩余可分配通用带宽 单位M\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1000M",
+          "document": "<p>剩余可分配通用带宽 单位M</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
           "member": "int64",
           "name": "UnUsedWidth",
           "output_required": false,
@@ -10072,7 +10483,7 @@
         },
         {
           "disabled": false,
-          "document": "可配置实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可配置实例个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "UnUsedQuota",
@@ -10082,7 +10493,7 @@
         },
         {
           "disabled": false,
-          "document": "旁路带宽数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>旁路带宽数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "BypassWidth",
@@ -10092,13 +10503,63 @@
         },
         {
           "disabled": false,
-          "document": "赠送的旁路带宽数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>赠送的旁路带宽数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
           "member": "int64",
           "name": "SendBypassWidth",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界防火墙总带宽</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "EdgeWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界弹性开关</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EdgeElasticSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界弹性带宽值</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EdgeElasticBandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界弹性带宽上限</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EdgeElasticBandwidthLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界防火墙计量开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 打开</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "EdgeElasticTrafficSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10995,7 +11456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC防火墙状态栏数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VPC防火墙状态栏数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpcFwBarStatus",
           "name": "FwBarStatus",
@@ -12027,6 +12488,170 @@
     "ExpandCfwVerticalResponse": {
       "document": "ExpandCfwVertical返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportLogsOfflineRequest": {
+      "document": "ExportLogsOffline请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志类型标识</p><p>枚举值：</p><ul><li>cfw_netflow_border： 流量日志-互联网边界</li><li>cfw_netflow_vpc： 流量日志-VPC边界</li><li>cfw_netflow_nat： 流量日志-NAT边界</li><li>cfw_rule_acl： 访问控制-互联网边界</li><li>cfw_rule_vpc_acl： 访问控制-VPC边界</li><li>cfw_rule_nat_acl： 访问控制-NAT边界</li><li>cfw_rule_threatinfo： 入侵防御-入侵防御</li><li>cfw_netflow_nta： 全流量检测与响应-流量分析</li><li>cfw_ndr_subject_risk： 全流量检测与响应-流量风险</li><li>cfw_ndr_ai_audit： 全流量检测与响应-AI流量风险</li><li>operate_log_all： 操作日志</li></ul>",
+          "example": "cfw_netflow_border",
+          "member": "string",
+          "name": "Index",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选开始时间</p>",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选结束时间</p>",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "流量日志导出",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据格式</p><p>枚举值：</p><ul><li>.json： JSON格式</li><li>.csv： CSV格式</li></ul>",
+          "example": ".json",
+          "member": "string",
+          "name": "DataFormat",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>压缩方式，.zip、.tar.gz、.tar.zst、.tar.lz4、传空不压缩</p>",
+          "example": ".zip",
+          "member": "string",
+          "name": "CompressionFormat",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志排序，desc时间降序，asc时间升序</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志数量，传0按单次上限导出</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Length",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件组合</p>",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS存储桶名称</p>",
+          "example": "guangzhou-bucket",
+          "member": "string",
+          "name": "BucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS存储桶地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件过期时长，1一天，7七天，-1永久</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "StorageDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志分析查询语句，Query和Filters不能同时使用，在一次请求中有且只能选择一个</p>",
+          "example": "protocol:HTTP",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出任务类型，LogAnalysis日志分析导出，LogSearch日志审计导出</p>",
+          "example": "LogAnalysis",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportLogsOfflineResponse": {
+      "document": "ExportLogsOffline返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回状态码 0 成功 非0不成功</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回信息  success 成功 其他 不成功</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -13511,7 +14136,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1封禁列表 2 放通列表",
+          "document": "<p>1封禁列表 2 放通列表</p>",
           "example": "1",
           "member": "int64",
           "name": "RuleType",
@@ -13520,8 +14145,8 @@
         },
         {
           "disabled": false,
-          "document": "IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空",
-          "example": "[{\"IP\":\"192.168.1.1\",\"Direction\":1,\"Domain\":\"\"}]",
+          "document": "<p>IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空</p>",
+          "example": "无",
           "member": "IocListData",
           "name": "IOC",
           "required": true,
@@ -13529,7 +14154,7 @@
         },
         {
           "disabled": false,
-          "document": "可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效",
+          "document": "<p>可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效</p>",
           "example": "add",
           "member": "string",
           "name": "IocAction",
@@ -13538,7 +14163,7 @@
         },
         {
           "disabled": false,
-          "document": "时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填",
+          "document": "<p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填</p>",
           "example": "2020-04-23 18:56:16",
           "member": "string",
           "name": "StartTime",
@@ -13547,12 +14172,21 @@
         },
         {
           "disabled": false,
-          "document": "时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime",
+          "document": "<p>时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime</p>",
           "example": "2020-04-30 18:56:16",
           "member": "string",
           "name": "EndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否来自微信</p><p>取值范围：[0, 1]</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsFromWeChat",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13562,7 +14196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "接口返回信息",
+          "document": "<p>接口返回信息</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -13572,7 +14206,7 @@
         },
         {
           "disabled": false,
-          "document": "接口返回错误码，0请求成功  非0失败",
+          "document": "<p>接口返回错误码，0请求成功  非0失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "ReturnCode",
@@ -13796,7 +14430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "NAT CCN防火墙开关配置",
+          "document": "<p>NAT CCN防火墙开关配置</p>",
           "example": "无",
           "member": "NatCcnSwitchConfig",
           "name": "NatCcnSwitch",
@@ -15838,6 +16472,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预接入检查结果</p>",
+          "example": "无",
+          "member": "ClusterFwPreAccessCheckResult",
+          "name": "CheckResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16436,6 +17080,102 @@
       ],
       "usage": "in"
     },
+    "OfflineExportTask": {
+      "document": "离线导出任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1000",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "导出流量日志",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "DataLength",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，0等待下载，1下载中，2下载完成，3下载失败，4文件过期",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件过期时间",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载进度",
+          "example": "0.45",
+          "member": "float",
+          "name": "Progress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "检索结果数据为空",
+          "member": "string",
+          "name": "ErrorInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否使用Cos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UseUserCos",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OpenClusterNatFwSwitchRequest": {
       "document": "OpenClusterNatFwSwitch请求参数结构体",
       "members": [
@@ -16495,6 +17235,92 @@
         }
       ],
       "usage": "in"
+    },
+    "PolicyRoutePreCheckReport": {
+      "document": "策略路由预编排配额报告",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次编排生成的下一跳数量",
+          "example": "2",
+          "member": "int64",
+          "name": "NextHopCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳上限",
+          "example": "5",
+          "member": "int64",
+          "name": "NextHopLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次编排生成的匹配规则数",
+          "example": "6",
+          "member": "int64",
+          "name": "MatchRuleCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配规则上限",
+          "example": "100",
+          "member": "int64",
+          "name": "MatchRuleLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云上已有匹配规则数（其他防火墙类型占用）",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudExistingRuleCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云上已有下一跳数（其他防火墙类型占用）",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudExistingNextHopCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用匹配规则配额 = MatchRuleLimit - CloudExistingRuleCount - MatchRuleCount",
+          "example": "94",
+          "member": "int64",
+          "name": "AvailableRuleQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用下一跳配额 = NextHopLimit - CloudExistingNextHopCount - NextHopCount",
+          "example": "3",
+          "member": "int64",
+          "name": "AvailableNextHopQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RegionCidrConfig": {
       "document": "引流地域CIDR配置",
@@ -16765,6 +17591,62 @@
           "name": "RuleUuid",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveOfflineExportTaskRequest": {
+      "document": "RemoveOfflineExportTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "176165",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否保留文件，1保留，非1删除",
+          "example": "1",
+          "member": "int64",
+          "name": "KeepFile",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveOfflineExportTaskResponse": {
+      "document": "RemoveOfflineExportTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回状态码 0 成功 非0不成功",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息  success 成功 其他 不成功",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -17241,7 +18123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要检索分析的日志的起始时间，Unix时间戳（毫秒）",
+          "document": "<p>要检索分析的日志的起始时间，Unix时间戳（毫秒）</p>",
           "example": "1608794854000",
           "member": "int64",
           "name": "From",
@@ -17250,7 +18132,7 @@
         },
         {
           "disabled": false,
-          "document": "要检索分析的日志的结束时间，Unix时间戳（毫秒）",
+          "document": "<p>要检索分析的日志的结束时间，Unix时间戳（毫秒）</p>",
           "example": "1608794855000",
           "member": "int64",
           "name": "To",
@@ -17259,7 +18141,7 @@
         },
         {
           "disabled": false,
-          "document": "检索分析语句，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句\n使用*或空字符串可查询所有日志",
+          "document": "<p>检索分析语句，最大长度为12KB<br>语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句<br>使用*或空字符串可查询所有日志</p>",
           "example": "protocol:HTTP",
           "member": "string",
           "name": "Query",
@@ -17268,7 +18150,7 @@
         },
         {
           "disabled": false,
-          "document": "检索语法规则，默认值为0，推荐使用1 。\n\n- 0：Lucene语法\n- 1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。\n\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
+          "document": "<p>检索语法规则，默认值为0，推荐使用1 。</p><ul><li>0：Lucene语法</li><li>1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。</li></ul><p>详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a></p>",
           "example": "1",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -17277,7 +18159,7 @@
         },
         {
           "disabled": false,
-          "document": "- 要检索分析的日志主题ID，仅能指定一个日志主题。\n- 如需同时检索多个日志主题，请使用Topics参数。\n- TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。\n各日志主题ID如下\n访问控制-互联网边界 cfw_rule_acl\n访问控制-NAT边界 cfw_rule_nat_acl\n访问控制-VPC边界 cfw_rule_vpc_acl\n访问控制-DNS开关 cfw_rule_dns_acl\n入侵防御 cfw_rule_threatinfo\n全流量检测与响应日志-流量分析 cfw_netflow_nta\n全流量检测与响应日志-流量告警 cfw_rule_ndr_threatinfo\n零信任运维-数据库登录 cfw_operate_db\n零信任运维-服务器访问 operate_remote_om\n零信任运维-Web服务访问 operate_web_access\n零信任运维-行为审计 remoteom_commands\n流量日志-互联网边界 cfw_netflow_border\n流量日志-NAT边界 cfw_netflow_nat\n流量日志-VPC边界 cfw_netflow_vpc\n流量日志-DNS开关 cfw_netflow_dns\n流量日志-内网流量 cfw_netflow_fl\n操作日志 operate_log_all",
+          "document": "<ul><li>要检索分析的日志主题ID，仅能指定一个日志主题。</li><li>如需同时检索多个日志主题，请使用Topics参数。</li><li>TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。<br>各日志主题ID如下<br>访问控制-互联网边界 cfw_rule_acl<br>访问控制-NAT边界 cfw_rule_nat_acl<br>访问控制-VPC边界 cfw_rule_vpc_acl<br>访问控制-DNS开关 cfw_rule_dns_acl<br>入侵防御 cfw_rule_threatinfo<br>全流量检测与响应日志-流量分析 cfw_netflow_nta<br>全流量检测与响应日志-流量告警 cfw_rule_ndr_threatinfo<br>零信任运维-数据库登录 cfw_operate_db<br>零信任运维-服务器访问 operate_remote_om<br>零信任运维-Web服务访问 operate_web_access<br>零信任运维-行为审计 remoteom_commands<br>流量日志-互联网边界 cfw_netflow_border<br>流量日志-NAT边界 cfw_netflow_nat<br>流量日志-VPC边界 cfw_netflow_vpc<br>流量日志-DNS开关 cfw_netflow_dns<br>流量日志-内网流量 cfw_netflow_fl<br>操作日志 operate_log_all</li></ul>",
           "example": "cfw_netflow_border",
           "member": "string",
           "name": "TopicId",
@@ -17286,7 +18168,7 @@
         },
         {
           "disabled": false,
-          "document": "- 要检索分析的日志主题列表，最大支持50个日志主题。\n- 检索单个日志主题时请使用TopicId。\n- TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。",
+          "document": "<ul><li>要检索分析的日志主题列表，最大支持50个日志主题。</li><li>检索单个日志主题时请使用TopicId。</li><li>TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。</li></ul>",
           "example": "无",
           "member": "MultiTopicSearchInformation",
           "name": "Topics",
@@ -17295,7 +18177,7 @@
         },
         {
           "disabled": false,
-          "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a>",
+          "document": "<p>原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc<br>注意：</p><ul><li>仅当检索分析语句(Query)不包含SQL时有效</li><li>SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a></li></ul>",
           "example": "asc",
           "member": "string",
           "name": "Sort",
@@ -17304,7 +18186,7 @@
         },
         {
           "disabled": false,
-          "document": "表示单次查询返回的原始日志条数，默认为100，最大值为1000。\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>\n\n可通过两种方式获取后续更多日志：\n* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志\n* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制",
+          "document": "<p>表示单次查询返回的原始日志条数，默认为100，最大值为1000。<br>注意：</p><ul><li>仅当检索分析语句(Query)不包含SQL时有效</li><li>SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a></li></ul><p>可通过两种方式获取后续更多日志：</p><ul><li>Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志</li><li>Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制</li></ul>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -17313,7 +18195,7 @@
         },
         {
           "disabled": false,
-          "document": "查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 \n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* 不能与Context参数同时使用\n* 仅适用于单日志主题检索",
+          "document": "<p>查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。<br>注意：</p><ul><li>仅当检索分析语句(Query)不包含SQL时有效</li><li>不能与Context参数同时使用</li><li>仅适用于单日志主题检索</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -17322,7 +18204,7 @@
         },
         {
           "disabled": false,
-          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。\n注意：\n* 透传该参数时，请勿修改除该参数外的其它参数\n* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context\n* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
+          "document": "<p>透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。<br>注意：</p><ul><li>透传该参数时，请勿修改除该参数外的其它参数</li><li>仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context</li><li>仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a></li></ul>",
           "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
           "name": "Context",
@@ -17331,7 +18213,7 @@
         },
         {
           "disabled": false,
-          "document": "执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。\n0：自动采样;\n0～1：按指定采样率采样，例如0.02;\n1：不采样，即精确分析\n默认值为1",
+          "document": "<p>执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。<br>0：自动采样;<br>0～1：按指定采样率采样，例如0.02;<br>1：不采样，即精确分析<br>默认值为1</p>",
           "example": "0.1",
           "member": "float",
           "name": "SamplingRate",
@@ -17340,7 +18222,7 @@
         },
         {
           "disabled": false,
-          "document": "为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效\n为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效\n两种返回方式在编码格式上有少量区别，建议使用true",
+          "document": "<p>为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效<br>为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效<br>两种返回方式在编码格式上有少量区别，建议使用true</p>",
           "example": "false",
           "member": "bool",
           "name": "UseNewAnalysis",
@@ -17355,7 +18237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时。\n注意：\n* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context",
+          "document": "<p>透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时。<br>注意：</p><ul><li>仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context</li></ul>",
           "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
           "name": "Context",
@@ -17365,7 +18247,7 @@
         },
         {
           "disabled": false,
-          "document": "符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志\n注意：仅当检索分析语句(Query)不包含SQL时有效",
+          "document": "<p>符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志<br>注意：仅当检索分析语句(Query)不包含SQL时有效</p>",
           "example": "false",
           "member": "bool",
           "name": "ListOver",
@@ -17375,7 +18257,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的是否为统计分析（即SQL）结果",
+          "document": "<p>返回的是否为统计分析（即SQL）结果</p>",
           "example": "false",
           "member": "bool",
           "name": "Analysis",
@@ -17385,7 +18267,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配检索条件的原始日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>匹配检索条件的原始日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogInfo",
           "name": "Results",
@@ -17395,8 +18277,8 @@
         },
         {
           "disabled": false,
-          "document": "日志统计分析结果的列名\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\\\"action\\\"]",
+          "document": "<p>日志统计分析结果的列名<br>当UseNewAnalysis为false时生效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"action\"]",
           "member": "string",
           "name": "ColNames",
           "output_required": false,
@@ -17405,7 +18287,7 @@
         },
         {
           "disabled": false,
-          "document": "日志统计分析结果\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志统计分析结果<br>当UseNewAnalysis为false时生效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
@@ -17415,8 +18297,8 @@
         },
         {
           "disabled": false,
-          "document": "日志统计分析结果\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"xxx\",\"yy\"]",
+          "document": "<p>日志统计分析结果<br>当UseNewAnalysis为true时生效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"src_ip\",\"dst_ip\"]",
           "member": "string",
           "name": "AnalysisRecords",
           "output_required": false,
@@ -17425,7 +18307,7 @@
         },
         {
           "disabled": false,
-          "document": "日志统计分析结果的列属性\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志统计分析结果的列属性<br>当UseNewAnalysis为true时生效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Column",
           "name": "Columns",
@@ -17435,7 +18317,7 @@
         },
         {
           "disabled": false,
-          "document": "本次统计分析使用的采样率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次统计分析使用的采样率</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.1",
           "member": "float",
           "name": "SamplingRate",
@@ -17445,7 +18327,7 @@
         },
         {
           "disabled": false,
-          "document": "使用多日志主题检索时，各个日志主题的基本信息，例如报错信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用多日志主题检索时，各个日志主题的基本信息，例如报错信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SearchLogTopics",
           "name": "Topics",
@@ -19354,7 +20236,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网ID",
+          "document": "<p>云联网ID</p>",
           "example": "ccn-iidlg5oh",
           "member": "string",
           "name": "CcnId",
@@ -19369,7 +20251,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测更新状态\n\"Checked\"：重新检测完成\n\"Checking\": 正在重新检测中，请稍后刷新状态查看",
+          "document": "<p>检测更新状态<br>&quot;Checked&quot;：重新检测完成<br>&quot;Checking&quot;: 正在重新检测中，请稍后刷新状态查看</p>",
           "example": "Checked",
           "member": "string",
           "name": "Message",
@@ -19391,7 +20273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ccn防火墙开关配置信息",
+          "document": "<p>ccn防火墙开关配置信息</p>",
           "example": "无",
           "member": "CcnSwitchInfo",
           "name": "CcnSwitch",
@@ -19732,7 +20614,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跨地域峰值带宽对应实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>跨地域峰值带宽对应实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cfwew-af7aa5a3",
           "member": "string",
           "name": "DiffRegionFwInsId",
@@ -19742,7 +20624,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域峰值带宽对应实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>跨地域峰值带宽对应实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "春城无处不飞花",
           "member": "string",
           "name": "DiffRegionFwInsName",
@@ -19752,7 +20634,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域峰值带宽数值",
+          "document": "<p>跨地域峰值带宽数值</p>",
           "example": "1024",
           "member": "int64",
           "name": "DiffRegionMaxFlow",
@@ -19762,7 +20644,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙总接入网络实例数量",
+          "document": "<p>VPC防火墙总接入网络实例数量</p>",
           "example": "7",
           "member": "int64",
           "name": "JoinInstanceCount",
@@ -19772,7 +20654,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙总开关数量",
+          "document": "<p>VPC防火墙总开关数量</p>",
           "example": "7",
           "member": "int64",
           "name": "FwSwitchCount",
@@ -19782,7 +20664,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙实例数",
+          "document": "<p>VPC防火墙实例数</p>",
           "example": "1",
           "member": "int64",
           "name": "FwInsCount",
@@ -19792,7 +20674,7 @@
         },
         {
           "disabled": false,
-          "document": "同地域峰值带宽对应实例ID",
+          "document": "<p>同地域峰值带宽对应实例ID</p>",
           "example": "cfwew-af7aa5a3",
           "member": "string",
           "name": "SameRegionFwInsId",
@@ -19802,7 +20684,7 @@
         },
         {
           "disabled": false,
-          "document": "同地域峰值带宽对应实例名称",
+          "document": "<p>同地域峰值带宽对应实例名称</p>",
           "example": "春城无处不飞花",
           "member": "string",
           "name": "SameRegionFwInsName",
@@ -19812,7 +20694,7 @@
         },
         {
           "disabled": false,
-          "document": "同地域峰值带宽数值",
+          "document": "<p>同地域峰值带宽数值</p>",
           "example": "1024",
           "member": "int64",
           "name": "SameRegionMaxFlow",
@@ -19822,7 +20704,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙的购买带宽 2GB 单位为M",
+          "document": "<p>VPC防火墙的购买带宽 2GB 单位为M</p>",
           "example": "2048",
           "member": "int64",
           "name": "VpcThroughPut",
@@ -19832,7 +20714,7 @@
         },
         {
           "disabled": false,
-          "document": "单位为M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单位为M</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2048",
           "member": "int64",
           "name": "BandWidthUsed",
@@ -19842,7 +20724,7 @@
         },
         {
           "disabled": false,
-          "document": "单实例支持最大地域个数",
+          "document": "<p>单实例支持最大地域个数</p>",
           "example": "3",
           "member": "int64",
           "name": "VpcRegionCntLimit",
@@ -19852,7 +20734,7 @@
         },
         {
           "disabled": false,
-          "document": "租户最大支持实例个数",
+          "document": "<p>租户最大支持实例个数</p>",
           "example": "2",
           "member": "int64",
           "name": "VpcFwInsCntLimit",
@@ -19862,7 +20744,7 @@
         },
         {
           "disabled": false,
-          "document": "私有模式下，最大支持接入的Vpc实例个数",
+          "document": "<p>私有模式下，最大支持接入的Vpc实例个数</p>",
           "example": "10",
           "member": "int64",
           "name": "JoinVpcCntLimit",
@@ -19872,7 +20754,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙(组)ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cfwg-145667",
           "member": "string",
           "name": "FwGroupId",
@@ -19882,7 +20764,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙(组)名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "名字",
           "member": "string",
           "name": "FwGroupName",
@@ -19892,7 +20774,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)最大峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙(组)最大峰值带宽</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "FwGroupMaxFlow",
@@ -19902,7 +20784,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cfwew-145667",
           "member": "string",
           "name": "FwInsId",
@@ -19912,7 +20794,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "名字",
           "member": "string",
           "name": "FwInsName",
@@ -19922,7 +20804,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例最大峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙实例最大峰值带宽</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "FwInsMaxFlow",
@@ -19932,7 +20814,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙(组)个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "FwGroupCount",
@@ -19942,7 +20824,7 @@
         },
         {
           "disabled": false,
-          "document": "单个组最多建多少防火墙实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单个组最多建多少防火墙实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "FwGroupMaxInsCount",
@@ -19952,7 +20834,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余通用实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剩余通用实例个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "InstanceQuota",
@@ -19962,7 +20844,7 @@
         },
         {
           "disabled": false,
-          "document": "集群模式使用带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群模式使用带宽</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024",
           "member": "uint64",
           "name": "ClusterModeWidth",
@@ -19972,7 +20854,7 @@
         },
         {
           "disabled": false,
-          "document": "主备模式使用带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主备模式使用带宽</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "MasterSlaveModeWitdh",
@@ -19982,7 +20864,7 @@
         },
         {
           "disabled": false,
-          "document": "集群模式七天峰值带宽",
+          "document": "<p>集群模式七天峰值带宽</p>",
           "example": "100000000",
           "member": "uint64",
           "name": "ClusterVpcMaxFlow",
@@ -19992,10 +20874,20 @@
         },
         {
           "disabled": false,
-          "document": "通用实例总个数",
+          "document": "<p>通用实例总个数</p>",
           "example": "10",
           "member": "int64",
           "name": "AllInsQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本账号可用的VPC带宽</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "SelfAvailableWidth",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

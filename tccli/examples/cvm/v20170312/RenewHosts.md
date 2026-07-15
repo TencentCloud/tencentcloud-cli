@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm RenewHosts --cli-unfold-argument  \
+    --HostIds host-ey16rkyg \
     --HostChargePrepaid.Period 1 \
-    --HostChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
-    --HostIds host-ey16rkyg
+    --HostChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
 ```
 
 Output: 

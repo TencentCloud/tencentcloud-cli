@@ -526,9 +526,9 @@
       "status": "online"
     },
     "PromoteDBInstanceToActive": {
-      "document": "本接口（PromoteDBInstanceToActive）用于灾备实例转正",
+      "document": "本接口（PromoteDBInstanceToActive）用于将灾备实例或只读实例转为独立的主实例",
       "input": "PromoteDBInstanceToActiveRequest",
-      "name": "灾备实例转正",
+      "name": "灾备或只读实例转正",
       "output": "PromoteDBInstanceToActiveResponse",
       "status": "online"
     },
@@ -2074,6 +2074,42 @@
         },
         {
           "disabled": false,
+          "document": "<p>数据库存储加密取值。</p><ul><li>No_Encryption：不采用存储加密。</li><li>TDE：开启 TDE 存储加密方式。</li></ul>",
+          "example": "No_Encryption",
+          "member": "string",
+          "name": "DataEncryption",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如选取 TDE 存储加密，须指定密钥来源。</p><ul><li>auto 自动生成密钥。</li><li>manual 手动指定密钥。</li></ul>",
+          "example": "auto",
+          "member": "string",
+          "name": "EncryptionKeySource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥 ID。如密钥资源选取为指定自定义，须输入指定的密钥 ID。</p>",
+          "example": "AKID*****************************",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果密钥来源为指定自定义密钥，须填写该字段指定密钥的地域信息。</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>实例CPU核大小，单位：C。具体售卖的CPU规格，请通过接口 <a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a> 获取。<br>注意：通用 I 型实例必须设置 CPU 大小。</p>",
           "example": "2",
           "member": "int64",
@@ -2468,6 +2504,42 @@
           "example": "tpl-0vswu****",
           "member": "string",
           "name": "ParamTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库存储加密取值。</p><ul><li>No_Encryption：不采用存储加密。</li><li>TDE：开启 TDE 存储加密方式。</li></ul>",
+          "example": "No_Encryption",
+          "member": "string",
+          "name": "DataEncryption",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如选取 TDE 存储加密，须指定密钥来源。</p><ul><li>auto 自动生成密钥。</li><li>manual 手动指定密钥。</li></ul>",
+          "example": "auto",
+          "member": "string",
+          "name": "EncryptionKeySource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥 ID。如密钥资源选取为指定自定义，须输入指定的密钥 ID。</p>",
+          "example": "AKID*****************************",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果密钥来源为指定自定义密钥，须填写该字段指定密钥的地域信息。</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KmsRegion",
           "required": false,
           "type": "string"
         },
@@ -8582,7 +8654,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。\n",
+          "document": "<p>指定实例 ID。例如：cmgo-p8vn****。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "\"cmgo-jyjcw8yv\"",
           "member": "string",
           "name": "InstanceId",
@@ -8591,7 +8663,7 @@
         },
         {
           "disabled": false,
-          "document": "指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 [DescribeInstanceParams ](https://cloud.tencent.com/document/product/240/65903)获取。",
+          "document": "<p>指定需修改的参数名及值。当前所支持的参数名及对应取值范围，请通过 <a href=\"https://cloud.tencent.com/document/product/240/65903\">DescribeInstanceParams </a>获取。</p>",
           "example": "无",
           "member": "ModifyMongoDBParamType",
           "name": "InstanceParams",
@@ -8600,7 +8672,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型，包括：\n- IMMEDIATELY：立即调整。\n- DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。",
+          "document": "<p>操作类型，包括：</p><ul><li>IMMEDIATELY：立即调整。</li><li>DELAY：延迟调整。可选字段，不配置该参数则默认为立即调整。</li></ul>",
           "example": "IMMEDIATELY",
           "member": "string",
           "name": "ModifyType",
@@ -8615,7 +8687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改参数配置是否生效。\n- true：参数修改后的值已生效。\n- false：执行失败。\n",
+          "document": "<p>修改参数配置是否生效。</p><ul><li>true：参数修改后的值已生效。</li><li>false：执行失败。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Changed",
@@ -8625,7 +8697,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数暂时无意义(兼容前端保留)。",
+          "document": "<p>该参数暂时无意义(兼容前端保留)。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
@@ -9157,8 +9229,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "灾备实例id",
-          "example": "cmgo-a7bb6vd7",
+          "document": "<p>指定需转为普通实例的灾备或只读实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制灾备或只读实例 ID。</p>",
+          "example": "cmgo-********",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9166,8 +9238,8 @@
         },
         {
           "disabled": false,
-          "document": "主实例id",
-          "example": "cmgo-ggh7rpz5",
+          "document": "<p>指定灾备或只读实例所属的主实例。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "cmgo-********",
           "member": "string",
           "name": "MasterId",
           "required": true,
@@ -9181,7 +9253,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务 ID。</p>",
           "example": "10001",
           "member": "int64",
           "name": "FlowId",

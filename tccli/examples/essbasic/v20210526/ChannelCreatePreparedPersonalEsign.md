@@ -45,8 +45,7 @@ tccli essbasic ChannelCreatePreparedPersonalEsign --cli-unfold-argument  \
     --SealImage 印章图片Base64 \
     --SealName 我的印章名称 \
     --Mobile 135*111 \
-    --FileId yDwJB******************ddskaSIs \
-    --EnableAutoSign True
+    --FileId yDwJB******************ddskaSIs
 ```
 
 Output: 

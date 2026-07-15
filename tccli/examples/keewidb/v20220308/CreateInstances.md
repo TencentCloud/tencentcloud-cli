@@ -1,37 +1,37 @@
-**Example 1: 示例1**
+**Example 1: 创建存储板实例**
 
-创建实例
+
 
 Input: 
 
 ```
 tccli keewidb CreateInstances --cli-unfold-argument  \
-    --ShardNum 3 \
-    --TypeId 14 \
+    --TypeId 12 \
+    --UniqVpcId vpc-f76wgk85 \
+    --UniqSubnetId subnet-jsmdnv1y \
+    --BillingMode 0 \
     --GoodsNum 1 \
-    --UniqVpcId vpc-qicyv9mz \
-    --MachineMemory 2 \
     --Period 1 \
-    --ZoneId 100002 \
+    --ShardNum 3 \
     --ReplicasNum 1 \
-    --UniqSubnetId subnet-4rohwntq \
-    --DiskSize 100 \
-    --MemSize 8 \
-    --MachineCpu 1 \
+    --MachineMemory 8 \
+    --ZoneId 100006 \
+    --InstanceName name1 \
     --Password Test123456 \
-    --InstanceName 测试实例2 \
-    --BillingMode 1
+    --DiskSize 100 \
+    --MachineCpu 2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DealName": "20250925297021530748195",
+        "DealId": "20260706185023127858071",
+        "DealName": "20260706185023127858071",
         "InstanceIds": [
-            "kee-emg6bltn"
+            "kee-8wb1cgrb"
         ],
-        "RequestId": "365b3029-06d5-4016-8054-518994bba781"
+        "RequestId": "9af572e5-ab19-4bca-84c6-85109a1350e4"
     }
 }
 ```

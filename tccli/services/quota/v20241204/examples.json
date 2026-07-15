@@ -1,0 +1,67 @@
+{
+  "actions": {
+    "CreateAlarm": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: quota.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarm\n<公共请求参数>\n\n{\n    \"Name\": \"配额2\",\n    \"ProductId\": 2,\n    \"QuotaId\": 3,\n    \"Metrics\": 1,\n    \"Threshold\": 1,\n    \"Frequency\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmId\": 119,\n        \"RequestId\": \"573f1a99-3b45-40bd-8c63-fdd311e1998e\"\n    }\n}",
+        "title": "创建配额告警"
+      }
+    ],
+    "DeleteAlarm": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: quota.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarm\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea231b1c-86fa-4190-aa0e-048c7622c448\"\n    }\n}",
+        "title": "删除告警规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: quota.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarm\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a44b27e3-e9f7-4a45-9bda-56177ad3f15e\"\n    }\n}",
+        "title": "删除规则"
+      }
+    ],
+    "DescribeAggregateUserQuotas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: quota.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAggregateUserQuotas\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"Data\": [\n            {\n                \"ApplyType\": 1,\n                \"MemberName\": \"\",\n                \"MemberUin\": 88888888888,\n                \"ProductName\": \"Your Product Name\",\n                \"QuotaDescription\": \"Quota Desc\",\n                \"QuotaDimensions\": [\n                    {\n                        \"DimensionName\": \"Dimension 1\",\n                        \"PrimaryValue\": \"value 1\"\n                    },\n                    {\n                        \"DimensionName\": \"Dimension 2\",\n                        \"PrimaryValue\": \"value 2\"\n                    }\n                ],\n                \"QuotaId\": 9999,\n                \"QuotaInstanceId\": \"\",\n                \"QuotaName\": \"quota name\",\n                \"QuotaUnit\": \"GB\",\n                \"TotalQuota\": 15,\n                \"TotalUsage\": 0\n            }\n        ],\n        \"OwnerUin\": 88888888888,\n        \"RequestId\": \"b351f392-eddd-42f5-ad53-xxxxxxxx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeAlarms": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: quota.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarms\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"ProductId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 5,\n        \"Data\": [\n            {\n                \"Id\": 102,\n                \"OwnerUin\": 100026600000,\n                \"MemberUin\": 100026600000,\n                \"Name\": \"234\",\n                \"ProductId\": 13,\n                \"Status\": 2,\n                \"QuotaId\": 2828,\n                \"ProductName\": \"腾讯云助手\",\n                \"QuotaName\": \"配额名称001\",\n                \"Metrics\": 1,\n                \"Threshold\": 2,\n                \"Frequency\": 1\n            }\n        ],\n        \"RequestId\": \"e3836e25-700a-4759-bba2-7bcd57b9ab86\"\n    }\n}",
+        "title": "规则列表"
+      }
+    ],
+    "DescribeUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: quota.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserQuota\n<公共请求参数>\n\n{\n    \"ProductName\": \"Your Product Name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProductName\": \"Your Product Name\",\n        \"QuotaDescription\": \"quota desc\",\n        \"QuotaId\": 8888,\n        \"QuotaName\": \"quota name\",\n        \"QuotaUnit\": \"quota unit\",\n        \"RequestId\": \"f089d37f-3d61-46fd-9b84-xxxxxx\",\n        \"TotalQuota\": 15,\n        \"TotalUsage\": 0\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "EnableAlarm": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: quota.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableAlarm\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"737ee7c5-d5e6-42f8-8cb9-dd9c1eade12a\"\n    }\n}",
+        "title": "启用告警"
+      }
+    ],
+    "UpdateAlarm": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: quota.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAlarm\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"配额2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97f26bb6-dcb6-4903-b5ef-17650fe140a3\"\n    }\n}",
+        "title": "编辑配额"
+      }
+    ]
+  },
+  "version": "1.0"
+}

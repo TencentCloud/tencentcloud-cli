@@ -66,10 +66,10 @@
     ],
     "CreateAIAgentCall": [
       {
-        "document": "使用 AI Agent 发起外呼",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIAgentCall\n<公共请求参数>\n\n{\n    \"Callee\": \"008612300000000\",\n    \"SdkAppId\": 1400000000,\n    \"AIAgentId\": 15,\n    \"Callers\": [\n        \"008601012345678\",\n        \"008601012345679\"\n    ],\n    \"PromptVariables\": [\n        {\n            \"Key\": \"foo\",\n            \"Value\": \"bar\"\n        }\n    ]\n}",
+        "document": "使用智能体发起外呼",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIAgentCall\n<公共请求参数>\n\n{\n    \"Callee\": \"008612300000000\",\n    \"SdkAppId\": 1400000000,\n    \"AIAgentId\": 15,\n    \"Callers\": [\n        \"008601012345678\",\n        \"008601012345679\"\n    ],\n    \"Variables\": [\n        {\n            \"Key\": \"foo\",\n            \"Value\": \"bar\"\n        },\n        {\n            \"Key\": \"dify-inputs-key\",\n            \"Value\": \"value\"\n        },\n        {\n            \"Key\": \"dify-inputs-user\",\n            \"Value\": \"value\"\n        },\n        {\n            \"Key\": \"dify-inputs-conversation_id\",\n            \"Value\": \"value\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"SessionId\": \"6bb56a09278740bc80c5dc6dab783eff\"\n    }\n}",
-        "title": "使用 AI Agent 发起外呼"
+        "title": "使用智能体发起外呼"
       }
     ],
     "CreateAICall": [
@@ -98,10 +98,10 @@
     ],
     "CreateAutoCalloutTask": [
       {
-        "document": "创建任务",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400123455,\n    \"NotBefore\": 1642500621,\n    \"Callees\": [\n        \"008613012345678\"\n    ],\n    \"Callers\": [\n        \"008602012345678\"\n    ],\n    \"IvrId\": 8\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"RequestId\": \"a561d5e7-2680-481f-b86e-a9ad7316f4d5\"\n    }\n}",
-        "title": "创建任务"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1500098925,\n    \"NotBefore\": 1777641412,\n    \"Callees\": [\n        \"008613675881491\"\n    ],\n    \"Callers\": [\n        \"0086075533614747\"\n    ],\n    \"Name\": \"dinoggagagag\",\n    \"TimeZone\": \"Asia/Shanghai\",\n    \"AIAgentId\": 973,\n    \"TriggerStrategy\": [\n        {\n            \"InterfaceConfig\": {\n                \"Url\": \"https://webhook.site/8f9aa946-3190-4107-b175-38914e8aa6f6\",\n                \"HeaderParams\": [\n                    {\n                        \"Key\": \"taskid\",\n                        \"Value\": \"{taskId}\"\n                    }\n                ],\n                \"Params\": [\n                    {\n                        \"Key\": \"callStatus\",\n                        \"Value\": \"{callStatus}\"\n                    }\n                ],\n                \"Async\": false\n            },\n            \"HangupTypes\": [\n                \"202\",\n                \"203\",\n                \"206\"\n            ],\n            \"CallTags\": [\n                {\n                    \"TagName\": \"test123\",\n                    \"TagValue\": \"345\"\n                }\n            ],\n            \"TriggerMode\": \"ALWAYS_ON_MATCH\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec683719-4460-4686-b976-a6dd64e4accb\",\n        \"TaskId\": 17110\n    }\n}",
+        "title": "TriggerStrategy 调用示例"
       }
     ],
     "CreateCCCSkillGroup": [
@@ -251,9 +251,25 @@
     "DeleteStaff": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStaff\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffList\": [\n        \"staff1@xxx.com\",\n        \"staff2@xxx.com\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"OnlineStaffList\": []\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStaff\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"StaffList\": [\n        \"1610598376@qq.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteStatusInfo\": \"Members in OnlineStaffList are online and cannot be deleted\",\n        \"OnlineStaffList\": [\n            \"1610598376@qq.com\"\n        ],\n        \"RequestId\": \"298dca51-0c8b-4efe-aa10-0c7a415089fa\"\n    }\n}",
         "title": "删除坐席信息示例"
+      }
+    ],
+    "DescribeAIAgentInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAgentInfoList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"PageSize\": 1,\n    \"PageNumber\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"AIAgentInfoList\": [\n            {\n                \"AIAgentId\": 69,\n                \"AIAgentName\": \"u65b0u667au80fdu4f53\"\n            }\n        ],\n        \"TotalCount\": 373,\n        \"RequestId\": \"1e6e8974-de10-4485-b53d-25d8c1bef18d\"\n    }\n}",
+        "title": "获取智能体信息列表"
+      }
+    ],
+    "DescribeAIAnalysisResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAILatency\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"adcf61b8-dbb9-4c20-87bf-c0744c04bade\",\n    \"StartTime\": 1737350008,\n    \"EndTime\": 1737356008\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"ResultList\": [\n            {\n                \"Type\": \"summary\",\n                \"Result\": \"会话小结\"\n            },\n            {\n                \"Type\": \"mood\",\n                \"Result\": \"中性\"\n            },\n            {\n                \"Type\": \"intention\",\n                \"Result\": \"待跟进\"\n            }\n        ]\n    }\n}",
+        "title": "获取 AI 会话分析结果"
       }
     ],
     "DescribeAICallExtractResult": [
@@ -264,12 +280,20 @@
         "title": "查询 AI 通话内容提取结果示例"
       }
     ],
+    "DescribeAICallInteractionRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAICallInteractionRecords\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1500098925,\n    \"SessionId\": \"ac0726e8-018b-4f9d-9d15-004a4c349cd5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InteractionEventList\": [\n            {\n                \"Messages\": [\n                    {\n                        \"AISpeak\": {\n                            \"CanBeInterrupted\": true,\n                            \"LatencyMetrics\": {\n                                \"AsrLatency\": -1,\n                                \"LLMFirstTokenLatency\": 29,\n                                \"TTSLatency\": 295,\n                                \"TotalLatency\": 329\n                            },\n                            \"SpokenText\": \"xiaopan为您服务，售前请说 123，售后请说 456\",\n                            \"SpokenType\": \"Script\"\n                        },\n                        \"Timestamp\": 1774931367634\n                    }\n                ],\n                \"Paths\": [\n                    {\n                        \"NodeName\": \"对话 1\",\n                        \"NodeType\": \"DIALOGUE\",\n                        \"Timestamp\": 1774931367607\n                    }\n                ],\n                \"RoundId\": \"6418f9b0-fbbc-4063-8b6f-ec11f7599c14\",\n                \"RoundIndex\": 1\n            }\n        ],\n        \"RequestId\": \"bb532c51-cfa4-41f3-a9e9-bd8506ec26f1\"\n    }\n}",
+        "title": "获取指定会话的会话交互结果"
+      }
+    ],
     "DescribeAILatency": [
       {
-        "document": "获取 AI 呼叫时延信息",
+        "document": "用于查询指定会话中，AI 服务的处理时延明细与统计数据",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAILatency\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"adcf61b8-dbb9-4c20-87bf-c0744c04bade\",\n    \"StartTime\": 1737350008,\n    \"EndTime\": 1737356008\n}",
         "output": "{\n    \"Response\": {\n        \"AILatencyStatistics\": {\n            \"ASRLatency\": {\n                \"MiddleLatency\": 308,\n                \"MinLatency\": 267,\n                \"P90Latency\": 338\n            },\n            \"ETELatency\": {\n                \"MiddleLatency\": 1327,\n                \"MinLatency\": 1209,\n                \"P90Latency\": 1540\n            },\n            \"LLMLatency\": {\n                \"MiddleLatency\": 754,\n                \"MinLatency\": 642,\n                \"P90Latency\": 912\n            },\n            \"TTSLatency\": {\n                \"MiddleLatency\": 267,\n                \"MinLatency\": 146,\n                \"P90Latency\": 366\n            }\n        },\n        \"RequestId\": \"ca9c3062-202b-4401-a930-3728d1ef7886\"\n    }\n}",
-        "title": "获取 AI 呼叫时延信息"
+        "title": "获取智能体通话中AI服务时延信息"
       }
     ],
     "DescribeActiveCarrierPrivilegeNumber": [
@@ -360,6 +384,14 @@
         "title": "查询话机列表信息"
       }
     ],
+    "DescribeFlashSMSList": [
+      {
+        "document": "查询闪信记录列表",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlashSMSList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1500098920,\n    \"StartTimestamp\": 1769730111,\n    \"EndTimestamp\": 1769749111,\n    \"SessionId\": \"15adb830-****-****-****-20c7d825d845\",\n    \"DeliveryNumber\": \"00860755******88\",\n    \"ServingNumber\": \"0086021******07\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlashSMSList\": [\n            {\n                \"ArriveTimestamp\": 1769738753,\n                \"DeliveryMessage\": \"success\",\n                \"DeliveryNumber\": \"0086158******69\",\n                \"DeliveryStatus\": 1,\n                \"DeliveryTimestamp\": 1769738751,\n                \"ServingNumber\": \"0086021******07\",\n                \"SessionId\": \"b6801264-****-****-****-8ffd29033e32\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"3e9a5b29-5d5c-491b-885c-05f3ea6c3b0e\"\n    }\n}",
+        "title": "查询闪信记录列表"
+      }
+    ],
     "DescribeIMCdrList": [
       {
         "document": "获取包括全媒体和文本会话两种类型的服务记录",
@@ -386,9 +418,9 @@
     ],
     "DescribeNumbers": [
       {
-        "document": "查询号码列表",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNumbers\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Numbers\": [\n            {\n                \"Number\": \"0086075512345678\",\n                \"State\": 1,\n                \"CallOutSkillGroupIds\": [\n                    1\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNumbers\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Numbers\": [\n            {\n                \"CallOutSkillGroupIds\": [\n                    1536\n                ],\n                \"CostType\": 0,\n                \"Number\": \"008617308248432\",\n                \"State\": 1\n            }\n        ],\n        \"TotalCount\": 52,\n        \"RequestId\": \"a7d2c6d4-29ca-4815-8f0d-c68fb7644a22\"\n    }\n}",
         "title": "查询号码列表"
       }
     ],
@@ -442,9 +474,9 @@
     ],
     "DescribeSipTrunkList": [
       {
-        "document": "查询SIP通道列表示例",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSipTrunkList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"FuzzingKeyWord\",\n            \"Values\": [\n                \"\"\n            ]\n        }\n    ],\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7c5df8c-a960-47f3-afe5-5284bcb5591d\",\n        \"TotalCount\": 1,\n        \"SipTrunkList\": [\n            {\n                \"Id\": 2158,\n                \"Name\": \"11\",\n                \"Uin\": \"10003910000\",\n                \"AppId\": 133050000,\n                \"Mode\": \"REGISTER\",\n                \"CheckHealth\": false,\n                \"ProviderId\": 200,\n                \"AllowIpList\": [],\n                \"WhiteIpList\": [],\n                \"RegisterUserName\": \"gateway10003910000\",\n                \"RegisterPassword\": \"xxxxxxxx\",\n                \"RegisterServer\": \"sip.tccc.qcloud.com\",\n                \"RegisterServerPort\": 35090,\n                \"RegisterServerTCPPort\": 35090,\n                \"RegisterServerTLSPort\": 5061,\n                \"RegisterOutboundProxy\": \"sip.tccc.qcloud.com\",\n                \"RegisterOutboundProxyBak\": \"sip2.tccc.qcloud.com\",\n                \"RegisterOutboundProxyPort\": 0,\n                \"RegisterOutboundProxyTCPPort\": 35090,\n                \"RegisterOutboundProxyTLSPort\": 5061,\n                \"RegisterProto\": \"UDP\",\n                \"RegisterFullName\": \"gatewayxxxxxxxx@sip.tccc.qcloud.com\",\n                \"RegisterExpires\": 3600,\n                \"InboundCalleeFormat\": \"NUMBER\",\n                \"InboundCalleeField\": \"TO\",\n                \"OutboundCallerFormat\": \"NUMBER\",\n                \"OutboundCalleeFormat\": \"\",\n                \"State\": 1,\n                \"RegisterStatus\": \"NOT_REGISTERED_STATE\",\n                \"HealthStatus\": \"\"\n            }\n        ]\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSipTrunkList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Mode\",\n            \"Values\": [\n                \"REGISTER\"\n            ]\n        }\n    ],\n    \"All\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"SipTrunkList\": [\n            {\n                \"AllowIpList\": [],\n                \"AppId\": 251202066,\n                \"CheckHealth\": false,\n                \"DownloadVolume\": 0,\n                \"HealthStatus\": \"\",\n                \"Id\": 15063,\n                \"InboundCalleeField\": \"TO\",\n                \"InboundCalleeFormat\": \"NUMBER\",\n                \"Mode\": \"REGISTER\",\n                \"Name\": \"jackson\",\n                \"OutboundCalleeFormat\": \"\",\n                \"OutboundCallerFormat\": \"NUMBER\",\n                \"OutboundCodecList\": [],\n                \"OutboundForceFixNAT\": false,\n                \"ProviderId\": 255,\n                \"RegisterExpires\": 3600,\n                \"RegisterFullName\": \"gateway70000016028615063@sip-dev.tccc.qcloud.com\",\n                \"RegisterOutboundProxy\": \"sip-dev.tccc.qcloud.com\",\n                \"RegisterOutboundProxyBak\": \"sip2-dev.tccc.qcloud.com\",\n                \"RegisterOutboundProxyPort\": 0,\n                \"RegisterOutboundProxyTCPPort\": 35090,\n                \"RegisterOutboundProxyTLSPort\": 5061,\n                \"RegisterPassword\": \"6C8JaZEQyoR0\",\n                \"RegisterProto\": \"UDP\",\n                \"RegisterServer\": \"sip-dev.tccc.qcloud.com\",\n                \"RegisterServerPort\": 35090,\n                \"RegisterServerTCPPort\": 35090,\n                \"RegisterServerTLSPort\": 5061,\n                \"RegisterStatus\": \"NOT_REGISTERED_STATE\",\n                \"RegisterUserName\": \"gateway70000016028615063\",\n                \"State\": 1,\n                \"Uin\": \"700000160286\",\n                \"UploadVolume\": 0,\n                \"WhiteIpList\": []\n            }\n        ],\n        \"TotalCount\": 416,\n        \"RequestId\": \"675b4a1f-75bc-4198-8abc-9501b43926f7\"\n    }\n}",
         "title": "查询SIP通道列表示例"
       }
     ],
@@ -467,7 +499,7 @@
     "DescribeStaffInfoList": [
       {
         "document": "获取坐席列表示例",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStaffInfoList\n<公共请求参数>\n\n{\n    \"ModifiedTime\": 1590147606,\n    \"PageSize\": 10,\n    \"PageNumber\": 0,\n    \"StaffMail\": \"“121223@qq.com”\",\n    \"SdkAppId\": \"1400000000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStaffInfoList\n<公共请求参数>\n\n{\n    \"ModifiedTime\": 1590147606,\n    \"PageSize\": 10,\n    \"PageNumber\": 0,\n    \"StaffMail\": \"121223@qq.com\",\n    \"SdkAppId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 602,\n        \"StaffList\": [\n            {\n                \"Name\": \"xiao\",\n                \"Mail\": \"1000273@qq.com\",\n                \"Phone\": \"008617636049517\",\n                \"Nick\": \"测试3\",\n                \"StaffNumber\": \"125\",\n                \"RoleId\": 1,\n                \"SkillGroupList\": [\n                    {\n                        \"SkillGroupId\": 53,\n                        \"SkillGroupName\": \"ALL-dingoding-测试\",\n                        \"Priority\": 3,\n                        \"Type\": \"ALL\"\n                    },\n                    {\n                        \"SkillGroupId\": 82,\n                        \"SkillGroupName\": \"uu\",\n                        \"Priority\": 1,\n                        \"Type\": \"IM\"\n                    }\n                ],\n                \"LastModifyTimestamp\": 1613988825\n            }\n        ]\n    }\n}",
         "title": "获取坐席列表示例"
       }
@@ -491,8 +523,8 @@
     "DescribeTelCallInfo": [
       {
         "document": "获取电话呼叫统计信息",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTelCallInfo\n<公共请求参数>\n\n{\n    \"StartTimeStamp\": \"0\",\n    \"EndTimeStamp\": \"0\",\n    \"SdkAppIdList\": [\n        \"0\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TelCallOutCount\": 0,\n        \"TelCallInCount\": 0,\n        \"SeatUsedCount\": 0,\n        \"VOIPCallInCount\": 0,\n        \"AsrOfflineCount\": 0,\n        \"AsrRealtimeCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTelCallInfo\n<公共请求参数>\n\n{\n    \"StartTimeStamp\": 1773041460,\n    \"EndTimeStamp\": 1773042460,\n    \"SdkAppIdList\": [\n        140000000\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TelCallOutCount\": 0,\n        \"TelCallInCount\": 0,\n        \"SeatUsedCount\": 0,\n        \"VOIPCallInCount\": 0,\n        \"AsrOfflineCount\": 0,\n        \"AsrRealtimeCount\": 0,\n        \"RequestId\": \"sfahfj-fasf\"\n    }\n}",
         "title": "获取电话呼叫统计信息示例"
       }
     ],
@@ -600,12 +632,28 @@
         "title": "修改密码"
       }
     ],
+    "PauseAutoCalloutTask": [
+      {
+        "document": "正常调用，暂停任务成功",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseAutoCalloutTask\n<公共请求参数>\n\n{\n    \"TaskId\": 16498,\n    \"SdkAppId\": 1400692008\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a1c5200-25be-4a80-8a45-9183745188ea\"\n    }\n}",
+        "title": "正常调用"
+      }
+    ],
     "PausePredictiveDialingCampaign": [
       {
         "document": "暂停预测式外呼任务",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PausePredictiveDialingCampaign\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "暂停预测式外呼任务示例"
+      }
+    ],
+    "PlaySoundCall": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PlaySoundCall\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"SessionId\": \"f3be95fb-2786-466a-beab-5e3d8cb76272\",\n    \"FileId\": 275,\n    \"PlayTimes\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9f09db3-c740-430d-8713-33b35bc9ae7f\"\n    }\n}",
+        "title": "通话中放音实例"
       }
     ],
     "ResetExtensionPassword": [
@@ -624,12 +672,28 @@
         "title": "恢复客服上线"
       }
     ],
+    "ResumeAutoCalloutTask": [
+      {
+        "document": "正常调用，恢复任务成功",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeAutoCalloutTask\n<公共请求参数>\n\n{\n    \"TaskId\": 16497,\n    \"SdkAppId\": 1400692008\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9c840d7-6d6a-4300-8273-6e0a7f00276e\"\n    }\n}",
+        "title": "正常调用"
+      }
+    ],
     "ResumePredictiveDialingCampaign": [
       {
         "document": "恢复预测式外呼任务",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumePredictiveCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "恢复预测式外呼任务示例"
+      }
+    ],
+    "SetStaffStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetStaffStatus\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"StaffStatusList\": [\n        {\n            \"StaffUserId\": \"weijuny***nt.com\",\n            \"Status\": \"free\",\n            \"Reason\": \"huiyi\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"StaffStatusList\": [\n            {\n                \"ErrorCode\": \"\",\n                \"ErrorMessage\": \"\",\n                \"PreviousReason\": \"\",\n                \"PreviousStatus\": \"rest\",\n                \"Reason\": \"huiyi\",\n                \"StaffUserId\": \"weijuny***nt.com\",\n                \"Status\": \"free\"\n            }\n        ],\n        \"RequestId\": \"6980f29d-c779-4a49-bf65-736bfc3b76a0\"\n    }\n}",
+        "title": "设置座席状态"
       }
     ],
     "StopAutoCalloutTask": [

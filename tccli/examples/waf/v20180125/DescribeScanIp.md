@@ -20,7 +20,7 @@ Output:
         "Demo": "业务回调",
         "Target": "数据传输",
         "Purpose": "保障回调顺畅、服务稳定",
-        "Announcement": "此 IP为 微信支付 的扫描 IP，将定期对您的 数据传输 进行检测，以 保障回调顺畅、服务稳定，若您发现来自此 IP 的扫描行为，请进行放行或加白...",
+        "Announcement": "此 IP为 微信支付 的扫描 IP，将定期对您的 数据传输 进行检测",
         "RequestId": "aqdraqerqw12313sdff"
     }
 }

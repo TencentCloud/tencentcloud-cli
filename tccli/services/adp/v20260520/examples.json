@@ -1,0 +1,499 @@
+{
+  "actions": {
+    "CopyAgentFromApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyAgentFromApp\n<公共请求参数>\n\n{\n    \"AppId\": \"2069***********8561\",\n    \"Kind\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ParentAgentId\": \"user_b438e98d-90cb-43f2-80ae-e89c04828cf3\",\n        \"RequestId\": \"8d66c88e-ab68-4f33-b810-33d96815bcb5\"\n    }\n}",
+        "title": "创建用户端配置"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyAgentFromApp\n<公共请求参数>\n\n{\n    \"AppId\": \"2069***********8561\",\n    \"TargetAppId\": \"2066***********4208\",\n    \"Kind\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ParentAgentId\": \"cc936f53-859c-44aa-9969-e84a444af062\",\n        \"RequestId\": \"2881027c-06a9-4831-8956-110fc972bd09\"\n    }\n}",
+        "title": "复制应用A的Agent列表到应用B"
+      }
+    ],
+    "CopyApp": [
+      {
+        "document": "复制应用",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyApp\n<公共请求参数>\n\n{\n    \"AppId\": \"206************5184\",\n    \"TargetSpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NewAppId\": \"206*************552\",\n        \"RequestId\": \"98a3f37a-915c-46b7-9bf4-5a12fdfe2d46\"\n    }\n}",
+        "title": "CopyApp"
+      }
+    ],
+    "CreateAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgent\n<公共请求参数>\n\n{\n    \"AppId\": \"2068***********2288\",\n    \"Agent\": {\n        \"Profile\": {\n            \"Name\": \"User Agent\",\n            \"IconUrl\": \"https://cdn.xiaowei.qq.com/static/adp/agent-robot.png\",\n            \"Role\": 1,\n            \"Description\": \"User Agent\",\n            \"ParentAgentId\": \"user_e55be224-3cb4-4951-abdd-3454bd70b6a1\"\n        },\n        \"Instructions\": \"User Agent\",\n        \"Model\": {\n            \"ModelId\": \"Moonshot/moonshot-v1-128k\",\n            \"Alias\": \"moonshot-v1-128k\",\n            \"ContextWordsLimit\": 20000,\n            \"InstructionsWordsLimit\": 20000\n        },\n        \"ToolList\": [\n            {\n                \"Config\": {\n                    \"PluginId\": \"bf8ad2f3-1e5c-410a-ae81-abd7c5c14f1c\",\n                    \"ToolId\": \"959ea8eb-2772-4981-a92f-c4f43625b0c1\",\n                    \"Description\": \"根据输入的文本描述，智能生成与之相关的结果图（极速版）\",\n                    \"InputList\": [\n                        {\n                            \"Name\": \"Image\",\n                            \"Description\": \"参考图。Base64 和 Url 必须提供一个，如果都提供以 Url 为准。当传入Image参数时，Style和Resolution参数不生效，输出图分辨率将保持Image传入图分辨率。图片限制：单边分辨率大于128且小于2048；图片小于6M；格式支持 jpg、jpeg、png、bmp、tiff、webp。\",\n                            \"Type\": 4,\n                            \"IsRequired\": false,\n                            \"IsHidden\": false,\n                            \"Input\": {\n                                \"InputType\": 0\n                            },\n                            \"SubParameterList\": [],\n                            \"OneOfList\": [],\n                            \"AnyOfList\": []\n                        }\n                    ],\n                    \"OutputList\": [],\n                    \"HeaderParameterList\": [],\n                    \"QueryParameterList\": [],\n                    \"ToolSource\": 0,\n                    \"IsDisabled\": false\n                }\n            }\n        ],\n        \"PluginList\": [\n            {\n                \"PluginId\": \"bf8ad2f3-1e5c-410a-ae81-abd7c5c14f1c\",\n                \"HeaderParameterList\": [],\n                \"QueryParameterList\": [],\n                \"EnableCamRoleAuth\": false,\n                \"AuthType\": 0\n            }\n        ],\n        \"SkillList\": [\n            {\n                \"SkillId\": \"f5fc841f-82fc-46ca-8152-d3bab786d52c\"\n            }\n        ],\n        \"AdvancedConfig\": {\n            \"MaxReasoningRound\": 100\n        }\n    },\n    \"Kind\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"user_cc760218-4bb4-4c4e-b6d2-4996e212597e\",\n        \"RequestId\": \"5b14e728-55b3-44cb-9d49-9dac2c96423b\"\n    }\n}",
+        "title": "用户端创建子Agent"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgent\n<公共请求参数>\n\n{\n    \"AppId\": \"2068***********2288\",\n    \"Agent\": {\n        \"Profile\": {\n            \"Name\": \"My Main Agent\",\n            \"IconUrl\": \"https://cdn.xiaowei.qq.com/static/adp/agent-robot.png\",\n            \"Role\": 0,\n            \"Description\": \"Agent\"\n        },\n        \"Instructions\": \"User Agent\",\n        \"Model\": {\n            \"ModelId\": \"Moonshot/moonshot-v1-128k\",\n            \"Alias\": \"moonshot-v1-128k\",\n            \"ContextWordsLimit\": 20000,\n            \"InstructionsWordsLimit\": 20000\n        },\n        \"ToolList\": [\n            {\n                \"Config\": {\n                    \"PluginId\": \"bf8ad2f3-1e5c-410a-ae81-abd7c5c14f1c\",\n                    \"ToolId\": \"959ea8eb-2772-4981-a92f-c4f43625b0c1\",\n                    \"Description\": \"根据输入的文本描述，智能生成与之相关的结果图（极速版）\",\n                    \"InputList\": [\n                        {\n                            \"Name\": \"Image\",\n                            \"Description\": \"参考图。Base64 和 Url 必须提供一个，如果都提供以 Url 为准。当传入Image参数时，Style和Resolution参数不生效，输出图分辨率将保持Image传入图分辨率。图片限制：单边分辨率大于128且小于2048；图片小于6M；格式支持 jpg、jpeg、png、bmp、tiff、webp。\",\n                            \"Type\": 4,\n                            \"IsRequired\": false,\n                            \"IsHidden\": false,\n                            \"Input\": {\n                                \"InputType\": 0\n                            },\n                            \"SubParameterList\": [],\n                            \"OneOfList\": [],\n                            \"AnyOfList\": []\n                        }\n                    ],\n                    \"OutputList\": [],\n                    \"HeaderParameterList\": [],\n                    \"QueryParameterList\": [],\n                    \"ToolSource\": 0,\n                    \"IsDisabled\": false\n                }\n            }\n        ],\n        \"PluginList\": [\n            {\n                \"PluginId\": \"bf8ad2f3-1e5c-410a-ae81-abd7c5c14f1c\",\n                \"HeaderParameterList\": [],\n                \"QueryParameterList\": [],\n                \"EnableCamRoleAuth\": false,\n                \"AuthType\": 0\n            }\n        ],\n        \"SkillList\": [\n            {\n                \"SkillId\": \"f5fc841f-82fc-46ca-8152-d3bab786d52c\"\n            }\n        ],\n        \"AdvancedConfig\": {\n            \"MaxReasoningRound\": 100\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"0f050c95-31b6-4d31-8c31-1fd6a6bafb4c\",\n        \"RequestId\": \"c3e001ca-0abc-40cf-a16a-6e5e38f39df7\"\n    }\n}",
+        "title": "配置端创建主Agent"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgent\n<公共请求参数>\n\n{\n    \"AppId\": \"2068***********2288\",\n    \"Agent\": {\n        \"Profile\": {\n            \"Name\": \"My Agent\",\n            \"IconUrl\": \"https://cdn.xiaowei.qq.com/static/adp/agent-robot.png\",\n            \"Role\": 1,\n            \"Description\": \"Agent\"\n        },\n        \"Instructions\": \"User Agent\",\n        \"Model\": {\n            \"ModelId\": \"Moonshot/moonshot-v1-128k\",\n            \"Alias\": \"moonshot-v1-128k\",\n            \"ContextWordsLimit\": 20000,\n            \"InstructionsWordsLimit\": 20000\n        },\n        \"ToolList\": [\n            {\n                \"Config\": {\n                    \"PluginId\": \"bf8ad2f3-1e5c-410a-ae81-abd7c5c14f1c\",\n                    \"ToolId\": \"959ea8eb-2772-4981-a92f-c4f43625b0c1\",\n                    \"Description\": \"根据输入的文本描述，智能生成与之相关的结果图（极速版）\",\n                    \"InputList\": [\n                        {\n                            \"Name\": \"Image\",\n                            \"Description\": \"参考图。Base64 和 Url 必须提供一个，如果都提供以 Url 为准。当传入Image参数时，Style和Resolution参数不生效，输出图分辨率将保持Image传入图分辨率。图片限制：单边分辨率大于128且小于2048；图片小于6M；格式支持 jpg、jpeg、png、bmp、tiff、webp。\",\n                            \"Type\": 4,\n                            \"IsRequired\": false,\n                            \"IsHidden\": false,\n                            \"Input\": {\n                                \"InputType\": 0\n                            },\n                            \"SubParameterList\": [],\n                            \"OneOfList\": [],\n                            \"AnyOfList\": []\n                        }\n                    ],\n                    \"OutputList\": [],\n                    \"HeaderParameterList\": [],\n                    \"QueryParameterList\": [],\n                    \"ToolSource\": 0,\n                    \"IsDisabled\": false\n                }\n            }\n        ],\n        \"PluginList\": [\n            {\n                \"PluginId\": \"bf8ad2f3-1e5c-410a-ae81-abd7c5c14f1c\",\n                \"HeaderParameterList\": [],\n                \"QueryParameterList\": [],\n                \"EnableCamRoleAuth\": false,\n                \"AuthType\": 0\n            }\n        ],\n        \"SkillList\": [\n            {\n                \"SkillId\": \"f5fc841f-82fc-46ca-8152-d3bab786d52c\"\n            }\n        ],\n        \"AdvancedConfig\": {\n            \"MaxReasoningRound\": 100\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"e86a4137-2a19-469f-9b47-6fd4a8c6c115\",\n        \"RequestId\": \"31d23269-e98c-47df-a90d-963a00bbc4f4\"\n    }\n}",
+        "title": "配置端创建子Agent"
+      }
+    ],
+    "CreateApp": [
+      {
+        "document": "我的",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"AppMode\": 1,\n    \"Avatar\": \"https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png\",\n    \"Description\": \"我的描述\",\n    \"Name\": \"测试的应用信息1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"206*************784\",\n        \"RequestId\": \"c45d274d-35c9-4ef2-bd0e-33edec89096b\"\n    }\n}",
+        "title": "CreateApp"
+      }
+    ],
+    "CreateConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConversation\n<公共请求参数>\n\n{\n    \"Type\": 2,\n    \"AppId\": \"2049148302274678336\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConversationId\": \"dd6a4e74-b2d4-463f-ba01-429304a4a142\",\n        \"RequestId\": \"f408c5a9-e87b-4d86-baa6-c2b950c5d047\"\n    }\n}",
+        "title": "创建会话"
+      }
+    ],
+    "CreatePlugin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlugin\n<公共请求参数>\n\n{\n    \"Profile\": {\n        \"Description\": \"天气插件\",\n        \"IconUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/plugin_files/%E6%8F%92%E4%BB%B6-%E9%BB%98%E8%AE%A4.png\",\n        \"Name\": \"CAPI-Test\",\n        \"PluginClass\": 0,\n        \"PluginKind\": 2\n    },\n    \"Config\": {\n        \"MCPPluginConfig\": {\n            \"MCPServerUrl\": \"https://uat-mcp-order-service.fxnotary.com/sse\",\n            \"MCPTransport\": 0,\n            \"PluginHeader\": [\n                {\n                    \"IsGlobalHidden\": false,\n                    \"IsRequired\": true,\n                    \"Name\": \"Authorization\",\n                    \"Value\": \"Bearer db4fc7ab4e3d424a9f336507e58e58ae5e606222deac46a6\"\n                }\n            ],\n            \"PluginQuery\": [],\n            \"SSEReadTimeout\": 300,\n            \"Timeout\": 5,\n            \"AuthConfig\": {\n                \"AuthType\": 0\n            }\n        }\n    },\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PluginId\": \"acb14a04-a049-4a0c-bafa-9670e5d949f2\",\n        \"RequestId\": \"0bf7928a-a74c-4fe7-ab79-6e531f5329be\"\n    }\n}",
+        "title": "创建插件"
+      }
+    ],
+    "CreateRelease": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRelease\n<公共请求参数>\n\n{\n    \"AppId\": \"206*************184\",\n    \"Description\": \"我的发布信息\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NeedApproval\": false,\n        \"ReleaseId\": \"2061**********47232\",\n        \"RequestId\": \"ff0a13da-3d36-48b8-ad44-a34d48e6ca44\"\n    }\n}",
+        "title": "CreateRelease"
+      }
+    ],
+    "CreateSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSkill\n<公共请求参数>\n\n{\n    \"LoginUin\": \"700***324384\",\n    \"LoginSubAccountUin\": \"700***324384\",\n    \"SpaceId\": \"default_space\",\n    \"CreateType\": 2,\n    \"Name\": \"skill\",\n    \"FileUrl\": \"/public/00skill/find-skills-0.1.0.zip\",\n    \"SkillVersion\": \"1.0.3\",\n    \"UpdateDescription\": \"*新版*\",\n    \"IconUrl\": \"https://example.com/icon.png\",\n    \"DisplayDescription\": \"skill展示描述示例\",\n    \"DisplayName\": \"skill-******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SkillId\": \"dbc30c0f-**************-98b66bc9de94\",\n        \"VersionId\": \"4f6579d9-**************-115eed7001a4\",\n        \"RequestId\": \"9e601924-9f56-4e8e-a690-df183fb8474b\"\n    }\n}",
+        "title": "创建自定义skill"
+      }
+    ],
+    "CreateSkillShare": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSkillShare\n<公共请求参数>\n\n{\n    \"ApplyRemark\": \"共享\",\n    \"SkillId\": \"d2ab4ff6-c0b1-485c-a3dc-7c678a36ebac\",\n    \"SpaceId\": \"default_space\",\n    \"VersionId\": \"4f5531c9-abd5-45cc-8647-1aa5844d2924\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NeedApproval\": false,\n        \"RequestId\": \"718a56bb-0d0d-42a3-aebb-fe21eafaa1a2\"\n    }\n}",
+        "title": "创建Skill企业共享"
+      }
+    ],
+    "CreateSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSpace\n<公共请求参数>\n\n{\n    \"Name\": \"测试空间xx\",\n    \"Description\": \"空间描述\",\n    \"LoginUin\": null,\n    \"LoginSubAccountUin\": null\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"424dc01e-f267-48ed-8e71-9e7bbf8a69f8\",\n        \"SpaceId\": \"UYiGYydT\"\n    }\n}",
+        "title": "创建空间"
+      }
+    ],
+    "CreateVariable": [
+      {
+        "document": "创建环境变量",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVariable\n<公共请求参数>\n\n{\n    \"AppId\": \"20************85184\",\n    \"Variable\": {\n        \"DefaultFileName\": \"*****.docx\",\n        \"DefaultValue\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.co**************441930380**************1*******************************************75147620602304.docx\",\n        \"Description\": \"d***** \",\n        \"ModuleType\": 0,\n        \"Name\": \"a*******sad\",\n        \"Type\": 11,\n        \"VariableId\": \"a23fe75e-76e7-43bd-b198-dc72d6b66131\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VariableId\": \"b4d5dbd**************2b-5b4211df1631\",\n        \"RequestId\": \"b37be014-f5a6-44e7-9e1a-8c4971885928\"\n    }\n}",
+        "title": "CreateVariable"
+      }
+    ],
+    "CreateWebSocketToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWebSocketToken\n<公共请求参数>\n\n{\n    \"Type\": 2,\n    \"AppId\": \"2051960827559960192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"2051960827559960192\",\n        \"Token\": \"44ad7d4f-bad8-4220-9a44-318b76d7f1f8\",\n        \"RequestId\": \"2b962a9d-8c18-45af-8530-a937a518c500\"\n    }\n}",
+        "title": "创建WS的token"
+      }
+    ],
+    "CreateWorkspaceCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceCredential\n<公共请求参数>\n\n{\n    \"Type\": 2,\n    \"WorkspaceId\": \"ca5b392c-67ea-459e-9edf-e7f3a47031f3\",\n    \"AppId\": \"2049766565997076096\",\n    \"AppKey\": \"1\",\n    \"ShareCode\": \"1\",\n    \"UserId\": \"1\",\n    \"LoginSubAccountUin\": \"700001046587\",\n    \"LoginUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StorageType\": \"sandbox_e2b\",\n        \"WorkspaceId\": \"ca5b392c-67ea-459e-9edf-e7f3a47031f3\",\n        \"RequestId\": \"8ed8154b-3798-4b06-ba49-b4844e3c63fb\"\n    }\n}",
+        "title": "创建沙箱工作空间"
+      }
+    ],
+    "DeleteAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgent\n<公共请求参数>\n\n{\n    \"AppId\": \"2059***********9648\",\n    \"AgentId\": \"286fe**************************40939\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c78b8cf1-aa03-4c58-96ae-91ddb78fe617\"\n    }\n}",
+        "title": "删除Agent（Claw模式）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgent\n<公共请求参数>\n\n{\n    \"AppId\": \"20592**********9648\",\n    \"AgentId\": \"286fe131-7d4d-496e-8b52-ed40e7d40939\",\n    \"CollaborationMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d0a1120-06ad-4e32-a293-73f0bd1fcfa0\"\n    }\n}",
+        "title": "删除Agent（Multi-Agent模式）"
+      }
+    ],
+    "DeleteApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApp\n<公共请求参数>\n\n{\n    \"AppId\": \"206172***********84\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ef9ea32-4af4-4968-b2e6-faec39ae52fa\"\n    }\n}",
+        "title": "DeleteApp"
+      }
+    ],
+    "DeleteConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConversation\n<公共请求参数>\n\n{\n    \"ConversationId\": \"e0b7f1cc-cc54-4f51-a1e0-e7653a20ea9f\",\n    \"Type\": 2,\n    \"AppKey\": \"1\",\n    \"ShareCode\": \"1\",\n    \"LoginSubAccountUin\": \"700001046587\",\n    \"LoginUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b42487dc-6af7-4965-829e-9cf1a6aa8e94\"\n    }\n}",
+        "title": "删除ClawAgent模式的对话"
+      }
+    ],
+    "DeletePlugin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"acb14a04-a049-4a0c-bafa-9670e5d949f2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa5dc374-d255-4dc2-bdaa-8685778b0344\"\n    }\n}",
+        "title": "删除插件"
+      }
+    ],
+    "DeleteSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSkill\n<公共请求参数>\n\n{\n    \"SkillId\": \"c7d41703-2245-4ac2-9228-5d587905596c\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4659cb9-3077-4237-a896-ceacb2ac63a9\"\n    }\n}",
+        "title": "删除Skill"
+      }
+    ],
+    "DeleteSkillShare": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSkillShare\n<公共请求参数>\n\n{\n    \"ApplyRemark\": \"2334\",\n    \"SkillId\": \"d2ab4ff6-c0b1-485c-a3dc-7c678a36ebac\",\n    \"SpaceId\": \"default_space\",\n    \"VersionId\": \"0a7c8803-66ec-4173-89f0-4790c072087b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NeedApproval\": true,\n        \"RequestId\": \"6da971ec-483c-43be-a628-26bb1c97ef82\"\n    }\n}",
+        "title": "关闭Skill企业共享"
+      }
+    ],
+    "DeleteSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSpace\n<公共请求参数>\n\n{\n    \"LoginUin\": null,\n    \"LoginSubAccountUin\": null,\n    \"SpaceId\": \"UYiGYydT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fca348e3-87ce-4254-9b1c-f1c2864b3a35\"\n    }\n}",
+        "title": "删除空间"
+      }
+    ],
+    "DeleteVariable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVariable\n<公共请求参数>\n\n{\n    \"AppId\": \"206************5184\",\n    \"VariableId\": \"9cdb*******************-2e2fdaf67d5f\",\n    \"ModuleType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9061bb9-ad7e-403a-9885-12e14a26f9f2\"\n    }\n}",
+        "title": "DeleteVariable"
+      }
+    ],
+    "DescribeAgentDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentDetail\n<公共请求参数>\n\n{\n    \"AppId\": \"20617**********9040\",\n    \"AgentId\": \"722f****************************5f01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Agent\": {\n            \"AdvancedConfig\": {\n                \"MaxReasoningRound\": 100\n            },\n            \"AgentId\": \"722fafb7-37b6-4896-ba32-08617e605f01\",\n            \"Instructions\": \"\",\n            \"Model\": {\n                \"Alias\": \"智谱GLM-5.1\",\n                \"ContextWordsLimit\": 0,\n                \"InstructionsWordsLimit\": 20000,\n                \"ModelId\": \"TCADP/glm-5.1\",\n                \"ModelParameters\": {\n                    \"DeepThinking\": \"\",\n                    \"MaxTokens\": 16384,\n                    \"ReasoningEffort\": \"\",\n                    \"ReplyFormat\": \"\",\n                    \"StopSequenceList\": [],\n                    \"Temperature\": 1\n                }\n            },\n            \"PluginList\": [\n                {\n                    \"AuthConfigStatus\": 2,\n                    \"Config\": {\n                        \"AuthType\": 0,\n                        \"EnableCamRoleAuth\": false,\n                        \"HeaderParameterList\": [],\n                        \"PluginId\": \"3ad93aae-587e-4bcc-ae07-ad13bfb1aaca\",\n                        \"QueryParameterList\": []\n                    },\n                    \"Description\": \"从知识库中检索内容，并通过大模型润色回复\",\n                    \"IconUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/plugin_files/%E7%9F%A5%E8%AF%86%E5%BA%93%E9%97%AE%E7%AD%94.png\",\n                    \"Name\": \"知识库问答\",\n                    \"Status\": 1\n                }\n            ],\n            \"SkillList\": [\n                {\n                    \"CurrentVersion\": \"1.0.0\",\n                    \"Description\": \"Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.\",\n                    \"DisplayDescription\": \"引导用户完成结构化的文档共同创作工作流程。当用户想要编写文档、提案、技术规范、决策文档或类似的结构化内容时使用。此工作流程可帮助用户高效传递上下文，通过迭代优化内容，并验证文档是否适合读者。当用户提及编写文档、创建提案、起草规范或执行类似文档任务时触发。\",\n                    \"DisplayName\": \"文档共同创作\",\n                    \"IconUrl\": \"\",\n                    \"Name\": \"doc-coauthoring\",\n                    \"SkillId\": \"ceb06595-9cc4-4ffb-a4c7-0413438265c4\",\n                    \"SourceType\": 3\n                }\n            ],\n            \"ToolList\": [\n                {\n                    \"Config\": {\n                        \"Description\": \"大模型结合知识库内容回答用户问题\",\n                        \"HeaderParameterList\": [],\n                        \"InputList\": [\n                            {\n                                \"AnyOfList\": [],\n                                \"Description\": \"用户的query\",\n                                \"Input\": {\n                                    \"InputType\": 0\n                                },\n                                \"IsHidden\": false,\n                                \"IsRequired\": true,\n                                \"Name\": \"Query\",\n                                \"OneOfList\": [],\n                                \"SubParameterList\": [],\n                                \"Type\": 0\n                            }\n                        ],\n                        \"IsDisabled\": false,\n                        \"OutputList\": [\n                            {\n                                \"Description\": \"返回码。0正常，非0异常\",\n                                \"Name\": \"Code\",\n                                \"RenderMode\": 0,\n                                \"SubParameterList\": [],\n                                \"Type\": 1\n                            }\n                        ],\n                        \"PluginId\": \"3ad93aae-587e-4bcc-ae07-ad13bfb1aaca\",\n                        \"QueryParameterList\": [],\n                        \"ToolId\": \"0ca8d482-1e77-462b-bc21-807c8f052f69\",\n                        \"ToolSource\": 0\n                    },\n                    \"Name\": \"KnowledgeRetrievalAnswer\",\n                    \"Status\": 1,\n                    \"StreamMode\": 1,\n                    \"ToolAccessMode\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"20b8a7d2-a190-4b60-b48d-8f322ce2975b\"\n    }\n}",
+        "title": "获取Agent详情"
+      }
+    ],
+    "DescribeAgentReleasePreviewList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentReleasePreviewList\n<公共请求参数>\n\n{\n    \"AppId\": \"204*************016\",\n    \"PageNumber\": 20,\n    \"PageSize\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ReleaseList\": [\n            {\n                \"Action\": 1,\n                \"ActionDescription\": \"新增\",\n                \"AgentId\": \"e25e9a2b-96c4-4cad-979b-f6f869e7cfb9\",\n                \"Message\": \"待发布变更 5 项\",\n                \"Name\": \"huiru_test\",\n                \"UpdateTime\": \"1776838008\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9a346cb2-1583-4afc-8d13-df5845245523\"\n    }\n}",
+        "title": "获取应用下 Agent 的发布预览列表"
+      }
+    ],
+    "DescribeAgentSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentSummaryList\n<公共请求参数>\n\n{\n    \"Scope\": 0,\n    \"AppId\": \"206*************168\",\n    \"LoginUin\": \"700******993\",\n    \"LoginSubAccountUin\": \"700******993\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentList\": [\n            {\n                \"AdvancedConfig\": {\n                    \"MaxReasoningRound\": 100\n                },\n                \"AgentId\": \"405abc07-438d-4293-90aa-3933c2ed2a80\",\n                \"Profile\": {\n                    \"AppName\": \"\",\n                    \"Description\": \"\",\n                    \"Developer\": \"\",\n                    \"IconUrl\": \"https://cdn.xiaowei.qq.com/static/lke/agent-robot.png\",\n                    \"Name\": \"hu******aw\",\n                    \"Role\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"0c2b804e-7835-4c4a-a8d5-334aaf0b17e5\"\n    }\n}",
+        "title": "查询指定应用下Agent列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentSummaryList\n<公共请求参数>\n\n{\n    \"Scope\": 1,\n    \"FilterList\": [\n        {\n            \"Name\": \"SpaceId\",\n            \"Operator\": 0,\n            \"ValueList\": [\n                \"default_space\"\n            ]\n        }\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 0,\n    \"LoginUin\": \"700******993\",\n    \"LoginSubAccountUin\": \"700******993\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentList\": [\n            {\n                \"AdvancedConfig\": {\n                    \"MaxReasoningRound\": 100\n                },\n                \"AgentId\": \"ecfd551c-43bb-4473-a9e1-dd0b459f38f6\",\n                \"Profile\": {\n                    \"AppName\": \"待删********用06\",\n                    \"Description\": \"\",\n                    \"Developer\": \"co****11\",\n                    \"IconUrl\": \"https://cdn.xiaowei.qq.com/static/adp/agent-robot.png\",\n                    \"Name\": \"1***本\",\n                    \"Role\": 1\n                }\n            }\n        ],\n        \"TotalCount\": 6,\n        \"RequestId\": \"ca855fd9-9db2-482e-bce4-d16a28cf68cf\"\n    }\n}",
+        "title": "跨应用查询Agent"
+      }
+    ],
+    "DescribeApp": [
+      {
+        "document": "查询应用详情",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApp\n<公共请求参数>\n\n{\n    \"AppId\": \"20**************184\",\n    \"Domain\": 1,\n    \"FieldMask\": {\n        \"Paths\": [\n            \"AppConfig\"\n        ]\n    },\n    \"StatusType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"App\": {\n            \"AuxiliaryInfo\": {\n                \"Appeal\": {\n                    \"AppealingStatus\": {\n                        \"AvatarInAppeal\": false,\n                        \"FallbackReplyInAppeal\": false,\n                        \"GreetingInAppeal\": false,\n                        \"NameInAppeal\": false,\n                        \"RoleInAppeal\": false\n                    }\n                },\n                \"SearchResourceStatus\": {\n                    \"ResourceStatus\": 1\n                },\n                \"SpecialStatusInfo\": {\n                    \"Status\": 0\n                },\n                \"SubStatus\": {\n                    \"ApprovalId\": \"0\",\n                    \"SubStatusList\": []\n                },\n                \"TemplatePublish\": {\n                    \"IsPublished\": false\n                }\n            },\n            \"Config\": {\n                \"Experience\": {\n                    \"Advanced\": {\n                        \"EnableContextRewrite\": true,\n                        \"EnableImageTextRetrieval\": false,\n                        \"IntentAchievement\": [\n                            {\n                                \"Description\": \"问答回复\",\n                                \"Name\": \"qa\"\n                            }\n                        ],\n                        \"ReplyFlexibility\": 1\n                    },\n                    \"Conversation\": {\n                        \"AiCall\": {\n                            \"DigitalHuman\": {\n                                \"AssetKey\": \"df************************ddadf0\",\n                                \"Avatar\": \"https://virtualhuman-cos-prod-1251316161.cos.ap-nanjing.tencentcos.cn/wupload/xy/virtualhuman_crm_prod/website_buy/vnZ6ZZYY.png\",\n                                \"Name\": \"艾朵_职业套装_站姿\",\n                                \"PreviewUrl\": \"https://virtualhuman-cos-prod-1251316161.cos.ap-nanjing.tencentcos.cn/wupload/xy/virtualhuman_crm_prod/preview/vStr966G.png\"\n                            },\n                            \"EnableDigitalHuman\": true,\n                            \"EnableVoiceCall\": true,\n                            \"EnableVoiceInteract\": true,\n                            \"Voice\": {\n                                \"TimbreKey\": \"tts_female_55\",\n                                \"VoiceName\": \"智小柔-聊天女声\",\n                                \"VoiceType\": 502001\n                            }\n                        },\n                        \"BackgroundImage\": {\n                            \"Brightness\": 117,\n                            \"LandscapeImageUrl\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/public/1744544193038090240/2060280711767285184/image/xdNgbZYwoJkwclZytKaa-2061707216749939200.jpg\",\n                            \"OriginalImageUrl\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/public/1744544193038090240/2060280711767285184/image/xdNgbZYwoJkwclZytKaa-2061707216749939200.jpg\",\n                            \"PortraitImageUrl\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/public/1744544193038090240/2060280711767285184/image/xdNgbZYwoJkwclZytKaa-2061707216749939200.jpg\",\n                            \"ThemeColor\": \"#cc5631\"\n                        },\n                        \"EnableFallbackReply\": true,\n                        \"EnableRecommended\": true,\n                        \"EnableWebSearch\": false,\n                        \"FallbackReply\": \"针对您这个问题，我暂时还无法进行回答，请换一个问题吧。\",\n                        \"InputBoxConfig\": {\n                            \"InputBoxButtons\": [\n                                1\n                            ]\n                        },\n                        \"Method\": 1,\n                        \"RecommendPromptMode\": 0\n                    },\n                    \"Role\": {\n                        \"RoleDescription\": \"我是提示词信息\"\n                    }\n                },\n                \"Greeting\": {\n                    \"Greeting\": \"你好欢迎语\",\n                    \"OpeningQuestionList\": [\n                        \"我的示例问题\"\n                    ]\n                },\n                \"Memory\": {\n                    \"Enabled\": true,\n                    \"LongMemoryDay\": 30,\n                    \"Model\": {\n                        \"Alias\": \"DeepSeek-V3.2\",\n                        \"HistoryLimit\": 5,\n                        \"ModelId\": \"Deepseek/deepseek-v3.2\",\n                        \"ModelParams\": {\n                            \"DeepThinking\": \"\",\n                            \"MaxTokens\": 16384,\n                            \"ReasoningEffort\": \"\",\n                            \"ReplyFormat\": \"\",\n                            \"StopSequenceList\": [],\n                            \"Temperature\": 0.6,\n                            \"TopP\": 0.6\n                        }\n                    },\n                    \"PromptContent\": \"\",\n                    \"PromptMode\": 0\n                },\n                \"Mode\": {},\n                \"Model\": {\n                    \"AiOptimizeModel\": {\n                        \"Model\": {\n                            \"Alias\": \"youtu-mrc-standard\",\n                            \"HistoryLimit\": 0,\n                            \"ModelId\": \"Youtu/youtu-mrc-standard\",\n                            \"ModelParams\": {\n                                \"DeepThinking\": \"\",\n                                \"MaxTokens\": 4000,\n                                \"ReasoningEffort\": \"\",\n                                \"ReplyFormat\": \"\",\n                                \"StopSequenceList\": [],\n                                \"Temperature\": 0.7,\n                                \"TopP\": 0.6\n                            }\n                        }\n                    },\n                    \"FileParseModel\": {\n                        \"Alias\": \"youtu-parsing-sync\",\n                        \"Description\": \"\",\n                        \"EnhancementMode\": \"\",\n                        \"ModelId\": \"Youtu/youtu-parsing-sync\",\n                        \"ModelProviderType\": \"\",\n                        \"SupportedFileList\": []\n                    },\n                    \"GenerateModel\": {\n                        \"Model\": {\n                            \"Alias\": \"youtu-mrc-pro\",\n                            \"HistoryLimit\": 5,\n                            \"ModelId\": \"Youtu/youtu-mrc-pro\",\n                            \"ModelParams\": {\n                                \"DeepThinking\": \"\",\n                                \"MaxTokens\": 4000,\n                                \"ReasoningEffort\": \"\",\n                                \"ReplyFormat\": \"\",\n                                \"StopSequenceList\": [],\n                                \"Temperature\": 0.7,\n                                \"TopP\": 0.6\n                            }\n                        }\n                    },\n                    \"MultiModalQaModel\": {\n                        \"Model\": {\n                            \"Alias\": \"hunyuan-turbos-vision\",\n                            \"HistoryLimit\": 5,\n                            \"ModelId\": \"Hunyuan/hunyuan-turbos-vision\",\n                            \"ModelParams\": {\n                                \"DeepThinking\": \"\",\n                                \"MaxTokens\": 4096,\n                                \"ReasoningEffort\": \"\",\n                                \"ReplyFormat\": \"\",\n                                \"StopSequenceList\": [],\n                                \"Temperature\": 0.7,\n                                \"TopP\": 0.6\n                            }\n                        }\n                    },\n                    \"MultiModalUnderstandingModel\": {\n                        \"Model\": {\n                            \"Alias\": \"youtu-mllm\",\n                            \"HistoryLimit\": 5,\n                            \"ModelId\": \"Youtu/youtu-mllm\",\n                            \"ModelParams\": {\n                                \"DeepThinking\": \"\",\n                                \"MaxTokens\": 4000,\n                                \"ReasoningEffort\": \"\",\n                                \"ReplyFormat\": \"\",\n                                \"StopSequenceList\": [],\n                                \"Temperature\": 0.7,\n                                \"TopP\": 0.6\n                            }\n                        }\n                    },\n                    \"PromptRewriteModel\": {\n                        \"Model\": {\n                            \"Alias\": \"youtu-rewrite\",\n                            \"HistoryLimit\": 5,\n                            \"ModelId\": \"Youtu/youtu-rewrite\",\n                            \"ModelParams\": {\n                                \"DeepThinking\": \"\",\n                                \"MaxTokens\": 4000,\n                                \"ReasoningEffort\": \"\",\n                                \"ReplyFormat\": \"\",\n                                \"StopSequenceList\": [],\n                                \"Temperature\": 0.6,\n                                \"TopP\": 0.9\n                            }\n                        }\n                    },\n                    \"ThinkModel\": {\n                        \"Model\": {\n                            \"Alias\": \"youtu-intent-pro\",\n                            \"HistoryLimit\": 5,\n                            \"ModelId\": \"Youtu/youtu-intent-pro\",\n                            \"ModelParams\": {\n                                \"DeepThinking\": \"\",\n                                \"MaxTokens\": 4000,\n                                \"ReasoningEffort\": \"\",\n                                \"ReplyFormat\": \"\",\n                                \"StopSequenceList\": [],\n                                \"Temperature\": 0,\n                                \"TopP\": 0.8\n                            }\n                        }\n                    }\n                },\n                \"WebSearch\": {\n                    \"ApiKey\": \"\",\n                    \"Enabled\": false,\n                    \"Provider\": \"\",\n                    \"TopN\": 0\n                },\n                \"Workflow\": {\n                    \"EnablePDL\": false\n                }\n            },\n            \"Metadata\": {\n                \"AppId\": \"2060280711767285184\",\n                \"AppMode\": 1,\n                \"Avatar\": \"https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png\",\n                \"CreateTime\": \"1780044175\",\n                \"Description\": \"\",\n                \"Name\": \"我的智能体应用03\",\n                \"SpaceId\": \"default_space\",\n                \"UpdateTime\": \"1780384282\"\n            },\n            \"SecretInfo\": {\n                \"AppKey\": \"cwwjX**************************************************************************************c************************nptQWMSAtFeD\",\n                \"CreateTime\": \"1780044174\"\n            },\n            \"ShareUrlInfo\": {\n                \"AccessControl\": {\n                    \"AccessType\": 3,\n                    \"Enabled\": true,\n                    \"Whitelist\": [\n                        {\n                            \"Type\": 1,\n                            \"Values\": [\n                                \"70000000\"\n                            ]\n                        }\n                    ]\n                },\n                \"ShareUrl\": \"https://tde.xiaowei.cloud.tencent.com/webim_exp/#/chat/leSlPm\"\n            },\n            \"Status\": {\n                \"Status\": 2,\n                \"StatusDescription\": \"运行中\"\n            }\n        },\n        \"RequestId\": \"ecb7efc6-5070-4c4b-818d-5110026d5cbe\"\n    }\n}",
+        "title": "DescribeApp"
+      }
+    ],
+    "DescribeAppSummaryList": [
+      {
+        "document": "查询应用列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppSummaryList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"FilterList\": [\n        {\n            \"Name\": \"AppStatus\",\n            \"ValueList\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"Query\": \"信息\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppSummaryList\": [\n            {\n                \"AppId\": \"206*************320\",\n                \"AppMode\": 2,\n                \"Avatar\": \"https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png\",\n                \"Name\": \"测试的应用信息\",\n                \"OperationInfo\": {\n                    \"Creator\": \"wu******g\",\n                    \"CreatorUin\": \"700****06554\",\n                    \"CreatorUserAccount\": \"\",\n                    \"UpdateTime\": \"1780042649\",\n                    \"Updater\": \"wu******g\",\n                    \"UpdaterUin\": \"700000306554\"\n                },\n                \"PermissionIdList\": [\n                    \"adpAppEdit\"\n                ],\n                \"Status\": {\n                    \"Status\": 1,\n                    \"StatusDescription\": \"未上线\"\n                },\n                \"SubStatus\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5163c167-3c4e-487d-9c1d-b42896dc1c8e\"\n    }\n}",
+        "title": "DescribeAppSummaryList"
+      }
+    ],
+    "DescribeConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConversation\n<公共请求参数>\n\n{\n    \"ConversationId\": \"4abd149a-e010-4a6c-bc52-1132658f149d\",\n    \"Type\": 2,\n    \"AppKey\": \"1\",\n    \"ShareCode\": \"1\",\n    \"UserId\": \"1\",\n    \"LoginSubAccountUin\": \"700001046587\",\n    \"LoginUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"2049746910862560576\",\n        \"ConversationId\": \"4abd149a-e010-4a6c-bc52-1132658f149d\",\n        \"CreateTime\": \"2026-04-30T15:05:27+08:00\",\n        \"Type\": 2,\n        \"UpdateTime\": \"2026-04-30T16:01:05+08:00\",\n        \"Workspace\": {\n            \"StorageType\": \"sandbox_e2b\",\n            \"WorkspaceId\": \"6576c839-839c-4a54-b820-408aec31dbe0\"\n        },\n        \"RequestId\": \"7fcd93a2-6fe4-4809-9c9e-d03dad2a0aaf\"\n    }\n}",
+        "title": "获取Skills模式的conversation"
+      }
+    ],
+    "DescribeConversationList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConversationList\n<公共请求参数>\n\n{\n    \"Type\": 2,\n    \"AppId\": \"2056226819910862592\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConversationList\": [\n            {\n                \"AppId\": \"2056226819910862592\",\n                \"ConversationId\": \"1038a37e-93b6-4f1f-b4cc-a73ce87a1c39\",\n                \"CreateTime\": \"2026-05-18T21:58:38+08:00\",\n                \"Type\": 2,\n                \"UpdateTime\": \"2026-05-19T16:12:32+08:00\"\n            }\n        ],\n        \"TotalCount\": \"4\",\n        \"RequestId\": \"9b13a60e-39cc-4390-8a09-f6741b2c73f1\"\n    }\n}",
+        "title": "DescribeConversationList"
+      }
+    ],
+    "DescribeConversationMessageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConversationMessageList\n<公共请求参数>\n\n{\n    \"ConversationId\": \"4abd149a-e010-4a6c-bc52-1132658f149d\",\n    \"Type\": 2,\n    \"AppKey\": \"1\",\n    \"RecordId\": \"msg_db8387b0-8b9f-49c9-9d05-253c7e9748a6_1\",\n    \"RecordQueryDirection\": 1,\n    \"ShareCode\": \"1\",\n    \"UserId\": \"1\",\n    \"Limit\": 50,\n    \"LoginSubAccountUin\": \"700001046587\",\n    \"LoginUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FirstRecordId\": \"req_2f90efac-e51f-4c6e-b1b4-2e1234c1319d\",\n        \"HasMoreAfter\": false,\n        \"HasMoreBefore\": false,\n        \"LastRecordId\": \"rcd_db8387b0-8b9f-49c9-9d05-253c7e9748a6\",\n        \"Messages\": [\n            {\n                \"Contents\": [\n                    {\n                        \"CustomParams\": [],\n                        \"OptionCards\": [],\n                        \"QuoteInfos\": [],\n                        \"References\": [],\n                        \"Tasks\": [],\n                        \"Text\": \"你好\",\n                        \"Type\": \"text\"\n                    }\n                ],\n                \"ConversationId\": \"4abd149a-e010-4a6c-bc52-1132658f149d\",\n                \"Icon\": \"\",\n                \"MessageId\": \"user_2f90efac-e51f-4c6e-b1b4-2e1234c1319d_content\",\n                \"Name\": \"question\",\n                \"RecordId\": \"req_2f90efac-e51f-4c6e-b1b4-2e1234c1319d\",\n                \"Role\": \"user\",\n                \"Status\": \"success\",\n                \"StatusDesc\": \"回复完成\",\n                \"Title\": \"用户提问\",\n                \"Type\": \"question\"\n            }\n        ],\n        \"RequestId\": \"59eb048d-7ad3-486b-85e5-e44f38178bba\"\n    }\n}",
+        "title": "ClawAgent模式会话消息查询"
+      }
+    ],
+    "DescribeLatestRelease": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLatestRelease\n<公共请求参数>\n\n{\n    \"AppId\": \"206************5184\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsChanged\": false,\n        \"ReleaseSummary\": {\n            \"ChannelIdList\": [],\n            \"CreateTime\": \"1780389728\",\n            \"Description\": \"我的发布信息\",\n            \"ReleaseId\": \"2061***********7232\",\n            \"Status\": 3,\n            \"StatusDescription\": \"发布成功\"\n        },\n        \"RequestId\": \"0db8ec29-fb0f-45a3-8067-57206b475d1b\"\n    }\n}",
+        "title": "DescribeLatestRelease"
+      }
+    ],
+    "DescribeModelList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"PageNumber\": 0,\n    \"PageSize\": 24,\n    \"Query\": \"youtu\",\n    \"ModelScene\": 0,\n    \"FilterList\": [\n        {\n            \"Name\": \"DeveloperName\",\n            \"ValueList\": [\n                \"\"\n            ]\n        },\n        {\n            \"Name\": \"ProviderName\",\n            \"ValueList\": [\n                \"\"\n            ]\n        },\n        {\n            \"Name\": \"ProviderType\",\n            \"ValueList\": [\n                \"Self\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelList\": [\n            {\n                \"BadgeList\": [],\n                \"DeveloperInfo\": {\n                    \"Alias\": \"腾讯优图\",\n                    \"Name\": \"Youtu\"\n                },\n                \"LimitInfo\": {\n                    \"ContextLengthDescription\": \"16K\",\n                    \"InputLengthLimit\": 12000,\n                    \"PromptLengthLimit\": 4000\n                },\n                \"ModelBasic\": {\n                    \"Description\": \"针对企业知识问答场景精调训练，擅长多模态知识问答，适合图文表答案关联输出、数学计算、逻辑推理、表格问答等复杂场景有需求的场景。\",\n                    \"IconUrl\": \"https://cdn.xiaowei.qq.com/adp/assets/youtu.png\",\n                    \"ModelId\": \"Youtu/youtu-mrc-pro\",\n                    \"ModelType\": 1,\n                    \"Name\": \"youtu-mrc-pro\"\n                },\n                \"ParameterList\": [\n                    {\n                        \"DefaultValue\": \"0.6\",\n                        \"EnumValueList\": [],\n                        \"MaxValue\": 1,\n                        \"MinValue\": 0.1,\n                        \"Name\": \"top_p\",\n                        \"Type\": 1\n                    },\n                    {\n                        \"DefaultValue\": \"0.7\",\n                        \"EnumValueList\": [],\n                        \"MaxValue\": 2,\n                        \"MinValue\": 0,\n                        \"Name\": \"temperature\",\n                        \"Type\": 1\n                    },\n                    {\n                        \"DefaultValue\": \"4000\",\n                        \"EnumValueList\": [],\n                        \"MaxValue\": 16000,\n                        \"MinValue\": 1,\n                        \"Name\": \"max_tokens\",\n                        \"Type\": 2\n                    }\n                ],\n                \"PropertyList\": [],\n                \"ProviderInfo\": {\n                    \"Alias\": \"腾讯优图\",\n                    \"Name\": \"Youtu\",\n                    \"ProviderType\": 1\n                },\n                \"StatusInfo\": {\n                    \"Concurrency\": 0,\n                    \"IsExclusive\": false,\n                    \"ResourceStatus\": 0\n                },\n                \"TagList\": [\n                    \"文本推理\"\n                ]\n            }\n        ],\n        \"RequestId\": \"20fe36e6-1e65-45f6-a779-3d32886061f0\",\n        \"TotalCount\": 9\n    }\n}",
+        "title": "模型列表"
+      }
+    ],
+    "DescribePlugin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"c813b306-e49a-46ac-9bb9-c6897df4de4d\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Plugin\": {\n            \"Config\": {\n                \"MCPPluginConfig\": {\n                    \"ExternalMCPServerUrl\": \"\",\n                    \"MCPServerUrl\": \"\",\n                    \"MCPTransport\": 1,\n                    \"PluginHeader\": [],\n                    \"PluginQuery\": [],\n                    \"SSEReadTimeout\": 300,\n                    \"Timeout\": 60\n                }\n            },\n            \"CreateTime\": \"1745313719\",\n            \"NeedOnline\": false,\n            \"Operation\": {\n                \"AllowExternalAccess\": false,\n                \"BillingType\": 1,\n                \"CategoryKey\": \"productivity_tools\",\n                \"Introduction\": \"插件描述：该接口支持对全网范围进行网页搜索。\",\n                \"IsRecommended\": false\n            },\n            \"PluginId\": \"c813b306-e49a-46ac-9bb9-c6897df4de4d\",\n            \"PluginVersion\": 2,\n            \"Profile\": {\n                \"Author\": \"智能体开发平台\",\n                \"Description\": \"搜索引擎工具，支持对全网范围进行网页搜索\",\n                \"IconUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/%E5%AE%98%E6%96%B9%E6%8F%92%E4%BB%B64%E6%9C%8817%E5%8F%B7%202/%E6%90%9C%E7%8B%97%E6%90%9C%E7%B4%A2.png\",\n                \"Name\": \"搜狗搜索\",\n                \"PluginClass\": 1,\n                \"PluginKind\": 2,\n                \"PluginSource\": 1\n            },\n            \"Statistics\": {\n                \"CallCount\": 355,\n                \"ToolCount\": 1\n            },\n            \"Status\": 1,\n            \"ToolList\": [\n                {\n                    \"Billing\": {\n                        \"BillingType\": 1\n                    },\n                    \"CallCount\": 355,\n                    \"Description\": \"搜狗搜索工具，支持对全网范围进行网页搜索。\",\n                    \"Name\": \"SougouWebSearch\",\n                    \"PluginId\": \"c813b306-e49a-46ac-9bb9-c6897df4de4d\",\n                    \"ToolAccessMode\": 0,\n                    \"ToolConfig\": {\n                        \"MCPToolConfig\": {\n                            \"Inputs\": [\n                                {\n                                    \"AnyOf\": [],\n                                    \"DefaultValue\": \"\",\n                                    \"Description\": \"指定网址搜索，仅支持单域名筛选，例如:zhihu.com\",\n                                    \"IsGlobalHidden\": false,\n                                    \"IsRequired\": false,\n                                    \"Name\": \"Insite\",\n                                    \"OneOf\": [],\n                                    \"SubParams\": [],\n                                    \"Type\": 0\n                                }\n                            ],\n                            \"Outputs\": [\n                                {\n                                    \"Description\": \"\",\n                                    \"Name\": \"result\",\n                                    \"RenderMode\": 0,\n                                    \"SubParams\": [\n                                        {\n                                            \"Description\": \"\",\n                                            \"Name\": \"content\",\n                                            \"RenderMode\": 0,\n                                            \"SubParams\": [\n                                                {\n                                                    \"Description\": \"\",\n                                                    \"Name\": \"type\",\n                                                    \"RenderMode\": 0,\n                                                    \"SubParams\": [],\n                                                    \"Type\": 0\n                                                }\n                                            ],\n                                            \"Type\": 9\n                                        }\n                                    ],\n                                    \"Type\": 4\n                                }\n                            ]\n                        }\n                    },\n                    \"ToolId\": \"1146f40c-d466-43f1-94a8-721b2b71e711\"\n                }\n            ],\n            \"UpdateTime\": \"1780533001\",\n            \"UserState\": {\n                \"IsFavorite\": false,\n                \"IsInWhiteList\": false,\n                \"WhiteListType\": 0\n            }\n        },\n        \"RequestId\": \"6b47ad2d-8c26-4859-8518-4e2837096e8e\"\n    }\n}",
+        "title": "获取插件详情"
+      }
+    ],
+    "DescribePluginSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePluginSummaryList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PluginList\": [\n            {\n                \"NeedOnline\": true,\n                \"Operation\": {\n                    \"AllowExternalAccess\": false,\n                    \"BillingType\": 2,\n                    \"CategoryKey\": \"image_processing\",\n                    \"Introduction\": \"\",\n                    \"IsRecommended\": true\n                },\n                \"PluginId\": \"adcda186-813b-4d70-bb3f-538a522fe4a5\",\n                \"Profile\": {\n                    \"Author\": \"智能体开发平台\",\n                    \"Description\": \"腾讯混元生3D（Tencent HY 3D）基于自研生成式AI大模型，为开发者提供专业、高效的3D内容生成API服务。该接口支持文生3D、图生3D、八视图生3D等多种生成方式，几何结构精准，纹理细节丰富，模型还原度高，并具备智能拓扑优化、组件化生成、自动UV展开等高级处理能力。\",\n                    \"IconUrl\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/public/adp/0d0b65f37d0651ef8c4dc61d7238617d_1780285068379.png\",\n                    \"Name\": \"混元生3D AI3D\",\n                    \"PluginClass\": 0,\n                    \"PluginKind\": 2,\n                    \"PluginSource\": 1\n                },\n                \"Statistics\": {\n                    \"CallCount\": 9,\n                    \"ToolCount\": 4\n                },\n                \"Status\": 1,\n                \"UserState\": {\n                    \"IsFavorite\": false,\n                    \"IsInWhiteList\": false,\n                    \"WhiteListType\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 787,\n        \"RequestId\": \"c3778060-c630-4243-80a3-58cd409898b4\"\n    }\n}",
+        "title": "拉取插件列表"
+      }
+    ],
+    "DescribeReleaseList": [
+      {
+        "document": "查询发布列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleaseList\n<公共请求参数>\n\n{\n    \"AppId\": \"206************5184\",\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ReleaseList\": [\n            {\n                \"CanExport\": true,\n                \"CanRollback\": true,\n                \"Description\": \"我的发布信息\",\n                \"FailCount\": 0,\n                \"Reason\": \"\",\n                \"ReleaseId\": \"206*************232\",\n                \"ReleaseVersion\": \"v20260602164208\",\n                \"Status\": 3,\n                \"StatusDescription\": \"发布成功\",\n                \"SuccessCount\": 0,\n                \"UpdateTime\": \"1780389728\",\n                \"Updater\": \"wu******g\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"838ba339-d78e-4162-a1a2-c69371cd0e3f\"\n    }\n}",
+        "title": "DescribeReleaseList"
+      }
+    ],
+    "DescribeReleaseSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleaseSummary\n<公共请求参数>\n\n{\n    \"AppId\": \"2060************184\",\n    \"ReleaseId\": \"2060***********3392\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReleaseSummary\": {\n            \"ChannelIdList\": [],\n            \"CreateTime\": \"1780045630\",\n            \"Description\": \"\",\n            \"ReleaseId\": \"2060***********3392\",\n            \"Status\": 3,\n            \"StatusDescription\": \"发布成功\"\n        },\n        \"RequestId\": \"f3052ff0-4b3f-40a8-ba05-5c2019a909c6\"\n    }\n}",
+        "title": "DescribeReleaseSummary"
+      }
+    ],
+    "DescribeSkillCategoryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillCategoryList\n<公共请求参数>\n\n{\n    \"LoginSubAccountUin\": \"100*********\",\n    \"LoginUin\": \"100*********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryList\": [\n            {\n                \"CategoryKey\": \"doc\",\n                \"CategoryName\": \"文档\"\n            }\n        ],\n        \"RequestId\": \"18793f85-8312-42cb-8c1c-b1b03bc91c4c\"\n    }\n}",
+        "title": "查询skill分类key"
+      }
+    ],
+    "DescribeSkillDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillDetail\n<公共请求参数>\n\n{\n    \"SkillId\": \"9e488e0c-ee1f-4b1c-b745-0e0e6f97e8c3\",\n    \"SpaceId\": \"default_space\",\n    \"VersionFilterList\": [\n        {\n            \"Name\": \"Perspective\",\n            \"ValueList\": [\n                \"USER\"\n            ]\n        }\n    ],\n    \"LoginUin\": \"'112****55'\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SkillDetail\": {\n            \"ReferenceSummaryList\": [],\n            \"SkillSummary\": {\n                \"ClassificationInfo\": {\n                    \"BillingType\": 0,\n                    \"BuiltinSource\": 0,\n                    \"CategoryKey\": \"\",\n                    \"CreateType\": 1,\n                    \"ProviderType\": 3,\n                    \"SourceLink\": \"\"\n                },\n                \"CurrentVersionInfo\": {\n                    \"AnalysisInfo\": {\n                        \"AnalysisStatus\": 2,\n                        \"RiskDescription\": \"\",\n                        \"RiskLevel\": 0,\n                        \"SecurityReportUrl\": \"https://tix.qq.com/search/skill?keyword=e8ef636d1c007ef8f26c7d291d5a1b57\"\n                    },\n                    \"Version\": \"1.0.5\",\n                    \"VersionId\": \"9cc26b2f-e364-41e6-b7d0-26a8bc19b944\",\n                    \"VersionStatus\": 0\n                },\n                \"IsFavorite\": false,\n                \"NoticeList\": [],\n                \"PermissionIdList\": [\n                    \"adpSkillsCenterEdit\"\n                ],\n                \"Profile\": {\n                    \"CreateTime\": \"1779071255\",\n                    \"Creator\": \"channel@qq.com\",\n                    \"Description\": \"Use this skill when the user asks for time, greeting, 时间, 问候, 打招呼, ping the greeting bot, 或显式提到 \\\"time-greeting\\\"。用途是返回一句带版本号、当前时间、时段问候语、固定签名句的问候消息，用来验证 skill 发布链路。\",\n                    \"DisplayDescription\": \"1688 商品自动采集并上传到 OZON 平台\",\n                    \"DisplayName\": \"time-greeting-update-高危\",\n                    \"IconUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/adp/skill/skill_icon/skill_default.jpg\",\n                    \"Name\": \"time-greeting\",\n                    \"UpdateTime\": \"1780902492\"\n                },\n                \"ShareList\": [\n                    {\n                        \"ApprovalId\": \"2058846163546755776\",\n                        \"ShareSkillId\": \"9e488e0c-ee1f-4b1c-b745-0e0e6f97e8c3_shared\",\n                        \"ShareVersion\": \"1.0.1\",\n                        \"ShareVersionId\": \"274d8c10-85c0-41df-bbb5-8bfa93553a85\",\n                        \"SkillId\": \"9e488e0c-ee1f-4b1c-b745-0e0e6f97e8c3\",\n                        \"Status\": 1\n                    }\n                ],\n                \"SkillId\": \"9e488e0c-ee1f-4b1c-b745-0e0e6f97e8c3\",\n                \"SkillStatus\": 3\n            },\n            \"VersionList\": [\n                {\n                    \"AnalysisInfo\": {\n                        \"AnalysisStatus\": 2,\n                        \"RiskDescription\": \"\",\n                        \"RiskLevel\": 0,\n                        \"SecurityReportUrl\": \"https://tix.qq.com/search/skill?keyword=e8ef636d1c007ef8f26c7d291d5a1b57\"\n                    },\n                    \"Version\": \"1.0.5\",\n                    \"VersionId\": \"9cc26b2f-e364-41e6-b7d0-26a8bc19b944\",\n                    \"VersionStatus\": 3\n                }\n            ]\n        },\n        \"RequestId\": \"06102b66-8b7f-4e2f-92fd-548bf447e60c\"\n    }\n}",
+        "title": "DescribeSkillDetail"
+      }
+    ],
+    "DescribeSkillReferenceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillReferenceList\n<公共请求参数>\n\n{\n    \"SkillId\": \"153f0077-d47d-4080-886c-da3408d70744\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReferenceList\": [\n            {\n                \"ReferenceSummaryList\": [\n                    {\n                        \"Owner\": \"channel@qq.com\",\n                        \"ReferenceId\": \"269332f4-975c-4fde-9c7e-60a1904f0e96\",\n                        \"ReferenceName\": \"channel@qq.com\",\n                        \"ReferenceType\": 3,\n                        \"SkillVersionId\": \"\",\n                        \"SpaceId\": \"default_space\",\n                        \"SpaceName\": \"默认工作空间\"\n                    }\n                ],\n                \"ReferenceType\": 3,\n                \"TotalCount\": 1\n            }\n        ],\n        \"RequestId\": \"72cdc353-77e6-4453-9f52-6ea51dd0c6dc\"\n    }\n}",
+        "title": "查看Skill引用"
+      }
+    ],
+    "DescribeSkillSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillSummaryList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"PageNumber\": 0,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"SkillSummaryList\": [\n            {\n                \"ClassificationInfo\": {\n                    \"BillingType\": 0,\n                    \"BuiltinSource\": 1,\n                    \"CategoryKey\": \"adp_knowledge_engine\",\n                    \"CreateType\": 99,\n                    \"ProviderType\": 1,\n                    \"SourceLink\": \"\"\n                },\n                \"CurrentVersionInfo\": {\n                    \"AnalysisInfo\": {\n                        \"AnalysisStatus\": 2,\n                        \"RiskDescription\": \"\",\n                        \"RiskLevel\": 0,\n                        \"SecurityReportUrl\": \"https://tix.qq.com/search/skill?keyword=4a6b07d90c8335b2bf1e62e70d86170c\"\n                    },\n                    \"Version\": \"1.0.17\",\n                    \"VersionId\": \"1c1f9828-bef0-4060-909a-06bb260119cc\"\n                },\n                \"IsFavorite\": false,\n                \"Profile\": {\n                    \"CreateTime\": \"1779183919\",\n                    \"Creator\": \"智能体开发平台\",\n                    \"Description\": \"管理 ADP 技能广场技能，重点支持 ADP 技能的搜索、查看详情、上架、更新，以及把搜索结果安装到本地目录。用户提出 ADP 技能广场、搜索技能、找技能、上架技能、发布技能、更新技能、查看技能详情、安装技能到本地、find skill、publish skill、update skill 等需求时使用。搜索时额外补充腾讯 Skillhub 结果；ADP 调用需要环境变量 ADPAPIKEY 和 ADPSPACEID。\",\n                    \"DisplayDescription\": \"管理和发现技能。用户提出“你能帮我做 X 吗”“能不能做 X”“帮我做 X”“怎么做 X”“有没有工具/方法做 X”等任何想完成某项具体任务的请求时（例如语音识别、视频生成等），或提出需要创建技能、搜索技能、找某类技能、安装技能到本地、上架/发布/更新技能、查看技能详情时使用。创建技能时优先配合 skill-creator 完成创建、打包，并询问是否上架 ADP 技能广场（即“添加到自定义 skills”）\",\n                    \"DisplayName\": \"ADP技能管理\",\n                    \"IconUrl\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/public/adp/skill/skill_icon/skill_default.jpg\",\n                    \"Name\": \"adp-skill-manager\",\n                    \"UpdateTime\": \"1780458720\"\n                },\n                \"ShareList\": [],\n                \"SkillId\": \"5dd39985-a496-4fef-b753-a9bdca1b8433\"\n            }\n        ],\n        \"TotalCount\": 84,\n        \"RequestId\": \"f9512cd3-fe81-4a11-a547-ef17996b195b\"\n    }\n}",
+        "title": "查询skill列表"
+      }
+    ],
+    "DescribeSpaceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceList\n<公共请求参数>\n\n{\n    \"LoginUin\": null,\n    \"LoginSubAccountUin\": null,\n    \"Query\": \"名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"303d27fd-40cf-4087-8a26-7b55ef382d86\",\n        \"SpaceList\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"默认工作空间\",\n                \"PermissionIdList\": [],\n                \"SpaceId\": \"default_space\"\n            },\n            {\n                \"Description\": \"描述修改\",\n                \"Name\": \"测试名称修改\",\n                \"PermissionIdList\": [\n                    \"adpSpace.DeleteSpace\",\n                    \"adpSpace.ModifySpace\"\n                ],\n                \"SpaceId\": \"rsWOboao\"\n            }\n        ],\n        \"TotalCount\": \"2\"\n    }\n}",
+        "title": "获取空间列表"
+      }
+    ],
+    "DescribeSystemVariableList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSystemVariableList\n<公共请求参数>\n\n{\n    \"AppId\": \"206***********85184\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SystemVariableList\": [\n            {\n                \"Description\": \"本轮对话内容\",\n                \"Name\": \"SYS.UserQuery\"\n            }\n        ],\n        \"RequestId\": \"9a337709-a67a-4d9f-a484-8450c5608b30\"\n    }\n}",
+        "title": "DescribeSystemVariableList"
+      }
+    ],
+    "DescribeVariable": [
+      {
+        "document": "查询环境变量",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVariable\n<公共请求参数>\n\n{\n    \"AppId\": \"2060*************84\",\n    \"VariableId\": \"9cdbf948-4d12-440a-8eeb-2e2fdaf67d5f\",\n    \"ModuleType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Variable\": {\n            \"DefaultFileName\": \"\",\n            \"DefaultValue\": \"2\",\n            \"Description\": \"dd\",\n            \"ModuleType\": 1,\n            \"Name\": \"mmd\",\n            \"Type\": 1,\n            \"VariableId\": \"9cdb***********************fdaf67d5f\"\n        },\n        \"RequestId\": \"6c04de0b-cf0e-43af-b850-4015ca115890\"\n    }\n}",
+        "title": "DescribeVariable"
+      }
+    ],
+    "DescribeVariableList": [
+      {
+        "document": "查询变量列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVariableList\n<公共请求参数>\n\n{\n    \"AppId\": \"206*************184\",\n    \"ModuleType\": 1,\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"VariableList\": [\n            {\n                \"DefaultFileName\": \"\",\n                \"DefaultValue\": \"2\",\n                \"Description\": \"dd\",\n                \"ModuleType\": 1,\n                \"Name\": \"mmd\",\n                \"Type\": 1,\n                \"VariableId\": \"9cd*****************e*b-2e2fdaf67d5f\"\n            }\n        ],\n        \"RequestId\": \"92e55ece-d96d-41aa-b5cb-a8256174912a\"\n    }\n}",
+        "title": "DescribeVariableList"
+      }
+    ],
+    "FavoritePlugin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FavoritePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"adcda186-813b-4d70-bb3f-538a522fe4a5\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d8b31e4-c42e-46e4-adb4-8567ed2d885a\"\n    }\n}",
+        "title": "收藏插件"
+      }
+    ],
+    "FavoriteSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FavoriteSkill\n<公共请求参数>\n\n{\n    \"LoginUin\": \"700***324384\",\n    \"LoginSubAccountUin\": \"700***324384\",\n    \"SkillId\": \"8988*******************-ca5d3bdd0ffc\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3b1e939-c42f-44fd-b4ef-2941833feba9\"\n    }\n}",
+        "title": "收藏skill"
+      }
+    ],
+    "ModifyAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgent\n<公共请求参数>\n\n{\n    \"AppId\": \"2064**********06560\",\n    \"AgentId\": \"ecfd5**************************f38f6\",\n    \"Agent\": {\n        \"Instructions\": \"你是一个智能助手\"\n    },\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"Instructions\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be61b750-4859-46d5-aa6b-36edbcc0cc3c\"\n    }\n}",
+        "title": "修改 Agent 配置"
+      }
+    ],
+    "ModifyApp": [
+      {
+        "document": "修改应用",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"AppId\": \"2070037792884085504\",\n    \"AppMode\": 2,\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"AppMode\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"2070037792884085504\",\n        \"UpdateTime\": \"1782819327\",\n        \"RequestId\": \"f4871251-9d39-4284-ae9a-349307e05913\"\n    }\n}",
+        "title": "ModifyApp"
+      }
+    ],
+    "ModifyConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConversation\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"AppId\": \"205***********75456\",\n    \"ConversationId\": \"e9261687-****-*********-1980aedad3f2\",\n    \"Title\": \"查找深大校长\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33d1dfd7-b8fd-4487-8edb-f2f635b3d895\"\n    }\n}",
+        "title": "修改会话标题"
+      }
+    ],
+    "ModifyPlugin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"acb14a04-a049-4a0c-bafa-9670e5d949f2\",\n    \"PluginVersion\": 2,\n    \"Profile\": {\n        \"Description\": \"天气插件测试\",\n        \"IconUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/plugin_files/%E6%8F%92%E4%BB%B6-%E9%BB%98%E8%AE%A4.png\",\n        \"Name\": \"CAPI-Test-modify\",\n        \"PluginClass\": 0,\n        \"PluginKind\": 2\n    },\n    \"Config\": {\n        \"MCPPluginConfig\": {\n            \"MCPServerUrl\": \"https://uat-mcp-order-service.fxnotary.com/sse\",\n            \"MCPTransport\": 0,\n            \"PluginHeader\": [\n                {\n                    \"IsGlobalHidden\": false,\n                    \"IsRequired\": true,\n                    \"Name\": \"Authorization\",\n                    \"Value\": \"Bearer db4fc7ab4e3d424a9f336507e58e58ae5e606222deac46a6\"\n                }\n            ],\n            \"PluginQuery\": [],\n            \"SSEReadTimeout\": 300,\n            \"Timeout\": 15,\n            \"AuthConfig\": {\n                \"AuthType\": 0\n            }\n        }\n    },\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"Config.Timeout\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"04d0b5d7-31ff-4b90-a6f7-62f7133fd658\"\n    }\n}",
+        "title": "修改插件示例"
+      }
+    ],
+    "ModifySkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySkill\n<公共请求参数>\n\n{\n    \"LoginUin\": \"700***324384\",\n    \"LoginSubAccountUin\": \"700***324384\",\n    \"SpaceId\": \"default_space\",\n    \"DisplayName\": \"skill_****\",\n    \"DisplayDescription\": \"skill_****\",\n    \"FileUrl\": \"public*****il*********etter_v2026*******0*****ckag***ip\",\n    \"SkillId\": \"8988f8b5-**************-ca5d3bdd0ffc\",\n    \"SkillVersion\": \"1.0.6\",\n    \"UpdateDescription\": \"*新版*\",\n    \"IconUrl\": \"https://qidian-*************************************.myqcloud.com/public/2004076269431393728/image/ZdLTEaZpzWYlNEbNYTRL-2047574044935267136.png\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"970da2a0-a809-444f-aa5f-57c6c67ff7d7\"\n    }\n}",
+        "title": "修改skill"
+      }
+    ],
+    "ModifySpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpace\n<公共请求参数>\n\n{\n    \"Name\": \"编辑名称\",\n    \"Description\": \"描述更改\",\n    \"LoginUin\": null,\n    \"LoginSubAccountUin\": null,\n    \"SpaceId\": \"UYiGYydT\",\n    \"FieldMask\": {\n        \"Paths\": [\n            \"Name\",\n            \"Description\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a7b25a8-59c1-4920-8881-c6199ab6d1c5\"\n    }\n}",
+        "title": "编辑空间"
+      }
+    ],
+    "ModifyVariable": [
+      {
+        "document": "修改应用",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVariable\n<公共请求参数>\n\n{\n    \"AppId\": \"206***********85184\",\n    \"Variable\": {\n        \"DefaultFileName\": \"1.doc\",\n        \"DefaultValue\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/public/174454419303809*********2**7********184/ima*****************************751476*******4*d*c*\",\n        \"Description\": \"d****\",\n        \"ModuleType\": 0,\n        \"Name\": \"d********cv\",\n        \"Type\": 11,\n        \"VariableId\": \"b4d5dbd1-f090-4323-bf2b-5b4211df1631\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea194623-1b38-423d-944e-61c9daf4a61b\"\n    }\n}",
+        "title": "ModifyVariable"
+      }
+    ],
+    "ReleaseSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseSkill\n<公共请求参数>\n\n{\n    \"LoginUin\": \"700***324384\",\n    \"LoginSubAccountUin\": \"700***324384\",\n    \"SkillId\": \"8988*******************-ca5d3bdd0ffc\",\n    \"SpaceId\": \"default_space\",\n    \"VersionId\": \"39**5***-*9**-48*********f9d99a31b35\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3b1e939-c42f-44fd-b4ef-2941833feba9\"\n    }\n}",
+        "title": "上架skill"
+      }
+    ],
+    "ResetConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConversation\n<公共请求参数>\n\n{\n    \"ConversationId\": \"4abd149a-e010-4a6c-bc52-1132658f149d\",\n    \"Type\": 2,\n    \"AppKey\": \"1\",\n    \"ShareCode\": \"1\",\n    \"UserId\": \"1\",\n    \"LoginSubAccountUin\": \"700001046587\",\n    \"LoginUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75452a02-8afa-4953-a121-9aba019ea326\"\n    }\n}",
+        "title": "重置ClawAgent模式对话"
+      }
+    ],
+    "RetryRelease": [
+      {
+        "document": "发布重试",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryRelease\n<公共请求参数>\n\n{\n    \"AppId\": \"2060************184\",\n    \"ReleaseId\": \"2060**********03392\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"050abbc0-f26c-45e9-9d8f-74bccd9b6251\"\n    }\n}",
+        "title": "RetryRelease"
+      }
+    ],
+    "RollbackRelease": [
+      {
+        "document": "回滚发布",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackRelease\n<公共请求参数>\n\n{\n    \"AppId\": \"206*************184\",\n    \"ReleaseId\": \"206**********003392\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02736d64-307d-40a8-aaff-ee1191e0d7f7\"\n    }\n}",
+        "title": "RollbackRelease"
+      }
+    ],
+    "UnfavoritePlugin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnfavoritePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"adcda186-813b-4d70-bb3f-538a522fe4a5\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75752bbd-8bf9-4859-bb0f-24cbfb0c5cb2\"\n    }\n}",
+        "title": "取消收藏插件"
+      }
+    ],
+    "UnfavoriteSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnfavoriteSkill\n<公共请求参数>\n\n{\n    \"LoginUin\": \"700***324384\",\n    \"LoginSubAccountUin\": \"700***324384\",\n    \"SkillId\": \"8988*******************-ca5d3bdd0ffc\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3b1e939-c42f-44fd-b4ef-2941833feba9\"\n    }\n}",
+        "title": "取消收藏skill"
+      }
+    ]
+  },
+  "version": "1.0"
+}

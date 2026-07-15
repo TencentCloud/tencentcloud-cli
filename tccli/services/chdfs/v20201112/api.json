@@ -916,6 +916,15 @@
           "name": "OwnerUin",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始权限组ID标记",
+          "example": "ag-xxxxxx",
+          "member": "string",
+          "name": "AccessGroupIdMarker",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -931,6 +940,26 @@
           "name": "AccessGroups",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标识是否已获取全量",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOver",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一次请求起始权限组ID标记",
+          "example": "ag-xxxxxx",
+          "member": "string",
+          "name": "NextAccessGroupIdMarker",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1078,7 +1107,17 @@
     },
     "DescribeFileSystemsRequest": {
       "document": "DescribeFileSystems请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始文件系统ID标记",
+          "example": "f04maoxxxxxx",
+          "member": "string",
+          "name": "FileSystemIdMarker",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeFileSystemsResponse": {
@@ -1092,6 +1131,26 @@
           "name": "FileSystems",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标识是否已获取全量",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOver",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一次请求起始文件系统ID标记",
+          "example": "f04bbbxxxxxx",
+          "member": "string",
+          "name": "NextFileSystemIdMarker",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1279,6 +1338,15 @@
           "name": "FileSystemId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始回热任务ID标记",
+          "example": "12",
+          "member": "uint64",
+          "name": "RestoreTaskIdMarker",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1292,8 +1360,28 @@
           "example": "无",
           "member": "RestoreTask",
           "name": "RestoreTasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标识是否已获取全量",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOver",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一次请求起始回热任务ID标记",
+          "example": "13",
+          "member": "uint64",
+          "name": "NextRestoreTaskIdMarker",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1765,7 +1853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "挂载点ID",
+          "document": "<p>挂载点ID</p>",
           "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
           "name": "MountPointId",
@@ -1774,7 +1862,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载点名称",
+          "document": "<p>挂载点名称</p>",
           "example": "mp-test",
           "member": "string",
           "name": "MountPointName",
@@ -1783,7 +1871,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载点状态",
+          "document": "<p>挂载点状态</p><p>枚举值：</p><ul><li>1： 打开</li><li>2： 关闭</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "MountPointStatus",
@@ -1912,7 +2000,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "回热任务ID",
+          "document": "<p>回热任务ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "RestoreTaskId",
@@ -1923,7 +2011,7 @@
         },
         {
           "disabled": false,
-          "document": "回热任务文件路径",
+          "document": "<p>回热任务文件路径，不支持目录和通配符</p>",
           "example": "/test/file0",
           "member": "string",
           "name": "FilePath",
@@ -1934,7 +2022,7 @@
         },
         {
           "disabled": false,
-          "document": "回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）",
+          "document": "<p>回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -1945,7 +2033,7 @@
         },
         {
           "disabled": false,
-          "document": "指定恢复出的临时副本的有效时长（单位天）",
+          "document": "<p>指定恢复出的临时副本的有效时长（单位天）</p>",
           "example": "7",
           "member": "uint64",
           "name": "Days",
@@ -1956,7 +2044,7 @@
         },
         {
           "disabled": false,
-          "document": "回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）",
+          "document": "<p>回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -1967,7 +2055,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2019-07-30T16:24:38+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",

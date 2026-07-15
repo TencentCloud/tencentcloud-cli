@@ -1,4 +1,32 @@
-**Example 1: 查询批量撤销任务结果**
+**Example 1: 查询全量撤销企业合同任务结果**
+
+查询全量撤销企业合同任务结果
+
+Input: 
+
+```
+tccli ess DescribeCancelFlowsTask --cli-unfold-argument  \
+    --Operator.UserId yDwf3UUckps8dvypUEfH3DjwIpMfa0uw \
+    --TaskId yD3POUUckpzz6onbUy8Im5DBfEstv2zM \
+    --CancelType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FailureFlows": [],
+        "SuccessFlowIds": [
+            "yD3PCUUckpzv5at9U1UxZEpOywg0E9oG"
+        ],
+        "TaskId": "yD3POUUckpzz6onbUy8Im5DBfEstv2zM",
+        "TaskStatus": "END",
+        "RequestId": "b3c22211-aec1-4948-8676-28c1f1d33f87"
+    }
+}
+```
+
+**Example 2: 查询批量撤销任务结果**
 
 通过TaskId查询批量撤销任务结果
 

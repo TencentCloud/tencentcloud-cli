@@ -7,7 +7,8 @@ Input:
 ```
 tccli ess CreateEmployeeQualificationSealQrCode --cli-unfold-argument  \
     --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
-    --HintText 请授权执业章
+    --HintText 请授权执业章 \
+    --UserData QmFzZTYOIEJhc2U2NCA=
 ```
 
 Output: 

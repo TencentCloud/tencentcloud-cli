@@ -15,6 +15,8 @@ Output:
 ```
 {
     "Response": {
+        "Principal": "",
+        "Secret": "fadadafd",
         "RequestId": "abcfafdaafasda"
     }
 }

@@ -59,7 +59,7 @@
     "CreateDBInstanceHour": [
       {
         "document": "当前示例仅适合4.0版本，其余版本请严格参考传入参数中各版本说明项",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"GoodsNum\": 1,\n    \"Clone\": 1,\n    \"Memory\": 4,\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": 250,\n    \"NodeNum\": 2,\n    \"ReplicateSetNum\": 1,\n    \"MachineCode\": \"HIO10G\",\n    \"MongoVersion\": \"MONGO_50_WT\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"GoodsNum\": 1,\n    \"Clone\": 1,\n    \"Memory\": 4,\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": 250,\n    \"NodeNum\": 2,\n    \"ReplicateSetNum\": 1,\n    \"MachineCode\": \"HIO10G\",\n    \"MongoVersion\": \"MONGO_40_WT\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\n        \"DealId\": \"20190709160000003502416120946732\",\n        \"InstanceIds\": [\n            \"cmgo-m26c****\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
       }
@@ -594,10 +594,10 @@
     ],
     "ModifyInstanceParams": [
       {
-        "document": "用户发起修改其mongoDB的参数配置",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p6umb\",\n    \"InstanceParams\": [\n        {\n            \"Value\": \"operation.profiling.slowOpThresholdMs\",\n            \"Key\": \"operation.profiling.slowOpThresholdMs\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Changed\": true,\n        \"RequestId\": \"e51b4590-db7b-4835-9899-1f5c33f92fbf\",\n        \"TaskId\": 0\n    }\n}",
-        "title": "修改mongoDB实例参数"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-g1fh****\",\n    \"InstanceParams\": [\n        {\n            \"Key\": \"operationProfiling.mode\",\n            \"Value\": \"off\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Changed\": true,\n        \"TaskId\": 100000745,\n        \"RequestId\": \"87582bb0-3be1-41e8-b54b-ecd8beb9a132\"\n    }\n}",
+        "title": "修改 MongoDB 实例参数"
       }
     ],
     "ModifySRVConnectionUrl": [
@@ -626,10 +626,10 @@
     ],
     "PromoteDBInstanceToActive": [
       {
-        "document": "灾备实例转正",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstances\n<公共请求参数>\n\n{\n    \"MasterId\": \"cmgo-ggh7rpz5\",\n    \"InstanceId\": \"cmgo-a7bb6vd7\"\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PromoteDBInstanceToActive\n<公共请求参数>\n\n{\n    \"MasterId\": \"cmgo-********\",\n    \"InstanceId\": \"cmgo-********\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"230c9c0e-a56f-4639-81ee-3cb46905c087\",\n        \"FlowId\": 10001\n    }\n}",
-        "title": "灾备实例转正"
+        "title": "灾备或只读实例转正"
       }
     ],
     "RenameInstance": [

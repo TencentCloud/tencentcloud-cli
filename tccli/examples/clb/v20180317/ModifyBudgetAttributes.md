@@ -9,7 +9,9 @@ tccli clb ModifyBudgetAttributes --cli-unfold-argument  \
     --BudgetId budget-1a2b3c4d \
     --BudgetName production-budget-v2 \
     --BudgetConfigs.0.MaxBudget 200 \
-    --BudgetConfigs.0.BudgetDuration 30d \
+    --BudgetConfigs.0.BudgetDuration 7d \
+    --BudgetConfigs.1.MaxBudget 2000 \
+    --BudgetConfigs.1.BudgetDuration 30d \
     --RateLimitConfig.TPM 200000 \
     --RateLimitConfig.RPM 120
 ```

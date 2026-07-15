@@ -70,6 +70,13 @@
       "output": "CommitConsumerOffsetsResponse",
       "status": "online"
     },
+    "CreateAgentApplication": {
+      "document": "本接口用于创建Agent应用",
+      "input": "CreateAgentApplicationRequest",
+      "name": "创建Agent应用",
+      "output": "CreateAgentApplicationResponse",
+      "status": "online"
+    },
     "CreateAlarm": {
       "document": "本接口用于创建告警策略。",
       "input": "CreateAlarmRequest",
@@ -308,6 +315,13 @@
       "output": "CreateRemoteWriteTaskResponse",
       "status": "online"
     },
+    "CreateS3Recharge": {
+      "document": "本接口用于创建aws导入任务",
+      "input": "CreateS3RechargeRequest",
+      "name": "创建aws导入任务",
+      "output": "CreateS3RechargeResponse",
+      "status": "online"
+    },
     "CreateScheduledSql": {
       "document": "本接口用于创建定时SQL分析任务",
       "input": "CreateScheduledSqlRequest",
@@ -355,6 +369,13 @@
       "input": "CreateWebCallbackRequest",
       "name": "创建告警渠道回调配置",
       "output": "CreateWebCallbackResponse",
+      "status": "online"
+    },
+    "DeleteAgentApplication": {
+      "document": "本接口用于删除Agent应用",
+      "input": "DeleteAgentApplicationRequest",
+      "name": "删除Agent应用",
+      "output": "DeleteAgentApplicationResponse",
       "status": "online"
     },
     "DeleteAlarm": {
@@ -574,6 +595,13 @@
       "output": "DeleteRecordingRuleYamlTaskResponse",
       "status": "online"
     },
+    "DeleteS3Recharge": {
+      "document": "本接口用于删除aws导入任务",
+      "input": "DeleteS3RechargeRequest",
+      "name": "删除aws导入任务",
+      "output": "DeleteS3RechargeResponse",
+      "status": "online"
+    },
     "DeleteScheduledSql": {
       "document": "本接口用于删除定时SQL分析任务",
       "input": "DeleteScheduledSqlRequest",
@@ -628,6 +656,13 @@
       "input": "DescribeAccountInfoRequest",
       "name": "获取腾讯云用户信息",
       "output": "DescribeAccountInfoResponse",
+      "status": "online"
+    },
+    "DescribeAgentApplications": {
+      "document": "获取Agent应用列表",
+      "input": "DescribeAgentApplicationsRequest",
+      "name": "获取Agent应用列表",
+      "output": "DescribeAgentApplicationsResponse",
       "status": "online"
     },
     "DescribeAlarmNotices": {
@@ -973,6 +1008,13 @@
       "output": "DescribeRecordingRuleYamlTaskResponse",
       "status": "online"
     },
+    "DescribeS3Recharges": {
+      "document": "本接口用于获取cos导入配置",
+      "input": "DescribeS3RechargesRequest",
+      "name": "获取aws导入配置",
+      "output": "DescribeS3RechargesResponse",
+      "status": "online"
+    },
     "DescribeScheduledSqlInfo": {
       "document": "本接口用于获取定时SQL分析任务列表",
       "input": "DescribeScheduledSqlInfoRequest",
@@ -1104,6 +1146,13 @@
       "input": "MergePartitionRequest",
       "name": "合并分区",
       "output": "MergePartitionResponse",
+      "status": "online"
+    },
+    "ModifyAgentApplication": {
+      "document": "本接口用于修改Agent应用",
+      "input": "ModifyAgentApplicationRequest",
+      "name": "修改Agent应用",
+      "output": "ModifyAgentApplicationResponse",
       "status": "online"
     },
     "ModifyAlarm": {
@@ -1316,6 +1365,13 @@
       "output": "ModifyRecordingRuleYamlTaskResponse",
       "status": "online"
     },
+    "ModifyS3Recharge": {
+      "document": "本接口用于修改aws导入任务",
+      "input": "ModifyS3RechargeRequest",
+      "name": "修改aws导入任务",
+      "output": "ModifyS3RechargeResponse",
+      "status": "online"
+    },
     "ModifyScheduledSql": {
       "document": "本接口用于修改定时SQL分析任务",
       "input": "ModifyScheduledSqlRequest",
@@ -1426,6 +1482,13 @@
       "input": "SearchLogRequest",
       "name": "检索分析日志",
       "output": "SearchLogResponse",
+      "status": "online"
+    },
+    "SearchS3RechargeInfo": {
+      "document": "本接口用于预览aws导入信息",
+      "input": "SearchS3RechargeInfoRequest",
+      "name": "预览aws导入信息",
+      "output": "SearchS3RechargeInfoResponse",
       "status": "online"
     },
     "SendConsumerHeartbeat": {
@@ -1598,6 +1661,118 @@
         }
       ],
       "usage": "both"
+    },
+    "AgentApplicationInfo": {
+      "document": "agent 应用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用id</p>",
+          "example": "agent-app-6b296748-7057-4174-af88-c5a1bace6cdb",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用名称</p>",
+          "example": "update_agent_application",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse​ 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>",
+          "example": "Langfuse",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用下资源所属地域</p><p>例如：ap-guangzhou</p>",
+          "example": "ap-guan**********",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题列表</p>",
+          "example": "无",
+          "member": "AgentTopicInfo",
+          "name": "LogTopics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标主题列表</p>",
+          "example": "无",
+          "member": "AgentTopicInfo",
+          "name": "MetricsTopics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>单位：秒</p><p>秒级时间戳</p>",
+          "example": "1782789764",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>单位：秒</p><p>秒级时间戳</p>",
+          "example": "1783309827",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentTopicInfo": {
+      "document": "agent 应用主题信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志主题id</p>",
+          "example": "10ad9553-0367-4dc4-a5f9-9bbe18cd37bd",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题对应的标识</p><p>Langfuse类型对应一个trace标识的日志主题</p>",
+          "example": "trace",
+          "member": "string",
+          "name": "Flag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AlarmAnalysisConfig": {
       "document": "告警多维分析一些配置信息",
@@ -3988,7 +4163,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志服务地域",
+          "document": "<p>日志服务地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ClsRegion",
@@ -3998,7 +4173,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -4008,7 +4183,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
           "member": "string",
           "name": "LogsetId",
@@ -4018,7 +4193,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
           "member": "string",
           "name": "TopicId",
@@ -4028,7 +4203,7 @@
         },
         {
           "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "document": "<p>日志配置拓展信息， 一般用于存储额外的日志投递配置</p>",
           "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
@@ -4038,7 +4213,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "document": "<p>日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS</p>",
           "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
@@ -4048,12 +4223,32 @@
         },
         {
           "disabled": false,
-          "document": "任务状态， 0创建中 1创建完成 2 删除中 ",
+          "document": "<p>任务状态， 0创建中 1创建完成 2 删除中</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递任务关联topic的标签信息</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "TopicTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递任务关联logset的标签信息</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "LogsetTags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5853,6 +6048,81 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAgentApplicationRequest": {
+      "document": "CreateAgentApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用名称</p><p>入参限制：</p><ul><li>不能为空字符串</li><li>不能包含字符<code>|</code></li><li>不能超过64字符</li></ul>",
+          "example": "***********st_agent",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>",
+          "example": "Langfuse",
+          "member": "string",
+          "name": "AccessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集Id。通过 <a href=\"https://cloud.tencent.com/document/product/614/58624\">获取日志集列表</a>获取日志集Id。</p>",
+          "example": "leotest-custom-logset-1254077820",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentApplicationResponse": {
+      "document": "CreateAgentApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用id</p>",
+          "example": "agent-app-3ca04119-f707-49c9-9d93-b79114c18042",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题列表</p>",
+          "example": "无",
+          "member": "AgentTopicInfo",
+          "name": "LogTopics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标主题列表</p>",
+          "example": "无",
+          "member": "AgentTopicInfo",
+          "name": "MetricsTopics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAlarmNoticeRequest": {
       "document": "CreateAlarmNotice请求参数结构体",
@@ -8021,6 +8291,33 @@
           "name": "HasServicesLog",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateField",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>将投递失败的日志存储至DLC表</p>",
+          "example": "无",
+          "member": "DlcFailHandle",
+          "name": "DlcFailHandle",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9583,12 +9880,148 @@
       ],
       "type": "object"
     },
+    "CreateS3RechargeRequest": {
+      "document": "CreateS3Recharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
+          "example": "3faf22cb-*********-a3c3-c0831917aa15",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3导入任务名称,最大支持128个字节。</p><p>同一个TopicId下的s3任务Name必须唯一</p>",
+          "example": "test_del",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3存储桶</p>",
+          "example": "echo-************597",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-so*********",
+          "member": "string",
+          "name": "S3Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问密钥 ID（Access Key ID）</p>",
+          "example": "AKIA**************QG",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问密钥Key（Secret Access Key）</p>",
+          "example": "+AW*************************T6OHAC4IYOxU",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；<br>默认为minimalist_log</p>",
+          "example": "multiline_fullregex_log",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义端点</p>",
+          "example": "https://cos.example.com",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。</p>",
+          "example": "csv/",
+          "member": "string",
+          "name": "Prefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>压缩模式。支持: &quot;&quot;, &quot;gzip&quot;, &quot;lzop&quot;, &quot;snappy&quot;。</p><p>默认值：不压缩</p>",
+          "example": "gzip",
+          "member": "string",
+          "name": "Compress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提取规则，如果设置了ExtractRule，则必须设置LogType</p>",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRuleInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3导入任务类型.</p><p>枚举值：</p><ul><li>1： 一次性导入任务</li><li>2： 持续性导入任务</li></ul><p>默认值：1</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateS3RechargeResponse": {
+      "document": "CreateS3Recharge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导入任务Id</p>",
+          "example": "e7a88e07-ed13-4dea-92aa-2777c1333d2f",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateScheduledSqlRequest": {
       "document": "CreateScheduledSql请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "源日志主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>源日志主题ID- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
           "example": "6ef60bec-0242-43af-bb20-270359fbxxx",
           "member": "string",
           "name": "SrcTopicId",
@@ -9597,7 +10030,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称，0~255字符",
+          "document": "<p>任务名称，0~255字符</p>",
           "example": "scheduler_sql_delete_task",
           "member": "string",
           "name": "Name",
@@ -9606,7 +10039,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启动状态.  1开启,  2关闭",
+          "document": "<p>任务启动状态.  1开启,  2关闭</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableFlag",
@@ -9615,7 +10048,7 @@
         },
         {
           "disabled": false,
-          "document": "定时SQL分析目标日志主题",
+          "document": "<p>定时SQL分析目标日志主题</p>",
           "example": "无",
           "member": "ScheduledSqlResouceInfo",
           "name": "DstResource",
@@ -9624,7 +10057,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句",
+          "document": "<p>查询语句</p>",
           "example": "* | select count(*)",
           "member": "string",
           "name": "ScheduledSqlContent",
@@ -9633,7 +10066,7 @@
         },
         {
           "disabled": false,
-          "document": "调度开始时间,Unix时间戳，单位ms",
+          "document": "<p>调度开始时间,Unix时间戳，单位ms</p>",
           "example": "1690515360000",
           "member": "uint64",
           "name": "ProcessStartTime",
@@ -9642,7 +10075,7 @@
         },
         {
           "disabled": false,
-          "document": "调度类型，1:持续运行 2:指定时间范围",
+          "document": "<p>调度类型，1:持续运行 2:指定时间范围</p>",
           "example": "1",
           "member": "int64",
           "name": "ProcessType",
@@ -9651,7 +10084,7 @@
         },
         {
           "disabled": false,
-          "document": "调度周期(分钟)，1~1440分钟",
+          "document": "<p>调度周期(分钟)，1~1440分钟</p>",
           "example": "2",
           "member": "int64",
           "name": "ProcessPeriod",
@@ -9660,7 +10093,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询的时间窗口,如果您的目标主题为指标主题，建议该参数的大小不超过30分钟，否则可能转指标失败。 ",
+          "document": "<p>单次查询的时间窗口,如果您的目标主题为指标主题，建议该参数的大小不超过30分钟，否则可能转指标失败。</p>",
           "example": "@m-15m,@m",
           "member": "string",
           "name": "ProcessTimeWindow",
@@ -9669,7 +10102,7 @@
         },
         {
           "disabled": false,
-          "document": "执行延迟(秒)，0~120秒，默认60秒",
+          "document": "<p>执行延迟(秒)，0~120秒，默认60秒</p>",
           "example": "60",
           "member": "int64",
           "name": "ProcessDelay",
@@ -9678,7 +10111,7 @@
         },
         {
           "disabled": false,
-          "document": "源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档",
+          "document": "<p>源topicId的地域信息,支持地域见 <a href=\"https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8\">地域列表</a> 文档</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcTopicRegion",
@@ -9687,7 +10120,7 @@
         },
         {
           "disabled": false,
-          "document": "调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms",
+          "document": "<p>调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms</p>",
           "example": "1690515440000",
           "member": "uint64",
           "name": "ProcessEndTime",
@@ -9696,7 +10129,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法  ",
+          "document": "<p>查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法</p>",
           "example": "0",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -9705,8 +10138,17 @@
         },
         {
           "disabled": false,
-          "document": "全文检索标记。1：关闭，2：打开。默认：1",
-          "example": "1",
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全文检索标记。1：关闭，2：打开。默认：1</p>",
+          "example": "2",
           "member": "uint64",
           "name": "FullQuery",
           "required": false,
@@ -9720,7 +10162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
           "member": "string",
           "name": "TaskId",
@@ -11435,6 +11877,42 @@
       ],
       "usage": "out"
     },
+    "DeleteAgentApplicationRequest": {
+      "document": "DeleteAgentApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用id</p>",
+          "example": "agent-app-bc4e3e63-65fe-466d-9cc3-b44935b6fcaa",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否删除agent应用关联的主题</p><p>枚举值：</p><ul><li>false： 不删除agent应用关联的主题</li><li>true： 删除agent应用关联的主题</li></ul><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteTopics",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentApplicationResponse": {
+      "document": "DeleteAgentApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAlarmNoticeRequest": {
       "document": "DeleteAlarmNotice请求参数结构体",
       "members": [
@@ -12499,6 +12977,42 @@
       ],
       "type": "object"
     },
+    "DeleteS3RechargeRequest": {
+      "document": "DeleteS3Recharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导入任务Id</p>",
+          "example": "e7a88e07-ed13-4dea-92aa-2777c1333d2f",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/api/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
+          "example": "3faf22cb-5396-4aca-a3c3-c0831917aa15",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteS3RechargeResponse": {
+      "document": "DeleteS3Recharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteScheduledSqlRequest": {
       "document": "DeleteScheduledSql请求参数结构体",
       "members": [
@@ -12810,6 +13324,71 @@
           "member": "int64",
           "name": "Status",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentApplicationsRequest": {
+      "document": "DescribeAgentApplications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤项</p><ul><li><p>applicationName<br>按照【应用名称】进行过滤。模糊匹配方式查询。<br>类型：String<br>必选：否</p></li><li><p>applicationId<br>按照【应用id】进行过滤。<br>类型：String<br>必选：否</p></li><li><p>accessType<br>按照【接入类型】进行过滤。<br>类型：String<br>支持：<code>Langfuse</code><br>必选：否</p></li></ul><p>每次请求的Filters的上限为10，Filter.Values的上限为10。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的偏移量，默认值为0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentApplicationsResponse": {
+      "document": "DescribeAgentApplications返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合查询条件的大模型性能剖析任务列表</p>",
+          "example": "无",
+          "member": "AgentApplicationInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合查询条件的任务总数。</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13147,6 +13726,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否携带topic和logset的标签信息</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "WithTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13172,6 +13760,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息。如查询topic、logset标签信息错误</p>",
+          "example": "some tags may not be available due to permission or error",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -16187,6 +16785,80 @@
       ],
       "type": "object"
     },
+    "DescribeS3RechargesRequest": {
+      "document": "DescribeS3Recharges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/api/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
+          "example": "3faf22cb-5396-4aca-a3c3-c0831917aa15",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<ul><li>name 按照【主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li><li>bucket 按照【S3 存储桶名称】进行过滤。类型：String。必选：否</li><li>status 按照【任务状态】进行过滤，支持0:已创建, 1:运行中, 2:已停止, 3:已完成, 4:运行失败。 类型：String。必选：否</li><li>enable 按照【启用状态】进行过滤，支持0:暂停，1:启用。类型：String。必选：否</li></ul><p>注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为10。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的偏移量，默认值为0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeS3RechargesResponse": {
+      "document": "DescribeS3Recharges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>S3导入任务配置列表</p>",
+          "example": "无",
+          "member": "S3RechargeInfo",
+          "name": "Infos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务总数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScheduledSqlInfoRequest": {
       "document": "DescribeScheduledSqlInfo请求参数结构体",
       "members": [
@@ -16930,7 +17602,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id。",
+          "document": "<p>任务id。</p>",
           "example": "111024e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TaskId",
@@ -16940,7 +17612,7 @@
         },
         {
           "disabled": false,
-          "document": "账号id。",
+          "document": "<p>账号id。</p>",
           "example": "198644793323",
           "member": "uint64",
           "name": "Uin",
@@ -16950,7 +17622,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id。",
+          "document": "<p>日志主题id。</p>",
           "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
           "member": "string",
           "name": "TopicId",
@@ -16960,7 +17632,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称。",
+          "document": "<p>任务名称。</p>",
           "example": "template_1",
           "member": "string",
           "name": "Name",
@@ -16970,7 +17642,7 @@
         },
         {
           "disabled": false,
-          "document": "投递类型，0：实时投递，1：历史投递",
+          "document": "<p>投递类型，0：实时投递，1：历史投递</p>",
           "example": "0",
           "member": "uint64",
           "name": "DeliverType",
@@ -16980,7 +17652,7 @@
         },
         {
           "disabled": false,
-          "document": "投递文件大小，单位MB",
+          "document": "<p>投递文件大小，单位MB</p>",
           "example": "5",
           "member": "uint64",
           "name": "MaxSize",
@@ -16990,7 +17662,7 @@
         },
         {
           "disabled": false,
-          "document": "投递间隔 单位秒",
+          "document": "<p>投递间隔 单位秒</p>",
           "example": "300",
           "member": "uint64",
           "name": "Interval",
@@ -17000,7 +17672,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的开始时间",
+          "document": "<p>投递时间范围的开始时间</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "StartTime",
@@ -17010,7 +17682,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时间范围的结束时间",
+          "document": "<p>投递时间范围的结束时间</p>",
           "example": "1741006340",
           "member": "uint64",
           "name": "EndTime",
@@ -17020,7 +17692,7 @@
         },
         {
           "disabled": false,
-          "document": "dlc配置信息",
+          "document": "<p>dlc配置信息</p>",
           "example": "无",
           "member": "DlcInfo",
           "name": "DlcInfo",
@@ -17030,7 +17702,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启投递服务日志。1关闭，2开启",
+          "document": "<p>是否开启投递服务日志。1关闭，2开启</p>",
           "example": "2",
           "member": "uint64",
           "name": "HasServicesLog",
@@ -17040,7 +17712,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。",
+          "document": "<p>任务状态。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -17050,7 +17722,7 @@
         },
         {
           "disabled": false,
-          "document": "任务进度。历史投递任务生效。",
+          "document": "<p>任务进度。历史投递任务生效。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Progress",
@@ -17060,7 +17732,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题类型。0:标准主题，1:指标主题",
+          "document": "<p>日志主题类型。0:标准主题，1:指标主题</p>",
           "example": "0",
           "member": "uint64",
           "name": "BizType",
@@ -17070,7 +17742,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间。",
+          "document": "<p>任务创建时间。</p>",
           "example": "1741005340",
           "member": "uint64",
           "name": "CreateTime",
@@ -17080,16 +17752,102 @@
         },
         {
           "disabled": false,
-          "document": "任务修改时间。",
+          "document": "<p>任务修改时间。</p>",
           "example": "1741006340",
           "member": "uint64",
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateField",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>将投递失败的日志存储至DLC表</p>",
+          "example": "无",
+          "member": "DlcFailHandle",
+          "name": "DlcFailHandle",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "DlcFailHandle": {
+      "document": "dlc投递失败处理信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否存储到DLC</p><p>默认值：false</p><p>用于控制是否开启投递失败的日志存储至DLC表</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "StoreToDlc",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DLC表信息</p>",
+          "example": "无",
+          "member": "DlcFailTableInfo",
+          "name": "DlcFailTableInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcFailTableInfo": {
+      "document": "dlc失败日志存储表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DLC的表名称</p>",
+          "example": "********_fail_table",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表中的字段名称</p><p>字段类型必须是String类型</p>",
+          "example": "fail",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DlcFiledInfo": {
       "document": "数据湖计算服务（Data Lake Compute，简称DLC）数据字段配置信息",
@@ -21531,6 +22289,42 @@
       ],
       "usage": "both"
     },
+    "ModifyAgentApplicationRequest": {
+      "document": "ModifyAgentApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用id</p>",
+          "example": "agent-app-3ca04119-f707-49c9-9d93-b79114c18042",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用名称</p><p>参数格式：- 不能为空字符串- 不能包含字符<code>|</code>- 不能超过64字符</p>",
+          "example": "update_agent_application",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentApplicationResponse": {
+      "document": "ModifyAgentApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAlarmNoticeRequest": {
       "document": "ModifyAlarmNotice请求参数结构体",
       "members": [
@@ -21968,7 +22762,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -21977,7 +22771,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
+          "document": "<p>云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS</p>",
           "example": "CDB",
           "member": "string",
           "name": "AssumerName",
@@ -21986,7 +22780,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
+          "document": "<p>日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS</p>",
           "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
@@ -21995,7 +22789,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "<p>云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：</p><ul><li>CDS所有日志类型：ap-guangzhou</li><li>CDB-AUDIT: gz</li><li>TDSQL-C-AUDIT: gz</li><li>MongoDB-AUDIT: gz</li><li>MongoDB-SlowLog：ap-guangzhou</li><li>MongoDB-ErrorLog：ap-guangzhou</li><li>TDMYSQL-SLOW：gz</li><li>DCDB所有日志类型：gz</li><li>MariaDB所有日志类型：gz</li><li>PostgreSQL所有日志类型：gz</li><li>BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)</li><li>APIS所有日志类型：gz</li></ul>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -22004,12 +22798,21 @@
         },
         {
           "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "document": "<p>日志配置拓展信息， 一般用于存储额外的日志投递配置</p>",
           "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的logset和topic。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -22017,6 +22820,16 @@
     "ModifyCloudProductLogCollectionResponse": {
       "document": "ModifyCloudProductLogCollection返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>额外信息。如修改topic、logset标签失败。</p>",
+          "example": "tag modification partially failed: logset tags; topic tags",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -23209,6 +24022,33 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动创建dlc字段</p><p>默认值：false</p><p>当您的日志中有新增字段时，系统自动将其投递至DLC</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateField",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>将投递失败的日志存储至DLC表</p>",
+          "example": "无",
+          "member": "DlcFailHandle",
+          "name": "DlcFailHandle",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 Splunk 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -24460,12 +25300,156 @@
       ],
       "type": "object"
     },
+    "ModifyS3RechargeRequest": {
+      "document": "ModifyS3Recharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导入任务Id</p>",
+          "example": "e7a88e07-*********-92aa-2777c1333d2f",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
+          "example": "3faf22cb-*********-a3c3-c0831917aa15",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3导入任务名称,最大支持128个字节。</p><p>同一个TopicId下的s3任务Name必须唯一</p>",
+          "example": "test_del_1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3导入任务类型.</p><p>枚举值：</p><ul><li>1： 一次性导入任务</li><li>2： 持续性导入任务</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p><p>枚举值：</p><ul><li>0： 暂停</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3存储桶</p>",
+          "example": "echo-***********7597",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-so*********",
+          "member": "string",
+          "name": "S3Region",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问密钥 ID（Access Key ID）</p>",
+          "example": "AKIA*************CQG",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问密钥Key（Secret Access Key）</p>",
+          "example": "+AW********************************IYOxU",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义端点</p>",
+          "example": "https://cos.example.com",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；<br>默认为minimalist_log</p>",
+          "example": "multiline_fullregex_log",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。</p>",
+          "example": "csv/",
+          "member": "string",
+          "name": "Prefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>压缩模式。支持: &quot;&quot;, &quot;gzip&quot;, &quot;lzop&quot;, &quot;snappy&quot;。</p>",
+          "example": "gzip",
+          "member": "string",
+          "name": "Compress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提取规则，如果设置了ExtractRule，则必须设置LogType</p>",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRuleInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyS3RechargeResponse": {
+      "document": "ModifyS3Recharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyScheduledSqlRequest": {
       "document": "ModifyScheduledSql请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "任务ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取",
+          "document": "<p>任务ID，通过<a href=\"https://cloud.tencent.com/document/product/614/95519\">获取定时SQL分析任务列表</a>获取</p>",
           "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
           "member": "string",
           "name": "TaskId",
@@ -24474,7 +25458,7 @@
         },
         {
           "disabled": false,
-          "document": "源日志主题，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取",
+          "document": "<p>源日志主题，通过<a href=\"https://cloud.tencent.com/document/product/614/95519\">获取定时SQL分析任务列表</a>获取</p>",
           "example": "xxxx-0889-4ec0-accc-xxxxxxx",
           "member": "string",
           "name": "SrcTopicId",
@@ -24483,7 +25467,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启动状态.   1开启,  2关闭",
+          "document": "<p>任务启动状态.   1开启,  2关闭</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableFlag",
@@ -24492,7 +25476,7 @@
         },
         {
           "disabled": false,
-          "document": "定时SQL分析的目标日志主题",
+          "document": "<p>定时SQL分析的目标日志主题</p>",
           "example": "无",
           "member": "ScheduledSqlResouceInfo",
           "name": "DstResource",
@@ -24501,7 +25485,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句",
+          "document": "<p>查询语句</p>",
           "example": "* | select count(*)",
           "member": "string",
           "name": "ScheduledSqlContent",
@@ -24510,7 +25494,7 @@
         },
         {
           "disabled": false,
-          "document": "调度周期(分钟)，1~1440分钟",
+          "document": "<p>调度周期(分钟)，1~1440分钟</p>",
           "example": "2",
           "member": "int64",
           "name": "ProcessPeriod",
@@ -24519,7 +25503,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询的时间窗口. 例子中为近15分钟",
+          "document": "<p>单次查询的时间窗口. 例子中为近15分钟</p>",
           "example": "@m-15m,@m",
           "member": "string",
           "name": "ProcessTimeWindow",
@@ -24528,7 +25512,7 @@
         },
         {
           "disabled": false,
-          "document": "执行延迟(秒)，0~120秒，默认60秒",
+          "document": "<p>执行延迟(秒)，0~120秒，默认60秒</p>",
           "example": "60",
           "member": "int64",
           "name": "ProcessDelay",
@@ -24537,7 +25521,7 @@
         },
         {
           "disabled": false,
-          "document": "源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档",
+          "document": "<p>源topicId的地域信息,支持地域见 <a href=\"https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8\">地域列表</a> 文档</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcTopicRegion",
@@ -24546,7 +25530,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称，0~255字符",
+          "document": "<p>任务名称，0~255字符</p>",
           "example": "scheduler_sql任务1",
           "member": "string",
           "name": "Name",
@@ -24555,7 +25539,7 @@
         },
         {
           "disabled": false,
-          "document": "语法规则。 默认值为0。 0：Lucene语法，1：CQL语法",
+          "document": "<p>语法规则。 默认值为0。 0：Lucene语法，1：CQL语法</p>",
           "example": "0",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -24564,7 +25548,16 @@
         },
         {
           "disabled": false,
-          "document": "全文检索查询标记。1：关闭，2：打开。",
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全文检索查询标记。1：关闭，2：打开。</p>",
           "example": "1",
           "member": "uint64",
           "name": "FullQuery",
@@ -27599,6 +28592,202 @@
       ],
       "usage": "both"
     },
+    "S3RechargeInfo": {
+      "document": "aws 导入信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导入任务Id</p>",
+          "example": "b2fbb75a-b5ee-479c-9db4-541c63c0b4c4",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id。- 通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</p>",
+          "example": "3faf22cb-5396-4aca-a3c3-c0831917aa15",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集Id。通过 <a href=\"https://cloud.tencent.com/document/product/614/58624\">获取日志集列表</a>获取日志集Id。</p>",
+          "example": "7fb0245e-2006-4e0f-9153-c5f6b7110b4c",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "test_del_1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3存储桶</p>",
+          "example": "echo-test2-857317597",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-southeast-1",
+          "member": "string",
+          "name": "S3Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问密钥 ID（Access Key ID）</p>",
+          "example": "AKIAV6SDTAVLWS3H2CQG",
+          "member": "string",
+          "name": "AccessKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义端点</p>",
+          "example": "https://cos.example.com",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；默认为minimalist_log</p>",
+          "example": "multiline_fullregex_log",
+          "member": "string",
+          "name": "LogType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。</p>",
+          "example": "csv/",
+          "member": "string",
+          "name": "Prefix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>压缩模式。支持: &quot;&quot;, &quot;gzip&quot;, &quot;lzop&quot;, &quot;snappy&quot;。</p><p>默认值：不压缩</p>",
+          "example": "gzip",
+          "member": "string",
+          "name": "Compress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提取规则，如果设置了ExtractRule，则必须设置LogType</p>",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRule",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3导入任务类型.</p><p>枚举值：</p><ul><li>1： 一次性导入任务</li><li>2： 持续性导入任务</li></ul>",
+          "example": "2",
+          "member": "uint64",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据。</p><p>枚举值：</p><ul><li>bucket： 桶</li><li>object： 对象</li></ul><p>选中元数据将以 <strong>TAG</strong>.{元数据}:xxx 的形式与日志一起导入。如：<strong>TAG</strong>.object: csv/object.gz</p>",
+          "example": "[\"bucket\"]",
+          "member": "string",
+          "name": "Metadata",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>0： 已创建</li><li>1： 运行中</li><li>2： 已停止</li><li>3： 已完成</li><li>4： 运行失败</li></ul>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p><p>枚举值：</p><ul><li>0： 暂停</li><li>1： 启用</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Enable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进度条百分值</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>单位：秒</p><p>秒级时间戳</p>",
+          "example": "1783153774",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>单位：秒</p><p>秒级时间戳</p>",
+          "example": "1783153774",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ScheduledSqlResouceInfo": {
       "document": "ScheduledSql的资源信息",
       "members": [
@@ -28454,6 +29643,155 @@
         }
       ],
       "usage": "out"
+    },
+    "SearchS3RechargeInfoRequest": {
+      "document": "SearchS3RechargeInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id。</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
+          "example": "3faf22cb-5396-4aca-a3c3-c0831917aa15",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3导入任务名称,最大支持128个字节。</p>",
+          "example": "test_del_1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3存储桶</p>",
+          "example": "echo-test2-857317597",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-southeast-1",
+          "member": "string",
+          "name": "S3Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问密钥 ID（Access Key ID）</p>",
+          "example": "AKIAV6SDTAVLWS3H2CQG",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问密钥Key（Secret Access Key）</p>",
+          "example": "+AWP60+ZzsastWqhOXHS9ZqGEfDwT6OHAC4IYOxU",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义端点</p>",
+          "example": "https://cos.example.com",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>s3文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。</p>",
+          "example": "/csv",
+          "member": "string",
+          "name": "Prefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>压缩模式。支持: &quot;&quot;, &quot;gzip&quot;, &quot;lzop&quot;, &quot;snappy&quot;。</p><p>默认值：不压缩</p>",
+          "example": "gzip",
+          "member": "string",
+          "name": "Compress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchS3RechargeInfoResponse": {
+      "document": "SearchS3RechargeInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>匹配到的存储桶下的某个文件的前几行数据</p>",
+          "example": "[\"# Mock Logs\\n\"]",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配到的存储桶下的文件个数</p>",
+          "example": "11",
+          "member": "uint64",
+          "name": "Sum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前预览文件路径</p>",
+          "example": "mock-logs/README.md",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预览获取数据失败原因</p>",
+          "example": "some cause of failure",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。</p><ul><li>0：成功</li><li>10000：参数错误，请确认参数</li><li>10001：授权失败，请确认授权</li><li>10002：获取文件列表失败，请稍后再试。若无法解决，请咨询 <a href=\"https://cloud.tencent.com/online-service\">在线支持</a> 或 <a href=\"https://console.cloud.tencent.com/workorder/category?level1_id=83&amp;level2_id=469&amp;source=14&amp;data_title=%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1&amp;step=1\">提交工单</a> 处理。</li><li>10003：桶内无相应前缀文件，请使用正确的桶、文件前缀和压缩方式</li><li>10004：文件下载失败，请稍后再试。若无法解决，请咨询 <a href=\"https://cloud.tencent.com/online-service\">在线支持</a> 或 <a href=\"https://console.cloud.tencent.com/workorder/category?level1_id=83&amp;level2_id=469&amp;source=14&amp;data_title=%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1&amp;step=1\">提交工单</a> 处理。</li><li>10005：文件解压缩失败，请选择正确的压缩方式然后再试</li><li>10006：读取文件内容失败，请确认文件可读</li><li>10007：文件预览失败，请稍后再试。若无法解决，请咨询 <a href=\"https://cloud.tencent.com/online-service\">在线支持</a> 或 <a href=\"https://console.cloud.tencent.com/workorder/category?level1_id=83&amp;level2_id=469&amp;source=14&amp;data_title=%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1&amp;step=1\">提交工单</a> 处理。</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SearchViewInfo": {
       "document": "查询视图信息",

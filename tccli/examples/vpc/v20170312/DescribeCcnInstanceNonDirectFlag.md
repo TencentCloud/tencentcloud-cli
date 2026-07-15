@@ -9,7 +9,8 @@ tccli vpc DescribeCcnInstanceNonDirectFlag --cli-unfold-argument  \
     --BusinessType CFW \
     --CcnId ccn-lwf3h36r \
     --VpcRegion eu-frankfurt \
-    --VpcId vpc-ls127qdl
+    --VpcId vpc-ls127qdl \
+    --InstanceUin 700000******
 ```
 
 Output: 

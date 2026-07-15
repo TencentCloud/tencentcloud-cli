@@ -88,14 +88,6 @@
         "title": "DescribeDataSourceList"
       }
     ],
-    "DescribeFoldProcessBasicInfos": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFoldProcessBasicInfos\n<公共请求参数>\n\n{\n    \"ProcessKey\": \"abc\",\n    \"ProcessName\": \"abc\",\n    \"Status\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\",\n    \"AppCodeList\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResponseList\": [\n                {\n                    \"Uin\": \"abc\",\n                    \"SubUin\": \"abc\",\n                    \"AppId\": 0,\n                    \"ProcessKey\": \"abc\",\n                    \"ProcessName\": \"abc\",\n                    \"ProcessDesc\": \"abc\",\n                    \"Version\": 0,\n                    \"Status\": 0,\n                    \"ModifyTime\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"InvokedCount\": 0,\n                    \"PublishTime\": \"abc\",\n                    \"NickName\": \"abc\",\n                    \"SubProcessBasicInfoList\": [\n                        {\n                            \"Uin\": \"abc\",\n                            \"SubUin\": \"abc\",\n                            \"AppId\": 0,\n                            \"ProcessKey\": \"abc\",\n                            \"ProcessName\": \"abc\",\n                            \"ProcessDesc\": \"abc\",\n                            \"Version\": 0,\n                            \"Status\": 0,\n                            \"ModifyTime\": \"abc\",\n                            \"CreateTime\": \"abc\",\n                            \"InvokedCount\": 0,\n                            \"PublishTime\": \"abc\",\n                            \"NickName\": \"abc\",\n                            \"Init\": true\n                        }\n                    ],\n                    \"Init\": true,\n                    \"ReleaseVersion\": \"abc\"\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "批量查询流程折叠基础信息列表"
-      }
-    ],
     "DescribeKnowledgeDocumentSetDetail": [
       {
         "document": "获取知识库下文档详情",

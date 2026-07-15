@@ -5869,12 +5869,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>登陆用户主账号(集成商主账号)</p>",
-          "example": "100000000000",
-          "member": "string",
-          "name": "LoginUin",
+          "document": "<p>是否启用网络策略(仅环境变量生效)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableEndpoints",
           "required": false,
-          "type": "string"
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络策略列表(支持: 精确域名、*.通配子域名、可带协议/端口/路径前缀)</p>",
+          "example": "[\"cloud.com\"]",
+          "member": "string",
+          "name": "Endpoints",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -5887,28 +5896,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>变量描述，最大支持120个字符</p>",
-          "example": "TimeID变量表示时间",
+          "document": "<p>登陆用户主账号(集成商主账号)</p>",
+          "example": "100000000000",
           "member": "string",
-          "name": "VarDesc",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持&quot;STRING&quot;类型使用</p>",
-          "example": "STRING",
-          "member": "string",
-          "name": "VarType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>",
-          "example": "2025-05-14",
-          "member": "string",
-          "name": "VarDefaultValue",
+          "name": "LoginUin",
           "required": false,
           "type": "string"
         },
@@ -5923,12 +5914,39 @@
         },
         {
           "disabled": false,
+          "document": "<p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>",
+          "example": "2025-05-14",
+          "member": "string",
+          "name": "VarDefaultValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量描述，最大支持120个字符</p>",
+          "example": "TimeID变量表示时间",
+          "member": "string",
+          "name": "VarDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "VarModuleType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持&quot;STRING&quot;类型使用</p>",
+          "example": "STRING",
+          "member": "string",
+          "name": "VarType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -22250,7 +22268,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "变量ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>变量ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "d125c28b-55db-4478-9066-6115ab97ee17",
           "member": "string",
           "name": "VarId",
@@ -22261,7 +22279,7 @@
         },
         {
           "disabled": false,
-          "document": "变量名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>变量名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "发票类型",
           "member": "string",
           "name": "VarName",
@@ -22272,7 +22290,7 @@
         },
         {
           "disabled": false,
-          "document": "变量描述（默认为\"-\"）",
+          "document": "<p>变量描述（默认为&quot;-&quot;）</p>",
           "example": "发票类型包括纸质和电子",
           "member": "string",
           "name": "VarDesc",
@@ -22283,7 +22301,7 @@
         },
         {
           "disabled": false,
-          "document": "变量类型 (STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)\n",
+          "document": "<p>变量类型&nbsp;(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)</p>",
           "example": "STRING",
           "member": "string",
           "name": "VarType",
@@ -22294,7 +22312,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义变量默认值",
+          "document": "<p>自定义变量默认值</p>",
           "example": "电子发票",
           "member": "string",
           "name": "VarDefaultValue",
@@ -22305,8 +22323,8 @@
         },
         {
           "disabled": false,
-          "document": "自定义变量文件默认名称",
-          "example": "无",
+          "document": "<p>自定义变量文件默认名称</p>",
+          "example": "1.text",
           "member": "string",
           "name": "VarDefaultFileName",
           "output_required": false,
@@ -22316,13 +22334,24 @@
         },
         {
           "disabled": false,
-          "document": "变量类型",
+          "document": "<p>变量类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "VarModuleType",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量出口域名白名单，仅 VarType=SECRET 生效</p>",
+          "example": "[\"www.qq.com\"]",
+          "member": "string",
+          "name": "Endpoints",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -22906,12 +22935,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>登陆用户主账号(集成商主账号)</p>",
-          "example": "100000000000",
-          "member": "string",
-          "name": "LoginUin",
+          "document": "<p>是否启用网络策略(仅环境变量生效)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableEndpoints",
           "required": false,
-          "type": "string"
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络策略列表(支持: 精确域名、*.通配子域名、可带协议/端口/路径前缀)</p>",
+          "example": "[\"cloud.com\"]",
+          "member": "string",
+          "name": "Endpoints",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -22924,28 +22962,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>参数描述</p>",
-          "example": "用户ID",
+          "document": "<p>登陆用户主账号(集成商主账号)</p>",
+          "example": "100000000000",
           "member": "string",
-          "name": "VarDesc",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>变量类型</p><p>枚举值：</p><ul><li>STRING： 字符串</li><li>INT： 整形</li><li>BOOL： 布尔型</li><li>OBJECT： 对象</li><li>ARRAY_STRING： 字符串数组</li><li>ARRAY_INT： 整型数组</li><li>ARRAY_FLOAT： 浮点型数组</li><li>ARRAY_BOOL： 布尔型数组</li><li>ARRAY_OBJECT： 对象数组</li><li>FILE： 文件类型</li><li>DOCUMENT： 文档类型</li><li>IMAGE： 图片类型</li><li>AUDIO： 音频</li><li>VIDEO： 视频</li><li>ARRAY_FILE： 文件数组</li><li>ARRAY_DOCUMENT： 文档数组</li><li>ARRAY_IMAGE： 图片数组</li><li>ARRAY_AUDIO： 音频数组</li><li>ARRAY_VIDEO： 视频数组</li><li>SECRET： 秘钥</li><li>ARRAY_ARRAY： 多维数组</li></ul><p>默认值：STRING</p>",
-          "example": "STRING",
-          "member": "string",
-          "name": "VarType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>自定义变量默认值，<code>VarDefaultValue</code>&nbsp;默认为空</p>",
-          "example": "125566126721",
-          "member": "string",
-          "name": "VarDefaultValue",
+          "name": "LoginUin",
           "required": false,
           "type": "string"
         },
@@ -22960,12 +22980,39 @@
         },
         {
           "disabled": false,
+          "document": "<p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>",
+          "example": "125566126721",
+          "member": "string",
+          "name": "VarDefaultValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数描述</p>",
+          "example": "用户ID",
+          "member": "string",
+          "name": "VarDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "VarModuleType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量类型</p><p>枚举值：</p><ul><li>STRING： 字符串</li><li>INT： 整形</li><li>BOOL： 布尔型</li><li>OBJECT： 对象</li><li>ARRAY_STRING： 字符串数组</li><li>ARRAY_INT： 整型数组</li><li>ARRAY_FLOAT： 浮点型数组</li><li>ARRAY_BOOL： 布尔型数组</li><li>ARRAY_OBJECT： 对象数组</li><li>FILE： 文件类型</li><li>DOCUMENT： 文档类型</li><li>IMAGE： 图片类型</li><li>AUDIO： 音频</li><li>VIDEO： 视频</li><li>ARRAY_FILE： 文件数组</li><li>ARRAY_DOCUMENT： 文档数组</li><li>ARRAY_IMAGE： 图片数组</li><li>ARRAY_AUDIO： 音频数组</li><li>ARRAY_VIDEO： 视频数组</li><li>SECRET： 秘钥</li><li>ARRAY_ARRAY： 多维数组</li></ul><p>默认值：STRING</p>",
+          "example": "STRING",
+          "member": "string",
+          "name": "VarType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

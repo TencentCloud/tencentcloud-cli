@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AcquireEnvironment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcquireEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentTemplateId\": \"envt-example\",\n    \"AgentId\": \"ag-example\",\n    \"UserId\": \"user-example\",\n    \"SessionId\": \"session-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Environment\": {\n            \"EnvironmentId\": \"env-example\",\n            \"EnvironmentTemplateId\": \"envt-example\",\n            \"AgentId\": \"ag-example\",\n            \"UserId\": \"user-example\",\n            \"SessionId\": \"session-example\",\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\",\n            \"ProviderConfig\": {\n                \"ProviderKind\": \"TENCENT_AGS\",\n                \"TencentAGS\": {\n                    \"InstanceId\": \"ins-example\",\n                    \"AccessToken\": \"example-access-token\"\n                }\n            }\n        },\n        \"EnvironmentLease\": {\n            \"EnvironmentLeaseId\": \"envl-example\",\n            \"EnvironmentId\": \"env-example\",\n            \"ExpiresTime\": \"2026-07-03T11:01:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取 Environment"
+      }
+    ],
     "AcquireOAuth2AccessToken": [
       {
         "document": "",
@@ -32,12 +40,36 @@
         "title": "创建API密钥"
       }
     ],
+    "CreateAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgent\n<公共请求参数>\n\n{\n    \"AgentName\": \"example-agent\",\n    \"AgentType\": \"CLOUD\",\n    \"InitialVersion\": \"v1\",\n    \"AgentConfig\": {\n        \"Image\": \"example.com/agent-engine/example-agent:v1\",\n        \"Command\": [\n            \"/usr/local/bin/example-agent\"\n        ],\n        \"Args\": [\n            \"serve\",\n            \"--port\",\n            \"8080\"\n        ],\n        \"Env\": [\n            {\n                \"Name\": \"EXAMPLE_LOG_LEVEL\",\n                \"Value\": \"info\"\n            }\n        ],\n        \"Resources\": {\n            \"CPU\": \"1000m\",\n            \"Memory\": \"512Mi\"\n        },\n        \"Ports\": [\n            {\n                \"Name\": \"http\",\n                \"Port\": 8080,\n                \"Protocol\": \"TCP\"\n            }\n        ],\n        \"HealthCheck\": {\n            \"HttpGet\": {\n                \"Path\": \"/healthz\",\n                \"Port\": 8080,\n                \"Scheme\": \"HTTP\"\n            }\n        }\n    },\n    \"ProviderConfig\": {\n        \"ProviderKind\": \"TENCENT_AGS\",\n        \"TencentAGS\": {\n            \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-agent-engine-role\",\n            \"ImageRegistryType\": \"personal\",\n            \"NetworkConfiguration\": {\n                \"NetworkMode\": \"PUBLIC\"\n            }\n        }\n    },\n    \"DefaultWorkspaceTemplateId\": \"wst-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Agent\": {\n            \"AgentId\": \"ag-example\",\n            \"AgentName\": \"example-agent\",\n            \"AgentType\": \"CLOUD\",\n            \"DefaultVersion\": \"v1\",\n            \"Status\": \"CREATING\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"AgentVersion\": {\n            \"AgentId\": \"ag-example\",\n            \"Version\": \"v1\",\n            \"AgentConfig\": {\n                \"Image\": \"example.com/agent-engine/example-agent:v1\",\n                \"Command\": [\n                    \"/usr/local/bin/example-agent\"\n                ],\n                \"Args\": [\n                    \"serve\",\n                    \"--port\",\n                    \"8080\"\n                ],\n                \"Env\": [\n                    {\n                        \"Name\": \"EXAMPLE_LOG_LEVEL\",\n                        \"Value\": \"info\"\n                    }\n                ],\n                \"Resources\": {\n                    \"CPU\": \"1000m\",\n                    \"Memory\": \"512Mi\"\n                },\n                \"Ports\": [\n                    {\n                        \"Name\": \"http\",\n                        \"Port\": 8080,\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"HealthCheck\": {\n                    \"HttpGet\": {\n                        \"Path\": \"/healthz\",\n                        \"Port\": 8080,\n                        \"Scheme\": \"HTTP\"\n                    }\n                }\n            },\n            \"ProviderConfig\": {\n                \"ProviderKind\": \"TENCENT_AGS\",\n                \"TencentAGS\": {\n                    \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-agent-engine-role\",\n                    \"ImageRegistryType\": \"personal\",\n                    \"NetworkConfiguration\": {\n                        \"NetworkMode\": \"PUBLIC\"\n                    }\n                }\n            },\n            \"ProviderStatus\": {\n                \"TencentAGS\": {\n                    \"ToolId\": \"\"\n                }\n            },\n            \"DefaultWorkspaceTemplateId\": \"wst-example\",\n            \"Status\": \"CREATING\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建 Agent 资源"
+      }
+    ],
+    "CreateAgentVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentVersion\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-0c6c69201e87d43229f82b485d69311b\",\n    \"AgentVersion\": \"v2\",\n    \"AgentConfig\": {\n        \"Image\": \"ccr.ccs.tencentyun.com/ags.dev/nginx:alpine\",\n        \"Command\": [\n            \"nginx\"\n        ],\n        \"Args\": [\n            \"-g\"\n        ],\n        \"Env\": [\n            {\n                \"Name\": \"TEST_ENV_2\",\n                \"Value\": \"true\"\n            }\n        ],\n        \"Resources\": {\n            \"CPU\": \"500m\",\n            \"Memory\": \"500Mi\"\n        },\n        \"Ports\": [\n            {\n                \"Name\": \"web\",\n                \"Port\": 80,\n                \"Protocol\": \"TCP\"\n            }\n        ],\n        \"HealthCheck\": {\n            \"HttpGet\": {\n                \"Path\": \"/\",\n                \"Port\": 80,\n                \"Scheme\": \"HTTP\"\n            }\n        }\n    },\n    \"ProviderConfig\": {\n        \"ProviderKind\": \"TENCENT_AGS\",\n        \"TencentAGS\": {\n            \"RoleArn\": \"qcs::cam::uin/3321337994:roleName/cos-tcr-full-ags\",\n            \"ImageRegistryType\": \"personal\",\n            \"NetworkConfiguration\": {\n                \"NetworkMode\": \"PUBLIC\"\n            }\n        }\n    },\n    \"DefaultEnvironmentTemplateId\": \"envt-6311dafca27b87a106d00045c570e14c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentVersion\": {\n            \"AgentConfig\": {\n                \"Args\": [\n                    \"-g\"\n                ],\n                \"Command\": [\n                    \"nginx\"\n                ],\n                \"Env\": [\n                    {\n                        \"Name\": \"TEST_ENV_2\",\n                        \"Value\": \"true\"\n                    }\n                ],\n                \"HealthCheck\": {\n                    \"HttpGet\": {\n                        \"Path\": \"/\",\n                        \"Port\": 80,\n                        \"Scheme\": \"HTTP\"\n                    }\n                },\n                \"Image\": \"ccr.ccs.tencentyun.com/ags.dev/nginx:alpine\",\n                \"Ports\": [\n                    {\n                        \"Name\": \"web\",\n                        \"Port\": 80,\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"Resources\": {\n                    \"CPU\": \"500m\",\n                    \"Memory\": \"500Mi\"\n                }\n            },\n            \"AgentId\": \"ag-0c6c69201e87d43229f82b485d69311b\",\n            \"CreatedTime\": \"2026-07-13T07:00:47Z\",\n            \"DefaultEnvironmentTemplateId\": \"envt-6311dafca27b87a106d00045c570e14c\",\n            \"ProviderConfig\": {\n                \"ProviderKind\": \"TENCENT_AGS\",\n                \"TencentAGS\": {\n                    \"ImageRegistryType\": \"personal\",\n                    \"NetworkConfiguration\": {\n                        \"NetworkMode\": \"PUBLIC\"\n                    },\n                    \"RoleArn\": \"qcs::cam::uin/3321337994:roleName/cos-tcr-full-ags\"\n                }\n            },\n            \"ProviderStatus\": {\n                \"TencentAGS\": {}\n            },\n            \"Status\": \"CREATING\",\n            \"UpdatedTime\": \"2026-07-13T07:00:47Z\",\n            \"Version\": \"v2\"\n        },\n        \"RequestId\": \"73a5aad3-9b81-44d8-b1f5-6615fb8dc769\"\n    }\n}",
+        "title": "创建成功"
+      }
+    ],
+    "CreateEnvironmentTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironmentTemplate\n<公共请求参数>\n\n{\n    \"EnvironmentTemplateName\": \"example-environment-template\",\n    \"EnvironmentTemplateConfig\": {\n        \"Image\": \"example.com/agent-engine/example-environment:v1\",\n        \"Command\": [\n            \"/usr/local/bin/example-environment\"\n        ],\n        \"Args\": [\n            \"serve\",\n            \"--listen\",\n            \":8080\"\n        ],\n        \"Env\": [\n            {\n                \"Name\": \"EXAMPLE_ENVIRONMENT_MODE\",\n                \"Value\": \"demo\"\n            }\n        ],\n        \"Resources\": {\n            \"CPU\": \"1000m\",\n            \"Memory\": \"512Mi\"\n        },\n        \"Ports\": [\n            {\n                \"Name\": \"http\",\n                \"Port\": 8080,\n                \"Protocol\": \"TCP\"\n            }\n        ],\n        \"HealthCheck\": {\n            \"HttpGet\": {\n                \"Path\": \"/healthz\",\n                \"Port\": 8080,\n                \"Scheme\": \"HTTP\"\n            }\n        }\n    },\n    \"ProviderConfig\": {\n        \"ProviderKind\": \"TENCENT_AGS\",\n        \"TencentAGS\": {\n            \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-environment-role\",\n            \"ImageRegistryType\": \"personal\",\n            \"NetworkConfiguration\": {\n                \"NetworkMode\": \"PUBLIC\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentTemplate\": {\n            \"EnvironmentTemplateId\": \"envt-example\",\n            \"EnvironmentTemplateName\": \"example-environment-template\",\n            \"EnvironmentTemplateConfig\": {\n                \"Image\": \"example.com/agent-engine/example-environment:v1\",\n                \"Command\": [\n                    \"/usr/local/bin/example-environment\"\n                ],\n                \"Args\": [\n                    \"serve\",\n                    \"--listen\",\n                    \":8080\"\n                ],\n                \"Env\": [\n                    {\n                        \"Name\": \"EXAMPLE_ENVIRONMENT_MODE\",\n                        \"Value\": \"demo\"\n                    }\n                ],\n                \"Resources\": {\n                    \"CPU\": \"1000m\",\n                    \"Memory\": \"512Mi\"\n                },\n                \"Ports\": [\n                    {\n                        \"Name\": \"http\",\n                        \"Port\": 8080,\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"HealthCheck\": {\n                    \"HttpGet\": {\n                        \"Path\": \"/healthz\",\n                        \"Port\": 8080,\n                        \"Scheme\": \"HTTP\"\n                    }\n                }\n            },\n            \"ProviderConfig\": {\n                \"ProviderKind\": \"TENCENT_AGS\",\n                \"TencentAGS\": {\n                    \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-environment-role\",\n                    \"ImageRegistryType\": \"personal\",\n                    \"NetworkConfiguration\": {\n                        \"NetworkMode\": \"PUBLIC\"\n                    }\n                }\n            },\n            \"ProviderStatus\": {\n                \"TencentAGS\": {\n                    \"ToolId\": \"\"\n                }\n            },\n            \"Status\": \"CREATING\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建 EnvironmentTemplate"
+      }
+    ],
     "CreatePreCacheImageTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n    \"ImageRegistryType\": \"enterprise\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n        \"ImageDigest\": \"sha256:39e2c18395c3105ace919d1d285cd775d380e83581b132d8d742761123a1e675\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"RequestId\": \"57872da7-8d1e-4035-819f-92c26eaf9557\"\n    }\n}",
-        "title": "创建预热镜像任务"
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n    \"ImageRegistryType\": \"enterprise\",\n    \"ImageRegistryCredentialProviderId\": null,\n    \"TimeoutMinutes\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n        \"ImageDigest\": \"sha256:axxxxxxxxxb98e195ae1d8c85d59fe1fb8c282bcccf1071f877db20f\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"RequestId\": \"b538f3f1-da59-49e5-ac4b-41a440396ec6\"\n    }\n}",
+        "title": "预热镜像"
       }
     ],
     "CreateSandboxTool": [
@@ -64,6 +96,38 @@
         "title": "删除API密钥"
       }
     ],
+    "DeleteAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除 Agent"
+      }
+    ],
+    "DeleteAgentVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentVersion\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\",\n    \"AgentVersion\": \"v2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除 AgentVersion"
+      }
+    ],
+    "DeleteEnvironment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"env-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除 Environment"
+      }
+    ],
+    "DeleteEnvironmentTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironmentTemplate\n<公共请求参数>\n\n{\n    \"EnvironmentTemplateId\": \"envt-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除 EnvironmentTemplate"
+      }
+    ],
     "DeleteSandboxTool": [
       {
         "document": "",
@@ -78,6 +142,86 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIKeyList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"APIKeySet\": [\n            {\n                \"CreatedAt\": \"2025-09-12T14:09:05.242Z\",\n                \"KeyId\": \"ark-3edcft6y\",\n                \"MaskedKey\": \"ark_Au****kKjo\",\n                \"Name\": \"LocalDev\",\n                \"Status\": \"API_KEY_STATUS_ACTIVE\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"37e8ed19-80cd-49f3-9b5a-eaea1bf9c6c1\"\n    }\n}",
         "title": "获取API密钥简略信息列表"
+      }
+    ],
+    "DescribeAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Agent\": {\n            \"AgentId\": \"ag-example\",\n            \"AgentName\": \"example-agent\",\n            \"AgentType\": \"CLOUD\",\n            \"DefaultVersion\": \"v1\",\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 Agent 信息"
+      }
+    ],
+    "DescribeAgentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"agent-name\",\n            \"Values\": [\n                \"example-agent\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentSet\": [\n            {\n                \"AgentId\": \"ag-example\",\n                \"AgentName\": \"example-agent\",\n                \"AgentType\": \"CLOUD\",\n                \"DefaultVersion\": \"v1\",\n                \"Status\": \"ACTIVE\",\n                \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n                \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 Agent 列表"
+      }
+    ],
+    "DescribeAgentVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentVersion\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\",\n    \"AgentVersion\": \"v2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentVersion\": {\n            \"AgentId\": \"ag-example\",\n            \"Version\": \"v2\",\n            \"AgentConfig\": {\n                \"Image\": \"example.com/agent-engine/example-agent:v2\",\n                \"Command\": [\n                    \"/usr/local/bin/example-agent\"\n                ],\n                \"Args\": [\n                    \"serve\",\n                    \"--port\",\n                    \"8080\"\n                ],\n                \"Env\": [\n                    {\n                        \"Name\": \"EXAMPLE_LOG_LEVEL\",\n                        \"Value\": \"info\"\n                    }\n                ],\n                \"Resources\": {\n                    \"CPU\": \"1000m\",\n                    \"Memory\": \"512Mi\"\n                },\n                \"Ports\": [\n                    {\n                        \"Name\": \"http\",\n                        \"Port\": 8080,\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"HealthCheck\": {\n                    \"HttpGet\": {\n                        \"Path\": \"/healthz\",\n                        \"Port\": 8080,\n                        \"Scheme\": \"HTTP\"\n                    }\n                }\n            },\n            \"ProviderConfig\": {\n                \"ProviderKind\": \"TENCENT_AGS\",\n                \"TencentAGS\": {\n                    \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-agent-engine-role\",\n                    \"ImageRegistryType\": \"personal\",\n                    \"NetworkConfiguration\": {\n                        \"NetworkMode\": \"PUBLIC\"\n                    }\n                }\n            },\n            \"ProviderStatus\": {\n                \"TencentAGS\": {\n                    \"ToolId\": \"sdt-example-agent-v1\"\n                }\n            },\n            \"DefaultWorkspaceTemplateId\": \"wst-example\",\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 AgentVersion"
+      }
+    ],
+    "DescribeAgentVersionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentVersionList\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"version\",\n            \"Values\": [\n                \"v2\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentVersionSet\": [\n            {\n                \"AgentId\": \"ag-example\",\n                \"Version\": \"v2\",\n                \"AgentConfig\": {\n                    \"Image\": \"example.com/agent-engine/example-agent:v2\",\n                    \"Command\": [\n                        \"/usr/local/bin/example-agent\"\n                    ],\n                    \"Args\": [\n                        \"serve\",\n                        \"--port\",\n                        \"8080\"\n                    ],\n                    \"Env\": [\n                        {\n                            \"Name\": \"EXAMPLE_LOG_LEVEL\",\n                            \"Value\": \"info\"\n                        }\n                    ],\n                    \"Resources\": {\n                        \"CPU\": \"1000m\",\n                        \"Memory\": \"512Mi\"\n                    },\n                    \"Ports\": [\n                        {\n                            \"Name\": \"http\",\n                            \"Port\": 8080,\n                            \"Protocol\": \"TCP\"\n                        }\n                    ],\n                    \"HealthCheck\": {\n                        \"HttpGet\": {\n                            \"Path\": \"/healthz\",\n                            \"Port\": 8080,\n                            \"Scheme\": \"HTTP\"\n                        }\n                    }\n                },\n                \"ProviderConfig\": {\n                    \"ProviderKind\": \"TENCENT_AGS\",\n                    \"TencentAGS\": {\n                        \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-agent-engine-role\",\n                        \"ImageRegistryType\": \"personal\",\n                        \"NetworkConfiguration\": {\n                            \"NetworkMode\": \"PUBLIC\"\n                        }\n                    }\n                },\n                \"ProviderStatus\": {\n                    \"TencentAGS\": {\n                        \"ToolId\": \"sdt-example-agent-v1\"\n                    }\n                },\n                \"DefaultWorkspaceTemplateId\": \"wst-example\",\n                \"Status\": \"ACTIVE\",\n                \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n                \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 AgentVersion 列表"
+      }
+    ],
+    "DescribeEnvironment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"env-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Environment\": {\n            \"EnvironmentId\": \"env-example\",\n            \"EnvironmentTemplateId\": \"envt-example\",\n            \"AgentId\": \"ag-example\",\n            \"UserId\": \"user-example\",\n            \"SessionId\": \"session-example\",\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 Environment"
+      }
+    ],
+    "DescribeEnvironmentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironmentList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"environment-id\",\n            \"Values\": [\n                \"env-example\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentSet\": [\n            {\n                \"EnvironmentId\": \"env-example\",\n                \"EnvironmentTemplateId\": \"envt-example\",\n                \"AgentId\": \"ag-example\",\n                \"UserId\": \"user-example\",\n                \"SessionId\": \"session-example\",\n                \"Status\": \"ACTIVE\",\n                \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n                \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 Environment 列表"
+      }
+    ],
+    "DescribeEnvironmentTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironmentTemplate\n<公共请求参数>\n\n{\n    \"EnvironmentTemplateId\": \"envt-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentTemplate\": {\n            \"EnvironmentTemplateId\": \"envt-example\",\n            \"EnvironmentTemplateName\": \"example-environment-template\",\n            \"EnvironmentTemplateConfig\": {\n                \"Image\": \"example.com/agent-engine/example-environment:v1\",\n                \"Command\": [\n                    \"/usr/local/bin/example-environment\"\n                ],\n                \"Args\": [\n                    \"serve\",\n                    \"--listen\",\n                    \":8080\"\n                ],\n                \"Env\": [\n                    {\n                        \"Name\": \"EXAMPLE_ENVIRONMENT_MODE\",\n                        \"Value\": \"demo\"\n                    }\n                ],\n                \"Resources\": {\n                    \"CPU\": \"1000m\",\n                    \"Memory\": \"512Mi\"\n                },\n                \"Ports\": [\n                    {\n                        \"Name\": \"http\",\n                        \"Port\": 8080,\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"HealthCheck\": {\n                    \"HttpGet\": {\n                        \"Path\": \"/healthz\",\n                        \"Port\": 8080,\n                        \"Scheme\": \"HTTP\"\n                    }\n                }\n            },\n            \"ProviderConfig\": {\n                \"ProviderKind\": \"TENCENT_AGS\",\n                \"TencentAGS\": {\n                    \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-environment-role\",\n                    \"ImageRegistryType\": \"personal\",\n                    \"NetworkConfiguration\": {\n                        \"NetworkMode\": \"PUBLIC\"\n                    }\n                }\n            },\n            \"ProviderStatus\": {\n                \"TencentAGS\": {\n                    \"ToolId\": \"sdt-example-environment\"\n                }\n            },\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 EnvironmentTemplate"
+      }
+    ],
+    "DescribeEnvironmentTemplateList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironmentTemplateList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"environment-template-name\",\n            \"Values\": [\n                \"example-environment-template\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentTemplateSet\": [\n            {\n                \"EnvironmentTemplateId\": \"envt-example\",\n                \"EnvironmentTemplateName\": \"example-environment-template\",\n                \"EnvironmentTemplateConfig\": {\n                    \"Image\": \"example.com/agent-engine/example-environment:v1\",\n                    \"Command\": [\n                        \"/usr/local/bin/example-environment\"\n                    ],\n                    \"Args\": [\n                        \"serve\",\n                        \"--listen\",\n                        \":8080\"\n                    ],\n                    \"Env\": [\n                        {\n                            \"Name\": \"EXAMPLE_ENVIRONMENT_MODE\",\n                            \"Value\": \"demo\"\n                        }\n                    ],\n                    \"Resources\": {\n                        \"CPU\": \"1000m\",\n                        \"Memory\": \"512Mi\"\n                    },\n                    \"Ports\": [\n                        {\n                            \"Name\": \"http\",\n                            \"Port\": 8080,\n                            \"Protocol\": \"TCP\"\n                        }\n                    ],\n                    \"HealthCheck\": {\n                        \"HttpGet\": {\n                            \"Path\": \"/healthz\",\n                            \"Port\": 8080,\n                            \"Scheme\": \"HTTP\"\n                        }\n                    }\n                },\n                \"ProviderConfig\": {\n                    \"ProviderKind\": \"TENCENT_AGS\",\n                    \"TencentAGS\": {\n                        \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-environment-role\",\n                        \"ImageRegistryType\": \"personal\",\n                        \"NetworkConfiguration\": {\n                            \"NetworkMode\": \"PUBLIC\"\n                        }\n                    }\n                },\n                \"ProviderStatus\": {\n                    \"TencentAGS\": {\n                        \"ToolId\": \"sdt-example-environment\"\n                    }\n                },\n                \"Status\": \"ACTIVE\",\n                \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n                \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 EnvironmentTemplate 列表"
+      }
+    ],
+    "DescribeExecutionRuntime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExecutionRuntime\n<公共请求参数>\n\n{\n    \"ExecutionRuntimeId\": \"runtime-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExecutionRuntime\": {\n            \"ExecutionRuntimeId\": \"runtime-example\",\n            \"AgentId\": \"ag-example\",\n            \"SchedulingStatus\": \"ENABLED\",\n            \"ActiveLeaseCount\": 2,\n            \"Capacity\": 0,\n            \"Endpoint\": {\n                \"Scheme\": \"HTTPS\",\n                \"Host\": \"{{ .SourcePort }}-{{ .Metadata.RuntimeInstanceID }}.example.com\",\n                \"Port\": \"443\",\n                \"Metadata\": [\n                    {}\n                ]\n            },\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 ExecutionRuntime"
+      }
+    ],
+    "DescribeExecutionRuntimeList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExecutionRuntimeList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"agent-id\",\n            \"Values\": [\n                \"ag-example\"\n            ]\n        },\n        {\n            \"Name\": \"scheduling-status\",\n            \"Values\": [\n                \"ENABLED\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExecutionRuntimeSet\": [\n            {\n                \"ExecutionRuntimeId\": \"runtime-example\",\n                \"AgentId\": \"ag-example\",\n                \"SchedulingStatus\": \"ENABLED\",\n                \"ActiveLeaseCount\": 2,\n                \"Capacity\": 0,\n                \"Endpoint\": {\n                    \"Scheme\": \"HTTPS\",\n                    \"Host\": \"{{ .SourcePort }}-{{ .Metadata.RuntimeInstanceID }}.example.com\",\n                    \"Port\": \"443\",\n                    \"Metadata\": [\n                        {}\n                    ]\n                },\n                \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n                \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 ExecutionRuntime 列表"
       }
     ],
     "DescribePreCacheImageTask": [
@@ -104,12 +248,60 @@
         "title": "查询沙箱工具列表"
       }
     ],
+    "ModifyAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\",\n    \"AgentName\": \"example-agent-updated\",\n    \"DefaultVersion\": \"v2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Agent\": {\n            \"AgentId\": \"ag-example\",\n            \"AgentName\": \"example-agent-updated\",\n            \"AgentType\": \"CLOUD\",\n            \"DefaultVersion\": \"v2\",\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改 Agent"
+      }
+    ],
+    "ModifyEnvironmentTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironmentTemplate\n<公共请求参数>\n\n{\n    \"EnvironmentTemplateId\": \"envt-example\",\n    \"EnvironmentTemplateName\": \"example-environment-template-updated\",\n    \"EnvironmentTemplateConfig\": {\n        \"Image\": \"example.com/agent-engine/example-environment:v2\",\n        \"Command\": [\n            \"/usr/local/bin/example-environment\"\n        ],\n        \"Args\": [\n            \"serve\",\n            \"--listen\",\n            \":8080\"\n        ],\n        \"Env\": [\n            {\n                \"Name\": \"EXAMPLE_ENVIRONMENT_MODE\",\n                \"Value\": \"demo\"\n            }\n        ],\n        \"Resources\": {\n            \"CPU\": \"1000m\",\n            \"Memory\": \"512Mi\"\n        },\n        \"Ports\": [\n            {\n                \"Name\": \"http\",\n                \"Port\": 8080,\n                \"Protocol\": \"TCP\"\n            }\n        ],\n        \"HealthCheck\": {\n            \"HttpGet\": {\n                \"Path\": \"/healthz\",\n                \"Port\": 8080,\n                \"Scheme\": \"HTTP\"\n            }\n        }\n    },\n    \"ProviderConfig\": {\n        \"ProviderKind\": \"TENCENT_AGS\",\n        \"TencentAGS\": {\n            \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-environment-role\",\n            \"ImageRegistryType\": \"personal\",\n            \"NetworkConfiguration\": {\n                \"NetworkMode\": \"PUBLIC\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentTemplate\": {\n            \"EnvironmentTemplateId\": \"envt-example\",\n            \"EnvironmentTemplateName\": \"example-environment-template-updated\",\n            \"EnvironmentTemplateConfig\": {\n                \"Image\": \"example.com/agent-engine/example-environment:v2\",\n                \"Command\": [\n                    \"/usr/local/bin/example-environment\"\n                ],\n                \"Args\": [\n                    \"serve\",\n                    \"--listen\",\n                    \":8080\"\n                ],\n                \"Env\": [\n                    {\n                        \"Name\": \"EXAMPLE_ENVIRONMENT_MODE\",\n                        \"Value\": \"demo\"\n                    }\n                ],\n                \"Resources\": {\n                    \"CPU\": \"1000m\",\n                    \"Memory\": \"512Mi\"\n                },\n                \"Ports\": [\n                    {\n                        \"Name\": \"http\",\n                        \"Port\": 8080,\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"HealthCheck\": {\n                    \"HttpGet\": {\n                        \"Path\": \"/healthz\",\n                        \"Port\": 8080,\n                        \"Scheme\": \"HTTP\"\n                    }\n                }\n            },\n            \"ProviderConfig\": {\n                \"ProviderKind\": \"TENCENT_AGS\",\n                \"TencentAGS\": {\n                    \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-environment-role\",\n                    \"ImageRegistryType\": \"personal\",\n                    \"NetworkConfiguration\": {\n                        \"NetworkMode\": \"PUBLIC\"\n                    }\n                }\n            },\n            \"ProviderStatus\": {\n                \"TencentAGS\": {\n                    \"ToolId\": \"\"\n                }\n            },\n            \"Status\": \"CREATING\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改 EnvironmentTemplate"
+      }
+    ],
+    "ModifyExecutionRuntime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExecutionRuntime\n<公共请求参数>\n\n{\n    \"ExecutionRuntimeId\": \"runtime-example\",\n    \"Capacity\": 3,\n    \"SchedulingStatus\": \"DISABLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExecutionRuntime\": {\n            \"ExecutionRuntimeId\": \"runtime-example\",\n            \"AgentId\": \"ag-example\",\n            \"SchedulingStatus\": \"DISABLED\",\n            \"ActiveLeaseCount\": 2,\n            \"Capacity\": 3,\n            \"Endpoint\": {\n                \"Scheme\": \"HTTPS\",\n                \"Host\": \"{{ .SourcePort }}-{{ .Metadata.RuntimeInstanceID }}.example.com\",\n                \"Port\": \"443\",\n                \"Metadata\": [\n                    {}\n                ]\n            },\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改 ExecutionRuntime"
+      }
+    ],
     "PauseSandboxInstance": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
         "title": "暂停沙箱实例"
+      }
+    ],
+    "RegisterExecutionRuntime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterExecutionRuntime\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\",\n    \"Capacity\": 0,\n    \"SchedulingStatus\": \"ENABLED\",\n    \"Endpoint\": {\n        \"Scheme\": \"HTTPS\",\n        \"Host\": \"{{ .SourcePort }}-{{ .Metadata.RuntimeInstanceID }}.example.com\",\n        \"Port\": \"443\",\n        \"Metadata\": [\n            {}\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ExecutionRuntime\": {\n            \"ExecutionRuntimeId\": \"runtime-example\",\n            \"AgentId\": \"ag-example\",\n            \"SchedulingStatus\": \"ENABLED\",\n            \"ActiveLeaseCount\": 2,\n            \"Capacity\": 0,\n            \"Endpoint\": {\n                \"Scheme\": \"HTTPS\",\n                \"Host\": \"{{ .SourcePort }}-{{ .Metadata.RuntimeInstanceID }}.example.com\",\n                \"Port\": \"443\",\n                \"Metadata\": [\n                    {}\n                ]\n            },\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "注册 ExecutionRuntime"
+      }
+    ],
+    "RemoveExecutionRuntime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveExecutionRuntime\n<公共请求参数>\n\n{\n    \"ExecutionRuntimeId\": \"runtime-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "注销 ExecutionRuntime"
+      }
+    ],
+    "RenewEnvironmentLease": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewEnvironmentLease\n<公共请求参数>\n\n{\n    \"EnvironmentLeaseId\": \"envl-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentLease\": {\n            \"EnvironmentLeaseId\": \"envl-example\",\n            \"EnvironmentId\": \"env-example\",\n            \"ExpiresTime\": \"2026-07-03T11:01:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "续约 EnvironmentLease"
       }
     ],
     "ResumeSandboxInstance": [
@@ -147,8 +339,8 @@
     "UpdateSandboxTool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Description\": \"更新后的浏览器沙箱环境\",\n    \"Tags\": [\n        {\n            \"Key\": \"Environment\",\n            \"Value\": \"Staging\"\n        },\n        {\n            \"Key\": \"Team\",\n            \"Value\": \"AI-Agent\"\n        },\n        {\n            \"Key\": \"Version\",\n            \"Value\": \"v2.0\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"custom-request-id-456\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678-1234-1234-1234-1234567890ab\"\n    }\n}",
         "title": "更新沙箱工具"
       }
     ]

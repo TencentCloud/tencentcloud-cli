@@ -6,31 +6,49 @@ Input:
 
 ```
 tccli csip DescribeDspmAssetDatabaseList --cli-unfold-argument  \
-    --AssetId cdb-21e9sdha \
-    --Filter.Limit 10 \
-    --Filter.Offset 0
+    --AssetId cdb-l8hhoqwd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "DataSet": [
             {
-                "AssetId": "cdb-c2thbt00",
-                "DbName": "test_db",
-                "TableCount": 10,
-                "SensitiveTableCount": 5,
+                "AssetId": "cdb-l8hhoqwd",
+                "CategoryDetails": [
+                    {
+                        "CategoryId": 356,
+                        "CategoryName": "个人信息",
+                        "RuleSet": [
+                            {
+                                "LevelId": 10,
+                                "LevelScore": 1,
+                                "RuleId": 5836,
+                                "RuleName": "QQ"
+                            }
+                        ]
+                    }
+                ],
+                "CategoryIds": [
+                    355
+                ],
+                "CategoryNames": [
+                    "个人敏感信息"
+                ],
+                "DbName": "dspm01",
                 "RuleIds": [
                     5800
                 ],
                 "RuleNames": [
                     "姓名"
-                ]
+                ],
+                "SensitiveTableCount": 1,
+                "TableCount": 1
             }
         ],
-        "RequestId": "cf839eee-b651-4ff3-9b49-173f9f55733f"
+        "TotalCount": 1,
+        "RequestId": "cac6252a-7788-4606-8431-ab7e57432f72"
     }
 }
 ```

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gme ModifyRecordInfo --cli-unfold-argument  \
-    --SubscribeRecordUserIds.SubscribeUserIds 1342 \
-    --SubscribeRecordUserIds.UnSubscribeUserIds 9872 \
+    --SubscribeRecordUserIds.SubscribeUserIds 44619223 \
+    --SubscribeRecordUserIds.UnSubscribeUserIds 44619224 \
     --RecordMode 1 \
-    --TaskId 446192236330927912 \
+    --TaskId 446192236330927940 \
     --BizId 3400352518
 ```
 

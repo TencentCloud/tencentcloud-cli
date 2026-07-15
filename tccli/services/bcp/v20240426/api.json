@@ -1,0 +1,781 @@
+{
+  "actions": {
+    "ApplyCvmInstances": {
+      "document": "申请cvm实例",
+      "input": "ApplyCvmInstancesRequest",
+      "name": "申请cvm实例",
+      "output": "ApplyCvmInstancesResponse",
+      "status": "online"
+    },
+    "AttachDisks": {
+      "document": "挂载云硬盘",
+      "input": "AttachDisksRequest",
+      "name": "挂载云硬盘",
+      "output": "AttachDisksResponse",
+      "status": "online"
+    },
+    "CreateAccessGroupAndRules": {
+      "document": "为客户集群创建云HDFS权限组并初始化存量权限规则",
+      "input": "CreateAccessGroupAndRulesRequest",
+      "name": "创建权限组并初始化权限规则",
+      "output": "CreateAccessGroupAndRulesResponse",
+      "status": "online"
+    },
+    "CreateDisasterRecoverGroup": {
+      "document": "创建置放群组",
+      "input": "CreateDisasterRecoverGroupRequest",
+      "name": "创建置放群组",
+      "output": "CreateDisasterRecoverGroupResponse",
+      "status": "online"
+    },
+    "CreateDisks": {
+      "document": "创建云硬盘",
+      "input": "CreateDisksRequest",
+      "name": "创建云硬盘",
+      "output": "CreateDisksResponse",
+      "status": "online"
+    },
+    "DeleteAccessGroupAndRules": {
+      "document": "为客户集群删除云HDFS权限组和权限规则",
+      "input": "DeleteAccessGroupAndRulesRequest",
+      "name": "删除权限组和权限规则",
+      "output": "DeleteAccessGroupAndRulesResponse",
+      "status": "online"
+    },
+    "DescribeCvmRepairTasks": {
+      "document": "获取机型配置",
+      "input": "DescribeCvmRepairTasksRequest",
+      "name": "查询CVM维修任务记录列表",
+      "output": "DescribeCvmRepairTasksResponse",
+      "status": "online"
+    },
+    "DescribeDisasterRecoverGroups": {
+      "document": "查询分散置放群组信息",
+      "input": "DescribeDisasterRecoverGroupsRequest",
+      "name": "查询分散置放群组信息",
+      "output": "DescribeDisasterRecoverGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDiskConfigQuota": {
+      "document": "用于查询云硬盘配额。",
+      "input": "DescribeDiskConfigQuotaRequest",
+      "name": "查询云硬盘配额",
+      "output": "DescribeDiskConfigQuotaResponse",
+      "status": "online"
+    },
+    "DescribeDisks": {
+      "document": "获取运营盘列表",
+      "input": "DescribeDisksRequest",
+      "name": "获取磁盘列表",
+      "output": "DescribeDisksResponse",
+      "status": "online"
+    },
+    "DescribeInstanceTypeConfigs": {
+      "document": "本接口 (DescribeInstanceTypeConfigs) 用于查询实例机型配置。",
+      "input": "DescribeInstanceTypeConfigsRequest",
+      "name": "查询实例机型列表",
+      "output": "DescribeInstanceTypeConfigsResponse",
+      "status": "online"
+    },
+    "DescribeInstances": {
+      "document": "获取cvm列表信息",
+      "input": "DescribeInstancesRequest",
+      "name": "获取cvm信息列表",
+      "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DescribeInstancesDiskNum": {
+      "document": "查询实例已挂载云硬盘数量",
+      "input": "DescribeInstancesDiskNumRequest",
+      "name": "查询实例已挂载云硬盘数量",
+      "output": "DescribeInstancesDiskNumResponse",
+      "status": "online"
+    },
+    "DescribeInstancesModification": {
+      "document": "用于查询指定实例支持调整的机型配置",
+      "input": "DescribeInstancesModificationRequest",
+      "name": "查询可变配实例机型列表",
+      "output": "DescribeInstancesModificationResponse",
+      "status": "online"
+    },
+    "DescribeInstancesPriority": {
+      "document": "查询实例优先级",
+      "input": "DescribeInstancesPriorityRequest",
+      "name": "查询实例优先级",
+      "output": "DescribeInstancesPriorityResponse",
+      "status": "online"
+    },
+    "DescribeJobState": {
+      "document": "查询申请cvm实例、重启cvm等异步任务执行状态",
+      "input": "DescribeJobStateRequest",
+      "name": "查询申请cvm实例、重启cvm等异步任务执行状态",
+      "output": "DescribeJobStateResponse",
+      "status": "online"
+    },
+    "DescribePrepCvmInstancePacks": {
+      "document": "查看预扣包列表",
+      "input": "DescribePrepCvmInstancePacksRequest",
+      "name": "查看预扣包列表",
+      "output": "DescribePrepCvmInstancePacksResponse",
+      "status": "online"
+    },
+    "DescribeZoneInstanceConfigInfos": {
+      "document": "获取机型配置",
+      "input": "DescribeZoneInstanceConfigInfosRequest",
+      "name": "获取可用区机型配置信息",
+      "output": "DescribeZoneInstanceConfigInfosResponse",
+      "status": "online"
+    },
+    "IsolateCvmInstances": {
+      "document": "隔离cvm实例",
+      "input": "IsolateCvmInstancesRequest",
+      "name": "隔离cvm实例",
+      "output": "IsolateCvmInstancesResponse",
+      "status": "online"
+    },
+    "ModifyDiskExtraPerformance": {
+      "document": "扩容cbs磁盘额外性能。",
+      "input": "ModifyDiskExtraPerformanceRequest",
+      "name": "扩容cbs磁盘额外性能",
+      "output": "ModifyDiskExtraPerformanceResponse",
+      "status": "online"
+    },
+    "ModifyInstancesDisasterRecoverGroup": {
+      "document": "置放群组挪动cvm",
+      "input": "ModifyInstancesDisasterRecoverGroupRequest",
+      "name": "修改CVM实例的置放群组",
+      "output": "ModifyInstancesDisasterRecoverGroupResponse",
+      "status": "online"
+    },
+    "PurchasePrepCvmInstancePack": {
+      "document": "创建cvm预扣包（边界场景：如果业务申请100台SA2.2XLARGE32的预扣包，cvm大盘只有50台，那么最终请求会成功创建50台大小的预扣包）。",
+      "input": "PurchasePrepCvmInstancePackRequest",
+      "name": "创建cvm预扣包",
+      "output": "PurchasePrepCvmInstancePackResponse",
+      "status": "online"
+    },
+    "RebootCvmInstances": {
+      "document": "重启cvm实例",
+      "input": "RebootCvmInstancesRequest",
+      "name": "重启cvm实例",
+      "output": "RebootCvmInstancesResponse",
+      "status": "online"
+    },
+    "RenewCvmInstances": {
+      "document": "续费恢复cvm实例",
+      "input": "RenewCvmInstancesRequest",
+      "name": "续费恢复cvm实例",
+      "output": "RenewCvmInstancesResponse",
+      "status": "online"
+    },
+    "RenewPrepCvmInstancePacks": {
+      "document": "续费预扣包",
+      "input": "RenewPrepCvmInstancePacksRequest",
+      "name": "续费预扣包",
+      "output": "RenewPrepCvmInstancePacksResponse",
+      "status": "online"
+    },
+    "ResetCvmInstanceType": {
+      "document": "重置cvm实例规格",
+      "input": "ResetCvmInstanceTypeRequest",
+      "name": "重置cvm实例规格",
+      "output": "ResetCvmInstanceTypeResponse",
+      "status": "online"
+    },
+    "ResizeCvmInstanceDisk": {
+      "document": "扩容cbs磁盘容量",
+      "input": "ResizeCvmInstanceDiskRequest",
+      "name": "扩容cbs磁盘容量",
+      "output": "ResizeCvmInstanceDiskResponse",
+      "status": "online"
+    },
+    "ReturnCvmInstances": {
+      "document": "退还cvm实例",
+      "input": "ReturnCvmInstancesRequest",
+      "name": "退还cvm实例",
+      "output": "ReturnCvmInstancesResponse",
+      "status": "online"
+    },
+    "StartCvmInstances": {
+      "document": "cvm实例开机",
+      "input": "StartCvmInstancesRequest",
+      "name": "开机cvm实例",
+      "output": "StartCvmInstancesResponse",
+      "status": "online"
+    },
+    "StopCvmInstances": {
+      "document": "重启cvm实例",
+      "input": "StopCvmInstancesRequest",
+      "name": "关机cvm实例",
+      "output": "StopCvmInstancesResponse",
+      "status": "online"
+    },
+    "TerminateCvmInstances": {
+      "document": "将资源池中的多余实例退还/释放到cvm大盘",
+      "input": "TerminateCvmInstancesRequest",
+      "name": "释放cvm实例",
+      "output": "TerminateCvmInstancesResponse",
+      "status": "online"
+    },
+    "TerminatePrepInstancePacks": {
+      "document": "销毁预扣包",
+      "input": "TerminatePrepInstancePacksRequest",
+      "name": "销毁预扣包",
+      "output": "TerminatePrepInstancePacksResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-04-26",
+    "api_brief": "申领cvm和退换cvm的能力。",
+    "serviceNameCN": "大数据弹性资源池",
+    "serviceShortName": "bcp"
+  },
+  "objects": {
+    "ApplyCvmInstancesRequest": {
+      "document": "ApplyCvmInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ApplyCvmInstancesResponse": {
+      "document": "ApplyCvmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachDisksRequest": {
+      "document": "AttachDisks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AttachDisksResponse": {
+      "document": "AttachDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccessGroupAndRulesRequest": {
+      "document": "CreateAccessGroupAndRules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateAccessGroupAndRulesResponse": {
+      "document": "CreateAccessGroupAndRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDisasterRecoverGroupRequest": {
+      "document": "CreateDisasterRecoverGroup请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateDisasterRecoverGroupResponse": {
+      "document": "CreateDisasterRecoverGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDisksRequest": {
+      "document": "CreateDisks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateDisksResponse": {
+      "document": "CreateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessGroupAndRulesRequest": {
+      "document": "DeleteAccessGroupAndRules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteAccessGroupAndRulesResponse": {
+      "document": "DeleteAccessGroupAndRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCvmRepairTasksRequest": {
+      "document": "DescribeCvmRepairTasks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCvmRepairTasksResponse": {
+      "document": "DescribeCvmRepairTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisasterRecoverGroupsRequest": {
+      "document": "DescribeDisasterRecoverGroups请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDisasterRecoverGroupsResponse": {
+      "document": "DescribeDisasterRecoverGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskConfigQuotaRequest": {
+      "document": "DescribeDiskConfigQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDiskConfigQuotaResponse": {
+      "document": "DescribeDiskConfigQuota返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksRequest": {
+      "document": "DescribeDisks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDisksResponse": {
+      "document": "DescribeDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceTypeConfigsRequest": {
+      "document": "DescribeInstanceTypeConfigs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstanceTypeConfigsResponse": {
+      "document": "DescribeInstanceTypeConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesDiskNumRequest": {
+      "document": "DescribeInstancesDiskNum请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstancesDiskNumResponse": {
+      "document": "DescribeInstancesDiskNum返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesModificationRequest": {
+      "document": "DescribeInstancesModification请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstancesModificationResponse": {
+      "document": "DescribeInstancesModification返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesPriorityRequest": {
+      "document": "DescribeInstancesPriority请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstancesPriorityResponse": {
+      "document": "DescribeInstancesPriority返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobStateRequest": {
+      "document": "DescribeJobState请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeJobStateResponse": {
+      "document": "DescribeJobState返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrepCvmInstancePacksRequest": {
+      "document": "DescribePrepCvmInstancePacks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrepCvmInstancePacksResponse": {
+      "document": "DescribePrepCvmInstancePacks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneInstanceConfigInfosRequest": {
+      "document": "DescribeZoneInstanceConfigInfos请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeZoneInstanceConfigInfosResponse": {
+      "document": "DescribeZoneInstanceConfigInfos返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateCvmInstancesRequest": {
+      "document": "IsolateCvmInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "IsolateCvmInstancesResponse": {
+      "document": "IsolateCvmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskExtraPerformanceRequest": {
+      "document": "ModifyDiskExtraPerformance请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyDiskExtraPerformanceResponse": {
+      "document": "ModifyDiskExtraPerformance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesDisasterRecoverGroupRequest": {
+      "document": "ModifyInstancesDisasterRecoverGroup请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyInstancesDisasterRecoverGroupResponse": {
+      "document": "ModifyInstancesDisasterRecoverGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PurchasePrepCvmInstancePackRequest": {
+      "document": "PurchasePrepCvmInstancePack请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "PurchasePrepCvmInstancePackResponse": {
+      "document": "PurchasePrepCvmInstancePack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebootCvmInstancesRequest": {
+      "document": "RebootCvmInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RebootCvmInstancesResponse": {
+      "document": "RebootCvmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewCvmInstancesRequest": {
+      "document": "RenewCvmInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RenewCvmInstancesResponse": {
+      "document": "RenewCvmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewPrepCvmInstancePacksRequest": {
+      "document": "RenewPrepCvmInstancePacks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RenewPrepCvmInstancePacksResponse": {
+      "document": "RenewPrepCvmInstancePacks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetCvmInstanceTypeRequest": {
+      "document": "ResetCvmInstanceType请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ResetCvmInstanceTypeResponse": {
+      "document": "ResetCvmInstanceType返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeCvmInstanceDiskRequest": {
+      "document": "ResizeCvmInstanceDisk请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ResizeCvmInstanceDiskResponse": {
+      "document": "ResizeCvmInstanceDisk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReturnCvmInstancesRequest": {
+      "document": "ReturnCvmInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ReturnCvmInstancesResponse": {
+      "document": "ReturnCvmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartCvmInstancesRequest": {
+      "document": "StartCvmInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "StartCvmInstancesResponse": {
+      "document": "StartCvmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCvmInstancesRequest": {
+      "document": "StopCvmInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "StopCvmInstancesResponse": {
+      "document": "StopCvmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateCvmInstancesRequest": {
+      "document": "TerminateCvmInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "TerminateCvmInstancesResponse": {
+      "document": "TerminateCvmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminatePrepInstancePacksRequest": {
+      "document": "TerminatePrepInstancePacks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "TerminatePrepInstancePacksResponse": {
+      "document": "TerminatePrepInstancePacks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

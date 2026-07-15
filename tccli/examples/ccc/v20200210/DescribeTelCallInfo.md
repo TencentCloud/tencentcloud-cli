@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ccc DescribeTelCallInfo --cli-unfold-argument  \
-    --StartTimeStamp 0 \
-    --EndTimeStamp 0 \
-    --SdkAppIdList 0
+    --StartTimeStamp 1773041460 \
+    --EndTimeStamp 1773042460 \
+    --SdkAppIdList 140000000
 ```
 
 Output: 
@@ -21,7 +21,7 @@ Output:
         "VOIPCallInCount": 0,
         "AsrOfflineCount": 0,
         "AsrRealtimeCount": 0,
-        "RequestId": "abc"
+        "RequestId": "sfahfj-fasf"
     }
 }
 ```

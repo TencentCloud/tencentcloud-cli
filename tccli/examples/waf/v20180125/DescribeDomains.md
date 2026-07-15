@@ -1,4 +1,148 @@
-**Example 1: 查询用户所有域名信息**
+**Example 1: 查询用户SAASWAF某个实例的域名信息**
+
+查询用户SAASWAF某个实例的域名信息
+
+Input: 
+
+```
+tccli waf DescribeDomains --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 20 \
+    --Filters.0.Name Edition \
+    --Filters.0.Values sparta_waf \
+    --Filters.0.ExactMatch True \
+    --Filters.1.Name InstanceId \
+    --Filters.1.Values waf_2kw60jgy0908e8j3 \
+    --Filters.1.ExactMatch True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "91334a5a-1d24-42b9-998e-57e1490f9608",
+        "Total": 2,
+        "Domains": [
+            {
+                "AppId": 1256702383,
+                "Domain": "randygz2.qcloudwaf.com",
+                "DomainId": "7d58ebf3db7e5f7e8f91eb017c6a7b31",
+                "InstanceId": "waf_2kw60jgy0908e8j3",
+                "InstanceName": "广州双栈集群企业版",
+                "Edition": "sparta-waf",
+                "Region": "gz",
+                "CreateTime": "2024-07-18T10:46:12+08:00",
+                "Cname": "dae1cae7d48ec31c7727a86a8cda2a62.qcloudzygj.com",
+                "ClsStatus": 1,
+                "PostCLSStatus": 0,
+                "PostCKafkaStatus": 0,
+                "FlowMode": 0,
+                "Status": 1,
+                "Mode": 1,
+                "State": 0,
+                "Engine": 1,
+                "Ipv6Status": 1,
+                "BotStatus": 2,
+                "ApiStatus": 0,
+                "Level": 3,
+                "RsList": [
+                    "134.175.221.0/24",
+                    "2402:4e00:1020:1707::/64"
+                ],
+                "CCList": [
+                    "134.175.225.0/24"
+                ],
+                "Ports": [
+                    {
+                        "NginxServerId": 231056,
+                        "Port": "80",
+                        "Protocol": "http",
+                        "UpstreamPort": "80",
+                        "UpstreamProtocol": "http"
+                    },
+                    {
+                        "NginxServerId": 321607,
+                        "Port": "443",
+                        "Protocol": "https",
+                        "UpstreamPort": "80",
+                        "UpstreamProtocol": "http"
+                    }
+                ],
+                "LoadBalancerSet": [],
+                "SgState": 2,
+                "SgDetail": "ok",
+                "Note": "randy domain",
+                "SrcList": [
+                    "114.132.246.237"
+                ],
+                "UpstreamDomainList": [
+                    "xiaochegnxu.upstream.com"
+                ],
+                "SgID": "sg-7dme0v73",
+                "AccessStatus": 1,
+                "Labels": [
+                    "randy domain"
+                ]
+            },
+            {
+                "AppId": 1256704386,
+                "Domain": "xiaochengxu.qcloudwaf.com",
+                "DomainId": "42059f9a9905519d8f9e72a823891544",
+                "InstanceId": "waf_2kw60jgy0908e8j3",
+                "InstanceName": "广州双栈集群企业版",
+                "Edition": "sparta-waf",
+                "Region": "gz",
+                "CreateTime": "2024-07-08T17:42:42+08:00",
+                "Cname": "3323d11c0772e26ca3c68548b9cd069f.qcloudzygj.com",
+                "ClsStatus": 1,
+                "PostCLSStatus": 0,
+                "PostCKafkaStatus": 0,
+                "FlowMode": 0,
+                "Status": 1,
+                "Mode": 1,
+                "State": 1,
+                "Engine": 1,
+                "Ipv6Status": 0,
+                "BotStatus": 2,
+                "ApiStatus": 0,
+                "Level": 3,
+                "RsList": [
+                    "134.175.221.0/24"
+                ],
+                "CCList": [
+                    "134.175.225.0/24"
+                ],
+                "Ports": [
+                    {
+                        "NginxServerId": 257856,
+                        "Port": "80",
+                        "Protocol": "http",
+                        "UpstreamPort": "80",
+                        "UpstreamProtocol": "http"
+                    }
+                ],
+                "LoadBalancerSet": [],
+                "SgState": 1,
+                "SgDetail": "fail",
+                "Note": "xiaochengxu",
+                "SrcList": [
+                    "124.221.148.62"
+                ],
+                "UpstreamDomainList": [
+                    "xiaochegnxu.upstream.com"
+                ],
+                "SgID": "sg-7dme0v73",
+                "AccessStatus": 1,
+                "Labels": [
+                    "xiaochengxu"
+                ]
+            }
+        ]
+    }
+}
+```
+
+**Example 2: 查询用户所有域名信息**
 
 查询用户所有域名信息
 
@@ -144,150 +288,6 @@ Output:
                 "AccessStatus": 1,
                 "Labels": [
                     "saas domain"
-                ]
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 查询用户SAASWAF某个实例的域名信息**
-
-查询用户SAASWAF某个实例的域名信息
-
-Input: 
-
-```
-tccli waf DescribeDomains --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 20 \
-    --Filters.0.Name Edition \
-    --Filters.0.Values sparta_waf \
-    --Filters.0.ExactMatch True \
-    --Filters.1.Name InstanceId \
-    --Filters.1.Values waf_2kw60jgy0908e8j3 \
-    --Filters.1.ExactMatch True
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "91334a5a-1d24-42b9-998e-57e1490f9608",
-        "Total": 2,
-        "Domains": [
-            {
-                "AppId": 1256702383,
-                "Domain": "randygz2.qcloudwaf.com",
-                "DomainId": "7d58ebf3db7e5f7e8f91eb017c6a7b31",
-                "InstanceId": "waf_2kw60jgy0908e8j3",
-                "InstanceName": "广州双栈集群企业版",
-                "Edition": "sparta-waf",
-                "Region": "gz",
-                "CreateTime": "2024-07-18T10:46:12+08:00",
-                "Cname": "dae1cae7d48ec31c7727a86a8cda2a62.qcloudzygj.com",
-                "ClsStatus": 1,
-                "PostCLSStatus": 0,
-                "PostCKafkaStatus": 0,
-                "FlowMode": 0,
-                "Status": 1,
-                "Mode": 1,
-                "State": 0,
-                "Engine": 1,
-                "Ipv6Status": 1,
-                "BotStatus": 2,
-                "ApiStatus": 0,
-                "Level": 3,
-                "RsList": [
-                    "134.175.221.0/24",
-                    "2402:4e00:1020:1707::/64"
-                ],
-                "CCList": [
-                    "134.175.225.0/24"
-                ],
-                "Ports": [
-                    {
-                        "NginxServerId": 231056,
-                        "Port": "80",
-                        "Protocol": "http",
-                        "UpstreamPort": "80",
-                        "UpstreamProtocol": "http"
-                    },
-                    {
-                        "NginxServerId": 321607,
-                        "Port": "443",
-                        "Protocol": "https",
-                        "UpstreamPort": "80",
-                        "UpstreamProtocol": "http"
-                    }
-                ],
-                "LoadBalancerSet": [],
-                "SgState": 2,
-                "SgDetail": "ok",
-                "Note": "randy domain",
-                "SrcList": [
-                    "114.132.246.237"
-                ],
-                "UpstreamDomainList": [
-                    "xiaochegnxu.upstream.com"
-                ],
-                "SgID": "sg-7dme0v73",
-                "AccessStatus": 1,
-                "Labels": [
-                    "randy domain"
-                ]
-            },
-            {
-                "AppId": 1256704386,
-                "Domain": "xiaochengxu.qcloudwaf.com",
-                "DomainId": "42059f9a9905519d8f9e72a823891544",
-                "InstanceId": "waf_2kw60jgy0908e8j3",
-                "InstanceName": "广州双栈集群企业版",
-                "Edition": "sparta-waf",
-                "Region": "gz",
-                "CreateTime": "2024-07-08T17:42:42+08:00",
-                "Cname": "3323d11c0772e26ca3c68548b9cd069f.qcloudzygj.com",
-                "ClsStatus": 1,
-                "PostCLSStatus": 0,
-                "PostCKafkaStatus": 0,
-                "FlowMode": 0,
-                "Status": 1,
-                "Mode": 1,
-                "State": 1,
-                "Engine": 1,
-                "Ipv6Status": 0,
-                "BotStatus": 2,
-                "ApiStatus": 0,
-                "Level": 3,
-                "RsList": [
-                    "134.175.221.0/24"
-                ],
-                "CCList": [
-                    "134.175.225.0/24"
-                ],
-                "Ports": [
-                    {
-                        "NginxServerId": 257856,
-                        "Port": "80",
-                        "Protocol": "http",
-                        "UpstreamPort": "80",
-                        "UpstreamProtocol": "http"
-                    }
-                ],
-                "LoadBalancerSet": [],
-                "SgState": 1,
-                "SgDetail": "fail",
-                "Note": "xiaochengxu",
-                "SrcList": [
-                    "124.221.148.62"
-                ],
-                "UpstreamDomainList": [
-                    "xiaochegnxu.upstream.com"
-                ],
-                "SgID": "sg-7dme0v73",
-                "AccessStatus": 1,
-                "Labels": [
-                    "xiaochengxu"
                 ]
             }
         ]

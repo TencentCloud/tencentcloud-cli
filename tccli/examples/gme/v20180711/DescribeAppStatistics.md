@@ -9,7 +9,7 @@ tccli gme DescribeAppStatistics --cli-unfold-argument  \
     --Services VoiceMessage RealTimeSpeech \
     --StartDate 2019-08-01 \
     --EndDate 2019-08-03 \
-    --BizId 140000001
+    --BizId 1400000000
 ```
 
 Output: 
@@ -31,20 +31,20 @@ Output:
                         "MainLandDau": 1
                     },
                     "StreamTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "RealtimeTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "VoiceMessageStatisticsItem": {
                         "Dau": 1
                     },
                     "AudioTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "Date": "2020-09-22",
                     "OverseaTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     }
                 },
                 {
@@ -61,19 +61,19 @@ Output:
                     },
                     "Date": "2020-09-22",
                     "StreamTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "RealtimeTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "VoiceMessageStatisticsItem": {
                         "Dau": 1
                     },
                     "AudioTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "OverseaTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     }
                 },
                 {
@@ -90,19 +90,19 @@ Output:
                     },
                     "Date": "2020-09-22",
                     "StreamTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "RealtimeTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "VoiceMessageStatisticsItem": {
                         "Dau": 1
                     },
                     "AudioTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     },
                     "OverseaTextStatisticsItem": {
-                        "Data": 0.0
+                        "Data": 0
                     }
                 }
             ]

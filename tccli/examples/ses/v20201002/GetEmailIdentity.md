@@ -6,33 +6,32 @@ Input:
 
 ```
 tccli ses GetEmailIdentity --cli-unfold-argument  \
-    --EmailIdentity mail.qcloud.com
+    --EmailIdentity test007.cloudses.com
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8979fc1e-9564-4fc9-bf7d-2958ce679b72",
-        "IdentityType": "DOMAIN",
-        "VerifiedForSendingStatus": false,
-        "DKIMOption": 0,
         "Attributes": [
             {
-                "Type": "TXT",
-                "SendDomain": "mail.qcloud.com",
-                "ExpectedValue": "v=spf1 include:qcloudmail.com ~all",
-                "CurrentValue": "",
-                "Status": false
-            },
-            {
-                "Type": "TXT",
-                "SendDomain": "mail._domainkey.mail.qcloud.com",
-                "ExpectedValue": "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDeMVIzrCa3T14JsNY0IRv5/2V1/v2itlviLQBwXsa7shBD6TrBkswsFUToPyMRWC9tbR/5ey0nRBH0ZVxp+lsmTxid2Y2z+FApQ6ra2VsXfbJP3HE6wAO0YTVEJt1TmeczhEd2Jiz/fcabIISgXEdSpTYJhb0ct0VJRxcg4c8c7wIDAQAB",
-                "CurrentValue": "",
-                "Status": false
+                "CurrentValue": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA58lMBFjalue8JSUKjNHaSN1vzIXtAiKGupG0k/xDfXTKhurbGtVp/J2CZwhd7e9WXXSkdLn3ex1dTlPFQClDHHS2DcCfnuZXSgPgwAlaLsgomI4uCQ1x9aP+ACmidJFlvRhbF/Om3UlkYyYoeD0n7OHj7kMw6PjzzfS8PCtzXlJDsBOolmnYd9vL9DwTvi8h3pLrr/aniojXXxvj7hQ3SbTBD9TKpOSVBLtNe/5f5znETDfvzuta8QjLO+xoM23GI8+nrqSaAQMqxPHODQwpMdM2pVmi7gp7lNuvuzZKDfBcRJqrvA4r1+JE5bIlVD5/cQqGM8STSVsICRzHyhlUMQIDAQAB",
+                "ExpectedValue": "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA58lMBFjalue8JSUKjNHaSN1vzIXtAiKGupG0k/xDfXTKhurbGtVp/J2CZwhd7e9WXXSkdLn3ex1dTlPFQClDHHS2DcCfnuZXSgPgwAlaLsgomI4uCQ1x9aP+ACmidJFlvRhbF/Om3UlkYyYoeD0n7OHj7kMw6PjzzfS8PCtzXlJDsBOolmnYd9vL9DwTvi8h3pLrr/aniojXXxvj7hQ3SbTBD9TKpOSVBLtNe/5f5znETDfvzuta8QjLO+xoM23GI8+nrqSaAQMqxPHODQwpMdM2pVmi7gp7lNuvuzZKDfBcRJqrvA4r1+JE5bIlVD5/cQqGM8STSVsICRzHyhlUMQIDAQAB",
+                "SendDomain": "qcloud._domainkey.test007.cloudses.com",
+                "Status": true,
+                "Type": "TXT"
             }
-        ]
+        ],
+        "DKIMOption": 1,
+        "IdentityType": "DOMAIN",
+        "TagList": [
+            {
+                "TagKey": "部门",
+                "TagValue": "邮件测试产研部门"
+            }
+        ],
+        "VerifiedForSendingStatus": true,
+        "RequestId": "417c19bc-c15b-4b8d-ae16-45ebff6fb854"
     }
 }
 ```

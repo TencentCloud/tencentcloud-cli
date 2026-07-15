@@ -1,0 +1,27 @@
+**Example 1: skill上传接口**
+
+**表示打码内容，调用放根据实际文件内容填充FileData
+
+Input: 
+
+```
+tccli waf UploadSkillSecScan --cli-unfold-argument  \
+    --ServiceId waf-test \
+    --FileName f_20260427_111914_6743bc29.zip \
+    --FileData UEsDBBQAAAAIAAAAISi9Qo7w6AIAANYFAAAIAAAAU0tJTEwubWRtVMFO3DAQvecrRuICdMmqpaUSt2pBalWEENDtNSaZJKN1bNd2loZDv70zTja7pdziZPLemzd**ATf+yf0BiMGWOk+RPSwsp2zBk2EK************R9D6clFsib70kfb**********i2B**MY5Tmh9qrEH1fxt4jlD**/s*COu*uR+4cHlsKEDakNWyVpmqm**o3GH**jGVqanqvRM0C8DeW/RtqHD**ZB**b7v0cRbn0dlA0fphAcpU4NDX****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
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "ContentHash": "sha256:efbc9937af7cd8fa4835908d753dd6272a521da849b2cfdb58b5f5f281c79a4a",
+            "Message": "检测记录已存在，无需重复上传",
+            "Status": "success"
+        },
+        "RequestId": "c175da86-5773-410a-80e0-e9aa2b8d94f1"
+    }
+}
+```
+

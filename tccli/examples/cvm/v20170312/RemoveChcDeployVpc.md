@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cvm RemoveChcDeployVpc --cli-unfold-argument  \
-    --ChcIds chc-1a2b3c4d chc-adf34aft
+    --ChcIds chc-ejzpceyo
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
+        "RequestId": "0b0bf55c-0340-451d-8dde-1211c3ba6d38"
     }
 }
 ```

@@ -1,0 +1,1018 @@
+{
+  "actions": {
+    "CreateAlarm": {
+      "document": "新增告警规则",
+      "input": "CreateAlarmRequest",
+      "name": "创建告警规则",
+      "output": "CreateAlarmResponse",
+      "status": "online"
+    },
+    "DeleteAlarm": {
+      "document": "删除告警规则",
+      "input": "DeleteAlarmRequest",
+      "name": "删除告警规则",
+      "output": "DeleteAlarmResponse",
+      "status": "online"
+    },
+    "DescribeAggregateUserQuotas": {
+      "document": "用户配额列表",
+      "input": "DescribeAggregateUserQuotasRequest",
+      "name": "用户配额列表",
+      "output": "DescribeAggregateUserQuotasResponse",
+      "status": "online"
+    },
+    "DescribeAlarms": {
+      "document": "查询告警规则列表",
+      "input": "DescribeAlarmsRequest",
+      "name": "告警规则列表",
+      "output": "DescribeAlarmsResponse",
+      "status": "online"
+    },
+    "DescribeUserQuota": {
+      "document": "查询单个用户配额",
+      "input": "DescribeUserQuotaRequest",
+      "name": "查询单个用户配额",
+      "output": "DescribeUserQuotaResponse",
+      "status": "online"
+    },
+    "EnableAlarm": {
+      "document": "启用告警规则",
+      "input": "EnableAlarmRequest",
+      "name": "启用告警",
+      "output": "EnableAlarmResponse",
+      "status": "online"
+    },
+    "UpdateAlarm": {
+      "document": "修改告警规则",
+      "input": "UpdateAlarmRequest",
+      "name": "修改告警规则",
+      "output": "UpdateAlarmResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-12-04",
+    "api_brief": "根据不同的产品进行配额管理",
+    "serviceNameCN": "配额中心",
+    "serviceShortName": "quota"
+  },
+  "objects": {
+    "Alarm": {
+      "document": "告警规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警规则ID",
+          "example": "12",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警规则名称",
+          "example": "监控告警",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品id",
+          "example": "2001",
+          "member": "uint64",
+          "name": "ProductId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额ID",
+          "example": "2",
+          "member": "uint64",
+          "name": "QuotaId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警条件",
+          "example": "1",
+          "member": "int64",
+          "name": "Metrics",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警频率",
+          "example": "2",
+          "member": "int64",
+          "name": "Frequency",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警阈值  0-100",
+          "example": "1",
+          "member": "int64",
+          "name": "Threshold",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人uin",
+          "example": "234",
+          "member": "int64",
+          "name": "OwnerUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则所属人uin",
+          "example": "234422",
+          "member": "int64",
+          "name": "MemberUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额名称",
+          "example": "配额1",
+          "member": "string",
+          "name": "QuotaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否删除  1：未删除\n2：删除",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAlarmRequest": {
+      "document": "CreateAlarm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警规则名称</p>",
+          "example": "监控告警",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品ID</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额ID</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "QuotaId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警指标 1:配额使用量 2:配额使用率 3:配额剩余量 4:配额剩余率</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Metrics",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警阈值  0-100</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Threshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警频率 单位/秒 </p>",
+          "example": "900",
+          "member": "int64",
+          "name": "Frequency",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>成员uin</p>",
+          "example": "2342",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmResponse": {
+      "document": "CreateAlarm返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>1001</p>",
+          "example": "119",
+          "member": "int64",
+          "name": "AlarmId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmRequest": {
+      "document": "DeleteAlarm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "12",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则所属成员uin",
+          "example": "234",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmResponse": {
+      "document": "DeleteAlarm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregateUserQuotasRequest": {
+      "document": "DescribeAggregateUserQuotas请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>成员账号，可以为为空，为空则查询当前账号列表</p>",
+          "example": "[100]",
+          "member": "int64",
+          "name": "MemberUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>limit</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>offset</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排列</p>",
+          "example": "无",
+          "member": "Sort",
+          "name": "Sort",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品Id</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProductId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称</p>",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额维度</p>",
+          "example": "无",
+          "member": "QuotaDimension",
+          "name": "QuotaDimensions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregateUserQuotasResponse": {
+      "document": "DescribeAggregateUserQuotas返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配额Id</p>",
+          "example": "1001",
+          "member": "int64",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额名称</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额维度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserQuota",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmsRequest": {
+      "document": "DescribeAlarms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页数量。最大100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "12",
+          "member": "int64",
+          "name": "ProductId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "配额ID",
+          "example": "23",
+          "member": "int64",
+          "name": "QuotaId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警、配额名称",
+          "example": "规则1",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员uins",
+          "example": "[123,45456]",
+          "member": "int64",
+          "name": "MemberUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "告警指标",
+          "example": "2",
+          "member": "int64",
+          "name": "Metrics",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "2",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmsResponse": {
+      "document": "DescribeAlarms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "[{}]",
+          "member": "Alarm",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserQuotaRequest": {
+      "document": "DescribeUserQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配额id",
+          "example": "100",
+          "member": "Sort",
+          "name": "QuotaId",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "各个产品配额ID",
+          "example": "cvm1234",
+          "member": "string",
+          "name": "QuotaInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserQuotaResponse": {
+      "document": "DescribeUserQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配额Id",
+          "example": "1001",
+          "member": "int64",
+          "name": "QuotaId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额名称",
+          "example": "cvm配额",
+          "member": "string",
+          "name": "QuotaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额单位",
+          "example": "个",
+          "member": "string",
+          "name": "QuotaUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户配额",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额用量",
+          "example": "800",
+          "member": "int64",
+          "name": "TotalUsage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额说明",
+          "example": "**配额",
+          "member": "string",
+          "name": "QuotaDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableAlarmRequest": {
+      "document": "EnableAlarm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "12",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则所属成员uin",
+          "example": "234",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableAlarmResponse": {
+      "document": "EnableAlarm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤名称",
+          "example": "ID",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤值",
+          "example": "12",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QuotaDimension": {
+      "document": "配额维度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配额维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "资源维度",
+          "member": "string",
+          "name": "DimensionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一级维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc",
+          "member": "string",
+          "name": "PrimaryValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Sort": {
+      "document": "排序",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升序 降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段",
+          "example": "名字",
+          "member": "string",
+          "name": "Field",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateAlarmRequest": {
+      "document": "UpdateAlarm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID",
+          "example": "12",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警规则名称",
+          "example": "监控告警",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "11",
+          "member": "int64",
+          "name": "ProductId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "配额ID",
+          "example": "12",
+          "member": "int64",
+          "name": "QuotaId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警指标 1:配额使用量 2:配额使用率 3:配额剩余量 4:配额剩余率",
+          "example": "2",
+          "member": "int64",
+          "name": "Metrics",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警阈值  0-100",
+          "example": "50",
+          "member": "int64",
+          "name": "Threshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警频率 ",
+          "example": "2",
+          "member": "int64",
+          "name": "Frequency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则所属用户uin\n操作非集团账号规则，可以不传这个参数\n操作集团账号规则，传当前规则所有用户uin",
+          "example": "23424",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAlarmResponse": {
+      "document": "UpdateAlarm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserQuota": {
+      "document": "用户配额",
+      "members": [
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "100001*",
+          "member": "int64",
+          "name": "MemberUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号昵称",
+          "example": "**账号",
+          "member": "string",
+          "name": "MemberName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额实例ID",
+          "example": "1",
+          "member": "string",
+          "name": "QuotaInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额ID",
+          "example": "1001",
+          "member": "int64",
+          "name": "QuotaId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额名称",
+          "example": "**配额",
+          "member": "string",
+          "name": "QuotaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额单位",
+          "example": "个",
+          "member": "string",
+          "name": "QuotaUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额申请方式，枚举值：1:可申请，2:工单申请，3不可申请",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplyType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户总配额",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户配额总用量",
+          "example": "800",
+          "member": "int64",
+          "name": "TotalUsage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额描述",
+          "example": "**配额",
+          "member": "string",
+          "name": "QuotaDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "QuotaDimension",
+          "name": "QuotaDimensions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态 5 审批中",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

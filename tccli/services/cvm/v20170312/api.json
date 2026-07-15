@@ -15,7 +15,7 @@
       "status": "online"
     },
     "AssociateSecurityGroups": {
-      "document": "本接口 (AssociateSecurityGroups) 用于绑定安全组到指定实例。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n<dx-alert infotype=\"explain\" title=\"\">\n多个安全组绑定至实例后，将以绑定顺序作为优先级顺序依次匹配执行。如需调整安全组优先级，请参见 [调整安全组优先级](https://cloud.tencent.com/document/product/213/42842)。\n</dx-alert>",
+      "document": "本接口 (AssociateSecurityGroups) 用于绑定安全组到指定实例。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n<dx-alert infotype=\"explain\" title=\"\">\n多个安全组绑定至实例后，将以绑定顺序作为优先级顺序依次匹配执行。如需调整安全组优先级，请参见 [调整安全组优先级](https://cloud.tencent.com/document/product/213/42842)。\n</dx-alert>",
       "input": "AssociateSecurityGroupsRequest",
       "name": "绑定安全组",
       "output": "AssociateSecurityGroupsResponse",
@@ -36,7 +36,7 @@
       "status": "online"
     },
     "ConvertOperatingSystems": {
-      "document": "本接口(ConvertOperatingSystem)用于转换实例的操作系统，仅支持源操作系统为 CentOS 7、CentOS 8 的实例。",
+      "document": "本接口(ConvertOperatingSystems)用于转换实例的操作系统，仅支持源操作系统为 CentOS 7、CentOS 8 的实例。",
       "input": "ConvertOperatingSystemsRequest",
       "name": "转换操作系统",
       "output": "ConvertOperatingSystemsResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "DeleteImages": {
-      "document": "本接口（DeleteImages）用于删除一个或多个镜像。\n\n* 当[镜像状态](https://cloud.tencent.com/document/product/213/15753#Image)为`创建中`和`使用中`时, 不允许删除。镜像状态可以通过[DescribeImages](https://cloud.tencent.com/document/api/213/9418)获取。\n* 每个地域最多只支持创建500个自定义镜像，删除镜像可以释放账户的配额。\n* 当镜像正在被其它账户分享时，不允许删除。",
+      "document": "本接口（DeleteImages）用于删除一个或多个镜像。\n\n* 当[镜像状态](https://cloud.tencent.com/document/product/213/15753#Image) 为`创建中`、`复制中`、`导入中`时, 不允许删除。镜像状态可以通过[DescribeImages](https://cloud.tencent.com/document/api/213/9418)获取。\n* 被共享的镜像，需要先取消共享关系，才能删除。\n* 每个地域最多只支持创建500个自定义镜像，删除镜像可以释放账户的配额。\n* 当镜像正在被其它账户分享时，不允许删除。",
       "input": "DeleteImagesRequest",
       "name": "删除镜像",
       "output": "DeleteImagesResponse",
@@ -110,6 +110,13 @@
       "input": "DeleteInstancesActionTimerRequest",
       "name": "删除定时任务",
       "output": "DeleteInstancesActionTimerResponse",
+      "status": "online"
+    },
+    "DeleteInstancesDisasterRecoverGroups": {
+      "document": "本接口 (DeleteInstancesDisasterRecoverGroups) 用于将云服务器实例从指定的置放群组中批量移除。",
+      "input": "DeleteInstancesDisasterRecoverGroupsRequest",
+      "name": "将云服务器实例从指定的置放群组中批量移除",
+      "output": "DeleteInstancesDisasterRecoverGroupsResponse",
       "status": "online"
     },
     "DeleteKeyPairs": {
@@ -316,7 +323,7 @@
       "status": "online"
     },
     "DescribeLaunchTemplateVersions": {
-      "document": "本接口（DescribeLaunchTemplateVersions）用于查询实例模板版本信息。",
+      "document": "本接口（DescribeLaunchTemplateVersions）用于查询实例模板版本信息。\n\n- 不支持参数`LaunchTemplateVersions`与以下参数同时指定，包括 `MaxVersion`、`MinVersion`、`Limit`、`Offset`和`DefaultVersion`。",
       "input": "DescribeLaunchTemplateVersionsRequest",
       "name": "查询实例模板版本信息",
       "output": "DescribeLaunchTemplateVersionsResponse",
@@ -344,7 +351,7 @@
       "status": "online"
     },
     "DescribeReservedInstancesConfigInfos": {
-      "document": "本接口(DescribeReservedInstancesConfigInfos)供用户列出可购买预留实例机型配置。预留实例当前只针对国际站白名单用户开放。",
+      "document": "本接口(DescribeReservedInstancesConfigInfos)供用户列出可购买预留实例机型配置。",
       "input": "DescribeReservedInstancesConfigInfosRequest",
       "name": "查询预留实例机型配置参数",
       "output": "DescribeReservedInstancesConfigInfosResponse",
@@ -355,6 +362,27 @@
       "input": "DescribeReservedInstancesOfferingsRequest",
       "name": "列出可购买的预留实例配置",
       "output": "DescribeReservedInstancesOfferingsResponse",
+      "status": "online"
+    },
+    "DescribeResourcePoolPackInstances": {
+      "document": "本接口(DescribeResourcePoolPackInstances)用于查询指定实例资源池内已创建的实例列表及其物理拓扑信息。",
+      "input": "DescribeResourcePoolPackInstancesRequest",
+      "name": "查询实例资源池内已创建的实例列表",
+      "output": "DescribeResourcePoolPackInstancesResponse",
+      "status": "online"
+    },
+    "DescribeResourcePoolPackTypeConfigs": {
+      "document": "本接口(DescribeResourcePoolPackTypeConfigs)用于查询当前地域/可用区支持创建实例资源池的整机/半整机规格列表。",
+      "input": "DescribeResourcePoolPackTypeConfigsRequest",
+      "name": "查询支持实例资源池的机型规格列表",
+      "output": "DescribeResourcePoolPackTypeConfigsResponse",
+      "status": "online"
+    },
+    "DescribeResourcePoolPacks": {
+      "document": "本接口(DescribeResourcePoolPacks)用于查询用户已创建的实例资源池列表，包括资源池基本信息、剩余容量、底层物理拓扑信息等。",
+      "input": "DescribeResourcePoolPacksRequest",
+      "name": "查询实例资源池预扣包列表",
+      "output": "DescribeResourcePoolPacksResponse",
       "status": "online"
     },
     "DescribeTaskInfo": {
@@ -386,7 +414,7 @@
       "status": "online"
     },
     "DisassociateSecurityGroups": {
-      "document": "本接口 (DisassociateSecurityGroups) 用于解绑实例的指定安全组。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (DisassociateSecurityGroups) 用于解绑实例的指定安全组。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "DisassociateSecurityGroupsRequest",
       "name": "解绑安全组",
       "output": "DisassociateSecurityGroupsResponse",
@@ -439,6 +467,13 @@
       "input": "InquirePricePurchaseReservedInstancesOfferingRequest",
       "name": "创建预留实例询价",
       "output": "InquirePricePurchaseReservedInstancesOfferingResponse",
+      "status": "online"
+    },
+    "InquirePricePurchaseResourcePoolPacks": {
+      "document": "本接口(InquirePricePurchaseResourcePoolPacks)用于查询创建实例资源池的价格。",
+      "input": "InquirePricePurchaseResourcePoolPacksRequest",
+      "name": "创建实例资源池预扣包询价",
+      "output": "InquirePricePurchaseResourcePoolPacksResponse",
       "status": "online"
     },
     "InquiryPriceModifyInstancesChargeType": {
@@ -511,6 +546,13 @@
       "output": "ModifyChcAttributeResponse",
       "status": "online"
     },
+    "ModifyChcNetworkMode": {
+      "document": "ModifyChcNetworkMode接口用于切换CHC物理服务器的网络模式，适用于客户使用自建pxe环境装机，调用此接口切换部署网络和业务网络。**调用此接口会影响到业务网络，请明确使用方法后再调用**。\n- 切换部署网络：传入参数NetworkMode=DEPLOY。只有当CHC服务器状态为“可生产”或“已生产”，并且配置了部署网络才可以切换，否则API直接报错。\n- 切换业务网络：传入参数NetworkMode=BUSINESS。只有当CHC服务器状态为“已生产”时才可以切换，否则API直接报错。\n\n切换网络模式是一个异步操作，可以通过DescribeChcHosts轮询查询设备的NetworkMode和操作状态来判断是否切换成功\n- 切换部署网络：chc物理服务器如下参数值为以下值是判断切换成功：NetworkMode=DEPLOY，LatestOperation=SwitchChcDeployNetwork, LatestOperationState=SUCCESS。\n- 切换业务网络：chc物理服务器如下参数值为以下值是判断切换成功：NetworkMode=BUSINESS，LatestOperation=SwitchChcBusinessNetwork, LatestOperationState=SUCCESS。",
+      "input": "ModifyChcNetworkModeRequest",
+      "name": "切换CHC服务器网络模式",
+      "output": "ModifyChcNetworkModeResponse",
+      "status": "online"
+    },
     "ModifyDisasterRecoverGroupAttribute": {
       "document": "本接口 (ModifyDisasterRecoverGroupAttribute)用于修改[分散置放群组](https://cloud.tencent.com/document/product/213/15486)属性。",
       "input": "ModifyDisasterRecoverGroupAttributeRequest",
@@ -554,14 +596,14 @@
       "status": "online"
     },
     "ModifyInstancesAttribute": {
-      "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性。\n\n* 每次请求必须指定实例的一种属性用于修改。\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 修改主机名后实例会立即重启，重启后新的主机名生效。",
+      "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性。\n\n* 每次请求必须指定实例的一种属性用于修改。\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 修改主机名后实例会立即重启，重启后新的主机名生效。",
       "input": "ModifyInstancesAttributeRequest",
       "name": "修改实例的属性",
       "output": "ModifyInstancesAttributeResponse",
       "status": "online"
     },
     "ModifyInstancesChargeType": {
-      "document": "本接口 (ModifyInstancesChargeType) 用于切换实例的计费模式。\n\n* 关机不收费的实例、`批量计算型BC1`和`批量计算型BS1`机型族的实例、设置定时销毁的实例不支持该操作。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ModifyInstancesChargeType) 用于切换实例的计费模式。\n\n* 关机不收费的实例、`批量计算型BC1`和`批量计算型BS1`机型族的实例、设置定时销毁的实例不支持该操作。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesChargeTypeRequest",
       "name": "修改实例计费模式",
       "output": "ModifyInstancesChargeTypeResponse",
@@ -575,23 +617,23 @@
       "status": "online"
     },
     "ModifyInstancesProject": {
-      "document": "本接口 (ModifyInstancesProject) 用于修改实例所属项目。\n\n* 项目为一个虚拟概念，用户可以在一个账户下面建立多个项目，每个项目中管理不同的资源；将多个不同实例分属到不同项目中，后续使用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口查询实例，项目ID可用于过滤结果。\n* 绑定负载均衡的实例不支持修改实例所属项目，请先使用[DeregisterInstancesFromLoadBalancer](https://cloud.tencent.com/document/api/214/1258)接口解绑负载均衡。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ModifyInstancesProject) 用于修改实例所属项目。\n\n* 项目为一个虚拟概念，用户可以在一个账户下面建立多个项目，每个项目中管理不同的资源；将多个不同实例分属到不同项目中，后续使用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口查询实例，项目ID可用于过滤结果。\n* 绑定负载均衡的实例不支持修改实例所属项目，请先使用[DeregisterInstancesFromLoadBalancer](https://cloud.tencent.com/document/api/214/1258)接口解绑负载均衡。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesProjectRequest",
       "name": "修改实例所属项目",
       "output": "ModifyInstancesProjectResponse",
       "status": "online"
     },
     "ModifyInstancesRenewFlag": {
-      "document": "本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。\n\n* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。\n\n* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesRenewFlagRequest",
       "name": "修改实例续费标识",
       "output": "ModifyInstancesRenewFlagResponse",
       "status": "online"
     },
     "ModifyInstancesVpcAttribute": {
-      "document": "本接口(ModifyInstancesVpcAttribute)用于修改实例vpc属性，如私有网络IP。\n* 此操作默认会关闭实例，完成后再启动。\n* 当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。执行此操作前请确保指定的实例上没有绑定[弹性网卡](https://cloud.tencent.com/document/product/576)和[负载均衡](https://cloud.tencent.com/document/product/214)。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口(ModifyInstancesVpcAttribute)用于修改实例vpc属性，如私有网络IP。\n* 此操作默认会关闭实例，完成后再启动。\n* 当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。执行此操作前请确保指定的实例上没有绑定[弹性网卡](https://cloud.tencent.com/document/product/215/128410)和[负载均衡](https://cloud.tencent.com/document/product/214)。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesVpcAttributeRequest",
-      "name": "修改实例vpc属性",
+      "name": "修改实例vpc的属性",
       "output": "ModifyInstancesVpcAttributeResponse",
       "status": "online"
     },
@@ -623,8 +665,15 @@
       "output": "PurchaseReservedInstancesOfferingResponse",
       "status": "online"
     },
+    "PurchaseResourcePoolPacks": {
+      "document": "本接口(PurchaseResourcePoolPacks)用于创建一个或多个实例资源池，每个资源池绑定一个整机或半整机规格的物理资源容量。\n\n* 实例资源池为剩余容量按量付费模式，购买前请确保账户余额充足。\n* 本接口为异步接口，创建请求发送成功后会返回DedicatedResourcePackIds，此时创建任务并未完成。",
+      "input": "PurchaseResourcePoolPacksRequest",
+      "name": "创建实例资源池预扣包",
+      "output": "PurchaseResourcePoolPacksResponse",
+      "status": "online"
+    },
     "RebootInstances": {
-      "document": "本接口 (RebootInstances) 用于重启实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`REBOOTING`状态；重启实例成功时，实例会进入`RUNNING`状态。\n* 支持强制重启。强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (RebootInstances) 用于重启实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`REBOOTING`状态；重启实例成功时，实例会进入`RUNNING`状态。\n* 支持强制重启。强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "RebootInstancesRequest",
       "name": "重启实例",
       "output": "RebootInstancesResponse",
@@ -652,7 +701,7 @@
       "status": "online"
     },
     "RenewInstances": {
-      "document": "本接口 (RenewInstances) 用于续费包年包月实例。\n\n* 只支持操作包年包月实例。\n* 续费时请确保账户余额充足。可通过[DescribeAccountBalance](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (RenewInstances) 用于续费包年包月实例。\n\n* 只支持操作包年包月实例。\n* 续费时请确保账户余额充足。可通过[DescribeAccountBalance](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "RenewInstancesRequest",
       "name": "续费实例",
       "output": "RenewInstancesResponse",
@@ -666,35 +715,35 @@
       "status": "online"
     },
     "ResetInstance": {
-      "document": "本接口 (ResetInstance) 用于重装指定实例上的操作系统。\n\n* 如果指定了`ImageId`参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 密码不指定将会通过站内信下发随机密码。\n* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/9452#SystemDisk)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`、`CLOUD_BSSD`类型的实例使用该接口实现操作系统切换。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ResetInstance) 用于重装指定实例上的操作系统。\n\n* 如果指定了`ImageId`参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 密码不指定将会通过站内信下发随机密码。\n* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/9452#SystemDisk)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`、`CLOUD_BSSD`类型的实例使用该接口实现操作系统切换。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstanceRequest",
       "name": "重装实例",
       "output": "ResetInstanceResponse",
       "status": "online"
     },
     "ResetInstancesInternetMaxBandwidth": {
-      "document": "本接口 (ResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限。\n\n* 不同机型带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n* 对于 `BANDWIDTH_PREPAID` 计费方式的带宽，需要输入参数 `StartTime` 和 `EndTime` ，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过 [DescribeAccountBalance](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR` 、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整 `BANDWIDTH_POSTPAID_BY_MONTH` 计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整 `TRAFFIC_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限。\n\n* 不同机型带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n* 对于 `BANDWIDTH_PREPAID` 计费方式的带宽，需要输入参数 `StartTime` 和 `EndTime` ，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过 [DescribeAccountBalance](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR` 、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整 `BANDWIDTH_POSTPAID_BY_MONTH` 计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整 `TRAFFIC_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstancesInternetMaxBandwidthRequest",
       "name": "调整实例带宽上限",
       "output": "ResetInstancesInternetMaxBandwidthResponse",
       "status": "online"
     },
     "ResetInstancesPassword": {
-      "document": "本接口 (ResetInstancesPassword) 用于将实例操作系统的密码重置为用户指定的密码。\n\n*如果是修改系统管理员密码：实例的操作系统不同，管理员账号也会不一样(`Windows`为`Administrator`，`Ubuntu`为`ubuntu`，其它系统为`root`)。\n* 重置处于运行中状态的实例密码，需要设置关机参数`ForceStop`为`TRUE`。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。\n* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ResetInstancesPassword) 用于将实例操作系统的密码重置为用户指定的密码。\n\n*如果是修改系统管理员密码：实例的操作系统不同，管理员账号也会不一样(`Windows`为`Administrator`，`Ubuntu`为`ubuntu`，其它系统为`root`)。\n* 重置处于运行中状态的实例密码，需要设置关机参数`ForceStop`为`TRUE`。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。\n* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstancesPasswordRequest",
       "name": "重置实例密码",
       "output": "ResetInstancesPasswordResponse",
       "status": "online"
     },
     "ResetInstancesType": {
-      "document": "本接口 (ResetInstancesType) 用于调整实例的机型。\n\n* 目前只支持[系统盘类型](/document/api/213/9452#block_device)是CLOUD_BASIC、CLOUD_PREMIUM、CLOUD_SSD、CLOUD_BSSD类型的实例使用该接口进行机型调整。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口调整机型。对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[DescribeAccountBalance](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 本接口为异步接口，调整实例配置请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表调整实例配置操作成功。",
+      "document": "本接口 (ResetInstancesType) 用于调整实例的机型。\n\n* 目前只支持[系统盘类型](/document/api/213/9452#block_device)是CLOUD_BASIC、CLOUD_PREMIUM、CLOUD_SSD、CLOUD_BSSD类型的实例使用该接口进行机型调整。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口调整机型。对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[DescribeAccountBalance](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 本接口为异步接口，调整实例配置请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表调整实例配置操作成功。完成实例配置调整后，实例将自动显示为运行中，无需手动进行开机。",
       "input": "ResetInstancesTypeRequest",
       "name": "调整实例配置",
       "output": "ResetInstancesTypeResponse",
       "status": "online"
     },
     "ResizeInstanceDisks": {
-      "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的磁盘。\n\n* 目前只支持扩容非弹性盘（[ DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[ DescribeAccountBalance ](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 默认扩容方式为关机后扩容。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 如果是系统盘，目前只支持扩容，不支持缩容。\n*  如果是运行中的实例，必须指定ForceStop或ResizeOnline任意一个参数为true，否则操作失败。",
+      "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的磁盘。\n\n* 目前只支持扩容非弹性盘（[ DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[ DescribeAccountBalance ](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 默认扩容方式为关机后扩容。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 如果是系统盘，目前只支持扩容，不支持缩容。\n*  如果是运行中的实例，必须指定ForceStop或ResizeOnline任意一个参数为true，否则操作失败。",
       "input": "ResizeInstanceDisksRequest",
       "name": "扩容实例磁盘",
       "output": "ResizeInstanceDisksResponse",
@@ -708,14 +757,14 @@
       "status": "online"
     },
     "StartInstances": {
-      "document": "本接口 (StartInstances) 用于启动一个或多个实例。\n\n* 只有状态为`STOPPED`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STARTING`状态；启动实例成功时，实例会进入`RUNNING`状态。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 本接口为异步接口，启动实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表启动实例操作成功。",
+      "document": "本接口 (StartInstances) 用于启动一个或多个实例。\n\n* 只有状态为`STOPPED`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STARTING`状态；启动实例成功时，实例会进入`RUNNING`状态。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 本接口为异步接口，启动实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表启动实例操作成功。",
       "input": "StartInstancesRequest",
       "name": "启动实例",
       "output": "StartInstancesResponse",
       "status": "online"
     },
     "StopInstances": {
-      "document": "本接口 (StopInstances) 用于关闭一个或多个实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STOPPING`状态；关闭实例成功时，实例会进入`STOPPED`状态。\n* 支持强制关闭。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 本接口为异步接口，关闭实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表关闭实例操作成功。",
+      "document": "本接口 (StopInstances) 用于关闭一个或多个实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STOPPING`状态；关闭实例成功时，实例会进入`STOPPED`状态。\n* 支持强制关闭。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 本接口为异步接口，关闭实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表关闭实例操作成功。",
       "input": "StopInstancesRequest",
       "name": "关闭实例",
       "output": "StopInstancesResponse",
@@ -733,6 +782,13 @@
       "input": "TerminateInstancesRequest",
       "name": "退还实例",
       "output": "TerminateInstancesResponse",
+      "status": "online"
+    },
+    "TerminateResourcePoolPacks": {
+      "document": "本接口(TerminateResourcePoolPacks)用于销毁指定的实例资源池。\n\n* 销毁资源池不会销毁池内已创建的实例。\n* 池内实例会从专属资源池解绑，转移至公共资源池，继续按原生命周期运行。\n* 转移后无法再查询底层物理拓扑信息。\n* 释放底层物理资源并删除资源池记录。",
+      "input": "TerminateResourcePoolPacksRequest",
+      "name": "销毁实例资源池预扣包",
+      "output": "TerminateResourcePoolPacksResponse",
       "status": "online"
     }
   },
@@ -1781,8 +1837,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "转换的目标操系统信息，仅在入参 DryRun 为 true 时返回。",
-          "example": "[     {         \"TargetOSType\": \"TencentOS\",         \"TargetOSVersion\": \"2.4\"     } ]",
+          "document": "转换的目标操作系统信息，仅在入参 DryRun 为 true 时返回。",
+          "example": "无",
           "member": "TargetOS",
           "name": "SupportTargetOSList",
           "output_required": false,
@@ -1792,7 +1848,7 @@
         {
           "disabled": false,
           "document": "操作系统转换的任务 ID",
-          "example": "12345678",
+          "example": "5413165",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -1813,31 +1869,35 @@
       "members": [
         {
           "disabled": false,
-          "document": "决定启用的CPU物理核心数。",
+          "document": "决定启用的CPU物理核心数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "CoreCount",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "每核心线程数。该参数决定是否开启或关闭超线程。<br><li>1 表示关闭超线程 </li><br><li>2 表示开启超线程</li>\n 不设置时，实例使用默认的超线程策略。开关超线程请参考文档：[开启与关闭超线程](https://cloud.tencent.com/document/product/213/103798)。",
+          "document": "每核心线程数。该参数决定是否开启或关闭超线程。<br><li>1 表示关闭超线程 </li><br><li>2 表示开启超线程</li>\n 不设置时，实例使用默认的超线程策略。开关超线程请参考文档：[开启与关闭超线程](https://cloud.tencent.com/document/product/213/103798)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "ThreadPerCore",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CreateDisasterRecoverGroupRequest": {
       "document": "CreateDisasterRecoverGroup请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "分散置放群组名称，长度1-60个字符，支持中、英文。",
+          "document": "<p>分散置放群组名称，长度1-60个字符，支持中、英文。</p>",
           "example": "物理机容灾组",
           "member": "string",
           "name": "Name",
@@ -1846,7 +1906,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组类型，取值范围：<br><li>HOST：物理机</li><li>SW：交换机</li><li>RACK：机架</li>",
+          "document": "<p>分散置放群组类型，取值范围：<br><li>HOST：物理机</li><li>SW：交换机</li><li>RACK：机架</li></p>",
           "example": "HOST",
           "member": "string",
           "name": "Type",
@@ -1855,8 +1915,8 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性。",
-          "example": "a521b4e4-c903-4d37-9de6-8906e3ad8eb7\t",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性。</p>",
+          "example": "a521b4e4-c903-4d37-9de6-8906e3ad8eb7",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -1864,7 +1924,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10，默认为1",
+          "document": "<p>置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10，默认为1</p>",
           "example": "3",
           "member": "int64",
           "name": "Affinity",
@@ -1873,8 +1933,26 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表。通过指定该参数可以绑定标签到置放群组。",
-          "example": "[     {         \"ResourceType\": \"ps\",         \"Tags\": [             {                 \"Key\": \"myTag\",                 \"Value\": \"cloud\"             }         ]     } ]",
+          "document": "<p>置放群组类型，当前支持两种，分散置放群组和分区置放群组(灰度中)，取值范围：PARTITION：分区置放群组，SPREAD：分散置放群组，不传该值默认是分散置放群组。</p>",
+          "example": "SPREAD",
+          "member": "string",
+          "name": "Strategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组的分区数量，取值范围：2-30，当置放群组类型是分区置放群组时传入(分区置放群组功能灰度中)。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PartitionCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签描述列表。通过指定该参数可以绑定标签到置放群组。</p>",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -1888,7 +1966,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分散置放群组ID列表。",
+          "document": "<p>分散置放群组ID列表。</p>",
           "example": "ps-qajfd25h",
           "member": "string",
           "name": "DisasterRecoverGroupId",
@@ -1898,7 +1976,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组类型，取值范围：<br><li>HOST：物理机</li><li>SW：交换机</li><li>RACK：机架</li>",
+          "document": "<p>分散置放群组类型，取值范围：<br><li>HOST：物理机</li><li>SW：交换机</li><li>RACK：机架</li></p>",
           "example": "HOST",
           "member": "string",
           "name": "Type",
@@ -1908,7 +1986,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组名称，长度1-60个字符，支持中、英文。",
+          "document": "<p>分散置放群组名称，长度1-60个字符，支持中、英文。</p>",
           "example": "物理机容灾组",
           "member": "string",
           "name": "Name",
@@ -1918,7 +1996,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组内可容纳的云服务器数量。",
+          "document": "<p>置放群组内可容纳的云服务器数量。</p>",
           "example": "50",
           "member": "int64",
           "name": "CvmQuotaTotal",
@@ -1928,7 +2006,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组内已有的云服务器数量。",
+          "document": "<p>置放群组内已有的云服务器数量。</p>",
           "example": "0",
           "member": "int64",
           "name": "CurrentNum",
@@ -1938,12 +2016,32 @@
         },
         {
           "disabled": false,
-          "document": "置放群组创建时间。",
+          "document": "<p>分散置放群组创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。</p>",
           "example": "2018-06-08T07:26:38Z",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>置放群组类型，当前支持两种，分散置放群组和分区置放群组(功能灰度中)，取值范围：PARTITION：分区置放群组，SPREAD：分散置放群组，默认是分散置放群组。</p>",
+          "example": "PARTITION",
+          "member": "string",
+          "name": "Strategy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组的分区数量，取值范围：2-30，当置放群组类型是分区置放群组时，才有该值(分区置放群组功能灰度中)。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PartitionCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1960,7 +2058,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区。",
+          "document": "可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -1969,7 +2067,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群名称。",
+          "document": "高性能计算集群名称，长度限制[1-60]。",
           "example": "MyHpcCluster",
           "member": "string",
           "name": "Name",
@@ -1978,7 +2076,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群备注。",
+          "document": "高性能计算集群备注，长度[1-256]。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -1987,7 +2085,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群类型。",
+          "document": "高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。",
           "example": "CDC/CHC/STANDARD",
           "member": "string",
           "name": "HpcClusterType",
@@ -1996,7 +2094,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。",
+          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。",
           "example": "例如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
           "member": "string",
           "name": "HpcClusterBusinessId",
@@ -2005,8 +2103,8 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。",
-          "example": "[{\"ResourceType\":\"hpc\",\"Tags\":[{\"Key\":\"tag-key\",\"Value\":\"tag-value\"}",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。集群信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -2021,7 +2119,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群信息。",
-          "example": "[{\"HpcClusterId\":\"hpc-jtynq57p\",\"Name\":\"test\",\"Remark\":\"test\",\"InstanceIds\":[],\"Zone\":\"ap-guangzhou-2\",\"CvmQuotaTotal\":100,\"CurrentNum\":0,\"CreateTime\":\"2023-04-20T06:25:58Z\"}]",
+          "example": "无",
           "member": "HpcClusterInfo",
           "name": "HpcClusterSet",
           "output_required": true,
@@ -2640,7 +2738,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
-          "example": "[\"sg-rf6ogz49\"]\t",
+          "example": "[\"sg-rf6ogz49\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -3077,6 +3175,42 @@
       ],
       "type": "object"
     },
+    "DeleteInstancesDisasterRecoverGroupsRequest": {
+      "document": "DeleteInstancesDisasterRecoverGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-23sh03x7\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。",
+          "example": "[\"ps-c119a27y\"]",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstancesDisasterRecoverGroupsResponse": {
+      "document": "DeleteInstancesDisasterRecoverGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteKeyPairsRequest": {
       "document": "DeleteKeyPairs请求参数结构体",
       "members": [
@@ -3408,7 +3542,7 @@
         {
           "disabled": false,
           "document": "分散置放群组ID列表。每次请求允许操作的分散置放群组数量上限是10。",
-          "example": "ps-21q9ibvr",
+          "example": "[\"ps-21q9ibvr\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -3444,7 +3578,7 @@
         {
           "disabled": false,
           "document": "<li><strong>tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
-          "example": "[     {         \"Name\": \"tag-key \",         \"Values\": [             \"myTag\"         ]     } ]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3459,7 +3593,7 @@
         {
           "disabled": false,
           "document": "分散置放群组信息列表。",
-          "example": "[     {         \"DisasterRecoverGroupId\": \"ps-21q9ibvr\",         \"Name\": \"数据库业务\",         \"Type\": \"RACK\",         \"CvmQuotaTotal\": 30,         \"CurrentNum\": 0,         \"InstanceIds\": [],         \"CreateTime\": \"2018-04-19T02:47:12Z\"     } ]",
+          "example": "无",
           "member": "DisasterRecoverGroup",
           "name": "DisasterRecoverGroupSet",
           "output_required": true,
@@ -3555,8 +3689,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>project-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>项目ID</strong>】进行过滤，可通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/651/81952)创建新的项目。项目ID形如：1002189。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>[CDH](https://cloud.tencent.com/document/product/416) ID</strong>】进行过滤。[CDH](https://cloud.tencent.com/document/product/416) ID形如：host-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>CDH实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-state</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>CDH实例状态</strong>】进行过滤。（PENDING：创建中 | LAUNCH_FAILURE：创建失败 | RUNNING：运行中 | EXPIRED：已过期）</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>CDH机型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例。</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
-          "example": "[ { \"Name\": \"tag-key\", \"Values\": [ \"myTag\" ] } ]",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>project-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>项目ID</strong>】进行过滤，可通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/651/81952)创建新的项目。项目ID形如：1002189。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>[CDH](https://cloud.tencent.com/document/product/416) ID</strong>】进行过滤。[CDH](https://cloud.tencent.com/document/product/416) ID形如：host-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>CDH实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-state</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>CDH实例状态</strong>】进行过滤。（PENDING：创建中 | LAUNCH_FAILURE：创建失败 | RUNNING：运行中 | EXPIRED：已过期）</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>CDH机型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例。</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3599,7 +3733,7 @@
         {
           "disabled": false,
           "document": "cdh实例详细信息列表",
-          "example": "[     {         \"Placement\": {             \"Zone\": \"ap-guangzhou-5\",             \"ProjectId\": 0         },         \"HostId\": \"host-8th3ybbw\",         \"HostType\": \"HM50\",         \"HostName\": \"myHost\",         \"CageId\": \"\",         \"HostChargeType\": \"PREPAID\",         \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",         \"CreatedTime\": \"2024-09-30T03:17:49Z\",         \"ExpiredTime\": \"2024-11-30T03:17:51Z\",         \"InstanceIds\": [             \"ins-flx4u4ck\",             \"ins-p5s3wcq2\"         ],         \"HostState\": \"RUNNING\",         \"Tags\": [],         \"HostResource\": {             \"CpuTotal\": 336,             \"CpuAvailable\": 18,             \"MemTotal\": 700,             \"MemAvailable\": 40,             \"DiskTotal\": 0,             \"DiskAvailable\": 0,             \"DiskType\": \"\",             \"GpuTotal\": 0,             \"GpuAvailable\": 0         }     } ]",
+          "example": "无",
           "member": "HostItem",
           "name": "HostSet",
           "output_required": true,
@@ -3657,7 +3791,7 @@
         {
           "disabled": false,
           "document": "本次请求量, 默认值20，范围限制为[1-100]。",
-          "example": "默认为20",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3693,7 +3827,7 @@
         {
           "disabled": false,
           "document": "<li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
-          "example": "[{\"Name\": \"tag-key\",\"Values\": [\"myTag\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3702,7 +3836,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群网络模式，0～32，一般取28，30两个值，其中30是默认的网络模式，28是容器多网段模式，即默认从新投放的容器网段分发，不从原网段分发网络。",
-          "example": "0～32，一般取28，30",
+          "example": "28",
           "member": "uint64",
           "name": "HpcClusterNetMode",
           "required": false,
@@ -3717,7 +3851,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群信息。",
-          "example": "[{\"HpcClusterId\":\"hpc-jtynq57p\",\"Name\":\"test\",\"Remark\":\"test\",\"CvmQuotaTotal\":100,\"Zone\":\"ap-guangzhou-2\",\"CurrentNum\":0,\"InstanceIds\":[],\"CreateTime\":\"2023-04-20T06:25:58Z\"}]",
+          "example": "无",
           "member": "HpcClusterInfo",
           "name": "HpcClusterSet",
           "output_required": true,
@@ -3828,7 +3962,7 @@
         {
           "disabled": false,
           "document": "镜像共享信息",
-          "example": "[     {         \"CreatedTime\": \"2018-06-10T11:02:50Z\",         \"AccountId\": \"101104350000\"     } ]",
+          "example": "无",
           "member": "SharePermission",
           "name": "SharePermissionSet",
           "output_required": true,
@@ -3858,7 +3992,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，每次请求的`Filters`的上限为10，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n\n<li><strong>image-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>image-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PRIVATE_IMAGE: 自定义镜像 (本账户创建的镜像)</p><p style=\"padding-left: 30px;\">PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)</p><p style=\"padding-left: 30px;\">SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像)</p>\n<li><strong>image-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像名称</strong>】进行过滤。支持模糊查询。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>platform</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像平台</strong>】进行过滤，如 CentOS，支持模糊匹配。可通过 <a href=\"https://cloud.tencent.com/document/api/213/15715\" target=\"_blank\">DescribeImages</a> 接口返回的<code> Platform </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagKey </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-value</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagValue </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag:tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagKey 和 TagValue </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
+          "document": "过滤条件，每次请求的`Filters`的上限为10，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：<li><strong>image-id</strong></li><p style=\"padding-left: 30px;\">按照【<strong>镜像ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>image-type</strong></li><p style=\"padding-left: 30px;\">按照【<strong>镜像类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PRIVATE_IMAGE: 自定义镜像 (本账户创建的镜像)</p><p style=\"padding-left: 30px;\">PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)</p><p style=\"padding-left: 30px;\">SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像)</p><li><strong>image-name</strong></li><p style=\"padding-left: 30px;\">按照【<strong>镜像名称</strong>】进行过滤。支持模糊查询。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>platform</strong></li><p style=\"padding-left: 30px;\">按照【<strong>镜像平台</strong>】进行过滤，如 CentOS，支持模糊匹配。可通过 <a href=\"https://cloud.tencent.com/document/api/213/15715\" target=\"_blank\">DescribeImages</a> 接口返回的<code> Platform </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>tag-key</strong></li><p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagKey </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>tag-value</strong></li><p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagValue </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>tag:tag-key</strong></li><p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagKey 和 TagValue </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>dedicated-cluster-id</strong></li><p style=\"padding-left: 30px;\">按照【<strong>本地专用集群CDC ID</strong>】进行过滤。可通过 <a href=\"https://cloud.tencent.com/document/api/1346/73758\" target=\"_blank\"> DescribeDedicatedClusters </a> 接口返回的<code> DedicatedClusterSet </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>cdc-cache-status</strong></li><p style=\"padding-left: 30px;\">按照【<strong>CDC镜像缓存状态</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">CACHED_ALL: 全部缓存状态</p><p style=\"padding-left: 30px;\">CACHING: 缓存中</p><p style=\"padding-left: 30px;\">CACHED: 已缓存</p><p style=\"padding-left: 30px;\">CACHE_INVALID: 缓存失效</p><p style=\"padding-left: 30px;\">CACHE_FAILED: 缓存失败</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3885,8 +4019,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，如 `S1.SMALL1`。可通过 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 接口返回的 `InstanceType` 获取。",
-          "example": "S1.SMALL1",
+          "document": "实例类型，如 `SA5.MEDIUM2`。可通过 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 接口返回的 `InstanceType` 获取。",
+          "example": "SA5.MEDIUM2",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -4031,7 +4165,7 @@
         {
           "disabled": false,
           "document": "带宽配置信息列表。",
-          "example": "[     {         \"StartTime\": \"2017-03-12T16:00:00Z\",         \"EndTime\": \"2017-04-12T16:00:00Z\",         \"InternetAccessible\": {             \"InternetMaxBandwidthOut\": 50,             \"InternetChargeType\": \"BANDWIDTH_PREPAID\"         }     } ]",
+          "example": "无",
           "member": "InternetBandwidthConfig",
           "name": "InternetBandwidthConfigSet",
           "output_required": true,
@@ -4053,7 +4187,7 @@
         {
           "disabled": false,
           "document": "可扩展的过滤条件",
-          "example": "",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4065,6 +4199,16 @@
     "DescribeInstanceStatisticsResponse": {
       "document": "DescribeInstanceStatistics返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "实例统计信息",
+          "example": "无",
+          "member": "InstanceStatistics",
+          "name": "InstanceStatisticsSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4494,7 +4638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个实例ID查询。实例ID形如：`ins-11112222`。此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`ids.N`一节）。每次请求的实例的上限为100。",
+          "document": "按照一个或者多个实例ID查询。实例ID形如：`ins-dyzp06q6`。此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`ids.N`一节）。每次请求的实例的上限为100。",
           "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -4538,7 +4682,7 @@
         {
           "disabled": false,
           "document": "[实例状态](https://cloud.tencent.com/document/api/213/15753#InstanceStatus) 列表。",
-          "example": "[     {         \"InstanceId\": \"ins-r8hr2upy\",         \"InstanceState\": \"RUNNING\"     } ]",
+          "example": "无",
           "member": "InstanceStatus",
           "name": "InstanceStatusSet",
           "output_required": true,
@@ -4587,7 +4731,7 @@
         {
           "disabled": false,
           "document": "密钥对ID，密钥对ID形如：`skey-11112222`（此接口支持同时传入多个ID进行过滤。此参数的具体格式可参考 API [简介](https://cloud.tencent.com/document/api/213/15688)的 `id.N` 一节）。参数不支持同时指定 `KeyIds` 和 `Filters`。密钥对ID可以通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询。",
-          "example": "skey-11112222",
+          "example": "[\"skey-11112222\"]",
           "member": "string",
           "name": "KeyIds",
           "required": false,
@@ -4595,7 +4739,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>\n<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对过滤。tag-key使用具体的标签键进行替换。</li>\n参数不支持同时指定 `KeyIds` 和 `Filters`。",
+          "document": "过滤条件。\n<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的projectId获取项目ID。</li>\n<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对过滤。tag-key使用具体的标签键进行替换。</li>\n参数不支持同时指定 `KeyIds` 和 `Filters`。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4687,7 +4831,7 @@
         },
         {
           "disabled": false,
-          "document": "过范围指定版本时的最大版本号，默认为30。",
+          "document": "通过范围指定版本时的最大版本号，默认为30。",
           "example": "2",
           "member": "uint64",
           "name": "MaxVersion",
@@ -4714,7 +4858,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。",
+          "document": "是否查询默认版本。默认值：false",
           "example": "false",
           "member": "bool",
           "name": "DefaultVersion",
@@ -5079,6 +5223,145 @@
       ],
       "type": "object"
     },
+    "DescribeResourcePoolPackInstancesRequest": {
+      "document": "DescribeResourcePoolPackInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池ID列表。形如：rpp-39kj2fsb。每次请求的实例的上限为100。",
+          "example": "[\"rpp-2gyonkx7\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPackInstancesResponse": {
+      "document": "DescribeResourcePoolPackInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池内已创建的实例详情列表。",
+          "example": "无",
+          "member": "ResourcePoolPackInstance",
+          "name": "DedicatedResourcePackInstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPackTypeConfigsRequest": {
+      "document": "DescribeResourcePoolPackTypeConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：是</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例族</strong>】进行过滤。形如：SA9。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例规格</strong>】进行过滤。形如：SA9.96XLARGE1152。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPackTypeConfigsResponse": {
+      "document": "DescribeResourcePoolPackTypeConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持实例资源池的机型规格列表。",
+          "example": "无",
+          "member": "InstanceTypeConfig",
+          "name": "InstanceTypeConfigSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPacksRequest": {
+      "document": "DescribeResourcePoolPacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，默认值为10，最小值为10，最大值为100。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页标记，用于获取下一页数据。",
+          "example": "HlyieKNKhSHMWHVqZOjzlhKBK1ar2qPnSdoW9YMz84kYuRMJlvGgMfAh68VpTOIS",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<li><strong>dedicated-resource-pack-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例资源池ID</strong>】进行过滤。形如：rpp-rn99mzt2。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例类型</strong>】进行过滤。形如：SA9。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例规格</strong>】进行过滤。形如：SA9.96XLARGE1152。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>status</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例资源池状态</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：CREATING (创建中) | ACTIVE (运行中) | RETIRED (已过期)</p>\n每次请求的`Filters`的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePoolPacksResponse": {
+      "document": "DescribeResourcePoolPacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的实例资源池列表。",
+          "example": "无",
+          "member": "ResourcePoolPack",
+          "name": "DedicatedResourcePackSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一页数据的标记，用于分页查询。值为空时表示已到最后一页。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DmfvOh9/PDSxjhK9C1m7xWt3GwgUbcW+D4qc2Nfu5ytgQNy7iXh21v7KeIK8Qni6",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskInfoRequest": {
       "document": "DescribeTaskInfo请求参数结构体",
       "members": [
@@ -5230,7 +5513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型</strong>】进行过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认查询筛选条件下所有机型。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-charge-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费  | CDHPAID：表示独享子机 | SPOTPAID：表示竞价付费 | CDCPAID：表示专用集群付费)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>sort-keys</strong></li>\n<p style=\"padding-left: 30px;\">按关键字进行排序,格式为排序字段加排序方式，中间用冒号分隔。 例如： 按cpu数逆序排序 \"cpu:desc\", 按mem大小顺序排序 \"mem:asc\"</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。",
+          "document": "<li><strong>zone</strong></li><p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p><li><strong>instance-family</strong></li><p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>instance-type</strong></li><p style=\"padding-left: 30px;\">按照【<strong>实例机型</strong>】进行过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认查询筛选条件下所有机型。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>instance-charge-type</strong><p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">- PREPAID：预付费，即包年包月</p><p style=\"padding-left: 30px;\">- POSTPAID_BY_HOUR：后付费，即按量计费</p><p style=\"padding-left: 30px;\">- CDHPAID：独享子机</p><p style=\"padding-left: 30px;\">- SPOTPAID：竞价付费</p><p style=\"padding-left: 30px;\">- CDCPAID：专用集群付费</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p></li><li><strong>sort-keys</strong></li><p style=\"padding-left: 30px;\">按关键字进行排序,格式为排序字段加排序方式，中间用冒号分隔。 例如： 按cpu数逆序排序 \"cpu:desc\", 按mem大小顺序排序 \"mem:asc\"</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>每次请求的<code>Filters</code>的上限为10，<code>Filter.Values</code>的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5245,7 +5528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区机型配置列表。",
+          "document": "<p>可用区机型配置列表。</p>",
           "example": "无",
           "member": "InstanceTypeQuotaItem",
           "name": "InstanceTypeQuotaSet",
@@ -5267,7 +5550,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>operation</strong></li> <p style=\"padding-left: 30px;\">过滤用户不在可用区白名单但是有CVM实例的可用区。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：QueryWithUserInstances</p>",
+          "document": "<li><strong>Operation</strong></li> <p style=\"padding-left: 30px;\">过滤用户不在可用区白名单但是有CVM实例的可用区。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：QueryWithUserInstances</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5395,7 +5678,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分散置放群组id。",
+          "document": "<p>分散置放群组id。</p>",
           "example": "ps-n4becvb9",
           "member": "string",
           "name": "DisasterRecoverGroupId",
@@ -5405,7 +5688,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组名称，长度1-60个字符。",
+          "document": "<p>分散置放群组名称，长度1-60个字符。</p>",
           "example": "myGroup",
           "member": "string",
           "name": "Name",
@@ -5415,7 +5698,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组类型，取值范围：<br>\n<li>HOST：物理机<br></li>\n<li>SW：交换机<br></li>\n<li>RACK：机架</li>",
+          "document": "<p>分散置放群组类型，取值范围：<br></p><li>HOST：物理机<br></li><li>SW：交换机<br></li><li>RACK：机架</li>",
           "example": "\"HOST\"",
           "member": "string",
           "name": "Type",
@@ -5425,7 +5708,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组内最大容纳云服务器数量。",
+          "document": "<p>分散置放群组内最大容纳云服务器数量。</p>",
           "example": "50",
           "member": "int64",
           "name": "CvmQuotaTotal",
@@ -5435,7 +5718,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组内云服务器当前数量。",
+          "document": "<p>分散置放群组内云服务器当前数量。</p>",
           "example": "2",
           "member": "int64",
           "name": "CurrentNum",
@@ -5445,7 +5728,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组内，云服务器id列表。",
+          "document": "<p>分散置放群组内，云服务器id列表。</p>",
           "example": "[\"ins-19029pru\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -5455,8 +5738,8 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
-          "example": "\"2021-04-27T08:49:34Z\"",
+          "document": "<p>分散置放群组创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>",
+          "example": "2025-03-17T03:50:41Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -5465,7 +5748,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组亲和度",
+          "document": "<p>置放群组亲和度</p>",
           "example": "1",
           "member": "int64",
           "name": "Affinity",
@@ -5475,7 +5758,27 @@
         },
         {
           "disabled": false,
-          "document": "置放群组关联的标签列表。",
+          "document": "<p>置放群组类型，当前支持两种；分散置放群组和分区置放群组(功能灰度中)，取值范围：PARTITION：分区置放群组，SPREAD：分散置放群组</p>",
+          "example": "SPREAD",
+          "member": "string",
+          "name": "Strategy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组的分区数量，如果是分区置放群组会返回(功能灰度中)</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PartitionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>置放群组关联的标签列表。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -6268,13 +6571,13 @@
         },
         {
           "disabled": false,
-          "document": "CDH owner",
+          "document": "CDH 拥有者\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12300021",
           "member": "string",
           "name": "ExclusiveOwner",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7131,6 +7434,70 @@
       ],
       "type": "object"
     },
+    "InquirePricePurchaseResourcePoolPacksRequest": {
+      "document": "InquirePricePurchaseResourcePoolPacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包所在可用区。形如：ap-guangzhou-6。可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取可用区列表。",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的规格，仅支持整机/半整机规格。形如：SA9.96XLARGE1152。",
+          "example": "S9.8XLARGE64",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的数量。1个数量代表1个半整机/整机资源池。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的时长，单位：月。取值范围：1-60。",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePricePurchaseResourcePoolPacksResponse": {
+      "document": "InquirePricePurchaseResourcePoolPacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池价格信息。",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InquiryPriceModifyInstancesChargeTypeRequest": {
       "document": "InquiryPriceModifyInstancesChargeType请求参数结构体",
       "members": [
@@ -7365,7 +7732,7 @@
         {
           "disabled": false,
           "document": "描述了实例的软件证书情况与其设置，如Grid驱动证书等",
-          "example": "{ \"GridDriverService\": {\"Enabled\": \"true\"} }",
+          "example": "无",
           "member": "SoftwareLicenseService",
           "name": "SoftwareLicenseService",
           "required": false,
@@ -7919,7 +8286,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所在的位置。",
+          "document": "<p>实例所在的位置。</p>",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -7929,7 +8296,7 @@
         },
         {
           "disabled": false,
-          "document": "实例`ID`。",
+          "document": "<p>实例<code>ID</code>。</p>",
           "example": "ins-9bxebleo",
           "member": "string",
           "name": "InstanceId",
@@ -7939,7 +8306,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型。",
+          "document": "<p>实例机型。</p>",
           "example": "S1.SMALL1",
           "member": "string",
           "name": "InstanceType",
@@ -7949,7 +8316,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的CPU核数，单位：核。",
+          "document": "<p>实例的CPU核数，单位：核。</p>",
           "example": "1",
           "member": "int64",
           "name": "CPU",
@@ -7959,7 +8326,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存容量，单位：`GiB`。",
+          "document": "<p>实例内存容量，单位：<code>GiB</code>。</p>",
           "example": "1",
           "member": "int64",
           "name": "Memory",
@@ -7969,7 +8336,7 @@
         },
         {
           "disabled": false,
-          "document": "实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例</li><li>EXPIRED：表示过期的实例</li><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。</li>",
+          "document": "<p>实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例</li><li>EXPIRED：表示过期的实例</li><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。</li></p>",
           "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
@@ -7979,7 +8346,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
@@ -7989,7 +8356,7 @@
         },
         {
           "disabled": false,
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。取值范围：<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）</li><br><li>SPOTPAID：竞价付费</li><br><li>CDCPAID：专用集群付费</li>",
+          "document": "<p>实例<a href=\"https://cloud.tencent.com/document/product/213/2180\">计费类型</a>。取值范围：<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）</li><br><li>SPOTPAID：竞价付费</li><br><li>CDCPAID：专用集群付费</li></p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -7999,7 +8366,7 @@
         },
         {
           "disabled": false,
-          "document": "实例系统盘信息。",
+          "document": "<p>实例系统盘信息。</p>",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -8009,7 +8376,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数据盘信息。",
+          "document": "<p>实例数据盘信息。</p>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -8019,7 +8386,7 @@
         },
         {
           "disabled": false,
-          "document": "实例主网卡的内网`IP`列表。",
+          "document": "<p>实例主网卡的内网<code>IP</code>列表。</p>",
           "example": "[\"172.16.32.78\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -8029,7 +8396,7 @@
         },
         {
           "disabled": false,
-          "document": "实例主网卡的公网`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例主网卡的公网<code>IP</code>列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"110.207.11.190\"]",
           "member": "string",
           "name": "PublicIpAddresses",
@@ -8039,7 +8406,7 @@
         },
         {
           "disabled": false,
-          "document": "实例带宽信息。",
+          "document": "<p>实例带宽信息。</p>",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -8049,7 +8416,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属虚拟私有网络信息。",
+          "document": "<p>实例所属虚拟私有网络信息。</p>",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
@@ -8059,7 +8426,7 @@
         },
         {
           "disabled": false,
-          "document": "生产实例所使用的镜像`ID`。",
+          "document": "<p>生产实例所使用的镜像<code>ID</code>。</p>",
           "example": "img-9qabwvbn",
           "member": "string",
           "name": "ImageId",
@@ -8069,7 +8436,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费</li><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费</li><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。\n</li><li>注意：后付费模式本项为null</li>",
+          "document": "<p>自动续费标识。取值范围：<br><li><code>NOTIFY_AND_MANUAL_RENEW</code>：表示通知即将过期，但不自动续费</li><li><code>NOTIFY_AND_AUTO_RENEW</code>：表示通知即将过期，而且自动续费</li><li><code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code>：表示不通知即将过期，也不自动续费。</p></li><li>注意：后付费模式本项为null</li>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -8079,7 +8446,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "document": "<p>创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>",
           "example": "2020-03-10T02:43:51Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -8089,7 +8456,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null",
+          "document": "<p>到期时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。注意：后付费模式本项为null</p>",
           "example": "2020-04-10T02:47:36Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
@@ -8099,7 +8466,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统名称。",
+          "document": "<p>操作系统名称。</p>",
           "example": "CentOS 7.6 64bit",
           "member": "string",
           "name": "OsName",
@@ -8109,7 +8476,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。",
+          "document": "<p>实例所属安全组。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/215/15808\">DescribeSecurityGroups</a> 的返回值中的sgId字段来获取。</p>",
           "example": "[\"sg-p1ezv4wz\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -8119,7 +8486,7 @@
         },
         {
           "disabled": false,
-          "document": "实例登录设置。目前只返回实例所关联的密钥。",
+          "document": "<p>实例登录设置。目前只返回实例所关联的密钥。</p>",
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
@@ -8129,7 +8496,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)",
+          "document": "<p>实例状态。状态类型详见<a href=\"https://cloud.tencent.com/document/api/213/15753#InstanceStatus\">实例状态表</a></p>",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceState",
@@ -8139,7 +8506,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的标签列表。",
+          "document": "<p>实例关联的标签列表。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -8149,7 +8516,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的关机计费模式。\n取值范围：<br><li>KEEP_CHARGING：关机继续收费</li><li>STOP_CHARGING：关机停止收费</li><li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件</li>",
+          "document": "<p>实例的关机计费模式。<br>取值范围：<br><li>KEEP_CHARGING：关机继续收费</li><li>STOP_CHARGING：关机停止收费</li><li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件</li></p>",
           "example": "NOT_APPLICABLE",
           "member": "string",
           "name": "StopChargingMode",
@@ -8159,7 +8526,7 @@
         },
         {
           "disabled": false,
-          "document": "实例全局唯一ID",
+          "document": "<p>实例全局唯一ID</p>",
           "example": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
           "member": "string",
           "name": "Uuid",
@@ -8169,7 +8536,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的最新操作。例：StopInstances、ResetInstance。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的最新操作。例：StopInstances、ResetInstance。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RenewInstances",
           "member": "string",
           "name": "LatestOperation",
@@ -8179,7 +8546,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功</li><li>OPERATING：表示操作执行中</li><li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功</li><li>OPERATING：表示操作执行中</li><li>FAILED：表示操作失败</li></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
@@ -8189,7 +8556,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最新操作的唯一请求 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例最新操作的唯一请求 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3554eb5b-1cfa-471a-ae76-dc436c9d43e8",
           "member": "string",
           "name": "LatestOperationRequestId",
@@ -8198,8 +8565,8 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "分散置放群组ID。",
+          "disabled": true,
+          "document": "<p>分散置放群组ID。</p>",
           "example": "ps-l7sdunxx",
           "member": "string",
           "name": "DisasterRecoverGroupId",
@@ -8209,7 +8576,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的IPv6地址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xx.xxxxx.xxx\"]",
           "member": "string",
           "name": "IPv6Addresses",
@@ -8219,7 +8586,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CAM角色名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "admin",
           "member": "string",
           "name": "CamRoleName",
@@ -8229,7 +8596,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群`ID`。",
+          "document": "<p>高性能计算集群<code>ID</code>。</p>",
           "example": "hpc-4dxxetpt",
           "member": "string",
           "name": "HpcClusterId",
@@ -8239,7 +8606,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高性能计算集群<code>IP</code>列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xx.xxxxx.xxx\"]",
           "member": "string",
           "name": "RdmaIpAddresses",
@@ -8249,7 +8616,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的专用集群`ID`。",
+          "document": "<p>实例所在的专用集群<code>ID</code>。</p>",
           "example": "cluster-du3jken",
           "member": "string",
           "name": "DedicatedClusterId",
@@ -8259,7 +8626,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>",
+          "document": "<p>实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li></p>",
           "example": "NOTISOLATED",
           "member": "string",
           "name": "IsolatedSource",
@@ -8269,7 +8636,17 @@
         },
         {
           "disabled": false,
-          "document": "GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。",
+          "document": "<p>置放群组列表(目前仅支持一个)</p>",
+          "example": "[\"ps-l7sdunxx\"]",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。</p>",
           "example": "无",
           "member": "GPUInfo",
           "name": "GPUInfo",
@@ -8279,7 +8656,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的操作系统许可类型，默认为TencentCloud",
+          "document": "<p>实例的操作系统许可类型，默认为TencentCloud</p>",
           "example": "TencentCloud",
           "member": "string",
           "name": "LicenseType",
@@ -8289,7 +8666,7 @@
         },
         {
           "disabled": false,
-          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>true：表示开启实例保护，不允许通过api接口删除实例</li><li>false：表示关闭实例保护，允许通过api接口删除实例</li><br>默认取值：false。",
+          "document": "<p>实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>true：表示开启实例保护，不允许通过api接口删除实例</li><li>false：表示关闭实例保护，允许通过api接口删除实例</li><br>默认取值：false。</p>",
           "example": "false",
           "member": "bool",
           "name": "DisableApiTermination",
@@ -8299,7 +8676,7 @@
         },
         {
           "disabled": false,
-          "document": "默认登录用户。",
+          "document": "<p>默认登录用户。</p>",
           "example": "root",
           "member": "string",
           "name": "DefaultLoginUser",
@@ -8309,7 +8686,7 @@
         },
         {
           "disabled": false,
-          "document": "默认登录端口。",
+          "document": "<p>默认登录端口。</p>",
           "example": "22",
           "member": "int64",
           "name": "DefaultLoginPort",
@@ -8319,7 +8696,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的最新操作错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例的最新操作错误信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "None",
           "member": "string",
           "name": "LatestOperationErrorMsg",
@@ -8329,7 +8706,7 @@
         },
         {
           "disabled": false,
-          "document": "实例族。",
+          "document": "<p>实例族。</p>",
           "example": "S1",
           "member": "string",
           "name": "InstanceFamily",
@@ -8339,7 +8716,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像类型。",
+          "document": "<p>镜像类型。</p>",
           "example": "PUBLIC_IMAGE",
           "member": "string",
           "name": "ImageType",
@@ -8349,7 +8726,7 @@
         },
         {
           "disabled": false,
-          "document": "包销实例到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>包销实例到期时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。注意：后付费模式本项为null</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-04-10T02:47:36Z",
           "member": "datetime_iso",
           "name": "UnderwriteExpiredTime",
@@ -8359,7 +8736,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义metadata",
+          "document": "<p>自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。<strong>注：内测中</strong>。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadata",
@@ -8369,7 +8746,7 @@
         },
         {
           "disabled": false,
-          "document": "实例被平台纳管的角色",
+          "document": "<p>实例被平台纳管的角色</p>",
           "example": "QCLOUD_TKENative",
           "member": "string",
           "name": "ApplicationRole",
@@ -8379,12 +8756,32 @@
         },
         {
           "disabled": false,
-          "document": "实例绑定的公网IPv6地址。",
+          "document": "<p>实例绑定的公网IPv6地址。</p>",
           "example": "[\"240d:c000:f000:ac00:5460:6340:16aa:6\"]",
           "member": "string",
           "name": "PublicIPv6Addresses",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述了实例CPU拓扑结构的相关信息。</p>",
+          "example": "无",
+          "member": "CpuTopology",
+          "name": "CpuTopology",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组的分区号，具体取决于所选置放群组的分区数量(功能灰度中)</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PartitionNumber",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -8529,6 +8926,52 @@
           "name": "PriceDetail",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceStatistics": {
+      "document": "实例统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新增实例数",
+          "example": "0",
+          "member": "uint64",
+          "name": "NewInstanceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期实例数",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpiredInstanceCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -9939,7 +10382,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义metadata键，需符合正则 ^[a-zA-Z0-9_-]+$，长度 ≤128 字节（大小写敏感）；\n",
+          "document": "自定义metadata键，由大写字母（A-Z）、小写字母（a-z）、数字（0-9）、下划线（_）或连字符（-）组成，大小上限为128 字节。",
           "example": "\"key\"",
           "member": "string",
           "name": "Key",
@@ -9950,7 +10393,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义metadata值，支持任意数据（含二进制），大小 ≤256 KB（大小写敏感）；",
+          "document": "自定义metadata值，大小上限为256 KB。",
           "example": "\"value\"",
           "member": "string",
           "name": "Value",
@@ -10034,12 +10477,48 @@
       ],
       "type": "object"
     },
+    "ModifyChcNetworkModeRequest": {
+      "document": "ModifyChcNetworkMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CHC物理服务器id列表，如[&quot;chc-1a2b3c4d&quot;]</p>",
+          "example": "[\"chc-nzufwq77\"]",
+          "member": "string",
+          "name": "ChcIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>所要切换的网络模式</p><p>枚举值：</p><ul><li>DEPLOY： 部署网络模式</li><li>BUSINESS： 业务网络模式</li></ul>",
+          "example": "DEPLOY",
+          "member": "string",
+          "name": "NetworkMode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyChcNetworkModeResponse": {
+      "document": "ModifyChcNetworkMode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDisasterRecoverGroupAttributeRequest": {
       "document": "ModifyDisasterRecoverGroupAttribute请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。",
+          "document": "<p>分散置放群组ID，可使用<a href=\"https://cloud.tencent.com/document/api/213/17810\">DescribeDisasterRecoverGroups</a>接口获取。</p>",
           "example": "ps-58l1hu01",
           "member": "string",
           "name": "DisasterRecoverGroupId",
@@ -10048,12 +10527,21 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组名称，长度1-60个字符，支持中、英文。",
+          "document": "<p>分散置放群组名称，长度1-60个字符，支持中、英文。</p>",
           "example": "物理机容灾组1",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分散置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10。</p><p>取值范围：[1, 10]</p><p>调整只能从小调到大，不能从大调到小</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Affinity",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10102,7 +10590,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/document/api/651/81952)接口创建。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725) API返回值中的`projectId`获取。后续使用[DescribeHosts](https://cloud.tencent.com/document/api/213/16474)接口查询实例时，项目ID可用于过滤结果。",
+          "document": "项目ID。项目可以使用 [AddProject](https://cloud.tencent.com/document/api/651/81952) 接口创建。可通过 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725) 接口返回值中的`projectId`获取。后续使用 [DescribeHosts](https://cloud.tencent.com/document/api/213/16474) 接口查询实例时，项目ID可用于过滤结果。",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
@@ -10157,7 +10645,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群网络模式，0～32，一般取28，30两个值，其中30是默认的网络模式，28是容器多网段模式，即默认从新投放的容器网段分发，不从原网段分发网络。",
-          "example": "0～32，一般取28，30",
+          "example": "28",
           "member": "uint64",
           "name": "HpcClusterNetMode",
           "required": false,
@@ -10435,7 +10923,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为30。",
+          "document": "一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为20。",
           "example": "[\"ins-r8hr2upy\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -10489,7 +10977,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[ DescribeInstances ](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100",
+          "document": "<p>一个或多个待操作的实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/213/15728\"> DescribeInstances </a>接口返回值中的<code>InstanceId</code>获取。每次请求批量实例的上限为100</p>",
           "example": "[\"ins-r8hr2upy\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -10497,8 +10985,8 @@
           "type": "list"
         },
         {
-          "disabled": false,
-          "document": "分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取",
+          "disabled": true,
+          "document": "<p>分散置放群组ID，可使用<a href=\"https://cloud.tencent.com/document/api/213/17810\">DescribeDisasterRecoverGroups</a>接口获取</p>",
           "example": "ps-a66w6rlb",
           "member": "string",
           "name": "DisasterRecoverGroupId",
@@ -10507,12 +10995,30 @@
         },
         {
           "disabled": false,
-          "document": "是否强制更换实例宿主机。取值范围：<br><li>true：表示允许实例更换宿主机，允许重启实例。本地盘子机不支持指定此参数。</li><br><li>false：不允许实例更换宿主机，只在当前宿主机上加入置放群组。这可能导致更换置放群组失败。</li><br><br>默认取值：false",
+          "document": "<p>是否强制更换实例宿主机。取值范围：<br><li>true：表示允许实例更换宿主机，允许重启实例。本地盘子机不支持指定此参数。</li><br><li>false：不允许实例更换宿主机，只在当前宿主机上加入置放群组。这可能导致更换置放群组失败。</li><br><br>默认取值：false</p>",
           "example": "false",
           "member": "bool",
           "name": "Force",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>置放群组id列表(目前仅支持指定一个)</p>",
+          "example": "[\"ps-a66w6rlb\"]",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区置放群组的分区Id，取值范围：1-10，具体取决于所选置放群组的分区数量，如果选中的置放群组是分区置放群组，该值不传默认随机(该功能灰度中)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNumber",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10615,7 +11121,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待操作的实例ID数组。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
+          "document": "<p>待操作的实例ID数组。可通过 <a href=\"https://cloud.tencent.com/document/api/213/15728\">DescribeInstances</a> 接口返回值中的<code>InstanceId</code>获取。</p>",
           "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -10624,7 +11130,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络相关信息配置，通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。<br><li>当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。</li><li>可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。</li><li>不指定`PrivateIpAddresses`时随机分配私有网络子网IP。</li>",
+          "document": "<p>私有网络相关信息配置，通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。<br><li>当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。</li><li>可通过<code>PrivateIpAddresses</code>指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时<code>InstanceIds</code>与<code>PrivateIpAddresses</code>一一对应。</li><li>不指定<code>PrivateIpAddresses</code>时随机分配私有网络子网IP。</li></p>",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
@@ -10633,7 +11139,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。默认为true。",
+          "document": "<p>是否对运行中的实例选择强制关机。默认为true。</p>",
           "example": "false",
           "member": "bool",
           "name": "ForceStop",
@@ -10642,7 +11148,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留主机名。默认为false。",
+          "document": "<p>是否保留主机名。</p><p>默认值：true</p>",
           "example": "false",
           "member": "bool",
           "name": "ReserveHostName",
@@ -10828,7 +11334,7 @@
       "usage": "out"
     },
     "Placement": {
-      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机IP等",
+      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机IP，专有预扣资源等",
       "members": [
         {
           "disabled": false,
@@ -10866,7 +11372,7 @@
         {
           "disabled": false,
           "document": "指定母机IP生产子机",
-          "example": "10.0.0.1",
+          "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "HostIps",
           "output_required": false,
@@ -10880,6 +11386,39 @@
           "example": "host-o5i742go",
           "member": "string",
           "name": "HostId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专有资源预扣策略。取值范围：<li>ResourcePool：使用实例资源池进行资源预扣</li>",
+          "example": "ResourcePool",
+          "member": "string",
+          "name": "DedicatedResourcePackTenancy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专有预扣资源ID列表。形如：rpp-7eumgm3l。通过指定专有预扣资源创建实例时，必须同时指定匹配的DedicatedResourcePackTenancy。",
+          "example": "[\"rpp-7eumgm3l\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属的实例资源池机架ID，仅用于出参。",
+          "example": "3F3327994BA4C23134DDCBD7828CD4CC",
+          "member": "string",
+          "name": "RackId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -11049,7 +11588,7 @@
         {
           "disabled": false,
           "document": "试运行，不会执行实际的烧录动作，默认为False。",
-          "example": "FALSE",
+          "example": "true",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -11132,6 +11671,115 @@
           "name": "ReservedInstanceId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PurchaseResourcePoolPacksRequest": {
+      "document": "PurchaseResourcePoolPacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包所在可用区。形如：ap-guangzhou-6。可通过[DescribeZones](https://cloud.tencent.com/document/product/213/15707)接口获取可用区列表。",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的规格，仅支持半整机/整机规格。形如：SA9.96XLARGE1152（SA9半整机）。",
+          "example": "S9.8XLARGE64",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的数量。1个数量代表1个半整机/整机资源池。取值范围：1-100。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的时长，单位：月。取值范围：1-60。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池类型。取值范围：\n<li>EXCLUSIVE：独享（默认值）</li>\n<li>SHARED：共享</li>\n注意：第一期仅支持EXCLUSIVE类型。",
+          "example": "EXCLUSIVE",
+          "member": "string",
+          "name": "ResourcePoolPackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动放置开关，默认开启（true）。\n<li>开启：在不指定实例资源池创建实例时，系统会在开启了该能力的实例资源池里寻找合适的池子创建实例。</li>\n<li>关闭：在不指定实例资源池创建实例时，系统不会在该池子里创建实例，只有在指定实例资源池创建实例时，指定了该池子的ID，才允许在池子内创建实例。</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoPlacement",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的名称。长度限制：1-60个字符，支持中文、英文、数字、连接线\"-\"、下划线\"_\"。",
+          "example": "测试实例资源池",
+          "member": "string",
+          "name": "DedicatedResourcePoolPackName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。取值范围：\n<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（默认值）</li>\n<li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "试运行，用于校验请求参数是否正确。默认为false。\n<li>true：发送检查请求，不会创建实例资源池。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId。</li>\n<li>false（默认值）：发送正常请求，通过检查后直接创建实例资源池。</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "PurchaseResourcePoolPacksResponse": {
+      "document": "PurchaseResourcePoolPacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的实例资源池ID列表。形如：rpp-39kj2fsb。",
+          "example": "[\"rpp-2gyonkx7\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIdSet",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11284,7 +11932,7 @@
         {
           "disabled": false,
           "document": "一个或多个待操作的CDH实例ID。每次请求的CDH实例的上限为100。",
-          "example": "[\"host-ey16rkyg\\r\\n\"]",
+          "example": "[\"host-ey16rkyg\"]",
           "member": "string",
           "name": "HostIds",
           "required": true,
@@ -11910,7 +12558,7 @@
         },
         {
           "disabled": false,
-          "document": "预支合计费用，单位：元。",
+          "document": "后续合计费用的折扣价，单位：元/小时",
           "example": "0.01",
           "member": "float",
           "name": "DiscountUsagePrice",
@@ -11920,7 +12568,7 @@
         },
         {
           "disabled": false,
-          "document": "后续合计费用的折扣价，单位：元/小时",
+          "document": "预支合计费用的折扣价，单位：元。",
           "example": "0.01",
           "member": "float",
           "name": "DiscountFixedPrice",
@@ -12423,7 +13071,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的 `InstanceId` 获取。 每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。",
+          "document": "一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)接口返回值中的 `InstanceId` 获取。 每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。",
           "example": "[\"ins-r8hr2upy\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -12652,6 +13300,274 @@
       ],
       "type": "object"
     },
+    "ResourceCount": {
+      "document": "实例资源池容量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vCPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "uint64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存大小，单位：GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Gpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地盘大小，单位：GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Disk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourcePoolPack": {
+      "document": "实例资源池",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池ID。形如：rpp-rn99mzt2。",
+          "example": "rpp-mzeh03bj",
+          "member": "string",
+          "name": "DedicatedResourcePackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池的名称。",
+          "example": "自动放置池测试",
+          "member": "string",
+          "name": "DedicatedResourcePackName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包所在可用区。形如：ap-guangzhou-6。\n返回项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a>",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的规格，仅支持半整机/整机规格。形如：SA9.96XLARGE1152（SA9半整机）。",
+          "example": "SA9.96XLARGE1152",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包的实例类型。形如：SA9。",
+          "example": "SA9",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池类型。\n返回项：EXCLUSIVE (独享) | SHARED (共享)。",
+          "example": "EXCLUSIVE",
+          "member": "string",
+          "name": "ResourcePoolPackType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池状态。\n返回项：CREATING (创建中) | ACTIVE (运行中) | FAILED (创建失败) | RETIRED (已过期)。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池总容量。",
+          "example": "无",
+          "member": "ResourceCount",
+          "name": "TotalCapacity",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池剩余容量。",
+          "example": "无",
+          "member": "ResourceCount",
+          "name": "AvailableCapacity",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "底层物理机IP（已加密）。",
+          "example": "3E7A16039D8E141849DE7C837DE70ECC",
+          "member": "string",
+          "name": "HostIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架ID（已加密）。",
+          "example": "3E5BA837F9B5FFD91DCC02DBF501C7A7",
+          "member": "string",
+          "name": "RackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交换机ID（已加密）。",
+          "example": "7E87DEECE245155C880A7CF5355CD81F",
+          "member": "string",
+          "name": "SwitchId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动放置开关状态。开启则在不指定实例资源池创建实例时，系统会在开启了该能力的实例资源池里寻找合适的池子创建实例。关闭则在不指定实例资源池创建实例时，系统不会在该池子里创建实例，只有在指定实例资源池创建实例时，指定了该池子的ID，才允许在池子内创建实例。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoPlacement",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。\n返回项：NOTIFY_AND_AUTO_RENEW (通知且自动续费) | NOTIFY_AND_MANUAL_RENEW (通知不自动续费) | DISABLE_NOTIFY_AND_MANUAL_RENEW (不通知不自动续费)。",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池预扣包创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "2026-01-14T06:47:14Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "2026-01-14T06:47:14Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourcePoolPackInstance": {
+      "document": "描述实例资源池内已创建实例的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池ID。形如：rpp-fb7bzcyt。",
+          "example": "rpp-fb7bzcyt",
+          "member": "string",
+          "name": "DedicatedResourcePackId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例资源池内的实例ID列表。形如：[\"ins-5u8lxsum\"]。",
+          "example": "[\"ins-5u8lxsum\"]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例族。形如：SA9。",
+          "example": "SA9",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例规格。形如：SA9.96XLARGE1152。",
+          "example": "SA9.96XLARGE1152",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区。形如：ap-guangzhou-6。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RunAutomationServiceEnabled": {
       "document": "描述了 “云自动化助手” 服务相关的信息",
       "members": [
@@ -12691,7 +13607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）</li><br><li>SPOTPAID：竞价付费</li><br><li>CDCPAID：专用集群付费</li><br>默认值：POSTPAID_BY_HOUR。",
+          "document": "<p>实例<a href=\"https://cloud.tencent.com/document/product/213/2180\">计费类型</a>。<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）</li><br><li>SPOTPAID：竞价付费</li><br><li>CDCPAID：专用集群付费</li><br>默认值：POSTPAID_BY_HOUR。</p>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -12700,7 +13616,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "document": "<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。</p>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -12709,7 +13625,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。\n <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>",
+          "document": "<p>实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。<br> <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b></p>",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -12718,7 +13634,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则系统将根据当前地域的资源售卖情况动态指定默认机型。</li><br><li>对于付费模式为CDHPAID的实例创建，该参数以\"CDH_\"为前缀，根据CPU和内存配置生成，具体形式为：CDH_XCXG，例如对于创建CPU为1核，内存为1G大小的专用宿主机的实例，该参数应该为CDH_1C1G。</li>",
+          "document": "<p>实例机型。不同实例机型指定了不同的资源规格。<br><br><li>对于付费模式为PREPAID或POSTPAID_BY_HOUR的实例创建，具体取值可通过调用接口<a href=\"https://cloud.tencent.com/document/api/213/15749\">DescribeInstanceTypeConfigs</a>来获得最新的规格表或参见<a href=\"https://cloud.tencent.com/document/product/213/11518\">实例规格</a>描述。若不指定该参数，则系统将根据当前地域的资源售卖情况动态指定默认机型。</li><br><li>对于付费模式为CDHPAID的实例创建，该参数以&quot;CDH_&quot;为前缀，根据CPU和内存配置生成，具体形式为：CDH_XCXG，例如对于创建CPU为1核，内存为1G大小的专用宿主机的实例，该参数应该为CDH_1C1G。</li></p>",
           "example": "S5.LARGE4",
           "member": "string",
           "name": "InstanceType",
@@ -12727,7 +13643,7 @@
         },
         {
           "disabled": false,
-          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>\n <b>注：如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递ImageId和LaunchTemplate，则默认覆盖LaunchTemplate中对应的ImageId的值。</b>",
+          "document": "<p>指定有效的<a href=\"https://cloud.tencent.com/document/product/213/4940\">镜像</a>ID，格式形如<code>img-xxx</code>。镜像类型分为四种：<br><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br>可通过以下方式获取可用的镜像ID：<br><li><code>公共镜像</code>、<code>自定义镜像</code>、<code>共享镜像</code>的镜像ID可通过登录<a href=\"https://console.cloud.tencent.com/cvm/image?rid=1&amp;imageType=PUBLIC_IMAGE\">控制台</a>查询；<code>服务镜像市场</code>的镜像ID可通过<a href=\"https://market.cloud.tencent.com/list\">云市场</a>查询。</li><li>通过调用接口 <a href=\"https://cloud.tencent.com/document/api/213/15715\">DescribeImages</a> ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的<code>ImageId</code>字段。</li><br> <b>注：如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递ImageId和LaunchTemplate，则默认覆盖LaunchTemplate中对应的ImageId的值。</b></p>",
           "example": "img-irmer45l",
           "member": "string",
           "name": "ImageId",
@@ -12736,7 +13652,7 @@
         },
         {
           "disabled": false,
-          "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "document": "<p>实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。</p>",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -12745,7 +13661,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "document": "<p>实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。</p>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -12754,7 +13670,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。若在此参数中指定了私有网络IP，即表示每个实例的主网卡IP；同时，InstanceCount参数必须与私有网络IP的个数一致且不能大于20。",
+          "document": "<p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。若在此参数中指定了私有网络IP，即表示每个实例的主网卡IP；同时，InstanceCount参数必须与私有网络IP的个数一致且不能大于20。</p>",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
@@ -12763,7 +13679,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "document": "<p>公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。</p>",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -12772,7 +13688,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例数量。包年包月实例取值范围：[1，500]，按量计费实例取值范围：[1，500]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。",
+          "document": "<p>购买实例数量。包年包月实例取值范围：[1，500]，按量计费实例取值范围：[1，500]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见<a href=\"https://cloud.tencent.com/document/product/213/2664\">CVM实例购买限制</a>。</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceCount",
@@ -12781,8 +13697,17 @@
         },
         {
           "disabled": false,
-          "document": "实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server_{R:3}`，购买1台时，实例显示名称为`server_3`；购买2台时，实例显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。</li><li>购买多台实例，如果不指定模式串，则在实例显示名称添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server_`，购买2台时，实例显示名称分别为`server_1`，`server_2`。</li><li>最多支持128个字符（包含模式串）。</li>",
-          "example": "server_{R:3}",
+          "document": "<p>指定创建实例的最小数量，取值范围为不大于InstanceCount的正整数。<br>指定最小数量时，承诺最少创建MinCount台实例，并尽量创建InstanceCount台实例。<br>库存不足以满足最小数量时，API 会返回库存不足最小数量的错误信息。<br>仅对支持部分发货的账号、区域和计费模式（包年包月、按量计费、竞价实例、按量包销）生效。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>最多支持128个字符（含模式串）。</li><li>购买多台实例时：</p><ul><li>指定模式串  {R:x}：表示生成数字序列 [x, x+n-1]，其中 n为购买实例的数量。例如：输入 server_{R:3}，购买1台时，实例显示名称为 server_3；购买2台时，实例显示名称分别为 server_3、server_4。</li><li>指定模式串  {R:x,F:y}：y表示固定位数（可选），取值范围为 [0,8]，默认值 0表示不固定位数（等效于 {R:x}）。不足位时自动补零，例如：输入server_{R:3,F:3}，购买2台时，实例显示名称为 server_003、server_004。；若数字位数超过 y（如 {R:99,F:2}），以实际位数为准，例如：app_{R:99,F:2}，购买2台时，实例显示名称为 app_99、app_100。</li><li>模式串需严格遵循 {R:x,F:y}或 {R:x}格式，无效格式（如 {}）视为普通文本。支持多个模式串。</li><li>未指定模式串：实例显示名称添加后缀 1、2...n，其中n表示购买实例的数量，例如 server_购买2台时生成 server_1、server_2。</li></li></ul>",
+          "example": "server_{R:3}、server_{R:3,F:3}",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -12790,7 +13715,7 @@
         },
         {
           "disabled": false,
-          "document": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。",
+          "document": "<p>实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。</p>",
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
@@ -12799,7 +13724,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的 `SecurityGroupId` 字段来获取。若不指定该参数，则绑定指定项目下的默认安全组，如默认安全组不存在则将自动创建。\n",
+          "document": "<p>实例所属安全组。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/215/15808\">DescribeSecurityGroups</a> 的返回值中的 <code>SecurityGroupId</code> 字段来获取。若不指定该参数，则绑定指定项目下的默认安全组，如默认安全组不存在则将自动创建。</p>",
           "example": "[\"sg-ajhn9qtq\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -12808,7 +13733,7 @@
         },
         {
           "disabled": false,
-          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认公共镜像开启云监控、云安全服务；自定义镜像与镜像市场镜像默认不开启云监控，云安全服务，而使用镜像里保留的服务。",
+          "document": "<p>增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认公共镜像开启云监控、云安全服务；自定义镜像与镜像市场镜像默认不开启云监控，云安全服务，而使用镜像里保留的服务。</p>",
           "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
@@ -12817,7 +13742,7 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>",
           "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
           "member": "string",
           "name": "ClientToken",
@@ -12826,7 +13751,7 @@
         },
         {
           "disabled": false,
-          "document": "实例主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li><br><li>Windows 实例：主机名名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。</li><br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li><br><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server{R:3}`，购买1台时，实例主机名为`server3`；购买2台时，实例主机名分别为`server3`，`server4`。支持指定多个模式串`{R:x}`。</li><br><li>购买多台实例，如果不指定模式串，则在实例主机名添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server`，购买2台时，实例主机名分别为`server1`，`server2`。</li>",
+          "document": "<p>实例主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li><br><li>Windows 实例：主机名名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。</li><br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li><br><li>购买多台实例时：</p><ul><li>指定模式串  {R:x}：表示生成数字序列 [x, x+n-1]，其中 n为购买实例的数量。例如：输入 server_{R:3}，购买1台时，实例主机名为 server_3；购买2台时，实例主机名分别为 server_3、server_4。</li><li>指定模式串  {R:x,F:y}：y表示固定位数（可选），取值范围为 [0,8]，默认值 0表示不固定位数（等效于 {R:x}）。不足位时自动补零，例如：输入server_{R:3,F:3}，购买2台时，实例主机名为 server_003、server_004。若数字位数超过 y（如 {R:99,F:2}），以实际位数为准，例如：app_{R:99,F:2}，购买2台时，实例主机名为 app_99、app_100。</li><li>指定模式串 {IP}：自动替换为实例的内网IP地址。例如：输入 node-{IP}，实例主机名为 node-10.0.12.8；支持与序号模式串混合使用，例如：输入 web-{IP}-{R:1}，购买2台时，实例主机名分别为 web-10.0.12.8-1、web-10.0.12.9-2。</li><li>模式串需严格遵循 {R:x,F:y}、{R:x} 或 {IP} 格式，无效格式（如 {}）视为普通文本。支持多个模式串。</li><li>未指定模式串：实例主机名添加后缀 1、2...n，其中n表示购买实例的数量，例如 server_购买2台时生成 server_1、server_2。</li></li></ul>",
           "example": "MyHostName",
           "member": "string",
           "name": "HostName",
@@ -12835,7 +13760,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。",
+          "document": "<p>定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。</p>",
           "example": "无",
           "member": "ActionTimer",
           "name": "ActionTimer",
@@ -12844,7 +13769,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组id，仅支持指定一个。",
+          "document": "<p>置放群组id，仅支持指定一个。</p>",
           "example": "[\"sg-efil73jd\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
@@ -12853,7 +13778,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。",
+          "document": "<p>标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。</p>",
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
@@ -12862,7 +13787,7 @@
         },
         {
           "disabled": false,
-          "document": "系统标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。",
+          "document": "<p>系统标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。</p>",
           "example": "无",
           "member": "TagSpecification",
           "name": "SystemTagSpecification",
@@ -12871,7 +13796,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费但没有传递该参数时，默认按当前固定折扣价格出价。",
+          "document": "<p>实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费但没有传递该参数时，默认按当前固定折扣价格出价。</p>",
           "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
@@ -12880,7 +13805,7 @@
         },
         {
           "disabled": false,
-          "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。",
+          "document": "<p>提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅<a href=\"https://cloud.tencent.com/document/product/213/17526\">Windows</a>和<a href=\"https://cloud.tencent.com/document/product/213/17525\">Linux</a>启动时运行命令。</p>",
           "example": "TXlVc2VyRGF0YQo=",
           "member": "string",
           "name": "UserData",
@@ -12889,7 +13814,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义metadata，支持创建 CVM 时添加自定义元数据键值对。\n**注：内测中**。",
+          "document": "<p>自定义metadata，支持创建 CVM 时添加自定义元数据键值对。<br><strong>注：内测中</strong>。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadata",
@@ -12898,7 +13823,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
+          "document": "<p>是否只预检此次请求。<br>true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。<br>如果检查不通过，则返回对应错误码；<br>如果检查通过，则返回RequestId.<br>false（默认）：发送正常请求，通过检查后直接创建实例</p>",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
@@ -12907,7 +13832,7 @@
         },
         {
           "disabled": false,
-          "document": "描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。",
+          "document": "<p>描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。</p>",
           "example": "无",
           "member": "CpuTopology",
           "name": "CpuTopology",
@@ -12916,7 +13841,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/36223)接口返回值中的`RoleName `获取。",
+          "document": "<p>CAM角色名称。可通过<a href=\"https://cloud.tencent.com/document/product/598/36223\"> DescribeRoleList </a>接口返回值中的<code>RoleName</code>获取。</p>",
           "example": "testroleName001",
           "member": "string",
           "name": "CamRoleName",
@@ -12925,7 +13850,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。",
+          "document": "<p>高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。</p>",
           "example": "hpc-a5n666lo",
           "member": "string",
           "name": "HpcClusterId",
@@ -12934,7 +13859,7 @@
         },
         {
           "disabled": false,
-          "document": "实例启动模板。",
+          "document": "<p>实例启动模板。</p>",
           "example": "无",
           "member": "LaunchTemplate",
           "name": "LaunchTemplate",
@@ -12943,7 +13868,7 @@
         },
         {
           "disabled": false,
-          "document": "指定专用集群创建。",
+          "document": "<p>指定专用集群创建。</p>",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
@@ -12952,7 +13877,7 @@
         },
         {
           "disabled": false,
-          "document": "指定CHC物理服务器来创建CHC云主机。",
+          "document": "<p>指定CHC物理服务器来创建CHC云主机。</p>",
           "example": "[\"chc-kwf9mhzf\"]",
           "member": "string",
           "name": "ChcIds",
@@ -12961,7 +13886,16 @@
         },
         {
           "disabled": false,
-          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>true：表示开启实例保护，不允许通过api接口删除实例</li><br><li>false：表示关闭实例保护，允许通过api接口删除实例</li><br><br>默认取值：false。",
+          "document": "<p>分区置放群组的分区序号，具体取决于所选置放群组的分区数量，如果选中的置放群组是分区置放群组，该值不传默认随机。(功能灰度中)</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PartitionNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>true：表示开启实例保护，不允许通过api接口删除实例</li><br><li>false：表示关闭实例保护，允许通过api接口删除实例</li><br><br>默认取值：false。</p>",
           "example": "false",
           "member": "bool",
           "name": "DisableApiTermination",
@@ -12970,8 +13904,8 @@
         },
         {
           "disabled": false,
-          "document": "被继承的实例ID。",
-          "example": "[\"ins-6mre94jv\"]\t",
+          "document": "<p>被继承的实例ID。</p>",
+          "example": "[\"ins-6mre94jv\"]",
           "member": "string",
           "name": "InheritInstanceIds",
           "required": false,
@@ -12979,7 +13913,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)",
+          "document": "<p>实例是否开启巨型帧，取值范围：<br>&lt;li/&gt; true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br>&lt;li/&gt;false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： <a href=\"https://cloud.tencent.com/document/product/213/11518\">实例规格</a></p>",
           "example": "false",
           "member": "bool",
           "name": "EnableJumboFrame",
@@ -12988,7 +13922,7 @@
         },
         {
           "disabled": false,
-          "document": "描述了实例的软件证书情况与其设置，如Grid驱动证书等",
+          "document": "<p>描述了实例的软件证书情况与其设置，如Grid驱动证书等</p>",
           "example": "无",
           "member": "SoftwareLicenseService",
           "name": "SoftwareLicenseService",
@@ -12997,7 +13931,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持本地系统盘组raid后数据同步完成后交付",
+          "document": "<p>是否支持本地系统盘组raid后数据同步完成后交付</p>",
           "example": "false",
           "member": "bool",
           "name": "WaitRaidSyncProgress",
@@ -13006,7 +13940,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡相关信息配置。通过该参数可以指定私有网络的ID，子网ID,网卡ID等信息。若在此参数中指定了弹性网卡数据，即表示每个实例的会自动创建弹性网卡并绑定实例",
+          "document": "<p>弹性网卡相关信息配置。通过该参数可以指定私有网络的ID，子网ID,网卡ID等信息。若在此参数中指定了弹性网卡数据，即表示每个实例的会自动创建弹性网卡并绑定实例</p>",
           "example": "无",
           "member": "ElasticNetworkInterfaces",
           "name": "ElasticNetworkInterfaces",
@@ -13015,12 +13949,21 @@
         },
         {
           "disabled": false,
-          "document": "FuzzyZones参数支持模糊化可用区选择机制，需加自研白名单才可传入使用。有该参数时，Placement和VirtualPrivateCloud参数将只做校验使用，不参与创建过程，系统将在多个可用区中尝试实例创建，自动适配最优方案，直至成功满足用户购买需求。",
+          "document": "<p>FuzzyZones参数支持模糊化可用区选择机制，需加自研白名单才可传入使用。有该参数时，Placement和VirtualPrivateCloud参数将只做校验使用，不参与创建过程，系统将在多个可用区中尝试实例创建，自动适配最优方案，直至成功满足用户购买需求。</p>",
           "example": "无",
           "member": "FuzzyZone",
           "name": "FuzzyZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自研购买实例支持模糊规格策略，交付时优先满足指定核心数或者指定台数，对交付规格不敏感。</p><ul><li>SPECIFIC代表不采用模糊策略，交付同一种规格；</li><li>EQUAL_CORE代表采用模糊策略，交付指定核心数；</li><li>EQUAL_UNIT代表采用模糊策略，交付指定台数</li></ul>",
+          "example": "SPECIFIC",
+          "member": "string",
+          "name": "FuzzyInstanceTypePolicy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13030,7 +13973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例`ID`。返回实例`ID`列表并不代表实例创建成功，可根据 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询返回的InstancesSet中对应实例的`ID`的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。",
+          "document": "<p>当通过本接口来创建实例时会返回该参数，表示一个或多个实例<code>ID</code>。返回实例<code>ID</code>列表并不代表实例创建成功，可根据 <a href=\"https://cloud.tencent.com/document/api/213/15728\">DescribeInstances</a> 接口查询返回的InstancesSet中对应实例的<code>ID</code>的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。</p>",
           "example": "[\"ins-rn79mzt1\"]",
           "member": "string",
           "name": "InstanceIdSet",
@@ -13487,7 +14430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br>\n<li>LOCAL_BASIC：本地硬盘</li>\n<li>LOCAL_SSD：本地SSD硬盘</li>\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_BSSD：通用型SSD云硬盘</li>\n<li>CLOUD_HSSD：增强型SSD云硬盘</li>\n<li>CLOUD_TSSD：极速型SSD云硬盘</li><br>\n默认取值：当前有库存的硬盘类型。",
+          "document": "<p>系统盘类型。系统盘类型限制详见<a href=\"https://cloud.tencent.com/document/product/213/4952\">存储概述</a>。取值范围：<br></p><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li><br>默认取值：当前有库存的硬盘类型。",
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
@@ -13498,8 +14441,8 @@
         },
         {
           "disabled": false,
-          "document": "系统盘ID。\n该参数目前仅用于`DescribeInstances`等查询类接口的返回参数，不可用于`RunInstances`等写接口的入参。",
-          "example": "disk-xyzw1234",
+          "document": "<p>系统盘ID。<br>该参数目前仅用于 <a href=\"https://cloud.tencent.com/document/product/213/15728\">DescribeInstances</a> 等查询类接口的返回参数，不可用于 <a href=\"https://cloud.tencent.com/document/product/213/15730\">RunInstances</a> 等写接口的入参。</p>",
+          "example": "disk-xyzw1a3x",
           "member": "string",
           "name": "DiskId",
           "output_required": false,
@@ -13509,7 +14452,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GiB。默认值为 50",
+          "document": "<p>系统盘大小，单位：GiB。默认值为 50</p>",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -13520,7 +14463,7 @@
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属的独享集群ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdc-xxxxxx",
           "member": "string",
           "name": "CdcId",
@@ -13531,11 +14474,33 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。",
+          "document": "<p>磁盘名称，长度不超过128 个字符。</p>",
           "example": "name",
           "member": "string",
           "name": "DiskName",
           "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统盘是否加密。取值范围：true：加密false：不加密默认取值：false该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。该参数目前仅用于 RunInstances 接口。当前参数灰度中。</p>",
+          "example": "kms-abcd1234",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13630,8 +14595,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
-          "example": "['ins-2pajzo4q']",
+          "document": "<p>一个或多个待操作的实例ID。可通过 <a href=\"https://cloud.tencent.com/document/api/213/15728\">DescribeInstances</a> 接口返回值中的<code>InstanceId</code>获取。每次请求批量实例的上限为100。</p>",
+          "example": "[\"ins-2pajzo4q\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -13639,7 +14604,7 @@
         },
         {
           "disabled": false,
-          "document": "释放弹性IP。EIP2.0下，仅提供主网卡下首个EIP，EIP类型限定在HighQualityEIP、AntiDDoSEIP、EIPv6、HighQualityEIPv6这几种类型。默认行为不释放。\n\n示例值：true\n默认值：false",
+          "document": "<p>释放弹性IP。EIP2.0下，仅提供主网卡下首个EIP，EIP类型限定在HighQualityEIP、AntiDDoSEIP、EIPv6、HighQualityEIPv6这几种类型。默认行为不释放。</p><p>默认值：false</p>",
           "example": "true",
           "member": "bool",
           "name": "ReleaseAddress",
@@ -13648,7 +14613,7 @@
         },
         {
           "disabled": false,
-          "document": "云梯参数，类型为 json string。",
+          "document": "<p>云梯参数，类型为 json string。</p>",
           "example": "{\\\"DeptId\\\":1173,\\\"ApplyType\\\":\\\"Normal\\\"}",
           "member": "string",
           "name": "YuntiParameters",
@@ -13657,7 +14622,7 @@
         },
         {
           "disabled": false,
-          "document": "释放实例挂载的包年包月数据盘。true表示销毁实例同时释放包年包月数据盘，false表示只销毁实例。\n默认值：false",
+          "document": "<p>释放实例挂载的包年包月数据盘。true表示销毁实例同时释放包年包月数据盘，false表示只销毁实例。<br>默认值：false</p>",
           "example": "true",
           "member": "bool",
           "name": "ReleasePrepaidDataDisks",
@@ -13666,7 +14631,7 @@
         },
         {
           "disabled": false,
-          "document": "被继承的实例ID。",
+          "document": "<p>被继承的实例ID。</p>",
           "example": "[\"ins-6mre94jv\"]",
           "member": "string",
           "name": "InheritInstanceIds",
@@ -13675,7 +14640,7 @@
         },
         {
           "disabled": false,
-          "document": "是否收取罚金的开关。",
+          "document": "<p>是否收取罚金的开关。</p>",
           "example": "false",
           "member": "bool",
           "name": "PunishmentSwitch",
@@ -13697,12 +14662,39 @@
       ],
       "type": "object"
     },
+    "TerminateResourcePoolPacksRequest": {
+      "document": "TerminateResourcePoolPacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源池ID列表，支持批量销毁。形如：rpp-6rk3550n。每次请求的实例的上限为100。",
+          "example": "[\"rpp-6rk3550n\"]",
+          "member": "string",
+          "name": "DedicatedResourcePackIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateResourcePoolPacksResponse": {
+      "document": "TerminateResourcePoolPacks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "VirtualPrivateCloud": {
       "document": "描述了VPC相关信息，包括子网，IP信息等",
       "members": [
         {
           "disabled": false,
-          "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778) ，从接口返回中的`VpcId `字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。",
+          "document": "<p>私有网络ID，形如<code>vpc-xxx</code>。有效的VpcId可通过登录<a href=\"https://console.cloud.tencent.com/vpc/vpc?rid=1\">控制台</a>查询；也可以调用接口 <a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a> ，从接口返回中的<code>VpcId</code>字段获取。若在创建子机时VpcId与SubnetId同时传入<code>DEFAULT</code>，则强制使用默认vpc网络。</p>",
           "example": "vpc-2ij",
           "member": "string",
           "name": "VpcId",
@@ -13713,7 +14705,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的`SubnetId `字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
+          "document": "<p>私有网络子网ID，形如<code>subnet-xxx</code>。有效的私有网络子网ID可通过登录<a href=\"https://console.cloud.tencent.com/vpc/subnet?rid=1\">控制台</a>查询；也可以调用接口  <a href=\"https://cloud.tencent.com/document/product/215/15784\">DescribeSubnets</a> ，从接口返回中的<code>SubnetId</code>字段获取。若在创建子机时SubnetId与VpcId同时传入<code>DEFAULT</code>，则强制使用默认vpc网络。</p>",
           "example": "subnet-2ks",
           "member": "string",
           "name": "SubnetId",
@@ -13724,7 +14716,7 @@
         },
         {
           "disabled": false,
-          "document": "是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<li>true：表示用作公网网关</li><li>false：表示不作为公网网关</li>默认取值：false。",
+          "document": "<p>是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<li>true：表示用作公网网关</li><li>false：表示不作为公网网关</li>默认取值：false。</p>",
           "example": "false",
           "member": "bool",
           "name": "AsVpcGateway",
@@ -13735,7 +14727,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。",
+          "document": "<p>私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。</p>",
           "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -13746,13 +14738,35 @@
         },
         {
           "disabled": false,
-          "document": "为弹性网卡指定随机生成的 IPv6 地址数量。",
+          "document": "<p>为弹性网卡指定随机生成的 IPv6 地址数量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ipv6AddressCount",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主网卡开启vRDMA能力</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRdma",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动安装vRDMA驱动</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoInstallRdmaDriver",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -13763,7 +14777,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区名称，例如，ap-guangzhou-3\n全网可用区名称如下：\n<li> ap-chongqing-1 </li>\n<li> ap-seoul-1 </li>\n<li> ap-seoul-2 </li>\n<li> ap-chengdu-1 </li>\n<li> ap-chengdu-2 </li>\n<li> ap-hongkong-1（售罄） </li>\n<li> ap-hongkong-2 </li>\n<li> ap-hongkong-3 </li>\n<li> ap-shenzhen-fsi-1 </li>\n<li> ap-shenzhen-fsi-2 </li>\n<li> ap-shenzhen-fsi-3（售罄） </li>\n<li> ap-guangzhou-1（售罄）</li>\n<li> ap-guangzhou-2（售罄）</li>\n<li> ap-guangzhou-3 </li>\n<li> ap-guangzhou-4 </li>\n<li> ap-guangzhou-6 </li>\n<li> ap-guangzhou-7 </li>\n<li> ap-tokyo-1 </li>\n<li> ap-tokyo-2 </li>\n<li> ap-singapore-1 </li>\n<li> ap-singapore-2 </li>\n<li> ap-singapore-3 </li>\n<li>ap-singapore-4 </li>\n<li> ap-shanghai-fsi-1 </li>\n<li> ap-shanghai-fsi-2 </li>\n<li> ap-shanghai-fsi-3 </li>\n<li> ap-bangkok-1 </li>\n<li> ap-bangkok-2 </li>\n<li> ap-shanghai-1（售罄） </li>\n<li> ap-shanghai-2 </li>\n<li> ap-shanghai-3 </li>\n<li> ap-shanghai-4 </li>\n<li> ap-shanghai-5 </li>\n<li> ap-shanghai-8 </li>\n<li> ap-mumbai-1 </li>\n<li> ap-mumbai-2 </li>\n<li> ap-beijing-1（售罄）</li>\n<li> ap-beijing-2 </li>\n<li> ap-beijing-3 </li>\n<li> ap-beijing-4 </li>\n<li> ap-beijing-5 </li>\n<li> ap-beijing-6 </li>\n<li> ap-beijing-7 </li>\n<li> na-siliconvalley-1 </li>\n<li> na-siliconvalley-2 </li>\n<li> eu-frankfurt-1 </li>\n<li> eu-frankfurt-2 </li>\n<li> na-ashburn-1 </li>\n<li> na-ashburn-2 </li>\n<li> ap-nanjing-1 </li>\n<li> ap-nanjing-2 </li>\n<li> ap-nanjing-3 </li>\n<li> sa-saopaulo-1</li>\n<li> ap-jakarta-1 </li>\n<li> ap-jakarta-2 </li>",
+          "document": "可用区名称，例如，ap-guangzhou-3\n全网可用区名称如下：\n<li> ap-chongqing-1 </li>\n<li> ap-seoul-1 </li>\n<li> ap-seoul-2 </li>\n<li> ap-chengdu-1 </li>\n<li> ap-chengdu-2 </li>\n<li> ap-hongkong-1（售罄） </li>\n<li> ap-hongkong-2 </li>\n<li> ap-hongkong-3 </li>\n<li> ap-shenzhen-fsi-1 </li>\n<li> ap-shenzhen-fsi-2 </li>\n<li> ap-shenzhen-fsi-3（售罄） </li>\n<li> ap-guangzhou-1（售罄）</li>\n<li> ap-guangzhou-2（售罄）</li>\n<li> ap-guangzhou-3 </li>\n<li> ap-guangzhou-4 </li>\n<li> ap-guangzhou-6 </li>\n<li> ap-guangzhou-7 </li>\n<li> ap-tokyo-1 </li>\n<li> ap-tokyo-2 </li>\n<li> ap-singapore-1 </li>\n<li> ap-singapore-2 </li>\n<li> ap-singapore-3 </li>\n<li>ap-singapore-4 </li>\n<li> ap-shanghai-fsi-1 </li>\n<li> ap-shanghai-fsi-2 </li>\n<li> ap-shanghai-fsi-3 </li>\n<li> ap-bangkok-1 </li>\n<li> ap-bangkok-2 </li>\n<li> ap-shanghai-2 </li>\n<li> ap-shanghai-3 </li>\n<li> ap-shanghai-4 </li>\n<li> ap-shanghai-5 </li>\n<li> ap-shanghai-8 </li>\n<li> ap-mumbai-1 </li>\n<li> ap-mumbai-2 </li>\n<li> ap-beijing-1（售罄）</li>\n<li> ap-beijing-3 </li>\n<li> ap-beijing-4 </li>\n<li> ap-beijing-5 </li>\n<li> ap-beijing-6 </li>\n<li> ap-beijing-7 </li>\n<li> na-siliconvalley-1 </li>\n<li> na-siliconvalley-2 </li>\n<li> eu-frankfurt-1 </li>\n<li> eu-frankfurt-2 </li>\n<li> na-ashburn-1 </li>\n<li> na-ashburn-2 </li>\n<li> ap-nanjing-1 </li>\n<li> ap-nanjing-2 </li>\n<li> ap-nanjing-3 </li>\n<li> sa-saopaulo-1</li>\n<li> ap-jakarta-1 </li>\n<li> ap-jakarta-2 </li>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",

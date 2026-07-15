@@ -469,6 +469,13 @@
       "output": "DescribePlatformImagesResponse",
       "status": "online"
     },
+    "DescribePresetImageList": {
+      "document": "该接口用于查询内置镜像列表",
+      "input": "DescribePresetImageListRequest",
+      "name": "查询预制镜像列表",
+      "output": "DescribePresetImageListResponse",
+      "status": "online"
+    },
     "DescribePublicAlgoVersionList": {
       "document": "公共算法版本列表",
       "input": "DescribePublicAlgoVersionListRequest",
@@ -8937,6 +8944,98 @@
       ],
       "type": "object"
     },
+    "DescribePresetImageListRequest": {
+      "document": "DescribePresetImageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务过滤表达式</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页排序</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单页大小</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p>",
+          "example": "[\"ImageRepo\"]",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应字段的排序方式</p>",
+          "example": "[\"DESC\"]",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePresetImageListResponse": {
+      "document": "DescribePresetImageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>记录总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像列表</p>",
+          "example": "无",
+          "member": "PresetImageInfo",
+          "name": "PresetImageList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePublicAlgoVersionListRequest": {
       "document": "DescribePublicAlgoVersionList请求参数结构体",
       "members": [
@@ -10971,6 +11070,133 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageCacheSourceInfo": {
+      "document": "镜像缓存的镜像信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像缓存类型</p><p>枚举值：</p><ul><li>BUILTIN： 预置镜像</li><li>TCR： TCR企业版镜像服务</li><li>CCR： CCR个人版镜像服务</li><li>CUSTOM： 自定义镜像地址</li></ul>",
+          "example": "TCR",
+          "member": "string",
+          "name": "ImageCacheType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预置镜像ID</p>",
+          "example": "sglang-v0.5.6",
+          "member": "string",
+          "name": "BuiltInImageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像地址</p>",
+          "example": "tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:sglang-v0.5.6.post2-ti-dev20251215",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "RegistryRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库ID</p>",
+          "example": "tcr-ixqcype8",
+          "member": "string",
+          "name": "RegistryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义镜像用户名</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "ImageUser",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义镜像用户密码</p>",
+          "example": "encrypted_password",
+          "member": "string",
+          "name": "ImagePassword",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义镜像加密ID</p>",
+          "example": "encrypted_secret_id",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像名</p>",
+          "example": "DeepSeek-V3 - SGLANG/sglang-v0.5.6.post2",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像大小</p>",
+          "example": "3601256",
+          "member": "string",
+          "name": "ImageSizeBytes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库类型</p><p>枚举值：</p><ul><li>1： TCR镜像</li><li>2： CCR镜像</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ImageRegistryType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16225,7 +16451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件ID",
+          "document": "<p>文件ID</p>",
           "example": "pf-1c53b2d",
           "member": "string",
           "name": "FileId",
@@ -16236,7 +16462,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名称",
+          "document": "<p>文件名称</p>",
           "example": "testmodel",
           "member": "string",
           "name": "FileName",
@@ -16247,7 +16473,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型",
+          "document": "<p>文件类型</p>",
           "example": "MODEL",
           "member": "string",
           "name": "PreloadFileType",
@@ -16258,7 +16484,7 @@
         },
         {
           "disabled": false,
-          "document": "文件来源",
+          "document": "<p>文件来源</p>",
           "example": "COS",
           "member": "string",
           "name": "PreloadFileSource",
@@ -16269,7 +16495,7 @@
         },
         {
           "disabled": false,
-          "document": "COS",
+          "document": "<p>COS</p>",
           "example": "无",
           "member": "CosStorageInfo",
           "name": "CosStrategyInfo",
@@ -16280,7 +16506,7 @@
         },
         {
           "disabled": false,
-          "document": "文件缓存策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件缓存策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CacheStrategy",
           "name": "FileStrategy",
@@ -16291,7 +16517,7 @@
         },
         {
           "disabled": false,
-          "document": "文件状态",
+          "document": "<p>文件状态</p>",
           "example": "Failed",
           "member": "string",
           "name": "Status",
@@ -16302,7 +16528,7 @@
         },
         {
           "disabled": false,
-          "document": "缓存进度",
+          "document": "<p>缓存进度</p>",
           "example": "15",
           "member": "uint64",
           "name": "Progress",
@@ -16313,7 +16539,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号UIN",
+          "document": "<p>主账号UIN</p>",
           "example": "100005325423",
           "member": "string",
           "name": "Uin",
@@ -16324,7 +16550,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人子账号",
+          "document": "<p>操作人子账号</p>",
           "example": "100005341438",
           "member": "string",
           "name": "OperateUin",
@@ -16335,7 +16561,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人昵称",
+          "document": "<p>操作人昵称</p>",
           "example": "user-a",
           "member": "string",
           "name": "NickName",
@@ -16346,7 +16572,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>镜像信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
@@ -16357,7 +16583,18 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>镜像缓存信息</p>",
+          "example": "无",
+          "member": "ImageCacheSourceInfo",
+          "name": "ImageCacheSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
           "example": "2025-06-01 12:44:12",
           "member": "string",
           "name": "CreateTime",
@@ -16368,7 +16605,7 @@
         },
         {
           "disabled": false,
-          "document": "最近修改时间",
+          "document": "<p>最近修改时间</p>",
           "example": "2025-06-01 12:44:12",
           "member": "string",
           "name": "UpdateTime",
@@ -16379,7 +16616,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余时间",
+          "document": "<p>剩余时间</p>",
           "example": "456",
           "member": "uint64",
           "name": "RemainingTime",
@@ -16390,7 +16627,7 @@
         },
         {
           "disabled": false,
-          "document": "失败信息",
+          "document": "<p>失败信息</p>",
           "example": "a12xb",
           "member": "string",
           "name": "ErrMsg",
@@ -16401,7 +16638,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -16412,7 +16649,7 @@
         },
         {
           "disabled": false,
-          "document": "预加载文件资源组信息",
+          "document": "<p>预加载文件资源组信息</p>",
           "example": "无",
           "member": "PreloadFileResourceGroup",
           "name": "PreloadFileByResourceGroups",
@@ -16423,7 +16660,7 @@
         },
         {
           "disabled": false,
-          "document": "已加载完成的节点数量",
+          "document": "<p>已加载完成的节点数量</p>",
           "example": "13",
           "member": "int64",
           "name": "LoadedNodeCount",
@@ -16434,7 +16671,7 @@
         },
         {
           "disabled": false,
-          "document": "已加载失败的节点数量",
+          "document": "<p>已加载失败的节点数量</p>",
           "example": "2",
           "member": "int64",
           "name": "ExceptionNodeCount",
@@ -16445,7 +16682,7 @@
         },
         {
           "disabled": false,
-          "document": "所有节点数量",
+          "document": "<p>所有节点数量</p>",
           "example": "15",
           "member": "int64",
           "name": "TotalNodeCount",
@@ -16629,6 +16866,276 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PresetImageInfo": {
+      "document": "预制镜像详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像id</p>",
+          "example": "vllm(0.20.1)",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库名称</p>",
+          "example": "taco-x",
+          "member": "string",
+          "name": "ImageRepo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像标签</p>",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "ImageTag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像url地址</p>",
+          "example": "tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:HY-World-2.0-cu124-dev20260506-webui",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像的大小</p>",
+          "example": "10847511513",
+          "member": "string",
+          "name": "ImageSize",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像描述</p>",
+          "example": "大模型推理框架 vLLM，开源版本 v0.20.1，CUDA 12.9 环境",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>适用模块</p>",
+          "example": "[\"Train\"]",
+          "member": "string",
+          "name": "ApplicableModuleList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用场景</p>",
+          "example": "autonomous",
+          "member": "string",
+          "name": "Scenario",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架名称</p>",
+          "example": "TACO",
+          "member": "string",
+          "name": "Framework",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架版本</p>",
+          "example": "5.0.20.1",
+          "member": "string",
+          "name": "FrameworkVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>芯片类型</p>",
+          "example": "[\"NPU\"]",
+          "member": "string",
+          "name": "ChipTypeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行库版本</p>",
+          "example": "11.7",
+          "member": "string",
+          "name": "ComputeLibVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>python版本</p>",
+          "example": "3.12",
+          "member": "string",
+          "name": "PythonVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统</p>",
+          "example": "Ubuntu 22.04",
+          "member": "string",
+          "name": "OS",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行库列表</p>",
+          "example": "无",
+          "member": "RuntimeLib",
+          "name": "RuntimeLibList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的gpu列表</p>",
+          "example": "[\"HCC-P800\"]",
+          "member": "string",
+          "name": "SupportGpuList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展属性</p>",
+          "example": "无",
+          "member": "Attribute",
+          "name": "ExtraAttributeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持分布式部署</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportDistributedDeploy",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否最新稳定版本</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLatestStable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像的名称</p>",
+          "example": "vllm(0.20.1)",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像版本号（内部）</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>录入时间</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
+          "example": "2026-06-11T12:27:41Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：YYYY-MM-DDThh:mm:ssZ</p>",
+          "example": "2026-06-11T12:27:41Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像类型</p><p>枚举值：</p><ul><li>TCR： TCR类型的镜像</li></ul>",
+          "example": "TCR",
+          "member": "string",
+          "name": "ImageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -18344,6 +18851,34 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuntimeLib": {
+      "document": "预制镜像中的运行库详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>运行库名称</p>",
+          "example": "vLLM",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行库版本号</p>",
+          "example": "v3.5",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -20956,7 +21491,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cfs的存储类型\n  // HP:通用性能型\n  // SD:通用标准型\n  // TP:turbo性能型\n  // TB:turbo标准型\n  // THP:吞吐型",
+          "document": "<p>cfs的存储类型<br>  // HP:通用性能型<br>  // SD:通用标准型<br>  // TP:turbo性能型<br>  // TB:turbo标准型<br>  // THP:吞吐型</p>",
           "example": "HP",
           "member": "string",
           "name": "CFSStorageType",
@@ -20966,7 +21501,7 @@
         },
         {
           "disabled": false,
-          "document": "cfs的协议",
+          "document": "<p>cfs的协议</p>",
           "example": "NFS",
           "member": "string",
           "name": "CFSProtocol",

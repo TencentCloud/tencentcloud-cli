@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli cvm DescribeDisasterRecoverGroups --cli-unfold-argument ```
+tccli cvm DescribeDisasterRecoverGroups --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 100 \
+    --Filters.0.Name tag:myTagKey \
+    --Filters.0.Values myTagVlue
+```
 
 Output: 
 ```
@@ -13,17 +18,40 @@ Output:
     "Response": {
         "DisasterRecoverGroupSet": [
             {
-                "DisasterRecoverGroupId": "ps-21q9ibvr",
-                "Name": "数据库业务",
-                "Type": "RACK",
-                "CvmQuotaTotal": 30,
+                "Affinity": 1,
+                "CreateTime": "2024-08-28T10:04:56Z",
                 "CurrentNum": 0,
+                "CvmQuotaTotal": 60,
+                "DisasterRecoverGroupId": "ps-0f03mwkn",
                 "InstanceIds": [],
-                "CreateTime": "2018-04-19T02:47:12Z"
+                "Name": "HostDisasterRecoverGroup",
+                "Tags": [
+                    {
+                        "Key": "myTagKey",
+                        "Value": "myTagVlue"
+                    }
+                ],
+                "Type": "HOST"
+            },
+            {
+                "Affinity": 1,
+                "CreateTime": "2024-08-13T04:16:19Z",
+                "CurrentNum": 0,
+                "CvmQuotaTotal": 20,
+                "DisasterRecoverGroupId": "ps-ali72vwj",
+                "InstanceIds": [],
+                "Name": "SWDisasterRecoverGroup",
+                "Tags": [
+                    {
+                        "Key": "myTagKey",
+                        "Value": "myTagVlue"
+                    }
+                ],
+                "Type": "SW"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "c68ce193-be41-4d13-9a9b-2dc031db6477"
+        "RequestId": "52eca90d-08c8-4887-abf0-78d8155cfcfd",
+        "TotalCount": 2
     }
 }
 ```

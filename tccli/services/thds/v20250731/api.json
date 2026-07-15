@@ -1,0 +1,330 @@
+{
+  "actions": {
+    "CreateAPIKey": {
+      "document": "创建 API 密钥",
+      "input": "CreateAPIKeyRequest",
+      "name": "创建 FHIR API 密钥",
+      "output": "CreateAPIKeyResponse",
+      "status": "online"
+    },
+    "UpdateFHIRInstance": {
+      "document": "更新 FHIR实例",
+      "input": "UpdateFHIRInstanceRequest",
+      "name": "更新 FHIR 实例",
+      "output": "UpdateFHIRInstanceResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-07-31",
+    "api_brief": "# 医疗健康数据服务API",
+    "serviceNameCN": "医疗健康数据服务",
+    "serviceShortName": "thds"
+  },
+  "objects": {
+    "APIKey": {
+      "document": "FHIR 访问密钥",
+      "members": [
+        {
+          "disabled": false,
+          "document": "FHIR 实例 ID",
+          "example": "fhir-xxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥Key",
+          "example": "ad5t64e98f6acadx",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥Secret",
+          "example": "0e0426bd5da2763005000cc85b4a47a5ee508b840a01783aa386be7d3e37c548",
+          "member": "string",
+          "name": "Secret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 有效期时长，单位秒",
+          "example": "3600",
+          "member": "int64",
+          "name": "TokenLifetime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-10-05T14:48:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2024-10-05T14:48:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有效",
+          "example": "true",
+          "member": "bool",
+          "name": "Active",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAPIKeyRequest": {
+      "document": "CreateAPIKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "FHIR 实例 ID",
+          "example": "fhir-xxxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAPIKeyResponse": {
+      "document": "CreateAPIKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "FHIR 服务密钥",
+          "example": "无",
+          "member": "APIKey",
+          "name": "APIKey",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FHIRInstanceConfig": {
+      "document": "FHIR实例配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "FHIR版本",
+          "example": "R4",
+          "member": "string",
+          "name": "FHIRVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端 ID 策略，取值范围为ANY，ALPHANUMERIC，NOT_ALLOWED。NOT_ALLOWED则不允许客户端 设置 ID，ANY 则表示允许，ALPHANUMERIC 表示字母与数字组合（不允许纯数字）",
+          "example": "ANY",
+          "member": "string",
+          "name": "ClientIDStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端 ID 策略，取值范围为UUID(默认)，SEQUENTIAL_NUMERIC。UUID 表示使用uuid作为服务端 ID，SEQUENTIAL_NUMERIC 表示使用自增序列作为服务端 ID。",
+          "example": "UUID",
+          "member": "string",
+          "name": "ServerIDStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启资源版本管理",
+          "example": "true",
+          "member": "bool",
+          "name": "ResourceDBHistoryEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启严格模式。严格模式下，搜索时，如果搜索条件不合法，则会返回错误。",
+          "example": "false",
+          "member": "bool",
+          "name": "SearchStrictModeEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否强制开启引用完整性",
+          "example": "false",
+          "member": "bool",
+          "name": "EnforceReferentialIntegrity",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复杂类型引用校验策略，取值范围 IGNORE，CHECK_TYPE_IF_EXISTS，CHECK_EXISTS，CHECK_EXISTS_AND_TYPE，CHECK_VALID。IGNORE：不校验，CHECK_TYPE_IF_EXISTS：如果存在，则校验类型，CHECK_EXISTS：如果存在，则校验，CHECK_EXISTS_AND_TYPE：如果存在，则校验类型，CHECK_VALID：校验。",
+          "example": "IGNORE",
+          "member": "string",
+          "name": "ComplexTypeReferenceValidationPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启校验",
+          "example": "false",
+          "member": "bool",
+          "name": "RepositoryValidationEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否强制引用类型校验",
+          "example": "true",
+          "member": "bool",
+          "name": "EnforceReferenceTargetTypes",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启基于Consent的访问控制",
+          "example": "false",
+          "member": "bool",
+          "name": "ConsentAccessControlEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启审计事件",
+          "example": "false",
+          "member": "bool",
+          "name": "AuditEventEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DeployRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateFHIRInstanceRequest": {
+      "document": "UpdateFHIRInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "FHIR 实例 ID",
+          "example": "fhir-ie80vdnn",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FHIR 实例命名",
+          "example": "MY-FHIR-INSTANCE",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FHIR 服务配置",
+          "example": "无",
+          "member": "FHIRInstanceConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFHIRInstanceResponse": {
+      "document": "UpdateFHIRInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

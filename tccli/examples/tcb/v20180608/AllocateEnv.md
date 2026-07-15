@@ -7,7 +7,8 @@ Input:
 ```
 tccli tcb AllocateEnv --cli-unfold-argument  \
     --AllocateId m****************3 \
-    --ExternalAppId appid*********
+    --ExternalAppId appid********* \
+    --ExternalTag tab********sion=PR***TE
 ```
 
 Output: 
