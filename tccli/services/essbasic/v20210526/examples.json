@@ -1489,15 +1489,21 @@
     "ModifyOrganizationBusinessInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationBusinessInfo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"yuan\"\n        }\n    },\n    \"BizLicenseResourceId\": \"yDCNIUUckpv809ikUuxOPaXRjLuPnGvS\",\n    \"OrganizationName\": \"东莞万御安防科技服务有限公司\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationBusinessInfo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"yuan\"\n        }\n    },\n    \"BizLicenseResourceId\": \"yDCNIUUckpv809ikUuxOPaXRjLuPnGvS\",\n    \"OrganizationName\": \"东莞万御安防科技服务有限公司\",\n    \"NewLegalMobile\": \"132****0000\"\n}",
         "output": "{\n    \"Response\": {\n        \"ChannelFlowIds\": [\n            \"yD3JcUUckpep6qq5U1UyDrfDm8l6NzKw\"\n        ],\n        \"ErrorCode\": 1,\n        \"ErrorMessage\": \"存在 87 份未完结的合同，请先撤销或者完成合同\",\n        \"FlowIds\": [\n            \"yD3JaUUckperbj2gU1UxOsoPKSdAroVT\"\n        ],\n        \"UnfinishedCount\": 87,\n        \"RequestId\": \"f0572876-6ef1-4616-a77e-c2f28dee3c1f\"\n    }\n}",
         "title": "变更企业信息，共有 87 份 saas 和 第三方子客未完结的合同，拦截"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationBusinessInfo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"huo_la_dun_ping_yuan\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kyle_huo_xian\"\n        }\n    },\n    \"BizLicenseResourceId\": \"yD3JaUUckperpm7qUxaAsRsEvrnOVuVD\",\n    \"OrganizationName\": \"黑拉顿平原测试\",\n    \"Address\": \"\",\n    \"LegalName\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationBusinessInfo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"huo_la_dun_ping_yuan\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kyle_huo_xian\"\n        }\n    },\n    \"BizLicenseResourceId\": \"yD3JaUUckperpm7qUxaAsRsEvrnOVuVD\",\n    \"OrganizationName\": \"黑****测试\",\n    \"Address\": \"\",\n    \"LegalName\": \"\",\n    \"NewLegalMobile\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"ChannelFlowIds\": [\n            \"yD3JaUUckperl3wcU1UVOahuSNCPtvmn\"\n        ],\n        \"ErrorCode\": 1,\n        \"ErrorMessage\": \"存在 4 份未完结的合同，请先撤销或者完成合同\",\n        \"FlowIds\": [],\n        \"UnfinishedCount\": 4,\n        \"RequestId\": \"dbe937ef-2ee0-4130-9a14-731425ffd627\"\n    }\n}",
         "title": "变更企业信息，有 4 份 第三方子客未完结的合同，拦截"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationBusinessInfo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"huo_la_dun_ping_yuan\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kyle_huo_xian\"\n        }\n    },\n    \"BizLicenseResourceId\": \"yD3JaUUckperpm7qUxaAsRsEvrnOVuVD\",\n    \"OrganizationName\": \"黄****测试\",\n    \"Address\": \"\",\n    \"LegalName\": \"东**淑\",\n    \"NewLegalMobile\": \"19*******27\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelFlowIds\": [],\n        \"ErrorCode\": 0,\n        \"ErrorMessage\": \"\",\n        \"FlowIds\": [],\n        \"UnfinishedCount\": 0,\n        \"RequestId\": \"43b5b52f-0c57-48c3-a36d-e314b1498b26\"\n    }\n}",
+        "title": "变更企业信息成功，修改企业名称以及法人"
       }
     ],
     "ModifyPartnerAutoSignAuthUrl": [

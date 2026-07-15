@@ -1170,7 +1170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Agent 展示名称。",
+          "document": "<p>注册或者创建 Agent 时使用的名称</p>",
           "example": "example-agent",
           "member": "string",
           "name": "AgentName",
@@ -1179,7 +1179,7 @@
         },
         {
           "disabled": true,
-          "document": "Agent 框架类型。",
+          "document": "<p>注册或创建的Agent 使用的框架类型</p><p>枚举值：</p><ul><li>Strands： AWS 开源的分布式 Agent 框架</li></ul>",
           "example": "Strands",
           "member": "string",
           "name": "FrameworkType",
@@ -1188,7 +1188,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent 托管类型。",
+          "document": "<p>Agent 类型，内部托管或用户注册</p><p>枚举值：</p><ul><li>CLOUD： 内部托管的Agent</li><li>EXTERNAL： 外部注册的Agent</li></ul>",
           "example": "CLOUD",
           "member": "string",
           "name": "AgentType",
@@ -1197,7 +1197,7 @@
         },
         {
           "disabled": false,
-          "document": "初始 AgentVersion 版本号。",
+          "document": "<p>初始 AgentVersion 版本号。</p>",
           "example": "v1",
           "member": "string",
           "name": "InitialVersion",
@@ -1206,7 +1206,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent 运行配置。",
+          "document": "<p>Agent 运行配置。</p>",
           "example": "无",
           "member": "AgentConfig",
           "name": "AgentConfig",
@@ -1215,7 +1215,7 @@
         },
         {
           "disabled": false,
-          "document": "Provider 配置。",
+          "document": "<p>Provider 配置。</p>",
           "example": "无",
           "member": "ProviderConfig",
           "name": "ProviderConfig",
@@ -1223,11 +1223,20 @@
           "type": "object"
         },
         {
-          "disabled": false,
-          "document": "默认使用的 WorkspaceTemplate ID。",
+          "disabled": true,
+          "document": "<p>默认使用的 WorkspaceTemplate ID。</p>",
           "example": "wst-example",
           "member": "string",
           "name": "DefaultWorkspaceTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认环境模版 id</p>",
+          "example": "envt-6311dafca27b87a106d00045c570e14c",
+          "member": "string",
+          "name": "DefaultEnvironmentTemplateId",
           "required": false,
           "type": "string"
         }
@@ -1239,7 +1248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "逻辑 Agent 信息。",
+          "document": "<p>逻辑 Agent 信息。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1249,7 +1258,7 @@
         },
         {
           "disabled": false,
-          "document": "AgentVersion 信息。",
+          "document": "<p>AgentVersion 信息。</p>",
           "example": "无",
           "member": "AgentVersion",
           "name": "AgentVersion",
@@ -1259,7 +1268,7 @@
         },
         {
           "disabled": true,
-          "document": "逻辑 Agent ID。",
+          "document": "<p>Agent的 ID 标识</p>",
           "example": "agent-test",
           "member": "string",
           "name": "AgentId",
@@ -1269,7 +1278,7 @@
         },
         {
           "disabled": true,
-          "document": "Agent 展示名称。",
+          "document": "<p>Agent 名称</p>",
           "example": "agent-test",
           "member": "string",
           "name": "AgentName",
@@ -1279,7 +1288,7 @@
         },
         {
           "disabled": true,
-          "document": "Agent 框架类型。",
+          "document": "<p>Agent 使用的框架名称</p><p>枚举值：</p><ul><li>Strands： AWS 开源的分布式 Agent 框架</li></ul>",
           "example": "Strands",
           "member": "string",
           "name": "FrameworkType",
@@ -1289,7 +1298,7 @@
         },
         {
           "disabled": true,
-          "document": "Agent 托管类型。",
+          "document": "<p>Agent 类型，外部注册或者平台托管</p><p>枚举值：</p><ul><li>Internal： 内部托管 Agent</li><li>External ： 外部注册 Agent</li></ul>",
           "example": "Internal",
           "member": "string",
           "name": "AgentType",
@@ -1299,7 +1308,7 @@
         },
         {
           "disabled": true,
-          "document": "创建时间。",
+          "document": "<p>Agent 创建或者注册时间</p>",
           "example": "2026-07-02T11:36:55Z",
           "member": "string",
           "name": "CreateTime",
@@ -1309,7 +1318,7 @@
         },
         {
           "disabled": true,
-          "document": "更新时间。",
+          "document": "<p>Agent 更新时间</p>",
           "example": "2026-07-02T11:36:55Z",
           "member": "string",
           "name": "UpdateTime",

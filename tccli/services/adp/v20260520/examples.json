@@ -155,8 +155,8 @@
     "DeletePlugin": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"acb14a04-a049-4a0c-bafa-9670e5d949f2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa5dc374-d255-4dc2-bdaa-8685778b0344\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"06f22d3d-07c6-45dd-a54d-565875ddbe37\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18c4c8d8-dead-4a21-b2e2-49baf9edf8bd\"\n    }\n}",
         "title": "删除插件"
       }
     ],

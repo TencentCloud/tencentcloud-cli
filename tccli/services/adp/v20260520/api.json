@@ -5585,10 +5585,28 @@
         {
           "disabled": false,
           "document": "<p>插件id</p>",
-          "example": "acb14a04-a049-4a0c-bafa-9670e5d949f2",
+          "example": "06f22d3d-07c6-45dd-a54d-565875ddbe37",
           "member": "string",
           "name": "PluginId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
           "type": "string"
         }
       ],
@@ -8245,7 +8263,7 @@
       "usage": "both"
     },
     "Filter": {
-      "document": "列表通用过滤条件（多个 Filter 之间为 AND 关系，同一 Filter 的多个 value_list 为 OR 关系）",
+      "document": "列表通用过滤条件（多个Filter之间为AND关系，同一Filter的多个value_list为OR关系）",
       "members": [
         {
           "disabled": false,
@@ -8260,7 +8278,7 @@
         },
         {
           "disabled": false,
-          "document": "操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>",
+          "document": "操作符：0-属于，1-不属于",
           "example": "1",
           "member": "int64",
           "name": "Operator",

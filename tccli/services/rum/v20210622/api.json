@@ -6208,7 +6208,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "StartTime",
@@ -6217,7 +6217,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1625454840",
           "member": "int64",
           "name": "EndTime",
@@ -6226,7 +6226,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ID",
@@ -6235,7 +6235,7 @@
         },
         {
           "disabled": false,
-          "document": "上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）",
+          "document": "<p>上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）</p>",
           "example": "custom",
           "member": "string",
           "name": "ReportType",
@@ -6244,7 +6244,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "rum-abc",
           "member": "string",
           "name": "InstanceID",
@@ -6259,7 +6259,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
+          "document": "<p>返回值</p>",
           "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}]}]}\"",
           "member": "string",
           "name": "Result",
@@ -11352,7 +11352,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "排序方式  desc  asc（必填）",
+          "document": "<p>排序方式  desc  asc（必填）</p>",
           "example": "asc",
           "member": "string",
           "name": "OrderBy",
@@ -11361,7 +11361,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间（必填）",
+          "document": "<p>开始时间（必填）</p>",
           "example": "1665993060000",
           "member": "string",
           "name": "StartTime",
@@ -11370,7 +11370,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
+          "document": "<p>单次查询返回的原始日志条数，最大值为100（必填）</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -11379,7 +11379,7 @@
         },
         {
           "disabled": false,
-          "document": "页数，第几页",
+          "document": "<p>页数，第几页（注意：该字段已废弃！）</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -11388,7 +11388,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）",
+          "document": "<p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>",
           "example": "id:100",
           "member": "string",
           "name": "Query",
@@ -11397,7 +11397,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（必填）",
+          "document": "<p>结束时间（必填）</p>",
           "example": "1665996660000",
           "member": "string",
           "name": "EndTime",
@@ -11406,7 +11406,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID（必填）",
+          "document": "<p>项目ID（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "ID",
@@ -11415,7 +11415,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合字段",
+          "document": "<p>聚合字段</p>",
           "example": "date",
           "member": "string",
           "name": "GroupField",
@@ -11430,7 +11430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回字符串",
+          "document": "<p>返回字符串</p>",
           "example": "\"{\\\"code\\\":0,\\\"data\\\":[{\\\"1737254300150\\\":1},{\\\"1737254310941\\\":1}],\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"c946f00ee5369b735c1db85c7e2fe6ff\\\"}\"",
           "member": "string",
           "name": "Result",
@@ -11452,7 +11452,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "排序方式 desc asc（必填）",
+          "document": "<p>排序方式 desc asc（必填）</p>",
           "example": "asc",
           "member": "string",
           "name": "OrderBy",
@@ -11461,7 +11461,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间（必填）",
+          "document": "<p>开始时间（必填）</p>",
           "example": "1665993060000",
           "member": "int64",
           "name": "StartTime",
@@ -11470,7 +11470,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
+          "document": "<p>单次查询返回的原始日志条数，最大值为100（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -11479,7 +11479,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "<p>过滤条件</p>",
           "example": "[{\"Key\": \"instanceId\", \"Operator\": \"eq\", // Operator 可以是 eq、neq、like、nlike\"Value\": \"rum-xyz\"},{\"Key\": \"id\",\"Operator\": \"eq\",\"Value\": \"12345\"}]",
           "member": "string",
           "name": "Filter",
@@ -11488,7 +11488,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（必填）",
+          "document": "<p>结束时间（必填）</p>",
           "example": "1665996660000",
           "member": "int64",
           "name": "EndTime",
@@ -11497,7 +11497,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID（必填）",
+          "document": "<p>项目ID（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "ID",
@@ -11506,7 +11506,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合字段",
+          "document": "<p>聚合字段</p>",
           "example": "date",
           "member": "string",
           "name": "Label",
@@ -11515,7 +11515,7 @@
         },
         {
           "disabled": false,
-          "document": "页数，第几页",
+          "document": "<p>页数，第几页（注意：该字段已废弃！）</p>",
           "example": "10",
           "member": "int64",
           "name": "Last",
@@ -11530,7 +11530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Query result in JSON string format",
+          "document": "<p>Query result in JSON string format</p>",
           "example": "{\"Response\": {\"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\"Result\": \"{\\\"code\\\":0,\\\"data\\\":[{\\\"1737254300150\\\":1},{\\\"1737254310941\\\":1}],\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"81a43a52-d00f-462a-82da-89841117f4ca\\\"}\"}}",
           "member": "string",
           "name": "Result",
@@ -12336,7 +12336,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "2025080100",
           "member": "string",
           "name": "StartTime",
@@ -12345,7 +12345,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "2025080700",
           "member": "string",
           "name": "EndTime",
@@ -12354,7 +12354,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID 列表",
+          "document": "<p>项目 ID 列表</p>",
           "example": "[120000, 120468]",
           "member": "int64",
           "name": "IDList",
@@ -12363,7 +12363,7 @@
         },
         {
           "disabled": false,
-          "document": "查询粒度，hour 或 day",
+          "document": "<p>查询粒度，hour 或 day</p>",
           "example": "day",
           "member": "string",
           "name": "Type",
@@ -12372,7 +12372,7 @@
         },
         {
           "disabled": false,
-          "document": "环境",
+          "document": "<p>环境</p>",
           "example": "production",
           "member": "string",
           "name": "Env",
@@ -12387,7 +12387,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目得分数组",
+          "document": "<p>项目得分数组</p>",
           "example": "无",
           "member": "ScoreInfoV2",
           "name": "ScoreSet",

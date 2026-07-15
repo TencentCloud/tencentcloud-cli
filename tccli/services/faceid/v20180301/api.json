@@ -737,6 +737,51 @@
           "name": "EnableForgeryDetectionImages",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商户自定义透传数据，随 token 写入 serverParamInfo 下发</p>",
+          "example": "AQOt+aLKzxF/U9",
+          "member": "string",
+          "name": "MetaData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过全流程首页（OCR 拍摄准备引导页），默认 false</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipLaunchPage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过 OCR 结果确认页，OCR 完成后直接进入人脸流程，默认 false</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipOcrConfirmPage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否隐藏顶部步骤进度条（全流程所有页面），默认 false</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HideProgressBar",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>卡证活体人脸比对情况下，是否支持上传相册图供系统识别（香港多图情况下不支持）</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowUploadPhoto",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -751,6 +796,16 @@
           "member": "string",
           "name": "SdkToken",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端参数加密字符串</p>",
+          "example": "AQQ1CrS41o8DN8fU8W6FXowcSW+2g5rSOtxGKO3eGIk1NiRgsvhGOZR83eMpUUwIpSr6pRSPCvfejYo9p+QYt3TvhWiDG/vNoHc8u1WxXtKC6EBYwJ0riiVa8/ukqL+",
+          "member": "string",
+          "name": "ServerParamInfo",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8336,7 +8391,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 成功。-2: 手机号不存在。-3: 手机号存在，但无法查询到在网时长。- 不收费结果码：-1: 手机号格式不正确。-4: 验证中心服务繁忙。-5：认证次数超过当日限制，请次日重试。-13：该号段不支持验证</p>",
+          "document": "<p>认证结果码，收费情况如下。</p><ul><li><p>收费结果码：<br>-0: 成功。<br>-2: 手机号不存在<br>-3: 手机号存在，但无法查询到在网时长。</p></li><li><p>不收费结果码：<br>-1: 手机号格式不正确。<br>-4: 验证中心服务繁忙。<br>-5：认证次数超过当日限制，请次日重试。<br>-13：该号段不支持验证</p></li></ul>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -8402,7 +8457,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0：成功。- 不收费结果码：-1：未查询到结果。-2：手机号格式不正确。-3：验证中心服务繁忙。-4：认证次数超过当日限制，请次日重试。-13：该号段不支持验证</p>",
+          "document": "<p>认证结果码，收费情况如下。</p><ul><li>收费结果码：<br>0：成功。</li><li>不收费结果码：<br>-1：未查询到结果。<br>-2：手机号格式不正确。<br>-3：验证中心服务繁忙。<br>-4：认证次数超过当日限制，请次日重试。<br>-13：该号段不支持验证</li></ul>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -10383,7 +10438,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
+          "document": "<p>认证结果码，收费情况如下。</p><ul><li>收费结果码：</li><li>0: 认证通过。</li><li>-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。</li><li>不收费结果码：</li><li>-6: 手机号码不合法。</li><li>-7: 身份证号码有误。</li><li>-8: 姓名校验不通过。</li><li>-9: 没有记录。</li><li>-11: 验证中心服务繁忙。</li><li>-13：该号段不支持验证</li></ul>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -10467,7 +10522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
+          "document": "<p>认证结果码，收费情况如下。</p><ul><li>收费结果码：</li><li>0: 认证通过。</li><li>-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。</li><li>不收费结果码：</li><li>-6: 手机号码不合法。</li><li>-7: 身份证号码有误。</li><li>-8: 姓名校验不通过。</li><li>-9: 没有记录。</li><li>-11: 验证中心服务繁忙。</li><li>-13：该号段不支持验证</li></ul>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -10551,7 +10606,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
+          "document": "<p>认证结果码，收费情况如下。</p><ul><li>收费结果码：</li><li>0: 认证通过。</li><li>-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。</li><li>-不收费结果码：</li><li>-6: 手机号码不合法。</li><li>-7: 身份证号码有误。</li><li>-8: 姓名校验不通过。</li><li>-9: 没有记录。</li><li>-11: 验证中心服务繁忙。</li><li>-13：该号段不支持验证</li></ul>",
           "example": "0",
           "member": "string",
           "name": "Result",

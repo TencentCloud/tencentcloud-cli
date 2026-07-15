@@ -1456,6 +1456,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealPolicy\n<公共请求参数>\n\n{\n    \"SealId\": \"yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP\",\n    \"Policy\": \"\",\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"Expired\": 1736906734,\n    \"Users\": [\n        {\n            \"UserId\": \"yDRSRUUgygj6rqouUuO4zjESlnSFPcIE\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"49500cb4-ca5e-4da0-93fb-e15f3a710ed7 \",\n        \"UserIds\": []\n    }\n}",
         "title": "印章授权申请下发"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealPolicy\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDtT9UUckp9fjxkfUu1yXuRSuJNQ0bO6\"\n    },\n    \"Users\": [\n        {\n            \"UserId\": \"yDtT9UUckp9fjxkfUu1yXuRSuJNQ0bO6\"\n        }\n    ],\n    \"SealId\": \"yDClqUUckpaj38v1UmGrVdB8iMEXjdyR\",\n    \"Expired\": 1789442071,\n    \"UserIds\": [\n        \"yDtT9UUckp9fjxkfUu1yXuRSuJNQ0bO6\"\n    ],\n    \"Policy\": \"测试*******\",\n    \"AuthorizationFlows\": {\n        \"FlowIds\": [\n            \"yD3a2UUckpmwknasU1Uy3T8nlBwEDRxj\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SealOperatorVerifyPath\": \"\",\n        \"SealOperatorVerifyQrcodeUrl\": \"\",\n        \"UserIds\": [\n            \"yDtT9UUckp9fjxkfUu1yXuRSuJNQ0bO6\"\n        ],\n        \"RequestId\": \"3add2dda-bd7b-471a-9bbf-85e814de2dab\"\n    }\n}",
+        "title": "针对用印的合同授权"
       }
     ],
     "CreateSingleSignOnEmployees": [

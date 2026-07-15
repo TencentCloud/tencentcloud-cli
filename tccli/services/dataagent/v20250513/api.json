@@ -541,6 +541,15 @@
           "name": "KnowledgeBaseIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本信息</p>",
+          "example": "v1.0",
+          "member": "string",
+          "name": "ArchVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -6,24 +6,26 @@ Input:
 
 ```
 tccli cngw CreateCloudNativeAPIGatewayLLMModelService --cli-unfold-argument  \
-    --GatewayId gateway-01f976d0 \
-    --Name qwen \
+    --GatewayId gateway-aeb0be15 \
+    --Name tione-3 \
     --ServiceType LLMService \
-    --ModelProvider qwen \
-    --ModelProtocol OpenAI-Qwen \
+    --ModelProvider tione \
+    --ModelProtocol OpenAI-Tione \
     --ModelSelector PassThrough \
-    --SecretKeyIds secret-de0acbccee344b \
+    --SecretKeyIds secret-f4e97d19d1e876 \
+    --EnableModelFallback False \
     --EnableModelParamCheck False \
-    --UpstreamURL https://dashscope.aliyuncs.com
+    --UpstreamURL https://ms-84cnfq44-100011913960.gw.ap-guangzhou.ti.tencentcs.com/ms-84cnfq44 \
+    --ExternalInstanceId ins-test2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ModelServiceId": "843a043a19d445a8a27e5be0fd182a0c",
+        "ModelServiceId": "0226dd421d434f68ab414116737c18fc",
         "Result": true,
-        "RequestId": "d7e3ffad-4d6d-42fd-b2f5-6c3c81f294a0"
+        "RequestId": "8a41f3c4-7acb-45b0-b9ad-eab01b24643e"
     }
 }
 ```

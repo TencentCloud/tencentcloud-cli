@@ -51,8 +51,8 @@
     "CreateCloudNativeAPIGatewayLLMModelService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-01f976d0\",\n    \"Name\": \"qwen\",\n    \"ServiceType\": \"LLMService\",\n    \"ModelProvider\": \"qwen\",\n    \"ModelProtocol\": \"OpenAI-Qwen\",\n    \"ModelSelector\": \"PassThrough\",\n    \"SecretKeyIds\": [\n        \"secret-de0acbccee344b\"\n    ],\n    \"EnableModelParamCheck\": false,\n    \"UpstreamURL\": \"https://dashscope.aliyuncs.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ModelServiceId\": \"843a043a19d445a8a27e5be0fd182a0c\",\n        \"Result\": true,\n        \"RequestId\": \"d7e3ffad-4d6d-42fd-b2f5-6c3c81f294a0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayLLMModelService\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-aeb0be15\",\n    \"Name\": \"tione-3\",\n    \"ServiceType\": \"LLMService\",\n    \"ModelProvider\": \"tione\",\n    \"ModelProtocol\": \"OpenAI-Tione\",\n    \"ModelSelector\": \"PassThrough\",\n    \"SecretKeyIds\": [\n        \"secret-f4e97d19d1e876\"\n    ],\n    \"EnableModelFallback\": false,\n    \"EnableModelParamCheck\": false,\n    \"UpstreamURL\": \"https://ms-84cnfq44-100011913960.gw.ap-guangzhou.ti.tencentcs.com/ms-84cnfq44\",\n    \"ExternalInstanceId\": \"ins-test2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelServiceId\": \"0226dd421d434f68ab414116737c18fc\",\n        \"Result\": true,\n        \"RequestId\": \"8a41f3c4-7acb-45b0-b9ad-eab01b24643e\"\n    }\n}",
         "title": "创建模型服务"
       }
     ],
@@ -353,8 +353,8 @@
     "ModifyCloudNativeAPIGatewayMCPServerAuth": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPServerAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-********\",\n    \"ServerId\": \"204f2888-7b53-4499-9061-24e623b2bdbd\",\n    \"AuthType\": \"ApiKey\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d892b099-5093-40e5-b2bf-7bcae3d9792b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cngw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayMCPServerAuth\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-aeb0be15\",\n    \"ServerId\": \"412b0a7c-f2f6-42f7-8a65-ec5e708b637f\",\n    \"AuthType\": \"ApiKey\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9345ec58-3656-4882-9282-29ede7fc8c5c\"\n    }\n}",
         "title": "修改MCP服务认证配置"
       }
     ],

@@ -16239,7 +16239,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间，如QCE/CVM。各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档",
+          "document": "<p>命名空间，如QCE/CVM。各个云产品的详细命名空间说明请参阅各个产品<a href=\"https://cloud.tencent.com/document/product/248/6140\">监控指标</a>文档</p>",
           "example": "QCE/CVM",
           "member": "string",
           "name": "Namespace",
@@ -16248,7 +16248,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名称，如CPUUsage，仅支持单指标拉取。各个云产品的详细指标说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的指标英文名即为MetricName",
+          "document": "<p>指标名称，如CPUUsage，仅支持单指标拉取。各个云产品的详细指标说明请参阅各个产品<a href=\"https://cloud.tencent.com/document/product/248/6140\">监控指标</a>文档，对应的指标英文名即为MetricName</p>",
           "example": "CPUUsage",
           "member": "string",
           "name": "MetricName",
@@ -16257,7 +16257,7 @@
         },
         {
           "disabled": false,
-          "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取50个实例的监控数据。",
+          "document": "<p>实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{&quot;Name&quot;:&quot;InstanceId&quot;,&quot;Value&quot;:&quot;ins-j0hk02zo&quot;}]，Ckafka为[{&quot;Name&quot;:&quot;instanceId&quot;,&quot;Value&quot;:&quot;ckafka-l49k54dd&quot;}]，COS为[{&quot;Name&quot;:&quot;appid&quot;,&quot;Value&quot;:&quot;1258344699&quot;},{&quot;Name&quot;:&quot;bucket&quot;,&quot;Value&quot;:&quot;rig-1258344699&quot;}]。各个云产品的维度请参阅各个产品<a href=\"https://cloud.tencent.com/document/product/248/6140\">监控指标</a>文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取50个实例的监控数据。</p>",
           "example": "无",
           "member": "Instance",
           "name": "Instances",
@@ -16266,7 +16266,7 @@
         },
         {
           "disabled": false,
-          "document": "监控统计周期，如60。默认为取值为300，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的统计周期列即为支持的统计周期。单请求的数据点数限制为7200个。",
+          "document": "<p>监控统计周期，如60。默认为取值为300，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品<a href=\"https://cloud.tencent.com/document/product/248/6140\">监控指标</a>文档，对应的统计周期列即为支持的统计周期。单请求的数据点数限制为7200个。</p>",
           "example": "300",
           "member": "uint64",
           "name": "Period",
@@ -16275,7 +16275,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间，如2018-09-22T19:51:23+08:00",
+          "document": "<p>起始时间，如2018-09-22T19:51:23+08:00</p>",
           "example": "2019-03-24T10:51:23+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -16284,12 +16284,21 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，如2018-09-22T20:51:23+08:00，默认为当前时间。 EndTime不能小于StartTime",
+          "document": "<p>结束时间，如2018-09-22T20:51:23+08:00，默认为当前时间。 EndTime不能小于StartTime</p>",
           "example": "2019-03-24T20:51:23+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义指标统计方式</p><p>枚举值：</p><ul><li>1： avg</li><li>2： max</li><li>4： min</li><li>3： avg, max</li><li>5： avg, min</li><li>6： max, min</li><li>7： avg, max, min</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "SpecifyStatistics",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -16299,7 +16308,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计周期",
+          "document": "<p>统计周期</p>",
           "example": "300",
           "member": "uint64",
           "name": "Period",
@@ -16309,7 +16318,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名",
+          "document": "<p>指标名</p>",
           "example": "CPUUsage",
           "member": "string",
           "name": "MetricName",
@@ -16319,7 +16328,7 @@
         },
         {
           "disabled": false,
-          "document": "数据点数组",
+          "document": "<p>数据点数组</p>",
           "example": "无",
           "member": "DataPoint",
           "name": "DataPoints",
@@ -16329,7 +16338,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "2019-03-24T10:50:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -16339,7 +16348,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "2019-03-24T20:50:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -16349,7 +16358,7 @@
         },
         {
           "disabled": false,
-          "document": "返回信息",
+          "document": "<p>返回信息</p>",
           "example": "参数错误",
           "member": "string",
           "name": "Msg",
@@ -24669,7 +24678,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例对象维度组合\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例对象维度组合</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Dimension",
           "name": "Dimensions",
@@ -24680,8 +24689,8 @@
         },
         {
           "disabled": false,
-          "document": "监控数据值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>监控数据值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "99.676",
           "member": "float",
           "name": "Value",
           "output_required": true,
@@ -24691,8 +24700,8 @@
         },
         {
           "disabled": false,
-          "document": "监控数据时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>监控数据时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1782737460",
           "member": "uint64",
           "name": "Timestamp",
           "output_required": true,
@@ -24702,8 +24711,8 @@
         },
         {
           "disabled": false,
-          "document": "排序序号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>排序序号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Order",
           "output_required": true,
