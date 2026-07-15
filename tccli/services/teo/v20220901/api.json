@@ -182,6 +182,13 @@
       "output": "CreateLoadBalancerResponse",
       "status": "online"
     },
+    "CreateLogAnalysisDownloadTask": {
+      "document": "本接口用以创建日志分析下载任务，创建完成后可通过 DescribeLogAnalysisDownloadTasks 接口查询下载任务。\n注意：\n1.单次最多支持下载 5000万条日志。\n2.日志文件将保留 3 天。\n3.同时存在多个任务时将按照任务创建时间依次处理。",
+      "input": "CreateLogAnalysisDownloadTaskRequest",
+      "name": "创建日志分析的日志下载任务",
+      "output": "CreateLogAnalysisDownloadTaskResponse",
+      "status": "online"
+    },
     "CreateMultiPathGateway": {
       "document": "通过本接口创建多通道安全加速网关，包括云上网关（腾讯云创建和管理的网关）和自有网关（用户部署的私有网关），需要通过接口 DescribeMultiPathGateway，查询状态为 online 即创建成功。",
       "input": "CreateMultiPathGatewayRequest",
@@ -747,6 +754,20 @@
       "input": "DescribeLoadBalancerListRequest",
       "name": "查询负载均衡实例列表",
       "output": "DescribeLoadBalancerListResponse",
+      "status": "online"
+    },
+    "DescribeLogAnalysisDetail": {
+      "document": "本接口用以查询日志分析日志详情，数据来自站点下实时日志推送任务目的地为 \"log-analysis\" 的任务推送的日志数据。",
+      "input": "DescribeLogAnalysisDetailRequest",
+      "name": "查询日志分析日志详情",
+      "output": "DescribeLogAnalysisDetailResponse",
+      "status": "online"
+    },
+    "DescribeLogAnalysisDownloadTasks": {
+      "document": "本接口用以查询日志分析日志下载任务列表。注意：只保留最近三天的下载任务记录。",
+      "input": "DescribeLogAnalysisDownloadTasksRequest",
+      "name": "查询日志分析的日志下载任务",
+      "output": "DescribeLogAnalysisDownloadTasksResponse",
       "status": "online"
     },
     "DescribeMultiPathGateway": {
@@ -7764,6 +7785,106 @@
       ],
       "type": "object"
     },
+    "CreateLogAnalysisDownloadTaskRequest": {
+      "document": "CreateLogAnalysisDownloadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-2z55fgysdtmc",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据归属地区，可选值：<ul><li>mainland：中国大陆境内；</li><li>overseas：全球（不含中国大陆）。</li></ul>注意：若站点服务区域为“全球可用区”，获取全部数据需要分别查询 mainland 和 overseas 的数据。</p>",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间，示例值：2020-04-29T00:00:00Z。套餐版本不同，支持的可查询开始时间至今的最大时间跨度不同，详情请见 <a href=\"https://cloud.tencent.com/document/product/1552/94165#45435466-9103-4ff6-be22-e31717044fb2\">套餐选型对比</a>。</p>",
+          "example": "2020-04-29T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间，示例值：2020-04-30T00:00:00Z。单次查询的开始时间到结束时间跨度最大为 31 天。</p>",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型，可选值：<ul><li> l7-access-logs：七层访问日志；</li><li>web-attack：托管规则日志。</li></ul>默认为 l7-access-logs 。</p>",
+          "example": "l7-access-logs",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/1552/124662\">日志匹配条件</a>，最大长度 12KB。</p>",
+          "example": "${EdgeResponseTime} > 300",
+          "member": "string",
+          "name": "Condition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件格式，可选值：<ul><li>csv</li></ul>默认为 csv。</p>",
+          "example": "csv",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始日志的时间排序，可选值：  <ul><li>asc：升序；</li>  <li>desc：降序。</li></ul>  默认为 desc。</p>",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLogAnalysisDownloadTaskResponse": {
+      "document": "CreateLogAnalysisDownloadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志分析下载任务 ID。</p>",
+          "example": "task-21oau982wqnc",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMultiPathGatewayLineRequest": {
       "document": "CreateMultiPathGatewayLine请求参数结构体",
       "members": [
@@ -13540,6 +13661,217 @@
           "example": "无",
           "member": "LoadBalancer",
           "name": "LoadBalancerList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogAnalysisDetailRequest": {
+      "document": "DescribeLogAnalysisDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-2z55fgysdtmc",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据归属地区，可选值：<ul><li>mainland：中国大陆境内；</li><li>overseas：全球（不含中国大陆）。</li></ul>注意：若站点服务区域为“全球可用区”，获取全部数据需要分别查询 mainland 和 overseas 的数据。</p>",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间，示例值：2020-04-29T00:00:00Z。套餐版本不同，支持的可查询开始时间至今的最大时间跨度不同，详情请见 <a href=\"https://cloud.tencent.com/document/product/1552/94165#45435466-9103-4ff6-be22-e31717044fb2\">套餐选型对比</a>。</p>",
+          "example": "2020-04-29T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间，示例值：2020-04-30T00:00:00Z。单次查询的开始时间到结束时间跨度最大为 31 天。</p>",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型，可选值：<ul><li> l7-access-logs：七层访问日志；</li><li>web-attack：托管规则日志。</li></ul>默认为 l7-access-logs 。</p>",
+          "example": "l7-access-logs",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/1552/124662\">日志匹配条件</a>，最大长度 12KB。</p>",
+          "example": "${EdgeResponseTime} > 300",
+          "member": "string",
+          "name": "Condition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询限制数目，默认值：20，最大值 100。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始日志是否按时间排序返回；可选值：<ul><li>asc：升序；</li><li>desc：降序。</li></ul>默认为 desc。</p>",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogAnalysisDetailResponse": {
+      "document": "DescribeLogAnalysisDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合日志匹配条件的日志详情列表。</p>",
+          "example": "无",
+          "member": "LogItem",
+          "name": "LogDetail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合日志匹配条件的日志总数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogAnalysisDownloadTasksRequest": {
+      "document": "DescribeLogAnalysisDownloadTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-2z55fgysdtmc",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据归属地区，可选值： <ul><li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li></ul> 注意：若站点服务区域为“全球可用区”，获取全部数据需要分别查询 mainland 和 overseas 的数据。</p>",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型，可选值：<ul><li> l7-access-logs：七层访问日志；</li><li>web-attack：托管规则日志。</li></ul>默认为 l7-access-logs 。</p>",
+          "example": "domian",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：<ul><li>task-id：按照日志下载任务 ID进行过滤，可选值参考 CreateLogAnalysisDownloadTask 接口返回的 TaskId。</li></ul></p><p>取值参考：CreateLogAnalysisDownloadTask</p>",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询限制数目，默认值：20，最大值 100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogAnalysisDownloadTasksResponse": {
+      "document": "DescribeLogAnalysisDownloadTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合日志匹配条件的日志分析下载任务总条数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合日志匹配条件的日志分析下载任务列表。</p>",
+          "example": "无",
+          "member": "LogAnalysisDownloadTask",
+          "name": "Tasks",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -21357,6 +21689,142 @@
       ],
       "usage": "out"
     },
+    "LogAnalysisDownloadTask": {
+      "document": "日志分析日志下载任务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "task-21oau982wqnc",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-2z55fgysdtmc",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据归属地区，取值有：<ul><li>mainland：中国大陆境内；</li><li>overseas：全球（不含中国大陆）。</li></ul></p>",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间，示例值：2020-04-29T00:00:00Z。</p>",
+          "example": "2020-04-29T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间，示例值：2020-04-30T00:00:00Z。</p>",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型，取值有：<ul><li> l7-access-logs：七层访问日志；</li><li>web-attack：托管规则日志。</li></ul></p>",
+          "example": "l7-access-logs",
+          "member": "string",
+          "name": "LogType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p><a href=\"https://cloud.tencent.com/document/product/1552/124662\">日志匹配条件</a>，长度上限 12KB。</p>",
+          "example": "${EdgeResponseTime} > 300",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件格式，取值有：</p><ul><li>csv 。</li></ul>",
+          "example": "csv",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始日志是否按时间排序返回，取值有：<ul><li>asc：升序；</li><li>desc：降序。</li></ul></p>",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态，取值有：<ul><li>loading：处理中，等待生成下载链接；</li><li> failed: 处理失败，当前任务无法下载;</li><li>completed：已完成打包，可以下载。</li></ul></p>",
+          "example": "completed",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间，任务创建成功后将保留3天。</p>",
+          "example": "2020-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载地址，仅当 Status = completed 时有返回值。</p>",
+          "example": "***",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载任务过期时间，过期后下载地址将不可用，请通过本接口获取新的下载地址。</p>",
+          "example": "2020-04-03T23:59:59Z",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LogFormat": {
       "document": "实时日志投递的输出格式。您可以直接通过 FormatType 参数使用指定预设日志输出格式（JSON Lines / csv），也可以在预设日志输出格式基础上，通过其他参数来自定义变体输出格式。",
       "members": [
@@ -21439,6 +21907,32 @@
         }
       ],
       "usage": "both"
+    },
+    "LogItem": {
+      "document": "日志分析的日志信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志产生的时间点，采用 unix 毫秒级时间戳。",
+          "example": "1751284589009",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志的具体内容，采用JSON字符串格式。",
+          "example": "无",
+          "member": "string",
+          "name": "LogJson",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ManagedRuleAction": {
       "document": "托管规则的项配置",

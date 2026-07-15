@@ -431,15 +431,15 @@
     "MobileNetworkTimeVerification": [
       {
         "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=MobileNetworkTimeVerification\n&Mobile=13800138000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"Range\": \"[24,+)\",\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\n    }\n}",
-        "title": "手机号在网时长核验成功示例"
-      },
-      {
-        "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=MobileNetworkTimeVerification\n&Mobile=16137688175\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"-2\",\n        \"Description\": \"手机号不存在\",\n        \"Range\": \"\",\n        \"RequestId\": \"3151331a-277e-4317-891d-0ef4e0afdd3e\"\n    }\n}",
         "title": "手机号在网时长核验异常示例"
+      },
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=MobileNetworkTimeVerification\n&Mobile=13800138000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"Range\": \"[24,+)\",\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\n    }\n}",
+        "title": "手机号在网时长核验成功示例"
       }
     ],
     "MobileStatus": [

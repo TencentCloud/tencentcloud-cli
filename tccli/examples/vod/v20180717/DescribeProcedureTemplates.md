@@ -40,6 +40,7 @@ Output:
                             "EndTimeOffset": 0,
                             "HeadTailSet": [],
                             "MosaicSet": [],
+                            "OverrideParameter": null,
                             "StartTimeOffset": 0,
                             "SubtitleInfoSet": [],
                             "TraceWatermark": {
@@ -105,6 +106,7 @@ Output:
                             "EndTimeOffset": 0,
                             "HeadTailSet": [],
                             "MosaicSet": [],
+                            "OverrideParameter": null,
                             "StartTimeOffset": 0,
                             "SubtitleInfoSet": [],
                             "TraceWatermark": {

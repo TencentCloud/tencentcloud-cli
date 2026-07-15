@@ -234,7 +234,7 @@
   },
   "metadata": {
     "apiVersion": "2026-03-22",
-    "api_brief": "TokenHub致力于为企业和开发者提供统一的大模型服务入口",
+    "api_brief": "TokenHub 管控面云 API",
     "serviceNameCN": "TokenHub",
     "serviceShortName": "tokenhub"
   },

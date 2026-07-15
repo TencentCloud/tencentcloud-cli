@@ -114,7 +114,7 @@
       {
         "document": "获取事件集",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEventBus\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2022-12-12T20:09:46+08:00\",\n        \"ClsLogsetId\": \"\",\n        \"ClsTopicId\": \"\",\n        \"Description\": \"\",\n        \"EventBusId\": \"eb-0gdrbv5q\",\n        \"EventBusName\": \"default\",\n        \"ModTime\": \"2022-12-12T20:09:46+08:00\",\n        \"PayMode\": \"\",\n        \"LogTopicId\": \"*\",\n        \"SaveDays\": \"1\",\n        \"EnableStore\": true,\n        \"LinkMode\": \"Disorder\",\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"Type\": \"Cloud\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2022-12-12T20:09:46+08:00\",\n        \"ClsLogsetId\": \"\",\n        \"ClsTopicId\": \"\",\n        \"Description\": \"\",\n        \"EventBusId\": \"eb-0gdrbv5q\",\n        \"EventBusName\": \"default\",\n        \"ModTime\": \"2022-12-12T20:09:46+08:00\",\n        \"PayMode\": \"\",\n        \"LogTopicId\": \"sdk-eda*ac8\",\n        \"SaveDays\": \"1\",\n        \"EnableStore\": true,\n        \"LinkMode\": \"Disorder\",\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"Type\": \"Cloud\"\n    }\n}",
         "title": "获取事件集"
       }
     ],

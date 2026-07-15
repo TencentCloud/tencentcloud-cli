@@ -1,4 +1,4 @@
-**Example 1: 修改健康检查模板**
+**Example 1: 修改健康检查模板的名称**
 
 
 
@@ -6,28 +6,15 @@ Input:
 
 ```
 tccli alb ModifyHealthCheckTemplate --cli-unfold-argument  \
-    --HealthCheckCodes http_1xx \
-    --HealthCheckHealthyThreshold 2 \
-    --HealthCheckHost example.com \
-    --HealthCheckHttpVersion HTTP1.1 \
-    --HealthCheckInterval 10 \
-    --HealthCheckMethod GET \
-    --HealthCheckPath /hello/index.html \
-    --HealthCheckPort 80 \
-    --HealthCheckProtocol HTTP \
-    --HealthCheckTemplateId hct-m4x8q2pa \
-    --HealthCheckTemplateName lbtg-0zrnc9qa-template \
-    --HealthCheckTimeout 2 \
-    --HealthCheckUnhealthyThreshold 2 \
-    --Tags.0.TagKey key-xxx \
-    --Tags.0.TagValue value-xxx
+    --HealthCheckTemplateId hct-fb7tuf7o \
+    --HealthCheckTemplateName 修改名称
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3b848733-70e5-4558-ae39-4b9938eb7609"
+        "RequestId": "e109ac6e-a12b-4fb2-885e-e63d63c4d883"
     }
 }
 ```

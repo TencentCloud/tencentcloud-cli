@@ -14,6 +14,7 @@ tccli cls ModifyScheduledSql --cli-unfold-argument  \
     --DstResource.MetricName pv \
     --ProcessTimeWindow @m-15m,@m \
     --ProcessPeriod 5 \
+    --ProcessPeriodUnit 1 \
     --ScheduledSqlContent * | select count(*) as pv \
     --SrcTopicId 6ef60bec-0242-43af-bb20-270359fbxxxx \
     --ProcessDelay 0 \

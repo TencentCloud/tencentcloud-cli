@@ -11078,7 +11078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Format 为 HLS 或 MPEG-DASH 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Container 为 wav 时，可选值为：\n<li>pcm16。</li>",
+          "document": "<p>音频流的编码格式。<br>当外层参数 Container 为 mp3 时，可选值为：</p><li>libmp3lame。</li>当外层参数 Container 为 ogg 或 flac 时，可选值为：<li>flac。</li>当外层参数 Container 为 m4a 时，可选值为：<li>libfdk_aac；</li><li>libmp3lame；</li><li>ac3。</li>当外层参数 Container 为 mp4 或 flv 时，可选值为：<li>libfdk_aac：更适合 mp4；</li><li>libmp3lame：更适合 flv；</li><li>mp2。</li>当外层参数 Container 为 hls 时，可选值为：<li>libfdk_aac。</li>当外层参数 Format 为 HLS 或 MPEG-DASH 时，可选值为：<li>libfdk_aac。</li>当外层参数 Container 为 wav 时，可选值为：<li>pcm16。</li>",
           "example": "libmp3lame",
           "member": "string",
           "name": "Codec",
@@ -11089,7 +11089,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示由云点播自动设置码率。",
+          "document": "<p>音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示由云点播自动设置码率。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Bitrate",
@@ -11100,7 +11100,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流的采样率，可选值：\n<li>16000，仅当 Codec 为 pcm16 时可选。</li>\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
+          "document": "<p>音频流的采样率，可选值：</p><li>16000，仅当 Codec 为 pcm16 时可选。</li><li>32000</li><li>44100</li><li>48000</li>单位：Hz。",
           "example": "16000",
           "member": "uint64",
           "name": "SampleRate",
@@ -11111,13 +11111,24 @@
         },
         {
           "disabled": false,
-          "document": "音频通道，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n<li>0：音频声道数和原始音频保持一致</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。",
+          "document": "<p>音频通道，可选值：</p><li>1：单通道</li><li>2：双通道</li><li>6：立体声</li><li>0：音频声道数和原始音频保持一致</li>当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。",
           "example": "1",
           "member": "int64",
           "name": "AudioChannel",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定输出要保留的音频轨道。默认是全部保留源的。</p><p>仅当在参数 OverrideParameter 中指定时生效，其他情况下不生效。</p>",
+          "example": "[0]",
+          "member": "int64",
+          "name": "StreamSelects",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -39430,6 +39441,78 @@
       ],
       "usage": "both"
     },
+    "OverrideTranscodeParameter": {
+      "document": "自定义视频转码参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。",
+          "example": "mp4",
+          "member": "string",
+          "name": "Container",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否去除视频数据，取值：\n<li>0：保留；<\\li>\n<li>1：去除。<\\li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoveVideo",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否去除音频数据，取值：\n<li>0：保留；<\\li>\n<li>1：去除。<\\li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoveAudio",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流配置参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoTemplateInfoForUpdate",
+          "name": "VideoTemplate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频流配置参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioTemplateInfoForUpdate",
+          "name": "AudioTemplate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "极速高清转码配置参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TEHDConfigForUpdate",
+          "name": "TEHDConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ParseStreamingManifestRequest": {
       "document": "ParseStreamingManifest请求参数结构体",
       "members": [
@@ -50879,6 +50962,17 @@
           "output_required": true,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义视频转码参数。</p>",
+          "example": "无",
+          "member": "OverrideTranscodeParameter",
+          "name": "OverrideParameter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {

@@ -8456,6 +8456,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>调度时间单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值为1（分钟），其他值2（秒）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessPeriodUnit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms</p>",
           "example": "1690515440000",
           "member": "uint64",
@@ -22666,6 +22675,15 @@
           "name": "FullQuery",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度周期单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值1（分钟），其他值2（秒）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessPeriodUnit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -25591,7 +25609,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ScheduledSql任务id",
+          "document": "<p>ScheduledSql任务id</p>",
           "example": "6ef60bec-0242-43af-bb20-270359fb5xxx",
           "member": "string",
           "name": "TaskId",
@@ -25601,7 +25619,7 @@
         },
         {
           "disabled": false,
-          "document": "ScheduledSql任务名称",
+          "document": "<p>ScheduledSql任务名称</p>",
           "example": "task",
           "member": "string",
           "name": "Name",
@@ -25611,7 +25629,7 @@
         },
         {
           "disabled": false,
-          "document": "源日志主题id",
+          "document": "<p>源日志主题id</p>",
           "example": "5237e8f4-0889-4ec0-accc-xxxxxxx",
           "member": "string",
           "name": "SrcTopicId",
@@ -25621,7 +25639,7 @@
         },
         {
           "disabled": false,
-          "document": "源日志主题名称",
+          "document": "<p>源日志主题名称</p>",
           "example": "test-topic",
           "member": "string",
           "name": "SrcTopicName",
@@ -25631,7 +25649,7 @@
         },
         {
           "disabled": false,
-          "document": "定时SQL分析目标主题",
+          "document": "<p>定时SQL分析目标主题</p>",
           "example": "无",
           "member": "ScheduledSqlResouceInfo",
           "name": "DstResource",
@@ -25641,7 +25659,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间。格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>任务创建时间。格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "CreateTime",
@@ -25651,7 +25669,7 @@
         },
         {
           "disabled": false,
-          "document": "任务更新时间，格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>任务更新时间，格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "UpdateTime",
@@ -25661,7 +25679,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题\n\n5: 访问权限问题 6:内部故障 7:其他故障",
+          "document": "<p>任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题</p><p>5: 访问权限问题 6:内部故障 7:其他故障</p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -25671,7 +25689,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启用状态，1开启,  2关闭",
+          "document": "<p>任务启用状态，1开启,  2关闭</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableFlag",
@@ -25681,7 +25699,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句",
+          "document": "<p>查询语句</p>",
           "example": "* | select count(*)",
           "member": "string",
           "name": "ScheduledSqlContent",
@@ -25691,7 +25709,7 @@
         },
         {
           "disabled": false,
-          "document": "调度开始时间，格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>调度开始时间，格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "ProcessStartTime",
@@ -25701,7 +25719,7 @@
         },
         {
           "disabled": false,
-          "document": "调度类型，1:持续运行 2:指定时间范围",
+          "document": "<p>调度类型，1:持续运行 2:指定时间范围</p>",
           "example": "1",
           "member": "int64",
           "name": "ProcessType",
@@ -25711,7 +25729,7 @@
         },
         {
           "disabled": false,
-          "document": "调度结束时间，格式：yyyy-MM-dd HH:mm:ss，当process_type=2时为必传字段",
+          "document": "<p>调度结束时间，格式：yyyy-MM-dd HH:mm:ss，当process_type=2时为必传字段</p>",
           "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "ProcessEndTime",
@@ -25721,7 +25739,7 @@
         },
         {
           "disabled": false,
-          "document": "调度周期(分钟)，1~1440分钟",
+          "document": "<p>调度周期(分钟)，1~1440分钟</p>",
           "example": "5",
           "member": "int64",
           "name": "ProcessPeriod",
@@ -25731,7 +25749,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的时间窗口. @m-15m, @m，意为近15分钟",
+          "document": "<p>查询的时间窗口. @m-15m, @m，意为近15分钟</p>",
           "example": "@m-15m, @m",
           "member": "string",
           "name": "ProcessTimeWindow",
@@ -25741,7 +25759,7 @@
         },
         {
           "disabled": false,
-          "document": "执行延迟(秒)，0~120秒，默认60秒",
+          "document": "<p>执行延迟(秒)，0~120秒，默认60秒</p>",
           "example": "5",
           "member": "int64",
           "name": "ProcessDelay",
@@ -25751,7 +25769,7 @@
         },
         {
           "disabled": false,
-          "document": "源topicId的地域信息，支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。",
+          "document": "<p>源topicId的地域信息，支持地域见 <a href=\"https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8\">地域列表</a> 文档。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcTopicRegion",
@@ -25761,7 +25779,7 @@
         },
         {
           "disabled": false,
-          "document": "语法规则，0：Lucene语法，1：CQL语法",
+          "document": "<p>语法规则，0：Lucene语法，1：CQL语法</p>",
           "example": "0",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -25771,7 +25789,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启投递服务日志。1：关闭，2：开启。",
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
           "example": "1",
           "member": "uint64",
           "name": "HasServicesLog",
@@ -25781,10 +25799,20 @@
         },
         {
           "disabled": false,
-          "document": "全文检索标记。1：关闭，2：打开。",
+          "document": "<p>全文检索标记。1：关闭，2：打开。</p>",
           "example": "1",
           "member": "uint64",
           "name": "FullQuery",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度周期时间单位</p><p>取值范围：[1, 2]</p><p>默认值：1</p><p>默认值1（分钟），其他值2（秒）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessPeriodUnit",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

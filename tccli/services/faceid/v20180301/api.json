@@ -4671,7 +4671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "手机号码。",
+          "document": "<p>手机号码。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Mobile",
@@ -4680,7 +4680,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -4695,7 +4695,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 成功。\n-2: 手机号不存在。\n-3: 手机号存在，但无法查询到在网时长。\n\n- 不收费结果码：\n-1: 手机号格式不正确。\n-4: 验证中心服务繁忙。\n-5：认证次数超过当日限制，请次日重试。",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 成功。-2: 手机号不存在。-3: 手机号存在，但无法查询到在网时长。- 不收费结果码：-1: 手机号格式不正确。-4: 验证中心服务繁忙。-5：认证次数超过当日限制，请次日重试。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -4705,7 +4705,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "成功",
           "member": "string",
           "name": "Description",
@@ -4715,7 +4715,7 @@
         },
         {
           "disabled": false,
-          "document": "在网时长区间。\n- 格式为[a,b)，表示在网时长在a个月以上，b个月以下。\n- 若b为+时表示没有上限。",
+          "document": "<p>在网时长区间。</p><ul><li>格式为[a,b)，表示在网时长在a个月以上，b个月以下。</li><li>若b为+时表示没有上限。</li></ul>",
           "example": "[23,+)",
           "member": "string",
           "name": "Range",
@@ -4761,7 +4761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>认证结果码，收费情况如下。</p><ul><li><p>收费结果码：<br>0：成功。</p></li><li><p>不收费结果码：<br>-1：未查询到结果。<br>-2：手机号格式不正确。<br>-3：验证中心服务繁忙。<br>-4：认证次数超过当日限制，请次日重试。</p></li></ul>",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0：成功。- 不收费结果码：-1：未查询到结果。-2：手机号格式不正确。-3：验证中心服务繁忙。-4：认证次数超过当日限制，请次日重试。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -5030,7 +5030,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号。",
+          "document": "<p>身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -5039,7 +5039,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -5048,7 +5048,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号。",
+          "document": "<p>手机号。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Phone",
@@ -5057,7 +5057,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -5072,7 +5072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 认证通过。\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。\n\n- 不收费结果码：\n-6: 手机号码不合法。\n-7: 身份证号码有误。\n-8: 姓名校验不通过。\n-9: 没有记录。\n-11: 验证中心服务繁忙。",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -5082,7 +5082,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商名称。\n- 取值范围为[\"移动\",\"联通\",\"电信\",\"\"]。",
+          "document": "<p>运营商名称。</p><ul><li>取值范围为[&quot;移动&quot;,&quot;联通&quot;,&quot;电信&quot;,&quot;&quot;]。</li></ul>",
           "example": "移动",
           "member": "string",
           "name": "Isp",
@@ -5092,7 +5092,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "业务结果描述。",
           "member": "string",
           "name": "Description",
@@ -5114,7 +5114,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号。",
+          "document": "<p>身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -5123,7 +5123,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -5132,7 +5132,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号。",
+          "document": "<p>手机号。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Phone",
@@ -5141,7 +5141,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -5156,7 +5156,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 认证通过。\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。\n\n- 不收费结果码：\n-6: 手机号码不合法。\n-7: 身份证号码有误。\n-8: 姓名校验不通过。\n-9: 没有记录。\n-11: 验证中心服务繁忙。",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -5166,7 +5166,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商名称。\n- 取值范围为[\"移动\",\"联通\",\"电信\",\"\"]。",
+          "document": "<p>运营商名称。</p><ul><li>取值范围为[&quot;移动&quot;,&quot;联通&quot;,&quot;电信&quot;,&quot;&quot;]。</li></ul>",
           "example": "电信",
           "member": "string",
           "name": "Isp",
@@ -5176,7 +5176,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "比对一致",
           "member": "string",
           "name": "Description",
@@ -5198,7 +5198,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号。",
+          "document": "<p>身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -5207,7 +5207,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -5216,7 +5216,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号。",
+          "document": "<p>手机号。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Phone",
@@ -5225,7 +5225,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。</p><ul><li>对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。</li></ul>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -5240,7 +5240,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 认证通过。\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。\n\n- 不收费结果码：\n-6: 手机号码不合法。\n-7: 身份证号码有误。\n-8: 姓名校验不通过。\n-9: 没有记录。\n-11: 验证中心服务繁忙。",
+          "document": "<p>认证结果码，收费情况如下。- 收费结果码：0: 认证通过。-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）。- 不收费结果码：-6: 手机号码不合法。-7: 身份证号码有误。-8: 姓名校验不通过。-9: 没有记录。-11: 验证中心服务繁忙。-13：该号段不支持验证</p>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -5250,7 +5250,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商名称。\n- 取值范围为[\"移动\",\"联通\",\"电信\",\"\"]。",
+          "document": "<p>运营商名称。</p><ul><li>取值范围为[&quot;移动&quot;,&quot;联通&quot;,&quot;电信&quot;,&quot;&quot;]。</li></ul>",
           "example": "联通",
           "member": "string",
           "name": "Isp",
@@ -5260,7 +5260,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。",
+          "document": "<p>业务结果描述。</p>",
           "example": "比对一致",
           "member": "string",
           "name": "Description",

@@ -1,0 +1,31 @@
+**Example 1: 给未实名的企业创建变更超管任务失败**
+
+
+
+Input: 
+
+```
+tccli essbasic CreateBatchAdminChangeInvitations --cli-unfold-argument  \
+    --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
+    --Agent.ProxyOrganizationOpenId ess_open********ation_1 \
+    --Agent.ProxyOperator.OpenId kevi****eng \
+    --AdminChangeInvitationInfos.0.ChangeAdminOrganizationId yDwFmUUckpstjt1aUyN9xSlvgkLEa4NC \
+    --AdminChangeInvitationInfos.0.ChangeAdminOrganizationOpenId ess_open********ation_1 \
+    --AdminChangeInvitationInfos.0.NewAdminOpenId Hide************* \
+    --AdminChangeInvitationInfos.0.NewAdminName 出木杉 \
+    --AdminChangeInvitationInfos.0.NewAdminMobile 1320****013 \
+    --AdminChangeInvitationInfos.0.NewAdminIdCardType ID_CARD \
+    --AdminChangeInvitationInfos.0.NewAdminIdCardNumber 530*************10 \
+    --AdminChangeInvitationInfos.0.AuthFiles iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAKE/YAAAABIFBMVEX///8AoOnvfBvgACp/f3+/v78/Pz8vLy/v7+9fX1/f39+fn5/Pz88AltoAUHSPj4+vr69PT0//5DsAHitvb28AeK4AZJEAgr0AKDoAPFcAjMsfHx8AMkgAbqAAWoMARmWoAB9UAA+MABo4AApwABWzXRTEACS2ACJGAA3SACd3Pg0AFB0AAAAqAAcQGR4QJC0fKS5iABJ+ABeaABw/OQ4PDw8sFwVfVRYtHyIdDxKGRQ8rDxXCZBXPuS/gdBmvnChZLgrRbBePgCEfHAfnP187HwYtHxNvYxm/qywcAAVoNgtPRxKfjiTlL1GVTRBKJgjv1Tf5z9cuJyF/ch0vKgs/PjMwOj7zn6/1r7wdDwM8JxU6FwcPDgPfxzNtXUtVSTvP/AqCAAAOFUlEQVR4nO1cd3/ayBaFMFUSKpEEAtHdsGkuwSV907PZ3t7b1/b7f4s3M+oNJ/sQ9r6fzh+JDVgcLmfu3Daq1SpUqFChQoUKFSpUqFChQoUKFSr8vwLKAKAABgBQuWtGmwE149QZqrbdrPvo2n2142BLlu6aWy6IbKw6rW49F/agh617Z3HZMAftiGRfdRxHbSeI9zuuRu6aZwQJLIdxE9szCklN0qljJ2g3Wyt6T2Qi0ZnTwwg7gWGHKGCm4FZaJ859oE3orLMCnEjAcEhjz2ZY1+0VuDOyPsCq1cKcMoEKwdzWfRR/3nssCfUU3hFbAQWrzRblq0txgWEoJtPtKrnY+GNpdJ07NDYw2/UW5j8RzPwZALRVH6T50IxAuLHxHfkRgobMaKfi3WVBFStOfZVmIzk5pOv28k68trLsszd3PHkawiVYENs080Kcu+G074K1bIpV53NkGtFpTQfAlDOv1PL0wcTv7Jy1bIrwYuY7XeYxdKMGAZxnvTAc5pLePWu5JziHYhCrsaZpZJ7z4lxRcyeyW4XIHe9tO4HDRWL5GUrNzXl1jtPzdf3bDn2Ir416fRk+YrF/IBI6qRENJJSNikjXW8bOOMOAczd6T2pB2VWETgjWIIj7YeT0VLWf3Rn5V5Vdt+VAWgY+zI5tJCxd4TyZpqnG/tdiT+GaBCEwTnutZpp0c7Wj8AmH8aad3Y3nxF+UMVMHwYgCTjtpn23vRiBArReThnPoc7T04DEl4iWtUZp2bxfBUywAaqoZ0jICjLTExK2Hz8ma/wOxMKxBV02Q7qL0NUpAFGqqS8NKP0t1l8nDYERgSNrwZQtcb9UBM7EmO+WbWg62NxbLB/KNAdcoRBIhQQjFIHkv0jEIVK6ctnZqarJs9YUyOiKlMmJrH9LrvY9rWcKy0HCYclEubgXFs6xkPtMre18Eartjqs226elUjmI6a2/UaDQO97FFqaEooXJkxLNIlNIAHUSk+xmRbRnLJs+pZ+tgT0DBD3Tc8DC6NiyZ0sB3QEQIwNktJJ4aLDPPbhWyWPktrCPfdMTnA6eC8bffNhrn1ArtyvgSGeflVgT3d7UURTzf5/uGQj26xEIy+9U45Jz/Vqv9vdFYEGhgS4ZQo2xDRzQnKJJkhYT7asn6UHrsLdpegsWE6rkwCSAXLYSd+a9vGvs6z801AGSFiTmzyiSZYkMjNRhFrBkntE1YTIjNKAgOaDPscdJvPNKjQA5MHHryAopmMMJKdDUPTpmkMVuGTpwHow0j0o0fa7UfG42JTxomxZwgzEGWQfw0LFHUPK8epPTHBMAd8I3nOt*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************0Fl8+MZJfV7oYRksoV8NlUpMsFtkbTfYuTw6ESp4ePP76cm6wANRAT/b2L8JCzWTPCERA46zVjGVxCbomRi8ly25nMTm82N/jGO8LTEajeEHs6OzGiu14RqQQOzvtIZUyAAJxfJCxzQKerjobT8L+eON4sj/dD34/vhhHFQf/c5+GIWNe9Y6WMzero14okqZQeRsDtDibiOrX+e/vPzz78Or1/mi0P14gkP26Qy+Um6pIZbW7FLoa+iFPiwetYmgUahYT8uLqh4cCP88T/fM4/MJj8zT32RJPlOjUP8zHTN2MdKhdPXv16dEvjx49+uVfRtEW5x9vUPOFoJU6V60AY+WoPTU2aELWr6++eeaZ+uGHTMgU/KGnj8yxGA+w7AFDPhp22lXDlfbrzz88fPbq/SOBq1+K/krUSwvLjbuY9ZU7arDY4PtnV8zUH3xLF767OClQWJopdeotgNsJ3p6sP714+MOrT+//LVhnSUMLc/sK0mbR9XZh6Zo+CzVNmZ6vfv3PH4+ypNmujnhzlj8oSBd/DyVyjb1LWA7WvuGk//jpPef8IhCtxKIQjLzenRJYurjauBvScM1HHvkZcek1I/vN6xfC0Fcyr9whjAygh1ufaOLg+qaBvN2QrrEAjszFVNP6FWP7WnB+4SJeuUv5NeG8edNTLYyMdrIQedmaydnLnDBj/Yl76he/5rlhiZ+V0nlmWzyvuSNL8yhH8o5uEfroxYurh8+uUO7WIcIhykOAwslYpYREIBfEJTXgryzF4sNW+XZU+FcvzeqbSOe0LksCH1ZAtwYN4jhuzehvJF3wecsA1ZLdmTx4L9C92YNC0jtahx4hhZ+R2/wSzlnx6ydFC1HZ3ZE/9mZrxpoaxcGw4nP2A/Eil2ft6sSfAJgzO+tugbEJEJ0xPeBcbxXk3TtUB6fl8qNGBASd5MRzwOUciRXVSwsiU7n0aDr1fqo9o4y2jJEW/+4l2fDu7iEv41Mp+cmWu6OTlSFWvJjKPZYke0PWogDiH2GQwFJNlHo6edmYVs5s4QYgTsrunFJvFksMxnqGgwD30ufe8wZppC235T4DQY/DVp1TZAGNk+a3C8LOsB8a2bZVgYG9zBJE2x+GvA1KvOJl2y2PW3S7oHq/Y84tMUjNPw3OmJrueBUKxHpgOWibTO8WIDoA3rhq2q5l1Exvh5E7xeHDP0S1fnI2Gk32eD+LuPG1SO6Gc9BDz0dP2JWOvZ7A6Ebhm2S0FcHNMUB5IIW3PmAaF/d30MJxziO+9RH/0AaRUTmtxM8Bzpmm8tERRfXo9JE/MCtpzKOz3egOb3ZUcBMSvgoRD+7hWVS2PtxlOLcJtOh+Hk1T4XOJID42u6tc8BZIrpXugAWcZXFuH4zuH2lNrtF0B0xogw9G8PK6vh9xPr4npHk9XF6ldd1UvdSQe+aPEenJHbm4FCSxtAidDWLW7qpLL3IT0b0VjoynZ3zvCkHyTzRkDlnQYduDoRlMUOpivyPYb4UeL3YfG+XCip+ak3k0LUeP+JUBgqYX/BYEN/eE88Z6lhTeOwhaCBlfeHixROTd0ygA2GmS/QXYYGlp0we6U2wgZuyu1vWFKLZ0+lzSPQIt6nYqu89XPxtFhRavWHpfkd/WvrWaerfIle4955ybT0v3nTPbydOpnuzeW2cXIXajqBqfIcy7bc39A9FwUMtjP/0FzOxD4QfiMaL3JyqqUKFChQoVKlSoUKFChQoVKlT4a+C/6zkA3DJsaswAAAAASUVORK5CYII=
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ErrorMessages": [],
+        "RequestId": "4b5103a0-0340-4dcc-a142-d71d981b9c1a"
+    }
+}
+```
+

@@ -1651,7 +1651,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。</p>",
+          "document": "<p>访问模式。</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -5484,7 +5484,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>接入模式。nearBy - 就近访问，balance - 均衡分配，默认值：nearBy。</p>",
+          "document": "<p>接入模式。</p><p>枚举值：</p><ul><li>nearBy： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul><p>默认值：nearBy</p>",
           "example": "nearBy",
           "member": "string",
           "name": "AccessMode",
@@ -8039,7 +8039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务的请求 ID。",
+          "document": "<p>异步任务的请求 ID。</p>",
           "example": "f96e4f3c-8fc96c86-2ec79ac8-cb63a7a7",
           "member": "string",
           "name": "AsyncRequestId",
@@ -8054,7 +8054,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行结果。可能的取值：INITIAL - 初始化，RUNNING - 运行中，SUCCESS - 执行成功，FAILED - 执行失败，KILLED - 已终止，REMOVED - 已删除，PAUSED - 终止中。",
+          "document": "<p>任务执行结果。</p><p>枚举值：</p><ul><li>INITIAL： 初始化。</li><li>RUNNING： 运行中。</li><li>SUCCESS： 执行成功。</li><li>FAILED： 执行失败。</li><li>KILLED： 已终止。</li><li>REMOVED： 已删除。</li><li>PAUSED： 终止中。</li><li>UNDEFINED： 任务已创建但未开始执行，在 WaitSwitch = true 场景下，表示任务正在等待维护时间窗到来。</li></ul>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
@@ -8064,7 +8064,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行信息描述。",
+          "document": "<p>任务执行信息描述。</p>",
           "example": "删除库表成功",
           "member": "string",
           "name": "Info",
@@ -18915,7 +18915,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组地址ID",
+          "document": "<p>代理组地址ID</p>",
           "example": "proxyaddr-ixw3ll2d",
           "member": "string",
           "name": "ProxyAddressId",
@@ -18925,7 +18925,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "<p>私有网络ID</p>",
           "example": "vpc-ixw3ll2d",
           "member": "string",
           "name": "UniqVpcId",
@@ -18935,7 +18935,7 @@
         },
         {
           "disabled": false,
-          "document": "私有子网ID",
+          "document": "<p>私有子网ID</p>",
           "example": "subnet-ixw3ll2d",
           "member": "string",
           "name": "UniqSubnetId",
@@ -18945,7 +18945,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址",
+          "document": "<p>IP地址</p>",
           "example": "192.0.0.1",
           "member": "string",
           "name": "Vip",
@@ -18955,7 +18955,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "80",
           "member": "uint64",
           "name": "VPort",
@@ -18965,7 +18965,7 @@
         },
         {
           "disabled": false,
-          "document": "权重分配模式；\n系统自动分配：\"system\"， 自定义：\"custom\"",
+          "document": "<p>权重分配模式；<br>系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -18975,7 +18975,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启延迟剔除，取值：\"true\" | \"false\"",
+          "document": "<p>是否开启延迟剔除，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "IsKickOut",
@@ -18985,7 +18985,7 @@
         },
         {
           "disabled": false,
-          "document": "最小保留数量，最小取值：0",
+          "document": "<p>最小保留数量，最小取值：0</p>",
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
@@ -18995,7 +18995,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟剔除阈值，最小取值：0",
+          "document": "<p>延迟剔除阈值，最小取值：0</p>",
           "example": "10",
           "member": "uint64",
           "name": "MaxDelay",
@@ -19005,7 +19005,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加RO，取值：\"true\" | \"false\"",
+          "document": "<p>是否自动添加RO，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoAddRo",
@@ -19015,7 +19015,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是只读，取值：\"true\" | \"false\"",
+          "document": "<p>是否是只读，取值：&quot;true&quot; | &quot;false&quot;</p>",
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
@@ -19025,7 +19025,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务分离",
+          "document": "<p>是否开启事务分离</p>",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -19035,7 +19035,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移",
+          "document": "<p>是否开启故障转移</p>",
           "example": "true",
           "member": "bool",
           "name": "FailOver",
@@ -19045,7 +19045,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池",
+          "document": "<p>是否开启连接池</p>",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -19055,7 +19055,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "代理一区",
           "member": "string",
           "name": "Desc",
@@ -19065,7 +19065,7 @@
         },
         {
           "disabled": false,
-          "document": "实例读权重分配",
+          "document": "<p>实例读权重分配</p>",
           "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
@@ -19075,7 +19075,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式",
+          "document": "<p>接入模式</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li><li>direct_nearby： 纯网络转发就近访问</li><li>direct_balance： 纯网络转发均衡分配</li></ul>",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -19085,7 +19085,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动负载均衡",
+          "document": "<p>是否开启自动负载均衡</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoLoadBalance",
@@ -19095,7 +19095,7 @@
         },
         {
           "disabled": false,
-          "document": "是否把libra当作ro节点",
+          "document": "<p>是否把libra当作ro节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApNodeAsRoNode",
@@ -19105,12 +19105,22 @@
         },
         {
           "disabled": false,
-          "document": "libra节点故障，是否转发给其他节点",
+          "document": "<p>libra节点故障，是否转发给其他节点</p>",
           "example": "false",
           "member": "bool",
           "name": "ApQueryToOtherNode",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址所在地域名</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -21746,7 +21756,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。",
           "example": "false",
           "member": "bool",

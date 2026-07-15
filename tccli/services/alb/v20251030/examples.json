@@ -291,9 +291,9 @@
     "ModifyHealthCheckTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHealthCheckTemplate\n<公共请求参数>\n\n{\n    \"HealthCheckCodes\": [\n        \"http_1xx\"\n    ],\n    \"HealthCheckHealthyThreshold\": 2,\n    \"HealthCheckHost\": \"example.com\",\n    \"HealthCheckHttpVersion\": \"HTTP1.1\",\n    \"HealthCheckInterval\": 10,\n    \"HealthCheckMethod\": \"GET\",\n    \"HealthCheckPath\": \"/hello/index.html\",\n    \"HealthCheckPort\": 80,\n    \"HealthCheckProtocol\": \"HTTP\",\n    \"HealthCheckTemplateId\": \"hct-m4x8q2pa\",\n    \"HealthCheckTemplateName\": \"lbtg-0zrnc9qa-template\",\n    \"HealthCheckTimeout\": 2,\n    \"HealthCheckUnhealthyThreshold\": 2,\n    \"Tags\": [\n        {\n            \"TagKey\": \"key-xxx\",\n            \"TagValue\": \"value-xxx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b848733-70e5-4558-ae39-4b9938eb7609\"\n    }\n}",
-        "title": "修改健康检查模板"
+        "input": "POST / HTTP/1.1\nHost: alb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHealthCheckTemplate\n<公共请求参数>\n\n{\n    \"HealthCheckTemplateId\": \"hct-fb7tuf7o\",\n    \"HealthCheckTemplateName\": \"修改名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e109ac6e-a12b-4fb2-885e-e63d63c4d883\"\n    }\n}",
+        "title": "修改健康检查模板的名称"
       }
     ],
     "ModifyListenerAttributes": [

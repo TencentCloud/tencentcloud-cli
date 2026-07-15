@@ -878,6 +878,14 @@
         "title": "查询图片处理任务"
       }
     ],
+    "DescribeImageTasks": [
+      {
+        "document": "获取图片处理任务列表",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageTasks\n<公共请求参数>\n\n{\n    \"Status\": \"FINISH\",\n    \"Limit\": 20,\n    \"SubTaskHasFailed\": false,\n    \"ScrollToken\": \"********-WorkflowTask-********************************tt6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ScrollToken\": \"********-WorkflowTask-********************************tt6\",\n        \"TaskSet\": [\n            {\n                \"BeginProcessTime\": \"2026-03-16T12:29:54Z\",\n                \"CreateTime\": \"2026-03-16T12:29:54Z\",\n                \"FinishTime\": \"2026-03-16T12:29:56Z\",\n                \"Status\": \"FINISH\",\n                \"SubTaskHasFailed\": false,\n                \"TaskId\": \"********-WorkflowTask-********************************tt6\"\n            }\n        ],\n        \"TotalCount\": 13,\n        \"RequestId\": \"f642575f-60b2-46ef-a1c1-5401b6e9ba33\"\n    }\n}",
+        "title": "获取图片处理任务列表"
+      }
+    ],
     "DescribeLiveRecordTemplates": [
       {
         "document": "获取直播录制模板",

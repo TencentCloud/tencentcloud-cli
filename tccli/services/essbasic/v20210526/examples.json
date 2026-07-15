@@ -874,6 +874,22 @@
         "title": "验证不通过"
       }
     ],
+    "CreateBatchAdminChangeInvitations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchAdminChangeInvitations\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open********ation_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevi****eng\"\n        }\n    },\n    \"AdminChangeInvitationInfos\": [\n        {\n            \"ChangeAdminOrganizationId\": \"yDwFmUUckpstjt1aUyN9xSlvgkLEa4NC\",\n            \"ChangeAdminOrganizationOpenId\": \"ess_open********ation_1\",\n            \"NewAdminOpenId\": \"Hide*************\",\n            \"NewAdminName\": \"出木杉\",\n            \"NewAdminMobile\": \"1320****013\",\n            \"NewAdminIdCardType\": \"ID_CARD\",\n            \"NewAdminIdCardNumber\": \"530*************10\",\n            \"AuthFiles\": [\n                \"iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAKE/YAAAABIFBMVEX///8AoOnvfBvgACp/f3+/v78/Pz8vLy/v7+9fX1/f39+fn5/Pz88AltoAUHSPj4+vr69PT0//5DsAHitvb28AeK4AZJEAgr0AKDoAPFcAjMsfHx8AMkgAbqAAWoMARmWoAB9UAA+MABo4AApwABWzXRTEACS2ACJGAA3SACd3Pg0AFB0AAAAqAAcQGR4QJC0fKS5iABJ+ABeaABw/OQ4PDw8sFwVfVRYtHyIdDxKGRQ8rDxXCZBXPuS/gdBmvnChZLgrRbBePgCEfHAfnP187HwYtHxNvYxm/qywcAAVoNgtPRxKfjiTlL1GVTRBKJgjv1Tf5z9cuJyF/ch0vKgs/PjMwOj7zn6/1r7wdDwM8JxU6FwcPDgPfxzNtXUtVSTvP/AqCAAAOFUlEQVR4nO1cd3/ayBaFMFUSKpEEAtHdsGkuwSV907PZ3t7b1/b7f4s3M+oNJ/sQ9r6fzh+JDVgcLmfu3Daq1SpUqFChQoUKFSpUqFChQoUKFSr8vwLKAKAABgBQuWtGmwE149QZqrbdrPvo2n2142BLlu6aWy6IbKw6rW49F/agh617Z3HZMAftiGRfdRxHbSeI9zuuRu6aZwQJLIdxE9szCklN0qljJ2g3Wyt6T2Qi0ZnTwwg7gWGHKGCm4FZaJ859oE3orLMCnEjAcEhjz2ZY1+0VuDOyPsCq1cKcMoEKwdzWfRR/3nssCfUU3hFbAQWrzRblq0txgWEoJtPtKrnY+GNpdJ07NDYw2/UW5j8RzPwZALRVH6T50IxAuLHxHfkRgobMaKfi3WVBFStOfZVmIzk5pOv28k68trLsszd3PHkawiVYENs080Kcu+G074K1bIpV53NkGtFpTQfAlDOv1PL0wcTv7Jy1bIrwYuY7XeYxdKMGAZxnvTAc5pLePWu5JziHYhCrsaZpZJ7z4lxRcyeyW4XIHe9tO4HDRWL5GUrNzXl1jtPzdf3bDn2Ir416fRk+YrF/IBI6qRENJJSNikjXW8bOOMOAczd6T2pB2VWETgjWIIj7YeT0VLWf3Rn5V5Vdt+VAWgY+zI5tJCxd4TyZpqnG/tdiT+GaBCEwTnutZpp0c7Wj8AmH8aad3Y3nxF+UMVMHwYgCTjtpn23vRiBArReThnPoc7T04DEl4iWtUZp2bxfBUywAaqoZ0jICjLTExK2Hz8ma/wOxMKxBV02Q7qL0NUpAFGqqS8NKP0t1l8nDYERgSNrwZQtcb9UBM7EmO+WbWg62NxbLB/KNAdcoRBIhQQjFIHkv0jEIVK6ctnZqarJs9YUyOiKlMmJrH9LrvY9rWcKy0HCYclEubgXFs6xkPtMre18Eartjqs226elUjmI6a2/UaDQO97FFqaEooXJkxLNIlNIAHUSk+xmRbRnLJs+pZ+tgT0DBD3Tc8DC6NiyZ0sB3QEQIwNktJJ4aLDPPbhWyWPktrCPfdMTnA6eC8bffNhrn1ArtyvgSGeflVgT3d7UURTzf5/uGQj26xEIy+9U45Jz/Vqv9vdFYEGhgS4ZQo2xDRzQnKJJkhYT7asn6UHrsLdpegsWE6rkwCSAXLYSd+a9vGvs6z801AGSFiTmzyiSZYkMjNRhFrBkntE1YTIjNKAgOaDPscdJvPNKjQA5MHHryAopmMMJKdDUPTpmkMVuGTpwHow0j0o0fa7UfG42JTxomxZwgzEGWQfw0LFHUPK8epPTHBMAd8I3nOt*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************0Fl8+MZJfV7oYRksoV8NlUpMsFtkbTfYuTw6ESp4ePP76cm6wANRAT/b2L8JCzWTPCERA46zVjGVxCbomRi8ly25nMTm82N/jGO8LTEajeEHs6OzGiu14RqQQOzvtIZUyAAJxfJCxzQKerjobT8L+eON4sj/dD34/vhhHFQf/c5+GIWNe9Y6WMzero14okqZQeRsDtDibiOrX+e/vPzz78Or1/mi0P14gkP26Qy+Um6pIZbW7FLoa+iFPiwetYmgUahYT8uLqh4cCP88T/fM4/MJj8zT32RJPlOjUP8zHTN2MdKhdPXv16dEvjx49+uVfRtEW5x9vUPOFoJU6V60AY+WoPTU2aELWr6++eeaZ+uGHTMgU/KGnj8yxGA+w7AFDPhp22lXDlfbrzz88fPbq/SOBq1+K/krUSwvLjbuY9ZU7arDY4PtnV8zUH3xLF767OClQWJopdeotgNsJ3p6sP714+MOrT+//LVhnSUMLc/sK0mbR9XZh6Zo+CzVNmZ6vfv3PH4+ypNmujnhzlj8oSBd/DyVyjb1LWA7WvuGk//jpPef8IhCtxKIQjLzenRJYurjauBvScM1HHvkZcek1I/vN6xfC0Fcyr9whjAygh1ufaOLg+qaBvN2QrrEAjszFVNP6FWP7WnB+4SJeuUv5NeG8edNTLYyMdrIQedmaydnLnDBj/Yl76he/5rlhiZ+V0nlmWzyvuSNL8yhH8o5uEfroxYurh8+uUO7WIcIhykOAwslYpYREIBfEJTXgryzF4sNW+XZU+FcvzeqbSOe0LksCH1ZAtwYN4jhuzehvJF3wecsA1ZLdmTx4L9C92YNC0jtahx4hhZ+R2/wSzlnx6ydFC1HZ3ZE/9mZrxpoaxcGw4nP2A/Eil2ft6sSfAJgzO+tugbEJEJ0xPeBcbxXk3TtUB6fl8qNGBASd5MRzwOUciRXVSwsiU7n0aDr1fqo9o4y2jJEW/+4l2fDu7iEv41Mp+cmWu6OTlSFWvJjKPZYke0PWogDiH2GQwFJNlHo6edmYVs5s4QYgTsrunFJvFksMxnqGgwD30ufe8wZppC235T4DQY/DVp1TZAGNk+a3C8LOsB8a2bZVgYG9zBJE2x+GvA1KvOJl2y2PW3S7oHq/Y84tMUjNPw3OmJrueBUKxHpgOWibTO8WIDoA3rhq2q5l1Exvh5E7xeHDP0S1fnI2Gk32eD+LuPG1SO6Gc9BDz0dP2JWOvZ7A6Ebhm2S0FcHNMUB5IIW3PmAaF/d30MJxziO+9RH/0AaRUTmtxM8Bzpmm8tERRfXo9JE/MCtpzKOz3egOb3ZUcBMSvgoRD+7hWVS2PtxlOLcJtOh+Hk1T4XOJID42u6tc8BZIrpXugAWcZXFuH4zuH2lNrtF0B0xogw9G8PK6vh9xPr4npHk9XF6ldd1UvdSQe+aPEenJHbm4FCSxtAidDWLW7qpLL3IT0b0VjoynZ3zvCkHyTzRkDlnQYduDoRlMUOpivyPYb4UeL3YfG+XCip+ak3k0LUeP+JUBgqYX/BYEN/eE88Z6lhTeOwhaCBlfeHixROTd0ygA2GmS/QXYYGlp0we6U2wgZuyu1vWFKLZ0+lzSPQIt6nYqu89XPxtFhRavWHpfkd/WvrWaerfIle4955ybT0v3nTPbydOpnuzeW2cXIXajqBqfIcy7bc39A9FwUMtjP/0FzOxD4QfiMaL3JyqqUKFChQoVKlSoUKFChQoVKlT4a+C/6zkA3DJsaswAAAAASUVORK5CYII=\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [],\n        \"RequestId\": \"4b5103a0-0340-4dcc-a142-d71d981b9c1a\"\n    }\n}",
+        "title": "给未实名的企业创建变更超管任务失败"
+      }
+    ],
+    "CreateBatchAdminChangeInvitationsUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchAdminChangeInvitationsUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open********ation_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevi****eng\"\n        }\n    },\n    \"NewAdminName\": \"出**\",\n    \"NewAdminMobile\": \"1320****013\",\n    \"Endpoint\": \"APP\",\n    \"NewAdminIdCardNumber\": \"530823******084610\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1784647929,\n        \"Url\": \"pages/guide/index?to=BATCH_CHANGE_SUPER_ADMIN&shortKey=yD3JaU9Tww0plw1zVgf4\",\n        \"RequestId\": \"2ff2e92e-689a-46b9-96bb-3c5a17ff3c94\"\n    }\n}",
+        "title": "生成变更超管链接"
+      }
+    ],
     "CreateBatchInitOrganizationUrl": [
       {
         "document": "",
@@ -1470,6 +1486,20 @@
         "title": "延期整个合同-合同发起时没有签署人设置签署人签署截止时间"
       }
     ],
+    "ModifyOrganizationBusinessInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationBusinessInfo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"yuan\"\n        }\n    },\n    \"BizLicenseResourceId\": \"yDCNIUUckpv809ikUuxOPaXRjLuPnGvS\",\n    \"OrganizationName\": \"东莞万御安防科技服务有限公司\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelFlowIds\": [\n            \"yD3JcUUckpep6qq5U1UyDrfDm8l6NzKw\"\n        ],\n        \"ErrorCode\": 1,\n        \"ErrorMessage\": \"存在 87 份未完结的合同，请先撤销或者完成合同\",\n        \"FlowIds\": [\n            \"yD3JaUUckperbj2gU1UxOsoPKSdAroVT\"\n        ],\n        \"UnfinishedCount\": 87,\n        \"RequestId\": \"f0572876-6ef1-4616-a77e-c2f28dee3c1f\"\n    }\n}",
+        "title": "变更企业信息，共有 87 份 saas 和 第三方子客未完结的合同，拦截"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationBusinessInfo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"huo_la_dun_ping_yuan\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kyle_huo_xian\"\n        }\n    },\n    \"BizLicenseResourceId\": \"yD3JaUUckperpm7qUxaAsRsEvrnOVuVD\",\n    \"OrganizationName\": \"黑拉顿平原测试\",\n    \"Address\": \"\",\n    \"LegalName\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelFlowIds\": [\n            \"yD3JaUUckperl3wcU1UVOahuSNCPtvmn\"\n        ],\n        \"ErrorCode\": 1,\n        \"ErrorMessage\": \"存在 4 份未完结的合同，请先撤销或者完成合同\",\n        \"FlowIds\": [],\n        \"UnfinishedCount\": 4,\n        \"RequestId\": \"dbe937ef-2ee0-4130-9a14-731425ffd627\"\n    }\n}",
+        "title": "变更企业信息，有 4 份 第三方子客未完结的合同，拦截"
+      }
+    ],
     "ModifyPartnerAutoSignAuthUrl": [
       {
         "document": "",
@@ -1504,10 +1534,10 @@
     ],
     "SyncProxyOrganization": [
       {
-        "document": "同步企业信息",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncProxyOrganization\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"UniformSocialCreditCode\": \"BOLIU101304662708A \",\n    \"BusinessLicense\": \"aHR0cHM6Ly9jYXBpLndvYS5jb20vhaWwlM0ZpZCUzRGVzc2Jhc2ljJTI2dGFiJTNEYXBp..图片base64省略\",\n    \"ProxyLegalName\": \"典子谦\",\n    \"ProxyLegalIdCardType\": \"ID_CARD\",\n    \"ProxyLegalIdCardNumber\": \"620000198802020000\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n31517\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_zhansan\",\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fb09e62-9642-44c8-992b-ddd6e5086293\"\n    }\n}",
-        "title": "同步企业信息"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncProxyOrganization\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"ke*******ng\"\n        }\n    },\n    \"ProxyOrganizationName\": \"典子谦示例企业\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4242135-81a4-46dd-b62d-9881e9d5d516\"\n    }\n}",
+        "title": "同步企业姓名"
       }
     ],
     "SyncProxyOrganizationOperators": [

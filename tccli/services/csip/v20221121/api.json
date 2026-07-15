@@ -1631,6 +1631,13 @@
       "output": "ModifyAlarmRiskStatusResponse",
       "status": "online"
     },
+    "ModifyCosAuditBucketMonitorStatus": {
+      "document": "修改存储桶监测状态",
+      "input": "ModifyCosAuditBucketMonitorStatusRequest",
+      "name": "修改存储桶监测状态",
+      "output": "ModifyCosAuditBucketMonitorStatusResponse",
+      "status": "online"
+    },
     "ModifyCosAuditMonitorAccount": {
       "document": "修改cos审计监测账号",
       "input": "ModifyCosAuditMonitorAccountRequest",
@@ -41101,6 +41108,42 @@
       ],
       "type": "object"
     },
+    "ModifyCosAuditBucketMonitorStatusRequest": {
+      "document": "ModifyCosAuditBucketMonitorStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶集合",
+          "example": "[\"cos-157823912\"]",
+          "member": "string",
+          "name": "BucketNameSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0 关闭 1 开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "MonitorStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosAuditBucketMonitorStatusResponse": {
+      "document": "ModifyCosAuditBucketMonitorStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCosAuditMonitorAccountRequest": {
       "document": "ModifyCosAuditMonitorAccount请求参数结构体",
       "members": [
@@ -47336,8 +47379,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "能力标签标识，适合程序判定、过滤或聚合使用",
-          "example": "file_read",
+          "document": "能力标签标识",
+          "example": "file_access",
           "member": "string",
           "name": "ID",
           "output_required": true,
@@ -47347,7 +47390,7 @@
         {
           "disabled": false,
           "document": "能力标签展示名称",
-          "example": "文件读取",
+          "example": "文件访问",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -47362,7 +47405,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "融合规则 ID（9xxxx）",
+          "document": "融合规则 ID\n参数格式：形如 9xxxx",
           "example": "90001",
           "member": "string",
           "name": "RuleID",
@@ -47373,7 +47416,7 @@
         {
           "disabled": false,
           "document": "风险类别名称",
-          "example": "供应链风险",
+          "example": "代码注入风险",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
@@ -47398,7 +47441,7 @@
         },
         {
           "disabled": false,
-          "document": "该引擎命中的规则列表",
+          "document": "命中规则列表",
           "example": "无",
           "member": "SkillScanRuleHit",
           "name": "RuleList",
@@ -47600,8 +47643,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "融合规则编号（9xxxx），可与 RuleCatalog 交叉引用",
-          "example": "90002",
+          "document": "融合规则编号\n参数格式：形如 9xxxx",
+          "example": "90001",
           "member": "string",
           "name": "RuleID",
           "output_required": true,
@@ -47610,8 +47653,8 @@
         },
         {
           "disabled": false,
-          "document": "当前命中规则的具体发现描述，包含文件位置、行为特征、风险点等信息",
-          "example": "在 git_helper/run.py 第 16 行发现 subprocess.run 调用，用户参数直接拼接至 shell 命令导致命令注入",
+          "document": "风险发现描述",
+          "example": "检测到可疑的代码执行逻辑",
           "member": "string",
           "name": "Description",
           "output_required": true,

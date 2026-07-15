@@ -4529,7 +4529,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "健康检查模板 ID，格式为 hct- 后接字母数字。",
+          "document": "<p>健康检查模板 ID，格式为 hct- 后接字母数字。</p>",
           "example": "hct-m4x8q2pa",
           "member": "string",
           "name": "HealthCheckTemplateId",
@@ -4538,7 +4538,7 @@
         },
         {
           "disabled": false,
-          "document": "是否预览此次请求。\n- **false**（默认）：发送普通请求，直接修改健康检查模板。\n- **true**：发送预览请求，检查修改健康检查模板的参数、格式、业务限制等是否符合要求。",
+          "document": "<p>是否预览此次请求。</p><ul><li><strong>false</strong>（默认）：发送普通请求，直接修改健康检查模板。</li><li><strong>true</strong>：发送预览请求，检查修改健康检查模板的参数、格式、业务限制等是否符合要求。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "DryRun",
@@ -4547,7 +4547,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查状态码。取值：\n- 当健康检查协议为**HTTP/HTTPS**时：\n\t- **http_1xx**\n\t- **http_2xx**（默认值）\n\t-  **http_3xx**\n\t-  **http_4xx**\n\t-  **http_5xx**\n- 当健康检查协议为**GRPC/GRPCS**时：默认值为**12**，数值范围为**0-99**，输入值可为数值、多个数值或者范围以及相互组合，如：\n\t- **\"20\"**\n\t- **\"0-99\"**",
+          "document": "<p>健康检查状态码。取值：</p><ul><li>当健康检查协议为<strong>HTTP/HTTPS</strong>时：<ul><li><strong>http_1xx</strong></li><li><strong>http_2xx</strong>（默认值）</li><li><strong>http_3xx</strong></li><li><strong>http_4xx</strong></li><li><strong>http_5xx</strong></li></ul></li><li>当健康检查协议为<strong>GRPC/GRPCS</strong>时：默认值为<strong>12</strong>，数值范围为<strong>0-99</strong>，输入值可为数值、多个数值或者范围以及相互组合，如：<ul><li><strong>&quot;20&quot;</strong></li><li><strong>&quot;0-99&quot;</strong></li></ul></li></ul>",
           "example": "[\"http_1xx\"]",
           "member": "string",
           "name": "HealthCheckCodes",
@@ -4556,7 +4556,7 @@
         },
         {
           "disabled": false,
-          "document": "判定后端服务健康的阈值，当健康检查连续成功多少次后，后端服务的状态由**不健康**变为**健康**。\n取值范围：**2**-**10**。\n默认值：**2**。",
+          "document": "<p>判定后端服务健康的阈值，当健康检查连续成功多少次后，后端服务的状态由<strong>不健康</strong>变为<strong>健康</strong>。<br>取值范围：<strong>2</strong>-<strong>10</strong>。<br>默认值：<strong>2</strong>。</p>",
           "example": "2",
           "member": "uint64",
           "name": "HealthCheckHealthyThreshold",
@@ -4565,7 +4565,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查域名。\n长度限制为 **1-255** 个字符。\n可包含小写字母、数字、短划线（-）和半角句号（.）。\n\n> 仅当 **HealthCheckProtocol** 设置为 **HTTP/HTTPS/GRPC/GRPCS** 时，该参数生效。",
+          "document": "<p>健康检查域名。<br>长度限制为 <strong>1-255</strong> 个字符。<br>可包含小写字母、数字、短划线（-）和半角句号（.）。</p><blockquote><p>仅当 <strong>HealthCheckProtocol</strong> 设置为 <strong>HTTP/HTTPS/GRPC/GRPCS</strong> 时，该参数生效。</p></blockquote>",
           "example": "example.com",
           "member": "string",
           "name": "HealthCheckHost",
@@ -4574,7 +4574,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查 HTTP 协议版本，取值：\n- **HTTP1.1**（默认）\n- **HTTP1.0** \n> 仅当**HealthCheckProtocol**设置为**HTTP** 或 **HTTPS** 时，该参数生效。",
+          "document": "<p>健康检查 HTTP 协议版本，取值：</p><ul><li><strong>HTTP1.1</strong>（默认）</li><li><strong>HTTP1.0</strong> <blockquote><p>仅当<strong>HealthCheckProtocol</strong>设置为<strong>HTTP</strong> 或 <strong>HTTPS</strong> 时，该参数生效。</p></blockquote></li></ul>",
           "example": "HTTP1.1",
           "member": "string",
           "name": "HealthCheckHttpVersion",
@@ -4583,7 +4583,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查的时间间隔。单位：秒。 取值范围：**2**-**300**。 默认值：**5**。",
+          "document": "<p>健康检查的时间间隔。单位：秒。 取值范围：<strong>2</strong>-<strong>300</strong>。 默认值：<strong>5</strong>。</p>",
           "example": "10",
           "member": "uint64",
           "name": "HealthCheckInterval",
@@ -4592,7 +4592,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查方法，取值： - **GET** - **HEAD**（默认值） \n> 仅当**HealthCheckProtocol**设置为**HTTP** 或 **HTTPS** 时，该参数生效。",
+          "document": "<p>健康检查方法，取值： - <strong>GET</strong> - <strong>HEAD</strong>（默认值） </p><blockquote><p>仅当<strong>HealthCheckProtocol</strong>设置为<strong>HTTP</strong> 或 <strong>HTTPS</strong> 时，该参数生效。</p></blockquote>",
           "example": "GET",
           "member": "string",
           "name": "HealthCheckMethod",
@@ -4601,7 +4601,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查的转发规则路径。 长度为 **1-80** 个字符，只能使用字母、数字、字符`-/.%?#&=`以及扩展字符`_;~!（)*[]@$^:',+`。 URL 必须以正斜线（/）开头。 \n> 仅当**HealthCheckProtocol**为**HTTP/HTTPS/GRPC/GRPCS**时，转发规则路径参数生效。",
+          "document": "<p>健康检查的转发规则路径。 长度为 <strong>1-80</strong> 个字符，只能使用字母、数字、字符<code>-/.%?#&amp;=</code>以及扩展字符<code>_;~!（)*[]@$^:&#39;,+</code>。 URL 必须以正斜线（/）开头。 </p><blockquote><p>仅当<strong>HealthCheckProtocol</strong>为<strong>HTTP/HTTPS/GRPC/GRPCS</strong>时，转发规则路径参数生效。</p></blockquote>",
           "example": "/hello/index.html",
           "member": "string",
           "name": "HealthCheckPath",
@@ -4610,7 +4610,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查访问后端服务器的端口。  取值范围：**0-65535**。  默认值：**0**，表示后端服务器的端口。",
+          "document": "<p>健康检查访问后端服务器的端口。  取值范围：<strong>0-65535</strong>。  默认值：<strong>0</strong>，表示后端服务器的端口。</p>",
           "example": "80",
           "member": "uint64",
           "name": "HealthCheckPort",
@@ -4619,7 +4619,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查协议。取值：\n- **HTTP**（默认）：通过发送 HEAD 或 GET 请求模拟浏览器的访问行为来检查服务器应用是否健康。\n- **HTTPS**：通过发送 HEAD 或 GET 请求模拟浏览器的访问行为来检查服务器应用是否健康。（数据加密，相比 HTTP 更安全。）\n- **TCP**：通过发送 SYN 握手报文来检测服务器端口是否存活。\n- **GRPC**：通过发送 POST 或 GET 请求来检查服务器应用是否健康。\n- **GRPCS**：通过发送 POST 或 GET 请求来检查服务器应用是否健康。",
+          "document": "<p>健康检查协议。取值：</p><ul><li><strong>HTTP</strong>（默认）：通过发送 HEAD 或 GET 请求模拟浏览器的访问行为来检查服务器应用是否健康。</li><li><strong>HTTPS</strong>：通过发送 HEAD 或 GET 请求模拟浏览器的访问行为来检查服务器应用是否健康。（数据加密，相比 HTTP 更安全。）</li><li><strong>TCP</strong>：通过发送 SYN 握手报文来检测服务器端口是否存活。</li><li><strong>GRPC</strong>：通过发送 POST 或 GET 请求来检查服务器应用是否健康。</li><li><strong>GRPCS</strong>：通过发送 POST 或 GET 请求来检查服务器应用是否健康。</li></ul>",
           "example": "HTTP",
           "member": "string",
           "name": "HealthCheckProtocol",
@@ -4628,7 +4628,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查模板名称。长度为 **1-255** 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。",
+          "document": "<p>健康检查模板名称。长度为 <strong>1-255</strong> 个字符，可包含数字、大小写字母、中文、半角句号（.）、下划线（_）和短划线（-）。</p>",
           "example": "lbtg-0zrnc9qa-template",
           "member": "string",
           "name": "HealthCheckTemplateName",
@@ -4637,7 +4637,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查的响应超时时间。单位：秒。\n取值范围：**2**-**60**。\n默认值：**2**。",
+          "document": "<p>健康检查的响应超时时间。单位：秒。<br>取值范围：<strong>2</strong>-<strong>60</strong>。<br>默认值：<strong>2</strong>。</p>",
           "example": "2",
           "member": "uint64",
           "name": "HealthCheckTimeout",
@@ -4646,21 +4646,12 @@
         },
         {
           "disabled": false,
-          "document": "判定后端服务不健康的阈值，当健康检查连续失败多少次后，后端服务的状态由**健康**变为**不健康**。\n取值范围：**2**-**10**。\n默认值：**2**。",
+          "document": "<p>判定后端服务不健康的阈值，当健康检查连续失败多少次后，后端服务的状态由<strong>健康</strong>变为<strong>不健康</strong>。<br>取值范围：<strong>2</strong>-<strong>10</strong>。<br>默认值：<strong>2</strong>。</p>",
           "example": "2",
           "member": "uint64",
           "name": "HealthCheckUnhealthyThreshold",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "标签。",
-          "example": "无",
-          "member": "TagInfo",
-          "name": "Tags",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
