@@ -1,10 +1,10 @@
-# Release 3.0.1455.1
+# Release 3.0.1456.1
 
 ## 腾讯云智能体开发平台(adp) 版本：2026-05-20
 
-### 第 4 次发布
+### 第 5 次发布
 
-发布时间：2026-07-16 01:07:43
+发布时间：2026-07-17 01:08:38
 
 本次发布包含了以下内容：
 
@@ -12,7 +12,13 @@
 
 修改接口：
 
-* [DeletePlugin](http://document.tencentcloudapi.woa.com/document/product/1815/91369)
+* [CreatePlugin](http://document.tencentcloudapi.woa.com/document/product/1815/91370)
+
+	* 新增入参：LoginUin, LoginSubAccountUin
+
+	* <font color="#dd0000">**修改入参**：</font>ToolList
+
+* [ModifyPlugin](http://document.tencentcloudapi.woa.com/document/product/1815/91365)
 
 	* 新增入参：LoginUin, LoginSubAccountUin
 
@@ -21,142 +27,28 @@
 
 ## Agent 沙箱服务(ags) 版本：2025-09-20
 
-### 第 17 次发布
-
-发布时间：2026-07-16 01:08:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAgent](http://document.tencentcloudapi.woa.com/document/product/1804/91754)
-
-	* 新增入参：DefaultEnvironmentTemplateId
-
-
-
-
-## 云原生智能网关(cngw) 版本：2023-04-18
-
-### 第 3 次发布
-
-发布时间：2026-07-16 01:15:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCloudNativeAPIGatewayLLMModelService](http://document.tencentcloudapi.woa.com/document/product/1817/90833)
-
-	* 新增入参：ModelRewriteRules, CustomProviderName, ExternalInstanceId, ExtParams, KeyRotationEnabled, KeyRotationPeriodDays
-
-* [CreateCloudNativeAPIGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1817/90842)
-
-	* 新增入参：JWTCredentialConfig, OAuthCredentialConfig, OIDCCredentialConfig
-
-* [ModifyCloudNativeAPIGatewayLLMModelService](http://document.tencentcloudapi.woa.com/document/product/1817/90829)
-
-	* 新增入参：ModelRewriteRules, ExternalInstanceId, ExtParams, KeyRotationEnabled, KeyRotationPeriodDays
-
-* [ModifyCloudNativeAPIGatewayMCPServerAuth](http://document.tencentcloudapi.woa.com/document/product/1817/90848)
-
-	* 新增入参：JWTAuthConfig, OAuthAuthConfig, OIDCAuthConfig
-
-
-新增数据结构：
-
-* [AIGWCacheAwareRouteCandidate](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWCacheAwareRouteCandidate)
-* [AIGWCacheAwareRouteConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWCacheAwareRouteConfig)
-* [AIGWJWTAuthPluginConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWJWTAuthPluginConfig)
-* [AIGWJWTCredentialConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWJWTCredentialConfig)
-* [AIGWLLMModelServiceSubRoute](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWLLMModelServiceSubRoute)
-* [AIGWModelRewriteRule](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWModelRewriteRule)
-* [AIGWOAuthAuthPluginConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWOAuthAuthPluginConfig)
-* [AIGWOAuthCredentialConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWOAuthCredentialConfig)
-* [AIGWOIDCAuthPluginConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWOIDCAuthPluginConfig)
-* [AIGWOIDCCredentialConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWOIDCCredentialConfig)
-* [AIGWRouteModelServiceConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWRouteModelServiceConfig)
-* [AIGWTokenLengthRoute](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWTokenLengthRoute)
-* [AIGWTokenLengthRouteRule](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWTokenLengthRouteRule)
-* [KeyValue](http://document.tencentcloudapi.woa.com/document/product/1817/90862#KeyValue)
-
-修改数据结构：
-
-* [AIGWLogConfig](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWLogConfig)
-
-	* 新增成员：RequestLogPayloadMode, ResponseLogPayloadMode
-
-* [AIGWMCPServerAuthResult](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWMCPServerAuthResult)
-
-	* 新增成员：JWTAuthConfig, OAuthAuthConfig, OIDCAuthConfig
-
-* [CNAPIGwSecretKey](http://document.tencentcloudapi.woa.com/document/product/1817/90862#CNAPIGwSecretKey)
-
-	* 新增成员：JWTCredentialConfig, OAuthCredentialConfig, OIDCCredentialConfig, Provider
-
-* [CloudNativeAPIGatewayLLMModelService](http://document.tencentcloudapi.woa.com/document/product/1817/90862#CloudNativeAPIGatewayLLMModelService)
-
-	* 新增成员：ModelRewriteRules, SourceId, Namespace, ServiceName, Protocol, ExtParams, CustomProviderName, KeyRotationEnabled, KeyRotationPeriodDays, ExternalInstanceId
-
-* [CloudNativeAPIGatewayLLMModelServiceRoute](http://document.tencentcloudapi.woa.com/document/product/1817/90862#CloudNativeAPIGatewayLLMModelServiceRoute)
-
-	* 新增成员：CacheAwareRouteConfig, TokenLengthRouteConfig
-
-
-
-
-## 暴露面管理服务(ctem) 版本：2023-11-28
-
-### 第 19 次发布
-
-发布时间：2026-07-16 01:16:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCustomer](http://document.tencentcloudapi.woa.com/document/product/1792/87469)
-
-	* 新增入参：ScanPriority
-
-* [CreateJobRecord](http://document.tencentcloudapi.woa.com/document/product/1792/87474)
-
-	* 新增入参：ScanPriority
-
-* [ModifyCustomer](http://document.tencentcloudapi.woa.com/document/product/1792/87463)
-
-	* 新增入参：ScanPriority
-
-
-新增数据结构：
-
-* [ScanPriorityDisplay](http://document.tencentcloudapi.woa.com/document/product/1792/87475#ScanPriorityDisplay)
-* [ScanPriorityReq](http://document.tencentcloudapi.woa.com/document/product/1792/87475#ScanPriorityReq)
-
-修改数据结构：
-
-* [Customer](http://document.tencentcloudapi.woa.com/document/product/1792/87475#Customer)
-
-	* 新增成员：ScanPriority
-
-* [DisplayLeakageCode](http://document.tencentcloudapi.woa.com/document/product/1792/87475#DisplayLeakageCode)
-
-	* 新增成员：RepoNamespace, RepoName, AuthorName
-
-
-
-
-## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
-
 ### 第 18 次发布
 
-发布时间：2026-07-16 01:18:57
+发布时间：2026-07-17 01:13:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VPCConfig](http://document.tencentcloudapi.woa.com/document/product/1804/87854#VPCConfig)
+
+	* 新增成员：VpcId, OwnerAppId, OwnerUin
+
+
+
+
+## 应用性能监控(apm) 版本：2021-06-22
+
+### 第 36 次发布
+
+发布时间：2026-07-17 01:15:01
 
 本次发布包含了以下内容：
 
@@ -164,41 +56,18 @@
 
 修改接口：
 
-* [ChatAI](http://document.tencentcloudapi.woa.com/document/product/1806/87993)
+* [CreateApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/65347)
 
-	* 新增入参：ArchVersion
-
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 167 次发布
-
-发布时间：2026-07-16 01:22:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateSealPolicy](http://document.tencentcloudapi.woa.com/document/product/1668/79305)
-
-	* 新增入参：AuthorizationFlows
-
-
-新增数据结构：
-
-* [SealPolicyAuthorizationFlows](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SealPolicyAuthorizationFlows)
+* [DescribeApmAgent](http://document.tencentcloudapi.woa.com/document/product/1463/64926)
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 234 次发布
+## 云联络中心(ccc) 版本：2020-02-10
 
-发布时间：2026-07-16 01:23:22
+### 第 96 次发布
+
+发布时间：2026-07-17 01:18:03
 
 本次发布包含了以下内容：
 
@@ -206,43 +75,18 @@
 
 修改接口：
 
-* [ModifyOrganizationBusinessInfo](http://document.tencentcloudapi.woa.com/document/product/1595/91772)
+* [CreateAutoCalloutTask](http://document.tencentcloudapi.woa.com/document/product/679/69194)
 
-	* 新增入参：NewLegalMobile
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 人脸核身(faceid) 版本：2018-03-01
-
-### 第 106 次发布
-
-发布时间：2026-07-16 01:23:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
-
-	* 新增入参：MetaData, SkipLaunchPage, SkipOcrConfirmPage, HideProgressBar, AllowUploadPhoto
-
-	* 新增出参：ServerParamInfo
+	* 新增入参：ConcurrencyLimit
 
 
 
 
-## 全球加速(ga2) 版本：2025-01-15
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 7 次发布
+### 第 102 次发布
 
-发布时间：2026-07-16 01:25:11
+发布时间：2026-07-17 01:19:42
 
 本次发布包含了以下内容：
 
@@ -250,17 +94,90 @@
 
 新增接口：
 
-* [CreateListenerAdditionalCert](http://document.tencentcloudapi.woa.com/document/product/1808/91779)
-* [DeleteListenerAdditionalCert](http://document.tencentcloudapi.woa.com/document/product/1808/91778)
-* [ReplaceListenerAdditionalCert](http://document.tencentcloudapi.woa.com/document/product/1808/91777)
+* [DescribeCfwAlerts](http://document.tencentcloudapi.woa.com/document/product/1132/91816)
+* [DescribeCfwAnalysisData](http://document.tencentcloudapi.woa.com/document/product/1132/91815)
+* [DescribeCfwAssets](http://document.tencentcloudapi.woa.com/document/product/1132/91814)
+* [DescribeCfwLogs](http://document.tencentcloudapi.woa.com/document/product/1132/91813)
+* [DescribeCfwRiskOverview](http://document.tencentcloudapi.woa.com/document/product/1132/91812)
+* [DescribeCfwRuleOptimization](http://document.tencentcloudapi.woa.com/document/product/1132/91811)
+* [DescribeCfwRules](http://document.tencentcloudapi.woa.com/document/product/1132/91810)
+* [DescribeCfwStatusMonitor](http://document.tencentcloudapi.woa.com/document/product/1132/91809)
+* [DescribeCfwSwitches](http://document.tencentcloudapi.woa.com/document/product/1132/91808)
+
+修改接口：
+
+* [AddAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81880)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [AddEnterpriseSecurityGroupRules](http://document.tencentcloudapi.woa.com/document/product/1132/64234)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [AddNatAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/77108)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [AddVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81879)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [CreateAlertCenterOmit](http://document.tencentcloudapi.woa.com/document/product/1132/82435)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [CreateBlockIgnoreRuleNew](http://document.tencentcloudapi.woa.com/document/product/1132/83374)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [DeleteBlockIgnoreRuleNew](http://document.tencentcloudapi.woa.com/document/product/1132/83373)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [ModifyAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81876)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [ModifyEnterpriseSecurityGroupRule](http://document.tencentcloudapi.woa.com/document/product/1132/77119)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [ModifyNatAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/77106)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [ModifyVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81875)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [RemoveAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81871)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [RemoveEnterpriseSecurityGroupRule](http://document.tencentcloudapi.woa.com/document/product/1132/64232)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [RemoveNatAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/77105)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+* [RemoveVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81870)
+
+	* 新增入参：CfwAiAgentOperationSource
+
+
+新增数据结构：
+
+* [CfwStatusMonitorFilter](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwStatusMonitorFilter)
 
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
 
-### 第 90 次发布
+### 第 91 次发布
 
-发布时间：2026-07-16 01:29:53
+发布时间：2026-07-17 01:35:17
 
 本次发布包含了以下内容：
 
@@ -268,53 +185,9 @@
 
 新增接口：
 
-* [BindTWeTalkAgent](http://document.tencentcloudapi.woa.com/document/product/1081/91787)
-* [CreateTWeTalkAgent](http://document.tencentcloudapi.woa.com/document/product/1081/91786)
-* [DeleteTWeTalkAgent](http://document.tencentcloudapi.woa.com/document/product/1081/91785)
-* [DescribeTWeTalkAgent](http://document.tencentcloudapi.woa.com/document/product/1081/91784)
-* [DescribeTWeTalkAgentBinding](http://document.tencentcloudapi.woa.com/document/product/1081/91783)
-* [DescribeTWeTalkAgentList](http://document.tencentcloudapi.woa.com/document/product/1081/91782)
-* [ModifyTWeTalkAgent](http://document.tencentcloudapi.woa.com/document/product/1081/91781)
-* [UnbindTWeTalkAgent](http://document.tencentcloudapi.woa.com/document/product/1081/91780)
-
-新增数据结构：
-
-* [TalkAgentBinding](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkAgentBinding)
-* [TalkAgentInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkAgentInfo)
-* [TalkConversationConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkConversationConfig)
-* [TalkIOTTool](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkIOTTool)
-* [TalkLLMConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkLLMConfig)
-* [TalkMemoryConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkMemoryConfig)
-* [TalkSTTConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkSTTConfig)
-* [TalkSTTTRTC](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkSTTTRTC)
-* [TalkTTSConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkTTSConfig)
-* [TalkTTSFlow](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkTTSFlow)
-* [TalkWebhookAuth](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkWebhookAuth)
-* [TalkWebhookEndpoint](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkWebhookEndpoint)
-* [TalkWebhookTool](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkWebhookTool)
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 62 次发布
-
-发布时间：2026-07-16 01:34:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DeleteAccountUser](http://document.tencentcloudapi.woa.com/document/product/240/77441)
-
-	* <font color="#dd0000">**修改入参**：</font>MongoUserPassword
-
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+* [BindUserDevice](http://document.tencentcloudapi.woa.com/document/product/1081/91819)
+* [CallDeviceRRPCSync](http://document.tencentcloudapi.woa.com/document/product/1081/91818)
+* [RevokeBindUserDevice](http://document.tencentcloudapi.woa.com/document/product/1081/91817)
 
 
 
@@ -324,9 +197,9 @@
 
 ## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 131 次发布
+### 第 132 次发布
 
-发布时间：2026-07-16 01:34:29
+发布时间：2026-07-17 01:39:17
 
 本次发布包含了以下内容：
 
@@ -334,34 +207,29 @@
 
 修改接口：
 
-* [GetMonitorDataInternal](http://document.tencentcloudapi.woa.com/document/product/248/82333)
+* [DescribePrometheusAlertGroups](http://document.tencentcloudapi.woa.com/document/product/248/82927)
 
-	* 新增入参：SpecifyStatistics
-
-
+	* 新增入参：Labels
 
 
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
-### 第 85 次发布
 
-发布时间：2026-07-16 01:35:42
+## TokenHub(tokenhub) 版本：2026-03-22
+
+### 第 14 次发布
+
+发布时间：2026-07-17 01:48:15
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [CreateOceanusCluster](http://document.tencentcloudapi.woa.com/document/product/849/91791)
-* [DeleteOceanusCluster](http://document.tencentcloudapi.woa.com/document/product/849/91790)
-* [RenewOceanusCluster](http://document.tencentcloudapi.woa.com/document/product/849/91789)
-* [ScaleOceanusCluster](http://document.tencentcloudapi.woa.com/document/product/849/91788)
+* [CreateTokenPlanTeamOrderAndBuy](http://document.tencentcloudapi.woa.com/document/product/1814/90413)
 
-新增数据结构：
+	* 新增入参：TeamId
 
-* [SlaveVpcDescriptions](http://document.tencentcloudapi.woa.com/document/product/849/52010#SlaveVpcDescriptions)
-* [VPCDescription](http://document.tencentcloudapi.woa.com/document/product/849/52010#VPCDescription)
 
 
 

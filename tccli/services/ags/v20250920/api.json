@@ -5190,7 +5190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC子网ID列表",
+          "document": "<p>VPC子网ID列表</p>",
           "example": "[\"subnet-012abcde\", \"subnet-012edcba\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -5201,13 +5201,46 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID列表",
+          "document": "<p>安全组ID列表</p>",
           "example": "[\"sg-abcde012\", \"sg-210edcba\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC ID（CROSS_TENANT_VPC 模式必填）</p>",
+          "example": "vpc-0123abcd",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨租户 VPC 资源归属 AppId（CROSS_TENANT_VPC 模式必填）</p>",
+          "example": "1234567890",
+          "member": "int64",
+          "name": "OwnerAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨租户 VPC 资源归属 UIN（CROSS_TENANT_VPC 模式必填）</p>",
+          "example": "100098765432",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -6297,7 +6297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cluster id",
+          "document": "<p>cluster id</p>",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -6306,7 +6306,7 @@
         },
         {
           "disabled": false,
-          "document": "AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440",
+          "document": "<p>AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440</p>",
           "example": "参考 https://cloud.tencent.com/document/product/377/20440",
           "member": "string",
           "name": "AutoScalingGroupPara",
@@ -6315,7 +6315,7 @@
         },
         {
           "disabled": false,
-          "document": "LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447",
+          "document": "<p>LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447</p>",
           "example": "参考 https://cloud.tencent.com/document/product/377/20447",
           "member": "string",
           "name": "LaunchConfigurePara",
@@ -6324,7 +6324,7 @@
         },
         {
           "disabled": false,
-          "document": "InstanceAdvancedSettings",
+          "document": "<p>InstanceAdvancedSettings</p>",
           "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
@@ -6333,7 +6333,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用自动伸缩",
+          "document": "<p>是否启用自动伸缩</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableAutoscale",
@@ -6342,7 +6342,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称",
+          "document": "<p>节点池名称</p>",
           "example": "测试集群",
           "member": "string",
           "name": "Name",
@@ -6351,7 +6351,7 @@
         },
         {
           "disabled": false,
-          "document": "Labels标签",
+          "document": "<p>Labels标签</p>",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -6360,7 +6360,7 @@
         },
         {
           "disabled": false,
-          "document": "Taints互斥",
+          "document": "<p>Taints互斥</p>",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -6369,7 +6369,7 @@
         },
         {
           "disabled": false,
-          "document": "节点Annotation 列表",
+          "document": "<p>节点Annotation 列表</p>",
           "example": "无",
           "member": "AnnotationValue",
           "name": "Annotations",
@@ -6378,7 +6378,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池纬度运行时类型及版本",
+          "document": "<p>节点池纬度运行时类型及版本</p>",
           "example": "docker",
           "member": "string",
           "name": "ContainerRuntime",
@@ -6387,7 +6387,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时版本",
+          "document": "<p>运行时版本</p>",
           "example": "18.06",
           "member": "string",
           "name": "RuntimeVersion",
@@ -6396,7 +6396,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName",
+          "document": "<p>节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName</p>",
           "example": "ubuntu18.04.1x86_64",
           "member": "string",
           "name": "NodePoolOs",
@@ -6405,7 +6405,7 @@
         },
         {
           "disabled": false,
-          "document": "容器的镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)",
+          "document": "<p>容器的镜像版本，&quot;DOCKER_CUSTOMIZE&quot;(容器定制版),&quot;GENERAL&quot;(普通版本，默认值)</p>",
           "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
@@ -6414,7 +6414,7 @@
         },
         {
           "disabled": false,
-          "document": "资源标签",
+          "document": "<p>资源标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -6423,7 +6423,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关",
+          "document": "<p>删除保护开关</p>",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -6438,7 +6438,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池id",
+          "document": "<p>节点池id</p>",
           "example": "np-e55paxnt",
           "member": "string",
           "name": "NodePoolId",
@@ -23986,7 +23986,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -23995,7 +23995,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池ID",
+          "document": "<p>节点池ID</p>",
           "example": "np-e55paxnt",
           "member": "string",
           "name": "NodePoolId",
@@ -24004,7 +24004,7 @@
         },
         {
           "disabled": false,
-          "document": "名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾",
+          "document": "<p>名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾</p>",
           "example": "node-pool",
           "member": "string",
           "name": "Name",
@@ -24013,7 +24013,7 @@
         },
         {
           "disabled": false,
-          "document": "最大节点数",
+          "document": "<p>最大节点数</p>",
           "example": "100",
           "member": "int64",
           "name": "MaxNodesNum",
@@ -24022,7 +24022,7 @@
         },
         {
           "disabled": false,
-          "document": "最小节点数",
+          "document": "<p>最小节点数</p>",
           "example": "1",
           "member": "int64",
           "name": "MinNodesNum",
@@ -24031,7 +24031,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -24040,7 +24040,7 @@
         },
         {
           "disabled": false,
-          "document": "污点",
+          "document": "<p>污点</p>",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -24049,7 +24049,7 @@
         },
         {
           "disabled": false,
-          "document": "节点 Annotation 列表",
+          "document": "<p>节点 Annotation 列表</p>",
           "example": "无",
           "member": "AnnotationValue",
           "name": "Annotations",
@@ -24058,7 +24058,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启伸缩",
+          "document": "<p>是否开启伸缩</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableAutoscale",
@@ -24067,7 +24067,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统名称",
+          "document": "<p>操作系统名称</p>",
           "example": "ubuntu18.04.1x86_64",
           "member": "string",
           "name": "OsName",
@@ -24076,7 +24076,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)",
+          "document": "<p>镜像版本，&quot;DOCKER_CUSTOMIZE&quot;(容器定制版),&quot;GENERAL&quot;(普通版本，默认值)</p>",
           "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
@@ -24085,7 +24085,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性",
+          "document": "<p>GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性</p>",
           "example": "无",
           "member": "GPUArgs",
           "name": "GPUArgs",
@@ -24094,7 +24094,7 @@
         },
         {
           "disabled": false,
-          "document": "base64编码后的自定义脚本",
+          "document": "<p>base64编码后的自定义脚本</p>",
           "example": "dG91Y2ggL3RtcC9oZWxsbwo=",
           "member": "string",
           "name": "UserScript",
@@ -24103,7 +24103,7 @@
         },
         {
           "disabled": false,
-          "document": "更新label和taint时忽略存量节点",
+          "document": "<p>更新label和taint时忽略存量节点</p>",
           "example": "true",
           "member": "bool",
           "name": "IgnoreExistedNode",
@@ -24112,7 +24112,7 @@
         },
         {
           "disabled": false,
-          "document": "节点自定义参数",
+          "document": "<p>节点自定义参数</p>",
           "example": "无",
           "member": "InstanceExtraArgs",
           "name": "ExtraArgs",
@@ -24121,7 +24121,7 @@
         },
         {
           "disabled": false,
-          "document": "资源标签",
+          "document": "<p>资源标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -24130,7 +24130,7 @@
         },
         {
           "disabled": false,
-          "document": "设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.",
+          "document": "<p>设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.</p>",
           "example": "0",
           "member": "int64",
           "name": "Unschedulable",
@@ -24139,7 +24139,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关",
+          "document": "<p>删除保护开关</p>",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -24148,7 +24148,7 @@
         },
         {
           "disabled": false,
-          "document": "dockerd --graph 指定值, 默认为 /var/lib/docker",
+          "document": "<p>dockerd --graph 指定值, 默认为 /var/lib/docker</p>",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "DockerGraphPath",
@@ -24157,7 +24157,7 @@
         },
         {
           "disabled": false,
-          "document": "base64编码后的自定义脚本",
+          "document": "<p>base64编码后的自定义脚本</p>",
           "example": "dG91Y2ggL3RtcC9iZWZvcmU=",
           "member": "string",
           "name": "PreStartUserScript",
@@ -24509,7 +24509,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-abcd1234",
           "member": "string",
           "name": "ClusterId",
@@ -24518,7 +24518,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池ID",
+          "document": "<p>节点池ID</p>",
           "example": "np-abcd1234",
           "member": "string",
           "name": "NodePoolId",
@@ -24527,7 +24527,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称",
+          "document": "<p>节点池名称</p>",
           "example": "注册节点池",
           "member": "string",
           "name": "Name",
@@ -24536,7 +24536,7 @@
         },
         {
           "disabled": false,
-          "document": "注册节点标签",
+          "document": "<p>注册节点标签</p>",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -24545,7 +24545,7 @@
         },
         {
           "disabled": false,
-          "document": "注册节点污点",
+          "document": "<p>注册节点污点</p>",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -24554,7 +24554,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关",
+          "document": "<p>删除保护开关</p>",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -24563,7 +24563,7 @@
         },
         {
           "disabled": false,
-          "document": "base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看",
+          "document": "<p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>",
           "example": "IyEvYmluL3NoIAplY2hvICJoZWxsbyB3b3JsZCI=",
           "member": "string",
           "name": "UserScript",
@@ -32839,7 +32839,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）",
+          "document": "<p>集群ID（请登录 <a href=\"https://console.cloud.tencent.com/tke2\">TKE 控制台</a> 获取集群 ID ）</p>",
           "example": "cls-1cghhuuu",
           "member": "string",
           "name": "ClusterId",
@@ -32848,7 +32848,7 @@
         },
         {
           "disabled": false,
-          "document": "create 表示开始一次升级任务\npause 表示停止任务\nresume表示继续任务\nabort表示终止任务",
+          "document": "<p>create 表示开始一次升级任务<br>pause 表示停止任务<br>resume表示继续任务<br>abort表示终止任务</p>",
           "example": "create",
           "member": "string",
           "name": "Operation",
@@ -32857,7 +32857,7 @@
         },
         {
           "disabled": false,
-          "document": "升级类型，只有Operation是create需要设置\nreset 大版本重装升级\nhot 小版本热升级\nmajor 大版本原地升级",
+          "document": "<p>升级类型，只有Operation是create需要设置<br>reset 大版本重装升级<br>hot 小版本热升级<br>major 大版本原地升级</p>",
           "example": "reset",
           "member": "string",
           "name": "UpgradeType",
@@ -32866,7 +32866,7 @@
         },
         {
           "disabled": false,
-          "document": "需要升级的节点列表，可以通过控制台或 [查询待升级节点接口\n](https://cloud.tencent.com/document/api/457/50366) 获取",
+          "document": "<p>需要升级的节点列表，可以通过控制台或 <a href=\"https://cloud.tencent.com/document/api/457/50366\">查询待升级节点接口</a> 获取</p>",
           "example": "[\"ins-1cghhuuu\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -32875,7 +32875,7 @@
         },
         {
           "disabled": false,
-          "document": "当节点重新加入集群时候所使用的参数，参考添加已有节点接口",
+          "document": "<p>当节点重新加入集群时候所使用的参数，参考添加已有节点接口</p>",
           "example": "无",
           "member": "UpgradeNodeResetParam",
           "name": "ResetParam",
@@ -32884,7 +32884,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略节点升级前检查，默认值 false",
+          "document": "<p>是否忽略节点升级前检查，默认值 false</p>",
           "example": "false",
           "member": "bool",
           "name": "SkipPreCheck",
@@ -32893,8 +32893,8 @@
         },
         {
           "disabled": false,
-          "document": "最大可容忍的不可用Pod比例，如果设置 0 表示不做校验",
-          "example": "0.90",
+          "document": "<p>最大可容忍的不可用Pod百分比，如果设置 0 表示不做校验</p><p>取值范围：[0, 100]</p><p>默认值：20</p>",
+          "example": "20",
           "member": "float",
           "name": "MaxNotReadyPercent",
           "required": false,
@@ -32902,7 +32902,7 @@
         },
         {
           "disabled": false,
-          "document": "是否升级节点运行时，默认false不升级",
+          "document": "<p>是否升级节点运行时，默认false不升级</p>",
           "example": "false",
           "member": "bool",
           "name": "UpgradeRunTime",
@@ -32911,7 +32911,7 @@
         },
         {
           "disabled": false,
-          "document": "支持多个节点并行升级，默认值为 1，最大并行数为15",
+          "document": "<p>支持多个节点并行升级，默认值为 1，最大并行数为15</p>",
           "example": "1",
           "member": "int64",
           "name": "Concurrent",

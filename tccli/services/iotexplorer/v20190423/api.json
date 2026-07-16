@@ -70,6 +70,13 @@
       "output": "BindTWeTalkAgentResponse",
       "status": "online"
     },
+    "BindUserDevice": {
+      "document": "1. 按 `(IotAppID, OpenID)` 兜底创建 / 复用 app 端用户；\n2. 按 `(用户, FamilyName)` 兜底创建 / 复用默认家庭；\n3. 将设备直接绑定到该家庭（已绑同家庭视为成功，并继续异步下发 `bind_device` 消息）。",
+      "input": "BindUserDeviceRequest",
+      "name": "用户绑定设备",
+      "output": "BindUserDeviceResponse",
+      "status": "online"
+    },
     "CallDeviceActionAsync": {
       "document": "提供给用户异步调用设备行为的能力",
       "input": "CallDeviceActionAsyncRequest",
@@ -82,6 +89,13 @@
       "input": "CallDeviceActionSyncRequest",
       "name": "同步调用设备行为",
       "output": "CallDeviceActionSyncResponse",
+      "status": "online"
+    },
+    "CallDeviceRRPCSync": {
+      "document": "平台向设备发起一次同步 RRPC（Reverse RPC）调用——下行下发请求，同步阻塞等待设备回包，超时未回则返回 Timeout。\n\n适用场景：\n\n默认模式：使用平台保留 topic $iotrrpc/down 和 $iotrrpc/up。\n自定义模式：业务自带下行 topic；Reply topic 可选 —— 不传时平台仅依赖 clientToken 关联上行 ack。\n\n\n\n## 设备侧实现指引\n\n### 默认模式\n\n1. 订阅 `$iotrrpc/down/{ProductId}/{DeviceName}/+`；\n2. 收到下行后，从 topic 末段解析 `{mid}`；\n3. 向 `$iotrrpc/up/{ProductId}/{DeviceName}/{mid}` 发送回包，**payload 任意字节**（推荐 JSON）。\n\n### 自定义模式\n\n1. 订阅业务 `Topic`；\n2. 解析 payload JSON，**保留 `clientToken` 字段**；\n3. 处理业务后，构造 envelope JSON：\n\n   ```json\n   {\n     \"method\": \"rrpc_sync_reply\",\n     \"clientToken\": \"<原样回填>\",\n     \"payload\": \"<base64 of 业务字节>\"\n   }\n   ```\n\n4. publish 到与平台 `ReplyTopic` 通配符匹配的具体 topic（推荐使用与下行同 topic）。\n\n> ⚠️ `clientToken` **必填且必须原样回填**，否则平台无法关联，调用方将收到 `Status=Timeout`。\n> ⚠️ `method` 必须为 `rrpc_sync_reply`，否则会直接 skip。",
+      "input": "CallDeviceRRPCSyncRequest",
+      "name": "平台向设备发起同步 RRPC请求",
+      "output": "CallDeviceRRPCSyncResponse",
       "status": "online"
     },
     "ChangeP2PRoute": {
@@ -1561,6 +1575,13 @@
       "output": "ResumeWeCallDeviceResponse",
       "status": "online"
     },
+    "RevokeBindUserDevice": {
+      "document": "1. 按 `(IotAppID, OpenID)` 只读定位用户（不存在视为已解绑，幂等成功）；\n2. 按 `(用户, FamilyName)` 只读定位家庭（不存在视为已解绑，幂等成功）；\n3. 解除设备与该家庭的绑定关系，异步下发 `delete_device` 消息；解绑路径不校验设备存在性，允许设备已删除时清理残留绑定关系。",
+      "input": "RevokeBindUserDeviceRequest",
+      "name": "用户解绑设备",
+      "output": "RevokeBindUserDeviceResponse",
+      "status": "online"
+    },
     "SearchPositionSpace": {
       "document": "搜索位置空间",
       "input": "SearchPositionSpaceRequest",
@@ -2749,6 +2770,107 @@
       ],
       "type": "object"
     },
+    "BindUserDeviceRequest": {
+      "document": "BindUserDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 AppKey，用于解析 IotAppID 并完成签名校验</p>",
+          "example": "afpMLiFlGYThFpvJe",
+          "member": "string",
+          "name": "AppKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品 ID</p>",
+          "example": "N5DBOST040",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名（禁止使用虚拟设备名 ~virtualDev）</p>",
+          "example": "nandy_dev2",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 OpenID，用于定位 / 兜底创建 App 用户</p>",
+          "example": "nandy",
+          "member": "string",
+          "name": "OpenID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>家庭名，默认 default</p>",
+          "example": "my-family",
+          "member": "string",
+          "name": "FamilyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间 ID，默认 &quot;0&quot;</p>",
+          "example": "1",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户昵称（仅首次创建用户时使用）</p>",
+          "example": "nandy",
+          "member": "string",
+          "name": "NickName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindUserDeviceResponse": {
+      "document": "BindUserDevice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户 UserID（已存在则复用）</p>",
+          "example": "195155279497658759",
+          "member": "string",
+          "name": "UserID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>家庭 ID（已存在则复用）</p>",
+          "example": "f_d1592a6eaf174153a9415e9710d2aff1",
+          "member": "string",
+          "name": "FamilyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CallDeviceActionAsyncRequest": {
       "document": "CallDeviceActionAsync请求参数结构体",
       "members": [
@@ -2895,6 +3017,137 @@
           "member": "string",
           "name": "Status",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CallDeviceRRPCSyncRequest": {
+      "document": "CallDeviceRRPCSync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品 ID</p>",
+          "example": "N5DBOST040",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名</p>",
+          "example": "nandy_dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务原始 payload，透传给设备</p>",
+          "example": "{\"a\":\"b\"}",
+          "member": "string",
+          "name": "Payload",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>下行传输层编码标识；base64 时下发到 broker 的 payload 会做一次 base64 编码</p>",
+          "example": "base64",
+          "member": "string",
+          "name": "Encoding",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义下行 topic；为空则用 <code>$iotrrpc/down/{ProductId}/{DeviceName}/{mid}</code></p>",
+          "example": "N5DBOST040/nandy_dev1/evc/param/a",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义上行 topic 模板（支持通配符）；可留空，留空时仅依赖 clientToken 关联 ack</p>",
+          "example": "N5DBOST040/nandy_dev1/evc/param/a",
+          "member": "string",
+          "name": "ReplyTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端默认 5s；上限 5s</p>",
+          "example": "5000",
+          "member": "string",
+          "name": "TimeoutMs",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CallDeviceRRPCSyncResponse": {
+      "document": "CallDeviceRRPCSync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台为本次调用分配的关联 token（v2{instanceId}::{reqId} 形式）</p>",
+          "example": "v221.90.233.213aHiQo::1d17f100-cc9e-4458-8199-f22ba6d4ae14",
+          "member": "string",
+          "name": "ClientToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用状态</p>",
+          "example": "Replied",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台分配的 messageID</p>",
+          "example": "52",
+          "member": "uint64",
+          "name": "MessageId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备回包原始字节的 base64 编码（仅 Status=Replied 有值）</p>",
+          "example": "eyJyc3AiOiJvayJ9",
+          "member": "string",
+          "name": "PayloadBase64",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实际生效的 reply topic 模板（默认模式由平台生成，自定义模式为入参原值）</p>",
+          "example": "$iotrrpc/up/N5DBOST040/nandy_dev1/52",
+          "member": "string",
+          "name": "ReplyTopic",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22495,6 +22748,69 @@
     },
     "ResumeWeCallDeviceResponse": {
       "document": "ResumeWeCallDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeBindUserDeviceRequest": {
+      "document": "RevokeBindUserDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 AppKey，用于解析 IotAppID 并完成签名校验</p>",
+          "example": "afpMLiFlGYThFpvJe",
+          "member": "string",
+          "name": "AppKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品 ID</p>",
+          "example": "N5DBOST040",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名</p>",
+          "example": "nandy_dev3",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 OpenID（仅只读定位，不会创建）</p>",
+          "example": "nandy",
+          "member": "string",
+          "name": "OpenID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>家庭名，默认 default</p>",
+          "example": "default",
+          "member": "string",
+          "name": "FamilyName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeBindUserDeviceResponse": {
+      "document": "RevokeBindUserDevice返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

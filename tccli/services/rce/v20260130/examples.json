@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "AssessEnvironmentRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssessEnvironmentRisk\n<公共请求参数>\n\n{\n    \"UserIp\": \"100.*****.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Environment\": {\n                \"Location\": {\n                    \"City\": \"Guarapari\",\n                    \"Country\": \"BR\",\n                    \"District\": \"Todos os Santos\",\n                    \"Latitude\": \"***.***136\",\n                    \"Longitude\": \"***.**36\",\n                    \"Region\": \"Espírito Santo\",\n                    \"Timezone\": \"UTC-3\",\n                    \"ZipCode\": \"29200-080\"\n                },\n                \"Network\": {\n                    \"ASN\": \"Telefonica\",\n                    \"ISP\": \"18881\",\n                    \"IsAnycast\": false,\n                    \"IsCloudService\": false,\n                    \"IsCompany\": false,\n                    \"IsDNS\": false,\n                    \"IsDynamic\": false,\n                    \"IsEducation\": false,\n                    \"IsEgress\": false,\n                    \"IsGateway\": false,\n                    \"IsInfrastructure\": false,\n                    \"IsInstitution\": false,\n                    \"IsMXServer\": false,\n                    \"IsMobile\": false,\n                    \"IsReserved\": false,\n                    \"IsResidence\": false,\n                    \"Organization\": \"Telefonica\"\n                }\n            },\n            \"Score\": {\n                \"RiskLabels\": [\n                    {\n                        \"Id\": \"201003\",\n                        \"Reason\": \"Proxy\"\n                    },\n                    {\n                        \"Id\": \"201004\",\n                        \"Reason\": \"Scanning Activity\"\n                    }\n                ],\n                \"RiskLevel\": 4\n            }\n        },\n        \"RequestId\": \"099c98e6-0a70-41f5-a68d-54e57ee9e534\"\n    }\n}",
+        "title": "环境风险评估示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

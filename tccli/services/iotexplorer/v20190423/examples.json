@@ -92,6 +92,14 @@
         "title": "绑定设备"
       }
     ],
+    "BindUserDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindUserDevice\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev2\",\n    \"OpenID\": \"nandy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FamilyId\": \"f_d1592a6eaf174153a9415e9710d2aff1\",\n        \"UserID\": \"195155279497658759\",\n        \"RequestId\": \"28142019-ee85-4e6a-9beb-8691e646b61b\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "CallDeviceActionAsync": [
       {
         "document": "异步调用设备行为，返回调用 Id 信息。",
@@ -118,6 +126,20 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClientToken\": \"\",\n        \"OutputParams\": \"\",\n        \"RequestId\": \"b2621fc1-d6d9-4929-af0b-3fb0e919658a\",\n        \"Status\": \"FailedOperation.ActionUnreachable|动作消息不可达\"\n    }\n}",
         "title": "同步调用设备行为，设备不在线。"
+      }
+    ],
+    "CallDeviceRRPCSync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceRRPCSync\n<公共请求参数>\n\n{\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev1\",\n    \"Payload\": \"{\\\"a\\\":\\\"b\\\"}\",\n    \"Topic\": \"N5DBOST040/nandy_dev1/evc/param/a\",\n    \"TimeoutMs\": \"5000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientToken\": \"v221.215.133.103MEjCE::79afc8bc-12bf-429b-a48d-e8596c4e918a\",\n        \"MessageId\": 54,\n        \"PayloadBase64\": \"eyJyc3AiOiJvayJ9\",\n        \"ReplyTopic\": \"\",\n        \"Status\": \"Replied\",\n        \"RequestId\": \"79afc8bc-12bf-429b-a48d-e8596c4e918a\"\n    }\n}",
+        "title": "自定义topic模式"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceRRPCSync\n<公共请求参数>\n\n{\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev1\",\n    \"Payload\": \"{\\\"a\\\":\\\"b\\\"}\",\n    \"TimeoutMs\": \"5000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientToken\": \"v221.90.233.213aHiQo::1d17f100-cc9e-4458-8199-f22ba6d4ae14\",\n        \"MessageId\": 52,\n        \"PayloadBase64\": \"eyJyc3AiOiJvayJ9\",\n        \"ReplyTopic\": \"$iotrrpc/up/N5DBOST040/nandy_dev1/52\",\n        \"Status\": \"Replied\",\n        \"RequestId\": \"1d17f100-cc9e-4458-8199-f22ba6d4ae14\"\n    }\n}",
+        "title": "默认topic模式"
       }
     ],
     "ChangeP2PRoute": [
@@ -2130,6 +2152,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeWeCallDevice\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        {\n            \"Sn\": \"productId_deviceName\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234ewfag\"\n    }\n}",
         "title": "恢复设备"
+      }
+    ],
+    "RevokeBindUserDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeBindUserDevice\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev3\",\n    \"OpenID\": \"nandy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8623e21-1d07-41e5-badf-5a279e1bc45b\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "SearchPositionSpace": [
