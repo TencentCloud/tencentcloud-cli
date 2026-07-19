@@ -974,7 +974,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CSR Id标识",
+          "document": "<p>CSR Id标识</p>",
           "example": "178833",
           "member": "int64",
           "name": "Id",
@@ -984,7 +984,7 @@
         },
         {
           "disabled": false,
-          "document": "账号",
+          "document": "<p>账号</p>",
           "example": "18384783",
           "member": "string",
           "name": "OwnerUin",
@@ -994,7 +994,7 @@
         },
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "www.****.com",
           "member": "string",
           "name": "Domain",
@@ -1004,7 +1004,7 @@
         },
         {
           "disabled": false,
-          "document": "企业/单位名称",
+          "document": "<p>企业/单位名称</p>",
           "example": "Tencent",
           "member": "string",
           "name": "Organization",
@@ -1014,7 +1014,7 @@
         },
         {
           "disabled": false,
-          "document": "部门",
+          "document": "<p>部门</p>",
           "example": "It",
           "member": "string",
           "name": "Department",
@@ -1024,7 +1024,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱",
+          "document": "<p>邮箱</p>",
           "example": "hj***@qq.com",
           "member": "string",
           "name": "Email",
@@ -1034,7 +1034,7 @@
         },
         {
           "disabled": false,
-          "document": "省份",
+          "document": "<p>省份</p>",
           "example": "Guangdong",
           "member": "string",
           "name": "Province",
@@ -1044,7 +1044,7 @@
         },
         {
           "disabled": false,
-          "document": "城市",
+          "document": "<p>城市</p>",
           "example": "Shenzhen",
           "member": "string",
           "name": "City",
@@ -1054,7 +1054,7 @@
         },
         {
           "disabled": false,
-          "document": "国家",
+          "document": "<p>国家</p>",
           "example": "China",
           "member": "string",
           "name": "Country",
@@ -1064,7 +1064,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "hello",
           "member": "string",
           "name": "Remarks",
@@ -1074,7 +1074,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1084,7 +1084,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -1094,7 +1094,7 @@
         },
         {
           "disabled": false,
-          "document": "算法",
+          "document": "<p>算法</p>",
           "example": "RSA",
           "member": "string",
           "name": "EncryptAlgo",
@@ -1104,7 +1104,7 @@
         },
         {
           "disabled": false,
-          "document": "算法参数",
+          "document": "<p>算法参数</p>",
           "example": "2048",
           "member": "string",
           "name": "KeyParameter",
@@ -1114,10 +1114,20 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SAN域名</p>",
+          "example": "[\"a.zrhh.com\"]",
+          "member": "string",
+          "name": "SubjectAltName",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3249,7 +3259,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "www.***.com",
           "member": "string",
           "name": "Domain",
@@ -3258,7 +3268,7 @@
         },
         {
           "disabled": false,
-          "document": "企业/单位名称",
+          "document": "<p>企业/单位名称</p>",
           "example": "Huawei",
           "member": "string",
           "name": "Organization",
@@ -3267,7 +3277,7 @@
         },
         {
           "disabled": false,
-          "document": "部门",
+          "document": "<p>部门</p>",
           "example": "IT",
           "member": "string",
           "name": "Department",
@@ -3276,7 +3286,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱",
+          "document": "<p>邮箱</p>",
           "example": "hhh@qq.com",
           "member": "string",
           "name": "Email",
@@ -3285,7 +3295,7 @@
         },
         {
           "disabled": false,
-          "document": "省份",
+          "document": "<p>省份</p>",
           "example": "Hunan",
           "member": "string",
           "name": "Province",
@@ -3294,7 +3304,7 @@
         },
         {
           "disabled": false,
-          "document": "城市",
+          "document": "<p>城市</p>",
           "example": "Changsha",
           "member": "string",
           "name": "City",
@@ -3303,7 +3313,7 @@
         },
         {
           "disabled": false,
-          "document": "符合ISO 3166 标准的国家或地域代码。如:CN、US",
+          "document": "<p>符合ISO 3166 标准的国家或地域代码。如:CN、US</p>",
           "example": "China",
           "member": "string",
           "name": "Country",
@@ -3312,7 +3322,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法，支持 RSA及ECC。\t",
+          "document": "<p>加密算法，支持 RSA及ECC。</p>",
           "example": "RSA",
           "member": "string",
           "name": "EncryptAlgo",
@@ -3321,7 +3331,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥参数，RSA仅支持2048，4096。ECC仅支持prime256v1",
+          "document": "<p>密钥参数，RSA仅支持2048，4096。ECC仅支持prime256v1</p>",
           "example": "2048",
           "member": "string",
           "name": "KeyParameter",
@@ -3330,7 +3340,7 @@
         },
         {
           "disabled": false,
-          "document": "是否生成CSR内容。生成CSR内容后，此CSR记录不再支持修改",
+          "document": "<p>是否生成CSR内容。生成CSR内容后，此CSR记录不再支持修改</p>",
           "example": "true",
           "member": "bool",
           "name": "Generate",
@@ -3339,7 +3349,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥密码",
+          "document": "<p>私钥密码</p>",
           "example": "hey**hsh",
           "member": "string",
           "name": "KeyPassword",
@@ -3348,7 +3358,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "hello",
           "member": "string",
           "name": "Remark",
@@ -3357,10 +3367,19 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SAN域名</p>",
+          "example": "[\"zrhh.com\"]",
+          "member": "string",
+          "name": "SubjectAltName",
           "required": false,
           "type": "list"
         }
@@ -3372,7 +3391,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CSR ID标识",
+          "document": "<p>CSR ID标识</p>",
           "example": "746378",
           "member": "int64",
           "name": "Id",
@@ -4952,7 +4971,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CSR ID标识",
+          "document": "<p>CSR ID标识</p>",
           "example": "17993",
           "member": "int64",
           "name": "CSRId",
@@ -4967,7 +4986,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CSR Id标识",
+          "document": "<p>CSR Id标识</p>",
           "example": "17993",
           "member": "int64",
           "name": "Id",
@@ -4977,7 +4996,7 @@
         },
         {
           "disabled": false,
-          "document": "账号",
+          "document": "<p>账号</p>",
           "example": "100017155920",
           "member": "string",
           "name": "OwnerUin",
@@ -4987,7 +5006,7 @@
         },
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "www.***.com",
           "member": "string",
           "name": "Domain",
@@ -4997,7 +5016,7 @@
         },
         {
           "disabled": false,
-          "document": "企业/单位名称",
+          "document": "<p>企业/单位名称</p>",
           "example": "Tencent",
           "member": "string",
           "name": "Organization",
@@ -5007,7 +5026,7 @@
         },
         {
           "disabled": false,
-          "document": "部门",
+          "document": "<p>部门</p>",
           "example": "It",
           "member": "string",
           "name": "Department",
@@ -5017,7 +5036,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱",
+          "document": "<p>邮箱</p>",
           "example": "jjjj@qq.com",
           "member": "string",
           "name": "Email",
@@ -5027,7 +5046,7 @@
         },
         {
           "disabled": false,
-          "document": "省份",
+          "document": "<p>省份</p>",
           "example": "Hunan",
           "member": "string",
           "name": "Province",
@@ -5037,7 +5056,7 @@
         },
         {
           "disabled": false,
-          "document": "城市",
+          "document": "<p>城市</p>",
           "example": "Changsha",
           "member": "string",
           "name": "City",
@@ -5047,7 +5066,7 @@
         },
         {
           "disabled": false,
-          "document": "国家",
+          "document": "<p>国家</p>",
           "example": "China",
           "member": "string",
           "name": "Country",
@@ -5057,7 +5076,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥算法",
+          "document": "<p>密钥算法</p>",
           "example": "RSA",
           "member": "string",
           "name": "EncryptAlgo",
@@ -5067,7 +5086,7 @@
         },
         {
           "disabled": false,
-          "document": "算法参数",
+          "document": "<p>算法参数</p>",
           "example": "2048",
           "member": "string",
           "name": "KeyParameter",
@@ -5077,7 +5096,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "hellp",
           "member": "string",
           "name": "Remarks",
@@ -5087,7 +5106,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -5097,7 +5116,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>私钥密码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "password",
           "member": "string",
           "name": "KeyPassword",
@@ -5107,7 +5126,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-11-27 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -5117,7 +5136,7 @@
         },
         {
           "disabled": false,
-          "document": "CSR内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CSR内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "csr content",
           "member": "string",
           "name": "CSR",
@@ -5127,13 +5146,23 @@
         },
         {
           "disabled": false,
-          "document": "私钥内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>私钥内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "----PrivateKey",
           "member": "string",
           "name": "PrivateKey",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SAN域名</p>",
+          "example": "[\"zrhh.com\"]",
+          "member": "string",
+          "name": "SubjectAltName",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10080,7 +10109,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CSR ID标识\t",
+          "document": "<p>CSR ID标识</p>",
           "example": "17993",
           "member": "int64",
           "name": "CSRId",
@@ -10089,7 +10118,7 @@
         },
         {
           "disabled": false,
-          "document": "是否生成CSR内容。生成CSR内容后，此CSR记录不再支持修改",
+          "document": "<p>是否生成CSR内容。生成CSR内容后，此CSR记录不再支持修改</p>",
           "example": "true",
           "member": "bool",
           "name": "Generate",
@@ -10098,7 +10127,7 @@
         },
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "www.**.com",
           "member": "string",
           "name": "Domain",
@@ -10107,7 +10136,7 @@
         },
         {
           "disabled": false,
-          "document": "企业/单位名称",
+          "document": "<p>企业/单位名称</p>",
           "example": "Tencent",
           "member": "string",
           "name": "Organization",
@@ -10116,7 +10145,7 @@
         },
         {
           "disabled": false,
-          "document": "部门",
+          "document": "<p>部门</p>",
           "example": "it",
           "member": "string",
           "name": "Department",
@@ -10125,7 +10154,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱",
+          "document": "<p>邮箱</p>",
           "example": "172@qq.com",
           "member": "string",
           "name": "Email",
@@ -10134,7 +10163,7 @@
         },
         {
           "disabled": false,
-          "document": "省份",
+          "document": "<p>省份</p>",
           "example": "hunan",
           "member": "string",
           "name": "Province",
@@ -10143,7 +10172,7 @@
         },
         {
           "disabled": false,
-          "document": "城市",
+          "document": "<p>城市</p>",
           "example": "changsha",
           "member": "string",
           "name": "City",
@@ -10152,7 +10181,7 @@
         },
         {
           "disabled": false,
-          "document": "国家",
+          "document": "<p>国家</p>",
           "example": "china",
           "member": "string",
           "name": "Country",
@@ -10161,7 +10190,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法，支持 RSA及ECC。\t",
+          "document": "<p>加密算法，支持 RSA及ECC。</p>",
           "example": "RSA",
           "member": "string",
           "name": "EncryptAlgo",
@@ -10170,7 +10199,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥参数，RSA仅支持2048，4096。ECC仅支持prime256v1",
+          "document": "<p>密钥参数，RSA仅支持2048，4096。ECC仅支持prime256v1</p>",
           "example": "2048",
           "member": "string",
           "name": "KeyParameter",
@@ -10179,7 +10208,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "hello",
           "member": "string",
           "name": "Remark",
@@ -10188,12 +10217,21 @@
         },
         {
           "disabled": false,
-          "document": "私钥密码",
+          "document": "<p>私钥密码</p>",
           "example": "hey**jsj",
           "member": "string",
           "name": "KeyPassword",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SAN域名</p>",
+          "example": "[\"zrhh.com\"]",
+          "member": "string",
+          "name": "SubjectAltName",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10203,7 +10241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CSR ID标识",
+          "document": "<p>CSR ID标识</p>",
           "example": "17364",
           "member": "int64",
           "name": "Id",

@@ -2162,6 +2162,14 @@
         "title": "成功示例"
       }
     ],
+    "RevokeShareDeviceFromUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeShareDeviceFromUser\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev3\",\n    \"OwnerOpenID\": \"nandy\",\n    \"ToOpenID\": \"zz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6f8c163-92a4-41bc-9ffa-c81895808e73\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "SearchPositionSpace": [
       {
         "document": "",
@@ -2184,6 +2192,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rules\": [\n            {\n                \"RuleName\": \"test_create\",\n                \"Description\": \"规则信息\",\n                \"CreatedAt\": 1599017883,\n                \"RuleDisabled\": true\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
         "title": "搜索规则"
+      }
+    ],
+    "ShareDeviceToUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ShareDeviceToUser\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev3\",\n    \"OwnerOpenID\": \"nandy\",\n    \"ToOpenID\": \"zz\",\n    \"ToNickName\": \"zz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OwnerUserID\": \"195155279497658759\",\n        \"ToUserID\": \"195350446737457359\",\n        \"RequestId\": \"83640ed8-a3a2-44d0-a036-8913d99a3eab\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "TerminateTWeSeeSubscription": [

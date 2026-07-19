@@ -49,6 +49,13 @@
       "output": "CreateRestoreTasksResponse",
       "status": "online"
     },
+    "CreateTrashConfig": {
+      "document": "创建回收站配置。",
+      "input": "CreateTrashConfigRequest",
+      "name": "创建回收站配置",
+      "output": "CreateTrashConfigResponse",
+      "status": "online"
+    },
     "DeleteAccessGroup": {
       "document": "删除权限组。",
       "input": "DeleteAccessGroupRequest",
@@ -82,6 +89,13 @@
       "input": "DeleteMountPointRequest",
       "name": "删除挂载点",
       "output": "DeleteMountPointResponse",
+      "status": "online"
+    },
+    "DeleteTrashConfig": {
+      "document": "删除回收站配置。",
+      "input": "DeleteTrashConfigRequest",
+      "name": "删除回收站配置",
+      "output": "DeleteTrashConfigResponse",
       "status": "online"
     },
     "DescribeAccessGroup": {
@@ -154,6 +168,13 @@
       "output": "DescribeRestoreTasksResponse",
       "status": "online"
     },
+    "DescribeTrashConfig": {
+      "document": "通过文件系统ID查看回收站配置。",
+      "input": "DescribeTrashConfigRequest",
+      "name": "查看回收站配置",
+      "output": "DescribeTrashConfigResponse",
+      "status": "online"
+    },
     "DisassociateAccessGroups": {
       "document": "给挂载点解绑多个权限组。",
       "input": "DisassociateAccessGroupsRequest",
@@ -201,6 +222,13 @@
       "input": "ModifyResourceTagsRequest",
       "name": "修改资源标签列表",
       "output": "ModifyResourceTagsResponse",
+      "status": "online"
+    },
+    "ModifyTrashConfig": {
+      "document": "修改回收站配置，需要指定回收站路径，数据保留时间、和状态。",
+      "input": "ModifyTrashConfigRequest",
+      "name": "修改回收站配置",
+      "output": "ModifyTrashConfigResponse",
       "status": "online"
     }
   },
@@ -724,6 +752,60 @@
       ],
       "type": "object"
     },
+    "CreateTrashConfigRequest": {
+      "document": "CreateTrashConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据保留时间（天）</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReservedDays",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则状态（1：打开；2：关闭）</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<ol><li>字段为空表示开启普通用户回收站 </li><li>字段不为空表示开启HDFS原生回收站，且值必须为/user/*/.Trash</li></ol>",
+          "example": "/user/*/.Trash",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrashConfigResponse": {
+      "document": "CreateTrashConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAccessGroupRequest": {
       "document": "DeleteAccessGroup请求参数结构体",
       "members": [
@@ -849,6 +931,33 @@
     },
     "DeleteMountPointResponse": {
       "document": "DeleteMountPoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTrashConfigRequest": {
+      "document": "DeleteTrashConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTrashConfigResponse": {
+      "document": "DeleteTrashConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1382,6 +1491,43 @@
           "name": "NextRestoreTaskIdMarker",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrashConfigRequest": {
+      "document": "DescribeTrashConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrashConfigResponse": {
+      "document": "DescribeTrashConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回收站配置</p>",
+          "example": "无",
+          "member": "TrashConfig",
+          "name": "TrashConfig",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1929,6 +2075,51 @@
       ],
       "type": "object"
     },
+    "ModifyTrashConfigRequest": {
+      "document": "ModifyTrashConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据保留时间（天）",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReservedDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态（1：打开；2：关闭）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTrashConfigResponse": {
+      "document": "ModifyTrashConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MountPoint": {
       "document": "挂载点",
       "members": [
@@ -2192,6 +2383,52 @@
         }
       ],
       "usage": "both"
+    },
+    "TrashConfig": {
+      "document": "回收站配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "f4mnvilzmdd",
+          "member": "string",
+          "name": "FileSystemId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据保留时间（天）",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReservedDays",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回收站配置状态（1：打开；2：关闭）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回收站路径",
+          "example": "/xxxxx_trash",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

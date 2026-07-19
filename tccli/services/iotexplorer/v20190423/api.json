@@ -1582,6 +1582,13 @@
       "output": "RevokeBindUserDeviceResponse",
       "status": "online"
     },
+    "RevokeShareDeviceFromUser": {
+      "document": "Owner 取消对指定用户的设备分享：\n1. 校验产品 ACL / 子产品禁止 / 设备真实存在；\n2. 只读定位 Owner（必须已存在），并校验 Owner 持有该设备；\n3. 只读定位被取消分享用户（不存在视为已取消，幂等成功）；\n4. 删除分享关系记录（不存在视为已取消，幂等成功）。",
+      "input": "RevokeShareDeviceFromUserRequest",
+      "name": "取消设备分享",
+      "output": "RevokeShareDeviceFromUserResponse",
+      "status": "online"
+    },
     "SearchPositionSpace": {
       "document": "搜索位置空间",
       "input": "SearchPositionSpaceRequest",
@@ -1601,6 +1608,13 @@
       "input": "SearchTopicRuleRequest",
       "name": "搜索规则",
       "output": "SearchTopicRuleResponse",
+      "status": "online"
+    },
+    "ShareDeviceToUser": {
+      "document": "Owner 将其名下的设备分享给指定 App 用户：\n1. 校验产品 ACL / 子产品禁止 / 设备真实存在；\n2. 只读定位 Owner（必须已存在），并校验 Owner 确实持有该设备；\n3. 兜底创建被分享用户（已存在则复用，昵称不覆盖）；\n4. 写入分享关系（重复分享幂等成功，不修改原 CreateTime）。",
+      "input": "ShareDeviceToUserRequest",
+      "name": "分享设备给指定用户",
+      "output": "ShareDeviceToUserResponse",
       "status": "online"
     },
     "TerminateTWeSeeSubscription": {
@@ -22821,6 +22835,69 @@
       ],
       "type": "object"
     },
+    "RevokeShareDeviceFromUserRequest": {
+      "document": "RevokeShareDeviceFromUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 AppKey，用于解析 IotAppID 并完成签名校验</p>",
+          "example": "afpMLiFlGYThFpvJe",
+          "member": "string",
+          "name": "AppKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品 ID</p>",
+          "example": "N5DBOST040",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名</p>",
+          "example": "nandy_dev3",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备所有者 OpenID（必须已存在）</p>",
+          "example": "nandy",
+          "member": "string",
+          "name": "OwnerOpenID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被取消分享用户 OpenID（不存在视为已取消，幂等成功）</p>",
+          "example": "zz",
+          "member": "string",
+          "name": "ToOpenID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeShareDeviceFromUserResponse": {
+      "document": "RevokeShareDeviceFromUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SearchKeyword": {
       "document": "搜索关键词",
       "members": [
@@ -23801,6 +23878,98 @@
         }
       ],
       "usage": "both"
+    },
+    "ShareDeviceToUserRequest": {
+      "document": "ShareDeviceToUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 AppKey，用于解析 IotAppID 并完成签名校验</p>",
+          "example": "afpMLiFlGYThFpvJe",
+          "member": "string",
+          "name": "AppKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品 ID</p>",
+          "example": "N5DBOST040",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名</p>",
+          "example": "nandy_dev3",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备所有者 OpenID（必须已存在）</p>",
+          "example": "nandy",
+          "member": "string",
+          "name": "OwnerOpenID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被分享用户 OpenID（不存在则自动创建）</p>",
+          "example": "zz",
+          "member": "string",
+          "name": "ToOpenID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被分享用户昵称（仅自动创建时使用）</p>",
+          "example": "zz",
+          "member": "string",
+          "name": "ToNickName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ShareDeviceToUserResponse": {
+      "document": "ShareDeviceToUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Owner 的 UserID</p>",
+          "example": "195155279497658759",
+          "member": "string",
+          "name": "OwnerUserID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>被分享用户的 UserID</p>",
+          "example": "195350446737457359",
+          "member": "string",
+          "name": "ToUserID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubscribedTopicItem": {
       "document": "已订阅Topic信息",

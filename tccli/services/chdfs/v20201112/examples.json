@@ -56,6 +56,14 @@
         "title": "批量创建回热任务"
       }
     ],
+    "CreateTrashConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrashConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"f14mxo5jafhd\",\n    \"ReservedDays\": 1,\n    \"Status\": 1,\n    \"Path\": \"/user/*/.Trash\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc6fa375-cd99-478c-aa60-5d582d9276b2\"\n    }\n}",
+        "title": "创建chdfs回收站"
+      }
+    ],
     "DeleteAccessGroup": [
       {
         "document": "删除权限组",
@@ -94,6 +102,14 @@
         "input": "https://chdfs.tencentcloudapi.com/?Action=DeleteMountPoint\n&MountPointId=f4mnvilzmdd-fj7A\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85a1accb-0456-45b3-9eb2-52ae76430ca3\"\n    }\n}",
         "title": "删除挂载点"
+      }
+    ],
+    "DeleteTrashConfig": [
+      {
+        "document": "删除回收站配置",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrashConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"f4mhaqkciq0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6d3ef8-db1d-40de-afa1-d340302458bb\"\n    }\n}",
+        "title": "删除回收站配置"
       }
     ],
     "DescribeAccessGroup": [
@@ -176,6 +192,14 @@
         "title": "查看回热任务列表"
       }
     ],
+    "DescribeTrashConfig": [
+      {
+        "document": "查看回收站配置",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrashConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"f4mnvilzmdd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TrashConfig\": {\n            \"FileSystemId\": \"f4mnvilzmdd\",\n            \"ReservedDays\": 1,\n            \"Path\": \"/e88dea7e_trash\",\n            \"Status\": 1\n        },\n        \"RequestId\": \"19d240f4-156d-4a3c-856c-216d64a6bb4a\"\n    }\n}",
+        "title": "查看回收站配置"
+      }
+    ],
     "DisassociateAccessGroups": [
       {
         "document": "解绑权限组列表",
@@ -230,6 +254,14 @@
         "input": "https://chdfs.tencentcloudapi.com/?Action=ModifyResourceTags\n&FileSystemId=f1mhaqkciq0\n&Tags.0.Key=key1\n&Tags.0.Value=value1\n&Tags.1.Key=key2\n&Tags.1.Value=value2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"61046a25-2eda-4495-b9b6-eab6edf41d79\"\n    }\n}",
         "title": "修改资源标签列表"
+      }
+    ],
+    "ModifyTrashConfig": [
+      {
+        "document": "修改回收站配置。",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTrashConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"f4mhaqkciq0\",\n    \"Status\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6d3ef8-db1d-40de-afa1-d340302458bb\"\n    }\n}",
+        "title": "修改回收站配置"
       }
     ]
   },
