@@ -21,6 +21,13 @@
       "output": "AcquireSandboxInstanceTokenResponse",
       "status": "online"
     },
+    "AppendEvent": {
+      "document": "追加事件。\n\n向指定会话追加一条事件。",
+      "input": "AppendEventRequest",
+      "name": "追加事件",
+      "output": "AppendEventResponse",
+      "status": "online"
+    },
     "CompleteOAuth2AccessTokenAuth": {
       "document": "完成OAuth2 session的授权流程",
       "input": "CompleteOAuth2AccessTokenAuthRequest",
@@ -70,6 +77,13 @@
       "output": "CreateSandboxToolResponse",
       "status": "online"
     },
+    "CreateSession": {
+      "document": "创建会话。\n\n为指定 Agent 和用户创建会话，创建成功后返回会话信息。",
+      "input": "CreateSessionRequest",
+      "name": "创建会话",
+      "output": "CreateSessionResponse",
+      "status": "online"
+    },
     "CreateWorkloadAccessTokenForUserId": {
       "document": "获取Agent的代表用户执行动作的访问Token",
       "input": "CreateWorkloadAccessTokenForUserIdRequest",
@@ -117,6 +131,13 @@
       "input": "DeleteSandboxToolRequest",
       "name": "删除沙箱工具",
       "output": "DeleteSandboxToolResponse",
+      "status": "online"
+    },
+    "DeleteSession": {
+      "document": "删除会话",
+      "input": "DeleteSessionRequest",
+      "name": "删除会话",
+      "output": "DeleteSessionResponse",
       "status": "online"
     },
     "DescribeAPIKeyList": {
@@ -182,6 +203,13 @@
       "output": "DescribeEnvironmentTemplateListResponse",
       "status": "online"
     },
+    "DescribeEvents": {
+      "document": "查询事件列表。\n\n查询指定会话的事件流，支持按作者和起始时间筛选。",
+      "input": "DescribeEventsRequest",
+      "name": "查询事件列表",
+      "output": "DescribeEventsResponse",
+      "status": "online"
+    },
     "DescribeExecutionRuntime": {
       "document": "查询一个 ExecutionRuntime 详情。",
       "input": "DescribeExecutionRuntimeRequest",
@@ -217,6 +245,20 @@
       "output": "DescribeSandboxToolListResponse",
       "status": "online"
     },
+    "DescribeSession": {
+      "document": "查询会话。\n\n查询指定会话的信息。",
+      "input": "DescribeSessionRequest",
+      "name": "查询会话",
+      "output": "DescribeSessionResponse",
+      "status": "online"
+    },
+    "DescribeSessions": {
+      "document": "查询会话列表",
+      "input": "DescribeSessionsRequest",
+      "name": "会话列表",
+      "output": "DescribeSessionsResponse",
+      "status": "online"
+    },
     "ModifyAgent": {
       "document": "修改 Agent",
       "input": "ModifyAgentRequest",
@@ -236,6 +278,13 @@
       "input": "ModifyExecutionRuntimeRequest",
       "name": "修改 ExecutionRuntime",
       "output": "ModifyExecutionRuntimeResponse",
+      "status": "online"
+    },
+    "ModifySessionTitle": {
+      "document": "会话标题编辑",
+      "input": "ModifySessionTitleRequest",
+      "name": "会话标题编辑",
+      "output": "ModifySessionTitleResponse",
       "status": "online"
     },
     "PauseSandboxInstance": {
@@ -988,6 +1037,70 @@
       ],
       "usage": "both"
     },
+    "AppendEventRequest": {
+      "document": "AppendEvent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。可通过 CreateAgent 接口获取。</p>",
+          "example": "rocz-test-agent-0706v1",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID。可通过调用方业务系统接口获取。</p>",
+          "example": "0001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID。可通过 CreateSession 或 DescribeSessions 接口获取。</p>",
+          "example": "strands-calc1-20e007ae",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件内容。</p>",
+          "example": "无",
+          "member": "EventInfo",
+          "name": "Event",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AppendEventResponse": {
+      "document": "AppendEvent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事件信息。</p>",
+          "example": "无",
+          "member": "EventInfo",
+          "name": "Event",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CLSConfig": {
       "document": "沙箱工具日志推送CLS相关配置",
       "members": [
@@ -1702,6 +1815,79 @@
       ],
       "type": "object"
     },
+    "CreateSessionRequest": {
+      "document": "CreateSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。可通过 CreateAgent 接口获取。</p>",
+          "example": "rocz-test-agent-0706v1",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID。可通过调用方业务系统接口获取。</p>",
+          "example": "0001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID。可通过 CreateSession 或 DescribeSessions 接口获取。</p>",
+          "example": "strands-calc1-20e007ae",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话标题，最大长度 256 字符。</p>",
+          "example": "TestTitle",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始会话状态。</p>",
+          "example": "无",
+          "member": "SessionState",
+          "name": "State",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSessionResponse": {
+      "document": "CreateSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话信息。</p>",
+          "example": "无",
+          "member": "SessionInfo",
+          "name": "Session",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateWorkloadAccessTokenForUserIdRequest": {
       "document": "CreateWorkloadAccessTokenForUserId请求参数结构体",
       "members": [
@@ -2207,6 +2393,51 @@
       ],
       "type": "object"
     },
+    "DeleteSessionRequest": {
+      "document": "DeleteSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。可通过 CreateAgent 接口获取。</p>",
+          "example": "ae-test",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID。可通过调用方业务系统接口获取。</p>",
+          "example": "u_8697b7b61a4d2d3e678f",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID。可通过 CreateSession 或 DescribeSessions 接口获取。</p>",
+          "example": "s-1782974067962-owicgz",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSessionResponse": {
+      "document": "DeleteSession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAPIKeyListRequest": {
       "document": "DescribeAPIKeyList请求参数结构体",
       "members": [],
@@ -2670,6 +2901,107 @@
       ],
       "type": "object"
     },
+    "DescribeEventsRequest": {
+      "document": "DescribeEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。可通过 CreateAgent 接口获取。</p>",
+          "example": "rocz-test-agent-0706v1",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID。可通过调用方业务系统接口获取。</p>",
+          "example": "0001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID。可通过 CreateSession 或 DescribeSessions 接口获取。</p>",
+          "example": "strands-calc1-20e007ae",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件作者。取值示例：user、assistant、tool。</p>",
+          "example": "assistant",
+          "member": "string",
+          "name": "Author",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始时间，仅返回该时间之后的事件，使用 RFC3339 格式，最大长度 64 字符。</p>",
+          "example": "2026-07-07T11:30:01.53Z",
+          "member": "string",
+          "name": "AfterTimestamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认为 50，最大值为 200。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventsResponse": {
+      "document": "DescribeEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事件列表。</p>",
+          "example": "无",
+          "member": "EventInfo",
+          "name": "Events",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的事件总数。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExecutionRuntimeListRequest": {
       "document": "DescribeExecutionRuntimeList请求参数结构体",
       "members": [
@@ -3013,6 +3345,171 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionRequest": {
+      "document": "DescribeSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。可通过 CreateAgent 接口获取。</p>",
+          "example": "ae-test",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID。可通过调用方业务系统接口获取。</p>",
+          "example": "u_8697b7b61a4d2d3e678f",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID。可通过 CreateSession 或 DescribeSessions 接口获取。</p>",
+          "example": "s-1782874989487-b38jan",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回最近事件数量，默认为 0，最大值为 200。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "NumRecentEvents",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件起始时间，RFC3339 格式，最大长度 64 字符。</p>",
+          "example": "2026-06-30T00:00:00Z",
+          "member": "string",
+          "name": "AfterTimestamp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionResponse": {
+      "document": "DescribeSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话信息。</p>",
+          "example": "无",
+          "member": "SessionInfo",
+          "name": "Session",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionsRequest": {
+      "document": "DescribeSessions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID 列表，最多支持 100 个。</p>",
+          "example": "[\"ae-test\"]",
+          "member": "string",
+          "name": "AgentIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID 列表，最多支持 100 个。</p>",
+          "example": "[\"u_8697b7b61a4d2d3e678f\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认为 20，最大值为 100。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID 列表，最多支持 100 个。</p>",
+          "example": "[\"s-1782874989487-b38jan\"]",
+          "member": "string",
+          "name": "SessionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 名称列表，支持模糊匹配，最多支持 100 个。</p>",
+          "example": "[\"ae-test\"]",
+          "member": "string",
+          "name": "AgentNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionsResponse": {
+      "document": "DescribeSessions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的会话总数。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话列表。</p>",
+          "example": "无",
+          "member": "SessionInfo",
+          "name": "Sessions",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3429,6 +3926,228 @@
       ],
       "usage": "both"
     },
+    "EventActionsInfo": {
+      "document": "Agent 状态切换事件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态增量，JSON 字符串，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json-text",
+          "member": "string",
+          "name": "StateDelta",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EventContentInfo": {
+      "document": "事件内容信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色，最大长度 64 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventPartInfo",
+          "name": "Parts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EventInfo": {
+      "document": "事件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事件 ID。为空时由服务生成。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "event-a1b2c3d4",
+          "member": "string",
+          "name": "EventId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用 ID，最大长度 128 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "invoke-a1b2c3d4",
+          "member": "string",
+          "name": "InvocationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件作者，最大长度 128 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "Author",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件内容。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventContentInfo",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件动作信息。StateDelta 为 JSON 对象字符串</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventActionsInfo",
+          "name": "Actions",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件元数据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"k\":\"v\"}",
+          "member": "string",
+          "name": "Metadata",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件扩展信息 JSON 对象字符串，最大长度 8192 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json-text",
+          "member": "string",
+          "name": "Extensions",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码，最大长度 128 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "503",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，最大长度 2048 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "timeout",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件时间。</p>",
+          "example": "2026-07-08T06:27:42.997Z",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EventPartInfo": {
+      "document": "多模态内容片段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hello",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为思考内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Thought",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工具调用信息，JSON 字符串，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json-text",
+          "member": "string",
+          "name": "FunctionCall",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工具返回信息，JSON 字符串，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json-text",
+          "member": "string",
+          "name": "FunctionResponse",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内联数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InlineDataInfo",
+          "name": "InlineData",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ExecutionRuntime": {
       "document": "ExecutionRuntime",
       "members": [
@@ -3690,6 +4409,34 @@
       ],
       "usage": "both"
     },
+    "InlineDataInfo": {
+      "document": "文件内容数据信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体类型，最大长度 128 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text/plain",
+          "member": "string",
+          "name": "MimeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Base64 编码数据，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aGVsbG8=",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KeyValue": {
       "document": "Key Value 信息",
       "members": [],
@@ -3929,6 +4676,70 @@
           "example": "无",
           "member": "ExecutionRuntime",
           "name": "ExecutionRuntime",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySessionTitleRequest": {
+      "document": "ModifySessionTitle请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。可通过 CreateAgent 接口获取。</p>",
+          "example": "rocz-test-agent-0706v1",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID。可通过调用方业务系统接口获取。</p>",
+          "example": "0001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID。可通过 CreateSession 或 DescribeSessions 接口获取。</p>",
+          "example": "strands-calc1-isolated-ba854acb",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话标题，最大长度 255 字符。</p>",
+          "example": "New Title",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySessionTitleResponse": {
+      "document": "ModifySessionTitle返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话信息概要</p>",
+          "example": "无",
+          "member": "SessionInfo",
+          "name": "Session",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -4752,6 +5563,119 @@
           "example": "InternalError",
           "member": "string",
           "name": "StatusReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SessionInfo": {
+      "document": "会话信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话 ID。</p>",
+          "example": "session-a1b2c3d4",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Session 快照状态</p>",
+          "example": "无",
+          "member": "SessionState",
+          "name": "State",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent ID。</p>",
+          "example": "agent-a1b2c3d4",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID。</p>",
+          "example": "user-a1b2c3d4",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话标题。</p>",
+          "example": "测试会话",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件数量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EventCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-06-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "2026-06-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 名称</p>",
+          "example": "ae-test",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SessionState": {
+      "document": "Session 快照状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义状态 JSON 对象字符串</p>",
+          "example": "{\\\"agentengine:session\\\":{\\\"framework_state\\\":{\\\"strands\\\":{\\\"session_id\\\":\\\"strands-calc-490085f8\\\"}}}}",
+          "member": "string",
+          "name": "CustomState",
           "output_required": false,
           "required": false,
           "type": "string",

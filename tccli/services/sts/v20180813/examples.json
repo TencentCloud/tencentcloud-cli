@@ -44,6 +44,14 @@
         "title": "使用GetFederationToken生成的临时凭据调用"
       }
     ],
+    "GetCosSessionToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCosSessionToken\n<公共请求参数>\n\n{\n    \"SessionMode\": \"ReadOnly\",\n    \"Resource\": \"qcs:id/0:cosrapid:ap-chengdu:uid/251433186:prefix//123456/my-bucket/\",\n    \"UserAuthToken\": \"9ou6TjEH6inmLIUiTwZRrf6uFOhn74oof5ea1d523972c720ae084377b0c19868K6vZmyvx78xqT-nWKtlaGk9M1rw6M1THgiYczyQqhOGk4zxSYwOKpRuhp0Sju9alPkFoCQurBVF5MKp810OlyJyosRpZENJK2TcKYu8CF7G4gcwIaqnxF1o9OGqvPLVVurX6swUfFrmQ6tmGbsvswg\",\n    \"UserUin\": 700002713397,\n    \"UserOwnerUin\": 700002713397\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"TmpSecretId\": \"SKID_NGCa1nJi-XV1R-ZYzkrkPIQ6zft5LOhSMj3C50XCWgatTNkk6VNQfWShqzwWdTV\",\n            \"TmpSecretKey\": \"0Gg++0mdKYi3/yeoTLVG4hcIG4cnV/RbLZioznnKFnc=\",\n            \"Token\": \"CDFjbveQ43VhQlSABTnoMqgKU5FKHI2ad25f477132df9a5ab548cd7df6ef1382cabdaf470150154cccc3fd4ff0c529f5wYpZ-fUwUtmVz1LoDwu_-FHoJfLi6iCF6efXtGhgWx_-xMhS3Ew9zyYSFRIy9zZJzplsNRqD2_DMOjNqRgkyAEv1sVr4XDfVejmaYKyaNImXrui9LkZafJUs9gNlUHe8WjbtT-K-vaVKw8Yv0IYZw50HQdm4S3vS3ifdNY37xh1IEbhSFWGBRFtSrH52YZoXYadtk6fBDjhYtnTW_eiwOQot5OMjHJAouJOqZo6cmcFbTk8y1iU6afC7eD981ai5UV1bBUtpkYHvlm8hnhRs5Q\"\n        },\n        \"Expiration\": \"2026-07-15T13:01:30Z\",\n        \"ExpiredTime\": 1784120490,\n        \"RequestId\": \"2bbe0b19-4ab5-4a2d-a166-5071ac8ce2a8\"\n    }\n}",
+        "title": "下发只读临时密钥三元组"
+      }
+    ],
     "GetFederationToken": [
       {
         "document": "授权临时访问凭证具有以下权限：\n{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:PutObject\"],\"resource\":[\"qcs::cos:ap-beijing:uid/123456:prefix//123456/bucketA/*\"]}]}\n\n注意，因为GET请求需要给所有参数做urlencode，所以下面示例中的Policy参数是做了两次urlencode的结果。",
@@ -90,6 +98,14 @@
         "input": "https://sts.tencentcloudapi.com/?Action=GetThirdPartyFederationToken\r\n&UserAccessToken=XXXXX\r\n&Duration=7200\r\n&ApiAppId=XXXXX\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Credentials\": [\n            {\n                \"Token\": \"xxxxxx\",\n                \"TmpSecretId\": \"XXXXXX\",\n                \"TmpSecretKey\": \"XXXXXXX\"\n            }\n        ],\n        \"ExpiredTime\": \"7200\",\n        \"RequestId\": \"\"\n    }\n}",
         "title": "获取用户临时证书（第三方开发商）"
+      }
+    ],
+    "ListCosSessionSeedToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCosSessionSeedToken\n<公共请求参数>\n\n{\n    \"Date\": \"20260715\",\n    \"NextToken\": \"MTQ1MDA=\",\n    \"Limit\": 500\n}",
+        "output": "{\n    \"Response\": {\n        \"Date\": \"20260715\",\n        \"MatchExpected\": 0,\n        \"NextToken\": \"\",\n        \"SeedCredentials\": [\n            {\n                \"ExpireTime\": 1784692801,\n                \"SeedSecretId\": \"8dM0nIabTc5XA6jxaHbyDqkdzc8UQNQa\",\n                \"SeedSecretKey\": \"x0bWfT7oYj8vFus4iliLJKs9CwHokO8o\",\n                \"SeedToken\": \"ek7HNy5g4ZRs9p6bvl3fYm4nukrzUkm5\"\n            }\n        ],\n        \"RequestId\": \"e4bf2325-d123-40bd-b501-0f4dffb91abb\"\n    }\n}",
+        "title": "拉取202060715日生成的种子密钥"
       }
     ],
     "QueryApiKey": [

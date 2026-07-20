@@ -28,6 +28,13 @@
       "output": "GetCallerIdentityResponse",
       "status": "online"
     },
+    "GetCosSessionToken": {
+      "document": "用于 COS 高性能桶本地鉴权；返回短时效的临时凭证三元组\n1. UserAuthToken 为 用户 第一跳鉴权拿到的 auth_token\n2. SessionMode 仅支持 ReadWrite, ReadOnly 两取值\n3. Resource 为资源六段式，仅支持桶级别",
+      "input": "GetCosSessionTokenRequest",
+      "name": "获取COS高性能桶票据",
+      "output": "GetCosSessionTokenResponse",
+      "status": "online"
+    },
     "GetFederationToken": {
       "document": "**使用说明**\n\n1. 返回一组临时身份访问凭证，包含token和获取该身份的临时密钥；\n\n2. 当您需要将当前账号下的部分权限和资源临时委托给第三方（如合作伙伴、外包团队），且希望避免下发永久密钥时，调用此接口；\n3. 临时身份的权限为：当前调用账号的权限和输入参数 Policy 权限的交集；\n4. 此接口仅支持永久密钥调用。\n\n\n**典型场景**\n\n1. 代理应用程序集中申请临时访问凭证，下发给企业网络内的其他分布式终端应用。例如：终端应用上传文件到COS。\n\n2. 将指定资源临时委托给第三方代理。例如：申请临时访问凭证，分发给企业外部团队，仅允许查看某个存储桶，有效期结束后权限自动回收。\n\n\n**最佳实践**\n1. 临时访问凭证在有效期内（Expiration）都可以使用，建议在有效期内重复使用，避免业务请求该接口频率达到上限被限频；\n\n2. 授予临时访问凭证权限的CAM策略，建议严格遵循最小权限原则；\n3. 建议不要使用主账号永久密钥，对该接口进行调用。",
       "input": "GetFederationTokenRequest",
@@ -68,6 +75,13 @@
       "input": "GetThirdPartyFederationTokenRequest",
       "name": "获取用户临时证书（第三方开发商）",
       "output": "GetThirdPartyFederationTokenResponse",
+      "status": "online"
+    },
+    "ListCosSessionSeedToken": {
+      "document": "返回用于本地鉴权的种子密钥列表，并告知当日种子数是否符合预期\n如不传入 Date，则为拉取有效期内的全量种子，支持 nextToken 分页且 matchExpected 字段此时无意义",
+      "input": "ListCosSessionSeedTokenRequest",
+      "name": "拉取CosSessionToken种子密钥列表",
+      "output": "ListCosSessionSeedTokenResponse",
       "status": "online"
     },
     "QueryApiKey": {
@@ -542,6 +556,99 @@
           "name": "Type",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCosSessionTokenRequest": {
+      "document": "GetCosSessionToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定的 Resource 资源（COS桶）的权限类型</p><p>枚举值：</p><ul><li>ReadWrite： 读写</li><li>ReadOnly： 只读</li></ul>",
+          "example": "ReadOnly",
+          "member": "string",
+          "name": "SessionMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶资源标识，仅支持到桶级别，例如 qcs:id/0:cosrapid:ap-chengdu:uid/251433186:prefix//123456/my-bucket/</p>",
+          "example": "qcs:id/0:cosrapid:ap-chengdu:uid/251433186:prefix//123456/my-bucket/",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户第一跳鉴权得到的 auth_token。从鉴权回包CamContext字段中获取。</p>",
+          "example": "9ou6TjEH6inmLIUiTwZRrf6uFOhn74oof5ea1d523972c720ae084377b0c19868K6vZmyvx78xqT-nWKtlaGk9M1rw6M1THgiYczyQqhOGk4zxSYwOKpRuhp0Sju9alPkFoCQurBVF5MKp810OlyJyosRpZENJK2TcKYu8CF7G4gcwIaqnxF1o9OGqvPLVVurX6swUfFrmQ6tmGbsvswg",
+          "member": "string",
+          "name": "UserAuthToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 uin</p>",
+          "example": "700002713397",
+          "member": "uint64",
+          "name": "UserUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 OwnerUin</p>",
+          "example": "700002713397",
+          "member": "uint64",
+          "name": "UserOwnerUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCosSessionTokenResponse": {
+      "document": "GetCosSessionToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>临时证书。</p>",
+          "example": "无",
+          "member": "Credentials",
+          "name": "Credentials",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时证书有效的时间，返回 Unix 时间戳，精确到秒。</p>",
+          "example": "1784120490",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书有效的时间，以 iso8601 格式的 UTC 时间表示。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-07-15T13:01:30Z",
+          "member": "string",
+          "name": "Expiration",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1068,6 +1175,91 @@
       ],
       "type": "object"
     },
+    "ListCosSessionSeedTokenRequest": {
+      "document": "ListCosSessionSeedToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>拉取种子密钥时间，<br>此参数不传时，为分页拉取全量有效期内种子密钥<br>此参数用作日期增量拉取。格式例如 20260701。仅支持最近八日（包含）。<br>特别说明：当日的种子数据可能不完整。</p><p>参数格式：YMD</p>",
+          "example": "20260715",
+          "member": "string",
+          "name": "Date",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页参数，为空时候表现为 date 过滤后的首条起始，可带上回包会返回的此字段分页</p>",
+          "example": "MTQ1MDA=",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次拉取的最大数据条数，默认 200，最大 500，超过则回退为默认值</p><p>默认值：200</p>",
+          "example": "500",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCosSessionSeedTokenResponse": {
+      "document": "ListCosSessionSeedToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>种子凭证三元组 + 过期时间</p>",
+          "example": "无",
+          "member": "SeedCredentials",
+          "name": "SeedCredentials",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>深分页参数，返回为空表示当前条件下没有更多数据</p>",
+          "example": "MTQ1MDA=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回显用作过滤的 date</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260715",
+          "member": "string",
+          "name": "Date",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>拉取日期的种子数量是否生成完整， 1 完整，0 不完整，辅助调用方后续动作</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MatchExpected",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ProvidedContexts": {
       "document": "调用上下文",
       "members": [
@@ -1128,6 +1320,52 @@
         }
       ],
       "type": "object"
+    },
+    "SeedCredentials": {
+      "document": "种子凭证三元组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>种子密钥 Id</p>",
+          "example": "OMUWF3B9Rc02Eo8jXK2eNxSP8eneFEUa",
+          "member": "string",
+          "name": "SeedSecretId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>种子密钥 key</p>",
+          "example": "dpbrJ6IhHI6e3ZPsJA8E3DWep3E5XGI1",
+          "member": "string",
+          "name": "SeedSecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>种子密钥 token</p>",
+          "example": "VrFoajkLP6qliVTUUSlpXyY0a4A9zOrQ",
+          "member": "string",
+          "name": "SeedToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间，unix 秒级时间戳</p><p>单位：秒</p>",
+          "example": "1784692801",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Tag": {
       "document": "标签",

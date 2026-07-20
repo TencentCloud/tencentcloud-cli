@@ -6,10 +6,15 @@ Input:
 
 ```
 tccli cfw OpenClusterNatFwSwitch --cli-unfold-argument  \
-    --NatCcnSwitch.NatInsId cfwnat-xxxxxxxx \
-    --NatCcnSwitch.CcnId ccn-xxxxxxxx \
+    --NatCcnSwitch.NatInsId nat-3mc7mjzd \
+    --NatCcnSwitch.CcnId ccn-c0qmm031 \
     --NatCcnSwitch.SwitchMode 1 \
     --NatCcnSwitch.RoutingMode 1 \
+    --NatCcnSwitch.AccessInstanceList.0.InstanceId vpc-henonw6y \
+    --NatCcnSwitch.AccessInstanceList.0.InstanceType VPC \
+    --NatCcnSwitch.AccessInstanceList.0.InstanceRegion ap-tokyo \
+    --NatCcnSwitch.AccessInstanceList.0.AccessCidrMode 1 \
+    --NatCcnSwitch.AccessInstanceList.0.AccessCidrList 10.241.0.0/16 \
     --NatCcnSwitch.LeadVpcCidr 
 ```
 
@@ -17,7 +22,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3b3a2e60-1b2c-4d3e-a4f5-6789abcdef01"
+        "RequestId": "9c31338b-27dd-44f2-82e5-84c2c77582a8"
     }
 }
 ```

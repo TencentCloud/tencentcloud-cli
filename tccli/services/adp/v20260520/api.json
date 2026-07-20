@@ -147,6 +147,13 @@
       "output": "DeleteVariableResponse",
       "status": "online"
     },
+    "DescribeAccountList": {
+      "document": "查看企业下的员工列表",
+      "input": "DescribeAccountListRequest",
+      "name": "查看企业下的员工列表",
+      "output": "DescribeAccountListResponse",
+      "status": "online"
+    },
     "DescribeAgentDetail": {
       "document": "查询 Agent 详情",
       "input": "DescribeAgentDetailRequest",
@@ -180,6 +187,20 @@
       "input": "DescribeAppSummaryListRequest",
       "name": "获取应用摘要列表",
       "output": "DescribeAppSummaryListResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogList": {
+      "document": "查看操作日志列表",
+      "input": "DescribeAuditLogListRequest",
+      "name": "查看操作日志列表",
+      "output": "DescribeAuditLogListResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogMeta": {
+      "document": "获取审计日志元信息",
+      "input": "DescribeAuditLogMetaRequest",
+      "name": "获取审计日志元信息",
+      "output": "DescribeAuditLogMetaResponse",
       "status": "online"
     },
     "DescribeConversation": {
@@ -488,6 +509,45 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AccountInfo": {
+      "document": "员工信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>员工子账号id</p>",
+          "example": "700000963993",
+          "member": "string",
+          "name": "AccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>员工昵称</p>",
+          "example": "testadp111",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>员工头像</p>",
+          "example": "https://qidian-****-*********1.cos.ap-guangzhou.my*cloud.com/public/avatar_tiger02.png",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3105,6 +3165,172 @@
           "output_required": false,
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AuditLog": {
+      "document": "操作日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间id</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间名称</p>",
+          "example": "默认工作空间",
+          "member": "string",
+          "name": "SpaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>员工信息</p>",
+          "example": "无",
+          "member": "AccountInfo",
+          "name": "AccountInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用业务id</p>",
+          "example": "2076540405187173248",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用名称</p><p>操作日志触发时的名称</p>",
+          "example": "eval-workflow-import-exec-043211",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作时间</p><p>参数格式：秒时间戳</p>",
+          "example": "1783921629",
+          "member": "string",
+          "name": "OperateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型</p>",
+          "example": "启用",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作对象</p>",
+          "example": "工作流",
+          "member": "string",
+          "name": "Biz",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ip地址</p>",
+          "example": "空值",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "KEP.bot-task-config-server",
+          "member": "string",
+          "name": "ServerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作内容</p>",
+          "example": "发布-eval-kb-routing-exec-043725",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作唯一ID</p>",
+          "example": "a15d6f4af9a53aac4a3671a814f4d09a78d3723cfbe31eaa40001631d0be0af4",
+          "member": "string",
+          "name": "UniqueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AuditLogMetaField": {
+      "document": "操作日志元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作日志元数据key</p>",
+          "example": "create",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作日志元数据Name</p>",
+          "example": "新建",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5886,6 +6112,89 @@
       ],
       "type": "object"
     },
+    "DescribeAccountListRequest": {
+      "document": "DescribeAccountList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码</p><p>从0开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页数量</p><p>取值范围：[1, 100]</p><p>单位：个</p><p>最大100</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数过滤</p><p>支持SpaceId,NIckName 过滤查询</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
+          "example": "232323232",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
+          "example": "232323232",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountListResponse": {
+      "document": "DescribeAccountList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "99",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>员工列表</p>",
+          "example": "无",
+          "member": "AccountInfo",
+          "name": "AccountList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAgentDetailRequest": {
       "document": "DescribeAgentDetail请求参数结构体",
       "members": [
@@ -6324,6 +6633,164 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogListRequest": {
+      "document": "DescribeAuditLogList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间id</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p><p>取值范围：[1, 100]</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>es查询起始位置</p><p>对应接口返回SearchAfter</p>",
+          "example": "[\"1783921991000\"]",
+          "member": "string",
+          "name": "SearchAfter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数过滤</p><p>支持 Action,BizObject,Content<br>支持SpaceId,AccountUin,AppId(最多100个)<br>支持startTime,endTime(秒时间戳)</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
+          "example": "23232323232",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
+          "example": "23232323232",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogListResponse": {
+      "document": "DescribeAuditLogList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "315",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作日志列表</p>",
+          "example": "无",
+          "member": "AuditLog",
+          "name": "AuditLogList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>es查询起始位置</p><p>用于入参查询下一页</p>",
+          "example": "[\"1783917826000\"]",
+          "member": "string",
+          "name": "SearchAfter",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogMetaRequest": {
+      "document": "DescribeAuditLogMeta请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>登录用户主账号</p>",
+          "example": "23232323232",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户子账号</p>",
+          "example": "23232323232",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogMetaResponse": {
+      "document": "DescribeAuditLogMeta返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作类型列表</p>",
+          "example": "无",
+          "member": "AuditLogMetaField",
+          "name": "Actions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作对象列表</p>",
+          "example": "无",
+          "member": "AuditLogMetaField",
+          "name": "BizObjects",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

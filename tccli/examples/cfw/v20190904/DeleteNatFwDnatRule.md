@@ -7,20 +7,20 @@ Input:
 ```
 tccli cfw DeleteNatFwDnatRule --cli-unfold-argument  \
     --Mode 1 \
-    --CfwInstance abc \
-    --DnatRules.0.IpProtocol abc \
-    --DnatRules.0.PublicIpAddress abc \
+    --CfwInstance cfw-dsad \
+    --DnatRules.0.IpProtocol tcp \
+    --DnatRules.0.PublicIpAddress 1.10.101.1 \
     --DnatRules.0.PublicPort 0 \
-    --DnatRules.0.PrivateIpAddress abc \
+    --DnatRules.0.PrivateIpAddress 1.1.1.1 \
     --DnatRules.0.PrivatePort 0 \
-    --DnatRules.0.Description abc
+    --DnatRules.0.Description sadabc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "dsadsaabc"
     }
 }
 ```

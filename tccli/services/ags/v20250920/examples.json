@@ -24,6 +24,14 @@
         "title": "获取访问沙箱工具时所需要使用的访问Token"
       }
     ],
+    "AppendEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AppendEvent\n<公共请求参数>\n\n{\n    \"AgentId\": \"rocz-test-agent-0706v1\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"strands-calc1-20e007ae\",\n    \"Event\": {\n        \"EventId\": \"e-t001\",\n        \"InvocationId\": \"i-t001\",\n        \"Author\": \"user\",\n        \"Content\": {\n            \"Role\": \"user\",\n            \"Parts\": [\n                {\n                    \"Text\": \"hello \",\n                    \"Thought\": true,\n                    \"FunctionCall\": \"{\\\"k\\\":\\\"v\\\"}\",\n                    \"FunctionResponse\": \"{\\\"k\\\":\\\"v\\\"}\",\n                    \"InlineData\": {\n                        \"MimeType\": \"text\",\n                        \"Data\": \"dGVzdAo=\"\n                    }\n                }\n            ]\n        },\n        \"Actions\": {\n            \"StateDelta\": \"{\\\"k\\\":\\\"v\\\"}\"\n        },\n        \"Metadata\": \"{\\\"k\\\":\\\"v\\\"}\",\n        \"Extensions\": \"{\\\"k\\\":\\\"v\\\"}\",\n        \"ErrorCode\": \"503\",\n        \"ErrorMessage\": \"timeout\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Event\": {\n            \"Actions\": {\n                \"StateDelta\": \"{\\\"k\\\":\\\"v\\\"}\"\n            },\n            \"Author\": \"user\",\n            \"Content\": {\n                \"Parts\": [\n                    {\n                        \"FunctionCall\": \"{\\\"Name\\\":\\\"\\\",\\\"Args\\\":null}\",\n                        \"FunctionResponse\": \"{\\\"Name\\\":\\\"\\\",\\\"Response\\\":null}\",\n                        \"Text\": \"hello \",\n                        \"Thought\": true\n                    }\n                ],\n                \"Role\": \"user\"\n            },\n            \"ErrorCode\": \"503\",\n            \"ErrorMessage\": \"timeout\",\n            \"EventId\": \"e-t001\",\n            \"Extensions\": \"{\\\"k\\\":\\\"v\\\"}\",\n            \"InvocationId\": \"i-t001\",\n            \"Metadata\": \"{\\\"k\\\":\\\"v\\\"}\",\n            \"Timestamp\": \"2026-07-08T06:27:42.997Z\"\n        },\n        \"RequestId\": \"782c656b-c216-4ae4-8114-bf431a5b2a9e\"\n    }\n}",
+        "title": "新建 Event "
+      }
+    ],
     "CompleteOAuth2AccessTokenAuth": [
       {
         "document": "",
@@ -80,6 +88,14 @@
         "title": "创建沙箱工具"
       }
     ],
+    "CreateSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"AgentId\": \"rocz-test-agent-0706v1\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"strands-calc1-20e007ae\",\n    \"Title\": \"TestTitle\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"AgentId\": \"rocz-test-agent-0706v1\",\n            \"AgentName\": \"rocz-test-agent-0706v1\",\n            \"CreateTime\": \"2026-07-07T11:28:00Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"strands-calc1-20e007ae\",\n            \"State\": {\n                \"CustomState\": \"{\\\"k\\\":\\\"v\\\",\\\"strands:agents:rocz-test-agent-0706v1\\\":{\\\"_internal_state\\\":{\\\"interrupt_state\\\":{\\\"activated\\\":false,\\\"context\\\":{},\\\"interrupts\\\":{}},\\\"model_state\\\":{}},\\\"agent_id\\\":\\\"rocz-test-agent-0706v1\\\",\\\"conversation_manager_state\\\":{\\\"__name__\\\":\\\"SlidingWindowConversationManager\\\",\\\"model_call_count\\\":0,\\\"removed_message_count\\\":0},\\\"created_at\\\":\\\"2026-07-07T11:30:07.250313+00:00\\\",\\\"state\\\":{},\\\"updated_at\\\":\\\"2026-07-07T11:30:07.250335+00:00\\\"},\\\"strands:session\\\":{\\\"created_at\\\":\\\"2026-07-07T11:27:59.572348+00:00\\\",\\\"session_id\\\":\\\"strands-calc1-20e007ae\\\",\\\"session_type\\\":\\\"AGENT\\\",\\\"updated_at\\\":\\\"2026-07-07T11:27:59.572360+00:00\\\"}}\"\n            },\n            \"Title\": \"Strands session strands-calc1-20e007ae\",\n            \"UpdateTime\": \"2026-07-08T06:27:42Z\",\n            \"UserId\": \"0001\"\n        },\n        \"RequestId\": \"3070cf7d-5f10-4d61-9d55-1ba9cd9aea45\"\n    }\n}",
+        "title": "创建 Session"
+      }
+    ],
     "CreateWorkloadAccessTokenForUserId": [
       {
         "document": "",
@@ -134,6 +150,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
         "title": "删除沙箱工具"
+      }
+    ],
+    "DeleteSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSession\n<公共请求参数>\n\n{\n    \"AgentId\": \"ae-test\",\n    \"UserId\": \"u_8697b7b61a4d2d3e678f\",\n    \"SessionId\": \"s-1782974067962-owicgz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f147e945-f2cf-4500-abcf-d11eccb0daf7\"\n    }\n}",
+        "title": "删除指定会话"
       }
     ],
     "DescribeAPIKeyList": [
@@ -208,6 +232,14 @@
         "title": "查询 EnvironmentTemplate 列表"
       }
     ],
+    "DescribeEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"AgentId\": \"rocz-test-agent-0706v1\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"strands-calc1-20e007ae\",\n    \"Author\": \"assistant\",\n    \"AfterTimestamp\": \"2026-07-07T11:30:01.53Z\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Actions\": {\n                    \"StateDelta\": \"null\"\n                },\n                \"Author\": \"assistant\",\n                \"Content\": {\n                    \"Parts\": [\n                        {\n                            \"Text\": \"Now let me add 902:\"\n                        }\n                    ],\n                    \"Role\": \"model\"\n                },\n                \"EventId\": \"05e05278-c798-45d6-bee7-43747f9c83d6\",\n                \"Extensions\": \"{\\\"strands\\\":{\\\"agent_id\\\":\\\"rocz-test-agent-0706v1\\\",\\\"kind\\\":\\\"session_message\\\",\\\"message_id\\\":7,\\\"session_message\\\":{\\\"created_at\\\":\\\"2026-07-07T11:30:06.023646+00:00\\\",\\\"message\\\":{\\\"content\\\":[{\\\"text\\\":\\\"Now let me add 902:\\\"},{\\\"toolUse\\\":{\\\"input\\\":{\\\"a\\\":33512972,\\\"b\\\":902},\\\"name\\\":\\\"add\\\",\\\"toolUseId\\\":\\\"call_00_7Dawl47iOHcfm2vQdDUx4716\\\"}}],\\\"metadata\\\":{\\\"metrics\\\":{\\\"latencyMs\\\":0,\\\"timeToFirstByteMs\\\":1257},\\\"usage\\\":{\\\"cacheReadInputTokens\\\":640,\\\"inputTokens\\\":854,\\\"outputTokens\\\":85,\\\"totalTokens\\\":939}},\\\"role\\\":\\\"assistant\\\"},\\\"message_id\\\":7,\\\"redact_message\\\":null,\\\"updated_at\\\":\\\"2026-07-07T11:30:06.023673+00:00\\\"}}}\",\n                \"InvocationId\": \"cb91cab5-fcbf-4bf3-9a1d-996e82e2a918\",\n                \"Timestamp\": \"2026-07-07T11:30:06.389Z\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"2f9047ca-8064-4ce0-a32e-be1d01341520\"\n    }\n}",
+        "title": "查询事件列表"
+      }
+    ],
     "DescribeExecutionRuntime": [
       {
         "document": "",
@@ -248,6 +280,22 @@
         "title": "查询沙箱工具列表"
       }
     ],
+    "DescribeSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSession\n<公共请求参数>\n\n{\n    \"AgentId\": \"ae-test\",\n    \"UserId\": \"u_8697b7b61a4d2d3e678f\",\n    \"SessionId\": \"s-1782874989487-b38jan\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"AgentId\": \"ae-test\",\n            \"AgentName\": \"ae-test\",\n            \"CreateTime\": \"2026-07-02T11:59:57Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"s-1782874989487-b38jan\",\n            \"Title\": \"会话测试\",\n            \"UpdateTime\": \"2026-07-02T11:59:57Z\",\n            \"UserId\": \"u_8697b7b61a4d2d3e678f\"\n        },\n        \"RequestId\": \"74bef511-5b34-4a8a-925f-04592b3ed083\"\n    }\n}",
+        "title": "查询会话详情"
+      }
+    ],
+    "DescribeSessions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Sessions\": [\n            {\n                \"AgentId\": \"roc-test\",\n                \"AgentName\": \"roc-test\",\n                \"CreateTime\": \"2026-07-03T03:38:32Z\",\n                \"EventCount\": 4,\n                \"SessionId\": \"s-1783049906698-z7iyl7\",\n                \"Title\": \"echo hi\",\n                \"UpdateTime\": \"2026-07-03T03:38:32Z\",\n                \"UserId\": \"u_8697b7b61a4d2d3e678f\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"15b91e12-2c2a-4ecd-bdf3-4fd3c84b4bac\"\n    }\n}",
+        "title": "查询 Session 列表"
+      }
+    ],
     "ModifyAgent": [
       {
         "document": "",
@@ -270,6 +318,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExecutionRuntime\n<公共请求参数>\n\n{\n    \"ExecutionRuntimeId\": \"runtime-example\",\n    \"Capacity\": 3,\n    \"SchedulingStatus\": \"DISABLED\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExecutionRuntime\": {\n            \"ExecutionRuntimeId\": \"runtime-example\",\n            \"AgentId\": \"ag-example\",\n            \"SchedulingStatus\": \"DISABLED\",\n            \"ActiveLeaseCount\": 2,\n            \"Capacity\": 3,\n            \"Endpoint\": {\n                \"Scheme\": \"HTTPS\",\n                \"Host\": \"{{ .SourcePort }}-{{ .Metadata.RuntimeInstanceID }}.example.com\",\n                \"Port\": \"443\",\n                \"Metadata\": [\n                    {}\n                ]\n            },\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改 ExecutionRuntime"
+      }
+    ],
+    "ModifySessionTitle": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySessionTitle\n<公共请求参数>\n\n{\n    \"AgentId\": \"rocz-test-agent-0706v1\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"strands-calc1-isolated-ba854acb\",\n    \"Title\": \"New Title\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"AgentId\": \"rocz-test-agent-0706v1\",\n            \"AgentName\": \"rocz-test-agent-0706v1\",\n            \"CreateTime\": \"2026-07-07T08:43:37Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"strands-calc1-isolated-ba854acb\",\n            \"State\": {\n                \"CustomState\": \"{\\\"agentengine:agents:default\\\":{\\\"framework\\\":\\\"strands\\\",\\\"framework_state\\\":{\\\"strands\\\":{\\\"_internal_state\\\":{\\\"interrupt_state\\\":{\\\"activated\\\":false,\\\"context\\\":{},\\\"interrupts\\\":{}},\\\"model_state\\\":{}},\\\"agent_id\\\":\\\"default\\\",\\\"conversation_manager_state\\\":{\\\"__name__\\\":\\\"SlidingWindowConversationManager\\\",\\\"model_call_count\\\":0,\\\"removed_message_count\\\":0},\\\"created_at\\\":\\\"2026-07-07T08:43:39.070250+00:00\\\",\\\"state\\\":{},\\\"updated_at\\\":\\\"2026-07-07T08:43:39.070278+00:00\\\"}}},\\\"agentengine:session\\\":{\\\"framework\\\":\\\"strands\\\",\\\"framework_state\\\":{\\\"strands\\\":{\\\"created_at\\\":\\\"2026-07-07T08:43:36.568761+00:00\\\",\\\"session_id\\\":\\\"strands-calc1-isolated-ba854acb\\\",\\\"session_type\\\":\\\"AGENT\\\",\\\"updated_at\\\":\\\"2026-07-07T08:43:36.568778+00:00\\\"}},\\\"schema_version\\\":\\\"v1\\\"}}\"\n            },\n            \"Title\": \"New Title\",\n            \"UpdateTime\": \"2026-07-08T06:41:22Z\",\n            \"UserId\": \"0001\"\n        },\n        \"RequestId\": \"70470e40-29da-4ee9-a7b9-5c641c27973d\"\n    }\n}",
+        "title": "修改会话标题"
       }
     ],
     "PauseSandboxInstance": [

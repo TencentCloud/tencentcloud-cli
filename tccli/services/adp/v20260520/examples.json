@@ -192,6 +192,14 @@
         "title": "DeleteVariable"
       }
     ],
+    "DescribeAccountList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"FilterList\": [\n        {\n            \"Name\": \"SpaceId\",\n            \"ValueList\": [\n                \"default_space\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountList\": [\n            {\n                \"AccountUin\": \"700002740513\",\n                \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_rabbit02.png\",\n                \"NickName\": \"lzh\"\n            }\n        ],\n        \"TotalCount\": \"99\",\n        \"RequestId\": \"1df743c6-37d2-4890-b305-933ed27923c6\"\n    }\n}",
+        "title": "查看企业下的员工列表"
+      }
+    ],
     "DescribeAgentDetail": [
       {
         "document": "",
@@ -236,6 +244,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppSummaryList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"FilterList\": [\n        {\n            \"Name\": \"AppStatus\",\n            \"ValueList\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"Query\": \"信息\"\n}",
         "output": "{\n    \"Response\": {\n        \"AppSummaryList\": [\n            {\n                \"AppId\": \"206*************320\",\n                \"AppMode\": 2,\n                \"Avatar\": \"https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png\",\n                \"Name\": \"测试的应用信息\",\n                \"OperationInfo\": {\n                    \"Creator\": \"wu******g\",\n                    \"CreatorUin\": \"700****06554\",\n                    \"CreatorUserAccount\": \"\",\n                    \"UpdateTime\": \"1780042649\",\n                    \"Updater\": \"wu******g\",\n                    \"UpdaterUin\": \"700000306554\"\n                },\n                \"PermissionIdList\": [\n                    \"adpAppEdit\"\n                ],\n                \"Status\": {\n                    \"Status\": 1,\n                    \"StatusDescription\": \"未上线\"\n                },\n                \"SubStatus\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5163c167-3c4e-487d-9c1d-b42896dc1c8e\"\n    }\n}",
         "title": "DescribeAppSummaryList"
+      }
+    ],
+    "DescribeAuditLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"Limit\": 100,\n    \"SearchAfter\": [\n        \"1783921991000\"\n    ],\n    \"FilterList\": [\n        {\n            \"Name\": \"SpaceId\",\n            \"ValueList\": [\n                \"default_space\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditLogList\": [\n            {\n                \"AccountInfo\": {\n                    \"AccountUin\": \"700002740513\",\n                    \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_rabbit02.png\",\n                    \"NickName\": \"lzh\"\n                },\n                \"Action\": \"删除\",\n                \"AppId\": \"2076544889342907904\",\n                \"AppName\": \"eval-workflow-import-exec-043725\",\n                \"Biz\": \"应用\",\n                \"Content\": \"删除-eval-workflow-import-exec-043725\",\n                \"Ip\": \"\",\n                \"OperateTime\": \"1783921986\",\n                \"ServerName\": \"adp.app-config\",\n                \"SpaceId\": \"default_space\",\n                \"SpaceName\": \"默认工作空间\",\n                \"UniqueId\": \"681107ec7e52b226a405577470e5a270e764eeb223ed6c58d0c76880509e86d5\"\n            }\n        ],\n        \"SearchAfter\": [\n            \"1783917826000\"\n        ],\n        \"TotalCount\": \"315\",\n        \"RequestId\": \"13c6ac76-9413-462b-a589-63177cb9e4d4\"\n    }\n}",
+        "title": "查看操作日志列表"
+      }
+    ],
+    "DescribeAuditLogMeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogMeta\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Actions\": [\n            {\n                \"Key\": \"create\",\n                \"Name\": \"新建\"\n            }\n        ],\n        \"BizObjects\": [\n            {\n                \"Key\": \"app\",\n                \"Name\": \"应用\"\n            }\n        ],\n        \"RequestId\": \"a398a630-d061-4dbe-a353-2e4943d11182\"\n    }\n}",
+        "title": "查询审计日志元信息"
       }
     ],
     "DescribeConversation": [
