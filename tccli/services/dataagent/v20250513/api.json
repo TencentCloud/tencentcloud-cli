@@ -147,6 +147,13 @@
       "output": "QueryKnowledgeTaskResponse",
       "status": "online"
     },
+    "QueryModels": {
+      "document": "查询聊天支持模型信息",
+      "input": "QueryModelsRequest",
+      "name": "查询模型信息",
+      "output": "QueryModelsResponse",
+      "status": "online"
+    },
     "QuerySceneList": {
       "document": "查询场景列表",
       "input": "QuerySceneListRequest",
@@ -1813,6 +1820,34 @@
       ],
       "usage": "both"
     },
+    "ModelList": {
+      "document": "模型详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型版本名称</p>",
+          "example": "deepseek-v3.2",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型厂商</p>",
+          "example": "deepseek",
+          "member": "string",
+          "name": "Vendor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModelUserAuthority": {
       "document": "用户对象的权限",
       "members": [
@@ -2271,6 +2306,53 @@
           "name": "FileList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryModelsRequest": {
+      "document": "QueryModels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dataagent-G5XTaxnz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryModelsResponse": {
+      "document": "QueryModels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型列表</p>",
+          "example": "无",
+          "member": "ModelList",
+          "name": "Models",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>200成功，500失败</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -27081,7 +27081,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC",
+          "document": "<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;，&#39;SM4&#39;, 默认为3DES-CBC</p>",
           "example": "3DES-CBC",
           "member": "string",
           "name": "PropoEncryAlgorithm",
@@ -27092,7 +27092,7 @@
         },
         {
           "disabled": false,
-          "document": "认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。",
+          "document": "<p>认证算法：可选值：&#39;MD5&#39;，&#39;SHA&#39;，&#39;SHA-256&#39;，&#39;SHA-512&#39;， 默认为SHA。</p>",
           "example": "MD5",
           "member": "string",
           "name": "PropoAuthenAlgorithm",
@@ -27103,7 +27103,7 @@
         },
         {
           "disabled": false,
-          "document": "协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。",
+          "document": "<p>协商模式：可选值：&#39;AGGRESSIVE&#39;， &#39;MAIN&#39;，默认为MAIN。</p>",
           "example": "MAIN",
           "member": "string",
           "name": "ExchangeMode",
@@ -27114,7 +27114,7 @@
         },
         {
           "disabled": false,
-          "document": "本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
+          "document": "<p>本端标识类型：可选值：&#39;ADDRESS&#39;, &#39;FQDN&#39;，默认为ADDRESS</p>",
           "example": "ADDRESS",
           "member": "string",
           "name": "LocalIdentity",
@@ -27125,7 +27125,7 @@
         },
         {
           "disabled": false,
-          "document": "对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
+          "document": "<p>对端标识类型：可选值：&#39;ADDRESS&#39;, &#39;FQDN&#39;，默认为ADDRESS</p>",
           "example": "ADDRESS",
           "member": "string",
           "name": "RemoteIdentity",
@@ -27136,7 +27136,7 @@
         },
         {
           "disabled": false,
-          "document": "本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP",
+          "document": "<p>本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP</p>",
           "example": "1.2.3.4",
           "member": "string",
           "name": "LocalAddress",
@@ -27147,7 +27147,7 @@
         },
         {
           "disabled": false,
-          "document": "对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填",
+          "document": "<p>对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填</p>",
           "example": "4.3.2.1",
           "member": "string",
           "name": "RemoteAddress",
@@ -27158,7 +27158,7 @@
         },
         {
           "disabled": false,
-          "document": "本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填",
+          "document": "<p>本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填</p>",
           "example": "LocalName",
           "member": "string",
           "name": "LocalFqdnName",
@@ -27169,7 +27169,7 @@
         },
         {
           "disabled": false,
-          "document": "对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填",
+          "document": "<p>对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填</p>",
           "example": "RemoteName",
           "member": "string",
           "name": "RemoteFqdnName",
@@ -27180,7 +27180,7 @@
         },
         {
           "disabled": false,
-          "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。",
+          "document": "<p>DH group，指定IKE交换密钥时使用的DH组，可选值：&#39;GROUP1&#39;, &#39;GROUP2&#39;, &#39;GROUP5&#39;, &#39;GROUP14&#39;, &#39;GROUP15&#39;, &#39;GROUP16&#39;, &#39;GROUP19&#39;, &#39;GROUP20&#39;, &#39;GROUP21&#39;, &#39;GROUP24&#39;，默认是GROUP1。</p>",
           "example": "GROUP1",
           "member": "string",
           "name": "DhGroupName",
@@ -27191,7 +27191,7 @@
         },
         {
           "disabled": false,
-          "document": "IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800",
+          "document": "<p>IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800</p>",
           "example": "60",
           "member": "uint64",
           "name": "IKESaLifetimeSeconds",
@@ -27202,7 +27202,7 @@
         },
         {
           "disabled": false,
-          "document": "IKE版本",
+          "document": "<p>IKE版本</p>",
           "example": "IKEV1",
           "member": "string",
           "name": "IKEVersion",
@@ -27219,7 +27219,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128",
+          "document": "<p>加密算法，可选值：&#39;3DES-CBC&#39;, &#39;AES-CBC-128&#39;, &#39;AES-CBC-192&#39;, &#39;AES-CBC-256&#39;, &#39;DES-CBC&#39;, &#39;SM4&#39;, &#39;NULL&#39;， 默认为AES-CBC-128</p>",
           "example": "AES-CBC-128",
           "member": "string",
           "name": "EncryptAlgorithm",
@@ -27230,7 +27230,7 @@
         },
         {
           "disabled": true,
-          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>认证算法：可选值：&#39;MD5&#39;, &#39;SHA1&#39;，&#39;SHA-256&#39; 默认为</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SHA1",
           "member": "string",
           "name": "IntegrityAlgorith",
@@ -27241,7 +27241,7 @@
         },
         {
           "disabled": false,
-          "document": "IPsec SA lifetime(s)：单位秒，取值范围：180-604800",
+          "document": "<p>IPsec SA lifetime(s)</p><p>取值范围：[180, 604800]</p><p>单位：秒</p><p>默认值：14400</p>",
           "example": "180",
           "member": "uint64",
           "name": "IPSECSaLifetimeSeconds",
@@ -27252,7 +27252,7 @@
         },
         {
           "disabled": false,
-          "document": "PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL",
+          "document": "<p>PFS：可选值：&#39;NULL&#39;, &#39;DH-GROUP1&#39;, &#39;DH-GROUP2&#39;, &#39;DH-GROUP5&#39;, &#39;DH-GROUP14&#39;, &#39;DH-GROUP15&#39;,&#39;DH-GROUP16&#39;,&#39;DH-GROUP19&#39;,&#39;DH-GROUP20&#39;,&#39;DH-GROUP21&#39;,&#39;DH-GROUP24&#39;，默认为NULL</p>",
           "example": "NULL",
           "member": "string",
           "name": "PfsDhGroup",
@@ -27263,7 +27263,7 @@
         },
         {
           "disabled": false,
-          "document": "IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800",
+          "document": "<p>IPsec SA lifetime(KB)</p><p>取值范围：[2560, 4294967295]</p><p>单位：KB</p><p>默认值：4096000000</p>",
           "example": "2560",
           "member": "uint64",
           "name": "IPSECSaLifetimeTraffic",
@@ -27274,7 +27274,7 @@
         },
         {
           "disabled": false,
-          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为",
+          "document": "<p>认证算法：可选值：&#39;MD5&#39;, &#39;SHA1&#39;，&#39;SHA-256&#39; 默认为</p>",
           "example": "SHA1",
           "member": "string",
           "name": "IntegrityAlgorithm",

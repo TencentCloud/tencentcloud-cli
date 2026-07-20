@@ -168,6 +168,14 @@
         "title": "示例"
       }
     ],
+    "QueryModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryModels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-G5XTaxnz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Models\": [\n            {\n                \"Model\": \"deepseek-v3.2\",\n                \"Vendor\": \"deepseek\"\n            }\n        ],\n        \"Status\": 200,\n        \"RequestId\": \"194584a0-f344-4c7c-869f-e57d022683c2\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "QuerySceneList": [
       {
         "document": "示例",

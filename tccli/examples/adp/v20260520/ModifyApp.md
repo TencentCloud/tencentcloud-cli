@@ -1,23 +1,23 @@
 **Example 1: ModifyApp**
 
-
+修改应用
 
 Input: 
 
 ```
 tccli adp ModifyApp --cli-unfold-argument  \
-    --AppId 2060280711767285184 \
-    --SharedKbIdList 2047150542445725376 \
-    --UpdateMask.Paths SharedKbIdList
+    --AppId 2070037792884085504 \
+    --AppMode 2 \
+    --UpdateMask.Paths AppMode
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AppId": "2060280711767285184",
-        "UpdateTime": "1780577116",
-        "RequestId": "cbc62228-8e38-407b-a4fd-0362beda69e4"
+        "AppId": "2070037792884085504",
+        "UpdateTime": "1782819327",
+        "RequestId": "f4871251-9d39-4284-ae9a-349307e05913"
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 发现场景和二级下拉选项**
 
-describe_scene 用来发现可用 metric/perspective 组合和二级下拉 available_options。
+describe_scene 用来发现可用 metric/perspective 组合、默认值、选择项要求和二级下拉 available_options；fetch_scene 应原样使用发现结果。输出为字段结构节选，数组仅展示代表值。
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": "{\"op\":\"describe_scene\",\"scene\":{\"firewall_type\":\"internet_edge\"},\"selection\":{\"available_options\":[{\"id\":\"ap-guangzhou\"}]}}",
+        "Data": "{\"op\":\"describe_scene\",\"scene\":{\"firewall_type\":\"internet_edge\",\"metric_options\":[\"bandwidth\"],\"perspective_options\":{\"bandwidth\":[\"ip\"]},\"default_metric\":\"bandwidth\",\"default_perspective\":{\"bandwidth\":\"ip\"},\"selection_required_by_metric\":{\"bandwidth\":false},\"selection_kind_by_metric\":{\"bandwidth\":\"region\"},\"time_preset_options\":[\"1h\",\"24h\",\"7d\"]},\"selection\":{\"available_options\":[{\"id\":\"__all__\",\"name\":\"全部地域\"},{\"id\":\"ap-guangzhou\",\"name\":\"广州\"}]}}",
         "RequestId": "4266525E-10C4-41E1-8A28-5CCE1FBF6A58"
     }
 }

@@ -623,6 +623,20 @@
       "output": "DescribeLakeFsTaskResultResponse",
       "status": "online"
     },
+    "DescribeMCPTask": {
+      "document": "该接口（DescribeTasks）用于查询任务列表",
+      "input": "DescribeMCPTaskRequest",
+      "name": "查询任务列表MCP",
+      "output": "DescribeMCPTaskResponse",
+      "status": "online"
+    },
+    "DescribeMCPTaskResult": {
+      "document": "获取任务结果查询",
+      "input": "DescribeMCPTaskResultRequest",
+      "name": "MCP获取任务结果查询",
+      "output": "DescribeMCPTaskResultResponse",
+      "status": "online"
+    },
     "DescribeNativeSparkSessions": {
       "document": "根据资源组获取spark session列表",
       "input": "DescribeNativeSparkSessionsRequest",
@@ -12079,6 +12093,40 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMCPTaskRequest": {
+      "document": "DescribeMCPTask请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMCPTaskResponse": {
+      "document": "DescribeMCPTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMCPTaskResultRequest": {
+      "document": "DescribeMCPTaskResult请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMCPTaskResultResponse": {
+      "document": "DescribeMCPTaskResult返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

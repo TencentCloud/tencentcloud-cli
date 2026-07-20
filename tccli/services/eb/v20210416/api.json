@@ -2032,7 +2032,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -2041,8 +2041,8 @@
         },
         {
           "disabled": false,
-          "document": "根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime",
-          "example": "ModTime",
+          "document": "<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 更新时间</li><li>name： 连接器名称</li></ul><p>默认值：updated_at</p>",
+          "example": "updated_at",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -2050,7 +2050,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2059,7 +2059,7 @@
         },
         {
           "disabled": false,
-          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "document": "<p>以升序还是降序的方式返回结果，可选值 ASC 和 DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -2068,7 +2068,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2083,7 +2083,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接器信息",
+          "document": "<p>连接器信息</p>",
           "example": "无",
           "member": "Connection",
           "name": "Connections",
@@ -2093,7 +2093,7 @@
         },
         {
           "disabled": false,
-          "document": "连接器总数",
+          "document": "<p>连接器总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -2115,7 +2115,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "根据哪个字段进行返回结果排序,支持以下字段：created_at（创建时间）, updated_at（修改时间）",
+          "document": "<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li><li>name： 事件集名称</li></ul><p>默认值：updated_at</p>",
           "example": "created_at",
           "member": "string",
           "name": "OrderBy",
@@ -2124,7 +2124,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2133,7 +2133,7 @@
         },
         {
           "disabled": false,
-          "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
+          "document": "<p>以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -2142,8 +2142,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{\"Name\":\"Type\",\"Values\":[\"Cloud\",\"Platform\"]}]",
-          "example": "[{\"Name\":\"Type\",\"Values\":[\"Cloud\",\"Platform\"]}]",
+          "document": "<p>过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{&quot;Name&quot;:&quot;Type&quot;,&quot;Values&quot;:[&quot;Cloud&quot;,&quot;Platform&quot;]}]</p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2151,7 +2151,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认为0。",
+          "document": "<p>分页偏移量，默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2166,7 +2166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集信息",
+          "document": "<p>事件集信息</p>",
           "example": "无",
           "member": "EventBus",
           "name": "EventBuses",
@@ -2176,7 +2176,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集总数",
+          "document": "<p>事件集总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -2299,7 +2299,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件集ID",
+          "document": "<p>事件集ID</p>",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
@@ -2308,8 +2308,8 @@
         },
         {
           "disabled": false,
-          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）,name（规则名称）",
-          "example": "ModTime",
+          "document": "<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li><li>name： 规则名称</li></ul><p>默认值：updated_at</p>",
+          "example": "updated_at",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -2317,7 +2317,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2326,7 +2326,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认为0。",
+          "document": "<p>分页偏移量，默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2335,7 +2335,7 @@
         },
         {
           "disabled": false,
-          "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
+          "document": "<p>以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -2350,7 +2350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件规则信息",
+          "document": "<p>事件规则信息</p>",
           "example": "无",
           "member": "Rule",
           "name": "Rules",
@@ -2360,7 +2360,7 @@
         },
         {
           "disabled": false,
-          "document": "事件规则总数",
+          "document": "<p>事件规则总数</p>",
           "example": "8",
           "member": "int64",
           "name": "TotalCount",
@@ -2400,8 +2400,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）</p>",
-          "example": "ModTime",
+          "document": "<p>根据哪个字段进行返回结果排序</p><p>枚举值：</p><ul><li>created_at： 创建时间</li><li>updated_at： 修改时间</li></ul><p>默认值：updated_at</p>",
+          "example": "updated_at",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -2775,7 +2775,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "Active",
           "member": "string",
           "name": "Status",
@@ -2785,7 +2785,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "ModTime",
@@ -2795,7 +2795,7 @@
         },
         {
           "disabled": false,
-          "document": "使能开关",
+          "document": "<p>使能开关</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -2805,7 +2805,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
@@ -2815,8 +2815,8 @@
         },
         {
           "disabled": false,
-          "document": "规则ID",
-          "example": "rule-xxxxxxxx",
+          "document": "<p>规则ID</p>",
+          "example": "rule-rjn6exxw",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
@@ -2825,7 +2825,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "AddTime",
@@ -2835,8 +2835,8 @@
         },
         {
           "disabled": false,
-          "document": "事件集ID",
-          "example": "eb-xxxxxxxx",
+          "document": "<p>事件集ID</p>",
+          "example": "eb-rjn6exxw",
           "member": "string",
           "name": "EventBusId",
           "output_required": true,
@@ -2845,7 +2845,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "rule",
           "member": "string",
           "name": "RuleName",
@@ -2855,7 +2855,7 @@
         },
         {
           "disabled": false,
-          "document": "Target 简要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Target 简要信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TargetBrief",
           "name": "Targets",
@@ -2865,7 +2865,7 @@
         },
         {
           "disabled": false,
-          "document": "rule设置的dlq规则. 可能为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>rule设置的dlq规则. 可能为null</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeadLetterConfig",
           "name": "DeadLetterConfig",
@@ -2956,7 +2956,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>每页数据大小</p>",
+          "document": "<p>每页数据大小</p><p>取值范围：[1, 1000]</p><p>默认值：10</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -2974,7 +2974,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件查询结果排序，[&quot;timestamp&quot;,&quot;subject&quot;]</p>",
+          "document": "<p>事件查询结果排序</p><p>枚举值：</p><ul><li>Timestamp： 事件触发时间</li><li>Source： 事件源</li><li>Type： 事件类型</li><li>RuleIds： 事件规则</li><li>Subject： 事件对象</li><li>Region： 事件地域</li><li>Status： 事件状态</li></ul>",
           "example": "[\"timestamp\",\"subject\"]",
           "member": "string",
           "name": "OrderFields",
@@ -2983,7 +2983,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>排序方式，asc 从旧到新，desc 从新到旧</p>",
+          "document": "<p>排序方式，asc 从旧到新，desc 从新到旧</p><p>枚举值：</p><ul><li>asc： 从旧到新</li><li>desc： 从新到旧</li></ul><p>默认值：desc</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderBy",

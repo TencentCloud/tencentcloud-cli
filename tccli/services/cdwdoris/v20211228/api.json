@@ -10026,7 +10026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组名称",
+          "document": "<p>资源组名称</p>",
           "example": "test1",
           "member": "string",
           "name": "WorkloadGroupName",
@@ -10037,7 +10037,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU权重",
+          "document": "<p>CPU权重</p>",
           "example": "10",
           "member": "int64",
           "name": "CpuShare",
@@ -10048,7 +10048,7 @@
         },
         {
           "disabled": false,
-          "document": "内存限制，所有资源组的内存限制值之和应该小于等于100",
+          "document": "<p>内存限制，所有资源组的内存限制值之和应该小于等于100</p>",
           "example": "20",
           "member": "int64",
           "name": "MemoryLimit",
@@ -10059,7 +10059,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许超配分配",
+          "document": "<p>是否允许超配分配</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableMemoryOverCommit",
@@ -10070,13 +10070,68 @@
         },
         {
           "disabled": false,
-          "document": "cpu硬限制",
+          "document": "<p>cpu硬限制</p>",
           "example": "30%",
           "member": "string",
           "name": "CpuHardLimit",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MinCpuPercent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MinMemoryPercent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>2.1+ 新增；不传走内核默认（Integer.MAX_VALUE=2147483647），建议按业务并发量配置</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxConcurrencyNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>2.1+ 新增；0=不排队，建议为 MaxConcurrencyNum 的 50%</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxQueueSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>2.1+ 新增；单位 ms，建议 5000（5s）</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "QueueTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

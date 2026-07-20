@@ -2280,7 +2280,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "测试一下",
           "member": "string",
           "name": "Name",
@@ -2289,7 +2289,7 @@
         },
         {
           "disabled": false,
-          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
+          "document": "<p>如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）</p>",
           "example": "1696867200",
           "member": "int64",
           "name": "ExpireTime",
@@ -2298,7 +2298,7 @@
         },
         {
           "disabled": false,
-          "document": "优先级",
+          "document": "<p>优先级</p>",
           "example": "12",
           "member": "int64",
           "name": "SortId",
@@ -2307,7 +2307,7 @@
         },
         {
           "disabled": false,
-          "document": "动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向",
+          "document": "<p>动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向</p>",
           "example": "2",
           "member": "int64",
           "name": "ActionType",
@@ -2316,7 +2316,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向地址",
+          "document": "<p>重定向地址</p>",
           "example": "/index.html",
           "member": "string",
           "name": "Redirect",
@@ -2325,7 +2325,7 @@
         },
         {
           "disabled": false,
-          "document": "加白模块",
+          "document": "<p>加白模块</p>",
           "example": "owasp,geoip,cc,antileakage",
           "member": "string",
           "name": "Bypass",
@@ -2334,7 +2334,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "备注一下",
           "member": "string",
           "name": "Remark",
@@ -2343,7 +2343,7 @@
         },
         {
           "disabled": false,
-          "document": "事件Id",
+          "document": "<p>事件Id</p>",
           "example": "112233",
           "member": "string",
           "name": "EventId",
@@ -2352,7 +2352,7 @@
         },
         {
           "disabled": false,
-          "document": "域名列表",
+          "document": "<p>域名列表</p>",
           "example": "[\"config.qcloudwaf.com\",\"test.zjw.com\"]",
           "member": "string",
           "name": "Domains",
@@ -2361,7 +2361,7 @@
         },
         {
           "disabled": false,
-          "document": "策略详情列表",
+          "document": "<p>策略详情列表</p>",
           "example": "无",
           "member": "Strategy",
           "name": "Strategies",
@@ -2370,7 +2370,7 @@
         },
         {
           "disabled": false,
-          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "document": "<p>规则执行的方式，TimedJob为定时执行，CronJob为周期执行</p>",
           "example": "TimedJob",
           "member": "string",
           "name": "JobType",
@@ -2379,7 +2379,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务配置",
+          "document": "<p>定时任务配置</p>",
           "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
@@ -2388,7 +2388,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "document": "<p>匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系</p>",
           "example": "and",
           "member": "string",
           "name": "LogicalOp",
@@ -2397,7 +2397,7 @@
         },
         {
           "disabled": false,
-          "document": "页面ID",
+          "document": "<p>页面ID</p>",
           "example": "\"0\"",
           "member": "string",
           "name": "PageId",
@@ -2406,12 +2406,21 @@
         },
         {
           "disabled": false,
-          "document": "动作灰度比例",
+          "document": "<p>动作灰度比例</p>",
           "example": "2",
           "member": "uint64",
           "name": "ActionRatio",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的防护组ID</p>",
+          "example": "[8500003218]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2421,7 +2430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作成功",
+          "document": "<p>操作成功</p>",
           "example": "success",
           "member": "string",
           "name": "Res",
@@ -3825,6 +3834,45 @@
       ],
       "usage": "out"
     },
+    "ApiEventSample": {
+      "document": "API 安全事件样本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>攻击样本的请求部分</p>",
+          "example": "POST /api/data HTTP/1.1\naccept: */*\nAccept-Encoding: \nx-forwarded-for: 175.13.252.113",
+          "member": "string",
+          "name": "Request",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击样本的响应</p>",
+          "example": "{\"code\":0,\"data\":\"xxxx\",\"mccode\":0,\"errObj\":{},\"reqId\":\"skcmu-xxx\",\"seqId\":\"xxx-xxx-xx-x\"}",
+          "member": "string",
+          "name": "Response",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击样本状态码</p>",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApiGuardContent": {
       "document": "guard content",
       "members": [
@@ -4148,7 +4196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "攻击来源ip",
+          "document": "<p>攻击来源ip</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SrcIp",
@@ -4158,7 +4206,7 @@
         },
         {
           "disabled": false,
-          "document": "威胁等级",
+          "document": "<p>威胁等级</p>",
           "example": "\"100\"",
           "member": "string",
           "name": "EventLevel",
@@ -4168,7 +4216,7 @@
         },
         {
           "disabled": false,
-          "document": "BOT标签",
+          "document": "<p>BOT标签</p>",
           "example": "IDC",
           "member": "string",
           "name": "BotLabel",
@@ -4178,7 +4226,7 @@
         },
         {
           "disabled": false,
-          "document": "变更时间",
+          "document": "<p>变更时间</p>",
           "example": "24234",
           "member": "uint64",
           "name": "Timestamp",
@@ -4188,7 +4236,7 @@
         },
         {
           "disabled": false,
-          "document": "地理位置",
+          "document": "<p>地理位置</p>",
           "example": "北京",
           "member": "string",
           "name": "City",
@@ -4198,7 +4246,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1730609155",
           "member": "uint64",
           "name": "StartTime",
@@ -4208,7 +4256,7 @@
         },
         {
           "disabled": false,
-          "document": "关联事件数量",
+          "document": "<p>关联事件数量</p>",
           "example": "88",
           "member": "int64",
           "name": "EventCount",
@@ -4218,7 +4266,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击数量",
+          "document": "<p>攻击数量</p>",
           "example": "99",
           "member": "int64",
           "name": "AttackCount",
@@ -4228,7 +4276,7 @@
         },
         {
           "disabled": false,
-          "document": "缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段",
+          "document": "<p>缺失参数名，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>",
           "example": "“user1”",
           "member": "string",
           "name": "MissUserName",
@@ -4238,8 +4286,8 @@
         },
         {
           "disabled": false,
-          "document": "当是水平越权和垂直越权时，返回此字段",
-          "example": "waf",
+          "document": "<p>当是水平越权和垂直越权时，返回此字段</p>",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "AttackDetail",
           "output_required": false,
@@ -4248,12 +4296,42 @@
         },
         {
           "disabled": false,
-          "document": "缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段",
+          "document": "<p>缺失密码参数，当事件类型是缺失参数名，缺失参数名和密码时，返回此字段</p>",
           "example": "“passwww”",
           "member": "string",
           "name": "MissPassword",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件描述</p>",
+          "example": "检测到源IP 175.13.252.113 在 2026-07-01 18:36:25 至 2026-07-01 18:36:28 期间，对接口 POST /api/data 的 60 次访问中 0% 使用了异常UA类型，UA示例：。符合访问终端异常特征。",
+          "member": "string",
+          "name": "EventDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件描述(英文)</p>",
+          "example": "Detected source IP 175.13.252.113 from 2026-07-01 18:36:25 to 2026-07-01 18:36:28, against POST /api/data with 60 requests, 0% using abnormal UA type. Sample: . Matching abnormal user agent pattern.",
+          "member": "string",
+          "name": "EventDescriptionEng",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击样本</p>",
+          "example": "无",
+          "member": "ApiEventSample",
+          "name": "Sample",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -5341,7 +5419,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则Id",
+          "document": "<p>规则Id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -5351,7 +5429,7 @@
         },
         {
           "disabled": false,
-          "document": "动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验",
+          "document": "<p>动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验</p>",
           "example": "1",
           "member": "int64",
           "name": "ActionType",
@@ -5361,7 +5439,7 @@
         },
         {
           "disabled": false,
-          "document": "加白模块",
+          "document": "<p>加白模块</p>",
           "example": "owasp,cc",
           "member": "string",
           "name": "Bypass",
@@ -5371,7 +5449,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期",
+          "document": "<p>有效期</p>",
           "example": "1696867200",
           "member": "uint64",
           "name": "ExpireTime",
@@ -5381,7 +5459,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称",
+          "document": "<p>规则名称</p>",
           "example": "测试一下",
           "member": "string",
           "name": "Name",
@@ -5391,7 +5469,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向地址",
+          "document": "<p>重定向地址</p>",
           "example": "/redirect",
           "member": "string",
           "name": "Redirect",
@@ -5401,7 +5479,7 @@
         },
         {
           "disabled": false,
-          "document": "优先级",
+          "document": "<p>优先级</p>",
           "example": "1",
           "member": "int64",
           "name": "SortId",
@@ -5411,7 +5489,7 @@
         },
         {
           "disabled": false,
-          "document": "开关状态",
+          "document": "<p>开关状态</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -5421,7 +5499,7 @@
         },
         {
           "disabled": false,
-          "document": "域名列表",
+          "document": "<p>域名列表</p>",
           "example": "[\"config.qcloudwaf.com\",\"test.zjw.com\"]",
           "member": "string",
           "name": "Domains",
@@ -5431,7 +5509,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -5441,7 +5519,7 @@
         },
         {
           "disabled": false,
-          "document": "策略列表",
+          "document": "<p>策略列表</p>",
           "example": "无",
           "member": "Strategy",
           "name": "Strategies",
@@ -5451,7 +5529,7 @@
         },
         {
           "disabled": false,
-          "document": "事件Id",
+          "document": "<p>事件Id</p>",
           "example": "1",
           "member": "string",
           "name": "EventId",
@@ -5461,7 +5539,7 @@
         },
         {
           "disabled": false,
-          "document": "生效状态",
+          "document": "<p>生效状态</p>",
           "example": "2",
           "member": "uint64",
           "name": "ValidStatus",
@@ -5471,7 +5549,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2023-10-16 17:27:29",
           "member": "string",
           "name": "CreateTime",
@@ -5481,7 +5559,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2023-10-16 17:27:29",
           "member": "string",
           "name": "UpdateTime",
@@ -5491,7 +5569,7 @@
         },
         {
           "disabled": false,
-          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "document": "<p>规则执行的方式，TimedJob为定时执行，CronJob为周期执行</p>",
           "example": "TimedJob",
           "member": "string",
           "name": "JobType",
@@ -5501,7 +5579,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务配置",
+          "document": "<p>定时任务配置</p>",
           "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
@@ -5511,7 +5589,7 @@
         },
         {
           "disabled": false,
-          "document": "周期任务粒度",
+          "document": "<p>周期任务粒度</p>",
           "example": "week",
           "member": "string",
           "name": "CronType",
@@ -5521,7 +5599,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "label",
           "member": "string",
           "name": "Label",
@@ -5531,7 +5609,7 @@
         },
         {
           "disabled": false,
-          "document": "页面ID",
+          "document": "<p>页面ID</p>",
           "example": "1101",
           "member": "string",
           "name": "PageId",
@@ -5541,7 +5619,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "document": "<p>匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系</p>",
           "example": "and",
           "member": "string",
           "name": "LogicalOp",
@@ -5551,12 +5629,22 @@
         },
         {
           "disabled": false,
-          "document": "动作灰度的比例",
+          "document": "<p>动作灰度的比例</p>",
           "example": "2",
           "member": "uint64",
           "name": "ActionRatio",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防护对象组ID</p>",
+          "example": "[8500003218]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8808,6 +8896,16 @@
           "name": "WafAccessStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -23935,6 +24033,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检出分类</p>",
+          "example": "级联失败",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -33962,7 +34070,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段\n\n    匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示：\n<table><thead><tr><th>匹配字段</th><th>匹配参数</th><th>逻辑符号</th><th>匹配内容</th></tr></thead><tbody><tr><td>IP（来源IP）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>多个IP以英文逗号隔开,最多20个</td></tr><tr><td>IPV6（来源IPv6）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>支持单个IPV6地址</td></tr><tr><td>Referer（Referer）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>URL（请求路径）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）<br/></td><td>请以/开头,512个字符以内</td></tr><tr><td>UserAgent（UserAgent）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>HTTP_METHOD（HTTP请求方法）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）</td><td>请输入方法名称,建议大写</td></tr><tr><td>QUERY_STRING（请求字符串）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET（GET参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_PARAMS_NAMES（GET参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST（POST参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_POST_NAMES（POST参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST_BODY（完整BODY）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入BODY内容,512个字符以内</td></tr><tr><td>COOKIE（Cookie）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>rematch（正则匹配）</td><td><font color=\"Red\">暂不支持</font></td></tr><tr><td>GET_COOKIES_NAMES（Cookie参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>ARGS_COOKIE（Cookie参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_HEADERS_NAMES（Header参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,建议小写,512个字符以内</td></tr><tr><td>ARGS_HEADER（Header参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>CONTENT_LENGTH（Content-length）</td><td>支持参数录入</td><td>numgt（数值大于）<br/>numlt（数值小于）<br/>numeq（数值等于）<br/></td><td>请输入0-9999999999999之间的整数</td></tr><tr><td>IP_GEO（来源IP归属地）</td><td>支持参数录入</td><td>geo_in（属于）<br/>geo_not_in（不属于）<br/></td><td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td></tr><tr><td>CAPTCHA_RISK（验证码风险）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>belong（属于）<br/>not_belong（不属于）<br/>null（不存在）<br/>exist（存在）</td><td>请输入风险等级值,支持数值范围0-255</td></tr><tr><td>CAPTCHA_DEVICE_RISK（验证码设备风险）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>belong（属于）<br/>not_belong（不属于）<br/>null（不存在）<br/>exist（存在）</td><td>请输入设备风险代码,支持取值：101、201、301、401、501、601、701</td></tr><tr><td>CAPTCHAR_SCORE（验证码风险评估分）</td><td>不支持参数</td><td>numeq（数值等于）<br/>numgt（数值大于）<br/>numlt（数值小于）<br/>numle（数值小于等于）<br/>numge（数值大于等于）<br/>null（不存在）<br/>exist（存在）</td><td>请输入评估分数,支持数值范围0-100</td></tr>\n</tbody></table>",
+          "document": "匹配字段 匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示： <table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>匹配字段</th>\n\t\t\t<th>匹配参数</th>\n\t\t\t<th>逻辑符号</th>\n\t\t\t<th>匹配内容</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>IP（来源IP）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>多个IP以英文逗号隔开,最多20个</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IPV6（来源IPv6）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>支持单个IPV6地址</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Referer（Referer）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br/>belong_to（属于）<br/>not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>URL（请求路径）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）<br /></td>\n\t\t\t<td>请以/开头,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>UserAgent（UserAgent）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HTTP_METHOD（HTTP请求方法）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br/>belong_to（属于）<br/>not_belong_to（不属于）</td>\n\t\t\t<td>请输入方法名称,建议大写</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>QUERY_STRING（请求字符串）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET（GET参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>contains（包含）<br />ncontains（不包含）<br/>belong_to（属于）<br/>not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_PARAMS_NAMES（GET参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>exsit（存在参数）<br />nexsit（不存在参数）<br/>belong_to（属于）<br/>not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST（POST参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_POST_NAMES（POST参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST_BODY（完整BODY）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td>\n\t\t\t<td>请输入BODY内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>COOKIE（Cookie）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />rematch（正则匹配）</td>\n\t\t\t<td>\n\t\t\t\t<font color=\"Red\">暂不支持</font>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_COOKIES_NAMES（Cookie参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_COOKIE（Cookie参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_HEADERS_NAMES（Header参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>exsit（存在参数）<br />nexsit（不存在参数）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,建议小写,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_HEADER（Header参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CONTENT_LENGTH（Content-length）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>numgt（数值大于）<br />numlt（数值小于）<br />numeq（数值等于）<br /></td>\n\t\t\t<td>请输入0-9999999999999之间的整数</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IP_GEO（来源IP归属地）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>geo_in（属于）<br />geo_not_in（不属于）<br /></td>\n\t\t\t<td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_RISK（验证码风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong（属于）<br />not_belong（不属于）<br />null（不存在）<br />exist（存在）</td>\n\t\t\t<td>请输入风险等级值,支持数值范围0-255</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_DEVICE_RISK（验证码设备风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong（属于）<br />not_belong（不属于）<br />null（不存在）<br />exist（存在）</td>\n\t\t\t<td>请输入设备风险代码,支持取值：101、201、301、401、501、601、701</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHAR_SCORE（验证码风险评估分）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numle（数值小于等于）<br />numge（数值大于等于）<br />null（不存在）<br />exist（存在）</td>\n\t\t\t<td>请输入评估分数,支持数值范围0-100</td>\n\t\t</tr>\n\t</tbody>\n</table>",
           "example": "IP-来源IP",
           "member": "string",
           "name": "Field",
@@ -33973,7 +34081,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n        numgt （ 数值大于）\n        numlt （ 数值小于）\n        numeq （ 数值等于）\n        numneq （ 数值不等于）\n        numle （ 数值小于等于）\n        numge （ 数值大于等于）\n        geo_in （ IP地理属于）\n        geo_not_in （ IP地理不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格",
+          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n        numgt （ 数值大于）\n        numlt （ 数值小于）\n        numeq （ 数值等于）\n        numneq （ 数值不等于）\n        numle （ 数值小于等于）\n        numge （ 数值大于等于）\n\t\tbelong_to（属于）\n\t\tnot_belong_to（不属于）\n        geo_in （ IP地理属于）\n        geo_not_in （ IP地理不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格",
           "example": "contains - 包含",
           "member": "string",
           "name": "CompareFunc",

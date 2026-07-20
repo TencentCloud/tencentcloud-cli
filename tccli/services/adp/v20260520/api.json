@@ -147,6 +147,13 @@
       "output": "DeleteVariableResponse",
       "status": "online"
     },
+    "DescribeAccountList": {
+      "document": "查看企业下的员工列表",
+      "input": "DescribeAccountListRequest",
+      "name": "查看企业下的员工列表",
+      "output": "DescribeAccountListResponse",
+      "status": "online"
+    },
     "DescribeAgentDetail": {
       "document": "查询 Agent 详情",
       "input": "DescribeAgentDetailRequest",
@@ -180,6 +187,20 @@
       "input": "DescribeAppSummaryListRequest",
       "name": "获取应用摘要列表",
       "output": "DescribeAppSummaryListResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogList": {
+      "document": "查看操作日志列表",
+      "input": "DescribeAuditLogListRequest",
+      "name": "查看操作日志列表",
+      "output": "DescribeAuditLogListResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogMeta": {
+      "document": "获取审计日志元信息",
+      "input": "DescribeAuditLogMetaRequest",
+      "name": "获取审计日志元信息",
+      "output": "DescribeAuditLogMetaResponse",
       "status": "online"
     },
     "DescribeConversation": {
@@ -488,6 +509,45 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AccountInfo": {
+      "document": "员工信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>员工子账号id</p>",
+          "example": "700000963993",
+          "member": "string",
+          "name": "AccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>员工昵称</p>",
+          "example": "testadp111",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>员工头像</p>",
+          "example": "https://qidian-****-*********1.cos.ap-guangzhou.my*cloud.com/public/avatar_tiger02.png",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -903,7 +963,7 @@
         },
         {
           "disabled": false,
-          "document": "OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）",
+          "document": "<p>OAuth 授权同意模式；0-开发者授权；1-使用者授权（仅在auth_type=3时生效）</p>",
           "example": "0",
           "member": "int64",
           "name": "OAuthConsent",
@@ -1920,7 +1980,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppAuxiliaryInfo",
           "name": "AuxiliaryInfo",
@@ -1931,7 +1991,7 @@
         },
         {
           "disabled": false,
-          "document": "配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppConfig",
           "name": "Config",
@@ -1942,7 +2002,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>元数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppMetadata",
           "name": "Metadata",
@@ -1953,7 +2013,7 @@
         },
         {
           "disabled": false,
-          "document": "应用密钥信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用密钥信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppSecretInfo",
           "name": "SecretInfo",
@@ -1964,7 +2024,7 @@
         },
         {
           "disabled": false,
-          "document": "分享链接信息(含访问控制)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分享链接信息(含访问控制)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppShareURLInfo",
           "name": "ShareUrlInfo",
@@ -1975,7 +2035,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppStatusInfo",
           "name": "Status",
@@ -1986,7 +2046,7 @@
         },
         {
           "disabled": false,
-          "document": "应用引用的共享知识库列表",
+          "document": "<p>应用引用的共享知识库列表</p>",
           "example": "无",
           "member": "AppSharedKbInfo",
           "name": "SharedKbList",
@@ -1994,6 +2054,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业共享配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CorpShareConfig",
+          "name": "CorpShareConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2660,33 +2731,33 @@
       "usage": "both"
     },
     "AppShareAccessControl": {
-      "document": "应用分享访问控制配置",
+      "document": "AppShareAccessControl",
       "members": [
         {
           "disabled": false,
-          "document": "访问控制类型。枚举值: 1:公开访问(所有用户都可访问), 2:内部访问(仅企业用户可访问), 3:账号白名单(指定UIN/手机/邮箱/IP可访问)",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>APP_SHARE_ACCESS_TYPE_PUBLIC</td><td>1</td><td>公开访问(所有用户都可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_INTERNAL</td><td>2</td><td>内部访问(仅企业用户可访问)</td></tr><tr><td>APP_SHARE_ACCESS_TYPE_ACCOUNT_WHITELIST</td><td>3</td><td>账号白名单(指定UIN/手机/邮箱/IP可访问)</td></tr></tbody></table>",
           "example": "3",
           "member": "int64",
           "name": "AccessType",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "体验链接开关",
+          "document": "<p>是否开启访问控制</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 禁用</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "白名单(仅 access_type=ACCOUNT_WHITELIST 时生效)",
+          "document": "<p>白名单信息</p>",
           "example": "无",
           "member": "AppShareWhitelistItem",
           "name": "Whitelist",
@@ -2727,22 +2798,22 @@
       "usage": "both"
     },
     "AppShareWhitelistItem": {
-      "document": "应用分享白名单项",
+      "document": "AppShareWhitelistItem",
       "members": [
         {
           "disabled": false,
-          "document": "白名单类型。枚举值: 1:UIN账号, 2:手机号码, 3:邮箱地址, 4:IP地址",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_SHARE_WHITELIST_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>APP_SHARE_WHITELIST_TYPE_UIN</td><td>1</td><td>UIN账号</td></tr><tr><td>APP_SHARE_WHITELIST_TYPE_PHONE</td><td>2</td><td>手机号码</td></tr><tr><td>APP_SHARE_WHITELIST_TYPE_EMAIL</td><td>3</td><td>邮箱地址</td></tr><tr><td>APP_SHARE_WHITELIST_TYPE_IP</td><td>4</td><td>IP地址</td></tr><tr><td>APP_SHARE_WHITELIST_TYPE_RTX</td><td>5</td><td>RTX账号</td></tr></tbody></table>",
           "example": "1",
           "member": "int64",
           "name": "Type",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "白名单值列表(UIN/手机号/邮箱/IP等)",
+          "document": "<p>白名单数组信息</p><p>参数格式：白名单值</p>",
           "example": "[\"70000000\"]",
           "member": "string",
           "name": "Values",
@@ -3088,6 +3159,128 @@
       ],
       "usage": "both"
     },
+    "AuditLog": {
+      "document": "操作日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>员工信息</p>",
+          "example": "无",
+          "member": "AccountInfo",
+          "name": "AccountInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用业务id</p>",
+          "example": "2076540405187173248",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用名称</p><p>操作日志触发时的名称</p>",
+          "example": "eval-workflow-import-exec-043211",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作时间</p><p>参数格式：秒时间戳</p>",
+          "example": "1783921629",
+          "member": "string",
+          "name": "OperateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型</p>",
+          "example": "启用",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作对象</p>",
+          "example": "工作流",
+          "member": "string",
+          "name": "Biz",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作内容</p>",
+          "example": "发布-eval-kb-routing-exec-043725",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作唯一ID</p>",
+          "example": "a15d6f4af9a53aac4a3671a814f4d09a78d3723cfbe31eaa40001631d0be0af4",
+          "member": "string",
+          "name": "UniqueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AuditLogMetaField": {
+      "document": "操作日志元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作日志元数据key</p>",
+          "example": "create",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作日志元数据Name</p>",
+          "example": "新建",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AuthConfig": {
       "document": "插件授权配置",
       "members": [
@@ -3316,6 +3509,34 @@
       ],
       "usage": "both"
     },
+    "ClawAgentAgentTeamConfig": {
+      "document": "ClawAgent Agent团队协作配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启Agent团队协作</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>prompt内容</p>",
+          "example": "我的提示词",
+          "member": "string",
+          "name": "PromptContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClawAgentConfig": {
       "document": "ClawAgent配置",
       "members": [
@@ -3329,6 +3550,28 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent团队协作配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClawAgentAgentTeamConfig",
+          "name": "AgentTeamConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "长期记忆配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClawAgentLongMemoryConfig",
+          "name": "LongMemoryConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3339,6 +3582,23 @@
         {
           "disabled": false,
           "document": "<p>是否允许C端用户在对话时动态传入自定义Agent配置</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClawAgentLongMemoryConfig": {
+      "document": "ClawAgent长期记忆配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启长期记忆</p>",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -4221,6 +4481,45 @@
       ],
       "type": "object"
     },
+    "CorpShareConfig": {
+      "document": "CorpShareConfig",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业共享开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SHARE_SCOPE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ALL</td><td>1</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ACCOUNT</td><td>2</td><td></td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "ShareScope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业共享应用标签</p>",
+          "example": "[\"1990010100000000001\"]",
+          "member": "string",
+          "name": "TagIdList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAgentRequest": {
       "document": "CreateAgent请求参数结构体",
       "members": [
@@ -4486,7 +4785,25 @@
           "member": "Tool",
           "name": "ToolList",
           "required": false,
-          "type": "object"
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4497,7 +4814,7 @@
         {
           "disabled": false,
           "document": "<p>插件id</p>",
-          "example": "acb14a04-a049-4a0c-bafa-9670e5d949f2",
+          "example": "230ae967-f8fe-421d-96db-5e38c0ab4506",
           "member": "string",
           "name": "PluginId",
           "output_required": false,
@@ -4518,7 +4835,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "2060***********5184",
           "member": "string",
           "name": "AppId",
@@ -4527,7 +4844,16 @@
         },
         {
           "disabled": false,
-          "document": "渠道ID列表",
+          "document": "<p>应用分享访问控制配置</p>",
+          "example": "无",
+          "member": "AppShareAccessControl",
+          "name": "AppShareAccessControl",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道ID列表</p>",
           "example": "[\"12312312321\"]",
           "member": "string",
           "name": "ChannelIdList",
@@ -4536,7 +4862,16 @@
         },
         {
           "disabled": false,
-          "document": "发布描述",
+          "document": "<p>企业共享配置</p>",
+          "example": "无",
+          "member": "CorpShareConfig",
+          "name": "CorpShareConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发布描述</p>",
           "example": "我的发布信息",
           "member": "string",
           "name": "Description",
@@ -4545,7 +4880,7 @@
         },
         {
           "disabled": false,
-          "document": "将默认知识库中，仅调试生效的知识批量变更为\"调试/发布都生效\"",
+          "document": "<p>将默认知识库中，仅调试生效的知识批量变更为&quot;调试/发布都生效&quot;</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDevToRelease",
@@ -4554,7 +4889,7 @@
         },
         {
           "disabled": false,
-          "document": "是否同步发布为应用模板",
+          "document": "<p>是否同步发布为应用模板</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPublishAsTemplate",
@@ -4569,7 +4904,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "need_approval",
+          "document": "<p>need_approval</p>",
           "example": "false",
           "member": "bool",
           "name": "NeedApproval",
@@ -4579,7 +4914,7 @@
         },
         {
           "disabled": false,
-          "document": "release_id",
+          "document": "<p>release_id</p>",
           "example": "2061*************32",
           "member": "string",
           "name": "ReleaseId",
@@ -5132,11 +5467,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "app_id",
+          "document": "<p>app_id</p>",
           "example": "2060************136",
           "member": "string",
           "name": "AppId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除原因(非必填,审批时展示)</p>",
+          "example": "应用已不需要",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
           "type": "string"
         }
       ],
@@ -5232,10 +5576,28 @@
         {
           "disabled": false,
           "document": "<p>插件id</p>",
-          "example": "acb14a04-a049-4a0c-bafa-9670e5d949f2",
+          "example": "06f22d3d-07c6-45dd-a54d-565875ddbe37",
           "member": "string",
           "name": "PluginId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
           "type": "string"
         }
       ],
@@ -5416,6 +5778,71 @@
     "DeleteVariableResponse": {
       "document": "DeleteVariable返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountListRequest": {
+      "document": "DescribeAccountList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码</p><p>从0开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页数量</p><p>取值范围：[1, 100]</p><p>单位：个</p><p>最大100</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数过滤</p><p>支持SpaceId,NIckName 过滤查询</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountListResponse": {
+      "document": "DescribeAccountList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "99",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>员工列表</p>",
+          "example": "无",
+          "member": "AccountInfo",
+          "name": "AccountList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5642,7 +6069,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "2058***********6480",
           "member": "string",
           "name": "AppId",
@@ -5651,7 +6078,7 @@
         },
         {
           "disabled": false,
-          "document": "应用域: ADP_DOMAIN_DEV(1)=开发域, ADP_DOMAIN_PROD(2)=发布域。枚举值: 1:开发域, 2:生产域",
+          "document": "<p>应用域: ADP_DOMAIN_DEV(1)=开发域, ADP_DOMAIN_PROD(2)=发布域。枚举值: 1:开发域, 2:生产域</p>",
           "example": "1",
           "member": "int64",
           "name": "Domain",
@@ -5660,7 +6087,7 @@
         },
         {
           "disabled": false,
-          "document": "字段掩码，指定需要返回的字段(Paths为空则返回所有字段)。Paths枚举值：AppConfig(应用配置), SecretInfo(应用密钥信息), ShareUrlInfo(分享链接信息), SpecialStatusInfo(特殊状态信息), SearchResourceStatus(搜索资源状态), SharedKbList(应用引用的共享知识库列表)",
+          "document": "<p>字段掩码，指定需要返回的字段(Paths为空则返回所有字段)。Paths枚举值：AppConfig(应用配置), SecretInfo(应用密钥信息), ShareUrlInfo(分享链接信息), SpecialStatusInfo(特殊状态信息), SearchResourceStatus(搜索资源状态), SharedKbList(应用引用的共享知识库列表),CorpShareConfig(企业共享配置)</p>",
           "example": "无",
           "member": "FieldMask",
           "name": "FieldMask",
@@ -5669,7 +6096,7 @@
         },
         {
           "disabled": false,
-          "document": "特殊状态类型(当FieldMask包含SpecialStatusInfo时必填)。枚举值: 1:回滚状态, 2:首次导入状态",
+          "document": "<p>特殊状态类型(当FieldMask包含SpecialStatusInfo时必填)。枚举值: 1:回滚状态, 2:首次导入状态</p>",
           "example": "1",
           "member": "int64",
           "name": "StatusType",
@@ -5684,7 +6111,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用详情",
+          "document": "<p>应用详情</p>",
           "example": "无",
           "member": "App",
           "name": "App",
@@ -5773,6 +6200,117 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogListRequest": {
+      "document": "DescribeAuditLogList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间id</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p><p>取值范围：[1, 100]</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>es查询起始位置</p><p>对应接口返回SearchAfter</p>",
+          "example": "[\"1783921991000\"]",
+          "member": "string",
+          "name": "SearchAfter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数过滤</p><p>支持 Action,BizObject,Content<br>支持SpaceId,AccountUin,AppId(最多100个)<br>支持startTime,endTime(秒时间戳)</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogListResponse": {
+      "document": "DescribeAuditLogList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作日志列表</p>",
+          "example": "无",
+          "member": "AuditLog",
+          "name": "AuditLogList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>es查询起始位置</p><p>用于入参查询下一页</p>",
+          "example": "[\"1783917826000\"]",
+          "member": "string",
+          "name": "SearchAfter",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogMetaRequest": {
+      "document": "DescribeAuditLogMeta请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAuditLogMetaResponse": {
+      "document": "DescribeAuditLogMeta返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作类型列表</p>",
+          "example": "无",
+          "member": "AuditLogMetaField",
+          "name": "Actions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作对象列表</p>",
+          "example": "无",
+          "member": "AuditLogMetaField",
+          "name": "BizObjects",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -7319,11 +7857,11 @@
       "type": "object"
     },
     "FieldMask": {
-      "document": "FieldMask",
+      "document": "字段掩码",
       "members": [
         {
           "disabled": false,
-          "document": "<p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>",
+          "document": "字段路径列表",
           "example": "[\"SkillList\"]",
           "member": "string",
           "name": "Paths",
@@ -7441,7 +7979,7 @@
       "usage": "both"
     },
     "Filter": {
-      "document": "列表通用过滤条件（多个 Filter 之间为 AND 关系，同一 Filter 的多个 value_list 为 OR 关系）",
+      "document": "列表通用过滤条件（多个Filter之间为AND关系，同一Filter的多个value_list为OR关系）",
       "members": [
         {
           "disabled": false,
@@ -7456,7 +7994,7 @@
         },
         {
           "disabled": false,
-          "document": "操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>",
+          "document": "操作符：0-属于，1-不属于",
           "example": "1",
           "member": "int64",
           "name": "Operator",
@@ -8325,7 +8863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "206*************320",
           "member": "string",
           "name": "AppId",
@@ -8334,7 +8872,7 @@
         },
         {
           "disabled": false,
-          "document": "应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式",
+          "document": "<p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>",
           "example": "2",
           "member": "int64",
           "name": "AppMode",
@@ -8343,7 +8881,7 @@
         },
         {
           "disabled": false,
-          "document": "应用头像",
+          "document": "<p>应用头像</p>",
           "example": "https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png",
           "member": "string",
           "name": "Avatar",
@@ -8352,7 +8890,7 @@
         },
         {
           "disabled": false,
-          "document": "应用配置",
+          "document": "<p>应用配置</p>",
           "example": "无",
           "member": "AppConfig",
           "name": "Config",
@@ -8361,7 +8899,7 @@
         },
         {
           "disabled": false,
-          "document": "应用描述",
+          "document": "<p>应用描述</p>",
           "example": "我的应用",
           "member": "string",
           "name": "Description",
@@ -8370,7 +8908,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "我的智能体应用",
           "member": "string",
           "name": "Name",
@@ -8379,16 +8917,7 @@
         },
         {
           "disabled": false,
-          "document": "分享配置",
-          "example": "无",
-          "member": "AppShareAccessControl",
-          "name": "ShareConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "引用的共享知识库ID列表(全量覆盖)",
+          "document": "<p>引用的共享知识库ID列表(全量覆盖)</p>",
           "example": "[\"2047150542445725376\"]",
           "member": "string",
           "name": "SharedKbIdList",
@@ -8397,7 +8926,7 @@
         },
         {
           "disabled": false,
-          "document": "字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：\n【顶层】Name, Avatar, Description, AppMode, ShareConfig, SharedKbIdList\n【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList\n【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel\n【WebSearch】Config.WebSearch\n【Memory】Config.Memory, Config.Memory.Enabled, Config.Memory.LongMemoryDay, Config.Memory.Model, Config.Memory.PromptMode, Config.Memory.PromptContent\n【Mode】Config.Mode, Config.Mode.MultiAgentConfig, Config.Mode.SingleWorkflowConfig\n【Experience】Config.Experience, Config.Experience.Conversation, Config.Experience.Role, Config.Experience.Advanced\n【Experience.Conversation】Config.Experience.Conversation.AiCall, Config.Experience.Conversation.BackgroundImage, Config.Experience.Conversation.Method, Config.Experience.Conversation.FallbackReply, Config.Experience.Conversation.Recommended, Config.Experience.Conversation.InputBoxConfig, Config.Experience.Conversation.WebSearch\n【Experience.Conversation.AiCall】Config.Experience.Conversation.AiCall.VoiceInteract, Config.Experience.Conversation.AiCall.VoiceCall, Config.Experience.Conversation.AiCall.DigitalHuman\n【Experience.Advanced】Config.Experience.Advanced.ContextRewrite, Config.Experience.Advanced.ImageTextRetrieval, Config.Experience.Advanced.IntentAchievement, Config.Experience.Advanced.ReplyFlexibility",
+          "document": "<p>字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：<br>【顶层】Name, Avatar, Description, AppMode, SharedKbIdList<br>【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList<br>【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel<br>【WebSearch】Config.WebSearch<br>【Memory】Config.Memory, Config.Memory.Enabled, Config.Memory.LongMemoryDay, Config.Memory.Model, Config.Memory.PromptMode, Config.Memory.PromptContent<br>【Mode】Config.Mode, Config.Mode.MultiAgentConfig, Config.Mode.SingleWorkflowConfig<br>【Experience】Config.Experience, Config.Experience.Conversation, Config.Experience.Role, Config.Experience.Advanced<br>【Experience.Conversation】Config.Experience.Conversation.AiCall, Config.Experience.Conversation.BackgroundImage, Config.Experience.Conversation.Method, Config.Experience.Conversation.FallbackReply, Config.Experience.Conversation.Recommended, Config.Experience.Conversation.InputBoxConfig, Config.Experience.Conversation.WebSearch<br>【Experience.Conversation.AiCall】Config.Experience.Conversation.AiCall.VoiceInteract, Config.Experience.Conversation.AiCall.VoiceCall, Config.Experience.Conversation.AiCall.DigitalHuman<br>【Experience.Advanced】Config.Experience.Advanced.ContextRewrite, Config.Experience.Advanced.ImageTextRetrieval, Config.Experience.Advanced.IntentAchievement, Config.Experience.Advanced.ReplyFlexibility</p>",
           "example": "无",
           "member": "FieldMask",
           "name": "UpdateMask",
@@ -8412,7 +8941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "app_id",
+          "document": "<p>app_id</p>",
           "example": "206***********84320",
           "member": "string",
           "name": "AppId",
@@ -8422,7 +8951,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间 (Unix时间戳,秒级)",
+          "document": "<p>更新时间 (Unix时间戳,秒级)</p>",
           "example": "1780390885",
           "member": "string",
           "name": "UpdateTime",
@@ -8544,7 +9073,7 @@
         {
           "disabled": false,
           "document": "<p>插件id</p>",
-          "example": "acb14a04-a049-4a0c-bafa-9670e5d949f2",
+          "example": "6ec78f78-23fb-49db-8e53-76921e1e3918",
           "member": "string",
           "name": "PluginId",
           "required": true,
@@ -8553,7 +9082,7 @@
         {
           "disabled": false,
           "document": "<p>插件版本号</p>",
-          "example": "2",
+          "example": "4",
           "member": "int64",
           "name": "PluginVersion",
           "required": true,
@@ -8594,6 +9123,24 @@
           "name": "ToolList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8929,14 +9476,14 @@
         },
         {
           "disabled": false,
-          "document": "插件运营管理信息",
+          "document": "插件运营管理信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PluginOperation",
           "name": "Operation",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -8962,25 +9509,25 @@
         },
         {
           "disabled": false,
-          "document": "插件基础信息",
+          "document": "插件基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PluginProfile",
           "name": "Profile",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "插件统计信息",
+          "document": "插件统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PluginStatistics",
           "name": "Statistics",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -8995,14 +9542,14 @@
         },
         {
           "disabled": false,
-          "document": "工具列表",
+          "document": "工具列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tool",
           "name": "ToolList",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -9017,14 +9564,14 @@
         },
         {
           "disabled": false,
-          "document": "用户维度的插件状态信息",
+          "document": "用户维度的插件状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PluginUserState",
           "name": "UserState",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9617,7 +10164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建时间 (Unix时间戳,秒级)",
+          "document": "<p>创建时间 (Unix时间戳,秒级)</p>",
           "example": "1780389728",
           "member": "string",
           "name": "CreateTime",
@@ -9628,7 +10175,7 @@
         },
         {
           "disabled": false,
-          "document": "发布描述",
+          "document": "<p>发布描述</p>",
           "example": "我的发布信息",
           "member": "string",
           "name": "Description",
@@ -9639,7 +10186,7 @@
         },
         {
           "disabled": false,
-          "document": "发布ID",
+          "document": "<p>发布ID</p>",
           "example": "2061*************32",
           "member": "string",
           "name": "ReleaseId",
@@ -9650,7 +10197,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过",
+          "document": "<p>发布状态。枚举值: 1:待发布, 2:发布中, 3:发布成功, 4:发布失败, 5:审核中, 6:审核成功, 7:审核失败, 8:发布成功回调处理中, 9:发布暂停, 10:申诉审核中, 11:申诉审核通过, 12:申诉审核不通过</p>",
           "example": "3",
           "member": "int64",
           "name": "Status",
@@ -9661,7 +10208,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述",
+          "document": "<p>状态描述</p>",
           "example": "发布成功",
           "member": "string",
           "name": "StatusDescription",
@@ -9672,7 +10219,18 @@
         },
         {
           "disabled": false,
-          "document": "发布渠道ID列表",
+          "document": "<p>应用分享访问控制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppShareAccessControl",
+          "name": "AppShareAccessControl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发布渠道ID列表</p>",
           "example": "[\"123213213213\"]",
           "member": "string",
           "name": "ChannelIdList",
@@ -9680,6 +10238,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业共享配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CorpShareConfig",
+          "name": "CorpShareConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11285,7 +11854,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "默认文件名称",
+          "document": "<p>默认文件名称</p>",
           "example": "****",
           "member": "string",
           "name": "DefaultFileName",
@@ -11296,7 +11865,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值",
+          "document": "<p>默认值</p>",
           "example": "1",
           "member": "string",
           "name": "DefaultValue",
@@ -11307,7 +11876,7 @@
         },
         {
           "disabled": false,
-          "document": "变量描述",
+          "document": "<p>变量描述</p>",
           "example": "我的环境变量",
           "member": "string",
           "name": "Description",
@@ -11318,7 +11887,7 @@
         },
         {
           "disabled": false,
-          "document": "模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数",
+          "document": "<p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>",
           "example": "1",
           "member": "int64",
           "name": "ModuleType",
@@ -11329,7 +11898,7 @@
         },
         {
           "disabled": false,
-          "document": "变量名称",
+          "document": "<p>变量名称</p>",
           "example": "myname1",
           "member": "string",
           "name": "Name",
@@ -11340,7 +11909,7 @@
         },
         {
           "disabled": false,
-          "document": "变量类型。枚举值: 1:字符串, 2:整数, 3:浮点数, 4:布尔值, 5:对象, 6:字符串数组, 7:整数数组, 8:浮点数数组, 9:布尔值数组, 10:对象数组, 11:文件, 12:文档, 13:图片, 14:音频, 15:视频, 16:文件数组, 17:文档数组, 18:图片数组, 19:音频数组, 20:视频数组, 21:数组的数组, 22:密钥/敏感信息, 99:空值",
+          "document": "<p>变量类型</p><p>枚举值：</p><ul><li>0： 字符串</li><li>1： 整数</li><li>2： 浮点数</li><li>3： 布尔值</li><li>4： 对象</li><li>5： 字符串数组</li><li>6： 整数数组</li><li>7： 浮点数数组</li><li>8： 布尔值数组</li><li>9： 对象数组</li><li>10： 文件</li><li>11： 文档</li><li>12： 图片</li><li>13： 音频</li><li>14： 视频</li><li>15： 文件数组</li><li>16： 文档数组</li><li>17： 图片数组</li><li>18： 音频数组</li><li>19： 视频数组</li><li>20： 数组的数组</li><li>21： 密钥</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -11351,13 +11920,35 @@
         },
         {
           "disabled": false,
-          "document": "变量ID",
+          "document": "<p>变量ID</p>",
           "example": "e6b30407-81fd-4ca1-a153-1820d32a37b2",
           "member": "string",
           "name": "VariableId",
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用网络策略(仅环境变量生效)</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableEndpoints",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络策略列表(支持: 精确域名、*.通配子域名、可带协议/端口/路径前缀)</p>",
+          "example": "[\"cloud.com\"]",
+          "member": "string",
+          "name": "EndpointList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

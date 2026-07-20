@@ -38009,11 +38009,11 @@
       "usage": "out"
     },
     "Filters": {
-      "document": "过滤条件。同一 Name 下多个 Values 为或关系；不同 Name 之间为且关系",
+      "document": "过滤条件。同一 Name 下多个 Values 为或关系；不同 Name 之间为且关系。支持的 Name：TaskID（任务ID精确）、TaskStatus（任务状态）、TaskType（任务类型）",
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件名称",
+          "document": "过滤条件名称。取值：TaskID（任务ID，精确匹配）、TaskStatus（任务状态，Values: INIT/SCANNING/SUCCESS/FAILED）、TaskType（任务类型，Values: PERIODIC/MANUAL）",
           "example": "RuleName",
           "member": "string",
           "name": "Name",
@@ -40360,6 +40360,36 @@
           "name": "CpuCoreCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持迁移</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "MigrationRequired",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持暴露面扫描</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportXSPM",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否能解绑</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CanUnbind",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

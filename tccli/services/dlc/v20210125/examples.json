@@ -736,6 +736,22 @@
         "title": "实例一"
       }
     ],
+    "DescribeMCPTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88d52c8f-5baf-4d42-afa7-73bbe0aa7198\"\n    }\n}",
+        "title": "MCP 任务示例"
+      }
+    ],
+    "DescribeMCPTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTaskResult\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1aa1dc9a-adaf-4b05-a2ea-76ecc0d7ea08\"\n    }\n}",
+        "title": "MCP任务结果信息"
+      }
+    ],
     "DescribeNativeSparkSessions": [
       {
         "document": "",

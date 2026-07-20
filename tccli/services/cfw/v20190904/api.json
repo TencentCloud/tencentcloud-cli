@@ -70,6 +70,13 @@
       "output": "CreateAlertCenterRuleResponse",
       "status": "online"
     },
+    "CreateAlertCenterRuleAsync": {
+      "document": "用户告警中心-封禁、放通处置按钮",
+      "input": "CreateAlertCenterRuleAsyncRequest",
+      "name": "告警中心-异步处置接口",
+      "output": "CreateAlertCenterRuleAsyncResponse",
+      "status": "online"
+    },
     "CreateBlockIgnoreRuleList": {
       "document": "批量添加入侵防御封禁列表、放通列表规则",
       "input": "CreateBlockIgnoreRuleListRequest",
@@ -302,7 +309,7 @@
       "status": "online"
     },
     "DescribeCfwAssets": {
-      "document": "查询当前租户防火墙纳管资产。默认查询主机资产；仅明确需要 VPC 或子网时传 AssetType。结果在 Response.Data 的 JSON 字符串中。",
+      "document": "查询当前租户防火墙纳管资产。首次查询传 AssetType、过滤条件和 Limit；Response.Data.HasMore=true 时，续查只传 NextToken。默认查询 host；broad 查询分页返回资产，exact InstanceId 查询分页返回该实例 fingerprints 且每页重复基础资产。仅明确需要 VPC 或子网时传 AssetType。",
       "input": "DescribeCfwAssetsRequest",
       "name": "查询防火墙纳管资产",
       "output": "DescribeCfwAssetsResponse",
@@ -358,7 +365,7 @@
       "status": "online"
     },
     "DescribeCfwSwitches": {
-      "document": "查询当前租户防火墙防护开关总览。结果在 Response.Data 的 JSON 字符串中。本接口没有自定义业务入参，不支持过滤、排序或分页。",
+      "document": "查询当前租户防火墙防护开关总览。结果在 Response.Data 的 JSON 字符串中。本接口没有自定义业务入参，不支持过滤、排序或分页。border_firewall、nat_firewall、vpc_firewall、ndr 的 available 表示至少一个对应防护开关实际开启，不表示仅已购买或已创建；ips.mode 可能为跟随全局、观察、拦截、严格、关闭或未知。",
       "input": "DescribeCfwSwitchesRequest",
       "name": "查询防火墙防护开关状态",
       "output": "DescribeCfwSwitchesResponse",
@@ -824,6 +831,13 @@
       "input": "ModifyIpsModeSwitchRequest",
       "name": "修改IPS的防护模式",
       "output": "ModifyIpsModeSwitchResponse",
+      "status": "online"
+    },
+    "ModifyIsolateTable": {
+      "document": "ModifyIsolateTable 隔离列表编辑和删除操作",
+      "input": "ModifyIsolateTableRequest",
+      "name": "隔离列表操作",
+      "output": "ModifyIsolateTableResponse",
       "status": "online"
     },
     "ModifyNatAcRule": {
@@ -2505,7 +2519,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>过滤字段名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤字段名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Ip",
           "member": "string",
           "name": "Name",
@@ -2516,7 +2530,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤值列表，最多 10 个。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤值列表，最多 10 个。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Values",
@@ -2527,7 +2541,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>操作符类型，可选；仅支持后端允许的类型。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作符类型，可选；仅支持后端允许的类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "OperatorType",
@@ -2544,7 +2558,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "NAT防火墙实例ID",
+          "document": "<p>NAT防火墙实例ID</p>",
           "example": "cfwnat-xxxxxxxx",
           "member": "string",
           "name": "NatInsId",
@@ -2553,7 +2567,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网实例ID",
+          "document": "<p>云联网实例ID</p>",
           "example": "ccn-xxxxxxxx",
           "member": "string",
           "name": "CcnId",
@@ -3393,6 +3407,189 @@
       ],
       "type": "object"
     },
+    "CreateAlertCenterRuleAsyncRequest": {
+      "document": "CreateAlertCenterRuleAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处置时间<br>1  1天<br>7   7天<br>-2 永久</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "HandleTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置类型<br>当HandleIdList 不为空时：1封禁 2放通<br>当HandleIpList 不为空时：3放通 4封禁</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "HandleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前日志方向： 0 出向 1 入向</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AlertDirection",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置方向： 0出向 1入向 0,1出入向 3内网</p>",
+          "example": "1",
+          "member": "string",
+          "name": "HandleDirection",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置对象,ID列表，  IdLists,IpList,EventIdList三选一</p>",
+          "example": "[\"a67d60bb5ede9b962ac19ad24b28be54\"]",
+          "member": "string",
+          "name": "HandleIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置对象,IP列表，  IdLists,IpList,EventIdList三选一</p>",
+          "example": "[\"192.155.90.220\"]",
+          "member": "string",
+          "name": "HandleIpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置描述</p>",
+          "example": "block malware",
+          "member": "string",
+          "name": "HandleComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>放通原因:<br>0默认 1重复 2误报 3紧急放通</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IgnoreReason",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁域名-保留字段</p>",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "BlockDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置对象,事件ID列表，  IdLists,IpList,EventIdList三选一</p>",
+          "example": "[\"a67d60bb5ede9b962ac19ad24b28be54\"]",
+          "member": "string",
+          "name": "HandleEventIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>加白IP列表 隔离时放通的ip列表</p>",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "WhiteIpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离类型 1 互联网入站 2 互联网出站 4 内网访问</p>",
+          "example": "[1,2,4]",
+          "member": "int64",
+          "name": "IsolateType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离资产列表</p>",
+          "example": "[\"ins-tredr1x\"]",
+          "member": "string",
+          "name": "AssetIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置HandleIpList，属于的告警事件ID</p>",
+          "example": "[\"5ede9b962ac19ad24b28be54\"]",
+          "member": "string",
+          "name": "TargetEventIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlertCenterRuleAsyncResponse": {
+      "document": "CreateAlertCenterRuleAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回状态码：<br>0 成功<br>非0 失败</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回信息：<br>success 成功<br>其他</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置状态码：0  处置成功 1处置中  -1 通用错误，不用处理-3 表示重复，需重新刷新列表其他</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAlertCenterRuleRequest": {
       "document": "CreateAlertCenterRule请求参数结构体",
       "members": [
@@ -3709,7 +3906,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0：cfw新增模式，1：cfw接入模式。",
+          "document": "<p>0：cfw新增模式，1：cfw接入模式。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -3718,7 +3915,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例id，该字段必须传递。",
+          "document": "<p>防火墙实例id，该字段必须传递。</p>",
           "example": "cfwnat-d2afc817",
           "member": "string",
           "name": "CfwInstance",
@@ -3727,7 +3924,7 @@
         },
         {
           "disabled": false,
-          "document": "添加或删除操作的Dnat规则列表。",
+          "document": "<p>添加或删除操作的Dnat规则列表。</p>",
           "example": "无",
           "member": "CfwNatDnatRule",
           "name": "DnatRules",
@@ -3863,7 +4060,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙实例名称",
+          "document": "<p>防火墙实例名称</p>",
           "example": "NAT防火墙",
           "member": "string",
           "name": "Name",
@@ -3872,7 +4069,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽",
+          "document": "<p>带宽</p>",
           "example": "100",
           "member": "int64",
           "name": "Width",
@@ -3881,7 +4078,7 @@
         },
         {
           "disabled": false,
-          "document": "模式 1：接入模式；0：新增模式",
+          "document": "<p>模式 1：接入模式；0：新增模式</p>",
           "example": "1",
           "member": "int64",
           "name": "Mode",
@@ -3890,8 +4087,8 @@
         },
         {
           "disabled": false,
-          "document": "新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。",
-          "example": "{\"VpcList\":[\"vpc-q98tz7hs\"],\"Eips\":[\"11.2.1.1\"],\"AddCount\":1}",
+          "document": "<p>新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。</p>",
+          "example": "无",
           "member": "NewModeItems",
           "name": "NewModeItems",
           "required": false,
@@ -3899,7 +4096,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。",
+          "document": "<p>接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。</p>",
           "example": "[\"nat-14yv5rzx\",\"nat-14yv5rzk\"]",
           "member": "string",
           "name": "NatGwList",
@@ -3908,7 +4105,7 @@
         },
         {
           "disabled": false,
-          "document": "主可用区，为空则选择默认可用区",
+          "document": "<p>主可用区，为空则选择默认可用区</p>",
           "example": "ap-shanghai-4",
           "member": "string",
           "name": "Zone",
@@ -3917,7 +4114,7 @@
         },
         {
           "disabled": false,
-          "document": "备可用区，为空则选择默认可用区",
+          "document": "<p>备可用区，为空则选择默认可用区</p>",
           "example": "ap-shanghai-3",
           "member": "string",
           "name": "ZoneBak",
@@ -3926,7 +4123,7 @@
         },
         {
           "disabled": false,
-          "document": "异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备",
+          "document": "<p>异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备</p>",
           "example": "1",
           "member": "int64",
           "name": "CrossAZone",
@@ -3935,7 +4132,7 @@
         },
         {
           "disabled": false,
-          "document": "0不创建域名,1创建域名",
+          "document": "<p>0不创建域名,1创建域名</p>",
           "example": "0",
           "member": "int64",
           "name": "IsCreateDomain",
@@ -3944,7 +4141,7 @@
         },
         {
           "disabled": false,
-          "document": "如果要创建域名则必填",
+          "document": "<p>如果要创建域名则必填</p>",
           "example": "www.domainexample.com",
           "member": "string",
           "name": "Domain",
@@ -3953,8 +4150,8 @@
         },
         {
           "disabled": false,
-          "document": "指定防火墙使用网段信息",
-          "example": "{\"FwCidrType\": \"VpcSelf\", \"FwCidrLst\": [], \"ComFwCidr\": \"\"}",
+          "document": "<p>指定防火墙使用网段信息</p>",
+          "example": "无",
           "member": "FwCidrInfo",
           "name": "FwCidrInfo",
           "required": false,
@@ -3968,7 +4165,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "nat实例信息",
+          "document": "<p>nat实例信息</p>",
           "example": "cfwnat-3c140219",
           "member": "string",
           "name": "CfwInsId",
@@ -4345,7 +4542,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC防火墙(组)名称",
+          "document": "<p>VPC防火墙(组)名称</p>",
           "example": "防火墙组",
           "member": "string",
           "name": "Name",
@@ -4354,7 +4551,7 @@
         },
         {
           "disabled": false,
-          "document": "模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)",
+          "document": "<p>模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)</p>",
           "example": "1",
           "member": "int64",
           "name": "Mode",
@@ -4363,8 +4560,8 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)下的防火墙实例列表",
-          "example": "[{\"FwInsId\":\"cfwew-ace94947\",\"Name\":\"防火墙(组)第三个实例\",\"VpcIds\":[\"vpc-39sc6ru5\"],\"FwDeploy\":{\"DeployRegion\":\"ap-guangzhou\",\"Width\":1024,\"CrossAZone\":1,\"Zone\":\"ap-guangzhou-1\",\"ZoneBak\":\"ap-guangzhou-2\",\"CdcId\":\"\"}}]",
+          "document": "<p>防火墙(组)下的防火墙实例列表</p>",
+          "example": "无",
           "member": "VpcFwInstance",
           "name": "VpcFwInstances",
           "required": true,
@@ -4372,7 +4569,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例的开关模式\n1: 单点互通\n2: 多点互通\n3: 全互通\n4: 自定义路由",
+          "document": "<p>防火墙实例的开关模式<br>1: 单点互通<br>2: 多点互通<br>3: 全互通<br>4: 自定义路由</p>",
           "example": "1",
           "member": "int64",
           "name": "SwitchMode",
@@ -4381,7 +4578,7 @@
         },
         {
           "disabled": false,
-          "document": "auto 自动选择防火墙网段\n10.10.10.0/24 用户输入的防火墙网段",
+          "document": "<p>auto 自动选择防火墙网段<br>10.10.10.0/24 用户输入的防火墙网段</p>",
           "example": "10.10.10.0/24",
           "member": "string",
           "name": "FwVpcCidr",
@@ -4390,7 +4587,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网id ，适用于云联网模式",
+          "document": "<p>云联网id ，适用于云联网模式</p>",
           "example": "ccn-0752de63",
           "member": "string",
           "name": "CcnId",
@@ -4399,8 +4596,8 @@
         },
         {
           "disabled": false,
-          "document": "指定防火墙使用网段信息",
-          "example": "{\"FwCidrType\":\"Custom\",\"FwCidrLst\":[{\"VpcId\":\"vpc-39sc6ru5\",\"FwCidr\":\"192.168.1.0/24\"}],\"ComFwCidr\":\"cluster-wxecrvtb\"}",
+          "document": "<p>指定防火墙使用网段信息</p>",
+          "example": "无",
           "member": "FwCidrInfo",
           "name": "FwCidrInfo",
           "required": false,
@@ -4408,7 +4605,7 @@
         },
         {
           "disabled": false,
-          "document": "跨租户管理员模式  1管理员 2多账号",
+          "document": "<p>跨租户管理员模式  1管理员 2多账号</p>",
           "example": "1",
           "member": "string",
           "name": "CrossUserMode",
@@ -4423,7 +4620,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙组ID",
+          "document": "<p>防火墙组ID</p>",
           "example": "cfwg-0752de63",
           "member": "string",
           "name": "FwGroupId",
@@ -4828,7 +5025,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0：cfw新增模式，1：cfw接入模式。",
+          "document": "<p>0：cfw新增模式，1：cfw接入模式。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -4837,7 +5034,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例id，该字段必须传递。",
+          "document": "<p>防火墙实例id，该字段必须传递。</p>",
           "example": "cfwnat-d2afc817",
           "member": "string",
           "name": "CfwInstance",
@@ -4846,7 +5043,7 @@
         },
         {
           "disabled": false,
-          "document": "添加或删除操作的Dnat规则列表。",
+          "document": "<p>添加或删除操作的Dnat规则列表。</p>",
           "example": "无",
           "member": "CfwNatDnatRule",
           "name": "DnatRules",
@@ -4873,7 +5070,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙实例id",
+          "document": "<p>防火墙实例id</p>",
           "example": "cfwnat-d2afc817",
           "member": "string",
           "name": "CfwInstance",
@@ -5038,7 +5235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙(组)Id",
+          "document": "<p>防火墙(组)Id</p>",
           "example": "cfwg-0752de63",
           "member": "string",
           "name": "FwGroupId",
@@ -5047,7 +5244,7 @@
         },
         {
           "disabled": false,
-          "document": "是否删除整个防火墙(组)\n0：不删除防火墙(组)，只删除单独实例\n1：删除整个防火墙(组)",
+          "document": "<p>是否删除整个防火墙(组)<br>0：不删除防火墙(组)，只删除单独实例<br>1：删除整个防火墙(组)</p>",
           "example": "1",
           "member": "int64",
           "name": "DeleteFwGroup",
@@ -5056,7 +5253,7 @@
         },
         {
           "disabled": false,
-          "document": "待删除的防火墙实例数组",
+          "document": "<p>待删除的防火墙实例数组</p>",
           "example": "[\"cfwew-0752de63\"]",
           "member": "string",
           "name": "VpcFwInsList",
@@ -6028,7 +6225,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回状态\n1 更新中\n2 更新完成\n3 更新失败\n4 更新失败",
+          "document": "<p>返回状态<br>1 更新中<br>2 更新完成<br>3 更新失败<br>4 更新失败</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -6038,7 +6235,7 @@
         },
         {
           "disabled": false,
-          "document": "success 成功\n其他失败",
+          "document": "<p>success 成功<br>其他失败</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -6048,10 +6245,20 @@
         },
         {
           "disabled": false,
-          "document": "0 成功\n非0 失败",
+          "document": "<p>0 成功<br>非0 失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "ReturnCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已有CVM数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "CVMCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6513,7 +6720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网ID",
+          "document": "<p>云联网ID</p>",
           "example": "ccn-iidlg5oh",
           "member": "string",
           "name": "CcnId",
@@ -6528,7 +6735,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例总数",
+          "document": "<p>实例总数</p>",
           "example": "3",
           "member": "uint64",
           "name": "Total",
@@ -6538,7 +6745,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网关联的实例信息",
+          "document": "<p>云联网关联的实例信息</p>",
           "example": "无",
           "member": "CcnAssociatedInstance",
           "name": "CcnAssociatedInstances",
@@ -6560,7 +6767,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网ID",
+          "document": "<p>云联网ID</p>",
           "example": "ccn-iidlg5oh",
           "member": "string",
           "name": "CcnId",
@@ -6569,7 +6776,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询引流网络部署状态的云联网关联的实例ID列表",
+          "document": "<p>要查询引流网络部署状态的云联网关联的实例ID列表</p>",
           "example": "[\"vpc-p9qzo51x\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -6578,7 +6785,7 @@
         },
         {
           "disabled": false,
-          "document": "引流路由方法 0:多路由表, 1:策略路由",
+          "document": "<p>引流路由方法 0:多路由表, 1:策略路由</p>",
           "example": "1",
           "member": "uint64",
           "name": "RoutingMode",
@@ -6593,7 +6800,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域总数量",
+          "document": "<p>地域总数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -6603,7 +6810,7 @@
         },
         {
           "disabled": false,
-          "document": "地域防火墙引流网络状态列表",
+          "document": "<p>地域防火墙引流网络状态列表</p>",
           "example": "无",
           "member": "RegionFwStatus",
           "name": "RegionFwStatus",
@@ -6630,7 +6837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的引流策略数量（最外层总条数）",
+          "document": "<p>支持的引流策略数量（最外层总条数）</p>",
           "example": "10",
           "member": "uint64",
           "name": "CcnPolicyInterconnectPairLenLimit",
@@ -6640,7 +6847,7 @@
         },
         {
           "disabled": false,
-          "document": "单条引流策略中单组的最大配置数量（内层单组总条数）",
+          "document": "<p>单条引流策略中单组的最大配置数量（内层单组总条数）</p>",
           "example": "50",
           "member": "uint64",
           "name": "CcnPolicyGroupLenLimit",
@@ -6650,7 +6857,7 @@
         },
         {
           "disabled": false,
-          "document": "接入的实例网段长度（网段数量）限制",
+          "document": "<p>接入的实例网段长度（网段数量）限制</p>",
           "example": "100",
           "member": "uint64",
           "name": "CcnPolicyCidrLenLimit",
@@ -6672,7 +6879,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网ID",
+          "document": "<p>云联网ID</p>",
           "example": "ccn-c0qmm031",
           "member": "string",
           "name": "CcnId",
@@ -6687,7 +6894,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "互联对配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>互联对配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InterconnectPair",
           "name": "InterconnectPairs",
@@ -6709,6 +6916,123 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>告警开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；默认查询最近 1 小时。</p>",
+          "example": "2026-07-09 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；默认当前时间。</p>",
+          "example": "2026-07-09 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警严重级别过滤。可选；枚举 low、middle、high。</p>",
+          "example": "high",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量方向过滤。可选；枚举 outbound 出站、inbound 入站、lateral 横向。</p>",
+          "example": "inbound",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置状态过滤。可选；枚举 unhandled、handled、blocked、passed、isolated、ignored。</p>",
+          "example": "blocked",
+          "member": "string",
+          "name": "ActionStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击链阶段过滤。可选；枚举 recon、brute_force、delivery、exploit、c2、lateral_movement、exfiltration。</p>",
+          "example": "exploit",
+          "member": "string",
+          "name": "KillChain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击结果过滤。可选；枚举 attempt、success、fail、unknown。</p>",
+          "example": "success",
+          "member": "string",
+          "name": "AttackResult",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPS 策略动作过滤。可选；枚举 observe、block。</p>",
+          "example": "block",
+          "member": "string",
+          "name": "Strategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击事件名称关键字过滤。可选，例如 SQL注入、暴力破解、恶意域名访问。</p>",
+          "example": "SQL注入",
+          "member": "string",
+          "name": "EventName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>精确告警事件 ID 过滤。用于指定事件的写操作前检查和写操作后核验；事件重新聚合时返回原请求 ID 和当前事件 ID。无匹配返回空结果，多匹配或定位过程异常时失败，不退化为宽查询。</p>",
+          "example": "2c1b2a1887a81672b1779791cb4e2c74",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源 IP 过滤。可选。</p>",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SrcIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目的 IP 过滤。可选。</p>",
+          "example": "2.2.2.2",
+          "member": "string",
+          "name": "DstIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云资源实例 ID 过滤。可选，例如 ins-xxxxxxxx。</p>",
+          "example": "cdb-i6zh3mwf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>单页返回告警数。可选，默认 10，最大 50。</p>",
           "example": "10",
           "member": "int64",
@@ -6724,6 +7048,24 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段。可选，默认 EndTime；枚举 EndTime、StartTime、Count。排序字段。可选，默认 EndTime；枚举 EndTime、StartTime、Count；Count 表示按单个聚合告警事件的告警发生次数/命中次数排序，对应返回中的 occurrence_count</p>",
+          "example": "EndTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向。可选，默认 desc；枚举 desc、asc。</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6755,7 +7097,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>分析场景。必填。full_traffic 表示全流量深度分析；east_west 表示东西向流量分析；alert_comprehensive 表示告警综合分析；asset_exposure 表示资产暴露面分析；access_troubleshoot 表示访问阻断排障分析。</p>",
+          "document": "分析场景。必填。full_traffic 表示全流量深度分析；east_west 表示东西向流量分析；alert_comprehensive 表示告警综合分析；asset_exposure 表示资产暴露面分析；access_troubleshoot 表示访问阻断排障分析。",
           "example": "full_traffic",
           "member": "string",
           "name": "Scenario",
@@ -6764,7 +7106,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；不传时默认查询最近 7 天。</p>",
+          "document": "查询开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；不传时默认查询最近 7 天。",
           "example": "2026-07-09 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -6773,7 +7115,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；不传时默认当前时间。</p>",
+          "document": "查询结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；不传时默认当前时间。",
           "example": "2026-07-09 01:00:00",
           "member": "string",
           "name": "EndTime",
@@ -6782,7 +7124,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>分析对象类型。可选，默认 user；user 表示租户全局，asset 表示单个资产，vpc 表示 VPC，domain 表示域名。</p>",
+          "document": "分析对象类型。可选，默认 user；user 表示租户全局，asset 表示资产上下文，vpc 表示 VPC 上下文，domain 表示域名上下文。选择非 user 时建议同时传 ObjectId 以限定具体对象；当前未传 ObjectId 时仍按该对象类型执行宽查询。",
           "example": "asset",
           "member": "string",
           "name": "ObjectType",
@@ -6791,7 +7133,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>分析对象标识。ObjectType 为 asset、vpc 或 domain 时按需传入，可填写 IP、实例 ID、VPC ID 或域名。</p>",
+          "document": "分析对象标识。ObjectType 为 asset、vpc 或 domain 时可传，用于限定具体 IP、实例 ID、VPC ID 或域名；当前为可选参数，省略时不会按具体对象过滤。",
           "example": "cdb-i6zh3mwf",
           "member": "string",
           "name": "ObjectId",
@@ -6800,7 +7142,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>排障目标。可选，主要用于 access_troubleshoot 场景，可填写 IP 或域名。</p>",
+          "document": "目标 IP 或域名过滤。可选，常用于 access_troubleshoot，也可用于其他 Scenario；传入后优先于 ObjectType/ObjectId，并对该场景全部分析段追加源 IP、目的 IP 或目的域名过滤。",
           "example": "10.199.32.12",
           "member": "string",
           "name": "Target",
@@ -6809,7 +7151,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>需要跳过的分析段名称列表。可选；不传时执行该场景全部分析段。</p>",
+          "document": "需要跳过的分析段名称列表。可选；不传或传空数组时执行该场景全部分析段。full_traffic 支持 beacon、dns_large、dns_dga、dns_dga_fine、dns_tunnel、icmp_tunnel、mining、p2p、remote_tool、file_transfer、high_risk_outbound、lateral_baseline、vpc_sensitive、smb_write、outbound_baseline、inbound_high_risk、tls_expired、tls_self_signed、first_seen_ip、first_seen_country、first_seen_port；east_west 支持 vpc_inter_vpc、subnet_inter、service_port、lateral_baseline、vpc_sensitive、smb_write、database_lateral；alert_comprehensive 支持 outbound_baseline、lateral_baseline、beacon、inbound_high_risk、first_seen_ip、first_seen_country、first_seen_port；asset_exposure 支持 inbound_high_risk、tls_expired、tls_self_signed、high_risk_outbound；access_troubleshoot 支持 acl_border_block、acl_nat_block、acl_vpc_block、ips_block。传入当前 Scenario 不支持的名称会返回 InvalidParameter。",
           "example": "[\"ips_block\"]",
           "member": "string",
           "name": "SkipSections",
@@ -6824,7 +7166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
+          "document": "查询结果。Response.Data 是 UTF-8 JSON object 字符串，调用方需要二次 JSON 解析。status 取值为 success、partial 或 error。section 查询失败时，error 只返回固定安全摘要，不包含底层服务内部信息。示例仅展示一个代表性 section；实际返回包含当前场景全部未跳过的 section；summary 包含 total_findings、high_risk_count 和 data_coverage，metadata 包含 scenario、time_range、object 和 query_stats，query_stats 包含 total_queries、successful 和 failed。",
           "example": "{\"status\":\"success\",\"scenario\":\"full_traffic\",\"object\":\"user\",\"time\":\"00:00~01:00\",\"queries\":\"21/21 ok\",\"findings\":0,\"sections\":\"none\"}",
           "member": "string",
           "name": "Data",
@@ -6846,12 +7188,75 @@
       "members": [
         {
           "disabled": false,
-          "document": "最大返回资产数。可选，默认 100；取值 1 至 1000。",
+          "document": "<p>资产类型。可选，默认 host；枚举 host 主机资产、vpc VPC 网络、subnet 子网。</p>",
+          "example": "host",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 地址过滤。可选，支持部分匹配；适用于 host。</p>",
+          "example": "10.0.0.8",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 ID 过滤。可选，适用于 host。</p>",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC ID 过滤。可选，适用于 host、vpc、subnet。</p>",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网 ID 过滤。可选，适用于 host、subnet。</p>",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型过滤。可选，适用于 host；常见值包括 CVM、CLB、ENI、POD、MYSQL、REDIS、MARIADB、NAT、VPN、HAVIP、NATFW、GAAP、DC。</p>",
+          "example": "CVM",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大返回资产数。可选，默认 100，最大 1000。</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一页 Response.Data 返回的不透明资产或指纹续查 token。首次查询不传；续查时只传 NextToken，不能同时传 AssetType、过滤条件或 Limit。调用方无需区分 token 类型；无效、篡改或租户不匹配会被拒绝。</p>",
+          "example": "1.DH9BabXSdfHBbzQazv-0EMottHRmUm6-XBUkLVsIlP8wS_Xg1Y4ooB-C2paI_8sVqP0iLQ",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6861,7 +7266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。",
+          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
           "example": "{\"asset_type\":\"host\",\"assets\":null,\"stats\":{\"returned\":0,\"total\":0,\"by_scope\":{\"private\":50,\"public\":36},\"by_region\":{\"ap-guangzhou\":26,\"ap-beijing\":13,\"ap-chengdu\":12,\"ap-shanghai\":11,\"other\":24},\"by_type\":{\"ENI\":35,\"HAVIP\":15,\"CVM\":13,\"other\":23}}}",
           "member": "string",
           "name": "Data",
@@ -6883,7 +7288,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1：cfw接入模式，目前仅支持接入模式实例",
+          "document": "<p>1：cfw接入模式，目前仅支持接入模式实例</p>",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -6892,7 +7297,7 @@
         },
         {
           "disabled": false,
-          "document": "ALL：查询所有弹性公网ip; nat-xxxxx：接入模式场景指定网关的弹性公网ip",
+          "document": "<p>ALL：查询所有弹性公网ip; nat-xxxxx：接入模式场景指定网关的弹性公网ip</p>",
           "example": "ALL",
           "member": "string",
           "name": "NatGatewayId",
@@ -6901,7 +7306,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例id，当前仅支持接入模式的实例，该字段必填",
+          "document": "<p>防火墙实例id，当前仅支持接入模式的实例，该字段必填</p>",
           "example": "cfwnat-d2afc817",
           "member": "string",
           "name": "CfwInstance",
@@ -6916,8 +7321,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值信息",
-          "example": "[{\"Eip\":\"xxx\",\"NatGatewayId\":\"nat-xxx\",\"NatGatewayName\":\"xxx\"}]",
+          "document": "<p>返回值信息</p>",
+          "example": "无",
           "member": "NatFwEipsInfo",
           "name": "NatFwEipList",
           "output_required": true,
@@ -6943,7 +7348,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙实例运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙实例运行状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CfwInsStatus",
           "name": "CfwInsStatus",
@@ -6953,7 +7358,7 @@
         },
         {
           "disabled": false,
-          "document": "0",
+          "document": "<p>0</p>",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
@@ -6975,7 +7380,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>日志类型。首次查询必填；使用 NextToken 续查时不能传。枚举值包括 cfw_netflow_border、cfw_netflow_vpc、cfw_netflow_nat、cfw_netflow_nta、cfw_netflow_dns、cfw_rule_threatinfo、cfw_rule_acl、cfw_rule_vpc_acl、cfw_rule_nat_acl、cfw_ndr_subject_risk、cfw_ndr_dataleak_entry、cfw_ndr_ai_audit、cfw_feature_collect、cfw_behavior_collect、operate_log_all。</p>",
+          "document": "日志类型。首次查询必填；使用 NextToken 续查时不能传。cfw_netflow_border=互联网边界流量，cfw_netflow_vpc=VPC 东西向流量，cfw_netflow_nat=NAT 防火墙流量，cfw_netflow_nta=NDR/NTA 流量，cfw_netflow_dns=DNS 防火墙日志，cfw_rule_threatinfo=入侵防御/威胁情报告警，cfw_rule_acl=互联网边界访问控制日志，cfw_rule_vpc_acl=VPC 访问控制日志，cfw_rule_nat_acl=NAT 访问控制日志，cfw_ndr_subject_risk=NDR 专题风险，cfw_ndr_dataleak_entry=NDR 敏感数据泄露，cfw_ndr_ai_audit=NDR AI 应用识别与大模型调用审计，cfw_feature_collect=统计特征与基线异常，cfw_behavior_collect=Beacon/DNS/端口/证书/VPC 互访行为，operate_log_all=操作审计日志。",
           "example": "cfw_netflow_border",
           "member": "string",
           "name": "LogType",
@@ -6984,7 +7389,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>CLS CQL 查询语句。默认 *；使用 NextToken 续查时不能传。</p>",
+          "document": "日志过滤表达式。默认 * 表示不过滤；例如 src_ip:1.1.1.1。可查询字段随 LogType 变化，应优先使用对应 Items 中已返回的字段名，不要猜测不存在的字段；使用 NextToken 续查时不能传。",
           "example": "src_ip:1.1.1.1",
           "member": "string",
           "name": "Query",
@@ -6993,7 +7398,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询起始时间。支持 RFC3339、YYYY-MM-DD HH:MM:SS、YYYY-MM-DD 或 Unix 时间戳；传入后从该时间向后查询 TimeRange；使用 NextToken 续查时不能传。</p>",
+          "document": "查询起始时间。支持 RFC3339、YYYY-MM-DD HH:MM:SS、YYYY-MM-DD 或 Unix 时间戳；传入后从该时间向后查询 TimeRange；使用 NextToken 续查时不能传。",
           "example": "2026-07-09T02:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -7002,7 +7407,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询时间范围。默认 1h；格式为正整数加单位 m/h/d，例如 5m、1h、24h、7d；使用 NextToken 续查时不能传。</p>",
+          "document": "查询时间范围。默认 1h；格式为正整数加单位 m/h/d，例如 5m、1h、24h、7d；使用 NextToken 续查时不能传。",
           "example": "1h",
           "member": "string",
           "name": "TimeRange",
@@ -7011,7 +7416,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单页返回条数。默认 100，最大 1000；使用 NextToken 续查时不能传。</p>",
+          "document": "单页返回条数。首次查询可选，默认 100；取值 1 至 1000；使用 NextToken 续查时不能传。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -7020,7 +7425,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>上一页 Response.Data 返回的不透明续查 token。首次查询不传；续查时只传 NextToken。无效、篡改、过期或租户不匹配会被拒绝。</p>",
+          "document": "上一页 Response.Data 返回的不透明续查 token。首次查询不传；续查时只传 NextToken。无效、篡改或租户不匹配会被拒绝。",
           "example": "ezylgj87Z1uDirOl6dgt2xAt3siE3dyZDFsaZ7x3COpcgQ6hntYVSz2ZxhuL2DDUkpdn3DAbid1rqI242sSER3YmvUOGuoFy-QfzS30eeVCQBfQ98-OlUMxHOIsSu0XLw9BeOLh7VrlK7AmZMpF5g-AfRSoNu_-En2LSXGWMxWVaNNt56KDeCKfotoHRUGl_SGEUEVLCNq31UOGJMaeWiFBkXxQt_30aJa3PpLHUC2U48SmJb9_jsS7Yh6m9FB8c",
           "member": "string",
           "name": "NextToken",
@@ -7035,7 +7440,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
+          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。Items 是当前页日志数组，字段随 LogType 变化；TotalCount 是当前页返回条数，Limit 是页大小，LogType 和 TimeWindow 回显查询范围。HasMore=true 时必须保存并原样使用 NextToken 续查；HasMore=false 时分页结束。",
           "example": "{\"HasMore\":false,\"IsAnalysis\":false,\"Items\":null,\"Limit\":10,\"LogType\":\"cfw_netflow_border\",\"Query\":\"src_ip:1.1.1.1\",\"TimeWindow\":{\"EndTime\":\"2026-07-09T13:40:00Z\",\"StartTime\":\"2026-07-09T12:40:00Z\"},\"TotalCount\":0}",
           "member": "string",
           "name": "Data",
@@ -7054,7 +7459,26 @@
     },
     "DescribeCfwRiskOverviewRequest": {
       "document": "DescribeCfwRiskOverview请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 EndTime 同时传。</p>",
+          "example": "2026-07-09 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；必须和 StartTime 同时传。</p>",
+          "example": "2026-07-09 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeCfwRiskOverviewResponse": {
@@ -7062,7 +7486,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。",
+          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
           "example": "{\"breakdown\":{\"data_leak_ai_instance_total\":0,\"data_leak_out_total\":1,\"data_leak_total\":0,\"port_risk_total\":6,\"weak_password_total\":0},\"end_time\":\"2026-07-09 23:59:59\",\"start_time\":\"2026-07-09 00:00:00\",\"total_unhandled_risks\":7}",
           "member": "string",
           "name": "Data",
@@ -7084,7 +7508,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "长期零命中规则阈值天数。可选，必须为正整数，默认 180。",
+          "document": "<p>防火墙规则类型。必填。枚举：border 互联网边界；nat NAT 边界；vpc VPC 间；enterprise_sg 企业安全组。</p>",
+          "example": "border",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要执行的优化维度白名单。可选，例如 D1、D2、D8；不传默认执行全部支持维度。</p>",
+          "example": "[\"D1\"]",
+          "member": "string",
+          "name": "Dimensions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>长期零命中规则阈值天数。可选，默认 180。</p>",
           "example": "180",
           "member": "int64",
           "name": "IdleDays",
@@ -7093,7 +7535,7 @@
         },
         {
           "disabled": false,
-          "document": "单 IP 离散过多聚合建议的最小数量。可选，最小为 2，默认 10。",
+          "document": "<p>单 IP 离散过多聚合建议的最小数量。可选，默认 10。</p>",
           "example": "10",
           "member": "int64",
           "name": "IpAggMin",
@@ -7102,7 +7544,7 @@
         },
         {
           "disabled": false,
-          "document": "可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，必须为正整数，默认 50。",
+          "document": "<p>可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，默认 50。</p>",
           "example": "50",
           "member": "int64",
           "name": "IocSample",
@@ -7117,7 +7559,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。示例仅展示代表性字段；完整结果还包含 rule_type_name、rule_total、rule_active、rule_skipped_geo_or_cloud、dimension_skipped、thresholds 和 generated_at，finding 还包含 risk_level、affected_rule_uuids、affected_rule_seqs、recommendation_action、reason 和 evidence。结果过大时返回摘要，不返回 findings，并增加 truncated 和 truncated_reason。",
+          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
           "example": "{\"appid\":\"1300448058\",\"finding_total\":6,\"summary\":{\"D1\":2,\"D2\":2,\"D4\":1,\"D6\":1},\"actions\":{\"disable\":[6,7,8],\"delete\":[13]},\"high_risk\":[6,7],\"rule_active\":27,\"rule_skipped_geo_or_cloud\":3}",
           "member": "string",
           "name": "Data",
@@ -7175,12 +7617,102 @@
         },
         {
           "disabled": false,
+          "document": "<p>启用状态过滤。可选。默认只返回启用规则；传 false 只查询禁用规则。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否同时包含启用和禁用规则。可选。true 表示包含两类；不能和 Enabled 同时使用。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeDisabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "<p>精确规则 ID 过滤。可选。用于按数值规则标识定位单条规则。</p>",
           "example": "123456",
           "member": "int64",
           "name": "RuleId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>精确公开规则标识过滤。可选。推荐在用户提供规则标识时使用。</p>",
+          "example": "2108491",
+          "member": "string",
+          "name": "RuleUuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议过滤。可选。例如 TCP、UDP、ICMP、HTTP、HTTPS、ANY；不传则不过滤。</p>",
+          "example": "ANY",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源地址或源内容关键字过滤。可选，支持模糊匹配。</p>",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "SrcIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目的地址、目的域名或目的内容关键字过滤。可选，支持模糊匹配。</p>",
+          "example": "mb_1300448058_1702352890143",
+          "member": "string",
+          "name": "DstIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则描述关键字过滤。可选。</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>入侵防御列表关键字搜索。可选，最大 100 字符。blocklist 搜索 ioc/address/comment/rule_source；whitelist 搜索 rule_name/ioc/comment/src_ip/dst_ip；isolate 搜索实例、公网 IP、内网 IP、VPC、地域。</p>",
+          "example": "办公出口",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>精确实例 ID 过滤。仅 RuleType=intrusion_prevention 且 ListType=isolate 时使用；写操作前后核验应使用该参数而不是 Keyword。</p>",
+          "example": "ins-lyqnistm",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展开模板、资产组、实例等名称。可选，默认 true；传 false 返回原始标识。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ExpandNames",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -7230,7 +7762,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>操作类型。describe_scene 表示发现场景和二级下拉选项；fetch_scene 表示获取具体场景快照。必填。</p>",
+          "document": "操作类型。describe_scene 表示发现场景和二级下拉选项；fetch_scene 表示获取具体场景快照。必填。",
           "example": "describe_scene",
           "member": "string",
           "name": "Op",
@@ -7239,7 +7771,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>防火墙场景类型。支持 internet_edge（互联网边界防火墙）、nat_cluster（NAT边界防火墙-集群）、nat_ha（NAT边界防火墙-主备）、vpc_cluster（VPC边界防火墙-集群）、vpc_ha（VPC边界防火墙-主备）。必填。</p>",
+          "document": "防火墙场景类型。支持 internet_edge（互联网边界防火墙）、nat_cluster（NAT边界防火墙-集群）、nat_ha（NAT边界防火墙-主备）、vpc_cluster（VPC边界防火墙-集群）、vpc_ha（VPC边界防火墙-主备）。必填。",
           "example": "internet_edge",
           "member": "string",
           "name": "FirewallType",
@@ -7248,7 +7780,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>二级下拉选项 ID。fetch_scene 按需传入；internet_edge 为地域，NAT 为实例 ID，VPC 带宽场景为防火墙组 ID；vpc_cluster 的 connections 汇总场景会忽略该参数。</p>",
+          "document": "二级下拉选项 ID。fetch_scene 按需传入，值来自 describe_scene 返回的 selection.available_options[].id；internet_edge 为地域，NAT 为实例 ID，VPC 带宽场景为防火墙组 ID；vpc_cluster 的 connections 汇总场景会忽略该参数。",
           "example": "cfwnat-c8b3fb7c",
           "member": "string",
           "name": "SelectionId",
@@ -7257,7 +7789,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>二级下拉显示名称。可替代 SelectionId 按名称匹配。</p>",
+          "document": "二级下拉显示名称。可替代 SelectionId 按名称匹配，值来自 describe_scene 返回的 selection.available_options[].name。",
           "example": "自动化",
           "member": "string",
           "name": "SelectionName",
@@ -7266,7 +7798,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>引擎实例 ID。主要用于 vpc_ha 下一个防火墙组对应多个实例的场景。</p>",
+          "document": "引擎实例 ID。主要用于 vpc_ha 下一个防火墙组对应多个实例的场景，优先使用 describe_scene 返回的 selection.available_options[].instance_id；如只有 instance_ids，则从数组中选择一个字符串值。",
           "example": "cfwew-46cfffdc",
           "member": "string",
           "name": "SelectionInstanceId",
@@ -7275,7 +7807,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指标页签。fetch_scene 可传；不传时使用该场景默认值。支持 bandwidth、connections。</p>",
+          "document": "指标页签。fetch_scene 可传；不传时使用该场景默认值。支持 bandwidth、connections。",
           "example": "connections",
           "member": "string",
           "name": "Metric",
@@ -7284,7 +7816,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指标下的视角。fetch_scene 可传；不传时使用该场景默认值。支持 ip、subnet、session、switch、vpc，实际可用组合以 describe_scene 返回为准。</p>",
+          "document": "指标下的视角。fetch_scene 可传；不传时使用该场景默认值。支持 ip、subnet、session、switch、vpc，实际可用组合以 describe_scene 返回为准。",
           "example": "ip",
           "member": "string",
           "name": "Perspective",
@@ -7293,7 +7825,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>NAT 主备连接数 IP 视角范围。external 表示外部 IP，asset 表示资产 IP；仅 nat_ha + connections + ip 使用。</p>",
+          "document": "NAT 主备连接数 IP 视角范围。external 表示外部 IP，asset 表示资产 IP；仅 nat_ha + connections + ip 使用，其他组合传入将返回 InvalidParameter。",
           "example": "external",
           "member": "string",
           "name": "IpScope",
@@ -7302,7 +7834,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>预设时间范围。默认 24h；fetch_scene 使用。支持 5m、15m、30m、1h、6h、24h、3d、7d、30d、today、yesterday、day_before_yesterday、this_week、last_week、this_month。</p>",
+          "document": "预设时间范围。默认 24h；fetch_scene 使用。支持 5m、15m、30m、1h、6h、24h、3d、7d、30d、today、yesterday、day_before_yesterday、this_week、last_week、this_month。",
           "example": "1h",
           "member": "string",
           "name": "TimePreset",
@@ -7311,7 +7843,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义开始时间。格式 YYYY-MM-DD HH:MM:SS；必须与 EndTime 同时传，最大跨度 30 天。</p>",
+          "document": "自定义开始时间。格式 YYYY-MM-DD HH:MM:SS；必须与 EndTime 同时传，最大跨度 30 天。",
           "example": "2026-07-15 15:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7320,7 +7852,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义结束时间。格式 YYYY-MM-DD HH:MM:SS；必须与 StartTime 同时传，最大跨度 30 天。</p>",
+          "document": "自定义结束时间。格式 YYYY-MM-DD HH:MM:SS；必须与 StartTime 同时传，最大跨度 30 天。",
           "example": "2026-07-15 17:00:00",
           "member": "string",
           "name": "EndTime",
@@ -7329,7 +7861,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>页码，从 1 开始。默认 1；fetch_scene 列表视角使用。</p>",
+          "document": "页码，从 1 开始。默认 1；fetch_scene 列表视角使用。",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -7338,7 +7870,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>每页条数。默认 10，最大 100；fetch_scene 列表视角使用。</p>",
+          "document": "每页条数。默认 10，取值 1 至 100；fetch_scene 列表视角使用。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -7347,7 +7879,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否只获取概览数据。true 时 fetch_scene 只请求 overview，跳过 table/detail，适合只看场景快照汇总。</p>",
+          "document": "是否只获取概览数据。true 时 fetch_scene 只请求 overview，跳过 table/detail，适合只看场景快照汇总。",
           "example": "true",
           "member": "bool",
           "name": "OverviewOnly",
@@ -7356,7 +7888,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>原始偏移量覆盖。可选，传入后覆盖 Page 计算结果；必须大于等于 0 且不超过安全上限。</p>",
+          "document": "原始偏移量覆盖。可选，传入后覆盖 Page 计算结果；取值 0 至 10000。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7365,7 +7897,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>排序字段。可选，只接受当前场景后端允许的安全字段。</p>",
+          "document": "排序字段。可选。互联网边界 IP、NAT IP/子网视角支持 InputMax、OutputMax；VPC switch 视角支持 SwitchName；VPC ip/vpc 视角支持 FlowMax；其他组合不要传。",
           "example": "InputMax",
           "member": "string",
           "name": "SortBy",
@@ -7374,7 +7906,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>排序方向。默认 desc；支持 asc、desc。</p>",
+          "document": "排序方向。默认 desc；支持 asc、desc。",
           "example": "desc",
           "member": "string",
           "name": "SortOrder",
@@ -7383,7 +7915,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤条件列表。可选，最多 5 个；是否支持以及字段名以具体 fetch_scene 场景为准。</p>",
+          "document": "过滤条件列表。保留字段；当前公开 fetch_scene 场景均不支持，调用方不要传。",
           "example": "无",
           "member": "CfwStatusMonitorFilter",
           "name": "Filters",
@@ -7398,7 +7930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。describe_scene 返回 scene 与 selection.available_options；fetch_scene 返回选中场景的 data 快照。</p>",
+          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。describe_scene 的 scene 返回 metric_options、perspective_options、default_metric、default_perspective、selection_required_by_metric、selection_kind_by_metric 和 time_preset_options；selection.available_options 返回可用于 SelectionId/SelectionName/SelectionInstanceId 的选项。fetch_scene 返回选中场景的 data 快照，可能包含 overview、table 或 detail。下方示例是字段结构节选，数组仅展示代表值。",
           "example": "{\"op\":\"describe_scene\",\"name\":\"互联网边界防火墙\",\"type\":\"internet_edge\",\"metric\":\"bandwidth\",\"view\":\"ip\",\"select\":\"region?\",\"source\":\"DescribeEdgeIpFlowLists\",\"unit\":\"bps/1024\"}",
           "member": "string",
           "name": "Data",
@@ -7425,7 +7957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。",
+          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。border_firewall 返回公网 IP 总数、已防护数、未防护数、操作中数量和防护率；nat_firewall、vpc_firewall 按 cluster/ha 返回实例及子开关汇总；ndr 返回已开启开关数；ips 返回当前防护模式。",
           "example": "{\"border_firewall\":{\"available\":true},\"nat_firewall\":{\"available\":false},\"vpc_firewall\":{\"available\":false},\"ndr\":{\"available\":false},\"ips\":{\"mode\":\"观察\"}}",
           "member": "string",
           "name": "Data",
@@ -7531,7 +8063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的索引，特定场景使用，可不填",
+          "document": "<p>需要查询的索引，特定场景使用，可不填</p>",
           "example": "vpc_rule",
           "member": "string",
           "name": "Index",
@@ -7540,7 +8072,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件组合",
+          "document": "<p>过滤条件组合</p>",
           "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
@@ -7549,7 +8081,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "<p>每页条数</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -7558,7 +8090,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移值",
+          "document": "<p>偏移值</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -7567,7 +8099,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的起始时间，可不传",
+          "document": "<p>检索的起始时间，可不传</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7576,7 +8108,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的截止时间，可不传",
+          "document": "<p>检索的截止时间，可不传</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "EndTime",
@@ -7585,7 +8117,7 @@
         },
         {
           "disabled": false,
-          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "document": "<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -7594,7 +8126,7 @@
         },
         {
           "disabled": false,
-          "document": "排序所用到的字段",
+          "document": "<p>排序所用到的字段</p>",
           "example": "id",
           "member": "string",
           "name": "By",
@@ -7609,7 +8141,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -7619,7 +8151,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙开关列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>防火墙开关列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClusterSwitchDetail",
           "name": "Data",
@@ -7629,7 +8161,7 @@
         },
         {
           "disabled": false,
-          "document": "开关开启失败列表",
+          "document": "<p>开关开启失败列表</p>",
           "example": "无",
           "member": "SwitchFailInfo",
           "name": "FailData",
@@ -7656,7 +8188,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基础防御开关",
+          "document": "<p>基础防御开关</p>",
           "example": "1",
           "member": "int64",
           "name": "BasicRuleSwitch",
@@ -7666,7 +8198,7 @@
         },
         {
           "disabled": false,
-          "document": "安全基线开关",
+          "document": "<p>安全基线开关</p>",
           "example": "1",
           "member": "int64",
           "name": "BaselineAllSwitch",
@@ -7676,7 +8208,7 @@
         },
         {
           "disabled": false,
-          "document": "威胁情报开关",
+          "document": "<p>威胁情报开关</p>",
           "example": "1",
           "member": "int64",
           "name": "TiSwitch",
@@ -7686,7 +8218,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟补丁开关",
+          "document": "<p>虚拟补丁开关</p>",
           "example": "1",
           "member": "int64",
           "name": "VirtualPatchSwitch",
@@ -7696,7 +8228,7 @@
         },
         {
           "disabled": false,
-          "document": "是否历史开启",
+          "document": "<p>是否历史开启</p>",
           "example": "1",
           "member": "int64",
           "name": "HistoryOpen",
@@ -7706,8 +8238,8 @@
         },
         {
           "disabled": false,
-          "document": "状态值，0：查询成功，非0：查询失败",
-          "example": "success",
+          "document": "<p>状态值，0：查询成功，非0：查询失败</p>",
+          "example": "0",
           "member": "int64",
           "name": "ReturnCode",
           "output_required": true,
@@ -7716,7 +8248,7 @@
         },
         {
           "disabled": false,
-          "document": "状态信息，success：查询成功，fail：查询失败",
+          "document": "<p>状态信息，success：查询成功，fail：查询失败</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -8136,8 +8668,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件组合",
-          "example": "[{\"Name\":\"Name\",\"Values\":[\"andy\"],\"OperatorType\":9}]",
+          "document": "<p>过滤条件组合</p>",
+          "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
           "required": false,
@@ -8145,7 +8677,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "<p>每页条数</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -8154,7 +8686,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移值",
+          "document": "<p>偏移值</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -8163,7 +8695,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的起始时间，可不传",
+          "document": "<p>检索的起始时间，可不传</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "StartTime",
@@ -8172,7 +8704,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的截止时间，可不传",
+          "document": "<p>检索的截止时间，可不传</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "EndTime",
@@ -8181,7 +8713,7 @@
         },
         {
           "disabled": false,
-          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "document": "<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -8190,8 +8722,8 @@
         },
         {
           "disabled": false,
-          "document": "排序所用到的字段",
-          "example": "\tid",
+          "document": "<p>排序所用到的字段</p>",
+          "example": "id",
           "member": "string",
           "name": "By",
           "required": false,
@@ -8205,8 +8737,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "ip 开关列表",
-          "example": "[     {         \"PublicIp\": \"2.2.2.2\"     } ]",
+          "document": "<p>ip 开关列表</p>",
+          "example": "无",
           "member": "EdgeIpInfo",
           "name": "Data",
           "output_required": false,
@@ -8215,7 +8747,7 @@
         },
         {
           "disabled": false,
-          "document": "ip 开关列表个数",
+          "document": "<p>ip 开关列表个数</p>",
           "example": "10",
           "member": "int64",
           "name": "Total",
@@ -8225,7 +8757,7 @@
         },
         {
           "disabled": false,
-          "document": "地域列表",
+          "document": "<p>地域列表</p>",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "RegionLst",
@@ -8235,7 +8767,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型列表",
+          "document": "<p>实例类型列表</p>",
           "example": "[\"CVM\"]",
           "member": "string",
           "name": "InstanceTypeLst",
@@ -8245,7 +8777,7 @@
         },
         {
           "disabled": false,
-          "document": "串行模式开关个数",
+          "document": "<p>串行模式开关个数</p>",
           "example": "1",
           "member": "int64",
           "name": "SerilCount",
@@ -8368,7 +8900,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的同步状态类型：Route,同步路由状态",
+          "document": "<p>查询的同步状态类型：Route,同步路由状态</p>",
           "example": "Route",
           "member": "string",
           "name": "SyncType",
@@ -8383,7 +8915,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步状态：1，同步中；0，同步完成",
+          "document": "<p>同步状态：1，同步中；0，同步完成</p>",
           "example": "0",
           "member": "int64",
           "name": "SyncStatus",
@@ -8410,8 +8942,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "扫描信息",
-          "example": "{\"ScanPercent\":1,\"ScanResultInfo\":{\"BanStatus\":true,\"IPNum\":34,\"IPStatus\":true,\"IdpStatus\":true,\"LeakNum\":209,\"PortNum\":0},\"ScanStatus\":1,\"ScanTime\":\"2024-11-01 03:11:01\"}}",
+          "document": "<p>扫描信息</p>",
+          "example": "无",
           "member": "ScanInfo",
           "name": "Data",
           "output_required": true,
@@ -9355,7 +9887,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的索引，特定场景使用，可不填",
+          "document": "<p>需要查询的索引，特定场景使用，可不填</p>",
           "example": "nat_rule",
           "member": "string",
           "name": "Index",
@@ -9364,8 +9896,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件组合",
-          "example": "[ {   \"Name\": \"FwInsId\",   \"Values\": [     \"cfwnat-ef74fdaf\"   ],   \"OperatorType\": 1 } ]",
+          "document": "<p>过滤条件组合</p>",
+          "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
           "required": false,
@@ -9373,7 +9905,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "<p>每页条数</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -9382,7 +9914,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移值",
+          "document": "<p>偏移值</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -9391,7 +9923,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的起始时间，可不传",
+          "document": "<p>检索的起始时间，可不传</p>",
           "example": "2024-11-01 11:24:31",
           "member": "string",
           "name": "StartTime",
@@ -9400,7 +9932,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的截止时间，可不传",
+          "document": "<p>检索的截止时间，可不传</p>",
           "example": "2024-11-01 11:30:31",
           "member": "string",
           "name": "EndTime",
@@ -9409,7 +9941,7 @@
         },
         {
           "disabled": false,
-          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值，可不传",
+          "document": "<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值，可不传</p>",
           "example": "asc",
           "member": "string",
           "name": "Order",
@@ -9418,7 +9950,7 @@
         },
         {
           "disabled": false,
-          "document": "排序所用到的字段，可不传",
+          "document": "<p>排序所用到的字段，可不传</p>",
           "example": "update_time",
           "member": "string",
           "name": "By",
@@ -9433,8 +9965,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Dnat规则列表",
-          "example": "[ \t\t\t{ \t\t\t\t\"Description\": \"自动化勿删\", \t\t\t\t\"FwInsId\": \"cfwnat-ef74fdaf\", \t\t\t\t\"Id\": 6176, \t\t\t\t\"IpProtocol\": \"TCP\", \t\t\t\t\"IsReferenced\": 0, \t\t\t\t\"NatGwId\": \"\", \t\t\t\t\"PrivateIpAddress\": \"10.8.1.12\", \t\t\t\t\"PrivatePort\": 8080, \t\t\t\t\"PublicIpAddress\": \"124.223.94.81\", \t\t\t\t\"PublicPort\": 8080 \t\t\t}]",
+          "document": "<p>Dnat规则列表</p>",
+          "example": "无",
           "member": "DescNatDnatRule",
           "name": "Data",
           "output_required": false,
@@ -9443,7 +9975,7 @@
         },
         {
           "disabled": false,
-          "document": "列表总数",
+          "document": "<p>列表总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -9470,7 +10002,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回参数 success 成功 failed 失败",
+          "document": "<p>返回参数 success 成功 failed 失败</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -9480,7 +10012,7 @@
         },
         {
           "disabled": false,
-          "document": "当前租户的nat防火墙实例个数",
+          "document": "<p>当前租户的nat防火墙实例个数</p>",
           "example": "1",
           "member": "int64",
           "name": "NatFwInsCount",
@@ -9490,7 +10022,7 @@
         },
         {
           "disabled": false,
-          "document": "当前租户接入防火墙的子网个数",
+          "document": "<p>当前租户接入防火墙的子网个数</p>",
           "example": "1",
           "member": "int64",
           "name": "SubnetCount",
@@ -9500,7 +10032,7 @@
         },
         {
           "disabled": false,
-          "document": "打开NAT防火墙开关个数",
+          "document": "<p>打开NAT防火墙开关个数</p>",
           "example": "1",
           "member": "int64",
           "name": "OpenSwitchCount",
@@ -9564,8 +10096,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例数组",
-          "example": "[{\"NatinsId\":\"cfwnat-fc7ae792\",\"NatinsName\":\"运维测试\",\"Region\":\"ap-guangzhou\",\"FwMode\":1,\"Status\":0,\"NatIp\":\"1.1.1.1,2.2.2.2\"}]",
+          "document": "<p>实例数组</p>",
+          "example": "无",
           "member": "NatFwInstance",
           "name": "NatinsLst",
           "output_required": false,
@@ -9586,8 +10118,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "获取实例列表过滤字段",
-          "example": "[{\"FilterType\":\"NatinsId\",\"FilterContent\":\"cfwnat-65d0d823,cfwnat-65d0d824\"}]",
+          "document": "<p>获取实例列表过滤字段</p>",
+          "example": "无",
           "member": "NatFwFilter",
           "name": "Filter",
           "required": false,
@@ -9595,7 +10127,7 @@
         },
         {
           "disabled": false,
-          "document": "第几页",
+          "document": "<p>第几页</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -9604,7 +10136,7 @@
         },
         {
           "disabled": false,
-          "document": "每页长度",
+          "document": "<p>每页长度</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -9619,8 +10151,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例卡片信息数组",
-          "example": "[{\"BandWidth\":30,\"EipAddress\":[\"1.117.4.229\",\"121.5.27.250\"],\"FwMode\":0,\"InFlowMax\":4985,\"NatinsId\":\"cfwnat-f3250045\",\"NatinsName\":\"运维\",\"OutFlowMax\":14642,\"Region\":\"ap-shanghai\",\"RegionZh\":\"上海\",\"Subnets\":[\"subnet-cjxihpy1\",\"subnet-1e34182d\",\"subnet-5sx5vrcj\",\"subnet-he9ba55f\",\"subnet-0yd4fk0j\",\"subnet-kdu0qj4t\"],\"VpcIp\":[\"10.255.6.36\",\"10.255.6.37\",\"10.255.6.21\",\"10.255.6.18\",\"10.255.6.19\",\"10.255.5.28\",\"10.255.5.18\",\"10.255.5.19\"],\"RegionDetail\":\"西南地区\",\"ZoneZh\":\"重庆一区\",\"ZoneZhBak\":\"重庆一区\",\"Status\":0,\"RuleMax\":20000,\"RuleUsed\":1000}]",
+          "document": "<p>实例卡片信息数组</p>",
+          "example": "无",
           "member": "NatInstanceInfo",
           "name": "NatinsLst",
           "output_required": false,
@@ -9629,7 +10161,7 @@
         },
         {
           "disabled": false,
-          "document": "nat 防火墙个数",
+          "document": "<p>nat 防火墙个数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -9651,7 +10183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量，分页用",
+          "document": "<p>偏移量，分页用</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -9660,7 +10192,7 @@
         },
         {
           "disabled": false,
-          "document": "条数，分页用",
+          "document": "<p>条数，分页用</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -9669,7 +10201,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件组合",
+          "document": "<p>过滤条件组合</p>",
           "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
@@ -9678,7 +10210,7 @@
         },
         {
           "disabled": false,
-          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "document": "<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -9687,7 +10219,7 @@
         },
         {
           "disabled": false,
-          "document": "排序所用到的字段",
+          "document": "<p>排序所用到的字段</p>",
           "example": "id",
           "member": "string",
           "name": "By",
@@ -9702,7 +10234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "Total",
@@ -9712,7 +10244,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT边界防火墙开关列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>NAT边界防火墙开关列表数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NatSwitchListData",
           "name": "Data",
@@ -9722,7 +10254,7 @@
         },
         {
           "disabled": false,
-          "document": "开关相关VPC列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开关相关VPC列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CommonIdName",
           "name": "VpcList",
@@ -9732,7 +10264,7 @@
         },
         {
           "disabled": false,
-          "document": "开关相关NAT列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开关相关NAT列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CommonIdName",
           "name": "NatList",
@@ -9742,7 +10274,7 @@
         },
         {
           "disabled": false,
-          "document": "开关相关ROUTE列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开关相关ROUTE列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CommonIdName",
           "name": "RouteList",
@@ -9752,7 +10284,7 @@
         },
         {
           "disabled": false,
-          "document": "开启开关个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开启开关个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "OnNum",
@@ -9762,7 +10294,7 @@
         },
         {
           "disabled": false,
-          "document": "关闭开关个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关闭开关个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "OffNum",
@@ -9772,7 +10304,7 @@
         },
         {
           "disabled": false,
-          "document": "失败开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>失败开关状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CommonIdNameStatus",
           "name": "FailData",
@@ -9794,7 +10326,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "natfw 防火墙实例id",
+          "document": "<p>natfw 防火墙实例id</p>",
           "example": "cfwnat-4fb07125",
           "member": "string",
           "name": "NatFwInsId",
@@ -9803,7 +10335,7 @@
         },
         {
           "disabled": false,
-          "document": "natfw 过滤，以','分隔",
+          "document": "<p>natfw 过滤，以&#39;,&#39;分隔</p>",
           "example": "[\"nat-4fb07125\",\"nat-4fb07126\"]",
           "member": "string",
           "name": "NatInsIdFilter",
@@ -9812,7 +10344,7 @@
         },
         {
           "disabled": false,
-          "document": "分页页数",
+          "document": "<p>分页页数</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -9821,7 +10353,7 @@
         },
         {
           "disabled": false,
-          "document": "每页最多个数",
+          "document": "<p>每页最多个数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -9836,8 +10368,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "nat防火墙vpc dns 信息数组",
-          "example": "[{\"SwitchStatus\":0,\"NatInsId\":\"cfwnat-f3250045\",\"NatInsName\":\"hello\",\"DNSEip\":\"121.5.27.250\",\"VpcIpv4Cidr\":\"10.115.0.0/16\",\"FwMode\":1,\"VpcName\":\"hello\",\"VpcId\":\"vpc-ilbrv877\",\"ProtectedStatus\":1,\"SupportDNSFW\":1}]",
+          "document": "<p>nat防火墙vpc dns 信息数组</p>",
+          "example": "无",
           "member": "VpcDnsInfo",
           "name": "VpcDnsSwitchLst",
           "output_required": false,
@@ -9846,7 +10378,7 @@
         },
         {
           "disabled": false,
-          "document": "返回参数 success成功 failed 失败",
+          "document": "<p>返回参数 success成功 failed 失败</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -9856,7 +10388,7 @@
         },
         {
           "disabled": false,
-          "document": "开关总条数",
+          "document": "<p>开关总条数</p>",
           "example": "3",
           "member": "int64",
           "name": "Total",
@@ -10607,7 +11139,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙",
+          "document": "<p>EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙</p>",
           "example": "EDGE_FW",
           "member": "string",
           "name": "FwType",
@@ -10622,7 +11154,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误信息列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SwitchError",
           "name": "Data",
@@ -11175,7 +11707,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持自动接入和策略路由的CCN列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支持自动接入和策略路由的CCN列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ccn-ha7tt32f\"]",
           "member": "string",
           "name": "SupportCcnPolicy",
@@ -11185,7 +11717,7 @@
         },
         {
           "disabled": false,
-          "document": "自动接入中支持自定义cidr的CCN列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动接入中支持自定义cidr的CCN列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ccn-ha7tt32f\"]",
           "member": "string",
           "name": "SupportCcnPolicyCidr",
@@ -11207,7 +11739,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "<p>每页条数</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -11216,7 +11748,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移值",
+          "document": "<p>偏移值</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -11225,8 +11757,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件组合",
-          "example": "[{\"Name\":\"SwitchName\",\"Values\":[\"andy\"],\"OperatorType\":9}]",
+          "document": "<p>过滤条件组合</p>",
+          "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
           "required": false,
@@ -11234,7 +11766,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的起始时间，可不传",
+          "document": "<p>检索的起始时间，可不传</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "StartTime",
@@ -11243,7 +11775,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的截止时间，可不传",
+          "document": "<p>检索的截止时间，可不传</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "EndTime",
@@ -11252,7 +11784,7 @@
         },
         {
           "disabled": false,
-          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "document": "<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -11261,7 +11793,7 @@
         },
         {
           "disabled": false,
-          "document": "排序所用到的字段",
+          "document": "<p>排序所用到的字段</p>",
           "example": "SwitchId",
           "member": "string",
           "name": "By",
@@ -11276,8 +11808,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "开关列表",
-          "example": "[{\"SwitchId\":\"cfwalls-1448c486f4\",\"SwitchName\":\"云联网测试\",\"SwitchMode\":3,\"ConnectType\":0,\"ConnectId\":\"ccn-wxecrvtb\",\"ConnectName\":\"云联网1\",\"SrcInstancesInfo\":[{\"InstanceId\":\"vpc-dw314am3\",\"InstanceName\":\"冲突sdwan\",\"InstanceCidr\":\"10.24.0.0/16\",\"Region\":\"ap-nanjing\"}],\"DstInstancesInfo\":[{\"InstanceId\":\"vpc-dw314am3\",\"InstanceName\":\"冲突sdwan\",\"InstanceCidr\":\"10.24.0.0/16\",\"Region\":\"ap-nanjing\"}],\"FwGroupId\":\"cfwg-03508673\",\"FwGroupName\":\"生产防火墙\",\"FwInsLst\":[{\"FwInsId\":\"cfwew-63a110d9\",\"FwInsName\":\"云联网测试-南京\",\"FwInsRegion\":\"ap-nanjing\"}],\"FwInsRegion\":[\"ap-nanjing\"],\"Enable\":1,\"Status\":3,\"BypassStatus\":1,\"AttachWithEdge\":0,\"CrossEdgeStatus\":0,\"IpsAction\":0,\"IpVersion\":0}]",
+          "document": "<p>开关列表</p>",
+          "example": "无",
           "member": "FwGroupSwitchShow",
           "name": "SwitchList",
           "output_required": false,
@@ -11286,7 +11818,7 @@
         },
         {
           "disabled": false,
-          "document": "开关总个数",
+          "document": "<p>开关总个数</p>",
           "example": "100",
           "member": "uint64",
           "name": "Total",
@@ -13831,7 +14363,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回状态\n0 请求成功\n2 请求失败\n3 请求失败-频率限制",
+          "document": "<p>返回状态<br>0 请求成功<br>2 请求失败<br>3 请求失败-频率限制</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -13841,7 +14373,7 @@
         },
         {
           "disabled": false,
-          "document": "success 成功\n其他失败",
+          "document": "<p>success 成功<br>其他失败</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -13851,7 +14383,7 @@
         },
         {
           "disabled": false,
-          "document": "0 成功\n非0 失败",
+          "document": "<p>0 成功<br>非0 失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "ReturnCode",
@@ -14073,7 +14605,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙类型，\"VPC_FW\"-VPC防火墙，\"NAT_FW\"-NAT防火墙",
+          "document": "<p>防火墙类型，&quot;VPC_FW&quot;-VPC防火墙，&quot;NAT_FW&quot;-NAT防火墙</p>",
           "example": "NAT_FW",
           "member": "string",
           "name": "FwType",
@@ -14082,7 +14614,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网实例ID",
+          "document": "<p>云联网实例ID</p>",
           "example": "ccn-iidlg5oh",
           "member": "string",
           "name": "CcnId",
@@ -14091,7 +14623,7 @@
         },
         {
           "disabled": false,
-          "document": "Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）",
+          "document": "<p>Bypass开关，true-开启Bypass（禁用正常下一跳，流量绕过防火墙），false-关闭Bypass（启用正常下一跳，流量经过防火墙）</p>",
           "example": "false",
           "member": "bool",
           "name": "Enable",
@@ -14100,7 +14632,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT防火墙实例ID，FwType为nat时必填",
+          "document": "<p>NAT防火墙实例ID，FwType为nat时必填</p>",
           "example": "nat-nlq8cmtw",
           "member": "string",
           "name": "NatInsId",
@@ -14154,7 +14686,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开关，0：关闭，1：开启",
+          "document": "<p>开关，0：关闭，1：开启</p>",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -14163,8 +14695,8 @@
         },
         {
           "disabled": false,
-          "document": "集群模式vpc间防火墙ccn开关信息",
-          "example": "[{\"CcnId\":\"ccn-cs12dxd3\", \"SwitchMode\":\"auto\", \"FwVpcCidr\":\"auto\"}]",
+          "document": "<p>集群模式vpc间防火墙ccn开关信息</p>",
+          "example": "无",
           "member": "CcnSwitchInfo",
           "name": "CcnSwitch",
           "required": false,
@@ -14273,7 +14805,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 关闭开关\n1 打开开关\n2 不操作开关，此次切换模式",
+          "document": "<p>0 关闭开关<br>1 打开开关<br>2 不操作开关，此次切换模式</p>",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -14282,8 +14814,8 @@
         },
         {
           "disabled": false,
-          "document": "操作开关详情",
-          "example": "[{\"PublicIp\":\"1.1.1.1\",\"SubnetId\":\"subnet-11111111\",\"EndpointIp\":\"1.1.1.2\",\"SwitchMode\":1}]",
+          "document": "<p>操作开关详情</p>",
+          "example": "无",
           "member": "EdgeIpSwitch",
           "name": "EdgeIpSwitchLst",
           "required": false,
@@ -14291,7 +14823,7 @@
         },
         {
           "disabled": false,
-          "document": "0 不自动选择子网\n1 自动选择子网创建私有连接",
+          "document": "<p>0 不自动选择子网<br>1 自动选择子网创建私有连接</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoChooseSubnet",
@@ -14300,7 +14832,7 @@
         },
         {
           "disabled": false,
-          "document": "0 切换为旁路\n1 切换为串行\n2 不切换模式，此次操作开关",
+          "document": "<p>0 切换为旁路<br>1 切换为串行<br>2 不切换模式，此次操作开关</p>",
           "example": "0",
           "member": "int64",
           "name": "SwitchMode",
@@ -14447,7 +14979,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "打开或关闭开关\n0：关闭开关\n1：打开开关",
+          "document": "<p>打开或关闭开关<br>0：关闭开关<br>1：打开开关</p>",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -14456,7 +14988,7 @@
         },
         {
           "disabled": false,
-          "document": "是否操作全部开关 0 不操作全部开关，1 操作全部开关",
+          "document": "<p>是否操作全部开关 0 不操作全部开关，1 操作全部开关</p>",
           "example": "0",
           "member": "int64",
           "name": "AllSwitch",
@@ -14465,8 +14997,8 @@
         },
         {
           "disabled": false,
-          "document": "开关列表",
-          "example": "[{\"SwitchMode\":1,\"SwitchId\":\"cfws-wxecrvtb\"}]",
+          "document": "<p>开关列表</p>",
+          "example": "无",
           "member": "FwGroupSwitch",
           "name": "SwitchList",
           "required": false,
@@ -14505,6 +15037,89 @@
     "ModifyIpsModeSwitchResponse": {
       "document": "ModifyIpsModeSwitch返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIsolateTableRequest": {
+      "document": "ModifyIsolateTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产唯一id</p>",
+          "example": "ins-8888",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作动作：编辑、删除</p>",
+          "example": "edit",
+          "member": "string",
+          "name": "ButtonAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始时间</p>",
+          "example": "2022-03-08 09:12:47",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2022-03-15 09:12:48",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIsolateTableResponse": {
+      "document": "ModifyIsolateTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>0 成功  非0失败</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>success 成功 其他失败</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14565,7 +15180,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模式 1：接入模式；0：新增模式",
+          "document": "<p>模式 1：接入模式；0：新增模式</p>",
           "example": "1",
           "member": "int64",
           "name": "Mode",
@@ -14574,7 +15189,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例id",
+          "document": "<p>防火墙实例id</p>",
           "example": "cfwnat-d2afc817",
           "member": "string",
           "name": "CfwInstance",
@@ -14583,7 +15198,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式重新接入的nat网关列表，其中NatGwList和VpcList只能传递一个。",
+          "document": "<p>接入模式重新接入的nat网关列表，其中NatGwList和VpcList只能传递一个。</p>",
           "example": "[\"nat-14yv5rzx\",\"nat-14yv5rzk\"]",
           "member": "string",
           "name": "NatGwList",
@@ -14592,7 +15207,7 @@
         },
         {
           "disabled": false,
-          "document": "新增模式重新接入的vpc列表，其中NatGwList和NatgwList只能传递一个。",
+          "document": "<p>新增模式重新接入的vpc列表，其中NatGwList和NatgwList只能传递一个。</p>",
           "example": "[\"vpc-q98tz7hs\",\"vpc-x98tz7ha\"]",
           "member": "string",
           "name": "VpcList",
@@ -14601,8 +15216,8 @@
         },
         {
           "disabled": false,
-          "document": "指定防火墙使用网段信息",
-          "example": "{\"FwCidrType\": \"VpcSelf\", \"FwCidrLst\": [], \"ComFwCidr\": \"\"}",
+          "document": "<p>指定防火墙使用网段信息</p>",
+          "example": "无",
           "member": "FwCidrInfo",
           "name": "FwCidrInfo",
           "required": false,
@@ -14628,7 +15243,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开关，0：关闭，1：开启",
+          "document": "<p>开关，0：关闭，1：开启</p>",
           "example": "0",
           "member": "int64",
           "name": "Enable",
@@ -14637,7 +15252,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。",
+          "document": "<p>防火墙实例id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。</p>",
           "example": "[\"cfwnat-65d0d823\"]",
           "member": "string",
           "name": "CfwInsIdList",
@@ -14646,7 +15261,7 @@
         },
         {
           "disabled": false,
-          "document": "子网id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。",
+          "document": "<p>子网id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。</p>",
           "example": "[\"subnet-cjxihpy1\"]",
           "member": "string",
           "name": "SubnetIdList",
@@ -14655,7 +15270,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。",
+          "document": "<p>路由表id列表，其中CfwInsIdList，SubnetIdList和RouteTableIdList只能传递一种。</p>",
           "example": "[\"rtb-9jbsa559\",\"rtb-dba9eo0f\"]",
           "member": "string",
           "name": "RouteTableIdList",
@@ -14682,7 +15297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "nat 防火墙 id",
+          "document": "<p>nat 防火墙 id</p>",
           "example": "cfwnat-4fb07125",
           "member": "string",
           "name": "NatFwInsId",
@@ -14691,8 +15306,8 @@
         },
         {
           "disabled": false,
-          "document": "DNS 开关切换列表",
-          "example": "[{\"VpcId\":\"vpc-ilbrv877\",\"Status\":0}]",
+          "document": "<p>DNS 开关切换列表</p>",
+          "example": "无",
           "member": "DnsVpcSwitch",
           "name": "DnsVpcSwitchLst",
           "required": true,
@@ -14706,7 +15321,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改成功",
+          "document": "<p>修改成功</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -14728,7 +15343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "NAT防火墙实例名称",
+          "document": "<p>NAT防火墙实例名称</p>",
           "example": "NAT防火墙",
           "member": "string",
           "name": "InstanceName",
@@ -14737,7 +15352,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT防火墙实例ID",
+          "document": "<p>NAT防火墙实例ID</p>",
           "example": "cfwnat-2c53b04b",
           "member": "string",
           "name": "NatInstanceId",
@@ -14752,7 +15367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 正常\n-1 异常",
+          "document": "<p>0 正常<br>-1 异常</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -14762,7 +15377,7 @@
         },
         {
           "disabled": false,
-          "document": "nat实例唯一ID",
+          "document": "<p>nat实例唯一ID</p>",
           "example": "cfwnat-f0f1c7c0",
           "member": "string",
           "name": "NatInstanceId",
@@ -15304,7 +15919,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑的防火墙(组)ID",
+          "document": "<p>编辑的防火墙(组)ID</p>",
           "example": "cfwg-0752de63",
           "member": "string",
           "name": "FwGroupId",
@@ -15313,7 +15928,7 @@
         },
         {
           "disabled": false,
-          "document": "修改防火墙(组)名称",
+          "document": "<p>修改防火墙(组)名称</p>",
           "example": "防火墙名称",
           "member": "string",
           "name": "Name",
@@ -15322,8 +15937,8 @@
         },
         {
           "disabled": false,
-          "document": "编辑的防火墙实例列表",
-          "example": "[{\"FwInsId\":\"cfwew-ace94947\",\"Name\":\"防火墙(组)第三个实例\",\"VpcIds\":[\"vpc-39sc6ru5\"],\"FwDeploy\":{\"DeployRegion\":\"ap-guangzhou\",\"Width\":1024,\"CrossAZone\":1,\"Zone\":\"ap-guangzhou-1\",\"ZoneBak\":\"ap-guangzhou-2\",\"CdcId\":\"\"}}]",
+          "document": "<p>编辑的防火墙实例列表</p>",
+          "example": "无",
           "member": "VpcFwInstance",
           "name": "VpcFwInstances",
           "required": false,
@@ -15331,8 +15946,8 @@
         },
         {
           "disabled": false,
-          "document": "指定防火墙使用网段信息",
-          "example": "{\"FwCidrType\":\"Custom\",\"FwCidrLst\":[{\"VpcId\":\"vpc-39sc6ru5\",\"FwCidr\":\"192.168.1.0/24\"}],\"ComFwCidr\":\"\"}",
+          "document": "<p>指定防火墙使用网段信息</p>",
+          "example": "无",
           "member": "FwCidrInfo",
           "name": "FwCidrInfo",
           "required": false,
@@ -16885,7 +17500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "NAT CCN防火墙开关配置",
+          "document": "<p>NAT CCN防火墙开关配置</p>",
           "example": "无",
           "member": "NatCcnSwitchConfig",
           "name": "NatCcnSwitch",
@@ -19118,7 +19733,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip",
+          "document": "<p>bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip</p>",
           "example": "bind",
           "member": "string",
           "name": "OperationType",
@@ -19127,7 +19742,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例id",
+          "document": "<p>防火墙实例id</p>",
           "example": "cfwnat-d2afc817",
           "member": "string",
           "name": "CfwInstance",
@@ -19136,7 +19751,7 @@
         },
         {
           "disabled": false,
-          "document": "当OperationType 为bind或unbind操作时，使用该字段。",
+          "document": "<p>当OperationType 为bind或unbind操作时，使用该字段。</p>",
           "example": "[\"1.1.1.2\"]",
           "member": "string",
           "name": "EipList",
@@ -19622,7 +20237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步操作类型：Route，同步防火墙路由",
+          "document": "<p>同步操作类型：Route，同步防火墙路由</p>",
           "example": "Route",
           "member": "string",
           "name": "SyncType",
@@ -19631,7 +20246,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙类型；nat,nat防火墙;ew,vpc间防火墙",
+          "document": "<p>防火墙类型；nat,nat防火墙;ew,vpc间防火墙</p>",
           "example": "ew",
           "member": "string",
           "name": "FwType",

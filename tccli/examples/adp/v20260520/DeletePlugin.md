@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli adp DeletePlugin --cli-unfold-argument  \
-    --PluginId acb14a04-a049-4a0c-bafa-9670e5d949f2
+    --PluginId 06f22d3d-07c6-45dd-a54d-565875ddbe37
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fa5dc374-d255-4dc2-bdaa-8685778b0344"
+        "RequestId": "18c4c8d8-dead-4a21-b2e2-49baf9edf8bd"
     }
 }
 ```

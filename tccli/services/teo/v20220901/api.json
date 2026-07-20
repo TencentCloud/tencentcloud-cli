@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateConfigGroupVersion": {
-      "document": "在版本管理模式下，用于创建指定配置组的新版本。版本管理功能内测中，当前仅白名单开放。",
+      "document": "在版本管理模式下，用于创建指定配置组的新版本。",
       "input": "CreateConfigGroupVersionRequest",
       "name": "创建配置组版本",
       "output": "CreateConfigGroupVersionResponse",
@@ -6198,7 +6198,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本 ID。",
+          "document": "<p>配置组版本 ID，创建配置组版本时 EdgeOne 分配的唯一资源 ID。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href=\"https://cloud.tencent.com/document/api/1552/101867\">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href=\"https://cloud.tencent.com/document/api/1552/101864\">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>",
           "example": "ver-2kplomhisdcb",
           "member": "string",
           "name": "VersionId",
@@ -6209,8 +6209,8 @@
         },
         {
           "disabled": false,
-          "document": "版本号。",
-          "example": "1.0",
+          "document": "<p>配置组版本号。该参数仅作展示使用，配置组每创建一次新版本，该版本号自增加一，初始版本的版本号为 &quot;0&quot;。</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/1552/101864\">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></p>",
+          "example": "0",
           "member": "string",
           "name": "VersionNumber",
           "output_required": true,
@@ -6220,18 +6220,18 @@
         },
         {
           "disabled": false,
-          "document": "配置组 ID。",
-          "example": "cg-2kplomhisdcb",
+          "document": "<p>配置组版本所基于的来源版本 ID，在创建配置组版本时进行指定来源版本 ID，新版本将在该来源版本的配置基础上派生创建。</p><p>参数格式：ver-2kplomhisdcb</p><p>取值参考：</p><ul><li><a href=\"https://cloud.tencent.com/document/api/1552/101867\">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href=\"https://cloud.tencent.com/document/api/1552/101864\">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>",
+          "example": "ver-2kplomhisdcb",
           "member": "string",
-          "name": "GroupId",
-          "output_required": true,
+          "name": "SourceVersion",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置组类型，可选项如下：<li>l7_acceleration: 七层加速配置组；</li><li>edge_functions: 边缘函数配置组；</li><li>web_security: Web 防护配置组。</li>",
+          "document": "<p>版本归属的配置组类型。</p><p>枚举值：</p><ul><li>l7_acceleration： 七层加速配置组</li><li>edge_functions： 边缘函数配置组</li><li>web_security： Web 防护配置组</li></ul>",
           "example": "l7_acceleration",
           "member": "string",
           "name": "GroupType",
@@ -6242,8 +6242,19 @@
         },
         {
           "disabled": false,
-          "document": "版本描述。",
-          "example": "这是个测试版本",
+          "document": "<p>版本归属的配置组 ID。</p><p>参数格式：cg-2kplomhisdcb</p>",
+          "example": "cg-2kplomhisdcb",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本描述。</p>",
+          "example": "Test Version",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -6253,8 +6264,8 @@
         },
         {
           "disabled": false,
-          "document": "版本状态，取值有：\n<li>creating：创建中；</li>\n<li>inactive：未生效；</li>\n<li>active：已生效。</li>",
-          "example": "creating ",
+          "document": "<p>版本生效状态。</p><p>枚举值：</p><ul><li>creating： 版本创建中</li><li>inactive： 版本未生效</li><li>active： 版本已生效</li></ul>",
+          "example": "creating",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -6264,8 +6275,8 @@
         },
         {
           "disabled": false,
-          "document": "版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
-          "example": "2023-06-30T17:37:56+0800",
+          "document": "<p>版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>",
+          "example": "2026-03-31T14:53:30Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -6938,7 +6949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "zone-225qgrnvbi9w",
           "member": "string",
           "name": "ZoneId",
@@ -6947,7 +6958,7 @@
         },
         {
           "disabled": false,
-          "document": "待新建版本的配置组 ID。",
+          "document": "<p>待新建版本的配置组 ID。您可以通过查询环境信息接口（DescribeEnvironments）获取完整的环境信息，环境信息中包含了每个配置组类型的配置组 ID。</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/1552/101862\">DescribeEnvironments</a> 返回值 <code>EnvInfos</code></p>",
           "example": "cg-245xgrhv2i9w",
           "member": "string",
           "name": "GroupId",
@@ -6956,7 +6967,7 @@
         },
         {
           "disabled": false,
-          "document": "待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例。",
+          "document": "<p>待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例和 <a href=\"https://cloud.tencent.com/document/product/1552/125342\">配置组语法说明</a>。</p>",
           "example": "{\"FormatVersion\": \"1.0\"***}",
           "member": "string",
           "name": "Content",
@@ -6965,10 +6976,19 @@
         },
         {
           "disabled": false,
-          "document": "版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。",
+          "document": "<p>版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。</p>",
           "example": "create for test",
           "member": "string",
           "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新版本所基于的来源版本 ID。新版本将在该来源版本的配置基础上派生创建。该字段可选，未传入时默认采用当前生产环境正在生效的版本作为来源版本。</p><p>取值参考：</p><ul><li><a href=\"https://cloud.tencent.com/document/api/1552/101867\">CreateConfigGroupVersion</a> 返回值 <code>VersionId</code></li><li><a href=\"https://cloud.tencent.com/document/api/1552/101864\">DescribeConfigGroupVersions</a> 返回值 <code>ConfigGroupVersionInfos</code></li></ul>",
+          "example": "ver-5ksglmhghsu3",
+          "member": "string",
+          "name": "SourceVersion",
           "required": false,
           "type": "string"
         }
@@ -6980,7 +7000,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本 ID。",
+          "document": "<p>版本 ID。</p>",
           "example": "ver-2njd27gendjm",
           "member": "string",
           "name": "VersionId",

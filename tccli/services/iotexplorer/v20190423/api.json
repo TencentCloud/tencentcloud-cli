@@ -1702,6 +1702,23 @@
     "serviceShortName": "iotexplorer"
   },
   "objects": {
+    "ADPConfig": {
+      "document": "ADP 平台配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ADP 平台 AppKey</p>",
+          "example": "B*********************derZLPzMcqpOcOEwOawaDMIelgZcCatUVuaZBYlITUXZmCUdioRcZDmWfkxLnGqdqarqhqcrvayRyACPmtDrpMDdNYazEfYamOxLPWUaHG",
+          "member": "string",
+          "name": "AppKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AISearchInfo": {
       "document": "AI视频搜索结果结构体。",
       "members": [
@@ -25076,7 +25093,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>OpenAI兼容模型Base URL，仅支持 80 和 443 端口，Type=openai时必填</p>",
+          "document": "<p>OpenAI兼容模型的Base URL，Type=openai时必填</p>",
           "example": "https://api.deepseek.com/v1/chat/completions",
           "member": "string",
           "name": "BaseUrl",
@@ -25116,6 +25133,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ADP 平台配置</p>",
+          "example": "无",
+          "member": "ADPConfig",
+          "name": "ADP",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

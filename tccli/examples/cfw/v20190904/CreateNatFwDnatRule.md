@@ -7,20 +7,20 @@ Input:
 ```
 tccli cfw CreateNatFwDnatRule --cli-unfold-argument  \
     --Mode 1 \
-    --CfwInstance abc \
-    --DnatRules.0.IpProtocol abc \
-    --DnatRules.0.PublicIpAddress abc \
+    --CfwInstance saabc \
+    --DnatRules.0.IpProtocol dsabc \
+    --DnatRules.0.PublicIpAddress sdsabc \
     --DnatRules.0.PublicPort 0 \
-    --DnatRules.0.PrivateIpAddress abc \
+    --DnatRules.0.PrivateIpAddress sadsbc \
     --DnatRules.0.PrivatePort 0 \
-    --DnatRules.0.Description abc
+    --DnatRules.0.Description sdsabc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "sadabc"
     }
 }
 ```

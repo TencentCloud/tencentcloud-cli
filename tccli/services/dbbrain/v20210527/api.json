@@ -4658,7 +4658,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;dcdb&quot; -（TDSQL MySQL 版）、&quot;mariadb&quot; -（TDSQL MariaDB 版）默认为&quot;mysql&quot;。</p>",
+          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;dcdb&quot; -（TDSQL MySQL 版）、&quot;mariadb&quot; -（TDSQL MariaDB 版）、&quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -7134,8 +7134,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
-          "example": "cdb-test1234",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。</p>",
+          "example": "cdb-test1214",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7143,7 +7143,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，如“2019-09-10 12:13:14”。",
+          "document": "<p>开始时间，如“2019-09-10 12:13:14”。</p>",
           "example": "2019-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -7152,7 +7152,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。",
+          "document": "<p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>",
           "example": "2019-01-01 01:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -7161,7 +7161,7 @@
         },
         {
           "disabled": false,
-          "document": "排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。",
+          "document": "<p>排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。<br>其中：<br>QueryTime-查询耗时<br>ExecTimes-执行次数<br>RowsSent-返回行数<br>LockTime-锁等待时间<br>RowsExamined-扫描行数</p>",
           "example": "QueryTime",
           "member": "string",
           "name": "SortBy",
@@ -7170,7 +7170,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。",
+          "document": "<p>排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。</p>",
           "example": "ASC",
           "member": "string",
           "name": "OrderBy",
@@ -7179,7 +7179,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -7188,7 +7188,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7197,7 +7197,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称数组。",
+          "document": "<p>数据库名称数组。</p>",
           "example": "无",
           "member": "SchemaItem",
           "name": "SchemaList",
@@ -7206,7 +7206,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL， &quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -7221,7 +7221,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的记录总数。",
+          "document": "<p>符合条件的记录总数。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -7231,7 +7231,7 @@
         },
         {
           "disabled": false,
-          "document": "慢日志 top sql 列表",
+          "document": "<p>慢日志 top sql 列表</p>",
           "example": "无",
           "member": "SlowLogTopSqlItem",
           "name": "Rows",
@@ -7374,7 +7374,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB for MySQL，默认为\"mysql\"。",
+          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB for MySQL，&quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -7383,7 +7383,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。</p>",
           "example": "cdb-insde12",
           "member": "string",
           "name": "InstanceId",
@@ -7392,7 +7392,7 @@
         },
         {
           "disabled": false,
-          "document": "sql模板的md5值",
+          "document": "<p>sql 模板的 md5 值，可通过 <a href=\"https://cloud.tencent.com/document/product/1130/57784\">DescribeSlowLogTopSqls</a> 接口获取。</p>",
           "example": "2693831786114179882",
           "member": "string",
           "name": "Md5",
@@ -7401,7 +7401,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，如“2019-09-10 12:13:14”。",
+          "document": "<p>开始时间，如“2019-09-10 12:13:14”。</p>",
           "example": "2025-09-02T01:14:01+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -7410,7 +7410,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。",
+          "document": "<p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>",
           "example": "2025-09-02T01:15:01+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -7419,7 +7419,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7428,7 +7428,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数目，默认为20，最大为100。",
+          "document": "<p>查询数目，默认为20，最大为100。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -7437,7 +7437,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库列表",
+          "document": "<p>数据库列表</p>",
           "example": "[\"db\"]",
           "member": "string",
           "name": "DB",
@@ -7446,7 +7446,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字",
+          "document": "<p>关键字</p>",
           "example": "[\"select\"]",
           "member": "string",
           "name": "Key",
@@ -7455,7 +7455,7 @@
         },
         {
           "disabled": false,
-          "document": "用户",
+          "document": "<p>用户</p>",
           "example": "[\"user1\",\"user2\"]",
           "member": "string",
           "name": "User",
@@ -7464,7 +7464,7 @@
         },
         {
           "disabled": false,
-          "document": "IP",
+          "document": "<p>IP 来源</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "Ip",
@@ -7473,7 +7473,7 @@
         },
         {
           "disabled": false,
-          "document": "耗时区间,耗时区间的左右边界分别对应数组的第0个元素和第一个元素",
+          "document": "<p>耗时区间,耗时区间的左右边界分别对应数组的第0个元素和第一个元素</p>",
           "example": "[2,4]",
           "member": "int64",
           "name": "Time",
@@ -7488,7 +7488,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的记录总数。",
+          "document": "<p>符合条件的记录总数。</p>",
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
@@ -7498,7 +7498,7 @@
         },
         {
           "disabled": false,
-          "document": "慢日志明细",
+          "document": "<p>慢日志明细</p>",
           "example": "无",
           "member": "SlowLogInfoItem",
           "name": "Rows",
@@ -11884,7 +11884,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "慢日志开始时间",
+          "document": "慢日志开始时间，格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2023-03-31 10:47:35",
           "member": "string",
           "name": "Timestamp",

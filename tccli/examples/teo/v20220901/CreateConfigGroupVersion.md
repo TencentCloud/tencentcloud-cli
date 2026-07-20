@@ -1,6 +1,6 @@
-**Example 1: 为指定配置组创建新版本**
+**Example 1: 基于指定版本创建配置组新版本**
 
-在站点 ID 为 zone-m2kplohsdc4b 的站点下配置组 ID 为 cg-2p9unsmt54uw 的配置组下创建一个新版本。
+在站点 zone-m2kplohsdc4b 下配置组 ID 为 cg-2p9unsmt54uw 的配置组创建一个来源于 ver-5ksglmhghsu3 版本的新版本。
 
 Input: 
 
@@ -8,6 +8,7 @@ Input:
 tccli teo CreateConfigGroupVersion --cli-unfold-argument  \
     --ZoneId zone-m2kplohsdc4b \
     --GroupId cg-2p9unsmt54uw \
+    --SourceVersion ver-5ksglmhghsu3 \
     --Description created for openday \
     --Content {
   "FormatVersion": "1.0",
@@ -179,7 +180,7 @@ Output:
 ```
 {
     "Response": {
-        "VersionId": "ver-5ksglmhghsu3",
+        "VersionId": "ver-5ksglmhghsuu",
         "RequestId": "5e0a2b4e-dw6d-4dsa-ac39-1706cbf8a703"
     }
 }

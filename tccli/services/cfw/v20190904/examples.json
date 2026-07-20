@@ -92,6 +92,14 @@
         "title": "攻击拦截统计示例"
       }
     ],
+    "CreateAlertCenterRuleAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterRuleAsync\n<公共请求参数>\n\n{\n    \"HandleDirection\": \"1\",\n    \"HandleTime\": 7,\n    \"HandleComment\": \"\",\n    \"HandleType\": 1,\n    \"AlertDirection\": 0,\n    \"HandleEventIdList\": [\n        \"f7005f0846e155df126c13636c845388\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaf4f272-c04c-49b8-8456-58ff21226bac\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
+        "title": "处置封禁"
+      }
+    ],
     "CreateBlockIgnoreRuleList": [
       {
         "document": "添加封禁",
@@ -127,8 +135,8 @@
     "CreateNatFwDnatRule": [
       {
         "document": "创建Nat防火墙Dnat规则",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"abc\",\n    \"DnatRules\": [\n        {\n            \"IpProtocol\": \"abc\",\n            \"PublicIpAddress\": \"abc\",\n            \"PublicPort\": 0,\n            \"PrivateIpAddress\": \"abc\",\n            \"PrivatePort\": 0,\n            \"Description\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"saabc\",\n    \"DnatRules\": [\n        {\n            \"IpProtocol\": \"dsabc\",\n            \"PublicIpAddress\": \"sdsabc\",\n            \"PublicPort\": 0,\n            \"PrivateIpAddress\": \"sadsbc\",\n            \"PrivatePort\": 0,\n            \"Description\": \"sdsabc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sadabc\"\n    }\n}",
         "title": "创建Nat防火墙Dnat规则"
       }
     ],
@@ -211,8 +219,8 @@
     "DeleteNatFwDnatRule": [
       {
         "document": "删除Nat防火墙Dnat规则",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"abc\",\n    \"DnatRules\": [\n        {\n            \"IpProtocol\": \"abc\",\n            \"PublicIpAddress\": \"abc\",\n            \"PublicPort\": 0,\n            \"PrivateIpAddress\": \"abc\",\n            \"PrivatePort\": 0,\n            \"Description\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"cfw-dsad\",\n    \"DnatRules\": [\n        {\n            \"IpProtocol\": \"tcp\",\n            \"PublicIpAddress\": \"1.10.101.1\",\n            \"PublicPort\": 0,\n            \"PrivateIpAddress\": \"1.1.1.1\",\n            \"PrivatePort\": 0,\n            \"Description\": \"sadabc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsadsaabc\"\n    }\n}",
         "title": "删除Nat防火墙Dnat规则"
       }
     ],
@@ -360,8 +368,14 @@
     ],
     "DescribeCfwAlerts": [
       {
+        "document": "StartTime 和 EndTime 限定查询窗口；Count 按 occurrence_count 排序；下一页把 Offset 增加本页 returned。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAlerts\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-06-01 00:00:00\",\n    \"EndTime\": \"2026-06-02 00:00:00\",\n    \"OrderBy\": \"Count\",\n    \"Order\": \"desc\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"total\\\":376,\\\"returned\\\":10,\\\"offset\\\":0,\\\"order_by\\\":\\\"Count\\\",\\\"order\\\":\\\"desc\\\",\\\"alerts\\\":[{\\\"event_id\\\":\\\"evt-1\\\",\\\"occurrence_count\\\":138}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "按时间和命中次数查询告警"
+      },
+      {
         "document": "按告警级别和处置状态过滤；Response.Data 中 total 是聚合告警事件数，occurrence_count 是单个聚合告警事件的告警发生次数/命中次数。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAlerts\n<公共请求参数>\n\n{\n    \"Limit\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAlerts\n<公共请求参数>\n\n{\n    \"Level\": \"high\",\n    \"ActionStatus\": \"blocked\",\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"total\\\":376,\\\"alerts\\\":[{\\\"event_id\\\":\\\"evt-1\\\",\\\"occurrence_count\\\":138}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "查询高危阻断告警"
       }
@@ -372,14 +386,32 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAnalysisData\n<公共请求参数>\n\n{\n    \"Scenario\": \"full_traffic\",\n    \"StartTime\": \"2026-06-01 00:00:00\",\n    \"EndTime\": \"2026-06-02 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"status\\\":\\\"success\\\",\\\"data\\\":{\\\"sections\\\":{\\\"beacon\\\":{\\\"available\\\":true,\\\"records\\\":[{\\\"src_ip\\\":\\\"10.0.0.1\\\"}]}}},\\\"metadata\\\":{\\\"scenario\\\":\\\"full_traffic\\\"}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "查询全流量分析报告数据"
+      },
+      {
+        "document": "Target 对该场景全部分析段追加目标过滤；SkipSections 可跳过不需要或已知不可用的分析段。输出仅展示一个代表性 section，实际返回全部未跳过的 section。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAnalysisData\n<公共请求参数>\n\n{\n    \"Scenario\": \"access_troubleshoot\",\n    \"Target\": \"10.0.0.1\",\n    \"SkipSections\": [\n        \"ips_block\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"status\\\":\\\"success\\\",\\\"data\\\":{\\\"sections\\\":{\\\"acl_border_block\\\":{\\\"available\\\":true,\\\"records\\\":[]}}},\\\"metadata\\\":{\\\"scenario\\\":\\\"access_troubleshoot\\\",\\\"object\\\":{\\\"type\\\":\\\"user\\\"}}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "按目标排查访问阻断"
       }
     ],
     "DescribeCfwAssets": [
       {
-        "document": "未传 AssetType 时默认查询 host；传入 InstanceId 可定位单个实例。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAssets\n<公共请求参数>\n\n{\n    \"Limit\": 100\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"asset_type\\\":\\\"host\\\",\\\"assets\\\":[{\\\"instance_id\\\":\\\"ins-1\\\"}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
-        "title": "查询主机资产"
+        "document": "资产或指纹续查都只传 NextToken，不要解析或构造 token；HasMore=false 时结束。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAssets\n<公共请求参数>\n\n{\n    \"NextToken\": \"opaque-token\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"asset_type\\\":\\\"host\\\",\\\"assets\\\":[{\\\"instance_id\\\":\\\"ins-xxxxxxxx\\\",\\\"fingerprints\\\":[{\\\"port\\\":80}]}],\\\"HasMore\\\":false}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "使用 NextToken 续查资产或指纹"
+      },
+      {
+        "document": "exact InstanceId 每页重复基础资产，fingerprints 仅为当前页；HasMore=true 时使用 NextToken 续查剩余指纹。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAssets\n<公共请求参数>\n\n{\n    \"AssetType\": \"host\",\n    \"InstanceId\": \"ins-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"asset_type\\\":\\\"host\\\",\\\"assets\\\":[{\\\"instance_id\\\":\\\"ins-xxxxxxxx\\\",\\\"fingerprints\\\":[{\\\"port\\\":443}]}],\\\"HasMore\\\":true,\\\"NextToken\\\":\\\"opaque-token\\\"}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "精确查询实例及指纹"
+      },
+      {
+        "document": "broad host 列表返回基础资产；如果 Data.HasMore 为 true，保存 Data.NextToken。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAssets\n<公共请求参数>\n\n{\n    \"AssetType\": \"host\",\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"asset_type\\\":\\\"host\\\",\\\"assets\\\":[{\\\"instance_id\\\":\\\"ins-1\\\"}],\\\"HasMore\\\":true,\\\"NextToken\\\":\\\"opaque-token\\\"}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "首次查询主机资产"
       }
     ],
     "DescribeCfwEips": [
@@ -400,59 +432,83 @@
     ],
     "DescribeCfwLogs": [
       {
-        "document": "续查只回传 NextToken；调用方不要解析或构造 token。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwLogs\n<公共请求参数>\n\n{\n    \"NextToken\": \"opaque-token\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"Items\\\":[],\\\"TotalCount\\\":0,\\\"Limit\\\":100,\\\"HasMore\\\":false}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
-        "title": "使用 NextToken 续查"
-      },
-      {
         "document": "首次查询传入 LogType；如果 Data.HasMore 为 true，保存 Data.NextToken 用于续查。",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwLogs\n<公共请求参数>\n\n{\n    \"LogType\": \"cfw_netflow_border\",\n    \"Query\": \"src_ip:1.1.1.1\",\n    \"TimeRange\": \"1h\",\n    \"Limit\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"Items\\\":[{\\\"src_ip\\\":\\\"1.1.1.1\\\"}],\\\"TotalCount\\\":1,\\\"Limit\\\":100,\\\"HasMore\\\":true,\\\"NextToken\\\":\\\"opaque-token\\\"}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "首次查询防火墙日志"
+      },
+      {
+        "document": "续查只回传 NextToken；调用方不要解析或构造 token。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwLogs\n<公共请求参数>\n\n{\n    \"NextToken\": \"opaque-token\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"Items\\\":[],\\\"TotalCount\\\":0,\\\"Limit\\\":100,\\\"HasMore\\\":false}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "使用 NextToken 续查"
       }
     ],
     "DescribeCfwRiskOverview": [
       {
-        "document": "不传时间时默认查询最近 7 天未处理风险概览。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRiskOverview\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"total_unhandled_risks\\\":1,\\\"breakdown\\\":{\\\"port_risk_total\\\":1}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "document": "不传时间时默认查询最近 7 天；total_unhandled_risks 等于 breakdown 五类未处理风险之和。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRiskOverview\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-06-01 00:00:00\",\n    \"EndTime\": \"2026-06-02 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"start_time\\\":\\\"2026-06-01 00:00:00\\\",\\\"end_time\\\":\\\"2026-06-02 00:00:00\\\",\\\"total_unhandled_risks\\\":5,\\\"breakdown\\\":{\\\"data_leak_total\\\":1,\\\"data_leak_out_total\\\":1,\\\"data_leak_ai_instance_total\\\":1,\\\"port_risk_total\\\":1,\\\"weak_password_total\\\":1}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "查询风险概览"
       }
     ],
     "DescribeCfwRuleOptimization": [
       {
         "document": "只读返回优化建议；示例仅展示代表性字段，是否处理以及如何处理由调用方决定。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRuleOptimization\n<公共请求参数>\n\n{\n    \"IdleDays\": 180\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRuleOptimization\n<公共请求参数>\n\n{\n    \"RuleType\": \"border\",\n    \"Dimensions\": [\n        \"D1\"\n    ],\n    \"IdleDays\": 180\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"border\\\",\\\"dimension_counts\\\":{\\\"D1\\\":1},\\\"finding_total\\\":1,\\\"findings\\\":[{\\\"dim\\\":\\\"D1 完全重复\\\"}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "查询互联网边界规则优化建议"
       }
     ],
     "DescribeCfwRules": [
       {
+        "document": "查询 NAT 边界 ACL；ExpandNames=false 返回原始规则字段，scope 是修改规则时需要保留的生效范围。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"nat\",\n    \"ExpandNames\": false,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"nat\\\",\\\"total\\\":1,\\\"returned\\\":1,\\\"rules\\\":[{\\\"sequence\\\":1,\\\"src_ip\\\":\\\"10.0.0.0/24\\\",\\\"dst_content\\\":\\\"0.0.0.0/0\\\",\\\"protocol\\\":\\\"TCP\\\",\\\"dst_port\\\":\\\"443\\\",\\\"scope\\\":\\\"ap-guangzhou\\\"}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询 NAT 边界规则"
+      },
+      {
+        "document": "查询 VPC 间 ACL；ip_version 即使为 0 也会保留，修改规则时不得猜测或丢弃。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"vpc\",\n    \"ExpandNames\": false,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"vpc\\\",\\\"total\\\":1,\\\"returned\\\":1,\\\"rules\\\":[{\\\"sequence\\\":1,\\\"protocol\\\":\\\"TCP\\\",\\\"dst_port\\\":\\\"443\\\",\\\"ip_version\\\":0,\\\"enabled\\\":true}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询 VPC 间规则"
+      },
+      {
+        "document": "查询互联网边界 ACL；Direction=0 表示出站，规则数组包含源、目的、协议、端口、动作和启用状态。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"border\",\n    \"Direction\": 0,\n    \"ExpandNames\": false,\n    \"Limit\": 100,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"border\\\",\\\"total\\\":1,\\\"returned\\\":1,\\\"rules\\\":[{\\\"sequence\\\":1,\\\"src_ip\\\":\\\"10.0.0.1\\\",\\\"dst_content\\\":\\\"0.0.0.0/0\\\",\\\"protocol\\\":\\\"TCP\\\",\\\"dst_port\\\":\\\"443\\\",\\\"direction\\\":0,\\\"action\\\":1,\\\"enabled\\\":true}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询互联网边界规则"
+      },
+      {
+        "document": "查询企业安全组规则；可使用 Protocol、SrcIp、DstIp 和 Description 继续过滤。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"enterprise_sg\",\n    \"Protocol\": \"TCP\",\n    \"ExpandNames\": false,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"enterprise_sg\\\",\\\"total\\\":1,\\\"returned\\\":1,\\\"rules\\\":[{\\\"sequence\\\":1,\\\"protocol\\\":\\\"TCP\\\",\\\"dst_port\\\":\\\"443\\\",\\\"action\\\":1,\\\"enabled\\\":true}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询企业安全组规则"
+      },
+      {
         "document": "RuleType=intrusion_prevention 时通过 ListType 选择 blocklist、whitelist 或 isolate。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"blocklist\",\n    \"Limit\": 100\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"blocklist\",\n    \"Keyword\": \"1.1.1.1\",\n    \"Limit\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"intrusion_prevention\\\",\\\"list_type\\\":\\\"blocklist\\\",\\\"total\\\":1}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "查询入侵防御封禁列表"
       },
       {
         "document": "查询入侵防御白名单策略，ListType 使用 whitelist。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"whitelist\",\n    \"Limit\": 100\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"whitelist\",\n    \"Keyword\": \"safe.example.com\",\n    \"Limit\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"intrusion_prevention\\\",\\\"list_type\\\":\\\"whitelist\\\",\\\"total\\\":1}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "查询入侵防御白名单策略"
       },
       {
         "document": "按实例 ID 精确查询入侵防御隔离记录，用于写操作前后核验。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"isolate\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"isolate\",\n    \"InstanceId\": \"ins-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"intrusion_prevention\\\",\\\"list_type\\\":\\\"isolate\\\",\\\"total\\\":1}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "查询入侵防御隔离列表"
       }
     ],
     "DescribeCfwStatusMonitor": [
       {
-        "document": "describe_scene 用来发现可用 metric/perspective 组合和二级下拉 available_options。",
+        "document": "describe_scene 用来发现可用 metric/perspective 组合、默认值、选择项要求和二级下拉 available_options；fetch_scene 应原样使用发现结果。输出为字段结构节选，数组仅展示代表值。",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwStatusMonitor\n<公共请求参数>\n\n{\n    \"Op\": \"describe_scene\",\n    \"FirewallType\": \"internet_edge\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"op\\\":\\\"describe_scene\\\",\\\"scene\\\":{\\\"firewall_type\\\":\\\"internet_edge\\\"},\\\"selection\\\":{\\\"available_options\\\":[{\\\"id\\\":\\\"ap-guangzhou\\\"}]}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"op\\\":\\\"describe_scene\\\",\\\"scene\\\":{\\\"firewall_type\\\":\\\"internet_edge\\\",\\\"metric_options\\\":[\\\"bandwidth\\\"],\\\"perspective_options\\\":{\\\"bandwidth\\\":[\\\"ip\\\"]},\\\"default_metric\\\":\\\"bandwidth\\\",\\\"default_perspective\\\":{\\\"bandwidth\\\":\\\"ip\\\"},\\\"selection_required_by_metric\\\":{\\\"bandwidth\\\":false},\\\"selection_kind_by_metric\\\":{\\\"bandwidth\\\":\\\"region\\\"},\\\"time_preset_options\\\":[\\\"1h\\\",\\\"24h\\\",\\\"7d\\\"]},\\\"selection\\\":{\\\"available_options\\\":[{\\\"id\\\":\\\"__all__\\\",\\\"name\\\":\\\"全部地域\\\"},{\\\"id\\\":\\\"ap-guangzhou\\\",\\\"name\\\":\\\"广州\\\"}]}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
         "title": "发现场景和二级下拉选项"
       },
       {
@@ -674,7 +730,7 @@
       {
         "document": "查询NAT开关列表",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwSwitch\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 1,\n                \"Enable\": 1,\n                \"Id\": 33781,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-84d3440f\",\n                \"NatInsName\": \"[autotest][勿删]自动化测试\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-f5wqfibn\",\n                \"RouteName\": \"default_copy_for_cfw\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.8.2.0/24\",\n                \"SubnetId\": \"subnet-j9cyo89p\",\n                \"SubnetName\": \"[autotest][勿删]自动化测试C2\",\n                \"VpcId\": \"vpc-d0t6wgo2\",\n                \"VpcName\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 1,\n                \"Id\": 34636,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-84d3440f\",\n                \"NatInsName\": \"[autotest][勿删]自动化测试\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-l28qa73d\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.8.0.32/29\",\n                \"SubnetId\": \"subnet-rsun76k7\",\n                \"SubnetName\": \"防火墙专用子网_请勿删改\",\n                \"VpcId\": \"vpc-d0t6wgo2\",\n                \"VpcName\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 1,\n                \"Id\": 33779,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-84d3440f\",\n                \"NatInsName\": \"[autotest][勿删]自动化测试\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-l28qa73d\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.8.3.0/24\",\n                \"SubnetId\": \"subnet-nem8hqnp\",\n                \"SubnetName\": \"MYSQL\",\n                \"VpcId\": \"vpc-d0t6wgo2\",\n                \"VpcName\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 1,\n                \"Enable\": 1,\n                \"Id\": 33780,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-84d3440f\",\n                \"NatInsName\": \"[autotest][勿删]自动化测试\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-l28qa73d\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.8.1.0/24\",\n                \"SubnetId\": \"subnet-jy2eionr\",\n                \"SubnetName\": \"[autotest][勿删]自动化测试C1\",\n                \"VpcId\": \"vpc-d0t6wgo2\",\n                \"VpcName\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 0,\n                \"Id\": 34637,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-7e170f6b\",\n                \"NatInsName\": \"test\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-beijing\",\n                \"RouteId\": \"rtb-o18lgl2l\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.0.0.0/24\",\n                \"SubnetId\": \"subnet-s1c8r185\",\n                \"SubnetName\": \"nat防火墙临时测试\",\n                \"VpcId\": \"vpc-0iz7ii4s\",\n                \"VpcName\": \"nat防火墙临时测试\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 1,\n                \"Id\": 34629,\n                \"NatId\": \"nat-de74cic7\",\n                \"NatInsId\": \"cfwnat-01debc37\",\n                \"NatInsName\": \"111\",\n                \"NatName\": \"test1\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-pslbu0gx\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"172.20.0.0/24\",\n                \"SubnetId\": \"subnet-8jm78x87\",\n                \"SubnetName\": \"subnet1\",\n                \"VpcId\": \"vpc-fmprtmz2\",\n                \"VpcName\": \"dora1\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 0,\n                \"Id\": 34633,\n                \"NatId\": \"nat-56jjs6mo\",\n                \"NatInsId\": \"cfwnat-49f38b8b\",\n                \"NatInsName\": \"测试接入\",\n                \"NatName\": \"gltest\",\n                \"Region\": \"ap-guangzhou\",\n                \"RouteId\": \"rtb-pwcv5gaw\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.10.0.0/24\",\n                \"SubnetId\": \"subnet-7z6dhany\",\n                \"SubnetName\": \"fengqqiansub\",\n                \"VpcId\": \"vpc-0nduhuff\",\n                \"VpcName\": \"fengqqian-串行\"\n            }\n        ],\n        \"FailData\": [],\n        \"NatList\": [\n            {\n                \"Id\": \"nat-56jjs6mo\",\n                \"Name\": \"gltest\"\n            },\n            {\n                \"Id\": \"nat-de74cic7\",\n                \"Name\": \"test1\"\n            }\n        ],\n        \"OffNum\": 2,\n        \"OnNum\": 5,\n        \"RequestId\": \"2c74b129-10ea-434a-8e02-b125b9c3236b\",\n        \"RouteList\": [\n            {\n                \"Id\": \"rtb-f5wqfibn\",\n                \"Name\": \"default_copy_for_cfw\"\n            },\n            {\n                \"Id\": \"rtb-l28qa73d\",\n                \"Name\": \"default\"\n            },\n            {\n                \"Id\": \"rtb-o18lgl2l\",\n                \"Name\": \"default\"\n            },\n            {\n                \"Id\": \"rtb-pslbu0gx\",\n                \"Name\": \"default\"\n            },\n            {\n                \"Id\": \"rtb-pwcv5gaw\",\n                \"Name\": \"default\"\n            }\n        ],\n        \"Total\": 7,\n        \"VpcList\": [\n            {\n                \"Id\": \"vpc-0iz7ii4s\",\n                \"Name\": \"nat防火墙临时测试\"\n            },\n            {\n                \"Id\": \"vpc-0nduhuff\",\n                \"Name\": \"fengqqian-串行\"\n            },\n            {\n                \"Id\": \"vpc-d0t6wgo2\",\n                \"Name\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Id\": \"vpc-fmprtmz2\",\n                \"Name\": \"dora1\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 1,\n                \"Enable\": 1,\n                \"Id\": 33781,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-84d3440f\",\n                \"NatInsName\": \"[autotest][勿删]自动化测试\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-f5wqfibn\",\n                \"RouteName\": \"default_copy_for_cfw\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.8.2.0/24\",\n                \"SubnetId\": \"subnet-j9cyo89p\",\n                \"SubnetName\": \"[autotest][勿删]自动化测试C2\",\n                \"VpcId\": \"vpc-d0t6wgo2\",\n                \"VpcName\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 1,\n                \"Id\": 34636,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-84d3440f\",\n                \"NatInsName\": \"[autotest][勿删]自动化测试\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-l28qa73d\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.8.0.32/29\",\n                \"SubnetId\": \"subnet-rsun76k7\",\n                \"SubnetName\": \"防火墙专用子网_请勿删改\",\n                \"VpcId\": \"vpc-d0t6wgo2\",\n                \"VpcName\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 1,\n                \"Id\": 33779,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-84d3440f\",\n                \"NatInsName\": \"[autotest][勿删]自动化测试\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-l28qa73d\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.8.3.0/24\",\n                \"SubnetId\": \"subnet-nem8hqnp\",\n                \"SubnetName\": \"MYSQL\",\n                \"VpcId\": \"vpc-d0t6wgo2\",\n                \"VpcName\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 1,\n                \"Enable\": 1,\n                \"Id\": 33780,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-84d3440f\",\n                \"NatInsName\": \"[autotest][勿删]自动化测试\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-l28qa73d\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.8.1.0/24\",\n                \"SubnetId\": \"subnet-jy2eionr\",\n                \"SubnetName\": \"[autotest][勿删]自动化测试C1\",\n                \"VpcId\": \"vpc-d0t6wgo2\",\n                \"VpcName\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 0,\n                \"Id\": 34637,\n                \"NatId\": \"\",\n                \"NatInsId\": \"cfwnat-7e170f6b\",\n                \"NatInsName\": \"\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-beijing\",\n                \"RouteId\": \"rtb-o18lgl2l\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.0.0.0/24\",\n                \"SubnetId\": \"subnet-s1c8r185\",\n                \"SubnetName\": \"nat防火墙临时测试\",\n                \"VpcId\": \"vpc-0iz7ii4s\",\n                \"VpcName\": \"nat防火墙临时测试\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 1,\n                \"Id\": 34629,\n                \"NatId\": \"nat-de74cic7\",\n                \"NatInsId\": \"cfwnat-01debc37\",\n                \"NatInsName\": \"\",\n                \"NatName\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"RouteId\": \"rtb-pslbu0gx\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"172.20.0.0/24\",\n                \"SubnetId\": \"subnet-8jm78x87\",\n                \"SubnetName\": \"subnet1\",\n                \"VpcId\": \"vpc-fmprtmz2\",\n                \"VpcName\": \"dora1\"\n            },\n            {\n                \"Abnormal\": 0,\n                \"CvmNum\": 0,\n                \"Enable\": 0,\n                \"Id\": 34633,\n                \"NatId\": \"nat-56jjs6mo\",\n                \"NatInsId\": \"cfwnat-49f38b8b\",\n                \"NatInsName\": \"测试接入\",\n                \"NatName\": \"gltest\",\n                \"Region\": \"ap-guangzhou\",\n                \"RouteId\": \"rtb-pwcv5gaw\",\n                \"RouteName\": \"default\",\n                \"Status\": 0,\n                \"SubnetCidr\": \"10.10.0.0/24\",\n                \"SubnetId\": \"subnet-7z6dhany\",\n                \"SubnetName\": \"fengqqiansub\",\n                \"VpcId\": \"vpc-0nduhuff\",\n                \"VpcName\": \"fengqqian-串行\"\n            }\n        ],\n        \"FailData\": [],\n        \"NatList\": [\n            {\n                \"Id\": \"nat-56jjs6mo\",\n                \"Name\": \"gltest\"\n            },\n            {\n                \"Id\": \"nat-de74cic7\",\n                \"Name\": \"test1\"\n            }\n        ],\n        \"OffNum\": 2,\n        \"OnNum\": 5,\n        \"RequestId\": \"2c74b129-10ea-434a-8e02-b125b9c3236b\",\n        \"RouteList\": [\n            {\n                \"Id\": \"rtb-f5wqfibn\",\n                \"Name\": \"default_copy_for_cfw\"\n            },\n            {\n                \"Id\": \"rtb-l28qa73d\",\n                \"Name\": \"default\"\n            },\n            {\n                \"Id\": \"rtb-o18lgl2l\",\n                \"Name\": \"default\"\n            },\n            {\n                \"Id\": \"rtb-pslbu0gx\",\n                \"Name\": \"default\"\n            },\n            {\n                \"Id\": \"rtb-pwcv5gaw\",\n                \"Name\": \"default\"\n            }\n        ],\n        \"Total\": 7,\n        \"VpcList\": [\n            {\n                \"Id\": \"vpc-0iz7ii4s\",\n                \"Name\": \"nat防火墙临时测试\"\n            },\n            {\n                \"Id\": \"vpc-0nduhuff\",\n                \"Name\": \"fengqqian-串行\"\n            },\n            {\n                \"Id\": \"vpc-d0t6wgo2\",\n                \"Name\": \"[autotest][勿删]自动化测试C\"\n            },\n            {\n                \"Id\": \"vpc-fmprtmz2\",\n                \"Name\": \"dora1\"\n            }\n        ]\n    }\n}",
         "title": "查询NAT开关列表"
       }
     ],
@@ -1004,6 +1060,14 @@
         "title": "编辑入侵防御防护模式"
       }
     ],
+    "ModifyIsolateTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIsolateTable\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-8888\",\n    \"ButtonAction\": \"edit\",\n    \"StartTime\": \"2022-03-08 09:12:47\",\n    \"EndTime\": \"2022-03-15 09:12:48\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"450a0c76-8911-41d3-ab54-27b83357e4a2\"\n    }\n}",
+        "title": "ModifyIsolateTable 隔离列表操作"
+      }
+    ],
     "ModifyNatAcRule": [
       {
         "document": "修改NAT访问控制规则",
@@ -1163,8 +1227,8 @@
     "OpenClusterNatFwSwitch": [
       {
         "document": "以自动接入+策略路由模式开启NAT CCN集群防火墙开关",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterNatFwSwitch\n<公共请求参数>\n\n{\n    \"NatCcnSwitch\": {\n        \"NatInsId\": \"cfwnat-xxxxxxxx\",\n        \"CcnId\": \"ccn-xxxxxxxx\",\n        \"SwitchMode\": 1,\n        \"RoutingMode\": 1,\n        \"LeadVpcCidr\": \"\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b3a2e60-1b2c-4d3e-a4f5-6789abcdef01\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterNatFwSwitch\n<公共请求参数>\n\n{\n    \"NatCcnSwitch\": {\n        \"NatInsId\": \"nat-3mc7mjzd\",\n        \"CcnId\": \"ccn-c0qmm031\",\n        \"SwitchMode\": 1,\n        \"RoutingMode\": 1,\n        \"AccessInstanceList\": [\n            {\n                \"InstanceId\": \"vpc-henonw6y\",\n                \"InstanceType\": \"VPC\",\n                \"InstanceRegion\": \"ap-tokyo\",\n                \"AccessCidrMode\": 1,\n                \"AccessCidrList\": [\n                    \"10.241.0.0/16\"\n                ]\n            }\n        ],\n        \"LeadVpcCidr\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c31338b-27dd-44f2-82e5-84c2c77582a8\"\n    }\n}",
         "title": "开启NAT CCN集群模式防火墙开关"
       }
     ],

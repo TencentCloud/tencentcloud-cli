@@ -6,6 +6,8 @@ Input:
 
 ```
 tccli cfw DescribeCfwRuleOptimization --cli-unfold-argument  \
+    --RuleType border \
+    --Dimensions D1 \
     --IdleDays 180
 ```
 

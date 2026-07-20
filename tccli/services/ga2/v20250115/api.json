@@ -35,6 +35,20 @@
       "output": "CreateGlobalAcceleratorResponse",
       "status": "online"
     },
+    "CreateGlobalAcceleratorAclPolicy": {
+      "document": "创建访问控制策略",
+      "input": "CreateGlobalAcceleratorAclPolicyRequest",
+      "name": "创建访问控制策略",
+      "output": "CreateGlobalAcceleratorAclPolicyResponse",
+      "status": "online"
+    },
+    "CreateGlobalAcceleratorAclRule": {
+      "document": "创建ACL规则",
+      "input": "CreateGlobalAcceleratorAclRuleRequest",
+      "name": "创建ACL规则",
+      "output": "CreateGlobalAcceleratorAclRuleResponse",
+      "status": "online"
+    },
     "CreateListener": {
       "document": "创建监听器",
       "input": "CreateListenerRequest",
@@ -82,6 +96,20 @@
       "input": "DeleteGlobalAcceleratorRequest",
       "name": "删除全球加速实例",
       "output": "DeleteGlobalAcceleratorResponse",
+      "status": "online"
+    },
+    "DeleteGlobalAcceleratorAclPolicy": {
+      "document": "删除访问控制策略",
+      "input": "DeleteGlobalAcceleratorAclPolicyRequest",
+      "name": "删除访控制策略",
+      "output": "DeleteGlobalAcceleratorAclPolicyResponse",
+      "status": "online"
+    },
+    "DeleteGlobalAcceleratorAclRule": {
+      "document": "删除ACL规则",
+      "input": "DeleteGlobalAcceleratorAclRuleRequest",
+      "name": "删除ACL规则",
+      "output": "DeleteGlobalAcceleratorAclRuleResponse",
       "status": "online"
     },
     "DeleteListener": {
@@ -194,6 +222,20 @@
       "input": "ModifyGlobalAcceleratorRequest",
       "name": "修改全球加速实例",
       "output": "ModifyGlobalAcceleratorResponse",
+      "status": "online"
+    },
+    "ModifyGlobalAcceleratorAclPolicy": {
+      "document": "修改访问控制策略状态",
+      "input": "ModifyGlobalAcceleratorAclPolicyRequest",
+      "name": "修改访问控制策略",
+      "output": "ModifyGlobalAcceleratorAclPolicyResponse",
+      "status": "online"
+    },
+    "ModifyGlobalAcceleratorAclRule": {
+      "document": "修改ACL规则",
+      "input": "ModifyGlobalAcceleratorAclRuleRequest",
+      "name": "修改ACL规则",
+      "output": "ModifyGlobalAcceleratorAclRuleResponse",
       "status": "online"
     },
     "ModifyListener": {
@@ -376,6 +418,57 @@
         }
       ],
       "usage": "out"
+    },
+    "AclEntries": {
+      "document": "Acl信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>协议。</p><p>入参限制：支持配置&#39;TCP&#39;, &#39;UDP&#39;, &#39;ALL&#39;；</p>",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口。</p>",
+          "example": "10",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网段。</p>",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "SourceCidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行动作。</p><p>入参限制：支持配置&#39;ACCEPT&#39;, &#39;DROP&#39;；</p>",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Policy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息，最大长度不能超过100个字节。</p>",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CreateAccelerateAreasRequest": {
       "document": "CreateAccelerateAreas请求参数结构体",
@@ -688,6 +781,127 @@
           "name": "ForwardingRuleId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalAcceleratorAclPolicyRequest": {
+      "document": "CreateGlobalAcceleratorAclPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例ID。</p>",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认行为。</p><p>枚举值：</p><ul><li>ACCEPT： 默认准许所有流量访问通道</li><li>DROP： 默认拒绝所有流量访问通道</li></ul>",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "DefaultAction",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalAcceleratorAclPolicyResponse": {
+      "document": "CreateGlobalAcceleratorAclPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务ID。</p>",
+          "example": "fd3bf857-9ee2-4534-826f-fbca65c9e324",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制策略ID。</p>",
+          "example": "sp-fkp17zpx",
+          "member": "string",
+          "name": "GlobalAcceleratorAclPolicyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalAcceleratorAclRuleRequest": {
+      "document": "CreateGlobalAcceleratorAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球加速实例ID。",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全策略ID",
+          "example": "sp-14835a2cd",
+          "member": "string",
+          "name": "GlobalAcceleratorAclPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Acl信息。",
+          "example": "无",
+          "member": "AclEntries",
+          "name": "AclEntries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalAcceleratorAclRuleResponse": {
+      "document": "CreateGlobalAcceleratorAclRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ACL规则ID。",
+          "example": "[\"sr-n28npbjx\"]",
+          "member": "string",
+          "name": "GlobalAcceleratorAclRuleIds",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1228,6 +1442,107 @@
     },
     "DeleteForwardingRuleResponse": {
       "document": "DeleteForwardingRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalAcceleratorAclPolicyRequest": {
+      "document": "DeleteGlobalAcceleratorAclPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球加速实例ID。",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制策略ID。",
+          "example": "sp-io46vtlf",
+          "member": "string",
+          "name": "GlobalAcceleratorAclPolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalAcceleratorAclPolicyResponse": {
+      "document": "DeleteGlobalAcceleratorAclPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "fd3bf857-9ee2-4534-826f-fbca65c9e324",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalAcceleratorAclRuleRequest": {
+      "document": "DeleteGlobalAcceleratorAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球加速实例ID。",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全策略ID",
+          "example": "sp-1234abcd",
+          "member": "string",
+          "name": "GlobalAcceleratorAclPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Acl规则ID。",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalAcceleratorAclRuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalAcceleratorAclRuleResponse": {
+      "document": "DeleteGlobalAcceleratorAclRule返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -3592,6 +3907,161 @@
     },
     "ModifyForwardingRuleResponse": {
       "document": "ModifyForwardingRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务ID。</p>",
+          "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalAcceleratorAclPolicyRequest": {
+      "document": "ModifyGlobalAcceleratorAclPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例ID。</p>",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制策略ID。</p>",
+          "example": "sp-io46vtlf",
+          "member": "string",
+          "name": "GlobalAcceleratorAclPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制策略状态。</p><p>枚举值：</p><ul><li>OPEN： 打开。</li><li>CLOSE： 关闭。</li></ul>",
+          "example": "OPEN",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalAcceleratorAclPolicyResponse": {
+      "document": "ModifyGlobalAcceleratorAclPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务ID。</p>",
+          "example": "fd3bf857-9ee2-4534-826f-fbca65c9e324",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalAcceleratorAclRuleRequest": {
+      "document": "ModifyGlobalAcceleratorAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例ID。</p>",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全策略ID</p>",
+          "example": "sp-183247cd",
+          "member": "string",
+          "name": "GlobalAcceleratorAclPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Acl规则ID。</p>",
+          "example": "sr-00000msx",
+          "member": "string",
+          "name": "GlobalAcceleratorAclRuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;, &#39;ALL&#39;。</p>",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口。</p>",
+          "example": "10",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网段。</p>",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "SourceCidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作。</p><p>入参限制：支持选择&#39;ACCEPT&#39;, &#39;DROP&#39;。</p><p>枚举值：</p><ul><li>ACCEPT： 允许。</li><li>DROP： 拒绝。</li></ul>",
+          "example": "Allow",
+          "member": "string",
+          "name": "Policy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息，最大长度不能超过100个字节。</p>",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalAcceleratorAclRuleResponse": {
+      "document": "ModifyGlobalAcceleratorAclRule返回参数结构体",
       "members": [
         {
           "disabled": false,
