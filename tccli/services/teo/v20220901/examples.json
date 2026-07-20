@@ -240,6 +240,22 @@
         "title": "创建边缘函数规则命中规则后根据客户设置的权重执行不同的函数"
       }
     ],
+    "CreateInferenceAPIToken": [
+      {
+        "document": "创建指定名称的推理 API Token。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInferenceAPIToken\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2***8ev000\",\n    \"Name\": \"MyInferenceAPIToken\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"j8UaDh0ZbjW***glcGsSEEYo\",\n        \"TokenId\": \"deb88f89-92b***3f3466bbb59b\",\n        \"RequestId\": \"38b7c3a3-82ac-47ad-aa01-712414ef9eaf\"\n    }\n}",
+        "title": "创建推理 API Token"
+      }
+    ],
+    "CreateInferenceService": [
+      {
+        "document": "创建推理服务。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInferenceService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3*********hx\",\n    \"Name\": \"***-test-060202\",\n    \"ListenPort\": 5000,\n    \"Containers\": [\n        {\n            \"ImageType\": \"TCR\",\n            \"TcrRepositoryConfig\": {\n                \"TCRType\": \"Personal\",\n                \"Image\": \"ccr.ccs.tencentyun.com/*******/de****est:cc-1.0\",\n                \"RegionName\": \"ap-guangzhou\"\n            }\n        }\n    ],\n    \"ResourceConfig\": {\n        \"ScalingMode\": \"Manual\",\n        \"HardwareSpec\": \"spec-******1g\",\n        \"ManualInstanceConfig\": {\n            \"FixedInstanceCount\": 1\n        },\n        \"Concurrency\": 1\n    },\n    \"RequestPaths\": [\n        \"/predictions\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"inf-xm*******fvt\",\n        \"RequestId\": \"815eada4-858c-45a7-8373-eadf09e6ab2e\"\n    }\n}",
+        "title": "创建推理服务"
+      }
+    ],
     "CreateJustInTimeTranscodeTemplate": [
       {
         "document": "创建即时转码模板。",
@@ -670,6 +686,14 @@
         "title": "删除边缘函数规则"
       }
     ],
+    "DeleteInferenceAPIToken": [
+      {
+        "document": "删除指定 ID 的推理 API Token。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInferenceAPIToken\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2***8ev000\",\n    \"TokenId\": \"deb88f89-92b***3f3466bbb59b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52b48b4f-1145-4b77-845e-1e8975cac7f4\"\n    }\n}",
+        "title": "删除推理 API Token"
+      }
+    ],
     "DeleteJustInTimeTranscodeTemplates": [
       {
         "document": "删除已存在的转码模板。",
@@ -1072,6 +1096,54 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdentifications\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"example.com\"\n            ],\n            \"Name\": \"zone-name\"\n        }\n    ],\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Identifications\": [\n            {\n                \"ZoneName\": \"example.com\",\n                \"Status\": \"pending\",\n                \"Ascription\": {\n                    \"Subdomain\": \"edgeonereclaim\",\n                    \"RecordType\": \"TXT\",\n                    \"RecordValue\": \"reclaim-a24aba2420cf4ce8b7bff7c8be6d337f\"\n                },\n                \"OriginalNameServers\": [\n                    \"ns1.example.com\",\n                    \"ns2.example.com\"\n                ],\n                \"FileAscription\": {\n                    \"IdentifyContent\": \"88v24mnnljwbhaohrpfx80f63duhdnjx\",\n                    \"IdentifyPath\": \"/.well-known/teo-verification/vd4ewuqa9n.txt\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8gs50b24-7df5-47f4-96ae-95825d53er3c\"\n    }\n}",
         "title": "查询站点的验证状态"
+      }
+    ],
+    "DescribeInferenceAPITokens": [
+      {
+        "document": "查询推理 API Token 列表。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInferenceAPITokens\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2***8ev000\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Tokens\": [\n            {\n                \"Content\": \"j8UaDh0ZbjW***glcGsSEEYo\",\n                \"CreateTime\": \"2025-12-09T10:30:00Z\",\n                \"Name\": \"MyInferenceAPIToken\",\n                \"TokenId\": \"deb88f89-92b***3f3466bbb59b\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b31cafd9-b573-4e52-871f-359d398b890d\"\n    }\n}",
+        "title": "查询推理 API Token"
+      }
+    ],
+    "DescribeInferenceHardwareSpecifications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInferenceHardwareSpecifications\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-1z***xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HardwareSpecifications\": [\n            {\n                \"CPUNum\": 16,\n                \"GPUMemSize\": 24576,\n                \"GPUNum\": 1,\n                \"MemSize\": 32768,\n                \"Name\": \"基础版\",\n                \"Spec\": \"spec-2n*****7\"\n            }\n        ],\n        \"RequestId\": \"2d227629-1731-4f3f-a991-e11af1e86148\"\n    }\n}",
+        "title": "查询硬件规格列表"
+      }
+    ],
+    "DescribeInferenceServiceDeploymentLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInferenceServiceDeploymentLogs\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3jxerasahh8l\",\n    \"ServiceId\": \"inf-nm***s7c2xq4\",\n    \"RecordId\": \"inf-nmlxt***2xq4-lifm9n8c\",\n    \"StartTime\": \"2026-02-10T10:10:40Z\",\n    \"EndTime\": \"2026-02-11T16:40:50Z\",\n    \"SortBy\": \"timestamp\",\n    \"SortOrder\": \"asc\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DeploymentLogInfoSet\": [\n            {\n                \"LogMessage\": \"Initiating container image synchronization to edge computing nodes\",\n                \"Timestamp\": \"2026-02-11T08:12:30Z\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"df2d51bf-d6fd-4c5b-8377-ef00dcd9ce80\"\n    }\n}",
+        "title": "查询部署日志"
+      }
+    ],
+    "DescribeInferenceServiceDeploymentRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInferenceServiceDeploymentRecords\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3jxerasahh8l\",\n    \"ServiceId\": \"inf-afmkinet8yh7\",\n    \"SortBy\": \"create-time\",\n    \"SortOrder\": \"desc\",\n    \"Offset\": 0,\n    \"Limit\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordSet\": [\n            {\n                \"ActiveStatus\": \"inactive\",\n                \"CreateTime\": \"2026-02-11T15:29:48+08:00\",\n                \"Duration\": 146,\n                \"InferenceServiceConfig\": {\n                    \"Containers\": [\n                        {\n                            \"EnvironmentVariables\": [\n                                {\n                                    \"Key\": \"MODEL_PATH\",\n                                    \"Value\": \"/models/v1\"\n                                }\n                            ],\n                            \"ImageType\": \"TCR\",\n                            \"StartupCommand\": \"python app.py\",\n                            \"TcrRepositoryConfig\": {\n                                \"Image\": \"my-namespace/my-model:v1.0.0\",\n                                \"RegionName\": \"ap-guangzhou\",\n                                \"RegistryId\": \"tcr-eqroqcez\",\n                                \"TCRType\": \"Personal\"\n                            }\n                        }\n                    ],\n                    \"ListenPort\": 8080,\n                    \"RequestPaths\": [\n                        \"/predictions\"\n                    ],\n                    \"ResourceConfig\": {\n                        \"AutoScalingConfig\": {\n                            \"MinInstanceCount\": 1\n                        },\n                        \"Concurrency\": 0,\n                        \"HardwareSpec\": \"Beginner\",\n                        \"ManualInstanceConfig\": {\n                            \"FixedInstanceCount\": 1\n                        },\n                        \"ScalingMode\": \"Manual\"\n                    }\n                },\n                \"Operation\": \"create\",\n                \"RecordId\": \"inf-afmkinet8yh7-3o67ljbz\",\n                \"Status\": \"failed\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a0d57ee2-a56e-405c-b069-6f25447ba45c\"\n    }\n}",
+        "title": "查询指定推理服务的部署历史记录列表"
+      }
+    ],
+    "DescribeInferenceServiceMonitorData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInferenceServiceMonitorData\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3lwrlet3u8bl\",\n    \"ServiceIds\": [\n        \"inf-n40ehcni5jjx\"\n    ],\n    \"MetricNames\": [\n        \"cpu_usage_average\"\n    ],\n    \"StartTime\": \"2026-02-26T15:00:00+08:00\",\n    \"EndTime\": \"2026-02-26T15:01:00+08:00\",\n    \"Interval\": \"min\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InferenceServiceMonitorRecords\": [\n            {\n                \"InferenceServiceMonitorItems\": [\n                    {\n                        \"Timestamp\": \"2026-02-26T15:00:00+08:00\",\n                        \"Value\": 0.005829864994190321\n                    }\n                ],\n                \"MetricName\": \"cpu_usage_average\",\n                \"ServiceId\": \"inf-n40ehcni5jjx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8fc9f37f-20c1-4d60-818f-a8aa045bf7d5\"\n    }\n}",
+        "title": "查询推理服务的指定监控指标数据"
+      }
+    ],
+    "DescribeInferenceServices": [
+      {
+        "document": "按条件筛选查询推理服务。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInferenceServices\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2***8ev000\",\n    \"Filters\": [\n        {\n            \"Name\": \"service-name\",\n            \"Values\": [\n                \"image-classification\"\n            ],\n            \"Fuzzy\": true\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Order\": \"create-time\",\n    \"Direction\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Services\": [\n            {\n                \"Containers\": [\n                    {\n                        \"EnvironmentVariables\": [\n                            {\n                                \"Key\": \"MODEL_PATH\",\n                                \"Value\": \"/models/v1\"\n                            }\n                        ],\n                        \"ImageType\": \"TCR\",\n                        \"StartupCommand\": \"python app.py\",\n                        \"TcrRepositoryConfig\": {\n                            \"Image\": \"ccr.ccs.tencentyun.com/namespace/image:v1.0.0\",\n                            \"RegionName\": \"ap-guangzhou\",\n                            \"RegistryId\": \"tcr-ab***ef456\",\n                            \"TCRType\": \"Enterprise\"\n                        }\n                    }\n                ],\n                \"CreateTime\": \"2025-12-09T10:00:00Z\",\n                \"Description\": \"Image inference based on ResNet50 model\",\n                \"InferenceURL\": \"https://model-zone-***0300.edgeone-ai.com\",\n                \"ListenPort\": 8080,\n                \"Name\": \"image-classification-service\",\n                \"ResourceConfig\": {\n                    \"AutoScalingConfig\": {\n                        \"MinInstanceCount\": 1\n                    },\n                    \"Concurrency\": 10,\n                    \"HardwareSpec\": \"GPU-T4-8C16G\",\n                    \"ManualInstanceConfig\": null,\n                    \"ScalingMode\": \"Auto\"\n                },\n                \"ServiceId\": \"inf-9f8***4a3210\",\n                \"Status\": \"Running\",\n                \"UpdateTime\": \"2025-12-09T10:30:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"36b93c01-c30f-4865-86f7-710067654fea\"\n    }\n}",
+        "title": "查询推理服务"
       }
     ],
     "DescribeJustInTimeTranscodeTemplates": [
@@ -1890,6 +1962,14 @@
         "title": "配置边缘双向认证"
       }
     ],
+    "ModifyInferenceService": [
+      {
+        "document": "修改推理服务描述及资源信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInferenceService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3eox****5tad\",\n    \"ServiceId\": \"inf-lwdnt***rgss\",\n    \"ListenPort\": 8080,\n    \"RequestPaths\": [\n        \"/v1/predictions\"\n    ],\n    \"Containers\": [\n        {\n            \"ImageType\": \"TCR\",\n            \"TcrRepositoryConfig\": {\n                \"TCRType\": \"Personal\",\n                \"Image\": \"ccr.ccs.tencentyun.com/namespace/image:v1.0.0\",\n                \"RegionName\": \"ap-guangzhou\"\n            },\n            \"StartupCommand\": \"python app.py\",\n            \"EnvironmentVariables\": [\n                {\n                    \"Key\": \"MODEL_PATH\",\n                    \"Value\": \"/models/v1\"\n                }\n            ]\n        }\n    ],\n    \"ResourceConfig\": {\n        \"ScalingMode\": \"Manual\",\n        \"ManualInstanceConfig\": {\n            \"FixedInstanceCount\": 1\n        },\n        \"Concurrency\": 10\n    },\n    \"Description\": \"Image inference based on ResNet50 model\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6e1ea80-881c-46f7-bc9b-c55c7a1befa8\"\n    }\n}",
+        "title": "修改推理服务信息"
+      }
+    ],
     "ModifyL4Proxy": [
       {
         "document": "将 ZoneId 为 zone-24wjy25v1cwi 下 ProxyId 为 sid-2qwk27xf7j9g 的四层代理实例的 IPv6 访问配置调整为开启。",
@@ -2272,6 +2352,26 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneWorkMode\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27********v1\",\n    \"WorkModeInfos\": [\n        {\n            \"ConfigGroupType\": \"l7_acceleration\",\n            \"WorkMode\": \"version_control\"\n        },\n        {\n            \"ConfigGroupType\": \"edge_functions\",\n            \"WorkMode\": \"version_control\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a06f52e7-2aab-4510-b2c2-1065bfb4414c\"\n    }\n}",
         "title": "修改站点配置组的工作模式"
+      }
+    ],
+    "OperateInferenceService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateInferenceService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2***8ev000\",\n    \"ServiceId\": \"inf-9f8***4a3210\",\n    \"Operation\": \"Delete\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8421228-6851-4b2c-bff0-a1c415c48ced\"\n    }\n}",
+        "title": "删除推理服务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateInferenceService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2***8ev000\",\n    \"ServiceId\": \"inf-9f8***4a3210\",\n    \"Operation\": \"Resume\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cbabe886-9d89-4333-a815-a44f6ffe2604\"\n    }\n}",
+        "title": "启动推理服务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateInferenceService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2***8ev000\",\n    \"ServiceId\": \"inf-9f8***4a3210\",\n    \"Operation\": \"Stop\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c78690b2-ece1-4fc6-b03e-8ea6c56c2bdc\"\n    }\n}",
+        "title": "停止推理服务"
       }
     ],
     "RefreshMultiPathGatewaySecretKey": [

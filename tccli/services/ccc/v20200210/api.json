@@ -3378,6 +3378,15 @@
           "name": "TriggerStrategy",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体并发限制</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ConcurrencyLimit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -74,6 +74,14 @@
         "title": "新建Jar作业配置示例"
       }
     ],
+    "CreateOceanusCluster": [
+      {
+        "document": "创建Oceanus集群",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOceanusCluster\n<公共请求参数>\n\n{\n    \"ClusterName\": \"*****_cluster\",\n    \"RegionId\": 1,\n    \"ZoneId\": 100002,\n    \"CU\": 12,\n    \"LoginPassword\": \"*********\",\n    \"VpcDescriptions\": [\n        {\n            \"VpcId\": \"vpc-cp******\",\n            \"SubnetId\": \"subnet-5b******\"\n        }\n    ],\n    \"DefaultCOSBucket\": \"autotest-*************\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"Remark\": \"create_cluster\",\n    \"Period\": 1,\n    \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n    \"FlinkWebUINetworkAccessType\": \"NetworkAccess_EXTERNAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cluster-********\",\n        \"RequestId\": \"fc61dd48-34a6-4ed1-832f-e515c39756a0\"\n    }\n}",
+        "title": "创建Oceanus集群"
+      }
+    ],
     "CreateResource": [
       {
         "document": "创建依赖",
@@ -128,6 +136,14 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"cql-6ntmhryo\"\n    ],\n    \"JobNames\": [\n        \"name1\"\n    ],\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12470b27-ef12-4c52-9b79-bddd64ae0a5b\"\n    }\n}",
         "title": "删除作业"
+      }
+    ],
+    "DeleteOceanusCluster": [
+      {
+        "document": "销毁Oceanus集",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOceanusCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskExecResult\": \"success\",\n        \"RequestId\": \"0b44b8cc-1ab9-46ee-a7d7-6c6678fe213c\"\n    }\n}",
+        "title": "销毁Oceanus集群"
       }
     ],
     "DeleteResourceConfigs": [
@@ -372,6 +388,14 @@
         "title": "解析用户Connector"
       }
     ],
+    "RenewOceanusCluster": [
+      {
+        "document": "续费包年包月Oceanus集群一个月",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewOceanusCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-********\",\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskExecResult\": \"success\",\n        \"RequestId\": \"1dc397ba-37fb-4360-9309-8e8d18b4fa9b\"\n    }\n}",
+        "title": "续费包年包月Oceanus集群"
+      }
+    ],
     "RunJobs": [
       {
         "document": "",
@@ -386,6 +410,20 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunSqlGatewayStatement\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"SessionId\": \"abc\",\n    \"Sql\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMessage\": [\n            \"abc\"\n        ],\n        \"SessionId\": \"abc\",\n        \"OperationHandleId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "执行Statement"
+      }
+    ],
+    "ScaleOceanusCluster": [
+      {
+        "document": "扩容Oceanus集群到19CU",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleOceanusCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-********\",\n    \"NewCU\": 19,\n    \"ScaleMode\": \"ScaleUp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskExecResult\": \"success\",\n        \"RequestId\": \"13a2d492-63d2-4d66-9ae1-e3e880999bfd\"\n    }\n}",
+        "title": "扩容集群"
+      },
+      {
+        "document": "缩容Oceanus集群到12CU",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleOceanusCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-********\",\n    \"NewCU\": 12,\n    \"ScaleMode\": \"ScaleDown\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskExecResult\": \"success\",\n        \"RequestId\": \"7e4577b4-42c0-4d1f-83a2-c0fd6fa0397e\"\n    }\n}",
+        "title": "缩容集群"
       }
     ],
     "StopJobs": [

@@ -12134,7 +12134,7 @@
           "example": "xx",
           "member": "int64",
           "name": "InnerHttpsPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12144,7 +12144,7 @@
           "example": "xx",
           "member": "string",
           "name": "ServiceDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12154,7 +12154,7 @@
           "example": "http",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12164,7 +12164,7 @@
           "example": "xxx",
           "member": "datetime_iso",
           "name": "ModifiedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12174,7 +12174,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "NetTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12184,7 +12184,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ExclusiveSetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12194,7 +12194,7 @@
           "example": "xx",
           "member": "string",
           "name": "ServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12204,7 +12204,7 @@
           "example": "xx",
           "member": "string",
           "name": "IpVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12214,7 +12214,7 @@
           "example": "xxx",
           "member": "string",
           "name": "AvailableEnvironments",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12224,7 +12224,7 @@
           "example": "xx",
           "member": "string",
           "name": "ServiceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12234,7 +12234,7 @@
           "example": "xx",
           "member": "string",
           "name": "OuterSubDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12244,7 +12244,7 @@
           "example": "xx",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12254,7 +12254,7 @@
           "example": "xx",
           "member": "uint64",
           "name": "InnerHttpPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12264,7 +12264,7 @@
           "example": "xx",
           "member": "string",
           "name": "InnerSubDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12274,7 +12274,7 @@
           "example": "xx",
           "member": "int64",
           "name": "TradeIsolateStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12284,7 +12284,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12294,7 +12294,7 @@
           "example": "xx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12304,7 +12304,7 @@
           "example": "x x",
           "member": "string",
           "name": "SetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12314,7 +12314,7 @@
           "example": "xx",
           "member": "string",
           "name": "DeploymentType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

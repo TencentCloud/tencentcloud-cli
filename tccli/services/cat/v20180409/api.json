@@ -322,7 +322,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间戳（毫秒级）",
+          "document": "<p>开始时间戳（毫秒级）</p>",
           "example": "1000000000",
           "member": "uint64",
           "name": "BeginTime",
@@ -331,7 +331,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳（毫秒级）",
+          "document": "<p>结束时间戳（毫秒级）</p>",
           "example": "1000000000",
           "member": "uint64",
           "name": "EndTime",
@@ -340,7 +340,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\nAnalyzeTaskType_Network：网络质量\nAnalyzeTaskType_Browse：页面性能\nAnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）\nAnalyzeTaskType_Transport：端口性能\nAnalyzeTaskType_MediaStream：音视频体验",
+          "document": "<p>任务类型<br>AnalyzeTaskType_Network：网络质量<br>AnalyzeTaskType_Browse：页面性能<br>AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）<br>AnalyzeTaskType_Transport：端口性能<br>AnalyzeTaskType_MediaStream：音视频体验</p>",
           "example": "AnalyzeTaskType_UploadDownload",
           "member": "string",
           "name": "TaskType",
@@ -349,7 +349,7 @@
         },
         {
           "disabled": false,
-          "document": "待排序字段\n可以填写 ProbeTime 拨测时间排序\n也可填写SelectedFields 中的选中字段",
+          "document": "<p>待排序字段<br>可以填写 ProbeTime 拨测时间排序<br>也可填写SelectedFields 中的选中字段</p>",
           "example": "ProbeTime",
           "member": "string",
           "name": "SortField",
@@ -358,7 +358,7 @@
         },
         {
           "disabled": false,
-          "document": "true表示升序",
+          "document": "<p>true表示升序</p>",
           "example": "true",
           "member": "bool",
           "name": "Ascending",
@@ -367,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "选中字段，如ProbeTime、TransferTime、TransferSize等。",
+          "document": "<p>选中字段，如ProbeTime、TransferTime、TransferSize等。</p>",
           "example": "[\"ProbeTime\"]",
           "member": "string",
           "name": "SelectedFields",
@@ -376,7 +376,7 @@
         },
         {
           "disabled": false,
-          "document": "起始取数位置",
+          "document": "<p>起始取数位置</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -385,7 +385,7 @@
         },
         {
           "disabled": false,
-          "document": "取数数量",
+          "document": "<p>取数数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -394,7 +394,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "[\"task_fasdfds\"]",
           "member": "string",
           "name": "TaskID",
@@ -403,7 +403,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测点运营商\n\t\n这里实际按拨测结果中的运营商来填写即可\n\n电信：中国电信\n移动：中国移动\n联通：中国联通",
+          "document": "<p>拨测点运营商</p><p>这里实际按拨测结果中的运营商来填写即可</p><p>电信：中国电信<br>移动：中国移动<br>联通：中国联通</p>",
           "example": "[\"电信\"]",
           "member": "string",
           "name": "Operators",
@@ -412,7 +412,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测点地区\n\t\n这里实际按拨测结果中的地区来填写即可\n\n国内一般是省级单位，如广东、广西、中国香港；直辖市则填北京、上海\n\n境外一般是国家名，如澳大利亚、新加坡",
+          "document": "<p>拨测点地区</p><p>这里实际按拨测结果中的地区来填写即可</p><p>国内一般是省级单位，如广东、广西、中国香港；直辖市则填北京、上海</p><p>境外一般是国家名，如澳大利亚、新加坡</p>",
           "example": "[\"上海\"]",
           "member": "string",
           "name": "Districts",
@@ -421,7 +421,7 @@
         },
         {
           "disabled": false,
-          "document": "错误类型",
+          "document": "<p>错误类型</p>",
           "example": "[\"正常\"]",
           "member": "string",
           "name": "ErrorTypes",
@@ -430,7 +430,7 @@
         },
         {
           "disabled": false,
-          "document": "城市\n这里实际按拨测结果中的城市来填写即可\n\n示例：\n\n深圳市\n武汉市\n首尔\n多伦多",
+          "document": "<p>城市<br>这里实际按拨测结果中的城市来填写即可</p><p>示例：</p><p>深圳市<br>武汉市<br>首尔<br>多伦多</p>",
           "example": "[\"深圳市\"]",
           "member": "string",
           "name": "City",
@@ -439,7 +439,7 @@
         },
         {
           "disabled": false,
-          "document": "es scroll查询id",
+          "document": "<p>es scroll查询id</p>",
           "example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAQEPczgWVU1RMC12VHhSUWlYa1I0dnU4aXlvUQ==",
           "member": "string",
           "name": "ScrollID",
@@ -448,8 +448,8 @@
         },
         {
           "disabled": false,
-          "document": "详情数据下载",
-          "example": "\"download\"",
+          "document": "<p>详情数据下载</p>",
+          "example": "\"downloadQuery\"",
           "member": "string",
           "name": "QueryFlag",
           "required": false,
@@ -463,7 +463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "单次详情数据",
+          "document": "<p>单次详情数据</p>",
           "example": "无",
           "member": "DetailedSingleDataDefine",
           "name": "DataSet",
@@ -473,7 +473,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的数据总数",
+          "document": "<p>符合条件的数据总数</p>",
           "example": "10000",
           "member": "int64",
           "name": "TotalNumber",
@@ -483,7 +483,7 @@
         },
         {
           "disabled": false,
-          "document": "es scroll查询的id",
+          "document": "<p>es scroll查询的id</p>",
           "example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAQEPczgWVU1RMC12VHhSUWlYa1I0dnU4aXlvUQ==",
           "member": "string",
           "name": "ScrollID",

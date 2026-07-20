@@ -2413,7 +2413,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC子网ID列表",
+          "document": "<p>VPC子网ID列表</p>",
           "example": "[\"subnet-012abcde\", \"subnet-012edcba\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -2424,7 +2424,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID列表",
+          "document": "<p>安全组ID列表</p>",
           "example": "[\"sg-abcde012\", \"sg-210edcba\"]",
           "member": "string",
           "name": "SecurityGroupIds",

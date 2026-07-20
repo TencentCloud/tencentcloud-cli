@@ -309,7 +309,7 @@
     "DescribeDataReportCountV2": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataReportCount\n<公共请求参数>\n\n{\n    \"EndTime\": 1625454840,\n    \"ReportType\": \"custom\",\n    \"ID\": 1,\n    \"StartTime\": 1625444040\n}",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataReportCountV2\n<公共请求参数>\n\n{\n    \"EndTime\": 1625454840,\n    \"ReportType\": \"custom\",\n    \"ID\": 1,\n    \"StartTime\": 1625444040\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "demo"
       }
@@ -701,7 +701,7 @@
     "DescribeScoresV2": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScoresV2\n\n{\n    \"StartTime\": \"2025080100\",\n    \"EndTime\": \"2025081000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScoresV2\n\n{\n    \"StartTime\": \"2025080100\",\n    \"EndTime\": \"2025081000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1dfa1684-d91f-479e-899b-b3a14c09afd9\",\n        \"ScoreSet\": [\n            {\n                \"ProjectID\": 124708,\n                \"Score\": 0,\n                \"ApiPerformanceScore\": 0,\n                \"ApiAvailableScore\": 0,\n                \"ApiNum\": 0,\n                \"ApiFail\": 0,\n                \"ApiDuration\": 0,\n                \"PagePerformanceScore\": 0,\n                \"PagePv\": 0,\n                \"PageUv\": 0,\n                \"PageError\": 0,\n                \"PageDuration\": 0,\n                \"PageLCP\": 0,\n                \"PageFID\": 0,\n                \"PageCLS\": 0,\n                \"PageFCP\": 0,\n                \"PageINP\": 0,\n                \"JsErrorScore\": 0,\n                \"StaticAvailableScore\": 0,\n                \"StaticPerformanceScore\": 0,\n                \"StaticNum\": 0,\n                \"StaticFail\": 0,\n                \"StaticDuration\": 0\n            }\n        ]\n    }\n}",
         "title": "demo"
       }

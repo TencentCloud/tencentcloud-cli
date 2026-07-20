@@ -8,9 +8,9 @@
       "status": "online"
     },
     "CreateNodePool": {
-      "document": "创建 TKE 节点池",
+      "document": "**通过 CAM 策略强制节点池安全配置**\n\n创建原生节点池（`CreateNodePool`）接口已接入 CAM 条件鉴权，会根据请求参数计算出一组**条件键（Condition Key）**并传入 CAM 鉴权。您可以在 CAM/SCP 策略中基于这些条件键配置 `deny` 规则，从而强制约束节点池的安全配置（如必须开启磁盘加密、安全加固等）。\n\n**支持的条件键**\n\n| 条件键 | 含义 | 取值 | 取值判定说明 |\n|--------|------|------|-------------|\n| `tke:NodePoolType` | 节点池类型 | `Native` / `External` | 取请求的节点池类型，未指定时默认为 `Native` |\n| `tke:SystemDiskEncrypted` | 系统盘是否加密 | `true` / `false` | 系统盘加密属性为 `ENCRYPT`（大小写不敏感）时为 `true`，否则为 `false` |\n| `tke:AllDataDisksEncrypted` | 所有数据盘是否都已加密 | `true` / `false` | 全部数据盘加密属性均为 `ENCRYPT` 时为 `true`；未配置数据盘时也为 `true`；只要有任一数据盘未加密即为 `false` |\n| `tke:SecurityAgentEnabled` | 是否开启安全加固（Security Agent） | `true` / `false` | 开启安全加固时为 `true`，否则为 `false` |\n\n> 说明：所有条件键的取值均为字符串 `\"true\"` / `\"false\"`，请在策略中使用字符串形式匹配。\n\n**使用方式**\n\n在 CAM 策略中使用 `bool_equal` 匹配条件键值为 `\"false\"`，配合 `effect: deny`，即可实现\"未满足安全配置则拒绝创建节点池\"的强制约束。\n\n**示例一：强制开启安全加固**\n\n创建节点池时若未开启安全加固（`tke:SecurityAgentEnabled = \"false\"`），则拒绝。\n\n```json\n{\n    \"version\": \"2.0\",\n    \"statement\": [\n        {\n            \"effect\": \"deny\",\n            \"action\": [\"tke:CreateNodePool\"],\n            \"resource\": [\"*\"],\n            \"condition\": {\n                \"bool_equal\": {\n                    \"tke:SecurityAgentEnabled\": \"false\"\n                }\n            }\n        }\n    ]\n}\n```\n\n**示例二：强制数据盘加密**\n\n创建节点池时若存在未加密的数据盘（`tke:AllDataDisksEncrypted = \"false\"`），则拒绝。\n\n```json\n{\n    \"version\": \"2.0\",\n    \"statement\": [\n        {\n            \"effect\": \"deny\",\n            \"action\": [\"tke:CreateNodePool\"],\n            \"resource\": [\"*\"],\n            \"condition\": {\n                \"bool_equal\": {\n                    \"tke:AllDataDisksEncrypted\": \"false\"\n                }\n            }\n        }\n    ]\n}\n```\n\n**示例三：强制系统盘加密**\n\n创建节点池时若系统盘未加密（`tke:SystemDiskEncrypted = \"false\"`），则拒绝。\n\n```json\n{\n    \"version\": \"2.0\",\n    \"statement\": [\n        {\n            \"effect\": \"deny\",\n            \"action\": [\"tke:CreateNodePool\"],\n            \"resource\": [\"*\"],\n            \"condition\": {\n                \"bool_equal\": {\n                    \"tke:SystemDiskEncrypted\": \"false\"\n                }\n            }\n        }\n    ]\n}\n```\n\n**注意事项**\n\n- 上述条件键在**未配置任何 CAM 策略**时不会影响节点池创建，仅在您显式配置了对应 `deny` 策略时才生效。\n- 如需同时强制多项安全配置，必须在同一策略的 `statement` 中配置多条 `deny` 规则，不能将多个条件键写入同一条 `condition`。\n- `tke:AllDataDisksEncrypted` 在**无数据盘**场景下取值为 `true`（不存在未加密的数据盘），因此仅约束\"已配置的数据盘必须加密\"，不会强制要求必须挂载数据盘。",
       "input": "CreateNodePoolRequest",
-      "name": "创建 TKE 节点池",
+      "name": "创建 TKE 原生节点池",
       "output": "CreateNodePoolResponse",
       "status": "online"
     },
@@ -670,7 +670,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "<p>集群 ID</p>",
           "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
@@ -679,7 +679,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称",
+          "document": "<p>节点池名称</p>",
           "example": "testnodepool",
           "member": "string",
           "name": "Name",
@@ -688,7 +688,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池类型",
+          "document": "<p>节点池类型</p>",
           "example": "Native、External",
           "member": "string",
           "name": "Type",
@@ -697,7 +697,7 @@
         },
         {
           "disabled": false,
-          "document": "节点  Labels",
+          "document": "<p>节点  Labels</p>",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -706,7 +706,7 @@
         },
         {
           "disabled": false,
-          "document": "节点污点",
+          "document": "<p>节点污点</p>",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -715,7 +715,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标签",
+          "document": "<p>节点标签</p>",
           "example": "无",
           "member": "TagSpecification",
           "name": "Tags",
@@ -724,7 +724,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启删除保护",
+          "document": "<p>是否开启删除保护</p>",
           "example": "true",
           "member": "bool",
           "name": "DeletionProtection",
@@ -733,7 +733,7 @@
         },
         {
           "disabled": false,
-          "document": "节点是否默认不可调度",
+          "document": "<p>节点是否默认不可调度</p>",
           "example": "false",
           "member": "bool",
           "name": "Unschedulable",
@@ -742,7 +742,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池创建参数（Type字段设置为Native时需填写）",
+          "document": "<p>原生节点池创建参数（Type字段设置为Native时需填写）</p>",
           "example": "无",
           "member": "CreateNativeNodePoolParam",
           "name": "Native",
@@ -751,7 +751,7 @@
         },
         {
           "disabled": false,
-          "document": "节点 Annotation 列表",
+          "document": "<p>节点 Annotation 列表</p>",
           "example": "无",
           "member": "Annotation",
           "name": "Annotations",
@@ -766,7 +766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池 ID",
+          "document": "<p>节点池 ID</p>",
           "example": "np-4h43fuxj",
           "member": "string",
           "name": "NodePoolId",
@@ -4512,6 +4512,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "Taint的Effect",
+          "example": "NoSchedule ",
+          "member": "string",
+          "name": "Effect",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "Taint的Key",
           "example": "key1",
           "member": "string",
@@ -4527,17 +4538,6 @@
           "example": "value1",
           "member": "string",
           "name": "Value",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Taint的Effect",
-          "example": "NoSchedule ",
-          "member": "string",
-          "name": "Effect",
           "output_required": true,
           "required": false,
           "type": "string",

@@ -2125,7 +2125,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>无</p>",
+          "document": "<p>凭据 Skill 安装状态</p>",
           "example": "无",
           "member": "SkillState",
           "name": "SkillState",
@@ -11265,7 +11265,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "appid",
+          "document": "<p>appid</p>",
           "example": "173582910",
           "member": "string",
           "name": "AppId",
@@ -11276,8 +11276,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>是否自动监测</p>",
+          "example": "1",
           "member": "uint64",
           "name": "IsAutoMonitor",
           "output_required": false,
@@ -11287,7 +11287,7 @@
         },
         {
           "disabled": false,
-          "document": "bucket id集合",
+          "document": "<p>bucket id集合</p>",
           "example": "[\"1\",\"3\"]",
           "member": "string",
           "name": "BucketIdSet",
@@ -33552,7 +33552,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>无</p>",
+          "document": "<p>关联的识别模板信息</p>",
           "example": "无",
           "member": "DspmIdentifyRefComplianceInfo",
           "name": "ComplianceRelations",
@@ -33718,7 +33718,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>无</p>",
+          "document": "<p>关联的数据项信息</p>",
           "example": "无",
           "member": "DspmIdentifyComplianceRuleRelation",
           "name": "RuleRelations",
@@ -33728,7 +33728,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>无</p>",
+          "document": "<p>子节点信息</p>",
           "example": "无",
           "member": "DspmIdentifyComplianceCategoryRelation",
           "name": "Children",
@@ -34234,7 +34234,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>无</p>",
+          "document": "<p>关联的识别模板信息</p>",
           "example": "无",
           "member": "DspmIdentifyRefComplianceInfo",
           "name": "ComplianceRelations",
@@ -34461,7 +34461,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>无</p>",
+          "document": "<p>关联的识别模板信息</p>",
           "example": "无",
           "member": "DspmIdentifyRefComplianceInfo",
           "name": "ComplianceRelations",

@@ -23,3 +23,34 @@ Output:
 }
 ```
 
+**Example 2: 针对用印的合同授权**
+
+
+
+Input: 
+
+```
+tccli ess CreateSealPolicy --cli-unfold-argument  \
+    --Operator.UserId yDtT9UUckp9fjxkfUu1yXuRSuJNQ0bO6 \
+    --Users.0.UserId yDtT9UUckp9fjxkfUu1yXuRSuJNQ0bO6 \
+    --SealId yDClqUUckpaj38v1UmGrVdB8iMEXjdyR \
+    --Expired 1789442071 \
+    --UserIds yDtT9UUckp9fjxkfUu1yXuRSuJNQ0bO6 \
+    --Policy 测试******* \
+    --AuthorizationFlows.FlowIds yD3a2UUckpmwknasU1Uy3T8nlBwEDRxj
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealOperatorVerifyPath": "",
+        "SealOperatorVerifyQrcodeUrl": "",
+        "UserIds": [
+            "yDtT9UUckp9fjxkfUu1yXuRSuJNQ0bO6"
+        ],
+        "RequestId": "3add2dda-bd7b-471a-9bbf-85e814de2dab"
+    }
+}
+```
+

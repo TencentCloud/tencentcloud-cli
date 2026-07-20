@@ -1,0 +1,423 @@
+{
+  "actions": {
+    "AssessEnvironmentRisk": {
+      "document": "环境风险评估",
+      "input": "AssessEnvironmentRiskRequest",
+      "name": "环境风险评估",
+      "output": "AssessEnvironmentRiskResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2026-01-30",
+    "api_brief": "完善的服务体系\n快速部署服务体系，前期专业的恶意诊断，提供最优安全策略，后期重大活动专人跟进，全面分析实时数据报表。\n\n腾讯同款安全服务\n天御防刷服务已为腾讯多款产品和业务提供完善的账号保护体系，经历了数亿用户十年的考验。",
+    "serviceNameCN": "风险识别 RCE",
+    "serviceShortName": "rce"
+  },
+  "objects": {
+    "AssessEnvironmentRiskRequest": {
+      "document": "AssessEnvironmentRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户端 IP 地址</p>",
+          "example": "100.*****.0",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessEnvironmentRiskResponse": {
+      "document": "AssessEnvironmentRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境风险评估返回结果</p>",
+          "example": "无",
+          "member": "AssessEnvironmentRiskRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessEnvironmentRiskRsp": {
+      "document": "环境风险评估返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境风险分信息</p>",
+          "example": "无",
+          "member": "DataScore",
+          "name": "Score",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境基础信息</p>",
+          "example": "无",
+          "member": "Environment",
+          "name": "Environment",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DataScore": {
+      "document": "风险分信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>风险等级</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险标签</p>",
+          "example": "无",
+          "member": "RiskLabel",
+          "name": "RiskLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Environment": {
+      "document": "环境基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>IP地理位置信息</p>",
+          "example": "无",
+          "member": "IPLocation",
+          "name": "Location",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP基础网络信息</p>",
+          "example": "无",
+          "member": "IPNetwork",
+          "name": "Network",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IPLocation": {
+      "document": "IP地理位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属国家</p>",
+          "example": "BR",
+          "member": "string",
+          "name": "Country",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属省份</p>",
+          "example": "Espírito Santo",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属城市</p>",
+          "example": "Guarapari",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属地区</p>",
+          "example": "Todos os Santos",
+          "member": "string",
+          "name": "District",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址的经度</p>",
+          "example": "***.**36",
+          "member": "string",
+          "name": "Longitude",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址的纬度</p>",
+          "example": "***.***136",
+          "member": "string",
+          "name": "Latitude",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址所属时区</p>",
+          "example": "UTC-3",
+          "member": "string",
+          "name": "Timezone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP地址的邮政编码</p>",
+          "example": "29200-080",
+          "member": "string",
+          "name": "ZipCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IPNetwork": {
+      "document": "IP基础网络信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>互联网服务提供商</p>",
+          "example": "Telefonica",
+          "member": "string",
+          "name": "ISP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自治系统号</p>",
+          "example": "18881",
+          "member": "string",
+          "name": "ASN",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP注册组织名称</p>",
+          "example": "Telefonica",
+          "member": "string",
+          "name": "Organization",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保留IP</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReserved",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否网关IP</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsGateway",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否任播网络</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAnycast",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否移动网络</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsMobile",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否动态IP</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDynamic",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否网络出口</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsEgress",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否域名解析</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDNS",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否教育机构</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsEducation",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否组织机构</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInstitution",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否企业专线</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCompany",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否家用宽带</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsResidence",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否云服务</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCloudService",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否基础设施</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInfrastructure",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否邮箱服务</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsMXServer",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RiskLabel": {
+      "document": "风险标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>风险ID</p>",
+          "example": "202008",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险描述</p>",
+          "example": "Network Attack IP",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

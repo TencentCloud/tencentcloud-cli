@@ -70,6 +70,14 @@
         "title": "提交心跳信息"
       }
     ],
+    "CreateAgentApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentApplication\n<公共请求参数>\n\n{\n    \"ApplicationName\": \"***********st_agent\",\n    \"AccessType\": \"Langfuse\",\n    \"LogsetId\": \"leotest-custom-logset-1254077820\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationId\": \"agent-app-3ca04119-f707-49c9-9d93-b79114c18042\",\n        \"LogTopics\": [\n            {\n                \"Flag\": \"trace\",\n                \"TopicId\": \"d8886b56-eecc-45ea-8c7c-639348c764e8\"\n            }\n        ],\n        \"MetricsTopics\": [],\n        \"RequestId\": \"92de2157-5971-4d19-b561-9b2587067d0b\"\n    }\n}",
+        "title": "创建agent可观测应用"
+      }
+    ],
     "CreateAlarm": [
       {
         "document": "创建告警策略",
@@ -340,6 +348,22 @@
         "title": "通过yaml文件创建指标预聚合任务"
       }
     ],
+    "CreateRemoteWriteTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRemoteWriteTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\",\n    \"Target\": \"prometheus\",\n    \"RemoteWriteURL\": \"\",\n    \"AuthType\": 0,\n    \"NetType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc-dec-ff-ee\",\n        \"RequestId\": \"xxx-x-xx-xx\"\n    }\n}",
+        "title": "创建RemoteWrite 任务"
+      }
+    ],
+    "CreateS3Recharge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateS3Recharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"3faf22cb-*********-a3c3-c0831917aa15\",\n    \"Name\": \"test_del\",\n    \"Bucket\": \"echo-************597\",\n    \"S3Region\": \"ap-so*********\",\n    \"AccessKeyId\": \"AKIA**************QG\",\n    \"SecretAccessKey\": \"+AW*************************T6OHAC4IYOxU\",\n    \"LogType\": \"multiline_fullregex_log\",\n    \"ExtractRuleInfo\": {\n        \"LogRegex\": \"\\\\s*\\\\[(\\\\d{4}-\\\\d{2}-\\\\d{2}T\\\\d{2}:\\\\d{2}:\\\\d{2},\\\\d{3})\\\\]\\\\s+\\\\[(\\\\w+)\\\\]\\\\s+([\\\\s\\\\S]*)\\\\s*\",\n        \"BeginRegex\": \"\\\\[\\\\d+-\\\\d+-\\\\w+:\\\\d+:\\\\d+,\\\\d+\\\\]\\\\s+\\\\[\\\\w+\\\\]\\\\s+.*\",\n        \"Keys\": [\n            \"timestamp\"\n        ],\n        \"UnMatchUpLoadSwitch\": true,\n        \"UnMatchLogKey\": \"LogParseFailure\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"e7a88e07-ed13-4dea-92aa-2777c1333d2f\",\n        \"RequestId\": \"4ee40b5f-465a-4406-9055-23fc51ff359a\"\n    }\n}",
+        "title": "创建s3导入任务"
+      }
+    ],
     "CreateScheduledSql": [
       {
         "document": "创建ScheduledSQL任务",
@@ -392,6 +416,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWebCallback\n<公共请求参数>\n\n{\n    \"Name\": \"监控告警专用\",\n    \"Type\": \"WeCom\",\n    \"Webhook\": \"http://www.xxx.com/send\",\n    \"Method\": \"POST\",\n    \"Key\": \"AADSHFYFNJKGYENGKVYDNGKFH<\"\n}",
         "output": "{\n    \"Response\": {\n        \"WebCallbackId\": \"webcallback-aaa-bbb-ccc-ddd\",\n        \"RequestId\": \"abc-abc-abc-abc\"\n    }\n}",
         "title": "创建告警渠道回调配置"
+      }
+    ],
+    "DeleteAgentApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"agent-app-bc4e3e63-65fe-466d-9cc3-b44935b6fcaa\",\n    \"DeleteTopics\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a146a86d-fd06-4435-9678-d8eb5b2a3abd\"\n    }\n}",
+        "title": "删除agent可观测应用"
       }
     ],
     "DeleteAlarm": [
@@ -634,6 +666,22 @@
         "title": "删除yaml预聚合任务"
       }
     ],
+    "DeleteRemoteWriteTask": [
+      {
+        "document": "DeleteRemoteTask",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRemoteWriteTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxxx-xxxx-xxxx-xxxx\",\n    \"TopicId\": \"xxxx-xxxx-xxxx-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\"\n    }\n}",
+        "title": "DeleteRemoteTask"
+      }
+    ],
+    "DeleteS3Recharge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteS3Recharge\n<公共请求参数>\n\n{\n    \"TaskId\": \"e7a88e07-ed13-4dea-92aa-2777c1333d2f\",\n    \"TopicId\": \"3faf22cb-5396-4aca-a3c3-c0831917aa15\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8136bef7-98d3-4df2-8083-7a6217b85af4\"\n    }\n}",
+        "title": "删除s3导入任务"
+      }
+    ],
     "DeleteScheduledSql": [
       {
         "document": "",
@@ -680,6 +728,22 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWebCallback\n<公共请求参数>\n\n{\n    \"WebCallbackId\": \"webcallback-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "删除告警渠道回调配置"
+      }
+    ],
+    "DescribeAgentApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentApplications\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"accessType\",\n            \"Values\": [\n                \"Langfuse\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"AccessType\": \"Langfuse\",\n                \"ApplicationId\": \"agent-app-3ca04119-f707-49c9-9d93-b79114c18042\",\n                \"ApplicationName\": \"update_agent_application\",\n                \"CreateTime\": 1782740118,\n                \"LogTopics\": [\n                    {\n                        \"Flag\": \"trace\",\n                        \"TopicId\": \"d8886b56-eecc-45ea-8c7c-639348c764e8\"\n                    }\n                ],\n                \"MetricsTopics\": [],\n                \"Region\": \"ap-gu************\",\n                \"UpdateTime\": 1783309827\n            }\n        ],\n        \"Total\": 3,\n        \"RequestId\": \"ee40acd4-1663-4364-935f-07fe726c6eef\"\n    }\n}",
+        "title": "查询agent可观测应用列表"
+      }
+    ],
+    "DescribeAgentConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentConfigs\n<公共请求参数>\n\n{\n    \"AgentVersion\": \"1.0\",\n    \"AgentIp\": \"10.10.1.119\",\n    \"Labels\": [\n        \"label\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LogConfigs\": [\n            {\n                \"LogFormat\": \"xx\",\n                \"LogType\": \"xx\",\n                \"ExtractRule\": {\n                    \"LogRegex\": \"xx\",\n                    \"Keys\": [\n                        \"content\"\n                    ],\n                    \"FilterKeyRegex\": [\n                        {\n                            \"Regex\": \"xx\",\n                            \"Key\": \"xx\"\n                        }\n                    ],\n                    \"TimeKey\": \"xx\",\n                    \"BeginRegex\": \"xx\",\n                    \"Delimiter\": \"xx\",\n                    \"TimeFormat\": \"xx\",\n                    \"UnMatchUpLoadSwitch\": true,\n                    \"UnMatchLogKey\": \"testlog\",\n                    \"Backtracking\": 1048576\n                },\n                \"ExcludePaths\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Value\": \"xxxxxxx\"\n                    }\n                ],\n                \"TopicId\": \"xx\",\n                \"UserDefineRule\": \"xxxx\"\n            },\n            {\n                \"TopicId\": \"xx\",\n                \"LogFormat\": \"xx\",\n                \"ExtractRule\": {\n                    \"TimeKey\": \"xx\",\n                    \"Keys\": [\n                        \"content\"\n                    ],\n                    \"FilterKeyRegex\": [\n                        {\n                            \"Key\": \"xx\",\n                            \"Regex\": \"xx\"\n                        }\n                    ],\n                    \"LogRegex\": \"xx\",\n                    \"BeginRegex\": \"xx\",\n                    \"Delimiter\": \"xx\",\n                    \"TimeFormat\": \"xx\"\n                },\n                \"ExcludePaths\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Value\": \"xxxxxxx\"\n                    }\n                ],\n                \"LogType\": \"xx\",\n                \"UserDefineRule\": \"xxxx\"\n            }\n        ],\n        \"ServiceLogConfigs\": [\n            {},\n            {}\n        ],\n        \"URL\": \"xx\",\n        \"NeedUpdate\": true,\n        \"FileMd5\": \"xx\",\n        \"LastVersion\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取采集配置"
       }
     ],
     "DescribeAlarmNotices": [
@@ -1080,6 +1144,22 @@
         "title": "用于获取yaml预聚合任务列表"
       }
     ],
+    "DescribeRemoteWriteTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteWriteTasks\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"AuthInfo\": null,\n                \"AuthType\": 0,\n                \"CreateTime\": \"2023-09-07 11:16:50\",\n                \"Enable\": 1,\n                \"LogsetId\": \"e1111113-e816-4ae8-a8f7-edde0e2fc963\",\n                \"Name\": \"111111111\",\n                \"NetType\": 1,\n                \"RemoteWriteURL\": \"http://10.2.10.27:8080/api/v1/write\",\n                \"Status\": 3,\n                \"Target\": \"Prometheus\",\n                \"TaskId\": \"a2d1111-afae-467e-8816-0bc405283bec\",\n                \"TopicId\": \"376011111-76e0-48c7-bfff-018afc9bca48\",\n                \"UpdateTime\": \"2024-10-30 21:01:35\",\n                \"VirtualGatewayType\": 0,\n                \"VpcId\": \"vpc-11111\"\n            }\n        ],\n        \"RequestId\": \"e02371b7-5ef0-4ae7-8a33-f703b9d5f564\",\n        \"TotalCount\": 6\n    }\n}",
+        "title": "获取RemoteWrite投递任务列表"
+      }
+    ],
+    "DescribeS3Recharges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeS3Recharges\n<公共请求参数>\n\n{\n    \"TopicId\": \"3faf22cb-5396-4aca-a3c3-c0831917aa15\",\n    \"Filters\": [\n        {\n            \"Key\": \"bucket\",\n            \"Values\": [\n                \"echo*************597\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"AccessKeyId\": \"AKI**************CQG\",\n                \"Bucket\": \"echo*************597\",\n                \"Compress\": \"gzip\",\n                \"CreateTime\": 1783153774,\n                \"Enable\": 1,\n                \"Endpoint\": \"https://cos.example.com\",\n                \"ExtractRule\": {\n                    \"Address\": \"\",\n                    \"AdvanceFilterRules\": [],\n                    \"Backtracking\": null,\n                    \"BeginRegex\": \"\\\\[\\\\d+-\\\\d+-\\\\w+:\\\\d+:\\\\d+,\\\\d+\\\\]\\\\s+\\\\[\\\\w+\\\\]\\\\s+.*\",\n                    \"Delimiter\": \"\",\n                    \"EventLogRules\": [],\n                    \"FilterKeyRegex\": [],\n                    \"IsGBK\": 0,\n                    \"JsonStandard\": 0,\n                    \"Keys\": [\n                        \"timestamp\"\n                    ],\n                    \"LogRegex\": \"\\\\s*\\\\[(\\\\d{4}-\\\\d{2}-\\\\d{2}T\\\\d{2}:\\\\d{2}:\\\\d{2},\\\\d{3})\\\\]\\\\s+\\\\[(\\\\w+)\\\\]\\\\s+([\\\\s\\\\S]*)\\\\s*\",\n                    \"MetaTags\": [],\n                    \"MetadataType\": 0,\n                    \"ParseProtocol\": \"\",\n                    \"PathRegex\": \"\",\n                    \"Protocol\": \"\",\n                    \"RawLogKey\": \"\",\n                    \"TimeFormat\": \"\",\n                    \"TimeKey\": \"\",\n                    \"UnMatchLogKey\": \"LogParseFailure\",\n                    \"UnMatchUpLoadSwitch\": true\n                },\n                \"LogType\": \"multiline_fullregex_log\",\n                \"LogsetId\": \"7fb0245e-2006-4e0f-9153-c5f6b7110b4c\",\n                \"Metadata\": [\n                    \"bucket\"\n                ],\n                \"Name\": \"test_del_1\",\n                \"Prefix\": \"csv/\",\n                \"Progress\": 0,\n                \"S3Region\": \"ap-so*********\",\n                \"Status\": 0,\n                \"TaskId\": \"b2fbb75a-b5ee-479c-9db4-541c63c0b4c4\",\n                \"TaskType\": 1,\n                \"TopicId\": \"3faf22cb-5396-4aca-a3c3-c0831917aa15\",\n                \"UpdateTime\": 1783153774\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"ce50cc05-e9ea-49cf-88f5-3d5aa2346986\"\n    }\n}",
+        "title": "查询s3导入任务列表"
+      }
+    ],
     "DescribeScheduledSqlInfo": [
       {
         "document": "",
@@ -1210,6 +1290,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MergePartition\n<公共请求参数>\n\n{\n    \"TopicId\": \"427bba81-e149-4a8b-bd0d-b2a412520d7b\",\n    \"PartitionId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"Partitions\": [\n            {\n                \"PartitionId\": 2,\n                \"Status\": \"readonly\",\n                \"InclusiveBeginKey\": \"0000\",\n                \"ExclusiveEndKey\": \"7fff\",\n                \"CreateTime\": \"2019-01-14 19:25:41\",\n                \"LastWriteTime\": \"2019-01-14 19:33:41\"\n            },\n            {\n                \"PartitionId\": 3,\n                \"Status\": \"readonly\",\n                \"InclusiveBeginKey\": \"7fff\",\n                \"ExclusiveEndKey\": \"ffff\",\n                \"CreateTime\": \"2019-01-14 19:25:41\",\n                \"LastWriteTime\": \"2019-01-14 19:33:41\"\n            },\n            {\n                \"PartitionId\": 4,\n                \"Status\": \"readwrite\",\n                \"InclusiveBeginKey\": \"0000\",\n                \"ExclusiveEndKey\": \"ffff\",\n                \"CreateTime\": \"2019-01-14 19:33:41\",\n                \"LastWriteTime\": null\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "合并主题分区"
+      }
+    ],
+    "ModifyAgentApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"agent-app-3ca04119-f707-49c9-9d93-b79114c18042\",\n    \"ApplicationName\": \"update_agent_application\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3fa1577-3f3b-452e-af3e-6b9896b0610c\"\n    }\n}",
+        "title": "修改agent可观测应用"
       }
     ],
     "ModifyAlarm": [
@@ -1450,6 +1538,22 @@
         "title": "通过yaml文件修改指标预聚合任务"
       }
     ],
+    "ModifyRemoteWriteTask": [
+      {
+        "document": "修改RemoteWrite 任务详情",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRemoteWriteTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxx-xxx-xxx-xxx\",\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Enable\": 0,\n    \"Name\": \"test\",\n    \"NetType\": 1,\n    \"VpcId\": \"cls-xxxx\",\n    \"Target\": \"Prometheus\",\n    \"RemoteWriteURL\": \"http://127.0.0.1:80/api/v1/write\",\n    \"AuthType\": 1,\n    \"AuthInfo\": {\n        \"Username\": \"test\",\n        \"Password\": \"passwrod\",\n        \"Token\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\"\n    }\n}",
+        "title": "修改RemoteWrite 任务详情"
+      }
+    ],
+    "ModifyS3Recharge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyS3Recharge\n<公共请求参数>\n\n{\n    \"TaskId\": \"e7a88e07-*********-92aa-2777c1333d2f\",\n    \"TopicId\": \"3faf22cb-*********-a3c3-c0831917aa15\",\n    \"Name\": \"test_del_1\",\n    \"TaskType\": 1,\n    \"Enable\": 1,\n    \"Bucket\": \"echo-***********7597\",\n    \"S3Region\": \"ap-so*********\",\n    \"AccessKeyId\": \"AKIA*************CQG\",\n    \"SecretAccessKey\": \"+AW********************************IYOxU\",\n    \"Endpoint\": \"https://cos.example.com\",\n    \"LogType\": \"multiline_fullregex_log\",\n    \"Prefix\": \"csv/\",\n    \"Compress\": \"gzip\",\n    \"ExtractRuleInfo\": {\n        \"LogRegex\": \"\\\\s*\\\\[(\\\\d{4}-\\\\d{2}-\\\\d{2}T\\\\d{2}:\\\\d{2}:\\\\d{2},\\\\d{3})\\\\]\\\\s+\\\\[(\\\\w+)\\\\]\\\\s+([\\\\s\\\\S]*)\\\\s*\",\n        \"BeginRegex\": \"\\\\[\\\\d+-\\\\d+-\\\\w+:\\\\d+:\\\\d+,\\\\d+\\\\]\\\\s+\\\\[\\\\w+\\\\]\\\\s+.*\",\n        \"Keys\": [\n            \"timestamp\"\n        ],\n        \"UnMatchUpLoadSwitch\": true,\n        \"UnMatchLogKey\": \"LogParseFailure\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b696bb96-e1d6-45b7-a646-db03d17c1a41\"\n    }\n}",
+        "title": "修改s3导入任务"
+      }
+    ],
     "ModifyScheduledSql": [
       {
         "document": "修改ScheduledSQL任务",
@@ -1600,6 +1704,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"TopicId\": \"601c2a87-ca8e-49c9-xxxx-27286a970db5\",\n    \"From\": 1679901909686,\n    \"To\": 1679902809686,\n    \"QueryString\": \"http_code:\\\"200\\\"\",\n    \"Limit\": 1,\n    \"Sort\": \"desc\",\n    \"HighLight\": true,\n    \"UseNewAnalysis\": true,\n    \"QuerySyntax\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Context\": \"Y29udGV4dC0zZDVmZGI2NC1jNDZkLTQ2NzktYWM2OC1jYzg2NjUxYmVlMWExNjc5OTAyODEwNDM0\",\n        \"ListOver\": false,\n        \"Analysis\": false,\n        \"ColNames\": [],\n        \"Columns\": null,\n        \"Results\": [\n            {\n                \"Time\": 1679902806070,\n                \"TopicId\": \"601c2a87-ca8e-49c9-xxxx-27286a970db5\",\n                \"TopicName\": \"CDN Demo访问日志日志主题_10000100xxxx\",\n                \"Source\": \"\",\n                \"FileName\": \"\",\n                \"HostName\": \"\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": \"\",\n                \"HighLights\": [],\n                \"LogJson\": \"{\\\"referer\\\":\\\"http://qwunsag.2022.qq.com/prizes?activity_code=AVGCHaQFX02Eb\\\",\\\"method\\\":\\\"GET\\\",\\\"isp\\\":\\\"中国联通\\\",\\\"remote_port\\\":\\\"45088\\\",\\\"ua\\\":\\\"Mozilla/5.0 (Linux; Android 9; INE-AL00 Build/HUAWEIINE-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/3211 MMWEBSDK/20210601 Mobile Safari/537.36 MMWEBID/6389 MicroMessenger/8.0.11.1980(0x28000B5B) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64\\\",\\\"uuid\\\":\\\"acf1010c853f4a24bb3e92cc34e283e2\\\",\\\"version\\\":\\\"1\\\",\\\"file_size\\\":\\\"186358\\\",\\\"url\\\":\\\"/loxtxt/979884858.png\\\",\\\"request_range\\\":\\\"-\\\",\\\"rsp_size\\\":\\\"186830\\\",\\\"hit\\\":\\\"hit\\\",\\\"request_time\\\":\\\"2808\\\",\\\"http_code\\\":\\\"200\\\",\\\"param\\\":\\\"-\\\",\\\"sys_address\\\":\\\"9.130.154.208\\\",\\\"proto\\\":\\\"HTTPS\\\",\\\"host\\\":\\\"test.2022.cls.cn\\\",\\\"sys_datasource\\\":\\\"cq.3.4.v1.2.17\\\",\\\"client_ip\\\":\\\"116.116.247.167\\\",\\\"time\\\":\\\"1679902806070\\\",\\\"app_id\\\":\\\"1302700768\\\",\\\"prov\\\":\\\"内蒙古自治区\\\",\\\"timestamp\\\":\\\"2023-03-27T15:40:06+08:00\\\"}\",\n                \"RawLog\": \"\",\n                \"IndexStatus\": \"\"\n            }\n        ],\n        \"AnalysisResults\": [],\n        \"AnalysisRecords\": null,\n        \"RequestId\": \"79f593e5-1374-4463-xxxx-c49d0b3c5290\",\n        \"SamplingRate\": 0,\n        \"Topics\": null\n    }\n}",
         "title": "查询日志"
+      }
+    ],
+    "SearchS3RechargeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchS3RechargeInfo\n<公共请求参数>\n\n{\n    \"TopicId\": \"3faf22cb-5396-4aca-a3c3-c0831917aa15\",\n    \"Name\": \"test_del_1\",\n    \"Bucket\": \"echo-test2-857317597\",\n    \"S3Region\": \"ap-southeast-1\",\n    \"AccessKeyId\": \"AKIA**************QG\",\n    \"SecretAccessKey\": \"+A**************************T*******YOxU\",\n    \"Endpoint\": \"https://cos.example.com\",\n    \"Compress\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"# Mock Logs\\n\"\n        ],\n        \"Msg\": \"\",\n        \"Path\": \"mock-logs/README.md\",\n        \"Status\": 0,\n        \"Sum\": 11,\n        \"RequestId\": \"a7aee2da-edbb-4764-bf33-4da89e3d6d38\"\n    }\n}",
+        "title": "预览s3导入信息"
       }
     ],
     "SendConsumerHeartbeat": [

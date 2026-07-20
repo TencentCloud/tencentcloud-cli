@@ -63,6 +63,13 @@
       "output": "CreateAdaptiveDynamicStreamingTemplateResponse",
       "status": "online"
     },
+    "CreateAiDramaTask": {
+      "document": "Ai漫剧工作流，输入剧本，自动拆分分镜，生成Ai漫剧",
+      "input": "CreateAiDramaTaskRequest",
+      "name": "创建AI漫剧任务",
+      "output": "CreateAiDramaTaskResponse",
+      "status": "online"
+    },
     "CreateAigcAudioTask": {
       "document": "调用该接口，用于创建AI生音频任务。",
       "input": "CreateAigcAudioTaskRequest",
@@ -110,6 +117,13 @@
       "input": "CreateContentReviewTemplateRequest",
       "name": "创建内容审核模板",
       "output": "CreateContentReviewTemplateResponse",
+      "status": "online"
+    },
+    "CreateDocToVideoTask": {
+      "document": "创建 AiGC 文档生成视频任务",
+      "input": "CreateDocToVideoTaskRequest",
+      "name": "创建AIGC文档生视频任务",
+      "output": "CreateDocToVideoTaskResponse",
       "status": "online"
     },
     "CreateImageSpriteTemplate": {
@@ -285,6 +299,13 @@
       "input": "CreateVideoDatabaseEntryTaskRequest",
       "name": "创建视频检索的入库任务",
       "output": "CreateVideoDatabaseEntryTaskResponse",
+      "status": "online"
+    },
+    "CreateVideoRedrawTask": {
+      "document": "创建AIGC转绘任务",
+      "input": "CreateVideoRedrawTaskRequest",
+      "name": "创建AIGC视频转绘任务",
+      "output": "CreateVideoRedrawTaskResponse",
       "status": "online"
     },
     "CreateVideoSearchTask": {
@@ -1104,6 +1125,13 @@
       "input": "EditMediaRequest",
       "name": "编辑视频",
       "output": "EditMediaResponse",
+      "status": "online"
+    },
+    "EmbeddingData": {
+      "document": "模型embedding 接口",
+      "input": "EmbeddingDataRequest",
+      "name": "embedding 数据",
+      "output": "EmbeddingDataResponse",
       "status": "online"
     },
     "EnableSchedule": {
@@ -2424,6 +2452,17 @@
           "example": "无",
           "member": "AddOnAudio",
           "name": "AddOnAudios",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>非空时直接替换模板的 StreamInfos 字段，字段格式与创建自适应模板时的 StreamInfos 完全一致</p>",
+          "example": "无",
+          "member": "AdaptiveStreamTemplate",
+          "name": "StdExtStreamInfos",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -3776,6 +3815,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外结果，目前包含字幕文件结果 Url</p>",
+          "example": "{\"subtitle_url\":\"https://ie-mps-12.cos.ap-nanjing.myqcloud.com/common/dubbing_1_en_20260529192802_en.vtt\"}",
+          "member": "string",
+          "name": "ExtraOutput",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5107,6 +5156,48 @@
         }
       ],
       "usage": "both"
+    },
+    "AiDramaInput": {
+      "document": "Ai自动生成漫剧的输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ai漫剧剧本</p><p>参数格式：无</p><p>入参限制：无</p>",
+          "example": "一个可爱的小兔子去山里采蘑菇，走到途中累了找到一个池塘喝水。",
+          "member": "string",
+          "name": "Script",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ai漫剧风格</p><p>枚举值：</p><ul><li>chinese_ink_wash： 国风水墨</li><li>fantasy_cyberpunk： 奇幻赛博朋克</li><li>japanese_anime_2d： 日漫二次元</li></ul><p>默认值：chinese_ink_wash</p><p>枚举值：</p><ul><li>realistic_live_action： 真人写实</li><li>chinese_ink_wash： 国风水墨</li><li>fantasy_cyberpunk： 奇幻赛博朋克</li><li>japanese_anime_2d： 日漫二次元</li></ul><p>默认值：chinese_ink_wash</p>",
+          "example": "chinese_ink_wash",
+          "member": "string",
+          "name": "Style",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>宽高比</p><p>枚举值：</p><ul><li>16:9： 16:9</li><li>9:16： 9:16</li></ul><p>默认值：16:9</p>",
+          "example": "16:9",
+          "member": "string",
+          "name": "Ratio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出视频分辨率</p><p>枚举值：</p><ul><li>720p： 720p</li><li>1080p： 1080p</li></ul><p>默认值：720p</p>",
+          "example": "720p",
+          "member": "string",
+          "name": "Resolution",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "AiParagraphInfo": {
       "document": "分段信息。",
@@ -11898,6 +11989,52 @@
       ],
       "type": "object"
     },
+    "CreateAiDramaTaskRequest": {
+      "document": "CreateAiDramaTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ai漫剧输入</p>",
+          "example": "无",
+          "member": "AiDramaInput",
+          "name": "Input",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户cos信息</p>",
+          "example": "无",
+          "member": "VideoDramaCosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAiDramaTaskResponse": {
+      "document": "CreateAiDramaTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "68459f79-bdce-52c8-4b86-5d446adbbee0",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAigcAudioTaskRequest": {
       "document": "CreateAigcAudioTask请求参数结构体",
       "members": [
@@ -12659,6 +12796,52 @@
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDocToVideoTaskRequest": {
+      "document": "CreateDocToVideoTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AIGC文档生成视频的输入信息</p>",
+          "example": "无",
+          "member": "DocToVideoInput",
+          "name": "Input",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户cos信息，用于保存生成结果</p>",
+          "example": "无",
+          "member": "DocToVideoCosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDocToVideoTaskResponse": {
+      "document": "CreateDocToVideoTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "e084efaa-d25************6b85e473c0e5",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -15398,6 +15581,52 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoRedrawTaskRequest": {
+      "document": "CreateVideoRedrawTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入待转绘视频url信息</p>",
+          "example": "无",
+          "member": "VideoRedrawInput",
+          "name": "Input",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户cos信息，用于保存生成结果</p>",
+          "example": "无",
+          "member": "VideoRedrawCosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoRedrawTaskResponse": {
+      "document": "CreateVideoRedrawTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "d6f9bb2a-d1cd-****-447a-a4842e4279c6",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -24084,6 +24313,126 @@
       ],
       "type": "object"
     },
+    "DocToVideoCosInfo": {
+      "document": "cos信息，存储用户请求时填写的cos信息，用于存放结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>cos桶地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶名称</p>",
+          "example": "mps-guangzhou-1-1326534690",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶路径</p>",
+          "example": "/sichun 测试",
+          "member": "string",
+          "name": "CosBucketPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DocToVideoInput": {
+      "document": "AIGC 文档生成视频输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用于生成视频的文档链接。</p><p>支持的文档类型：pdf、pptx、docx、png、jpg<br>文档数量限制：3个<br>文档大小限制：10MB<br>文档页数限制：100页</p>",
+          "example": "[\"https://aigc-test-image-1303333058.cos.ap-guangzhou.myqcloud.com/test_menglinli/doc2video/sample_min.docx\"]",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于生成视频的prompt信息。</p><p>prompt长度限制：2000字符。</p>",
+          "example": "根据文档内容，帮我生成一个教学视频",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档生成视频模型名称</p><p>默认值：Wand</p>",
+          "example": "Wand",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档生成视频模型版本号</p><p>默认值：1.0</p>",
+          "example": "1.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成视频的宽高比。</p><p>枚举值：</p><ul><li>16:9： 16:9</li><li>9:16： 9:16</li><li>1:1： 1:1</li></ul><p>默认值：16:9</p>",
+          "example": "1:1",
+          "member": "string",
+          "name": "Ratio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成视频的语言。</p><p>枚举值：</p><ul><li>zh： 中文</li><li>en： 英文</li><li>ja： 日语</li><li>ko： 韩语</li><li>ru： 俄语</li><li>fr： 法语</li><li>es： 西班牙语</li><li>de： 德语</li></ul><p>默认值：zh</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "Language",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成视频的时长参考。</p><p>非准确的视频时长，仅供大模型参考生成。</p><p>取值范围：[15, 1200]</p><p>单位：秒</p>",
+          "example": "15",
+          "member": "int64",
+          "name": "ReferenceDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启AI配音功能。</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableTTS",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色ID。仅开启AI配音功能时有效。</p>",
+          "example": "v1_shUQBcs3N6VrPd9RMTf50H7M5kxeZ1VHIiWGDzq5Q9pE0HoEQ959hpulWHGFZSp3v4w=",
+          "member": "string",
+          "name": "VoiceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "DrmInfo": {
       "document": "Drm 加密信息。",
       "members": [
@@ -24433,6 +24782,111 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EmbeddingData": {
+      "document": "embedding 接口的输入:\nType   数据类型,现在只支持text\nData  数据内容，当前只支持为文本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据类型</p><p>枚举值：</p><ul><li>text： 文本</li></ul>",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据内容，当Type 为text时，为文本字符串</p>",
+          "example": "你好天气不错",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "EmbeddingDataRequest": {
+      "document": "EmbeddingData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>embedding 的模型，现在只支持 text_embedding_v1</p><p>枚举值：</p><ul><li>text_embedding_v1： 文本embedding的模型，可以填写Prompt</li></ul>",
+          "example": "text_embedding_v1",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>embedding的输入</p>",
+          "example": "无",
+          "member": "EmbeddingData",
+          "name": "Files",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>embedding 的输入prompt</p>",
+          "example": "Instruct: Retrieve semantically similar text.\\nQuery:",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EmbeddingDataResponse": {
+      "document": "EmbeddingData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>embedding 的结果</p>",
+          "example": "无",
+          "member": "EmbeddingResultItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>embedding 的 token 用量</p>",
+          "example": "无",
+          "member": "TokensUsage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EmbeddingResultItem": {
+      "document": "embedding 的结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>向量</p>",
+          "example": "[-0.008972168]",
+          "member": "float",
+          "name": "Result",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -46224,6 +46678,42 @@
       ],
       "usage": "both"
     },
+    "TokensUsage": {
+      "document": "token 的用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入token量</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "InputTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出token量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "OutputTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总token量，一般是输入+输出</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TrackInfo": {
       "document": "音轨信息",
       "members": [
@@ -47763,7 +48253,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体处理生成的文件输出的目标 *Bucket ID*",
+          "document": "<p>媒体处理生成的文件输出的目标 <em>Bucket ID</em></p>",
           "example": "a00ehq6ocdmo0exn",
           "member": "string",
           "name": "Bucket",
@@ -47774,7 +48264,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理生成的文件输出的目标 Bucket 的园区",
+          "document": "<p>媒体处理生成的文件输出的目标 Bucket 的园区</p>",
           "example": "ap-chongqing",
           "member": "string",
           "name": "Region",
@@ -47785,7 +48275,7 @@
         },
         {
           "disabled": false,
-          "document": "点播专业版应用Id",
+          "document": "<p>点播专业版应用Id</p>",
           "example": "220762",
           "member": "uint64",
           "name": "SubAppId",
@@ -47896,6 +48386,39 @@
         }
       ],
       "usage": "both"
+    },
+    "VideoDramaCosInfo": {
+      "document": "aigc cos信息，存储用户请求时填写的cos信息，存放结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>cos通地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶名称</p>",
+          "example": "111-1251952100",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶路径</p>",
+          "example": "1",
+          "member": "string",
+          "name": "CosBucketPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "VideoEnhanceConfig": {
       "document": "视频增强配置",
@@ -48034,6 +48557,54 @@
         }
       ],
       "usage": "both"
+    },
+    "VideoRedrawCosInfo": {
+      "document": "aigc cos信息，存储用户请求时填写的cos信息，存放结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>cos桶地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶名称</p>",
+          "example": "111-1251952100",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos桶路径</p>",
+          "example": "/output",
+          "member": "string",
+          "name": "CosBucketPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoRedrawInput": {
+      "document": "视频转绘的输入源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入待转绘的视频URL</p>",
+          "example": "https://****************.cos.ap-guangzhou.myqcloud.com/fod_1.mp4",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "VideoTemplateInfo": {
       "document": "视频流配置参数",

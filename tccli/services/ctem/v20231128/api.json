@@ -853,6 +853,15 @@
           "name": "ScanRateAckChecklist",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描优先级配置</p>",
+          "example": "无",
+          "member": "ScanPriorityReq",
+          "name": "ScanPriority",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1306,6 +1315,15 @@
           "name": "ScanRateAckChecklist",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描优先级配置</p>",
+          "example": "无",
+          "member": "ScanPriorityReq",
+          "name": "ScanPriority",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2301,6 +2319,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描优先级配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScanPriorityDisplay",
+          "name": "ScanPriority",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3427,7 +3455,7 @@
         },
         {
           "disabled": false,
-          "document": "企业名称模糊搜索",
+          "document": "<p>企业名称模糊搜索</p>",
           "example": "腾讯",
           "member": "string",
           "name": "Keyword",
@@ -3442,7 +3470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "10",
           "member": "int64",
           "name": "Total",
@@ -3452,7 +3480,7 @@
         },
         {
           "disabled": false,
-          "document": "企业列表",
+          "document": "<p>企业列表</p>",
           "example": "无",
           "member": "Customer",
           "name": "List",
@@ -8956,7 +8984,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -8966,7 +8994,7 @@
         },
         {
           "disabled": false,
-          "document": "公共字段",
+          "document": "<p>公共字段</p>",
           "example": "无",
           "member": "DisplayToolCommon",
           "name": "DisplayToolCommon",
@@ -8976,7 +9004,7 @@
         },
         {
           "disabled": false,
-          "document": "事件名称",
+          "document": "<p>事件名称</p>",
           "example": "源码泄露",
           "member": "string",
           "name": "Name",
@@ -8986,7 +9014,7 @@
         },
         {
           "disabled": false,
-          "document": "事件描述",
+          "document": "<p>事件描述</p>",
           "example": "源码泄露",
           "member": "string",
           "name": "Description",
@@ -8996,7 +9024,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源",
+          "document": "<p>数据源</p>",
           "example": "http://github.com/xxx",
           "member": "string",
           "name": "Source",
@@ -9006,7 +9034,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级：1-低危 2-中危 3-高危 4-严重 5-误报",
+          "document": "<p>风险等级：1-低危 2-中危 3-高危 4-严重 5-误报</p>",
           "example": "1",
           "member": "int64",
           "name": "RiskLevel",
@@ -9016,7 +9044,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库名称",
+          "document": "<p>仓库名称</p>",
           "example": "http://github.com/test.git",
           "member": "string",
           "name": "HubName",
@@ -9026,7 +9054,7 @@
         },
         {
           "disabled": false,
-          "document": "链接",
+          "document": "<p>链接</p>",
           "example": "http://github.com/xxx",
           "member": "string",
           "name": "Url",
@@ -9036,7 +9064,7 @@
         },
         {
           "disabled": false,
-          "document": "截图",
+          "document": "<p>截图</p>",
           "example": "http://test.com/xx.png",
           "member": "string",
           "name": "Screenshot",
@@ -9046,7 +9074,7 @@
         },
         {
           "disabled": false,
-          "document": "建议",
+          "document": "<p>建议</p>",
           "example": "建议删除",
           "member": "string",
           "name": "Suggestion",
@@ -9056,7 +9084,7 @@
         },
         {
           "disabled": false,
-          "document": "关键词",
+          "document": "<p>关键词</p>",
           "example": "AKID2534xxx",
           "member": "string",
           "name": "Keyword",
@@ -9066,7 +9094,7 @@
         },
         {
           "disabled": false,
-          "document": "处置状态：0-待处理 1-处理中 2-已处理",
+          "document": "<p>处置状态</p><p>枚举值：</p><ul><li>0： 待处理</li><li>1： 处理中</li><li>2： 已处理</li><li>3： 误报</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "HandlingStatus",
@@ -9076,10 +9104,40 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "测试数据",
           "member": "string",
           "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库命名空间</p>",
+          "example": "github/test",
+          "member": "string",
+          "name": "RepoNamespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库名称</p>",
+          "example": "test-1",
+          "member": "string",
+          "name": "RepoName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作者名称</p>",
+          "example": "hello-test",
+          "member": "string",
+          "name": "AuthorName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11292,6 +11350,15 @@
           "name": "ScanRateAckChecklist",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描优先级配置</p>",
+          "example": "无",
+          "member": "ScanPriorityReq",
+          "name": "ScanPriority",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11434,6 +11501,56 @@
         }
       ],
       "type": "object"
+    },
+    "ScanPriorityDisplay": {
+      "document": "优先级出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>只对新增资产进行漏洞扫描</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "OnlyScanNewAsset",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用的优先级规则(有序):new_asset,high_risk_port,admin_panel,high_risk_fingerprint</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"new_asset\"]",
+          "member": "string",
+          "name": "PriorityRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScanPriorityReq": {
+      "document": "优先级入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>只对新增资产进行漏洞扫描</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "OnlyScanNewAsset",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用的优先级规则(有序):new_asset,high_risk_port,admin_panel,high_risk_fingerprint</p>",
+          "example": "[\"new_asset\"]",
+          "member": "string",
+          "name": "PriorityRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "StopJobRecordRequest": {
       "document": "StopJobRecord请求参数结构体",

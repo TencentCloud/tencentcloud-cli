@@ -2718,6 +2718,52 @@
       ],
       "type": "object"
     },
+    "DiskEncryptInfo": {
+      "document": "群磁盘加密信息。用于 DescribeInstances / DescribeInstance 返回实例的当前加密配置，供控制台、SDK、运维侧识别该集群是否启用磁盘加密、使用的是哪一把 KMS 根密钥",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加密类型</p><p>枚举值：</p><ul><li>CUSTOMER_KMS： 客户自定义的KMS密钥信息</li><li>TENCENT_KEY： 使用腾讯云自动创建的KMS密钥信息</li></ul>",
+          "example": "CUSTOMER_KMS",
+          "member": "string",
+          "name": "EncryptType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS 根密钥ID</p>",
+          "example": "acfdffac-6a49-11f1-bd15-5254008d4f6d",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS密钥地域</p>",
+          "example": "ap-chongqing",
+          "member": "string",
+          "name": "KmsRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS 根密钥 key 名</p>",
+          "example": "test_kms",
+          "member": "string",
+          "name": "KmsKeyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DiskSpec": {
       "document": "磁盘规格描述",
       "members": [
@@ -3801,6 +3847,16 @@
           "name": "HttpsEnabled",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群磁盘加密配置</p>",
+          "example": "无",
+          "member": "DiskEncryptInfo",
+          "name": "DiskEncryptInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

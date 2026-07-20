@@ -48,6 +48,14 @@
         "title": "创建监听器"
       }
     ],
+    "CreateListenerAdditionalCert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListenerAdditionalCert\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-dpduwq04\",\n    \"ListenerId\": \"lsr-fa2pnafr\",\n    \"AdditionalCertificates\": [\n        \"N8WDVXxW\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e9b45d1-c091-4ebe-aa7f-638b644b1549\",\n        \"TaskId\": \"ba7175c1-ba55-403f-86c3-717138777a44\"\n    }\n}",
+        "title": "创建扩展证书"
+      }
+    ],
     "DeleteAccelerateAreas": [
       {
         "document": "",
@@ -94,6 +102,14 @@
         "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteListener\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\",\n    \"ListenerId\": \"lsr-5lkfom8v\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8c8e0d0-4d92-48ec-b256-27858445b725\",\n        \"TaskId\": \"f186dd1c-1f01-44a3-91bb-e6b81a0c7c39\"\n    }\n}",
         "title": "删除监听器"
+      }
+    ],
+    "DeleteListenerAdditionalCert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteListenerAdditionalCert\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-dpduwq04\",\n    \"ListenerId\": \"lsr-fa2pnafr\",\n    \"AdditionalCertificates\": [\n        \"N8WDVXxW\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88903dc9-c812-44d0-a1cb-5774b6d8859c\",\n        \"TaskId\": \"833237cf-4a92-42ab-9578-f87ca36034f8\"\n    }\n}",
+        "title": "删除扩展证书"
       }
     ],
     "DescribeAccelerateAreas": [
@@ -214,6 +230,14 @@
         "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-xxxxxxx\",\n    \"ListenerId\": \"lsr-xxxxxx\",\n    \"Name\": \"端口段测试\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"30b391b1-6086-4118-a314-4a2b78111fbd\",\n        \"TaskId\": \"099c31b3-82bd-4b1a-bbd1-0ad614b4f54c\"\n    }\n}",
         "title": "修改监听器"
+      }
+    ],
+    "ReplaceListenerAdditionalCert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceListenerAdditionalCert\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-dpduwq04\",\n    \"ListenerId\": \"lsr-fa2pnafr\",\n    \"AdditionalCertificate\": \"NMGyDIvx\",\n    \"OldCertificate\": \"N8WDVXxW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3900382b-9793-466d-9573-cd5116910a31\",\n        \"TaskId\": \"cb4bad0f-f1de-4a57-8af5-f35927abff3e\"\n    }\n}",
+        "title": "替换扩展证书"
       }
     ]
   },

@@ -49,6 +49,13 @@
       "output": "CreateJobConfigResponse",
       "status": "online"
     },
+    "CreateOceanusCluster": {
+      "document": "创建Oceanus集群",
+      "input": "CreateOceanusClusterRequest",
+      "name": "创建Oceanus集群",
+      "output": "CreateOceanusClusterResponse",
+      "status": "online"
+    },
     "CreateResource": {
       "document": "创建资源接口",
       "input": "CreateResourceRequest",
@@ -96,6 +103,13 @@
       "input": "DeleteJobsRequest",
       "name": "删除作业",
       "output": "DeleteJobsResponse",
+      "status": "online"
+    },
+    "DeleteOceanusCluster": {
+      "document": "销毁Oceanus集群",
+      "input": "DeleteOceanusClusterRequest",
+      "name": "销毁Oceanus集群",
+      "output": "DeleteOceanusClusterResponse",
       "status": "online"
     },
     "DeleteResourceConfigs": {
@@ -294,6 +308,13 @@
       "output": "ParseConnectorResponse",
       "status": "online"
     },
+    "RenewOceanusCluster": {
+      "document": "续费Oceanus集群",
+      "input": "RenewOceanusClusterRequest",
+      "name": "续费Oceanus集群",
+      "output": "RenewOceanusClusterResponse",
+      "status": "online"
+    },
     "RunJobs": {
       "document": "批量启动或者恢复作业，批量操作数量上限20",
       "input": "RunJobsRequest",
@@ -306,6 +327,13 @@
       "input": "RunSqlGatewayStatementRequest",
       "name": "执行Statement",
       "output": "RunSqlGatewayStatementResponse",
+      "status": "online"
+    },
+    "ScaleOceanusCluster": {
+      "document": "扩缩容Oceanus集群",
+      "input": "ScaleOceanusClusterRequest",
+      "name": "扩缩容Oceanus集群",
+      "output": "ScaleOceanusClusterResponse",
       "status": "online"
     },
     "StopJobs": {
@@ -2776,6 +2804,169 @@
       ],
       "type": "object"
     },
+    "CreateOceanusClusterRequest": {
+      "document": "CreateOceanusCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p><p>入参限制：支持1-50个英文、汉字、数字、连接线-或下划线_</p>",
+          "example": "*****_cluster",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域Id，可通过地域管理系统<a href=\"https://cloud.tencent.com/document/api/1596/77930\"> DescribeRegions</a>查询Product参数设置 oceanus</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区Id，可通过地域管理系统<a href=\"https://cloud.tencent.com/document/api/1596/77929\"> DescribeZones</a>查询<br>Product参数设置 oceanus</p>",
+          "example": "110001",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>FlinkUI访问密码</p><p>用户名与密码将用于登录查看作业的 Flink UI 界面，集群用户名:admin</p>",
+          "example": "*********",
+          "member": "string",
+          "name": "LoginPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流计算通过 VPC 和弹性网卡来访问同地域中的其他云产品资源，并需要占用一定的子网 IP 数量，请确保所选子网的可用 IP 数量充足 如现有网络不符合您的要求，请前往 VPC 控制台<a href=\"https://console.cloud.tencent.com/vpc/vpc?rid=undefined\">新建私有网络</a> 或 <a href=\"https://console.cloud.tencent.com/vpc/subnet?rid=undefined\">新建子网</a></p>",
+          "example": "无",
+          "member": "VPCDescription",
+          "name": "VpcDescriptions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流计算使用对象存储 COS 来保存作业的 checkpoint、jar 包、或投递日志等，如本地域无可用存储桶，请前往<a href=\"https://console.cloud.tencent.com/cos5\">对象存储控制台</a>新建 为了保证您的正常使用，对应COS的生命周期配置请参考<a href=\"https://cloud.tencent.com/document/product/436/33417?from=console_document_search\">文档</a></p>",
+          "example": "autotest-*************",
+          "member": "string",
+          "name": "DefaultCOSBucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群CU数， 12 CU 是流计算的最小计算资源和计费单位，1CU 包含1个 CPU 和 4GB 内存。 当CU数大于等于 48 时，减免管理节点费用。</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "CU",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群描述</p><p>入参限制：支持1-50个英文、汉字、数字、连接线-或下划线_</p>",
+          "example": "create_cluster",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买时长，以月为单位</p><p>取值范围：[1, 48]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群计费类型</p><p>枚举值：</p><ul><li>PREPAID： 包年包月</li><li>POSTPAID_BY_SECOND： 按量计费</li></ul><p>默认值：POSTPAID_BY_SECOND</p>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>MULTI_AZ_CLUSTER： 多可用区集群</li></ul>",
+          "example": "MULTI_AZ_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标识</p><p>枚举值：</p><ul><li>NOTIFY_AND_MANUAL_RENEW： 通知并手动续费</li><li>NOTIFY_AND_AUTO_RENEW： 通知并自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW： 不通知并不自动续费</li></ul><p>默认值：NOTIFY_AND_MANUAL_RENEW</p><p>InstanceChargeType设置PREPAID时，对应包年包月集群，需要设置自动续费标识，按量计费集群不需要设置</p>",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Flink UI访问类型设置</p><p>枚举值：</p><ul><li>NetworkAccess_INTERNAL： 内网访问</li><li>NetworkAccess_EXTERNAL： 公网访问</li></ul><p>默认值：NetworkAccess_EXTERNAL</p>",
+          "example": "NetworkAccess_EXTERNAL",
+          "member": "string",
+          "name": "FlinkWebUINetworkAccessType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多可用区VPC</p>",
+          "example": "无",
+          "member": "SlaveVpcDescriptions",
+          "name": "SlaveVpcDescriptions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>核心内存比值，只支持 [0，2，4，8]</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "CUMemory",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOceanusClusterResponse": {
+      "document": "CreateOceanusCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建的集群ID</p><p>参数格式：cluster-xxx</p>",
+          "example": "cluster-********",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateResourceConfigRequest": {
       "document": "CreateResourceConfig请求参数结构体",
       "members": [
@@ -3249,6 +3440,43 @@
     "DeleteJobsResponse": {
       "document": "DeleteJobs返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOceanusClusterRequest": {
+      "document": "DeleteOceanusCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p><p>参数格式：cluster-xxxx</p>",
+          "example": "cluster-********",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOceanusClusterResponse": {
+      "document": "DeleteOceanusCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数值success代表操作执行成功</p>",
+          "example": "success",
+          "member": "string",
+          "name": "TaskExecResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7532,6 +7760,52 @@
       ],
       "usage": "out"
     },
+    "RenewOceanusClusterRequest": {
+      "document": "RenewOceanusCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p><p>参数格式：cluster-xxx</p>",
+          "example": "cluster-********",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费的时长，单位为月，只支持包年包月集群</p><p>取值范围：[1, 36]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewOceanusClusterResponse": {
+      "document": "RenewOceanusCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数值success代表操作执行成功</p>",
+          "example": "success",
+          "member": "string",
+          "name": "TaskExecResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResourceConfigItem": {
       "document": "描述资源配置的返回参数",
       "members": [
@@ -8765,6 +9039,61 @@
       ],
       "usage": "out"
     },
+    "ScaleOceanusClusterRequest": {
+      "document": "ScaleOceanusCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "cluster-********",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群的目标CU，需大于12CU，并且集群CU需要满足 12 + 7*n (n&gt;=0)</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "NewCU",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩容集群或者缩容集群</p><p>枚举值：</p><ul><li>ScaleDown： 缩容集群</li><li>ScaleUp： 扩容集群</li></ul><p>默认值：ScaleUp</p>",
+          "example": "ScaleUp",
+          "member": "string",
+          "name": "ScaleMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOceanusClusterResponse": {
+      "document": "ScaleOceanusCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数值success代表操作执行成功</p>",
+          "example": "success",
+          "member": "string",
+          "name": "TaskExecResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SessionClusterRefItem": {
       "document": "session集群引用资源信息",
       "members": [
@@ -9115,6 +9444,56 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SlaveVpcDescriptions": {
+      "document": "多可用区VPC",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID</p>",
+          "example": "vpc-cp******",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网ID</p>",
+          "example": "subnet-5bp*****",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户AppId</p>",
+          "example": "1315051789",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户UIN</p>",
+          "example": "70000*******",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10015,6 +10394,52 @@
         }
       ],
       "type": "object"
+    },
+    "VPCDescription": {
+      "document": "客户VPC描述信息，包含VpcId和SubnetId参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有网络ID",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "sub-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "VariableItem": {
       "document": "变量信息列表",

@@ -120,7 +120,7 @@
       "status": "online"
     },
     "CreateAigcVideoRedrawTask": {
-      "document": "该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用</b>，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
+      "document": "该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。接口调用会产生实际费用，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
       "input": "CreateAigcVideoRedrawTaskRequest",
       "name": "创建 AIGC 视频转绘任务",
       "output": "CreateAigcVideoRedrawTaskResponse",
@@ -295,7 +295,7 @@
       "status": "online"
     },
     "CreateSceneAigcImageTask": {
-      "document": "该接口用于生成场景化 AIGC 图片。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用。</b>",
+      "document": "该接口用于生成场景化 AIGC 图片。接口调用会产生实际费用，请参考点播 [AIGC 生图计费文档](https://cloud.tencent.com/document/product/266/95125#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
       "input": "CreateSceneAigcImageTaskRequest",
       "name": "创建 AIGC 场景化生图任务",
       "output": "CreateSceneAigcImageTaskResponse",
@@ -1566,6 +1566,13 @@
       "input": "SplitMediaRequest",
       "name": "视频拆条",
       "output": "SplitMediaResponse",
+      "status": "online"
+    },
+    "UpdateAigcApiToken": {
+      "document": "创建AIGC调用API的Token。创建后数据同步有延时，约30秒后可查询或删除。",
+      "input": "UpdateAigcApiTokenRequest",
+      "name": "更新AIGC API Token",
+      "output": "UpdateAigcApiTokenResponse",
       "status": "online"
     },
     "VerifyDomainRecord": {
@@ -15158,7 +15165,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>AIGC 视频转绘任务的输入视频的文件信息。</p>",
+          "document": "<p>AIGC 视频转绘任务的输入视频的文件信息。输入视频时长需短于 90 秒，大小在2GB内。</p>",
           "example": "无",
           "member": "AigcVideoRedrawTaskInputFileInfo",
           "name": "FileInfo",
@@ -20109,7 +20116,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
           "example": "251006666",
           "member": "uint64",
           "name": "SubAppId",
@@ -20124,10 +20131,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "API Token 列表",
+          "document": "<p>API Token 列表</p>",
           "example": "[\"dqFQejeK2BMU8PRmc57gx9OSGKa72PwN\", \"8Tul4P4EiJKZ80AfF11HApbYSyK4uj1e\"]",
           "member": "string",
           "name": "ApiTokens",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ExtInfo信息，和API Token列表一一对应</p>",
+          "example": "[\"{\\\"ip\\\":{\\\"127.0.0.1\\\":true}}\"]",
+          "member": "string",
+          "name": "ExtInfos",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -51233,6 +51250,60 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateAigcApiTokenRequest": {
+      "document": "UpdateAigcApiToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
+          "example": "251441341",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要更新Api Key</p>",
+          "example": "D2JJ0DHJ********************rXFX",
+          "member": "string",
+          "name": "ApiToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Merge（默认，对 ExtInfo JSON 按顶层 key 合并）、Overwrite（直接覆盖）</p>",
+          "example": "Merge",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>token 的扩展信息</p>",
+          "example": "{\"ip\":{\"9.134.4.21\":true}}",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAigcApiTokenResponse": {
+      "document": "UpdateAigcApiToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UrlSignatureAuthPolicy": {
       "document": "基于签名的 Key 防盗链信息",

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cngw ModifyCloudNativeAPIGatewayMCPServerAuth --cli-unfold-argument  \
-    --GatewayId gateway-******** \
-    --ServerId 204f2888-7b53-4499-9061-24e623b2bdbd \
+    --GatewayId gateway-aeb0be15 \
+    --ServerId 412b0a7c-f2f6-42f7-8a65-ec5e708b637f \
     --AuthType ApiKey
 ```
 
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d892b099-5093-40e5-b2bf-7bcae3d9792b"
+        "RequestId": "9345ec58-3656-4882-9282-29ede7fc8c5c"
     }
 }
 ```

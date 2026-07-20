@@ -96,6 +96,14 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAiDramaTask": [
+      {
+        "document": "创建ai漫剧任务",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAiDramaTask\n<公共请求参数>\n\n{\n    \"Input\": {\n        \"Script\": \"从前有一只小兔子，上山采蘑菇\",\n        \"Style\": \"chinese_ink_wash\",\n        \"Ratio\": \"16:9\",\n        \"Resolution\": \"1080p\"\n    },\n    \"CosInfo\": {\n        \"CosBucketRegion\": \"\",\n        \"CosBucketName\": \"\",\n        \"CosBucketPath\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"68459f79-bdce-52c8-4b86-5d446adbbee0\",\n        \"RequestId\": \"867c9447-772f-48f5-a41c-11fe3c665695\"\n    }\n}",
+        "title": "创建ai漫剧任务"
+      }
+    ],
     "CreateAigcAudioTask": [
       {
         "document": "",
@@ -168,6 +176,14 @@
         "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容审核模板\n&Comment=模板2\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.BlockConfidence=80\n&PornConfigure.ImgReviewInfo.ReviewConfidence=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"97aee3e9-2qd3-4151-9d4b-9730a45227a9\"\n    }\n}",
         "title": "创建仅开启画面令人反感的信息的任务内容审核模板，并指定分数阈值和截帧间隔"
+      }
+    ],
+    "CreateDocToVideoTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDocToVideoTask\n<公共请求参数>\n\n{\n    \"Input\": {\n        \"FileUrl\": [\n            \"https://aigc-test-image-1303333058.cos.ap-guangzhou.myqcloud***********************************************************6%96%AD-%E7%BB%84%E5%90%88%E6%8E%92%E5%88%971%E9%81%93.docx\"\n        ],\n        \"Prompt\": \"帮我生成一个视频，详细讲解文档中的内容。\",\n        \"ModelName\": \"Wand\",\n        \"ModelVersion\": \"1.0\",\n        \"Ratio\": \"16:9\",\n        \"Language\": \"zh\",\n        \"EnableTTS\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"e084efaa-d25************6b85e473c0e5\",\n        \"RequestId\": \"a2644899-acbf-4973-b8ea-1a93772be6f7\"\n    }\n}",
+        "title": "测试样例"
       }
     ],
     "CreateImageSpriteTemplate": [
@@ -386,6 +402,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoDatabaseEntryTask\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Bucket\": \"test-bucket\",\n            \"Region\": \"ap-nanjing\",\n            \"Object\": \"/movie/test.mp4\"\n        }\n    },\n    \"TaskNotifyConfig\": {\n        \"NotifyType\": \"URL\",\n        \"NotifyUrl\": \"http://qq.com/callback\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"251xxx279-VideoDBEntryTask-60e4ae3b23ff4fd3936eb6b7e8af25ec\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "COS视频入库"
+      }
+    ],
+    "CreateVideoRedrawTask": [
+      {
+        "document": "创建AIGC视频转绘任务",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoRedrawTask\n<公共请求参数>\n\n{\n    \"Input\": {\n        \"Url\": \"https://****************.cos.ap-guangzhou.myqcloud.com/fod_1.mp4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"d6f9bb2a-d1cd-****-447a-a4842e4279c6\",\n        \"RequestId\": \"74ab0e9d-2b15-46ae-9c6c-042f360ae32b\"\n    }\n}",
+        "title": "创建AIGC视频转绘任务"
       }
     ],
     "CreateVideoSearchTask": [
@@ -1442,6 +1466,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EditMedia\n<公共请求参数>\n\n{\n    \"FileInfos\": [\n        {\n            \"Id\": \"vod\",\n            \"InputInfo\": {\n                \"Type\": \"URL\",\n                \"UrlInputInfo\": {\n                    \"Url\": \"https://.../video.mp4\"\n                }\n            }\n        }\n    ],\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Bucket\": \"your_bucket\",\n            \"Region\": \"your_bucket_region\"\n        }\n    },\n    \"OutputObjectPath\": \"/your/output/dir/\",\n    \"ComposeConfig\": {\n        \"Tracks\": [\n            {\n                \"Type\": \"Video\",\n                \"Items\": [\n                    {\n                        \"Type\": \"Video\",\n                        \"Video\": {\n                            \"SourceMedia\": {\n                                \"FileId\": \"vod\",\n                                \"StartTime\": \"10s\",\n                                \"EndTime\": \"20s\"\n                            },\n                            \"TrackTime\": {\n                                \"Duration\": \"5s\"\n                            }\n                        }\n                    }\n                ]\n            },\n            {\n                \"Type\": \"Video\",\n                \"Items\": [\n                    {\n                        \"Type\": \"Video\",\n                        \"Video\": {\n                            \"SourceMedia\": {\n                                \"FileId\": \"vod\",\n                                \"StartTime\": \"20s\",\n                                \"EndTime\": \"30s\"\n                            },\n                            \"TrackTime\": {\n                                \"Duration\": \"12.5s\"\n                            }\n                        }\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx88-EditMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "【合成任务】视频倍速"
+      }
+    ],
+    "EmbeddingData": [
+      {
+        "document": "用于文本的embedding",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EmbeddingData\n<公共请求参数>\n\n{\n    \"Model\": \"text_embedding_v1\",\n    \"Files\": [\n        {\n            \"Type\": \"text\",\n            \"Data\": \"今天天气不错\"\n        }\n    ],\n    \"Prompt\": \"Instruct: Retrieve semantically similar text.\\\\nQuery:\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Result\": [\n                    -0.0055236816\n                ]\n            }\n        ],\n        \"Usage\": {\n            \"InputTokens\": 15,\n            \"TotalTokens\": 15\n        },\n        \"RequestId\": \"f4de2dd4-bac4-47d8-a983-8ee3ffb92f26\"\n    }\n}",
+        "title": "text_embedding_v1 模型embedding"
       }
     ],
     "EnableSchedule": [

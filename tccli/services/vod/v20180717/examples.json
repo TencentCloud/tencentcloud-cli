@@ -847,8 +847,8 @@
     "DescribeAigcApiTokens": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcApiTokens\n<公共请求参数>\n\n{\n    \"SubAppId\": 251006666\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\",\n        \"ApiTokens\": [\n            \"dqFQejeK2BMU8PRmc57gx9OSGKa72PwN\",\n            \"8Tul4P4EiJKZ80AfF11HApbYSyK4uj1e\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcApiTokens\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ApiTokens\": [\n            \"D2JJ0DHJQ5p*****************rXFX\"\n        ],\n        \"ExtInfos\": [\n            \"{\\\"ip\\\":{\\\"127.0.0.1\\\":true}}\"\n        ],\n        \"RequestId\": \"35fa7c32-eea7-4a7b-ba41-ddd98a2d6bf9\"\n    }\n}",
         "title": "查询 AIGC API Token 列表。"
       }
     ],
@@ -2258,6 +2258,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=SplitMedia\n&FileId=5285485487985271487\n&Segments.0.StartTimeOffset=40.0\n&Segments.0.EndTimeOffset=50.0\n&Segments.1.StartTimeOffset=60.0\n&Segments.1.EndTimeOffset=70.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-SplitMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "对点播中的一个文件进行拆条，生成两个新的视频"
+      }
+    ],
+    "UpdateAigcApiToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAigcApiToken\n<公共请求参数>\n\n{\n    \"SubAppId\": 251441341,\n    \"ApiToken\": \"D2JJ0DHJ********************rXFX\",\n    \"ActionType\": \"Merge\",\n    \"ExtInfo\": \"{\\\"ip\\\":{\\\"9.134.4.21\\\":true}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96a1da82-7443-4765-82e4-c1065959f908\"\n    }\n}",
+        "title": "更新ip限制"
       }
     ],
     "VerifyDomainRecord": [

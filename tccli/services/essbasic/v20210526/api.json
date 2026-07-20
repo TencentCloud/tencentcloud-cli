@@ -645,9 +645,9 @@
       "status": "online"
     },
     "ModifyOrganizationBusinessInfo": {
-      "document": "本接口用于企业在已完成工商变更登记后，在电子签侧同步更新企业基础信息，并上传最新的营业执照或相关证照图片作为变更凭证。\n⚠️ 重要说明\n本接口不做营业执照 OCR 识别：系统不会对上传的营业执照图片进行内容识别。调用方需自行把工商变更后的最新信息，通过 organization_name / legal_name / address 等字段显式传入；营业执照图片仅作为变更凭证上传与留存。\n只传\"变了\"的字段即可：各信息字段均为\"变更后的新值\"，未变更的字段留空不传，系统会自动沿用电子签侧当前值（含统一社会信用代码）。四项信息（企业名称、法人姓名、地址、新法人手机号）至少需传入其一。\n受理请求后，接口会依次完成以下处理：\n操作人身份校验：调用方（operator.user_id）必须是该企业的法定代表人或超级管理员，否则返回无权限错误。\n营业执照校验：校验 biz_license_resource_id 对应的图片资源归属（须属于当前企业/应用），仅作凭证存储，不做 OCR。\n工商信息比对：将传入的新值（已传的字段）与电子签侧现有数据比对，确认确实存在变更内容；若与现状完全一致，则返回「企业信息未变更」。\n未完结合同检查：仅当企业名称发生变更时，才检查该企业在 SaaS 与渠道子客下是否存在尚未完成的签署合同（白名单企业豁免）；若存在未完结合同则拦截并提示先处理合同。\n工商三要素核验与变更执行：对企业名称、法人、统一社会信用代码进行工商三要素核验（每日最多 10 次）。核验通过则直接执行信息变更；核验不通过则转入收录审核流程，待审核通过后生效。\n\n收录申请触发的场景\n本接口在工商信息变更时，会用**「新企业名称 + 统一社会信用代码(USCC) + 新法定代表人姓名」三要素与工商登记信息做校验，以此决定是直接执行变更还是提交收录申请（人工审核）**。\n统一社会信用代码不可变更：系统自动取企业当前在库的 USCC 参与校验，不接受入参修改。\n企业名称 / 法定代表人姓名取您本次传入的新值（未传则沿用当前值）。\n\n<p>\n  当工商三要素校验未通过时，接口不会直接修改企业信息，而是<strong>提交收录申请进入人工审核</strong>。具体触发场景如下：\n</p>\n<table>\n  <tr>\n    <th>触发场景</th>\n    <th>说明</th>\n  </tr>\n  <tr>\n    <td>三要素与工商登记不一致</td>\n    <td>传入的<strong>新企业名称</strong>或<strong>新法人姓名</strong>，与当前统一社会信用代码（USCC）在工商登记中的记录不匹配</td>\n  </tr>\n  <tr>\n    <td>工商库企业状态异常</td>\n    <td>依据当前 USCC 在工商库中查到的企业状态非正常（如查无此企业、已注销、已吊销等）</td>\n  </tr>\n</table>\n\n反向说明：三要素校验全部通过时，接口会直接执行企业信息变更，无需收录审批。",
+      "document": "本接口用于企业完成工商变更登记后，**在电子签侧同步更新企业基础信息**，并上传最新的营业执照作为变更凭证。\n\n>  **调用权限**：仅限企业**超级管理员**或**法人**有权调用（即 `Agent.ProxyOperator.OpenId` 必须传入超管或法人的 OpenId）。\n\n\n* **不会OCR**：系统**不会**自动识别营业执照图片。变更后的新信息（企业名称、法人、地址、类型）必须通过对应字段（`OrganizationName` / `LegalName` 等）显式传入。\n* **增量更新（只传变了的）**：仅传入**已变更**的字段新值，未变更的字段留空，系统会自动沿用电子签侧的当前值。若无任何字段变更，请勿调用此接口。\n* **未完结合同限制**：若**企业名称**发生变更，系统会拦截检查是否存在全平台（同名的saas自建企业和子客企业）未完结的签署合同（针对白名单企业豁免，可联系对接的客户经理沟通）。若存在，须先撤销或完成签署，否则无法变更。\n* **每日频控**：同一个操作人（`ProxyOperator.OpenId`）每日核验上限为 **10 次**。\n\n---\n\n##  变更审核流程\n\n接口在处理变更时，会先进行工商三要素（企业名称、法人姓名、统一社会信用代码）核验，流程分为以下两条路径：\n<img src=\"https://qcloudimg.tencent-cloud.cn/raw/123767975de1754bd30b24617661ea65.png\" width=\"380\" >\n\n### 触发人工审核（收录流程）的具体场景：\n\n1. **三要素不一致**：传入的“新企业名称”或“新法人姓名”，与该统一社会信用代码（USCC）在官方工商登记中的记录不匹配。\n2. **工商状态异常**：该 USCC 在工商库中的状态为异常（如查无此企业、已注销、已吊销等）。\n\n---\n\n##  变更成功后的影响\n\n企业信息变更成功后，系统会自动执行以下关联操作：\n\n| 变更维度 | 级联影响 |\n| --- | --- |\n| **法人变更** | 1. **作废**当前企业下的原法人印章。2. 原法人账号**降级**为普通员工。3. 向新法人手机号发送激活/通知短信。 |\n| **企业名称变更** | 1. **作废**该企业当前的 CA 证书并**颁发新证书**。2. **生成**新的企业公章。 |\n| **地址变更** | 仅同步修改企业登记地址。 |\n| **企业类型变更** | 仅同步修改企业类型。 |\n\n---\n\n##  相关回调事件\n\n* **变更直接成功/确认成功后**：触发 [企业基础信息修改通知回调](https://qian.tencent.com/developers/partner/callback_types_staffs#%E5%8D%81%E5%9B%9B-%E4%BC%81%E4%B8%9A%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF%E4%BF%AE%E6%94%B9%E9%80%9A%E7%9F%A5)\n* **人工收录审核产生结果后**：触发 [企业收录申请审核结果回调](https://qian.tencent.com/developers/partner/callback_types_staffs#%E5%8D%81%E5%85%AD-%E4%BC%81%E4%B8%9A%E6%94%B6%E5%BD%95%E7%94%B3%E8%AF%B7%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)",
       "input": "ModifyOrganizationBusinessInfoRequest",
-      "name": "变更企业信息",
+      "name": "变更子客企业信息",
       "output": "ModifyOrganizationBusinessInfoResponse",
       "status": "online"
     },
@@ -12750,7 +12750,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跳转事件枚举，\n* 1 - 企业收录。\n* 2 - 超管授权书审核。\n* 3 - 认证完成。",
+          "document": "<p>跳转事件枚举</p><p>枚举值：</p><ul><li>1： 企业收录</li><li>2： 超管授权书审核</li><li>3： 企业认证完成</li><li>4： 员工加入完成</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "JumpEventType",
@@ -12759,7 +12759,7 @@
         },
         {
           "disabled": false,
-          "document": "为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。\nEndpoint如果是APP 类型，请传递<font color=\"red\">\"true\"</font>\n如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/partner/openqianh5)\np.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。",
+          "document": "<p>为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。<br>Endpoint如果是APP 类型，请传递<font color=\"red\">&quot;true&quot;</font><br>如果 Endpoint 是 H5 类型，请参考文档<a href=\"https://qian.tencent.com/developers/partner/openqianh5\">跳转电子签H5</a><br>p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。</p>",
           "example": "https://qian.tencent.com/",
           "member": "string",
           "name": "JumpUrl",
@@ -12902,7 +12902,7 @@
         {
           "disabled": false,
           "document": "<p>企业营业执照或相关证照图片的 resourceId，需提前通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\">上传文件接口</a>获取后传入。<br>注意：电子签<b>不会</b>对上传的营业执照图片做 OCR 识别，该图片仅作为企业信息变更的凭证留存；企业最新的名称、法人、地址等信息仍需通过本接口的其它字段显式传入。</p>",
-          "example": "yD3JaUUckperpm7qUxaAsRsEvrnOVuVD",
+          "example": "yDCNIUUckpv809ikUuxOPaXRjLuPnGvS",
           "member": "string",
           "name": "BizLicenseResourceId",
           "required": true,
@@ -12911,7 +12911,7 @@
         {
           "disabled": false,
           "document": "<p>变更后的最新工商登记企业名称。<br>仅当企业名称发生变更时传入，未变更则不传（系统自动沿用电子签侧当前企业名称）。<br></p>",
-          "example": "黑拉顿平原测试",
+          "example": "东莞万御安防科技服务有限公司",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -12938,9 +12938,18 @@
         {
           "disabled": false,
           "document": "<p>变更后的最新工商登记法人姓名。<br>仅当法人发生变更时传入，未变更则不传（系统自动沿用当前法人姓名）。</p>",
-          "example": "典子谦",
+          "example": "东**淑",
           "member": "string",
           "name": "LegalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新法人的手机号。<br>仅当法人发生变更时传入，用于向新法人发送短信通知。<br>需为合法的手机号或固定电话格式。</p>",
+          "example": "132****0000",
+          "member": "string",
+          "name": "NewLegalMobile",
           "required": false,
           "type": "string"
         }
@@ -12963,7 +12972,7 @@
         {
           "disabled": false,
           "document": "<p>提示文案。<br>例如企业名称变更且存在未完结合同时返回「存在 X 份未完结的合同，请先撤销或者完成合同」。</p>",
-          "example": "存在 4 份未完结的合同，请先撤销或者完成合同",
+          "example": "存在 87 份未完结的合同，请先撤销或者完成合同",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": false,
@@ -12973,7 +12982,7 @@
         {
           "disabled": false,
           "document": "<p>未完结合同总数。<br>仅当企业名称变更且存在未完结合同时有值。</p>",
-          "example": "4",
+          "example": "87",
           "member": "uint64",
           "name": "UnfinishedCount",
           "output_required": false,
@@ -12982,7 +12991,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>SaaS 企业下未完结合同的 flowId 列表。</p>",
+          "document": "<p>SaaS 企业下未完结合同的 flowId 列表。注:<code>SaaS企业下的合同ID可能无法查询，可通知子客企业去处理相应的合同</code></p>",
           "example": "[\"yD3JaUUckperbj2gU1UxOsoPKSdAroVT\"]",
           "member": "string",
           "name": "FlowIds",
@@ -12992,7 +13001,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>渠道子客企业下未完结合同的 flowId 列表。</p>",
+          "document": "<p>渠道子客企业下未完结合同的 flowId 列表。注：<code>子客企业在其他渠道下的合同ID可能无法查询，可通知子客企业去处理其他渠道下相应的合同</code></p>",
           "example": "[\"yD3JcUUckpep6qq5U1UyDrfDm8l6NzKw\"]",
           "member": "string",
           "name": "ChannelFlowIds",
@@ -13670,6 +13679,15 @@
           "example": "true",
           "member": "bool",
           "name": "AddressSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对方打开链接认证时，公司营业执照是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在公司营业执照（BusinessLicense）不为空时有效</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "BizLicenseSame",
           "required": false,
           "type": "bool"
         }

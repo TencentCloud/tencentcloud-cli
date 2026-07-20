@@ -2972,7 +2972,7 @@
           "example": "Abc123...",
           "member": "string",
           "name": "MongoUserPassword",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],

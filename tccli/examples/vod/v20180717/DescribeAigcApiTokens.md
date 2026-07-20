@@ -5,19 +5,19 @@
 Input: 
 
 ```
-tccli vod DescribeAigcApiTokens --cli-unfold-argument  \
-    --SubAppId 251006666
-```
+tccli vod DescribeAigcApiTokens --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1",
         "ApiTokens": [
-            "dqFQejeK2BMU8PRmc57gx9OSGKa72PwN",
-            "8Tul4P4EiJKZ80AfF11HApbYSyK4uj1e"
-        ]
+            "D2JJ0DHJQ5p*****************rXFX"
+        ],
+        "ExtInfos": [
+            "{\"ip\":{\"127.0.0.1\":true}}"
+        ],
+        "RequestId": "35fa7c32-eea7-4a7b-ba41-ddd98a2d6bf9"
     }
 }
 ```

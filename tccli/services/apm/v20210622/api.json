@@ -1126,7 +1126,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>应用诊断开关（已废弃）</p>",
+          "document": "<p>应用诊断开关</p>",
           "example": "true",
           "member": "bool",
           "name": "EventEnable",
@@ -1258,7 +1258,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>组件列表开关（已废弃）</p>",
+          "document": "<p>组件列表开关</p>",
           "example": "无",
           "member": "Instrument",
           "name": "InstrumentList",
@@ -1269,7 +1269,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>链路压缩开关（已废弃）</p>",
+          "document": "<p>链路压缩开关</p>",
           "example": "true",
           "member": "bool",
           "name": "TraceSquash",
@@ -2823,7 +2823,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃",
           "example": "100000000",
           "member": "uint64",
@@ -3223,7 +3223,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "上报方式，已弃用",
           "example": "http",
           "member": "string",
@@ -5192,7 +5192,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>拓扑图是否有修改</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>拓扑图是否有修改</p><p>枚举值：</p><ul><li>0： 拓扑图未修改</li><li>1： 拓扑图已修改</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TopologyModifyFlag",
@@ -6660,7 +6660,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "svc-SgUX9ueaj",
           "member": "string",
           "name": "ServiceID",
@@ -6669,8 +6669,8 @@
         },
         {
           "disabled": false,
-          "document": "应用描述",
-          "example": "测试",
+          "document": "<p>应用描述</p>",
+          "example": "订单应用",
           "member": "string",
           "name": "ServiceDescription",
           "required": false,
@@ -6678,8 +6678,8 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
-          "example": "[{ \t\t\"Key\": \"appid\", \t\t\"Value\": \"123123422\" \t}]",
+          "document": "<p>标签列表</p>",
+          "example": "无",
           "member": "ApmTag",
           "name": "Tags",
           "required": false,

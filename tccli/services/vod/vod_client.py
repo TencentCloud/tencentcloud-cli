@@ -3439,7 +3439,7 @@ def doExecuteFunction(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteVodDomain(args, parsed_globals):
+def doDescribeTranscodeTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3473,11 +3473,11 @@ def doDeleteVodDomain(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVodDomainRequest()
+    model = models.DescribeTranscodeTemplatesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteVodDomain(model)
+        rsp = client.DescribeTranscodeTemplates(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4921,7 +4921,7 @@ def doDescribeProcedureTemplates(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTranscodeTemplates(args, parsed_globals):
+def doDeleteVodDomain(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4955,11 +4955,11 @@ def doDescribeTranscodeTemplates(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTranscodeTemplatesRequest()
+    model = models.DeleteVodDomainRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeTranscodeTemplates(model)
+        rsp = client.DeleteVodDomain(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5434,7 +5434,7 @@ def doDeleteMedia(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doHandleCurrentPlaylist(args, parsed_globals):
+def doUpdateAigcApiToken(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -5468,11 +5468,11 @@ def doHandleCurrentPlaylist(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.HandleCurrentPlaylistRequest()
+    model = models.UpdateAigcApiTokenRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.HandleCurrentPlaylist(model)
+        rsp = client.UpdateAigcApiToken(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6688,7 +6688,7 @@ def doModifyJustInTimeTranscodeTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyQualityInspectTemplate(args, parsed_globals):
+def doHandleCurrentPlaylist(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -6722,11 +6722,11 @@ def doModifyQualityInspectTemplate(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyQualityInspectTemplateRequest()
+    model = models.HandleCurrentPlaylistRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyQualityInspectTemplate(model)
+        rsp = client.HandleCurrentPlaylist(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -7183,6 +7183,63 @@ def doModifyVodDomainConfig(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ModifyVodDomainConfig(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyQualityInspectTemplate(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyQualityInspectTemplateRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyQualityInspectTemplate(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -13373,7 +13430,7 @@ ACTION_MAP = {
     "DeleteClass": doDeleteClass,
     "DescribeAigcAdvancedCustomElements": doDescribeAigcAdvancedCustomElements,
     "ExecuteFunction": doExecuteFunction,
-    "DeleteVodDomain": doDeleteVodDomain,
+    "DescribeTranscodeTemplates": doDescribeTranscodeTemplates,
     "DescribeMediaProcessUsageData": doDescribeMediaProcessUsageData,
     "CreateAigcAudioClone": doCreateAigcAudioClone,
     "InspectMediaQuality": doInspectMediaQuality,
@@ -13399,7 +13456,7 @@ ACTION_MAP = {
     "CreateAigcVideoRedrawTask": doCreateAigcVideoRedrawTask,
     "DeleteSuperPlayerConfig": doDeleteSuperPlayerConfig,
     "DescribeProcedureTemplates": doDescribeProcedureTemplates,
-    "DescribeTranscodeTemplates": doDescribeTranscodeTemplates,
+    "DeleteVodDomain": doDeleteVodDomain,
     "CreateWatermarkTemplate": doCreateWatermarkTemplate,
     "CreateAigcSubject": doCreateAigcSubject,
     "ParseStreamingManifest": doParseStreamingManifest,
@@ -13408,7 +13465,7 @@ ACTION_MAP = {
     "CreateProcedureTemplate": doCreateProcedureTemplate,
     "DescribeAIAnalysisTemplates": doDescribeAIAnalysisTemplates,
     "DeleteMedia": doDeleteMedia,
-    "HandleCurrentPlaylist": doHandleCurrentPlaylist,
+    "UpdateAigcApiToken": doUpdateAigcApiToken,
     "CreateSuperPlayerConfig": doCreateSuperPlayerConfig,
     "AttachMediaSubtitles": doAttachMediaSubtitles,
     "DescribeCLSPushTargets": doDescribeCLSPushTargets,
@@ -13430,7 +13487,7 @@ ACTION_MAP = {
     "ModifyIncrementalMigrationStrategy": doModifyIncrementalMigrationStrategy,
     "RefreshUrlCache": doRefreshUrlCache,
     "ModifyJustInTimeTranscodeTemplate": doModifyJustInTimeTranscodeTemplate,
-    "ModifyQualityInspectTemplate": doModifyQualityInspectTemplate,
+    "HandleCurrentPlaylist": doHandleCurrentPlaylist,
     "VerifyDomainRecord": doVerifyDomainRecord,
     "DescribeImageReviewUsageData": doDescribeImageReviewUsageData,
     "CreateAigcCustomElement": doCreateAigcCustomElement,
@@ -13439,6 +13496,7 @@ ACTION_MAP = {
     "CreateSceneAigcImageTask": doCreateSceneAigcImageTask,
     "ProcessMediaByMPS": doProcessMediaByMPS,
     "ModifyVodDomainConfig": doModifyVodDomainConfig,
+    "ModifyQualityInspectTemplate": doModifyQualityInspectTemplate,
     "CreateIncrementalMigrationStrategy": doCreateIncrementalMigrationStrategy,
     "DescribeSnapshotByTimeOffsetTemplates": doDescribeSnapshotByTimeOffsetTemplates,
     "DeleteAigcAdvancedCustomElement": doDeleteAigcAdvancedCustomElement,

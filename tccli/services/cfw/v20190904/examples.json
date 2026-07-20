@@ -2,18 +2,6 @@
   "actions": {
     "AddAclRule": [
       {
-        "document": "添加互联网边界访问控制规则",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"Description\": \"pro\",\n            \"TargetContent\": \"www.qq.com\",\n            \"TargetType\": \"domain\",\n            \"Protocol\": \"HTTP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Scope\": \"serial\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"3f60a76f-0f44-4b58-bf98-615cbbc59ede\"\n    }\n}",
-        "title": "添加互联网边界访问控制规则"
-      },
-      {
-        "document": "添加互联网边界访问控制规则，模板类型，其中模板id为mb_开头形式，由接口DescribeAddressTemplateList 可以查询所得模板",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"mb_1256532032_1655200956209\",\n            \"SourceType\": \"template\",\n            \"TargetContent\": \"mb_1300448058_1740510699974\",\n            \"TargetType\": \"template\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Enable\": \"true\",\n            \"Description\": \"test\",\n            \"Scope\": \"serial\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d6b877f-9a5f-4da2-876d-9968c9fe0491\",\n        \"RuleUuid\": [\n            1907266\n        ]\n    }\n}",
-        "title": "添加互联网边界访问控制规则，模板类型"
-      },
-      {
         "document": "添加互联网边界访问控制规则，资产分组类型，其中资产分组d为cfwrg_开头形式，由接口DescribeResourceGroupNew可以查询所得资产分组id",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"cfwrg-b002b9b9d71b1a63951da2059d78cef41744255370\",\n            \"SourceType\": \"group\",\n            \"TargetContent\": \"mb_1300448058_1740510699974\",\n            \"TargetType\": \"template\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Enable\": \"true\",\n            \"Description\": \"rule-pro\",\n            \"Scope\": \"serial\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"278cabc7-b282-4ec8-a5b1-89d1e38195df\",\n        \"RuleUuid\": [\n            1907269\n        ]\n    }\n}",
@@ -38,16 +26,16 @@
     ],
     "AddVpcAcRule": [
       {
-        "document": "添加VPC内网间规则ip类型",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddVpcAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"OrderIndex\": 1,\n            \"SourceContent\": \"192.168.1.10\",\n            \"DestContent\": \"10.0.0.1\",\n            \"Protocol\": \"TCP\",\n            \"Port\": \"80\",\n            \"RuleAction\": \"log\",\n            \"Description\": \"搜索描述\",\n            \"EdgeId\": \"ALL\",\n            \"SourceType\": \"net\",\n            \"DestType\": \"net\",\n            \"Enable\": \"true\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RuleUuids\": [\n            8888\n        ],\n        \"RequestId\": \"9a86c4e3-b926-4244-919b-aba9a7e82686\"\n    }\n}",
-        "title": "添加VPC内网间规则示例1"
-      },
-      {
         "document": "添加VPC内网间规则地址模板",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddVpcAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"OrderIndex\": 1,\n            \"SourceContent\": \"mb_1256532032_1666263807415\",\n            \"DestContent\": \"192.168.1.2\",\n            \"Protocol\": \"TCP\",\n            \"Port\": \"-1/-1\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"搜索描述\",\n            \"EdgeId\": \"ALL\",\n            \"SourceType\": \"template\",\n            \"DestType\": \"net\",\n            \"Enable\": \"true\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RuleUuids\": [\n            8888\n        ],\n        \"RequestId\": \"9a86c4e3-b926-4244-919b-aba9a7e82686\"\n    }\n}",
         "title": "添加VPC内网间规则2"
+      },
+      {
+        "document": "添加VPC内网间规则ip类型",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddVpcAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"OrderIndex\": 1,\n            \"SourceContent\": \"192.168.1.10\",\n            \"DestContent\": \"10.0.0.1\",\n            \"Protocol\": \"TCP\",\n            \"Port\": \"80\",\n            \"RuleAction\": \"log\",\n            \"Description\": \"搜索描述\",\n            \"EdgeId\": \"ALL\",\n            \"SourceType\": \"net\",\n            \"DestType\": \"net\",\n            \"Enable\": \"true\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuids\": [\n            8888\n        ],\n        \"RequestId\": \"9a86c4e3-b926-4244-919b-aba9a7e82686\"\n    }\n}",
+        "title": "添加VPC内网间规则示例1"
       }
     ],
     "CloseClusterNatFwSwitch": [
@@ -370,6 +358,30 @@
         "title": "获取防火墙配置"
       }
     ],
+    "DescribeCfwAlerts": [
+      {
+        "document": "按告警级别和处置状态过滤；Response.Data 中 total 是聚合告警事件数，occurrence_count 是单个聚合告警事件的告警发生次数/命中次数。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAlerts\n<公共请求参数>\n\n{\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"total\\\":376,\\\"alerts\\\":[{\\\"event_id\\\":\\\"evt-1\\\",\\\"occurrence_count\\\":138}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询高危阻断告警"
+      }
+    ],
+    "DescribeCfwAnalysisData": [
+      {
+        "document": "按 full_traffic 场景返回防火墙分析报告数据；示例仅展示一个代表性 section，业务结果在 Response.Data 中。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAnalysisData\n<公共请求参数>\n\n{\n    \"Scenario\": \"full_traffic\",\n    \"StartTime\": \"2026-06-01 00:00:00\",\n    \"EndTime\": \"2026-06-02 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"status\\\":\\\"success\\\",\\\"data\\\":{\\\"sections\\\":{\\\"beacon\\\":{\\\"available\\\":true,\\\"records\\\":[{\\\"src_ip\\\":\\\"10.0.0.1\\\"}]}}},\\\"metadata\\\":{\\\"scenario\\\":\\\"full_traffic\\\"}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询全流量分析报告数据"
+      }
+    ],
+    "DescribeCfwAssets": [
+      {
+        "document": "未传 AssetType 时默认查询 host；传入 InstanceId 可定位单个实例。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwAssets\n<公共请求参数>\n\n{\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"asset_type\\\":\\\"host\\\",\\\"assets\\\":[{\\\"instance_id\\\":\\\"ins-1\\\"}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询主机资产"
+      }
+    ],
     "DescribeCfwEips": [
       {
         "document": "",
@@ -384,6 +396,78 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwInsStatus\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"CfwInsStatus\": [\n            {\n                \"CfwInsId\": \"cfwnat-xx\",\n                \"CfwInsName\": \"nat-out\",\n                \"Region\": \"ap-guangzhou\",\n                \"FwType\": \"ew\",\n                \"Status\": \"Running\",\n                \"EventTime\": \"2022-09-28 10:57:13\",\n                \"RecoverTime\": \"2022-10-12 16:58:27\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"jijijge\"\n    }\n}",
         "title": "查询cfw引擎升级状态"
+      }
+    ],
+    "DescribeCfwLogs": [
+      {
+        "document": "续查只回传 NextToken；调用方不要解析或构造 token。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwLogs\n<公共请求参数>\n\n{\n    \"NextToken\": \"opaque-token\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"Items\\\":[],\\\"TotalCount\\\":0,\\\"Limit\\\":100,\\\"HasMore\\\":false}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "使用 NextToken 续查"
+      },
+      {
+        "document": "首次查询传入 LogType；如果 Data.HasMore 为 true，保存 Data.NextToken 用于续查。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwLogs\n<公共请求参数>\n\n{\n    \"LogType\": \"cfw_netflow_border\",\n    \"Query\": \"src_ip:1.1.1.1\",\n    \"TimeRange\": \"1h\",\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"Items\\\":[{\\\"src_ip\\\":\\\"1.1.1.1\\\"}],\\\"TotalCount\\\":1,\\\"Limit\\\":100,\\\"HasMore\\\":true,\\\"NextToken\\\":\\\"opaque-token\\\"}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "首次查询防火墙日志"
+      }
+    ],
+    "DescribeCfwRiskOverview": [
+      {
+        "document": "不传时间时默认查询最近 7 天未处理风险概览。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRiskOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"total_unhandled_risks\\\":1,\\\"breakdown\\\":{\\\"port_risk_total\\\":1}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询风险概览"
+      }
+    ],
+    "DescribeCfwRuleOptimization": [
+      {
+        "document": "只读返回优化建议；示例仅展示代表性字段，是否处理以及如何处理由调用方决定。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRuleOptimization\n<公共请求参数>\n\n{\n    \"IdleDays\": 180\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"border\\\",\\\"dimension_counts\\\":{\\\"D1\\\":1},\\\"finding_total\\\":1,\\\"findings\\\":[{\\\"dim\\\":\\\"D1 完全重复\\\"}]}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询互联网边界规则优化建议"
+      }
+    ],
+    "DescribeCfwRules": [
+      {
+        "document": "RuleType=intrusion_prevention 时通过 ListType 选择 blocklist、whitelist 或 isolate。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"blocklist\",\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"intrusion_prevention\\\",\\\"list_type\\\":\\\"blocklist\\\",\\\"total\\\":1}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询入侵防御封禁列表"
+      },
+      {
+        "document": "查询入侵防御白名单策略，ListType 使用 whitelist。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"whitelist\",\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"intrusion_prevention\\\",\\\"list_type\\\":\\\"whitelist\\\",\\\"total\\\":1}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询入侵防御白名单策略"
+      },
+      {
+        "document": "按实例 ID 精确查询入侵防御隔离记录，用于写操作前后核验。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwRules\n<公共请求参数>\n\n{\n    \"RuleType\": \"intrusion_prevention\",\n    \"ListType\": \"isolate\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"rule_type\\\":\\\"intrusion_prevention\\\",\\\"list_type\\\":\\\"isolate\\\",\\\"total\\\":1}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询入侵防御隔离列表"
+      }
+    ],
+    "DescribeCfwStatusMonitor": [
+      {
+        "document": "describe_scene 用来发现可用 metric/perspective 组合和二级下拉 available_options。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwStatusMonitor\n<公共请求参数>\n\n{\n    \"Op\": \"describe_scene\",\n    \"FirewallType\": \"internet_edge\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"op\\\":\\\"describe_scene\\\",\\\"scene\\\":{\\\"firewall_type\\\":\\\"internet_edge\\\"},\\\"selection\\\":{\\\"available_options\\\":[{\\\"id\\\":\\\"ap-guangzhou\\\"}]}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "发现场景和二级下拉选项"
+      },
+      {
+        "document": "fetch_scene 拉取一个具体场景快照；它不是单纯 metrics 查询，还包含场景选择、概览和列表/明细视角。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwStatusMonitor\n<公共请求参数>\n\n{\n    \"Op\": \"fetch_scene\",\n    \"FirewallType\": \"internet_edge\",\n    \"Metric\": \"bandwidth\",\n    \"Perspective\": \"ip\",\n    \"SelectionId\": \"ap-guangzhou\",\n    \"TimePreset\": \"24h\",\n    \"OverviewOnly\": true,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"op\\\":\\\"fetch_scene\\\",\\\"data\\\":{\\\"overview\\\":{\\\"InputMax\\\":1024}}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "拉取互联网边界状态监控快照"
+      }
+    ],
+    "DescribeCfwSwitches": [
+      {
+        "document": "业务结果在 Response.Data 中，Data 为 JSON object 字符串；本接口没有自定义业务入参。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwSwitches\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"border_firewall\\\":{\\\"available\\\":true},\\\"nat_firewall\\\":{\\\"available\\\":false},\\\"vpc_firewall\\\":{\\\"available\\\":false},\\\"ndr\\\":{\\\"available\\\":false},\\\"ips\\\":{\\\"mode\\\":\\\"观察\\\"}}\",\n        \"RequestId\": \"4266525E-10C4-41E1-8A28-5CCE1FBF6A58\"\n    }\n}",
+        "title": "查询防火墙防护开关状态"
       }
     ],
     "DescribeClusterNatCcnFwSwitchList": [

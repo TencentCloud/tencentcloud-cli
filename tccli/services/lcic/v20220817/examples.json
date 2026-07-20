@@ -276,6 +276,14 @@
         "title": "获取指定课堂文档"
       }
     ],
+    "DescribeEditVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEditVersions\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 326744409\n}",
+        "output": "{\n    \"Response\": {\n        \"ClassId\": 326744409,\n        \"LatestVersionNo\": 2,\n        \"MainVersion\": 2,\n        \"Versions\": [\n            {\n                \"CreatedAtMs\": 0,\n                \"CreatorUserId\": \"\",\n                \"FailReason\": \"\",\n                \"IsMain\": false,\n                \"IsSource\": true,\n                \"KeepDurationSec\": 0,\n                \"Status\": \"READY\",\n                \"Version\": 1\n            }\n        ],\n        \"RequestId\": \"25cb9f60-9f9a-4152-9523-232a482c041e\"\n    }\n}",
+        "title": "获取当前可以全部版本信息"
+      }
+    ],
     "DescribeGroup": [
       {
         "document": "获取群组详情",
@@ -472,6 +480,14 @@
         "title": "设置禁言"
       }
     ],
+    "GetEditVersionToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEditVersionToken\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 326744409,\n    \"UserId\": \"3CQjnjDYLVGVl6OGR7eItiwQS3W\",\n    \"ExpireSeconds\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomId\": 326744409,\n        \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFzc19pZCI6MzI2NzQ0NDA5LC*leH**OjQ5MzQwNTc4MzQsInVzZ*JfaWQiOiIzQ1FqbmpEWUxWR1ZsNk*HUj*lSXRpd1FTM1ciLCJzY2VuZSI6**VkaXQifQ.SiuIPIRHUe6HgccsOdr*BIe1ecevFUjs6BsQfM59_PQ\",\n        \"UserId\": \"3CQjnjDYLVGVl6OGR7eItiwQS3W\",\n        \"RequestId\": \"e88f49f8-2268-4546-b58a-745fa523f933\"\n    }\n}",
+        "title": "获取信令剪辑token"
+      }
+    ],
     "GetPlaybackToken": [
       {
         "document": "",
@@ -628,6 +644,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAppCustomContent\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123,\n    \"CustomContent\": [\n        {\n            \"Scene\": \"default\",\n            \"LogoUrl\": \"https://example.com/logo.png\",\n            \"HomeUrl\": \"https://example.com/login\",\n            \"JsUrl\": \"https://example.com/default.js\",\n            \"CssUrl\": \"https://example.com/default.css\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "设置应用自定义内容"
+      }
+    ],
+    "SetMainEditVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetMainEditVersion\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 326744409,\n    \"VersionNo\": 2,\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClassId\": 326744409,\n        \"MainVersion\": 2,\n        \"PreviousMainVersion\": 0,\n        \"RequestId\": \"659fdede-d390-44ea-956d-06cde47ab178\"\n    }\n}",
+        "title": "设置当前课堂信令回放的主版本"
       }
     ],
     "SetMarquee": [

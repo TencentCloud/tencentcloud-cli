@@ -12729,7 +12729,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID",
+          "document": "<p>Prometheus 实例 ID</p>",
           "example": "prom-zs761zs2",
           "member": "string",
           "name": "InstanceId",
@@ -12738,7 +12738,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100",
+          "document": "<p>返回数量，默认为 20，最大值为 100</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -12747,7 +12747,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为 0",
+          "document": "<p>偏移量，默认为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -12756,7 +12756,7 @@
         },
         {
           "disabled": false,
-          "document": "告警分组ID，形如alert-xxxx。\n查询给定ID的告警分组",
+          "document": "<p>告警分组ID，形如alert-xxxx。<br>查询给定ID的告警分组</p>",
           "example": "alert-f2vx278",
           "member": "string",
           "name": "GroupId",
@@ -12765,12 +12765,21 @@
         },
         {
           "disabled": false,
-          "document": "告警分组名称。\n查询名称中包含给定字符串的告警分组",
+          "document": "<p>告警分组名称。<br>查询名称中包含给定字符串的告警分组</p>",
           "example": "告警分组-11",
           "member": "string",
           "name": "GroupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过自定义label查询告警规则：<br>返回包含符合过滤条件告警规则的整个分组</p><p>多个label过滤条件取交集</p>",
+          "example": "无",
+          "member": "PrometheusRuleKV",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12780,7 +12789,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警分组信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusAlertGroupSet",
           "name": "AlertGroupSet",
@@ -12790,7 +12799,7 @@
         },
         {
           "disabled": false,
-          "document": "告警分组总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警分组总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -22572,7 +22581,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例对象维度组合\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例对象维度组合</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Dimension",
           "name": "Dimensions",
@@ -22583,8 +22592,8 @@
         },
         {
           "disabled": false,
-          "document": "监控数据值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>监控数据值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "99.676",
           "member": "float",
           "name": "Value",
           "output_required": true,
@@ -22594,8 +22603,8 @@
         },
         {
           "disabled": false,
-          "document": "监控数据时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>监控数据时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1782737460",
           "member": "uint64",
           "name": "Timestamp",
           "output_required": true,
@@ -22605,8 +22614,8 @@
         },
         {
           "disabled": false,
-          "document": "排序序号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>排序序号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Order",
           "output_required": true,

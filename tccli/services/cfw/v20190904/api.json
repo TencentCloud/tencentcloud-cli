@@ -287,6 +287,27 @@
       "output": "DescribeCcnVpcFwSwitchResponse",
       "status": "online"
     },
+    "DescribeCfwAlerts": {
+      "document": "查询当前租户防火墙聚合告警事件。Response.Data 内 total 表示聚合告警事件数；alerts[].occurrence_count 表示单个聚合告警事件的告警发生次数/命中次数。",
+      "input": "DescribeCfwAlertsRequest",
+      "name": "查询防火墙告警事件",
+      "output": "DescribeCfwAlertsResponse",
+      "status": "online"
+    },
+    "DescribeCfwAnalysisData": {
+      "document": "查询当前租户防火墙分析报告数据。按分析场景返回整组分析结果，结果在 Response.Data 的 JSON 字符串中。",
+      "input": "DescribeCfwAnalysisDataRequest",
+      "name": "查询防火墙分析报告数据",
+      "output": "DescribeCfwAnalysisDataResponse",
+      "status": "online"
+    },
+    "DescribeCfwAssets": {
+      "document": "查询当前租户防火墙纳管资产。默认查询主机资产；仅明确需要 VPC 或子网时传 AssetType。结果在 Response.Data 的 JSON 字符串中。",
+      "input": "DescribeCfwAssetsRequest",
+      "name": "查询防火墙纳管资产",
+      "output": "DescribeCfwAssetsResponse",
+      "status": "online"
+    },
     "DescribeCfwEips": {
       "document": "查询防火墙弹性公网IP",
       "input": "DescribeCfwEipsRequest",
@@ -299,6 +320,48 @@
       "input": "DescribeCfwInsStatusRequest",
       "name": "cfw实例运行状态查询",
       "output": "DescribeCfwInsStatusResponse",
+      "status": "online"
+    },
+    "DescribeCfwLogs": {
+      "document": "查询当前租户防火墙日志。分页只使用 Response.Data 内的 HasMore / NextToken。",
+      "input": "DescribeCfwLogsRequest",
+      "name": "查询防火墙日志",
+      "output": "DescribeCfwLogsResponse",
+      "status": "online"
+    },
+    "DescribeCfwRiskOverview": {
+      "document": "查询当前租户风险中心未处理风险概览。默认查询最近 7 天；自定义时间范围需同时传 StartTime 和 EndTime。结果在 Response.Data 的 JSON 字符串中。",
+      "input": "DescribeCfwRiskOverviewRequest",
+      "name": "查询防火墙风险概览",
+      "output": "DescribeCfwRiskOverviewResponse",
+      "status": "online"
+    },
+    "DescribeCfwRuleOptimization": {
+      "document": "查询当前租户防火墙规则优化建议。只读分析，不修改规则；Action 名保持单数 RuleOptimization。结果在 Response.Data 的 JSON 字符串中。",
+      "input": "DescribeCfwRuleOptimizationRequest",
+      "name": "查询防火墙规则优化建议",
+      "output": "DescribeCfwRuleOptimizationResponse",
+      "status": "online"
+    },
+    "DescribeCfwRules": {
+      "document": "查询当前租户防火墙规则配置。覆盖互联网边界、NAT、VPC、企业安全组，以及入侵防御 intrusion_prevention 的 blocklist、whitelist、isolate 三类有效列表。结果在 Response.Data 的 JSON 字符串中。",
+      "input": "DescribeCfwRulesRequest",
+      "name": "查询防火墙规则",
+      "output": "DescribeCfwRulesResponse",
+      "status": "online"
+    },
+    "DescribeCfwStatusMonitor": {
+      "document": "查询状态监控场景。Op=describe_scene 用于发现可用场景、指标、视角和二级下拉 available_options；Op=fetch_scene 用于拉取具体场景快照，结果在 Response.Data 的 JSON 字符串中。",
+      "input": "DescribeCfwStatusMonitorRequest",
+      "name": "查询防火墙状态监控场景",
+      "output": "DescribeCfwStatusMonitorResponse",
+      "status": "online"
+    },
+    "DescribeCfwSwitches": {
+      "document": "查询当前租户防火墙防护开关总览。结果在 Response.Data 的 JSON 字符串中。本接口没有自定义业务入参，不支持过滤、排序或分页。",
+      "input": "DescribeCfwSwitchesRequest",
+      "name": "查询防火墙防护开关状态",
+      "output": "DescribeCfwSwitchesResponse",
       "status": "online"
     },
     "DescribeClusterNatCcnFwSwitchList": {
@@ -1307,8 +1370,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要添加的访问控制规则列表",
-          "example": "[   {     \"SourceContent\": \"0.0.0.0/0\",     \"SourceType\": \"net\",     \"Description\": \"\",     \"TargetContent\": \"www.qq.com\",     \"TargetType\": \"domain\",     \"Protocol\": \"HTTP\",     \"RuleAction\": \"accept\",     \"Port\": \"-1/-1\",     \"Direction\": 0,     \"OrderIndex\": 1,     \"Scope\": \"serial\",     \"RuleSource\": 0,     \"ParamTemplateId\": \"\"   } ]",
+          "document": "<p>需要添加的访问控制规则列表</p>",
+          "example": "无",
           "member": "CreateRuleItem",
           "name": "Rules",
           "required": true,
@@ -1316,7 +1379,16 @@
         },
         {
           "disabled": false,
-          "document": "添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则</p>",
           "example": "batch_import",
           "member": "string",
           "name": "From",
@@ -1331,7 +1403,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建成功后返回新策略ID列表",
+          "document": "<p>创建成功后返回新策略ID列表</p>",
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuid",
@@ -1359,6 +1431,15 @@
           "name": "Data",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "wechat",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1445,8 +1526,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要添加的nat访问控制规则列表",
-          "example": " [   {     \"OrderIndex\": 1,     \"SourceContent\": \"0.0.0.0/0\",     \"TargetContent\": \"www.qq.com\",     \"ParamTemplateId\": \"\",     \"Protocol\": \"HTTP\",     \"Port\": \"-1/-1\",     \"RuleAction\": \"log\",     \"Description\": \"观察规则\",     \"Scope\": \"ap-shanghai\",     \"SourceType\": \"net\",     \"TargetType\": \"domain\",     \"Direction\": 0,     \"Enable\":\"true\"   } ]",
+          "document": "<p>需要添加的nat访问控制规则列表</p>",
+          "example": "无",
           "member": "CreateNatRuleItem",
           "name": "Rules",
           "required": true,
@@ -1454,7 +1535,16 @@
         },
         {
           "disabled": false,
-          "document": "添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则</p>",
           "example": "insert_rule",
           "member": "string",
           "name": "From",
@@ -1469,7 +1559,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建成功后返回新策略ID列表",
+          "document": "<p>创建成功后返回新策略ID列表</p>",
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuid",
@@ -1491,8 +1581,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要添加的vpc内网间规则列表",
-          "example": "[{\"Description\":\"阻断\",\"DestContent\":\"gping.com\",\"DestType\":\"domain\",\"EdgeId\":\"ALL\",\"Enable\":\"true\",\"FwGroupId\":\"全局规则\",\"Port\":\"-1/-1\",\"Protocol\":\"HTTPS\",\"RuleAction\":\"drop\",\"Scope\":\"全局规则\",\"SourceContent\":\"\",\"SourceType\":\"net\"}]",
+          "document": "<p>需要添加的vpc内网间规则列表</p>",
+          "example": "无",
           "member": "VpcRuleItem",
           "name": "Rules",
           "required": true,
@@ -1500,7 +1590,16 @@
         },
         {
           "disabled": false,
-          "document": "添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则</p>",
           "example": "batch_import",
           "member": "string",
           "name": "From",
@@ -1515,7 +1614,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建成功后返回新策略ID列表",
+          "document": "<p>创建成功后返回新策略ID列表</p>",
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuids",
@@ -2401,6 +2500,45 @@
       ],
       "usage": "in"
     },
+    "CfwStatusMonitorFilter": {
+      "document": "状态监控过滤条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤字段名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Ip",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤值列表，最多 10 个。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作符类型，可选；仅支持后端允许的类型。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OperatorType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CloseClusterNatFwSwitchRequest": {
       "document": "CloseClusterNatFwSwitch请求参数结构体",
       "members": [
@@ -3176,7 +3314,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "处置对象,ID列表，  IdLists和IpList二选一",
+          "document": "<p>处置对象,ID列表，  IdLists和IpList二选一</p>",
           "example": "[\"a67d60bb5ede9b962ac19ad24b28be54\"]",
           "member": "string",
           "name": "HandleIdList",
@@ -3185,7 +3323,7 @@
         },
         {
           "disabled": false,
-          "document": "忽略数据来源：\nAlertTable 告警中心  InterceptionTable拦截列表",
+          "document": "<p>忽略数据来源：<br>AlertTable 告警中心  InterceptionTable拦截列表</p>",
           "example": "AlertTable",
           "member": "string",
           "name": "TableType",
@@ -3194,7 +3332,16 @@
         },
         {
           "disabled": false,
-          "document": "处置对象,事件ID列表",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置对象,事件ID列表</p>",
           "example": "[\"a67d60bb5ede9b962ac19ad24b28be54\"]",
           "member": "string",
           "name": "HandleEventIdList",
@@ -3209,7 +3356,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回状态码：\n0 成功\n非0 失败",
+          "document": "<p>返回状态码：<br>0 成功<br>非0 失败</p>",
           "example": "0",
           "member": "int64",
           "name": "ReturnCode",
@@ -3219,7 +3366,7 @@
         },
         {
           "disabled": false,
-          "document": "返回信息：\nsuccess 成功\n其他",
+          "document": "<p>返回信息：<br>success 成功<br>其他</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
@@ -3229,7 +3376,7 @@
         },
         {
           "disabled": false,
-          "document": "处置状态码：\n0  处置成功\n-1 通用错误，不用处理\n-3 表示重复，需重新刷新列表\n其他",
+          "document": "<p>处置状态码：<br>0  处置成功<br>-1 通用错误，不用处理<br>-3 表示重复，需重新刷新列表<br>其他</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -3435,7 +3582,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "非自定义类型规则列表",
+          "document": "<p>非自定义类型规则列表</p>",
           "example": "无",
           "member": "BanAndAllowRule",
           "name": "Rules",
@@ -3444,7 +3591,7 @@
         },
         {
           "disabled": false,
-          "document": "RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则",
+          "document": "<p>RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则</p>",
           "example": "1",
           "member": "int64",
           "name": "RuleType",
@@ -3453,7 +3600,16 @@
         },
         {
           "disabled": false,
-          "document": "删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据</p>",
           "example": "0",
           "member": "int64",
           "name": "CoverDuplicate",
@@ -4609,7 +4765,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否删除全部",
+          "document": "<p>是否删除全部</p>",
           "example": "0",
           "member": "int64",
           "name": "DeleteAll",
@@ -4618,7 +4774,7 @@
         },
         {
           "disabled": false,
-          "document": "blocklist 封禁列表 whitelist 白名单列表",
+          "document": "<p>blocklist 封禁列表 whitelist 白名单列表</p>",
           "example": "blocklist",
           "member": "string",
           "name": "ShowType",
@@ -4627,8 +4783,17 @@
         },
         {
           "disabled": false,
-          "document": "规则列表",
-          "example": "[{\"Ioc\":\"100.12.31.2\",\"RuleType\":2}]",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则列表</p>",
+          "example": "无",
           "member": "BanAndAllowRuleDel",
           "name": "Rules",
           "required": false,
@@ -4636,7 +4801,7 @@
         },
         {
           "disabled": false,
-          "document": "封禁：1，放通：100，\n主要用于全部删除时区分列表类型",
+          "document": "<p>封禁：1，放通：100，<br>主要用于全部删除时区分列表类型</p>",
           "example": "1",
           "member": "int64",
           "name": "RuleType",
@@ -6539,6 +6704,180 @@
       ],
       "type": "object"
     },
+    "DescribeCfwAlertsRequest": {
+      "document": "DescribeCfwAlerts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单页返回告警数。可选，默认 10，最大 50。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移。可选，默认 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwAlertsResponse": {
+      "document": "DescribeCfwAlerts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
+          "example": "{\"alerts\":[],\"total\":0,\"returned\":0,\"offset\":0,\"order\":\"desc\",\"order_by\":\"EndTime\",\"start_time\":\"2026-07-09 00:00:00\",\"end_time\":\"2026-07-09 23:59:59\",\"filters\":\"high,inbound,blocked,SQL注入,1.1.1.1->2.2.2.2\"}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwAnalysisDataRequest": {
+      "document": "DescribeCfwAnalysisData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分析场景。必填。full_traffic 表示全流量深度分析；east_west 表示东西向流量分析；alert_comprehensive 表示告警综合分析；asset_exposure 表示资产暴露面分析；access_troubleshoot 表示访问阻断排障分析。</p>",
+          "example": "full_traffic",
+          "member": "string",
+          "name": "Scenario",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询开始时间。可选，格式 YYYY-MM-DD HH:MM:SS；不传时默认查询最近 7 天。</p>",
+          "example": "2026-07-09 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间。可选，格式 YYYY-MM-DD HH:MM:SS；不传时默认当前时间。</p>",
+          "example": "2026-07-09 01:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析对象类型。可选，默认 user；user 表示租户全局，asset 表示单个资产，vpc 表示 VPC，domain 表示域名。</p>",
+          "example": "asset",
+          "member": "string",
+          "name": "ObjectType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析对象标识。ObjectType 为 asset、vpc 或 domain 时按需传入，可填写 IP、实例 ID、VPC ID 或域名。</p>",
+          "example": "cdb-i6zh3mwf",
+          "member": "string",
+          "name": "ObjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排障目标。可选，主要用于 access_troubleshoot 场景，可填写 IP 或域名。</p>",
+          "example": "10.199.32.12",
+          "member": "string",
+          "name": "Target",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要跳过的分析段名称列表。可选；不传时执行该场景全部分析段。</p>",
+          "example": "[\"ips_block\"]",
+          "member": "string",
+          "name": "SkipSections",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwAnalysisDataResponse": {
+      "document": "DescribeCfwAnalysisData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
+          "example": "{\"status\":\"success\",\"scenario\":\"full_traffic\",\"object\":\"user\",\"time\":\"00:00~01:00\",\"queries\":\"21/21 ok\",\"findings\":0,\"sections\":\"none\"}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwAssetsRequest": {
+      "document": "DescribeCfwAssets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大返回资产数。可选，默认 100；取值 1 至 1000。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwAssetsResponse": {
+      "document": "DescribeCfwAssets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。",
+          "example": "{\"asset_type\":\"host\",\"assets\":null,\"stats\":{\"returned\":0,\"total\":0,\"by_scope\":{\"private\":50,\"public\":36},\"by_region\":{\"ap-guangzhou\":26,\"ap-beijing\":13,\"ap-chengdu\":12,\"ap-shanghai\":11,\"other\":24},\"by_type\":{\"ENI\":35,\"HAVIP\":15,\"CVM\":13,\"other\":23}}}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCfwEipsRequest": {
       "document": "DescribeCfwEips请求参数结构体",
       "members": [
@@ -6620,6 +6959,478 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwLogsRequest": {
+      "document": "DescribeCfwLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志类型。首次查询必填；使用 NextToken 续查时不能传。枚举值包括 cfw_netflow_border、cfw_netflow_vpc、cfw_netflow_nat、cfw_netflow_nta、cfw_netflow_dns、cfw_rule_threatinfo、cfw_rule_acl、cfw_rule_vpc_acl、cfw_rule_nat_acl、cfw_ndr_subject_risk、cfw_ndr_dataleak_entry、cfw_ndr_ai_audit、cfw_feature_collect、cfw_behavior_collect、operate_log_all。</p>",
+          "example": "cfw_netflow_border",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CLS CQL 查询语句。默认 *；使用 NextToken 续查时不能传。</p>",
+          "example": "src_ip:1.1.1.1",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询起始时间。支持 RFC3339、YYYY-MM-DD HH:MM:SS、YYYY-MM-DD 或 Unix 时间戳；传入后从该时间向后查询 TimeRange；使用 NextToken 续查时不能传。</p>",
+          "example": "2026-07-09T02:00:00Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围。默认 1h；格式为正整数加单位 m/h/d，例如 5m、1h、24h、7d；使用 NextToken 续查时不能传。</p>",
+          "example": "1h",
+          "member": "string",
+          "name": "TimeRange",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单页返回条数。默认 100，最大 1000；使用 NextToken 续查时不能传。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一页 Response.Data 返回的不透明续查 token。首次查询不传；续查时只传 NextToken。无效、篡改、过期或租户不匹配会被拒绝。</p>",
+          "example": "ezylgj87Z1uDirOl6dgt2xAt3siE3dyZDFsaZ7x3COpcgQ6hntYVSz2ZxhuL2DDUkpdn3DAbid1rqI242sSER3YmvUOGuoFy-QfzS30eeVCQBfQ98-OlUMxHOIsSu0XLw9BeOLh7VrlK7AmZMpF5g-AfRSoNu_-En2LSXGWMxWVaNNt56KDeCKfotoHRUGl_SGEUEVLCNq31UOGJMaeWiFBkXxQt_30aJa3PpLHUC2U48SmJb9_jsS7Yh6m9FB8c",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwLogsResponse": {
+      "document": "DescribeCfwLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
+          "example": "{\"HasMore\":false,\"IsAnalysis\":false,\"Items\":null,\"Limit\":10,\"LogType\":\"cfw_netflow_border\",\"Query\":\"src_ip:1.1.1.1\",\"TimeWindow\":{\"EndTime\":\"2026-07-09T13:40:00Z\",\"StartTime\":\"2026-07-09T12:40:00Z\"},\"TotalCount\":0}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwRiskOverviewRequest": {
+      "document": "DescribeCfwRiskOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCfwRiskOverviewResponse": {
+      "document": "DescribeCfwRiskOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。",
+          "example": "{\"breakdown\":{\"data_leak_ai_instance_total\":0,\"data_leak_out_total\":1,\"data_leak_total\":0,\"port_risk_total\":6,\"weak_password_total\":0},\"end_time\":\"2026-07-09 23:59:59\",\"start_time\":\"2026-07-09 00:00:00\",\"total_unhandled_risks\":7}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwRuleOptimizationRequest": {
+      "document": "DescribeCfwRuleOptimization请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "长期零命中规则阈值天数。可选，必须为正整数，默认 180。",
+          "example": "180",
+          "member": "int64",
+          "name": "IdleDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单 IP 离散过多聚合建议的最小数量。可选，最小为 2，默认 10。",
+          "example": "10",
+          "member": "int64",
+          "name": "IpAggMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可迁移 IOC 建议中返回的样例 IOC 数量上限。可选，必须为正整数，默认 50。",
+          "example": "50",
+          "member": "int64",
+          "name": "IocSample",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwRuleOptimizationResponse": {
+      "document": "DescribeCfwRuleOptimization返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。示例仅展示代表性字段；完整结果还包含 rule_type_name、rule_total、rule_active、rule_skipped_geo_or_cloud、dimension_skipped、thresholds 和 generated_at，finding 还包含 risk_level、affected_rule_uuids、affected_rule_seqs、recommendation_action、reason 和 evidence。结果过大时返回摘要，不返回 findings，并增加 truncated 和 truncated_reason。",
+          "example": "{\"appid\":\"1300448058\",\"finding_total\":6,\"summary\":{\"D1\":2,\"D2\":2,\"D4\":1,\"D6\":1},\"actions\":{\"disable\":[6,7,8],\"delete\":[13]},\"high_risk\":[6,7],\"rule_active\":27,\"rule_skipped_geo_or_cloud\":3}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwRulesRequest": {
+      "document": "DescribeCfwRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则域。必填。枚举：border 互联网边界；nat NAT 边界；vpc VPC 间；enterprise_sg 企业安全组；intrusion_prevention 入侵防御。RuleType=intrusion_prevention 时还必须传 ListType。</p>",
+          "example": "intrusion_prevention",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>入侵防御列表类型。仅 RuleType=intrusion_prevention 时使用并必填。blocklist 表示封禁列表，whitelist 表示白名单策略，isolate 表示隔离列表。</p>",
+          "example": "blocklist",
+          "member": "string",
+          "name": "ListType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问方向过滤。可选。0 表示出站，1 表示入站；不传则不过滤。RuleType=intrusion_prevention 时不支持。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则动作过滤。可选。0 表示观察，1 表示阻断，2 表示放行；不传则不过滤。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleAction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>精确规则 ID 过滤。可选。用于按数值规则标识定位单条规则。</p>",
+          "example": "123456",
+          "member": "int64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单页返回规则数。可选，默认 100，最大 1000。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移。可选，默认 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwRulesResponse": {
+      "document": "DescribeCfwRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。</p>",
+          "example": "{\"limit\":100,\"list_type\":\"blocklist\",\"list_type_name\":\"入侵防御封禁列表\",\"offset\":0,\"returned\":0,\"rule_type\":\"intrusion_prevention\",\"rule_type_name\":\"入侵防御\",\"rules\":null,\"total\":0}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwStatusMonitorRequest": {
+      "document": "DescribeCfwStatusMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作类型。describe_scene 表示发现场景和二级下拉选项；fetch_scene 表示获取具体场景快照。必填。</p>",
+          "example": "describe_scene",
+          "member": "string",
+          "name": "Op",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙场景类型。支持 internet_edge（互联网边界防火墙）、nat_cluster（NAT边界防火墙-集群）、nat_ha（NAT边界防火墙-主备）、vpc_cluster（VPC边界防火墙-集群）、vpc_ha（VPC边界防火墙-主备）。必填。</p>",
+          "example": "internet_edge",
+          "member": "string",
+          "name": "FirewallType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>二级下拉选项 ID。fetch_scene 按需传入；internet_edge 为地域，NAT 为实例 ID，VPC 带宽场景为防火墙组 ID；vpc_cluster 的 connections 汇总场景会忽略该参数。</p>",
+          "example": "cfwnat-c8b3fb7c",
+          "member": "string",
+          "name": "SelectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>二级下拉显示名称。可替代 SelectionId 按名称匹配。</p>",
+          "example": "自动化",
+          "member": "string",
+          "name": "SelectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎实例 ID。主要用于 vpc_ha 下一个防火墙组对应多个实例的场景。</p>",
+          "example": "cfwew-46cfffdc",
+          "member": "string",
+          "name": "SelectionInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标页签。fetch_scene 可传；不传时使用该场景默认值。支持 bandwidth、connections。</p>",
+          "example": "connections",
+          "member": "string",
+          "name": "Metric",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标下的视角。fetch_scene 可传；不传时使用该场景默认值。支持 ip、subnet、session、switch、vpc，实际可用组合以 describe_scene 返回为准。</p>",
+          "example": "ip",
+          "member": "string",
+          "name": "Perspective",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>NAT 主备连接数 IP 视角范围。external 表示外部 IP，asset 表示资产 IP；仅 nat_ha + connections + ip 使用。</p>",
+          "example": "external",
+          "member": "string",
+          "name": "IpScope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预设时间范围。默认 24h；fetch_scene 使用。支持 5m、15m、30m、1h、6h、24h、3d、7d、30d、today、yesterday、day_before_yesterday、this_week、last_week、this_month。</p>",
+          "example": "1h",
+          "member": "string",
+          "name": "TimePreset",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义开始时间。格式 YYYY-MM-DD HH:MM:SS；必须与 EndTime 同时传，最大跨度 30 天。</p>",
+          "example": "2026-07-15 15:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义结束时间。格式 YYYY-MM-DD HH:MM:SS；必须与 StartTime 同时传，最大跨度 30 天。</p>",
+          "example": "2026-07-15 17:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从 1 开始。默认 1；fetch_scene 列表视角使用。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数。默认 10，最大 100；fetch_scene 列表视角使用。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否只获取概览数据。true 时 fetch_scene 只请求 overview，跳过 table/detail，适合只看场景快照汇总。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "OverviewOnly",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始偏移量覆盖。可选，传入后覆盖 Page 计算结果；必须大于等于 0 且不超过安全上限。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段。可选，只接受当前场景后端允许的安全字段。</p>",
+          "example": "InputMax",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向。默认 desc；支持 asc、desc。</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件列表。可选，最多 5 个；是否支持以及字段名以具体 fetch_scene 场景为准。</p>",
+          "example": "无",
+          "member": "CfwStatusMonitorFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwStatusMonitorResponse": {
+      "document": "DescribeCfwStatusMonitor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。describe_scene 返回 scene 与 selection.available_options；fetch_scene 返回选中场景的 data 快照。</p>",
+          "example": "{\"op\":\"describe_scene\",\"name\":\"互联网边界防火墙\",\"type\":\"internet_edge\",\"metric\":\"bandwidth\",\"view\":\"ip\",\"select\":\"region?\",\"source\":\"DescribeEdgeIpFlowLists\",\"unit\":\"bps/1024\"}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfwSwitchesRequest": {
+      "document": "DescribeCfwSwitches请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCfwSwitchesResponse": {
+      "document": "DescribeCfwSwitches返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果。UTF-8 JSON object 字符串；调用方需解析 Response.Data。",
+          "example": "{\"border_firewall\":{\"available\":true},\"nat_firewall\":{\"available\":false},\"vpc_firewall\":{\"available\":false},\"ndr\":{\"available\":false},\"ips\":{\"mode\":\"观察\"}}",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -12635,12 +13446,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要编辑的规则数组，基于Uuid唯一id修改该规则",
-          "example": "[   {     \"SourceContent\": \"0.0.0.0/0\",     \"SourceType\": \"net\",     \"Description\": \"\",     \"TargetContent\": \"www.qq.com\",     \"TargetType\": \"domain\",     \"Protocol\": \"HTTPS\",     \"RuleAction\": \"accept\",     \"Port\": \"-1/-1\",     \"Direction\": 0,     \"OrderIndex\": 1,     \"Scope\": \"serial\",     \"RuleSource\": 0,     \"ParamTemplateId\": \"\",     \"Uuid\": 148195,     \"Enable\": \"true\"   } ]",
+          "document": "<p>需要编辑的规则数组，基于Uuid唯一id修改该规则</p>",
+          "example": "无",
           "member": "CreateRuleItem",
           "name": "Rules",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "wechat",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12650,7 +13470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑成功后返回新策略ID列表",
+          "document": "<p>编辑成功后返回新策略ID列表</p>",
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuid",
@@ -13544,7 +14364,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则的uuid，可通过查询规则列表获取",
+          "document": "<p>规则的uuid，可通过查询规则列表获取</p>",
           "example": "1",
           "member": "uint64",
           "name": "RuleUuid",
@@ -13553,7 +14373,7 @@
         },
         {
           "disabled": false,
-          "document": "修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态",
+          "document": "<p>修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态</p>",
           "example": "0",
           "member": "uint64",
           "name": "ModifyType",
@@ -13562,8 +14382,17 @@
         },
         {
           "disabled": false,
-          "document": "编辑后的企业安全组规则数据；修改规则状态不用填该字段",
-          "example": "{ \t\t\t\"Description\": \"rule\", \t\t\t\"DestContent\": \"81.69.8.8\", \t\t\t\"DestType\": \"net\", \t\t\t\"OrderIndex\": \"1\", \t\t\t\"Port\": \"6666\", \t\t\t\"Protocol\": \"UDP\", \t\t\t\"RuleAction\": \"accept\", \t\t\t\"ServiceTemplateId\": \"\", \t\t\t\"SourceContent\": \"81.69.14.119\", \t\t\t\"SourceType\": \"net\" \t\t}",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>编辑后的企业安全组规则数据；修改规则状态不用填该字段</p>",
+          "example": "无",
           "member": "SecurityGroupRule",
           "name": "Data",
           "required": false,
@@ -13571,7 +14400,7 @@
         },
         {
           "disabled": false,
-          "document": "0是关闭,1是开启",
+          "document": "<p>0是关闭,1是开启</p>",
           "example": "0",
           "member": "uint64",
           "name": "Enable",
@@ -13586,7 +14415,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态值，0：编辑成功，非0：编辑失败",
+          "document": "<p>状态值，0：编辑成功，非0：编辑失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -13596,7 +14425,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑后新生成规则的Id",
+          "document": "<p>编辑后新生成规则的Id</p>",
           "example": "35641",
           "member": "uint64",
           "name": "NewRuleUuid",
@@ -13690,12 +14519,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要编辑的规则数组,基于Uuid唯一id来修改该规则",
-          "example": "[ \t{ \t\t\"SourceContent\": \"0.0.0.0/0\", \t\t\"SourceType\": \"net\", \t\t\"TargetContent\": \"www.qq.com\", \t\t\"TargetType\": \"domain\", \t\t\"Protocol\": \"HTTP\", \t\t\"RuleAction\": \"accept\", \t\t\"Port\": \"-1/-1\", \t\t\"Direction\": 0, \t\t\"OrderIndex\": 1, \t\t\"Uuid\": 242218, \t\t\"Enable\": \"true\", \t\t\"Description\": \"pro-env\", \t\t\"ParamTemplateId\": \"\", \t\t\"Scope\": \"ap-shanghai\" \t} ]",
+          "document": "<p>需要编辑的规则数组,基于Uuid唯一id来修改该规则</p>",
+          "example": "无",
           "member": "CreateNatRuleItem",
           "name": "Rules",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "wechat",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13705,7 +14543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑成功后返回新策略ID列表",
+          "document": "<p>编辑成功后返回新策略ID列表</p>",
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuid",
@@ -14420,12 +15258,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要编辑的规则数组",
+          "document": "<p>需要编辑的规则数组</p>",
           "example": "无",
           "member": "VpcRuleItem",
           "name": "Rules",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14435,7 +15282,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑成功后返回新策略ID列表",
+          "document": "<p>编辑成功后返回新策略ID列表</p>",
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuids",
@@ -16316,7 +17163,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则",
+          "document": "<p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>",
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuid",
@@ -16325,7 +17172,16 @@
         },
         {
           "disabled": false,
-          "document": "规则方向：1，入站；0，出站",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则方向：1，入站；0，出站</p>",
           "example": "0",
           "member": "uint64",
           "name": "Direction",
@@ -16340,7 +17196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除成功后返回被删除策略的uuid列表",
+          "document": "<p>删除成功后返回被删除策略的uuid列表</p>",
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuid",
@@ -16362,7 +17218,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则的uuid，可通过查询规则列表获取",
+          "document": "<p>规则的uuid，可通过查询规则列表获取</p>",
           "example": "8888",
           "member": "int64",
           "name": "RuleUuid",
@@ -16371,12 +17227,21 @@
         },
         {
           "disabled": false,
-          "document": "删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可",
+          "document": "<p>删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可</p>",
           "example": "0",
           "member": "int64",
           "name": "RemoveType",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16386,7 +17251,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除成功后返回被删除策略的uuid",
+          "document": "<p>删除成功后返回被删除策略的uuid</p>",
           "example": "8888",
           "member": "int64",
           "name": "RuleUuid",
@@ -16396,7 +17261,7 @@
         },
         {
           "disabled": false,
-          "document": "0代表成功，-1代表失败",
+          "document": "<p>0代表成功，-1代表失败</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -16418,7 +17283,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则",
+          "document": "<p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>",
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuid",
@@ -16427,7 +17292,16 @@
         },
         {
           "disabled": false,
-          "document": "规则方向：1，入站；0，出站",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "wechat",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则方向：1，入站；0，出站</p>",
           "example": "0",
           "member": "uint64",
           "name": "Direction",
@@ -16442,7 +17316,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除成功后返回被删除策略的uuid列表",
+          "document": "<p>删除成功后返回被删除策略的uuid列表</p>",
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuid",
@@ -16520,7 +17394,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则",
+          "document": "<p>规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则</p>",
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuids",
@@ -16529,7 +17403,16 @@
         },
         {
           "disabled": false,
-          "document": "仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则",
+          "document": "<p>AI操作来源</p><p>枚举值：</p><ul><li>console： 控制台来源值</li><li>wechat： 微信</li></ul>",
+          "example": "console",
+          "member": "string",
+          "name": "CfwAiAgentOperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则</p>",
           "example": "0",
           "member": "uint64",
           "name": "IpVersion",
@@ -16544,7 +17427,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除成功后返回被删除策略的uuid列表",
+          "document": "<p>删除成功后返回被删除策略的uuid列表</p>",
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuids",

@@ -84,6 +84,22 @@
         "title": "智能体和产品绑定示例"
       }
     ],
+    "BindTWeTalkAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindTWeTalkAgent\n<公共请求参数>\n\n{\n    \"ProductId\": \"4L5W9F****\",\n    \"AgentId\": \"agent-*****1qdEm\",\n    \"BindingScope\": \"device\",\n    \"DeviceName\": \"pen***\",\n    \"Priority\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d28d2cb-b111-4772-bea9-fad91cb34674\"\n    }\n}",
+        "title": "绑定设备"
+      }
+    ],
+    "BindUserDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindUserDevice\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev2\",\n    \"OpenID\": \"nandy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FamilyId\": \"f_d1592a6eaf174153a9415e9710d2aff1\",\n        \"UserID\": \"195155279497658759\",\n        \"RequestId\": \"28142019-ee85-4e6a-9beb-8691e646b61b\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "CallDeviceActionAsync": [
       {
         "document": "异步调用设备行为，返回调用 Id 信息。",
@@ -110,6 +126,20 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClientToken\": \"\",\n        \"OutputParams\": \"\",\n        \"RequestId\": \"b2621fc1-d6d9-4929-af0b-3fb0e919658a\",\n        \"Status\": \"FailedOperation.ActionUnreachable|动作消息不可达\"\n    }\n}",
         "title": "同步调用设备行为，设备不在线。"
+      }
+    ],
+    "CallDeviceRRPCSync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceRRPCSync\n<公共请求参数>\n\n{\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev1\",\n    \"Payload\": \"{\\\"a\\\":\\\"b\\\"}\",\n    \"Topic\": \"N5DBOST040/nandy_dev1/evc/param/a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientToken\": \"v221.215.133.103MEjCE::79afc8bc-12bf-429b-a48d-e8596c4e918a\",\n        \"MessageId\": 54,\n        \"PayloadBase64\": \"eyJyc3AiOiJvayJ9\",\n        \"ReplyTopic\": \"\",\n        \"Status\": \"Replied\",\n        \"RequestId\": \"79afc8bc-12bf-429b-a48d-e8596c4e918a\"\n    }\n}",
+        "title": "自定义topic模式"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceRRPCSync\n<公共请求参数>\n\n{\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev1\",\n    \"Payload\": \"{\\\"a\\\":\\\"b\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientToken\": \"v221.90.233.213aHiQo::1d17f100-cc9e-4458-8199-f22ba6d4ae14\",\n        \"MessageId\": 52,\n        \"PayloadBase64\": \"eyJyc3AiOiJvayJ9\",\n        \"ReplyTopic\": \"$iotrrpc/up/N5DBOST040/nandy_dev1/52\",\n        \"Status\": \"Replied\",\n        \"RequestId\": \"1d17f100-cc9e-4458-8199-f22ba6d4ae14\"\n    }\n}",
+        "title": "默认topic模式"
       }
     ],
     "ChangeP2PRoute": [
@@ -468,6 +498,14 @@
         "title": "创建智能体"
       }
     ],
+    "CreateTWeTalkAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkAgent\n<公共请求参数>\n\n{\n    \"STTConfig\": {\n        \"Type\": \"trtc\",\n        \"TRTC\": {\n            \"Language\": \"zh\",\n            \"VADSilenceTime\": 300,\n            \"VADLevel\": 3\n        }\n    },\n    \"LLMConfig\": {\n        \"Type\": \"default\",\n        \"SystemPrompt\": \"你是一个暖男，照顾用户情绪\"\n    },\n    \"TTSConfig\": {\n        \"Type\": \"flow\",\n        \"Flow\": {\n            \"VoiceId\": \"v-male-P6q7LzD8\",\n            \"Speed\": 1\n        }\n    },\n    \"Name\": \"小伙伴\",\n    \"InstanceId\": \"ins-31ooyYQG4ym\",\n    \"Description\": \"智能助理\",\n    \"ConversationConfig\": {\n        \"WelcomeMessage\": \"你好，很高兴见到你\",\n        \"WelcomeMessagePriority\": 1,\n        \"InterruptMode\": 0\n    },\n    \"MemoryConfig\": {\n        \"Enabled\": false\n    },\n    \"Metadata\": \"{\\\"a\\\": 123}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"agent-StCcdhLC4m\",\n        \"RequestId\": \"ee01d12f-0e2c-437e-97a8-321b1cd6d141\"\n    }\n}",
+        "title": "创建智能体"
+      }
+    ],
     "CreateTWeTalkProductConfig": [
       {
         "document": "",
@@ -646,6 +684,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7f5317d-25c4-42a8-ae76-8b7ed3eec25d\"\n    }\n}",
         "title": "删除智能体示例"
+      }
+    ],
+    "DeleteTWeTalkAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeTalkAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"agent-SXXGMw****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"94486012-0a7b-4052-98d2-c5bd6640d78b\"\n    }\n}",
+        "title": "删除智能体"
       }
     ],
     "DeleteTWeTalkProductConfigV2": [
@@ -1200,6 +1246,30 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AgentConfig\": {\n                \"GreetingMessage\": \"u4f60u597d\",\n                \"InterruptionEnabled\": true,\n                \"LongTermMemoryEnabled\": true\n            },\n            \"AppId\": 251198731,\n            \"BotId\": \"bot-1TzRAz42oi\",\n            \"CreateTime\": 1764211674,\n            \"Description\": \"LPIOACT1NG\",\n            \"InstanceId\": \"ins-DGAFvpuVF7\",\n            \"Name\": \"LPIOACT1NG\",\n            \"TargetLanguage\": \"zh\",\n            \"Uin\": 100000103009,\n            \"UpdateTime\": 1764211674\n        },\n        \"RequestId\": \"dc2335d2-9c70-4105-900e-60f281defd18\"\n    }\n}",
         "title": "查询智能体详情"
+      }
+    ],
+    "DescribeTWeTalkAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeTalkAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"agent-SValZ1****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AgentId\": \"agent-SValZ1****\",\n            \"AppId\": 251440000,\n            \"Bindings\": [\n                {\n                    \"AgentId\": \"agent-SValZ1****\",\n                    \"BindingScope\": \"device\",\n                    \"CreateTime\": 1781148290,\n                    \"DeviceName\": \"test_02\",\n                    \"ProductId\": \"MD2JRU****\",\n                    \"UpdateTime\": 1781148290\n                }\n            ],\n            \"ConversationConfig\": {\n                \"InterruptMode\": 0,\n                \"WelcomeMessage\": \"今天过得怎么样？我可以陪你聊天。\",\n                \"WelcomeMessagePriority\": 1\n            },\n            \"CreateTime\": 1781058518,\n            \"Description\": \"暖男\",\n            \"InstanceId\": \"ins-31ooyYQ****\",\n            \"LLMConfig\": {\n                \"ApiKey\": \"sk-26515f17a9e24f******************\",\n                \"BaseUrl\": \"https://api.deepseek.com/v1/chat/completions\",\n                \"ExtraBody\": \"{\\\"thinking\\\":{\\\"type\\\":\\\"disabled\\\"}}\",\n                \"History\": 20,\n                \"Model\": \"deepseek-v4-flash\",\n                \"SystemPrompt\": \"你是一个暖男，照顾用户情绪\",\n                \"Temperature\": 1,\n                \"Type\": \"openai\"\n            },\n            \"MemoryConfig\": {\n                \"Enabled\": true\n            },\n            \"Name\": \"学弟\",\n            \"STTConfig\": {\n                \"TRTC\": {\n                    \"Language\": \"zh\",\n                    \"VADLevel\": 3,\n                    \"VADSilenceTime\": 300\n                },\n                \"Type\": \"trtc\"\n            },\n            \"TTSConfig\": {\n                \"Flow\": {\n                    \"Speed\": 0.5,\n                    \"VoiceId\": \"v-male-W1tH9jVc\"\n                },\n                \"Type\": \"flow\"\n            },\n            \"Uin\": 700002289689,\n            \"UpdateTime\": 1781517985,\n            \"WebhookTools\": [\n                {\n                    \"Description\": \"点咖啡，拿铁，美式\",\n                    \"Endpoint\": {\n                        \"Url\": \"http://*****************/coffee/order\"\n                    },\n                    \"Name\": \"order_coffee\",\n                    \"Parameters\": \"{\\\"type\\\":\\\"object\\\",\\\"properties\\\":{\\\"coffee_type\\\":{\\\"type\\\":\\\"string\\\",\\\"description\\\":\\\"咖啡类型\\\",\\\"enum\\\":[\\\"拿铁\\\",\\\"美式\\\",\\\"卡布奇诺\\\"]},\\\"size\\\":{\\\"type\\\":\\\"string\\\",\\\"description\\\":\\\"咖啡杯型\\\",\\\"enum\\\":[\\\"小杯\\\",\\\"中杯\\\",\\\"大杯\\\"]},\\\"sugar\\\":{\\\"type\\\":\\\"string\\\",\\\"description\\\":\\\"咖啡糖度\\\",\\\"enum\\\":[\\\"标准\\\",\\\"半糖\\\",\\\"无糖\\\"]}},\\\"required\\\":[\\\"coffee_type\\\",\\\"size\\\",\\\"sugar\\\"],\\\"additionalProperties\\\":false}\",\n                    \"Required\": [\n                        \"coffee_type\"\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"de5ababb-a7e7-4278-b6b5-9a6fe1b6d0a5\"\n    }\n}",
+        "title": "查询智能体详情"
+      }
+    ],
+    "DescribeTWeTalkAgentBinding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeTalkAgentBinding\n<公共请求参数>\n\n{\n    \"ProductId\": \"M********6\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Bindings\": [\n            {\n                \"AgentId\": \"agent-SValZ1qdEm\",\n                \"BindingScope\": \"product\",\n                \"CreateTime\": 1781511871,\n                \"ProductId\": \"MD2JRU2IF6\",\n                \"UpdateTime\": 1781511871\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"feb1aba0-a96d-4360-b6d6-f5edc89c9ffa\"\n    }\n}",
+        "title": "查询绑定关系"
+      }
+    ],
+    "DescribeTWeTalkAgentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeTalkAgentList\n<公共请求参数>\n\n{\n    \"ProductId\": \"4L5W9F****\",\n    \"DeviceName\": \"pe****\",\n    \"BindingScope\": \"device\",\n    \"AgentId\": \"agent-StCcdh****\",\n    \"InstanceId\": \"ins-31ooyYQ****\",\n    \"Name\": \"智能助理\",\n    \"Offset\": 1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"cbef7859-f897-4fab-8c67-d31295ea85c1\"\n    }\n}",
+        "title": "获取智能体列表"
       }
     ],
     "DescribeTWeTalkProductConfig": [
@@ -1900,6 +1970,14 @@
         "title": "修改智能体"
       }
     ],
+    "ModifyTWeTalkAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"agent-SValZ1qdEm\",\n    \"Name\": \"学弟\",\n    \"Description\": \"暖男\",\n    \"STTConfig\": {\n        \"Type\": \"trtc\",\n        \"TRTC\": {\n            \"Language\": \"en\",\n            \"VADSilenceTime\": 300,\n            \"VADLevel\": 3\n        }\n    },\n    \"LLMConfig\": {\n        \"Type\": \"default\",\n        \"SystemPrompt\": \"你是一个暖男，照顾用户情绪\",\n        \"Temperature\": 1,\n        \"History\": 20\n    },\n    \"TTSConfig\": {\n        \"Type\": \"flow\",\n        \"Flow\": {\n            \"VoiceId\": \"v-male-P6q7LzD8\",\n            \"Speed\": 1\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"357c4fb4-6ddb-462d-aed4-4e78a34b1ac8\"\n    }\n}",
+        "title": "修改智能体"
+      }
+    ],
     "ModifyTWeTalkProductConfig": [
       {
         "document": "",
@@ -2054,6 +2132,22 @@
         "title": "恢复设备"
       }
     ],
+    "RevokeBindUserDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeBindUserDevice\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev3\",\n    \"OpenID\": \"nandy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8623e21-1d07-41e5-badf-5a279e1bc45b\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "RevokeShareDeviceFromUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeShareDeviceFromUser\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev3\",\n    \"OwnerOpenID\": \"nandy\",\n    \"ToOpenID\": \"zz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6f8c163-92a4-41bc-9ffa-c81895808e73\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "SearchPositionSpace": [
       {
         "document": "",
@@ -2076,6 +2170,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rules\": [\n            {\n                \"RuleName\": \"test_create\",\n                \"Description\": \"规则信息\",\n                \"CreatedAt\": 1599017883,\n                \"RuleDisabled\": true\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
         "title": "搜索规则"
+      }
+    ],
+    "ShareDeviceToUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ShareDeviceToUser\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev3\",\n    \"OwnerOpenID\": \"nandy\",\n    \"ToOpenID\": \"zz\",\n    \"ToNickName\": \"zz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OwnerUserID\": \"195155279497658759\",\n        \"ToUserID\": \"195350446737457359\",\n        \"RequestId\": \"83640ed8-a3a2-44d0-a036-8913d99a3eab\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "TerminateTWeSeeSubscription": [
@@ -2124,6 +2226,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-0vVbAeOMxU\",\n    \"ProductId\": \"Q7MZK2V1QR\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b0b81f76-9050-4654-94f7-c215915dc7ac\"\n    }\n}",
         "title": "解绑智能体示例"
+      }
+    ],
+    "UnbindTWeTalkAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindTWeTalkAgent\n<公共请求参数>\n\n{\n    \"ProductId\": \"NAFNWY1KYD\",\n    \"AgentId\": \"agent-SValZ1****\",\n    \"DeviceName\": \"test001\",\n    \"BindingScope\": \"device\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ff6539-971d-4aad-a5d9-fe3ad9aaa9ff\"\n    }\n}",
+        "title": "解绑智能体"
       }
     ],
     "UpdateDeviceTWeCallAuthorizeStatus": [

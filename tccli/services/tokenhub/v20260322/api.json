@@ -15,14 +15,14 @@
       "status": "online"
     },
     "CreateGlossary": {
-      "document": "创建术语库。\n\n在当前应用下创建一个新的翻译术语库，用于自定义源语言到目标语言的术语映射。创建成功后返回术语库 ID，可通过该 ID 进一步管理术语条目。",
+      "document": "创建术语库。(单个用户默认最多可以创建50个术语库，支持加白)\n\n在当前应用下创建一个新的翻译术语库，用于自定义源语言到目标语言的术语映射。创建成功后返回术语库 ID，可通过该 ID 进一步管理术语条目。",
       "input": "CreateGlossaryRequest",
       "name": "创建术语库",
       "output": "CreateGlossaryResponse",
       "status": "online"
     },
     "CreateGlossaryEntries": {
-      "document": "批量创建术语条目。\n\n在指定术语库下批量创建术语条目。单次最多创建 100 条。",
+      "document": "批量创建术语条目。\n\n在指定术语库下批量创建术语条目。单次最多创建 100 条。\n单个术语库默认最多总共可以创建10000个术语对",
       "input": "CreateGlossaryEntriesRequest",
       "name": "批量创建术语条目",
       "output": "CreateGlossaryEntriesResponse",
@@ -36,9 +36,9 @@
       "status": "online"
     },
     "CreateTokenPlanTeamOrderAndBuy": {
-      "document": "购买套餐。\n\n发起 TokenPlan 套餐下单并完成支付，成功后返回大订单 ID 及关联的子订单、资源信息。",
+      "document": "购买套餐（重新开通过期的套餐续费也通过该接口实现，需要额外传已过期套餐teamId。注：续费成功后套餐包总周期数（TotalCycles）会包含历史周期数，实际套餐包生效周期以生效时间（StartTime）和到期时间（ExpireTime）为准）。\n\n发起 TokenPlan 套餐下单并完成支付，成功后返回大订单 ID 及关联的子订单、资源信息。",
       "input": "CreateTokenPlanTeamOrderAndBuyRequest",
-      "name": "创建 Token Plan 套餐",
+      "name": "创建或重新开通 Token Plan 套餐",
       "output": "CreateTokenPlanTeamOrderAndBuyResponse",
       "status": "online"
     },
@@ -963,7 +963,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。",
+          "document": "<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ProductType",
@@ -972,7 +972,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符",
+          "document": "<p>套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符</p>",
           "example": "my-token-plan",
           "member": "string",
           "name": "TeamName",
@@ -981,7 +981,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长。单位：月。必须大于 0。",
+          "document": "<p>购买时长。单位：月。必须大于 0，支持1个月～12个月。</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -990,7 +990,7 @@
         },
         {
           "disabled": false,
-          "document": "购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。",
+          "document": "<p>购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。</p>",
           "example": "1000000",
           "member": "int64",
           "name": "CreditOrToken",
@@ -999,12 +999,21 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动续费。默认不开启。",
+          "document": "<p>是否开启自动续费。默认不开启。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableAutoRenew",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>已有套餐 ID（非空时走过期续费，空时走新购）</p>",
+          "example": "tp-ent-xxxxxx",
+          "member": "string",
+          "name": "TeamId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1014,7 +1023,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云订单 ID。用于关联一次购买操作下的所有子订单。",
+          "document": "<p>腾讯云订单 ID。用于关联一次购买操作下的所有子订单。</p>",
           "example": "20260101000000000000001",
           "member": "string",
           "name": "BigOrderId",
