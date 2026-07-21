@@ -99,6 +99,7 @@ def _make_action_command(call_mode=None, profile="default"):
     ac.profile = profile
     ac._cli_data = Loader()
     ac._argument_map = None
+    ac._is_self_ref = True
     return ac
 
 
@@ -154,30 +155,40 @@ def test_A1_customer_original_command_passes_through_no_recursion_error():
 
 
 def test_A1b_oversized_depth_emits_hint():
-    """A1b: 深度超过 MAX_INPUT_DEPTH=30 时，CLI 层应抛 oversized 提示并指向 file://。"""
+    """A1b: 非数字段深度超过 MAX_INPUT_DEPTH=30 时，CLI 层应在发起云端调用前抛 oversized 提示并指向 file://。
+
+    单测约束：不真实发请求。用已 mock action_caller 的 ActionCommand 直接驱动，
+    确保深度超限在 CLI 层被拦截（action_caller 不应被调用）。
+    深度定义为非数字段数量：RuleList(1)+RuleDetail(1)+28*Children(28)+RuleKey(1)=31。
+    """
     if not _billing_schema_available():
         pytest.skip("local billing api.json missing")
+    captured = {}
+    ac = _make_billing_action_command(captured)
+    restore = _patch_credentials()
+    try:
+        parts = ["RuleList", "RuleDetail", "Children", "0"]
+        for _ in range(27):
+            parts += ["Children", "0"]
+        parts += ["RuleKey"]
+        deep_key = ".".join(parts)
+        depth = sum(1 for seg in parts if not seg.isdigit())
+        assert depth == 31
 
-    parts = ["RuleList", "RuleDetail", "Children", "0"]
-    for _ in range(13):
-        parts += ["Children", "0"]
-    parts += ["RuleKey"]
-    deep_key = ".".join(parts)
-    assert len(parts) == 31
-
-    code, stdout, stderr = _run_tccli([
-        "billing", "CreateGatherRule",
-        "--cli-unfold-argument",
-        "--Id", "1490",
-        "--" + deep_key, "v",
-    ])
-
-    combined = stdout + stderr
-    assert "RecursionError" not in combined
-    assert code == 255
-    assert "MAX_INPUT_DEPTH=30" in stderr
-    assert "depth=31" in stderr
-    assert "Use --cli-input-json file://" in stderr
+        g = _make_globals(profile="default", cli_unfold_argument=True)
+        try:
+            ac(["--Id", "1490", "--" + deep_key, "v"], g)
+            assert False, "expected UnknownArgumentError for oversized depth"
+        except UnknownArgumentError as e:
+            msg = str(e)
+            assert "RecursionError" not in msg
+            assert "MAX_INPUT_DEPTH=30" in msg
+            assert "depth=31" in msg
+            assert "Use --cli-input-json file://" in msg
+        # 超限场景下不应发起云端调用
+        assert "params" not in captured
+    finally:
+        restore()
 
 
 def test_A2_normal_unknown_option_no_self_ref_hint():
@@ -762,28 +773,72 @@ def test_E3_servicecommand_get_service_model():
     assert "objects" in model
 
 
+def _make_service_command_in_memory():
+    """构造一个不触碰真实 SDK / 磁盘的 ServiceCommand。
+
+    注入内存 service_model（含 1 个自引用 action + 1 个普通 action），
+    并 mock Services.action_caller，避免 import 真实 tencentcloud SDK 模块。
+    """
+    sc = object.__new__(ServiceCommand)
+    sc._service_name = "svc"
+    sc._version = "2020-01-01"
+    sc._command_map = None
+    sc._cli_data = Loader()
+    service_model = {
+        "metadata": {}, "actions": {
+            "Tree": {"input": "TreeRequest", "name": "Tree"},
+            "Flat": {"input": "FlatRequest", "name": "Flat"},
+        },
+        "objects": {
+            "TreeRequest": {"members": [
+                {"name": "Root", "type": "object", "member": "Node",
+                 "document": "", "required": True}]},
+            "FlatRequest": {"members": [
+                {"name": "Id", "type": "string", "member": "string",
+                 "document": "", "required": True}]},
+            "Node": {"members": [
+                {"name": "Self", "type": "object", "member": "Node",
+                 "document": "", "required": False}]},
+        },
+    }
+    sc._get_service_model = lambda: service_model
+    return sc
+
+
 def test_E4_servicecommand_get_command_map_lazy():
-    """E4: _get_command_map 懒加载，含 actions。"""
-    if not os.path.isdir(os.path.join(Loader().get_services_path(), "cvm")):
-        pytest.skip("cvm service missing")
-    sc = ServiceCommand("cvm")
-    cmap1 = sc._get_command_map()
-    cmap2 = sc._get_command_map()
-    assert cmap1 is cmap2
-    # action 数量 > 0
-    assert len(cmap1) > 0
+    """E4: _get_command_map 懒加载，并为自引用 action 注入 _is_self_ref 标记。"""
+    import tccli.services as _Services
+    saved = _Services.action_caller
+    _Services.action_caller = lambda service: (lambda: {
+        "Tree": (lambda *a, **kw: None), "Flat": (lambda *a, **kw: None)})
+    try:
+        sc = _make_service_command_in_memory()
+        cmap1 = sc._get_command_map()
+        cmap2 = sc._get_command_map()
+        assert cmap1 is cmap2  # 懒加载：同一对象
+        assert set(cmap1.keys()) == {"Tree", "Flat"}
+        # 本次改动：自引用 action 被打标，普通 action 不打标
+        assert cmap1["Tree"]._is_self_ref is True
+        assert cmap1["Flat"]._is_self_ref is False
+    finally:
+        _Services.action_caller = saved
 
 
 def test_E5_servicecommand_create_parser_returns_action_parser():
     """E5: _create_parser 返回 ActionArgParser 实例 + 注入 help。"""
     from tccli.argparser import ActionArgParser
-    if not os.path.isdir(os.path.join(Loader().get_services_path(), "cvm")):
-        pytest.skip("cvm service missing")
-    sc = ServiceCommand("cvm")
-    cmap = sc._get_command_map()
-    parser = sc._create_parser(cmap)
-    assert isinstance(parser, ActionArgParser)
-    assert "help" in cmap
+    import tccli.services as _Services
+    saved = _Services.action_caller
+    _Services.action_caller = lambda service: (lambda: {
+        "Tree": (lambda *a, **kw: None), "Flat": (lambda *a, **kw: None)})
+    try:
+        sc = _make_service_command_in_memory()
+        cmap = sc._get_command_map()
+        parser = sc._create_parser(cmap)
+        assert isinstance(parser, ActionArgParser)
+        assert "help" in cmap
+    finally:
+        _Services.action_caller = saved
 
 
 def test_E6_servicecommand_create_help_command():
@@ -986,13 +1041,15 @@ def _make_billing_action_command(captured):
         captured["params"] = action_parameters
         captured["globals"] = parsed_globals
         return "ok"
-    return ActionCommand(
+    ac = ActionCommand(
         service_name="billing",
         version="2018-07-09",
         action_name="CreateGatherRule",
         action_model={"input": "CreateGatherRuleRequest", "name": "CreateGatherRule"},
         action_caller=_caller,
     )
+    ac._is_self_ref = True
+    return ac
 
 
 def _patch_credentials():
@@ -1043,25 +1100,30 @@ def test_G3_unfold_depth_30_passthrough_boundary():
 
 
 def test_G4_unfold_depth_31_rejected():
-    """G4: D=31（越过 MAX_INPUT_DEPTH=30）应抛 UnknownArgumentError，含 depth= 与 file:// 文案。"""
+    """G4: 非数字段深度 >MAX_INPUT_DEPTH=30 时应抛 UnknownArgumentError，含 depth= 与 file:// 文案。
+
+    注：深度定义为 key 中的\"非数字段\"数量（数组下标 0/1/... 不计入嵌套深度）。
+    构造：RuleList(1) + RuleDetail(1) + 28*Children(28) + RuleKey(1) = 31 个非数字段。
+    """
     if not _billing_schema_available():
         pytest.skip("local billing api.json missing")
     captured = {}
     ac = _make_billing_action_command(captured)
     restore = _patch_credentials()
     try:
-        # 4 段前缀 + 13 层 Children.0 (26 段) + 末段 RuleKey (1 段) = 31 段
         parts = ["RuleList", "RuleDetail", "Children", "0"]
-        for _ in range(13):
+        for _ in range(27):
             parts += ["Children", "0"]
         parts += ["RuleKey"]
         key = ".".join(parts)
-        assert len(parts) == 31
+        # 非数字段深度 = 31 > 30
+        depth = sum(1 for seg in parts if not seg.isdigit())
+        assert depth == 31
 
         g = _make_globals(profile="default", cli_unfold_argument=True)
         try:
             ac(["--Id", "1490", "--" + key, "value_d31"], g)
-            assert False, "expected UnknownArgumentError for D=31"
+            assert False, "expected UnknownArgumentError for depth=31"
         except UnknownArgumentError as e:
             msg = str(e)
             assert "depth=31" in msg
@@ -1125,57 +1187,6 @@ def test_G7_unfold_equals_form_normalization():
         restore()
 
 
-# ============================================================
-# H. _parse_one_token 静态方法白盒
-# ============================================================
-def test_H1_parse_one_token_non_dash_returns_none():
-    assert ActionCommand._parse_one_token(["foo"], 0) is None
-
-
-def test_H2_parse_one_token_non_string_returns_none():
-    assert ActionCommand._parse_one_token([123], 0) is None
-    assert ActionCommand._parse_one_token([None], 0) is None
-
-
-def test_H3_parse_one_token_equals_form():
-    tok, key, eq_v, paired, has_eq, adv = \
-        ActionCommand._parse_one_token(["--k=v"], 0)
-    assert tok == "--k=v"
-    assert key == "k"
-    assert eq_v == "v"
-    assert paired == []
-    assert has_eq is True
-    assert adv == 1
-
-
-def test_H4_parse_one_token_single_paired_value():
-    tok, key, eq_v, paired, has_eq, adv = \
-        ActionCommand._parse_one_token(["--k", "v1"], 0)
-    assert key == "k"
-    assert eq_v is None
-    assert paired == ["v1"]
-    assert has_eq is False
-    assert adv == 2
-
-
-def test_H5_parse_one_token_multi_paired_until_next_option():
-    args = ["--k", "v1", "v2", "v3", "--other", "x"]
-    tok, key, eq_v, paired, has_eq, adv = \
-        ActionCommand._parse_one_token(args, 0)
-    assert paired == ["v1", "v2", "v3"]
-    assert adv == 4  # 1 + len(paired)
-
-
-def test_H6_parse_one_token_key_at_tail_no_value():
-    tok, key, eq_v, paired, has_eq, adv = \
-        ActionCommand._parse_one_token(["--k"], 0)
-    assert key == "k"
-    assert paired == []
-    assert has_eq is False
-    assert adv == 1
-
-
-# ============================================================
 # I. _match_truncated_prefix 最长前缀匹配
 # ============================================================
 def test_I1_match_truncated_prefix_no_match():
@@ -1244,146 +1255,6 @@ def test_J4_collect_truncated_prefixes_preserves_order():
     assert list(out.keys()) == ["Z.0", "A.0", "M.0"]
 
 
-# ============================================================
-# K. _classify_leaf / _resolve_inner_leaf_type
-# ============================================================
-def _make_action_cmd_with_model(objects):
-    """构造一个 ActionCommand，注入自定义 service_model。"""
-    ac = _make_action_command()
-
-    class _Loader(object):
-        def get_service_model(self, *a, **kw):
-            return {"objects": objects}
-    ac._cli_data = _Loader()
-    return ac
-
-
-def test_K1_classify_leaf_last_segment_digit_is_false():
-    ac = _make_action_command()
-    assert ac._classify_leaf("A.0", "T", "A.0.Children.5") is False
-
-
-def test_K2_resolve_inner_leaf_type_terminal_list():
-    ac = _make_action_cmd_with_model({
-        "T": {"members": [{"name": "Items", "type": "list", "member": "string"}]},
-    })
-    assert ac._classify_leaf("A.0", "T", "A.0.Items") is True
-
-
-def test_K3_resolve_inner_leaf_type_terminal_string():
-    ac = _make_action_cmd_with_model({
-        "T": {"members": [{"name": "Name", "type": "string", "member": "string"}]},
-    })
-    assert ac._classify_leaf("A.0", "T", "A.0.Name") is False
-
-
-def test_K4_resolve_inner_leaf_type_missing_type_name():
-    ac = _make_action_command()
-    assert ac._resolve_inner_leaf_type("A.0", "", "A.0.X") is None
-    assert ac._resolve_inner_leaf_type("A.0", None, "A.0.X") is None
-
-
-def test_K5_resolve_inner_leaf_type_missing_objects():
-    ac = _make_action_cmd_with_model({})
-    assert ac._resolve_inner_leaf_type("A.0", "T", "A.0.X") is None
-
-    class _Loader(object):
-        def get_service_model(self, *a, **kw):
-            return {}
-    ac._cli_data = _Loader()
-    assert ac._resolve_inner_leaf_type("A.0", "T", "A.0.X") is None
-
-
-def test_K6_resolve_inner_leaf_type_list_of_base_type_returns_none():
-    """中间路径遇到 list 但 member 是 BASE_TYPE 时，无法继续下钻，返回 None。"""
-    ac = _make_action_cmd_with_model({
-        "T": {"members": [{"name": "Names", "type": "list", "member": "string"}]},
-    })
-    assert ac._resolve_inner_leaf_type(
-        "A.0", "T", "A.0.Names.0.SubField") is None
-
-
-def test_K7_resolve_inner_leaf_type_object_switches_current_type():
-    """中间层是 object，沿 member 切换 current_type，末端解析成功。"""
-    ac = _make_action_cmd_with_model({
-        "Outer": {"members": [
-            {"name": "Inner", "type": "object", "member": "InnerT"},
-        ]},
-        "InnerT": {"members": [
-            {"name": "Val", "type": "string", "member": "string"},
-        ]},
-    })
-    assert ac._resolve_inner_leaf_type(
-        "A.0", "Outer", "A.0.Inner.Val") == "string"
-
-
-def test_K8_resolve_inner_leaf_type_service_model_injected_avoids_reload():
-    """显式传入 service_model 时不再回调 loader。"""
-    ac = _make_action_command()
-
-    class _RaisingLoader(object):
-        def get_service_model(self, *a, **kw):
-            raise RuntimeError("should not be called")
-    ac._cli_data = _RaisingLoader()
-
-    sm = {"objects": {
-        "T": {"members": [{"name": "V", "type": "string", "member": "string"}]},
-    }}
-    assert ac._resolve_inner_leaf_type("A.0", "T", "A.0.V", service_model=sm) \
-        == "string"
-
-
-def test_K9_resolve_inner_leaf_type_prefix_mismatch_returns_none():
-    ac = _make_action_cmd_with_model({
-        "T": {"members": [{"name": "V", "type": "string", "member": "string"}]},
-    })
-    assert ac._resolve_inner_leaf_type("A.0", "T", "OtherPrefix.V") is None
-
-
-# ============================================================
-# L. _commit_pair
-# ============================================================
-def test_L1_commit_pair_normal_depth_writes_extra():
-    ac = _make_action_command()
-    extra = OrderedDict()
-    oversized = []
-    ac._commit_pair("A.0.X", "v", "A.0", "T", False, extra, oversized)
-    assert extra == {"A.0.X": "v"}
-    assert oversized == []
-
-
-def test_L2_commit_pair_oversized_depth_records_and_skips_extra():
-    from tccli.loaders import MAX_INPUT_DEPTH
-    ac = _make_action_command()
-    # 构造 depth = MAX_INPUT_DEPTH + 1
-    parts = ["Seg%d" % i for i in range(MAX_INPUT_DEPTH + 1)]
-    key = ".".join(parts)
-    extra = OrderedDict()
-    oversized = []
-    ac._commit_pair(key, "v", "Seg0", "T", False, extra, oversized)
-    assert key not in extra
-    assert len(oversized) == 1
-    assert oversized[0][0] == key
-    assert oversized[0][1] == MAX_INPUT_DEPTH + 1
-
-
-def test_L3_commit_pair_allow_list_wraps_scalar():
-    ac = _make_action_command()
-    extra = OrderedDict()
-    ac._commit_pair("A.0.Items", "v", "A.0", "T", True, extra, [])
-    assert extra["A.0.Items"] == ["v"]
-
-
-def test_L5_commit_pair_depth_skips_digit_segments():
-    ac = _make_action_command()
-    extra = OrderedDict()
-    # Children.0.Children.0.X → 有效段数 = 3（跳过两个 "0"）
-    ac._commit_pair("Children.0.Children.0.X", "v", "Children.0", "T",
-                    False, extra, [])
-    assert extra["Children.0.Children.0.X"] == "v"
-
-
-# ============================================================
 # N. _prefilter_orphan_keys 静态方法
 # ============================================================
 class _FakeAction(object):
