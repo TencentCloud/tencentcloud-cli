@@ -348,24 +348,21 @@ class Loader(object):
     def _get_param_info(self, param_model, object_model):
         param_info = {}
         for para in param_model:
-            member = para["member"]
             if para["type"] == "list":
-                if member not in BASE_TYPE:
+                if para["member"] not in BASE_TYPE:
                     self._filling_param_info(
                         param_info, para, "list",
-                        [self._get_param_info(
-                            object_model[member]["members"], object_model)])
+                        [self._get_param_info(object_model[para["member"]]["members"], object_model)])
                 else:
                     self._filling_param_info(
-                        param_info, para, "list", [member])
+                        param_info, para, "list", [para["member"]])
             else:
-                if member not in BASE_TYPE:
+                if para["member"] not in BASE_TYPE:
                     param_info = self._filling_param_info(
-                        param_info, para, member,
-                        self._get_param_info(
-                            object_model[member]["members"], object_model))
+                        param_info, para, para["member"],
+                        self._get_param_info(object_model[para["member"]]["members"], object_model))
                 else:
-                    self._filling_param_info(param_info, para, member, member)
+                    self._filling_param_info(param_info, para, para["member"], para["member"])
         return param_info
 
     def _get_param_info_safe(self, param_model, object_model, visited=None):
@@ -429,19 +426,18 @@ class Loader(object):
     def _generate_param_skeleton(self, param_model, name):
         param_skeleton = {}
         for para in param_model:
-            member = para["member"]
             if para["type"] == "list":
-                if member not in BASE_TYPE:
+                if para["member"] not in BASE_TYPE:
                     param_skeleton[para["name"]] = \
-                        [self._generate_param_skeleton(name[member]["members"], name)]
+                        [self._generate_param_skeleton(name[para["member"]]["members"], name)]
                 else:
-                    param_skeleton[para["name"]] = [PARAM_TYPE_MAP[member]]
+                    param_skeleton[para["name"]] = [PARAM_TYPE_MAP[para["member"]]]
             else:
-                if member not in BASE_TYPE:
+                if para["member"] not in BASE_TYPE:
                     param_skeleton[para["name"]] = \
-                        self._generate_param_skeleton(name[member]["members"], name)
+                        self._generate_param_skeleton(name[para["member"]]["members"], name)
                 else:
-                    param_skeleton[para["name"]] = PARAM_TYPE_MAP[member]
+                    param_skeleton[para["name"]] = PARAM_TYPE_MAP[para["member"]]
         return param_skeleton
 
     def _generate_param_skeleton_safe(self, param_model, name, visited=None):
@@ -601,11 +597,11 @@ class Loader(object):
 
             for idx, item in enumerate(tmp_param[1:]):
                 if res["type"] == "Array":
-                    res = res["members"][0]
+                    res = res["members"][0][item]
                 else:
-                    res = res["members"]
-                res = res[item]
+                    res = res["members"][item]
 
+                # ?? seriously ??
                 if required == "Required" and res["required"] == "Optional":
                     required = "Optional"
 
