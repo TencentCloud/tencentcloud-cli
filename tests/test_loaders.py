@@ -777,25 +777,33 @@ def test_K3_get_service_all_version_actions_missing_raises():
 
 
 def test_K4_get_service_all_action_param_default_model():
-    """K4: 未指定 model 走 get_param_info 路径（覆盖 L289-L307 主分支）。"""
+    """K4: 未指定 model 时走 get_param_info 分支。
+
+    单测约束：不依赖真实 cvm 服务数据，用内存注入的版本-动作映射驱动，
+    仅验证 dispatch 走 get_param_info（默认分支）。
+    """
     ld = Loader()
-    services_path = ld.get_services_path()
-    if not os.path.isdir(os.path.join(services_path, "cvm")):
-        pytest.skip("local cvm missing")
-    res = ld.get_service_all_action_param("cvm")
+    ld.get_service_all_version_actions = lambda service: {"v": {"Foo"}}
+    ld.get_param_info = lambda s, v, a: {"Id": {}, "Name": {}}
+    ld.get_unfold_param_info = lambda *a, **kw: (_ for _ in ()).throw(
+        AssertionError("默认 model 不应走 get_unfold_param_info"))
+    res = ld.get_service_all_action_param("svc")
     assert isinstance(res, dict)
-    # 至少一个 action 有参数清单
-    assert any(len(v) >= 0 for v in res.values())
+    assert "Foo" in res
+    assert set(res["Foo"]) == {"Id", "Name"}
 
 
 def test_K5_get_service_all_action_param_unfold_model():
-    """K5: model='cli-unfold-argument' 走 get_unfold_param_info 路径。"""
+    """K5: model='cli-unfold-argument' 时走 get_unfold_param_info 分支。"""
     ld = Loader()
-    services_path = ld.get_services_path()
-    if not os.path.isdir(os.path.join(services_path, "cvm")):
-        pytest.skip("local cvm missing")
-    res = ld.get_service_all_action_param("cvm", model="cli-unfold-argument")
+    ld.get_service_all_version_actions = lambda service: {"v": {"Foo"}}
+    ld.get_unfold_param_info = lambda s, v, a: {"Id": {}, "Tags.0": {}}
+    ld.get_param_info = lambda *a, **kw: (_ for _ in ()).throw(
+        AssertionError("unfold model 不应走 get_param_info"))
+    res = ld.get_service_all_action_param("svc", model="cli-unfold-argument")
     assert isinstance(res, dict)
+    assert "Foo" in res
+    assert set(res["Foo"]) == {"Id", "Tags.0"}
 
 
 # ============================================================
@@ -1109,6 +1117,59 @@ def test_O3_get_param_info_value_allowed_null_branch():
     objects["XRequest"]["members"][0]["value_allowed_null"] = False
     info2 = ld.get_param_info("svc", "v", "X")
     assert info2["F"].get("value_allowed_null") == "NotAllowedNull"
+
+
+# ============================================================
+# P. 隔离契约：Request / Response 环结构不同的边界
+# ============================================================
+def test_P1_output_response_only_cycle_no_recursion():
+    """P1: Request 无环、Response 有环时，get_output_param_info 走 safe 路径不崩栈。"""
+    objects = {
+        "TreeRequest": {"members": [
+            {"name": "A", "type": "string", "member": "string",
+             "document": "", "required": True}
+        ]},
+        "TreeResponse": {"members": [
+            {"name": "Root", "type": "object", "member": "Node",
+             "document": "", "required": True}
+        ]},
+        "Node": {"members": [
+            {"name": "Self", "type": "object", "member": "Node",
+             "document": "", "required": False},  # ← 仅 Response 侧自引用
+        ]},
+    }
+    actions = {"Tree": {"input": "TreeRequest", "output": "TreeResponse",
+                        "name": "Tree"}}
+    ld = _make_loader(_model(actions, objects))
+    # 不应 RecursionError；Self 应被截断为字符串占位
+    out = ld.get_output_param_info("svc", "v", "Tree")
+    assert isinstance(out["Root"]["members"], dict)
+    assert out["Root"]["members"]["Self"]["members"] == "Node"
+
+
+def test_P2_input_side_unaffected_by_response_cycle():
+    """P2: 仅 Response 有环时，输入侧（get_param_info）仍走原始路径，输出与常规一致。"""
+    objects = {
+        "TreeRequest": {"members": [
+            {"name": "A", "type": "string", "member": "string",
+             "document": "", "required": True}
+        ]},
+        "TreeResponse": {"members": [
+            {"name": "Root", "type": "object", "member": "Node",
+             "document": "", "required": True}
+        ]},
+        "Node": {"members": [
+            {"name": "Self", "type": "object", "member": "Node",
+             "document": "", "required": False},
+        ]},
+    }
+    actions = {"Tree": {"input": "TreeRequest", "output": "TreeResponse",
+                        "name": "Tree"}}
+    ld = _make_loader(_model(actions, objects))
+    info = ld.get_param_info("svc", "v", "Tree")
+    # Request 侧只有基础类型字段 A，且 members 为原始字符串（非截断占位）
+    assert info["A"]["members"] == "string"
+    assert set(info.keys()) == {"A"}
 
 
 # ============================================================

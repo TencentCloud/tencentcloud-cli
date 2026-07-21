@@ -10,6 +10,7 @@ from tccli import __version__
 from tccli.services import SERVICE_VERSIONS
 from collections import OrderedDict
 import tccli.plugin as plugin
+from tccli.self_ref import is_action_self_referencing
 
 BASE_TYPE = ["int64", "uint64", "string", "float", "bool", "date", "datetime", "datetime_iso", "binary"]
 CLI_BASE_TYPE = ["Integer", "String", "Float", "Timestamp", "Boolean", "Binary"]
@@ -344,7 +345,31 @@ class Loader(object):
         param_info[para["name"]]["members"] = member
         return param_info
 
-    def _get_param_info(self, param_model, object_model, visited=None):
+    def _get_param_info(self, param_model, object_model):
+        param_info = {}
+        for para in param_model:
+            member = para["member"]
+            if para["type"] == "list":
+                if member not in BASE_TYPE:
+                    self._filling_param_info(
+                        param_info, para, "list",
+                        [self._get_param_info(
+                            object_model[member]["members"], object_model)])
+                else:
+                    self._filling_param_info(
+                        param_info, para, "list", [member])
+            else:
+                if member not in BASE_TYPE:
+                    param_info = self._filling_param_info(
+                        param_info, para, member,
+                        self._get_param_info(
+                            object_model[member]["members"], object_model))
+                else:
+                    self._filling_param_info(param_info, para, member, member)
+        return param_info
+
+    def _get_param_info_safe(self, param_model, object_model, visited=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
         # visited 沿当前 DFS 路径记录已展开的复合类型名，命中即截断
         if visited is None:
             visited = frozenset()
@@ -360,7 +385,7 @@ class Loader(object):
                     else:
                         self._filling_param_info(
                             param_info, para, "list",
-                            [self._get_param_info(
+                            [self._get_param_info_safe(
                                 object_model[member]["members"], object_model,
                                 visited | {member})])
                 else:
@@ -374,7 +399,7 @@ class Loader(object):
                     else:
                         param_info = self._filling_param_info(
                             param_info, para, member,
-                            self._get_param_info(
+                            self._get_param_info_safe(
                                 object_model[member]["members"], object_model,
                                 visited | {member}))
                 else:
@@ -384,14 +409,43 @@ class Loader(object):
     def get_param_info(self, service, version, action):
         service_model = self.get_service_model(service, version)
         param_model = service_model["objects"]
-        return self._get_param_info(param_model[action + "Request"]["members"], param_model)
+        if is_action_self_referencing(service, version, action, service_model):
+            return self._get_param_info_safe(
+                param_model[action + "Request"]["members"], param_model)
+        return self._get_param_info(
+            param_model[action + "Request"]["members"], param_model)
 
     def get_output_param_info(self, service, version, action):
         service_model = self.get_service_model(service, version)
         param_model = service_model["objects"]
-        return self._get_param_info(param_model[action + "Response"]["members"], param_model)
+        # 输出侧走 Response 类型图，其环结构可能与 Request 不同，必须独立判定
+        if is_action_self_referencing(service, version, action, service_model,
+                                      root_suffix="Response"):
+            return self._get_param_info_safe(
+                param_model[action + "Response"]["members"], param_model)
+        return self._get_param_info(
+            param_model[action + "Response"]["members"], param_model)
 
-    def _generate_param_skeleton(self, param_model, name, visited=None):
+    def _generate_param_skeleton(self, param_model, name):
+        param_skeleton = {}
+        for para in param_model:
+            member = para["member"]
+            if para["type"] == "list":
+                if member not in BASE_TYPE:
+                    param_skeleton[para["name"]] = \
+                        [self._generate_param_skeleton(name[member]["members"], name)]
+                else:
+                    param_skeleton[para["name"]] = [PARAM_TYPE_MAP[member]]
+            else:
+                if member not in BASE_TYPE:
+                    param_skeleton[para["name"]] = \
+                        self._generate_param_skeleton(name[member]["members"], name)
+                else:
+                    param_skeleton[para["name"]] = PARAM_TYPE_MAP[member]
+        return param_skeleton
+
+    def _generate_param_skeleton_safe(self, param_model, name, visited=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
         # visited 沿路径记录已展开的复合类型名，命中即以字符串占位表示自引用
         if visited is None:
             visited = frozenset()
@@ -407,7 +461,7 @@ class Loader(object):
                             % (para["name"], member)]
                     else:
                         param_skeleton[para["name"]] = \
-                            [self._generate_param_skeleton(
+                            [self._generate_param_skeleton_safe(
                                 name[member]["members"], name,
                                 visited | {member})]
                 else:
@@ -420,7 +474,7 @@ class Loader(object):
                             % (para["name"], member)
                     else:
                         param_skeleton[para["name"]] = \
-                            self._generate_param_skeleton(
+                            self._generate_param_skeleton_safe(
                                 name[member]["members"], name,
                                 visited | {member})
                 else:
@@ -430,11 +484,26 @@ class Loader(object):
     def generate_param_skeleton(self, service, version, action):
         service_model = self.get_service_model(service, version)
         param_model = service_model["objects"]
-        return self._generate_param_skeleton(param_model[action + "Request"]["members"], param_model)
+        if is_action_self_referencing(service, version, action, service_model):
+            return self._generate_param_skeleton_safe(
+                param_model[action + "Request"]["members"], param_model)
+        return self._generate_param_skeleton(
+            param_model[action + "Request"]["members"], param_model)
 
     def get_unfold_param_info(self, service, version, action, profile="default", param_array=False):
         service_model = self.get_service_model(service, version)
         object_model = service_model["objects"]
+
+        if is_action_self_referencing(service, version, action, service_model):
+            all_param_list = []
+            for para in object_model[action + "Request"]["members"]:
+                param_list = []
+                self._get_unfold_param_info_safe(object_model, all_param_list, param_list, para)
+            if param_array:
+                all_param_list = self._add_array_item(all_param_list, profile)
+            return self._filling_unfold_param_info_safe(
+                all_param_list, service, version, action, object_model)
+
         all_param_list = []
         for para in object_model[action + "Request"]["members"]:
             param_list = []
@@ -443,7 +512,7 @@ class Loader(object):
         if param_array:
             all_param_list = self._add_array_item(all_param_list, profile)
 
-        return self._filling_unfold_param_info(all_param_list, service, version, action, object_model)
+        return self._filling_unfold_param_info(all_param_list, service, version, action)
 
     def _add_array_item(self, param_list, profile):
         is_conf_exist, conf_path = Utils.file_existed(os.path.join(os.path.expanduser("~"), ".tccli"),
@@ -462,14 +531,36 @@ class Loader(object):
                         all_param_list.append(tmp)
         return all_param_list
 
-    def _recur_get_unfold_param_info(self, param_model, object_model, return_param_list, param_list,
-                                     visited=None):
+    def _recur_get_unfold_param_info(self, param_model, object_model, return_param_list, param_list):
         for para in param_model:
-            self._get_unfold_param_info(object_model, return_param_list, param_list, para, visited)
+            self._get_unfold_param_info(object_model, return_param_list, param_list, para)
         if param_list.pop().isdigit():
             param_list.pop()
 
-    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para, visited=None):
+    def _recur_get_unfold_param_info_safe(self, param_model, object_model, return_param_list, param_list,
+                                          visited=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
+        for para in param_model:
+            self._get_unfold_param_info_safe(object_model, return_param_list, param_list, para, visited)
+        if param_list.pop().isdigit():
+            param_list.pop()
+
+    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para):
+        param_list.append(para["name"])
+        if para["type"] == "list" and para["member"] not in BASE_TYPE:
+            param_list.append('0')
+        if para["member"] not in BASE_TYPE:
+            self._recur_get_unfold_param_info(object_model[para["member"]]["members"],
+                                              object_model, return_param_list, param_list)
+        else:
+            tmp = copy.deepcopy(param_list)
+            return_param_list.append(tmp)
+
+            if param_list.pop().isdigit():
+                param_list.pop()
+
+    def _get_unfold_param_info_safe(self, object_model, return_param_list, param_list, para, visited=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
         # visited 沿路径维护，识别自引用类型（如 AllocationRuleExpression.Children）
         if visited is None:
             visited = frozenset()
@@ -484,9 +575,9 @@ class Loader(object):
                 if param_list.pop().isdigit():
                     param_list.pop()
                 return
-            self._recur_get_unfold_param_info(object_model[member]["members"],
-                                              object_model, return_param_list, param_list,
-                                              visited | {member})
+            self._recur_get_unfold_param_info_safe(object_model[member]["members"],
+                                                   object_model, return_param_list, param_list,
+                                                   visited | {member})
         else:
             tmp = copy.deepcopy(param_list)
             return_param_list.append(tmp)
@@ -494,7 +585,49 @@ class Loader(object):
             if param_list.pop().isdigit():
                 param_list.pop()
 
-    def _filling_unfold_param_info(self, param_list, service, version, action, object_model=None):
+    def _filling_unfold_param_info(self, param_list, service, version, action):
+        unfold_param = {}
+        param_info = self.get_param_info(service, version, action)
+        for param in param_list:
+            unfold_param[".".join(param)] = {}
+
+            tmp_param = [item for item in param if not item.isdigit()]
+            res = param_info[tmp_param[0]]
+
+            param_type = res["type"]
+            type_name = res["type_name"]
+            required = res.get("required")
+            document = res["document"]
+
+            for idx, item in enumerate(tmp_param[1:]):
+                if res["type"] == "Array":
+                    res = res["members"][0]
+                else:
+                    res = res["members"]
+                res = res[item]
+
+                if required == "Required" and res["required"] == "Optional":
+                    required = "Optional"
+
+                if idx == len(tmp_param) - 2:
+                    param_type = res["type"]
+                    type_name = res["type_name"] if res["type"] == "Array" \
+                        else res["type_name"]
+                    document = res["document"]
+                    break
+
+            if len([item for item in param if item.isdigit() and int(item) > 0]) > 0:
+                required = "Optional"
+
+            unfold_param[".".join(param)]["type"] = param_type
+            unfold_param[".".join(param)]["type_name"] = type_name
+            unfold_param[".".join(param)]["required"] = required
+            unfold_param[".".join(param)]["document"] = document
+        return unfold_param
+
+    def _filling_unfold_param_info_safe(self, param_list, service, version, action, object_model=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
+        # 相比原始版额外识别被截断的 leaf，打上 recursive_truncated / recursive_type 标记。
         unfold_param = {}
         param_info = self.get_param_info(service, version, action)
         for param in param_list:
@@ -524,7 +657,6 @@ class Loader(object):
                     break
                 res = members_container[item]
 
-                # ?? seriously ??
                 if required == "Required" and res["required"] == "Optional":
                     required = "Optional"
 

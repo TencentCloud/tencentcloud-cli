@@ -11,7 +11,8 @@ from tccli import credentials
 from tccli.utils import Utils
 from tccli.argument import CLIArgument, CustomArgument, ListArgument, BooleanArgument
 from tccli.exceptions import UnknownArgumentError
-from tccli.loaders import Loader, MAX_INPUT_DEPTH, RECURSIVE_HINT_FILE_OPTION, BASE_TYPE
+from tccli.loaders import Loader, MAX_INPUT_DEPTH, RECURSIVE_HINT_FILE_OPTION
+from tccli.self_ref import is_action_self_referencing
 from tccli.argparser import CLIArgParser, ActionArgParser, ArgMapArgParser
 from tccli.help_command import CLIHelpCommand, ServiceHelpCommand, ActionHelpCommand
 from tccli.configure import ConfigureCommand
@@ -181,13 +182,16 @@ class ServiceCommand(BaseCommand):
             action_caller = action_model.get("action_caller", None)
             if not action_caller:
                 action_caller = Services.action_caller(self._service_name)()[action]
-            command_map[action] = ActionCommand(
+            cmd = ActionCommand(
                 service_name=self._service_name,
                 version=self._version,
                 action_name=action,
                 action_model=action_model,
                 action_caller=action_caller,
             )
+            cmd._is_self_ref = is_action_self_referencing(
+                self._service_name, self._version, action, service_model)
+            command_map[action] = cmd
         return command_map
 
     def __call__(self, args, parsed_globals):
@@ -230,6 +234,7 @@ class ActionCommand(BaseCommand):
         self.cli_input_argument = CliInputJSONArgument()
         self.cli_unfold_argument = CliUnfoldArgument()
         self.profile = "default"
+        self._is_self_ref = False
 
     @property
     def argument_map(self):
@@ -265,6 +270,39 @@ class ActionCommand(BaseCommand):
         return argument_map
 
     def __call__(self, args, parsed_globals):
+        if self._is_self_ref:
+            return self._call_with_depth_guard(args, parsed_globals)
+
+        self._call_mode = self._get_call_mode(parsed_globals)
+        self._get_profile(parsed_globals)
+
+        action_parser = self._create_action_parser(self.argument_map)
+        action_parser.add_argument('help', nargs='?')
+
+        parsed_args, remaining = action_parser.parse_known_args(args)
+        if parsed_args.help == 'help':
+            help_command = self.create_help_command()
+            return help_command(remaining, parsed_globals)
+        elif parsed_args.help:
+            remaining.append(parsed_args.help)
+        if remaining:
+            raise UnknownArgumentError(
+                "Unknown options: %s" % ', '.join(remaining))
+
+        if self._call_mode == Options_define.GenerateCliSkeleton:
+            return self.generate_cli_skeleton_argument.generate_skeleton(parsed_globals)
+
+        if self._call_mode == Options_define.CliInputJson:
+            action_parameters = self.cli_input_argument.add_to_call_parameters(parsed_globals)
+        elif self._call_mode == Options_define.CliUnfoldArgument:
+            action_parameters = self.cli_unfold_argument.build_action_parameters(parsed_args)
+        else:
+            action_parameters = self._build_action_parameters(parsed_args, self.argument_map)
+        credentials.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
+        return self._action_caller(action_parameters, vars(parsed_globals))
+
+    def _call_with_depth_guard(self, args, parsed_globals):
+        """Self-ref 接口专用入口：含 orphan key 过滤、深层嵌套提取、深度超限检测。"""
 
         self._call_mode = self._get_call_mode(parsed_globals)
         self._get_profile(parsed_globals)
@@ -287,9 +325,6 @@ class ActionCommand(BaseCommand):
             else:
                 remaining.append(parsed_args.help)
 
-        # 深嵌套延伸识别：仅 --cli-unfold-argument 模式下，把命中截断前缀且
-        # 深度 ≤ MAX_INPUT_DEPTH 的扁平参数收集到 extra_unfold_args，
-        # 深度超限的记入 oversized_tokens 用于报错。
         extra_unfold_args = OrderedDict()
         oversized_tokens = []  # [(key, depth, prefix, type_name)]
         if self._call_mode == Options_define.CliUnfoldArgument and remaining:
@@ -297,7 +332,6 @@ class ActionCommand(BaseCommand):
                 remaining, extra_unfold_args, oversized_tokens)
 
         if remaining or oversized_tokens:
-            # 分别为未知参数与深度超限项生成针对性提示
             hint = self._build_recursive_hint(remaining)
             oversized_hint = self._build_oversized_hint(oversized_tokens)
             error_parts = []
@@ -397,66 +431,6 @@ class ActionCommand(BaseCommand):
                 truncated[name] = info.get("recursive_type") or ""
         return truncated
 
-    def _resolve_inner_leaf_type(self, prefix, type_name, key, service_model=None):
-        """按内层 schema 解析 ``key`` 末端字段的 ``type``。
-
-        :param prefix: 截断 leaf 前缀，如 ``"RuleList.RuleDetail"``。
-        :param type_name: 截断点的自引用类型名，如 ``"AllocationRuleExpression"``。
-        :param key: 完整扁平键，如 ``"RuleList.RuleDetail.Children.0.RuleValue"``。
-        :param service_model: 可选，调用方预取的 service_model，避免重复读盘。
-        :return: 末端字段的 ``type`` 字符串（如 ``"list"``/``"string"``）；解析失败返回 None。
-        """
-        if not type_name:
-            return None
-        if service_model is None:
-            try:
-                service_model = self._cli_data.get_service_model(
-                    self._service_name, self._version)
-            except Exception:
-                return None
-        objects = service_model.get("objects") if service_model else None
-        if not objects:
-            return None
-        if not key.startswith(prefix + "."):
-            return None
-        inner_segments = key[len(prefix) + 1:].split(".")
-        current_type = type_name
-        last_member_type = None
-        idx = 0
-        while idx < len(inner_segments):
-            seg = inner_segments[idx]
-            if seg.isdigit():
-                idx += 1
-                continue
-            type_def = objects.get(current_type)
-            if not type_def:
-                return None
-            members = type_def.get("members")
-            if not isinstance(members, list):
-                return None
-            field = None
-            for m in members:
-                if isinstance(m, dict) and m.get("name") == seg:
-                    field = m
-                    break
-            if not field:
-                return None
-            field_type = field.get("type")
-            field_member = field.get("member")
-            last_member_type = field_type
-            if idx == len(inner_segments) - 1:
-                return field_type
-            if field_type == "list":
-                if field_member in BASE_TYPE:
-                    return None
-                current_type = field_member
-            elif field_type == "object":
-                current_type = field_member
-            else:
-                return None
-            idx += 1
-        return last_member_type
-
     def _extract_deep_nested_args(self, remaining, extra_unfold_args, oversized_tokens):
         """从 ``remaining`` 提取命中自引用截断前缀的扁平参数并按深度分流。
 
@@ -477,90 +451,55 @@ class ActionCommand(BaseCommand):
         if not truncated:
             return remaining
 
-        try:
-            service_model = self._cli_data.get_service_model(
-                self._service_name, self._version)
-        except Exception:
-            service_model = None
-
         new_remaining = []
-        i = 0
-        n = len(remaining)
+        i, n = 0, len(remaining)
         while i < n:
-            parsed = self._parse_one_token(remaining, i)
-            if parsed is None:
-                new_remaining.append(remaining[i])
+            tok = remaining[i]
+            # --- 内联 token 解析：支持 --key=value 和 --key v1 v2 两种形式 ---
+            if not isinstance(tok, str) or not tok.startswith("--"):
+                new_remaining.append(tok)
                 i += 1
                 continue
-            tok, key, eq_value, paired_values, has_eq, advance = parsed
+            if "=" in tok:
+                key, eq_value = tok[2:].split("=", 1)
+                has_eq, paired, advance = True, [], 1
+            else:
+                key = tok[2:]
+                j = i + 1
+                paired = []
+                while j < n and isinstance(remaining[j], str) \
+                        and not remaining[j].startswith("--"):
+                    paired.append(remaining[j])
+                    j += 1
+                has_eq, advance = False, 1 + len(paired)
 
+            # --- 最长前缀匹配 ---
             prefix, type_name = self._match_truncated_prefix(key, truncated)
             if prefix is None:
                 new_remaining.append(tok)
-                new_remaining.extend(paired_values)
+                new_remaining.extend(paired)
                 i += advance
                 continue
 
-            allow_list = self._classify_leaf(prefix, type_name, key, service_model)
-
+            # --- 取值 ---
             if has_eq:
                 value = eq_value
-            elif paired_values:
-                if allow_list:
-                    value = paired_values[0] if len(paired_values) == 1 else list(paired_values)
-                else:
-                    value = paired_values[0]
-                    new_remaining.extend(paired_values[1:])
+            elif paired:
+                value = paired[0] if len(paired) == 1 else paired
             else:
                 new_remaining.append(tok)
                 i += advance
                 continue
 
-            self._commit_pair(key, value, prefix, type_name, allow_list,
-                              extra_unfold_args, oversized_tokens)
+            # --- 深度检查并分流 ---
+            depth = sum(1 for seg in key.split(".") if not seg.isdigit())
+            if depth > MAX_INPUT_DEPTH:
+                oversized_tokens.append((key, depth, prefix, type_name))
+            else:
+                extra_unfold_args[key] = value
             i += advance
 
         return new_remaining
-
-    @staticmethod
-    def _parse_one_token(remaining, i):
-        """从 ``remaining[i]`` 解析一个 ``--k v`` / ``--k=v`` token。
-
-        :return: ``(tok, key, eq_value, paired_values, has_eq, advance)``；非 ``--`` 开头返回 ``None``。
-        """
-        tok = remaining[i]
-        if not isinstance(tok, str) or not tok.startswith("--"):
-            return None
-        if "=" in tok:
-            key, eq_value = tok[2:].split("=", 1)
-            return tok, key, eq_value, [], True, 1
-        key = tok[2:]
-        paired = []
-        j = i + 1
-        n = len(remaining)
-        while j < n and isinstance(remaining[j], str) \
-                and not remaining[j].startswith("--"):
-            paired.append(remaining[j])
-            j += 1
-        return tok, key, None, paired, False, 1 + len(paired)
-
-    def _classify_leaf(self, prefix, type_name, key, service_model=None):
-        """判断 ``key`` 末段是否为 list 类型字段。"""
-        last_seg = key.rsplit(".", 1)[-1] if "." in key else key
-        if last_seg.isdigit():
-            return False
-        return self._resolve_inner_leaf_type(prefix, type_name, key, service_model) == "list"
-
-    def _commit_pair(self, key, value, prefix, type_name, allow_list,
-                     extra_unfold_args, oversized_tokens):
-        """根据深度把 ``(key, value)`` 归入 ``extra_unfold_args`` 或 ``oversized_tokens``。"""
-        depth = sum(1 for seg in key.split(".") if not seg.isdigit())
-        if depth > MAX_INPUT_DEPTH:
-            oversized_tokens.append((key, depth, prefix, type_name))
-            return
-        if allow_list and not isinstance(value, list):
-            value = [value]
-        extra_unfold_args[key] = value
 
     @staticmethod
     def _match_truncated_prefix(key, truncated):
