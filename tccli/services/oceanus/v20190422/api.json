@@ -9633,12 +9633,62 @@
       ],
       "usage": "both"
     },
+    "SqlGatewayEndpoint": {
+      "document": "对外接口访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>rest： rest</li><li>hiveserver2： hiveserver2</li><li>pg： pg</li></ul>",
+          "example": "REST",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址</p>",
+          "example": "172.17.18.159:8083",
+          "member": "string",
+          "name": "Address",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>其他信息</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SqlGatewayItem": {
       "document": "SqlGateway配置信息",
       "members": [
         {
           "disabled": false,
-          "document": "唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sgw-kgv3orqj",
           "member": "string",
           "name": "SerialId",
@@ -9648,7 +9698,7 @@
         },
         {
           "disabled": false,
-          "document": "Flink内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Flink内核版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Flink-1.17",
           "member": "string",
           "name": "FlinkVersion",
@@ -9658,7 +9708,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态，1.停止 2. 开启中 3. 开启 4. 开启失败 5. 停止中</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -9668,7 +9718,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100029236503",
           "member": "string",
           "name": "CreatorUin",
@@ -9678,7 +9728,7 @@
         },
         {
           "disabled": false,
-          "document": "引用资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引用资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GatewayRefItem",
           "name": "ResourceRefs",
@@ -9688,7 +9738,7 @@
         },
         {
           "disabled": false,
-          "document": "Cu规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Cu规格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "float",
           "name": "CuSpec",
@@ -9698,7 +9748,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-11-17 09:11:43",
           "member": "string",
           "name": "CreateTime",
@@ -9708,7 +9758,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-11-17 09:11:43",
           "member": "string",
           "name": "UpdateTime",
@@ -9718,7 +9768,7 @@
         },
         {
           "disabled": false,
-          "document": "配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配置参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Property",
           "name": "Properties",
@@ -9728,7 +9778,7 @@
         },
         {
           "disabled": false,
-          "document": "Cpu",
+          "document": "<p>Cpu</p>",
           "example": "0",
           "member": "float",
           "name": "Cpu",
@@ -9738,7 +9788,7 @@
         },
         {
           "disabled": false,
-          "document": "Mem",
+          "document": "<p>Mem</p>",
           "example": "0",
           "member": "float",
           "name": "Mem",
@@ -9748,13 +9798,43 @@
         },
         {
           "disabled": false,
-          "document": "jdk版本",
+          "document": "<p>jdk版本</p>",
           "example": "8",
           "member": "string",
           "name": "JdkVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>session id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-m68k3d2m-session-flink-1-18",
+          "member": "string",
+          "name": "SessionClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>pg用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin",
+          "member": "string",
+          "name": "PgUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SqlGatewayEndpoint",
+          "name": "Endpoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

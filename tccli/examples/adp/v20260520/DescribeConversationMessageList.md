@@ -1,4 +1,4 @@
-**Example 1: ClawAgent模式会话消息查询**
+**Example 1: 查询会话历史消息记录**
 
 
 
@@ -6,44 +6,60 @@ Input:
 
 ```
 tccli adp DescribeConversationMessageList --cli-unfold-argument  \
-    --ConversationId 4abd149a-e010-4a6c-bc52-1132658f149d \
-    --Type 2 \
-    --AppKey 1 \
-    --RecordId msg_db8387b0-8b9f-49c9-9d05-253c7e9748a6_1 \
-    --RecordQueryDirection 1 \
-    --ShareCode 1 \
-    --UserId 1 \
+    --ConversationId e165174b-7576-47ce-9c71-59188df6b5db \
+    --Type 1 \
     --Limit 50 \
-    --LoginSubAccountUin 700001046587 \
-    --LoginUin 700001046587
+    --RecordId  \
+    --RecordQueryDirection 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FirstRecordId": "req_2f90efac-e51f-4c6e-b1b4-2e1234c1319d",
+        "FirstRecordId": "uAQ_20260715_191619_939_quAEKJCT",
         "HasMoreAfter": false,
         "HasMoreBefore": false,
-        "LastRecordId": "rcd_db8387b0-8b9f-49c9-9d05-253c7e9748a6",
-        "Messages": [
+        "LastRecordId": "oxX_20260715_191643_698_cohcnDRd",
+        "MessageList": [
             {
-                "Contents": [
+                "ContentList": [
                     {
+                        "CustomParamList": [],
                         "CustomParams": [],
+                        "OptionCardList": [],
                         "OptionCards": [],
+                        "QuoteInfoList": [],
                         "QuoteInfos": [],
+                        "ReferenceList": [],
                         "References": [],
+                        "TaskList": [],
                         "Tasks": [],
                         "Text": "你好",
                         "Type": "text"
                     }
                 ],
-                "ConversationId": "4abd149a-e010-4a6c-bc52-1132658f149d",
+                "Contents": [
+                    {
+                        "CustomParamList": [],
+                        "CustomParams": [],
+                        "OptionCardList": [],
+                        "OptionCards": [],
+                        "QuoteInfoList": [],
+                        "QuoteInfos": [],
+                        "ReferenceList": [],
+                        "References": [],
+                        "TaskList": [],
+                        "Tasks": [],
+                        "Text": "你好",
+                        "Type": "text"
+                    }
+                ],
+                "ConversationId": "e165174b-7576-47ce-9c71-59188df6b5db",
                 "Icon": "",
-                "MessageId": "user_2f90efac-e51f-4c6e-b1b4-2e1234c1319d_content",
+                "MessageId": "rpl_uAQ_20260715_191619_939_quAEKJCT",
                 "Name": "question",
-                "RecordId": "req_2f90efac-e51f-4c6e-b1b4-2e1234c1319d",
+                "RecordId": "uAQ_20260715_191619_939_quAEKJCT",
                 "Role": "user",
                 "Status": "success",
                 "StatusDesc": "回复完成",
@@ -51,7 +67,57 @@ Output:
                 "Type": "question"
             }
         ],
-        "RequestId": "59eb048d-7ad3-486b-85e5-e44f38178bba"
+        "Messages": [
+            {
+                "ContentList": [
+                    {
+                        "CustomParamList": [],
+                        "CustomParams": [],
+                        "OptionCardList": [],
+                        "OptionCards": [],
+                        "QuoteInfoList": [],
+                        "QuoteInfos": [],
+                        "ReferenceList": [],
+                        "References": [],
+                        "TaskList": [],
+                        "Tasks": [],
+                        "Text": "你好",
+                        "Type": "text"
+                    }
+                ],
+                "Contents": [
+                    {
+                        "CustomParamList": [],
+                        "CustomParams": [],
+                        "OptionCardList": [],
+                        "OptionCards": [],
+                        "QuoteInfoList": [],
+                        "QuoteInfos": [],
+                        "ReferenceList": [],
+                        "References": [],
+                        "TaskList": [],
+                        "Tasks": [],
+                        "Text": "你好",
+                        "Type": "text"
+                    }
+                ],
+                "ConversationId": "e165174b-7576-47ce-9c71-59188df6b5db",
+                "Icon": "",
+                "MessageId": "rpl_uAQ_20260715_191619_939_quAEKJCT",
+                "Name": "question",
+                "RecordId": "uAQ_20260715_191619_939_quAEKJCT",
+                "Role": "user",
+                "Status": "success",
+                "StatusDesc": "回复完成",
+                "Title": "用户提问",
+                "Type": "question"
+            }
+        ],
+        "ResetInfo": {
+            "ResetThroughRecordId": "oxX_20260715_191643_698_cohcnDRd",
+            "ResetTime": "1784561474000"
+        },
+        "RequestId": "b6fbe0ec-8e8f-4ed4-afd2-7279e732f020"
     }
 }
 ```

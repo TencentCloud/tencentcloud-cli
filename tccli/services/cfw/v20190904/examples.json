@@ -142,16 +142,16 @@
     ],
     "CreateNatFwInstance": [
       {
-        "document": "新增模式示例",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"NAT防火墙\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-a1gfaf13\"\n        ],\n        \"Eips\": [\n            \"1.1.1.1\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CfwInsId\": \"cfwnat-3c140219\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "创建防火墙实例--新增模式"
-      },
-      {
         "document": "创建NAT防火墙实例（Region参数必填）",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"NAT防火墙\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-da1dalx\",\n        \"nat-1dam1sd\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"CfwInsId\": \"cfwnat-12dad1ds\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建NAT防火墙实例（Region参数必填）"
+      },
+      {
+        "document": "新增模式示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"NAT防火墙\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-a1gfaf13\"\n        ],\n        \"Eips\": [\n            \"1.1.1.1\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CfwInsId\": \"cfwnat-3c140219\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建防火墙实例--新增模式"
       }
     ],
     "CreateNatFwInstanceWithDomain": [
@@ -270,6 +270,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcLists\n<公共请求参数>\n\n{\n    \"SearchValue\": \"{\\\"common\\\":\\\"模糊检索\\\"}\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"AllTotal\": 10,\n        \"Data\": [\n            {\n                \"AutoTask\": \"[{\\\"TaskId\\\":9070,\\\"TaskName\\\":\\\"aa\\\",\\\"LastTime\\\":\\\"\\\"}]\",\n                \"City\": 0,\n                \"CloudCode\": \"tencent\",\n                \"Count\": 0,\n                \"Country\": 0,\n                \"Detail\": \"详情\",\n                \"DstType\": 1,\n                \"Id\": 151973,\n                \"InstanceName\": \"andy的cvm\",\n                \"Invalid\": 0,\n                \"IsRegion\": 0,\n                \"LogId\": \"datfaexd\",\n                \"OrderIndex\": 1,\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"TCP\",\n                \"RegName1\": \"广州\",\n                \"RegName2\": \"新加坡\",\n                \"SourceIp\": \"havip-0p99wbtb\",\n                \"SrcType\": 6,\n                \"Status\": 1,\n                \"Strategy\": 2,\n                \"TargetIp\": \"0.0.0.0/0\",\n                \"Uuid\": \"1300448058_0.0.0.0/0_1730259837057017\"\n            }\n        ],\n        \"Enable\": 2,\n        \"RequestId\": \"e60361f4-8033-40ed-ab79-35f92fc50bf1\",\n        \"Total\": 10\n    }\n}",
         "title": "ACl规则列表查询示例"
+      }
+    ],
+    "DescribeAclRegInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAclRegInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Area\": 0,\n                \"EnKey\": \"H\",\n                \"ForBypass\": 1,\n                \"ForNat\": 1,\n                \"ForSerial\": 1,\n                \"IsCity\": 1,\n                \"Num\": 0,\n                \"Parent\": \"R_MAINLAND\",\n                \"RegionCode\": \"hb13\",\n                \"RegionName\": \"河北省\",\n                \"ZhKey\": \"H\"\n            }\n        ],\n        \"RequestId\": \"0203ad2c-fc57-4d7c-9858-4c3d7e650d28\"\n    }\n}",
+        "title": "查询防火墙支持的地域规则列表"
       }
     ],
     "DescribeAclRule": [

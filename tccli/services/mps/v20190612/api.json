@@ -3589,6 +3589,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除后文件的FileId。</p>",
+          "example": "966263619047559782",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基于画面提取的字幕文件FileId。</p>",
+          "example": "966263619047559782",
+          "member": "string",
+          "name": "OriginSubtitleFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基于画面提取的字幕翻译文件FileId    。</p>",
+          "example": "966263619047559782",
+          "member": "string",
+          "name": "TranslateSubtitleFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3822,6 +3852,26 @@
           "example": "{\"subtitle_url\":\"https://ie-mps-12.cos.ap-nanjing.myqcloud.com/common/dubbing_1_en_20260529192802_en.vtt\"}",
           "member": "string",
           "name": "ExtraOutput",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>译制视频FileId。</p>",
+          "example": "966263619047610987",
+          "member": "string",
+          "name": "VideoFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记文件FileId。</p>",
+          "example": "966263619047611987",
+          "member": "string",
+          "name": "SpeakerFileId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6798,6 +6848,34 @@
         }
       ],
       "usage": "out"
+    },
+    "AiRestorationConfig": {
+      "document": "大模型修复",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力配置开关</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>强度类型</p><p>枚举值：</p><ul><li>weak： 弱</li><li>normal： 中</li><li>strong： 强</li></ul><p>默认值：normal</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "strong",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AiReviewPoliticalAsrTaskInput": {
       "document": "内容审核 Asr 文字敏感任务输入参数类型",
@@ -12121,7 +12199,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例MinimaxMusic模型传入歌词时：<br>{\"lyric\":{\"小马在快乐奔跑，花儿在开放\"}}</p>",
+          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例MinimaxMusic模型传入歌词时：<br>{\"lyric\":{\"小马在快乐奔跑，花儿在开放\"}}</p><ol><li>MiniMaxMusic生纯音乐参数使用示例: &quot;AdditionalParameters&quot;:&quot;{\"is_instrumental\":true}&quot;</li></ol>",
           "example": "{\"sequential_image_generation\":\"auto\"}",
           "member": "string",
           "name": "AdditionalParameters",
@@ -27277,7 +27355,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输出文件的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出文件的路径。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/output/test.jpeg",
           "member": "string",
           "name": "Path",
@@ -27287,7 +27365,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件的存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出文件的存储位置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -27297,7 +27375,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件的URL。",
+          "document": "<p>输出文件的URL。</p>",
           "example": "https://abc123.com/output/test.jpeg",
           "member": "string",
           "name": "SignedUrl",
@@ -27307,10 +27385,20 @@
         },
         {
           "disabled": false,
-          "document": "图生文任务的处理结果。",
+          "document": "<p>图生文任务的处理结果。</p>",
           "example": "\"图片中有一个美丽的女士\"",
           "member": "string",
           "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VOD标准版FileId</p>",
+          "example": "123162389179",
+          "member": "string",
+          "name": "FileId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -44901,6 +44989,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕文件FileId。</p>",
+          "example": "966263619047610987",
+          "member": "string",
+          "name": "SubtitleFileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -45318,6 +45417,16 @@
           "example": "/subtitles/1027/xxx.mp4",
           "member": "string",
           "name": "SubtitleEmbedPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕文件FileId。</p>",
+          "example": "966263619047610987",
+          "member": "string",
+          "name": "SubtitleFileId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -48208,11 +48317,11 @@
       "usage": "in"
     },
     "VODInputInfo": {
-      "document": "媒体处理 VOD （点播专业版）对象信息。",
+      "document": "媒体处理 VOD 对象信息。",
       "members": [
         {
           "disabled": false,
-          "document": "媒体处理对象文件所在的 *Bucket ID*",
+          "document": "<p>媒体处理对象文件所在的 <em>Bucket ID</em></p>",
           "example": "a00ehq6ocdmo0exn",
           "member": "string",
           "name": "Bucket",
@@ -48223,7 +48332,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理对象文件所在的 Bucket 所属园区",
+          "document": "<p>媒体处理对象文件所在的 Bucket 所属园区</p>",
           "example": "ap-chongqing",
           "member": "string",
           "name": "Region",
@@ -48234,7 +48343,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理对象文件的输入路径",
+          "document": "<p>媒体处理对象文件的输入路径</p>",
           "example": "/movie/201907/WildAnimal.mov",
           "member": "string",
           "name": "Object",
@@ -48245,7 +48354,7 @@
         },
         {
           "disabled": false,
-          "document": "点播专业版应用Id",
+          "document": "<p>点播应用Id。</p>",
           "example": "220762",
           "member": "uint64",
           "name": "SubAppId",
@@ -48253,12 +48362,34 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 使用VOD专业版</li><li>1： 使用VOD标准版，可使用FileId发起任务</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "VodBasic",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VOD标准版FileId</p>",
+          "example": "966263619047610987",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
     },
     "VODOutputStorage": {
-      "document": "媒体处理 VOD（点播专业版） 输出对象信息。",
+      "document": "媒体处理 VOD输出对象信息。",
       "members": [
         {
           "disabled": false,
@@ -48284,10 +48415,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>点播专业版应用Id</p>",
+          "document": "<p>点播应用Id</p>",
           "example": "220762",
           "member": "uint64",
           "name": "SubAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务输出是否使用VOD标准版。<br>注意：不填表示使用VOD专业版。</p><p>枚举值：</p><ul><li>0： 不使用VOD标准版</li><li>1： 使用VOD标准版</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "VodBasic",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -48434,7 +48576,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "插帧帧率配置（旧）。新用户建议使用FrameRateWithDen配置插帧帧率，支持分数，且效果更好。注意，FrameRate 与FrameRateWithDen 只能二选一，同时配置可能导致任务失败。源帧率大于等于目标帧率时能力不会生效。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插帧帧率配置（旧）。新用户建议使用FrameRateWithDen配置插帧帧率，支持分数，且效果更好。注意，FrameRate 与FrameRateWithDen 只能二选一，同时配置可能导致任务失败。源帧率大于等于目标帧率时能力不会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FrameRateConfig",
           "name": "FrameRate",
@@ -48445,7 +48587,7 @@
         },
         {
           "disabled": false,
-          "document": "超分配置。源分辨率高于目标分辨率时不对视频做处理。注意与大模型增强不可同时开启。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>超分配置。源分辨率高于目标分辨率时不对视频做处理。注意与大模型增强不可同时开启。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SuperResolutionConfig",
           "name": "SuperResolution",
@@ -48456,7 +48598,7 @@
         },
         {
           "disabled": false,
-          "document": "HDR配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>HDR配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HdrConfig",
           "name": "Hdr",
@@ -48467,7 +48609,7 @@
         },
         {
           "disabled": false,
-          "document": "视频降噪配置。注意与大模型增强不可同时开启。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频降噪配置。注意与大模型增强不可同时开启。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VideoDenoiseConfig",
           "name": "Denoise",
@@ -48478,7 +48620,7 @@
         },
         {
           "disabled": false,
-          "document": "综合增强配置。注意大模型、综合增强、去毛刺三项里最多配置一项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>综合增强配置。注意大模型、综合增强、去毛刺三项里最多配置一项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageQualityEnhanceConfig",
           "name": "ImageQualityEnhance",
@@ -48489,7 +48631,7 @@
         },
         {
           "disabled": false,
-          "document": "色彩增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>色彩增强配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ColorEnhanceConfig",
           "name": "ColorEnhance",
@@ -48500,7 +48642,7 @@
         },
         {
           "disabled": false,
-          "document": "低光照增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>低光照增强配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LowLightEnhanceConfig",
           "name": "LowLightEnhance",
@@ -48511,7 +48653,7 @@
         },
         {
           "disabled": false,
-          "document": "去划痕配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>去划痕配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScratchRepairConfig",
           "name": "ScratchRepair",
@@ -48522,7 +48664,7 @@
         },
         {
           "disabled": false,
-          "document": "去伪影（毛刺）配置。注意大模型、综合增强、去毛刺三项里最多配置一项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>去伪影（毛刺）配置。注意大模型、综合增强、去毛刺三项里最多配置一项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ArtifactRepairConfig",
           "name": "ArtifactRepair",
@@ -48533,7 +48675,7 @@
         },
         {
           "disabled": false,
-          "document": "增强场景配置，可选值：\n<li>common（通用），通用增强参数，适用于各种视频类型的基础优化参数，提升整体画质。</li>\n<li>AIGC，整体分辨率提升，利用AI技术提升视频整体分辨率，增强画面清晰度。</li>\n<li>short_play（短剧），增强面部与字幕细节，突出人物面部表情细节和字幕清晰度，提升观剧体验。</li>\n<li>short_video（短视频），优化复杂多样的画质问题，针对短视频的复杂场景，优化画质，解决多种视觉问题。</li>\n<li>game（游戏视频），修复运动模糊，提升细节，重点提升游戏细节清晰度，恢复运动模糊区域，使游戏画面内容更清晰，更丰富。</li>\n<li>HD_movie_series（超高清影视剧），获得超高清流畅效果，针对广电/OTT超高清视频的诉求，生成4K 60fps HDR的超高清标准视频。支持广电场景格式标准要求。</li>\n<li>LQ_material（低清素材/老片修复），整体分辨率提升，针对老旧视频由于拍摄年代较久存在的分辨率不足、模糊失真、划痕损伤和色温等问题进行专门优化。</li>\n<li>lecture（秀场/电商/大会/讲座），美化提升面部效果，针对秀场/电商/大会/讲座等存在人物进行讲解的场景，进行人脸区域、噪声消除、毛刺处理的专门优化。</li>\n<li>填空字符串代表不使用增强场景</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>增强场景配置，可选值：</p><li>common（通用），通用增强参数，适用于各种视频类型的基础优化参数，提升整体画质。</li><li>AIGC，整体分辨率提升，利用AI技术提升视频整体分辨率，增强画面清晰度。</li><li>short_play（短剧 &amp; AI 仿真人剧），增强面部与字幕细节，突出人物面部表情细节和字幕清晰度，提升观剧体验。</li><li>ai_comic（AI漫剧），增强漫画风格画面细节。</li><li>short_video（短视频），优化复杂多样的画质问题，针对短视频的复杂场景，优化画质，解决多种视觉问题。</li><li>game（游戏视频），修复运动模糊，提升细节，重点提升游戏细节清晰度，恢复运动模糊区域，使游戏画面内容更清晰，更丰富。</li><li>HD_movie_series（超高清影视剧），获得超高清流畅效果，针对广电/OTT超高清视频的诉求，生成4K 60fps HDR的超高清标准视频。支持广电场景格式标准要求。</li><li>LQ_material（低清素材/老片修复），整体分辨率提升，针对老旧视频由于拍摄年代较久存在的分辨率不足、模糊失真、划痕损伤和色温等问题进行专门优化。</li><li>lecture（秀场/电商/大会/讲座），美化提升面部效果，针对秀场/电商/大会/讲座等存在人物进行讲解的场景，进行人脸区域、噪声消除、毛刺处理的专门优化。</li><li>填空字符串代表不使用增强场景</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "common",
           "member": "string",
           "name": "EnhanceSceneType",
@@ -48544,7 +48686,7 @@
         },
         {
           "disabled": false,
-          "document": "大模型增强配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>大模型增强配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiffusionEnhanceConfig",
           "name": "DiffusionEnhance",
@@ -48555,10 +48697,21 @@
         },
         {
           "disabled": false,
-          "document": "新插帧帧率配置，支持分数。注意与FrameRate二选一。源帧率大于等于目标帧率时能力不会生效。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>新插帧帧率配置，支持分数。注意与FrameRate二选一。源帧率大于等于目标帧率时能力不会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FrameRateWithDenConfig",
           "name": "FrameRateWithDen",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型修复配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiRestorationConfig",
+          "name": "AiRestoration",
           "output_required": false,
           "required": false,
           "type": "object",

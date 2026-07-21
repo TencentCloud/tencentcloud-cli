@@ -1,105 +1,115 @@
-**Example 1: 更新模型服务**
+**Example 1: 停止服务**
 
-更新模型服务
+
 
 Input: 
 
 ```
 tccli tione ModifyModelService --cli-unfold-argument  \
-    --ServiceDescription  \
-    --InstanceType TI.S.MEDIUM.POST \
-    --ImageInfo.ImageType  \
-    --ImageInfo.ImageUrl ccr.ccs.tencentyun.com/xxxx/xxxxx \
-    --ImageInfo.RegistryRegion  \
-    --ImageInfo.RegistryId  \
-    --ScaleMode MANUAL \
-    --Replicas 1 \
-    --LogEnable False \
-    --Env.0.Name env_test \
-    --Env.0.Value 1 \
-    --ServiceId ms-xxxxx-1
+    --ServiceId ms-h29wqz2b-1 \
+    --ServiceAction STOP
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "d3d242fd-c8e7-44f5-8b28-a0e1bcfe92d5",
         "Service": {
-            "ServiceGroupId": "ms-skdg89rx",
-            "ServiceId": "ms-skdg89rx-1",
-            "ServiceGroupName": "demo-create",
-            "ServiceDescription": "",
-            "ServiceInfo": {
-                "Replicas": 1,
-                "ImageInfo": {
-                    "ImageType": "CCR",
-                    "ImageUrl": "ccr.ccs.tencentyun.com/test-ccr/hellotest",
-                    "RegistryRegion": "ap-guangzhou",
-                    "RegistryId": ""
-                },
-                "Env": [],
-                "Resources": {
-                    "Cpu": 2000,
-                    "Memory": 4096,
-                    "Gpu": 0,
-                    "RealGpu": 0,
-                    "GpuType": "none",
-                    "RealGpuDetailSet": []
-                },
-                "InstanceType": "TI.S.MEDIUM.POST",
-                "ModelInfo": null,
-                "LogEnable": false,
-                "LogConfig": null,
-                "AuthorizationEnable": false,
-                "ScaleMode": "MANUAL",
-                "HorizontalPodAutoscaler": null,
-                "CronScaleJobs": [],
-                "ScaleStrategy": "",
-                "Status": null,
-                "Weight": 100,
-                "PodList": [],
-                "Pods": null,
-                "PodInfos": [],
-                "ResourceTotal": null,
-                "OldReplicas": 0,
-                "HybridBillingPrepaidReplicas": 0,
-                "OldHybridBillingPrepaidReplicas": 0,
-                "ModelHotUpdateEnable": false
-            },
-            "ClusterId": "",
-            "Region": "ap-guangzhou",
-            "Namespace": "",
+            "AppId": 1317564324,
+            "ArchiveStatus": "",
+            "BillingInfo": "",
+            "BusinessStatus": "CREATE_SUCCEED",
+            "Changer": "",
+            "ChangerName": "",
             "ChargeType": "POSTPAID_BY_HOUR",
+            "ClusterId": "manger",
+            "CreateFailedReason": "CREATE_SUCCEED",
+            "CreateSource": "NORMAL",
+            "CreateTime": "2026-07-08T13:16:17Z",
+            "CreatedBy": "100041882933",
+            "DeployType": "DIST",
+            "ExternalResourceGroups": [],
+            "IngressName": "none",
+            "LatestVersion": "",
+            "MonitorSource": "NORMAL",
+            "Namespace": "infer-100030513581",
+            "ProjectId": "0",
+            "Region": "ap-shanghai",
             "ResourceGroupId": "",
             "ResourceGroupName": "",
-            "Tags": [],
-            "IngressName": "user-ingress-1",
-            "CreatedBy": "10000000000",
-            "CreateTime": "",
-            "UpdateTime": "",
-            "Uin": "10000000000",
-            "SubUin": "10000000000",
-            "AppId": 10000000000,
-            "BusinessStatus": "CREATING",
-            "CreateFailedReason": "",
-            "Status": "",
-            "BillingInfo": "",
-            "Weight": 100,
-            "CreateSource": "DEFAULT",
-            "Version": "",
-            "LatestVersion": "",
-            "ServiceLimit": {
-                "EnableInstanceRpsLimit": false,
-                "InstanceRpsLimit": 0,
-                "EnableInstanceReqLimit": false,
-                "InstanceReqLimit": 0
+            "ResourceGroupSWType": "NONE",
+            "SchedulingPolicy": {
+                "CrossResourceGroupScheduling": false
             },
-            "ScheduledAction": {
-                "ScheduleStop": false,
-                "ScheduleStopTime": "2023-04-24T11:54:53+08:00"
-            }
-        },
-        "RequestId": "b8f848e4-64ea-475c-864e-6d4b0c9ec6ea"
+            "ServiceDescription": "",
+            "ServiceGroupId": "ms-h29wqz2b",
+            "ServiceGroupName": "luis-test-new2_copy",
+            "ServiceId": "ms-h29wqz2b-1",
+            "ServiceInfo": {
+                "AuthorizationEnable": false,
+                "Command": "",
+                "CronScaleJobs": [],
+                "Env": [],
+                "GrpcEnable": false,
+                "HybridBillingPrepaidReplicas": 0,
+                "ImageInfo": {
+                    "ImageType": "CCR",
+                    "ImageUrl": "ccr.ccs.tencentyun.com/luis-test/hellotest:v1",
+                    "RegistryId": "",
+                    "RegistryRegion": "ap-guangzhou"
+                },
+                "InstanceAlias": "",
+                "InstancePerReplicas": 1,
+                "InstanceType": "TI.S6.2XLARGE16.POST",
+                "LogEnable": false,
+                "ModelHotUpdateEnable": false,
+                "ModelTurboEnable": false,
+                "NodeCount": 0,
+                "OldHybridBillingPrepaidReplicas": 0,
+                "OldReplicas": 0,
+                "PodInfos": [],
+                "PodList": [],
+                "PreStopCommand": [],
+                "Replicas": 2,
+                "Resources": {
+                    "Cpu": 8000,
+                    "EnableRDMA": false,
+                    "Gpu": 0,
+                    "GpuType": "",
+                    "Memory": 16384,
+                    "RealGpu": 0,
+                    "RealGpuDetailSet": []
+                },
+                "ResourceTotal": "",
+                "ScaleMode": "",
+                "ScaleStrategy": "",
+                "SchedulingStrategy": "",
+                "ServicePort": 0,
+                "TerminationGracePeriodSeconds": 30,
+                "VolumeMounts": [],
+                "Weight": 0,
+                "Status": {
+                    "Replicas": 2,
+                    "UpdatedReplicas": 2,
+                    "ReadyReplicas": 2,
+                    "AvailableReplicas": 2,
+                    "UnavailableReplicas": 0,
+                    "Status": "Normal",
+                    "Reason": "",
+                    "Conditions": [],
+                    "StatefulSetCondition": []
+                }
+            },
+            "Status": "",
+            "SubUin": "100041882933",
+            "SubUinName": "",
+            "Tags": [],
+            "Uin": "100030513581",
+            "UpdateTime": "2026-07-21T03:12:31Z",
+            "Version": "1",
+            "Weight": 100
+        }
     }
 }
 ```

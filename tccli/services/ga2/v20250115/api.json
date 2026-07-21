@@ -35,6 +35,13 @@
       "output": "CreateGlobalAcceleratorResponse",
       "status": "online"
     },
+    "CreateGlobalAcceleratorAccessLog": {
+      "document": "创建GA访问日志",
+      "input": "CreateGlobalAcceleratorAccessLogRequest",
+      "name": "创建访问日志",
+      "output": "CreateGlobalAcceleratorAccessLogResponse",
+      "status": "online"
+    },
     "CreateGlobalAcceleratorAclPolicy": {
       "document": "创建访问控制策略",
       "input": "CreateGlobalAcceleratorAclPolicyRequest",
@@ -98,6 +105,13 @@
       "output": "DeleteGlobalAcceleratorResponse",
       "status": "online"
     },
+    "DeleteGlobalAcceleratorAccessLog": {
+      "document": "删除GA日志任务",
+      "input": "DeleteGlobalAcceleratorAccessLogRequest",
+      "name": "删除日志任务",
+      "output": "DeleteGlobalAcceleratorAccessLogResponse",
+      "status": "online"
+    },
     "DeleteGlobalAcceleratorAclPolicy": {
       "document": "删除访问控制策略",
       "input": "DeleteGlobalAcceleratorAclPolicyRequest",
@@ -140,6 +154,13 @@
       "output": "DescribeAccelerateRegionsResponse",
       "status": "online"
     },
+    "DescribeAccessLogParam": {
+      "document": "查看访问日志上报参数",
+      "input": "DescribeAccessLogParamRequest",
+      "name": "查看访问日志上报参数",
+      "output": "DescribeAccessLogParamResponse",
+      "status": "online"
+    },
     "DescribeCrossBorderSettlement": {
       "document": "查询跨境账单",
       "input": "DescribeCrossBorderSettlementRequest",
@@ -166,6 +187,27 @@
       "input": "DescribeForwardingRuleRequest",
       "name": "查看七层转发规则",
       "output": "DescribeForwardingRuleResponse",
+      "status": "online"
+    },
+    "DescribeGlobalAcceleratorAccessLog": {
+      "document": "查询日志任务",
+      "input": "DescribeGlobalAcceleratorAccessLogRequest",
+      "name": "查询访问日志",
+      "output": "DescribeGlobalAcceleratorAccessLogResponse",
+      "status": "online"
+    },
+    "DescribeGlobalAcceleratorAclPolicies": {
+      "document": "查看访问控制策略",
+      "input": "DescribeGlobalAcceleratorAclPoliciesRequest",
+      "name": "查看访控制策略",
+      "output": "DescribeGlobalAcceleratorAclPoliciesResponse",
+      "status": "online"
+    },
+    "DescribeGlobalAcceleratorAclRules": {
+      "document": "查看ACL规则",
+      "input": "DescribeGlobalAcceleratorAclRulesRequest",
+      "name": "查询ACL规则",
+      "output": "DescribeGlobalAcceleratorAclRulesResponse",
       "status": "online"
     },
     "DescribeGlobalAccelerators": {
@@ -196,6 +238,13 @@
       "output": "ModifyAccelerateAreasResponse",
       "status": "online"
     },
+    "ModifyAccessLogStatus": {
+      "document": "修改日志任务状态",
+      "input": "ModifyAccessLogStatusRequest",
+      "name": "修改日志任务状态",
+      "output": "ModifyAccessLogStatusResponse",
+      "status": "online"
+    },
     "ModifyEndpointGroup": {
       "document": "修改终端节点组。",
       "input": "ModifyEndpointGroupRequest",
@@ -222,6 +271,13 @@
       "input": "ModifyGlobalAcceleratorRequest",
       "name": "修改全球加速实例",
       "output": "ModifyGlobalAcceleratorResponse",
+      "status": "online"
+    },
+    "ModifyGlobalAcceleratorAccessLog": {
+      "document": "修改GA访问日志",
+      "input": "ModifyGlobalAcceleratorAccessLogRequest",
+      "name": "修改访问日志",
+      "output": "ModifyGlobalAcceleratorAccessLogResponse",
       "status": "online"
     },
     "ModifyGlobalAcceleratorAclPolicy": {
@@ -780,6 +836,106 @@
           "member": "string",
           "name": "ForwardingRuleId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalAcceleratorAccessLogRequest": {
+      "document": "CreateGlobalAcceleratorAccessLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>GA示例唯一Id</p>",
+          "example": "ga-8sreohed",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>监听器Id</p>",
+          "example": "lsr-4afw0c06",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>终端节点组Id</p>",
+          "example": "epg-du8oqpy5",
+          "member": "string",
+          "name": "EndpointGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id</p>",
+          "example": "61f7ee4c-4704-4669-82fe-2c191f8f200b",
+          "member": "string",
+          "name": "CloudLogId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集Id</p>",
+          "example": "81217ea2-f578-451a-946e-f31e2131a9ac",
+          "member": "string",
+          "name": "CloudLogSetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定采集字段</p><p>枚举值：</p><ul><li>session_time： 四层，会话持续时间</li><li>upstream_bytes_received： 四层、七层，从终端节点接收的字节数</li><li>upstream_bytes_sent： 四层、七层，发送给终端节点的字节数</li><li>request_method： 七层，GET/POST</li><li>scheme： 七层，http/https</li><li>request_uri： 七层，客户端原始请求的URI</li><li>uri： 七层，当前请求的URI</li><li>host： 七层，客户端访问域名（七层）</li><li>remote_user： 七层，基本认证时的用户名（未认证时为&quot;-&quot;）</li><li>http_user_agent： 七层，客户端浏览器标识</li><li>http_referer： 七层，请求来源URL（直接从地址栏访问时为&quot;-&quot;）</li><li>http_x_forwarded_for： 七层，记录客户端原始IP及经过的代理服务器IP链</li><li>content_type： 七层，content_type</li><li>body_bytes_sent： 七层，发送给客户端的http body大小，不包含header</li><li>request_time： 七层，从接收到客户端请求的第一个字节到发送完响应最后一个字节之间的总时间（单位：秒）</li><li>sent_http_content_type： 七层，响应内容类型</li><li>upstream_header_time： 七层，终端节点的响应头到达时间</li><li>upstream_response_length： 七层，终端节点返回的响应体长度</li><li>upstream_response_time： 七层，终端节点完整响应时间</li><li>upstream_status： 七层，终端节点返回的HTTP状态码</li></ul>",
+          "example": "[\"request_method\"]",
+          "member": "string",
+          "name": "FieldKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志描述</p>",
+          "example": "ga_log_test_http",
+          "member": "string",
+          "name": "FlowLogDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalAcceleratorAccessLogResponse": {
+      "document": "CreateGlobalAcceleratorAccessLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志任务唯一Id</p>",
+          "example": "galog-gv9duwet",
+          "member": "string",
+          "name": "LogPushTaskId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1462,6 +1618,42 @@
       ],
       "type": "object"
     },
+    "DeleteGlobalAcceleratorAccessLogRequest": {
+      "document": "DeleteGlobalAcceleratorAccessLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志唯一Id</p>",
+          "example": "galog-8agteyy6",
+          "member": "string",
+          "name": "LogPushTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GA实例唯一Id</p>",
+          "example": "ga-rs4cpp5u",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalAcceleratorAccessLogResponse": {
+      "document": "DeleteGlobalAcceleratorAccessLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteGlobalAcceleratorAclPolicyRequest": {
       "document": "DeleteGlobalAcceleratorAclPolicy请求参数结构体",
       "members": [
@@ -1802,6 +1994,43 @@
       ],
       "type": "object"
     },
+    "DescribeAccessLogParamRequest": {
+      "document": "DescribeAccessLogParam请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccessLogParamResponse": {
+      "document": "DescribeAccessLogParam返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>七层可选参数</p>",
+          "example": "[\"request_method\"]",
+          "member": "string",
+          "name": "L7Param",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>四层可选参数</p>",
+          "example": "[\"session_time\"]",
+          "member": "string",
+          "name": "L4Param",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCrossBorderSettlementRequest": {
       "document": "DescribeCrossBorderSettlement请求参数结构体",
       "members": [
@@ -2081,6 +2310,210 @@
         {
           "disabled": false,
           "document": "符合条件的实例个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalAcceleratorAccessLogRequest": {
+      "document": "DescribeGlobalAcceleratorAccessLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ga实例唯一Id</p>",
+          "example": "ga-rs4cpp5u",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询过滤参数。{ &quot;Name&quot;: &quot;listener-id&quot;, &quot;Values&quot;: [&quot;监听器唯一Id&quot;] },{ &quot;Name&quot;: &quot;endpoint-group-id&quot;, &quot;Values&quot;: [&quot;终端节点组唯一Id&quot;] },{ &quot;Name&quot;: &quot;access_log_id&quot;, &quot;Values&quot;: [&quot;日志唯一Id&quot;] }</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认为0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量。</p><p>取值范围：[0, 200]</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalAcceleratorAccessLogResponse": {
+      "document": "DescribeGlobalAcceleratorAccessLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回日志任务详情</p>",
+          "example": "无",
+          "member": "GlobalAcceleratorAccessLog",
+          "name": "GlobalAcceleratorAccessLog",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志任务条数。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalAcceleratorAclPoliciesRequest": {
+      "document": "DescribeGlobalAcceleratorAclPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例ID。</p>",
+          "example": "ga-ask56kjh",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量。默认值为0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认值为20，最大值为200。</p>",
+          "example": "10",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalAcceleratorAclPoliciesResponse": {
+      "document": "DescribeGlobalAcceleratorAclPolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问控制策略信息。</p>",
+          "example": "无",
+          "member": "GlobalAcceleratorAclPolicies",
+          "name": "GlobalAcceleratorAclPolicySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件实例总个数。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalAcceleratorAclRulesRequest": {
+      "document": "DescribeGlobalAcceleratorAclRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问控制策略ID。</p>",
+          "example": "sp-dz058gbb",
+          "member": "string",
+          "name": "GlobalAcceleratorAclPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认为0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量。</p><p>取值范围：[1, 200]</p><p>默认值：20</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalAcceleratorAclRulesResponse": {
+      "document": "DescribeGlobalAcceleratorAclRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的Acl规则实例。</p>",
+          "example": "无",
+          "member": "GlobalAcceleratorAclRuleSet",
+          "name": "GlobalAcceleratorAclRuleSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的实例个数。</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -2917,7 +3350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "七层转发规则条件信息。",
+          "document": "<p>七层转发规则条件信息。</p>",
           "example": "无",
           "member": "RuleCondition",
           "name": "RuleCondition",
@@ -2927,7 +3360,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则行为信息。",
+          "document": "<p>七层转发规则行为信息。</p>",
           "example": "无",
           "member": "RuleAction",
           "name": "RuleAction",
@@ -2937,8 +3370,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启回源Sni。",
-          "example": "无",
+          "document": "<p>是否开启回源Sni。</p>",
+          "example": "true",
           "member": "bool",
           "name": "EnableOriginSni",
           "output_required": true,
@@ -2947,8 +3380,8 @@
         },
         {
           "disabled": false,
-          "document": "回源Sni。",
-          "example": "无",
+          "document": "<p>回源Sni。</p>",
+          "example": "21dsf",
           "member": "string",
           "name": "OriginSni",
           "output_required": true,
@@ -2957,7 +3390,7 @@
         },
         {
           "disabled": false,
-          "document": "回源Herder信息。",
+          "document": "<p>回源Herder信息。</p>",
           "example": "无",
           "member": "OriginHeader",
           "name": "OriginHeaders",
@@ -2967,8 +3400,8 @@
         },
         {
           "disabled": false,
-          "document": "回源Host。",
-          "example": "无",
+          "document": "<p>回源Host。</p>",
+          "example": "12.12.12.1",
           "member": "string",
           "name": "OriginHost",
           "output_required": true,
@@ -2977,7 +3410,7 @@
         },
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-80bzejka",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -2987,7 +3420,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-nd3qmz7h",
           "member": "string",
           "name": "ListenerId",
@@ -2997,7 +3430,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发策略ID。",
+          "document": "<p>七层转发策略ID。</p>",
           "example": "dm-kzk3neks",
           "member": "string",
           "name": "ForwardingPolicyId",
@@ -3007,10 +3440,147 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则ID。",
+          "document": "<p>七层转发规则ID。</p>",
           "example": "rule-5lybgwaw",
           "member": "string",
           "name": "ForwardingRuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源站响应头</p>",
+          "example": "无",
+          "member": "HideResponseHeaders",
+          "name": "HideResponseHeaders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除源站响应头</p>",
+          "example": "无",
+          "member": "ResponseHeaders",
+          "name": "ResponseHeaders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GlobalAcceleratorAccessLog": {
+      "document": "GA访问日志",
+      "members": [],
+      "usage": "out"
+    },
+    "GlobalAcceleratorAclPolicies": {
+      "document": "访问控制策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问控制策略ID。",
+          "example": "sp-io46vtlf",
+          "member": "string",
+          "name": "GlobalAcceleratorAclPolicyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认动作。",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "DefaultAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。",
+          "example": "OPEN",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GlobalAcceleratorAclRuleSet": {
+      "document": "Acl规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问控制策略ID。",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalAcceleratorPolicyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Acl规则ID。",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalAcceleratorAclRuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口。",
+          "example": "10",
+          "member": "string",
+          "name": "Port",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网段。",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "SourceCidrBlock",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作。",
+          "example": "Allow",
+          "member": "string",
+          "name": "Policy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述。",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3483,6 +4053,51 @@
       ],
       "type": "object"
     },
+    "ModifyAccessLogStatusRequest": {
+      "document": "ModifyAccessLogStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志唯一Id</p>",
+          "example": "galog-8ezkdjm9",
+          "member": "string",
+          "name": "LogPushTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态（启动START， 停止STOP）</p><p>枚举值：</p><ul><li>START： 启动</li><li>STOP： 停止</li></ul>",
+          "example": "START",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GA实例唯一Id</p>",
+          "example": "ga-8sreohed",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessLogStatusResponse": {
+      "document": "ModifyAccessLogStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEndpointGroupRequest": {
       "document": "ModifyEndpointGroup请求参数结构体",
       "members": [
@@ -3918,6 +4533,78 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalAcceleratorAccessLogRequest": {
+      "document": "ModifyGlobalAcceleratorAccessLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志唯一Id</p>",
+          "example": "galog-5nz8egdx",
+          "member": "string",
+          "name": "LogPushTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GA实例唯一Id</p>",
+          "example": "ga-8sreohed",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id</p>",
+          "example": "ce5aa025-1c29-4d8b-8f84-d960e22acb3f",
+          "member": "string",
+          "name": "CloudLogId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集Id</p>",
+          "example": "81217ea2-f578-451a-946e-f31e2131a9ac",
+          "member": "string",
+          "name": "CloudLogSetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户可选日志监听字段</p><p>枚举值：</p><ul><li>session_time： 四层，会话持续时间</li><li>upstream_bytes_received： 四层、七层，从终端节点接收的字节数</li><li>upstream_bytes_sent： 四层、七层，发送给终端节点的字节数</li><li>request_method： 七层，GET/POST</li><li>scheme： 七层，http/https</li><li>request_uri： 七层，客户端原始请求的URI</li><li>uri： 七层，当前请求的URI</li><li>host： 七层，客户端访问域名（七层）</li><li>remote_user： 七层，基本认证时的用户名（未认证时为&quot;-&quot;）</li><li>http_user_agent： 七层，客户端浏览器标识</li><li>http_referer： 七层，请求来源URL（直接从地址栏访问时为&quot;-&quot;）</li><li>http_x_forwarded_for： 七层，记录客户端原始IP及经过的代理服务器IP链</li><li>content_type： 七层，content_type</li><li>body_bytes_sent： 七层，发送给客户端的http body大小，不包含header</li><li>request_time： 七层，从接收到客户端请求的第一个字节到发送完响应最后一个字节之间的总时间（单位：秒）</li><li>sent_http_content_type： 七层，响应内容类型</li><li>upstream_header_time： 七层，终端节点的响应头到达时间</li><li>upstream_response_length： 七层，终端节点返回的响应体长度</li><li>upstream_response_time： 七层，终端节点完整响应时间</li><li>upstream_status： 七层，终端节点返回的HTTP状态码</li></ul>",
+          "example": "[\"session_time\"]",
+          "member": "string",
+          "name": "FieldKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志描述</p>",
+          "example": "****-测试创建日志任务-修改",
+          "member": "string",
+          "name": "FlowLogDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalAcceleratorAccessLogResponse": {
+      "document": "ModifyGlobalAcceleratorAccessLog返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

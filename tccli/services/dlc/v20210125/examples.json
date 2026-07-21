@@ -739,16 +739,16 @@
     "DescribeMCPTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTask\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88d52c8f-5baf-4d42-afa7-73bbe0aa7198\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"**\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskInfo\": {\n            \"BatchId\": \"batch-1234567890\",\n            \"CreateTime\": \"2026-07-16 10:00:00\",\n            \"DataEngineId\": \"DataEngine-mock-001\",\n            \"DataSet\": \"[[\\\"col1\\\",\\\"col2\\\"],[\\\"value1\\\",\\\"value2\\\"]]\",\n            \"DatabaseName\": \"mock_database\",\n            \"EndTime\": \"2026-07-16 10:00:10\",\n            \"EngineTypeDetail\": \"SparkSQL\",\n            \"Id\": \"11\",\n            \"IsSQLCutOff\": false,\n            \"OperateUin\": \"100000000001\",\n            \"OutputMessage\": \"Mock task completed successfully\",\n            \"Progress\": 100,\n            \"ResourceGroupName\": \"mock_resource_group\",\n            \"SQL\": \"SELECT * FROM db.table LIMIT 10\",\n            \"SQLType\": \"DQL\",\n            \"SparkJobId\": \"spark-job-mock-001\",\n            \"SparkJobName\": \"mock_spark_job\",\n            \"StartTime\": \"2026-07-16 10:00:01\",\n            \"State\": 2,\n            \"TaskKind\": \"SQLTask\",\n            \"TaskType\": \"SQLTask\",\n            \"TotalTime\": 9500,\n            \"UpdateTime\": \"2026-07-16 10:00:10\",\n            \"UsedTime\": 9000\n        },\n        \"RequestId\": \"88d52c8f-5baf-4d42-afa7-73bbe0aa7198\"\n    }\n}",
         "title": "MCP 任务示例"
       }
     ],
     "DescribeMCPTaskResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTaskResult\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1aa1dc9a-adaf-4b05-a2ea-76ecc0d7ea08\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"**************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskResult\": {\n            \"CanDownload\": false,\n            \"DisplayFormat\": \"\",\n            \"IsResultOversize\": false,\n            \"NextToken\": \"\",\n            \"OutputMessage\": \"**** result ***** completed\",\n            \"QueryResultTime\": 0,\n            \"ResultSchema\": [\n                {\n                    \"Comment\": \"\",\n                    \"CreateTime\": \"\",\n                    \"DataMaskStrategyInfo\": null,\n                    \"IsPartition\": false,\n                    \"ModifiedTime\": \"\",\n                    \"Name\": \"col1\",\n                    \"Nullable\": \"\",\n                    \"Position\": 0,\n                    \"Precision\": 0,\n                    \"Scale\": 0,\n                    \"Type\": \"string\"\n                }\n            ],\n            \"ResultSet\": \"[[\\\"value1\\\"],[\\\"value2\\\"]]\",\n            \"RowAffectInfo\": \"2\",\n            \"State\": 2,\n            \"TaskId\": \"11jd01j-12f9h1\"\n        },\n        \"RequestId\": \"1aa1dc9a-adaf-4b05-a2ea-76ecc0d7ea08\"\n    }\n}",
         "title": "MCP任务结果信息"
       }
     ],

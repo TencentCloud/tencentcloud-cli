@@ -40,6 +40,14 @@
         "title": "创建全球加速实例"
       }
     ],
+    "CreateGlobalAcceleratorAccessLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalAcceleratorAccessLog\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-8sreohed\",\n    \"ListenerId\": \"lsr-4afw0c06\",\n    \"EndpointGroupId\": \"epg-du8oqpy5\",\n    \"CloudRegion\": \"ap-guangzhou\",\n    \"CloudLogId\": \"61f7ee4c-4704-4669-82fe-2c191f8f200b\",\n    \"CloudLogSetId\": \"81217ea2-f578-451a-946e-f31e2131a9ac\",\n    \"FieldKeys\": [\n        \"request_method\"\n    ],\n    \"FlowLogDescription\": \"ga_log_test_http\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogPushTaskId\": \"galog-gv9duwet\",\n        \"RequestId\": \"383fea40-a621-4bb6-8695-ad35e26515c2\"\n    }\n}",
+        "title": "创建访问日志示例"
+      }
+    ],
     "CreateGlobalAcceleratorAclPolicy": [
       {
         "document": "",
@@ -112,6 +120,14 @@
         "title": "删除全球加速实例"
       }
     ],
+    "DeleteGlobalAcceleratorAccessLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlobalAcceleratorAccessLog\n<公共请求参数>\n\n{\n    \"LogPushTaskId\": \"galog-8agteyy6\",\n    \"GlobalAcceleratorId\": \"ga-rs4cpp5u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"337cf1d1-a264-4fdc-973d-44d562b8bc24\"\n    }\n}",
+        "title": "删除访问日志示例"
+      }
+    ],
     "DeleteGlobalAcceleratorAclPolicy": [
       {
         "document": "",
@@ -160,6 +176,14 @@
         "title": "查看可加速地域"
       }
     ],
+    "DescribeAccessLogParam": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessLogParam\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"L4Param\": [\n            \"session_time\"\n        ],\n        \"L7Param\": [\n            \"request_method\"\n        ],\n        \"RequestId\": \"06f83c8f-9eff-478e-9c10-005d7d0b3776\"\n    }\n}",
+        "title": "查看访问日志上报参数示例"
+      }
+    ],
     "DescribeCrossBorderSettlement": [
       {
         "document": "",
@@ -190,6 +214,30 @@
         "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForwardingRule\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-r0aukpq8\",\n    \"ListenerId\": \"lsr-rk9g6p8x\",\n    \"ForwardingPolicyId\": \"dm-9z3ue2yq\"\n}",
         "output": "{\n    \"Response\": {\n        \"ForwardingRuleSet\": [\n            {\n                \"EnableOriginSni\": false,\n                \"ForwardingPolicyId\": \"dm-9z3ue2yq\",\n                \"ForwardingRuleId\": \"rule-bydbpo9y\",\n                \"GlobalAcceleratorId\": \"ga-r0aukpq8\",\n                \"ListenerId\": \"lsr-rk9g6p8x\",\n                \"OriginHeaders\": [],\n                \"OriginHost\": \"\",\n                \"OriginSni\": \"\",\n                \"RuleAction\": [\n                    {\n                        \"RuleActionType\": \"ForwardGroup\",\n                        \"RuleActionValue\": \"epg-hru0z2dc\"\n                    }\n                ],\n                \"RuleCondition\": [\n                    {\n                        \"RuleConditionType\": \"Path\",\n                        \"RuleConditionValue\": [\n                            \"\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c894e656-4f87-4d7d-a272-636c2de7633d\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查看七层转发规则"
+      }
+    ],
+    "DescribeGlobalAcceleratorAccessLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalAcceleratorAccessLog\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-rs4cpp5u\",\n    \"Filters\": [\n        {\n            \"Name\": \"listener-id\",\n            \"Values\": [\n                \"lsr-3c7xwnq3\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"GlobalAcceleratorAccessLog\": [\n            {}\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fb502cae-f49f-4797-b9c9-49bb66046d8c\"\n    }\n}",
+        "title": "查询日志任务示例"
+      }
+    ],
+    "DescribeGlobalAcceleratorAclPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalAcceleratorAclPolicies\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-80bzejka\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GlobalAcceleratorAclPolicySet\": [\n            {\n                \"DefaultAction\": \"ACCEPT\",\n                \"GlobalAcceleratorAclPolicyId\": \"sp-00000msz\",\n                \"Status\": \"OPEN\"\n            }\n        ],\n        \"RequestId\": \"72b61d0e-a0c8-4db9-b069-6a85b80cea9d\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看访问控制策略"
+      }
+    ],
+    "DescribeGlobalAcceleratorAclRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalAcceleratorAclRules\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorAclPolicyId\": \"sp-dz058gbb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GlobalAcceleratorAclRuleSet\": [\n            {\n                \"Policy\": \"ACCEPT\",\n                \"Description\": \"desc\",\n                \"GlobalAcceleratorAclRuleId\": \"sr-00000msx\",\n                \"GlobalAcceleratorPolicyId\": \"sp-dz058gbb\",\n                \"Port\": \"22\",\n                \"Protocol\": \"UDP\",\n                \"SourceCidrBlock\": \"10.0.0.0/16\"\n            },\n            {\n                \"Policy\": \"ACCEPT\",\n                \"Description\": \"\",\n                \"GlobalAcceleratorAclRuleId\": \"sr-dz058gb9\",\n                \"GlobalAcceleratorPolicyId\": \"sp-dz058gbb\",\n                \"Port\": \"21\",\n                \"Protocol\": \"TCP\",\n                \"SourceCidrBlock\": \"11.0.0.0/16\"\n            },\n            {\n                \"Policy\": \"ACCEPT\",\n                \"Description\": \"desc\",\n                \"GlobalAcceleratorAclRuleId\": \"sr-io46vtld\",\n                \"GlobalAcceleratorPolicyId\": \"sp-dz058gbb\",\n                \"Port\": \"21\",\n                \"Protocol\": \"TCP\",\n                \"SourceCidrBlock\": \"11.0.0.0/16\"\n            }\n        ],\n        \"RequestId\": \"9f9b10e7-8036-47b7-a5d6-9a43cb758021\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查看ACL规则"
       }
     ],
     "DescribeGlobalAccelerators": [
@@ -224,6 +272,14 @@
         "title": "修改加速地域"
       }
     ],
+    "ModifyAccessLogStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccessLogStatus\n<公共请求参数>\n\n{\n    \"LogPushTaskId\": \"galog-8ezkdjm9\",\n    \"Status\": \"START\",\n    \"GlobalAcceleratorId\": \"ga-8sreohed\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2a67495-96a3-436a-b9bc-3e879facc94f\"\n    }\n}",
+        "title": "启停日志任务示例"
+      }
+    ],
     "ModifyEndpointGroup": [
       {
         "document": "",
@@ -254,6 +310,14 @@
         "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalAccelerator\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorId\": \"ga-agq60v0o\",\n    \"Name\": \"modify\",\n    \"Description\": \"modify\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5c3584f7-e7d4-447f-9087-1768365513f8\",\n        \"TaskId\": \"49ca6da7-321b-40a6-ad2a-28f5e5c4081f\"\n    }\n}",
         "title": "修改全球加速实例"
+      }
+    ],
+    "ModifyGlobalAcceleratorAccessLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalAcceleratorAccessLog\n<公共请求参数>\n\n{\n    \"LogPushTaskId\": \"galog-5nz8egdx\",\n    \"GlobalAcceleratorId\": \"ga-8sreohed\",\n    \"CloudLogId\": \"ce5aa025-1c29-4d8b-8f84-d960e22acb3f\",\n    \"CloudLogSetId\": \"81217ea2-f578-451a-946e-f31e2131a9ac\",\n    \"FieldKeys\": [\n        \"session_time\"\n    ],\n    \"FlowLogDescription\": \"****-测试创建日志任务-修改\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8785e7bc-a0d0-4dff-ac0b-f56152969ed9\"\n    }\n}",
+        "title": "修改访问日志示例"
       }
     ],
     "ModifyGlobalAcceleratorAclPolicy": [

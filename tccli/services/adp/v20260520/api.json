@@ -164,7 +164,7 @@
     "DescribeAgentReleasePreviewList": {
       "document": "获取应用下 Agent 的发布预览列表",
       "input": "DescribeAgentReleasePreviewListRequest",
-      "name": "获取Agent发布列表",
+      "name": "获取Agent发布预览列表",
       "output": "DescribeAgentReleasePreviewListResponse",
       "status": "online"
     },
@@ -4352,6 +4352,34 @@
       ],
       "usage": "both"
     },
+    "ConversationResetInfo": {
+      "document": "会话重置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最近一次重置的毫秒级时间戳</p>",
+          "example": "1784561474000",
+          "member": "string",
+          "name": "ResetTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次重置边界；该记录及更早的记录不再作为对话上下文</p>",
+          "example": "oxX_20260715_191643_698_cohcnDRd",
+          "member": "string",
+          "name": "ResetThroughRecordId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ConversationWorkspace": {
       "document": "Workspace 工作空间信息",
       "members": [
@@ -6619,7 +6647,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>消息列表</p>",
           "example": "无",
           "member": "ConversationMessage",
@@ -6627,6 +6655,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次重置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationResetInfo",
+          "name": "ResetInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6966,6 +7004,15 @@
           "name": "FieldMask",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件展示场景。不传或取 0 时不限定场景。</p><p>枚举值：</p><ul><li>0：不限定场景</li><li>1：Agent 模式</li><li>2：工作流</li><li>3：智能工作台</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "Module",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7979,7 +8026,7 @@
       "usage": "both"
     },
     "Filter": {
-      "document": "列表通用过滤条件（多个Filter之间为AND关系，同一Filter的多个value_list为OR关系）",
+      "document": "列表通用过滤条件（多个 Filter 之间为 AND 关系，同一 Filter 的多个 value_list 为 OR 关系）",
       "members": [
         {
           "disabled": false,
@@ -7994,7 +8041,7 @@
         },
         {
           "disabled": false,
-          "document": "操作符：0-属于，1-不属于",
+          "document": "操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>",
           "example": "1",
           "member": "int64",
           "name": "Operator",
@@ -9916,6 +9963,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具信息</p>",
+          "example": "无",
+          "member": "ToolSummary",
+          "name": "ToolList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11769,6 +11827,23 @@
           "example": "{\"result\": \"B\"}",
           "member": "string",
           "name": "Response",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ToolSummary": {
+      "document": "工具信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工具Id</p>",
+          "example": "f5b3c7ed-c80c-4464-99be-d903d74591cf",
+          "member": "string",
+          "name": "ToolId",
           "output_required": false,
           "required": false,
           "type": "string",

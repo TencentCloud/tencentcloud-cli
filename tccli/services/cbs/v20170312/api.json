@@ -4650,6 +4650,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云硬盘的自动续费标识</p><p>枚举值：</p><ul><li>NOTIFY_AND_AUTO_RENEW： 通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW： 通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW： 不通知过期不自动续费</li></ul>",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5497,6 +5506,16 @@
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照模式。取值为 INSTANT_SNAPSHOT 表示极速快照，STANDARD_SNAPSHOT 表示普通快照。</p><p>枚举值：</p><ul><li>INSTANT_SNAPSHOT： 极速快照</li><li>STANDARD_SNAPSHOT： 普通快照</li></ul>",
+          "example": "INSTANT_SNAPSHOT",
+          "member": "string",
+          "name": "SnapshotMode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

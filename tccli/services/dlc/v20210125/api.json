@@ -12104,12 +12104,32 @@
     },
     "DescribeMCPTaskRequest": {
       "document": "DescribeMCPTask请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "**",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeMCPTaskResponse": {
       "document": "DescribeMCPTask返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务详细信息</p>",
+          "example": "无",
+          "member": "MCPTaskInfo",
+          "name": "TaskInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12121,12 +12141,32 @@
     },
     "DescribeMCPTaskResultRequest": {
       "document": "DescribeMCPTaskResult请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "**************",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeMCPTaskResultResponse": {
       "document": "DescribeMCPTaskResult返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务结果信息</p>",
+          "example": "无",
+          "member": "MCPTaskResultInfo",
+          "name": "TaskResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -18364,6 +18404,379 @@
         }
       ],
       "type": "object"
+    },
+    "MCPTaskInfo": {
+      "document": "mcp 请求任务详情的返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "11",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>BatchId</p>",
+          "example": "batch-1234567890",
+          "member": "string",
+          "name": "BatchId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型</p>",
+          "example": "SQLTask",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型</p>",
+          "example": "SQLTask",
+          "member": "string",
+          "name": "TaskKind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎详情</p>",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "EngineTypeDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 类型</p>",
+          "example": "DQL",
+          "member": "string",
+          "name": "SQLType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL</p>",
+          "example": "SELECT * FROM db.table LIMIT 10",
+          "member": "string",
+          "name": "SQL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否截断</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSQLCutOff",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "mock_database",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎 ID</p>",
+          "example": "DataEngine-mock-001",
+          "member": "string",
+          "name": "DataEngineId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组名称</p>",
+          "example": "mock_resource_group",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JobId</p>",
+          "example": "spark-job-mock-001",
+          "member": "string",
+          "name": "SparkJobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Job 名称</p>",
+          "example": "mock_spark_job",
+          "member": "string",
+          "name": "SparkJobName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作人 Uin</p>",
+          "example": "100000000001",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-07-16 10:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2026-07-16 10:00:01",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2026-07-16 10:00:10",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-07-16 10:00:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎耗时</p><p>单位：毫秒</p>",
+          "example": "9000",
+          "member": "int64",
+          "name": "UsedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行总耗时</p><p>单位：毫秒</p>",
+          "example": "9500",
+          "member": "int64",
+          "name": "TotalTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进度</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出信息</p>",
+          "example": "Mock task completed successfully",
+          "member": "string",
+          "name": "OutputMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集</p>",
+          "example": "[[\"col1\",\"col2\"],[\"value1\",\"value2\"]]",
+          "member": "string",
+          "name": "DataSet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MCPTaskResultInfo": {
+      "document": "MCP 任务结果返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "dj210j1-1j2idj",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集 Schema</p>",
+          "example": "无",
+          "member": "Column",
+          "name": "ResultSchema",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集</p>",
+          "example": "[[\"value1\",\"value2\"],[\"value3\",\"value4\"]]",
+          "member": "string",
+          "name": "ResultSet",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否还有其他结果</p>",
+          "example": "1",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响行数</p>",
+          "example": "2",
+          "member": "string",
+          "name": "RowAffectInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出信息</p>",
+          "example": "Mock result query completed",
+          "member": "string",
+          "name": "OutputMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示 format</p>",
+          "example": "table",
+          "member": "string",
+          "name": "DisplayFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>能否下载</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanDownload",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果花费时间</p><p>单位：毫秒</p>",
+          "example": "123.45",
+          "member": "float",
+          "name": "QueryResultTime",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否超大</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsResultOversize",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MixedTablePartitions": {
       "document": "DLC分区信息查询返回数据结构",

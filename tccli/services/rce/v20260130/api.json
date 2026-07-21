@@ -1,5 +1,19 @@
 {
   "actions": {
+    "AssessDeviceRiskPremiumPro": {
+      "document": "设备风险评估-高级版",
+      "input": "AssessDeviceRiskPremiumProRequest",
+      "name": "设备风险评估-高级版",
+      "output": "AssessDeviceRiskPremiumProResponse",
+      "status": "online"
+    },
+    "AssessDeviceRiskPro": {
+      "document": "设备风险评估-基础版",
+      "input": "AssessDeviceRiskProRequest",
+      "name": "设备风险评估-基础版",
+      "output": "AssessDeviceRiskProResponse",
+      "status": "online"
+    },
     "AssessEnvironmentRisk": {
       "document": "环境风险评估",
       "input": "AssessEnvironmentRiskRequest",
@@ -15,6 +29,170 @@
     "serviceShortName": "rce"
   },
   "objects": {
+    "AssessDeviceRiskPremiumProRequest": {
+      "document": "AssessDeviceRiskPremiumPro请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户设备指纹token标识，在您的网站或者应用程序中集成设备指纹的SDK后获取</p>",
+          "example": "v3:**************************************************************************************XquS92ODP0c0yY3E=",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端 IP 地址</p>",
+          "example": "100.******.0",
+          "member": "string",
+          "name": "UserIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessDeviceRiskPremiumProResponse": {
+      "document": "AssessDeviceRiskPremiumPro返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备风险评估高级版返回结果</p>",
+          "example": "无",
+          "member": "AssessDeviceRiskPremiumRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessDeviceRiskPremiumRsp": {
+      "document": "设备风险评估高级版返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>决策信息</p>",
+          "example": "无",
+          "member": "Decision",
+          "name": "Decision",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备风险分信息</p>",
+          "example": "无",
+          "member": "DataScore",
+          "name": "Score",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备基础信息</p>",
+          "example": "无",
+          "member": "Device",
+          "name": "Device",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP环境基础信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Environment",
+          "name": "Environment",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssessDeviceRiskProRequest": {
+      "document": "AssessDeviceRiskPro请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户设备指纹token标识，在您的网站或者应用程序中集成设备指纹的SDK后获取</p>",
+          "example": "v3:**************************************************u58Tcp7u042WRcZBER/N/w==",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端 IP 地址</p>",
+          "example": "183.*******.16",
+          "member": "string",
+          "name": "UserIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessDeviceRiskProResponse": {
+      "document": "AssessDeviceRiskPro返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备风险评估基础版返回结果</p>",
+          "example": "无",
+          "member": "AssessDeviceRiskRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessDeviceRiskRsp": {
+      "document": "设备风险评估基础版返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备风险分信息</p>",
+          "example": "无",
+          "member": "DataScore",
+          "name": "Score",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备基础信息</p>",
+          "example": "无",
+          "member": "Device",
+          "name": "Device",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AssessEnvironmentRiskRequest": {
       "document": "AssessEnvironmentRisk请求参数结构体",
       "members": [
@@ -57,7 +235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>环境风险分信息</p>",
+          "document": "<p>IP环境风险分信息</p>",
           "example": "无",
           "member": "DataScore",
           "name": "Score",
@@ -67,7 +245,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>环境基础信息</p>",
+          "document": "<p>IP环境基础信息</p>",
           "example": "无",
           "member": "Environment",
           "name": "Environment",
@@ -99,6 +277,128 @@
           "name": "RiskLabels",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Decision": {
+      "document": "决策信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>决策结果</p><ul><li>pass：通过</li><li>review：复审</li><li>reject：拒绝</li></ul>",
+          "example": "pass",
+          "member": "string",
+          "name": "DecisionResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Device": {
+      "document": "设备基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备ID</p>",
+          "example": "30****************087270",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>App版本信息</p>",
+          "example": "1.0.8",
+          "member": "string",
+          "name": "AppVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>品牌</p>",
+          "example": "****",
+          "member": "string",
+          "name": "Brand",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端IP</p>",
+          "example": "43.*******.20",
+          "member": "string",
+          "name": "ClientIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型</p>",
+          "example": "PC****",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络类型</p>",
+          "example": "4g",
+          "member": "string",
+          "name": "NetworkType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用包名</p>",
+          "example": "com.h5.test",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台</p><p>枚举值：</p><ul><li>2： Android</li><li>3： IOS</li><li>4： H5</li><li>5： 微信小程序</li></ul>",
+          "example": "4",
+          "member": "string",
+          "name": "Platform",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统版本</p>",
+          "example": "10.0.0",
+          "member": "string",
+          "name": "SystemVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SDK版本</p>",
+          "example": "200700",
+          "member": "string",
+          "name": "SdkBuildVersion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

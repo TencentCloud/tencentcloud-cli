@@ -2678,6 +2678,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已完成状态的视频URL</p>",
+          "example": "https://videomaker-resources.ivh.qq.com/broadcast/Basic/video/992acbbda94545cf975a8c8e1c5ef3f4.mp4?gen_start_time=1784534025",
+          "member": "string",
+          "name": "MediaUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -58534,7 +58534,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源id",
+          "document": "<p>数据源id</p>",
           "example": "5009",
           "member": "string",
           "name": "DatasourceId",
@@ -58545,7 +58545,7 @@
         },
         {
           "disabled": false,
-          "document": "库名称",
+          "document": "<p>库名称</p>",
           "example": "db",
           "member": "string",
           "name": "DatabaseName",
@@ -58556,7 +58556,7 @@
         },
         {
           "disabled": false,
-          "document": "表名称",
+          "document": "<p>表名称</p>",
           "example": "tableName",
           "member": "string",
           "name": "TableName",
@@ -58567,7 +58567,7 @@
         },
         {
           "disabled": false,
-          "document": "catalog值",
+          "document": "<p>catalog值,仅使用DLC且开启TcLake的支持,其他类型传空即可</p>",
           "example": "catalog",
           "member": "string",
           "name": "CatalogName",
@@ -58578,7 +58578,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名称",
+          "document": "<p>schema名称</p>",
           "example": "public",
           "member": "string",
           "name": "SchemaName",
@@ -58589,7 +58589,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数",
+          "document": "<p>扩展参数</p>",
           "example": "无",
           "member": "ExtParam",
           "name": "ExtParams",
@@ -58600,7 +58600,7 @@
         },
         {
           "disabled": false,
-          "document": "table类型 TABLE｜VIEW",
+          "document": "<p>table类型 TABLE｜VIEW</p>",
           "example": "TABLE",
           "member": "string",
           "name": "TableType",

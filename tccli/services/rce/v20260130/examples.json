@@ -1,5 +1,21 @@
 {
   "actions": {
+    "AssessDeviceRiskPremiumPro": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssessDeviceRiskPremiumPro\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"v3:**************************************************************************************XquS92ODP0c0yY3E=\",\n    \"UserIp\": \"100.******.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Decision\": {\n                \"DecisionResult\": \"review\"\n            },\n            \"Device\": {\n                \"AppVersion\": \"1.0\",\n                \"Brand\": \"****\",\n                \"ClientIp\": \"111.******.81\",\n                \"DeviceId\": \"1A02C*************0DF073\",\n                \"Model\": \"PCK***\",\n                \"NetworkType\": \"-1\",\n                \"PackageName\": \"com.turingfd\",\n                \"Platform\": \"2\",\n                \"SdkBuildVersion\": \"90\",\n                \"SystemVersion\": \"11\"\n            },\n            \"Score\": {\n                \"RiskLabels\": [\n                    {\n                        \"Id\": \"101222\",\n                        \"Reason\": \"Debuggable USB connection (Android)\"\n                    }\n                ],\n                \"RiskLevel\": 2\n            },\n            \"Environment\": {\n                \"Location\": {\n                    \"City\": \"Guarapari\",\n                    \"Country\": \"BR\",\n                    \"District\": \"Todos os Santos\",\n                    \"Latitude\": \"***.***136\",\n                    \"Longitude\": \"***.**36\",\n                    \"Region\": \"Espírito Santo\",\n                    \"Timezone\": \"UTC-3\",\n                    \"ZipCode\": \"29200-080\"\n                },\n                \"Network\": {\n                    \"ASN\": \"Telefonica\",\n                    \"ISP\": \"18881\",\n                    \"IsAnycast\": false,\n                    \"IsCloudService\": false,\n                    \"IsCompany\": false,\n                    \"IsDNS\": false,\n                    \"IsDynamic\": false,\n                    \"IsEducation\": false,\n                    \"IsEgress\": false,\n                    \"IsGateway\": false,\n                    \"IsInfrastructure\": false,\n                    \"IsInstitution\": false,\n                    \"IsMXServer\": false,\n                    \"IsMobile\": false,\n                    \"IsReserved\": false,\n                    \"IsResidence\": false,\n                    \"Organization\": \"Telefonica\"\n                }\n            }\n        },\n        \"RequestId\": \"e22f67a1-af80-4f52-8845-5cd26c883d51\"\n    }\n}",
+        "title": "设备风险评估高级版示例"
+      }
+    ],
+    "AssessDeviceRiskPro": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssessDeviceRiskPro\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"v3:**************************************************u58Tcp7u042WRcZBER/N/w==\",\n    \"UserIp\": \"183.*******.16\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Device\": {\n                \"AppVersion\": \"1.0\",\n                \"Brand\": \"****\",\n                \"ClientIp\": \"183.*******.16\",\n                \"DeviceId\": \"350C54************54E940\",\n                \"Model\": \"PCK****\",\n                \"NetworkType\": \"0\",\n                \"PackageName\": \"com.******\",\n                \"Platform\": \"2\",\n                \"SdkBuildVersion\": \"90\",\n                \"SystemVersion\": \"11\"\n            },\n            \"Score\": {\n                \"RiskLabels\": [\n                    {\n                        \"Id\": \"101208\",\n                        \"Reason\": \"Debugging Mode Enabled (Android)\"\n                    }\n                ],\n                \"RiskLevel\": 3\n            }\n        },\n        \"RequestId\": \"e86e9de7-435c-4a0a-847b-237867dacb8d\"\n    }\n}",
+        "title": "设备风险评估基础版示例"
+      }
+    ],
     "AssessEnvironmentRisk": [
       {
         "document": "",
