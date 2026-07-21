@@ -3653,17 +3653,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签来源，1：标签。\n使用标签引用信息时，Source、AttributeBizId和LabelBizIds都需填写。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Source",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "标签ID",
           "example": "1",
           "member": "string",
@@ -3682,6 +3671,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签来源，1：标签。\n使用标签引用信息时，Source、AttributeBizId和LabelBizIds都需填写。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -9921,6 +9921,39 @@
         }
       ],
       "usage": "both"
+    },
+    "DocContentFilter": {
+      "document": "文档导入内容过滤配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文档导入过滤图片正则表达式</p>",
+          "example": "^icon-",
+          "member": "string",
+          "name": "ImageNamePatterns",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档导入过滤图片宽度值</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "ImageMinWidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档导入过滤图片高度值</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "ImageMinHeight",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "DocFilterFlag": {
       "document": "文档列表筛选标识位",
@@ -17820,7 +17853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)\n修改知识库文档时，该参数填入知识库ID。",
+          "document": "<p>应用ID，获取方法参看<a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">如何获取   BotBizId</a><br>修改知识库文档时，该参数填入知识库ID。</p>",
           "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
@@ -17829,7 +17862,7 @@
         },
         {
           "disabled": false,
-          "document": "文档ID",
+          "document": "<p>文档ID</p>",
           "example": "无1727231073371148288",
           "member": "string",
           "name": "DocBizId",
@@ -17838,7 +17871,7 @@
         },
         {
           "disabled": false,
-          "document": "是否引用链接",
+          "document": "<p>是否引用链接</p>",
           "example": "false",
           "member": "bool",
           "name": "IsRefer",
@@ -17847,7 +17880,7 @@
         },
         {
           "disabled": false,
-          "document": "标签适用范围，1:全部，2:按条件。默认为1。",
+          "document": "<p>标签适用范围，1:全部，2:按条件。默认为1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "AttrRange",
@@ -17856,7 +17889,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户主账号(集成商模式必填)",
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginUin",
@@ -17865,7 +17898,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户子账号(集成商模式必填)",
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
@@ -17874,7 +17907,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的标签",
+          "document": "<p>关联的标签</p>",
           "example": "无",
           "member": "AttrLabelRefer",
           "name": "AttrLabels",
@@ -17883,7 +17916,7 @@
         },
         {
           "disabled": false,
-          "document": "网页(或自定义链接)地址",
+          "document": "<p>网页(或自定义链接)地址</p>",
           "example": "http://xxx.xxx",
           "member": "string",
           "name": "WebUrl",
@@ -17892,7 +17925,7 @@
         },
         {
           "disabled": false,
-          "document": "外部引用链接类型 0：系统链接 1：自定义链接\n值为1时，WebUrl 字段不能为空，否则不生效。",
+          "document": "<p>外部引用链接类型 0：系统链接 1：自定义链接<br>值为1时，WebUrl 字段不能为空，否则不生效。</p>",
           "example": "0",
           "member": "uint64",
           "name": "ReferUrlType",
@@ -17901,7 +17934,7 @@
         },
         {
           "disabled": false,
-          "document": "有效开始时间，单位为unix时间戳",
+          "document": "<p>有效开始时间，单位为unix时间戳</p>",
           "example": "1753278682",
           "member": "string",
           "name": "ExpireStart",
@@ -17910,7 +17943,7 @@
         },
         {
           "disabled": false,
-          "document": "有效结束时间，单位为unix时间戳，默认值为0代表永久有效",
+          "document": "<p>有效结束时间，单位为unix时间戳，默认值为0代表永久有效</p>",
           "example": "1753325001",
           "member": "string",
           "name": "ExpireEnd",
@@ -17919,7 +17952,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID",
+          "document": "<p>分类ID</p>",
           "example": "194603807082126",
           "member": "string",
           "name": "CateBizId",
@@ -17928,7 +17961,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义",
+          "document": "<p>是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDownload",
@@ -17937,7 +17970,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新",
+          "document": "<p>需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新</p>",
           "example": "[0]",
           "member": "uint64",
           "name": "ModifyTypes",
@@ -17946,7 +17979,7 @@
         },
         {
           "disabled": false,
-          "document": "文档更新频率",
+          "document": "<p>文档更新频率</p>",
           "example": "无",
           "member": "UpdatePeriodInfo",
           "name": "UpdatePeriodInfo",
@@ -17955,7 +17988,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义切分规则",
+          "document": "<p>自定义切分规则</p>",
           "example": "{\"common_splitter\":{}}",
           "member": "string",
           "name": "SplitRule",
@@ -17964,7 +17997,7 @@
         },
         {
           "disabled": false,
-          "document": "文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。\n若不传，则不会修改文档生效域。",
+          "document": "<p>文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。<br>若不传，则不会修改文档生效域。</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -21596,12 +21629,21 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>文件ID</p>",
+          "example": "2066809249052056577",
           "member": "string",
           "name": "FileId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档导入图片过滤配置</p>",
+          "example": "无",
+          "member": "DocContentFilter",
+          "name": "ContentFilter",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

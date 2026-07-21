@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc DescribeMCPTaskResult --cli-unfold-argument  \
-    --TaskId 11jd01j-12f9h1
+    --TaskId **************
 ```
 
 Output: 

@@ -1,129 +1,71 @@
-# Release 3.0.1458.1
+# Release 3.0.1459.1
 
 ## 腾讯云智能体开发平台(adp) 版本：2026-05-20
 
-### 第 6 次发布
+### 第 7 次发布
 
-发布时间：2026-07-21 01:07:45
+发布时间：2026-07-22 01:08:18
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DescribeAccountList](http://document.tencentcloudapi.woa.com/document/product/1815/91845)
-* [DescribeAuditLogList](http://document.tencentcloudapi.woa.com/document/product/1815/91844)
-* [DescribeAuditLogMeta](http://document.tencentcloudapi.woa.com/document/product/1815/91843)
+* [DescribeConversationMessageList](http://document.tencentcloudapi.woa.com/document/product/1815/91386)
+
+	* 新增出参：ResetInfo
+
+* [DescribePlugin](http://document.tencentcloudapi.woa.com/document/product/1815/91368)
+
+	* 新增入参：Module
+
 
 新增数据结构：
 
-* [AccountInfo](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AccountInfo)
-* [AuditLog](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AuditLog)
-* [AuditLogMetaField](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AuditLogMetaField)
-
-
-
-## Agent 沙箱服务(ags) 版本：2025-09-20
-
-### 第 19 次发布
-
-发布时间：2026-07-21 01:09:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AppendEvent](http://document.tencentcloudapi.woa.com/document/product/1804/91853)
-* [CreateSession](http://document.tencentcloudapi.woa.com/document/product/1804/91852)
-* [DeleteSession](http://document.tencentcloudapi.woa.com/document/product/1804/91851)
-* [DescribeEvents](http://document.tencentcloudapi.woa.com/document/product/1804/91850)
-* [DescribeSession](http://document.tencentcloudapi.woa.com/document/product/1804/91849)
-* [DescribeSessions](http://document.tencentcloudapi.woa.com/document/product/1804/91848)
-* [ModifySessionTitle](http://document.tencentcloudapi.woa.com/document/product/1804/91847)
-
-新增数据结构：
-
-* [EventActionsInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#EventActionsInfo)
-* [EventContentInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#EventContentInfo)
-* [EventInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#EventInfo)
-* [EventPartInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#EventPartInfo)
-* [InlineDataInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#InlineDataInfo)
-* [SessionInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#SessionInfo)
-* [SessionState](http://document.tencentcloudapi.woa.com/document/product/1804/87854#SessionState)
-
-
-
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 76 次发布
-
-发布时间：2026-07-21 01:25:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [ConversationResetInfo](http://document.tencentcloudapi.woa.com/document/product/1815/91428#ConversationResetInfo)
+* [ToolSummary](http://document.tencentcloudapi.woa.com/document/product/1815/91428#ToolSummary)
 
 修改数据结构：
 
-* [WorkloadGroupConfig](http://document.tencentcloudapi.woa.com/document/product/1706/80309#WorkloadGroupConfig)
+* [PluginSummary](http://document.tencentcloudapi.woa.com/document/product/1815/91428#PluginSummary)
 
-	* 新增成员：MinCpuPercent, MinMemoryPercent, MaxConcurrencyNum, MaxQueueSize, QueueTimeout
+	* 新增成员：ToolList
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 57 次发布
+
+发布时间：2026-07-22 01:20:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyRemoteDiskAttributes](http://document.tencentcloudapi.woa.com/document/product/362/90686)
+
+	* 新增入参：AutoRenewFlag
+
+
+修改数据结构：
+
+* [Snapshot](http://document.tencentcloudapi.woa.com/document/product/362/15669#Snapshot)
+
+	* 新增成员：SnapshotMode
 
 
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 103 次发布
+### 第 104 次发布
 
-发布时间：2026-07-21 01:26:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateAlertCenterRuleAsync](http://document.tencentcloudapi.woa.com/document/product/1132/91855)
-* [ModifyIsolateTable](http://document.tencentcloudapi.woa.com/document/product/1132/91854)
-
-修改接口：
-
-* [DescribeAssetSync](http://document.tencentcloudapi.woa.com/document/product/1132/81901)
-
-	* 新增出参：CVMCount
-
-* [DescribeCfwAlerts](http://document.tencentcloudapi.woa.com/document/product/1132/91816)
-
-	* 新增入参：StartTime, EndTime, Level, Direction, ActionStatus, KillChain, AttackResult, Strategy, EventName, EventId, SrcIp, DstIp, InstanceId, OrderBy, Order
-
-* [DescribeCfwAssets](http://document.tencentcloudapi.woa.com/document/product/1132/91814)
-
-	* 新增入参：AssetType, Ip, InstanceId, VpcId, SubnetId, InstanceType, NextToken
-
-* [DescribeCfwRiskOverview](http://document.tencentcloudapi.woa.com/document/product/1132/91812)
-
-	* 新增入参：StartTime, EndTime
-
-* [DescribeCfwRuleOptimization](http://document.tencentcloudapi.woa.com/document/product/1132/91811)
-
-	* 新增入参：RuleType, Dimensions
-
-* [DescribeCfwRules](http://document.tencentcloudapi.woa.com/document/product/1132/91810)
-
-	* 新增入参：Enabled, IncludeDisabled, RuleUuid, Protocol, SrcIp, DstIp, Description, Keyword, InstanceId, ExpandNames
-
-
-
-
-## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
-
-### 第 19 次发布
-
-发布时间：2026-07-21 01:43:26
+发布时间：2026-07-22 01:25:43
 
 本次发布包含了以下内容：
 
@@ -131,19 +73,19 @@
 
 新增接口：
 
-* [QueryModels](http://document.tencentcloudapi.woa.com/document/product/1806/91857)
+* [DescribeAclRegInfo](http://document.tencentcloudapi.woa.com/document/product/1132/91868)
 
 新增数据结构：
 
-* [ModelList](http://document.tencentcloudapi.woa.com/document/product/1806/87994#ModelList)
+* [AclRegInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#AclRegInfo)
 
 
 
 ## 全球加速(ga2) 版本：2025-01-15
 
-### 第 8 次发布
+### 第 9 次发布
 
-发布时间：2026-07-21 01:56:58
+发布时间：2026-07-22 01:52:48
 
 本次发布包含了以下内容：
 
@@ -151,47 +93,96 @@
 
 新增接口：
 
-* [CreateGlobalAcceleratorAclPolicy](http://document.tencentcloudapi.woa.com/document/product/1808/91863)
-* [CreateGlobalAcceleratorAclRule](http://document.tencentcloudapi.woa.com/document/product/1808/91862)
-* [DeleteGlobalAcceleratorAclPolicy](http://document.tencentcloudapi.woa.com/document/product/1808/91861)
-* [DeleteGlobalAcceleratorAclRule](http://document.tencentcloudapi.woa.com/document/product/1808/91860)
-* [ModifyGlobalAcceleratorAclPolicy](http://document.tencentcloudapi.woa.com/document/product/1808/91859)
-* [ModifyGlobalAcceleratorAclRule](http://document.tencentcloudapi.woa.com/document/product/1808/91858)
+* [CreateGlobalAcceleratorAccessLog](http://document.tencentcloudapi.woa.com/document/product/1808/91874)
+* [DeleteGlobalAcceleratorAccessLog](http://document.tencentcloudapi.woa.com/document/product/1808/91873)
+* [DescribeAccessLogParam](http://document.tencentcloudapi.woa.com/document/product/1808/91872)
+* [DescribeGlobalAcceleratorAccessLog](http://document.tencentcloudapi.woa.com/document/product/1808/91871)
+* [ModifyAccessLogStatus](http://document.tencentcloudapi.woa.com/document/product/1808/91870)
+* [ModifyGlobalAcceleratorAccessLog](http://document.tencentcloudapi.woa.com/document/product/1808/91869)
 
 新增数据结构：
 
-* [AclEntries](http://document.tencentcloudapi.woa.com/document/product/1808/90473#AclEntries)
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 93 次发布
-
-发布时间：2026-07-21 02:07:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [ADPConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ADPConfig)
+* [GlobalAcceleratorAccessLog](http://document.tencentcloudapi.woa.com/document/product/1808/90473#GlobalAcceleratorAccessLog)
 
 修改数据结构：
 
-* [TalkLLMConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TalkLLMConfig)
+* [ForwardingRuleSet](http://document.tencentcloudapi.woa.com/document/product/1808/90473#ForwardingRuleSet)
 
-	* 新增成员：ADP
-
-
+	* 新增成员：HideResponseHeaders, ResponseHeaders
 
 
-## 安全凭证服务(sts) 版本：2018-08-13
 
-### 第 12 次发布
 
-发布时间：2026-07-21 02:27:51
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 96 次发布
+
+发布时间：2026-07-22 02:08:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AvatarScriptInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#AvatarScriptInfo)
+
+	* 新增成员：MediaUrl
+
+
+
+
+## 腾讯云智能体开发平台(lke) 版本：2023-11-30
+
+### 第 39 次发布
+
+发布时间：2026-07-22 02:10:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SaveDoc](http://document.tencentcloudapi.woa.com/document/product/1759/83679)
+
+	* 新增入参：ContentFilter
+
+
+新增数据结构：
+
+* [DocContentFilter](http://document.tencentcloudapi.woa.com/document/product/1759/83593#DocContentFilter)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 86 次发布
+
+发布时间：2026-07-22 02:15:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [SqlGatewayEndpoint](http://document.tencentcloudapi.woa.com/document/product/849/52010#SqlGatewayEndpoint)
+
+修改数据结构：
+
+* [SqlGatewayItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#SqlGatewayItem)
+
+	* 新增成员：SessionClusterId, PgUser, Endpoints
+
+
+
+
+## 风险识别 RCE(rce) 版本：2026-01-30
+
+### 第 2 次发布
+
+发布时间：2026-07-22 02:19:13
 
 本次发布包含了以下内容：
 
@@ -199,12 +190,62 @@
 
 新增接口：
 
-* [GetCosSessionToken](http://document.tencentcloudapi.woa.com/document/product/1312/91865)
-* [ListCosSessionSeedToken](http://document.tencentcloudapi.woa.com/document/product/1312/91864)
+* [AssessDeviceRiskPremiumPro](http://document.tencentcloudapi.woa.com/document/product/1343/91876)
+* [AssessDeviceRiskPro](http://document.tencentcloudapi.woa.com/document/product/1343/91875)
 
 新增数据结构：
 
-* [SeedCredentials](http://document.tencentcloudapi.woa.com/document/product/1312/48198#SeedCredentials)
+* [AssessDeviceRiskPremiumRsp](http://document.tencentcloudapi.woa.com/document/product/1343/91795#AssessDeviceRiskPremiumRsp)
+* [AssessDeviceRiskRsp](http://document.tencentcloudapi.woa.com/document/product/1343/91795#AssessDeviceRiskRsp)
+* [Decision](http://document.tencentcloudapi.woa.com/document/product/1343/91795#Decision)
+* [Device](http://document.tencentcloudapi.woa.com/document/product/1343/91795#Device)
+
+
+
+## 风险识别 RCE(rce) 版本：2025-11-13
+
+
+
+## 风险识别 RCE(rce) 版本：2025-04-25
+
+
+
+## 风险识别 RCE(rce) 版本：2020-11-03
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 143 次发布
+
+发布时间：2026-07-22 02:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteModelService](http://document.tencentcloudapi.woa.com/document/product/851/76499)
+
+	* 新增入参：TiProjectId
+
+* [DeleteModelServiceGroup](http://document.tencentcloudapi.woa.com/document/product/851/76498)
+
+	* 新增入参：TiProjectId
+
+* [DescribeModelServiceCallInfo](http://document.tencentcloudapi.woa.com/document/product/851/76495)
+
+	* 新增入参：TiProjectId
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：TiProjectId
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 
 

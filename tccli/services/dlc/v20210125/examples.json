@@ -843,7 +843,7 @@
     "DescribeMCPTaskResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"11jd01j-12f9h1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"**************\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskResult\": {\n            \"CanDownload\": false,\n            \"DisplayFormat\": \"\",\n            \"IsResultOversize\": false,\n            \"NextToken\": \"\",\n            \"OutputMessage\": \"**** result ***** completed\",\n            \"QueryResultTime\": 0,\n            \"ResultSchema\": [\n                {\n                    \"Comment\": \"\",\n                    \"CreateTime\": \"\",\n                    \"DataMaskStrategyInfo\": null,\n                    \"IsPartition\": false,\n                    \"ModifiedTime\": \"\",\n                    \"Name\": \"col1\",\n                    \"Nullable\": \"\",\n                    \"Position\": 0,\n                    \"Precision\": 0,\n                    \"Scale\": 0,\n                    \"Type\": \"string\"\n                }\n            ],\n            \"ResultSet\": \"[[\\\"value1\\\"],[\\\"value2\\\"]]\",\n            \"RowAffectInfo\": \"2\",\n            \"State\": 2,\n            \"TaskId\": \"11jd01j-12f9h1\"\n        },\n        \"RequestId\": \"1aa1dc9a-adaf-4b05-a2ea-76ecc0d7ea08\"\n    }\n}",
         "title": "MCP任务结果信息"
       }
