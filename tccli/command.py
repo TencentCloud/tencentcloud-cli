@@ -8,6 +8,7 @@ import tccli.options_define as Options_define
 from collections import OrderedDict
 
 from tccli import credentials
+from tccli.action_caller import GenericActionCaller
 from tccli.utils import Utils
 from tccli.argument import CLIArgument, CustomArgument, ListArgument, BooleanArgument
 from tccli.exceptions import UnknownArgumentError
@@ -180,7 +181,7 @@ class ServiceCommand(BaseCommand):
             action_model = service_model["actions"][action]
             action_caller = action_model.get("action_caller", None)
             if not action_caller:
-                action_caller = Services.action_caller(self._service_name)()[action]
+                action_caller = GenericActionCaller(self._service_name, action)
             command_map[action] = ActionCommand(
                 service_name=self._service_name,
                 version=self._version,
