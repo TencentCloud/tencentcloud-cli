@@ -4,7 +4,7 @@ import logging
 
 from tencentcloud.common import credential
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
-from tencentcloud.cvm.v20170312 import cvm_client, models
+from tencentcloud.common.common_client import CommonClient
 
 
 def add_command(args, parsed_globals):
@@ -21,11 +21,10 @@ def add_command(args, parsed_globals):
 
     # do api call with secret key
     cred = credential.Credential(secret_id, secret_key, token)
-    cli = cvm_client.CvmClient(cred, region)
+    cli = CommonClient("cvm", "2017-03-12", cred, region)
 
-    req = models.DescribeInstancesRequest()
     try:
-        resp = cli.DescribeInstances(req)
-        print(resp.to_json_string(indent=2))
+        resp = cli.call("DescribeInstances", {"Limit": 10})
+        print(json.dumps(resp))
     except TencentCloudSDKException as e:
         logging.exception(e)
