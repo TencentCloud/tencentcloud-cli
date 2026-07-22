@@ -11,7 +11,8 @@ from tccli import credentials
 from tccli.utils import Utils
 from tccli.argument import CLIArgument, CustomArgument, ListArgument, BooleanArgument
 from tccli.exceptions import UnknownArgumentError
-from tccli.loaders import Loader
+from tccli.loaders import Loader, MAX_INPUT_DEPTH, RECURSIVE_HINT_FILE_OPTION
+from tccli.self_ref import is_action_self_referencing
 from tccli.argparser import CLIArgParser, ActionArgParser, ArgMapArgParser
 from tccli.help_command import CLIHelpCommand, ServiceHelpCommand, ActionHelpCommand
 from tccli.configure import ConfigureCommand
@@ -181,13 +182,16 @@ class ServiceCommand(BaseCommand):
             action_caller = action_model.get("action_caller", None)
             if not action_caller:
                 action_caller = Services.action_caller(self._service_name)()[action]
-            command_map[action] = ActionCommand(
+            cmd = ActionCommand(
                 service_name=self._service_name,
                 version=self._version,
                 action_name=action,
                 action_model=action_model,
                 action_caller=action_caller,
             )
+            cmd._is_self_ref = is_action_self_referencing(
+                self._service_name, self._version, action, service_model)
+            command_map[action] = cmd
         return command_map
 
     def __call__(self, args, parsed_globals):
@@ -230,6 +234,7 @@ class ActionCommand(BaseCommand):
         self.cli_input_argument = CliInputJSONArgument()
         self.cli_unfold_argument = CliUnfoldArgument()
         self.profile = "default"
+        self._is_self_ref = False
 
     @property
     def argument_map(self):
@@ -265,6 +270,8 @@ class ActionCommand(BaseCommand):
         return argument_map
 
     def __call__(self, args, parsed_globals):
+        if self._is_self_ref:
+            return self._call_with_depth_guard(args, parsed_globals)
 
         self._call_mode = self._get_call_mode(parsed_globals)
         self._get_profile(parsed_globals)
@@ -294,6 +301,66 @@ class ActionCommand(BaseCommand):
         credentials.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
         return self._action_caller(action_parameters, vars(parsed_globals))
 
+    def _call_with_depth_guard(self, args, parsed_globals):
+        """Self-ref 接口专用入口：含 orphan key 过滤、深层嵌套提取、深度超限检测。"""
+
+        self._call_mode = self._get_call_mode(parsed_globals)
+        self._get_profile(parsed_globals)
+
+        action_parser = self._create_action_parser(self.argument_map)
+        action_parser.add_argument('help', nargs='?')
+
+        if self._call_mode == Options_define.CliUnfoldArgument:
+            self._prefilter_orphan_keys(args, action_parser)
+
+        parsed_args, remaining = action_parser.parse_known_args(args)
+        if parsed_args.help == 'help':
+            help_command = self.create_help_command()
+            return help_command(remaining, parsed_globals)
+        elif parsed_args.help:
+            for idx, tok in enumerate(remaining):
+                if isinstance(tok, str) and tok.startswith("--"):
+                    remaining.insert(idx + 1, parsed_args.help)
+                    break
+            else:
+                remaining.append(parsed_args.help)
+
+        extra_unfold_args = OrderedDict()
+        oversized_tokens = []  # [(key, depth, prefix, type_name)]
+        if self._call_mode == Options_define.CliUnfoldArgument and remaining:
+            remaining = self._extract_deep_nested_args(
+                remaining, extra_unfold_args, oversized_tokens)
+
+        if remaining or oversized_tokens:
+            hint = self._build_recursive_hint(remaining)
+            oversized_hint = self._build_oversized_hint(oversized_tokens)
+            error_parts = []
+            if remaining:
+                error_parts.append("Unknown options: %s" % ', '.join(remaining))
+            if oversized_tokens:
+                error_parts.append(
+                    "Input nesting depth exceeds MAX_INPUT_DEPTH=%d: %s"
+                    % (MAX_INPUT_DEPTH,
+                       ', '.join("--%s (depth=%d)" % (k, d)
+                                 for k, d, _p, _t in oversized_tokens)))
+            msg = "\n".join(error_parts)
+            tail_hints = [h for h in (hint, oversized_hint) if h]
+            if tail_hints:
+                msg += "\n\n" + "\n\n".join(tail_hints)
+            raise UnknownArgumentError(msg)
+
+        if self._call_mode == Options_define.GenerateCliSkeleton:
+            return self.generate_cli_skeleton_argument.generate_skeleton(parsed_globals)
+
+        if self._call_mode == Options_define.CliInputJson:
+            action_parameters = self.cli_input_argument.add_to_call_parameters(parsed_globals)
+        elif self._call_mode == Options_define.CliUnfoldArgument:
+            action_parameters = self.cli_unfold_argument.build_action_parameters(
+                parsed_args, extra_unfold_args=extra_unfold_args or None)
+        else:
+            action_parameters = self._build_action_parameters(parsed_args, self.argument_map)
+        credentials.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
+        return self._action_caller(action_parameters, vars(parsed_globals))
     def create_help_command(self):
         return ActionHelpCommand(self._service_name, self._version, self._action_name)
 
@@ -306,6 +373,160 @@ class ActionCommand(BaseCommand):
                 value = parsed_args[name]
                 argument_object.add_to_params(action_params, value)
         return action_params
+
+    def _build_recursive_hint(self, remaining):
+        """为命中自引用截断前缀的未知参数生成提示文案，指向 --cli-input-json file://。"""
+        # 仅在 --cli-unfold-argument 模式下才有意义
+        if self._call_mode != Options_define.CliUnfoldArgument:
+            return ""
+        try:
+            unfold_params = self._cli_data.get_unfold_param_info(
+                self._service_name, self._version, self._action_name,
+                profile=self.profile, param_array=True)
+        except Exception:
+            return ""
+
+        # 收集所有被自引用截断的 leaf 前缀，例如：
+        #   "RuleList.RuleDetail.Children.0" -> "AllocationRuleExpression"
+        truncated = self._collect_truncated_prefixes(unfold_params)
+        if not truncated:
+            return ""
+
+        matched = OrderedDict()  # 命中的非法参数 -> (截断前缀, 自引用类型名)
+        for token in remaining:
+            if not isinstance(token, str) or not token.startswith("--"):
+                continue
+            key = token[2:]
+            for prefix, type_name in truncated.items():
+                # 严格前缀匹配："RuleList.RuleDetail.Children.0.RuleValue"
+                # 应被 "RuleList.RuleDetail.Children.0" 命中。
+                if key.startswith(prefix + "."):
+                    matched[token] = (prefix, type_name)
+                    break
+
+        if not matched:
+            return ""
+
+        lines = ["Hint: the following option(s) drill into a self-referencing type "
+                 "that --cli-unfold-argument cannot expand further:"]
+        for token, (prefix, type_name) in matched.items():
+            lines.append("  %s  (under --%s, self-referencing type: %s)"
+                         % (token, prefix, type_name or "unknown"))
+        lines.append("")
+        lines.append("To pass deeper nested values:")
+        lines.append("  " + RECURSIVE_HINT_FILE_OPTION)
+        return "\n".join(lines)
+
+    @staticmethod
+    def _collect_truncated_prefixes(unfold_params):
+        """从 get_unfold_param_info 结果中收集自引用截断 leaf 前缀。
+
+        :return: ``OrderedDict[prefix_key, type_name]``，仅含 recursive_truncated 为 True 的项。
+        """
+        truncated = OrderedDict()
+        if not unfold_params:
+            return truncated
+        for name, info in unfold_params.items():
+            if info and info.get("recursive_truncated"):
+                truncated[name] = info.get("recursive_type") or ""
+        return truncated
+
+    def _extract_deep_nested_args(self, remaining, extra_unfold_args, oversized_tokens):
+        """从 ``remaining`` 提取命中自引用截断前缀的扁平参数并按深度分流。
+
+        :param remaining: argparse 未识别 token 列表。
+        :param extra_unfold_args: 输出，深度 ≤ MAX_INPUT_DEPTH 的 ``OrderedDict[key, value]``。
+        :param oversized_tokens: 输出，深度超限的 ``List[(key, depth, prefix, type_name)]``。
+        :return: 剔除已消费 token 后剩余的未识别 token 列表。
+        """
+        if not remaining:
+            return remaining
+        try:
+            unfold_params = self._cli_data.get_unfold_param_info(
+                self._service_name, self._version, self._action_name,
+                profile=self.profile, param_array=True)
+        except Exception:
+            return remaining
+        truncated = self._collect_truncated_prefixes(unfold_params)
+        if not truncated:
+            return remaining
+
+        new_remaining = []
+        i, n = 0, len(remaining)
+        while i < n:
+            tok = remaining[i]
+            # --- 内联 token 解析：支持 --key=value 和 --key v1 v2 两种形式 ---
+            if not isinstance(tok, str) or not tok.startswith("--"):
+                new_remaining.append(tok)
+                i += 1
+                continue
+            if "=" in tok:
+                key, eq_value = tok[2:].split("=", 1)
+                has_eq, paired, advance = True, [], 1
+            else:
+                key = tok[2:]
+                j = i + 1
+                paired = []
+                while j < n and isinstance(remaining[j], str) \
+                        and not remaining[j].startswith("--"):
+                    paired.append(remaining[j])
+                    j += 1
+                has_eq, advance = False, 1 + len(paired)
+
+            # --- 最长前缀匹配 ---
+            prefix, type_name = self._match_truncated_prefix(key, truncated)
+            if prefix is None:
+                new_remaining.append(tok)
+                new_remaining.extend(paired)
+                i += advance
+                continue
+
+            # --- 取值 ---
+            if has_eq:
+                value = eq_value
+            elif paired:
+                value = paired[0] if len(paired) == 1 else paired
+            else:
+                new_remaining.append(tok)
+                i += advance
+                continue
+
+            # --- 深度检查并分流 ---
+            depth = sum(1 for seg in key.split(".") if not seg.isdigit())
+            if depth > MAX_INPUT_DEPTH:
+                oversized_tokens.append((key, depth, prefix, type_name))
+            else:
+                extra_unfold_args[key] = value
+            i += advance
+
+        return new_remaining
+
+    @staticmethod
+    def _match_truncated_prefix(key, truncated):
+        """在 ``truncated`` 中按最长前缀匹配 ``key``，返回 ``(prefix, type_name)`` 或 ``(None, "")``。"""
+        best_prefix = None
+        best_type = ""
+        for prefix, type_name in truncated.items():
+            if key.startswith(prefix + ".") and \
+                    (best_prefix is None or len(prefix) > len(best_prefix)):
+                best_prefix = prefix
+                best_type = type_name
+        return best_prefix, best_type
+
+    def _build_oversized_hint(self, oversized_tokens):
+        """为深度超限项构造错误提示文案，指向 --cli-input-json file://；空列表返回空串。"""
+        if not oversized_tokens:
+            return ""
+        lines = ["Hint: the following option(s) exceed --cli-unfold-argument's "
+                 "supported nesting depth (MAX_INPUT_DEPTH=%d):" % MAX_INPUT_DEPTH]
+        for key, depth, prefix, type_name in oversized_tokens:
+            lines.append("  --%s  (depth=%d, exceeds MAX_INPUT_DEPTH=%d, "
+                         "under --%s, type: %s)"
+                         % (key, depth, MAX_INPUT_DEPTH, prefix, type_name or "unknown"))
+        lines.append("")
+        lines.append("To pass this request:")
+        lines.append("  " + RECURSIVE_HINT_FILE_OPTION)
+        return "\n".join(lines)
 
     def _get_profile(self, parsed_globals):
         if getattr(parsed_globals, Options_define.Profile):
@@ -326,3 +547,36 @@ class ActionCommand(BaseCommand):
     def _create_action_parser(self, argument_map):
         parser = ArgMapArgParser(argument_map)
         return parser
+
+    @staticmethod
+    def _prefilter_orphan_keys(args, action_parser):
+        """在 argparse 解析前扫描 args，检测无值的 --key 并抛错。"""
+        if not args:
+            return
+        valueless_opts = set()
+        for act in action_parser._actions:
+            if act.nargs == 0:
+                valueless_opts.update(act.option_strings)
+        orphan_tokens = []
+        n = len(args)
+        i = 0
+        while i < n:
+            tok = args[i]
+            if not isinstance(tok, str) or not tok.startswith("--") or "=" in tok:
+                i += 1
+                continue
+            if tok in valueless_opts:
+                i += 1
+                continue
+            is_last = (i == n - 1)
+            next_is_opt = (not is_last) and isinstance(args[i + 1], str) \
+                and args[i + 1].startswith("--")
+            if is_last or next_is_opt:
+                orphan_tokens.append(tok)
+            i += 1
+        if orphan_tokens:
+            raise UnknownArgumentError(
+                "Missing value for option(s): %s\n\n"
+                "Under --cli-unfold-argument mode, every --key must be immediately "
+                "followed by its value(s), or remove the key if you intend to leave it empty."
+                % ", ".join(orphan_tokens))

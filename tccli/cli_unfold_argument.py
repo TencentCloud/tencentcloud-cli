@@ -16,7 +16,14 @@ class CliUnfoldArgument(CustomArgument):
     def __init__(self):
         super(CliUnfoldArgument, self).__init__(**self.ARG_DATA)
 
-    def build_action_parameters(self, args):
+    def build_action_parameters(self, args, extra_unfold_args=None):
+        """从 argparse Namespace 构造请求体。
+
+        :param args: argparse Namespace，扁平展开参数。
+        :param extra_unfold_args: 可选的额外扁平 ``{key: value}``，与 Namespace 合并后
+            一同走 ``convert_to_dict`` + ``handle_array``；为 ``None`` 或空时等同改动前。
+        :return: 嵌套 dict / list 形式的请求体。
+        """
         parsed_args = vars(args)
         for key in list(parsed_args.keys()):
             if parsed_args[key] is None:
@@ -24,6 +31,11 @@ class CliUnfoldArgument(CustomArgument):
         params_set = {}
         for key, value in parsed_args.items():
             self.convert_to_dict(params_set, key, value)
+        if extra_unfold_args:
+            for key, value in extra_unfold_args.items():
+                if value is None:
+                    continue
+                self.convert_to_dict(params_set, key, value)
         return self.handle_array(params_set, "--")
 
     def convert_to_dict(self, params_set, key, value):
