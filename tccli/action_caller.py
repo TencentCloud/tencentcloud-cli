@@ -14,13 +14,9 @@ from tencentcloud.common.profile.http_profile import HttpProfile
 import tccli.format_output as format_output
 import tccli.options_define as options_define
 from tccli import __version__
-from tccli.exceptions import ConfigurationError, ClientError, NoCredentialsError
+from tccli.exceptions import ConfigurationError, ClientError
 from tccli.loaders import Loader, BASE_TYPE
 from tccli.utils import Utils
-
-
-def _nonempty(v):
-    return v is not None and str(v).strip() not in ("", "None")
 
 
 class GenericActionCaller(object):
@@ -160,7 +156,9 @@ class GenericActionCaller(object):
                 if param in [options_define.SecretKey, options_define.SecretId, options_define.Token]:
                     if param in cred:
                         g_param[param] = cred[param]
-                    # 不再逐参数 raise，循环后统一校验
+                    elif not (g_param[options_define.UseCVMRole.replace('-', '_')]
+                              or os.getenv(options_define.ENV_TKE_ROLE_ARN)):
+                        raise ConfigurationError("%s is invalid" % param)
                 elif param in [options_define.Region, options_define.Output, options_define.Language]:
                     if param in conf[options_define.SysParam]:
                         g_param[param] = conf[options_define.SysParam][param]
@@ -169,9 +167,6 @@ class GenericActionCaller(object):
                 elif param.replace('_', '-') in [options_define.RoleArn, options_define.RoleSessionName]:
                     if param.replace('_', '-') in cred:
                         g_param[param] = cred[param.replace('_', '-')]
-
-        # 统一的空 AK/SK 拦截（替代原逐参数 raise）
-        self._ensure_credential(g_param)
 
         try:
             if g_param[options_define.ServiceVersion]:
@@ -256,30 +251,3 @@ class GenericActionCaller(object):
                 else:
                     result[name] = value
         return result
-
-    def _ensure_credential(self, g_param):
-        O = options_define
-        # 角色 / OIDC 模式无需 AK/SK，放行
-        if g_param[O.UseCVMRole.replace('-', '_')] or os.getenv(O.ENV_TKE_ROLE_ARN):
-            return
-        # AK/SK 已就绪，放行
-        if _nonempty(g_param[O.SecretId]) and _nonempty(g_param[O.SecretKey]):
-            return
-        # 空 AK/SK → 抛出按语言的友好错误
-        raise NoCredentialsError(self._missing_cred_msg(g_param.get(O.Language)))
-
-    @staticmethod
-    def _missing_cred_msg(language):
-        if language == "en-US":
-            return (
-                "secretId/secretKey not found or empty. Please configure your credentials by one of:\n"
-                "  1) Run: tccli configure\n"
-                "  2) Env: export TENCENTCLOUD_SECRET_ID=xxx TENCENTCLOUD_SECRET_KEY=xxx\n"
-                "  3) CLI: --secretId xxx --secretKey xxx"
-            )
-        return (
-            "未检测到有效的 secretId/secretKey，请通过以下任一方式配置后重试：\n"
-            "  1) 运行:     tccli configure\n"
-            "  2) 环境变量: export TENCENTCLOUD_SECRET_ID=xxx TENCENTCLOUD_SECRET_KEY=xxx\n"
-            "  3) 命令行:   --secretId xxx --secretKey xxx"
-        )

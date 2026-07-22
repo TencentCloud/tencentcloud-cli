@@ -59,7 +59,9 @@ def main():
         log.exception(e)
         return 255
     except NoCredentialsError as e:
-        sys.stderr.write(str(e))
+        msg = ('%s. You can configure your credentials by running '
+               '"tccli configure".' % e)
+        sys.stderr.write(msg)
         sys.stderr.write('\n')
         log.exception(e)
         return 255
