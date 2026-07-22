@@ -1247,11 +1247,11 @@
       "status": "online"
     },
     "DescribeDeviceDetailList": {
-      "document": "基于软件查看终端详情列表,私有化调用path为：capi/Software/DescribeDeviceDetailList",
+      "document": "不使用了\n\n基于软件查看终端详情列表,私有化调用path为：capi/Software/DescribeDeviceDetailList",
       "input": "DescribeDeviceDetailListRequest",
       "name": "基于软件查看终端详情列表",
       "output": "DescribeDeviceDetailListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDeviceGroup": {
       "document": "查询指定终端分组详情，私有化调用path为：/capi/Assets/Device/DescribeDeviceGroup",

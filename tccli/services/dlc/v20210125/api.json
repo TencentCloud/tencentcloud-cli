@@ -42,6 +42,13 @@
       "output": "AlterDMSTableResponse",
       "status": "online"
     },
+    "AlterTableComment": {
+      "document": "修改表备注",
+      "input": "AlterTableCommentRequest",
+      "name": "修改表备注",
+      "output": "AlterTableCommentResponse",
+      "status": "online"
+    },
     "AssignMangedTableProperties": {
       "document": "分配原生表表属性",
       "input": "AssignMangedTablePropertiesRequest",
@@ -413,6 +420,13 @@
       "output": "DeleteDataMaskStrategyResponse",
       "status": "online"
     },
+    "DeleteMetaDatabase": {
+      "document": "本接口（DeleteMetaDatabase）用于一键删除元数据库",
+      "input": "DeleteMetaDatabaseRequest",
+      "name": "删除元数据库",
+      "output": "DeleteMetaDatabaseResponse",
+      "status": "online"
+    },
     "DeleteNativeSparkSession": {
       "document": "根据spark session名称销毁eg spark session",
       "input": "DeleteNativeSparkSessionRequest",
@@ -614,6 +628,13 @@
       "input": "DescribeDataMaskStrategiesRequest",
       "name": "查询数据脱敏策略列表",
       "output": "DescribeDataMaskStrategiesResponse",
+      "status": "online"
+    },
+    "DescribeDatabase": {
+      "document": "本接口（DescribeDatabase）,查询数据库详细信息",
+      "input": "DescribeDatabaseRequest",
+      "name": "查询数据库详细信息",
+      "output": "DescribeDatabaseResponse",
       "status": "online"
     },
     "DescribeDatabases": {
@@ -1153,6 +1174,13 @@
       "input": "GenerateCreateMangedTableSqlRequest",
       "name": "生成创建托管表语句",
       "output": "GenerateCreateMangedTableSqlResponse",
+      "status": "online"
+    },
+    "GenerateInternalTable": {
+      "document": "建表",
+      "input": "GenerateInternalTableRequest",
+      "name": "创建内部表",
+      "output": "GenerateInternalTableResponse",
       "status": "online"
     },
     "GetOptimizerPolicy": {
@@ -1939,6 +1967,33 @@
     },
     "AlterDMSTableResponse": {
       "document": "AlterDMSTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AlterTableCommentRequest": {
+      "document": "AlterTableComment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改表的基本信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AlterTableCommentResponse": {
+      "document": "AlterTableComment返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10698,6 +10753,62 @@
       ],
       "type": "object"
     },
+    "DeleteMetaDatabaseRequest": {
+      "document": "DeleteMetaDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "testDB",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称，默认DataLakeCatalog",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMetaDatabaseResponse": {
+      "document": "DeleteMetaDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本批次提交的任务的批次Id",
+          "example": "batch-xxxxxxxx",
+          "member": "string",
+          "name": "BatchId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务Id集合，按照执行顺序排列",
+          "example": "[alcas,asdfasd]",
+          "member": "string",
+          "name": "TaskIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNativeSparkSessionRequest": {
       "document": "DeleteNativeSparkSession请求参数结构体",
       "members": [
@@ -12931,6 +13042,52 @@
           "name": "Strategies",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseRequest": {
+      "document": "DescribeDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "TestDb",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据连接名称，不填默认为DataLakeCatalog",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseResponse": {
+      "document": "DescribeDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库信息",
+          "example": "无",
+          "member": "DatabaseResponseInfo",
+          "name": "DatabaseInfo",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -19176,6 +19333,89 @@
           "name": "Execution",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateInternalTableRequest": {
+      "document": "GenerateInternalTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表基本信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "字段信息",
+          "example": "无",
+          "member": "TColumn",
+          "name": "Columns",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分区信息",
+          "example": "无",
+          "member": "TPartition",
+          "name": "Partitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "属性",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "V2 upsert表 upsert键",
+          "example": "[\"id\"]",
+          "member": "string",
+          "name": "UpsertKeys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateInternalTableResponse": {
+      "document": "GenerateInternalTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回sql",
+          "example": "无",
+          "member": "Execution",
+          "name": "Execution",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否tciceberg",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTIcebergSql",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

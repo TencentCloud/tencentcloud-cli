@@ -48,6 +48,14 @@
         "title": "创建挂载点"
       }
     ],
+    "CreatePathProtectionRule": [
+      {
+        "document": "创建路径保护规则",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePathProtectionRule\n<公共请求参数>\n\n{\n    \"Status\": \"1\",\n    \"Path\": \"/protect\",\n    \"FileSystemId\": \"f4mhaqkciq0\",\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6d3ef8-db1d-40de-afa1-d340302458bb\"\n    }\n}",
+        "title": "创建路径保护规则"
+      }
+    ],
     "CreateRestoreTasks": [
       {
         "document": "批量创建回热任务",
@@ -102,6 +110,14 @@
         "input": "https://chdfs.tencentcloudapi.com/?Action=DeleteMountPoint\n&MountPointId=f4mnvilzmdd-fj7A\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85a1accb-0456-45b3-9eb2-52ae76430ca3\"\n    }\n}",
         "title": "删除挂载点"
+      }
+    ],
+    "DeletePathProtectionRule": [
+      {
+        "document": "删除路径保护规则",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePathProtectionRule\n<公共请求参数>\n\n{\n    \"PathProtectionRuleId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6d3ef8-db1d-40de-afa1-d340302458bb\"\n    }\n}",
+        "title": "删除路径保护规则"
       }
     ],
     "DeleteTrashConfig": [
@@ -176,6 +192,14 @@
         "title": "查看挂载点列表"
       }
     ],
+    "DescribePathProtectionRules": [
+      {
+        "document": "查看路径保护规则列表",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePathProtectionRules\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"f4mnvilzmdd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PathProtectionRules\": [\n            {\n                \"PathProtectionRuleId\": 1,\n                \"Name\": \"test\",\n                \"Path\": \"/protect1\",\n                \"Status\": 1,\n                \"CreateTime\": \"2019-07-30T16:24:38+08:00\"\n            },\n            {\n                \"PathProtectionRuleId\": 2,\n                \"Name\": \"test\",\n                \"Path\": \"/protect2\",\n                \"Status\": 1,\n                \"CreateTime\": \"2019-07-30T16:24:38+08:00\"\n            }\n        ],\n        \"RequestId\": \"19d240f4-156d-4a3c-856c-216d64a6bb4a\"\n    }\n}",
+        "title": "查看路径保护规则列表"
+      }
+    ],
     "DescribeResourceTags": [
       {
         "document": "查看资源标签列表",
@@ -246,6 +270,14 @@
         "input": "https://chdfs.tencentcloudapi.com/?Action=ModifyMountPoint\n&MountPointId=f4mnvilzmdd-Tx5f\n&MountPointName=mp-test\n&MountPointStatus=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7de3434f-ad14-403b-8138-7396549d4bc1\"\n    }\n}",
         "title": "修改挂载点属性"
+      }
+    ],
+    "ModifyPathProtectionRule": [
+      {
+        "document": "修改路径保护规则属性",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPathProtectionRule\n<公共请求参数>\n\n{\n    \"Status\": \"2\",\n    \"PathProtectionRuleId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6d3ef8-db1d-40de-afa1-d340302458bb\"\n    }\n}",
+        "title": "修改路径保护规则属性"
       }
     ],
     "ModifyResourceTags": [

@@ -1599,12 +1599,12 @@
         },
         {
           "disabled": false,
-          "document": "<p>当镜像类型 ImageRegistryType 为 custom 时(司内镜像源 csighub/mirrors)时，需要指定镜像凭证 ID</p><p>参数格式：acg-12345678</p>",
-          "example": "agc-qrf0bcug",
-          "member": "string",
-          "name": "ImageRegistryCredentialProviderId",
+          "document": "<p>镜像仓库配置</p>",
+          "example": "无",
+          "member": "ImageRegistryConfig",
+          "name": "ImageRegistryConfig",
           "required": false,
-          "type": "string"
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1950,13 +1950,24 @@
         },
         {
           "disabled": false,
-          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅允许在 ImageRegistryType=custom 时传入</p>",
+          "example": "无",
+          "member": "ImageRegistryConfig",
+          "name": "ImageRegistryConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2055,7 +2066,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code>。</p><p>枚举值：</p><ul><li>enterprise： TCR 企业容器镜像服务</li><li>personal： CCR 个人容器镜像服务</li></ul>",
           "example": "TCR",
           "member": "string",
           "name": "ImageRegistryType",
@@ -2073,6 +2084,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库配置</p>",
+          "example": "无",
+          "member": "ImageRegistryConfig",
+          "name": "ImageRegistryConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -3109,7 +3131,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -3118,7 +3140,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像 Digest",
+          "document": "<p>镜像 Digest</p>",
           "example": "sha256:abcdefg123...",
           "member": "string",
           "name": "ImageDigest",
@@ -3127,12 +3149,30 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库配置</p>",
+          "example": "无",
+          "member": "ImageRegistryConfig",
+          "name": "ImageRegistryConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热范围(公有云资源池、自研资源池)</p><p>枚举值：</p><ul><li>internal： 内部自研账号仅预热自研资源池</li><li>external： 内领账号仅预热公有云资源池</li></ul>",
+          "example": "[\"internal\"]",
+          "member": "string",
+          "name": "Scopes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3142,7 +3182,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -3152,7 +3192,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像 Digest",
+          "document": "<p>镜像 Digest</p>",
           "example": "sha256:abcdefg123...",
           "member": "string",
           "name": "ImageDigest",
@@ -3162,7 +3202,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
@@ -3172,7 +3212,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像预热状态",
+          "document": "<p>镜像预热状态</p>",
           "example": "Success",
           "member": "string",
           "name": "Status",
@@ -3182,12 +3222,22 @@
         },
         {
           "disabled": false,
-          "document": "镜像预热状态描述",
+          "document": "<p>镜像预热状态描述</p>",
           "example": "镜像预热成功",
           "member": "string",
           "name": "Message",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热范围(公有云资源池、自研资源池)</p><p>枚举值：</p><ul><li>internal： 内部自研账号仅预热自研资源池</li><li>external： 内领账号仅预热公有云资源池</li></ul>",
+          "example": "[\"internal\"]",
+          "member": "string",
+          "name": "Scopes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4359,6 +4409,73 @@
       ],
       "usage": "both"
     },
+    "ImageRegistryConfig": {
+      "document": "镜像仓库配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>registry 凭证资源 ID，作为唯一 credential 字段</p>",
+          "example": "",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>registry 只能通过用户 VPC 访问时传入</p>",
+          "example": "无",
+          "member": "ImageRegistryNetworkConfig",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageRegistryNetworkConfig": {
+      "document": "镜像仓库网络配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库所在vpc，ImageRegistryNetworkConfig 非空时必填</p>",
+          "example": "",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库所在subnet，ImageRegistryNetworkConfig 非空时必填</p>",
+          "example": "",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可以访问镜像仓库的安全组，ImageRegistryNetworkConfig 非空时必填</p>",
+          "example": "",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ImageStorageSource": {
       "document": "镜像卷挂载源配置",
       "members": [
@@ -5385,6 +5502,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例最终存储声明；模板挂载返回为具体 Volume 引用</p>",
+          "example": "无",
+          "member": "StorageMount",
+          "name": "StorageMounts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5743,7 +5871,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 默认，即 TOKEN 认证</li><li>TOKEN： Token认证，即所有端口访问都需携带TOKEN</li><li>NONE： 免认证，即所有端口访问无需携带TOKEN</li><li>PUBLIC： 公开模式，即ENVD管理端口（49983）访问需携带TOKEN，其他端口无需携带TOKEN</li></ul><p>默认值：DEFAULT</p>",
+          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 默认，即TOKEN认证</li><li>TOKEN： Token认证，即所有端口访问都需携带Token</li><li>NONE： 免认证，即所有端口访问无需携带Token</li><li>PUBLIC： 公开模式，即ENVD管理端口（49983）访问需携带Token，其他端口无需携带Token</li></ul><p>默认值：DEFAULT</p>",
           "example": "DEFAULT",
           "member": "string",
           "name": "AuthMode",
@@ -5756,6 +5884,15 @@
           "example": "无",
           "member": "MetadataVar",
           "name": "Metadata",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动沙箱实例时追加挂载规则，不支持配置 VolumeTemplate</p>",
+          "example": "无",
+          "member": "StorageMount",
+          "name": "StorageMounts",
           "required": false,
           "type": "list"
         }
@@ -5816,7 +5953,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "存储挂载配置名称",
+          "document": "<p>存储挂载配置名称</p>",
           "example": "Storage1",
           "member": "string",
           "name": "Name",
@@ -5827,18 +5964,18 @@
         },
         {
           "disabled": false,
-          "document": "存储配置",
+          "document": "<p>存储配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StorageSource",
           "name": "StorageSource",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "沙箱实例本地挂载路径",
+          "document": "<p>沙箱实例本地挂载路径</p>",
           "example": "/home/user",
           "member": "string",
           "name": "MountPath",
@@ -5849,7 +5986,7 @@
         },
         {
           "disabled": false,
-          "document": "存储挂载读写权限配置，默认为false",
+          "document": "<p>存储挂载读写权限配置，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
