@@ -297,8 +297,8 @@
     "DescribeInstanceSSL": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeInstanceSSL\n&InstanceId=cmgo-eqmoaxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"ExpiredTime\": \"2023-05-04 12:13:00\",\n        \"CertUrl\": \"http://sample/cert\",\n        \"RequestId\": \"12345-abcdef\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-p*******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CertUrl\": \"\",\n        \"ExpiredTime\": \"2027-06-18 07:17:56\",\n        \"Status\": 1,\n        \"RequestId\": \"5cfd65ee-caa6-413f-ad84-c70bff4703db\"\n    }\n}",
         "title": "查看实例SSL开启状态"
       }
     ],
@@ -479,8 +479,8 @@
     "InstanceEnableSSL": [
       {
         "document": "关闭SSL状态示例",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=InstanceEnableSSL\n&InstanceId=cmgo-eqmoaxxx\n&Enable=true\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CertUrl\": \"https://cert-****\",\n        \"ExpiredTime\": \"2024-03-29 13:40:56\",\n        \"RequestId\": \"5297ebe2-63f8-465f-be7d-41058ce438\",\n        \"Status\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstanceEnableSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-e*******\",\n    \"Enable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1750660112001784,\n        \"RequestId\": \"88c849ba-2773-4199-9b90-ae819659cdfd\"\n    }\n}",
         "title": "设置实例SSL状态"
       }
     ],

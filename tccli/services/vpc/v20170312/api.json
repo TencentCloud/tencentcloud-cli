@@ -21910,8 +21910,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Subnet实例ID，例如：subnet-f1xjkw1b。",
-          "example": "['subnet-xxxxxxxx']",
+          "document": "<p>Subnet实例ID，例如：subnet-f1xjkw1b。</p>",
+          "example": "[\"subnet-xxxxxxxx\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": true,
@@ -21925,10 +21925,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源统计结果。",
+          "document": "<p>资源统计结果。</p>",
           "example": "无",
           "member": "ResourceStatistics",
           "name": "ResourceStatisticsSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -23220,8 +23221,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Vpc实例ID，例如：vpc-f1xjkw1b。",
-          "example": "['vpc-q26u781x', 'vpc-1yfqkcw1']",
+          "document": "<p>Vpc实例ID，例如：vpc-f1xjkw1b。</p>",
+          "example": "[\"vpc-q26u781x\", \"vpc-1yfqkcw1\"]",
           "member": "string",
           "name": "VpcIds",
           "required": true,
@@ -23235,10 +23236,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源对象列表。",
+          "document": "<p>资源对象列表。</p>",
           "example": "无",
           "member": "ResourceDashboard",
           "name": "ResourceDashboardSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -680,7 +680,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定需要删除的凭据名称。",
+          "document": "<p>指定需要删除的凭据名称。</p>",
           "example": "testName",
           "member": "string",
           "name": "SecretName",
@@ -689,7 +689,7 @@
         },
         {
           "disabled": false,
-          "document": "指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。\n当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。",
+          "document": "<p>指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。<br>当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RecoveryWindowInDays",
@@ -698,12 +698,21 @@
         },
         {
           "disabled": false,
-          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，取值：\nTrue -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。\nFalse --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。",
-          "example": "False",
+          "document": "<p>当凭据类型为SSH密钥对凭据时，此字段有效，取值：<br>True -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。<br>False --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。</p>",
+          "example": "false",
           "member": "bool",
           "name": "CleanSSHKey",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除模式</p><p>枚举值：</p><ul><li>0： 仅删除凭据</li><li>1： 删除凭据和账号</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DeleteMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -713,7 +722,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定删除的凭据名称。",
+          "document": "<p>指定删除的凭据名称。</p>",
           "example": "lzc-ss",
           "member": "string",
           "name": "SecretName",
@@ -723,11 +732,21 @@
         },
         {
           "disabled": false,
-          "document": "凭据删除的日期，unix时间戳。",
+          "document": "<p>凭据删除的日期，unix时间戳。</p>",
           "example": "1574247268",
           "member": "int64",
           "name": "DeleteTime",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步删除任务 ID</p>",
+          "example": "75810",
+          "member": "int64",
+          "name": "FlowID",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -915,7 +934,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定需要获取凭据轮转历史的凭据名称。",
+          "document": "<p>指定需要获取凭据轮转历史的凭据名称。</p>",
           "example": "test3-db-secret",
           "member": "string",
           "name": "SecretName",
@@ -930,7 +949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本号列表",
+          "document": "<p>版本号列表</p>",
           "example": "[ \"SSM_Rotate_20241030162442\"  ]",
           "member": "string",
           "name": "VersionIDs",
@@ -940,12 +959,22 @@
         },
         {
           "disabled": false,
-          "document": "版本号个数，可以给用户展示的版本号个数上限为10个。",
+          "document": "<p>版本号个数，可以给用户展示的版本号个数上限为10个。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据对应账号相关信息</p>",
+          "example": "无",
+          "member": "SecretAccountInfo",
+          "name": "AccountInfoList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1183,6 +1212,16 @@
           "name": "TargetUinString",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应云产品的账号信息</p>",
+          "example": "无",
+          "member": "SecretAccountInfo",
+          "name": "AccountInfoList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2058,6 +2097,56 @@
         }
       ],
       "type": "object"
+    },
+    "SecretAccountInfo": {
+      "document": "凭据对应的账户信息(用户名、主机、版本号、轮转时间)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账户名称</p>",
+          "example": "lif_SSM_94G",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账户登录主机</p>",
+          "example": "[\"10.%\"]",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号状态（生效中/待轮转）</p>",
+          "example": "SSM_Rotate_20260711175609",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号轮转时间</p>",
+          "example": "2026-07-14 14:21:52",
+          "member": "string",
+          "name": "RotatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SecretMetadata": {
       "document": "凭据的基础信息",

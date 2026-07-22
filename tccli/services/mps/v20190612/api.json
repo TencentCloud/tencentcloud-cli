@@ -623,6 +623,13 @@
       "output": "DescribeAigcImageTaskResponse",
       "status": "online"
     },
+    "DescribeAigcTaskStatus": {
+      "document": "查询AIGC场景任务接口",
+      "input": "DescribeAigcTaskStatusRequest",
+      "name": "查询AIGC场景任务接口",
+      "output": "DescribeAigcTaskStatusResponse",
+      "status": "online"
+    },
     "DescribeAigcVideoTask": {
       "document": "调用该接口，用于查询AIGC生视频任务的进度以及获取生成结果。",
       "input": "DescribeAigcVideoTaskRequest",
@@ -1401,7 +1408,7 @@
       "status": "online"
     },
     "ProcessImage": {
-      "document": "发起图片处理，功能包括：\n1. 格式转换；\n2. 图像增强；\n3. 图像擦除;",
+      "document": "发起图片处理，功能包括：\n1. 格式转换；\n2. 图像增强；\n3. 图像擦除;\n4. 数字水印；\n5. 美颜滤镜；",
       "input": "ProcessImageRequest",
       "name": "发起图片处理",
       "output": "ProcessImageResponse",
@@ -12931,6 +12938,56 @@
       ],
       "type": "object"
     },
+    "CreateImageConfig": {
+      "document": "生图任务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>生图模型</p><p>枚举值：</p><ul><li>WAND-create-1.0-lite： 轻量生图模型</li><li>WAND-create-1.0-flash： 质量-速度平衡生图模型</li><li>WAND-create-1.0-pro： 高质量生图模型</li></ul>",
+          "example": "WAND-create-1.0-flash",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生图指令</p>",
+          "example": "生成一张宇宙蓝鲸的壁画，水彩风格",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出图片的分辨率</p><p>枚举值：</p><ul><li>1K： 短边分辨率 1080</li><li>2K： 短边分辨率 1440</li><li>4K： 短边分辨率 2160</li></ul><p>默认值：1K</p>",
+          "example": "1K",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出图片的宽高比</p><p>枚举值：</p><ul><li>1:1： 宽高比 1:1</li><li>2:3： 宽高比 2:3</li><li>3:2： 宽高比 3:2</li><li>3:4： 宽高比 3:4</li><li>4:3： 宽高比 4:3</li><li>9:16： 宽高比 9:16</li><li>16:9： 宽高比 16:9</li></ul><p>默认值：1:1</p>",
+          "example": "3:4",
+          "member": "string",
+          "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateImageSpriteTemplateRequest": {
       "document": "CreateImageSpriteTemplate请求参数结构体",
       "members": [
@@ -17518,6 +17575,133 @@
           "example": "fail",
           "member": "string",
           "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcTaskStatusRequest": {
+      "document": "DescribeAigcTaskStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "c50f6094-3b56-a1fa-e616-0eec386bfc36",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcTaskStatusResponse": {
+      "document": "DescribeAigcTaskStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "c50f6094-3b56-a1fa-e616-0eec386bfc36",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态描述</p><p>枚举值：</p><ul><li>PENDING： 任务等待调度</li><li>RUNNING： 任务运行中</li><li>FINISHED： 任务执行成功</li><li>STOP： 任务被中止</li><li>FAILED： 任务失败</li><li>TIMEOUT： 任务超时</li></ul>",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://aigc-redraw-output-1326893053.cos.ap-guangzhou.myqcloud.com/aigc-c50f6094-3b56-a1fa-e616-0eec386bfc36-202606012044-0.mp4",
+          "member": "string",
+          "name": "OutputUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间</p>",
+          "example": "2026-06-01 20:40:50",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务调度时间</p>",
+          "example": "2026-06-01 20:40:51",
+          "member": "string",
+          "name": "ScheduledTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务完成时间</p>",
+          "example": "2026-06-01 20:44:32",
+          "member": "string",
+          "name": "FinishedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务错误码</p>",
+          "example": "-401",
+          "member": "int64",
+          "name": "TaskResultCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务返回错误信息</p>",
+          "example": "Save to cos failed",
+          "member": "string",
+          "name": "TaskResultMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求结构体</p>",
+          "example": "{\"Input\":{\"Url\":\"https://lewis-1302487817.cos.ap-guangzhou.myqcloud.com/replace-test/1s.mp4\"},\"Action\":\"CreateVideoRedrawTask\",\"RequestId\":\"5f4f34f0-f6eb-435f-8c2f-252fba384bf6\",\"Uin\":\"1129136604\",\"ApiModule\":\"mps\",\"Region\":\"\",\"AppId\":251006278}",
+          "member": "string",
+          "name": "RequestBody",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型</p>",
+          "example": "AIDrama",
+          "member": "string",
+          "name": "TaskType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -27974,6 +28158,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生图任务配置</p>",
+          "example": "无",
+          "member": "CreateImageConfig",
+          "name": "CreateImageConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37272,7 +37467,7 @@
           "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {

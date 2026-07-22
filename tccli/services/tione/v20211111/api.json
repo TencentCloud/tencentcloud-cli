@@ -6245,6 +6245,15 @@
           "type": "string"
         },
         {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
           "disabled": true,
           "document": "服务分类",
           "example": "normal",
@@ -6463,6 +6472,15 @@
           "member": "string",
           "name": "ServiceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         },
         {

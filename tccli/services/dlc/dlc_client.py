@@ -758,6 +758,63 @@ def doDescribeDataMaskStrategies(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteMetaDatabase(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteMetaDatabaseRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteMetaDatabase(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteWorkGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3095,7 +3152,7 @@ def doDescribeAdvancedStoreLocation(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doLockMetaData(args, parsed_globals):
+def doAlterTableComment(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3129,11 +3186,11 @@ def doLockMetaData(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.LockMetaDataRequest()
+    model = models.AlterTableCommentRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.LockMetaData(model)
+        rsp = client.AlterTableComment(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3380,7 +3437,7 @@ def doDescribeScripts(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDataMaskStrategy(args, parsed_globals):
+def doGenerateInternalTable(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3414,11 +3471,11 @@ def doCreateDataMaskStrategy(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDataMaskStrategyRequest()
+    model = models.GenerateInternalTableRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateDataMaskStrategy(model)
+        rsp = client.GenerateInternalTable(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6344,6 +6401,63 @@ def doDropDMSPartitions(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateMetaDatabase(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateMetaDatabaseRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateMetaDatabase(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateWorkGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -7769,6 +7883,63 @@ def doUpdateRowFilter(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doLockMetaData(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.LockMetaDataRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.LockMetaData(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateDMSTable(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -8492,6 +8663,63 @@ def doCancelTasks(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CancelTasks(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateDataMaskStrategy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDataMaskStrategyRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateDataMaskStrategy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9290,6 +9518,63 @@ def doCreateScript(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateScript(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDatabase(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDatabaseRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeDatabase(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10985,6 +11270,7 @@ ACTION_MAP = {
     "DescribeNotebookSession": doDescribeNotebookSession,
     "CreateNotebookSession": doCreateNotebookSession,
     "DescribeDataMaskStrategies": doDescribeDataMaskStrategies,
+    "DeleteMetaDatabase": doDeleteMetaDatabase,
     "DeleteWorkGroup": doDeleteWorkGroup,
     "UnlockMetaData": doUnlockMetaData,
     "DescribeDataEngine": doDescribeDataEngine,
@@ -11026,12 +11312,12 @@ ACTION_MAP = {
     "AddOptimizerEngines": doAddOptimizerEngines,
     "DescribeDataEngineImageVersions": doDescribeDataEngineImageVersions,
     "DescribeAdvancedStoreLocation": doDescribeAdvancedStoreLocation,
-    "LockMetaData": doLockMetaData,
+    "AlterTableComment": doAlterTableComment,
     "DescribeSparkAppJobs": doDescribeSparkAppJobs,
     "DescribeUsers": doDescribeUsers,
     "CreateTasks": doCreateTasks,
     "DescribeScripts": doDescribeScripts,
-    "CreateDataMaskStrategy": doCreateDataMaskStrategy,
+    "GenerateInternalTable": doGenerateInternalTable,
     "DescribeMCPTask": doDescribeMCPTask,
     "ModifyWorkGroup": doModifyWorkGroup,
     "DescribeTablesName": doDescribeTablesName,
@@ -11083,6 +11369,7 @@ ACTION_MAP = {
     "DescribeDMSTable": doDescribeDMSTable,
     "QueryTaskCostDetail": doQueryTaskCostDetail,
     "DropDMSPartitions": doDropDMSPartitions,
+    "CreateMetaDatabase": doCreateMetaDatabase,
     "CreateWorkGroup": doCreateWorkGroup,
     "CreateTcIcebergTable": doCreateTcIcebergTable,
     "CreateCHDFSBindingProduct": doCreateCHDFSBindingProduct,
@@ -11108,6 +11395,7 @@ ACTION_MAP = {
     "UpdateDataEngineConfig": doUpdateDataEngineConfig,
     "CreateTasksInOrder": doCreateTasksInOrder,
     "UpdateRowFilter": doUpdateRowFilter,
+    "LockMetaData": doLockMetaData,
     "CreateDMSTable": doCreateDMSTable,
     "DescribeSparkSessionBatchSQLCost": doDescribeSparkSessionBatchSQLCost,
     "UpgradeDataEngineImage": doUpgradeDataEngineImage,
@@ -11121,6 +11409,7 @@ ACTION_MAP = {
     "CreateImportTask": doCreateImportTask,
     "UpdateStandardEngineResourceGroupConfigInfo": doUpdateStandardEngineResourceGroupConfigInfo,
     "CancelTasks": doCancelTasks,
+    "CreateDataMaskStrategy": doCreateDataMaskStrategy,
     "CreateTable": doCreateTable,
     "DescribeTaskResult": doDescribeTaskResult,
     "CreateExportTask": doCreateExportTask,
@@ -11135,6 +11424,7 @@ ACTION_MAP = {
     "DescribeNativeSparkSessions": doDescribeNativeSparkSessions,
     "DescribeWorkGroups": doDescribeWorkGroups,
     "CreateScript": doCreateScript,
+    "DescribeDatabase": doDescribeDatabase,
     "RestartDataEngine": doRestartDataEngine,
     "DescribeNotebookSessionStatement": doDescribeNotebookSessionStatement,
     "AttachDataMaskPolicy": doAttachDataMaskPolicy,

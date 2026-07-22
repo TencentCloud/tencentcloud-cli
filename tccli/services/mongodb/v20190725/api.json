@@ -5063,8 +5063,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
-          "example": "cmgo-p8vnipr5",
+          "document": "<p>实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同</p>",
+          "example": "cmgo-p*******",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5078,7 +5078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SSL开启状态。0为关闭，1为开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SSL开启状态。0为关闭，1为开启</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -5088,7 +5088,7 @@
         },
         {
           "disabled": false,
-          "document": "证书过期时间，格式为2023-05-01 12:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书过期时间，格式为2023-05-01 12:00:00</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-05-01 12:00:00",
           "member": "string",
           "name": "ExpiredTime",
@@ -5098,7 +5098,7 @@
         },
         {
           "disabled": false,
-          "document": "证书下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书下载链接</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://abc/cert",
           "member": "string",
           "name": "CertUrl",
@@ -6994,8 +6994,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "cmgo-eqmoaxxx",
+          "document": "<p>实例ID</p>",
+          "example": "cmgo-e*******",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7003,7 +7003,7 @@
         },
         {
           "disabled": false,
-          "document": "配置是否要开启SSL访问。\n- true：开启。\n- false：关闭。",
+          "document": "<p>配置是否要开启SSL访问。</p><ul><li>true：开启。</li><li>false：关闭。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -7018,7 +7018,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SSL开启状态。\n- 0：关闭。\n- 1：开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SSL开启状态。</p><ul><li>0：关闭。</li><li>1：开启。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -7028,7 +7028,7 @@
         },
         {
           "disabled": false,
-          "document": "证书文件过期时间，格式为：2023-05-01 12:00:00。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书文件过期时间，格式为：2023-05-01 12:00:00。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-05-01 12:00:00",
           "member": "string",
           "name": "ExpiredTime",
@@ -7038,7 +7038,7 @@
         },
         {
           "disabled": false,
-          "document": "证书文件的下载链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书文件的下载链接。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx.xxx/xxx",
           "member": "string",
           "name": "CertUrl",
@@ -7048,7 +7048,7 @@
         },
         {
           "disabled": false,
-          "document": "流程id",
+          "document": "<p>流程id</p>",
           "example": "10000",
           "member": "int64",
           "name": "FlowId",
@@ -9923,7 +9923,7 @@
         {
           "disabled": false,
           "document": "慢日志详情。",
-          "example": "\"Mon Sep 22 20:30:19.980 I COMMAND  [****] command admin.$cmd command: saslContinue { : 1, conversationId: 1, payload: BinData(0, ), $clusterTime: { clusterTime: Timestamp(1758544211, 1), **********\"",
+          "example": "\"Mon Sep 22 20:30:19.980 I COMMAND  [\\*\\*\\*\\*] command admin.$cmd command: saslContinue { : 1, conversationId: 1, payload: BinData(0, ), $clusterTime: { clusterTime: Timestamp(1758544211, 1), **********\"",
           "member": "string",
           "name": "Log",
           "output_required": false,

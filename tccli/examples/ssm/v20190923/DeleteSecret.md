@@ -1,4 +1,4 @@
-**Example 1: 删除凭据信息**
+**Example 1: 删除凭据**
 
 
 
@@ -6,17 +6,19 @@ Input:
 
 ```
 tccli ssm DeleteSecret --cli-unfold-argument  \
-    --SecretName lzctest \
-    --RecoveryWindowInDays 1
+    --SecretName test-vab-206615 \
+    --RecoveryWindowInDays 0 \
+    --DeleteMode 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2609a8fd-4584-4f89-98be-8c7ae1b81ef4",
-        "SecretName": "lzctest",
-        "DeleteTime": 1574247268
+        "DeleteTime": 1784001025,
+        "FlowID": 75810,
+        "SecretName": "test-vab-206615",
+        "RequestId": "dff868ed-194f-496a-8bf3-3f04ea4a8050"
     }
 }
 ```

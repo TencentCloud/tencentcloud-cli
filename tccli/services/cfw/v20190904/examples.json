@@ -2,10 +2,34 @@
   "actions": {
     "AddAclRule": [
       {
-        "document": "添加互联网边界访问控制规则，资产分组类型，其中资产分组d为cfwrg_开头形式，由接口DescribeResourceGroupNew可以查询所得资产分组id",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"cfwrg-b002b9b9d71b1a63951da2059d78cef41744255370\",\n            \"SourceType\": \"group\",\n            \"TargetContent\": \"mb_1300448058_1740510699974\",\n            \"TargetType\": \"template\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Enable\": \"true\",\n            \"Description\": \"rule-pro\",\n            \"Scope\": \"serial\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"278cabc7-b282-4ec8-a5b1-89d1e38195df\",\n        \"RuleUuid\": [\n            1907269\n        ]\n    }\n}",
-        "title": "添加互联网边界访问控制规则，资产分组类型"
+        "document": "使用 RFC 5737 文档地址添加一条出站串行 TCP 观察规则；显式指定启用状态、生效范围、规则来源和末尾优先级。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"192.0.2.0/24\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"198.51.100.10\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"log\",\n            \"Port\": \"443\",\n            \"Direction\": 0,\n            \"OrderIndex\": -1,\n            \"Enable\": \"true\",\n            \"Description\": \"出站 TCP 观察示例\",\n            \"Scope\": \"serial\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            100001\n        ],\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\"\n    }\n}",
+        "title": "添加一条出站互联网边界观察规则"
+      },
+      {
+        "document": "添加一条入站串行 TCP 规则，来源使用地域 code；地域 code 应通过只读查询取得，示例中的 gd44 仅用于展示格式。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"gd44\",\n            \"SourceType\": \"location\",\n            \"TargetContent\": \"198.51.100.0/24\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"443\",\n            \"Direction\": 1,\n            \"OrderIndex\": -1,\n            \"Enable\": \"true\",\n            \"Description\": \"允许地域来源访问 HTTPS\",\n            \"Scope\": \"serial\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            100002\n        ],\n        \"RequestId\": \"00000000-0000-4000-8000-000000000002\"\n    }\n}",
+        "title": "添加一条入站地域来源规则"
+      },
+      {
+        "document": "使用 insert_rule 在指定位置插入一条禁用的出站旁路规则；调用前应查询当前出站规则顺序，并将 OrderIndex 替换为可用位置。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"From\": \"insert_rule\",\n    \"Rules\": [\n        {\n            \"SourceContent\": \"192.0.2.0/24\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"198.51.100.10\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"log\",\n            \"Port\": \"443\",\n            \"Direction\": 0,\n            \"OrderIndex\": 3118,\n            \"Enable\": \"false\",\n            \"Description\": \"插入旁路观察规则\",\n            \"Scope\": \"side\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            100003\n        ],\n        \"RequestId\": \"00000000-0000-4000-8000-000000000003\"\n    }\n}",
+        "title": "插入一条旁路互联网边界规则"
+      },
+      {
+        "document": "使用非覆盖的 batch_import 新增两条禁用的出站全局规则；该方式不会删除已有规则。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"From\": \"batch_import\",\n    \"Rules\": [\n        {\n            \"SourceContent\": \"192.0.2.1\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"198.51.100.31\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"log\",\n            \"Port\": \"443\",\n            \"Direction\": 0,\n            \"OrderIndex\": -1,\n            \"Enable\": \"false\",\n            \"Description\": \"批量全局规则一\",\n            \"Scope\": \"all\",\n            \"RuleSource\": 0\n        },\n        {\n            \"SourceContent\": \"192.0.2.2\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"198.51.100.32\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"log\",\n            \"Port\": \"8443\",\n            \"Direction\": 0,\n            \"OrderIndex\": -1,\n            \"Enable\": \"false\",\n            \"Description\": \"批量全局规则二\",\n            \"Scope\": \"all\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            100004,\n            100005\n        ],\n        \"RequestId\": \"00000000-0000-4000-8000-000000000004\"\n    }\n}",
+        "title": "批量导入两条全局互联网边界规则"
+      },
+      {
+        "document": "使用当前账号的原生 mb_ 地址模板 UUID 作为访问源；调用前应通过只读查询取得模板 UUID，不能直接写展示 ID。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"mb_1300448058_1702352890143\",\n            \"SourceType\": \"template\",\n            \"TargetContent\": \"198.51.100.60\",\n            \"TargetType\": \"net\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"log\",\n            \"Port\": \"443\",\n            \"Direction\": 0,\n            \"OrderIndex\": -1,\n            \"Enable\": \"false\",\n            \"Description\": \"地址模板观察规则\",\n            \"Scope\": \"serial\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            100006\n        ],\n        \"RequestId\": \"00000000-0000-4000-8000-000000000005\"\n    }\n}",
+        "title": "使用地址模板新增互联网边界规则"
       }
     ],
     "AddEnterpriseSecurityGroupRules": [
@@ -72,10 +96,10 @@
     ],
     "CreateAlertCenterOmit": [
       {
-        "document": "告警中心-忽略操作示例",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterOmit\n<公共请求参数>\n\n{\n    \"HandleIdList\": [\n        \"ad397c0849e28d39d29a711011f725a9\"\n    ],\n    \"TableType\": \"AlertTable\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed72cd04-be0e-4925-9fcc-1d857ed1312c\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
-        "title": "告警中心-忽略操作示例"
+        "document": "按告警聚合事件 ID 忽略对应的告警日志；HandleIdList 中的空字符串用于满足公共请求结构的必填字段，并会在目标合并时被删除。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterOmit\nX-TC-Version: 2019-09-04\n\n{\n    \"HandleIdList\": [\n        \"\"\n    ],\n    \"TableType\": \"AlertTable\",\n    \"HandleEventIdList\": [\n        \"00000000000000000000000000000001\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
+        "title": "忽略新告警中心事件"
       }
     ],
     "CreateAlertCenterRule": [

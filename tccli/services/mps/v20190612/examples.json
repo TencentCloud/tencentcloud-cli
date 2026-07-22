@@ -802,6 +802,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeAigcTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"c50f6094-3b56-a1fa-e616-0eec386bfc36\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2026-06-01 20:40:50\",\n        \"FinishedTime\": \"2026-06-01 20:44:32\",\n        \"OutputUrl\": \"https://aigc-redraw-output-1326893053.cos.ap-guangzhou.myqcloud.com/aigc-c50f6094-3b56-a1fa-e616-0eec386bfc36-202606012044-0.mp4\",\n        \"RequestBody\": \"{\\\"Input\\\":{\\\"Script\\\":\\\"从前有一只小兔子，上山采蘑菇\\\",\\\"Style\\\":\\\"chinese_ink_wash\\\",\\\"Ratio\\\":\\\"16:9\\\",\\\"Resolution\\\":\\\"720p\\\"},\\\"Action\\\":\\\"CreateAiDramaTask\\\",\\\"RequestId\\\":\\\"afbd7d37-888c-4cf5-959f-959a10ff4af6\\\",\\\"RequestSource\\\":\\\"API\\\",\\\"Uin\\\":\\\"600000563781\\\",\\\"ApiModule\\\":\\\"mps\\\",\\\"Timestamp\\\":\\\"1780317650\\\",\\\"ClientIp\\\":\\\"30.174.178.116\\\",\\\"SubAccountUin\\\":\\\"600000563781\\\",\\\"Region\\\":\\\"\\\",\\\"RequestClient\\\":\\\"APIExplorer\\\",\\\"AppId\\\":1300057355}\",\n        \"ScheduledTime\": \"2026-06-01 20:40:51\",\n        \"TaskId\": \"c50f6094-3b56-a1fa-e616-0eec386bfc36\",\n        \"TaskStatus\": \"FINISHED\",\n        \"TaskType\": \"AIDrama\",\n        \"RequestId\": \"9ee02d10-a534-4a2d-842a-c4d084bcfbde\"\n    }\n}",
+        "title": "获取AIGC场景任务详情"
+      }
+    ],
     "DescribeAigcVideoTask": [
       {
         "document": "",

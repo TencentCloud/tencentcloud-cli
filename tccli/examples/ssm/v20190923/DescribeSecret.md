@@ -1,12 +1,12 @@
 **Example 1: 获取凭据详细信息**
 
-获取凭据详细信息
+
 
 Input: 
 
 ```
 tccli ssm DescribeSecret --cli-unfold-argument  \
-    --SecretName SSM-OIDC-Weijiali_test_20260622004
+    --SecretName prepaid-quota-gz-1779881924-003
 ```
 
 Output: 
@@ -15,26 +15,26 @@ Output:
     "Response": {
         "AdditionalConfig": "",
         "AssociatedInstanceIDs": [],
-        "CreateTime": 1782100116,
-        "CreateUin": 100044683131,
-        "CreateUinString": "100044683131",
+        "CreateTime": 1779881929,
+        "CreateUin": 700002670817,
+        "CreateUinString": "700002670817",
         "DeleteTime": 0,
         "Description": "",
         "EncryptSwitching": false,
-        "EncryptType": 0,
-        "KmsKeyId": "fd950ef7-1ff5-11ea-90c1-525400ce83fb",
+        "EncryptType": 1,
+        "KmsKeyId": "",
         "ProductName": "default",
         "ProjectID": 0,
-        "ResourceID": "1258641191_100044683131_customize_1782100116409066358_fy2",
+        "ResourceID": "260201473_700002670817_customize_1779881929918436370_W4H",
         "ResourceName": "",
         "RotationFrequency": 0,
         "RotationStatus": false,
-        "SecretName": "SSM-OIDC-Weijiali_test_20260622004",
+        "SecretName": "prepaid-quota-gz-1779881924-003",
         "SecretType": 0,
         "Status": "Enabled",
         "TargetUin": 0,
         "TargetUinString": "0",
-        "RequestId": "a8917cfc-d66b-4389-8c75-ae2697c3ca41"
+        "RequestId": "cd63cc40-4d71-4b1d-b571-bcd38be27787"
     }
 }
 ```

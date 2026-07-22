@@ -9393,6 +9393,23 @@
       ],
       "usage": "out"
     },
+    "AigcVideoRedrawTaskInfo": {
+      "document": "AIGC 视频转绘人物参数信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用于描述转绘风格。限制50字符。</p>",
+          "example": "赛博朋克",
+          "member": "string",
+          "name": "Style",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AigcVideoRedrawTaskInput": {
       "document": "AIGC 视频转绘任务的输入。",
       "members": [
@@ -9402,6 +9419,16 @@
           "example": "无",
           "member": "AigcVideoRedrawTaskInputFileInfo",
           "name": "FileInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AIGC 视频转绘任务参数信息。</p>",
+          "example": "无",
+          "member": "AigcVideoRedrawTaskInfo",
+          "name": "TaskInfo",
           "output_required": true,
           "type": "object",
           "value_allowed_null": false

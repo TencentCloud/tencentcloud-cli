@@ -27,9 +27,9 @@
     "DeleteSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DeleteSecret\n&SecretName=lzctest\n&RecoveryWindowInDays=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"SecretName\": \"lzctest\",\n        \"DeleteTime\": 1574247268\n    }\n}",
-        "title": "删除凭据信息"
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecret\n<公共请求参数>\n\n{\n    \"SecretName\": \"test-vab-206615\",\n    \"RecoveryWindowInDays\": 0,\n    \"DeleteMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteTime\": 1784001025,\n        \"FlowID\": 75810,\n        \"SecretName\": \"test-vab-206615\",\n        \"RequestId\": \"dff868ed-194f-496a-8bf3-3f04ea4a8050\"\n    }\n}",
+        "title": "删除凭据"
       }
     ],
     "DeleteSecretVersion": [
@@ -59,16 +59,16 @@
     "DescribeRotationHistory": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=DescribeRotationHistory\n&SecretName=testlzc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"VersionIDs\": [\n            \"testId\"\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\"\n    }\n}",
-        "title": "查询凭据轮转历史版本"
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRotationHistory\n<公共请求参数>\n\n{\n    \"SecretName\": \"PGSQL_remark_0714\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountInfoList\": [\n            {\n                \"AccountName\": \"remm_SSM_hQ4\",\n                \"Host\": [\n                    \"%\"\n                ],\n                \"RotatedTime\": \"2026-07-14 14:21:52\",\n                \"Version\": \"SSM_Current\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"VersionIDs\": [],\n        \"RequestId\": \"a3ffde0c-192a-47be-8d7d-53d99fca6ebf\"\n    }\n}",
+        "title": "展示凭据轮转账号的相关信息"
       }
     ],
     "DescribeSecret": [
       {
-        "document": "获取凭据详细信息",
-        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecret\n<公共请求参数>\n\n{\n    \"SecretName\": \"SSM-OIDC-Weijiali_test_20260622004\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AdditionalConfig\": \"\",\n        \"AssociatedInstanceIDs\": [],\n        \"CreateTime\": 1782100116,\n        \"CreateUin\": 100044683131,\n        \"CreateUinString\": \"100044683131\",\n        \"DeleteTime\": 0,\n        \"Description\": \"\",\n        \"EncryptSwitching\": false,\n        \"EncryptType\": 0,\n        \"KmsKeyId\": \"fd950ef7-1ff5-11ea-90c1-525400ce83fb\",\n        \"ProductName\": \"default\",\n        \"ProjectID\": 0,\n        \"ResourceID\": \"1258641191_100044683131_customize_1782100116409066358_fy2\",\n        \"ResourceName\": \"\",\n        \"RotationFrequency\": 0,\n        \"RotationStatus\": false,\n        \"SecretName\": \"SSM-OIDC-Weijiali_test_20260622004\",\n        \"SecretType\": 0,\n        \"Status\": \"Enabled\",\n        \"TargetUin\": 0,\n        \"TargetUinString\": \"0\",\n        \"RequestId\": \"a8917cfc-d66b-4389-8c75-ae2697c3ca41\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecret\n<公共请求参数>\n\n{\n    \"SecretName\": \"prepaid-quota-gz-1779881924-003\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AdditionalConfig\": \"\",\n        \"AssociatedInstanceIDs\": [],\n        \"CreateTime\": 1779881929,\n        \"CreateUin\": 700002670817,\n        \"CreateUinString\": \"700002670817\",\n        \"DeleteTime\": 0,\n        \"Description\": \"\",\n        \"EncryptSwitching\": false,\n        \"EncryptType\": 1,\n        \"KmsKeyId\": \"\",\n        \"ProductName\": \"default\",\n        \"ProjectID\": 0,\n        \"ResourceID\": \"260201473_700002670817_customize_1779881929918436370_W4H\",\n        \"ResourceName\": \"\",\n        \"RotationFrequency\": 0,\n        \"RotationStatus\": false,\n        \"SecretName\": \"prepaid-quota-gz-1779881924-003\",\n        \"SecretType\": 0,\n        \"Status\": \"Enabled\",\n        \"TargetUin\": 0,\n        \"TargetUinString\": \"0\",\n        \"RequestId\": \"cd63cc40-4d71-4b1d-b571-bcd38be27787\"\n    }\n}",
         "title": "获取凭据详细信息"
       }
     ],
