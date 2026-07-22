@@ -177,11 +177,21 @@ class ServiceCommand(BaseCommand):
     def _build_command_map(self):
         command_map = OrderedDict()
         service_model = self._get_service_model()
+        # 优先使用各服务的 *_client.py（存量 pip 安装行为，依赖完整 SDK）；
+        # 若 client.py 不可用（例如二进制包已裁剪掉 *_client.py），则降级到
+        # 基于 CommonClient 的 GenericActionCaller。存量 pip 安装 client.py 始终存在，行为保持不变。
+        try:
+            service_action_caller = Services.action_caller(self._service_name)()
+        except ImportError:
+            service_action_caller = None
         for action in service_model["actions"]:
             action_model = service_model["actions"][action]
             action_caller = action_model.get("action_caller", None)
             if not action_caller:
-                action_caller = GenericActionCaller(self._service_name, action)
+                if service_action_caller is not None:
+                    action_caller = service_action_caller[action]
+                else:
+                    action_caller = GenericActionCaller(self._service_name, action)
             command_map[action] = ActionCommand(
                 service_name=self._service_name,
                 version=self._version,
