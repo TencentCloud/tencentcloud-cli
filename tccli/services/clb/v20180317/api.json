@@ -20758,6 +20758,36 @@
         },
         {
           "disabled": false,
+          "document": "<p>关联的提示词 ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p><p>参数格式：pmt-1a2b3c4d</p>",
+          "example": "pmt-m4cwqqv8",
+          "member": "string",
+          "name": "PromptId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的提示词版本。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>",
+          "example": "v4",
+          "member": "string",
+          "name": "PromptVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的提示词名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>",
+          "example": "new_name",
+          "member": "string",
+          "name": "PromptName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>用户组多刷新周期 Credit 使用情况。</p><p>无多周期预算时为空数组。</p>",
           "example": "无",
           "member": "CreditUsage",

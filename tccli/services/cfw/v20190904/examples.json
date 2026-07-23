@@ -62,6 +62,22 @@
         "title": "添加VPC内网间规则示例1"
       }
     ],
+    "CheckClusterNatFwPreAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckClusterNatFwPreAccess\n<公共请求参数>\n\n{\n    \"NatCcnSwitch\": {\n        \"NatInsId\": \"nat-mqpcoqs3\",\n        \"CcnId\": \"ccn-c0qmm031\",\n        \"SwitchMode\": 1,\n        \"RoutingMode\": 1,\n        \"AccessInstanceList\": [\n            {\n                \"InstanceId\": \"vpc-fj3e7nr8\",\n                \"InstanceType\": \"VPC\",\n                \"InstanceRegion\": \"ap-shanghai\",\n                \"AccessCidrMode\": 1,\n                \"AccessCidrList\": [\n                    \"10.15.160.0/22\"\n                ]\n            }\n        ],\n        \"LeadVpcCidr\": \"10.136.0.0/26\"\n    },\n    \"CheckMode\": \"open\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckItems\": [\n            {\n                \"Description\": \"开关状态检查\",\n                \"Stage\": \"switch_status_check\"\n            }\n        ],\n        \"RequestId\": \"16d22cb2-0183-4a15-a13d-5795adff279f\"\n    }\n}",
+        "title": "nat 集群防火墙预接入检查"
+      }
+    ],
+    "CheckClusterVpcFwPreAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckClusterVpcFwPreAccess\n<公共请求参数>\n\n{\n    \"CcnSwitch\": [\n        {\n            \"CcnId\": \"ccn-c0qmm031\",\n            \"SwitchMode\": 1,\n            \"RoutingMode\": 1,\n            \"RegionCidrConfigs\": [\n                {\n                    \"Region\": \"ap-shanghai\",\n                    \"CidrMode\": 2,\n                    \"CustomCidr\": \"10.100.1.0/26\"\n                }\n            ],\n            \"InterconnectPairs\": [\n                {\n                    \"GroupA\": [\n                        {\n                            \"InstanceId\": \"vpc-fj3e7nr8\",\n                            \"InstanceType\": \"VPC\",\n                            \"InstanceRegion\": \"ap-shanghai\",\n                            \"AccessCidrMode\": 1,\n                            \"AccessCidrList\": [\n                                \"10.15.160.0/22\"\n                            ]\n                        }\n                    ],\n                    \"GroupB\": [\n                        {\n                            \"InstanceId\": \"vpc-fj3e7nr8\",\n                            \"InstanceType\": \"VPC\",\n                            \"InstanceRegion\": \"ap-shanghai\",\n                            \"AccessCidrMode\": 1,\n                            \"AccessCidrList\": [\n                                \"10.15.160.0/22\"\n                            ]\n                        }\n                    ],\n                    \"InterconnectMode\": \"FullMesh\"\n                }\n            ],\n            \"FwVpcCidr\": \"\"\n        }\n    ],\n    \"CheckMode\": \"open\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckItems\": [\n            {\n                \"Description\": \"带宽配额检查\",\n                \"Stage\": \"vpc_bandwidth_check\"\n            }\n        ],\n        \"RequestId\": \"90fa332b-8ec3-42bb-9ff3-558c9d9ba187\"\n    }\n}",
+        "title": "vpc 集群模式防火墙预接入检查"
+      }
+    ],
     "CloseClusterNatFwSwitch": [
       {
         "document": "关闭NAT CCN集群模式防火墙开关",
@@ -352,6 +368,14 @@
         "title": "查询入侵防御放通封禁列表"
       }
     ],
+    "DescribeBlockList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlockList\n<公共请求参数>\n\n{\n    \"Direction\": \"xx\",\n    \"ByPass\": \"xx\",\n    \"Source\": \"xx\",\n    \"AssetId\": \"xx\",\n    \"Country\": \"xx\",\n    \"SearchValue\": \"xx\",\n    \"Order\": \"xx\",\n    \"StatTimeSpan\": 0,\n    \"Limit\": 0,\n    \"StartTime\": \"xx\",\n    \"Offset\": 0,\n    \"EndTime\": \"xx\",\n    \"By\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 80,\n        \"Data\": [\n            {\n                \"WhiteTag\": \"xx\",\n                \"DstAssetId\": \"xx\",\n                \"Hide\": 0,\n                \"Zone\": \"xx\",\n                \"Isolate\": 0,\n                \"AssetName\": \"xx\",\n                \"Direction\": 0,\n                \"SrcVpc\": \"xx\",\n                \"MaxDate\": \"xx\",\n                \"LogSource\": \"xx\",\n                \"IsTop\": 0,\n                \"DstAssetName\": \"xx\",\n                \"SrcIP\": \"xx\",\n                \"ByPass\": 0,\n                \"Count\": 0,\n                \"AvgCount\": 0.0,\n                \"EdgeId\": \"xx\",\n                \"AssetId\": \"xx\",\n                \"Country\": \"xx\",\n                \"Ignore\": 0,\n                \"UniqueId\": \"xx\",\n                \"AppID\": \"xx\",\n                \"DstVpcName\": \"xx\",\n                \"SrcVpcName\": \"xx\",\n                \"Block\": 0,\n                \"DstVpc\": \"xx\",\n                \"DstIP\": \"xx\",\n                \"EdgeName\": \"xx\",\n                \"BlockSource\": 0,\n                \"DstPort\": \"xx\",\n                \"MinDate\": \"xx\"\n            }\n        ],\n        \"TopCount\": 0,\n        \"TopData\": [\n            {\n                \"WhiteTag\": \"xx\",\n                \"DstAssetId\": \"xx\",\n                \"Hide\": 0,\n                \"Zone\": \"xx\",\n                \"Isolate\": 0,\n                \"AssetName\": \"xx\",\n                \"Direction\": 0,\n                \"SrcVpc\": \"xx\",\n                \"MaxDate\": \"xx\",\n                \"LogSource\": \"xx\",\n                \"IsTop\": 0,\n                \"DstAssetName\": \"xx\",\n                \"SrcIP\": \"xx\",\n                \"ByPass\": 0,\n                \"Count\": 0,\n                \"AvgCount\": 0.0,\n                \"EdgeId\": \"xx\",\n                \"AssetId\": \"xx\",\n                \"Country\": \"xx\",\n                \"Ignore\": 0,\n                \"UniqueId\": \"xx\",\n                \"AppID\": \"xx\",\n                \"DstVpcName\": \"xx\",\n                \"SrcVpcName\": \"xx\",\n                \"Block\": 0,\n                \"DstVpc\": \"xx\",\n                \"DstIP\": \"xx\",\n                \"EdgeName\": \"xx\",\n                \"BlockSource\": 0,\n                \"DstPort\": \"xx\",\n                \"MinDate\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeBlockList"
+      }
+    ],
     "DescribeBlockStaticList": [
       {
         "document": "DescribeBlockStaticList 告警中心柱形图",
@@ -622,6 +646,14 @@
         "title": "串行防火墙开关列表"
       }
     ],
+    "DescribeFwGroupIdNames": [
+      {
+        "document": "查询防火墙组ID 名称",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFwGroupIdNames\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"FwGroupId\": \"cfwg-xxsddsa\",\n                \"FwGroupName\": \"新防火墙\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxx\"\n    }\n}",
+        "title": "查询防火墙组ID 名称"
+      }
+    ],
     "DescribeFwGroupInstanceInfo": [
       {
         "document": "获取租户所有VPC防火墙(组)及VPC防火墙实例卡片信息",
@@ -660,6 +692,20 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpsModeSwitch\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Mode\": 1\n        },\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"71d276bf-199a-4698-a582-745654735266\"\n    }\n}",
         "title": "查询入侵防御防护模式"
+      }
+    ],
+    "DescribeIpsRuleListNew": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpsRuleListNew\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Protocol\",\n            \"Values\": [\n                \"ANY\",\n                \"TCP\",\n                \"ICMP\"\n            ],\n            \"OperatorType\": 9\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"desc\",\n    \"By\": \"sequence\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnMsg\": \"xx\",\n        \"ReturnCode\": 0,\n        \"Data\": [\n            {}\n        ],\n        \"Category\": [\n            \"a\",\n            \"b\",\n            \"c\"\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
+        "title": "IPS规则查询接口"
+      },
+      {
+        "document": "规则列表最新调用示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpsRuleListNew\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Category\": [\n            \"SQL注入攻击\",\n            \"web攻击\",\n            \"XSS攻击\",\n            \"一般攻击\",\n            \"信息泄露\",\n            \"已知弱点\",\n            \"恶意文件下载\",\n            \"恶意机器人检测\",\n            \"恶意调用\",\n            \"木马\",\n            \"横向移动\",\n            \"漏洞利用\",\n            \"漏洞利用攻击\",\n            \"网络攻击\",\n            \"网络爆破\"\n        ],\n        \"Data\": [\n            {}\n        ],\n        \"RequestId\": \"b775e058-734b-4de8-ac54-66f199d5ba88\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Total\": 3512\n    }\n}",
+        "title": "规则列表最新调用示例"
       }
     ],
     "DescribeLogStorageStatistic": [
@@ -774,6 +820,14 @@
         "title": "ShowNatFwVpcDnsLst 展示租户NAT防火墙实例的vpc dns 开关信息"
       }
     ],
+    "DescribeNatRuleScopes": [
+      {
+        "document": "查询NAT规则可选择的生效范围列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatRuleScopes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62a5e0b2-f701-4c36-9075-66da225533d7\",\n        \"ScopeItems\": [\n            {\n                \"Scope\": \"ALL\",\n                \"ScopeDesc\": \"全局规则\"\n            },\n            {\n                \"Scope\": \"ap-shanghai\",\n                \"ScopeDesc\": \"上海地域\"\n            },\n            {\n                \"Scope\": \"ap-guangzhou\",\n                \"ScopeDesc\": \"广州地域\"\n            },\n            {\n                \"Scope\": \"ap-beijing\",\n                \"ScopeDesc\": \"北京地域\"\n            },\n            {\n                \"Scope\": \"cfwnat-84d3440f\",\n                \"ScopeDesc\": \"[autotest][勿删]自动化测试\"\n            },\n            {\n                \"Scope\": \"cfwnat-01debc37\",\n                \"ScopeDesc\": \"111\"\n            },\n            {\n                \"Scope\": \"cfwnat-49f38b8b\",\n                \"ScopeDesc\": \"测试接入\"\n            },\n            {\n                \"Scope\": \"cfwnat-7e170f6b\",\n                \"ScopeDesc\": \"test\"\n            }\n        ],\n        \"Total\": 8\n    }\n}",
+        "title": "查询NAT规则生效范围列表"
+      }
+    ],
     "DescribeOfflineExportTask": [
       {
         "document": "获取日志离线导出任务列表",
@@ -820,6 +874,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupList\n<公共请求参数>\n\n{\n    \"SearchValue\": \"{\\\"common\\\":\\\"模糊检索\\\"}\",\n    \"Direction\": 1,\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"Filter\": 0,\n    \"Status\": \"0\",\n    \"Area\": \"ap-guangzhou\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"AllTotal\": 0,\n        \"Enable\": 1,\n        \"Data\": [\n            {\n                \"OrderIndex\": 1,\n                \"SourceId\": \"ipm-dyodhpby\",\n                \"SourceType\": 7,\n                \"TargetId\": \"subnet-fmo10koi\",\n                \"TargetType\": 2,\n                \"Protocol\": \"ANY\",\n                \"Port\": \"-1/-1\",\n                \"Strategy\": 2,\n                \"Detail\": \"andy的规则\",\n                \"BothWay\": 0,\n                \"Id\": 1,\n                \"Status\": 1,\n                \"IsNew\": 1,\n                \"VpcId\": \"vpc-8xuf8kf5\",\n                \"SubnetId\": \"subnet-fmo10koi\",\n                \"InstanceName\": \"InstanceName\",\n                \"PublicIp\": \"1.1.1.1\",\n                \"PrivateIp\": \"9.0.0.1\",\n                \"Cidr\": \"9.0.0.1/32\",\n                \"ServiceTemplateId\": \"ppmg-jz17vpis\",\n                \"Direction\": 0,\n                \"ProtocolPortType\": 1,\n                \"Uuid\": \"cfw_sg_appid_0.0.0.0/0_17295140975391\",\n                \"Region\": \"ap-guangzhou\",\n                \"AssetGroupNameIn\": \"/全部资产/\",\n                \"AssetGroupNameOut\": \"/全部资产/\",\n                \"ParameterName\": \"自动化勿删IP组模板\",\n                \"ProtocolPortName\": \"端口协议类型参数模板名称\",\n                \"BothWayInfo\": [\n                    {\n                        \"OrderIndex\": 1,\n                        \"SourceId\": \"1.1.1.1\",\n                        \"SourceType\": 7,\n                        \"TargetId\": \"1.1.1.1\",\n                        \"TargetType\": 2,\n                        \"Protocol\": \"ANY\",\n                        \"Port\": \"-1/-1\",\n                        \"Strategy\": 2,\n                        \"Detail\": \"andy的规则\",\n                        \"Status\": 1,\n                        \"IsNew\": 1,\n                        \"BothWay\": 0,\n                        \"VpcId\": \"vpc-iedpwx01d\",\n                        \"SubnetId\": \"subnet-ed2witec\",\n                        \"InstanceName\": \"andy的cvm\",\n                        \"PublicIp\": \"1.1.1.1\",\n                        \"PrivateIp\": \"1.1.1.1\",\n                        \"Cidr\": \"10.72.1.0/24\",\n                        \"ServiceTemplateId\": \"pp-peodxd0e\",\n                        \"Direction\": 1,\n                        \"Region\": \"ap-guangzhou\",\n                        \"ProtocolPortType\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询安全组规则列表"
+      }
+    ],
+    "DescribeSecurityGroupRegionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupRegionList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionId\": \"1\",\n                \"RegionName\": \"\"\n            }\n        ],\n        \"Total\": 27,\n        \"RequestId\": \"d7f60666-6f42-4e88-8cf0-7b17635423e1\"\n    }\n}",
+        "title": "查询企业安全组地域列表"
       }
     ],
     "DescribeSerialRegion": [
@@ -898,6 +960,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAcRule\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"SrcIP\",\n            \"Values\": [\n                \"192.168.1.10\"\n            ],\n            \"OperatorType\": 9\n        },\n        {\n            \"Name\": \"IpVersion\",\n            \"Values\": [\n                \"0\"\n            ],\n            \"OperatorType\": 1\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Uuid\": 221579,\n                \"InternalUuid\": 1729666998976364,\n                \"OrderIndex\": 1,\n                \"SourceContent\": \"mb_1256532032_1666263807415\",\n                \"SourceType\": \"template\",\n                \"DestContent\": \"192.168.1.2\",\n                \"DestType\": \"net\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"TCP\",\n                \"RuleAction\": \"accept\",\n                \"Description\": \"用于测试的规则\",\n                \"Enable\": \"true\",\n                \"Deleted\": 0,\n                \"EdgeId\": \"ALL\",\n                \"EdgeName\": \"edge名称\",\n                \"DetectedTimes\": 0,\n                \"FwGroupId\": \"ALL\",\n                \"FwGroupName\": \"互联分组\",\n                \"BetaList\": [\n                    {\n                        \"TaskId\": \"9001\",\n                        \"TaskName\": \"autotest\",\n                        \"LastTime\": \"1999-01-01 00:00:01\"\n                    }\n                ],\n                \"ParamTemplateId\": \"pp-ie03er\",\n                \"ParamTemplateName\": \"常规端口模版\",\n                \"TargetName\": \"模版规则\",\n                \"SourceName\": \"模版规则\",\n                \"IpVersion\": 0\n            }\n        ],\n        \"RequestId\": \"9afc19d7-0036-4f3d-af1a-80088236f4ed\"\n    }\n}",
         "title": "查询内网间访问控制列表示例2"
+      }
+    ],
+    "DescribeVpcAclEdgeRange": [
+      {
+        "document": "查询内网间访问控制规则的生效范围示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAclEdgeRange\n<公共请求参数>\n\n{\n    \"FromList\": \"rules\",\n    \"Filters\": [\n        {\n            \"Name\": \"EdgeId\",\n            \"Values\": [\n                \"cfws-xxxx\"\n            ],\n            \"OperatorType\": 9\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"EdgeRanges\": [\n            {\n                \"EdgeId\": \"cfws-xxx\",\n                \"EdgeName\": \"test\",\n                \"SrcId\": \"vpc-xxx\",\n                \"SrcRegion\": \"ap-shanghai\",\n                \"SrcName\": \"test1\",\n                \"SrcCidr\": \"192.168.0.0/24\",\n                \"DstId\": \"vpc-xxx\",\n                \"DstRegion\": \"ap-shanghai\",\n                \"DstName\": \"test2\",\n                \"DstCidr\": \"192.168.2.0/24\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询内网间访问控制规则的生效范围"
       }
     ],
     "DescribeVpcFwCcnPolicyWhiteList": [

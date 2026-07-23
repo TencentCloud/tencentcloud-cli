@@ -398,15 +398,9 @@
     ],
     "CreateTopic": [
       {
-        "document": "创建指标主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"BizType\": 1,\n    \"Period\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"TopicId\": \"6d069a26-1606-4142-9fa6-17ccee4f9bc9\",\n        \"RequestId\": \"c1731e60-e00d-45ee-a9e8-5343d4f38325\"\n    }\n}",
-        "title": "创建指标主题"
-      },
-      {
-        "document": "创建日志主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"Period\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"7fb0245e-2006-4e0f-9153-c5f6b7110b4c\",\n    \"TopicName\": \"business_log_test\",\n    \"PartitionCount\": 1,\n    \"Tags\": [\n        {\n            \"Key\": \"business_log_key\",\n            \"Value\": \"business_log_value\"\n        }\n    ],\n    \"AutoSplit\": true,\n    \"MaxSplitPartitions\": 3,\n    \"StorageType\": \"hot\",\n    \"Period\": 1,\n    \"Describes\": \"业务日志\",\n    \"BizType\": 0,\n    \"IsWebTracking\": false,\n    \"Extends\": {\n        \"AnonymousAccess\": {\n            \"Operations\": [\n                \"realtimeProducer\"\n            ],\n            \"Conditions\": [\n                {\n                    \"Attributes\": \"VpcID\",\n                    \"Rule\": 1,\n                    \"ConditionValue\": \"vpc-********\"\n                }\n            ]\n        }\n    },\n    \"IsSourceFrom\": true,\n    \"BillingMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"aac1096a-cf02-4fe0-abcd-ddb89173b4e4\",\n        \"RequestId\": \"487cd68f-d88f-4e35-888d-48612e8ff980\"\n    }\n}",
         "title": "创建日志主题"
       }
     ],

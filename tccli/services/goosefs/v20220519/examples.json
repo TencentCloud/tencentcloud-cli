@@ -238,6 +238,14 @@
         "title": "修改数据流动带宽"
       }
     ],
+    "ModifyDataRepositoryTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataRepositoryTaskStatus\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-3980hscb\",\n    \"TaskId\": \"x_task_1782961196561\",\n    \"ModifyType\": \"pause\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e318cc3-776d-43fb-9cf2-617792c528c0\"\n    }\n}",
+        "title": "暂停调用"
+      }
+    ],
     "MountMultipleStorageFileSystem": [
       {
         "document": "",

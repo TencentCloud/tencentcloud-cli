@@ -1086,7 +1086,7 @@
       "status": "online"
     },
     "DescribeZoneConfigImportResult": {
-      "document": "查询站点配置项导入结果接口，本接口用于站点配置导入接口（ImportZoneConfig）的结果查询。该功能仅支持标准版或企业版套餐的站点使用。",
+      "document": "查询站点配置项导入结果接口，本接口用于站点配置导入接口（ImportZoneConfig）的结果查询。",
       "input": "DescribeZoneConfigImportResultRequest",
       "name": "查询站点配置导入结果",
       "output": "DescribeZoneConfigImportResultResponse",
@@ -1191,7 +1191,7 @@
       "status": "online"
     },
     "ImportZoneConfig": {
-      "document": "导入站点配置接口，本接口支持站点配置文件的快速导入，发起导入后接口会返回对应的任务 ID（TaskId），用户需通过查询站点配置导入结果接口（DescribeZoneConfigImportResult）获取本次导入任务执行的结果。该功能仅支持标准版和企业版套餐站点使用。",
+      "document": "导入站点配置接口，本接口支持站点配置文件的快速导入，发起导入后接口会返回对应的任务 ID（TaskId），用户需通过查询站点配置导入结果接口（DescribeZoneConfigImportResult）获取本次导入任务执行的结果。",
       "input": "ImportZoneConfigRequest",
       "name": "导入站点配置",
       "output": "ImportZoneConfigResponse",
@@ -21201,7 +21201,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "zone-2zpqp7qztest",
           "member": "string",
           "name": "ZoneId",
@@ -21210,7 +21210,7 @@
         },
         {
           "disabled": false,
-          "document": "待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置内容可通过站点配置导出接口（ExportZoneConfig）获取。您可以单独导入「站点加速-全局加速配置」或「站点加速-规则引擎」，传入对应的字段即可，详情可以参考下方示例。",
+          "document": "<p>待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置内容可通过站点配置导出接口（ExportZoneConfig）获取。您可以单独导入「站点加速-全局加速配置」或「站点加速-规则引擎」，传入对应的字段即可，详情可以参考下方示例。<br>注意：ExportZoneConfig 导出的 AccelerationDomain（加速域名配置）、Origin（源站配置）暂不支持通过本接口导入，若 Content 中包含上述配置内容，将导致导入失败。</p>",
           "example": "{\"FormatVersion\": \"1.0\"***}",
           "member": "string",
           "name": "Content",
@@ -21225,7 +21225,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表示该次导入配置的任务 Id，通过查询站点配置导入结果接口（DescribeZoneConfigImportResult）获取本次导入任务执行的结果。注意：导入任务 Id 仅支持查询最近 7 天的导入任务。",
+          "document": "<p>表示该次导入配置的任务 Id，通过查询站点配置导入结果接口（DescribeZoneConfigImportResult）获取本次导入任务执行的结果。注意：导入任务 Id 仅支持查询最近 7 天的导入任务。</p>",
           "example": "33mz68e4gwka",
           "member": "string",
           "name": "TaskId",

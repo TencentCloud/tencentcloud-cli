@@ -23918,6 +23918,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>符合查询条件的音色总数</p>",
+          "example": "1903",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>可用音色列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VoiceInfo",

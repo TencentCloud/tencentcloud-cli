@@ -7,7 +7,7 @@ Input:
 ```
 tccli rce AssessDeviceRiskPro --cli-unfold-argument  \
     --DeviceToken v3:**************************************************u58Tcp7u042WRcZBER/N/w== \
-    --UserIp 183.*******.16
+    --UserIp 183.**.**.16
 ```
 
 Output: 
@@ -17,8 +17,8 @@ Output:
         "Data": {
             "Device": {
                 "AppVersion": "1.0",
-                "Brand": "****",
-                "ClientIp": "183.*******.16",
+                "Brand": "OP**",
+                "ClientIp": "183.**.**.16",
                 "DeviceId": "350C54************54E940",
                 "Model": "PCK****",
                 "NetworkType": "0",

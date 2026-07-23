@@ -1,15 +1,14 @@
-**Example 1: 创建他方自动签授权链接-我方授权**
+**Example 1: 创建他方自动签授权链接-他方授权**
 
-创建他方自动签授权链接（AuthToMe设置成false）
-
+他方授权给我方（AuthToMe被设置成true）
 
 Input: 
 
 ```
 tccli ess CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --AuthorizedOrganizationId yDRt2UUgygqxuvlqUuO4zjEySqVWqO9J \
-    --AuthToMe False \
+    --AuthorizedOrganizationName 他方企业名称 \
+    --AuthToMe True \
     --SealTypes OFFICIAL
 ```
 
@@ -25,17 +24,18 @@ Output:
 }
 ```
 
-**Example 2: 创建他方自动签授权链接-他方授权**
+**Example 2: 创建他方自动签授权链接-我方授权**
 
-他方授权给我方（AuthToMe被设置成true）
+创建他方自动签授权链接（AuthToMe设置成false）
+
 
 Input: 
 
 ```
 tccli ess CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --AuthorizedOrganizationName 他方企业名称 \
-    --AuthToMe True \
+    --AuthorizedOrganizationId yDRt2UUgygqxuvlqUuO4zjEySqVWqO9J \
+    --AuthToMe False \
     --SealTypes OFFICIAL
 ```
 

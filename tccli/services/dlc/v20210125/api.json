@@ -5311,7 +5311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "spark作业名",
+          "document": "<p>spark作业名</p>",
           "example": "spark-test-app",
           "member": "string",
           "name": "JobName",
@@ -5320,7 +5320,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业程序入参，以空格分隔；一般用于周期性调用使用",
+          "document": "<p>spark作业程序入参，以空格分隔；一般用于周期性调用使用</p>",
           "example": "10",
           "member": "string",
           "name": "CmdArgs",
@@ -5329,7 +5329,7 @@
         },
         {
           "disabled": false,
-          "document": "任务来源信息",
+          "document": "<p>任务来源信息</p>",
           "example": "无",
           "member": "KVPair",
           "name": "SourceInfo",
@@ -5344,7 +5344,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批Id",
+          "document": "<p>批Id</p>",
           "example": "batch-9vsx3lh0",
           "member": "string",
           "name": "BatchId",
@@ -5354,7 +5354,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "<p>任务Id</p>",
           "example": "4a7cad6bb86211ec9c616e6f30623d72",
           "member": "string",
           "name": "TaskId",

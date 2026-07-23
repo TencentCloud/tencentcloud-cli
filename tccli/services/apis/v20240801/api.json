@@ -1243,7 +1243,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模式：proxy代理模式； wrap封装模式；",
+          "document": "<p>模式：proxy代理模式； wrap封装模式；</p>",
           "example": "proxy",
           "member": "string",
           "name": "Mode",
@@ -1252,7 +1252,7 @@
         },
         {
           "disabled": false,
-          "document": "版本号：2024-11-05 2025-03-26",
+          "document": "<p>版本号：2024-11-05 2025-03-26</p>",
           "example": "2024-11-05",
           "member": "string",
           "name": "McpVersion",
@@ -1261,7 +1261,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
@@ -1270,7 +1270,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -1279,7 +1279,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "testdesc",
           "member": "string",
           "name": "Description",
@@ -1288,7 +1288,7 @@
         },
         {
           "disabled": false,
-          "document": "封装服务列表",
+          "document": "<p>封装服务列表</p>",
           "example": "[\"svr-xxxxxxxx\"]",
           "member": "string",
           "name": "WrapServices",
@@ -1297,7 +1297,7 @@
         },
         {
           "disabled": false,
-          "document": "负载方式，robin random consistentHash",
+          "document": "<p>负载方式，robin random consistentHash</p>",
           "example": "random",
           "member": "string",
           "name": "TargetSelect",
@@ -1306,7 +1306,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务器",
+          "document": "<p>目标服务器</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -1315,7 +1315,7 @@
         },
         {
           "disabled": false,
-          "document": "后端协议：http https",
+          "document": "<p>后端协议：http https</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -1324,7 +1324,7 @@
         },
         {
           "disabled": false,
-          "document": "证书检查",
+          "document": "<p>证书检查</p>",
           "example": "false",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -1333,7 +1333,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径",
+          "document": "<p>目标路径</p>",
           "example": "/sse",
           "member": "string",
           "name": "TargetPath",
@@ -1342,7 +1342,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制开启状态",
+          "document": "<p>流量控制开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
@@ -1351,7 +1351,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制配置",
+          "document": "<p>流量控制配置</p>",
           "example": "无",
           "member": "InvokeLimitConfigDTO",
           "name": "InvokeLimitConfig",
@@ -1360,7 +1360,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单开启状态",
+          "document": "<p>IP白名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpWhiteStatus",
@@ -1369,7 +1369,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单配置",
+          "document": "<p>IP白名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpWhiteConfig",
@@ -1378,7 +1378,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单开启状态",
+          "document": "<p>IP黑名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpBlackStatus",
@@ -1387,7 +1387,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单配置",
+          "document": "<p>IP黑名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpBlackConfig",
@@ -1396,7 +1396,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义host",
+          "document": "<p>自定义host</p>",
           "example": "test.com",
           "member": "string",
           "name": "CustomHttpHost",
@@ -1405,7 +1405,7 @@
         },
         {
           "disabled": false,
-          "document": "Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host；  customHost 自定义host",
+          "document": "<p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host；  customHost 自定义host</p>",
           "example": "useRequestHost",
           "member": "string",
           "name": "HttpHostType",
@@ -1414,7 +1414,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的超时时间",
+          "document": "<p>请求的超时时间</p>",
           "example": "10",
           "member": "uint64",
           "name": "Timeout",
@@ -1423,7 +1423,7 @@
         },
         {
           "disabled": false,
-          "document": "安全规则集",
+          "document": "<p>安全规则集</p>",
           "example": "无",
           "member": "McpSecurityRule",
           "name": "McpSecurityRules",
@@ -1432,7 +1432,7 @@
         },
         {
           "disabled": false,
-          "document": "工具集配置（openapi时或许用的是）",
+          "document": "<p>工具集配置（openapi时或许用的是）</p>",
           "example": "无",
           "member": "ToolConfigDTO",
           "name": "ToolConfigs",
@@ -1441,7 +1441,7 @@
         },
         {
           "disabled": false,
-          "document": "封装的API分组ID",
+          "document": "<p>封装的API分组ID</p>",
           "example": "paasid",
           "member": "string",
           "name": "WrapPaasID",
@@ -1450,12 +1450,21 @@
         },
         {
           "disabled": false,
-          "document": "插件配置",
+          "document": "<p>插件配置</p>",
           "example": "无",
           "member": "PluginConfigDTO",
           "name": "PluginConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否忽略健康检查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreHealthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1465,7 +1474,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp server ID",
+          "document": "<p>mcp server ID</p>",
           "example": "无",
           "member": "ResultIDVO",
           "name": "Data",
@@ -3235,7 +3244,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
@@ -3245,7 +3254,7 @@
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testmcp",
           "member": "string",
           "name": "Name",
@@ -3255,7 +3264,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testmcp",
           "member": "string",
           "name": "Description",
@@ -3265,7 +3274,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签ID数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"01010\"]",
           "member": "string",
           "name": "LabelIDs",
@@ -3275,7 +3284,7 @@
         },
         {
           "disabled": false,
-          "document": "目录ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目录ID数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"01010\"]",
           "member": "string",
           "name": "CategoryIDs",
@@ -3285,7 +3294,7 @@
         },
         {
           "disabled": false,
-          "document": "负载方式，robin random consistentHash\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>负载方式，robin random consistentHash</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "random",
           "member": "string",
           "name": "TargetSelect",
@@ -3295,7 +3304,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标服务器</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -3305,7 +3314,7 @@
         },
         {
           "disabled": false,
-          "document": "后端协议：http https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后端协议：http https</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -3315,7 +3324,7 @@
         },
         {
           "disabled": false,
-          "document": "证书检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书检查</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -3325,7 +3334,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/",
           "member": "string",
           "name": "TargetPath",
@@ -3335,7 +3344,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流量控制状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
@@ -3345,7 +3354,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流量控制配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InvokeLimitConfigDTO",
           "name": "InvokeLimitConfig",
@@ -3355,7 +3364,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP白名单开启状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IpWhiteStatus",
@@ -3365,7 +3374,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP白名单配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IpConfig",
           "name": "IpWhiteConfig",
@@ -3375,7 +3384,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP黑名单开启状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IpBlackStatus",
@@ -3385,7 +3394,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP黑名单配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IpConfig",
           "name": "IpBlackConfig",
@@ -3395,7 +3404,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp server ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>mcp server ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mcp-2fc41d77",
           "member": "string",
           "name": "ID",
@@ -3405,7 +3414,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -3415,7 +3424,7 @@
         },
         {
           "disabled": false,
-          "document": "预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预览地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://1.1.1.1/",
           "member": "string",
           "name": "Url",
@@ -3425,7 +3434,7 @@
         },
         {
           "disabled": false,
-          "document": "应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IDNameVO",
           "name": "App",
@@ -3435,7 +3444,7 @@
         },
         {
           "disabled": false,
-          "document": "目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IDNameVO",
           "name": "Catalogs",
@@ -3445,7 +3454,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IDNameVO",
           "name": "Labels",
@@ -3455,7 +3464,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-08-07T09:55:58.696Z",
           "member": "string",
           "name": "CreateTime",
@@ -3465,7 +3474,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-12-04T06:07:53.241Z",
           "member": "string",
           "name": "LastUpdateTime",
@@ -3475,7 +3484,7 @@
         },
         {
           "disabled": false,
-          "document": "用户appID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户appID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1300273807",
           "member": "int64",
           "name": "AppID",
@@ -3485,7 +3494,7 @@
         },
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "700001136234",
           "member": "string",
           "name": "Uin",
@@ -3495,7 +3504,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
           "name": "CustomHttpHost",
@@ -3505,7 +3514,7 @@
         },
         {
           "disabled": false,
-          "document": " Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "useRequestHost",
           "member": "string",
           "name": "HttpHostType",
@@ -3515,7 +3524,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求的超时时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "uint64",
           "name": "Timeout",
@@ -3525,7 +3534,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp server模式",
+          "document": "<p>mcp server模式</p>",
           "example": "wrap",
           "member": "string",
           "name": "Mode",
@@ -3535,7 +3544,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp version",
+          "document": "<p>mcp version</p>",
           "example": "2024-11-05",
           "member": "string",
           "name": "McpVersion",
@@ -3545,7 +3554,7 @@
         },
         {
           "disabled": false,
-          "document": "封装模式下绑定的服务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>封装模式下绑定的服务ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"svr-7e7f07e8\"]",
           "member": "string",
           "name": "WrapServices",
@@ -3555,7 +3564,7 @@
         },
         {
           "disabled": false,
-          "document": "工具数量",
+          "document": "<p>工具数量</p>",
           "example": "0",
           "member": "int64",
           "name": "ToolNum",
@@ -3565,7 +3574,7 @@
         },
         {
           "disabled": false,
-          "document": "安全规则集响应",
+          "document": "<p>安全规则集响应</p>",
           "example": "无",
           "member": "McpSecurityRulesVO",
           "name": "McpSecurityRulesVO",
@@ -3575,7 +3584,7 @@
         },
         {
           "disabled": false,
-          "document": "真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ToolConfigVO",
           "name": "ToolConfigs",
@@ -3585,7 +3594,7 @@
         },
         {
           "disabled": false,
-          "document": "访问URL",
+          "document": "<p>访问URL</p>",
           "example": "无",
           "member": "McpUrlObj",
           "name": "UrlObj",
@@ -3595,7 +3604,7 @@
         },
         {
           "disabled": false,
-          "document": "后端mcp服务是否正常",
+          "document": "<p>后端mcp服务是否正常</p>",
           "example": "error",
           "member": "string",
           "name": "ToolMessage",
@@ -3605,7 +3614,7 @@
         },
         {
           "disabled": false,
-          "document": "后端mcp服务的工具列表",
+          "document": "<p>后端mcp服务的工具列表</p>",
           "example": "无",
           "member": "McpTool",
           "name": "Tools",
@@ -3615,7 +3624,7 @@
         },
         {
           "disabled": false,
-          "document": "封装的API分组ID",
+          "document": "<p>封装的API分组ID</p>",
           "example": "app-be27914b",
           "member": "string",
           "name": "WrapPaasID",
@@ -3625,7 +3634,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的agentApp数量",
+          "document": "<p>关联的agentApp数量</p>",
           "example": "0",
           "member": "int64",
           "name": "RelateAgentAppNum",
@@ -3635,13 +3644,23 @@
         },
         {
           "disabled": false,
-          "document": "插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PluginConfigDTO",
           "name": "PluginConfigs",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否忽略健康检查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreHealthCheck",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5643,7 +5662,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp server ID",
+          "document": "<p>mcp server ID</p>",
           "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "ID",
@@ -5652,7 +5671,7 @@
         },
         {
           "disabled": false,
-          "document": "模式：proxy代理模式； wrap封装模式；",
+          "document": "<p>模式：proxy代理模式； wrap封装模式；</p>",
           "example": "proxy",
           "member": "string",
           "name": "Mode",
@@ -5661,7 +5680,7 @@
         },
         {
           "disabled": false,
-          "document": "版本号：2024-11-05 2025-03-26",
+          "document": "<p>版本号：2024-11-05 2025-03-26</p>",
           "example": "2024-11-05",
           "member": "string",
           "name": "McpVersion",
@@ -5670,7 +5689,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
@@ -5679,7 +5698,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -5688,7 +5707,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "testdesc",
           "member": "string",
           "name": "Description",
@@ -5697,7 +5716,7 @@
         },
         {
           "disabled": false,
-          "document": "封装服务列表",
+          "document": "<p>封装服务列表</p>",
           "example": "[\"svr-xxxxxxxx\"]",
           "member": "string",
           "name": "WrapServices",
@@ -5706,7 +5725,7 @@
         },
         {
           "disabled": false,
-          "document": "负载方式，robin random consistentHash",
+          "document": "<p>负载方式，robin random consistentHash</p>",
           "example": "random",
           "member": "string",
           "name": "TargetSelect",
@@ -5715,7 +5734,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务器",
+          "document": "<p>目标服务器</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -5724,7 +5743,7 @@
         },
         {
           "disabled": false,
-          "document": "后端协议：http https",
+          "document": "<p>后端协议：http https</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -5733,7 +5752,7 @@
         },
         {
           "disabled": false,
-          "document": "证书检查",
+          "document": "<p>证书检查</p>",
           "example": "false",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -5742,7 +5761,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径",
+          "document": "<p>目标路径</p>",
           "example": "/sse",
           "member": "string",
           "name": "TargetPath",
@@ -5751,7 +5770,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制开启状态",
+          "document": "<p>流量控制开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
@@ -5760,7 +5779,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制配置",
+          "document": "<p>流量控制配置</p>",
           "example": "无",
           "member": "InvokeLimitConfigDTO",
           "name": "InvokeLimitConfig",
@@ -5769,7 +5788,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单开启状态",
+          "document": "<p>IP白名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpWhiteStatus",
@@ -5778,7 +5797,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单配置",
+          "document": "<p>IP白名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpWhiteConfig",
@@ -5787,7 +5806,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单开启状态",
+          "document": "<p>IP黑名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpBlackStatus",
@@ -5796,7 +5815,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单配置",
+          "document": "<p>IP黑名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpBlackConfig",
@@ -5805,7 +5824,7 @@
         },
         {
           "disabled": false,
-          "document": "目标Host类型 0 默认 1 vpc",
+          "document": "<p>目标Host类型 0 默认 1 vpc</p>",
           "example": "1",
           "member": "int64",
           "name": "TargetHostType",
@@ -5814,7 +5833,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义host",
+          "document": "<p>自定义host</p>",
           "example": "test.com",
           "member": "string",
           "name": "CustomHttpHost",
@@ -5823,7 +5842,7 @@
         },
         {
           "disabled": false,
-          "document": "Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host",
+          "document": "<p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host</p>",
           "example": "useRequestHost",
           "member": "string",
           "name": "HttpHostType",
@@ -5832,7 +5851,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的超时时间",
+          "document": "<p>请求的超时时间</p>",
           "example": "10",
           "member": "uint64",
           "name": "Timeout",
@@ -5841,7 +5860,7 @@
         },
         {
           "disabled": false,
-          "document": "安全规则集",
+          "document": "<p>安全规则集</p>",
           "example": "无",
           "member": "McpSecurityRule",
           "name": "McpSecurityRules",
@@ -5850,7 +5869,7 @@
         },
         {
           "disabled": false,
-          "document": "工具集配置（openapi可能会用到）",
+          "document": "<p>工具集配置（openapi可能会用到）</p>",
           "example": "无",
           "member": "ToolConfigDTO",
           "name": "ToolConfigs",
@@ -5859,7 +5878,7 @@
         },
         {
           "disabled": false,
-          "document": "封装的API分组ID",
+          "document": "<p>封装的API分组ID</p>",
           "example": "app-010101",
           "member": "string",
           "name": "WrapPaasID",
@@ -5868,12 +5887,21 @@
         },
         {
           "disabled": false,
-          "document": "插件配置",
+          "document": "<p>插件配置</p>",
           "example": "无",
           "member": "PluginConfigDTO",
           "name": "PluginConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否忽略健康检查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreHealthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5883,7 +5911,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp server ID",
+          "document": "<p>mcp server ID</p>",
           "example": "无",
           "member": "ResultIDVO",
           "name": "Data",

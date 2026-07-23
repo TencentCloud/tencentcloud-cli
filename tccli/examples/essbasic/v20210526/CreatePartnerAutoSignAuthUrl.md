@@ -1,6 +1,6 @@
-**Example 1: 授权给渠道平台应用**
+**Example 1: 他方授权我方**
 
-
+让王五示例企业授权给我方能发起他们的自动签署合同
 
 Input: 
 
@@ -9,7 +9,9 @@ tccli essbasic CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
     --Agent.ProxyOrganizationOpenId org_dianziqian \
     --Agent.ProxyOperator.OpenId n9527 \
-    --PlatformAppAuthorization True
+    --AuthorizedOrganizationNames 王五示例企业 \
+    --AuthToMe True \
+    --SealTypes OFFICIAL
 ```
 
 Output: 
@@ -51,9 +53,9 @@ Output:
 }
 ```
 
-**Example 3: 他方授权我方**
+**Example 3: 授权给渠道平台应用**
 
-让王五示例企业授权给我方能发起他们的自动签署合同
+
 
 Input: 
 
@@ -62,9 +64,7 @@ tccli essbasic CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
     --Agent.ProxyOrganizationOpenId org_dianziqian \
     --Agent.ProxyOperator.OpenId n9527 \
-    --AuthorizedOrganizationNames 王五示例企业 \
-    --AuthToMe True \
-    --SealTypes OFFICIAL
+    --PlatformAppAuthorization True
 ```
 
 Output: 

@@ -1230,7 +1230,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称，最大长度不能超过60个字节。</p>",
+          "document": "<p>名称，最大长度不能超过128个字符。</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -1248,7 +1248,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述信息，最大长度不能超过100个字节。</p>",
+          "document": "<p>描述信息，最大长度不能超过100个字符。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",

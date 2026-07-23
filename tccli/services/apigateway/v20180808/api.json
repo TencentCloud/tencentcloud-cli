@@ -218,7 +218,7 @@
       "status": "online"
     },
     "DescribeApi": {
-      "document": "本接口（DescribeApi）用于查询用户 API 网关的 API 接口的详细信息。​",
+      "document": "本接口（DescribeApi）用于查询用户 API 网关的 API 接口的详细信息。u200b",
       "input": "DescribeApiRequest",
       "name": "查询API详情",
       "output": "DescribeApiResponse",
@@ -5975,7 +5975,7 @@
           "example": " 见输出示例",
           "member": "ApiInfo",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7034,7 +7034,7 @@
           "example": "无",
           "member": "Plugin",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7189,7 +7189,7 @@
           "example": "无",
           "member": "PluginSummary",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11668,20 +11668,20 @@
         {
           "disabled": false,
           "document": "插件ID。",
-          "example": "plugin-2nuhovb7",
+          "example": "plugin-*****",
           "member": "string",
           "name": "PluginId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "插件名称。",
-          "example": "myplugin",
+          "example": "plugin******",
           "member": "string",
           "name": "PluginName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11691,7 +11691,7 @@
           "example": "IPControl",
           "member": "string",
           "name": "PluginType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11701,7 +11701,7 @@
           "example": "{\\",
           "member": "string",
           "name": "PluginData",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11711,7 +11711,7 @@
           "example": "IPControl",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11721,7 +11721,7 @@
           "example": "2021-01-25T10:15:21Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11731,7 +11731,7 @@
           "example": "2021-01-25T10:15:21Z",
           "member": "datetime_iso",
           "name": "ModifiedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11741,7 +11741,7 @@
           "example": "1",
           "member": "int64",
           "name": "AttachedApiTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11751,7 +11751,7 @@
           "example": "无",
           "member": "AttachedApiInfo",
           "name": "AttachedApis",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

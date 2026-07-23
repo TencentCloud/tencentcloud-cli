@@ -19384,7 +19384,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络ACL实例ID。形如：acl-12345678。",
+          "document": "<p>网络ACL实例ID。形如：acl-12345678。</p>",
           "example": "acl-pnpcflil",
           "member": "string",
           "name": "NetworkAclId",
@@ -19393,7 +19393,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -19402,7 +19402,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最小值为1，最大值为100。",
+          "document": "<p>返回数量，默认为20，最小值为1，最大值为100。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -19411,8 +19411,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定`NetworkAclId`和`Filters`。\n<li>protocol - String - 协议，形如：`TCP`。</li>\n<li>description - String - 描述。</li>\n<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>\n<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>\n<li>action - String - 动作，形如ACCEPT或DROP。</li>\n<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>\n<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>",
-          "example": "[{\"Name\": \"network-acl-quintuple-entry-id\", \"Values\": [\"acli45-ahnu4rv5\"]}]",
+          "document": "<p>过滤条件，参数不支持同时指定<code>NetworkAclId</code>和<code>Filters</code>。</p><li>protocol - String - 协议，形如：<code>TCP</code>。</li><li>description - String - 描述。</li><li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li><li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li><li>action - String - 动作，形如ACCEPT或DROP。</li><li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li><li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -19426,8 +19426,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络ACL条目列表（NetworkAclTuple5Entry）",
-          "example": "[{\"Protocol\": \"tcp\", \"Description\": \"demo\", \"SourceCidr\": \"10.0.0.0/8\", \"DestinationCidr\": \"0.0.0.0/0\", \"Action\": \"ACCEPT\", \"Priority\": 1, \"NetworkAclQuintupleEntryId\": \"acli45-kngiybxl\", \"NetworkAclDirection\": \"INGRESS\", \"CreateTime\": \"2023-10-16 10:32:20\", \"SourcePort\": \"ALL\", \"DestinationPort\": \"80\"}]",
+          "document": "<p>网络ACL条目列表（NetworkAclTuple5Entry）</p>",
+          "example": "无",
           "member": "NetworkAclQuintupleEntry",
           "name": "NetworkAclQuintupleSet",
           "output_required": true,
@@ -19436,7 +19436,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的实例数量。",
+          "document": "<p>符合条件的实例数量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -19458,8 +19458,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定NetworkAclIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>\n<li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>\n<li>network-acl-name - String - （过滤条件）网络ACL实例名称。</li>",
-          "example": "vpc-pnpcflil",
+          "document": "<p>过滤条件，参数不支持同时指定NetworkAclIds和Filters。</p><li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li><li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li><li>network-acl-name - String - （过滤条件）网络ACL实例名称。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -19467,7 +19467,7 @@
         },
         {
           "disabled": false,
-          "document": "网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。",
+          "document": "<p>网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。</p>",
           "example": "[\"acl-nswq8wkq\"]",
           "member": "string",
           "name": "NetworkAclIds",
@@ -19476,7 +19476,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -19485,7 +19485,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最小值为1，最大值为100。",
+          "document": "<p>返回数量，默认为20，最小值为1，最大值为100。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -19494,7 +19494,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段。支持：NetworkAclId,NetworkAclName,CreatedTime",
+          "document": "<p>排序字段。支持：NetworkAclId,NetworkAclName,CreatedTime,ModifyTime</p>",
           "example": "CreatedTime",
           "member": "string",
           "name": "OrderField",
@@ -19503,7 +19503,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方法。顺序：ASC，倒序：DESC。",
+          "document": "<p>排序方法。顺序：ASC，倒序：DESC。</p>",
           "example": "DESC",
           "member": "string",
           "name": "OrderDirection",
@@ -19518,8 +19518,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例详细信息列表。",
-          "example": "[{\"NetworkAclType\": \"1\", \"NetworkAclId\": \"acl-aeyasc3zz\", \"SubnetSet\": [{\"IsShare\": true, \"NetworkAclId\": \"acl-aeyasc3zz\", \"RouteTableId\": \"rtb-hnos32zkc\", \"VpcId\": \"vpc-c1fd6eqe\", \"EnableBroadcast\": true, \"Zone\": \"ap-beijing\", \"IsCdcSubnet\": 0, \"AvailableIpAddressCount\": 1, \"Region\": \"ap-beijing\", \"ISPType\": \"1\", \"LocalZone\": true, \"CdcId\": \"cdc-12312\", \"IsRemoteVpcSnat\": true, \"SubnetName\": \"test_3\", \"TotalIpAddressCount\": 1, \"CreatedTime\": \"2021-02-19 17:52:43\", \"Ipv6CidrBlock\": \"\", \"SubnetId\": \"subnet-ptqwqcjzd\", \"CidrBlock\": \"10.0.0.0/24\", \"TagSet\": [{\"Value\": \"tag-value\", \"Key\": \"tag-key\"}], \"IsDefault\": true}], \"VpcId\": \"vpc-c1fd6eqe\", \"NetworkAclName\": \"demo\", \"TagSet\": [{\"Value\": \"1\", \"Key\": \"businessId\"}], \"CreatedTime\": \"2021-02-19 17:52:43\", \"IngressEntries\": [{\"Protocol\": \"all\", \"Description\": \"\", \"Ipv6CidrBlock\": \"::/0\", \"Priority\": 1, \"ModifyTime\": \"\", \"Action\": \"Accept\", \"NetworkAclIpv6EntryId\": \"acli63-bwi12ozo\"}], \"EgressEntries\": [{\"Protocol\": \"all\", \"Description\": \"\", \"Ipv6CidrBlock\": \"::/0\", \"Priority\": 1, \"ModifyTime\": \"\", \"Action\": \"Accept\", \"NetworkAclIpv6EntryId\": \"acli63-pmh23vc1q\"}]}]",
+          "document": "<p>实例详细信息列表。</p>",
+          "example": "无",
           "member": "NetworkAcl",
           "name": "NetworkAclSet",
           "output_required": true,
@@ -19528,7 +19528,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的实例数量。",
+          "document": "<p>符合条件的实例数量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -19637,7 +19637,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
+          "document": "<p>弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。可通过<a href=\"https://cloud.tencent.com/document/product/215/15817\">DescribeNetworkInterfaces</a>接口获取。</p>",
           "example": "[\"eni-f9qln349\"]",
           "member": "string",
           "name": "NetworkInterfaceIds",
@@ -19646,8 +19646,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。可通过可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。\n</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。\n</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>\n<li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li>\n<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>",
-          "example": "[{'Name': 'vpc-id', 'Values': ['vpc-q26u781x']}]",
+          "document": "<p>过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。</p><li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。可通过可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。</li><li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。</li><li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。</li><li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。</li><li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。</li><li>network-interface-name - String - （过滤条件）网卡实例名称。</li><li>network-interface-description - String - （过滤条件）网卡实例描述。</li><li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与<code>ip-exact-match</code>配合做单IP的精确匹配查询。</li><li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li><li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li><li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li><li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li><li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li><li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</li><li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li><li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li><li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</li><li>termination-protection - String - 删除保护。取值: true; false。</li><li>traffic-protection - String - 流量保护。取值: true; false。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -19655,7 +19655,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -19664,7 +19664,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -19679,8 +19679,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例详细信息列表。",
-          "example": "[{\"MacAddress\": \"20:90:6F:F5:34:C7\", \"VpcId\": \"vpc-2kx9z6h3\", \"SubNetworkInterfaces\": []]",
+          "document": "<p>实例详细信息列表。</p>",
+          "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterfaceSet",
           "output_required": true,
@@ -19689,7 +19689,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的实例数量。",
+          "document": "<p>符合条件的实例数量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -20706,8 +20706,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>route-table-name - String - （过滤条件）路由表名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>association.main - String - （过滤条件）是否主路由表。</li>\n<li>tag-key - String -是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>visible - String - （过滤条件）是否可见。</li>\n<li>next-hop-type - String - 是否必填：否 - （过滤条件）按下一跳类型进行过滤。使用next-hop-type进行过滤时，必须同时携带route-table-id与vpc-id。\n目前我们支持的类型有：\nLOCAL: 本地路由\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nCCN：云联网；\nLOCAL_GATEWAY：本地网关。\nGWLB_ENDPOINT：网关负载均衡终端节点。\n</li>",
-          "example": "[{\"Name\":\"route-table-id\", \"Values\": [\"rtb-3yuu2t62\"]}]",
+          "document": "<p>过滤条件，参数不支持同时指定RouteTableIds和Filters。</p><li>route-table-id - String - （过滤条件）路由表实例ID。</li><li>route-table-name - String - （过滤条件）路由表名称。</li><li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li><li>association.main - String - （过滤条件）是否主路由表。</li><li>tag-key - String -是否必填：否 - （过滤条件）按照标签键进行过滤。</li><li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li><li>visible - String - （过滤条件）是否可见。</li><li>next-hop-type - String - 是否必填：否 - （过滤条件）按下一跳类型进行过滤。使用next-hop-type进行过滤时，必须同时携带route-table-id与vpc-id。目前我们支持的类型有：LOCAL: 本地路由CVM：公网网关类型的云服务器；VPN：VPN网关；DIRECTCONNECT：专线网关；PEERCONNECTION：对等连接；HAVIP：高可用虚拟IP；NAT：NAT网关; NORMAL_CVM：普通云服务器；EIP：云服务器的公网IP；CCN：云联网；LOCAL_GATEWAY：本地网关。GWLB_ENDPOINT：网关负载均衡终端节点。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -20715,8 +20715,8 @@
         },
         {
           "disabled": false,
-          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
-          "example": "rtb-l2h8d7c2",
+          "document": "<p>路由表实例ID，例如：rtb-azd4dt1c。</p>",
+          "example": "[\"rtb-q4fju7ze\"]",
           "member": "string",
           "name": "RouteTableIds",
           "required": false,
@@ -20724,7 +20724,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量。",
+          "document": "<p>偏移量。</p>",
           "example": "0",
           "member": "string",
           "name": "Offset",
@@ -20733,7 +20733,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "1",
           "member": "string",
           "name": "Limit",
@@ -20742,7 +20742,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要获取路由策略信息，默认获取，当控制台不需要拉取路由策略信息时，改为False。",
+          "document": "<p>是否需要获取路由策略信息，默认获取，当控制台不需要拉取路由策略信息时，改为False。</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedRouterInfo",
@@ -20757,7 +20757,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的实例数量。",
+          "document": "<p>符合条件的实例数量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -20767,7 +20767,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表对象。",
+          "document": "<p>路由表对象。</p>",
           "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
@@ -21947,7 +21947,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100（该参数指定的子网是否返回，需要结合分页拉取参数Limit和Offset）。参数不支持同时指定SubnetIds和Filters。",
+          "document": "<p>子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100（该参数指定的子网是否返回，需要结合分页拉取参数Limit和Offset）。参数不支持同时指定SubnetIds和Filters。</p>",
           "example": "[\"subnet-pxir56ns\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -21956,7 +21956,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>cdc-id - String - 是否必填：否 - （过滤条件）按照cdc信息进行过滤。过滤出来制定cdc下的子网。</li>\n<li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>\n<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>\n<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 。</li>\n<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>",
+          "document": "<p>过滤条件，参数不支持同时指定SubnetIds和Filters。</p><li>subnet-id - String - （过滤条件）Subnet实例名称。</li><li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li><li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li><li>is-default - Boolean - （过滤条件）是否是默认子网。</li><li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li><li>subnet-name - String - （过滤条件）子网名称。</li><li>zone - String - （过滤条件）可用区。</li><li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li><li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li><li>cdc-id - String - 是否必填：否 - （过滤条件）按照cdc信息进行过滤。过滤出来制定cdc下的子网。</li><li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li><li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li><li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 。</li><li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -21965,7 +21965,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "string",
           "name": "Offset",
@@ -21974,7 +21974,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "string",
           "name": "Limit",
@@ -21983,7 +21983,7 @@
         },
         {
           "disabled": false,
-          "document": "每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。",
+          "document": "<p>每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。</p>",
           "example": "20",
           "member": "uint64",
           "name": "MaxResults",
@@ -21992,7 +21992,7 @@
         },
         {
           "disabled": false,
-          "document": "如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。",
+          "document": "<p>如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。</p>",
           "example": "\"无\"",
           "member": "string",
           "name": "NextToken",
@@ -22007,7 +22007,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的实例数量。",
+          "document": "<p>符合条件的实例数量。</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -22017,7 +22017,7 @@
         },
         {
           "disabled": false,
-          "document": "子网对象。",
+          "document": "<p>子网对象。</p>",
           "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
@@ -22027,7 +22027,7 @@
         },
         {
           "disabled": false,
-          "document": "如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。",
+          "document": "<p>如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。</p>",
           "example": "\"无\"",
           "member": "string",
           "name": "NextToken",
@@ -23315,7 +23315,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。",
+          "document": "<p>VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。</p>",
           "example": "[\"vpc-azd4dt1c\"]",
           "member": "string",
           "name": "VpcIds",
@@ -23324,8 +23324,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，不支持同时指定VpcIds和Filters参数。\n支持的过滤条件如下：\n<li>vpc-name：VPC实例名称，支持模糊查询。</li>\n<li>is-default ：是否默认VPC。</li>\n<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>\n<li>cidr-block：VPC的CIDR。</li>\n<li>tag-key ：按照标签键进行过滤，非必填参数。</li>\n<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>\n  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。\n<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>\n<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li>\n<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>",
-          "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-azd4dt1c\"]}]",
+          "document": "<p>过滤条件，不支持同时指定VpcIds和Filters参数。<br>支持的过滤条件如下：</p><li>vpc-name：VPC实例名称，支持模糊查询。</li><li>is-default ：是否默认VPC。</li><li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li><li>cidr-block：VPC的CIDR。</li><li>tag-key ：按照标签键进行过滤，非必填参数。</li><li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li><li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li><li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -23333,7 +23333,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "string",
           "name": "Offset",
@@ -23342,7 +23342,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "10",
           "member": "string",
           "name": "Limit",
@@ -23357,7 +23357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的对象数。",
+          "document": "<p>符合条件的对象数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -23367,8 +23367,8 @@
         },
         {
           "disabled": false,
-          "document": "VPC对象。",
-          "example": "[{\"DomainName\": \"aa.bb.cc\", \"Ipv6CidrBlock\": \"3402:4e00:20:1200::/56\", \"VpcName\": \"demo\", \"CreatedTime\": \"2018-04-25 10:26:26\", \"IsDefault\": false, \"VpcId\": \"vpc-p5sf61yj\", \"EnableMulticast\": false, \"EnableDhcp\": true, \"EnableRouteVpcPublish\": false}]",
+          "document": "<p>VPC对象。</p>",
+          "example": "无",
           "member": "Vpc",
           "name": "VpcSet",
           "output_required": true,
@@ -33529,7 +33529,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "`VPC`实例`ID`。",
+          "document": "<p><code>VPC</code>实例<code>ID</code>。</p>",
           "example": "vpc-5k6fot41",
           "member": "string",
           "name": "VpcId",
@@ -33539,7 +33539,7 @@
         },
         {
           "disabled": false,
-          "document": "网络ACL实例`ID`。",
+          "document": "<p>网络ACL实例<code>ID</code>。</p>",
           "example": "acl-kgpu7qt2",
           "member": "string",
           "name": "NetworkAclId",
@@ -33549,7 +33549,7 @@
         },
         {
           "disabled": false,
-          "document": "网络ACL名称，最大长度为60。",
+          "document": "<p>网络ACL名称，最大长度为60。</p>",
           "example": "demo",
           "member": "string",
           "name": "NetworkAclName",
@@ -33559,7 +33559,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2021-03-22 20:59:55",
           "member": "string",
           "name": "CreatedTime",
@@ -33569,8 +33569,8 @@
         },
         {
           "disabled": false,
-          "document": "网络ACL关联的子网数组。",
-          "example": "[]",
+          "document": "<p>网络ACL关联的子网数组。</p>",
+          "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
           "output_required": true,
@@ -33579,8 +33579,8 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅对三元组ACL有效，网络ACl入站规则。",
-          "example": "[]",
+          "document": "<p>该参数仅对三元组ACL有效，网络ACl入站规则。</p>",
+          "example": "无",
           "member": "NetworkAclEntry",
           "name": "IngressEntries",
           "output_required": false,
@@ -33589,8 +33589,8 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅对三元组ACL有效，网络ACL出站规则。",
-          "example": "[]",
+          "document": "<p>该参数仅对三元组ACL有效，网络ACL出站规则。</p>",
+          "example": "无",
           "member": "NetworkAclEntry",
           "name": "EgressEntries",
           "output_required": false,
@@ -33599,7 +33599,7 @@
         },
         {
           "disabled": false,
-          "document": "网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'",
+          "document": "<p>网络ACL类型。三元组：&#39;TRIPLE&#39;   五元组：&#39;QUINTUPLE&#39;</p>",
           "example": "TRIPLE",
           "member": "string",
           "name": "NetworkAclType",
@@ -33609,8 +33609,8 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对",
-          "example": "[]",
+          "document": "<p>标签键值对</p>",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -37777,7 +37777,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。",
+          "document": "<p>VPC实例ID。</p>",
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
@@ -37787,7 +37787,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "document": "<p>路由表实例ID，例如：rtb-azd4dt1c。</p>",
           "example": "rtb-32kbqgtm",
           "member": "string",
           "name": "RouteTableId",
@@ -37797,7 +37797,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表名称。",
+          "document": "<p>路由表名称。</p>",
           "example": "demo",
           "member": "string",
           "name": "RouteTableName",
@@ -37807,8 +37807,8 @@
         },
         {
           "disabled": false,
-          "document": "路由表关联关系。",
-          "example": "10.0.0.0/16",
+          "document": "<p>路由表关联关系。</p>",
+          "example": "无",
           "member": "RouteTableAssociation",
           "name": "AssociationSet",
           "output_required": true,
@@ -37817,8 +37817,8 @@
         },
         {
           "disabled": false,
-          "document": "IPv4路由策略集合。",
-          "example": "[{\"RouteItemId\": \"rti-9bjer08h\", \"DestinationCidrBlock\": \"10.0.0.0/24\", \"GatewayType\": \"CCN\", \"GatewayId\": \"ccn-e187un9p\", \"RouteDescription\": \"demo\", \"RouteType\": \"CCN\"}]",
+          "document": "<p>IPv4路由策略集合。</p>",
+          "example": "无",
           "member": "Route",
           "name": "RouteSet",
           "output_required": true,
@@ -37827,8 +37827,8 @@
         },
         {
           "disabled": false,
-          "document": "是否默认路由表。",
-          "example": "True",
+          "document": "<p>是否默认路由表。</p>",
+          "example": "false",
           "member": "bool",
           "name": "Main",
           "output_required": true,
@@ -37837,7 +37837,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2010-11-21",
           "member": "string",
           "name": "CreatedTime",
@@ -37847,8 +37847,8 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "document": "<p>标签键值对。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -37857,8 +37857,8 @@
         },
         {
           "disabled": false,
-          "document": "local路由是否发布云联网。",
-          "example": "[{\"Cidr\": \"10.0.0.0/16\", \"PublishedToVbc\": true, \"AssistantType\": \"NORMAL\"}]",
+          "document": "<p>local路由是否发布云联网。</p>",
+          "example": "无",
           "member": "CidrForCcn",
           "name": "LocalCidrForCcn",
           "output_required": true,
@@ -39446,7 +39446,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "`VPC`实例`ID`。",
+          "document": "<p><code>VPC</code>实例<code>ID</code>。</p>",
           "example": "vpc-5k6fot41",
           "member": "string",
           "name": "VpcId",
@@ -39456,7 +39456,7 @@
         },
         {
           "disabled": false,
-          "document": "子网实例`ID`，例如：subnet-bthucmmy。",
+          "document": "<p>子网实例<code>ID</code>，例如：subnet-bthucmmy。</p>",
           "example": "subnet-kgpu7qt2",
           "member": "string",
           "name": "SubnetId",
@@ -39466,7 +39466,7 @@
         },
         {
           "disabled": false,
-          "document": "子网名称。",
+          "document": "<p>子网名称。</p>",
           "example": "demo",
           "member": "string",
           "name": "SubnetName",
@@ -39476,7 +39476,7 @@
         },
         {
           "disabled": false,
-          "document": "子网的 `IPv4` `CIDR`。",
+          "document": "<p>子网的 <code>IPv4</code> <code>CIDR</code>。</p>",
           "example": "10.0.0.0/24",
           "member": "string",
           "name": "CidrBlock",
@@ -39486,7 +39486,7 @@
         },
         {
           "disabled": false,
-          "document": "是否默认子网。",
+          "document": "<p>是否默认子网。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDefault",
@@ -39496,7 +39496,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启广播。",
+          "document": "<p>是否开启广播。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableBroadcast",
@@ -39506,7 +39506,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区。",
+          "document": "<p>可用区。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -39516,7 +39516,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表实例ID，例如：rtb-l2h8d7c2。",
+          "document": "<p>路由表实例ID，例如：rtb-l2h8d7c2。</p>",
           "example": "rtb-7t9oijd0",
           "member": "string",
           "name": "RouteTableId",
@@ -39526,7 +39526,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2023-03-21 18:00:00",
           "member": "string",
           "name": "CreatedTime",
@@ -39536,7 +39536,7 @@
         },
         {
           "disabled": false,
-          "document": "可用`IPv4`数。",
+          "document": "<p>可用<code>IPv4</code>数。</p>",
           "example": "253",
           "member": "uint64",
           "name": "AvailableIpAddressCount",
@@ -39546,7 +39546,7 @@
         },
         {
           "disabled": false,
-          "document": "子网的 `IPv6` `CIDR`。",
+          "document": "<p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>",
           "example": "fd76:3600:1300:c00::/64",
           "member": "string",
           "name": "Ipv6CidrBlock",
@@ -39556,7 +39556,7 @@
         },
         {
           "disabled": false,
-          "document": "关联`ACL`ID",
+          "document": "<p>关联<code>ACL</code>ID</p>",
           "example": "acl-g1ogd8r2",
           "member": "string",
           "name": "NetworkAclId",
@@ -39566,7 +39566,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为 `SNAT` 地址池子网。",
+          "document": "<p>是否为 <code>SNAT</code> 地址池子网。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsRemoteVpcSnat",
@@ -39576,7 +39576,7 @@
         },
         {
           "disabled": false,
-          "document": "子网`IPv4`总数。",
+          "document": "<p>子网<code>IPv4</code>总数。</p>",
           "example": "256",
           "member": "uint64",
           "name": "TotalIpAddressCount",
@@ -39586,8 +39586,8 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "document": "<p>标签键值对。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
@@ -39596,7 +39596,7 @@
         },
         {
           "disabled": false,
-          "document": "CDC实例ID。",
+          "document": "<p>CDC实例ID。</p>",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
@@ -39606,7 +39606,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是CDC所属子网。0:否 1:是",
+          "document": "<p>是否是CDC所属子网。0:否 1:是</p>",
           "example": "0",
           "member": "int64",
           "name": "IsCdcSubnet",
@@ -41222,7 +41222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "`VPC`名称。",
+          "document": "<p><code>VPC</code>名称。</p>",
           "example": "VPC-1",
           "member": "string",
           "name": "VpcName",
@@ -41232,7 +41232,7 @@
         },
         {
           "disabled": false,
-          "document": "`VPC`实例`ID`，例如：vpc-azd4dt1c。",
+          "document": "<p><code>VPC</code>实例<code>ID</code>，例如：vpc-azd4dt1c。</p>",
           "example": "vpc-azd4dt1c",
           "member": "string",
           "name": "VpcId",
@@ -41242,7 +41242,7 @@
         },
         {
           "disabled": false,
-          "document": "`VPC`的`IPv4` `CIDR`。",
+          "document": "<p><code>VPC</code>的<code>IPv4</code> <code>CIDR</code>。</p>",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
@@ -41252,7 +41252,7 @@
         },
         {
           "disabled": false,
-          "document": "是否默认`VPC`。",
+          "document": "<p>是否默认<code>VPC</code>。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsDefault",
@@ -41262,7 +41262,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启组播。",
+          "document": "<p>是否开启组播。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableMulticast",
@@ -41272,7 +41272,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2021-01-03 22:25:45",
           "member": "string",
           "name": "CreatedTime",
@@ -41282,7 +41282,7 @@
         },
         {
           "disabled": false,
-          "document": "`DNS`列表。",
+          "document": "<p><code>DNS</code>列表。</p>",
           "example": "[\"8.8.8.8\"]",
           "member": "string",
           "name": "DnsServerSet",
@@ -41292,7 +41292,7 @@
         },
         {
           "disabled": false,
-          "document": "`DHCP`域名选项值。",
+          "document": "<p><code>DHCP</code>域名选项值。</p>",
           "example": "DomainName1",
           "member": "string",
           "name": "DomainName",
@@ -41302,7 +41302,7 @@
         },
         {
           "disabled": false,
-          "document": "`DHCP`选项集`ID`。",
+          "document": "<p><code>DHCP</code>选项集<code>ID</code>。</p>",
           "example": "dopt-8g7k5qfq",
           "member": "string",
           "name": "DhcpOptionsId",
@@ -41312,7 +41312,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启`DHCP`。",
+          "document": "<p>是否开启<code>DHCP</code>。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableDhcp",
@@ -41322,7 +41322,7 @@
         },
         {
           "disabled": false,
-          "document": "`VPC`的`IPv6` `CIDR`。",
+          "document": "<p><code>VPC</code>的<code>IPv6</code> <code>CIDR</code>。</p>",
           "example": "3402:4e00:20:1200::/56",
           "member": "string",
           "name": "Ipv6CidrBlock",
@@ -41332,7 +41332,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对",
+          "document": "<p>标签键值对</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
@@ -41342,7 +41342,7 @@
         },
         {
           "disabled": false,
-          "document": "辅助CIDR",
+          "document": "<p>辅助CIDR</p>",
           "example": "无",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
@@ -41352,7 +41352,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单",
+          "document": "<p>vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableRouteVpcPublish",
@@ -41362,7 +41362,7 @@
         },
         {
           "disabled": false,
-          "document": "返回多运营商IPv6 Cidr Block",
+          "document": "<p>返回多运营商IPv6 Cidr Block</p>",
           "example": "无",
           "member": "ISPIPv6CidrBlock",
           "name": "Ipv6CidrBlockSet",
@@ -41372,7 +41372,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。",
+          "document": "<p>vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableRouteVpcPublishIpv6",

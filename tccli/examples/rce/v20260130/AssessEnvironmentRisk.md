@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli rce AssessEnvironmentRisk --cli-unfold-argument  \
-    --UserIp 100.*****.0
+    --UserIp 125.**.**.3
 ```
 
 Output: 

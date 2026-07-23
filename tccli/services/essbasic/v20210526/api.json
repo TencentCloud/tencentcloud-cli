@@ -7410,8 +7410,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
-          "example": " ",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": true,
@@ -7419,7 +7419,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。",
+          "document": "<p>合同流程ID，为32位字符串。<br>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</p>",
           "example": "yDwFdUUckpsw******yQ0af8bHosXQtb",
           "member": "string",
           "name": "FlowId",
@@ -7428,7 +7428,7 @@
         },
         {
           "disabled": true,
-          "document": "暂未开放",
+          "document": "<p>暂未开放</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -7437,7 +7437,7 @@
         },
         {
           "disabled": false,
-          "document": "指定申请的报告类型，可选类型如下：\n<ul><li> **0** :合同签署报告（默认）</li>\n<li> **1** :公证处核验报告</li></ul>",
+          "document": "<p>指定申请的报告类型，可选类型如下：<ul><li> <strong>0</strong> :合同签署报告（默认）</li></ul></p><p>枚举值：</p><ul><li>0： 合同签署报告</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "ReportType",
@@ -7452,7 +7452,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "出证报告 ID，可用于<a href=\"https://qian.tencent.com/developers/partnerApis/certificate/DescribeChannelFlowEvidenceReport\" target=\"_blank\">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL",
+          "document": "<p>出证报告 ID，可用于<a href=\"https://qian.tencent.com/developers/partnerApis/certificate/DescribeChannelFlowEvidenceReport\" target=\"_blank\">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL</p>",
           "example": "yDSLVUUckpo3nva8UEnf33kvzHQ19GcL",
           "member": "string",
           "name": "ReportId",
@@ -7462,7 +7462,7 @@
         },
         {
           "disabled": false,
-          "document": "出证任务执行的状态, 状态含义如下：\n\n<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>\n<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>\n<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>",
+          "document": "<p>出证任务执行的状态, 状态含义如下：</p><ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li><li>**EvidenceStatusSuccess**：  出证任务执行成功</li><li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -7472,7 +7472,7 @@
         },
         {
           "disabled": false,
-          "document": "废除，字段无效",
+          "document": "<p>废除，字段无效</p>",
           "example": "废除，字段无效",
           "member": "string",
           "name": "ReportUrl",
@@ -8854,7 +8854,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -8863,7 +8863,7 @@
         },
         {
           "disabled": true,
-          "document": "被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationName二选一传入。\n\n注：`被授权企业必须和当前企业在同一应用号下`",
+          "document": "<p>被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationName二选一传入。</p><p>注：<code>被授权企业必须和当前企业在同一应用号下</code></p>",
           "example": "yDwFdUUckxxxxxxxxxxxxxXbsvN43W6Kax",
           "member": "string",
           "name": "AuthorizedOrganizationId",
@@ -8872,7 +8872,7 @@
         },
         {
           "disabled": true,
-          "document": "被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。\n\n注: \n1. 如果名称中包含英文括号()，请使用中文括号（）代替。\n2. 被授权企业必须和当前企业在同一应用号下",
+          "document": "<p>被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。</p><p>注: </p><ol><li>如果名称中包含英文括号()，请使用中文括号（）代替。</li><li>被授权企业必须和当前企业在同一应用号下</li></ol>",
           "example": "王五示例企业",
           "member": "string",
           "name": "AuthorizedOrganizationName",
@@ -8881,7 +8881,7 @@
         },
         {
           "disabled": false,
-          "document": "是否给平台应用授权\n\n<ul>\n<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationIds</code>和<code>AuthorizedOrganizationNames</code>。</li>\n<li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li>\n</ul>\n\n 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。",
+          "document": "<p>是否给平台应用授权</p><ul><li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationIds</code>和<code>AuthorizedOrganizationNames</code>。</li><li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li></ul><p> 注：授权给平台应用需要开通【基于子客授权第三方应用可文件发起子客自动签署】白名单，请联系运营经理开通。</p>",
           "example": "false",
           "member": "bool",
           "name": "PlatformAppAuthorization",
@@ -8890,7 +8890,7 @@
         },
         {
           "disabled": false,
-          "document": "在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：\n\n<ul>\n<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>\n<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>\n<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>\n<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>\n</ul>",
+          "document": "<p>在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。</p><p>枚举值：</p><ul><li>OFFICIAL： 企业公章，用于代表企业对外的正式文件和重要事务的认证。</li><li>CONTRACT： 合同专用章，专门用于签署各类合同</li><li>FINANCE： 财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li><li>PERSONNEL： 人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li><li>OTHER： 其他类型印章，包含子类型</li></ul>",
           "example": "[\"OFFICIAL\", \"FINANCE\"]",
           "member": "string",
           "name": "SealTypes",
@@ -8899,7 +8899,7 @@
         },
         {
           "disabled": false,
-          "document": "在处理授权关系时，授权的方向\n<ul>\n<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>\n<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【授权方】的企业名称，即提供授权的企业。此场景下不支持批量</li>\n</ul>",
+          "document": "<p>在处理授权关系时，授权的方向</p><ul><li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li><li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【授权方】的企业名称，即提供授权的企业。此场景下不支持批量</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "AuthToMe",
@@ -8908,7 +8908,7 @@
         },
         {
           "disabled": false,
-          "document": "被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationNames二选一传入，最大支持50个，注：`被授权企业必须和当前企业在同一应用号下`",
+          "document": "<p>被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationNames二选一传入，最大支持50个，注：<code>被授权企业必须和当前企业在同一应用号下</code></p>",
           "example": "[\"yDwFdUUckxxxxxxxxxxxxxXbsvN43W6Kax\"]",
           "member": "string",
           "name": "AuthorizedOrganizationIds",
@@ -8917,7 +8917,7 @@
         },
         {
           "disabled": false,
-          "document": "被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationIds二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。注: 1. 如果名称中包含英文括号()，请使用中文括号（）代替。2. 被授权企业必须和当前企业在同一应用号下 3. 数组最大长度50",
+          "document": "<p>被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationIds二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。注: 1. 如果名称中包含英文括号()，请使用中文括号（）代替。2. 被授权企业必须和当前企业在同一应用号下 3. 数组最大长度50</p>",
           "example": "[\"王五示例企业\"]",
           "member": "string",
           "name": "AuthorizedOrganizationNames",
@@ -8932,7 +8932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。",
+          "document": "<p>授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。</p>",
           "example": "https://essurl.cn/003hGUFil8",
           "member": "string",
           "name": "Url",
@@ -8942,7 +8942,7 @@
         },
         {
           "disabled": false,
-          "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径\n",
+          "document": "<p>从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径</p>",
           "example": "/pages/guide/index?shortKey=002XCUHfPi",
           "member": "string",
           "name": "MiniAppPath",
@@ -8952,7 +8952,7 @@
         },
         {
           "disabled": false,
-          "document": "链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。",
+          "document": "<p>链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。</p>",
           "example": "1702982931",
           "member": "int64",
           "name": "ExpireTime",
@@ -9853,7 +9853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -9862,7 +9862,7 @@
         },
         {
           "disabled": false,
-          "document": "签署报告编号, 由<a href=\"https://qian.tencent.com/developers/partnerApis/certificate/CreateChannelFlowEvidenceReport\" target=\"_blank\">提交申请出证报告任务</a>产生",
+          "document": "<p>签署报告编号, 由<a href=\"https://qian.tencent.com/developers/partnerApis/certificate/CreateChannelFlowEvidenceReport\" target=\"_blank\">提交申请出证报告任务</a>产生</p>",
           "example": "yDSLVUUckpo3nva8UEnf33kvzHQ19GcL",
           "member": "string",
           "name": "ReportId",
@@ -9871,7 +9871,7 @@
         },
         {
           "disabled": true,
-          "document": "暂未开放",
+          "document": "<p>暂未开放</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -9880,7 +9880,7 @@
         },
         {
           "disabled": false,
-          "document": "指定申请的报告类型，可选类型如下：\n<ul><li> **0** :合同签署报告（默认）</li>\n<li> **1** :公证处核验报告</li></ul>",
+          "document": "<p>指定申请的报告类型，可选类型如下：<ul><li> <strong>0</strong> :合同签署报告（默认）</li></ul></p><p>枚举值：</p><ul><li>0： 合同签署报告</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "ReportType",
@@ -9895,7 +9895,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "出证报告PDF的下载 URL，有效期为5分钟，超过有效期后将无法再下载。",
+          "document": "<p>出证报告PDF的下载 URL，有效期为5分钟，超过有效期后将无法再下载。</p>",
           "example": "https://file.ess.tencent.cn/file/yDwhIU*****kvSEnAV3Qyl2B/0/1.PDF?hkey=4a8ca49a66dc0b7651**5601d0e6b8aa9a86054c25",
           "member": "string",
           "name": "ReportUrl",
@@ -9905,7 +9905,7 @@
         },
         {
           "disabled": false,
-          "document": "出证任务执行的状态, 状态含义如下：\n\n<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>\n<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>\n<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>",
+          "document": "<p>出证任务执行的状态, 状态含义如下：</p><ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li><li>**EvidenceStatusSuccess**：  出证任务执行成功</li><li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -9927,7 +9927,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n\n渠道应用标识: Agent.AppId\n第三方平台子客企业标识: Agent.ProxyOrganizationOpenId\n第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId\n\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><p>渠道应用标识: Agent.AppId<br>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId<br>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</p><p>第三方平台子客企业和员工必须已经经过实名认证</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -9936,7 +9936,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页每页返回的数据条数，单页最大支持 200。",
+          "document": "<p>指定分页每页返回的数据条数，单页最大支持 200。</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -9945,7 +9945,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段是指第三方平台子客企业的唯一标识，用于查询单独某个子客的企业数据。\n\n**注**：`如果需要批量查询本应用下的所有企业的信息，则该字段不需要赋值`",
+          "document": "<p>该字段是指第三方平台子客企业的唯一标识，用于查询单独某个子客的企业数据。</p><p><strong>注</strong>：<code>如果需要批量查询本应用下的所有企业的信息，则该字段不需要赋值</code></p>",
           "example": "OrganizationOpenId_1",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -9954,8 +9954,8 @@
         },
         {
           "disabled": false,
-          "document": "可以按照当前企业的认证状态进行过滤。可值如下：\n<ul><li>**\"UNVERIFIED\"**： 未认证的企业</li>\n  <li>**\"VERIFYINGLEGALPENDINGAUTHORIZATION\"**： 认证中待法人授权的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEPENDING\"**： 认证中授权书审核中的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEREJECT\"**： 认证中授权书已驳回的企业</li>\n  <li>**\"VERIFYING\"**： 认证进行中的企业</li>\n  <li>**\"VERIFIED\"**： 已认证完成的企业</li></ul>",
-          "example": "UNVERIFIED",
+          "document": "<p>可以按照当前企业的认证状态进行过滤。可值如下：</p><ul><li>**\"UNVERIFIED\"**： 未认证的企业</li>  <li>**\"VERIFYINGLEGALPENDINGAUTHORIZATION\"**： 认证中待法人授权的企业</li>  <li>**\"VERIFYINGAUTHORIZATIONFILEPENDING\"**： 认证中授权书审核中的企业</li>  <li>**\"VERIFYINGAUTHORIZATIONFILEREJECT\"**： 认证中授权书已驳回的企业</li>  <li>**\"VERIFYING\"**： 认证进行中的企业</li>  <li>**\"VERIFIED\"**： 已认证完成的企业</li></ul>",
+          "example": "[\"UNVERIFIED\"]",
           "member": "string",
           "name": "AuthorizationStatusList",
           "required": false,
@@ -9963,7 +9963,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页返回第几页的数据，如果不传默认返回第一页。 页码从 0 开始，即首页为 0，最大20000。",
+          "document": "<p>偏移量:从 0 开始，最大20000。</p>",
           "example": "20",
           "member": "int64",
           "name": "Offset",
@@ -9978,7 +9978,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "满足查询条件的企业信息列表。",
+          "document": "<p>满足查询条件的企业信息列表。</p>",
           "example": "无",
           "member": "ChannelOrganizationInfo",
           "name": "ChannelOrganizationInfos",
@@ -9988,7 +9988,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。",
+          "document": "<p>偏移量:从 0 开始，最大20000。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -9998,7 +9998,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页每页返回的数据条数，单页最大支持 200。",
+          "document": "<p>指定分页每页返回的数据条数，单页最大支持 200。</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -10008,7 +10008,7 @@
         },
         {
           "disabled": false,
-          "document": "满足查询条件的企业总数量。",
+          "document": "<p>满足查询条件的企业总数量。</p>",
           "example": "100",
           "member": "int64",
           "name": "Total",
@@ -10431,7 +10431,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -10440,7 +10440,7 @@
         },
         {
           "disabled": false,
-          "document": "合同模板ID，为32位字符串。\n\n可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录企业控制台, 在企业模板中得到合同模板ID。\n\n[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/e988be12bf28a89b4716aed4502c2e02.png)",
+          "document": "<p>合同模板ID，为32位字符串。</p><p>可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录企业控制台, 在企业模板中得到合同模板ID。</p><p><a href=\"https://qcloudimg.tencent-cloud.cn/raw/e988be12bf28a89b4716aed4502c2e02.png\">点击查看模板Id在控制台上的位置</a></p>",
           "example": "yDxZBURlR5VUy0fKyKS3wFGsowVtMwKQ",
           "member": "string",
           "name": "TemplateId",
@@ -10449,7 +10449,7 @@
         },
         {
           "disabled": false,
-          "document": "查询模板的内容\n\n<ul><li>**0**：（默认）模板列表及详情</li>\n<li>**1**：仅模板列表, 不会返回模板中的签署控件, 填写控件, 参与方角色列表等信息</li></ul>",
+          "document": "<p>查询模板的内容</p><ul><li>**0**：（默认）模板列表及详情</li><li>**1**：仅模板列表, 不会返回模板中的签署控件, 填写控件, 参与方角色列表等信息</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "ContentType",
@@ -10458,7 +10458,7 @@
         },
         {
           "disabled": false,
-          "document": "合同模板ID数组，每一个合同模板ID为32位字符串,  最多支持100个模板的批量查询。\n\n注意: \n1.` 此参数TemplateIds与TemplateId互为独立，若两者均传入，以TemplateId为准。`\n2. `请确保每个模板均正确且属于当前企业，若有任一模板不存在，则返回错误。`\n4. `若传递此参数，分页参数(Limit,Offset)无效`\n\n\n[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/e988be12bf28a89b4716aed4502c2e02.png)\n",
+          "document": "<p>合同模板ID数组，每一个合同模板ID为32位字符串,  最多支持100个模板的批量查询。</p><p>注意:<br>1.<code>此参数TemplateIds与TemplateId互为独立，若两者均传入，以TemplateId为准。</code></p><ol start=\"2\"><li><code>请确保每个模板均正确且属于当前企业，若有任一模板不存在，则返回错误。</code></li><li><code>若传递此参数，分页参数(Limit,Offset)无效</code></li></ol><p><a href=\"https://qcloudimg.tencent-cloud.cn/raw/e988be12bf28a89b4716aed4502c2e02.png\">点击查看模板Id在控制台上的位置</a></p>",
           "example": "[\"yDxZBURlR5VUy0fKyKS3wFGsowVtMwKQ\"]",
           "member": "string",
           "name": "TemplateIds",
@@ -10467,7 +10467,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页返回的数据条数，和Offset参数配合使用。\n\n注：`1.默认值为20，单页做大值为100。`",
+          "document": "<p>指定每页返回的数据条数，和Offset参数配合使用。</p><p>注：<code>1.默认值为20，单页做大值为100。</code></p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -10476,7 +10476,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。\n\n注：`1.offset从0开始，即第一页为0。`\n`2.默认从第一页返回。`",
+          "document": "<p>偏移量:从 0 开始，最大20000。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10485,7 +10485,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索的模板名称，注意是模板名的连续部分，长度不能超过200，可支持由中文、字母、数字和下划线组成字符串。",
+          "document": "<p>模糊搜索的模板名称，注意是模板名的连续部分，长度不能超过200，可支持由中文、字母、数字和下划线组成字符串。</p>",
           "example": "模板名称1",
           "member": "string",
           "name": "TemplateName",
@@ -10494,7 +10494,7 @@
         },
         {
           "disabled": false,
-          "document": "对应第三方应用平台企业的模板ID，通过此值可以搜索由第三方应用平台模板ID下发或领取得到的子客模板列表。",
+          "document": "<p>对应第三方应用平台企业的模板ID，通过此值可以搜索由第三方应用平台模板ID下发或领取得到的子客模板列表。</p>",
           "example": "yDCYyUU5v4h32uUEp5vIWRaloaz5mYuu",
           "member": "string",
           "name": "ChannelTemplateId",
@@ -10503,7 +10503,7 @@
         },
         {
           "disabled": false,
-          "document": "返回控件的范围, 是只返回发起方自己的还是所有参与方的\n\n<ul><li>**false**：（默认）只返回发起方控件</li>\n<li>**true**：返回所有参与方(包括发起方和签署方)控件</li></ul>",
+          "document": "<p>返回控件的范围, 是只返回发起方自己的还是所有参与方的</p><ul><li>**false**：（默认）只返回发起方控件</li><li>**true**：返回所有参与方(包括发起方和签署方)控件</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "QueryAllComponents",
@@ -10512,7 +10512,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板预览链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PreviewUrl，为模板的H5预览链接,  有效期5分钟。可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n",
+          "document": "<p>是否获取模板预览链接。</p><ul><li>**false**：不获取（默认）</li><li>**true**：获取</li></ul><p>设置为true之后， 返回参数PreviewUrl，为模板的H5预览链接,  有效期5分钟。可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。</p>",
           "example": "false",
           "member": "bool",
           "name": "WithPreviewUrl",
@@ -10521,7 +10521,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板的PDF文件链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地\n\n注: `此功能需要开通功能白名单【第三方应用集成企业获取模板PDF下载链接】，使用前请联系对接的客户经理沟通。`",
+          "document": "<p>是否获取模板的PDF文件链接。</p><ul><li>**false**：不获取（默认）</li><li>**true**：获取</li></ul><p>设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地</p><p>注: <code>此功能需要开通功能白名单【第三方应用集成企业获取模板PDF下载链接】，使用前请联系对接的客户经理沟通。</code></p>",
           "example": "false",
           "member": "bool",
           "name": "WithPdfUrl",
@@ -10530,7 +10530,7 @@
         },
         {
           "disabled": true,
-          "document": "操作者的信息",
+          "document": "<p>操作者的信息</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -10539,7 +10539,7 @@
         },
         {
           "disabled": false,
-          "document": "用户合同类型id",
+          "document": "<p>用户合同类型id</p>",
           "example": "yDwXXUUckp19hvn8URxp4X6wVwCLodx",
           "member": "string",
           "name": "UserFlowTypeId",
@@ -10554,7 +10554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板详情列表数据",
+          "document": "<p>模板详情列表数据</p>",
           "example": "无",
           "member": "TemplateInfo",
           "name": "Templates",
@@ -10564,7 +10564,7 @@
         },
         {
           "disabled": false,
-          "document": "查询到的模板总数",
+          "document": "<p>查询到的模板总数</p>",
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
@@ -10574,7 +10574,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回的数据条数",
+          "document": "<p>每页返回的数据条数</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -10584,7 +10584,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页。页码从0开始，即首页为0。",
+          "document": "<p>偏移量:从 0 开始，最大20000。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",

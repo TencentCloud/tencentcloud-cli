@@ -11827,7 +11827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>Page size</p>",
+          "document": "<p>每页返回任务数</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -11836,7 +11836,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Page number</p>",
+          "document": "<p>当前页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
@@ -11845,7 +11845,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Project ID</p>",
+          "document": "<p>项目ID</p>",
           "example": "100",
           "member": "int64",
           "name": "ID",
@@ -11861,7 +11861,7 @@
         {
           "disabled": false,
           "document": "<p>日志导出列表</p>",
-          "example": "{\"Response\": {\"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\"Result\": \"{\\\"code\\\":0,\\\"data\\\": {\"code\":0,\"data\":{\"page\":1,\"pageSize\":999,\"totalCount\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"81a43a52-d00f-462a-82da-89841117f4ca\\\"}\"}}",
+          "example": "\"[{\\\"id\\\":158000,\\\"task_id\\\":33,\\\"filters\\\":[{\\\"Key\\\":\\\"id\\\",\\\"Operator\\\":\\\"eq\\\",\\\"Value\\\":\\\"158000\\\"}],\\\"fields\\\":[\\\"aid\\\",\\\"level\\\"],\\\"last_row_id\\\":0,\\\"processed_total\\\":0,\\\"total\\\":0,\\\"status\\\":\\\"done\\\"}]\"",
           "member": "string",
           "name": "Result",
           "output_required": true,

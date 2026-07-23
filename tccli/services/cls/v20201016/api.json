@@ -9575,6 +9575,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>用户自定义 KMS 密钥信息；为空则使用默认密钥（别名 KMS-CLS）</p><p>当参数 Encryption为 1 时有效。</p>",
+          "example": "无",
+          "member": "CustomKmsInfo",
+          "name": "CustomKmsInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>主题类型</p><ul><li>0:日志主题，默认值</li><li>1:指标主题</li></ul>",
           "example": "0",
           "member": "uint64",
@@ -9778,6 +9787,34 @@
           "example": "not_exist",
           "member": "string",
           "name": "NonExistingField",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomKmsInfo": {
+      "document": "自定义 KMS 密钥",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>KMS支持的地域，详见 腾讯云-密钥管理系统 官方文档</p><p>参数格式：ap-guangzhou</p>",
+          "example": "ap-*********",
+          "member": "string",
+          "name": "KmsRegion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS秘钥ID</p>",
+          "example": "c3*********************-*********2df",
+          "member": "string",
+          "name": "KmsKeyId",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -16258,7 +16295,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<ul><li>topicName 按照【主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 <a href=\"https://cloud.tencent.com/document/product/614/58624\">DescribeLogsets</a> 查询已创建的日志集列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/614/58626\">CreateLogset</a> 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
+          "document": "<ul><li>topicName 按照【主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li><li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li><li>topicId 按照【主题ID】进行过滤。类型：String。必选：否</li><li>logsetId 按照【日志集ID】进行过滤，可通过调用 <a href=\"https://cloud.tencent.com/document/product/614/58624\">DescribeLogsets</a> 查询已创建的日志集列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/614/58626\">CreateLogset</a> 创建新的日志集。类型：String。必选：否</li><li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li><li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li><li>storageType 按照【主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -16267,7 +16304,7 @@
         },
         {
           "disabled": false,
-          "document": "分页的偏移量，默认值为0。",
+          "document": "<p>分页的偏移量，默认值为0。</p>",
           "example": "10",
           "member": "int64",
           "name": "Offset",
@@ -16276,7 +16313,7 @@
         },
         {
           "disabled": false,
-          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "document": "<p>分页单页限制数目，默认值为20，最大值100。</p>",
           "example": "30",
           "member": "int64",
           "name": "Limit",
@@ -16285,7 +16322,7 @@
         },
         {
           "disabled": false,
-          "document": "控制Filters相关字段是否为精确匹配。\n<ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li>\n<li>1: topicName   精确匹配</li>\n<li>2: logsetName精确匹配</li>\n<li>3: topicName 和logsetName 都精确匹配</li></ul>",
+          "document": "<p>控制Filters相关字段是否为精确匹配。</p><ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li><li>1: topicName   精确匹配</li><li>2: logsetName精确匹配</li><li>3: topicName 和logsetName 都精确匹配</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "PreciseSearch",
@@ -16294,7 +16331,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型\n- 0:日志主题，默认值\n- 1:指标主题",
+          "document": "<p>主题类型</p><ul><li>0:日志主题，默认值</li><li>1:指标主题</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "BizType",
@@ -16309,7 +16346,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题列表",
+          "document": "<p>主题列表</p>",
           "example": "无",
           "member": "TopicInfo",
           "name": "Topics",
@@ -16319,7 +16356,7 @@
         },
         {
           "disabled": false,
-          "document": "总数目",
+          "document": "<p>总数目</p>",
           "example": "15",
           "member": "int64",
           "name": "TotalCount",
@@ -24577,6 +24614,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>用户自定义 KMS 密钥信息；为空则使用默认密钥（别名 KMS-CLS）</p><p>当参数 Encryption为 1 时生效</p>",
+          "example": "无",
+          "member": "CustomKmsInfo",
+          "name": "CustomKmsInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>开启记录公网来源ip和服务端接收时间</p>",
           "example": "false",
           "member": "bool",
@@ -29364,12 +29410,22 @@
         },
         {
           "disabled": false,
-          "document": "<p>kms-cls服务秘钥id</p>",
+          "document": "<p>kms-cls服务秘钥id</p><p>CustomKmsInfo为空时为系统默认密钥，CustomKmsInfo不为空时为用户自定义密钥</p>",
           "example": "ASF-AFAS-JGJISDJG-SDGF",
           "member": "string",
           "name": "KeyId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户自定义 KMS 密钥信息</p>",
+          "example": "无",
+          "member": "CustomKmsInfo",
+          "name": "CustomKmsInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {

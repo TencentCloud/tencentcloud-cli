@@ -35,7 +35,7 @@
         {
           "disabled": false,
           "document": "<p>用户设备指纹token标识，在您的网站或者应用程序中集成设备指纹的SDK后获取</p>",
-          "example": "v3:**************************************************************************************XquS92ODP0c0yY3E=",
+          "example": "v3:******************************************************************XquS92ODP0c0yY3E=",
           "member": "string",
           "name": "DeviceToken",
           "required": true,
@@ -43,8 +43,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>客户端 IP 地址</p>",
-          "example": "100.******.0",
+          "document": "<p>客户端 IP 地址（IPv4或IPv6）</p>",
+          "example": "125.**.**.3",
           "member": "string",
           "name": "UserIp",
           "required": false,
@@ -135,8 +135,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>客户端 IP 地址</p>",
-          "example": "183.*******.16",
+          "document": "<p>客户端 IP 地址（IPv4或IPv6）</p>",
+          "example": "183.**.**.16",
           "member": "string",
           "name": "UserIp",
           "required": false,
@@ -198,8 +198,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>客户端 IP 地址</p>",
-          "example": "100.*****.0",
+          "document": "<p>客户端 IP 地址（IPv4或IPv6）</p>",
+          "example": "125.**.**.3",
           "member": "string",
           "name": "UserIp",
           "required": true,
@@ -324,7 +324,7 @@
         {
           "disabled": false,
           "document": "<p>品牌</p>",
-          "example": "****",
+          "example": "OP**",
           "member": "string",
           "name": "Brand",
           "output_required": false,
@@ -334,7 +334,7 @@
         {
           "disabled": false,
           "document": "<p>客户端IP</p>",
-          "example": "43.*******.20",
+          "example": "43.***.***.20",
           "member": "string",
           "name": "ClientIp",
           "output_required": false,

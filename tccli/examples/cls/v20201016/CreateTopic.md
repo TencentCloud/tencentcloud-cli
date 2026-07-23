@@ -1,46 +1,37 @@
-**Example 1: 创建指标主题**
+**Example 1: 创建日志主题**
 
-创建指标主题
+
 
 Input: 
 
 ```
 tccli cls CreateTopic --cli-unfold-argument  \
-    --LogsetId 29ccb4c0-ab2f-47ab-9dcd-31413b057812 \
-    --TopicName testname \
-    --BizType 1 \
-    --Period 12
+    --LogsetId 7fb0245e-2006-4e0f-9153-c5f6b7110b4c \
+    --TopicName business_log_test \
+    --PartitionCount 1 \
+    --Tags.0.Key business_log_key \
+    --Tags.0.Value business_log_value \
+    --AutoSplit True \
+    --MaxSplitPartitions 3 \
+    --StorageType hot \
+    --Period 1 \
+    --Describes 业务日志 \
+    --BizType 0 \
+    --IsWebTracking False \
+    --Extends.AnonymousAccess.Operations realtimeProducer \
+    --Extends.AnonymousAccess.Conditions.0.Attributes VpcID \
+    --Extends.AnonymousAccess.Conditions.0.Rule 1 \
+    --Extends.AnonymousAccess.Conditions.0.ConditionValue vpc-******** \
+    --IsSourceFrom True \
+    --BillingMode 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TopicId": "6d069a26-1606-4142-9fa6-17ccee4f9bc9",
-        "RequestId": "c1731e60-e00d-45ee-a9e8-5343d4f38325"
-    }
-}
-```
-
-**Example 2: 创建日志主题**
-
-创建日志主题
-
-Input: 
-
-```
-tccli cls CreateTopic --cli-unfold-argument  \
-    --LogsetId 29ccb4c0-ab2f-47ab-9dcd-31413b057812 \
-    --TopicName testname \
-    --Period 12
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TopicId": "866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0",
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "TopicId": "aac1096a-cf02-4fe0-abcd-ddb89173b4e4",
+        "RequestId": "487cd68f-d88f-4e35-888d-48612e8ff980"
     }
 }
 ```

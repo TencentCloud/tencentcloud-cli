@@ -642,7 +642,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExportsV2\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNum\": 1,\n    \"ID\": 100\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"code\\\":0,\\\"data\\\":{\\\"page\\\":1,\\\"pageSize\\\":999,\\\"totalCount\\\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"81a43a52-d00f-462a-82da-89841117f4ca\\\"}}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"[{\\\"id\\\":158000,\\\"task_id\\\":33,\\\"filters\\\":[{\\\"Key\\\":\\\"id\\\",\\\"Operator\\\":\\\"eq\\\",\\\"Value\\\":\\\"158000\\\"}],\\\"fields\\\":[\\\"aid\\\",\\\"level\\\"],\\\"last_row_id\\\":0,\\\"processed_total\\\":0,\\\"total\\\":0,\\\"status\\\":\\\"done\\\"}]\"\n    }\n}",
         "title": "success"
       }
     ],

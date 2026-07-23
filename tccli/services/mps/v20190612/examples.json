@@ -1331,15 +1331,15 @@
     "DescribeVoices": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoices\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"Msg\": \"success\",\n        \"Voices\": [\n            {\n                \"AudioUrl\": \"https://ie-mps-1258344699.cos.ap-nanjing.myqcloud.com/common/lauriehuang/dubbing/voice/samples/s1_ffgIs_z6m.wav\",\n                \"Category\": \"system\",\n                \"Description\": \"一位沉稳可靠的中年男性高管声音，标准普通话，传递出值得信赖的感觉。\",\n                \"Gender\": \"male\",\n                \"Labels\": [\n                    \"沉稳\"\n                ],\n                \"Languages\": [\n                    \"zh\"\n                ],\n                \"Name\": \"沉稳高管\",\n                \"Scenes\": [\n                    \"通用\"\n                ],\n                \"VoiceId\": \"s1_ffgIs/z6m/4N0fS1/MSotjeSxrtaVMTXMovoBjRATytSYVzhffFMWxq4pnx36Mq75Sh/v6d5smsJaA7z8w==\"\n            }\n        ],\n        \"RequestId\": \"885d40d0-328a-429c-8394-527111536784\"\n    }\n}",
-        "title": "查询所有可用音色"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoices\n<公共请求参数>\n\n{\n    \"VoiceType\": \"clone\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"Msg\": \"success\",\n        \"Voices\": [\n            {\n                \"Age\": \"youth\",\n                \"Category\": \"clone\",\n                \"Description\": \"克隆测试\",\n                \"Gender\": \"male\",\n                \"Name\": \"未命名\",\n                \"VoiceId\": \"v1_+38rmmZflaNfzl9AMwUugfRJkBskigFnqJbzgo+k4HM/n8hw92Tgi4PsdUEtShj/DdM=\"\n            }\n        ],\n        \"RequestId\": \"f4d95f98-d817-4f9c-badb-753edf459d25\"\n    }\n}",
         "title": "查询克隆音色"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoices\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"Msg\": \"success\",\n        \"Voices\": [\n            {\n                \"AudioUrl\": \"https://ie-mps-1258344699.cos.ap-nanjing.myqcloud.com/common/lauriehuang/dubbing/voice/samples/s1_ffgIs_z6m.wav\",\n                \"Category\": \"system\",\n                \"Description\": \"一位沉稳可靠的中年男性高管声音，标准普通话，传递出值得信赖的感觉。\",\n                \"Gender\": \"male\",\n                \"Labels\": [\n                    \"沉稳\"\n                ],\n                \"Languages\": [\n                    \"zh\"\n                ],\n                \"Name\": \"沉稳高管\",\n                \"Scenes\": [\n                    \"通用\"\n                ],\n                \"VoiceId\": \"s1_ffgIs/z6m/4N0fS1/MSotjeSxrtaVMTXMovoBjRATytSYVzhffFMWxq4pnx36Mq75Sh/v6d5smsJaA7z8w==\"\n            }\n        ],\n        \"RequestId\": \"885d40d0-328a-429c-8394-527111536784\"\n    }\n}",
+        "title": "查询所有可用音色"
       },
       {
         "document": "",

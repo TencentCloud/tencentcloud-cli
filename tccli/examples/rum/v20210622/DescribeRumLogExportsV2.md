@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "81a43a52-d00f-462a-82da-89841117f4ca",
-        "Result": "{\"code\":0,\"data\":{\"code\":0,\"data\":{\"page\":1,\"pageSize\":999,\"totalCount\":1},\"msg\":\"\",\"request_id\":\"81a43a52-d00f-462a-82da-89841117f4ca\"}}"
+        "Result": "[{\"id\":158000,\"task_id\":33,\"filters\":[{\"Key\":\"id\",\"Operator\":\"eq\",\"Value\":\"158000\"}],\"fields\":[\"aid\",\"level\"],\"last_row_id\":0,\"processed_total\":0,\"total\":0,\"status\":\"done\"}]"
     }
 }
 ```

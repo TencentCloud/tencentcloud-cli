@@ -1,4 +1,36 @@
-**Example 1: 查询所有可用音色**
+**Example 1: 查询克隆音色**
+
+
+
+Input: 
+
+```
+tccli mps DescribeVoices --cli-unfold-argument  \
+    --VoiceType clone
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ErrorCode": 0,
+        "Msg": "success",
+        "Voices": [
+            {
+                "Age": "youth",
+                "Category": "clone",
+                "Description": "克隆测试",
+                "Gender": "male",
+                "Name": "未命名",
+                "VoiceId": "v1_+38rmmZflaNfzl9AMwUugfRJkBskigFnqJbzgo+k4HM/n8hw92Tgi4PsdUEtShj/DdM="
+            }
+        ],
+        "RequestId": "f4d95f98-d817-4f9c-badb-753edf459d25"
+    }
+}
+```
+
+**Example 2: 查询所有可用音色**
 
 
 
@@ -33,38 +65,6 @@ Output:
             }
         ],
         "RequestId": "885d40d0-328a-429c-8394-527111536784"
-    }
-}
-```
-
-**Example 2: 查询克隆音色**
-
-
-
-Input: 
-
-```
-tccli mps DescribeVoices --cli-unfold-argument  \
-    --VoiceType clone
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ErrorCode": 0,
-        "Msg": "success",
-        "Voices": [
-            {
-                "Age": "youth",
-                "Category": "clone",
-                "Description": "克隆测试",
-                "Gender": "male",
-                "Name": "未命名",
-                "VoiceId": "v1_+38rmmZflaNfzl9AMwUugfRJkBskigFnqJbzgo+k4HM/n8hw92Tgi4PsdUEtShj/DdM="
-            }
-        ],
-        "RequestId": "f4d95f98-d817-4f9c-badb-753edf459d25"
     }
 }
 ```
