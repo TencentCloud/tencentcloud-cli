@@ -1,0 +1,150 @@
+name: Build and Release with PyInstaller
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 二进制包仅依赖精简版 SDK（tencentcloud-sdk-python-common），不安装完整 SDK。
+      # 使用 --no-deps 安装 tccli 本体，避免 setup.py 声明的 tencentcloud-sdk-python（完整 SDK）被拉入，
+      # 从而显著减小二进制体积。存量 pip 安装不走此流程，行为不受影响。
+      - name: Install dependencies (lightweight common SDK for binary)
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+          pip install tencentcloud-sdk-python-common jmespath six cos-python-sdk-v5
+          pip install -e . --no-deps
+
+      # 裁剪各服务的 *_client.py。删除后，运行时 command.py 中
+      # Services.action_caller() 会抛 ImportError，从而自动降级到基于 CommonClient
+      # 的 GenericActionCaller。api.json / examples.json 等元数据保留，供 GenericActionCaller 使用。
+      # 使用 Python 实现，保证在 Linux/macOS/Windows 三平台通用。
+      - name: Strip per-service *_client.py (binary uses CommonClient)
+        run: python -c "import glob, os; files = glob.glob('tccli/services/**/*_client.py', recursive=True); [os.remove(f) for f in files]; print('removed %d client files' % len(files))"
+
+      # 使用目录模式(-D)打包，避免单文件模式每次运行都解压的启动延迟。
+      - name: Run PyInstaller
+        run: pyinstaller tccli/main.py -y -D --collect-all tccli --exclude-module tccli.examples --name tccli
+
+      # --collect-all 可能从已安装包中收集到 *_client.py，打包后二次裁剪确保干净
+      - name: Strip *_client.py from dist (post-build cleanup)
+        run: python -c "import glob, os; files = glob.glob('dist/tccli/_internal/tccli/services/**/*_client.py', recursive=True); [os.remove(f) for f in files]; print('post-build removed %d client files' % len(files))"
+
+      # macOS 会校验主程序与其加载的 Python.framework / dylib 签名是否兼容。
+      # 按“内部 Mach-O -> Python.framework -> 主程序”的顺序统一做 ad-hoc 签名；
+      # 主程序最后签名，避免后续修改内部文件导致签名失效。
+      - name: Re-sign macOS onedir bundle
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          set -euo pipefail
+          DIST_DIR="dist/tccli"
+
+          # 先签 _internal 中的动态库、扩展模块和 Framework 可执行文件。
+          while IFS= read -r -d '' file_path; do
+            if file -b "$file_path" | grep -q 'Mach-O'; then
+              echo "Signing Mach-O: $file_path"
+              codesign --remove-signature "$file_path" 2>/dev/null || true
+              codesign --force --sign - --timestamp=none "$file_path"
+            fi
+          done < <(find "$DIST_DIR/_internal" -type f -print0)
+
+          # 再签 Framework 容器，使其嵌套签名与内部 Python 可执行文件一致。
+          if [[ -d "$DIST_DIR/_internal/Python.framework" ]]; then
+            codesign --force --deep --sign - --timestamp=none \
+              "$DIST_DIR/_internal/Python.framework"
+          fi
+
+          # 下载后的 ad-hoc 程序没有 Apple Team ID；启用 hardened runtime 时，dyld 默认会
+          # 拒绝加载无相同 Team ID 的 Python.framework。显式关闭主程序的 Library Validation，
+          # 同时保留其它 hardened-runtime 保护。
+          ENTITLEMENTS="$RUNNER_TEMP/tccli-entitlements.plist"
+          cat > "$ENTITLEMENTS" <<'PLIST'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>com.apple.security.cs.disable-library-validation</key>
+            <true/>
+          </dict>
+          </plist>
+          PLIST
+
+          # 最后签主程序，并嵌入允许加载随包 Python.framework 的 entitlement。
+          codesign --remove-signature "$DIST_DIR/tccli" 2>/dev/null || true
+          codesign --force --sign - --timestamp=none --options runtime \
+            --entitlements "$ENTITLEMENTS" "$DIST_DIR/tccli"
+
+          # 在上传 Release 前验证签名、entitlement，并实际启动一次；失败则终止工作流。
+          codesign --verify --strict --verbose=4 "$DIST_DIR/tccli"
+          if [[ -f "$DIST_DIR/_internal/Python.framework/Versions/3.12/Python" ]]; then
+            codesign --verify --strict --verbose=4 \
+              "$DIST_DIR/_internal/Python.framework/Versions/3.12/Python"
+          fi
+          codesign -d --entitlements :- "$DIST_DIR/tccli" 2>&1 | \
+            grep -q 'com.apple.security.cs.disable-library-validation'
+          "$DIST_DIR/tccli" --version
+
+      - name: Package binary (Linux)
+        if: runner.os == 'Linux'
+        working-directory: dist
+        run: tar -czf tccli-linux.tar.gz tccli/
+
+      - name: Package binary (macOS)
+        if: runner.os == 'macOS'
+        working-directory: dist
+        run: tar -czf tccli-macos.tar.gz tccli/
+
+      - name: Package binary (Windows)
+        if: runner.os == 'Windows'
+        run: Compress-Archive -Path "dist\tccli" -DestinationPath "dist\tccli-windows.zip"
+        shell: powershell
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: "tccli-${{ runner.os }}"
+          path: |
+            dist/*.tar.gz
+            dist/*.zip
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: |
+            artifacts/**/*.tar.gz
+            artifacts/**/*.zip
