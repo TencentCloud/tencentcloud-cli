@@ -39,29 +39,36 @@ jobs:
       - name: Strip per-service *_client.py (binary uses CommonClient)
         run: python -c "import glob, os; files = glob.glob('tccli/services/**/*_client.py', recursive=True); [os.remove(f) for f in files]; print('removed %d client files' % len(files))"
 
-      # --collect-all tccli 会收集 tccli 包内的子模块与数据文件（含 services/**/api.json、examples.json），
-      # 确保 GenericActionCaller 与 loaders 能在冻结环境中读取到 api.json。
+      # 使用目录模式(-D)打包，避免单文件模式每次运行都解压的启动延迟。
       - name: Run PyInstaller
-        run: pyinstaller tccli/main.py -y -F --collect-all tccli --exclude-module tccli.examples --name tccli
+        run: pyinstaller tccli/main.py -y -D --collect-all tccli --exclude-module tccli.examples --name tccli
+
+      # --collect-all 可能从已安装包中收集到 *_client.py，打包后二次裁剪确保干净
+      - name: Strip *_client.py from dist (post-build cleanup)
+        run: python -c "import glob, os; files = glob.glob('dist/tccli/_internal/tccli/services/**/*_client.py', recursive=True); [os.remove(f) for f in files]; print('post-build removed %d client files' % len(files))"
 
       - name: Package binary (Linux)
         if: runner.os == 'Linux'
-        run: zip -j "dist/tccli-linux.zip" "dist/tccli"
+        working-directory: dist
+        run: tar -czf tccli-linux.tar.gz tccli/
 
       - name: Package binary (macOS)
         if: runner.os == 'macOS'
-        run: zip -j "dist/tccli-macos.zip" "dist/tccli"
+        working-directory: dist
+        run: tar -czf tccli-macos.tar.gz tccli/
 
       - name: Package binary (Windows)
         if: runner.os == 'Windows'
-        run: Compress-Archive -Path "dist\tccli.exe" -DestinationPath "dist\tccli-windows.zip"
+        run: Compress-Archive -Path "dist\tccli" -DestinationPath "dist\tccli-windows.zip"
         shell: powershell
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: "tccli-${{ runner.os }}"
-          path: dist/*.zip
+          path: |
+            dist/*.tar.gz
+            dist/*.zip
 
   release:
     needs: build
@@ -83,4 +90,6 @@ jobs:
           name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
-          files: artifacts/*/*.zip
+          files: |
+            artifacts/**/*.tar.gz
+            artifacts/**/*.zip
