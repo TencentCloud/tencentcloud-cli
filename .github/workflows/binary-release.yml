@@ -72,16 +72,34 @@ jobs:
               "$DIST_DIR/_internal/Python.framework"
           fi
 
-          # 最后签主程序。先移除旧签名，避免保留不兼容的 hardened-runtime 标志。
-          codesign --remove-signature "$DIST_DIR/tccli" 2>/dev/null || true
-          codesign --force --sign - --timestamp=none "$DIST_DIR/tccli"
+          # 下载后的 ad-hoc 程序没有 Apple Team ID；启用 hardened runtime 时，dyld 默认会
+          # 拒绝加载无相同 Team ID 的 Python.framework。显式关闭主程序的 Library Validation，
+          # 同时保留其它 hardened-runtime 保护。
+          ENTITLEMENTS="$RUNNER_TEMP/tccli-entitlements.plist"
+          cat > "$ENTITLEMENTS" <<'PLIST'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>com.apple.security.cs.disable-library-validation</key>
+            <true/>
+          </dict>
+          </plist>
+          PLIST
 
-          # 在上传 Release 前验证签名，并实际启动一次，失败则终止工作流。
+          # 最后签主程序，并嵌入允许加载随包 Python.framework 的 entitlement。
+          codesign --remove-signature "$DIST_DIR/tccli" 2>/dev/null || true
+          codesign --force --sign - --timestamp=none --options runtime \
+            --entitlements "$ENTITLEMENTS" "$DIST_DIR/tccli"
+
+          # 在上传 Release 前验证签名、entitlement，并实际启动一次；失败则终止工作流。
           codesign --verify --strict --verbose=4 "$DIST_DIR/tccli"
           if [[ -f "$DIST_DIR/_internal/Python.framework/Versions/3.12/Python" ]]; then
             codesign --verify --strict --verbose=4 \
               "$DIST_DIR/_internal/Python.framework/Versions/3.12/Python"
           fi
+          codesign -d --entitlements :- "$DIST_DIR/tccli" 2>&1 | \
+            grep -q 'com.apple.security.cs.disable-library-validation'
           "$DIST_DIR/tccli" --version
 
       - name: Package binary (Linux)
