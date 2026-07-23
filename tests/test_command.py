@@ -14,9 +14,8 @@
 
 设计要点：
   - 现有 subprocess 测试只能验证端到端行为，但 coverage 工具
-    无法统计子进程内的代码执行。所以本文件大量增加“主进程内
-    直接调用类方法”的白盒测试，以提升真实覆盖率。
-"""
+    无法统计子进程内的代码执行。所以本文件大量增加"主进程内
+    直接调用类方法"的白盒测试，以提高真实覆盖率。"""
 import os
 import sys
 import copy
@@ -45,7 +44,7 @@ if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 
 # ============================================================
-# 通用：屏蔽 plugin 加载（很多 tccli 插件依赖外部 SDK，环境可能没装）
+# 通用：屏蔽 plugin 加载（很多 tccli 插件依赖外部 SDK，环境可能没装好）
 # ============================================================
 import tccli.plugin as _plg
 _plg.import_plugins = lambda: {}
