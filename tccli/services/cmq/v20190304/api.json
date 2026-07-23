@@ -401,7 +401,7 @@
         },
         {
           "disabled": false,
-          "document": "事务消息策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事务消息策略。",
           "example": "1",
           "member": "TransactionPolicy",
           "name": "TransactionPolicy",
@@ -471,7 +471,7 @@
         },
         {
           "disabled": false,
-          "document": "死信队列策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "死信队列策略。",
           "example": "1",
           "member": "DeadLetterPolicy",
           "name": "DeadLetterPolicy",
@@ -521,7 +521,7 @@
         },
         {
           "disabled": false,
-          "document": "事务消息队列。true表示是事务消息，false表示不是事务消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事务消息队列。true表示是事务消息，false表示不是事务消息。",
           "example": "false",
           "member": "bool",
           "name": "Transaction",

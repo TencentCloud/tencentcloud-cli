@@ -199,7 +199,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -210,7 +210,7 @@
         },
         {
           "disabled": false,
-          "document": "APM 实例，如果创建时传入的参数为空，则表示自动创建 APM 实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "APM 实例，如果创建时传入的参数为空，则表示自动创建 APM 实例。",
           "example": "apm-LmCpqBQaq",
           "member": "string",
           "name": "InstanceId",
@@ -221,7 +221,7 @@
         },
         {
           "disabled": false,
-          "document": "是否要删除APM实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否要删除APM实例",
           "example": "true",
           "member": "bool",
           "name": "NeedDelete",
@@ -370,7 +370,7 @@
         },
         {
           "disabled": false,
-          "document": "注入状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注入状态",
           "example": "INJECT_NEW",
           "member": "string",
           "name": "State",
@@ -430,7 +430,7 @@
         },
         {
           "disabled": false,
-          "document": "cls 主题创建的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cls 主题创建的地域",
           "example": "sh",
           "member": "string",
           "name": "Region",
@@ -606,7 +606,7 @@
         },
         {
           "disabled": false,
-          "document": "Istiod配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Istiod配置",
           "example": "无",
           "member": "IstiodConfig",
           "name": "Istiod",
@@ -656,7 +656,7 @@
         },
         {
           "disabled": false,
-          "document": "关联错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联错误详情",
           "example": "CheckError: cluster not found",
           "member": "string",
           "name": "LinkErrorDetail",
@@ -890,7 +890,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-shanghai",
           "member": "string",
           "name": "CrossRegionID",
@@ -900,7 +900,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨地域类型",
           "example": "CrossTarget",
           "member": "string",
           "name": "CrossType",
@@ -910,7 +910,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC",
           "example": "vpc-xxxxx",
           "member": "string",
           "name": "CrossVpcID",
@@ -926,7 +926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Prometheus 访问地址",
           "example": "http://x.x.x.x:909",
           "member": "string",
           "name": "Url",
@@ -937,7 +937,7 @@
         },
         {
           "disabled": false,
-          "document": "认证方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证方式",
           "example": "none, basic",
           "member": "string",
           "name": "AuthType",
@@ -948,7 +948,7 @@
         },
         {
           "disabled": false,
-          "document": "是否公网地址，缺省为 false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否公网地址，缺省为 false",
           "example": "true",
           "member": "bool",
           "name": "IsPublicAddr",
@@ -959,7 +959,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟网络id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟网络id",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -970,7 +970,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus 用户名（用于 basic 认证方式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Prometheus 用户名（用于 basic 认证方式）",
           "example": "root",
           "member": "string",
           "name": "Username",
@@ -981,7 +981,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus 密码（用于 basic 认证方式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Prometheus 密码（用于 basic 认证方式）",
           "example": "password",
           "member": "string",
           "name": "Password",
@@ -1204,7 +1204,7 @@
         },
         {
           "disabled": false,
-          "document": "选中的范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "选中的范围",
           "example": "无",
           "member": "SelectedRange",
           "name": "SelectedRange",
@@ -1264,7 +1264,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用访问日志采集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用访问日志采集",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -1458,7 +1458,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询到的网格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询到的网格信息",
           "example": "无",
           "member": "Mesh",
           "name": "MeshList",
@@ -1612,7 +1612,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Cluster ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cluster ID",
           "example": "tgw-lgt20d75",
           "member": "string",
           "name": "ClusterId",
@@ -1622,7 +1622,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区",
           "example": "ap-guangzhou-5",
           "member": "string",
           "name": "Zone",
@@ -1638,7 +1638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "4层集群配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "4层集群配置",
           "example": "无",
           "member": "ExtensiveCluster",
           "name": "L4Clusters",
@@ -1648,7 +1648,7 @@
         },
         {
           "disabled": false,
-          "document": "7层集群配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "7层集群配置",
           "example": "无",
           "member": "ExtensiveCluster",
           "name": "L7Clusters",
@@ -1688,7 +1688,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Gateway 命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Gateway 命名空间",
           "example": "无",
           "member": "string",
           "name": "GatewayNamespace",
@@ -1699,7 +1699,7 @@
         },
         {
           "disabled": false,
-          "document": "Gateway 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Gateway 名称",
           "example": "无",
           "member": "string",
           "name": "GatewayName",
@@ -1710,7 +1710,7 @@
         },
         {
           "disabled": false,
-          "document": "Server 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Server 列表",
           "example": "无",
           "member": "Server",
           "name": "GatewayServers",
@@ -1747,7 +1747,7 @@
         },
         {
           "disabled": false,
-          "document": "公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网地址",
           "example": "http://grafana-4056m7nh.grafana.tencent-cloud.com",
           "member": "string",
           "name": "PublicURL",
@@ -1757,7 +1757,7 @@
         },
         {
           "disabled": false,
-          "document": "公网失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网失败原因",
           "example": "TIMEOUT",
           "member": "string",
           "name": "PublicFailedReason",
@@ -1767,7 +1767,7 @@
         },
         {
           "disabled": false,
-          "document": "公网失败详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网失败详细信息",
           "example": "some error msg",
           "member": "string",
           "name": "PublicFailedMessage",
@@ -1819,7 +1819,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Namespace 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Namespace 名称",
           "example": "n1",
           "member": "string",
           "name": "Namespace",
@@ -1829,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "Namespace 关联/解关联 状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Namespace 关联/解关联 状态",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -1839,7 +1839,7 @@
         },
         {
           "disabled": false,
-          "document": "Namespace 关联/解关联 失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Namespace 关联/解关联 失败原因",
           "example": "fail reason",
           "member": "string",
           "name": "Reason",
@@ -1905,7 +1905,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡配置，自动创建 CLB 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡配置，自动创建 CLB 时返回",
           "example": "无",
           "member": "LoadBalancer",
           "name": "LoadBalancer",
@@ -1991,7 +1991,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "不需要进行代理的 ip 地址范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不需要进行代理的 ip 地址范围",
           "example": "[\"10.0.1.0/24\",\"10.0.2.0/24\"]",
           "member": "string",
           "name": "ExcludeIPRanges",
@@ -2001,7 +2001,7 @@
         },
         {
           "disabled": false,
-          "document": "是否等待sidecar启动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否等待sidecar启动",
           "example": "true",
           "member": "bool",
           "name": "HoldApplicationUntilProxyStarts",
@@ -2011,7 +2011,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许sidecar等待\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否允许sidecar等待",
           "example": "false",
           "member": "bool",
           "name": "HoldProxyUntilApplicationEnds",
@@ -2047,7 +2047,7 @@
         },
         {
           "disabled": false,
-          "document": "禁用策略检查功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "禁用策略检查功能",
           "example": "true",
           "member": "bool",
           "name": "DisablePolicyChecks",
@@ -2057,7 +2057,7 @@
         },
         {
           "disabled": false,
-          "document": "支持HTTP1.0协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持HTTP1.0协议",
           "example": "true",
           "member": "bool",
           "name": "EnablePilotHTTP",
@@ -2067,7 +2067,7 @@
         },
         {
           "disabled": false,
-          "document": "禁用HTTP重试策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "禁用HTTP重试策略",
           "example": "true",
           "member": "bool",
           "name": "DisableHTTPRetry",
@@ -2077,7 +2077,7 @@
         },
         {
           "disabled": false,
-          "document": "SmartDNS策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SmartDNS策略",
           "example": "无",
           "member": "SmartDNSConfig",
           "name": "SmartDNS",
@@ -2169,7 +2169,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Namespace 关联列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Namespace 关联列表信息",
           "example": "无",
           "member": "HostedNamespace",
           "name": "NamespaceList",
@@ -2267,7 +2267,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区 ID",
           "example": "ap-shanghai",
           "member": "string",
           "name": "ZoneID",
@@ -2277,7 +2277,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商类型",
           "example": "GMCC",
           "member": "string",
           "name": "VipIsp",
@@ -2287,7 +2287,7 @@
         },
         {
           "disabled": false,
-          "document": "TGW Group 名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TGW Group 名",
           "example": "ziyan_huiyi",
           "member": "string",
           "name": "TgwGroupName",
@@ -2297,7 +2297,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 类型",
           "example": "IPv4",
           "member": "string",
           "name": "AddressIPVersion",
@@ -2307,7 +2307,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -2317,7 +2317,7 @@
         },
         {
           "disabled": false,
-          "document": "内网独占集群配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网独占集群配置列表",
           "example": "无",
           "member": "ExtensiveClusters",
           "name": "ExtensiveClusters",
@@ -2327,7 +2327,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡跨地域配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡跨地域配置",
           "example": "无",
           "member": "CrossRegionConfig",
           "name": "CrossRegionConfig",
@@ -2337,7 +2337,7 @@
         },
         {
           "disabled": false,
-          "document": "设置跨可用区容灾时的主可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置跨可用区容灾时的主可用区ID",
           "example": "200002",
           "member": "string",
           "name": "MasterZoneID",
@@ -2347,7 +2347,7 @@
         },
         {
           "disabled": false,
-          "document": "设置跨可用区容灾时的备可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置跨可用区容灾时的备可用区ID",
           "example": "200001",
           "member": "string",
           "name": "SlaveZoneID",
@@ -2396,7 +2396,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例 Hostname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例 Hostname",
           "example": "lb-xxxxx-xxxx.clb.ap-shanghai.tencentclb.com",
           "member": "string",
           "name": "LoadBalancerHostname",
@@ -2483,7 +2483,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2025-01-02T10:51:53.869+08:00",
           "member": "datetime_iso",
           "name": "UpdatedTime",
@@ -2569,7 +2569,7 @@
         },
         {
           "disabled": false,
-          "document": "自动注入配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动注入配置",
           "example": "无",
           "member": "InjectConfig",
           "name": "Inject",
@@ -2579,7 +2579,7 @@
         },
         {
           "disabled": false,
-          "document": "调用跟踪配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调用跟踪配置",
           "example": "无",
           "member": "TracingConfig",
           "name": "Tracing",
@@ -2589,7 +2589,7 @@
         },
         {
           "disabled": false,
-          "document": "Sidecar自定义资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Sidecar自定义资源",
           "example": "无",
           "member": "ResourceRequirements",
           "name": "SidecarResources",
@@ -2615,7 +2615,7 @@
         },
         {
           "disabled": false,
-          "document": "灰度升级的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "灰度升级的版本",
           "example": "1.8.1",
           "member": "string",
           "name": "CanaryVersion",
@@ -2625,7 +2625,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已废弃",
           "example": "无",
           "member": "PrometheusStatus",
           "name": "Prometheus",
@@ -2635,7 +2635,7 @@
         },
         {
           "disabled": false,
-          "document": "状态附带信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态附带信息",
           "example": "some message",
           "member": "string",
           "name": "StateMessage",
@@ -2645,7 +2645,7 @@
         },
         {
           "disabled": false,
-          "document": "正在执行的异步操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正在执行的异步操作",
           "example": "无",
           "member": "ActiveOperation",
           "name": "ActiveOperationList",
@@ -2655,7 +2655,7 @@
         },
         {
           "disabled": false,
-          "document": "获取TPS信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "获取TPS信息",
           "example": "无",
           "member": "PrometheusStatus",
           "name": "TPS",
@@ -3169,7 +3169,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方 Prometheus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方 Prometheus",
           "example": "无",
           "member": "CustomPromConfig",
           "name": "CustomProm",
@@ -3245,7 +3245,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Grafana信息",
           "example": "无",
           "member": "GrafanaInfo",
           "name": "Grafana",
@@ -3255,7 +3255,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Prometheus 类型",
           "example": "tmp",
           "member": "string",
           "name": "Type",
@@ -3467,7 +3467,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Server 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Server 名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -3478,7 +3478,7 @@
         },
         {
           "disabled": false,
-          "document": "Server 监听\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Server 监听",
           "example": "无",
           "member": "string",
           "name": "Bind",
@@ -3489,7 +3489,7 @@
         },
         {
           "disabled": false,
-          "document": "证书 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书 ID",
           "example": "无",
           "member": "string",
           "name": "CertID",
@@ -3500,7 +3500,7 @@
         },
         {
           "disabled": false,
-          "document": "端口信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口信息",
           "example": "无",
           "member": "ServerPort",
           "name": "Port",
@@ -3511,7 +3511,7 @@
         },
         {
           "disabled": false,
-          "document": "Host 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Host 信息",
           "example": "无",
           "member": "string",
           "name": "Hosts",
@@ -3528,7 +3528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "端口值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口值",
           "example": "无",
           "member": "int64",
           "name": "Number",
@@ -3539,7 +3539,7 @@
         },
         {
           "disabled": false,
-          "document": "端口协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口协议",
           "example": "无",
           "member": "string",
           "name": "Protocol",
@@ -3550,7 +3550,7 @@
         },
         {
           "disabled": false,
-          "document": "端口名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -3561,7 +3561,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标端口",
           "example": "无",
           "member": "int64",
           "name": "TargetPort",
@@ -3614,7 +3614,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开启DNS代理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启DNS代理",
           "example": "true",
           "member": "bool",
           "name": "IstioMetaDNSCapture",
@@ -3624,7 +3624,7 @@
         },
         {
           "disabled": false,
-          "document": "开启自动地址分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启自动地址分配",
           "example": "true",
           "member": "bool",
           "name": "IstioMetaDNSAutoAllocate",
@@ -3798,7 +3798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Namespace 解关联信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Namespace 解关联信息",
           "example": "无",
           "member": "HostedNamespace",
           "name": "NamespaceList",

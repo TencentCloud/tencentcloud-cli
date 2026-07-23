@@ -349,7 +349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡日志服务(CLS)的日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡日志服务(CLS)的日志集ID",
           "example": "3e727335-f94c-468f-9989-21759a3b6de8",
           "member": "string",
           "name": "LogSetId",
@@ -360,7 +360,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡日志服务(CLS)的日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡日志服务(CLS)的日志主题ID",
           "example": "3e727335-f94c-468f-9989-21759a3b6de8",
           "member": "string",
           "name": "LogTopicId",
@@ -1869,7 +1869,7 @@
         },
         {
           "disabled": false,
-          "document": "下一次查询的令牌。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下一次查询的令牌。",
           "example": "2c44874464923a9f",
           "member": "string",
           "name": "NextToken",
@@ -3045,7 +3045,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "下一次查询的Token值，如果当前是最后一页，返回为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下一次查询的Token值，如果当前是最后一页，返回为空。",
           "example": "3974ae26e***",
           "member": "string",
           "name": "NextToken",
@@ -4140,7 +4140,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 地址版本，取值 IPv4 或 IPv6。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 地址版本，取值 IPv4 或 IPv6。",
           "example": "IPv4",
           "member": "string",
           "name": "AddressIpVersion",
@@ -4151,7 +4151,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡的地址类型。取值：\n\n- **Internet**：负载均衡具有公网IP地址，DNS域名被解析到公网IP，因此可以在公网环境访问。\n\n- **Intranet**：负载均衡只有私网IP地址，DNS域名被解析到私网IP，因此只能被负载均衡所在VPC的内网环境访问。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡的地址类型。取值：\n\n- **Internet**：负载均衡具有公网IP地址，DNS域名被解析到公网IP，因此可以在公网环境访问。\n\n- **Intranet**：负载均衡只有私网IP地址，DNS域名被解析到私网IP，因此只能被负载均衡所在VPC的内网环境访问。",
           "example": "Internet",
           "member": "string",
           "name": "AddressType",
@@ -4162,7 +4162,7 @@
         },
         {
           "disabled": false,
-          "document": "资源创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源创建时间。",
           "example": "2025-01-01T08:30:00+08:00",
           "member": "string",
           "name": "CreateTime",
@@ -4184,7 +4184,7 @@
         },
         {
           "disabled": false,
-          "document": "DNS域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DNS域名。",
           "example": "alb-f8q2xk9m-vcpcq5puad9vp3xm.gz-tencentalb.com",
           "member": "string",
           "name": "Domain",
@@ -4206,7 +4206,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。",
           "example": "alb-f8q2xk9m",
           "member": "string",
           "name": "LoadBalancerId",
@@ -4217,7 +4217,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例名称。",
           "example": "alb-f8q2xk9m-1",
           "member": "string",
           "name": "LoadBalancerName",
@@ -4228,7 +4228,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡操作锁配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡操作锁配置。",
           "example": "无",
           "member": "LoadBalancerOperationLocksItem",
           "name": "LoadBalancerOperationLocks",
@@ -4239,7 +4239,7 @@
         },
         {
           "disabled": false,
-          "document": "应用型负载均衡实例状态。取值：\n\n- **Provisioning**：创建中。\n- **Active**: 运行中。\n- **Configuring**: 变配中。\n- **Deleting**：删除中。\n- **ProvisionFailed**：创建失败。\n- **ConfigureFailed**：变配失败。\n- **DeletionFailed**：删除失败。\n- **Abnormal**：异常状态，具体异常原因参见LoadBalancerOperationLocks字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用型负载均衡实例状态。取值：\n\n- **Provisioning**：创建中。\n- **Active**: 运行中。\n- **Configuring**: 变配中。\n- **Deleting**：删除中。\n- **ProvisionFailed**：创建失败。\n- **ConfigureFailed**：变配失败。\n- **DeletionFailed**：删除失败。\n- **Abnormal**：异常状态，具体异常原因参见LoadBalancerOperationLocks字段。",
           "example": "Active",
           "member": "string",
           "name": "LoadBalancerStatus",
@@ -4261,7 +4261,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -4272,7 +4272,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络 ID。",
           "example": "vpc-92hffaxb",
           "member": "string",
           "name": "VpcId",
@@ -4317,7 +4317,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的计费类型。\n\n取值**POSTPAID_BY_HOUR**：表示按量计费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的计费类型。\n\n取值**POSTPAID_BY_HOUR**：表示按量计费。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
@@ -4527,7 +4527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "锁定的原因。在**LoadBalancerStatus**为**Abnormal**时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "锁定的原因。在**LoadBalancerStatus**为**Abnormal**时有效。",
           "example": "欠费隔离",
           "member": "string",
           "name": "LockReason",
@@ -4538,7 +4538,7 @@
         },
         {
           "disabled": false,
-          "document": "锁定的类型。取值 ：\n\n- **SecurityLocked**：安全锁定。\n\n- **RelatedResourceLocked**：关联锁定。\n\n- **FinancialLocked**：欠费锁定。\n\n- **ResidualLocked**：残留锁定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "锁定的类型。取值 ：\n\n- **SecurityLocked**：安全锁定。\n\n- **RelatedResourceLocked**：关联锁定。\n\n- **FinancialLocked**：欠费锁定。\n\n- **ResidualLocked**：残留锁定。",
           "example": "SecurityLocked",
           "member": "string",
           "name": "LockType",
@@ -5361,7 +5361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣，如20.0代表2折。",
           "example": "80.0",
           "member": "float",
           "name": "Discount",
@@ -5371,7 +5371,7 @@
         },
         {
           "disabled": false,
-          "document": "单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单价，单位：元。",
           "example": "1.5",
           "member": "float",
           "name": "UnitPrice",
@@ -5381,7 +5381,7 @@
         },
         {
           "disabled": false,
-          "document": "折扣单价，单位:元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣单价，单位:元。",
           "example": "1.2",
           "member": "float",
           "name": "UnitPriceDiscount",
@@ -5423,7 +5423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前剩余可用量，计算方式为 Limit - Used。仅当请求参数 DisplayFields 包含 available 时返回有效值；未请求时不返回或为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前剩余可用量，计算方式为 Limit - Used。仅当请求参数 DisplayFields 包含 available 时返回有效值；未请求时不返回或为空。",
           "example": "40",
           "member": "int64",
           "name": "Available",
@@ -5456,7 +5456,7 @@
         },
         {
           "disabled": false,
-          "document": "资源 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源 ID。",
           "example": "alblcu-e8p3x9mq",
           "member": "string",
           "name": "ResourceId",
@@ -5467,7 +5467,7 @@
         },
         {
           "disabled": false,
-          "document": "当前已使用量。仅当请求参数 DisplayFields 包含 used 时返回有效值；未请求时不返回或为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前已使用量。仅当请求参数 DisplayFields 包含 used 时返回有效值；未请求时不返回或为空。",
           "example": "20",
           "member": "uint64",
           "name": "Used",
@@ -6205,7 +6205,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启会话保持。\n- **true**：开启。\n- **false**：不开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启会话保持。\n- **true**：开启。\n- **false**：不开启。",
           "example": "false",
           "member": "bool",
           "name": "StickySessionEnabled",
@@ -6227,7 +6227,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间。\n取值范围：**1-86400**，单位：**秒**。\n默认值：**1000**。\n>仅当 **StickySessionEnabled** 为 **true**时，该参数生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话保持时间。\n取值范围：**1-86400**，单位：**秒**。\n默认值：**1000**。\n>仅当 **StickySessionEnabled** 为 **true**时，该参数生效。",
           "example": "1000",
           "member": "int64",
           "name": "CookieTimeout",
@@ -6238,7 +6238,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持类型（处理Cookie的方式）。\n- **Insert**（默认值）：植入 Cookie。 客户端第一次访问后端服务时，应用型负载均衡会在返回请求中植入 Cookie。下次客户端请求时携带该 Cookie，负载均衡将请求转发到上次请求的相同后端服务。\n- **Rewrite**：重写 Cookie。 负载均衡会对用户自定义的 Cookie 进行重写，下次客户端请求时携带该 Cookie，负载均衡将请求转发到上次请求的相同后端服务。\n>仅当 **StickySessionEnabled** 为 **true** 时该参数生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话保持类型（处理Cookie的方式）。\n- **Insert**（默认值）：植入 Cookie。 客户端第一次访问后端服务时，应用型负载均衡会在返回请求中植入 Cookie。下次客户端请求时携带该 Cookie，负载均衡将请求转发到上次请求的相同后端服务。\n- **Rewrite**：重写 Cookie。 负载均衡会对用户自定义的 Cookie 进行重写，下次客户端请求时携带该 Cookie，负载均衡将请求转发到上次请求的相同后端服务。\n>仅当 **StickySessionEnabled** 为 **true** 时该参数生效。",
           "example": "Insert",
           "member": "string",
           "name": "StickySessionType",
@@ -6983,7 +6983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>子网 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网 ID。</p>",
           "example": "subnet-bi75pogm",
           "member": "string",
           "name": "SubnetId",
@@ -6994,7 +6994,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href=\"https://cloud.tencent.com/document/api/1822/133727\">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href=\"https://cloud.tencent.com/document/api/1822/133727\">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ZoneId",
@@ -7033,7 +7033,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>子网 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网 ID。</p>",
           "example": "subnet-bi75pogm",
           "member": "string",
           "name": "SubnetId",
@@ -7044,7 +7044,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href=\"https://cloud.tencent.com/document/api/1822/133727\">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区ID。最多支持添加10个可用区。若当前地域支持2个及以上的可用区，至少需要添加2个可用区。<br>您可以通过调用<a href=\"https://cloud.tencent.com/document/api/1822/133727\">DescribeZones</a>接口获取可用区ID对应的可用区的信息。</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ZoneId",
@@ -7055,7 +7055,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>公网实例绑定的EIP实例ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公网实例绑定的EIP实例ID。</p>",
           "example": "无",
           "member": "LoadBalancerAddress",
           "name": "LoadBalancerAddress",

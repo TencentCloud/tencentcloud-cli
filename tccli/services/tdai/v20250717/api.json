@@ -881,7 +881,7 @@
         },
         {
           "disabled": false,
-          "document": "助手消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "助手消息",
           "example": "无",
           "member": "CreateChatCompletionRes",
           "name": "AssistantMessage",
@@ -1788,7 +1788,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器类型",
           "example": "llm",
           "member": "string",
           "name": "Type",
@@ -1799,7 +1799,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型",
           "example": "ins-qwer1234",
           "member": "string",
           "name": "InstanceId",
@@ -1810,7 +1810,7 @@
         },
         {
           "disabled": false,
-          "document": "root密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "root密码",
           "example": "********",
           "member": "string",
           "name": "Password",
@@ -3528,7 +3528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数键",
           "example": "git_branch",
           "member": "string",
           "name": "Key",
@@ -3539,7 +3539,7 @@
         },
         {
           "disabled": false,
-          "document": "参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数值",
           "example": "master",
           "member": "string",
           "name": "Value",
@@ -3550,7 +3550,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举值，可取值包括：string(字符串), int(整型), float(浮点型), bool(布尔型), struct(结构体), array(数组), \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举值，可取值包括：string(字符串), int(整型), float(浮点型), bool(布尔型), struct(结构体), array(数组), ",
           "example": "string",
           "member": "string",
           "name": "ValueType",
@@ -3730,7 +3730,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能体实例关联的CVM配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能体实例关联的CVM配置",
           "example": "无",
           "member": "CvmConfig",
           "name": "Cvm",
@@ -3741,7 +3741,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例关联的CDB配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能体实例关联的CDB配置",
           "example": "无",
           "member": "CdbResource",
           "name": "Cdb",
@@ -3752,7 +3752,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例关联的COS配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能体实例关联的COS配置",
           "example": "无",
           "member": "CosResource",
           "name": "Cos",
@@ -3763,7 +3763,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例关联的TKE配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能体实例关联的TKE配置",
           "example": "无",
           "member": "TkeResource",
           "name": "Tke",
@@ -3774,7 +3774,7 @@
         },
         {
           "disabled": false,
-          "document": "智能体实例关联的云硬盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能体实例关联的云硬盘",
           "example": "无",
           "member": "CbsResource",
           "name": "Cbs",

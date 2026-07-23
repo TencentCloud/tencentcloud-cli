@@ -1148,7 +1148,7 @@
         },
         {
           "disabled": false,
-          "document": "验收状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收状态",
           "example": "DELIVERING",
           "member": "string",
           "name": "CheckStatus",
@@ -1158,7 +1158,7 @@
         },
         {
           "disabled": false,
-          "document": "交付预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交付预期时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "DeliverExpectTime",
@@ -1168,7 +1168,7 @@
         },
         {
           "disabled": false,
-          "document": "交付实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交付实际完成时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "DeliverFinishTime",
@@ -1178,7 +1178,7 @@
         },
         {
           "disabled": false,
-          "document": "验收预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收预期时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "CheckExpectTime",
@@ -1188,7 +1188,7 @@
         },
         {
           "disabled": false,
-          "document": "验收实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验收实际完成时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "CheckFinishTime",
@@ -1198,7 +1198,7 @@
         },
         {
           "disabled": false,
-          "document": "订单SLA\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单SLA",
           "example": "null",
           "member": "string",
           "name": "OrderSLA",
@@ -1208,7 +1208,7 @@
         },
         {
           "disabled": false,
-          "document": "订单支付计划\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单支付计划",
           "example": "null",
           "member": "string",
           "name": "OrderPayPlan",

@@ -4230,7 +4230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "拉流地址，只有在推流情况下才有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拉流地址，只有在推流情况下才有",
           "example": "无",
           "member": "StreamAddress",
           "name": "Data",
@@ -4771,7 +4771,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "录制日期数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制日期数组",
           "example": "2021-09-07",
           "member": "string",
           "name": "Dates",
@@ -5228,7 +5228,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计详情列表",
           "example": "无",
           "member": "StatisticItem",
           "name": "Data",

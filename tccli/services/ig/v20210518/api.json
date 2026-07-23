@@ -657,7 +657,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>返回数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>返回数据</p>",
           "example": "无",
           "member": "LLMDiagnosisHealthData",
           "name": "Data",

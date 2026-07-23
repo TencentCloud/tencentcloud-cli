@@ -1564,7 +1564,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>注册中心来源信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>注册中心来源信息</p>",
           "example": "无",
           "member": "AIGWMCPUpstreamInfoDetail",
           "name": "UpstreamInfo",
@@ -1575,7 +1575,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>会话配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>会话配置</p>",
           "example": "无",
           "member": "AIGWMCPSessionConfig",
           "name": "SessionConfig",
@@ -1663,7 +1663,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>健康检查配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康检查配置</p>",
           "example": "无",
           "member": "AIGWHealthCheckSetting",
           "name": "HealthCheck",
@@ -1816,7 +1816,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>mcp server 数据列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>mcp server 数据列表</p>",
           "example": "无",
           "member": "AIGWMCPServer",
           "name": "DataList",
@@ -2927,7 +2927,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "消费者描述",
           "member": "string",
           "name": "Description",
@@ -2938,7 +2938,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>消费者分组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消费者分组</p>",
           "example": "无",
           "member": "CNAPIGwConsumerGroup",
           "name": "ConsumerGroups",
@@ -3021,7 +3021,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的消费者数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的消费者数量",
           "example": "0",
           "member": "uint64",
           "name": "BindCount",
@@ -3132,7 +3132,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务 id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务 id</p>",
           "example": "4e141ac6-f0cd-4d35-80f0-75e47f5d56a6",
           "member": "string",
           "name": "ServiceId",
@@ -3414,7 +3414,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>KMS凭证名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>KMS凭证名字</p>",
           "example": "name",
           "member": "string",
           "name": "KmsKeyName",
@@ -3425,7 +3425,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>KMS凭证版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>KMS凭证版本</p>",
           "example": "value",
           "member": "string",
           "name": "KmsKeyVersion",
@@ -3436,7 +3436,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "密钥描述",
           "member": "string",
           "name": "Description",
@@ -3447,7 +3447,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否可以绑定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否可以绑定</p>",
           "example": "true",
           "member": "bool",
           "name": "CanBind",

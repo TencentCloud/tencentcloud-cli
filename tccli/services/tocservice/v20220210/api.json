@@ -188,7 +188,7 @@
         },
         {
           "disabled": false,
-          "document": "机型分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机型分类",
           "example": "CommonType/SpecialType",
           "member": "string",
           "name": "InstanceTypeClass",
@@ -198,7 +198,7 @@
         },
         {
           "disabled": false,
-          "document": "机型分类描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机型分类描述",
           "example": "通用机型/专用机型",
           "member": "string",
           "name": "InstanceTypeClassDesc",

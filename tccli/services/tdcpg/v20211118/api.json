@@ -727,7 +727,7 @@
         },
         {
           "disabled": false,
-          "document": "存储付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费",
           "example": "PREPAID",
           "member": "string",
           "name": "StoragePayMode",

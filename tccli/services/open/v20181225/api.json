@@ -191,7 +191,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱",
           "example": "",
           "member": "string",
           "name": "Mail",
@@ -200,7 +200,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱状态",
           "example": "",
           "member": "int64",
           "name": "MailStatus",

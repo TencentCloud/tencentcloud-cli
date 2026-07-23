@@ -25291,7 +25291,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内存马是否注入风险服务配置，0: 用户没有操作过，默认不注入 1: 注入,2:用户指定不注入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存马是否注入风险服务配置，0: 用户没有操作过，默认不注入 1: 注入,2:用户指定不注入",
           "example": "1",
           "member": "uint64",
           "name": "JavaShellInjectRiskyServiceStatus",
@@ -25301,7 +25301,7 @@
         },
         {
           "disabled": false,
-          "document": "主机rasp是否注入风险服务配置，0: 用户没有操作过，默认不注入 1: 注入,2:用户指定不注入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主机rasp是否注入风险服务配置，0: 用户没有操作过，默认不注入 1: 注入,2:用户指定不注入",
           "example": "1",
           "member": "uint64",
           "name": "RaspInjectRiskyServiceStatus",
@@ -34888,7 +34888,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件id",
+          "document": "<p>事件id</p>",
           "example": "[2265510]",
           "member": "uint64",
           "name": "Ids",
@@ -34903,7 +34903,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "skill信息列表",
+          "document": "<p>skill信息列表</p>",
           "example": "无",
           "member": "SkillInfo",
           "name": "SkillInfoList",
@@ -36116,7 +36116,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞防御设置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞防御设置列表",
           "example": "无",
           "member": "VulDefenceSetting",
           "name": "List",
@@ -56104,7 +56104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "漏洞事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞事件id",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -56115,7 +56115,7 @@
         },
         {
           "disabled": false,
-          "document": "状态 0: 待处理 1:已防御 2:已处理 3: 已忽略 4: 已删除 5: 已加白\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态 0: 待处理 1:已防御 2:已处理 3: 已忽略 4: 已删除 5: 已加白",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -56126,7 +56126,7 @@
         },
         {
           "disabled": false,
-          "document": "机器quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器quuid",
           "example": "e4deb973-e109-435a-bf22-49cd27e7eb6a",
           "member": "string",
           "name": "Quuid",
@@ -56137,7 +56137,7 @@
         },
         {
           "disabled": false,
-          "document": "主机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主机名",
           "example": "testmachine",
           "member": "string",
           "name": "Alias",
@@ -56148,7 +56148,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "i-testfdav",
           "member": "string",
           "name": "InstanceID",
@@ -56159,7 +56159,7 @@
         },
         {
           "disabled": false,
-          "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网ip",
           "example": "10.2.3.1",
           "member": "string",
           "name": "PrivateIp",
@@ -56170,7 +56170,7 @@
         },
         {
           "disabled": false,
-          "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网ip",
           "example": "111.2.3.1",
           "member": "string",
           "name": "PublicIp",
@@ -56181,7 +56181,7 @@
         },
         {
           "disabled": false,
-          "document": "资产tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资产tag",
           "example": "[\"核心资产\"]",
           "member": "string",
           "name": "HostTags",
@@ -56192,7 +56192,7 @@
         },
         {
           "disabled": false,
-          "document": "首次攻击时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次攻击时间",
           "example": "2021-01-20 16:17:11",
           "member": "string",
           "name": "CreateTime",
@@ -56203,7 +56203,7 @@
         },
         {
           "disabled": false,
-          "document": "最近攻击时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近攻击时间",
           "example": "2021-01-20 16:17:11",
           "member": "string",
           "name": "MergeTime",
@@ -56214,7 +56214,7 @@
         },
         {
           "disabled": false,
-          "document": "应用攻击类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用攻击类型",
           "example": "任意文件读取",
           "member": "string",
           "name": "AttackTypeName",
@@ -56225,7 +56225,7 @@
         },
         {
           "disabled": false,
-          "document": "应用攻击类型id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用攻击类型id",
           "example": "1",
           "member": "int64",
           "name": "AttackType",
@@ -56236,7 +56236,7 @@
         },
         {
           "disabled": false,
-          "document": "请求url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求url",
           "example": "www.baidu.com/test",
           "member": "string",
           "name": "Url",
@@ -56247,7 +56247,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞名称",
           "example": "漏洞",
           "member": "string",
           "name": "VulName",
@@ -56258,7 +56258,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "攻击次数",
           "example": "1",
           "member": "uint64",
           "name": "Count",
@@ -56269,7 +56269,7 @@
         },
         {
           "disabled": false,
-          "document": "cve编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cve编号",
           "example": "CVE-2014-8500",
           "member": "string",
           "name": "CveId",
@@ -56280,7 +56280,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击源ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "攻击源ip",
           "example": "11.2.3.1",
           "member": "string",
           "name": "SourceIp",
@@ -56291,7 +56291,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击源ip地址所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "攻击源ip地址所在城市",
           "example": "深圳",
           "member": "string",
           "name": "City",
@@ -56302,7 +56302,7 @@
         },
         {
           "disabled": false,
-          "document": "被攻击的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被攻击的端口",
           "example": "8080",
           "member": "uint64",
           "name": "AttackPort",
@@ -56313,7 +56313,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞描述",
           "example": "漏洞描述",
           "member": "string",
           "name": "Description",
@@ -56324,7 +56324,7 @@
         },
         {
           "disabled": false,
-          "document": "修复方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修复方式",
           "example": "修复方式",
           "member": "string",
           "name": "Fix",
@@ -56335,7 +56335,7 @@
         },
         {
           "disabled": false,
-          "document": "请求内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求内容",
           "example": "GET http:://www.baidu.com/test",
           "member": "string",
           "name": "NetworkPayload",
@@ -56346,7 +56346,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称",
           "example": "tke_cls-6ydg4qri_worker3",
           "member": "string",
           "name": "NodeName",
@@ -56357,7 +56357,7 @@
         },
         {
           "disabled": false,
-          "document": "节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点id",
           "example": "ins-od3s0xd1",
           "member": "string",
           "name": "NodeId",
@@ -56368,7 +56368,7 @@
         },
         {
           "disabled": false,
-          "document": "容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器名称",
           "example": "k8s",
           "member": "string",
           "name": "ContainerName",
@@ -56379,7 +56379,7 @@
         },
         {
           "disabled": false,
-          "document": "容器id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器id",
           "example": "84007f203025e90b6f95c1f5be6e68637f831ed89078860c7861b185b3e6088f",
           "member": "string",
           "name": "ContainerId",
@@ -56390,7 +56390,7 @@
         },
         {
           "disabled": false,
-          "document": "容器运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器运行状态",
           "example": "RUNNING",
           "member": "string",
           "name": "ContainerStatus",
@@ -56401,7 +56401,7 @@
         },
         {
           "disabled": false,
-          "document": "容器隔离状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器隔离状态",
           "example": "NORMAL",
           "member": "string",
           "name": "ContainerNetStatus",
@@ -56412,7 +56412,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像ID",
           "example": "sha256:c66abded45cdae32051ed557e8f930dcd46fa3396e0ca280517ca18c0f0d48ea",
           "member": "string",
           "name": "ImageId",
@@ -56423,7 +56423,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像名称",
           "example": "ccr.ccs.tencentyun.com/tkeimages/apiserver-proxy:v1.4.5",
           "member": "string",
           "name": "ImageName",
@@ -56434,7 +56434,7 @@
         },
         {
           "disabled": false,
-          "document": "pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "pod名称",
           "example": "kubernetes-proxy-55466756fc-6ptx9",
           "member": "string",
           "name": "PodName",
@@ -56445,7 +56445,7 @@
         },
         {
           "disabled": false,
-          "document": "podip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "podip",
           "example": "10.0.2.120",
           "member": "string",
           "name": "PodIp",
@@ -56456,7 +56456,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群名称",
           "example": "grafana-test",
           "member": "string",
           "name": "ClusterName",
@@ -56467,7 +56467,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群id",
           "example": "cls-4waue9dh",
           "member": "string",
           "name": "ClusterId",
@@ -56478,7 +56478,7 @@
         },
         {
           "disabled": false,
-          "document": "进程id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "进程id",
           "example": "进程id",
           "member": "int64",
           "name": "Pid",
@@ -56489,7 +56489,7 @@
         },
         {
           "disabled": false,
-          "document": "关联进程主类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联进程主类名",
           "example": "sf.class",
           "member": "string",
           "name": "MainClass",
@@ -56500,7 +56500,7 @@
         },
         {
           "disabled": false,
-          "document": "堆栈信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "堆栈信息",
           "example": "at org.java.uti",
           "member": "string",
           "name": "StackTrace",
@@ -56511,7 +56511,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞ID相关的事件详情(json array格式 rasp特有)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞ID相关的事件详情(json array格式 rasp特有)",
           "example": "[     {         \"name\": \"jndiurl\",         \"value\": \"http://whoa",
           "member": "string",
           "name": "RaspDetail",
@@ -57084,7 +57084,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件ID",
           "example": "142",
           "member": "uint64",
           "name": "Id",
@@ -57094,7 +57094,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器quuid",
           "example": "e1f081aa-7777-4fdf-a2f7-88f3faa3d302",
           "member": "string",
           "name": "Quuid",
@@ -57104,7 +57104,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器名称",
           "example": "dev-centos8",
           "member": "string",
           "name": "Alias",
@@ -57124,7 +57124,7 @@
         },
         {
           "disabled": false,
-          "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网ip",
           "example": "10.1.2.5",
           "member": "string",
           "name": "PrivateIp",
@@ -57134,7 +57134,7 @@
         },
         {
           "disabled": false,
-          "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网ip",
           "example": "192.168.255.10",
           "member": "string",
           "name": "PublicIp",
@@ -57144,7 +57144,7 @@
         },
         {
           "disabled": false,
-          "document": "主机tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主机tag",
           "example": "[\"核心资产\"]",
           "member": "string",
           "name": "HostTags",
@@ -57154,7 +57154,7 @@
         },
         {
           "disabled": false,
-          "document": "内存马类型  0:Filter型 1:Listener型 2:Servlet型 3:Interceptors型 4:Agent型 5:其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存马类型  0:Filter型 1:Listener型 2:Servlet型 3:Interceptors型 4:Agent型 5:其他",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -57164,7 +57164,7 @@
         },
         {
           "disabled": false,
-          "document": "处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略  4 - 已手动处理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略  4 - 已手动处理",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -57174,7 +57174,7 @@
         },
         {
           "disabled": false,
-          "document": "所属的类加载器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属的类加载器",
           "example": "org.apache.catalina.startup.Bootstrap",
           "member": "string",
           "name": "ClassLoaderName",
@@ -57184,7 +57184,7 @@
         },
         {
           "disabled": false,
-          "document": "父类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父类名",
           "example": "org.apache.catalina.startup.Bootstrap",
           "member": "string",
           "name": "SuperClassName",
@@ -57194,7 +57194,7 @@
         },
         {
           "disabled": false,
-          "document": "继承的接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "继承的接口",
           "example": "org.apache.catalina.startup.Bootstrap",
           "member": "string",
           "name": "Interfaces",
@@ -57204,7 +57204,7 @@
         },
         {
           "disabled": false,
-          "document": "注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注释",
           "example": "comment",
           "member": "string",
           "name": "Annotations",
@@ -57214,7 +57214,7 @@
         },
         {
           "disabled": false,
-          "document": "类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类名",
           "example": "org.apache.catalina.startup.Bootstrap",
           "member": "string",
           "name": "ClassName",
@@ -57224,7 +57224,7 @@
         },
         {
           "disabled": false,
-          "document": "类文件md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类文件md5",
           "example": "37e54fce63f1ca6c82927caf7aa1c412",
           "member": "string",
           "name": "Md5",
@@ -57234,7 +57234,7 @@
         },
         {
           "disabled": false,
-          "document": "进程pid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "进程pid",
           "example": "1436",
           "member": "int64",
           "name": "Pid",
@@ -57244,7 +57244,7 @@
         },
         {
           "disabled": false,
-          "document": "java进程路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "java进程路径",
           "example": "/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java",
           "member": "string",
           "name": "Exe",
@@ -57254,7 +57254,7 @@
         },
         {
           "disabled": false,
-          "document": "java进程命令行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "java进程命令行参数",
           "example": "org.apache.jasper.servlet.JasperLoader",
           "member": "string",
           "name": "Args",
@@ -57264,7 +57264,7 @@
         },
         {
           "disabled": false,
-          "document": "java内存马二进制代码(base64)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "java内存马二进制代码(base64)",
           "example": "avewsa==...",
           "member": "string",
           "name": "ClassContent",
@@ -57274,7 +57274,7 @@
         },
         {
           "disabled": false,
-          "document": "java内存马反编译代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "java内存马反编译代码",
           "example": "package com.company;  public class Main {      public static voi",
           "member": "string",
           "name": "ClassContentPretty",
@@ -57284,7 +57284,7 @@
         },
         {
           "disabled": false,
-          "document": "事件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件描述",
           "example": "腾讯御见...",
           "member": "string",
           "name": "EventDescription",
@@ -57294,7 +57294,7 @@
         },
         {
           "disabled": false,
-          "document": "安全建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全建议",
           "example": "安全建议..",
           "member": "string",
           "name": "SecurityAdvice",
@@ -57304,7 +57304,7 @@
         },
         {
           "disabled": false,
-          "document": "首次发现时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次发现时间",
           "example": "2021-01-20 16:17:11",
           "member": "string",
           "name": "CreateTime",
@@ -57314,7 +57314,7 @@
         },
         {
           "disabled": false,
-          "document": "最近检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近检测时间",
           "example": "2021-01-20 16:17:11",
           "member": "string",
           "name": "RecentFoundTime",
@@ -57324,7 +57324,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称",
           "example": "tke_cls-6ydg4qri_worker3",
           "member": "string",
           "name": "NodeName",
@@ -57334,7 +57334,7 @@
         },
         {
           "disabled": false,
-          "document": "节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点id",
           "example": "ins-od3s0xd1",
           "member": "string",
           "name": "NodeId",
@@ -57344,7 +57344,7 @@
         },
         {
           "disabled": false,
-          "document": "容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器名称",
           "example": "k8s",
           "member": "string",
           "name": "ContainerName",
@@ -57354,7 +57354,7 @@
         },
         {
           "disabled": false,
-          "document": "容器id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器id",
           "example": "84007f203025e90b6f95c1f5be6e68637f831ed89078860c7861b185b3e6088f",
           "member": "string",
           "name": "ContainerId",
@@ -57364,7 +57364,7 @@
         },
         {
           "disabled": false,
-          "document": "容器运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器运行状态",
           "example": "RUNNING",
           "member": "string",
           "name": "ContainerStatus",
@@ -57374,7 +57374,7 @@
         },
         {
           "disabled": false,
-          "document": "容器隔离状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器隔离状态",
           "example": "NORMAL",
           "member": "string",
           "name": "ContainerNetStatus",
@@ -57384,7 +57384,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像ID",
           "example": "sha256:c66abded45cdae32051ed557e8f930dcd46fa3396e0ca280517ca18c0f0d48ea",
           "member": "string",
           "name": "ImageId",
@@ -57394,7 +57394,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像名称",
           "example": "ccr.ccs.tencentyun.com/tkeimages/apiserver-proxy:v1.4.5",
           "member": "string",
           "name": "ImageName",
@@ -57404,7 +57404,7 @@
         },
         {
           "disabled": false,
-          "document": "pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "pod名称",
           "example": "kubernetes-proxy-55466756fc-6ptx9",
           "member": "string",
           "name": "PodName",
@@ -57414,7 +57414,7 @@
         },
         {
           "disabled": false,
-          "document": "podip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "podip",
           "example": "10.0.2.120",
           "member": "string",
           "name": "PodIp",
@@ -57424,7 +57424,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群名称",
           "example": "grafana-test",
           "member": "string",
           "name": "ClusterName",
@@ -57434,7 +57434,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群id",
           "example": "cls-4waue9dh",
           "member": "string",
           "name": "ClusterId",
@@ -62277,7 +62277,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略ID",
           "example": "2001",
           "member": "uint64",
           "name": "PolicyId",
@@ -62287,7 +62287,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名称",
           "example": "系统自动拦截策略",
           "member": "string",
           "name": "PolicyName",
@@ -62297,7 +62297,7 @@
         },
         {
           "disabled": false,
-          "document": "0 系统策略, 1 用户自定义策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 系统策略, 1 用户自定义策略",
           "example": "0",
           "member": "uint64",
           "name": "PolicyType",
@@ -62307,7 +62307,7 @@
         },
         {
           "disabled": false,
-          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略描述",
           "example": "''",
           "member": "string",
           "name": "PolicyDesc",
@@ -62317,7 +62317,7 @@
         },
         {
           "disabled": false,
-          "document": "策略动作[0:告警,1:放行,2:拦截+告警]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略动作[0:告警,1:放行,2:拦截+告警]",
           "example": "0",
           "member": "uint64",
           "name": "PolicyAction",
@@ -62327,7 +62327,7 @@
         },
         {
           "disabled": false,
-          "document": "0 开启, 1关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 开启, 1关闭",
           "example": "0",
           "member": "uint64",
           "name": "IsEnabled",
@@ -62337,7 +62337,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -62347,7 +62347,7 @@
         },
         {
           "disabled": false,
-          "document": "主机范围:[0: 一组quuid 1: 所有专业版 2: 旗舰版 3: 所有主机]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主机范围:[0: 一组quuid 1: 所有专业版 2: 旗舰版 3: 所有主机]",
           "example": "2",
           "member": "uint64",
           "name": "HostScope",
@@ -64722,7 +64722,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名称",
           "example": "漏洞防御",
           "member": "string",
           "name": "StrategyName",
@@ -64732,7 +64732,7 @@
         },
         {
           "disabled": false,
-          "document": "0系统策略\n1自定义策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0系统策略\n1自定义策略",
           "example": "0",
           "member": "uint64",
           "name": "StrategyType",
@@ -64742,7 +64742,7 @@
         },
         {
           "disabled": false,
-          "document": "威胁等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "威胁等级",
           "example": "无",
           "member": "uint64",
           "name": "ThreatLevel",
@@ -64752,7 +64752,7 @@
         },
         {
           "disabled": false,
-          "document": "1全部旗舰版主机\n0自选主机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1全部旗舰版主机\n0自选主机",
           "example": "1",
           "member": "uint64",
           "name": "Scope",
@@ -64762,7 +64762,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的漏洞个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的漏洞个数",
           "example": "180",
           "member": "uint64",
           "name": "SupportVulNum",
@@ -64772,7 +64772,7 @@
         },
         {
           "disabled": false,
-          "document": "0 关闭 1 开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 关闭 1 开启",
           "example": "0",
           "member": "uint64",
           "name": "Enable",
@@ -64782,7 +64782,7 @@
         },
         {
           "disabled": false,
-          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户appid",
           "example": "1",
           "member": "uint64",
           "name": "AppId",
@@ -64792,7 +64792,7 @@
         },
         {
           "disabled": false,
-          "document": "用户MemberId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户MemberId",
           "example": "qq",
           "member": "string",
           "name": "MemberId",
@@ -64802,7 +64802,7 @@
         },
         {
           "disabled": false,
-          "document": "策略动作\n0告警\n1防御\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略动作\n0告警\n1防御",
           "example": "0",
           "member": "uint64",
           "name": "StrategyAction",
@@ -64812,7 +64812,7 @@
         },
         {
           "disabled": false,
-          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户uin",
           "example": "111",
           "member": "string",
           "name": "Uin",
@@ -64822,7 +64822,7 @@
         },
         {
           "disabled": false,
-          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户昵称",
           "example": "aa",
           "member": "string",
           "name": "Nickname",
@@ -64832,7 +64832,7 @@
         },
         {
           "disabled": false,
-          "document": "防护类型\n0漏洞防御\n1攻击检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防护类型\n0漏洞防御\n1攻击检测",
           "example": "0",
           "member": "uint64",
           "name": "DefenceType",
@@ -64842,7 +64842,7 @@
         },
         {
           "disabled": false,
-          "document": "自选主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自选主机数量",
           "example": "10",
           "member": "uint64",
           "name": "InstanceNum",
@@ -64852,7 +64852,7 @@
         },
         {
           "disabled": false,
-          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略id",
           "example": "123",
           "member": "string",
           "name": "StrategyId",

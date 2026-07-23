@@ -2298,7 +2298,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务流id",
           "example": "147183",
           "member": "int64",
           "name": "FlowId",
@@ -2817,7 +2817,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大订单号",
           "example": "[\"202411073872\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -2827,7 +2827,7 @@
         },
         {
           "disabled": false,
-          "document": "冻结流水，一次开通一个冻结流水。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "冻结流水，一次开通一个冻结流水。",
           "example": "myTranId",
           "member": "string",
           "name": "TranId",
@@ -2837,7 +2837,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费订单号。",
           "example": "[\"182711111\"]",
           "member": "string",
           "name": "DealNames",
@@ -2847,7 +2847,7 @@
         },
         {
           "disabled": false,
-          "document": "发货资源id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发货资源id列表。",
           "example": "[\"cynosdbmysql-mwg712mm\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -2992,7 +2992,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>冻结流水，一次开通一个冻结流水</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>冻结流水，一次开通一个冻结流水</p>",
           "example": "myTranId",
           "member": "string",
           "name": "TranId",
@@ -3002,7 +3002,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>后付费订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后付费订单号</p>",
           "example": "[\"182711111\"]",
           "member": "string",
           "name": "DealNames",
@@ -3012,7 +3012,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>发货资源id列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>发货资源id列表</p>",
           "example": "[\"cynosdbmysql-mwg712mm\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -3022,7 +3022,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>大订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>大订单号</p>",
           "example": "[\"202411073872\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -3070,7 +3070,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>基模类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>基模类型</p>",
           "example": "AgenticBase-pg",
           "member": "string",
           "name": "AgenticBaseType",
@@ -3081,7 +3081,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>基模 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>基模 ID</p>",
           "example": "AgenticBase-xxx",
           "member": "string",
           "name": "AgenticBaseId",
@@ -3907,7 +3907,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周日到周六的备份方式，full-全量备份，increment-增量备份</p>",
           "example": "[\"full\"]",
           "member": "string",
           "name": "BackupWeekDays",
@@ -3951,7 +3951,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>跨地域备份地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>跨地域备份地域</p>",
           "example": "[\"ap-chengdu\"]",
           "member": "string",
           "name": "CrossRegions",
@@ -4238,7 +4238,7 @@
         },
         {
           "disabled": false,
-          "document": "限制下载的vpc设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "限制下载的vpc设置",
           "example": "[{\"Region\": \"ap-guangzhou\", \"VpcList\": [\"vpc-kas1\"] } ]",
           "member": "BackupLimitVpcItem",
           "name": "LimitVpcs",
@@ -4249,7 +4249,7 @@
         },
         {
           "disabled": false,
-          "document": "限制下载的ip设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "限制下载的ip设置",
           "example": "[127.0.0.1,127.0.0.2]",
           "member": "string",
           "name": "LimitIps",
@@ -4496,7 +4496,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>binlog异地地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>binlog异地地域</p>",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "BinlogCrossRegions",
@@ -4927,7 +4927,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>修改参数任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改参数任务信息</p>",
           "example": "无",
           "member": "ModifyParamsData",
           "name": "ModifyParamsData",
@@ -4967,7 +4967,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>手动备份任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手动备份任务信息</p>",
           "example": "无",
           "member": "ManualBackupData",
           "name": "ManualBackupData",
@@ -4997,7 +4997,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>转换集群日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转换集群日志</p>",
           "example": "无",
           "member": "SwitchClusterLogBin",
           "name": "SwitchClusterLogBin",
@@ -5007,7 +5007,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>修改实例参数数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改实例参数数据</p>",
           "example": "无",
           "member": "BizTaskModifyParamsData",
           "name": "ModifyInstanceParamsData",
@@ -5453,7 +5453,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "整体校验状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "整体校验状态",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -5463,7 +5463,7 @@
         },
         {
           "disabled": false,
-          "document": "校验项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验项",
           "example": "无",
           "member": "CheckItem",
           "name": "CheckItem",
@@ -5485,7 +5485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "校验项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验项名称",
           "example": "无",
           "member": "string",
           "name": "Item",
@@ -5495,7 +5495,7 @@
         },
         {
           "disabled": false,
-          "document": "该项的校验结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该项的校验结果",
           "example": "无",
           "member": "string",
           "name": "Result",
@@ -5505,7 +5505,7 @@
         },
         {
           "disabled": false,
-          "document": "校验不通过的详细说明和修改建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验不通过的详细说明和修改建议",
           "example": "无",
           "member": "string",
           "name": "CurrentValue",
@@ -5515,7 +5515,7 @@
         },
         {
           "disabled": false,
-          "document": "校验不通过的详细说明和修改建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验不通过的详细说明和修改建议",
           "example": "无",
           "member": "string",
           "name": "ExpectedValue",
@@ -6512,7 +6512,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>弹性任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>弹性任务ID</p>",
           "example": "1231",
           "member": "int64",
           "name": "ScaleTaskId",
@@ -6522,7 +6522,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>失败原因</p>",
           "example": "ClusterNotRunning",
           "member": "string",
           "name": "FailReason",
@@ -6598,7 +6598,7 @@
         },
         {
           "disabled": false,
-          "document": "旧从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旧从可用区",
           "example": "[ap-guangzhou-5]",
           "member": "string",
           "name": "OldSlaveZone",
@@ -6618,7 +6618,7 @@
         },
         {
           "disabled": false,
-          "document": "新从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新从可用区",
           "example": "[ap-guangzhou-5]",
           "member": "string",
           "name": "NewSlaveZone",
@@ -7063,7 +7063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "保险箱id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保险箱id",
           "example": "vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a",
           "member": "string",
           "name": "VaultId",
@@ -7074,7 +7074,7 @@
         },
         {
           "disabled": false,
-          "document": "保险箱地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保险箱地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "VaultRegion",
@@ -7868,7 +7868,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>大订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>大订单号</p>",
           "example": "[\"2019052211228311\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -8343,7 +8343,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大订单号",
           "example": "[\"20250812065021475117801\",        \"20250812065021475117811\" ]",
           "member": "string",
           "name": "BigDealIds",
@@ -10956,7 +10956,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
@@ -10976,7 +10976,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>备可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备可用区</p>",
           "example": "[\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "SlaveZones",
@@ -10996,7 +10996,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例绑定资源包信息（此处只返回计算资源包，即packageType=CCU）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例绑定资源包信息（此处只返回计算资源包，即packageType=CCU）</p>",
           "example": "无",
           "member": "ResourcePackage",
           "name": "ResourcePackages",
@@ -11814,7 +11814,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC的ID",
           "example": "vpc-xx",
           "member": "string",
           "name": "UniqVpcId",
@@ -11824,7 +11824,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网ID",
           "example": "subnet-xx",
           "member": "string",
           "name": "UniqSubnetId",
@@ -11834,7 +11834,7 @@
         },
         {
           "disabled": false,
-          "document": "正在回收IP信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正在回收IP信息",
           "example": "无",
           "member": "OldAddrInfo",
           "name": "OldAddrInfo",
@@ -11880,7 +11880,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用id",
           "example": "12345678",
           "member": "int64",
           "name": "AppId",
@@ -11890,7 +11890,7 @@
         },
         {
           "disabled": false,
-          "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -11900,7 +11900,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目id",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -11910,7 +11910,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "cynosdb-ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -11920,7 +11920,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称",
           "example": "实例名",
           "member": "string",
           "name": "InstanceName",
@@ -11930,7 +11930,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -11940,7 +11940,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群id",
           "example": "cynosdb-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -11950,7 +11950,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群名称",
           "example": "集群名",
           "member": "string",
           "name": "ClusterName",
@@ -11960,7 +11960,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态中文描述",
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
@@ -11970,7 +11970,7 @@
         },
         {
           "disabled": false,
-          "document": "vip信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vip信息",
           "example": "无",
           "member": "string",
           "name": "Vip",
@@ -11980,7 +11980,7 @@
         },
         {
           "disabled": false,
-          "document": "vport信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vport信息",
           "example": "无",
           "member": "int64",
           "name": "Vport",
@@ -13231,7 +13231,7 @@
         },
         {
           "disabled": false,
-          "document": "审计实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计实例详细信息列表。",
           "example": "[{\"AuditAll\": true,\"AuditStatus\": \"ON\",\"BillingAmount\": 0,\"CreateAt\": \"2024-08-07 20:36:59\",\"Deliver\": \"OFF\",\"DeliverSummary\": [],\"HighLogExpireDay\": 7,\"HighRealStorage\": 0,\"InstanceId\": \"cynosdbmysql-ins-3v52nx11\",\"InstanceInfo\": {\"ProjectId\": 0,\"TagList\": []},\"LogExpireDay\": 30,\"LowLogExpireDay\": 23,\"LowRealStorage\": 0,\"RealStorage\": 0,\"RuleTemplateIds\": cynosdb-art-c1jo4q11}]",
           "member": "InstanceAuditStatus",
           "name": "Items",
@@ -13424,7 +13424,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志详情。",
           "example": "无",
           "member": "AuditLog",
           "name": "Items",
@@ -13563,7 +13563,7 @@
         },
         {
           "disabled": false,
-          "document": "实例审计规则信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例审计规则信息。",
           "example": "[{\"RuleFilters\": [{\"Compare\": \"INC\",\"Type\": \"sql\",\"Value\": [\"select\"]},{\"Compare\": \"EQS\",\"Type\": \"dbName\",\"Value\": [\"db1\"]}]}]",
           "member": "InstanceAuditRule",
           "name": "Items",
@@ -13670,7 +13670,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>二级快照备份配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>二级快照备份配置信息</p>",
           "example": "无",
           "member": "BackupConfigInfo",
           "name": "SnapshotSecondaryBackupConfig",
@@ -13717,7 +13717,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群备份下载限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群备份下载限制",
           "example": "无",
           "member": "BackupLimitClusterRestriction",
           "name": "BackupLimitClusterRestrictions",
@@ -13827,7 +13827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群备份下载限制信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群备份下载限制信息",
           "example": "无",
           "member": "BackupLimitClusterRestriction",
           "name": "BackupLimitClusterRestrictions",
@@ -16416,7 +16416,7 @@
         },
         {
           "disabled": false,
-          "document": "实例下全部的资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例下全部的资源信息",
           "example": "无",
           "member": "ResourceInfo",
           "name": "Items",
@@ -17124,7 +17124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限语句",
           "example": "[\"GRANT CREATE, ALTER ON *.* TO 'andy'@'%'\",\"GRANT DROP, EXECUTE ON `andy1`.* TO 'andy'@'%'\",\"GRANT UPDATE, SHOW VIEW ON `andy2`.`user1` TO 'andy'@'%'\"]",
           "member": "string",
           "name": "PrivilegeStatements",
@@ -17134,7 +17134,7 @@
         },
         {
           "disabled": false,
-          "document": "全局权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "全局权限",
           "example": "[\"CREATE\",\"ALTER\"]",
           "member": "string",
           "name": "GlobalPrivileges",
@@ -17144,7 +17144,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库权限",
           "example": "无",
           "member": "DatabasePrivileges",
           "name": "DatabasePrivileges",
@@ -17154,7 +17154,7 @@
         },
         {
           "disabled": false,
-          "document": "表权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表权限",
           "example": "无",
           "member": "TablePrivileges",
           "name": "TablePrivileges",
@@ -17236,7 +17236,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限列表",
           "example": "[\"SELECT\"]",
           "member": "string",
           "name": "Privileges",
@@ -17695,7 +17695,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源端信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端信息列表",
           "example": "无",
           "member": "DataSourceItem",
           "name": "DataSourceList",
@@ -17742,7 +17742,7 @@
         },
         {
           "disabled": false,
-          "document": "转发列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发列表",
           "example": "无",
           "member": "ForwardInstanceInfo",
           "name": "ForwardList",
@@ -17788,7 +17788,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>主账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主账号</p>",
           "example": "10003***252",
           "member": "string",
           "name": "Uin",
@@ -17798,7 +17798,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>账号唯一ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>账号唯一ID</p>",
           "example": "134431132",
           "member": "int64",
           "name": "AppId",
@@ -17808,7 +17808,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-bdcl1n11",
           "member": "string",
           "name": "ClusterId",
@@ -17818,7 +17818,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群名称</p>",
           "example": "andy",
           "member": "string",
           "name": "ClusterName",
@@ -17828,7 +17828,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例ID</p>",
           "example": "cynosdbmysql-ins-ifq10f11",
           "member": "string",
           "name": "InstanceId",
@@ -17838,7 +17838,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例名称</p>",
           "example": "cynosdbmysql-ins-ifq10f11",
           "member": "string",
           "name": "InstanceName",
@@ -17848,7 +17848,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>项目ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目ID</p>",
           "example": "1303453",
           "member": "int64",
           "name": "ProjectId",
@@ -17858,7 +17858,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -17868,7 +17868,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -17878,7 +17878,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例状态</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -17888,7 +17888,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>状态描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态描述</p>",
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
@@ -17898,7 +17898,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Libra分析引擎版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Libra分析引擎版本</p>",
           "example": "1.2404.15.1",
           "member": "string",
           "name": "LibraDBVersion",
@@ -17908,7 +17908,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>cpu核数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>cpu核数</p>",
           "example": "4",
           "member": "int64",
           "name": "Cpu",
@@ -17918,7 +17918,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>内存大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>内存大小</p>",
           "example": "16",
           "member": "int64",
           "name": "Memory",
@@ -17928,7 +17928,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>存储大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储大小</p>",
           "example": "100",
           "member": "int64",
           "name": "Storage",
@@ -17938,7 +17938,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>存储类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储类型</p>",
           "example": "CLOUD_TCS",
           "member": "string",
           "name": "StorageType",
@@ -17948,7 +17948,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例类型</p>",
           "example": "Common",
           "member": "string",
           "name": "InstanceType",
@@ -17958,7 +17958,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例角色</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例角色</p>",
           "example": "libradbRo",
           "member": "string",
           "name": "InstanceRole",
@@ -17968,7 +17968,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>",
           "example": "2024-11-07 15:01:21",
           "member": "string",
           "name": "UpdateTime",
@@ -17978,7 +17978,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "2024-11-06 15:01:21",
           "member": "string",
           "name": "CreateTime",
@@ -17988,7 +17988,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>售卖方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>售卖方式</p>",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -17998,7 +17998,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>售卖开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>售卖开始时间</p>",
           "example": "2024-10-07 15:01:21",
           "member": "string",
           "name": "PeriodStartTime",
@@ -18008,7 +18008,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>售卖结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>售卖结束时间</p>",
           "example": "2025-11-07 15:01:21",
           "member": "string",
           "name": "PeriodEndTime",
@@ -18018,7 +18018,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>续费标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>续费标识</p>",
           "example": "2",
           "member": "int64",
           "name": "RenewFlag",
@@ -18028,7 +18028,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>网络类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网络类型</p>",
           "example": "1",
           "member": "int64",
           "name": "NetType",
@@ -18038,7 +18038,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>私有网络ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>私有网络ID</p>",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "VpcId",
@@ -18048,7 +18048,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>子网ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网ID</p>",
           "example": "subnet-b5v6i111",
           "member": "string",
           "name": "SubnetId",
@@ -18058,7 +18058,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>虚拟IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>虚拟IP</p>",
           "example": "172.1.1.1",
           "member": "string",
           "name": "Vip",
@@ -18068,7 +18068,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>端口</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>端口</p>",
           "example": "2000",
           "member": "int64",
           "name": "Vport",
@@ -18078,7 +18078,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例网络信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例网络信息</p>",
           "example": "无",
           "member": "InstanceNetInfo",
           "name": "InstanceNetInfo",
@@ -18088,7 +18088,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例标签信息</p>",
           "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
@@ -18118,7 +18118,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>分析实例升级版本之后信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分析实例升级版本之后信息</p>",
           "example": "无",
           "member": "UpgradeAnalysisInstanceVersionInfo",
           "name": "AnalysisUpgradeVersionInfo",
@@ -18145,7 +18145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该地域实例规格信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该地域实例规格信息列表",
           "example": "无",
           "member": "RegionInstanceSpecInfo",
           "name": "InstanceSpecSet",
@@ -18866,7 +18866,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据库代理节点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据库代理节点</p>",
           "example": "无",
           "member": "ProxyNodeInfo",
           "name": "ProxyNodeInfos",
@@ -19740,7 +19740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>执行计划详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行计划详情</p>",
           "example": "无",
           "member": "ExecutionPlanDetail",
           "name": "PlanDetail",
@@ -21783,7 +21783,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转发实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发实例id",
           "example": "cynosdbmysql-hlu0mqfh",
           "member": "string",
           "name": "InstanceId",
@@ -21794,7 +21794,7 @@
         },
         {
           "disabled": false,
-          "document": "转发实例地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发实例地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -21927,7 +21927,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例价格",
           "example": "无",
           "member": "TradePrice",
           "name": "InstancePrice",
@@ -21937,7 +21937,7 @@
         },
         {
           "disabled": false,
-          "document": "存储价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储价格",
           "example": "无",
           "member": "TradePrice",
           "name": "StoragePrice",
@@ -21947,7 +21947,7 @@
         },
         {
           "disabled": false,
-          "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品规格",
           "example": "无",
           "member": "GoodsSpec",
           "name": "GoodsSpec",
@@ -21963,7 +21963,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品数量",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
@@ -21974,7 +21974,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数，PREPAID与POSTPAID实例类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CPU核数，PREPAID与POSTPAID实例类型必传",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -21985,7 +21985,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小，单位G，PREPAID与POSTPAID实例类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存大小，单位G，PREPAID与POSTPAID实例类型必传",
           "example": "2",
           "member": "int64",
           "name": "Memory",
@@ -21996,7 +21996,7 @@
         },
         {
           "disabled": false,
-          "document": "Ccu大小，serverless类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Ccu大小，serverless类型必传",
           "example": "0.5",
           "member": "float",
           "name": "Ccu",
@@ -22007,7 +22007,7 @@
         },
         {
           "disabled": false,
-          "document": "存储大小，PREPAID存储类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储大小，PREPAID存储类型必传",
           "example": "10",
           "member": "int64",
           "name": "StorageLimit",
@@ -22018,7 +22018,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买时长",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -22029,7 +22029,7 @@
         },
         {
           "disabled": false,
-          "document": "时长单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时长单位",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -22821,7 +22821,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CPU",
           "example": "无",
           "member": "int64",
           "name": "Cpu",
@@ -22832,7 +22832,7 @@
         },
         {
           "disabled": false,
-          "document": "memory\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "memory",
           "example": "无",
           "member": "int64",
           "name": "Mem",
@@ -22843,7 +22843,7 @@
         },
         {
           "disabled": false,
-          "document": "存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储",
           "example": "无",
           "member": "int64",
           "name": "StorageLimit",
@@ -23732,7 +23732,7 @@
         },
         {
           "disabled": false,
-          "document": "退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)",
           "example": "[\"20241226054077125855171\"]",
           "member": "string",
           "name": "DealNames",
@@ -23824,7 +23824,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离实例的订单id（预付费实例）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隔离实例的订单id（预付费实例）",
           "example": "[\"8345452\"]",
           "member": "string",
           "name": "DealNames",
@@ -23962,7 +23962,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务流id",
           "example": "147286",
           "member": "int64",
           "name": "FlowId",
@@ -23972,7 +23972,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单号列表",
           "example": "[\"20241104\"]",
           "member": "string",
           "name": "DealNames",
@@ -24477,7 +24477,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>版本升级灰度信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本升级灰度信息</p>",
           "example": "无",
           "member": "UpgradeAnalysisInstanceVersionInfo",
           "name": "AnalysisUpgradeVersionInfo",
@@ -25617,7 +25617,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>逻辑备份所跨地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>逻辑备份所跨地域</p>",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "LogicCrossRegions",
@@ -25686,7 +25686,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份项详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨地域备份项详细信息",
           "example": "无",
           "member": "CrossRegionBackupItem",
           "name": "CrossRegionBackupInfos",
@@ -25702,7 +25702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名称",
           "example": "无",
           "member": "string",
           "name": "DbName",
@@ -25713,7 +25713,7 @@
         },
         {
           "disabled": false,
-          "document": "数据表迁移模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据表迁移模式",
           "example": "无",
           "member": "string",
           "name": "MigrateTableMode",
@@ -25724,7 +25724,7 @@
         },
         {
           "disabled": false,
-          "document": "数据表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据表信息",
           "example": "无",
           "member": "MigrateTableItem",
           "name": "Tables",
@@ -25741,7 +25741,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例di\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例di",
           "example": "cdb-xx",
           "member": "string",
           "name": "InstanceId",
@@ -25751,7 +25751,7 @@
         },
         {
           "disabled": false,
-          "document": "实例只读状态:\nON(只读)\nOFF(读写)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例只读状态:\nON(只读)\nOFF(读写)",
           "example": "ON",
           "member": "string",
           "name": "ReadOnlyStatus",
@@ -25761,7 +25761,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc ip",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Vip",
@@ -25771,7 +25771,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc vort\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc vort",
           "example": "3306",
           "member": "int64",
           "name": "Vport",
@@ -25781,7 +25781,7 @@
         },
         {
           "disabled": false,
-          "document": "外网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网域名",
           "example": "xx.xx.xx.xx",
           "member": "string",
           "name": "WanDomain",
@@ -25791,7 +25791,7 @@
         },
         {
           "disabled": false,
-          "document": "外网端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网端口",
           "example": "3306",
           "member": "int64",
           "name": "WanPort",
@@ -25807,7 +25807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源实例id",
           "example": "无",
           "member": "string",
           "name": "SrcInstanceId",
@@ -25818,7 +25818,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源实例类型",
           "example": "无",
           "member": "string",
           "name": "SrcInstanceType",
@@ -25829,7 +25829,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标实例id",
           "example": "无",
           "member": "string",
           "name": "DstInstanceId",
@@ -25840,7 +25840,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标实例类型",
           "example": "无",
           "member": "string",
           "name": "DstInstanceType",
@@ -25857,7 +25857,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库迁移模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库迁移模式",
           "example": "无",
           "member": "string",
           "name": "MigrateDBMode",
@@ -25868,7 +25868,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库信息",
           "example": "无",
           "member": "MigrateDBItem",
           "name": "Databases",
@@ -25902,7 +25902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据表名称",
           "example": "无",
           "member": "string",
           "name": "TableName",
@@ -29606,7 +29606,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "包含数据库表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包含数据库表信息",
           "example": "无",
           "member": "MigrateObject",
           "name": "DatabaseTables",
@@ -29767,7 +29767,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务流id",
           "example": "147288",
           "member": "int64",
           "name": "FlowId",
@@ -31218,7 +31218,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板详情",
           "example": "[{\"\"}]",
           "member": "TemplateParamInfo",
           "name": "ParamInfoSet",
@@ -31234,7 +31234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可选：uppercase、lowercase、numbers、specialcharacter，分别表示大写字母、小写字母、数字、特殊字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可选：uppercase、lowercase、numbers、specialcharacter，分别表示大写字母、小写字母、数字、特殊字符",
           "example": "uppercase",
           "member": "string",
           "name": "CharacterType",
@@ -31244,7 +31244,7 @@
         },
         {
           "disabled": false,
-          "document": "可选值，被调方注意去重，SSM 侧不会主动做去重检验，SSM 只会随机挑选字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可选值，被调方注意去重，SSM 侧不会主动做去重检验，SSM 只会随机挑选字符",
           "example": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
           "member": "string",
           "name": "Choices",
@@ -31254,7 +31254,7 @@
         },
         {
           "disabled": false,
-          "document": "这种类型字符要求的最低长度，如果为 0 表示不允许这种字符，最小值为 0，最大值为密码最大长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "这种类型字符要求的最低长度，如果为 0 表示不允许这种字符，最小值为 0，最大值为密码最大长度",
           "example": "4",
           "member": "int64",
           "name": "MinimumLength",
@@ -31264,7 +31264,7 @@
         },
         {
           "disabled": false,
-          "document": "密码是否必须以这种字符开头，被调方在返回时需要确保多种字符类型中最多只能有一种字符要求必须以某种字符开头，可以全部为 False，表示开头的字符不做要求，SSM 读取时默认按照最后一个出现的标记为准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密码是否必须以这种字符开头，被调方在返回时需要确保多种字符类型中最多只能有一种字符要求必须以某种字符开头，可以全部为 False，表示开头的字符不做要求，SSM 读取时默认按照最后一个出现的标记为准",
           "example": "True",
           "member": "bool",
           "name": "MustStart",
@@ -31812,7 +31812,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库代理节点信息",
           "example": "无",
           "member": "ProxyNodeInfo",
           "name": "ProxyNodes",
@@ -31832,7 +31832,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库代理网络信息",
           "example": "无",
           "member": "NetAddr",
           "name": "NetAddrInfos",
@@ -32390,7 +32390,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移实例信息",
           "example": "无",
           "member": "MigrateInstanceInfoDetail",
           "name": "MigrateInstanceInfos",
@@ -32686,7 +32686,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cpu核数",
           "example": "无",
           "member": "int64",
           "name": "Cpu",
@@ -32696,7 +32696,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存大小",
           "example": "无",
           "member": "int64",
           "name": "Memory",
@@ -32706,7 +32706,7 @@
         },
         {
           "disabled": false,
-          "document": "最小存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小存储大小",
           "example": "无",
           "member": "int64",
           "name": "MinStorageSize",
@@ -32716,7 +32716,7 @@
         },
         {
           "disabled": false,
-          "document": "最大存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大存储大小",
           "example": "无",
           "member": "int64",
           "name": "MaxStorageSize",
@@ -32726,7 +32726,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有库存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否有库存",
           "example": "无",
           "member": "bool",
           "name": "HasStock",
@@ -32736,7 +32736,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型",
           "example": "无",
           "member": "string",
           "name": "InstanceType",
@@ -32746,7 +32746,7 @@
         },
         {
           "disabled": false,
-          "document": "存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储类型",
           "example": "无",
           "member": "string",
           "name": "StorageType",
@@ -32756,7 +32756,7 @@
         },
         {
           "disabled": false,
-          "document": "最小副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小副本数",
           "example": "无",
           "member": "uint64",
           "name": "MinReplicaNum",
@@ -32766,7 +32766,7 @@
         },
         {
           "disabled": false,
-          "document": "最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大副本数",
           "example": "无",
           "member": "uint64",
           "name": "MaxReplicaNum",
@@ -32776,7 +32776,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区库存信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区库存信息列表",
           "example": "无",
           "member": "ZoneStockInfo4Libra",
           "name": "ZoneStockInfos",
@@ -33247,7 +33247,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源端实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端实例类型",
           "example": "cynos",
           "member": "string",
           "name": "SrcInstanceType",
@@ -33258,7 +33258,7 @@
         },
         {
           "disabled": false,
-          "document": "源端集群Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端集群Id",
           "example": "cynosmysql-123",
           "member": "string",
           "name": "SrcClusterId",
@@ -33269,7 +33269,7 @@
         },
         {
           "disabled": false,
-          "document": "源端实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端实例ID",
           "example": "cynosmysql-ins-123",
           "member": "string",
           "name": "SrcInstanceId",
@@ -33280,7 +33280,7 @@
         },
         {
           "disabled": false,
-          "document": "复制任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "复制任务ID",
           "example": "cdc-1234",
           "member": "string",
           "name": "ReplicationJobId",
@@ -33291,7 +33291,7 @@
         },
         {
           "disabled": false,
-          "document": "同步对象详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同步对象详情",
           "example": "无",
           "member": "MigrateOpt",
           "name": "MigrateObjects",
@@ -33508,7 +33508,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源Vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源Vpc信息",
           "example": "无",
           "member": "string",
           "name": "VpcId",
@@ -33518,7 +33518,7 @@
         },
         {
           "disabled": false,
-          "document": "资源子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源子网信息",
           "example": "无",
           "member": "string",
           "name": "SubnetId",
@@ -33528,7 +33528,7 @@
         },
         {
           "disabled": false,
-          "document": "资源的VIP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源的VIP地址",
           "example": "无",
           "member": "string",
           "name": "VIP",
@@ -33538,7 +33538,7 @@
         },
         {
           "disabled": false,
-          "document": "资源的VPort\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源的VPort",
           "example": "无",
           "member": "int64",
           "name": "VPort",
@@ -33548,7 +33548,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所处的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源所处的地域",
           "example": "无",
           "member": "string",
           "name": "Region",
@@ -33558,7 +33558,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所处的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源所处的可用区",
           "example": "无",
           "member": "string",
           "name": "Zone",
@@ -33568,7 +33568,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -33578,7 +33578,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态，Online才能登录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源状态，Online才能登录",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -33588,7 +33588,7 @@
         },
         {
           "disabled": false,
-          "document": "该资源自身的唯一ID，可以为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该资源自身的唯一ID，可以为空",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -33598,7 +33598,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "无",
           "member": "string",
           "name": "ResourceName",
@@ -33664,7 +33664,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID",
           "example": "无",
           "member": "string",
           "name": "ClusterId",
@@ -33674,7 +33674,7 @@
         },
         {
           "disabled": false,
-          "document": "新增的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新增的标签列表",
           "example": "无",
           "member": "Tag",
           "name": "AddTags",
@@ -33684,7 +33684,7 @@
         },
         {
           "disabled": false,
-          "document": "删除的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除的标签列表",
           "example": "无",
           "member": "Tag",
           "name": "DeleteTags",
@@ -33694,7 +33694,7 @@
         },
         {
           "disabled": false,
-          "document": "修改的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改的标签列表",
           "example": "无",
           "member": "Tag",
           "name": "ModifyTags",
@@ -33762,7 +33762,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步任务id",
           "example": "147263",
           "member": "int64",
           "name": "FlowId",
@@ -34112,7 +34112,7 @@
         },
         {
           "disabled": false,
-          "document": "回档数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回档数据库",
           "example": "无",
           "member": "RollbackDatabase",
           "name": "RollbackDatabases",
@@ -34122,7 +34122,7 @@
         },
         {
           "disabled": false,
-          "document": "回档数据表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回档数据表",
           "example": "无",
           "member": "RollbackTable",
           "name": "RollbackTables",
@@ -34332,7 +34332,7 @@
         },
         {
           "disabled": false,
-          "document": "交换实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交换实例列表",
           "example": "无",
           "member": "ExchangeInstanceInfo",
           "name": "ExchangeInstanceInfoList",
@@ -34342,7 +34342,7 @@
         },
         {
           "disabled": false,
-          "document": "交换RO组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交换RO组列表",
           "example": "无",
           "member": "ExchangeRoGroupInfo",
           "name": "ExchangeRoGroupInfoList",
@@ -34919,7 +34919,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "冻结流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "冻结流水ID",
           "example": "20190522160000003106844584180998",
           "member": "string",
           "name": "TranId",
@@ -34929,7 +34929,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单号",
           "example": "[\"20190522112283\"]",
           "member": "string",
           "name": "DealNames",
@@ -34939,7 +34939,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）",
           "example": "[\"cynosdbmysql-ins-67rmucgk\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -34949,7 +34949,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）",
           "example": "[\"cynosdbmysql-9nts65r2\"]",
           "member": "string",
           "name": "ClusterIds",
@@ -34959,7 +34959,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大订单号",
           "example": "[\"20190522112290\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -35297,7 +35297,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>大订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>大订单号</p>",
           "example": "[\"20241226519077105329731\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -35801,7 +35801,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库列表",
           "example": "[\"db1\"]",
           "member": "string",
           "name": "Databases",
@@ -36023,7 +36023,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区库存信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区库存信息</p>",
           "example": "无",
           "member": "ServerlessZoneStockInfo",
           "name": "ZoneStockInfos",
@@ -36614,7 +36614,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>稀疏备份开关：ON/OFF</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>稀疏备份开关：ON/OFF</p>",
           "example": "ON",
           "member": "string",
           "name": "SparseBackupSwitch",
@@ -36624,7 +36624,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>稀疏备份策略列表（1-3条）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>稀疏备份策略列表（1-3条）</p>",
           "example": "无",
           "member": "SparseBackupConfigInfo",
           "name": "SparseBackupConfigInfos",
@@ -37142,7 +37142,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例规格",
           "example": "无",
           "member": "InstanceBasicSpec",
           "name": "InstanceSimpleSpecs",
@@ -38568,7 +38568,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区",
           "example": "无",
           "member": "string",
           "name": "Zone",
@@ -38578,7 +38578,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有库存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否有库存",
           "example": "无",
           "member": "bool",
           "name": "HasStock",

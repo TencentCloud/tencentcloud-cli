@@ -106,7 +106,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "ce68122c-0ca8-4fa6-99b1-90a28670626b",
           "member": "string",
           "name": "TaskId",
@@ -254,7 +254,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "ce68122c-0ca8-4fa6-99b1-90a28670626b",
           "member": "string",
           "name": "TaskId",
@@ -307,7 +307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "ed461a019355c5cd1ce31ab4dfb8cb12",
           "member": "string",
           "name": "TaskId",
@@ -317,7 +317,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -327,7 +327,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。",
           "example": "waiting in queue",
           "member": "string",
           "name": "StatusStr",
@@ -337,7 +337,7 @@
         },
         {
           "disabled": false,
-          "document": "音色id。（若为一句话复刻时，该值为固定值“200000000”）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色id。（若为一句话复刻时，该值为固定值“200000000”）",
           "example": "100000",
           "member": "int64",
           "name": "VoiceType",
@@ -347,7 +347,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因说明。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因说明。",
           "example": "ERROR",
           "member": "string",
           "name": "ErrorMsg",
@@ -357,7 +357,7 @@
         },
         {
           "disabled": false,
-          "document": "任务过期时间。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务过期时间。（当复刻类型为一句话复刻时展示）",
           "example": "2025-07-27T00:00:00+08:00",
           "member": "string",
           "name": "ExpireTime",
@@ -367,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "快速复刻音色ID。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快速复刻音色ID。（当复刻类型为一句话复刻时展示）",
           "example": "WCHN-353xxxx0f3eace0c1",
           "member": "string",
           "name": "FastVoiceType",
@@ -514,7 +514,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频ID （用于创建任务接口AudioIds）,环境检测该值为空，仅在音质检测情况下返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频ID （用于创建任务接口AudioIds）,环境检测该值为空，仅在音质检测情况下返回",
           "example": "vrs8270f89c-51f8-41c9-8bee-19fb5b8b9708",
           "member": "string",
           "name": "AudioId",
@@ -524,7 +524,7 @@
         },
         {
           "disabled": false,
-          "document": "检测code \n\n0 表示当前语音通过\n-1 表示检测失败，需要重试\n-2 表示语音检测不通过，提示用户再重新录制一下（通常漏读，错读，或多读）\n-3 表示语音中噪声较大，不通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测code \n\n0 表示当前语音通过\n-1 表示检测失败，需要重试\n-2 表示语音检测不通过，提示用户再重新录制一下（通常漏读，错读，或多读）\n-3 表示语音中噪声较大，不通过",
           "example": "0",
           "member": "int64",
           "name": "DetectionCode",
@@ -534,7 +534,7 @@
         },
         {
           "disabled": false,
-          "document": "检测提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测提示信息",
           "example": "Success",
           "member": "string",
           "name": "DetectionMsg",
@@ -544,7 +544,7 @@
         },
         {
           "disabled": false,
-          "document": "检测提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测提示信息",
           "example": "无",
           "member": "Words",
           "name": "DetectionTip",
@@ -597,7 +597,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型cos地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型cos地址",
           "example": "https://xxx-xxx-xxxx.cos.ap-guangzhou.myqcloud.com/xxxx.zip",
           "member": "string",
           "name": "Model",
@@ -607,7 +607,7 @@
         },
         {
           "disabled": false,
-          "document": "音色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色名称",
           "example": "testName",
           "member": "string",
           "name": "VoiceName",
@@ -617,7 +617,7 @@
         },
         {
           "disabled": false,
-          "document": "音色性别:\n1-male\n2-female\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色性别:\n1-male\n2-female",
           "example": "1",
           "member": "int64",
           "name": "VoiceGender",
@@ -627,7 +627,7 @@
         },
         {
           "disabled": false,
-          "document": "语言类型：\n1-中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语言类型：\n1-中文",
           "example": "1",
           "member": "int64",
           "name": "VoiceLanguage",
@@ -836,7 +836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文本ID\n当复刻类型为一句话声音复刻时，生成的TextId有效期为7天，且在成功创建一次复刻任务后失效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本ID\n当复刻类型为一句话声音复刻时，生成的TextId有效期为7天，且在成功创建一次复刻任务后失效。",
           "example": "00001",
           "member": "string",
           "name": "TextId",
@@ -846,7 +846,7 @@
         },
         {
           "disabled": false,
-          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本",
           "example": "在很久很久以前 鸟群中有一只小鸟",
           "member": "string",
           "name": "Text",
@@ -862,7 +862,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "训练文本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "训练文本列表",
           "example": "[]",
           "member": "TrainingText",
           "name": "TrainingTextList",
@@ -948,7 +948,7 @@
         },
         {
           "disabled": false,
-          "document": "任务过期时间。（当复刻类型为一句话复刻时展示）\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务过期时间。（当复刻类型为一句话复刻时展示）\n",
           "example": "2023-10-24T10:25:54+08:00",
           "member": "string",
           "name": "ExpireTime",
@@ -958,7 +958,7 @@
         },
         {
           "disabled": false,
-          "document": "快速复刻音色ID。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快速复刻音色ID。（当复刻类型为一句话复刻时展示）",
           "example": "WCHN-353a3xxxx3eace0c1",
           "member": "string",
           "name": "FastVoiceType",
@@ -974,7 +974,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音色信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色信息列表",
           "example": "无",
           "member": "VoiceTypeInfo",
           "name": "VoiceTypeList",
@@ -990,7 +990,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "准确度 (小于75则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "准确度 (小于75则认为不合格)",
           "example": "93.95004272460938",
           "member": "float",
           "name": "PronAccuracy",
@@ -1000,7 +1000,7 @@
         },
         {
           "disabled": false,
-          "document": "流畅度 (小于0.95则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流畅度 (小于0.95则认为不合格)",
           "example": "0.9746154546737671",
           "member": "float",
           "name": "PronFluency",
@@ -1010,7 +1010,7 @@
         },
         {
           "disabled": false,
-          "document": "tag: \n0: match  匹配\n1: insert   多读\n2: delete  少读\n3: replace 错读\n4: oov  待评估字不在发音评估的词库\n5: unknown 未知错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tag: \n0: match  匹配\n1: insert   多读\n2: delete  少读\n3: replace 错读\n4: oov  待评估字不在发音评估的词库\n5: unknown 未知错误",
           "example": "0",
           "member": "int64",
           "name": "Tag",
@@ -1020,7 +1020,7 @@
         },
         {
           "disabled": false,
-          "document": "字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字",
           "example": "我",
           "member": "string",
           "name": "Word",

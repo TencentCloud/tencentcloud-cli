@@ -60,7 +60,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "无",
           "member": "int64",
           "name": "EditTime",
@@ -70,7 +70,7 @@
         },
         {
           "disabled": false,
-          "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能列表",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespFeature",
           "name": "FeatureList",
@@ -80,7 +80,7 @@
         },
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID",
           "example": "无",
           "member": "string",
           "name": "ID",
@@ -90,7 +90,7 @@
         },
         {
           "disabled": false,
-          "document": "用户行业分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户行业分类",
           "example": "无",
           "member": "string",
           "name": "IndustryType",
@@ -100,7 +100,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子用户数量",
           "example": "无",
           "member": "int64",
           "name": "MemberNum",
@@ -110,7 +110,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人列表",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespProduct",
           "name": "ProductList",
@@ -120,7 +120,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "无",
           "member": "string",
           "name": "Remark",
@@ -130,7 +130,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否有效",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -140,7 +140,7 @@
         },
         {
           "disabled": false,
-          "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能列表",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespType",
           "name": "TypeList",
@@ -150,7 +150,7 @@
         },
         {
           "disabled": false,
-          "document": "用户账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户账号",
           "example": "无",
           "member": "string",
           "name": "UserAccount",
@@ -166,7 +166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "功能名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能名称",
           "example": "无",
           "member": "string",
           "name": "FeatureName",
@@ -176,7 +176,7 @@
         },
         {
           "disabled": false,
-          "document": "功能ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能ID",
           "example": "无",
           "member": "string",
           "name": "ID",
@@ -192,7 +192,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "行业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行业ID",
           "example": "无",
           "member": "string",
           "name": "ID",
@@ -202,7 +202,7 @@
         },
         {
           "disabled": false,
-          "document": "行业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行业名称",
           "example": "无",
           "member": "string",
           "name": "IndustryName",
@@ -218,7 +218,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户级别",
           "example": "无",
           "member": "string",
           "name": "AccountLevel",
@@ -228,7 +228,7 @@
         },
         {
           "disabled": false,
-          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户列表",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespData",
           "name": "DataList",
@@ -238,7 +238,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每页数量",
           "example": "无",
           "member": "int64",
           "name": "Limit",
@@ -248,7 +248,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，从0开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页偏移量，从0开始",
           "example": "无",
           "member": "int64",
           "name": "Offset",
@@ -258,7 +258,7 @@
         },
         {
           "disabled": false,
-          "document": "用户总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户总数",
           "example": "无",
           "member": "int64",
           "name": "Total",
@@ -274,7 +274,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -284,7 +284,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编辑时间",
           "example": "无",
           "member": "string",
           "name": "EditTime",
@@ -294,7 +294,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人ID（AppKey信息）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人ID（AppKey信息）",
           "example": "无",
           "member": "string",
           "name": "AppKey",
@@ -304,7 +304,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人图标",
           "example": "无",
           "member": "string",
           "name": "Image",
@@ -314,7 +314,7 @@
         },
         {
           "disabled": false,
-          "document": "行业信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行业信息",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespIndustry",
           "name": "Industry",
@@ -324,7 +324,7 @@
         },
         {
           "disabled": false,
-          "document": "操作员列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作员列表",
           "example": "无",
           "member": "string",
           "name": "OperatorList",
@@ -334,7 +334,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人名字",
           "example": "无",
           "member": "string",
           "name": "ProductName",
@@ -344,7 +344,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "无",
           "member": "string",
           "name": "Remark",
@@ -354,7 +354,7 @@
         },
         {
           "disabled": false,
-          "document": "模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板列表",
           "example": "无",
           "member": "string",
           "name": "TemplateList",
@@ -370,7 +370,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型ID",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -380,7 +380,7 @@
         },
         {
           "disabled": false,
-          "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型名称",
           "example": "无",
           "member": "string",
           "name": "TypeName",
@@ -396,7 +396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "RspMetadata",
           "name": "Metadata",
@@ -406,7 +406,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespPayload",
           "name": "Payload",

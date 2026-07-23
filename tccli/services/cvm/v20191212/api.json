@@ -240,7 +240,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称",
           "example": "myTask",
           "member": "string",
           "name": "Alias",
@@ -290,7 +290,7 @@
         },
         {
           "disabled": false,
-          "document": "任务授权时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务授权时间",
           "example": "2017-01-03 12:00:00",
           "member": "datetime",
           "name": "AuthTime",
@@ -300,7 +300,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束时间",
           "example": "2017-01-03 14:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -310,7 +310,7 @@
         },
         {
           "disabled": false,
-          "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务详情",
           "example": "监控到您的云服务器存在隐患，可能导致云服务器高负载或宕机。为尽快修复隐患，需要您授权我们在线迁移。感谢您的支持与理解。",
           "member": "string",
           "name": "TaskDetail",
@@ -340,7 +340,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区",
           "example": "ap-guangzhou-7",
           "member": "string",
           "name": "Zone",
@@ -350,7 +350,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -360,7 +360,7 @@
         },
         {
           "disabled": false,
-          "document": "所在私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所在私有网络ID",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -370,7 +370,7 @@
         },
         {
           "disabled": false,
-          "document": "所在私有网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所在私有网络名称",
           "example": "Default-VPC",
           "member": "string",
           "name": "VpcName",
@@ -380,7 +380,7 @@
         },
         {
           "disabled": false,
-          "document": "所在子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所在子网ID",
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
@@ -390,7 +390,7 @@
         },
         {
           "disabled": false,
-          "document": "所在子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所在子网名称",
           "example": "Default-Subnet",
           "member": "string",
           "name": "SubnetName",
@@ -400,7 +400,7 @@
         },
         {
           "disabled": false,
-          "document": "实例公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例公网IP",
           "example": "11.22.33.44",
           "member": "string",
           "name": "WanIp",
@@ -410,7 +410,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例内网IP",
           "example": "10.10.1.9",
           "member": "string",
           "name": "LanIp",
@@ -420,7 +420,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型，支持取值：\n\n- `CVM`：云服务器\n- `CDH`：专用宿主机\n- `CPM2.0`：裸金属云服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品类型，支持取值：\n\n- `CVM`：云服务器\n- `CDH`：专用宿主机\n- `CPM2.0`：裸金属云服务器",
           "example": "CVM",
           "member": "string",
           "name": "Product",
@@ -430,7 +430,7 @@
         },
         {
           "disabled": false,
-          "document": "任务子类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务子类型",
           "example": "NA",
           "member": "string",
           "name": "TaskSubType",

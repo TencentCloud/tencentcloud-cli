@@ -402,7 +402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新建成功的维权任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新建成功的维权任务ID",
           "example": "R17107",
           "member": "string",
           "name": "TaskId",
@@ -412,7 +412,7 @@
         },
         {
           "disabled": false,
-          "document": "维权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维权信息",
           "example": "无",
           "member": "RightLetter",
           "name": "Letters",
@@ -597,7 +597,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监测作品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品ID",
           "example": "W39360",
           "member": "string",
           "name": "WorkId",
@@ -607,7 +607,7 @@
         },
         {
           "disabled": false,
-          "document": "监测作品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品名称",
           "example": "节目名称",
           "member": "string",
           "name": "WorkName",
@@ -617,7 +617,7 @@
         },
         {
           "disabled": false,
-          "document": "作品链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "作品链接",
           "example": "https://v.qq.com/x/cover/mzc003m069pge61/r35097uc0qk.html",
           "member": "string",
           "name": "Url",
@@ -690,7 +690,7 @@
         },
         {
           "disabled": false,
-          "document": "维权凭证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维权凭证",
           "example": "哔哩哔哩视频下线通知函-0-2023051616",
           "member": "string",
           "name": "Proof",
@@ -700,7 +700,7 @@
         },
         {
           "disabled": false,
-          "document": "维权时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维权时间",
           "example": "2023-16-07 16:12:38",
           "member": "string",
           "name": "EmailTime",
@@ -781,7 +781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监测结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测结果",
           "example": "无",
           "member": "WorkResult",
           "name": "Results",
@@ -791,7 +791,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "偏移量",
           "example": "无",
           "member": "int64",
           "name": "Offset",
@@ -801,7 +801,7 @@
         },
         {
           "disabled": false,
-          "document": "总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总量",
           "example": "无",
           "member": "int64",
           "name": "Sum",
@@ -936,7 +936,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监测作品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品ID",
           "example": "无",
           "member": "string",
           "name": "WorkId",
@@ -946,7 +946,7 @@
         },
         {
           "disabled": false,
-          "document": "作品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "作品名称",
           "example": "无",
           "member": "string",
           "name": "WorkName",
@@ -956,7 +956,7 @@
         },
         {
           "disabled": false,
-          "document": "作品链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "作品链接",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -966,7 +966,7 @@
         },
         {
           "disabled": false,
-          "document": "监测任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测任务ID",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -982,7 +982,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监测任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测任务ID",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -992,7 +992,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务名称",
           "example": "无",
           "member": "string",
           "name": "TaskName",
@@ -1002,7 +1002,7 @@
         },
         {
           "disabled": false,
-          "document": "监测作品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品",
           "example": "无",
           "member": "MonitorWorkVO",
           "name": "Works",
@@ -1018,7 +1018,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "维权ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维权ID",
           "example": "L57133",
           "member": "string",
           "name": "LetterId",
@@ -1028,7 +1028,7 @@
         },
         {
           "disabled": false,
-          "document": "侵权ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "侵权ID",
           "example": "55637",
           "member": "int64",
           "name": "InfringeId",
@@ -1470,7 +1470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "侵权ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "侵权ID",
           "example": "55561",
           "member": "int64",
           "name": "InfringeId",
@@ -1480,7 +1480,7 @@
         },
         {
           "disabled": false,
-          "document": "侵权作者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "侵权作者",
           "example": "无",
           "member": "string",
           "name": "Author",
@@ -1490,7 +1490,7 @@
         },
         {
           "disabled": false,
-          "document": "侵权作者ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "侵权作者ID",
           "example": "无",
           "member": "string",
           "name": "AuthorId",
@@ -1500,7 +1500,7 @@
         },
         {
           "disabled": false,
-          "document": "采集时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集时间",
           "example": "2023-06-04 17:42:03",
           "member": "string",
           "name": "CrawlTime",
@@ -1510,7 +1510,7 @@
         },
         {
           "disabled": false,
-          "document": "侵权内容时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "侵权内容时长，单位秒",
           "example": "0",
           "member": "string",
           "name": "Duration",
@@ -1520,7 +1520,7 @@
         },
         {
           "disabled": false,
-          "document": "侵权标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "侵权标题",
           "example": "满满续约",
           "member": "string",
           "name": "InfringeTitle",
@@ -1530,7 +1530,7 @@
         },
         {
           "disabled": false,
-          "document": "监测作品标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品标题",
           "example": "梦娃呓语 随机掉落的沙雕小故事•城市妖怪的自我修养（1）",
           "member": "string",
           "name": "WorkName",
@@ -1540,7 +1540,7 @@
         },
         {
           "disabled": false,
-          "document": "侵权平台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "侵权平台",
           "example": "麒麟文学网_麒麟文学网",
           "member": "string",
           "name": "PlatformName",
@@ -1550,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "侵权播放量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "侵权播放量",
           "example": "0",
           "member": "string",
           "name": "PlayNum",
@@ -1560,7 +1560,7 @@
         },
         {
           "disabled": false,
-          "document": "监测作品发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品发布时间",
           "example": "2023-03-03 14:00:00",
           "member": "string",
           "name": "PublishTime",
@@ -1570,7 +1570,7 @@
         },
         {
           "disabled": false,
-          "document": "监测作品接收时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品接收时间",
           "example": "2023-06-04 17:45:07",
           "member": "string",
           "name": "ReceiveTime",
@@ -1580,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "监测任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测任务ID",
           "example": "T23279",
           "member": "string",
           "name": "TaskId",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "监测作品链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品链接",
           "example": "http://m.bfbwz.com/news/22535.html",
           "member": "string",
           "name": "Url",
@@ -1600,7 +1600,7 @@
         },
         {
           "disabled": false,
-          "document": "监测作品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监测作品ID",
           "example": "W39355",
           "member": "string",
           "name": "WorkId",
@@ -1610,7 +1610,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体类型",
           "example": "300",
           "member": "int64",
           "name": "MediaType",
@@ -1620,7 +1620,7 @@
         },
         {
           "disabled": false,
-          "document": "相似度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相似度",
           "example": "0.93",
           "member": "float",
           "name": "Similarity",
@@ -1630,7 +1630,7 @@
         },
         {
           "disabled": false,
-          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外信息",
           "example": "无",
           "member": "WorkResultExtraInfo",
           "name": "ExtraInfo",
@@ -1646,7 +1646,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IP所属公司\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP所属公司",
           "example": "无",
           "member": "string",
           "name": "IpCompany",
@@ -1656,7 +1656,7 @@
         },
         {
           "disabled": false,
-          "document": "IP宣发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP宣发时间",
           "example": "无",
           "member": "string",
           "name": "IpPubtime",
@@ -1666,7 +1666,7 @@
         },
         {
           "disabled": false,
-          "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景名称",
           "example": "无",
           "member": "string",
           "name": "IpScene",

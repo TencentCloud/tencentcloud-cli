@@ -578,7 +578,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组规则。",
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
@@ -1489,7 +1489,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>健康得分。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康得分。</p>",
           "example": "0",
           "member": "float",
           "name": "HealthScore",
@@ -1499,7 +1499,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>异常告警。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>异常告警。</p>",
           "example": "0",
           "member": "int64",
           "name": "Warning",
@@ -1509,7 +1509,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>所属项目。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属项目。</p>",
           "example": "vdb",
           "member": "string",
           "name": "Project",

@@ -2653,7 +2653,7 @@
         },
         {
           "disabled": false,
-          "document": "公网 IP 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网 IP 地址",
           "example": "1.1.1.1",
           "member": "string",
           "name": "AddressIp",
@@ -2663,7 +2663,7 @@
         },
         {
           "disabled": false,
-          "document": "出带宽上限，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出带宽上限，单位Mbps",
           "example": "5",
           "member": "uint64",
           "name": "Bandwidth",

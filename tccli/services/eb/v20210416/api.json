@@ -361,7 +361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "name",
           "example": "无",
           "member": "string",
           "name": "Key",
@@ -372,7 +372,7 @@
         },
         {
           "disabled": false,
-          "document": "张三\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "张三",
           "example": "无",
           "member": "string",
           "name": "Value",
@@ -828,7 +828,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云产品名称",
           "example": "云服务器",
           "member": "string",
           "name": "ProductName",
@@ -838,7 +838,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云产品类型",
           "example": "cvm",
           "member": "string",
           "name": "ProductType",
@@ -848,7 +848,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集类型(自定义/云服务)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件集类型(自定义/云服务)",
           "example": "Cloud",
           "member": "string",
           "name": "Type",
@@ -970,7 +970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接器类型",
           "example": "tdmq",
           "member": "string",
           "name": "Type",
@@ -980,7 +980,7 @@
         },
         {
           "disabled": false,
-          "document": "连接器状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接器状态",
           "example": "Normal",
           "member": "string",
           "name": "Status",
@@ -1007,7 +1007,7 @@
         },
         {
           "disabled": false,
-          "document": "apigw参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "apigw参数",
           "example": "无",
           "member": "APIGWParams",
           "name": "APIGWParams",
@@ -1018,7 +1018,7 @@
         },
         {
           "disabled": false,
-          "document": "ckafka参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ckafka参数",
           "example": "无",
           "member": "CkafkaParams",
           "name": "CkafkaParams",
@@ -1029,7 +1029,7 @@
         },
         {
           "disabled": false,
-          "document": "data transfer service (DTS)参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "data transfer service (DTS)参数",
           "example": "无",
           "member": "DTSParams",
           "name": "DTSParams",
@@ -1040,7 +1040,7 @@
         },
         {
           "disabled": false,
-          "document": "tdmq参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tdmq参数",
           "example": "无",
           "member": "TDMQParams",
           "name": "TDMQParams",
@@ -1057,7 +1057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接器名称",
           "example": "kafka连接器",
           "member": "string",
           "name": "ConnectorName",
@@ -1067,7 +1067,7 @@
         },
         {
           "disabled": false,
-          "document": "连接器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接器类型",
           "example": "ckafka",
           "member": "string",
           "name": "ConnectorType",
@@ -1470,7 +1470,7 @@
         },
         {
           "disabled": false,
-          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密码",
           "example": "user-pwd",
           "member": "string",
           "name": "Password",
@@ -1497,7 +1497,7 @@
         },
         {
           "disabled": false,
-          "document": "设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中",
           "example": "无",
           "member": "CkafkaDeliveryParams",
           "name": "CkafkaDeliveryParams",
@@ -1853,7 +1853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>事件查询维度值结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件查询维度值结果</p>",
           "example": "[\"ckafka.cloud.tencent\"]",
           "member": "string",
           "name": "Results",
@@ -1875,7 +1875,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>网络连接类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>网络连接类型</p>",
           "example": "privatelink",
           "member": "string",
           "name": "NetMode",
@@ -1886,7 +1886,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>索引前缀</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>索引前缀</p>",
           "example": "esindex",
           "member": "string",
           "name": "IndexPrefix",
@@ -1897,7 +1897,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>es日志轮换粒度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>es日志轮换粒度</p>",
           "example": "none",
           "member": "string",
           "name": "RotationInterval",
@@ -1908,7 +1908,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>DTS事件配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DTS事件配置</p>",
           "example": "default",
           "member": "string",
           "name": "OutputMode",
@@ -1919,7 +1919,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>DTS索引配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DTS索引配置</p>",
           "example": "default",
           "member": "string",
           "name": "IndexSuffixMode",
@@ -1930,7 +1930,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>es模版类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>es模版类型</p>",
           "example": "_type",
           "member": "string",
           "name": "IndexTemplateType",
@@ -2110,7 +2110,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费模式",
           "example": "Postpaid(后付费)",
           "member": "string",
           "name": "PayMode",
@@ -2120,7 +2120,7 @@
         },
         {
           "disabled": false,
-          "document": "连接器基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接器基础信息",
           "example": "无",
           "member": "ConnectionBrief",
           "name": "ConnectionBriefs",
@@ -2130,7 +2130,7 @@
         },
         {
           "disabled": false,
-          "document": "目标简要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标简要信息",
           "example": "无",
           "member": "TargetBrief",
           "name": "TargetBriefs",
@@ -2146,7 +2146,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件中文名称",
           "example": "磁盘只读",
           "member": "string",
           "name": "EventName",
@@ -2157,7 +2157,7 @@
         },
         {
           "disabled": false,
-          "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件类型",
           "example": "无",
           "member": "string",
           "name": "EventType",
@@ -2168,7 +2168,7 @@
         },
         {
           "disabled": false,
-          "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件ID",
           "example": "24",
           "member": "int64",
           "name": "EventId",
@@ -2195,7 +2195,7 @@
         },
         {
           "disabled": false,
-          "document": "产品中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品中文名称",
           "example": "无",
           "member": "string",
           "name": "ProductNameCh",
@@ -2205,7 +2205,7 @@
         },
         {
           "disabled": false,
-          "document": "产品英文简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品英文简称",
           "example": "无",
           "member": "string",
           "name": "ProductNameEn",
@@ -2215,7 +2215,7 @@
         },
         {
           "disabled": false,
-          "document": "告警事件类型（中文）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警事件类型（中文）",
           "example": "无",
           "member": "string",
           "name": "EventTypeCh",
@@ -2225,7 +2225,7 @@
         },
         {
           "disabled": false,
-          "document": "告警事件类型（英文）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警事件类型（英文）",
           "example": "无",
           "member": "string",
           "name": "EventTypeEn",
@@ -2235,7 +2235,7 @@
         },
         {
           "disabled": false,
-          "document": "有无恢复概念：1:有，0:无，-1:未填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有无恢复概念：1:有，0:无，-1:未填写",
           "example": "无",
           "member": "int64",
           "name": "HasRecovery",
@@ -2245,7 +2245,7 @@
         },
         {
           "disabled": false,
-          "document": "事件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件描述",
           "example": "无",
           "member": "string",
           "name": "EventDescription",
@@ -2255,7 +2255,7 @@
         },
         {
           "disabled": false,
-          "document": "处理方法与建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理方法与建议",
           "example": "无",
           "member": "string",
           "name": "Suggestions",
@@ -2265,7 +2265,7 @@
         },
         {
           "disabled": false,
-          "document": "接口投递source字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接口投递source字段",
           "example": "无",
           "member": "string",
           "name": "EventSource",
@@ -2275,7 +2275,7 @@
         },
         {
           "disabled": false,
-          "document": "接口投递type字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接口投递type字段",
           "example": "无",
           "member": "string",
           "name": "EventType",
@@ -2397,7 +2397,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件ID",
           "example": "24",
           "member": "int64",
           "name": "EventId",
@@ -2408,7 +2408,7 @@
         },
         {
           "disabled": false,
-          "document": "事件中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件中文名称",
           "example": "磁盘只读",
           "member": "string",
           "name": "EventName",
@@ -2419,7 +2419,7 @@
         },
         {
           "disabled": false,
-          "document": "事件匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件匹配规则",
           "example": "无",
           "member": "string",
           "name": "EventPattern",
@@ -2456,7 +2456,7 @@
         },
         {
           "disabled": false,
-          "document": "仅在Text需要传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅在Text需要传递",
           "example": "无",
           "member": "TextParams",
           "name": "TextParams",
@@ -2511,7 +2511,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件模版",
           "example": "无",
           "member": "string",
           "name": "EventTemplate",
@@ -2548,7 +2548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件模版",
           "example": "无",
           "member": "string",
           "name": "EventTemplate",
@@ -2666,7 +2666,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>EB日志存储时长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>EB日志存储时长</p>",
           "example": "1",
           "member": "int64",
           "name": "SaveDays",
@@ -2675,7 +2675,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>EB日志主题ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>EB日志主题ID</p>",
           "example": "sdk-eda*ac8",
           "member": "string",
           "name": "LogTopicId",
@@ -2684,7 +2684,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启存储</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启存储</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableStore",
@@ -2693,7 +2693,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>消息序列，是否有序</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息序列，是否有序</p>",
           "example": "Disorder",
           "member": "string",
           "name": "LinkMode",
@@ -2729,7 +2729,7 @@
         },
         {
           "disabled": false,
-          "document": "事件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件详情",
           "example": "无",
           "member": "EventDetails",
           "name": "EventsDetectors",
@@ -2984,7 +2984,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件中文名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件中文名称集合",
           "example": "无",
           "member": "EventDetail",
           "name": "EventNames",
@@ -3021,7 +3021,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件规则样式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件规则样式",
           "example": "无",
           "member": "EventSummary",
           "name": "EventPatterns",
@@ -3048,7 +3048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云产品列表",
           "example": "无",
           "member": "CloudProduct",
           "name": "CloudProducts",
@@ -3168,7 +3168,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接器事件中文名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接器事件中文名称集合",
           "example": "无",
           "member": "EventDetail",
           "name": "EventNames",
@@ -3205,7 +3205,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件规则样式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件规则样式",
           "example": "无",
           "member": "EventSummary",
           "name": "EventPatterns",
@@ -3232,7 +3232,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接器列表",
           "example": "无",
           "member": "Connector",
           "name": "Connectors",
@@ -3738,7 +3738,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>事件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件名称</p>",
           "example": "外网异常告警",
           "member": "string",
           "name": "EventName",
@@ -3748,7 +3748,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件类型</p>",
           "example": "network:ErrorEvent:PublicNetworkAlarm",
           "member": "string",
           "name": "EventType",
@@ -3764,7 +3764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>平台事件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>平台事件名称</p>",
           "example": "外网异常告警",
           "member": "string",
           "name": "EventName",
@@ -3774,7 +3774,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>平台事件匹配规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>平台事件匹配规则</p>",
           "example": "{    \"source\":\"network.cloud.tencent\",    \"type\":\"network:ErrorEvent:PublicNetworkAlarm\"}",
           "member": "string",
           "name": "EventPattern",
@@ -3867,7 +3867,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "eventList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "eventList",
           "example": "无",
           "member": "PutEventsRespEventList",
           "name": "EventList",
@@ -3985,7 +3985,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "eventId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "eventId",
           "example": "a449f37d-fa92-4dc8-8f69-d94be3bfadb3",
           "member": "string",
           "name": "Id",
@@ -4119,7 +4119,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Target 简要信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Target 简要信息</p>",
           "example": "无",
           "member": "TargetBrief",
           "name": "Targets",
@@ -4129,7 +4129,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>rule设置的dlq规则. 可能为null</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>rule设置的dlq规则. 可能为null</p>",
           "example": "无",
           "member": "DeadLetterConfig",
           "name": "DeadLetterConfig",
@@ -4145,7 +4145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量投递最长等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量投递最长等待时间",
           "example": "1",
           "member": "int64",
           "name": "BatchTimeout",
@@ -4156,7 +4156,7 @@
         },
         {
           "disabled": false,
-          "document": "批量投递最大事件条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量投递最大事件条数",
           "example": "1",
           "member": "int64",
           "name": "BatchEventCount",
@@ -4167,7 +4167,7 @@
         },
         {
           "disabled": false,
-          "document": "开启批量投递使能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启批量投递使能",
           "example": "false",
           "member": "bool",
           "name": "EnableBatchDelivery",
@@ -4262,7 +4262,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>事件总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件总数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -4272,7 +4272,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>每页事件条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>每页事件条数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -4282,7 +4282,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>页码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>页码</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -4292,7 +4292,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件查询结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件查询结果</p>",
           "example": "无",
           "member": "SearchLogResult",
           "name": "Results",
@@ -4314,7 +4314,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>单条日志上报时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单条日志上报时间</p>",
           "example": "2026-06-24 12:00:07",
           "member": "string",
           "name": "Timestamp",
@@ -4324,7 +4324,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>日志内容详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志内容详情</p>",
           "example": "{\"source\":\"network.cloud.tencent\",\"type\":\"network:ErrorEvent:PublicNetworkAlarm\",\"subject\":\"ap-guangzhou\",\"time\":1687860662350,\"region\":\"ap-guangzhou\",\"status\": \"-\",\"data\":{\"dimensions\": {\"status\": \"未恢复\",\"type\": \"外网异常\"}}}",
           "member": "string",
           "name": "Message",
@@ -4334,7 +4334,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件来源</p>",
           "example": "network.cloud.tencent",
           "member": "string",
           "name": "Source",
@@ -4344,7 +4344,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件类型</p>",
           "example": "network:ErrorEvent:PublicNetworkAlarm",
           "member": "string",
           "name": "Type",
@@ -4354,7 +4354,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件匹配规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件匹配规则</p>",
           "example": "rule-xxxx",
           "member": "string",
           "name": "RuleIds",
@@ -4364,7 +4364,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxxx",
           "member": "string",
           "name": "Subject",
@@ -4374,7 +4374,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -4384,7 +4384,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件状态</p>",
           "example": "1",
           "member": "string",
           "name": "Status",
@@ -4400,7 +4400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每分钟统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每分钟统计值",
           "example": "20",
           "member": "int64",
           "name": "Count",
@@ -4410,7 +4410,7 @@
         },
         {
           "disabled": false,
-          "document": "时间戳，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间戳，精确到毫秒",
           "example": "1675656420000",
           "member": "int64",
           "name": "Timestamp",
@@ -4426,7 +4426,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件状态，all表示所有状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件状态，all表示所有状态",
           "example": "all",
           "member": "string",
           "name": "Status",
@@ -4436,7 +4436,7 @@
         },
         {
           "disabled": false,
-          "document": "每分钟的聚合数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每分钟的聚合数组",
           "example": "无",
           "member": "StatsLogData",
           "name": "Data",
@@ -4503,7 +4503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>集群类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群类型</p>",
           "example": "default:虚拟集群; exclusive:专业集群",
           "member": "string",
           "name": "ClusterType",
@@ -4514,7 +4514,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群支撑网接入点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群支撑网接入点</p>",
           "example": "默认为空",
           "member": "string",
           "name": "ClusterEndPoint",
@@ -4609,7 +4609,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>开启批量投递使能</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开启批量投递使能</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableBatchDelivery",
@@ -4619,7 +4619,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>批量投递最长等待时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>批量投递最长等待时间</p>",
           "example": "1",
           "member": "int64",
           "name": "BatchTimeout",
@@ -4629,7 +4629,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>批量投递最大事件条数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>批量投递最大事件条数</p>",
           "example": "1",
           "member": "int64",
           "name": "BatchEventCount",
@@ -4721,7 +4721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。",
           "example": ",",
           "member": "string",
           "name": "Separator",
@@ -4731,7 +4731,7 @@
         },
         {
           "disabled": false,
-          "document": "填写正则表达式：长度128\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "填写正则表达式：长度128",
           "example": "a(.*)bc",
           "member": "string",
           "name": "Regex",
@@ -4763,7 +4763,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "描述如何提取数据，{\"ExtractionInputPath\":\"$.data.payload\",\"Format\":\"JSON\"}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述如何提取数据，{\"ExtractionInputPath\":\"$.data.payload\",\"Format\":\"JSON\"}",
           "example": "{\"ExtractionInputPath\":\"$.data.payload\",\"Format\":\"JSON\"}",
           "member": "Extraction",
           "name": "Extraction",
@@ -4774,7 +4774,7 @@
         },
         {
           "disabled": false,
-          "document": "描述如何过滤数据;{\"Filter\":\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述如何过滤数据;{\"Filter\":\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"}",
           "example": "{\"Filter\":\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"}",
           "member": "EtlFilter",
           "name": "EtlFilter",
@@ -4785,7 +4785,7 @@
         },
         {
           "disabled": false,
-          "document": "描述如何数据转换;\"OutputStructs\":[{\"Key\":\"op\",\"Value\":\"$.op\",\"ValueType\":\"JSONPATH\"}]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述如何数据转换;\"OutputStructs\":[{\"Key\":\"op\",\"Value\":\"$.op\",\"ValueType\":\"JSONPATH\"}]",
           "example": "\"OutputStructs\":[{\"Key\":\"op\",\"Value\":\"$.op\",\"ValueType\":\"JSONPATH\"}]",
           "member": "Transform",
           "name": "Transform",

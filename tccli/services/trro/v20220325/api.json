@@ -3274,7 +3274,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>【已废弃，使用RenderCost】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>【已废弃，使用RenderCost】</p>",
           "example": "[20,20,30]",
           "member": "int64",
           "name": "RenderConst",

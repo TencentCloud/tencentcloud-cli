@@ -642,7 +642,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证书有效的时间，以 iso8601 格式的 UTC 时间表示。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书有效的时间，以 iso8601 格式的 UTC 时间表示。</p>",
           "example": "2026-07-15T13:01:30Z",
           "member": "string",
           "name": "Expiration",
@@ -715,7 +715,7 @@
         },
         {
           "disabled": false,
-          "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示",
           "example": "2023-06-13T13:55:53Z",
           "member": "string",
           "name": "Expiration",
@@ -789,7 +789,7 @@
         },
         {
           "disabled": false,
-          "document": "临时访问凭证有效的时间，以 iso8601 格式的 UTC 时间表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时访问凭证有效的时间，以 iso8601 格式的 UTC 时间表示",
           "example": "2023-06-13T13:55:53Z",
           "member": "string",
           "name": "Expiration",
@@ -1020,7 +1020,7 @@
         },
         {
           "disabled": false,
-          "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示。",
           "example": "2018-12-04T09:06:16Z",
           "member": "string",
           "name": "Expiration",
@@ -1233,7 +1233,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>回显用作过滤的 date</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回显用作过滤的 date</p>",
           "example": "20260715",
           "member": "string",
           "name": "Date",

@@ -2178,7 +2178,7 @@
         },
         {
           "disabled": false,
-          "document": "未配置的参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未配置的参数列表",
           "example": "[{\"ConfKey\": \"max_table_size_to_drop\",\"ConfValue\": \"\",\"DefaultValue\": \"50000000000\",\"NeedRestart\": false,\"Editable\": true,\"ConfDesc\": \"\",\"FileName\": \"config.xml\",\"ModifyRuleType\": \"number\",\"ModifyRuleValue\": \"\",\"Uin\": \"100000000000\",\"ModifyTime\": \"\"}]",
           "member": "InstanceConfigInfo",
           "name": "UnConfigItems",
@@ -2188,7 +2188,7 @@
         },
         {
           "disabled": false,
-          "document": "配置的多层级参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置的多层级参数列表",
           "example": "[{\"ConfKey\":\"logger\",\"Items\":[{\"ConfKey\":\"logger.level\",\"ConfValue\":\"trace\",\"DefaultValue\":\"\",\"NeedRestart\":false,\"Editable\":false,\"ConfDesc\":\"\",\"FileName\":\"\",\"ModifyRuleType\":\"\",\"ModifyRuleValue\": \"\",\"Uin\":\"100000000000\",\"ModifyTime\":\"\"}]}]",
           "member": "MapConfigItem",
           "name": "MapConfigItems",
@@ -2290,7 +2290,7 @@
         },
         {
           "disabled": false,
-          "document": "实例节点总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例节点总数",
           "example": "无",
           "member": "InstanceNode",
           "name": "InstanceNodesList",
@@ -2719,7 +2719,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例总数",
           "example": "18",
           "member": "int64",
           "name": "TotalCount",
@@ -2729,7 +2729,7 @@
         },
         {
           "disabled": false,
-          "document": "集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群信息",
           "example": "无",
           "member": "InstanceInfoV2",
           "name": "InstancesList",
@@ -4164,7 +4164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群实例信息",
           "example": "InstanceInfo",
           "member": "InstanceInfo",
           "name": "InstanceInfo",
@@ -4174,7 +4174,7 @@
         },
         {
           "disabled": false,
-          "document": "uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "uin",
           "example": "1321",
           "member": "string",
           "name": "Uin",
@@ -4184,7 +4184,7 @@
         },
         {
           "disabled": false,
-          "document": "appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "appid",
           "example": "1231",
           "member": "int64",
           "name": "AppId",
@@ -4194,7 +4194,7 @@
         },
         {
           "disabled": false,
-          "document": "cvm数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cvm数组",
           "example": "无",
           "member": "TotalCvms",
           "name": "TotalCvms",
@@ -4464,7 +4464,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>流程的二级名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流程的二级名称</p>",
           "example": "购买集群",
           "member": "string",
           "name": "ProcessSubName",
@@ -4475,7 +4475,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求ID</p>",
           "example": "1223-eee",
           "member": "string",
           "name": "RequestID",
@@ -5841,7 +5841,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名称",
           "example": "xx",
           "member": "string",
           "name": "CurrentDatabase",
@@ -5909,7 +5909,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主键id",
           "example": "18055",
           "member": "uint64",
           "name": "Id",
@@ -5919,7 +5919,7 @@
         },
         {
           "disabled": false,
-          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户appid",
           "example": "1305504398",
           "member": "int64",
           "name": "Appid",
@@ -5929,7 +5929,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-seoul",
           "member": "string",
           "name": "Region",
@@ -5939,7 +5939,7 @@
         },
         {
           "disabled": false,
-          "document": "cvm的insId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cvm的insId",
           "example": "ins-jme2yvdr",
           "member": "string",
           "name": "CvmInstanceId",
@@ -5949,7 +5949,7 @@
         },
         {
           "disabled": false,
-          "document": "cvm机型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cvm机型",
           "example": "S5.LARGE16",
           "member": "string",
           "name": "InstanceType",
@@ -5959,7 +5959,7 @@
         },
         {
           "disabled": false,
-          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ip地址",
           "example": "9.0.16.12",
           "member": "string",
           "name": "Ip",
@@ -5969,7 +5969,7 @@
         },
         {
           "disabled": false,
-          "document": "Cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cpu核数",
           "example": "4",
           "member": "int64",
           "name": "Cpu",
@@ -5979,7 +5979,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存大小",
           "example": "16",
           "member": "int64",
           "name": "Memory",
@@ -5989,7 +5989,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群名称",
           "example": "vm-cdwch-5qh67lye",
           "member": "string",
           "name": "InstanceName",
@@ -5999,7 +5999,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费类型",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -6009,7 +6009,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像id",
           "example": "img-dodn7d0r",
           "member": "string",
           "name": "ImageId",
@@ -6019,7 +6019,7 @@
         },
         {
           "disabled": false,
-          "document": "是否续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否续费",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -6029,7 +6029,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -6039,7 +6039,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过期时间",
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
@@ -6049,7 +6049,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像名称",
           "example": "TencentOS Server 3.2 (Final)",
           "member": "string",
           "name": "OsName",
@@ -6059,7 +6059,7 @@
         },
         {
           "disabled": false,
-          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群状态",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceState",
@@ -6069,7 +6069,7 @@
         },
         {
           "disabled": false,
-          "document": "uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "uuid",
           "example": "ff63011f-f42a-4275-aea3-8b45133ed68c",
           "member": "string",
           "name": "Uuid",
@@ -6079,7 +6079,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc网络id",
           "example": "vpc-jwfmpw5q",
           "member": "string",
           "name": "VpcId",
@@ -6089,7 +6089,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡id",
           "example": "subnet-mrwpi5dd",
           "member": "string",
           "name": "SubnetId",
@@ -6099,7 +6099,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群id",
           "example": "cdwch-5qh67lye",
           "member": "string",
           "name": "CdwInstanceId",

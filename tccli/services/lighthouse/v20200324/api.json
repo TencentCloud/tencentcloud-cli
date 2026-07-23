@@ -1649,7 +1649,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "无",
           "member": "datetime_iso",
           "name": "IsolatedTime",
@@ -1659,7 +1659,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -1669,7 +1669,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。",
           "example": "无",
           "member": "datetime_iso",
           "name": "ExpiredTime",
@@ -1739,7 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像图标的URL地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像图标的URL地址。",
           "example": "无",
           "member": "string",
           "name": "BlueprintImageUrl",
@@ -1749,7 +1749,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID，形如vpc-xxx。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络ID，形如vpc-xxx。",
           "example": "无",
           "member": "string",
           "name": "VpcId",
@@ -1759,7 +1759,7 @@
         },
         {
           "disabled": false,
-          "document": "用户账号APPID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户账号APPID。",
           "example": "无",
           "member": "int64",
           "name": "AccountAppId",
@@ -1769,7 +1769,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像名。",
           "example": "无",
           "member": "string",
           "name": "BlueprintName",
@@ -1779,7 +1779,7 @@
         },
         {
           "disabled": false,
-          "document": "用户账号UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户账号UIN。",
           "example": "无",
           "member": "string",
           "name": "AccountUin",
@@ -1789,7 +1789,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所在地域。",
           "example": "无",
           "member": "string",
           "name": "Region",
@@ -1799,7 +1799,7 @@
         },
         {
           "disabled": false,
-          "document": "资源大账号APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源大账号APPID",
           "example": "无",
           "member": "int64",
           "name": "AccountOriginAppId",
@@ -1819,7 +1819,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CVM实例ID。",
           "example": "ins-1ha0grzx",
           "member": "string",
           "name": "OriginInstanceId",
@@ -1829,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "创建实例后自动执行TAT命令的调用ID。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建实例后自动执行TAT命令的调用ID。\t",
           "example": "inv-adtgj412l",
           "member": "string",
           "name": "InitInvocationId",
@@ -2565,7 +2565,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像描述信息。",
           "example": "discuzq",
           "member": "string",
           "name": "Description",
@@ -2645,7 +2645,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2021-02-02T09:16:16Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -2725,7 +2725,7 @@
         },
         {
           "disabled": false,
-          "document": "Docker版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Docker版本号。",
           "example": "20.10.5",
           "member": "string",
           "name": "DockerVersion",
@@ -2765,7 +2765,7 @@
         },
         {
           "disabled": false,
-          "document": "网站根目录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网站根目录。",
           "example": "/usr/share/nginx/html",
           "member": "string",
           "name": "WebRoot",
@@ -3167,7 +3167,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像关联使用场景Id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像关联使用场景Id列表。",
           "example": "[\"lhsc-123456\"]",
           "member": "string",
           "name": "SceneIdSet",
@@ -3207,7 +3207,7 @@
         },
         {
           "disabled": false,
-          "document": "Docker版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Docker版本号。",
           "example": "20.10.5",
           "member": "string",
           "name": "DockerVersion",
@@ -3759,7 +3759,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "套餐类型描述信息。",
           "example": "通用型",
           "member": "string",
           "name": "BundleTypeDescription",
@@ -3769,7 +3769,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型权重。取值越小排序越靠前。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "套餐类型权重。取值越小排序越靠前。",
           "example": "1",
           "member": "int64",
           "name": "BundleTypePriority",
@@ -3917,7 +3917,7 @@
         },
         {
           "disabled": false,
-          "document": "关联时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联时间。",
           "example": "2021-05-08 17:21:05",
           "member": "datetime",
           "name": "AttachedTime",
@@ -4157,7 +4157,7 @@
         },
         {
           "disabled": false,
-          "document": "代码文件名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代码文件名。",
           "example": "calculator_app.py",
           "member": "string",
           "name": "FileName",
@@ -4168,7 +4168,7 @@
         },
         {
           "disabled": false,
-          "document": "base64 编码的代码下载 URL，仅当 WithDownloadUrl=true 时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "base64 编码的代码下载 URL，仅当 WithDownloadUrl=true 时返回。",
           "example": "aHR0cHM6Ly9jb3MuZXhhbXBsZS5jb20vZmlsZSIs",
           "member": "string",
           "name": "DownloadUrl",
@@ -4179,7 +4179,7 @@
         },
         {
           "disabled": false,
-          "document": "代码下载 URL 到期时间，ISO8601 标准 UTC 时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代码下载 URL 到期时间，ISO8601 标准 UTC 时间。",
           "example": "2025-05-09T17:50:14Z",
           "member": "string",
           "name": "ExpireTime",
@@ -4238,7 +4238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境变量Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境变量Key",
           "example": "K1",
           "member": "string",
           "name": "Key",
@@ -4249,7 +4249,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境变量值",
           "example": "V1",
           "member": "string",
           "name": "Value",
@@ -6916,7 +6916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义镜像共享信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义镜像共享信息。",
           "example": "无",
           "member": "SharePermission",
           "name": "SharePermissionSet",
@@ -10289,7 +10289,7 @@
         },
         {
           "disabled": false,
-          "document": "数据点起始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据点起始时间。",
           "example": "2020-06-16 00:00:00",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -10299,7 +10299,7 @@
         },
         {
           "disabled": false,
-          "document": "数据点结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据点结束时间。",
           "example": "2020-06-16 20:05:00",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -10309,7 +10309,7 @@
         },
         {
           "disabled": false,
-          "document": "数据统计周期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据统计周期。",
           "example": "300",
           "member": "int64",
           "name": "Period",
@@ -11533,7 +11533,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -11543,7 +11543,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
@@ -11553,7 +11553,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "IsolatedTime",
@@ -11979,7 +11979,7 @@
         },
         {
           "disabled": false,
-          "document": "CBS 云硬盘 ID。\n作为入参时，不需要传该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CBS 云硬盘 ID。\n作为入参时，不需要传该参数。",
           "example": "disk-issyxx1m",
           "member": "string",
           "name": "DiskId",
@@ -13442,7 +13442,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2020-04-28T03:46:09Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -13703,7 +13703,7 @@
         },
         {
           "disabled": false,
-          "document": "数据点起始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据点起始时间。",
           "example": "2020-04-10 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -13713,7 +13713,7 @@
         },
         {
           "disabled": false,
-          "document": "数据点结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据点结束时间。",
           "example": "2020-04-10 00:10:00",
           "member": "datetime",
           "name": "EndTime",
@@ -13723,7 +13723,7 @@
         },
         {
           "disabled": false,
-          "document": "数据统计周期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据统计周期。",
           "example": "300",
           "member": "int64",
           "name": "Period",
@@ -14858,7 +14858,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最新操作的开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例最新操作的开始时间。",
           "example": "2023-12-01T06:34:59Z",
           "member": "datetime_iso",
           "name": "LatestOperationStartedTime",
@@ -14868,7 +14868,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2023-12-01T06:34:59Z",
           "member": "datetime_iso",
           "name": "IsolatedTime",
@@ -14878,7 +14878,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2023-12-01T06:34:59Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -14888,7 +14888,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。",
           "example": "2024-01-01T06:34:59Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
@@ -15708,7 +15708,7 @@
         },
         {
           "disabled": false,
-          "document": "实例挂载的云硬盘退款价格列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例挂载的云硬盘退款价格列表。",
           "example": "无",
           "member": "DiskRefundPrice",
           "name": "DiskRefundPriceSet",
@@ -16564,7 +16564,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ",
           "example": "2020-04-28T23:01:47Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -16574,7 +16574,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对私钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥对私钥。",
           "example": "null",
           "member": "string",
           "name": "PrivateKey",
@@ -17780,7 +17780,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CVM自定义镜像共享到轻量应用服务器后的镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CVM自定义镜像共享到轻量应用服务器后的镜像ID。",
           "example": "lhbp-xkeh87da",
           "member": "string",
           "name": "BlueprintId",
@@ -18174,7 +18174,7 @@
         },
         {
           "disabled": false,
-          "document": "活动折扣。取值为null，表示无有效值，即没有折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动折扣。取值为null，表示无有效值，即没有折扣。",
           "example": "100",
           "member": "float",
           "name": "ActivityDiscount",
@@ -18184,7 +18184,7 @@
         },
         {
           "disabled": false,
-          "document": "折扣类型。\nuser：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣类型。\nuser：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。",
           "example": "common",
           "member": "string",
           "name": "DiscountType",
@@ -19132,7 +19132,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码。",
           "example": "无",
           "member": "string",
           "name": "ErrorCode",
@@ -19471,7 +19471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "共享时间。",
           "example": "2021-07-23T08:46:39Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -19481,7 +19481,7 @@
         },
         {
           "disabled": false,
-          "document": "轻量应用服务器镜像共享到CVM后，CVM镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "轻量应用服务器镜像共享到CVM后，CVM镜像ID。",
           "example": "img-7x17535s",
           "member": "string",
           "name": "ImageId",
@@ -20925,7 +20925,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘ID。",
           "example": "lhdisk-jxj6qnpo",
           "member": "string",
           "name": "DiskId",

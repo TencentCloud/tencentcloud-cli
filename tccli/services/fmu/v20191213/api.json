@@ -131,7 +131,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64",
           "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
@@ -141,7 +141,7 @@
         },
         {
           "disabled": false,
-          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。",
           "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultUrl",
@@ -312,7 +312,7 @@
         },
         {
           "disabled": false,
-          "document": "素材数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "素材数据",
           "example": "[{\"ModelId\":\"mo_0_111111140461_1259088222_3\",\"Description\":\"\",\"LUTFileUrl\":\"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c\"}]",
           "member": "ModelInfo",
           "name": "ModelInfos",
@@ -505,7 +505,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64",
           "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
@@ -515,7 +515,7 @@
         },
         {
           "disabled": false,
-          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。",
           "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultUrl",
@@ -588,7 +588,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64",
           "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
@@ -598,7 +598,7 @@
         },
         {
           "disabled": false,
-          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。",
           "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultUrl",

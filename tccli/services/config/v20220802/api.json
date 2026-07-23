@@ -740,7 +740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>告警策略唯一id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警策略唯一id</p>",
           "example": "1",
           "member": "uint64",
           "name": "AlarmPolicyId",
@@ -1013,7 +1013,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合规包id",
           "example": "cp-xzfz0*****07feuhwi8auv",
           "member": "string",
           "name": "CompliancePackId",
@@ -1033,7 +1033,7 @@
         },
         {
           "disabled": false,
-          "document": "评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "评估结果",
           "example": "无",
           "member": "Annotation",
           "name": "Annotation",
@@ -1043,7 +1043,7 @@
         },
         {
           "disabled": false,
-          "document": "合规类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合规类型",
           "example": "COMPLIANT",
           "member": "string",
           "name": "ComplianceType",
@@ -1083,7 +1083,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源所属用户ID",
           "example": "324****234234",
           "member": "uint64",
           "name": "ResourceOwnerId",
@@ -1093,7 +1093,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源所属用户名称",
           "example": "无",
           "member": "string",
           "name": "ResourceOwnerName",
@@ -1315,7 +1315,7 @@
         },
         {
           "disabled": false,
-          "document": "账号组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号组名称",
           "example": "计费组",
           "member": "string",
           "name": "MemberName",
@@ -1342,7 +1342,7 @@
         },
         {
           "disabled": false,
-          "document": "成员名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员名称",
           "example": "张*",
           "member": "string",
           "name": "MemberName",
@@ -1458,7 +1458,7 @@
         },
         {
           "disabled": false,
-          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略描述",
           "example": "",
           "member": "string",
           "name": "Description",
@@ -1605,7 +1605,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则名称",
           "example": "规则1",
           "member": "string",
           "name": "RuleName",
@@ -1615,7 +1615,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险等级",
           "example": "1",
           "member": "uint64",
           "name": "RiskLevel",
@@ -1625,7 +1625,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则状态",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",
@@ -1635,7 +1635,7 @@
         },
         {
           "disabled": false,
-          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则ID",
           "example": "cr-a234",
           "member": "string",
           "name": "ConfigRuleId",
@@ -1645,7 +1645,7 @@
         },
         {
           "disabled": false,
-          "document": "评估结果\n合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "评估结果\n合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'",
           "example": "COMPLIANT",
           "member": "string",
           "name": "ComplianceResult",
@@ -1655,7 +1655,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关键字",
           "example": "lab",
           "member": "string",
           "name": "Labels",
@@ -1665,7 +1665,7 @@
         },
         {
           "disabled": false,
-          "document": "入参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入参",
           "example": "无",
           "member": "InputParameter",
           "name": "InputParameter",
@@ -1675,7 +1675,7 @@
         },
         {
           "disabled": false,
-          "document": "参数格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数格式",
           "example": "无",
           "member": "SourceConditionForManage",
           "name": "SourceCondition",
@@ -1685,7 +1685,7 @@
         },
         {
           "disabled": false,
-          "document": "规则标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则标识",
           "example": "无",
           "member": "string",
           "name": "Identifier",
@@ -1695,7 +1695,7 @@
         },
         {
           "disabled": false,
-          "document": "创建方式 user、compliancePack、system\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建方式 user、compliancePack、system",
           "example": "无",
           "member": "string",
           "name": "CreateByType",
@@ -1705,7 +1705,7 @@
         },
         {
           "disabled": false,
-          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则描述",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -1715,7 +1715,7 @@
         },
         {
           "disabled": false,
-          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数描述",
           "example": "无",
           "member": "InputParameterForManage",
           "name": "ManageInputParameter",
@@ -1771,7 +1771,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "账号访问管理中用户至少关联一个用户组，则符合规则。",
           "member": "string",
           "name": "Description",
@@ -1781,7 +1781,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>预设规则身份标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预设规则身份标识</p>",
           "example": "cam-user-group-bound",
           "member": "string",
           "name": "ManagedRuleIdentifier",
@@ -1801,7 +1801,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>合规包ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>合规包ID</p>",
           "example": "cp-xzfz0vu007feuhwi8auv",
           "member": "string",
           "name": "CompliancePackId",
@@ -1817,7 +1817,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>规则唯一身份标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则唯一身份标识</p>",
           "example": "cbs-disk-encrypted",
           "member": "string",
           "name": "Identifier",
@@ -1827,7 +1827,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则名称</p>",
           "example": "CAM访问管理不存在闲置的权限策略",
           "member": "string",
           "name": "RuleName",
@@ -1837,7 +1837,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "CBS自动快照策略设置快照保留天数大于设置的天数，视为“合规”。默认值：7天。",
           "member": "string",
           "name": "Description",
@@ -1847,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>风险等级</p><p>1：高风险 2：中风险  3：低风险</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>风险等级</p><p>1：高风险 2：中风险  3：低风险</p>",
           "example": "1",
           "member": "int64",
           "name": "RiskLevel",
@@ -1857,7 +1857,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "2022-09-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -1867,7 +1867,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>",
           "example": "2022-09-01 12:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -1972,7 +1972,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "账号访问管理中用户至少关联一个用户组，则符合规则。",
           "member": "string",
           "name": "Description",
@@ -2002,7 +2002,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>评估结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>评估结果</p>",
           "example": "NON_COMPLIANT",
           "member": "string",
           "name": "ComplianceResult",
@@ -2022,7 +2022,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>不合规规则名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>不合规规则名</p>",
           "example": "[\"cam实践\"]",
           "member": "string",
           "name": "NoCompliantNames",
@@ -2032,7 +2032,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>合规包规则数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>合规包规则数</p>",
           "example": "2",
           "member": "uint64",
           "name": "RuleCount",
@@ -2048,7 +2048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品",
           "example": "CAM",
           "member": "string",
           "name": "Product",
@@ -2058,7 +2058,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名",
           "example": "访问管理",
           "member": "string",
           "name": "ProductName",
@@ -2068,7 +2068,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "QCS::CAM::Group",
           "member": "string",
           "name": "ResourceType",
@@ -2078,7 +2078,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型名",
           "example": "访问管理-用户组",
           "member": "string",
           "name": "ResourceTypeName",
@@ -2749,7 +2749,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "x",
           "member": "string",
           "name": "Description",
@@ -2779,7 +2779,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合规包规则",
           "example": "无",
           "member": "ComplianceConfigRule",
           "name": "ConfigRules",
@@ -2836,7 +2836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递名称",
           "example": "投递设置1",
           "member": "string",
           "name": "DeliverName",
@@ -2846,7 +2846,7 @@
         },
         {
           "disabled": false,
-          "document": "资源六段式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源六段式",
           "example": "qcs::cos:ap-hangzhou:45354345345:prefix/24234234/345345345",
           "member": "string",
           "name": "TargetArn",
@@ -2866,7 +2866,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2022-08-25 03:05:02",
           "member": "string",
           "name": "CreateTime",
@@ -2876,7 +2876,7 @@
         },
         {
           "disabled": false,
-          "document": "日志前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志前缀",
           "example": "config",
           "member": "string",
           "name": "DeliverPrefix",
@@ -2886,7 +2886,7 @@
         },
         {
           "disabled": false,
-          "document": "投递类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递类型",
           "example": "COS",
           "member": "string",
           "name": "DeliverType",
@@ -2896,7 +2896,7 @@
         },
         {
           "disabled": false,
-          "document": "支持跨账号投递的成员账号uin，只能是委派管理员。默认为0，即投递到管理员账号下\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持跨账号投递的成员账号uin，只能是委派管理员。默认为0，即投递到管理员账号下",
           "example": "0",
           "member": "int64",
           "name": "DeliverUin",
@@ -3180,7 +3180,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>成员信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成员信息</p>",
           "example": "无",
           "member": "AggregatorAccount",
           "name": "AggregatorAccounts",
@@ -3237,7 +3237,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "x",
           "member": "string",
           "name": "Description",
@@ -3267,7 +3267,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合规包规则",
           "example": "无",
           "member": "ComplianceConfigRule",
           "name": "ConfigRules",
@@ -3314,7 +3314,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递名称",
           "example": "投递设置1",
           "member": "string",
           "name": "DeliverName",
@@ -3324,7 +3324,7 @@
         },
         {
           "disabled": false,
-          "document": "资源六段式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源六段式",
           "example": "qcs::cos:ap-hangzhou:45354345345:prefix/24234234/345345345",
           "member": "string",
           "name": "TargetArn",
@@ -3344,7 +3344,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2022-08-25 03:05:02",
           "member": "string",
           "name": "CreateTime",
@@ -3354,7 +3354,7 @@
         },
         {
           "disabled": false,
-          "document": "日志前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志前缀",
           "example": "config",
           "member": "string",
           "name": "DeliverPrefix",
@@ -3364,7 +3364,7 @@
         },
         {
           "disabled": false,
-          "document": "投递类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递类型",
           "example": "COS",
           "member": "string",
           "name": "DeliverType",
@@ -3401,7 +3401,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户监控资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户监控资源列表",
           "example": "无",
           "member": "UserConfigResource",
           "name": "Items",
@@ -3421,7 +3421,7 @@
         },
         {
           "disabled": false,
-          "document": "当日快照次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当日快照次数",
           "example": "1",
           "member": "uint64",
           "name": "TriggerCount",
@@ -3431,7 +3431,7 @@
         },
         {
           "disabled": false,
-          "document": "当日打开监控次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当日打开监控次数",
           "example": "1",
           "member": "uint64",
           "name": "OpenCount",
@@ -3441,7 +3441,7 @@
         },
         {
           "disabled": false,
-          "document": "当日修改监控范围次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当日修改监控范围次数",
           "example": "1",
           "member": "uint64",
           "name": "UpdateCount",
@@ -3451,7 +3451,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2023-12-12 12:12:13",
           "member": "string",
           "name": "CreateTime",
@@ -3896,7 +3896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源id",
           "example": "vpc-1222",
           "member": "string",
           "name": "ResourceId",
@@ -3906,7 +3906,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "QCS::VPC::Subnet",
           "member": "string",
           "name": "ResourceType",
@@ -3916,7 +3916,7 @@
         },
         {
           "disabled": false,
-          "document": "资源地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源地域",
           "example": "ap-gaungzhou",
           "member": "string",
           "name": "ResourceRegion",
@@ -3926,7 +3926,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "私有网络1",
           "member": "string",
           "name": "ResourceName",
@@ -3936,7 +3936,7 @@
         },
         {
           "disabled": false,
-          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则id",
           "example": "cr-13vkg9c31dixgabkepxe",
           "member": "string",
           "name": "ConfigRuleId",
@@ -3946,7 +3946,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则名称",
           "example": "CAM访问管理子用户必须关联用户组",
           "member": "string",
           "name": "ConfigRuleName",
@@ -3956,7 +3956,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合规包id",
           "example": "cp-xzfz0vu007feuhwi8auv",
           "member": "string",
           "name": "CompliancePackId",
@@ -3966,7 +3966,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险等级",
           "example": "1",
           "member": "int64",
           "name": "RiskLevel",
@@ -3976,7 +3976,7 @@
         },
         {
           "disabled": false,
-          "document": "评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "评估结果",
           "example": "无",
           "member": "Annotation",
           "name": "Annotation",
@@ -3986,7 +3986,7 @@
         },
         {
           "disabled": false,
-          "document": "合规类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合规类型",
           "example": "COMPLIANT",
           "member": "string",
           "name": "ComplianceType",
@@ -3996,7 +3996,7 @@
         },
         {
           "disabled": false,
-          "document": "规则发起类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则发起类型",
           "example": "Manul",
           "member": "string",
           "name": "InvokingEventMessageType",
@@ -4006,7 +4006,7 @@
         },
         {
           "disabled": false,
-          "document": "评估发起时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "评估发起时间",
           "example": "2022-10-10 12:56:37",
           "member": "string",
           "name": "ConfigRuleInvokedTime",
@@ -4016,7 +4016,7 @@
         },
         {
           "disabled": false,
-          "document": "评估实际时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "评估实际时间",
           "example": "2022-10-10 12:56:37",
           "member": "string",
           "name": "ResultRecordedTime",
@@ -4576,7 +4576,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>下一页</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下一页</p>",
           "example": "E5WbfJQIT0Abtaj4RxODhsX",
           "member": "string",
           "name": "NextToken",
@@ -5073,7 +5073,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>下一页</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下一页</p>",
           "example": "C3IptlTj6hTlW0WKVO3NI",
           "member": "string",
           "name": "NextToken",
@@ -5305,7 +5305,7 @@
         },
         {
           "disabled": false,
-          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详情",
           "example": "无",
           "member": "SystemCompliancePack",
           "name": "Items",
@@ -5369,7 +5369,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "10",
           "member": "uint64",
           "name": "Total",
@@ -5960,7 +5960,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "安全合规包描述",
           "member": "string",
           "name": "Description",
@@ -5980,7 +5980,7 @@
         },
         {
           "disabled": false,
-          "document": "合规包规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合规包规则信息",
           "example": "无",
           "member": "CompliancePackRuleForManage",
           "name": "ConfigRules",
@@ -5996,7 +5996,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>规则标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则标识</p>",
           "example": "cam-user-group-bound",
           "member": "string",
           "name": "Identifier",
@@ -6006,7 +6006,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则名</p>",
           "example": "CAM访问管理子用户必须关联用户组",
           "member": "string",
           "name": "RuleName",
@@ -6016,7 +6016,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则参数</p>",
           "example": "无",
           "member": "InputParameterForManage",
           "name": "InputParameter",
@@ -6026,7 +6026,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则触发条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则触发条件</p>",
           "example": "无",
           "member": "SourceConditionForManage",
           "name": "SourceCondition",
@@ -6036,7 +6036,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>支持的资源类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支持的资源类型</p>",
           "example": "[\"QCS::SCF::Namespace\"]",
           "member": "string",
           "name": "ResourceType",
@@ -6046,7 +6046,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>",
           "example": "[   \"用户\",   \"用户组\" ]",
           "member": "string",
           "name": "Label",
@@ -6056,7 +6056,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>风险等级，1，2，3</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>风险等级，1，2，3</p>",
           "example": "1",
           "member": "int64",
           "name": "RiskLevel",
@@ -6066,7 +6066,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>对应的函数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>对应的函数</p>",
           "example": "function_1",
           "member": "string",
           "name": "ServiceFunction",
@@ -6076,7 +6076,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "2022-09-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -6086,7 +6086,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>",
           "example": "2022-09-01 12:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -6096,7 +6096,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>触发类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>触发类型</p>",
           "example": "[\"ScheduledNotification\"]",
           "member": "string",
           "name": "TriggerType",
@@ -6106,7 +6106,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "账号访问管理中用户至少关联一个用户组，则符合规则。",
           "member": "string",
           "name": "Description",
@@ -6116,7 +6116,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>使用次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用次数</p>",
           "example": "2",
           "member": "uint64",
           "name": "ReferenceCount",
@@ -6136,7 +6136,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>1:线上展示 2:不展示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>1:线上展示 2:不展示</p>",
           "example": "1",
           "member": "uint64",
           "name": "OnlineShow",
@@ -6991,7 +6991,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品",
           "example": "CAM",
           "member": "string",
           "name": "Product",
@@ -7001,7 +7001,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名",
           "example": "云服务器",
           "member": "string",
           "name": "ProductName",
@@ -7011,7 +7011,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "QCS::CAM::Group",
           "member": "string",
           "name": "ResourceType",
@@ -7021,7 +7021,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型名",
           "example": "云服务器-实例",
           "member": "string",
           "name": "ResourceTypeName",
@@ -7031,7 +7031,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2022-10-10 12:56:37",
           "member": "string",
           "name": "UpdateTime",

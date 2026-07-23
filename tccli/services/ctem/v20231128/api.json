@@ -2597,7 +2597,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否包含完整扫描</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否包含完整扫描</p>",
           "example": "false",
           "member": "bool",
           "name": "IsIncludeFullScan",
@@ -2637,7 +2637,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>扫描优先级配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>扫描优先级配置</p>",
           "example": "无",
           "member": "ScanPriorityDisplay",
           "name": "ScanPriority",
@@ -4869,7 +4869,7 @@
         },
         {
           "disabled": false,
-          "document": "仿冒应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仿冒应用",
           "example": "无",
           "member": "DisplayFakeApp",
           "name": "List",
@@ -5043,7 +5043,7 @@
         },
         {
           "disabled": false,
-          "document": "仿冒小程序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仿冒小程序",
           "example": "无",
           "member": "DisplayFakeMiniProgram",
           "name": "List",
@@ -5217,7 +5217,7 @@
         },
         {
           "disabled": false,
-          "document": "仿冒网站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仿冒网站",
           "example": "无",
           "member": "DisplayFakeWebsite",
           "name": "List",
@@ -5391,7 +5391,7 @@
         },
         {
           "disabled": false,
-          "document": "仿冒公众号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仿冒公众号",
           "example": "无",
           "member": "DisplayFakeWechatOfficial",
           "name": "List",
@@ -6507,7 +6507,7 @@
         },
         {
           "disabled": false,
-          "document": "数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数组",
           "example": "无",
           "member": "DisplayLeakageCode",
           "name": "List",
@@ -6690,7 +6690,7 @@
         },
         {
           "disabled": false,
-          "document": "数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数组",
           "example": "无",
           "member": "DisplayLeakageData",
           "name": "List",
@@ -6873,7 +6873,7 @@
         },
         {
           "disabled": false,
-          "document": "数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数组",
           "example": "无",
           "member": "DisplayLeakageEmail",
           "name": "List",
@@ -8222,7 +8222,7 @@
         },
         {
           "disabled": false,
-          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列表",
           "example": "无",
           "member": "DisplayUploadSeedHistory",
           "name": "List",
@@ -11292,7 +11292,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Http ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Http ID",
           "example": "无",
           "member": "int64",
           "name": "Id",
@@ -11302,7 +11302,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "无",
           "member": "int64",
           "name": "JobRecordId",
@@ -11312,7 +11312,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一次任务ID",
           "example": "无",
           "member": "int64",
           "name": "PrevJobRecordId",
@@ -11322,7 +11322,7 @@
         },
         {
           "disabled": false,
-          "document": "History ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "History ID",
           "example": "无",
           "member": "int64",
           "name": "HistoryId",
@@ -11332,7 +11332,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次History ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一次History ID",
           "example": "无",
           "member": "int64",
           "name": "PrevHistoryId",
@@ -11342,7 +11342,7 @@
         },
         {
           "disabled": false,
-          "document": "变更字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更字段",
           "example": "无",
           "member": "string",
           "name": "DiffField",
@@ -11352,7 +11352,7 @@
         },
         {
           "disabled": false,
-          "document": "变更情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更情况",
           "example": "无",
           "member": "string",
           "name": "DiffContent",
@@ -11362,7 +11362,7 @@
         },
         {
           "disabled": false,
-          "document": "变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更时间",
           "example": "无",
           "member": "string",
           "name": "DiffTime",
@@ -11372,7 +11372,7 @@
         },
         {
           "disabled": false,
-          "document": "变更数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更数据源",
           "example": "无",
           "member": "string",
           "name": "DiffTable",
@@ -11382,7 +11382,7 @@
         },
         {
           "disabled": false,
-          "document": "变更操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更操作",
           "example": "无",
           "member": "string",
           "name": "DiffOp",
@@ -12260,7 +12260,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资产是否发生变动</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资产是否发生变动</p>",
           "example": "false",
           "member": "bool",
           "name": "IsChange",
@@ -12379,7 +12379,7 @@
         },
         {
           "disabled": false,
-          "document": "周期任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "周期任务详情",
           "example": "0 0 0 * * *",
           "member": "string",
           "name": "Crontab",
@@ -12511,7 +12511,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型",
           "example": "即时任务",
           "member": "string",
           "name": "TaskType",
@@ -12522,7 +12522,7 @@
         },
         {
           "disabled": false,
-          "document": "客户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户Uin",
           "example": "1001",
           "member": "string",
           "name": "Uin",
@@ -12533,7 +12533,7 @@
         },
         {
           "disabled": false,
-          "document": "客户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户appid",
           "example": "251001",
           "member": "int64",
           "name": "AppId",
@@ -12550,7 +12550,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发现时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发现时间",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "TimeAt",
@@ -12560,7 +12560,7 @@
         },
         {
           "disabled": false,
-          "document": "模块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模块",
           "example": "http",
           "member": "string",
           "name": "Module",
@@ -12570,7 +12570,7 @@
         },
         {
           "disabled": false,
-          "document": "模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模块名称",
           "example": "网站资产",
           "member": "string",
           "name": "ModuleName",
@@ -12580,7 +12580,7 @@
         },
         {
           "disabled": false,
-          "document": "主任务JobId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主任务JobId",
           "example": "1001",
           "member": "int64",
           "name": "JobId",
@@ -12590,7 +12590,7 @@
         },
         {
           "disabled": false,
-          "document": "子任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子任务id",
           "example": "1",
           "member": "int64",
           "name": "JobStageId",
@@ -12600,7 +12600,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流执行地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作流执行地址",
           "example": "http://test.com/xx",
           "member": "string",
           "name": "ExecutionUrl",
@@ -12610,7 +12610,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务id",
           "example": "1",
           "member": "int64",
           "name": "JobRecordId",
@@ -12620,7 +12620,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务名称",
           "example": "即时任务",
           "member": "string",
           "name": "JobName",
@@ -12630,7 +12630,7 @@
         },
         {
           "disabled": false,
-          "document": "工具id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工具id",
           "example": "1021",
           "member": "int64",
           "name": "ToolId",
@@ -12640,7 +12640,7 @@
         },
         {
           "disabled": false,
-          "document": "工具详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工具详情",
           "example": "无",
           "member": "DisplayTools",
           "name": "Tool",
@@ -12650,7 +12650,7 @@
         },
         {
           "disabled": false,
-          "document": "目标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标",
           "example": "无",
           "member": "IdndValue",
           "name": "Data",
@@ -15332,7 +15332,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一级分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一级分类",
           "example": "无",
           "member": "string",
           "name": "Category1",
@@ -15342,7 +15342,7 @@
         },
         {
           "disabled": false,
-          "document": "二级列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "二级列表",
           "example": "无",
           "member": "HttpCategory2TagList",
           "name": "Category2List",
@@ -15358,7 +15358,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "二级分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "二级分类",
           "example": "无",
           "member": "string",
           "name": "Category2",
@@ -15368,7 +15368,7 @@
         },
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量",
           "example": "无",
           "member": "int64",
           "name": "Count",
@@ -15378,7 +15378,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表",
           "example": "无",
           "member": "HttpTagCount",
           "name": "TagList",
@@ -15446,7 +15446,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详情ID",
           "example": "1001",
           "member": "int64",
           "name": "Id",
@@ -15456,7 +15456,7 @@
         },
         {
           "disabled": false,
-          "document": "目标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标",
           "example": "http://test.com",
           "member": "string",
           "name": "Value",
@@ -15838,7 +15838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -15848,7 +15848,7 @@
         },
         {
           "disabled": false,
-          "document": "未完成数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未完成数量",
           "example": "无",
           "member": "int64",
           "name": "UnFinishedCount",
@@ -15858,7 +15858,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次已完成扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一次已完成扫描时间",
           "example": "无",
           "member": "string",
           "name": "LastFinishedScanTime",
@@ -16280,7 +16280,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>只对新增资产进行漏洞扫描</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>只对新增资产进行漏洞扫描</p>",
           "example": "true",
           "member": "bool",
           "name": "OnlyScanNewAsset",
@@ -16290,7 +16290,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>启用的优先级规则(有序):new_asset,high_risk_port,admin_panel,high_risk_fingerprint</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>启用的优先级规则(有序):new_asset,high_risk_port,admin_panel,high_risk_fingerprint</p>",
           "example": "[\"new_asset\"]",
           "member": "string",
           "name": "PriorityRules",

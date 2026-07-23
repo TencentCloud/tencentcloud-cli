@@ -1054,7 +1054,7 @@
         },
         {
           "disabled": false,
-          "document": "应用黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用黑名单",
           "example": "[\"com.app\"]",
           "member": "string",
           "name": "AppBlacklist",
@@ -3742,7 +3742,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "黑名单集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "黑名单集合",
           "example": "无",
           "member": "AndroidInstanceAppBlacklist",
           "name": "AppBlacklistSet",
@@ -4704,7 +4704,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务集合",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",

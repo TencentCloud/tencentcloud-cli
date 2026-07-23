@@ -783,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型列表</p>",
           "example": "无",
           "member": "AIModel",
           "name": "Models",
@@ -843,7 +843,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型密钥</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型密钥</p>",
           "example": "无",
           "member": "AIModelSecret",
           "name": "Secret",
@@ -1235,7 +1235,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 的令牌值（JWT 格式），用于服务端接口调用时的身份认证。出于安全考虑，仅在创建时返回一次完整明文；后续通过列表查询接口获取时，api_key 类型将进行脱敏处理；publish_key 类型始终返回完整明文。请在创建后妥善保存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API Key 的令牌值（JWT 格式），用于服务端接口调用时的身份认证。出于安全考虑，仅在创建时返回一次完整明文；后续通过列表查询接口获取时，api_key 类型将进行脱敏处理；publish_key 类型始终返回完整明文。请在创建后妥善保存",
           "example": "agKSFS******jKdhas",
           "member": "string",
           "name": "ApiKey",
@@ -1246,7 +1246,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 的过期时间，格式遵循 ISO 8601 标准。对于 api_key 类型：若创建时未指定有效期（ExpireIn），则该字段不返回，表示永不过期；若指定了有效期，则返回具体的过期时间。对于 publish_key 类型：始终返回，固定为约 2099 年\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API Key 的过期时间，格式遵循 ISO 8601 标准。对于 api_key 类型：若创建时未指定有效期（ExpireIn），则该字段不返回，表示永不过期；若指定了有效期，则返回具体的过期时间。对于 publish_key 类型：始终返回，固定为约 2099 年",
           "example": "2026-03-16T15:48:48+08:00",
           "member": "datetime_iso",
           "name": "ExpireAt",
@@ -1257,7 +1257,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 的创建时间，格式遵循 ISO 8601 标准。对于 api_key 类型：为该 Key 实际创建时的时间。对于 publish_key 类型：若环境下已存在 publish_key 记录，则返回首次创建的时间而非本次调用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API Key 的创建时间，格式遵循 ISO 8601 标准。对于 api_key 类型：为该 Key 实际创建时的时间。对于 publish_key 类型：若环境下已存在 publish_key 记录，则返回首次创建的时间而非本次调用时间",
           "example": "2026-03-16T15:48:48+08:00",
           "member": "datetime_iso",
           "name": "CreateAt",
@@ -1309,7 +1309,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Token值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Token值</p>",
           "example": "A6ABa1wqZnAFi95JuQ7BIgWqU8Im5YPa283df148910f67e4cb0789f5783133b4zHqyBHG",
           "member": "string",
           "name": "Token",
@@ -1319,7 +1319,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过期时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>过期时间戳</p>",
           "example": "1778249652",
           "member": "int64",
           "name": "ExpiredTime",
@@ -1818,7 +1818,7 @@
         },
         {
           "disabled": false,
-          "document": "最大算力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大算力",
           "example": "0.5",
           "member": "float",
           "name": "MaxCpu",
@@ -1828,7 +1828,7 @@
         },
         {
           "disabled": false,
-          "document": "最小算力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小算力",
           "example": "0.25",
           "member": "float",
           "name": "MinCpu",
@@ -1838,7 +1838,7 @@
         },
         {
           "disabled": false,
-          "document": "TDSQL-C集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TDSQL-C集群状态",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -1848,7 +1848,7 @@
         },
         {
           "disabled": false,
-          "document": "存储用量（单位：MB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储用量（单位：MB）",
           "example": "21000000",
           "member": "int64",
           "name": "UsedStorage",
@@ -1858,7 +1858,7 @@
         },
         {
           "disabled": false,
-          "document": "最大存储量（单位：GB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大存储量（单位：GB）",
           "example": "100000",
           "member": "int64",
           "name": "StorageLimit",
@@ -1898,7 +1898,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库集群状态",
           "example": "running",
           "member": "string",
           "name": "ClusterStatus",
@@ -2146,7 +2146,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 的令牌值（JWT 格式），用于服务端接口调用时的身份认证。出于安全考虑，仅在创建时返回一次完整明文；后续通过列表查询接口获取时，api_key 类型将进行脱敏处理；publish_key 类型始终返回完整明文。请在创建后妥善保存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API Key 的令牌值（JWT 格式），用于服务端接口调用时的身份认证。出于安全考虑，仅在创建时返回一次完整明文；后续通过列表查询接口获取时，api_key 类型将进行脱敏处理；publish_key 类型始终返回完整明文。请在创建后妥善保存",
           "example": "eyJhbGciOiJSUzI1NiIsImtpZCskdfhss",
           "member": "string",
           "name": "ApiKey",
@@ -2156,7 +2156,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 的过期时间。对于 api_key 类型：若创建时未指定有效期，则该字段不返回，表示永不过期；若指定了有效期，则返回具体的过期时间。对于 publish_key 类型：始终返回，固定为 2099 年\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API Key 的过期时间。对于 api_key 类型：若创建时未指定有效期，则该字段不返回，表示永不过期；若指定了有效期，则返回具体的过期时间。对于 publish_key 类型：始终返回，固定为 2099 年",
           "example": "2099-03-16T15:48:48+08:00",
           "member": "datetime_iso",
           "name": "ExpireAt",
@@ -2166,7 +2166,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 的创建时间。对于 api_key 类型：为实际创建该 Key 时的时间。对于 publish_key 类型：若环境下已存在 publish_key，则返回首次创建的时间而非本次调用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API Key 的创建时间。对于 api_key 类型：为实际创建该 Key 时的时间。对于 publish_key 类型：若环境下已存在 publish_key，则返回首次创建的时间而非本次调用时间",
           "example": "2026-03-16T15:48:48+08:00",
           "member": "datetime_iso",
           "name": "CreateAt",
@@ -3881,7 +3881,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型列表",
           "example": "无",
           "member": "AIModelGroup",
           "name": "AIModels",
@@ -4344,7 +4344,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端的创建时间，格式遵循 ISO 8601 标准（如：2024-01-01T00:00:00Z），由系统自动生成，不可手动修改。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端的创建时间，格式遵循 ISO 8601 标准（如：2024-01-01T00:00:00Z），由系统自动生成，不可手动修改。",
           "example": "2024-01-01T00:00:00Z",
           "member": "datetime_iso",
           "name": "CreatedAt",
@@ -4354,7 +4354,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端信息的最后修改时间，格式遵循 ISO 8601 标准（如：2024-01-01T00:00:00Z），每次更新应用配置时由系统自动更新。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端信息的最后修改时间，格式遵循 ISO 8601 标准（如：2024-01-01T00:00:00Z），每次更新应用配置时由系统自动更新。",
           "example": "2024-01-01T00:00:00Z",
           "member": "datetime_iso",
           "name": "UpdatedAt",
@@ -4364,7 +4364,7 @@
         },
         {
           "disabled": false,
-          "document": "Refresh Token 的有效期，单位为秒。超过该时间后 Refresh Token 将失效，用户需重新登录。取值范围：最小 1800 秒（30 分钟），最大 2592000 秒（30 天），超出上限将自动截断为 30 天。若不设置则默认为 30 天。当该值小于等于 7200 秒时，系统会自动将 AccessTokenExpiresIn 调整为 RefreshTokenExpiresIn - 660 秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Refresh Token 的有效期，单位为秒。超过该时间后 Refresh Token 将失效，用户需重新登录。取值范围：最小 1800 秒（30 分钟），最大 2592000 秒（30 天），超出上限将自动截断为 30 天。若不设置则默认为 30 天。当该值小于等于 7200 秒时，系统会自动将 AccessTokenExpiresIn 调整为 RefreshTokenExpiresIn - 660 秒。",
           "example": "2592000",
           "member": "int64",
           "name": "RefreshTokenExpiresIn",
@@ -4374,7 +4374,7 @@
         },
         {
           "disabled": false,
-          "document": "Access Token 的有效期，单位为秒。超过该时间后 Access Token 将失效，需通过 Refresh Token 换取新的 Access Token。若不设置则默认为 7200 秒（2 小时）。设置值小于 1800 秒时将被忽略，使用系统默认值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Access Token 的有效期，单位为秒。超过该时间后 Access Token 将失效，需通过 Refresh Token 换取新的 Access Token。若不设置则默认为 7200 秒（2 小时）。设置值小于 1800 秒时将被忽略，使用系统默认值。",
           "example": "7200",
           "member": "int64",
           "name": "AccessTokenExpiresIn",
@@ -4384,7 +4384,7 @@
         },
         {
           "disabled": false,
-          "document": "单个用户在该客户端下允许同时登录的最大会话数量。取值范围：-1 至 50。-1 表示不限制设备数量；0 或不填默认按 User-Agent 区分设备（相同 User-Agent 共享一个会话，不同 User-Agent 各独立一个会话）；1 表示单设备登录，新登录将踢出旧会话；大于 1 时按真实设备 ID 限制，超出限制后最早登录的会话将被自动踢出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单个用户在该客户端下允许同时登录的最大会话数量。取值范围：-1 至 50。-1 表示不限制设备数量；0 或不填默认按 User-Agent 区分设备（相同 User-Agent 共享一个会话，不同 User-Agent 各独立一个会话）；1 表示单设备登录，新登录将踢出旧会话；大于 1 时按真实设备 ID 限制，超出限制后最早登录的会话将被自动踢出。",
           "example": "1",
           "member": "int64",
           "name": "MaxDevice",
@@ -4905,7 +4905,7 @@
         },
         {
           "disabled": false,
-          "document": "子网实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网实例id",
           "example": "[\"subnet-sdfsdf\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -5015,7 +5015,7 @@
         },
         {
           "disabled": false,
-          "document": "自动扩缩容策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动扩缩容策略组",
           "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetail",
@@ -5025,7 +5025,7 @@
         },
         {
           "disabled": false,
-          "document": "Tke集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Tke集群信息",
           "example": "cluster-sddff",
           "member": "TkeClusterInfo",
           "name": "TkeClusterInfo",
@@ -5062,7 +5062,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "0",
           "member": "int64",
           "name": "Total",
@@ -5094,7 +5094,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因",
           "example": "Init Failed",
           "member": "string",
           "name": "FailReason",
@@ -6188,7 +6188,7 @@
         },
         {
           "disabled": false,
-          "document": "MFA 多因子认证登录配置，包含 MFA 开关及各验证方式（短信、邮箱、TOTP、强制绑定手机号）的启用状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MFA 多因子认证登录配置，包含 MFA 开关及各验证方式（短信、邮箱、TOTP、强制绑定手机号）的启用状态。",
           "example": "无",
           "member": "MFALoginConfig",
           "name": "MfaConfig",
@@ -6198,7 +6198,7 @@
         },
         {
           "disabled": false,
-          "document": "密码修改策略配置，包含首次登录强制修改密码开关及定期修改密码策略（周期和时间单位）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密码修改策略配置，包含首次登录强制修改密码开关及定期修改密码策略（周期和时间单位）。",
           "example": "无",
           "member": "PasswordUpdateLoginConfig",
           "name": "PwdUpdateStrategy",
@@ -6235,7 +6235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>托管模型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>托管模型列表</p>",
           "example": "无",
           "member": "ManagedAIModelGroup",
           "name": "ManagedAIModelList",
@@ -6674,7 +6674,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则内容",
           "example": "{   \"read\": \"auth != null\",   \"write\": \"doc._openid == auth.uid\" }",
           "member": "string",
           "name": "Rule",
@@ -6721,7 +6721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "静态托管资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "静态托管资源信息",
           "example": "",
           "member": "StaticStoreInfo",
           "name": "Data",
@@ -6876,7 +6876,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表信息",
           "example": "无",
           "member": "TableInfo",
           "name": "Tables",
@@ -6886,7 +6886,7 @@
         },
         {
           "disabled": false,
-          "document": "分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页信息",
           "example": "无",
           "member": "Pager",
           "name": "Pager",
@@ -7318,7 +7318,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>邮件模板配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>邮件模板配置</p>",
           "example": "无",
           "member": "EmailTemplateConfig",
           "name": "TemplateConfig",
@@ -7407,7 +7407,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>注册登录模板</p><p>入参限制：模板中必须包含{{.VerificationCode}}变量，用于邮件中验证码的展示，可选变量有{{.Usage}}、{{.ExpireMinutes}}、{{.Email}}。邮件模板中禁止包含 script、javascript、onclick、onload、iframe、link 标签及 CSS expression、CSS url() 等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>注册登录模板</p><p>入参限制：模板中必须包含{{.VerificationCode}}变量，用于邮件中验证码的展示，可选变量有{{.Usage}}、{{.ExpireMinutes}}、{{.Email}}。邮件模板中禁止包含 script、javascript、onclick、onload、iframe、link 标签及 CSS expression、CSS url() 等</p>",
           "example": "无",
           "member": "LocalizedTemplate",
           "name": "RegisterSignIn",
@@ -7418,7 +7418,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>默认模板</p><p>入参限制：模板中必须包含{{.VerificationCode}}变量，用于邮件中验证码的展示，可选变量有{{.Usage}}、{{.ExpireMinutes}}、{{.Email}}。邮件模板中禁止包含 script、javascript、onclick、onload、iframe、link 标签及 CSS expression、CSS url() 等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>默认模板</p><p>入参限制：模板中必须包含{{.VerificationCode}}变量，用于邮件中验证码的展示，可选变量有{{.Usage}}、{{.ExpireMinutes}}、{{.Email}}。邮件模板中禁止包含 script、javascript、onclick、onload、iframe、link 标签及 CSS expression、CSS url() 等</p>",
           "example": "无",
           "member": "LocalizedTemplate",
           "name": "DefaultTpl",
@@ -8120,7 +8120,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>字段名列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字段名列表</p>",
           "example": "[\"column_name\"]",
           "member": "string",
           "name": "Columns",
@@ -8130,7 +8130,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>",
           "example": "[\"[\\\"id\\\"]\"]",
           "member": "string",
           "name": "Rows",
@@ -8330,7 +8330,7 @@
         },
         {
           "disabled": false,
-          "document": "函数标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数标签",
           "example": "",
           "member": "Tag",
           "name": "Tags",
@@ -8350,7 +8350,7 @@
         },
         {
           "disabled": false,
-          "document": "函数状态失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数状态失败原因",
           "example": "",
           "member": "StatusReason",
           "name": "StatusReasons",
@@ -8580,7 +8580,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "10",
           "member": "uint64",
           "name": "Total",
@@ -8590,7 +8590,7 @@
         },
         {
           "disabled": false,
-          "document": "三方认证源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "三方认证源列表",
           "example": "无",
           "member": "Provider",
           "name": "Data",
@@ -9265,7 +9265,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "索引命中次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引命中次数",
           "example": "无",
           "member": "int64",
           "name": "Ops",
@@ -9275,7 +9275,7 @@
         },
         {
           "disabled": false,
-          "document": "命中次数从何时开始计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命中次数从何时开始计数",
           "example": "无",
           "member": "string",
           "name": "Since",
@@ -9315,7 +9315,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "索引名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引名称",
           "example": "",
           "member": "string",
           "name": "Name",
@@ -9325,7 +9325,7 @@
         },
         {
           "disabled": false,
-          "document": "索引大小，单位: 字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引大小，单位: 字节",
           "example": "",
           "member": "int64",
           "name": "Size",
@@ -9335,7 +9335,7 @@
         },
         {
           "disabled": false,
-          "document": "索引键值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引键值",
           "example": "",
           "member": "Indexkey",
           "name": "Keys",
@@ -9345,7 +9345,7 @@
         },
         {
           "disabled": false,
-          "document": "索引使用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引使用信息",
           "example": "",
           "member": "IndexAccesses",
           "name": "Accesses",
@@ -9355,7 +9355,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为唯一索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为唯一索引",
           "example": "",
           "member": "bool",
           "name": "Unique",
@@ -9793,7 +9793,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表信息",
           "example": "无",
           "member": "TableInfo",
           "name": "Tables",
@@ -9803,7 +9803,7 @@
         },
         {
           "disabled": false,
-          "document": "分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页信息",
           "example": "无",
           "member": "Pager",
           "name": "Pager",
@@ -9851,7 +9851,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>中文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>中文</p>",
           "example": "<html><body><h1>验证码</h1><p>您的验证码是: {{.VerificationCode}}</p><p>5分钟内有效</p></body></html>",
           "member": "string",
           "name": "ZhCN",
@@ -9862,7 +9862,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>英文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>英文</p>",
           "example": "<html><body><h1>VerificationCode</h1><p>Your VerificationCode Is: {{.VerificationCode}}</p><p>expire in 5 min</p></body></html>",
           "member": "string",
           "name": "EnUS",
@@ -10057,7 +10057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "MFA 多因子认证开关。取值范围：\nTRUE：开启 MFA 多因子认证\nFALSE：关闭 MFA 多因子认证\n不传则不修改当前配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MFA 多因子认证开关。取值范围：\nTRUE：开启 MFA 多因子认证\nFALSE：关闭 MFA 多因子认证\n不传则不修改当前配置。",
           "example": "\"TRUE\"",
           "member": "string",
           "name": "On",
@@ -10068,7 +10068,7 @@
         },
         {
           "disabled": false,
-          "document": "短信验证开关，控制是否在 MFA 流程中启用短信验证码校验。取值范围：\nTRUE：开启短信验证\nFALSE：关闭短信验证\n不传则不修改当前配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "短信验证开关，控制是否在 MFA 流程中启用短信验证码校验。取值范围：\nTRUE：开启短信验证\nFALSE：关闭短信验证\n不传则不修改当前配置。",
           "example": "\"TRUE\"",
           "member": "string",
           "name": "Sms",
@@ -10079,7 +10079,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱验证开关，控制是否在 MFA 流程中启用邮箱验证码校验。取值范围：\nTRUE：开启邮箱验证\nFALSE：关闭邮箱验证\n不传则不修改当前配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱验证开关，控制是否在 MFA 流程中启用邮箱验证码校验。取值范围：\nTRUE：开启邮箱验证\nFALSE：关闭邮箱验证\n不传则不修改当前配置。",
           "example": "\"FALSE\"",
           "member": "string",
           "name": "Email",
@@ -10090,7 +10090,7 @@
         },
         {
           "disabled": false,
-          "document": "强制绑定手机号开关，控制用户在完成 MFA 认证前是否必须绑定手机号。取值范围：\nTRUE：要求绑定手机号\nFALSE：不要求绑定手机号\n不传则不修改当前配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "强制绑定手机号开关，控制用户在完成 MFA 认证前是否必须绑定手机号。取值范围：\nTRUE：要求绑定手机号\nFALSE：不要求绑定手机号\n不传则不修改当前配置。",
           "example": "\"TRUE\"",
           "member": "string",
           "name": "RequiredBindPhone",
@@ -10229,7 +10229,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型列表</p>",
           "example": "无",
           "member": "ManagedAIModel",
           "name": "Models",
@@ -11603,7 +11603,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改用户返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改用户返回值",
           "example": "无",
           "member": "ModifyUserResp",
           "name": "Data",
@@ -11685,7 +11685,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网地址",
           "example": "10.**2******3306",
           "member": "string",
           "name": "PrivateNetAddress",
@@ -11695,7 +11695,7 @@
         },
         {
           "disabled": false,
-          "document": "外网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网地址",
           "example": "sh-cynosdb***q*******l*8*****sql.*******c***********3",
           "member": "string",
           "name": "PubNetAddress",
@@ -11705,7 +11705,7 @@
         },
         {
           "disabled": false,
-          "document": "网络信息（VPCID/SubnetID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络信息（VPCID/SubnetID）",
           "example": "vpc-py******/subnet-*******p",
           "member": "string",
           "name": "Net",
@@ -12004,7 +12004,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页偏移量",
           "example": "",
           "member": "int64",
           "name": "Offset",
@@ -12014,7 +12014,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每页返回记录数",
           "example": "",
           "member": "int64",
           "name": "Limit",
@@ -12024,7 +12024,7 @@
         },
         {
           "disabled": false,
-          "document": "文档集合总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档集合总数",
           "example": "",
           "member": "int64",
           "name": "Total",
@@ -12040,7 +12040,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "首次登录强制修改密码开关。开启后，用户首次登录时将强制要求修改密码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次登录强制修改密码开关。开启后，用户首次登录时将强制要求修改密码。",
           "example": "true",
           "member": "bool",
           "name": "FirstLoginUpdate",
@@ -12051,7 +12051,7 @@
         },
         {
           "disabled": false,
-          "document": "定期强制修改密码开关。开启后，用户需按照 PeriodValue 和 PeriodType 指定的周期定期修改密码，超过周期未修改将在登录时强制要求修改。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定期强制修改密码开关。开启后，用户需按照 PeriodValue 和 PeriodType 指定的周期定期修改密码，超过周期未修改将在登录时强制要求修改。",
           "example": "true",
           "member": "bool",
           "name": "PeriodUpdate",
@@ -12062,7 +12062,7 @@
         },
         {
           "disabled": false,
-          "document": "定期修改密码的周期数值，与 PeriodType 配合使用。例如 PeriodValue 为 6，PeriodType 为 MONTH，表示每 6 个月需修改一次密码。当 PeriodUpdate 为 true 时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定期修改密码的周期数值，与 PeriodType 配合使用。例如 PeriodValue 为 6，PeriodType 为 MONTH，表示每 6 个月需修改一次密码。当 PeriodUpdate 为 true 时必填。",
           "example": "6",
           "member": "int64",
           "name": "PeriodValue",
@@ -12073,7 +12073,7 @@
         },
         {
           "disabled": false,
-          "document": "定期修改密码的周期时间单位，与 PeriodValue 配合使用。取值范围：\nWEEK：周\nMONTH：月\nYEAR：年\n当 PeriodUpdate 为 true 时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定期修改密码的周期时间单位，与 PeriodValue 配合使用。取值范围：\nWEEK：周\nMONTH：月\nYEAR：年\n当 PeriodUpdate 为 true 时必填。",
           "example": "MONTH",
           "member": "string",
           "name": "PeriodType",
@@ -12387,7 +12387,7 @@
         },
         {
           "disabled": false,
-          "document": "身份源图标的访问地址，将展示在登录页的身份源按钮上。建议使用 64×64 像素的 SVG 格式图片以保证清晰度，支持 HTTP/HTTPS 公网可访问的图片链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份源图标的访问地址，将展示在登录页的身份源按钮上。建议使用 64×64 像素的 SVG 格式图片以保证清晰度，支持 HTTP/HTTPS 公网可访问的图片链接",
           "example": "http://example.com",
           "member": "string",
           "name": "Picture",
@@ -12398,7 +12398,7 @@
         },
         {
           "disabled": false,
-          "document": "身份源对应的官方主页地址。该信息将在用户查看自己的第三方账号绑定列表时展示，帮助用户识别已绑定的身份源来源。例如 GitHub 身份源可填写：https://github.com\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份源对应的官方主页地址。该信息将在用户查看自己的第三方账号绑定列表时展示，帮助用户识别已绑定的身份源来源。例如 GitHub 身份源可填写：https://github.com",
           "example": "https://github.com",
           "member": "string",
           "name": "Homepage",
@@ -12409,7 +12409,7 @@
         },
         {
           "disabled": false,
-          "document": "身份源协议类型，决定该身份源使用何种认证协议与第三方平台对接。可选值：OAUTH（标准 OAuth 2.0 协议）、OIDC（OpenID Connect 协议）、SAML（SAML 2.0 协议）、CUSTOM（自定义登录，使用 RSA 密钥对签名验证）、EMAIL（邮箱登录，需配合 EmailConfig 使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份源协议类型，决定该身份源使用何种认证协议与第三方平台对接。可选值：OAUTH（标准 OAuth 2.0 协议）、OIDC（OpenID Connect 协议）、SAML（SAML 2.0 协议）、CUSTOM（自定义登录，使用 RSA 密钥对签名验证）、EMAIL（邮箱登录，需配合 EmailConfig 使用）",
           "example": "\"OAUTH\"",
           "member": "string",
           "name": "ProviderType",
@@ -12420,7 +12420,7 @@
         },
         {
           "disabled": false,
-          "document": "控制第三方身份源登录时是否自动注册系统用户。可选值：TRUE（始终自动注册，无论第三方返回的用户信息是否包含手机号或邮箱）、FALSE（不自动注册，需用户手动绑定）、UNSPECIFIED（默认行为：仅当第三方身份源返回的用户信息中包含手机号或邮箱时才自动注册，否则登录完成后要求用户绑定手机号方可继续使用）。注意：企业微信类型（WX_WORK_AGENT/WX_WORK_INTERNAL/WX_WORK_THIRD_PARTY/WX_WORK_THIRD_PARTY_ASSOCIATION）和微信小程序类型（WX_MICRO_APP/WX_QRCODE_MICRO_APP/WX_OPEN）在 UNSPECIFIED 时会自动设为 TRUE。当 TransparentMode 为 TRUE 时，该字段将被强制设为 FALSE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控制第三方身份源登录时是否自动注册系统用户。可选值：TRUE（始终自动注册，无论第三方返回的用户信息是否包含手机号或邮箱）、FALSE（不自动注册，需用户手动绑定）、UNSPECIFIED（默认行为：仅当第三方身份源返回的用户信息中包含手机号或邮箱时才自动注册，否则登录完成后要求用户绑定手机号方可继续使用）。注意：企业微信类型（WX_WORK_AGENT/WX_WORK_INTERNAL/WX_WORK_THIRD_PARTY/WX_WORK_THIRD_PARTY_ASSOCIATION）和微信小程序类型（WX_MICRO_APP/WX_QRCODE_MICRO_APP/WX_OPEN）在 UNSPECIFIED 时会自动设为 TRUE。当 TransparentMode 为 TRUE 时，该字段将被强制设为 FALSE",
           "example": "\"TRUE\"",
           "member": "string",
           "name": "AutoSignUpWithProviderUser",
@@ -12431,7 +12431,7 @@
         },
         {
           "disabled": false,
-          "document": "身份源的启用状态。可选值：TRUE（启用，用户可通过该身份源登录）、FALSE（禁用，已有绑定关系不受影响）。未传入时默认为 TRUE（启用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份源的启用状态。可选值：TRUE（启用，用户可通过该身份源登录）、FALSE（禁用，已有绑定关系不受影响）。未传入时默认为 TRUE（启用）",
           "example": "\"TRUE\"",
           "member": "string",
           "name": "On",
@@ -12442,7 +12442,7 @@
         },
         {
           "disabled": false,
-          "document": "身份源的详细描述信息，支持国际化多语言配置。可用于向用户说明该身份源的用途或使用场景。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份源的详细描述信息，支持国际化多语言配置。可用于向用户说明该身份源的用途或使用场景。",
           "example": "无",
           "member": "LocalizedMessage",
           "name": "Description",
@@ -12453,7 +12453,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启信息透传模式。可选值：TRUE（仅登录模式：平台不持久化存储用户数据，仅将第三方身份源返回的用户信息透传给业务方，适用于不希望平台留存用户数据的场景）、FALSE（登录且注册模式：平台正常注册并存储用户信息，默认值）。注意：开启透传模式时，AutoSignUpWithProviderUser 将被强制设为 FALSE；若 ReuseUserId 为 UNSPECIFIED，将被自动设为 TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启信息透传模式。可选值：TRUE（仅登录模式：平台不持久化存储用户数据，仅将第三方身份源返回的用户信息透传给业务方，适用于不希望平台留存用户数据的场景）、FALSE（登录且注册模式：平台正常注册并存储用户信息，默认值）。注意：开启透传模式时，AutoSignUpWithProviderUser 将被强制设为 FALSE；若 ReuseUserId 为 UNSPECIFIED，将被自动设为 TRUE。",
           "example": "\"FALSE\"",
           "member": "string",
           "name": "TransparentMode",
@@ -12464,7 +12464,7 @@
         },
         {
           "disabled": false,
-          "document": "是否直接复用第三方身份源返回的用户标识（如 OpenID、UnionID 等）作为平台用户 ID。可选值：TRUE（开启，平台用户 ID 将直接使用第三方身份源返回的用户标识，适用于已有用户体系迁移场景）、FALSE（关闭，由平台生成独立用户 ID）。注意：开启后需确保第三方用户标识的全局唯一性，避免 ID 冲突。当 TransparentMode 为 TRUE 且该字段为 UNSPECIFIED 时，将被自动设为 TRUE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否直接复用第三方身份源返回的用户标识（如 OpenID、UnionID 等）作为平台用户 ID。可选值：TRUE（开启，平台用户 ID 将直接使用第三方身份源返回的用户标识，适用于已有用户体系迁移场景）、FALSE（关闭，由平台生成独立用户 ID）。注意：开启后需确保第三方用户标识的全局唯一性，避免 ID 冲突。当 TransparentMode 为 TRUE 且该字段为 UNSPECIFIED 时，将被自动设为 TRUE",
           "example": "\"FALSE\"",
           "member": "string",
           "name": "ReuseUserId",
@@ -12475,7 +12475,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱身份源的专项配置，仅当 ProviderType 为 EMAIL 时有效且必填。包含邮件服务商、发件人地址、SMTP 配置等参数，用于支持通过邮箱验证码方式进行身份认证。支持两种模式：自有 SMTP 服务器（需填写完整的 SMTP 配置）和平台代发（EmailConfig.On 设为 TRUE 时由平台随机分配 SMTP 服务器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱身份源的专项配置，仅当 ProviderType 为 EMAIL 时有效且必填。包含邮件服务商、发件人地址、SMTP 配置等参数，用于支持通过邮箱验证码方式进行身份认证。支持两种模式：自有 SMTP 服务器（需填写完整的 SMTP 配置）和平台代发（EmailConfig.On 设为 TRUE 时由平台随机分配 SMTP 服务器）",
           "example": "无",
           "member": "EmailProviderConfig",
           "name": "EmailConfig",
@@ -12486,7 +12486,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启邮箱自动关联登录。可选值：TRUE（开启）、FALSE（关闭）、UNSPECIFIED（默认为 FALSE）。开启后，若第三方身份源返回的邮箱与系统中已有用户的邮箱一致，则自动将该第三方账号与已有用户关联绑定并完成登录，无需用户手动绑定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启邮箱自动关联登录。可选值：TRUE（开启）、FALSE（关闭）、UNSPECIFIED（默认为 FALSE）。开启后，若第三方身份源返回的邮箱与系统中已有用户的邮箱一致，则自动将该第三方账号与已有用户关联绑定并完成登录，无需用户手动绑定",
           "example": "\"TRUE\"",
           "member": "string",
           "name": "AutoSignInWhenEmailMatch",
@@ -12497,7 +12497,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启手机号自动关联登录。可选值：TRUE（开启）、FALSE（关闭）、UNSPECIFIED（默认行为等同于 TRUE，即默认开启）。开启后，若第三方身份源返回的手机号与系统中已有用户的手机号一致，则自动将该第三方账号与已有用户关联绑定并完成登录，无需用户手动绑定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启手机号自动关联登录。可选值：TRUE（开启）、FALSE（关闭）、UNSPECIFIED（默认行为等同于 TRUE，即默认开启）。开启后，若第三方身份源返回的手机号与系统中已有用户的手机号一致，则自动将该第三方账号与已有用户关联绑定并完成登录，无需用户手动绑定",
           "example": "\"TRUE\"",
           "member": "string",
           "name": "AutoSignInWhenPhoneNumberMatch",
@@ -12514,7 +12514,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份提供方的唯一标识符（Issuer URL），用于验证 ID Token 中的 iss 字段。仅当 ProviderType 为 OIDC 时需要填写，值通常为第三方 OIDC 服务的根地址，例如：https://accounts.google.com。填写后平台将自动通过 /.well-known/openid-configuration 发现并填充 AuthorizationEndpoint、TokenEndpoint、UserinfoEndpoint、JwksUri 等端点地址。详情参考 OpenID Connect Discovery 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份提供方的唯一标识符（Issuer URL），用于验证 ID Token 中的 iss 字段。仅当 ProviderType 为 OIDC 时需要填写，值通常为第三方 OIDC 服务的根地址，例如：https://accounts.google.com。填写后平台将自动通过 /.well-known/openid-configuration 发现并填充 AuthorizationEndpoint、TokenEndpoint、UserinfoEndpoint、JwksUri 等端点地址。详情参考 OpenID Connect Discovery 标准。",
           "example": "https://appleid.apple.com",
           "member": "string",
           "name": "Issuer",
@@ -12525,7 +12525,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方身份提供方的 JSON Web Key Set 地址，用于获取公钥以验证 ID Token 签名。仅当 ProviderType 为 OIDC 时需要填写。若已填写 Issuer，该字段将通过 OpenID Connect Discovery 自动获取，无需手动填写。详情参考 OpenID Connect Discovery 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方身份提供方的 JSON Web Key Set 地址，用于获取公钥以验证 ID Token 签名。仅当 ProviderType 为 OIDC 时需要填写。若已填写 Issuer，该字段将通过 OpenID Connect Discovery 自动获取，无需手动填写。详情参考 OpenID Connect Discovery 标准。",
           "example": "https://appleid.apple.com/auth/keys",
           "member": "string",
           "name": "JwksUri",
@@ -12536,7 +12536,7 @@
         },
         {
           "disabled": false,
-          "document": "在第三方身份提供方注册的应用客户端 ID，用于标识当前接入应用。当 ProviderType 为 OIDC 或 OAUTH 时必须填写，可在对应平台的开发者控制台中获取。详情参考 OAuth 2.0 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在第三方身份提供方注册的应用客户端 ID，用于标识当前接入应用。当 ProviderType 为 OIDC 或 OAUTH 时必须填写，可在对应平台的开发者控制台中获取。详情参考 OAuth 2.0 标准。",
           "example": "client_id",
           "member": "string",
           "name": "ClientId",
@@ -12547,7 +12547,7 @@
         },
         {
           "disabled": false,
-          "document": "在第三方身份提供方注册的应用客户端密钥，与 ClientId 配合使用，用于在 Token 端点进行身份验证。当 ProviderType 为 OIDC 或 OAUTH 时必须填写，请妥善保管，避免泄露。详情参考 OAuth 2.0 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在第三方身份提供方注册的应用客户端密钥，与 ClientId 配合使用，用于在 Token 端点进行身份验证。当 ProviderType 为 OIDC 或 OAUTH 时必须填写，请妥善保管，避免泄露。详情参考 OAuth 2.0 标准。",
           "example": "client_secret",
           "member": "string",
           "name": "ClientSecret",
@@ -12558,7 +12558,7 @@
         },
         {
           "disabled": false,
-          "document": "OAuth 授权完成后第三方平台回调的地址，需与在第三方平台注册的回调地址完全一致，否则授权将失败。当 ProviderType 为 OIDC 或 OAUTH 时必须填写，并需在对应平台的开发者控制台中配置该地址为合法回调地址。详情参考 OAuth 2.0 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OAuth 授权完成后第三方平台回调的地址，需与在第三方平台注册的回调地址完全一致，否则授权将失败。当 ProviderType 为 OIDC 或 OAUTH 时必须填写，并需在对应平台的开发者控制台中配置该地址为合法回调地址。详情参考 OAuth 2.0 标准。",
           "example": "https://envId.ap-shanghai.tcb-api.tencentcloudapi.com/auth/v1/callback",
           "member": "string",
           "name": "RedirectUri",
@@ -12569,7 +12569,7 @@
         },
         {
           "disabled": false,
-          "document": "向第三方身份提供方申请的权限范围，多个 scope 之间用空格分隔。当 ProviderType 为 OIDC 或 OAUTH 时必须填写，OIDC 场景下通常至少包含 openid，如需获取用户邮箱或手机号可追加 email、phone 等。若已填写 Issuer 且未指定 Scope，将自动使用 OpenID Connect Discovery 返回的 scopes_supported。详情参考 OAuth 2.0 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "向第三方身份提供方申请的权限范围，多个 scope 之间用空格分隔。当 ProviderType 为 OIDC 或 OAUTH 时必须填写，OIDC 场景下通常至少包含 openid，如需获取用户邮箱或手机号可追加 email、phone 等。若已填写 Issuer 且未指定 Scope，将自动使用 OpenID Connect Discovery 返回的 scopes_supported。详情参考 OAuth 2.0 标准。",
           "example": "openid email name",
           "member": "string",
           "name": "Scope",
@@ -12580,7 +12580,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方身份提供方的授权端点地址，用于发起 OAuth/OIDC 授权请求，引导用户跳转至第三方登录页面。当 ProviderType 为 OIDC 或 OAUTH 时必须填写。若已填写 Issuer，该字段将通过 OpenID Connect Discovery 自动获取，无需手动填写。详情参考 OAuth 2.0 / OIDC 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方身份提供方的授权端点地址，用于发起 OAuth/OIDC 授权请求，引导用户跳转至第三方登录页面。当 ProviderType 为 OIDC 或 OAUTH 时必须填写。若已填写 Issuer，该字段将通过 OpenID Connect Discovery 自动获取，无需手动填写。详情参考 OAuth 2.0 / OIDC 标准。",
           "example": "https://appleid.apple.com/auth/authorize?response_mode=form_post",
           "member": "string",
           "name": "AuthorizationEndpoint",
@@ -12591,7 +12591,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方身份提供方的 Token 端点地址，用于通过授权码（code）换取 Access Token 和 ID Token。当 ProviderType 为 OIDC 或 OAUTH 时必须填写。若已填写 Issuer，该字段将通过 OpenID Connect Discovery 自动获取，无需手动填写。详情参考 OAuth 2.0 / OIDC 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方身份提供方的 Token 端点地址，用于通过授权码（code）换取 Access Token 和 ID Token。当 ProviderType 为 OIDC 或 OAUTH 时必须填写。若已填写 Issuer，该字段将通过 OpenID Connect Discovery 自动获取，无需手动填写。详情参考 OAuth 2.0 / OIDC 标准。",
           "example": "https://appleid.apple.com/auth/token",
           "member": "string",
           "name": "TokenEndpoint",
@@ -12602,7 +12602,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方身份提供方的用户信息端点地址，用于通过 Access Token 获取用户的基本信息（如昵称、头像、邮箱等）。当 ProviderType 为 OIDC 或 OAUTH 且需要获取用户详细信息时填写。若已填写 Issuer，该字段将通过 OpenID Connect Discovery 自动获取，无需手动填写。详情参考 OIDC 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方身份提供方的用户信息端点地址，用于通过 Access Token 获取用户的基本信息（如昵称、头像、邮箱等）。当 ProviderType 为 OIDC 或 OAUTH 且需要获取用户详细信息时填写。若已填写 Issuer，该字段将通过 OpenID Connect Discovery 自动获取，无需手动填写。详情参考 OIDC 标准。",
           "example": "empty",
           "member": "string",
           "name": "UserinfoEndpoint",
@@ -12613,7 +12613,7 @@
         },
         {
           "disabled": false,
-          "document": "OAuth/OIDC 授权请求的响应类型，决定授权端点返回的内容。可选值：code（授权码模式，推荐）、token（隐式模式，直接返回 Access Token）、id_token（直接返回 ID Token）。当 ProviderType 为 OIDC 时默认使用 id_token，其他类型默认使用 code。当 ProviderType 为 OIDC 或 OAUTH 时可选填写。详情参考 OAuth 2.0 / OIDC 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OAuth/OIDC 授权请求的响应类型，决定授权端点返回的内容。可选值：code（授权码模式，推荐）、token（隐式模式，直接返回 Access Token）、id_token（直接返回 ID Token）。当 ProviderType 为 OIDC 时默认使用 id_token，其他类型默认使用 code。当 ProviderType 为 OIDC 或 OAUTH 时可选填写。详情参考 OAuth 2.0 / OIDC 标准。",
           "example": "empty",
           "member": "string",
           "name": "ResponseType",
@@ -12624,7 +12624,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方身份提供方的单点退出端点地址。配置后，用户退出当前应用时将被跳转至该地址，使第三方 IDP 的登录态也一并失效，实现单点退出（SLO）。适用于 OIDC、OAUTH、SAML 等所有支持单点退出的身份源类型。不填则退出时仅清除本平台登录态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方身份提供方的单点退出端点地址。配置后，用户退出当前应用时将被跳转至该地址，使第三方 IDP 的登录态也一并失效，实现单点退出（SLO）。适用于 OIDC、OAUTH、SAML 等所有支持单点退出的身份源类型。不填则退出时仅清除本平台登录态。",
           "example": "empty",
           "member": "string",
           "name": "SignoutEndpoint",
@@ -12635,7 +12635,7 @@
         },
         {
           "disabled": false,
-          "document": "Token 端点的客户端身份验证方式，决定请求 Token 时如何传递 ClientId 和 ClientSecret。可选值：CLIENT_SECRET_POST（将凭证放在请求 Body 中传递）、CLIENT_SECRET_BASIC（将凭证通过 HTTP Basic Auth Header 传递）。当 ProviderType 为 OIDC 或 OAUTH 时可选填写，默认使用 CLIENT_SECRET_POST。详情参考 OIDC 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Token 端点的客户端身份验证方式，决定请求 Token 时如何传递 ClientId 和 ClientSecret。可选值：CLIENT_SECRET_POST（将凭证放在请求 Body 中传递）、CLIENT_SECRET_BASIC（将凭证通过 HTTP Basic Auth Header 传递）。当 ProviderType 为 OIDC 或 OAUTH 时可选填写，默认使用 CLIENT_SECRET_POST。详情参考 OIDC 标准。",
           "example": "CLIENT_SECRET_POST",
           "member": "string",
           "name": "TokenEndpointAuthMethod",
@@ -12657,7 +12657,7 @@
         },
         {
           "disabled": false,
-          "document": "请求参数映射配置，用于处理非标准 OAuth 协议的参数转换。默认情况下平台严格遵循 OAuth 2.0 标准进行参数传递，若对接的第三方平台（如微信、企业微信等）使用了非标准的参数名称或传参方式，可通过该字段配置自定义的参数映射规则，以确保请求参数与第三方平台的要求一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求参数映射配置，用于处理非标准 OAuth 协议的参数转换。默认情况下平台严格遵循 OAuth 2.0 标准进行参数传递，若对接的第三方平台（如微信、企业微信等）使用了非标准的参数名称或传参方式，可通过该字段配置自定义的参数映射规则，以确保请求参数与第三方平台的要求一致。",
           "example": "无",
           "member": "ProviderRequestParametersMap",
           "name": "RequestParametersMap",
@@ -12668,7 +12668,7 @@
         },
         {
           "disabled": false,
-          "document": "响应参数映射配置，用于处理非标准 OAuth 协议的响应参数转换。默认情况下平台严格遵循 OAuth 2.0 标准解析响应参数，若对接的第三方平台（如微信、企业微信等）返回了非标准的字段名称或数据结构，可通过该字段配置自定义的响应参数映射规则，将第三方返回的字段映射为平台标准字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "响应参数映射配置，用于处理非标准 OAuth 协议的响应参数转换。默认情况下平台严格遵循 OAuth 2.0 标准解析响应参数，若对接的第三方平台（如微信、企业微信等）返回了非标准的字段名称或数据结构，可通过该字段配置自定义的响应参数映射规则，将第三方返回的字段映射为平台标准字段。",
           "example": "无",
           "member": "ProviderResponseParametersMap",
           "name": "ResponseParametersMap",
@@ -12812,7 +12812,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户唯一标识（sub）的映射字段名。对应 OIDC 标准中的 sub 字段，值为第三方平台返回的用户信息 JSON 中表示用户 ID 的字段路径。例如github平台填sub。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户唯一标识（sub）的映射字段名。对应 OIDC 标准中的 sub 字段，值为第三方平台返回的用户信息 JSON 中表示用户 ID 的字段路径。例如github平台填sub。",
           "example": "user_id",
           "member": "string",
           "name": "Sub",
@@ -12823,7 +12823,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称（name）的映射字段名。对应 OIDC 标准中的 name 字段，值为第三方平台返回的用户信息 JSON 中表示用户昵称或姓名的字段路径。例如github平台填 name。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名称（name）的映射字段名。对应 OIDC 标准中的 name 字段，值为第三方平台返回的用户信息 JSON 中表示用户昵称或姓名的字段路径。例如github平台填 name。",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -12834,7 +12834,7 @@
         },
         {
           "disabled": false,
-          "document": "用户头像（picture）的映射字段名。对应 OIDC 标准中的 picture 字段，值为第三方平台返回的用户信息 JSON 中表示用户头像 URL 的字段路径。需要公网可访问的url。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户头像（picture）的映射字段名。对应 OIDC 标准中的 picture 字段，值为第三方平台返回的用户信息 JSON 中表示用户头像 URL 的字段路径。需要公网可访问的url。",
           "example": "avatar",
           "member": "string",
           "name": "Picture",
@@ -12845,7 +12845,7 @@
         },
         {
           "disabled": false,
-          "document": "用户登录名（username）的映射字段名。对应 OIDC 标准中的 preferred_username 字段，值为第三方平台返回的用户信息 JSON 中表示用户唯一登录名的字段, 例如可使用sub或email等唯一值的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户登录名（username）的映射字段名。对应 OIDC 标准中的 preferred_username 字段，值为第三方平台返回的用户信息 JSON 中表示用户唯一登录名的字段, 例如可使用sub或email等唯一值的字段。",
           "example": "username",
           "member": "string",
           "name": "Username",
@@ -12856,7 +12856,7 @@
         },
         {
           "disabled": false,
-          "document": "用户邮箱（email）的映射字段名。对应 OIDC 标准中的 email 字段，值为第三方平台返回的用户信息 JSON 中表示用户邮箱地址的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户邮箱（email）的映射字段名。对应 OIDC 标准中的 email 字段，值为第三方平台返回的用户信息 JSON 中表示用户邮箱地址的字段。",
           "example": "email",
           "member": "string",
           "name": "Email",
@@ -12867,7 +12867,7 @@
         },
         {
           "disabled": false,
-          "document": "用户手机号（phone_number）的映射字段名。对应 OIDC 标准中的 phone_number 字段，值为第三方平台返回的用户信息 JSON 中表示用户手机号的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户手机号（phone_number）的映射字段名。对应 OIDC 标准中的 phone_number 字段，值为第三方平台返回的用户信息 JSON 中表示用户手机号的字段。",
           "example": "phone_number",
           "member": "string",
           "name": "PhoneNumber",
@@ -12878,7 +12878,7 @@
         },
         {
           "disabled": false,
-          "document": "用户角色/分组（groups）的映射字段名。对应 OIDC 标准中的 groups 字段，值为第三方平台返回的用户信息 JSON 中表示用户所属角色或分组的字段路径。支持字符串数组类型的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户角色/分组（groups）的映射字段名。对应 OIDC 标准中的 groups 字段，值为第三方平台返回的用户信息 JSON 中表示用户所属角色或分组的字段路径。支持字符串数组类型的返回值。",
           "example": "groups",
           "member": "string",
           "name": "Groups",
@@ -12889,7 +12889,7 @@
         },
         {
           "disabled": false,
-          "document": "用户 ID 的备选映射字段名。当通过 Sub 映射字段无法从第三方平台获取到用户标识时，系统将自动尝试使用此字段作为用户唯一标识的回退映射。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户 ID 的备选映射字段名。当通过 Sub 映射字段无法从第三方平台获取到用户标识时，系统将自动尝试使用此字段作为用户唯一标识的回退映射。",
           "example": "id",
           "member": "string",
           "name": "Id",
@@ -13323,7 +13323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果，返回结果为一个json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果，返回结果为一个json字符串",
           "example": "[\"string\"]",
           "member": "string",
           "name": "Data",
@@ -13429,7 +13429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>短信服务商类型</p><p>枚举值：</p><ul><li>TENCENT_CN： 腾讯云国内短信</li><li>TENCENT_INTL： 腾讯云国际短信</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信服务商类型</p><p>枚举值：</p><ul><li>TENCENT_CN： 腾讯云国内短信</li><li>TENCENT_INTL： 腾讯云国际短信</li></ul>",
           "example": "TENCENT_CN",
           "member": "string",
           "name": "Vendor",
@@ -13440,7 +13440,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>短信服务商侧申请并审核通过的模板ID。</p><ul><li>腾讯云短信模板ID可前往 <a href=\"https://console.cloud.tencent.com/smsv2/csms-template\">腾讯云国内短信</a> 或 <a href=\"https://console.cloud.tencent.com/smsv2/isms-template\">国际/港澳台短信</a> 的正文模板管理查看，若向境外手机号发送短信，仅支持使用国际/港澳台短信模板。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信服务商侧申请并审核通过的模板ID。</p><ul><li>腾讯云短信模板ID可前往 <a href=\"https://console.cloud.tencent.com/smsv2/csms-template\">腾讯云国内短信</a> 或 <a href=\"https://console.cloud.tencent.com/smsv2/isms-template\">国际/港澳台短信</a> 的正文模板管理查看，若向境外手机号发送短信，仅支持使用国际/港澳台短信模板。</li></ul>",
           "example": "1",
           "member": "string",
           "name": "TemplateId",
@@ -13451,7 +13451,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>短信服务商侧为应用分配的ID，按照服务商文档和要求需要此参数的，填写该参数。</p><ul><li>腾讯云国内短信和国际短信此参数必填，可以在<a href=\"https://console.cloud.tencent.com/smsv2/app-manage\">短信控制台</a>的应用列表中查看对应的应用id。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信服务商侧为应用分配的ID，按照服务商文档和要求需要此参数的，填写该参数。</p><ul><li>腾讯云国内短信和国际短信此参数必填，可以在<a href=\"https://console.cloud.tencent.com/smsv2/app-manage\">短信控制台</a>的应用列表中查看对应的应用id。</li></ul>",
           "example": "1",
           "member": "string",
           "name": "SdkAppId",
@@ -13462,7 +13462,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>短信服务商侧申请并审核通过的签名，按照服务商的文档和要求填写。</p><ul><li>腾讯云短信服务商，签名信息可前往 <a href=\"https://console.cloud.tencent.com/smsv2/csms-sign\">国内短信</a> 或 <a href=\"https://console.cloud.tencent.com/smsv2/isms-sign\">国际/港澳台短信</a> 的签名管理查看。<br> 注意：<ol><li>发送国内短信该参数必填，且需填写签名内容而非签名ID。</li><li>发送国际/港澳台短信该参数非必填。</li></ol></li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信服务商侧申请并审核通过的签名，按照服务商的文档和要求填写。</p><ul><li>腾讯云短信服务商，签名信息可前往 <a href=\"https://console.cloud.tencent.com/smsv2/csms-sign\">国内短信</a> 或 <a href=\"https://console.cloud.tencent.com/smsv2/isms-sign\">国际/港澳台短信</a> 的签名管理查看。<br> 注意：<ol><li>发送国内短信该参数必填，且需填写签名内容而非签名ID。</li><li>发送国际/港澳台短信该参数非必填。</li></ol></li></ul>",
           "example": "签名",
           "member": "string",
           "name": "SignName",
@@ -13473,7 +13473,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>调用短信服务商发送短信接口的调用秘钥对应的ID。</p><ul><li>调用api秘钥会保存在云开发平台控制台—扩展功能—授权管理中，如果对于短信调用的api秘钥有删除需求，可在此处进行删除，删除后，短信将无法正常发送。</li><li>腾讯云的调用api秘钥在腾讯云控制台获取，建议使用子账号的秘钥ID，并且按照最小权限配置。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调用短信服务商发送短信接口的调用秘钥对应的ID。</p><ul><li>调用api秘钥会保存在云开发平台控制台—扩展功能—授权管理中，如果对于短信调用的api秘钥有删除需求，可在此处进行删除，删除后，短信将无法正常发送。</li><li>腾讯云的调用api秘钥在腾讯云控制台获取，建议使用子账号的秘钥ID，并且按照最小权限配置。</li></ul>",
           "example": "1",
           "member": "string",
           "name": "SecretId",
@@ -13484,7 +13484,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>调用短信服务商发送短信接口的调用api秘钥对应的秘钥Key。</p><ul><li>腾讯云的调用api秘钥在腾讯云控制台获取，建议使用子账号的秘钥ID, 并且按照最小权限配置。平台对于调用api秘钥key是加密存储的，不会明文存储。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调用短信服务商发送短信接口的调用api秘钥对应的秘钥Key。</p><ul><li>腾讯云的调用api秘钥在腾讯云控制台获取，建议使用子账号的秘钥ID, 并且按照最小权限配置。平台对于调用api秘钥key是加密存储的，不会明文存储。</li></ul>",
           "example": "1",
           "member": "string",
           "name": "SecretKey",
@@ -13495,7 +13495,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否对于SecretKey参数进行加密传输。如果SecretKey 为明文，由平台侧加密保存至授权管理。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否对于SecretKey参数进行加密传输。如果SecretKey 为明文，由平台侧加密保存至授权管理。</p>",
           "example": "false",
           "member": "bool",
           "name": "SecretKeyEncrypt",
@@ -13506,7 +13506,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>短信服务商侧自定义短信发送的senderID，按照服务商文档和要求传参。</p><ul><li>仅国际化场景使用。部分国家/运营商支持自定义 Sender ID替代默认主叫号码。国内站点忽略此字段。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信服务商侧自定义短信发送的senderID，按照服务商文档和要求传参。</p><ul><li>仅国际化场景使用。部分国家/运营商支持自定义 Sender ID替代默认主叫号码。国内站点忽略此字段。</li></ul>",
           "example": "1",
           "member": "string",
           "name": "SenderId",
@@ -13517,7 +13517,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当短信自定义模板含多个占位符时，平台只负责生成验证码值，其余占位符由调用方在此提供。</p><ul><li>无需提供验证码对应的占位的值，验证码由云开发平台侧生成。</li><li>如果是命名占位的服务商的短信模板，这里的参数按照需要对应的占位的key和value，会按照对应的key和value在发送短信时，填充到模板中。</li><li>如果是序号占位的服务商的短信模板，这里的参数不需要key, 只需要填写对应的value, 会按照填写的顺序依次填充到模板中。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当短信自定义模板含多个占位符时，平台只负责生成验证码值，其余占位符由调用方在此提供。</p><ul><li>无需提供验证码对应的占位的值，验证码由云开发平台侧生成。</li><li>如果是命名占位的服务商的短信模板，这里的参数按照需要对应的占位的key和value，会按照对应的key和value在发送短信时，填充到模板中。</li><li>如果是序号占位的服务商的短信模板，这里的参数不需要key, 只需要填写对应的value, 会按照填写的顺序依次填充到模板中。</li></ul>",
           "example": "无",
           "member": "SMSTemplateParams",
           "name": "TemplateExtendParam",
@@ -13534,7 +13534,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>短信模板的自定义参数的key。如果短信厂商的自定义参数按照命名占位的，才需要此参数；如果按照序号占位的， 不需要此参数。</p><p>腾讯云短信是按照序号占位的，不需要此参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信模板的自定义参数的key。如果短信厂商的自定义参数按照命名占位的，才需要此参数；如果按照序号占位的， 不需要此参数。</p><p>腾讯云短信是按照序号占位的，不需要此参数。</p>",
           "example": "extendKey",
           "member": "string",
           "name": "Key",
@@ -13545,7 +13545,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>短信模板的自定义参数对应的value</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信模板的自定义参数对应的value</p>",
           "example": "extendValue",
           "member": "string",
           "name": "Value",
@@ -13747,7 +13747,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境ID",
           "example": "无",
           "member": "string",
           "name": "EnvId",
@@ -13757,7 +13757,7 @@
         },
         {
           "disabled": false,
-          "document": "静态域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "静态域名",
           "example": "无",
           "member": "string",
           "name": "CdnDomain",
@@ -13767,7 +13767,7 @@
         },
         {
           "disabled": false,
-          "document": "COS桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS桶",
           "example": "无",
           "member": "string",
           "name": "Bucket",
@@ -13777,7 +13777,7 @@
         },
         {
           "disabled": true,
-          "document": "cos区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cos区域",
           "example": "无",
           "member": "string",
           "name": "Regoin",
@@ -13787,7 +13787,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态:init(初始化)/process(处理中)/online(上线)/destroying(销毁中)/offline(下线))\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源状态:init(初始化)/process(处理中)/online(上线)/destroying(销毁中)/offline(下线))",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -13797,7 +13797,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "无",
           "member": "string",
           "name": "Region",
@@ -13897,7 +13897,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表名",
           "example": "",
           "member": "string",
           "name": "TableName",
@@ -13907,7 +13907,7 @@
         },
         {
           "disabled": false,
-          "document": "表中文档数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表中文档数量",
           "example": "",
           "member": "int64",
           "name": "Count",
@@ -13917,7 +13917,7 @@
         },
         {
           "disabled": false,
-          "document": "表的大小（即表中文档总大小），单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表的大小（即表中文档总大小），单位：字节",
           "example": "",
           "member": "int64",
           "name": "Size",
@@ -13927,7 +13927,7 @@
         },
         {
           "disabled": false,
-          "document": "索引数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引数量",
           "example": "",
           "member": "int64",
           "name": "IndexCount",
@@ -13937,7 +13937,7 @@
         },
         {
           "disabled": false,
-          "document": "索引占用空间，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引占用空间，单位：字节",
           "example": "",
           "member": "int64",
           "name": "IndexSize",
@@ -14983,7 +14983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li></ul>",
           "example": "apis",
           "member": "string",
           "name": "Type",
@@ -14994,7 +14994,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义 APIs 数据源唯一标识，当 Type 为 apis 时必填。用于定位微搭 APIs 中对应的数据源。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义 APIs 数据源唯一标识，当 Type 为 apis 时必填。用于定位微搭 APIs 中对应的数据源。</p>",
           "example": "method_53978f9f96a35",
           "member": "string",
           "name": "Name",
@@ -15005,7 +15005,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义 APIs 方法名，当 Type 为 apis 时必填。指定微搭 APIs 中用于发送验证码的方法。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义 APIs 方法名，当 Type 为 apis 时必填。指定微搭 APIs 中用于发送验证码的方法。</p>",
           "example": "SendVerificationCode",
           "member": "string",
           "name": "Method",
@@ -15016,7 +15016,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单个手机号每日短信发送上限。默认值为 30，传 -1 表示不限制，如果设置为不限制，需要注意恶意攻击，导致短信套餐用量计费问题。仅支持正整数或 -1。不传则不修改当前配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单个手机号每日短信发送上限。默认值为 30，传 -1 表示不限制，如果设置为不限制，需要注意恶意攻击，导致短信套餐用量计费问题。仅支持正整数或 -1。不传则不修改当前配置。</p>",
           "example": "20",
           "member": "int64",
           "name": "SmsDayLimit",
@@ -15027,7 +15027,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义短信服务商模板配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义短信服务商模板配置</p>",
           "example": "无",
           "member": "SMSProviderTemplateConfig",
           "name": "TemplateProvider",

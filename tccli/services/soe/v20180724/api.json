@@ -401,7 +401,7 @@
         },
         {
           "disabled": false,
-          "document": "详细发音评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细发音评估结果",
           "example": "[]",
           "member": "WordRsp",
           "name": "Words",
@@ -583,7 +583,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号",
           "example": "1",
           "member": "int64",
           "name": "RefTextId",
@@ -593,7 +593,7 @@
         },
         {
           "disabled": false,
-          "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题词命中标志，0表示没命中，1表示命中",
           "example": "[0,1]",
           "member": "float",
           "name": "KeyWordHits",
@@ -603,7 +603,7 @@
         },
         {
           "disabled": false,
-          "document": "负向主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负向主题词命中标志，0表示没命中，1表示命中",
           "example": "[0,1]",
           "member": "float",
           "name": "UnKeyWordHits",
@@ -619,7 +619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测结果是否有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测结果是否有效",
           "example": "true",
           "member": "bool",
           "name": "Valid",
@@ -629,7 +629,7 @@
         },
         {
           "disabled": false,
-          "document": "文本标准声调，数值范围[-1,1,2,3,4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本标准声调，数值范围[-1,1,2,3,4]",
           "example": "1",
           "member": "int64",
           "name": "RefTone",
@@ -639,7 +639,7 @@
         },
         {
           "disabled": false,
-          "document": "实际发音声调，数值范围[-1,1,2,3,4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际发音声调，数值范围[-1,1,2,3,4]",
           "example": "1",
           "member": "int64",
           "name": "HypothesisTone",
@@ -832,7 +832,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号",
           "example": "1",
           "member": "int64",
           "name": "RefTextId",
@@ -842,7 +842,7 @@
         },
         {
           "disabled": false,
-          "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题词命中标志，0表示没命中，1表示命中",
           "example": "1",
           "member": "float",
           "name": "KeyWordHits",
@@ -852,7 +852,7 @@
         },
         {
           "disabled": false,
-          "document": "负向主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负向主题词命中标志，0表示没命中，1表示命中",
           "example": "0",
           "member": "float",
           "name": "UnKeyWordHits",
@@ -1141,7 +1141,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号",
           "example": "-1",
           "member": "int64",
           "name": "RefTextId",
@@ -1151,7 +1151,7 @@
         },
         {
           "disabled": false,
-          "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题词命中标志，0表示没命中，1表示命中",
           "example": "无",
           "member": "float",
           "name": "KeyWordHits",
@@ -1161,7 +1161,7 @@
         },
         {
           "disabled": false,
-          "document": "负向主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负向主题词命中标志，0表示没命中，1表示命中",
           "example": "无",
           "member": "float",
           "name": "UnKeyWordHits",
@@ -1263,7 +1263,7 @@
         },
         {
           "disabled": false,
-          "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题词命中标志，0表示没命中，1表示命中",
           "example": "0",
           "member": "int64",
           "name": "KeywordTag",
@@ -1273,7 +1273,7 @@
         },
         {
           "disabled": false,
-          "document": "声调检测结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "声调检测结果",
           "example": "tone",
           "member": "Tone",
           "name": "Tone",

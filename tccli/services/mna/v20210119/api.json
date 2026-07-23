@@ -1144,7 +1144,7 @@
         },
         {
           "disabled": false,
-          "document": "网关IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关IP",
           "example": "\"xxx.xxx.xx.xx\"",
           "member": "string",
           "name": "GatewayIp",
@@ -1154,7 +1154,7 @@
         },
         {
           "disabled": false,
-          "document": "网关地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关地址",
           "example": "\"guangzhou\"",
           "member": "string",
           "name": "GatewaySite",
@@ -1164,7 +1164,7 @@
         },
         {
           "disabled": false,
-          "document": "目标IP数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标IP数量",
           "example": "1",
           "member": "int64",
           "name": "IpCount",
@@ -1174,7 +1174,7 @@
         },
         {
           "disabled": false,
-          "document": "目标IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标IP列表",
           "example": "无",
           "member": "string",
           "name": "IpList",
@@ -2167,7 +2167,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标IP信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标IP信息",
           "example": "无",
           "member": "DestIpInfo",
           "name": "DestIpInfo",

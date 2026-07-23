@@ -1761,7 +1761,7 @@
         },
         {
           "disabled": false,
-          "document": "公网实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网实例名称",
           "example": "北京测试公网实例",
           "member": "string",
           "name": "NetworkInstanceName",
@@ -1771,7 +1771,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽，单位Mbps",
           "example": "100",
           "member": "int64",
           "name": "Bandwidth",
@@ -1831,7 +1831,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的Ipv4网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的Ipv4网段",
           "example": "无",
           "member": "PublicNetworkSegment",
           "name": "Ipv4CidrSet",
@@ -1841,7 +1841,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的Ipv6网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的Ipv6网段",
           "example": "无",
           "member": "PublicNetworkSegment",
           "name": "Ipv6CidrSet",
@@ -1999,7 +1999,7 @@
         },
         {
           "disabled": false,
-          "document": "销毁失败的实例信息列表（部分成功时返回）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "销毁失败的实例信息列表（部分成功时返回）。",
           "example": "无",
           "member": "FailedInstance",
           "name": "FailedInstanceSet",

@@ -1374,7 +1374,7 @@
         },
         {
           "disabled": false,
-          "document": "源IP。\n使用限制：Type为in、all时才可使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源IP。\n使用限制：Type为in、all时才可使用",
           "example": "无",
           "member": "string",
           "name": "SrcIp",
@@ -1384,7 +1384,7 @@
         },
         {
           "disabled": false,
-          "document": "目的IP。\n使用限制：Type为out、all时才可使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的IP。\n使用限制：Type为out、all时才可使用。",
           "example": "无",
           "member": "string",
           "name": "DstIp",
@@ -1394,7 +1394,7 @@
         },
         {
           "disabled": false,
-          "document": "源端口。\n使用限制：Type为all才可使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端口。\n使用限制：Type为all才可使用。",
           "example": "无",
           "member": "int64",
           "name": "SrcPort",
@@ -1404,7 +1404,7 @@
         },
         {
           "disabled": false,
-          "document": "目的端口。\n使用限制：Type为all才可使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的端口。\n使用限制：Type为all才可使用。",
           "example": "无",
           "member": "int64",
           "name": "DstPort",
@@ -1414,7 +1414,7 @@
         },
         {
           "disabled": false,
-          "document": "协议类型：tcp、udp、all（tcp和udp）。\n使用限制：Type为all才可使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议类型：tcp、udp、all（tcp和udp）。\n使用限制：Type为all才可使用。",
           "example": "无",
           "member": "string",
           "name": "Protocol",
@@ -1917,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "关联到的转发规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联到的转发规则ID",
           "example": "loc-q03gxxxx",
           "member": "string",
           "name": "LocationId",
@@ -1947,7 +1947,7 @@
         },
         {
           "disabled": false,
-          "document": "关联到的转发规则域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联到的转发规则域名",
           "example": "test.clb.cloud.tencent.com",
           "member": "string",
           "name": "Domain",
@@ -1957,7 +1957,7 @@
         },
         {
           "disabled": false,
-          "document": "关联到的转发规则URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联到的转发规则URL",
           "example": "/association_item",
           "member": "string",
           "name": "Url",
@@ -2087,7 +2087,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区转发亲和失效阈值，当可用区内后端服务健康比例小于该阈值时，负载均衡会退出可用区转发亲和，转为全可用区转发。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区转发亲和失效阈值，当可用区内后端服务健康比例小于该阈值时，负载均衡会退出可用区转发亲和，转为全可用区转发。",
           "example": "65",
           "member": "uint64",
           "name": "ExitRatio",
@@ -2098,7 +2098,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区转发亲和的重新生效阈值，当处于全可用区转发，且负载均衡可用区内的后端服务健康比例大于等于该阈值时，负载均衡会重新进入可用区转发亲和。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区转发亲和的重新生效阈值，当处于全可用区转发，且负载均衡可用区内的后端服务健康比例大于等于该阈值时，负载均衡会重新进入可用区转发亲和。",
           "example": "80",
           "member": "uint64",
           "name": "ReentryRatio",
@@ -2155,7 +2155,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的外网 IP",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "PublicIpAddresses",
@@ -2175,7 +2175,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的实例名称",
           "example": "test-cvm",
           "member": "string",
           "name": "InstanceName",
@@ -2195,7 +2195,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡唯一ID，如 eni-1234abcd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性网卡唯一ID，如 eni-1234abcd",
           "example": "eni-1234abcd",
           "member": "string",
           "name": "EniId",
@@ -2215,7 +2215,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务所在的可用区，如ap-guangzhou-1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务所在的可用区，如ap-guangzhou-1",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -2599,7 +2599,7 @@
         },
         {
           "disabled": false,
-          "document": "location的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "location的url",
           "example": "/index",
           "member": "string",
           "name": "Url",
@@ -2731,7 +2731,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Key ID。仅当Type为Key时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Key ID。仅当Type为Key时返回。</p>",
           "example": "vkey-abc12345",
           "member": "string",
           "name": "KeyId",
@@ -2797,7 +2797,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>预算刷新周期。</p><p>枚举值：</p><ul><li>1d：按天刷新</li><li>7d：按周刷新</li><li>30d：按月刷新</li></ul><p>不传时默认30d。同一个Budget下每种刷新周期最多配置一次。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预算刷新周期。</p><p>枚举值：</p><ul><li>1d：按天刷新</li><li>7d：按周刷新</li><li>30d：按月刷新</li></ul><p>不传时默认30d。同一个Budget下每种刷新周期最多配置一次。</p>",
           "example": "7d",
           "member": "string",
           "name": "BudgetDuration",
@@ -2819,7 +2819,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最大预算。</p><p>单位：credit。取值需大于0且不超过10000000000；不传时默认100000。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大预算。</p><p>单位：credit。取值需大于0且不超过10000000000；不传时默认100000。</p>",
           "example": "100",
           "member": "float",
           "name": "MaxBudget",
@@ -3947,7 +3947,7 @@
         },
         {
           "disabled": false,
-          "document": "集群标签，只有TGW/STGW集群有标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群标签，只有TGW/STGW集群有标签",
           "example": "TEST-FOR-XXX",
           "member": "string",
           "name": "ClusterTag",
@@ -3977,7 +3977,7 @@
         },
         {
           "disabled": false,
-          "document": "最大连接数（个/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大连接数（个/秒）",
           "example": "0",
           "member": "int64",
           "name": "MaxConn",
@@ -3987,7 +3987,7 @@
         },
         {
           "disabled": false,
-          "document": "最大入带宽Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大入带宽Mbps",
           "example": "0",
           "member": "int64",
           "name": "MaxInFlow",
@@ -3997,7 +3997,7 @@
         },
         {
           "disabled": false,
-          "document": "最大入包量（个/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大入包量（个/秒）",
           "example": "0",
           "member": "int64",
           "name": "MaxInPkg",
@@ -4007,7 +4007,7 @@
         },
         {
           "disabled": false,
-          "document": "最大出带宽Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大出带宽Mbps",
           "example": "0",
           "member": "int64",
           "name": "MaxOutFlow",
@@ -4017,7 +4017,7 @@
         },
         {
           "disabled": false,
-          "document": "最大出包量（个/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大出包量（个/秒）",
           "example": "0",
           "member": "int64",
           "name": "MaxOutPkg",
@@ -4027,7 +4027,7 @@
         },
         {
           "disabled": false,
-          "document": "最大新建连接数（个/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大新建连接数（个/秒）",
           "example": "0",
           "member": "int64",
           "name": "MaxNewConn",
@@ -4037,7 +4037,7 @@
         },
         {
           "disabled": false,
-          "document": "http最大新建连接数（个/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "http最大新建连接数（个/秒）",
           "example": "0",
           "member": "int64",
           "name": "HTTPMaxNewConn",
@@ -4047,7 +4047,7 @@
         },
         {
           "disabled": false,
-          "document": "https最大新建连接数（个/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "https最大新建连接数（个/秒）",
           "example": "0",
           "member": "int64",
           "name": "HTTPSMaxNewConn",
@@ -4057,7 +4057,7 @@
         },
         {
           "disabled": false,
-          "document": "http QPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "http QPS",
           "example": "0",
           "member": "int64",
           "name": "HTTPQps",
@@ -4067,7 +4067,7 @@
         },
         {
           "disabled": false,
-          "document": "https QPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "https QPS",
           "example": "0",
           "member": "int64",
           "name": "HTTPSQps",
@@ -4087,7 +4087,7 @@
         },
         {
           "disabled": false,
-          "document": "集群内空闲资源数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群内空闲资源数目",
           "example": "0",
           "member": "int64",
           "name": "IdleResourceCount",
@@ -4097,7 +4097,7 @@
         },
         {
           "disabled": false,
-          "document": "集群内转发机的数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群内转发机的数目",
           "example": "4",
           "member": "int64",
           "name": "LoadBalanceDirectorCount",
@@ -4107,7 +4107,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的Isp属性，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\",\"INTERNAL\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群的Isp属性，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\",\"INTERNAL\"。",
           "example": "BGP",
           "member": "string",
           "name": "Isp",
@@ -4117,7 +4117,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所在的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群所在的可用区",
           "example": "无",
           "member": "ClustersZone",
           "name": "ClustersZone",
@@ -4127,7 +4127,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群版本",
           "example": "1",
           "member": "string",
           "name": "ClustersVersion",
@@ -4244,7 +4244,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所在可用区，如ap-guangzhou-1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群所在可用区，如ap-guangzhou-1",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -4281,7 +4281,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡唯一ID，如lb-12345678。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡唯一ID，如lb-12345678。",
           "example": "lb-12345678",
           "member": "string",
           "name": "LoadBalancerId",
@@ -4321,7 +4321,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所在的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群所在的可用区",
           "example": "无",
           "member": "ClustersZone",
           "name": "ClustersZone",
@@ -4764,7 +4764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "由网关负载均衡实例唯一 ID 组成的数组。\n存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "由网关负载均衡实例唯一 ID 组成的数组。\n存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。",
           "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -4774,7 +4774,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单号。",
           "example": "2022XXXX",
           "member": "string",
           "name": "DealName",
@@ -5644,7 +5644,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>由负载均衡实例唯一 ID 组成的数组。<br>存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>由负载均衡实例唯一 ID 组成的数组。<br>存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。</p>",
           "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -5654,7 +5654,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>订单号。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订单号。</p>",
           "example": "2022XXXX",
           "member": "string",
           "name": "DealName",
@@ -6594,7 +6594,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>Budget刷新周期。</p><p>枚举值：</p><ul><li>1d：按天刷新</li><li>7d：按周刷新</li><li>30d：按月刷新</li></ul><p>仅在 CreditUsageSet 数组元素中返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Budget刷新周期。</p><p>枚举值：</p><ul><li>1d：按天刷新</li><li>7d：按周刷新</li><li>30d：按月刷新</li></ul><p>仅在 CreditUsageSet 数组元素中返回。</p>",
           "example": "30d",
           "member": "string",
           "name": "BudgetDuration",
@@ -6605,7 +6605,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>下次刷新时间。</p><p>用户组关联Budget且Budget设置重置周期时返回；未关联Budget或未设置重置周期时为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下次刷新时间。</p><p>用户组关联Budget且Budget设置重置周期时返回；未关联Budget或未设置重置周期时为空。</p>",
           "example": "2026-07-01T00:00:00+08:00",
           "member": "string",
           "name": "BudgetResetAt",
@@ -6616,7 +6616,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Credit上限。</p><p>用户组关联Budget且Budget设置最大预算时返回；未设置最大预算时为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Credit上限。</p><p>用户组关联Budget且Budget设置最大预算时返回；未设置最大预算时为空。</p>",
           "example": "1000",
           "member": "float",
           "name": "Limit",
@@ -11213,7 +11213,7 @@
         },
         {
           "disabled": false,
-          "document": "由负载均衡实例唯一 ID 组成的数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "由负载均衡实例唯一 ID 组成的数组。",
           "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -11223,7 +11223,7 @@
         },
         {
           "disabled": false,
-          "document": "辅助描述信息，如失败原因等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "辅助描述信息，如失败原因等。",
           "example": "更新LB失败",
           "member": "string",
           "name": "Message",
@@ -11659,7 +11659,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "4层独占集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "4层独占集群列表",
           "example": "",
           "member": "ClusterItem",
           "name": "L4Clusters",
@@ -11670,7 +11670,7 @@
         },
         {
           "disabled": false,
-          "document": "7层独占集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "7层独占集群列表",
           "example": "",
           "member": "ClusterItem",
           "name": "L7Clusters",
@@ -11681,7 +11681,7 @@
         },
         {
           "disabled": false,
-          "document": "vpcgw集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpcgw集群",
           "example": "",
           "member": "ClusterItem",
           "name": "ClassicalCluster",
@@ -11800,7 +11800,7 @@
         },
         {
           "disabled": false,
-          "document": "标识 FunctionQualifier 参数的类型，可取值： VERSION（版本）、ALIAS（别名）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标识 FunctionQualifier 参数的类型，可取值： VERSION（版本）、ALIAS（别名）",
           "example": "VERSION",
           "member": "string",
           "name": "FunctionQualifierType",
@@ -11845,7 +11845,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关负载均衡ACL组唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡ACL组唯一ID。",
           "example": "gwlbacl-ryrlcpl2",
           "member": "string",
           "name": "AclGroupId",
@@ -11855,7 +11855,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡ACL组名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡ACL组名称。",
           "example": "test-name",
           "member": "string",
           "name": "AclGroupName",
@@ -11865,7 +11865,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡ACL组所在私有网络唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡ACL组所在私有网络唯一ID。",
           "example": "vpc-b5oj927d",
           "member": "string",
           "name": "VpcId",
@@ -11875,7 +11875,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡ACL组所关联的网关负载均衡实例列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡ACL组所关联的网关负载均衡实例列表。",
           "example": "gwlb-xxxx",
           "member": "string",
           "name": "AssociatedInstances",
@@ -11885,7 +11885,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡ACL组的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡ACL组的创建时间。",
           "example": "2023-03-22 10:39:03",
           "member": "string",
           "name": "CreateTime",
@@ -11921,7 +11921,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡所属私有网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡所属私有网络。",
           "example": "vpc-mj65xxxx",
           "member": "string",
           "name": "VpcId",
@@ -11961,7 +11961,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的目标组唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的目标组唯一ID。",
           "example": "lbtg-xxx",
           "member": "string",
           "name": "TargetGroupId",
@@ -11971,7 +11971,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡实例绑定的ACL规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡实例绑定的ACL规则。",
           "example": "gwlbacl-xxx",
           "member": "string",
           "name": "AssociateAclGroup",
@@ -11981,7 +11981,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽上限，单位为Mbps。默认为512000Mbps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽上限，单位为Mbps。默认为512000Mbps。",
           "example": "0",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
@@ -11991,7 +11991,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启删除保护功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启删除保护功能。",
           "example": "true",
           "member": "bool",
           "name": "DeleteProtect",
@@ -12001,7 +12001,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的标签信息。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -12011,7 +12011,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡的实例规格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡的实例规格。",
           "example": "share",
           "member": "string",
           "name": "Specifications",
@@ -12153,7 +12153,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。\n1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。\n1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。",
           "example": "8",
           "member": "int64",
           "name": "HttpCode",
@@ -12164,7 +12164,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。",
           "example": "/xxx",
           "member": "string",
           "name": "HttpCheckPath",
@@ -12175,7 +12175,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查域名，将在HTTP协议 Host 头字段中携带。（仅适用于HTTP/HTTPS监听器和TCP监听器的HTTP健康检查方式。针对TCP监听器，当使用HTTP健康检查方式时，该参数为必填项）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查域名，将在HTTP协议 Host 头字段中携带。（仅适用于HTTP/HTTPS监听器和TCP监听器的HTTP健康检查方式。针对TCP监听器，当使用HTTP健康检查方式时，该参数为必填项）。",
           "example": "www.xxxx.com",
           "member": "string",
           "name": "HttpCheckDomain",
@@ -12186,7 +12186,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。",
           "example": "HEAD",
           "member": "string",
           "name": "HttpCheckMethod",
@@ -12197,7 +12197,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。传参数值-1可恢复默认设置。（仅适用于TCP/UDP监听器）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。传参数值-1可恢复默认设置。（仅适用于TCP/UDP监听器）。",
           "example": "8000",
           "member": "int64",
           "name": "CheckPort",
@@ -12208,7 +12208,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP监听器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。（仅适用于TCP/UDP监听器）",
           "example": "TEXT",
           "member": "string",
           "name": "ContextType",
@@ -12219,7 +12219,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。",
           "example": "request-info",
           "member": "string",
           "name": "SendContext",
@@ -12230,7 +12230,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP监听器）。",
           "example": "response-info",
           "member": "string",
           "name": "RecvContext",
@@ -12252,7 +12252,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP版本。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HTTP版本。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）",
           "example": "HTTP/1.1",
           "member": "string",
           "name": "HttpVersion",
@@ -12274,7 +12274,7 @@
         },
         {
           "disabled": false,
-          "document": "GRPC健康检查状态码（仅适用于后端转发协议为GRPC的规则）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GRPC健康检查状态码（仅适用于后端转发协议为GRPC的规则）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99",
           "example": "12",
           "member": "string",
           "name": "ExtendedCode",
@@ -12888,7 +12888,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包的类型，如 BGP（多线）。\n类型如下：\nSINGLEISP: 单线\nBGP: 多线\nHIGH_QUALITY_BGP: 精品BGP共享带宽包\nSINGLEISP_CMCC: 中国移动共享带宽包\nSINGLEISP_CTCC: 中国电信共享带宽包\nSINGLEISP_CUCC: 中国联通共享带宽包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽包的类型，如 BGP（多线）。\n类型如下：\nSINGLEISP: 单线\nBGP: 多线\nHIGH_QUALITY_BGP: 精品BGP共享带宽包\nSINGLEISP_CMCC: 中国移动共享带宽包\nSINGLEISP_CTCC: 中国电信共享带宽包\nSINGLEISP_CUCC: 中国联通共享带宽包",
           "example": "SINGLEISP",
           "member": "string",
           "name": "BandwidthpkgSubType",
@@ -12905,7 +12905,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后付费单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费单价，单位：元。",
           "example": "10",
           "member": "float",
           "name": "UnitPrice",
@@ -12915,7 +12915,7 @@
         },
         {
           "disabled": false,
-          "document": "后续计价单元，可取值范围： \nHOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）；\nGB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后续计价单元，可取值范围： \nHOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）；\nGB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
@@ -12925,7 +12925,7 @@
         },
         {
           "disabled": false,
-          "document": "预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支费用的原价，单位：元。",
           "example": "50",
           "member": "float",
           "name": "OriginalPrice",
@@ -12935,7 +12935,7 @@
         },
         {
           "disabled": false,
-          "document": "预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支费用的折扣价，单位：元。",
           "example": "50",
           "member": "float",
           "name": "DiscountPrice",
@@ -12945,7 +12945,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费的折扣单价，单位:元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费的折扣单价，单位:元",
           "example": "10",
           "member": "float",
           "name": "UnitPriceDiscount",
@@ -12955,7 +12955,7 @@
         },
         {
           "disabled": false,
-          "document": "折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣，如20.0代表2折。",
           "example": "100",
           "member": "float",
           "name": "Discount",
@@ -13032,7 +13032,7 @@
         },
         {
           "disabled": false,
-          "document": "Key 创建时间（ISO 8601）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Key 创建时间（ISO 8601）",
           "example": "2025-01-01T00:00:00Z",
           "member": "string",
           "name": "CreatedAt",
@@ -13043,7 +13043,7 @@
         },
         {
           "disabled": false,
-          "document": "Key 显示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Key 显示名称",
           "example": "my-key",
           "member": "string",
           "name": "Name",
@@ -13070,7 +13070,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Key关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Key关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>",
           "example": "budget-1a2b3c4d",
           "member": "string",
           "name": "BudgetId",
@@ -13080,7 +13080,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Key关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Key关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>",
           "example": "production-budget",
           "member": "string",
           "name": "BudgetName",
@@ -13217,7 +13217,7 @@
         },
         {
           "disabled": false,
-          "document": "Key 标识名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Key 标识名称",
           "example": "my-key",
           "member": "string",
           "name": "Name",
@@ -13328,7 +13328,7 @@
         },
         {
           "disabled": false,
-          "document": "操作保护的设置uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作保护的设置uin。",
           "example": "1235450",
           "member": "string",
           "name": "OperatorUin",
@@ -13338,7 +13338,7 @@
         },
         {
           "disabled": false,
-          "document": "设置操作保护时的描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置操作保护时的描述信息。",
           "example": "x",
           "member": "string",
           "name": "Description",
@@ -13348,7 +13348,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后修改时间。",
           "example": "2021-09-09 15:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -13474,7 +13474,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>监听器绑定的证书信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>监听器绑定的证书信息</p>",
           "example": "无",
           "member": "CertificateOutput",
           "name": "Certificate",
@@ -13484,7 +13484,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>监听器的健康检查信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>监听器的健康检查信息</p>",
           "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
@@ -13494,7 +13494,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。</p>",
           "example": "WRR",
           "member": "string",
           "name": "Scheduler",
@@ -13504,7 +13504,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。</p><p>单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>会话保持时间，单位：秒。可选值：30~3600，默认 0，默认不开启。此参数仅适用于TCP/UDP监听器。</p><p>单位：秒</p>",
           "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
@@ -13524,7 +13524,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>监听器下的全部转发规则（本参数仅对于HTTP/HTTPS监听器有意义）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>监听器下的全部转发规则（本参数仅对于HTTP/HTTPS监听器有意义）</p>",
           "example": "无",
           "member": "RuleOutput",
           "name": "Rules",
@@ -13564,7 +13564,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后端服务器类型，可选值：NODE、POLARIS、TARGETGROUP、TARGETGROUP-V2</p>",
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
@@ -13574,7 +13574,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段</p>",
           "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroup",
@@ -13594,7 +13594,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）</p>",
           "example": "0",
           "member": "int64",
           "name": "KeepaliveEnable",
@@ -13634,7 +13634,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定的目标组列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的目标组列表</p>",
           "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroupList",
@@ -13664,7 +13664,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>空闲连接超时时间，仅支持TCP监听器。默认值:900；共享型实例和独占型实例取值范围：300～900，性能容量型实例取值范围:300～1980。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>空闲连接超时时间，仅支持TCP监听器。默认值:900；共享型实例和独占型实例取值范围：300～900，性能容量型实例取值范围:300～1980。</p>",
           "example": "900",
           "member": "int64",
           "name": "IdleConnectTimeout",
@@ -13862,7 +13862,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定规则",
           "example": "无",
           "member": "RulesItems",
           "name": "Rules",
@@ -13872,7 +13872,7 @@
         },
         {
           "disabled": false,
-          "document": "四层绑定对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "四层绑定对象",
           "example": "无",
           "member": "LbRsTargets",
           "name": "Targets",
@@ -14052,7 +14052,7 @@
         },
         {
           "disabled": true,
-          "document": "用户开启日志的信息，日志只有公网属性创建了 HTTP 、HTTPS 监听器的负载均衡才会有日志。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户开启日志的信息，日志只有公网属性创建了 HTTP 、HTTPS 监听器的负载均衡才会有日志。",
           "example": "null",
           "member": "string",
           "name": "Log",
@@ -14140,7 +14140,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡IP地址所属的运营商。\n\n- BGP :  BGP（多线）\n- CMCC：中国移动单线\n- CTCC：中国电信单线\n- CUCC：中国联通单线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡IP地址所属的运营商。\n\n- BGP :  BGP（多线）\n- CMCC：中国移动单线\n- CTCC：中国电信单线\n- CUCC：中国联通单线",
           "example": "BGP",
           "member": "string",
           "name": "VipIsp",
@@ -14151,7 +14151,7 @@
         },
         {
           "disabled": false,
-          "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主可用区",
           "example": "无",
           "member": "ZoneInfo",
           "name": "MasterZone",
@@ -14162,7 +14162,7 @@
         },
         {
           "disabled": false,
-          "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备可用区",
           "example": "无",
           "member": "ZoneInfo",
           "name": "BackupZoneSet",
@@ -14173,7 +14173,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例被隔离的时间。\n格式：YYYY-MM-DD HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例被隔离的时间。\n格式：YYYY-MM-DD HH:mm:ss",
           "example": "2022-02-12 12:15:08",
           "member": "string",
           "name": "IsolatedTime",
@@ -14184,7 +14184,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的过期时间，仅对预付费负载均衡生效。\n格式：YYYY-MM-DD HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的过期时间，仅对预付费负载均衡生效。\n格式：YYYY-MM-DD HH:mm:ss",
           "example": "2021-02-12 12:15:08",
           "member": "string",
           "name": "ExpireTime",
@@ -14195,7 +14195,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的计费类型，PREPAID：包年包月，POSTPAID_BY_HOUR：按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的计费类型，PREPAID：包年包月，POSTPAID_BY_HOUR：按量计费",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
@@ -14206,7 +14206,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的网络属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的网络属性",
           "example": "无",
           "member": "InternetAccessible",
           "name": "NetworkAttributes",
@@ -14217,7 +14217,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的预付费相关属性，仅在 ChargeType=PREPAID 时显示。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的预付费相关属性，仅在 ChargeType=PREPAID 时显示。",
           "example": "无",
           "member": "LBChargePrepaid",
           "name": "PrepaidAttributes",
@@ -14250,7 +14250,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的IPv6地址",
           "example": "2402:4e00:1000:4e00:0:920b:5519:d96d",
           "member": "string",
           "name": "AddressIPv6",
@@ -14261,7 +14261,7 @@
         },
         {
           "disabled": false,
-          "document": "暂做保留，一般用户无需关注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "暂做保留，一般用户无需关注。",
           "example": "无",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
@@ -14316,7 +14316,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址版本为ipv6时此字段有意义，IPv6Nat64 | IPv6FullChain。\nIPv6Nat64: 基于 NAT64 IPv6 过渡技术实现的负载均衡器。\nIPv6FullChain：基于 IPv6 单栈技术实现的负载均衡。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址版本为ipv6时此字段有意义，IPv6Nat64 | IPv6FullChain。\nIPv6Nat64: 基于 NAT64 IPv6 过渡技术实现的负载均衡器。\nIPv6FullChain：基于 IPv6 单栈技术实现的负载均衡。",
           "example": "IPv6FullChain",
           "member": "string",
           "name": "IPv6Mode",
@@ -14393,7 +14393,7 @@
         },
         {
           "disabled": false,
-          "document": "7层独占标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "7层独占标签。",
           "example": "FOR_TEST",
           "member": "string",
           "name": "ClusterTag",
@@ -14415,7 +14415,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络内网负载均衡，就近接入模式下规则所落在的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络内网负载均衡，就近接入模式下规则所落在的可用区",
           "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "Zones",
@@ -14426,7 +14426,7 @@
         },
         {
           "disabled": false,
-          "document": "CLB是否为NFV，空：不是，l7nfv：七层是NFV。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CLB是否为NFV，空：不是，l7nfv：七层是NFV。",
           "example": "null",
           "member": "string",
           "name": "NfvInfo",
@@ -14459,7 +14459,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID",
           "example": "[\"cluster-1234xxxx\"]",
           "member": "string",
           "name": "ClusterIds",
@@ -14503,7 +14503,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型是否为独占型。1：独占型实例。0：非独占型实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型是否为独占型。1：独占型实例。0：非独占型实例。",
           "example": "0",
           "member": "uint64",
           "name": "Exclusive",
@@ -14573,7 +14573,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的网络类型：\nPublic：公网属性，Private：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的网络类型：\nPublic：公网属性，Private：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。",
           "example": "Public",
           "member": "string",
           "name": "LoadBalancerType",
@@ -14583,7 +14583,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的状态，包括\n0：创建中，1：正常运行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的状态，包括\n0：创建中，1：正常运行。",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -14593,7 +14593,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的 VIP 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的 VIP 。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Address",
@@ -14603,7 +14603,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例 VIP 的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例 VIP 的IPv6地址。",
           "example": "null",
           "member": "string",
           "name": "AddressIPv6",
@@ -14613,7 +14613,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例IP版本，IPv4 | IPv6。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例IP版本，IPv4 | IPv6。",
           "example": "IPv4",
           "member": "string",
           "name": "AddressIPVersion",
@@ -14623,7 +14623,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例IPv6地址类型，IPv6Nat64 | IPv6FullChain。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例IPv6地址类型，IPv6Nat64 | IPv6FullChain。",
           "example": "null",
           "member": "string",
           "name": "IPv6Mode",
@@ -14633,7 +14633,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例所在可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例所在可用区。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -14643,7 +14643,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例IP地址所属的ISP。取值范围：BGP（多线）、CMCC（中国移动）、CUCC（中国联通）、CTCC（中国电信）、INTERNAL（内网）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例IP地址所属的ISP。取值范围：BGP（多线）、CMCC（中国移动）、CUCC（中国联通）、CTCC（中国电信）、INTERNAL（内网）。",
           "example": "CMCC",
           "member": "string",
           "name": "AddressIsp",
@@ -14653,7 +14653,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例所属私有网络的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例所属私有网络的 ID。",
           "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
@@ -14663,7 +14663,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例所属的项目 ID， 0 表示默认项目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例所属的项目 ID， 0 表示默认项目。",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
@@ -14673,7 +14673,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的创建时间。",
           "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -14683,7 +14683,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的计费类型。取值范围：PREPAID预付费、POSTPAID_BY_HOUR按量付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的计费类型。取值范围：PREPAID预付费、POSTPAID_BY_HOUR按量付费。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
@@ -14693,7 +14693,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的网络属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的网络属性。",
           "example": "无",
           "member": "InternetAccessible",
           "name": "NetworkAttributes",
@@ -14703,7 +14703,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的预付费相关属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的预付费相关属性。",
           "example": "无",
           "member": "LBChargePrepaid",
           "name": "PrepaidAttributes",
@@ -14713,7 +14713,7 @@
         },
         {
           "disabled": false,
-          "document": "暂做保留，一般用户无需关注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "暂做保留，一般用户无需关注。",
           "example": "无",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
@@ -14723,7 +14723,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡维度的个性化配置ID，多个配置用逗号隔开。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡维度的个性化配置ID，多个配置用逗号隔开。",
           "example": "pz-12345678",
           "member": "string",
           "name": "ConfigId",
@@ -14733,7 +14733,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的标签信息。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -14743,7 +14743,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡监听器 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡监听器 ID。",
           "example": "lbl-12345678",
           "member": "string",
           "name": "ListenerId",
@@ -14753,7 +14753,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器协议。",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
@@ -14763,7 +14763,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器端口。",
           "example": "80",
           "member": "uint64",
           "name": "Port",
@@ -14773,7 +14773,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则的 ID。",
           "example": "loc-12345678",
           "member": "string",
           "name": "LocationId",
@@ -14783,7 +14783,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则的域名。",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
@@ -14793,7 +14793,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则的路径。",
           "example": "/details",
           "member": "string",
           "name": "Url",
@@ -14803,7 +14803,7 @@
         },
         {
           "disabled": false,
-          "document": "后端目标ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端目标ID。",
           "example": "ins-12345678",
           "member": "string",
           "name": "TargetId",
@@ -14813,7 +14813,7 @@
         },
         {
           "disabled": false,
-          "document": "后端目标的IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端目标的IP地址。",
           "example": "172.16.0.2",
           "member": "string",
           "name": "TargetAddress",
@@ -14823,7 +14823,7 @@
         },
         {
           "disabled": false,
-          "document": "后端目标监听端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端目标监听端口。",
           "example": "80",
           "member": "uint64",
           "name": "TargetPort",
@@ -14833,7 +14833,7 @@
         },
         {
           "disabled": false,
-          "document": "后端目标转发权重。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端目标转发权重。",
           "example": "10",
           "member": "uint64",
           "name": "TargetWeight",
@@ -14843,7 +14843,7 @@
         },
         {
           "disabled": false,
-          "document": "0：表示未被隔离，1：表示被隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0：表示未被隔离，1：表示被隔离。",
           "example": "0",
           "member": "uint64",
           "name": "Isolation",
@@ -14853,7 +14853,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡绑定的安全组列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡绑定的安全组列表。",
           "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroup",
@@ -14863,7 +14863,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡安全组上移特性是否开启标识。取值范围：1表示开启、0表示未开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡安全组上移特性是否开启标识。取值范围：1表示开启、0表示未开启。",
           "example": "1",
           "member": "uint64",
           "name": "LoadBalancerPassToTarget",
@@ -14873,7 +14873,7 @@
         },
         {
           "disabled": false,
-          "document": "后端目标健康状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端目标健康状态。",
           "example": "Alive",
           "member": "string",
           "name": "TargetHealth",
@@ -14883,7 +14883,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的域名列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则的域名列表。",
           "example": "[\"www.xxxx.com\"]",
           "member": "string",
           "name": "Domains",
@@ -14893,7 +14893,7 @@
         },
         {
           "disabled": false,
-          "document": "多可用区负载均衡实例所选备区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多可用区负载均衡实例所选备区",
           "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "SlaveZone",
@@ -14903,7 +14903,7 @@
         },
         {
           "disabled": false,
-          "document": "内网负载均衡实例所在可用区，由白名单CLB_Internal_Zone控制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网负载均衡实例所在可用区，由白名单CLB_Internal_Zone控制",
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
           "name": "Zones",
@@ -14913,7 +14913,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）。",
           "example": "0",
           "member": "int64",
           "name": "SniSwitch",
@@ -14943,7 +14943,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡的属性",
           "example": "[\"DeleteProtect\"]",
           "member": "string",
           "name": "AttributeFlags",
@@ -14953,7 +14953,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的规格类型信息<ul><li> clb.c1.small：简约型规格 </li><li>clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>\"\"：非性能容量型实例</li></ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的规格类型信息<ul><li> clb.c1.small：简约型规格 </li><li>clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>\"\"：非性能容量型实例</li></ul>\n",
           "example": "clb.c2.medium",
           "member": "string",
           "name": "SlaType",
@@ -14963,7 +14963,7 @@
         },
         {
           "disabled": false,
-          "document": "0：表示非独占型实例，1：表示独占型态实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0：表示非独占型实例，1：表示独占型态实例。",
           "example": "1",
           "member": "uint64",
           "name": "Exclusive",
@@ -14973,7 +14973,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区转发亲和信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区转发亲和信息",
           "example": "无",
           "member": "AvailableZoneAffinityInfo",
           "name": "AvailableZoneAffinityInfo",
@@ -15434,7 +15434,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>API Base URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API Base URL</p>",
           "example": "http://123.0.0.9",
           "member": "string",
           "name": "ApiBase",
@@ -15444,7 +15444,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型创建时间（ISO 8601）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型创建时间（ISO 8601）</p>",
           "example": "2026-04-09T03:36:08+00:00",
           "member": "string",
           "name": "CreatedAt",
@@ -15454,7 +15454,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义host header</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义host header</p>",
           "example": "www.b.com",
           "member": "string",
           "name": "HostHeader",
@@ -15534,7 +15534,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务提供商自定义名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务提供商自定义名称</p>",
           "example": "private_custom",
           "member": "string",
           "name": "ServiceProviderName",
@@ -15554,7 +15554,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>子网 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网 ID</p>",
           "example": "subnet-blcqwjo4",
           "member": "string",
           "name": "SubnetId",
@@ -15584,7 +15584,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>VPC 实例 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VPC 实例 ID</p>",
           "example": "vpc-j5bxoqef",
           "member": "string",
           "name": "VpcId",
@@ -15639,7 +15639,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>",
           "example": "budget-1a2b3c4d",
           "member": "string",
           "name": "BudgetId",
@@ -15649,7 +15649,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>",
           "example": "production-budget",
           "member": "string",
           "name": "BudgetName",
@@ -15759,7 +15759,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型路由的路由配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型路由的路由配置</p>",
           "example": "无",
           "member": "RouterSettingWithFallBack",
           "name": "RouterSetting",
@@ -16168,7 +16168,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>配额名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配额名称</p>",
           "example": "cmr_quota_enterprise_model_router_num",
           "member": "string",
           "name": "QuotaType",
@@ -16178,7 +16178,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源ID</p>",
           "example": "cmr-oei1qdkf",
           "member": "string",
           "name": "ResourceId",
@@ -16188,7 +16188,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>配额上限</p><p>单位：个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配额上限</p><p>单位：个</p>",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -16198,7 +16198,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>已使用配额数量</p><p>单位：个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>已使用配额数量</p><p>单位：个</p>",
           "example": "0",
           "member": "uint64",
           "name": "Used",
@@ -16208,7 +16208,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>剩余配额数量</p><p>单位：个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剩余配额数量</p><p>单位：个</p>",
           "example": "100",
           "member": "uint64",
           "name": "Available",
@@ -16357,7 +16357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型路由实例关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>",
           "example": "budget-1a2b3c4d",
           "member": "string",
           "name": "BudgetId",
@@ -16367,7 +16367,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型路由实例关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>",
           "example": "production-budget",
           "member": "string",
           "name": "BudgetName",
@@ -17693,7 +17693,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>切换负载均衡计费方式时，可用此参数查询切换任务是否成功。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>切换负载均衡计费方式时，可用此参数查询切换任务是否成功。</p>",
           "example": "null",
           "member": "string",
           "name": "DealName",
@@ -18837,7 +18837,7 @@
         },
         {
           "disabled": false,
-          "document": "描述了网络价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述了网络价格。",
           "example": "无",
           "member": "ItemPrice",
           "name": "BandwidthPrice",
@@ -18847,7 +18847,7 @@
         },
         {
           "disabled": false,
-          "document": "描述了lcu价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述了lcu价格。",
           "example": "无",
           "member": "ItemPrice",
           "name": "LcuPrice",
@@ -18959,7 +18959,7 @@
         },
         {
           "disabled": false,
-          "document": "当前使用数量，为 null 时表示无意义。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前使用数量，为 null 时表示无意义。",
           "example": "null",
           "member": "int64",
           "name": "QuotaCurrent",
@@ -19764,7 +19764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "重定向目标的监听器ID，该字段仅配置了重定向时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重定向目标的监听器ID，该字段仅配置了重定向时有效。",
           "example": "lbl-q471xxxx",
           "member": "string",
           "name": "TargetListenerId",
@@ -19774,7 +19774,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向目标的转发规则ID，该字段仅配置了重定向时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重定向目标的转发规则ID，该字段仅配置了重定向时有效。",
           "example": "loc-188pxxxx",
           "member": "string",
           "name": "TargetLocationId",
@@ -19820,7 +19820,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LowestCost： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LowestCost： 最低积分路由</li></ul>",
           "example": "SimpleShuffle",
           "member": "string",
           "name": "CrossModelGroupRoutingStrategy",
@@ -19831,7 +19831,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>回退策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>回退策略</p>",
           "example": "无",
           "member": "FallBackItem",
           "name": "FallBack",
@@ -19842,7 +19842,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>",
           "example": "SimpleShuffle",
           "member": "string",
           "name": "RoutingStrategy",
@@ -19986,7 +19986,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则的域名",
           "example": "test.clb.cloud.tencent.com",
           "member": "string",
           "name": "Domain",
@@ -19996,7 +19996,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则的Url",
           "example": "/health",
           "member": "string",
           "name": "Url",
@@ -20232,7 +20232,7 @@
         },
         {
           "disabled": false,
-          "document": "证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书信息",
           "example": "无",
           "member": "CertificateOutput",
           "name": "Certificate",
@@ -20342,7 +20342,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的目标组基本信息；当规则绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的目标组基本信息；当规则绑定目标组时，会返回该字段",
           "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroup",
@@ -20402,7 +20402,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的目标组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的目标组列表",
           "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroupList",
@@ -20642,7 +20642,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>该 BYOK 实例（ServiceProvider）维度的积分系数。</p><p>可选字段：仅当该实例单独配置了 ServiceProvider 维度系数时返回，返回值即该实例的生效系数；未返回时表示该实例继承所属 ModelAlias 的 <code>Coefficient</code>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该 BYOK 实例（ServiceProvider）维度的积分系数。</p><p>可选字段：仅当该实例单独配置了 ServiceProvider 维度系数时返回，返回值即该实例的生效系数；未返回时表示该实例继承所属 ModelAlias 的 <code>Coefficient</code>。</p>",
           "example": "无",
           "member": "Coefficient",
           "name": "Coefficient",
@@ -20689,7 +20689,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户自定义服务提供商名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户自定义服务提供商名称</p>",
           "example": "my-provider",
           "member": "string",
           "name": "ServiceProviderName",
@@ -20748,7 +20748,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型别名, 可以用于实际访问</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型别名, 可以用于实际访问</p>",
           "example": "my-claude-Opus-4.6",
           "member": "string",
           "name": "ModelAlias",
@@ -20768,7 +20768,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该模型经探测最多支持的输入多模态能力列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>image： 支持图像输入</li></ul><p>模型不健康时列表为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该模型经探测最多支持的输入多模态能力列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>image： 支持图像输入</li></ul><p>模型不健康时列表为空</p>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "ProbedInputModalities",
@@ -21388,7 +21388,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务被绑定的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务被绑定的时间",
           "example": "2021-03-16 00:00:00",
           "member": "datetime",
           "name": "RegisteredTime",
@@ -21512,7 +21512,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查状态码（仅适用于HTTP/HTTPS目标组、TCP目标组的HTTP健康检查方式）。可选值：1~31，默认 31，其中：<url> <li>1 表示探测后返回值 1xx 代表健康。</li><li>2 表示返回 2xx 代表健康。</li><li>4 表示返回 3xx 代表健康。</li><li>8 表示返回 4xx 代表健康。</li><li>16 表示返回 5xx 代表健康。</li></url>若希望多种返回码都可代表健康，则将相应的值相加。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查状态码（仅适用于HTTP/HTTPS目标组、TCP目标组的HTTP健康检查方式）。可选值：1~31，默认 31，其中：<url> <li>1 表示探测后返回值 1xx 代表健康。</li><li>2 表示返回 2xx 代表健康。</li><li>4 表示返回 3xx 代表健康。</li><li>8 表示返回 4xx 代表健康。</li><li>16 表示返回 5xx 代表健康。</li></url>若希望多种返回码都可代表健康，则将相应的值相加。",
           "example": "504",
           "member": "int64",
           "name": "HttpCode",
@@ -21523,7 +21523,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查域名， 其中：<ur><li>仅适用于HTTP/HTTPS目标组和TCP目标组的HTTP健康检查方式。</li><li>针对HTTP/HTTPS目标组，当使用HTTP健康检查方式时，该参数为必填项。</li></ur>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查域名， 其中：<ur><li>仅适用于HTTP/HTTPS目标组和TCP目标组的HTTP健康检查方式。</li><li>针对HTTP/HTTPS目标组，当使用HTTP健康检查方式时，该参数为必填项。</li></ur>",
           "example": "www.xxxx.com",
           "member": "string",
           "name": "HttpCheckDomain",
@@ -21534,7 +21534,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。",
           "example": "/xxx\t/xxx",
           "member": "string",
           "name": "HttpCheckPath",
@@ -21545,7 +21545,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD，可选值HEAD或GET。",
           "example": "HEAD",
           "member": "string",
           "name": "HttpCheckMethod",
@@ -21556,7 +21556,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查的输入格式，健康检查方式取CUSTOM时，必填此字段，可取值：HEX或TEXT，其中：<ur><li>TEXT：文本格式。</li><li>HEX：十六进制格式， SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。</li><li>仅适用于TCP/UDP目标组。</li></ur>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查的输入格式，健康检查方式取CUSTOM时，必填此字段，可取值：HEX或TEXT，其中：<ur><li>TEXT：文本格式。</li><li>HEX：十六进制格式， SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。</li><li>仅适用于TCP/UDP目标组。</li></ur>",
           "example": "TEXT",
           "member": "string",
           "name": "ContextType",
@@ -21567,7 +21567,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP目标组）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP目标组）。",
           "example": "ping",
           "member": "string",
           "name": "SendContext",
@@ -21578,7 +21578,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP目标组）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。（仅适用于TCP/UDP目标组）。",
           "example": "pong",
           "member": "string",
           "name": "RecvContext",
@@ -21589,7 +21589,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP版本, 其中：<ur><li>健康检查协议CheckType的值取HTTP时，必传此字段。</li><li>支持配置选项：HTTP/1.0, HTTP/1.1。</li><li>仅适用于TCP目标组。</li></ur>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HTTP版本, 其中：<ur><li>健康检查协议CheckType的值取HTTP时，必传此字段。</li><li>支持配置选项：HTTP/1.0, HTTP/1.1。</li><li>仅适用于TCP目标组。</li></ur>",
           "example": "HTTP/1.1",
           "member": "string",
           "name": "HttpVersion",
@@ -21600,7 +21600,7 @@
         },
         {
           "disabled": false,
-          "document": "GRPC健康检查状态码（仅适用于后端转发协议为GRPC的目标组）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GRPC健康检查状态码（仅适用于后端转发协议为GRPC的目标组）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99。",
           "example": "12",
           "member": "string",
           "name": "ExtendedCode",
@@ -21647,7 +21647,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标组的默认端口，全监听目标组此字段返回0，表示无效端口。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标组的默认端口，全监听目标组此字段返回0，表示无效端口。</p>",
           "example": "60",
           "member": "uint64",
           "name": "Port",
@@ -21677,7 +21677,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。</p>",
           "example": "无",
           "member": "AssociationItem",
           "name": "AssociatedRule",
@@ -21687,7 +21687,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标组后端转发协议, 仅v2新版目标组返回有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标组后端转发协议, 仅v2新版目标组返回有效值。</p>",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
@@ -21697,7 +21697,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：<br><ur></p><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li></ur>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：<br><ur></p><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li></ur>",
           "example": "WRR",
           "member": "string",
           "name": "ScheduleAlgorithm",
@@ -21707,7 +21707,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>健康检查详情。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康检查详情。</p>",
           "example": "无",
           "member": "TargetGroupHealthCheck",
           "name": "HealthCheck",
@@ -21717,7 +21717,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>探测异常时是否自动更新权重为0, 仅GWLB类型目标组返回有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>探测异常时是否自动更新权重为0, 仅GWLB类型目标组返回有效值。</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoUpdateWeight",
@@ -21727,7 +21727,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否支持全死全活, 仅GWLB类型目标组返回有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持全死全活, 仅GWLB类型目标组返回有效值。</p>",
           "example": "true",
           "member": "bool",
           "name": "AllDeadToAlive",
@@ -21737,7 +21737,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>健康探测是否启用巨帧, 仅GWLB类型目标组返回有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康探测是否启用巨帧, 仅GWLB类型目标组返回有效值。</p>",
           "example": "true",
           "member": "bool",
           "name": "JumboFrame",
@@ -21787,7 +21787,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Weight",
@@ -22015,7 +22015,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡ID",
           "example": "eni-xxxxxxxx",
           "member": "string",
           "name": "EniId",
@@ -22558,7 +22558,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联的Budget ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联的Budget ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>",
           "example": "budget-x1y2z3",
           "member": "string",
           "name": "BudgetId",
@@ -22568,13 +22568,43 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联的Budget名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联的Budget名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>",
           "example": "核心组月度预算",
           "member": "string",
           "name": "BudgetName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的提示词 ID。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p><p>参数格式：pmt-1a2b3c4d</p>",
+          "example": "pmt-m4cwqqv8",
+          "member": "string",
+          "name": "PromptId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的提示词版本。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>",
+          "example": "v4",
+          "member": "string",
+          "name": "PromptVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的提示词名称。</p><p>未关联时为空；「未分组」虚拟分组恒为空。</p>",
+          "example": "new_name",
+          "member": "string",
+          "name": "PromptName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -22726,7 +22756,7 @@
         },
         {
           "disabled": false,
-          "document": "备可用区，如\"ap-guangzhou-2\"，单可用区时，备可用区为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备可用区，如\"ap-guangzhou-2\"，单可用区时，备可用区为null。",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "SlaveZone",

@@ -73,7 +73,7 @@
         },
         {
           "disabled": false,
-          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果",
           "example": "{\"Level\":0,\"UserIp\":\"150.***.***.175\"}",
           "member": "ManagePortraitRiskValueOutput",
           "name": "Value",
@@ -104,7 +104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务出参",
           "example": "无",
           "member": "ManagePortraitRiskOutput",
           "name": "Data",

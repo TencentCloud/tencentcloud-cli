@@ -429,7 +429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "未成功加入用户组的用户ID列表信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未成功加入用户组的用户ID列表信息。",
           "example": "无",
           "member": "string",
           "name": "FailedItems",
@@ -461,7 +461,7 @@
         },
         {
           "disabled": false,
-          "document": "账号名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号名。",
           "example": "无",
           "member": "string",
           "name": "AccountName",
@@ -471,7 +471,7 @@
         },
         {
           "disabled": false,
-          "document": "用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户信息列表。",
           "example": "无",
           "member": "LinkUserInfo",
           "name": "UserList",
@@ -481,7 +481,7 @@
         },
         {
           "disabled": false,
-          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -491,7 +491,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "无",
           "member": "string",
           "name": "CreatedDate",
@@ -523,7 +523,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户在被授权应用下对应的账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户在被授权应用下对应的账号列表",
           "example": "无",
           "member": "string",
           "name": "ApplicationAccounts",
@@ -533,7 +533,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID，是应用的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID，是应用的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "ApplicationId",
@@ -543,7 +543,7 @@
         },
         {
           "disabled": false,
-          "document": "展示用户所在的用户组、机构节点拥有该应用的访问权限的ID信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "展示用户所在的用户组、机构节点拥有该应用的访问权限的ID信息列表。",
           "example": "无",
           "member": "InheritedForm",
           "name": "InheritedForm",
@@ -553,7 +553,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称。",
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
@@ -563,7 +563,7 @@
         },
         {
           "disabled": false,
-          "document": "应用创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用创建时间。",
           "example": "无",
           "member": "string",
           "name": "CreatedDate",
@@ -615,7 +615,7 @@
         },
         {
           "disabled": false,
-          "document": "应用展示名称，长度限制：64个字符。 默认与应用名字相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用展示名称，长度限制：64个字符。 默认与应用名字相同。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -625,7 +625,7 @@
         },
         {
           "disabled": false,
-          "document": "应用创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用创建时间，符合 ISO8601 标准。",
           "example": "无",
           "member": "string",
           "name": "CreatedDate",
@@ -635,7 +635,7 @@
         },
         {
           "disabled": false,
-          "document": "上次更新时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上次更新时间，符合 ISO8601 标准。",
           "example": "无",
           "member": "string",
           "name": "LastModifiedDate",
@@ -645,7 +645,7 @@
         },
         {
           "disabled": false,
-          "document": "应用状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用状态。",
           "example": "无",
           "member": "bool",
           "name": "AppStatus",
@@ -655,7 +655,7 @@
         },
         {
           "disabled": false,
-          "document": "应用图标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用图标。",
           "example": "无",
           "member": "string",
           "name": "Icon",
@@ -665,7 +665,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用类型。",
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
@@ -675,7 +675,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端id。",
           "example": "无",
           "member": "string",
           "name": "ClientId",
@@ -773,7 +773,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权关系的唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权关系的唯一ID",
           "example": "6747d37a-616b-4b2f-9b7e-f4c922eb2932",
           "member": "string",
           "name": "ResourceId",
@@ -783,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "资源授权类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源授权类型",
           "example": "API",
           "member": "string",
           "name": "ResourceType",
@@ -793,7 +793,7 @@
         },
         {
           "disabled": false,
-          "document": "授权的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权的资源",
           "example": "api1",
           "member": "string",
           "name": "Resource",
@@ -803,7 +803,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "用户API",
           "member": "string",
           "name": "ResourceName",
@@ -819,7 +819,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID",
           "example": "8580d166-2a25-45eb-beff-3085f5464deb",
           "member": "string",
           "name": "ResourceId",
@@ -829,7 +829,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "resourceGroup",
           "member": "string",
           "name": "ResourceType",
@@ -839,7 +839,7 @@
         },
         {
           "disabled": false,
-          "document": "授权资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权资源",
           "example": "service-888:*",
           "member": "string",
           "name": "Resource",
@@ -849,7 +849,7 @@
         },
         {
           "disabled": false,
-          "document": "继承关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "继承关系",
           "example": "无",
           "member": "InheritedForm",
           "name": "InheritedForm",
@@ -859,7 +859,7 @@
         },
         {
           "disabled": false,
-          "document": "应用账户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用账户",
           "example": "无",
           "member": "string",
           "name": "ApplicationAccounts",
@@ -869,7 +869,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "用户菜单",
           "member": "string",
           "name": "ResourceName",
@@ -918,7 +918,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号组ID。",
           "example": "id",
           "member": "string",
           "name": "AccountGroupId",
@@ -982,7 +982,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号ID",
           "example": "id",
           "member": "string",
           "name": "AccountId",
@@ -1046,7 +1046,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机构节点ID，是机构节点的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点ID，是机构节点的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "OrgNodeId",
@@ -1092,7 +1092,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组ID，是用户组的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组ID，是用户组的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "UserGroupId",
@@ -1219,7 +1219,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的新创建的用户ID，是该用户的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的新创建的用户ID，是该用户的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "UserId",
@@ -1409,7 +1409,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "未被成功删除的用户信息。当业务参数为DeleteIdList时，本字段将返回未成功删除的用户ID列表。当业务参数为DeleteNameList时，本字段将返回未成功删除的用户名称列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未被成功删除的用户信息。当业务参数为DeleteIdList时，本字段将返回未成功删除的用户ID列表。当业务参数为DeleteNameList时，本字段将返回未成功删除的用户名称列表。",
           "example": "无",
           "member": "string",
           "name": "FailedItems",
@@ -1473,7 +1473,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回查询的总记录数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回查询的总记录数。",
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
@@ -1483,7 +1483,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID。",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -1493,7 +1493,7 @@
         },
         {
           "disabled": false,
-          "document": "返回符合条件的数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回符合条件的数据列表。",
           "example": "无",
           "member": "AccountGroupInfo",
           "name": "AccountGroupList",
@@ -1557,7 +1557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回查询的总记录数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回查询的总记录数。",
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
@@ -1567,7 +1567,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID。",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -1577,7 +1577,7 @@
         },
         {
           "disabled": false,
-          "document": "返回符合条件的数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回符合条件的数据列表。",
           "example": "无",
           "member": "AppAccountInfo",
           "name": "AppAccountList",
@@ -1623,7 +1623,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥id。",
           "example": "id",
           "member": "string",
           "name": "KeyId",
@@ -1633,7 +1633,7 @@
         },
         {
           "disabled": false,
-          "document": "应用展示名称，长度限制：64个字符。 默认与应用名字相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用展示名称，长度限制：64个字符。 默认与应用名字相同。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -1643,7 +1643,7 @@
         },
         {
           "disabled": false,
-          "document": "应用最后修改时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用最后修改时间，符合 ISO8601 标准。",
           "example": "无",
           "member": "string",
           "name": "LastModifiedDate",
@@ -1653,7 +1653,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端id。",
           "example": "id",
           "member": "string",
           "name": "ClientId",
@@ -1663,7 +1663,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型，即创建应用时所选择的应用模板类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用类型，即创建应用时所选择的应用模板类型。",
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
@@ -1673,7 +1673,7 @@
         },
         {
           "disabled": false,
-          "document": "应用创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用创建时间，符合 ISO8601 标准。",
           "example": "无",
           "member": "string",
           "name": "CreatedDate",
@@ -1683,7 +1683,7 @@
         },
         {
           "disabled": false,
-          "document": "应用id，是应用的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用id，是应用的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "ApplicationId",
@@ -1693,7 +1693,7 @@
         },
         {
           "disabled": false,
-          "document": "令牌有效时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "令牌有效时间，单位为秒。",
           "example": "无",
           "member": "int64",
           "name": "TokenExpired",
@@ -1703,7 +1703,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端secret。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端secret。",
           "example": "无",
           "member": "string",
           "name": "ClientSecret",
@@ -1713,7 +1713,7 @@
         },
         {
           "disabled": false,
-          "document": "公钥信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公钥信息。",
           "example": "无",
           "member": "string",
           "name": "PublicKey",
@@ -1723,7 +1723,7 @@
         },
         {
           "disabled": false,
-          "document": "授权地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权地址。",
           "example": "无",
           "member": "string",
           "name": "AuthorizeUrl",
@@ -1733,7 +1733,7 @@
         },
         {
           "disabled": false,
-          "document": "应用图标图片访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用图标图片访问地址。",
           "example": "无",
           "member": "string",
           "name": "IconUrl",
@@ -1743,7 +1743,7 @@
         },
         {
           "disabled": false,
-          "document": "安全等级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全等级。",
           "example": "无",
           "member": "string",
           "name": "SecureLevel",
@@ -1753,7 +1753,7 @@
         },
         {
           "disabled": false,
-          "document": "应用状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用状态。",
           "example": "无",
           "member": "bool",
           "name": "AppStatus",
@@ -1763,7 +1763,7 @@
         },
         {
           "disabled": false,
-          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -1809,7 +1809,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机构节点展示名称，长度限制：64个字符。 默认与机构名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点展示名称，长度限制：64个字符。 默认与机构名相同。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -1819,7 +1819,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点最后修改时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点最后修改时间，符合 ISO8601 标准。",
           "example": "无",
           "member": "string",
           "name": "LastModifiedDate",
@@ -1829,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点外部ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点外部ID。",
           "example": "id",
           "member": "string",
           "name": "CustomizedOrgNodeId",
@@ -1839,7 +1839,7 @@
         },
         {
           "disabled": false,
-          "document": "当前机构节点的父节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前机构节点的父节点ID。",
           "example": "id",
           "member": "string",
           "name": "ParentOrgNodeId",
@@ -1849,7 +1849,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点ID，是机构节点的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点ID，是机构节点的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "OrgNodeId",
@@ -1859,7 +1859,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据来源。",
           "example": "无",
           "member": "string",
           "name": "DataSource",
@@ -1869,7 +1869,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点创建时间，符合 ISO8601 标准。",
           "example": "无",
           "member": "string",
           "name": "CreatedDate",
@@ -1879,7 +1879,7 @@
         },
         {
           "disabled": false,
-          "document": "当前机构节点下的子节点列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前机构节点下的子节点列表。",
           "example": "无",
           "member": "OrgNodeChildInfo",
           "name": "OrgNodeChildInfo",
@@ -1889,7 +1889,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点描述。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -1945,7 +1945,7 @@
         },
         {
           "disabled": false,
-          "document": "授权机构ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权机构ID",
           "example": "无",
           "member": "string",
           "name": "OrgNodeId",
@@ -1955,7 +1955,7 @@
         },
         {
           "disabled": false,
-          "document": "机构名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构名称",
           "example": "无",
           "member": "string",
           "name": "OrgNodeName",
@@ -1965,7 +1965,7 @@
         },
         {
           "disabled": false,
-          "document": "机构目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构目录",
           "example": "无",
           "member": "string",
           "name": "OrgNodePath",
@@ -1975,7 +1975,7 @@
         },
         {
           "disabled": false,
-          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源列表",
           "example": "无",
           "member": "AuthorizationResourceEntityInfo",
           "name": "AuthorizationOrgResourceList",
@@ -1985,7 +1985,7 @@
         },
         {
           "disabled": false,
-          "document": "资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源数量",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -2022,7 +2022,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "jwt验证签名所用的公钥信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "jwt验证签名所用的公钥信息。",
           "example": "无",
           "member": "string",
           "name": "PublicKey",
@@ -2032,7 +2032,7 @@
         },
         {
           "disabled": false,
-          "document": "jwt的密钥id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "jwt的密钥id。",
           "example": "无",
           "member": "string",
           "name": "KeyId",
@@ -2042,7 +2042,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID，是应用的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID，是应用的全局唯一标识。",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -2103,7 +2103,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -2113,7 +2113,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组ID",
           "example": "无",
           "member": "string",
           "name": "UserGroupId",
@@ -2123,7 +2123,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组名称",
           "example": "无",
           "member": "string",
           "name": "UserGroupName",
@@ -2133,7 +2133,7 @@
         },
         {
           "disabled": false,
-          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源列表",
           "example": "无",
           "member": "AuthorizationResourceEntityInfo",
           "name": "AuthorizationUserGroupResourceList",
@@ -2155,7 +2155,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组昵称，长度限制：64个字符。 DisplayName不唯一。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组昵称，长度限制：64个字符。 DisplayName不唯一。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -2165,7 +2165,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组备注，长度限制：512个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组备注，长度限制：512个字符。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -2175,7 +2175,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组ID，是用户组的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组ID，是用户组的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "UserGroupId",
@@ -2221,7 +2221,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名。",
           "example": "无",
           "member": "string",
           "name": "UserName",
@@ -2231,7 +2231,7 @@
         },
         {
           "disabled": false,
-          "document": "用户状态，取值 NORMAL （正常）、FREEZE （已冻结）、LOCKED （已锁定）或 NOT_ENABLED （未启用）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户状态，取值 NORMAL （正常）、FREEZE （已冻结）、LOCKED （已锁定）或 NOT_ENABLED （未启用）。",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -2241,7 +2241,7 @@
         },
         {
           "disabled": false,
-          "document": "昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -2251,7 +2251,7 @@
         },
         {
           "disabled": false,
-          "document": "用户备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户备注。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -2261,7 +2261,7 @@
         },
         {
           "disabled": false,
-          "document": "用户所属用户组 id 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所属用户组 id 列表。",
           "example": "无",
           "member": "string",
           "name": "UserGroupIds",
@@ -2271,7 +2271,7 @@
         },
         {
           "disabled": false,
-          "document": "用户 id，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户 id，长度限制：64个字符。",
           "example": "id",
           "member": "string",
           "name": "UserId",
@@ -2281,7 +2281,7 @@
         },
         {
           "disabled": false,
-          "document": "用户邮箱。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户邮箱。",
           "example": "无",
           "member": "string",
           "name": "Email",
@@ -2291,7 +2291,7 @@
         },
         {
           "disabled": false,
-          "document": "用户手机号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户手机号。",
           "example": "无",
           "member": "string",
           "name": "Phone",
@@ -2301,7 +2301,7 @@
         },
         {
           "disabled": false,
-          "document": "用户所属的主组织机构唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所属的主组织机构唯一ID。",
           "example": "无",
           "member": "string",
           "name": "OrgNodeId",
@@ -2311,7 +2311,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据来源。",
           "example": "无",
           "member": "string",
           "name": "DataSource",
@@ -2321,7 +2321,7 @@
         },
         {
           "disabled": false,
-          "document": "用户过期时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户过期时间，遵循 ISO 8601 标准。",
           "example": "无",
           "member": "string",
           "name": "ExpirationTime",
@@ -2331,7 +2331,7 @@
         },
         {
           "disabled": false,
-          "document": "用户激活时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户激活时间，遵循 ISO 8601 标准。",
           "example": "无",
           "member": "string",
           "name": "ActivationTime",
@@ -2341,7 +2341,7 @@
         },
         {
           "disabled": false,
-          "document": "当前用户的密码是否需要重置，该字段为false表示不需要重置密码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前用户的密码是否需要重置，该字段为false表示不需要重置密码。",
           "example": "无",
           "member": "bool",
           "name": "PwdNeedReset",
@@ -2351,7 +2351,7 @@
         },
         {
           "disabled": false,
-          "document": "用户所属的次要组织机构ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所属的次要组织机构ID列表。",
           "example": "无",
           "member": "string",
           "name": "SecondaryOrgNodeIdList",
@@ -2361,7 +2361,7 @@
         },
         {
           "disabled": false,
-          "document": "是否管理员标志，0为否、1为是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否管理员标志，0为否、1为是。",
           "example": "无",
           "member": "int64",
           "name": "AdminFlag",
@@ -2435,7 +2435,7 @@
         },
         {
           "disabled": false,
-          "document": "应用账户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用账户。",
           "example": "无",
           "member": "string",
           "name": "ApplicationAccounts",
@@ -2445,7 +2445,7 @@
         },
         {
           "disabled": false,
-          "document": "授权用户的唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权用户的唯一ID。",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -2455,7 +2455,7 @@
         },
         {
           "disabled": false,
-          "document": "授权的用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权的用户名。",
           "example": "无",
           "member": "string",
           "name": "UserName",
@@ -2465,7 +2465,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的资源列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的资源列表。",
           "example": "无",
           "member": "AuthorizationUserResouceInfo",
           "name": "AuthorizationUserResourceList",
@@ -2531,7 +2531,7 @@
         },
         {
           "disabled": false,
-          "document": "三方账号的绑定情况。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "三方账号的绑定情况。",
           "example": "无",
           "member": "ThirdPartyAccountInfo",
           "name": "ThirdPartyAccounts",
@@ -2553,7 +2553,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户所在的用户组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所在的用户组ID列表。",
           "example": "id",
           "member": "string",
           "name": "UserGroupIds",
@@ -2563,7 +2563,7 @@
         },
         {
           "disabled": false,
-          "document": "用户所在的机构节点ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所在的机构节点ID列表。",
           "example": "id",
           "member": "string",
           "name": "OrgNodeIds",
@@ -2579,7 +2579,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -2589,7 +2589,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名称。",
           "example": "无",
           "member": "string",
           "name": "UserName",
@@ -2647,7 +2647,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询返回的相关账号列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询返回的相关账号列表。",
           "example": "无",
           "member": "AppAccountInfo",
           "name": "AccountList",
@@ -2657,7 +2657,7 @@
         },
         {
           "disabled": false,
-          "document": "返回查询账号的总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回查询账号的总数量。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -2667,7 +2667,7 @@
         },
         {
           "disabled": false,
-          "document": "账号组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号组ID。",
           "example": "无",
           "member": "string",
           "name": "AccountGroupId",
@@ -2740,7 +2740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的应用授权信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的应用授权信息列表。",
           "example": "无",
           "member": "AuthorizationInfo",
           "name": "AuthorizationInfoList",
@@ -2750,7 +2750,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的应用信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的应用信息总数。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -2823,7 +2823,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的应用信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的应用信息总数。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -2833,7 +2833,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的应用信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的应用信息列表。",
           "example": "无",
           "member": "ApplicationInformation",
           "name": "ApplicationInfoList",
@@ -2870,7 +2870,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机构节点拥有访问权限的应用 id 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点拥有访问权限的应用 id 列表。",
           "example": "{}",
           "member": "string",
           "name": "ApplicationIds",
@@ -2907,7 +2907,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组拥有访问权限的应用 id 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组拥有访问权限的应用 id 列表。",
           "example": "id",
           "member": "string",
           "name": "ApplicationIds",
@@ -2953,7 +2953,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户拥有访问权限的应用信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户拥有访问权限的应用信息列表。",
           "example": "无",
           "member": "ApplicationAuthorizationInfo",
           "name": "ApplicationAuthorizationInfo",
@@ -3026,7 +3026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户所属的用户组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所属的用户组ID列表。",
           "example": "无",
           "member": "string",
           "name": "UserGroupIds",
@@ -3036,7 +3036,7 @@
         },
         {
           "disabled": false,
-          "document": "用户ID，是用户的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID，是用户的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "UserId",
@@ -3046,7 +3046,7 @@
         },
         {
           "disabled": false,
-          "document": "用户所属的用户组信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所属的用户组信息列表。",
           "example": "无",
           "member": "UserGroupInfo",
           "name": "UserGroupInfoList",
@@ -3056,7 +3056,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的用户组信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的用户组信息总数。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -3120,7 +3120,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的用户组列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的用户组列表。",
           "example": "无",
           "member": "UserGroupInformation",
           "name": "UserGroupList",
@@ -3130,7 +3130,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的用户组信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的用户组信息总数。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -3212,7 +3212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机构子节点下的用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构子节点下的用户信息列表。",
           "example": "无",
           "member": "OrgNodeChildUserInfo",
           "name": "OrgNodeChildUserInfo",
@@ -3222,7 +3222,7 @@
         },
         {
           "disabled": false,
-          "document": "机构ID，是机构节点全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构ID，是机构节点全局唯一标识，长度限制：64个字符。",
           "example": "id",
           "member": "string",
           "name": "OrgNodeId",
@@ -3232,7 +3232,7 @@
         },
         {
           "disabled": false,
-          "document": "用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户信息列表。",
           "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
@@ -3242,7 +3242,7 @@
         },
         {
           "disabled": false,
-          "document": "当前机构节点下的用户总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前机构节点下的用户总数。",
           "example": "无",
           "member": "int64",
           "name": "TotalUserNum",
@@ -3252,7 +3252,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构ID路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构ID路径。",
           "example": "无",
           "member": "string",
           "name": "OrgNodeIdPath",
@@ -3262,7 +3262,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构名称路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构名称路径。",
           "example": "无",
           "member": "string",
           "name": "OrgNodeNamePath",
@@ -3411,7 +3411,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组ID，是用户组的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组ID，是用户组的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "UserGroupId",
@@ -3421,7 +3421,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的用户信息列表。",
           "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
@@ -3431,7 +3431,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的用户信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的用户信息总数。",
           "example": "无",
           "member": "int64",
           "name": "TotalNum",
@@ -3513,7 +3513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询返回的相关用户列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询返回的相关用户列表。",
           "example": "无",
           "member": "UserInformation",
           "name": "UserList",
@@ -3523,7 +3523,7 @@
         },
         {
           "disabled": false,
-          "document": "返回查询用户的总数量，仅当入参IncludeTotal等于true时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回查询用户的总数量，仅当入参IncludeTotal等于true时返回。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -3842,7 +3842,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机构节点展示名称，长度限制：64个字符。 默认与机构名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点展示名称，长度限制：64个字符。 默认与机构名相同。",
           "example": "id",
           "member": "string",
           "name": "DisplayName",
@@ -3852,7 +3852,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点最后修改时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点最后修改时间，符合 ISO8601 标准。",
           "example": "id",
           "member": "string",
           "name": "LastModifiedDate",
@@ -3862,7 +3862,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义可选填的机构节点对外ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义可选填的机构节点对外ID。",
           "example": "id",
           "member": "string",
           "name": "CustomizedOrgNodeId",
@@ -3872,7 +3872,7 @@
         },
         {
           "disabled": false,
-          "document": "当前机构节点的父节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前机构节点的父节点ID。",
           "example": "id",
           "member": "string",
           "name": "ParentOrgNodeId",
@@ -3882,7 +3882,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点ID，是机构节点的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点ID，是机构节点的全局唯一标识。",
           "example": "id",
           "member": "string",
           "name": "OrgNodeId",
@@ -3892,7 +3892,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据来源。",
           "example": "id",
           "member": "string",
           "name": "DataSource",
@@ -3902,7 +3902,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点创建时间，符合 ISO8601 标准。",
           "example": "id",
           "member": "string",
           "name": "CreatedDate",
@@ -3912,7 +3912,7 @@
         },
         {
           "disabled": false,
-          "document": "机构节点描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构节点描述。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -3928,7 +3928,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机构ID，是机构节点全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构ID，是机构节点全局唯一标识，长度限制：64个字符。",
           "example": "id",
           "member": "string",
           "name": "OrgNodeId",
@@ -3938,7 +3938,7 @@
         },
         {
           "disabled": false,
-          "document": "用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户信息列表。",
           "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
@@ -3948,7 +3948,7 @@
         },
         {
           "disabled": false,
-          "document": "当前机构节点下的用户总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前机构节点下的用户总数。",
           "example": "无",
           "member": "int64",
           "name": "TotalUserNum",
@@ -3958,7 +3958,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构ID路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构ID路径。",
           "example": "无",
           "member": "string",
           "name": "OrgNodeIdPath",
@@ -3968,7 +3968,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构名称路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构名称路径。",
           "example": "无",
           "member": "string",
           "name": "OrgNodeNamePath",
@@ -4082,7 +4082,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "第三方账号代码。\"2\"代表企业微信。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方账号代码。\"2\"代表企业微信。",
           "example": "无",
           "member": "string",
           "name": "AccountCode",
@@ -4092,7 +4092,7 @@
         },
         {
           "disabled": false,
-          "document": "账号对应的用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号对应的用户名。",
           "example": "无",
           "member": "string",
           "name": "AccountName",
@@ -4162,7 +4162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称，长度限制：64个字符。 默认与用户名相同。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -4172,7 +4172,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组ID，是用户组全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组ID，是用户组全局唯一标识，长度限制：64个字符。",
           "example": "id",
           "member": "string",
           "name": "UserGroupId",
@@ -4182,7 +4182,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组备注。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -4192,7 +4192,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "无",
           "member": "string",
           "name": "CreatedDate",
@@ -4244,7 +4244,7 @@
         },
         {
           "disabled": false,
-          "document": "上次更新时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上次更新时间，符合 ISO8601 标准。",
           "example": "无",
           "member": "string",
           "name": "LastModifiedDate",
@@ -4276,7 +4276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。",
           "example": "id",
           "member": "string",
           "name": "UserId",
@@ -4286,7 +4286,7 @@
         },
         {
           "disabled": false,
-          "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称，长度限制：64个字符。 默认与用户名相同。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -4296,7 +4296,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名称。",
           "example": "无",
           "member": "string",
           "name": "UserName",
@@ -4306,7 +4306,7 @@
         },
         {
           "disabled": false,
-          "document": "用户手机号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户手机号。",
           "example": "无",
           "member": "string",
           "name": "Phone",
@@ -4316,7 +4316,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱地址。",
           "example": "无",
           "member": "string",
           "name": "Email",
@@ -4326,7 +4326,7 @@
         },
         {
           "disabled": false,
-          "document": "用户状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户状态。",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -4336,7 +4336,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据来源。",
           "example": "无",
           "member": "string",
           "name": "DataSource",
@@ -4352,7 +4352,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名，长度限制：32个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名，长度限制：32个字符。",
           "example": "无",
           "member": "string",
           "name": "UserName",
@@ -4362,7 +4362,7 @@
         },
         {
           "disabled": false,
-          "document": "用户状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户状态。",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -4372,7 +4372,7 @@
         },
         {
           "disabled": false,
-          "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称，长度限制：64个字符。 默认与用户名相同。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -4382,7 +4382,7 @@
         },
         {
           "disabled": false,
-          "document": "用户备注，长度限制：512个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户备注，长度限制：512个字符。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -4392,7 +4392,7 @@
         },
         {
           "disabled": false,
-          "document": "用户上次更新时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户上次更新时间，遵循 ISO 8601 标准。",
           "example": "无",
           "member": "string",
           "name": "LastUpdateTime",
@@ -4402,7 +4402,7 @@
         },
         {
           "disabled": false,
-          "document": "用户创建时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户创建时间，遵循 ISO 8601 标准。",
           "example": "无",
           "member": "string",
           "name": "CreationTime",
@@ -4412,7 +4412,7 @@
         },
         {
           "disabled": false,
-          "document": "用户所属主组织机构的路径ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所属主组织机构的路径ID。",
           "example": "无",
           "member": "string",
           "name": "OrgPath",
@@ -4422,7 +4422,7 @@
         },
         {
           "disabled": false,
-          "document": "带国家号的用户手机号，例如+86-00000000000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带国家号的用户手机号，例如+86-00000000000。",
           "example": "无",
           "member": "string",
           "name": "Phone",
@@ -4432,7 +4432,7 @@
         },
         {
           "disabled": false,
-          "document": "用户所属用户组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所属用户组ID列表。",
           "example": "无",
           "member": "string",
           "name": "SubjectGroups",
@@ -4442,7 +4442,7 @@
         },
         {
           "disabled": false,
-          "document": "用户邮箱。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户邮箱。",
           "example": "无",
           "member": "string",
           "name": "Email",
@@ -4452,7 +4452,7 @@
         },
         {
           "disabled": false,
-          "document": "用户上次登录时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户上次登录时间，遵循 ISO 8601 标准。",
           "example": "无",
           "member": "string",
           "name": "LastLoginTime",
@@ -4462,7 +4462,7 @@
         },
         {
           "disabled": false,
-          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。",
           "example": "无",
           "member": "string",
           "name": "UserId",

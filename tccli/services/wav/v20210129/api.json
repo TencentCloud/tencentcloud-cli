@@ -195,7 +195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "活动id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动id",
           "example": "1381619428653346818",
           "member": "int64",
           "name": "ActivityId",
@@ -205,7 +205,7 @@
         },
         {
           "disabled": false,
-          "document": "活动名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动名称",
           "example": "留资活动",
           "member": "string",
           "name": "ActivityName",
@@ -215,7 +215,7 @@
         },
         {
           "disabled": false,
-          "document": "活动状态，10:未开始状态、20:已开始（进行中）状态、30:已结束状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动状态，10:未开始状态、20:已开始（进行中）状态、30:已结束状态",
           "example": "10",
           "member": "int64",
           "name": "ActivityState",
@@ -225,7 +225,7 @@
         },
         {
           "disabled": false,
-          "document": "活动类型，100:留资活动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动类型，100:留资活动",
           "example": "100",
           "member": "int64",
           "name": "ActivityType",
@@ -235,7 +235,7 @@
         },
         {
           "disabled": false,
-          "document": "活动开始时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动开始时间戳，单位：秒",
           "example": "1618243200",
           "member": "int64",
           "name": "StartTime",
@@ -245,7 +245,7 @@
         },
         {
           "disabled": false,
-          "document": "活动结束时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动结束时间戳，单位：秒",
           "example": "1618329600",
           "member": "int64",
           "name": "EndTime",
@@ -255,7 +255,7 @@
         },
         {
           "disabled": false,
-          "document": "活动主图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动主图",
           "example": "https://tmap-travel-didi-1255598736.cos.ap-guangzhou.myqcloud.co",
           "member": "string",
           "name": "MainPhoto",
@@ -265,7 +265,7 @@
         },
         {
           "disabled": false,
-          "document": "协议编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议编号",
           "example": "1380815131099852801",
           "member": "string",
           "name": "PrivacyAgreementId",
@@ -275,7 +275,7 @@
         },
         {
           "disabled": false,
-          "document": "活动更新时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动更新时间戳，单位：秒",
           "example": "1621500202",
           "member": "int64",
           "name": "UpdateTime",
@@ -285,7 +285,7 @@
         },
         {
           "disabled": false,
-          "document": "活动数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动数据列表",
           "example": "{                     \"optionalCityCodeList\": [                 ",
           "member": "string",
           "name": "ActivityDataList",
@@ -301,7 +301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "活动id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动id",
           "example": "1381619428653346818",
           "member": "int64",
           "name": "ActivityId",
@@ -311,7 +311,7 @@
         },
         {
           "disabled": false,
-          "document": "活动名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动名称",
           "example": "留资活动",
           "member": "string",
           "name": "ActivityName",
@@ -321,7 +321,7 @@
         },
         {
           "disabled": false,
-          "document": "销售姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "销售姓名",
           "example": "销售1",
           "member": "string",
           "name": "SalesName",
@@ -331,7 +331,7 @@
         },
         {
           "disabled": false,
-          "document": "销售电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "销售电话",
           "example": "13000000000",
           "member": "string",
           "name": "SalesPhone",
@@ -341,7 +341,7 @@
         },
         {
           "disabled": false,
-          "document": "参与id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参与id",
           "example": "1381612531432296450",
           "member": "int64",
           "name": "JoinId",
@@ -351,7 +351,7 @@
         },
         {
           "disabled": false,
-          "document": "活码id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活码id",
           "example": "1381612531432296450",
           "member": "int64",
           "name": "LiveCodeId",
@@ -361,7 +361,7 @@
         },
         {
           "disabled": false,
-          "document": "用户电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户电话",
           "example": "13000000000",
           "member": "string",
           "name": "UserPhone",
@@ -371,7 +371,7 @@
         },
         {
           "disabled": false,
-          "document": "用户姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户姓名",
           "example": "用户1",
           "member": "string",
           "name": "UserName",
@@ -381,7 +381,7 @@
         },
         {
           "disabled": false,
-          "document": "活动数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动数据",
           "example": "\"{\\\"cityInfo\\\":{\\\"cityCode\\\":\\\"420100\\\",\\\"cityName\\\":\\\"武汉市\\\",\\\"p",
           "member": "string",
           "name": "ActivityData",
@@ -391,7 +391,7 @@
         },
         {
           "disabled": false,
-          "document": "线索id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "线索id",
           "example": "1381612531432296450",
           "member": "int64",
           "name": "LeadId",
@@ -401,7 +401,7 @@
         },
         {
           "disabled": false,
-          "document": "参与时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参与时间戳，单位：秒",
           "example": "1618329600",
           "member": "int64",
           "name": "JoinTime",
@@ -411,7 +411,7 @@
         },
         {
           "disabled": false,
-          "document": "线索是否是重复创建， 0 ：新建、 1：合并、 2：重复， 默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "线索是否是重复创建， 0 ：新建、 1：合并、 2：重复， 默认为0",
           "example": "0",
           "member": "int64",
           "name": "Duplicate",
@@ -421,7 +421,7 @@
         },
         {
           "disabled": false,
-          "document": "重复线索id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重复线索id",
           "example": "1391954669730611201",
           "member": "int64",
           "name": "DuplicateLeadId",
@@ -431,7 +431,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为参与多次活动， 1：参与一次、2、参与多次，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为参与多次活动， 1：参与一次、2、参与多次，默认为0",
           "example": "0",
           "member": "int64",
           "name": "JoinState",
@@ -441,7 +441,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间戳，单位：秒",
           "example": "1618329600",
           "member": "int64",
           "name": "CreateTime",
@@ -451,7 +451,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间戳，单位：秒",
           "example": "1618329600",
           "member": "int64",
           "name": "UpdateTime",
@@ -517,7 +517,7 @@
         },
         {
           "disabled": false,
-          "document": "到店时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到店时间",
           "example": "\t1618322621",
           "member": "uint64",
           "name": "ArrivalTime",
@@ -729,7 +729,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该客户档案当前已成功关联的渠道标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该客户档案当前已成功关联的渠道标签名称",
           "example": "标签名称",
           "member": "string",
           "name": "TagName",
@@ -739,7 +739,7 @@
         },
         {
           "disabled": false,
-          "document": "该客户档案当前已成功关联的渠道标签的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该客户档案当前已成功关联的渠道标签的id",
           "example": "etAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
           "member": "string",
           "name": "TagId",
@@ -775,7 +775,7 @@
         },
         {
           "disabled": false,
-          "document": "消息类型，当Action != \"switch\"时存在，例如video, text, voice 等，和企微开放文档一一对应\nhttps://open.work.weixin.qq.com/api/doc/90000/90135/91774\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息类型，当Action != \"switch\"时存在，例如video, text, voice 等，和企微开放文档一一对应\nhttps://open.work.weixin.qq.com/api/doc/90000/90135/91774",
           "example": "video, text, voice",
           "member": "string",
           "name": "MsgType",
@@ -785,7 +785,7 @@
         },
         {
           "disabled": false,
-          "document": "消息发送人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息发送人",
           "example": "xx",
           "member": "string",
           "name": "From",
@@ -795,7 +795,7 @@
         },
         {
           "disabled": false,
-          "document": "消息接收人列表，注意接收人可能只有一个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息接收人列表，注意接收人可能只有一个",
           "example": "[\"xx\"]",
           "member": "string",
           "name": "ToList",
@@ -805,7 +805,7 @@
         },
         {
           "disabled": false,
-          "document": "如果是群消息，则不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果是群消息，则不为空",
           "example": "roomId",
           "member": "string",
           "name": "RoomId",
@@ -815,7 +815,7 @@
         },
         {
           "disabled": false,
-          "document": "消息发送的时间戳，单位为秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息发送的时间戳，单位为秒",
           "example": "1621496513",
           "member": "uint64",
           "name": "MsgTime",
@@ -825,7 +825,7 @@
         },
         {
           "disabled": false,
-          "document": "MsgType=video时的消息体，忽略此字段，见BodyJson字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MsgType=video时的消息体，忽略此字段，见BodyJson字段",
           "example": "无",
           "member": "ChatArchivingMsgTypeVideo",
           "name": "Video",
@@ -835,7 +835,7 @@
         },
         {
           "disabled": false,
-          "document": "根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774",
           "example": "{}",
           "member": "string",
           "name": "BodyJson",
@@ -851,7 +851,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频时长，单位秒",
           "example": "4",
           "member": "uint64",
           "name": "PlayLength",
@@ -861,7 +861,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件大小",
           "example": "645990",
           "member": "uint64",
           "name": "FileSize",
@@ -1027,7 +1027,7 @@
         },
         {
           "disabled": false,
-          "document": "客户姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户姓名",
           "example": "李四",
           "member": "string",
           "name": "UserName",
@@ -1077,7 +1077,7 @@
         },
         {
           "disabled": false,
-          "document": "线索渠道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "线索渠道名称",
           "example": "渠道1",
           "member": "string",
           "name": "SourceChannelName",
@@ -1137,7 +1137,7 @@
         },
         {
           "disabled": false,
-          "document": "线索成功导入的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "线索成功导入的时间戳，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "ImportAtTime",
@@ -1147,7 +1147,7 @@
         },
         {
           "disabled": false,
-          "document": "完成线索分配的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完成线索分配的时间戳，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "DistributeTime",
@@ -1187,7 +1187,7 @@
         },
         {
           "disabled": false,
-          "document": "建档时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建档时间",
           "example": "1618322621",
           "member": "uint64",
           "name": "BuildTime",
@@ -1197,7 +1197,7 @@
         },
         {
           "disabled": false,
-          "document": "下订时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下订时间，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "OrderTime",
@@ -1207,7 +1207,7 @@
         },
         {
           "disabled": false,
-          "document": "到店时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到店时间，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "ArrivalTime",
@@ -1217,7 +1217,7 @@
         },
         {
           "disabled": false,
-          "document": "交车时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交车时间，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "DeliveryTime",
@@ -1227,7 +1227,7 @@
         },
         {
           "disabled": false,
-          "document": "上次跟进时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上次跟进时间，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "FollowTime",
@@ -1237,7 +1237,7 @@
         },
         {
           "disabled": false,
-          "document": "下次跟进时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下次跟进时间，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "NextFollowTime",
@@ -1347,7 +1347,7 @@
         },
         {
           "disabled": false,
-          "document": "无效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无效时间",
           "example": "1618322621",
           "member": "uint64",
           "name": "InvalidTime",
@@ -1423,7 +1423,7 @@
         },
         {
           "disabled": false,
-          "document": "企业成员在SaaS名片内填写的姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业成员在SaaS名片内填写的姓名",
           "example": "杨过",
           "member": "string",
           "name": "UserName",
@@ -1433,7 +1433,7 @@
         },
         {
           "disabled": false,
-          "document": "企业成员在企微原生通讯录内的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业成员在企微原生通讯录内的id",
           "example": "YangGuo",
           "member": "string",
           "name": "UserOpenId",
@@ -1443,7 +1443,7 @@
         },
         {
           "disabled": false,
-          "document": "成员所属经销商id，可为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员所属经销商id，可为空",
           "example": "1438427185617956866",
           "member": "uint64",
           "name": "DealerId",
@@ -1453,7 +1453,7 @@
         },
         {
           "disabled": false,
-          "document": "成员所属门店id，可为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员所属门店id，可为空",
           "example": "1381564121059749890",
           "member": "uint64",
           "name": "ShopId",
@@ -1463,7 +1463,7 @@
         },
         {
           "disabled": false,
-          "document": "企业成员手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业成员手机号",
           "example": "134****1234",
           "member": "string",
           "name": "Phone",
@@ -1473,7 +1473,7 @@
         },
         {
           "disabled": false,
-          "document": "成员所属部门id列表，仅返回该应用有查看权限的部门id；成员授权模式下，固定返回根部门id，即固定为1；多个部门使用逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员所属部门id列表，仅返回该应用有查看权限的部门id；成员授权模式下，固定返回根部门id，即固定为1；多个部门使用逗号分割",
           "example": "3,5",
           "member": "string",
           "name": "OrgIds",
@@ -1483,7 +1483,7 @@
         },
         {
           "disabled": false,
-          "document": "主部门，仅当应用对主部门有查看权限时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主部门，仅当应用对主部门有查看权限时返回",
           "example": "1",
           "member": "string",
           "name": "MainDepartment",
@@ -1493,7 +1493,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为部门负责人，第三方应用可为空。与orgIds值一一对应，多个部门使用逗号隔开，0-否， 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为部门负责人，第三方应用可为空。与orgIds值一一对应，多个部门使用逗号隔开，0-否， 1-是",
           "example": "0,1",
           "member": "string",
           "name": "IsLeaderInDept",
@@ -1513,7 +1513,7 @@
         },
         {
           "disabled": false,
-          "document": "工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工号",
           "example": "12345678",
           "member": "string",
           "name": "JobNumber",
@@ -2265,7 +2265,7 @@
         },
         {
           "disabled": false,
-          "document": "客户实际到店时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户实际到店时间戳，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "RealArrivalTime",
@@ -2275,7 +2275,7 @@
         },
         {
           "disabled": false,
-          "document": "客户到店完成试乘试驾时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户到店完成试乘试驾时间戳，单位：秒",
           "example": "2023-01-01 00:00:00",
           "member": "string",
           "name": "CompleteTestDriveTime",
@@ -2285,7 +2285,7 @@
         },
         {
           "disabled": false,
-          "document": "客户完成下订的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户完成下订的时间戳，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "OrderTime",
@@ -2295,7 +2295,7 @@
         },
         {
           "disabled": false,
-          "document": "客户成交的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户成交的时间戳，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "DeliveryTime",
@@ -2305,7 +2305,7 @@
         },
         {
           "disabled": false,
-          "document": "开票时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开票时间戳",
           "example": "1618322621",
           "member": "uint64",
           "name": "InvoiceTime",
@@ -2315,7 +2315,7 @@
         },
         {
           "disabled": false,
-          "document": "完成对此客户战败审批的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完成对此客户战败审批的时间戳，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "LoseTime",
@@ -2335,7 +2335,7 @@
         },
         {
           "disabled": false,
-          "document": "线索成功导入的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "线索成功导入的时间戳，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "ImportAtTime",
@@ -2345,7 +2345,7 @@
         },
         {
           "disabled": false,
-          "document": "完成线索分配的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完成线索分配的时间戳，单位：秒",
           "example": "1618322621",
           "member": "uint64",
           "name": "DistributeTime",
@@ -2385,7 +2385,7 @@
         },
         {
           "disabled": false,
-          "document": "客户的介绍人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户的介绍人姓名",
           "example": "李四",
           "member": "string",
           "name": "Introducer",
@@ -2395,7 +2395,7 @@
         },
         {
           "disabled": false,
-          "document": "客户的介绍人手机号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户的介绍人手机号码",
           "example": "123****4567",
           "member": "string",
           "name": "IntroducerPhone",
@@ -2425,7 +2425,7 @@
         },
         {
           "disabled": false,
-          "document": "已为该客户添加的企业标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已为该客户添加的企业标签信息",
           "example": "无",
           "member": "EnterpriseTag",
           "name": "EnterpriseTags",
@@ -2435,7 +2435,7 @@
         },
         {
           "disabled": false,
-          "document": "已为该客户添加的渠道标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已为该客户添加的渠道标签信息",
           "example": "无",
           "member": "ChannelTag",
           "name": "ChannelTags",
@@ -2515,7 +2515,7 @@
         },
         {
           "disabled": false,
-          "document": "无效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无效时间",
           "example": "无",
           "member": "uint64",
           "name": "InvalidTime",
@@ -2601,7 +2601,7 @@
         },
         {
           "disabled": false,
-          "document": "所属省份编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属省份编号",
           "example": "110100",
           "member": "string",
           "name": "ProvinceCode",
@@ -2611,7 +2611,7 @@
         },
         {
           "disabled": false,
-          "document": "所属城市编号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属城市编号列表",
           "example": "[110100]",
           "member": "string",
           "name": "CityCodeList",
@@ -2621,7 +2621,7 @@
         },
         {
           "disabled": false,
-          "document": "业务覆盖品牌id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务覆盖品牌id列表",
           "example": "[1,2]",
           "member": "string",
           "name": "BrandIdList",
@@ -2637,7 +2637,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该客户档案当前已成功关联的企业标签分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该客户档案当前已成功关联的企业标签分组名称",
           "example": "标签分组名称",
           "member": "string",
           "name": "GroupName",
@@ -2647,7 +2647,7 @@
         },
         {
           "disabled": false,
-          "document": "该客户档案当前已成功关联的企业标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该客户档案当前已成功关联的企业标签名称",
           "example": "标签名称",
           "member": "string",
           "name": "TagName",
@@ -2657,7 +2657,7 @@
         },
         {
           "disabled": false,
-          "document": "该客户档案当前已成功关联的企业标签的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该客户档案当前已成功关联的企业标签的id",
           "example": "etAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
           "member": "string",
           "name": "TagId",
@@ -2713,7 +2713,7 @@
         },
         {
           "disabled": false,
-          "document": "外部联系人在微信开放平台的唯一身份标识（微信unionid），通过此字段企业可将外部联系人与公众号/小程序用户关联起来。仅当联系人类型是微信用户，且企业或第三方服务商绑定了微信开发者ID有此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部联系人在微信开放平台的唯一身份标识（微信unionid），通过此字段企业可将外部联系人与公众号/小程序用户关联起来。仅当联系人类型是微信用户，且企业或第三方服务商绑定了微信开发者ID有此字段。",
           "example": "dsnfadjfnsddsafaSDFNDSOFN23423",
           "member": "string",
           "name": "UnionId",
@@ -2723,7 +2723,7 @@
         },
         {
           "disabled": false,
-          "document": "外部联系人联系电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部联系人联系电话",
           "example": "134****3232",
           "member": "string",
           "name": "Phone",
@@ -2739,7 +2739,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户信息",
           "example": "无",
           "member": "ExternalContact",
           "name": "Customer",
@@ -2749,7 +2749,7 @@
         },
         {
           "disabled": false,
-          "document": "添加了此外部联系人的企业成员信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "添加了此外部联系人的企业成员信息",
           "example": "无",
           "member": "FollowUserPro",
           "name": "FollowUser",
@@ -2785,7 +2785,7 @@
         },
         {
           "disabled": false,
-          "document": "添加了此外部联系人的企业成员的姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "添加了此外部联系人的企业成员的姓名",
           "example": "销售名称",
           "member": "string",
           "name": "SalesName",
@@ -2811,7 +2811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该成员添加此外部联系人所打标签的分组名称（标签功能需要企业微信升级到2.7.5及以上版本）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员添加此外部联系人所打标签的分组名称（标签功能需要企业微信升级到2.7.5及以上版本）",
           "example": "标签分组名称",
           "member": "string",
           "name": "GroupName",
@@ -2821,7 +2821,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员添加此外部联系人所打标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员添加此外部联系人所打标签名称",
           "example": "标签名称",
           "member": "string",
           "name": "TagName",
@@ -2831,7 +2831,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员添加此外部联系人所打标签类型, 1-企业设置, 2-用户自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员添加此外部联系人所打标签类型, 1-企业设置, 2-用户自定义",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -2841,7 +2841,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员添加此外部联系人所打企业标签的id，仅企业设置（type为1）的标签返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员添加此外部联系人所打企业标签的id，仅企业设置（type为1）的标签返回",
           "example": "etAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
           "member": "string",
           "name": "TagId",
@@ -2913,7 +2913,7 @@
         },
         {
           "disabled": false,
-          "document": "乐销车应用主体对应的外部联系人, 当不存在好友关系时，该字段值为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "乐销车应用主体对应的外部联系人, 当不存在好友关系时，该字段值为空",
           "example": "safdIDSFNfsdxxxywsdfRwxxfdDXfs",
           "member": "string",
           "name": "ExternalUserId",
@@ -2979,7 +2979,7 @@
         },
         {
           "disabled": false,
-          "document": "逾期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "逾期时间",
           "example": "1618322621",
           "member": "uint64",
           "name": "OverdueTime",
@@ -3029,7 +3029,7 @@
         },
         {
           "disabled": false,
-          "document": "本次跟进时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次跟进时间",
           "example": "1618322621",
           "member": "uint64",
           "name": "FollowTime",
@@ -3039,7 +3039,7 @@
         },
         {
           "disabled": false,
-          "document": "下次跟进时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下次跟进时间",
           "example": "1618322621",
           "member": "uint64",
           "name": "NextFollowTime",
@@ -3075,7 +3075,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员对此外部联系人的备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员对此外部联系人的备注",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -3085,7 +3085,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员对此外部联系人的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员对此外部联系人的描述",
           "example": "描述",
           "member": "string",
           "name": "Description",
@@ -3125,7 +3125,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员添加此外部联系人所打标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员添加此外部联系人所打标签信息",
           "example": "[]",
           "member": "ExternalContactTag",
           "name": "Tags",
@@ -3151,7 +3151,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员对此外部联系人的备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员对此外部联系人的备注",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -3161,7 +3161,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员对此外部联系人的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员对此外部联系人的描述",
           "example": "描述",
           "member": "string",
           "name": "Description",
@@ -3201,7 +3201,7 @@
         },
         {
           "disabled": false,
-          "document": "该成员添加此外部联系人所打标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该成员添加此外部联系人所打标签信息",
           "example": "无",
           "member": "ExternalContactTag",
           "name": "Tags",
@@ -3211,7 +3211,7 @@
         },
         {
           "disabled": false,
-          "document": "添加了此外部联系人的企业成员的姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "添加了此外部联系人的企业成员的姓名",
           "example": "张三",
           "member": "string",
           "name": "SalesName",
@@ -3277,7 +3277,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离截止时间, 格式yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隔离截止时间, 格式yyyy-MM-dd HH:mm:ss",
           "example": "2022-07-08 00:00:00",
           "member": "string",
           "name": "IsolationDeadline",
@@ -3287,7 +3287,7 @@
         },
         {
           "disabled": false,
-          "document": "资源计划销毁时间, 格式yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源计划销毁时间, 格式yyyy-MM-dd HH:mm:ss",
           "example": "2022-07-15 00:00:00",
           "member": "string",
           "name": "DestroyTime",
@@ -3307,7 +3307,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展信息",
           "example": "无",
           "member": "string",
           "name": "Extra",
@@ -3343,7 +3343,7 @@
         },
         {
           "disabled": false,
-          "document": "短链url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "短链url",
           "example": "https://aggretrip.map.qq.com/wework_saas/dist/index.html?wexin_t",
           "member": "string",
           "name": "ShortChainAddress",
@@ -3353,7 +3353,7 @@
         },
         {
           "disabled": false,
-          "document": "活码二维码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活码二维码",
           "example": "https://aggretrip.map.qq.com/wework_saas/dist/index.html?wexin_t",
           "member": "string",
           "name": "LiveCodePreview",
@@ -3393,7 +3393,7 @@
         },
         {
           "disabled": false,
-          "document": "活码参数，每个活码参数都是不一样的， 这个的值对应的是字符串json类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活码参数，每个活码参数都是不一样的， 这个的值对应的是字符串json类型",
           "example": "{\"channel\": {                         \"chan",
           "member": "string",
           "name": "LiveCodeData",
@@ -3439,7 +3439,7 @@
         },
         {
           "disabled": false,
-          "document": "素材名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "素材名称",
           "example": "图片名称",
           "member": "string",
           "name": "MaterialName",
@@ -3600,7 +3600,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标",
           "example": "1381458494719070210",
           "member": "string",
           "name": "NextCursor",
@@ -3610,7 +3610,7 @@
         },
         {
           "disabled": false,
-          "document": "活码列表响应参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活码列表响应参数",
           "example": "无",
           "member": "ActivityJoinDetail",
           "name": "PageData",
@@ -3656,7 +3656,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标",
           "example": "1381458494719070210",
           "member": "string",
           "name": "NextCursor",
@@ -3666,7 +3666,7 @@
         },
         {
           "disabled": false,
-          "document": "活码列表响应参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活码列表响应参数",
           "example": "无",
           "member": "ActivityDetail",
           "name": "PageData",
@@ -3712,7 +3712,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -3722,7 +3722,7 @@
         },
         {
           "disabled": false,
-          "document": "活码列表响应参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活码列表响应参数",
           "example": "无",
           "member": "LiveCodeDetail",
           "name": "PageData",
@@ -3786,7 +3786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
@@ -3796,7 +3796,7 @@
         },
         {
           "disabled": false,
-          "document": "潜客客户存档信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "潜客客户存档信息",
           "example": "无",
           "member": "ArrivalInfo",
           "name": "PageData",
@@ -3806,7 +3806,7 @@
         },
         {
           "disabled": false,
-          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否还有更多数据。0-否；1-是。",
           "example": "1",
           "member": "uint64",
           "name": "HasMore",
@@ -3852,7 +3852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -3862,7 +3862,7 @@
         },
         {
           "disabled": false,
-          "document": "活码列表响应参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活码列表响应参数",
           "example": "无",
           "member": "ChannelCodeInnerDetail",
           "name": "PageData",
@@ -3908,7 +3908,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -3918,7 +3918,7 @@
         },
         {
           "disabled": false,
-          "document": "会话存档列表响应参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话存档列表响应参数",
           "example": "无",
           "member": "ChatArchivingDetail",
           "name": "PageData",
@@ -3982,7 +3982,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "线索信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "线索信息列表",
           "example": "无",
           "member": "ClueInfoDetail",
           "name": "PageData",
@@ -3992,7 +3992,7 @@
         },
         {
           "disabled": false,
-          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
@@ -4002,7 +4002,7 @@
         },
         {
           "disabled": false,
-          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否还有更多数据。0-否；1-是。",
           "example": "1",
           "member": "uint64",
           "name": "HasMore",
@@ -4084,7 +4084,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "无",
           "member": "string",
           "name": "NextCursor",
@@ -4094,7 +4094,7 @@
         },
         {
           "disabled": false,
-          "document": "CRM统计响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CRM统计响应数据",
           "example": "无",
           "member": "CrmStatisticsData",
           "name": "PageData",
@@ -4158,7 +4158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "无",
           "member": "string",
           "name": "NextCursor",
@@ -4168,7 +4168,7 @@
         },
         {
           "disabled": false,
-          "document": "外部联系人SaaS使用明细统计响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部联系人SaaS使用明细统计响应数据",
           "example": "无",
           "member": "CustomerActionEventDetail",
           "name": "PageData",
@@ -4232,7 +4232,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
@@ -4242,7 +4242,7 @@
         },
         {
           "disabled": false,
-          "document": "潜客客户存档信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "潜客客户存档信息",
           "example": "无",
           "member": "CustomerProfile",
           "name": "PageData",
@@ -4288,7 +4288,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "经销商信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经销商信息列表",
           "example": "无",
           "member": "DealerInfo",
           "name": "PageData",
@@ -4297,7 +4297,7 @@
         },
         {
           "disabled": false,
-          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉取新增的数据，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉取新增的数据，以实现增量拉取。",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
@@ -4306,7 +4306,7 @@
         },
         {
           "disabled": false,
-          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否还有更多数据。0-否；1-是。",
           "example": "1",
           "member": "uint64",
           "name": "HasMore",
@@ -4369,7 +4369,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -4432,7 +4432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -4442,7 +4442,7 @@
         },
         {
           "disabled": false,
-          "document": "客户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户信息",
           "example": "无",
           "member": "ExternalContact",
           "name": "Customer",
@@ -4452,7 +4452,7 @@
         },
         {
           "disabled": false,
-          "document": "添加了此外部联系人的企业成员信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "添加了此外部联系人的企业成员信息",
           "example": "无",
           "member": "FollowUser",
           "name": "FollowUser",
@@ -4498,7 +4498,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "外部联系人信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部联系人信息列表",
           "example": "无",
           "member": "ExternalContactSimpleInfo",
           "name": "PageData",
@@ -4508,7 +4508,7 @@
         },
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
@@ -4572,7 +4572,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -4582,7 +4582,7 @@
         },
         {
           "disabled": false,
-          "document": "外部联系人事件信息响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部联系人事件信息响应数据",
           "example": "无",
           "member": "ExternalUserEventInfo",
           "name": "PageData",
@@ -4619,7 +4619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "外部联系人映射信息, 只返回映射成功的记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部联系人映射信息, 只返回映射成功的记录",
           "example": "无",
           "member": "ExternalUserMappingInfo",
           "name": "ExternalUserIdMapping",
@@ -4683,7 +4683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
@@ -4693,7 +4693,7 @@
         },
         {
           "disabled": false,
-          "document": "潜客客户存档信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "潜客客户存档信息",
           "example": "无",
           "member": "FollowInfo",
           "name": "PageData",
@@ -4703,7 +4703,7 @@
         },
         {
           "disabled": false,
-          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否还有更多数据。0-否；1-是。",
           "example": "1",
           "member": "uint64",
           "name": "HasMore",
@@ -4740,7 +4740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "license响应信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license响应信息",
           "example": "无",
           "member": "LicenseInfo",
           "name": "LicenseInfo",
@@ -4795,7 +4795,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -4805,7 +4805,7 @@
         },
         {
           "disabled": false,
-          "document": "企业素材列表响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业素材列表响应数据",
           "example": "无",
           "member": "MaterialInfo",
           "name": "PageData",
@@ -4851,7 +4851,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -4861,7 +4861,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序码列表响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序码列表响应数据",
           "example": "无",
           "member": "MiniAppCodeInfo",
           "name": "PageData",
@@ -4925,7 +4925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，在下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "无",
           "member": "string",
           "name": "NextCursor",
@@ -4935,7 +4935,7 @@
         },
         {
           "disabled": false,
-          "document": "企业成员SaaS使用明细统计响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业成员SaaS使用明细统计响应数据",
           "example": "无",
           "member": "SalesActionEventDetail",
           "name": "PageData",
@@ -4981,7 +4981,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
@@ -4991,7 +4991,7 @@
         },
         {
           "disabled": false,
-          "document": "企业成员信息列表响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业成员信息列表响应数据",
           "example": "无",
           "member": "CorpUserInfo",
           "name": "PageData",
@@ -5037,7 +5037,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "车系车型信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车系车型信息列表",
           "example": "无",
           "member": "VehicleInfo",
           "name": "PageData",
@@ -5047,7 +5047,7 @@
         },
         {
           "disabled": false,
-          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉取新增的数据，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉取新增的数据，以实现增量拉取。",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
@@ -5057,7 +5057,7 @@
         },
         {
           "disabled": false,
-          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否还有更多数据。0-否；1-是。",
           "example": "1",
           "member": "uint64",
           "name": "HasMore",
@@ -5395,7 +5395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签分组名称",
           "example": "测试111",
           "member": "string",
           "name": "GroupName",
@@ -5405,7 +5405,7 @@
         },
         {
           "disabled": false,
-          "document": "标签分组业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签分组业务ID",
           "example": "1394843720913727500",
           "member": "string",
           "name": "BizGroupId",
@@ -5415,7 +5415,7 @@
         },
         {
           "disabled": false,
-          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签名称",
           "example": "涛涛涛涛涛涛涛涛涛涛涛涛涛11",
           "member": "string",
           "name": "TagName",
@@ -5425,7 +5425,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签ID",
           "example": "etQIM2CwAA6_HurtDtzSyK68jfiaX0UQ",
           "member": "string",
           "name": "TagId",
@@ -5435,7 +5435,7 @@
         },
         {
           "disabled": false,
-          "document": "标签业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签业务ID",
           "example": "1394843909254754300",
           "member": "string",
           "name": "BizTagId",
@@ -5445,7 +5445,7 @@
         },
         {
           "disabled": false,
-          "document": "标签分类，1：企业设置、2：用户自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签分类，1：企业设置、2：用户自定义",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -5455,7 +5455,7 @@
         },
         {
           "disabled": false,
-          "document": "标签业务ID字符串格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签业务ID字符串格式",
           "example": "1394843909254754300",
           "member": "string",
           "name": "BizTagIdStr",

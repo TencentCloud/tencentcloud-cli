@@ -440,7 +440,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数智人配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数智人配置",
           "example": "无",
           "member": "DigitalHumanConfig",
           "name": "DigitalHuman",
@@ -484,7 +484,7 @@
         },
         {
           "disabled": false,
-          "document": "音色配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色配置",
           "example": "无",
           "member": "VoiceConfig",
           "name": "Voice",
@@ -501,7 +501,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型配置",
           "example": "无",
           "member": "ModelDetailInfo",
           "name": "Model",
@@ -710,7 +710,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户手写输入</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户手写输入</p>",
           "example": "无",
           "member": "AgentUserInputValue",
           "name": "UserInputValue",
@@ -721,7 +721,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>系统参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统参数</p>",
           "example": "无",
           "member": "AgentSystemVariable",
           "name": "SystemVariable",
@@ -815,7 +815,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型参数</p>",
           "example": "无",
           "member": "ModelParams",
           "name": "ModelParameters",
@@ -1549,7 +1549,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工具输入参数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工具输入参数列表</p>",
           "example": "无",
           "member": "AgentToolInputParameter",
           "name": "InputList",
@@ -1560,7 +1560,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工具输出参数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工具输出参数列表</p>",
           "example": "无",
           "member": "AgentToolOutputParameter",
           "name": "OutputList",
@@ -1571,7 +1571,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工具Header参数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工具Header参数列表</p>",
           "example": "无",
           "member": "AgentPluginParameter",
           "name": "HeaderParameterList",
@@ -1582,7 +1582,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工具Query参数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工具Query参数列表</p>",
           "example": "无",
           "member": "AgentPluginParameter",
           "name": "QueryParameterList",
@@ -1680,7 +1680,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>子参数，仅 OBJECT 或 ARRAY&lt;&gt; 类型时使用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子参数，仅 OBJECT 或 ARRAY&lt;&gt; 类型时使用</p>",
           "example": "无",
           "member": "AgentToolInputParameter",
           "name": "SubParameterList",
@@ -1702,7 +1702,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>OneOf类型的参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OneOf类型的参数</p>",
           "example": "无",
           "member": "AgentToolInputParameter",
           "name": "OneOfList",
@@ -1713,7 +1713,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>AnyOf类型的参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>AnyOf类型的参数</p>",
           "example": "无",
           "member": "AgentToolInputParameter",
           "name": "AnyOfList",
@@ -1724,7 +1724,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>参数取值来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参数取值来源</p>",
           "example": "无",
           "member": "AgentInput",
           "name": "Input",
@@ -1858,7 +1858,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权配置信息",
           "example": "无",
           "member": "AuthConfig",
           "name": "AuthConfig",
@@ -1980,7 +1980,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>辅助信息(子状态/审批/申诉/搜索资源/特殊状态等)</p>",
           "example": "无",
           "member": "AppAuxiliaryInfo",
           "name": "AuxiliaryInfo",
@@ -1991,7 +1991,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配置</p>",
           "example": "无",
           "member": "AppConfig",
           "name": "Config",
@@ -2002,7 +2002,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>元数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>元数据</p>",
           "example": "无",
           "member": "AppMetadata",
           "name": "Metadata",
@@ -2013,7 +2013,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>应用密钥信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用密钥信息</p>",
           "example": "无",
           "member": "AppSecretInfo",
           "name": "SecretInfo",
@@ -2024,7 +2024,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>分享链接信息(含访问控制)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分享链接信息(含访问控制)</p>",
           "example": "无",
           "member": "AppShareURLInfo",
           "name": "ShareUrlInfo",
@@ -2035,7 +2035,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>",
           "example": "无",
           "member": "AppStatusInfo",
           "name": "Status",
@@ -2057,7 +2057,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>企业共享配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企业共享配置</p>",
           "example": "无",
           "member": "CorpShareConfig",
           "name": "CorpShareConfig",
@@ -2124,7 +2124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "申诉中的配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申诉中的配置项",
           "example": "无",
           "member": "AppealingStatus",
           "name": "AppealingStatus",
@@ -2141,7 +2141,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "申诉信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申诉信息",
           "example": "无",
           "member": "AppAppeal",
           "name": "Appeal",
@@ -2152,7 +2152,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索资源状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "搜索资源状态",
           "example": "无",
           "member": "SearchResourceStatusInfo",
           "name": "SearchResourceStatus",
@@ -2163,7 +2163,7 @@
         },
         {
           "disabled": false,
-          "document": "特殊状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "特殊状态信息",
           "example": "无",
           "member": "SpecialStatusInfo",
           "name": "SpecialStatusInfo",
@@ -2174,7 +2174,7 @@
         },
         {
           "disabled": false,
-          "document": "子状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子状态信息",
           "example": "无",
           "member": "AppSubStatusInfo",
           "name": "SubStatus",
@@ -2185,7 +2185,7 @@
         },
         {
           "disabled": false,
-          "document": "模板中心同步信息(私有化独有)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板中心同步信息(私有化独有)",
           "example": "无",
           "member": "TemplatePublishInfo",
           "name": "TemplatePublish",
@@ -2202,7 +2202,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "体验配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "体验配置",
           "example": "无",
           "member": "AppExperienceConfig",
           "name": "Experience",
@@ -2213,7 +2213,7 @@
         },
         {
           "disabled": false,
-          "document": "欢迎语配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "欢迎语配置",
           "example": "无",
           "member": "AppGreetingConfig",
           "name": "Greeting",
@@ -2224,7 +2224,7 @@
         },
         {
           "disabled": false,
-          "document": "记忆配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记忆配置",
           "example": "无",
           "member": "AppMemoryConfig",
           "name": "Memory",
@@ -2235,7 +2235,7 @@
         },
         {
           "disabled": false,
-          "document": "模式相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模式相关配置",
           "example": "无",
           "member": "AppModeConfig",
           "name": "Mode",
@@ -2246,7 +2246,7 @@
         },
         {
           "disabled": false,
-          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型配置",
           "example": "无",
           "member": "AppModelConfig",
           "name": "Model",
@@ -2257,7 +2257,7 @@
         },
         {
           "disabled": false,
-          "document": "联网搜索配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联网搜索配置",
           "example": "无",
           "member": "AppWebSearchConfig",
           "name": "WebSearch",
@@ -2268,7 +2268,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作流配置",
           "example": "无",
           "member": "AppWorkflowConfig",
           "name": "Workflow",
@@ -2285,7 +2285,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级配置",
           "example": "无",
           "member": "AppAdvancedConf",
           "name": "Advanced",
@@ -2296,7 +2296,7 @@
         },
         {
           "disabled": false,
-          "document": "对话体验配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对话体验配置",
           "example": "无",
           "member": "ConversationExperience",
           "name": "Conversation",
@@ -2307,7 +2307,7 @@
         },
         {
           "disabled": false,
-          "document": "角色配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色配置",
           "example": "无",
           "member": "RoleConfig",
           "name": "Role",
@@ -2374,7 +2374,7 @@
         },
         {
           "disabled": false,
-          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型配置",
           "example": "无",
           "member": "ModelDetailInfo",
           "name": "Model",
@@ -2507,7 +2507,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "多智能体配置(Agent模式)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多智能体配置(Agent模式)",
           "example": "无",
           "member": "MultiAgentConfig",
           "name": "MultiAgentConfig",
@@ -2518,7 +2518,7 @@
         },
         {
           "disabled": false,
-          "document": "单工作流配置(单工作流模式)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单工作流配置(单工作流模式)",
           "example": "无",
           "member": "SingleWorkflowConfig",
           "name": "SingleWorkflowConfig",
@@ -2529,7 +2529,7 @@
         },
         {
           "disabled": false,
-          "document": "ClawAgent配置(ClawAgent模式)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ClawAgent配置(ClawAgent模式)",
           "example": "无",
           "member": "ClawAgentConfig",
           "name": "ClawAgentConfig",
@@ -2546,7 +2546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AI一键优化模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI一键优化模型",
           "example": "无",
           "member": "AIOptimizeModel",
           "name": "AiOptimizeModel",
@@ -2557,7 +2557,7 @@
         },
         {
           "disabled": false,
-          "document": "实时文件解析模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实时文件解析模型",
           "example": "无",
           "member": "FileParseModel",
           "name": "FileParseModel",
@@ -2568,7 +2568,7 @@
         },
         {
           "disabled": false,
-          "document": "生成模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生成模型配置",
           "example": "无",
           "member": "GenerateModel",
           "name": "GenerateModel",
@@ -2579,7 +2579,7 @@
         },
         {
           "disabled": false,
-          "document": "多模态问答模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多模态问答模型",
           "example": "无",
           "member": "MultiModalQAModel",
           "name": "MultiModalQaModel",
@@ -2590,7 +2590,7 @@
         },
         {
           "disabled": false,
-          "document": "多模态理解模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多模态理解模型",
           "example": "无",
           "member": "MultiModalUnderstandingModel",
           "name": "MultiModalUnderstandingModel",
@@ -2601,7 +2601,7 @@
         },
         {
           "disabled": false,
-          "document": "Prompt改写模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Prompt改写模型",
           "example": "无",
           "member": "PromptRewriteModel",
           "name": "PromptRewriteModel",
@@ -2612,7 +2612,7 @@
         },
         {
           "disabled": false,
-          "document": "思考模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "思考模型配置",
           "example": "无",
           "member": "ThinkModel",
           "name": "ThinkModel",
@@ -2785,7 +2785,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前生效的访问控制配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效的访问控制配置",
           "example": "无",
           "member": "AppShareAccessControl",
           "name": "AccessControl",
@@ -2969,7 +2969,7 @@
         },
         {
           "disabled": false,
-          "document": "操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作信息",
           "example": "无",
           "member": "AppOperation",
           "name": "OperationInfo",
@@ -2980,7 +2980,7 @@
         },
         {
           "disabled": false,
-          "document": "状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态信息",
           "example": "无",
           "member": "AppStatusInfo",
           "name": "Status",
@@ -2991,7 +2991,7 @@
         },
         {
           "disabled": false,
-          "document": "子状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子状态信息",
           "example": "无",
           "member": "AppSubStatusInfo",
           "name": "SubStatus",
@@ -3352,7 +3352,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key授权配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API Key授权配置",
           "example": "无",
           "member": "ApiKeyAuthConfig",
           "name": "ApiKeyAuthConfig",
@@ -3363,7 +3363,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM授权配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CAM授权配置",
           "example": "无",
           "member": "CamAuthConfig",
           "name": "CamAuthConfig",
@@ -3374,7 +3374,7 @@
         },
         {
           "disabled": false,
-          "document": "OAuth2.0授权配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OAuth2.0授权配置",
           "example": "无",
           "member": "OAuthConfig",
           "name": "OAuthConfig",
@@ -3597,7 +3597,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方自定义配置(控制C端用户在对话时可动态传入哪些自定义配置)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调用方自定义配置(控制C端用户在对话时可动态传入哪些自定义配置)",
           "example": "无",
           "member": "ClawAgentCustomConfig",
           "name": "CustomConfig",
@@ -3608,7 +3608,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent团队协作配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Agent团队协作配置",
           "example": "无",
           "member": "ClawAgentAgentTeamConfig",
           "name": "AgentTeamConfig",
@@ -3619,7 +3619,7 @@
         },
         {
           "disabled": false,
-          "document": "长期记忆配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "长期记忆配置",
           "example": "无",
           "member": "ClawAgentLongMemoryConfig",
           "name": "LongMemoryConfig",
@@ -3953,7 +3953,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义变量数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义变量数据</p>",
           "example": "{\"env\":\"prod\",\"region\":\"ap-shanghai\"}",
           "member": "string",
           "name": "CustomVariablesData",
@@ -3964,7 +3964,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>企业表单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企业表单</p>",
           "example": "{\"series\":[{\"type\":\"line\",\"data\":[1,2,3]}]}",
           "member": "string",
           "name": "EnterpriseCharts",
@@ -3997,7 +3997,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>选项卡模式 枚举值: 0-OPTION_MODE_SINGLE(单选), 1-OPTION_MODE_MULTI(多选)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>选项卡模式 枚举值: 0-OPTION_MODE_SINGLE(单选), 1-OPTION_MODE_MULTI(多选)</p>",
           "example": "1",
           "member": "int64",
           "name": "OptionMode",
@@ -4052,7 +4052,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联记录 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联记录 ID</p>",
           "example": "example-related-record-id",
           "member": "string",
           "name": "RelatedRecordId",
@@ -4085,7 +4085,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作流输入参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流输入参数</p>",
           "example": "example workflow input",
           "member": "string",
           "name": "WorkflowInput",
@@ -4102,7 +4102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AI通话配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI通话配置",
           "example": "无",
           "member": "AICallConfig",
           "name": "AiCall",
@@ -4113,7 +4113,7 @@
         },
         {
           "disabled": false,
-          "document": "背景图片配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "背景图片配置",
           "example": "无",
           "member": "BackgroundImage",
           "name": "BackgroundImage",
@@ -4168,7 +4168,7 @@
         },
         {
           "disabled": false,
-          "document": "输入框配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入框配置",
           "example": "无",
           "member": "InputBoxConfig",
           "name": "InputBoxConfig",
@@ -4451,7 +4451,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>存储类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储类型</p>",
           "example": "sandbox_e2b",
           "member": "string",
           "name": "StorageType",
@@ -5635,7 +5635,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>存储类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储类型</p>",
           "example": "sandbox_e2b",
           "member": "string",
           "name": "StorageType",
@@ -7138,7 +7138,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最近一次重置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最近一次重置信息</p>",
           "example": "无",
           "member": "ConversationResetInfo",
           "name": "ResetInfo",
@@ -7279,7 +7279,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间</p>",
           "example": "无",
           "member": "ConversationWorkspace",
           "name": "Workspace",
@@ -8749,7 +8749,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用公式增强\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用公式增强",
           "example": "true",
           "member": "bool",
           "name": "EnableFormulaEnhancement",
@@ -8760,7 +8760,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用 LLM 增强\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用 LLM 增强",
           "example": "false",
           "member": "bool",
           "name": "EnableLLMEnhancement",
@@ -8771,7 +8771,7 @@
         },
         {
           "disabled": false,
-          "document": "是否输出 HTML 表格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否输出 HTML 表格",
           "example": "true",
           "member": "bool",
           "name": "OutputHtmlTable",
@@ -8838,7 +8838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生成模型",
           "example": "无",
           "member": "ModelDetailInfo",
           "name": "Model",
@@ -9032,7 +9032,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型限制信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型限制信息</p>",
           "example": "无",
           "member": "ModelLimit",
           "name": "LimitInfo",
@@ -9042,7 +9042,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型基本信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型基本信息</p>",
           "example": "无",
           "member": "ModelBasic",
           "name": "ModelBasic",
@@ -9072,7 +9072,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型提供商信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型提供商信息</p>",
           "example": "无",
           "member": "ModelProviderBasic",
           "name": "ProviderInfo",
@@ -9082,7 +9082,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型状态信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型状态信息</p>",
           "example": "无",
           "member": "ModelStatus",
           "name": "StatusInfo",
@@ -9253,7 +9253,7 @@
         },
         {
           "disabled": false,
-          "document": "模型参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型参数",
           "example": "无",
           "member": "ModelParams",
           "name": "ModelParams",
@@ -9411,7 +9411,7 @@
         },
         {
           "disabled": false,
-          "document": "频率惩罚\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "频率惩罚",
           "example": "0.4",
           "member": "float",
           "name": "FrequencyPenalty",
@@ -9422,7 +9422,7 @@
         },
         {
           "disabled": false,
-          "document": "最大输出长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大输出长度",
           "example": "16384",
           "member": "int64",
           "name": "MaxTokens",
@@ -9433,7 +9433,7 @@
         },
         {
           "disabled": false,
-          "document": "存在惩罚\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存在惩罚",
           "example": "0.3",
           "member": "float",
           "name": "PresencePenalty",
@@ -9455,7 +9455,7 @@
         },
         {
           "disabled": false,
-          "document": "重复惩罚\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重复惩罚",
           "example": "0.4",
           "member": "float",
           "name": "RepetitionPenalty",
@@ -9477,7 +9477,7 @@
         },
         {
           "disabled": false,
-          "document": "seed 随机种子\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "seed 随机种子",
           "example": "1",
           "member": "int64",
           "name": "Seed",
@@ -9499,7 +9499,7 @@
         },
         {
           "disabled": false,
-          "document": "温度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "温度",
           "example": "0.6",
           "member": "float",
           "name": "Temperature",
@@ -9510,7 +9510,7 @@
         },
         {
           "disabled": false,
-          "document": "top_p\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "top_p",
           "example": "0.6",
           "member": "float",
           "name": "TopP",
@@ -10248,7 +10248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Agent协同配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Agent协同配置",
           "example": "无",
           "member": "AgentCollaborationConfig",
           "name": "AgentCollaboration",
@@ -10265,7 +10265,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型配置",
           "example": "无",
           "member": "ModelDetailInfo",
           "name": "Model",
@@ -10282,7 +10282,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型配置",
           "example": "无",
           "member": "ModelDetailInfo",
           "name": "Model",
@@ -10360,7 +10360,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "插件配置",
           "example": "无",
           "member": "PluginConfig",
           "name": "Config",
@@ -10393,7 +10393,7 @@
         },
         {
           "disabled": false,
-          "document": "插件运营管理信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "插件运营管理信息",
           "example": "无",
           "member": "PluginOperation",
           "name": "Operation",
@@ -10426,7 +10426,7 @@
         },
         {
           "disabled": false,
-          "document": "插件基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "插件基础信息",
           "example": "无",
           "member": "PluginProfile",
           "name": "Profile",
@@ -10437,7 +10437,7 @@
         },
         {
           "disabled": false,
-          "document": "插件统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "插件统计信息",
           "example": "无",
           "member": "PluginStatistics",
           "name": "Statistics",
@@ -10459,7 +10459,7 @@
         },
         {
           "disabled": false,
-          "document": "工具列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工具列表",
           "example": "无",
           "member": "Tool",
           "name": "ToolList",
@@ -10481,7 +10481,7 @@
         },
         {
           "disabled": false,
-          "document": "用户维度的插件状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户维度的插件状态信息",
           "example": "无",
           "member": "PluginUserState",
           "name": "UserState",
@@ -10498,7 +10498,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "API插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API插件配置",
           "example": "无",
           "member": "ApiPluginConfig",
           "name": "ApiPluginConfig",
@@ -10509,7 +10509,7 @@
         },
         {
           "disabled": false,
-          "document": "应用插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用插件配置",
           "example": "无",
           "member": "AppPluginConfig",
           "name": "AppPluginConfig",
@@ -10520,7 +10520,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mcp插件配置",
           "example": "无",
           "member": "MCPPluginConfig",
           "name": "MCPPluginConfig",
@@ -10903,7 +10903,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型配置",
           "example": "无",
           "member": "ModelDetailInfo",
           "name": "Model",
@@ -11176,7 +11176,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>应用分享访问控制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用分享访问控制</p>",
           "example": "无",
           "member": "AppShareAccessControl",
           "name": "AppShareAccessControl",
@@ -11198,7 +11198,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>企业共享配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企业共享配置</p>",
           "example": "无",
           "member": "CorpShareConfig",
           "name": "CorpShareConfig",
@@ -12081,7 +12081,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>引用的 Skill 版本ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引用的 Skill 版本ID</p>",
           "example": "d841b710-**************-8834ba71e96d",
           "member": "string",
           "name": "SkillVersionId",
@@ -12203,7 +12203,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分类信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分类信息",
           "example": "无",
           "member": "SkillClassification",
           "name": "ClassificationInfo",
@@ -12214,7 +12214,7 @@
         },
         {
           "disabled": false,
-          "document": "当前版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前版本信息",
           "example": "无",
           "member": "SkillVersion",
           "name": "CurrentVersionInfo",
@@ -12236,7 +12236,7 @@
         },
         {
           "disabled": false,
-          "document": "基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础信息",
           "example": "无",
           "member": "SkillProfile",
           "name": "Profile",
@@ -12308,7 +12308,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测信息",
           "example": "无",
           "member": "SkillAnalysisInfo",
           "name": "AnalysisInfo",
@@ -12564,7 +12564,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "思考模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "思考模型",
           "example": "无",
           "member": "ModelDetailInfo",
           "name": "Model",
@@ -12581,7 +12581,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>工具计费信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工具计费信息</p>",
           "example": "无",
           "member": "ToolBilling",
           "name": "Billing",
@@ -12647,7 +12647,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工具配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工具配置信息</p>",
           "example": "无",
           "member": "ToolConfig",
           "name": "ToolConfig",

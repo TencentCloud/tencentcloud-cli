@@ -2302,7 +2302,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型",
           "example": "CALLER_IP",
           "member": "string",
           "name": "Type",
@@ -2312,7 +2312,7 @@
         },
         {
           "disabled": false,
-          "document": "key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "key值",
           "example": "$caller_ip",
           "member": "string",
           "name": "Key",
@@ -2322,7 +2322,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配条件参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配条件参数",
           "example": "{ \t\t\t\t\t\t\"type\": \"EXACT\", \t\t\t\t\t\t\"value\": \"test\", \t\t\t\t\t\t\"value_type\": \"TEXT\" \t\t\t\t\t}",
           "member": "ArgumentValue",
           "name": "Value",
@@ -2338,7 +2338,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表达式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表达式类型",
           "example": "EXACT",
           "member": "string",
           "name": "Type",
@@ -2349,7 +2349,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配值",
           "example": "blue",
           "member": "string",
           "name": "Value",
@@ -2360,7 +2360,7 @@
         },
         {
           "disabled": false,
-          "document": "值类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值类型",
           "example": "TEXT",
           "member": "string",
           "name": "ValueType",
@@ -2735,7 +2735,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "消费者描述",
           "member": "string",
           "name": "Description",
@@ -2746,7 +2746,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>消费者分组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消费者分组</p>",
           "example": "无",
           "member": "CNAPIGwConsumerGroup",
           "name": "ConsumerGroups",
@@ -2829,7 +2829,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的消费者数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的消费者数量",
           "example": "0",
           "member": "uint64",
           "name": "BindCount",
@@ -2885,7 +2885,7 @@
         },
         {
           "disabled": false,
-          "document": "消费者列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消费者列表",
           "example": "无",
           "member": "CNAPIGwConsumer",
           "name": "Consumers",
@@ -2996,7 +2996,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>KMS凭证名字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>KMS凭证名字</p>",
           "example": "name",
           "member": "string",
           "name": "KmsKeyName",
@@ -3007,7 +3007,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>KMS凭证版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>KMS凭证版本</p>",
           "example": "value",
           "member": "string",
           "name": "KmsKeyVersion",
@@ -3018,7 +3018,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "密钥描述",
           "member": "string",
           "name": "Description",
@@ -3029,7 +3029,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否可以绑定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否可以绑定</p>",
           "example": "true",
           "member": "bool",
           "name": "CanBind",
@@ -3356,7 +3356,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的流量百分比配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务的流量百分比配置",
           "example": "无",
           "member": "CloudNativeAPIGatewayBalancedService",
           "name": "BalancedServiceList",
@@ -3636,7 +3636,7 @@
         },
         {
           "disabled": false,
-          "document": "网络访问策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络访问策略",
           "example": "无",
           "member": "NetworkAccessControl",
           "name": "AccessControl",
@@ -4892,7 +4892,7 @@
         },
         {
           "disabled": false,
-          "document": "基础限流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础限流",
           "example": "无",
           "member": "QpsThreshold",
           "name": "BasicLimitQpsThresholds",
@@ -4903,7 +4903,7 @@
         },
         {
           "disabled": false,
-          "document": "参数限流的规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数限流的规则",
           "example": "无",
           "member": "LimitRule",
           "name": "LimitRules",
@@ -5000,7 +5000,7 @@
         },
         {
           "disabled": true,
-          "document": "最大节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大节点数",
           "example": "无",
           "member": "uint64",
           "name": "MaxReplicas",
@@ -5027,7 +5027,7 @@
         },
         {
           "disabled": false,
-          "document": "指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标列表",
           "example": "无",
           "member": "CloudNativeAPIGatewayStrategyAutoScalerConfigMetric",
           "name": "Metrics",
@@ -5038,7 +5038,7 @@
         },
         {
           "disabled": true,
-          "document": "是否开启指标伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启指标伸缩",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -5049,7 +5049,7 @@
         },
         {
           "disabled": true,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "CreateTime",
@@ -5060,7 +5060,7 @@
         },
         {
           "disabled": true,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "ModifyTime",
@@ -5071,7 +5071,7 @@
         },
         {
           "disabled": true,
-          "document": "弹性策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性策略ID",
           "example": "strategy-448e24f7",
           "member": "string",
           "name": "StrategyId",
@@ -5082,7 +5082,7 @@
         },
         {
           "disabled": true,
-          "document": "指标配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标配置ID",
           "example": "autoscaler-92aaca7b",
           "member": "string",
           "name": "AutoScalerId",
@@ -5093,7 +5093,7 @@
         },
         {
           "disabled": false,
-          "document": "指标伸缩行为配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标伸缩行为配置",
           "example": "无",
           "member": "AutoScalerBehavior",
           "name": "Behavior",
@@ -5216,7 +5216,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "是否开启定时伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启定时伸缩",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -5227,7 +5227,7 @@
         },
         {
           "disabled": false,
-          "document": "定时伸缩配置参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时伸缩配置参数列表",
           "example": "无",
           "member": "CloudNativeAPIGatewayStrategyCronScalerConfigParam",
           "name": "Params",
@@ -5238,7 +5238,7 @@
         },
         {
           "disabled": true,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "CreateTime",
@@ -5249,7 +5249,7 @@
         },
         {
           "disabled": true,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "ModifyTime",
@@ -5260,7 +5260,7 @@
         },
         {
           "disabled": true,
-          "document": "弹性策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性策略ID",
           "example": "strategy-448e24f7",
           "member": "string",
           "name": "StrategyId",
@@ -5347,7 +5347,7 @@
         },
         {
           "disabled": false,
-          "document": "处于当前状态的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处于当前状态的原因",
           "example": "success",
           "member": "string",
           "name": "Reason",
@@ -5357,7 +5357,7 @@
         },
         {
           "disabled": false,
-          "document": "处于当前状态的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处于当前状态的详细信息",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -5367,7 +5367,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "1663579655000",
           "member": "uint64",
           "name": "StartTime",
@@ -5377,7 +5377,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "1663579708000",
           "member": "uint64",
           "name": "EndTime",
@@ -10546,7 +10546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道名称",
           "example": "lanegroup-123",
           "member": "string",
           "name": "Name",
@@ -10557,7 +10557,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道组ID",
           "example": "12732395",
           "member": "string",
           "name": "ID",
@@ -10568,7 +10568,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道入口服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道入口服务列表",
           "example": "无",
           "member": "LaneTrafficEntry",
           "name": "TrafficEntries",
@@ -10579,7 +10579,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道服务列表",
           "example": "无",
           "member": "GovernanceServiceDestination",
           "name": "Destinations",
@@ -10590,7 +10590,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道组描述",
           "example": "lanegroup",
           "member": "string",
           "name": "Description",
@@ -10601,7 +10601,7 @@
         },
         {
           "disabled": false,
-          "document": "规则内容摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则内容摘要",
           "example": "c123xaweqw",
           "member": "string",
           "name": "Revision",
@@ -10612,7 +10612,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -10623,7 +10623,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -10634,7 +10634,7 @@
         },
         {
           "disabled": false,
-          "document": "规则一致性状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则一致性状态",
           "example": "Abnormal/Normal/Unknown",
           "member": "string",
           "name": "Consistency",
@@ -10645,7 +10645,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道规则列表",
           "example": "无",
           "member": "GovernanceLaneRule",
           "name": "Rules",
@@ -11164,7 +11164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出参",
           "example": "无",
           "member": "DescribeKongCORSResult",
           "name": "Result",
@@ -11724,7 +11724,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出参",
           "example": "{\"SourceType\":\"route\",\"SourceId\":\"31f3bf99-f289-4b6e-8edc-5e09d9d8ce4f\",\"Enabled\":true,\"RestrictionType\":\"whiteList\",\"AddressList\":\t[1.1.1.1,2.2.2.2]}",
           "member": "DescribeKongIpRestrictionResult",
           "name": "Result",
@@ -12090,7 +12090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行阶段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行阶段列表",
           "example": "无",
           "member": "CloudNativeAPIGatewayTaskPhase",
           "name": "Phases",
@@ -12556,7 +12556,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>表示可以升级的版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表示可以升级的版本号</p>",
           "example": "[\"2.5.1\",\"2.8.5\"]",
           "member": "string",
           "name": "AvailableVersions",
@@ -15214,7 +15214,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问控制插件绑定的资源类型：route | service\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问控制插件绑定的资源类型：route | service",
           "example": "route",
           "member": "string",
           "name": "SourceType",
@@ -15224,7 +15224,7 @@
         },
         {
           "disabled": false,
-          "document": "路由或服务的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由或服务的id",
           "example": "5c425ea8-85d9-46e7-973e-86780fde34fa",
           "member": "string",
           "name": "SourceId",
@@ -15234,7 +15234,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用插件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用插件",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -15244,7 +15244,7 @@
         },
         {
           "disabled": false,
-          "document": "访问控制类型：whiteList｜blackList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问控制类型：whiteList｜blackList",
           "example": "whiteList",
           "member": "string",
           "name": "RestrictionType",
@@ -15254,7 +15254,7 @@
         },
         {
           "disabled": false,
-          "document": "cidr｜ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cidr｜ip",
           "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "member": "string",
           "name": "AddressList",
@@ -15986,7 +15986,7 @@
         },
         {
           "disabled": false,
-          "document": "北极星限流server节点接入IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "北极星限流server节点接入IP",
           "example": "无",
           "member": "PolarisLimiterAddress",
           "name": "LimiterAddressInfos",
@@ -16184,7 +16184,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "WAF防护域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "WAF防护域名列表",
           "example": "tencent.com",
           "member": "string",
           "name": "Domains",
@@ -17606,7 +17606,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道名称",
           "example": "lanegroup-123",
           "member": "string",
           "name": "Name",
@@ -17617,7 +17617,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道组ID",
           "example": "a887255ebd1349b59b862fa3caeca2c4",
           "member": "string",
           "name": "ID",
@@ -17628,7 +17628,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道入口服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道入口服务列表",
           "example": "无",
           "member": "LaneTrafficEntry",
           "name": "TrafficEntries",
@@ -17639,7 +17639,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道服务列表",
           "example": "无",
           "member": "GovernanceServiceDestination",
           "name": "Destinations",
@@ -17650,7 +17650,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道组描述",
           "example": "lanegroup",
           "member": "string",
           "name": "Description",
@@ -17661,7 +17661,7 @@
         },
         {
           "disabled": false,
-          "document": "该泳道组下的所有泳道规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该泳道组下的所有泳道规则列表",
           "example": "无",
           "member": "GovernanceLaneRule",
           "name": "Rules",
@@ -17672,7 +17672,7 @@
         },
         {
           "disabled": false,
-          "document": "规则内容摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则内容摘要",
           "example": "c123xaweqw",
           "member": "string",
           "name": "Revision",
@@ -17683,7 +17683,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -17694,7 +17694,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -17705,7 +17705,7 @@
         },
         {
           "disabled": false,
-          "document": "规则一致性状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则一致性状态",
           "example": "Abnormal/Normal/Unknown",
           "member": "string",
           "name": "Consistency",
@@ -17722,7 +17722,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道规则ID",
           "example": "71f28761f5e8433a9e656fb290e1dcf8",
           "member": "string",
           "name": "ID",
@@ -17733,7 +17733,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道名称",
           "example": "rule-1",
           "member": "string",
           "name": "Name",
@@ -17744,7 +17744,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道所属泳道组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道所属泳道组",
           "example": "lane-2",
           "member": "string",
           "name": "LaneGroup",
@@ -17755,7 +17755,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道规则启用状态",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -17766,7 +17766,7 @@
         },
         {
           "disabled": false,
-          "document": "流量标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量标签",
           "example": "无",
           "member": "Argument",
           "name": "TrafficLabels",
@@ -17777,7 +17777,7 @@
         },
         {
           "disabled": false,
-          "document": "多个流量标签匹配方式\nAND：与\nOR：或\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多个流量标签匹配方式\nAND：与\nOR：或",
           "example": "AND|OR",
           "member": "string",
           "name": "TrafficMatchMode",
@@ -17788,7 +17788,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道匹配方式\nSTRICT：严格匹配\nPERMISSIVE：宽松匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道匹配方式\nSTRICT：严格匹配\nPERMISSIVE：宽松匹配",
           "example": "STRICT|PERMISSIVE",
           "member": "string",
           "name": "LaneMatchMode",
@@ -17810,7 +17810,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道规则描述",
           "example": "blue",
           "member": "string",
           "name": "Description",
@@ -17821,7 +17821,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道标签内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道标签内容",
           "example": "gray",
           "member": "string",
           "name": "LaneLabelValue",
@@ -17832,7 +17832,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -17843,7 +17843,7 @@
         },
         {
           "disabled": false,
-          "document": "启用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启用时间",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "EnableTime",
@@ -17854,7 +17854,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -17865,7 +17865,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道规则优先级",
           "example": "1",
           "member": "int64",
           "name": "Priority",
@@ -17876,7 +17876,7 @@
         },
         {
           "disabled": false,
-          "document": "规则摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则摘要",
           "example": "df5bc49fd0084bf3a362b5152d52ad8a",
           "member": "string",
           "name": "Revision",
@@ -18537,7 +18537,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间",
           "example": "namespace",
           "member": "string",
           "name": "Namespace",
@@ -18548,7 +18548,7 @@
         },
         {
           "disabled": false,
-          "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务",
           "example": "service",
           "member": "string",
           "name": "Service",
@@ -18559,7 +18559,7 @@
         },
         {
           "disabled": false,
-          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例标签",
           "example": "无",
           "member": "RoutingDestinationRuleLabel",
           "name": "Labels",
@@ -19009,7 +19009,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "KongCertificatesPreview",
           "name": "CertificatesList",
@@ -19019,7 +19019,7 @@
         },
         {
           "disabled": true,
-          "document": "证书列表总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书列表总页数",
           "example": "2",
           "member": "int64",
           "name": "Pages",
@@ -19190,7 +19190,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "[\"GET\"]",
           "member": "string",
           "name": "Methods",
@@ -19201,7 +19201,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "[\"/v1/users\"]",
           "member": "string",
           "name": "Paths",
@@ -19212,7 +19212,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "[\"tencent.com\"]",
           "member": "string",
           "name": "Hosts",
@@ -19278,7 +19278,7 @@
         },
         {
           "disabled": true,
-          "document": "是否开启了强制HTTPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启了强制HTTPS",
           "example": "true",
           "member": "bool",
           "name": "ForceHttps",
@@ -19416,7 +19416,7 @@
         },
         {
           "disabled": false,
-          "document": "后端路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端路径",
           "example": "/v1/users",
           "member": "string",
           "name": "Path",
@@ -19449,7 +19449,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签",
           "example": "[\"test\"]",
           "member": "string",
           "name": "Tags",
@@ -19560,7 +19560,7 @@
         },
         {
           "disabled": false,
-          "document": "请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求路径",
           "example": "/open",
           "member": "string",
           "name": "Path",
@@ -19683,7 +19683,7 @@
         },
         {
           "disabled": false,
-          "document": "请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求路径",
           "example": "/open",
           "member": "string",
           "name": "Path",
@@ -19916,7 +19916,7 @@
         },
         {
           "disabled": false,
-          "document": "服务后端类型是IPList时提供\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务后端类型是IPList时提供",
           "example": "无",
           "member": "KongTarget",
           "name": "Targets",
@@ -20204,7 +20204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "   // type == \"polarismesh.cn/gateway/tse-gateway, 则 selector 为 TSEGatewaySelector\n   // type == \"polarismesh.cn/gateway/spring-cloud-gateway\", 则 selector 为 ServiceGatewaySelector\n   // type == \"polarismesh.cn/service, 则 selector 为 ServiceSelector\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "   // type == \"polarismesh.cn/gateway/tse-gateway, 则 selector 为 TSEGatewaySelector\n   // type == \"polarismesh.cn/gateway/spring-cloud-gateway\", 则 selector 为 ServiceGatewaySelector\n   // type == \"polarismesh.cn/service, 则 selector 为 ServiceSelector",
           "example": "polarismesh.cn/gateway/tse-gateway",
           "member": "string",
           "name": "EntryType",
@@ -20215,7 +20215,7 @@
         },
         {
           "disabled": false,
-          "document": "TSE云原生网关选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TSE云原生网关选择器",
           "example": "无",
           "member": "TSEGatewaySelector",
           "name": "TSEGatewaySelector",
@@ -20226,7 +20226,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务网关选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "微服务网关选择器",
           "example": "无",
           "member": "ServiceGatewaySelector",
           "name": "ServiceGatewaySelector",
@@ -20237,7 +20237,7 @@
         },
         {
           "disabled": false,
-          "document": "普通微服务选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "普通微服务选择器",
           "example": "无",
           "member": "ServiceSelector",
           "name": "ServiceSelector",
@@ -22621,7 +22621,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -23541,7 +23541,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功",
           "example": "{\"GatewayId\":\"abc\",\"GroupId\":\"abc\",\"Status\":\"abc\",\"TaskId\":\"abc\"}",
           "member": "DeleteNativeGatewayServerGroupResult",
           "name": "Result",
@@ -23749,7 +23749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键",
           "example": "labelkey1",
           "member": "string",
           "name": "LabelKey",
@@ -23760,7 +23760,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "value",
           "member": "string",
           "name": "LabelValue",
@@ -23771,7 +23771,7 @@
         },
         {
           "disabled": false,
-          "document": "表达式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表达式类型",
           "example": "NOT_IN",
           "member": "string",
           "name": "LabelType",
@@ -23782,7 +23782,7 @@
         },
         {
           "disabled": false,
-          "document": "值类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值类型",
           "example": "TEXT",
           "member": "string",
           "name": "LabelValueType",
@@ -24255,7 +24255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间",
           "example": "default",
           "member": "string",
           "name": "Namespace",
@@ -24266,7 +24266,7 @@
         },
         {
           "disabled": false,
-          "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务",
           "example": "service",
           "member": "string",
           "name": "Service",
@@ -24277,7 +24277,7 @@
         },
         {
           "disabled": false,
-          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例标签",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -24410,7 +24410,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间",
           "example": "default",
           "member": "string",
           "name": "Namespace",
@@ -24421,7 +24421,7 @@
         },
         {
           "disabled": false,
-          "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务",
           "example": "service",
           "member": "string",
           "name": "Service",
@@ -24432,7 +24432,7 @@
         },
         {
           "disabled": false,
-          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例标签",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -24640,7 +24640,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关引擎实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关引擎实例ID",
           "example": "gateway-123456",
           "member": "string",
           "name": "GatewayId",
@@ -24651,7 +24651,7 @@
         },
         {
           "disabled": false,
-          "document": "网关服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关服务",
           "example": "[\"service-1\"]",
           "member": "string",
           "name": "Services",
@@ -25172,7 +25172,7 @@
         },
         {
           "disabled": true,
-          "document": "健康检查监控上报的数据屏蔽权重为0的节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查监控上报的数据屏蔽权重为0的节点",
           "example": "true",
           "member": "bool",
           "name": "IgnoreZeroWeightNodes",

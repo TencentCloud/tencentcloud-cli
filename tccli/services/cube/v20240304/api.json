@@ -62,7 +62,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "磁盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘大小，单位GB。",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -73,7 +73,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。\n该参数目前仅用于DescribeInstances等查询类接口的返回参数，不可用于RunInstances等写接口的入参。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。\n该参数目前仅用于DescribeInstances等查询类接口的返回参数，不可用于RunInstances等写接口的入参。",
           "example": "\"disk-lzrg2pwi\"",
           "member": "string",
           "name": "DiskId",
@@ -84,7 +84,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘介质类型。取值范围：\n\n- CLOUD_BASIC：表示普通云硬盘\n- CLOUD_PREMIUM：表示高性能云硬盘\n- CLOUD_BSSD：表示通用型SSD云硬盘\n- CLOUD_SSD：表示SSD云硬盘\n- CLOUD_HSSD：表示增强型SSD云硬盘\n- CLOUD_TSSD：表示极速型SSD云硬盘。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬盘介质类型。取值范围：\n\n- CLOUD_BASIC：表示普通云硬盘\n- CLOUD_PREMIUM：表示高性能云硬盘\n- CLOUD_BSSD：表示通用型SSD云硬盘\n- CLOUD_SSD：表示SSD云硬盘\n- CLOUD_HSSD：表示增强型SSD云硬盘\n- CLOUD_TSSD：表示极速型SSD云硬盘。",
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
@@ -311,7 +311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例列表",
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
@@ -404,7 +404,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID",
           "example": "无",
           "member": "string",
           "name": "InstanceId",
@@ -414,7 +414,7 @@
         },
         {
           "disabled": false,
-          "document": "例状态。取值范围：\n\n- PENDING：表示创建中\n- LAUNCH_FAILED：表示创建失败\n- RUNNING：表示运行中\n- SHUTDOWN：表示停止待销毁\n- TERMINATING：表示销毁中\n- TERMINATED：表示已销毁成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "例状态。取值范围：\n\n- PENDING：表示创建中\n- LAUNCH_FAILED：表示创建失败\n- RUNNING：表示运行中\n- SHUTDOWN：表示停止待销毁\n- TERMINATING：表示销毁中\n- TERMINATED：表示已销毁成功",
           "example": "无",
           "member": "string",
           "name": "InstanceState",
@@ -424,7 +424,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存容量，单位：MiB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例内存容量，单位：MiB",
           "example": "无",
           "member": "int64",
           "name": "Memory",
@@ -434,7 +434,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的CPU核数，单位：核*100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的CPU核数，单位：核*100",
           "example": "无",
           "member": "int64",
           "name": "CPU",
@@ -444,7 +444,7 @@
         },
         {
           "disabled": false,
-          "document": "系统架构-INTEL|AMD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统架构-INTEL|AMD",
           "example": "无",
           "member": "string",
           "name": "CpuType",
@@ -454,7 +454,7 @@
         },
         {
           "disabled": false,
-          "document": "实例Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例Uuid",
           "example": "无",
           "member": "string",
           "name": "Uuid",
@@ -464,7 +464,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -474,7 +474,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘信息",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -484,7 +484,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc ip地址",
           "example": "无",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -494,7 +494,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc网络信息",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
@@ -504,7 +504,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在裸金属IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所在裸金属IP",
           "example": "无",
           "member": "string",
           "name": "HostIp",
@@ -514,7 +514,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组ID",
           "example": "无",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -524,7 +524,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间\n",
           "example": "无",
           "member": "string",
           "name": "CreatedTime",
@@ -534,7 +534,7 @@
         },
         {
           "disabled": false,
-          "document": "系统镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统镜像ID",
           "example": "无",
           "member": "string",
           "name": "ImageId",
@@ -544,7 +544,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GPU信息",
           "example": "无",
           "member": "int64",
           "name": "GPU",
@@ -554,7 +554,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所在的位置",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -564,7 +564,7 @@
         },
         {
           "disabled": false,
-          "document": "裸金属实例所在的物理机ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "裸金属实例所在的物理机ip",
           "example": "无",
           "member": "string",
           "name": "MachineHostIp",
@@ -580,7 +580,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区。",
           "example": "无",
           "member": "string",
           "name": "Zone",
@@ -591,7 +591,7 @@
         },
         {
           "disabled": false,
-          "document": "库存的CPU核数，是超卖后的总核数。单位：核\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "库存的CPU核数，是超卖后的总核数。单位：核",
           "example": "无",
           "member": "int64",
           "name": "CPU",
@@ -602,7 +602,7 @@
         },
         {
           "disabled": false,
-          "document": "库存内存容量，是超卖后的总容量，单位：MiB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "库存内存容量，是超卖后的总容量，单位：MiB",
           "example": "无",
           "member": "int64",
           "name": "Memory",
@@ -613,7 +613,7 @@
         },
         {
           "disabled": false,
-          "document": "处理器型号。INTEL/AMD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理器型号。INTEL/AMD",
           "example": "无",
           "member": "string",
           "name": "CpuType",
@@ -630,7 +630,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所属的可用区ID。该参数可以通过调用 DescribeZones 的返回值中的Zone字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属的可用区ID。该参数可以通过调用 DescribeZones 的返回值中的Zone字段来获取。",
           "example": "无",
           "member": "string",
           "name": "Zone",
@@ -641,7 +641,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的宿主机ID，仅用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属的宿主机ID，仅用于出参",
           "example": "无",
           "member": "string",
           "name": "HostId",
@@ -912,7 +912,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "磁盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘大小，单位GB。",
           "example": "20",
           "member": "int64",
           "name": "DiskSize",
@@ -923,7 +923,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘介质类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘介质类型。",
           "example": "CLOUD_BASIC",
           "member": "string",
           "name": "DiskType",
@@ -1085,7 +1085,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VpcId, 短ID， 如vpc-12345678\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VpcId, 短ID， 如vpc-12345678",
           "example": "vpc-2ij",
           "member": "string",
           "name": "VpcId",
@@ -1096,7 +1096,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID, 短ID， 如subnet-12345678\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网ID, 短ID， 如subnet-12345678",
           "example": "subnet-2ks",
           "member": "string",
           "name": "SubnetId",
@@ -1107,7 +1107,7 @@
         },
         {
           "disabled": false,
-          "document": "指定IP，vstation申请\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定IP，vstation申请",
           "example": "无",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -1118,7 +1118,7 @@
         },
         {
           "disabled": false,
-          "document": "指定IP，eks已经申请的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定IP，eks已经申请的IP",
           "example": "无",
           "member": "string",
           "name": "SpecifyIpAddresses",

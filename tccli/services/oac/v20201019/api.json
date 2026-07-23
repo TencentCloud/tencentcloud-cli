@@ -78,7 +78,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境Id",
           "example": "xxxx",
           "member": "string",
           "name": "ServiceId",

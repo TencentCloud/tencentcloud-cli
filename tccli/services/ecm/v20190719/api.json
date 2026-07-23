@@ -977,7 +977,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的资源实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的资源实例ID。",
           "example": "ein-37rhe9le",
           "member": "string",
           "name": "InstanceId",
@@ -997,7 +997,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的弹性网卡ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的弹性网卡ID",
           "example": "eni-37rhy9le",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -1007,7 +1007,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的资源内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的资源内网ip",
           "example": "null",
           "member": "string",
           "name": "PrivateAddressIp",
@@ -1067,7 +1067,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商，CTCC电信，CUCC联通，CMCC移动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商，CTCC电信，CUCC联通，CMCC移动",
           "example": "CTCC",
           "member": "string",
           "name": "InternetServiceProvider",
@@ -1077,7 +1077,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽上限",
           "example": "1000",
           "member": "uint64",
           "name": "Bandwidth",
@@ -1087,7 +1087,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费模式",
           "example": "BANDWIDTH_PACKAGE",
           "member": "string",
           "name": "PayMode",
@@ -1103,7 +1103,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的外网ip相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的外网ip相关信息。",
           "example": "",
           "member": "PublicIPAddressInfo",
           "name": "PublicIPAddressInfo",
@@ -1113,7 +1113,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的内网ip相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的内网ip相关信息。",
           "example": "",
           "member": "PrivateIPAddressInfo",
           "name": "PrivateIPAddressInfo",
@@ -1123,7 +1123,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的外网ipv6相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的外网ipv6相关信息。",
           "example": "",
           "member": "PublicIPAddressInfo",
           "name": "PublicIPv6AddressInfo",
@@ -1245,7 +1245,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "申请到的 EIP 的唯一 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请到的 EIP 的唯一 ID 列表。",
           "example": "[\"eip-11112222\"]",
           "member": "string",
           "name": "AddressSet",
@@ -1319,7 +1319,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性公网 IPV6 的唯一 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性公网 IPV6 的唯一 ID 列表。",
           "example": "[\"eip-3l4nwzvo\"]",
           "member": "string",
           "name": "AddressSet",
@@ -1736,7 +1736,7 @@
         },
         {
           "disabled": false,
-          "document": "辅助CIDR拆分的子网。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "辅助CIDR拆分的子网。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"SubnetId\": \"subnet-6zwa44xm\"}]",
           "member": "Subnet",
           "name": "SubnetSet",
@@ -1906,7 +1906,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后端服务的唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的唯一 ID",
           "example": "",
           "member": "string",
           "name": "InstanceId",
@@ -1916,7 +1916,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的监听端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的监听端口",
           "example": "",
           "member": "int64",
           "name": "Port",
@@ -1926,7 +1926,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。",
           "example": "",
           "member": "int64",
           "name": "Weight",
@@ -1936,7 +1936,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的内网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的内网 IP",
           "example": "",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -1946,7 +1946,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务被绑定的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务被绑定的时间",
           "example": "",
           "member": "datetime",
           "name": "RegisteredTime",
@@ -1956,7 +1956,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性网卡唯一ID",
           "example": "",
           "member": "string",
           "name": "EniId",
@@ -1966,7 +1966,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的外网 IP",
           "example": "",
           "member": "string",
           "name": "PublicIpAddresses",
@@ -1976,7 +1976,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的实例名称",
           "example": "",
           "member": "string",
           "name": "InstanceName",
@@ -2016,7 +2016,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "解绑失败的监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解绑失败的监听器ID",
           "example": "",
           "member": "string",
           "name": "FailListenerIdSet",
@@ -2097,7 +2097,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定失败的监听器ID，如为空表示全部绑定成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定失败的监听器ID，如为空表示全部绑定成功。",
           "example": "",
           "member": "string",
           "name": "FailListenerIdSet",
@@ -2476,7 +2476,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的监听器的唯一标识数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建的监听器的唯一标识数组",
           "example": "[\"lbl-knd4jr8m\",\"lbl-2fcyclbg\",\"lbl-m5f7z60y\"]",
           "member": "string",
           "name": "ListenerIds",
@@ -2603,7 +2603,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "由负载均衡实例ID组成的数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "由负载均衡实例ID组成的数组",
           "example": "[\"lb-mov2697v\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -3972,7 +3972,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像操作系统白名单。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像操作系统白名单。",
           "example": "[\"CentOS 6.2 64\",\"CentOS 6.3 64\",\"CentOS 6.8 64\",\"CentOS 6.9 32\",\"CentOS 6.9 64\",\"CentOS 7.2 64\",\"CentOS 7.3 64\",\"CentOS 7.4 64\",\"CentOS 7.5 64\",\"CentOS 7.6 64\",\"Debian 7.4 64\",\"Debian 8.2 32\",\"Debian 8.2 64\",\"Debian 9.0 64\",\"Tencent Linux Release 1.2 (tkernel2)\",\"Tencent Linux Release 2.2 (Final)\",\"Tencent Linux release 2.4 (Final)\",\"Ubuntu Server 14.04.1 LTS 32\",\"Ubuntu Server 14.04.1 LTS 64\",\"Ubuntu Server 16.04.1 LTS 32\",\"Ubuntu Server 16.04.1 LTS 64\",\"Ubuntu Server 18.04.1 LTS 64\",\"Ubuntu 16.0 64\",\"Windows Server 2012 R2\",\"Windows Server 2012 \\u6570\\u636e\\u4e2d\\u5fc3\\u7248 64\\u4f4d\\u82f1\\u6587\\u7248\",\"Windows Server 2016 \\u6570\\u636e\\u4e2d\\u5fc3\\u7248 64\\u4f4d\\u82f1\\u6587\\u7248\",\"Windows Server 2016 \\u6570\\u636e\\u4e2d\\u5fc3\\u7248 64\\u4f4d\\u4e2d\\u6587\\u7248\",\"None 2.2 64\",\"CentOS 8.0 64\",\"CentOS 7.7 64\",\"Windows Server 2019\",\"Debian 10.2 64\",\"Tencent tlinux release 2.2\",\"Ubuntu Server 20.04\",\"Tencent Linux release 2.6\"]",
           "member": "string",
           "name": "ImageWhiteSet",
@@ -3982,7 +3982,7 @@
         },
         {
           "disabled": false,
-          "document": "网络限额信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络限额信息。",
           "example": "无",
           "member": "InstanceNetworkLimitConfig",
           "name": "InstanceNetworkLimitConfigs",
@@ -3992,7 +3992,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像限额信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像限额信息。",
           "example": "无",
           "member": "ImageLimitConfig",
           "name": "ImageLimits",
@@ -4039,7 +4039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导入任务详情",
           "example": "",
           "member": "ImageTask",
           "name": "ImageTaskSet",
@@ -4241,7 +4241,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像数组",
           "example": "无",
           "member": "Image",
           "name": "ImageSet",
@@ -4314,7 +4314,7 @@
         },
         {
           "disabled": false,
-          "document": "机型配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机型配置信息",
           "example": "",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfigSet",
@@ -4468,7 +4468,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的实例相关信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的实例相关信息列表。",
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
@@ -4532,7 +4532,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器列表",
           "example": "",
           "member": "Listener",
           "name": "Listeners",
@@ -4541,7 +4541,7 @@
         },
         {
           "disabled": false,
-          "document": "总的监听器个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总的监听器个数",
           "example": "",
           "member": "int64",
           "name": "TotalCount",
@@ -4577,7 +4577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的当前状态。 0：成功，1：失败，2：进行中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务的当前状态。 0：成功，1：失败，2：进行中。",
           "example": "",
           "member": "int64",
           "name": "Status",
@@ -4703,7 +4703,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。",
           "example": "",
           "member": "int64",
           "name": "TotalCount",
@@ -4712,7 +4712,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的负载均衡实例数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的负载均衡实例数组。",
           "example": "",
           "member": "LoadBalancer",
           "name": "LoadBalancerSet",
@@ -4748,7 +4748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块的详细信息，详细见数据结构中的ModuleInfo。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模块的详细信息，详细见数据结构中的ModuleInfo。",
           "example": "",
           "member": "Module",
           "name": "Module",
@@ -4757,7 +4757,7 @@
         },
         {
           "disabled": false,
-          "document": "模块的统计信息，详细见数据结构中的ModuleCounterInfo。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模块的统计信息，详细见数据结构中的ModuleCounterInfo。",
           "example": "",
           "member": "ModuleCounter",
           "name": "ModuleCounter",
@@ -4829,7 +4829,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的模块数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的模块数量。",
           "example": "17",
           "member": "int64",
           "name": "TotalCount",
@@ -4839,7 +4839,7 @@
         },
         {
           "disabled": false,
-          "document": "模块详情信息的列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模块详情信息的列表。",
           "example": "无",
           "member": "ModuleItem",
           "name": "ModuleItemSet",
@@ -4885,7 +4885,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "MonthNetwork",
           "name": "MonthNetWorkData",
@@ -5005,7 +5005,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点详细信息的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点详细信息的列表",
           "example": "无",
           "member": "Node",
           "name": "NodeSet",
@@ -5097,7 +5097,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基础峰值列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础峰值列表。",
           "example": "",
           "member": "PeakFamilyInfo",
           "name": "PeakFamilyInfoSet",
@@ -5160,7 +5160,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络峰值数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络峰值数组。",
           "example": "PeakNetworkRegionSet",
           "member": "PeakNetworkRegionInfo",
           "name": "PeakNetworkRegionSet",
@@ -5739,7 +5739,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例列表",
           "example": "",
           "member": "LoadBalancerHealth",
           "name": "LoadBalancers",
@@ -5802,7 +5802,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听器后端绑定的机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器后端绑定的机器信息",
           "example": "",
           "member": "ListenerBackend",
           "name": "Listeners",
@@ -6265,7 +6265,7 @@
         },
         {
           "disabled": false,
-          "document": "快照ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照ID",
           "example": "无",
           "member": "string",
           "name": "SnapshotId",
@@ -6531,7 +6531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启健康检查：1（开启）、0（关闭）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启健康检查：1（开启）、0（关闭）",
           "example": "",
           "member": "int64",
           "name": "HealthSwitch",
@@ -6541,7 +6541,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查的响应超时时间，可选值：2~60，默认值：2，单位：秒。响应超时时间要小于检查间隔时间。",
           "example": "",
           "member": "int64",
           "name": "TimeOut",
@@ -6551,7 +6551,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。",
           "example": "",
           "member": "int64",
           "name": "IntervalTime",
@@ -6561,7 +6561,7 @@
         },
         {
           "disabled": false,
-          "document": "健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康阈值，默认值：3，表示当连续探测三次健康则表示该转发正常，可选值：2~10，单位：次。",
           "example": "",
           "member": "int64",
           "name": "HealthNum",
@@ -6571,7 +6571,7 @@
         },
         {
           "disabled": false,
-          "document": "不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不健康阈值，默认值：3，表示当连续探测三次不健康则表示该转发异常，可选值：2~10，单位：次。",
           "example": "",
           "member": "int64",
           "name": "UnHealthyNum",
@@ -6581,7 +6581,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。",
           "example": "",
           "member": "int64",
           "name": "CheckPort",
@@ -6591,7 +6591,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查的输入格式，可取值：HEX或TEXT；取值为HEX时，SendContext和RecvContext的字符只能在0123456789ABCDEF中选取且长度必须是偶数位。",
           "example": "",
           "member": "string",
           "name": "ContextType",
@@ -6601,7 +6601,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查发送的请求内容，只允许ASCII可见字符，最大长度限制500。",
           "example": "",
           "member": "string",
           "name": "SendContext",
@@ -6611,7 +6611,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查协议CheckType的值取CUSTOM时，必填此字段，代表健康检查返回的结果，只允许ASCII可见字符，最大长度限制500。",
           "example": "",
           "member": "string",
           "name": "RecvContext",
@@ -6621,7 +6621,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义探测相关参数。健康检查使用的协议：TCP | CUSTOM（UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查使用的协议：TCP | CUSTOM（UDP监听器只支持CUSTOM；如果使用自定义健康检查功能，则必传）。",
           "example": "",
           "member": "string",
           "name": "CheckType",
@@ -6703,7 +6703,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例数量",
           "example": "1",
           "member": "int64",
           "name": "ProviderInstanceNum",
@@ -6719,7 +6719,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IPv6 CIdr Block。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6 CIdr Block。",
           "example": "\"2402:4e00:1717:8200::/56\",",
           "member": "string",
           "name": "IPv6CidrBlock",
@@ -6729,7 +6729,7 @@
         },
         {
           "disabled": false,
-          "document": "网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调\t",
           "example": "CMCC",
           "member": "string",
           "name": "ISPType",
@@ -6961,7 +6961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的windows操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的windows操作系统",
           "example": "",
           "member": "string",
           "name": "Windows",
@@ -6971,7 +6971,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的linux操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的linux操作系统",
           "example": "",
           "member": "string",
           "name": "Linux",
@@ -6997,7 +6997,7 @@
         },
         {
           "disabled": false,
-          "document": "导入失败(FAILED)时， 说明失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导入失败(FAILED)时， 说明失败原因",
           "example": "",
           "member": "string",
           "name": "Message",
@@ -7203,7 +7203,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称，如ens-34241f3s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称，如ens-34241f3s。",
           "example": "proxyIns0410009",
           "member": "string",
           "name": "InstanceName",
@@ -7223,7 +7223,7 @@
         },
         {
           "disabled": false,
-          "document": "实例当前使用的镜像的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例当前使用的镜像的信息。",
           "example": "无",
           "member": "Image",
           "name": "Image",
@@ -7233,7 +7233,7 @@
         },
         {
           "disabled": false,
-          "document": "实例当前所属的模块简要信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例当前所属的模块简要信息。",
           "example": "无",
           "member": "SimpleModule",
           "name": "SimpleModule",
@@ -7243,7 +7243,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的位置相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所在的位置相关信息。",
           "example": "无",
           "member": "Position",
           "name": "Position",
@@ -7253,7 +7253,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的网络相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的网络相关信息。",
           "example": "无",
           "member": "Internet",
           "name": "Internet",
@@ -7263,7 +7263,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的配置相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的配置相关信息。",
           "example": "无",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfig",
@@ -7273,7 +7273,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的创建时间。",
           "example": "2024-02-18 16:59:51",
           "member": "string",
           "name": "CreateTime",
@@ -7283,7 +7283,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的标签信息。",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
@@ -7293,7 +7293,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最后一次操作。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例最后一次操作。",
           "example": "TerminateInstances",
           "member": "string",
           "name": "LatestOperation",
@@ -7303,7 +7303,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最后一次操作结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例最后一次操作结果。",
           "example": "OPERATING",
           "member": "string",
           "name": "LatestOperationState",
@@ -7313,7 +7313,7 @@
         },
         {
           "disabled": false,
-          "document": "实例业务状态。取值范围：\nNORMAL：表示正常状态的实例\nEXPIRED：表示过期的实例\nPROTECTIVELY_ISOLATED：表示被安全隔离的实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例业务状态。取值范围：\nNORMAL：表示正常状态的实例\nEXPIRED：表示过期的实例\nPROTECTIVELY_ISOLATED：表示被安全隔离的实例。",
           "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
@@ -7323,7 +7323,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘大小，单位GB。",
           "example": "50",
           "member": "int64",
           "name": "SystemDiskSize",
@@ -7333,7 +7333,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘大小，单位GB。",
           "example": "500",
           "member": "int64",
           "name": "DataDiskSize",
@@ -7343,7 +7343,7 @@
         },
         {
           "disabled": false,
-          "document": "实例UUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例UUID",
           "example": "3d4b86db-6380-4fe4-8f0b-c9e78fa92ba0",
           "member": "string",
           "name": "UUID",
@@ -7353,7 +7353,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式。\n    0为后付费。\n    1为预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费方式。\n    0为后付费。\n    1为预付费。",
           "example": "0",
           "member": "int64",
           "name": "PayMode",
@@ -7363,7 +7363,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间。格式为yyyy-mm-dd HH:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过期时间。格式为yyyy-mm-dd HH:mm:ss。",
           "example": "2024-02-18 16:59:51",
           "member": "string",
           "name": "ExpireTime",
@@ -7373,7 +7373,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间。格式为yyyy-mm-dd HH:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隔离时间。格式为yyyy-mm-dd HH:mm:ss。",
           "example": "2024-02-18 16:59:51",
           "member": "string",
           "name": "IsolatedTime",
@@ -7383,7 +7383,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费。\n      0为不自动续费。\n      1为自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否自动续费。\n      0为不自动续费。\n      1为自动续费。",
           "example": "0",
           "member": "int64",
           "name": "RenewFlag",
@@ -7393,7 +7393,7 @@
         },
         {
           "disabled": false,
-          "document": "过期状态。\n    NORMAL 表示机器运行正常。\n    WILL_EXPIRE 表示即将过期。\n    EXPIRED 表示已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过期状态。\n    NORMAL 表示机器运行正常。\n    WILL_EXPIRE 表示即将过期。\n    EXPIRED 表示已过期。",
           "example": "NORMAL",
           "member": "string",
           "name": "ExpireState",
@@ -7403,7 +7403,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘信息",
           "example": "无",
           "member": "DiskInfo",
           "name": "SystemDisk",
@@ -7413,7 +7413,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘信息",
           "example": "无",
           "member": "DiskInfo",
           "name": "DataDisks",
@@ -7423,7 +7423,7 @@
         },
         {
           "disabled": false,
-          "document": "新实例标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新实例标志",
           "example": "0",
           "member": "int64",
           "name": "NewFlag",
@@ -7433,7 +7433,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。",
           "example": "esg-g4k9lznc",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -7443,7 +7443,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC属性",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
@@ -7453,7 +7453,7 @@
         },
         {
           "disabled": false,
-          "document": "实例运营商字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例运营商字段。",
           "example": "CTCC",
           "member": "string",
           "name": "ISP",
@@ -7463,7 +7463,7 @@
         },
         {
           "disabled": false,
-          "document": "物理位置信息。注意该字段目前为保留字段，均为空值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理位置信息。注意该字段目前为保留字段，均为空值。",
           "example": "无",
           "member": "PhysicalPosition",
           "name": "PhysicalPosition",
@@ -7531,7 +7531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例内外网ip相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例内外网ip相关信息。",
           "example": "",
           "member": "AddressInfo",
           "name": "AddressInfoSet",
@@ -7551,7 +7551,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡名称。",
           "example": "",
           "member": "string",
           "name": "NetworkInterfaceName",
@@ -7633,7 +7633,7 @@
         },
         {
           "disabled": false,
-          "document": "实例禁止的操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例禁止的操作",
           "example": "",
           "member": "OperatorAction",
           "name": "DeniedActions",
@@ -7781,7 +7781,7 @@
         },
         {
           "disabled": false,
-          "document": "机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{\"dataDiskSize\":3200,\"systemDiskSize\":60, \"systemDiskSizeShow\":\"系统盘默认60G\",\"dataDiskSizeShow\":\"本地NVMe SSD 硬盘3200 GB\"}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{\"dataDiskSize\":3200,\"systemDiskSize\":60, \"systemDiskSizeShow\":\"系统盘默认60G\",\"dataDiskSizeShow\":\"本地NVMe SSD 硬盘3200 GB\"}",
           "example": "{\"dataDiskSize\":3200,\"systemDiskSize\":60, \"systemDiskSizeShow\":\"系统盘默认60G\",\"dataDiskSizeShow\":\"本地NVMe SSD 硬盘3200 GB\"}",
           "member": "string",
           "name": "ExtInfo",
@@ -7791,7 +7791,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GPU卡数",
           "example": "1",
           "member": "float",
           "name": "Vgpu",
@@ -7801,7 +7801,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GPU型号",
           "example": "NVDIA Tesla T4",
           "member": "string",
           "name": "GpuModelName",
@@ -7863,7 +7863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。",
           "example": "",
           "member": "PrivateIPAddressInfo",
           "name": "PrivateIPAddressSet",
@@ -7873,7 +7873,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。",
           "example": "",
           "member": "PublicIPAddressInfo",
           "name": "PublicIPAddressSet",
@@ -7883,7 +7883,7 @@
         },
         {
           "disabled": false,
-          "document": "实例网络相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例网络相关信息。",
           "example": "",
           "member": "InstanceNetworkInfo",
           "name": "InstanceNetworkInfoSet",
@@ -7971,7 +7971,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子网实例`ID`。形如：`subnet-pxir56ns`。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网实例`ID`。形如：`subnet-pxir56ns`。\t",
           "example": "subnet-pxir56ns",
           "member": "string",
           "name": "SubnetId",
@@ -7982,7 +7982,7 @@
         },
         {
           "disabled": false,
-          "document": "`IPv6`子网段。形如：`3402:4e00:20:1001::/64`\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "`IPv6`子网段。形如：`3402:4e00:20:1001::/64`\t",
           "example": "3402:4e00:20:1001::/64",
           "member": "string",
           "name": "Ipv6CidrBlock",
@@ -7999,7 +7999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥对的ID，是密钥对的唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥对的ID，是密钥对的唯一标识。",
           "example": "skey-mv9yzyjj",
           "member": "string",
           "name": "KeyId",
@@ -8009,7 +8009,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥对名称。",
           "example": "TencentKeyp",
           "member": "string",
           "name": "KeyName",
@@ -8019,7 +8019,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对所属的项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥对所属的项目ID。",
           "example": "null",
           "member": "int64",
           "name": "ProjectId",
@@ -8029,7 +8029,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥对描述信息。",
           "example": "test",
           "member": "string",
           "name": "Description",
@@ -8039,7 +8039,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对的纯文本公钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥对的纯文本公钥。",
           "example": "ssh-rsa AAAA**123== skey_437619",
           "member": "string",
           "name": "PublicKey",
@@ -8049,7 +8049,7 @@
         },
         {
           "disabled": false,
-          "document": "钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。",
           "example": "null",
           "member": "string",
           "name": "PrivateKey",
@@ -8059,7 +8059,7 @@
         },
         {
           "disabled": false,
-          "document": "钥关联的实例ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "钥关联的实例ID列表。",
           "example": "[]",
           "member": "string",
           "name": "AssociatedInstanceIds",
@@ -8069,7 +8069,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
           "example": "2019-08-12T02:53:39Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -8085,7 +8085,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡监听器 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡监听器 ID",
           "example": "lbl-odt45qxx",
           "member": "string",
           "name": "ListenerId",
@@ -8095,7 +8095,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器协议",
           "example": "HTTP",
           "member": "string",
           "name": "Protocol",
@@ -8105,7 +8105,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器端口",
           "example": "80",
           "member": "int64",
           "name": "Port",
@@ -8115,7 +8115,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的健康检查信息",
           "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
@@ -8125,7 +8125,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的调度方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求的调度方式",
           "example": "WRR",
           "member": "string",
           "name": "Scheduler",
@@ -8135,7 +8135,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话保持时间",
           "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
@@ -8145,7 +8145,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的名称",
           "example": "name",
           "member": "string",
           "name": "ListenerName",
@@ -8155,7 +8155,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的创建时间",
           "example": "2021-03-01 15:27:04",
           "member": "string",
           "name": "CreateTime",
@@ -8165,7 +8165,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的会话类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的会话类型",
           "example": "NORMAL",
           "member": "string",
           "name": "SessionType",
@@ -8175,7 +8175,7 @@
         },
         {
           "disabled": false,
-          "document": "端口段结束端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口段结束端口",
           "example": "0",
           "member": "int64",
           "name": "EndPort",
@@ -8191,7 +8191,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听器 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器 ID",
           "example": "",
           "member": "string",
           "name": "ListenerId",
@@ -8201,7 +8201,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的协议",
           "example": "",
           "member": "string",
           "name": "Protocol",
@@ -8211,7 +8211,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的端口",
           "example": "",
           "member": "int64",
           "name": "Port",
@@ -8221,7 +8221,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器上绑定的后端服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器上绑定的后端服务列表",
           "example": "",
           "member": "Backend",
           "name": "Targets",
@@ -8237,7 +8237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器ID",
           "example": "",
           "member": "string",
           "name": "ListenerId",
@@ -8247,7 +8247,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器名称",
           "example": "",
           "member": "string",
           "name": "ListenerName",
@@ -8257,7 +8257,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的协议",
           "example": "",
           "member": "string",
           "name": "Protocol",
@@ -8267,7 +8267,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的端口",
           "example": "",
           "member": "int64",
           "name": "Port",
@@ -8277,7 +8277,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的转发规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的转发规则列表",
           "example": "",
           "member": "RuleHealth",
           "name": "Rules",
@@ -8293,7 +8293,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "区域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域。",
           "example": "ap-hangzhou",
           "member": "string",
           "name": "Region",
@@ -8303,7 +8303,7 @@
         },
         {
           "disabled": false,
-          "document": "位置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "位置信息。",
           "example": "无",
           "member": "Position",
           "name": "Position",
@@ -8313,7 +8313,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例 ID。",
           "example": "lb-1gmnrlgj",
           "member": "string",
           "name": "LoadBalancerId",
@@ -8323,7 +8323,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的名称。",
           "example": "lb-xxxxx",
           "member": "string",
           "name": "LoadBalancerName",
@@ -8333,7 +8333,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的网络类型：OPEN：公网属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的网络类型：OPEN：公网属性",
           "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
@@ -8343,7 +8343,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的 VIP 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的 VIP 列表。",
           "example": "x.x.x.x",
           "member": "string",
           "name": "LoadBalancerVips",
@@ -8353,7 +8353,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的状态，包括\n 0：创建中，1：正常运行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的状态，包括\n 0：创建中，1：正常运行。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -8363,7 +8363,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的创建时间。",
           "example": "2020-12-08 08:00:00",
           "member": "datetime",
           "name": "CreateTime",
@@ -8373,7 +8373,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的上次状态转换时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的上次状态转换时间。",
           "example": "2020-12-08 08:00:00",
           "member": "datetime",
           "name": "StatusTime",
@@ -8383,7 +8383,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络的 ID。",
           "example": "vpc-mj65xxxx",
           "member": "string",
           "name": "VpcId",
@@ -8393,7 +8393,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的标签信息。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -8403,7 +8403,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡IP地址所属的ISP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡IP地址所属的ISP。",
           "example": "CTCC",
           "member": "string",
           "name": "VipIsp",
@@ -8413,7 +8413,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的网络属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的网络属性。",
           "example": "无",
           "member": "LoadBalancerInternetAccessible",
           "name": "NetworkAttributes",
@@ -8423,7 +8423,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组。",
           "example": "sg-hx6dxxxx",
           "member": "string",
           "name": "SecureGroups",
@@ -8433,7 +8433,7 @@
         },
         {
           "disabled": false,
-          "document": "后端机器是否放通来自ELB的流量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端机器是否放通来自ELB的流量。",
           "example": "false",
           "member": "bool",
           "name": "LoadBalancerPassToTarget",
@@ -8443,7 +8443,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的IPv6地址",
           "example": "2402:4e00:1000:4e00:0:920b:5519:d96d",
           "member": "string",
           "name": "AddressIPv6",
@@ -8459,7 +8459,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例ID",
           "example": "",
           "member": "string",
           "name": "LoadBalancerId",
@@ -8469,7 +8469,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例名称",
           "example": "",
           "member": "string",
           "name": "LoadBalancerName",
@@ -8479,7 +8479,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器列表",
           "example": "",
           "member": "ListenerHealth",
           "name": "Listeners",
@@ -9943,7 +9943,7 @@
         },
         {
           "disabled": false,
-          "document": "标签集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签集合。",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
@@ -10297,7 +10297,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的安全组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的安全组。",
           "example": "[\"esg-c2r7lnxh\",  \"esg-f9ekbxeq\"]",
           "member": "string",
           "name": "GroupSet",
@@ -10337,7 +10337,7 @@
         },
         {
           "disabled": false,
-          "document": "内网IP信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网IP信息。",
           "example": "[{\"Description\": \"\",             \"Primary\": true, ]",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
@@ -10347,7 +10347,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的云服务器对象。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的云服务器对象。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{           \"InstanceId\": \"ins-ymk3eje8\",           \"DeviceIndex",
           "member": "NetworkInterfaceAttachment",
           "name": "Attachment",
@@ -10377,7 +10377,7 @@
         },
         {
           "disabled": false,
-          "document": "IPv6地址列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6地址列表。",
           "example": "[           {             \"Description\": \"\",             \"Primar",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
@@ -10387,7 +10387,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键值对。",
           "example": "[           {             \"Key\": \"Version\",             \"Value\":",
           "member": "Tag",
           "name": "TagSet",
@@ -10417,7 +10417,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡绑定的子机类型：cvm，eks。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡绑定的子机类型：cvm，eks。",
           "example": "eks",
           "member": "string",
           "name": "Business",
@@ -10787,7 +10787,7 @@
         },
         {
           "disabled": false,
-          "document": "编码Code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编码Code",
           "example": "",
           "member": "string",
           "name": "Code",
@@ -10797,7 +10797,7 @@
         },
         {
           "disabled": false,
-          "document": "具体信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "具体信息",
           "example": "",
           "member": "string",
           "name": "Message",
@@ -10823,7 +10823,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的操作系统版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的操作系统版本",
           "example": "",
           "member": "string",
           "name": "OsVersions",
@@ -10833,7 +10833,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的操作系统架构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的操作系统架构",
           "example": "",
           "member": "string",
           "name": "Architecture",
@@ -11049,7 +11049,7 @@
         },
         {
           "disabled": false,
-          "document": "网络峰值集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络峰值集合",
           "example": "",
           "member": "PeakNetwork",
           "name": "PeakNetworkSet",
@@ -11065,7 +11065,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机位",
           "example": "B90CEE7*******2455CA9F1A",
           "member": "string",
           "name": "PosId",
@@ -11075,7 +11075,7 @@
         },
         {
           "disabled": false,
-          "document": "机架\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机架",
           "example": "18C8C045F6AFD0965*******20127A9",
           "member": "string",
           "name": "RackId",
@@ -11085,7 +11085,7 @@
         },
         {
           "disabled": false,
-          "document": "交换机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交换机",
           "example": "99563FCAD565AC179*******4EA92123",
           "member": "string",
           "name": "SwitchId",
@@ -11161,7 +11161,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否支持ipv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例是否支持ipv6",
           "example": "false",
           "member": "bool",
           "name": "Ipv6Supported",
@@ -11213,7 +11213,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的内网ip。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的内网ip。",
           "example": "",
           "member": "string",
           "name": "PrivateIPAddress",
@@ -12172,7 +12172,7 @@
         },
         {
           "disabled": false,
-          "document": "冲突的路由策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "冲突的路由策略列表",
           "example": "[{\"DestinationCidrBlock\": \"10.2.2.0/24\", \"GatewayType\": \"NAT\", \"GatewayId\": \"nat-irmuq4z4\",\"Enabled\": true}]",
           "member": "Route",
           "name": "ConflictSet",
@@ -12221,7 +12221,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表关联关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由表关联关系",
           "example": "[{\"SubnetId\": \"subnet-6zwa44xm\", \"RouteTableId\": \"rtb-ms7c7gcr\"}]",
           "member": "RouteTableAssociation",
           "name": "AssociationSet",
@@ -12232,7 +12232,7 @@
         },
         {
           "disabled": false,
-          "document": "IPv4路由策略集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv4路由策略集合",
           "example": "[{\"DestinationCidrBlock\": \"10.2.2.0/24\", \"GatewayType\": \"NAT\", \"GatewayId\": \"nat-irmuq4z4\",\"Enabled\": true}]",
           "member": "Route",
           "name": "RouteSet",
@@ -12299,7 +12299,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本规则上绑定的后端的健康检查状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本规则上绑定的后端的健康检查状态",
           "example": "",
           "member": "TargetHealth",
           "name": "Targets",
@@ -12535,7 +12535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建中的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建中的实例ID列表",
           "example": "[\"ein-8cnmds12\"]",
           "member": "string",
           "name": "InstanceIdSet",
@@ -12943,7 +12943,7 @@
         },
         {
           "disabled": false,
-          "document": "网段或IPv6(互斥)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网段或IPv6(互斥)。",
           "example": "::/0",
           "member": "string",
           "name": "Ipv6CidrBlock",
@@ -13432,7 +13432,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键值对。",
           "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
@@ -13452,7 +13452,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区名称",
           "example": "杭州一区",
           "member": "string",
           "name": "ZoneName",
@@ -13462,7 +13462,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例数量",
           "example": "0",
           "member": "uint64",
           "name": "InstanceCount",
@@ -13472,7 +13472,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC的 IPv4 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC的 IPv4 CIDR。",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "VpcCidrBlock",
@@ -13482,7 +13482,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC的 IPv6 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC的 IPv6 CIDR。",
           "example": "fd76:3600:1:c601::/54",
           "member": "string",
           "name": "VpcIpv6CidrBlock",
@@ -13492,7 +13492,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "Region",
@@ -13502,7 +13502,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商类型。'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商类型。'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调\t",
           "example": "CMCC",
           "member": "string",
           "name": "ISPType",
@@ -13585,7 +13585,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签的键。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签的键。",
           "example": "key-xxxx",
           "member": "string",
           "name": "TagKey",
@@ -13596,7 +13596,7 @@
         },
         {
           "disabled": false,
-          "document": "标签的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签的值。",
           "example": "value-xxxx",
           "member": "string",
           "name": "TagValue",
@@ -13685,7 +13685,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Target的内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Target的内网IP",
           "example": "",
           "member": "string",
           "name": "IP",
@@ -13695,7 +13695,7 @@
         },
         {
           "disabled": false,
-          "document": "Target绑定的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Target绑定的端口",
           "example": "",
           "member": "int64",
           "name": "Port",
@@ -13705,7 +13705,7 @@
         },
         {
           "disabled": false,
-          "document": "当前健康状态，true：健康，false：不健康（包括尚未开始探测、探测中、状态异常等几种状态）。只有处于健康状态（且权重大于0），负载均衡才会向其转发流量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前健康状态，true：健康，false：不健康（包括尚未开始探测、探测中、状态异常等几种状态）。只有处于健康状态（且权重大于0），负载均衡才会向其转发流量。",
           "example": "",
           "member": "bool",
           "name": "HealthStatus",
@@ -13715,7 +13715,7 @@
         },
         {
           "disabled": false,
-          "document": "Target的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Target的实例ID",
           "example": "",
           "member": "string",
           "name": "TargetId",
@@ -13725,7 +13725,7 @@
         },
         {
           "disabled": false,
-          "document": "当前健康状态的详细信息。如：Alive、Dead、Unknown、Close。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知，Close为未配置健康检查。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前健康状态的详细信息。如：Alive、Dead、Unknown、Close。Alive状态为健康，Dead状态为异常，Unknown状态包括尚未开始探测、探测中、状态未知，Close为未配置健康检查。",
           "example": "",
           "member": "string",
           "name": "HealthStatusDetail",
@@ -14023,7 +14023,7 @@
         },
         {
           "disabled": false,
-          "document": "runInstances接口创建三网ipv6地址使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "runInstances接口创建三网ipv6地址使用",
           "example": "[\"fd76:3600:1:c601::/54\"]",
           "member": "string",
           "name": "Ipv6SubnetIds",
@@ -14100,7 +14100,7 @@
         },
         {
           "disabled": false,
-          "document": "DNS列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DNS列表。",
           "example": "114.114.114.114",
           "member": "string",
           "name": "DnsServerSet",
@@ -14150,7 +14150,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键值对",
           "example": "1",
           "member": "Tag",
           "name": "TagSet",
@@ -14160,7 +14160,7 @@
         },
         {
           "disabled": false,
-          "document": "辅助CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "辅助CIDR",
           "example": "1",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
@@ -14220,7 +14220,7 @@
         },
         {
           "disabled": false,
-          "document": "ipv6运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ipv6运营商",
           "example": "CTCC",
           "member": "string",
           "name": "Ipv6ISP",
@@ -14230,7 +14230,7 @@
         },
         {
           "disabled": false,
-          "document": "多运营商IPv6 Cidr Block。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多运营商IPv6 Cidr Block。",
           "example": "无",
           "member": "ISPIPv6CidrBlock",
           "name": "Ipv6CidrBlockSet",

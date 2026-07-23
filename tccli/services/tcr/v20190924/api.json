@@ -1198,7 +1198,7 @@
         },
         {
           "disabled": false,
-          "document": "Url地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Url地址列表",
           "example": "无",
           "member": "string",
           "name": "UrlList",
@@ -5050,7 +5050,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的状态列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的状态列表",
           "example": "无",
           "member": "RegistryStatus",
           "name": "RegistryStatusSet",
@@ -5269,7 +5269,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内网接入信息的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网接入信息的列表",
           "example": "无",
           "member": "AccessVpc",
           "name": "AccessVpcSet",
@@ -5316,7 +5316,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "metacluster ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "metacluster ID",
           "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "MetaClusterId",
@@ -5667,7 +5667,7 @@
         },
         {
           "disabled": false,
-          "document": "同步日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同步日志",
           "example": "无",
           "member": "ReplicationLog",
           "name": "ReplicationLog",
@@ -5732,7 +5732,7 @@
         },
         {
           "disabled": false,
-          "document": "同步实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同步实例列表",
           "example": "无",
           "member": "ReplicationRegistry",
           "name": "ReplicationRegistries",
@@ -5787,7 +5787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例同步策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例同步策略列表",
           "example": "无",
           "member": "ReplicationPolicyInfo",
           "name": "ReplicationPolicyInfoList",
@@ -5797,7 +5797,7 @@
         },
         {
           "disabled": false,
-          "document": "策略总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -6091,7 +6091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例安全策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例安全策略组",
           "example": "无",
           "member": "SecurityPolicy",
           "name": "SecurityPolicySet",
@@ -9421,7 +9421,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略过滤类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略过滤类型",
           "example": "tag",
           "member": "string",
           "name": "Type",
@@ -9431,7 +9431,7 @@
         },
         {
           "disabled": false,
-          "document": "策略过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略过滤值",
           "example": "v1",
           "member": "string",
           "name": "Value",
@@ -9693,7 +9693,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否支持AI特性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持AI特性</p>",
           "example": "true",
           "member": "bool",
           "name": "AIFeature",
@@ -9970,7 +9970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略ID",
           "example": "10",
           "member": "int64",
           "name": "ID",
@@ -9980,7 +9980,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名字",
           "example": "test",
           "member": "string",
           "name": "Name",
@@ -9990,7 +9990,7 @@
         },
         {
           "disabled": false,
-          "document": "策略描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略描述信息",
           "example": "test policy describtion",
           "member": "string",
           "name": "Description",
@@ -10000,7 +10000,7 @@
         },
         {
           "disabled": false,
-          "document": "策略过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略过滤条件",
           "example": "无",
           "member": "PolicyFilter",
           "name": "Filters",
@@ -10010,7 +10010,7 @@
         },
         {
           "disabled": false,
-          "document": "是否覆盖对端同名镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否覆盖对端同名镜像",
           "example": "false",
           "member": "bool",
           "name": "Override",
@@ -10020,7 +10020,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启",
           "example": "false",
           "member": "bool",
           "name": "Enabled",
@@ -10030,7 +10030,7 @@
         },
         {
           "disabled": false,
-          "document": "源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源信息",
           "example": "test/event-center/test:v1 ap-chengdu",
           "member": "string",
           "name": "SrcResource",
@@ -10040,7 +10040,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的资源",
           "example": "tcr-xxx/event-center/test ap-guangzhou",
           "member": "string",
           "name": "DestResource",
@@ -10050,7 +10050,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2023-08-01T03:45:04.038408Z",
           "member": "string",
           "name": "CreationTime",
@@ -10060,7 +10060,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2023-08-01T03:45:04.038408Z",
           "member": "string",
           "name": "UpdateTime",

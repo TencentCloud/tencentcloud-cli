@@ -474,7 +474,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "入站峰值带宽 单位 bit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入站峰值带宽 单位 bit",
           "example": "100000",
           "member": "int64",
           "name": "InFlowMax",
@@ -484,7 +484,7 @@
         },
         {
           "disabled": false,
-          "document": "入站峰值带宽占用规格百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入站峰值带宽占用规格百分比",
           "example": "0.6",
           "member": "float",
           "name": "InFlowPercent",
@@ -494,7 +494,7 @@
         },
         {
           "disabled": false,
-          "document": "出站峰值带宽 单位 bit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出站峰值带宽 单位 bit",
           "example": "100000",
           "member": "int64",
           "name": "OutFlowMax",
@@ -504,7 +504,7 @@
         },
         {
           "disabled": false,
-          "document": "出站峰值带宽占用规格百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出站峰值带宽占用规格百分比",
           "example": "0.6",
           "member": "float",
           "name": "OutFlowPercent",
@@ -514,7 +514,7 @@
         },
         {
           "disabled": false,
-          "document": "购买带宽 单位 M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买带宽 单位 M",
           "example": "100M",
           "member": "int64",
           "name": "Width",
@@ -524,7 +524,7 @@
         },
         {
           "disabled": false,
-          "document": "串行带宽 单位 M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "串行带宽 单位 M",
           "example": "50M",
           "member": "int64",
           "name": "SerialWidth",
@@ -534,7 +534,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余带宽 单位 M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余带宽 单位 M",
           "example": "20",
           "member": "int64",
           "name": "UnUsedWidth",
@@ -544,7 +544,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT 分配带宽 单位 M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT 分配带宽 单位 M",
           "example": "50M",
           "member": "int64",
           "name": "NatWidth",
@@ -554,7 +554,7 @@
         },
         {
           "disabled": false,
-          "document": "0 不开启自动防护\n1 开启自动防护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 不开启自动防护\n1 开启自动防护",
           "example": "1",
           "member": "int64",
           "name": "AutoDefence",
@@ -564,7 +564,7 @@
         },
         {
           "disabled": false,
-          "document": "开启开关数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启开关数",
           "example": "10",
           "member": "int64",
           "name": "OpenSwitchNum",
@@ -574,7 +574,7 @@
         },
         {
           "disabled": false,
-          "document": "开关配额数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开关配额数",
           "example": "20",
           "member": "int64",
           "name": "SwitchQuota",
@@ -584,7 +584,7 @@
         },
         {
           "disabled": false,
-          "document": "串行地域个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "串行地域个数",
           "example": "3",
           "member": "int64",
           "name": "SerialRegionNum",
@@ -594,7 +594,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余通用实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余通用实例个数",
           "example": "10",
           "member": "int64",
           "name": "InstanceQuota",
@@ -604,7 +604,7 @@
         },
         {
           "disabled": false,
-          "document": "关闭开关数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关闭开关数",
           "example": "10",
           "member": "int64",
           "name": "CloseSwitchNum",
@@ -614,7 +614,7 @@
         },
         {
           "disabled": false,
-          "document": "开关总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开关总个数",
           "example": "10",
           "member": "int64",
           "name": "SwitchNum",
@@ -624,7 +624,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定资产数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定资产数",
           "example": "8",
           "member": "int64",
           "name": "AssetNum",
@@ -634,7 +634,7 @@
         },
         {
           "disabled": false,
-          "document": "购买配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买配额",
           "example": "10000",
           "member": "int64",
           "name": "BuyWidth",
@@ -644,7 +644,7 @@
         },
         {
           "disabled": false,
-          "document": "natfw 实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "natfw 实例个数",
           "example": "10",
           "member": "int64",
           "name": "NatInstanceNum",
@@ -654,7 +654,7 @@
         },
         {
           "disabled": false,
-          "document": "vpcfw 实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpcfw 实例个数",
           "example": "10",
           "member": "int64",
           "name": "VpcInstanceNum",
@@ -830,7 +830,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "入向带宽峰值折线图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入向带宽峰值折线图",
           "example": "无",
           "member": "TrendsItem",
           "name": "InputTrendData",
@@ -840,7 +840,7 @@
         },
         {
           "disabled": false,
-          "document": "出向带宽峰值折线图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出向带宽峰值折线图",
           "example": "无",
           "member": "TrendsItem",
           "name": "OutputTrendData",
@@ -850,7 +850,7 @@
         },
         {
           "disabled": false,
-          "document": "入向峰值带宽，单位bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入向峰值带宽，单位bps",
           "example": "100",
           "member": "int64",
           "name": "InputMax",
@@ -860,7 +860,7 @@
         },
         {
           "disabled": false,
-          "document": "出向峰值带宽，单位bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出向峰值带宽，单位bps",
           "example": "100",
           "member": "int64",
           "name": "OutputMax",
@@ -870,7 +870,7 @@
         },
         {
           "disabled": false,
-          "document": "入向峰值带宽配额占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入向峰值带宽配额占比",
           "example": "无",
           "member": "float",
           "name": "InputPercent",
@@ -880,7 +880,7 @@
         },
         {
           "disabled": false,
-          "document": "出向峰值带宽配额占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出向峰值带宽配额占比",
           "example": "无",
           "member": "float",
           "name": "OutputPercent",
@@ -890,7 +890,7 @@
         },
         {
           "disabled": false,
-          "document": "实例带宽规格，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例带宽规格，单位Mbps",
           "example": "100",
           "member": "int64",
           "name": "InstanceBandWidth",
@@ -1386,7 +1386,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开关列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开关列表",
           "example": "无",
           "member": "FwGroupSwitchShow",
           "name": "SwitchList",
@@ -1423,7 +1423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC防火墙状态栏数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC防火墙状态栏数据",
           "example": "无",
           "member": "VpcFwBarStatus",
           "name": "FwBarStatus",
@@ -1679,7 +1679,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙开关NAME\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙开关NAME",
           "example": "aaaa-bbbb开关",
           "member": "string",
           "name": "SwitchName",
@@ -1699,7 +1699,7 @@
         },
         {
           "disabled": false,
-          "document": "开关边连接类型 0：对等连接， 1：云连网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开关边连接类型 0：对等连接， 1：云连网",
           "example": "1",
           "member": "int64",
           "name": "ConnectType",
@@ -1709,7 +1709,7 @@
         },
         {
           "disabled": false,
-          "document": "连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接ID",
           "example": "ccn-58cqznrf",
           "member": "string",
           "name": "ConnectId",
@@ -1719,7 +1719,7 @@
         },
         {
           "disabled": false,
-          "document": "连接名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接名称",
           "example": "云联网ccn防火墙开发--勿删",
           "member": "string",
           "name": "ConnectName",
@@ -1729,7 +1729,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源实例信息",
           "example": "无",
           "member": "NetInstancesInfo",
           "name": "SrcInstancesInfo",
@@ -1739,7 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "目的实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的实例信息",
           "example": "无",
           "member": "NetInstancesInfo",
           "name": "DstInstancesInfo",
@@ -1749,7 +1749,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙(组)数据",
           "example": "无",
           "member": "string",
           "name": "FwGroupId",
@@ -1759,7 +1759,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙(组)名称",
           "example": "视死忽如归",
           "member": "string",
           "name": "FwGroupName",
@@ -1769,7 +1769,7 @@
         },
         {
           "disabled": false,
-          "document": "开关状态 0：关 ， 1：开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开关状态 0：关 ， 1：开",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -1779,7 +1779,7 @@
         },
         {
           "disabled": false,
-          "document": "开关的状态 0：正常， 1：转换中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开关的状态 0：正常， 1：转换中",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -1789,7 +1789,7 @@
         },
         {
           "disabled": false,
-          "document": "0-非sase实例，忽略，1-未绑定状态，2-已绑定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0-非sase实例，忽略，1-未绑定状态，2-已绑定",
           "example": "0",
           "member": "int64",
           "name": "AttachWithEdge",
@@ -1799,7 +1799,7 @@
         },
         {
           "disabled": false,
-          "document": "对等防火墙和开关状态 0：正常， 1：对等未创建防火墙，2：对等已创建防火墙，未打开开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对等防火墙和开关状态 0：正常， 1：对等未创建防火墙，2：对等已创建防火墙，未打开开关",
           "example": "0",
           "member": "int64",
           "name": "CrossEdgeStatus",
@@ -1809,7 +1809,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC防火墙实例ID",
           "example": "cfwew-af7aa5a3",
           "member": "string",
           "name": "FwInsId",
@@ -1819,7 +1819,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC防火墙实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC防火墙实例名称",
           "example": "春城无处不飞花",
           "member": "string",
           "name": "FwInsName",
@@ -1829,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "网络经过VPC防火墙CVM所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络经过VPC防火墙CVM所在地域",
           "example": "ap-chongqing",
           "member": "string",
           "name": "FwInsRegion",
@@ -1839,7 +1839,7 @@
         },
         {
           "disabled": false,
-          "document": "BypassStatus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "BypassStatus",
           "example": "1",
           "member": "int64",
           "name": "BypassStatus",
@@ -1849,7 +1849,7 @@
         },
         {
           "disabled": false,
-          "document": "IpsAction\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IpsAction",
           "example": "1",
           "member": "int64",
           "name": "IpsAction",
@@ -1865,7 +1865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络实例ID",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1947,7 +1947,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跨地域峰值带宽对应实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨地域峰值带宽对应实例ID",
           "example": "cfwew-af7aa5a3",
           "member": "string",
           "name": "DiffRegionFwInsId",
@@ -1957,7 +1957,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域峰值带宽对应实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨地域峰值带宽对应实例名称",
           "example": "春城无处不飞花",
           "member": "string",
           "name": "DiffRegionFwInsName",
@@ -2047,7 +2047,7 @@
         },
         {
           "disabled": false,
-          "document": "单位为M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单位为M",
           "example": "2048",
           "member": "int64",
           "name": "BandWidthUsed",
@@ -2087,7 +2087,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙(组)ID",
           "example": "cfwg-12345667",
           "member": "string",
           "name": "FwGroupId",
@@ -2097,7 +2097,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙(组)名称",
           "example": "名字而已",
           "member": "string",
           "name": "FwGroupName",
@@ -2107,7 +2107,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)最大峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙(组)最大峰值带宽",
           "example": "1111111",
           "member": "int64",
           "name": "FwGroupMaxFlow",
@@ -2117,7 +2117,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙实例ID",
           "example": "cfwew-12345667",
           "member": "string",
           "name": "FwInsId",
@@ -2127,7 +2127,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙实例名称",
           "example": "名字而已又",
           "member": "string",
           "name": "FwInsName",
@@ -2137,7 +2137,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例最大峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙实例最大峰值带宽",
           "example": "1111111",
           "member": "int64",
           "name": "FwInsMaxFlow",
@@ -2147,7 +2147,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙(组)个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙(组)个数",
           "example": "4",
           "member": "int64",
           "name": "FwGroupCount",
@@ -2157,7 +2157,7 @@
         },
         {
           "disabled": false,
-          "document": "单个组最多建多少防火墙实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单个组最多建多少防火墙实例",
           "example": "10",
           "member": "int64",
           "name": "FwGroupMaxInsCount",
@@ -2167,7 +2167,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余通用实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余通用实例个数",
           "example": "10",
           "member": "int64",
           "name": "InstanceQuota",

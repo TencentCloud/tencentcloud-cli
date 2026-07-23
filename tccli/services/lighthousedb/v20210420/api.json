@@ -180,7 +180,7 @@
         },
         {
           "disabled": false,
-          "document": "备份ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份ID",
           "example": "3889813",
           "member": "int64",
           "name": "BackupId",
@@ -190,7 +190,7 @@
         },
         {
           "disabled": false,
-          "document": "快照类型，可选值：full，全量；increment，增量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照类型，可选值：full，全量；increment，增量",
           "example": "full",
           "member": "string",
           "name": "SnapShotType",
@@ -200,7 +200,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份文件备注",
           "example": "andybackup",
           "member": "string",
           "name": "BackupName",
@@ -287,7 +287,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可清理的用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可清理的用户appid",
           "example": "[726343434]",
           "member": "int64",
           "name": "CleanableUserAppIdSet",
@@ -655,7 +655,7 @@
         },
         {
           "disabled": false,
-          "document": "normal\tpitr类型，可选值：normal, redo_pitr\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "normal\tpitr类型，可选值：normal, redo_pitr",
           "example": "normal",
           "member": "string",
           "name": "PITRType",
@@ -665,7 +665,7 @@
         },
         {
           "disabled": false,
-          "document": "对象任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象任务",
           "example": "无",
           "member": "ObjectTask",
           "name": "Tasks",
@@ -675,7 +675,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例到期时间",
           "example": "2024-12-30 19:32:51",
           "member": "string",
           "name": "PeriodEndTime",
@@ -685,7 +685,7 @@
         },
         {
           "disabled": false,
-          "document": "主实例iD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主实例iD",
           "example": "lhdbmysql-8z0dd154",
           "member": "string",
           "name": "InstanceId",
@@ -695,7 +695,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目id",
           "example": "17232",
           "member": "int64",
           "name": "ProjectID",
@@ -1168,7 +1168,7 @@
         },
         {
           "disabled": false,
-          "document": "Binlog列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Binlog列表",
           "example": "无",
           "member": "BinlogItem",
           "name": "Binlogs",
@@ -1440,7 +1440,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务id",
           "example": "1207003",
           "member": "int64",
           "name": "TaskId",
@@ -1450,7 +1450,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型",
           "example": "taskDtsLockResource",
           "member": "string",
           "name": "TaskType",
@@ -1460,7 +1460,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态",
           "example": "processing",
           "member": "string",
           "name": "TaskStatus",
@@ -1470,7 +1470,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID（集群ID|实例组ID|实例ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID（集群ID|实例组ID|实例ID）",
           "example": "lhdbmysql-8z0dd154",
           "member": "string",
           "name": "ObjectId",
@@ -1480,7 +1480,7 @@
         },
         {
           "disabled": false,
-          "document": "任务对象类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务对象类型",
           "example": "taskObjTypeCluster",
           "member": "string",
           "name": "ObjectType",

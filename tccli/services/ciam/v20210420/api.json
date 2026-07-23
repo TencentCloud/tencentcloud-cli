@@ -62,7 +62,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组列表",
           "example": "无",
           "member": "UserGroup",
           "name": "Content",
@@ -72,7 +72,7 @@
         },
         {
           "disabled": false,
-          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总条数",
           "example": "10",
           "member": "int64",
           "name": "Total",
@@ -82,7 +82,7 @@
         },
         {
           "disabled": false,
-          "document": "分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页",
           "example": "无",
           "member": "Pageable",
           "name": "Pageable",
@@ -150,7 +150,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组描述",
           "example": "包含了一组用户",
           "member": "string",
           "name": "Description",

@@ -292,7 +292,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人体框。当不开启人体检测时，内部参数默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人体框。当不开启人体检测时，内部参数默认为0。",
           "example": "无",
           "member": "ImageRect",
           "name": "Rect",
@@ -312,7 +312,7 @@
         },
         {
           "disabled": false,
-          "document": "属性信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性信息。",
           "example": "无",
           "member": "BodyAttributes",
           "name": "Attributes",
@@ -430,7 +430,7 @@
         },
         {
           "disabled": false,
-          "document": "车牌在图片中的坐标信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌在图片中的坐标信息。",
           "example": "[{\"X\":452,\"Y\":227},{\"X\":452,\"Y\":190},{\"X\":507,\"Y\":190},{\"X\":507,\"Y\":227}]",
           "member": "Coord",
           "name": "PlateLocation",
@@ -546,7 +546,7 @@
         },
         {
           "disabled": false,
-          "document": "车牌信息，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌信息，仅车辆识别（增强版）支持",
           "example": "{\"Color\":\"蓝色\",\"Plate\":\"浙G29XY9\",\"PlateAngle\":13.560508,\"PlateLocation\":[{\"X\":452,\"Y\":227},{\"X\":452,\"Y\":190},{\"X\":507,\"Y\":190},{\"X\":507,\"Y\":227}],\"PlateStatus\":\"正常车牌\",\"PlateStatusConfidence\":99,\"Type\":\"普通蓝牌\"}",
           "member": "CarPlateContent",
           "name": "PlateContent",
@@ -842,7 +842,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入图的主体信息。\n若启用主体识别且在请求中指定了类目ID或主体区域，以指定的主体为准。若启用主体识别且没有指定，以最大面积主体为准。\n**<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入图的主体信息。\n若启用主体识别且在请求中指定了类目ID或主体区域，以指定的主体为准。若启用主体识别且没有指定，以最大面积主体为准。\n**<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**",
           "example": "{\"CategoryId\":0}",
           "member": "ObjectInfo",
           "name": "Object",
@@ -1464,7 +1464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Web网络版标签结果数组。如未选择WEB场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Web网络版标签结果数组。如未选择WEB场景，则为空。",
           "example": "[{\"Name\": \"塔楼\",\"FirstCategory\": \"场景\",\"SecondCategory\": \"建筑\",\"Confidence\": 81}]",
           "member": "DetectLabelItem",
           "name": "Labels",
@@ -1474,7 +1474,7 @@
         },
         {
           "disabled": false,
-          "document": "Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。",
           "example": "[{\"Name\": \"夜景\",\"FirstCategory\": \"场景\",\"SecondCategory\": \"自然风光\",\"Confidence\": 92}]",
           "member": "DetectLabelItem",
           "name": "CameraLabels",
@@ -1484,7 +1484,7 @@
         },
         {
           "disabled": false,
-          "document": "Album相册版标签结果数组。如未选择ALBUM场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Album相册版标签结果数组。如未选择ALBUM场景，则为空。",
           "example": "[{\"Name\": \"夜景\",\"FirstCategory\": \"场景\",\"SecondCategory\": \"自然风光\",\"Confidence\": 93},{\"Name\": \"塔\",\"FirstCategory\": \"场景\",\"SecondCategory\": \"建筑\",\"Confidence\": 82}]",
           "member": "DetectLabelItem",
           "name": "AlbumLabels",
@@ -1494,7 +1494,7 @@
         },
         {
           "disabled": false,
-          "document": "News新闻版标签结果数组。如未选择NEWS场景，则为空。\n新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "News新闻版标签结果数组。如未选择NEWS场景，则为空。\n新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。",
           "example": "[{\"Confidence\": 80, \"Name\": \"塔楼\", \"SecondCategory\": \"建筑\", \"FirstCategory\": \"场景\"}]",
           "member": "DetectLabelItem",
           "name": "NewsLabels",
@@ -2042,7 +2042,7 @@
         },
         {
           "disabled": false,
-          "document": "图像的所有主体区域，置信度，以及主体区域类别ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图像的所有主体区域，置信度，以及主体区域类别ID。",
           "example": "{}",
           "member": "Box",
           "name": "AllBox",
@@ -2438,7 +2438,7 @@
         },
         {
           "disabled": false,
-          "document": "图片信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片信息。",
           "example": "[{\"CustomContent\":\"备注\",\"EntityId\":\"work-1\",\"PicName\":\"work-1-1\",\"Score\":100,\"Tags\":\"{}\"}]",
           "member": "ImageInfo",
           "name": "ImageInfos",
@@ -2448,7 +2448,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图的主体信息。\n若启用主体识别且在请求中指定了类目ID或主体区域，以指定的主体为准。若启用主体识别且没有指定，以最大面积主体为准。\n**<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入图的主体信息。\n若启用主体识别且在请求中指定了类目ID或主体区域，以指定的主体为准。若启用主体识别且没有指定，以最大面积主体为准。\n**<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**",
           "example": "{\"AllBox\":[{\"CategoryId\":0,\"Rect\":{\"Height\":268,\"Width\":193,\"X\":278,\"Y\":162},\"Score\":60},{\"CategoryId\":4,\"Rect\":{\"Height\":138,\"Width\":132,\"X\":337,\"Y\":1053},\"Score\":78},{\"CategoryId\":5,\"Rect\":{\"Height\":31,\"Width\":83,\"X\":356,\"Y\":135},\"Score\":27}],\"Attributes\":[{\"Details\":\"渐层\",\"Type\":\"图案\"},{\"Details\":\"街头\",\"Type\":\"风格\"},{\"Details\":\"灰色\",\"Type\":\"颜色\"}],\"Box\":{\"CategoryId\":0,\"Rect\":{\"Height\":268,\"Width\":193,\"X\":278,\"Y\":162},\"Score\":60},\"CategoryId\":0,\"Colors\":[{\"Color\":\"293133\",\"Label\":\"Black-darkgrey\",\"Percentage\":10},{\"Color\":\"4A3D46\",\"Label\":\"Black-grapethistle\",\"Percentage\":8}]}",
           "member": "ObjectInfo",
           "name": "Object",

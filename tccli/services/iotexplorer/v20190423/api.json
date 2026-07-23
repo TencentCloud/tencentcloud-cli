@@ -10134,7 +10134,7 @@
         },
         {
           "disabled": false,
-          "document": "有效云存套餐列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效云存套餐列表",
           "example": "无",
           "member": "PackageInfo",
           "name": "Packages",
@@ -10646,7 +10646,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固件升级任务的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件升级任务的设备总数",
           "example": "5",
           "member": "uint64",
           "name": "Total",
@@ -10656,7 +10656,7 @@
         },
         {
           "disabled": false,
-          "document": "固件升级任务的设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件升级任务的设备列表",
           "example": "无",
           "member": "DeviceUpdateStatus",
           "name": "Devices",
@@ -10973,7 +10973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固件升级任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件升级任务列表",
           "example": "无",
           "member": "FirmwareTaskInfo",
           "name": "TaskInfos",
@@ -10983,7 +10983,7 @@
         },
         {
           "disabled": false,
-          "document": "固件升级任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件升级任务总数",
           "example": "6",
           "member": "uint64",
           "name": "Total",
@@ -11918,7 +11918,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "围栏告警事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "围栏告警事件列表",
           "example": "[{ \t\"ProductId\": \"X4912BAIVR\", \t\"DeviceName\": \"dev1\", \t\"FenceId\"",
           "member": "FenceEventItem",
           "name": "List",
@@ -13302,7 +13302,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板ID",
           "example": "12374tg",
           "member": "string",
           "name": "ModelId",
@@ -13834,7 +13834,7 @@
         },
         {
           "disabled": false,
-          "document": "下载中状态时的下载进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载中状态时的下载进度",
           "example": "20",
           "member": "uint64",
           "name": "Percent",
@@ -13844,7 +13844,7 @@
         },
         {
           "disabled": false,
-          "document": "原版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原版本号",
           "example": "2.0",
           "member": "string",
           "name": "OriVersion",
@@ -13854,7 +13854,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "234324",
           "member": "uint64",
           "name": "TaskId",
@@ -14649,7 +14649,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "324234",
           "member": "uint64",
           "name": "TaskId",
@@ -14659,7 +14659,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -14669,7 +14669,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -14679,7 +14679,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务创建时间",
           "example": "2342345435",
           "member": "int64",
           "name": "CreateTime",
@@ -14689,7 +14689,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者",
           "example": "zzz",
           "member": "string",
           "name": "CreatorNickName",
@@ -14699,7 +14699,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者ID",
           "example": "32423524323",
           "member": "int64",
           "name": "CreateUserId",
@@ -14709,7 +14709,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务启动时间",
           "example": "234345344234",
           "member": "int64",
           "name": "CronTime",
@@ -15071,7 +15071,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回详情信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回详情信息。",
           "example": "无",
           "member": "BatchProductionInfo",
           "name": "BatchProductions",
@@ -22261,7 +22261,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "RRPC消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "RRPC消息ID",
           "example": "74",
           "member": "int64",
           "name": "MessageId",
@@ -22271,7 +22271,7 @@
         },
         {
           "disabled": false,
-          "document": "设备回复的消息内容，采用base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备回复的消息内容，采用base64编码",
           "example": "QUJDRA==",
           "member": "string",
           "name": "PayloadBase64",
@@ -24065,7 +24065,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序ID",
           "example": "无",
           "member": "string",
           "name": "ModelId",
@@ -24122,7 +24122,7 @@
         },
         {
           "disabled": true,
-          "document": "小程序ID，参数已弃用，不用传参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序ID，参数已弃用，不用传参",
           "example": "无",
           "member": "string",
           "name": "ModelId",
@@ -24133,7 +24133,7 @@
         },
         {
           "disabled": true,
-          "document": "激活数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "激活数",
           "example": "无",
           "member": "int64",
           "name": "ActiveNum",

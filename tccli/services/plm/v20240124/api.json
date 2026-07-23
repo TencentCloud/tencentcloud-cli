@@ -34,7 +34,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "中心id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中心id",
           "example": "无",
           "member": "int64",
           "name": "CenterId",
@@ -44,7 +44,7 @@
         },
         {
           "disabled": false,
-          "document": "中心名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中心名称",
           "example": "无",
           "member": "string",
           "name": "CenterName",
@@ -60,7 +60,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部门id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部门id",
           "example": "无",
           "member": "int64",
           "name": "DepartmentId",
@@ -70,7 +70,7 @@
         },
         {
           "disabled": false,
-          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部门名称",
           "example": "无",
           "member": "string",
           "name": "DepartmentName",
@@ -110,7 +110,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产业树列表，字段含义参考http://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975\n\n{\n  \"list\": [\n    {\n      \"child\": [\n        {\n          \"child\": [\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD003925\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"金融总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:18:04\"\n                }\n              ],\n              \"code\": \"CC003277\",\n              \"departmentIds\": [\n                41069\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"金融总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:15:10\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD003985\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"企点总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:18:18\"\n                }\n              ],\n              \"code\": \"CC003299\",\n              \"departmentIds\": [\n                19332\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"企点总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:15:16\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004632\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"政法总集指定分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:54\"\n                }\n              ],\n              \"code\": \"CC003598\",\n              \"departmentIds\": [\n                34543\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"政法总集指定分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:43\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004649\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧交通总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:58\"\n                }\n              ],\n              \"code\": \"CC003605\",\n              \"departmentIds\": [\n                40930\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧交通总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:45\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004655\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧医保总集分包产品\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:59\"\n                }\n              ],\n              \"code\": \"CC003606\",\n              \"departmentIds\": [\n                28481\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧医保总集分包产品\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:45\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004662\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧医疗总集分包产品\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:21:01\"\n                }\n              ],\n              \"code\": \"CC003607\",\n              \"departmentIds\": [\n                28481\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧医疗总集分包产品\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:46\"\n            }\n          ],\n          \"code\": \"CB003145\",\n          \"departmentIds\": [],\n          \"desc\": \"\",\n          \"level\": 2,\n          \"modifier\": \"v_bettzheng\",\n          \"name\": \"总集分包\",\n          \"status\": 1,\n          \"updateTime\": \"2022-04-15 15:14:30\"\n        }\n      ],\n      \"code\": \"CA003062\",\n      \"departmentIds\": [],\n      \"desc\": \"\",\n      \"level\": 1,\n      \"modifier\": \"v_bettzheng\",\n      \"name\": \"总集分包\",\n      \"status\": 1,\n      \"updateTime\": \"2022-04-15 15:14:11\"\n    }\n  ]\n}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产业树列表，字段含义参考http://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975\n\n{\n  \"list\": [\n    {\n      \"child\": [\n        {\n          \"child\": [\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD003925\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"金融总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:18:04\"\n                }\n              ],\n              \"code\": \"CC003277\",\n              \"departmentIds\": [\n                41069\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"金融总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:15:10\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD003985\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"企点总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:18:18\"\n                }\n              ],\n              \"code\": \"CC003299\",\n              \"departmentIds\": [\n                19332\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"企点总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:15:16\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004632\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"政法总集指定分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:54\"\n                }\n              ],\n              \"code\": \"CC003598\",\n              \"departmentIds\": [\n                34543\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"政法总集指定分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:43\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004649\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧交通总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:58\"\n                }\n              ],\n              \"code\": \"CC003605\",\n              \"departmentIds\": [\n                40930\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧交通总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:45\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004655\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧医保总集分包产品\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:59\"\n                }\n              ],\n              \"code\": \"CC003606\",\n              \"departmentIds\": [\n                28481\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧医保总集分包产品\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:45\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004662\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧医疗总集分包产品\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:21:01\"\n                }\n              ],\n              \"code\": \"CC003607\",\n              \"departmentIds\": [\n                28481\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧医疗总集分包产品\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:46\"\n            }\n          ],\n          \"code\": \"CB003145\",\n          \"departmentIds\": [],\n          \"desc\": \"\",\n          \"level\": 2,\n          \"modifier\": \"v_bettzheng\",\n          \"name\": \"总集分包\",\n          \"status\": 1,\n          \"updateTime\": \"2022-04-15 15:14:30\"\n        }\n      ],\n      \"code\": \"CA003062\",\n      \"departmentIds\": [],\n      \"desc\": \"\",\n      \"level\": 1,\n      \"modifier\": \"v_bettzheng\",\n      \"name\": \"总集分包\",\n      \"status\": 1,\n      \"updateTime\": \"2022-04-15 15:14:11\"\n    }\n  ]\n}",
           "example": "无",
           "member": "string",
           "name": "JsonString",
@@ -192,7 +192,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "销售树列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "销售树列表",
           "example": "无",
           "member": "SaleTreeNodeIntl",
           "name": "List",
@@ -296,7 +296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点code",
           "example": "HA00001",
           "member": "string",
           "name": "Code",
@@ -306,7 +306,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称",
           "example": "聚合",
           "member": "string",
           "name": "Name",
@@ -316,7 +316,7 @@
         },
         {
           "disabled": false,
-          "document": "节点层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点层级",
           "example": "无",
           "member": "uint64",
           "name": "Level",
@@ -326,7 +326,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态",
           "example": "无",
           "member": "uint64",
           "name": "Status",
@@ -336,7 +336,7 @@
         },
         {
           "disabled": false,
-          "document": "节点权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点权重",
           "example": "无",
           "member": "uint64",
           "name": "Weight",
@@ -346,7 +346,7 @@
         },
         {
           "disabled": false,
-          "document": "中心id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中心id",
           "example": "无",
           "member": "uint64",
           "name": "CenterIds",
@@ -356,7 +356,7 @@
         },
         {
           "disabled": false,
-          "document": "部门id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部门id",
           "example": "无",
           "member": "uint64",
           "name": "DepartmentIds",
@@ -366,7 +366,7 @@
         },
         {
           "disabled": false,
-          "document": "子节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子节点",
           "example": "无",
           "member": "MinNodeList",
           "name": "Child",
@@ -376,7 +376,7 @@
         },
         {
           "disabled": false,
-          "document": "英文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文名称",
           "example": "无",
           "member": "string",
           "name": "NameEn",
@@ -392,7 +392,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点编码",
           "example": "XA001001",
           "member": "string",
           "name": "Code",
@@ -402,7 +402,7 @@
         },
         {
           "disabled": false,
-          "document": "节点中文名称，优先取国际站缩写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点中文名称，优先取国际站缩写",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -412,7 +412,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -422,7 +422,7 @@
         },
         {
           "disabled": false,
-          "document": "子树节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子树节点",
           "example": "无",
           "member": "SaleTreeNodeIntl",
           "name": "Child",
@@ -432,7 +432,7 @@
         },
         {
           "disabled": false,
-          "document": "部门信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部门信息",
           "example": "无",
           "member": "DepartmentInfo",
           "name": "DepartmentList",
@@ -442,7 +442,7 @@
         },
         {
           "disabled": false,
-          "document": "中心信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中心信息",
           "example": "无",
           "member": "CenterInfo",
           "name": "CenterList",
@@ -452,7 +452,7 @@
         },
         {
           "disabled": false,
-          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新人",
           "example": "无",
           "member": "string",
           "name": "Modifier",
@@ -462,7 +462,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -472,7 +472,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重",
           "example": "1",
           "member": "int64",
           "name": "Weight",
@@ -482,7 +482,7 @@
         },
         {
           "disabled": false,
-          "document": "节点英文名称,优先取国际站缩写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点英文名称,优先取国际站缩写",
           "example": "无",
           "member": "string",
           "name": "NameEn",
@@ -492,7 +492,7 @@
         },
         {
           "disabled": false,
-          "document": "英文缩写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文缩写",
           "example": "无",
           "member": "string",
           "name": "EnAbbreviation",

@@ -311,7 +311,7 @@
         },
         {
           "disabled": false,
-          "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务成功量",
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
@@ -321,7 +321,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行结果",
           "example": "无",
           "member": "TaskResult",
           "name": "Results",
@@ -972,7 +972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务",
           "example": "无",
           "member": "SingleInstantTask",
           "name": "Tasks",
@@ -1100,7 +1100,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "树状节点列表，总共两级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "树状节点列表，总共两级",
           "example": "无",
           "member": "NodeTree",
           "name": "NodeList",
@@ -1110,7 +1110,7 @@
         },
         {
           "disabled": false,
-          "document": "省份或国家列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "省份或国家列表",
           "example": "无",
           "member": "DistinctOrNetServiceInfo",
           "name": "DistrictList",
@@ -1120,7 +1120,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商列表",
           "example": "无",
           "member": "DistinctOrNetServiceInfo",
           "name": "NetServiceList",
@@ -1202,7 +1202,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点列表",
           "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
           "member": "NodeDefineExt",
           "name": "NodeSet",
@@ -1430,7 +1430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点列表",
           "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
           "member": "NodeDefine",
           "name": "NodeSet",
@@ -1715,7 +1715,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务列表",
           "example": "无",
           "member": "ProbeTask",
           "name": "TaskSet",
@@ -1967,7 +1967,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 类型\n<li> 1 = IPv4 </li>\n<li> 2 = IPv6 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 类型\n<li> 1 = IPv4 </li>\n<li> 2 = IPv6 </li>",
           "example": "1",
           "member": "int64",
           "name": "IPType",
@@ -1977,7 +1977,7 @@
         },
         {
           "disabled": false,
-          "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 国外 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 国外 </li>",
           "example": "1",
           "member": "int64",
           "name": "Location",
@@ -1987,7 +1987,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点",
           "example": "base",
           "member": "string",
           "name": "CodeType",
@@ -1997,7 +1997,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态：1-运行,2-下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态：1-运行,2-下线",
           "example": "1",
           "member": "uint64",
           "name": "NodeDefineStatus",
@@ -2073,7 +2073,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 类型\n<li> 1 = IPv4 </li>\n<li> 2 = IPv6 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 类型\n<li> 1 = IPv4 </li>\n<li> 2 = IPv6 </li>",
           "example": "1",
           "member": "int64",
           "name": "IPType",
@@ -2083,7 +2083,7 @@
         },
         {
           "disabled": false,
-          "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 境外 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 境外 </li>",
           "example": "1",
           "member": "int64",
           "name": "Location",
@@ -2093,7 +2093,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点",
           "example": "base",
           "member": "string",
           "name": "CodeType",
@@ -2103,7 +2103,7 @@
         },
         {
           "disabled": false,
-          "document": "节点支持的任务类型。1: 页面性能 2: 文件上传 3: 文件下载 4: 端口性能 5: 网络质量 6: 音视频体验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点支持的任务类型。1: 页面性能 2: 文件上传 3: 文件下载 4: 端口性能 5: 网络质量 6: 音视频体验",
           "example": "[1, 2, 3]",
           "member": "int64",
           "name": "TaskTypes",
@@ -2217,7 +2217,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务名",
           "example": "probe",
           "member": "string",
           "name": "Name",
@@ -2257,7 +2257,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测任务所选的拨测点IP类型，0-不限，1-IPv4，2-IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拨测任务所选的拨测点IP类型，0-不限，1-IPv4，2-IPv6",
           "example": "0",
           "member": "int64",
           "name": "NodeIpType",
@@ -2347,7 +2347,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时任务cron表达式",
           "example": "* 0-5 * * *",
           "member": "string",
           "name": "Cron",
@@ -2357,7 +2357,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务启动状态\n<li>1 = 定时任务表达式生效</li>\n<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时任务启动状态\n<li>1 = 定时任务表达式生效</li>\n<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>",
           "example": "1",
           "member": "int64",
           "name": "CronState",
@@ -2367,7 +2367,7 @@
         },
         {
           "disabled": false,
-          "document": "任务当前绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务当前绑定的标签",
           "example": "[{\"Key\":\"name\", \"Value\": \"zhangsan\"}]",
           "member": "KeyValuePair",
           "name": "TagInfoList",
@@ -2377,7 +2377,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为同步账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为同步账号",
           "example": "同步标记",
           "member": "int64",
           "name": "SubSyncFlag",
@@ -2463,7 +2463,7 @@
         },
         {
           "disabled": false,
-          "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务成功量",
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
@@ -2473,7 +2473,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行详情",
           "example": "无",
           "member": "TaskResult",
           "name": "Results",
@@ -2606,7 +2606,7 @@
         },
         {
           "disabled": false,
-          "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务成功量",
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
@@ -2616,7 +2616,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行结果",
           "example": "无",
           "member": "TaskResult",
           "name": "Results",
@@ -2674,7 +2674,7 @@
         },
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功",
           "example": "true",
           "member": "bool",
           "name": "Success",
@@ -2684,7 +2684,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "错误信息",
           "member": "string",
           "name": "ErrorMessage",

@@ -209,7 +209,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "受漏洞影响的组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "受漏洞影响的组件名称",
           "example": "apache-log4j",
           "member": "string",
           "name": "Name",
@@ -219,7 +219,7 @@
         },
         {
           "disabled": false,
-          "document": "受漏洞影响的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "受漏洞影响的版本",
           "example": "[\"2.4.0<=version<2.12.2\"]",
           "member": "string",
           "name": "AffectedVersionList",
@@ -229,7 +229,7 @@
         },
         {
           "disabled": false,
-          "document": "修复此漏洞的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修复此漏洞的版本",
           "example": "[\"2.15.0\"]",
           "member": "string",
           "name": "FixedVersionList",
@@ -481,7 +481,7 @@
         },
         {
           "disabled": false,
-          "document": "CVSS3.0详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CVSS3.0详细信息。",
           "example": "无",
           "member": "CVSSV3Info",
           "name": "CVSSV3Info",
@@ -491,7 +491,7 @@
         },
         {
           "disabled": false,
-          "document": "CVSS2.0详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CVSS2.0详细信息。",
           "example": "无",
           "member": "CVSSV2Info",
           "name": "CVSSV2Info",
@@ -983,7 +983,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方组件的别名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方组件的别名列表",
           "example": "[\"gmock\", \"googlemock\", \"gmock-gtest-all\"]",
           "member": "string",
           "name": "NicknameList",
@@ -993,7 +993,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方组件的代码位置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方组件的代码位置列表",
           "example": "[\"https://github.com/google/googletest.git\",\"https://github.com/abseil/googletest.git\"]",
           "member": "string",
           "name": "CodeLocationList",
@@ -1013,7 +1013,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方组件的版本信息(如果匹配到版本)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方组件的版本信息(如果匹配到版本)",
           "example": "无",
           "member": "ComponentVersionInfo",
           "name": "VersionInfo",
@@ -1023,7 +1023,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方组件的最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方组件的最后更新时间",
           "example": "2024-10-03T11:12:40Z",
           "member": "string",
           "name": "LastUpdateTime",
@@ -1033,7 +1033,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方组件的类型标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方组件的类型标签",
           "example": "[\"hardware\"]",
           "member": "string",
           "name": "TagList",
@@ -1125,7 +1125,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该组件的PURL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该组件的PURL",
           "example": "无",
           "member": "PURL",
           "name": "PURL",
@@ -1135,7 +1135,7 @@
         },
         {
           "disabled": false,
-          "document": "该组件版本的许可证表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该组件版本的许可证表达式",
           "example": "mit",
           "member": "string",
           "name": "LicenseExpression",
@@ -1145,7 +1145,7 @@
         },
         {
           "disabled": false,
-          "document": "组件的版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件的版本信息",
           "example": "无",
           "member": "ComponentVersionInfo",
           "name": "VersionInfo",
@@ -1161,7 +1161,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本发布时间",
           "example": "2024-04-17 08:50:11.000000",
           "member": "string",
           "name": "PublishTime",
@@ -1171,7 +1171,7 @@
         },
         {
           "disabled": false,
-          "document": "当前版本的所有copyright\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前版本的所有copyright",
           "example": "[\"Copyright (c) 1998-2018 The OpenSSL Project\",   \"Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)\",   \"holder is Tim Hudson (tjh@cryptsoft.com)\" ]",
           "member": "string",
           "name": "CopyrightList",
@@ -1181,7 +1181,7 @@
         },
         {
           "disabled": false,
-          "document": "版本标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本标签",
           "example": "[\"ContainsVulnerability\", \"LicenseUpdated\"]",
           "member": "string",
           "name": "TagList",
@@ -1197,7 +1197,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用于匹配漏洞的PURL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于匹配漏洞的PURL",
           "example": "无",
           "member": "PURL",
           "name": "PURL",
@@ -1969,7 +1969,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "漏洞信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞信息列表",
           "example": "无",
           "member": "ComponentVulnerabilityUnion",
           "name": "VulnerabilityList",
@@ -2036,7 +2036,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "许可证列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "许可证列表",
           "example": "无",
           "member": "LicenseUnion",
           "name": "LicenseList",
@@ -2128,7 +2128,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "漏洞详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞详细信息列表",
           "example": "无",
           "member": "VulnerabilityUnion",
           "name": "VulnerabilityDetailList",
@@ -3672,7 +3672,7 @@
         },
         {
           "disabled": false,
-          "document": "修饰组件的额外属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修饰组件的额外属性",
           "example": "无",
           "member": "Qualifier",
           "name": "Qualifiers",
@@ -4032,7 +4032,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅到期时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。如果未购买返回空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅到期时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。如果未购买返回空。",
           "example": "2021-08-20T07:37:12Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
@@ -4144,7 +4144,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞CVSSv2信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞CVSSv2信息",
           "example": "无",
           "member": "CVSSV2Info",
           "name": "CVSSv2Info",
@@ -4154,7 +4154,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞CVSSv3信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞CVSSv3信息",
           "example": "无",
           "member": "CVSSV3Info",
           "name": "CVSSv3Info",
@@ -4320,7 +4320,7 @@
         },
         {
           "disabled": true,
-          "document": "架构信息，如x86、ARM等，废弃，请使用ArchitectureList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "架构信息，如x86、ARM等，废弃，请使用ArchitectureList",
           "example": "[\"x86_64\"]",
           "member": "string",
           "name": "Architecture",
@@ -4330,7 +4330,7 @@
         },
         {
           "disabled": false,
-          "document": "架构信息，如x86、ARM等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "架构信息，如x86、ARM等",
           "example": "[\"x86_64\"]",
           "member": "string",
           "name": "ArchitectureList",
@@ -4340,7 +4340,7 @@
         },
         {
           "disabled": false,
-          "document": "patch链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "patch链接",
           "example": "[\"https://github.com/apache/logging-log4j2/commit/c77b3cb39312b83b053d23a2158b99ac7de44dd3\"]",
           "member": "string",
           "name": "PatchUrlList",

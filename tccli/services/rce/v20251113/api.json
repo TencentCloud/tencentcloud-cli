@@ -188,7 +188,7 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据",
           "example": "2",
           "member": "string",
           "name": "Value",
@@ -435,7 +435,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>决策结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>决策结果</p>",
           "example": "reject",
           "member": "string",
           "name": "RiskLevel",
@@ -445,7 +445,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>风险等级</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>风险等级</p>",
           "example": "4",
           "member": "int64",
           "name": "RiskScore",
@@ -455,7 +455,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>设备ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备ID</p>",
           "example": "MRF3A2995****E12F1E",
           "member": "string",
           "name": "OpenId",
@@ -465,7 +465,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>命中的规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命中的规则</p>",
           "example": "{\\\"默认策略\\\":\\\"10000\\\"}",
           "member": "string",
           "name": "HitRules",
@@ -475,7 +475,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求序列号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求序列号</p>",
           "example": "1773974177-****-****-457251643",
           "member": "string",
           "name": "Seq",
@@ -485,7 +485,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>拓展字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>拓展字段</p>",
           "example": "{\\\"ActionSequence\\\":\\\"1\\\",\\\"EnableCameraRisk\\\":\\\"false\\\"}",
           "member": "string",
           "name": "Extra",
@@ -505,7 +505,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>图灵盾原始标签，对外需要rce侧开白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图灵盾原始标签，对外需要rce侧开白名单</p>",
           "example": "[100,101]",
           "member": "int64",
           "name": "RiskTags",
@@ -521,7 +521,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>决策结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>决策结果</p>",
           "example": "review",
           "member": "string",
           "name": "RiskLevel",
@@ -531,7 +531,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>风险分数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>风险分数</p>",
           "example": "4",
           "member": "int64",
           "name": "RiskScore",
@@ -541,7 +541,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>设备ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备ID</p>",
           "example": "MRF3***2F1E",
           "member": "string",
           "name": "OpenId",
@@ -551,7 +551,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>相机指纹参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>相机指纹参数</p>",
           "example": "DQABU***N6WT0=",
           "member": "string",
           "name": "CamParam",
@@ -561,7 +561,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>命中规则id和名称集合</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命中规则id和名称集合</p>",
           "example": "{\\\"默认策略\\\":\\\"10000\\\"}",
           "member": "string",
           "name": "HitRules",
@@ -571,7 +571,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求序列号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求序列号</p>",
           "example": "1776133822-****-****-625117693",
           "member": "string",
           "name": "Seq",
@@ -581,7 +581,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>拓展字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>拓展字段</p>",
           "example": "{\\\"ActionSequence\\\":\\\"1\\\",\\\"EnableCameraRisk\\\":\\\"false\\\"}",
           "member": "string",
           "name": "Extra",
@@ -601,7 +601,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>图灵盾原始标签，对外需要rce侧开白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图灵盾原始标签，对外需要rce侧开白名单</p>",
           "example": "[100,101]",
           "member": "int64",
           "name": "RiskTags",

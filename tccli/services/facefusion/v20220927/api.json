@@ -172,7 +172,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>人脸框左上角横坐标。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸框左上角横坐标。</p>",
           "example": "1",
           "member": "int64",
           "name": "X",
@@ -183,7 +183,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>人脸框左上角纵坐标。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸框左上角纵坐标。</p>",
           "example": "1",
           "member": "int64",
           "name": "Y",
@@ -194,7 +194,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>人脸框宽度。<br>单位：px</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸框宽度。<br>单位：px</p>",
           "example": "30",
           "member": "int64",
           "name": "Width",
@@ -205,7 +205,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>人脸框高度。<br>单位：px</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸框高度。<br>单位：px</p>",
           "example": "30",
           "member": "int64",
           "name": "Height",
@@ -880,7 +880,7 @@
         },
         {
           "disabled": false,
-          "document": "视频人脸融合输出的结果信息（输出视频url有效期1天）\n**注意：此字段可能返回 null，表示取不到有效值。**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频人脸融合输出的结果信息（输出视频url有效期1天）\n**注意：此字段可能返回 null，表示取不到有效值。**",
           "example": "{             \"VideoUrl\": \"http://bda-video-bodyseg-1254418846.c",
           "member": "VideoFaceFusionOutput",
           "name": "VideoFaceFusionOutput",
@@ -890,7 +890,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态码，1-排队中，3-处理中，5-处理失败，7-处理完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态码，1-排队中，3-处理中，5-处理失败，7-处理完成",
           "example": "1",
           "member": "int64",
           "name": "JobStatusCode",
@@ -900,7 +900,7 @@
         },
         {
           "disabled": false,
-          "document": "任务处理失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务处理失败错误码",
           "example": "FailedOperation.NoFaceDetected",
           "member": "string",
           "name": "JobErrorCode",
@@ -910,7 +910,7 @@
         },
         {
           "disabled": false,
-          "document": "任务处理失败错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务处理失败错误信息",
           "example": "未检测到人脸",
           "member": "string",
           "name": "JobErrorMsg",
@@ -1040,7 +1040,7 @@
         },
         {
           "disabled": false,
-          "document": "不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应",
           "example": "[{\"Category\": \"Politics\",\"Code\": \"0\",\"CodeDescription\": \"OK\",\"Suggestion\": \"PASS\",\"Confidence\": 30,\"DetailSet\": [{\"Label\": \"丁俊晖\",\"Confidence\": 30,\"Suggestion\": \"PASS\"}]}]",
           "member": "FuseFaceReviewResult",
           "name": "ReviewResultSet",

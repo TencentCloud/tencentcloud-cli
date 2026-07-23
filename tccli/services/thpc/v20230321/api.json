@@ -853,7 +853,7 @@
         },
         {
           "disabled": false,
-          "document": "集群活动结果详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群活动结果详情。",
           "example": "Activity success.",
           "member": "string",
           "name": "ResultDetail",
@@ -1736,7 +1736,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
           "example": "0",
           "member": "int64",
           "name": "DiskSize",
@@ -1746,7 +1746,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘",
           "example": "CLOUD_BASIC",
           "member": "string",
           "name": "DiskType",
@@ -2850,7 +2850,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点机型。",
           "example": "S2.SMALL2",
           "member": "string",
           "name": "InstanceType",
@@ -2860,7 +2860,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容实例所在的位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩容实例所在的位置。",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -2870,7 +2870,7 @@
         },
         {
           "disabled": false,
-          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -2880,7 +2880,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -2890,7 +2890,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络相关信息配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络相关信息配置。",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
@@ -2900,7 +2900,7 @@
         },
         {
           "disabled": false,
-          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。",
           "example": "img-3la7wgnt",
           "member": "string",
           "name": "ImageId",
@@ -2910,7 +2910,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽相关信息设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网带宽相关信息设置。",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -2920,7 +2920,7 @@
         },
         {
           "disabled": false,
-          "document": "节点系统盘配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点系统盘配置信息。",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -2930,7 +2930,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数据盘配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点数据盘配置信息。",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -3107,7 +3107,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -3117,7 +3117,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -3133,7 +3133,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络计费类型。取值范围：\nBANDWIDTH_PREPAID：预付费按带宽结算\nTRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费\nBANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费\nBANDWIDTH_PACKAGE：带宽包用户\n默认取值：非带宽包用户默认与子机付费类型保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络计费类型。取值范围：\nBANDWIDTH_PREPAID：预付费按带宽结算\nTRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费\nBANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费\nBANDWIDTH_PACKAGE：带宽包用户\n默认取值：非带宽包用户默认与子机付费类型保持一致。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
@@ -3143,7 +3143,7 @@
         },
         {
           "disabled": false,
-          "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。",
           "example": "0",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
@@ -3764,7 +3764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点活动所在的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点活动所在的实例ID。",
           "example": "ins-1zll2of0",
           "member": "string",
           "name": "NodeInstanceId",
@@ -3784,7 +3784,7 @@
         },
         {
           "disabled": false,
-          "document": "节点活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点活动状态码。",
           "example": "ActivitySuccess",
           "member": "string",
           "name": "NodeActivityStatusCode",
@@ -3794,7 +3794,7 @@
         },
         {
           "disabled": false,
-          "document": "节点活动状态原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点活动状态原因。",
           "example": "Activity success.",
           "member": "string",
           "name": "NodeActivityStatusReason",
@@ -3820,7 +3820,7 @@
         },
         {
           "disabled": false,
-          "document": "节点实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点实例ID。",
           "example": "ins-f5ew7k5w",
           "member": "string",
           "name": "InstanceId",
@@ -3830,7 +3830,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所在可用区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点所在可用区信息。",
           "example": "ap-chongqing-1",
           "member": "string",
           "name": "Zone",
@@ -3840,7 +3840,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态。<li>SUBMITTED：已完成提交。</li><li>CREATING：创建中。</li><li>CREATED：完成创建。</li><li>INITING：初始化中。</li><li>INIT_FAILED：初始化失败。</li><li>RUNNING：运行中。</li><li>DELETING：销毁中。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态。<li>SUBMITTED：已完成提交。</li><li>CREATING：创建中。</li><li>CREATED：完成创建。</li><li>INITING：初始化中。</li><li>INIT_FAILED：初始化失败。</li><li>RUNNING：运行中。</li><li>DELETING：销毁中。</li>",
           "example": "RUNNING",
           "member": "string",
           "name": "NodeState",
@@ -3850,7 +3850,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像ID。",
           "example": "img-l8og963d",
           "member": "string",
           "name": "ImageId",
@@ -3860,7 +3860,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所属队列名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点所属队列名称。",
           "example": "compute",
           "member": "string",
           "name": "QueueName",
@@ -3870,7 +3870,7 @@
         },
         {
           "disabled": false,
-          "document": "节点角色。<li>Manager：管控节点。</li><li>Compute：计算节点。</li><li>Login：登录节点。</li><li>ManagerBackup：备用管控节点。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点角色。<li>Manager：管控节点。</li><li>Compute：计算节点。</li><li>Login：登录节点。</li><li>ManagerBackup：备用管控节点。</li>",
           "example": "Compute",
           "member": "string",
           "name": "NodeRole",
@@ -3880,7 +3880,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型。<li>STATIC：静态节点。</li><li>DYNAMIC：弹性节点。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点类型。<li>STATIC：静态节点。</li><li>DYNAMIC：弹性节点。</li>",
           "example": "STATIC",
           "member": "string",
           "name": "NodeType",
@@ -3890,7 +3890,7 @@
         },
         {
           "disabled": false,
-          "document": "thpc集群节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "thpc集群节点id",
           "example": "node-2sh754ah",
           "member": "string",
           "name": "NodeId",
@@ -3992,7 +3992,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -4433,7 +4433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 12, 24, 36。默认取值为1。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 12, 24, 36。默认取值为1。",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -4444,7 +4444,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\n\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\n\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\n\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\n\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -4472,7 +4472,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘",
           "example": "disk-ciezoimt",
           "member": "string",
           "name": "DiskId",
@@ -4494,7 +4494,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  FALSE：子机销毁时，保留数据盘<br />\n  默认取值：TRUE<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  FALSE：子机销毁时，保留数据盘<br />\n  默认取值：TRUE<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
           "example": "true",
           "member": "bool",
           "name": "DeleteWithInstance",
@@ -4505,7 +4505,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。",
           "example": "snap-6yczrj8x\t",
           "member": "string",
           "name": "SnapshotId",
@@ -4516,7 +4516,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
@@ -4527,7 +4527,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `CreateWorkspaces` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `CreateWorkspaces` 接口。",
           "example": "kms-abcd1234\t",
           "member": "string",
           "name": "KmsKeyId",
@@ -4538,7 +4538,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘性能，单位：MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘性能，单位：MB/s",
           "example": "20",
           "member": "int64",
           "name": "ThroughputPerformance",
@@ -4549,7 +4549,7 @@
         },
         {
           "disabled": false,
-          "document": "突发性能\n\n注：内测中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "突发性能\n\n注：内测中。",
           "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
@@ -4722,7 +4722,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作空间的最新操作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间的最新操作</p>",
           "example": "CreateWorkspaces",
           "member": "string",
           "name": "LatestOperation",
@@ -4732,7 +4732,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作空间的最新操作状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间的最新操作状态</p>",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
@@ -4758,7 +4758,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络计费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络计费类型",
           "example": "BANDWIDTH_PREPAID\t",
           "member": "string",
           "name": "InternetChargeType",
@@ -4769,7 +4769,7 @@
         },
         {
           "disabled": false,
-          "document": "公网出带宽上限，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网出带宽上限，默认为0",
           "example": "10",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
@@ -4780,7 +4780,7 @@
         },
         {
           "disabled": false,
-          "document": "是否分配公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否分配公网IP",
           "example": "false",
           "member": "bool",
           "name": "PublicIpAssigned",
@@ -4791,7 +4791,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽包ID",
           "example": "bwp-h1ro\t",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -4836,7 +4836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<ul><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用性SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li></ul>默认取值：当前有库存的硬盘类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<ul><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用性SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li></ul>默认取值：当前有库存的硬盘类型。",
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
@@ -4847,7 +4847,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GB。默认值为 50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘大小，单位：GB。默认值为 50",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -5107,7 +5107,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统盘类型。系统盘类型限制详见存储概述。取值范围：\nCLOUD_BASIC：普通云硬盘\nCLOUD_SSD：SSD云硬盘\nCLOUD_PREMIUM：高性能云硬盘\n\n默认取值：当前有库存的硬盘类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘类型。系统盘类型限制详见存储概述。取值范围：\nCLOUD_BASIC：普通云硬盘\nCLOUD_SSD：SSD云硬盘\nCLOUD_PREMIUM：高性能云硬盘\n\n默认取值：当前有库存的硬盘类型。",
           "example": "CLOUD_BASIC",
           "member": "string",
           "name": "DiskType",
@@ -5117,7 +5117,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GB。默认值为 50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘大小，单位：GB。默认值为 50",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -5330,7 +5330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。",
           "example": "vpc-jfkanfen",
           "member": "string",
           "name": "VpcId",
@@ -5341,7 +5341,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
           "example": "subnet-jfnakenf",
           "member": "string",
           "name": "SubnetId",

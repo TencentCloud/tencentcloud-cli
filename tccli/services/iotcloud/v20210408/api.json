@@ -688,7 +688,7 @@
         },
         {
           "disabled": false,
-          "document": "子设备绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子设备绑定时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "BindTime",
@@ -2027,7 +2027,7 @@
         },
         {
           "disabled": false,
-          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源列表",
           "example": " {\"Name\": \"myname\"}",
           "member": "DeviceResourceInfo",
           "name": "Result",
@@ -2199,7 +2199,7 @@
         },
         {
           "disabled": false,
-          "document": "设备的sdk日志等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备的sdk日志等级",
           "example": "1",
           "member": "uint64",
           "name": "LogLevel",
@@ -2209,7 +2209,7 @@
         },
         {
           "disabled": false,
-          "document": "首次上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次上线时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "FirstOnlineTime",
@@ -2219,7 +2219,7 @@
         },
         {
           "disabled": false,
-          "document": "最近下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近下线时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "LastOfflineTime",
@@ -2229,7 +2229,7 @@
         },
         {
           "disabled": false,
-          "document": "设备创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备创建时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "CreateTime",
@@ -2239,7 +2239,7 @@
         },
         {
           "disabled": false,
-          "document": "设备证书获取状态，0 未获取过设备密钥, 1 已获取过设备密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备证书获取状态，0 未获取过设备密钥, 1 已获取过设备密钥",
           "example": "-----BEGIN CERTIFICATE----- MIIFGjCCBAKgAwIBAgIQCgRw0Ja8ihLIkKbf",
           "member": "uint64",
           "name": "CertState",
@@ -2249,7 +2249,7 @@
         },
         {
           "disabled": false,
-          "document": "设备启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备启用状态",
           "example": "1",
           "member": "uint64",
           "name": "EnableState",
@@ -2259,7 +2259,7 @@
         },
         {
           "disabled": false,
-          "document": "设备标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备标签",
           "example": "labels1",
           "member": "DeviceLabel",
           "name": "Labels",
@@ -2269,7 +2269,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT客户端IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MQTT客户端IP地址",
           "example": "127.0.0.1",
           "member": "string",
           "name": "ClientIP",
@@ -2279,7 +2279,7 @@
         },
         {
           "disabled": false,
-          "document": "设备固件更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备固件更新时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "FirmwareUpdateTime",
@@ -2289,7 +2289,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者账号ID",
           "example": "54362341",
           "member": "uint64",
           "name": "CreateUserId",
@@ -2503,7 +2503,7 @@
         },
         {
           "disabled": false,
-          "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件名称",
           "example": "myname",
           "member": "string",
           "name": "Name",
@@ -2513,7 +2513,7 @@
         },
         {
           "disabled": false,
-          "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件描述",
           "example": "mydescription",
           "member": "string",
           "name": "Description",
@@ -2523,7 +2523,7 @@
         },
         {
           "disabled": false,
-          "document": "固件Md5值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件Md5值",
           "example": "418806da363b5b57199e5a9f88fc69c3",
           "member": "string",
           "name": "Md5sum",
@@ -2533,7 +2533,7 @@
         },
         {
           "disabled": false,
-          "document": "固件上传的秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件上传的秒级时间戳",
           "example": "1597047368",
           "member": "uint64",
           "name": "Createtime",
@@ -2563,7 +2563,7 @@
         },
         {
           "disabled": false,
-          "document": "固件用户自定义配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件用户自定义配置信息",
           "example": "{\"key1\":\"value1\", \"key2\":\"支持中文\"}",
           "member": "string",
           "name": "UserDefined",
@@ -2636,7 +2636,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固件升级任务的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件升级任务的设备总数",
           "example": "10",
           "member": "uint64",
           "name": "Total",
@@ -2646,7 +2646,7 @@
         },
         {
           "disabled": false,
-          "document": "固件升级任务的设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件升级任务的设备列表",
           "example": "无",
           "member": "DeviceUpdateStatus",
           "name": "Devices",
@@ -2756,7 +2756,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固件任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件任务ID",
           "example": "1000175",
           "member": "uint64",
           "name": "TaskId",
@@ -2766,7 +2766,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件任务状态",
           "example": "3",
           "member": "int64",
           "name": "Status",
@@ -2776,7 +2776,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务创建时间，单位:秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件任务创建时间，单位:秒",
           "example": "1589466879",
           "member": "int64",
           "name": "CreateTime",
@@ -2786,7 +2786,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务升级类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件任务升级类型",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -2796,7 +2796,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称",
           "example": "门锁",
           "member": "string",
           "name": "ProductName",
@@ -2806,7 +2806,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）",
           "example": "originalVersion",
           "member": "string",
           "name": "UpgradeMode",
@@ -2816,7 +2816,7 @@
         },
         {
           "disabled": false,
-          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品ID",
           "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
@@ -2826,7 +2826,7 @@
         },
         {
           "disabled": false,
-          "document": "升级前版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "升级前版本号",
           "example": "1.0.0",
           "member": "string",
           "name": "OriginalVersion",
@@ -2872,7 +2872,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "升级成功的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "升级成功的设备总数",
           "example": "1",
           "member": "uint64",
           "name": "SuccessTotal",
@@ -2882,7 +2882,7 @@
         },
         {
           "disabled": false,
-          "document": "升级失败的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "升级失败的设备总数",
           "example": "0",
           "member": "uint64",
           "name": "FailureTotal",
@@ -2892,7 +2892,7 @@
         },
         {
           "disabled": false,
-          "document": "正在升级的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正在升级的设备总数",
           "example": "1",
           "member": "uint64",
           "name": "UpgradingTotal",
@@ -2965,7 +2965,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固件升级任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件升级任务列表",
           "example": " { \"TaskId\": 1000175,    \"Status\": 3,  \"CreateTime\": 1589466879,   \"Type\": 1   }",
           "member": "FirmwareTaskInfo",
           "name": "TaskInfos",
@@ -2975,7 +2975,7 @@
         },
         {
           "disabled": false,
-          "document": "固件升级任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件升级任务总数",
           "example": "53",
           "member": "uint64",
           "name": "Total",
@@ -3285,7 +3285,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源详情",
           "example": "无",
           "member": "ProductResourceInfo",
           "name": "Result",
@@ -3359,7 +3359,7 @@
         },
         {
           "disabled": false,
-          "document": "资源详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源详情",
           "example": "无",
           "member": "ProductResourceInfo",
           "name": "Result",
@@ -3624,7 +3624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "推送成功的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推送成功的设备总数",
           "example": "1",
           "member": "uint64",
           "name": "SuccessTotal",
@@ -3634,7 +3634,7 @@
         },
         {
           "disabled": false,
-          "document": "推送失败的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推送失败的设备总数",
           "example": "0",
           "member": "uint64",
           "name": "FailureTotal",
@@ -3644,7 +3644,7 @@
         },
         {
           "disabled": false,
-          "document": "正在推送的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正在推送的设备总数",
           "example": "1",
           "member": "uint64",
           "name": "UpgradingTotal",
@@ -3717,7 +3717,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源任务列表",
           "example": "{   \"TaskId\": 1000175,     \"Status\": 3,   \"CreateTime\": 1589466879,  \"Type\": 1    }",
           "member": "FirmwareTaskInfo",
           "name": "TaskInfos",
@@ -3727,7 +3727,7 @@
         },
         {
           "disabled": false,
-          "document": "资源任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源任务总数",
           "example": "53",
           "member": "uint64",
           "name": "Total",
@@ -3899,7 +3899,7 @@
         },
         {
           "disabled": false,
-          "document": "首次上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次上线时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "FirstOnlineTime",
@@ -3909,7 +3909,7 @@
         },
         {
           "disabled": false,
-          "document": "最近下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近下线时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "LastOfflineTime",
@@ -3919,7 +3919,7 @@
         },
         {
           "disabled": false,
-          "document": "设备创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备创建时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "CreateTime",
@@ -3929,7 +3929,7 @@
         },
         {
           "disabled": false,
-          "document": "设备日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备日志级别",
           "example": "1",
           "member": "uint64",
           "name": "LogLevel",
@@ -3939,7 +3939,7 @@
         },
         {
           "disabled": false,
-          "document": "设备证书获取状态, 1 已获取过设备密钥，0 未获取过设备密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备证书获取状态, 1 已获取过设备密钥，0 未获取过设备密钥",
           "example": "1",
           "member": "uint64",
           "name": "CertState",
@@ -3949,7 +3949,7 @@
         },
         {
           "disabled": false,
-          "document": "设备可用状态，0禁用，1启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备可用状态，0禁用，1启用",
           "example": "1",
           "member": "uint64",
           "name": "EnableState",
@@ -3959,7 +3959,7 @@
         },
         {
           "disabled": false,
-          "document": "设备标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备标签",
           "example": "labels1",
           "member": "DeviceLabel",
           "name": "Labels",
@@ -3969,7 +3969,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT客户端IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MQTT客户端IP地址",
           "example": "127.0.0.1",
           "member": "string",
           "name": "ClientIP",
@@ -3979,7 +3979,7 @@
         },
         {
           "disabled": false,
-          "document": "ota最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ota最后更新时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "FirmwareUpdateTime",
@@ -3989,7 +3989,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者 Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者 Uin",
           "example": "1063452",
           "member": "uint64",
           "name": "CreateUserId",
@@ -4170,7 +4170,7 @@
         },
         {
           "disabled": false,
-          "document": "属性描述名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性描述名称",
           "example": "xyz",
           "member": "string",
           "name": "Name",
@@ -4247,7 +4247,7 @@
         },
         {
           "disabled": false,
-          "document": "下载中状态时的下载进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载中状态时的下载进度",
           "example": "0",
           "member": "uint64",
           "name": "Percent",
@@ -4257,7 +4257,7 @@
         },
         {
           "disabled": false,
-          "document": "原版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原版本号",
           "example": "1.0.0",
           "member": "string",
           "name": "OriVersion",
@@ -4267,7 +4267,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "132",
           "member": "uint64",
           "name": "TaskId",
@@ -4485,7 +4485,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称",
           "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductName",
@@ -4495,7 +4495,7 @@
         },
         {
           "disabled": false,
-          "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件名称",
           "example": "固件名称",
           "member": "string",
           "name": "Name",
@@ -4505,7 +4505,7 @@
         },
         {
           "disabled": false,
-          "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件描述",
           "example": "固件信息描述",
           "member": "string",
           "name": "Description",
@@ -4515,7 +4515,7 @@
         },
         {
           "disabled": false,
-          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品ID",
           "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
@@ -4525,7 +4525,7 @@
         },
         {
           "disabled": false,
-          "document": "固件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件类型",
           "example": "mcu",
           "member": "string",
           "name": "FwType",
@@ -4535,7 +4535,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者 Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者 Uin",
           "example": "0",
           "member": "uint64",
           "name": "CreateUserId",
@@ -4545,7 +4545,7 @@
         },
         {
           "disabled": false,
-          "document": "固件用户自定义配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固件用户自定义配置信息",
           "example": "{\"key1\":\"value1\", \"key2\":\"支持中文\"}",
           "member": "string",
           "name": "UserDefined",
@@ -4561,7 +4561,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "1134523",
           "member": "uint64",
           "name": "TaskId",
@@ -4571,7 +4571,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -4581,7 +4581,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型",
           "example": "2",
           "member": "int64",
           "name": "Type",
@@ -4591,7 +4591,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务创建时间",
           "example": "1617801604",
           "member": "int64",
           "name": "CreateTime",
@@ -5608,7 +5608,7 @@
         },
         {
           "disabled": false,
-          "document": "资源文件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源文件描述",
           "example": "mydescription",
           "member": "string",
           "name": "Description",
@@ -5684,7 +5684,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行结果类型 cosfile-文件输出 errmsg-错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行结果类型 cosfile-文件输出 errmsg-错误信息",
           "example": "cosfile",
           "member": "string",
           "name": "ResultType",
@@ -5694,7 +5694,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行结果",
           "example": "succ",
           "member": "string",
           "name": "Result",
@@ -5704,7 +5704,7 @@
         },
         {
           "disabled": false,
-          "document": "子任务总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子任务总个数",
           "example": "100",
           "member": "uint64",
           "name": "BatchCount",
@@ -5714,7 +5714,7 @@
         },
         {
           "disabled": false,
-          "document": "子任务已执行个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子任务已执行个数",
           "example": "50",
           "member": "uint64",
           "name": "BatchOffset",
@@ -5744,7 +5744,7 @@
         },
         {
           "disabled": false,
-          "document": "任务完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务完成时间",
           "example": "1617801604",
           "member": "uint64",
           "name": "CompleteTime",
@@ -6017,7 +6017,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因",
           "example": "not exist",
           "member": "string",
           "name": "Reason",
@@ -6261,7 +6261,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -6271,7 +6271,7 @@
         },
         {
           "disabled": false,
-          "document": "统计总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计总数",
           "example": "100",
           "member": "uint64",
           "name": "Total",

@@ -1342,7 +1342,7 @@
         },
         {
           "disabled": false,
-          "document": "任务对应的演练报告信息，null表示未导出报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务对应的演练报告信息，null表示未导出报告",
           "example": "无",
           "member": "TaskReportInfo",
           "name": "ReportInfo",
@@ -2156,7 +2156,7 @@
         },
         {
           "disabled": false,
-          "document": "保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保护策略",
           "example": "系统预留",
           "member": "string",
           "name": "TaskProtectStrategy",
@@ -2200,7 +2200,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskStartTime",
@@ -2211,7 +2211,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskEndTime",
@@ -2222,7 +2222,7 @@
         },
         {
           "disabled": false,
-          "document": "是否符合预期。1：符合预期，2：不符合预期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否符合预期。1：符合预期，2：不符合预期",
           "example": "是否符合预期",
           "member": "int64",
           "name": "TaskExpect",
@@ -2233,7 +2233,7 @@
         },
         {
           "disabled": false,
-          "document": "演习记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "演习记录",
           "example": "演习记录",
           "member": "string",
           "name": "TaskSummary",
@@ -2299,7 +2299,7 @@
         },
         {
           "disabled": false,
-          "document": "保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保护策略",
           "example": "无",
           "member": "DescribePolicy",
           "name": "TaskPolicy",
@@ -2321,7 +2321,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的演练计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的演练计划ID",
           "example": "2458",
           "member": "int64",
           "name": "TaskPlanId",
@@ -2332,7 +2332,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的演练计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的演练计划名称",
           "example": " \"运营端计划\"",
           "member": "string",
           "name": "TaskPlanTitle",
@@ -2343,7 +2343,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的应用ID",
           "example": "\"app-faee9ba9\"",
           "member": "string",
           "name": "ApplicationId",
@@ -2387,7 +2387,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的隐患验证项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的隐患验证项ID",
           "example": "3001",
           "member": "uint64",
           "name": "VerifyId",
@@ -2409,7 +2409,7 @@
         },
         {
           "disabled": false,
-          "document": "计划开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计划开始时间",
           "example": "\"2025-01-14 00:00:00\"",
           "member": "string",
           "name": "TaskPlanStartTime",
@@ -2420,7 +2420,7 @@
         },
         {
           "disabled": false,
-          "document": "计划结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计划结束时间",
           "example": "\"2025-01-14 05:00:00\"",
           "member": "string",
           "name": "TaskPlanEndTime",
@@ -2431,7 +2431,7 @@
         },
         {
           "disabled": false,
-          "document": "人员组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人员组织",
           "example": "[{\"TaskRole\": \"负责人\", \"TaskOperator\": \"张三\"}, {\"TaskRole\": \"记录人\", \"TaskOperator\": \"李四\"}]",
           "member": "TaskOrg",
           "name": "TaskOrg",
@@ -2442,7 +2442,7 @@
         },
         {
           "disabled": false,
-          "document": "问题和改进\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "问题和改进",
           "example": "需要优化自动重连",
           "member": "string",
           "name": "TaskIssue",
@@ -3163,7 +3163,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>实例动作执行日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例动作执行日志</p>",
           "example": "\"2024-01-10 14:01:00 执行完成\"",
           "member": "string",
           "name": "TaskGroupInstanceExecuteLog",
@@ -3588,7 +3588,7 @@
         },
         {
           "disabled": false,
-          "document": "演练报告导出日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "演练报告导出日志",
           "example": "0",
           "member": "string",
           "name": "Log",
@@ -3825,7 +3825,7 @@
         },
         {
           "disabled": false,
-          "document": "护栏监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "护栏监控",
           "example": "无",
           "member": "TemplatePolicy",
           "name": "TemplatePolicy",

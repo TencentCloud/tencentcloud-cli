@@ -3195,7 +3195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户自定义策略子规则列表。IsDefault=false时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义策略子规则列表。IsDefault=false时有值",
           "example": "无",
           "member": "AbnormalProcessChildRuleInfo",
           "name": "ChildRules",
@@ -3255,7 +3255,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组中所有执行动作的去重列表。RULE_MODE_ALERT:告警 RULE_MODE_HOLDUP:拦截\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则组中所有执行动作的去重列表。RULE_MODE_ALERT:告警 RULE_MODE_HOLDUP:拦截",
           "example": "[\"RULE_MODE_ALERT\",\"RULE_MODE_HOLDUP\"]",
           "member": "string",
           "name": "RuleActions",
@@ -3285,7 +3285,7 @@
         },
         {
           "disabled": false,
-          "document": "系统策略子规则列表。IsDefault=true时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统策略子规则列表。IsDefault=true时有值",
           "example": "无",
           "member": "AbnormalProcessSystemChildRuleInfo",
           "name": "SystemChildRules",
@@ -3999,7 +3999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户自定义策略子规则列表。IsDefault=false时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义策略子规则列表。IsDefault=false时有值",
           "example": "无",
           "member": "AccessControlChildRuleInfo",
           "name": "ChildRules",
@@ -4059,7 +4059,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组中所有执行动作的去重列表。RULE_MODE_ALERT:告警 RULE_MODE_HOLDUP:拦截\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则组中所有执行动作的去重列表。RULE_MODE_ALERT:告警 RULE_MODE_HOLDUP:拦截",
           "example": "[\"RULE_MODE_ALERT\",\"RULE_MODE_HOLDUP\"]",
           "member": "string",
           "name": "RuleActions",
@@ -4089,7 +4089,7 @@
         },
         {
           "disabled": false,
-          "document": "系统策略子规则列表。IsDefault=true时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统策略子规则列表。IsDefault=true时有值",
           "example": "无",
           "member": "AccessControlSystemChildRuleInfo",
           "name": "SystemChildRules",
@@ -5604,7 +5604,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定的集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的集群ID</p>",
           "example": "cls-dqxpsm",
           "member": "string",
           "name": "BindRuleID",
@@ -13584,7 +13584,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异常进程策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常进程策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段",
           "example": "无",
           "member": "AbnormalProcessRuleExtSetItem",
           "name": "RuleExtSet",
@@ -14023,7 +14023,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问控制策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问控制策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段",
           "example": "无",
           "member": "AccessControlRuleExtSetItem",
           "name": "RuleExtSet",
@@ -22716,7 +22716,7 @@
         },
         {
           "disabled": false,
-          "document": "规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则内容",
           "example": "rule info",
           "member": "string",
           "name": "RuleInfo",
@@ -23412,7 +23412,7 @@
         },
         {
           "disabled": false,
-          "document": "特权类型,\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "特权类型,",
           "example": "无",
           "member": "string",
           "name": "PrivilegeDetail",
@@ -30944,7 +30944,7 @@
         },
         {
           "disabled": false,
-          "document": "自选排除或扫描的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自选排除或扫描的地址",
           "example": "[]",
           "member": "string",
           "name": "ScanPath",
@@ -38386,7 +38386,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组中所有执行动作的去重列表。当前黑名单仅包含 RULE_MODE_ALERT（告警）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则组中所有执行动作的去重列表。当前黑名单仅包含 RULE_MODE_ALERT（告警）",
           "example": "[\"RULE_MODE_ALERT\"]",
           "member": "string",
           "name": "RuleActions",
@@ -38406,7 +38406,7 @@
         },
         {
           "disabled": false,
-          "document": "子规则内容列表，从 rule_details JSON 反序列化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子规则内容列表，从 rule_details JSON 反序列化",
           "example": "无",
           "member": "K8sApiAbnormalRuleScopeInfo",
           "name": "RuleInfoList",
@@ -42257,7 +42257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则名称",
           "example": "test",
           "member": "string",
           "name": "RuleName",
@@ -42267,7 +42267,7 @@
         },
         {
           "disabled": false,
-          "document": "启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启用状态",
           "example": "无",
           "member": "bool",
           "name": "Status",
@@ -42277,7 +42277,7 @@
         },
         {
           "disabled": false,
-          "document": "正则表达式列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正则表达式列表",
           "example": "无",
           "member": "WhiteListRegexpExpressionInfo",
           "name": "ExpressionList",
@@ -42287,7 +42287,7 @@
         },
         {
           "disabled": false,
-          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则ID",
           "example": "1",
           "member": "string",
           "name": "RuleID",
@@ -42297,7 +42297,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近更新时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -42307,7 +42307,7 @@
         },
         {
           "disabled": false,
-          "document": "最近操作账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近操作账号",
           "example": "无",
           "member": "string",
           "name": "OperatorUIN",
@@ -42323,7 +42323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则ID",
           "example": "无",
           "member": "string",
           "name": "RuleID",
@@ -42333,7 +42333,7 @@
         },
         {
           "disabled": false,
-          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则名称",
           "example": "test",
           "member": "string",
           "name": "RuleName",
@@ -42343,7 +42343,7 @@
         },
         {
           "disabled": false,
-          "document": "生效表达式个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效表达式个数",
           "example": "4",
           "member": "uint64",
           "name": "EffectiveExpression",
@@ -42353,7 +42353,7 @@
         },
         {
           "disabled": false,
-          "document": "最新编辑时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最新编辑时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -42363,7 +42363,7 @@
         },
         {
           "disabled": false,
-          "document": "最近编辑账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近编辑账号",
           "example": "无",
           "member": "string",
           "name": "OperatorUin",
@@ -42373,7 +42373,7 @@
         },
         {
           "disabled": false,
-          "document": "启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启用状态",
           "example": "无",
           "member": "bool",
           "name": "Status",

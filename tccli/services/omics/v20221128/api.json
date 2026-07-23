@@ -1297,7 +1297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "HPC集群。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HPC集群。",
           "example": "无",
           "member": "HPCCluster",
           "name": "Clusters",
@@ -1307,7 +1307,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的数量。",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -1371,7 +1371,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "HPC节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HPC节点。",
           "example": "无",
           "member": "HPCNode",
           "name": "Nodes",
@@ -1381,7 +1381,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的数量。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -1463,7 +1463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>运行应用参数模板列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行应用参数模板列表</p>",
           "example": "无",
           "member": "InputTemplate",
           "name": "InputTemplates",
@@ -1473,7 +1473,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>运行参数模板列表总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行参数模板列表总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -1602,7 +1602,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>公共应用。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公共应用。</p>",
           "example": "无",
           "member": "PublicApplication",
           "name": "Applications",
@@ -1612,7 +1612,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>符合条件的数量。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>符合条件的数量。</p>",
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
@@ -2375,7 +2375,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>COS签名url</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>COS签名url</p>",
           "example": "https://genomics-****",
           "member": "string",
           "name": "CosSignedUrl",
@@ -2385,7 +2385,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模板内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板内容</p>",
           "example": "{\"FastpDemo.in1\":\"cos://***\",\"FastpDemo.in2\":\"cos://***\",\"FastpDemo.RunFastp.json\":\"fastp.json\",\"FastpDemo.RunFastp.html\":\"fastp.html\",\"FastpDemo.RunFastp.report_title\":\"fastp report\"}",
           "member": "string",
           "name": "Content",
@@ -3337,7 +3337,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用ID</p>",
           "example": "app-unique-olive-yeti-950894",
           "member": "string",
           "name": "ApplicationId",

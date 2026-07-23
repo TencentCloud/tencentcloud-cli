@@ -9833,7 +9833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称",
           "example": "微瓴同业-新购",
           "member": "string",
           "name": "ProductName",
@@ -9843,7 +9843,7 @@
         },
         {
           "disabled": false,
-          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源Id",
           "example": "nCovUW2bua9HzWLV",
           "member": "string",
           "name": "ResourceId",
@@ -9853,7 +9853,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "包年包月",
           "member": "string",
           "name": "ResourceType",
@@ -9863,7 +9863,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2023-05-16 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -9873,7 +9873,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态（待开通WAIT_OPEN，已使用IN_USE，已到期EXPIRED，已关闭CLOSED）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源状态（待开通WAIT_OPEN，已使用IN_USE，已到期EXPIRED，已关闭CLOSED）",
           "example": "IN_USE",
           "member": "string",
           "name": "Status",
@@ -9883,7 +9883,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单号",
           "example": "20230519199000015275111",
           "member": "string",
           "name": "BigDealId",
@@ -9893,7 +9893,7 @@
         },
         {
           "disabled": false,
-          "document": "项目空间Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目空间Id",
           "example": "2023051612345678",
           "member": "string",
           "name": "ProjectId",
@@ -9903,7 +9903,7 @@
         },
         {
           "disabled": false,
-          "document": "开通时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开通时长",
           "example": "1.5年",
           "member": "string",
           "name": "TimeSpan",
@@ -9913,7 +9913,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标识，true是，false否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "续费标识，true是，false否",
           "example": "true",
           "member": "bool",
           "name": "RenewFlag",
@@ -9923,7 +9923,7 @@
         },
         {
           "disabled": false,
-          "document": "版本信息，base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本信息，base64编码",
           "example": "eyJwdXJjaGFzZVZlcnNpb24iOiIzIiwiaXNWaWRlb0Nsb3VkIjp0cnVlLCJ2aWRlb0Nvc1N0b3JhZ2VUaW1lIjoxMDAsInZpZGVvQ29zUm9hZCI6Mn0=",
           "member": "string",
           "name": "VersionInfo",
@@ -9933,7 +9933,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间",
           "example": "2023-05-16 12:00:00",
           "member": "string",
           "name": "ExpireTime",

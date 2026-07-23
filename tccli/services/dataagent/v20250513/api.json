@@ -1846,7 +1846,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>切片分隔符,自定义切片使用：默认值为：[&quot;\\n\\n&quot;, &quot;\\n&quot;, &quot;。&quot;, &quot;！&quot;, &quot;？&quot;, &quot;，&quot;, &quot;&quot;]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>切片分隔符,自定义切片使用：默认值为：[&quot;\\n\\n&quot;, &quot;\\n&quot;, &quot;。&quot;, &quot;！&quot;, &quot;？&quot;, &quot;，&quot;, &quot;&quot;]</p>",
           "example": "[\",\",\"|\"]",
           "member": "string",
           "name": "Delimiters",

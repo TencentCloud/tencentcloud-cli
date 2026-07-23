@@ -2011,7 +2011,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否更新到关联的Datahub任务",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
@@ -2533,7 +2533,7 @@
         },
         {
           "disabled": false,
-          "document": "最小同步复制数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小同步复制数",
           "example": "1",
           "member": "int64",
           "name": "MinInsyncReplicas",
@@ -2543,7 +2543,7 @@
         },
         {
           "disabled": false,
-          "document": "日志清理模式，默认 delete。\ndelete：日志按保存时间删除；compact：日志按 key 压缩；compact, delete：日志按 key 压缩且会保存时间删除。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志清理模式，默认 delete。\ndelete：日志按保存时间删除；compact：日志按 key 压缩；compact, delete：日志按 key 压缩且会保存时间删除。",
           "example": "delete",
           "member": "string",
           "name": "CleanUpPolicy",
@@ -2553,7 +2553,7 @@
         },
         {
           "disabled": false,
-          "document": "Segment 分片滚动的时长，单位ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Segment 分片滚动的时长，单位ms。",
           "example": "86400000",
           "member": "int64",
           "name": "SegmentMs",
@@ -2563,7 +2563,7 @@
         },
         {
           "disabled": false,
-          "document": "0表示 false。 1表示 true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0表示 false。 1表示 true。",
           "example": "0",
           "member": "int64",
           "name": "UncleanLeaderElectionEnable",
@@ -2573,7 +2573,7 @@
         },
         {
           "disabled": false,
-          "document": "Segment 分片滚动的字节数，单位bytes\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Segment 分片滚动的字节数，单位bytes",
           "example": "104857600",
           "member": "int64",
           "name": "SegmentBytes",
@@ -2583,7 +2583,7 @@
         },
         {
           "disabled": false,
-          "document": "最大消息字节数，单位bytes\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大消息字节数，单位bytes",
           "example": "1024",
           "member": "int64",
           "name": "MaxMessageBytes",
@@ -2593,7 +2593,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留文件大小，单位Bytes\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息保留文件大小，单位Bytes",
           "example": "1073741824",
           "member": "int64",
           "name": "RetentionBytes",
@@ -2603,7 +2603,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保存的时间类型，CreateTime表示生产者创建这条消息的时间;LogAppendTime表示broker接收到消息的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息保存的时间类型，CreateTime表示生产者创建这条消息的时间;LogAppendTime表示broker接收到消息的时间。",
           "example": "LogAppendTime",
           "member": "string",
           "name": "LogMsgTimestampType",
@@ -2865,7 +2865,7 @@
         },
         {
           "disabled": false,
-          "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息key",
           "example": "key-test",
           "member": "string",
           "name": "Key",
@@ -2875,7 +2875,7 @@
         },
         {
           "disabled": false,
-          "document": "消息value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息value",
           "example": "value-test",
           "member": "string",
           "name": "Value",
@@ -2895,7 +2895,7 @@
         },
         {
           "disabled": false,
-          "document": "消息headers\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息headers",
           "example": "header-test",
           "member": "string",
           "name": "Headers",
@@ -4158,7 +4158,7 @@
         },
         {
           "disabled": true,
-          "document": "删除时间。目前该参数字段已废弃，将会在未来被删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除时间。目前该参数字段已废弃，将会在未来被删除",
           "example": "N/A",
           "member": "string",
           "name": "DeleteRouteTimestamp",
@@ -5558,7 +5558,7 @@
         },
         {
           "disabled": false,
-          "document": "ckafka配置，Type为KAFKA时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ckafka配置，Type为KAFKA时必填",
           "example": "无",
           "member": "KafkaParam",
           "name": "KafkaParam",
@@ -5569,7 +5569,7 @@
         },
         {
           "disabled": false,
-          "document": "EB配置，Type为EB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EB配置，Type为EB时必填",
           "example": "无",
           "member": "EventBusParam",
           "name": "EventBusParam",
@@ -5580,7 +5580,7 @@
         },
         {
           "disabled": false,
-          "document": "MongoDB配置，Type为MONGODB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MongoDB配置，Type为MONGODB时必填",
           "example": "无",
           "member": "MongoDBParam",
           "name": "MongoDBParam",
@@ -5591,7 +5591,7 @@
         },
         {
           "disabled": false,
-          "document": "Es配置，Type为ES时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Es配置，Type为ES时必填",
           "example": "无",
           "member": "EsParam",
           "name": "EsParam",
@@ -5602,7 +5602,7 @@
         },
         {
           "disabled": false,
-          "document": "Tdw配置，Type为TDW时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Tdw配置，Type为TDW时必填",
           "example": "无",
           "member": "TdwParam",
           "name": "TdwParam",
@@ -5613,7 +5613,7 @@
         },
         {
           "disabled": false,
-          "document": "Dts配置，Type为DTS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dts配置，Type为DTS时必填",
           "example": "无",
           "member": "DtsParam",
           "name": "DtsParam",
@@ -5624,7 +5624,7 @@
         },
         {
           "disabled": false,
-          "document": "ClickHouse配置，Type为CLICKHOUSE时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ClickHouse配置，Type为CLICKHOUSE时必填",
           "example": "无",
           "member": "ClickHouseParam",
           "name": "ClickHouseParam",
@@ -5635,7 +5635,7 @@
         },
         {
           "disabled": false,
-          "document": "Cls配置，Type为CLS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cls配置，Type为CLS时必填",
           "example": "无",
           "member": "ClsParam",
           "name": "ClsParam",
@@ -5646,7 +5646,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos配置，Type为COS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cos配置，Type为COS时必填",
           "example": "无",
           "member": "CosParam",
           "name": "CosParam",
@@ -5657,7 +5657,7 @@
         },
         {
           "disabled": false,
-          "document": "MySQL配置，Type为MYSQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MySQL配置，Type为MYSQL时必填",
           "example": "无",
           "member": "MySQLParam",
           "name": "MySQLParam",
@@ -5668,7 +5668,7 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填",
           "example": "无",
           "member": "PostgreSQLParam",
           "name": "PostgreSQLParam",
@@ -5679,7 +5679,7 @@
         },
         {
           "disabled": false,
-          "document": "Topic配置，Type为Topic时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Topic配置，Type为Topic时必填",
           "example": "无",
           "member": "TopicParam",
           "name": "TopicParam",
@@ -5690,7 +5690,7 @@
         },
         {
           "disabled": false,
-          "document": "MariaDB配置，Type为MARIADB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MariaDB配置，Type为MARIADB时必填",
           "example": "无",
           "member": "MariaDBParam",
           "name": "MariaDBParam",
@@ -5701,7 +5701,7 @@
         },
         {
           "disabled": false,
-          "document": "SQLServer配置，Type为SQLSERVER时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SQLServer配置，Type为SQLSERVER时必填",
           "example": "无",
           "member": "SQLServerParam",
           "name": "SQLServerParam",
@@ -5712,7 +5712,7 @@
         },
         {
           "disabled": false,
-          "document": "Ctsdb配置，Type为CTSDB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Ctsdb配置，Type为CTSDB时必填",
           "example": "无",
           "member": "CtsdbParam",
           "name": "CtsdbParam",
@@ -5723,7 +5723,7 @@
         },
         {
           "disabled": false,
-          "document": "Scf配置，Type为SCF时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Scf配置，Type为SCF时必填",
           "example": "无",
           "member": "ScfParam",
           "name": "ScfParam",
@@ -5734,7 +5734,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT配置，Type为 MQTT 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MQTT配置，Type为 MQTT 时必填",
           "example": "无",
           "member": "MqttParam",
           "name": "MqttParam",
@@ -7269,7 +7269,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ip地址",
           "example": "10.0.0.1",
           "member": "string",
           "name": "IpAddr",
@@ -7279,7 +7279,7 @@
         },
         {
           "disabled": false,
-          "document": "连结时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连结时间",
           "example": "2020-08-21 11:15:54",
           "member": "string",
           "name": "Time",
@@ -7415,7 +7415,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Dts配置，Type为DTS时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Dts配置，Type为DTS时返回</p>",
           "example": "无",
           "member": "DtsConnectParam",
           "name": "DtsConnectParam",
@@ -7425,7 +7425,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>MongoDB配置，Type为MONGODB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MongoDB配置，Type为MONGODB时返回</p>",
           "example": "无",
           "member": "MongoDBConnectParam",
           "name": "MongoDBConnectParam",
@@ -7435,7 +7435,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Es配置，Type为ES时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Es配置，Type为ES时返回</p>",
           "example": "无",
           "member": "EsConnectParam",
           "name": "EsConnectParam",
@@ -7445,7 +7445,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>ClickHouse配置，Type为CLICKHOUSE时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>ClickHouse配置，Type为CLICKHOUSE时返回</p>",
           "example": "无",
           "member": "ClickHouseConnectParam",
           "name": "ClickHouseConnectParam",
@@ -7455,7 +7455,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>",
           "example": "无",
           "member": "MySQLConnectParam",
           "name": "MySQLConnectParam",
@@ -7465,7 +7465,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>",
           "example": "无",
           "member": "PostgreSQLConnectParam",
           "name": "PostgreSQLConnectParam",
@@ -7475,7 +7475,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>MariaDB配置，Type为MARIADB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MariaDB配置，Type为MARIADB时返回</p>",
           "example": "无",
           "member": "MariaDBConnectParam",
           "name": "MariaDBConnectParam",
@@ -7485,7 +7485,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>SQLServer配置，Type为SQLSERVER时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SQLServer配置，Type为SQLSERVER时返回</p>",
           "example": "无",
           "member": "SQLServerConnectParam",
           "name": "SQLServerConnectParam",
@@ -7495,7 +7495,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Ctsdb配置，Type为CTSDB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Ctsdb配置，Type为CTSDB时返回</p>",
           "example": "无",
           "member": "CtsdbConnectParam",
           "name": "CtsdbConnectParam",
@@ -7505,7 +7505,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Doris 配置，Type 为 DORIS 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Doris 配置，Type 为 DORIS 时返回</p>",
           "example": "无",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
@@ -7515,7 +7515,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Kafka配置，Type 为 KAFKA 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kafka配置，Type 为 KAFKA 时返回</p>",
           "example": "无",
           "member": "KafkaConnectParam",
           "name": "KafkaConnectParam",
@@ -7525,7 +7525,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>MQTT配置，Type 为 MQTT 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MQTT配置，Type 为 MQTT 时返回</p>",
           "example": "无",
           "member": "MqttConnectParam",
           "name": "MqttConnectParam",
@@ -7646,7 +7646,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>步骤列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>步骤列表</p>",
           "example": "[\"step-test\"]",
           "member": "string",
           "name": "StepList",
@@ -7656,7 +7656,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>",
           "example": "无",
           "member": "MySQLConnectParam",
           "name": "MySQLConnectParam",
@@ -7666,7 +7666,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>",
           "example": "无",
           "member": "PostgreSQLConnectParam",
           "name": "PostgreSQLConnectParam",
@@ -7676,7 +7676,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Dts配置，Type为DTS时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Dts配置，Type为DTS时返回</p>",
           "example": "无",
           "member": "DtsConnectParam",
           "name": "DtsConnectParam",
@@ -7686,7 +7686,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>MongoDB配置，Type为MONGODB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MongoDB配置，Type为MONGODB时返回</p>",
           "example": "无",
           "member": "MongoDBConnectParam",
           "name": "MongoDBConnectParam",
@@ -7696,7 +7696,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Es配置，Type为ES时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Es配置，Type为ES时返回</p>",
           "example": "无",
           "member": "EsConnectParam",
           "name": "EsConnectParam",
@@ -7706,7 +7706,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>ClickHouse配置，Type为CLICKHOUSE时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>ClickHouse配置，Type为CLICKHOUSE时返回</p>",
           "example": "无",
           "member": "ClickHouseConnectParam",
           "name": "ClickHouseConnectParam",
@@ -7716,7 +7716,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>MariaDB配置，Type为MARIADB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MariaDB配置，Type为MARIADB时返回</p>",
           "example": "无",
           "member": "MariaDBConnectParam",
           "name": "MariaDBConnectParam",
@@ -7726,7 +7726,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>SQLServer配置，Type为SQLSERVER时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SQLServer配置，Type为SQLSERVER时返回</p>",
           "example": "无",
           "member": "SQLServerConnectParam",
           "name": "SQLServerConnectParam",
@@ -7736,7 +7736,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Ctsdb配置，Type为CTSDB时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Ctsdb配置，Type为CTSDB时返回</p>",
           "example": "无",
           "member": "CtsdbConnectParam",
           "name": "CtsdbConnectParam",
@@ -7746,7 +7746,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Doris 配置，Type 为 DORIS 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Doris 配置，Type 为 DORIS 时返回</p>",
           "example": "无",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
@@ -7756,7 +7756,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Kafka配置，Type 为 KAFKA 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kafka配置，Type 为 KAFKA 时返回</p>",
           "example": "无",
           "member": "KafkaConnectParam",
           "name": "KafkaConnectParam",
@@ -7766,7 +7766,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>MQTT配置，Type 为 MQTT 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MQTT配置，Type 为 MQTT 时返回</p>",
           "example": "无",
           "member": "MqttConnectParam",
           "name": "MqttConnectParam",
@@ -8191,7 +8191,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>消息处理规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息处理规则</p>",
           "example": "无",
           "member": "TransformParam",
           "name": "TransformParam",
@@ -8231,7 +8231,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据处理规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据处理规则</p>",
           "example": "无",
           "member": "TransformsParam",
           "name": "TransformsParam",
@@ -10971,7 +10971,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "动态硬盘扩容配置开关（0: 关闭，1: 开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "动态硬盘扩容配置开关（0: 关闭，1: 开启）",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -10982,7 +10982,7 @@
         },
         {
           "disabled": false,
-          "document": "每次磁盘动态扩容大小百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每次磁盘动态扩容大小百分比",
           "example": "15",
           "member": "int64",
           "name": "StepForwardPercentage",
@@ -10993,7 +10993,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘配额百分比触发条件，即消息达到此值触发硬盘自动扩容事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘配额百分比触发条件，即消息达到此值触发硬盘自动扩容事件",
           "example": "70",
           "member": "int64",
           "name": "DiskQuotaPercentage",
@@ -11004,7 +11004,7 @@
         },
         {
           "disabled": false,
-          "document": "最大扩容硬盘大小，以 GB 为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大扩容硬盘大小，以 GB 为单位",
           "example": "1000",
           "member": "int64",
           "name": "MaxDiskSpace",
@@ -11021,7 +11021,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "动态消息保留时间配置开关（0: 关闭，1: 开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "动态消息保留时间配置开关（0: 关闭，1: 开启）",
           "example": "0",
           "member": "int64",
           "name": "Enable",
@@ -11032,7 +11032,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘配额百分比触发条件，即消息达到此值触发消息保留时间变更事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘配额百分比触发条件，即消息达到此值触发消息保留时间变更事件",
           "example": "75",
           "member": "int64",
           "name": "DiskQuotaPercentage",
@@ -11043,7 +11043,7 @@
         },
         {
           "disabled": false,
-          "document": "每次向前调整消息保留时间百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每次向前调整消息保留时间百分比",
           "example": "10",
           "member": "int64",
           "name": "StepForwardPercentage",
@@ -11054,7 +11054,7 @@
         },
         {
           "disabled": false,
-          "document": "保底时长，单位分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保底时长，单位分钟",
           "example": "360",
           "member": "int64",
           "name": "BottomRetention",
@@ -11148,7 +11148,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否更新到关联的Datahub任务",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
@@ -12531,7 +12531,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "201324123421342",
           "member": "string",
           "name": "AsyncRequestId",
@@ -12696,7 +12696,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网带宽价格",
           "example": "{\"UnitPrice\":0,\"UnitPriceDiscount\":0,\"OriginalPrice\":0,\"DiscountPrice\":0,\"Discount\":100,\"GoodsNum\":null,\"Currency\":null,\"DiskType\":null,\"TimeSpan\":null,\"TimeUnit\":null,\"Value\":0}",
           "member": "InquiryPrice",
           "name": "PublicNetworkBandwidthPrice",
@@ -12784,7 +12784,7 @@
         },
         {
           "disabled": false,
-          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品数量",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
@@ -12794,7 +12794,7 @@
         },
         {
           "disabled": false,
-          "document": "付费货币\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费货币",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -12804,7 +12804,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘专用返回参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬盘专用返回参数",
           "example": "SSD",
           "member": "string",
           "name": "DiskType",
@@ -12814,7 +12814,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买时长",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -12824,7 +12824,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长单位(\"m\"按月, \"h\"按小时)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买时长单位(\"m\"按月, \"h\"按小时)",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -12850,7 +12850,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "额外内网带宽价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外内网带宽价格",
           "example": "{\"UnitPrice\":0,\"UnitPriceDiscount\":0,\"OriginalPrice\":0,\"DiscountPrice\":0,\"Discount\":100,\"GoodsNum\":null,\"Currency\":null,\"DiskType\":null,\"TimeSpan\":null,\"TimeUnit\":null,\"Value\":0}",
           "member": "InquiryBasePrice",
           "name": "BandwidthPrice",
@@ -12860,7 +12860,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬盘价格",
           "example": "{\"UnitPrice\":175,\"UnitPriceDiscount\":50.1,\"OriginalPrice\":175,\"DiscountPrice\":50.1,\"Discount\":28.3,\"GoodsNum\":null,\"Currency\":null,\"DiskType\":\"CLOUD_BASIC\",\"TimeSpan\":null,\"TimeUnit\":null,\"Value\":500}",
           "member": "InquiryBasePrice",
           "name": "DiskPrice",
@@ -12870,7 +12870,7 @@
         },
         {
           "disabled": false,
-          "document": "额外分区价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外分区价格",
           "example": "{\"UnitPrice\":0,\"UnitPriceDiscount\":0,\"OriginalPrice\":0,\"DiscountPrice\":0,\"Discount\":100,\"GoodsNum\":null,\"Currency\":null,\"DiskType\":null,\"TimeSpan\":null,\"TimeUnit\":null,\"Value\":0}",
           "member": "InquiryBasePrice",
           "name": "PartitionPrice",
@@ -12880,7 +12880,7 @@
         },
         {
           "disabled": false,
-          "document": "额外Topic价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外Topic价格",
           "example": "{\"DetailPrices\":null,\"UnitPrice\":0,\"UnitPriceDiscount\":0,\"OriginalPrice\":0,\"DiscountPrice\":0,\"Discount\":100,\"GoodsNum\":null,\"Currency\":null,\"DiskType\":null,\"TimeSpan\":null,\"TimeUnit\":null,\"Value\":0}",
           "member": "InquiryBasePrice",
           "name": "TopicPrice",
@@ -13000,7 +13000,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘专用返回参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬盘专用返回参数",
           "example": "SSD",
           "member": "string",
           "name": "DiskType",
@@ -13030,7 +13030,7 @@
         },
         {
           "disabled": false,
-          "document": "购买数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买数量",
           "example": "100",
           "member": "int64",
           "name": "Value",
@@ -13040,7 +13040,7 @@
         },
         {
           "disabled": false,
-          "document": "详细类别的价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细类别的价格",
           "example": "无",
           "member": "InquiryDetailPrice",
           "name": "DetailPrices",
@@ -14052,7 +14052,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生产限流大小，单位 MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生产限流大小，单位 MB/s",
           "example": "30",
           "member": "int64",
           "name": "QuotaProducerByteRate",
@@ -14062,7 +14062,7 @@
         },
         {
           "disabled": false,
-          "document": "消费限流大小，单位 MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消费限流大小，单位 MB/s",
           "example": "30",
           "member": "int64",
           "name": "QuotaConsumerByteRate",
@@ -14366,7 +14366,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>操作型返回的Data数据,可能有flowId等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作型返回的Data数据,可能有flowId等</p>",
           "example": "无",
           "member": "OperateResponseData",
           "name": "Data",
@@ -14479,7 +14479,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新到关联的Dip任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否更新到关联的Dip任务",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
@@ -14617,7 +14617,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp</p>",
           "example": "timestamp",
           "member": "string",
           "name": "OffsetType",
@@ -14628,7 +14628,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Offset类型为timestamp时必传，传时间戳，精确到秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Offset类型为timestamp时必传，传时间戳，精确到秒</p>",
           "example": "1566144000",
           "member": "uint64",
           "name": "StartTime",
@@ -14639,7 +14639,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例资源名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例资源名称</p>",
           "example": "ckafka测试",
           "member": "string",
           "name": "ResourceName",
@@ -14650,7 +14650,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>",
           "example": "100003",
           "member": "int64",
           "name": "ZoneId",
@@ -14661,7 +14661,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>主题Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主题Id</p>",
           "example": "topic-test",
           "member": "string",
           "name": "TopicId",
@@ -14672,7 +14672,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Topic的分区数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Topic的分区数</p>",
           "example": "1",
           "member": "int64",
           "name": "PartitionNum",
@@ -14683,7 +14683,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>启用容错实例/开启死信队列</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>启用容错实例/开启死信队列</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableToleration",
@@ -14705,7 +14705,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Table到Topic的路由，「分发到多个topic」开关打开时必传</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Table到Topic的路由，「分发到多个topic」开关打开时必传</p>",
           "example": "无",
           "member": "TableMapping",
           "name": "TableMappings",
@@ -16782,7 +16782,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新到关联的Dip任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否更新到关联的Dip任务",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
@@ -17036,7 +17036,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否更新到关联的Datahub任务",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
@@ -17455,7 +17455,7 @@
         },
         {
           "disabled": false,
-          "document": "信号表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "信号表",
           "example": "table-test",
           "member": "string",
           "name": "SignalTable",
@@ -17603,7 +17603,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务id</p>",
           "example": "无",
           "member": "DatahubTaskIdRes",
           "name": "Result",
@@ -18136,7 +18136,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息的 key 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息的 key 名称",
           "example": "test-key",
           "member": "string",
           "name": "JsonKey",
@@ -18158,7 +18158,7 @@
         },
         {
           "disabled": false,
-          "document": "消息是否允许为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息是否允许为空",
           "example": "false",
           "member": "bool",
           "name": "AllowNull",
@@ -18169,7 +18169,7 @@
         },
         {
           "disabled": false,
-          "document": "对应映射列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对应映射列名称",
           "example": "column_test",
           "member": "string",
           "name": "ColumnName",
@@ -18180,7 +18180,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库表额外字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库表额外字段",
           "example": "AUTO_INCREMENT COMMENT 'ID'",
           "member": "string",
           "name": "ExtraInfo",
@@ -18191,7 +18191,7 @@
         },
         {
           "disabled": false,
-          "document": "当前列大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前列大小",
           "example": "32",
           "member": "string",
           "name": "ColumnSize",
@@ -18202,7 +18202,7 @@
         },
         {
           "disabled": false,
-          "document": "当前列精度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前列精度",
           "example": "10",
           "member": "string",
           "name": "DecimalDigits",
@@ -18213,7 +18213,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为自增列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为自增列",
           "example": "true",
           "member": "bool",
           "name": "AutoIncrement",
@@ -18224,7 +18224,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库表默认参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库表默认参数",
           "example": "0",
           "member": "string",
           "name": "DefaultValue",
@@ -18553,7 +18553,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务id</p>",
           "example": "无",
           "member": "DatahubTaskIdRes",
           "name": "Result",
@@ -18590,7 +18590,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务id</p>",
           "example": "无",
           "member": "DatahubTaskIdRes",
           "name": "Result",
@@ -18652,7 +18652,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>域名</p>",
           "example": "tencent.com",
           "member": "string",
           "name": "Domain",
@@ -18662,7 +18662,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>域名port</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>域名port</p>",
           "example": "0",
           "member": "int64",
           "name": "DomainPort",
@@ -18682,7 +18682,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>子网Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网Id</p>",
           "example": "subnet-test",
           "member": "string",
           "name": "Subnet",
@@ -18712,7 +18712,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>私有网络Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>私有网络Id</p>",
           "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
@@ -18722,7 +18722,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>备注信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备注信息</p>",
           "example": "note-test",
           "member": "string",
           "name": "Note",
@@ -18732,7 +18732,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>路由的状态。1: 创建中，2: 创建成功，3: 创建失败，4: 删除中，6: 删除失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>路由的状态。1: 创建中，2: 创建成功，3: 创建失败，4: 删除中，6: 删除失败</p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -19818,7 +19818,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "note-test",
           "member": "string",
           "name": "Note",
@@ -20100,7 +20100,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表",
           "example": "[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]",
           "member": "Tag",
           "name": "Tags",
@@ -20463,7 +20463,7 @@
         },
         {
           "disabled": false,
-          "document": "Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp",
           "example": "timestamp",
           "member": "string",
           "name": "OffsetType",
@@ -20474,7 +20474,7 @@
         },
         {
           "disabled": false,
-          "document": "Offset类型为timestamp时必传，传时间戳，精确到秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Offset类型为timestamp时必传，传时间戳，精确到秒",
           "example": "1566144000",
           "member": "uint64",
           "name": "StartTime",
@@ -21105,7 +21105,7 @@
         },
         {
           "disabled": false,
-          "document": "替换，TYPE=REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "替换，TYPE=REPLACE时必传",
           "example": "{\"OldValue\":\"old\",\"NewValue\":\"new\"}",
           "member": "ReplaceParam",
           "name": "Replace",
@@ -21116,7 +21116,7 @@
         },
         {
           "disabled": false,
-          "document": "截取，TYPE=SUBSTR时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "截取，TYPE=SUBSTR时必传",
           "example": "{\"Start\":0,\"End\":7}",
           "member": "SubstrParam",
           "name": "Substr",
@@ -21127,7 +21127,7 @@
         },
         {
           "disabled": false,
-          "document": "时间转换，TYPE=DATE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间转换，TYPE=DATE时必传",
           "example": "{\"Format\":\"yyyy-MM-dd HH:mm:ss\",\"TargetType\":\"string\",\"TimeZone\":\"GMT+8\"}",
           "member": "DateParam",
           "name": "Date",
@@ -21138,7 +21138,7 @@
         },
         {
           "disabled": false,
-          "document": "正则替换，TYPE=REGEX_REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正则替换，TYPE=REGEX_REPLACE时必传",
           "example": "{\"Regex\":\"^[0-9]*$\",\"NewValue\":\"newValue-test\"}",
           "member": "RegexReplaceParam",
           "name": "RegexReplace",
@@ -21149,7 +21149,7 @@
         },
         {
           "disabled": false,
-          "document": "值支持一拆多，TYPE=SPLIT时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值支持一拆多，TYPE=SPLIT时必传",
           "example": "{\"Regex\":\",\"}",
           "member": "SplitParam",
           "name": "Split",
@@ -21160,7 +21160,7 @@
         },
         {
           "disabled": false,
-          "document": "key-value二次解析，TYPE=KV时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "key-value二次解析，TYPE=KV时必传",
           "example": "{\"Delimiter\":\";\",\"Regex\":\"=\",\"KeepOriginalKey\":\"false\"}",
           "member": "KVParam",
           "name": "KV",
@@ -21171,7 +21171,7 @@
         },
         {
           "disabled": false,
-          "document": "处理结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理结果",
           "example": "result-test",
           "member": "string",
           "name": "Result",
@@ -21182,7 +21182,7 @@
         },
         {
           "disabled": false,
-          "document": "JsonPath替换，TYPE=JSON_PATH_REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "JsonPath替换，TYPE=JSON_PATH_REPLACE时必传",
           "example": "{\"OldValue\":\"$.old\",\"NewValue\":\"$.new\"}",
           "member": "JsonPathReplaceParam",
           "name": "JsonPathReplace",
@@ -21193,7 +21193,7 @@
         },
         {
           "disabled": false,
-          "document": "Url解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Url解析",
           "example": "{\"CharsetName\":\"UTF-8\"}",
           "member": "UrlDecodeParam",
           "name": "UrlDecode",
@@ -21204,7 +21204,7 @@
         },
         {
           "disabled": false,
-          "document": "小写字符解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小写字符解析",
           "example": "{}",
           "member": "LowercaseParam",
           "name": "Lowercase",

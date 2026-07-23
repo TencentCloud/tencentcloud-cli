@@ -31,7 +31,7 @@
         },
         {
           "disabled": false,
-          "document": "内容分片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容分片",
           "example": "无",
           "member": "ChatEventContentPart",
           "name": "Parts",

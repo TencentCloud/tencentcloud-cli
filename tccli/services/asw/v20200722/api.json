@@ -301,7 +301,7 @@
         },
         {
           "disabled": false,
-          "document": "执行的输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行的输入",
           "example": "",
           "member": "string",
           "name": "Input",
@@ -310,7 +310,7 @@
         },
         {
           "disabled": false,
-          "document": "执行的输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行的输出",
           "example": "",
           "member": "string",
           "name": "Output",
@@ -438,7 +438,7 @@
         },
         {
           "disabled": false,
-          "document": "定义文本（JSON格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定义文本（JSON格式）",
           "example": "{\"Comment\":\"An example of the Amazon States Language using a map state to process elements of an array with a max concurrency of 2.\",\"StartAt\":\"Map\",\"States\":{\"Map\":{\"Type\":\"Map\",\"ItemsPath\":\"$.job-spec\",\"ResultPath\":\"$.array\",\"MaxConcurrency\":2,\"Next\":\"Final State\",\"Iterator\":{\"StartAt\":\"My Stage\",\"States\":{\"My Stage\":{\"Type\":\"Task\",\"Resource\":\"arn:aws:states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"arn:aws:lambda:us-east-1:<>:function:some-lambda:$LATEST\",\"Payload\":{\"Input.$\":\"$.array\"}},\"End\":true}}}},\"Final State\":{\"Type\":\"Pass\",\"End\":true}}}",
           "member": "string",
           "name": "Definition",
@@ -448,7 +448,7 @@
         },
         {
           "disabled": false,
-          "document": "角色资源名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色资源名",
           "example": "qrn:qcs:asw:sh:1300074211:http:qrn",
           "member": "string",
           "name": "RoleResource",
@@ -478,7 +478,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "这是一个用来做演示的状态机",
           "member": "string",
           "name": "Description",
@@ -488,7 +488,7 @@
         },
         {
           "disabled": false,
-          "document": "状态机所属服务中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态机所属服务中文名",
           "example": "状态机中文名称",
           "member": "string",
           "name": "FlowServiceChineseName",
@@ -498,7 +498,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启日志CLS服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启日志CLS服务",
           "example": "1",
           "member": "bool",
           "name": "EnableCLS",
@@ -508,7 +508,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志查看地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CLS日志查看地址",
           "example": "https://console.cloud.tencent.com/cls",
           "member": "string",
           "name": "CLSUrl",
@@ -518,7 +518,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流提示输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作流提示输入",
           "example": "无",
           "member": "string",
           "name": "FlowInput",
@@ -673,7 +673,7 @@
         },
         {
           "disabled": false,
-          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常信息",
           "example": "",
           "member": "string",
           "name": "Exception",
@@ -969,7 +969,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者的subAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者的subAccountUin",
           "example": "",
           "member": "string",
           "name": "Creator",
@@ -979,7 +979,7 @@
         },
         {
           "disabled": false,
-          "document": "修改者的subAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改者的subAccountUin",
           "example": "",
           "member": "string",
           "name": "Modifier",

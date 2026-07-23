@@ -48,7 +48,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编码",
           "example": "无",
           "member": "int64",
           "name": "Code",
@@ -58,7 +58,7 @@
         },
         {
           "disabled": false,
-          "document": "信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "信息",
           "example": "无",
           "member": "string",
           "name": "Message",
@@ -655,7 +655,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "base64图片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "base64图片",
           "example": "无",
           "member": "string",
           "name": "Data",
@@ -714,7 +714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入类型",
           "example": "无",
           "member": "string",
           "name": "InputType",
@@ -724,7 +724,7 @@
         },
         {
           "disabled": false,
-          "document": "字段Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段Key",
           "example": "无",
           "member": "string",
           "name": "FieldKey",
@@ -734,7 +734,7 @@
         },
         {
           "disabled": false,
-          "document": "数据类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据类型",
           "example": "无",
           "member": "string",
           "name": "DataType",
@@ -744,7 +744,7 @@
         },
         {
           "disabled": false,
-          "document": "字段中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段中文名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -754,7 +754,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举值",
           "example": "无",
           "member": "InputJsonEnumData",
           "name": "Enum",
@@ -764,7 +764,7 @@
         },
         {
           "disabled": false,
-          "document": "是否必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否必填",
           "example": "无",
           "member": "bool",
           "name": "Required",
@@ -774,7 +774,7 @@
         },
         {
           "disabled": false,
-          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认值",
           "example": "无",
           "member": "string",
           "name": "Default",
@@ -784,7 +784,7 @@
         },
         {
           "disabled": false,
-          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单位",
           "example": "无",
           "member": "string",
           "name": "Unit",
@@ -794,7 +794,7 @@
         },
         {
           "disabled": false,
-          "document": "提示词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提示词",
           "example": "无",
           "member": "string",
           "name": "Prompt",
@@ -810,7 +810,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "枚举值key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举值key",
           "example": "无",
           "member": "string",
           "name": "EnumKey",
@@ -820,7 +820,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举值Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举值Value",
           "example": "无",
           "member": "string",
           "name": "EnumValue",
@@ -836,7 +836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发送md内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送md内容",
           "example": "无",
           "member": "string",
           "name": "Content",
@@ -853,7 +853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人ID",
           "example": "无",
           "member": "string",
           "name": "Sender",
@@ -864,7 +864,7 @@
         },
         {
           "disabled": false,
-          "document": "企微组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企微组",
           "example": "无",
           "member": "string",
           "name": "GroupReceivers",
@@ -875,7 +875,7 @@
         },
         {
           "disabled": false,
-          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容",
           "example": "无",
           "member": "MarkdownContent",
           "name": "Markdown",
@@ -886,7 +886,7 @@
         },
         {
           "disabled": false,
-          "document": "认证token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证token",
           "example": "无",
           "member": "string",
           "name": "AppToken",
@@ -936,7 +936,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "赔付结果类型：1:满足，2：不满足，3：不支持当前场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "赔付结果类型：1:满足，2：不满足，3：不支持当前场景",
           "example": "1",
           "member": "int64",
           "name": "PaymentResType",
@@ -946,7 +946,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -956,7 +956,7 @@
         },
         {
           "disabled": false,
-          "document": "应赔付金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应赔付金额",
           "example": "无",
           "member": "float",
           "name": "PaymentAmount",
@@ -966,7 +966,7 @@
         },
         {
           "disabled": false,
-          "document": "可用性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用性",
           "example": "无",
           "member": "float",
           "name": "Availability",
@@ -976,7 +976,7 @@
         },
         {
           "disabled": false,
-          "document": "对应赔偿比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对应赔偿比例",
           "example": "无",
           "member": "float",
           "name": "PaymentRatio",
@@ -986,7 +986,7 @@
         },
         {
           "disabled": false,
-          "document": "异常消息：当赔付结果类型为3不支持时，返回异常消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常消息：当赔付结果类型为3不支持时，返回异常消息",
           "example": "无",
           "member": "string",
           "name": "ExceptionMsg",
@@ -1107,7 +1107,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1",
           "example": "无",
           "member": "string",
           "name": "MsgId",
@@ -1124,7 +1124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发送内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送内容",
           "example": "无",
           "member": "string",
           "name": "Content",
@@ -1141,7 +1141,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "赔付计算信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "赔付计算信息",
           "example": "无",
           "member": "PaymentInfos",
           "name": "PaymentInfos",
@@ -1151,7 +1151,7 @@
         },
         {
           "disabled": false,
-          "document": "赔付总金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "赔付总金额",
           "example": "无",
           "member": "float",
           "name": "PaymentAmountTotal",
@@ -1161,7 +1161,7 @@
         },
         {
           "disabled": false,
-          "document": "赔付计算结果ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "赔付计算结果ID",
           "example": "无",
           "member": "string",
           "name": "PaymentTraceId",
@@ -1241,7 +1241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主键ID",
           "example": "无",
           "member": "string",
           "name": "Id",
@@ -1251,7 +1251,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品编码（一级）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云产品编码（一级）",
           "example": "无",
           "member": "string",
           "name": "ProductCode",
@@ -1261,7 +1261,7 @@
         },
         {
           "disabled": false,
-          "document": "类型标识名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型标识名",
           "example": "无",
           "member": "string",
           "name": "TypeName",
@@ -1271,7 +1271,7 @@
         },
         {
           "disabled": false,
-          "document": "前端交互协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "前端交互协议",
           "example": "无",
           "member": "InputJsonData",
           "name": "InputJson",
@@ -1287,7 +1287,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人ID",
           "example": "无",
           "member": "string",
           "name": "Sender",
@@ -1298,7 +1298,7 @@
         },
         {
           "disabled": false,
-          "document": "企微组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企微组",
           "example": "无",
           "member": "string",
           "name": "GroupReceivers",
@@ -1309,7 +1309,7 @@
         },
         {
           "disabled": false,
-          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容",
           "example": "无",
           "member": "RobotTextContent",
           "name": "Text",
@@ -1320,7 +1320,7 @@
         },
         {
           "disabled": false,
-          "document": "认证token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证token",
           "example": "无",
           "member": "string",
           "name": "AppToken",
@@ -1337,7 +1337,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0:不在白名单，1：在白名单\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0:不在白名单，1：在白名单\n",
           "example": "0",
           "member": "int64",
           "name": "IsWhiteList",

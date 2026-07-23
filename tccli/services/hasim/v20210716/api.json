@@ -749,7 +749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云兔连接响应信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云兔连接响应信息",
           "example": "无",
           "member": "LinkInfos",
           "name": "Data",
@@ -957,7 +957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自动化规则列表集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动化规则列表集合",
           "example": "无",
           "member": "RuleInfos",
           "name": "Data",
@@ -1108,7 +1108,7 @@
         },
         {
           "disabled": false,
-          "document": "经度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经度",
           "example": "108.79345",
           "member": "string",
           "name": "Lng",
@@ -1118,7 +1118,7 @@
         },
         {
           "disabled": false,
-          "document": "维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维度",
           "example": "37.2561",
           "member": "string",
           "name": "Lat",
@@ -1128,7 +1128,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商基站ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商基站ID",
           "example": "784***27",
           "member": "string",
           "name": "Lac",
@@ -1138,7 +1138,7 @@
         },
         {
           "disabled": false,
-          "document": "小区CellID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小区CellID",
           "example": "3691",
           "member": "string",
           "name": "Cell",
@@ -1148,7 +1148,7 @@
         },
         {
           "disabled": false,
-          "document": "当前上报运营商ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前上报运营商ID",
           "example": "8761***742",
           "member": "string",
           "name": "Iccid",
@@ -1158,7 +1158,7 @@
         },
         {
           "disabled": false,
-          "document": "信号强度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "信号强度",
           "example": "-10",
           "member": "int64",
           "name": "Rss",
@@ -1168,7 +1168,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商: 1 移动 2 联通 3 电信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商: 1 移动 2 联通 3 电信",
           "example": "1",
           "member": "int64",
           "name": "Tele",
@@ -1178,7 +1178,7 @@
         },
         {
           "disabled": false,
-          "document": "当前设备策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前设备策略ID",
           "example": "1000101",
           "member": "int64",
           "name": "Tid",
@@ -1188,7 +1188,7 @@
         },
         {
           "disabled": false,
-          "document": "心跳间隔,单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "心跳间隔,单位秒",
           "example": "360000",
           "member": "int64",
           "name": "Ping",
@@ -1198,7 +1198,7 @@
         },
         {
           "disabled": false,
-          "document": "网络延迟,单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络延迟,单位毫秒",
           "example": "50",
           "member": "int64",
           "name": "Delay",
@@ -1208,7 +1208,7 @@
         },
         {
           "disabled": false,
-          "document": "高级日志启停状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级日志启停状态",
           "example": "0",
           "member": "int64",
           "name": "Log",
@@ -1218,7 +1218,7 @@
         },
         {
           "disabled": false,
-          "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备型号",
           "example": "H26",
           "member": "string",
           "name": "DevType",
@@ -1228,7 +1228,7 @@
         },
         {
           "disabled": false,
-          "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备型号",
           "example": "3115",
           "member": "string",
           "name": "DevModel",
@@ -1238,7 +1238,7 @@
         },
         {
           "disabled": false,
-          "document": "设备版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备版本",
           "example": "v1.0.1",
           "member": "string",
           "name": "Version",
@@ -1248,7 +1248,7 @@
         },
         {
           "disabled": false,
-          "document": "设备刷新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备刷新时间戳",
           "example": "2021-06-09T15:44:41+08:00",
           "member": "string",
           "name": "UploadTime",
@@ -1258,7 +1258,7 @@
         },
         {
           "disabled": false,
-          "document": "网络环境: 0 正常 1 弱网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络环境: 0 正常 1 弱网",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -1268,7 +1268,7 @@
         },
         {
           "disabled": false,
-          "document": "每月第一次上报心跳时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每月第一次上报心跳时间",
           "example": "2021-06-09T15:44:41+08:00",
           "member": "string",
           "name": "MonthFirstTime",
@@ -1284,7 +1284,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云兔连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云兔连接ID",
           "example": "10010***10",
           "member": "int64",
           "name": "ID",
@@ -1294,7 +1294,7 @@
         },
         {
           "disabled": false,
-          "document": "卡片状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "卡片状态",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1304,7 +1304,7 @@
         },
         {
           "disabled": false,
-          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "激活时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "ActiveTime",
@@ -1314,7 +1314,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过期时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "ExpireTime",
@@ -1324,7 +1324,7 @@
         },
         {
           "disabled": false,
-          "document": "数据用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据用量",
           "example": "1.0",
           "member": "float",
           "name": "DataUse",
@@ -1334,7 +1334,7 @@
         },
         {
           "disabled": false,
-          "document": "语音用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音用量",
           "example": "0",
           "member": "int64",
           "name": "AudioUse",
@@ -1344,7 +1344,7 @@
         },
         {
           "disabled": false,
-          "document": "短信用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "短信用量",
           "example": "0",
           "member": "int64",
           "name": "SmsUse",
@@ -1354,7 +1354,7 @@
         },
         {
           "disabled": false,
-          "document": "在线状态 0 未激活 1 在线 2 离线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在线状态 0 未激活 1 在线 2 离线",
           "example": "1",
           "member": "int64",
           "name": "LinkedState",
@@ -1364,7 +1364,7 @@
         },
         {
           "disabled": false,
-          "document": "预期策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预期策略ID",
           "example": "10010***10",
           "member": "int64",
           "name": "TacticID",
@@ -1374,7 +1374,7 @@
         },
         {
           "disabled": false,
-          "document": "策略下发状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略下发状态",
           "example": "1",
           "member": "int64",
           "name": "TacticStatus",
@@ -1384,7 +1384,7 @@
         },
         {
           "disabled": false,
-          "document": "策略下发成功过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略下发成功过期时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "TacticExpireTime",
@@ -1394,7 +1394,7 @@
         },
         {
           "disabled": false,
-          "document": "高级日志预期状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级日志预期状态",
           "example": "1",
           "member": "bool",
           "name": "IsActiveLog",
@@ -1404,7 +1404,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商 1移动 2联通 3电信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商 1移动 2联通 3电信",
           "example": "1",
           "member": "int64",
           "name": "TeleOperator",
@@ -1414,7 +1414,7 @@
         },
         {
           "disabled": false,
-          "document": "设备最新上报信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备最新上报信息",
           "example": "无",
           "member": "DeviceReport",
           "name": "Report",
@@ -1424,7 +1424,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1434,7 +1434,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商ICCID信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商ICCID信息集合",
           "example": "无",
           "member": "TeleOperatorCard",
           "name": "Cards",
@@ -1444,7 +1444,7 @@
         },
         {
           "disabled": false,
-          "document": "云兔实际卡片ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云兔实际卡片ID",
           "example": "1111111",
           "member": "string",
           "name": "CardID",
@@ -1460,7 +1460,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云兔连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云兔连接ID",
           "example": "10010***10",
           "member": "int64",
           "name": "ID",
@@ -1470,7 +1470,7 @@
         },
         {
           "disabled": false,
-          "document": "卡片状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "卡片状态",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1480,7 +1480,7 @@
         },
         {
           "disabled": false,
-          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "激活时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "ActiveTime",
@@ -1490,7 +1490,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过期时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "ExpireTime",
@@ -1500,7 +1500,7 @@
         },
         {
           "disabled": false,
-          "document": "数据用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据用量",
           "example": "1.0",
           "member": "float",
           "name": "DataUse",
@@ -1510,7 +1510,7 @@
         },
         {
           "disabled": false,
-          "document": "语音用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音用量",
           "example": "0",
           "member": "int64",
           "name": "AudioUse",
@@ -1520,7 +1520,7 @@
         },
         {
           "disabled": false,
-          "document": "短信用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "短信用量",
           "example": "0",
           "member": "int64",
           "name": "SmsUse",
@@ -1530,7 +1530,7 @@
         },
         {
           "disabled": false,
-          "document": "在线状态 0 未激活 1 在线 2 离线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在线状态 0 未激活 1 在线 2 离线",
           "example": "1",
           "member": "int64",
           "name": "LinkedState",
@@ -1540,7 +1540,7 @@
         },
         {
           "disabled": false,
-          "document": "预期策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预期策略ID",
           "example": "10010***10",
           "member": "int64",
           "name": "TacticID",
@@ -1550,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "策略下发状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略下发状态",
           "example": "1",
           "member": "int64",
           "name": "TacticStatus",
@@ -1560,7 +1560,7 @@
         },
         {
           "disabled": false,
-          "document": "策略下发成功过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略下发成功过期时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "TacticExpireTime",
@@ -1570,7 +1570,7 @@
         },
         {
           "disabled": false,
-          "document": "高级日志预期状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级日志预期状态",
           "example": "1",
           "member": "bool",
           "name": "IsActiveLog",
@@ -1580,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商 1移动 2联通 3电信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运营商 1移动 2联通 3电信",
           "example": "1",
           "member": "int64",
           "name": "TeleOperator",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "设备最新上报信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备最新上报信息",
           "example": "无",
           "member": "DeviceReport",
           "name": "Report",
@@ -1616,7 +1616,7 @@
         },
         {
           "disabled": false,
-          "document": "云兔连接列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云兔连接列表",
           "example": "无",
           "member": "LinkInfo",
           "name": "List",
@@ -2164,7 +2164,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "xxxxx",
           "member": "string",
           "name": "CreatedAt",
@@ -2184,7 +2184,7 @@
         },
         {
           "disabled": false,
-          "document": "购买数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买数量",
           "example": "300",
           "member": "int64",
           "name": "BuyNum",
@@ -2194,7 +2194,7 @@
         },
         {
           "disabled": false,
-          "document": "行业代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行业代码",
           "example": "xxxxx",
           "member": "string",
           "name": "IndustryCode",
@@ -2204,7 +2204,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "xxxxx",
           "member": "string",
           "name": "Address",
@@ -2214,7 +2214,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联系人",
           "example": "xxxxx",
           "member": "string",
           "name": "Contact",
@@ -2224,7 +2224,7 @@
         },
         {
           "disabled": false,
-          "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话号码",
           "example": "xxxxx",
           "member": "string",
           "name": "Msisdn",
@@ -2234,7 +2234,7 @@
         },
         {
           "disabled": false,
-          "document": "卡片规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "卡片规格",
           "example": "xxxxx",
           "member": "string",
           "name": "Specification",
@@ -2244,7 +2244,7 @@
         },
         {
           "disabled": false,
-          "document": "用户订单备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户订单备注",
           "example": "xxxxx",
           "member": "string",
           "name": "Comment",
@@ -2254,7 +2254,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大订单号",
           "example": "xxxxx",
           "member": "string",
           "name": "BigDealId",
@@ -2264,7 +2264,7 @@
         },
         {
           "disabled": false,
-          "document": "审批状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批状态",
           "example": "xxxxx",
           "member": "string",
           "name": "AuditStatus",
@@ -2274,7 +2274,7 @@
         },
         {
           "disabled": false,
-          "document": "发货状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发货状态",
           "example": "xxxxx",
           "member": "string",
           "name": "FlowStatus",
@@ -2284,7 +2284,7 @@
         },
         {
           "disabled": false,
-          "document": "审批备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批备注",
           "example": "xxxxx",
           "member": "string",
           "name": "Remark",
@@ -2294,7 +2294,7 @@
         },
         {
           "disabled": false,
-          "document": "退费订单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "退费订单",
           "example": "xxxxx",
           "member": "string",
           "name": "RefundBigDealId",
@@ -2320,7 +2320,7 @@
         },
         {
           "disabled": false,
-          "document": "订单集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单集合",
           "example": "无",
           "member": "OrderInfo",
           "name": "List",
@@ -2392,7 +2392,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "CreatedAt",
@@ -2402,7 +2402,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "UpdatedAt",
@@ -2412,7 +2412,7 @@
         },
         {
           "disabled": false,
-          "document": "删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "DeletedAt",
@@ -2422,7 +2422,7 @@
         },
         {
           "disabled": false,
-          "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则类型",
           "example": "101",
           "member": "int64",
           "name": "Type",
@@ -2432,7 +2432,7 @@
         },
         {
           "disabled": false,
-          "document": "是否激活\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否激活",
           "example": "1",
           "member": "bool",
           "name": "IsActive",
@@ -2442,7 +2442,7 @@
         },
         {
           "disabled": false,
-          "document": "触发动作：1 邮件 2 API请求 5 停卡 6 地图标识为盲点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "触发动作：1 邮件 2 API请求 5 停卡 6 地图标识为盲点",
           "example": "1",
           "member": "int64",
           "name": "Notice",
@@ -2452,7 +2452,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱",
           "example": "xxxx",
           "member": "string",
           "name": "Email",
@@ -2462,7 +2462,7 @@
         },
         {
           "disabled": false,
-          "document": "回调API地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调API地址",
           "example": "xxxx",
           "member": "string",
           "name": "Url",
@@ -2472,7 +2472,7 @@
         },
         {
           "disabled": false,
-          "document": "用量类：用量阈值,单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量类：用量阈值,单位MB",
           "example": "100",
           "member": "int64",
           "name": "DataThreshold",
@@ -2482,7 +2482,7 @@
         },
         {
           "disabled": false,
-          "document": "行政区类型：1. 省份 2. 城市 3. 区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行政区类型：1. 省份 2. 城市 3. 区",
           "example": "1",
           "member": "int64",
           "name": "District",
@@ -2492,7 +2492,7 @@
         },
         {
           "disabled": false,
-          "document": "移动距离阈值，单位KM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "移动距离阈值，单位KM",
           "example": "10",
           "member": "int64",
           "name": "Distance",
@@ -2502,7 +2502,7 @@
         },
         {
           "disabled": false,
-          "document": "信号强度阈值(-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "信号强度阈值(-dbm）",
           "example": "-10",
           "member": "int64",
           "name": "SignalStrength",
@@ -2512,7 +2512,7 @@
         },
         {
           "disabled": false,
-          "document": "盲点阈值天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "盲点阈值天数",
           "example": "1",
           "member": "int64",
           "name": "LostDay",
@@ -2522,7 +2522,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的标签ID集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的标签ID集合",
           "example": "无",
           "member": "uint64",
           "name": "TagIDs",
@@ -2532,7 +2532,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的资费计划\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的资费计划",
           "example": "xxxxx",
           "member": "string",
           "name": "SalePlan",
@@ -2568,7 +2568,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "CreatedAt",
@@ -2578,7 +2578,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "UpdatedAt",
@@ -2588,7 +2588,7 @@
         },
         {
           "disabled": false,
-          "document": "删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "DeletedAt",
@@ -2598,7 +2598,7 @@
         },
         {
           "disabled": false,
-          "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则类型",
           "example": "101",
           "member": "int64",
           "name": "Type",
@@ -2608,7 +2608,7 @@
         },
         {
           "disabled": false,
-          "document": "是否激活\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否激活",
           "example": "1",
           "member": "bool",
           "name": "IsActive",
@@ -2618,7 +2618,7 @@
         },
         {
           "disabled": false,
-          "document": "触发动作：1 邮件 2 API请求 5 停卡 6 地图标识为盲点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "触发动作：1 邮件 2 API请求 5 停卡 6 地图标识为盲点",
           "example": "1",
           "member": "int64",
           "name": "Notice",
@@ -2628,7 +2628,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱",
           "example": "xxxx",
           "member": "string",
           "name": "Email",
@@ -2638,7 +2638,7 @@
         },
         {
           "disabled": false,
-          "document": "回调API地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调API地址",
           "example": "xxxx",
           "member": "string",
           "name": "Url",
@@ -2648,7 +2648,7 @@
         },
         {
           "disabled": false,
-          "document": "用量类：用量阈值,单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量类：用量阈值,单位MB",
           "example": "100",
           "member": "int64",
           "name": "DataThreshold",
@@ -2658,7 +2658,7 @@
         },
         {
           "disabled": false,
-          "document": "行政区类型：1. 省份 2. 城市 3. 区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行政区类型：1. 省份 2. 城市 3. 区",
           "example": "1",
           "member": "int64",
           "name": "District",
@@ -2668,7 +2668,7 @@
         },
         {
           "disabled": false,
-          "document": "移动距离阈值，单位KM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "移动距离阈值，单位KM",
           "example": "10",
           "member": "int64",
           "name": "Distance",
@@ -2678,7 +2678,7 @@
         },
         {
           "disabled": false,
-          "document": "信号强度阈值(-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "信号强度阈值(-dbm）",
           "example": "-10",
           "member": "int64",
           "name": "SignalStrength",
@@ -2688,7 +2688,7 @@
         },
         {
           "disabled": false,
-          "document": "盲点阈值天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "盲点阈值天数",
           "example": "1",
           "member": "int64",
           "name": "LostDay",
@@ -2698,7 +2698,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签ID集合",
           "example": "[10001]",
           "member": "int64",
           "name": "TagIDs",
@@ -2708,7 +2708,7 @@
         },
         {
           "disabled": false,
-          "document": "资费信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资费信息",
           "example": "xxx",
           "member": "string",
           "name": "SalePlan",
@@ -2734,7 +2734,7 @@
         },
         {
           "disabled": false,
-          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列表",
           "example": "无",
           "member": "Rule",
           "name": "List",
@@ -2760,7 +2760,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "CreatedAt",
@@ -2780,7 +2780,7 @@
         },
         {
           "disabled": false,
-          "document": "设备上报信息间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备上报信息间隔",
           "example": "3600",
           "member": "int64",
           "name": "PingInterval",
@@ -2790,7 +2790,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启弱信号检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启弱信号检查",
           "example": "1",
           "member": "int64",
           "name": "IsWeak",
@@ -2800,7 +2800,7 @@
         },
         {
           "disabled": false,
-          "document": "弱信号阈值（-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弱信号阈值（-dbm）",
           "example": "-10",
           "member": "int64",
           "name": "WeakThreshold",
@@ -2810,7 +2810,7 @@
         },
         {
           "disabled": false,
-          "document": "忘了时延切换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "忘了时延切换",
           "example": "1",
           "member": "int64",
           "name": "IsDelay",
@@ -2820,7 +2820,7 @@
         },
         {
           "disabled": false,
-          "document": "时延阈值（ms）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时延阈值（ms）",
           "example": "50",
           "member": "int64",
           "name": "DelayThreshold",
@@ -2830,7 +2830,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启假信号检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启假信号检测",
           "example": "1",
           "member": "int64",
           "name": "IsFake",
@@ -2840,7 +2840,7 @@
         },
         {
           "disabled": false,
-          "document": "假信号检测IP字符串，用逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "假信号检测IP字符串，用逗号分隔",
           "example": "www.baidu.com",
           "member": "string",
           "name": "FakeIP",
@@ -2850,7 +2850,7 @@
         },
         {
           "disabled": false,
-          "document": "假信号检测间隔（s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "假信号检测间隔（s）",
           "example": "10",
           "member": "int64",
           "name": "FakeInterval",
@@ -2860,7 +2860,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启网络制式检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启网络制式检测",
           "example": "1",
           "member": "int64",
           "name": "IsNet",
@@ -2870,7 +2870,7 @@
         },
         {
           "disabled": false,
-          "document": "网络回落制式 1: 2G、 2: 3G 、 3: 2/3G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络回落制式 1: 2G、 2: 3G 、 3: 2/3G",
           "example": "3",
           "member": "int64",
           "name": "Network",
@@ -2880,7 +2880,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启移动检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启移动检测",
           "example": "1",
           "member": "int64",
           "name": "IsMove",
@@ -2900,7 +2900,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启最优先运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启最优先运营商",
           "example": "1",
           "member": "int64",
           "name": "IsPriorityTele",
@@ -2910,7 +2910,7 @@
         },
         {
           "disabled": false,
-          "document": "最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商",
           "example": "1",
           "member": "int64",
           "name": "PriorityTele",
@@ -2920,7 +2920,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启最不优先运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启最不优先运营商",
           "example": "1",
           "member": "int64",
           "name": "IsBottomTele",
@@ -2930,7 +2930,7 @@
         },
         {
           "disabled": false,
-          "document": "最不优先运营商 1 移动、 2 联通、 3 电信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最不优先运营商 1 移动、 2 联通、 3 电信",
           "example": "1",
           "member": "int64",
           "name": "BottomTele",
@@ -2940,7 +2940,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启最优先信号选取策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启最优先信号选取策略",
           "example": "1",
           "member": "int64",
           "name": "IsBestSignal",
@@ -2966,7 +2966,7 @@
         },
         {
           "disabled": false,
-          "document": "策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略列表",
           "example": "无",
           "member": "Tactic",
           "name": "List",
@@ -3002,7 +3002,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注信息",
           "example": "备注",
           "member": "string",
           "name": "Comment",
@@ -3012,7 +3012,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-06-09T15:47:59+08:00",
           "member": "string",
           "name": "CreatedAt",
@@ -3022,7 +3022,7 @@
         },
         {
           "disabled": false,
-          "document": "更改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更改时间",
           "example": "2021-06-09T15:48:02+08:00",
           "member": "string",
           "name": "UpdatedAt",
@@ -3048,7 +3048,7 @@
         },
         {
           "disabled": false,
-          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列表",
           "example": "无",
           "member": "Tag",
           "name": "List",
@@ -3064,7 +3064,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开户时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开户时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "AccountTime",
@@ -3074,7 +3074,7 @@
         },
         {
           "disabled": false,
-          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "激活时间",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
           "name": "ActiveTime",
@@ -3104,7 +3104,7 @@
         },
         {
           "disabled": false,
-          "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话号码",
           "example": "180*********9431",
           "member": "string",
           "name": "Msisdn",
@@ -3114,7 +3114,7 @@
         },
         {
           "disabled": false,
-          "document": "移动用户识别码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "移动用户识别码",
           "example": "871**************012",
           "member": "string",
           "name": "IMSI",

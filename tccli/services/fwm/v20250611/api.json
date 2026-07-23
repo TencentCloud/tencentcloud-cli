@@ -531,7 +531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品类型",
           "example": "enterprise_sg",
           "member": "string",
           "name": "Product",
@@ -541,7 +541,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称",
           "example": "企业安全组",
           "member": "string",
           "name": "ProductName",
@@ -551,7 +551,7 @@
         },
         {
           "disabled": false,
-          "document": "体检策略数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "体检策略数",
           "example": "200",
           "member": "int64",
           "name": "PolicyCount",
@@ -561,7 +561,7 @@
         },
         {
           "disabled": false,
-          "document": "待整改风险数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "待整改风险数",
           "example": "20",
           "member": "int64",
           "name": "UntreatedRiskCount",
@@ -571,7 +571,7 @@
         },
         {
           "disabled": false,
-          "document": "总风险数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总风险数",
           "example": "15",
           "member": "int64",
           "name": "TotalRiskCount",
@@ -581,7 +581,7 @@
         },
         {
           "disabled": false,
-          "document": "已处置数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已处置数",
           "example": "3",
           "member": "int64",
           "name": "TreatedRiskCount",
@@ -591,7 +591,7 @@
         },
         {
           "disabled": false,
-          "document": "已忽略数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已忽略数",
           "example": "2",
           "member": "int64",
           "name": "IgnoredRiskCount",
@@ -601,7 +601,7 @@
         },
         {
           "disabled": false,
-          "document": "整改率，如 50%，无需整改时为 无需整改\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "整改率，如 50%，无需整改时为 无需整改",
           "example": "0%",
           "member": "string",
           "name": "RectifyRate",
@@ -611,7 +611,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次体检时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近一次体检时间",
           "example": "2025-10-22 10:00:00",
           "member": "string",
           "name": "LastCheckTime",
@@ -647,7 +647,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员账号信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员账号信息",
           "example": "无",
           "member": "MemberInfo",
           "name": "Member",
@@ -657,7 +657,7 @@
         },
         {
           "disabled": false,
-          "document": "该账号下所有产品待整改风险数汇总\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该账号下所有产品待整改风险数汇总",
           "example": "20",
           "member": "int64",
           "name": "UntreatedRiskCount",
@@ -667,7 +667,7 @@
         },
         {
           "disabled": false,
-          "document": "该账号下各产品维度的风险统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该账号下各产品维度的风险统计列表",
           "example": "无",
           "member": "AccountProductDetailStats",
           "name": "ProductStats",
@@ -1051,7 +1051,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>成员信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成员信息</p>",
           "example": "无",
           "member": "MemberInfo",
           "name": "BelongMember",
@@ -1103,7 +1103,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>",
           "example": "SecurityGroupId",
           "member": "string",
           "name": "Name",
@@ -1114,7 +1114,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>筛选值列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>筛选值列表</p>",
           "example": "[\"sg-79w20e4r\"]",
           "member": "string",
           "name": "Values",
@@ -1125,7 +1125,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>操作类型。1=等于，7=in，9=模糊匹配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作类型。1=等于，7=in，9=模糊匹配</p>",
           "example": "7",
           "member": "int64",
           "name": "OperatorType",
@@ -2178,7 +2178,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按账号分组的风险统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按账号分组的风险统计列表",
           "example": "无",
           "member": "AccountStatsGroup",
           "name": "AccountStats",
@@ -3232,7 +3232,7 @@
         },
         {
           "disabled": false,
-          "document": "源地址名称（当类型为模板/实例/标签时返回对应名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源地址名称（当类型为模板/实例/标签时返回对应名称）",
           "example": "内网模板",
           "member": "string",
           "name": "SourceName",
@@ -3262,7 +3262,7 @@
         },
         {
           "disabled": false,
-          "document": "目标地址名称（当类型为模板/实例/标签时返回对应名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标地址名称（当类型为模板/实例/标签时返回对应名称）",
           "example": "生产环境服务器",
           "member": "string",
           "name": "TargetName",
@@ -3322,7 +3322,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名称1（正则匹配时使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域名称1（正则匹配时使用）",
           "example": "中国",
           "member": "string",
           "name": "CountryName",
@@ -3332,7 +3332,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名称2（正则匹配时使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域名称2（正则匹配时使用）",
           "example": "北京",
           "member": "string",
           "name": "CityName",
@@ -3342,7 +3342,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板ID（当类型为模板时返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板ID（当类型为模板时返回）",
           "example": "tpl_001",
           "member": "string",
           "name": "ParamTemplateId",
@@ -3352,7 +3352,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板名称（当类型为模板时返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板名称（当类型为模板时返回）",
           "example": "内网地址模板",
           "member": "string",
           "name": "ParamTemplateName",
@@ -3362,7 +3362,7 @@
         },
         {
           "disabled": false,
-          "document": "规则是否失效：0-有效，1-失效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则是否失效：0-有效，1-失效",
           "example": "0",
           "member": "int64",
           "name": "Invalid",
@@ -3372,7 +3372,7 @@
         },
         {
           "disabled": false,
-          "document": "规则归属的成员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则归属的成员账号",
           "example": "无",
           "member": "MemberInfo",
           "name": "BelongMember",
@@ -4097,7 +4097,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则ID（修改时必填）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则ID（修改时必填）</p>",
           "example": "uuid-xxx",
           "member": "string",
           "name": "RuleId",
@@ -4108,7 +4108,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>端口（ICMP协议时为空）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>端口（ICMP协议时为空）</p>",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -4119,7 +4119,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则描述</p>",
           "example": "允许HTTP流量",
           "member": "string",
           "name": "Description",
@@ -4130,7 +4130,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>端口模板ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>端口模板ID</p>",
           "example": "ppm-xxx",
           "member": "string",
           "name": "ParamTemplateId",
@@ -4141,7 +4141,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则归属的成员账号ID(当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则归属的成员账号ID(当Scope为cfwnat-xxx或SourceType/DestType为instance/tag时必填)</p>",
           "example": "1300448058",
           "member": "string",
           "name": "BelongMemberId",
@@ -4208,7 +4208,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源资产名称",
           "example": "ins-xxx",
           "member": "string",
           "name": "SourceName",
@@ -4238,7 +4238,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的资产名称",
           "example": "ins-xxx",
           "member": "string",
           "name": "TargetName",
@@ -4248,7 +4248,7 @@
         },
         {
           "disabled": false,
-          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -4278,7 +4278,7 @@
         },
         {
           "disabled": false,
-          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则描述",
           "example": "允许HTTP流量",
           "member": "string",
           "name": "Description",
@@ -4298,7 +4298,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效范围描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则生效范围描述",
           "example": "全部实例",
           "member": "string",
           "name": "ScopeDesc",
@@ -4308,7 +4308,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防火墙实例ID",
           "example": "cfwnat-xxx",
           "member": "string",
           "name": "FwInsId",
@@ -4318,7 +4318,7 @@
         },
         {
           "disabled": false,
-          "document": "国家名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国家名称",
           "example": "中国",
           "member": "string",
           "name": "CountryName",
@@ -4328,7 +4328,7 @@
         },
         {
           "disabled": false,
-          "document": "城市名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市名称",
           "example": "北京",
           "member": "string",
           "name": "CityName",
@@ -4338,7 +4338,7 @@
         },
         {
           "disabled": false,
-          "document": "国家代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国家代码",
           "example": "86",
           "member": "int64",
           "name": "CountryCode",
@@ -4348,7 +4348,7 @@
         },
         {
           "disabled": false,
-          "document": "城市代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市代码",
           "example": "131",
           "member": "int64",
           "name": "CityCode",
@@ -4358,7 +4358,7 @@
         },
         {
           "disabled": false,
-          "document": "国家键值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国家键值",
           "example": "CN",
           "member": "string",
           "name": "CountryKey",
@@ -4368,7 +4368,7 @@
         },
         {
           "disabled": false,
-          "document": "城市键值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市键值",
           "example": "BJ",
           "member": "string",
           "name": "CityKey",
@@ -4378,7 +4378,7 @@
         },
         {
           "disabled": false,
-          "document": "是否地域规则：0-否，1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否地域规则：0-否，1-是",
           "example": "0",
           "member": "int64",
           "name": "IsRegion",
@@ -4388,7 +4388,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云厂商代码",
           "example": "tencent",
           "member": "string",
           "name": "CloudCode",
@@ -4398,7 +4398,7 @@
         },
         {
           "disabled": false,
-          "document": "是否云厂商规则：0-否，1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否云厂商规则：0-否，1-是",
           "example": "0",
           "member": "int64",
           "name": "IsCloud",
@@ -4408,7 +4408,7 @@
         },
         {
           "disabled": false,
-          "document": "端口模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口模板ID",
           "example": "ppm-xxx",
           "member": "string",
           "name": "ParamTemplateId",
@@ -4418,7 +4418,7 @@
         },
         {
           "disabled": false,
-          "document": "端口模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口模板名称",
           "example": "端口模板-HTTP",
           "member": "string",
           "name": "ParamTemplateName",
@@ -4428,7 +4428,7 @@
         },
         {
           "disabled": false,
-          "document": "规则是否失效：0-有效，1-失效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则是否失效：0-有效，1-失效",
           "example": "0",
           "member": "int64",
           "name": "Invalid",
@@ -4438,7 +4438,7 @@
         },
         {
           "disabled": false,
-          "document": "规则归属的成员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则归属的成员账号",
           "example": "无",
           "member": "MemberInfo",
           "name": "BelongMember",
@@ -4448,7 +4448,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2025-01-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -4458,7 +4458,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2025-01-01 12:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -4484,7 +4484,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员 ID",
           "example": "mem-1300448058-100027980407",
           "member": "string",
           "name": "MemberId",
@@ -4494,7 +4494,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号 AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员账号 AppId",
           "example": "1302385041",
           "member": "string",
           "name": "AppId",
@@ -4514,7 +4514,7 @@
         },
         {
           "disabled": false,
-          "document": "账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号名称",
           "example": "子公司A",
           "member": "string",
           "name": "Nickname",
@@ -4524,7 +4524,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子账号数量",
           "example": "5",
           "member": "int64",
           "name": "SubAccountCount",
@@ -4534,7 +4534,7 @@
         },
         {
           "disabled": false,
-          "document": "所属组织架构节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属组织架构节点名称",
           "example": "技术部",
           "member": "string",
           "name": "NodeName",
@@ -4544,7 +4544,7 @@
         },
         {
           "disabled": false,
-          "document": "成员身份：admin-管理员，delegatedAdmin-委派管理员，member-普通成员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员身份：admin-管理员，delegatedAdmin-委派管理员，member-普通成员",
           "example": "member",
           "member": "string",
           "name": "Role",
@@ -4554,7 +4554,7 @@
         },
         {
           "disabled": false,
-          "document": "成员身份显示名称（前端展示用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员身份显示名称（前端展示用）",
           "example": "普通成员",
           "member": "string",
           "name": "RoleDisplay",
@@ -4564,7 +4564,7 @@
         },
         {
           "disabled": false,
-          "document": "所属账户组 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属账户组 ",
           "example": "无",
           "member": "AccountGroupInfo",
           "name": "AccountGroup",
@@ -4574,7 +4574,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙纳管状态：0-未纳管，1-已纳管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云防火墙纳管状态：0-未纳管，1-已纳管",
           "example": "1",
           "member": "int64",
           "name": "CfwManaged",
@@ -4584,7 +4584,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙共享角色：sharer-共享者，user-使用者，none-未设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云防火墙共享角色：sharer-共享者，user-使用者，none-未设置",
           "example": "sharer",
           "member": "string",
           "name": "CfwShareRole",
@@ -4594,7 +4594,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙共享角色显示名称（前端展示用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云防火墙共享角色显示名称（前端展示用）",
           "example": "共享者",
           "member": "string",
           "name": "CfwShareRoleDisplay",
@@ -4604,7 +4604,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙共享者 AppId，成员角色为使用者时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云防火墙共享者 AppId，成员角色为使用者时有值",
           "example": "1300448058",
           "member": "string",
           "name": "CfwSharerAppId",
@@ -4614,7 +4614,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙计费实例 ID，非空表示已购买云防火墙\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云防火墙计费实例 ID，非空表示已购买云防火墙",
           "example": "cfwins-abc12345",
           "member": "string",
           "name": "CfwInstanceId",
@@ -4624,7 +4624,7 @@
         },
         {
           "disabled": false,
-          "document": "策略分析权限：0-关闭，1-开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略分析权限：0-关闭，1-开启",
           "example": "0",
           "member": "int64",
           "name": "PolicyAnalysisEnabled",
@@ -4634,7 +4634,7 @@
         },
         {
           "disabled": false,
-          "document": "成员加入集团时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员加入集团时间",
           "example": "2025-01-15 10:30:00",
           "member": "string",
           "name": "MemberCreateTime",
@@ -5465,7 +5465,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则归属的成员账号（当FwGroupId为cfwg-xxx或SourceType/DestType为instance/tag时必填)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规则归属的成员账号（当FwGroupId为cfwg-xxx或SourceType/DestType为instance/tag时必填)</p>",
           "example": "无",
           "member": "MemberInfo",
           "name": "BelongMember",
@@ -5652,7 +5652,7 @@
         },
         {
           "disabled": false,
-          "document": "源地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源地址",
           "example": "\"0.0.0.0/0\"",
           "member": "string",
           "name": "SourceContent",
@@ -5663,7 +5663,7 @@
         },
         {
           "disabled": false,
-          "document": "源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源类型",
           "example": "\"net\"",
           "member": "string",
           "name": "SourceType",
@@ -5674,7 +5674,7 @@
         },
         {
           "disabled": false,
-          "document": "目的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的地址",
           "example": "\"0.0.0.0/0\"",
           "member": "string",
           "name": "DestContent",
@@ -5685,7 +5685,7 @@
         },
         {
           "disabled": false,
-          "document": "目的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的类型",
           "example": "\"net\"",
           "member": "string",
           "name": "DestType",
@@ -5696,7 +5696,7 @@
         },
         {
           "disabled": false,
-          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议",
           "example": "ALL",
           "member": "string",
           "name": "Protocol",
@@ -5707,7 +5707,7 @@
         },
         {
           "disabled": false,
-          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口",
           "example": "-1/-1",
           "member": "string",
           "name": "Port",
@@ -5718,7 +5718,7 @@
         },
         {
           "disabled": false,
-          "document": "模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板",
           "example": "\"ippm-12dsa\"",
           "member": "string",
           "name": "ServiceTemplateId",
@@ -5729,7 +5729,7 @@
         },
         {
           "disabled": false,
-          "document": "动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "动作",
           "example": "\"DROP\"",
           "member": "string",
           "name": "RuleAction",
@@ -5740,7 +5740,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "\"connect\"",
           "member": "string",
           "name": "Description",
@@ -5751,7 +5751,7 @@
         },
         {
           "disabled": false,
-          "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优先级",
           "example": "1",
           "member": "int64",
           "name": "OrderIndex",
@@ -5762,7 +5762,7 @@
         },
         {
           "disabled": false,
-          "document": "rule id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "rule id",
           "example": "12222",
           "member": "string",
           "name": "RuleId",
@@ -5773,7 +5773,7 @@
         },
         {
           "disabled": false,
-          "document": "生效范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效范围",
           "example": "\"SG\"",
           "member": "string",
           "name": "Scope",
@@ -5812,7 +5812,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原规则序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原规则序号",
           "example": "1",
           "member": "int64",
           "name": "OrderIndex",
@@ -5823,7 +5823,7 @@
         },
         {
           "disabled": false,
-          "document": "新规则序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新规则序号",
           "example": "2",
           "member": "int64",
           "name": "NewOrderIndex",
@@ -6432,7 +6432,7 @@
         },
         {
           "disabled": false,
-          "document": "源资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源资产名称",
           "example": "ins-xxx",
           "member": "string",
           "name": "SourceName",
@@ -6462,7 +6462,7 @@
         },
         {
           "disabled": false,
-          "document": "目的资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的资产名称",
           "example": "ins-xxx",
           "member": "string",
           "name": "DestName",
@@ -6482,7 +6482,7 @@
         },
         {
           "disabled": false,
-          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -6492,7 +6492,7 @@
         },
         {
           "disabled": false,
-          "document": "端口模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口模板ID",
           "example": "ppm-xxx",
           "member": "string",
           "name": "ParamTemplateId",
@@ -6502,7 +6502,7 @@
         },
         {
           "disabled": false,
-          "document": "端口模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口模板名称",
           "example": "端口模板-HTTP",
           "member": "string",
           "name": "ParamTemplateName",
@@ -6522,7 +6522,7 @@
         },
         {
           "disabled": false,
-          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则描述",
           "example": "允许HTTP流量",
           "member": "string",
           "name": "Description",
@@ -6562,7 +6562,7 @@
         },
         {
           "disabled": false,
-          "document": "规则归属的成员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则归属的成员账号",
           "example": "无",
           "member": "MemberInfo",
           "name": "BelongMember",

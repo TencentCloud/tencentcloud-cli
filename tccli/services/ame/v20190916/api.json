@@ -80,7 +80,7 @@
         },
         {
           "disabled": false,
-          "document": "Stations 素材库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Stations 素材库列表",
           "example": "",
           "member": "Station",
           "name": "Stations",
@@ -101,7 +101,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "station图片大小及类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "station图片大小及类别",
           "example": "",
           "member": "string",
           "name": "Key",
@@ -111,7 +111,7 @@
         },
         {
           "disabled": false,
-          "document": "station图片地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "station图片地址",
           "example": "",
           "member": "string",
           "name": "Value",
@@ -137,7 +137,7 @@
         },
         {
           "disabled": false,
-          "document": "Station MCCode\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Station MCCode",
           "example": "",
           "member": "string",
           "name": "CategoryCode",
@@ -147,7 +147,7 @@
         },
         {
           "disabled": false,
-          "document": "Category Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Category Name",
           "example": "",
           "member": "string",
           "name": "Name",
@@ -157,7 +157,7 @@
         },
         {
           "disabled": false,
-          "document": "Station的排序值，供参考（返回结果已按其升序）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Station的排序值，供参考（返回结果已按其升序）",
           "example": "",
           "member": "int64",
           "name": "Rank",
@@ -167,7 +167,7 @@
         },
         {
           "disabled": false,
-          "document": "station图片集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "station图片集合",
           "example": "",
           "member": "ImagePath",
           "name": "ImagePathMap",

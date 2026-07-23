@@ -212,7 +212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成功核销后可以获取图片基本信息和原图地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功核销后可以获取图片基本信息和原图地址",
           "example": "[       {         \"ConsumeType\": 2,         \"DownloadId\": \"apid-",
           "member": "DownloadInfo",
           "name": "DownloadInfos",
@@ -322,7 +322,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权人信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权人信息数组",
           "example": "",
           "member": "AuthInfo",
           "name": "Users",
@@ -412,7 +412,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "核销下载记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "核销下载记录",
           "example": "[       {         \"ConsumeType\": 2,         \"DownloadId\": \"apid-",
           "member": "DownloadInfo",
           "name": "DownloadInfos",

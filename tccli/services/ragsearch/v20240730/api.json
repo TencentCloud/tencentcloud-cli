@@ -20,7 +20,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "/",
           "example": "/",
           "member": "string",
           "name": "FinishReason",
@@ -31,7 +31,7 @@
         },
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "/",
           "example": "/",
           "member": "Delta",
           "name": "Delta",
@@ -42,7 +42,7 @@
         },
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "/",
           "example": "/",
           "member": "Message",
           "name": "Message",
@@ -59,7 +59,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "/",
           "example": "/",
           "member": "string",
           "name": "Role",
@@ -70,7 +70,7 @@
         },
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "/",
           "example": "/",
           "member": "string",
           "name": "Content",
@@ -87,7 +87,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "/",
           "example": "无",
           "member": "string",
           "name": "Role",
@@ -98,7 +98,7 @@
         },
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "/",
           "example": "无",
           "member": "string",
           "name": "Content",

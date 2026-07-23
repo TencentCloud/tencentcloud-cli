@@ -5209,7 +5209,7 @@
         },
         {
           "disabled": false,
-          "document": "时间周期内的统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间周期内的统计值",
           "example": "无",
           "member": "UsageStats",
           "name": "Stats",
@@ -5219,7 +5219,7 @@
         },
         {
           "disabled": false,
-          "document": "时间周期内的时序点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间周期内的时序点列表",
           "example": "无",
           "member": "UsageSeries",
           "name": "Series",

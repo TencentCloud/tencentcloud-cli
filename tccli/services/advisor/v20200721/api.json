@@ -194,7 +194,7 @@
         },
         {
           "disabled": false,
-          "document": "共享状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "共享状态",
           "example": "true",
           "member": "bool",
           "name": "ShareStatus",
@@ -224,7 +224,7 @@
         },
         {
           "disabled": false,
-          "document": "资源绑定状态（绑定:true,未绑定：false）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源绑定状态（绑定:true,未绑定：false）",
           "example": "true",
           "member": "bool",
           "name": "ResourceBindStatus",
@@ -234,7 +234,7 @@
         },
         {
           "disabled": false,
-          "document": "创建来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建来源",
           "example": "console",
           "member": "string",
           "name": "CreateSource",
@@ -260,7 +260,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>节点数字ID，可能发生变化，以DiagramId为准</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点数字ID，可能发生变化，以DiagramId为准</p>",
           "example": "234",
           "member": "int64",
           "name": "NodeId",
@@ -280,7 +280,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>节点名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点名称</p>",
           "example": "测试节点",
           "member": "string",
           "name": "NodeName",
@@ -290,7 +290,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>节点地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "NodeRegion",
@@ -300,7 +300,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源列表</p>",
           "example": "无",
           "member": "ArchResourceDetail",
           "name": "ResourceList",
@@ -310,7 +310,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>父节点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父节点</p>",
           "example": "abc-dd",
           "member": "string",
           "name": "ParentDiagramId",
@@ -346,7 +346,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品ID",
           "example": "无",
           "member": "string",
           "name": "ProductId",
@@ -356,7 +356,7 @@
         },
         {
           "disabled": false,
-          "document": "组件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件ID",
           "example": "无",
           "member": "string",
           "name": "SigmaId",
@@ -366,7 +366,7 @@
         },
         {
           "disabled": false,
-          "document": "Tsa产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Tsa产品ID",
           "example": "无",
           "member": "string",
           "name": "TsaProductId",
@@ -376,7 +376,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称",
           "example": "无",
           "member": "string",
           "name": "ProductName",
@@ -386,7 +386,7 @@
         },
         {
           "disabled": false,
-          "document": "是否地域产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否地域产品",
           "example": "无",
           "member": "bool",
           "name": "IsRegional",
@@ -396,7 +396,7 @@
         },
         {
           "disabled": false,
-          "document": "分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分类",
           "example": "计算",
           "member": "string",
           "name": "Category",
@@ -412,7 +412,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID",
           "example": "无",
           "member": "string",
           "name": "InstanceId",
@@ -422,7 +422,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称",
           "example": "无",
           "member": "string",
           "name": "InstanceName",
@@ -432,7 +432,7 @@
         },
         {
           "disabled": false,
-          "document": "属性列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性列表",
           "example": "无",
           "member": "ExtensionAttribute",
           "name": "Attributes",
@@ -442,7 +442,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表",
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
@@ -1196,7 +1196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "根据此配置，匹配风险实例列表（Risks）对应字段，例如:\n{\"Response\":{\"RequestId\":\"111\",\"RiskFieldsDesc\":[{\"Field\":\"InstanceId\",\"FieldName\":\"ID\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"InstanceName\",\"FieldName\":\"名称\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"InstanceState\",\"FieldName\":\"状态\",\"FieldType\":\"string\",\"FieldDict\":{\"LAUNCH_FAILED\":\"创建失败\",\"PENDING\":\"创建中\",\"REBOOTING\":\"重启中\",\"RUNNING\":\"运行中\",\"SHUTDOWN\":\"停止待销毁\",\"STARTING\":\"开机中\",\"STOPPED\":\"关机\",\"STOPPING\":\"关机中\",\"TERMINATING\":\"销毁中\"}},{\"Field\":\"Zone\",\"FieldName\":\"可用区\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"PrivateIPAddresses\",\"FieldName\":\"IP地址(内)\",\"FieldType\":\"stringSlice\",\"FieldDict\":{}},{\"Field\":\"PublicIPAddresses\",\"FieldName\":\"IP地址(公)\",\"FieldType\":\"stringSlice\",\"FieldDict\":{}},{\"Field\":\"Region\",\"FieldName\":\"地域\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"Tags\",\"FieldName\":\"标签\",\"FieldType\":\"tags\",\"FieldDict\":{}}],\"RiskTotalCount\":3,\"Risks\":\"[{\\\"InstanceId\\\":\\\"ins-xxx1\\\",\\\"InstanceName\\\":\\\"xxx1\\\",\\\"InstanceState\\\":\\\"RUNNING\\\",\\\"PrivateIPAddresses\\\":[\\\"1.17.64.2\\\"],\\\"PublicIPAddresses\\\":null,\\\"Region\\\":\\\"ap-shanghai\\\",\\\"Tags\\\":null,\\\"Zone\\\":\\\"ap-shanghai-2\\\"},{\\\"InstanceId\\\":\\\"ins-xxx2\\\",\\\"InstanceName\\\":\\\"xxx2\\\",\\\"InstanceState\\\":\\\"RUNNING\\\",\\\"PrivateIPAddresses\\\":[\\\"1.17.64.11\\\"],\\\"PublicIPAddresses\\\":null,\\\"Region\\\":\\\"ap-shanghai\\\",\\\"Tags\\\":null,\\\"Zone\\\":\\\"ap-shanghai-2\\\"}]\",\"StrategyId\":9}}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "根据此配置，匹配风险实例列表（Risks）对应字段，例如:\n{\"Response\":{\"RequestId\":\"111\",\"RiskFieldsDesc\":[{\"Field\":\"InstanceId\",\"FieldName\":\"ID\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"InstanceName\",\"FieldName\":\"名称\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"InstanceState\",\"FieldName\":\"状态\",\"FieldType\":\"string\",\"FieldDict\":{\"LAUNCH_FAILED\":\"创建失败\",\"PENDING\":\"创建中\",\"REBOOTING\":\"重启中\",\"RUNNING\":\"运行中\",\"SHUTDOWN\":\"停止待销毁\",\"STARTING\":\"开机中\",\"STOPPED\":\"关机\",\"STOPPING\":\"关机中\",\"TERMINATING\":\"销毁中\"}},{\"Field\":\"Zone\",\"FieldName\":\"可用区\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"PrivateIPAddresses\",\"FieldName\":\"IP地址(内)\",\"FieldType\":\"stringSlice\",\"FieldDict\":{}},{\"Field\":\"PublicIPAddresses\",\"FieldName\":\"IP地址(公)\",\"FieldType\":\"stringSlice\",\"FieldDict\":{}},{\"Field\":\"Region\",\"FieldName\":\"地域\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"Tags\",\"FieldName\":\"标签\",\"FieldType\":\"tags\",\"FieldDict\":{}}],\"RiskTotalCount\":3,\"Risks\":\"[{\\\"InstanceId\\\":\\\"ins-xxx1\\\",\\\"InstanceName\\\":\\\"xxx1\\\",\\\"InstanceState\\\":\\\"RUNNING\\\",\\\"PrivateIPAddresses\\\":[\\\"1.17.64.2\\\"],\\\"PublicIPAddresses\\\":null,\\\"Region\\\":\\\"ap-shanghai\\\",\\\"Tags\\\":null,\\\"Zone\\\":\\\"ap-shanghai-2\\\"},{\\\"InstanceId\\\":\\\"ins-xxx2\\\",\\\"InstanceName\\\":\\\"xxx2\\\",\\\"InstanceState\\\":\\\"RUNNING\\\",\\\"PrivateIPAddresses\\\":[\\\"1.17.64.11\\\"],\\\"PublicIPAddresses\\\":null,\\\"Region\\\":\\\"ap-shanghai\\\",\\\"Tags\\\":null,\\\"Zone\\\":\\\"ap-shanghai-2\\\"}]\",\"StrategyId\":9}}",
           "example": "无",
           "member": "RiskFieldsDesc",
           "name": "RiskFieldsDesc",
@@ -1206,7 +1206,7 @@
         },
         {
           "disabled": false,
-          "document": "评估项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "评估项ID",
           "example": "1",
           "member": "uint64",
           "name": "StrategyId",
@@ -1216,7 +1216,7 @@
         },
         {
           "disabled": false,
-          "document": "风险实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险实例个数",
           "example": "10",
           "member": "uint64",
           "name": "RiskTotalCount",
@@ -1226,7 +1226,7 @@
         },
         {
           "disabled": false,
-          "document": "风险实例详情列表，需要json decode\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险实例详情列表，需要json decode",
           "example": "[{\\\"AppId\\\":12345678,\\\"IgnoreType\\\":\\\"\\\",\\\"Level\\\":\\\"2\\\",\\\"RiskDays\\\":1,\\\"conditionID\\\":8018},{\\\"AppId\\\":12345678,\\\"IgnoreType\\\":\\\"\\\",\\\"Level\\\":\\\"2\\\",\\\"RiskDays\\\":1,\\\"conditionID\\\":8018}]",
           "member": "string",
           "name": "Risks",
@@ -1236,7 +1236,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检资源数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检资源数",
           "example": "10",
           "member": "uint64",
           "name": "ResourceCount",
@@ -1318,7 +1318,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略扫描执行的结果（只包含未忽略的策略信息）。注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略扫描执行的结果（只包含未忽略的策略信息）。注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StrategySummary",
           "name": "StrategySummaries",
@@ -1328,7 +1328,7 @@
         },
         {
           "disabled": false,
-          "document": "分组扫描执行的结果。注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组扫描执行的结果。注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupSummary",
           "name": "GroupSummaries",
@@ -1338,7 +1338,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的开始时间，按照ISO8601标准表示，格式为\"YYYY-MM-DDThh:mm:ssZ\"。任务尚未结束，返回\"1970-01-01T00:00:00+00:00\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务的开始时间，按照ISO8601标准表示，格式为\"YYYY-MM-DDThh:mm:ssZ\"。任务尚未结束，返回\"1970-01-01T00:00:00+00:00\"。",
           "example": "2006-01-02T15:04:05+07:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1531,7 +1531,7 @@
         },
         {
           "disabled": false,
-          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值",
           "example": "无",
           "member": "string",
           "name": "Value",
@@ -1751,7 +1751,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "条件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "条件名",
           "example": "无",
           "member": "string",
           "name": "Key",
@@ -1762,7 +1762,7 @@
         },
         {
           "disabled": false,
-          "document": "条件值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "条件值",
           "example": "无",
           "member": "string",
           "name": "Value",
@@ -1809,7 +1809,7 @@
         },
         {
           "disabled": false,
-          "document": "字段值对应字典\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段值对应字典",
           "example": "无",
           "member": "KeyValue",
           "name": "FieldDict",
@@ -2021,7 +2021,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名称",
           "example": "对象存储（COS）未设置子账号访问",
           "member": "string",
           "name": "StrategyName",
@@ -2031,7 +2031,7 @@
         },
         {
           "disabled": false,
-          "document": "高风险+中风险+无风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高风险+中风险+无风险",
           "example": "1",
           "member": "uint64",
           "name": "Count",
@@ -2041,7 +2041,7 @@
         },
         {
           "disabled": false,
-          "document": "跳转链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳转链接",
           "example": "无",
           "member": "string",
           "name": "AccessUrl",
@@ -2057,7 +2057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "key",
           "example": "无",
           "member": "string",
           "name": "Key",
@@ -2067,7 +2067,7 @@
         },
         {
           "disabled": false,
-          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "value",
           "example": "无",
           "member": "string",
           "name": "Value",
@@ -2083,7 +2083,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Tag对应的key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Tag对应的key",
           "example": "aaa",
           "member": "string",
           "name": "TagKey",
@@ -2093,7 +2093,7 @@
         },
         {
           "disabled": false,
-          "document": "tag对应的values\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tag对应的values",
           "example": "[a,b]",
           "member": "string",
           "name": "TagValues",

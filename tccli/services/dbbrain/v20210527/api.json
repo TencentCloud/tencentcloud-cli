@@ -2546,7 +2546,7 @@
         },
         {
           "disabled": false,
-          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常信息",
           "example": "创建kill任务失败",
           "member": "string",
           "name": "ErrorMsg",
@@ -5634,7 +5634,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据",
           "example": "无",
           "member": "MongoDBProcessList",
           "name": "ProcessList",
@@ -10583,7 +10583,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否内部IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否内部IP",
           "example": "true",
           "member": "bool",
           "name": "IsInternalIp",
@@ -10593,7 +10593,7 @@
         },
         {
           "disabled": false,
-          "document": "语句类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语句类型",
           "example": "update",
           "member": "string",
           "name": "Type",
@@ -10603,7 +10603,7 @@
         },
         {
           "disabled": false,
-          "document": "语句详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语句详情",
           "example": "{ \t\"shard\": \"cmgo-8hnz2qj1_1\", \t\"type\": \"op\", \t\"host\": \"TENCENT64.site:7037\", \t\"desc\": \"conn15849513\", \t\"connectionId\": { \t\t\"$numberInt\": \"15849513\" \t}",
           "member": "string",
           "name": "Command",
@@ -10613,7 +10613,7 @@
         },
         {
           "disabled": false,
-          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点ID",
           "example": "mongos-3",
           "member": "string",
           "name": "InstanceNodeId",
@@ -10623,7 +10623,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端ip",
           "example": "9.222.22.122:53642",
           "member": "string",
           "name": "Host",
@@ -10633,7 +10633,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行时间",
           "example": "97677.001",
           "member": "float",
           "name": "Time",
@@ -10643,7 +10643,7 @@
         },
         {
           "disabled": false,
-          "document": "会话ID\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话ID\n",
           "example": "1798318411",
           "member": "uint64",
           "name": "ID",
@@ -10653,7 +10653,7 @@
         },
         {
           "disabled": false,
-          "document": "分片名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分片名称",
           "example": "cmgo-9hnz2qj1_1",
           "member": "string",
           "name": "ShardName",
@@ -10663,7 +10663,7 @@
         },
         {
           "disabled": false,
-          "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户",
           "example": "mongouser",
           "member": "string",
           "name": "User",
@@ -10673,7 +10673,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库",
           "example": "follows_1600088807.$cmd",
           "member": "string",
           "name": "DB",
@@ -10689,7 +10689,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "列名字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列名字段",
           "example": "[\"ID\", \"Host\", \"DB\", \"Command\", \"Time\", \"Type\"]",
           "member": "string",
           "name": "Names",
@@ -10699,7 +10699,7 @@
         },
         {
           "disabled": false,
-          "document": "接口返回数据详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接口返回数据详情",
           "example": "无",
           "member": "MongoDBProcessItem",
           "name": "Data",
@@ -10919,7 +10919,7 @@
         },
         {
           "disabled": false,
-          "document": "sql类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "sql类型",
           "example": "StartTransaction，SQLSelectStatement，MySqlDeleteStatement",
           "member": "string",
           "name": "SqlType",
@@ -11428,7 +11428,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余过期时间范围的结束时间，当小于0时，代表已过期时间，单位：小时。当RangeMin与RangeMax同时为空时，代表未设置过期时间。当RangeMax为空时，代表剩余过期时间大于等于RangeMin小时。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余过期时间范围的结束时间，当小于0时，代表已过期时间，单位：小时。当RangeMin与RangeMax同时为空时，代表未设置过期时间。当RangeMax为空时，代表剩余过期时间大于等于RangeMin小时。",
           "example": "24",
           "member": "int64",
           "name": "RangeMax",
@@ -11438,7 +11438,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余过期时间范围的起始时间，当小于0时，代表已过期时间，单位：小时。当RangeMin与RangeMax同时为空时，代表未设置过期时间。当RangeMin为空时，代表已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余过期时间范围的起始时间，当小于0时，代表已过期时间，单位：小时。当RangeMin与RangeMax同时为空时，代表未设置过期时间。当RangeMin为空时，代表已过期。",
           "example": "12",
           "member": "int64",
           "name": "RangeMin",
@@ -11596,7 +11596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "host",
           "example": "30.86.245.14",
           "member": "string",
           "name": "Host",
@@ -11606,7 +11606,7 @@
         },
         {
           "disabled": false,
-          "document": "Proxy Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Proxy Id",
           "example": "149c8a81e5321ebab810a5da07c298c764311c43",
           "member": "string",
           "name": "InstanceProxyId",
@@ -11616,7 +11616,7 @@
         },
         {
           "disabled": false,
-          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口",
           "example": "8461",
           "member": "uint64",
           "name": "Port",
@@ -11626,7 +11626,7 @@
         },
         {
           "disabled": false,
-          "document": "最新的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最新的值",
           "example": "1.33",
           "member": "float",
           "name": "Value",
@@ -11636,7 +11636,7 @@
         },
         {
           "disabled": false,
-          "document": "时间（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间（秒）",
           "example": "[1758183175]",
           "member": "uint64",
           "name": "Timestamp",
@@ -11646,7 +11646,7 @@
         },
         {
           "disabled": false,
-          "document": "序列数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "序列数据",
           "example": "无",
           "member": "MonitorFloatMetric",
           "name": "Series",
@@ -13557,7 +13557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>执行次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行次数</p>",
           "example": "1",
           "member": "int64",
           "name": "ExecTimes",
@@ -13567,7 +13567,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>SQL模板Id，数据类型Long。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SQL模板Id，数据类型Long。</p>",
           "example": "1L",
           "member": "string",
           "name": "SqlTemplateId",
@@ -13577,7 +13577,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最小影响行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小影响行数</p>",
           "example": "1",
           "member": "int64",
           "name": "AffectRowsMin",
@@ -13587,7 +13587,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>sql模板</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>sql模板</p>",
           "example": "select * from t",
           "member": "string",
           "name": "SqlTemplate",
@@ -13597,7 +13597,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>表名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表名</p>",
           "example": "order",
           "member": "string",
           "name": "TableName",
@@ -13607,7 +13607,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最大影响行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大影响行数</p>",
           "example": "1",
           "member": "int64",
           "name": "AffectRowsMax",
@@ -13617,7 +13617,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>sql类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>sql类型</p>",
           "example": "Select",
           "member": "string",
           "name": "SqlType",
@@ -13627,7 +13627,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>影响行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>影响行数</p>",
           "example": "1",
           "member": "int64",
           "name": "AffectRows",
@@ -13637,7 +13637,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>DB名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DB名</p>",
           "example": "db_test",
           "member": "string",
           "name": "DB",
@@ -13647,7 +13647,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最小锁等待时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小锁等待时间</p>",
           "example": "1.00",
           "member": "float",
           "name": "LockWaitTimeMin",
@@ -13657,7 +13657,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>cpu时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>cpu时间</p>",
           "example": "0.22",
           "member": "float",
           "name": "CpuTime",
@@ -13667,7 +13667,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最大io等待时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大io等待时间，单位秒</p>",
           "example": "0.1",
           "member": "float",
           "name": "IoWaitTimeMax",
@@ -13677,7 +13677,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最大锁等待时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大锁等待时间，单位秒</p>",
           "example": "0.011",
           "member": "float",
           "name": "LockWaitTimeMax",
@@ -13687,7 +13687,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最小检查行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小检查行数</p>",
           "example": "1",
           "member": "int64",
           "name": "CheckRowsMin",
@@ -13697,7 +13697,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检查行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检查行数</p>",
           "example": "1",
           "member": "int64",
           "name": "CheckRows",
@@ -13707,7 +13707,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最大cpu时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大cpu时间，单位秒</p>",
           "example": "0.23",
           "member": "float",
           "name": "CpuTimeMax",
@@ -13717,7 +13717,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最小io等待时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小io等待时间，单位秒</p>",
           "example": "1",
           "member": "int64",
           "name": "IoWaitTimeMin",
@@ -13727,7 +13727,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最大执行时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大执行时间，单位秒</p>",
           "example": "0.12",
           "member": "float",
           "name": "LatencyMax",
@@ -13737,7 +13737,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>io等待时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>io等待时间，单位秒</p>",
           "example": "0.22",
           "member": "float",
           "name": "IoWaitTime",
@@ -13747,7 +13747,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最大检查行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大检查行数</p>",
           "example": "1",
           "member": "int64",
           "name": "CheckRowsMax",
@@ -13757,7 +13757,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最小cpu时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小cpu时间，单位秒</p>",
           "example": "0.23",
           "member": "float",
           "name": "CpuTimeMin",
@@ -13767,7 +13767,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>sql详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>sql详情</p>",
           "example": "select * from orders",
           "member": "string",
           "name": "SqlText",
@@ -13777,7 +13777,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>锁等待时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>锁等待时间，单位秒</p>",
           "example": "0.12",
           "member": "float",
           "name": "LockWaitTime",
@@ -13787,7 +13787,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最小执行时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小执行时间，单位秒</p>",
           "example": "0.23",
           "member": "float",
           "name": "LatencyMin",
@@ -13797,7 +13797,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>执行时间，单位秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行时间，单位秒</p>",
           "example": "0.23",
           "member": "float",
           "name": "Latency",
@@ -13807,7 +13807,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>queryTime 占比，单位%</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>queryTime 占比，单位%</p>",
           "example": "1.00",
           "member": "string",
           "name": "QueryTimeRatio",

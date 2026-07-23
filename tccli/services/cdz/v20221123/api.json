@@ -623,7 +623,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "专属可用区总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专属可用区总数。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",

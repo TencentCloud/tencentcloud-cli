@@ -469,7 +469,7 @@
         },
         {
           "disabled": false,
-          "document": "控制台类型，api调用时默认null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控制台类型，api调用时默认null",
           "example": "1",
           "member": "int64",
           "name": "RegionTypeMC",
@@ -479,7 +479,7 @@
         },
         {
           "disabled": false,
-          "document": "不同语言的地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不同语言的地区",
           "example": "South China",
           "member": "string",
           "name": "LocationMC",
@@ -489,7 +489,7 @@
         },
         {
           "disabled": false,
-          "document": "控制台展示的地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控制台展示的地域描述",
           "example": "广州",
           "member": "string",
           "name": "RegionNameMC",
@@ -499,7 +499,7 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1",
           "example": "1",
           "member": "string",
           "name": "RegionIdMC",
@@ -531,7 +531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域英文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域英文名字",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -541,7 +541,7 @@
         },
         {
           "disabled": false,
-          "document": "地域中文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域中文名字",
           "example": "广州",
           "member": "string",
           "name": "RegionName",
@@ -551,7 +551,7 @@
         },
         {
           "disabled": false,
-          "document": "地域状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域状态",
           "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
@@ -561,7 +561,7 @@
         },
         {
           "disabled": false,
-          "document": "大区中文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大区中文名字",
           "example": "华南地区",
           "member": "string",
           "name": "Location",
@@ -571,7 +571,7 @@
         },
         {
           "disabled": false,
-          "document": "大区英文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大区英文名字",
           "example": "South China",
           "member": "string",
           "name": "LocationEn",
@@ -581,7 +581,7 @@
         },
         {
           "disabled": false,
-          "document": "大区日本名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大区日本名字",
           "example": "華南地区.",
           "member": "string",
           "name": "LocationJp",
@@ -591,7 +591,7 @@
         },
         {
           "disabled": false,
-          "document": "大区韩国名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大区韩国名字",
           "example": "화난 지방",
           "member": "string",
           "name": "LocationKo",
@@ -601,7 +601,7 @@
         },
         {
           "disabled": false,
-          "document": "地域英文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域英文名字",
           "example": "Guangzhou",
           "member": "string",
           "name": "RegionNameEn",
@@ -611,7 +611,7 @@
         },
         {
           "disabled": false,
-          "document": "地域日本名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域日本名字",
           "example": "広州.広州",
           "member": "string",
           "name": "RegionNameJp",
@@ -621,7 +621,7 @@
         },
         {
           "disabled": false,
-          "document": "地域韩国名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域韩国名字",
           "example": "광저우",
           "member": "string",
           "name": "RegionNameKo",
@@ -631,7 +631,7 @@
         },
         {
           "disabled": false,
-          "document": "gz\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "gz",
           "example": "地域简称",
           "member": "string",
           "name": "RegionShortName",
@@ -641,7 +641,7 @@
         },
         {
           "disabled": false,
-          "document": "地域id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域id",
           "example": "1",
           "member": "string",
           "name": "RegionId",
@@ -651,7 +651,7 @@
         },
         {
           "disabled": false,
-          "document": "对内域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对内域名",
           "example": "gz.xxx.tencentyun.com",
           "member": "string",
           "name": "InnerDomainName",
@@ -661,7 +661,7 @@
         },
         {
           "disabled": false,
-          "document": "对外域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对外域名",
           "example": "ap-guangzhou.xxx.tencentyun.com",
           "member": "string",
           "name": "OuterDomainName",
@@ -671,7 +671,7 @@
         },
         {
           "disabled": false,
-          "document": "地域类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域类型",
           "example": "国内",
           "member": "string",
           "name": "RegionType",
@@ -681,7 +681,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重",
           "example": "0",
           "member": "uint64",
           "name": "Weight",
@@ -691,7 +691,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区数组",
           "example": "无",
           "member": "ResourceZoneinfo",
           "name": "ResourceZoneSet",
@@ -701,7 +701,7 @@
         },
         {
           "disabled": false,
-          "document": "地域上线或者下线状态，查所有产品时默认为online，无实际意义，查某个产品时代表是否上线，未上线未offline，只针对地域级产品才有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域上线或者下线状态，查所有产品时默认为online，无实际意义，查某个产品时代表是否上线，未上线未offline，只针对地域级产品才有意义",
           "example": "online",
           "member": "string",
           "name": "OnlineState",
@@ -711,7 +711,7 @@
         },
         {
           "disabled": false,
-          "document": "地域级产品业务可用区白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域级产品业务可用区白名单",
           "example": "TEST",
           "member": "string",
           "name": "ProductWhiteList",
@@ -721,7 +721,7 @@
         },
         {
           "disabled": false,
-          "document": "地域类型：0: 国内 1: 国外\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域类型：0: 国内 1: 国外",
           "example": "1",
           "member": "int64",
           "name": "RegionTypeMC",
@@ -731,7 +731,7 @@
         },
         {
           "disabled": false,
-          "document": "[\"上线地域\", \"金融地域\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "[\"上线地域\", \"金融地域\"]",
           "example": "产品特性",
           "member": "string",
           "name": "ProductFeature",
@@ -747,7 +747,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区名字",
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "Zone",
@@ -757,7 +757,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区中文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区中文名字",
           "example": "广州四区",
           "member": "string",
           "name": "ZoneName",
@@ -767,7 +767,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区状态",
           "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
@@ -777,7 +777,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区id",
           "example": "100001",
           "member": "string",
           "name": "ZoneId",
@@ -787,7 +787,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区英文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区英文名字",
           "example": "Guangzhou Zone 4",
           "member": "string",
           "name": "ZoneNameEn",
@@ -797,7 +797,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区日本名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区日本名字",
           "example": "広州4区",
           "member": "string",
           "name": "ZoneNameJp",
@@ -807,7 +807,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区韩国名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区韩国名字",
           "example": "광저우 4구",
           "member": "string",
           "name": "ZoneNameKo",
@@ -817,7 +817,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组可用区白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源组可用区白名单",
           "example": "GZ_ZONE4_WHITELIST",
           "member": "string",
           "name": "WhiteList",
@@ -827,7 +827,7 @@
         },
         {
           "disabled": false,
-          "document": "业务可用区白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务可用区白名单",
           "example": "GZ_ZONE4_WHITELIST",
           "member": "string",
           "name": "ProductWhiteList",
@@ -837,7 +837,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重",
           "example": "0",
           "member": "uint64",
           "name": "Weight",
@@ -847,7 +847,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "售卖对象",
           "example": "公有云&自研",
           "member": "string",
           "name": "SaleType",
@@ -857,7 +857,7 @@
         },
         {
           "disabled": false,
-          "document": "机房类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机房类型",
           "example": "公有云&自研",
           "member": "string",
           "name": "MachineRoomType",
@@ -867,7 +867,7 @@
         },
         {
           "disabled": false,
-          "document": "建设中，可售卖，下线中，已下线等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建设中，可售卖，下线中，已下线等",
           "example": "生命周期状态",
           "member": "string",
           "name": "LifeState",
@@ -877,7 +877,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区上线或者下线状态，查所有产品时默认为online，无实际意义，查某个产品时代表是否上线，未上线未offline\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区上线或者下线状态，查所有产品时默认为online，无实际意义，查某个产品时代表是否上线，未上线未offline",
           "example": "online",
           "member": "string",
           "name": "OnlineState",
@@ -887,7 +887,7 @@
         },
         {
           "disabled": false,
-          "document": "父级zone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父级zone",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ParentZone",
@@ -897,7 +897,7 @@
         },
         {
           "disabled": false,
-          "document": "父级id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父级id",
           "example": "1",
           "member": "string",
           "name": "ParentZoneId",
@@ -907,7 +907,7 @@
         },
         {
           "disabled": false,
-          "document": "父级中文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父级中文名字",
           "example": "1",
           "member": "string",
           "name": "ParentZoneName",
@@ -917,7 +917,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区类型",
           "example": "1",
           "member": "string",
           "name": "ZoneType",
@@ -927,7 +927,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区的产品特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区的产品特性",
           "example": "[\"金融可用区\", \"支付可用区\"]",
           "member": "string",
           "name": "ProductFeature",
@@ -983,7 +983,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>父级zone</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父级zone</p>",
           "example": "1",
           "member": "string",
           "name": "ParentZone",
@@ -993,7 +993,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>父级可用区ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父级可用区ID</p>",
           "example": "1",
           "member": "string",
           "name": "ParentZoneId",
@@ -1003,7 +1003,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>父级可用区描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父级可用区描述</p>",
           "example": "1",
           "member": "string",
           "name": "ParentZoneName",
@@ -1013,7 +1013,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>zone类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>zone类型</p>",
           "example": "1",
           "member": "string",
           "name": "ZoneType",
@@ -1023,7 +1023,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>控制台类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>控制台类型</p>",
           "example": "公有云",
           "member": "string",
           "name": "MachineRoomTypeMC",
@@ -1033,7 +1033,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>和ZoneId一样，适用于控制台调用。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>和ZoneId一样，适用于控制台调用。</p>",
           "example": "1",
           "member": "string",
           "name": "ZoneIdMC",

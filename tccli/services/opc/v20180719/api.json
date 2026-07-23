@@ -196,7 +196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>点石活动ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>点石活动ID</p>",
           "example": "12202",
           "member": "uint64",
           "name": "ActivityId",
@@ -207,7 +207,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>报名场次列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>报名场次列表</p>",
           "example": "[\"Basics\",\"businessExpand\"]",
           "member": "string",
           "name": "FormSessionList",
@@ -218,7 +218,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>姓名</p>",
           "example": "lam",
           "member": "string",
           "name": "Name",
@@ -229,7 +229,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>公司名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公司名称</p>",
           "example": "腾讯科技",
           "member": "string",
           "name": "CompanyName",
@@ -240,7 +240,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>邮箱</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>邮箱</p>",
           "example": "demo@tencent.com",
           "member": "string",
           "name": "Mail",
@@ -251,7 +251,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>部门名称/职位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>部门名称/职位</p>",
           "example": "engineer",
           "member": "string",
           "name": "Position",
@@ -262,7 +262,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>电话国际区号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>电话国际区号</p>",
           "example": "86",
           "member": "string",
           "name": "CountryCode",
@@ -273,7 +273,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>电话</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>电话</p>",
           "example": "13412526590",
           "member": "string",
           "name": "Phone",
@@ -284,7 +284,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>同意条款 0-不同意 1-同意</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>同意条款 0-不同意 1-同意</p>",
           "example": "1",
           "member": "uint64",
           "name": "Agreement",
@@ -295,7 +295,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>参与方式 0-线下参与 1-线上参与</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参与方式 0-线下参与 1-线上参与</p>",
           "example": "1",
           "member": "uint64",
           "name": "ParticipationMode",
@@ -306,7 +306,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>联系方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>联系方式</p>",
           "example": "无",
           "member": "ActivityRegFormRecordContactInfo",
           "name": "ContactInfo",
@@ -317,7 +317,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "2024-01-25 15:00:00",
           "member": "string",
           "name": "CreatedAt",
@@ -328,7 +328,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>",
           "example": "2024-01-25 15:00:00",
           "member": "string",
           "name": "UpdatedAt",
@@ -339,7 +339,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>渠道追踪fromSource</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>渠道追踪fromSource</p>",
           "example": "gwzcw.7891547.7891547.7891547",
           "member": "string",
           "name": "FromSource",
@@ -350,7 +350,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>拓展参数，需要先json反序列化再使用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>拓展参数，需要先json反序列化再使用</p>",
           "example": "{\"region\":\"1\"}",
           "member": "string",
           "name": "ExtParam",
@@ -411,7 +411,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同意邮件联系 0-否 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同意邮件联系 0-否 1-是",
           "example": "1",
           "member": "uint64",
           "name": "AgreeMail",
@@ -422,7 +422,7 @@
         },
         {
           "disabled": false,
-          "document": "同意短信联系 0-否 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同意短信联系 0-否 1-是",
           "example": "1",
           "member": "uint64",
           "name": "AgreeSms",
@@ -433,7 +433,7 @@
         },
         {
           "disabled": false,
-          "document": "同意手机联系 0-否 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同意手机联系 0-否 1-是",
           "example": "1",
           "member": "uint64",
           "name": "AgreePhone",
@@ -555,7 +555,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "[{\"2000\": false}, {\"2486\": false}]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "[{\"2000\": false}, {\"2486\": false}]",
           "example": "[{\"2000\": false}, {\"2486\": false}]",
           "member": "CheckDictInActivityResult",
           "name": "Result",
@@ -577,7 +577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "官网字典id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "官网字典id",
           "example": "2000",
           "member": "uint64",
           "name": "DictId",
@@ -587,7 +587,7 @@
         },
         {
           "disabled": false,
-          "document": "true存在否则不存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true存在否则不存在",
           "example": "false",
           "member": "bool",
           "name": "Result",

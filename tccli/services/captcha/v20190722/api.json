@@ -221,7 +221,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "验证码加载耗时数据返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证码加载耗时数据返回",
           "example": "",
           "member": "CaptchaOperDataLoadTimeUnit",
           "name": "OperDataLoadTimeUnitArray",
@@ -231,7 +231,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码拦截情况数据返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证码拦截情况数据返回",
           "example": "",
           "member": "CaptchaOperDataInterceptUnit",
           "name": "OperDataInterceptUnitArray",
@@ -241,7 +241,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码尝试次数数据返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证码尝试次数数据返回",
           "example": "",
           "member": "CaptchaOperDataTryTimesUnit",
           "name": "OperDataTryTimesUnitArray",
@@ -251,7 +251,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码尝试次数分布数据返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证码尝试次数分布数据返回",
           "example": "",
           "member": "CaptchaOperDataTryTimesDistributeUnit",
           "name": "OperDataTryTimesDistributeUnitArray",
@@ -427,7 +427,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求趋势图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求趋势图</p>",
           "example": "无",
           "member": "RequestTrendObj",
           "name": "RequestTrend",
@@ -437,7 +437,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>拦截率趋势图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>拦截率趋势图</p>",
           "example": "无",
           "member": "InterceptPerTrendObj",
           "name": "InterceptPerTrend",
@@ -447,7 +447,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>票据校验趋势图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>票据校验趋势图</p>",
           "example": "无",
           "member": "TicketCheckTrendObj",
           "name": "TicketCheckTrend",
@@ -650,7 +650,7 @@
         },
         {
           "disabled": false,
-          "document": "邮件告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮件告警",
           "example": "[\"xxx@xxx.com\"]",
           "member": "string",
           "name": "MailAlarm",
@@ -1739,7 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "拦截类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拦截类型",
           "example": "0",
           "member": "int64",
           "name": "EvilBitmap",
@@ -1936,7 +1936,7 @@
         },
         {
           "disabled": false,
-          "document": "拦截类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拦截类型",
           "example": "0",
           "member": "int64",
           "name": "EvilBitmap",
@@ -1956,7 +1956,7 @@
         },
         {
           "disabled": false,
-          "document": "设备风险大类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备风险大类",
           "example": "\"301\"",
           "member": "string",
           "name": "DeviceRiskCategory",
@@ -2152,7 +2152,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>查询后数据块</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>查询后数据块</p>",
           "example": "无",
           "member": "CaptchaStatisticObj",
           "name": "Data",
@@ -2236,7 +2236,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询后数据块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询后数据块",
           "example": "{\"ActionTotal\":155,\"VerifyTotal\":32}",
           "member": "CaptchaStatisticObj",
           "name": "Data",
@@ -2311,7 +2311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>查询后数据块</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>查询后数据块</p>",
           "example": "无",
           "member": "CaptchaStatisticObj",
           "name": "Data",
@@ -2386,7 +2386,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>返回数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>返回数据</p>",
           "example": "无",
           "member": "CaptchaStatisticObj",
           "name": "Data",
@@ -2524,7 +2524,7 @@
         },
         {
           "disabled": false,
-          "document": "风险类型，请查看下面详细说明 \n账号风险\t\n        账号信用低\t1\t账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素\n\t疑似 低活跃账号\t11\t账号活跃度与正常用户有差异\n\t垃圾账号\t2\t疑似批量注册小号，近期存在严重违规或大量举报\n\t疑似小号\t21\t账号有疑似线上养号，小号等行为\n\t疑似 违规账号\t22\t账号曾有违规行为、曾被举报过、曾因违规被处罚过等\n\t无效账号\t3\t送检账号参数无法成功解析，请检查微信 openid 是否有\n\t黑名单\t4\t该账号在业务侧有过拉黑记录\n\t白名单 \t5\t业务自行有添加过白名单记录\n行为风险\t\n        批量操作\t101\t存在 ip/设备/环境等因素的聚集性异常\n\t疑似 IP 属性聚集 \t1011\t出现 IP 聚集\n\t疑似 设备属性聚集 \t1012\t出现设备聚集\n\t自动机 \t103\t疑似自动机批量请求\n\t微信登录态无效 \t104\t检查 wxtoken 参数，是否已经失效\n环境风险\t\n        环境异常 \t201\t操作 ip/设备/环境存在异常。当前 ip 为非常用 ip 或恶意 ip 段\n\t疑似 非常用IP请求 \t2011\t当前请求 IP 非该账号常用 IP\n\t疑似 IP 异常 \t2012\t使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip \n\t非公网有效 ip \t205\t传进来的 IP 地址为内网 ip 地址或者 ip 保留地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险类型，请查看下面详细说明 \n账号风险\t\n        账号信用低\t1\t账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素\n\t疑似 低活跃账号\t11\t账号活跃度与正常用户有差异\n\t垃圾账号\t2\t疑似批量注册小号，近期存在严重违规或大量举报\n\t疑似小号\t21\t账号有疑似线上养号，小号等行为\n\t疑似 违规账号\t22\t账号曾有违规行为、曾被举报过、曾因违规被处罚过等\n\t无效账号\t3\t送检账号参数无法成功解析，请检查微信 openid 是否有\n\t黑名单\t4\t该账号在业务侧有过拉黑记录\n\t白名单 \t5\t业务自行有添加过白名单记录\n行为风险\t\n        批量操作\t101\t存在 ip/设备/环境等因素的聚集性异常\n\t疑似 IP 属性聚集 \t1011\t出现 IP 聚集\n\t疑似 设备属性聚集 \t1012\t出现设备聚集\n\t自动机 \t103\t疑似自动机批量请求\n\t微信登录态无效 \t104\t检查 wxtoken 参数，是否已经失效\n环境风险\t\n        环境异常 \t201\t操作 ip/设备/环境存在异常。当前 ip 为非常用 ip 或恶意 ip 段\n\t疑似 非常用IP请求 \t2011\t当前请求 IP 非该账号常用 IP\n\t疑似 IP 异常 \t2012\t使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip \n\t非公网有效 ip \t205\t传进来的 IP 地址为内网 ip 地址或者 ip 保留地",
           "example": "2",
           "member": "int64",
           "name": "RiskType",

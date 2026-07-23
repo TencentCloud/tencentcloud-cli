@@ -3981,7 +3981,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态增量，JSON 字符串，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态增量，JSON 字符串，最大长度 8192 字符。",
           "example": "json-text",
           "member": "string",
           "name": "StateDelta",
@@ -3998,7 +3998,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色，最大长度 64 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色，最大长度 64 字符。",
           "example": "user",
           "member": "string",
           "name": "Role",
@@ -4009,7 +4009,7 @@
         },
         {
           "disabled": false,
-          "document": "内容片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容片段列表。",
           "example": "无",
           "member": "EventPartInfo",
           "name": "Parts",
@@ -4026,7 +4026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>事件 ID。为空时由服务生成。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件 ID。为空时由服务生成。</p>",
           "example": "event-a1b2c3d4",
           "member": "string",
           "name": "EventId",
@@ -4037,7 +4037,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>调用 ID，最大长度 128 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调用 ID，最大长度 128 字符。</p>",
           "example": "invoke-a1b2c3d4",
           "member": "string",
           "name": "InvocationId",
@@ -4048,7 +4048,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件作者，最大长度 128 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件作者，最大长度 128 字符。</p>",
           "example": "user",
           "member": "string",
           "name": "Author",
@@ -4059,7 +4059,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件内容。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件内容。</p>",
           "example": "无",
           "member": "EventContentInfo",
           "name": "Content",
@@ -4070,7 +4070,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件动作信息。StateDelta 为 JSON 对象字符串</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件动作信息。StateDelta 为 JSON 对象字符串</p>",
           "example": "无",
           "member": "EventActionsInfo",
           "name": "Actions",
@@ -4081,7 +4081,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件元数据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件元数据。</p>",
           "example": "{\"k\":\"v\"}",
           "member": "string",
           "name": "Metadata",
@@ -4092,7 +4092,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事件扩展信息 JSON 对象字符串，最大长度 8192 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事件扩展信息 JSON 对象字符串，最大长度 8192 字符。</p>",
           "example": "json-text",
           "member": "string",
           "name": "Extensions",
@@ -4103,7 +4103,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>错误码，最大长度 128 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误码，最大长度 128 字符。</p>",
           "example": "503",
           "member": "string",
           "name": "ErrorCode",
@@ -4114,7 +4114,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>错误信息，最大长度 2048 字符。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误信息，最大长度 2048 字符。</p>",
           "example": "timeout",
           "member": "string",
           "name": "ErrorMessage",
@@ -4142,7 +4142,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文本内容，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本内容，最大长度 8192 字符。",
           "example": "hello",
           "member": "string",
           "name": "Text",
@@ -4153,7 +4153,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为思考内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为思考内容。",
           "example": "false",
           "member": "bool",
           "name": "Thought",
@@ -4164,7 +4164,7 @@
         },
         {
           "disabled": false,
-          "document": "工具调用信息，JSON 字符串，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工具调用信息，JSON 字符串，最大长度 8192 字符。",
           "example": "json-text",
           "member": "string",
           "name": "FunctionCall",
@@ -4175,7 +4175,7 @@
         },
         {
           "disabled": false,
-          "document": "工具返回信息，JSON 字符串，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工具返回信息，JSON 字符串，最大长度 8192 字符。",
           "example": "json-text",
           "member": "string",
           "name": "FunctionResponse",
@@ -4186,7 +4186,7 @@
         },
         {
           "disabled": false,
-          "document": "内联数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内联数据。",
           "example": "无",
           "member": "InlineDataInfo",
           "name": "InlineData",
@@ -4531,7 +4531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体类型，最大长度 128 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体类型，最大长度 128 字符。",
           "example": "text/plain",
           "member": "string",
           "name": "MimeType",
@@ -4542,7 +4542,7 @@
         },
         {
           "disabled": false,
-          "document": "Base64 编码数据，最大长度 8192 字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Base64 编码数据，最大长度 8192 字符。",
           "example": "aGVsbG8=",
           "member": "string",
           "name": "Data",
@@ -4592,7 +4592,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>需要采集的日志文件路径，必须是 /logs/ 目录下的文件，不支持子目录，最大支持 10 个文件。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>需要采集的日志文件路径，必须是 /logs/ 目录下的文件，不支持子目录，最大支持 10 个文件。</p>",
           "example": "[\"/logs/2026-04-08.log\"]",
           "member": "string",
           "name": "Files",
@@ -5296,7 +5296,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义磁盘大小</p><p>枚举值：</p><ul><li>1Gi： 1Gi</li><li>5Gi： 5Gi</li><li>10Gi： 10Gi</li><li>20Gi： 20Gi</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义磁盘大小</p><p>枚举值：</p><ul><li>1Gi： 1Gi</li><li>5Gi： 5Gi</li><li>10Gi： 10Gi</li><li>20Gi： 20Gi</li></ul>",
           "example": "10Gi",
           "member": "string",
           "name": "Storage",
@@ -5964,7 +5964,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>存储配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存储配置</p>",
           "example": "无",
           "member": "StorageSource",
           "name": "StorageSource",

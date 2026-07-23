@@ -454,7 +454,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国家",
           "example": "无",
           "member": "string",
           "name": "Country",
@@ -464,7 +464,7 @@
         },
         {
           "disabled": false,
-          "document": "邮政编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮政编码",
           "example": "无",
           "member": "string",
           "name": "PostalCode",
@@ -474,7 +474,7 @@
         },
         {
           "disabled": false,
-          "document": "子地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子地区",
           "example": "无",
           "member": "string",
           "name": "Subdivision",
@@ -484,7 +484,7 @@
         },
         {
           "disabled": false,
-          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市",
           "example": "无",
           "member": "string",
           "name": "City",
@@ -494,7 +494,7 @@
         },
         {
           "disabled": false,
-          "document": "完整地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完整地址",
           "example": "无",
           "member": "string",
           "name": "FormattedAddress",
@@ -504,7 +504,7 @@
         },
         {
           "disabled": false,
-          "document": "地址栏第一行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址栏第一行",
           "example": "无",
           "member": "string",
           "name": "LineOne",
@@ -514,7 +514,7 @@
         },
         {
           "disabled": false,
-          "document": "地址栏第二行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址栏第二行",
           "example": "无",
           "member": "string",
           "name": "LineTwo",
@@ -524,7 +524,7 @@
         },
         {
           "disabled": false,
-          "document": "地址栏第三行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址栏第三行",
           "example": "无",
           "member": "string",
           "name": "LineThree",
@@ -534,7 +534,7 @@
         },
         {
           "disabled": false,
-          "document": "地址栏第四行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址栏第四行",
           "example": "无",
           "member": "string",
           "name": "LineFour",
@@ -544,7 +544,7 @@
         },
         {
           "disabled": false,
-          "document": "地址栏第五行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址栏第五行",
           "example": "无",
           "member": "string",
           "name": "LineFive",
@@ -916,7 +916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>疑似的攻击痕迹类型，具体类型如下：<br>SuspectedSpoofingAttack：翻拍攻击<br>SuspectedSynthesisImage：疑似合成图片<br>SuspectedSynthesisVideo：疑似合成视频<br>SuspectedAnomalyAttack：人脸特征疑似非真人<br>SuspectedAdversarialAttack：疑似对抗样本攻击<br>SuspectedBlackIndustry：疑似黑产批量模板攻击<br>SuspectedWatermark：疑似存在水印</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>疑似的攻击痕迹类型，具体类型如下：<br>SuspectedSpoofingAttack：翻拍攻击<br>SuspectedSynthesisImage：疑似合成图片<br>SuspectedSynthesisVideo：疑似合成视频<br>SuspectedAnomalyAttack：人脸特征疑似非真人<br>SuspectedAdversarialAttack：疑似对抗样本攻击<br>SuspectedBlackIndustry：疑似黑产批量模板攻击<br>SuspectedWatermark：疑似存在水印</p>",
           "example": "SuspectedWatermark",
           "member": "string",
           "name": "Type",
@@ -1238,7 +1238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "香港身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "香港身份证",
           "example": "无",
           "member": "HKIDCard",
           "name": "HKIDCard",
@@ -1248,7 +1248,7 @@
         },
         {
           "disabled": false,
-          "document": "马来西亚身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "马来西亚身份证",
           "example": "无",
           "member": "MLIDCard",
           "name": "MLIDCard",
@@ -1258,7 +1258,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾选民卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾选民卡",
           "example": "无",
           "member": "PhilippinesVoteID",
           "name": "PhilippinesVoteID",
@@ -1268,7 +1268,7 @@
         },
         {
           "disabled": false,
-          "document": "印度尼西亚身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印度尼西亚身份证",
           "example": "无",
           "member": "IndonesiaIDCard",
           "name": "IndonesiaIDCard",
@@ -1278,7 +1278,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾驾驶证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾驾驶证",
           "example": "无",
           "member": "PhilippinesDrivingLicense",
           "name": "PhilippinesDrivingLicense",
@@ -1288,7 +1288,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾TinID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾TinID",
           "example": "无",
           "member": "PhilippinesTinID",
           "name": "PhilippinesTinID",
@@ -1298,7 +1298,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾SSSID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾SSSID",
           "example": "无",
           "member": "PhilippinesSSSID",
           "name": "PhilippinesSSSID",
@@ -1308,7 +1308,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾UMID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾UMID",
           "example": "无",
           "member": "PhilippinesUMID",
           "name": "PhilippinesUMID",
@@ -1318,7 +1318,7 @@
         },
         {
           "disabled": false,
-          "document": "港澳台地区以及境外护照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "港澳台地区以及境外护照",
           "example": "无",
           "member": "InternationalIDPassport",
           "name": "InternationalIDPassport",
@@ -1328,7 +1328,7 @@
         },
         {
           "disabled": false,
-          "document": "通用卡证信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通用卡证信息",
           "example": "无",
           "member": "GeneralCard",
           "name": "GeneralCard",
@@ -1338,7 +1338,7 @@
         },
         {
           "disabled": false,
-          "document": "印度尼西亚驾驶证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印度尼西亚驾驶证",
           "example": "无",
           "member": "IndonesiaDrivingLicense",
           "name": "IndonesiaDrivingLicense",
@@ -1348,7 +1348,7 @@
         },
         {
           "disabled": false,
-          "document": "泰国身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泰国身份证",
           "example": "无",
           "member": "ThailandIDCard",
           "name": "ThailandIDCard",
@@ -1358,7 +1358,7 @@
         },
         {
           "disabled": false,
-          "document": "新加坡身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新加坡身份证",
           "example": "无",
           "member": "SingaporeIDCard",
           "name": "SingaporeIDCard",
@@ -1368,7 +1368,7 @@
         },
         {
           "disabled": false,
-          "document": "中国澳门身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中国澳门身份证",
           "example": "无",
           "member": "MacaoIDCard",
           "name": "MacaoIDCard",
@@ -1378,7 +1378,7 @@
         },
         {
           "disabled": false,
-          "document": "大陆身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大陆身份证",
           "example": "无",
           "member": "MainlandIDCard",
           "name": "MainlandIDCard",
@@ -1388,7 +1388,7 @@
         },
         {
           "disabled": false,
-          "document": "中国台湾身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中国台湾身份证",
           "example": "无",
           "member": "TaiWanIDCard",
           "name": "TaiWanIDCard",
@@ -1398,7 +1398,7 @@
         },
         {
           "disabled": false,
-          "document": "日本身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日本身份证",
           "example": "无",
           "member": "JapanIDCard",
           "name": "JapanIDCard",
@@ -1408,7 +1408,7 @@
         },
         {
           "disabled": false,
-          "document": "孟加拉身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "孟加拉身份证",
           "example": "无",
           "member": "BangladeshIDCard",
           "name": "BangladeshIDCard",
@@ -1418,7 +1418,7 @@
         },
         {
           "disabled": false,
-          "document": "尼日利亚身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "尼日利亚身份证",
           "example": "无",
           "member": "NigeriaIDCard",
           "name": "NigeriaIDCard",
@@ -1428,7 +1428,7 @@
         },
         {
           "disabled": false,
-          "document": "尼日利亚驾照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "尼日利亚驾照",
           "example": "无",
           "member": "NigeriaDrivingLicense",
           "name": "NigeriaDrivingLicense",
@@ -1438,7 +1438,7 @@
         },
         {
           "disabled": false,
-          "document": "巴基斯坦身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巴基斯坦身份证",
           "example": "无",
           "member": "PakistanIDCard",
           "name": "PakistanIDCard",
@@ -1448,7 +1448,7 @@
         },
         {
           "disabled": false,
-          "document": "巴基斯坦驾照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巴基斯坦驾照",
           "example": "无",
           "member": "PakistanDrivingLicense",
           "name": "PakistanDrivingLicense",
@@ -1474,7 +1474,7 @@
         },
         {
           "disabled": false,
-          "document": "用户是否自行修改卡证识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户是否自行修改卡证识别结果",
           "example": "true",
           "member": "bool",
           "name": "IsEdit",
@@ -1484,7 +1484,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证鉴伪视频的下载链接，仅开启证件视频鉴伪功能时返回，url链接有效期为10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证鉴伪视频的下载链接，仅开启证件视频鉴伪功能时返回，url链接有效期为10分钟。",
           "example": "无",
           "member": "FileInfo",
           "name": "CardVideo",
@@ -1494,7 +1494,7 @@
         },
         {
           "disabled": false,
-          "document": "证件照图片的下载地址，url链接有效期为10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件照图片的下载地址，url链接有效期为10分钟。",
           "example": "无",
           "member": "FileInfo",
           "name": "CardImage",
@@ -1504,7 +1504,7 @@
         },
         {
           "disabled": false,
-          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\n（1）中国香港证件\nIdCardType为HK（香港身份证）时：\n\n- ChineseName string 中文姓名\n- FullName string 英文姓名\n- RegistrationNumber string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- LicenseNumber string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"**AZ**\"\n- IssuedDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n- HKIDVersion string 香港身份证版本，HKID-2003：03版身份证，HKID-2018：18版身份证\n\n（2）马来西亚证件\nIdCardType为ML（马来西亚身份证）时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- LicenseNumber string 证号\n- FullName string 名字\n- FormattedAddress string 地址\n- Type string 证件类型\n\n（3）菲律宾证件\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n\nIdCardType为PhilippinesTinID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Address string 地址\n- Birthday string 生日\n- IssueDate string 发证日期\n\nIdCardType为PhilippinesSSSID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Birthday string 生日\n\nIdCardType为PhilippinesUMID时：\n- Surname string 姓\n- MiddleName string 中间名\n- GivenName string 名\n- Sex string 性别\n- Birthday string 生日\n- Address string 地址\n- CRN string CRN码\n\n（4）印度尼西亚证件\nIdCardType为IndonesiaIDCard时：\n- LicenseNumber string 证件号码\n- FullName string 姓名\n- Birthday string 出生地/出生时间\n- Sex string 性别\n- BloodType string 血型\n- FormattedAddress string 地址\n- Street string 街道\n- Village string 村\n- Area string 地区\n- Religion string 宗教信仰\n- MaritalStatus string 婚姻状况\n- Occupation string 职业\n- Nationality string 国籍\n- DueDate string 身份证有效期限\n- IssuedDate string 发证日期\n\n（5）通用证件\nIdCardType为MLIDPassport时：\n- FullName string 姓名\n- Surname string 姓\n- GivenName string 名\n- Birthday string 出生日期\n- Sex string 性别（F女，M男）\n- DateOfExpiration string 有效期\n- IssuingCountry string 发行国\n- NationalityCode string 国籍所属地区代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\n（1）中国香港证件\nIdCardType为HK（香港身份证）时：\n\n- ChineseName string 中文姓名\n- FullName string 英文姓名\n- RegistrationNumber string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- LicenseNumber string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"**AZ**\"\n- IssuedDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n- HKIDVersion string 香港身份证版本，HKID-2003：03版身份证，HKID-2018：18版身份证\n\n（2）马来西亚证件\nIdCardType为ML（马来西亚身份证）时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- LicenseNumber string 证号\n- FullName string 名字\n- FormattedAddress string 地址\n- Type string 证件类型\n\n（3）菲律宾证件\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n\nIdCardType为PhilippinesTinID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Address string 地址\n- Birthday string 生日\n- IssueDate string 发证日期\n\nIdCardType为PhilippinesSSSID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Birthday string 生日\n\nIdCardType为PhilippinesUMID时：\n- Surname string 姓\n- MiddleName string 中间名\n- GivenName string 名\n- Sex string 性别\n- Birthday string 生日\n- Address string 地址\n- CRN string CRN码\n\n（4）印度尼西亚证件\nIdCardType为IndonesiaIDCard时：\n- LicenseNumber string 证件号码\n- FullName string 姓名\n- Birthday string 出生地/出生时间\n- Sex string 性别\n- BloodType string 血型\n- FormattedAddress string 地址\n- Street string 街道\n- Village string 村\n- Area string 地区\n- Religion string 宗教信仰\n- MaritalStatus string 婚姻状况\n- Occupation string 职业\n- Nationality string 国籍\n- DueDate string 身份证有效期限\n- IssuedDate string 发证日期\n\n（5）通用证件\nIdCardType为MLIDPassport时：\n- FullName string 姓名\n- Surname string 姓\n- GivenName string 名\n- Birthday string 出生日期\n- Sex string 性别（F女，M男）\n- DateOfExpiration string 有效期\n- IssuingCountry string 发行国\n- NationalityCode string 国籍所属地区代码",
           "example": "无",
           "member": "FileInfo",
           "name": "CardInfoOcrJson",
@@ -1524,7 +1524,7 @@
         },
         {
           "disabled": true,
-          "document": "证件照的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件照的文字识别结果",
           "example": "无",
           "member": "CardInfo",
           "name": "CardInfo",
@@ -1534,7 +1534,7 @@
         },
         {
           "disabled": false,
-          "document": "证件照的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件照的文字识别结果",
           "example": "无",
           "member": "NormalCardInfo",
           "name": "NormalCardInfo",
@@ -1544,7 +1544,7 @@
         },
         {
           "disabled": false,
-          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通",
           "example": "[-9101]",
           "member": "int64",
           "name": "WarnCardInfos",
@@ -1554,7 +1554,7 @@
         },
         {
           "disabled": false,
-          "document": "本次EKYC卡证OCR的修改详情，当用户自行修改卡证识别结果后（IsEdit=true），EditDetails会返回被修改的字段。当IsEdit=false，EditDetails为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次EKYC卡证OCR的修改详情，当用户自行修改卡证识别结果后（IsEdit=true），EditDetails会返回被修改的字段。当IsEdit=false，EditDetails为空。",
           "example": "无",
           "member": "EditDetail",
           "name": "EditDetails",
@@ -1969,7 +1969,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>敏感数据加密信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>敏感数据加密信息。</p>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -2372,7 +2372,7 @@
         },
         {
           "disabled": false,
-          "document": "验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。",
           "example": "/9j/4AAQSk...s97n//2Q==",
           "member": "string",
           "name": "BestFrameBase64",
@@ -2464,7 +2464,7 @@
         },
         {
           "disabled": false,
-          "document": "用户认证过程中人像照片截图的下载地址，下载链接有效期为10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户认证过程中人像照片截图的下载地址，下载链接有效期为10分钟。",
           "example": "无",
           "member": "FileInfo",
           "name": "BestFrame",
@@ -2484,7 +2484,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸比对结果码：\n0: 成功\n2004: 上传人脸图片过大或者过小\n2012: 未检测到完整人脸\n2013: 未检测到人脸\n2014: 上传的图片分辨率太低，请重新上传\n2015: 比对失败\n2016: 比对相似度未达到通过标准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人脸比对结果码：\n0: 成功\n2004: 上传人脸图片过大或者过小\n2012: 未检测到完整人脸\n2013: 未检测到人脸\n2014: 上传的图片分辨率太低，请重新上传\n2015: 比对失败\n2016: 比对相似度未达到通过标准",
           "example": "0",
           "member": "string",
           "name": "CompareErrorCode",
@@ -2494,7 +2494,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸比对结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人脸比对结果描述。",
           "example": "success",
           "member": "string",
           "name": "CompareErrorMsg",
@@ -2504,7 +2504,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸比对的相似度分数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人脸比对的相似度分数。",
           "example": "52.77",
           "member": "float",
           "name": "Sim",
@@ -2524,7 +2524,7 @@
         },
         {
           "disabled": false,
-          "document": "用户编辑后的证件照信息。该参数暂不启用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户编辑后的证件照信息。该参数暂不启用。",
           "example": "无",
           "member": "FileInfo",
           "name": "CardInfoInputJson",
@@ -2544,7 +2544,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。  详情如下： 01-用户全程闭眼。 02-用户未完成指定动作。 03-疑似翻拍攻击。 04-疑似合成图片。 05-疑似合成视频。 06-疑似合成动作。 07-疑似黑产模板。 08-疑似存在水印。 09-反光校验未通过。 10-最佳帧校验未通过。 11-人脸质量过差。 12-人脸距离不匹配。 13-疑似对抗样本攻击。 null-无。 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。  详情如下： 01-用户全程闭眼。 02-用户未完成指定动作。 03-疑似翻拍攻击。 04-疑似合成图片。 05-疑似合成视频。 06-疑似合成动作。 07-疑似黑产模板。 08-疑似存在水印。 09-反光校验未通过。 10-最佳帧校验未通过。 11-人脸质量过差。 12-人脸距离不匹配。 13-疑似对抗样本攻击。 null-无。 增强版：此字段不生效，默认为null。",
           "example": "[\"04\"]",
           "member": "string",
           "name": "LivenessInfoTag",
@@ -3003,7 +3003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>请求时间戳。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求时间戳。</p>",
           "example": "1753091765496",
           "member": "string",
           "name": "ReqTime",
@@ -3013,7 +3013,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次活体一比一请求的唯一标记。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一请求的唯一标记。</p>",
           "example": "5139af2d-442c-4500-837f-9683baba76ae",
           "member": "string",
           "name": "Seq",
@@ -3023,7 +3023,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>参与本次活体一比一的身份证号。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参与本次活体一比一的身份证号。</p>",
           "example": "440111199001010000",
           "member": "string",
           "name": "Idcard",
@@ -3033,7 +3033,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>参与本次活体一比一的姓名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参与本次活体一比一的姓名。</p>",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -3043,7 +3043,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次活体一比一的相似度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一的相似度。</p>",
           "example": "100.00",
           "member": "string",
           "name": "Sim",
@@ -3053,7 +3053,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次活体一比一是否收费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一是否收费</p>",
           "example": "false",
           "member": "bool",
           "name": "IsNeedCharge",
@@ -3063,7 +3063,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次活体一比一最终结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一最终结果。0为成功</p>",
           "example": "0",
           "member": "int64",
           "name": "Errcode",
@@ -3073,7 +3073,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）</p>",
           "example": "成功",
           "member": "string",
           "name": "Errmsg",
@@ -3083,7 +3083,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次活体结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体结果。0为成功</p>",
           "example": "0",
           "member": "int64",
           "name": "Livestatus",
@@ -3093,7 +3093,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次活体结果描述。（仅描述用，文案更新时不会通知。）</p>",
           "example": "成功",
           "member": "string",
           "name": "Livemsg",
@@ -3103,7 +3103,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次一比一结果。0为成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次一比一结果。0为成功</p>",
           "example": "0",
           "member": "int64",
           "name": "Comparestatus",
@@ -3113,7 +3113,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次一比一结果描述。（仅描述用，文案更新时不会通知。）</p>",
           "example": "成功",
           "member": "string",
           "name": "Comparemsg",
@@ -3123,7 +3123,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>比对库源类型。包括：商业库；业务方自有库（用户上传照片、客户的混合库、混合部署库）；二次验证库；人工审核库；</p>",
           "example": "商业库",
           "member": "string",
           "name": "CompareLibType",
@@ -3133,7 +3133,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>枚举活体检测类型：<br>0：未知<br>1：数字活体<br>2：动作活体<br>3：静默活体<br>4：一闪活体（动作+光线）</p>",
           "example": "0",
           "member": "uint64",
           "name": "LivenessMode",
@@ -3149,7 +3149,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "活体比对最佳帧Base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活体比对最佳帧Base64编码。",
           "example": "/9j/4AAQSk...NFFFJjP//Z",
           "member": "string",
           "name": "BestFrame",
@@ -3159,7 +3159,7 @@
         },
         {
           "disabled": false,
-          "document": "自截帧Base64编码数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自截帧Base64编码数组。",
           "example": "[\"/9j/4AAQSk...7+lc5J/9k=\"]",
           "member": "string",
           "name": "BestFrames",
@@ -3175,7 +3175,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "OCR正面照片的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OCR正面照片的base64编码。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "OcrFront",
@@ -3185,7 +3185,7 @@
         },
         {
           "disabled": false,
-          "document": "OCR反面照片的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OCR反面照片的base64编码。",
           "example": "/9j/4AAQSk.../S7s2f/9k=",
           "member": "string",
           "name": "OcrBack",
@@ -3195,7 +3195,7 @@
         },
         {
           "disabled": false,
-          "document": "旋转裁边后的正面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旋转裁边后的正面照片base64编码。",
           "example": "/9j/4AAQSk...PnUZx//9k=",
           "member": "string",
           "name": "ProcessedFrontImage",
@@ -3205,7 +3205,7 @@
         },
         {
           "disabled": false,
-          "document": "旋转裁边后的背面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旋转裁边后的背面照片base64编码。",
           "example": "/9j/4AAQSk...Vr0Ej/2Q==",
           "member": "string",
           "name": "ProcessedBackImage",
@@ -3215,7 +3215,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证正面人像图base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证正面人像图base64编码。",
           "example": "/9j/4AAQSk...iiiisyz//Z",
           "member": "string",
           "name": "Avatar",
@@ -3225,7 +3225,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证人像面告警码。\n- 开启身份证告警功能后才会返回。\n- 返回数组中可能出现的告警码如下：\n    - -9100 身份证有效日期不合法告警。\n    - -9101 身份证边框不完整告警。\n    - -9102 身份证复印件告警。\n    - -9103 身份证翻拍告警。\n    - -9105 身份证框内遮挡告警。\n    - -9104 临时身份证告警。\n    - -9106 身份证 PS 告警（疑似存在PS痕迹）。\n    - -9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证人像面告警码。\n- 开启身份证告警功能后才会返回。\n- 返回数组中可能出现的告警码如下：\n    - -9100 身份证有效日期不合法告警。\n    - -9101 身份证边框不完整告警。\n    - -9102 身份证复印件告警。\n    - -9103 身份证翻拍告警。\n    - -9105 身份证框内遮挡告警。\n    - -9104 临时身份证告警。\n    - -9106 身份证 PS 告警（疑似存在PS痕迹）。\n    - -9107 身份证反光告警。",
           "example": "[\"-9100\"]",
           "member": "int64",
           "name": "WarnInfos",
@@ -3235,7 +3235,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证国徽面告警码。\n- 开启身份证告警功能后才会返回。\n- 返回数组中可能出现的告警码如下：\n    -   -9100 身份证有效日期不合法告警，\n    -     -9101 身份证边框不完整告警，\n    -     -9102 身份证复印件告警，\n    -     -9103 身份证翻拍告警，\n    -     -9105 身份证框内遮挡告警，\n    -     -9104 临时身份证告警，\n    -     -9106 身份证 PS 告警（疑似存在PS痕迹），\n    -     -9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证国徽面告警码。\n- 开启身份证告警功能后才会返回。\n- 返回数组中可能出现的告警码如下：\n    -   -9100 身份证有效日期不合法告警，\n    -     -9101 身份证边框不完整告警，\n    -     -9102 身份证复印件告警，\n    -     -9103 身份证翻拍告警，\n    -     -9105 身份证框内遮挡告警，\n    -     -9104 临时身份证告警，\n    -     -9106 身份证 PS 告警（疑似存在PS痕迹），\n    -     -9107 身份证反光告警。",
           "example": "[\"-9100\"]",
           "member": "int64",
           "name": "BackWarnInfos",
@@ -3251,7 +3251,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>本次流程最终验证结果。</p><ul><li>取值范围：0为成功。</li><li>仅包含活体人脸核身结果，不包含意愿核身结果。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程最终验证结果。</p><ul><li>取值范围：0为成功。</li><li>仅包含活体人脸核身结果，不包含意愿核身结果。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
@@ -3261,7 +3261,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程最终验证结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程最终验证结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>",
           "example": "成功",
           "member": "string",
           "name": "ErrMsg",
@@ -3271,7 +3271,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次验证使用的身份证号。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次验证使用的身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -3281,7 +3281,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户认证时使用的证件号码类型。</p><ul><li>取值范围：<br>  0：二代身份证的证件号码。<br>  1：港澳台居住证的证件号码。<br>  2：其他（核验使用的证件号码非合法身份号码）。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户认证时使用的证件号码类型。</p><ul><li>取值范围：<br>  0：二代身份证的证件号码。<br>  1：港澳台居住证的证件号码。<br>  2：其他（核验使用的证件号码非合法身份号码）。</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "UseIDType",
@@ -3291,7 +3291,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次验证使用的姓名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次验证使用的姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -3301,7 +3301,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节识别结果：民族。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节识别结果：民族。</p>",
           "example": "汉族",
           "member": "string",
           "name": "OcrNation",
@@ -3311,7 +3311,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节识别结果：家庭住址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节识别结果：家庭住址。</p>",
           "example": "北京市东城区景山前街4号紫禁城敬事房",
           "member": "string",
           "name": "OcrAddress",
@@ -3321,7 +3321,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节识别结果：生日。</p><ul><li>格式为：YYYY/M/D</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节识别结果：生日。</p><ul><li>格式为：YYYY/M/D</li></ul>",
           "example": "1995/5/13",
           "member": "string",
           "name": "OcrBirth",
@@ -3331,7 +3331,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节识别结果：签发机关。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节识别结果：签发机关。</p>",
           "example": "北京市",
           "member": "string",
           "name": "OcrAuthority",
@@ -3341,7 +3341,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节识别结果：有效日期。</p><ul><li>格式为：YYYY.MM.DD-YYYY.MM.DD。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节识别结果：有效日期。</p><ul><li>格式为：YYYY.MM.DD-YYYY.MM.DD。</li></ul>",
           "example": "1999.01.01-2009.01.01",
           "member": "string",
           "name": "OcrValidDate",
@@ -3351,7 +3351,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节识别结果：姓名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节识别结果：姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "OcrName",
@@ -3361,7 +3361,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节识别结果：身份证号。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节识别结果：身份证号。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "OcrIdCard",
@@ -3371,7 +3371,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节识别结果：性别。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节识别结果：性别。</p>",
           "example": "男",
           "member": "string",
           "name": "OcrGender",
@@ -3381,7 +3381,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份校验环节采用的信息上传方式。</p><ul><li>取值有&quot;NFC&quot;、&quot;OCR&quot;、&quot;手动输入&quot;、&quot;其他&quot;</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份校验环节采用的信息上传方式。</p><ul><li>取值有&quot;NFC&quot;、&quot;OCR&quot;、&quot;手动输入&quot;、&quot;其他&quot;</li></ul>",
           "example": "NFC",
           "member": "string",
           "name": "IdInfoFrom",
@@ -3391,7 +3391,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程最终活体结果。</p><ul><li>0为成功</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程最终活体结果。</p><ul><li>0为成功</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "LiveStatus",
@@ -3401,7 +3401,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程最终活体结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程最终活体结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>",
           "example": "成功",
           "member": "string",
           "name": "LiveMsg",
@@ -3411,7 +3411,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程最终一比一结果。</p><ul><li>0为成功</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程最终一比一结果。</p><ul><li>0为成功</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "Comparestatus",
@@ -3421,7 +3421,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程最终一比一结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程最终一比一结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>",
           "example": "成功",
           "member": "string",
           "name": "Comparemsg",
@@ -3431,7 +3431,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程活体一比一的分数。- 取值范围 [0.00, 100.00]。- 相似度大于等于70时才判断为同一人，阈值不支持自定义。- 阈值70的误通过率为万分之一。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程活体一比一的分数。- 取值范围 [0.00, 100.00]。- 相似度大于等于70时才判断为同一人，阈值不支持自定义。- 阈值70的误通过率为万分之一。</p>",
           "example": "88.3",
           "member": "string",
           "name": "Sim",
@@ -3441,7 +3441,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地理位置经纬度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地理位置经纬度。</p>",
           "example": "2",
           "member": "string",
           "name": "Location",
@@ -3451,7 +3451,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Auth接口带入额外信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Auth接口带入额外信息。</p>",
           "example": "2",
           "member": "string",
           "name": "Extra",
@@ -3461,7 +3461,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程进行的活体一比一流水。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程进行的活体一比一流水。</p>",
           "example": "无",
           "member": "DetectDetail",
           "name": "LivenessDetail",
@@ -3471,7 +3471,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。- 详情如下：    01-用户全程闭眼    02-用户未完成指定动作    03-疑似翻拍攻击    04-疑似合成攻击    05-疑似黑产模板    06-疑似存在水印    07-反光校验未通过    08-疑似中途换人    09-人脸质量过差    10-距离校验不通过    11-疑似对抗样本攻击    12-嘴巴区域疑似存在攻击痕迹    13-眼睛区域疑似存在攻击痕迹    14-眼睛或嘴巴被遮挡</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。- 详情如下：    01-用户全程闭眼    02-用户未完成指定动作    03-疑似翻拍攻击    04-疑似合成攻击    05-疑似黑产模板    06-疑似存在水印    07-反光校验未通过    08-疑似中途换人    09-人脸质量过差    10-距离校验不通过    11-疑似对抗样本攻击    12-嘴巴区域疑似存在攻击痕迹    13-眼睛区域疑似存在攻击痕迹    14-眼睛或嘴巴被遮挡</p>",
           "example": "[\"01\"]",
           "member": "string",
           "name": "LivenessInfoTag",
@@ -3481,7 +3481,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>手机号码。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机号码。</p>",
           "example": "16137688175",
           "member": "string",
           "name": "Mobile",
@@ -3491,7 +3491,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程最终比对库源类型。</p><ul><li>取值范围：<br>  权威库。<br>  业务方自有库（用户上传照片、客户的混合库、混合部署库）。<br>  二次验证库。<br>  人工审核库。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程最终比对库源类型。</p><ul><li>取值范围：<br>  权威库。<br>  业务方自有库（用户上传照片、客户的混合库、混合部署库）。<br>  二次验证库。<br>  人工审核库。</li></ul>",
           "example": "权威库",
           "member": "string",
           "name": "CompareLibType",
@@ -3501,7 +3501,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次流程最终活体类型。</p><ul><li>取值范围：<br>  0：未知<br>  1：数字活体<br>  2：动作活体<br>  3：静默活体<br>  4：一闪活体（动作+光线）<br>  5：远近活体</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程最终活体类型。</p><ul><li>取值范围：<br>  0：未知<br>  1：数字活体<br>  2：动作活体<br>  3：静默活体<br>  4：一闪活体（动作+光线）<br>  5：远近活体</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "LivenessMode",
@@ -3511,7 +3511,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>nfc重复计费requestId列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>nfc重复计费requestId列表。</p>",
           "example": "[\"5bd763c5-3dd9-4d40-8043-00f90fe75acb\"]",
           "member": "string",
           "name": "NFCRequestIds",
@@ -3521,7 +3521,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>nfc重复计费计数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>nfc重复计费计数。</p>",
           "example": "1",
           "member": "int64",
           "name": "NFCBillingCounts",
@@ -3531,7 +3531,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>港澳台居住证通行证号码。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>港澳台居住证通行证号码。</p>",
           "example": "08320271",
           "member": "string",
           "name": "PassNo",
@@ -3541,7 +3541,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>港澳台居住证签发次数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>港澳台居住证签发次数。</p>",
           "example": "02",
           "member": "string",
           "name": "VisaNum",
@@ -3551,7 +3551,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>活体检测的动作顺序，多动作以“,”分隔。<br>输出格式如：“1,2”表示“张嘴+眨眼”。</p><ul><li>详细序列值含义如下：<br> 1：张嘴<br>2：眨眼<br>3：点头<br>4：摇头<br>5：静默<br>注：仅浮层H5产品返回</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>活体检测的动作顺序，多动作以“,”分隔。<br>输出格式如：“1,2”表示“张嘴+眨眼”。</p><ul><li>详细序列值含义如下：<br> 1：张嘴<br>2：眨眼<br>3：点头<br>4：摇头<br>5：静默<br>注：仅浮层H5产品返回</li></ul>",
           "example": "1,2",
           "member": "string",
           "name": "LivenessActionSequence",
@@ -3567,7 +3567,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "活体视频的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活体视频的base64编码。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "LivenessVideo",
@@ -3577,7 +3577,7 @@
         },
         {
           "disabled": false,
-          "document": "当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。",
           "example": "无",
           "member": "VideoDetailData",
           "name": "LivenessVideos",
@@ -3697,7 +3697,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改的字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改的字段名称",
           "example": "无",
           "member": "string",
           "name": "FieldName",
@@ -3707,7 +3707,7 @@
         },
         {
           "disabled": false,
-          "document": "字段修改前的值，即OCR的原始结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段修改前的值，即OCR的原始结果",
           "example": "无",
           "member": "string",
           "name": "OriginalFieldValue",
@@ -3717,7 +3717,7 @@
         },
         {
           "disabled": false,
-          "document": "字段修改后的值，即用户手动输入的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段修改后的值，即用户手动输入的结果",
           "example": "无",
           "member": "string",
           "name": "RevisedFieldValue",
@@ -3863,7 +3863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段</p>",
           "example": "[\"string\"]",
           "member": "string",
           "name": "EncryptList",
@@ -3874,7 +3874,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>加密后的对称密钥，关于密钥的生成和使用请查阅<a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>加密后的对称密钥，关于密钥的生成和使用请查阅<a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。</p>",
           "example": "null",
           "member": "string",
           "name": "CiphertextBlob",
@@ -3885,7 +3885,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。</p>",
           "example": "null",
           "member": "string",
           "name": "Iv",
@@ -3896,7 +3896,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>加密使用的算法（支持&#39;AES-256-CBC&#39;、&#39;SM4-GCM&#39;），不传默认为&#39;AES-256-CBC&#39;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>加密使用的算法（支持&#39;AES-256-CBC&#39;、&#39;SM4-GCM&#39;），不传默认为&#39;AES-256-CBC&#39;</p>",
           "example": "SM4-GCM",
           "member": "string",
           "name": "Algorithm",
@@ -3907,7 +3907,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>SM4-GCM算法生成的消息摘要（校验消息完整性时使用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SM4-GCM算法生成的消息摘要（校验消息完整性时使用）</p>",
           "example": "[\"string\"]",
           "member": "string",
           "name": "TagList",
@@ -3924,7 +3924,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命中模板的详细信息，仅返回命中的相似度最高的模板信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命中模板的详细信息，仅返回命中的相似度最高的模板信息",
           "example": "无",
           "member": "RetrievalLivenessExtraInfo",
           "name": "RetrievalLivenessExtraInfo",
@@ -3983,7 +3983,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务结果描述。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -4241,7 +4241,7 @@
         },
         {
           "disabled": false,
-          "document": "证件地址信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件地址信息",
           "example": "无",
           "member": "Address",
           "name": "Address",
@@ -4485,7 +4485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人脸核身识别结果及文本类信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人脸核身识别结果及文本类信息。",
           "example": "无",
           "member": "DetectInfoText",
           "name": "Text",
@@ -4495,7 +4495,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证照片信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证照片信息。",
           "example": "无",
           "member": "DetectInfoIdCardData",
           "name": "IdCardData",
@@ -4505,7 +4505,7 @@
         },
         {
           "disabled": false,
-          "document": "最佳帧信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最佳帧信息。",
           "example": "无",
           "member": "DetectInfoBestFrame",
           "name": "BestFrame",
@@ -4515,7 +4515,7 @@
         },
         {
           "disabled": false,
-          "document": "视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频信息。",
           "example": "无",
           "member": "DetectInfoVideoData",
           "name": "VideoData",
@@ -4525,7 +4525,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "敏感数据加密信息。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -4535,7 +4535,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身朗读模式结果信息。\n- 若未使用意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身朗读模式结果信息。\n- 若未使用意愿核身功能，该字段返回值可以不处理。",
           "example": "无",
           "member": "IntentionVerifyData",
           "name": "IntentionVerifyData",
@@ -4545,7 +4545,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身问答模式结果。\n\n- 若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身问答模式结果。\n\n- 若未使用该意愿核身功能，该字段返回值可以不处理。",
           "example": "无",
           "member": "IntentionQuestionResult",
           "name": "IntentionQuestionResult",
@@ -4555,7 +4555,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身点头确认模式的结果信息。\n- 若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身点头确认模式的结果信息。\n- 若未使用该意愿核身功能，该字段返回值可以不处理。",
           "example": "无",
           "member": "IntentionActionResult",
           "name": "IntentionActionResult",
@@ -4565,7 +4565,7 @@
         },
         {
           "disabled": false,
-          "document": "加密后的数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密后的数据。",
           "example": "0hMvx6fX6n...gXE0adJA==",
           "member": "string",
           "name": "EncryptedBody",
@@ -4760,7 +4760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人脸核身识别结果及文本类信息。\n- 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。\n- 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人脸核身识别结果及文本类信息。\n- 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。\n- 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。",
           "example": "无",
           "member": "DetectInfoText",
           "name": "Text",
@@ -4770,7 +4770,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证照片信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证照片信息。",
           "example": "无",
           "member": "DetectInfoIdCardData",
           "name": "IdCardData",
@@ -4780,7 +4780,7 @@
         },
         {
           "disabled": false,
-          "document": "最佳帧信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最佳帧信息。",
           "example": "无",
           "member": "DetectInfoBestFrame",
           "name": "BestFrame",
@@ -4790,7 +4790,7 @@
         },
         {
           "disabled": false,
-          "document": "Eid信息。\n- EidInfo字段只有在人脸核身控制台完成“申请返回实名信息”之后返回，操作指引详见 [E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。\n- Eid信息包括商户下用户唯一标识以及加密后的姓名、身份证号信息。\n- 解密方式详见 [E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)\n- 只有整个核验流程完成之后才能返回该字段信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Eid信息。\n- EidInfo字段只有在人脸核身控制台完成“申请返回实名信息”之后返回，操作指引详见 [E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。\n- Eid信息包括商户下用户唯一标识以及加密后的姓名、身份证号信息。\n- 解密方式详见 [E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)\n- 只有整个核验流程完成之后才能返回该字段信息。",
           "example": "无",
           "member": "EidInfo",
           "name": "EidInfo",
@@ -4800,7 +4800,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身朗读模式相关信息。\n- 若未使用意愿核身朗读功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身朗读模式相关信息。\n- 若未使用意愿核身朗读功能，该字段返回值可以不处理。",
           "example": "无",
           "member": "IntentionVerifyData",
           "name": "IntentionVerifyData",
@@ -4810,7 +4810,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身问答模式相关信息。\n- 若未使用意愿核身问答模式功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身问答模式相关信息。\n- 若未使用意愿核身问答模式功能，该字段返回值可以不处理。",
           "example": "无",
           "member": "IntentionQuestionResult",
           "name": "IntentionQuestionResult",
@@ -4820,7 +4820,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身点头确认模式的结果信息。\n- 若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身点头确认模式的结果信息。\n- 若未使用该意愿核身功能，该字段返回值可以不处理。",
           "example": "无",
           "member": "IntentionActionResult",
           "name": "IntentionActionResult",
@@ -5124,7 +5124,7 @@
         },
         {
           "disabled": false,
-          "document": "比对相似度，取值范围为0-100，数值越大表示相似度越高。该参数仅“活体比对模式”下返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "比对相似度，取值范围为0-100，数值越大表示相似度越高。该参数仅“活体比对模式”下返回。",
           "example": "89.99",
           "member": "float",
           "name": "Similarity",
@@ -5134,7 +5134,7 @@
         },
         {
           "disabled": false,
-          "document": "透传参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "透传参数",
           "example": "“extra“",
           "member": "string",
           "name": "Extra",
@@ -5154,7 +5154,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。  详情如下： 01-用户全程闭眼。 02-用户未完成指定动作。 03-疑似翻拍攻击。 04-疑似合成图片。 05-疑似合成视频。 06-疑似合成动作。 07-疑似黑产模板。 08-疑似存在水印。 09-反光校验未通过。 10-最佳帧校验未通过。 11-人脸质量过差。 12-人脸距离不匹配。 13-疑似对抗样本攻击。 null-无。 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。  详情如下： 01-用户全程闭眼。 02-用户未完成指定动作。 03-疑似翻拍攻击。 04-疑似合成图片。 05-疑似合成视频。 06-疑似合成动作。 07-疑似黑产模板。 08-疑似存在水印。 09-反光校验未通过。 10-最佳帧校验未通过。 11-人脸质量过差。 12-人脸距离不匹配。 13-疑似对抗样本攻击。 null-无。 增强版：此字段不生效，默认为null。",
           "example": "[\"04\"]",
           "member": "string",
           "name": "LivenessInfoTag",
@@ -5277,7 +5277,7 @@
         },
         {
           "disabled": false,
-          "document": "用户核验的视频base64。\n- 如果选择了使用cos，返回完整cos地址，如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户核验的视频base64。\n- 如果选择了使用cos，返回完整cos地址，如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。",
           "example": "AAAAGGZ0eX...5Zin4btI4A",
           "member": "string",
           "name": "VideoBase64",
@@ -5287,7 +5287,7 @@
         },
         {
           "disabled": false,
-          "document": "用户核验视频的截帧base64。\n- 如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户核验视频的截帧base64。\n- 如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。",
           "example": "/9j/4AAQSk...TYkEBjj//Z",
           "member": "string",
           "name": "BestFrameBase64",
@@ -5297,7 +5297,7 @@
         },
         {
           "disabled": false,
-          "document": "获取token时透传的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "获取token时透传的信息。",
           "example": "202411011707591990200060000",
           "member": "string",
           "name": "Extra",
@@ -5307,7 +5307,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求所在设备的风险标签。\n- 详情如下：\n06-疑似黑产设备。\nnull-无设备风险。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求所在设备的风险标签。\n- 详情如下：\n06-疑似黑产设备。\nnull-无设备风险。\n- 增强版：此字段不生效，默认为null。",
           "example": "06",
           "member": "string",
           "name": "DeviceInfoTag",
@@ -5317,7 +5317,7 @@
         },
         {
           "disabled": false,
-          "document": "行为风险标签。\n- 仅错误码返回1007（设备疑似被劫持）时返回风险标签。\n- 标签说明：\n02：攻击风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行为风险标签。\n- 仅错误码返回1007（设备疑似被劫持）时返回风险标签。\n- 标签说明：\n02：攻击风险",
           "example": "02",
           "member": "string",
           "name": "RiskInfoTag",
@@ -5327,7 +5327,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。\n- 详情如下：\n01-用户全程闭眼。\n02-用户未完成指定动作。\n03-疑似翻拍攻击。\n04-疑似合成图片。\n05-疑似合成视频。\n06-疑似合成动作。\n07-疑似黑产模板。\n08-疑似存在水印。\n09-反光校验未通过。\n10-最佳帧校验未通过。\n11-人脸质量过差。\n12-人脸距离不匹配。\n13-疑似对抗样本攻击。\nnull-无。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。\n- 详情如下：\n01-用户全程闭眼。\n02-用户未完成指定动作。\n03-疑似翻拍攻击。\n04-疑似合成图片。\n05-疑似合成视频。\n06-疑似合成动作。\n07-疑似黑产模板。\n08-疑似存在水印。\n09-反光校验未通过。\n10-最佳帧校验未通过。\n11-人脸质量过差。\n12-人脸距离不匹配。\n13-疑似对抗样本攻击。\nnull-无。\n- 增强版：此字段不生效，默认为null。",
           "example": "01",
           "member": "string",
           "name": "LivenessInfoTag",
@@ -5337,7 +5337,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求所在设备的风险等级，共4级。\n- 详情如下：\n1 - 安全。\n2 - 低风险。\n3 - 中风险。\n4 - 高危。\nnull - 未获取到风险等级。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求所在设备的风险等级，共4级。\n- 详情如下：\n1 - 安全。\n2 - 低风险。\n3 - 中风险。\n4 - 高危。\nnull - 未获取到风险等级。\n- 增强版：此字段不生效，默认为null。",
           "example": "1",
           "member": "string",
           "name": "DeviceInfoLevel",
@@ -5347,7 +5347,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "敏感数据加密信息。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -5357,7 +5357,7 @@
         },
         {
           "disabled": false,
-          "document": "加密后的数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密后的数据。",
           "example": "0hMvx6fX6n...gXE0adJA==",
           "member": "string",
           "name": "EncryptedBody",
@@ -5394,7 +5394,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的风险标签\n- 详情如下：\n01-设备疑似被Root/设备疑似越狱。\n02-设备疑似被注入。\n03-设备疑似为模拟器。\n04-设备疑似存在风险操作。\n05-摄像头疑似被劫持。\n06-疑似黑产设备。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的风险标签\n- 详情如下：\n01-设备疑似被Root/设备疑似越狱。\n02-设备疑似被注入。\n03-设备疑似为模拟器。\n04-设备疑似存在风险操作。\n05-摄像头疑似被劫持。\n06-疑似黑产设备。",
           "example": "01_03",
           "member": "string",
           "name": "DeviceInfoTag",
@@ -5404,7 +5404,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的风险等级，共4级。\n- 详情如下：\n 1 - 低风险。\n 2 - 中风险。\n 3 - 高风险。\n 4 - 攻击。 \n-1表示未获取到风险等级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的风险等级，共4级。\n- 详情如下：\n 1 - 低风险。\n 2 - 中风险。\n 3 - 高风险。\n 4 - 攻击。 \n-1表示未获取到风险等级。",
           "example": "1",
           "member": "int64",
           "name": "DeviceInfoLevel",
@@ -5414,7 +5414,7 @@
         },
         {
           "disabled": false,
-          "document": "设备id标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备id标识。",
           "example": "DB1904203FA986234030BDFAB",
           "member": "string",
           "name": "OpenId",
@@ -5424,7 +5424,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的相机指纹风险等级，共4级。\n- 详情如下：\n 1 - 低风险。\n 2 - 中风险。\n 3 - 高风险。\n 4 - 攻击。\n -1表示未获取到风险等级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的相机指纹风险等级，共4级。\n- 详情如下：\n 1 - 低风险。\n 2 - 中风险。\n 3 - 高风险。\n 4 - 攻击。\n -1表示未获取到风险等级。",
           "example": "1",
           "member": "int64",
           "name": "CameraInfoLevel",
@@ -5434,7 +5434,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的相机指纹风险标签。\n\n- 详情如下：\n 01-设备疑似被Root/设备疑似越狱。\n 02-设备疑似被注入。\n 03-设备疑似为模拟器。\n 04-设备疑似存在风险操作。\n 05-摄像头疑似被劫持。\n 06-疑似黑产设备。\n 空表示没有相机指纹风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的相机指纹风险标签。\n\n- 详情如下：\n 01-设备疑似被Root/设备疑似越狱。\n 02-设备疑似被注入。\n 03-设备疑似为模拟器。\n 04-设备疑似存在风险操作。\n 05-摄像头疑似被劫持。\n 06-疑似黑产设备。\n 空表示没有相机指纹风险。",
           "example": "01_03",
           "member": "string",
           "name": "CameraInfoTag",
@@ -5444,7 +5444,7 @@
         },
         {
           "disabled": false,
-          "document": "获取token时透传的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "获取token时透传的信息。",
           "example": "无",
           "member": "string",
           "name": "Extra",
@@ -6020,7 +6020,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本次流程的最终结果，0为核验通过，是同一人。\n其余错误码请参考：<a href=\"https://www.tencentcloud.com/document/product/1061/55390?lang=en&pg=#8a960e1e-39c0-42cb-b181-b3164d77f81e\">Liveness Detection and Face Comparison (Mobile HTML5) Error Codes</a>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程的最终结果，0为核验通过，是同一人。\n其余错误码请参考：<a href=\"https://www.tencentcloud.com/document/product/1061/55390?lang=en&pg=#8a960e1e-39c0-42cb-b181-b3164d77f81e\">Liveness Detection and Face Comparison (Mobile HTML5) Error Codes</a>",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -6030,7 +6030,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程的最终结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程的最终结果描述。",
           "example": "Success",
           "member": "string",
           "name": "ErrorMsg",
@@ -6040,7 +6040,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程的详细核验结果列表，由于可重试的原因，本次流程可能存在多个核验信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次流程的详细核验结果列表，由于可重试的原因，本次流程可能存在多个核验信息。",
           "example": "无",
           "member": "VerificationDetail",
           "name": "VerificationDetailList",
@@ -6050,7 +6050,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流中采集的视频内容的base64编码字符串，由于可重试的原因，该字段返回最后一次核验采集的数据，如果未采集到视频，则返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流中采集的视频内容的base64编码字符串，由于可重试的原因，该字段返回最后一次核验采集的数据，如果未采集到视频，则返回null。",
           "example": "VideoBase64String",
           "member": "string",
           "name": "VideoBase64",
@@ -6060,7 +6060,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流中采集的最佳人脸照片的base64编码字符串，由于可重试的原因，该字段返回最后一次核验采集的数据，如果未采集到最佳人脸照片，则返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流中采集的最佳人脸照片的base64编码字符串，由于可重试的原因，该字段返回最后一次核验采集的数据，如果未采集到最佳人脸照片，则返回null。",
           "example": "BestFrameBase64String",
           "member": "string",
           "name": "BestFrameBase64",
@@ -6070,7 +6070,7 @@
         },
         {
           "disabled": false,
-          "document": "证照识别的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证照识别的结果",
           "example": "无",
           "member": "OCRResult",
           "name": "OCRResult",
@@ -6080,7 +6080,7 @@
         },
         {
           "disabled": false,
-          "document": "业务透传参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务透传参数",
           "example": "无",
           "member": "string",
           "name": "Extra",
@@ -6127,7 +6127,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证号</p>",
           "example": "350481***111140011",
           "member": "string",
           "name": "IdNum",
@@ -6137,7 +6137,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>姓名</p>",
           "example": "张*",
           "member": "string",
           "name": "Name",
@@ -6147,7 +6147,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证件中的人像照片</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证件中的人像照片</p>",
           "example": "/9j/4AAQSkZJRgABAgAAAQAB",
           "member": "string",
           "name": "Picture",
@@ -6157,7 +6157,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份类证件正面照片（人像面）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份类证件正面照片（人像面）</p>",
           "example": "/9j/4AAQSkZJRgABAgAAAQAB",
           "member": "string",
           "name": "IdCardFrontImg",
@@ -6167,7 +6167,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份类证件背面照片（国徽面）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份类证件背面照片（国徽面）</p>",
           "example": "/9j/4AAQSkZJRgABAgAAAQ",
           "member": "string",
           "name": "IdCardBackImg",
@@ -6177,7 +6177,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>出生日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>出生日期</p>",
           "example": "20011114",
           "member": "string",
           "name": "BirthDate",
@@ -6187,7 +6187,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>有效期起始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>有效期起始时间</p>",
           "example": "20220905",
           "member": "string",
           "name": "BeginTime",
@@ -6197,7 +6197,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>有效期结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>有效期结束时间</p>",
           "example": "20320905",
           "member": "string",
           "name": "EndTime",
@@ -6207,7 +6207,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>住址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>住址</p>",
           "example": "福建省**市*************区*幢*单元***室",
           "member": "string",
           "name": "Address",
@@ -6217,7 +6217,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>民族</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>民族</p>",
           "example": "汉",
           "member": "string",
           "name": "Nation",
@@ -6227,7 +6227,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>性别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>性别</p>",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -6237,7 +6237,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证件类型</p><p>枚举值：</p><ul><li>01： 身份证</li><li>03： 中国护照</li><li>06： 港澳通行证</li><li>07： 台胞证</li><li>08： 外国护照</li><li>13： 外国人永久居留证</li><li>14： 港澳台居民居住证</li><li>15： 回乡证</li><li>16： 大陆居民来往台湾通行证</li><li>99： 其他证件</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证件类型</p><p>枚举值：</p><ul><li>01： 身份证</li><li>03： 中国护照</li><li>06： 港澳通行证</li><li>07： 台胞证</li><li>08： 外国护照</li><li>13： 外国人永久居留证</li><li>14： 港澳台居民居住证</li><li>15： 回乡证</li><li>16： 大陆居民来往台湾通行证</li><li>99： 其他证件</li></ul>",
           "example": "01",
           "member": "string",
           "name": "IdType",
@@ -6247,7 +6247,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>英文姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>英文姓名</p>",
           "example": "ZHAN***ZHEN",
           "member": "string",
           "name": "EnName",
@@ -6257,7 +6257,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>签发机关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>签发机关</p>",
           "example": "永安市***",
           "member": "string",
           "name": "SigningOrganization",
@@ -6267,7 +6267,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>港澳台居民居住证，通行证号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>港澳台居民居住证，通行证号码</p>",
           "example": "83100019900101123X",
           "member": "string",
           "name": "OtherIdNum",
@@ -6277,7 +6277,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>旅行证件国籍</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>旅行证件国籍</p>",
           "example": "CHN",
           "member": "string",
           "name": "Nationality",
@@ -6287,7 +6287,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>旅行证件机读区第二行 29~42 位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>旅行证件机读区第二行 29~42 位</p>",
           "example": "NFMFNFOGA0",
           "member": "string",
           "name": "PersonalNumber",
@@ -6297,7 +6297,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证件的验真结果</p><ul><li>JSON格式如下： {&quot;result_issuer &quot;:&quot;签发者证书合法性验证结果 &quot;,&quot;result_paper&quot;:&quot;证件安全对象合法性验证结果 &quot;,&quot;result_data&quot; :&quot;防数据篡改验证结果 &quot;,&quot;result_chip&quot; :&quot;防证书件芯片被复制验证结果&quot;} 。 - 取值范围： 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证件的验真结果</p><ul><li>JSON格式如下： {&quot;result_issuer &quot;:&quot;签发者证书合法性验证结果 &quot;,&quot;result_paper&quot;:&quot;证件安全对象合法性验证结果 &quot;,&quot;result_data&quot; :&quot;防数据篡改验证结果 &quot;,&quot;result_chip&quot; :&quot;防证书件芯片被复制验证结果&quot;} 。 - 取值范围： 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真。</li></ul>",
           "example": "0",
           "member": "string",
           "name": "CheckMRTD",
@@ -6319,7 +6319,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "中文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中文姓名",
           "example": "申能",
           "member": "string",
           "name": "CnName",
@@ -6329,7 +6329,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文姓名",
           "example": "SAN, Nan",
           "member": "string",
           "name": "EnName",
@@ -6339,7 +6339,7 @@
         },
         {
           "disabled": false,
-          "document": "中文姓名对应电码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中文姓名对应电码",
           "example": "无",
           "member": "string",
           "name": "TelexCode",
@@ -6349,7 +6349,7 @@
         },
         {
           "disabled": false,
-          "document": "性别 ：“男M”或“女F”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别 ：“男M”或“女F”",
           "example": "女F",
           "member": "string",
           "name": "Sex",
@@ -6359,7 +6359,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期",
           "example": "01-01-2001",
           "member": "string",
           "name": "Birthday",
@@ -6369,7 +6369,7 @@
         },
         {
           "disabled": false,
-          "document": "永久性居民身份证:0-非永久；1-永久；-1-未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "永久性居民身份证:0-非永久；1-永久；-1-未知",
           "example": "无",
           "member": "string",
           "name": "Permanent",
@@ -6379,7 +6379,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号码",
           "example": "C000000(E)",
           "member": "string",
           "name": "IdNum",
@@ -6389,7 +6389,7 @@
         },
         {
           "disabled": false,
-          "document": "证件符号，出生日期下的符号，例如\"***AZ\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件符号，出生日期下的符号，例如\"***AZ\"",
           "example": "无",
           "member": "string",
           "name": "Symbol",
@@ -6399,7 +6399,7 @@
         },
         {
           "disabled": false,
-          "document": "首次签发日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次签发日期",
           "example": "无",
           "member": "string",
           "name": "FirstIssueDate",
@@ -6409,7 +6409,7 @@
         },
         {
           "disabled": false,
-          "document": "最近领用日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近领用日期",
           "example": "无",
           "member": "string",
           "name": "CurrentIssueDate",
@@ -6425,7 +6425,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "李明",
           "member": "string",
           "name": "Name",
@@ -6435,7 +6435,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文姓名",
           "example": "LIMING",
           "member": "string",
           "name": "EnglishName",
@@ -6445,7 +6445,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件号",
           "example": "C00000000",
           "member": "string",
           "name": "Number",
@@ -6455,7 +6455,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -6465,7 +6465,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期限",
           "example": "2018.10.09-2028.10.08",
           "member": "string",
           "name": "ValidDate",
@@ -6475,7 +6475,7 @@
         },
         {
           "disabled": false,
-          "document": "签发机关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签发机关",
           "example": "公安部出入境管理局",
           "member": "string",
           "name": "IssueAuthority",
@@ -6485,7 +6485,7 @@
         },
         {
           "disabled": false,
-          "document": "签发地点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签发地点",
           "example": "广东",
           "member": "string",
           "name": "IssueAddress",
@@ -6495,7 +6495,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期",
           "example": "1981.08.03",
           "member": "string",
           "name": "Birthday",
@@ -6611,7 +6611,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>OCR得到的性别。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的性别。</p>",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -6621,7 +6621,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>OCR得到的民族。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的民族。</p>",
           "example": "汉",
           "member": "string",
           "name": "Nation",
@@ -6631,7 +6631,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>OCR得到的生日。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的生日。</p>",
           "example": "1654/12/20",
           "member": "string",
           "name": "Birth",
@@ -6641,7 +6641,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>OCR得到的地址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OCR得到的地址。</p>",
           "example": "北京市东城区景山前街4号紫禁城敬事房",
           "member": "string",
           "name": "Address",
@@ -6963,7 +6963,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓氏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓氏",
           "example": "无",
           "member": "string",
           "name": "LastName",
@@ -6973,7 +6973,7 @@
         },
         {
           "disabled": false,
-          "document": "首姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首姓名",
           "example": "无",
           "member": "string",
           "name": "FirstName",
@@ -6983,7 +6983,7 @@
         },
         {
           "disabled": false,
-          "document": "编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编号",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -6993,7 +6993,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -7003,7 +7003,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "Address",
@@ -7013,7 +7013,7 @@
         },
         {
           "disabled": false,
-          "document": "到期日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期日期",
           "example": "无",
           "member": "string",
           "name": "ExpirationDate",
@@ -7023,7 +7023,7 @@
         },
         {
           "disabled": false,
-          "document": "签发日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签发日期",
           "example": "无",
           "member": "string",
           "name": "IssuedDate",
@@ -7033,7 +7033,7 @@
         },
         {
           "disabled": false,
-          "document": "签发国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签发国家",
           "example": "无",
           "member": "string",
           "name": "IssuedCountry",
@@ -7049,7 +7049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件号码",
           "example": "无",
           "member": "string",
           "name": "NIK",
@@ -7059,7 +7059,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "无",
           "member": "string",
           "name": "Nama",
@@ -7069,7 +7069,7 @@
         },
         {
           "disabled": false,
-          "document": "出生地/出生时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生地/出生时间",
           "example": "无",
           "member": "string",
           "name": "TempatTglLahir",
@@ -7079,7 +7079,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "无",
           "member": "string",
           "name": "JenisKelamin",
@@ -7089,7 +7089,7 @@
         },
         {
           "disabled": false,
-          "document": "血型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "血型",
           "example": "无",
           "member": "string",
           "name": "GolDarah",
@@ -7099,7 +7099,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "Alamat",
@@ -7109,7 +7109,7 @@
         },
         {
           "disabled": false,
-          "document": "街道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "街道",
           "example": "无",
           "member": "string",
           "name": "RTRW",
@@ -7119,7 +7119,7 @@
         },
         {
           "disabled": false,
-          "document": "村\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "村",
           "example": "无",
           "member": "string",
           "name": "KelDesa",
@@ -7129,7 +7129,7 @@
         },
         {
           "disabled": false,
-          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地区",
           "example": "无",
           "member": "string",
           "name": "Kecamatan",
@@ -7139,7 +7139,7 @@
         },
         {
           "disabled": false,
-          "document": "宗教信仰\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "宗教信仰",
           "example": "无",
           "member": "string",
           "name": "Agama",
@@ -7149,7 +7149,7 @@
         },
         {
           "disabled": false,
-          "document": "婚姻状况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "婚姻状况",
           "example": "无",
           "member": "string",
           "name": "StatusPerkawinan",
@@ -7159,7 +7159,7 @@
         },
         {
           "disabled": false,
-          "document": "职业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "职业",
           "example": "无",
           "member": "string",
           "name": "Perkerjaan",
@@ -7169,7 +7169,7 @@
         },
         {
           "disabled": false,
-          "document": "国籍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国籍",
           "example": "无",
           "member": "string",
           "name": "KewargaNegaraan",
@@ -7179,7 +7179,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证有效期限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证有效期限",
           "example": "无",
           "member": "string",
           "name": "BerlakuHingga",
@@ -7189,7 +7189,7 @@
         },
         {
           "disabled": false,
-          "document": "发证日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发证日期",
           "example": "无",
           "member": "string",
           "name": "IssuedDate",
@@ -7199,7 +7199,7 @@
         },
         {
           "disabled": false,
-          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "省份",
           "example": "无",
           "member": "string",
           "name": "Provinsi",
@@ -7209,7 +7209,7 @@
         },
         {
           "disabled": false,
-          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市",
           "example": "无",
           "member": "string",
           "name": "Kota",
@@ -7240,7 +7240,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "意愿核身错误码：\n0: \"成功\"       \n-1: \"参数错误\"    \n-2: \"系统异常\"    \n-101: \"请保持人脸在框内\"    \n-102: \"检测到多张人脸\"   \n-103: \"人脸检测失败\"   \n-104: \"人脸检测不完整\"   \n-105: \"请勿遮挡眼睛\"    \n-106: \"请勿遮挡嘴巴\"     \n-107: \"请勿遮挡鼻子\"     \n-201: \"人脸比对相似度低\"    \n-202: \"人脸比对失败\"    \n-301: \"意愿核验不通过\"   \n-800: \"前端不兼容错误\"    \n-801: \"用户未授权摄像头和麦克风权限\"   \n-802: \"核验流程异常中断，请勿切屏或进行其他操作\"   \n-803: \"用户主动关闭链接/异常断开链接\"   \n-804: \"用户当前网络不稳定，请重试\"  \n-998: \"系统数据异常\"   \n-999: \"系统未知错误，请联系人工核实\"   \n若在人脸核身过程失败、未进入意愿确认过程，则该参数返回为空，请参考人脸核身错误码结果（DetectInfoText.ErrCode)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身错误码：\n0: \"成功\"       \n-1: \"参数错误\"    \n-2: \"系统异常\"    \n-101: \"请保持人脸在框内\"    \n-102: \"检测到多张人脸\"   \n-103: \"人脸检测失败\"   \n-104: \"人脸检测不完整\"   \n-105: \"请勿遮挡眼睛\"    \n-106: \"请勿遮挡嘴巴\"     \n-107: \"请勿遮挡鼻子\"     \n-201: \"人脸比对相似度低\"    \n-202: \"人脸比对失败\"    \n-301: \"意愿核验不通过\"   \n-800: \"前端不兼容错误\"    \n-801: \"用户未授权摄像头和麦克风权限\"   \n-802: \"核验流程异常中断，请勿切屏或进行其他操作\"   \n-803: \"用户主动关闭链接/异常断开链接\"   \n-804: \"用户当前网络不稳定，请重试\"  \n-998: \"系统数据异常\"   \n-999: \"系统未知错误，请联系人工核实\"   \n若在人脸核身过程失败、未进入意愿确认过程，则该参数返回为空，请参考人脸核身错误码结果（DetectInfoText.ErrCode)",
           "example": "0",
           "member": "int64",
           "name": "FinalResultDetailCode",
@@ -7250,7 +7250,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身错误信息",
           "example": "成功",
           "member": "string",
           "name": "FinalResultMessage",
@@ -7260,7 +7260,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身结果详细数据，与每段点头确认过程一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身结果详细数据，与每段点头确认过程一一对应",
           "example": "无",
           "member": "IntentionActionResultDetail",
           "name": "Details",
@@ -7276,7 +7276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频base64编码（其中包含全程提示文本和点头音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频base64编码（其中包含全程提示文本和点头音频，mp4格式）",
           "example": "AAAAIGZ0eX...0tLS0tLS8=",
           "member": "string",
           "name": "Video",
@@ -7286,7 +7286,7 @@
         },
         {
           "disabled": false,
-          "document": "屏幕截图base64编码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "屏幕截图base64编码列表",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ScreenShot",
@@ -7326,7 +7326,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "意愿核身错误码。\n- 取值范围：\n    0: \"成功\"       \n    -1: \"参数错误\"    \n    -2: \"系统异常\"    \n    -101: \"请保持人脸在框内\"    \n    -102: \"检测到多张人脸\"   \n    -103: \"人脸检测失败\"   \n    -104: \"人脸检测不完整\"   \n    -105: \"请勿遮挡眼睛\"    \n    -106: \"请勿遮挡嘴巴\"     \n    -107: \"请勿遮挡鼻子\"     \n    -201: \"人脸比对相似度低\"    \n    -202: \"人脸比对失败\"    \n    -301: \"意愿核验不通过\"       \n    -302: \"用户回答阶段未检测到张嘴动作\"  \n    -800: \"前端不兼容错误\"    \n    -801: \"用户未授权摄像头和麦克风权限\"   \n    -802: \"核验流程异常中断，请勿切屏或进行其他操作\"   \n    -803: \"用户主动关闭链接/异常断开链接\"   \n    -804: \"用户当前网络不稳定，请重试\"\n    -998: \"系统数据异常\"   \n    -999: \"系统未知错误，请联系人工核实\"   \n- 若在人脸核身过程失败、未进入意愿确认过程，则该参数返回为空，请参考人脸核身错误码结果（DetectInfoText.ErrCode)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身错误码。\n- 取值范围：\n    0: \"成功\"       \n    -1: \"参数错误\"    \n    -2: \"系统异常\"    \n    -101: \"请保持人脸在框内\"    \n    -102: \"检测到多张人脸\"   \n    -103: \"人脸检测失败\"   \n    -104: \"人脸检测不完整\"   \n    -105: \"请勿遮挡眼睛\"    \n    -106: \"请勿遮挡嘴巴\"     \n    -107: \"请勿遮挡鼻子\"     \n    -201: \"人脸比对相似度低\"    \n    -202: \"人脸比对失败\"    \n    -301: \"意愿核验不通过\"       \n    -302: \"用户回答阶段未检测到张嘴动作\"  \n    -800: \"前端不兼容错误\"    \n    -801: \"用户未授权摄像头和麦克风权限\"   \n    -802: \"核验流程异常中断，请勿切屏或进行其他操作\"   \n    -803: \"用户主动关闭链接/异常断开链接\"   \n    -804: \"用户当前网络不稳定，请重试\"\n    -998: \"系统数据异常\"   \n    -999: \"系统未知错误，请联系人工核实\"   \n- 若在人脸核身过程失败、未进入意愿确认过程，则该参数返回为空，请参考人脸核身错误码结果（DetectInfoText.ErrCode)",
           "example": "\"-202\"",
           "member": "int64",
           "name": "FinalResultDetailCode",
@@ -7336,7 +7336,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身错误信息。",
           "example": "人脸比对失败",
           "member": "string",
           "name": "FinalResultMessage",
@@ -7346,7 +7346,7 @@
         },
         {
           "disabled": false,
-          "document": "视频base64。\n- 其中包含全程问题和回答音频，mp4格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频base64。\n- 其中包含全程问题和回答音频，mp4格式。",
           "example": "/9j/4AAQSk...1fp8+5/9k=",
           "member": "string",
           "name": "Video",
@@ -7356,7 +7356,7 @@
         },
         {
           "disabled": false,
-          "document": "屏幕截图base64列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "屏幕截图base64列表。",
           "example": "[\"/9j/4AAQSkZJRg.....s97n//2Q==\"]",
           "member": "string",
           "name": "ScreenShot",
@@ -7366,7 +7366,7 @@
         },
         {
           "disabled": false,
-          "document": "和答案匹配结果列表。\n- 取值范围（0：成功；-1：不匹配）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "和答案匹配结果列表。\n- 取值范围（0：成功；-1：不匹配）",
           "example": "0",
           "member": "string",
           "name": "ResultCode",
@@ -7376,7 +7376,7 @@
         },
         {
           "disabled": false,
-          "document": "回答问题语音识别结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回答问题语音识别结果列表。",
           "example": "\"\"",
           "member": "string",
           "name": "AsrResult",
@@ -7386,7 +7386,7 @@
         },
         {
           "disabled": false,
-          "document": "答案录音音频。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "答案录音音频。",
           "example": "\"\"",
           "member": "string",
           "name": "Audios",
@@ -7396,7 +7396,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身最终结果。\n- 取值范围：\n0：认证通过。\n-1：认证未通过。\n-2：浏览器内核不兼容，无法进行意愿校验。\n- 建议使用“FinalResultDetailCode”参数获取详细的错误码信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身最终结果。\n- 取值范围：\n0：认证通过。\n-1：认证未通过。\n-2：浏览器内核不兼容，无法进行意愿校验。\n- 建议使用“FinalResultDetailCode”参数获取详细的错误码信息。",
           "example": "0",
           "member": "string",
           "name": "FinalResultCode",
@@ -7412,7 +7412,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>意愿确认环节中录制的视频（base64）。</p><ul><li>若不存在则为空字符串。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>意愿确认环节中录制的视频（base64）。</p><ul><li>若不存在则为空字符串。</li></ul>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "IntentionVerifyVideo",
@@ -7422,7 +7422,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>意愿确认环节中用户语音转文字的识别结果。</p><ul><li>若不存在则为空字符串。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>意愿确认环节中用户语音转文字的识别结果。</p><ul><li>若不存在则为空字符串。</li></ul>",
           "example": "我同意",
           "member": "string",
           "name": "AsrResult",
@@ -7432,7 +7432,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>意愿确认环节（朗读模式）的结果码。取值范围：<br>0: &quot;成功&quot;<br>-1: &quot;系统异常&quot;<br>-2: &quot;参数错误&quot;<br>-3:&quot;业务繁忙，请重试&quot;<br>-4：&quot;后端服务异常，请重试&quot;<br>-5：&quot;后端服务进房异常，请重试&quot;<br>-6：&quot;后端服务录制异常，请重试&quot;<br>-7：&quot;文件存储异常，请重试&quot;<br>-8：&quot;后端服务重复进房，请重试&quot;<br>-9：&quot;实时视频流异常，请重试&quot;<br>-10：&quot;语音识别失败，请重试&quot;<br>-11：&quot;流程已中断，请重试&quot;<br>-12：&quot;流程未完成，请重试&quot;<br>-13：&quot;token校验不通过，请重试&quot;<br>-14：&quot;流程已结束&quot;<br>-15:&quot;超过预设重试次数&quot;<br>-16:&quot;系统未知错误，请联系人工核实&quot;<br>-17:&quot;未检测到用户声音&quot;<br>3001:&quot;请保持人脸在框内&quot;<br>3002:&quot;检测到多张人脸&quot;<br>3003:&quot;人脸检测失败&quot;<br>3011:&quot;人脸比对相似度低&quot;<br>3012:&quot;人脸比对失败&quot;<br>-800: &quot;前端不兼容错误&quot;<br>-801: &quot;用户未授权摄像头和麦克风权限&quot;<br>-802: &quot;核验流程异常中断，请勿切屏或进行其他操作&quot;<br>-803: &quot;用户主动关闭链接/异常断开链接&quot;</p><p>说明：若在人脸核身过程失败、未进入意愿确认过程，则该参数返回为空，请参考人脸核身错误码结果（DetectInfoText.ErrCode）注意：此字段可能返回 null，表示取不到有效值。<br>示例值：0</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>意愿确认环节（朗读模式）的结果码。取值范围：<br>0: &quot;成功&quot;<br>-1: &quot;系统异常&quot;<br>-2: &quot;参数错误&quot;<br>-3:&quot;业务繁忙，请重试&quot;<br>-4：&quot;后端服务异常，请重试&quot;<br>-5：&quot;后端服务进房异常，请重试&quot;<br>-6：&quot;后端服务录制异常，请重试&quot;<br>-7：&quot;文件存储异常，请重试&quot;<br>-8：&quot;后端服务重复进房，请重试&quot;<br>-9：&quot;实时视频流异常，请重试&quot;<br>-10：&quot;语音识别失败，请重试&quot;<br>-11：&quot;流程已中断，请重试&quot;<br>-12：&quot;流程未完成，请重试&quot;<br>-13：&quot;token校验不通过，请重试&quot;<br>-14：&quot;流程已结束&quot;<br>-15:&quot;超过预设重试次数&quot;<br>-16:&quot;系统未知错误，请联系人工核实&quot;<br>-17:&quot;未检测到用户声音&quot;<br>3001:&quot;请保持人脸在框内&quot;<br>3002:&quot;检测到多张人脸&quot;<br>3003:&quot;人脸检测失败&quot;<br>3011:&quot;人脸比对相似度低&quot;<br>3012:&quot;人脸比对失败&quot;<br>-800: &quot;前端不兼容错误&quot;<br>-801: &quot;用户未授权摄像头和麦克风权限&quot;<br>-802: &quot;核验流程异常中断，请勿切屏或进行其他操作&quot;<br>-803: &quot;用户主动关闭链接/异常断开链接&quot;</p><p>说明：若在人脸核身过程失败、未进入意愿确认过程，则该参数返回为空，请参考人脸核身错误码结果（DetectInfoText.ErrCode）注意：此字段可能返回 null，表示取不到有效值。<br>示例值：0</p>",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -7442,7 +7442,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>意愿确认环节的结果信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>意愿确认环节的结果信息。</p>",
           "example": "成功",
           "member": "string",
           "name": "ErrorMessage",
@@ -7452,7 +7452,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>意愿确认环节中录制视频的最佳帧（base64）。</p><ul><li>若不存在则为空字符串。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>意愿确认环节中录制视频的最佳帧（base64）。</p><ul><li>若不存在则为空字符串。</li></ul>",
           "example": "/9j/4AAQSk...+0s8R/ef/Z",
           "member": "string",
           "name": "IntentionVerifyBestFrame",
@@ -7462,7 +7462,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>本次流程用户语音与传入文本比对的相似度分值，取值范围 [0.00, 100.00]。只有配置了相似度阈值后才进行语音校验并返回相似度分值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次流程用户语音与传入文本比对的相似度分值，取值范围 [0.00, 100.00]。只有配置了相似度阈值后才进行语音校验并返回相似度分值。</p>",
           "example": "0",
           "member": "string",
           "name": "AsrResultSimilarity",
@@ -7472,7 +7472,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>意愿确认环节中录制的音频（base64）。</p><ul><li>若不存在则为空字符串。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>意愿确认环节中录制的音频（base64）。</p><ul><li>若不存在则为空字符串。</li></ul>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "IntentionVerifyAudio",
@@ -7488,7 +7488,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "护照ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "护照ID",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -7498,7 +7498,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "无",
           "member": "string",
           "name": "FullName",
@@ -7508,7 +7508,7 @@
         },
         {
           "disabled": false,
-          "document": "姓\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓",
           "example": "无",
           "member": "string",
           "name": "Surname",
@@ -7518,7 +7518,7 @@
         },
         {
           "disabled": false,
-          "document": "名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名",
           "example": "无",
           "member": "string",
           "name": "GivenName",
@@ -7528,7 +7528,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -7538,7 +7538,7 @@
         },
         {
           "disabled": false,
-          "document": "性别（F女，M男）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别（F女，M男）",
           "example": "无",
           "member": "string",
           "name": "Sex",
@@ -7548,7 +7548,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期",
           "example": "无",
           "member": "string",
           "name": "DateOfExpiration",
@@ -7558,7 +7558,7 @@
         },
         {
           "disabled": false,
-          "document": "发行国\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发行国",
           "example": "无",
           "member": "string",
           "name": "IssuingCountry",
@@ -7568,7 +7568,7 @@
         },
         {
           "disabled": false,
-          "document": "国家地区代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国家地区代码",
           "example": "无",
           "member": "string",
           "name": "NationalityCode",
@@ -7578,7 +7578,7 @@
         },
         {
           "disabled": false,
-          "document": "最下方第一行 MRZ Code 序列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最下方第一行 MRZ Code 序列",
           "example": "无",
           "member": "string",
           "name": "PassportCodeFirst",
@@ -7588,7 +7588,7 @@
         },
         {
           "disabled": false,
-          "document": "最下方第二行 MRZ Code 序列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最下方第二行 MRZ Code 序列",
           "example": "无",
           "member": "string",
           "name": "PassportCodeSecond",
@@ -7604,7 +7604,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名字",
           "example": "无",
           "member": "string",
           "name": "FullName",
@@ -7614,7 +7614,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -7624,7 +7624,7 @@
         },
         {
           "disabled": false,
-          "document": "年龄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "年龄",
           "example": "无",
           "member": "string",
           "name": "Age",
@@ -7634,7 +7634,7 @@
         },
         {
           "disabled": false,
-          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生日",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -7644,7 +7644,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间",
           "example": "无",
           "member": "string",
           "name": "ExpirationDate",
@@ -7654,7 +7654,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "FormattedAddress",
@@ -7795,7 +7795,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>验证通过后的视频最佳截图照片。</p><ul><li>照片为BASE64编码后的值，jpg格式。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>验证通过后的视频最佳截图照片。</p><ul><li>照片为BASE64编码后的值，jpg格式。</li></ul>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "BestFrameBase64",
@@ -7835,7 +7835,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最佳截图列表。</p><ul><li>仅在配置了返回多张最佳截图时返回。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最佳截图列表。</p><ul><li>仅在配置了返回多张最佳截图时返回。</li></ul>",
           "example": "[\"/9j/4AAQSk...vv56s//9k=\"]",
           "member": "string",
           "name": "BestFrameList",
@@ -7935,7 +7935,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>验证通过后的视频最佳截图照片。</p><ul><li>照片为BASE64编码后的值，jpg格式。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>验证通过后的视频最佳截图照片。</p><ul><li>照片为BASE64编码后的值，jpg格式。</li></ul>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "BestFrameBase64",
@@ -7975,7 +7975,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最佳截图列表，仅在配置了返回多张最佳截图时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最佳截图列表，仅在配置了返回多张最佳截图时返回。</p>",
           "example": "[\"/9j/4AAQSk...Kff7/+Af/Z\"]",
           "member": "string",
           "name": "BestFrameList",
@@ -7997,7 +7997,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "KAVIN ONG KHI MN",
           "member": "string",
           "name": "Name",
@@ -8007,7 +8007,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号",
           "example": "710716-08-6085",
           "member": "string",
           "name": "ID",
@@ -8017,7 +8017,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "LEAKI",
           "member": "string",
           "name": "Sex",
@@ -8027,7 +8027,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "NO 11 PERSIARN PERAJRIT 4 TAMA PERAK 31400 IPOH ERAK",
           "member": "string",
           "name": "Address",
@@ -8037,7 +8037,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型\nMyKad 身份证\nMyPR 永居证\nMyTentera 军官证\nMyKAS 临时身份证\nPOLIS 警察证\nIKAD 劳工证\nMyKid 儿童卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件类型\nMyKad 身份证\nMyPR 永居证\nMyTentera 军官证\nMyKAS 临时身份证\nPOLIS 警察证\nIKAD 劳工证\nMyKid 儿童卡",
           "example": "MyKad",
           "member": "string",
           "name": "Type",
@@ -8047,7 +8047,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -8063,7 +8063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "首姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首姓名",
           "example": "无",
           "member": "string",
           "name": "FirstName",
@@ -8073,7 +8073,7 @@
         },
         {
           "disabled": false,
-          "document": "姓氏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓氏",
           "example": "无",
           "member": "string",
           "name": "LastName",
@@ -8083,7 +8083,7 @@
         },
         {
           "disabled": false,
-          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生日",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -8093,7 +8093,7 @@
         },
         {
           "disabled": false,
-          "document": "到期日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期日期",
           "example": "无",
           "member": "string",
           "name": "ExpirationDate",
@@ -8103,7 +8103,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号码",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -8113,7 +8113,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "无",
           "member": "string",
           "name": "Sex",
@@ -8123,7 +8123,7 @@
         },
         {
           "disabled": false,
-          "document": "年龄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "年龄",
           "example": "无",
           "member": "string",
           "name": "Age",
@@ -8133,7 +8133,7 @@
         },
         {
           "disabled": false,
-          "document": "发行国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发行国家",
           "example": "无",
           "member": "string",
           "name": "IssuedCountry",
@@ -8143,7 +8143,7 @@
         },
         {
           "disabled": false,
-          "document": "mrz字段1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mrz字段1",
           "example": "无",
           "member": "string",
           "name": "Field1",
@@ -8153,7 +8153,7 @@
         },
         {
           "disabled": false,
-          "document": "mrz字段2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mrz字段2",
           "example": "无",
           "member": "string",
           "name": "Field2",
@@ -8169,7 +8169,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>姓名</p>",
           "example": "王博",
           "member": "string",
           "name": "FullName",
@@ -8180,7 +8180,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>性别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>性别</p>",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -8191,7 +8191,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>民族</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>民族</p>",
           "example": "汉",
           "member": "string",
           "name": "Nation",
@@ -8202,7 +8202,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生日</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生日</p>",
           "example": "1966/11/2",
           "member": "string",
           "name": "Birthday",
@@ -8213,7 +8213,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地址</p>",
           "example": "**",
           "member": "string",
           "name": "Address",
@@ -8224,7 +8224,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证号</p>",
           "example": "652***********1234",
           "member": "string",
           "name": "LicenseNumber",
@@ -8235,7 +8235,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地址</p>",
           "example": "西安市****",
           "member": "string",
           "name": "FormattedAddress",
@@ -8246,7 +8246,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>签发机关</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>签发机关</p>",
           "example": "西安市***公安局",
           "member": "string",
           "name": "Authority",
@@ -8257,7 +8257,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>有效期限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>有效期限</p>",
           "example": "2025.06.24-长期",
           "member": "string",
           "name": "ValidDate",
@@ -8755,7 +8755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "香港身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "香港身份证",
           "example": "无",
           "member": "NormalHKIDCard",
           "name": "HKIDCard",
@@ -8765,7 +8765,7 @@
         },
         {
           "disabled": false,
-          "document": "马来西亚身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "马来西亚身份证",
           "example": "无",
           "member": "NormalMLIDCard",
           "name": "MLIDCard",
@@ -8775,7 +8775,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾选民卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾选民卡",
           "example": "无",
           "member": "PhilippinesVoteID",
           "name": "PhilippinesVoteID",
@@ -8785,7 +8785,7 @@
         },
         {
           "disabled": false,
-          "document": "印度尼西亚身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印度尼西亚身份证",
           "example": "无",
           "member": "NormalIndonesiaIDCard",
           "name": "IndonesiaIDCard",
@@ -8795,7 +8795,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾驾驶证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾驾驶证",
           "example": "无",
           "member": "PhilippinesDrivingLicense",
           "name": "PhilippinesDrivingLicense",
@@ -8805,7 +8805,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾TinID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾TinID",
           "example": "无",
           "member": "PhilippinesTinID",
           "name": "PhilippinesTinID",
@@ -8815,7 +8815,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾SSSID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾SSSID",
           "example": "无",
           "member": "PhilippinesSSSID",
           "name": "PhilippinesSSSID",
@@ -8825,7 +8825,7 @@
         },
         {
           "disabled": false,
-          "document": "菲律宾UMID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾UMID",
           "example": "无",
           "member": "PhilippinesUMID",
           "name": "PhilippinesUMID",
@@ -8835,7 +8835,7 @@
         },
         {
           "disabled": false,
-          "document": "港澳台地区以及境外护照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "港澳台地区以及境外护照",
           "example": "无",
           "member": "InternationalIDPassport",
           "name": "InternationalIDPassport",
@@ -8845,7 +8845,7 @@
         },
         {
           "disabled": false,
-          "document": "通用卡证信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通用卡证信息",
           "example": "无",
           "member": "GeneralCard",
           "name": "GeneralCard",
@@ -8855,7 +8855,7 @@
         },
         {
           "disabled": false,
-          "document": "印度尼西亚驾驶证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印度尼西亚驾驶证",
           "example": "无",
           "member": "IndonesiaDrivingLicense",
           "name": "IndonesiaDrivingLicense",
@@ -8865,7 +8865,7 @@
         },
         {
           "disabled": false,
-          "document": "泰国身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泰国身份证",
           "example": "无",
           "member": "NormalThailandIDCard",
           "name": "ThailandIDCard",
@@ -8875,7 +8875,7 @@
         },
         {
           "disabled": false,
-          "document": "新加坡身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新加坡身份证",
           "example": "无",
           "member": "SingaporeIDCard",
           "name": "SingaporeIDCard",
@@ -8885,7 +8885,7 @@
         },
         {
           "disabled": false,
-          "document": "澳门身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "澳门身份证",
           "example": "无",
           "member": "MacaoIDCard",
           "name": "MacaoIDCard",
@@ -8895,7 +8895,7 @@
         },
         {
           "disabled": false,
-          "document": "大陆身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大陆身份证",
           "example": "无",
           "member": "MainlandIDCard",
           "name": "MainlandIDCard",
@@ -8905,7 +8905,7 @@
         },
         {
           "disabled": false,
-          "document": "日本身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日本身份证",
           "example": "无",
           "member": "JapanIDCard",
           "name": "JapanIDCard",
@@ -8915,7 +8915,7 @@
         },
         {
           "disabled": false,
-          "document": "台湾身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "台湾身份证",
           "example": "无",
           "member": "TaiWanIDCard",
           "name": "TaiWanIDCard",
@@ -8925,7 +8925,7 @@
         },
         {
           "disabled": false,
-          "document": "港澳台通行证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "港澳台通行证",
           "example": "无",
           "member": "HMTPermit",
           "name": "HMTPermitCard",
@@ -8941,7 +8941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "中文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中文姓名",
           "example": "申能",
           "member": "string",
           "name": "ChineseName",
@@ -8951,7 +8951,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文姓名",
           "example": "SAN, Nan",
           "member": "string",
           "name": "FullName",
@@ -8961,7 +8961,7 @@
         },
         {
           "disabled": false,
-          "document": "中文姓名对应电码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中文姓名对应电码",
           "example": "中文姓名对应电码",
           "member": "string",
           "name": "RegistrationNumber",
@@ -8971,7 +8971,7 @@
         },
         {
           "disabled": false,
-          "document": "性别 ：“男M”或“女F”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别 ：“男M”或“女F”",
           "example": "女F",
           "member": "string",
           "name": "Sex",
@@ -8981,7 +8981,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期",
           "example": "01-01-2001",
           "member": "string",
           "name": "Birthday",
@@ -8991,7 +8991,7 @@
         },
         {
           "disabled": false,
-          "document": "永久性居民身份证:0-非永久；1-永久；-1-未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "永久性居民身份证:0-非永久；1-永久；-1-未知",
           "example": "1",
           "member": "string",
           "name": "Permanent",
@@ -9001,7 +9001,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号码",
           "example": "C000000(E)",
           "member": "string",
           "name": "LicenseNumber",
@@ -9011,7 +9011,7 @@
         },
         {
           "disabled": false,
-          "document": "证件符号，出生日期下的符号，例如\"***AZ\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件符号，出生日期下的符号，例如\"***AZ\"",
           "example": "***AZ",
           "member": "string",
           "name": "Symbol",
@@ -9021,7 +9021,7 @@
         },
         {
           "disabled": false,
-          "document": "首次签发日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次签发日期",
           "example": "无   ",
           "member": "string",
           "name": "IssuedDate",
@@ -9031,7 +9031,7 @@
         },
         {
           "disabled": false,
-          "document": "最近领用日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近领用日期",
           "example": "16-06-06",
           "member": "string",
           "name": "CurrentIssueDate",
@@ -9041,7 +9041,7 @@
         },
         {
           "disabled": false,
-          "document": "香港身份证版本，HKID-2003：03版身份证，HKID-2018：18版身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "香港身份证版本，HKID-2003：03版身份证，HKID-2018：18版身份证",
           "example": "HKID-2003",
           "member": "string",
           "name": "HKIDVersion",
@@ -9057,7 +9057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件号码",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -9067,7 +9067,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "无",
           "member": "string",
           "name": "FullName",
@@ -9077,7 +9077,7 @@
         },
         {
           "disabled": false,
-          "document": "出生地/出生时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生地/出生时间",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -9087,7 +9087,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "无",
           "member": "string",
           "name": "Sex",
@@ -9097,7 +9097,7 @@
         },
         {
           "disabled": false,
-          "document": "血型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "血型",
           "example": "无",
           "member": "string",
           "name": "BloodType",
@@ -9107,7 +9107,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "FormattedAddress",
@@ -9117,7 +9117,7 @@
         },
         {
           "disabled": false,
-          "document": "街道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "街道",
           "example": "无",
           "member": "string",
           "name": "Street",
@@ -9127,7 +9127,7 @@
         },
         {
           "disabled": false,
-          "document": "村\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "村",
           "example": "无",
           "member": "string",
           "name": "Village",
@@ -9137,7 +9137,7 @@
         },
         {
           "disabled": false,
-          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地区",
           "example": "无",
           "member": "string",
           "name": "Area",
@@ -9147,7 +9147,7 @@
         },
         {
           "disabled": false,
-          "document": "宗教信仰\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "宗教信仰",
           "example": "无",
           "member": "string",
           "name": "Religion",
@@ -9157,7 +9157,7 @@
         },
         {
           "disabled": false,
-          "document": "婚姻状况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "婚姻状况",
           "example": "无",
           "member": "string",
           "name": "MaritalStatus",
@@ -9167,7 +9167,7 @@
         },
         {
           "disabled": false,
-          "document": "职业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "职业",
           "example": "无",
           "member": "string",
           "name": "Occupation",
@@ -9177,7 +9177,7 @@
         },
         {
           "disabled": false,
-          "document": "国籍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国籍",
           "example": "无",
           "member": "string",
           "name": "Nationality",
@@ -9187,7 +9187,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证有效期限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证有效期限",
           "example": "无",
           "member": "string",
           "name": "DueDate",
@@ -9197,7 +9197,7 @@
         },
         {
           "disabled": false,
-          "document": "发证日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发证日期",
           "example": "无",
           "member": "string",
           "name": "IssuedDate",
@@ -9207,7 +9207,7 @@
         },
         {
           "disabled": false,
-          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "省份",
           "example": "无",
           "member": "string",
           "name": "Province",
@@ -9217,7 +9217,7 @@
         },
         {
           "disabled": false,
-          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市",
           "example": "无",
           "member": "string",
           "name": "City",
@@ -9233,7 +9233,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "KAVIN ONG KHI MN",
           "member": "string",
           "name": "FullName",
@@ -9243,7 +9243,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号",
           "example": "710716-08-6085",
           "member": "string",
           "name": "LicenseNumber",
@@ -9253,7 +9253,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "LEAKI",
           "member": "string",
           "name": "Sex",
@@ -9263,7 +9263,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "NO 11 PERSIARN PERAJRIT 4 TAMA PERAK 31400 IPOH ERAK",
           "member": "string",
           "name": "FormattedAddress",
@@ -9273,7 +9273,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型\nMyKad 身份证\nMyPR 永居证\nMyTentera 军官证\nMyKAS 临时身份证\nPOLIS 警察证\nIKAD 劳工证\nMyKid 儿童卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件类型\nMyKad 身份证\nMyPR 永居证\nMyTentera 军官证\nMyKAS 临时身份证\nPOLIS 警察证\nIKAD 劳工证\nMyKid 儿童卡",
           "example": "MyKad",
           "member": "string",
           "name": "Type",
@@ -9283,7 +9283,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -9299,7 +9299,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号码",
           "example": "3102001968756",
           "member": "string",
           "name": "LicenseNumber",
@@ -9309,7 +9309,7 @@
         },
         {
           "disabled": false,
-          "document": "泰文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泰文姓名",
           "example": "นาย ธนกฤต  บุญโญปกรุณ์",
           "member": "string",
           "name": "FullName",
@@ -9319,7 +9319,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文姓名",
           "example": "Mr. Thanakit",
           "member": "string",
           "name": "LastName",
@@ -9329,7 +9329,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文姓名",
           "example": "Boonyopakron",
           "member": "string",
           "name": "FirstName",
@@ -9339,7 +9339,7 @@
         },
         {
           "disabled": false,
-          "document": "英文出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文出生日期",
           "example": "13 Mar. 1986",
           "member": "string",
           "name": "Birthday",
@@ -9349,7 +9349,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง",
           "member": "string",
           "name": "FormattedAddress",
@@ -9359,7 +9359,7 @@
         },
         {
           "disabled": false,
-          "document": "英文到期日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文到期日期",
           "example": "12 Mar. 2030",
           "member": "string",
           "name": "ExpirationDate",
@@ -9369,7 +9369,7 @@
         },
         {
           "disabled": false,
-          "document": "英文出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文出生日期",
           "example": "13 Mar. 1986",
           "member": "string",
           "name": "IssuedDate",
@@ -9379,7 +9379,7 @@
         },
         {
           "disabled": false,
-          "document": "序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "序列号",
           "example": "1047-02-03291045",
           "member": "string",
           "name": "RegistrationNumber",
@@ -9389,7 +9389,7 @@
         },
         {
           "disabled": false,
-          "document": "宗教信仰\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "宗教信仰",
           "example": "พุทธ",
           "member": "string",
           "name": "Religion",
@@ -9399,7 +9399,7 @@
         },
         {
           "disabled": false,
-          "document": "泰文出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泰文出生日期",
           "example": "14ธ.ค.2509",
           "member": "string",
           "name": "ThaiBirthday",
@@ -9409,7 +9409,7 @@
         },
         {
           "disabled": false,
-          "document": "泰文到期日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泰文到期日期",
           "example": "13ธ.ค.2567",
           "member": "string",
           "name": "ThaiExpirationDate",
@@ -9419,7 +9419,7 @@
         },
         {
           "disabled": false,
-          "document": "泰文签发日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泰文签发日期",
           "example": "9ธ.ค.2559",
           "member": "string",
           "name": "ThaiIssueDate",
@@ -9435,7 +9435,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>身份验证或 OCR 过程是否成功。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份验证或 OCR 过程是否成功。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsPass",
@@ -9445,7 +9445,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证件正面图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件正面图像的Base64</p>",
           "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "CardImageBase64",
@@ -9455,7 +9455,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>身份证件识别结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件识别结果</p>",
           "example": "无",
           "member": "CardInfo",
           "name": "CardInfo",
@@ -9465,7 +9465,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证件识别结果（当 CheckMode 取值为 4 时，返回 OriginalCardInfo 字段；其余场景均返回当前字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件识别结果（当 CheckMode 取值为 4 时，返回 OriginalCardInfo 字段；其余场景均返回当前字段）</p>",
           "example": "无",
           "member": "NormalCardInfo",
           "name": "NormalCardInfo",
@@ -9475,7 +9475,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求id</p>",
           "example": "946d***5e333d",
           "member": "string",
           "name": "RequestId",
@@ -9485,7 +9485,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证件正面切边裁剪图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件正面切边裁剪图像的Base64</p>",
           "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "CardCutImageBase64",
@@ -9495,7 +9495,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证件反面切边裁剪图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件反面切边裁剪图像的Base64</p>",
           "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "CardBackCutImageBase64",
@@ -9505,7 +9505,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>告警码</p><p>枚举值：</p><ul><li>-9101： 证件边框不完整告警</li><li>-9102： 证件复印件告警</li><li>-9103： 证件翻拍告警</li><li>-9104： 证件PS告警</li><li>-9107： 证件反光告警</li><li>-9108： 证件模糊告警</li><li>-9109： 告警能力未开通</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警码</p><p>枚举值：</p><ul><li>-9101： 证件边框不完整告警</li><li>-9102： 证件复印件告警</li><li>-9103： 证件翻拍告警</li><li>-9104： 证件PS告警</li><li>-9107： 证件反光告警</li><li>-9108： 证件模糊告警</li><li>-9109： 告警能力未开通</li></ul>",
           "example": "[ -9101]",
           "member": "int64",
           "name": "WarnCardInfos",
@@ -9515,7 +9515,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>原始证件识别信息（当 CheckMode 取值为 4 时，会返回当前字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原始证件识别信息（当 CheckMode 取值为 4 时，会返回当前字段）</p>",
           "example": "{\\\"CnName\\\":\\\"李**\\\",\\\"EnName\\\":\\\"LEE**\\\",\\\"WarnCardInfos\\\":[-9101,-9104],\\\"RequestId\\\":\\\"946d***5e333d\\\"}",
           "member": "string",
           "name": "OriginalCardInfo",
@@ -9525,7 +9525,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证件人像抠图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证件人像抠图</p>",
           "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "HeadImageBase64",
@@ -9535,7 +9535,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证件背面图像的Base64</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证件背面图像的Base64</p>",
           "example": "/9j/4AAQS*******",
           "member": "string",
           "name": "CardBackImageBase64",
@@ -9698,7 +9698,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果码。\n- 取值范围：0为首次查询成功，-1为查询失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果码。\n- 取值范围：0为首次查询成功，-1为查询失败。",
           "example": "0",
           "member": "string",
           "name": "ResultCode",
@@ -9708,7 +9708,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号。",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdNum",
@@ -9718,7 +9718,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名。",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -9728,7 +9728,7 @@
         },
         {
           "disabled": false,
-          "document": "照片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "照片。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Picture",
@@ -9738,7 +9738,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期。",
           "example": "20220222",
           "member": "string",
           "name": "BirthDate",
@@ -9748,7 +9748,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期起始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期起始时间。",
           "example": "20220222",
           "member": "string",
           "name": "BeginTime",
@@ -9758,7 +9758,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期结束时间。",
           "example": "20220222",
           "member": "string",
           "name": "EndTime",
@@ -9768,7 +9768,7 @@
         },
         {
           "disabled": false,
-          "document": "住址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "住址。",
           "example": "北京市东城区景山前街4号紫禁城敬事房",
           "member": "string",
           "name": "Address",
@@ -9778,7 +9778,7 @@
         },
         {
           "disabled": false,
-          "document": "民族。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "民族。",
           "example": "汉",
           "member": "string",
           "name": "Nation",
@@ -9788,7 +9788,7 @@
         },
         {
           "disabled": false,
-          "document": "性别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别。",
           "example": "男",
           "member": "string",
           "name": "Sex",
@@ -9798,7 +9798,7 @@
         },
         {
           "disabled": false,
-          "document": "类型。\n- 取值范围：\n01：身份证。 \n03 ：中国护照。\n04 ：军官证。\n05 ：武警证。\n06：港澳通行证 。\n07 ：台胞证 。\n08：外国护照 。\n09 ：士兵证。\n10 ：临时身份证。\n11：户口本  。\n12 ：警官证 。\n13：外国人永久居留证。\n14：港澳台居民居住证。\n15：回乡证。\n16：大陆居民来往台湾通行证。\n99：其他证件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型。\n- 取值范围：\n01：身份证。 \n03 ：中国护照。\n04 ：军官证。\n05 ：武警证。\n06：港澳通行证 。\n07 ：台胞证 。\n08：外国护照 。\n09 ：士兵证。\n10 ：临时身份证。\n11：户口本  。\n12 ：警官证 。\n13：外国人永久居留证。\n14：港澳台居民居住证。\n15：回乡证。\n16：大陆居民来往台湾通行证。\n99：其他证件。",
           "example": "01",
           "member": "string",
           "name": "IdType",
@@ -9808,7 +9808,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文姓名。",
           "example": "lily",
           "member": "string",
           "name": "EnName",
@@ -9818,7 +9818,7 @@
         },
         {
           "disabled": false,
-          "document": "签发机关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签发机关",
           "example": "广东省",
           "member": "string",
           "name": "SigningOrganization",
@@ -9828,7 +9828,7 @@
         },
         {
           "disabled": false,
-          "document": "港澳台居民居住证，通行证号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "港澳台居民居住证，通行证号码。",
           "example": "830000199706020042",
           "member": "string",
           "name": "OtherIdNum",
@@ -9838,7 +9838,7 @@
         },
         {
           "disabled": false,
-          "document": "旅行证件国籍。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旅行证件国籍。",
           "example": "英国",
           "member": "string",
           "name": "Nationality",
@@ -9848,7 +9848,7 @@
         },
         {
           "disabled": false,
-          "document": "旅行证件机读区第二行 29~42 位。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旅行证件机读区第二行 29~42 位。",
           "example": "0602004212071",
           "member": "string",
           "name": "PersonalNumber",
@@ -9858,7 +9858,7 @@
         },
         {
           "disabled": false,
-          "document": "旅行证件类的核验结果。\n- JSON格式如下：\n{\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_paper\":\"证件安全对象合法性验证结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} 。\n- 取值范围： 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旅行证件类的核验结果。\n- JSON格式如下：\n{\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_paper\":\"证件安全对象合法性验证结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} 。\n- 取值范围： 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真。",
           "example": "无",
           "member": "string",
           "name": "CheckMRTD",
@@ -9868,7 +9868,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证照片面合成图片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证照片面合成图片。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageA",
@@ -9878,7 +9878,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证国徽面合成图片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证国徽面合成图片。",
           "example": "/9j/4AAQSk......j+5QVYZKxU",
           "member": "string",
           "name": "ImageB",
@@ -9888,7 +9888,7 @@
         },
         {
           "disabled": false,
-          "document": "对result code的结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对result code的结果描述。",
           "example": "首次查询成功",
           "member": "string",
           "name": "ResultDescription",
@@ -10026,7 +10026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -10036,7 +10036,7 @@
         },
         {
           "disabled": false,
-          "document": "姓氏\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓氏\n",
           "example": "无",
           "member": "string",
           "name": "LastName",
@@ -10046,7 +10046,7 @@
         },
         {
           "disabled": false,
-          "document": "首姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首姓名",
           "example": "无",
           "member": "string",
           "name": "FirstName",
@@ -10056,7 +10056,7 @@
         },
         {
           "disabled": false,
-          "document": "中间姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中间姓名",
           "example": "无",
           "member": "string",
           "name": "MiddleName",
@@ -10066,7 +10066,7 @@
         },
         {
           "disabled": false,
-          "document": "国籍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国籍",
           "example": "无",
           "member": "string",
           "name": "Nationality",
@@ -10076,7 +10076,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "无",
           "member": "string",
           "name": "Sex",
@@ -10086,7 +10086,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "Address",
@@ -10096,7 +10096,7 @@
         },
         {
           "disabled": false,
-          "document": "证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证号",
           "example": "无",
           "member": "string",
           "name": "LicenseNo",
@@ -10106,7 +10106,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期",
           "example": "无",
           "member": "string",
           "name": "ExpiresDate",
@@ -10116,7 +10116,7 @@
         },
         {
           "disabled": false,
-          "document": "机构代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机构代码",
           "example": "无",
           "member": "string",
           "name": "AgencyCode",
@@ -10126,7 +10126,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -10142,7 +10142,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编号",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -10152,7 +10152,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "无",
           "member": "string",
           "name": "FullName",
@@ -10162,7 +10162,7 @@
         },
         {
           "disabled": false,
-          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生日",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -10178,7 +10178,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编码",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -10188,7 +10188,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "无",
           "member": "string",
           "name": "FullName",
@@ -10198,7 +10198,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "Address",
@@ -10208,7 +10208,7 @@
         },
         {
           "disabled": false,
-          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生日",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -10218,7 +10218,7 @@
         },
         {
           "disabled": false,
-          "document": "发证日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发证日期",
           "example": "无",
           "member": "string",
           "name": "IssueDate",
@@ -10234,7 +10234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓",
           "example": "无",
           "member": "string",
           "name": "Surname",
@@ -10244,7 +10244,7 @@
         },
         {
           "disabled": false,
-          "document": "中间名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中间名",
           "example": "无",
           "member": "string",
           "name": "MiddleName",
@@ -10254,7 +10254,7 @@
         },
         {
           "disabled": false,
-          "document": "名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名",
           "example": "无",
           "member": "string",
           "name": "GivenName",
@@ -10264,7 +10264,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "Sex",
@@ -10274,7 +10274,7 @@
         },
         {
           "disabled": false,
-          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生日",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -10284,7 +10284,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "Address",
@@ -10294,7 +10294,7 @@
         },
         {
           "disabled": false,
-          "document": "crn码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "crn码",
           "example": "无",
           "member": "string",
           "name": "CRN",
@@ -10310,7 +10310,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "菲律宾VoteID的VIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "菲律宾VoteID的VIN",
           "example": "无",
           "member": "string",
           "name": "VIN",
@@ -10320,7 +10320,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "无",
           "member": "string",
           "name": "FirstName",
@@ -10330,7 +10330,7 @@
         },
         {
           "disabled": false,
-          "document": "姓氏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓氏",
           "example": "无",
           "member": "string",
           "name": "LastName",
@@ -10340,7 +10340,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -10350,7 +10350,7 @@
         },
         {
           "disabled": false,
-          "document": "婚姻状况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "婚姻状况",
           "example": "无",
           "member": "string",
           "name": "CivilStatus",
@@ -10360,7 +10360,7 @@
         },
         {
           "disabled": false,
-          "document": "国籍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国籍",
           "example": "无",
           "member": "string",
           "name": "Citizenship",
@@ -10370,7 +10370,7 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "无",
           "member": "string",
           "name": "Address",
@@ -10380,7 +10380,7 @@
         },
         {
           "disabled": false,
-          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地区",
           "example": "无",
           "member": "string",
           "name": "PrecinctNo",
@@ -10794,7 +10794,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>结果描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结果描述</p>",
           "example": "成功",
           "member": "string",
           "name": "Description",
@@ -10804,7 +10804,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>返回结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>返回结果</p>",
           "example": "Success",
           "member": "string",
           "name": "Result",
@@ -10826,7 +10826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>命中的模板类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模板库</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命中的模板类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模板库</p>",
           "example": "Common",
           "member": "string",
           "name": "HitGroup",
@@ -10836,7 +10836,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求图像与命中攻击模板的相似度，相似度取值范围[0,2]，取值越小表示命中攻击模板的概率越高。默认阈值为0.6，当SimilarityScore≥0.6时判断为正常，SimilarityScore&lt;0.6是判断为攻击。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求图像与命中攻击模板的相似度，相似度取值范围[0,2]，取值越小表示命中攻击模板的概率越高。默认阈值为0.6，当SimilarityScore≥0.6时判断为正常，SimilarityScore&lt;0.6是判断为攻击。</p>",
           "example": "0.98",
           "member": "float",
           "name": "SimilarityScore",
@@ -10846,7 +10846,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>命中的模板id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命中的模板id</p>",
           "example": "1ec4db9b-1494-961b-d972-3dad70eab613",
           "member": "string",
           "name": "HitTemplate",
@@ -10975,7 +10975,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>命中时返回，命中风险详情列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命中时返回，命中风险详情列表</p>",
           "example": "[{\"AMLTypes\":[\"fitness-probity\"]}]",
           "member": "string",
           "name": "HitDetail",
@@ -10985,7 +10985,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>返回结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>返回结果</p>",
           "example": "Success",
           "member": "string",
           "name": "Result",
@@ -10995,7 +10995,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>返回结果描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>返回结果描述</p>",
           "example": "成功",
           "member": "string",
           "name": "Description",
@@ -11017,7 +11017,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中文名",
           "example": "无",
           "member": "string",
           "name": "ChName",
@@ -11027,7 +11027,7 @@
         },
         {
           "disabled": false,
-          "document": "中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中文名",
           "example": "无",
           "member": "string",
           "name": "ChineseName",
@@ -11037,7 +11037,7 @@
         },
         {
           "disabled": true,
-          "document": "英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文名",
           "example": "无",
           "member": "string",
           "name": "EnName",
@@ -11047,7 +11047,7 @@
         },
         {
           "disabled": false,
-          "document": "英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文名",
           "example": "无",
           "member": "string",
           "name": "FullName",
@@ -11057,7 +11057,7 @@
         },
         {
           "disabled": true,
-          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号码",
           "example": "无",
           "member": "string",
           "name": "ID",
@@ -11067,7 +11067,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号码",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -11077,7 +11077,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "无",
           "member": "string",
           "name": "Sex",
@@ -11087,7 +11087,7 @@
         },
         {
           "disabled": true,
-          "document": "出生国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生国家",
           "example": "无",
           "member": "string",
           "name": "CountryOfBirth",
@@ -11097,7 +11097,7 @@
         },
         {
           "disabled": false,
-          "document": "出生国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生国家",
           "example": "无",
           "member": "string",
           "name": "Nationality",
@@ -11107,7 +11107,7 @@
         },
         {
           "disabled": false,
-          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生日",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -11117,7 +11117,7 @@
         },
         {
           "disabled": false,
-          "document": "地址（背面字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址（背面字段）",
           "example": "无",
           "member": "string",
           "name": "Address",
@@ -11127,7 +11127,7 @@
         },
         {
           "disabled": false,
-          "document": "国籍（背面字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国籍（背面字段）",
           "example": "无",
           "member": "string",
           "name": "Race",
@@ -11137,7 +11137,7 @@
         },
         {
           "disabled": false,
-          "document": " Nric号码（背面字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " Nric号码（背面字段）",
           "example": "无",
           "member": "string",
           "name": "NRICCode",
@@ -11147,7 +11147,7 @@
         },
         {
           "disabled": false,
-          "document": "Post号码（背面字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Post号码（背面字段）",
           "example": "无",
           "member": "string",
           "name": "PostCode",
@@ -11157,7 +11157,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期至（背面字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期至（背面字段）",
           "example": "无",
           "member": "string",
           "name": "DateOfExpiration",
@@ -11167,7 +11167,7 @@
         },
         {
           "disabled": false,
-          "document": "签发日期（背面字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签发日期（背面字段）",
           "example": "无",
           "member": "string",
           "name": "DateOfIssue",
@@ -11183,7 +11183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名字",
           "example": "无",
           "member": "string",
           "name": "FullName",
@@ -11193,7 +11193,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -11203,7 +11203,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别",
           "example": "无",
           "member": "string",
           "name": "Sex",
@@ -11213,7 +11213,7 @@
         },
         {
           "disabled": false,
-          "document": "发证城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发证城市",
           "example": "无",
           "member": "string",
           "name": "IssuedCountry",
@@ -11223,7 +11223,7 @@
         },
         {
           "disabled": false,
-          "document": "注册号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册号",
           "example": "无",
           "member": "string",
           "name": "RegistrationNumber",
@@ -11239,7 +11239,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓氏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓氏",
           "example": "无",
           "member": "string",
           "name": "LastName",
@@ -11249,7 +11249,7 @@
         },
         {
           "disabled": false,
-          "document": "首姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首姓名",
           "example": "无",
           "member": "string",
           "name": "FirstName",
@@ -11259,7 +11259,7 @@
         },
         {
           "disabled": false,
-          "document": "编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编号",
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
@@ -11269,7 +11269,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生日期",
           "example": "无",
           "member": "string",
           "name": "DateOfBirth",
@@ -11279,7 +11279,7 @@
         },
         {
           "disabled": false,
-          "document": "过期日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过期日期",
           "example": "无",
           "member": "string",
           "name": "DateOfExpiry",
@@ -11289,7 +11289,7 @@
         },
         {
           "disabled": false,
-          "document": "签发日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签发日期",
           "example": "无",
           "member": "string",
           "name": "DateOfIssue",
@@ -11299,7 +11299,7 @@
         },
         {
           "disabled": false,
-          "document": "签发国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签发国家",
           "example": "无",
           "member": "string",
           "name": "IssuedCountry",
@@ -11380,7 +11380,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本次核验最终结果，0为核验通过，是同一人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验最终结果，0为核验通过，是同一人",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -11390,7 +11390,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验最终结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验最终结果描述",
           "example": "Success",
           "member": "string",
           "name": "ErrorMsg",
@@ -11400,7 +11400,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验活体结果，0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验活体结果，0为成功",
           "example": "0",
           "member": "int64",
           "name": "LivenessErrorCode",
@@ -11410,7 +11410,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验活体结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验活体结果描述",
           "example": "Success",
           "member": "string",
           "name": "LivenessErrorMsg",
@@ -11420,7 +11420,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验比对结果，0为视频流中采集的最佳人脸照片和上传的比对照片是同一人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验比对结果，0为视频流中采集的最佳人脸照片和上传的比对照片是同一人",
           "example": "0",
           "member": "int64",
           "name": "CompareErrorCode",
@@ -11430,7 +11430,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验比对结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验比对结果描述",
           "example": "success",
           "member": "string",
           "name": "CompareErrorMsg",
@@ -11440,7 +11440,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验时间戳(毫秒)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验时间戳(毫秒)",
           "example": "1634884881441",
           "member": "uint64",
           "name": "ReqTimestamp",
@@ -11450,7 +11450,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验视频流中采集的最佳人脸照片和上传的比对照片的相似度， 范围[0.00, 100.00]，默认大于等于70时判断为同一人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验视频流中采集的最佳人脸照片和上传的比对照片的相似度， 范围[0.00, 100.00]，默认大于等于70时判断为同一人",
           "example": "100.00",
           "member": "float",
           "name": "Similarity",
@@ -11460,7 +11460,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验的唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验的唯一标识",
           "example": "3d12da91-db34-4e55-81c3-993a41d7ccb7",
           "member": "string",
           "name": "Seq",
@@ -11470,7 +11470,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。\n- 详情如下：\n01-用户全程闭眼\n02-用户未完成指定动作\n03-疑似翻拍攻击\n04-疑似合成攻击\n05-疑似黑产模版\n06-疑似存在水印\n07-反光校验未通过\n08-疑似中途换人\n09-人脸质量过差\n10-距离校验不通过\n11-疑似对抗样本攻击\n12-嘴巴区域疑似存在攻击痕迹\n13-眼睛区域疑似存在攻击痕迹\n14-眼睛或嘴巴被遮挡\n注意：此字段可能返回 null，表示取不到有效值。\n示例值：[\"01\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。\n- 详情如下：\n01-用户全程闭眼\n02-用户未完成指定动作\n03-疑似翻拍攻击\n04-疑似合成攻击\n05-疑似黑产模版\n06-疑似存在水印\n07-反光校验未通过\n08-疑似中途换人\n09-人脸质量过差\n10-距离校验不通过\n11-疑似对抗样本攻击\n12-嘴巴区域疑似存在攻击痕迹\n13-眼睛区域疑似存在攻击痕迹\n14-眼睛或嘴巴被遮挡\n注意：此字段可能返回 null，表示取不到有效值。\n示例值：[\"01\"]",
           "example": "[\"04\"]",
           "member": "string",
           "name": "LivenessInfoTag",
@@ -11486,7 +11486,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次活体一比一请求的唯一标记。",
           "example": "AE13A3B3-F276-4C65-9BC9-1FE137851581",
           "member": "string",
           "name": "Seq",
@@ -11496,7 +11496,7 @@
         },
         {
           "disabled": false,
-          "document": "活体视频的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活体视频的base64编码。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Video",
@@ -11602,7 +11602,7 @@
         },
         {
           "disabled": false,
-          "document": "验证通过后的视频最佳截图照片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证通过后的视频最佳截图照片。",
           "example": "\"\"",
           "member": "FileInfo",
           "name": "BestFrame",

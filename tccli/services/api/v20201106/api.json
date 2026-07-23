@@ -214,7 +214,7 @@
         },
         {
           "disabled": false,
-          "document": "控制台类型，api调用时默认null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控制台类型，api调用时默认null",
           "example": "1",
           "member": "int64",
           "name": "RegionTypeMC",
@@ -224,7 +224,7 @@
         },
         {
           "disabled": false,
-          "document": "不同语言的地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不同语言的地区",
           "example": "South China",
           "member": "string",
           "name": "LocationMC",
@@ -234,7 +234,7 @@
         },
         {
           "disabled": false,
-          "document": "控制台展示的地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控制台展示的地域描述",
           "example": "广州",
           "member": "string",
           "name": "RegionNameMC",
@@ -244,7 +244,7 @@
         },
         {
           "disabled": false,
-          "document": "控制台展示的RegionId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控制台展示的RegionId",
           "example": "1",
           "member": "string",
           "name": "RegionIdMC",
@@ -316,7 +316,7 @@
         },
         {
           "disabled": false,
-          "document": "父级zone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父级zone",
           "example": "1",
           "member": "string",
           "name": "ParentZone",
@@ -326,7 +326,7 @@
         },
         {
           "disabled": false,
-          "document": "父级可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父级可用区ID",
           "example": "1",
           "member": "string",
           "name": "ParentZoneId",
@@ -336,7 +336,7 @@
         },
         {
           "disabled": false,
-          "document": "父级可用区描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父级可用区描述",
           "example": "1",
           "member": "string",
           "name": "ParentZoneName",
@@ -346,7 +346,7 @@
         },
         {
           "disabled": false,
-          "document": "zone类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "zone类型",
           "example": "1",
           "member": "string",
           "name": "ZoneType",
@@ -356,7 +356,7 @@
         },
         {
           "disabled": false,
-          "document": "控制台类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控制台类型",
           "example": "公有云",
           "member": "string",
           "name": "MachineRoomTypeMC",
@@ -366,7 +366,7 @@
         },
         {
           "disabled": false,
-          "document": "和ZoneId一样，适用于控制台调用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "和ZoneId一样，适用于控制台调用",
           "example": "1",
           "member": "string",
           "name": "ZoneIdMC",

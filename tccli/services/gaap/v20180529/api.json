@@ -3724,7 +3724,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审批状态。\nUNCOMMITTED表示未提交审批；\nPENDING表示待审批；\nAPPROVED表示审批通过；\nDENY表示审批被拒绝。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批状态。\nUNCOMMITTED表示未提交审批；\nPENDING表示待审批；\nAPPROVED表示审批通过；\nDENY表示审批被拒绝。",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -5835,7 +5835,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道ID",
           "example": "link-gw4sxx8j",
           "member": "string",
           "name": "ProxyId",
@@ -6402,7 +6402,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，使用UNIX时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间，使用UNIX时间戳",
           "example": "1716065151",
           "member": "uint64",
           "name": "UpdateTime",
@@ -7049,7 +7049,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的通道组ID，如果监听器属于通道，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的通道组ID，如果监听器属于通道，则为null",
           "example": "lg-qz6ntod5",
           "member": "string",
           "name": "GroupId",
@@ -7155,7 +7155,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器客户端CA证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器客户端CA证书ID",
           "example": "cert-xxxx",
           "member": "string",
           "name": "ClientCertificateId",
@@ -7175,7 +7175,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端CA证书别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端CA证书别名",
           "example": "testcert",
           "member": "string",
           "name": "ClientCertificateAlias",
@@ -7215,7 +7215,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的通道组ID，如果监听器属于通道，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的通道组ID，如果监听器属于通道，则为null",
           "example": "lg-qz6ntod5",
           "member": "string",
           "name": "GroupId",
@@ -7430,7 +7430,7 @@
         },
         {
           "disabled": false,
-          "document": "通道带宽费用梯度价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道带宽费用梯度价格。",
           "example": "70",
           "member": "BandwidthPriceGradient",
           "name": "BandwidthUnitPrice",
@@ -7460,7 +7460,7 @@
         },
         {
           "disabled": false,
-          "document": "通道的流量费用价格，单位: 元/GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道的流量费用价格，单位: 元/GB",
           "example": "0",
           "member": "float",
           "name": "FlowUnitPrice",
@@ -7470,7 +7470,7 @@
         },
         {
           "disabled": false,
-          "document": "通道的流量费用折扣价格，单位:元/GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道的流量费用折扣价格，单位:元/GB",
           "example": "0",
           "member": "float",
           "name": "DiscountFlowUnitPrice",
@@ -9137,7 +9137,7 @@
         },
         {
           "disabled": false,
-          "document": "通道组域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道组域名",
           "example": "link-test.gaapqcloud.com",
           "member": "string",
           "name": "Domain",
@@ -9283,7 +9283,7 @@
         },
         {
           "disabled": false,
-          "document": "通道组域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道组域名",
           "example": "lg-xx.com",
           "member": "string",
           "name": "Domain",
@@ -9566,7 +9566,7 @@
         },
         {
           "disabled": false,
-          "document": "通道组ID，当通道归属于某一通道组时，存在该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道组ID，当通道归属于某一通道组时，存在该字段。",
           "example": "\"lg-123456\"",
           "member": "string",
           "name": "GroupId",
@@ -9576,7 +9576,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略ID，当设置了安全策略时，存在该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全策略ID，当设置了安全策略时，存在该字段。",
           "example": "\"sp-xxx\"",
           "member": "string",
           "name": "PolicyId",
@@ -9656,7 +9656,7 @@
         },
         {
           "disabled": false,
-          "document": "配置变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置变更时间",
           "example": "1617265920",
           "member": "uint64",
           "name": "ModifyConfigTime",
@@ -9996,7 +9996,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定此源站的通道组ID，没有绑定时为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定此源站的通道组ID，没有绑定时为空字符串。",
           "example": "lg-123456",
           "member": "string",
           "name": "GroupId",
@@ -10072,7 +10072,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域支持的能力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入区域支持的能力",
           "example": "[\"normal\", \"cn2\"]",
           "member": "SupportFeature",
           "name": "SupportFeature",
@@ -10360,7 +10360,7 @@
         },
         {
           "disabled": false,
-          "document": "强转HTTPS指示，当传递值为https:时表示强转为https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "强转HTTPS指示，当传递值为https:时表示强转为https",
           "example": "https:",
           "member": "string",
           "name": "ForcedRedirect",
@@ -10694,7 +10694,7 @@
         },
         {
           "disabled": false,
-          "document": "统计数据值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计数据值",
           "example": "1.1",
           "member": "float",
           "name": "Data",
@@ -10756,7 +10756,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器转发源站端口，仅对版本为1.0的通道有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器转发源站端口，仅对版本为1.0的通道有效",
           "example": "332",
           "member": "uint64",
           "name": "RealServerPort",
@@ -10926,7 +10926,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器的通道组ID，如果监听器属于通道，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器的通道组ID，如果监听器属于通道，则为null",
           "example": "lg-qz6ntod5",
           "member": "string",
           "name": "GroupId",

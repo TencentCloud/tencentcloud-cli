@@ -632,7 +632,7 @@
         },
         {
           "disabled": false,
-          "document": "其它片段时间（可用于抢唱）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "其它片段时间（可用于抢唱）",
           "example": "无",
           "member": "KTVOtherSegments",
           "name": "OtherSegments",
@@ -1604,7 +1604,7 @@
         },
         {
           "disabled": false,
-          "document": "AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。",
           "example": "{\"MusicId\": \"bmp7a8yut5\",\"Name\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]}",
           "member": "AMEMusicBaseInfo",
           "name": "AMEMusicBaseInfo",
@@ -1631,7 +1631,7 @@
         },
         {
           "disabled": false,
-          "document": "歌曲匹配信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "歌曲匹配信息。",
           "example": "{\"MusicName\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]}",
           "member": "KTVMatchRuleMusicInfo",
           "name": "MusicInfo",
@@ -1737,7 +1737,7 @@
         },
         {
           "disabled": false,
-          "document": "专辑信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专辑信息。",
           "example": "{\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]}",
           "member": "MusicAlbumInfo",
           "name": "AlbumInfo",
@@ -1843,7 +1843,7 @@
         },
         {
           "disabled": false,
-          "document": "节拍信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节拍信息。",
           "example": "{\"Type\": \"Slow\",\"Value\": 100}",
           "member": "KTVBPMInfo",
           "name": "BPMInfo",
@@ -1859,7 +1859,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "片段开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "片段开始时间",
           "example": "0",
           "member": "int64",
           "name": "SegmentBegin",
@@ -1869,7 +1869,7 @@
         },
         {
           "disabled": false,
-          "document": "片段结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "片段结束时间",
           "example": "1",
           "member": "int64",
           "name": "SegmentEnd",
@@ -2601,7 +2601,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>",
           "example": "Original",
           "member": "string",
           "name": "Type",
@@ -2644,7 +2644,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
           "example": "RepeatPlaylist",
           "member": "string",
           "name": "PlayMode",
@@ -2879,7 +2879,7 @@
         },
         {
           "disabled": false,
-          "document": "TRTC房间号的类型：\n\nInteger：数字类型\nString：字符串类型\n默认为：Integer 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TRTC房间号的类型：\n\nInteger：数字类型\nString：字符串类型\n默认为：Integer 。",
           "example": "Integer",
           "member": "string",
           "name": "RoomIdType",
@@ -2942,7 +2942,7 @@
         },
         {
           "disabled": false,
-          "document": "直播会员详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "直播会员详细信息。",
           "example": "{\"RoomId\": \"awv5dis27j\",\"LiveVipEndTime\": \"2020-09-22T00:00:00+00:00\",\"LiveVipStatus\": \"Valid\"}",
           "member": "LiveVipUserInfo",
           "name": "LiveVipUserInfo",

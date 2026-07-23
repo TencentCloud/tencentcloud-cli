@@ -494,7 +494,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "有规则冲突时返回的已有冲突规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有规则冲突时返回的已有冲突规则信息",
           "example": "无",
           "member": "CheckResult",
           "name": "CheckResults",
@@ -685,7 +685,7 @@
         },
         {
           "disabled": false,
-          "document": "快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥",
           "example": "'1,2,3,4'",
           "member": "string",
           "name": "DayOfMonth",
@@ -695,7 +695,7 @@
         },
         {
           "disabled": false,
-          "document": "快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥",
           "example": "20",
           "member": "uint64",
           "name": "IntervalDays",
@@ -971,7 +971,7 @@
         },
         {
           "disabled": false,
-          "document": "桶所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "桶所在地域",
           "example": "region",
           "member": "string",
           "name": "Region",
@@ -4918,7 +4918,7 @@
         },
         {
           "disabled": false,
-          "document": "额外性能信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外性能信息",
           "example": "\"Type\": \"fixed\", \"Performance\": 300",
           "member": "ExstraPerformanceInfo",
           "name": "ExstraPerformanceInfo",
@@ -5260,7 +5260,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生命周期管理策略名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生命周期管理策略名称</p>",
           "example": "LifecyclePolicyTest",
           "member": "string",
           "name": "LifecyclePolicyName",
@@ -5270,7 +5270,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生命周期管理策略关联的管理规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生命周期管理策略关联的管理规则列表</p>",
           "example": "无",
           "member": "LifecycleRule",
           "name": "LifecycleRules",
@@ -5280,7 +5280,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生命周期管理策略关联目录的绝对路径列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生命周期管理策略关联目录的绝对路径列表</p>",
           "example": "无",
           "member": "PathInfo",
           "name": "Paths",
@@ -5329,7 +5329,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。</p>",
           "example": "DEFAULT_ATIME_14",
           "member": "string",
           "name": "Interval",
@@ -5340,7 +5340,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。</p>",
           "example": "1G",
           "member": "string",
           "name": "FileMaxSize",
@@ -5351,7 +5351,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。</p>",
           "example": "1M",
           "member": "string",
           "name": "FileMinSize",
@@ -6760,7 +6760,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>快照类型，general为通用系列快照，turbo为Turbo系列快照</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>快照类型，general为通用系列快照，turbo为Turbo系列快照</p>",
           "example": "turbo",
           "member": "string",
           "name": "SnapshotType",
@@ -6770,7 +6770,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实际快照时间，反映快照对应文件系统某个时刻的数据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实际快照时间，反映快照对应文件系统某个时刻的数据。</p>",
           "example": "2023-05-16 14:45:15",
           "member": "string",
           "name": "SnapshotTime",
@@ -7687,7 +7687,7 @@
         },
         {
           "disabled": false,
-          "document": "目录配额的目录绝对路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目录配额的目录绝对路径",
           "example": "/cfs/xx",
           "member": "string",
           "name": "DirectoryPath",

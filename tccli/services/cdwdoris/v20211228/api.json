@@ -1948,7 +1948,7 @@
         },
         {
           "disabled": true,
-          "document": "配置文件kv值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件kv值",
           "example": "[{\"KeyName\":\"broker_ipc_port\",\"Value\":\"8000\",\"Message\":\"内部通信端口\",\"Display\":1,\"SupportHotUpdate\":0}]",
           "member": "string",
           "name": "FileKeyValues",
@@ -8502,7 +8502,7 @@
         },
         {
           "disabled": true,
-          "document": "判断审计日志表是否有catalog字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "判断审计日志表是否有catalog字段",
           "example": "0",
           "member": "int64",
           "name": "IfExistCatalog",

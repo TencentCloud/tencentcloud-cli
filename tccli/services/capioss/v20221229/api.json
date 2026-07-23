@@ -143,7 +143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤器详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤器详情",
           "example": "{\"\"}",
           "member": "FilterInfo",
           "name": "Filter",
@@ -204,7 +204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模式",
           "example": "$module/$version/$action/$uin",
           "member": "string",
           "name": "KeyPattern",
@@ -215,7 +215,7 @@
         },
         {
           "disabled": false,
-          "document": "matcher数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "matcher数组",
           "example": "[{}]",
           "member": "MatcherInfo",
           "name": "Matchers",
@@ -226,7 +226,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组",
           "example": "[{}]",
           "member": "UinGroup",
           "name": "UinGroups",

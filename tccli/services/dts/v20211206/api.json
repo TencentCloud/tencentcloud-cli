@@ -1099,7 +1099,7 @@
         },
         {
           "disabled": false,
-          "document": "高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)",
           "example": "index",
           "member": "string",
           "name": "AdvancedObjects",
@@ -1182,7 +1182,7 @@
         },
         {
           "disabled": false,
-          "document": "用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)",
           "example": "无",
           "member": "CompareViewItem",
           "name": "Views",
@@ -1243,7 +1243,7 @@
         },
         {
           "disabled": false,
-          "document": "校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) ",
           "example": "[\"full\",\"increment\"]",
           "member": "string",
           "name": "CompareMode",
@@ -1292,7 +1292,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致的表的校验结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不一致的表的校验结果详情",
           "example": "无",
           "member": "CompareTableResult",
           "name": "Items",
@@ -2314,7 +2314,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "校验项，可能的值为Telnet,Connect等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验项，可能的值为Telnet,Connect等",
           "example": "Telnet",
           "member": "string",
           "name": "TestName",
@@ -2324,7 +2324,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码，其中-2表示未开始，-1表示测试未通过，0表示通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码，其中-2表示未开始，-1表示测试未通过，0表示通过",
           "example": "-1",
           "member": "int64",
           "name": "Code",
@@ -2334,7 +2334,7 @@
         },
         {
           "disabled": false,
-          "document": "校验结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验结果信息",
           "example": "ok",
           "member": "string",
           "name": "Message",
@@ -2350,7 +2350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步任务id",
           "example": "1234",
           "member": "int64",
           "name": "TaskId",
@@ -2360,7 +2360,7 @@
         },
         {
           "disabled": false,
-          "document": "连通性测试任务执行状态，running(运行中)、finished(已完成)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连通性测试任务执行状态，running(运行中)、finished(已完成)",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -2370,7 +2370,7 @@
         },
         {
           "disabled": false,
-          "document": "校验项是否全通过,0否，1是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验项是否全通过,0否，1是",
           "example": "1",
           "member": "int64",
           "name": "IsPass",
@@ -2380,7 +2380,7 @@
         },
         {
           "disabled": false,
-          "document": "代理IP，用户的防火墙需要允许该IP连接实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代理IP，用户的防火墙需要允许该IP连接实例",
           "example": "10.2.3.4",
           "member": "string",
           "name": "SNatIp",
@@ -2390,7 +2390,7 @@
         },
         {
           "disabled": false,
-          "document": "连通性测试检查项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连通性测试检查项",
           "example": "无",
           "member": "ConnTestItem",
           "name": "TestItems",
@@ -2428,7 +2428,7 @@
         },
         {
           "disabled": false,
-          "document": "校验对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验对象",
           "example": "无",
           "member": "DatabaseTableObject",
           "name": "Objects",
@@ -2869,7 +2869,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21</p>",
           "example": "[\"dts-amm1jw5q\"]",
           "member": "string",
           "name": "JobIds",
@@ -3105,7 +3105,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
           "example": "无",
           "member": "string",
           "name": "CompareTaskId",
@@ -4171,7 +4171,7 @@
         },
         {
           "disabled": false,
-          "document": "高级对象类型，如trigger(触发器)、function(函数)、procedure(存储过程)、event(事件)。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。\n\n> 当前支持高级对象迁移的场景为MySQL、TDSQL-CMySQL、MariaDB、Percona之间的数据迁移。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级对象类型，如trigger(触发器)、function(函数)、procedure(存储过程)、event(事件)。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。\n\n> 当前支持高级对象迁移的场景为MySQL、TDSQL-CMySQL、MariaDB、Percona之间的数据迁移。",
           "example": "[\"trigger\"]",
           "member": "string",
           "name": "AdvancedObjects",
@@ -4199,7 +4199,7 @@
         },
         {
           "disabled": false,
-          "document": "ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]",
           "example": "Alter",
           "member": "string",
           "name": "DdlValue",
@@ -4388,7 +4388,7 @@
         },
         {
           "disabled": false,
-          "document": "步骤信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "步骤信息",
           "example": "无",
           "member": "StepInfo",
           "name": "StepInfos",
@@ -4498,7 +4498,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询结果详情",
           "example": "无",
           "member": "DiffChunkItem",
           "name": "Items",
@@ -4782,7 +4782,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务总数",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -5763,7 +5763,7 @@
         },
         {
           "disabled": false,
-          "document": "步骤详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "步骤详细信息",
           "example": "无",
           "member": "StepInfo",
           "name": "StepInfos",
@@ -6213,7 +6213,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅任务报错信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅任务报错信息",
           "example": "无",
           "member": "SubsErr",
           "name": "Errors",
@@ -6605,7 +6605,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询结果详情",
           "example": "无",
           "member": "DiffChunkItem",
           "name": "Items",
@@ -6759,7 +6759,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>一致性校验摘要信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>一致性校验摘要信息</p>",
           "example": "无",
           "member": "CompareAbstractInfo",
           "name": "Abstract",
@@ -6769,7 +6769,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>一致性校验详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>一致性校验详细信息</p>",
           "example": "无",
           "member": "CompareDetailInfo",
           "name": "Detail",
@@ -6852,7 +6852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -6862,7 +6862,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性校验任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一致性校验任务列表",
           "example": "无",
           "member": "CompareTaskItem",
           "name": "Items",
@@ -7300,7 +7300,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名",
           "example": "db1",
           "member": "string",
           "name": "DBName",
@@ -7320,7 +7320,7 @@
         },
         {
           "disabled": false,
-          "document": "数据表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据表名",
           "example": "tbl1",
           "member": "string",
           "name": "TableName",
@@ -7330,7 +7330,7 @@
         },
         {
           "disabled": false,
-          "document": "分块号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分块号",
           "example": "1",
           "member": "int64",
           "name": "ChunkId",
@@ -7340,7 +7340,7 @@
         },
         {
           "disabled": false,
-          "document": "数据标识符，比如主键信息等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据标识符，比如主键信息等",
           "example": "id",
           "member": "string",
           "name": "Identifier",
@@ -7350,7 +7350,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失",
           "example": "srcLack",
           "member": "string",
           "name": "DiffType",
@@ -7360,7 +7360,7 @@
         },
         {
           "disabled": false,
-          "document": "表结构信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表结构信息",
           "example": "[\"id\",\"name\"]",
           "member": "string",
           "name": "SchemaInfo",
@@ -7370,7 +7370,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端数据",
           "example": "[\"1\",\"dts\"]",
           "member": "string",
           "name": "SrcItem",
@@ -7380,7 +7380,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标端数据",
           "example": "[\"2\",\"sync\"]",
           "member": "string",
           "name": "DstItem",
@@ -7390,7 +7390,7 @@
         },
         {
           "disabled": false,
-          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完成时间",
           "example": "2024-01-31 10:00:00",
           "member": "string",
           "name": "FinishedAt",
@@ -7416,7 +7416,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不一致详情",
           "example": "无",
           "member": "AdvancedObjectsItem",
           "name": "Items",
@@ -7528,7 +7528,7 @@
         },
         {
           "disabled": false,
-          "document": "mongo数据不一致详细列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mongo数据不一致详细列表",
           "example": "无",
           "member": "DifferenceData",
           "name": "Items",
@@ -7554,7 +7554,7 @@
         },
         {
           "disabled": false,
-          "document": "校验不一致的表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验不一致的表详情",
           "example": "无",
           "member": "DifferenceItem",
           "name": "Items",
@@ -7792,7 +7792,7 @@
         },
         {
           "disabled": false,
-          "document": "owner不一致详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "owner不一致详情",
           "example": "无",
           "member": "OwnerDifference",
           "name": "Items",
@@ -7818,7 +7818,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不一致列表",
           "example": "无",
           "member": "RowsCountDifference",
           "name": "Items",
@@ -7844,7 +7844,7 @@
         },
         {
           "disabled": false,
-          "document": "表结构不一致信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表结构不一致信息",
           "example": "无",
           "member": "SchemaDifference",
           "name": "Items",
@@ -9395,7 +9395,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据一致性校验选项， 默认为不开启一致性校验</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据一致性校验选项， 默认为不开启一致性校验</p>",
           "example": "无",
           "member": "ConsistencyOption",
           "name": "Consistency",
@@ -10456,7 +10456,7 @@
         },
         {
           "disabled": false,
-          "document": "同步对象，当 Mode 为 Partial 时，不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同步对象，当 Mode 为 Partial 时，不为空",
           "example": "无",
           "member": "Database",
           "name": "Databases",
@@ -10593,7 +10593,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。</p>",
           "example": "[\"Insert\",\"Update\",\"Delete\",\"DDL\"]",
           "member": "string",
           "name": "OpTypes",
@@ -10615,7 +10615,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>DDL同步选项，具体描述要同步哪些DDL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DDL同步选项，具体描述要同步哪些DDL</p>",
           "example": "无",
           "member": "DdlOption",
           "name": "DdlOptions",
@@ -10774,7 +10774,7 @@
         },
         {
           "disabled": false,
-          "document": "该消费者正在消费的分区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该消费者正在消费的分区",
           "example": "[0,1]",
           "member": "uint64",
           "name": "PartitionNo",
@@ -12148,7 +12148,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误信息</p>",
           "example": "无",
           "member": "StepTip",
           "name": "Errors",
@@ -12159,7 +12159,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>警告信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>警告信息</p>",
           "example": "无",
           "member": "StepTip",
           "name": "Warnings",
@@ -12720,7 +12720,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -12730,7 +12730,7 @@
         },
         {
           "disabled": false,
-          "document": "任务报错信息，如果有的话。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务报错信息，如果有的话。",
           "example": "无",
           "member": "SubsErr",
           "name": "Errors",
@@ -12817,7 +12817,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅数据库中表的名称。如果 DatabaseType 为 mongodb，填集合名。mongodb只支持订阅单库或者单集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅数据库中表的名称。如果 DatabaseType 为 mongodb，填集合名。mongodb只支持订阅单库或者单集合。",
           "example": "[\"tabl_1\"]",
           "member": "string",
           "name": "Tables",
@@ -12867,7 +12867,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库信息。注意：如果数据库类型为tdsqlmysql，此处Endpoint数组的顺序应满足规则：proxy节点放在set节点之前。如果SrcConnectType选择proxy接入则只需要填写proxy节点即可。如果选择set接入，数组中第一个set节点必须是shardkey范围起始为0的分片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库信息。注意：如果数据库类型为tdsqlmysql，此处Endpoint数组的顺序应满足规则：proxy节点放在set节点之前。如果SrcConnectType选择proxy接入则只需要填写proxy节点即可。如果选择set接入，数组中第一个set节点必须是shardkey范围起始为0的分片",
           "example": "无",
           "member": "Endpoint",
           "name": "Info",
@@ -12954,7 +12954,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>详细步骤信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>详细步骤信息</p>",
           "example": "无",
           "member": "StepInfo",
           "name": "StepInfos",
@@ -13050,7 +13050,7 @@
         },
         {
           "disabled": false,
-          "document": "当前状态能进行的操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前状态能进行的操作",
           "example": "[\"pause（暂停）\",\"stop（终止）\",\"limitRate（限速）\",\"view（查看）\",\"resize（调整规格）\",\"isolate（隔离）\",\"postPay2prePay（按量转包年包月）\",\"configureOptObj（修改同步对象）\"]",
           "member": "string",
           "name": "Actions",
@@ -13693,7 +13693,7 @@
         },
         {
           "disabled": false,
-          "document": "按列分区时需要选择配置列名，可以选择多列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按列分区时需要选择配置列名，可以选择多列",
           "example": "c1",
           "member": "string",
           "name": "Columns",

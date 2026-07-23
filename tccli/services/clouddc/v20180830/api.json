@@ -69,7 +69,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态对应的产品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态对应的产品数量",
           "example": "无",
           "member": "uint64",
           "name": "Num",
@@ -79,7 +79,7 @@
         },
         {
           "disabled": false,
-          "document": "产品状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品状态",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -333,7 +333,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计划即将停售时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计划即将停售时间",
           "example": "无",
           "member": "string",
           "name": "PlannedEOFMTime",
@@ -343,7 +343,7 @@
         },
         {
           "disabled": false,
-          "document": "实际即将停售时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际即将停售时间",
           "example": "无",
           "member": "string",
           "name": "ActualEOFMTime",
@@ -353,7 +353,7 @@
         },
         {
           "disabled": false,
-          "document": "计划EOM停止售卖时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计划EOM停止售卖时间",
           "example": "无",
           "member": "string",
           "name": "PlannedEOMTime",
@@ -363,7 +363,7 @@
         },
         {
           "disabled": false,
-          "document": "实际EOM停止售卖时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际EOM停止售卖时间",
           "example": "无",
           "member": "string",
           "name": "ActualEOMTime",
@@ -373,7 +373,7 @@
         },
         {
           "disabled": false,
-          "document": "计划EOSS停止全面服务时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计划EOSS停止全面服务时间",
           "example": "无",
           "member": "string",
           "name": "PlannedEOSSTime",
@@ -383,7 +383,7 @@
         },
         {
           "disabled": false,
-          "document": "实际EOSS停止全面服务时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际EOSS停止全面服务时间",
           "example": "无",
           "member": "string",
           "name": "ActualEOSSTime",
@@ -393,7 +393,7 @@
         },
         {
           "disabled": false,
-          "document": "计划EOMS停止服务时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计划EOMS停止服务时间",
           "example": "无",
           "member": "string",
           "name": "PlannedEOMSTime",
@@ -403,7 +403,7 @@
         },
         {
           "disabled": false,
-          "document": "实际EOMS停止服务时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际EOMS停止服务时间",
           "example": "无",
           "member": "string",
           "name": "ActualEOMSTime",
@@ -413,7 +413,7 @@
         },
         {
           "disabled": false,
-          "document": "退市负责人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "退市负责人",
           "example": "无",
           "member": "string",
           "name": "Managers",
@@ -429,7 +429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "测算单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "测算单号",
           "example": "无",
           "member": "string",
           "name": "EstimateCode",
@@ -439,7 +439,7 @@
         },
         {
           "disabled": false,
-          "document": "是否带有“出口管制合规”， 0否  1是 -1未查询到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否带有“出口管制合规”， 0否  1是 -1未查询到",
           "example": "无",
           "member": "int64",
           "name": "IsExportControl",
@@ -1072,7 +1072,7 @@
         },
         {
           "disabled": false,
-          "document": "测算单是否纳入自研占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "测算单是否纳入自研占比",
           "example": "no_included",
           "member": "string",
           "name": "SelfResearchInCalculation",
@@ -1342,7 +1342,7 @@
         },
         {
           "disabled": false,
-          "document": "TCE维表中的产品属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TCE维表中的产品属性",
           "example": "service",
           "member": "string",
           "name": "DimensionGoodsProperty",
@@ -1352,7 +1352,7 @@
         },
         {
           "disabled": false,
-          "document": "TCE维表中的产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TCE维表中的产品类型",
           "example": "owner",
           "member": "string",
           "name": "DimensionGoodsType",
@@ -1686,7 +1686,7 @@
         },
         {
           "disabled": false,
-          "document": "成本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成本",
           "example": "40000000",
           "member": "string",
           "name": "Cost",
@@ -1696,7 +1696,7 @@
         },
         {
           "disabled": false,
-          "document": "税率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "税率",
           "example": "6",
           "member": "string",
           "name": "TaxRate",
@@ -1706,7 +1706,7 @@
         },
         {
           "disabled": false,
-          "document": "利润率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "利润率",
           "example": "100",
           "member": "string",
           "name": "ProfitRate",
@@ -1732,7 +1732,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "无",
           "member": "string",
           "name": "Desc",
@@ -1742,7 +1742,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -1752,7 +1752,7 @@
         },
         {
           "disabled": false,
-          "document": "层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "层级",
           "example": "无",
           "member": "uint64",
           "name": "Level",
@@ -1762,7 +1762,7 @@
         },
         {
           "disabled": false,
-          "document": "官网产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "官网产品ID",
           "example": "无",
           "member": "uint64",
           "name": "DictId",
@@ -1772,7 +1772,7 @@
         },
         {
           "disabled": false,
-          "document": "节点英文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点英文名称",
           "example": "无",
           "member": "string",
           "name": "NameEn",
@@ -1792,7 +1792,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建人",
           "example": "无",
           "member": "string",
           "name": "Creator",
@@ -1802,7 +1802,7 @@
         },
         {
           "disabled": false,
-          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本",
           "example": "无",
           "member": "uint64",
           "name": "Version",
@@ -1812,7 +1812,7 @@
         },
         {
           "disabled": false,
-          "document": "负责人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负责人信息",
           "example": "无",
           "member": "string",
           "name": "Managers",
@@ -1822,7 +1822,7 @@
         },
         {
           "disabled": false,
-          "document": "变更人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更人",
           "example": "无",
           "member": "string",
           "name": "Modifier",
@@ -1832,7 +1832,7 @@
         },
         {
           "disabled": false,
-          "document": "中心id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中心id",
           "example": "无",
           "member": "uint64",
           "name": "CenterIds",
@@ -1842,7 +1842,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -1852,7 +1852,7 @@
         },
         {
           "disabled": false,
-          "document": "关联产品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联产品数量",
           "example": "无",
           "member": "uint64",
           "name": "ProductNum",
@@ -1862,7 +1862,7 @@
         },
         {
           "disabled": false,
-          "document": "变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -1872,7 +1872,7 @@
         },
         {
           "disabled": false,
-          "document": "部门id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部门id列表",
           "example": "无",
           "member": "int64",
           "name": "DepartmentIds",
@@ -1882,7 +1882,7 @@
         },
         {
           "disabled": false,
-          "document": "产品介绍页状态(1:上线;2:未上线)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品介绍页状态(1:上线;2:未上线)",
           "example": "无",
           "member": "uint64",
           "name": "IntroPageStatus",
@@ -1892,7 +1892,7 @@
         },
         {
           "disabled": false,
-          "document": "汇报树相关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "汇报树相关",
           "example": "无",
           "member": "ReportLevelList",
           "name": "ReportLevelList",
@@ -1902,7 +1902,7 @@
         },
         {
           "disabled": false,
-          "document": "关联有效产品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联有效产品数量",
           "example": "无",
           "member": "uint64",
           "name": "EffectProductNum",
@@ -1912,7 +1912,7 @@
         },
         {
           "disabled": false,
-          "document": "按状态聚合统计该节点关联的产品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按状态聚合统计该节点关联的产品数量",
           "example": "无",
           "member": "CalcStatusProduct",
           "name": "CalcStatusProducts",
@@ -1922,7 +1922,7 @@
         },
         {
           "disabled": false,
-          "document": "上级父级节点部门id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上级父级节点部门id列表",
           "example": "无",
           "member": "uint64",
           "name": "ParentDepartmentIds",
@@ -1932,7 +1932,7 @@
         },
         {
           "disabled": false,
-          "document": "上级父节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上级父节点",
           "example": "无",
           "member": "string",
           "name": "ParentCode",
@@ -1942,7 +1942,7 @@
         },
         {
           "disabled": false,
-          "document": "退市信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "退市信息",
           "example": "无",
           "member": "EOLInfo",
           "name": "EOLInfo",
@@ -1958,7 +1958,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点id编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点id编码",
           "example": "无",
           "member": "string",
           "name": "Code",
@@ -1968,7 +1968,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -1978,7 +1978,7 @@
         },
         {
           "disabled": false,
-          "document": "层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "层级",
           "example": "无",
           "member": "string",
           "name": "Level",
@@ -1988,7 +1988,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -1998,7 +1998,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建人",
           "example": "无",
           "member": "string",
           "name": "Creator",
@@ -2008,7 +2008,7 @@
         },
         {
           "disabled": false,
-          "document": "子节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子节点信息",
           "example": "无",
           "member": "ReportLevelListChildren",
           "name": "Children",
@@ -2018,7 +2018,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有孩子节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否有孩子节点",
           "example": "无",
           "member": "string",
           "name": "HasChild",
@@ -2028,7 +2028,7 @@
         },
         {
           "disabled": false,
-          "document": "变更人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更人",
           "example": "无",
           "member": "string",
           "name": "Modifier",
@@ -2038,7 +2038,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -2048,7 +2048,7 @@
         },
         {
           "disabled": false,
-          "document": "变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -2064,7 +2064,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点id编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点id编码",
           "example": "无",
           "member": "string",
           "name": "Code",
@@ -2074,7 +2074,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -2084,7 +2084,7 @@
         },
         {
           "disabled": false,
-          "document": "层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "层级",
           "example": "无",
           "member": "string",
           "name": "Level",
@@ -2094,7 +2094,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -2104,7 +2104,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建人",
           "example": "无",
           "member": "string",
           "name": "Creator",
@@ -2114,7 +2114,7 @@
         },
         {
           "disabled": false,
-          "document": "变更人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更人",
           "example": "无",
           "member": "string",
           "name": "Modifier",
@@ -2124,7 +2124,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -2134,7 +2134,7 @@
         },
         {
           "disabled": false,
-          "document": "父节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父节点id",
           "example": "无",
           "member": "string",
           "name": "ParentCode",
@@ -2144,7 +2144,7 @@
         },
         {
           "disabled": false,
-          "document": "父节点name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父节点name",
           "example": "无",
           "member": "string",
           "name": "ParentName",
@@ -2154,7 +2154,7 @@
         },
         {
           "disabled": false,
-          "document": "变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",

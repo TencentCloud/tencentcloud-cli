@@ -505,7 +505,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "APM实例所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "APM实例所在地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -516,7 +516,7 @@
         },
         {
           "disabled": false,
-          "document": "APM实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "APM实例ID",
           "example": "apm-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -762,7 +762,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统ip，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统ip，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.3",
           "member": "string",
           "name": "IpAddress",
@@ -773,7 +773,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统所在的私有网络id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统所在的私有网络id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "MountVpcId",
@@ -784,7 +784,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统所在私有网络的子网id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统所在私有网络的子网id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "MountSubnetId",
@@ -795,7 +795,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统实例所在地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统实例所在地区",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CfsRegion",
@@ -2621,7 +2621,7 @@
         },
         {
           "disabled": false,
-          "document": "路径重写策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径重写策略",
           "example": "无",
           "member": "PathRewriteRule",
           "name": "PathRewrite",
@@ -2700,7 +2700,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行时",
           "example": "python2.7",
           "member": "string",
           "name": "Runtime",
@@ -2800,7 +2800,7 @@
         },
         {
           "disabled": false,
-          "document": "函数所有版本预置并发内存总和\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数所有版本预置并发内存总和",
           "example": "128000",
           "member": "uint64",
           "name": "TotalProvisionedConcurrencyMem",
@@ -2810,7 +2810,7 @@
         },
         {
           "disabled": false,
-          "document": "函数并发保留内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数并发保留内存",
           "example": "12800",
           "member": "uint64",
           "name": "ReservedConcurrencyMem",
@@ -2993,7 +2993,7 @@
         },
         {
           "disabled": false,
-          "document": "版本描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本描述信息",
           "example": "a version",
           "member": "string",
           "name": "Description",
@@ -3004,7 +3004,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2024-12-19 12:00:00",
           "member": "datetime",
           "name": "AddTime",
@@ -3015,7 +3015,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2024-12-19 12:00:00",
           "member": "datetime",
           "name": "ModTime",
@@ -3026,7 +3026,7 @@
         },
         {
           "disabled": false,
-          "document": "版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本状态",
           "example": "Active",
           "member": "string",
           "name": "Status",
@@ -3043,7 +3043,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数名称",
           "example": "test-fucntion",
           "member": "string",
           "name": "FunctionName",
@@ -3053,7 +3053,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间 ",
           "example": "default",
           "member": "string",
           "name": "Namespace",
@@ -3063,7 +3063,7 @@
         },
         {
           "disabled": false,
-          "document": "函数版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数版本",
           "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
@@ -3654,7 +3654,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "json数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "json数据",
           "example": "无",
           "member": "string",
           "name": "Data",
@@ -3817,7 +3817,7 @@
         },
         {
           "disabled": false,
-          "document": "函数的运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数的运行环境",
           "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
@@ -4057,7 +4057,7 @@
         },
         {
           "disabled": false,
-          "document": "公网访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网访问配置",
           "example": "无",
           "member": "PublicNetConfigOut",
           "name": "PublicNetConfig",
@@ -4067,7 +4067,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用Ons\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用Ons",
           "example": "FALSE",
           "member": "string",
           "name": "OnsEnable",
@@ -4167,7 +4167,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像配置",
           "example": "无",
           "member": "ImageConfig",
           "name": "ImageConfig",
@@ -4187,7 +4187,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP函数支持的访问协议。当前支持WebSockets协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HTTP函数支持的访问协议。当前支持WebSockets协议。",
           "example": "\" \"",
           "member": "string",
           "name": "ProtocolType",
@@ -4197,7 +4197,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP函数配置ProtocolType访问协议，当前协议配置的参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HTTP函数配置ProtocolType访问协议，当前协议配置的参数",
           "example": "无",
           "member": "ProtocolParams",
           "name": "ProtocolParams",
@@ -4207,7 +4207,7 @@
         },
         {
           "disabled": false,
-          "document": "APM配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "APM配置",
           "example": "无",
           "member": "ApmConfig",
           "name": "ApmConfig",
@@ -4237,7 +4237,7 @@
         },
         {
           "disabled": false,
-          "document": "单实例多并发配置。只支持Web函数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单实例多并发配置。只支持Web函数。",
           "example": "无",
           "member": "InstanceConcurrencyConfig",
           "name": "InstanceConcurrencyConfig",
@@ -4247,7 +4247,7 @@
         },
         {
           "disabled": false,
-          "document": "函数超频相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数超频相关配置",
           "example": "无",
           "member": "OverClockConfig",
           "name": "OverClockConfig",
@@ -4267,7 +4267,7 @@
         },
         {
           "disabled": false,
-          "document": "内网访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网访问配置",
           "example": "无",
           "member": "IntranetConfigOut",
           "name": "IntranetConfig",
@@ -4277,7 +4277,7 @@
         },
         {
           "disabled": false,
-          "document": "serverless 应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "serverless 应用类型",
           "example": "SDWebUI",
           "member": "string",
           "name": "SFType",
@@ -4442,7 +4442,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代码.squashfs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代码.squashfs",
           "example": "1",
           "member": "string",
           "name": "CodeUrl",
@@ -4452,7 +4452,7 @@
         },
         {
           "disabled": false,
-          "document": "layers.squashfs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "layers.squashfs",
           "example": "2",
           "member": "string",
           "name": "LayerUrl",
@@ -4716,7 +4716,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "函数运行状态的总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数运行状态的总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -4726,7 +4726,7 @@
         },
         {
           "disabled": false,
-          "document": "函数运行状态数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数运行状态数组",
           "example": "无",
           "member": "RequestStatus",
           "name": "Data",
@@ -4772,7 +4772,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该函数的最大独占配额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该函数的最大独占配额。",
           "example": "128",
           "member": "uint64",
           "name": "ReservedMem",
@@ -4932,7 +4932,7 @@
         },
         {
           "disabled": false,
-          "document": "用于企业版TCR获取镜像拉取临时凭证，ImageType为\"enterprise\"时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于企业版TCR获取镜像拉取临时凭证，ImageType为\"enterprise\"时必填",
           "example": "tcr-xxx",
           "member": "string",
           "name": "RegistryId",
@@ -4943,7 +4943,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数即将下线，不推荐用户使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该参数即将下线，不推荐用户使用",
           "example": "\"entrypoint.sh\"",
           "member": "string",
           "name": "EntryPoint",
@@ -4954,7 +4954,7 @@
         },
         {
           "disabled": false,
-          "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python",
           "example": "python",
           "member": "string",
           "name": "Command",
@@ -4965,7 +4965,7 @@
         },
         {
           "disabled": false,
-          "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py",
           "example": " -u app.py",
           "member": "string",
           "name": "Args",
@@ -4976,7 +4976,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像加速开关，默认False\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像加速开关，默认False",
           "example": "false",
           "member": "bool",
           "name": "ContainerImageAccelerate",
@@ -4987,7 +4987,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像函数端口设置，可指定镜像类型\nWeb Server镜像：9000\nJob 镜像：-1\n注意：此字段可能返回 null，表示取不到有效值。\n默认值：9000\n示例值：9000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像函数端口设置，可指定镜像类型\nWeb Server镜像：9000\nJob 镜像：-1\n注意：此字段可能返回 null，表示取不到有效值。\n默认值：9000\n示例值：9000",
           "example": "9000",
           "member": "int64",
           "name": "ImagePort",
@@ -4998,7 +4998,7 @@
         },
         {
           "disabled": false,
-          "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python",
           "example": "[\"python\"]",
           "member": "string",
           "name": "CommandList",
@@ -5009,7 +5009,7 @@
         },
         {
           "disabled": false,
-          "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py",
           "example": "[\" -u app.py\"]",
           "member": "string",
           "name": "ArgsList",
@@ -5026,7 +5026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启智能动态并发。'FALSE'时是静态并发。''时取消多并发配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启智能动态并发。'FALSE'时是静态并发。''时取消多并发配置。",
           "example": "'FALSE'",
           "member": "string",
           "name": "DynamicEnabled",
@@ -5037,7 +5037,7 @@
         },
         {
           "disabled": false,
-          "document": "单实例并发数最大值。取值范围 [1,100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单实例并发数最大值。取值范围 [1,100]",
           "example": "1",
           "member": "uint64",
           "name": "MaxConcurrency",
@@ -5132,7 +5132,7 @@
         },
         {
           "disabled": false,
-          "document": "若已启用固定内网IP，则该字段返回使用的IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "若已启用固定内网IP，则该字段返回使用的IP列表",
           "example": "1.1.1.1",
           "member": "string",
           "name": "IpAddress",
@@ -5439,7 +5439,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配方式，默认值为: Equal\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配方式，默认值为: Equal",
           "example": "Equal",
           "member": "string",
           "name": "Operator",
@@ -5450,7 +5450,7 @@
         },
         {
           "disabled": false,
-          "document": "执行策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行策略",
           "example": "NoExecute",
           "member": "string",
           "name": "Effect",
@@ -5461,7 +5461,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配的污点值，当Operator为Equal时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配的污点值，当Operator为Equal时必填",
           "example": "value1",
           "member": "string",
           "name": "Value",
@@ -5472,7 +5472,7 @@
         },
         {
           "disabled": false,
-          "document": "当污点不被容忍时，Pod还能在节点上运行多久\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当污点不被容忍时，Pod还能在节点上运行多久",
           "example": "3600",
           "member": "uint64",
           "name": "TolerationSeconds",
@@ -5519,7 +5519,7 @@
         },
         {
           "disabled": false,
-          "document": "许可证信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "许可证信息",
           "example": "\" \"",
           "member": "string",
           "name": "LicenseInfo",
@@ -5569,7 +5569,7 @@
         },
         {
           "disabled": false,
-          "document": "返回层绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回层绑定的标签信息",
           "example": "[{\"Key\":\"xx\",\"Value\":\"xx-xx\"}]}",
           "member": "Tag",
           "name": "Tags",
@@ -5927,7 +5927,7 @@
         },
         {
           "disabled": false,
-          "document": "域名列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名列表信息",
           "example": "无",
           "member": "DomainInfo",
           "name": "Domains",
@@ -6779,7 +6779,7 @@
         },
         {
           "disabled": false,
-          "document": "当命名空间处于CreateFailed, DeleteFailed等异常状态时候，该字段指示异常原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当命名空间处于CreateFailed, DeleteFailed等异常状态时候，该字段指示异常原因",
           "example": "初始化失败",
           "member": "string",
           "name": "StatusReason",
@@ -6789,7 +6789,7 @@
         },
         {
           "disabled": false,
-          "document": "当命名空间绑定了特殊资源池，该字段包含资源池配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当命名空间绑定了特殊资源池，该字段包含资源池配置",
           "example": "Default",
           "member": "NamespaceResourceEnv",
           "name": "ResourceEnv",
@@ -6865,7 +6865,7 @@
         },
         {
           "disabled": false,
-          "document": "测试事件限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "测试事件限制",
           "example": "0",
           "member": "int64",
           "name": "TestModelLimit",
@@ -6921,7 +6921,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "基于TKE集群的资源池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基于TKE集群的资源池",
           "example": "x",
           "member": "NamespaceResourceEnvTKE",
           "name": "TKE",
@@ -6982,7 +6982,7 @@
         },
         {
           "disabled": false,
-          "document": "数据存储地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据存储地址",
           "example": "/var/lib/scf",
           "member": "string",
           "name": "DataPath",
@@ -6993,7 +6993,7 @@
         },
         {
           "disabled": false,
-          "document": "node选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "node选择器",
           "example": "Key0=a,Value0=x",
           "member": "K8SLabel",
           "name": "NodeSelector",
@@ -7004,7 +7004,7 @@
         },
         {
           "disabled": false,
-          "document": "污点容忍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "污点容忍",
           "example": "Key: \"key1\"   Operator: \"Exists\"",
           "member": "K8SToleration",
           "name": "Tolerations",
@@ -7015,7 +7015,7 @@
         },
         {
           "disabled": false,
-          "document": "scf组件将占用的节点端口起始号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "scf组件将占用的节点端口起始号",
           "example": "38002",
           "member": "uint64",
           "name": "Port",
@@ -7026,7 +7026,7 @@
         },
         {
           "disabled": false,
-          "document": "yaml格式的pod patch内容，例如\nmetadata:\n  labels:\n    key: value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "yaml格式的pod patch内容，例如\nmetadata:\n  labels:\n    key: value",
           "example": "metadata:   labels:     key: value",
           "member": "string",
           "name": "PodTemplatePatch",
@@ -7269,7 +7269,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "WebSockets协议支持的参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "WebSockets协议支持的参数",
           "example": "{             IdleTimeOut: 15     }",
           "member": "WSParams",
           "name": "WSParams",
@@ -7510,7 +7510,7 @@
         },
         {
           "disabled": false,
-          "document": "函数的运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "函数的运行环境",
           "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
@@ -8440,7 +8440,7 @@
         },
         {
           "disabled": false,
-          "document": "预置类型 Default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预置类型 Default",
           "example": "Default",
           "member": "string",
           "name": "ProvisionedType",
@@ -8643,7 +8643,7 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户自定义参数",
           "example": "custom",
           "member": "string",
           "name": "CustomArgument",
@@ -8703,7 +8703,7 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义触发器描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户自定义触发器描述",
           "example": "Some Description",
           "member": "string",
           "name": "Description",
@@ -9789,7 +9789,7 @@
         },
         {
           "disabled": false,
-          "document": "预置并发定时任务。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预置并发定时任务。",
           "example": "[{\"TriggerName\":\"timer-1\",\"ProvisionedType\":\"Default\",\"TriggerProvisionedConcurrencyNum\":1,\"TriggerCronConfig\":\"30 42 15 20 12 * 2024\"}]",
           "member": "TriggerAction",
           "name": "TriggerActions",
@@ -9861,7 +9861,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "空闲超时时间, 单位秒，默认15s。可配置范围1~1800s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "空闲超时时间, 单位秒，默认15s。可配置范围1~1800s。",
           "example": "15",
           "member": "uint64",
           "name": "IdleTimeOut",

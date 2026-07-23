@@ -726,7 +726,7 @@
         },
         {
           "disabled": false,
-          "document": "是否存在审计任务，0：无任务，1：创建中，2：关闭中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否存在审计任务，0：无任务，1：创建中，2：关闭中",
           "example": "0",
           "member": "int64",
           "name": "AuditTask",
@@ -736,7 +736,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志过期时间",
           "example": "0",
           "member": "int64",
           "name": "LogExpireDay",
@@ -746,7 +746,7 @@
         },
         {
           "disabled": false,
-          "document": "高频日志过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高频日志过期时间",
           "example": "7",
           "member": "int64",
           "name": "HighLogExpireDay",
@@ -756,7 +756,7 @@
         },
         {
           "disabled": false,
-          "document": "低频日志过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "低频日志过期时间",
           "example": "1818",
           "member": "int64",
           "name": "LowLogExpireDay",
@@ -776,7 +776,7 @@
         },
         {
           "disabled": false,
-          "document": "高频存储容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高频存储容量",
           "example": "0.0",
           "member": "float",
           "name": "HighRealStorage",
@@ -786,7 +786,7 @@
         },
         {
           "disabled": false,
-          "document": "低频存储容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "低频存储容量",
           "example": "0.0",
           "member": "float",
           "name": "LowRealStorage",
@@ -796,7 +796,7 @@
         },
         {
           "disabled": false,
-          "document": "实例详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例详情。",
           "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceInfo",
@@ -806,7 +806,7 @@
         },
         {
           "disabled": false,
-          "document": "性能分析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性能分析",
           "example": "0",
           "member": "int64",
           "name": "PerformancesAnalyse",
@@ -816,7 +816,7 @@
         },
         {
           "disabled": false,
-          "document": "true表示全审计，false表示规则审计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true表示全审计，false表示规则审计",
           "example": "true",
           "member": "bool",
           "name": "AuditAll",
@@ -826,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "实例审计最近一次的开通时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例审计最近一次的开通时间",
           "example": "2025-10-23 14:39:03",
           "member": "string",
           "name": "CreateAt",
@@ -836,7 +836,7 @@
         },
         {
           "disabled": false,
-          "document": "实例绑定的规则模版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例绑定的规则模版ID",
           "example": "[\"100\"]",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -846,7 +846,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启投递：ON，OFF\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启投递：ON，OFF",
           "example": "OFF",
           "member": "string",
           "name": "Deliver",
@@ -1018,7 +1018,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小，单位为 KB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件大小，单位为 KB。",
           "example": "64",
           "member": "uint64",
           "name": "FileSize",
@@ -1028,7 +1028,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志下载地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志下载地址。",
           "example": "http://*******",
           "member": "string",
           "name": "DownloadUrl",
@@ -1038,7 +1038,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息。",
           "example": "system error",
           "member": "string",
           "name": "ErrMsg",
@@ -1133,7 +1133,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前账号具有的权限信息。\n- 0：无权限。\n- 1：只读。\n- 3：读写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前账号具有的权限信息。\n- 0：无权限。\n- 1：只读。\n- 3：读写。",
           "example": "1",
           "member": "int64",
           "name": "Mask",
@@ -1144,7 +1144,7 @@
         },
         {
           "disabled": false,
-          "document": "指具有当前账号权限的数据库名。\n- \\* ：表示所有数据库。\n- db.name：表示特定 name 的数据库。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指具有当前账号权限的数据库名。\n- \\* ：表示所有数据库。\n- db.name：表示特定 name 的数据库。",
           "example": "\"db_test\"",
           "member": "string",
           "name": "NameSpace",
@@ -3280,7 +3280,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "cmgo-c1nl****",
           "member": "string",
           "name": "InstanceId",
@@ -3290,7 +3290,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称",
           "example": "cmgo-c1nl****",
           "member": "string",
           "name": "InstanceName",
@@ -3300,7 +3300,7 @@
         },
         {
           "disabled": false,
-          "document": "true表示全审计，false表示规则审计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true表示全审计，false表示规则审计",
           "example": "true",
           "member": "bool",
           "name": "AuditAll",
@@ -3320,7 +3320,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志保存时长。\n单位：天。目前支持的保存时长包括：0、30、180、365，1095、1825。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志保存时长。\n单位：天。目前支持的保存时长包括：0、30、180、365，1095、1825。",
           "example": "30",
           "member": "int64",
           "name": "LogExpireDay",
@@ -3433,7 +3433,7 @@
         },
         {
           "disabled": false,
-          "document": "审计实例详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计实例详情。",
           "example": "无",
           "member": "AuditInstance",
           "name": "Items",
@@ -3507,7 +3507,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志文件详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志文件详情。",
           "example": "无",
           "member": "AuditLogFile",
           "name": "Items",
@@ -3617,7 +3617,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志详情。",
           "example": "无",
           "member": "AuditLog",
           "name": "Items",
@@ -5255,7 +5255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>SSL开启状态。0为关闭，1为开启</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SSL开启状态。0为关闭，1为开启</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -5265,7 +5265,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证书过期时间，格式为2023-05-01 12:00:00</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书过期时间，格式为2023-05-01 12:00:00</p>",
           "example": "2023-05-01 12:00:00",
           "member": "string",
           "name": "ExpiredTime",
@@ -5275,7 +5275,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证书下载链接</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书下载链接</p>",
           "example": "http://abc/cert",
           "member": "string",
           "name": "CertUrl",
@@ -5358,7 +5358,7 @@
         },
         {
           "disabled": false,
-          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务列表",
           "example": "无",
           "member": "Task",
           "name": "Tasks",
@@ -5495,7 +5495,7 @@
         },
         {
           "disabled": false,
-          "document": "日志详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志详情列表。",
           "example": "无",
           "member": "LogInfo",
           "name": "LogList",
@@ -5882,7 +5882,7 @@
         },
         {
           "disabled": false,
-          "document": "已绑定的密钥列表，如未绑定，返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已绑定的密钥列表，如未绑定，返回null。",
           "example": "无",
           "member": "KMSInfoDetail",
           "name": "KeyInfoList",
@@ -7215,7 +7215,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>SSL开启状态。</p><ul><li>0：关闭。</li><li>1：开启。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SSL开启状态。</p><ul><li>0：关闭。</li><li>1：开启。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -7225,7 +7225,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证书文件过期时间，格式为：2023-05-01 12:00:00。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书文件过期时间，格式为：2023-05-01 12:00:00。</p>",
           "example": "2023-05-01 12:00:00",
           "member": "string",
           "name": "ExpiredTime",
@@ -7235,7 +7235,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证书文件的下载链接。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书文件的下载链接。</p>",
           "example": "http://xxx.xxx/xxx",
           "member": "string",
           "name": "CertUrl",
@@ -7353,7 +7353,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审计日志保存时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志保存时长。",
           "example": "30",
           "member": "uint64",
           "name": "AuditLogExpireDay",
@@ -7363,7 +7363,7 @@
         },
         {
           "disabled": false,
-          "document": "审计状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计状态。",
           "example": "ON",
           "member": "string",
           "name": "AuditStatus",
@@ -7373,7 +7373,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例 ID。",
           "example": "cmgo-o8p2og5r",
           "member": "string",
           "name": "InstanceId",
@@ -7383,7 +7383,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名。",
           "example": "test",
           "member": "string",
           "name": "InstanceName",
@@ -7393,7 +7393,7 @@
         },
         {
           "disabled": false,
-          "document": "实例角色。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例角色。",
           "example": "MASTER",
           "member": "string",
           "name": "InstanceRole",
@@ -7403,7 +7403,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型。",
           "example": "REPLICATE",
           "member": "string",
           "name": "InstanceType",
@@ -7413,7 +7413,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库版本。",
           "example": "4.0 WT",
           "member": "string",
           "name": "MongodbVersion",
@@ -7423,7 +7423,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目 ID。",
           "example": "123",
           "member": "uint64",
           "name": "ProjectId",
@@ -7433,7 +7433,7 @@
         },
         {
           "disabled": false,
-          "document": "地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -7443,7 +7443,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态。",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -7453,7 +7453,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持审计。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持审计。",
           "example": "true",
           "member": "bool",
           "name": "SupportAudit",
@@ -7463,7 +7463,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区。",
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "Zone",
@@ -7473,7 +7473,7 @@
         },
         {
           "disabled": false,
-          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签信息",
           "example": "无",
           "member": "TagInfo",
           "name": "TagList",
@@ -7962,7 +7962,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志类别",
           "example": "无",
           "member": "string",
           "name": "LogComponent",
@@ -7972,7 +7972,7 @@
         },
         {
           "disabled": false,
-          "document": "日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志级别",
           "example": "无",
           "member": "string",
           "name": "LogLevel",
@@ -7982,7 +7982,7 @@
         },
         {
           "disabled": false,
-          "document": "日志产生时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志产生时间",
           "example": "无",
           "member": "string",
           "name": "LogTime",
@@ -7992,7 +7992,7 @@
         },
         {
           "disabled": false,
-          "document": "日志详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志详情",
           "example": "无",
           "member": "string",
           "name": "LogDetail",
@@ -8002,7 +8002,7 @@
         },
         {
           "disabled": false,
-          "document": "日志连接信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志连接信息",
           "example": "无",
           "member": "string",
           "name": "LogConnection",
@@ -8012,7 +8012,7 @@
         },
         {
           "disabled": false,
-          "document": "日志id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志id",
           "example": "无",
           "member": "string",
           "name": "LogId",
@@ -8913,7 +8913,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点标签。",
           "example": "[{\"TagKey\":\"role-cmgo\",\"TagValue\":\"primary-secondary-group\"}]",
           "member": "NodeTag",
           "name": "Tags",
@@ -10661,7 +10661,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -10672,7 +10672,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -10683,7 +10683,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件大小",
           "example": "无",
           "member": "int64",
           "name": "FileSize",
@@ -10694,7 +10694,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，0:初始化，1:运行中，2:成功，3:失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态，0:初始化，1:运行中，2:成功，3:失败",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -10705,7 +10705,7 @@
         },
         {
           "disabled": false,
-          "document": "百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "百分比",
           "example": "100",
           "member": "int64",
           "name": "Percent",
@@ -10716,7 +10716,7 @@
         },
         {
           "disabled": false,
-          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载链接",
           "example": "无",
           "member": "string",
           "name": "Url",

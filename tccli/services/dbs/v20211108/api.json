@@ -298,7 +298,7 @@
         },
         {
           "disabled": false,
-          "document": "备份对象详情，当 ObjectMode 为 partial, 即选择部分对象备份时，该字段不能为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份对象详情，当 ObjectMode 为 partial, 即选择部分对象备份时，该字段不能为空。",
           "example": "无",
           "member": "BackupObjectItem",
           "name": "ObjectItems",
@@ -374,7 +374,7 @@
         },
         {
           "disabled": false,
-          "document": "表对象详情。当 TableMode 为 partial，即选择部分表备份时，此参数需要填写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表对象详情。当 TableMode 为 partial，即选择部分表备份时，此参数需要填写。",
           "example": "无",
           "member": "BackupTableItem",
           "name": "Tables",
@@ -394,7 +394,7 @@
         },
         {
           "disabled": false,
-          "document": "视图对象详情。当 ViewMode 为 partial，即选择部分视图备份时，此参数需要填写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视图对象详情。当 ViewMode 为 partial，即选择部分视图备份时，此参数需要填写。",
           "example": "无",
           "member": "BackupViewItem",
           "name": "Views",
@@ -556,7 +556,7 @@
         },
         {
           "disabled": false,
-          "document": "标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签信息。",
           "example": "[{\"TagKey\":\"key\",\"TagValue\":\"value\"}]",
           "member": "Tag",
           "name": "Tags",
@@ -596,7 +596,7 @@
         },
         {
           "disabled": false,
-          "document": "源端信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端信息",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "SetSourceInfo",
@@ -718,7 +718,7 @@
         },
         {
           "disabled": false,
-          "document": "列对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列对象。",
           "example": "无",
           "member": "BackupColumnItem",
           "name": "Columns",
@@ -881,7 +881,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>源地址转换IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>源地址转换IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SNatIp",

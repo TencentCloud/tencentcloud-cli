@@ -402,7 +402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "话单id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "话单id",
           "example": "",
           "member": "string",
           "name": "CallId",
@@ -411,7 +411,7 @@
         },
         {
           "disabled": false,
-          "document": "主叫显示系统分配的固话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主叫显示系统分配的固话号码",
           "example": "",
           "member": "string",
           "name": "SrcDisplayNum",
@@ -420,7 +420,7 @@
         },
         {
           "disabled": false,
-          "document": "被叫显示系统分配的固话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被叫显示系统分配的固话号码",
           "example": "",
           "member": "string",
           "name": "DstDisplayNum",
@@ -438,7 +438,7 @@
         },
         {
           "disabled": false,
-          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误原因",
           "example": "",
           "member": "string",
           "name": "Msg",
@@ -501,7 +501,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "",
           "member": "string",
           "name": "Msg",
@@ -510,7 +510,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定 ID，该 ID 全局唯一\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定 ID，该 ID 全局唯一",
           "example": "",
           "member": "string",
           "name": "BindId",
@@ -519,7 +519,7 @@
         },
         {
           "disabled": false,
-          "document": "中间号还剩引用计数，如果计数为 0 会解绑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中间号还剩引用计数，如果计数为 0 会解绑",
           "example": "",
           "member": "string",
           "name": "RefLeftNum",
@@ -582,7 +582,7 @@
         },
         {
           "disabled": false,
-          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误原因",
           "example": "",
           "member": "string",
           "name": "Msg",
@@ -591,7 +591,7 @@
         },
         {
           "disabled": false,
-          "document": "话单id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "话单id",
           "example": "",
           "member": "string",
           "name": "CallId",
@@ -663,7 +663,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "话单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "话单列表",
           "example": "",
           "member": "CallBackCdr",
           "name": "Cdr",
@@ -672,7 +672,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "偏移",
           "example": "",
           "member": "string",
           "name": "Offset",
@@ -681,7 +681,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码",
           "example": "",
           "member": "string",
           "name": "ErrorCode",
@@ -690,7 +690,7 @@
         },
         {
           "disabled": false,
-          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误原因",
           "example": "",
           "member": "string",
           "name": "Msg",
@@ -852,7 +852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务appid",
           "example": "",
           "member": "string",
           "name": "AppId",
@@ -861,7 +861,7 @@
         },
         {
           "disabled": false,
-          "document": "主叫显号号码集合，codeList[0...*] 结构体数组，如果业务是主被叫互显，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主叫显号号码集合，codeList[0...*] 结构体数组，如果业务是主被叫互显，该字段为空",
           "example": "",
           "member": "CallBackPhoneCode",
           "name": "CodeList",
@@ -879,7 +879,7 @@
         },
         {
           "disabled": false,
-          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误原因",
           "example": "",
           "member": "string",
           "name": "Msg",
@@ -960,7 +960,7 @@
         },
         {
           "disabled": false,
-          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误原因",
           "example": "",
           "member": "string",
           "name": "Msg",
@@ -969,7 +969,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "偏移",
           "example": "",
           "member": "string",
           "name": "Offset",
@@ -978,7 +978,7 @@
         },
         {
           "disabled": false,
-          "document": "话单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "话单列表",
           "example": "",
           "member": "VirturalNumCdr",
           "name": "Cdr",
@@ -1131,7 +1131,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定 ID，该 ID 全局唯一\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定 ID，该 ID 全局唯一",
           "example": "",
           "member": "string",
           "name": "BindId",
@@ -1140,7 +1140,7 @@
         },
         {
           "disabled": false,
-          "document": "中间号还剩引用计数，如果计数为 0 会解绑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中间号还剩引用计数，如果计数为 0 会解绑",
           "example": "",
           "member": "string",
           "name": "RefNum",
@@ -1149,7 +1149,7 @@
         },
         {
           "disabled": false,
-          "document": "中间号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中间号",
           "example": "",
           "member": "string",
           "name": "VirtualNum",
@@ -1158,7 +1158,7 @@
         },
         {
           "disabled": false,
-          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误原因",
           "example": "",
           "member": "string",
           "name": "Msg",

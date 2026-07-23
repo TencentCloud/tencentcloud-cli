@@ -1064,6 +1064,14 @@
         "title": "实例一"
       }
     ],
+    "DescribeSystemStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSystemStorage\n<公共请求参数>\n\n{\n    \"Type\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"LakeFileSystem\": {\n            \"Resource\": \"xx\",\n            \"AccessToken\": {\n                \"SecretKey\": \"xx\",\n                \"Token\": \"xx\",\n                \"SecretId\": \"xx\",\n                \"ExpiredTime\": 0,\n                \"IssueTime\": 0\n            },\n            \"Region\": \"xx\",\n            \"Namespace\": \"xx\",\n            \"Uri\": \"xx\",\n            \"Schema\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询指定的托管存储的系统目录"
+      }
+    ],
     "DescribeTCLakeMetaInstance": [
       {
         "document": "",
@@ -1164,6 +1172,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskStatistics\n\n{\n    \"TaskId\": \"4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9328049f-30bc-4feb-aecf-e3b4ff2d1b00\",\n        \"StatisticInfo\": {\n            \"TaskId\": \"9e20f9c021cb11ec835f5254006c64af\",\n            \"TotalProcessedBytes\": 850363,\n            \"UsedTime\": 1761,\n            \"TotalTime\": 2000,\n            \"CreateTime\": \"1632991895728\",\n            \"EndTime\": \"1632991897728\",\n            \"StartTime\": \"1632991896728\",\n            \"RowsAffect\": \"59378\"\n        }\n    }\n}",
         "title": "获取任务统计信息"
+      }
+    ],
+    "DescribeTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskStatus\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        \"c1f21-1d1ci0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskStatusList\": [],\n        \"RequestId\": \"fa50c6cb-29ee-4281-9438-def8b360217b\"\n    }\n}",
+        "title": "查询任务状态"
       }
     ],
     "DescribeTasks": [

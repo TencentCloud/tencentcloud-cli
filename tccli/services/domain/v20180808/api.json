@@ -852,7 +852,7 @@
         },
         {
           "disabled": false,
-          "document": "null: 未转移对应的 DNS 解析域名，false: 转移对应的 DNS 解析域名失败，true: 转移对应的 DNS 解析域名成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "null: 未转移对应的 DNS 解析域名，false: 转移对应的 DNS 解析域名失败，true: 转移对应的 DNS 解析域名成功",
           "example": "true",
           "member": "bool",
           "name": "TransferDnsResult",
@@ -1260,7 +1260,7 @@
         },
         {
           "disabled": false,
-          "document": "加价幅度区间配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加价幅度区间配置",
           "example": "无",
           "member": "PriceScopeConf",
           "name": "PriceScope",
@@ -1939,7 +1939,7 @@
         },
         {
           "disabled": false,
-          "document": "溢价词描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溢价词描述",
           "example": "\"\"",
           "member": "string",
           "name": "Describe",
@@ -1948,7 +1948,7 @@
         },
         {
           "disabled": false,
-          "document": "溢价词的续费价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溢价词的续费价格",
           "example": "1",
           "member": "uint64",
           "name": "FeeRenew",
@@ -1957,7 +1957,7 @@
         },
         {
           "disabled": false,
-          "document": "域名真实价格, 溢价词时价格跟年限有关，非溢价词时价格为1年的价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名真实价格, 溢价词时价格跟年限有关，非溢价词时价格为1年的价格",
           "example": "10",
           "member": "uint64",
           "name": "RealPrice",
@@ -1966,7 +1966,7 @@
         },
         {
           "disabled": false,
-          "document": "溢价词的转入价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溢价词的转入价格",
           "example": "0",
           "member": "uint64",
           "name": "FeeTransfer",
@@ -5661,7 +5661,7 @@
         },
         {
           "disabled": false,
-          "document": "竞价详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价详细数据",
           "example": "无",
           "member": "ReserveBidInfo",
           "name": "BidList",
@@ -6158,7 +6158,7 @@
         },
         {
           "disabled": false,
-          "document": "域名命名审核不通过原因。<具体内容以实名审核机构返回为准>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名命名审核不通过原因。<具体内容以实名审核机构返回为准>",
           "example": "域名包含非法字符",
           "member": "string",
           "name": "DomainNameAuditUnpassReason",
@@ -7599,7 +7599,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "null: 未转移对应的 DNS 解析域名，false: 转移对应的 DNS 解析域名失败，true: 转移对应的 DNS 解析域名成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "null: 未转移对应的 DNS 解析域名，false: 转移对应的 DNS 解析域名失败，true: 转移对应的 DNS 解析域名成功",
           "example": "false",
           "member": "bool",
           "name": "TransferDnsResult",

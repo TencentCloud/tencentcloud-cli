@@ -37,7 +37,7 @@
         },
         {
           "disabled": false,
-          "document": "返回内容以链接形式提供。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回内容以链接形式提供。",
           "example": "",
           "member": "string",
           "name": "Url",
@@ -47,7 +47,7 @@
         },
         {
           "disabled": false,
-          "document": "普通文本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "普通文本。",
           "example": "",
           "member": "string",
           "name": "Content",
@@ -63,7 +63,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息组列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息组列表。",
           "example": "",
           "member": "Group",
           "name": "GroupList",
@@ -79,7 +79,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "槽位名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "槽位名称",
           "example": "",
           "member": "string",
           "name": "SlotName",
@@ -89,7 +89,7 @@
         },
         {
           "disabled": false,
-          "document": "槽位值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "槽位值",
           "example": "",
           "member": "string",
           "name": "SlotValue",
@@ -174,7 +174,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。",
           "example": "无",
           "member": "string",
           "name": "DialogStatus",
@@ -183,7 +183,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配到的机器人名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配到的机器人名称。",
           "example": "无",
           "member": "string",
           "name": "BotName",
@@ -192,7 +192,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配到的意图名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配到的意图名称。",
           "example": "无",
           "member": "string",
           "name": "IntentName",
@@ -201,7 +201,7 @@
         },
         {
           "disabled": false,
-          "document": "槽位信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "槽位信息。",
           "example": "无",
           "member": "SlotInfo",
           "name": "SlotInfoList",
@@ -210,7 +210,7 @@
         },
         {
           "disabled": false,
-          "document": "原始的用户说法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原始的用户说法。",
           "example": "无",
           "member": "string",
           "name": "InputText",
@@ -219,7 +219,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人应答。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人应答。",
           "example": "无",
           "member": "ResponseMessage",
           "name": "ResponseMessage",
@@ -228,7 +228,7 @@
         },
         {
           "disabled": false,
-          "document": "透传字段，由用户自定义的WebService服务返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "透传字段，由用户自定义的WebService服务返回。",
           "example": "无",
           "member": "string",
           "name": "SessionAttributes",
@@ -237,7 +237,7 @@
         },
         {
           "disabled": false,
-          "document": "结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。",
           "example": "无",
           "member": "string",
           "name": "ResultType",
@@ -318,7 +318,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。",
           "example": "无",
           "member": "string",
           "name": "DialogStatus",
@@ -327,7 +327,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配到的机器人名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配到的机器人名称。",
           "example": "无",
           "member": "string",
           "name": "BotName",
@@ -336,7 +336,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配到的意图名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配到的意图名称。",
           "example": "无",
           "member": "string",
           "name": "IntentName",
@@ -345,7 +345,7 @@
         },
         {
           "disabled": false,
-          "document": "槽位信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "槽位信息。",
           "example": "无",
           "member": "SlotInfo",
           "name": "SlotInfoList",
@@ -354,7 +354,7 @@
         },
         {
           "disabled": false,
-          "document": "原始的用户说法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原始的用户说法。",
           "example": "无",
           "member": "string",
           "name": "InputText",
@@ -363,7 +363,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人应答。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人应答。",
           "example": "无",
           "member": "ResponseMessage",
           "name": "ResponseMessage",
@@ -372,7 +372,7 @@
         },
         {
           "disabled": false,
-          "document": "透传字段，由用户自定义的WebService服务返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "透传字段，由用户自定义的WebService服务返回。",
           "example": "无",
           "member": "string",
           "name": "SessionAttributes",
@@ -381,7 +381,7 @@
         },
         {
           "disabled": false,
-          "document": "结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。",
           "example": "无",
           "member": "string",
           "name": "ResultType",
@@ -390,7 +390,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人对话的应答文本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器人对话的应答文本。",
           "example": "无",
           "member": "string",
           "name": "ResponseText",

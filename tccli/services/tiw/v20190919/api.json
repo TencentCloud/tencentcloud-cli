@@ -1044,7 +1044,7 @@
         },
         {
           "disabled": false,
-          "document": "回放URL，需配合信令播放器使用。此字段仅适用于`视频生成模式`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回放URL，需配合信令播放器使用。此字段仅适用于`视频生成模式`",
           "example": "http://replayurl",
           "member": "string",
           "name": "ReplayUrl",
@@ -1054,7 +1054,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流在录制过程中断流次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流在录制过程中断流次数",
           "example": "无",
           "member": "Interrupt",
           "name": "Interrupts",
@@ -1165,7 +1165,7 @@
         },
         {
           "disabled": false,
-          "document": "修复后的PPT URL，只有创建任务时参数AutoHandleUnsupportedElement=true，才返回此参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修复后的PPT URL，只有创建任务时参数AutoHandleUnsupportedElement=true，才返回此参数",
           "example": "https://xxx/xxx/测试_fixed.ppt",
           "member": "string",
           "name": "ResultUrl",
@@ -1175,7 +1175,7 @@
         },
         {
           "disabled": false,
-          "document": "错误PPT页面列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误PPT页面列表",
           "example": "无",
           "member": "PPTErrSlide",
           "name": "Slides",
@@ -1205,7 +1205,7 @@
         },
         {
           "disabled": false,
-          "document": "错误列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误列表",
           "example": "无",
           "member": "PPTErr",
           "name": "Errs",
@@ -1446,7 +1446,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "f2e1728c-6e87-4481-abe1-cde8542a5a10",
           "member": "string",
           "name": "TaskID",
@@ -1456,7 +1456,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态\nRunning - 任务执行中\nFinished - 任务已结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态\nRunning - 任务执行中\nFinished - 任务已结束",
           "example": "Finished",
           "member": "string",
           "name": "Status",
@@ -1466,7 +1466,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务创建时间，单位s",
           "example": "1620982173",
           "member": "uint64",
           "name": "CreateTime",
@@ -1476,7 +1476,7 @@
         },
         {
           "disabled": false,
-          "document": "任务完成时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务完成时间，单位s",
           "example": "1621082195",
           "member": "uint64",
           "name": "FinishTime",
@@ -1486,7 +1486,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结果信息",
           "example": "无",
           "member": "SnapshotResult",
           "name": "Result",
@@ -1745,7 +1745,7 @@
         },
         {
           "disabled": false,
-          "document": "资源清单文件下载URL(内测体验)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源清单文件下载URL(内测体验)",
           "example": "\"无\"",
           "member": "string",
           "name": "ResourceListUrl",
@@ -1755,7 +1755,7 @@
         },
         {
           "disabled": false,
-          "document": "文档制作方式(内测体验)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档制作方式(内测体验)",
           "example": "office",
           "member": "string",
           "name": "Ext",
@@ -1765,7 +1765,7 @@
         },
         {
           "disabled": false,
-          "document": "文档转码任务创建时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档转码任务创建时间，单位s",
           "example": "1688974545",
           "member": "uint64",
           "name": "CreateTime",
@@ -1775,7 +1775,7 @@
         },
         {
           "disabled": false,
-          "document": "文档转码任务分配时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档转码任务分配时间，单位s",
           "example": "1688974545",
           "member": "uint64",
           "name": "AssignTime",
@@ -1785,7 +1785,7 @@
         },
         {
           "disabled": false,
-          "document": "文档转码任务完成时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档转码任务完成时间，单位s",
           "example": "1688974545",
           "member": "uint64",
           "name": "FinishedTime",
@@ -2166,7 +2166,7 @@
         },
         {
           "disabled": false,
-          "document": "备份推流任务结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份推流任务结果信息",
           "example": "{}",
           "member": "string",
           "name": "Backup",
@@ -2211,7 +2211,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID",
           "example": "tiw_user_634",
           "member": "string",
           "name": "UserId",
@@ -2221,7 +2221,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流断流次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流断流次数",
           "example": "2",
           "member": "int64",
           "name": "Count",
@@ -2385,7 +2385,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "元素名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元素名称",
           "example": "Ink 1",
           "member": "string",
           "name": "Name",
@@ -2395,7 +2395,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 不支持的墨迹类型，1: 不支持自动翻页，2: 存在已损坏音视频，3: 存在不可访问资源，4: 只读文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0: 不支持的墨迹类型，1: 不支持自动翻页，2: 存在已损坏音视频，3: 存在不可访问资源，4: 只读文件",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -2405,7 +2405,7 @@
         },
         {
           "disabled": false,
-          "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误详情",
           "example": "wps墨迹",
           "member": "string",
           "name": "Detail",
@@ -2421,7 +2421,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异常元素存在的页面，由页面类型+页码组成，页码类型包括：幻灯片、幻灯片母版、幻灯片布局等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常元素存在的页面，由页面类型+页码组成，页码类型包括：幻灯片、幻灯片母版、幻灯片布局等",
           "example": "幻灯片1",
           "member": "string",
           "name": "Page",
@@ -2431,7 +2431,7 @@
         },
         {
           "disabled": false,
-          "document": "错误元素列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误元素列表",
           "example": "无",
           "member": "PPTErr",
           "name": "Errs",
@@ -2615,7 +2615,7 @@
         },
         {
           "disabled": false,
-          "document": "任务取消时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务取消时间",
           "example": "2023-03-14 20:00:00",
           "member": "string",
           "name": "CancelTime",
@@ -2645,7 +2645,7 @@
         },
         {
           "disabled": false,
-          "document": "转码任务中转码文件的原始URL\n此参数只有任务类型为TranscodeH5、TranscodeJPG类型时才会有有效值。其他任务类型为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转码任务中转码文件的原始URL\n此参数只有任务类型为TranscodeH5、TranscodeJPG类型时才会有有效值。其他任务类型为空字符串。",
           "example": "http://xxx.pptx",
           "member": "string",
           "name": "FileURL",
@@ -2655,7 +2655,7 @@
         },
         {
           "disabled": false,
-          "document": "房间号\n\n当任务类型为TranscodeH5、TranscodeJPG时，房间号为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间号\n\n当任务类型为TranscodeH5、TranscodeJPG时，房间号为0。",
           "example": "12345",
           "member": "int64",
           "name": "RoomID",
@@ -3241,7 +3241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行错误码",
           "example": "InternalErr",
           "member": "string",
           "name": "ErrorCode",
@@ -3251,7 +3251,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行错误信息",
           "example": "redis connect failed",
           "member": "string",
           "name": "ErrorMessage",
@@ -3261,7 +3261,7 @@
         },
         {
           "disabled": false,
-          "document": "快照生成图片总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照生成图片总数",
           "example": "12",
           "member": "uint64",
           "name": "Total",
@@ -3271,7 +3271,7 @@
         },
         {
           "disabled": false,
-          "document": "快照图片链接列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照图片链接列表",
           "example": "无",
           "member": "string",
           "name": "Snapshots",
@@ -3718,7 +3718,7 @@
         },
         {
           "disabled": false,
-          "document": "备份任务结果参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份任务结果参数",
           "example": "无",
           "member": "string",
           "name": "Backup",
@@ -3800,7 +3800,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份任务相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份任务相关参数",
           "example": "",
           "member": "string",
           "name": "Backup",

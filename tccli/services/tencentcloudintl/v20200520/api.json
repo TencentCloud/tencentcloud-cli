@@ -69,7 +69,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类目ID",
           "example": "213",
           "member": "int64",
           "name": "CategoryId",
@@ -80,7 +80,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重",
           "example": "100",
           "member": "int64",
           "name": "Weight",
@@ -91,7 +91,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点类型",
           "example": "page",
           "member": "string",
           "name": "Type",
@@ -102,7 +102,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展",
           "example": "无",
           "member": "string",
           "name": "Extension",
@@ -113,7 +113,7 @@
         },
         {
           "disabled": false,
-          "document": "父ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父ID",
           "example": "493",
           "member": "int64",
           "name": "Pid",
@@ -124,7 +124,7 @@
         },
         {
           "disabled": false,
-          "document": "自增ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自增ID",
           "example": "2179",
           "member": "int64",
           "name": "Id",
@@ -135,7 +135,7 @@
         },
         {
           "disabled": false,
-          "document": "语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语言",
           "example": "en",
           "member": "string",
           "name": "Lang",
@@ -146,7 +146,7 @@
         },
         {
           "disabled": false,
-          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标题",
           "example": "Billing Overview",
           "member": "string",
           "name": "Title",
@@ -157,7 +157,7 @@
         },
         {
           "disabled": false,
-          "document": "pdf下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "pdf下载地址",
           "example": "https://main.qcloudimg.com/raw/document/intl/product/pdf/213_493_en.pdf",
           "member": "string",
           "name": "PdfUrl",
@@ -168,7 +168,7 @@
         },
         {
           "disabled": false,
-          "document": "文档类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档类型",
           "example": "default",
           "member": "string",
           "name": "DocType",
@@ -179,7 +179,7 @@
         },
         {
           "disabled": false,
-          "document": "首次发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次发布时间",
           "example": "2016-02-18 00:00:00",
           "member": "string",
           "name": "FirstReleaseTime",
@@ -190,7 +190,7 @@
         },
         {
           "disabled": false,
-          "document": "最后发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后发布时间",
           "example": "2016-02-18 00:00:00",
           "member": "string",
           "name": "RecentReleaseTime",
@@ -414,7 +414,7 @@
         },
         {
           "disabled": false,
-          "document": "子节点数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子节点数据",
           "example": "无",
           "member": "DescribeCategory",
           "name": "Children",
@@ -1683,7 +1683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详细联系地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细联系地址",
           "example": "无",
           "member": "string",
           "name": "Address",
@@ -1693,7 +1693,7 @@
         },
         {
           "disabled": false,
-          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市",
           "example": "无",
           "member": "string",
           "name": "City",
@@ -1703,7 +1703,7 @@
         },
         {
           "disabled": false,
-          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公司名称",
           "example": "无",
           "member": "string",
           "name": "CompanyName",
@@ -1713,7 +1713,7 @@
         },
         {
           "disabled": false,
-          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名字",
           "example": "HK",
           "member": "string",
           "name": "FullName",
@@ -1723,7 +1723,7 @@
         },
         {
           "disabled": false,
-          "document": "州或者省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "州或者省份",
           "example": "无",
           "member": "string",
           "name": "State",
@@ -1733,7 +1733,7 @@
         },
         {
           "disabled": false,
-          "document": "账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号uin",
           "example": "无",
           "member": "string",
           "name": "Uin",
@@ -1743,7 +1743,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
@@ -1753,7 +1753,7 @@
         },
         {
           "disabled": false,
-          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户类型",
           "example": "无",
           "member": "string",
           "name": "UserType",
@@ -1763,7 +1763,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单注册专用TmpIdCard\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "白名单注册专用TmpIdCard",
           "example": "无",
           "member": "string",
           "name": "TmpIdCard",
@@ -1785,7 +1785,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文档标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档标题",
           "example": "无",
           "member": "string",
           "name": "Title",
@@ -1796,7 +1796,7 @@
         },
         {
           "disabled": false,
-          "document": "文档语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档语言",
           "example": "无",
           "member": "string",
           "name": "Lang",
@@ -1807,7 +1807,7 @@
         },
         {
           "disabled": false,
-          "document": "锚点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "锚点",
           "example": "无",
           "member": "string",
           "name": "Toc",
@@ -1818,7 +1818,7 @@
         },
         {
           "disabled": false,
-          "document": "keyword\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "keyword",
           "example": "无",
           "member": "string",
           "name": "Keyword",
@@ -1829,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -1840,7 +1840,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展",
           "example": "无",
           "member": "string",
           "name": "Extension",
@@ -1851,7 +1851,7 @@
         },
         {
           "disabled": false,
-          "document": "文档html内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档html内容",
           "example": "无",
           "member": "string",
           "name": "Html",
@@ -1862,7 +1862,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展示锚点 0：不展示 1：展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否展示锚点 0：不展示 1：展示",
           "example": "无",
           "member": "uint64",
           "name": "ShowToc",
@@ -1873,7 +1873,7 @@
         },
         {
           "disabled": false,
-          "document": "是否在菜单中展示 0：不展示 1：展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否在菜单中展示 0：不展示 1：展示",
           "example": "无",
           "member": "uint64",
           "name": "InMenu",
@@ -1884,7 +1884,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重定向链接",
           "example": "无",
           "member": "string",
           "name": "RedirectUrl",
@@ -1895,7 +1895,7 @@
         },
         {
           "disabled": false,
-          "document": "是否删除  0：未删除 1：已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否删除  0：未删除 1：已删除",
           "example": "无",
           "member": "uint64",
           "name": "Disable",
@@ -1906,7 +1906,7 @@
         },
         {
           "disabled": false,
-          "document": "最近发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近发布时间",
           "example": "无",
           "member": "string",
           "name": "RecentReleaseTime",
@@ -1917,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "源文档类型 twrite:腾讯写写 git：markdown  空字符串：markdown\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源文档类型 twrite:腾讯写写 git：markdown  空字符串：markdown",
           "example": "无",
           "member": "string",
           "name": "Source",
@@ -1928,7 +1928,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯写写sdk版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯写写sdk版本",
           "example": "无",
           "member": "string",
           "name": "SlateSdkVersion",
@@ -1939,7 +1939,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯写写源码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯写写源码",
           "example": "无",
           "member": "string",
           "name": "Slate",
@@ -1950,7 +1950,7 @@
         },
         {
           "disabled": false,
-          "document": "文档id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档id",
           "example": "无",
           "member": "uint64",
           "name": "ID",

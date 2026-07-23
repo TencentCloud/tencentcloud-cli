@@ -425,7 +425,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>配额维度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配额维度</p>",
           "example": "无",
           "member": "UserQuota",
           "name": "Data",
@@ -736,7 +736,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配额维度",
           "example": "资源维度",
           "member": "string",
           "name": "DimensionName",
@@ -747,7 +747,7 @@
         },
         {
           "disabled": false,
-          "document": "一级维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一级维度值",
           "example": "vpc",
           "member": "string",
           "name": "PrimaryValue",
@@ -992,7 +992,7 @@
         },
         {
           "disabled": false,
-          "document": "配额维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配额维度值",
           "example": "[{}]",
           "member": "QuotaDimension",
           "name": "QuotaDimensions",

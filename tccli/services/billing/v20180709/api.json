@@ -1207,7 +1207,7 @@
         },
         {
           "disabled": true,
-          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名",
           "example": "无",
           "member": "string",
           "name": "SplitItemId",
@@ -1217,7 +1217,7 @@
         },
         {
           "disabled": true,
-          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项",
           "example": "无",
           "member": "string",
           "name": "SplitItemName",
@@ -2371,7 +2371,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总费用：现金费用合计+分成金费用合计+赠送金费用合计+优惠券费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总费用：现金费用合计+分成金费用合计+赠送金费用合计+优惠券费用合计",
           "example": "25941.65000000",
           "member": "string",
           "name": "RealTotalCost",
@@ -2381,7 +2381,7 @@
         },
         {
           "disabled": false,
-          "document": "现金： 现金费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "现金： 现金费用合计",
           "example": "25801.94000000",
           "member": "string",
           "name": "CashPayAmount",
@@ -2391,7 +2391,7 @@
         },
         {
           "disabled": false,
-          "document": "赠送金：赠送金费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "赠送金：赠送金费用合计",
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -2401,7 +2401,7 @@
         },
         {
           "disabled": false,
-          "document": "优惠券：优惠券费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优惠券：优惠券费用合计",
           "example": "139.71000000",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -2411,7 +2411,7 @@
         },
         {
           "disabled": false,
-          "document": "分成金：分成金费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分成金：分成金费用合计",
           "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
@@ -3473,7 +3473,7 @@
         },
         {
           "disabled": true,
-          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名",
           "example": "无",
           "member": "string",
           "name": "SplitItemId",
@@ -3483,7 +3483,7 @@
         },
         {
           "disabled": true,
-          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项",
           "example": "无",
           "member": "string",
           "name": "SplitItemName",
@@ -4169,7 +4169,7 @@
         },
         {
           "disabled": true,
-          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名",
           "example": "无",
           "member": "string",
           "name": "SplitItemId",
@@ -4179,7 +4179,7 @@
         },
         {
           "disabled": true,
-          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项",
           "example": "无",
           "member": "string",
           "name": "SplitItemName",
@@ -4710,7 +4710,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>费用类型，查询费用类型（请使用费用类型code入参)入参枚举如下：<br>cashPayAmount:现金<br>incentivePayAmount:赠送金<br>voucherPayAmount:优惠券<br>tax:税金<br>costBeforeTax:税前价</p>",
+          "document": "<p>费用类型，查询费用类型（请使用费用类型code入参）入参枚举如下</p><p>枚举值：</p><ul><li>cashPayAmount： 现金</li><li>incentivePayAmount： 赠送金</li><li>voucherPayAmount： 优惠券</li><li>transferPayAmount： 分成金</li></ul>",
           "example": "cashPayAmount",
           "member": "string",
           "name": "FeeType",
@@ -5030,7 +5030,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务自定义属性key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务自定义属性key",
           "example": "attribute1",
           "member": "string",
           "name": "Key",
@@ -5041,7 +5041,7 @@
         },
         {
           "disabled": false,
-          "document": "业务自定义属性value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务自定义属性value",
           "example": "1",
           "member": "string",
           "name": "Value",
@@ -5963,7 +5963,7 @@
         },
         {
           "disabled": true,
-          "document": "节省计划抵扣金额（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节省计划抵扣金额（已废弃）",
           "example": "0.00000000",
           "member": "string",
           "name": "SPDeduction",
@@ -7361,7 +7361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "key值",
           "example": "regionId",
           "member": "string",
           "name": "PropertyKey",
@@ -7372,7 +7372,7 @@
         },
         {
           "disabled": false,
-          "document": "value值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "value值",
           "example": "1",
           "member": "string",
           "name": "PropertyValue",
@@ -7389,7 +7389,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定对象Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定对象Id",
           "example": "\"resourceId\"",
           "member": "string",
           "name": "BindObjectId",
@@ -7399,7 +7399,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定属性",
           "example": "[]",
           "member": "BindProperty",
           "name": "Properties",
@@ -7409,7 +7409,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "\"2024-08-01 00:00:00\"",
           "member": "string",
           "name": "StartTime",
@@ -7419,7 +7419,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "\"2024-08-07 00:00:00\"",
           "member": "string",
           "name": "EndTime",
@@ -7435,7 +7435,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>产品</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产品</p>",
           "example": "[\"p_cvm\"]",
           "member": "string",
           "name": "Business",
@@ -7446,7 +7446,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>",
           "example": "[\"postPay\"]",
           "member": "string",
           "name": "PayMode",
@@ -7457,7 +7457,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>子产品</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子产品</p>",
           "example": "[\"sp_cvm\"]",
           "member": "string",
           "name": "ProductCodes",
@@ -7468,7 +7468,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>组件编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>组件编码</p>",
           "example": "[\"v_cpu\"]",
           "member": "string",
           "name": "ComponentCodes",
@@ -7479,7 +7479,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>",
           "example": "[\"10001\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -7490,7 +7490,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>",
           "example": "[\"47\"]",
           "member": "string",
           "name": "RegionIds",
@@ -7501,7 +7501,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>项目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目</p>",
           "example": "[\"0\"]",
           "member": "string",
           "name": "ProjectIds",
@@ -7512,7 +7512,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>交易类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>交易类型</p>",
           "example": "[\"postpay_deduct_d\"]",
           "member": "string",
           "name": "ActionTypes",
@@ -7523,7 +7523,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>消耗类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消耗类型</p>",
           "example": "[\"prepay_purchase\"]",
           "member": "string",
           "name": "ConsumptionTypes",
@@ -7534,7 +7534,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "TagsForm",
           "name": "Tags",
@@ -7545,7 +7545,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>末级分账单元</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>末级分账单元</p>",
           "example": "[\"1197623846\"]",
           "member": "string",
           "name": "PayerUins",
@@ -7556,7 +7556,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>主用户Uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主用户Uin</p>",
           "example": "[\"1197623846\"]",
           "member": "string",
           "name": "OwnerUins",
@@ -7567,7 +7567,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>末级分账单元唯一键</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>末级分账单元唯一键</p>",
           "example": "[\"1197623846\"]",
           "member": "string",
           "name": "TreeNodeUniqKeys",
@@ -7749,7 +7749,7 @@
         },
         {
           "disabled": false,
-          "document": "CUS 自定义预算，ZERO_COST 零支出预算模板，BY_MONTH 按月费用预算模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CUS 自定义预算，ZERO_COST 零支出预算模板，BY_MONTH 按月费用预算模板",
           "example": "CUS",
           "member": "string",
           "name": "TemplateType",
@@ -7815,7 +7815,7 @@
         },
         {
           "disabled": false,
-          "document": "NO_FORECAST(没有设置预测),\n FORECAST_NO_DATA(设置了预测,但是没有数据),\nFORECAST_HAS_DATA(设置了预测,且有预测数据)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NO_FORECAST(没有设置预测),\n FORECAST_NO_DATA(设置了预测,但是没有数据),\nFORECAST_HAS_DATA(设置了预测,且有预测数据)",
           "example": "NO_FORECAST",
           "member": "string",
           "name": "HasForecast",
@@ -7826,7 +7826,7 @@
         },
         {
           "disabled": false,
-          "document": "预测费用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预测费用",
           "example": "1000",
           "member": "string",
           "name": "ForecastCost",
@@ -7837,7 +7837,7 @@
         },
         {
           "disabled": false,
-          "document": "预测进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预测进度",
           "example": "10",
           "member": "string",
           "name": "ForecastProgress",
@@ -7892,7 +7892,7 @@
         },
         {
           "disabled": false,
-          "document": "预算维度范围条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算维度范围条件",
           "example": "无",
           "member": "BudgetConditionsForm",
           "name": "DimensionsRange",
@@ -7903,7 +7903,7 @@
         },
         {
           "disabled": false,
-          "document": "预算进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算进度",
           "example": "10",
           "member": "string",
           "name": "BudgetProgress",
@@ -7914,7 +7914,7 @@
         },
         {
           "disabled": false,
-          "document": "预算类型设置为计划预算时返回预算额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算类型设置为计划预算时返回预算额度",
           "example": "无",
           "member": "BudgetPlan",
           "name": "BudgetQuotaJson",
@@ -8076,7 +8076,7 @@
         },
         {
           "disabled": false,
-          "document": "变更前内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更前内容",
           "example": "FORECAST",
           "member": "string",
           "name": "Before",
@@ -8087,7 +8087,7 @@
         },
         {
           "disabled": false,
-          "document": "变更后内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "变更后内容",
           "example": "ACTUAL",
           "member": "string",
           "name": "After",
@@ -8154,7 +8154,7 @@
         },
         {
           "disabled": false,
-          "document": "预算备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算备注",
           "example": "无",
           "member": "string",
           "name": "BudgetNote",
@@ -8234,7 +8234,7 @@
         },
         {
           "disabled": false,
-          "document": "预算值额度，PlanType=FIX 时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算值额度，PlanType=FIX 时生效",
           "example": "\"16\"",
           "member": "string",
           "name": "BudgetQuota",
@@ -8254,7 +8254,7 @@
         },
         {
           "disabled": false,
-          "document": "阈值提醒信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "阈值提醒信息",
           "example": "无",
           "member": "WarnJson",
           "name": "WarnJson",
@@ -8264,7 +8264,7 @@
         },
         {
           "disabled": false,
-          "document": "波动提醒信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "波动提醒信息",
           "example": "无",
           "member": "WaveThresholdJson",
           "name": "WaveThresholdJson",
@@ -8274,7 +8274,7 @@
         },
         {
           "disabled": false,
-          "document": "0:默认uin发送, 1:自定义uid发送\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0:默认uin发送, 1:自定义uid发送",
           "example": "无",
           "member": "int64",
           "name": "DefaultMode",
@@ -8334,7 +8334,7 @@
         },
         {
           "disabled": false,
-          "document": "纬度范围，已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "纬度范围，已废弃",
           "example": "无",
           "member": "string",
           "name": "DimensionsRange",
@@ -8344,7 +8344,7 @@
         },
         {
           "disabled": false,
-          "document": "维度范围条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维度范围条件",
           "example": "无",
           "member": "BudgetConditionsForm",
           "name": "DimensionsRangeJson",
@@ -8354,7 +8354,7 @@
         },
         {
           "disabled": false,
-          "document": "预算计划复杂数据类型, PlanType= CYCLE 时 生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算计划复杂数据类型, PlanType= CYCLE 时 生效",
           "example": "[             {               \"DateDesc\": \"2023-03\",               \"Quota\": \"1\"             },             {               \"DateDesc\": \"2023-04\",               \"Quota\": \"2\"             },             {               \"DateDesc\": \"2023-05\",               \"Quota\": \"3\"             }]",
           "member": "BudgetPlan",
           "name": "BudgetQuotaJson",
@@ -8364,7 +8364,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义发送对象信息，已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义发送对象信息，已废弃",
           "example": "\"\"",
           "member": "string",
           "name": "SendDetail",
@@ -8374,7 +8374,7 @@
         },
         {
           "disabled": false,
-          "document": "波动提醒次数，已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "波动提醒次数，已废弃",
           "example": "0",
           "member": "int64",
           "name": "WaveRemindTimes",
@@ -8517,7 +8517,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "前端页面日期显示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "前端页面日期显示",
           "example": "无",
           "member": "string",
           "name": "DateDesc",
@@ -8528,7 +8528,7 @@
         },
         {
           "disabled": false,
-          "document": "预算额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算额度",
           "example": "无",
           "member": "string",
           "name": "Quota",
@@ -8545,7 +8545,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自动优化 COUNT SQL 如果遇到 jSqlParser 无法解析情况，设置该参数为 false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动优化 COUNT SQL 如果遇到 jSqlParser 无法解析情况，设置该参数为 false",
           "example": "true",
           "member": "bool",
           "name": "OptimizeCountSql",
@@ -8555,7 +8555,7 @@
         },
         {
           "disabled": false,
-          "document": "分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页",
           "example": "1",
           "member": "uint64",
           "name": "Pages",
@@ -8565,7 +8565,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段信息，允许前端传入的时候，注意 SQL 注入问题，可以使用 SqlInjectionUtils.check(...) 检查文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "排序字段信息，允许前端传入的时候，注意 SQL 注入问题，可以使用 SqlInjectionUtils.check(...) 检查文本",
           "example": "无",
           "member": "OrderDto",
           "name": "Orders",
@@ -8575,7 +8575,7 @@
         },
         {
           "disabled": false,
-          "document": "xml 自定义 count 查询的 statementId 也可以不用指定在分页 statementId 后面加上 _mpCount 例如分页 selectPageById 指定 count 的查询 statementId 设置为 selectPageById_mpCount 即可默认找到该 SQL 执行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "xml 自定义 count 查询的 statementId 也可以不用指定在分页 statementId 后面加上 _mpCount 例如分页 selectPageById 指定 count 的查询 statementId 设置为 selectPageById_mpCount 即可默认找到该 SQL 执行",
           "example": "无",
           "member": "string",
           "name": "CountId",
@@ -8585,7 +8585,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页大小",
           "example": "10",
           "member": "uint64",
           "name": "Size",
@@ -8595,7 +8595,7 @@
         },
         {
           "disabled": false,
-          "document": "总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总量",
           "example": "无",
           "member": "uint64",
           "name": "Total",
@@ -8605,7 +8605,7 @@
         },
         {
           "disabled": false,
-          "document": "单页分页条数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单页分页条数限制",
           "example": "无",
           "member": "string",
           "name": "MaxLimit",
@@ -8615,7 +8615,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询数据列表",
           "example": "无",
           "member": "BudgetRemindRecords",
           "name": "Records",
@@ -8625,7 +8625,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前页",
           "example": "无",
           "member": "uint64",
           "name": "Current",
@@ -8635,7 +8635,7 @@
         },
         {
           "disabled": false,
-          "document": "是否进行 count 查询，如果只想查询到列表不要查询总记录数，设置该参数为 false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否进行 count 查询，如果只想查询到列表不要查询总记录数，设置该参数为 false",
           "example": "无",
           "member": "bool",
           "name": "SearchCount",
@@ -8681,7 +8681,7 @@
         },
         {
           "disabled": false,
-          "document": "提醒类型。\n枚举值:\nBUDGET 预算提醒,\nWAVE 波动提醒.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提醒类型。\n枚举值:\nBUDGET 预算提醒,\nWAVE 波动提醒.",
           "example": "BUDGET",
           "member": "string",
           "name": "AlarmType",
@@ -8691,7 +8691,7 @@
         },
         {
           "disabled": false,
-          "document": "消息内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息内容",
           "example": "无",
           "member": "string",
           "name": "MessageContent",
@@ -8701,7 +8701,7 @@
         },
         {
           "disabled": false,
-          "document": "发送时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送时间",
           "example": "无",
           "member": "int64",
           "name": "SendTime",
@@ -8711,7 +8711,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "无",
           "member": "int64",
           "name": "CreateTime",
@@ -8727,7 +8727,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知周期,逗号隔开。\n枚举值:\n周一:1,\n周二:2,\n周天:7\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知周期,逗号隔开。\n枚举值:\n周一:1,\n周二:2,\n周天:7",
           "example": "[1,2,3,4,5,6,7]",
           "member": "uint64",
           "name": "WeekDays",
@@ -8738,7 +8738,7 @@
         },
         {
           "disabled": false,
-          "document": "接收类型。\n枚举值:\nUIN 默认模式,\nUSER 用户,\nGROUP 用户组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收类型。\n枚举值:\nUIN 默认模式,\nUSER 用户,\nGROUP 用户组。",
           "example": " 无",
           "member": "string",
           "name": "ReceiverType",
@@ -8749,7 +8749,7 @@
         },
         {
           "disabled": false,
-          "document": "发送接收窗口HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送接收窗口HH:mm:ss",
           "example": "“23:59:59\"",
           "member": "string",
           "name": "EndTime",
@@ -8760,7 +8760,7 @@
         },
         {
           "disabled": false,
-          "document": "预算配置id（预算名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算配置id（预算名称）",
           "example": "14633",
           "member": "int64",
           "name": "BudgetId",
@@ -8771,7 +8771,7 @@
         },
         {
           "disabled": false,
-          "document": "接收渠道,逗号隔开;\n枚举值:\nTITLE 标题，\nSITE 站内信,\nEMAIL 邮件,\nSMS 短信,\nWECHAT 微信,\nVOICE 语音,\nQYWX 企业微信;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收渠道,逗号隔开;\n枚举值:\nTITLE 标题，\nSITE 站内信,\nEMAIL 邮件,\nSMS 短信,\nWECHAT 微信,\nVOICE 语音,\nQYWX 企业微信;",
           "example": "[\"SITE\"]",
           "member": "string",
           "name": "NoticeWays",
@@ -8782,7 +8782,7 @@
         },
         {
           "disabled": false,
-          "document": "发送开始窗口HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送开始窗口HH:mm:ss",
           "example": "\"10:00:00\"",
           "member": "string",
           "name": "StartTime",
@@ -8793,7 +8793,7 @@
         },
         {
           "disabled": false,
-          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "id",
           "example": "\"ADoNrCzyuP\"",
           "member": "string",
           "name": "Id",
@@ -8804,7 +8804,7 @@
         },
         {
           "disabled": false,
-          "document": "用户id,用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户id,用户组id",
           "example": "[1]",
           "member": "uint64",
           "name": "ReceiverIds",
@@ -8821,7 +8821,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知周期,逗号隔开。\n枚举值:\n周一:1,\n周二:2,\n周天:7\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知周期,逗号隔开。\n枚举值:\n周一:1,\n周二:2,\n周天:7",
           "example": "[1,2,3,4,5,6,7]",
           "member": "uint64",
           "name": "WeekDays",
@@ -8831,7 +8831,7 @@
         },
         {
           "disabled": false,
-          "document": "接收类型。\n枚举值:\nUIN 默认模式,\nUSER 用户,\nGROUP 用户组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收类型。\n枚举值:\nUIN 默认模式,\nUSER 用户,\nGROUP 用户组。",
           "example": "无",
           "member": "string",
           "name": "ReceiverType",
@@ -8841,7 +8841,7 @@
         },
         {
           "disabled": false,
-          "document": "发送接收窗口HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送接收窗口HH:mm:ss",
           "example": "“23:59:59\"",
           "member": "string",
           "name": "EndTime",
@@ -8851,7 +8851,7 @@
         },
         {
           "disabled": false,
-          "document": "预算配置id（预算名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预算配置id（预算名称）",
           "example": "无",
           "member": "int64",
           "name": "BudgetId",
@@ -8861,7 +8861,7 @@
         },
         {
           "disabled": false,
-          "document": "接收渠道,逗号隔开;\n枚举值:\nTITLE 标题，\nSITE 站内信,\nEMAIL 邮件,\nSMS 短信,\nWECHAT 微信,\nVOICE 语音,\nQYWX 企业微信;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收渠道,逗号隔开;\n枚举值:\nTITLE 标题，\nSITE 站内信,\nEMAIL 邮件,\nSMS 短信,\nWECHAT 微信,\nVOICE 语音,\nQYWX 企业微信;",
           "example": "SITE",
           "member": "string",
           "name": "NoticeWays",
@@ -8871,7 +8871,7 @@
         },
         {
           "disabled": false,
-          "document": "发送开始窗口HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送开始窗口HH:mm:ss",
           "example": "\"10:00:00\"",
           "member": "string",
           "name": "StartTime",
@@ -8881,7 +8881,7 @@
         },
         {
           "disabled": false,
-          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "id",
           "example": "\"ADoNrCzyuP\"",
           "member": "string",
           "name": "Id",
@@ -8891,7 +8891,7 @@
         },
         {
           "disabled": false,
-          "document": "用户id,用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户id,用户组id",
           "example": "[1]",
           "member": "uint64",
           "name": "ReceiverIds",
@@ -11464,7 +11464,7 @@
         },
         {
           "disabled": false,
-          "document": "实例列表，商品发货延迟可能返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例列表，商品发货延迟可能返回空",
           "example": "[\"********\"]",
           "member": "string",
           "name": "InstanceIdList",
@@ -11595,7 +11595,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录列表",
           "example": "无",
           "member": "BudgetHistoryRecords",
           "name": "Records",
@@ -11605,7 +11605,7 @@
         },
         {
           "disabled": false,
-          "document": "自动优化 COUNT SQL 如果遇到 jSqlParser 无法解析情况，设置该参数为 false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动优化 COUNT SQL 如果遇到 jSqlParser 无法解析情况，设置该参数为 false",
           "example": "true",
           "member": "bool",
           "name": "OptimizeCountSql",
@@ -11615,7 +11615,7 @@
         },
         {
           "disabled": false,
-          "document": "分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页",
           "example": "1",
           "member": "uint64",
           "name": "Pages",
@@ -11625,7 +11625,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段信息，允许前端传入的时候，注意 SQL 注入问题，可以使用 SqlInjectionUtils.check(...) 检查文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "排序字段信息，允许前端传入的时候，注意 SQL 注入问题，可以使用 SqlInjectionUtils.check(...) 检查文本",
           "example": "无",
           "member": "OrderDto",
           "name": "Orders",
@@ -11635,7 +11635,7 @@
         },
         {
           "disabled": false,
-          "document": "xml 自定义 count 查询的 statementId 也可以不用指定在分页 statementId 后面加上 _mpCount 例如分页 selectPageById 指定 count 的查询 statementId 设置为 selectPageById_mpCount 即可默认找到该 SQL 执行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "xml 自定义 count 查询的 statementId 也可以不用指定在分页 statementId 后面加上 _mpCount 例如分页 selectPageById 指定 count 的查询 statementId 设置为 selectPageById_mpCount 即可默认找到该 SQL 执行",
           "example": "无",
           "member": "string",
           "name": "CountId",
@@ -11645,7 +11645,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页大小",
           "example": "10",
           "member": "uint64",
           "name": "Size",
@@ -11655,7 +11655,7 @@
         },
         {
           "disabled": false,
-          "document": "总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总量",
           "example": "无",
           "member": "uint64",
           "name": "Total",
@@ -11665,7 +11665,7 @@
         },
         {
           "disabled": false,
-          "document": "单页分页条数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单页分页条数限制",
           "example": "无",
           "member": "string",
           "name": "MaxLimit",
@@ -11675,7 +11675,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前页",
           "example": "无",
           "member": "uint64",
           "name": "Current",
@@ -11685,7 +11685,7 @@
         },
         {
           "disabled": false,
-          "document": "是否进行 count 查询，如果只想查询到列表不要查询总记录数，设置该参数为 false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否进行 count 查询，如果只想查询到列表不要查询总记录数，设置该参数为 false",
           "example": "无",
           "member": "bool",
           "name": "SearchCount",
@@ -11731,7 +11731,7 @@
         },
         {
           "disabled": false,
-          "document": "xml 自定义 count 查询的 statementId 也可以不用指定在分页 statementId 后面加上 _mpCount 例如分页 selectPageById 指定 count 的查询 statementId 设置为 selectPageById_mpCount 即可默认找到该 SQL 执行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "xml 自定义 count 查询的 statementId 也可以不用指定在分页 statementId 后面加上 _mpCount 例如分页 selectPageById 指定 count 的查询 statementId 设置为 selectPageById_mpCount 即可默认找到该 SQL 执行",
           "example": "无",
           "member": "string",
           "name": "CountId",
@@ -11761,7 +11761,7 @@
         },
         {
           "disabled": false,
-          "document": "单页分页条数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单页分页条数限制",
           "example": "无",
           "member": "string",
           "name": "MaxLimit",
@@ -11771,7 +11771,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询数据列表",
           "example": "无",
           "member": "BudgetInfoRecordList",
           "name": "Records",
@@ -11840,7 +11840,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询数据列表",
           "example": "无",
           "member": "BudgetExtend",
           "name": "Records",
@@ -11901,7 +11901,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询数据列表",
           "example": "无",
           "member": "BudgetOperationLogEntity",
           "name": "Records",
@@ -12179,7 +12179,7 @@
         },
         {
           "disabled": false,
-          "document": "订单对应的资源id, 查询参数Limit超过200，将返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单对应的资源id, 查询参数Limit超过200，将返回null",
           "example": "[\"ins-12454fgd\"]",
           "member": "string",
           "name": "ResourceId",
@@ -15075,7 +15075,7 @@
         },
         {
           "disabled": false,
-          "document": "总记录数，24小时缓存一次，可能比实际总记录数少\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总记录数，24小时缓存一次，可能比实际总记录数少",
           "example": "11841",
           "member": "uint64",
           "name": "Total",
@@ -15333,7 +15333,7 @@
         },
         {
           "disabled": false,
-          "document": "账单文件下载链接，有效时长为一天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账单文件下载链接，有效时长为一天",
           "example": "https://resourcebillv2-maz-1258344699.cos.ap-guangzhou.myqcloud.com/L3-%E6%98%8E%E7%BB%86%E8%B4%A6%E5%8D%95-909619400-202409-%E6%8C%89%E8%AE%A1%E8%B4%B9%E5%91%A8%E6%9C%9F-67442308143401732518664402346837.zip?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDinyr6Z152-6jTkBZ5Nuo2FxKS2OzFzwgEL4Kbrmxn-kPo0ginL833RBPFY1766Us%26q-sign-time%3D1732518627%3B1732605087%26q-key-time%3D1732518627%3B1732605087%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D6cd481b56b4daf7e666a06b0bd9160f8ee2af320&&x-cos-security-token=665a677mNcVYg2GabYQbyPNGjPP6SCoac16c3a79413531b910a4a24be079734f_TWD79Qt5FZ5F61oxce95b4QDN08UxQ4CZuhqd1qS7BaSNPUqAp2rPmTSGsZJNpCkOgCpMtQFTRvy1q4qDUqQVeJInJun5E76Rsx81pOYJ23qScULZMl859qycheq0vMRJBEDO21inxo4c-VbePXqNLELrnv-JvefzHc049BCX4JhcNSaB1i7Xg41LN9r6cVO3_Cqtzp84XqsaeS1iQiZNI6D7Bn_IoSu5jXtmQrrtKtWnK7nJ4GS6qkxwcGR75MDmCJYT_k1RfVsLtBn9dJA8SqwabRph-nYhFEs4IjREk",
           "member": "string",
           "name": "DownloadUrl",
@@ -15671,7 +15671,7 @@
         },
         {
           "disabled": false,
-          "document": "资源汇总列表总数，入参NeedRecordNum为0时不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源汇总列表总数，入参NeedRecordNum为0时不返回",
           "example": "103",
           "member": "int64",
           "name": "Total",
@@ -15817,7 +15817,7 @@
         },
         {
           "disabled": false,
-          "document": "资源汇总列表总数，入参NeedRecordNum为0时不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源汇总列表总数，入参NeedRecordNum为0时不返回",
           "example": "103",
           "member": "int64",
           "name": "Total",
@@ -15882,7 +15882,7 @@
         },
         {
           "disabled": false,
-          "document": "各付费模式花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "各付费模式花费分布详情",
           "example": "[{\"businessCode\":\"p_ntp\",\"realTotalCost\":\"6.38000000\",\"totalCost\":\"7.50000000\",\"cashPayAmount\":\"6.38000000\",\"incentivePayAmount\":\"0.00000000\",\"voucherPayAmount\":\"0.00000000\",\"transferPayAmount\":\"0.00000000\",\"billMonth\":\"2023-09\",\"realTotalCostRatio\":\"67.43\",\"businessCodeName\":\"共享流量包\"}]",
           "member": "PayModeSummaryOverviewItem",
           "name": "SummaryOverview",
@@ -15956,7 +15956,7 @@
         },
         {
           "disabled": false,
-          "document": "总花费详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总花费详情",
           "example": "{\"realTotalCost\":\"6.72000000\",\"totalCost\":\"6.72000000\",\"voucherPayAmount\":\"0.00000000\",\"incentivePayAmount\":\"0.00000000\",\"cashPayAmount\":\"6.72000000\",\"transferPayAmount\":\"0.00000000\"}",
           "member": "BusinessSummaryTotal",
           "name": "SummaryTotal",
@@ -15966,7 +15966,7 @@
         },
         {
           "disabled": false,
-          "document": "各产品花费分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "各产品花费分布",
           "example": "[{\"businessCode\":\"p_eip\",\"realTotalCost\":\"7.73432921\",\"totalCost\":\"7.73432921\",\"cashPayAmount\":\"7.73432921\",\"incentivePayAmount\":\"0.00000000\",\"voucherPayAmount\":\"0.00000000\",\"transferPayAmount\":\"0.00000000\",\"billMonth\":\"2024-01\",\"realTotalCostRatio\":\"100.00\",\"businessCodeName\":\"公网 IP\"}]",
           "member": "BusinessSummaryOverviewItem",
           "name": "SummaryOverview",
@@ -16031,7 +16031,7 @@
         },
         {
           "disabled": false,
-          "document": "各项目花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "各项目花费分布详情",
           "example": "[{\"ProjectId\":\"0\",\"RealTotalCost\":\"2924616.19000000\",\"TotalCost\":\"6622736.21547221\",\"CashPayAmount\":\"2924616.19000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"BillMonth\":\"2024-01\",\"RealTotalCostRatio\":\"100.00\",\"ProjectName\":\"默认项目\"}]",
           "member": "ProjectSummaryOverviewItem",
           "name": "SummaryOverview",
@@ -16096,7 +16096,7 @@
         },
         {
           "disabled": false,
-          "document": "各地域花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "各地域花费分布详情",
           "example": "无",
           "member": "RegionSummaryOverviewItem",
           "name": "SummaryOverview",
@@ -16179,7 +16179,7 @@
         },
         {
           "disabled": false,
-          "document": "各标签值花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "各标签值花费分布详情",
           "example": "[{ \t\t\t\"TagValue\": \"prod_data_oceanus_oceanus_oceanus06_oceanus\", \t\t\t\"RealTotalCost\": \"20160.00000000\", \t\t\t\"TotalCost\": \"50400.00000000\", \t\t\t\"CashPayAmount\": \"20160.00000000\", \t\t\t\"IncentivePayAmount\": \"0.00000000\", \t\t\t\"VoucherPayAmount\": \"0.00000000\", \t\t\t\"TransferPayAmount\": \"0.00000000\", \t\t\t\"RealTotalCostRatio\": \"1.47\" \t\t}]",
           "member": "TagSummaryOverviewItem",
           "name": "SummaryOverview",
@@ -16189,7 +16189,7 @@
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": " { \t\t\t\"RealTotalCost\": \"1367086.42000000\", \t\t\t\"TotalCost\": \"3656103.49136314\" \t\t}",
           "member": "SummaryTotal",
           "name": "SummaryTotal",
@@ -16402,7 +16402,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息提示",
           "example": "fail",
           "member": "string",
           "name": "Message",
@@ -16495,7 +16495,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息提示",
           "example": "null",
           "member": "string",
           "name": "Message",
@@ -16645,7 +16645,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息提示",
           "example": "fail",
           "member": "string",
           "name": "Message",
@@ -16747,7 +16747,7 @@
         },
         {
           "disabled": false,
-          "document": "信息提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "信息提示",
           "example": "query success",
           "member": "string",
           "name": "Message",
@@ -17022,7 +17022,7 @@
         },
         {
           "disabled": false,
-          "document": "记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录数",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -17645,7 +17645,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤条件",
           "example": "无",
           "member": "ConsumptionResourceSummaryConditionValue",
           "name": "ConditionValue",
@@ -17655,7 +17655,7 @@
         },
         {
           "disabled": false,
-          "document": "记录数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录数量",
           "example": "29",
           "member": "uint64",
           "name": "RecordNum",
@@ -18532,7 +18532,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源归集汇总</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源归集汇总</p>",
           "example": "无",
           "member": "GatherResourceSummary",
           "name": "GatherResourceSummary",
@@ -18542,7 +18542,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据更新时间</p>",
           "example": "2022-11-14 00:00:00",
           "member": "string",
           "name": "LastUpdateTime",
@@ -18863,7 +18863,7 @@
         },
         {
           "disabled": false,
-          "document": "抵扣详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "抵扣详情列表",
           "example": "无",
           "member": "DescribeMeasureConsoleDeductionDto",
           "name": "Bills",
@@ -18957,7 +18957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "正常返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正常返回值",
           "example": "无",
           "member": "DescribeMeasureConsoleDeductionDetailsData",
           "name": "Data",
@@ -19291,7 +19291,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "正常返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正常返回值",
           "example": "无",
           "member": "DescribeMeasureDeductionDetailsDataFlow",
           "name": "Data",
@@ -19543,7 +19543,7 @@
         },
         {
           "disabled": false,
-          "document": "容量维度key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容量维度key",
           "example": "无",
           "member": "string",
           "name": "CapacityKey",
@@ -19563,7 +19563,7 @@
         },
         {
           "disabled": false,
-          "document": "业务自定义属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务自定义属性",
           "example": "[{\"key\":\"alias\",\"value\":\"cfs-qc-prod\"},{\"key\":\"realm\",\"value\":\"MAINLAND_CHINA\"}]",
           "member": "Attribute",
           "name": "DosageAttributes",
@@ -19619,7 +19619,7 @@
         },
         {
           "disabled": false,
-          "document": "抵扣详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "抵扣详情列表",
           "example": "无",
           "member": "DescribeMeasureDeductionDetails",
           "name": "Bills",
@@ -19775,7 +19775,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "正常返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正常返回值",
           "example": "无",
           "member": "DescribeMeasureDeductionDetailsData",
           "name": "Data",
@@ -20008,7 +20008,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "额外查询属性；一般指自定义查询属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外查询属性；一般指自定义查询属性",
           "example": "regionId",
           "member": "string",
           "name": "Name",
@@ -20019,7 +20019,7 @@
         },
         {
           "disabled": false,
-          "document": "属性值；支持多值，多值用英文逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性值；支持多值，多值用英文逗号分割",
           "example": "1",
           "member": "string",
           "name": "Value",
@@ -20354,7 +20354,7 @@
         },
         {
           "disabled": false,
-          "document": "分页token；查询下一页时必须带该参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页token；查询下一页时必须带该参数",
           "example": "112443",
           "member": "string",
           "name": "PageToken",
@@ -20400,7 +20400,7 @@
         },
         {
           "disabled": false,
-          "document": "接入计量产品一层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入计量产品一层",
           "example": "p_ccc",
           "member": "string",
           "name": "ProductCode",
@@ -20410,7 +20410,7 @@
         },
         {
           "disabled": false,
-          "document": "用量计费产品二层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量计费产品二层",
           "example": "sp_ccc_valueadded_fee",
           "member": "string",
           "name": "SubProductCode",
@@ -20420,7 +20420,7 @@
         },
         {
           "disabled": false,
-          "document": "用量计费产品三层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量计费产品三层",
           "example": "v_ccc_valueadded_tts",
           "member": "string",
           "name": "BillingItemCode",
@@ -20430,7 +20430,7 @@
         },
         {
           "disabled": false,
-          "document": "用量计费产品四层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量计费产品四层",
           "example": "sv_ccc_valueadded_tts_realtime_custom",
           "member": "string",
           "name": "SubBillingItemCode",
@@ -20440,7 +20440,7 @@
         },
         {
           "disabled": false,
-          "document": "计量策略映射code。部分产品用量四层下不唯一，需要该参数进行区分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计量策略映射code。部分产品用量四层下不唯一，需要该参数进行区分。",
           "example": "无",
           "member": "string",
           "name": "MeasureCode",
@@ -20450,7 +20450,7 @@
         },
         {
           "disabled": false,
-          "document": "计量订购关系id；部分存量产品只sdkAppId或者业务侧资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计量订购关系id；部分存量产品只sdkAppId或者业务侧资源id",
           "example": "144008921",
           "member": "string",
           "name": "SerialId",
@@ -20490,7 +20490,7 @@
         },
         {
           "disabled": false,
-          "document": "查询属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询属性",
           "example": "无",
           "member": "DescribeMeasureDetailAttribute",
           "name": "Attribute",
@@ -20708,7 +20708,7 @@
         },
         {
           "disabled": false,
-          "document": "用户购买的套餐包列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户购买的套餐包列表",
           "example": "无",
           "member": "MeasureAccountDosages",
           "name": "Accounts",
@@ -20851,7 +20851,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "属性key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性key",
           "example": "region",
           "member": "string",
           "name": "Key",
@@ -20861,7 +20861,7 @@
         },
         {
           "disabled": false,
-          "document": "属性value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性value",
           "example": "1",
           "member": "string",
           "name": "Value",
@@ -20871,7 +20871,7 @@
         },
         {
           "disabled": false,
-          "document": "属性类型\n1:限额属性\n2.包销属性\n3:自定义属性\n4:用尽新购属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性类型\n1:限额属性\n2.包销属性\n3:自定义属性\n4:用尽新购属性",
           "example": "2",
           "member": "uint64",
           "name": "Type",
@@ -21228,7 +21228,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>正常返回值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>正常返回值</p>",
           "example": "无",
           "member": "DescribeResourceDetailsData",
           "name": "Data",
@@ -21489,7 +21489,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>正常返回值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>正常返回值</p>",
           "example": "无",
           "member": "DescribeMeasurePackageListData",
           "name": "Data",
@@ -21829,7 +21829,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否是最高优先级的特权uin，这批用户会默认开通部分特权（兜底保障）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是最高优先级的特权uin，这批用户会默认开通部分特权（兜底保障）",
           "example": "true",
           "member": "bool",
           "name": "IsTopPriorityPrivilegeUin",
@@ -21940,7 +21940,7 @@
         },
         {
           "disabled": false,
-          "document": "查询返回结果下一页的令牌。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询返回结果下一页的令牌。",
           "example": "VDAwMSu3Y69lZhLwW1bRxLiwKafWBv_6TqKBnp-YH12b0uWcwTBf3DIK7Myza6EVdhDKoFGpKANnZkfmmLy5K8uH1lJYqyvuT_mSXc8VoOdX-8kcKJrB3JbyW9dM0edrKm3Q",
           "member": "string",
           "name": "NextToken",
@@ -21972,7 +21972,7 @@
         },
         {
           "disabled": false,
-          "document": "用户购买的套餐包列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户购买的套餐包列表",
           "example": "无",
           "member": "MeasureResourceDetails",
           "name": "Accounts",
@@ -22726,7 +22726,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>代金券信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>代金券信息</p>",
           "example": "无",
           "member": "VoucherInfo",
           "name": "VoucherInfos",
@@ -23678,7 +23678,7 @@
         },
         {
           "disabled": true,
-          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名",
           "example": "无",
           "member": "string",
           "name": "SplitItemId",
@@ -23688,7 +23688,7 @@
         },
         {
           "disabled": true,
-          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项",
           "example": "无",
           "member": "string",
           "name": "SplitItemName",
@@ -23905,7 +23905,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否是最高优先级的特权uin，这批用户会默认开通部分特权（兜底保障）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是最高优先级的特权uin，这批用户会默认开通部分特权（兜底保障）",
           "example": "true",
           "member": "bool",
           "name": "IsTopPriorityPrivilegeUin",
@@ -23967,7 +23967,7 @@
         },
         {
           "disabled": false,
-          "document": "透传业务侧的message信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "透传业务侧的message信息",
           "example": "无",
           "member": "string",
           "name": "Message",
@@ -23977,7 +23977,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因(资源中心的失败原因)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因(资源中心的失败原因)",
           "example": "无",
           "member": "string",
           "name": "FailureReason",
@@ -23987,7 +23987,7 @@
         },
         {
           "disabled": false,
-          "document": "透传业务返回的flowId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "透传业务返回的flowId",
           "example": "1111",
           "member": "int64",
           "name": "FlowId",
@@ -24113,7 +24113,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "容量类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容量类型",
           "example": "sv_scf_gbs_pkg_40m",
           "member": "string",
           "name": "CapacityKey",
@@ -24123,7 +24123,7 @@
         },
         {
           "disabled": false,
-          "document": "容量名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容量名称",
           "example": "资源使用量",
           "member": "string",
           "name": "CapacityName",
@@ -24133,7 +24133,7 @@
         },
         {
           "disabled": false,
-          "document": "容量单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容量单位",
           "example": "mbms",
           "member": "string",
           "name": "CapacityUnit",
@@ -24143,7 +24143,7 @@
         },
         {
           "disabled": false,
-          "document": "容量原始单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容量原始单位",
           "example": "mbms",
           "member": "string",
           "name": "OriginUnit",
@@ -24153,7 +24153,7 @@
         },
         {
           "disabled": false,
-          "document": "容量规格 1:固定容量 2:自定义容量 3:无限容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容量规格 1:固定容量 2:自定义容量 3:无限容量",
           "example": "1",
           "member": "uint64",
           "name": "CapacitySpec",
@@ -24163,7 +24163,7 @@
         },
         {
           "disabled": false,
-          "document": "总容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总容量",
           "example": "40960000000000",
           "member": "string",
           "name": "CapacitySize",
@@ -24173,7 +24173,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余容量",
           "example": "40960000000000",
           "member": "string",
           "name": "CapacityRemain",
@@ -24183,7 +24183,7 @@
         },
         {
           "disabled": false,
-          "document": "当前周期容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前周期容量",
           "example": "\"40960000000000\"",
           "member": "string",
           "name": "CycleCapacitySize",
@@ -24193,7 +24193,7 @@
         },
         {
           "disabled": false,
-          "document": "当前周期余量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前周期余量",
           "example": "\"40960000000000\"",
           "member": "string",
           "name": "CycleCapacityRemain",
@@ -24229,7 +24229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>主键ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "AccountId",
@@ -24259,7 +24259,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订单号</p>",
           "example": "\"test\"",
           "member": "string",
           "name": "DealName",
@@ -24269,7 +24269,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>费用类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>费用类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "FeeType",
@@ -24289,7 +24289,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>产品名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产品名称</p>",
           "example": "\"测试商品\"",
           "member": "string",
           "name": "ProductName",
@@ -24309,7 +24309,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>二层产品名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>二层产品名称</p>",
           "example": "\"测试商品\"",
           "member": "string",
           "name": "SubProductName",
@@ -24339,7 +24339,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>订阅时长套餐包</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订阅时长套餐包</p>",
           "example": "\"测试商品\"",
           "member": "string",
           "name": "PackageName",
@@ -24349,7 +24349,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包周期ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包周期ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ResourceCycleId",
@@ -24359,7 +24359,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包来源类型 0：默认 1：业务存量包 2：灰度前的增量包</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包来源类型 0：默认 1：业务存量包 2：灰度前的增量包</p>",
           "example": "0",
           "member": "uint64",
           "name": "PkgSourceType",
@@ -24389,7 +24389,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>容量类型：1-总量递减型 2-周期递减型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容量类型：1-总量递减型 2-周期递减型</p>",
           "example": "1",
           "member": "uint64",
           "name": "CapacityType",
@@ -24409,7 +24409,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>告警阈值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警阈值</p>",
           "example": "50",
           "member": "uint64",
           "name": "Threshold",
@@ -24459,7 +24459,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包ID, 用于在资源包系统检索资源包详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包ID, 用于在资源包系统检索资源包详细信息</p>",
           "example": "\"TRADE_t_s_code\"",
           "member": "string",
           "name": "PackageCode",
@@ -24469,7 +24469,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期余量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前周期余量</p>",
           "example": "1000",
           "member": "uint64",
           "name": "CycleCapacityRemain",
@@ -24479,7 +24479,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期总量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前周期总量</p>",
           "example": "1000",
           "member": "uint64",
           "name": "CycleCapacitySize",
@@ -24499,7 +24499,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间戳</p>",
           "example": "1622044800000",
           "member": "uint64",
           "name": "CreateTime",
@@ -24509,7 +24509,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>原始单位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原始单位</p>",
           "example": "\"min\"",
           "member": "string",
           "name": "OriginUnit",
@@ -24519,7 +24519,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>总周期数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总周期数量</p>",
           "example": "12",
           "member": "uint64",
           "name": "TotalCycles",
@@ -24529,7 +24529,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>剩余周期数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剩余周期数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "RemainCycles",
@@ -24539,7 +24539,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单周期开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单周期开始时间</p>",
           "example": "\"2024-10-01 00:00:00\"",
           "member": "string",
           "name": "CycleStartTime",
@@ -24549,7 +24549,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单周期结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单周期结束时间</p>",
           "example": "\"2024-11-01 00:00:00\"",
           "member": "string",
           "name": "CycleEndTime",
@@ -24559,7 +24559,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "Region",
@@ -24569,7 +24569,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>",
           "example": "\"ap-guangzhou-2\"",
           "member": "string",
           "name": "Zone",
@@ -24579,7 +24579,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "RegionId",
@@ -24589,7 +24589,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区ID</p>",
           "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
@@ -24599,7 +24599,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>容量信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容量信息</p>",
           "example": "无",
           "member": "MeasureAccountDosageCapacity",
           "name": "Capacity",
@@ -24609,7 +24609,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用量精确值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用量精确值</p>",
           "example": "\"1000\"",
           "member": "string",
           "name": "CapacitySizePrecise",
@@ -24619,7 +24619,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>剩余容量精确值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剩余容量精确值</p>",
           "example": "\"1000\"",
           "member": "string",
           "name": "CapacityRemainPrecise",
@@ -24629,7 +24629,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期总量精确值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前周期总量精确值</p>",
           "example": "\"1000\"",
           "member": "string",
           "name": "CycleCapacitySizePrecise",
@@ -24639,7 +24639,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期余量精确值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前周期余量精确值</p>",
           "example": "\"1000\"",
           "member": "string",
           "name": "CycleCapacityRemainPrecise",
@@ -24659,7 +24659,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>失效时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>失效时间</p>",
           "example": "\"2023-12-29 11:35:23\"",
           "member": "string",
           "name": "ExpiredTime",
@@ -24669,7 +24669,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>动态抵扣参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>动态抵扣参数</p>",
           "example": "无",
           "member": "DeductionProperty",
           "name": "DeductionProperties",
@@ -24679,7 +24679,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>周期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>周期时间</p>",
           "example": "\"2023-12-29 11:35:23\"",
           "member": "string",
           "name": "CycleTime",
@@ -24689,7 +24689,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义属性</p>",
           "example": "无",
           "member": "DescribeMeasureResourceAccountAttribute",
           "name": "AccountAttributes",
@@ -24699,7 +24699,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定记录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定记录</p>",
           "example": "无",
           "member": "BindRecords",
           "name": "BindRecords",
@@ -24709,7 +24709,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包设置用尽续购标志位 0:未设置 1:用尽到期新购 2:用尽新购 3:到期新购</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包设置用尽续购标志位 0:未设置 1:用尽到期新购 2:用尽新购 3:到期新购</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoPurchaseFlag",
@@ -24719,7 +24719,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包新购状态AutoPurchaseFlag不为0时有效， 1:待新购 100:新购成功 50:新购失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包新购状态AutoPurchaseFlag不为0时有效， 1:待新购 100:新购成功 50:新购失败</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoPurchaseStatus",
@@ -24729,7 +24729,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>新购失败类型AutoPurchaseStatus为50时有效；1:未知异常 2:超时每日配额 3:发货失败 4:用户余额不足</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>新购失败类型AutoPurchaseStatus为50时有效；1:未知异常 2:超时每日配额 3:发货失败 4:用户余额不足</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoPurchaseFailType",
@@ -24875,7 +24875,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源id",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -24885,7 +24885,7 @@
         },
         {
           "disabled": false,
-          "document": "分组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组id",
           "example": "无",
           "member": "string",
           "name": "GroupId",
@@ -24925,7 +24925,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为用户级别配置，true为用户级别，false为产品级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为用户级别配置，true为用户级别，false为产品级别",
           "example": "true",
           "member": "bool",
           "name": "UserLevelConfig",
@@ -24941,7 +24941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>主键ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "AccountId",
@@ -24971,7 +24971,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订单号</p>",
           "example": "\"test\"",
           "member": "string",
           "name": "DealName",
@@ -24981,7 +24981,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>费用类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>费用类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "FeeType",
@@ -25001,7 +25001,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>产品名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产品名称</p>",
           "example": "\"测试商品一层名称\"",
           "member": "string",
           "name": "ProductName",
@@ -25021,7 +25021,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>二层产品名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>二层产品名称</p>",
           "example": "\"测试商品二层名称\"",
           "member": "string",
           "name": "SubProductName",
@@ -25061,7 +25061,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>订阅时长套餐包</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订阅时长套餐包</p>",
           "example": "\"测试商品包名称\"",
           "member": "string",
           "name": "PackageName",
@@ -25071,7 +25071,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包周期ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包周期ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ResourceCycleId",
@@ -25081,7 +25081,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包来源类型 0：默认 1：业务存量包 2：灰度前的增量包</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包来源类型 0：默认 1：业务存量包 2：灰度前的增量包</p>",
           "example": "0",
           "member": "uint64",
           "name": "PkgSourceType",
@@ -25111,7 +25111,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>容量类型：1-总量递减型 2-周期递减型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容量类型：1-总量递减型 2-周期递减型</p>",
           "example": "1",
           "member": "uint64",
           "name": "CapacityType",
@@ -25131,7 +25131,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>告警阈值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警阈值</p>",
           "example": "50",
           "member": "uint64",
           "name": "Threshold",
@@ -25191,7 +25191,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包ID, 用于在资源包系统检索资源包详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包ID, 用于在资源包系统检索资源包详细信息</p>",
           "example": "\"TRADE_t_s_code\"",
           "member": "string",
           "name": "PackageCode",
@@ -25201,7 +25201,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期余量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前周期余量</p>",
           "example": "1000",
           "member": "uint64",
           "name": "CycleCapacityRemain",
@@ -25211,7 +25211,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期余量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前周期余量</p>",
           "example": "1000",
           "member": "string",
           "name": "CycleCapacityRemainPrecise",
@@ -25221,7 +25221,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期总量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前周期总量</p>",
           "example": "1000",
           "member": "uint64",
           "name": "CycleCapacitySize",
@@ -25231,7 +25231,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期总量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前周期总量</p>",
           "example": "1000",
           "member": "string",
           "name": "CycleCapacitySizePrecise",
@@ -25241,7 +25241,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间戳</p>",
           "example": "1622044800000",
           "member": "uint64",
           "name": "CreateTime",
@@ -25251,7 +25251,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>原始单位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原始单位</p>",
           "example": "\"min\"",
           "member": "string",
           "name": "OriginUnit",
@@ -25261,7 +25261,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>总周期数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总周期数量</p>",
           "example": "12",
           "member": "uint64",
           "name": "TotalCycles",
@@ -25271,7 +25271,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>剩余周期数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>剩余周期数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "RemainCycles",
@@ -25281,7 +25281,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单周期开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单周期开始时间</p>",
           "example": "\"2024-10-01 00:00:00\"",
           "member": "string",
           "name": "CycleStartTime",
@@ -25291,7 +25291,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单周期结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单周期结束时间</p>",
           "example": "\"2024-11-01 00:00:00\"",
           "member": "string",
           "name": "CycleEndTime",
@@ -25301,7 +25301,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "Region",
@@ -25311,7 +25311,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域Id</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -25321,7 +25321,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区</p>",
           "example": "\"ap-guangzhou-2\"",
           "member": "string",
           "name": "Zone",
@@ -25331,7 +25331,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>可用区Id</p>",
           "example": "100002",
           "member": "int64",
           "name": "ZoneId",
@@ -25341,7 +25341,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否支持自动续费，0：否，1：是</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持自动续费，0：否，1：是</p>",
           "example": "0",
           "member": "uint64",
           "name": "SupportAutoRenew",
@@ -25351,7 +25351,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自动续费标识定义，0.表示默认状态(手动续费)；1.表示自动续费；2.表示明确不自动续费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自动续费标识定义，0.表示默认状态(手动续费)；1.表示自动续费；2.表示明确不自动续费</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -25361,7 +25361,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源维度自动续费时长单位，年：y，月：m，不返回即默认产品配置的，用户曾经设置过自动续费周期就会返回，和自动续费标记无关<br>注意：此字段可能返回 null，表示取不到有效值。<br>示例值：m</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源维度自动续费时长单位，年：y，月：m，不返回即默认产品配置的，用户曾经设置过自动续费周期就会返回，和自动续费标记无关<br>注意：此字段可能返回 null，表示取不到有效值。<br>示例值：m</p>",
           "example": "m",
           "member": "string",
           "name": "AutoRenewTimeUnit",
@@ -25371,7 +25371,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源维度自动续费时间长度，不返回即默认产品配置的，用户曾经设置过自动续费周期就会返回，和自动续费标记无关<br>注意：此字段可能返回 null，表示取不到有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源维度自动续费时间长度，不返回即默认产品配置的，用户曾经设置过自动续费周期就会返回，和自动续费标记无关<br>注意：此字段可能返回 null，表示取不到有效值。</p>",
           "example": "2",
           "member": "uint64",
           "name": "AutoRenewTimeSpan",
@@ -25381,7 +25381,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>多维度包的容量信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>多维度包的容量信息</p>",
           "example": "无",
           "member": "MeasureAccountDosageCapacity",
           "name": "Capacity",
@@ -25391,7 +25391,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>包失效时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>包失效时间</p>",
           "example": "\"2023-12-29 11:35:23\"",
           "member": "string",
           "name": "ExpiredTime",
@@ -25401,7 +25401,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>动态抵扣参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>动态抵扣参数</p>",
           "example": "无",
           "member": "DeductionProperty",
           "name": "DeductionProperties",
@@ -25411,7 +25411,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包自定义属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包自定义属性</p>",
           "example": "无",
           "member": "DescribeMeasureResourceAccountAttribute",
           "name": "AccountAttributes",
@@ -25421,7 +25421,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定记录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定记录</p>",
           "example": "无",
           "member": "BindRecords",
           "name": "BindRecords",
@@ -25431,7 +25431,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包设置用尽续购标志位 0:未设置 1:用尽到期新购 2:用尽新购 3:到期新购</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包设置用尽续购标志位 0:未设置 1:用尽到期新购 2:用尽新购 3:到期新购</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoPurchaseFlag",
@@ -25441,7 +25441,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源包新购状态AutoPurchaseFlag不为0时有效， 1:待新购 100:新购成功 50:新购失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源包新购状态AutoPurchaseFlag不为0时有效， 1:待新购 100:新购成功 50:新购失败</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoPurchaseStatus",
@@ -25451,7 +25451,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>新购失败类型AutoPurchaseStatus为50时有效；1:未知异常 2:超时每日配额 3:发货失败 4:用户余额不足</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>新购失败类型AutoPurchaseStatus为50时有效；1:未知异常 2:超时每日配额 3:发货失败 4:用户余额不足</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoPurchaseFailType",
@@ -25994,7 +25994,7 @@
         },
         {
           "disabled": false,
-          "document": "update success\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "update success",
           "example": "信息提示",
           "member": "string",
           "name": "Message",
@@ -26464,7 +26464,7 @@
         },
         {
           "disabled": false,
-          "document": "交易订单号列表，仅当操作会产生交易行为时，才会存在订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交易订单号列表，仅当操作会产生交易行为时，才会存在订单号",
           "example": "[\"12434\"]",
           "member": "string",
           "name": "DealNames",
@@ -26474,7 +26474,7 @@
         },
         {
           "disabled": false,
-          "document": "资源操作结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源操作结果列表",
           "example": "无",
           "member": "InnerFactoryFailedResources",
           "name": "ResourceSet",
@@ -26496,7 +26496,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例维度操作失败code码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例维度操作失败code码",
           "example": "",
           "member": "int64",
           "name": "Code",
@@ -26506,7 +26506,7 @@
         },
         {
           "disabled": false,
-          "document": "资源操作失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源操作失败原因",
           "example": "",
           "member": "string",
           "name": "Message",
@@ -26516,7 +26516,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID",
           "example": "",
           "member": "string",
           "name": "InstanceId",
@@ -26532,7 +26532,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段",
           "example": "name",
           "member": "string",
           "name": "Column",
@@ -26543,7 +26543,7 @@
         },
         {
           "disabled": false,
-          "document": "是否升序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否升序",
           "example": "false",
           "member": "bool",
           "name": "Asc",
@@ -26796,7 +26796,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品一层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品一层",
           "example": "\"p_rav\"",
           "member": "string",
           "name": "ProductCode",
@@ -26806,7 +26806,7 @@
         },
         {
           "disabled": false,
-          "document": "产品一层名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品一层名称",
           "example": "\"实时音视频\"",
           "member": "string",
           "name": "ProductName",
@@ -27168,7 +27168,7 @@
         },
         {
           "disabled": false,
-          "document": "地域编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域编码",
           "example": "",
           "member": "string",
           "name": "RegionCode",
@@ -27179,7 +27179,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态：\nNORMAL 正常，\nISOLATED 已隔离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态：\nNORMAL 正常，\nISOLATED 已隔离",
           "example": "",
           "member": "string",
           "name": "Status",
@@ -27190,7 +27190,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标识：\nNOTIFY_AND_MANUAL_RENEW 手动续费，\nNOTIFY_AND_AUTO_RENEW 自动续费，\nDISABLE_NOTIFY_AND_MANUAL_RENEW 到期不续\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "续费标识：\nNOTIFY_AND_MANUAL_RENEW 手动续费，\nNOTIFY_AND_AUTO_RENEW 自动续费，\nDISABLE_NOTIFY_AND_MANUAL_RENEW 到期不续",
           "example": "",
           "member": "string",
           "name": "RenewFlag",
@@ -27201,7 +27201,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例到期时间",
           "example": "",
           "member": "string",
           "name": "ExpireTime",
@@ -27212,7 +27212,7 @@
         },
         {
           "disabled": false,
-          "document": "实例别名：用户在控制台为实例设置的名称，如果未设置，则默认为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例别名：用户在控制台为实例设置的名称，如果未设置，则默认为空",
           "example": "",
           "member": "string",
           "name": "InstanceName",
@@ -27223,7 +27223,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称：用户所采购的各类云产品，例如：云服务器 CVM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称：用户所采购的各类云产品，例如：云服务器 CVM",
           "example": "",
           "member": "string",
           "name": "ProductName",
@@ -27234,7 +27234,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称：实例归属的项目，用户在控制台给实例自主分配项目，未分配则是默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目名称：实例归属的项目，用户在控制台给实例自主分配项目，未分配则是默认项目",
           "example": "",
           "member": "string",
           "name": "ProjectName",
@@ -27245,7 +27245,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费周期长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费周期长度",
           "example": "",
           "member": "uint64",
           "name": "RenewPeriod",
@@ -27256,7 +27256,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费周期单位：y 年，m 月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费周期单位：y 年，m 月",
           "example": "",
           "member": "string",
           "name": "RenewPeriodUnit",
@@ -27406,7 +27406,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源维度操作失败code码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源维度操作失败code码",
           "example": "60002",
           "member": "int64",
           "name": "OperateResult",
@@ -27416,7 +27416,7 @@
         },
         {
           "disabled": false,
-          "document": "资源操作失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源操作失败原因",
           "example": "无",
           "member": "string",
           "name": "Message",
@@ -27426,7 +27426,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID",
           "example": "ins-abcdef",
           "member": "string",
           "name": "ResourceId",
@@ -27886,7 +27886,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本次请求唯一标识， 与请求包中一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次请求唯一标识， 与请求包中一致",
           "example": "\"xxafa\"",
           "member": "string",
           "name": "ReferenceId",
@@ -27896,7 +27896,7 @@
         },
         {
           "disabled": false,
-          "document": "操作失败时的资源列表，其他情况此字段为空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作失败时的资源列表，其他情况此字段为空数组",
           "example": "无",
           "member": "ResourceOperateRsp",
           "name": "ResourceSet",
@@ -28078,7 +28078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本次请求唯一标识， 与请求包中一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次请求唯一标识， 与请求包中一致",
           "example": "无",
           "member": "string",
           "name": "ReferenceId",
@@ -28088,7 +28088,7 @@
         },
         {
           "disabled": false,
-          "document": "操作失败时的资源列表，其他情况此字段为空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作失败时的资源列表，其他情况此字段为空数组",
           "example": "无",
           "member": "ResourceOperateRsp",
           "name": "ResourceSet",
@@ -28170,7 +28170,7 @@
         },
         {
           "disabled": false,
-          "document": "周期/切片容量类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "周期/切片容量类型",
           "example": "\"storage\"",
           "member": "string",
           "name": "SlicePeriodCapacityKey",
@@ -28180,7 +28180,7 @@
         },
         {
           "disabled": false,
-          "document": "周期/切片容量名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "周期/切片容量名称",
           "example": "\"存储\"",
           "member": "string",
           "name": "SlicePeriodCapacityName",
@@ -28190,7 +28190,7 @@
         },
         {
           "disabled": false,
-          "document": "周期/切片容量单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "周期/切片容量单位",
           "example": "\"byte\"",
           "member": "string",
           "name": "SlicePeriodCapacityUnit",
@@ -28470,7 +28470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "key",
           "example": "无",
           "member": "string",
           "name": "TagKey",
@@ -28481,7 +28481,7 @@
         },
         {
           "disabled": false,
-          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "value",
           "example": "无",
           "member": "string",
           "name": "TagValue",
@@ -28999,7 +28999,7 @@
         },
         {
           "disabled": false,
-          "document": "最短使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最短使用时间",
           "example": "无",
           "member": "string",
           "name": "MinPayTime",
@@ -29009,7 +29009,7 @@
         },
         {
           "disabled": false,
-          "document": "最长使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最长使用时间",
           "example": "无",
           "member": "string",
           "name": "MaxPayTime",
@@ -29019,7 +29019,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "截止时间",
           "example": "无",
           "member": "string",
           "name": "UseDeadLine",
@@ -29029,7 +29029,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可用",
           "example": "无",
           "member": "bool",
           "name": "Available",
@@ -29039,7 +29039,7 @@
         },
         {
           "disabled": false,
-          "document": "满多少可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "满多少可用",
           "example": "无",
           "member": "int64",
           "name": "BaseAmount",
@@ -29049,7 +29049,7 @@
         },
         {
           "disabled": false,
-          "document": "无不可用原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无不可用原因",
           "example": "无",
           "member": "int64",
           "name": "UnavailableReason",
@@ -29059,7 +29059,7 @@
         },
         {
           "disabled": false,
-          "document": "商品属性详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品属性详情",
           "example": "无",
           "member": "string",
           "name": "GoodsTypeInfo",
@@ -29069,7 +29069,7 @@
         },
         {
           "disabled": false,
-          "document": "商品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品名称",
           "example": "无",
           "member": "string",
           "name": "GoodsName",
@@ -29079,7 +29079,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可重复使用 1可重复使用 0不可重复使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可重复使用 1可重复使用 0不可重复使用",
           "example": "无",
           "member": "int64",
           "name": "Reusable",
@@ -29089,7 +29089,7 @@
         },
         {
           "disabled": false,
-          "document": "不可用产品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不可用产品名",
           "example": "无",
           "member": "string",
           "name": "ExcludedProduct",
@@ -29099,7 +29099,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券主类型 has_price 有价现金券 no_price 无价代金券\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代金券主类型 has_price 有价现金券 no_price 无价代金券",
           "example": "无",
           "member": "string",
           "name": "VoucherMainType",
@@ -29109,7 +29109,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券副类型 discount 折扣券 deduct 抵扣券\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代金券副类型 discount 折扣券 deduct 抵扣券",
           "example": "无",
           "member": "string",
           "name": "VoucherSubType",
@@ -29119,7 +29119,7 @@
         },
         {
           "disabled": false,
-          "document": "折扣券折扣力度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣券折扣力度",
           "example": "无",
           "member": "string",
           "name": "DiscountRate",
@@ -29301,7 +29301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警类型。\n枚举值：\nACTUAL 实际金额,\nFORECAST 预测金额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警类型。\n枚举值：\nACTUAL 实际金额,\nFORECAST 预测金额。",
           "example": "ACTUAL",
           "member": "string",
           "name": "WarnType",
@@ -29311,7 +29311,7 @@
         },
         {
           "disabled": false,
-          "document": "阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "阈值",
           "example": "无",
           "member": "string",
           "name": "ThresholdValue",
@@ -29321,7 +29321,7 @@
         },
         {
           "disabled": false,
-          "document": "计算方式。\n枚举值:\nPERCENTAGE 预算金额的百分比,\nABS 固定值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计算方式。\n枚举值:\nPERCENTAGE 预算金额的百分比,\nABS 固定值。",
           "example": "无",
           "member": "string",
           "name": "CalType",
@@ -29337,7 +29337,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ACTUAL 实际金额，FORECAST 预测金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ACTUAL 实际金额，FORECAST 预测金额",
           "example": "ACTUAL",
           "member": "string",
           "name": "WarnType",
@@ -29348,7 +29348,7 @@
         },
         {
           "disabled": false,
-          "document": "波动阈值（大于等于0）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "波动阈值（大于等于0）",
           "example": "100",
           "member": "string",
           "name": "Threshold",
@@ -29359,7 +29359,7 @@
         },
         {
           "disabled": false,
-          "document": "告警类型：chain 环比，yoy 同比，fix 固定值\n（支持类型：日环比 chain day，日同比周维度 chain weekday，日同比月维度 yoy  day，日固定值 fix day，月环比 chain month，月固定值 fix month）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警类型：chain 环比，yoy 同比，fix 固定值\n（支持类型：日环比 chain day，日同比周维度 chain weekday，日同比月维度 yoy  day，日固定值 fix day，月环比 chain month，月固定值 fix month）",
           "example": "chain",
           "member": "string",
           "name": "MetaType",
@@ -29370,7 +29370,7 @@
         },
         {
           "disabled": false,
-          "document": "告警维度：day 日，month 月，weekday 周\n（支持类型：日环比 chain day，日同比周维度 chain weekday，日同比月维度 yoy  day，日固定值 fix day，月环比 chain month，月固定值 fix month）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警维度：day 日，month 月，weekday 周\n（支持类型：日环比 chain day，日同比周维度 chain weekday，日同比月维度 yoy  day，日固定值 fix day，月环比 chain month，月固定值 fix month）",
           "example": "day",
           "member": "string",
           "name": "PeriodType",
@@ -29387,7 +29387,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "构造唯一建,用在代码中区分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "构造唯一建,用在代码中区分",
           "example": "无",
           "member": "string",
           "name": "Index",
@@ -29397,7 +29397,7 @@
         },
         {
           "disabled": false,
-          "document": "告警码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警码",
           "example": "101",
           "member": "string",
           "name": "Code",
@@ -29407,7 +29407,7 @@
         },
         {
           "disabled": false,
-          "document": "阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "阈值",
           "example": "无",
           "member": "string",
           "name": "Threshold",
@@ -29417,7 +29417,7 @@
         },
         {
           "disabled": false,
-          "document": "告警类型。\n枚举值:\nchain 环比,\nyoy 同比\nfix 固定值\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警类型。\n枚举值:\nchain 环比,\nyoy 同比\nfix 固定值\n",
           "example": "chain",
           "member": "string",
           "name": "MetaType",
@@ -29427,7 +29427,7 @@
         },
         {
           "disabled": false,
-          "document": "告警维度 \n枚举值:\nday 天\nmonth 月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警维度 \n枚举值:\nday 天\nmonth 月",
           "example": "day",
           "member": "string",
           "name": "PeriodType",

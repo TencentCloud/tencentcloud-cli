@@ -3275,7 +3275,7 @@
         },
         {
           "disabled": false,
-          "document": "单价折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单价折扣",
           "example": "",
           "member": "float",
           "name": "Discount",
@@ -3285,7 +3285,7 @@
         },
         {
           "disabled": false,
-          "document": "用户刊例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户刊例价格",
           "example": "",
           "member": "uint64",
           "name": "UnitPrice",
@@ -3295,7 +3295,7 @@
         },
         {
           "disabled": false,
-          "document": "实际价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际价格",
           "example": "",
           "member": "uint64",
           "name": "RealPrice",
@@ -3305,7 +3305,7 @@
         },
         {
           "disabled": false,
-          "document": "官网刊例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "官网刊例价格",
           "example": "",
           "member": "uint64",
           "name": "NormalPrice",
@@ -3919,7 +3919,7 @@
         },
         {
           "disabled": false,
-          "document": "标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保",
           "example": "Maintain",
           "member": "string",
           "name": "MaintainStatus",
@@ -3929,7 +3929,7 @@
         },
         {
           "disabled": false,
-          "document": "维保信息描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维保信息描述",
           "example": "有厂商维保服务，可继续使用",
           "member": "string",
           "name": "MaintainMessage",
@@ -4967,7 +4967,7 @@
         },
         {
           "disabled": false,
-          "document": "黑石版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "黑石版本号",
           "example": "",
           "member": "string",
           "name": "OsMinorVersion",
@@ -4977,7 +4977,7 @@
         },
         {
           "disabled": false,
-          "document": "黑石版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "黑石版本",
           "example": "",
           "member": "string",
           "name": "OsMinorClass",
@@ -6083,7 +6083,7 @@
         },
         {
           "disabled": false,
-          "document": "故障类中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "故障类中文名",
           "example": "",
           "member": "string",
           "name": "TaskTypeName",
@@ -6093,7 +6093,7 @@
         },
         {
           "disabled": false,
-          "document": "故障类型，取值：unconfirmed (不明确故障)；redundancy (有冗余故障)；nonredundancy (无冗余故障)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "故障类型，取值：unconfirmed (不明确故障)；redundancy (有冗余故障)；nonredundancy (无冗余故障)",
           "example": "",
           "member": "string",
           "name": "TaskSubType",

@@ -183,7 +183,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书类型",
           "example": "",
           "member": "string",
           "name": "CertType",
@@ -421,7 +421,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "dashboard面板数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "dashboard面板数据",
           "example": "",
           "member": "DashboardResult",
           "name": "Data",
@@ -504,7 +504,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列表数据",
           "example": "",
           "member": "DomainSiteInfo",
           "name": "Result",
@@ -823,7 +823,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签",
           "example": "无",
           "member": "string",
           "name": "Tags",

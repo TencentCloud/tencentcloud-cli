@@ -218,7 +218,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态码",
           "example": "无",
           "member": "int64",
           "name": "StatusCode",
@@ -228,7 +228,7 @@
         },
         {
           "disabled": false,
-          "document": "文件可临时上传地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件可临时上传地址列表",
           "example": "无",
           "member": "string",
           "name": "Urls",
@@ -238,7 +238,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件名列表",
           "example": "无",
           "member": "string",
           "name": "Keys",

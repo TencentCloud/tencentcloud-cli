@@ -5221,7 +5221,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡的IPV6或者IPV4的VIP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡的IPV6或者IPV4的VIP。",
           "example": "",
           "member": "string",
           "name": "CurVips",

@@ -3135,7 +3135,7 @@
         },
         {
           "disabled": false,
-          "document": "DCN复制的配置信息；对于主实例，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN复制的配置信息；对于主实例，此字段为null",
           "example": "{\"DelayReplicationType\":\"DEFAULT\",\"DueTime\":\"\",\"ReplicationDelay\":0,\"RoReplicationMode\":\"START\"}\t",
           "member": "DCNReplicaConfig",
           "name": "ReplicaConfig",
@@ -3145,7 +3145,7 @@
         },
         {
           "disabled": false,
-          "document": "DCN复制的状态；对于主实例，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN复制的状态；对于主实例，此字段为null",
           "example": "{\"Delay\":0,\"Status\":\"RUNNING\"}",
           "member": "DCNReplicaStatus",
           "name": "ReplicaStatus",
@@ -3301,7 +3301,7 @@
         },
         {
           "disabled": false,
-          "document": "只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID",
           "example": "[\"tdsql-61vf76u9\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -4470,7 +4470,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>DCN的配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DCN的配置信息</p>",
           "example": "无",
           "member": "DCNReplicaConfig",
           "name": "ReplicaConfig",
@@ -4480,7 +4480,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>DCN的运行状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>DCN的运行状态</p>",
           "example": "无",
           "member": "DCNReplicaStatus",
           "name": "ReplicaStatus",
@@ -5940,7 +5940,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本次检测的有效分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次检测的有效分数",
           "example": "100",
           "member": "int64",
           "name": "Score",
@@ -5950,7 +5950,7 @@
         },
         {
           "disabled": false,
-          "document": "本次检测报告的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次检测报告的名称",
           "example": "无",
           "member": "string",
           "name": "ReportName",
@@ -5960,7 +5960,7 @@
         },
         {
           "disabled": false,
-          "document": "本次检测报告的详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次检测报告的详情",
           "example": "无",
           "member": "string",
           "name": "ReportDetail",
@@ -5970,7 +5970,7 @@
         },
         {
           "disabled": false,
-          "document": "本次检测报告的完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次检测报告的完成时间",
           "example": "无",
           "member": "datetime",
           "name": "FinishTime",
@@ -8360,7 +8360,7 @@
         },
         {
           "disabled": false,
-          "document": "约束类型为section时的范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "约束类型为section时的范围",
           "example": "{\"max\":\"65535\",\"min\":\"1\"}",
           "member": "ConstraintRange",
           "name": "Range",

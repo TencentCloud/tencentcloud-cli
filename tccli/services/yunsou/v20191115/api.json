@@ -120,7 +120,7 @@
         },
         {
           "disabled": false,
-          "document": "操作结果明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作结果明细",
           "example": "",
           "member": "DataManipulationResultItem",
           "name": "Result",
@@ -130,7 +130,7 @@
         },
         {
           "disabled": false,
-          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常信息",
           "example": "",
           "member": "string",
           "name": "ErrorResult",
@@ -466,7 +466,7 @@
         },
         {
           "disabled": false,
-          "document": "检索结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检索结果列表",
           "example": "",
           "member": "SearchResultItem",
           "name": "ResultList",
@@ -476,7 +476,7 @@
         },
         {
           "disabled": false,
-          "document": "检索的分词结果，array类型，可包含多个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检索的分词结果，array类型，可包含多个",
           "example": "",
           "member": "SearchResultSeg",
           "name": "SegList",

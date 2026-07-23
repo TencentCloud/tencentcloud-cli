@@ -254,7 +254,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人像渐变输出的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人像渐变输出的url",
           "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "MorphUrl",
@@ -264,7 +264,7 @@
         },
         {
           "disabled": false,
-          "document": "人像渐变输出的结果MD5，用于校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人像渐变输出的结果MD5，用于校验",
           "example": "31CDA040BA0F1CE7C59DB3F0B3334AA8",
           "member": "string",
           "name": "MorphMd5",
@@ -274,7 +274,7 @@
         },
         {
           "disabled": false,
-          "document": "人像渐变输出的结果封面图base64字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人像渐变输出的结果封面图base64字符串",
           "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg",
           "member": "string",
           "name": "CoverImage",
@@ -290,7 +290,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>人脸框左上角纵坐标。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸框左上角纵坐标。</p>",
           "example": "1",
           "member": "int64",
           "name": "Y",
@@ -301,7 +301,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>人脸框左上角横坐标。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸框左上角横坐标。</p>",
           "example": "1",
           "member": "int64",
           "name": "X",
@@ -312,7 +312,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>人脸框宽度。<br>单位：px</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸框宽度。<br>单位：px</p>",
           "example": "1",
           "member": "int64",
           "name": "Width",
@@ -323,7 +323,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>人脸框高度。<br>单位：px</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>人脸框高度。<br>单位：px</p>",
           "example": "1",
           "member": "int64",
           "name": "Height",
@@ -514,7 +514,7 @@
         },
         {
           "disabled": false,
-          "document": "人像渐变输出的结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人像渐变输出的结果信息",
           "example": "{\"MorphUrl\":\"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c\",\"MorphMd5\":\"31CDA040BA0F1CE7C59DB3F0B3334AA8\",\"CoverImage\":\"\"}",
           "member": "FaceMorphOutput",
           "name": "FaceMorphOutput",
@@ -524,7 +524,7 @@
         },
         {
           "disabled": false,
-          "document": "当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成",
           "example": "1",
           "member": "int64",
           "name": "JobStatusCode",

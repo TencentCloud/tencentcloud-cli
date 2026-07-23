@@ -74,7 +74,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录id",
           "example": "0",
           "member": "uint64",
           "name": "Id",
@@ -84,7 +84,7 @@
         },
         {
           "disabled": false,
-          "document": "资源记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源记录id",
           "example": "100",
           "member": "uint64",
           "name": "FlowId",
@@ -94,7 +94,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源id",
           "example": "bigdata_th_001_102",
           "member": "string",
           "name": "ResourceId",
@@ -104,7 +104,7 @@
         },
         {
           "disabled": false,
-          "document": "本订单资源序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本订单资源序列号",
           "example": "001",
           "member": "string",
           "name": "IndexId",
@@ -114,7 +114,7 @@
         },
         {
           "disabled": false,
-          "document": "客户的Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户的Uin",
           "example": "700000397067",
           "member": "string",
           "name": "Uin",
@@ -124,7 +124,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大订单号",
           "example": "20230203067001311204121",
           "member": "string",
           "name": "BigDealId",
@@ -134,7 +134,7 @@
         },
         {
           "disabled": false,
-          "document": "小订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小订单号",
           "example": "20230203067001311204131",
           "member": "string",
           "name": "SmallOrderId",
@@ -144,7 +144,7 @@
         },
         {
           "disabled": false,
-          "document": "资源创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源创建时间",
           "example": "2023-02-15 14:35:50",
           "member": "string",
           "name": "ResourceNewStartTime",
@@ -154,7 +154,7 @@
         },
         {
           "disabled": false,
-          "document": "资源到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源到期时间",
           "example": "2023-02-15 14:35:50",
           "member": "string",
           "name": "ResourceNewEndTime",
@@ -164,7 +164,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源状态",
           "example": "0",
           "member": "int64",
           "name": "ResourceStatus",
@@ -174,7 +174,7 @@
         },
         {
           "disabled": false,
-          "document": "本记录状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本记录状态",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -184,7 +184,7 @@
         },
         {
           "disabled": false,
-          "document": "项目类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目类型",
           "example": "0",
           "member": "uint64",
           "name": "ResourceType",

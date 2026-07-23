@@ -778,7 +778,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥描述",
           "example": "备注",
           "member": "string",
           "name": "Description",
@@ -834,7 +834,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "readOnly权限",
           "member": "string",
           "name": "Description",
@@ -861,7 +861,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "gz",
           "member": "string",
           "name": "Value",
@@ -1216,7 +1216,7 @@
         },
         {
           "disabled": false,
-          "document": "策略关联操作者主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略关联操作者主账号",
           "example": "100013065917",
           "member": "string",
           "name": "OperateOwnerUin",
@@ -1226,7 +1226,7 @@
         },
         {
           "disabled": false,
-          "document": "策略关联操作者ID，如果UinType为0表示子账号Uin，如果UinType为1表示角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略关联操作者ID，如果UinType为0表示子账号Uin，如果UinType为1表示角色ID",
           "example": "0",
           "member": "string",
           "name": "OperateUin",
@@ -1236,7 +1236,7 @@
         },
         {
           "disabled": false,
-          "document": "取值为0和1。OperateUinType为0表示OperateUin字段是子账号Uin。如果OperateUinType为1表示OperateUin字段是角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "取值为0和1。OperateUinType为0表示OperateUin字段是子账号Uin。如果OperateUinType为1表示OperateUin字段是角色ID",
           "example": "0",
           "member": "uint64",
           "name": "OperateUinType",
@@ -1580,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器时间戳",
           "example": "987654321",
           "member": "int64",
           "name": "CurrentTime",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "毫秒时间戳，根据轮转周期准确计算得到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "毫秒时间戳，根据轮转周期准确计算得到",
           "example": "1234567890",
           "member": "int64",
           "name": "NextRotationTime",
@@ -1600,7 +1600,7 @@
         },
         {
           "disabled": false,
-          "document": "毫秒，如果轮转失败则为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "毫秒，如果轮转失败则为 -1",
           "example": "150",
           "member": "int64",
           "name": "LastRotationTimeCost",
@@ -1610,7 +1610,7 @@
         },
         {
           "disabled": false,
-          "document": "成功：success\n失败：failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功：success\n失败：failed",
           "example": "success",
           "member": "string",
           "name": "RotationStatus",
@@ -1620,7 +1620,7 @@
         },
         {
           "disabled": false,
-          "document": "成功：success\n失败：失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功：success\n失败：失败信息",
           "example": "success",
           "member": "string",
           "name": "RotationMessage",
@@ -1669,7 +1669,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证凭据AuthToken信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证凭据AuthToken信息",
           "example": "{\"CurrentTime\":1733802016,\"LastRotationTimeCost\":343,\"NextRotationTime\":10,\"RotationMessage\":\"success\",\"RotationStatus\":\"success\",\"Token\":\"944a***mtHS\"}",
           "member": "AuthToken",
           "name": "Credentials",
@@ -1949,7 +1949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开启认证凭据唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启认证凭据唯一标识",
           "example": "DBTKN_cdb-ad3",
           "member": "string",
           "name": "CredentialName",
@@ -2022,7 +2022,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问密钥",
           "example": "{\"AccessKeyId\":\"AKID***\",\"SecretAccessKey\":\"iDVd***\",\"Status\":\"Active\",\"CreateTime\":\"2020-03-03 18:00:26\"}",
           "member": "AccessKeyDetail",
           "name": "AccessKey",
@@ -3837,7 +3837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子用户Uid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子用户Uid",
           "example": "22***22",
           "member": "uint64",
           "name": "Uid",
@@ -3847,7 +3847,7 @@
         },
         {
           "disabled": false,
-          "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户Uin",
           "example": "10000***221",
           "member": "uint64",
           "name": "Uin",
@@ -3857,7 +3857,7 @@
         },
         {
           "disabled": false,
-          "document": "用户Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户Name",
           "example": "运维",
           "member": "string",
           "name": "Name",
@@ -3867,7 +3867,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "运维",
           "member": "string",
           "name": "Remark",
@@ -3877,7 +3877,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以登录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可以登录",
           "example": "1",
           "member": "int64",
           "name": "CanLogin",
@@ -3887,7 +3887,7 @@
         },
         {
           "disabled": false,
-          "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话号码",
           "example": "13755545444",
           "member": "string",
           "name": "PhoneNum",
@@ -3897,7 +3897,7 @@
         },
         {
           "disabled": false,
-          "document": "区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区号",
           "example": "86",
           "member": "string",
           "name": "CountryCode",
@@ -3907,7 +3907,7 @@
         },
         {
           "disabled": false,
-          "document": "电话号码是否验证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话号码是否验证",
           "example": "1",
           "member": "int64",
           "name": "PhoneFlag",
@@ -3917,7 +3917,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱",
           "example": "eg@qq.com",
           "member": "string",
           "name": "Email",
@@ -3927,7 +3927,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱是否验证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮箱是否验证",
           "example": "1",
           "member": "int64",
           "name": "EmailFlag",
@@ -3937,7 +3937,7 @@
         },
         {
           "disabled": false,
-          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户类型",
           "example": "1",
           "member": "int64",
           "name": "UserType",
@@ -3947,7 +3947,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2022-03-03 01:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -3957,7 +3957,7 @@
         },
         {
           "disabled": false,
-          "document": "是否消息接收人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否消息接收人",
           "example": "1",
           "member": "int64",
           "name": "IsReceiverOwner",
@@ -3967,7 +3967,7 @@
         },
         {
           "disabled": false,
-          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型",
           "example": "SubAccount",
           "member": "string",
           "name": "SystemType",
@@ -3977,7 +3977,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要重置密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否需要重置密码",
           "example": "1",
           "member": "int64",
           "name": "NeedResetPassword",
@@ -3987,7 +3987,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许登录控制台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否允许登录控制台",
           "example": "1",
           "member": "int64",
           "name": "ConsoleLogin",
@@ -3997,7 +3997,7 @@
         },
         {
           "disabled": false,
-          "document": "微信公众号关注状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "微信公众号关注状态",
           "example": "1",
           "member": "int64",
           "name": "WxzsStatus",
@@ -4007,7 +4007,7 @@
         },
         {
           "disabled": false,
-          "document": "权限类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限类型",
           "example": "[1]",
           "member": "string",
           "name": "PermType",
@@ -4017,7 +4017,7 @@
         },
         {
           "disabled": false,
-          "document": "是否删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否删除",
           "example": "0",
           "member": "int64",
           "name": "IsDeleted",
@@ -4027,7 +4027,7 @@
         },
         {
           "disabled": false,
-          "document": "是否选中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否选中",
           "example": "1",
           "member": "int64",
           "name": "IsSelected",
@@ -4037,7 +4037,7 @@
         },
         {
           "disabled": false,
-          "document": "是否存在API密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否存在API密钥",
           "example": "0",
           "member": "int64",
           "name": "HasAPIKey",
@@ -4047,7 +4047,7 @@
         },
         {
           "disabled": false,
-          "document": "是否绑定了企业微信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否绑定了企业微信",
           "example": "1",
           "member": "int64",
           "name": "BindWework",
@@ -4057,7 +4057,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号关联标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子账号关联标签列表",
           "example": "[{\"Key\":\"test\",\"Value\":\"test\"}]",
           "member": "AccountTag",
           "name": "Tags",
@@ -4403,7 +4403,7 @@
         },
         {
           "disabled": false,
-          "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注。",
           "example": "这是一个测试策略",
           "member": "string",
           "name": "PresetAlias",
@@ -4506,7 +4506,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略ID",
           "example": "4221356",
           "member": "int64",
           "name": "PolicyId",
@@ -4516,7 +4516,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名",
           "example": "QcloudCOSAccessForCLSRole",
           "member": "string",
           "name": "PolicyName",
@@ -4526,7 +4526,7 @@
         },
         {
           "disabled": false,
-          "document": "策略语法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略语法",
           "example": "{\"strategyInfo\":{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"*\"}]}}",
           "member": "string",
           "name": "PolicyDocument",
@@ -4536,7 +4536,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型：1.自定义策略，2.预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略类型：1.自定义策略，2.预设策略",
           "example": "1",
           "member": "int64",
           "name": "PolicyType",
@@ -4546,7 +4546,7 @@
         },
         {
           "disabled": false,
-          "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建",
           "example": "5",
           "member": "int64",
           "name": "CreateMode",
@@ -4763,7 +4763,7 @@
         },
         {
           "disabled": false,
-          "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务类型",
           "example": "advisor",
           "member": "string",
           "name": "ServiceType",
@@ -4773,7 +4773,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务名称",
           "example": "云顾问",
           "member": "string",
           "name": "ServiceName",
@@ -4947,7 +4947,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略ID",
           "example": "213465",
           "member": "int64",
           "name": "PolicyId",
@@ -4957,7 +4957,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名",
           "example": "QcloudCOSAccessForCLSRole",
           "member": "string",
           "name": "PolicyName",
@@ -4967,7 +4967,7 @@
         },
         {
           "disabled": false,
-          "document": "策略语法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略语法",
           "example": "{\"strategyInfo\":{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"*\"}]}}",
           "member": "string",
           "name": "PolicyDocument",
@@ -4977,7 +4977,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型：1.自定义策略，2.预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略类型：1.自定义策略，2.预设策略",
           "example": "1",
           "member": "int64",
           "name": "PolicyType",
@@ -4987,7 +4987,7 @@
         },
         {
           "disabled": false,
-          "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建",
           "example": "5",
           "member": "int64",
           "name": "CreateMode",
@@ -5054,7 +5054,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子用户备注",
           "example": "Jack",
           "member": "string",
           "name": "Remark",
@@ -5367,7 +5367,7 @@
         },
         {
           "disabled": false,
-          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -5424,7 +5424,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问密钥列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问密钥列表",
           "example": "无",
           "member": "AccessKey",
           "name": "AccessKeys",
@@ -7393,7 +7393,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开启认证凭据唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启认证凭据唯一标识",
           "example": "DBTKN_cdb-ad3",
           "member": "string",
           "name": "CredentialName",
@@ -7415,7 +7415,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主帐号Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主帐号Uin",
           "example": "",
           "member": "uint64",
           "name": "Uin",
@@ -7425,7 +7425,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名",
           "example": "",
           "member": "string",
           "name": "UserName",
@@ -7435,7 +7435,7 @@
         },
         {
           "disabled": false,
-          "document": "校验状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验状态",
           "example": "",
           "member": "int64",
           "name": "CheckStatus",
@@ -7451,7 +7451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "最小长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小长度",
           "example": "无",
           "member": "int64",
           "name": "MinimumLength",
@@ -7462,7 +7462,7 @@
         },
         {
           "disabled": false,
-          "document": "必须包含的字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "必须包含的字符",
           "example": "无",
           "member": "string",
           "name": "MustContain",
@@ -7473,7 +7473,7 @@
         },
         {
           "disabled": false,
-          "document": "强制修改周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "强制修改周期",
           "example": "无",
           "member": "int64",
           "name": "ForcePasswordChange",
@@ -7484,7 +7484,7 @@
         },
         {
           "disabled": false,
-          "document": "重复使用次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重复使用次数",
           "example": "无",
           "member": "int64",
           "name": "ReusePasswordLimit",
@@ -7495,7 +7495,7 @@
         },
         {
           "disabled": false,
-          "document": "密码重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密码重试次数",
           "example": "无",
           "member": "int64",
           "name": "RetryPasswordLimit",
@@ -7506,7 +7506,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只允许管理员重置密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否只允许管理员重置密码",
           "example": "无",
           "member": "int64",
           "name": "OnlyAdminCanResetPassword",
@@ -7517,7 +7517,7 @@
         },
         {
           "disabled": false,
-          "document": "密码过期失效 1：是，2：否（是：密码过期后，子用户无法登录，需要管理员重置密码。否：密码过期后，子用户可登录，登录后强制根据旧密码修改密码）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密码过期失效 1：是，2：否（是：密码过期后，子用户无法登录，需要管理员重置密码。否：密码过期后，子用户可登录，登录后强制根据旧密码修改密码）",
           "example": "无",
           "member": "int64",
           "name": "PasswordExpirationInvalidation",
@@ -7534,7 +7534,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略版本号",
           "example": "2",
           "member": "uint64",
           "name": "VersionId",
@@ -7544,7 +7544,7 @@
         },
         {
           "disabled": false,
-          "document": "策略版本创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略版本创建时间",
           "example": "2019-08-09T10:31:47Z",
           "member": "string",
           "name": "CreateDate",
@@ -7554,7 +7554,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是正在生效的版本。0表示不是，1表示是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是正在生效的版本。0表示不是，1表示是",
           "example": "1",
           "member": "uint64",
           "name": "IsDefaultVersion",
@@ -7564,7 +7564,7 @@
         },
         {
           "disabled": false,
-          "document": "策略语法文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略语法文本",
           "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name\\/cos:*\"],\"resource\":[\"*\"]}]}",
           "member": "string",
           "name": "Document",
@@ -7817,7 +7817,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "Jack",
           "member": "string",
           "name": "Remark",
@@ -8010,7 +8010,7 @@
         },
         {
           "disabled": false,
-          "document": "角色类型，取user、system或service_linked\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色类型，取user、system或service_linked",
           "example": "user",
           "member": "string",
           "name": "RoleType",
@@ -8020,7 +8020,7 @@
         },
         {
           "disabled": false,
-          "document": "有效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效时间",
           "example": "7200",
           "member": "uint64",
           "name": "SessionDuration",
@@ -8030,7 +8030,7 @@
         },
         {
           "disabled": false,
-          "document": "服务相关角色删除TaskId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务相关角色删除TaskId",
           "example": "1",
           "member": "string",
           "name": "DeletionTaskId",
@@ -8040,7 +8040,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签",
           "example": "[{\"Key\":\"管理人员\",\"Value\":\"运营主管\"}]",
           "member": "RoleTags",
           "name": "Tags",
@@ -8050,7 +8050,7 @@
         },
         {
           "disabled": false,
-          "document": "角色RoleArn信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色RoleArn信息",
           "example": "qcs::cam::uin/10001:roleName/test_uin",
           "member": "string",
           "name": "RoleArn",
@@ -8152,7 +8152,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开启认证凭据唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启认证凭据唯一标识",
           "example": "DBTKN_cdb-ad3",
           "member": "string",
           "name": "CredentialName",
@@ -8234,7 +8234,7 @@
         },
         {
           "disabled": false,
-          "document": "最后访问日期(有1天延迟)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后访问日期(有1天延迟)",
           "example": "2021-03-20",
           "member": "date",
           "name": "LastUsedDate",
@@ -8244,7 +8244,7 @@
         },
         {
           "disabled": false,
-          "document": "最后密钥访问日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后密钥访问日期",
           "example": "1671435009849",
           "member": "uint64",
           "name": "LastSecretUsedDate",
@@ -8435,7 +8435,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>策略描述。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>策略描述。</p>",
           "example": "该策略允许您管理账户内所有用户及其权限、财务相关的信息、云服务资产。",
           "member": "string",
           "name": "Description",
@@ -8465,7 +8465,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>策略关联的产品</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>策略关联的产品</p>",
           "example": "cam",
           "member": "string",
           "name": "ServiceType",
@@ -8475,7 +8475,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsAttached",
@@ -8485,7 +8485,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否已下线</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否已下线</p>",
           "example": "0",
           "member": "uint64",
           "name": "Deactived",
@@ -8495,7 +8495,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>已下线产品列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>已下线产品列表</p>",
           "example": "[\"ccs\"]",
           "member": "string",
           "name": "DeactivedDetail",
@@ -8505,7 +8505,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否是服务相关角色策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否是服务相关角色策略</p>",
           "example": "0",
           "member": "uint64",
           "name": "IsServiceLinkedPolicy",
@@ -8515,7 +8515,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联策略实体数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联策略实体数</p>",
           "example": "1",
           "member": "int64",
           "name": "AttachEntityCount",
@@ -8525,7 +8525,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联权限边界实体数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联权限边界实体数</p>",
           "example": "1",
           "member": "int64",
           "name": "AttachEntityBoundaryCount",
@@ -8535,7 +8535,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最后编辑时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后编辑时间</p>",
           "example": "2016-06-02 19:40:09",
           "member": "datetime",
           "name": "UpdateTime",
@@ -8717,7 +8717,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2020-02-01 08:00:00",
           "member": "datetime",
           "name": "CreateTime",
@@ -8747,7 +8747,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录时间，回参为空，即为未登录过控制台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近登录时间，回参为空，即为未登录过控制台",
           "example": "2021-03-15 20:00:00",
           "member": "string",
           "name": "LastLoginTime",

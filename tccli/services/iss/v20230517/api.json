@@ -2462,7 +2462,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回数据",
           "example": "无",
           "member": "Timeline",
           "name": "Data",
@@ -4093,7 +4093,7 @@
         },
         {
           "disabled": false,
-          "document": "存在为数组格式，不存在字段内容为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存在为数组格式，不存在字段内容为空",
           "example": "无",
           "member": "RecordTimeLine",
           "name": "List",
@@ -4478,7 +4478,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云录像切片信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云录像切片信息列表",
           "example": "无",
           "member": "RecordSliceInfo",
           "name": "Data",
@@ -5403,7 +5403,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备列表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备列表详情",
           "example": "无",
           "member": "ListDeviceInfo",
           "name": "Data",
@@ -5465,7 +5465,7 @@
         },
         {
           "disabled": false,
-          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备通道信息列表",
           "example": "无",
           "member": "ChannelAttrInfo",
           "name": "List",
@@ -5574,7 +5574,7 @@
         },
         {
           "disabled": false,
-          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备通道信息列表",
           "example": "无",
           "member": "OrganizationChannelInfo",
           "name": "List",
@@ -5789,7 +5789,7 @@
         },
         {
           "disabled": false,
-          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备通道信息列表",
           "example": "无",
           "member": "RecordPlanChannelInfo",
           "name": "List",
@@ -6027,7 +6027,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户所有计划下通道id，存在通道是为数组格式，不存在时，字段数据为空 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户所有计划下通道id，存在通道是为数组格式，不存在时，字段数据为空 ",
           "example": "f7ca505f-be1b-4ce8-849b-************",
           "member": "string",
           "name": "List",
@@ -6100,7 +6100,7 @@
         },
         {
           "disabled": false,
-          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备通道信息列表",
           "example": "无",
           "member": "RecordPlanChannelInfo",
           "name": "List",
@@ -6203,7 +6203,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果，存在计划时，为Json数组格式，不存在计划时，字段数据为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果，存在计划时，为Json数组格式，不存在计划时，字段数据为空",
           "example": "无",
           "member": "RecordPlanBaseInfo",
           "name": "Data",
@@ -6230,7 +6230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果",
           "example": "无",
           "member": "RecordRetrieveTaskDetailsInfo",
           "name": "Data",
@@ -6257,7 +6257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果，存在模板时，为Json数组格式，不存在模板时，字段数据为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果，存在模板时，为Json数组格式，不存在模板时，字段数据为空",
           "example": "无",
           "member": "RecordTemplateInfo",
           "name": "Data",

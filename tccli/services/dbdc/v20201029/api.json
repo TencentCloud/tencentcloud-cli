@@ -694,7 +694,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群的标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的标签信息</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -922,7 +922,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>系统盘信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统盘信息</p>",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -932,7 +932,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据盘信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据盘信息</p>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -1032,7 +1032,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>节点标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点标签信息</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1455,7 +1455,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群标签信息</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1465,7 +1465,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群的API Server的网络信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群的API Server的网络信息</p>",
           "example": "无",
           "member": "ApiServerNetwork",
           "name": "ApiServerNetwork",
@@ -1475,7 +1475,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>容器网络，在此集群中的所有Pod将与此网络连通</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容器网络，在此集群中的所有Pod将与此网络连通</p>",
           "example": "无",
           "member": "ContainerNetwork",
           "name": "ContainerNetwork",

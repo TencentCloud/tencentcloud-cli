@@ -235,7 +235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "纠错接口返回的错误列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "纠错接口返回的错误列表",
           "example": "[{\"Offset\":5,\"Len\":1,\"WrongSegment\":\"茶\",\"Correct\":\"查\",\"Policy\":\"zhErrCharacters\",\"PolicyDesc\":\"错别字\"}]",
           "member": "WrongSegmentInfo",
           "name": "List",
@@ -680,7 +680,7 @@
         },
         {
           "disabled": false,
-          "document": "子菜单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子菜单",
           "example": "无",
           "member": "Menu",
           "name": "Children",
@@ -937,7 +937,7 @@
         },
         {
           "disabled": false,
-          "document": "产品负责人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品负责人列表",
           "example": "无",
           "member": "string",
           "name": "ProductOwner",
@@ -947,7 +947,7 @@
         },
         {
           "disabled": false,
-          "document": "产品开发者列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品开发者列表",
           "example": "无",
           "member": "string",
           "name": "DeveloperOwner",
@@ -997,7 +997,7 @@
         },
         {
           "disabled": false,
-          "document": "产品介绍页关联活动列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品介绍页关联活动列表",
           "example": "无",
           "member": "string",
           "name": "Acts",
@@ -1077,7 +1077,7 @@
         },
         {
           "disabled": false,
-          "document": "产品国际化信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品国际化信息",
           "example": "无",
           "member": "DictI18nItem",
           "name": "DictI18nInfo",
@@ -1213,7 +1213,7 @@
         },
         {
           "disabled": false,
-          "document": "文档重定向链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档重定向链接",
           "example": "无",
           "member": "string",
           "name": "RedirectUrl",
@@ -1399,7 +1399,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文档Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档Id",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -1410,7 +1410,7 @@
         },
         {
           "disabled": false,
-          "document": "父Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父Id",
           "example": "3",
           "member": "uint64",
           "name": "Pid",
@@ -1421,7 +1421,7 @@
         },
         {
           "disabled": false,
-          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标题",
           "example": "云服务器",
           "member": "string",
           "name": "Title",
@@ -1432,7 +1432,7 @@
         },
         {
           "disabled": false,
-          "document": "页面类型。取值：directory-目录、page-文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "页面类型。取值：directory-目录、page-文档",
           "example": "page",
           "member": "string",
           "name": "Type",
@@ -1443,7 +1443,7 @@
         },
         {
           "disabled": false,
-          "document": "文档菜单类型。取值：api-云API文档、default-普通文档、faq-常见问题、glossary-词汇表、practice-最佳实践、price-购买指南\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档菜单类型。取值：api-云API文档、default-普通文档、faq-常见问题、glossary-词汇表、practice-最佳实践、price-购买指南",
           "example": "default",
           "member": "string",
           "name": "DocType",
@@ -1454,7 +1454,7 @@
         },
         {
           "disabled": false,
-          "document": "来源。取值：slug-业务更新、git-git、sdd-云API、twrite-腾讯写写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源。取值：slug-业务更新、git-git、sdd-云API、twrite-腾讯写写",
           "example": "git",
           "member": "string",
           "name": "Source",
@@ -1465,7 +1465,7 @@
         },
         {
           "disabled": false,
-          "document": "预览链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预览链接",
           "example": "https://xxx",
           "member": "string",
           "name": "PreviewUrl",
@@ -1476,7 +1476,7 @@
         },
         {
           "disabled": false,
-          "document": "pdf链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "pdf链接",
           "example": "无",
           "member": "string",
           "name": "PdfUrl",
@@ -1487,7 +1487,7 @@
         },
         {
           "disabled": false,
-          "document": "子目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子目录",
           "example": "无",
           "member": "Menu",
           "name": "Children",
@@ -1524,7 +1524,7 @@
         },
         {
           "disabled": false,
-          "document": "策略支持的额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略支持的额外信息",
           "example": "php,go",
           "member": "string",
           "name": "Props",
@@ -1564,7 +1564,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "切分后片段在原文中的开始位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "切分后片段在原文中的开始位置",
           "example": "1",
           "member": "uint64",
           "name": "Start",
@@ -1574,7 +1574,7 @@
         },
         {
           "disabled": false,
-          "document": "分割文本长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分割文本长度",
           "example": "15",
           "member": "uint64",
           "name": "Len",
@@ -1584,7 +1584,7 @@
         },
         {
           "disabled": false,
-          "document": "分割的文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分割的文本内容",
           "example": "请输入待分割的长文本",
           "member": "string",
           "name": "Str",
@@ -1615,7 +1615,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分割后的文本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分割后的文本列表",
           "example": "{\"List\":[{\"Start\":1,\"Len\":12,\"Str\":\"我是一个分割后的文本\"}]}",
           "member": "SegmentItem",
           "name": "List",
@@ -1636,7 +1636,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "来源链接页面所属模块 / 接入方(10:解决方案;20:产品介绍页;30:客户案例;40:控制台;50:文档中心;60:私有云文档;70:购买页;80:活动运营;90:在线客服;100:开发者社区;110:课堂;120:其他;)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源链接页面所属模块 / 接入方(10:解决方案;20:产品介绍页;30:客户案例;40:控制台;50:文档中心;60:私有云文档;70:购买页;80:活动运营;90:在线客服;100:开发者社区;110:课堂;120:其他;)",
           "example": "10",
           "member": "int64",
           "name": "SourceModuleType",
@@ -1646,7 +1646,7 @@
         },
         {
           "disabled": false,
-          "document": "模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模块名称",
           "example": "解决方案",
           "member": "string",
           "name": "SourceModuleName",
@@ -1662,7 +1662,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "来源页面唯一KEY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源页面唯一KEY",
           "example": "CP6KVLV1964TQQ9HJ6A0",
           "member": "string",
           "name": "SourceKey",
@@ -1673,7 +1673,7 @@
         },
         {
           "disabled": false,
-          "document": "来源页面链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源页面链接",
           "example": "https://cloud.tencent.com/",
           "member": "string",
           "name": "SourceUrl",
@@ -1684,7 +1684,7 @@
         },
         {
           "disabled": false,
-          "document": "来源页面标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源页面标题",
           "example": "腾讯云 产业智变·云启未来 - 腾讯",
           "member": "string",
           "name": "SourceTitle",
@@ -1695,7 +1695,7 @@
         },
         {
           "disabled": false,
-          "document": "来源链接页面站点类型(10:国内站(默认);20:国际站;30:其他)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源链接页面站点类型(10:国内站(默认);20:国际站;30:其他)",
           "example": "10",
           "member": "int64",
           "name": "SourceSiteType",
@@ -1706,7 +1706,7 @@
         },
         {
           "disabled": false,
-          "document": "来源链接页面所属模块 / 接入方(10:解决方案;20:产品介绍页;30:客户案例;40:控制台;50:文档中心;60:私有云文档;70:购买页;80:活动运营;90:在线客服;100:开发者社区;110:课堂;120:其他;)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源链接页面所属模块 / 接入方(10:解决方案;20:产品介绍页;30:客户案例;40:控制台;50:文档中心;60:私有云文档;70:购买页;80:活动运营;90:在线客服;100:开发者社区;110:课堂;120:其他;)",
           "example": "10",
           "member": "int64",
           "name": "SourceModule",
@@ -1717,7 +1717,7 @@
         },
         {
           "disabled": false,
-          "document": "来源页面负责人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源页面负责人",
           "example": "无",
           "member": "string",
           "name": "SourceOwner",
@@ -1728,7 +1728,7 @@
         },
         {
           "disabled": false,
-          "document": "产品字典ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品字典ID",
           "example": "2000",
           "member": "int64",
           "name": "DictId",
@@ -1739,7 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "产品字典名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品字典名称",
           "example": "云服务器",
           "member": "string",
           "name": "DictName",
@@ -1799,7 +1799,7 @@
         },
         {
           "disabled": false,
-          "document": "错误片段长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误片段长度",
           "example": "3",
           "member": "uint64",
           "name": "Len",

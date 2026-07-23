@@ -608,7 +608,7 @@
         },
         {
           "disabled": false,
-          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值",
           "example": "0",
           "member": "string",
           "name": "Value",
@@ -1077,7 +1077,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码",
           "example": "0",
           "member": "string",
           "name": "Code",
@@ -1087,7 +1087,7 @@
         },
         {
           "disabled": false,
-          "document": "回包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回包信息",
           "example": "Success",
           "member": "string",
           "name": "Message",
@@ -1097,7 +1097,7 @@
         },
         {
           "disabled": false,
-          "document": "公证处业务回包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公证处业务回包",
           "example": "de1y1kdr1526451889661677568",
           "member": "string",
           "name": "NotarizationData",
@@ -1128,7 +1128,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务出参",
           "example": "无",
           "member": "TransportGeneralInterfaceOutput",
           "name": "Data",

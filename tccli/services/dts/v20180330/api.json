@@ -1113,7 +1113,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "无",
           "member": "SubsErr",
           "name": "Errors",
@@ -1672,7 +1672,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例为集群时且接入为非cdb时源实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源实例为集群时且接入为非cdb时源实例信息",
           "example": "[{\"AccessKey\":\"\",\"CcnId\":\"\",\"CvmInstanceId\":\"\",\"EngineVersion\":\"",
           "member": "SrcInfo",
           "name": "SrcInfoMulti",
@@ -2712,7 +2712,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",

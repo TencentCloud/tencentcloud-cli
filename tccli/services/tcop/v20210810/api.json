@@ -83,7 +83,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "直播间id",
           "example": "\"100187514\"",
           "member": "string",
           "name": "TermId",
@@ -93,7 +93,7 @@
         },
         {
           "disabled": false,
-          "document": "直播链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "直播链接",
           "example": "\"https://ke.qq.com/webcourse/%d/%d#taid=%d&lite=1",
           "member": "string",
           "name": "LiveUrl",

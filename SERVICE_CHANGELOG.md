@@ -1,10 +1,10 @@
-# Release 3.0.1460.1
+# Release 3.0.1461.1
 
-## Agent 沙箱服务(ags) 版本：2025-09-20
+## AI Agent 安全网关(apis) 版本：2024-08-01
 
-### 第 20 次发布
+### 第 22 次发布
 
-发布时间：2026-07-23 01:08:58
+发布时间：2026-07-24 01:17:37
 
 本次发布包含了以下内容：
 
@@ -12,50 +12,29 @@
 
 修改接口：
 
-* [CreatePreCacheImageTask](http://document.tencentcloudapi.woa.com/document/product/1804/88713)
+* [CreateMcpServer](http://document.tencentcloudapi.woa.com/document/product/1805/87904)
 
-	* 新增入参：ImageRegistryConfig
+	* 新增入参：IgnoreHealthCheck
 
-	* <font color="#dd0000">**删除入参**：</font>ImageRegistryCredentialProviderId
+* [ModifyMcpServer](http://document.tencentcloudapi.woa.com/document/product/1805/87898)
 
-* [DescribePreCacheImageTask](http://document.tencentcloudapi.woa.com/document/product/1804/88712)
+	* 新增入参：IgnoreHealthCheck
 
-	* 新增入参：ImageRegistryConfig, Scopes
-
-	* 新增出参：Scopes
-
-* [StartSandboxInstance](http://document.tencentcloudapi.woa.com/document/product/1804/87847)
-
-	* 新增入参：StorageMounts
-
-
-新增数据结构：
-
-* [ImageRegistryConfig](http://document.tencentcloudapi.woa.com/document/product/1804/87854#ImageRegistryConfig)
-* [ImageRegistryNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/1804/87854#ImageRegistryNetworkConfig)
 
 修改数据结构：
 
-* [CustomConfiguration](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CustomConfiguration)
+* [DescribeMcpServerResponseVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeMcpServerResponseVO)
 
-	* 新增成员：ImageRegistryConfig
-
-* [CustomConfigurationDetail](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CustomConfigurationDetail)
-
-	* 新增成员：ImageRegistryConfig
-
-* [SandboxInstance](http://document.tencentcloudapi.woa.com/document/product/1804/87854#SandboxInstance)
-
-	* 新增成员：StorageMounts
+	* 新增成员：IgnoreHealthCheck
 
 
 
 
-## 云 HDFS(chdfs) 版本：2020-11-12
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 10 次发布
+### 第 105 次发布
 
-发布时间：2026-07-23 01:26:58
+发布时间：2026-07-24 01:46:00
 
 本次发布包含了以下内容：
 
@@ -63,26 +42,55 @@
 
 新增接口：
 
-* [CreatePathProtectionRule](http://document.tencentcloudapi.woa.com/document/product/1105/91881)
-* [DeletePathProtectionRule](http://document.tencentcloudapi.woa.com/document/product/1105/91880)
-* [DescribePathProtectionRules](http://document.tencentcloudapi.woa.com/document/product/1105/91879)
-* [ModifyPathProtectionRule](http://document.tencentcloudapi.woa.com/document/product/1105/91878)
+* [CheckClusterNatFwPreAccess](http://document.tencentcloudapi.woa.com/document/product/1132/91887)
+* [CheckClusterVpcFwPreAccess](http://document.tencentcloudapi.woa.com/document/product/1132/91886)
+* [DescribeBlockList](http://document.tencentcloudapi.woa.com/document/product/1132/91893)
+* [DescribeFwGroupIdNames](http://document.tencentcloudapi.woa.com/document/product/1132/91892)
+* [DescribeIpsRuleListNew](http://document.tencentcloudapi.woa.com/document/product/1132/91891)
+* [DescribeNatRuleScopes](http://document.tencentcloudapi.woa.com/document/product/1132/91890)
+* [DescribeSecurityGroupRegionList](http://document.tencentcloudapi.woa.com/document/product/1132/91888)
+* [DescribeVpcAclEdgeRange](http://document.tencentcloudapi.woa.com/document/product/1132/91889)
 
 新增数据结构：
 
-* [PathProtectionRule](http://document.tencentcloudapi.woa.com/document/product/1105/51158#PathProtectionRule)
+* [BlockInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockInfo)
+* [ClusterFwPreAccessCheckItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#ClusterFwPreAccessCheckItem)
+* [EdgeRange](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeRange)
+* [FwGroupIdName](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupIdName)
+* [IpsRuleDetailNew](http://document.tencentcloudapi.woa.com/document/product/1132/49071#IpsRuleDetailNew)
+* [RuleScopeInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#RuleScopeInfo)
+* [SecurityGroupRegion](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupRegion)
 
 
 
-## 云 HDFS(chdfs) 版本：2019-07-18
+## 负载均衡(clb) 版本：2023-04-17
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 90 次发布
+
+发布时间：2026-07-24 01:52:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserGroupInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#UserGroupInfo)
+
+	* 新增成员：PromptId, PromptVersion, PromptName
+
 
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 163 次发布
+### 第 164 次发布
 
-发布时间：2026-07-23 01:41:17
+发布时间：2026-07-24 02:14:18
 
 本次发布包含了以下内容：
 
@@ -90,97 +98,56 @@
 
 新增接口：
 
-* [AlterTableComment](http://document.tencentcloudapi.woa.com/document/product/1342/91883)
-* [DeleteMetaDatabase](http://document.tencentcloudapi.woa.com/document/product/1342/91885)
-* [DescribeDatabase](http://document.tencentcloudapi.woa.com/document/product/1342/91884)
-* [GenerateInternalTable](http://document.tencentcloudapi.woa.com/document/product/1342/91882)
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 44 次发布
-
-发布时间：2026-07-23 01:58:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeDeviceDetailList
-
-
-
-## 凭据管理系统(ssm) 版本：2019-09-23
-
-### 第 19 次发布
-
-发布时间：2026-07-23 02:22:37
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [DescribeSystemStorage](http://document.tencentcloudapi.woa.com/document/product/1342/91894)
+* [DescribeTaskStatus](http://document.tencentcloudapi.woa.com/document/product/1342/91895)
 
 修改接口：
 
-* [DeleteSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40528)
+* [CreateSparkAppTask](http://document.tencentcloudapi.woa.com/document/product/1342/74537)
 
-	* 新增入参：DeleteMode
-
-	* 新增出参：FlowID
-
-* [DescribeRotationHistory](http://document.tencentcloudapi.woa.com/document/product/1140/58263)
-
-	* 新增出参：AccountInfoList
-
-* [DescribeSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40526)
-
-	* 新增出参：AccountInfoList
+	* 新增入参：RuntimeConf
 
 
 新增数据结构：
 
-* [SecretAccountInfo](http://document.tencentcloudapi.woa.com/document/product/1140/40530#SecretAccountInfo)
+* [LakeFileSystem](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFileSystem)
+* [TaskStatusInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskStatusInfo)
 
 
 
-## TI-ONE 训练平台(tione) 版本：2021-11-11
+## 全球加速(ga2) 版本：2025-01-15
 
-### 第 144 次发布
+### 第 10 次发布
 
-发布时间：2026-07-23 02:32:43
+发布时间：2026-07-24 02:43:00
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeModelService](http://document.tencentcloudapi.woa.com/document/product/851/76496)
+* [DescribeGlobalAcceleratorDetail](http://document.tencentcloudapi.woa.com/document/product/1808/91896)
 
-	* 新增入参：TiProjectId
+新增数据结构：
 
-* [DescribeModelServiceGroup](http://document.tencentcloudapi.woa.com/document/product/851/76494)
-
-	* 新增入参：TiProjectId
-
-* [DescribeModelServices](http://document.tencentcloudapi.woa.com/document/product/851/76490)
-
-	* 新增入参：TiProjectId
-
-
-修改数据结构：
-
-* [ImageCacheSourceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageCacheSourceInfo)
-
-	* 新增成员：KeyId
+* [Accelerator](http://document.tencentcloudapi.woa.com/document/product/1808/90473#Accelerator)
 
 
 
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
 
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+### 第 32 次发布
+
+发布时间：2026-07-24 02:45:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDataRepositoryTaskStatus](http://document.tencentcloudapi.woa.com/document/product/1716/91897)
 
 
 

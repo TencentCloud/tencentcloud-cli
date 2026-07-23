@@ -168,7 +168,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像要求磁盘空间（单位：GB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像要求磁盘空间（单位：GB）",
           "example": "0",
           "member": "uint64",
           "name": "SpaceRequire",
@@ -178,7 +178,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统类型（0:unknown；1:linux；2:window）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作系统类型（0:unknown；1:linux；2:window）",
           "example": "0",
           "member": "int64",
           "name": "OSType",
@@ -188,7 +188,7 @@
         },
         {
           "disabled": false,
-          "document": "产品摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品摘要",
           "example": "\"\"",
           "member": "string",
           "name": "Summary",
@@ -258,7 +258,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为免费镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为免费镜像",
           "example": "无",
           "member": "bool",
           "name": "IsFree",
@@ -268,7 +268,7 @@
         },
         {
           "disabled": false,
-          "document": "商品协议ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品协议ID",
           "example": "无",
           "member": "string",
           "name": "ProtocolID",
@@ -278,7 +278,7 @@
         },
         {
           "disabled": false,
-          "document": "商品Logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品Logo",
           "example": "无",
           "member": "string",
           "name": "ProductLogo",
@@ -798,7 +798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "二级标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "二级标题",
           "example": "无",
           "member": "string",
           "name": "SubTitle",
@@ -808,7 +808,7 @@
         },
         {
           "disabled": false,
-          "document": "商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品信息",
           "example": "无",
           "member": "TrialProductInfo",
           "name": "ProductInfo",
@@ -824,7 +824,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "试用大标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "试用大标题",
           "example": "无",
           "member": "string",
           "name": "TrialTitle",
@@ -834,7 +834,7 @@
         },
         {
           "disabled": false,
-          "document": "试用信息分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "试用信息分组",
           "example": "无",
           "member": "SubTrialInfo",
           "name": "SubTrialInfo",
@@ -850,7 +850,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品ID",
           "example": "无",
           "member": "uint64",
           "name": "ProductID",
@@ -860,7 +860,7 @@
         },
         {
           "disabled": false,
-          "document": "商品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品名",
           "example": "无",
           "member": "string",
           "name": "ProductName",
@@ -870,7 +870,7 @@
         },
         {
           "disabled": false,
-          "document": "商品描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品描述",
           "example": "无",
           "member": "string",
           "name": "ProductDesc",
@@ -880,7 +880,7 @@
         },
         {
           "disabled": false,
-          "document": "商品logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品logo",
           "example": "无",
           "member": "string",
           "name": "ProductIcon",
@@ -890,7 +890,7 @@
         },
         {
           "disabled": false,
-          "document": "试用文案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "试用文案",
           "example": "无",
           "member": "string",
           "name": "TrialDesc",
@@ -900,7 +900,7 @@
         },
         {
           "disabled": false,
-          "document": "试用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "试用详情",
           "example": "无",
           "member": "string",
           "name": "InfoDesc",
@@ -910,7 +910,7 @@
         },
         {
           "disabled": false,
-          "document": "试用规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "试用规格",
           "example": "无",
           "member": "string",
           "name": "AssignSpecID",
@@ -920,7 +920,7 @@
         },
         {
           "disabled": false,
-          "document": "试用周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "试用周期",
           "example": "无",
           "member": "string",
           "name": "AssignCycleId",
@@ -930,7 +930,7 @@
         },
         {
           "disabled": false,
-          "document": "试用计费项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "试用计费项",
           "example": "无",
           "member": "string",
           "name": "AssignSubChargedItem",
@@ -940,7 +940,7 @@
         },
         {
           "disabled": false,
-          "document": "认证类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证类型",
           "example": "无",
           "member": "string",
           "name": "AuthType",
@@ -950,7 +950,7 @@
         },
         {
           "disabled": false,
-          "document": "是否热门\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否热门",
           "example": "无",
           "member": "bool",
           "name": "IsHot",
@@ -960,7 +960,7 @@
         },
         {
           "disabled": false,
-          "document": "规格名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规格名",
           "example": "无",
           "member": "string",
           "name": "SpecName",
@@ -996,7 +996,7 @@
         },
         {
           "disabled": false,
-          "document": "订单创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单创建时间",
           "example": "无",
           "member": "string",
           "name": "OrderCreateTime",
@@ -1006,7 +1006,7 @@
         },
         {
           "disabled": false,
-          "document": "订单完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单完成时间",
           "example": "无",
           "member": "string",
           "name": "OrderEndTime",
@@ -1016,7 +1016,7 @@
         },
         {
           "disabled": false,
-          "document": "商品id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品id",
           "example": "无",
           "member": "int64",
           "name": "ProductID",
@@ -1026,7 +1026,7 @@
         },
         {
           "disabled": false,
-          "document": "商品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品名称",
           "example": "无",
           "member": "string",
           "name": "ProductName",
@@ -1036,7 +1036,7 @@
         },
         {
           "disabled": false,
-          "document": "订单实付金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单实付金额",
           "example": "无",
           "member": "int64",
           "name": "RealTotalCost",
@@ -1046,7 +1046,7 @@
         },
         {
           "disabled": false,
-          "document": "订单数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单数量",
           "example": "无",
           "member": "int64",
           "name": "CycleNum",
@@ -1056,7 +1056,7 @@
         },
         {
           "disabled": false,
-          "document": "订单状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单状态",
           "example": "无",
           "member": "string",
           "name": "OrderState",
@@ -1066,7 +1066,7 @@
         },
         {
           "disabled": false,
-          "document": "服务商uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务商uin",
           "example": "无",
           "member": "string",
           "name": "ProviderUin",
@@ -1076,7 +1076,7 @@
         },
         {
           "disabled": false,
-          "document": "注册号码（qq、微信、手机号、邮箱等）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册号码（qq、微信、手机号、邮箱等）",
           "example": "无",
           "member": "string",
           "name": "Number",

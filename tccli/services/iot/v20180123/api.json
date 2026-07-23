@@ -321,7 +321,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转发至topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发至topic",
           "example": "",
           "member": "TopicAction",
           "name": "Topic",
@@ -331,7 +331,7 @@
         },
         {
           "disabled": false,
-          "document": "转发至第三发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发至第三发",
           "example": "",
           "member": "ServiceAction",
           "name": "Service",
@@ -341,7 +341,7 @@
         },
         {
           "disabled": false,
-          "document": "转发至第三发Ckafka\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发至第三发Ckafka",
           "example": "",
           "member": "CkafkaAction",
           "name": "Ckafka",
@@ -1656,7 +1656,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数字类型",
           "example": "",
           "member": "NumberData",
           "name": "Number",
@@ -1666,7 +1666,7 @@
         },
         {
           "disabled": false,
-          "document": "字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字符串类型",
           "example": "",
           "member": "StringData",
           "name": "String",
@@ -1676,7 +1676,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举类型",
           "example": "",
           "member": "EnumData",
           "name": "Enum",
@@ -1686,7 +1686,7 @@
         },
         {
           "disabled": false,
-          "document": "布尔类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "布尔类型",
           "example": "",
           "member": "BoolData",
           "name": "Bool",
@@ -2211,7 +2211,7 @@
         },
         {
           "disabled": false,
-          "document": "首次上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次上线时间",
           "example": "",
           "member": "datetime",
           "name": "FirstOnline",
@@ -2221,7 +2221,7 @@
         },
         {
           "disabled": false,
-          "document": "最后上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后上线时间",
           "example": "",
           "member": "datetime",
           "name": "LastOnline",
@@ -3926,7 +3926,7 @@
         },
         {
           "disabled": false,
-          "document": "Topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Topic",
           "example": "",
           "member": "string",
           "name": "Topic",
@@ -3936,7 +3936,7 @@
         },
         {
           "disabled": false,
-          "document": "产品Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品Id",
           "example": "",
           "member": "string",
           "name": "ProductId",

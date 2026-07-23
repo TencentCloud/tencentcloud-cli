@@ -48,7 +48,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审批流中表单唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批流中表单唯一标识",
           "example": "name",
           "member": "string",
           "name": "Key",
@@ -59,7 +59,7 @@
         },
         {
           "disabled": false,
-          "document": "表单value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表单value",
           "example": "['v1','v2']",
           "member": "string",
           "name": "Value",
@@ -70,7 +70,7 @@
         },
         {
           "disabled": false,
-          "document": "表单参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表单参数描述",
           "example": "产品名称",
           "member": "string",
           "name": "Name",
@@ -98,7 +98,7 @@
         },
         {
           "disabled": false,
-          "document": "审批意见\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批意见",
           "example": "[\"同意\",\"请执行\"]",
           "member": "string",
           "name": "Content",
@@ -137,7 +137,7 @@
         },
         {
           "disabled": false,
-          "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户描述",
           "example": "普通用户",
           "member": "string",
           "name": "Desc",
@@ -148,7 +148,7 @@
         },
         {
           "disabled": false,
-          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户昵称",
           "example": "jack",
           "member": "string",
           "name": "Nick",
@@ -159,7 +159,7 @@
         },
         {
           "disabled": false,
-          "document": "动态获取Scf\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "动态获取Scf",
           "example": "get-users",
           "member": "Scf",
           "name": "Scf",
@@ -170,7 +170,7 @@
         },
         {
           "disabled": false,
-          "document": "审批状态 （取值范围 0:待审批  1:审批通过  2:拒绝  6:其他人已审批）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批状态 （取值范围 0:待审批  1:审批通过  2:拒绝  6:其他人已审批）",
           "example": "1",
           "member": "uint64",
           "name": "ApproveStatus",
@@ -181,7 +181,7 @@
         },
         {
           "disabled": false,
-          "document": "审批意见\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批意见",
           "example": "同意",
           "member": "string",
           "name": "ApproveMsg",
@@ -192,7 +192,7 @@
         },
         {
           "disabled": false,
-          "document": "审批时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批时间",
           "example": "2024-05-21 12:34:16",
           "member": "string",
           "name": "ApproveTime",
@@ -203,7 +203,7 @@
         },
         {
           "disabled": false,
-          "document": "审批组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批组名称",
           "example": "审批组",
           "member": "string",
           "name": "ApproveGroup",
@@ -260,7 +260,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2020-02-01 10:10:10",
           "member": "string",
           "name": "CreateTime",
@@ -270,7 +270,7 @@
         },
         {
           "disabled": false,
-          "document": "待审批节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "待审批节点",
           "example": "1",
           "member": "string",
           "name": "NodeId",
@@ -280,7 +280,7 @@
         },
         {
           "disabled": false,
-          "document": "待审批节点审批人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "待审批节点审批人",
           "example": "无",
           "member": "ApproveUser",
           "name": "Users",
@@ -290,7 +290,7 @@
         },
         {
           "disabled": false,
-          "document": "审批方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批方式",
           "example": "0",
           "member": "uint64",
           "name": "ApproveMethod",
@@ -300,7 +300,7 @@
         },
         {
           "disabled": false,
-          "document": "外部审批Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部审批Url",
           "example": "xx",
           "member": "string",
           "name": "ExternalUrl",
@@ -310,7 +310,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持撤回，取值：1支持，2不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持撤回，取值：1支持，2不支持",
           "example": "1",
           "member": "uint64",
           "name": "IsSupportRecall",
@@ -513,7 +513,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>申请人OwnUin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>申请人OwnUin</p>",
           "example": "100000007999",
           "member": "string",
           "name": "OwnUin",
@@ -962,7 +962,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "申请单关联的资源ID（最大50）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请单关联的资源ID（最大50）",
           "example": "sjhgw-4958-in1",
           "member": "string",
           "name": "ResourceId",
@@ -973,7 +973,7 @@
         },
         {
           "disabled": false,
-          "document": "申请单关联的资源类型（最大100）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请单关联的资源类型（最大100）",
           "example": "cvm",
           "member": "string",
           "name": "Type",
@@ -1012,7 +1012,7 @@
         },
         {
           "disabled": false,
-          "document": "Scf函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Scf函数名称",
           "example": "get-user",
           "member": "string",
           "name": "ScfName",
@@ -1023,7 +1023,7 @@
         },
         {
           "disabled": false,
-          "document": "Scf函数入参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Scf函数入参",
           "example": "[{\"Key\":\"total\",\"Name\":\"总数\",\"Type\":1,\"Values\":[\"1\"]}]",
           "member": "ScfParam",
           "name": "Params",
@@ -1073,7 +1073,7 @@
         },
         {
           "disabled": false,
-          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数描述",
           "example": "姓名",
           "member": "string",
           "name": "Name",

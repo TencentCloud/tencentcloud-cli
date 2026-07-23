@@ -8369,7 +8369,7 @@
         },
         {
           "disabled": false,
-          "document": "备注，长度不超过128个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注，长度不超过128个字符。",
           "example": "remark",
           "member": "string",
           "name": "Remark",

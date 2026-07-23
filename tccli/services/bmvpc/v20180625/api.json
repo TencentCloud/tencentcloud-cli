@@ -1355,7 +1355,7 @@
         },
         {
           "disabled": false,
-          "document": "VPN通道引用个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPN通道引用个数",
           "example": "",
           "member": "uint64",
           "name": "VpnConnNum",
@@ -4653,7 +4653,7 @@
         },
         {
           "disabled": false,
-          "document": "子网可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网可用区。",
           "example": "",
           "member": "string",
           "name": "Zone",
@@ -5062,7 +5062,7 @@
         },
         {
           "disabled": false,
-          "document": "本端VPC所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本端VPC所属可用区",
           "example": "",
           "member": "string",
           "name": "VpcZone",
@@ -5072,7 +5072,7 @@
         },
         {
           "disabled": false,
-          "document": "对端VPC所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对端VPC所属可用区",
           "example": "",
           "member": "string",
           "name": "PeerVpcZone",
@@ -5142,7 +5142,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否允许删除",
           "example": "",
           "member": "uint64",
           "name": "DeleteFlag",
@@ -5394,7 +5394,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网服务个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云联网服务个数",
           "example": "",
           "member": "uint64",
           "name": "CcnServiceNum",
@@ -5404,7 +5404,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC允许创建的对等连接个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC允许创建的对等连接个数",
           "example": "",
           "member": "uint64",
           "name": "VpcPeerLimitToAllRegion",
@@ -5414,7 +5414,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC允许创建的同地域的对等连接的个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC允许创建的同地域的对等连接的个数",
           "example": "",
           "member": "uint64",
           "name": "VpcPeerLimitToSameRegion",
@@ -5808,7 +5808,7 @@
         },
         {
           "disabled": false,
-          "document": "IPSEC VPN通道路由策略目的端地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPSEC VPN通道路由策略目的端地址",
           "example": "",
           "member": "string",
           "name": "DestinationCidr",
@@ -5818,7 +5818,7 @@
         },
         {
           "disabled": false,
-          "document": "IPSEC VPN通道路由策略源端地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPSEC VPN通道路由策略源端地址",
           "example": "",
           "member": "string",
           "name": "SourceCidr",

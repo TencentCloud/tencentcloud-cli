@@ -985,7 +985,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "",
           "member": "string",
           "name": "ResourceName",
@@ -995,7 +995,7 @@
         },
         {
           "disabled": false,
-          "document": "域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名列表",
           "example": "",
           "member": "string",
           "name": "DomainList",
@@ -1005,7 +1005,7 @@
         },
         {
           "disabled": false,
-          "document": "uri列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "uri列表",
           "example": "",
           "member": "string",
           "name": "UriList",
@@ -1015,7 +1015,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "攻击源列表",
           "example": "",
           "member": "string",
           "name": "AttackipList",
@@ -2958,7 +2958,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "",
           "member": "string",
           "name": "ResourceName",
@@ -2968,7 +2968,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击事件Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "攻击事件Id",
           "example": "",
           "member": "string",
           "name": "EventId",
@@ -3356,7 +3356,7 @@
         },
         {
           "disabled": false,
-          "document": "开始源端口，取值范围[0,65535]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始源端口，取值范围[0,65535]",
           "example": "",
           "member": "uint64",
           "name": "SPortStart",
@@ -3366,7 +3366,7 @@
         },
         {
           "disabled": false,
-          "document": "结束源端口，取值范围[0,65535]，要求大于等于开始源端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束源端口，取值范围[0,65535]，要求大于等于开始源端口",
           "example": "",
           "member": "uint64",
           "name": "SPortEnd",
@@ -3376,7 +3376,7 @@
         },
         {
           "disabled": false,
-          "document": "执行动作，取值[drop(丢弃) ，transmit(转发)]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行动作，取值[drop(丢弃) ，transmit(转发)]",
           "example": "",
           "member": "string",
           "name": "Action",
@@ -3386,7 +3386,7 @@
         },
         {
           "disabled": false,
-          "document": "禁用端口类型，取值[0（目的端口范围禁用）， 1（源端口范围禁用）， 2（目的和源端口范围同时禁用）]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "禁用端口类型，取值[0（目的端口范围禁用）， 1（源端口范围禁用）， 2（目的和源端口范围同时禁用）]",
           "example": "",
           "member": "uint64",
           "name": "Kind",
@@ -3502,7 +3502,7 @@
         },
         {
           "disabled": false,
-          "document": "策略绑定的资源实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略绑定的资源实例",
           "example": "",
           "member": "string",
           "name": "BoundResources",
@@ -3512,7 +3512,7 @@
         },
         {
           "disabled": false,
-          "document": "策略所属的策略场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略所属的策略场景",
           "example": "",
           "member": "string",
           "name": "SceneId",
@@ -4687,7 +4687,7 @@
         },
         {
           "disabled": false,
-          "document": "资源实例的IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源实例的IP列表",
           "example": "",
           "member": "string",
           "name": "IpList",
@@ -5065,7 +5065,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID",
           "example": "",
           "member": "string",
           "name": "Id",
@@ -5677,7 +5677,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防护状态，为0表示防护处于关闭状态，为1表示防护处于开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防护状态，为0表示防护处于关闭状态，为1表示防护处于开启状态",
           "example": "",
           "member": "uint64",
           "name": "DefendStatus",
@@ -5686,7 +5686,7 @@
         },
         {
           "disabled": false,
-          "document": "防护临时关闭的过期时间，当防护状态为开启时此字段为空；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防护临时关闭的过期时间，当防护状态为开启时此字段为空；",
           "example": "",
           "member": "string",
           "name": "UndefendExpire",
@@ -5695,7 +5695,7 @@
         },
         {
           "disabled": false,
-          "document": "控制台功能展示字段，为1表示控制台功能展示，为0表示控制台功能隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控制台功能展示字段，为1表示控制台功能展示，为0表示控制台功能隐藏",
           "example": "",
           "member": "uint64",
           "name": "ShowFlag",
@@ -6028,7 +6028,7 @@
         },
         {
           "disabled": false,
-          "document": "资源的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源的IP",
           "example": "",
           "member": "string",
           "name": "IpList",
@@ -7009,7 +7009,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID",
           "example": "",
           "member": "string",
           "name": "Id",
@@ -9695,7 +9695,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
           "example": "",
           "member": "uint64",
           "name": "HttpsToHttpEnable",
@@ -9705,7 +9705,7 @@
         },
         {
           "disabled": false,
-          "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入端口值",
           "example": "",
           "member": "uint64",
           "name": "VirtualPort",
@@ -12534,7 +12534,7 @@
         },
         {
           "disabled": false,
-          "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入端口值",
           "example": "",
           "member": "uint64",
           "name": "VirtualPort",
@@ -12780,7 +12780,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态",
           "example": "",
           "member": "uint64",
           "name": "Status",
@@ -12790,7 +12790,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "",
           "member": "datetime",
           "name": "ModifyTime",

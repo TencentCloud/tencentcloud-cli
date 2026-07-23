@@ -753,7 +753,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。",
           "example": "无",
           "member": "ErrorMsg",
           "name": "ErrorMsg",
@@ -1050,7 +1050,7 @@
         },
         {
           "disabled": false,
-          "document": "增量返回值，流式调用时使用该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "增量返回值，流式调用时使用该字段。",
           "example": "无",
           "member": "Delta",
           "name": "Delta",
@@ -1060,7 +1060,7 @@
         },
         {
           "disabled": false,
-          "document": "返回值，非流式调用时使用该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回值，非流式调用时使用该字段。",
           "example": "无",
           "member": "Message",
           "name": "Message",
@@ -1096,7 +1096,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内容类型\n注意：\n需包含至少一个 Type 为\"text\"的参数。\n参数值可选范围：[\"text\", \"image_url\",\"video_url\",\"video_frames\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容类型\n注意：\n需包含至少一个 Type 为\"text\"的参数。\n参数值可选范围：[\"text\", \"image_url\",\"video_url\",\"video_frames\"]",
           "example": "text",
           "member": "string",
           "name": "Type",
@@ -1107,7 +1107,7 @@
         },
         {
           "disabled": false,
-          "document": "当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。",
           "example": "下面图片中是哪个公司的 Logo？",
           "member": "string",
           "name": "Text",
@@ -1118,7 +1118,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的url，当 Type 为 image_url 时使用，表示具体的图片内容\n如\"https://example.com/1.png\" 或 图片的base64（注意 \"data:image/jpeg;base64,\" 为必要部分）：\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......\"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片的url，当 Type 为 image_url 时使用，表示具体的图片内容\n如\"https://example.com/1.png\" 或 图片的base64（注意 \"data:image/jpeg;base64,\" 为必要部分）：\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......\"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。",
           "example": "无",
           "member": "ImageUrl",
           "name": "ImageUrl",
@@ -1129,7 +1129,7 @@
         },
         {
           "disabled": false,
-          "document": "当 Type 为 video_url 时使用，标识具体的视频链接内容，如\"https://your-video-path.mp4\"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当 Type 为 video_url 时使用，标识具体的视频链接内容，如\"https://your-video-path.mp4\"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。",
           "example": "无",
           "member": "VideoUrl",
           "name": "VideoUrl",
@@ -1140,7 +1140,7 @@
         },
         {
           "disabled": false,
-          "document": "当 Type 为 video_frames 时使用，标识具体的视频内图像帧内容，当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当 Type 为 video_frames 时使用，标识具体的视频内图像帧内容，当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。",
           "example": "无",
           "member": "VideoFrames",
           "name": "VideoFrames",
@@ -1358,7 +1358,7 @@
         },
         {
           "disabled": false,
-          "document": "提供给工具的资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提供给工具的资源列表",
           "example": "{\"CodeInterpreter\": [\"file-tZ0lWeNW4oNbEiMYGtOXEmEk\"]}",
           "member": "ThreadToolResources",
           "name": "ToolResources",
@@ -1463,7 +1463,7 @@
         },
         {
           "disabled": false,
-          "document": "模型生成的工具调用，仅 hunyuan-functioncall 模型支持\n说明：\n对于每一次的输出值应该以Id为标识对Type、Name、Arguments字段进行合并。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型生成的工具调用，仅 hunyuan-functioncall 模型支持\n说明：\n对于每一次的输出值应该以Id为标识对Type、Name、Arguments字段进行合并。\n",
           "example": "无",
           "member": "ToolCall",
           "name": "ToolCalls",
@@ -1757,7 +1757,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Embedding 信息，目前为 1024 维浮点数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Embedding 信息，目前为 1024 维浮点数。",
           "example": "无",
           "member": "float",
           "name": "Embedding",
@@ -1767,7 +1767,7 @@
         },
         {
           "disabled": false,
-          "document": "下标，目前不支持批量，因此固定为 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下标，目前不支持批量，因此固定为 0。",
           "example": "0",
           "member": "int64",
           "name": "Index",
@@ -1777,7 +1777,7 @@
         },
         {
           "disabled": false,
-          "document": "目前固定为 \"embedding\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目前固定为 \"embedding\"。",
           "example": "embedding",
           "member": "string",
           "name": "Object",
@@ -2274,7 +2274,7 @@
         },
         {
           "disabled": true,
-          "document": "第一条消息 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第一条消息 ID",
           "example": "msg_UT0ERwQZyW6uOYsrxl2Fho7f",
           "member": "string",
           "name": "FirstID",
@@ -2284,7 +2284,7 @@
         },
         {
           "disabled": true,
-          "document": "已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已废弃",
           "example": "0",
           "member": "int64",
           "name": "LastID",
@@ -2420,7 +2420,7 @@
         },
         {
           "disabled": false,
-          "document": "未完成原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未完成原因",
           "example": "{\"Reason\": \"\"}",
           "member": "ThreadMessageInCompleteDetailsObject",
           "name": "InCompleteDetails",
@@ -2430,7 +2430,7 @@
         },
         {
           "disabled": false,
-          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完成时间",
           "example": "1727264847",
           "member": "int64",
           "name": "CompletedAt",
@@ -2440,7 +2440,7 @@
         },
         {
           "disabled": false,
-          "document": "未完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未完成时间",
           "example": "1727264847",
           "member": "int64",
           "name": "InCompleteAt",
@@ -2470,7 +2470,7 @@
         },
         {
           "disabled": false,
-          "document": "助手 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "助手 ID",
           "example": "asst_LhSU47qcQcFEItggpGEx5eh1",
           "member": "string",
           "name": "AssistantID",
@@ -2480,7 +2480,7 @@
         },
         {
           "disabled": false,
-          "document": "运行 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行 ID",
           "example": "run_SR0cPyidY0vBWy7mcYN5loSR",
           "member": "string",
           "name": "RunID",
@@ -2490,7 +2490,7 @@
         },
         {
           "disabled": false,
-          "document": "附件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "附件",
           "example": "[{\"FileID\":\"file-tMjt0CQnvU25GwUDkih4tU4H\"}]",
           "member": "ThreadMessageAttachmentObject",
           "name": "Attachments",
@@ -2557,7 +2557,7 @@
         },
         {
           "disabled": false,
-          "document": "提供给工具的资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提供给工具的资源列表",
           "example": "{\"CodeInterpreter\": [\"file-tZ0lWeNW4oNbEiMYGtOXEmEk\"]}",
           "member": "ThreadToolResources",
           "name": "ToolResources",
@@ -2919,7 +2919,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。",
           "example": "无",
           "member": "ErrorMsg",
           "name": "ErrorMsg",
@@ -3049,7 +3049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对话的 ID，用于唯一标识一轮对话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对话的 ID，用于唯一标识一轮对话",
           "example": "1248907282106990592",
           "member": "string",
           "name": "ChatId",
@@ -3060,7 +3060,7 @@
         },
         {
           "disabled": false,
-          "document": "原始输入的 Prompt 文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原始输入的 Prompt 文本",
           "example": "请画一个苹果在桌子上",
           "member": "string",
           "name": "Prompt",
@@ -3071,7 +3071,7 @@
         },
         {
           "disabled": false,
-          "document": "扩写后的 Prompt 文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩写后的 Prompt 文本",
           "example": "风格为摄影风格，桌子上摆放着一个红润的苹果，镜头为近景镜头",
           "member": "string",
           "name": "RevisedPrompt",
@@ -3082,7 +3082,7 @@
         },
         {
           "disabled": false,
-          "document": "生成图的随机种子\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生成图的随机种子",
           "example": "1549130027",
           "member": "int64",
           "name": "Seed",
@@ -3267,7 +3267,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。",
           "example": "无",
           "member": "ErrorMsg",
           "name": "ErrorMsg",
@@ -3289,7 +3289,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Url（以 http:// 或 https:// 开头）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片的 Url（以 http:// 或 https:// 开头）",
           "example": "https://cloudcache.tencent-cloud.com/qcloud/ui/portal-set/build/About/images/bg-product-series_87d.png",
           "member": "string",
           "name": "Url",
@@ -3603,7 +3603,7 @@
         },
         {
           "disabled": false,
-          "document": "多种类型内容（目前支持文本、图片和视频），图片支持混元图生文系列模型，视频支持混元视频生文系列模型，详情参考[产品概述](https://cloud.tencent.com/document/product/1729/104753)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多种类型内容（目前支持文本、图片和视频），图片支持混元图生文系列模型，视频支持混元视频生文系列模型，详情参考[产品概述](https://cloud.tencent.com/document/product/1729/104753)",
           "example": "无",
           "member": "Content",
           "name": "Contents",
@@ -3614,7 +3614,7 @@
         },
         {
           "disabled": false,
-          "document": "当role为tool时传入，标识具体的函数调用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当role为tool时传入，标识具体的函数调用",
           "example": "call_cpv320k2c3m8fgcs8ja0",
           "member": "string",
           "name": "ToolCallId",
@@ -3625,7 +3625,7 @@
         },
         {
           "disabled": false,
-          "document": "模型生成的工具调用，仅 hunyuan-pro 或者 hunyuan-functioncall 模型支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型生成的工具调用，仅 hunyuan-pro 或者 hunyuan-functioncall 模型支持",
           "example": "无",
           "member": "ToolCall",
           "name": "ToolCalls",
@@ -3636,7 +3636,7 @@
         },
         {
           "disabled": false,
-          "document": "文件标识符。单次最大 50 个文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件标识符。单次最大 50 个文件。",
           "example": "[\"file-YbhlphnNEsjRoKTEXukAqNZZ\"]",
           "member": "string",
           "name": "FileIDs",
@@ -3664,7 +3664,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "脑图缩略图链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "脑图缩略图链接",
           "example": "无",
           "member": "string",
           "name": "ThumbUrl",
@@ -3675,7 +3675,7 @@
         },
         {
           "disabled": false,
-          "document": "脑图图片链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "脑图图片链接",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -3732,7 +3732,7 @@
         },
         {
           "disabled": false,
-          "document": "多媒体详情地址。\n说明：\n1. 仅 type 为 image 时，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多媒体详情地址。\n说明：\n1. 仅 type 为 image 时，该字段有值。",
           "example": "无",
           "member": "string",
           "name": "JumpUrl",
@@ -3772,7 +3772,7 @@
         },
         {
           "disabled": false,
-          "document": "名称。\n说明：\n1. type 为 image 时，该字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称。\n说明：\n1. type 为 image 时，该字段为空。",
           "example": "无",
           "member": "string",
           "name": "Title",
@@ -3782,7 +3782,7 @@
         },
         {
           "disabled": false,
-          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述。",
           "example": "无",
           "member": "string",
           "name": "Desc",
@@ -3792,7 +3792,7 @@
         },
         {
           "disabled": false,
-          "document": "歌手名称。\n说明：\n1. 仅 type 为 music 时，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "歌手名称。\n说明：\n1. 仅 type 为 music 时，该字段有值。",
           "example": "无",
           "member": "string",
           "name": "Singer",
@@ -3802,7 +3802,7 @@
         },
         {
           "disabled": false,
-          "document": "歌曲详情。\n说明：\n1. 仅 type 为 music 时，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "歌曲详情。\n说明：\n1. 仅 type 为 music 时，该字段有值。",
           "example": "无",
           "member": "SongExt",
           "name": "Ext",
@@ -4589,7 +4589,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "相关组织及人物名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关组织及人物名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -4600,7 +4600,7 @@
         },
         {
           "disabled": false,
-          "document": "相关组织及人物内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关组织及人物内容",
           "example": "无",
           "member": "string",
           "name": "Content",
@@ -4611,7 +4611,7 @@
         },
         {
           "disabled": false,
-          "document": "相关事件引用文章标号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关事件引用文章标号",
           "example": "无",
           "member": "int64",
           "name": "Reference",
@@ -4628,7 +4628,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "相关事件标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关事件标题",
           "example": "无",
           "member": "string",
           "name": "Title",
@@ -4639,7 +4639,7 @@
         },
         {
           "disabled": false,
-          "document": "相关事件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关事件内容",
           "example": "无",
           "member": "string",
           "name": "Content",
@@ -4650,7 +4650,7 @@
         },
         {
           "disabled": false,
-          "document": "相关事件时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关事件时间",
           "example": "无",
           "member": "string",
           "name": "Datetime",
@@ -4661,7 +4661,7 @@
         },
         {
           "disabled": false,
-          "document": "相关事件引用文章标号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关事件引用文章标号",
           "example": "无",
           "member": "int64",
           "name": "Reference",
@@ -4866,7 +4866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索引文信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "搜索引文信息",
           "example": "无",
           "member": "SearchResult",
           "name": "SearchResults",
@@ -4877,7 +4877,7 @@
         },
         {
           "disabled": false,
-          "document": "脑图（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "脑图（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回）",
           "example": "无",
           "member": "Mindmap",
           "name": "Mindmap",
@@ -4888,7 +4888,7 @@
         },
         {
           "disabled": false,
-          "document": "相关事件（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关事件（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）",
           "example": "无",
           "member": "RelevantEvent",
           "name": "RelevantEvents",
@@ -4899,7 +4899,7 @@
         },
         {
           "disabled": false,
-          "document": "相关组织及人物（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关组织及人物（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）",
           "example": "无",
           "member": "RelevantEntity",
           "name": "RelevantEntities",
@@ -4910,7 +4910,7 @@
         },
         {
           "disabled": false,
-          "document": "时间线（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间线（回复中不一定存在，流式协议中，仅在最后一条流式数据中返回，深度模式下返回）",
           "example": "无",
           "member": "Timeline",
           "name": "Timeline",
@@ -4921,7 +4921,7 @@
         },
         {
           "disabled": false,
-          "document": "是否命中搜索深度模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否命中搜索深度模式",
           "example": "无",
           "member": "bool",
           "name": "SupportDeepSearch",
@@ -4932,7 +4932,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索回复大纲（深度模式下返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "搜索回复大纲（深度模式下返回）",
           "example": "无",
           "member": "string",
           "name": "Outline",
@@ -4949,7 +4949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索引文序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "搜索引文序号",
           "example": "无",
           "member": "int64",
           "name": "Index",
@@ -4960,7 +4960,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索引文标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "搜索引文标题",
           "example": "无",
           "member": "string",
           "name": "Title",
@@ -4971,7 +4971,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索引文链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "搜索引文链接",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -5871,7 +5871,7 @@
         },
         {
           "disabled": false,
-          "document": "附件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "附件",
           "example": "[{\"FileID\":\"file-tMjt0CQnvU25GwUDkih4tU4H\"}]",
           "member": "ThreadMessageAttachmentObject",
           "name": "Attachments",
@@ -5938,7 +5938,7 @@
         },
         {
           "disabled": false,
-          "document": "未完成原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未完成原因",
           "example": "{\"Reason\": \"\"}",
           "member": "ThreadMessageInCompleteDetailsObject",
           "name": "InCompleteDetails",
@@ -5948,7 +5948,7 @@
         },
         {
           "disabled": false,
-          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完成时间",
           "example": "1727264847",
           "member": "int64",
           "name": "CompletedAt",
@@ -5958,7 +5958,7 @@
         },
         {
           "disabled": false,
-          "document": "未完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未完成时间",
           "example": "1727264847",
           "member": "int64",
           "name": "InCompleteAt",
@@ -5988,7 +5988,7 @@
         },
         {
           "disabled": false,
-          "document": "助手 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "助手 ID",
           "example": "asst_LhSU47qcQcFEItggpGEx5eh1",
           "member": "string",
           "name": "AssistantID",
@@ -5998,7 +5998,7 @@
         },
         {
           "disabled": false,
-          "document": "运行 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行 ID",
           "example": "run_SR0cPyidY0vBWy7mcYN5loSR",
           "member": "string",
           "name": "RunID",
@@ -6008,7 +6008,7 @@
         },
         {
           "disabled": false,
-          "document": "附件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "附件",
           "example": "[{\"FileID\":\"file-tMjt0CQnvU25GwUDkih4tU4H\"}]",
           "member": "ThreadMessageAttachmentObject",
           "name": "Attachments",
@@ -6024,7 +6024,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件 ID",
           "example": "file-tMjt0CQnvU25GwUDkih4tU4H",
           "member": "string",
           "name": "FileID",
@@ -6085,7 +6085,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标题",
           "example": "无",
           "member": "string",
           "name": "Title",
@@ -6096,7 +6096,7 @@
         },
         {
           "disabled": false,
-          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间",
           "example": "无",
           "member": "string",
           "name": "Datetime",
@@ -6107,7 +6107,7 @@
         },
         {
           "disabled": false,
-          "document": "相关网页链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "相关网页链接",
           "example": "无",
           "member": "string",
           "name": "Url",

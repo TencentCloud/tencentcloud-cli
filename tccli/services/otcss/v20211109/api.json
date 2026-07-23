@@ -244,7 +244,7 @@
         },
         {
           "disabled": false,
-          "document": "恶意域名或IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "恶意域名或IP",
           "example": "无",
           "member": "string",
           "name": "Address",
@@ -254,7 +254,7 @@
         },
         {
           "disabled": false,
-          "document": "恶意IP所属城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "恶意IP所属城市",
           "example": "无",
           "member": "string",
           "name": "City",
@@ -454,7 +454,7 @@
         },
         {
           "disabled": false,
-          "document": "操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作时间",
           "example": "无",
           "member": "string",
           "name": "OperationTime",

@@ -831,7 +831,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名ID",
           "example": "45564",
           "member": "uint64",
           "name": "DomainId",
@@ -841,7 +841,7 @@
         },
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -851,7 +851,7 @@
         },
         {
           "disabled": false,
-          "document": "域名状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名状态",
           "example": "enable",
           "member": "string",
           "name": "DomainStatus",
@@ -861,7 +861,7 @@
         },
         {
           "disabled": false,
-          "document": "解析状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析状态",
           "example": "yes",
           "member": "string",
           "name": "DNSStatus",
@@ -877,7 +877,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录 ID",
           "example": "158",
           "member": "uint64",
           "name": "RecordId",
@@ -887,7 +887,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名(主机记录)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子域名(主机记录)。",
           "example": "www",
           "member": "string",
           "name": "SubDomain",
@@ -897,7 +897,7 @@
         },
         {
           "disabled": false,
-          "document": "记录类型, 详见 DescribeRecordType 接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录类型, 详见 DescribeRecordType 接口",
           "example": "A",
           "member": "string",
           "name": "RecordType",
@@ -907,7 +907,7 @@
         },
         {
           "disabled": false,
-          "document": "解析记录的线路，详见 DescribeRecordLineList 接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析记录的线路，详见 DescribeRecordLineList 接口",
           "example": "百度",
           "member": "string",
           "name": "RecordLine",
@@ -917,7 +917,7 @@
         },
         {
           "disabled": false,
-          "document": "记录值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录值",
           "example": "129.23.32.32",
           "member": "string",
           "name": "Value",
@@ -927,7 +927,7 @@
         },
         {
           "disabled": false,
-          "document": "记录的 TTL 值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录的 TTL 值",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
@@ -937,7 +937,7 @@
         },
         {
           "disabled": false,
-          "document": "记录添加状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录添加状态",
           "example": "waiting",
           "member": "string",
           "name": "Status",
@@ -947,7 +947,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型",
           "example": "plus",
           "member": "string",
           "name": "Operation",
@@ -957,7 +957,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
@@ -977,7 +977,7 @@
         },
         {
           "disabled": false,
-          "document": "记录生效状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录生效状态",
           "example": "1",
           "member": "uint64",
           "name": "Enabled",
@@ -987,7 +987,7 @@
         },
         {
           "disabled": false,
-          "document": "记录的MX权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录的MX权重",
           "example": "12",
           "member": "uint64",
           "name": "MX",
@@ -997,7 +997,7 @@
         },
         {
           "disabled": false,
-          "document": "记录权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录权重",
           "example": "20",
           "member": "uint64",
           "name": "Weight",
@@ -1007,7 +1007,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注信息",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -1129,7 +1129,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重",
           "example": "20",
           "member": "uint64",
           "name": "Weight",
@@ -1169,7 +1169,7 @@
         },
         {
           "disabled": false,
-          "document": "MX优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MX优先级",
           "example": "0",
           "member": "uint64",
           "name": "MX",
@@ -1322,7 +1322,7 @@
         },
         {
           "disabled": false,
-          "document": "值为 1，表示超时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值为 1，表示超时",
           "example": "1",
           "member": "uint64",
           "name": "Timeout",
@@ -1688,7 +1688,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
@@ -1794,7 +1794,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
@@ -2307,7 +2307,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
@@ -2327,7 +2327,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型",
           "example": "plus",
           "member": "string",
           "name": "Operation",
@@ -2413,7 +2413,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型",
           "example": "plus",
           "member": "string",
           "name": "Operation",
@@ -2423,7 +2423,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
@@ -3205,7 +3205,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "error",
           "member": "string",
           "name": "Error",
@@ -3459,7 +3459,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "error",
           "member": "string",
           "name": "Error",
@@ -3845,7 +3845,7 @@
         },
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
@@ -3865,7 +3865,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
@@ -3885,7 +3885,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型",
           "example": "plus",
           "member": "string",
           "name": "Operation",
@@ -3895,7 +3895,7 @@
         },
         {
           "disabled": false,
-          "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名ID",
           "example": "142123",
           "member": "uint64",
           "name": "DomainId",
@@ -6428,7 +6428,7 @@
         },
         {
           "disabled": false,
-          "document": "所属域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属域名",
           "example": "xxyy.com",
           "member": "string",
           "name": "Domain",
@@ -6438,7 +6438,7 @@
         },
         {
           "disabled": false,
-          "document": "回滚进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回滚进度",
           "example": "95",
           "member": "uint64",
           "name": "Progress",
@@ -6448,7 +6448,7 @@
         },
         {
           "disabled": false,
-          "document": "回滚剩余时间（单位：分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回滚剩余时间（单位：分钟）",
           "example": "1",
           "member": "uint64",
           "name": "LeftMinutes",
@@ -6458,7 +6458,7 @@
         },
         {
           "disabled": false,
-          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总记录数",
           "example": "2",
           "member": "uint64",
           "name": "Total",
@@ -6468,7 +6468,7 @@
         },
         {
           "disabled": false,
-          "document": "失败记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败记录数",
           "example": "1",
           "member": "uint64",
           "name": "Failed",
@@ -6478,7 +6478,7 @@
         },
         {
           "disabled": false,
-          "document": "成功记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功记录数",
           "example": "1",
           "member": "uint64",
           "name": "Success",
@@ -6488,7 +6488,7 @@
         },
         {
           "disabled": false,
-          "document": "快照下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照下载地址",
           "example": "https://cos.xx.com/yyy.csv",
           "member": "string",
           "name": "CosUrl",
@@ -6844,7 +6844,7 @@
         },
         {
           "disabled": false,
-          "document": "成功数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功数量",
           "example": "2",
           "member": "uint64",
           "name": "Success",
@@ -6854,7 +6854,7 @@
         },
         {
           "disabled": false,
-          "document": "失败数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败数量",
           "example": "0",
           "member": "uint64",
           "name": "Failed",
@@ -6864,7 +6864,7 @@
         },
         {
           "disabled": false,
-          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数量",
           "example": "2",
           "member": "uint64",
           "name": "Total",
@@ -6874,7 +6874,7 @@
         },
         {
           "disabled": false,
-          "document": "失败详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败详细信息",
           "example": "无",
           "member": "SnapshotRecord",
           "name": "FailedRecordList",
@@ -6884,7 +6884,7 @@
         },
         {
           "disabled": false,
-          "document": "快照的下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的下载地址",
           "example": "http://cos.xx.com/xxx.csv",
           "member": "string",
           "name": "CosUrl",
@@ -7173,7 +7173,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名 UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名 UIN",
           "example": "121212",
           "member": "uint64",
           "name": "Uin",
@@ -7433,7 +7433,7 @@
         },
         {
           "disabled": false,
-          "document": "按小时统计时，为统计的当前时间的小时数(0-23)，例：HourKey为23时，统计周期为22点-23点的解析量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按小时统计时，为统计的当前时间的小时数(0-23)，例：HourKey为23时，统计周期为22点-23点的解析量",
           "example": "0",
           "member": "uint64",
           "name": "HourKey",
@@ -7947,7 +7947,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>VIP套餐有效期开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VIP套餐有效期开始时间</p>",
           "example": "2022-11-28 11:54:57",
           "member": "string",
           "name": "VipStartAt",
@@ -7957,7 +7957,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>VIP套餐有效期结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VIP套餐有效期结束时间</p>",
           "example": "2023-11-28 11:54:57",
           "member": "string",
           "name": "VipEndAt",
@@ -7967,7 +7967,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费</p>",
           "example": "Default",
           "member": "string",
           "name": "VipAutoRenew",
@@ -7977,7 +7977,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>VIP套餐资源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VIP套餐资源ID</p>",
           "example": "43111772",
           "member": "string",
           "name": "VipResourceId",
@@ -8273,7 +8273,7 @@
         },
         {
           "disabled": false,
-          "document": "域名关联的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名关联的标签列表",
           "example": "无",
           "member": "TagItem",
           "name": "TagList",
@@ -8602,7 +8602,7 @@
         },
         {
           "disabled": false,
-          "document": "文件下载链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件下载链接。",
           "example": "https://xxxx.xxx.xx",
           "member": "string",
           "name": "FileUrl",
@@ -8998,7 +8998,7 @@
         },
         {
           "disabled": false,
-          "document": "解析线路 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析线路 ID。",
           "example": "10=0",
           "member": "string",
           "name": "LineId",
@@ -9018,7 +9018,7 @@
         },
         {
           "disabled": false,
-          "document": "当前线路最低套餐等级要求。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前线路最低套餐等级要求。",
           "example": "DP_Free",
           "member": "string",
           "name": "Grade",
@@ -9028,7 +9028,7 @@
         },
         {
           "disabled": false,
-          "document": "当前线路分类下的子线路列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前线路分类下的子线路列表。",
           "example": "无",
           "member": "LineItem",
           "name": "SubGroup",
@@ -9038,7 +9038,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义线路分组内包含的线路。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义线路分组内包含的线路。",
           "example": "[\"电信\",\"安徽电信\",\"北京电信\"]",
           "member": "string",
           "name": "Lines",
@@ -9827,7 +9827,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
@@ -9847,7 +9847,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型",
           "example": "plus",
           "member": "string",
           "name": "Operation",
@@ -10921,7 +10921,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名ID",
           "example": "12",
           "member": "uint64",
           "name": "DomainId",
@@ -10931,7 +10931,7 @@
         },
         {
           "disabled": false,
-          "document": "域名的原始格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名的原始格式",
           "example": "zhaodapian.com",
           "member": "string",
           "name": "Domain",
@@ -11051,7 +11051,7 @@
         },
         {
           "disabled": false,
-          "document": "关联安全防护信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联安全防护信息",
           "example": "无",
           "member": "SecurityInfo",
           "name": "SecurityInfo",
@@ -11061,7 +11061,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐绑定的域名是否为子域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "套餐绑定的域名是否为子域名",
           "example": "true",
           "member": "bool",
           "name": "IsSubDomain",
@@ -11417,7 +11417,7 @@
         },
         {
           "disabled": false,
-          "document": "记录权重值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录权重值。",
           "example": "10",
           "member": "uint64",
           "name": "Weight",
@@ -11583,7 +11583,7 @@
         },
         {
           "disabled": false,
-          "document": "记录权重，用于负载均衡记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录权重，用于负载均衡记录",
           "example": "20",
           "member": "uint64",
           "name": "Weight",
@@ -12290,7 +12290,7 @@
         },
         {
           "disabled": false,
-          "document": "MX优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MX优先级",
           "example": "0",
           "member": "string",
           "name": "MX",
@@ -12301,7 +12301,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重",
           "example": "20",
           "member": "string",
           "name": "Weight",
@@ -12312,7 +12312,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因",
           "example": "线路不存在",
           "member": "string",
           "name": "Reason",
@@ -12847,7 +12847,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "WhoisContactAddress",
           "name": "Admin",
@@ -12857,7 +12857,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "WhoisContactAddress",
           "name": "Billing",
@@ -12867,7 +12867,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "WhoisContactAddress",
           "name": "Registrant",
@@ -12877,7 +12877,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "WhoisContactAddress",
           "name": "Tech",
@@ -12893,7 +12893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市",
           "example": "Changsha",
           "member": "string",
           "name": "City",
@@ -12903,7 +12903,7 @@
         },
         {
           "disabled": false,
-          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国家",
           "example": "CN",
           "member": "string",
           "name": "Country",
@@ -12913,7 +12913,7 @@
         },
         {
           "disabled": false,
-          "document": "电子邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电子邮箱",
           "example": "testuser@dnspod.cn",
           "member": "string",
           "name": "Email",
@@ -12923,7 +12923,7 @@
         },
         {
           "disabled": false,
-          "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "传真",
           "example": "0434-439752",
           "member": "string",
           "name": "Fax",
@@ -12933,7 +12933,7 @@
         },
         {
           "disabled": false,
-          "document": "传真分机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "传真分机号",
           "example": "324",
           "member": "string",
           "name": "FaxExt",
@@ -12943,7 +12943,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "REDACTED FOR PRIVACY",
           "member": "string",
           "name": "Handle",
@@ -12953,7 +12953,7 @@
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称",
           "example": "Jerry",
           "member": "string",
           "name": "Name",
@@ -12963,7 +12963,7 @@
         },
         {
           "disabled": false,
-          "document": "组织机构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构",
           "example": "测试的组织",
           "member": "string",
           "name": "Organization",
@@ -12973,7 +12973,7 @@
         },
         {
           "disabled": false,
-          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话",
           "example": "189XXXX435",
           "member": "string",
           "name": "Phone",
@@ -12983,7 +12983,7 @@
         },
         {
           "disabled": false,
-          "document": "邮编\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮编",
           "example": "4253006",
           "member": "string",
           "name": "PostalCode",
@@ -12993,7 +12993,7 @@
         },
         {
           "disabled": false,
-          "document": "省份/州\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "省份/州",
           "example": "Hu Nan",
           "member": "string",
           "name": "State",
@@ -13003,7 +13003,7 @@
         },
         {
           "disabled": false,
-          "document": "街道地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "街道地址",
           "example": "Zhong Jian Zhi Hui Gu",
           "member": "string",
           "name": "Street",
@@ -13019,7 +13019,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "联系信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联系信息",
           "example": "无",
           "member": "WhoisContact",
           "name": "Contacts",
@@ -13029,7 +13029,7 @@
         },
         {
           "disabled": false,
-          "document": "域名注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名注册时间",
           "example": "2021-11-07 14:42:55",
           "member": "string",
           "name": "CreationDate",
@@ -13039,7 +13039,7 @@
         },
         {
           "disabled": false,
-          "document": "域名到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名到期时间",
           "example": "2023-11-07 14:42:55",
           "member": "string",
           "name": "ExpirationDate",
@@ -13049,7 +13049,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是在腾讯云注册的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是在腾讯云注册的域名",
           "example": "true",
           "member": "bool",
           "name": "IsQcloud",
@@ -13059,7 +13059,7 @@
         },
         {
           "disabled": false,
-          "document": "是否当前操作账号注册的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否当前操作账号注册的域名",
           "example": "true",
           "member": "bool",
           "name": "IsQcloudOwner",
@@ -13069,7 +13069,7 @@
         },
         {
           "disabled": false,
-          "document": "域名配置的NS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名配置的NS",
           "example": "[\"ns3.dnsv5.com\",\"ns4.dnsv5.com\"]",
           "member": "string",
           "name": "NameServers",
@@ -13079,7 +13079,7 @@
         },
         {
           "disabled": false,
-          "document": "Whois原始信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Whois原始信息",
           "example": "Domain Name: testclb.asia\\nRegistry Domain ID: 496a7f7f724a4353b2b2fa5ffe5f9c7f-DONUTS\\nRegistrar WHOIS Serv",
           "member": "string",
           "name": "Raw",
@@ -13089,7 +13089,7 @@
         },
         {
           "disabled": false,
-          "document": "域名注册商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名注册商",
           "example": "[\"DNSPod, Inc.\"]",
           "member": "string",
           "name": "Registrar",
@@ -13099,7 +13099,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态",
           "example": "[\"ok https://icann.org/epp#ok\"]",
           "member": "string",
           "name": "Status",
@@ -13109,7 +13109,7 @@
         },
         {
           "disabled": false,
-          "document": "更新日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新日期",
           "example": "2022-11-17 14:42:55",
           "member": "string",
           "name": "UpdatedDate",
@@ -13119,7 +13119,7 @@
         },
         {
           "disabled": false,
-          "document": "dnssec\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "dnssec",
           "example": "unsigned",
           "member": "string",
           "name": "Dnssec",

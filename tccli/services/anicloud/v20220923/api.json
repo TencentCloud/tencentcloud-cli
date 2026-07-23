@@ -100,7 +100,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照四层接入的产品需要传入产品标签,例如:p_cvm\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按照四层接入的产品需要传入产品标签,例如:p_cvm",
           "example": "无",
           "member": "string",
           "name": "ProductCode",
@@ -110,7 +110,7 @@
         },
         {
           "disabled": false,
-          "document": "四层定义的子产品标签,例如:sp_cvm_s1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "四层定义的子产品标签,例如:sp_cvm_s1",
           "example": "无",
           "member": "string",
           "name": "SubProductCode",
@@ -120,7 +120,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -130,7 +130,7 @@
         },
         {
           "disabled": false,
-          "document": "资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源数量",
           "example": "无",
           "member": "int64",
           "name": "GoodsNum",
@@ -161,7 +161,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源信息",
           "example": "无",
           "member": "Resource",
           "name": "Resource",
@@ -216,7 +216,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源信息列表",
           "example": "无",
           "member": "Resource",
           "name": "Resources",
@@ -226,7 +226,7 @@
         },
         {
           "disabled": false,
-          "document": "总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总量",
           "example": "无",
           "member": "int64",
           "name": "Total",
@@ -248,7 +248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源拥有者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源拥有者",
           "example": "无",
           "member": "string",
           "name": "UIN",
@@ -258,7 +258,7 @@
         },
         {
           "disabled": false,
-          "document": "云平台应用ID，一般来说与uin存在一一对应的关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云平台应用ID，一般来说与uin存在一一对应的关系",
           "example": "无",
           "member": "int64",
           "name": "AppId",
@@ -268,7 +268,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，会展示到通知内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源id，会展示到通知内容",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -278,7 +278,7 @@
         },
         {
           "disabled": false,
-          "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域ID",
           "example": "无",
           "member": "int64",
           "name": "ZoneId",
@@ -288,7 +288,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态，1正常，2隔离，3销毁(如果资源已经删除或销毁，不需要返回)，4冻结/封禁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源状态，1正常，2隔离，3销毁(如果资源已经删除或销毁，不需要返回)，4冻结/封禁",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -298,7 +298,7 @@
         },
         {
           "disabled": false,
-          "document": "资源隔离时间，未隔离传\"0000-00-00 00:00:00\"，资源由隔离变回正常传\"0000-00-00 00:00:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源隔离时间，未隔离传\"0000-00-00 00:00:00\"，资源由隔离变回正常传\"0000-00-00 00:00:00\"",
           "example": "无",
           "member": "string",
           "name": "IsolatedTimestamp",
@@ -308,7 +308,7 @@
         },
         {
           "disabled": false,
-          "document": "资源创建时间，用于更新新购订单的资源开始时间，按时长退费时的资源结束时间取自订单的资源结束时间，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源创建时间，用于更新新购订单的资源开始时间，按时长退费时的资源结束时间取自订单的资源结束时间，",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
@@ -318,7 +318,7 @@
         },
         {
           "disabled": false,
-          "document": "0后付费 1预付费 2预留实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0后付费 1预付费 2预留实例",
           "example": "无",
           "member": "int64",
           "name": "PayMode",
@@ -328,7 +328,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称，账单中资源别名，生命周期通知中的资源名称，不返回则通知中展示为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称，账单中资源别名，生命周期通知中的资源名称，不返回则通知中展示为空",
           "example": "无",
           "member": "string",
           "name": "Alias",
@@ -338,7 +338,7 @@
         },
         {
           "disabled": false,
-          "document": "购买详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买详情",
           "example": "无",
           "member": "GoodsDetail",
           "name": "GoodsDetail",
@@ -348,7 +348,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费必填 ，自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费必填 ，自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0",
           "example": "无",
           "member": "int64",
           "name": "RenewFlag",
@@ -358,7 +358,7 @@
         },
         {
           "disabled": false,
-          "document": "（仅预付费）资源到期时间，无到期概念传\"0000-00-00 00:00:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "（仅预付费）资源到期时间，无到期概念传\"0000-00-00 00:00:00\"",
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
@@ -368,7 +368,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域ID",
           "example": "无",
           "member": "int64",
           "name": "Region",
@@ -378,7 +378,7 @@
         },
         {
           "disabled": false,
-          "document": "sdk appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "sdk appid",
           "example": "无",
           "member": "string",
           "name": "SdkAppId",
@@ -388,7 +388,7 @@
         },
         {
           "disabled": false,
-          "document": "app名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "app名称",
           "example": "无",
           "member": "string",
           "name": "AppName",
@@ -398,7 +398,7 @@
         },
         {
           "disabled": false,
-          "document": "app的package名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "app的package名称",
           "example": "无",
           "member": "string",
           "name": "PackageName",
@@ -408,7 +408,7 @@
         },
         {
           "disabled": false,
-          "document": "资源链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源链接",
           "example": "无",
           "member": "string",
           "name": "URL",
@@ -418,7 +418,7 @@
         },
         {
           "disabled": false,
-          "document": "app的entry\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "app的entry",
           "example": "无",
           "member": "string",
           "name": "Entry",
@@ -428,7 +428,7 @@
         },
         {
           "disabled": false,
-          "document": "0：sdk 1：素材\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0：sdk 1：素材",
           "example": "无",
           "member": "int64",
           "name": "InstType",
@@ -438,7 +438,7 @@
         },
         {
           "disabled": false,
-          "document": "license的秘钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license的秘钥",
           "example": "无",
           "member": "string",
           "name": "Key",

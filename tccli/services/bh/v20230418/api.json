@@ -8550,7 +8550,7 @@
         },
         {
           "disabled": false,
-          "document": "请求LDAP服务的堡垒机实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求LDAP服务的堡垒机实例",
           "example": "bh-saas-xxxxx",
           "member": "string",
           "name": "ResourceId",
@@ -8561,7 +8561,7 @@
         },
         {
           "disabled": false,
-          "document": "网络域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络域Id",
           "example": "net-xxxxxxxx",
           "member": "string",
           "name": "DomainId",

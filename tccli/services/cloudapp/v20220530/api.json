@@ -396,7 +396,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>授权激活时间，如从未激活则返回 null。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权激活时间，如从未激活则返回 null。</p>",
           "example": "2024-06-30T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "ActivationDate",
@@ -406,7 +406,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>授权过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权过期时间</p>",
           "example": "2025-06-30T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "ExpirationDate",
@@ -617,7 +617,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖参数的展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "售卖参数的展示名称",
           "example": "用户规模",
           "member": "string",
           "name": "ParamKeyName",
@@ -650,7 +650,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖参数值，当ParamType=Quant时，该值有可能为Null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "售卖参数值，当ParamType=Quant时，该值有可能为Null",
           "example": "100",
           "member": "string",
           "name": "ParamValue",
@@ -661,7 +661,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖参数值的展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "售卖参数值的展示名称",
           "example": "100人",
           "member": "string",
           "name": "ParamValueName",
@@ -672,7 +672,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖参数的类型，目前支持枚举类Enum/数量类Quant\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "售卖参数的类型，目前支持枚举类Enum/数量类Quant",
           "example": "Enum",
           "member": "string",
           "name": "ParamType",

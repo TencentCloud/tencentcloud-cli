@@ -1228,7 +1228,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次响应生成的时延结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>本次响应生成的时延结果</p>",
           "example": "无",
           "member": "AICallLatencyMetrics",
           "name": "LatencyMetrics",
@@ -1646,7 +1646,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间戳",
           "example": "1146",
           "member": "int64",
           "name": "NotAfter",
@@ -5369,7 +5369,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束时间戳",
           "example": "1729905750",
           "member": "int64",
           "name": "NotAfter",
@@ -6393,7 +6393,7 @@
         },
         {
           "disabled": false,
-          "document": "服务记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务记录列表",
           "example": "[{\"Id\":\"12933\",\"Duration\":100,\"EndStatus\":1,\"Nickname\":\"bar\",\"Type\":2,\"StaffId\":\"foo@tencent.com\",\"Timestamp\":1632814604,\"SessionId\":\"87fa1d7a-4194-4f2a-83dc-d7c293411720\",\"SkillGroupId\":\"1001\",\"SkillGroupName\":\"bar\",\"Satisfaction\":{\"Id\":1,\"Label\":\"满意\"}}]",
           "member": "IMCdrInfo",
           "name": "IMCdrList",
@@ -9109,7 +9109,7 @@
         },
         {
           "disabled": false,
-          "document": "满意度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "满意度",
           "example": "{\"Id\":1,\"Label\":\"满意\"}",
           "member": "IMSatisfaction",
           "name": "Satisfaction",
@@ -12457,7 +12457,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次上线时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近一次上线时间戳",
           "example": "1679300000",
           "member": "int64",
           "name": "LastOnlineTimestamp",
@@ -12467,7 +12467,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次状态时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近一次状态时间戳",
           "example": "1679300000",
           "member": "int64",
           "name": "LastStatusTimestamp",
@@ -12809,7 +12809,7 @@
         },
         {
           "disabled": true,
-          "document": "客户自定义数据（User-to-User Interface）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户自定义数据（User-to-User Interface）",
           "example": "whatever",
           "member": "string",
           "name": "Uui",

@@ -627,7 +627,7 @@
         },
         {
           "disabled": false,
-          "document": "集群活动结果详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群活动结果详情。",
           "example": "Activity success.\t",
           "member": "string",
           "name": "ResultDetail",
@@ -1690,7 +1690,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点机型。",
           "example": "S2.SMALL2",
           "member": "string",
           "name": "InstanceType",
@@ -1700,7 +1700,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容实例所在的位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩容实例所在的位置。",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -1710,7 +1710,7 @@
         },
         {
           "disabled": false,
-          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -1720,7 +1720,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -1730,7 +1730,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络相关信息配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络相关信息配置。",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
@@ -1740,7 +1740,7 @@
         },
         {
           "disabled": false,
-          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。",
           "example": "img-3la7wgnt",
           "member": "string",
           "name": "ImageId",
@@ -1750,7 +1750,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽相关信息设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网带宽相关信息设置。",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -1760,7 +1760,7 @@
         },
         {
           "disabled": false,
-          "document": "节点系统盘配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点系统盘配置信息。",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -1770,7 +1770,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数据盘配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点数据盘配置信息。",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -2120,7 +2120,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点活动所在的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点活动所在的实例ID。",
           "example": "ins-1zll2of0\t",
           "member": "string",
           "name": "NodeInstanceId",
@@ -2140,7 +2140,7 @@
         },
         {
           "disabled": false,
-          "document": "节点活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点活动状态码。",
           "example": "ActivitySuccess",
           "member": "string",
           "name": "NodeActivityStatusCode",
@@ -2150,7 +2150,7 @@
         },
         {
           "disabled": false,
-          "document": "节点活动状态原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点活动状态原因。",
           "example": "Activity success.\t",
           "member": "string",
           "name": "NodeActivityStatusReason",
@@ -2166,7 +2166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点实例ID。",
           "example": "ins-f5ew7k5w",
           "member": "string",
           "name": "InstanceId",
@@ -2176,7 +2176,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所在可用区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点所在可用区信息。",
           "example": "ap-chongqing-1",
           "member": "string",
           "name": "Zone",
@@ -2186,7 +2186,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。",
           "example": "RUNNING",
           "member": "string",
           "name": "NodeState",
@@ -2196,7 +2196,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像ID。",
           "example": "img-l8og963d",
           "member": "string",
           "name": "ImageId",
@@ -2206,7 +2206,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所属队列名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点所属队列名称。",
           "example": "compute",
           "member": "string",
           "name": "QueueName",
@@ -2216,7 +2216,7 @@
         },
         {
           "disabled": false,
-          "document": "节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。",
           "example": "Compute",
           "member": "string",
           "name": "NodeRole",
@@ -2226,7 +2226,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。",
           "example": "STATIC",
           "member": "string",
           "name": "NodeType",

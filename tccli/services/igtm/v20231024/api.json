@@ -264,7 +264,7 @@
         },
         {
           "disabled": false,
-          "document": "权重，流量策略为WEIGHT时，必填；范围1-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重，流量策略为WEIGHT时，必填；范围1-100",
           "example": "5",
           "member": "uint64",
           "name": "Weight",
@@ -373,7 +373,7 @@
         },
         {
           "disabled": false,
-          "document": "监控器id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控器id",
           "example": "1",
           "member": "uint64",
           "name": "MonitorId",
@@ -428,7 +428,7 @@
         },
         {
           "disabled": false,
-          "document": "实例相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例相关信息",
           "example": "[{\"InstanceId\":\"gtm-dsdd123xdo\",\"InstanceName\":\"测试实例\"}]",
           "member": "InstanceInfo",
           "name": "InstanceInfo",
@@ -439,7 +439,7 @@
         },
         {
           "disabled": false,
-          "document": "地址池地址信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址池地址信息",
           "example": "[{\"AddressId\":32,\"Addr\":\"2.2.2.2\",\"Location\":\"\",\"Status\":\"UNKNOWN\",\"IsEnable\":\"ENABLED\",\"Weight\":null,\"CreatedOn\":\"2025-07-09 21:03:16\",\"UpdatedOn\":\"2025-07-09 21:03:16\"}]",
           "member": "Address",
           "name": "AddressSet",
@@ -522,7 +522,7 @@
         },
         {
           "disabled": false,
-          "document": "监控器id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控器id",
           "example": "1",
           "member": "uint64",
           "name": "MonitorId",
@@ -2221,7 +2221,7 @@
         },
         {
           "disabled": false,
-          "document": "探测任务类型：100系统设定；200计费；300管理系统；110D监控迁移的免费任务；120容灾切换任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "探测任务类型：100系统设定；200计费；300管理系统；110D监控迁移的免费任务；120容灾切换任务",
           "example": "200",
           "member": "uint64",
           "name": "Group",
@@ -2281,7 +2281,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的套餐类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的套餐类型",
           "example": "[\"FREE\",\"STANDARD\",\"ULTIMATE\"]",
           "member": "string",
           "name": "PackageSet",
@@ -2930,7 +2930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例套餐资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例套餐资源id",
           "example": "ins-aaaa",
           "member": "string",
           "name": "ResourceId",
@@ -3086,7 +3086,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>集合中的地址池id与权重，数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集合中的地址池id与权重，数组</p>",
           "example": "无",
           "member": "MainPoolWeight",
           "name": "AddressPools",
@@ -3147,7 +3147,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重",
           "example": "50",
           "member": "uint64",
           "name": "Weight",
@@ -4104,7 +4104,7 @@
         },
         {
           "disabled": false,
-          "document": "地址来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址来源",
           "example": "测试地址池2",
           "member": "Source",
           "name": "Source",
@@ -4137,7 +4137,7 @@
         },
         {
           "disabled": false,
-          "document": "生效的主力池id，null则为未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效的主力池id，null则为未知",
           "example": "1",
           "member": "int64",
           "name": "ActivateMainPoolId",
@@ -4148,7 +4148,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生效地址池所在级数，为0则代表兜底生效，null则为未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效地址池所在级数，为0则代表兜底生效，null则为未知",
           "example": "1",
           "member": "int64",
           "name": "ActivateLevel",
@@ -4286,7 +4286,7 @@
         },
         {
           "disabled": false,
-          "document": "线路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "线路",
           "example": "\t[{\"Name\": \"默认\", \"GroupLineId\": 1}]",
           "member": "Source",
           "name": "Source",
@@ -4297,7 +4297,7 @@
         },
         {
           "disabled": false,
-          "document": "主力地址池集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主力地址池集合",
           "example": "[{\"MainAddressPoolId\":5,\"AddressPools\":[{\"PoolId\":314,\"Weight\":null}],\"MinSurviveNum\":1,\"TrafficStrategy\":\"WEIGHT\"}]",
           "member": "MainAddressPool",
           "name": "MainAddressPoolSet",
@@ -4308,7 +4308,7 @@
         },
         {
           "disabled": false,
-          "document": "兜底地址池id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "兜底地址池id",
           "example": "[{\"AddressPools\":[{\"PoolId\":1}]}]",
           "member": "MainAddressPool",
           "name": "FallbackAddressPoolSet",
@@ -4330,7 +4330,7 @@
         },
         {
           "disabled": false,
-          "document": "生效主力地址池id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效主力地址池id",
           "example": "1",
           "member": "uint64",
           "name": "ActivateMainPoolId",

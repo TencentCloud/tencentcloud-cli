@@ -2219,7 +2219,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "失败的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败的节点ID",
           "example": "[\"ins-4z4055z4\",\"ins-jz4005a6\"]",
           "member": "string",
           "name": "FailedInstanceIds",
@@ -2229,7 +2229,7 @@
         },
         {
           "disabled": false,
-          "document": "成功的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功的节点ID",
           "example": "[\"ins-4z4055z4\",\"ins-jz4005a6\"]",
           "member": "string",
           "name": "SuccInstanceIds",
@@ -2239,7 +2239,7 @@
         },
         {
           "disabled": false,
-          "document": "超时未返回出来节点的ID(可能失败，也可能成功)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "超时未返回出来节点的ID(可能失败，也可能成功)",
           "example": "[\"ins-4z4055z4\",\"ins-jz4005a6\"]",
           "member": "string",
           "name": "TimeoutInstanceIds",
@@ -2249,7 +2249,7 @@
         },
         {
           "disabled": false,
-          "document": "失败的节点的失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败的节点的失败原因",
           "example": "[\"instance id not found\"]",
           "member": "string",
           "name": "FailedReasons",
@@ -2436,7 +2436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Helm Chart 版本，一般无需指定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Helm Chart 版本，一般无需指定",
           "example": "1.0.0",
           "member": "string",
           "name": "ChartVersion",
@@ -2447,7 +2447,7 @@
         },
         {
           "disabled": false,
-          "document": "外部 PostgreSQL 内网地址；配置后跳过内置 PostgreSQL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部 PostgreSQL 内网地址；配置后跳过内置 PostgreSQL",
           "example": "10.0.1.100",
           "member": "string",
           "name": "Host",
@@ -2458,7 +2458,7 @@
         },
         {
           "disabled": false,
-          "document": "外部 PostgreSQL 密码，配置 Host 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部 PostgreSQL 密码，配置 Host 时必填",
           "example": "dbpass",
           "member": "string",
           "name": "Password",
@@ -2469,7 +2469,7 @@
         },
         {
           "disabled": false,
-          "document": "外部 PostgreSQL 端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部 PostgreSQL 端口",
           "example": "5432",
           "member": "int64",
           "name": "Port",
@@ -2480,7 +2480,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL 模式，取值：disable / require / verify-full\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SSL 模式，取值：disable / require / verify-full",
           "example": "require",
           "member": "string",
           "name": "SSLMode",
@@ -2491,7 +2491,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent 实例访问域名，不填则不创建域名路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Agent 实例访问域名，不填则不创建域名路由",
           "example": "agentplugin.example.com",
           "member": "string",
           "name": "ServiceDomain",
@@ -2502,7 +2502,7 @@
         },
         {
           "disabled": false,
-          "document": "外部 PostgreSQL 用户名，配置 Host 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部 PostgreSQL 用户名，配置 Host 时必填",
           "example": "dbuser",
           "member": "string",
           "name": "Username",
@@ -2670,7 +2670,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "kube-apiserver可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kube-apiserver可用的自定义参数",
           "example": "无",
           "member": "Flag",
           "name": "KubeAPIServer",
@@ -2680,7 +2680,7 @@
         },
         {
           "disabled": false,
-          "document": "kube-controller-manager可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kube-controller-manager可用的自定义参数",
           "example": "无",
           "member": "Flag",
           "name": "KubeControllerManager",
@@ -2690,7 +2690,7 @@
         },
         {
           "disabled": false,
-          "document": "kube-scheduler可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kube-scheduler可用的自定义参数",
           "example": "无",
           "member": "Flag",
           "name": "KubeScheduler",
@@ -2700,7 +2700,7 @@
         },
         {
           "disabled": false,
-          "document": "kubelet可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kubelet可用的自定义参数",
           "example": "无",
           "member": "Flag",
           "name": "Kubelet",
@@ -2943,7 +2943,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "启用安全能力项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启用安全能力项列表",
           "example": "[\"NET_ADMIN\", \"SYS_TIME\"]",
           "member": "string",
           "name": "Add",
@@ -2954,7 +2954,7 @@
         },
         {
           "disabled": false,
-          "document": "禁用安全能力向列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "禁用安全能力向列表",
           "example": "[\"NET_ADMIN\"]",
           "member": "string",
           "name": "Drop",
@@ -3041,7 +3041,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否存在CIDR冲突。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否存在CIDR冲突。",
           "example": "true",
           "member": "bool",
           "name": "IsConflict",
@@ -3051,7 +3051,7 @@
         },
         {
           "disabled": false,
-          "document": "CIDR冲突的类型(\"CIDR_CONFLICT_WITH_OTHER_CLUSTER\" 同VPC其他集群CIDR存在冲突\n\"CIDR_CONFLICT_WITH_VPC_CIDR\" 与VPC的CIDR存在冲突\n\"CIDR_CONFLICT_WITH_VPC_GLOBAL_ROUTE\" 与同VPC的全局路由存在冲突)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CIDR冲突的类型(\"CIDR_CONFLICT_WITH_OTHER_CLUSTER\" 同VPC其他集群CIDR存在冲突\n\"CIDR_CONFLICT_WITH_VPC_CIDR\" 与VPC的CIDR存在冲突\n\"CIDR_CONFLICT_WITH_VPC_GLOBAL_ROUTE\" 与同VPC的全局路由存在冲突)。",
           "example": "CIDR_CONFLICT_WITH_OTHER_CLUSTER",
           "member": "string",
           "name": "ConflictType",
@@ -3061,7 +3061,7 @@
         },
         {
           "disabled": false,
-          "document": "CIDR冲突描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CIDR冲突描述信息。",
           "example": "[cidr 192.168.0.0/20 is conflict with cluster id: cls-xxxxxxxx",
           "member": "string",
           "name": "ConflictMsg",
@@ -3248,7 +3248,7 @@
         },
         {
           "disabled": false,
-          "document": "不可升级原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不可升级原因",
           "example": "无",
           "member": "UnavailableReason",
           "name": "UnavailableVersionReason",
@@ -3388,7 +3388,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签描述列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签描述列表。</p>",
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
@@ -3558,7 +3558,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群分类：tke=标准TKE集群，agent=Agent集群</p><p>默认值：tke</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群分类：tke=标准TKE集群，agent=Agent集群</p><p>默认值：tke</p>",
           "example": "tke",
           "member": "string",
           "name": "ClusterCategory",
@@ -3886,7 +3886,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启缩容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启缩容",
           "example": "true",
           "member": "bool",
           "name": "IsScaleDownEnabled",
@@ -3908,7 +3908,7 @@
         },
         {
           "disabled": false,
-          "document": "最大并发缩容数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大并发缩容数",
           "example": "1",
           "member": "int64",
           "name": "MaxEmptyBulkDelete",
@@ -3919,7 +3919,7 @@
         },
         {
           "disabled": false,
-          "document": "集群扩容后多少分钟开始判断缩容（默认为10分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群扩容后多少分钟开始判断缩容（默认为10分钟）",
           "example": "10m",
           "member": "int64",
           "name": "ScaleDownDelay",
@@ -3930,7 +3930,7 @@
         },
         {
           "disabled": false,
-          "document": "节点连续空闲多少分钟后被缩容（默认为 10分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点连续空闲多少分钟后被缩容（默认为 10分钟）",
           "example": "10m",
           "member": "int64",
           "name": "ScaleDownUnneededTime",
@@ -3941,7 +3941,7 @@
         },
         {
           "disabled": false,
-          "document": "节点资源使用量低于多少(百分比)时认为空闲(默认: 50(百分比))\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点资源使用量低于多少(百分比)时认为空闲(默认: 50(百分比))",
           "example": "50",
           "member": "int64",
           "name": "ScaleDownUtilizationThreshold",
@@ -3952,7 +3952,7 @@
         },
         {
           "disabled": false,
-          "document": "含有本地存储Pod的节点是否不缩容(默认： true)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "含有本地存储Pod的节点是否不缩容(默认： true)",
           "example": "true",
           "member": "bool",
           "name": "SkipNodesWithLocalStorage",
@@ -3963,7 +3963,7 @@
         },
         {
           "disabled": false,
-          "document": "含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： true)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： true)",
           "example": "true",
           "member": "bool",
           "name": "SkipNodesWithSystemPods",
@@ -3974,7 +3974,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源使用量时是否默认忽略DaemonSet的实例(默认值: False，不忽略)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计算资源使用量时是否默认忽略DaemonSet的实例(默认值: False，不忽略)",
           "example": "False",
           "member": "bool",
           "name": "IgnoreDaemonSetsUtilization",
@@ -3985,7 +3985,7 @@
         },
         {
           "disabled": false,
-          "document": "CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA做健康性判断的个数，默认3，即超过OkTotalUnreadyCount个数后，CA会进行健康性判断。",
           "example": "3",
           "member": "int64",
           "name": "OkTotalUnreadyCount",
@@ -3996,7 +3996,7 @@
         },
         {
           "disabled": false,
-          "document": "未就绪节点的最大百分比，此后CA会停止操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未就绪节点的最大百分比，此后CA会停止操作",
           "example": "20",
           "member": "int64",
           "name": "MaxTotalUnreadyPercentage",
@@ -4007,7 +4007,7 @@
         },
         {
           "disabled": false,
-          "document": "表示未准备就绪的节点在有资格进行缩减之前应该停留多少分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表示未准备就绪的节点在有资格进行缩减之前应该停留多少分钟",
           "example": "10m",
           "member": "int64",
           "name": "ScaleDownUnreadyTime",
@@ -4018,7 +4018,7 @@
         },
         {
           "disabled": false,
-          "document": "CA删除未在Kubernetes中注册的节点之前等待的分钟数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA删除未在Kubernetes中注册的节点之前等待的分钟数",
           "example": "10",
           "member": "int64",
           "name": "UnregisteredNodeRemovalTime",
@@ -4343,7 +4343,7 @@
         },
         {
           "disabled": false,
-          "document": "集群CIDR，网络模式HostNetwork 时无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群CIDR，网络模式HostNetwork 时无需填写",
           "example": "172.22.0.0/16",
           "member": "string",
           "name": "ClusterCIDR",
@@ -4371,7 +4371,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "etcd自定义参数，只支持独立集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "etcd自定义参数，只支持独立集群",
           "example": "[\"node-data-dir=/data\"]",
           "member": "string",
           "name": "Etcd",
@@ -4382,7 +4382,7 @@
         },
         {
           "disabled": false,
-          "document": "kube-apiserver自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"max-requests-inflight=500\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kube-apiserver自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"max-requests-inflight=500\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]",
           "example": "[\"max-requests-inflight=200\"]",
           "member": "string",
           "name": "KubeAPIServer",
@@ -4393,7 +4393,7 @@
         },
         {
           "disabled": false,
-          "document": "kube-controller-manager自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kube-controller-manager自定义参数",
           "example": "[\"kube-api-burst=500\"]",
           "member": "string",
           "name": "KubeControllerManager",
@@ -4404,7 +4404,7 @@
         },
         {
           "disabled": false,
-          "document": "kube-scheduler自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kube-scheduler自定义参数",
           "example": "[\"kube-api-burst=500\"]",
           "member": "string",
           "name": "KubeScheduler",
@@ -4431,7 +4431,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型",
           "example": "无",
           "member": "string",
           "name": "TaskType",
@@ -4471,7 +4471,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "EndTime",
@@ -4481,7 +4481,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行时间",
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "ExecuteTime",
@@ -4511,7 +4511,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检建议",
           "example": "无",
           "member": "string",
           "name": "Suggest",
@@ -4521,7 +4521,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检子项结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检子项结果",
           "example": "无",
           "member": "ClusterInspectionTaskGroup",
           "name": "Groups",
@@ -4531,7 +4531,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检子项结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检子项结果",
           "example": "无",
           "member": "ClusterInspectionTaskGroup",
           "name": "TaskGroups",
@@ -4715,7 +4715,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检评分",
           "example": "83",
           "member": "float",
           "name": "Score",
@@ -4735,7 +4735,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检结果描述",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -4745,7 +4745,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检子项失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检子项失败原因",
           "example": "无",
           "member": "string",
           "name": "Error",
@@ -4755,7 +4755,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检结果子项提示详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检结果子项提示详情",
           "example": "无",
           "member": "ClusterInspectionTaskTip",
           "name": "Tips",
@@ -4765,7 +4765,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检结果异常资源计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检结果异常资源计数",
           "example": "无",
           "member": "ClusterInspectionTaskObjectCounter",
           "name": "Counter",
@@ -4785,7 +4785,7 @@
         },
         {
           "disabled": false,
-          "document": "子项开始执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子项开始执行时间",
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "StartAt",
@@ -4795,7 +4795,7 @@
         },
         {
           "disabled": false,
-          "document": "子项结束执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子项结束执行时间",
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "EndAt",
@@ -4811,7 +4811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "提示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提示名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -4821,7 +4821,7 @@
         },
         {
           "disabled": false,
-          "document": "提示类型, link, text\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提示类型, link, text",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -4831,7 +4831,7 @@
         },
         {
           "disabled": false,
-          "document": "提示分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提示分类",
           "example": "无",
           "member": "string",
           "name": "Category",
@@ -4841,7 +4841,7 @@
         },
         {
           "disabled": false,
-          "document": "提示内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提示内容",
           "example": "无",
           "member": "string",
           "name": "Value",
@@ -4868,7 +4868,7 @@
         },
         {
           "disabled": false,
-          "document": "内网访问LB关联的子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网访问LB关联的子网Id",
           "example": "subnet-l6gtb5p0",
           "member": "string",
           "name": "SubnetId",
@@ -5177,7 +5177,7 @@
         },
         {
           "disabled": false,
-          "document": "集群关联的容器子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群关联的容器子网",
           "example": "[\"subnet-aa\",\"subnet-bb\"]",
           "member": "string",
           "name": "Subnets",
@@ -5401,7 +5401,7 @@
         },
         {
           "disabled": false,
-          "document": "获取地域数据错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "获取地域数据错误",
           "example": "error",
           "member": "string",
           "name": "Error",
@@ -5723,7 +5723,7 @@
         },
         {
           "disabled": false,
-          "document": "Gpu限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Gpu限制",
           "example": "16",
           "member": "uint64",
           "name": "GpuLimit",
@@ -5734,7 +5734,7 @@
         },
         {
           "disabled": false,
-          "document": "存活探针\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存活探针",
           "example": "无",
           "member": "LivenessOrReadinessProbe",
           "name": "LivenessProbe",
@@ -5756,7 +5756,7 @@
         },
         {
           "disabled": false,
-          "document": "就绪探针\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "就绪探针",
           "example": "无",
           "member": "LivenessOrReadinessProbe",
           "name": "ReadinessProbe",
@@ -5767,7 +5767,7 @@
         },
         {
           "disabled": false,
-          "document": "重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重启次数",
           "example": "1",
           "member": "uint64",
           "name": "RestartCount",
@@ -5778,7 +5778,7 @@
         },
         {
           "disabled": false,
-          "document": "容器的安全上下文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的安全上下文",
           "example": "无",
           "member": "SecurityContext",
           "name": "SecurityContext",
@@ -5789,7 +5789,7 @@
         },
         {
           "disabled": false,
-          "document": "数据卷挂载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据卷挂载信息",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMounts",
@@ -5817,7 +5817,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器运行退出码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器运行退出码",
           "example": "0",
           "member": "int64",
           "name": "ExitCode",
@@ -5828,7 +5828,7 @@
         },
         {
           "disabled": false,
-          "document": "容器运行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器运行结束时间",
           "example": "2021-01-22T06:56:09Z",
           "member": "string",
           "name": "FinishTime",
@@ -5839,7 +5839,7 @@
         },
         {
           "disabled": false,
-          "document": "容器状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器状态信息",
           "example": " todo",
           "member": "string",
           "name": "Message",
@@ -5850,7 +5850,7 @@
         },
         {
           "disabled": false,
-          "document": "容器状态 Reason\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器状态 Reason",
           "example": "todo ",
           "member": "string",
           "name": "Reason",
@@ -5861,7 +5861,7 @@
         },
         {
           "disabled": false,
-          "document": "容器重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器重启次数",
           "example": "1",
           "member": "int64",
           "name": "RestartCount",
@@ -5872,7 +5872,7 @@
         },
         {
           "disabled": false,
-          "document": "容器运行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器运行开始时间",
           "example": "2021-01-22T06:56:09Z",
           "member": "string",
           "name": "StartTime",
@@ -8362,7 +8362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全局告警通知渠道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "全局告警通知渠道ID",
           "example": "global",
           "member": "string",
           "name": "Id",
@@ -8850,7 +8850,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项名称",
           "example": "tke",
           "member": "string",
           "name": "Name",
@@ -8861,7 +8861,7 @@
         },
         {
           "disabled": false,
-          "document": "项值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项值",
           "example": "value",
           "member": "string",
           "name": "Value",
@@ -9172,7 +9172,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除成功的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除成功的实例ID列表",
           "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "SuccInstanceIds",
@@ -9182,7 +9182,7 @@
         },
         {
           "disabled": false,
-          "document": "删除失败的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除失败的实例ID列表",
           "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "FailedInstanceIds",
@@ -9192,7 +9192,7 @@
         },
         {
           "disabled": false,
-          "document": "未匹配到的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未匹配到的实例ID列表",
           "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "NotFoundInstanceIds",
@@ -10475,7 +10475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可升级的集群版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可升级的集群版本号",
           "example": "[\"1.22.5\"]",
           "member": "string",
           "name": "Versions",
@@ -10579,7 +10579,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详细备份仓库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细备份仓库信息",
           "example": "无",
           "member": "BackupStorageLocation",
           "name": "BackupStorageLocationSet",
@@ -11152,7 +11152,7 @@
         },
         {
           "disabled": false,
-          "document": "集群APIServer的外网访问ACL列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群APIServer的外网访问ACL列表",
           "example": "[\"10.0.0.0\\/24\"]",
           "member": "string",
           "name": "ClusterExternalACL",
@@ -11266,7 +11266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计集群类型数量数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计集群类型数量数组",
           "example": "string",
           "member": "ClusterStatistics",
           "name": "ClusterStatisticsSet",
@@ -11312,7 +11312,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果统计",
           "example": "无",
           "member": "KubeJarvisStateStatistic",
           "name": "Statistics",
@@ -11321,7 +11321,7 @@
         },
         {
           "disabled": false,
-          "document": "诊断结果概览\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果概览",
           "example": "无",
           "member": "KubeJarvisStateDiagnosticOverview",
           "name": "Diagnostics",
@@ -11330,7 +11330,7 @@
         },
         {
           "disabled": false,
-          "document": "集群诊断结果概览\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群诊断结果概览",
           "example": "无",
           "member": "KubeJarvisStateInspectionOverview",
           "name": "InspectionOverview",
@@ -12352,7 +12352,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>高性能模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高性能模式</p>",
           "example": "false",
           "member": "bool",
           "name": "HighPerformance",
@@ -12459,7 +12459,7 @@
         },
         {
           "disabled": false,
-          "document": "集群访问策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群访问策略组",
           "example": "[\"192.168.0.1\"]",
           "member": "string",
           "name": "SecurityPolicy",
@@ -12479,7 +12479,7 @@
         },
         {
           "disabled": false,
-          "document": "集群JnsGw的访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群JnsGw的访问地址",
           "example": "\"127.0.0.1:8080\"",
           "member": "string",
           "name": "JnsGwEndpoint",
@@ -13196,7 +13196,7 @@
         },
         {
           "disabled": false,
-          "document": "可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用的自定义参数",
           "example": "无",
           "member": "EdgeAvailableExtraArgs",
           "name": "AvailableExtraArgs",
@@ -13865,7 +13865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点池总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -13875,7 +13875,7 @@
         },
         {
           "disabled": false,
-          "document": "注册节点池列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册节点池列表",
           "example": "无",
           "member": "ExternalNodePool",
           "name": "NodePoolSet",
@@ -13930,7 +13930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点列表",
           "example": "无",
           "member": "ExternalNode",
           "name": "Nodes",
@@ -13940,7 +13940,7 @@
         },
         {
           "disabled": false,
-          "document": "节点总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -14170,7 +14170,7 @@
         },
         {
           "disabled": false,
-          "document": "开启注册节点能力的进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启注册节点能力的进度",
           "example": "无",
           "member": "Step",
           "name": "Progress",
@@ -14352,7 +14352,7 @@
         },
         {
           "disabled": false,
-          "document": "子网信息，已安装eniipamd组件才会有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网信息，已安装eniipamd组件才会有值",
           "example": "[\"subnet-imgoatdg\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -14529,7 +14529,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "巡检任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检任务状态",
           "example": "waiting",
           "member": "string",
           "name": "Status",
@@ -14539,7 +14539,7 @@
         },
         {
           "disabled": false,
-          "document": "巡检任务结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检任务结果",
           "example": "无",
           "member": "ClusterInspectionTask",
           "name": "Data",
@@ -14816,7 +14816,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群日志开关集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群日志开关集合",
           "example": "无",
           "member": "Switch",
           "name": "SwitchSet",
@@ -14909,7 +14909,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态",
           "example": "Success",
           "member": "string",
           "name": "Status",
@@ -14919,7 +14919,7 @@
         },
         {
           "disabled": false,
-          "document": "具体进展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "具体进展",
           "example": "无",
           "member": "Step",
           "name": "Progress",
@@ -15343,7 +15343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关联该集群的实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联该集群的实例列表",
           "example": "",
           "member": "string",
           "name": "Instances",
@@ -15573,7 +15573,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警详情",
           "example": "无",
           "member": "PrometheusAlertPolicyItem",
           "name": "AlertRules",
@@ -15873,7 +15873,7 @@
         },
         {
           "disabled": false,
-          "document": "ServiceMonitors列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ServiceMonitors列表以及对应targets信息",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
@@ -15883,7 +15883,7 @@
         },
         {
           "disabled": false,
-          "document": "PodMonitors列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "PodMonitors列表以及对应targets信息",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
@@ -15893,7 +15893,7 @@
         },
         {
           "disabled": false,
-          "document": "RawJobs列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "RawJobs列表以及对应targets信息",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
@@ -15930,7 +15930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全局告警通知渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "全局告警通知渠道",
           "example": "无",
           "member": "PrometheusNotificationItem",
           "name": "Notification",
@@ -15967,7 +15967,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例初始化状态，取值：\nuninitialized 未初始化 \ninitializing 初始化中\nrunning 初始化完成，运行中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例初始化状态，取值：\nuninitialized 未初始化 \ninitializing 初始化中\nrunning 初始化完成，运行中",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -15977,7 +15977,7 @@
         },
         {
           "disabled": false,
-          "document": "初始化任务步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "初始化任务步骤",
           "example": "无",
           "member": "TaskStepInfo",
           "name": "Steps",
@@ -15987,7 +15987,7 @@
         },
         {
           "disabled": false,
-          "document": "实例eks集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例eks集群ID",
           "example": "无",
           "member": "string",
           "name": "EksClusterId",
@@ -16084,7 +16084,7 @@
         },
         {
           "disabled": false,
-          "document": "实例中grafana相关的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例中grafana相关的信息",
           "example": "无",
           "member": "PrometheusGrafanaInfo",
           "name": "Grafana",
@@ -16094,7 +16094,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义alertmanager\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义alertmanager",
           "example": "http://1.1.1.1",
           "member": "string",
           "name": "AlertManagerUrl",
@@ -16159,7 +16159,7 @@
         },
         {
           "disabled": false,
-          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例总数",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -16224,7 +16224,7 @@
         },
         {
           "disabled": false,
-          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例总数",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -16464,7 +16464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步目标详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同步目标详情",
           "example": "无",
           "member": "PrometheusTemplateSyncTarget",
           "name": "Targets",
@@ -17089,7 +17089,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群的接入地址信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群的接入地址信息",
           "example": "无",
           "member": "IPAddress",
           "name": "Addresses",
@@ -17430,7 +17430,7 @@
         },
         {
           "disabled": false,
-          "document": "edgectl脚本版本，默认拉取最新版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "edgectl脚本版本，默认拉取最新版本",
           "example": "v_20220725193138",
           "member": "string",
           "name": "ScriptVersion",
@@ -17633,7 +17633,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户在当前地域下所有集群中的权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户在当前地域下所有集群中的权限列表",
           "example": "无",
           "member": "PermissionItem",
           "name": "Permissions",
@@ -18748,7 +18748,7 @@
         },
         {
           "disabled": false,
-          "document": "集群绑定的云标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群绑定的云标签",
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
@@ -18765,7 +18765,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群自定义参数",
           "example": "EdgeClusterExtraArgs",
           "member": "EdgeClusterExtraArgs",
           "name": "ExtraArgs",
@@ -18910,7 +18910,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP线路类型。默认值：BGP。\n已开通静态单线IP白名单的用户，可选值：\nCMCC：中国移动\nCTCC：中国电信\nCUCC：中国联通\n注意：仅部分地域支持静态单线IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EIP线路类型。默认值：BGP。\n已开通静态单线IP白名单的用户，可选值：\nCMCC：中国移动\nCTCC：中国电信\nCUCC：中国联通\n注意：仅部分地域支持静态单线IP。",
           "example": "BGP",
           "member": "string",
           "name": "InternetServiceProvider",
@@ -18921,7 +18921,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP出带宽上限，单位：Mbps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EIP出带宽上限，单位：Mbps。",
           "example": "200",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -19004,7 +19004,7 @@
         },
         {
           "disabled": false,
-          "document": "容器实例绑定的Eip地址，注意可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器实例绑定的Eip地址，注意可能为空",
           "example": "172.16.17.3",
           "member": "string",
           "name": "EipAddress",
@@ -19070,7 +19070,7 @@
         },
         {
           "disabled": false,
-          "document": "初始化容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "初始化容器列表",
           "example": "无",
           "member": "Container",
           "name": "InitContainers",
@@ -19092,7 +19092,7 @@
         },
         {
           "disabled": false,
-          "document": "容器状态是否持久化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器状态是否持久化",
           "example": "false",
           "member": "bool",
           "name": "PersistStatus",
@@ -19125,7 +19125,7 @@
         },
         {
           "disabled": false,
-          "document": "容器组运行的安全上下文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器组运行的安全上下文",
           "example": "无",
           "member": "SecurityContext",
           "name": "SecurityContext",
@@ -19233,7 +19233,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Cbs Volume\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cbs Volume",
           "example": "无",
           "member": "CbsVolume",
           "name": "CbsVolumes",
@@ -19244,7 +19244,7 @@
         },
         {
           "disabled": false,
-          "document": "Nfs Volume\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Nfs Volume",
           "example": "无",
           "member": "NfsVolume",
           "name": "NfsVolumes",
@@ -19393,7 +19393,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签描述列表。",
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
@@ -20117,7 +20117,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器内检测的命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器内检测的命令",
           "example": "[\"ls\"]",
           "member": "string",
           "name": "Commands",
@@ -20184,7 +20184,7 @@
         },
         {
           "disabled": false,
-          "document": "实例主网卡的内网IP列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例主网卡的内网IP列表。",
           "example": "172.16.17.32",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -20194,7 +20194,7 @@
         },
         {
           "disabled": false,
-          "document": "实例主网卡的公网IP列表。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例主网卡的公网IP列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.10.10.10",
           "member": "string",
           "name": "PublicIpAddresses",
@@ -20274,7 +20274,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2408:6368:6e6b:6e6b:6e6b:6e6b:6e6b:6e6b",
           "member": "string",
           "name": "IPv6Addresses",
@@ -20565,7 +20565,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>注册节点所属节点池</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>注册节点所属节点池</p>",
           "example": "np-0nwzqj10",
           "member": "string",
           "name": "NodePoolId",
@@ -20605,7 +20605,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "2021-04-29T06:30:44Z",
           "member": "string",
           "name": "CreatedTime",
@@ -20615,7 +20615,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>异常原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>异常原因</p>",
           "example": "kubelet has sufficient memory available",
           "member": "string",
           "name": "Reason",
@@ -20625,7 +20625,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否封锁。true表示已封锁，false表示未封锁</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否封锁。true表示已封锁，false表示未封锁</p>",
           "example": "true",
           "member": "bool",
           "name": "Unschedulable",
@@ -20701,7 +20701,7 @@
         },
         {
           "disabled": false,
-          "document": "注册节点标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册节点标签",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -20711,7 +20711,7 @@
         },
         {
           "disabled": false,
-          "document": "注册节点污点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册节点污点",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -20721,7 +20721,7 @@
         },
         {
           "disabled": false,
-          "document": "注册节点高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册节点高级设置",
           "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
@@ -20731,7 +20731,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除保护开关",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -21110,7 +21110,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配的镜像缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配的镜像缓存",
           "example": "无",
           "member": "ImageCache",
           "name": "ImageCache",
@@ -21390,7 +21390,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "HttpGet检测的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HttpGet检测的路径",
           "example": "/tke",
           "member": "string",
           "name": "Path",
@@ -21401,7 +21401,7 @@
         },
         {
           "disabled": false,
-          "document": "HttpGet检测的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HttpGet检测的端口号",
           "example": "80",
           "member": "int64",
           "name": "Port",
@@ -21412,7 +21412,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP or HTTPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HTTP or HTTPS",
           "example": "HTTP",
           "member": "string",
           "name": "Scheme",
@@ -21991,7 +21991,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点内网IP",
           "example": "192.168.127.12",
           "member": "string",
           "name": "LanIP",
@@ -22027,7 +22027,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限</p>",
           "example": "16",
           "member": "int64",
           "name": "DesiredPodNumber",
@@ -22038,7 +22038,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>GPU驱动相关参数,相关的GPU参数获取:https://cloud.tencent.com/document/api/213/15715</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GPU驱动相关参数,相关的GPU参数获取:https://cloud.tencent.com/document/api/213/15715</p>",
           "example": "无",
           "member": "GPUArgs",
           "name": "GPUArgs",
@@ -22049,7 +22049,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效</p>",
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
           "name": "PreStartUserScript",
@@ -22060,7 +22060,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>节点污点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点污点</p>",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -22071,7 +22071,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。<br>注意：多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。<br>注意：多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。</p>",
           "example": "/tmp",
           "member": "string",
           "name": "MountTarget",
@@ -22082,7 +22082,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>dockerd --graph 指定值。若未指定此参数，将使用内置默认路径 /var/lib/docker 作为存储根目录。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>dockerd --graph 指定值。若未指定此参数，将使用内置默认路径 /var/lib/docker 作为存储根目录。</p>",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "DockerGraphPath",
@@ -22093,7 +22093,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度</p>",
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
           "name": "UserScript",
@@ -22115,7 +22115,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>节点Label数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点Label数组</p>",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -22126,7 +22126,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在</p>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -22215,7 +22215,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "kubelet自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"root-dir=/var/lib/kubelet\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kubelet自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"root-dir=/var/lib/kubelet\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]",
           "example": "[\"root-dir=/var/lib/kubelet\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]",
           "member": "string",
           "name": "Kubelet",
@@ -22910,7 +22910,7 @@
         },
         {
           "disabled": false,
-          "document": "诊断对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断对象信息",
           "example": "无",
           "member": "KubeJarvisStateResultObjInfo",
           "name": "ObjInfo",
@@ -22940,7 +22940,7 @@
         },
         {
           "disabled": false,
-          "document": "诊断建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断建议",
           "example": "scale out pod rs",
           "member": "string",
           "name": "Proposal",
@@ -23063,7 +23063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "巡检结果历史列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检结果历史列表",
           "example": "无",
           "member": "KubeJarvisStateInspectionResultsItem",
           "name": "InspectionResultsItems",
@@ -23118,7 +23118,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群诊断结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群诊断结果列表",
           "example": "无",
           "member": "KubeJarvisStateInspectionResult",
           "name": "InspectionResults",
@@ -23187,7 +23187,7 @@
         },
         {
           "disabled": false,
-          "document": "容器内检测命令参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器内检测命令参数",
           "example": "无",
           "member": "Exec",
           "name": "Exec",
@@ -23209,7 +23209,7 @@
         },
         {
           "disabled": false,
-          "document": "TcpSocket检测的端口参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TcpSocket检测的端口参数",
           "example": "无",
           "member": "TcpSocket",
           "name": "TcpSocket",
@@ -23237,7 +23237,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。",
           "example": "[\"skey-3glfot13\"]",
           "member": "string",
           "name": "KeyIds",
@@ -24397,7 +24397,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>集群标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -25616,7 +25616,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行时描述",
           "example": "{\"RuntimeType\":\"\",\"RuntimeVersion\":\"\"}",
           "member": "RuntimeConfig",
           "name": "RuntimeConfig",
@@ -25676,7 +25676,7 @@
         },
         {
           "disabled": false,
-          "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源标签",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -25696,7 +25696,7 @@
         },
         {
           "disabled": false,
-          "document": "节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点配置",
           "example": "{\"MountTarget\":\"\",\"DataDiskPartition\":null,\"DockerGraphPath\":\"\",",
           "member": "InstanceExtraArgs",
           "name": "ExtraArgs",
@@ -25706,7 +25706,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU驱动相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GPU驱动相关参数",
           "example": "无",
           "member": "GPUArgs",
           "name": "GPUArgs",
@@ -25726,7 +25726,7 @@
         },
         {
           "disabled": false,
-          "document": "多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -25855,7 +25855,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建身份提供商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建身份提供商",
           "example": "false",
           "member": "bool",
           "name": "AutoCreateOIDCConfig",
@@ -25866,7 +25866,7 @@
         },
         {
           "disabled": false,
-          "document": "创建身份提供商的ClientId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建身份提供商的ClientId",
           "example": "[\"auto-create\",\"auto-create\"]",
           "member": "string",
           "name": "AutoCreateClientId",
@@ -25877,7 +25877,7 @@
         },
         {
           "disabled": false,
-          "document": "创建PodIdentityWebhook组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建PodIdentityWebhook组件",
           "example": "false",
           "member": "bool",
           "name": "AutoInstallPodIdentityWebhookAddon",
@@ -26069,7 +26069,7 @@
         },
         {
           "disabled": false,
-          "document": "排除的命名空间名称列表（该字段暂未支持）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "排除的命名空间名称列表（该字段暂未支持）",
           "example": "[\"kube-system\",\"gatekeeper-system\"]",
           "member": "string",
           "name": "ExcludeNsNames",
@@ -26079,7 +26079,7 @@
         },
         {
           "disabled": false,
-          "document": "排除的命名空间标签列表（该字段暂未支持）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "排除的命名空间标签列表（该字段暂未支持）",
           "example": "[\"key1=value1\",\"key2==value2\"]",
           "member": "string",
           "name": "ExcludeNsLabels",
@@ -26109,7 +26109,7 @@
         },
         {
           "disabled": false,
-          "document": "策略关联的实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略关联的实例列表",
           "example": "无",
           "member": "OpenConstraintInfo",
           "name": "OpenConstraintInfoList",
@@ -26335,7 +26335,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间。当 RoleType 为 namespace 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间。当 RoleType 为 namespace 时必填",
           "example": "production",
           "member": "string",
           "name": "Namespace",
@@ -26729,7 +26729,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Minimum consecutive failures for the probe to be considered failed after having succeeded.Defaults to 3. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Minimum consecutive failures for the probe to be considered failed after having succeeded.Defaults to 3. Minimum value is 1.",
           "example": "60",
           "member": "int64",
           "name": "FailureThreshold",
@@ -26740,7 +26740,7 @@
         },
         {
           "disabled": false,
-          "document": "Number of seconds after the container has started before liveness probes are initiated.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Number of seconds after the container has started before liveness probes are initiated.",
           "example": "60",
           "member": "int64",
           "name": "InitialDelaySeconds",
@@ -26751,7 +26751,7 @@
         },
         {
           "disabled": false,
-          "document": "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
           "example": "60",
           "member": "int64",
           "name": "PeriodSeconds",
@@ -26762,7 +26762,7 @@
         },
         {
           "disabled": false,
-          "document": "Minimum consecutive successes for the probe to be considered successful after having failed.Defaults to 1. Must be 1 for liveness. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Minimum consecutive successes for the probe to be considered successful after having failed.Defaults to 1. Must be 1 for liveness. Minimum value is 1.",
           "example": "60",
           "member": "int64",
           "name": "SuccessThreshold",
@@ -26773,7 +26773,7 @@
         },
         {
           "disabled": false,
-          "document": "Number of seconds after which the probe times out.\nDefaults to 1 second. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Number of seconds after which the probe times out.\nDefaults to 1 second. Minimum value is 1.",
           "example": "60",
           "member": "int64",
           "name": "TimeoutSeconds",
@@ -26872,7 +26872,7 @@
         },
         {
           "disabled": false,
-          "document": "额外labels\n本集群的所有指标都会带上这几个label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外labels\n本集群的所有指标都会带上这几个label",
           "example": "Name=cluster_name,Value=x",
           "member": "Label",
           "name": "ExternalLabels",
@@ -26882,7 +26882,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群所在地域",
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
@@ -26892,7 +26892,7 @@
         },
         {
           "disabled": false,
-          "document": "集群所在VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群所在VPC ID",
           "example": "vpc-l6gtb5p0",
           "member": "string",
           "name": "VpcId",
@@ -26902,7 +26902,7 @@
         },
         {
           "disabled": false,
-          "document": "记录关联等操作的失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录关联等操作的失败信息",
           "example": "failed to work",
           "member": "string",
           "name": "FailedReason",
@@ -26951,7 +26951,7 @@
         },
         {
           "disabled": false,
-          "document": "告警状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警状态",
           "example": "firing",
           "member": "string",
           "name": "State",
@@ -26962,7 +26962,7 @@
         },
         {
           "disabled": false,
-          "document": "触发的规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "触发的规则名称",
           "example": "tke",
           "member": "string",
           "name": "RuleItem",
@@ -26973,7 +26973,7 @@
         },
         {
           "disabled": false,
-          "document": "告警渠道的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警渠道的id",
           "example": "topic-l6gtb5p0",
           "member": "string",
           "name": "TopicId",
@@ -26984,7 +26984,7 @@
         },
         {
           "disabled": false,
-          "document": "告警渠道的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警渠道的名称",
           "example": "prom-l6gtb5p0-default-topic",
           "member": "string",
           "name": "TopicName",
@@ -27012,7 +27012,7 @@
         },
         {
           "disabled": false,
-          "document": "alertmanager部署所在集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "alertmanager部署所在集群类型",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -27023,7 +27023,7 @@
         },
         {
           "disabled": false,
-          "document": "alertmanager部署所在集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "alertmanager部署所在集群ID",
           "example": "cls-l6gtb5p0",
           "member": "string",
           "name": "ClusterId",
@@ -27062,7 +27062,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警策略 id",
           "example": "alert-id",
           "member": "string",
           "name": "Id",
@@ -27073,7 +27073,7 @@
         },
         {
           "disabled": false,
-          "document": "如果该告警来自模板下发，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果该告警来自模板下发，则TemplateId为模板id",
           "example": "temp-tke",
           "member": "string",
           "name": "TemplateId",
@@ -27084,7 +27084,7 @@
         },
         {
           "disabled": false,
-          "document": "告警渠道，模板中使用可能返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警渠道，模板中使用可能返回null",
           "example": "无",
           "member": "PrometheusNotificationItem",
           "name": "Notification",
@@ -27095,7 +27095,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后修改时间",
           "example": "2024-06-01T00:00:00Z",
           "member": "string",
           "name": "UpdatedAt",
@@ -27106,7 +27106,7 @@
         },
         {
           "disabled": false,
-          "document": "如果告警策略来源于用户集群CRD资源定义，则ClusterId为所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果告警策略来源于用户集群CRD资源定义，则ClusterId为所属集群ID",
           "example": "cls-l6gtb5p0",
           "member": "string",
           "name": "ClusterId",
@@ -27178,7 +27178,7 @@
         },
         {
           "disabled": false,
-          "document": "该条规则的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该条规则的描述信息",
           "example": "example-describe",
           "member": "string",
           "name": "Describe",
@@ -27189,7 +27189,7 @@
         },
         {
           "disabled": false,
-          "document": "参考prometheus rule中的annotations\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参考prometheus rule中的annotations",
           "example": "Name=a,Value=b",
           "member": "Label",
           "name": "Annotations",
@@ -27200,7 +27200,7 @@
         },
         {
           "disabled": false,
-          "document": "告警规则状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警规则状态",
           "example": "1",
           "member": "int64",
           "name": "RuleState",
@@ -27272,7 +27272,7 @@
         },
         {
           "disabled": false,
-          "document": "如果该告警来至模板下发，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果该告警来至模板下发，则TemplateId为模板id",
           "example": "temp-e55paxnt",
           "member": "string",
           "name": "TemplateId",
@@ -27283,7 +27283,7 @@
         },
         {
           "disabled": false,
-          "document": "计算周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计算周期",
           "example": "30s",
           "member": "string",
           "name": "Interval",
@@ -27436,7 +27436,7 @@
         },
         {
           "disabled": false,
-          "document": "用于出参，如果该配置来至模板，则为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于出参，如果该配置来至模板，则为模板id",
           "example": "temp-id",
           "member": "string",
           "name": "TemplateId",
@@ -27569,7 +27569,7 @@
         },
         {
           "disabled": false,
-          "document": "grafana默认地址，如果开启外网访问得为域名，否则为内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "grafana默认地址，如果开启外网访问得为域名，否则为内网地址",
           "example": "http://1.1.1.1",
           "member": "string",
           "name": "GrafanaURL",
@@ -27579,7 +27579,7 @@
         },
         {
           "disabled": false,
-          "document": "关联集群总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联集群总数",
           "example": "1",
           "member": "uint64",
           "name": "BoundTotal",
@@ -27589,7 +27589,7 @@
         },
         {
           "disabled": false,
-          "document": "运行正常的集群数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行正常的集群数",
           "example": "1",
           "member": "uint64",
           "name": "BoundNormal",
@@ -27655,7 +27655,7 @@
         },
         {
           "disabled": false,
-          "document": "计费状态（1:正常；2:过期; 3:销毁; 4:分配中; 5:分配失败）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费状态（1:正常；2:过期; 3:销毁; 4:分配中; 5:分配失败）",
           "example": "1",
           "member": "int64",
           "name": "ChargeStatus",
@@ -27675,7 +27675,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 面板 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Grafana 面板 URL",
           "example": "https://prom-l6gtb5p0.grafana.xxx.prom.tencent-cloud.com",
           "member": "string",
           "name": "GrafanaURL",
@@ -27695,7 +27695,7 @@
         },
         {
           "disabled": false,
-          "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规格名称",
           "example": "基础1",
           "member": "string",
           "name": "SpecName",
@@ -27705,7 +27705,7 @@
         },
         {
           "disabled": false,
-          "document": "存储周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储周期",
           "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
@@ -27715,7 +27715,7 @@
         },
         {
           "disabled": false,
-          "document": "购买的实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买的实例过期时间",
           "example": "2021-12-14T17:16:12+08:00",
           "member": "string",
           "name": "ExpireTime",
@@ -27725,7 +27725,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记(0:不自动续费；1:开启自动续费；2:禁止自动续费；-1:无效)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标记(0:不自动续费；1:开启自动续费；2:禁止自动续费；-1:无效)",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -27851,7 +27851,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。\n分别代表：短信、邮件、电话、微信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。\n分别代表：短信、邮件、电话、微信",
           "example": "SMS",
           "member": "string",
           "name": "NotifyWay",
@@ -27862,7 +27862,7 @@
         },
         {
           "disabled": false,
-          "document": "告警接收组（用户组）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警接收组（用户组）",
           "example": "1",
           "member": "uint64",
           "name": "ReceiverGroups",
@@ -27873,7 +27873,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警顺序。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警顺序。\n注：NotifyWay选择CALL，采用该参数。",
           "example": "1",
           "member": "uint64",
           "name": "PhoneNotifyOrder",
@@ -27884,7 +27884,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警次数。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警次数。\n注：NotifyWay选择CALL，采用该参数。",
           "example": "1",
           "member": "int64",
           "name": "PhoneCircleTimes",
@@ -27895,7 +27895,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警轮内间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警轮内间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。",
           "example": "60",
           "member": "int64",
           "name": "PhoneInnerInterval",
@@ -27906,7 +27906,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警轮外间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警轮外间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。",
           "example": "60",
           "member": "int64",
           "name": "PhoneCircleInterval",
@@ -27917,7 +27917,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警触达通知\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警触达通知\n注：NotifyWay选择CALL，采用该参数。",
           "example": "true",
           "member": "bool",
           "name": "PhoneArriveNotice",
@@ -27928,7 +27928,7 @@
         },
         {
           "disabled": false,
-          "document": "通道类型，默认为amp，支持以下\namp\nwebhook\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道类型，默认为amp，支持以下\namp\nwebhook",
           "example": "amp",
           "member": "string",
           "name": "Type",
@@ -27939,7 +27939,7 @@
         },
         {
           "disabled": false,
-          "document": "如果Type为webhook, 则该字段为必填项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果Type为webhook, 则该字段为必填项",
           "example": "tke-webhook",
           "member": "string",
           "name": "WebHook",
@@ -27978,7 +27978,7 @@
         },
         {
           "disabled": false,
-          "document": "如果Type为webhook, 则该字段为必填项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果Type为webhook, 则该字段为必填项",
           "example": "tke-webhook",
           "member": "string",
           "name": "WebHook",
@@ -27989,7 +27989,7 @@
         },
         {
           "disabled": false,
-          "document": "如果Type为alertmanager, 则该字段为必填项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果Type为alertmanager, 则该字段为必填项",
           "example": "无",
           "member": "PrometheusAlertManagerConfig",
           "name": "AlertManager",
@@ -28033,7 +28033,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。",
           "example": "SMS",
           "member": "string",
           "name": "NotifyWay",
@@ -28044,7 +28044,7 @@
         },
         {
           "disabled": false,
-          "document": "告警接收组（用户组）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警接收组（用户组）",
           "example": "tke",
           "member": "string",
           "name": "ReceiverGroups",
@@ -28055,7 +28055,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警顺序。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警顺序。\n注：NotifyWay选择CALL，采用该参数。",
           "example": "1",
           "member": "uint64",
           "name": "PhoneNotifyOrder",
@@ -28066,7 +28066,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警次数。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警次数。\n注：NotifyWay选择CALL，采用该参数。",
           "example": "1",
           "member": "int64",
           "name": "PhoneCircleTimes",
@@ -28077,7 +28077,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警轮内间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警轮内间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。",
           "example": "60",
           "member": "int64",
           "name": "PhoneInnerInterval",
@@ -28088,7 +28088,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警轮外间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警轮外间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。",
           "example": "60",
           "member": "int64",
           "name": "PhoneCircleInterval",
@@ -28099,7 +28099,7 @@
         },
         {
           "disabled": false,
-          "document": "电话告警触达通知\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话告警触达通知\n注：NotifyWay选择CALL，采用该参数。",
           "example": "false",
           "member": "bool",
           "name": "PhoneArriveNotice",
@@ -28146,7 +28146,7 @@
         },
         {
           "disabled": false,
-          "document": "如果该聚合规则来至模板，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果该聚合规则来至模板，则TemplateId为模板id",
           "example": "yaml",
           "member": "string",
           "name": "Content",
@@ -28156,7 +28156,7 @@
         },
         {
           "disabled": false,
-          "document": "该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID",
           "example": "cls-l6gtb5p0",
           "member": "string",
           "name": "ClusterId",
@@ -28260,7 +28260,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板描述",
           "example": "tke",
           "member": "string",
           "name": "Describe",
@@ -28271,7 +28271,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为instance时有效，\n模板中的聚合规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RecordRules",
@@ -28282,7 +28282,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
@@ -28293,7 +28293,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
@@ -28304,7 +28304,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
@@ -28315,7 +28315,7 @@
         },
         {
           "disabled": false,
-          "document": "模板的ID, 用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板的ID, 用于出参",
           "example": "temp-tke",
           "member": "string",
           "name": "TemplateId",
@@ -28326,7 +28326,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近更新时间，用于出参",
           "example": "2024-06-01T00:00:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -28337,7 +28337,7 @@
         },
         {
           "disabled": false,
-          "document": "当前版本，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前版本，用于出参",
           "example": "1.0.0",
           "member": "string",
           "name": "Version",
@@ -28348,7 +28348,7 @@
         },
         {
           "disabled": false,
-          "document": "是否系统提供的默认模板，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否系统提供的默认模板，用于出参",
           "example": "false",
           "member": "bool",
           "name": "IsDefault",
@@ -28359,7 +28359,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为instance时有效，\n模板中的告警配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为instance时有效，\n模板中的告警配置列表",
           "example": "无",
           "member": "PrometheusAlertPolicyItem",
           "name": "AlertDetailRules",
@@ -28370,7 +28370,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联实例数目",
           "example": "5",
           "member": "int64",
           "name": "TargetsTotal",
@@ -28398,7 +28398,7 @@
         },
         {
           "disabled": false,
-          "document": "修改描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改描述",
           "example": "tke",
           "member": "string",
           "name": "Describe",
@@ -28409,7 +28409,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
@@ -28420,7 +28420,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
@@ -28431,7 +28431,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
@@ -28442,7 +28442,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为instance时有效，\n模板中的聚合规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RecordRules",
@@ -28453,7 +28453,7 @@
         },
         {
           "disabled": false,
-          "document": "修改内容，只有当模板类型是Alert时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改内容，只有当模板类型是Alert时生效",
           "example": "无",
           "member": "PrometheusAlertPolicyItem",
           "name": "AlertDetailRules",
@@ -28492,7 +28492,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板描述",
           "example": "tke",
           "member": "string",
           "name": "Describe",
@@ -28503,7 +28503,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为instance时有效，\n模板中的告警配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为instance时有效，\n模板中的告警配置列表",
           "example": "无",
           "member": "PrometheusAlertRule",
           "name": "AlertRules",
@@ -28514,7 +28514,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为instance时有效，\n模板中的聚合规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RecordRules",
@@ -28525,7 +28525,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
@@ -28536,7 +28536,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
@@ -28547,7 +28547,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
@@ -28558,7 +28558,7 @@
         },
         {
           "disabled": false,
-          "document": "模板的ID, 用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板的ID, 用于出参",
           "example": "temp-1",
           "member": "string",
           "name": "TemplateId",
@@ -28569,7 +28569,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近更新时间，用于出参",
           "example": "2024-06-01T00:00:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -28580,7 +28580,7 @@
         },
         {
           "disabled": false,
-          "document": "当前版本，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前版本，用于出参",
           "example": "1.0.0",
           "member": "string",
           "name": "Version",
@@ -28591,7 +28591,7 @@
         },
         {
           "disabled": false,
-          "document": "是否系统提供的默认模板，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否系统提供的默认模板，用于出参",
           "example": "true",
           "member": "bool",
           "name": "IsDefault",
@@ -28602,7 +28602,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为instance时有效，\n模板中的告警配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为instance时有效，\n模板中的告警配置列表",
           "example": "无",
           "member": "PrometheusAlertRuleDetail",
           "name": "AlertDetailRules",
@@ -28630,7 +28630,7 @@
         },
         {
           "disabled": false,
-          "document": "修改描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改描述",
           "example": "tke",
           "member": "string",
           "name": "Describe",
@@ -28641,7 +28641,7 @@
         },
         {
           "disabled": false,
-          "document": "修改内容，只有当模板类型是Alert时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改内容，只有当模板类型是Alert时生效",
           "example": "无",
           "member": "PrometheusAlertRule",
           "name": "AlertRules",
@@ -28652,7 +28652,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为instance时有效，\n模板中的聚合规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RecordRules",
@@ -28663,7 +28663,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
@@ -28674,7 +28674,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
@@ -28685,7 +28685,7 @@
         },
         {
           "disabled": false,
-          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
@@ -28696,7 +28696,7 @@
         },
         {
           "disabled": false,
-          "document": "修改内容，只有当模板类型是Alert时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改内容，只有当模板类型是Alert时生效",
           "example": "无",
           "member": "PrometheusAlertRuleDetail",
           "name": "AlertDetailRules",
@@ -28735,7 +28735,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id，只有当采集模板的Level为cluster的时候需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群id，只有当采集模板的Level为cluster的时候需要",
           "example": "cls-l6gtb5p0",
           "member": "string",
           "name": "ClusterId",
@@ -28746,7 +28746,7 @@
         },
         {
           "disabled": false,
-          "document": "最后一次同步时间， 用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一次同步时间， 用于出参",
           "example": "2024-06-01T00:00:00Z",
           "member": "string",
           "name": "SyncTime",
@@ -28757,7 +28757,7 @@
         },
         {
           "disabled": false,
-          "document": "当前使用的模板版本，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前使用的模板版本，用于出参",
           "example": "1.0.0",
           "member": "string",
           "name": "Version",
@@ -28768,7 +28768,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型，只有当采集模板的Level为cluster的时候需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群类型，只有当采集模板的Level为cluster的时候需要",
           "example": "cluster",
           "member": "string",
           "name": "ClusterType",
@@ -28779,7 +28779,7 @@
         },
         {
           "disabled": false,
-          "document": "用于出参，实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于出参，实例名称",
           "example": "tke",
           "member": "string",
           "name": "InstanceName",
@@ -28790,7 +28790,7 @@
         },
         {
           "disabled": false,
-          "document": "用于出参，集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于出参，集群名称",
           "example": "tke",
           "member": "string",
           "name": "ClusterName",
@@ -30546,7 +30546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置的插件的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置的插件的名称",
           "example": "NodeResourcesFit",
           "member": "string",
           "name": "Name",
@@ -30557,7 +30557,7 @@
         },
         {
           "disabled": false,
-          "document": "初始化时传递给插件的参数，对{\"apiVersion\":\"kubescheduler.config.k8s.io/v1beta3\",\"kind\":\"NodeResourcesFitArgs\",\"scoringStrategy\":{\"type\":\"LeastAllocated\"}}base64后的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "初始化时传递给插件的参数，对{\"apiVersion\":\"kubescheduler.config.k8s.io/v1beta3\",\"kind\":\"NodeResourcesFitArgs\",\"scoringStrategy\":{\"type\":\"LeastAllocated\"}}base64后的结果",
           "example": "eyJraW5kIjoiTm9kZVJlc291cmNlc0ZpdEFyZ3MiLCJhcGlWZXJzaW9uIjoia3ViZXNjaGVkdWxlci5jb25maWcuazhzLmlvL3YxIiwic2NvcmluZ1N0cmF0ZWd5Ijp7InR5cGUiOiJNb3N0QWxsb2NhdGVkIiwicmVzb3VyY2VzIjpbeyJuYW1lIjoiY3B1Iiwid2VpZ2h0IjoxfSx7Im5hbWUiOiJtZW1vcnkiLCJ3ZWlnaHQiOjF9XX19",
           "member": "string",
           "name": "Args",
@@ -30574,7 +30574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调度器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调度器名称",
           "example": "default-scheduler",
           "member": "string",
           "name": "SchedulerName",
@@ -30585,7 +30585,7 @@
         },
         {
           "disabled": false,
-          "document": "调度器plugin配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调度器plugin配置参数",
           "example": "无",
           "member": "SchedulerPluginConfigs",
           "name": "PluginConfigs",
@@ -30641,7 +30641,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全能力清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全能力清单",
           "example": "[\"NET_ADMIN\", \"SYS_TIME\"]",
           "member": "Capabilities",
           "name": "Capabilities",
@@ -30753,7 +30753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "使用TKE默认issuer和jwksuri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用TKE默认issuer和jwksuri",
           "example": "false",
           "member": "bool",
           "name": "UseTKEDefault",
@@ -30764,7 +30764,7 @@
         },
         {
           "disabled": false,
-          "document": "service-account-issuer\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "service-account-issuer",
           "example": "https://cls-e55paxnt.ccs.tencent-cloud.com",
           "member": "string",
           "name": "Issuer",
@@ -30775,7 +30775,7 @@
         },
         {
           "disabled": false,
-          "document": "service-account-jwks-uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "service-account-jwks-uri",
           "example": "https://cls-e55paxnt.ccs.tencent-cloud.com:60002/openid/v1/jwks",
           "member": "string",
           "name": "JWKSURI",
@@ -30786,7 +30786,7 @@
         },
         {
           "disabled": false,
-          "document": "如果为true，则会自动创建允许匿名用户访问'/.well-known/openid-configuration'和/openid/v1/jwks的rbac规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果为true，则会自动创建允许匿名用户访问'/.well-known/openid-configuration'和/openid/v1/jwks的rbac规则",
           "example": "true",
           "member": "bool",
           "name": "AutoCreateDiscoveryAnonymousAuth",
@@ -30916,7 +30916,7 @@
         },
         {
           "disabled": false,
-          "document": "没有成功设置的节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "没有成功设置的节点id",
           "example": "[\"ins-abocc5o\"]",
           "member": "string",
           "name": "FailedInstanceIds",
@@ -30948,7 +30948,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "\"2022-07-12T14:00:00Z\"",
           "member": "string",
           "name": "StartAt",
@@ -30958,7 +30958,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "\"2022-07-12T14:24:00Z\"",
           "member": "string",
           "name": "EndAt",
@@ -31536,7 +31536,7 @@
         },
         {
           "disabled": false,
-          "document": "标签对列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签对列表",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -31592,7 +31592,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态（process(运行中)、pause(暂停)、pausing(暂停中)、paused(已暂停)、done(已完成)、abort(中止)、aborted(已中止)、resume(重新执行)）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态（process(运行中)、pause(暂停)、pausing(暂停中)、paused(已暂停)、done(已完成)、abort(中止)、aborted(已中止)、resume(重新执行)）",
           "example": "无",
           "member": "string",
           "name": "LifeState",
@@ -31602,7 +31602,7 @@
         },
         {
           "disabled": false,
-          "document": "任务目标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务目标ID",
           "example": "无",
           "member": "string",
           "name": "TargetObj",
@@ -31612,7 +31612,7 @@
         },
         {
           "disabled": false,
-          "document": "任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务参数",
           "example": "无",
           "member": "string",
           "name": "Param",
@@ -31622,7 +31622,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型",
           "example": "无",
           "member": "string",
           "name": "TaskType",
@@ -31632,7 +31632,7 @@
         },
         {
           "disabled": false,
-          "document": "任务失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务失败原因",
           "example": "无",
           "member": "string",
           "name": "LastError",
@@ -31642,7 +31642,7 @@
         },
         {
           "disabled": false,
-          "document": "任务所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务所属集群ID",
           "example": "无",
           "member": "string",
           "name": "ClusterID",
@@ -31652,7 +31652,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务开始时间",
           "example": "无",
           "member": "string",
           "name": "CreatedAt",
@@ -31662,7 +31662,7 @@
         },
         {
           "disabled": false,
-          "document": "任务更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务更新时间",
           "example": "无",
           "member": "string",
           "name": "UpdatedAt",
@@ -31672,7 +31672,7 @@
         },
         {
           "disabled": false,
-          "document": "创建任务唯一请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建任务唯一请求ID",
           "example": "无",
           "member": "string",
           "name": "TaskID",
@@ -33396,7 +33396,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>子网列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网列表</p>",
           "example": "[\"subnet-e55paxnt\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -33426,7 +33426,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>虚拟节点label</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>虚拟节点label</p>",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -33436,7 +33436,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>虚拟节点taint</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>虚拟节点taint</p>",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -33513,7 +33513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "挂载路径",
           "example": "/data",
           "member": "string",
           "name": "MountPath",
@@ -33524,7 +33524,7 @@
         },
         {
           "disabled": false,
-          "document": "volume名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "volume名称",
           "example": "tke",
           "member": "string",
           "name": "Name",
@@ -33535,7 +33535,7 @@
         },
         {
           "disabled": false,
-          "document": "传播挂载方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "传播挂载方式",
           "example": "Bidirectional",
           "member": "string",
           "name": "MountPropagation",
@@ -33546,7 +33546,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只读\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否只读",
           "example": "true",
           "member": "bool",
           "name": "ReadOnly",
@@ -33557,7 +33557,7 @@
         },
         {
           "disabled": false,
-          "document": "子路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子路径",
           "example": "tke",
           "member": "string",
           "name": "SubPath",
@@ -33568,7 +33568,7 @@
         },
         {
           "disabled": false,
-          "document": "子路径表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子路径表达式",
           "example": "tke",
           "member": "string",
           "name": "SubPathExpr",

@@ -3858,7 +3858,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数。",
           "example": "10",
           "member": "int64",
           "name": "Total",
@@ -3868,7 +3868,7 @@
         },
         {
           "disabled": false,
-          "document": "详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详情。",
           "example": "无",
           "member": "ManagerShareResource",
           "name": "Items",
@@ -4395,7 +4395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员列表。未查到成员时返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员列表。未查到成员时返回空数组",
           "example": "无",
           "member": "MemberBaseInfo",
           "name": "MemberList",
@@ -4659,7 +4659,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问授权策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问授权策略列表。",
           "example": "无",
           "member": "OrgMembersAuthPolicy",
           "name": "Items",
@@ -4669,7 +4669,7 @@
         },
         {
           "disabled": false,
-          "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数目。",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -4890,7 +4890,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员总数。",
           "example": "10",
           "member": "int64",
           "name": "MemberNum",
@@ -4899,7 +4899,7 @@
         },
         {
           "disabled": false,
-          "document": "节点总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点总数。",
           "example": "10",
           "member": "int64",
           "name": "NodeNum",
@@ -4908,7 +4908,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子账号总数。",
           "example": "2",
           "member": "int64",
           "name": "SubAccountNum",
@@ -4917,7 +4917,7 @@
         },
         {
           "disabled": false,
-          "document": "角色总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色总数。",
           "example": "2",
           "member": "int64",
           "name": "RoleNum",
@@ -5401,7 +5401,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "10",
           "member": "int64",
           "name": "Total",
@@ -5411,7 +5411,7 @@
         },
         {
           "disabled": false,
-          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详情",
           "example": "无",
           "member": "ShareResourceToMember",
           "name": "Items",
@@ -9127,7 +9127,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "共享单元名",
           "example": "test",
           "member": "string",
           "name": "UnitName",
@@ -9137,7 +9137,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-03-06 21:23:12",
           "member": "string",
           "name": "CreateTime",
@@ -9147,7 +9147,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元成员数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "共享单元成员数",
           "example": "10",
           "member": "int64",
           "name": "SharedMemberNum",
@@ -9167,7 +9167,7 @@
         },
         {
           "disabled": false,
-          "document": "使用中共享单元成员数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用中共享单元成员数",
           "example": "4",
           "member": "int64",
           "name": "SharedMemberUseNum",
@@ -9319,7 +9319,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员Uin",
           "example": "1111111111111",
           "member": "int64",
           "name": "MemberUin",
@@ -9329,7 +9329,7 @@
         },
         {
           "disabled": false,
-          "document": "组织Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织Id",
           "example": "123",
           "member": "int64",
           "name": "OrgId",
@@ -9339,7 +9339,7 @@
         },
         {
           "disabled": false,
-          "document": "组织管理员Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织管理员Uin",
           "example": "2222222222222",
           "member": "int64",
           "name": "HostUin",
@@ -9349,7 +9349,7 @@
         },
         {
           "disabled": false,
-          "document": "成员描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员描述",
           "example": "成员1",
           "member": "string",
           "name": "Remark",
@@ -10284,7 +10284,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份Id。",
           "example": "111",
           "member": "int64",
           "name": "IdentityId",
@@ -10294,7 +10294,7 @@
         },
         {
           "disabled": false,
-          "document": "身份的角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份的角色名。",
           "example": "test",
           "member": "string",
           "name": "IdentityRoleName",
@@ -10304,7 +10304,7 @@
         },
         {
           "disabled": false,
-          "document": "身份的角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份的角色别名。",
           "example": "test",
           "member": "string",
           "name": "IdentityRoleAliasName",
@@ -10314,7 +10314,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
           "name": "CreateTime",
@@ -10324,7 +10324,7 @@
         },
         {
           "disabled": false,
-          "document": "成员访问策略Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员访问策略Id。",
           "example": "222",
           "member": "int64",
           "name": "PolicyId",
@@ -10334,7 +10334,7 @@
         },
         {
           "disabled": false,
-          "document": "成员访问策略名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员访问策略名称。",
           "example": "policy-test",
           "member": "string",
           "name": "PolicyName",
@@ -10344,7 +10344,7 @@
         },
         {
           "disabled": false,
-          "document": "成员uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员uin。",
           "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
@@ -10354,7 +10354,7 @@
         },
         {
           "disabled": false,
-          "document": "成员名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员名称。",
           "example": "member-name",
           "member": "string",
           "name": "MemberName",
@@ -10364,7 +10364,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号uin或者用户组Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子账号uin或者用户组Id。",
           "example": "222222222222",
           "member": "int64",
           "name": "OrgSubAccountUin",
@@ -10374,7 +10374,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号名称或者用户组名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子账号名称或者用户组名称。",
           "example": "sub-name",
           "member": "string",
           "name": "OrgSubAccountName",
@@ -10384,7 +10384,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定类型。1-子账号、2-用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定类型。1-子账号、2-用户组",
           "example": "1",
           "member": "uint64",
           "name": "BindType",
@@ -10394,7 +10394,7 @@
         },
         {
           "disabled": false,
-          "document": "成员信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员信息。",
           "example": "[{\"MemberUin\":111111111111},\"MemberName\":\"member-name\"]",
           "member": "MemberMainInfo",
           "name": "Members",

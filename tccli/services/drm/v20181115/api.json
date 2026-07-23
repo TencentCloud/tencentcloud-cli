@@ -141,7 +141,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设置私钥后，后台返回的pem id，用来唯一标识一个私钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置私钥后，后台返回的pem id，用来唯一标识一个私钥。",
           "example": "",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -150,7 +150,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥的优先级，优先级数值越高，优先级越高。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私钥的优先级，优先级数值越高，优先级越高。",
           "example": "",
           "member": "uint64",
           "name": "Priority",
@@ -395,7 +395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密密钥列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密密钥列表。",
           "example": "",
           "member": "Key",
           "name": "Keys",
@@ -404,7 +404,7 @@
         },
         {
           "disabled": false,
-          "document": "用来加密密钥。\n如果入参中带有RsaPublicKey，则SessionKey为使用Rsa公钥加密后的二进制数据，Base64编码字符串。\n如果入参中没有RsaPublicKey，则SessionKey为原始数据的字符串形式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用来加密密钥。\n如果入参中带有RsaPublicKey，则SessionKey为使用Rsa公钥加密后的二进制数据，Base64编码字符串。\n如果入参中没有RsaPublicKey，则SessionKey为原始数据的字符串形式。",
           "example": "",
           "member": "string",
           "name": "SessionKey",
@@ -413,7 +413,7 @@
         },
         {
           "disabled": false,
-          "document": "内容ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容ID",
           "example": "",
           "member": "string",
           "name": "ContentId",
@@ -532,7 +532,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该账户下，所有设置的FairPlay私钥摘要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该账户下，所有设置的FairPlay私钥摘要信息",
           "example": "",
           "member": "FairPlayPemDigestInfo",
           "name": "FairPlayPems",
@@ -733,7 +733,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "fairplay 私钥pem id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "fairplay 私钥pem id。",
           "example": "12",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -743,7 +743,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥的优先级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私钥的优先级。",
           "example": "1",
           "member": "uint64",
           "name": "Priority",
@@ -753,7 +753,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥的md5 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私钥的md5 信息。",
           "example": "pem",
           "member": "string",
           "name": "Md5Pem",
@@ -763,7 +763,7 @@
         },
         {
           "disabled": false,
-          "document": "ASK的md5信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ASK的md5信息。",
           "example": "ask",
           "member": "string",
           "name": "Md5Ask",
@@ -773,7 +773,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥解密密钥的md5值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私钥解密密钥的md5值。",
           "example": "key",
           "member": "string",
           "name": "Md5PemDecryptKey",
@@ -903,7 +903,7 @@
         },
         {
           "disabled": false,
-          "document": "该key生成时的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该key生成时的时间戳",
           "example": "4564112",
           "member": "uint64",
           "name": "InsertTimestamp",
@@ -1021,7 +1021,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设置私钥后，后台返回的pem id，用来唯一标识一个私钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置私钥后，后台返回的pem id，用来唯一标识一个私钥。",
           "example": "",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -1030,7 +1030,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥的优先级，优先级数值越高，优先级越高。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私钥的优先级，优先级数值越高，优先级越高。",
           "example": "",
           "member": "uint64",
           "name": "Priority",

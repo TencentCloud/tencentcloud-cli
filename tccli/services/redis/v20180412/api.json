@@ -3118,7 +3118,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>投递类型，store（存储类），mq（消息通道）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>投递类型，store（存储类），mq（消息通道）</p>",
           "example": "store",
           "member": "string",
           "name": "DeliverType",
@@ -3129,7 +3129,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>投递子类型：cls，ckafka。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>投递子类型：cls，ckafka。</p>",
           "example": "CLS",
           "member": "string",
           "name": "DeliverSubType",
@@ -3140,7 +3140,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>投递订阅者</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>投递订阅者</p>",
           "example": "CLS",
           "member": "string",
           "name": "DeliverConsumer",
@@ -3151,7 +3151,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>投递订阅者名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>投递订阅者名称</p>",
           "example": "client_cls",
           "member": "string",
           "name": "DeliverConsumerName",
@@ -3162,7 +3162,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>投递</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>投递</p>",
           "example": "kafka error",
           "member": "string",
           "name": "DeliverError",
@@ -3608,7 +3608,7 @@
         },
         {
           "disabled": true,
-          "document": "文件名称，该字段正在逐步废弃中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件名称，该字段正在逐步废弃中。",
           "example": "[\"1.rdb\"]",
           "member": "string",
           "name": "Filenames",
@@ -5814,7 +5814,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 检查通过 \n-1检查未通过\n1 正在检查 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 检查通过 \n-1检查未通过\n1 正在检查 ",
           "example": "0",
           "member": "int64",
           "name": "TaskStatus",
@@ -5824,7 +5824,7 @@
         },
         {
           "disabled": false,
-          "document": "具体的检查任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "具体的检查任务信息",
           "example": "无",
           "member": "LanProbeJobDetail",
           "name": "TaskInfo",
@@ -6082,7 +6082,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>日志详情。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志详情。</p>",
           "example": "无",
           "member": "LogResult",
           "name": "Items",
@@ -7027,7 +7027,7 @@
         },
         {
           "disabled": false,
-          "document": "备份不存在的时间戳范围。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份不存在的时间戳范围。",
           "example": "无",
           "member": "SecondLevelBackupMissingTimestamps",
           "name": "MissingTimestamps",
@@ -7490,7 +7490,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 检查通过 \n-1检查未通过\n1 正在检查 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 检查通过 \n-1检查未通过\n1 正在检查 ",
           "example": "0",
           "member": "int64",
           "name": "TaskStatus",
@@ -7500,7 +7500,7 @@
         },
         {
           "disabled": false,
-          "document": "具体的检查任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "具体的检查任务信息",
           "example": "无",
           "member": "WanProbeJobDetail",
           "name": "TaskInfo",
@@ -7771,7 +7771,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>文件名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件名。</p>",
           "example": "crs-hnio60jv_20260305-124239_to_20260305-164239_1772705315834.tar.gz",
           "member": "string",
           "name": "FileName",
@@ -7782,7 +7782,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>状态值。</p><p>枚举值：</p><ul><li>creating： 文件创建中。</li><li>success： 文件已生成。</li><li>failed： 文件生成失败。</li><li>deleted： 文件已删除。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态值。</p><p>枚举值：</p><ul><li>creating： 文件创建中。</li><li>success： 文件已生成。</li><li>failed： 文件生成失败。</li><li>deleted： 文件已删除。</li></ul>",
           "example": "creating",
           "member": "string",
           "name": "Status",
@@ -7793,7 +7793,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件大小，单位：byte。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件大小，单位：byte。</p>",
           "example": "0",
           "member": "int64",
           "name": "FileSize",
@@ -7804,7 +7804,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件创建时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件创建时间。</p>",
           "example": "2026-03-05 18:08:36",
           "member": "string",
           "name": "CreateTime",
@@ -7815,7 +7815,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件下载地址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件下载地址。</p>",
           "example": "https://audit-test-1308612106.cos.ap-guangzhou.myqcloud.com",
           "member": "string",
           "name": "DownloadUrl",
@@ -7826,7 +7826,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>导出文件的错误信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导出文件的错误信息。</p>",
           "example": "Not Found",
           "member": "string",
           "name": "ErrMsg",
@@ -7837,7 +7837,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>导出文件的进度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导出文件的进度。</p>",
           "example": "18",
           "member": "int64",
           "name": "Progress",
@@ -7848,7 +7848,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>导出文件的完成时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导出文件的完成时间。</p>",
           "example": "2026-03-05 19:35:56",
           "member": "string",
           "name": "FinishTime",
@@ -7859,7 +7859,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>异步请求 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>异步请求 ID。</p>",
           "example": "0",
           "member": "int64",
           "name": "AsyncRequestId",
@@ -8884,7 +8884,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例名称</p>",
           "example": "审计功能测试",
           "member": "string",
           "name": "InstanceName",
@@ -8895,7 +8895,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>项目ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -8906,7 +8906,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例状态</p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -8928,7 +8928,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -8939,7 +8939,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>区</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -8950,7 +8950,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>降级策略，单位：毫秒，实例P99达到降级策略后，审计数据自动丢弃，优先保障业务的可用性,默认值：500毫秒，范围值：300-1000毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>降级策略，单位：毫秒，实例P99达到降级策略后，审计数据自动丢弃，优先保障业务的可用性,默认值：500毫秒，范围值：300-1000毫秒</p>",
           "example": "500",
           "member": "int64",
           "name": "DegradeStrategy",
@@ -8961,7 +8961,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签信息</p>",
           "example": "无",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
@@ -8972,7 +8972,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>架构版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>架构版本</p>",
           "example": "16",
           "member": "int64",
           "name": "Type",
@@ -10968,7 +10968,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>日志投递信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志投递信息</p>",
           "example": "无",
           "member": "DeliverSummary",
           "name": "DeliverSummary",

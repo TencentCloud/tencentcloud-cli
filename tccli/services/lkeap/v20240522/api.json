@@ -787,7 +787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文档元素索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档元素索引",
           "example": "无",
           "member": "int64",
           "name": "Index",
@@ -797,7 +797,7 @@
         },
         {
           "disabled": false,
-          "document": "元素类型，包括paragraph、table、formula、figure、title、header、footer、figure_text\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元素类型，包括paragraph、table、formula、figure、title、header、footer、figure_text\n",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -807,7 +807,7 @@
         },
         {
           "disabled": false,
-          "document": "元素内容，当type为figure或formula(公式识别关闭)时该字段内容为图片的位置\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元素内容，当type为figure或formula(公式识别关闭)时该字段内容为图片的位置\n",
           "example": "无",
           "member": "string",
           "name": "Text",
@@ -817,7 +817,7 @@
         },
         {
           "disabled": false,
-          "document": "元素坐标，左上角(x1, y1)，右上角(x2, y2)，右下角(x3, y3)，左下角(x4, y4)\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元素坐标，左上角(x1, y1)，右上角(x2, y2)，右下角(x3, y3)，左下角(x4, y4)\n",
           "example": "无",
           "member": "Polygon",
           "name": "Polygon",
@@ -827,7 +827,7 @@
         },
         {
           "disabled": false,
-          "document": "元素层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元素层级",
           "example": "无",
           "member": "int64",
           "name": "Level",
@@ -837,7 +837,7 @@
         },
         {
           "disabled": false,
-          "document": "入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称",
           "example": "无",
           "member": "string",
           "name": "InsetImageName",
@@ -847,7 +847,7 @@
         },
         {
           "disabled": false,
-          "document": "嵌套的文档元素信息，一般包含的是文档内嵌入图片的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "嵌套的文档元素信息，一般包含的是文档内嵌入图片的文字识别结果",
           "example": "无",
           "member": "DocumentElement",
           "name": "Elements",
@@ -863,7 +863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入PDF文件的页码，从1开始。输入图片的话值始终为1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入PDF文件的页码，从1开始。输入图片的话值始终为1",
           "example": "无",
           "member": "int64",
           "name": "PageNumber",
@@ -873,7 +873,7 @@
         },
         {
           "disabled": false,
-          "document": "旋转角度\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旋转角度\n",
           "example": "无",
           "member": "int64",
           "name": "Angle",
@@ -883,7 +883,7 @@
         },
         {
           "disabled": false,
-          "document": "AI算法识别处理后的图片高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI算法识别处理后的图片高度",
           "example": "无",
           "member": "int64",
           "name": "Height",
@@ -893,7 +893,7 @@
         },
         {
           "disabled": false,
-          "document": "AI算法识别处理后的图片宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI算法识别处理后的图片宽度",
           "example": "无",
           "member": "int64",
           "name": "Width",
@@ -903,7 +903,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的原始高度，输入PDF文件则表示单页PDF转图片之后的图片高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片的原始高度，输入PDF文件则表示单页PDF转图片之后的图片高度",
           "example": "无",
           "member": "int64",
           "name": "OriginHeight",
@@ -913,7 +913,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的原始宽度，输入PDF文件则表示单页PDF转图片之后的图片宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片的原始宽度，输入PDF文件则表示单页PDF转图片之后的图片宽度",
           "example": "无",
           "member": "int64",
           "name": "OriginWidth",
@@ -923,7 +923,7 @@
         },
         {
           "disabled": false,
-          "document": "文档元素信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档元素信息",
           "example": "无",
           "member": "DocumentElement",
           "name": "Elements",
@@ -933,7 +933,7 @@
         },
         {
           "disabled": false,
-          "document": "旋转角度\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旋转角度\n",
           "example": "无",
           "member": "float",
           "name": "RotatedAngle",
@@ -1518,7 +1518,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "问题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "问题",
           "example": "吞下玻璃会伤身体吗",
           "member": "string",
           "name": "Q",
@@ -1528,7 +1528,7 @@
         },
         {
           "disabled": false,
-          "document": "答案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "答案",
           "example": "不会",
           "member": "string",
           "name": "A",
@@ -1624,7 +1624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "失败页码\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败页码\t",
           "example": "无",
           "member": "int64",
           "name": "PageNumber",
@@ -1700,7 +1700,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别生成的Markdown文件base64编码的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "识别生成的Markdown文件base64编码的字符串",
           "example": "无",
           "member": "string",
           "name": "MarkdownBase64",
@@ -1710,7 +1710,7 @@
         },
         {
           "disabled": false,
-          "document": "输入文件中嵌入的图片放在一个文件夹中打包为.zip压缩文件，识别生成的Markdown文件通过路径关联插入本文件夹中的图片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入文件中嵌入的图片放在一个文件夹中打包为.zip压缩文件，识别生成的Markdown文件通过路径关联插入本文件夹中的图片。",
           "example": "无",
           "member": "string",
           "name": "InsetImagePackage",
@@ -1720,7 +1720,7 @@
         },
         {
           "disabled": false,
-          "document": "输入文件中嵌入的图片中文字内容的识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入文件中嵌入的图片中文字内容的识别结果",
           "example": "无",
           "member": "DocumentRecognizeInfo",
           "name": "DocumentRecognizeInfo",
@@ -2088,7 +2088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检索结果，已根据优先级排序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检索结果，已根据优先级排序",
           "example": "无",
           "member": "SearchResultItem",
           "name": "List",
@@ -2256,7 +2256,7 @@
         },
         {
           "disabled": false,
-          "document": "问题，当文档类型为qa时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "问题，当文档类型为qa时有效",
           "example": "国庆放几天假",
           "member": "string",
           "name": "Question",
@@ -2266,7 +2266,7 @@
         },
         {
           "disabled": false,
-          "document": "答案，当文档类型为qa时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "答案，当文档类型为qa时有效",
           "example": "7天",
           "member": "string",
           "name": "Answer",
@@ -2276,7 +2276,7 @@
         },
         {
           "disabled": false,
-          "document": "文档切片内容，当文档类型为doc时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档切片内容，当文档类型为doc时有效",
           "example": "国庆放7天假",
           "member": "string",
           "name": "Content",
@@ -2286,7 +2286,7 @@
         },
         {
           "disabled": false,
-          "document": "切片在文档中的页码，仅部分文档支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "切片在文档中的页码，仅部分文档支持",
           "example": "[12,13]",
           "member": "int64",
           "name": "ChunkPageNumbers",
@@ -2296,7 +2296,7 @@
         },
         {
           "disabled": false,
-          "document": "检索结果来源(vector：向量库、es：es检索、text2sql：text2sql检索)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检索结果来源(vector：向量库、es：es检索、text2sql：text2sql检索)",
           "example": "[\"vector\",\"es\"]",
           "member": "string",
           "name": "ResultSource",
@@ -2312,7 +2312,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "失败页码\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败页码\t",
           "example": "无",
           "member": "int64",
           "name": "PageNumber",

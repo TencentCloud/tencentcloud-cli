@@ -468,7 +468,7 @@
         },
         {
           "disabled": false,
-          "document": "本次告警通知涉及到的渠道合集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次告警通知涉及到的渠道合集",
           "example": "[\"QCloudYehe_sms\"]",
           "member": "string",
           "name": "ChannelSet",
@@ -564,7 +564,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警历史唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警历史唯一id",
           "example": "aaaa-bbbb-cccc",
           "member": "string",
           "name": "AlertID",
@@ -574,7 +574,7 @@
         },
         {
           "disabled": false,
-          "document": "监控类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控类型",
           "example": "MT_QCE",
           "member": "string",
           "name": "MonitorType",
@@ -584,7 +584,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间",
           "example": "qce/cvm",
           "member": "string",
           "name": "Namespace",
@@ -594,7 +594,7 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -604,7 +604,7 @@
         },
         {
           "disabled": false,
-          "document": "告警对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警对象",
           "example": "告警对象",
           "member": "string",
           "name": "AlarmObject",
@@ -614,7 +614,7 @@
         },
         {
           "disabled": false,
-          "document": "告警内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警内容",
           "example": "告警内容",
           "member": "string",
           "name": "Content",
@@ -624,7 +624,7 @@
         },
         {
           "disabled": false,
-          "document": "首次触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次触发时间",
           "example": "1690532944",
           "member": "int64",
           "name": "FirstOccurTime",
@@ -634,7 +634,7 @@
         },
         {
           "disabled": false,
-          "document": "最后触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后触发时间",
           "example": "1690532944",
           "member": "int64",
           "name": "LastOccurTime",
@@ -644,7 +644,7 @@
         },
         {
           "disabled": false,
-          "document": "告警状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警状态",
           "example": "1",
           "member": "string",
           "name": "AlarmStatus",
@@ -654,7 +654,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略ID",
           "example": "policy-xxxx",
           "member": "string",
           "name": "PolicyId",
@@ -664,7 +664,7 @@
         },
         {
           "disabled": false,
-          "document": "策略2.0 originID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略2.0 originID",
           "example": "xxxxxx",
           "member": "string",
           "name": "PolicyV2OriginID",
@@ -674,7 +674,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名称",
           "example": "策略名称",
           "member": "string",
           "name": "PolicyName",
@@ -684,7 +684,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目ID",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -694,7 +694,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目名称",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
@@ -704,7 +704,7 @@
         },
         {
           "disabled": false,
-          "document": "维度列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维度列表",
           "example": "[{\"Key\":\"abc\",\"Value\":\"123\"}]",
           "member": "AndonToolDimensionItem",
           "name": "Dimensions",
@@ -720,7 +720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "维度key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维度key",
           "example": "abc",
           "member": "string",
           "name": "Key",
@@ -731,7 +731,7 @@
         },
         {
           "disabled": false,
-          "document": "维度value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维度value",
           "example": "123",
           "member": "string",
           "name": "Value",
@@ -748,7 +748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间戳",
           "example": "1690532944",
           "member": "int64",
           "name": "Timestamp",
@@ -758,7 +758,7 @@
         },
         {
           "disabled": false,
-          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值",
           "example": "1.23",
           "member": "float",
           "name": "Value",
@@ -774,7 +774,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "维度",
           "example": "{\"Dimension\": [{\"Key\":\"unInstanceId\", \"Value\": \"ins-wv6if848\" }]}",
           "member": "AndonToolDimensionItem",
           "name": "Dimension",
@@ -784,7 +784,7 @@
         },
         {
           "disabled": false,
-          "document": "时间点数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间点数据集合",
           "example": "[{\"Timestamp\": 1690532944,\"Value\": 1.12}]",
           "member": "AndonToolMetricDataItem",
           "name": "Data",
@@ -800,7 +800,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品",
           "example": "cvm",
           "member": "string",
           "name": "Product",
@@ -810,7 +810,7 @@
         },
         {
           "disabled": false,
-          "document": "产品展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品展示名称",
           "example": "云服务器",
           "member": "string",
           "name": "ProductShowName",
@@ -820,7 +820,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间",
           "example": "qce/cvm",
           "member": "string",
           "name": "Namespace",
@@ -830,7 +830,7 @@
         },
         {
           "disabled": false,
-          "document": "视图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视图",
           "example": "cvm_device",
           "member": "string",
           "name": "ViewName",
@@ -840,7 +840,7 @@
         },
         {
           "disabled": false,
-          "document": "视图展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视图展示名称",
           "example": "云服务器-基础监控",
           "member": "string",
           "name": "ViewNameShowName",
@@ -850,7 +850,7 @@
         },
         {
           "disabled": false,
-          "document": "API维度key列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API维度key列表",
           "example": "unInstanceId",
           "member": "string",
           "name": "APIDimensionKeys",
@@ -860,7 +860,7 @@
         },
         {
           "disabled": false,
-          "document": "AMP ProductName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AMP ProductName",
           "example": "[\"barad\",\"barad_bind_all\"]",
           "member": "string",
           "name": "AMPProductNames",
@@ -870,7 +870,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要所有的API维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否需要所有的API维度",
           "example": "true",
           "member": "bool",
           "name": "NeedAllAPIDimension",
@@ -1054,7 +1054,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知渠道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知渠道名称",
           "example": "叮叮",
           "member": "string",
           "name": "ChannelName",
@@ -1065,7 +1065,7 @@
         },
         {
           "disabled": false,
-          "document": "接收者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收者",
           "example": "[124,234]",
           "member": "string",
           "name": "Receivers",
@@ -1076,7 +1076,7 @@
         },
         {
           "disabled": false,
-          "document": "发送结果,0-无效,1-成功,2-失败,3-无需发送\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送结果,0-无效,1-成功,2-失败,3-无需发送",
           "example": "0",
           "member": "string",
           "name": "SendStatus",
@@ -1087,7 +1087,7 @@
         },
         {
           "disabled": false,
-          "document": "接受者类型，仅部分需要细分的渠道有值。\n比如官网消息渠道会有三种取值，UIDs/Group/UINs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接受者类型，仅部分需要细分的渠道有值。\n比如官网消息渠道会有三种取值，UIDs/Group/UINs",
           "example": "UINs",
           "member": "string",
           "name": "ReceiverType",
@@ -1623,7 +1623,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警历史列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警历史列表",
           "example": "暂无",
           "member": "AndonToolAlarmHistoryItem",
           "name": "Histories",
@@ -1888,7 +1888,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义通知内容模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义通知内容模板",
           "example": "无",
           "member": "NoticeContentTmpl",
           "name": "NoticeContentTmpls",
@@ -1950,7 +1950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例维度名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例维度名称",
           "example": "instanceId",
           "member": "string",
           "name": "Name",
@@ -1961,7 +1961,7 @@
         },
         {
           "disabled": false,
-          "document": "实例维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例维度值",
           "example": "ins-123",
           "member": "string",
           "name": "Value",
@@ -2159,7 +2159,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的维度组合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的维度组合",
           "example": "无",
           "member": "Dimension",
           "name": "Dimensions",
@@ -2221,7 +2221,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>自定义通知内容模板id，唯一id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义通知内容模板id，唯一id</p>",
           "example": "tmpl-123",
           "member": "string",
           "name": "TmplID",
@@ -2232,7 +2232,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义通知内容模板名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义通知内容模板名</p>",
           "example": "name",
           "member": "string",
           "name": "TmplName",
@@ -2243,7 +2243,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>通知内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通知内容</p>",
           "example": "无",
           "member": "NoticeContentTmplItem",
           "name": "TmplContents",
@@ -2254,7 +2254,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Unix时间戳，秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Unix时间戳，秒</p>",
           "example": "1729655205",
           "member": "int64",
           "name": "CreateTime",
@@ -2265,7 +2265,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Unix时间戳，秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Unix时间戳，秒</p>",
           "example": "1729655205",
           "member": "int64",
           "name": "UpdateTime",
@@ -2276,7 +2276,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最后修改人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后修改人</p>",
           "example": "1500000000",
           "member": "string",
           "name": "LastModifier",
@@ -2287,7 +2287,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人</p>",
           "example": "1500000000",
           "member": "string",
           "name": "Creator",
@@ -2354,7 +2354,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>官网通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>官网通知渠道配置</p>",
           "example": "无",
           "member": "QCloudYeheNoticeTmplMatcher",
           "name": "QCloudYehe",
@@ -2365,7 +2365,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>企业微信机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企业微信机器人通知渠道配置</p>",
           "example": "无",
           "member": "WeWorkRobotNoticeTmplMatcher",
           "name": "WeWorkRobot",
@@ -2376,7 +2376,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>钉钉机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>钉钉机器人通知渠道配置</p>",
           "example": "无",
           "member": "DingDingRobotNoticeTmplMatcher",
           "name": "DingDingRobot",
@@ -2387,7 +2387,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>飞书机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>飞书机器人通知渠道配置</p>",
           "example": "无",
           "member": "FeiShuRobotNoticeTmplMatcher",
           "name": "FeiShuRobot",
@@ -2398,7 +2398,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义Webhook通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义Webhook通知渠道配置</p>",
           "example": "无",
           "member": "WebhookNoticeTmplMatcher",
           "name": "Webhook",
@@ -2409,7 +2409,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Teams机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Teams机器人通知渠道配置</p>",
           "example": "无",
           "member": "TeamsRobotNoticeTmplMatcher",
           "name": "TeamsRobot",
@@ -2420,7 +2420,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>PagerDutyRobot机器人通知渠道配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>PagerDutyRobot机器人通知渠道配置</p>",
           "example": "无",
           "member": "PagerDutyRobotNoticeTmplMatcher",
           "name": "PagerDutyRobot",
@@ -2485,7 +2485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每个分页的数量是多少\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每个分页的数量是多少",
           "example": "19",
           "member": "int64",
           "name": "PerPage",
@@ -2496,7 +2496,7 @@
         },
         {
           "disabled": false,
-          "document": "第几个分页，从1开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第几个分页，从1开始",
           "example": "无",
           "member": "string",
           "name": "PageNo",
@@ -2513,7 +2513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总共有多少数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总共有多少数据",
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
@@ -2524,7 +2524,7 @@
         },
         {
           "disabled": false,
-          "document": "总共有多少个分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总共有多少个分页",
           "example": "12",
           "member": "int64",
           "name": "TotalPage",
@@ -2535,7 +2535,7 @@
         },
         {
           "disabled": false,
-          "document": "当前的分页号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前的分页号",
           "example": "1",
           "member": "int64",
           "name": "CurrentPageNo",
@@ -2546,7 +2546,7 @@
         },
         {
           "disabled": true,
-          "document": "【已弃用】是否遍历到末尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "【已弃用】是否遍历到末尾",
           "example": "true",
           "member": "bool",
           "name": "IsEnd",
@@ -2585,7 +2585,7 @@
         },
         {
           "disabled": false,
-          "document": "请求头 暂时未支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求头 暂时未支持",
           "example": "无",
           "member": "PagerDutyRobotNoticeTmplHeader",
           "name": "Headers",
@@ -3068,7 +3068,7 @@
         },
         {
           "disabled": false,
-          "document": "请求体的类型，非必填、默认为JSON\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求体的类型，非必填、默认为JSON",
           "example": "application/json",
           "member": "string",
           "name": "BodyContentType",
@@ -3079,7 +3079,7 @@
         },
         {
           "disabled": false,
-          "document": "请求头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求头",
           "example": "[{\"Key\": \"k\", \"Values\": [\"v\"]}",
           "member": "WebhookNoticeTmplHeader",
           "name": "Headers",

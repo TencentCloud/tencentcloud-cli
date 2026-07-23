@@ -961,7 +961,7 @@
         },
         {
           "disabled": false,
-          "document": "复制的目标账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "复制的目标账户ID",
           "example": "100004375290",
           "member": "string",
           "name": "CopyToAccountUin",
@@ -1001,7 +1001,7 @@
         },
         {
           "disabled": false,
-          "document": "定期快照高级保留策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定期快照高级保留策略。",
           "example": "{Weeks: 3, Days: 3, Months: 2, Years: 2}",
           "member": "AdvancedRetentionPolicy",
           "name": "AdvancedRetentionPolicy",
@@ -1011,7 +1011,7 @@
         },
         {
           "disabled": false,
-          "document": "该复制快照策略的源端账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该复制快照策略的源端账户ID",
           "example": "100004375289",
           "member": "string",
           "name": "CopyFromAccountUin",
@@ -1073,7 +1073,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "独享集群围笼ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享集群围笼ID。",
           "example": "cage-xxxxxxxx",
           "member": "string",
           "name": "CageId",
@@ -1229,7 +1229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "已备份的定期快照策略ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已备份的定期快照策略ID列表",
           "example": "[\"asp-ljylgbyo\"]",
           "member": "string",
           "name": "AutoSnapshotPolicyIds",
@@ -1630,7 +1630,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的云硬盘ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建的云硬盘ID列表。",
           "example": "[\"disk-lzrg2pwi\"]",
           "member": "string",
           "name": "DiskIdSet",
@@ -2049,7 +2049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新创建的快照ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新创建的快照ID。",
           "example": "snap-3xvkxyxp",
           "member": "string",
           "name": "SnapshotId",
@@ -3176,7 +3176,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后付费云硬盘的计价单元，取值范围：HOUR：表示后付费云硬盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云硬盘的计价单元，取值范围：HOUR：表示后付费云硬盘的计价单元是按小时计算。",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
@@ -3186,7 +3186,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费云硬盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费云硬盘预支费用的折扣价，单位：元。",
           "example": "80.00",
           "member": "float",
           "name": "DiscountPrice",
@@ -3196,7 +3196,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度预付费云硬盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度预付费云硬盘预支费用的折扣价，单位：元。",
           "example": "80.00",
           "member": "string",
           "name": "DiscountPriceHigh",
@@ -3206,7 +3206,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费云硬盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费云硬盘预支费用的原价，单位：元。",
           "example": "100.00",
           "member": "float",
           "name": "OriginalPrice",
@@ -3216,7 +3216,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度预付费云硬盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度预付费云硬盘预支费用的原价，单位：元。",
           "example": "100.00",
           "member": "string",
           "name": "OriginalPriceHigh",
@@ -3246,7 +3246,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费云硬盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云硬盘原单价，单位：元。",
           "example": "100.00",
           "member": "float",
           "name": "UnitPrice",
@@ -3256,7 +3256,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费云硬盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云硬盘折扣单价，单位：元。",
           "example": "80.00",
           "member": "float",
           "name": "UnitPriceDiscount",
@@ -3266,7 +3266,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度后付费云硬盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度后付费云硬盘折扣单价，单位：元。",
           "example": "80.00",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
@@ -3276,7 +3276,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度后付费云硬盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度后付费云硬盘原单价，单位：元。",
           "example": "100.00",
           "member": "string",
           "name": "UnitPriceHigh",
@@ -3432,7 +3432,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘关联的定期快照ID。只有在调用[DescribeDisks](/document/product/362/16315)接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘关联的定期快照ID。只有在调用[DescribeDisks](/document/product/362/16315)接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。",
           "example": "null",
           "member": "string",
           "name": "AutoSnapshotPolicyIds",
@@ -3492,7 +3492,7 @@
         },
         {
           "disabled": false,
-          "document": "判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还</li><li>false:不支持主动退还。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还</li><li>false:不支持主动退还。</li>",
           "example": "true",
           "member": "bool",
           "name": "IsReturnable",
@@ -3602,7 +3602,7 @@
         },
         {
           "disabled": false,
-          "document": "当前时间距离云硬盘到期的天数（仅对预付费云硬盘有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前时间距离云硬盘到期的天数（仅对预付费云硬盘有意义）",
           "example": "20",
           "member": "int64",
           "name": "DifferDaysOfDeadline",
@@ -3712,7 +3712,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘最后一次挂载的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘最后一次挂载的实例ID",
           "example": "ins-k2j8fzqh",
           "member": "string",
           "name": "LastAttachInsId",
@@ -3927,7 +3927,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型系列。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例机型系列。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)",
           "example": "N1",
           "member": "string",
           "name": "InstanceFamily",
@@ -3957,7 +3957,7 @@
         },
         {
           "disabled": false,
-          "document": "额外的性能区间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外的性能区间。",
           "example": "[0, 650]",
           "member": "int64",
           "name": "ExtraPerformanceRange",
@@ -3967,7 +3967,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例机型。",
           "example": "VSELFAMD_2_MEM",
           "member": "string",
           "name": "DeviceClass",
@@ -5070,7 +5070,7 @@
         },
         {
           "disabled": false,
-          "document": "围笼Id，可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "围笼Id，可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。",
           "example": "cage-d0eqwu84",
           "member": "string",
           "name": "CageId",
@@ -5081,7 +5081,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。",
           "example": "cdc-8pz1i7hg",
           "member": "string",
           "name": "CdcId",
@@ -5092,7 +5092,7 @@
         },
         {
           "disabled": false,
-          "document": "独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。",
           "example": "CdcName",
           "member": "string",
           "name": "CdcName",
@@ -5125,7 +5125,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属项目名称，可通过[DescribeProject](/document/api/651/78725)获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属项目名称，可通过[DescribeProject](/document/api/651/78725)获取。",
           "example": "name",
           "member": "string",
           "name": "ProjectName",
@@ -5192,7 +5192,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预付费云盘或快照预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费云盘或快照预支费用的折扣价，单位：元。",
           "example": "1.0",
           "member": "float",
           "name": "DiscountPrice",
@@ -5202,7 +5202,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>",
           "example": "\"HOUR\"",
           "member": "string",
           "name": "ChargeUnit",
@@ -5212,7 +5212,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度后付费云盘原单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度后付费云盘原单价, 单位：元",
           "example": "\"1.00\"",
           "member": "string",
           "name": "UnitPriceHigh",
@@ -5222,7 +5222,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度预付费云盘或快照预支费用的原价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度预付费云盘或快照预支费用的原价，单位：元",
           "example": "\"1.00\"",
           "member": "string",
           "name": "OriginalPriceHigh",
@@ -5232,7 +5232,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费云盘或快照预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费云盘或快照预支费用的原价，单位：元。",
           "example": "1.0",
           "member": "float",
           "name": "OriginalPrice",
@@ -5242,7 +5242,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云盘折扣单价，单位：元。",
           "example": "1.0",
           "member": "float",
           "name": "UnitPriceDiscount",
@@ -5252,7 +5252,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度后付费云盘折扣单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度后付费云盘折扣单价, 单位：元",
           "example": "\"1.00\"",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
@@ -5262,7 +5262,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度预付费云盘或快照预支费用的折扣价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度预付费云盘或快照预支费用的折扣价，单位：元",
           "example": "\"1.00\"",
           "member": "string",
           "name": "DiscountPriceHigh",
@@ -5272,7 +5272,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云盘原单价，单位：元。",
           "example": "1.0",
           "member": "float",
           "name": "UnitPrice",
@@ -5298,7 +5298,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后付费云硬盘的计价单元，取值范围：HOUR：表示后付费云硬盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云硬盘的计价单元，取值范围：HOUR：表示后付费云硬盘的计价单元是按小时计算。",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
@@ -5308,7 +5308,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费云硬盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费云硬盘预支费用的折扣价，单位：元。",
           "example": "80.00",
           "member": "float",
           "name": "DiscountPrice",
@@ -5318,7 +5318,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度预付费云硬盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度预付费云硬盘预支费用的折扣价，单位：元。",
           "example": "80.00",
           "member": "string",
           "name": "DiscountPriceHigh",
@@ -5328,7 +5328,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费云硬盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费云硬盘预支费用的原价，单位：元。",
           "example": "100.00",
           "member": "float",
           "name": "OriginalPrice",
@@ -5338,7 +5338,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度预付费云硬盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度预付费云硬盘预支费用的原价，单位：元。",
           "example": "100.00",
           "member": "string",
           "name": "OriginalPriceHigh",
@@ -5348,7 +5348,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费云硬盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云硬盘原单价，单位：元。",
           "example": "100.00",
           "member": "float",
           "name": "UnitPrice",
@@ -5358,7 +5358,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费云硬盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云硬盘折扣单价，单位：元。",
           "example": "80.00",
           "member": "float",
           "name": "UnitPriceDiscount",
@@ -5368,7 +5368,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度后付费云硬盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度后付费云硬盘折扣单价，单位：元。",
           "example": "80.00",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
@@ -5378,7 +5378,7 @@
         },
         {
           "disabled": false,
-          "document": "高精度后付费云硬盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高精度后付费云硬盘原单价，单位：元。",
           "example": "100.00",
           "member": "string",
           "name": "UnitPriceHigh",
@@ -5871,7 +5871,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "仅限跨账号复制场景使用，描述源账户Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅限跨账号复制场景使用，描述源账户Uin。",
           "example": "1011111111",
           "member": "string",
           "name": "CopyFromAccountUin",
@@ -5882,7 +5882,7 @@
         },
         {
           "disabled": false,
-          "document": "仅限跨账号复制场景使用，描述跨账号复制的源快照ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅限跨账号复制场景使用，描述跨账号复制的源快照ID。",
           "example": "snap-dhw134nd2",
           "member": "string",
           "name": "CopyFromSnapshotId",
@@ -5893,7 +5893,7 @@
         },
         {
           "disabled": false,
-          "document": "仅限系统盘镜像快照场景使用，描述快照对应的设备镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅限系统盘镜像快照场景使用，描述快照对应的设备镜像ID。",
           "example": "100",
           "member": "uint64",
           "name": "DeviceImageId",
@@ -5904,7 +5904,7 @@
         },
         {
           "disabled": false,
-          "document": "仅限系统盘镜像快照场景使用，描述镜像快照对应的镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅限系统盘镜像快照场景使用，描述镜像快照对应的镜像ID。",
           "example": "img113213102313123",
           "member": "string",
           "name": "ImageId",
@@ -5915,7 +5915,7 @@
         },
         {
           "disabled": false,
-          "document": "私有/公共镜像标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有/公共镜像标识。",
           "example": "1",
           "member": "uint64",
           "name": "ItemId",
@@ -5926,7 +5926,7 @@
         },
         {
           "disabled": false,
-          "document": "仅限系统盘镜像快照场景使用，描述镜像快照对应的操作系统。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅限系统盘镜像快照场景使用，描述镜像快照对应的操作系统。",
           "example": "windows-xxx",
           "member": "string",
           "name": "OsName",
@@ -5937,7 +5937,7 @@
         },
         {
           "disabled": false,
-          "document": "仅跨地域复制场景使用，描述源地域信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅跨地域复制场景使用，描述源地域信息。",
           "example": "nj",
           "member": "string",
           "name": "SourceRegion",
@@ -5948,7 +5948,7 @@
         },
         {
           "disabled": false,
-          "document": "仅限于跨地域复制场景使用，描述源快照ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仅限于跨地域复制场景使用，描述源快照ID。",
           "example": "snap-dhw134nd2",
           "member": "string",
           "name": "SourceSnapshotId",
@@ -6085,7 +6085,7 @@
         },
         {
           "disabled": false,
-          "document": "快照组到期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照组到期时间。",
           "example": "2022-05-25T12:14:53.243893+08:00",
           "member": "datetime_iso",
           "name": "DeadlineTime",
@@ -6095,7 +6095,7 @@
         },
         {
           "disabled": false,
-          "document": "来源自动快照策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "来源自动快照策略ID",
           "example": "asp-1yhjqsow",
           "member": "string",
           "name": "AutoSnapshotPolicyId",

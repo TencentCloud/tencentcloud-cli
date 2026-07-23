@@ -138,7 +138,7 @@
         },
         {
           "disabled": false,
-          "document": "分割后视频URL, 存储于腾讯云COS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分割后视频URL, 存储于腾讯云COS",
           "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.mp4?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultVideoUrl",
@@ -148,7 +148,7 @@
         },
         {
           "disabled": false,
-          "document": "分割后视频MD5，用于校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分割后视频MD5，用于校验",
           "example": "4972F083D7F05E9474FDFA52AA616DEE",
           "member": "string",
           "name": "ResultVideoMD5",
@@ -158,7 +158,7 @@
         },
         {
           "disabled": false,
-          "document": "视频基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频基本信息",
           "example": "{\"FrameWidth\":720,\"FrameHeight\":1280,\"FramesPerSecond\":29,\"Duration\":0,\"TotalFrames\":439}",
           "member": "VideoBasicInformation",
           "name": "VideoBasicInformation",
@@ -168,7 +168,7 @@
         },
         {
           "disabled": false,
-          "document": "分割任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分割任务错误信息",
           "example": "video error",
           "member": "string",
           "name": "ErrorMsg",
@@ -299,7 +299,7 @@
         },
         {
           "disabled": false,
-          "document": "坐标信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "坐标信息。",
           "example": "[{\"Y\":1,\"X\":2,\"Height\":3,\"Width\":4,\"Label\":\"Head\"}]",
           "member": "ImageRect",
           "name": "ImageRects",
@@ -363,7 +363,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "处理后的图片 base64 数据，透明背景图。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理后的图片 base64 数据，透明背景图。",
           "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultImage",
@@ -373,7 +373,7 @@
         },
         {
           "disabled": false,
-          "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）。",
           "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
           "member": "string",
           "name": "ResultMask",
@@ -383,7 +383,7 @@
         },
         {
           "disabled": false,
-          "document": "图片是否存在前景。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片是否存在前景。",
           "example": "false",
           "member": "bool",
           "name": "HasForeground",
@@ -393,7 +393,7 @@
         },
         {
           "disabled": false,
-          "document": "支持将处理过的图片 base64 数据，透明背景图以Url的形式返回值，Url有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持将处理过的图片 base64 数据，透明背景图以Url的形式返回值，Url有效期为30分钟。",
           "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.mp4?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultImageUrl",
@@ -403,7 +403,7 @@
         },
         {
           "disabled": false,
-          "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。支持以Url形式的返回值；Url有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。支持以Url形式的返回值；Url有效期为30分钟。",
           "example": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/mask.mp4?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
           "member": "string",
           "name": "ResultMaskUrl",

@@ -105,7 +105,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "",
           "member": "int64",
           "name": "Total",
@@ -114,7 +114,7 @@
         },
         {
           "disabled": false,
-          "document": "短信列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "短信列表",
           "example": "",
           "member": "ResSms",
           "name": "List",
@@ -135,7 +135,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "卡片ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "卡片ID",
           "example": "",
           "member": "string",
           "name": "Iccid",
@@ -145,7 +145,7 @@
         },
         {
           "disabled": false,
-          "document": "卡片号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "卡片号码",
           "example": "",
           "member": "string",
           "name": "Msisdn",
@@ -155,7 +155,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID",
           "example": "",
           "member": "int64",
           "name": "SdkAppid",
@@ -165,7 +165,7 @@
         },
         {
           "disabled": false,
-          "document": "短信内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "短信内容",
           "example": "",
           "member": "string",
           "name": "Content",
@@ -175,7 +175,7 @@
         },
         {
           "disabled": false,
-          "document": "短信类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "短信类型",
           "example": "",
           "member": "int64",
           "name": "SmsType",
@@ -185,7 +185,7 @@
         },
         {
           "disabled": false,
-          "document": "发送时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送时间",
           "example": "",
           "member": "string",
           "name": "SendTime",
@@ -195,7 +195,7 @@
         },
         {
           "disabled": false,
-          "document": "推送时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推送时间",
           "example": "",
           "member": "string",
           "name": "ReportTime",
@@ -205,7 +205,7 @@
         },
         {
           "disabled": false,
-          "document": "SUCC：成功  FAIL 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SUCC：成功  FAIL 失败",
           "example": "",
           "member": "string",
           "name": "Remark",
@@ -215,7 +215,7 @@
         },
         {
           "disabled": false,
-          "document": "回执状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回执状态",
           "example": "",
           "member": "int64",
           "name": "Status",
@@ -264,7 +264,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "短信流水数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "短信流水数组",
           "example": "",
           "member": "SmsRet",
           "name": "Data",

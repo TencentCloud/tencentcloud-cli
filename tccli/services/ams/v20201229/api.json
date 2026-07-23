@@ -826,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名称，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件名称，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符",
           "example": "1",
           "member": "string",
           "name": "Name",
@@ -846,7 +846,7 @@
         },
         {
           "disabled": false,
-          "document": "智能审核服务对于内容违规类型的等级，可选值：\nPass 建议通过；\nReveiw 建议复审；\nBlock 建议屏蔽；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能审核服务对于内容违规类型的等级，可选值：\nPass 建议通过；\nReveiw 建议复审；\nBlock 建议屏蔽；",
           "example": "1",
           "member": "string",
           "name": "Suggestion",
@@ -856,7 +856,7 @@
         },
         {
           "disabled": false,
-          "document": "智能审核服务对于内容违规类型的判断，详见返回值列表\n如：Label：Porn（色情）；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能审核服务对于内容违规类型的判断，详见返回值列表\n如：Label：Porn（色情）；",
           "example": "1",
           "member": "string",
           "name": "Label",
@@ -866,7 +866,7 @@
         },
         {
           "disabled": false,
-          "document": "音频文本，备注：这里的文本最大只返回前1000个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频文本，备注：这里的文本最大只返回前1000个字符",
           "example": "1",
           "member": "string",
           "name": "AsrText",
@@ -876,7 +876,7 @@
         },
         {
           "disabled": false,
-          "document": "音频中对话内容审核结果；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频中对话内容审核结果；",
           "example": "无",
           "member": "TextResult",
           "name": "TextResults",
@@ -886,7 +886,7 @@
         },
         {
           "disabled": false,
-          "document": "音频中低俗内容审核结果；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频中低俗内容审核结果；",
           "example": "无",
           "member": "MoanResult",
           "name": "MoanResults",
@@ -896,7 +896,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "SubLabel",
@@ -906,7 +906,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。",
           "example": "无",
           "member": "AudioResultDetailLanguageResult",
           "name": "LanguageResults",
@@ -916,7 +916,7 @@
         },
         {
           "disabled": false,
-          "document": "音频中说话人识别返回结果；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频中说话人识别返回结果；",
           "example": "1",
           "member": "AudioResultDetailSpeakerResult",
           "name": "SpeakerResults",
@@ -926,7 +926,7 @@
         },
         {
           "disabled": false,
-          "document": "识别类标签结果信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "识别类标签结果信息列表",
           "example": "无",
           "member": "RecognitionResult",
           "name": "RecognitionResults",
@@ -936,7 +936,7 @@
         },
         {
           "disabled": false,
-          "document": "识别音频时长，单位为毫秒；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "识别音频时长，单位为毫秒；",
           "example": "15",
           "member": "string",
           "name": "Duration",
@@ -1425,7 +1425,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。</p>",
           "example": "无",
           "member": "BucketInfo",
           "name": "BucketInfo",

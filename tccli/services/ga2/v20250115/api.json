@@ -231,6 +231,13 @@
       "output": "DescribeGlobalAcceleratorAclRulesResponse",
       "status": "online"
     },
+    "DescribeGlobalAcceleratorDetail": {
+      "document": "查询全球加速实例详情-内部接口请勿对外",
+      "input": "DescribeGlobalAcceleratorDetailRequest",
+      "name": "查询全球加速实例详情-运维侧",
+      "output": "DescribeGlobalAcceleratorDetailResponse",
+      "status": "online"
+    },
     "DescribeGlobalAccelerators": {
       "document": "修改全球加速实例",
       "input": "DescribeGlobalAcceleratorsRequest",
@@ -337,6 +344,152 @@
     "serviceShortName": "ga2"
   },
   "objects": {
+    "Accelerator": {
+      "document": "全球加速实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>GA实例唯一Id</p>",
+          "example": "ga-cxwyu5cn",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "garendu-tesst-trade",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GA域名</p>",
+          "example": "ga-cxwyu5cn-pre.tencentcloudga010.cn",
+          "member": "string",
+          "name": "Cname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例的描述信息，长度：0-512</p>",
+          "example": "GaListenerQuotas_260709_165840",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例归属的客户uin，长度：0-64</p>",
+          "example": "100002840660",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户AppId</p>",
+          "example": "1255486055",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例的计费方式，取值：PREPAY（预付费）、AFTERPAY（后付费，默认）</p>",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GaWan 实例ID，长度：0-64</p>",
+          "example": "gawan-abc12345",
+          "member": "string",
+          "name": "GaWanId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例状态，取值：init（初始化）/creating（创建中）/active（可用）/configuring（配置中）/binding（绑定中）/unbinding（解绑中）/deleting（删除中）/finacialLocked（欠费锁定）/failed（创建失败）</p>",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例是否开启跨境线路功能，取值：true（开启）、false（关闭，默认）</p>",
+          "example": "false",
+          "member": "string",
+          "name": "CrossBorderStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该加速实例下关联的监听器数量</p>",
+          "example": "48",
+          "member": "uint64",
+          "name": "ListenerCounts",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该加速实例下关联的加速区域数量</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "AcceleratorAreaCounts",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2025-12-19 15:10:17",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2025-12-22 11:45:22",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AcceleratorAreas": {
       "document": "加速地域信息",
       "members": [
@@ -408,7 +561,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>IP信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP信息。</p>",
           "example": "无",
           "member": "IpAddressInfoSet",
           "name": "IpAddressInfoSet",
@@ -1329,7 +1482,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称，最大长度不能超过60个字节。</p>",
+          "document": "<p>名称，最大长度不能超过128个字符。</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -1347,7 +1500,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述信息，最大长度不能超过100个字节。</p>",
+          "document": "<p>描述信息，最大长度不能超过100个字符。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -2734,6 +2887,53 @@
           "disabled": false,
           "document": "<p>符合条件的实例个数。</p>",
           "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalAcceleratorDetailRequest": {
+      "document": "DescribeGlobalAcceleratorDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ga实例唯一Id</p>",
+          "example": "[\"ga-fkp1vr85\"]",
+          "member": "string",
+          "name": "GlobalAcceleratorIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalAcceleratorDetailResponse": {
+      "document": "DescribeGlobalAcceleratorDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例列表</p>",
+          "example": "无",
+          "member": "Accelerator",
+          "name": "AcceleratorSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的全球加速实例总数</p>",
+          "example": "3",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -4376,7 +4576,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>跨境类型；HighQuality（精品跨境）、Unicom（联通跨境）、NotAvailable（未开通）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>跨境类型；HighQuality（精品跨境）、Unicom（联通跨境）、NotAvailable（未开通）。</p>",
           "example": "HighQuality",
           "member": "string",
           "name": "CrossBorderType",
@@ -5889,7 +6089,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>键。</p><p>参数格式：1、字符串只包含可打印的ASCII字符 2、不能包含这些字符()&lt;&gt;@,;:\\&quot;/[ ]?={ }</p><p>入参限制：长度在1-40。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>键。</p><p>参数格式：1、字符串只包含可打印的ASCII字符 2、不能包含这些字符()&lt;&gt;@,;:\\&quot;/[ ]?={ }</p><p>入参限制：长度在1-40。</p>",
           "example": "key",
           "member": "string",
           "name": "Key",
@@ -5900,7 +6100,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>值。</p><p>入参限制：长度不能超过128</p><p>如果字符串包含$，那仅能配置&#39;$remote_addr&#39;, &#39;$remote_port&#39;，否则不支持。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>值。</p><p>入参限制：长度不能超过128</p><p>如果字符串包含$，那仅能配置&#39;$remote_addr&#39;, &#39;$remote_port&#39;，否则不支持。</p>",
           "example": "value",
           "member": "string",
           "name": "Value",
@@ -6006,7 +6206,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听端口。",
           "example": "12",
           "member": "uint64",
           "name": "ListenerPort",
@@ -6017,7 +6217,7 @@
         },
         {
           "disabled": false,
-          "document": "映射端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "映射端口。",
           "example": "13",
           "member": "uint64",
           "name": "EndpointPort",
@@ -6034,7 +6234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "起始端口。",
           "example": "12",
           "member": "uint64",
           "name": "FromPort",
@@ -6045,7 +6245,7 @@
         },
         {
           "disabled": false,
-          "document": "终点端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "终点端口。",
           "example": "21",
           "member": "uint64",
           "name": "ToPort",
@@ -6204,7 +6404,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>七层转发规则行为类型</p><p>枚举值：</p><ul><li>ForwardGroup： 转发策略为转发至终端节点组。</li><li>Drop： 转发策略为丢弃。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>七层转发规则行为类型</p><p>枚举值：</p><ul><li>ForwardGroup： 转发策略为转发至终端节点组。</li><li>Drop： 转发策略为丢弃。</li></ul>",
           "example": "Drop",
           "member": "string",
           "name": "RuleActionType",
@@ -6215,7 +6415,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>七层转发规则行为值</p><p>当RuleActionType是Drop时，此字段不用传；当RuleActionType是ForwardGroup时，此字段必传，需要填写的是自定义终端节点组ID， 不支持配置默认终端节点组。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>七层转发规则行为值</p><p>当RuleActionType是Drop时，此字段不用传；当RuleActionType是ForwardGroup时，此字段必传，需要填写的是自定义终端节点组ID， 不支持配置默认终端节点组。</p>",
           "example": "epg-80c0umq4",
           "member": "string",
           "name": "RuleActionValue",
@@ -6232,7 +6432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>七层转发规则条件类型</p><p>枚举值：</p><ul><li>Path： Path</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>七层转发规则条件类型</p><p>枚举值：</p><ul><li>Path： Path</li></ul>",
           "example": "Path",
           "member": "string",
           "name": "RuleConditionType",
@@ -6243,7 +6443,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>七层转发规则条件值</p><p>参数格式：格式必须满足正则表达：^[a-zA-Z0-9_.-/]{1,80}$</p><p>数组长度不能超过1。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>七层转发规则条件值</p><p>参数格式：格式必须满足正则表达：^[a-zA-Z0-9_.-/]{1,80}$</p><p>数组长度不能超过1。</p>",
           "example": "[\"/a\"]",
           "member": "string",
           "name": "RuleConditionValue",

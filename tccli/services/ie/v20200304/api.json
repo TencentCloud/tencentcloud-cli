@@ -231,7 +231,7 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频采样率 。",
           "example": "44100",
           "member": "int64",
           "name": "Sample",
@@ -241,7 +241,7 @@
         },
         {
           "disabled": false,
-          "document": "音频声道数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频声道数。",
           "example": "2",
           "member": "int64",
           "name": "Channel",
@@ -251,7 +251,7 @@
         },
         {
           "disabled": false,
-          "document": "编码格式，如aac, mp3等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编码格式，如aac, mp3等。",
           "example": "aac",
           "member": "string",
           "name": "Codec",
@@ -261,7 +261,7 @@
         },
         {
           "disabled": false,
-          "document": "码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码率，单位：bps。",
           "example": "128188",
           "member": "int64",
           "name": "Bitrate",
@@ -271,7 +271,7 @@
         },
         {
           "disabled": false,
-          "document": "音频时长，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频时长，单位：ms。",
           "example": "100000",
           "member": "int64",
           "name": "Duration",
@@ -359,7 +359,7 @@
         },
         {
           "disabled": false,
-          "document": "视频分类识别结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频分类识别结果集。",
           "example": "",
           "member": "ClassificationTaskResultItem",
           "name": "ItemSet",
@@ -575,7 +575,7 @@
         },
         {
           "disabled": false,
-          "document": "智能封面结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能封面结果集。",
           "example": "",
           "member": "CoverTaskResultItem",
           "name": "ItemSet",
@@ -723,7 +723,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑任务 ID，可以通过该 ID 查询任务状态和结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编辑任务 ID，可以通过该 ID 查询任务状态和结果。",
           "example": "12001326083614739554304",
           "member": "string",
           "name": "TaskId",
@@ -851,7 +851,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "质检任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "质检任务 ID",
           "example": "",
           "member": "string",
           "name": "TaskId",
@@ -992,7 +992,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务处理结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务处理结果。",
           "example": "无",
           "member": "MediaProcessTaskResult",
           "name": "TaskResult",
@@ -1250,7 +1250,7 @@
         },
         {
           "disabled": false,
-          "document": "视频标签识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频标签识别结果。",
           "example": "null",
           "member": "TagTaskResult",
           "name": "TagTaskResult",
@@ -1260,7 +1260,7 @@
         },
         {
           "disabled": false,
-          "document": "视频分类识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频分类识别结果。",
           "example": "null",
           "member": "ClassificationTaskResult",
           "name": "ClassificationTaskResult",
@@ -1270,7 +1270,7 @@
         },
         {
           "disabled": false,
-          "document": "智能拆条结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能拆条结果。",
           "example": "null",
           "member": "StripTaskResult",
           "name": "StripTaskResult",
@@ -1280,7 +1280,7 @@
         },
         {
           "disabled": false,
-          "document": "智能集锦结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能集锦结果。",
           "example": "null",
           "member": "HighlightsTaskResult",
           "name": "HighlightsTaskResult",
@@ -1290,7 +1290,7 @@
         },
         {
           "disabled": false,
-          "document": "智能封面结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能封面结果。",
           "example": "null",
           "member": "CoverTaskResult",
           "name": "CoverTaskResult",
@@ -1300,7 +1300,7 @@
         },
         {
           "disabled": false,
-          "document": "片头片尾识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "片头片尾识别结果。",
           "example": "null",
           "member": "OpeningEndingTaskResult",
           "name": "OpeningEndingTaskResult",
@@ -1332,7 +1332,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务结束后生成的文件大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件大小。",
           "example": "100000",
           "member": "int64",
           "name": "FileSize",
@@ -1342,7 +1342,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束后生成的文件格式，例如：mp4,flv等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件格式，例如：mp4,flv等等。",
           "example": "mp4",
           "member": "string",
           "name": "FileType",
@@ -1352,7 +1352,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束后生成的文件整体码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件整体码率，单位：bps。",
           "example": "20000",
           "member": "int64",
           "name": "Bitrate",
@@ -1362,7 +1362,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束后生成的文件时长，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件时长，单位：ms。",
           "example": "10000",
           "member": "int64",
           "name": "Duration",
@@ -1372,7 +1372,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束后生成的文件视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件视频信息。",
           "example": "无",
           "member": "VideoInfoResultItem",
           "name": "VideoInfoResult",
@@ -1382,7 +1382,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束后生成的文件音频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束后生成的文件音频信息。",
           "example": "无",
           "member": "AudioInfoResultItem",
           "name": "AudioInfoResult",
@@ -1588,7 +1588,7 @@
         },
         {
           "disabled": false,
-          "document": "智能集锦结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能集锦结果集。",
           "example": "",
           "member": "HighlightsTaskResultItem",
           "name": "ItemSet",
@@ -1899,7 +1899,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。",
           "example": "无",
           "member": "TaskResultFile",
           "name": "ListFile",
@@ -1909,7 +1909,7 @@
         },
         {
           "disabled": false,
-          "document": "结果个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果个数。",
           "example": "0",
           "member": "int64",
           "name": "ResultCount",
@@ -1919,7 +1919,7 @@
         },
         {
           "disabled": false,
-          "document": "第一个结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第一个结果文件。",
           "example": "无",
           "member": "TaskResultFile",
           "name": "FirstFile",
@@ -1929,7 +1929,7 @@
         },
         {
           "disabled": false,
-          "document": "最后一个结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一个结果文件。",
           "example": "无",
           "member": "TaskResultFile",
           "name": "LastFile",
@@ -1939,7 +1939,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结果包含的图片总数。\n静态图：总数即为文件数；\n雪碧图：所有小图总数；\n动图、视频：不计算图片数，为 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结果包含的图片总数。\n静态图：总数即为文件数；\n雪碧图：所有小图总数；\n动图、视频：不计算图片数，为 0。",
           "example": "0",
           "member": "int64",
           "name": "ImageCount",
@@ -2215,7 +2215,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "拼接结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拼接结果文件。",
           "example": "",
           "member": "TaskResultFile",
           "name": "File",
@@ -2277,7 +2277,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑处理任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编辑处理任务ID。",
           "example": "",
           "member": "string",
           "name": "TaskId",
@@ -2287,7 +2287,7 @@
         },
         {
           "disabled": false,
-          "document": "编辑处理任务类型，取值：\nMediaEditing：视频编辑（待上线）；\nMediaCutting：视频剪切；\nMediaJoining：视频拼接。\nMediaRecognition：媒体识别；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编辑处理任务类型，取值：\nMediaEditing：视频编辑（待上线）；\nMediaCutting：视频剪切；\nMediaJoining：视频拼接。\nMediaRecognition：媒体识别；",
           "example": "",
           "member": "string",
           "name": "Type",
@@ -2297,7 +2297,7 @@
         },
         {
           "disabled": false,
-          "document": "处理进度，范围：[0,100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理进度，范围：[0,100]",
           "example": "",
           "member": "int64",
           "name": "Progress",
@@ -2307,7 +2307,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态：\n1100：等待中；\n1200：执行中；\n2000：成功；\n5000：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态：\n1100：等待中；\n1200：执行中；\n2000：成功；\n5000：失败。",
           "example": "",
           "member": "int64",
           "name": "Status",
@@ -2317,7 +2317,7 @@
         },
         {
           "disabled": false,
-          "document": "任务错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务错误码。",
           "example": "",
           "member": "int64",
           "name": "ErrCode",
@@ -2327,7 +2327,7 @@
         },
         {
           "disabled": false,
-          "document": "任务错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务错误信息。",
           "example": "",
           "member": "string",
           "name": "ErrMsg",
@@ -2337,7 +2337,7 @@
         },
         {
           "disabled": false,
-          "document": "剪切任务处理结果，当Type=MediaCutting时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剪切任务处理结果，当Type=MediaCutting时才有效。",
           "example": "",
           "member": "MediaCuttingTaskResult",
           "name": "MediaCuttingTaskResult",
@@ -2347,7 +2347,7 @@
         },
         {
           "disabled": false,
-          "document": "拼接任务处理结果，当Type=MediaJoining时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拼接任务处理结果，当Type=MediaJoining时才有效。",
           "example": "",
           "member": "MediaJoiningTaskResult",
           "name": "MediaJoiningTaskResult",
@@ -2357,7 +2357,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体识别任务处理结果，当Type=MediaRecognition时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体识别任务处理结果，当Type=MediaRecognition时才有效。",
           "example": "",
           "member": "MediaRecognitionTaskResult",
           "name": "MediaRecognitionTaskResult",
@@ -2425,7 +2425,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "帧标签识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "帧标签识别结果",
           "example": "",
           "member": "FrameTagResult",
           "name": "FrameTagResults",
@@ -2435,7 +2435,7 @@
         },
         {
           "disabled": false,
-          "document": "语音字幕识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音字幕识别结果",
           "example": "",
           "member": "SubtitleResult",
           "name": "SubtitleResults",
@@ -2451,7 +2451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体时长，单位：毫秒",
           "example": "1000",
           "member": "uint64",
           "name": "Duration",
@@ -2461,7 +2461,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流信息",
           "example": "null",
           "member": "ResultVideoInfo",
           "name": "ResultVideoInfoSet",
@@ -2471,7 +2471,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频流信息",
           "example": "null",
           "member": "ResultAudioInfo",
           "name": "ResultAudioInfoSet",
@@ -2651,7 +2651,7 @@
         },
         {
           "disabled": false,
-          "document": "片头片尾识别结果项。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "片头片尾识别结果项。",
           "example": "",
           "member": "OpeningEndingTaskResultItem",
           "name": "Item",
@@ -2985,7 +2985,7 @@
         },
         {
           "disabled": false,
-          "document": "为true时表示视频无音频轨\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "为true时表示视频无音频轨",
           "example": "",
           "member": "bool",
           "name": "NoAudio",
@@ -2995,7 +2995,7 @@
         },
         {
           "disabled": false,
-          "document": "为true时表示视频无视频轨\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "为true时表示视频无视频轨",
           "example": "",
           "member": "bool",
           "name": "NoVideo",
@@ -3005,7 +3005,7 @@
         },
         {
           "disabled": false,
-          "document": "视频无参考质量打分，百分制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频无参考质量打分，百分制",
           "example": "",
           "member": "uint64",
           "name": "QualityEvaluationScore",
@@ -3015,7 +3015,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面无参考评分低于阈值的时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面无参考评分低于阈值的时间段",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "QualityEvaluationResults",
@@ -3025,7 +3025,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面抖动时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面抖动时间段",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "JitterResults",
@@ -3035,7 +3035,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面模糊时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面模糊时间段",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "BlurResults",
@@ -3045,7 +3045,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面低光、过曝时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面低光、过曝时间段",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "AbnormalLightingResults",
@@ -3055,7 +3055,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面花屏时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面花屏时间段",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "CrashScreenResults",
@@ -3065,7 +3065,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面黑边、白边、黑屏、白屏、纯色屏时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面黑边、白边、黑屏、白屏、纯色屏时间段",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "BlackWhiteEdgeResults",
@@ -3075,7 +3075,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面有噪点时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面有噪点时间段",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "NoiseResults",
@@ -3085,7 +3085,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面有马赛克时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面有马赛克时间段",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "MosaicResults",
@@ -3095,7 +3095,7 @@
         },
         {
           "disabled": false,
-          "document": "视频画面有二维码的时间段，包括小程序码、条形码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频画面有二维码的时间段，包括小程序码、条形码",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "QRCodeResults",
@@ -3105,7 +3105,7 @@
         },
         {
           "disabled": false,
-          "document": "视频音频异常时间段，包括静音、低音、爆音\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频音频异常时间段，包括静音、低音、爆音",
           "example": "",
           "member": "QualityControlResultItems",
           "name": "VoiceResults",
@@ -3115,7 +3115,7 @@
         },
         {
           "disabled": false,
-          "document": "任务错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务错误码",
           "example": "",
           "member": "int64",
           "name": "ErrCode",
@@ -3125,7 +3125,7 @@
         },
         {
           "disabled": false,
-          "document": "任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务错误信息",
           "example": "",
           "member": "string",
           "name": "ErrMsg",
@@ -3141,7 +3141,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "置信度，取值范围是 0 到 100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "置信度，取值范围是 0 到 100",
           "example": "",
           "member": "uint64",
           "name": "Confidence",
@@ -3171,7 +3171,7 @@
         },
         {
           "disabled": false,
-          "document": "区域坐标(px)，即左上角坐标、右下角坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域坐标(px)，即左上角坐标、右下角坐标",
           "example": "",
           "member": "uint64",
           "name": "AreaCoordsSet",
@@ -3187,7 +3187,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异常类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常类型",
           "example": "",
           "member": "string",
           "name": "Id",
@@ -3229,7 +3229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流在媒体文件中的流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流在媒体文件中的流ID",
           "example": "0",
           "member": "int64",
           "name": "StreamId",
@@ -3239,7 +3239,7 @@
         },
         {
           "disabled": false,
-          "document": "流的时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流的时长，单位：毫秒",
           "example": "1000",
           "member": "uint64",
           "name": "Duration",
@@ -3255,7 +3255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流在媒体文件中的流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流在媒体文件中的流ID",
           "example": "0",
           "member": "int64",
           "name": "StreamId",
@@ -3265,7 +3265,7 @@
         },
         {
           "disabled": false,
-          "document": "流的时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流的时长，单位：毫秒",
           "example": "1000",
           "member": "uint64",
           "name": "Duration",
@@ -3275,7 +3275,7 @@
         },
         {
           "disabled": false,
-          "document": "画面宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画面宽度",
           "example": "1920",
           "member": "int64",
           "name": "Width",
@@ -3285,7 +3285,7 @@
         },
         {
           "disabled": false,
-          "document": "画面高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画面高度",
           "example": "1080",
           "member": "int64",
           "name": "Height",
@@ -3295,7 +3295,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，如果高于原始帧率，部分服务将无效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频帧率，如果高于原始帧率，部分服务将无效。",
           "example": "30",
           "member": "int64",
           "name": "Fps",
@@ -3687,7 +3687,7 @@
         },
         {
           "disabled": false,
-          "document": "智能拆条结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能拆条结果集。",
           "example": "",
           "member": "StripTaskResultItem",
           "name": "ItemSet",
@@ -3759,7 +3759,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子任务名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子任务名称。",
           "example": "test",
           "member": "string",
           "name": "TaskName",
@@ -3789,7 +3789,7 @@
         },
         {
           "disabled": false,
-          "document": "子任务进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子任务进度。",
           "example": "60",
           "member": "int64",
           "name": "ProgressRate",
@@ -3799,7 +3799,7 @@
         },
         {
           "disabled": false,
-          "document": "画质重生处理后文件的下载地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画质重生处理后文件的下载地址。",
           "example": "https://yayunhui-1251820392.cos.ap-beijing.myqcloud.com/test.mp4",
           "member": "string",
           "name": "DownloadUrl",
@@ -3809,7 +3809,7 @@
         },
         {
           "disabled": false,
-          "document": "画质重生处理后文件的MD5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画质重生处理后文件的MD5。",
           "example": "e993da7f46b38b48efa3b9f0d7ba17d5",
           "member": "string",
           "name": "Md5",
@@ -3819,7 +3819,7 @@
         },
         {
           "disabled": false,
-          "document": "画质重生处理后文件的详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画质重生处理后文件的详细信息。",
           "example": "无",
           "member": "FileInfo",
           "name": "FileInfo",
@@ -3911,7 +3911,7 @@
         },
         {
           "disabled": false,
-          "document": "中文翻译结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中文翻译结果",
           "example": "",
           "member": "string",
           "name": "Zh",
@@ -3921,7 +3921,7 @@
         },
         {
           "disabled": false,
-          "document": "英文翻译结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "英文翻译结果",
           "example": "",
           "member": "string",
           "name": "En",
@@ -3981,7 +3981,7 @@
         },
         {
           "disabled": false,
-          "document": "语句分割时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语句分割时间戳",
           "example": "",
           "member": "string",
           "name": "PuncEndTs",
@@ -4085,7 +4085,7 @@
         },
         {
           "disabled": false,
-          "document": "分级数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分级数组",
           "example": "",
           "member": "string",
           "name": "Categorys",
@@ -4095,7 +4095,7 @@
         },
         {
           "disabled": false,
-          "document": "标签备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签备注",
           "example": "",
           "member": "string",
           "name": "Ext",
@@ -4141,7 +4141,7 @@
         },
         {
           "disabled": false,
-          "document": "视频标签识别结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频标签识别结果集。",
           "example": "",
           "member": "TagTaskResultItem",
           "name": "ItemSet",
@@ -4245,7 +4245,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件链接。",
           "example": "null",
           "member": "string",
           "name": "Url",
@@ -4255,7 +4255,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小，部分任务支持，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件大小，部分任务支持，单位：字节",
           "example": "1000",
           "member": "uint64",
           "name": "FileSize",
@@ -4265,7 +4265,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体信息，对于媒体文件，部分任务支持返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体信息，对于媒体文件，部分任务支持返回",
           "example": "null",
           "member": "MediaResultInfo",
           "name": "MediaInfo",
@@ -4275,7 +4275,7 @@
         },
         {
           "disabled": false,
-          "document": "文件对应的md5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件对应的md5。",
           "example": "“”",
           "member": "string",
           "name": "Md5",
@@ -4675,7 +4675,7 @@
         },
         {
           "disabled": false,
-          "document": "视频宽度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频宽度。",
           "example": "1920",
           "member": "int64",
           "name": "Width",
@@ -4685,7 +4685,7 @@
         },
         {
           "disabled": false,
-          "document": "视频高度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频高度。",
           "example": "1080",
           "member": "int64",
           "name": "Height",
@@ -4695,7 +4695,7 @@
         },
         {
           "disabled": false,
-          "document": "视频码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频码率，单位：bps。",
           "example": "2000",
           "member": "int64",
           "name": "Bitrate",
@@ -4705,7 +4705,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，用分数格式表示，如：25/1, 99/32等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频帧率，用分数格式表示，如：25/1, 99/32等等。",
           "example": "25",
           "member": "string",
           "name": "Fps",
@@ -4715,7 +4715,7 @@
         },
         {
           "disabled": false,
-          "document": "编码格式，如h264,h265等等 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编码格式，如h264,h265等等 。",
           "example": "h264",
           "member": "string",
           "name": "Codec",
@@ -4725,7 +4725,7 @@
         },
         {
           "disabled": false,
-          "document": "播放旋转角度，可选值0-360。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "播放旋转角度，可选值0-360。",
           "example": "180",
           "member": "int64",
           "name": "Rotate",
@@ -4735,7 +4735,7 @@
         },
         {
           "disabled": false,
-          "document": "视频时长，单位：ms 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频时长，单位：ms 。",
           "example": "100000",
           "member": "int64",
           "name": "Duration",
@@ -4745,7 +4745,7 @@
         },
         {
           "disabled": false,
-          "document": "颜色空间，如yuv420p，yuv444p等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "颜色空间，如yuv420p，yuv444p等等。",
           "example": "yuv420p",
           "member": "string",
           "name": "PixFormat",

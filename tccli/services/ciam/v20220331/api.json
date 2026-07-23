@@ -744,7 +744,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>用户信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户信息</p>",
           "example": "无",
           "member": "User",
           "name": "User",
@@ -827,7 +827,7 @@
         },
         {
           "disabled": false,
-          "document": "分页对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页对象",
           "example": "无",
           "member": "Pageable",
           "name": "Pageable",
@@ -1306,7 +1306,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的数据类型\n\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务的数据类型\n\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values",
           "example": "NDJSON",
           "member": "string",
           "name": "Format",
@@ -1316,7 +1316,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结果下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结果下载地址",
           "example": "http://aa.com/bb.csv",
           "member": "string",
           "name": "Location",
@@ -1336,7 +1336,7 @@
         },
         {
           "disabled": false,
-          "document": "失败的用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败的用户",
           "example": "无",
           "member": "FailedUsers",
           "name": "FailedUsers",
@@ -1727,7 +1727,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>分页对象</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分页对象</p>",
           "example": "无",
           "member": "Pageable",
           "name": "Pageable",
@@ -1764,7 +1764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户目录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户目录列表",
           "example": "无",
           "member": "UserStore",
           "name": "UserStoreSet",
@@ -1836,7 +1836,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "忘记用户名日志",
           "member": "string",
           "name": "Description",
@@ -1946,7 +1946,7 @@
         },
         {
           "disabled": false,
-          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详情",
           "example": "error detail",
           "member": "string",
           "name": "Detail",
@@ -1956,7 +1956,7 @@
         },
         {
           "disabled": false,
-          "document": "日志结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志结果",
           "example": "FAIL",
           "member": "string",
           "name": "ActionResult",
@@ -2592,7 +2592,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户名</p>",
           "example": "zhangsan",
           "member": "string",
           "name": "UserName",
@@ -2602,7 +2602,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>手机号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机号</p>",
           "example": "132****0000",
           "member": "string",
           "name": "PhoneNumber",
@@ -2612,7 +2612,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>邮箱</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>邮箱</p>",
           "example": "132****@qq.com",
           "member": "string",
           "name": "Email",
@@ -2622,7 +2622,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>上次登录时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上次登录时间</p>",
           "example": "1711002933442",
           "member": "int64",
           "name": "LastSignOn",
@@ -2662,7 +2662,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>昵称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>昵称</p>",
           "example": "昵称1",
           "member": "string",
           "name": "Nickname",
@@ -2672,7 +2672,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地址</p>",
           "example": "北京市海淀区",
           "member": "string",
           "name": "Address",
@@ -2682,7 +2682,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生日</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生日</p>",
           "example": "1706682491339",
           "member": "int64",
           "name": "Birthdate",
@@ -2692,7 +2692,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户组ID</p>",
           "example": "[\"6cd22e51****************f6f7cb81\"]",
           "member": "string",
           "name": "UserGroups",
@@ -2702,7 +2702,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户组名称</p>",
           "example": "[\"Admin\"]",
           "member": "string",
           "name": "UserGroupNames",
@@ -2712,7 +2712,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>上次修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上次修改时间</p>",
           "example": "1722420973329",
           "member": "int64",
           "name": "LastModifiedDate",
@@ -2732,7 +2732,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>身份证号</p>",
           "example": "x x x",
           "member": "string",
           "name": "ResidentIdentityCard",
@@ -2742,7 +2742,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>QQ的OpenId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>QQ的OpenId</p>",
           "example": "qqopenid",
           "member": "string",
           "name": "QqOpenId",
@@ -2752,7 +2752,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>QQ的UnionId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>QQ的UnionId</p>",
           "example": "qqunionid",
           "member": "string",
           "name": "QqUnionId",
@@ -2762,7 +2762,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>微信的WechatOpenId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微信的WechatOpenId</p>",
           "example": "wechatopenid",
           "member": "string",
           "name": "WechatOpenId",
@@ -2772,7 +2772,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>微信的WechatUnionId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>微信的WechatUnionId</p>",
           "example": "wechatunionid",
           "member": "string",
           "name": "WechatUnionId",
@@ -2782,7 +2782,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>支付宝的AlipayUserId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支付宝的AlipayUserId</p>",
           "example": "alipayuserid",
           "member": "string",
           "name": "AlipayUserId",
@@ -2792,7 +2792,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>企业微信的WeComUserId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企业微信的WeComUserId</p>",
           "example": "wecomuserid",
           "member": "string",
           "name": "WeComUserId",
@@ -2802,7 +2802,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "用户1",
           "member": "string",
           "name": "Description",
@@ -2812,7 +2812,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>姓名</p>",
           "example": "姓名",
           "member": "string",
           "name": "Name",
@@ -2822,7 +2822,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>坐标</p>",
           "example": "地理位置",
           "member": "string",
           "name": "Locale",
@@ -2832,7 +2832,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>性别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>性别</p>",
           "example": "男",
           "member": "string",
           "name": "Gender",
@@ -2842,7 +2842,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实名核验方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实名核验方式</p>",
           "example": "nameAndIdCard",
           "member": "string",
           "name": "IdentityVerificationMethod",
@@ -2862,7 +2862,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作</p>",
           "example": "员工",
           "member": "string",
           "name": "Job",
@@ -2872,7 +2872,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>国家</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>国家</p>",
           "example": "汉族",
           "member": "string",
           "name": "Nationality",
@@ -2892,7 +2892,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>时区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时区</p>",
           "example": "时区",
           "member": "string",
           "name": "Zone",
@@ -2932,7 +2932,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本</p>",
           "example": "0",
           "member": "int64",
           "name": "Version",
@@ -2942,7 +2942,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>锁定类型（分为管理员锁定，和登录策略锁定）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>锁定类型（分为管理员锁定，和登录策略锁定）</p>",
           "example": "failureLock",
           "member": "string",
           "name": "LockType",
@@ -2952,7 +2952,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>锁定时间点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>锁定时间点</p>",
           "example": "0",
           "member": "int64",
           "name": "LockTime",
@@ -2962,7 +2962,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>索引字段1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>索引字段1</p>",
           "example": "value1",
           "member": "string",
           "name": "IndexedAttribute1",
@@ -2972,7 +2972,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>索引字段2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>索引字段2</p>",
           "example": "value2",
           "member": "string",
           "name": "IndexedAttribute2",
@@ -2982,7 +2982,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>索引字段3</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>索引字段3</p>",
           "example": "value3",
           "member": "string",
           "name": "IndexedAttribute3",
@@ -2992,7 +2992,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>索引字段4</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>索引字段4</p>",
           "example": "value4",
           "member": "string",
           "name": "IndexedAttribute4",
@@ -3002,7 +3002,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>索引字段5</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>索引字段5</p>",
           "example": "value5",
           "member": "string",
           "name": "IndexedAttribute5",
@@ -3012,7 +3012,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户所属组织机构ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户所属组织机构ID</p>",
           "example": "[\"07c4e9********7093\", \"842bd7********0377\"]",
           "member": "string",
           "name": "UserOrgs",
@@ -3022,7 +3022,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户所属企业微信组织机构</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户所属企业微信组织机构</p>",
           "example": "[1, 2]",
           "member": "int64",
           "name": "WeComUserOrgs",
@@ -3058,7 +3058,7 @@
         },
         {
           "disabled": false,
-          "document": "用户组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组描述",
           "example": "包含了一组用户",
           "member": "string",
           "name": "Description",
@@ -3150,7 +3150,7 @@
         },
         {
           "disabled": false,
-          "document": "用户池logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户池logo",
           "example": "https://aa.com/bb.png",
           "member": "string",
           "name": "UserStoreLogo",
@@ -3160,7 +3160,7 @@
         },
         {
           "disabled": false,
-          "document": "用户池描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户池描述",
           "example": "管理应用和用户",
           "member": "string",
           "name": "UserStoreDesc",
@@ -3240,7 +3240,7 @@
         },
         {
           "disabled": false,
-          "document": "上次切换时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上次切换时间",
           "example": "1713168583556",
           "member": "int64",
           "name": "LastStatusTime",
@@ -3250,7 +3250,7 @@
         },
         {
           "disabled": false,
-          "document": "用户目录域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户目录域名",
           "example": "leecpn",
           "member": "string",
           "name": "UserStoreProtocolHost",

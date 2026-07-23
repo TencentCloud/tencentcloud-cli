@@ -1004,7 +1004,7 @@
         },
         {
           "disabled": false,
-          "document": "由负载均衡实例唯一 ID 组成的数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "由负载均衡实例唯一 ID 组成的数组。",
           "example": "[\"gwlb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -1014,7 +1014,7 @@
         },
         {
           "disabled": false,
-          "document": "辅助描述信息，如失败原因等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "辅助描述信息，如失败原因等。",
           "example": "\"error message\"",
           "member": "string",
           "name": "Message",
@@ -1340,7 +1340,7 @@
         },
         {
           "disabled": false,
-          "document": "预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支费用的原价，单位：元。",
           "example": "50",
           "member": "float",
           "name": "OriginalPrice",
@@ -1350,7 +1350,7 @@
         },
         {
           "disabled": false,
-          "document": "预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支费用的折扣价，单位：元。",
           "example": "50",
           "member": "float",
           "name": "DiscountPrice",
@@ -1927,7 +1927,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的默认端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标组的默认端口",
           "example": "60",
           "member": "uint64",
           "name": "Port",
@@ -1957,7 +1957,7 @@
         },
         {
           "disabled": false,
-          "document": "关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。",
           "example": "无",
           "member": "AssociationItem",
           "name": "AssociatedRule",
@@ -1967,7 +1967,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡目标组协议。\n- tencent_geneve ：GENEVE 标准协议\n- aws_geneve：GENEVE 兼容协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡目标组协议。\n- tencent_geneve ：GENEVE 标准协议\n- aws_geneve：GENEVE 兼容协议",
           "example": "tencent_geneve",
           "member": "string",
           "name": "Protocol",
@@ -1977,7 +1977,7 @@
         },
         {
           "disabled": false,
-          "document": "均衡算法。\n- ip_hash_3_elastic：弹性哈希\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "均衡算法。\n- ip_hash_3_elastic：弹性哈希",
           "example": "ip_hash_3_elastic",
           "member": "string",
           "name": "ScheduleAlgorithm",
@@ -1987,7 +1987,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查详情。",
           "example": "null",
           "member": "TargetGroupHealthCheck",
           "name": "HealthCheck",
@@ -1997,7 +1997,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持全死全活。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持全死全活。",
           "example": "true",
           "member": "bool",
           "name": "AllDeadToAlive",
@@ -2007,7 +2007,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组已关联的规则数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标组已关联的规则数。",
           "example": "60",
           "member": "int64",
           "name": "AssociatedRuleCount",
@@ -2017,7 +2017,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组内的实例数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标组内的实例数量。",
           "example": "1",
           "member": "int64",
           "name": "RegisteredInstancesCount",

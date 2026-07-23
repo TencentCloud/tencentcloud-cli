@@ -2522,7 +2522,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘快照 ID，可通过 [DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647) 接口获取该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘快照 ID，可通过 [DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647) 接口获取该参数。",
           "example": "snap-l8psqwnt",
           "member": "string",
           "name": "SnapshotId",
@@ -2533,7 +2533,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>FALSE：子机销毁时，保留数据盘</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>FALSE：子机销毁时，保留数据盘</li>",
           "example": "false",
           "member": "bool",
           "name": "DeleteWithInstance",
@@ -2544,7 +2544,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否加密。取值范围：\n<li>TRUE：加密</li>\n<li>FALSE：不加密</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是否加密。取值范围：\n<li>TRUE：加密</li>\n<li>FALSE：不加密</li>",
           "example": "true",
           "member": "bool",
           "name": "Encrypt",
@@ -2555,7 +2555,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能，功能介绍和类型限制详见：[增强型 SSD 云硬盘额外性能说明](https://cloud.tencent.com/document/product/362/51896#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD)。\n当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且 需容量 > 460GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能，功能介绍和类型限制详见：[增强型 SSD 云硬盘额外性能说明](https://cloud.tencent.com/document/product/362/51896#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD)。\n当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且 需容量 > 460GB。",
           "example": "100",
           "member": "uint64",
           "name": "ThroughputPerformance",
@@ -2566,7 +2566,7 @@
         },
         {
           "disabled": false,
-          "document": "突发性能。是否开启突发性能，默认取值为 false。当前该参数仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且需容量 > 460GB。\n注：内测中，需提单申请后使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "突发性能。是否开启突发性能，默认取值为 false。当前该参数仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且需容量 > 460GB。\n注：内测中，需提单申请后使用。",
           "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
@@ -4177,7 +4177,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云服务器的主机名。\n<li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li> 其他类型（Linux 等）实例：字符长度为[2, 42]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。</li> \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器的主机名。\n<li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li> 其他类型（Linux 等）实例：字符长度为[2, 42]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。</li> ",
           "example": "product-as-host-0",
           "member": "string",
           "name": "HostName",
@@ -4188,7 +4188,7 @@
         },
         {
           "disabled": false,
-          "document": "云服务器主机名的风格，取值范围包括 ORIGINAL 和  UNIQUE，默认为 ORIGINAL。\n<li> ORIGINAL，AS 直接将入参中所填的 HostName 传递给 CVM，CVM 可能会对 HostName 追加序列号，伸缩组中实例的 HostName 会出现冲突的情况。</li> \n<li> UNIQUE，入参所填的 HostName 相当于主机名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 HostName 可以保证唯一。</li> \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器主机名的风格，取值范围包括 ORIGINAL 和  UNIQUE，默认为 ORIGINAL。\n<li> ORIGINAL，AS 直接将入参中所填的 HostName 传递给 CVM，CVM 可能会对 HostName 追加序列号，伸缩组中实例的 HostName 会出现冲突的情况。</li> \n<li> UNIQUE，入参所填的 HostName 相当于主机名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 HostName 可以保证唯一。</li> ",
           "example": "ORIGINAL",
           "member": "string",
           "name": "HostNameStyle",
@@ -4199,7 +4199,7 @@
         },
         {
           "disabled": false,
-          "document": "云服务器的主机名后缀。\n<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li>其他类型（Linux 等）实例：字符长度为[1, 39]，且与 HostName 的长度和不能超过 41，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器的主机名后缀。\n<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li>其他类型（Linux 等）实例：字符长度为[1, 39]，且与 HostName 的长度和不能超过 41，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> ",
           "example": "suffix",
           "member": "string",
           "name": "HostNameSuffix",
@@ -4227,7 +4227,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络计费模式。取值包括TRAFFIC_POSTPAID_BY_HOUR、BANDWIDTH_PACKAGE，默认取值为TRAFFIC_POSTPAID_BY_HOUR。查看当前账户类型可参考[账户类型说明](https://cloud.tencent.com/document/product/1199/49090#judge)。\n<br><li> IPv6对标准账户类型支持TRAFFIC_POSTPAID_BY_HOUR。\n<br><li> IPv6对传统账户类型支持BANDWIDTH_PACKAGE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络计费模式。取值包括TRAFFIC_POSTPAID_BY_HOUR、BANDWIDTH_PACKAGE，默认取值为TRAFFIC_POSTPAID_BY_HOUR。查看当前账户类型可参考[账户类型说明](https://cloud.tencent.com/document/product/1199/49090#judge)。\n<br><li> IPv6对标准账户类型支持TRAFFIC_POSTPAID_BY_HOUR。\n<br><li> IPv6对传统账户类型支持BANDWIDTH_PACKAGE。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
@@ -4237,7 +4237,7 @@
         },
         {
           "disabled": false,
-          "document": "公网出带宽上限，单位：Mbps。<br>默认值：0，此时不为IPv6分配公网带宽。不同机型、可用区、计费模式的带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网出带宽上限，单位：Mbps。<br>默认值：0，此时不为IPv6分配公网带宽。不同机型、可用区、计费模式的带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。",
           "example": "0",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -4247,7 +4247,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。",
           "example": "bwp-jfio9i0p",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -4475,7 +4475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>是否开启实例创建序号，默认不开启。取值范围：</p><p><strong>TRUE</strong>：表示开启实例创建序号; <strong>FALSE</strong>：表示不开启实例创建序号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启实例创建序号，默认不开启。取值范围：</p><p><strong>TRUE</strong>：表示开启实例创建序号; <strong>FALSE</strong>：表示不开启实例创建序号</p>",
           "example": "false",
           "member": "bool",
           "name": "Enabled",
@@ -4486,7 +4486,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>初始序号。取值范围与 IndexLength 参数有关：- IndexLength 为 0 时，取值范围为 [0, 99999999]。- IndexLength 为 [1, 8] 时，取值范围为 [0, 10^IndexLength-1]，最大值即为指定位数的最大数字。初始序号默认值如下：- 首次启用递增序号：初始序号默认值为 0 （ 展示位数与 IndexLength 有关，例如 IndexLength 为  4，展示值为 0000）- 非首次开启递增序号：顺延之前的递增序号，例如上次使用递增至序号 069，则新的初始序号默认值为 070。注意：修改初始序号可能会造成伸缩组内序号重复。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>初始序号。取值范围与 IndexLength 参数有关：- IndexLength 为 0 时，取值范围为 [0, 99999999]。- IndexLength 为 [1, 8] 时，取值范围为 [0, 10^IndexLength-1]，最大值即为指定位数的最大数字。初始序号默认值如下：- 首次启用递增序号：初始序号默认值为 0 （ 展示位数与 IndexLength 有关，例如 IndexLength 为  4，展示值为 0000）- 非首次开启递增序号：顺延之前的递增序号，例如上次使用递增至序号 069，则新的初始序号默认值为 070。注意：修改初始序号可能会造成伸缩组内序号重复。</p>",
           "example": "0",
           "member": "int64",
           "name": "BeginIndex",
@@ -4536,7 +4536,7 @@
         },
         {
           "disabled": false,
-          "document": "云服务器实例名后缀。字符长度为[1,105]，且与 InstanceName 的长度和不能超过107。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器实例名后缀。字符长度为[1,105]，且与 InstanceName 的长度和不能超过107。",
           "example": "testsuffix",
           "member": "string",
           "name": "InstanceNameSuffix",
@@ -4592,7 +4592,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络计费类型。取值范围：<li>BANDWIDTH_PREPAID：预付费按带宽结算</li><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li><li>BANDWIDTH_PACKAGE：带宽包用户</li>默认取值：TRAFFIC_POSTPAID_BY_HOUR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络计费类型。取值范围：<li>BANDWIDTH_PREPAID：预付费按带宽结算</li><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li><li>BANDWIDTH_PACKAGE：带宽包用户</li>默认取值：TRAFFIC_POSTPAID_BY_HOUR。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
@@ -4603,7 +4603,7 @@
         },
         {
           "disabled": false,
-          "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。",
           "example": "0",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -4614,7 +4614,7 @@
         },
         {
           "disabled": false,
-          "document": "是否分配公网IP。取值范围：<li>TRUE：表示分配公网IP</li><li>FALSE：表示不分配公网IP</li>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否分配公网IP。取值范围：<li>TRUE：表示分配公网IP</li><li>FALSE：表示不分配公网IP</li>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。",
           "example": "false",
           "member": "bool",
           "name": "PublicIpAssigned",
@@ -4625,7 +4625,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽包ID。可通过[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。",
           "example": "bwp-dss86yt5",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -4852,7 +4852,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义数据。",
           "example": "dGVzdA==",
           "member": "string",
           "name": "UserData",
@@ -4912,7 +4912,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
           "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
@@ -6678,7 +6678,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新活动开始时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "刷新活动开始时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。",
           "example": "2023-09-04T11:42:46Z",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -6688,7 +6688,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新活动结束时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "刷新活动结束时间，为标准 `UTC` 时间，格式形如 `YYYY-MM-DDTHH:mm:ssZ`。",
           "example": "2023-09-04T11:42:46Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -6744,7 +6744,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新批次开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "刷新批次开始时间。",
           "example": "2023-08-31T11:46:40Z",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -6754,7 +6754,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新批次结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "刷新批次结束时间。",
           "example": "2023-08-31T11:46:40Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -7086,7 +7086,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[自动化助手](https://cloud.tencent.com/document/product/1340)服务。取值范围：<br><li>TRUE：表示开启自动化助手服务<br><li>FALSE：表示不开启自动化助手服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启[自动化助手](https://cloud.tencent.com/document/product/1340)服务。取值范围：<br><li>TRUE：表示开启自动化助手服务<br><li>FALSE：表示不开启自动化助手服务",
           "example": "True",
           "member": "bool",
           "name": "Enabled",
@@ -7308,7 +7308,7 @@
         },
         {
           "disabled": false,
-          "document": "预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>",
           "example": "ASG_AVG_CPU_UTILIZATION",
           "member": "string",
           "name": "PredefinedMetricType",
@@ -7318,7 +7318,7 @@
         },
         {
           "disabled": false,
-          "document": "目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>",
           "example": "10",
           "member": "uint64",
           "name": "TargetValue",
@@ -7328,7 +7328,7 @@
         },
         {
           "disabled": false,
-          "document": "实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。",
           "example": "300",
           "member": "uint64",
           "name": "EstimatedInstanceWarmup",
@@ -7338,7 +7338,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>",
           "example": "false",
           "member": "bool",
           "name": "DisableScaleIn",
@@ -7348,7 +7348,7 @@
         },
         {
           "disabled": false,
-          "document": "告警监控指标列表，仅适用于目标追踪策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警监控指标列表，仅适用于目标追踪策略。",
           "example": "{\"ComparisonOperator\": \"GREATER_THAN\", \"Period\": 300, \"ContinuousTime\": 1, \"Threshold\": 35, \"Statistic\": \"AVERAGE\", \"PreciseThreshold\": 35.0, \"MetricName\": \"CPU_UTILIZATION\"}",
           "member": "MetricAlarm",
           "name": "MetricAlarms",
@@ -7678,7 +7678,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "混合模式下，基础容量的大小，基础容量部分固定为按量计费实例。默认值 0，最大不可超过伸缩组的最大实例数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "混合模式下，基础容量的大小，基础容量部分固定为按量计费实例。默认值 0，最大不可超过伸缩组的最大实例数。",
           "example": "0",
           "member": "uint64",
           "name": "BaseCapacity",
@@ -7688,7 +7688,7 @@
         },
         {
           "disabled": false,
-          "document": "超出基础容量部分，按量计费实例所占的比例。取值范围 [0, 100]，0 代表超出基础容量的部分仅生产竞价实例，100 代表仅生产按量实例，默认值为 70。按百分比计算按量实例数时，向上取整。\n比如，总期望实例数取 3，基础容量取 1，超基础部分按量百分比取 1，则最终按量 2 台（1 台来自基础容量，1 台按百分比向上取整得到），竞价 1台。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "超出基础容量部分，按量计费实例所占的比例。取值范围 [0, 100]，0 代表超出基础容量的部分仅生产竞价实例，100 代表仅生产按量实例，默认值为 70。按百分比计算按量实例数时，向上取整。\n比如，总期望实例数取 3，基础容量取 1，超基础部分按量百分比取 1，则最终按量 2 台（1 台来自基础容量，1 台按百分比向上取整得到），竞价 1台。",
           "example": "0",
           "member": "uint64",
           "name": "OnDemandPercentageAboveBaseCapacity",
@@ -7698,7 +7698,7 @@
         },
         {
           "disabled": false,
-          "document": "混合模式下，竞价实例的分配策略。取值包括 COST_OPTIMIZED 和 CAPACITY_OPTIMIZED，默认取 COST_OPTIMIZED。\n<br><li> COST_OPTIMIZED，成本优化策略。对于启动配置内的所有机型，按照各机型在各可用区的每核单价由小到大依次尝试。优先尝试购买每核单价最便宜的，如果购买失败则尝试购买次便宜的，以此类推。\n<br><li> CAPACITY_OPTIMIZED，容量优化策略。对于启动配置内的所有机型，按照各机型在各可用区的库存情况由大到小依次尝试。优先尝试购买剩余库存最大的机型，这样可尽量降低竞价实例被动回收的发生概率。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "混合模式下，竞价实例的分配策略。取值包括 COST_OPTIMIZED 和 CAPACITY_OPTIMIZED，默认取 COST_OPTIMIZED。\n<br><li> COST_OPTIMIZED，成本优化策略。对于启动配置内的所有机型，按照各机型在各可用区的每核单价由小到大依次尝试。优先尝试购买每核单价最便宜的，如果购买失败则尝试购买次便宜的，以此类推。\n<br><li> CAPACITY_OPTIMIZED，容量优化策略。对于启动配置内的所有机型，按照各机型在各可用区的库存情况由大到小依次尝试。优先尝试购买剩余库存最大的机型，这样可尽量降低竞价实例被动回收的发生概率。",
           "example": "COST_OPTIMIZED",
           "member": "string",
           "name": "SpotAllocationStrategy",
@@ -7708,7 +7708,7 @@
         },
         {
           "disabled": false,
-          "document": "按量实例替补功能。取值范围：\n<br><li> TRUE，开启该功能，当所有竞价机型因库存不足等原因全部购买失败后，尝试购买按量实例。\n<br><li> FALSE，不开启该功能，伸缩组在需要扩容竞价实例时仅尝试所配置的竞价机型。\n\n默认取值： TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按量实例替补功能。取值范围：\n<br><li> TRUE，开启该功能，当所有竞价机型因库存不足等原因全部购买失败后，尝试购买按量实例。\n<br><li> FALSE，不开启该功能，伸缩组在需要扩容竞价实例时仅尝试所配置的竞价机型。\n\n默认取值： TRUE。",
           "example": "false",
           "member": "bool",
           "name": "CompensateWithBaseInstance",

@@ -5061,7 +5061,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例绑定的标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例绑定的标签列表</p>",
           "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
@@ -5251,7 +5251,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>额外IO吞吐量</p><p>单位：MB/s</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>额外IO吞吐量</p><p>单位：MB/s</p>",
           "example": "10",
           "member": "int64",
           "name": "ThroughputPerformance",
@@ -6230,7 +6230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递类型，store（存储类），mq（消息通道）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递类型，store（存储类），mq（消息通道）",
           "example": "store",
           "member": "string",
           "name": "DeliverType",
@@ -6241,7 +6241,7 @@
         },
         {
           "disabled": false,
-          "document": "投递子类型：cls，ckafka。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递子类型：cls，ckafka。",
           "example": "cls",
           "member": "string",
           "name": "DeliverSubType",
@@ -6252,7 +6252,7 @@
         },
         {
           "disabled": false,
-          "document": "投递订阅者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递订阅者",
           "example": "topci-a",
           "member": "string",
           "name": "DeliverConsumer",
@@ -6263,7 +6263,7 @@
         },
         {
           "disabled": false,
-          "document": "投递订阅者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递订阅者名称",
           "example": "abv",
           "member": "string",
           "name": "DeliverConsumerName",
@@ -6274,7 +6274,7 @@
         },
         {
           "disabled": false,
-          "document": "投递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递",
           "example": "error",
           "member": "string",
           "name": "DeliverError",
@@ -6650,7 +6650,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份的目的地域下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨地域备份的目的地域下载链接",
           "example": "null",
           "member": "CrossBackupAddr",
           "name": "CrossBackupAddr",
@@ -6660,7 +6660,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域备份的目标地域和备份状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨地域备份的目标地域和备份状态",
           "example": "null",
           "member": "CrossRegionStatus",
           "name": "CrossBackupStatus",
@@ -8301,7 +8301,7 @@
         },
         {
           "disabled": false,
-          "document": "慢SQL阈值，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "慢SQL阈值，单位毫秒",
           "example": "1000",
           "member": "int64",
           "name": "SlowLogThreshold",
@@ -10405,7 +10405,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>日志详情，根据产品的不同返回的字段有差异</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志详情，根据产品的不同返回的字段有差异</p>",
           "example": "无",
           "member": "LogResult",
           "name": "Items",
@@ -10527,7 +10527,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名称数组",
           "example": "[\"Biz-test1\",\"Biz-test2\",\"Biz-test3\"]",
           "member": "string",
           "name": "MigrateDBSet",
@@ -13019,7 +13019,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>文件名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件名</p>",
           "example": "1315732698_mssql-d0bu8ifj_1774249384_99764045.csv",
           "member": "string",
           "name": "FileName",
@@ -13030,7 +13030,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>",
           "example": "1",
           "member": "string",
           "name": "Status",
@@ -13041,7 +13041,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件大小</p>",
           "example": "1",
           "member": "int64",
           "name": "FileSize",
@@ -13052,7 +13052,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "2025-09-07",
           "member": "string",
           "name": "CreateTime",
@@ -13063,7 +13063,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>下载地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下载地址</p>",
           "example": "https://gz-audit-1256375829.cos.ap-guangzhou.myqcloud.com/xxx",
           "member": "string",
           "name": "DownloadUrl",
@@ -13074,7 +13074,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误信息</p>",
           "example": "\"下载失败\"",
           "member": "string",
           "name": "ErrMsg",
@@ -13085,7 +13085,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>进度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>进度</p>",
           "example": "1",
           "member": "int64",
           "name": "Progress",
@@ -13096,7 +13096,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>完成时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>完成时间</p>",
           "example": "2025-09-07",
           "member": "string",
           "name": "FinishTime",
@@ -13107,7 +13107,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>req</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>req</p>",
           "example": "1",
           "member": "int64",
           "name": "AsyncRequestId",
@@ -13509,7 +13509,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例名称</p>",
           "example": "acv",
           "member": "string",
           "name": "InstanceName",
@@ -13531,7 +13531,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>项目ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -13542,7 +13542,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例标签</p>",
           "example": "无",
           "member": "TagList",
           "name": "TagList",
@@ -13553,7 +13553,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -13564,7 +13564,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>test</p>",
           "example": "no",
           "member": "string",
           "name": "Vip",
@@ -13575,7 +13575,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>test</p>",
           "example": "1",
           "member": "int64",
           "name": "Vport",
@@ -13586,7 +13586,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>test</p>",
           "example": "no",
           "member": "string",
           "name": "Architecture",
@@ -13597,7 +13597,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>test</p>",
           "example": "no",
           "member": "string",
           "name": "ROFlag",
@@ -13608,7 +13608,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>test</p>",
           "example": "no",
           "member": "string",
           "name": "HAFlag",
@@ -13619,7 +13619,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>test</p>",
           "example": "no",
           "member": "string",
           "name": "InstanceType",
@@ -13630,7 +13630,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>test</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>test</p>",
           "example": "no",
           "member": "string",
           "name": "Type",
@@ -13641,7 +13641,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>审计日志状态 ON, OFF, ERROR</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审计日志状态 ON, OFF, ERROR</p>",
           "example": "on",
           "member": "string",
           "name": "AuditLogStatus",
@@ -13652,7 +13652,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>审计日志上报地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审计日志上报地址</p>",
           "example": "[\"1\"]",
           "member": "string",
           "name": "AuditLogHosts",
@@ -13663,7 +13663,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>审计日志状态信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审计日志状态信息</p>",
           "example": "error",
           "member": "string",
           "name": "AuditLogStatusMessage",
@@ -13674,7 +13674,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本号</p>",
           "example": "2.1",
           "member": "string",
           "name": "Version",
@@ -13685,7 +13685,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>版本名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本名</p>",
           "example": "\"test\"",
           "member": "string",
           "name": "VersionName",
@@ -13696,7 +13696,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域id</p>",
           "example": "2",
           "member": "int64",
           "name": "RegionId",
@@ -13707,7 +13707,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>区id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>区id</p>",
           "example": "2",
           "member": "int64",
           "name": "ZoneId",
@@ -13718,7 +13718,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>",
           "example": "chengdu",
           "member": "string",
           "name": "Region",
@@ -13729,7 +13729,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>区</p>",
           "example": "1",
           "member": "string",
           "name": "Zone",
@@ -14147,7 +14147,7 @@
         },
         {
           "disabled": false,
-          "document": "日志投递信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志投递信息",
           "example": "无",
           "member": "DeliverSummary",
           "name": "DeliverSummary",
@@ -14173,7 +14173,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间戳",
           "example": "1",
           "member": "int64",
           "name": "Timestamp",
@@ -14184,7 +14184,7 @@
         },
         {
           "disabled": false,
-          "document": "错误类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误类别",
           "example": "\" \"",
           "member": "string",
           "name": "Category",
@@ -14195,7 +14195,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端应用程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端应用程序名称",
           "example": "\" \"",
           "member": "string",
           "name": "ClientAppName",
@@ -14206,7 +14206,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端主机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端主机名",
           "example": "\" \"",
           "member": "string",
           "name": "ClientHostName",
@@ -14217,7 +14217,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU 时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CPU 时间",
           "example": "1",
           "member": "int64",
           "name": "CpuTime",
@@ -14228,7 +14228,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库 ID",
           "example": "1",
           "member": "int64",
           "name": "DatabaseId",
@@ -14239,7 +14239,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名称",
           "example": "\" \"",
           "member": "string",
           "name": "DatabaseName",
@@ -14250,7 +14250,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行时间",
           "example": "1",
           "member": "int64",
           "name": "Duration",
@@ -14261,7 +14261,7 @@
         },
         {
           "disabled": false,
-          "document": "错误编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误编号",
           "example": "1",
           "member": "int64",
           "name": "ErrorNumber",
@@ -14272,7 +14272,7 @@
         },
         {
           "disabled": false,
-          "document": "是否被拦截\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否被拦截",
           "example": "\" \"",
           "member": "string",
           "name": "IsIntercepted",
@@ -14283,7 +14283,7 @@
         },
         {
           "disabled": false,
-          "document": "最后行计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后行计数",
           "example": "1",
           "member": "int64",
           "name": "LastRowCount",
@@ -14294,7 +14294,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑读取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "逻辑读取",
           "example": "1",
           "member": "int64",
           "name": "LogicalReads",
@@ -14305,7 +14305,7 @@
         },
         {
           "disabled": false,
-          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息",
           "example": "\" \"",
           "member": "string",
           "name": "Message",
@@ -14316,7 +14316,7 @@
         },
         {
           "disabled": false,
-          "document": "对象 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象 ID",
           "example": "1",
           "member": "int64",
           "name": "ObjectId",
@@ -14327,7 +14327,7 @@
         },
         {
           "disabled": false,
-          "document": "对象名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象名称",
           "example": "\" \"",
           "member": "string",
           "name": "ObjectName",
@@ -14338,7 +14338,7 @@
         },
         {
           "disabled": false,
-          "document": "对象类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象类型",
           "example": "\" \"",
           "member": "string",
           "name": "ObjectType",
@@ -14349,7 +14349,7 @@
         },
         {
           "disabled": false,
-          "document": "输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输出参数",
           "example": "\" \"",
           "member": "string",
           "name": "OutputParameters",
@@ -14360,7 +14360,7 @@
         },
         {
           "disabled": false,
-          "document": "参数化计划句柄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数化计划句柄",
           "example": "\" \"",
           "member": "string",
           "name": "ParameterizedPlanHandle",
@@ -14371,7 +14371,7 @@
         },
         {
           "disabled": false,
-          "document": "物理读取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理读取",
           "example": "1",
           "member": "int64",
           "name": "PhysicalReads",
@@ -14382,7 +14382,7 @@
         },
         {
           "disabled": false,
-          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果",
           "example": "\" \"",
           "member": "string",
           "name": "Result",
@@ -14393,7 +14393,7 @@
         },
         {
           "disabled": false,
-          "document": "行计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行计数",
           "example": "1",
           "member": "int64",
           "name": "RowCount",
@@ -14404,7 +14404,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器主体名称",
           "example": "\" \"",
           "member": "string",
           "name": "ServerPrincipalName",
@@ -14415,7 +14415,7 @@
         },
         {
           "disabled": false,
-          "document": "会话服务器主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话服务器主体名称",
           "example": "\" \"",
           "member": "string",
           "name": "SessionServerPrincipalName",
@@ -14426,7 +14426,7 @@
         },
         {
           "disabled": false,
-          "document": "严重性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "严重性",
           "example": "1",
           "member": "int64",
           "name": "Severity",
@@ -14437,7 +14437,7 @@
         },
         {
           "disabled": false,
-          "document": "源数据库 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源数据库 ID",
           "example": "1",
           "member": "int64",
           "name": "SourceDatabaseId",
@@ -14448,7 +14448,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL 文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SQL 文本",
           "example": "\" \"",
           "member": "string",
           "name": "SqlText",
@@ -14459,7 +14459,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态",
           "example": "1",
           "member": "int64",
           "name": "State",
@@ -14470,7 +14470,7 @@
         },
         {
           "disabled": false,
-          "document": "语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语句",
           "example": "\" \"",
           "member": "string",
           "name": "Statement",
@@ -14481,7 +14481,7 @@
         },
         {
           "disabled": false,
-          "document": "系统线程 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统线程 ID",
           "example": "1",
           "member": "int64",
           "name": "SystemThreadId",
@@ -14492,7 +14492,7 @@
         },
         {
           "disabled": false,
-          "document": "事务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事务 ID",
           "example": "1",
           "member": "int64",
           "name": "TransactionId",
@@ -14503,7 +14503,7 @@
         },
         {
           "disabled": false,
-          "document": "用户定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户定义",
           "example": "\" \"",
           "member": "string",
           "name": "UserDefined",
@@ -14514,7 +14514,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名",
           "example": "\" \"",
           "member": "string",
           "name": "UserName",
@@ -14525,7 +14525,7 @@
         },
         {
           "disabled": false,
-          "document": "写入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "写入",
           "example": "1",
           "member": "int64",
           "name": "Writes",
@@ -14536,7 +14536,7 @@
         },
         {
           "disabled": false,
-          "document": "目标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标",
           "example": "\" \"",
           "member": "string",
           "name": "Destination",
@@ -15047,7 +15047,7 @@
         },
         {
           "disabled": false,
-          "document": "重命名的数据库名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重命名的数据库名称集合",
           "example": "[\"renameDB\"]",
           "member": "DBRenameRes",
           "name": "DBRename",
@@ -19108,7 +19108,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "uppercase、lowercase、numbers、specialcharacter，分别表示大写字母、小写字母、数字、特殊字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "uppercase、lowercase、numbers、specialcharacter，分别表示大写字母、小写字母、数字、特殊字符",
           "example": "uppercase",
           "member": "string",
           "name": "CharacterType",
@@ -19118,7 +19118,7 @@
         },
         {
           "disabled": false,
-          "document": "可选值，被调方注意去重，SSM 侧不会主动做去重检验，SSM 只会随机挑选字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可选值，被调方注意去重，SSM 侧不会主动做去重检验，SSM 只会随机挑选字符",
           "example": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
           "member": "string",
           "name": "Choices",
@@ -19128,7 +19128,7 @@
         },
         {
           "disabled": false,
-          "document": "这种类型字符要求的最低长度，如果为 0 表示不允许这种字符，最小值为 0，最大值为密码最大长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "这种类型字符要求的最低长度，如果为 0 表示不允许这种字符，最小值为 0，最大值为密码最大长度",
           "example": "4",
           "member": "int64",
           "name": "MinimumLength",
@@ -19138,7 +19138,7 @@
         },
         {
           "disabled": false,
-          "document": "密码是否必须以这种字符开头，被调方在返回时需要确保多种字符类型中最多只能有一种字符要求必须以某种字符开头，可以全部为 False，表示开头的字符不做要求，SSM 读取时默认按照最后一个出现的标记为准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密码是否必须以这种字符开头，被调方在返回时需要确保多种字符类型中最多只能有一种字符要求必须以某种字符开头，可以全部为 False，表示开头的字符不做要求，SSM 读取时默认按照最后一个出现的标记为准",
           "example": "无",
           "member": "bool",
           "name": "MustStart",
@@ -19596,7 +19596,7 @@
         },
         {
           "disabled": false,
-          "document": "状态（1成功 2失败）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态（1成功 2失败）",
           "example": "",
           "member": "int64",
           "name": "Status",

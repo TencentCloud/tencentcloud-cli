@@ -389,7 +389,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "处置的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处置的时间",
           "example": "2024-04-01 10:00:00",
           "member": "string",
           "name": "DisposeTime",
@@ -409,7 +409,7 @@
         },
         {
           "disabled": false,
-          "document": "生效范围（预留，暂未使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效范围（预留，暂未使用）",
           "example": "1",
           "member": "string",
           "name": "Area",
@@ -429,7 +429,7 @@
         },
         {
           "disabled": false,
-          "document": "处置失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处置失败原因",
           "example": "系统异常",
           "member": "string",
           "name": "Reason",
@@ -439,7 +439,7 @@
         },
         {
           "disabled": false,
-          "document": "转发的IP（默认是0.0.0.0）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发的IP（默认是0.0.0.0）",
           "example": "0.0.0.0",
           "member": "string",
           "name": "ForwardIp",
@@ -479,7 +479,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务id",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -489,7 +489,7 @@
         },
         {
           "disabled": false,
-          "document": "1: 5.2IP关联域名解析记录查询 ；2: 5.3历史递归缓存解析记录查询 ；3:    5.4子域名解析记录查询 ； 4:  5.5域名解析信息查询\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1: 5.2IP关联域名解析记录查询 ；2: 5.3历史递归缓存解析记录查询 ；3:    5.4子域名解析记录查询 ； 4:  5.5域名解析信息查询\n",
           "example": "1",
           "member": "uint64",
           "name": "TaskType",
@@ -499,7 +499,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询内容",
           "example": "无",
           "member": "string",
           "name": "Contents",
@@ -509,7 +509,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "2024-03-01",
           "member": "date",
           "name": "StartTime",
@@ -519,7 +519,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "2024-04-01",
           "member": "date",
           "name": "EndTime",
@@ -529,7 +529,7 @@
         },
         {
           "disabled": false,
-          "document": "状态：0未开始，1成功，2执行中、-1失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态：0未开始，1成功，2执行中、-1失败",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -539,7 +539,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2024-04-01 01:01:01",
           "member": "string",
           "name": "CreatedAt",
@@ -549,7 +549,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结果：\n1、如果结果是成功，此字段是一个COS链接\n2、如果结果是失败，此字段是失败原因\n3、如果是其他状态，此字段没用\n\n结果特别说明：\n返回字段特别说明：\nResult，任务结果：\n（1）结果定义：\n1、如果结果是成功，此字段是一个COS链接\n2、如果结果是失败，此字段是失败原因\n3、如果是其他状态，此字段没用\n（2）任务结果文件格式：\n{\n\"condition_1\": [\n\"cos_url_1\",\"cos_url_2\",...\n],\n\"condition_2\": [\n\"cos_url_3\", \"cos_url_4\",...\n]\n}\n其中：\n1、condition_?：为查询条件，可能是域名和IP\n2、cos_url_?：授权的COS地址，有效期7天，存储的是最终的查询结果\n3、如果返回结果为成功，且返回的是空的结果，则condition_?下是一个空的数组，比如{\"condition_1\": [],\"condition_2\": []}\n（3）cos_url_?文件说明\n1、结果文件为gz压缩的文件\n2、结果的每个字段都是用“#”号分割\n（4）cos_url_?文件结构说明\n1、如果是根据域名查询，结构为\n主域名#子域名#请求类型#解析结果#应答类型#解析量#请求日期\n示例：\nzlatara-goldshop.ba#zlatara-goldshop.ba.#A#185.212.108.137#CNAME|A|A#6#20240509\n应答类型可能会存在多个，如果有多个，用“|”分割\n2、如果是根据IP查询，结构为：\nIP#域名#日期\n示例：1.28.145.240#cdn.uviewui.com.#20240518\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结果：\n1、如果结果是成功，此字段是一个COS链接\n2、如果结果是失败，此字段是失败原因\n3、如果是其他状态，此字段没用\n\n结果特别说明：\n返回字段特别说明：\nResult，任务结果：\n（1）结果定义：\n1、如果结果是成功，此字段是一个COS链接\n2、如果结果是失败，此字段是失败原因\n3、如果是其他状态，此字段没用\n（2）任务结果文件格式：\n{\n\"condition_1\": [\n\"cos_url_1\",\"cos_url_2\",...\n],\n\"condition_2\": [\n\"cos_url_3\", \"cos_url_4\",...\n]\n}\n其中：\n1、condition_?：为查询条件，可能是域名和IP\n2、cos_url_?：授权的COS地址，有效期7天，存储的是最终的查询结果\n3、如果返回结果为成功，且返回的是空的结果，则condition_?下是一个空的数组，比如{\"condition_1\": [],\"condition_2\": []}\n（3）cos_url_?文件说明\n1、结果文件为gz压缩的文件\n2、结果的每个字段都是用“#”号分割\n（4）cos_url_?文件结构说明\n1、如果是根据域名查询，结构为\n主域名#子域名#请求类型#解析结果#应答类型#解析量#请求日期\n示例：\nzlatara-goldshop.ba#zlatara-goldshop.ba.#A#185.212.108.137#CNAME|A|A#6#20240509\n应答类型可能会存在多个，如果有多个，用“|”分割\n2、如果是根据IP查询，结构为：\nIP#域名#日期\n示例：1.28.145.240#cdn.uviewui.com.#20240518",
           "example": "https://pdns-release-fz-prelog-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/hg_log_result/tid-gggg/result.txt?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDEPrPr6DLMLMKBxmXTfp7NbryF3qfZTTb%26q-sign-time%3D1716465834%3B1717070634%26q-key-time%3D1716465834%3B1717070634%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D0f8415f4f9a9de4cbb2739fcb36dc690d50e41c4",
           "member": "string",
           "name": "Result",

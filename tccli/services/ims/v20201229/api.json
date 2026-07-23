@@ -540,7 +540,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。",
           "example": "\"{\\\"QRcodeInfo\\\":[{\\\"HitInfo\\\":\\\"QRCODE\\\",\\\"Label\\\":\\\"Ad\\\"}]}\"",
           "member": "string",
           "name": "Extra",
@@ -790,7 +790,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。",
           "example": "Phone",
           "member": "string",
           "name": "SubLabel",

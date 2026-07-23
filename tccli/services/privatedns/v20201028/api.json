@@ -1919,7 +1919,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量添加解析记录结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量添加解析记录结果",
           "example": "无",
           "member": "RecordsInfoResult",
           "name": "RecordsResult",
@@ -1956,7 +1956,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域域名和zoneId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有域域名和zoneId",
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZonesInfo",
@@ -4158,7 +4158,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "终端节点名称",
           "example": "终端节点名",
           "member": "string",
           "name": "EndPointName",
@@ -4264,7 +4264,7 @@
         },
         {
           "disabled": false,
-          "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录权重，值为1-100",
           "example": "null",
           "member": "int64",
           "name": "Weight",
@@ -4294,7 +4294,7 @@
         },
         {
           "disabled": false,
-          "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "附加信息",
           "example": "附加信息内容",
           "member": "string",
           "name": "Extra",
@@ -4355,7 +4355,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "绑定失败",
           "member": "string",
           "name": "ErrorMsg",
@@ -4533,7 +4533,7 @@
         },
         {
           "disabled": false,
-          "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录权重，值为1-100",
           "example": "100",
           "member": "int64",
           "name": "Weight",
@@ -4543,7 +4543,7 @@
         },
         {
           "disabled": false,
-          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "600",
           "member": "int64",
           "name": "TTL",
@@ -4553,7 +4553,7 @@
         },
         {
           "disabled": false,
-          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "15",
           "member": "int64",
           "name": "MX",
@@ -4599,7 +4599,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "这是备注",
           "member": "string",
           "name": "Remark",
@@ -4645,7 +4645,7 @@
         },
         {
           "disabled": false,
-          "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录权重，值为1-100",
           "example": "100",
           "member": "int64",
           "name": "Weight",
@@ -4655,7 +4655,7 @@
         },
         {
           "disabled": false,
-          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "600",
           "member": "int64",
           "name": "TTL",
@@ -4665,7 +4665,7 @@
         },
         {
           "disabled": false,
-          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "15",
           "member": "int64",
           "name": "MX",
@@ -4675,7 +4675,7 @@
         },
         {
           "disabled": false,
-          "document": "是否添加成功：0是失败，1是成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否添加成功：0是失败，1是成功",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -4685,7 +4685,7 @@
         },
         {
           "disabled": false,
-          "document": "若status为0，则此处为失败原因描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "若status为0，则此处为失败原因描述",
           "example": "与已有解析记录冲突",
           "member": "string",
           "name": "Message",
@@ -4910,7 +4910,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有域ID",
           "example": "zone-1233lskd",
           "member": "string",
           "name": "ZoneId",
@@ -4930,7 +4930,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因",
           "example": "这是失败原因",
           "member": "string",
           "name": "Reason",

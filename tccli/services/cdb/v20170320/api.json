@@ -2691,7 +2691,7 @@
         },
         {
           "disabled": false,
-          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口",
           "example": "3306",
           "member": "int64",
           "name": "ClientPort",
@@ -3111,7 +3111,7 @@
         },
         {
           "disabled": false,
-          "document": "审计规则名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计规则名称。",
           "example": "Default",
           "member": "string",
           "name": "RuleName",
@@ -3121,7 +3121,7 @@
         },
         {
           "disabled": false,
-          "document": "审计规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计规则描述。",
           "example": "Default",
           "member": "string",
           "name": "Description",
@@ -3131,7 +3131,7 @@
         },
         {
           "disabled": false,
-          "document": "审计规则过滤条件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计规则过滤条件。",
           "example": "[{\"Type\": \"User\",\"Compare\": \"\tINC\",\"Value\": \"andy\"}]",
           "member": "AuditFilter",
           "name": "RuleFilters",
@@ -3302,7 +3302,7 @@
         },
         {
           "disabled": true,
-          "document": "自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。",
           "example": "1",
           "member": "int64",
           "name": "ExpandPeriod",
@@ -3313,7 +3313,7 @@
         },
         {
           "disabled": true,
-          "document": "自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。",
           "example": "5",
           "member": "int64",
           "name": "ShrinkPeriod",
@@ -4539,7 +4539,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群所在的Campus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本地专属集群所在的Campus",
           "example": "468",
           "member": "uint64",
           "name": "CampusId",
@@ -4549,7 +4549,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群OSS售卖的设备类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本地专属集群OSS售卖的设备类型",
           "example": "VSELF5",
           "member": "string",
           "name": "DeviceClass",
@@ -4559,7 +4559,7 @@
         },
         {
           "disabled": false,
-          "document": "CDC集群在OSS映射的独享集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDC集群在OSS映射的独享集群",
           "example": "cdc-test",
           "member": "string",
           "name": "ExclusterId",
@@ -8993,7 +8993,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>审计实例详细信息列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审计实例详细信息列表。</p>",
           "example": "无",
           "member": "InstanceDbAuditStatus",
           "name": "Items",
@@ -9177,7 +9177,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志详情。",
           "example": "无",
           "member": "AuditLog",
           "name": "Items",
@@ -9536,7 +9536,7 @@
         },
         {
           "disabled": false,
-          "document": "审计规则详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计规则详情。",
           "example": "无",
           "member": "AuditRule",
           "name": "Items",
@@ -10393,7 +10393,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略类型。输出值：auto、manual、timeInterval、period。\n说明：1. auto 表示自动扩容。2. manual 表示自定义扩容，扩容时间为立即生效。3. timeInterval 表示自定义扩容，扩容时间为按时间段。4. period 表示自定义扩容，扩容时间为按周期。5. 如果返回为 NULL 说明尚未开通弹性扩容策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略类型。输出值：auto、manual、timeInterval、period。\n说明：1. auto 表示自动扩容。2. manual 表示自定义扩容，扩容时间为立即生效。3. timeInterval 表示自定义扩容，扩容时间为按时间段。4. period 表示自定义扩容，扩容时间为按周期。5. 如果返回为 NULL 说明尚未开通弹性扩容策略。",
           "example": "auto",
           "member": "string",
           "name": "Type",
@@ -10403,7 +10403,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义扩容，且扩容时间为立即生效时的 CPU。Type 为 manual 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义扩容，且扩容时间为立即生效时的 CPU。Type 为 manual 时有效。",
           "example": "4",
           "member": "int64",
           "name": "ExpandCpu",
@@ -10413,7 +10413,7 @@
         },
         {
           "disabled": false,
-          "document": "自动扩容策略。Type 为 auto 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动扩容策略。Type 为 auto 时有效。",
           "example": "无",
           "member": "AutoStrategy",
           "name": "AutoStrategy",
@@ -10607,7 +10607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本地专属集群的返回数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本地专属集群的返回数量",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
@@ -10617,7 +10617,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本地专属集群详情",
           "example": "{\"CdcId\":\"cluster_cdc_test\",\"ZoneId\":10006,\"Zone\":\"ap-guangzhou\",\"CdcName\":\"广州CDC测试\",\"DeviceClass\":\"VSELF5\",\"Status\":\"ON\",\"ExclusterId\":123,\"ClusterType\":234,\"CampusId\":34}",
           "member": "CdcInfoItem",
           "name": "Items",
@@ -11240,7 +11240,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>双节点、三节点、四节点实例第一备库的配置信息。</p><p>查询双节点时，此参数返回为双节点的备库信息；查询三节点、四节点时，此参数返回为实例的第一备库信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>双节点、三节点、四节点实例第一备库的配置信息。</p><p>查询双节点时，此参数返回为双节点的备库信息；查询三节点、四节点时，此参数返回为实例的第一备库信息。</p>",
           "example": "无",
           "member": "SlaveConfig",
           "name": "SlaveConfig",
@@ -11250,7 +11250,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>三节点、四节点实例第二备库的配置信息。</p><p>查询三节点、四节点时，此参数返回为第二备库的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>三节点、四节点实例第二备库的配置信息。</p><p>查询三节点、四节点时，此参数返回为第二备库的信息。</p>",
           "example": "无",
           "member": "BackupConfig",
           "name": "BackupConfig",
@@ -12743,7 +12743,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源对应账户是否开启密码轮转\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源对应账户是否开启密码轮转",
           "example": "true(开启),false(关闭)",
           "member": "bool",
           "name": "EnabledRotate",
@@ -13905,7 +13905,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例中总表数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例中总表数。",
           "example": "198",
           "member": "int64",
           "name": "TotalCount",
@@ -13915,7 +13915,7 @@
         },
         {
           "disabled": false,
-          "document": "表信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表信息。",
           "example": "无",
           "member": "TableInformation",
           "name": "Items",
@@ -17456,7 +17456,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>分析引擎实例版本升级信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分析引擎实例版本升级信息</p>",
           "example": "无",
           "member": "UpgradeAnalysisInstanceVersionInfo",
           "name": "AnalysisUpgradeVersionInfo",
@@ -20482,7 +20482,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "Region",
@@ -20492,7 +20492,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域Id</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -20502,7 +20502,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域中文名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域中文名</p>",
           "example": "\"广州\"",
           "member": "string",
           "name": "RegionName",
@@ -20512,7 +20512,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>所属地区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属地区</p>",
           "example": "\"华南地区\"",
           "member": "string",
           "name": "Area",
@@ -20522,7 +20522,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>所属地域类别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属地域类别</p>",
           "example": "\"中国\"",
           "member": "string",
           "name": "AreaCategory",
@@ -20532,7 +20532,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否是默认地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否是默认地域</p>",
           "example": "true",
           "member": "bool",
           "name": "IsDefault",
@@ -20542,7 +20542,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否已售尽</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否已售尽</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSaleOut",
@@ -20552,7 +20552,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>支持的实例类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支持的实例类型</p>",
           "example": "[ \"Z3\", \"TKE\"]",
           "member": "string",
           "name": "SupportTypes",
@@ -20562,7 +20562,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>支持的引擎范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支持的引擎范围</p>",
           "example": "[\"RocksDB\",\"InnoDB\"]",
           "member": "string",
           "name": "SupportEngineTypes",
@@ -20572,7 +20572,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>支持的引擎版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>支持的引擎版本</p>",
           "example": "[\"8.0\",\"5.5\",\"5.6\",\"5.7\"]",
           "member": "string",
           "name": "SupportEngineVersions",
@@ -20582,7 +20582,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否新地域，保留字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否新地域，保留字段</p>",
           "example": "true",
           "member": "bool",
           "name": "IsNew",
@@ -24378,7 +24378,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，可能的取值范围有：UNIVERSAL (通用型), EXCLUSIVE (独享型), BASIC (基础型)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型，可能的取值范围有：UNIVERSAL (通用型), EXCLUSIVE (独享型), BASIC (基础型)",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -24388,7 +24388,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型描述，可能的取值范围有：通用型， 独享型， 基础型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型描述，可能的取值范围有：通用型， 独享型， 基础型",
           "example": "通用型",
           "member": "string",
           "name": "DeviceTypeName",
@@ -24398,7 +24398,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型描述，可能的取值范围有：Innodb，RocksDB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "引擎类型描述，可能的取值范围有：Innodb，RocksDB",
           "example": "InnoDB",
           "member": "string",
           "name": "EngineType",
@@ -26652,7 +26652,7 @@
         },
         {
           "disabled": false,
-          "document": "SNAT使用的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SNAT使用的IP",
           "example": "[4.3.2.1]",
           "member": "string",
           "name": "SnatIpList",
@@ -26868,7 +26868,7 @@
         },
         {
           "disabled": false,
-          "document": "可支持的跨可用区只读区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可支持的跨可用区只读区信息",
           "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "RemoteRoZone",
@@ -26888,7 +26888,7 @@
         },
         {
           "disabled": false,
-          "document": "独享型可支持的跨可用区只读区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享型可支持的跨可用区只读区信息",
           "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "ExClusterRemoteRoZone",
@@ -26898,7 +26898,7 @@
         },
         {
           "disabled": false,
-          "document": "独享型多可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享型多可用区信息",
           "example": "{}",
           "member": "ZoneConf",
           "name": "ExClusterZoneConf",

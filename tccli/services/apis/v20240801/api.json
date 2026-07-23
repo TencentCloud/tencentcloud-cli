@@ -503,7 +503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "凭据key",
           "example": "Expiration",
           "member": "string",
           "name": "Key",
@@ -514,7 +514,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "凭据value",
           "example": "AKxxx",
           "member": "string",
           "name": "Value",
@@ -542,7 +542,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否需要鉴权",
           "example": "true",
           "member": "bool",
           "name": "NeedAuth",
@@ -553,7 +553,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据代填的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "凭据代填的ID",
           "example": "agc-xxxxxxxx",
           "member": "string",
           "name": "AgentCredentialID",
@@ -564,7 +564,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识",
           "example": "http://127.0.0.1/_llmsgw_/sse/aga-05b85106/mcp-2fc41d77",
           "member": "string",
           "name": "SSEResourceIdentifier",
@@ -575,7 +575,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识",
           "example": "http://127.0.0.1/_llmsgw_/mcp/aga-05b85106/mcp-2fc41d77",
           "member": "string",
           "name": "StreamableResourceIdentifier",
@@ -652,7 +652,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识",
           "example": "http://10.0.0.4/_llmsgw_/sse/aga-41d42939/mcp-2fc41d77",
           "member": "string",
           "name": "SSEResourceIdentifier",
@@ -662,7 +662,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识",
           "example": "http://10.0.0.4/_llmsgw_/aga-41d42939/mcp-2fc41d77",
           "member": "string",
           "name": "StreamableResourceIdentifier",
@@ -672,7 +672,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID",
           "example": "aga-41d42939",
           "member": "string",
           "name": "AgentAppID",
@@ -682,7 +682,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mcp ID",
           "example": "mcp-41d42939",
           "member": "string",
           "name": "McpServerID",
@@ -1593,7 +1593,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>是否启用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否启用</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -1604,7 +1604,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>匹配信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>匹配信息</p>",
           "example": "无",
           "member": "SimpleCondition",
           "name": "Rules",
@@ -2194,7 +2194,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模式：proxy代理模式； wrap封装模式；",
+          "document": "<p>模式：proxy代理模式； wrap封装模式；</p>",
           "example": "proxy",
           "member": "string",
           "name": "Mode",
@@ -2203,7 +2203,7 @@
         },
         {
           "disabled": false,
-          "document": "版本号：2024-11-05 2025-03-26",
+          "document": "<p>版本号：2024-11-05 2025-03-26</p>",
           "example": "2024-11-05",
           "member": "string",
           "name": "McpVersion",
@@ -2212,7 +2212,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
@@ -2221,7 +2221,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -2230,7 +2230,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "testdesc",
           "member": "string",
           "name": "Description",
@@ -2239,7 +2239,7 @@
         },
         {
           "disabled": true,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "app-xxxxxxxx",
           "member": "string",
           "name": "PaasID",
@@ -2248,7 +2248,7 @@
         },
         {
           "disabled": true,
-          "document": "鉴权方式：sign签名； none免鉴权",
+          "document": "<p>鉴权方式：sign签名； none免鉴权</p>",
           "example": "sign",
           "member": "string",
           "name": "AuthType",
@@ -2257,7 +2257,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID数组",
+          "document": "<p>标签ID数组</p>",
           "example": "[\"lab-xxxxxxxx\"]",
           "member": "string",
           "name": "LabelIDs",
@@ -2266,7 +2266,7 @@
         },
         {
           "disabled": false,
-          "document": "目录ID数组",
+          "document": "<p>目录ID数组</p>",
           "example": "[\"cat-xxxxxxxx\"]",
           "member": "string",
           "name": "CategoryIDs",
@@ -2275,7 +2275,7 @@
         },
         {
           "disabled": true,
-          "document": "签名方式：sha256 sm3",
+          "document": "<p>签名方式：sha256 sm3</p>",
           "example": "sha256",
           "member": "string",
           "name": "SignType",
@@ -2284,7 +2284,7 @@
         },
         {
           "disabled": false,
-          "document": "封装服务列表",
+          "document": "<p>封装服务列表</p>",
           "example": "[\"svr-xxxxxxxx\"]",
           "member": "string",
           "name": "WrapServices",
@@ -2293,7 +2293,7 @@
         },
         {
           "disabled": false,
-          "document": "负载方式，robin random consistentHash",
+          "document": "<p>负载方式，robin random consistentHash</p>",
           "example": "random",
           "member": "string",
           "name": "TargetSelect",
@@ -2302,7 +2302,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务器",
+          "document": "<p>目标服务器</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -2311,7 +2311,7 @@
         },
         {
           "disabled": false,
-          "document": "后端协议：http https",
+          "document": "<p>后端协议：http https</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -2320,7 +2320,7 @@
         },
         {
           "disabled": false,
-          "document": "证书检查",
+          "document": "<p>证书检查</p>",
           "example": "false",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -2329,7 +2329,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径",
+          "document": "<p>目标路径</p>",
           "example": "/sse",
           "member": "string",
           "name": "TargetPath",
@@ -2338,7 +2338,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制开启状态",
+          "document": "<p>流量控制开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
@@ -2347,7 +2347,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制配置",
+          "document": "<p>流量控制配置</p>",
           "example": "无",
           "member": "InvokeLimitConfigDTO",
           "name": "InvokeLimitConfig",
@@ -2356,7 +2356,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单开启状态",
+          "document": "<p>IP白名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpWhiteStatus",
@@ -2365,7 +2365,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单配置",
+          "document": "<p>IP白名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpWhiteConfig",
@@ -2374,7 +2374,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单开启状态",
+          "document": "<p>IP黑名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpBlackStatus",
@@ -2383,7 +2383,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单配置",
+          "document": "<p>IP黑名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpBlackConfig",
@@ -2392,7 +2392,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义host",
+          "document": "<p>自定义host</p>",
           "example": "test.com",
           "member": "string",
           "name": "CustomHttpHost",
@@ -2401,7 +2401,7 @@
         },
         {
           "disabled": false,
-          "document": "Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host；  customHost 自定义host",
+          "document": "<p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host；  customHost 自定义host</p>",
           "example": "useRequestHost",
           "member": "string",
           "name": "HttpHostType",
@@ -2410,7 +2410,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的超时时间",
+          "document": "<p>请求的超时时间</p>",
           "example": "10",
           "member": "uint64",
           "name": "Timeout",
@@ -2419,7 +2419,7 @@
         },
         {
           "disabled": false,
-          "document": "安全规则集",
+          "document": "<p>安全规则集</p>",
           "example": "无",
           "member": "McpSecurityRule",
           "name": "McpSecurityRules",
@@ -2428,7 +2428,7 @@
         },
         {
           "disabled": false,
-          "document": "工具集配置（openapi时或许用的是）",
+          "document": "<p>工具集配置（openapi时或许用的是）</p>",
           "example": "无",
           "member": "ToolConfigDTO",
           "name": "ToolConfigs",
@@ -2437,7 +2437,7 @@
         },
         {
           "disabled": false,
-          "document": "封装的API分组ID",
+          "document": "<p>封装的API分组ID</p>",
           "example": "paasid",
           "member": "string",
           "name": "WrapPaasID",
@@ -2446,12 +2446,21 @@
         },
         {
           "disabled": false,
-          "document": "插件配置",
+          "document": "<p>插件配置</p>",
           "example": "无",
           "member": "PluginConfigDTO",
           "name": "PluginConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否忽略健康检查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreHealthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2461,7 +2470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp server ID",
+          "document": "<p>mcp server ID</p>",
           "example": "无",
           "member": "ResultIDVO",
           "name": "Data",
@@ -2997,7 +3006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>请求头  匹配条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求头  匹配条件</p>",
           "example": "无",
           "member": "CompoundCondition",
           "name": "HeadersMatch",
@@ -3008,7 +3017,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求参数 匹配条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求参数 匹配条件</p>",
           "example": "无",
           "member": "CompoundCondition",
           "name": "QueryMatch",
@@ -3840,7 +3849,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2026-03-16T05:32:00.134Z",
           "member": "string",
           "name": "CreateTime",
@@ -3850,7 +3859,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2026-03-16T05:32:00.134Z",
           "member": "string",
           "name": "LastUpdateTime",
@@ -3860,7 +3869,7 @@
         },
         {
           "disabled": false,
-          "document": "普通凭据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "普通凭据",
           "example": "无",
           "member": "AccessCredential",
           "name": "Access",
@@ -3870,7 +3879,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签",
           "example": "[\"testtag\"]",
           "member": "string",
           "name": "Tags",
@@ -3880,7 +3889,7 @@
         },
         {
           "disabled": false,
-          "document": "STS凭据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "STS凭据",
           "example": "无",
           "member": "STSCredential",
           "name": "STS",
@@ -4453,7 +4462,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>OAuth2 Resource Server ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OAuth2 Resource Server ID</p>",
           "example": "ors-be1312ba",
           "member": "string",
           "name": "OAuth2ResourceServerID",
@@ -4463,7 +4472,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>关联的mcp列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联的mcp列表</p>",
           "example": "无",
           "member": "AgentAppMcpServerVO",
           "name": "McpServers",
@@ -4483,7 +4492,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定的模型服务数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的模型服务数量</p>",
           "example": "0",
           "member": "int64",
           "name": "ModelServicesNum",
@@ -4984,7 +4993,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联模型数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联模型数</p>",
           "example": "1",
           "member": "int64",
           "name": "RelateModelNum",
@@ -4994,7 +5003,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联服务数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联服务数</p>",
           "example": "0",
           "member": "int64",
           "name": "RelateServiceNum",
@@ -5688,7 +5697,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例ID</p>",
           "example": "ins-a7af1980",
           "member": "string",
           "name": "InstanceID",
@@ -5698,7 +5707,7 @@
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>名称</p>",
           "example": "testmcp",
           "member": "string",
           "name": "Name",
@@ -5708,7 +5717,7 @@
         },
         {
           "disabled": true,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用ID</p>",
           "example": "app-xxxxxxxx",
           "member": "string",
           "name": "PaasID",
@@ -5718,7 +5727,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "testmcp",
           "member": "string",
           "name": "Description",
@@ -5728,7 +5737,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签ID数组</p>",
           "example": "[\"01010\"]",
           "member": "string",
           "name": "LabelIDs",
@@ -5738,7 +5747,7 @@
         },
         {
           "disabled": false,
-          "document": "目录ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目录ID数组</p>",
           "example": "[\"01010\"]",
           "member": "string",
           "name": "CategoryIDs",
@@ -5748,7 +5757,7 @@
         },
         {
           "disabled": true,
-          "document": "鉴权方式：sign签名； none免鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>鉴权方式：sign签名； none免鉴权</p>",
           "example": "sign",
           "member": "string",
           "name": "AuthType",
@@ -5758,7 +5767,7 @@
         },
         {
           "disabled": true,
-          "document": "签名方式：sha256 sm3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>签名方式：sha256 sm3</p>",
           "example": "sha256",
           "member": "string",
           "name": "SignType",
@@ -5768,7 +5777,7 @@
         },
         {
           "disabled": false,
-          "document": "负载方式，robin random consistentHash\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>负载方式，robin random consistentHash</p>",
           "example": "random",
           "member": "string",
           "name": "TargetSelect",
@@ -5778,7 +5787,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标服务器</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -5788,7 +5797,7 @@
         },
         {
           "disabled": false,
-          "document": "后端协议：http https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后端协议：http https</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -5798,7 +5807,7 @@
         },
         {
           "disabled": false,
-          "document": "证书检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书检查</p>",
           "example": "false",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -5808,7 +5817,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标路径</p>",
           "example": "/",
           "member": "string",
           "name": "TargetPath",
@@ -5818,7 +5827,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流量控制状态</p>",
           "example": "true",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
@@ -5828,7 +5837,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流量控制配置</p>",
           "example": "无",
           "member": "InvokeLimitConfigDTO",
           "name": "InvokeLimitConfig",
@@ -5838,7 +5847,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP白名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpWhiteStatus",
@@ -5848,7 +5857,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP白名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpWhiteConfig",
@@ -5858,7 +5867,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP黑名单开启状态</p>",
           "example": "true",
           "member": "bool",
           "name": "IpBlackStatus",
@@ -5868,7 +5877,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP黑名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpBlackConfig",
@@ -5878,7 +5887,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp server ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>mcp server ID</p>",
           "example": "mcp-2fc41d77",
           "member": "string",
           "name": "ID",
@@ -5888,7 +5897,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -5898,7 +5907,7 @@
         },
         {
           "disabled": false,
-          "document": "预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预览地址</p>",
           "example": "http://1.1.1.1/",
           "member": "string",
           "name": "Url",
@@ -5908,7 +5917,7 @@
         },
         {
           "disabled": false,
-          "document": "应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用</p>",
           "example": "无",
           "member": "IDNameVO",
           "name": "App",
@@ -5918,7 +5927,7 @@
         },
         {
           "disabled": false,
-          "document": "目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目录</p>",
           "example": "无",
           "member": "IDNameVO",
           "name": "Catalogs",
@@ -5928,7 +5937,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "IDNameVO",
           "name": "Labels",
@@ -5938,7 +5947,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "2025-08-07T09:55:58.696Z",
           "member": "string",
           "name": "CreateTime",
@@ -5948,7 +5957,7 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后修改时间</p>",
           "example": "2025-12-04T06:07:53.241Z",
           "member": "string",
           "name": "LastUpdateTime",
@@ -5958,7 +5967,7 @@
         },
         {
           "disabled": false,
-          "document": "用户appID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户appID</p>",
           "example": "1300273807",
           "member": "int64",
           "name": "AppID",
@@ -5968,7 +5977,7 @@
         },
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户ID</p>",
           "example": "700001136234",
           "member": "string",
           "name": "Uin",
@@ -5978,7 +5987,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义host</p>",
           "example": "default",
           "member": "string",
           "name": "CustomHttpHost",
@@ -5988,7 +5997,7 @@
         },
         {
           "disabled": false,
-          "document": " Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>",
           "example": "useRequestHost",
           "member": "string",
           "name": "HttpHostType",
@@ -5998,7 +6007,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求的超时时间</p>",
           "example": "60",
           "member": "uint64",
           "name": "Timeout",
@@ -6008,7 +6017,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp server模式",
+          "document": "<p>mcp server模式</p>",
           "example": "wrap",
           "member": "string",
           "name": "Mode",
@@ -6018,7 +6027,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp version",
+          "document": "<p>mcp version</p>",
           "example": "2024-11-05",
           "member": "string",
           "name": "McpVersion",
@@ -6028,7 +6037,7 @@
         },
         {
           "disabled": false,
-          "document": "封装模式下绑定的服务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>封装模式下绑定的服务ID列表</p>",
           "example": "[\"svr-7e7f07e8\"]",
           "member": "string",
           "name": "WrapServices",
@@ -6038,7 +6047,7 @@
         },
         {
           "disabled": false,
-          "document": "工具数量",
+          "document": "<p>工具数量</p>",
           "example": "0",
           "member": "int64",
           "name": "ToolNum",
@@ -6048,7 +6057,7 @@
         },
         {
           "disabled": false,
-          "document": "安全规则集响应",
+          "document": "<p>安全规则集响应</p>",
           "example": "无",
           "member": "McpSecurityRulesVO",
           "name": "McpSecurityRulesVO",
@@ -6058,7 +6067,7 @@
         },
         {
           "disabled": false,
-          "document": "真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。</p>",
           "example": "无",
           "member": "ToolConfigVO",
           "name": "ToolConfigs",
@@ -6068,7 +6077,7 @@
         },
         {
           "disabled": false,
-          "document": "访问URL",
+          "document": "<p>访问URL</p>",
           "example": "无",
           "member": "McpUrlObj",
           "name": "UrlObj",
@@ -6078,7 +6087,7 @@
         },
         {
           "disabled": false,
-          "document": "后端mcp服务是否正常",
+          "document": "<p>后端mcp服务是否正常</p>",
           "example": "error",
           "member": "string",
           "name": "ToolMessage",
@@ -6088,7 +6097,7 @@
         },
         {
           "disabled": false,
-          "document": "后端mcp服务的工具列表",
+          "document": "<p>后端mcp服务的工具列表</p>",
           "example": "无",
           "member": "McpTool",
           "name": "Tools",
@@ -6098,7 +6107,7 @@
         },
         {
           "disabled": false,
-          "document": "封装的API分组ID",
+          "document": "<p>封装的API分组ID</p>",
           "example": "app-be27914b",
           "member": "string",
           "name": "WrapPaasID",
@@ -6108,7 +6117,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的agentApp数量",
+          "document": "<p>关联的agentApp数量</p>",
           "example": "0",
           "member": "int64",
           "name": "RelateAgentAppNum",
@@ -6118,13 +6127,23 @@
         },
         {
           "disabled": false,
-          "document": "插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件配置</p>",
           "example": "无",
           "member": "PluginConfigDTO",
           "name": "PluginConfigs",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否忽略健康检查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreHealthCheck",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6297,7 +6316,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "条目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "条目",
           "example": "10",
           "member": "int64",
           "name": "Total",
@@ -6307,7 +6326,7 @@
         },
         {
           "disabled": false,
-          "document": "数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数组",
           "example": "无",
           "member": "DescribeMcpServerResponseVO",
           "name": "Items",
@@ -6671,7 +6690,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标模型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标模型列表</p>",
           "example": "无",
           "member": "TargetModelDTO",
           "name": "TargetModels",
@@ -6681,7 +6700,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模板模型的名称列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板模型的名称列表</p>",
           "example": "[\"deepseek\"]",
           "member": "string",
           "name": "ModelNames",
@@ -6781,7 +6800,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>IP白名单列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP白名单列表</p>",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "IpWhiteList",
@@ -6801,7 +6820,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>IP黑名单列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP黑名单列表</p>",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "IpBlackList",
@@ -6811,7 +6830,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>插件配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件配置</p>",
           "example": "无",
           "member": "PluginConfigDTO",
           "name": "PluginConfigs",
@@ -6861,7 +6880,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启提示词安全检测</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启提示词安全检测</p>",
           "example": "true",
           "member": "bool",
           "name": "PromptModerateStatus",
@@ -6871,7 +6890,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>提示词安全检测配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>提示词安全检测配置</p>",
           "example": "无",
           "member": "PromptModerateConfigDTO",
           "name": "PromptModerateConfig",
@@ -6881,7 +6900,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启敏感数据检测</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启敏感数据检测</p>",
           "example": "true",
           "member": "bool",
           "name": "SensitiveDataCheckStatus",
@@ -6891,7 +6910,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>敏感数据检测配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>敏感数据检测配置</p>",
           "example": "无",
           "member": "SensitiveDataCheckConfigDTO",
           "name": "SensitiveDataCheckConfig",
@@ -6901,7 +6920,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>",
           "example": "consistentHash",
           "member": "string",
           "name": "TargetSelect",
@@ -6911,7 +6930,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 从客户端IP判断</li><li>fromHeader： 从请求header判断</li><li>autoDetect： 自动探测</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 从客户端IP判断</li><li>fromHeader： 从请求header判断</li><li>autoDetect： 自动探测</li></ul>",
           "example": "autoDetect",
           "member": "string",
           "name": "FindHostKeyMethod",
@@ -6921,7 +6940,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>会话判断header名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>会话判断header名称</p>",
           "example": "x-session-id",
           "member": "string",
           "name": "HostKeyHeaderName",
@@ -6931,7 +6950,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启备份模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启备份模型</p>",
           "example": "true",
           "member": "bool",
           "name": "FallbackStatus",
@@ -6941,7 +6960,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>备份模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份模型</p>",
           "example": "无",
           "member": "TargetModelDTO",
           "name": "FallbackModels",
@@ -6951,7 +6970,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型类型</p>",
           "example": "OpenAI",
           "member": "string",
           "name": "ModelProtocol",
@@ -7913,7 +7932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "健康检查路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查路径",
           "example": "无",
           "member": "string",
           "name": "HealthCheckPath",
@@ -7924,7 +7943,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态码",
           "example": "无",
           "member": "int64",
           "name": "ValidHealthCheckStatusCode",
@@ -7935,7 +7954,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求的超时时间",
           "example": "无",
           "member": "int64",
           "name": "HealthCheckTimeout",
@@ -7952,7 +7971,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务ID",
           "example": "无",
           "member": "string",
           "name": "ID",
@@ -7963,7 +7982,7 @@
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -7980,7 +7999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Type类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Type类型",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -7991,7 +8010,7 @@
         },
         {
           "disabled": false,
-          "document": "令牌桶最大容量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "令牌桶最大容量\n",
           "example": "无",
           "member": "int64",
           "name": "TokenBucketMaxNum",
@@ -8002,7 +8021,7 @@
         },
         {
           "disabled": false,
-          "document": "令牌生成速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "令牌生成速率",
           "example": "无",
           "member": "int64",
           "name": "TokenBucketRate",
@@ -8013,7 +8032,7 @@
         },
         {
           "disabled": false,
-          "document": "漏斗容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏斗容量",
           "example": "无",
           "member": "int64",
           "name": "FunnelMaxNum",
@@ -8024,7 +8043,7 @@
         },
         {
           "disabled": false,
-          "document": "漏嘴流速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏嘴流速",
           "example": "无",
           "member": "int64",
           "name": "FunnelRate",
@@ -8035,7 +8054,7 @@
         },
         {
           "disabled": false,
-          "document": "滑动窗口最大请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "滑动窗口最大请求数",
           "example": "无",
           "member": "int64",
           "name": "SlidingWindowMaxNum",
@@ -8046,7 +8065,7 @@
         },
         {
           "disabled": false,
-          "document": "滑动窗口长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "滑动窗口长度",
           "example": "无",
           "member": "int64",
           "name": "SlidingWindowSize",
@@ -8057,7 +8076,7 @@
         },
         {
           "disabled": false,
-          "document": "时间窗口最大请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间窗口最大请求数",
           "example": "无",
           "member": "int64",
           "name": "TimeWindow",
@@ -8068,7 +8087,7 @@
         },
         {
           "disabled": false,
-          "document": "时间窗口长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间窗口长度",
           "example": "无",
           "member": "int64",
           "name": "TimeWindowInterval",
@@ -8079,7 +8098,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求的超时时间",
           "example": "无",
           "member": "int64",
           "name": "Timeout",
@@ -8096,7 +8115,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ip数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ip数组",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Ips",
@@ -8107,7 +8126,7 @@
         },
         {
           "disabled": false,
-          "document": "生效类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效类型",
           "example": "always",
           "member": "string",
           "name": "EffectType",
@@ -8118,7 +8137,7 @@
         },
         {
           "disabled": false,
-          "document": "生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效时间",
           "example": "无",
           "member": "StartEndTime",
           "name": "EffectTimes",
@@ -8129,7 +8148,7 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "test_e",
           "member": "string",
           "name": "Comment",
@@ -8146,7 +8165,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间窗口，分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间窗口，分钟",
           "example": "10",
           "member": "uint64",
           "name": "Interval",
@@ -8157,7 +8176,7 @@
         },
         {
           "disabled": false,
-          "document": "累计上限，k\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "累计上限，k",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -8174,7 +8193,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型",
           "example": "string",
           "member": "string",
           "name": "Type",
@@ -8185,7 +8204,7 @@
         },
         {
           "disabled": false,
-          "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "属性",
           "example": "test_ee",
           "member": "string",
           "name": "Properties",
@@ -8196,7 +8215,7 @@
         },
         {
           "disabled": false,
-          "document": "必填字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "必填字段",
           "example": "[\"string\"]",
           "member": "string",
           "name": "Required",
@@ -8207,7 +8226,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "test_ee",
           "member": "string",
           "name": "Description",
@@ -8645,7 +8664,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称",
           "example": "getUser",
           "member": "string",
           "name": "Name",
@@ -8656,7 +8675,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "getUser",
           "member": "string",
           "name": "Description",
@@ -8667,7 +8686,7 @@
         },
         {
           "disabled": false,
-          "document": "入参参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入参参数",
           "example": "无",
           "member": "McpInputOutSchema",
           "name": "InputSchema",
@@ -8678,7 +8697,7 @@
         },
         {
           "disabled": false,
-          "document": "注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注释",
           "example": "无",
           "member": "McpToolAnnotation",
           "name": "Annotations",
@@ -8689,7 +8708,7 @@
         },
         {
           "disabled": false,
-          "document": "出参参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出参参数",
           "example": "无",
           "member": "McpInputOutSchema",
           "name": "OutputSchema",
@@ -8706,7 +8725,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "title for the tool\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "title for the tool",
           "example": "getUser",
           "member": "string",
           "name": "Title",
@@ -8717,7 +8736,7 @@
         },
         {
           "disabled": false,
-          "document": "If true, the tool does not modify its environment\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "If true, the tool does not modify its environment",
           "example": "true",
           "member": "bool",
           "name": "ReadOnlyHint",
@@ -8728,7 +8747,7 @@
         },
         {
           "disabled": false,
-          "document": "If true, the tool may perform destructive updates\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "If true, the tool may perform destructive updates",
           "example": "true",
           "member": "bool",
           "name": "DestructiveHint",
@@ -8739,7 +8758,7 @@
         },
         {
           "disabled": false,
-          "document": "If true, repeated calls with same args have no additional effect\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "If true, repeated calls with same args have no additional effect",
           "example": "true",
           "member": "bool",
           "name": "IdempotentHint",
@@ -8750,7 +8769,7 @@
         },
         {
           "disabled": false,
-          "document": "If true, tool interacts with external entities\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "If true, tool interacts with external entities",
           "example": "false",
           "member": "bool",
           "name": "OpenWorldHint",
@@ -9149,7 +9168,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp server ID",
+          "document": "<p>mcp server ID</p>",
           "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "ID",
@@ -9158,7 +9177,7 @@
         },
         {
           "disabled": false,
-          "document": "模式：proxy代理模式； wrap封装模式；",
+          "document": "<p>模式：proxy代理模式； wrap封装模式；</p>",
           "example": "proxy",
           "member": "string",
           "name": "Mode",
@@ -9167,7 +9186,7 @@
         },
         {
           "disabled": false,
-          "document": "版本号：2024-11-05 2025-03-26",
+          "document": "<p>版本号：2024-11-05 2025-03-26</p>",
           "example": "2024-11-05",
           "member": "string",
           "name": "McpVersion",
@@ -9176,7 +9195,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
@@ -9185,7 +9204,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -9194,7 +9213,7 @@
         },
         {
           "disabled": true,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "app-xxxxxxxx",
           "member": "string",
           "name": "PaasID",
@@ -9203,7 +9222,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "testdesc",
           "member": "string",
           "name": "Description",
@@ -9212,7 +9231,7 @@
         },
         {
           "disabled": false,
-          "document": "标签ID数组",
+          "document": "<p>标签ID数组</p>",
           "example": "[\"lab-xxxxxxxx\"]",
           "member": "string",
           "name": "LabelIDs",
@@ -9221,7 +9240,7 @@
         },
         {
           "disabled": false,
-          "document": "目录ID数组",
+          "document": "<p>目录ID数组</p>",
           "example": "[\"cat-xxxxxxxx\"]",
           "member": "string",
           "name": "CategoryIDs",
@@ -9230,7 +9249,7 @@
         },
         {
           "disabled": true,
-          "document": "鉴权方式：sign签名； none免鉴权",
+          "document": "<p>鉴权方式：sign签名； none免鉴权</p>",
           "example": "sign",
           "member": "string",
           "name": "AuthType",
@@ -9239,7 +9258,7 @@
         },
         {
           "disabled": true,
-          "document": "签名方式：sha256 sm3",
+          "document": "<p>签名方式：sha256 sm3</p>",
           "example": "sha256",
           "member": "string",
           "name": "SignType",
@@ -9248,7 +9267,7 @@
         },
         {
           "disabled": false,
-          "document": "封装服务列表",
+          "document": "<p>封装服务列表</p>",
           "example": "[\"svr-xxxxxxxx\"]",
           "member": "string",
           "name": "WrapServices",
@@ -9257,7 +9276,7 @@
         },
         {
           "disabled": false,
-          "document": "负载方式，robin random consistentHash",
+          "document": "<p>负载方式，robin random consistentHash</p>",
           "example": "random",
           "member": "string",
           "name": "TargetSelect",
@@ -9266,7 +9285,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务器",
+          "document": "<p>目标服务器</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -9275,7 +9294,7 @@
         },
         {
           "disabled": false,
-          "document": "后端协议：http https",
+          "document": "<p>后端协议：http https</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -9284,7 +9303,7 @@
         },
         {
           "disabled": false,
-          "document": "证书检查",
+          "document": "<p>证书检查</p>",
           "example": "false",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -9293,7 +9312,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径",
+          "document": "<p>目标路径</p>",
           "example": "/sse",
           "member": "string",
           "name": "TargetPath",
@@ -9302,7 +9321,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制开启状态",
+          "document": "<p>流量控制开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
@@ -9311,7 +9330,7 @@
         },
         {
           "disabled": false,
-          "document": "流量控制配置",
+          "document": "<p>流量控制配置</p>",
           "example": "无",
           "member": "InvokeLimitConfigDTO",
           "name": "InvokeLimitConfig",
@@ -9320,7 +9339,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单开启状态",
+          "document": "<p>IP白名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpWhiteStatus",
@@ -9329,7 +9348,7 @@
         },
         {
           "disabled": false,
-          "document": "IP白名单配置",
+          "document": "<p>IP白名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpWhiteConfig",
@@ -9338,7 +9357,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单开启状态",
+          "document": "<p>IP黑名单开启状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IpBlackStatus",
@@ -9347,7 +9366,7 @@
         },
         {
           "disabled": false,
-          "document": "IP黑名单配置",
+          "document": "<p>IP黑名单配置</p>",
           "example": "无",
           "member": "IpConfig",
           "name": "IpBlackConfig",
@@ -9356,7 +9375,7 @@
         },
         {
           "disabled": false,
-          "document": "目标Host类型 0 默认 1 vpc",
+          "document": "<p>目标Host类型 0 默认 1 vpc</p>",
           "example": "1",
           "member": "int64",
           "name": "TargetHostType",
@@ -9365,7 +9384,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义host",
+          "document": "<p>自定义host</p>",
           "example": "test.com",
           "member": "string",
           "name": "CustomHttpHost",
@@ -9374,7 +9393,7 @@
         },
         {
           "disabled": false,
-          "document": "Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host",
+          "document": "<p>Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host</p>",
           "example": "useRequestHost",
           "member": "string",
           "name": "HttpHostType",
@@ -9383,7 +9402,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的超时时间",
+          "document": "<p>请求的超时时间</p>",
           "example": "10",
           "member": "uint64",
           "name": "Timeout",
@@ -9392,7 +9411,7 @@
         },
         {
           "disabled": false,
-          "document": "安全规则集",
+          "document": "<p>安全规则集</p>",
           "example": "无",
           "member": "McpSecurityRule",
           "name": "McpSecurityRules",
@@ -9401,7 +9420,7 @@
         },
         {
           "disabled": false,
-          "document": "工具集配置（openapi可能会用到）",
+          "document": "<p>工具集配置（openapi可能会用到）</p>",
           "example": "无",
           "member": "ToolConfigDTO",
           "name": "ToolConfigs",
@@ -9410,7 +9429,7 @@
         },
         {
           "disabled": false,
-          "document": "封装的API分组ID",
+          "document": "<p>封装的API分组ID</p>",
           "example": "app-010101",
           "member": "string",
           "name": "WrapPaasID",
@@ -9419,12 +9438,21 @@
         },
         {
           "disabled": false,
-          "document": "插件配置",
+          "document": "<p>插件配置</p>",
           "example": "无",
           "member": "PluginConfigDTO",
           "name": "PluginConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否忽略健康检查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreHealthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9434,7 +9462,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp server ID",
+          "document": "<p>mcp server ID</p>",
           "example": "无",
           "member": "ResultIDVO",
           "name": "Data",
@@ -10233,7 +10261,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态",
           "example": "无",
           "member": "bool",
           "name": "Status",
@@ -10244,7 +10272,7 @@
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称",
           "example": "无",
           "member": "string",
           "name": "PluginName",
@@ -10255,7 +10283,7 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -10266,7 +10294,7 @@
         },
         {
           "disabled": false,
-          "document": "ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ID",
           "example": "无",
           "member": "string",
           "name": "PluginID",
@@ -10277,7 +10305,7 @@
         },
         {
           "disabled": false,
-          "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优先级",
           "example": "无",
           "member": "int64",
           "name": "Level",
@@ -10288,7 +10316,7 @@
         },
         {
           "disabled": false,
-          "document": "表单配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表单配置",
           "example": "无",
           "member": "PluginFormValueDTO",
           "name": "PluginFormValues",
@@ -10305,7 +10333,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段",
           "example": "无",
           "member": "string",
           "name": "Field",
@@ -10316,7 +10344,7 @@
         },
         {
           "disabled": false,
-          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值",
           "example": "无",
           "member": "string",
           "name": "Value",
@@ -10333,7 +10361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>执行动作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行动作</p>",
           "example": "watch",
           "member": "string",
           "name": "Action",
@@ -10344,7 +10372,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>响应拦截内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>响应拦截内容</p>",
           "example": "intercept",
           "member": "string",
           "name": "InterceptMessage",
@@ -10355,7 +10383,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检测上下文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测上下文</p>",
           "example": "hybrid",
           "member": "string",
           "name": "ContextScope",
@@ -10372,7 +10400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对象ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象ID",
           "example": "mds-36d0b658",
           "member": "string",
           "name": "ID",
@@ -10388,7 +10416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果ID数组",
           "example": "[\"mod-edd55e4f\"]",
           "member": "string",
           "name": "IDs",
@@ -10404,7 +10432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据提供商：tencentCam\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "凭据提供商：tencentCam",
           "example": "tenentCam",
           "member": "string",
           "name": "System",
@@ -10415,7 +10443,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据SecretID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "凭据SecretID",
           "example": "AKxxx",
           "member": "string",
           "name": "SecretID",
@@ -10426,7 +10454,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据SecretKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "凭据SecretKey",
           "example": "SKxxx",
           "member": "string",
           "name": "SecretKey",
@@ -10443,7 +10471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>执行动作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行动作</p>",
           "example": "intercept",
           "member": "string",
           "name": "Action",
@@ -10454,7 +10482,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>响应拦截内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>响应拦截内容</p>",
           "example": "intercept",
           "member": "string",
           "name": "InterceptMessage",
@@ -10465,7 +10493,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检测项</p><p>枚举值：</p><ul><li>birthday： 生日</li><li>email： 邮箱</li><li>identity_number： 身份证</li><li>phone_number： 电话号码</li><li>secret： 秘钥</li><li>password： 密码</li><li>private_key： 私钥</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测项</p><p>枚举值：</p><ul><li>birthday： 生日</li><li>email： 邮箱</li><li>identity_number： 身份证</li><li>phone_number： 电话号码</li><li>secret： 秘钥</li><li>password： 密码</li><li>private_key： 私钥</li></ul>",
           "example": "[\"password\"]",
           "member": "string",
           "name": "CheckItems",
@@ -10476,7 +10504,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检测上下文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测上下文</p>",
           "example": "global",
           "member": "string",
           "name": "ContextScope",
@@ -10493,7 +10521,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>字段名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字段名称</p>",
           "example": "field",
           "member": "string",
           "name": "FieldName",
@@ -10504,7 +10532,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>排序 asc desc</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>排序 asc desc</p>",
           "example": "asc",
           "member": "string",
           "name": "Order",
@@ -10521,7 +10549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>表字段名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表字段名</p>",
           "example": "field",
           "member": "string",
           "name": "FieldName",
@@ -10532,7 +10560,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>操作符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作符</p>",
           "example": "eq",
           "member": "string",
           "name": "Operator",
@@ -10543,7 +10571,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>参数名/常量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参数名/常量</p>",
           "example": "value",
           "member": "string",
           "name": "Val",
@@ -10554,7 +10582,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>参数类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参数类型</p>",
           "example": "string",
           "member": "string",
           "name": "ValType",
@@ -10565,7 +10593,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>内部字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>内部字段</p>",
           "example": "true",
           "member": "bool",
           "name": "InternalField",
@@ -10582,7 +10610,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>源字段名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>源字段名称</p>",
           "example": "field1",
           "member": "string",
           "name": "FieldName",
@@ -10593,7 +10621,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标字段名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标字段名称</p>",
           "example": "field2",
           "member": "string",
           "name": "Name",
@@ -10610,7 +10638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例</p>",
           "example": "ins-4fe8e5ab",
           "member": "string",
           "name": "InstanceID",
@@ -10621,7 +10649,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>名称</p>",
           "example": "llm_test",
           "member": "string",
           "name": "Name",
@@ -10632,7 +10660,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>里约应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>里约应用ID</p>",
           "example": "app-e0dfdb0f",
           "member": "string",
           "name": "PaasID",
@@ -10643,7 +10671,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>描述</p>",
           "example": "大模型测试",
           "member": "string",
           "name": "Description",
@@ -10654,7 +10682,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>",
           "example": "[\"lab-xxxxxxx\"]",
           "member": "string",
           "name": "LabelIDs",
@@ -10665,7 +10693,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目录</p>",
           "example": "[\"cat-xxxxxxxx\"]",
           "member": "string",
           "name": "CategoryIDs",
@@ -10676,7 +10704,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>鉴权方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>鉴权方式</p>",
           "example": "none",
           "member": "string",
           "name": "AuthType",
@@ -10687,7 +10715,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>签名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>签名</p>",
           "example": "sha256",
           "member": "string",
           "name": "SignType",
@@ -10698,7 +10726,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>登录方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>登录方式</p>",
           "example": "[\"login\"]",
           "member": "string",
           "name": "LoginTypes",
@@ -10709,7 +10737,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>负载方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>负载方式</p>",
           "example": "random",
           "member": "string",
           "name": "TargetSelect",
@@ -10720,7 +10748,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>公开路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>公开路径</p>",
           "example": "/llm",
           "member": "string",
           "name": "PubPath",
@@ -10731,7 +10759,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求方法</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求方法</p>",
           "example": "any",
           "member": "string",
           "name": "RequestMethod",
@@ -10742,7 +10770,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标服务器</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标服务器</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -10753,7 +10781,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否https</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否https</p>",
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
@@ -10764,7 +10792,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证书检查</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>证书检查</p>",
           "example": "true",
           "member": "bool",
           "name": "CheckTargetCertsError",
@@ -10775,7 +10803,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>http协议类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>http协议类型</p>",
           "example": "1.1",
           "member": "string",
           "name": "HttpProtocolVersion",
@@ -10786,7 +10814,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>版本号</p>",
           "example": "无",
           "member": "VersionDTO",
           "name": "Versions",
@@ -10797,7 +10825,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标路径</p>",
           "example": "/compatible-mode/v1/chat/completions",
           "member": "string",
           "name": "TargetPath",
@@ -10808,7 +10836,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>入参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>入参</p>",
           "example": "true",
           "member": "bool",
           "name": "RequestParamsValidatorStatus",
@@ -10819,7 +10847,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>入参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>入参</p>",
           "example": "{\"Body\":{\"Type\":\"object\"},\"Query\":{\"Type\":\"object\"},\"Header\":{\"Type\":\"object\"}}",
           "member": "string",
           "name": "RequestParamsValidatorJsonInfoT",
@@ -10830,7 +10858,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>出参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>出参</p>",
           "example": "true",
           "member": "bool",
           "name": "ResponseParamsValidatorStatus",
@@ -10841,7 +10869,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>出参</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>出参</p>",
           "example": "{\"Body\":{\"Type\":\"object\"},\"Query\":{\"Type\":\"object\"},\"Header\":{\"Type\":\"object\"}}",
           "member": "string",
           "name": "ResponseParamsValidatorJsonInfoT",
@@ -10852,7 +10880,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>流量控制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流量控制</p>",
           "example": "true",
           "member": "bool",
           "name": "InvokeLimitConfigStatus",
@@ -10863,7 +10891,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>流量控制</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流量控制</p>",
           "example": "无",
           "member": "InvokeLimitConfigDTO",
           "name": "InvokeLimitConfig",
@@ -10874,7 +10902,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>健康检查</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康检查</p>",
           "example": "true",
           "member": "bool",
           "name": "HealthCheckStatus",
@@ -10885,7 +10913,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>健康检查</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>健康检查</p>",
           "example": "无",
           "member": "HealthCheckConfigDTO",
           "name": "HealthCheckConfig",
@@ -10896,7 +10924,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>格式转换</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>格式转换</p>",
           "example": "true",
           "member": "bool",
           "name": "SourceTypeStatus",
@@ -10907,7 +10935,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>格式转换</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>格式转换</p>",
           "example": "无",
           "member": "SourceTypeConfigDTO",
           "name": "SourceTypeConfig",
@@ -10918,7 +10946,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>是否开启Token限流</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启Token限流</p>",
           "example": "true",
           "member": "bool",
           "name": "TokenLimitStatus",
@@ -10929,7 +10957,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>Token限流配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Token限流配置</p>",
           "example": "无",
           "member": "TokenLimitConfigDTO",
           "name": "TokenLimitConfig",
@@ -10940,7 +10968,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>是否开启内容安全</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启内容安全</p>",
           "example": "true",
           "member": "bool",
           "name": "TmsStatus",
@@ -10951,7 +10979,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>内容安全配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>内容安全配置</p>",
           "example": "无",
           "member": "TmsConfigDTO",
           "name": "TmsConfig",
@@ -10962,7 +10990,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>IP白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP白名单</p>",
           "example": "true",
           "member": "bool",
           "name": "IpWhiteStatus",
@@ -10973,7 +11001,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>IP白名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP白名单</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "IpWhiteList",
@@ -10984,7 +11012,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>IP黑名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP黑名单</p>",
           "example": "true",
           "member": "bool",
           "name": "IpBlackStatus",
@@ -10995,7 +11023,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>IP黑名单</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP黑名单</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "IpBlackList",
@@ -11006,7 +11034,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>插件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插件</p>",
           "example": "无",
           "member": "PluginConfigDTO",
           "name": "PluginConfigs",
@@ -11017,7 +11045,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务ID</p>",
           "example": "svr-462e07d3",
           "member": "string",
           "name": "ID",
@@ -11028,7 +11056,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -11039,7 +11067,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>预览地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预览地址</p>",
           "example": "http://www.app.com/llm",
           "member": "string",
           "name": "Url",
@@ -11050,7 +11078,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>app</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>app</p>",
           "example": "无",
           "member": "IDNameVO",
           "name": "App",
@@ -11061,7 +11089,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目录</p>",
           "example": "无",
           "member": "IDNameVO",
           "name": "Catalogs",
@@ -11072,7 +11100,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "IDNameVO",
           "name": "Labels",
@@ -11083,7 +11111,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>认证方式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>认证方式</p>",
           "example": "无",
           "member": "IDNameVO",
           "name": "Logins",
@@ -11094,7 +11122,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>授权数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权数</p>",
           "example": "0",
           "member": "int64",
           "name": "AuthAppNum",
@@ -11105,7 +11133,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "2026-01-04T03:15:26.362Z",
           "member": "string",
           "name": "CreateTime",
@@ -11116,7 +11144,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最后修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后修改时间</p>",
           "example": "2026-01-07T03:33:26.398Z",
           "member": "string",
           "name": "LastUpdateTime",
@@ -11127,7 +11155,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用ID</p>",
           "example": "251272682",
           "member": "int64",
           "name": "AppID",
@@ -11138,7 +11166,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户ID</p>",
           "example": "700001382999",
           "member": "string",
           "name": "Uin",
@@ -11149,7 +11177,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>域名</p>",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
@@ -11160,7 +11188,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启报文记录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启报文记录</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenMessageLogStatus",
@@ -11171,7 +11199,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>订阅页面的当前用户是否订阅了该API</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订阅页面的当前用户是否订阅了该API</p>",
           "example": "sub-xxx",
           "member": "string",
           "name": "CurrPaasIDSubscriptionID",
@@ -11182,7 +11210,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标服务类型 Restful Database Mock</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标服务类型 Restful Database Mock</p>",
           "example": "Restful",
           "member": "string",
           "name": "TargetServiceType",
@@ -11193,7 +11221,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>SQL模板</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SQL模板</p>",
           "example": "无",
           "member": "SqlTemplate",
           "name": "SqlTemplate",
@@ -11204,7 +11232,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标Host类型 0 默认 1 vpc</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标Host类型 0 默认 1 vpc</p>",
           "example": "0",
           "member": "int64",
           "name": "TargetHostType",
@@ -11215,7 +11243,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>后端服务类型 0 自定义 原始数据:ip/域名或vpc 1 后端服务 服务组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后端服务类型 0 自定义 原始数据:ip/域名或vpc 1 后端服务 服务组</p>",
           "example": "0",
           "member": "uint64",
           "name": "TargetServiceHostType",
@@ -11226,7 +11254,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>后端服务组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后端服务组ID</p>",
           "example": "tsg-xxxxxxxx",
           "member": "string",
           "name": "TargetServerGroupID",
@@ -11237,7 +11265,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>后端服务组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后端服务组</p>",
           "example": "无",
           "member": "TargetServerGroupDTO",
           "name": "TargetServerGroup",
@@ -11248,7 +11276,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义host</p>",
           "example": "test.com",
           "member": "string",
           "name": "CustomHttpHost",
@@ -11259,7 +11287,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host</p>",
           "example": "targetHost",
           "member": "string",
           "name": "HttpHostType",
@@ -11270,7 +11298,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>mock响应状态码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>mock响应状态码</p>",
           "example": "400",
           "member": "int64",
           "name": "MockStatusCode",
@@ -11281,7 +11309,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>mock响应body</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>mock响应body</p>",
           "example": "MockBody",
           "member": "string",
           "name": "MockBody",
@@ -11292,7 +11320,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>mock响应头</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>mock响应头</p>",
           "example": "无",
           "member": "FieldValueDTO",
           "name": "MockHeaders",
@@ -11303,7 +11331,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>路径匹配类型: prefix 前缀匹配(不送默认); absolute 绝对匹配; regex正则匹配;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>路径匹配类型: prefix 前缀匹配(不送默认); absolute 绝对匹配; regex正则匹配;</p>",
           "example": "prefix",
           "member": "string",
           "name": "PathMatchType",
@@ -11314,7 +11342,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义匹配条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义匹配条件</p>",
           "example": "无",
           "member": "CustomMatch",
           "name": "CustomMatch",
@@ -11325,7 +11353,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求的超时时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求的超时时间</p>",
           "example": "60",
           "member": "uint64",
           "name": "Timeout",
@@ -11336,7 +11364,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定的mcp server数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的mcp server数量</p>",
           "example": "1",
           "member": "int64",
           "name": "McpServerNum",
@@ -11353,7 +11381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>字段名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字段名</p>",
           "example": "key1",
           "member": "string",
           "name": "Key",
@@ -11364,7 +11392,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>匹配方式: eq 等于;ne 不等于;regex 正则;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>匹配方式: eq 等于;ne 不等于;regex 正则;</p>",
           "example": "eq",
           "member": "string",
           "name": "Condition",
@@ -11375,7 +11403,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>字段值 或正则表达式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>字段值 或正则表达式</p>",
           "example": "value1",
           "member": "string",
           "name": "Value",
@@ -11392,7 +11420,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n",
           "example": "无",
           "member": "string",
           "name": "ReqSourceType",
@@ -11403,7 +11431,7 @@
         },
         {
           "disabled": false,
-          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n",
           "example": "无",
           "member": "string",
           "name": "ReqTargetType",
@@ -11414,7 +11442,7 @@
         },
         {
           "disabled": false,
-          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n",
           "example": "无",
           "member": "string",
           "name": "ResSourceType",
@@ -11425,7 +11453,7 @@
         },
         {
           "disabled": false,
-          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "json xml urlencoded amf0 amf3 hessian1 hessian2\n",
           "example": "无",
           "member": "string",
           "name": "ResTargetType",
@@ -11442,7 +11470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>配置方式  script  脚本 wizard 向导</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配置方式  script  脚本 wizard 向导</p>",
           "example": "script",
           "member": "string",
           "name": "DbConfigMode",
@@ -11453,7 +11481,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源ID</p>",
           "example": "ds-********",
           "member": "string",
           "name": "DataSourceID",
@@ -11464,7 +11492,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Sql代码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Sql代码</p>",
           "example": "select * from xxx",
           "member": "string",
           "name": "Sql",
@@ -11475,7 +11503,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>向导模式配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>向导模式配置</p>",
           "example": "无",
           "member": "WizardConfig",
           "name": "WizardConfig",
@@ -11492,7 +11520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "202512121212",
           "member": "string",
           "name": "StartTime",
@@ -11503,7 +11531,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "202601010101",
           "member": "string",
           "name": "EndTime",
@@ -11520,7 +11548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器",
           "example": "10.1.2.3",
           "member": "string",
           "name": "Host",
@@ -11531,7 +11559,7 @@
         },
         {
           "disabled": false,
-          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权重",
           "example": "10",
           "member": "int64",
           "name": "Rank",
@@ -11587,7 +11615,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>后端服务组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>后端服务组ID</p>",
           "example": "tsg-********",
           "member": "string",
           "name": "ID",
@@ -11598,7 +11626,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>名称</p>",
           "example": "testgroup",
           "member": "string",
           "name": "Name",
@@ -11609,7 +11637,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标服务器列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标服务器列表</p>",
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
@@ -11620,7 +11648,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>目标Host类型 0 默认 1 vpc</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标Host类型 0 默认 1 vpc</p>",
           "example": "0",
           "member": "int64",
           "name": "TargetHostType",
@@ -11631,7 +11659,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联的服务数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>关联的服务数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "ServiceCount",
@@ -11642,7 +11670,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>",
           "example": "0001-01-01T00:00:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -11659,7 +11687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>检测范围,请求/响应</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测范围,请求/响应</p>",
           "example": "[\"request\"]",
           "member": "string",
           "name": "Scope",
@@ -11670,7 +11698,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检测形式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测形式</p>",
           "example": "sync",
           "member": "string",
           "name": "Mode",
@@ -11681,7 +11709,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>执行动作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行动作</p>",
           "example": "watch",
           "member": "string",
           "name": "Action",
@@ -11692,7 +11720,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>合并请求检测event数，联动Mode字段sync</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>合并请求检测event数，联动Mode字段sync</p>",
           "example": "10",
           "member": "uint64",
           "name": "MergeCount",
@@ -11703,7 +11731,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>风控策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>风控策略</p>",
           "example": "tms-01010",
           "member": "string",
           "name": "BizType",
@@ -11714,7 +11742,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>响应拦截内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>响应拦截内容</p>",
           "example": "failed",
           "member": "string",
           "name": "InterceptMessage",
@@ -11725,7 +11753,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检测上下文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测上下文</p>",
           "example": "latest",
           "member": "string",
           "name": "ContextScope",
@@ -11742,7 +11770,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>",
           "example": "day",
           "member": "string",
           "name": "Type",
@@ -11753,7 +11781,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单次请求上限，k</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单次请求上限，k</p>",
           "example": "100",
           "member": "uint64",
           "name": "LimitRequestBody",
@@ -11764,7 +11792,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>累次token总量消耗上限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>累次token总量消耗上限</p>",
           "example": "无",
           "member": "LimitWindowsDTO",
           "name": "LimitWindows",
@@ -11781,7 +11809,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工具名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工具名称",
           "example": "tool-test",
           "member": "string",
           "name": "ToolName",
@@ -11877,7 +11905,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Version版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Version版本",
           "example": "无",
           "member": "string",
           "name": "Version",
@@ -11888,7 +11916,7 @@
         },
         {
           "disabled": false,
-          "document": "目标路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标路径",
           "example": "无",
           "member": "string",
           "name": "TargetPath",
@@ -11905,7 +11933,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>表名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表名</p>",
           "example": "test_table",
           "member": "string",
           "name": "DbTable",
@@ -11916,7 +11944,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否分页</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否分页</p>",
           "example": "true",
           "member": "bool",
           "name": "DbEnablePaging",
@@ -11927,7 +11955,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求参数</p>",
           "example": "无",
           "member": "ServiceDatabaseReqParam",
           "name": "DbReqParams",
@@ -11938,7 +11966,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>响应参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>响应参数</p>",
           "example": "无",
           "member": "ServiceDatabaseRespParam",
           "name": "DbRespParams",
@@ -11949,7 +11977,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>排序参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>排序参数</p>",
           "example": "无",
           "member": "ServiceDatabaseOrderParam",
           "name": "DbOrdParams",
@@ -11960,7 +11988,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启出参映射</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启出参映射</p>",
           "example": "true",
           "member": "bool",
           "name": "DbEnableMappingResp",

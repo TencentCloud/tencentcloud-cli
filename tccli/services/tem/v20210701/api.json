@@ -469,7 +469,7 @@
         },
         {
           "disabled": false,
-          "document": "启用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启用时间",
           "example": "2024-10-25 16:36:10",
           "member": "string",
           "name": "EnableDate",
@@ -2212,7 +2212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "旧实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旧实例列表",
           "example": "[1]",
           "member": "DeployServicePodDetail",
           "name": "OldPodList",
@@ -2223,7 +2223,7 @@
         },
         {
           "disabled": false,
-          "document": "新实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新实例列表",
           "example": "[1]",
           "member": "DeployServicePodDetail",
           "name": "NewPodList",
@@ -2877,7 +2877,7 @@
         },
         {
           "disabled": false,
-          "document": "剩余数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余数目",
           "example": "22",
           "member": "int64",
           "name": "RemainingCount",
@@ -3994,7 +3994,7 @@
         },
         {
           "disabled": false,
-          "document": "1: 下次部署自动注入注册中心信息；0：不注入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1: 下次部署自动注入注册中心信息；0：不注入",
           "example": "0",
           "member": "int64",
           "name": "EnableRegistryNextDeploy",
@@ -4486,7 +4486,7 @@
         },
         {
           "disabled": false,
-          "document": "tls 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tls 配置",
           "example": "tls 配置",
           "member": "IngressTls",
           "name": "Tls",
@@ -5579,7 +5579,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -5625,7 +5625,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -5744,7 +5744,7 @@
         },
         {
           "disabled": false,
-          "document": "加密配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密配置名称",
           "example": "1",
           "member": "string",
           "name": "SecretDataName",
@@ -5983,7 +5983,7 @@
         },
         {
           "disabled": false,
-          "document": "环境启动状态（不在启动中为null）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境启动状态（不在启动中为null）",
           "example": "1",
           "member": "TemEnvironmentStartingStatus",
           "name": "EnvironmentStartingStatus",
@@ -5993,7 +5993,7 @@
         },
         {
           "disabled": false,
-          "document": "环境停止状态（不在停止中为null）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境停止状态（不在停止中为null）",
           "example": "1",
           "member": "TemEnvironmentStoppingStatus",
           "name": "EnvironmentStoppingStatus",
@@ -6700,7 +6700,7 @@
         },
         {
           "disabled": false,
-          "document": "是否健康\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否健康",
           "example": "true",
           "member": "bool",
           "name": "Unhealthy",
@@ -7032,7 +7032,7 @@
         },
         {
           "disabled": false,
-          "document": "日志输出配置 -- 已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志输出配置 -- 已废弃",
           "example": "1",
           "member": "LogOutputConf",
           "name": "LogOutputConf",
@@ -7043,7 +7043,7 @@
         },
         {
           "disabled": false,
-          "document": "期望实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "期望实例",
           "example": "1",
           "member": "int64",
           "name": "ExpectedInstances",
@@ -7120,7 +7120,7 @@
         },
         {
           "disabled": false,
-          "document": "是否正在发布中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否正在发布中",
           "example": "true",
           "member": "bool",
           "name": "UnderDeploying",
@@ -7164,7 +7164,7 @@
         },
         {
           "disabled": false,
-          "document": "实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例信息",
           "example": "1",
           "member": "DescribeRunPodPage",
           "name": "PodList",
@@ -7175,7 +7175,7 @@
         },
         {
           "disabled": false,
-          "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作负载信息",
           "example": "1",
           "member": "WorkloadInfo",
           "name": "WorkloadInfo",
@@ -7388,7 +7388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分批发布策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分批发布策略",
           "example": "无",
           "member": "DeployStrategyConf",
           "name": "DeployStrategyConf",
@@ -7428,7 +7428,7 @@
         },
         {
           "disabled": false,
-          "document": "beta分批详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "beta分批详情",
           "example": "无",
           "member": "DeployServiceBatchDetail",
           "name": "BetaBatchDetail",
@@ -7448,7 +7448,7 @@
         },
         {
           "disabled": false,
-          "document": "老版本pod列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "老版本pod列表",
           "example": "无",
           "member": "DescribeRunPodPage",
           "name": "OldVersionPodList",
@@ -7458,7 +7458,7 @@
         },
         {
           "disabled": false,
-          "document": "当前批次id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前批次id",
           "example": "0",
           "member": "int64",
           "name": "CurrentBatchIndex",
@@ -7518,7 +7518,7 @@
         },
         {
           "disabled": false,
-          "document": "下一批次开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下一批次开始时间",
           "example": "12342423452",
           "member": "int64",
           "name": "NextBatchStartTime",
@@ -8226,7 +8226,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性配置",
           "example": "无",
           "member": "EsInfo",
           "name": "EsInfo",
@@ -8336,7 +8336,7 @@
         },
         {
           "disabled": false,
-          "document": "日志输出配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志输出配置",
           "example": "无",
           "member": "LogOutputConf",
           "name": "LogOutputConf",
@@ -8402,7 +8402,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通公网访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开通公网访问",
           "example": "true",
           "member": "bool",
           "name": "EnablePublicAccess",
@@ -8424,7 +8424,7 @@
         },
         {
           "disabled": false,
-          "document": "期望的实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "期望的实例",
           "example": "2",
           "member": "int64",
           "name": "ExpectedInstances",
@@ -8457,7 +8457,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用弹性伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用弹性伸缩",
           "example": "0",
           "member": "int64",
           "name": "EsEnable",
@@ -8468,7 +8468,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性策略",
           "example": "0",
           "member": "int64",
           "name": "EsStrategy",
@@ -8490,7 +8490,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用log",
           "example": "0",
           "member": "int64",
           "name": "LogEnable",
@@ -8534,7 +8534,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像命令参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像命令参数",
           "example": "[\"-c\", \"100\"]",
           "member": "string",
           "name": "ImageArgs",
@@ -8611,7 +8611,7 @@
         },
         {
           "disabled": false,
-          "document": "存活探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存活探针配置",
           "example": "无",
           "member": "HealthCheckConfig",
           "name": "Liveness",
@@ -8622,7 +8622,7 @@
         },
         {
           "disabled": false,
-          "document": "就绪探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "就绪探针配置",
           "example": "无",
           "member": "HealthCheckConfig",
           "name": "Readiness",
@@ -8787,7 +8787,7 @@
         },
         {
           "disabled": false,
-          "document": "启动检测探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启动检测探针配置",
           "example": "无",
           "member": "HealthCheckConfig",
           "name": "StartupProbe",
@@ -8831,7 +8831,7 @@
         },
         {
           "disabled": false,
-          "document": "监控业务指标监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控业务指标监控",
           "example": "{\"Port\":9090,\"Path:\"/data\"}",
           "member": "EnablePrometheusConf",
           "name": "EnablePrometheusConf",
@@ -8974,7 +8974,7 @@
         },
         {
           "disabled": false,
-          "document": "部署策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署策略",
           "example": "无",
           "member": "DeployStrategyConf",
           "name": "DeployStrategyConf",
@@ -8996,7 +8996,7 @@
         },
         {
           "disabled": false,
-          "document": "发布时配置是否有修改\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发布时配置是否有修改",
           "example": "true",
           "member": "bool",
           "name": "ConfEdited",

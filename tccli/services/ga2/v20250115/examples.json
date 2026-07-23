@@ -264,6 +264,14 @@
         "title": "查看ACL规则"
       }
     ],
+    "DescribeGlobalAcceleratorDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ga2.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalAcceleratorDetail\n<公共请求参数>\n\n{\n    \"GlobalAcceleratorIds\": [\n        \"ga-fkp1vr85\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AcceleratorSet\": [\n            {\n                \"AcceleratorAreaCounts\": 0,\n                \"AppId\": \"1255486055\",\n                \"Cname\": \"ga-cxwyu5cn-pre.tencentcloudga010.cn\",\n                \"CreateTime\": \"2025-12-19 15:10:17\",\n                \"CrossBorderStatus\": \"false\",\n                \"Description\": \"\",\n                \"GaWanId\": \"\",\n                \"GlobalAcceleratorId\": \"ga-cxwyu5cn\",\n                \"InstanceChargeType\": \"POSTPAID\",\n                \"ListenerCounts\": 2,\n                \"Name\": \"garendu-tesst-trade\",\n                \"OwnerUin\": \"100002840660\",\n                \"Status\": \"active\",\n                \"UpdateTime\": \"2025-12-22 11:45:22\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"3ecda282-bb4b-473b-beed-456298d8d076\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
     "DescribeGlobalAccelerators": [
       {
         "document": "",

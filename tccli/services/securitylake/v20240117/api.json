@@ -216,7 +216,7 @@
         },
         {
           "disabled": false,
-          "document": "每行结果，JSON字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每行结果，JSON字符串",
           "example": "[\"ab\"]",
           "member": "string",
           "name": "JsonRows",
@@ -266,7 +266,7 @@
         },
         {
           "disabled": false,
-          "document": "检索结果列的元信息，字段名和字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检索结果列的元信息，字段名和字段类型",
           "example": "无",
           "member": "SearchResultColumn",
           "name": "Columns",
