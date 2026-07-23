@@ -47,6 +47,43 @@ jobs:
       - name: Strip *_client.py from dist (post-build cleanup)
         run: python -c "import glob, os; files = glob.glob('dist/tccli/_internal/tccli/services/**/*_client.py', recursive=True); [os.remove(f) for f in files]; print('post-build removed %d client files' % len(files))"
 
+      # macOS 会校验主程序与其加载的 Python.framework / dylib 签名是否兼容。
+      # 按“内部 Mach-O -> Python.framework -> 主程序”的顺序统一做 ad-hoc 签名；
+      # 主程序最后签名，避免后续修改内部文件导致签名失效。
+      - name: Re-sign macOS onedir bundle
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          set -euo pipefail
+          DIST_DIR="dist/tccli"
+
+          # 先签 _internal 中的动态库、扩展模块和 Framework 可执行文件。
+          while IFS= read -r -d '' file_path; do
+            if file -b "$file_path" | grep -q 'Mach-O'; then
+              echo "Signing Mach-O: $file_path"
+              codesign --remove-signature "$file_path" 2>/dev/null || true
+              codesign --force --sign - --timestamp=none "$file_path"
+            fi
+          done < <(find "$DIST_DIR/_internal" -type f -print0)
+
+          # 再签 Framework 容器，使其嵌套签名与内部 Python 可执行文件一致。
+          if [[ -d "$DIST_DIR/_internal/Python.framework" ]]; then
+            codesign --force --deep --sign - --timestamp=none \
+              "$DIST_DIR/_internal/Python.framework"
+          fi
+
+          # 最后签主程序。先移除旧签名，避免保留不兼容的 hardened-runtime 标志。
+          codesign --remove-signature "$DIST_DIR/tccli" 2>/dev/null || true
+          codesign --force --sign - --timestamp=none "$DIST_DIR/tccli"
+
+          # 在上传 Release 前验证签名，并实际启动一次，失败则终止工作流。
+          codesign --verify --strict --verbose=4 "$DIST_DIR/tccli"
+          if [[ -f "$DIST_DIR/_internal/Python.framework/Versions/3.12/Python" ]]; then
+            codesign --verify --strict --verbose=4 \
+              "$DIST_DIR/_internal/Python.framework/Versions/3.12/Python"
+          fi
+          "$DIST_DIR/tccli" --version
+
       - name: Package binary (Linux)
         if: runner.os == 'Linux'
         working-directory: dist
