@@ -1,37 +1,4 @@
-**Example 1: 创建一个发票专用章**
-
-1.设置GenerateSource为SealGenerateSourceSystem
-2.设置SealType为发票专用章INVOICE
-3.设置SealStyle为椭圆形ellipse
-4.设置SealSize为40_30
-
-Input: 
-
-```
-tccli essbasic CreateSealByImage --cli-unfold-argument  \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyAppId  \
-    --SealName 发票专用章 \
-    --GenerateSource SealGenerateSourceSystem \
-    --SealType INVOICE \
-    --SealStyle ellipse \
-    --SealSize 40_30
-```
-
-Output: 
-```
-{
-    "Response": {
-        "SealId": "yDwfwUUgygorm2w0UuS2eARCYT5rtPIi",
-        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxx",
-        "RequestId": "477f4d46-062c-4d72-a2e0-94e5b52b0cc5"
-    }
-}
-```
-
-**Example 2: 创建印章预览图片**
+**Example 1: 创建企业电子印章**
 
 
 
@@ -39,86 +6,26 @@ Input:
 
 ```
 tccli essbasic CreateSealByImage --cli-unfold-argument  \
-    --Agent.AppId yDCxxxxxxxxxxxxxxxxxxxxBD \
-    --Agent.ProxyOrganizationOpenId zhangsan_org_01 \
-    --Agent.ProxyOperator.OpenId zhangsan_01 \
-    --SealName 测试创建印章optional逻辑 \
+    --Agent.AppId yDtKBUUckpf4cgufUuWZO6XBnuF44TXA \
+    --Agent.ProxyOrganizationOpenId 123321 \
+    --Agent.ProxyOperator.OpenId 123321 \
+    --SealName ceshi \
+    --SealSize 42_42 \
     --GenerateSource SealGenerateSourceSystem \
-    --SealType OTHER \
-    --SealStyle ellipse \
-    --Options.0.Key CreateSealPreview \
-    --Options.0.Value true
+    --SealType OTHER
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxx",
-        "PreviewFileUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxx",
-        "PreviewPdfUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=xxxxxxxxxx",
-        "SealId": "",
+        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=fa8b8ce5d7dcf25fc59ffb546fd5cbaf65cb80b79d479c2bda0b9bb91c68019639fc18b2b20f3bf71fd29fb6b3080b622c1d08678eb5baa8dfa64a9d706d86dc88139a296aec0465fa603bb9bee4c68aa2537f19594b55bf5e2b6833d66be0c41647b4dcfd395697586d12538590b898&sign=1cf2a8eacace5317e3f1d9f034b28f02f4f98383d2243d9071e0d4b31747cad2",
+        "PreviewFileUrl": "",
+        "PreviewPdfUrl": "",
+        "SealId": "yD3J7UUckpeq9ku9UED1q6P8DgGXxXR8",
         "SealOperatorVerifyPath": "",
         "SealOperatorVerifyQrcodeUrl": "",
-        "RequestId": "5447cb22-xxxx-zzzz-xxxx-68xxxxe38828"
-    }
-}
-```
-
-**Example 3: 系统生成印章**
-
-GenerateSource为SealGenerateSourceSystem表示系统生成印章
-
-Input: 
-
-```
-tccli essbasic CreateSealByImage --cli-unfold-argument  \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyAppId  \
-    --SealName 合同专用章 \
-    --GenerateSource SealGenerateSourceSystem \
-    --SealType FINANCE \
-    --SealHorizontalText 印章横向文字在这里
-```
-
-Output: 
-```
-{
-    "Response": {
-        "SealId": "yDwi8UUckpo5z4omUyleFeZeadKwB=1Hm",
-        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a6c****66264",
-        "RequestId": "477f4d46-062c-4d72-a2e0-94e5b52b0cc5"
-    }
-}
-```
-
-**Example 4: 通过图片创建电子印章**
-
-1.SealImage传递图片的base64编码, GenerateSource不设置
-2. 通过图片创建电子印章，需要电子签人工审核
-
-Input: 
-
-```
-tccli essbasic CreateSealByImage --cli-unfold-argument  \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyAppId  \
-    --SealName 人事专用章 \
-    --SealImage iVBORw0KGgoAAAANSUhEUgAAAGwAAABuCAYAAADCrvbGAAABW2lDZXE15yz3uZ6TErkJggg....(图片base64省略) \
-    --SealType PERSONNEL
-```
-
-Output: 
-```
-{
-    "Response": {
-        "SealId": "yDwi8UUckpo5z4k1UyleFeZEcAE49vb6",
-        "ImageUrl": "",
-        "RequestId": "62378bbc-2384-499c-89f6-7835040b24a1"
+        "RequestId": "18263fb8-9f12-4b46-a646-0807c1442ff2"
     }
 }
 ```

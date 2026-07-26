@@ -1,13 +1,13 @@
-**Example 1: 删除NAT访问控制规则**
+**Example 1: 按具体 ID 删除一条 NAT 出站规则**
 
-删除NAT访问控制规则
+按具体规则 ID 删除一条 NAT 出站规则。
 
 Input: 
 
 ```
 tccli cfw RemoveNatAcRule --cli-unfold-argument  \
-    --RuleUuid 241996 \
-    --Direction 1
+    --RuleUuid 730001 \
+    --Direction 0
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "RuleUuid": [
-            241996
+            730001
         ],
-        "RequestId": "896b6a81-26f9-47d6-97c5-9fa14a7cc883"
+        "RequestId": "00000000-0000-4000-8000-000000000001"
     }
 }
 ```

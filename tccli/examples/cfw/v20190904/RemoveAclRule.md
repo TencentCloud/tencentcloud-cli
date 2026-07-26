@@ -1,13 +1,13 @@
-**Example 1: 删除互联网边界访问控制规则**
+**Example 1: 删除一条出站规则**
 
-删除互联网边界访问控制规则
+删除一条出站互联网边界规则。
 
 Input: 
 
 ```
 tccli cfw RemoveAclRule --cli-unfold-argument  \
-    --RuleUuid 100 \
-    --Direction 1
+    --RuleUuid 730001 \
+    --Direction 0
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "RuleUuid": [
-            100
+            730001
         ],
-        "RequestId": "3cfe92c5-da49-411e-9254-559a295471e9"
+        "RequestId": "00000000-0000-4000-8000-000000000001"
     }
 }
 ```

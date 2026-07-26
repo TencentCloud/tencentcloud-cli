@@ -1148,28 +1148,10 @@
     ],
     "CreateSealByImage": [
       {
-        "document": "1.设置GenerateSource为SealGenerateSourceSystem\n2.设置SealType为发票专用章INVOICE\n3.设置SealStyle为椭圆形ellipse\n4.设置SealSize为40_30",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"SealName\": \"发票专用章\",\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"INVOICE\",\n    \"SealStyle\": \"ellipse\",\n    \"SealSize\": \"40_30\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDwfwUUgygorm2w0UuS2eARCYT5rtPIi\",\n        \"ImageUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxx\",\n        \"RequestId\": \"477f4d46-062c-4d72-a2e0-94e5b52b0cc5\"\n    }\n}",
-        "title": "创建一个发票专用章"
-      },
-      {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDCxxxxxxxxxxxxxxxxxxxxBD\",\n        \"ProxyOrganizationOpenId\": \"zhangsan_org_01\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"zhangsan_01\"\n        }\n    },\n    \"SealName\": \"测试创建印章optional逻辑\",\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"OTHER\",\n    \"SealStyle\": \"ellipse\",\n    \"Options\": [\n        {\n            \"Key\": \"CreateSealPreview\",\n            \"Value\": \"true\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ImageUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxx\",\n        \"PreviewFileUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxx\",\n        \"PreviewPdfUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=xxxxxxxxxx\",\n        \"SealId\": \"\",\n        \"SealOperatorVerifyPath\": \"\",\n        \"SealOperatorVerifyQrcodeUrl\": \"\",\n        \"RequestId\": \"5447cb22-xxxx-zzzz-xxxx-68xxxxe38828\"\n    }\n}",
-        "title": "创建印章预览图片"
-      },
-      {
-        "document": "GenerateSource为SealGenerateSourceSystem表示系统生成印章",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"SealName\": \"合同专用章\",\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"FINANCE\",\n    \"SealHorizontalText\": \"印章横向文字在这里\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDwi8UUckpo5z4omUyleFeZeadKwB=1Hm\",\n        \"ImageUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a6c****66264\",\n        \"RequestId\": \"477f4d46-062c-4d72-a2e0-94e5b52b0cc5\"\n    }\n}",
-        "title": "系统生成印章"
-      },
-      {
-        "document": "1.SealImage传递图片的base64编码, GenerateSource不设置\n2. 通过图片创建电子印章，需要电子签人工审核",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"SealName\": \"人事专用章\",\n    \"SealImage\": \"iVBORw0KGgoAAAANSUhEUgAAAGwAAABuCAYAAADCrvbGAAABW2lDZXE15yz3uZ6TErkJggg....(图片base64省略)\",\n    \"SealType\": \"PERSONNEL\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDwi8UUckpo5z4k1UyleFeZEcAE49vb6\",\n        \"ImageUrl\": \"\",\n        \"RequestId\": \"62378bbc-2384-499c-89f6-7835040b24a1\"\n    }\n}",
-        "title": "通过图片创建电子印章"
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDtKBUUckpf4cgufUuWZO6XBnuF44TXA\",\n        \"ProxyOrganizationOpenId\": \"123321\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"123321\"\n        }\n    },\n    \"SealName\": \"ceshi\",\n    \"SealSize\": \"42_42\",\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"OTHER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=fa8b8ce5d7dcf25fc59ffb546fd5cbaf65cb80b79d479c2bda0b9bb91c68019639fc18b2b20f3bf71fd29fb6b3080b622c1d08678eb5baa8dfa64a9d706d86dc88139a296aec0465fa603bb9bee4c68aa2537f19594b55bf5e2b6833d66be0c41647b4dcfd395697586d12538590b898&sign=1cf2a8eacace5317e3f1d9f034b28f02f4f98383d2243d9071e0d4b31747cad2\",\n        \"PreviewFileUrl\": \"\",\n        \"PreviewPdfUrl\": \"\",\n        \"SealId\": \"yD3J7UUckpeq9ku9UED1q6P8DgGXxXR8\",\n        \"SealOperatorVerifyPath\": \"\",\n        \"SealOperatorVerifyQrcodeUrl\": \"\",\n        \"RequestId\": \"18263fb8-9f12-4b46-a646-0807c1442ff2\"\n    }\n}",
+        "title": "创建企业电子印章"
       }
     ],
     "CreateSignUrls": [

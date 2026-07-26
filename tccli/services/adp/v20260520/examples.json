@@ -50,6 +50,14 @@
         "title": "CreateApp"
       }
     ],
+    "CreateAppTrigger": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"20754157***********\",\n    \"ExecuteConfig\": {\n        \"WorkflowConfig\": {\n            \"ParamBindingsApi\": {\n                \"ParamList\": []\n            },\n            \"ParamBindingsWorkflow\": {\n                \"ParamList\": [\n                    {\n                        \"ParamName\": \"name\",\n                        \"ParamType\": 0,\n                        \"Value\": {\n                            \"VariableName\": \"Name\"\n                        }\n                    }\n                ]\n            },\n            \"WorkflowId\": \"2428abbd-9044-4031-8a5a-41ff3dc63fa2\"\n        }\n    },\n    \"ExecuteType\": 2,\n    \"PushConfig\": {\n        \"PushChannel\": 4,\n        \"PushTargetId\": \"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=***********************************\",\n        \"PushTargetType\": 2,\n        \"PushWebhookUrl\": \"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=***********************************\"\n    },\n    \"TriggerConfig\": {\n        \"WebhookConfig\": {\n            \"ParamSchemaConfig\": {\n                \"SchemaList\": [\n                    {\n                        \"ParamName\": \"Name\",\n                        \"ParamType\": 0,\n                        \"Required\": true\n                    }\n                ]\n            },\n            \"WebhookKey\": \"************************************\",\n            \"WebhookToken\": \"************************************************\",\n            \"WebhookUrl\": \"https:/adp.cloud.tencent.com/adp/v2/app/2075415763781738240/trigger/webhook/************************************\"\n        }\n    },\n    \"TriggerName\": \"事件\",\n    \"TriggerType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"TriggerId\": \"a0129199-5942-478b-af9f-16b201295e65\",\n        \"RequestId\": \"03c7e279-063b-4900-a6f3-df82f5bc0bd4\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "CreateConversation": [
       {
         "document": "",
@@ -98,6 +106,14 @@
         "title": "创建空间"
       }
     ],
+    "CreateTimerTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTimerTask\n<公共请求参数>\n\n{\n    \"CreateSource\": 1,\n    \"Prompt\": \"1\",\n    \"Schedule\": {\n        \"ManualOnly\": {\n            \"Enabled\": true\n        },\n        \"ScheduleType\": 1\n    },\n    \"SpaceId\": \"default_space\",\n    \"TaskName\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TimerId\": \"bbe5163d-7900-4230-941a-9b196a9bdfcc\",\n        \"RequestId\": \"6d08ceab-46df-4a07-a1be-0fd325b1ef02\"\n    }\n}",
+        "title": "CreateTimerTask"
+      }
+    ],
     "CreateVariable": [
       {
         "document": "创建环境变量",
@@ -144,6 +160,14 @@
         "title": "DeleteApp"
       }
     ],
+    "DeleteAppTrigger": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"2072866150944382336\",\n    \"TriggerId\": \"77ec7105-0cb8-4c87-ac30-d7eb6688bf4c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ee65f43-8d16-4e15-ac24-5c69b3ec8a76\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "DeleteConversation": [
       {
         "document": "",
@@ -182,6 +206,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"UYiGYydT\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fca348e3-87ce-4254-9b1c-f1c2864b3a35\"\n    }\n}",
         "title": "删除空间"
+      }
+    ],
+    "DeleteTimerTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTimerTask\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"TimerId\": \"9ecad663-2737-4987-abd5-139991d56dc4\",\n    \"LoginUin\": \"60001000\",\n    \"LoginSubAccountUin\": \"70001000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca642e14-8bae-4b52-b702-134c6118402b\"\n    }\n}",
+        "title": "删除定时任务"
       }
     ],
     "DeleteVariable": [
@@ -244,6 +276,38 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppSummaryList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"FilterList\": [\n        {\n            \"Name\": \"AppStatus\",\n            \"ValueList\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"Query\": \"信息\"\n}",
         "output": "{\n    \"Response\": {\n        \"AppSummaryList\": [\n            {\n                \"AppId\": \"206*************320\",\n                \"AppMode\": 2,\n                \"Avatar\": \"https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png\",\n                \"Name\": \"测试的应用信息\",\n                \"OperationInfo\": {\n                    \"Creator\": \"wu******g\",\n                    \"CreatorUin\": \"700****06554\",\n                    \"CreatorUserAccount\": \"\",\n                    \"UpdateTime\": \"1780042649\",\n                    \"Updater\": \"wu******g\",\n                    \"UpdaterUin\": \"700000306554\"\n                },\n                \"PermissionIdList\": [\n                    \"adpAppEdit\"\n                ],\n                \"Status\": {\n                    \"Status\": 1,\n                    \"StatusDescription\": \"未上线\"\n                },\n                \"SubStatus\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5163c167-3c4e-487d-9c1d-b42896dc1c8e\"\n    }\n}",
         "title": "DescribeAppSummaryList"
+      }
+    ],
+    "DescribeAppTrigger": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"2075415763781738240\",\n    \"TriggerId\": \"febb4930-0e2b-470b-9e24-04b73f9d773b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Trigger\": {\n            \"AppId\": \"2075415763781738240\",\n            \"ExecuteConfig\": {\n                \"WorkflowConfig\": {\n                    \"ParamBindingsApi\": {\n                        \"ParamList\": []\n                    },\n                    \"ParamBindingsWorkflow\": {\n                        \"ParamList\": [\n                            {\n                                \"ParamName\": \"name\",\n                                \"ParamType\": 0,\n                                \"Value\": {\n                                    \"VariableName\": \"Name\"\n                                }\n                            }\n                        ]\n                    },\n                    \"WorkflowId\": \"2428abbd-9044-4031-8a5a-41ff3dc63fa2\"\n                }\n            },\n            \"ExecuteType\": 2,\n            \"FailedCount\": \"1\",\n            \"PushConfig\": {\n                \"PushChannel\": 4,\n                \"PushTargetId\": \"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=446c1200-3738-4cdc-ac9e-01234578987\",\n                \"PushTargetType\": 2,\n                \"PushWebhookUrl\": \"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=446c1200-3738-4cdc-ac9e-01234578987\"\n            },\n            \"Status\": 1,\n            \"SuccessCount\": \"0\",\n            \"TriggerConfig\": {\n                \"WebhookConfig\": {\n                    \"ParamSchemaConfig\": {\n                        \"SchemaList\": [\n                            {\n                                \"ParamName\": \"Name\",\n                                \"ParamType\": 0,\n                                \"Required\": true,\n                                \"SubParamList\": []\n                            }\n                        ]\n                    },\n                    \"WebhookKey\": \"b4a451ee-a665-4f85-8a2e-4096af4ca342\",\n                    \"WebhookToken\": \"2c95f3f3fa65d5c343f2e7a6bacfb9c7233ab6712a397ed5\",\n                    \"WebhookUrl\": \"https://tde.xiaowei.cloud.tencent.com/adp/v2/app/2075415763781738240/trigger/webhook/b4a451ee-a665-4f85-8a2e-4096af4ca342\"\n                }\n            },\n            \"TriggerId\": \"febb4930-0e2b-470b-9e24-04b73f9d773b\",\n            \"TriggerName\": \"事件\",\n            \"TriggerStatus\": {\n                \"WebhookStatus\": {\n                    \"WebhookUrl\": \"https://tde.xiaowei.cloud.tencent.com/adp/v2/app/2075415763781738240/trigger/webhook/b4a451ee-a665-4f85-8a2e-4096af4ca342\"\n                }\n            },\n            \"TriggerType\": 2\n        },\n        \"RequestId\": \"8a92497b-4313-4cef-b91a-5ca5433d0dfd\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeAppTriggerInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppTriggerInstance\n<公共请求参数>\n\n{\n    \"AppId\": \"2072866150944382336\",\n    \"InstanceId\": \"2e41cd4a-39cc-455e-a530-8a543db8ac13\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"AppId\": \"2072866150944382336\",\n            \"ConversationId\": \"t2e41cd4a39cc455ea5308a543db8ac13\",\n            \"CreatedAt\": \"2026-07-03T10:41:24+08:00\",\n            \"FinishedAt\": \"2026-07-03T10:41:44+08:00\",\n            \"InstanceId\": \"2e41cd4a-39cc-455e-a530-8a543db8ac13\",\n            \"RequestId\": \"trigger_2e41cd4a-39cc-455e-a530-8a543db8ac13\",\n            \"ResultCode\": \"SUCCESS\",\n            \"ResultSummary\": \"每隔 1 分钟执行 `hello` 工作流，对应的 **cron 表达式**为：\\n\\n```\\n* * * * *\\n```\\n\\n各字段含义（从左到右）：\\n\\n| 字段 | 值 | 含义 |\\n|------|------|------|\\n| 分钟 | `*` | 每分钟 |\\n| 小时 | `*` | 每小时 |\\n| 日 | `*` | 每天 |\\n| 月 | `*` | 每月 |\\n| 星期 | `*` | 每周任意一天 |\\n\\n---\\n\\n**常见平台的配置方式：**\\n\\n**1. Linux crontab**\\n```bash\\n* * * * * /path/to/hello_workflow.sh\\n```\\n\\n**2. GitHub Actions**\\n```yaml\\non:\\n  schedule:\\n    - cron: '* * * * *'\\n```\\n\\n**3. Kubernetes CronJob**\\n```yaml\\nspec:\\n  schedule: '* * * * *'\\n  jobTemplate:\\n    spec:\\n      template:\\n        spec:\\n          containers:\\n            - name: hello\\n              image: your-image\\n              command: [\\\"./hello_workflow\\\"]\\n```\\n\\n**4. Airflow DAG**\\n```python\\nfrom airflow import DAG\\nfrom airflow.operators.bash import BashOperator\\nfrom datetime import timedelta\\n\\ndefault_args = {\\n    'start_date': datetime(2026, 7, 3),\\n}\\n\\nwith DAG('hello_workflow',\\n         schedule_interval=timedelta(minut\",\n            \"RunId\": \"msg_a2583256-5c07-4e38-8992-6b49daf00d41_1\",\n            \"Source\": 1,\n            \"StartedAt\": \"2026-07-03T10:41:24+08:00\",\n            \"Status\": 4,\n            \"TraceId\": \"121b84421b74a353eba6a0a793232925 / rcd_a2583256-5c07-4e38-8992-6b49daf00d41\",\n            \"TriggerId\": \"64201696-52ee-49f6-a95b-0773b60a8e6b\",\n            \"WorkflowRunId\": \"\"\n        },\n        \"RequestId\": \"d32dd79b-5346-4cbe-8d0e-dd789a986116\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeAppTriggerRunLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppTriggerRunLogList\n<公共请求参数>\n\n{\n    \"AppId\": \"2072866150944382336\",\n    \"FilterList\": [\n        {\n            \"Name\": \"PushStatus\",\n            \"Operator\": 0,\n            \"ValueList\": [\n                \"4\"\n            ]\n        }\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"TriggerId\": \"64201696-52ee-49f6-a95b-0773b60a8e6b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RunLogList\": [\n            {\n                \"ConversationId\": \"t2e41cd4a39cc455ea5308a543db8ac13\",\n                \"DurationMs\": \"19106\",\n                \"EndTime\": \"2026-07-03T10:41:44+08:00\",\n                \"FireType\": 3,\n                \"InstanceId\": \"2e41cd4a-39cc-455e-a530-8a543db8ac13\",\n                \"PushStatus\": 4,\n                \"ResultCode\": \"SUCCESS\",\n                \"ResultSummary\": \"每隔 1 分钟执行 `hello` 工作流，对应的 **cron 表达式**为：\\n\\n```\\n* * * * *\\n```\\n\\n各字段含义（从左到右）：\\n\\n| 字段 | 值 | 含义 |\\n|------|------|------|\\n| 分钟 | `*` | 每分钟 |\\n| 小时 | `*` | 每小时 |\\n| 日 | `*` | 每天 |\\n| 月 | `*` | 每月 |\\n| 星期 | `*` | 每周任意一天 |\\n\\n---\\n\\n**常见平台的配置方式：**\\n\\n**1. Linux crontab**\\n```bash\\n* * * * * /path/to/hello_workflow.sh\\n```\\n\\n**2. GitHub Actions**\\n```yaml\\non:\\n  schedule:\\n    - cron: '* * * * *'\\n```\\n\\n**3. Kubernetes CronJob**\\n```yaml\\nspec:\\n  schedule: '* * * * *'\\n  jobTemplate:\\n    spec:\\n      template:\\n        spec:\\n          containers:\\n            - name: hello\\n              image: your-image\\n              command: [\\\"./hello_workflow\\\"]\\n```\\n\\n**4. Airflow DAG**\\n```python\\nfrom airflow import DAG\\nfrom airflow.operators.bash import BashOperator\\nfrom datetime import timedelta\\n\\ndefault_args = {\\n    'start_date': datetime(2026, 7, 3),\\n}\\n\\nwith DAG('hello_workflow',\\n         schedule_interval=timedelta(minut\",\n                \"RunId\": \"msg_a2583256-5c07-4e38-8992-6b49daf00d41_1\",\n                \"ScheduledFireTime\": \"2026-07-03T10:41:24+08:00\",\n                \"StartTime\": \"2026-07-03T10:41:24+08:00\",\n                \"Status\": 4,\n                \"TriggerId\": \"64201696-52ee-49f6-a95b-0773b60a8e6b\",\n                \"Unread\": true,\n                \"WorkflowRunId\": \"\"\n            }\n        ],\n        \"TotalCount\": \"2\",\n        \"RequestId\": \"121a757c-9765-4130-ac51-a8e2edce74c7\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeAppTriggerSummaryList": [
+      {
+        "document": "成功",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppTriggerSummaryList\n<公共请求参数>\n\n{\n    \"AppId\": \"2075415763781738240\",\n    \"FilterList\": [],\n    \"PageNumber\": 1,\n    \"PageSize\": 30,\n    \"Query\": \"定时\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": \"1\",\n        \"TriggerList\": [\n            {\n                \"AppId\": \"2075415763781738240\",\n                \"ExecuteType\": 1,\n                \"FailedCount\": \"0\",\n                \"LastSessionId\": \"t77186f546780488d82db80e5f3587308\",\n                \"Status\": 1,\n                \"SuccessCount\": \"2\",\n                \"TriggerId\": \"ddbfec0a-44c3-4d93-a6f5-f5bf9a0fcb2d\",\n                \"TriggerName\": \"定时触发\",\n                \"TriggerStatus\": {\n                    \"ScheduledStatus\": {\n                        \"LastFireTime\": \"2026-07-12T18:00:10+08:00\",\n                        \"NextFireTime\": \"2026-07-13T18:00:00+08:00\",\n                        \"PolicySummary\": \"18:00\"\n                    }\n                },\n                \"TriggerType\": 1,\n                \"UnreadRunLogCount\": \"2\"\n            }\n        ],\n        \"RequestId\": \"e4d4d33d-5c6e-4395-819c-c537de13fbfc\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "DescribeAuditLogList": [
@@ -382,6 +446,30 @@
         "title": "DescribeSystemVariableList"
       }
     ],
+    "DescribeTimerTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimerTask\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"TimerId\": \"bbe5163d-7900-4230-941a-9b196a9bdfcc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Task\": {\n            \"Config\": {\n                \"PushConfig\": {\n                    \"PushChannel\": 1,\n                    \"PushTargetId\": \"\",\n                    \"PushTargetType\": 2\n                },\n                \"Schedule\": {\n                    \"ManualOnly\": {},\n                    \"ScheduleType\": 1,\n                    \"Timezone\": \"Asia/Shanghai\"\n                }\n            },\n            \"OwnerUserId\": \"1932008810606356480\",\n            \"PolicySummary\": \"仅手动触发\",\n            \"Profile\": {\n                \"CreateSource\": 1,\n                \"InputContextSnapshot\": \"\",\n                \"ModelId\": \"TCADP/glm-5.1\",\n                \"Prompt\": \"你好\",\n                \"SkillSnapshot\": \"\",\n                \"TaskName\": \"你好任务\",\n                \"ToolSnapshot\": \"\",\n                \"WorkspaceId\": \"default-folder\"\n            },\n            \"SpaceId\": \"default_space\",\n            \"Status\": {\n                \"FailedCount\": \"0\",\n                \"LastFireTime\": \"\",\n                \"LastSessionId\": \"\",\n                \"NextFireTime\": \"\",\n                \"Status\": 1,\n                \"SuccessCount\": \"0\",\n                \"UnreadRunLogCount\": \"0\"\n            },\n            \"TimerId\": \"bbe5163d-7900-4230-941a-9b196a9bdfcc\"\n        },\n        \"RequestId\": \"29cd28a7-931e-4af6-aef9-909a2e274189\"\n    }\n}",
+        "title": "DescribeTimerTask"
+      }
+    ],
+    "DescribeTimerTaskRunLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimerTaskRunLogList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"TimerId\": \"bbe5163d-7900-4230-941a-9b196a9bdfcc\",\n    \"LoginSubAccountUin\": \"700001046587\",\n    \"LoginUin\": \"700001046587\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"90211607-e754-464e-a567-3b96f5c4cc5e\"\n    }\n}",
+        "title": "DescribeTimerTaskRunLogList"
+      }
+    ],
+    "DescribeTimerTaskSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimerTaskSummaryList\n<公共请求参数>\n\n{\n    \"FilterList\": [\n        {\n            \"Name\": \"name\",\n            \"ValueList\": [\n                \"你好\"\n            ]\n        }\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"Query\": \"你好\",\n    \"SpaceId\": \"default_space\",\n    \"LoginSubAccountUin\": \"700001046587\",\n    \"LoginUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskList\": [],\n        \"TotalCount\": \"0\",\n        \"RequestId\": \"252bc947-54a0-4ac0-b68c-3e0804ed4f61\"\n    }\n}",
+        "title": "DescribeTimerTaskSummaryList"
+      }
+    ],
     "DescribeVariable": [
       {
         "document": "查询环境变量",
@@ -414,6 +502,22 @@
         "title": "收藏skill"
       }
     ],
+    "MarkAppTriggerRunLogRead": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MarkAppTriggerRunLogRead\n<公共请求参数>\n\n{\n    \"AppId\": \"2075415763781738240\",\n    \"InstanceIdList\": [\n        \"5131aa02-b9f9-415b-a7f4-e58d48ed3181\"\n    ],\n    \"TriggerId\": \"febb4930-0e2b-470b-9e24-04b73f9d773b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MarkedCount\": 0,\n        \"RequestId\": \"d364f770-6979-4e63-bb64-8900f0f24aa4\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "MarkTimerTaskRunLogRead": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MarkTimerTaskRunLogRead\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"TimerId\": \"b6fa3335-4f72-4f75-bc9e-290c694a13bd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MarkedCount\": 43,\n        \"RequestId\": \"d0ff457d-fae6-40ea-8ed7-c8767b59a88f\"\n    }\n}",
+        "title": "MarkTimerTaskRunLogRead"
+      }
+    ],
     "ModifyAgent": [
       {
         "document": "",
@@ -428,6 +532,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"AppId\": \"2070037792884085504\",\n    \"AppMode\": 2,\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"AppMode\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"AppId\": \"2070037792884085504\",\n        \"UpdateTime\": \"1782819327\",\n        \"RequestId\": \"f4871251-9d39-4284-ae9a-349307e05913\"\n    }\n}",
         "title": "ModifyApp"
+      }
+    ],
+    "ModifyAppTrigger": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"2072866150944382336\",\n    \"Trigger\": {\n        \"TriggerName\": \"每隔30分钟执行一次\"\n    },\n    \"TriggerId\": \"64201696-52ee-49f6-a95b-0773b60a8e6b\",\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"TriggerName\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a0ed855-acc1-4bd1-b297-119dc5f5b5ab\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "ModifyConversation": [
@@ -462,12 +574,36 @@
         "title": "编辑空间"
       }
     ],
+    "ModifyTimerTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTimerTask\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"TimerId\": \"bbe5163d-7900-4230-941a-9b196a9bdfcc\",\n    \"TimerTask\": {\n        \"Profile\": {\n            \"Prompt\": \"2\"\n        }\n    },\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"profile.prompt\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NextFireTime\": \"\",\n        \"RequestId\": \"5475cddf-e2b5-4736-b8c3-bf4e2ae97356\"\n    }\n}",
+        "title": "ModifyTimerTask"
+      }
+    ],
     "ModifyVariable": [
       {
         "document": "修改应用",
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVariable\n<公共请求参数>\n\n{\n    \"AppId\": \"206***********85184\",\n    \"Variable\": {\n        \"DefaultFileName\": \"1.doc\",\n        \"DefaultValue\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/public/174454419303809*********2**7********184/ima*****************************751476*******4*d*c*\",\n        \"Description\": \"d****\",\n        \"ModuleType\": 0,\n        \"Name\": \"d********cv\",\n        \"Type\": 11,\n        \"VariableId\": \"b4d5dbd1-f090-4323-bf2b-5b4211df1631\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea194623-1b38-423d-944e-61c9daf4a61b\"\n    }\n}",
         "title": "ModifyVariable"
+      }
+    ],
+    "PauseAppTrigger": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"2075415763781738240\",\n    \"TriggerId\": \"febb4930-0e2b-470b-9e24-04b73f9d773b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"838cb2db-bc54-41db-8008-6d6b4395a90c\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "PauseTimerTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseTimerTask\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"TimerId\": \"b6fa3335-4f72-4f75-bc9e-290c694a13bd\",\n    \"LoginUin\": \"700001046587\",\n    \"LoginSubAccountUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f492a90-fd96-4f3b-be59-bc1bb6c06612\"\n    }\n}",
+        "title": "PauseTimerTask"
       }
     ],
     "ReleaseSkill": [
@@ -486,6 +622,22 @@
         "title": "重置ClawAgent模式对话"
       }
     ],
+    "ResumeAppTrigger": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"2075415763781738240\",\n    \"TriggerId\": \"febb4930-0e2b-470b-9e24-04b73f9d773b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"92a4e42a-0103-4d24-b407-afc1f106bef3\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "ResumeTimerTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeTimerTask\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"TimerId\": \"b6fa3335-4f72-4f75-bc9e-290c694a13bd\",\n    \"LoginUin\": \"700001046587\",\n    \"LoginSubAccountUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77319915-b9c4-408a-8b11-e7c1dfd6298f\"\n    }\n}",
+        "title": "ResumeTimerTask"
+      }
+    ],
     "RetryRelease": [
       {
         "document": "发布重试",
@@ -500,6 +652,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackRelease\n<公共请求参数>\n\n{\n    \"AppId\": \"206*************184\",\n    \"ReleaseId\": \"206**********003392\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"02736d64-307d-40a8-aaff-ee1191e0d7f7\"\n    }\n}",
         "title": "RollbackRelease"
+      }
+    ],
+    "RunAppTriggerNow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunAppTriggerNow\n<公共请求参数>\n\n{\n    \"AppId\": \"2072866150944382336\",\n    \"TriggerId\": \"64201696-52ee-49f6-a95b-0773b60a8e6b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"2e41cd4a-39cc-455e-a530-8a543db8ac13\",\n        \"RequestId\": \"588843cd-59d7-4294-9b9d-2c09b13e37d8\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "RunTimerTaskNow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunTimerTaskNow\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"TimerId\": \"b6fa3335-4f72-4f75-bc9e-290c694a13bd\",\n    \"LoginUin\": \"700001046587\",\n    \"LoginSubAccountUin\": \"700001046587\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FireInstanceId\": \"f4c6bd13-910e-49f2-bc46-d33a2aea34d8\",\n        \"RequestId\": \"6240be3b-3919-4679-964f-a5a0ce8a560b\"\n    }\n}",
+        "title": "RunTimerTaskNow"
       }
     ],
     "UnfavoritePlugin": [

@@ -48,6 +48,14 @@
         "title": "请求示例"
       }
     ],
+    "CloneViral": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneViral\n<公共请求参数>\n\n{\n    \"VideoUrl\": \"https://ie-mps-1258344699.cos-internal.ap-nanjing.tencentcos.cn/common/lauriehuang/viral/test/mianmo-demo-720p.mp4\",\n    \"Product\": {\n        \"Images\": [\n            \"https://ie-mps-1258344699.cos-internal.ap-nanjing.tencentcos.cn/common/lauriehuang/viral/test/%E6%B4%97%E9%9D%A2%E5%A5%B6-1.png\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1300057393-ViralCloneAsync-bfea1147-48d4-418f-87b0-71ba350c38bc\",\n        \"RequestId\": \"bfea1147-48d4-418f-87b0-71ba350c38bc\"\n    }\n}",
+        "title": "最简参数示例"
+      }
+    ],
     "CreateAIAnalysisTemplate": [
       {
         "document": "创建一个自定义视频内容分析模板，开启全部智能分析任务。",
@@ -856,6 +864,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlindWatermarkTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        10,\n        20,\n        30\n    ],\n    \"Type\": \"blind-basic\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BlindWatermarkTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"blind-basic\",\n                \"Name\": \"数字水印模板1\",\n                \"Comment\": \"测试模板\",\n                \"TextContent\": \"文字内容\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询用户自定义数字水印模板"
+      }
+    ],
+    "DescribeCloneViralTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloneViralTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"24000191-ViralClone-92e56dab-2a5b-4537-b49f-854563d4903f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"DONE\",\n        \"VideoUrls\": [\n            \"https://laurie-tmp-1300828900.cos.ap-nanjing.myqcloud.com/viral_clone/20260720/24000191-ViralClone-92e56dab-2a5b-4537-b49f-854563d4903f/clip.mp4\"\n        ],\n        \"RequestId\": \"74aeda83-63cc-4404-9f10-e43e841d242c\"\n    }\n}",
+        "title": "查询结果示例"
       }
     ],
     "DescribeContentReviewTemplates": [
