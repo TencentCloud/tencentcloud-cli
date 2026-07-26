@@ -937,6 +937,8 @@ tccli/services/tdmq/__init__.py
 tccli/services/tdmq/tdmq_client.py
 tccli/services/tdmq/v20200217/api.json
 tccli/services/tdmq/v20200217/examples.json
+tccli/services/tdmysql/__init__.py
+tccli/services/tdmysql/tdmysql_client.py
 tccli/services/tds/__init__.py
 tccli/services/tds/tds_client.py
 tccli/services/tem/__init__.py

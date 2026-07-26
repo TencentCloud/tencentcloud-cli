@@ -1,153 +1,115 @@
-# Release 3.0.1461.1
+# Release 3.0.1462.1
 
-## AI Agent 安全网关(apis) 版本：2024-08-01
+## 腾讯云智能体开发平台(adp) 版本：2026-05-20
 
-### 第 22 次发布
+### 第 8 次发布
 
-发布时间：2026-07-24 01:17:37
+发布时间：2026-07-27 01:07:35
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateMcpServer](http://document.tencentcloudapi.woa.com/document/product/1805/87904)
+* [CreateAppTrigger](http://document.tencentcloudapi.woa.com/document/product/1815/91989)
+* [CreateTimerTask](http://document.tencentcloudapi.woa.com/document/product/1815/91988)
+* [DeleteAppTrigger](http://document.tencentcloudapi.woa.com/document/product/1815/91987)
+* [DeleteTimerTask](http://document.tencentcloudapi.woa.com/document/product/1815/91986)
+* [DescribeAppTrigger](http://document.tencentcloudapi.woa.com/document/product/1815/91985)
+* [DescribeAppTriggerInstance](http://document.tencentcloudapi.woa.com/document/product/1815/91984)
+* [DescribeAppTriggerRunLogList](http://document.tencentcloudapi.woa.com/document/product/1815/91983)
+* [DescribeAppTriggerSummaryList](http://document.tencentcloudapi.woa.com/document/product/1815/91982)
+* [DescribeTimerTask](http://document.tencentcloudapi.woa.com/document/product/1815/91981)
+* [DescribeTimerTaskRunLogList](http://document.tencentcloudapi.woa.com/document/product/1815/91980)
+* [DescribeTimerTaskSummaryList](http://document.tencentcloudapi.woa.com/document/product/1815/91979)
+* [MarkAppTriggerRunLogRead](http://document.tencentcloudapi.woa.com/document/product/1815/91978)
+* [MarkTimerTaskRunLogRead](http://document.tencentcloudapi.woa.com/document/product/1815/91977)
+* [ModifyAppTrigger](http://document.tencentcloudapi.woa.com/document/product/1815/91976)
+* [ModifyTimerTask](http://document.tencentcloudapi.woa.com/document/product/1815/91975)
+* [PauseAppTrigger](http://document.tencentcloudapi.woa.com/document/product/1815/91974)
+* [PauseTimerTask](http://document.tencentcloudapi.woa.com/document/product/1815/91973)
+* [ResumeAppTrigger](http://document.tencentcloudapi.woa.com/document/product/1815/91972)
+* [ResumeTimerTask](http://document.tencentcloudapi.woa.com/document/product/1815/91971)
+* [RunAppTriggerNow](http://document.tencentcloudapi.woa.com/document/product/1815/91970)
+* [RunTimerTaskNow](http://document.tencentcloudapi.woa.com/document/product/1815/91969)
 
-	* 新增入参：IgnoreHealthCheck
+新增数据结构：
 
-* [ModifyMcpServer](http://document.tencentcloudapi.woa.com/document/product/1805/87898)
-
-	* 新增入参：IgnoreHealthCheck
-
-
-修改数据结构：
-
-* [DescribeMcpServerResponseVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeMcpServerResponseVO)
-
-	* 新增成员：IgnoreHealthCheck
-
+* [AppTrigger](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTrigger)
+* [AppTriggerInstance](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerInstance)
+* [AppTriggerParamBinding](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerParamBinding)
+* [AppTriggerParamBindingConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerParamBindingConfig)
+* [AppTriggerParamBindingValue](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerParamBindingValue)
+* [AppTriggerParamSchema](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerParamSchema)
+* [AppTriggerPromptExecuteConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerPromptExecuteConfig)
+* [AppTriggerRunLog](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerRunLog)
+* [AppTriggerScheduleConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerScheduleConfig)
+* [AppTriggerScheduleStatus](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerScheduleStatus)
+* [AppTriggerSummary](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerSummary)
+* [AppTriggerWebhookConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerWebhookConfig)
+* [AppTriggerWebhookParamSchemaConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerWebhookParamSchemaConfig)
+* [AppTriggerWebhookStatus](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerWebhookStatus)
+* [AppTriggerWorkflowExecuteConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#AppTriggerWorkflowExecuteConfig)
+* [CronSchedule](http://document.tencentcloudapi.woa.com/document/product/1815/91428#CronSchedule)
+* [DailySchedule](http://document.tencentcloudapi.woa.com/document/product/1815/91428#DailySchedule)
+* [ExecuteConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#ExecuteConfig)
+* [IntervalSchedule](http://document.tencentcloudapi.woa.com/document/product/1815/91428#IntervalSchedule)
+* [ManualOnlySchedule](http://document.tencentcloudapi.woa.com/document/product/1815/91428#ManualOnlySchedule)
+* [OnceSchedule](http://document.tencentcloudapi.woa.com/document/product/1815/91428#OnceSchedule)
+* [TimerConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TimerConfig)
+* [TimerProfile](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TimerProfile)
+* [TimerPushConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TimerPushConfig)
+* [TimerScheduleConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TimerScheduleConfig)
+* [TimerStatus](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TimerStatus)
+* [TimerTask](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TimerTask)
+* [TimerTaskSummary](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TimerTaskSummary)
+* [TriggerConfig](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TriggerConfig)
+* [TriggerStatus](http://document.tencentcloudapi.woa.com/document/product/1815/91428#TriggerStatus)
+* [WeeklySchedule](http://document.tencentcloudapi.woa.com/document/product/1815/91428#WeeklySchedule)
+* [WeeklyTime](http://document.tencentcloudapi.woa.com/document/product/1815/91428#WeeklyTime)
 
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 105 次发布
+### 第 106 次发布
 
-发布时间：2026-07-24 01:46:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CheckClusterNatFwPreAccess](http://document.tencentcloudapi.woa.com/document/product/1132/91887)
-* [CheckClusterVpcFwPreAccess](http://document.tencentcloudapi.woa.com/document/product/1132/91886)
-* [DescribeBlockList](http://document.tencentcloudapi.woa.com/document/product/1132/91893)
-* [DescribeFwGroupIdNames](http://document.tencentcloudapi.woa.com/document/product/1132/91892)
-* [DescribeIpsRuleListNew](http://document.tencentcloudapi.woa.com/document/product/1132/91891)
-* [DescribeNatRuleScopes](http://document.tencentcloudapi.woa.com/document/product/1132/91890)
-* [DescribeSecurityGroupRegionList](http://document.tencentcloudapi.woa.com/document/product/1132/91888)
-* [DescribeVpcAclEdgeRange](http://document.tencentcloudapi.woa.com/document/product/1132/91889)
-
-新增数据结构：
-
-* [BlockInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockInfo)
-* [ClusterFwPreAccessCheckItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#ClusterFwPreAccessCheckItem)
-* [EdgeRange](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeRange)
-* [FwGroupIdName](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupIdName)
-* [IpsRuleDetailNew](http://document.tencentcloudapi.woa.com/document/product/1132/49071#IpsRuleDetailNew)
-* [RuleScopeInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#RuleScopeInfo)
-* [SecurityGroupRegion](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupRegion)
-
-
-
-## 负载均衡(clb) 版本：2023-04-17
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 90 次发布
-
-发布时间：2026-07-24 01:52:06
+发布时间：2026-07-27 01:25:37
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改数据结构：
-
-* [UserGroupInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#UserGroupInfo)
-
-	* 新增成员：PromptId, PromptVersion, PromptName
-
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 164 次发布
-
-发布时间：2026-07-24 02:14:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeSystemStorage](http://document.tencentcloudapi.woa.com/document/product/1342/91894)
-* [DescribeTaskStatus](http://document.tencentcloudapi.woa.com/document/product/1342/91895)
 
 修改接口：
 
-* [CreateSparkAppTask](http://document.tencentcloudapi.woa.com/document/product/1342/74537)
+* [DeleteBlockIgnoreRuleNew](http://document.tencentcloudapi.woa.com/document/product/1132/83373)
 
-	* 新增入参：RuntimeConf
-
-
-新增数据结构：
-
-* [LakeFileSystem](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFileSystem)
-* [TaskStatusInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskStatusInfo)
+	* <font color="#dd0000">**修改入参**：</font>ShowType
 
 
 
-## 全球加速(ga2) 版本：2025-01-15
 
-### 第 10 次发布
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-发布时间：2026-07-24 02:43:00
+### 第 236 次发布
+
+发布时间：2026-07-27 01:49:20
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DescribeGlobalAcceleratorDetail](http://document.tencentcloudapi.woa.com/document/product/1808/91896)
+* [ModifyPartnerAutoSignAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1595/87083)
 
-新增数据结构：
-
-* [Accelerator](http://document.tencentcloudapi.woa.com/document/product/1808/90473#Accelerator)
+	* 新增入参：SealTypes
 
 
 
-## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
 
-### 第 32 次发布
-
-发布时间：2026-07-24 02:45:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyDataRepositoryTaskStatus](http://document.tencentcloudapi.woa.com/document/product/1716/91897)
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 

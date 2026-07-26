@@ -1,12 +1,12 @@
-**Example 1: 删除VPC间规则**
+**Example 1: 按具体规则 ID 删除一条 VPC 间规则**
 
-
+按具体规则 ID 删除一条 VPC 间规则。
 
 Input: 
 
 ```
 tccli cfw RemoveVpcAcRule --cli-unfold-argument  \
-    --RuleUuids 8888 8889
+    --RuleUuids 9001001
 ```
 
 Output: 
@@ -14,10 +14,9 @@ Output:
 {
     "Response": {
         "RuleUuids": [
-            8888,
-            8889
+            9001001
         ],
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "00000000-0000-4000-8000-000000000001"
     }
 }
 ```
