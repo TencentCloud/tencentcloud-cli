@@ -3322,6 +3322,15 @@
           "name": "GatewayConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>",
+          "example": "无",
+          "member": "ResourceSupplyAttribute",
+          "name": "ResourceSupplyAttribute",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -18813,6 +18822,23 @@
       ],
       "usage": "both"
     },
+    "ResourceSupplyAttribute": {
+      "document": "资源供应属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源供应类型。TIDE:潮汐;SPOT:竞价;空:常规按量后付费</p>",
+          "example": "TIDE",
+          "member": "string",
+          "name": "SupplyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RestartInfo": {
       "document": "任务重启信息",
       "members": [
@@ -19744,6 +19770,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>",
+          "example": "无",
+          "member": "ResourceSupplyAttribute",
+          "name": "ResourceSupplyAttribute",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -21918,6 +21954,45 @@
       ],
       "usage": "both"
     },
+    "TrainToolConfig": {
+      "document": "训练诊断工具配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启 Hang 检测</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHangMonitor",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Hang 检测的节点列表</p>",
+          "example": "[\"master-0\"]",
+          "member": "string",
+          "name": "HangMonitorNodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Hang 超时时间</p><p>取值范围：[1, 14400]</p><p>单位：分</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "LogHangTimeoutInMinute",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TrainingModelVersionDTO": {
       "document": "模型版本列表",
       "members": [
@@ -22806,6 +22881,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练诊断工具配置</p>",
+          "example": "无",
+          "member": "TrainToolConfig",
+          "name": "TrainToolConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源供应属性</p>",
+          "example": "无",
+          "member": "ResourceSupplyAttribute",
+          "name": "ResourceSupplyAttribute",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23109,6 +23204,26 @@
           "example": "无",
           "member": "OperatorInfo",
           "name": "LatestOperatorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练诊断工具配置</p>",
+          "example": "无",
+          "member": "TrainToolConfig",
+          "name": "TrainToolConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源供应属性</p>",
+          "example": "无",
+          "member": "ResourceSupplyAttribute",
+          "name": "ResourceSupplyAttribute",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

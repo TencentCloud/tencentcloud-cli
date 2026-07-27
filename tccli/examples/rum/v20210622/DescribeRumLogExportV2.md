@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "RequestId": "81a43a52-d00f-462a-82da-89841117f4ca",
-        "Result": "{\"code\": 0, \"data\": {\"id\": 1, \"name\": \"132445_log\", \"message\": \"export log\"}, \"msg\": \"export log success\"}"
+        "Result": "[{\"TaskId\":\"344\"}]"
     }
 }
 ```
