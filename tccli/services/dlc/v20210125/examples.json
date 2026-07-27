@@ -324,6 +324,14 @@
         "title": "创建spark作业"
       }
     ],
+    "CreateSparkAppForTDLC": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSparkAppForTDLC\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SparkAppId\": \"batch_e5648d1b-a626-439d-af4b-ea405b9da7a6\",\n        \"RequestId\": \"9258e765-1b79-4bba-a4df-b6ec58a76b65\"\n    }\n}",
+        "title": "创建tdlc spark作业"
+      }
+    ],
     "CreateSparkAppTask": [
       {
         "document": "启动Spark作业",
@@ -766,6 +774,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLakeFsTaskResult\n<公共请求参数>\n\n{\n    \"FsPath\": \"lakefs://*@dlc7e43-*-*-*-*/*/.system/result/20250109/*\"\n}",
         "output": "{\n    \"Response\": {\n        \"AccessToken\": {\n            \"SecretId\": \"AKI***\",\n            \"SecretKey\": \"D7****y\",\n            \"Token\": \"lod\",\n            \"ExpiredTime\": 1736421897,\n            \"IssueTime\": 1736420097\n        },\n        \"RequestId\": \"09d82a50-abc7-419a-a719-1062713d459c\"\n    }\n}",
         "title": "实例一"
+      }
+    ],
+    "DescribeMCPSubUin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPSubUin\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Subuin\": \"700001601739\",\n        \"RequestId\": \"6e65c02c-70a7-4551-b867-ff80d11629f5\"\n    }\n}",
+        "title": "MCP 查询子Uin 示例"
       }
     ],
     "DescribeMCPTask": [
@@ -1378,6 +1394,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkAppBatch\n<公共请求参数>\n\n{\n    \"SparkAppId\": [\n        \"batch_a7dca867-b941-4294-af9e-3dsefc086f1e\"\n    ],\n    \"DataEngine\": \"DataEngine-dde2f7vq\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1,\n    \"AppExecutorMaxNumbers\": 1,\n    \"IsInherit\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
         "title": "批量修改Spark作业参数"
+      }
+    ],
+    "ModifySparkAppForTDLC": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkAppForTDLC\n<公共请求参数>\n\n{\n    \"AppName\": \"test119\",\n    \"AppType\": 1,\n    \"DataEngine\": \"test01\",\n    \"AppFile\": \"lakefs://********************463247dbed0b3a1342652f033ad2d5e7dc673535b4e9bfd0ac8b@dl************************************************************************************026071******************************************************************************\",\n    \"RoleArn\": 1124,\n    \"AppDriverSize\": \"medium\",\n    \"AppExecutorSize\": \"medium\",\n    \"AppExecutorNums\": 1,\n    \"SparkAppId\": \"batch_e5648d1b-a626-439d-af4b-ea405b9da7a6\",\n    \"Eni\": \"eni-12345678\",\n    \"IsLocal\": \"lakefs\",\n    \"MainClass\": \"com.tencent.dlc.Test\",\n    \"AppConf\": \"spark.network.timeout=120s\\nspark.sql.shuffle.partitions=200\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"cosn://dlc-bucket001/jars/spark-sql-kafka-connector.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"cosn://dlc-bucket001/files/config.properties\",\n    \"IsLocalPythonFiles\": \"cos\",\n    \"AppPythonFiles\": \"\",\n    \"CmdArgs\": \"4\",\n    \"MaxRetries\": 5,\n    \"DataSource\": \"DataLakeCatalog\",\n    \"IsLocalArchives\": \"cos\",\n    \"AppArchives\": \"cosn://dlc-bucket001/archives/venv.tar.gz\",\n    \"SparkImage\": \"1.1.0\",\n    \"SparkImageVersion\": \"Spark 3.2.1.3\",\n    \"AppExecutorMaxNumbers\": 7,\n    \"SessionId\": \"550e8400-e29b-41d4-a716-446655440000\",\n    \"IsInherit\": 0,\n    \"IsSessionStarted\": false,\n    \"DependencyPackages\": [\n        {\n            \"PackageSource\": \"CosOrFile\",\n            \"PackageType\": \"pymodules\",\n            \"PackagePath\": \"lakefs://********************463247dbed0b3a1342652f033ad2d5e7dc673535b4e9*************************************************************************/.system/sparkAppJar/2026071***********************f********************\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"367f6eb3-bce0-470d-8b79-093e4fcc686e\"\n    }\n}",
+        "title": "更新tdlc spark作业"
       }
     ],
     "ModifyUser": [

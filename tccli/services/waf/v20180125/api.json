@@ -21207,7 +21207,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1:开启 0:不开启",
+          "document": "<p>1:开启 0:不开启</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableHeaders",
@@ -21218,7 +21218,7 @@
         },
         {
           "disabled": false,
-          "document": "1:开启 0:不开启",
+          "document": "<p>1:开启 0:不开启</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableBody",
@@ -21229,7 +21229,7 @@
         },
         {
           "disabled": false,
-          "document": "1:开启 0:不开启",
+          "document": "<p>1:开启 0:不开启</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableBot",
@@ -21240,7 +21240,7 @@
         },
         {
           "disabled": false,
-          "document": "响应方向body\n1:开启 0:不开启",
+          "document": "<p>响应方向body<br>1:开启 0:不开启</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableResponse",

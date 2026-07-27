@@ -273,6 +273,13 @@
       "output": "CreateSparkAppResponse",
       "status": "online"
     },
+    "CreateSparkAppForTDLC": {
+      "document": "创建tdlc spark作业",
+      "input": "CreateSparkAppForTDLCRequest",
+      "name": "创建tdlc spark作业",
+      "output": "CreateSparkAppForTDLCResponse",
+      "status": "online"
+    },
     "CreateSparkAppTask": {
       "document": "启动Spark作业",
       "input": "CreateSparkAppTaskRequest",
@@ -649,6 +656,13 @@
       "input": "DescribeLakeFsTaskResultRequest",
       "name": "获取LakeFs上task执行结果访问信息",
       "output": "DescribeLakeFsTaskResultResponse",
+      "status": "online"
+    },
+    "DescribeMCPSubUin": {
+      "document": "获取账户子账户信息",
+      "input": "DescribeMCPSubUinRequest",
+      "name": "获取 MCP 用户子账号",
+      "output": "DescribeMCPSubUinResponse",
       "status": "online"
     },
     "DescribeMCPTask": {
@@ -1153,6 +1167,13 @@
       "input": "ModifySparkAppBatchRequest",
       "name": "批量修改Spark作业参数配置",
       "output": "ModifySparkAppBatchResponse",
+      "status": "online"
+    },
+    "ModifySparkAppForTDLC": {
+      "document": "更新tdlc spark作业",
+      "input": "ModifySparkAppForTDLCRequest",
+      "name": "更新tdlc spark作业",
+      "output": "ModifySparkAppForTDLCResponse",
       "status": "online"
     },
     "ModifyUser": {
@@ -4999,6 +5020,33 @@
     "CreateScriptResponse": {
       "document": "CreateScript返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSparkAppForTDLCRequest": {
+      "document": "CreateSparkAppForTDLC请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateSparkAppForTDLCResponse": {
+      "document": "CreateSparkAppForTDLC返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>App唯一标识</p>",
+          "example": "batch_e5648d1b-a626-439d-af4b-ea405b9da7a6",
+          "member": "string",
+          "name": "SparkAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12340,6 +12388,33 @@
       ],
       "type": "object"
     },
+    "DescribeMCPSubUinRequest": {
+      "document": "DescribeMCPSubUin请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMCPSubUinResponse": {
+      "document": "DescribeMCPSubUin返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子 Uin</p>",
+          "example": "700001601739",
+          "member": "string",
+          "name": "Subuin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMCPTaskRequest": {
       "document": "DescribeMCPTask请求参数结构体",
       "members": [
@@ -19341,6 +19416,303 @@
     },
     "ModifySparkAppBatchResponse": {
       "document": "ModifySparkAppBatch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySparkAppForTDLCRequest": {
+      "document": "ModifySparkAppForTDLC请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>spark作业名</p>",
+          "example": "test119",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业类型，1代表spark jar作业，2代表spark streaming作业</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AppType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行spark作业的数据引擎名称</p>",
+          "example": "test01",
+          "member": "string",
+          "name": "DataEngine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业程序包文件路径</p>",
+          "example": "lakefs://********************463247dbed0b3a1342652f033ad2d5e7dc673535b4e9bfd0ac8b@dl************************************************************************************026071******************************************************************************",
+          "member": "string",
+          "name": "AppFile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据访问策略，CAM Role arn</p>",
+          "example": "1124",
+          "member": "int64",
+          "name": "RoleArn",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）</p>",
+          "example": "medium",
+          "member": "string",
+          "name": "AppDriverSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）</p>",
+          "example": "medium",
+          "member": "string",
+          "name": "AppExecutorSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业executor个数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AppExecutorNums",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业Id</p>",
+          "example": "batch_e5648d1b-a626-439d-af4b-ea405b9da7a6",
+          "member": "string",
+          "name": "SparkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>该字段已下线，请使用字段Datasource</p>",
+          "example": "eni-12345678",
+          "member": "string",
+          "name": "Eni",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业程序包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）</p>",
+          "example": "lakefs",
+          "member": "string",
+          "name": "IsLocal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业主类</p>",
+          "example": "com.tencent.dlc.Test",
+          "member": "string",
+          "name": "MainClass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark配置，以换行符分隔</p>",
+          "example": "spark.network.timeout=120s\nspark.sql.shuffle.partitions=200",
+          "member": "string",
+          "name": "AppConf",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark 作业依赖jar包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）</p>",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalJars",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark 作业依赖jar包（--jars），以逗号分隔</p>",
+          "example": "cosn://dlc-bucket001/jars/spark-sql-kafka-connector.jar",
+          "member": "string",
+          "name": "AppJars",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业依赖文件资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）</p>",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业依赖文件资源（--files）（非jar、zip），以逗号分隔</p>",
+          "example": "cosn://dlc-bucket001/files/config.properties",
+          "member": "string",
+          "name": "AppFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>pyspark：依赖上传方式，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）</p>",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalPythonFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>pyspark作业依赖python资源（--py-files），支持py/zip/egg等归档格式，多文件以逗号分隔</p>",
+          "example": "cosn://dlc-bucket001/pyfiles/utils.py",
+          "member": "string",
+          "name": "AppPythonFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业程序入参</p>",
+          "example": "4",
+          "member": "string",
+          "name": "CmdArgs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大重试次数，只对spark流任务生效</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxRetries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源名</p>",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DataSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业依赖archives资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）</p>",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalArchives",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>spark作业依赖archives资源（--archives），支持tar.gz/tgz/tar等归档格式，以逗号分隔</p>",
+          "example": "cosn://dlc-bucket001/archives/venv.tar.gz",
+          "member": "string",
+          "name": "AppArchives",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Spark Image 版本号</p>",
+          "example": "1.1.0",
+          "member": "string",
+          "name": "SparkImage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Spark Image 版本名称</p>",
+          "example": "Spark 3.2.1.3",
+          "member": "string",
+          "name": "SparkImageVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于AppExecutorNums</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "AppExecutorMaxNumbers",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联dlc查询脚本</p>",
+          "example": "550e8400-e29b-41d4-a716-446655440000",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务资源配置是否继承集群配置模板：0（默认）不继承、1：继承</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsInherit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用session脚本的sql运行任务：false：否，true：是</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSessionStarted",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标准引擎依赖包</p>",
+          "example": "无",
+          "member": "DependencyPackage",
+          "name": "DependencyPackages",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySparkAppForTDLCResponse": {
+      "document": "ModifySparkAppForTDLC返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

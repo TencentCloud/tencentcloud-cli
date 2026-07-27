@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "RequestId": "2eb407f1-108c-4fc2-9aa4-b94e72eb7e0b",
-        "Result": "{\"Result\":total:0}"
+        "Result": "{\"Total\":1523}"
     }
 }
 ```

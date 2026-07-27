@@ -2274,6 +2274,15 @@
           "name": "GatewayConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>",
+          "example": "无",
+          "member": "ResourceSupplyAttribute",
+          "name": "ResourceSupplyAttribute",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13872,6 +13881,23 @@
       ],
       "usage": "both"
     },
+    "ResourceSupplyAttribute": {
+      "document": "资源供应属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源供应类型。TIDE:潮汐;SPOT:竞价;空:常规按量后付费</p>",
+          "example": "TIDE",
+          "member": "string",
+          "name": "SupplyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RollingUpdate": {
       "document": "滚动更新策略",
       "members": [
@@ -14472,6 +14498,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源供应属性(潮汐/竞价等供应模式);空表示常规按量后付费</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceSupplyAttribute",
+          "name": "ResourceSupplyAttribute",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

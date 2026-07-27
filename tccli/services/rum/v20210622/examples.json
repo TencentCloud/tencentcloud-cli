@@ -589,8 +589,8 @@
     "DescribeRumGroupLogV2": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLogV2\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"StartTime\": 1665993060000,\n    \"Limit\": \"10\",\n    \"Filter\": \"[{\\\"Key\\\": \\\"instanceId\\\", \\\"Operator\\\": \\\"eq\\\", \\\"Value\\\": \\\"rum-xyz\\\"}]\",\n    \"EndTime\": 1665996660000,\n    \"ID\": \"100\",\n    \"Label\": \"date\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":[{\\\"1737254300150\\\":1},{\\\"1737254310941\\\":1}],\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"81a43a52-d00f-462a-82da-89841117f4ca\\\"}\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLogV2\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"StartTime\": 1665993060000,\n    \"Limit\": \"10\",\n    \"Filter\": \"[{\\\"Key\\\": \\\"instanceId\\\", \\\"Operator\\\": \\\"eq\\\", \\\"Value\\\": \\\"rum-xyz\\\"}]\",\n    \"EndTime\": 1665996660000,\n    \"ID\": \"100\",\n    \"Label\": \"level\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"[{\\\"value\\\":4096,\\\"total\\\":4},{\\\"value\\\":16,\\\"total\\\":3}]\"\n    }\n}",
         "title": "success"
       }
     ],
@@ -598,7 +598,7 @@
       {
         "document": "查询日志细节",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogDetailsV2\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"StartTime\": 1767860481,\n    \"Limit\": 100,\n    \"Filter\": \"[{\\\"Key\\\": \\\"id\\\",\\\"Operator\\\": \\\"eq\\\",\\\"Value\\\": \\\"120000\\\"}]\",\n    \"EndTime\": 1767946881,\n    \"ID\": 120000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb407f1-108c-4fc2-9aa4-b94e72eb7e0b\",\n        \"Result\": \"{\\\"Result\\\":[]}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb407f1-108c-4fc2-9aa4-b94e72eb7e0b\",\n        \"Result\": \"{\\\"Result\\\":[{\\\"aid\\\":\\\"5643b4b9-0000-0000-a035-0b31dd11ad1c\\\",\\\"appid\\\":1436000000,\\\"brand\\\":\\\"iPhone\\\",\\\"city\\\":\\\"xx市\\\",\\\"country\\\":\\\"中国\\\",\\\"device\\\":\\\"iPhone\\\"}]}\"\n    }\n}",
         "title": "调用示例"
       }
     ],
@@ -620,7 +620,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExportV2\n<公共请求参数>\n\n{\n    \"Name\": \"20250520160524\",\n    \"StartTime\": 1665993060000,\n    \"Filter\": \"[{\\\"Key\\\": \\\"instanceId\\\", \\\"Operator\\\": \\\"eq\\\", \\\"Value\\\": \\\"rum-xyz\\\"}]\",\n    \"EndTime\": 1665996660000,\n    \"ID\": 100,\n    \"Fields\": [\n        \"msg\",\n        \"url\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"{\\\"code\\\": 0, \\\"data\\\": {\\\"id\\\": 1, \\\"name\\\": \\\"132445_log\\\", \\\"message\\\": \\\"export log\\\"}, \\\"msg\\\": \\\"export log success\\\"}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"[{\\\"TaskId\\\":\\\"344\\\"}]\"\n    }\n}",
         "title": "success"
       }
     ],
@@ -664,7 +664,7 @@
       {
         "document": "获取接口总数",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogTotalV2\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"StartTime\": 1767860481,\n    \"Limit\": 100,\n    \"Filter\": \"[{\\\"Key\\\": \\\"id\\\",\\\"Operator\\\": \\\"eq\\\",\\\"Value\\\": \\\"120000\\\"}]\",\n    \"EndTime\": 1767946881,\n    \"ID\": 120000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb407f1-108c-4fc2-9aa4-b94e72eb7e0b\",\n        \"Result\": \"{\\\"Result\\\":total:0}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eb407f1-108c-4fc2-9aa4-b94e72eb7e0b\",\n        \"Result\": \"{\\\"Total\\\":1523}\"\n    }\n}",
         "title": "接口示例"
       }
     ],
@@ -686,7 +686,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumStatsLogListV2\n<公共请求参数>\n\n{\n    \"StartTime\": 1665993060000,\n    \"Limit\": \"100\",\n    \"Filter\": \"[{\\\"Key\\\": \\\"instanceId\\\", \\\"Operator\\\": \\\"eq\\\", \\\"Value\\\": \\\"rum-xyz\\\"}]\",\n    \"EndTime\": 1665996660000,\n    \"ID\": \"100\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\",\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"total\\\":0,\\\"limit\\\":100,\\\"page\\\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\\\"}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\",\n        \"Result\": \"[{\\\"timestamp\\\":1784564220,\\\"count\\\":3},{\\\"timestamp\\\":1784564280,\\\"count\\\":2},{\\\"timestamp\\\":1784564340,\\\"count\\\":20},{\\\"timestamp\\\":1784564400,\\\"count\\\":22}]\"\n    }\n}",
         "title": "success"
       }
     ],

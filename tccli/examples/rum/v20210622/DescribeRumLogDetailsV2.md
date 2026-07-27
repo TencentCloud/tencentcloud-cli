@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "RequestId": "2eb407f1-108c-4fc2-9aa4-b94e72eb7e0b",
-        "Result": "{\"Result\":[]}"
+        "Result": "{\"Result\":[{\"aid\":\"5643b4b9-0000-0000-a035-0b31dd11ad1c\",\"appid\":1436000000,\"brand\":\"iPhone\",\"city\":\"xx市\",\"country\":\"中国\",\"device\":\"iPhone\"}]}"
     }
 }
 ```

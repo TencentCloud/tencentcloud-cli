@@ -1602,6 +1602,15 @@
           "name": "ApproverMobileMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidModifySealInfos",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

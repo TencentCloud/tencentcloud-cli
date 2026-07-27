@@ -2324,7 +2324,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "<p>环境ID</p>",
           "example": "*****************-7ezncwdd421446",
           "member": "string",
           "name": "EnvId",
@@ -2333,7 +2333,7 @@
         },
         {
           "disabled": false,
-          "document": "域名路由信息",
+          "document": "<p>域名路由信息</p>",
           "example": "无",
           "member": "HTTPServiceDomainParam",
           "name": "Domain",
@@ -2346,6 +2346,16 @@
     "CreateHTTPServiceRouteResponse": {
       "document": "CreateHTTPServiceRoute返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>归属权校验不通过返回信息，根据校验信息配置dns或者文件验证，可通过VerifyHTTPServiceRoute接口验证归属权是否通过</p>",
+          "example": "无",
+          "member": "OwnershipVerificationInfo",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7787,7 +7797,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li></ul><p>默认值：DIRECT</p>",
+          "document": "<p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN（即将下线）</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li><li>EO： 接入云开发EdgeOne</li></ul><p>默认值：DIRECT</p>",
           "example": "DIRECT",
           "member": "string",
           "name": "AccessType",
@@ -8142,7 +8152,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>上游服务类型。创建时必填，修改时可选填</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： web云函数</li><li>LH： Lighthouse</li></ul>",
+          "document": "<p>上游服务类型。创建时必填，修改时可选填</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： web云函数</li><li>LH： Lighthouse</li><li>STORAGE： 云存储</li></ul>",
           "example": "CBR",
           "member": "string",
           "name": "UpstreamResourceType",
@@ -8151,7 +8161,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>上游服务名。创建时必填，修改时可选填</p>",
+          "document": "<p>上游服务名。创建时必填，修改时可选填。HTTPServiceRouteServiceType类型为STATIC_STORE时，可不填，默认staticstore；HTTPServiceRouteServiceType类型为STORAGE时，可不填，默认storage。其他上游类型必须填写准确的服务名</p>",
           "example": "my-service",
           "member": "string",
           "name": "UpstreamResourceName",
@@ -10773,6 +10783,112 @@
         }
       ],
       "usage": "out"
+    },
+    "OwnershipVerificationDnsInfo": {
+      "document": "域名归属权验证指引DNS验证信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>归属权校验dns子域名</p>",
+          "example": "_cloudbase-challenge.************************",
+          "member": "string",
+          "name": "Subdomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属权校验dns记录类型</p>",
+          "example": "TXT",
+          "member": "string",
+          "name": "RecordType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属权校验dns记录值</p>",
+          "example": "*****************-7ezncwdd421446",
+          "member": "string",
+          "name": "RecordValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OwnershipVerificationFileInfo": {
+      "document": "域名归属权验证指引文件验证信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>归属权校验文件路径</p>",
+          "example": "/.well-known/teo-verification/pv1mqqp5gi.txt",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属权校验文件内容</p>",
+          "example": "3gne21**********************hp9c",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OwnershipVerificationInfo": {
+      "document": "域名归属权验证指引信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>归属权校验的域名</p>",
+          "example": "rgw5.woyaodaguaishou1.cn",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属权校验dns校验信息</p>",
+          "example": "无",
+          "member": "OwnershipVerificationDnsInfo",
+          "name": "DnsVerification",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属权校验文件校验信息</p>",
+          "example": "无",
+          "member": "OwnershipVerificationFileInfo",
+          "name": "FileVerification",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Pager": {
       "document": "分页信息",

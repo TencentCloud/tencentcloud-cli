@@ -556,7 +556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份实例id",
+          "document": "<p>备份实例id</p>",
           "example": "145",
           "member": "int64",
           "name": "JobId",
@@ -567,7 +567,7 @@
         },
         {
           "disabled": false,
-          "document": "备份实例名",
+          "document": "<p>备份实例名</p>",
           "example": "snapshot",
           "member": "string",
           "name": "Snapshot",
@@ -578,7 +578,7 @@
         },
         {
           "disabled": false,
-          "document": "备份数据量",
+          "document": "<p>备份数据量</p>",
           "example": "243",
           "member": "int64",
           "name": "BackUpSize",
@@ -589,7 +589,7 @@
         },
         {
           "disabled": false,
-          "document": "备份单副本数据量",
+          "document": "<p>备份单副本数据量</p>",
           "example": "365",
           "member": "int64",
           "name": "BackUpSingleSize",
@@ -600,7 +600,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间",
+          "document": "<p>实例创建时间</p>",
           "example": "\"2021-09-18 00:12:23\"",
           "member": "string",
           "name": "BackUpTime",
@@ -611,7 +611,7 @@
         },
         {
           "disabled": false,
-          "document": "实例过期时间",
+          "document": "<p>实例过期时间</p>",
           "example": "\"2021-09-18 00:12:23\"",
           "member": "string",
           "name": "ExpireTime",
@@ -622,7 +622,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "<p>实例状态</p>",
           "example": "\"jing\"",
           "member": "string",
           "name": "JobStatus",
@@ -633,7 +633,7 @@
         },
         {
           "disabled": false,
-          "document": "0为默认。1时是对远端的doris进行备份，不周期，一次性",
+          "document": "<p>0为默认。1时是对远端的doris进行备份，不周期，一次性</p>",
           "example": "1",
           "member": "int64",
           "name": "BackupType",
@@ -644,7 +644,7 @@
         },
         {
           "disabled": false,
-          "document": "0为默认。1时是立即备份。2时是迁移",
+          "document": "<p>0为默认。1时是立即备份。2时是迁移</p>",
           "example": "1",
           "member": "int64",
           "name": "BackupTimeType",
@@ -655,7 +655,7 @@
         },
         {
           "disabled": false,
-          "document": "远端doris的连接信息",
+          "document": "<p>远端doris的连接信息</p>",
           "example": "无",
           "member": "DorisSourceInfo",
           "name": "DorisSourceInfo",
@@ -666,7 +666,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态对应的数值",
+          "document": "<p>实例状态对应的数值</p>",
           "example": "1",
           "member": "int64",
           "name": "JobStatusNum",
@@ -677,7 +677,7 @@
         },
         {
           "disabled": false,
-          "document": "备份实例中关于cos的信息\t",
+          "document": "<p>备份实例中关于cos的信息</p>",
           "example": "无",
           "member": "BackupCosInfo",
           "name": "BackupCosInfo",
@@ -688,7 +688,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用的自定义桶",
+          "document": "<p>是否使用的自定义桶</p>",
           "example": "true",
           "member": "bool",
           "name": "IsUserDefineBucket",
@@ -699,7 +699,7 @@
         },
         {
           "disabled": false,
-          "document": "错误原因",
+          "document": "<p>错误原因</p>",
           "example": "error reason detail",
           "member": "string",
           "name": "ErrorReason",
@@ -710,7 +710,7 @@
         },
         {
           "disabled": false,
-          "document": "快照保留策略",
+          "document": "<p>快照保留策略</p>",
           "example": "无",
           "member": "SnapshotRemainPolicy",
           "name": "SnapshotRemainPolicy",
@@ -721,7 +721,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离次数",
+          "document": "<p>隔离次数</p>",
           "example": "1",
           "member": "int64",
           "name": "IsolationCount",
@@ -732,7 +732,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启安全锁",
+          "document": "<p>是否开启安全锁</p>",
           "example": "0",
           "member": "uint64",
           "name": "EnableSecurityLock",
@@ -743,7 +743,7 @@
         },
         {
           "disabled": false,
-          "document": "宽限期天数",
+          "document": "<p>宽限期天数</p>",
           "example": "10",
           "member": "uint64",
           "name": "GracePeriod",
@@ -754,7 +754,7 @@
         },
         {
           "disabled": false,
-          "document": "宽限期开始时间",
+          "document": "<p>宽限期开始时间</p>",
           "example": "2025-11-11 16:50:37",
           "member": "string",
           "name": "GraceStartTime",
@@ -765,7 +765,7 @@
         },
         {
           "disabled": false,
-          "document": "是否在宽限期内",
+          "document": "<p>是否在宽限期内</p>",
           "example": "true",
           "member": "bool",
           "name": "IsWithinGracePeriod",
@@ -776,7 +776,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用托管桶",
+          "document": "<p>是否使用托管桶</p>",
           "example": "true",
           "member": "bool",
           "name": "UseManagedBucket",
@@ -787,7 +787,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cdwdors",
           "member": "string",
           "name": "InstanceId",
@@ -798,7 +798,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "asf1",
           "member": "string",
           "name": "InstanceName",
@@ -809,7 +809,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "<p>实例状态</p>",
           "example": "2",
           "member": "string",
           "name": "InstanceStatus",
@@ -820,7 +820,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态描述",
+          "document": "<p>实例状态描述</p>",
           "example": "运行中",
           "member": "string",
           "name": "InstanceStatusDesc",
@@ -831,7 +831,7 @@
         },
         {
           "disabled": false,
-          "document": "备份远程桶地域",
+          "document": "<p>备份远程桶地域</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "DataRemoteRegion",
@@ -842,7 +842,7 @@
         },
         {
           "disabled": false,
-          "document": "桶加密状态信息",
+          "document": "<p>桶加密状态信息</p>",
           "example": "无",
           "member": "BucketEncryptionInfo",
           "name": "BucketEncryption",
@@ -853,7 +853,7 @@
         },
         {
           "disabled": false,
-          "document": "备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled",
+          "document": "<p>备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled</p>",
           "example": "SSE-KMS",
           "member": "string",
           "name": "Encryption",
@@ -864,7 +864,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通加密存储：0-未开通，1-已开通",
+          "document": "<p>是否开通加密存储：0-未开通，1-已开通</p>",
           "example": "true",
           "member": "bool",
           "name": "EncryptionEnabled",
@@ -875,13 +875,57 @@
         },
         {
           "disabled": false,
-          "document": "任务调度id",
+          "document": "<p>任务调度id</p>",
           "example": "311",
           "member": "int64",
           "name": "ScheduleId",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总任务数（库数）</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalTasks",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已完成任务数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "CompletedTasks",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败任务数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "FailedTasks",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份进度描述，如 3/5</p>",
+          "example": "3/5",
+          "member": "string",
+          "name": "BackupProgress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -942,7 +986,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移类型：\n1-远端集群迁移；2-COS迁移",
+          "document": "<p>迁移类型：<br>1-远端集群迁移；2-COS迁移</p>",
           "example": "1",
           "member": "int64",
           "name": "BackupType",
@@ -953,7 +997,7 @@
         },
         {
           "disabled": false,
-          "document": "当前任务现存实例数",
+          "document": "<p>当前任务现存实例数</p>",
           "example": "3",
           "member": "int64",
           "name": "ExistCount",
@@ -964,7 +1008,7 @@
         },
         {
           "disabled": false,
-          "document": "cos信息",
+          "document": "<p>cos信息</p>",
           "example": "http://cos-xxx",
           "member": "string",
           "name": "CosSourceInfo",
@@ -975,7 +1019,7 @@
         },
         {
           "disabled": false,
-          "document": "doris信息",
+          "document": "<p>doris信息</p>",
           "example": "dorisSource",
           "member": "string",
           "name": "DorisSourceInfo",
@@ -986,7 +1030,7 @@
         },
         {
           "disabled": false,
-          "document": "恢复类型",
+          "document": "<p>恢复类型</p>",
           "example": "2",
           "member": "int64",
           "name": "RestoreType",
@@ -997,7 +1041,7 @@
         },
         {
           "disabled": false,
-          "document": "快照保留策略",
+          "document": "<p>快照保留策略</p>",
           "example": "无",
           "member": "SnapshotRemainPolicy",
           "name": "SnapshotRemainPolicy",
@@ -1008,7 +1052,7 @@
         },
         {
           "disabled": false,
-          "document": "远程备份地域",
+          "document": "<p>远程备份地域</p>",
           "example": "ap-chongqing",
           "member": "string",
           "name": "DataRemoteRegion",
@@ -1019,7 +1063,7 @@
         },
         {
           "disabled": false,
-          "document": "是否在宽限期内",
+          "document": "<p>是否在宽限期内</p>",
           "example": "true",
           "member": "bool",
           "name": "IsWithinGracePeriod",
@@ -1030,7 +1074,7 @@
         },
         {
           "disabled": false,
-          "document": "宽限期（天数）",
+          "document": "<p>宽限期（天数）</p>",
           "example": "10",
           "member": "int64",
           "name": "GracePeriod",
@@ -1041,7 +1085,7 @@
         },
         {
           "disabled": false,
-          "document": "宽限开始时间",
+          "document": "<p>宽限开始时间</p>",
           "example": "2025-11-10 21:26:31",
           "member": "string",
           "name": "GraceStartTime",
@@ -1052,7 +1096,7 @@
         },
         {
           "disabled": false,
-          "document": "托管桶类型：standard-标准，多可用区-MAZ",
+          "document": "<p>托管桶类型：standard-标准，多可用区-MAZ</p>",
           "example": "maz",
           "member": "string",
           "name": "BucketType",
@@ -1063,7 +1107,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启安全锁：0-未开启，1-已开启",
+          "document": "<p>是否开启安全锁：0-未开启，1-已开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "EnableSecurityLock",
@@ -1074,7 +1118,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cdwdoris-123",
           "member": "string",
           "name": "InstanceId",
@@ -1085,7 +1129,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "<p>实例名</p>",
           "example": "实例名",
           "member": "string",
           "name": "InstanceName",
@@ -1096,7 +1140,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "<p>实例状态</p>",
           "example": "5",
           "member": "string",
           "name": "InstanceStatus",
@@ -1107,7 +1151,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态描述",
+          "document": "<p>实例状态描述</p>",
           "example": "运行中",
           "member": "string",
           "name": "InstanceStatusDesc",
@@ -1118,7 +1162,7 @@
         },
         {
           "disabled": false,
-          "document": "桶加密状态信息",
+          "document": "<p>桶加密状态信息</p>",
           "example": "无",
           "member": "BucketEncryptionInfo",
           "name": "BucketEncryption",

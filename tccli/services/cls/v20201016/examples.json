@@ -399,9 +399,15 @@
     "CreateTopic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"7fb0245e-2006-4e0f-9153-c5f6b7110b4c\",\n    \"TopicName\": \"business_log_test\",\n    \"PartitionCount\": 1,\n    \"Tags\": [\n        {\n            \"Key\": \"business_log_key\",\n            \"Value\": \"business_log_value\"\n        }\n    ],\n    \"AutoSplit\": true,\n    \"MaxSplitPartitions\": 3,\n    \"StorageType\": \"hot\",\n    \"Period\": 1,\n    \"Describes\": \"业务日志\",\n    \"BizType\": 0,\n    \"IsWebTracking\": false,\n    \"Extends\": {\n        \"AnonymousAccess\": {\n            \"Operations\": [\n                \"realtimeProducer\"\n            ],\n            \"Conditions\": [\n                {\n                    \"Attributes\": \"VpcID\",\n                    \"Rule\": 1,\n                    \"ConditionValue\": \"vpc-********\"\n                }\n            ]\n        }\n    },\n    \"IsSourceFrom\": true,\n    \"BillingMode\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TopicId\": \"aac1096a-cf02-4fe0-abcd-ddb89173b4e4\",\n        \"RequestId\": \"487cd68f-d88f-4e35-888d-48612e8ff980\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"6b2c40ae-2bd0-445e-adf2-3129a59fb6d5\",\n    \"TopicName\": \"cloud_topic_test\",\n    \"PartitionCount\": 1,\n    \"AutoSplit\": true,\n    \"MaxSplitPartitions\": 10,\n    \"StorageType\": \"hot\",\n    \"Period\": 30,\n    \"Describes\": \"场景日志主题\",\n    \"BizType\": 0,\n    \"IsSourceFrom\": false,\n    \"BillingMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"8aa25df8-6065-45de-8b3e-b65f8797e2a1\",\n        \"RequestId\": \"cca37d5e-f542-44f4-a1bf-5fa09fb66439\"\n    }\n}",
         "title": "创建日志主题"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"7fb0245e-2006-4e0f-9153-c5f6b7110b4c\",\n    \"TopicName\": \"business_log_test1\",\n    \"PartitionCount\": 1,\n    \"Tags\": [\n        {\n            \"Key\": \"business_log_key\",\n            \"Value\": \"business_log_value\"\n        }\n    ],\n    \"AutoSplit\": true,\n    \"MaxSplitPartitions\": 3,\n    \"StorageType\": \"hot\",\n    \"Period\": 1,\n    \"Describes\": \"业务日志\",\n    \"BizType\": 0,\n    \"IsWebTracking\": false,\n    \"Extends\": {\n        \"AnonymousAccess\": {\n            \"Operations\": [\n                \"realtimeProducer\"\n            ],\n            \"Conditions\": [\n                {\n                    \"Attributes\": \"VpcID\",\n                    \"Rule\": 1,\n                    \"ConditionValue\": \"vpc-********\"\n                }\n            ]\n        }\n    },\n    \"IsSourceFrom\": true,\n    \"BillingMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"6ce29951-838f-44de-a321-35e3e25798eb\",\n        \"RequestId\": \"4207ca55-4498-4c6b-a329-d27c8c4fd144\"\n    }\n}",
+        "title": "创建日志主题并打标签"
       }
     ],
     "CreateWebCallback": [

@@ -6411,7 +6411,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否允许修改签署人信息",
+          "document": "<p>是否允许修改签署人信息</p>",
           "example": "true",
           "member": "bool",
           "name": "CanEditApprover",
@@ -6420,7 +6420,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以拒签 默认false-可以拒签 true-不可以拒签",
+          "document": "<p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>",
           "example": "true",
           "member": "bool",
           "name": "NoRefuse",
@@ -6429,7 +6429,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以转发 默认false-可以转发 true-不可以转发",
+          "document": "<p>是否可以转发 默认false-可以转发 true-不可以转发</p>",
           "example": "true",
           "member": "bool",
           "name": "NoTransfer",
@@ -6438,7 +6438,7 @@
         },
         {
           "disabled": false,
-          "document": "当签署方有多个签署区时候，是否隐藏一键所有的签署区\n\nfalse：（默认）不隐藏\ntrue：隐藏，每个签署区要单独选择印章或者签名",
+          "document": "<p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>",
           "example": "true",
           "member": "bool",
           "name": "HideOneKeySign",
@@ -6447,7 +6447,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人阅读合同限制参数\n <br/>取值：\n<ul>\n<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>\n<li> LimitReadTime，阅读合同仅限制阅读时长</li>\n<li> LimitBottom，阅读合同仅限制必须阅读到底</li>\n<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>\n</ul>",
+          "document": "<p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>",
           "example": "LimitBottom",
           "member": "string",
           "name": "FlowReadLimit",
@@ -6456,10 +6456,19 @@
         },
         {
           "disabled": false,
-          "document": "禁止在签署过程中添加签署日期控件\n <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：\n<ul>\n<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>\n<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>\n</ul>",
+          "document": "<p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "ForbidAddSignDate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在嵌入式文件发起下,若合同是通过文件,当签署人控件指定了印章类型（或印章Id）,在嵌入页面上是否能修改</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidModifySealInfos",
           "required": false,
           "type": "bool"
         }

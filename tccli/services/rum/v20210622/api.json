@@ -11417,7 +11417,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>开始时间（必填）</p>",
+          "document": "<p>查询日志开始时间（必填）</p>",
           "example": "1665993060000",
           "member": "int64",
           "name": "StartTime",
@@ -11435,7 +11435,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤条件</p>",
+          "document": "<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>",
           "example": "[{\"Key\": \"instanceId\", \"Operator\": \"eq\", // Operator 可以是 eq、neq、like、nlike\"Value\": \"rum-xyz\"},{\"Key\": \"id\",\"Operator\": \"eq\",\"Value\": \"12345\"}]",
           "member": "string",
           "name": "Filter",
@@ -11444,7 +11444,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>结束时间（必填）</p>",
+          "document": "<p>查询日志结束时间（必填）</p>",
           "example": "1665996660000",
           "member": "int64",
           "name": "EndTime",
@@ -11486,8 +11486,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>Query result in JSON string format</p>",
-          "example": "{\"Response\": {\"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\"Result\": \"{\\\"code\\\":0,\\\"data\\\":[{\\\"1737254300150\\\":1},{\\\"1737254310941\\\":1}],\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"81a43a52-d00f-462a-82da-89841117f4ca\\\"}\"}}",
+          "document": "<p>日志聚合结果</p>",
+          "example": "\"[{\\\"value\\\":4096,\\\"total\\\":4},{\\\"value\\\":16,\\\"total\\\":3}]\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -11508,7 +11508,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "排序方式 desc asc",
+          "document": "<p>排序方式 desc asc</p>",
           "example": "asc",
           "member": "string",
           "name": "OrderBy",
@@ -11517,7 +11517,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间（必填）格式为时间戳 毫秒",
+          "document": "<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>",
           "example": "1625444040000000000",
           "member": "int64",
           "name": "StartTime",
@@ -11526,7 +11526,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
+          "document": "<p>单次查询返回的原始日志条数，最大值为100（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -11535,7 +11535,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的相关参数",
+          "document": "<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>",
           "example": "[{\"Key\": \"instanceId\", \"Operator\": \"eq\", // Operator 可以是 eq、neq、like、nlike\"Value\": \"rum-xyz\"},{\"Key\": \"id\",\"Operator\": \"eq\",\"Value\": \"12345\"}]",
           "member": "string",
           "name": "Filter",
@@ -11544,7 +11544,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（必填）格式为时间戳 毫秒",
+          "document": "<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>",
           "example": "1665996660000000000",
           "member": "int64",
           "name": "EndTime",
@@ -11553,7 +11553,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID（必填）",
+          "document": "<p>项目ID（必填）</p>",
           "example": "120000",
           "member": "int64",
           "name": "ID",
@@ -11562,7 +11562,7 @@
         },
         {
           "disabled": false,
-          "document": "上次查询的最后一个日志的时间戳",
+          "document": "<p>上次查询的最后一个日志的时间戳</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "LastTime",
@@ -11571,7 +11571,7 @@
         },
         {
           "disabled": false,
-          "document": "上次查询的最后一个日志的rowId",
+          "document": "<p>上次查询的最后一个日志的rowId</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "LastRowId",
@@ -11586,8 +11586,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志明细",
-          "example": "'{\"Response\": {\"RequestId\": \"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\",\"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"limit\\\":100,\\\"page\\\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\\\"}\"}}'",
+          "document": "<p>日志明细</p>",
+          "example": "\"{\\\"Result\\\":[{\\\"aid\\\":\\\"5643b4b9-7066-4798-a035-0b31dd11ad1c\\\",\\\"appid\\\":1436180000,\\\"brand\\\":\\\"iPhone\\\",\\\"city\\\":\\\"长沙市\\\",\\\"country\\\":\\\"中国\\\",\\\"device\\\":\\\"iPhone\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -11690,7 +11690,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Export name",
+          "document": "<p>Name（string，必填）：导出任务名称标识，需要在使用API创建导出任务时填写。此字段为后续能力扩展预留，不在查询结果中返回。</p>",
           "example": "20250520160524",
           "member": "string",
           "name": "Name",
@@ -11699,7 +11699,7 @@
         },
         {
           "disabled": false,
-          "document": "Start time",
+          "document": "<p>查询日志开始时间(必填)</p>",
           "example": "1665993060000",
           "member": "int64",
           "name": "StartTime",
@@ -11708,7 +11708,7 @@
         },
         {
           "disabled": false,
-          "document": "Query statement",
+          "document": "<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>",
           "example": "[{\"Key\": \"instanceId\", \"Operator\": \"eq\", // Operator 可以是 eq、neq、like、nlike\"Value\": \"rum-xyz\"},{\"Key\": \"id\",\"Operator\": \"eq\",\"Value\": \"12345\"}]",
           "member": "string",
           "name": "Filter",
@@ -11717,7 +11717,7 @@
         },
         {
           "disabled": false,
-          "document": "End time",
+          "document": "<p>查询日志结束时间(必填)</p>",
           "example": "1665996660000",
           "member": "int64",
           "name": "EndTime",
@@ -11726,7 +11726,7 @@
         },
         {
           "disabled": false,
-          "document": "Project ID",
+          "document": "<p>项目ID</p>",
           "example": "100",
           "member": "int64",
           "name": "ID",
@@ -11735,7 +11735,7 @@
         },
         {
           "disabled": false,
-          "document": "c字段",
+          "document": "<p>注意：这个字段必选，不能为空！选择要导出哪些字段的参数，对应日志的列，可查看文档：https://cloud.tencent.com/document/product/248/87223</p><p>枚举值：</p><ul><li>level： 日志类型</li><li>url： URL</li><li>ip： 用户终端IP</li><li>version： 版本</li></ul>",
           "example": "[\"msg\"]",
           "member": "string",
           "name": "Fields",
@@ -11750,8 +11750,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Query result in JSON string format",
-          "example": "{\\\"code\\\":0,\\\"data\\\":{\\\"id\\\":1,\\\"name\\\":\\\"132445_log\\\",\\\"message\\\":\\\"\\\"},\\\"msg\\\":\\\"\\\"}",
+          "document": "<p>日志导出任务TaskId</p>",
+          "example": "\"[{\\\"TaskId\\\":\\\"344\\\"}]\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -11973,7 +11973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "排序方式 desc asc",
+          "document": "<p>排序方式 desc asc</p>",
           "example": "asc",
           "member": "string",
           "name": "OrderBy",
@@ -11982,7 +11982,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间（必填）格式为时间戳 毫秒",
+          "document": "<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>",
           "example": "1625444040000000000",
           "member": "int64",
           "name": "StartTime",
@@ -11991,7 +11991,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
+          "document": "<p>单次查询返回的原始日志条数，最大值为100（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -12000,7 +12000,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的相关参数",
+          "document": "<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>",
           "example": "[{\"Key\": \"instanceId\", \"Operator\": \"eq\", // Operator 可以是 eq、neq、like、nlike\"Value\": \"rum-xyz\"},{\"Key\": \"id\",\"Operator\": \"eq\",\"Value\": \"12345\"}]",
           "member": "string",
           "name": "Filter",
@@ -12009,7 +12009,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（必填）格式为时间戳 毫秒",
+          "document": "<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>",
           "example": "1665996660000000000",
           "member": "int64",
           "name": "EndTime",
@@ -12018,7 +12018,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID（必填）",
+          "document": "<p>项目ID（必填）</p>",
           "example": "120000",
           "member": "int64",
           "name": "ID",
@@ -12027,7 +12027,7 @@
         },
         {
           "disabled": false,
-          "document": "上次查询的最后一个日志的时间戳",
+          "document": "<p>上次查询的最后一个日志的时间戳</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "LastTime",
@@ -12036,7 +12036,7 @@
         },
         {
           "disabled": false,
-          "document": "上次查询的最后一个日志的rowId",
+          "document": "<p>上次查询的最后一个日志的rowId</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "LastRowId",
@@ -12051,8 +12051,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志总量",
-          "example": "'{\"Response\": {\"RequestId\": \"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\",\"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"total\\\":0}}\"}}'",
+          "document": "<p>日志总量</p>",
+          "example": "\"{\\\"Total\\\":1523}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -12146,7 +12146,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间（必填）",
+          "document": "<p>查询日志开始时间（必填）</p>",
           "example": "1665993060000",
           "member": "int64",
           "name": "StartTime",
@@ -12155,7 +12155,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
+          "document": "<p>单次查询返回的原始日志条数，最大值为100（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -12164,7 +12164,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：https://cloud.tencent.com/document/product/248/87223</p>",
           "example": "[{\"Key\": \"instanceId\", \"Operator\": \"eq\", // Operator 可以是 eq、neq、like、nlike\"Value\": \"rum-xyz\"},{\"Key\": \"id\",\"Operator\": \"eq\",\"Value\": \"12345\"}]",
           "member": "string",
           "name": "Filter",
@@ -12173,7 +12173,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（必填）",
+          "document": "<p>查询日志结束时间（必填）</p>",
           "example": "1665996660000",
           "member": "int64",
           "name": "EndTime",
@@ -12182,7 +12182,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID（必填）",
+          "document": "<p>项目ID（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "ID",
@@ -12197,8 +12197,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Query result in JSON string format",
-          "example": "{\"Response\": {\"RequestId\": \"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\",\"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"total\\\":0,\\\"limit\\\":100,\\\"page\\\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\\\"}\"}}",
+          "document": "<p>日志时间分布</p>",
+          "example": "\"[{\\\"timestamp\\\":1784564220,\\\"count\\\":3},{\\\"timestamp\\\":1784564280,\\\"count\\\":2},{\\\"timestamp\\\":1784564340,\\\"count\\\":20},{\\\"timestamp\\\":1784564400,\\\"count\\\":22}]\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
