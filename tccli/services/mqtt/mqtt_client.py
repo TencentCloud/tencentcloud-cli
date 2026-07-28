@@ -74,7 +74,7 @@ def doCreateDeviceIdentity(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeUserList(args, parsed_globals):
+def doDescribeSharedSubscriptionGroupsWithSubscriptions(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -108,11 +108,11 @@ def doDescribeUserList(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUserListRequest()
+    model = models.DescribeSharedSubscriptionGroupsWithSubscriptionsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeUserList(model)
+        rsp = client.DescribeSharedSubscriptionGroupsWithSubscriptions(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -758,6 +758,63 @@ def doModifyJWTAuthenticator(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDeviceCertificateBackupHistory(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeviceCertificateBackupHistoryRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeDeviceCertificateBackupHistory(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateMessageEnrichmentRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -797,6 +854,63 @@ def doCreateMessageEnrichmentRule(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateMessageEnrichmentRule(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -872,7 +986,7 @@ def doDescribeInsPublicEndpoints(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSharedSubscriptionGroupsWithSubscriptions(args, parsed_globals):
+def doDescribeUserList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -906,11 +1020,11 @@ def doDescribeSharedSubscriptionGroupsWithSubscriptions(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSharedSubscriptionGroupsWithSubscriptionsRequest()
+    model = models.DescribeUserListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeSharedSubscriptionGroupsWithSubscriptions(model)
+        rsp = client.DescribeUserList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2126,6 +2240,63 @@ def doModifyJWKSAuthenticator(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDeviceIdentities(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeviceIdentitiesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeDeviceIdentities(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doPublishMessage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2183,7 +2354,7 @@ def doPublishMessage(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSharedSubscriptionLag(args, parsed_globals):
+def doDescribeWillMessage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2217,11 +2388,11 @@ def doDescribeSharedSubscriptionLag(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSharedSubscriptionLagRequest()
+    model = models.DescribeWillMessageRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeSharedSubscriptionLag(model)
+        rsp = client.DescribeWillMessage(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2525,7 +2696,7 @@ def doDescribeInsVPCEndpoints(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstance(args, parsed_globals):
+def doUpdateMessageEnrichmentRulePriority(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2559,11 +2730,11 @@ def doDescribeInstance(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceRequest()
+    model = models.UpdateMessageEnrichmentRulePriorityRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeInstance(model)
+        rsp = client.UpdateMessageEnrichmentRulePriority(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2582,7 +2753,7 @@ def doDescribeInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMessageDetails(args, parsed_globals):
+def doDescribeDeviceIdentityBackupHistory(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2616,11 +2787,11 @@ def doDescribeMessageDetails(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMessageDetailsRequest()
+    model = models.DescribeDeviceIdentityBackupHistoryRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeMessageDetails(model)
+        rsp = client.DescribeDeviceIdentityBackupHistory(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3380,7 +3551,7 @@ def doKickOutClient(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateMessageEnrichmentRulePriority(args, parsed_globals):
+def doDescribeMessageDetails(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3414,11 +3585,11 @@ def doUpdateMessageEnrichmentRulePriority(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateMessageEnrichmentRulePriorityRequest()
+    model = models.DescribeMessageDetailsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.UpdateMessageEnrichmentRulePriority(model)
+        rsp = client.DescribeMessageDetails(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4292,7 +4463,7 @@ def doDescribeSharedSubscriptionGroups(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDeviceIdentities(args, parsed_globals):
+def doDescribeSharedSubscriptionLag(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4326,11 +4497,11 @@ def doDescribeDeviceIdentities(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MqttClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeviceIdentitiesRequest()
+    model = models.DescribeSharedSubscriptionLagRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeDeviceIdentities(model)
+        rsp = client.DescribeSharedSubscriptionLag(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4589,7 +4760,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "CreateDeviceIdentity": doCreateDeviceIdentity,
-    "DescribeUserList": doDescribeUserList,
+    "DescribeSharedSubscriptionGroupsWithSubscriptions": doDescribeSharedSubscriptionGroupsWithSubscriptions,
     "CreateInsPublicEndpoint": doCreateInsPublicEndpoint,
     "ModifyTopic": doModifyTopic,
     "DeleteCaCertificate": doDeleteCaCertificate,
@@ -4601,9 +4772,11 @@ ACTION_MAP = {
     "ModifyX509Config": doModifyX509Config,
     "DeleteInstance": doDeleteInstance,
     "ModifyJWTAuthenticator": doModifyJWTAuthenticator,
+    "DescribeDeviceCertificateBackupHistory": doDescribeDeviceCertificateBackupHistory,
     "CreateMessageEnrichmentRule": doCreateMessageEnrichmentRule,
+    "DescribeInstance": doDescribeInstance,
     "DescribeInsPublicEndpoints": doDescribeInsPublicEndpoints,
-    "DescribeSharedSubscriptionGroupsWithSubscriptions": doDescribeSharedSubscriptionGroupsWithSubscriptions,
+    "DescribeUserList": doDescribeUserList,
     "CreateMetaDatabaseInfoForOperation": doCreateMetaDatabaseInfoForOperation,
     "DescribeAuthenticator": doDescribeAuthenticator,
     "RegisterDeviceCertificate": doRegisterDeviceCertificate,
@@ -4625,15 +4798,16 @@ ACTION_MAP = {
     "DeleteDeviceCertificate": doDeleteDeviceCertificate,
     "ApplyRegistrationCode": doApplyRegistrationCode,
     "ModifyJWKSAuthenticator": doModifyJWKSAuthenticator,
+    "DescribeDeviceIdentities": doDescribeDeviceIdentities,
     "PublishMessage": doPublishMessage,
-    "DescribeSharedSubscriptionLag": doDescribeSharedSubscriptionLag,
+    "DescribeWillMessage": doDescribeWillMessage,
     "DescribeDeviceCertificate": doDescribeDeviceCertificate,
     "DeleteInsPublicEndpoint": doDeleteInsPublicEndpoint,
     "DescribeInstanceList": doDescribeInstanceList,
     "RevokedDeviceCertificate": doRevokedDeviceCertificate,
     "DescribeInsVPCEndpoints": doDescribeInsVPCEndpoints,
-    "DescribeInstance": doDescribeInstance,
-    "DescribeMessageDetails": doDescribeMessageDetails,
+    "UpdateMessageEnrichmentRulePriority": doUpdateMessageEnrichmentRulePriority,
+    "DescribeDeviceIdentityBackupHistory": doDescribeDeviceIdentityBackupHistory,
     "DeactivateDeviceCertificate": doDeactivateDeviceCertificate,
     "DeleteTopic": doDeleteTopic,
     "DescribeSharedSubscriptions": doDescribeSharedSubscriptions,
@@ -4647,7 +4821,7 @@ ACTION_MAP = {
     "CreateTopic": doCreateTopic,
     "ModifyMessageEnrichmentRule": doModifyMessageEnrichmentRule,
     "KickOutClient": doKickOutClient,
-    "UpdateMessageEnrichmentRulePriority": doUpdateMessageEnrichmentRulePriority,
+    "DescribeMessageDetails": doDescribeMessageDetails,
     "DescribeSharedClusterBindingListForOperation": doDescribeSharedClusterBindingListForOperation,
     "DeleteAuthorizationPolicy": doDeleteAuthorizationPolicy,
     "ModifyHttpAuthenticator": doModifyHttpAuthenticator,
@@ -4663,7 +4837,7 @@ ACTION_MAP = {
     "CreateInstance": doCreateInstance,
     "DescribeTopicList": doDescribeTopicList,
     "DescribeSharedSubscriptionGroups": doDescribeSharedSubscriptionGroups,
-    "DescribeDeviceIdentities": doDescribeDeviceIdentities,
+    "DescribeSharedSubscriptionLag": doDescribeSharedSubscriptionLag,
     "DescribeClusterAdminForOperation": doDescribeClusterAdminForOperation,
     "ModifyInstance": doModifyInstance,
     "CreateHttpAuthenticator": doCreateHttpAuthenticator,

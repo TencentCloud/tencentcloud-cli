@@ -2,10 +2,10 @@
   "actions": {
     "AddNodesToDBCustomCluster": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNodesToDBCustomCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-qjv7nng7\",\n    \"NodeIds\": [\n        \"dbcn-z4z0rbc9\"\n    ],\n    \"ImageId\": \"img-1tmhysjj\",\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-48hbnu45\"\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": 753,\n        \"RequestId\": \"96d5fa5c-44f8-48d2-88fe-81f34b71ac07\"\n    }\n}",
-        "title": "集群添加已有节点（通过密钥登录节点）"
+        "document": "将节点添加到DB Custom集群中",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNodesToDBCustomCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-sizxd0hi\",\n    \"NodeIds\": [\n        \"dbcn-7d59rhi5\"\n    ],\n    \"ImageId\": \"img-7rqxtnh9\",\n    \"LoginSettings\": {\n        \"Password\": \"mimaTest@1234\"\n    },\n    \"HostName\": \"dbcustom.khaos.worker-{IP}\",\n    \"HostNameType\": 1,\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1495,\n        \"RequestId\": \"72c2aefd-3093-449c-9a28-5d52ce20217c\"\n    }\n}",
+        "title": "添加节点到集群"
       }
     ],
     "CheckRoleAuthorized": [
@@ -21,7 +21,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBCustomCluster\n<公共请求参数>\n\n{\n    \"ContainerNetwork\": {\n        \"VpcId\": \"vpc-evvog2gd\",\n        \"SubnetIds\": [\n            \"subnet-clk8il4i\"\n        ]\n    },\n    \"ClusterName\": \"生产集群-001\",\n    \"ApiServerNetwork\": {\n        \"VpcId\": \"vpc-evvog2gd\",\n        \"SubnetId\": \"subnet-clk8il4i\"\n    },\n    \"ClusterDescription\": \"L500\",\n    \"Tags\": [\n        {\n            \"Key\": \"环境\",\n            \"Value\": \"生产\"\n        }\n    ],\n    \"ClientToken\": \"a8800d2e-db3e-41bb-8e49-f71fd8314047\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterId\": \"dbcc-1p6xo1xz\",\n        \"TaskId\": 80,\n        \"RequestId\": \"95a44313-4cd0-436f-a9c1-99b449896ce6\"\n    }\n}",
-        "title": "创建 DB Custom 集群"
+        "title": "创建 DB Custom 国际站集群"
       }
     ],
     "CreateDBCustomNodes": [
@@ -29,13 +29,13 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBCustomNodes\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-shanghai-5\",\n    \"ImageId\": \"img-2htjru6l\",\n    \"VpcId\": \"vpc-3kmj79e2\",\n    \"SubnetId\": \"subnet-pqebu78d\",\n    \"Period\": 1,\n    \"NodeType\": \"DB.AT5.8XLARGE128\",\n    \"NodeCount\": 1,\n    \"LoginSettings\": {\n        \"KeepImageLogin\": \"true\"\n    },\n    \"AutoRenew\": 2,\n    \"NodeName\": \"私有镜像自带SSHKey\"\n}",
         "output": "{\n    \"Response\": {\n        \"NodeIds\": [\n            \"dbcn-o2q3rj8t\"\n        ],\n        \"TaskId\": 756,\n        \"RequestId\": \"e7026ac1-125f-4e74-ae38-029ad41defe6\"\n    }\n}",
-        "title": "创建 DB Custom 节点（保持镜像的原始登录方式）"
+        "title": "创建节点（保持镜像的原始登录方式）"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBCustomNodes\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-shanghai-5\",\n    \"ImageId\": \"img-1tmhysjj\",\n    \"VpcId\": \"vpc-3kmj79e2\",\n    \"SubnetId\": \"subnet-pqebu78d\",\n    \"Period\": 1,\n    \"NodeType\": \"DB.AT5.8XLARGE128\",\n    \"NodeCount\": 1,\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-48hbnu45\"\n        ]\n    },\n    \"AutoRenew\": 2,\n    \"NodeName\": \"5*SSHKeyID+公共镜像\"\n}",
         "output": "{\n    \"Response\": {\n        \"NodeIds\": [\n            \"dbcn-z4z0rbc9\"\n        ],\n        \"TaskId\": 746,\n        \"RequestId\": \"7203009a-4d1e-42e1-a394-83f118bbc995\"\n    }\n}",
-        "title": "创建 DB Custom 节点（通过密钥登录节点）"
+        "title": "创建节点（通过密钥登录节点）"
       }
     ],
     "DescribeDBCustomClusterDetail": [

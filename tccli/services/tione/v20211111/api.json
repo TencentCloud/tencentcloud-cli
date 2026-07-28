@@ -4317,6 +4317,24 @@
           "name": "Envs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练诊断工具配置</p>",
+          "example": "无",
+          "member": "TrainToolConfig",
+          "name": "TrainToolConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源供应属性</p>",
+          "example": "无",
+          "member": "ResourceSupplyAttribute",
+          "name": "ResourceSupplyAttribute",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6990,6 +7008,15 @@
           "name": "Zone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>供应类型 SPOT:竞价实例  TIDE:潮汐实例  不填:旧的按量后付费</p><p>枚举值：</p><ul><li>TIDE： 潮汐场景</li><li>SPOT： 竞价场景</li></ul>",
+          "example": "TIDE",
+          "member": "string",
+          "name": "SupplyType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7811,6 +7838,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类别</p><p>枚举值：</p><ul><li>stdout： stdout</li><li>stderr： stderr</li></ul><p>默认值：&quot;&quot;</p>",
+          "example": "stdout",
+          "member": "string",
+          "name": "LogStream",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12647,43 +12683,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "单条日志的ID",
+          "document": "<p>单条日志的ID</p>",
           "example": "aaa-ccc-ddd",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "单条日志的内容",
+          "document": "<p>单条日志的内容</p>",
           "example": "This is a log",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "这条日志对应的Pod名称",
+          "document": "<p>这条日志对应的Pod名称</p>",
           "example": "train-xxx-1",
           "member": "string",
           "name": "PodName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "日志的时间戳（RFC3339格式的时间字符串）",
+          "document": "<p>日志的时间戳（RFC3339格式的时间字符串）</p>",
           "example": "2021-11-30T16:22:09+08:00",
           "member": "string",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志上报请求包的ID</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PkgId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求包内日志的ID</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PkgLogId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21111,6 +21167,16 @@
           "name": "LocalDiskTypeList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格对应的额度(非精确)</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Quota",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

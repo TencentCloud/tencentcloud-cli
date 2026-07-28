@@ -6,9 +6,7 @@ Input:
 
 ```
 tccli cynosdb DeleteAccounts --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-ixgbd0di \
-    --Accounts.0.AccountName admin \
-    --Accounts.0.Host myHost
+    --ClusterId cynosdbmysql-i******i
 ```
 
 Output: 

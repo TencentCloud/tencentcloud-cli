@@ -1914,7 +1914,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否支持从可用区",
+          "document": "<p>是否支持从可用区</p>",
           "example": "yes",
           "member": "string",
           "name": "IsSupportSlaveZone",
@@ -1925,7 +1925,7 @@
         },
         {
           "disabled": false,
-          "document": "不支持从可用区的原因",
+          "document": "<p>不支持从可用区的原因</p>",
           "example": "cluster has proxy, does not support slave zone",
           "member": "string",
           "name": "NonsupportSlaveZoneReason",
@@ -1936,7 +1936,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持RO实例",
+          "document": "<p>是否支持RO实例</p>",
           "example": "yes",
           "member": "string",
           "name": "IsSupportRo",
@@ -1947,7 +1947,7 @@
         },
         {
           "disabled": false,
-          "document": "不支持RO实例的原因",
+          "document": "<p>不支持RO实例的原因</p>",
           "example": "cynos version must be greater or equal than 3.1.2",
           "member": "string",
           "name": "NonsupportRoReason",
@@ -1958,7 +1958,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持手动发起快照备份",
+          "document": "<p>是否支持手动发起快照备份</p>",
           "example": "yes",
           "member": "string",
           "name": "IsSupportManualSnapshot",
@@ -1969,7 +1969,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持透明数据加密",
+          "document": "<p>是否支持透明数据加密</p>",
           "example": "yes",
           "member": "string",
           "name": "IsSupportTransparentDataEncryption",
@@ -1980,7 +1980,7 @@
         },
         {
           "disabled": false,
-          "document": "不支持透明数据加密原因",
+          "document": "<p>不支持透明数据加密原因</p>",
           "example": "mysql version 5.7 , >=2.1.12; Other versions are not supported",
           "member": "string",
           "name": "NoSupportTransparentDataEncryptionReason",
@@ -1991,7 +1991,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持手动发起逻辑备份",
+          "document": "<p>是否支持手动发起逻辑备份</p>",
           "example": "yes",
           "member": "string",
           "name": "IsSupportManualLogic",
@@ -2002,7 +2002,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持开启全局加密",
+          "document": "<p>是否支持开启全局加密</p>",
           "example": "yes",
           "member": "string",
           "name": "IsSupportGlobalEncryption",
@@ -2013,7 +2013,7 @@
         },
         {
           "disabled": false,
-          "document": "不支持全局加密的原因",
+          "document": "<p>不支持全局加密的原因</p>",
           "example": "mysql version 8.0 , >= 3.1.15.005; Other versions are not supported",
           "member": "string",
           "name": "NoSupportGlobalEncryptionReason",
@@ -2024,7 +2024,7 @@
         },
         {
           "disabled": false,
-          "document": "不支持透明加密原因状态码",
+          "document": "<p>不支持透明加密原因状态码</p>",
           "example": "InvalidDbVersion",
           "member": "string",
           "name": "NoSupportTransparentDataEncryptionReasonCode",
@@ -2035,7 +2035,7 @@
         },
         {
           "disabled": false,
-          "document": "不支持全局加密原因状态码",
+          "document": "<p>不支持全局加密原因状态码</p>",
           "example": "NotInWhitelist",
           "member": "string",
           "name": "NoSupportGlobalEncryptionReasonCode",
@@ -2052,7 +2052,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库账号名",
+          "document": "<p>数据库账号名</p>",
           "example": "andy",
           "member": "string",
           "name": "AccountName",
@@ -2062,7 +2062,7 @@
         },
         {
           "disabled": false,
-          "document": "主机",
+          "document": "<p>主机</p>",
           "example": "%",
           "member": "string",
           "name": "Host",
@@ -2072,7 +2072,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库账号描述",
+          "document": "<p>数据库账号描述</p>",
           "example": "andyuse",
           "member": "string",
           "name": "Description",
@@ -2082,7 +2082,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-11-21 11:58:25",
           "member": "datetime",
           "name": "CreateTime",
@@ -2092,7 +2092,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2024-11-25 17:11:03",
           "member": "datetime",
           "name": "UpdateTime",
@@ -2102,7 +2102,7 @@
         },
         {
           "disabled": false,
-          "document": "用户最大连接数",
+          "document": "<p>用户最大连接数</p>",
           "example": "3000",
           "member": "int64",
           "name": "MaxUserConnections",
@@ -2112,7 +2112,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启密码轮转(0:关闭;1:开启)",
+          "document": "<p>是否开启密码轮转(0:关闭;1:开启)</p>",
           "example": "0",
           "member": "int64",
           "name": "PasswordRotation",
@@ -6772,7 +6772,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cynosdbmysql-asd45wwe",
           "member": "string",
           "name": "ClusterId",
@@ -6781,7 +6781,7 @@
         },
         {
           "disabled": false,
-          "document": "新账户列表",
+          "document": "<p>新账户列表</p>",
           "example": "无",
           "member": "NewAccount",
           "name": "Accounts",
@@ -12320,8 +12320,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "cynosdbmysql-ixgbd0di",
+          "document": "<p>集群ID</p>",
+          "example": "cynosdbmysql-i******i",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -12329,7 +12329,7 @@
         },
         {
           "disabled": false,
-          "document": "账号数组，包含account和host",
+          "document": "<p>账号数组，包含account和host</p>",
           "example": "无",
           "member": "InputAccount",
           "name": "Accounts",
@@ -29485,7 +29485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30",
+          "document": "<p>账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30</p>",
           "example": "0",
           "member": "string",
           "name": "AccountName",
@@ -29494,7 +29494,7 @@
         },
         {
           "disabled": false,
-          "document": "主机(%或ipv4地址)",
+          "document": "<p>主机(%或ipv4地址)</p>",
           "example": "0",
           "member": "string",
           "name": "Host",
@@ -29503,7 +29503,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，密码长度范围为8到64个字符",
+          "document": "<p>密码，密码长度范围为8到64个字符</p>",
           "example": "0",
           "member": "string",
           "name": "AccountPassword",
@@ -29512,7 +29512,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启密码轮转(0:关闭;1:开启)",
+          "document": "<p>是否开启密码轮转(0:关闭;1:开启)</p>",
           "example": "0",
           "member": "int64",
           "name": "PasswordRotation",
@@ -29521,7 +29521,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "0",
           "member": "string",
           "name": "Description",
@@ -29530,7 +29530,7 @@
         },
         {
           "disabled": false,
-          "document": "用户最大连接数，不能大于10240",
+          "document": "<p>用户最大连接数，不能大于10240</p>",
           "example": "0",
           "member": "int64",
           "name": "MaxUserConnections",

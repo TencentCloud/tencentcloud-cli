@@ -14616,7 +14616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "白名单模式； 0 MD5白名单，1自定义",
+          "document": "<p>白名单模式； 0 MD5白名单，1自定义</p>",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -14625,7 +14625,7 @@
         },
         {
           "disabled": false,
-          "document": "quuid 列表",
+          "document": "<p>quuid 列表</p>",
           "example": "[\"9942e3f5-756f-459f-89f9-07428d38d2f9\"]",
           "member": "string",
           "name": "QuuidList",
@@ -14634,7 +14634,7 @@
         },
         {
           "disabled": false,
-          "document": "是否全部主机； 0否，1是。",
+          "document": "<p>是否全部主机； 0否，1是。</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
@@ -14643,7 +14643,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配模式 ；0 精确匹配，1模糊匹配（废弃）",
+          "document": "<p>匹配模式 ；0 精确匹配，1模糊匹配（废弃）</p>",
           "example": "1",
           "member": "uint64",
           "name": "MatchType",
@@ -14652,7 +14652,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名称(正则)；长度不超过200个",
+          "document": "<p>文件名称(正则)；长度不超过200个</p>",
           "example": "[\"UmV1YmVuLmRs****\"]",
           "member": "string",
           "name": "FileName",
@@ -14661,7 +14661,7 @@
         },
         {
           "disabled": false,
-          "document": "文件目录(正则)；长度不超过200个,内容base64转义",
+          "document": "<p>文件目录(正则)；长度不超过200个,内容base64转义</p>",
           "example": "[\"QyUzQSUyRkdh****\"]",
           "member": "string",
           "name": "FileDirectory",
@@ -14670,8 +14670,8 @@
         },
         {
           "disabled": false,
-          "document": "文件后缀；长度不超过200个,内容base64转义（废弃）",
-          "example": "java",
+          "document": "<p>文件后缀；长度不超过200个,内容base64转义（废弃）</p>",
+          "example": "[\"java\"]",
           "member": "string",
           "name": "FileExtension",
           "required": false,
@@ -14679,7 +14679,7 @@
         },
         {
           "disabled": false,
-          "document": "MD5列表",
+          "document": "<p>MD5列表</p>",
           "example": "[\"e10adc3949ba59abbe56e057f20f883e\"]",
           "member": "string",
           "name": "Md5List",
@@ -14688,7 +14688,7 @@
         },
         {
           "disabled": false,
-          "document": "木马事件ID",
+          "document": "<p>木马事件ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "EventId",
@@ -14697,10 +14697,19 @@
         },
         {
           "disabled": false,
-          "document": "对历史待处理执行加白操作；0是不处理，1是处理",
+          "document": "<p>对历史待处理执行加白操作；0是不处理，1是处理</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsHandleHistoryEvents",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>恶意进程告警id</p>",
+          "example": "2296046",
+          "member": "uint64",
+          "name": "ProcessEventID",
           "required": false,
           "type": "int"
         }
@@ -59897,7 +59906,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件ID",
+          "document": "<p>事件ID</p>",
           "example": "1",
           "member": "int64",
           "name": "EventId",
@@ -59907,7 +59916,7 @@
         },
         {
           "disabled": false,
-          "document": "主机名称",
+          "document": "<p>主机名称</p>",
           "example": "儿童网游s****",
           "member": "string",
           "name": "HostName",
@@ -59917,7 +59926,7 @@
         },
         {
           "disabled": false,
-          "document": "主机IP",
+          "document": "<p>主机IP</p>",
           "example": "10.0.0.1",
           "member": "string",
           "name": "HostIp",
@@ -59927,7 +59936,7 @@
         },
         {
           "disabled": false,
-          "document": "外网IP",
+          "document": "<p>外网IP</p>",
           "example": "10.0.0.1",
           "member": "string",
           "name": "WanIp",
@@ -59937,7 +59946,7 @@
         },
         {
           "disabled": false,
-          "document": "进程ID",
+          "document": "<p>进程ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ProcessId",
@@ -59947,7 +59956,7 @@
         },
         {
           "disabled": false,
-          "document": "文件路径",
+          "document": "<p>文件路径</p>",
           "example": "/var/www/fscan",
           "member": "string",
           "name": "FilePath",
@@ -59957,7 +59966,7 @@
         },
         {
           "disabled": false,
-          "document": "执行命令",
+          "document": "<p>执行命令</p>",
           "example": "/usr/sbin/sshd",
           "member": "string",
           "name": "CmdLine",
@@ -59967,7 +59976,7 @@
         },
         {
           "disabled": false,
-          "document": "进程启动时间",
+          "document": "<p>进程启动时间</p>",
           "example": "2022-09-23 15:11:46",
           "member": "string",
           "name": "StartTime",
@@ -59977,7 +59986,7 @@
         },
         {
           "disabled": false,
-          "document": "最近检测时间",
+          "document": "<p>最近检测时间</p>",
           "example": "2022-09-23 15:11:46",
           "member": "string",
           "name": "DetectTime",
@@ -59987,7 +59996,7 @@
         },
         {
           "disabled": false,
-          "document": "病毒名称",
+          "document": "<p>病毒名称</p>",
           "example": "Linux.Risk.Miner",
           "member": "string",
           "name": "VirusName",
@@ -59997,8 +60006,8 @@
         },
         {
           "disabled": false,
-          "document": "木马检测平台 [1:云查杀引擎|2:TAV|3:binaryAi|4:异常行为|5:威胁情报]",
-          "example": "[1,2]",
+          "document": "<p>木马检测平台 [1:云查杀引擎|2:TAV|3:binaryAi|4:异常行为|5:威胁情报]</p>",
+          "example": "[\"1\"]",
           "member": "string",
           "name": "CheckPlatform",
           "output_required": true,
@@ -60007,7 +60016,7 @@
         },
         {
           "disabled": false,
-          "document": "病毒标签",
+          "document": "<p>病毒标签</p>",
           "example": "[\"Miner\",\"HackTool\"]",
           "member": "string",
           "name": "VirusTags",
@@ -60017,7 +60026,7 @@
         },
         {
           "disabled": false,
-          "document": "威胁描述",
+          "document": "<p>威胁描述</p>",
           "example": "发现主机上存在代理工具进程，若不是您的主动行为，您的主机可能已经失陷。代理工具通常被用来在计算机网络中传递和转发数据流量并隐藏真实IP地址，从而让攻击者更难被追踪****",
           "member": "string",
           "name": "ThreatDesc",
@@ -60027,7 +60036,7 @@
         },
         {
           "disabled": false,
-          "document": "建议方案",
+          "document": "<p>建议方案</p>",
           "example": "1.检查恶意进程及非法端口",
           "member": "string",
           "name": "SuggestSolution",
@@ -60037,8 +60046,8 @@
         },
         {
           "disabled": false,
-          "document": "参考链接",
-          "example": "https://cloud.tencent.com/document/product/296/9604 ",
+          "document": "<p>参考链接</p>",
+          "example": "https://cloud.tencent.com/document/product/296/9604",
           "member": "string",
           "name": "ReferenceLink",
           "output_required": true,
@@ -60047,7 +60056,7 @@
         },
         {
           "disabled": false,
-          "document": "处理状态[0待处理;1已处理;2查杀中;3已查杀;4已退出;5忽略]",
+          "document": "<p>处理状态[0待处理;1已处理;2查杀中;3已查杀;4已退出;5忽略]</p>",
           "example": "1",
           "member": "int64",
           "name": "HandleStatus",
@@ -60057,7 +60066,7 @@
         },
         {
           "disabled": false,
-          "document": "主机在线状态",
+          "document": "<p>主机在线状态</p>",
           "example": "1",
           "member": "int64",
           "name": "OnlineStatus",
@@ -60067,8 +60076,8 @@
         },
         {
           "disabled": false,
-          "document": "附加信息",
-          "example": "{'WanIP': '81.71.37****', 'PrivateIP': '10.0.3.8', 'NetworkType': 0, 'NetworkName': 'vpc-3gov****', 'InstanceID': 'ins-9nso****', 'HostName': 'demo_****'}",
+          "document": "<p>附加信息</p>",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -60077,7 +60086,7 @@
         },
         {
           "disabled": false,
-          "document": "主机uuid",
+          "document": "<p>主机uuid</p>",
           "example": "e05a66ec-8d54-4041-80a8-07e9ab79****",
           "member": "string",
           "name": "Uuid",
@@ -60087,12 +60096,32 @@
         },
         {
           "disabled": false,
-          "document": "首次检出方式 0扫描;1实时监控",
+          "document": "<p>首次检出方式 0扫描;1实时监控</p>",
           "example": "1",
           "member": "uint64",
           "name": "FirstDetectionMethod",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>quuid</p>",
+          "example": "acdd5474-6360-4fd4-bfc7-843162cb8116",
+          "member": "string",
+          "name": "QUUID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进程md5</p>",
+          "example": "81627048b6aea0c94256a1aaf8da617e",
+          "member": "string",
+          "name": "ExeMd5",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
