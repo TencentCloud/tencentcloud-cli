@@ -56,6 +56,14 @@
         "title": "发起转录任务"
       }
     ],
+    "CreateLiveStreamModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveStreamModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"Input\": {\n        \"Url\": \"rtmp://43.173.153.79/pull/9988123?sdkappid=1400704311&userid=inspect&usersig=eJwsjt8KgjAUh9-l3BZyphvaoBuDyvUX6gVMlxxqc*iQQfTukXr7ffD7fR*4H2*RDo46DZIJIWJEXI6Uam09PUl3IIFs73TlYVJ9-Sqdoxok44gp8oSx2VADEgRi65uNSk6rYA72XAxlfslVkVVbfX3vlX0oU7ZmEXbVep70ZP4FacaFiBnyiQ7jeRwhfH8BAAD--0M4MiU_&use_number_room_id=1&remoteuserid=inspect\",\n        \"Format\": \"rtmp\"\n    },\n    \"LiveModerationParams\": {\n        \"ModerationType\": 3,\n        \"MaxIdleTime\": 30,\n        \"SliceVideo\": 5,\n        \"SliceAudio\": 1,\n        \"SaveModerationFile\": 1,\n        \"CallbackAllResults\": 0\n    },\n    \"DataId\": \"*********rtmp-test\",\n    \"SourceInfo\": {\n        \"RoomId\": \"rtmp_test\",\n        \"RoomIdType\": 1,\n        \"UserId\": \"user0\"\n    },\n    \"LiveModerationStorageParams\": {\n        \"CloudModerationStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"ap-nanjing\",\n            \"Bucket\": \"ai-c*******tion-test-1254340397\",\n            \"AccessKey\": \"AKID*Q*******sHOEmtjIaaIjunSrypPijTw\",\n            \"SecretKey\": \"FPIuIPEle*******OQGo4LK1TeZDbojO\",\n            \"FileNamePrefix\": [\n                \"file_test\"\n            ]\n        }\n    },\n    \"ResourceExpiredHour\": 48\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"WPqDNeW3D3UHPMW2q7FSYYz8VgxsBwiKFVq19GtbdXSkY4FJwWJsxU0UhrRTBEBupwKMn17ze1hYawpYtz9ANUVB5tPW0AkgEQxddua01cZuwpYVCb4H\",\n        \"RequestId\": \"df91a81a-aeb9-4687-91fb-b356d448d453\"\n    }\n}",
+        "title": "创建直播流审核任务"
+      }
+    ],
     "CreatePicture": [
       {
         "document": "上传图片",
@@ -102,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudTranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 14000000,\n    \"TaskId\": \"-nE5Nd9U7pfwyEzu+8LN******j-r1AI7H3plkD1p8pHX71AE.\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nE5Nd9U7pfwyEzu+8LNXe******ndibj-r1AI7H3plkD1p8pHX71AE.\",\n        \"RequestId\": \"768c7bde-70******c-e81f21cb1599\"\n    }\n}",
         "title": "停止转录任务"
+      }
+    ],
+    "DeleteLiveStreamModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveStreamModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"NAzTzX8qf6RY66Z2Wf8tyR6T3xyBkZWROxVf3KKwF8fS3lXlxHxCejGjzeqs4GRpcGUCXCqi-e2vVEGah4iPe1R1QMrfNPdxNc_M7qZICg8GtM1c1ZO3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"NAzTzX8qf6RY66Z2Wf8tyR6T3xyBkZWROxVf3KKwF8fS3lXlxHxCejGjzeqs4GRpcGUCXCqi-e2vVEGah4iPe1R1QMrfNPdxNc_M7qZICg8GtM1c1ZO3\",\n        \"RequestId\": \"d926a8b0-613a-4376-8117-61cbea75e99d\"\n    }\n}",
+        "title": "停止直播流ai内容"
       }
     ],
     "DeletePicture": [
@@ -182,6 +198,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudTranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\",\n    \"SdkAppId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"StartTime\": 1772433534515,\n        \"Status\": \"Idle\",\n        \"RequestId\": \"f83001c5-7e3c-dfac-ba3e-236bf063c8d1\",\n        \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\"\n    }\n}",
         "title": "查询转录任务"
+      }
+    ],
+    "DescribeLiveStreamModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveStreamModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"5i7U-joD9BS2_zly-yMhhvDx9gyG_PGQRQHfhZRQxDAgXolJ3XWhf19Sj5RVWLikRCcbM__tJYhPH_uSL6WkH7t-AsZRVY054w_paTZm9eKqio_JSzJH\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"TaskId\": \"5i7U-joD9BS2_zly-yMhhvDx9gyG_PGQRQHfhZRQxDAgXolJ3XWhf19Sj5RVWLikRCcbM__tJYhPH_uSL6WkH7t-AsZRVY054w_paTZm9eKqio_JSzJH\",\n        \"RequestId\": \"9330b62a-708c-4d79-9b90-9a581098e606\"\n    }\n}",
+        "title": "查询直播流ai内容理解"
       }
     ],
     "DescribeMixTranscodingUsage": [

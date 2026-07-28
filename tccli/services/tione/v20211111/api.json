@@ -3170,6 +3170,24 @@
           "name": "Envs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练诊断工具配置</p>",
+          "example": "无",
+          "member": "TrainToolConfig",
+          "name": "TrainToolConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源供应属性</p>",
+          "example": "无",
+          "member": "ResourceSupplyAttribute",
+          "name": "ResourceSupplyAttribute",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5941,6 +5959,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类别</p><p>枚举值：</p><ul><li>stdout： stdout</li><li>stderr： stderr</li></ul><p>默认值：&quot;&quot;</p>",
+          "example": "stdout",
+          "member": "string",
+          "name": "LogStream",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9140,43 +9167,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "单条日志的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单条日志的ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa-ccc-ddd",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "单条日志的内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>单条日志的内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "This is a log",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "这条日志对应的Pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>这条日志对应的Pod名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "train-xxx-1",
           "member": "string",
           "name": "PodName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "日志的时间戳（RFC3339格式的时间字符串）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志的时间戳（RFC3339格式的时间字符串）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-11-30T16:22:09+08:00",
           "member": "string",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志上报请求包的ID</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PkgId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求包内日志的ID</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PkgLogId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16335,6 +16382,45 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TrainToolConfig": {
+      "document": "训练诊断工具配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启 Hang 检测</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHangMonitor",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Hang 检测的节点列表</p>",
+          "example": "[\"master-0\"]",
+          "member": "string",
+          "name": "HangMonitorNodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Hang 超时时间</p><p>取值范围：[1, 14400]</p><p>单位：分</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "LogHangTimeoutInMinute",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

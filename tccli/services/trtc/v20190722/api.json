@@ -49,6 +49,13 @@
       "output": "CreateCloudTranscriptionResponse",
       "status": "online"
     },
+    "CreateLiveStreamModeration": {
+      "document": "启动一路直播流审核。服务端异步拉流、定频截帧、音频切片、送审，通过回调返回结果。一次一个任务（一路流）。您可以通过此接口实现如下目标：\n●指定内容参数（LiveModerationParams）来指定内容理解需要的详细参数。\n●指定存储参数（LiveModerationStorageParams）将命中的切片文件指定上传到您希望的云存储，目前支持腾讯云（对象存储COS）以及第三方AWS（S3）和阿里云（OSS）",
+      "input": "CreateLiveStreamModerationRequest",
+      "name": "启动直播流AI 内容理解",
+      "output": "CreateLiveStreamModerationResponse",
+      "status": "online"
+    },
     "CreatePicture": {
       "document": "如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁新增自定义背景图或水印，可通过此接口上传新的图片素材。无需频繁新增图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。",
       "input": "CreatePictureRequest",
@@ -89,6 +96,13 @@
       "input": "DeleteCloudTranscriptionRequest",
       "name": "停止云端转录任务",
       "output": "DeleteCloudTranscriptionResponse",
+      "status": "online"
+    },
+    "DeleteLiveStreamModeration": {
+      "document": "成功开启直播流AI 内容理解任务后，可以使用此接口来停止进行内容识别。",
+      "input": "DeleteLiveStreamModerationRequest",
+      "name": "停止直播流AI 内容理解任务",
+      "output": "DeleteLiveStreamModerationResponse",
       "status": "online"
     },
     "DeletePicture": {
@@ -159,6 +173,13 @@
       "input": "DescribeCloudTranscriptionRequest",
       "name": "查询云端转录状态",
       "output": "DescribeCloudTranscriptionResponse",
+      "status": "online"
+    },
+    "DescribeLiveStreamModeration": {
+      "document": "成功开启直播流AI 内容理解任务后，可以使用此接口来查询AI 内容理解任务状态，仅在任务进行时有效，任务退出后查询将会返回错误。",
+      "input": "DescribeLiveStreamModerationRequest",
+      "name": "查询直播流AI 内容理解任务信息",
+      "output": "DescribeLiveStreamModerationResponse",
       "status": "online"
     },
     "DescribeMixTranscodingUsage": {
@@ -2107,6 +2128,97 @@
       ],
       "type": "object"
     },
+    "CreateLiveStreamModerationRequest": {
+      "document": "CreateLiveStreamModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TRTC的<a href=\"https://cloud.tencent.com/document/product/647/46351#sdkappid\">SdkAppId</a>。</p>",
+          "example": "1400704311",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>直播流输入源</p>",
+          "example": "无",
+          "member": "Input",
+          "name": "Input",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>直播流ai理解审核参数</p>",
+          "example": "无",
+          "member": "LiveModerationParams",
+          "name": "LiveModerationParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务自定义唯一标识，原样透传到回调</p><p>入参限制：长度限制60字符</p>",
+          "example": "*********rtmp-test",
+          "member": "string",
+          "name": "DataId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息透传结构体（房间/主播/业务自定义），原样回带到回调</p>",
+          "example": "无",
+          "member": "SourceInfo",
+          "name": "SourceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>直播流ai理解转存文件存储参数</p>",
+          "example": "无",
+          "member": "LiveModerationStorageParams",
+          "name": "LiveModerationStorageParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单路任务最大的生命周期</p><p>取值范围：[1, 72]</p><p>单位：小时</p><p>默认值：48</p>",
+          "example": "48",
+          "member": "uint64",
+          "name": "ResourceExpiredHour",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveStreamModerationResponse": {
+      "document": "CreateLiveStreamModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AI 内容理解服务分配的任务ID。任务ID是对一次切片任务生命周期过程的唯一标识，结束任务时会失去意义。任务ID需要业务保存下来，作为下次针对这个任务操作的参数</p>",
+          "example": "WPqDNeW3D3UHPMW2q7FSYYz8VgxsBwiKFVq19GtbdXSkY4FJwWJsxU0UhrRTBEBupwKMn17ze1hYawpYtz9ANUVB5tPW0AkgEQxddua01cZuwpYVCb4H",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePictureRequest": {
       "document": "CreatePicture请求参数结构体",
       "members": [
@@ -2413,6 +2525,52 @@
           "disabled": false,
           "document": "转录服务分配的任务 ID。任务 ID 是对一次转录生命周期过程的唯一标识，结束转录时会失去意义。",
           "example": "-m9Ghi1U*****gjmwRxKiwE...",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveStreamModerationRequest": {
+      "document": "DeleteLiveStreamModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。</p>",
+          "example": "1400704311",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
+          "example": "NAzTzX8qf6RY66Z2Wf8tyR6T3xyBkZWROxVf3KKwF8fS3lXlxHxCejGjzeqs4GRpcGUCXCqi-e2vVEGah4iPe1R1QMrfNPdxNc_M7qZICg8GtM1c1ZO3",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveStreamModerationResponse": {
+      "document": "DeleteLiveStreamModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
+          "example": "NAzTzX8qf6RY66Z2Wf8tyR6T3xyBkZWROxVf3KKwF8fS3lXlxHxCejGjzeqs4GRpcGUCXCqi-e2vVEGah4iPe1R1QMrfNPdxNc_M7qZICg8GtM1c1ZO3",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -3108,6 +3266,62 @@
           "example": "-m9Ghi1U7upt0******aR8QqgE...",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveStreamModerationRequest": {
+      "document": "DescribeLiveStreamModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。</p>",
+          "example": "1400704311",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
+          "example": "5i7U-joD9BS2_zly-yMhhvDx9gyG_PGQRQHfhZRQxDAgXolJ3XWhf19Sj5RVWLikRCcbM__tJYhPH_uSL6WkH7t-AsZRVY054w_paTZm9eKqio_JSzJH",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveStreamModerationResponse": {
+      "document": "DescribeLiveStreamModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AI 内容理解任务的唯一Id，在启动切片任务成功后会返回。</p>",
+          "example": "5i7U-joD9BS2_zly-yMhhvDx9gyG_PGQRQHfhZRQxDAgXolJ3XWhf19Sj5RVWLikRCcbM__tJYhPH_uSL6WkH7t-AsZRVY054w_paTZm9eKqio_JSzJH",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI内容理解任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。</p><p>枚举值：</p><ul><li>InProgress： 进行中</li></ul>",
+          "example": "InProgress",
+          "member": "string",
+          "name": "Status",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5115,6 +5329,30 @@
       ],
       "usage": "out"
     },
+    "Input": {
+      "document": "拉流输入源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>直播拉流地址</p><p>入参限制：字符长度小于2048</p>",
+          "example": "rtmp://43**7*.*5*.79/pull/rtmp_test?sdkappid=1404311&userid=inspecuse*sig=eJwsjt8KgjAUh9-l3BZyphv",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>显式协议</p><p>枚举值：</p><ul><li>rtmp： rtmp协议</li></ul>",
+          "example": "rtmp",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "InvokeLLM": {
       "document": "调用服务端主动发起请求到LLM",
       "members": [
@@ -5260,6 +5498,81 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LiveModerationParams": {
+      "document": "直播流ai内容理解参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AI 内容理解任务类型</p><p>枚举值：</p><ul><li>1： 音频切片理解</li><li>2： 视频截帧理解</li><li>3： 音视切片+视频截帧理解 </li></ul><p>默认值：3</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "ModerationType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>持续没有上行推流的状态超过MaxIdleTime的时长，自动停止切片。</p><p>取值范围：[30, 1800]</p><p>单位：秒</p><p>默认值：30</p>",
+          "example": "300",
+          "member": "uint64",
+          "name": "MaxIdleTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频截帧间隔</p><p>取值范围：[1, 60]</p><p>单位：秒</p><p>默认值：5</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "SliceVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频切片时长</p><p>取值范围：[5, 60]</p><p>单位：秒</p><p>默认值：15</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SliceAudio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保存文件</p><p>枚举值：</p><ul><li>0： 0不保存</li><li>1： 1保存所有</li><li>2： 仅命中</li></ul><p>默认值：1</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SaveModerationFile",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否回调所有内容理解结果</p><p>枚举值：</p><ul><li>0： 回调所有结果</li><li>1： 仅回调命中结果</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "CallbackAllResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "LiveModerationStorageParams": {
+      "document": "直播流aI理解的转存文件存储参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>直播流ai理解文件转存</p>",
+          "example": "无",
+          "member": "CloudModerationStorage",
+          "name": "CloudModerationStorage",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -8260,6 +8573,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SourceInfo": {
+      "document": "额外信息透传结构体（房间/主播/业务自定义），原样回带到回调",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>直播间 ID（用于结果透传与去重；数字房间号也用 string 传）</p>",
+          "example": "rtmp-room",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间号类型</p><p>枚举值：</p><ul><li>0： 字符串房间号</li><li>1： 数字房间号</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主播/被审核方 ID</p>",
+          "example": "user1",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

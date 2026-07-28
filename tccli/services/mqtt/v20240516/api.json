@@ -231,6 +231,13 @@
       "output": "DescribeDeviceCertificateResponse",
       "status": "online"
     },
+    "DescribeDeviceCertificateBackupHistory": {
+      "document": "跨集群灾备场景下查询设备证书同步记录",
+      "input": "DescribeDeviceCertificateBackupHistoryRequest",
+      "name": "查询设备证书同步记录",
+      "output": "DescribeDeviceCertificateBackupHistoryResponse",
+      "status": "online"
+    },
     "DescribeDeviceCertificates": {
       "document": "分页查询设备证书",
       "input": "DescribeDeviceCertificatesRequest",
@@ -250,6 +257,13 @@
       "input": "DescribeDeviceIdentityRequest",
       "name": "查询设备标识",
       "output": "DescribeDeviceIdentityResponse",
+      "status": "online"
+    },
+    "DescribeDeviceIdentityBackupHistory": {
+      "document": "跨集群容灾场景下查询设备标识同步记录",
+      "input": "DescribeDeviceIdentityBackupHistoryRequest",
+      "name": "查询设备标识同步记录",
+      "output": "DescribeDeviceIdentityBackupHistoryResponse",
       "status": "online"
     },
     "DescribeInsPublicEndpoints": {
@@ -369,6 +383,13 @@
       "input": "DescribeUserListRequest",
       "name": "查询MQTT用户列表",
       "output": "DescribeUserListResponse",
+      "status": "online"
+    },
+    "DescribeWillMessage": {
+      "document": "遗嘱消息查询",
+      "input": "DescribeWillMessageRequest",
+      "name": "查询客户端遗嘱消息",
+      "output": "DescribeWillMessageResponse",
       "status": "online"
     },
     "KickOutClient": {
@@ -2772,6 +2793,97 @@
       ],
       "type": "object"
     },
+    "DescribeDeviceCertificateBackupHistoryRequest": {
+      "document": "DescribeDeviceCertificateBackupHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>腾讯云MQTT实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
+          "example": "mqtt-mzj7aqxk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标集群的集群ID</p>",
+          "example": "mqtt-********",
+          "member": "string",
+          "name": "Destination",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CA证书的SN</p>",
+          "example": "1b1e3bf*******************a7e66f05",
+          "member": "string",
+          "name": "CaSn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备证书的SN</p>",
+          "example": "eef6**5*******************f94d707a59913",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步发生开始时间（毫秒级时间戳）</p>",
+          "example": "1782121790065",
+          "member": "int64",
+          "name": "ModificationTimeStart",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步结束时间（毫秒级时间戳）</p>",
+          "example": "1782121790069",
+          "member": "int64",
+          "name": "ModificationTimeEnd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询条数，默认20，最大1024</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceCertificateBackupHistoryResponse": {
+      "document": "DescribeDeviceCertificateBackupHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备证书列表</p>",
+          "example": "无",
+          "member": "DeviceCertificateBackupHistoryItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceCertificateRequest": {
       "document": "DescribeDeviceCertificate请求参数结构体",
       "members": [
@@ -3082,6 +3194,88 @@
           "document": "返回的设备标识列表",
           "example": "无",
           "member": "DeviceIdentityItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceIdentityBackupHistoryRequest": {
+      "document": "DescribeDeviceIdentityBackupHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "mqtt-mzj7aqxk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>灾备集群的集群ID</p>",
+          "example": "mqtt-********",
+          "member": "string",
+          "name": "Destination",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备ID</p>",
+          "example": "device-1",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步发生的开始时间</p>",
+          "example": "1782199046395",
+          "member": "int64",
+          "name": "ModificationTimeStart",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步发生的结束时间</p>",
+          "example": "1782199086395",
+          "member": "int64",
+          "name": "ModificationTimeEnd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询条数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceIdentityBackupHistoryResponse": {
+      "document": "DescribeDeviceIdentityBackupHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回的设备标识列表</p>",
+          "example": "无",
+          "member": "DeviceIdentityBackupHistoryItem",
           "name": "Data",
           "output_required": true,
           "type": "list",
@@ -4726,6 +4920,338 @@
       ],
       "type": "object"
     },
+    "DescribeWillMessageRequest": {
+      "document": "DescribeWillMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端id</p>",
+          "example": "client-1",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWillMessageResponse": {
+      "document": "DescribeWillMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>保留消息Topic</p>",
+          "example": "home/room",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息服务质量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Qos",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保留消息</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Retained",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息负载(Base64编码)</p>",
+          "example": "this is payload",
+          "member": "string",
+          "name": "Payload",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，毫秒级时间戳 。</p>",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间，毫秒级时间戳 。</p>",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>遗嘱消息延迟时间，单位秒</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "WillDelayInterval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>响应内容类型</p>",
+          "example": "application/json",
+          "member": "string",
+          "name": "ContentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>响应主题</p>",
+          "example": "home/room",
+          "member": "string",
+          "name": "ResponseTopic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联数据（Base64编码）</p>",
+          "example": "data",
+          "member": "string",
+          "name": "CorrelationData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息过期时间，单位秒</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "MessageExpiryInterval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载格式指示器 1:UTF-8文本</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayloadFormatIndicator",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户属性</p>",
+          "example": "无",
+          "member": "UserProperty",
+          "name": "UserProperties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>遗嘱消息发布时间</p>",
+          "example": "1784219154574",
+          "member": "int64",
+          "name": "PublishAfter",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeviceCertificateBackupHistoryItem": {
+      "document": "设备证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户端id</p>",
+          "example": "test_cert_sync_af860c58",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备证书</p>",
+          "example": "-----BEGIN CERTIFICATE-----MIIBkTCCATigAwIBAgIUMOQH3D4DuUJSRGd1JkjlFr3ateowCgYIKoZIzj0EAwIwRTEiMCAGA1UEAwwZVGVuY2VudCBNUVRUIFRlc3QgUm9vdCBDQTESMBAGA1UECgwJTVFUVCBU----END CERTIFICATE-----",
+          "member": "string",
+          "name": "DeviceCertificate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备证书SN序列号，用于唯一标识一个设备证书</p>",
+          "example": "30e407dc3e03b942524467752648e516bddab5ea",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备证书Cn</p>",
+          "example": "test_cert_sync_af860c58",
+          "member": "string",
+          "name": "DeviceCertificateCn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签发该证书的CA证书的序列号</p>",
+          "example": "3c67229ecaa7e4ccfadda7a1e072221d0a5722b3",
+          "member": "string",
+          "name": "CaSn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书格式，当前仅支持PEM</p>",
+          "example": "PEM",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备证书状态<br>    ACTIVE：激活<br>    INACTIVE：未激活<br>    REVOKED：吊销<br>    PENDING_ACTIVATION：注册待激活</p>",
+          "example": "DELETED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组织单位</p>",
+          "example": "MQTT",
+          "member": "string",
+          "name": "OrganizationalUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上次激活时间，毫秒级时间戳 。</p>",
+          "example": "1784023451133",
+          "member": "int64",
+          "name": "LastActivationTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上次取消激活时间，毫秒级时间戳 。</p>",
+          "example": "1784019909474",
+          "member": "int64",
+          "name": "LastInactivationTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书来源：<br>API, 手动注册<br>JITP 自动注册</p>",
+          "example": "API",
+          "member": "string",
+          "name": "CertificateSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书失效日期，毫秒级时间戳 。</p>",
+          "example": "1815494400000",
+          "member": "int64",
+          "name": "NotAfterTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书生效开始日期，毫秒级时间戳 。</p>",
+          "example": "1783958400000",
+          "member": "int64",
+          "name": "NotBeforeTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据来源</p>",
+          "example": "mqtt-jzagoaz4",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1783949104152",
+          "member": "int64",
+          "name": "ModificationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeviceCertificateItem": {
       "document": "设备证书信息",
       "members": [
@@ -4875,6 +5401,82 @@
           "example": "1713164969433",
           "member": "int64",
           "name": "NotBeforeTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceIdentityBackupHistoryItem": {
+      "document": "设备标识列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备id</p>",
+          "example": "quota_dev_24472_280",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1:ENABLED-可用2:DISABLE-不可用</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主要签名key（Base64编码）</p>",
+          "example": "YjExM************W****BhM2U2NjZlNWE4NTJmZjc=",
+          "member": "string",
+          "name": "PrimaryKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>次要签名key（Base64编码）</p>",
+          "example": "MTlmM*****************JiMzM1MjIxYjg1YTI5Yjk=",
+          "member": "string",
+          "name": "SecondaryKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>传播属性列表</p>",
+          "example": "无",
+          "member": "PropagatingProperty",
+          "name": "PropagatingProperties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据来源</p>",
+          "example": "mqtt-jz******",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p><p>单位：毫秒级时间戳</p>",
+          "example": "1783599033352",
+          "member": "int64",
+          "name": "ModificationTime",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

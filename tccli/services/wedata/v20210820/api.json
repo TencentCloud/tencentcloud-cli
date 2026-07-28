@@ -826,6 +826,13 @@
       "output": "DescribeInstanceLogListResponse",
       "status": "online"
     },
+    "DescribeInstancesByExecutors": {
+      "document": "按执行资源组查询任务调度与运行实例数量统计",
+      "input": "DescribeInstancesByExecutorsRequest",
+      "name": "按执行资源组查询任务调度与运行实例数量统计",
+      "output": "DescribeInstancesByExecutorsResponse",
+      "status": "online"
+    },
     "DescribeIntegrationNode": {
       "document": "查询集成节点",
       "input": "DescribeIntegrationNodeRequest",
@@ -21270,6 +21277,52 @@
       ],
       "type": "object"
     },
+    "DescribeInstancesByExecutorsRequest": {
+      "document": "DescribeInstancesByExecutors请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "2658184615822913536",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行资源组ID</p>",
+          "example": "[\"20260107105230846836\"]",
+          "member": "string",
+          "name": "ExecutorGroupIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesByExecutorsResponse": {
+      "document": "DescribeInstancesByExecutors返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例状态统计结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutorTaskInstanceCount",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIntegrationNodeRequest": {
       "document": "DescribeIntegrationNode请求参数结构体",
       "members": [
@@ -33147,6 +33200,89 @@
           "name": "UsageTrendList",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecutorTaskInstanceCount": {
+      "document": "ExecutorTaskInstanceCount",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据开发中的任务类型绑定的资源组数量等待调度的任务实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SchedulingTaskCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据开发中的任务类型绑定的资源组数量运行中的人物实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RunningInstanceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据开发中的任务类型绑定的资源组数量等待运行的任务实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "WaitingInstanceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非离线开发调度中任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OthersTaskTypeSchedulingTaskCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非离线开发运行中实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OthersTaskTypeRunningInstanceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非离线开发等待运行实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OthersTaskTypeWaitingInstanceCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

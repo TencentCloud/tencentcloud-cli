@@ -86,6 +86,14 @@
         "title": "创建实例网络"
       }
     ],
+    "CreateDBProxy": [
+      {
+        "document": "为指定 PG 实例创建数据库代理",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBProxy\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-ll68q8z3\",\n    \"VpcId\": \"vpc-evvog2gd\",\n    \"SubnetId\": \"subnet-clk8il4i\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 2,\n            \"Zone\": \"ap-guangzhou-3\",\n            \"Cpu\": 2,\n            \"Mem\": 4\n        }\n    ],\n    \"SecurityGroup\": [\n        \"sg-xxxxxxxx\"\n    ],\n    \"Description\": \"test proxy\",\n    \"ConnectionPoolLimit\": 200\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20260523594022883452641\",\n        \"ProxyGroupId\": \"proxygroup-1x2edzxh\",\n        \"RequestId\": \"ba9bf5a6-907a-43de-b81b-41c7430c1f6c\"\n    }\n}",
+        "title": "创建数据库代理"
+      }
+    ],
     "CreateDatabase": [
       {
         "document": "",
@@ -460,6 +468,22 @@
         "title": "根据实例ID查询实例信息"
       }
     ],
+    "DescribeDBProxy": [
+      {
+        "document": "查询指定 PG 实例下的全部 Proxy 信息",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBProxy\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-oul13k0b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"ProxyInfos\": [\n            {\n                \"ConnectionPoolLimit\": 0,\n                \"CreateTime\": \"2026-06-17 16:46:12\",\n                \"Description\": \"\",\n                \"ProxyAddressSet\": [\n                    {\n                        \"AddressId\": \"proxyaddr-80ab0kho\",\n                        \"ConnectionPool\": true,\n                        \"ConnectionPoolLimit\": 300,\n                        \"Description\": \"\",\n                        \"Routes\": [\n                            {\n                                \"NodeId\": \"postgres-oul13k0b\",\n                                \"Role\": \"master\",\n                                \"Status\": \"online\",\n                                \"Weight\": 100\n                            }\n                        ],\n                        \"SubnetId\": \"6888276\",\n                        \"Vip\": \"10.0.0.91\",\n                        \"VpcId\": \"12115942\",\n                        \"Vport\": 5432\n                    }\n                ],\n                \"ProxyGroupId\": \"proxy-i36xgkkt\",\n                \"ProxyNodeSet\": [\n                    {\n                        \"Connection\": 0,\n                        \"Cpu\": 2,\n                        \"Mem\": 4000,\n                        \"ProxyNodeId\": \"proxynode-d1d9to0k\",\n                        \"Status\": \"online\",\n                        \"Zone\": \"ap-guangzhou-3\"\n                    }\n                ],\n                \"ProxyVersion\": \"1.4.9\",\n                \"Status\": \"online\",\n                \"TaskStatus\": \"\"\n            }\n        ],\n        \"RequestId\": \"81a642d4-3ec9-43b3-b74e-be7b22dc391e\"\n    }\n}",
+        "title": "查询数据库代理"
+      }
+    ],
+    "DescribeDBProxySpecs": [
+      {
+        "document": "查询代理可售规格",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBProxySpecs\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-ronvpb2l\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableZones\": [\n            \"ap-guangzhou-3\"\n        ],\n        \"SpecSet\": [\n            {\n                \"Cpu\": 2,\n                \"MaxNodeNum\": 4,\n                \"Memory\": 4000,\n                \"MinNodeNum\": 1\n            }\n        ],\n        \"SupportProxy\": true,\n        \"RequestId\": \"b3ab22e5-de57-47ec-b98a-f55a76cf6d76\"\n    }\n}",
+        "title": "查询代理可售规格"
+      }
+    ],
     "DescribeDBVersions": [
       {
         "document": "新购实例、升级实例版本号时，可通过此接口查询有效的数据库版本号列表",
@@ -668,6 +692,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyDBInstance\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-19nmz2xb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
         "title": "销毁PostgreSQL实例"
+      }
+    ],
+    "DestroyDBProxy": [
+      {
+        "document": "销毁指定数据库代理实例",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyDBProxy\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-ll68q8z3\",\n    \"ProxyGroupId\": \"proxygroup-1x2edzxh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba9bf5a6-907a-43de-b81b-41c7430c1f6c\"\n    }\n}",
+        "title": "销毁数据库代理"
       }
     ],
     "DisIsolateDBInstances": [
@@ -896,6 +928,28 @@
         "title": "批量修改实例项目"
       }
     ],
+    "ModifyDBProxy": [
+      {
+        "document": "变配 Proxy 节点规格与数量，下单返回 DealName",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBProxy\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-ll68q8z3\",\n    \"ProxyGroupId\": \"proxygroup-1x2edzxh\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 4,\n            \"Zone\": \"ap-guangzhou-3\",\n            \"Cpu\": 4,\n            \"Mem\": 8\n        }\n    ],\n    \"SwitchTag\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20260523594022883452641\",\n        \"RequestId\": \"ba9bf5a6-907a-43de-b81b-41c7430c1f6c\"\n    }\n}",
+        "title": "Proxy 节点变配"
+      },
+      {
+        "document": "仅修改描述，不下单，无 DealName 返回",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBProxy\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-ll68q8z3\",\n    \"ProxyGroupId\": \"proxygroup-1x2edzxh\",\n    \"Description\": \"rename proxy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba9bf5a6-907a-43de-b81b-41c7430c1f6c\"\n    }\n}",
+        "title": "仅修改 Proxy 描述"
+      }
+    ],
+    "ModifyDBProxyAddress": [
+      {
+        "document": "修改地址配置",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBProxyAddress\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-l4mvde5d\",\n    \"ProxyGroupId\": \"proxy-o0rx08tn\",\n    \"AddressId\": \"proxyaddr-3fhqchao\",\n    \"ConnectionPool\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c34ee392-54cf-4aa5-bcce-ed4991f9f4c2\"\n    }\n}",
+        "title": "修改地址配置"
+      }
+    ],
     "ModifyDatabaseOwner": [
       {
         "document": "",
@@ -982,6 +1036,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshAccountPassword\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-r95q23pn\",\n    \"UserName\": \"root\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ed5066a-cfad-47e4-b4db-9681166db6e5\"\n    }\n}",
         "title": "刷新启用CAM验证的账户密码"
+      }
+    ],
+    "ReloadBalanceDBProxyNode": [
+      {
+        "document": "重新负载平衡数据库代理节点",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReloadBalanceDBProxyNode\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-ko7e7fs5\",\n    \"ProxyGroupId\": \"proxy-p0aio887\",\n    \"AddressId\": \"proxyaddr-nh6d1xue\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"572245a8-44f0-45d7-ac72-3f5dd7e656c6\"\n    }\n}",
+        "title": "重新负载平衡数据库代理节点"
       }
     ],
     "RemoveDBInstanceFromReadOnlyGroup": [

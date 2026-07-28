@@ -998,6 +998,20 @@
         "title": "获取离线任务实例运行日志列表"
       }
     ],
+    "DescribeInstancesByExecutors": [
+      {
+        "document": "DescribeInstancesByExecutors异常示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesByExecutors\n<公共请求参数>\n\n{\n    \"ProjectId\": \"\",\n    \"ExecutorGroupIdList\": [\n        \"\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"An internal error has occurred. Retry your request, but if the problem persists, contact us.\"\n        },\n        \"RequestId\": \"01ce3409-6f5c-4245-ad76-9f04e05241ec\"\n    }\n}",
+        "title": "DescribeInstancesByExecutors异常示例"
+      },
+      {
+        "document": "DescribeInstancesByExecutors正常示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesByExecutors\n<公共请求参数>\n\n{\n    \"ProjectId\": \"3327414454951170048\",\n    \"ExecutorGroupIdList\": [\n        \"20260107105230846836\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ExecutorGroupId\": \"20260107105230846836\",\n                \"OthersTaskTypeRunningInstanceCount\": 0,\n                \"OthersTaskTypeSchedulingTaskCount\": 0,\n                \"OthersTaskTypeWaitingInstanceCount\": \"0\",\n                \"RunningInstanceCount\": 3,\n                \"SchedulingTaskCount\": 5,\n                \"WaitingInstanceCount\": 3\n            }\n        ],\n        \"RequestId\": \"52a97d22-fea2-4cc3-86a8-5a1d8e5a4de0\"\n    }\n}",
+        "title": "DescribeInstancesByExecutors正常示例"
+      }
+    ],
     "DescribeIntegrationNode": [
       {
         "document": "查询集成节点",

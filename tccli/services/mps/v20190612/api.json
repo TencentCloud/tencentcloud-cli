@@ -31186,7 +31186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "单位秒。",
+          "document": "<p>单位秒。</p>",
           "example": "60",
           "member": "uint64",
           "name": "Windows",
@@ -31197,7 +31197,7 @@
         },
         {
           "disabled": false,
-          "document": "打到output广告标签的格式，可选Date Range和Enhanced SCTE-35。",
+          "document": "<p>打到output广告标签的格式，可选Date Range、Enhanced SCTE-35和Standard SCTE-35。</p>",
           "example": "Enhanced SCTE-35",
           "member": "string",
           "name": "AdMarkupType",

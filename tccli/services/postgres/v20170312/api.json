@@ -70,6 +70,13 @@
       "output": "CreateDBInstanceNetworkAccessResponse",
       "status": "online"
     },
+    "CreateDBProxy": {
+      "document": "本接口（CreateDBProxy）用于为指定的 PostgreSQL 实例创建数据库代理（Proxy）。走计费下单流程，下单成功后异步发起 Proxy 创建任务，同步返回订单号 DealName 与 Proxy 实例 ID ProxyGroupId。当前仅支持后付费按量计费。",
+      "input": "CreateDBProxyRequest",
+      "name": "创建数据库代理",
+      "output": "CreateDBProxyResponse",
+      "status": "online"
+    },
     "CreateDatabase": {
       "document": "此接口用于创建数据库，需指定数据库名及所有者。",
       "input": "CreateDatabaseRequest",
@@ -329,6 +336,20 @@
       "output": "DescribeDBInstancesResponse",
       "status": "online"
     },
+    "DescribeDBProxy": {
+      "document": "本接口（DescribeDBProxy）用于查询指定 PostgreSQL 实例下的数据库代理（Proxy）信息，包含 Proxy 节点列表与接入地址列表。可选传入 ProxyGroupId 精确查询某一 Proxy；不传则返回该实例下的全部 Proxy。",
+      "input": "DescribeDBProxyRequest",
+      "name": "查询数据库代理",
+      "output": "DescribeDBProxyResponse",
+      "status": "online"
+    },
+    "DescribeDBProxySpecs": {
+      "document": "查询代理可售规格",
+      "input": "DescribeDBProxySpecsRequest",
+      "name": "查询代理可售规格",
+      "output": "DescribeDBProxySpecsResponse",
+      "status": "online"
+    },
     "DescribeDBVersions": {
       "document": "本接口（DescribeDBVersions）用于查询支持的数据库版本。",
       "input": "DescribeDBVersionsRequest",
@@ -474,6 +495,13 @@
       "input": "DestroyDBInstanceRequest",
       "name": "销毁实例",
       "output": "DestroyDBInstanceResponse",
+      "status": "online"
+    },
+    "DestroyDBProxy": {
+      "document": "本接口（DestroyDBProxy）用于销毁指定的数据库代理（Proxy）。接口仅返回 RequestId，销毁动作由计费回调异步触发 ProxyDestroy 任务，内部统一完成「隔离 + 销毁」全部步骤（释放 VIP、解绑安全组、回收资源、上报计费等），用户无需先调用隔离接口。",
+      "input": "DestroyDBProxyRequest",
+      "name": "销毁数据库代理",
+      "output": "DestroyDBProxyResponse",
       "status": "online"
     },
     "DisIsolateDBInstances": {
@@ -637,6 +665,20 @@
       "output": "ModifyDBInstancesProjectResponse",
       "status": "online"
     },
+    "ModifyDBProxy": {
+      "document": "本接口（ModifyDBProxy）用于修改数据库代理（Proxy）。支持两种模式：①仅修改 Description 时同步生效，不下单，DealName 为空；②变更 Proxy 节点规格或数量（ProxyNodeCustom）时走计费下单流程，异步触发变配任务，返回 DealName。可通过 SwitchTag 控制变配执行时机。",
+      "input": "ModifyDBProxyRequest",
+      "name": "修改数据库代理",
+      "output": "ModifyDBProxyResponse",
+      "status": "online"
+    },
+    "ModifyDBProxyAddress": {
+      "document": "修改代理地址配置",
+      "input": "ModifyDBProxyAddressRequest",
+      "name": "修改代理地址配置",
+      "output": "ModifyDBProxyAddressResponse",
+      "status": "online"
+    },
     "ModifyDatabaseOwner": {
       "document": "修改数据库所有者",
       "input": "ModifyDatabaseOwnerRequest",
@@ -712,6 +754,13 @@
       "input": "RefreshAccountPasswordRequest",
       "name": "刷新启用CAM验证的账户密码",
       "output": "RefreshAccountPasswordResponse",
+      "status": "online"
+    },
+    "ReloadBalanceDBProxyNode": {
+      "document": "本接口（ReloadBalanceDBProxyNode）用于重新均衡数据库代理节点",
+      "input": "ReloadBalanceDBProxyNodeRequest",
+      "name": "代理负载重平衡",
+      "output": "ReloadBalanceDBProxyNodeResponse",
       "status": "online"
     },
     "RemoveDBInstanceFromReadOnlyGroup": {
@@ -2660,6 +2709,107 @@
           "name": "TaskId",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBProxyRequest": {
+      "document": "CreateDBProxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，格式形如：postgres-xxxxxxxx</p>",
+          "example": "postgres-ll68q8z3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 所在私有网络 ID，需与主实例所在 VPC 一致</p>",
+          "example": "vpc-evvog2gd",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 所在私有网络子网 ID</p>",
+          "example": "subnet-clk8il4i",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点自定义规格列表，至少一个元素，按可用区分组</p>",
+          "example": "无",
+          "member": "ProxyNodeCustom",
+          "name": "ProxyNodeCustom",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 关联的安全组 ID 列表</p>",
+          "example": "[\"sg-xxxxxxxx\"]",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 描述信息</p><p>长度范围：[0, 256]</p>",
+          "example": "test proxy",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接池阈值（连接数），单位：个</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "ConnectionPoolLimit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBProxyResponse": {
+      "document": "CreateDBProxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>订单号，下单成功返回。</p>",
+          "example": "20260523594022883452641",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建出的 Proxy 实例 ID，格式形如：proxy-xxxxxxxx。</p>",
+          "example": "proxy-70x0pl73",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6704,6 +6854,119 @@
       ],
       "type": "object"
     },
+    "DescribeDBProxyRequest": {
+      "document": "DescribeDBProxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，格式形如：postgres-xxxxxxxx</p>",
+          "example": "postgres-oul13k0b",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 实例 ID，格式形如：proxy-xxxxxxxx；不传则查询该实例下全部 Proxy</p>",
+          "example": "proxy-daqueu21",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBProxyResponse": {
+      "document": "DescribeDBProxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Proxy 实例数量。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 实例详情列表。</p>",
+          "example": "无",
+          "member": "ProxyGroupInfo",
+          "name": "ProxyInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBProxySpecsRequest": {
+      "document": "DescribeDBProxySpecs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID。传入时返回该实例的 Proxy 支持情况和可用区</p>",
+          "example": "postgres-ronvpb2l",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBProxySpecsResponse": {
+      "document": "DescribeDBProxySpecs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规格列表</p>",
+          "example": "无",
+          "member": "ProxySpecItem",
+          "name": "SpecSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该实例是否支持开通 Proxy（仅传 DBInstanceId 时返回）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportProxy",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可部署可用区列表（仅传 DBInstanceId 时返回）</p>",
+          "example": "[\"ap-guangzhou-3\"]",
+          "member": "string",
+          "name": "AvailableZones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBVersionsRequest": {
       "document": "DescribeDBVersions请求参数结构体",
       "members": [
@@ -8150,6 +8413,42 @@
     },
     "DestroyDBInstanceResponse": {
       "document": "DestroyDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyDBProxyRequest": {
+      "document": "DestroyDBProxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，格式形如：postgres-xxxxxxxx</p>",
+          "example": "postgres-ll68q8z3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 实例 ID，格式形如：proxy-xxxxxxxx；不传时若实例下仅有一个 Proxy 则销毁该 Proxy，存在多个 Proxy 必须显式传入</p>",
+          "example": "proxy-d79vccld",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyDBProxyResponse": {
+      "document": "DestroyDBProxy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10244,6 +10543,169 @@
       ],
       "type": "object"
     },
+    "ModifyDBProxyAddressRequest": {
+      "document": "ModifyDBProxyAddress请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-l4mvde5d",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy地址ID</p>",
+          "example": "proxyaddr-3fhqchao",
+          "member": "string",
+          "name": "AddressId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy代理组 ID（不传则默认操作该实例下唯一的代理）</p>",
+          "example": "proxy-o0rx08tn",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址描述/备注（最多 256 字符）</p>",
+          "example": "eriktestupdate",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接池开关</p><p>枚举值：</p><ul><li>true： 开启</li><li>false： 关闭</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "ConnectionPool",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBProxyAddressResponse": {
+      "document": "ModifyDBProxyAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBProxyRequest": {
+      "document": "ModifyDBProxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，格式形如：postgres-xxxxxxxx</p>",
+          "example": "postgres-ll68q8z3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 实例 ID，格式形如：proxy-xxxxxxxx；不传时若实例下仅有一个 Proxy 则修改该 Proxy</p>",
+          "example": "proxy-ex9u2u4j",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 描述信息，长度范围 [0, 256]</p>",
+          "example": "rename proxy",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点变配规格列表，按可用区分组；变配时必填</p>",
+          "example": "无",
+          "member": "ProxyNodeCustom",
+          "name": "ProxyNodeCustom",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡刷新策略：auto-自动；manual-手动；默认 auto</p>",
+          "example": "auto",
+          "member": "string",
+          "name": "ReloadBalance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>变配执行时机：0-立即执行（默认），1-维护时间窗内执行，2-指定时间窗执行（需配合 SwitchStartTime/SwitchEndTime）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SwitchTag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定时间窗执行的开始时间，格式 HH:MM:SS，仅 SwitchTag=2 时生效</p>",
+          "example": "02:00:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定时间窗执行的结束时间，格式 HH:MM:SS，仅 SwitchTag=2 时生效</p>",
+          "example": "06:00:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBProxyResponse": {
+      "document": "ModifyDBProxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>订单号，仅变配（节点规格/数量变更）下单成功时返回；仅修改 Description 时不下单，本字段为空。</p>",
+          "example": "20260523594022883452641",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDatabaseOwnerRequest": {
       "document": "ModifyDatabaseOwner请求参数结构体",
       "members": [
@@ -11419,6 +11881,410 @@
       ],
       "usage": "out"
     },
+    "ProxyAddress": {
+      "document": "Proxy 接入地址信息，包含 VIP/VPort、读写分离与连接池相关配置以及对应路由列表。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Proxy 接入地址 ID</p>",
+          "example": "proxyaddress-xxxxxxxx",
+          "member": "string",
+          "name": "AddressId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 接入地址 IP</p>",
+          "example": "10.0.0.10",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 接入地址端口</p>",
+          "example": "5436",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC ID</p>",
+          "example": "vpc-evvog2gd",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网 ID</p>",
+          "example": "subnet-clk8il4i",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入地址描述</p>",
+          "example": "rw addr",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启连接池：0-未开启，1-开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ConnectionPool",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由列表</p>",
+          "example": "无",
+          "member": "ProxyRoute",
+          "name": "Routes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接池大小</p>",
+          "example": "300",
+          "member": "uint64",
+          "name": "ConnectionPoolLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyGroupInfo": {
+      "document": "Proxy 实例（组）详细信息，包含基础信息、节点列表、接入地址列表。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Proxy 实例 ID，格式形如：proxygroup-xxxxxxxx</p>",
+          "example": "proxygroup-1x2edzxh",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 状态：running/isolated/offline 等</p>",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 任务状态，无任务时为空</p>",
+          "example": "creating",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 描述</p>",
+          "example": "test proxy",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 内核版本号</p>",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "ProxyVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接池阈值（连接数）</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "ConnectionPoolLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点列表</p>",
+          "example": "无",
+          "member": "ProxyNode",
+          "name": "ProxyNodeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 接入地址列表</p>",
+          "example": "无",
+          "member": "ProxyAddress",
+          "name": "ProxyAddressSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，格式：YYYY-MM-DD HH:MM:SS</p>",
+          "example": "2026-05-23 15:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyNode": {
+      "document": "Proxy 节点信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点 ID</p>",
+          "example": "proxynode-xxxxxxxx",
+          "member": "string",
+          "name": "ProxyNodeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点所在可用区</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点 CPU 核数（核）</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点内存大小（MB）</p><p>单位：MB</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "Mem",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点状态：running/isolated/abnormal 等</p>",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点当前连接数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Connection",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyNodeCustom": {
+      "document": "Proxy 节点自定义规格信息，每个 Zone 对应一组节点配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该可用区下的 Proxy 节点数量</p><p>取值范围：[1, 16]</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "NodeCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点所在可用区</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点 CPU 核数（核）</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点内存大小（MB）</p><p>单位：MB</p>",
+          "example": "4000",
+          "member": "int64",
+          "name": "Mem",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProxyRoute": {
+      "document": "Proxy 路由信息，描述某个 Proxy 接入地址下到具体 PG 节点的路由规则。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>路由指向的 PG 节点 ID（实例或只读节点 ID）</p>",
+          "example": "postgres-ll68q8z3",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点角色：master/slave/readonly</p>",
+          "example": "master",
+          "member": "string",
+          "name": "Role",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由权重，取值范围 [0, 100]</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由状态：available/unavailable</p>",
+          "example": "available",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxySpecItem": {
+      "document": "Proxy可售规格信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CPU 核数</p><p>单位：核</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小</p><p>单位：MB</p>",
+          "example": "8000",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小节点数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinNodeNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大节点数</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "MaxNodeNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RawSlowQuery": {
       "document": "慢SQL查询接口返回 慢SQL列表详情",
       "members": [
@@ -11839,6 +12705,51 @@
         }
       ],
       "usage": "out"
+    },
+    "ReloadBalanceDBProxyNodeRequest": {
+      "document": "ReloadBalanceDBProxyNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-ko7e7fs5",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy代理组ID（不传则默认操作该实例下唯一的代理）</p>",
+          "example": "proxy-p0aio887",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy地址ID。传入时校验归属，实际重平衡为代理组维度</p>",
+          "example": "proxyaddr-nh6d1xue",
+          "member": "string",
+          "name": "AddressId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReloadBalanceDBProxyNodeResponse": {
+      "document": "ReloadBalanceDBProxyNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RemoveDBInstanceFromReadOnlyGroupRequest": {
       "document": "RemoveDBInstanceFromReadOnlyGroup请求参数结构体",

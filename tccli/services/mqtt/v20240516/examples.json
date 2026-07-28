@@ -264,6 +264,14 @@
         "title": "示例"
       }
     ],
+    "DescribeDeviceCertificateBackupHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCertificateBackupHistory\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mzj7aqxk\",\n    \"Destination\": \"mqtt-********\",\n    \"DeviceCertificateSn\": \"eef6**5*******************f94d707a59913\",\n    \"CaSn\": \"1b1e3bf*******************a7e66f05\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\",\n                \"CertificateSource\": \"JITP\",\n                \"ClientId\": \"clientsun\",\n                \"DeviceCertificate\": \"-----BEGIN CERTIFICATE-----\\n*******************************************************************************************************************************************************************************************************************************************************************************************************************************GMQswCQYD\\nVQQGEwJDTjEXMBUGA1UECAwOc3VuLmppYW4ueGlvbmcxDTALBgNVBAcMBHhpYW4x\\nEDAOBgNVBAoMB3RlbmNlbnQxCzAJBgNVBAsMAnR4MQswCQYDVQQDDAJ0eDEjMCEG\\nCSqGSIb3DQEJARYUamVoYW5zdW5AdGVuY2VudC5jb20wggEiMA0GCSqGSIb3DQEB\\nAQUAA4IBDwAwggEKAoIBAQCry5JrV8CoIP6Jt6fw7ZfIVFdVGcUzorrcx7DXgj/F\\nR0pWp4UxR00ZNQ4C24jDitEHbiX3ZoULraxKRnrkx1fJIcs+/vyB85gAlfOa9orz\\n6rVHVMGz4dc967GT6LhL3yCbE1d8KRmOOrFqC+ZV/hNreotluJ05pWKwL+3ftuzL\\nOi6N6UQ4D5TUR8FNeITo/ArrRtZsySV3kDsmCy+FKbe62yuSvO2WIQ4kGAw4MS6D\\nmCYQ8RaxEeEu2TtmFWsLuwZy0mtOlLAZ4iuJg6wJHYmvqkIGJeEjP1U4WPWdmVgK\\nLhu0V1YRs0k8r1c3j3SZANp40WusWYhr4l9SVw4yfod1AgMBAAGjQjBAMB0GA1Ud\\nDgQWBBTXHECdrJBedaw4unI7JWf/KcmUEjAfBgNVHSMEGDAWgBRGllwHWUUctxz7\\n41ejQQGGWBoQ3zANBgkqhkiG9w0BAQsFAAOCAQEAxMRW6AXHrVBW9cKbd7XkcIpx\\nvfVOrlnYWRN7enz/SHOkO0T+r0JvzQ0IAUHLfcZc99CjM5GY6PyuQtdorINvbSlg\\nC7n/ITry1qhAjwgDKQletcyOWCmALwK4YASZ2gDlJ9uUaLaoj9W0amHx8KjaKwu7\\nQFMDd1YzUa2SWkrEuaUli2AkhTzeLMVQlSy+n1gQ0B2R4hDhJis/sCRkfKzUEGID\\nuuDs7t/KaH7BQqCv0hjdyKJtttPUVw01gGE08tDOHkOLD0BihQUT95o3ush8i2kE\\nTCoA+AK4cYilHmP2hpE4s2CZRzaSLebcLziVWvrTyAUGnKHrrFeSYaRzHOmcvQ==\\n-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\nBQAwgZIxCzAJBgNVBAYTAmNuMQ0wCwYDVQQIDAR4aWFuMQ0wCwYDVQQHDARodXlp\\nMREwDwYDVQQKDAhqZWhhbnN1bjEWMBQGA1UECwwNdW5pdCBqZWhhbnN1bjEVMBMG\\nA1UEAwwMc3Vuamlhbnhpb25nMSMwIQYJKoZIhvcNAQkBFhRqZWhhbnN1bkB0ZW5j\\nZW50LmNvbTAeFw0yNDA1MDYwODM2NDFaFw0zNDA1MDQwODM2NDFaMIGSMQswCQYD\\nVQQGEwJjbjENMAsGA1UECAwEeGlhbjENMAsGA1UEBwwEaHV5aTERMA8GA1UECgwI\\namVoYW5zdW4xFjAUBgNVBAsMDXVuaXQgamVoYW5zdW4xFTATBgNVBAMMDHN1bmpp\\nYW54aW9uZzEjMCEGCSqGSIb3DQEJARYUamVoYW5zdW5AdGVuY2VudC5jb20wggEi\\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDfgKyMAZsTIibnNGG92MUhzM3F\\nZPD+be8x4TF+h5EGODWam8+b7z57amNc7gbelNcL1kAa25Xd39E8xZbhHSMP2vby\\ndivs/ZGNJYFlOU1g7IGrDEnPaw402g4S0lMHWwvvtwPJxNa5JP6haI+0N3qC0VfX\\n900miu1MGvLQ0XGkEVHy37QZ7t2rtbcokwx9oM/Gf2iz+lodV6m9e4wumsAae2kf\\nZNeNyDZ7IhRltfIbExoOu7lUT8FN84iYNXRBFtvVlNwrLXjDkN/Jrg3kI8mPo+24\\nmcrx6ToGfk2A6YBQLyVVjfGxeERwnWElQiQ+WHJDrIGpTBXbAjn8h/aiIPjlAgMB\\nAAGjggEGMIIBAjAdBgNVHQ4EFgQURpZcB1lFHLcc++NXo0EBhlgaEN8wgdIGA1Ud\\nIwSByjCBx4AURpZcB1lFHLcc++NXo0EBhlgaEN+hgZikgZUwgZIxCzAJBgNVBAYT\\nAmNuMQ0wCwYDVQQIDAR4aWFuMQ0wCwYDVQQHDARodXlpMREwDwYDVQQKDAhqZWhh\\nbnN1bjEWMBQGA1UECwwNdW5pdCBqZWhhbnN1bjEVMBMGA1UEAwwMc3Vuamlhbnhp\\nb25nMSMwIQYJKoZIhvcNAQkBFhRqZWhhbnN1bkB0ZW5jZW50LmNvbYIUGx4783Ah\\nEBJYh6OnIafmbwVSJRMwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEA\\nYOfLKq2uSONvUGmGt/EoppiKQeksu+t5MGhSwgL5/74WoQlCF9wSKbvgyhW55iQK\\n58dJdg9E18rv9OBURWY3xIdope0ZizmULSEuah6dFYsrcY95mNBHkZ0yK6HtWgRP\\nOb8+l1aKJK6cC8BvlHziblAC6bOK+HdpEI+mfVCpxU5B2rhUQEVFH5ogVtE+E9OP\\nqamwZlHGDSZvwukBsPkg5EiqP9Sixx102B7uAwym0gXtvrfSKj+KC/mlBkpuKHg8\\nfG2aZinrh8RqbUvzpqkVyFfGH2SaJPUchNNA0hdfNKtGfJ5S/BWsSPky82xn+9kp\\nfB9p/BeTDdveeb1ATq5ZWw==\\n-----END CERTIFICATE-----\\n\",\n                \"DeviceCertificateCn\": \"tx\",\n                \"DeviceCertificateSn\": \"eef68a582b94254296e54ce754f94d707a59913\",\n                \"Format\": \"PEM\",\n                \"LastActivationTime\": 1765434993699,\n                \"LastInactivationTime\": 0,\n                \"ModificationTime\": 1765439638543,\n                \"NotAfterTime\": 1766155706000,\n                \"NotBeforeTime\": 1734619706000,\n                \"OrganizationalUnit\": \"tx\",\n                \"Source\": \"mqtt-mzj7aqxk\",\n                \"Status\": \"ACTIVE\"\n            }\n        ],\n        \"RequestId\": \"225d15f3-b60b-4fd7-927a-0c7923eda71f\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeDeviceCertificates": [
       {
         "document": "示例",
@@ -285,6 +293,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceIdentity\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-25zezo7b\",\n    \"DeviceId\": \"device-1\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"CreatedTime\": 1741708800000,\n        \"DeviceId\": \"device-1\",\n        \"InstanceId\": \"mqtt-25zezo7b\",\n        \"PrimaryKey\": \"bcc0d6cae2a51e79723ce5e88547e214\",\n        \"RequestId\": \"c6a780ce-7850-41de-8be6-41e073cc6668\",\n        \"SecondaryKey\": \"sk1\",\n        \"Status\": 1\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeDeviceIdentityBackupHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceIdentityBackupHistory\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mzj7aqxk\",\n    \"Destination\": \"mqtt-********\",\n    \"DeviceId\": \"device-1\",\n    \"ModificationTimeStart\": 1782199046395,\n    \"ModificationTimeEnd\": 1782199086395,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"19fd4d06-8370-4687-a5c4-ff109c9de86e\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -421,6 +437,20 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTUserList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreatedTime\": 1705392159000,\n                \"ModifiedTime\": 1705392159000,\n                \"Password\": \"pwd1\",\n                \"Remark\": \"remark\",\n                \"Username\": \"user1\"\n            }\n        ],\n        \"RequestId\": \"8e86117c-a56c-4598-9e1f-4a039eed6e3a\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeWillMessage": [
+      {
+        "document": "当前查询的客户端没有遗嘱消息",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWillMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mwe5jvvr\",\n    \"ClientId\": \"client1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"f7ab1f26-b6d6-4a75-9909-36fad448e3c3\"\n    }\n}",
+        "title": "客户端没有遗嘱消息"
+      },
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWillMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mwe5jvvr\",\n    \"ClientId\": \"test_device_custom_791394\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ContentType\": \"application/json\",\n        \"CorrelationData\": \"MTIz\",\n        \"CreateTime\": 1764918589000,\n        \"MessageExpiryInterval\": 100,\n        \"Payload\": \"dGhpcyBpcyB3aWxsIG1lc3NhZ2U=\",\n        \"PayloadFormatIndicator\": 1,\n        \"Qos\": 1,\n        \"RequestId\": \"30aa2d8e-433b-441b-8350-9d06d72eafdc\",\n        \"ResponseTopic\": \"/home/resp/1\",\n        \"Retained\": true,\n        \"Topic\": \"home/will\",\n        \"UpdateTime\": 1764918589720,\n        \"WillDelayInterval\": 0\n    }\n}",
         "title": "示例"
       }
     ],

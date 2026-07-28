@@ -17100,7 +17100,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署时的相关信息",
+          "document": "<p>签署时的相关信息</p>",
           "example": "发起方因为【金额错误】撤销合同",
           "member": "string",
           "name": "ApproveMessage",
@@ -17110,7 +17110,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方姓名",
+          "document": "<p>签署方姓名</p>",
           "example": "典子谦",
           "member": "string",
           "name": "ApproveName",
@@ -17120,7 +17120,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方的签署状态\n0：还没有发起\n1：流程中 没有开始处理\n2：待签署\n3：已签署\n4：已拒绝\n5：已过期\n6：已撤销\n7：还没有预发起\n8：待填写\n9：因为各种原因而终止\n10：填写完成\n15：已解除\n19：转他人处理",
+          "document": "<p>签署方的签署状态<br>0：还没有发起<br>1：流程中 没有开始处理<br>2：待签署<br>3：已签署<br>4：已拒绝<br>5：已过期<br>6：已撤销<br>7：还没有预发起<br>8：待填写<br>9：因为各种原因而终止<br>10：填写完成<br>15：已解除<br>19：转他人处理</p>",
           "example": "10",
           "member": "int64",
           "name": "ApproveStatus",
@@ -17130,7 +17130,7 @@
         },
         {
           "disabled": true,
-          "document": "模板配置中的参与方ID,与控件绑定",
+          "document": "<p>模板配置中的参与方ID,与控件绑定</p>",
           "example": "1",
           "member": "string",
           "name": "ReceiptId",
@@ -17140,7 +17140,7 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义的用户ID",
+          "document": "<p>客户自定义的用户ID</p>",
           "example": "n9727",
           "member": "string",
           "name": "CustomUserId",
@@ -17150,7 +17150,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人手机号",
+          "document": "<p>签署人手机号</p>",
           "example": "1320****000",
           "member": "string",
           "name": "Mobile",
@@ -17160,7 +17160,7 @@
         },
         {
           "disabled": false,
-          "document": "签署顺序，如果是有序签署，签署顺序从小到大",
+          "document": "<p>签署顺序，如果是有序签署，签署顺序从小到大</p>",
           "example": "1",
           "member": "int64",
           "name": "SignOrder",
@@ -17170,7 +17170,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署时间，时间戳，单位秒",
+          "document": "<p>签署人签署时间，时间戳，单位秒</p>",
           "example": "1736409770",
           "member": "int64",
           "name": "ApproveTime",
@@ -17180,7 +17180,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签",
+          "document": "<p>签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签</p>",
           "example": "ORGANIZATION",
           "member": "string",
           "name": "ApproveType",
@@ -17190,7 +17190,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方侧用户来源，如WEWORKAPP-企业微信等",
+          "document": "<p>签署方侧用户来源，如WEWORKAPP-企业微信等</p>",
           "example": "WEWORKAPP",
           "member": "string",
           "name": "ApproverSource",
@@ -17200,7 +17200,7 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义签署方标识",
+          "document": "<p>客户自定义签署方标识</p>",
           "example": "甲方",
           "member": "string",
           "name": "CustomApproverTag",
@@ -17210,7 +17210,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方企业Id",
+          "document": "<p>签署方企业Id</p>",
           "example": "yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF",
           "member": "string",
           "name": "OrganizationId",
@@ -17220,7 +17220,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方企业名称",
+          "document": "<p>签署方企业名称</p>",
           "example": "典子谦示例企业",
           "member": "string",
           "name": "OrganizationName",
@@ -17230,8 +17230,8 @@
         },
         {
           "disabled": false,
-          "document": "签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。",
-          "example": " yDtwLUUckp79rcc2UuSIlvCCkIZsXxFY",
+          "document": "<p>签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。</p>",
+          "example": "yDtwLUUckp79rcc2UuSIlvCCkIZsXxFY",
           "member": "string",
           "name": "SignId",
           "output_required": false,
@@ -17240,7 +17240,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义签署人角色",
+          "document": "<p>自定义签署人角色</p>",
           "example": "甲方",
           "member": "string",
           "name": "ApproverRoleName",
@@ -17250,12 +17250,22 @@
         },
         {
           "disabled": false,
-          "document": "模板配置中的参与方ID,与控件绑定",
+          "document": "<p>模板配置中的参与方ID,与控件绑定</p>",
           "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "RecipientId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署方转交记录列表，标识该签署方是由谁转交而来，按转交时间由远到近进行排序</p>",
+          "example": "无",
+          "member": "ForwardRecord",
+          "name": "ForwardRecords",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -18268,6 +18278,67 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ForwardRecord": {
+      "document": "签署人的转交记录详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转交人打码后的姓名</p>",
+          "example": "叶**",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>转交人打码后的手机号</p>",
+          "example": "1*********0",
+          "member": "string",
+          "name": "Mobile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进行转交的原因</p><p>枚举值：</p><ul><li>QUIT_FORWARD： 离职转交</li><li>FORWARD： 员工操作转交</li></ul>",
+          "example": "FORWARD",
+          "member": "string",
+          "name": "ForwardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>转交的详情信息</p>",
+          "example": "员工操作进行转交",
+          "member": "string",
+          "name": "ForwardMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>转交时间</p><p>单位：时间戳（秒级）</p>",
+          "example": "1780000034",
+          "member": "int64",
+          "name": "ForwardTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

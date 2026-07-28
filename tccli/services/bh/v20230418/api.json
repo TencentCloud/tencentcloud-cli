@@ -8644,7 +8644,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "登录会话超时，10分钟，20分钟，30分钟，默认20分钟",
+          "document": "<p>登录会话超时，10分钟，20分钟，30分钟，默认20分钟</p>",
           "example": "20",
           "member": "uint64",
           "name": "TimeOut",
@@ -8655,7 +8655,7 @@
         },
         {
           "disabled": false,
-          "document": "连续密码错误次数，超过锁定账号，3-5",
+          "document": "<p>连续密码错误次数，超过锁定账号，3-5</p>",
           "example": "3",
           "member": "uint64",
           "name": "LockThreshold",
@@ -8666,7 +8666,7 @@
         },
         {
           "disabled": false,
-          "document": "账号锁定时长，10分钟，20分钟，30分钟",
+          "document": "<p>账号锁定时长，10分钟，20分钟，30分钟</p>",
           "example": "10",
           "member": "uint64",
           "name": "LockTime",
@@ -8677,10 +8677,21 @@
         },
         {
           "disabled": false,
-          "document": "用户多少天不活跃，账号自动锁定",
+          "document": "<p>用户多少天不活跃，账号自动锁定</p>",
           "example": "180",
           "member": "uint64",
           "name": "InactiveUserLock",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运维账号单点登录开关：0-关闭，1-开启</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableSingleLogin",
           "output_required": false,
           "required": false,
           "type": "int",
