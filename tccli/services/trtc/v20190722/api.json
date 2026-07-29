@@ -14,13 +14,6 @@
       "output": "ControlAIConversationResponse",
       "status": "online"
     },
-    "CreateBasicModeration": {
-      "document": "接口说明：\n启动终端审核功能，完成房间内的音频审核。",
-      "input": "CreateBasicModerationRequest",
-      "name": "创建基础审核任务",
-      "output": "CreateBasicModerationResponse",
-      "status": "online"
-    },
     "CreateCloudModeration": {
       "document": "启动AI 内容理解功能，完成房间内的音视频切片，视频截帧，或者录制音频流，投递到AI内容理解，完成内容识别。您可以通过此接口实现如下目标：\n●指定内容参数（ModerationParams）来指定内容理解需要的详细参数。\n●指定存储参数（ModerationStorageParams）将命中的切片文件指定上传到您希望的云存储，目前支持腾讯云（对象存储COS）以及第三方AWS（S3）和阿里云（OSS）",
       "input": "CreateCloudModerationRequest",
@@ -61,13 +54,6 @@
       "input": "CreatePictureRequest",
       "name": "上传图片",
       "output": "CreatePictureResponse",
-      "status": "online"
-    },
-    "DeleteBasicModeration": {
-      "document": "成功开启审核任务后，可以使用此接口来停止任务。",
-      "input": "DeleteBasicModerationRequest",
-      "name": "停止基础审核任务",
-      "output": "DeleteBasicModerationResponse",
       "status": "online"
     },
     "DeleteCloudModeration": {
@@ -1303,81 +1289,6 @@
       ],
       "usage": "in"
     },
-    "AuditStorageParams": {
-      "document": "审核存储参数",
-      "members": [
-        {
-          "disabled": false,
-          "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
-          "example": "无",
-          "member": "CloudAuditStorage",
-          "name": "CloudAuditStorage",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "usage": "in"
-    },
-    "CloudAuditStorage": {
-      "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "腾讯云对象存储COS以及第三方云存储账号信息\n0：腾讯云对象存储 COS\n1：AWS\n【注意】目前第三方云存储仅支持AWS，更多第三方云存储陆续支持中\n示例值：0",
-          "example": "0",
-          "member": "uint64",
-          "name": "Vendor",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。\n示例值：cn-shanghai-1\n\nAWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）\n示例值：ap-southeast-3\t",
-          "example": "cn-shanghai-1",
-          "member": "string",
-          "name": "Region",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云存储桶名称。",
-          "example": "test-bucket",
-          "member": "string",
-          "name": "Bucket",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云存储的access_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。\n示例值：test-accesskey",
-          "example": "test-accesskey",
-          "member": "string",
-          "name": "AccessKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云存储的secret_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。\n示例值：test-secretkey",
-          "example": "test-secretkey",
-          "member": "string",
-          "name": "SecretKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围az,AZ,0~9,'_'和'-'，举个例子，录制文件xxx.m3u8在 [\"prefix1\", \"prefix2\"]作用下，会变成prefix1/prefix2/TaskId/xxx.m3u8。\n示例值：[\"prefix1\", \"prefix2\"]",
-          "example": "[\"prefix1\", \"prefix2\"]",
-          "member": "string",
-          "name": "FileNamePrefix",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "usage": "in"
-    },
     "CloudModerationStorage": {
       "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
       "members": [
@@ -1619,79 +1530,6 @@
     "ControlAIConversationResponse": {
       "document": "ControlAIConversation返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateBasicModerationRequest": {
-      "document": "CreateBasicModeration请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。",
-          "example": "140056784",
-          "member": "uint64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，为TRTC房间所对应的RoomId。",
-          "example": "67467",
-          "member": "string",
-          "name": "RoomId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "目标审核用户id",
-          "example": "wanjia1",
-          "member": "string",
-          "name": "UserId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "TRTC房间号的类型。【*注意】必须和TRTC的房间所对应的RoomId类型相同:0: 字符串类型的RoomId1: 32位整型的RoomId（默认）",
-          "example": "1",
-          "member": "uint64",
-          "name": "RoomIdType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "音频文件上传到云存储的参数",
-          "example": "无",
-          "member": "AuditStorageParams",
-          "name": "AuditStorageParams",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateBasicModerationResponse": {
-      "document": "CreateBasicModeration返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "审核服务分配的任务ID。任务ID是对一次审核任务生命周期过程的唯一标识，结束任务时会失去意义。任务ID需要业务保存下来，作为下次针对这个任务操作的参数",
-          "example": "-npVqpdU7pr3JUbUasDy5PLPQaHPhkPbIkDILoK-2OqyoZWQndibCtH88ztBhkWAhZCH9DwE.",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2299,52 +2137,6 @@
           "name": "PictureId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteBasicModerationRequest": {
-      "document": "DeleteBasicModeration请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "TRTC的SDKAppId，和TRTC的房间所使用的SDKAppId相同。",
-          "example": "1400027384",
-          "member": "uint64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "审核任务的唯一Id，在启动审核任务成功后会返回。",
-          "example": "-nHp1XlU7mcW54zuscSryY-HYgLlPznbMzm9IYK-4pycoZWQnoT+HczjvK1mvkTPNxnCi14gJVpW6AE.",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteBasicModerationResponse": {
-      "document": "DeleteBasicModeration返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "审核任务的唯一Id。",
-          "example": "-nHp1XlU7mcW54zuscSryY-HYgLlPznbMzm9IYK-4pycoZWQnoT+HczjvK1mvkTPNxnCi14gJVpW6AE.",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
           "value_allowed_null": false
         },
         {

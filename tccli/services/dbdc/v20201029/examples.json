@@ -54,12 +54,36 @@
         "title": "查询 DB Custom 集群 Kubeconfig 配置"
       }
     ],
+    "DescribeDBCustomClusterNodeConfig": [
+      {
+        "document": "已经加入到集群中的节点独特属性信息查看",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusterNodeConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-sizxd0hi\",\n    \"NodeIds\": [\n        \"dbcn-7d59rhi5\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"Labels\": [\n                    {\n                        \"Key\": \"tke.cloud.tencent.com/cbs-mountable\",\n                        \"Value\": \"true\"\n                    }\n                ],\n                \"NodeId\": \"dbcn-7d59rhi5\",\n                \"Taints\": []\n            }\n        ],\n        \"RequestId\": \"013a1d89-8fc3-408b-bf28-b43fb7e62ff2\"\n    }\n}",
+        "title": "查询集群中的节点配置"
+      }
+    ],
+    "DescribeDBCustomClusterNodeResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusterNodeResources\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-n9ku9uyc\",\n    \"NodeIds\": [\n        \"dbcn-1qaik21r\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"Allocatable\": {\n                    \"Cpu\": 1.93,\n                    \"Memory\": 1.286,\n                    \"Pods\": 253\n                },\n                \"Available\": {\n                    \"Cpu\": 1.8,\n                    \"Memory\": 1.193,\n                    \"Pods\": 247\n                },\n                \"Capacity\": {\n                    \"Cpu\": 2,\n                    \"Memory\": 1.884,\n                    \"Pods\": 253\n                },\n                \"Limits\": {\n                    \"Cpu\": 7.6,\n                    \"Memory\": 7.382,\n                    \"Pods\": 0\n                },\n                \"NodeId\": \"dbcn-1qaik21r\",\n                \"Requests\": {\n                    \"Cpu\": 0.13,\n                    \"Memory\": 0.093,\n                    \"Pods\": 6\n                }\n            }\n        ],\n        \"RequestId\": \"29117a44-6bc0-4ab9-b667-7f8c5b322a1f\"\n    }\n}",
+        "title": "查询节点资源情况"
+      }
+    ],
     "DescribeDBCustomClusterNodes": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusterNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-0cj0av3j\"\n}",
         "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"LanIP\": \"10.0.0.1\",\n                \"NodeId\": \"dbcn-0zan5xxk\",\n                \"NodeName\": \"测试节点1\",\n                \"NodeType\": \"DB.AT5.8XLARGE128\",\n                \"SSHEndpoint\": \"10.0.0.100:36000\",\n                \"Status\": \"running\",\n                \"Zone\": \"ap-shanghai-5\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4603723b-56f3-4466-a46b-8fe4e9348918\"\n    }\n}",
         "title": "查询 DB Custom 集群的节点列表"
+      }
+    ],
+    "DescribeDBCustomClusterResources": [
+      {
+        "document": "本接口（DescribeDBCustomClusterResources）用户查询DB Custom 集群的资源分配详情",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusterResources\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-sizxd0hi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Allocatable\": {\n            \"Cpu\": 3.86,\n            \"Memory\": 2.572,\n            \"Pods\": 506\n        },\n        \"Available\": {\n            \"Cpu\": 3.6,\n            \"Memory\": 2.387,\n            \"Pods\": 494\n        },\n        \"Capacity\": {\n            \"Cpu\": 4,\n            \"Memory\": 3.768,\n            \"Pods\": 506\n        },\n        \"Limits\": {\n            \"Cpu\": 15.2,\n            \"Memory\": 14.763,\n            \"Pods\": 0\n        },\n        \"NodeCount\": 2,\n        \"Requests\": {\n            \"Cpu\": 0.26,\n            \"Memory\": 0.186,\n            \"Pods\": 12\n        },\n        \"RequestId\": \"98a6ae66-bfb9-4515-83ce-36f163cb59f9\"\n    }\n}",
+        "title": "查询集群的资源分配信息"
       }
     ],
     "DescribeDBCustomClusters": [
@@ -78,6 +102,22 @@
         "title": "查询 DB Custom 镜像列表"
       }
     ],
+    "DescribeDBCustomNodeSecurityGroups": [
+      {
+        "document": "本接口（DescribeDBCustomNodeSecurityGroups）用于查询DB Custom节点的安全组",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomNodeSecurityGroups\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-4ngxncm5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2026-07-23 11:23:06\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ibp49iqt\",\n                \"SecurityGroupName\": \"wanquan_sg_2\",\n                \"SecurityGroupRemark\": \"自定义\"\n            }\n        ],\n        \"RequestId\": \"f877dee4-4060-4dba-b1f4-1fb6e7de83ef\"\n    }\n}",
+        "title": "查询节点安全组信息"
+      }
+    ],
+    "DescribeDBCustomNodeTypes": [
+      {
+        "document": "查询当前DB Custom 支持创建的节点类型",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomNodeTypes\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"region\",\n            \"Values\": [\n                \"ap-shanghai\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeTypeSet\": [\n            {\n                \"CPU\": 512,\n                \"DataDiskTypes\": [],\n                \"Memory\": 2304,\n                \"NodeFamily\": \"DB.AT5\",\n                \"NodeType\": \"DB.AT5.128XLARGE2304\",\n                \"Status\": \"SELL\",\n                \"SystemDiskTypes\": [],\n                \"Zone\": \"ap-shanghai-5\"\n            }\n        ],\n        \"RequestId\": \"faca34ff-e268-44f4-96e3-f7499902bd15\"\n    }\n}",
+        "title": "查询支持的节点类型"
+      }
+    ],
     "DescribeDBCustomNodes": [
       {
         "document": "",
@@ -92,12 +132,28 @@
         "title": "查询 DB Custom 节点列表（按标签筛选）"
       }
     ],
+    "DescribeDBCustomRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-chengdu\",\n                \"RegionState\": \"SELL\"\n            }\n        ],\n        \"RequestId\": \"9d23d840-eade-4f0b-9efb-20e34df7f1dc\"\n    }\n}",
+        "title": "查询 DB Custom 支持的地域列表"
+      }
+    ],
     "DescribeDBCustomTaskStatus": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": 74\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"Succeeded\",\n        \"RequestId\": \"0d41f891-8589-45c3-8867-311a9df44c05\"\n    }\n}",
         "title": "查询 DB Custom 任务状态"
+      }
+    ],
+    "DescribeDBCustomZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomZones\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ZoneSet\": [\n            {\n                \"Zone\": \"ap-shanghai-5\",\n                \"ZoneState\": \"SELL\"\n            }\n        ],\n        \"RequestId\": \"ed7daa71-8d68-416d-96a3-e60fb6e357c0\"\n    }\n}",
+        "title": "查询 DB Custom 支持售卖的可用区"
       }
     ],
     "DescribeDBInstances": [
@@ -164,12 +220,28 @@
         "title": "隔离 DB Custom 节点"
       }
     ],
+    "ModifyDBCustomClusterNodeConfig": [
+      {
+        "document": "本接口（ModifyDBCustomClusterNodeConfig） 用于修改 DB Custom 集群节点的标签与污点配置",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomClusterNodeConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-sizxd0hi\",\n    \"NodeIds\": [\n        \"dbcn-yfw66wu9\"\n    ],\n    \"UpsertTaints\": [\n        {\n            \"Key\": \"A.B\",\n            \"Effect\": \"PreferNoSchedule\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1499,\n        \"RequestId\": \"7fff902d-87dd-4109-94b0-7029c15e33a7\"\n    }\n}",
+        "title": "修改集群中节点的配置信息接口"
+      }
+    ],
     "ModifyDBCustomClusterTags": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomClusterTags\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-q428ovsf\",\n    \"AddTags\": [\n        {\n            \"Key\": \"Tag1\",\n            \"Value\": \"Value1\"\n        }\n    ],\n    \"DeleteTagKeys\": [\n        \"testKey\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ef4d109-8dd7-4ef1-9834-c652cd84bdf0\"\n    }\n}",
         "title": "为 DB Custom 集群修改标签"
+      }
+    ],
+    "ModifyDBCustomNodeSecurityGroups": [
+      {
+        "document": "本接口（ModifyDBCustomNodeSecurityGroups）用于修改节点的安全组",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomNodeSecurityGroups\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-4ngxncm5\",\n    \"SecurityGroupIds\": [\n        \"sg-2nnt6fyf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d49fd6b-b890-4926-a856-53a30a10e888\"\n    }\n}",
+        "title": "修改节点安全组信息"
       }
     ],
     "ModifyDBCustomNodeTags": [

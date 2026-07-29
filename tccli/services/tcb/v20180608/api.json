@@ -63,6 +63,13 @@
       "output": "CreateBillDealResponse",
       "status": "online"
     },
+    "CreateCloudApp": {
+      "document": "创建云应用",
+      "input": "CreateCloudAppRequest",
+      "name": "创建云应用",
+      "output": "CreateCloudAppResponse",
+      "status": "online"
+    },
     "CreateCustomLoginKey": {
       "document": "创建自定义登录密钥。在指定云开发环境下生成一对 RSA 1024 位非对称密钥对，系统仅存储公钥，私钥仅在创建时返回一次且不可恢复，请妥善保存。创建新密钥后，该环境下原有未设置过期时间的旧密钥将被自动标记为 2 小时后过期，请确保客户端及时更新密钥配置。\n返回的 KeyID 和 PrivateKey 需与环境 ID 一起组装为 JSON 配置文件，供客户端 Admin SDK 初始化时使用，文件格式如下：\n{\n  \"private_key_id\": \"<返回的 KeyID>\",\n  \"private_key\": \"<返回的 PrivateKey>\",\n  \"env_id\": \"<请求时传入的 EnvId>\"\n}",
       "input": "CreateCustomLoginKeyRequest",
@@ -154,6 +161,20 @@
       "output": "DeleteAuthDomainResponse",
       "status": "online"
     },
+    "DeleteCloudApp": {
+      "document": "删除云应用服务",
+      "input": "DeleteCloudAppRequest",
+      "name": "删除云应用服务",
+      "output": "DeleteCloudAppResponse",
+      "status": "online"
+    },
+    "DeleteCloudAppVersion": {
+      "document": "删除云应用服务版本",
+      "input": "DeleteCloudAppVersionRequest",
+      "name": "删除云应用服务版本",
+      "output": "DeleteCloudAppVersionResponse",
+      "status": "online"
+    },
     "DeleteHTTPServiceRoute": {
       "document": "本接口DeleteHTTPServiceRoute用于删除HTTP访问服务域名或者路由。可批量删除多条path路由、删除域名及所有path路由，如果Paths字段为空则删除域名及所有path路由，如果Paths不为空则仅删除path路由。",
       "input": "DeleteHTTPServiceRouteRequest",
@@ -231,11 +252,39 @@
       "output": "DescribeClientResponse",
       "status": "online"
     },
+    "DescribeCloudAppCosInfo": {
+      "document": "获取云应用cos信息",
+      "input": "DescribeCloudAppCosInfoRequest",
+      "name": "获取云应用cos信息",
+      "output": "DescribeCloudAppCosInfoResponse",
+      "status": "online"
+    },
+    "DescribeCloudAppInfo": {
+      "document": "查询应用服务信息",
+      "input": "DescribeCloudAppInfoRequest",
+      "name": "查询云应用服务信息",
+      "output": "DescribeCloudAppInfoResponse",
+      "status": "online"
+    },
     "DescribeCloudAppList": {
       "document": "查询云应用服务列表信息",
       "input": "DescribeCloudAppListRequest",
       "name": "查询云应用服务列表",
       "output": "DescribeCloudAppListResponse",
+      "status": "online"
+    },
+    "DescribeCloudAppVersion": {
+      "document": "查询云应用服务版本信息",
+      "input": "DescribeCloudAppVersionRequest",
+      "name": "查询云应用服务版本信息",
+      "output": "DescribeCloudAppVersionResponse",
+      "status": "online"
+    },
+    "DescribeCloudAppVersionList": {
+      "document": "查询云应用服务版本列表信息",
+      "input": "DescribeCloudAppVersionListRequest",
+      "name": "查询云应用服务版本列表",
+      "output": "DescribeCloudAppVersionListResponse",
       "status": "online"
     },
     "DescribeCloudBaseBuildService": {
@@ -1449,6 +1498,223 @@
       ],
       "type": "object"
     },
+    "BuildCommands": {
+      "document": "构建命令",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台生成默认 install step 时执行</p>",
+          "example": "ls",
+          "member": "string",
+          "name": "InstallCmd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台生成默认build step 时执行</p>",
+          "example": "ls",
+          "member": "string",
+          "name": "BuildCmd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台生成默认deploy step 时执行</p>",
+          "example": "ls",
+          "member": "string",
+          "name": "DeployCmd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BuildSecret": {
+      "document": "构建密钥",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标准化为 DNS Label 风格；构建时注入为 $SECRET_&lt;NAME&gt;（同时也提供原大写形式 $SECRET_&lt;NAME_UPPERCASE&gt;）</p>",
+          "example": "TCR_PASSWORD",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台 AES 加密落库；DescribeVersion 永不回显明文</p>",
+          "example": "tcr-account-password-here",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "BuildSource": {
+      "document": "构建触发的源码来源: git,cos,inline",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源码来源类型，取值：&quot;git&quot; &quot;zip&quot;</p>",
+          "example": "zip",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Git 仓库 HTTPS URL；或 COS 下载完整 URL；与 CodeUrlWithAuth / CosTimestamp 之一非空（zip 二阶段上传时可留空）</p>",
+          "example": "https://github.com/TencentCloudBase/cloudrun-gin.git",
+          "member": "string",
+          "name": "Repo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分支 tag commit；Git 默认 main，zip 模式下忽略</p>",
+          "example": "main",
+          "member": "string",
+          "name": "Ref",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>&quot;git&quot; &quot;github&quot; &quot;gitlab&quot; &quot;gitee&quot; &quot;coding&quot;；私有仓必填，平台据此走 OAuth 鉴权</p>",
+          "example": "github",
+          "member": "string",
+          "name": "Channel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否私有仓；true 时平台自动注入 CodeUrlWithAuth</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPrivate",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用方显式传入的带鉴权 clone URL 或带签名的 zip 下载直链（优先级最高，会覆盖平台 OAuth / 自动签名）</p>",
+          "example": "https://github.com/TencentCloudBase/cloudrun-gin.git",
+          "member": "string",
+          "name": "CodeUrlWithAuth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅 Type=zip/cos 时使用。配合 zip 二阶段上传：填 DescribeCloudAppCosInfo 返回的 UnixTimestamp，平台据此自动签名出 ZIP_FILE_URL</p>",
+          "example": "1778760089",
+          "member": "string",
+          "name": "CosTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅 Type=zip/cos 时使用。zip 文件后缀，默认 .zip；与 CosTimestamp 配合定位 COS 对象</p>",
+          "example": "zip",
+          "member": "string",
+          "name": "CosSuffix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BuildStep": {
+      "document": "构建步骤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>步骤名（建议 kebab-case，如 build-image），出现在 DescribeCloudAppVersion.Steps[].Name</p>",
+          "example": "build-image",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>shell 脚本，支持单行或多行</p>",
+          "example": "docker build -t $TCR_REGISTRY/$TCR_NAMESPACE/$IMAGE_NAME:$CLOUDBASE_VERSION_NUMBER -f Dockerfile .",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "BuildStepStatus": {
+      "document": "步骤构建执行状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>构建步骤名称</p>",
+          "example": "检出 ZIP 包",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建状态</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建耗时</p>",
+          "example": "1926ms",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CheckTcbServiceRequest": {
       "document": "CheckTcbService请求参数结构体",
       "members": [],
@@ -1568,6 +1834,92 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudAppVersionItem": {
+      "document": "服务版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本名</p>",
+          "example": "React-test-001",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建方式</p>",
+          "example": "TEMPLATE",
+          "member": "string",
+          "name": "BuildType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建Id</p>",
+          "example": "2600520664",
+          "member": "string",
+          "name": "BuildId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建状态</p>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架名</p>",
+          "example": "react",
+          "member": "string",
+          "name": "Framework",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建配置</p>",
+          "example": "无",
+          "member": "StaticConfig",
+          "name": "StaticConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建时间</p>",
+          "example": "2026-03-12 17:08:31",
+          "member": "string",
+          "name": "BuildTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建步骤</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BuildStepStatus",
+          "name": "Steps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2118,6 +2470,144 @@
     "CreateBillDealResponse": {
       "document": "CreateBillDeal返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudAppRequest": {
+      "document": "CreateCloudApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "lowcode-*********f985f96",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名</p>",
+          "example": "html",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署类型</p>",
+          "example": "static-hosting",
+          "member": "string",
+          "name": "DeployType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建类型</p>",
+          "example": "ZIP",
+          "member": "string",
+          "name": "BuildType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>静态应用创建配置信息</p>",
+          "example": "无",
+          "member": "StaticConfig",
+          "name": "StaticConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源码定义</p>",
+          "example": "无",
+          "member": "BuildSource",
+          "name": "Source",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Commands 与 CustomSteps 至少填一个</p>",
+          "example": "无",
+          "member": "BuildCommands",
+          "name": "Commands",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Commands 与 CustomSteps 至少填一个，docker 镜像构建场景强烈建议用 CustomSteps</p>",
+          "example": "无",
+          "member": "Variable",
+          "name": "Env",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非敏感环境变量，构建容器中以 $KEY 引用</p>",
+          "example": "无",
+          "member": "BuildStep",
+          "name": "CustomSteps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感凭证（AES 加密落库），构建容器中以 $SECRET_NAME 引用</p>",
+          "example": "无",
+          "member": "BuildSecret",
+          "name": "Secrets",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudAppResponse": {
+      "document": "CreateCloudApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>构建Id</p>",
+          "example": "26014**8*2",
+          "member": "string",
+          "name": "BuildId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名称</p>",
+          "example": "html-002",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "html",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3144,6 +3634,125 @@
       ],
       "type": "object"
     },
+    "DeleteCloudAppRequest": {
+      "document": "DeleteCloudApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-xx12",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署类型",
+          "example": "static-hosting",
+          "member": "string",
+          "name": "DeployType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "vue",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudAppResponse": {
+      "document": "DeleteCloudApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否删除成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudAppVersionRequest": {
+      "document": "DeleteCloudAppVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-xx12",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署类型",
+          "example": "static-hosting",
+          "member": "string",
+          "name": "DeployType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "vue",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本名",
+          "example": "vue-01",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudAppVersionResponse": {
+      "document": "DeleteCloudAppVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否删除成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteHTTPServiceRouteRequest": {
       "document": "DeleteHTTPServiceRoute请求参数结构体",
       "members": [
@@ -3805,6 +4414,235 @@
       ],
       "type": "object"
     },
+    "DescribeCloudAppCosInfoRequest": {
+      "document": "DescribeCloudAppCosInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境id",
+          "example": "env-xxx01",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "vue",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署类型",
+          "example": "static-hosting",
+          "member": "string",
+          "name": "DeployType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间戳",
+          "example": "1709500000",
+          "member": "string",
+          "name": "UnixTimestamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件后缀",
+          "example": ".zip",
+          "member": "string",
+          "name": "Suffix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要下载",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDownload",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudAppCosInfoResponse": {
+      "document": "DescribeCloudAppCosInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上传url",
+          "example": "https://xxx.cos.xxxx.myqcloud.com/home/xxxx/static-0a94df-react-xxxx.zip?q-sign-algorithm=sha1&q-ak=xxxxxxx&q-sign-time=xxxxxx&q-key-time=177xxxxx&q-header-list=host&q-url-param-list=&q-signature=xxxxxxxxxxx01sjjdhsd1190",
+          "member": "string",
+          "name": "UploadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传header",
+          "example": "无",
+          "member": "KVPair",
+          "name": "UploadHeaders",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载链接",
+          "example": "https://xxx.cos.xxxx.myqcloud.com/xxx/static.zip?q-signature=xxxxxxxxxxx01sjjdhsd1190",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载Httpheader",
+          "example": "无",
+          "member": "KVPair",
+          "name": "DownloadHeaders",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳",
+          "example": "1709500000",
+          "member": "string",
+          "name": "UnixTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudAppInfoRequest": {
+      "document": "DescribeCloudAppInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCloudAppInfoResponse": {
+      "document": "DescribeCloudAppInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "html",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架名称</p>",
+          "example": "other",
+          "member": "string",
+          "name": "Framework",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "html-************************.***a*****clou*********",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建路径</p>",
+          "example": "/html",
+          "member": "string",
+          "name": "AppPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务创建时间</p>",
+          "example": "2026-07-29 15:11:17",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本名</p>",
+          "example": "html-002",
+          "member": "string",
+          "name": "LatestVersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本状态</p>",
+          "example": "******",
+          "member": "string",
+          "name": "LatestStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本构建时间</p>",
+          "example": "2026-07-29 15:13:16",
+          "member": "string",
+          "name": "LatestBuildTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署类型</p>",
+          "example": "static-hosting",
+          "member": "string",
+          "name": "DeployType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudAppListRequest": {
       "document": "DescribeCloudAppList请求参数结构体",
       "members": [
@@ -3877,6 +4715,222 @@
           "name": "Total",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudAppVersionListRequest": {
+      "document": "DescribeCloudAppVersionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "env-xx12",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署类型</p>",
+          "example": "static-hosting",
+          "member": "string",
+          "name": "DeployType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名</p>",
+          "example": "vue",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页大小</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudAppVersionListResponse": {
+      "document": "DescribeCloudAppVersionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本列表</p>",
+          "example": "无",
+          "member": "CloudAppVersionItem",
+          "name": "VersionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudAppVersionRequest": {
+      "document": "DescribeCloudAppVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "lowcode-****************",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名</p>",
+          "example": "html",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署类型</p>",
+          "example": "static-hosting",
+          "member": "string",
+          "name": "DeployType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名</p>",
+          "example": "html-002",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建id</p>",
+          "example": "1212376236544",
+          "member": "string",
+          "name": "BuildId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudAppVersionResponse": {
+      "document": "DescribeCloudAppVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>构建类型</p>",
+          "example": "ZIP",
+          "member": "string",
+          "name": "BuildType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建Id</p>",
+          "example": "2*********",
+          "member": "string",
+          "name": "BuildId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建状态</p>",
+          "example": "FAILED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架</p>",
+          "example": "other",
+          "member": "string",
+          "name": "Framework",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>静态托管配置信息</p>",
+          "example": "无",
+          "member": "StaticConfig",
+          "name": "StaticConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建时间</p>",
+          "example": "2026-07-29 15:13:36",
+          "member": "string",
+          "name": "BuildTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[]BuildStepStatus 的 JSON 序列化</p>",
+          "example": "无",
+          "member": "BuildStepStatus",
+          "name": "Steps",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -12421,6 +13475,200 @@
       ],
       "type": "object"
     },
+    "StaticCmd": {
+      "document": "静态托管的执行命令",
+      "members": [
+        {
+          "disabled": false,
+          "document": "构建命令",
+          "example": "npm run build",
+          "member": "string",
+          "name": "BuildCmd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安装命令",
+          "example": "npm install",
+          "member": "string",
+          "name": "InstallCmd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署命令",
+          "example": "tcb hosting deploy ./dist /React",
+          "member": "string",
+          "name": "DeployCmd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StaticConfig": {
+      "document": "云应用静态托管配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "框架类型：vue、react、nextjs 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "react",
+          "member": "string",
+          "name": "Framework",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Node.js 版本，默认 20\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "string",
+          "name": "NodeJsVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/React",
+          "member": "string",
+          "name": "AppPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "构建目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "./dist",
+          "member": "string",
+          "name": "BuildPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ZIP 文件地址（BuildType=ZIP/TEMPLATE 时使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example.com/weda-uploader/5cb6864bb998d00e02af98894fa96b28-raact-template.zip",
+          "member": "string",
+          "name": "ZipFileUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "COS 时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1600520664",
+          "member": "string",
+          "name": "CosTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "COS 文件后缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos-xx",
+          "member": "string",
+          "name": "CosSuffix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代码源平台：github、gitlab、gitee\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "github",
+          "member": "string",
+          "name": "CodeSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代码仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cloudrun",
+          "member": "string",
+          "name": "CodeRepo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代码分支\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "main",
+          "member": "string",
+          "name": "CodeBranch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "构建参数 JSON 字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StaticCmd",
+          "name": "StaticCmd",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "构建环境变量 JSON 字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StaticEnvironment",
+          "name": "StaticEnv",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StaticEnvironment": {
+      "document": "静态托管的环境变量参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Variable",
+          "name": "Variables",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "StaticStorageInfo": {
       "document": "静态CDN资源信息",
       "members": [
@@ -13272,6 +14520,32 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Variable": {
+      "document": "对象变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量的名称",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变量的值",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

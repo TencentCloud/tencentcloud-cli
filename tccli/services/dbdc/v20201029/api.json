@@ -42,11 +42,32 @@
       "output": "DescribeDBCustomClusterKubeconfigResponse",
       "status": "online"
     },
+    "DescribeDBCustomClusterNodeConfig": {
+      "document": "该接口（DescribeDBCustomClusterNodeConfig）用于查询 DB Custom 集群内节点的配置信息。",
+      "input": "DescribeDBCustomClusterNodeConfigRequest",
+      "name": "查询集群内节点的配置信息",
+      "output": "DescribeDBCustomClusterNodeConfigResponse",
+      "status": "online"
+    },
+    "DescribeDBCustomClusterNodeResources": {
+      "document": "该接口（DescribeDBCustomClusterNodeResources）用于查询 DB Custom 集群内节点的资源信息。",
+      "input": "DescribeDBCustomClusterNodeResourcesRequest",
+      "name": "查询集群内节点的资源信息",
+      "output": "DescribeDBCustomClusterNodeResourcesResponse",
+      "status": "online"
+    },
     "DescribeDBCustomClusterNodes": {
       "document": "该接口（DescribeDBCustomClusterNodes）用于查询 DB Custom 集群中的节点列表。",
       "input": "DescribeDBCustomClusterNodesRequest",
       "name": "查询集群的节点列表",
       "output": "DescribeDBCustomClusterNodesResponse",
+      "status": "online"
+    },
+    "DescribeDBCustomClusterResources": {
+      "document": "该接口（DescribeDBCustomClusterResources）用于查询 DB Custom 集群的资源信息。",
+      "input": "DescribeDBCustomClusterResourcesRequest",
+      "name": "查询集群资源信息",
+      "output": "DescribeDBCustomClusterResourcesResponse",
       "status": "online"
     },
     "DescribeDBCustomClusters": {
@@ -63,6 +84,20 @@
       "output": "DescribeDBCustomImagesResponse",
       "status": "online"
     },
+    "DescribeDBCustomNodeSecurityGroups": {
+      "document": "该接口（DescribeDBCustomNodeSecurityGroups）用于查询 DB Custom 节点安全组信息。",
+      "input": "DescribeDBCustomNodeSecurityGroupsRequest",
+      "name": "查询节点安全组信息",
+      "output": "DescribeDBCustomNodeSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDBCustomNodeTypes": {
+      "document": "该接口(DescribeDBCustomNodeTypes) 用于查询 DB Custom 节点支持的机型信息。",
+      "input": "DescribeDBCustomNodeTypesRequest",
+      "name": "查询节点支持的机型列表",
+      "output": "DescribeDBCustomNodeTypesResponse",
+      "status": "online"
+    },
     "DescribeDBCustomNodes": {
       "document": "该接口（DescribeDBCustomNodes）用于查询 DB Custom 节点列表。",
       "input": "DescribeDBCustomNodesRequest",
@@ -70,11 +105,25 @@
       "output": "DescribeDBCustomNodesResponse",
       "status": "online"
     },
+    "DescribeDBCustomRegions": {
+      "document": "该接口(DescribeDBCustomRegions) 用于查询 DB Custom 支持的地域列表。",
+      "input": "DescribeDBCustomRegionsRequest",
+      "name": "查询地域列表",
+      "output": "DescribeDBCustomRegionsResponse",
+      "status": "online"
+    },
     "DescribeDBCustomTaskStatus": {
       "document": "该接口（DescribeDBCustomTaskStatus）用于查询 DB Custom 任务的状态。",
       "input": "DescribeDBCustomTaskStatusRequest",
       "name": "查询任务状态",
       "output": "DescribeDBCustomTaskStatusResponse",
+      "status": "online"
+    },
+    "DescribeDBCustomZones": {
+      "document": "该接口(DescribeDBCustomZones) 用于查询指定地域的 DB Custom 可用区列表。",
+      "input": "DescribeDBCustomZonesRequest",
+      "name": "查询指定地域的可用区列表",
+      "output": "DescribeDBCustomZonesResponse",
       "status": "online"
     },
     "DescribeDBInstances": {
@@ -133,11 +182,25 @@
       "output": "IsolateDBCustomNodeResponse",
       "status": "online"
     },
+    "ModifyDBCustomClusterNodeConfig": {
+      "document": "该接口（ModifyDBCustomClusterNodeConfig）用于修改 DB Custom 集群中节点的配置。",
+      "input": "ModifyDBCustomClusterNodeConfigRequest",
+      "name": "修改集群中节点的配置",
+      "output": "ModifyDBCustomClusterNodeConfigResponse",
+      "status": "online"
+    },
     "ModifyDBCustomClusterTags": {
       "document": "该接口（ModifyDBCustomClusterTags）用于修改 DB Custom 集群绑定的标签。",
       "input": "ModifyDBCustomClusterTagsRequest",
       "name": "修改集群绑定的标签",
       "output": "ModifyDBCustomClusterTagsResponse",
+      "status": "online"
+    },
+    "ModifyDBCustomNodeSecurityGroups": {
+      "document": "该接口（ModifyDBCustomNodeSecurityGroups）用于修改 DB Custom 节点安全组。",
+      "input": "ModifyDBCustomNodeSecurityGroupsRequest",
+      "name": "修改节点安全组",
+      "output": "ModifyDBCustomNodeSecurityGroupsResponse",
       "status": "online"
     },
     "ModifyDBCustomNodeTags": {
@@ -918,6 +981,108 @@
       ],
       "usage": "out"
     },
+    "DBCustomClusterNodeConfig": {
+      "document": "DB Custom 集群内节点配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点ID</p>",
+          "example": "dbcn-yfw66wu9",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点的标签信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点的污点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DBCustomClusterNodeResource": {
+      "document": "DB Custom 集群内节点资源信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点ID</p>",
+          "example": "dbcn-7d59rhi5",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点物理资源总容量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Capacity",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点可分配容量= Capacity - 系统预留</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Allocatable",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点上所有非终态 Pod 的 requests 申请量之和（含系统 Pod）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Requests",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点上所有非终态 Pod 的 limits 上限之和（含系统 Pod）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Limits",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点可再调度余量 = max(0, Allocatable - Requests)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Available",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DBCustomImage": {
       "document": "DB Custom 可选的镜像信息。",
       "members": [
@@ -1245,6 +1410,92 @@
           "name": "EniIP",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DBCustomNodeTypeInfo": {
+      "document": "DB Custom 节点机型信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可用区标识，如 ap-guangzhou-6</p>",
+          "example": "ap-shanghai-5",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型标识</p><p>枚举值：</p><ul><li>DB.SA5.2XLARGE32： DB.SA5机型</li><li>DB.AT5.8XLARGE128： DB.AT5机型</li></ul>",
+          "example": "DB.AT5.MEDIUM4",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型系列，如 DB.AT5、DB.SA5</p>",
+          "example": "DB.AT5",
+          "member": "string",
+          "name": "NodeFamily",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 核数</p><p>单位：核</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "CPU",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小</p><p>单位：GiB</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型售卖状态</p><p>枚举值：</p><ul><li>SELL： 正常售卖</li><li>SOLD_OUT： 售罄</li></ul>",
+          "example": "SOLD_OUT",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该机型允许的系统盘类型列表（如 CLOUD_BSSD、CLOUD_HSSD）；</p>",
+          "example": "[\"CLOUD_BSSD\"]",
+          "member": "string",
+          "name": "SystemDiskTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该机型允许的数据盘类型列表（如 CLOUD_BSSD、CLOUD_HSSD）；</p>",
+          "example": "[\"CLOUD_BSSD\"]",
+          "member": "string",
+          "name": "DataDiskTypes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1699,6 +1950,98 @@
       ],
       "type": "object"
     },
+    "DescribeDBCustomClusterNodeConfigRequest": {
+      "document": "DescribeDBCustomClusterNodeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "dbcc-sizxd0hi",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按照一个或者多个 NodeId 查询。</p><p>入参限制：每次请求的数量上限为100</p>",
+          "example": "[\"dbcn-7d59rhi5\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomClusterNodeConfigResponse": {
+      "document": "DescribeDBCustomClusterNodeConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前账号下拥有的DB Custom 节点列表信息</p>",
+          "example": "无",
+          "member": "DBCustomClusterNodeConfig",
+          "name": "NodeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomClusterNodeResourcesRequest": {
+      "document": "DescribeDBCustomClusterNodeResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "dbcc-n9ku9uyc",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按照一个或者多个 NodeId 查询。</p><p>入参限制：每次请求的数量上限为50</p>",
+          "example": "[\"dbcn-1qaik21r\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomClusterNodeResourcesResponse": {
+      "document": "DescribeDBCustomClusterNodeResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前账号下拥有的DB Custom 节点列表信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DBCustomClusterNodeResource",
+          "name": "NodeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBCustomClusterNodesRequest": {
       "document": "DescribeDBCustomClusterNodes请求参数结构体",
       "members": [
@@ -1762,6 +2105,93 @@
           "name": "NodeSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomClusterResourcesRequest": {
+      "document": "DescribeDBCustomClusterResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "dbcc-sizxd0hi",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomClusterResourcesResponse": {
+      "document": "DescribeDBCustomClusterResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参与汇总的工作节点总数（不含控制面节点）</p><p>单位：台</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "NodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群所有节点的资源物理总容量之和</p>",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Capacity",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群所有节点的可分配容量之和（= Capacity - 系统预留）</p>",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Allocatable",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群所有非终态 Pod 的 requests 申请量之和（含系统 Pod）</p>",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Requests",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群所有非终态 Pod 的 limits 上限之和（含系统 Pod，Pods 字段无语义，固定为 0）</p>",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Limits",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群可再调度余量（所有节点 max(0, Allocatable - Requests) 累加求和）</p>",
+          "example": "无",
+          "member": "MetaResource",
+          "name": "Available",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1921,6 +2351,80 @@
       ],
       "type": "object"
     },
+    "DescribeDBCustomNodeSecurityGroupsRequest": {
+      "document": "DescribeDBCustomNodeSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点id</p>",
+          "example": "dbcn-i8vl32wo",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomNodeSecurityGroupsResponse": {
+      "document": "DescribeDBCustomNodeSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>与节点绑定的安全组id，数组格式，根据内部安全组ID的顺序来确认优先级。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityGroup",
+          "name": "Groups",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomNodeTypesRequest": {
+      "document": "DescribeDBCustomNodeTypes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>支持通过地域，可用区，机型系列，机型标识进行过滤</p><p>入参限制：region、zone、node-family、node-type</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomNodeTypesResponse": {
+      "document": "DescribeDBCustomNodeTypes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点机型详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DBCustomNodeTypeInfo",
+          "name": "NodeTypeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBCustomNodesRequest": {
       "document": "DescribeDBCustomNodes请求参数结构体",
       "members": [
@@ -2004,6 +2508,33 @@
       ],
       "type": "object"
     },
+    "DescribeDBCustomRegionsRequest": {
+      "document": "DescribeDBCustomRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDBCustomRegionsResponse": {
+      "document": "DescribeDBCustomRegions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>支持售卖的地域列表信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBCustomTaskStatusRequest": {
       "document": "DescribeDBCustomTaskStatus请求参数结构体",
       "members": [
@@ -2031,6 +2562,33 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBCustomZonesRequest": {
+      "document": "DescribeDBCustomZones请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDBCustomZonesResponse": {
+      "document": "DescribeDBCustomZones返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询支持售卖的地域对应的可用区，State字段值如为SELL则代表正常售卖。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneInfo",
+          "name": "ZoneSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3893,6 +4451,124 @@
       ],
       "usage": "in"
     },
+    "MetaResource": {
+      "document": "资源信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CPU核心</p><p>单位：核</p>",
+          "example": "0.13",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存</p><p>单位：GiB</p>",
+          "example": "0.093",
+          "member": "float",
+          "name": "Memory",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>POD数量</p><p>单位：个</p>",
+          "example": "506",
+          "member": "uint64",
+          "name": "Pods",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyDBCustomClusterNodeConfigRequest": {
+      "document": "ModifyDBCustomClusterNodeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>目标集群 ID</p>",
+          "example": "dbcc-sizxd0hi",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要修改的节点 ID 列表</p><p>入参限制：数量范围 1~50 个</p>",
+          "example": "[\"dbcn-yfw66wu9\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增或覆盖的集群 Label</p><p>入参限制：- 单次 ≤ 20 对；合并后节点总量不超过 20</p><ul><li>Key 格式对齐 K8s 原生（两段式，prefix DNS 子域 ≤ 253 字符，name ≤ 63 字符）</li><li>Value ≤ 63 字符，可为空</li><li>不可操作系统保留前缀</li></ul>",
+          "example": "无",
+          "member": "Label",
+          "name": "UpsertLabels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要删除的 Label key 列表，按 key 精确匹配，key 不存在时幂等放行。</p><p>入参限制：- Key 格式对齐 K8s 原生（两段式，prefix DNS 子域 ≤ 253 字符，name ≤ 63 字符）</p><ul><li>Value ≤ 63 字符，可为空</li><li>不可操作系统保留前缀</li></ul>",
+          "example": "[\"custom.lable.level\"]",
+          "member": "string",
+          "name": "DeleteLabelKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增或覆盖的 Taint。</p><p>入参限制：- 单次 ≤ 5 对；合并后节点总量不超过 5。</p><ul><li>唯一性键为 (Key, Effect)，匹配到已有 (Key, Effect) 时覆盖 Value，否则新增</li><li>Effect 合法值：NoSchedule / PreferNoSchedule / NoExecute</li><li>同一 Key 允许多个不同 Effect 的 Taint 并存</li></ul>",
+          "example": "无",
+          "member": "Taint",
+          "name": "UpsertTaints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要删除的 Taint 过滤器列表</p><p>入参限制：- 唯一性键为 (Key, Effect)，匹配到已有 (Key, Effect) 时覆盖 Value，否则新增</p><ul><li>Effect 合法值：NoSchedule / PreferNoSchedule / NoExecute</li><li>同一 Key 允许多个不同 Effect 的 Taint 并存</li></ul>",
+          "example": "无",
+          "member": "Taint",
+          "name": "DeleteTaints",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBCustomClusterNodeConfigResponse": {
+      "document": "ModifyDBCustomClusterNodeConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "1499",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBCustomClusterTagsRequest": {
       "document": "ModifyDBCustomClusterTags请求参数结构体",
       "members": [
@@ -3928,6 +4604,42 @@
     },
     "ModifyDBCustomClusterTagsResponse": {
       "document": "ModifyDBCustomClusterTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBCustomNodeSecurityGroupsRequest": {
+      "document": "ModifyDBCustomNodeSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点id</p>",
+          "example": "dbcn-4ngxncm5",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组id，数组格式，根据内部安全组ID的顺序来确认优先级。</p>",
+          "example": "[\"sg-2nnt6fyf\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBCustomNodeSecurityGroupsResponse": {
+      "document": "ModifyDBCustomNodeSecurityGroups返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4018,6 +4730,118 @@
         }
       ],
       "type": "object"
+    },
+    "PolicyRule": {
+      "document": "安全组规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则动作，</p><p>枚举值：</p><ul><li>ACCEPT： 允许</li><li>DROP： 拒绝</li></ul>",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源/目标 IP 或 CIDR，如 0.0.0.0/0</p>",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "CidrIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口范围，如 80、8080-8090、ALL</p>",
+          "example": "ALL",
+          "member": "string",
+          "name": "PortRange",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议类型，如 tcp、udp、icmp、ALL</p>",
+          "example": "ALL",
+          "member": "string",
+          "name": "IpProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议端口模板 ID</p>",
+          "example": "ppm-03frdmxg",
+          "member": "string",
+          "name": "ServiceModule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 地址模板 ID</p>",
+          "example": "ipm-hkmp9dcp",
+          "member": "string",
+          "name": "AddressModule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则 ID</p>",
+          "example": "196001",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则备注描述</p>",
+          "example": "Default rule",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegionInfo": {
+      "document": "地域信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>售卖状态</p><p>枚举值：</p><ul><li>SELL： 正常售卖</li><li>SOLD_OUT： 售罄</li></ul>",
+          "example": "SELL",
+          "member": "string",
+          "name": "RegionState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RemoveNodesFromDBCustomClusterRequest": {
       "document": "RemoveNodesFromDBCustomCluster请求参数结构体",
@@ -4165,6 +4989,82 @@
       ],
       "usage": "both"
     },
+    "SecurityGroup": {
+      "document": "安全组详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>安全组ID</p>",
+          "example": "sg-ibp49iqt",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属项目 ID</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组创建时间</p>",
+          "example": "2026-07-23 11:23:06",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组入方向规则列表</p>",
+          "example": "无",
+          "member": "PolicyRule",
+          "name": "Inbound",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组出方向规则列表</p>",
+          "example": "无",
+          "member": "PolicyRule",
+          "name": "Outbound",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组名称</p>",
+          "example": "wanquan_sg_2",
+          "member": "string",
+          "name": "SecurityGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组备注说明</p>",
+          "example": "自定义",
+          "member": "string",
+          "name": "SecurityGroupRemark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SystemDisk": {
       "document": "DB Custom 节点系统盘信息。",
       "members": [
@@ -4259,6 +5159,32 @@
         }
       ],
       "usage": "both"
+    },
+    "ZoneInfo": {
+      "document": "可用区信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>支持的可用区</p>",
+          "example": "ap-shanghai-5",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区状态</p><p>枚举值：</p><ul><li>SELL： 正常售卖</li><li>SOLD_OUT： 售罄</li></ul>",
+          "example": "SELL",
+          "member": "string",
+          "name": "ZoneState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

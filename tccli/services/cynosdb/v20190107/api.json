@@ -14594,11 +14594,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -14609,10 +14609,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群类型列表",
+          "document": "<p>集群类型列表</p>",
           "example": "[\"P0\",\"P1\"]",
           "member": "string",
           "name": "LevelList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专区列表</p>",
+          "example": "[\"ap-guangzhou-3\"]",
+          "member": "string",
+          "name": "Zones",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

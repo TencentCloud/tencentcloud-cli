@@ -604,6 +604,14 @@
         "title": "查询账号下所有回调URL列表"
       }
     ],
+    "DescribeAlarmNoticeOnCallUsersFromPrometheusAlertID": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmNoticeOnCallUsersFromPrometheusAlertID\n<公共请求参数>\n\n{\n    \"AlertId\": \"alert-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Notices\": [\n            {\n                \"NoticeId\": \"notice-********\",\n                \"SendGroups\": [\n                    {\n                        \"ReceiverType\": \"GROUP\",\n                        \"Users\": [\n                            {\n                                \"UserId\": \"10***37\",\n                                \"UserName\": \"iv****ai\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"a983a961-d495-4332-a438-29c3c895d136\"\n    }\n}",
+        "title": "通过prometheus告警分组id查询该策略的当前通知人"
+      }
+    ],
     "DescribeAlarmNotices": [
       {
         "document": "查询通知模板列表",

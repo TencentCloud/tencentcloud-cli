@@ -1,23 +1,23 @@
-**Example 1: 查询支持的集群级别**
+**Example 1: 查询当前地域的支持亲和性等级设置的专区列表**
 
-查询用户支持的集群级别
+
 
 Input: 
 
 ```
-tccli cynosdb DescribeClusterLevels --cli-unfold-argument  \
-    --Zone ap-guangzhou-3
-```
+tccli cynosdb DescribeClusterLevels --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "0c646e65-3597-44d7-b68b-d43391eedb33",
         "LevelList": [
-            "P0",
-            "P1"
-        ]
+            "L1"
+        ],
+        "Zones": [
+            "ap-guangzhou-3"
+        ],
+        "RequestId": "9db131da-3bd7-4d0f-980e-db3899e38aea"
     }
 }
 ```

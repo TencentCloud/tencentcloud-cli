@@ -114,6 +114,14 @@
         "title": "续费云开发baas套餐"
       }
     ],
+    "CreateCloudApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudApp\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-*********f985f96\",\n    \"ServiceName\": \"html\",\n    \"DeployType\": \"static-hosting\",\n    \"BuildType\": \"ZIP\",\n    \"StaticConfig\": {\n        \"Framework\": \"other\",\n        \"NodeJsVersion\": \"18\",\n        \"AppPath\": \"/html\",\n        \"CosTimestamp\": \"17****9**5\",\n        \"CosSuffix\": \"zip\",\n        \"StaticCmd\": {\n            \"DeployCmd\": \"tcb hosting deploy ./ /html\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BuildId\": \"26014**8*2\",\n        \"ServiceName\": \"html\",\n        \"VersionName\": \"html-002\",\n        \"RequestId\": \"ba0e079a-c85d-43ec-a313-7e88f251646c\"\n    }\n}",
+        "title": "创建云应用"
+      }
+    ],
     "CreateCustomLoginKey": [
       {
         "document": "",
@@ -236,6 +244,22 @@
         "title": "删除安全域名"
       }
     ],
+    "DeleteCloudApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudApp\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xx12\",\n    \"DeployType\": \"static-hosting\",\n    \"ServiceName\": \"vue\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"0c0f8ed3-dcb2-43cf-a3a1-9df779f2a0ec\"\n    }\n}",
+        "title": "删除云应用"
+      }
+    ],
+    "DeleteCloudAppVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudAppVersion\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xx12\",\n    \"DeployType\": \"static-hosting\",\n    \"ServiceName\": \"vue\",\n    \"VersionName\": \"vue-01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"c4ab40c6-be31-4b3c-b70d-de920f28d262\"\n    }\n}",
+        "title": "删除云应用版本"
+      }
+    ],
     "DeleteHTTPServiceRoute": [
       {
         "document": "删除域名及所有路由",
@@ -336,12 +360,50 @@
         "title": "查询客户端详情"
       }
     ],
+    "DescribeCloudAppCosInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppCosInfo\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xxx01\",\n    \"ServiceName\": \"vue\",\n    \"DeployType\": \"static-hosting\",\n    \"UnixTimestamp\": \"1709500000\",\n    \"Suffix\": \".zip\",\n    \"NeedDownload\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadHeaders\": [],\n        \"DownloadUrl\": \"https://xxx.cos.xxxx.myqcloud.com/xxx/static.zip?q-signature=xxxxxxxxxxx01sjjdhsd1190\",\n        \"UnixTimestamp\": \"1709500000\",\n        \"UploadHeaders\": [],\n        \"UploadUrl\": \"https://xxx.cos.xxxx.myqcloud.com/home/xxxx/static-0a94df-react-xxxx.zip?q-sign-algorithm=sha1&q-ak=xxxxxxx&q-sign-time=xxxxxx&q-key-time=177xxxxx&q-header-list=host&q-url-param-list=&q-signature=xxxxxxxxxxx01sjjdhsd1190\",\n        \"RequestId\": \"08c88424-ce2c-4fa5-9306-a442307fba46\"\n    }\n}",
+        "title": "查询云应用cos信息"
+      }
+    ],
+    "DescribeCloudAppInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AppPath\": \"/html\",\n        \"CreateTime\": \"2026-07-29 15:11:17\",\n        \"DeployType\": \"static-hosting\",\n        \"Domain\": \"html-************************.***a*****clou*********\",\n        \"Framework\": \"other\",\n        \"LatestBuildTime\": \"2026-07-29 15:13:16\",\n        \"LatestStatus\": \"******\",\n        \"LatestVersionName\": \"html-002\",\n        \"ServiceName\": \"html\",\n        \"RequestId\": \"1a868e16-5f2f-4a34-82d8-eb477dcaede3\"\n    }\n}",
+        "title": "查询应用详情"
+      }
+    ],
     "DescribeCloudAppList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppList\n<公共请求参数>\n\n{\n    \"EnvId\": \"l******-******53798f7294\",\n    \"DeployType\": \"static-hosting\",\n    \"PageSize\": 1,\n    \"PageNo\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ServiceList\": [\n            {\n                \"AppPath\": \"/React_New_TestT\",\n                \"CreateTime\": \"2026-05-29 10:58:46\",\n                \"DeployType\": \"static-hosting\",\n                \"Domain\": \"****************************************.webapps.tcloudbase.com\",\n                \"Framework\": \"react\",\n                \"LatestBuildTime\": \"2026-05-29 10:58:46\",\n                \"LatestStatus\": \"SUCCESS\",\n                \"LatestVersionName\": \"React_New_TestT-001\",\n                \"ServiceName\": \"React_New_TestT\"\n            }\n        ],\n        \"Total\": 6,\n        \"RequestId\": \"6f480c2b-7a8a-46e6-8207-09c472e70466\"\n    }\n}",
         "title": "查询云应用列表"
+      }
+    ],
+    "DescribeCloudAppVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppVersion\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-****************\",\n    \"ServiceName\": \"html\",\n    \"DeployType\": \"static-hosting\",\n    \"VersionName\": \"html-002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BuildId\": \"2*********\",\n        \"BuildTime\": \"2026-07-29 15:13:36\",\n        \"BuildType\": \"ZIP\",\n        \"Framework\": \"other\",\n        \"StaticConfig\": {\n            \"AppPath\": \"/html\",\n            \"BuildPath\": \"\",\n            \"CodeBranch\": \"\",\n            \"CodeRepo\": \"\",\n            \"CodeSource\": \"\",\n            \"CosSuffix\": \"zip\",\n            \"CosTimestamp\": \"1*********\",\n            \"Framework\": \"other\",\n            \"NodeJsVersion\": \"18\",\n            \"StaticCmd\": {\n                \"BuildCmd\": \"\",\n                \"DeployCmd\": \"tcb hosting deploy ./ /html\",\n                \"InstallCmd\": \"\"\n            },\n            \"StaticEnv\": {\n                \"Variables\": null\n            },\n            \"ZipFileUrl\": \"\"\n        },\n        \"Status\": \"FAILED\",\n        \"Steps\": null,\n        \"RequestId\": \"b47866f0-2863-4721-818a-34a6ecd37cf7\"\n    }\n}",
+        "title": "查询云应用信息"
+      }
+    ],
+    "DescribeCloudAppVersionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppVersionList\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xx12\",\n    \"DeployType\": \"static-hosting\",\n    \"ServiceName\": \"vue\",\n    \"PageSize\": 10,\n    \"PageNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"VersionList\": [\n            {\n                \"BuildId\": \"2600520664\",\n                \"BuildTime\": \"2026-03-12 17:08:31\",\n                \"BuildType\": \"TEMPLATE\",\n                \"Framework\": \"react\",\n                \"StaticConfig\": {\n                    \"AppPath\": \"/React\",\n                    \"BuildPath\": \"./dist\",\n                    \"CodeBranch\": \"main\",\n                    \"CodeRepo\": \"cloudrun\",\n                    \"CodeSource\": \"github\",\n                    \"CosSuffix\": \"cos-xx\",\n                    \"CosTimestamp\": \"1600520664\",\n                    \"Framework\": \"react\",\n                    \"NodeJsVersion\": \"20\",\n                    \"StaticCmd\": {\n                        \"BuildCmd\": \"npm run build\",\n                        \"DeployCmd\": \"tcb hosting deploy ./dist /React\",\n                        \"InstallCmd\": \"npm install\"\n                    },\n                    \"StaticEnv\": {\n                        \"Variables\": [\n                            {\n                                \"Key\": \"VITE_ENV_ID\",\n                                \"Value\": \"env-xx12\"\n                            }\n                        ]\n                    },\n                    \"ZipFileUrl\": \"https://example.com/weda-uploader/5*b*8*********0e02af98894fa96b28-raact-template.zip\"\n                },\n                \"Status\": \"SUCCESS\",\n                \"VersionName\": \"React-test-001\"\n            }\n        ],\n        \"RequestId\": \"d1aa2bbe-b1d5-498f-9b2e-9f74d0315907\"\n    }\n}",
+        "title": "查询云应用服务版本列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppVersionList\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-*********98f7294\",\n    \"DeployType\": \"custom\",\n    \"ServiceName\": \"my-docker-build-v1\",\n    \"PageSize\": 1,\n    \"PageNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 17,\n        \"VersionList\": [\n            {\n                \"BuildId\": \"2600928843\",\n                \"BuildTime\": \"2026-05-18 17:43:14\",\n                \"BuildType\": \"v2\",\n                \"Framework\": \"\",\n                \"StaticConfig\": {\n                    \"AppPath\": \"\",\n                    \"BuildPath\": \"\",\n                    \"CodeBranch\": \"\",\n                    \"CodeRepo\": \"\",\n                    \"CodeSource\": \"\",\n                    \"CosSuffix\": \"\",\n                    \"CosTimestamp\": \"\",\n                    \"Framework\": \"\",\n                    \"NodeJsVersion\": \"\",\n                    \"StaticCmd\": {\n                        \"BuildCmd\": \"\",\n                        \"DeployCmd\": \"\",\n                        \"InstallCmd\": \"\"\n                    },\n                    \"StaticEnv\": {\n                        \"Variables\": null\n                    },\n                    \"ZipFileUrl\": \"\"\n                },\n                \"Status\": \"FAILED\",\n                \"Steps\": [\n                    {\n                        \"Duration\": \"493ms\",\n                        \"Name\": \"检出 ZIP 包\",\n                        \"Status\": \"success\"\n                    }\n                ],\n                \"VersionName\": \"my-docker-build-v1-017\"\n            }\n        ],\n        \"RequestId\": \"92900e53-2ff1-4338-9a45-041008db13cb\"\n    }\n}",
+        "title": "查询自定义云应用列表"
       }
     ],
     "DescribeCloudBaseBuildService": [

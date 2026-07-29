@@ -1082,6 +1082,14 @@
         "title": "查询域名详细配置"
       }
     ],
+    "DescribeIPGroupReferences": [
+      {
+        "document": "查询站点 zone-3rovozqqi1s5 下的 ID 为 38300 的 IP 组引用情况。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPGroupReferences\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3rovozqqi1s5\",\n    \"GroupId\": 38300,\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"References\": [\n            {\n                \"EntityId\": \"zone-3rovozqqi1s5\",\n                \"EntityType\": \"WebSec.ZonePolicy\",\n                \"SubEntityId\": \"2181142607\",\n                \"SubEntityName\": \"规则策略\",\n                \"SubEntityType\": \"WebSec.ExceptionRule\",\n                \"ZoneId\": \"zone-3rovozqqi1s5\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5fb98cb7-1d89-4c3d-9dfe-cb23e418da25\"\n    }\n}",
+        "title": "查询 IP 组引用情况"
+      }
+    ],
     "DescribeIPRegion": [
       {
         "document": "",

@@ -50,10 +50,10 @@
     ],
     "ChangeReplicaToMaster": [
       {
-        "document": "多AZ、单AZ场景下的副本提主",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeReplicaToMaster\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5****\",\n    \"GroupId\": 301524\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\n        \"TaskId\": 10856\n    }\n}",
-        "title": "请求示例"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeReplicaToMaster\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-j7oyys27\",\n    \"GroupId\": 378132,\n    \"Emergency\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 2031393158,\n        \"RequestId\": \"93c2ebae-0295-4fdf-ba44-fc88badae439\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "CleanUpInstance": [

@@ -1454,6 +1454,14 @@
         "title": "升级云数据库实例版本"
       }
     ],
+    "UpgradeRoGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeRoGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxx\",\n    \"UniqRoGroupId\": \"cdbrg-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
+        "title": "只读组升级为纯网络转发模式"
+      }
+    ],
     "VerifyRootAccount": [
       {
         "document": "",

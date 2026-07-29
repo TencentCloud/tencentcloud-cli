@@ -3862,7 +3862,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -3872,7 +3872,7 @@
         },
         {
           "disabled": false,
-          "document": "设备唯一标识符",
+          "document": "<p>设备唯一标识符</p>",
           "example": "10527BB0BE025F40B5E8A7D00B5E13E268243DBB",
           "member": "string",
           "name": "Mid",
@@ -3882,7 +3882,7 @@
         },
         {
           "disabled": false,
-          "document": "OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS",
+          "document": "<p>OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -3892,7 +3892,7 @@
         },
         {
           "disabled": false,
-          "document": "终端名",
+          "document": "<p>终端名</p>",
           "example": "MAGICTONG-PC4",
           "member": "string",
           "name": "Name",
@@ -3902,7 +3902,7 @@
         },
         {
           "disabled": false,
-          "document": "终端用户名",
+          "document": "<p>终端用户名</p>",
           "example": "magic",
           "member": "string",
           "name": "UserName",
@@ -3912,7 +3912,7 @@
         },
         {
           "disabled": false,
-          "document": "授权状态（ 4未授权 5已授权）",
+          "document": "<p>授权状态（ 4未授权 5已授权）</p>",
           "example": "5",
           "member": "int64",
           "name": "Status",
@@ -3922,7 +3922,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组ID",
+          "document": "<p>设备所属分组ID</p>",
           "example": "1578",
           "member": "int64",
           "name": "GroupId",
@@ -3932,7 +3932,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组名",
+          "document": "<p>设备所属分组名</p>",
           "example": "未分组终端",
           "member": "string",
           "name": "GroupName",
@@ -3942,7 +3942,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组路径",
+          "document": "<p>设备所属分组路径</p>",
           "example": "全网终端.未分组终端",
           "member": "string",
           "name": "GroupNamePath",
@@ -3952,7 +3952,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的姓名",
+          "document": "<p>最近登录账户的姓名</p>",
           "example": "张三",
           "member": "string",
           "name": "AccountName",
@@ -3962,7 +3962,7 @@
         },
         {
           "disabled": false,
-          "document": "出口IP",
+          "document": "<p>出口IP</p>",
           "example": "113.108.77.50",
           "member": "string",
           "name": "Ip",
@@ -3972,7 +3972,7 @@
         },
         {
           "disabled": false,
-          "document": "MAC地址",
+          "document": "<p>MAC地址</p>",
           "example": "00:0C:29:DD:00:06",
           "member": "string",
           "name": "MacAddr",
@@ -3982,7 +3982,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU品牌型号",
+          "document": "<p>CPU品牌型号</p>",
           "example": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GH",
           "member": "string",
           "name": "Cpu",
@@ -3992,7 +3992,7 @@
         },
         {
           "disabled": false,
-          "document": "内存信息",
+          "document": "<p>内存信息</p>",
           "example": "4 GB",
           "member": "string",
           "name": "Memory",
@@ -4002,7 +4002,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘信息",
+          "document": "<p>硬盘信息</p>",
           "example": "VMware, VMware Virtual S SCSI Disk Device 1 GB",
           "member": "string",
           "name": "HardDiskSize",
@@ -4012,7 +4012,7 @@
         },
         {
           "disabled": false,
-          "document": "显示器品牌型号",
+          "document": "<p>显示器品牌型号</p>",
           "example": "Parallels Vu",
           "member": "string",
           "name": "Monitor",
@@ -4022,10 +4022,20 @@
         },
         {
           "disabled": false,
-          "document": "终端备注名",
+          "document": "<p>终端备注名</p>",
           "example": "leizi的电脑",
           "member": "string",
           "name": "RemarkName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>BiosUUID（启动盘标识符）</p>",
+          "example": "39034D56-42EE-9A2C-CD56-EFBAD7DD000E",
+          "member": "string",
+          "name": "BiosUuid",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6017,6 +6027,17 @@
           "example": "张三的终端",
           "member": "string",
           "name": "RemarkName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>BiosUUID（启动盘标识符）</p>",
+          "example": "39034D56-42EE-9A2C-CD56-EFBAD7DD000E",
+          "member": "string",
+          "name": "BiosUuid",
           "output_required": false,
           "required": false,
           "type": "string",

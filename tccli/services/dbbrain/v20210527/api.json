@@ -63,6 +63,13 @@
       "output": "CreateDBDiagReportUrlResponse",
       "status": "online"
     },
+    "CreateDBDiagReportUrls": {
+      "document": "批量创建健康报告的PDF下载链接，支持一次获取多个报告的下载地址。",
+      "input": "CreateDBDiagReportUrlsRequest",
+      "name": "批量创建健康报告下载链接",
+      "output": "CreateDBDiagReportUrlsResponse",
+      "status": "online"
+    },
     "CreateIgnoreDiagRecord": {
       "document": "对实例的某个诊断项设置忽略或取消忽略状态。",
       "input": "CreateIgnoreDiagRecordRequest",
@@ -264,6 +271,13 @@
       "input": "DescribeDBDiagReportTasksRequest",
       "name": "查询健康报告生成任务列表",
       "output": "DescribeDBDiagReportTasksResponse",
+      "status": "online"
+    },
+    "DescribeDBInstances": {
+      "document": "根据实例ID列表查询数据库实例基本信息，支持跨产品查询（MySQL、CynosDB、MariaDB、DCDB、MongoDB、PostgreSQL、Redis、TDStore等）。不支持分页，通过InstanceIds限制查询数量（最多100条）。",
+      "input": "DescribeDBInstancesRequest",
+      "name": "查询数据库实例信息（支持批量多数据库实例类型查询）",
+      "output": "DescribeDBInstancesResponse",
       "status": "online"
     },
     "DescribeDBPerfTimeSeries": {
@@ -2167,6 +2181,62 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBDiagReportUrlsRequest": {
+      "document": "CreateDBDiagReportUrls请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;postgres&quot; - 云数据库 PostgreSQL。</p>",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步任务ID列表。</p>",
+          "example": "[68974526]",
+          "member": "int64",
+          "name": "AsyncRequestIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBDiagReportUrlsResponse": {
+      "document": "CreateDBDiagReportUrls返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>URL条目总数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>报告URL信息列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "DiagReportUrlItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4403,8 +4473,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。",
-          "example": "2019-09-10 12:13:14",
+          "document": "<p>第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>",
+          "example": "2019-09-10T12:13:14+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
@@ -4412,8 +4482,8 @@
         },
         {
           "disabled": false,
-          "document": "最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。",
-          "example": "2019-09-10 12:13:14",
+          "document": "<p>最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。</p>",
+          "example": "2019-09-10T12:13:14+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -4421,7 +4491,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID数组，用于筛选指定实例的任务列表。",
+          "document": "<p>实例ID数组，用于筛选指定实例的任务列表。。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。</p>",
           "example": "[\"cdb-c1nl9rpv\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -4430,7 +4500,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的触发来源，支持的取值包括：\"DAILY_INSPECTION\" - 实例巡检；\"SCHEDULED\" - 计划任务；\"MANUAL\" - 手动触发。",
+          "document": "<p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 计划任务；&quot;MANUAL&quot; - 手动触发。</p>",
           "example": "[\"DAILY_INSPECTION\"]",
           "member": "string",
           "name": "Sources",
@@ -4439,7 +4509,7 @@
         },
         {
           "disabled": false,
-          "document": "报告的健康等级，支持的取值包括：\"HEALTH\" - 健康；\"SUB_HEALTH\" - 亚健康；\"RISK\" - 危险；\"HIGH_RISK\" - 高危。",
+          "document": "<p>报告的健康等级，支持的取值包括：&quot;HEALTH&quot; - 健康；&quot;SUB_HEALTH&quot; - 亚健康；&quot;RISK&quot; - 危险；&quot;HIGH_RISK&quot; - 高危。</p>",
           "example": "[\"HEALTH\"]",
           "member": "string",
           "name": "HealthLevels",
@@ -4448,7 +4518,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的状态，支持的取值包括：\"created\" - 新建；\"chosen\" - 待执行； \"running\" - 执行中；\"failed\" - 失败；\"finished\" - 已完成。",
+          "document": "<p>任务的状态，支持的取值包括：&quot;created&quot; - 新建；&quot;chosen&quot; - 待执行； &quot;running&quot; - 执行中；&quot;failed&quot; - 失败；&quot;finished&quot; - 已完成。</p>",
           "example": "[\"finished\"]",
           "member": "string",
           "name": "TaskStatuses",
@@ -4457,7 +4527,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0。",
+          "document": "<p>偏移量，默认0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4466,7 +4536,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大值为100。",
+          "document": "<p>返回数量，默认20，最大值为100。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -4475,12 +4545,21 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
+          "document": "<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据任务所属实例的标签信息进行过滤</p>",
+          "example": "无",
+          "member": "TagFilterGroup",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4490,7 +4569,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务总数目。",
+          "document": "<p>任务总数目。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -4500,10 +4579,47 @@
         },
         {
           "disabled": false,
-          "document": "任务列表。",
+          "document": "<p>任务列表。</p>",
           "example": "无",
           "member": "HealthReportTask",
           "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesRequest": {
+      "document": "DescribeDBInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID列表，最多支持100个。支持多种数据库产品的实例ID，系统会根据实例ID前缀自动识别产品类型。</p>",
+          "example": "[\"cdb-lvgh1oyv\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesResponse": {
+      "document": "DescribeDBInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例列表。</p>",
+          "example": "",
+          "member": "InstanceItem",
+          "name": "Items",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -8368,6 +8484,42 @@
       ],
       "usage": "out"
     },
+    "DiagReportUrlItem": {
+      "document": "健康报告URL信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告下载地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ReportUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间，Unix时间戳（秒），-1表示永不过期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "EventInfo": {
       "document": "异常事件信息。",
       "members": [
@@ -8505,7 +8657,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务请求 ID。",
+          "document": "<p>异步任务请求 ID。</p>",
           "example": "63452",
           "member": "int64",
           "name": "AsyncRequestId",
@@ -8515,7 +8667,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的触发来源，支持的取值包括：\"DAILY_INSPECTION\" - 实例巡检；\"SCHEDULED\" - 定时生成；\"MANUAL\" - 手动触发。",
+          "document": "<p>任务的触发来源，支持的取值包括：&quot;DAILY_INSPECTION&quot; - 实例巡检；&quot;SCHEDULED&quot; - 定时生成；&quot;MANUAL&quot; - 手动触发。</p>",
           "example": "DAILY_INSPECTION",
           "member": "string",
           "name": "Source",
@@ -8525,7 +8677,7 @@
         },
         {
           "disabled": false,
-          "document": "任务完成进度，单位%。",
+          "document": "<p>任务完成进度，单位%。</p>",
           "example": "100",
           "member": "int64",
           "name": "Progress",
@@ -8535,7 +8687,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间。",
+          "document": "<p>任务创建时间，如“2025-09-30 12:13:14”。</p>",
           "example": "2019-09-10 12:13:14",
           "member": "datetime",
           "name": "CreateTime",
@@ -8545,7 +8697,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始执行时间。",
+          "document": "<p>任务开始执行时间，如“2025-09-30 13:13:14”。</p>",
           "example": "2019-09-10 12:13:14",
           "member": "datetime",
           "name": "StartTime",
@@ -8555,7 +8707,7 @@
         },
         {
           "disabled": false,
-          "document": "任务完成执行时间。",
+          "document": "<p>任务完成执行时间，如“2025-09-30 14:13:14”。</p>",
           "example": "2019-09-10 12:13:14",
           "member": "datetime",
           "name": "EndTime",
@@ -8565,7 +8717,7 @@
         },
         {
           "disabled": false,
-          "document": "任务所属实例的基础信息。",
+          "document": "<p>任务所属实例的基础信息。</p>",
           "example": "无",
           "member": "InstanceBasicInfo",
           "name": "InstanceInfo",
@@ -8575,12 +8727,22 @@
         },
         {
           "disabled": false,
-          "document": "健康报告中的健康信息。",
+          "document": "<p>健康报告中的健康信息。</p>",
           "example": "无",
           "member": "HealthStatus",
           "name": "HealthStatus",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务所属实例的标签信息</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8961,8 +9123,8 @@
         },
         {
           "disabled": false,
-          "document": "实例部署模式。",
-          "example": "\"Standard\"",
+          "document": "实例部署模式。MySQL 实例类型取值包括\"STANDARD\"-标准类型,\"CUSTOM\"-普通类型, \"EXCLUSIVE\"-独占类型, \"CUSTOMER_AGENT\"-用户代理类型, \"CUSTOMER_DIRECT\"-用户直连类型,\n\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\"-云原生独占集群, \"CLOUD_NATIVE_CLUSTER\"-云原生集群。",
+          "example": "\"STANDARD\"",
           "member": "string",
           "name": "DeployMode",
           "output_required": false,
@@ -9473,6 +9635,100 @@
         }
       ],
       "usage": "out"
+    },
+    "InstanceItem": {
+      "document": "数据库实例基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。",
+          "example": "",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域英文ID。",
+          "example": "",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID，仅集群类产品返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "EngineVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态，1表示运行中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例到期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DeadlineTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "IssueTypeInfo": {
       "document": "指标信息。",
@@ -12616,6 +12872,79 @@
         }
       ],
       "usage": "out"
+    },
+    "TagFilterGroup": {
+      "document": "标签过滤组。组内 TagPairs 之间为 OR 关系；不同 TagFilterGroup 之间为 AND 关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件-标签组</p>",
+          "example": "无",
+          "member": "TagPair",
+          "name": "TagPairs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagInfo": {
+      "document": "实例标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例标签key</p>",
+          "example": "tagKey",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例标签value</p>",
+          "example": "tagValue",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagPair": {
+      "document": "标签键值对过滤条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件-标签key</p>",
+          "example": "cdb_has_ro_01",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件标签-value</p>",
+          "example": "[\"dbb-task-value-5.2\"]",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TaskInfo": {
       "document": "展示 redis kill 会话任务状态。",

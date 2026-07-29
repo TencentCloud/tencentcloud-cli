@@ -61600,7 +61600,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要检索分析的日志的起始时间，Unix时间戳（毫秒）",
+          "document": "<p>要检索分析的日志的起始时间，Unix时间戳（毫秒）</p>",
           "example": "1656641065449",
           "member": "int64",
           "name": "StartTime",
@@ -61609,7 +61609,7 @@
         },
         {
           "disabled": false,
-          "document": "要检索分析的日志的结束时间，Unix时间戳（毫秒）",
+          "document": "<p>要检索分析的日志的结束时间，Unix时间戳（毫秒）</p>",
           "example": "1656641965449",
           "member": "int64",
           "name": "EndTime",
@@ -61618,7 +61618,7 @@
         },
         {
           "disabled": false,
-          "document": "检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508",
+          "document": "<p>检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508</p>",
           "example": "status: \"待处理\" AND public_ip_addresses: (1* OR 2*)",
           "member": "string",
           "name": "QueryString",
@@ -61627,7 +61627,7 @@
         },
         {
           "disabled": false,
-          "document": "表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数",
+          "document": "<p>表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数</p>",
           "example": "20",
           "member": "int64",
           "name": "Count",
@@ -61636,7 +61636,7 @@
         },
         {
           "disabled": false,
-          "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
+          "document": "<p>原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc</p>",
           "example": "desc",
           "member": "string",
           "name": "Sort",
@@ -61645,7 +61645,7 @@
         },
         {
           "disabled": false,
-          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时",
+          "document": "<p>透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时</p>",
           "example": "search",
           "member": "string",
           "name": "Context",
@@ -61660,7 +61660,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配检索条件的原始日志的数量",
+          "document": "<p>匹配检索条件的原始日志的数量</p>",
           "example": "17",
           "member": "int64",
           "name": "Count",
@@ -61670,7 +61670,7 @@
         },
         {
           "disabled": false,
-          "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时",
+          "document": "<p>透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时</p>",
           "example": "content",
           "member": "string",
           "name": "Context",
@@ -61680,7 +61680,7 @@
         },
         {
           "disabled": false,
-          "document": "符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志",
+          "document": "<p>符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志</p>",
           "example": "false",
           "member": "bool",
           "name": "ListOver",
@@ -61690,7 +61690,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的是否为统计分析（即SQL）结果",
+          "document": "<p>返回的是否为统计分析（即SQL）结果</p>",
           "example": "false",
           "member": "bool",
           "name": "Analysis",
@@ -61700,8 +61700,8 @@
         },
         {
           "disabled": false,
-          "document": "匹配检索条件的原始日志",
-          "example": "{\"Content\": \"{\\\"hostip\\\":\\\"10.0.0.6\\\",\\\"event_status\\\":\\\"modify\\\",\\\"status\\\":\\\"待处理\\\"}\", \"TimeStamp\": 1656641946000}",
+          "document": "<p>匹配检索条件的原始日志</p>",
+          "example": "无",
           "member": "LogInfo",
           "name": "Data",
           "output_required": true,

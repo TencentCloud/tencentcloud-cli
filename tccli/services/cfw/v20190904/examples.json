@@ -336,6 +336,12 @@
         "title": "新增永久 IP 封禁规则"
       },
       {
+        "document": "双向封禁一个 IP，DirectionList 传 \"1,0\"，同时阻断互联网入向和出向流量。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockIgnoreRuleNew\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"192.0.2.10\",\n            \"DirectionList\": \"1,0\",\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Comment\": \"双向永久封禁示例\"\n        }\n    ],\n    \"RuleType\": 1,\n    \"CoverDuplicate\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000002\"\n    }\n}",
+        "title": "新增双向永久 IP 封禁规则"
+      },
+      {
         "document": "新增一条出站封禁规则；如放通列表中已有同 IP、同方向规则，CoverDuplicate=1 会保留本次封禁并删除冲突放通规则。",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockIgnoreRuleNew\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"203.0.113.20\",\n            \"DirectionList\": \"0\",\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Comment\": \"替换互斥规则示例\"\n        }\n    ],\n    \"RuleType\": 1,\n    \"CoverDuplicate\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000005\"\n    }\n}",
@@ -361,7 +367,7 @@
       },
       {
         "document": "将一个 IP 情报对象添加到互联网出入站放通列表。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockIgnoreRuleNew\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"192.0.2.40\",\n            \"DirectionList\": \"0,1\",\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Comment\": \"情报放通示例\"\n        }\n    ],\n    \"RuleType\": 4\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockIgnoreRuleNew\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"192.0.2.40\",\n            \"DirectionList\": \"1,0\",\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Comment\": \"情报放通示例\"\n        }\n    ],\n    \"RuleType\": 4\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000009\"\n    }\n}",
         "title": "新增情报放通规则"
       },
@@ -379,7 +385,7 @@
       },
       {
         "document": "用户要求同一条自定义策略应用于互联网边界、NAT 和 VPC 防火墙时，调用 DescribeCfwAssets 取资产 IP 作为 SrcIP，调用 DescribeIpsRuleListNew 取 Data[].RuleID；FwType=15 表示请求旁路、NAT、VPC 和串行引擎，服务会按源和目的地址实际适用的引擎收窄。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockIgnoreRuleNew\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"\",\n            \"DirectionList\": \"0,1\",\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Comment\": \"多引擎自定义放通规则\",\n            \"FwType\": 15,\n            \"CustomRule\": {\n                \"SrcIP\": \"10.0.0.10\",\n                \"DstIP\": \"198.51.100.20\",\n                \"IdsRuleId\": \"20001\",\n                \"IdsRuleName\": \"多引擎自定义放通规则\"\n            }\n        }\n    ],\n    \"RuleType\": 6,\n    \"CoverDuplicate\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockIgnoreRuleNew\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"\",\n            \"DirectionList\": \"1,0\",\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Comment\": \"多引擎自定义放通规则\",\n            \"FwType\": 15,\n            \"CustomRule\": {\n                \"SrcIP\": \"10.0.0.10\",\n                \"DstIP\": \"198.51.100.20\",\n                \"IdsRuleId\": \"20001\",\n                \"IdsRuleName\": \"多引擎自定义放通规则\"\n            }\n        }\n    ],\n    \"RuleType\": 6,\n    \"CoverDuplicate\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000011\"\n    }\n}",
         "title": "新增多引擎自定义放通规则"
       }
