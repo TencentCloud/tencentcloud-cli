@@ -220,7 +220,7 @@
 | pds | [私域安全](http://document.tencentcloudapi.woa.com/document/product/1473) | [查看](http://document.tencentcloudapi.woa.com/document/product/1596/75285) | 2024-12-09 11:27:13 |
 | plm | [产品库](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1797/87249) | 2026-07-24 03:43:23 |
 | portal | [官网](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1732/80934) | 2026-07-24 03:43:37 |
-| postgres | [云数据库 PostgreSQL](http://document.tencentcloudapi.woa.com/document/product/409) | [查看](http://document.tencentcloudapi.woa.com/document/product/409/16779) | 2026-06-26 01:36:03 |
+| postgres | [云数据库 PostgreSQL](http://document.tencentcloudapi.woa.com/document/product/409) | [查看](http://document.tencentcloudapi.woa.com/document/product/409/16779) | 2026-07-29 10:28:06 |
 | privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | [查看](http://document.tencentcloudapi.woa.com/document/product/1338/55957) | 2026-07-29 02:26:29 |
 | pts | [云压测](http://document.tencentcloudapi.woa.com/document/product/1484) | [查看](http://document.tencentcloudapi.woa.com/document/product/1597/75238) | 2026-07-24 03:44:32 |
 | qinge | [青鹅大数据运营平台](http://document.tencentcloudapi.woa.com/document/product/-1) | [查看](http://document.tencentcloudapi.woa.com/document/product/1763/83960) | 2024-05-24 01:23:18 |
@@ -275,6 +275,7 @@
 | tcv | [腾讯云图数据可视化](http://document.tencentcloudapi.woa.com/document/product/665) | [查看](http://document.tencentcloudapi.woa.com/document/product/1686/79730) | 2026-05-19 02:30:31 |
 | tdai | [腾讯云数据库 AI 服务](http://document.tencentcloudapi.woa.com/document/product/1813) | [查看](http://document.tencentcloudapi.woa.com/document/product/1802/91691) | 2026-07-24 04:10:32 |
 | tdapg | [TDSQL-A PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1679/79556) | 2023-08-17 02:59:23 |
+| tdata | [TDSQL-A PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product) | 2023-08-17 02:59:23 |
 | tdcpg | [TDSQL-C PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/1556) | [查看](http://document.tencentcloudapi.woa.com/document/product/1703/80278) | 2026-07-24 04:10:49 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | [查看](http://document.tencentcloudapi.woa.com/document/product/1439/60293) | 2023-07-24 01:44:15 |
 | tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | [查看](http://document.tencentcloudapi.woa.com/document/product/1179/46093) | 2026-07-24 04:11:04 |

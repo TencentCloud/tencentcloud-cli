@@ -1,4 +1,4 @@
-# Release 3.0.1464.1
+# Release 3.0.1465.1
 
 ## 智能顾问(advisor) 版本：2020-07-21
 
@@ -168,6 +168,55 @@
 
 * [DeviceCertificateBackupHistoryItem](http://document.tencentcloudapi.woa.com/document/product/1773/84898#DeviceCertificateBackupHistoryItem)
 * [DeviceIdentityBackupHistoryItem](http://document.tencentcloudapi.woa.com/document/product/1773/84898#DeviceIdentityBackupHistoryItem)
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 63 次发布
+
+发布时间：2026-07-29 10:28:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateDBProxy](http://document.tencentcloudapi.woa.com/document/product/409/92008)
+* [DescribeDBProxy](http://document.tencentcloudapi.woa.com/document/product/409/92007)
+* [DescribeDBProxySpecs](http://document.tencentcloudapi.woa.com/document/product/409/92006)
+* [DestroyDBProxy](http://document.tencentcloudapi.woa.com/document/product/409/92005)
+* [ModifyDBProxy](http://document.tencentcloudapi.woa.com/document/product/409/92004)
+* [ModifyDBProxyAddress](http://document.tencentcloudapi.woa.com/document/product/409/92003)
+* [ReloadBalanceDBProxyNode](http://document.tencentcloudapi.woa.com/document/product/409/92002)
+
+修改接口：
+
+* [DescribeDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/409/76819)
+
+	* 新增入参：ProxyAddressId
+
+* [ModifyDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/409/76818)
+
+	* 新增入参：ProxyAddressId
+
+
+新增数据结构：
+
+* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/409/16778#ProxyAddress)
+* [ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#ProxyGroupInfo)
+* [ProxyNode](http://document.tencentcloudapi.woa.com/document/product/409/16778#ProxyNode)
+* [ProxyNodeCustom](http://document.tencentcloudapi.woa.com/document/product/409/16778#ProxyNodeCustom)
+* [ProxyRoute](http://document.tencentcloudapi.woa.com/document/product/409/16778#ProxyRoute)
+* [ProxySpecItem](http://document.tencentcloudapi.woa.com/document/product/409/16778#ProxySpecItem)
+
+修改数据结构：
+
+* [CreateInstanceAIConfig](http://document.tencentcloudapi.woa.com/document/product/409/16778#CreateInstanceAIConfig)
+
+	* 新增成员：MultiTenantEnabled, IgnoreTenantVpc
+
 
 
 
