@@ -4476,93 +4476,124 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组名称",
-          "example": "-",
+          "document": "<p>资源组名称</p>",
+          "example": "办公资源",
           "member": "string",
           "name": "GroupName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源名称",
-          "example": "-",
+          "document": "<p>资源名称</p>",
+          "example": "HR系统",
           "member": "string",
           "name": "ResourceName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源地址型",
-          "example": "-",
+          "document": "<p>资源地址型</p>",
+          "example": "1",
           "member": "string",
           "name": "ResourceType",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源地址",
-          "example": "-",
+          "document": "<p>资源地址</p>",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "ResourceAddr",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源端口",
-          "example": "-",
+          "document": "<p>资源端口</p>",
+          "example": "80",
           "member": "string",
           "name": "ResourcePorts",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源连接方式",
-          "example": "-",
+          "document": "<p>资源连接方式</p>",
+          "example": "1",
           "member": "string",
           "name": "DirectConn",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源协议类型",
-          "example": "-",
+          "document": "<p>资源协议类型</p>",
+          "example": "tcp",
           "member": "string",
           "name": "Protocol",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专线名称",
-          "example": "-",
+          "document": "<p>专线名称</p>",
+          "example": "*",
           "member": "string",
           "name": "PrivateNetName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误描述",
-          "example": "-",
+          "document": "<p>网关名称（仅私有化有效）</p>",
+          "example": "**专线",
+          "member": "string",
+          "name": "SmartGateGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误描述</p>",
+          "example": "无",
           "member": "FieldErrorMsg",
           "name": "Errors",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>优先级</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Levels",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -17918,7 +17949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "<p>设备ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -17928,7 +17959,7 @@
         },
         {
           "disabled": false,
-          "document": "设备唯一标识符",
+          "document": "<p>设备唯一标识符</p>",
           "example": "10527BB0BE025F40B5E8A7D00B5E13E268243DBB",
           "member": "string",
           "name": "Mid",
@@ -17938,7 +17969,7 @@
         },
         {
           "disabled": false,
-          "document": "OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS",
+          "document": "<p>OS平台 0 Windows 1 Linux 2 macOS 4 Android 5 iOS</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -17948,7 +17979,7 @@
         },
         {
           "disabled": false,
-          "document": "终端名",
+          "document": "<p>终端名</p>",
           "example": "MAGICTONG-PC4",
           "member": "string",
           "name": "Name",
@@ -17958,7 +17989,7 @@
         },
         {
           "disabled": false,
-          "document": "终端用户名",
+          "document": "<p>终端用户名</p>",
           "example": "magic",
           "member": "string",
           "name": "UserName",
@@ -17968,7 +17999,7 @@
         },
         {
           "disabled": false,
-          "document": "授权状态（ 4未授权 5已授权）",
+          "document": "<p>授权状态（ 4未授权 5已授权）</p>",
           "example": "5",
           "member": "int64",
           "name": "Status",
@@ -17978,7 +18009,7 @@
         },
         {
           "disabled": false,
-          "document": "在线状态 2 在线 0，1 离线",
+          "document": "<p>在线状态 2 在线 0，1 离线</p>",
           "example": "2",
           "member": "int64",
           "name": "OnlineStatus",
@@ -17988,7 +18019,7 @@
         },
         {
           "disabled": false,
-          "document": "设备是否加锁 1 锁定 0 2 非锁定",
+          "document": "<p>设备是否加锁 1 锁定 0 2 非锁定</p>",
           "example": "0",
           "member": "int64",
           "name": "Locked",
@@ -17998,7 +18029,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组ID",
+          "document": "<p>设备所属分组ID</p>",
           "example": "1578",
           "member": "int64",
           "name": "GroupId",
@@ -18008,7 +18039,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组名",
+          "document": "<p>设备所属分组名</p>",
           "example": "未分组终端",
           "member": "string",
           "name": "GroupName",
@@ -18018,7 +18049,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属分组路径",
+          "document": "<p>设备所属分组路径</p>",
           "example": "全网终端.未分组终端",
           "member": "string",
           "name": "GroupNamePath",
@@ -18028,7 +18059,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的账号",
+          "document": "<p>最近登录账户的账号</p>",
           "example": "lucal",
           "member": "string",
           "name": "IOAUserName",
@@ -18038,7 +18069,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的姓名",
+          "document": "<p>最近登录账户的姓名</p>",
           "example": "张三",
           "member": "string",
           "name": "AccountName",
@@ -18048,7 +18079,7 @@
         },
         {
           "disabled": false,
-          "document": "出口IP",
+          "document": "<p>出口IP</p>",
           "example": "113.108.77.50",
           "member": "string",
           "name": "Ip",
@@ -18058,7 +18089,7 @@
         },
         {
           "disabled": false,
-          "document": "MAC地址",
+          "document": "<p>MAC地址</p>",
           "example": "00:0C:29:DD:00:06",
           "member": "string",
           "name": "MacAddr",
@@ -18068,7 +18099,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU品牌型号",
+          "document": "<p>CPU品牌型号</p>",
           "example": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GH",
           "member": "string",
           "name": "Cpu",
@@ -18078,7 +18109,7 @@
         },
         {
           "disabled": false,
-          "document": "内存信息",
+          "document": "<p>内存信息</p>",
           "example": "4 GB",
           "member": "string",
           "name": "Memory",
@@ -18088,7 +18119,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘信息",
+          "document": "<p>硬盘信息</p>",
           "example": "VMware, VMware Virtual S SCSI Disk Device 1 GB",
           "member": "string",
           "name": "HardDiskSize",
@@ -18098,7 +18129,7 @@
         },
         {
           "disabled": false,
-          "document": "显示器品牌型号",
+          "document": "<p>显示器品牌型号</p>",
           "example": "Parallels Vu",
           "member": "string",
           "name": "Monitor",
@@ -18108,7 +18139,7 @@
         },
         {
           "disabled": false,
-          "document": "硬件变更记录数量",
+          "document": "<p>硬件变更记录数量</p>",
           "example": "5",
           "member": "int64",
           "name": "HardwareChangeCount",
@@ -18118,7 +18149,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU占用率（%）",
+          "document": "<p>CPU占用率（%）</p>",
           "example": "50.00",
           "member": "float",
           "name": "CpuUsage",
@@ -18128,7 +18159,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU温度（摄氏度）",
+          "document": "<p>CPU温度（摄氏度）</p>",
           "example": "37.00",
           "member": "float",
           "name": "CpuTemperature",
@@ -18138,7 +18169,7 @@
         },
         {
           "disabled": false,
-          "document": "内存占用率（%）",
+          "document": "<p>内存占用率（%）</p>",
           "example": "40.00",
           "member": "float",
           "name": "MemoryUsage",
@@ -18148,7 +18179,7 @@
         },
         {
           "disabled": false,
-          "document": "iOA内存占用率（%）",
+          "document": "<p>iOA内存占用率（%）</p>",
           "example": "10.00",
           "member": "float",
           "name": "IOAMemoryUsage",
@@ -18158,7 +18189,7 @@
         },
         {
           "disabled": false,
-          "document": "终端备注名",
+          "document": "<p>终端备注名</p>",
           "example": "leizi的电脑",
           "member": "string",
           "name": "RemarkName",
@@ -18168,7 +18199,7 @@
         },
         {
           "disabled": false,
-          "document": "设备健康检测状态(0:健康分析, 1:分析中, 2:分析完成, 3:分析失败)",
+          "document": "<p>设备健康检测状态(0:健康分析, 1:分析中, 2:分析完成, 3:分析失败)</p>",
           "example": "0",
           "member": "int64",
           "name": "EndpointHealthCheckStatus",
@@ -18178,7 +18209,7 @@
         },
         {
           "disabled": false,
-          "document": "设备健康检测结果(1:无需更换, 2:建议更换, 3:立即更换, 4:暂无数据)(设备健康检测状态为2时才有意义)",
+          "document": "<p>设备健康检测结果(1:无需更换, 2:建议更换, 3:立即更换, 4:暂无数据)(设备健康检测状态为2时才有意义)</p>",
           "example": "1",
           "member": "int64",
           "name": "EndpointHealthStatus",
@@ -18188,7 +18219,7 @@
         },
         {
           "disabled": false,
-          "document": "设备健康检测详情(设备健康检测状态为2时才有意义)",
+          "document": "<p>设备健康检测详情(设备健康检测状态为2时才有意义)</p>",
           "example": "当前终端硬件配置尚可...",
           "member": "string",
           "name": "EndpointHealthSummary",
@@ -18198,7 +18229,7 @@
         },
         {
           "disabled": false,
-          "document": "最新的一次硬件设备变更key",
+          "document": "<p>最新的一次硬件设备变更key</p>",
           "example": "cpu",
           "member": "string",
           "name": "HardwareChangeKey",
@@ -18208,7 +18239,7 @@
         },
         {
           "disabled": false,
-          "document": "硬件设备变更旧值",
+          "document": "<p>硬件设备变更旧值</p>",
           "example": "i5",
           "member": "string",
           "name": "HardwareChangeOld",
@@ -18218,7 +18249,7 @@
         },
         {
           "disabled": false,
-          "document": "硬件设备变更新值",
+          "document": "<p>硬件设备变更新值</p>",
           "example": "i7",
           "member": "string",
           "name": "HardwareChangeNew",
@@ -18228,7 +18259,7 @@
         },
         {
           "disabled": false,
-          "document": "1",
+          "document": "<p>1</p>",
           "example": "10.00",
           "member": "float",
           "name": "SystemDiskUsage",
@@ -18238,12 +18269,22 @@
         },
         {
           "disabled": false,
-          "document": "1",
+          "document": "<p>1</p>",
           "example": "10.00",
           "member": "float",
           "name": "DiskUsage",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>BiosUUID（启动盘标识符）</p>",
+          "example": "39034D56-42EE-9A2C-CD56-EFBAD7DD000E",
+          "member": "string",
+          "name": "BiosUuid",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -33153,6 +33194,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>BiosUUID（启动盘标识符）</p>",
+          "example": "39034D56-42EE-9A2C-CD56-EFBAD7DD000E",
+          "member": "string",
+          "name": "BiosUuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -45326,7 +45378,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略列表ID(只支持32位)",
+          "document": "<p>策略列表ID(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "PolicyId",
@@ -45337,7 +45389,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名",
+          "document": "<p>策略名</p>",
           "example": "A",
           "member": "string",
           "name": "Name",
@@ -45348,7 +45400,7 @@
         },
         {
           "disabled": false,
-          "document": "策略启用状态(只支持32位)",
+          "document": "<p>策略启用状态(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -45359,7 +45411,7 @@
         },
         {
           "disabled": false,
-          "document": "策略描述",
+          "document": "<p>策略描述</p>",
           "example": "A",
           "member": "string",
           "name": "Description",
@@ -45370,7 +45422,7 @@
         },
         {
           "disabled": false,
-          "document": "策略优先级(只支持32位)",
+          "document": "<p>策略优先级(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "Priority",
@@ -45381,7 +45433,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型(只支持32位)",
+          "document": "<p>策略类型(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "PolicyType",
@@ -45392,7 +45444,7 @@
         },
         {
           "disabled": false,
-          "document": "策略子类型(只支持32位)",
+          "document": "<p>策略子类型(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "PolicySubType",
@@ -45403,7 +45455,7 @@
         },
         {
           "disabled": false,
-          "document": "策略子类型名称",
+          "document": "<p>策略子类型名称</p>",
           "example": "1",
           "member": "string",
           "name": "PolicySubName",
@@ -45414,7 +45466,7 @@
         },
         {
           "disabled": false,
-          "document": "策略有效期类型(只支持32位)",
+          "document": "<p>策略有效期类型(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeEffectType",
@@ -45425,7 +45477,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期起始时间(只支持32位)",
+          "document": "<p>有效期起始时间(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeStart",
@@ -45436,7 +45488,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期终止时间(只支持32位)",
+          "document": "<p>有效期终止时间(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeEnd",
@@ -45447,7 +45499,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
+          "document": "<p>系统类型(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "OsType",
@@ -45458,7 +45510,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应发总数(只支持32位)",
+          "document": "<p>策略应发总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "ShouldCount",
@@ -45469,7 +45521,7 @@
         },
         {
           "disabled": false,
-          "document": "策略实发总数(只支持32位)",
+          "document": "<p>策略实发总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "RealCount",
@@ -45480,7 +45532,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用的系统类型",
+          "document": "<p>策略应用的系统类型</p>",
           "example": "A",
           "member": "string",
           "name": "OsTypeList",
@@ -45491,7 +45543,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用账户总数(只支持32位)",
+          "document": "<p>策略应用账户总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "IncludeAccountCount",
@@ -45502,7 +45554,7 @@
         },
         {
           "disabled": false,
-          "document": "策略排除账户总数(只支持32位)",
+          "document": "<p>策略排除账户总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "ExcludeAccountCount",
@@ -45513,7 +45565,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用账户组织架构总数(只支持32位)",
+          "document": "<p>策略应用账户组织架构总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "IncludeAccountGroupCount",
@@ -45524,7 +45576,7 @@
         },
         {
           "disabled": false,
-          "document": "策略排除账户组织架构总数(只支持32位)",
+          "document": "<p>策略排除账户组织架构总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "ExcludeAccountGroupCount",
@@ -45535,7 +45587,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用终端总数(只支持32位)",
+          "document": "<p>策略应用终端总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "IncludeDeviceCount",
@@ -45546,7 +45598,7 @@
         },
         {
           "disabled": false,
-          "document": "策略排除终端总数(只支持32位)",
+          "document": "<p>策略排除终端总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "ExcludeDeviceCount",
@@ -45557,7 +45609,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用终端组织架构总数(只支持32位)",
+          "document": "<p>策略应用终端组织架构总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "IncludeDeviceGroupCount",
@@ -45568,7 +45620,7 @@
         },
         {
           "disabled": false,
-          "document": "策略排除终端组织架构总数(只支持32位)",
+          "document": "<p>策略排除终端组织架构总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "ExcludeDeviceGroupCount",
@@ -45579,7 +45631,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用账户虚拟组总数(只支持32位)",
+          "document": "<p>策略应用账户虚拟组总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "IncludeAccountVirtualGroupCount",
@@ -45590,7 +45642,7 @@
         },
         {
           "disabled": false,
-          "document": "策略排除账户虚拟组总数(只支持32位)",
+          "document": "<p>策略排除账户虚拟组总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "ExcludeAccountVirtualGroupCount",
@@ -45601,7 +45653,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用终端虚拟组总数(只支持32位)",
+          "document": "<p>策略应用终端虚拟组总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "IncludeDeviceVirtualGroupCount",
@@ -45612,7 +45664,7 @@
         },
         {
           "disabled": false,
-          "document": "策略排除终端虚拟组总数(只支持32位)",
+          "document": "<p>策略排除终端虚拟组总数(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "ExcludeDeviceVirtualGroupCount",
@@ -45623,7 +45675,7 @@
         },
         {
           "disabled": false,
-          "document": "策略创建时间",
+          "document": "<p>策略创建时间</p>",
           "example": "A",
           "member": "string",
           "name": "Itime",
@@ -45634,7 +45686,7 @@
         },
         {
           "disabled": false,
-          "document": "策略更新时间",
+          "document": "<p>策略更新时间</p>",
           "example": "1",
           "member": "string",
           "name": "Utime",
@@ -45645,7 +45697,7 @@
         },
         {
           "disabled": false,
-          "document": "是否基线策略(只支持32位)",
+          "document": "<p>是否基线策略(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "IsBase",
@@ -45656,7 +45708,7 @@
         },
         {
           "disabled": false,
-          "document": "触发方式",
+          "document": "<p>触发方式</p>",
           "example": "1",
           "member": "int64",
           "name": "TriggerMode",
@@ -45667,7 +45719,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用高危终端数（合规使用）",
+          "document": "<p>策略应用高危终端数（合规使用）</p>",
           "example": "0",
           "member": "int64",
           "name": "HighRiskDeviceCount",
@@ -45678,7 +45730,7 @@
         },
         {
           "disabled": false,
-          "document": "策略应用中危终端数（合规使用）",
+          "document": "<p>策略应用中危终端数（合规使用）</p>",
           "example": "0",
           "member": "int64",
           "name": "MiddleRiskDeviceCount",
@@ -45689,13 +45741,24 @@
         },
         {
           "disabled": false,
-          "document": "策略应用低危终端数（合规使用）",
+          "document": "<p>策略应用低危终端数（合规使用）</p>",
           "example": "0",
           "member": "int64",
           "name": "LowRiskDeviceCount",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>黑白名单规则数量</p>",
+          "example": "无",
+          "member": "RuleTypeCount",
+          "name": "RuleTypeCount",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -46535,6 +46598,100 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleTypeCount": {
+      "document": "RuleTypeCount",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件目录白名单规则数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudTrustFileOrDirCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件扩展名白名单规则数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudTrustExtensionCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件MD5白名单规则数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudTrustMD5Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注册表白名单规则数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudTrustRegistryCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络地址白名单规则数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudTrustNetAddrCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>病毒名白名单规则数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudTrustVirusNameCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件 MD5黑名单规则数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudBlackMD5Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件签名白名单规则数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudTrustFileSignatureCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

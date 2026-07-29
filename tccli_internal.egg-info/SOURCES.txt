@@ -927,6 +927,8 @@ tccli/services/tdai/__init__.py
 tccli/services/tdai/tdai_client.py
 tccli/services/tdapg/__init__.py
 tccli/services/tdapg/tdapg_client.py
+tccli/services/tdata/__init__.py
+tccli/services/tdata/tdata_client.py
 tccli/services/tdcpg/__init__.py
 tccli/services/tdcpg/tdcpg_client.py
 tccli/services/tdid/__init__.py

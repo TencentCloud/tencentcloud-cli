@@ -1128,7 +1128,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "DataKey的全局唯一标识",
+          "document": "<p>DataKey的全局唯一标识</p>",
           "example": "93866e69-9755-11ef-8e65-52540089547t",
           "member": "string",
           "name": "DataKeyId",
@@ -1138,7 +1138,7 @@
         },
         {
           "disabled": false,
-          "document": "CMK的全局唯一标识",
+          "document": "<p>CMK的全局唯一标识</p>",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "KeyId",
@@ -1148,7 +1148,7 @@
         },
         {
           "disabled": false,
-          "document": "CMK的名称",
+          "document": "<p>CMK的名称</p>",
           "example": "测试根密钥",
           "member": "string",
           "name": "KeyName",
@@ -1158,7 +1158,7 @@
         },
         {
           "disabled": false,
-          "document": "作为密钥更容易辨识，更容易被人看懂的数据密钥名称",
+          "document": "<p>作为密钥更容易辨识，更容易被人看懂的数据密钥名称</p>",
           "example": "lzctest",
           "member": "string",
           "name": "DataKeyName",
@@ -1168,7 +1168,7 @@
         },
         {
           "disabled": false,
-          "document": "数据密钥的长度,单位字节",
+          "document": "<p>数据密钥的长度,单位字节</p>",
           "example": "32",
           "member": "uint64",
           "name": "NumberOfBytes",
@@ -1178,7 +1178,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥创建时间",
+          "document": "<p>密钥创建时间</p>",
           "example": "1730357927",
           "member": "uint64",
           "name": "CreateTime",
@@ -1188,7 +1188,7 @@
         },
         {
           "disabled": false,
-          "document": "DataKey的描述",
+          "document": "<p>DataKey的描述</p>",
           "example": "desc",
           "member": "string",
           "name": "Description",
@@ -1198,7 +1198,7 @@
         },
         {
           "disabled": false,
-          "document": "DataKey的状态， 取值为：Enabled | Disabled | PendingDelete",
+          "document": "<p>DataKey的状态， 取值为：Enabled | Disabled | PendingDelete</p>",
           "example": "PendingDelete",
           "member": "string",
           "name": "KeyState",
@@ -1208,7 +1208,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>",
           "example": "700001224410",
           "member": "uint64",
           "name": "CreatorUin",
@@ -1218,7 +1218,7 @@
         },
         {
           "disabled": false,
-          "document": "数据密钥的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名",
+          "document": "<p>数据密钥的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名</p>",
           "example": "user",
           "member": "string",
           "name": "Owner",
@@ -1228,7 +1228,7 @@
         },
         {
           "disabled": false,
-          "document": "计划删除的时间",
+          "document": "<p>计划删除的时间</p>",
           "example": "0",
           "member": "uint64",
           "name": "DeletionDate",
@@ -1238,7 +1238,7 @@
         },
         {
           "disabled": false,
-          "document": "DataKey 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL",
+          "document": "<p>DataKey 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL</p>",
           "example": "EXTERNAL",
           "member": "string",
           "name": "Origin",
@@ -1248,7 +1248,7 @@
         },
         {
           "disabled": false,
-          "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）",
+          "document": "<p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>",
           "example": "cls-hsm-1a2b3c4d",
           "member": "string",
           "name": "HsmClusterId",
@@ -1258,7 +1258,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID，格式：creatorUin/$creatorUin/$dataKeyId",
+          "document": "<p>资源ID，格式：creatorUin/$creatorUin/$dataKeyId</p>",
           "example": "creatorUin/12345/6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "ResourceId",
@@ -1268,7 +1268,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥是否是主副本。0:主本，1:同步副本。",
+          "document": "<p>密钥是否是主副本。0:主本，1:同步副本。</p>",
           "example": "0",
           "member": "int64",
           "name": "IsSyncReplica",
@@ -1278,7 +1278,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的原始地域",
+          "document": "<p>同步的原始地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SourceRegion",
@@ -1288,7 +1288,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥同步的状态，0:未同步，1:同步成功，2:同步失败，3:同步中。",
+          "document": "<p>密钥同步的状态，0:未同步，1:同步成功，2:同步失败，3:同步中。</p>",
           "example": "1",
           "member": "int64",
           "name": "SyncStatus",
@@ -1298,7 +1298,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的结果描述",
+          "document": "<p>同步的结果描述</p>",
           "example": "success",
           "member": "string",
           "name": "SyncMessages",
@@ -1308,7 +1308,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的开始时间",
+          "document": "<p>同步的开始时间</p>",
           "example": "1730357927",
           "member": "uint64",
           "name": "SyncStartTime",
@@ -1318,7 +1318,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的结束时间",
+          "document": "<p>同步的结束时间</p>",
           "example": "1730357927",
           "member": "uint64",
           "name": "SyncEndTime",
@@ -1328,7 +1328,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的原始集群，如果为空，是公有云公共集群",
+          "document": "<p>同步的原始集群，如果为空，是公有云公共集群</p>",
           "example": "hsm-a1b2c3",
           "member": "string",
           "name": "SourceHsmClusterId",
@@ -1338,7 +1338,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号appId",
+          "document": "<p>成员账号appId</p>",
           "example": "251002343",
           "member": "uint64",
           "name": "AccountAppId",
@@ -1348,7 +1348,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号uin",
+          "document": "<p>成员账号uin</p>",
           "example": "100000007998",
           "member": "uint64",
           "name": "AccountUin",
@@ -1358,10 +1358,20 @@
         },
         {
           "disabled": false,
-          "document": "成员账号名称",
+          "document": "<p>成员账号名称</p>",
           "example": "加密组测试环境账号",
           "member": "string",
           "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者UIN</p>",
+          "example": "100000007998",
+          "member": "string",
+          "name": "CreatorUinString",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3331,6 +3341,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>资源的地域信息</p>",
+          "example": "100001",
+          "member": "uint64",
+          "name": "ResourceZone",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源的地域可用区信息</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourceRegion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3809,6 +3839,16 @@
           "example": "kms-700002334915",
           "member": "string",
           "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者UIN</p>",
+          "example": "700001801827",
+          "member": "string",
+          "name": "CreatorUinString",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

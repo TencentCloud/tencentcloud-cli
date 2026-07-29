@@ -72,6 +72,14 @@
         "title": "创建健康报告浏览地址"
       }
     ],
+    "CreateDBDiagReportUrls": [
+      {
+        "document": "下载巡检报告",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBDiagReportUrls\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\",\n    \"AsyncRequestIds\": [\n        68974526\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AsyncRequestId\": 68974526,\n                \"ExpireTime\": null,\n                \"ReportUrl\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"e3bbadae-6e2f-45d5-89cc-cc57b3681dbe\"\n    }\n}",
+        "title": "下载巡检报告"
+      }
+    ],
     "CreateIgnoreDiagRecord": [
       {
         "document": "忽略诊断类型",
@@ -299,9 +307,17 @@
     "DescribeDBDiagReportTasks": [
       {
         "document": "",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagReportTasks\n&Product=mysql\n&StartTime=2020-09-21T00:00:00+00:00\n&EndTime=2020-09-22T00:00:00+00:00\n&Sources.0=DAILY_INSPECTION\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"AsyncRequestId\": 63452,\n                \"Source\": \"DAILY_INSPECTION\",\n                \"Progress\": 100,\n                \"CreateTime\": \"2020-09-21 00:00:00\",\n                \"StartTime\": \"2020-09-21 00:00:00\",\n                \"EndTime\": \"2020-09-21 00:00:00\",\n                \"InstanceInfo\": {\n                    \"InstanceId\": \"cdb-c9orjpes\",\n                    \"InstanceName\": \"dbbrain-test\",\n                    \"EngineVersion\": \"5.7\",\n                    \"Vip\": \"10.207.0.10\",\n                    \"Vport\": 3306,\n                    \"Product\": \"MySQL\"\n                },\n                \"HealthStatus\": {\n                    \"HealthScore\": 100,\n                    \"HealthLevel\": \"HEALTH\",\n                    \"ScoreLost\": 0,\n                    \"ScoreDetails\": []\n                }\n            }\n        ],\n        \"RequestId\": \"24665720-8c93-11eb-bee6-e98cea0e6794\"\n    }\n}",
-        "title": "查询健康报告生成任务列表"
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBDiagReportTasks\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 50,\n    \"Product\": \"mysql\",\n    \"TagFilters\": [\n        {\n            \"TagPairs\": [\n                {\n                    \"TagKey\": \"cdb_has_ro_01\",\n                    \"TagValue\": [\n                        \"1\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"5945e2ce-05df-432e-9ef0-9213c3589088\"\n    }\n}",
+        "title": "查询健康报告任务列表"
+      }
+    ],
+    "DescribeDBInstances": [
+      {
+        "document": "批量查询实例信息",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdb-lvgh1oyv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ClusterId\": \"\",\n                \"CreateTime\": \"2026-07-06 15:29:00\",\n                \"DeadlineTime\": \"1970-01-03 00:00:00\",\n                \"EngineVersion\": \"8.0\",\n                \"InstanceId\": \"cdb-lvgh1oyv\",\n                \"Product\": \"MySQL\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"dcdd3bd4-8ce8-49a0-82d6-c23482536608\"\n    }\n}",
+        "title": "批量查询实例信息"
       }
     ],
     "DescribeDBPerfTimeSeries": [

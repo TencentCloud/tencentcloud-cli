@@ -11724,6 +11724,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>始终开启inband DTMF检测</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableInbandDtmf",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启补静音包</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SendSilenceWhenIdle",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

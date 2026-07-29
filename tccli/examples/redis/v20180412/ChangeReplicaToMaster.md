@@ -1,21 +1,22 @@
-**Example 1: 请求示例**
+**Example 1: 示例**
 
-多AZ、单AZ场景下的副本提主
+
 
 Input: 
 
 ```
 tccli redis ChangeReplicaToMaster --cli-unfold-argument  \
-    --InstanceId crs-sa5**** \
-    --GroupId 301524
+    --InstanceId crs-j7oyys27 \
+    --GroupId 378132 \
+    --Emergency False
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "c4ed5948-d156-4931-b9c3-10133a0bb6c9",
-        "TaskId": 10856
+        "TaskId": 2031393158,
+        "RequestId": "93c2ebae-0295-4fdf-ba44-fc88badae439"
     }
 }
 ```

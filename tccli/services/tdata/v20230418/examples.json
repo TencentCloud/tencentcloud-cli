@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "https://tdata.tencentcloudapi.com/?Action=DescribeInstances\r\n&Offset=0\r\n&Limit=10\r\n&OrderBy=CREATETIME\r\n&OrderByType=DESC\r\n&Filters.0.Name=InstanceId\r\n&Filters.0.Values.0=ora-fsv1gq23\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"AppId\": 1251006373,\n                \"AutoRenewFlag\": 2,\n                \"BackupSize\": 1500,\n                \"Capacity\": 1000,\n                \"Cpu\": 14,\n                \"CreateTime\": \"2018-09-27 17:45:37\",\n                \"DbName\": \"SZJRT\",\n                \"InstanceId\": \"ora-fsv1gq23\",\n                \"InstanceName\": \"newName\",\n                \"InstanceNum\": 3,\n                \"Memory\": 64,\n                \"OracleVersion\": \"12.1.0.2\",\n                \"PayMode\": 1,\n                \"PeriodEndTime\": \"2018-10-28 20:13:05\",\n                \"ProjectId\": 120002,\n                \"Region\": \"ap-guangzhou\",\n                \"ServiceName\": \"SZJRT\",\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"SubnetId\": \"subnet-o3p3evv4\",\n                \"Type\": \"high performance\",\n                \"Uin\": \"20548499\",\n                \"UpdateTime\": \"2018-10-31 17:51:12\",\n                \"Vip\": \"172.16.32.22\",\n                \"VpcId\": \"vpc-kppg4pm1\",\n                \"Vport\": 1521,\n                \"Zone\": \"ap-guangzhou-1\"\n            }\n        ],\n        \"RequestId\": \"7eeb8929-bbee-4dda-9d31-0f6da57a7a51\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询实例列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}
