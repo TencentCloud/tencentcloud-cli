@@ -3613,6 +3613,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>仅做擦除的视频结果路径</p>",
+          "example": "/media/videos/delogo/20260303/delogo-022EE2B93FE8DD3E0AF882915F83C1B76A_1772763376700_erased.mp4",
+          "member": "string",
+          "name": "ErasedVideoPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色克隆编辑信息</p><p>用于音色克隆二次修改的编辑信息</p>",
+          "example": "https://ie-mps-1258344699.cos.ap-nanjing.myqcloud.com/common/smart_dub/edit_info/2026/05/27/24000022-WorkflowTask-0d342386c189df00e96584d7c78d0a0dtt110253_edit_info.json",
+          "member": "string",
+          "name": "DubbingEditInfoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>擦除后文件的FileId。</p>",
           "example": "966263619047559782",
           "member": "string",
