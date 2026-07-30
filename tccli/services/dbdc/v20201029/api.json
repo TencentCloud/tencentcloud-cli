@@ -4796,8 +4796,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>规则 ID</p>",
-          "example": "196001",
+          "document": "<p>安全组 ID</p>",
+          "example": "sg-npc8gt3f",
           "member": "string",
           "name": "Id",
           "output_required": false,

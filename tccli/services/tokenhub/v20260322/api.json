@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CreateGlossary": {
-      "document": "创建术语库。(单个用户默认最多可以创建50个术语库，支持加白)\n\n在当前应用下创建一个新的翻译术语库，用于自定义源语言到目标语言的术语映射。创建成功后返回术语库 ID，可通过该 ID 进一步管理术语条目。",
+      "document": "创建术语库。(单个用户默认最多可以创建50个术语库)\n\n在当前应用下创建一个新的翻译术语库，用于自定义源语言到目标语言的术语映射。创建成功后返回术语库 ID，可通过该 ID 进一步管理术语条目。",
       "input": "CreateGlossaryRequest",
       "name": "创建术语库",
       "output": "CreateGlossaryResponse",
@@ -4633,7 +4633,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐 ID。",
+          "document": "<p>套餐 ID。</p>",
           "example": "tp-ent-abcdefgh",
           "member": "string",
           "name": "TeamId",
@@ -4643,7 +4643,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）",
+          "document": "<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ProductType",
@@ -4653,7 +4653,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐名称。最大 128 字符。",
+          "document": "<p>套餐名称。最大 128 字符。</p>",
           "example": "生产环境套餐",
           "member": "string",
           "name": "Name",
@@ -4663,7 +4663,7 @@
         },
         {
           "disabled": false,
-          "document": "账号 APP ID。",
+          "document": "<p>账号 APP ID。</p>",
           "example": "1300000001",
           "member": "string",
           "name": "AppId",
@@ -4673,7 +4673,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号 UIN。",
+          "document": "<p>主账号 UIN。</p>",
           "example": "100000000001",
           "member": "string",
           "name": "Uin",
@@ -4683,7 +4683,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐状态。取值：enable（启用）、disable（停用）。",
+          "document": "<p>套餐状态。取值：enable（启用）、disable（停用）。</p>",
           "example": "enable",
           "member": "string",
           "name": "Status",
@@ -4693,7 +4693,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）",
+          "document": "<p>套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）</p>",
           "example": "none",
           "member": "string",
           "name": "StopReason",
@@ -4703,7 +4703,7 @@
         },
         {
           "disabled": false,
-          "document": "可创建 API Key 上限。",
+          "document": "<p>可创建 API Key 上限。</p>",
           "example": "0",
           "member": "int64",
           "name": "ApiKeyMax",
@@ -4713,7 +4713,17 @@
         },
         {
           "disabled": false,
-          "document": "云计费预付费资源包 ID。",
+          "document": "<p>当前已创建的 APIKey 数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ApiKeyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云计费预付费资源包 ID。</p>",
           "example": "prepay-123",
           "member": "string",
           "name": "PrepayResourceID",
@@ -4723,7 +4733,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人。若为子账号创建的套餐，则该值为子账号UIN。",
+          "document": "<p>创建人。若为子账号创建的套餐，则该值为子账号UIN。</p>",
           "example": "100000000002",
           "member": "string",
           "name": "Creator",
@@ -4733,7 +4743,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2026-04-01T00:00:00Z",
           "member": "datetime_iso",
           "name": "CreatedAt",
@@ -4743,7 +4753,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间。",
+          "document": "<p>更新时间。</p>",
           "example": "2026-04-01T00:00:00Z",
           "member": "datetime_iso",
           "name": "UpdatedAt",
@@ -4753,7 +4763,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐包基本信息。",
+          "document": "<p>套餐包基本信息。</p>",
           "example": "无",
           "member": "TokenPlanPackageInfo",
           "name": "PackageInfo",
@@ -4763,7 +4773,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自动续费。取值：0（未开启），1（开启）",
+          "document": "<p>是否开启自动续费。取值：0（未开启），1（开启）</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",

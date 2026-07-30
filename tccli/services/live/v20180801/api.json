@@ -274,7 +274,7 @@
       "status": "online"
     },
     "CreateLiveWatermarkRule": {
-      "document": "创建水印规则，需要先调用[AddLiveWatermark](/document/product/267/30154)接口添加水印，将返回的水印id绑定到流使用。",
+      "document": "创建水印规则，需要先调用[AddLiveWatermark](/document/product/267/30154)接口添加水印，将返回的水印id绑定到流使用。\n创建规则后生效时间为10分钟，规则仅对推流时间晚于配置生效时间的流有效，对正在直播的流不生效。",
       "input": "CreateLiveWatermarkRuleRequest",
       "name": "创建水印规则",
       "output": "CreateLiveWatermarkRuleResponse",
@@ -1240,7 +1240,7 @@
       "status": "online"
     },
     "DescribeUploadStreamNums": {
-      "document": "直播上行路数查询。",
+      "document": "直播上行路数查询。\n数据延迟3小时左右。",
       "input": "DescribeUploadStreamNumsRequest",
       "name": "直播上行路数查询",
       "output": "DescribeUploadStreamNumsResponse",
@@ -1965,7 +1965,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "水印图片 URL。\nURL中禁止包含的字符：\n ;(){}$>`#\"\\'|",
+          "document": "<p>水印图片 URL。<br>URL中禁止包含的字符：<br> ;(){}$&gt;`#&quot;'|</p>",
           "example": "http://watermark-101.cos.myqcloud.com/1251830167/imglogo.png",
           "member": "string",
           "name": "PictureUrl",
@@ -1974,7 +1974,7 @@
         },
         {
           "disabled": false,
-          "document": "水印名称。\n最长30字节。",
+          "document": "<p>水印名称。<br>最长30字节。</p>",
           "example": "logo",
           "member": "string",
           "name": "WatermarkName",
@@ -1983,7 +1983,7 @@
         },
         {
           "disabled": false,
-          "document": "显示位置，X轴偏移，单位是百分比，默认 0。",
+          "document": "<p>显示位置，X轴偏移，单位是百分比，默认 0。</p>",
           "example": "80",
           "member": "int64",
           "name": "XPosition",
@@ -1992,7 +1992,7 @@
         },
         {
           "disabled": false,
-          "document": "显示位置，Y轴偏移，单位是百分比，默认 0。",
+          "document": "<p>显示位置，Y轴偏移，单位是百分比，默认 0。</p>",
           "example": "10",
           "member": "int64",
           "name": "YPosition",
@@ -2001,7 +2001,7 @@
         },
         {
           "disabled": false,
-          "document": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。",
+          "document": "<p>水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。</p>",
           "example": "100",
           "member": "int64",
           "name": "Width",
@@ -2010,7 +2010,7 @@
         },
         {
           "disabled": false,
-          "document": "水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。",
+          "document": "<p>水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。</p>",
           "example": "100",
           "member": "int64",
           "name": "Height",
@@ -2019,7 +2019,7 @@
         },
         {
           "disabled": false,
-          "document": "背景水印宽度。默认宽度1920。",
+          "document": "<p>背景水印宽度。默认宽度1920。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>",
           "example": "1920",
           "member": "int64",
           "name": "BackgroundWidth",
@@ -2028,7 +2028,7 @@
         },
         {
           "disabled": false,
-          "document": "背景水印高度。默认高度1080。",
+          "document": "<p>背景水印高度。默认高度1080。</p><p>取值范围：[360, 4096]</p><p>单位：px</p>",
           "example": "1080",
           "member": "int64",
           "name": "BackgroundHeight",
@@ -2043,7 +2043,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "水印ID。",
+          "document": "<p>水印ID。</p>",
           "example": "854214",
           "member": "uint64",
           "name": "WatermarkId",
@@ -16668,6 +16668,7 @@
           "example": "无",
           "member": "ConcurrentRecordStreamNum",
           "name": "DataInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

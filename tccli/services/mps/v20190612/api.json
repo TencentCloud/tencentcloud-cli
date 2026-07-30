@@ -5248,6 +5248,45 @@
       ],
       "usage": "both"
     },
+    "AiCutoutConfig": {
+      "document": "智能抠图配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力配置开关，可选值：  ON：开启； OFF：关闭。 默认值：ON。</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>抠图目标类型指定：&quot;foreground&quot;（默认）/ &quot;pattern&quot;</p>",
+          "example": "foreground",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图案抠图配置。仅在Type为pattern时生效。</p>",
+          "example": "无",
+          "member": "PatternConfig",
+          "name": "PatternConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AiDramaInput": {
       "document": "Ai自动生成漫剧的输入",
       "members": [
@@ -5289,6 +5328,56 @@
         }
       ],
       "usage": "in"
+    },
+    "AiExpansionConfig": {
+      "document": "智能扩图配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力配置开关，可选值：  ON：开启； OFF：关闭。 默认值：ON。</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标比例，如 &quot;16:9&quot;</p>",
+          "example": "1:1",
+          "member": "string",
+          "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标宽度（像素）</p><p>取值范围：[0, 2048]</p>",
+          "example": "1024",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标高度（像素）</p><p>取值范围：[0, 2048]</p>",
+          "example": "1024",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AiParagraphInfo": {
       "document": "分段信息。",
@@ -8413,6 +8502,34 @@
         }
       ],
       "usage": "in"
+    },
+    "AiStoryboardConfig": {
+      "document": "智能分镜拆解配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力配置开关，可选值：  ON：开启； OFF：关闭。 默认值：ON。</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定提取的分镜图的序号，从0开始计数，不填写则返回所有分镜图。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProcessIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AiTryOnConfig": {
       "document": "虚拟试穿任务配置。",
@@ -28530,6 +28647,39 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ai抠图配置</p>",
+          "example": "无",
+          "member": "AiCutoutConfig",
+          "name": "AiCutoutConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ai扩图配置</p>",
+          "example": "无",
+          "member": "AiExpansionConfig",
+          "name": "AiExpansionConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ai分镜拆解配置</p>",
+          "example": "无",
+          "member": "AiStoryboardConfig",
+          "name": "AiStoryboardConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37022,6 +37172,67 @@
         }
       ],
       "type": "object"
+    },
+    "PatternConfig": {
+      "document": "印花提取配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>透明度阈值</p><p>取值范围：[0, 255]</p><p>默认值：30</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "TransparencyThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不透明阈值，必须大于TransparencyThreshold</p><p>取值范围：[0, 255]</p><p>默认值：127</p>",
+          "example": "127",
+          "member": "int64",
+          "name": "OpaqueThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>边缘采样步数，默认5</p><p>取值范围：[1, 10]</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "EdgeSamplingStep",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>边缘扩展步数，默认5</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "EdgeExpansionStep",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>边缘融合强度，默认0.5</p><p>取值范围：[0, 1.0]</p>",
+          "example": "0.5",
+          "member": "float",
+          "name": "EdgeBlendingIntensity",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PidSelector": {
       "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",

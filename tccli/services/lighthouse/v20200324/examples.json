@@ -206,6 +206,14 @@
         "title": "查询全地域使用场景信息"
       }
     ],
+    "DescribeBlueprintBundles": [
+      {
+        "document": "查询镜像实例",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlueprintBundles\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-5e886mc4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintBundleSet\": [\n            {\n                \"BundleId\": \"bundle_game_mc_gen_03\",\n                \"CPU\": 2,\n                \"Memory\": 8,\n                \"SystemDiskType\": \"CLOUD_SSD\",\n                \"SystemDiskSize\": 50,\n                \"InternetMaxBandwidthOut\": 6,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"MonthlyTraffic\": 500,\n                \"Price\": {\n                    \"InstancePrice\": {\n                        \"Currency\": \"CNY\",\n                        \"OriginalBundlePrice\": 80,\n                        \"OriginalPrice\": 80,\n                        \"Discount\": 100,\n                        \"DiscountPrice\": 80\n                    }\n                },\n                \"SupportLinuxUnixPlatform\": true,\n                \"SupportWindowsPlatform\": true,\n                \"BundleType\": \"GAME_PORTAL_BUNDLE\",\n                \"BundleTypeDescription\": \"游戏专区\",\n                \"BundleTypePriority\": 110,\n                \"BundleSalesState\": \"AVAILABLE\",\n                \"BundleDisplayLabel\": \"NORMAL\",\n                \"SupportSlot\": 4\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a04dba8e-efb7-4c9b-ac19-2b5b779b3e1b\"\n    }\n}",
+        "title": "查询镜像实例"
+      }
+    ],
     "DescribeBlueprintInstances": [
       {
         "document": "",
