@@ -451,6 +451,7 @@ class ActionCommand(BaseCommand):
         if not truncated:
             return remaining
 
+        object_model = None
         new_remaining = []
         i, n = 0, len(remaining)
         while i < n:
@@ -490,6 +491,17 @@ class ActionCommand(BaseCommand):
                 new_remaining.append(tok)
                 i += advance
                 continue
+            if not isinstance(value, list):
+                if object_model is None:
+                    try:
+                        service_model = self._cli_data.get_service_model(
+                            self._service_name, self._version)
+                        object_model = service_model.get("objects", {})
+                    except Exception:
+                        object_model = {}
+                if self._is_deep_list_parameter(
+                        key, prefix, type_name, object_model):
+                    value = [value]
 
             # --- 深度检查并分流 ---
             depth = sum(1 for seg in key.split(".") if not seg.isdigit())
@@ -500,6 +512,36 @@ class ActionCommand(BaseCommand):
             i += advance
 
         return new_remaining
+
+    @staticmethod
+    def _is_deep_list_parameter(key, prefix, type_name, object_model):
+        """判断自引用截断点以下的扁平参数是否对应 list 字段。"""
+        if not type_name or not object_model:
+            return False
+        suffix = key[len(prefix) + 1:].split(".")
+        current_type = type_name
+        for index, segment in enumerate(suffix):
+            if segment.isdigit():
+                if index == len(suffix) - 1:
+                    return False
+                continue
+
+            members = object_model.get(current_type, {}).get("members", [])
+            if isinstance(members, dict):
+                member_info = members.get(segment)
+            else:
+                member_info = next(
+                    (item for item in members if item.get("name") == segment), None)
+            if not member_info:
+                return False
+
+            member_type = str(member_info.get("type", "")).lower()
+            if index == len(suffix) - 1:
+                return member_type in ("list", "array")
+            if member_type not in ("list", "array", "object"):
+                return False
+            current_type = member_info.get("member")
+        return False
 
     @staticmethod
     def _match_truncated_prefix(key, truncated):
