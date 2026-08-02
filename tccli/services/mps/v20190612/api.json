@@ -49,6 +49,13 @@
       "output": "CloneViralResponse",
       "status": "online"
     },
+    "CloneVoice": {
+      "document": "同步接口，使用该接口从参考音频克隆一个音色",
+      "input": "CloneVoiceRequest",
+      "name": "音色克隆",
+      "output": "CloneVoiceResponse",
+      "status": "online"
+    },
     "CreateAIAnalysisTemplate": {
       "document": "创建用户自定义内容分析模板，数量上限：50。",
       "input": "CreateAIAnalysisTemplateRequest",
@@ -75,6 +82,13 @@
       "input": "CreateAiDramaTaskRequest",
       "name": "创建AI漫剧任务",
       "output": "CreateAiDramaTaskResponse",
+      "status": "online"
+    },
+    "CreateAiFissionTask": {
+      "document": "创建ai视频裂变任务",
+      "input": "CreateAiFissionTaskRequest",
+      "name": "创建AI视频裂变任务",
+      "output": "CreateAiFissionTaskResponse",
       "status": "online"
     },
     "CreateAigcAudioTask": {
@@ -1503,6 +1517,13 @@
       "input": "SyncDubbingRequest",
       "name": "同步配音",
       "output": "SyncDubbingResponse",
+      "status": "online"
+    },
+    "TextToSpeech": {
+      "document": "同步语音合成，根据输入文本和指定音色生成语音",
+      "input": "TextToSpeechRequest",
+      "name": "同步语音合成",
+      "output": "TextToSpeechResponse",
       "status": "online"
     },
     "TextToSpeechAsync": {
@@ -5378,6 +5399,30 @@
         }
       ],
       "usage": "both"
+    },
+    "AiFissionInput": {
+      "document": "视频裂变输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视频裂变参考图url</p>",
+          "example": "[\"https://aigc-live-1303333058.cos.ap-guangzhou.myqcloud.com/ximiannai.png\"]",
+          "member": "string",
+          "name": "ImageUrls",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频裂变商品信息参考文案</p>",
+          "example": "氨基酸洗面奶，温和清洁不紧绷，绵密泡沫深层清洁毛孔，敏感肌也能用",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "AiParagraphInfo": {
       "document": "分段信息。",
@@ -11004,6 +11049,146 @@
       ],
       "type": "object"
     },
+    "CloneVoiceRequest": {
+      "document": "CloneVoice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>克隆音频base64编码</p>",
+          "example": "UklGRk5kAABXQVZFZm",
+          "member": "string",
+          "name": "AudioData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆音频Url，AudioData为空时有效</p>",
+          "example": "https://*****************.cos-internal.ap-nanjing.tencentcos.cn/common/***********/reel/test/narration_voice_zh.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆音频语言，默认中文。 当前支持语言同语音合成TextLang</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "AudioLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色属性。音色查询和匹配使用</p>",
+          "example": "无",
+          "member": "VoiceProfile",
+          "name": "VoiceProfile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>试听文本</p>",
+          "example": "你好，这是一段试听音频",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>试听文本语言，不填默认自动检测。当前支持语言同语音合成</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "TextLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出相关参数，可以指定输出音频形式等。默认输出音频base64。</p>",
+          "example": "无",
+          "member": "SyncDubbingOutputOption",
+          "name": "Output",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数，json字符串</p>",
+          "example": "{\"engine\": \"\"}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloneVoiceResponse": {
+      "document": "CloneVoice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆生成的音色ID</p>",
+          "example": "v1_******BMqyjoY5+h4uWEkXUsTXzvBqORfjv9WZbpLIxGPzq3dm6qXYaOtO9C/9p68Gk=",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合成音频的base64编码</p>",
+          "example": "SUQzBAAAAAAIalRYWFgAAAg9AAADQUlHQwB7IkxhYmVsIjoiMSIRQcm9k",
+          "member": "string",
+          "name": "AudioData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合成音频Url，有效期24小时</p>",
+          "example": "https://*********************.cos.accelerate.myqcloud.com/speech/771bdded-b55b-4745-82ae-caafb1136d7f-preview.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ColorEnhanceConfig": {
       "document": "色彩增强配置",
       "members": [
@@ -12516,6 +12701,61 @@
           "disabled": false,
           "document": "<p>任务id</p>",
           "example": "68459f79-bdce-52c8-4b86-5d446adbbee0",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAiFissionTaskRequest": {
+      "document": "CreateAiFissionTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ai视频裂变输入信息</p>",
+          "example": "无",
+          "member": "AiFissionInput",
+          "name": "Input",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户cos信息</p>",
+          "example": "无",
+          "member": "VideoDramaCosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ai视频裂变任务信息</p>",
+          "example": "无",
+          "member": "FissionTaskInfo",
+          "name": "TaskInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAiFissionTaskResponse": {
+      "document": "CreateAiFissionTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "24000048-AigcScenario-5bb4bbc1c0214685213aac29b01c1155",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -16519,6 +16759,48 @@
         }
       ],
       "type": "object"
+    },
+    "CustomModel": {
+      "document": "商品裂变模特信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>性别</p><p>枚举值：</p><ul><li>male： 男性</li><li>female： 女性</li><li>any： 不限</li></ul>",
+          "example": "female",
+          "member": "string",
+          "name": "Gender",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>年龄范围</p><p>枚举值：</p><ul><li>teen： 青年</li><li>young_adult： 成年</li><li>middle_aged： 中年</li><li>mature： 成熟</li></ul>",
+          "example": "young_adult",
+          "member": "string",
+          "name": "Age",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>外貌</p><p>枚举值：</p><ul><li>caucasian： 白人</li><li>asian： 亚裔</li><li>latino： 拉丁裔</li><li>african： 非裔</li><li>middle_eastern： 中东</li></ul>",
+          "example": "asian",
+          "member": "string",
+          "name": "Appearance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>身材</p><p>枚举值：</p><ul><li>slim： 苗条</li><li>standard： 标准</li><li>athletic： 健壮</li><li>chubby： 丰满</li></ul>",
+          "example": "slim",
+          "member": "string",
+          "name": "BodyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CustomVariable": {
       "document": "自定义描述变量",
@@ -26471,6 +26753,93 @@
         }
       ],
       "usage": "both"
+    },
+    "FissionTaskInfo": {
+      "document": "商品裂变任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视频输出时长</p><p>取值范围：[1, 15]</p><p>单位：秒</p><p>默认值：15</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型档位</p><p>枚举值：</p><ul><li>standard： 标准版</li><li>flagship： 旗舰版</li></ul>",
+          "example": "flagship",
+          "member": "string",
+          "name": "ModelTier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频画面比例</p><p>枚举值：</p><ul><li>9:16： 9:16</li><li>16:9： 16:9</li><li>1:1： 1:1</li><li>3:4： 3:4</li><li>4:3： 4:3</li></ul>",
+          "example": "9:16",
+          "member": "string",
+          "name": "Ratio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出分辨率</p><p>枚举值：</p><ul><li>720p： 720p</li><li>1080p： 1080p</li><li>2k： 2k</li><li>4k： 4k</li></ul>",
+          "example": "1080p",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标市场</p><p>枚举值：</p><ul><li>north_america： 北美</li><li>europe： 欧洲</li><li>china： 中国</li><li>japan： 日本</li><li>korea： 韩国</li><li>southeast_asia： 东南亚</li><li>brazil： 巴西</li><li>global： 全球</li><li>other： 其他</li></ul><p>影响默认出镜模特族裔与本地化风格；未指定 CustomModel 时按市场自动决定人种</p>",
+          "example": "china",
+          "member": "string",
+          "name": "Market",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 汉语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>",
+          "example": "chinese",
+          "member": "string",
+          "name": "Language",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频类型</p><p>枚举值：</p><ul><li>ugc： UGC种草</li><li>talk： 产品口播</li><li>display： 产品展示（纯商品、无人声）</li><li>unboxing： 开箱分享</li><li>reaction： 反应展示</li></ul>",
+          "example": "reaction",
+          "member": "string",
+          "name": "VideoType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>裂变数量</p><p>取值范围：[0, 1]</p><p>单位：个</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SplitCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定制出镜模特</p>",
+          "example": "无",
+          "member": "CustomModel",
+          "name": "CustomModel",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     },
     "FlowAudio": {
       "document": "流的音频数据。",
@@ -47193,6 +47562,119 @@
           "example": "1300057393-DubbingAsync-0d810bb0-d78b-4545-b36e-eab983b40a6a",
           "member": "string",
           "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextToSpeechRequest": {
+      "document": "TextToSpeech请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>语音合成文本</p>",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色ID</p>",
+          "example": "v1_******BMqyjoY5+h4uWEkXUsTXzvBqORfjv9WZbpLIxGPzq3dm6qXYaOtO9C/9p68Gk=",
+          "member": "string",
+          "name": "VoiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本语言。不填默认自动识别<br>当前支持语言：<br>zh 中文 (Chinese)<br>en 英语 (English)<br>ja 日语 (Japanese)<br>de 德语 (German)<br>fr 法语 (French)<br>ko 韩语 (Korean)<br>ru 俄语 (Russian)<br>uk 乌克兰语 (Ukrainian)<br>pt 葡萄牙语 (Portuguese)<br>it 意大利语 (Italian)<br>es 西班牙语 (Spanish)<br>id 印度尼西亚语 (Indonesian)<br>nl 荷兰语 (Dutch)<br>tr 土耳其语 (Turkish)<br>fil 菲律宾语 (Filipino)<br>ms 马来语 (Malay)<br>el 希腊语 (Greek)<br>fi 芬兰语 (Finnish)<br>hr 克罗地亚语 (Croatian)<br>sk 斯洛伐克语 (Slovak)<br>pl 波兰语 (Polish)<br>sv 瑞典语 (Swedish)<br>hi 印地语 (Hindi)<br>bg 保加利亚语 (Bulgarian)<br>ro 罗马尼亚语 (Romanian)<br>ar 阿拉伯语 (Arabic)<br>cs 捷克语 (Czech)<br>da 丹麦语 (Danish)<br>ta 泰米尔语 (Tamil)<br>hun 匈牙利语（Hungarian）<br>vi 越南语（Vietnamese）<br>no 挪威语（Norwegian）<br>yue 粤语（Cantonese）<br>th 泰语（Thai）<br>he 希伯来语（Hebrew）<br>ca 加泰罗尼亚语（Catalan）<br>nn 尼诺斯克语（Nynorsk）<br>af 阿非利卡语（Afrikaans）<br>fa 波斯语（Persian）<br>sl 斯洛文尼亚语（Slovenian）</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "TextLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出相关参数</p>",
+          "example": "无",
+          "member": "SyncDubbingOutputOption",
+          "name": "Output",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数，json字符串</p><p><strong>synExt</strong> Object 语音合成扩展参数<br>   <strong>duration</strong> Float 合成音频时长（单位秒），默认不控制时长。示例：5.2<br>   <strong>format</strong> String 输出音频格式，默认wav，支持wav、mp3<br>   <strong>sampleRate</strong> Integer 合成音频采样率，默认16000，支持[8000,16000,22050,24000,32000,44100]</p>",
+          "example": "{\"synExt\": {\"speed\": 1.2}}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextToSpeechResponse": {
+      "document": "TextToSpeech返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合成音频的base64编码，默认wav格式</p>",
+          "example": "UklGRk5kAABXQVZFZmP/u/+",
+          "member": "string",
+          "name": "AudioData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合成音频url，有效期24小时</p>",
+          "example": "https://*********************.cos.accelerate.myqcloud.com/speech/23cb48a7-d5e8-4f60-b30f-6fffe599c8e7.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息，json字符串  duration: 结果音频时长，单位秒</p>",
+          "example": "{\"duration\":0.766313,\"chars\":4}",
+          "member": "string",
+          "name": "ExtInfo",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

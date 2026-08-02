@@ -6006,7 +6006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID",
+          "document": "<p>文件系统 ID</p>",
           "example": "cfs-hge16re9",
           "member": "string",
           "name": "FileSystemId",
@@ -6016,7 +6016,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载点 ID",
+          "document": "<p>挂载点 ID</p>",
           "example": "mount-0ylt3o7o",
           "member": "string",
           "name": "MountTargetId",
@@ -6026,7 +6026,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载点 IP",
+          "document": "<p>挂载点 IP</p>",
           "example": "10.1.0.7",
           "member": "string",
           "name": "IpAddress",
@@ -6036,7 +6036,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载根目录",
+          "document": "<p>挂载根目录</p>",
           "example": "fwsuvz0l",
           "member": "string",
           "name": "FSID",
@@ -6046,7 +6046,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载点状态，包括creating：创建中；available：运行中；\ndeleting：删除中；\ncreate_failed： 创建失败",
+          "document": "<p>挂载点状态，包括creating：创建中；available：运行中；<br>deleting：删除中；<br>create_failed： 创建失败</p>",
           "example": "available",
           "member": "string",
           "name": "LifeCycleState",
@@ -6056,7 +6056,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型，包括VPC,CCN",
+          "document": "<p>网络类型，包括VPC,CCN</p>",
           "example": "VPC",
           "member": "string",
           "name": "NetworkInterface",
@@ -6066,7 +6066,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID",
+          "document": "<p>私有网络 ID</p>",
           "example": "vpc-hq13cw04",
           "member": "string",
           "name": "VpcId",
@@ -6076,7 +6076,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络名称",
+          "document": "<p>私有网络名称</p>",
           "example": "qcloudtest",
           "member": "string",
           "name": "VpcName",
@@ -6086,7 +6086,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 Id",
+          "document": "<p>子网 Id</p>",
           "example": "subnet-jdl08no5",
           "member": "string",
           "name": "SubnetId",
@@ -6096,7 +6096,7 @@
         },
         {
           "disabled": false,
-          "document": "子网名称",
+          "document": "<p>子网名称</p>",
           "example": "qcloudtest",
           "member": "string",
           "name": "SubnetName",
@@ -6106,7 +6106,7 @@
         },
         {
           "disabled": false,
-          "document": "CFS Turbo使用的云联网ID",
+          "document": "<p>CFS Turbo使用的云联网ID</p>",
           "example": "ccn-1xhbcp41",
           "member": "string",
           "name": "CcnID",
@@ -6116,12 +6116,32 @@
         },
         {
           "disabled": false,
-          "document": "云联网中CFS Turbo使用的网段",
+          "document": "<p>云联网中CFS Turbo使用的网段</p>",
           "example": "10.0.0.0/24",
           "member": "string",
           "name": "CidrBlock",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>占用用户ip列表</p>",
+          "example": "[\"10.0.0.1\",\"10.0.0.2\"]",
+          "member": "string",
+          "name": "ServerList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否占用超过200个ip</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ServerListTruncated",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

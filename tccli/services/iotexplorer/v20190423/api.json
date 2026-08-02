@@ -1942,6 +1942,52 @@
       ],
       "type": "object"
     },
+    "ActivationLicense": {
+      "document": "激活码统计信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>激活码类型</p>",
+          "example": "twetalk_basic",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付模式</p>",
+          "example": "34650",
+          "member": "int64",
+          "name": "TotalLicenseNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费标签项</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "UsedLicenseNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费标识</p>",
+          "example": "5_year",
+          "member": "string",
+          "name": "Period",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AppDeviceInfo": {
       "document": "云api直接绑定设备出参",
       "members": [
@@ -6639,6 +6685,15 @@
           "name": "Metadata",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调配置</p>",
+          "example": "无",
+          "member": "TalkEventCallbackConfig",
+          "name": "EventCallbackConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11345,7 +11400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-DGAFvpuVF7",
           "member": "string",
           "name": "InstanceId",
@@ -11358,6 +11413,16 @@
     "DescribeLicenseOverviewResponse": {
       "document": "DescribeLicenseOverview返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例概览</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LicenseOverview",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -18128,6 +18193,32 @@
       ],
       "usage": "out"
     },
+    "LicenseOverview": {
+      "document": "激活码统计信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>激活码统计信息</p>",
+          "example": "无",
+          "member": "ActivationLicense",
+          "name": "ActivationLicense",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>激活码类型</p>",
+          "example": "twetalk",
+          "member": "string",
+          "name": "LicenseType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LicenseServiceNumInfo": {
       "document": "增值服务数量统计",
       "members": [
@@ -20388,7 +20479,7 @@
         {
           "disabled": false,
           "document": "<p>智能体ID</p>",
-          "example": "agent-SValZ1qdEm",
+          "example": "agent-RxZAei4odc",
           "member": "string",
           "name": "AgentId",
           "required": true,
@@ -20483,6 +20574,15 @@
           "name": "Metadata",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调配置</p>",
+          "example": "无",
+          "member": "TalkEventCallbackConfig",
+          "name": "EventCallbackConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -24571,8 +24671,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "主账号UIN",
-          "example": "",
+          "document": "<p>主账号UIN</p>",
+          "example": "700002289689",
           "member": "int64",
           "name": "Uin",
           "output_required": false,
@@ -24582,8 +24682,8 @@
         },
         {
           "disabled": false,
-          "document": "账号AppId",
-          "example": "",
+          "document": "<p>账号AppId</p>",
+          "example": "251440583",
           "member": "int64",
           "name": "AppId",
           "output_required": false,
@@ -24593,8 +24693,8 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID",
-          "example": "",
+          "document": "<p>实例 ID</p>",
+          "example": "ins-31ooyYQG4ym",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -24604,8 +24704,8 @@
         },
         {
           "disabled": false,
-          "document": "智能体ID",
-          "example": "",
+          "document": "<p>智能体ID</p>",
+          "example": "agent-RxZAei4odc",
           "member": "string",
           "name": "AgentId",
           "output_required": false,
@@ -24615,8 +24715,8 @@
         },
         {
           "disabled": false,
-          "document": "智能体名称",
-          "example": "",
+          "document": "<p>智能体名称</p>",
+          "example": "小伙伴",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -24626,8 +24726,8 @@
         },
         {
           "disabled": false,
-          "document": "智能体描述",
-          "example": "",
+          "document": "<p>智能体描述</p>",
+          "example": "儿童玩具智能体模版",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -24637,8 +24737,8 @@
         },
         {
           "disabled": false,
-          "document": "语音识别配置",
-          "example": "",
+          "document": "<p>语音识别配置</p>",
+          "example": "无",
           "member": "TalkSTTConfig",
           "name": "STTConfig",
           "output_required": false,
@@ -24648,8 +24748,8 @@
         },
         {
           "disabled": false,
-          "document": "大模型配置",
-          "example": "",
+          "document": "<p>大模型配置</p>",
+          "example": "无",
           "member": "TalkLLMConfig",
           "name": "LLMConfig",
           "output_required": false,
@@ -24659,8 +24759,8 @@
         },
         {
           "disabled": false,
-          "document": "语音合成配置",
-          "example": "",
+          "document": "<p>语音合成配置</p>",
+          "example": "无",
           "member": "TalkTTSConfig",
           "name": "TTSConfig",
           "output_required": false,
@@ -24670,8 +24770,8 @@
         },
         {
           "disabled": false,
-          "document": "对话行为配置",
-          "example": "",
+          "document": "<p>对话行为配置</p>",
+          "example": "无",
           "member": "TalkConversationConfig",
           "name": "ConversationConfig",
           "output_required": false,
@@ -24681,8 +24781,8 @@
         },
         {
           "disabled": false,
-          "document": "长期记忆配置",
-          "example": "",
+          "document": "<p>长期记忆配置</p>",
+          "example": "无",
           "member": "TalkMemoryConfig",
           "name": "MemoryConfig",
           "output_required": false,
@@ -24692,8 +24792,8 @@
         },
         {
           "disabled": false,
-          "document": "IoT 工具列表",
-          "example": "",
+          "document": "<p>IoT 工具列表</p>",
+          "example": "无",
           "member": "TalkIOTTool",
           "name": "IOTTools",
           "output_required": false,
@@ -24703,8 +24803,8 @@
         },
         {
           "disabled": false,
-          "document": "Webhook 工具列表",
-          "example": "",
+          "document": "<p>Webhook 工具列表</p>",
+          "example": "无",
           "member": "TalkWebhookTool",
           "name": "WebhookTools",
           "output_required": false,
@@ -24714,8 +24814,8 @@
         },
         {
           "disabled": false,
-          "document": "元信息JSON object 字符串",
-          "example": "",
+          "document": "<p>元信息JSON object 字符串</p>",
+          "example": "{\"marker\":\"ca-1779259453306552753\",\"phase\":\"create\",\"source\":\"cloudapi-verify\"}",
           "member": "string",
           "name": "Metadata",
           "output_required": false,
@@ -24725,8 +24825,8 @@
         },
         {
           "disabled": false,
-          "document": "绑定关系列表",
-          "example": "",
+          "document": "<p>绑定关系列表</p>",
+          "example": "无",
           "member": "TalkAgentBinding",
           "name": "Bindings",
           "output_required": false,
@@ -24736,8 +24836,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，Unix 秒",
-          "example": "",
+          "document": "<p>创建时间，Unix 秒</p>",
+          "example": "1781087318",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
@@ -24747,13 +24847,24 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，Unix 秒",
-          "example": "",
+          "document": "<p>更新时间，Unix 秒</p>",
+          "example": "1782204960",
           "member": "int64",
           "name": "UpdateTime",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件回调配置</p>",
+          "example": "无",
+          "member": "TalkEventCallbackConfig",
+          "name": "EventCallbackConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -24937,6 +25048,34 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TalkEventCallbackConfig": {
+      "document": "事件回调配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Topic 名称</p>",
+          "example": "talkforward",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -25840,7 +25979,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>Webhook地址，仅支持 80 和 443 端口</p>",
+          "document": "<p>Webhook地址</p>",
           "example": "https://api.example.com/order/status",
           "member": "string",
           "name": "Url",

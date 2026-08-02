@@ -421,15 +421,9 @@
     "CreateEmbedWebUrl": [
       {
         "document": "\t\n获取合同详情嵌入WEB链接",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwJsUUckpkjss52UCW2se8TOSLS4tEP\"\n    },\n    \"BusinessId\": \"aDRt2UUgygqxyp9yUuO4zjEwqXwsIljY\",\n    \"EmbedType\": \"PREVIEW_FLOW_DETAIL\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwJsUUckpkjss52UCW2se8TOSLS4tEP\"\n    },\n    \"BusinessId\": \"yDt1JUUc**77**o*U*****88eg49PTsN\",\n    \"EmbedType\": \"PREVIEW_FLOW_DETAIL\",\n    \"ApplicationId\": \"yDt1JU*c*p*7***********8eg49PTsN\",\n    \"UserData\": \"eyJDb21lR*************iHqnh4eOWFrOWPuOeahOaooeeJiCJ9\"\n}",
         "output": "{\n    \"Response\": {\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn//contract-details?embed=1&code=yDwFJUUckpsm2e3xU6LVMFEMw1e4YIkb&channel=TENCENTCLOUD&businessId=yDwFFUUckps75s4pUEmvMvC8iyRPYukZ&businessType=DOCUMENT&scene=SINGLEPAGE\",\n        \"RequestId\": \"s1694572778289857146\"\n    }\n}",
         "title": "获取合同详情嵌入WEB链接"
-      },
-      {
-        "document": "获取生成印章嵌入WEB链接",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwJsUUckpkjss52UCW2se8TOSLS4tEP\"\n    },\n    \"EmbedType\": \"CREATE_SEAL\",\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"WebUrl\": \"https://embed.qian.tencent.cn/seal-create?embed=1&code=yDwgzUUckp12yp52UEHWYmLCd041eukw&channel=TENCENTCLOUD&businessType=SEAL\",\n        \"RequestId\": \"s1694572778289857145\"\n    }\n}",
-        "title": "获取生成印章嵌入WEB链接"
       },
       {
         "document": "获取合同详情嵌入WEB链接-指定可查看控件",
@@ -442,6 +436,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwJsUUckpkjss52UCW2se8TOSLS4tEP\"\n    },\n    \"BusinessId\": \"aDRt2UUgygqxyp9yUuO4zjEwqXwsIljY\",\n    \"EmbedType\": \"PREVIEW_FLOW_DETAIL\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.DataNotFound\",\n            \"Message\": \"未查询到流程\"\n        },\n        \"RequestId\": \"s1694572778289857144\"\n    }\n}",
         "title": "获取合同详情嵌入Web链接失败，是因为对应的签署流程不存在。"
+      },
+      {
+        "document": "获取生成印章嵌入WEB链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwJsUUckpkjss52UCW2se8TOSLS4tEP\"\n    },\n    \"EmbedType\": \"CREATE_SEAL\",\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"WebUrl\": \"https://embed.qian.tencent.cn/seal-create?embed=1&code=yDwgzUUckp12yp52UEHWYmLCd041eukw&channel=TENCENTCLOUD&businessType=SEAL\",\n        \"RequestId\": \"s1694572778289857145\"\n    }\n}",
+        "title": "获取生成印章嵌入WEB链接"
       }
     ],
     "CreateEmployeeChangeUrl": [

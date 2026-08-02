@@ -7,6 +7,13 @@
       "output": "CheckMigrateIndexMetaDataResponse",
       "status": "online"
     },
+    "CheckUpdateInstance": {
+      "document": "检查实例变配操作是否可以发起",
+      "input": "CheckUpdateInstanceRequest",
+      "name": "ES集群实例变配检查接口",
+      "output": "CheckUpdateInstanceResponse",
+      "status": "online"
+    },
     "CreateAutoBackUpStrategy": {
       "document": "新建自动备份快照策略",
       "input": "CreateAutoBackUpStrategyRequest",
@@ -411,6 +418,13 @@
       "input": "ModifyAutoBackUpStrategyRequest",
       "name": "修改自动备份快照策略",
       "output": "ModifyAutoBackUpStrategyResponse",
+      "status": "online"
+    },
+    "ModifyAutoScaleDiskInfo": {
+      "document": "修改自动扩盘参数",
+      "input": "ModifyAutoScaleDiskInfoRequest",
+      "name": "修改自动扩盘参数",
+      "output": "ModifyAutoScaleDiskInfoResponse",
       "status": "online"
     },
     "ModifyEsVipSecurityGroup": {
@@ -873,6 +887,181 @@
           "name": "SettingCheckFailedIndexArr",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUpdateInstanceRequest": {
+      "document": "CheckUpdateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃，请使用NodeInfoList\n变配后的节点个数（2-50个）",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃，请使用NodeInfoList\n变配后的节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "ES.S1.MEDIUM4",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃，请使用NodeInfoList\n变配后的磁盘大小（单位GB）",
+          "example": "150",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃，请使用NodeInfoList\n变配后的专用主节点个数（仅支持3个和5个）",
+          "example": "1",
+          "member": "uint64",
+          "name": "MasterNodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃，请使用NodeInfoList\n变配后的专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "MasterNodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改",
+          "example": "无",
+          "member": "NodeInfo",
+          "name": "NodeInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>默认值为false",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启",
+          "example": "0",
+          "member": "int64",
+          "name": "ScaleType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "多可用区部署",
+          "example": "无",
+          "member": "ZoneDetail",
+          "name": "MultiZoneInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可视化节点配置",
+          "example": "无",
+          "member": "WebNodeTypeInfo",
+          "name": "WebNodeTypeInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "COS自动备份信息",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackup",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离",
+          "example": "-1",
+          "member": "int64",
+          "name": "ReadWriteMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUpdateInstanceResponse": {
+      "document": "CheckUpdateInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否允许变配操作",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowUpdate",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不允许变配的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "err",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否需要设置分片迁移并发相关参数",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedSetShards",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否需要开启置放群组异步任务",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableScheduleRecoverGroupTask",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -11812,6 +12001,61 @@
     },
     "ModifyAutoBackUpStrategyResponse": {
       "document": "ModifyAutoBackUpStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true 成功; false 失败",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoScaleDiskInfoRequest": {
+      "document": "ModifyAutoScaleDiskInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动扩盘参数列表",
+          "example": "无",
+          "member": "AutoScaleDiskInfo",
+          "name": "AutoScaleDiskInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的自动扩盘节点类型",
+          "example": "[\"hotData\"]",
+          "member": "string",
+          "name": "DeleteNodeTypeList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoScaleDiskInfoResponse": {
+      "document": "ModifyAutoScaleDiskInfo返回参数结构体",
       "members": [
         {
           "disabled": false,

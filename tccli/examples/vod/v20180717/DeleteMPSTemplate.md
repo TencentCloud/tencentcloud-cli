@@ -1,4 +1,4 @@
-**Example 1: 删除 MPS 音视频增强任务模板**
+**Example 1: 删除 MPS 智能字幕任务模板**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod DeleteMPSTemplate --cli-unfold-argument  \
     --SubAppId 1500000001 \
-    --TemplateType Transcode \
+    --TemplateType SmartSubtitle \
     --Definition 24214
 ```
 

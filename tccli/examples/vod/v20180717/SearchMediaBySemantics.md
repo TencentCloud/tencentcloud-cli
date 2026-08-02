@@ -7,7 +7,8 @@ Input:
 ```
 tccli vod SearchMediaBySemantics --cli-unfold-argument  \
     --SubAppId 1500035838 \
-    --Text 包含夕阳的海边视频
+    --Text 包含夕阳的海边视频 \
+    --KnowledgeBaseId kb-**********
 ```
 
 Output: 

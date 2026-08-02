@@ -196,6 +196,13 @@
       "output": "ModifyDBCustomClusterTagsResponse",
       "status": "online"
     },
+    "ModifyDBCustomNodeAttributes": {
+      "document": "该接口（ModifyDBCustomNodeAttributes）用于修改 DB Custom 节点的属性。",
+      "input": "ModifyDBCustomNodeAttributesRequest",
+      "name": "修改节点属性",
+      "output": "ModifyDBCustomNodeAttributesResponse",
+      "status": "online"
+    },
     "ModifyDBCustomNodeSecurityGroups": {
       "document": "该接口（ModifyDBCustomNodeSecurityGroups）用于修改 DB Custom 节点安全组。",
       "input": "ModifyDBCustomNodeSecurityGroupsRequest",
@@ -4605,6 +4612,70 @@
     "ModifyDBCustomClusterTagsResponse": {
       "document": "ModifyDBCustomClusterTags返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBCustomNodeAttributesRequest": {
+      "document": "ModifyDBCustomNodeAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点ID</p><p>参数格式：dbcn-hq98qjym</p>",
+          "example": "dbcn-qv204bsi",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机 HostName</p><p>入参限制：参数设置规则参见：<a href=\"https://cloud.tencent.com/document/api/1322/132929\">创建 DB Custom 节点接口</a>的 HostName 参数说明。</p><p>注意：节点在没有加入到集群之前才支持修改主机 HostName。</p>",
+          "example": "host-2026.07.30",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点名称</p><p>入参限制：参数设置规则参见：<a href=\"https://cloud.tencent.com/document/api/1322/132929\">创建 DB Custom 节点接口</a>的 NodeName 参数说明。</p>",
+          "example": "host-2026.07.30",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改实例 HostName 是否自动重启实例，不传默认自动重启。</p><p>枚举值：</p><ul><li>true： 修改主机 HostName，并自动重启主机</li><li>false： 修改主机 HostName，不自动重启主机，需要手动重启使新主机 HostName 生效</li></ul><p>默认值：true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoReboot",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBCustomNodeAttributesResponse": {
+      "document": "ModifyDBCustomNodeAttributes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>上架节点的任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1760",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

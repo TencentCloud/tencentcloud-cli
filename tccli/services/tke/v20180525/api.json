@@ -5775,6 +5775,15 @@
           "name": "DeletionProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>跳过校验选项，目前支持 &quot;VpcDnsCheck&quot;</p>",
+          "example": "[\"VpcDnsCheck\"]",
+          "member": "string",
+          "name": "SkipValidateOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

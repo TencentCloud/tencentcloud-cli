@@ -1624,11 +1624,25 @@
       "output": "SwitchProxyVpcResponse",
       "status": "online"
     },
+    "TransferClusterPrepayToPostpay": {
+      "document": "本接口（TransferClusterPrepayToPostpay）用于将预付费集群转为后付费集群",
+      "input": "TransferClusterPrepayToPostpayRequest",
+      "name": "预付费集群转后付费集群",
+      "output": "TransferClusterPrepayToPostpayResponse",
+      "status": "online"
+    },
     "TransferClusterZone": {
       "document": "本接口（TransferClusterZone）用于发起跨可用区迁移。",
       "input": "TransferClusterZoneRequest",
       "name": "跨可用区迁移",
       "output": "TransferClusterZoneResponse",
+      "status": "online"
+    },
+    "TransferStoragePrepayToPostpay": {
+      "document": "本接口（TransferStoragePrepayToPostpay）用于将预付费存储转为后付费存储",
+      "input": "TransferStoragePrepayToPostpayRequest",
+      "name": "预付费存储转后付费存储",
+      "output": "TransferStoragePrepayToPostpayResponse",
       "status": "online"
     },
     "UnbindClusterResourcePackages": {
@@ -34828,6 +34842,23 @@
       ],
       "usage": "out"
     },
+    "TransferClusterPrepayToPostpayRequest": {
+      "document": "TransferClusterPrepayToPostpay请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "TransferClusterPrepayToPostpayResponse": {
+      "document": "TransferClusterPrepayToPostpay返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TransferClusterZoneRequest": {
       "document": "TransferClusterZone请求参数结构体",
       "members": [
@@ -34901,6 +34932,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferStoragePrepayToPostpayRequest": {
+      "document": "TransferStoragePrepayToPostpay请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "TransferStoragePrepayToPostpayResponse": {
+      "document": "TransferStoragePrepayToPostpay返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

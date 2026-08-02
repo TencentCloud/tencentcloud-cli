@@ -1886,12 +1886,28 @@
         "title": "转换网络"
       }
     ],
+    "TransferClusterPrepayToPostpay": [
+      {
+        "document": "预付费集群转后付费集群",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n  \"ClusterId\": \"cynosdbmysql-3xazs3u5\"\n}\n\n",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "预付费集群转后付费集群"
+      }
+    ],
     "TransferClusterZone": [
       {
         "document": "发起跨可用区迁移",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-ejccn17r\",\n    \"DstZone\": \"ap-guangzhou-4\",\n    \"MaxLag\": 10,\n    \"TransferType\": \"Immediate\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "发起跨可用区迁移"
+      }
+    ],
+    "TransferStoragePrepayToPostpay": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferStoragePrepayToPostpay\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b28507e-ab37-49de-9b5b-0fb54d18863f\"\n    }\n}",
+        "title": "存储包年包月转按量"
       }
     ],
     "UnbindClusterResourcePackages": [

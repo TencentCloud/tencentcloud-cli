@@ -3738,6 +3738,30 @@
       ],
       "usage": "both"
     },
+    "ClusterInfoInput": {
+      "document": "创建模型路由时的集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "mcls-a4pkos6k",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>Exclusive： 独占集群</li><li>Public： 公有云共享集群</li></ul>",
+          "example": "Exclusive",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ClusterItem": {
       "document": "独占集群信息",
       "members": [
@@ -3889,6 +3913,17 @@
           "member": "float",
           "name": "InputCachedCoefficient",
           "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存创建积分系数</p>",
+          "example": "123.1232",
+          "member": "float",
+          "name": "InputCacheCreationCoefficient",
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -5242,7 +5277,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>证书ID</p><p>入参限制：当Schema为HTTPS时，该参数必传</p>",
+          "document": "<p>证书ID</p><p>入参限制：当Scheme为HTTPS时，该参数必传</p>",
           "example": "SCkPG15A",
           "member": "string",
           "name": "CertId",
@@ -5253,7 +5288,7 @@
           "disabled": false,
           "document": "<p>集群信息</p>",
           "example": "无",
-          "member": "ClusterInfo",
+          "member": "ClusterInfoInput",
           "name": "ClusterInfo",
           "required": false,
           "type": "object"
@@ -5261,7 +5296,7 @@
         {
           "disabled": false,
           "document": "<p>模型路由实例名称</p><p>默认值：-</p>",
-          "example": "test-enterprise-modelrouter",
+          "example": "模型路由实例",
           "member": "string",
           "name": "ModelRouterName",
           "required": false,
@@ -5279,7 +5314,7 @@
         {
           "disabled": false,
           "document": "<p>模型路由的监听端口</p><p>取值范围：[1, 65535]</p>",
-          "example": "443",
+          "example": "80",
           "member": "uint64",
           "name": "Port",
           "required": false,
@@ -5306,7 +5341,7 @@
         {
           "disabled": false,
           "document": "<p>模型路由实例的网络协议</p><p>枚举值：</p><ul><li>HTTP： HTTP协议</li><li>HTTPS： HTTPS协议</li></ul>",
-          "example": "HTTPS",
+          "example": "HTTP",
           "member": "string",
           "name": "Schema",
           "required": false,
@@ -5336,6 +5371,24 @@
           "example": "vpc-fc7eyow9",
           "member": "string",
           "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例计费信息</p>",
+          "example": "无",
+          "member": "ModelRouterBillingConfigInput",
+          "name": "ModelRouterBillingConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端Token，用于保证请求的幂等性。  从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。</p>",
+          "example": "3e727335-f94c-468f-9989-21759a3b6de8",
+          "member": "string",
+          "name": "ClientToken",
           "required": false,
           "type": "string"
         }
@@ -5413,7 +5466,7 @@
         {
           "disabled": false,
           "document": "<p>模型路由实例ID</p>",
-          "example": "cmr-c8q8ltxn",
+          "example": "cmr-g6rpjqmg",
           "member": "string",
           "name": "ModelRouterId",
           "output_required": true,
@@ -10413,7 +10466,7 @@
         {
           "disabled": false,
           "document": "<p>模型路由实例ID</p>",
-          "example": "cmr-h2tdbhtz",
+          "example": "cmr-5wsfq9lw",
           "member": "string",
           "name": "ModelRouterId",
           "required": true,
@@ -10423,7 +10476,7 @@
           "disabled": false,
           "document": "<p>需要解除关联的模型信息</p>",
           "example": "无",
-          "member": "ModelRouterModel",
+          "member": "ModelRouterModelToDisassociate",
           "name": "Models",
           "required": false,
           "type": "list"
@@ -14258,6 +14311,39 @@
       ],
       "usage": "both"
     },
+    "ModelRouterBillingConfigInput": {
+      "document": "模型路由计费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由计费模式</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量计费</li><li>RESOURCE_PACKAGE： 按资源包抵扣</li></ul>",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例规格</p><p>枚举值：</p><ul><li>t1.nano-01： 入门版</li><li>t1.nano-02： 轻量版</li><li>t1.nano-03： 轻量增强版</li><li>t1.micro-01： 微型版</li><li>t1.micro-02： 基础版</li><li>t1.small-01： 标准版</li><li>t1.small-02： 标准增强版</li><li>t1.medium-01： 进阶版</li><li>t1.medium-02： 进阶增强版</li><li>t1.large-01： 专业版</li><li>t1.large-02： 专业增强版</li><li>t1.xlarge-01： 旗舰版</li><li>t1.xlarge-02： 至尊版</li></ul>",
+          "example": "t1.nano-01",
+          "member": "string",
+          "name": "SlaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否关联资源包抵扣</p><p>枚举值：</p><ul><li>true： 关联</li><li>false： 不关联</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "AssociateResourcePackage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "ModelRouterDetail": {
       "document": "查询单个实例详细信息",
       "members": [
@@ -14480,6 +14566,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>带宽</p><p>单位：Mbps</p>",
+          "example": "2048",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性公网IP的ID</p>",
+          "example": "eip-kxle429x",
+          "member": "string",
+          "name": "EipAddressId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14648,7 +14754,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务商/模型 ID（byok_model.model_id，形如 model-xxxxxxxx；Platform 类型不传）</p>",
+          "document": "<p>BYOK实例ID</p>",
           "example": "model-pb9cvzsua",
           "member": "string",
           "name": "ServiceProviderId",
@@ -14656,9 +14762,73 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前 CMR、当前绑定模型下该 BYOK实例的调度优先级。</p><p>取值范围：[0, 2]</p><p>默认值：0</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Order",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前CMR、当前绑定模型的同一有效Order层内，BYOK实例之间的相对选择权重。</p><p>取值范围：[0, 100]</p><p>默认值：10</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "ModelRouterModelToDisassociate": {
+      "document": "CMR实例待解绑的模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "my-gpt-5",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属厂商</p>",
+          "example": "openai",
+          "member": "string",
+          "name": "Provider",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型。</p><p>枚举值：</p><ul><li>BYOK： BYOK类型</li><li>Platform： 平台类型</li></ul>",
+          "example": "BYOK",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BYOK实例ID</p>",
+          "example": "byok-74gzz96q",
+          "member": "string",
+          "name": "ServiceProviderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ModelRouterPackage": {
       "document": "模型路由资源包",
@@ -15145,6 +15315,26 @@
           "example": "vpc-j5bxoqef",
           "member": "string",
           "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>带宽</p><p>单位：Mbps</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性公网IP的ID</p>",
+          "example": "eip-kxle429x",
+          "member": "string",
+          "name": "EipAddressId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16382,6 +16572,15 @@
           "name": "RouterSetting",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>带宽</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>",
+          "example": "25",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -18119,7 +18318,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LowestCost： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SimpleShuffle",
           "member": "string",
           "name": "CrossModelGroupRoutingStrategy",
@@ -18149,6 +18348,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "uint64",
+          "name": "NumRetries",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>L2模型组内路由调度算法参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoutingStrategyArgs",
+          "name": "RoutingStrategyArgs",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -18164,9 +18385,86 @@
           "name": "RoutingStrategy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型间路由策略。</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>CostBasedRouting： 最低积分路由</li></ul>",
+          "example": "CostBasedRouting",
+          "member": "string",
+          "name": "CrossModelGroupRoutingStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>L2模型组内路由调度算法参数</p>",
+          "example": "无",
+          "member": "RoutingStrategyArgs",
+          "name": "RoutingStrategyArgs",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CMR实例级别请求组内重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "NumRetries",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
+    },
+    "RoutingStrategyArgs": {
+      "document": "L2模型内路由算法策略参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最低繁忙路由算法相对近优容差。</p><p>取值范围：[0, 100]</p><p>默认值：0</p><p>仅最低繁忙路由算法生效。0 表示请求仅会路由到在途数最小的上游大模型部署，0.10 表示请求路由到的上游大模型部署在途请求数最多比最小在途数高10%，依次类推。</p>",
+          "example": "0.3",
+          "member": "float",
+          "name": "LeastBusyBuffer",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用量均衡路由算法相对近优容差</p><p>取值范围：[0, 100]</p><p>默认值：0</p><p>仅用量均衡路由算法生效。0 表示请求仅会路由到TPM最低的上游大模型部署；0.10 表示请求最多会路由到比TPM最小值高10%的上游大模型部署，依次类推。</p>",
+          "example": "0.4",
+          "member": "float",
+          "name": "UsageBasedBuffer",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最低延迟路由算法相对近优容差</p><p>取值范围：[0, 100]</p><p>默认值：0</p><p>仅最低延迟路由算法生效。0 表示请求仅会路由到延迟最低的上游大模型部署；0.10 表示请求最多会路由到比延迟最小值高10%的上游大模型部署，依次类推。</p>",
+          "example": "0.6",
+          "member": "float",
+          "name": "LowestLatencyBuffer",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最低积分系数路由算法相对近优容差</p><p>取值范围：[0, 100]</p><p>默认值：0</p><p>仅最低积分系数路由算法生效。0 表示请求仅会路由到积分系数最低的上游大模型部署；0.10 表示请求最多会路由到比积分系数最小值高10%的上游大模型部署，依次类推。</p>",
+          "example": "100",
+          "member": "float",
+          "name": "LowestCostBuffer",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RsTagRule": {
       "document": "修改节点标签的数据类型",
@@ -18929,6 +19227,36 @@
           "example": "custom_name",
           "member": "string",
           "name": "ServiceProviderName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的指定模型组内BYOK实例的调度优先级</p><p>取值范围[0,2]，优先级随数值增大而降低。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Order",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的指定模型组Order相同层级内BYOK实例的调度权重</p>",
+          "example": "50",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CMR实例-BYOK实例的模型调度绑定关系状态</p><p>枚举值：</p><ul><li>Configuring： 变配中</li><li>ConfigureFailed： 变配失败</li><li>Deleting： 删除中</li><li>Provisioning： 创建中</li><li>Active： 正常可用</li><li>ProvisionFailed： 创建失败</li><li>DeletionFailed： 删除失败</li></ul>",
+          "example": "Active",
+          "member": "string",
+          "name": "AssociationStatus",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

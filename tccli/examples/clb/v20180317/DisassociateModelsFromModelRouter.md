@@ -1,23 +1,23 @@
-**Example 1: 模型从模型路由实例解除关联**
+**Example 1: CMR实例解绑指定BYOK实例以及ModelGroup**
 
-
+CMR实例解绑指定BYOK实例以及ModelGroup
 
 Input: 
 
 ```
 tccli clb DisassociateModelsFromModelRouter --cli-unfold-argument  \
-    --ModelRouterId cmr-h2tdbhtz \
-    --Models.0.ModelName gpt-4o \
+    --ModelRouterId cmr-5wsfq9lw \
+    --Models.0.ModelName my-gpt-5 \
     --Models.0.Provider openai \
     --Models.0.Type BYOK \
-    --Models.0.ServiceProviderId model-pb9cvzsua
+    --Models.0.ServiceProviderId byok-74gzz96q
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "e32f5696-3439-4983-bc25-22a263c14ef0"
+        "RequestId": "e9604e31-5648-4037-83b3-1abfb654bf98"
     }
 }
 ```

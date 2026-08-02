@@ -3441,7 +3441,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要迁移或同步的库名，当ObjectMode为Partial时，此项必填",
+          "document": "<p>需要迁移或同步的库名，当ObjectMode为Partial时，此项必填</p>",
           "example": "db1",
           "member": "string",
           "name": "DbName",
@@ -3452,7 +3452,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移或同步后的库名，默认与源库相同",
+          "document": "<p>迁移或同步后的库名，默认与源库相同</p>",
           "example": "db1_new",
           "member": "string",
           "name": "NewDbName",
@@ -3463,7 +3463,7 @@
         },
         {
           "disabled": false,
-          "document": "DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值，如果整库同步此处应该为All。",
+          "document": "<p>DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值，如果整库同步此处应该为All。</p>",
           "example": "All",
           "member": "string",
           "name": "DbMode",
@@ -3474,7 +3474,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移或同步的 schema",
+          "document": "<p>迁移或同步的 schema</p>",
           "example": "sch1",
           "member": "string",
           "name": "SchemaName",
@@ -3485,7 +3485,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移或同步后的 schema name",
+          "document": "<p>迁移或同步后的 schema name</p>",
           "example": "sch1_new",
           "member": "string",
           "name": "NewSchemaName",
@@ -3496,7 +3496,18 @@
         },
         {
           "disabled": false,
-          "document": "表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填，如果整库同步此处应该为All。",
+          "document": "<p>schema选择模式，pg和sqlserver需要使用</p><p>枚举值：</p><ul><li>All： 当前对象下的所有对象</li><li>Partial： 部分对象</li></ul>",
+          "example": "Partial",
+          "member": "string",
+          "name": "SchemaMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填，如果整库同步此处应该为All。</p>",
           "example": "All",
           "member": "string",
           "name": "TableMode",
@@ -3507,7 +3518,7 @@
         },
         {
           "disabled": false,
-          "document": "表图对象集合，当 TableMode 为 Partial 时，此项需要填写",
+          "document": "<p>表图对象集合，当 TableMode 为 Partial 时，此项需要填写</p>",
           "example": "无",
           "member": "Table",
           "name": "Tables",
@@ -3518,7 +3529,7 @@
         },
         {
           "disabled": false,
-          "document": "视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象，如果整库同步此处应该为All。",
+          "document": "<p>视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象，如果整库同步此处应该为All。</p>",
           "example": "All",
           "member": "string",
           "name": "ViewMode",
@@ -3529,7 +3540,7 @@
         },
         {
           "disabled": false,
-          "document": "视图对象集合，当 ViewMode 为 Partial 时， 此项需要填写",
+          "document": "<p>视图对象集合，当 ViewMode 为 Partial 时， 此项需要填写</p>",
           "example": "无",
           "member": "View",
           "name": "Views",
@@ -3540,7 +3551,7 @@
         },
         {
           "disabled": false,
-          "document": "选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。",
+          "document": "<p>选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。</p>",
           "example": "All",
           "member": "string",
           "name": "FunctionMode",
@@ -3551,7 +3562,7 @@
         },
         {
           "disabled": false,
-          "document": "FunctionMode取值为Partial时需要填写",
+          "document": "<p>FunctionMode取值为Partial时需要填写</p>",
           "example": "[\"func_1\"]",
           "member": "string",
           "name": "Functions",
@@ -3562,7 +3573,7 @@
         },
         {
           "disabled": false,
-          "document": "选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。",
+          "document": "<p>选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。</p>",
           "example": "All",
           "member": "string",
           "name": "ProcedureMode",
@@ -3573,7 +3584,7 @@
         },
         {
           "disabled": false,
-          "document": "ProcedureMode取值为Partial时需要填写",
+          "document": "<p>ProcedureMode取值为Partial时需要填写</p>",
           "example": "[\"proc_1\"]",
           "member": "string",
           "name": "Procedures",
@@ -3584,7 +3595,7 @@
         },
         {
           "disabled": false,
-          "document": "触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。",
+          "document": "<p>触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。</p>",
           "example": "Partial",
           "member": "string",
           "name": "TriggerMode",
@@ -3595,7 +3606,7 @@
         },
         {
           "disabled": false,
-          "document": "当TriggerMode为partial，指定要迁移的触发器名称",
+          "document": "<p>当TriggerMode为partial，指定要迁移的触发器名称</p>",
           "example": "[\"trigger_1\"]",
           "member": "string",
           "name": "Triggers",
@@ -3606,7 +3617,7 @@
         },
         {
           "disabled": false,
-          "document": "事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。",
+          "document": "<p>事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。</p>",
           "example": "Partial",
           "member": "string",
           "name": "EventMode",
@@ -3617,7 +3628,7 @@
         },
         {
           "disabled": false,
-          "document": "当EventMode为partial，指定要迁移的事件名称",
+          "document": "<p>当EventMode为partial，指定要迁移的事件名称</p>",
           "example": "[\"event_1\"]",
           "member": "string",
           "name": "Events",

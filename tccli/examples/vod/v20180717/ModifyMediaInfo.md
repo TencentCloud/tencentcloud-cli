@@ -7,7 +7,8 @@ Input:
 ```
 tccli vod ModifyMediaInfo --cli-unfold-argument  \
     --Name 新的视频名称 \
-    --FileId 1397757908182903026
+    --FileId 1397757908182903026 \
+    --DeleteKnowledgeBases kb-**********
 ```
 
 Output: 
@@ -76,11 +77,11 @@ Input:
 
 ```
 tccli vod ModifyMediaInfo --cli-unfold-argument  \
-    --AddKeyFrameDescs.0.TimeOffset 2.0 \
+    --AddKeyFrameDescs.0.TimeOffset 2 \
     --AddKeyFrameDescs.0.Content 测试内容2 \
-    --AddKeyFrameDescs.1.TimeOffset 1.0 \
+    --AddKeyFrameDescs.1.TimeOffset 1 \
     --AddKeyFrameDescs.1.Content 测试内容1 \
-    --DeleteKeyFrameDescs 3.0 \
+    --DeleteKeyFrameDescs 3 \
     --FileId 1397757908182903026
 ```
 

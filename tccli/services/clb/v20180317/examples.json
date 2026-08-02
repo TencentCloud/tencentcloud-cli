@@ -58,6 +58,12 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateModelsToModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-oei1qdkf\",\n    \"Models\": [\n        {\n            \"ModelName\": \"gpt-4o\",\n            \"Provider\": \"openai\",\n            \"Type\": \"BYOK\",\n            \"ServiceProviderId\": \"model-pb9cvzsua\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"26c44214-aeb1-46d7-8314-78f54a6e4486\"\n    }\n}",
         "title": "将模型关联到模型路由实例"
+      },
+      {
+        "document": "将模型关联到模型路由实例指定BYOK实例的调度权重",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateModelsToModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mwmjm160\",\n    \"Models\": [\n        {\n            \"ModelName\": \"my-gpt-5\",\n            \"Provider\": \"openai\",\n            \"Type\": \"BYOK\",\n            \"ServiceProviderId\": \"byok-r9ue6gow\",\n            \"Order\": 2,\n            \"Weight\": 10\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c0c97f3-c26e-4ae7-a228-e92a088cd9d6\"\n    }\n}",
+        "title": "将模型关联到模型路由实例并指定BYOK实例的调度权重"
       }
     ],
     "AssociateTargetGroups": [
@@ -279,8 +285,8 @@
     "CreateModelRouter": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterType\": \"Enterprise\",\n    \"ModelRouterName\": \"test-enterprise-modelrouter\",\n    \"Schema\": \"HTTPS\",\n    \"Port\": 443,\n    \"CertId\": \"SCkPG15A\",\n    \"NetworkType\": \"Intranet\",\n    \"VpcId\": \"vpc-fc7eyow9\",\n    \"SubnetId\": \"subnet-2cxt138a\",\n    \"RateLimitConfig\": {\n        \"TPM\": 100000,\n        \"RPM\": 60\n    },\n    \"RouterSetting\": {\n        \"RoutingStrategy\": \"SimpleShuffle\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ModelRouterId\": \"cmr-c8q8ltxn\",\n        \"RequestId\": \"87343b8e-0928-4c01-b874-058851db309b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterType\": \"Enterprise\",\n    \"ModelRouterName\": \"模型路由实例\",\n    \"NetworkType\": \"Intranet\",\n    \"Port\": 80,\n    \"Schema\": \"HTTP\",\n    \"SubnetId\": \"subnet-2cxt138a\",\n    \"VpcId\": \"vpc-fc7eyow9\",\n    \"ClientToken\": \"3e727335-f94c-468f-9989-21759a3b6de8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelRouterId\": \"cmr-g6rpjqmg\",\n        \"RequestId\": \"406dfed3-ad8e-44d2-b742-c3b5c36dc060\"\n    }\n}",
         "title": "创建模型路由实例"
       }
     ],
@@ -766,6 +772,12 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAssociations\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mo1nqzs5\"\n}",
         "output": "{\n    \"Response\": {\n        \"ModelAssociationSet\": [],\n        \"ModelRouterId\": \"cmr-mo1nqzs5\",\n        \"TotalCount\": 0,\n        \"RequestId\": \"ae6af60d-9352-4e66-bc81-7ffb1d31abcc\"\n    }\n}",
         "title": "默认查询模型路由"
+      },
+      {
+        "document": "查询已绑定可调度模型的模型路由实例详情",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAssociations\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mwmjm160\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAssociationSet\": [\n            {\n                \"InputModalitiesUnion\": [\n                    \"text\"\n                ],\n                \"ModelName\": \"claude-Opus-4.8\",\n                \"ServiceProviders\": [\n                    {\n                        \"AccessType\": \"PublicCustom\",\n                        \"AssociationStatus\": \"Active\",\n                        \"InputModalities\": [\n                            \"text\"\n                        ],\n                        \"Order\": 1,\n                        \"Protocol\": \"anthropic\",\n                        \"Provider\": \"anthropic\",\n                        \"ServiceProviderId\": \"byok-fcf1iehy\",\n                        \"ServiceProviderName\": \"test-claude\",\n                        \"Weight\": 30\n                    }\n                ],\n                \"Type\": \"BYOK\"\n            }\n        ],\n        \"ModelRouterId\": \"cmr-mwmjm160\",\n        \"TotalCount\": 2,\n        \"RequestId\": \"34b80df0-61f8-40fe-9624-9dfe1250ce38\"\n    }\n}",
+        "title": "查询已绑定可调度模型的模型路由实例详情"
       }
     ],
     "DescribeModelKeys": [
@@ -1010,10 +1022,10 @@
     ],
     "DisassociateModelsFromModelRouter": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateModelsFromModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-h2tdbhtz\",\n    \"Models\": [\n        {\n            \"ModelName\": \"gpt-4o\",\n            \"Provider\": \"openai\",\n            \"Type\": \"BYOK\",\n            \"ServiceProviderId\": \"model-pb9cvzsua\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e32f5696-3439-4983-bc25-22a263c14ef0\"\n    }\n}",
-        "title": "模型从模型路由实例解除关联"
+        "document": "CMR实例解绑指定BYOK实例以及ModelGroup",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateModelsFromModelRouter\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-5wsfq9lw\",\n    \"Models\": [\n        {\n            \"ModelName\": \"my-gpt-5\",\n            \"Provider\": \"openai\",\n            \"Type\": \"BYOK\",\n            \"ServiceProviderId\": \"byok-74gzz96q\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9604e31-5648-4037-83b3-1abfb654bf98\"\n    }\n}",
+        "title": "CMR实例解绑指定BYOK实例以及ModelGroup"
       }
     ],
     "DisassociateTargetGroups": [
@@ -1265,6 +1277,18 @@
       }
     ],
     "ModifyModelRouterAttributes": [
+      {
+        "document": "修改CMR实例级别请求的L2路由算法近优带参数",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelRouterAttributes\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mwmjm160\",\n    \"RouterSetting\": {\n        \"NumRetries\": 4,\n        \"RoutingStrategyArgs\": {\n            \"LeastBusyBuffer\": 0.1,\n            \"UsageBasedBuffer\": 0.1\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c407677-bd5b-4061-8af9-fa783ba3bcdb\"\n    }\n}",
+        "title": "修改CMR实例级别请求的L2路由算法近优带参数"
+      },
+      {
+        "document": "修改CMR实例级别请求的模型组内重试次数",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelRouterAttributes\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mwmjm160\",\n    \"RouterSetting\": {\n        \"NumRetries\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"de181087-5d94-4bb3-8fe8-83127a0ed434\"\n    }\n}",
+        "title": "修改CMR实例级别请求的模型组内重试次数"
+      },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelRouterAttributes\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-h2tdbhtz\",\n    \"ModelRouterName\": \"测试模型路由名称\"\n}",

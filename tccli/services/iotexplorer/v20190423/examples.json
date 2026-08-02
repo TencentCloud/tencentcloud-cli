@@ -1072,7 +1072,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseOverview\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-DGAFvpuVF7\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c383b1f6-4666-47fe-9a3d-c1741d7b5f22\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ActivationLicense\": [\n                    {\n                        \"Period\": \"5_year\",\n                        \"ServiceType\": \"basic\",\n                        \"TotalLicenseNum\": 34650,\n                        \"UsedLicenseNum\": 23331\n                    }\n                ],\n                \"LicenseType\": \"basic\"\n            }\n        ],\n        \"RequestId\": \"c383b1f6-4666-47fe-9a3d-c1741d7b5f22\"\n    }\n}",
         "title": "获取激活码概览"
       }
     ],
@@ -1973,8 +1973,8 @@
     "ModifyTWeTalkAgent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"agent-SValZ1qdEm\",\n    \"Name\": \"学弟\",\n    \"Description\": \"暖男\",\n    \"STTConfig\": {\n        \"Type\": \"trtc\",\n        \"TRTC\": {\n            \"Language\": \"en\",\n            \"VADSilenceTime\": 300,\n            \"VADLevel\": 3\n        }\n    },\n    \"LLMConfig\": {\n        \"Type\": \"default\",\n        \"SystemPrompt\": \"你是一个暖男，照顾用户情绪\",\n        \"Temperature\": 1,\n        \"History\": 20\n    },\n    \"TTSConfig\": {\n        \"Type\": \"flow\",\n        \"Flow\": {\n            \"VoiceId\": \"v-male-P6q7LzD8\",\n            \"Speed\": 1\n        }\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"357c4fb4-6ddb-462d-aed4-4e78a34b1ac8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"agent-RxZAei4odc\",\n    \"EventCallbackConfig\": {\n        \"Enabled\": true,\n        \"Topic\": \"talkforward\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce91fd1e-38a6-4230-9766-80e6259d43d6\"\n    }\n}",
         "title": "修改智能体"
       }
     ],
