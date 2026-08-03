@@ -1010,7 +1010,8 @@ def _build_self_ref_path(num_layers):
     for _ in range(num_layers):
         base += ["Children", "0"]
     base.append("RuleKey")
-    return ".".join(base), len(base)
+    depth = sum(1 for segment in base if not segment.isdigit())
+    return ".".join(base), depth
 
 
 def _walk_to_leaf(params, num_layers):
