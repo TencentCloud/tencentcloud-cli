@@ -77,13 +77,6 @@
       "output": "CreateSpaceResponse",
       "status": "online"
     },
-    "CreateTimerTask": {
-      "document": "CreateTimerTask",
-      "input": "CreateTimerTaskRequest",
-      "name": "创建定时任务",
-      "output": "CreateTimerTaskResponse",
-      "status": "online"
-    },
     "CreateVariable": {
       "document": "创建参数变量",
       "input": "CreateVariableRequest",
@@ -159,13 +152,6 @@
       "input": "DeleteSpaceRequest",
       "name": "删除空间",
       "output": "DeleteSpaceResponse",
-      "status": "online"
-    },
-    "DeleteTimerTask": {
-      "document": "DeleteTimerTask",
-      "input": "DeleteTimerTaskRequest",
-      "name": "删除定时任务",
-      "output": "DeleteTimerTaskResponse",
       "status": "online"
     },
     "DeleteVariable": {
@@ -364,27 +350,6 @@
       "output": "DescribeSystemVariableListResponse",
       "status": "online"
     },
-    "DescribeTimerTask": {
-      "document": "DescribeTimerTask",
-      "input": "DescribeTimerTaskRequest",
-      "name": "任务详情",
-      "output": "DescribeTimerTaskResponse",
-      "status": "online"
-    },
-    "DescribeTimerTaskRunLogList": {
-      "document": "查询定时任务执行记录列表",
-      "input": "DescribeTimerTaskRunLogListRequest",
-      "name": "查询定时任务执行记录列表",
-      "output": "DescribeTimerTaskRunLogListResponse",
-      "status": "online"
-    },
-    "DescribeTimerTaskSummaryList": {
-      "document": "查询定时任务列表",
-      "input": "DescribeTimerTaskSummaryListRequest",
-      "name": "查询定时任务列表(摘要)",
-      "output": "DescribeTimerTaskSummaryListResponse",
-      "status": "online"
-    },
     "DescribeVariable": {
       "document": "获取参数变量",
       "input": "DescribeVariableRequest",
@@ -411,20 +376,6 @@
       "input": "FavoriteSkillRequest",
       "name": "收藏skill",
       "output": "FavoriteSkillResponse",
-      "status": "online"
-    },
-    "MarkAppTriggerRunLogRead": {
-      "document": "MarkAppTriggerRunLogRead",
-      "input": "MarkAppTriggerRunLogReadRequest",
-      "name": "应用触发器标记日志已读",
-      "output": "MarkAppTriggerRunLogReadResponse",
-      "status": "online"
-    },
-    "MarkTimerTaskRunLogRead": {
-      "document": "MarkTimerTaskRunLogRead",
-      "input": "MarkTimerTaskRunLogReadRequest",
-      "name": "标记定时任务运行记录已读",
-      "output": "MarkTimerTaskRunLogReadResponse",
       "status": "online"
     },
     "ModifyAgent": {
@@ -476,13 +427,6 @@
       "output": "ModifySpaceResponse",
       "status": "online"
     },
-    "ModifyTimerTask": {
-      "document": "ModifyTimerTask",
-      "input": "ModifyTimerTaskRequest",
-      "name": "修改定时任务",
-      "output": "ModifyTimerTaskResponse",
-      "status": "online"
-    },
     "ModifyVariable": {
       "document": "更新参数变量",
       "input": "ModifyVariableRequest",
@@ -497,13 +441,6 @@
       "output": "PauseAppTriggerResponse",
       "status": "online"
     },
-    "PauseTimerTask": {
-      "document": "PauseTimerTask",
-      "input": "PauseTimerTaskRequest",
-      "name": "暂停定时任务",
-      "output": "PauseTimerTaskResponse",
-      "status": "online"
-    },
     "ReleaseSkill": {
       "document": "上架skill",
       "input": "ReleaseSkillRequest",
@@ -512,7 +449,7 @@
       "status": "online"
     },
     "ResetConversation": {
-      "document": "重置会话",
+      "document": "重置会话\n注意：当前Claw模式应用会话不支持重置",
       "input": "ResetConversationRequest",
       "name": "重置会话",
       "output": "ResetConversationResponse",
@@ -523,13 +460,6 @@
       "input": "ResumeAppTriggerRequest",
       "name": "恢复应用触发器",
       "output": "ResumeAppTriggerResponse",
-      "status": "online"
-    },
-    "ResumeTimerTask": {
-      "document": "ResumeTimerTask",
-      "input": "ResumeTimerTaskRequest",
-      "name": "启用定时任务",
-      "output": "ResumeTimerTaskResponse",
       "status": "online"
     },
     "RetryRelease": {
@@ -551,13 +481,6 @@
       "input": "RunAppTriggerNowRequest",
       "name": "立即执行应用触发器",
       "output": "RunAppTriggerNowResponse",
-      "status": "online"
-    },
-    "RunTimerTaskNow": {
-      "document": "RunTimerTaskNow",
-      "input": "RunTimerTaskNowRequest",
-      "name": "立即运行定时任务",
-      "output": "RunTimerTaskNowResponse",
       "status": "online"
     },
     "UnfavoritePlugin": {
@@ -979,7 +902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "插件基本配置",
+          "document": "<p>插件基本配置</p>",
           "example": "无",
           "member": "AgentPluginConfig",
           "name": "Config",
@@ -989,7 +912,7 @@
         },
         {
           "disabled": false,
-          "document": "插件名称",
+          "document": "<p>插件名称</p>",
           "example": "图片生成（极速版）",
           "member": "string",
           "name": "Name",
@@ -999,7 +922,7 @@
         },
         {
           "disabled": false,
-          "document": "插件图标url",
+          "document": "<p>插件图标url</p>",
           "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/plugin_files/03bigIcon%E5%A4%A7%E5%9B%BE%E6%A0%87%20%282%29.png",
           "member": "string",
           "name": "IconUrl",
@@ -1009,7 +932,7 @@
         },
         {
           "disabled": false,
-          "document": "插件描述",
+          "document": "<p>插件描述</p>",
           "example": "基于混元大模型，可以根据用户输入的文本query，自动创作不同风格的图片（极速版）",
           "member": "string",
           "name": "Description",
@@ -3183,19 +3106,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
-          "member": "string",
-          "name": "TriggerId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>应用ID</p>",
+          "example": "2078002407236474624",
           "member": "string",
           "name": "AppId",
           "output_required": false,
@@ -3205,96 +3117,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
-          "member": "string",
-          "name": "TriggerName",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_TYPE_SCHEDULED</td><td>1</td><td>定时触发</td></tr><tr><td>APP_TRIGGER_TYPE_WEBHOOK</td><td>2</td><td>Webhook 触发</td></tr></table>",
-          "example": "",
-          "member": "int64",
-          "name": "TriggerType",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_PROMPT</td><td>1</td><td>指令执行</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_WORKFLOW</td><td>2</td><td>工作流执行</td></tr></table>",
-          "example": "",
-          "member": "int64",
-          "name": "ExecuteType",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "",
-          "example": "",
-          "member": "TimerPushConfig",
-          "name": "PushConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_STATUS_ENABLED</td><td>1</td><td>启用</td></tr><tr><td>APP_TRIGGER_STATUS_PAUSED</td><td>2</td><td>暂停</td></tr><tr><td>APP_TRIGGER_STATUS_DELETED</td><td>3</td><td>已删除</td></tr></table>",
-          "example": "",
-          "member": "int64",
-          "name": "Status",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "",
-          "example": "",
-          "member": "string",
-          "name": "SuccessCount",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "",
-          "example": "",
-          "member": "string",
-          "name": "FailedCount",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "",
-          "example": "",
-          "member": "TriggerConfig",
-          "name": "TriggerConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>执行配置</p>",
+          "example": "无",
           "member": "ExecuteConfig",
           "name": "ExecuteConfig",
           "output_required": false,
@@ -3304,13 +3128,134 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_PROMPT</td><td>1</td><td>指令执行</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_WORKFLOW</td><td>2</td><td>工作流执行</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "ExecuteType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败次数</p>",
+          "example": "0",
+          "member": "string",
+          "name": "FailedCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推送渠道配置</p>",
+          "example": "无",
+          "member": "TimerPushConfig",
+          "name": "PushConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_STATUS_ENABLED</td><td>1</td><td>启用</td></tr><tr><td>APP_TRIGGER_STATUS_PAUSED</td><td>2</td><td>暂停</td></tr><tr><td>APP_TRIGGER_STATUS_DELETED</td><td>3</td><td>已删除</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>成功次数</p>",
+          "example": "0",
+          "member": "string",
+          "name": "SuccessCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器配置</p>",
+          "example": "无",
+          "member": "TriggerConfig",
+          "name": "TriggerConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器ID</p>",
+          "example": "b62b21d9-dff1-4841-b357-304ca4d7edfe",
+          "member": "string",
+          "name": "TriggerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器名称</p>",
+          "example": "C端测试(已修改)",
+          "member": "string",
+          "name": "TriggerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器状态</p>",
+          "example": "无",
           "member": "TriggerStatus",
           "name": "TriggerStatus",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_TYPE_SCHEDULED</td><td>1</td><td>定时触发</td></tr><tr><td>APP_TRIGGER_TYPE_WEBHOOK</td><td>2</td><td>Webhook 触发</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "TriggerType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyongchao",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3321,8 +3266,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>应用id</p>",
+          "example": "2078002407236474624",
           "member": "string",
           "name": "AppId",
           "output_required": false,
@@ -3332,8 +3277,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>会话id</p>",
+          "example": "b01cdf5f-0d55-4cc4-9137-7772593cd949",
           "member": "string",
           "name": "ConversationId",
           "output_required": false,
@@ -3343,8 +3288,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器创建时间</p>",
+          "example": "2026-07-29T10:52:51+08:00",
           "member": "string",
           "name": "CreatedAt",
           "output_required": false,
@@ -3354,8 +3299,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>结束时间</p>",
+          "example": "2026-07-29T10:52:58+08:00",
           "member": "string",
           "name": "FinishedAt",
           "output_required": false,
@@ -3365,8 +3310,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器运行实例id</p>",
+          "example": "728cbef2-f5df-4751-86af-75bc9bdc073d",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -3376,8 +3321,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>请求ID</p>",
+          "example": "trigger_728cbef2-f5df-4751-86af-75bc9bdc073d",
           "member": "string",
           "name": "RequestId",
           "output_required": false,
@@ -3387,8 +3332,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>结果码</p>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "ResultCode",
           "output_required": false,
@@ -3398,8 +3343,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>结果摘要</p>",
+          "example": "你好！有什么我可以帮你的吗？",
           "member": "string",
           "name": "ResultSummary",
           "output_required": false,
@@ -3409,8 +3354,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>单次对话id</p>",
+          "example": "req_d6e503f0-bbe0-46bc-b4bb-290e15851a44",
           "member": "string",
           "name": "RunId",
           "output_required": false,
@@ -3420,8 +3365,19 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_INSTANCE_SOURCE_APP_TRIGGER</td><td>1</td><td>来源于应用触发器</td></tr></tbody></table>",
+          "example": "1",
           "member": "int64",
           "name": "Source",
           "output_required": false,
@@ -3431,8 +3387,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器开始执行时间</p>",
+          "example": "2026-07-29T10:52:51+08:00",
           "member": "string",
           "name": "StartedAt",
           "output_required": false,
@@ -3442,8 +3398,8 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></tbody></table>",
+          "example": "4",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -3453,8 +3409,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>TraceId，用于日志记录</p>",
+          "example": "ff1bc2b531ee4703b7569c52a18cbef0 / req_d6e503f0-bbe0-46bc-b4bb-290e15851a44",
           "member": "string",
           "name": "TraceId",
           "output_required": false,
@@ -3464,8 +3420,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器id</p>",
+          "example": "b62b21d9-dff1-4841-b357-304ca4d7edfe",
           "member": "string",
           "name": "TriggerId",
           "output_required": false,
@@ -3475,8 +3431,19 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>访客ID</p>",
+          "example": "cuiyongchao",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行ID</p>",
+          "example": "wfr-0b3f2488-4255-4d54-b67e-2479a2a58fb3",
           "member": "string",
           "name": "WorkflowRunId",
           "output_required": false,
@@ -3531,8 +3498,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>绑定参数列表</p>",
+          "example": "无",
           "member": "AppTriggerParamBinding",
           "name": "ParamList",
           "output_required": false,
@@ -3576,8 +3543,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>参数名</p>",
+          "example": "asdas",
           "member": "string",
           "name": "ParamName",
           "output_required": false,
@@ -3587,8 +3554,8 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>PARAM_TYPE_STRING</td><td>0</td><td>字符串</td></tr><tr><td>PARAM_TYPE_INT</td><td>1</td><td>整数</td></tr><tr><td>PARAM_TYPE_FLOAT</td><td>2</td><td>浮点数</td></tr><tr><td>PARAM_TYPE_BOOL</td><td>3</td><td>布尔值</td></tr><tr><td>PARAM_TYPE_OBJECT</td><td>4</td><td>对象</td></tr><tr><td>PARAM_TYPE_ARRAY_STRING</td><td>5</td><td>字符串数组</td></tr><tr><td>PARAM_TYPE_ARRAY_INT</td><td>6</td><td>整数数组</td></tr><tr><td>PARAM_TYPE_ARRAY_FLOAT</td><td>7</td><td>浮点数数组</td></tr><tr><td>PARAM_TYPE_ARRAY_BOOL</td><td>8</td><td>布尔值数组</td></tr><tr><td>PARAM_TYPE_ARRAY_OBJECT</td><td>9</td><td>对象数组</td></tr><tr><td>PARAM_TYPE_ARRAY_ARRAY</td><td>20</td><td>数组嵌套</td></tr><tr><td>PARAM_TYPE_NULL</td><td>99</td><td>空值</td></tr><tr><td>PARAM_TYPE_UNSPECIFIED</td><td>100</td><td>未指定类型，用于OneOf和AnyOf场景</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>PARAM_TYPE_STRING</td><td>0</td><td>字符串</td></tr><tr><td>PARAM_TYPE_INT</td><td>1</td><td>整数</td></tr><tr><td>PARAM_TYPE_FLOAT</td><td>2</td><td>浮点数</td></tr><tr><td>PARAM_TYPE_BOOL</td><td>3</td><td>布尔值</td></tr><tr><td>PARAM_TYPE_OBJECT</td><td>4</td><td>对象</td></tr><tr><td>PARAM_TYPE_ARRAY_STRING</td><td>5</td><td>字符串数组</td></tr><tr><td>PARAM_TYPE_ARRAY_INT</td><td>6</td><td>整数数组</td></tr><tr><td>PARAM_TYPE_ARRAY_FLOAT</td><td>7</td><td>浮点数数组</td></tr><tr><td>PARAM_TYPE_ARRAY_BOOL</td><td>8</td><td>布尔值数组</td></tr><tr><td>PARAM_TYPE_ARRAY_OBJECT</td><td>9</td><td>对象数组</td></tr><tr><td>PARAM_TYPE_ARRAY_ARRAY</td><td>20</td><td>数组嵌套</td></tr><tr><td>PARAM_TYPE_NULL</td><td>99</td><td>空值</td></tr><tr><td>PARAM_TYPE_UNSPECIFIED</td><td>100</td><td>未指定类型，用于OneOf和AnyOf场景</td></tr></tbody></table>",
+          "example": "8",
           "member": "int64",
           "name": "ParamType",
           "output_required": false,
@@ -3598,8 +3565,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>是否必选</p>",
+          "example": "true",
           "member": "bool",
           "name": "Required",
           "output_required": false,
@@ -3609,8 +3576,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>子参数列表</p>",
+          "example": "无",
           "member": "AppTriggerParamSchema",
           "name": "SubParamList",
           "output_required": false,
@@ -3626,8 +3593,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器执行提示词</p>",
+          "example": "你好",
           "member": "string",
           "name": "ExecutePrompt",
           "output_required": false,
@@ -3637,8 +3604,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>api参数绑定</p>",
+          "example": "无",
           "member": "AppTriggerParamBindingConfig",
           "name": "ParamBindingsApi",
           "output_required": false,
@@ -3654,8 +3621,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>会话id</p>",
+          "example": "b01cdf5f-0d55-4cc4-9137-7772593cd949",
           "member": "string",
           "name": "ConversationId",
           "output_required": false,
@@ -3665,8 +3632,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>执行时间</p>",
+          "example": "6591",
           "member": "string",
           "name": "DurationMs",
           "output_required": false,
@@ -3676,8 +3643,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>结束时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-07-29T10:52:58+08:00",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -3687,8 +3654,8 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_SCHEDULED</td><td>1</td><td>定时触发</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_WEBHOOK</td><td>2</td><td>Webhook 触发</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_MANUAL_RUN</td><td>3</td><td>手动立即执行</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_TEST_RUN</td><td>4</td><td>测试执行</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_SCHEDULED</td><td>1</td><td>定时触发</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_WEBHOOK</td><td>2</td><td>Webhook 触发</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_MANUAL_RUN</td><td>3</td><td>手动立即执行</td></tr><tr><td>APP_TRIGGER_FIRE_TYPE_TEST_RUN</td><td>4</td><td>测试执行</td></tr></tbody></table>",
+          "example": "3",
           "member": "int64",
           "name": "FireType",
           "output_required": false,
@@ -3698,8 +3665,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发实例id</p>",
+          "example": "728cbef2-f5df-4751-86af-75bc9bdc073d",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -3709,8 +3676,8 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_NONE</td><td>1</td><td>未配置推送</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_WAITING</td><td>2</td><td>等待推送</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_SUCCESS</td><td>3</td><td>推送成功</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_FAILED</td><td>4</td><td>推送失败</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_NONE</td><td>1</td><td>未配置推送</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_WAITING</td><td>2</td><td>等待推送</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_SUCCESS</td><td>3</td><td>推送成功</td></tr><tr><td>TIMER_RUN_PUSH_STATUS_FAILED</td><td>4</td><td>推送失败</td></tr></tbody></table>",
+          "example": "1",
           "member": "int64",
           "name": "PushStatus",
           "output_required": false,
@@ -3720,8 +3687,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>结果码</p>",
+          "example": "NON_RETRYABLE_ERROR",
           "member": "string",
           "name": "ResultCode",
           "output_required": false,
@@ -3731,8 +3698,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>结果概要</p>",
+          "example": "你好！有什么我可以帮你的吗？",
           "member": "string",
           "name": "ResultSummary",
           "output_required": false,
@@ -3742,8 +3709,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>单次对话id</p>",
+          "example": "req_d6e503f0-bbe0-46bc-b4bb-290e15851a44",
           "member": "string",
           "name": "RunId",
           "output_required": false,
@@ -3753,8 +3720,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发时间</p><p>参数格式：YYYY:MM:DD hh:mm:ss</p>",
+          "example": "2026-07-29T10:52:51+08:00",
           "member": "string",
           "name": "ScheduledFireTime",
           "output_required": false,
@@ -3764,8 +3731,19 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始执行时间</p><p>参数格式：YYYY:MM:DD hh:mm:ss</p>",
+          "example": "2026-07-29T10:52:51+08:00",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -3775,8 +3753,8 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>TIMER_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>TIMER_RUN_STATUS_PENDING</td><td>1</td><td>等待执行</td></tr><tr><td>TIMER_RUN_STATUS_RUNNING</td><td>2</td><td>执行中</td></tr><tr><td>TIMER_RUN_STATUS_RETRY_WAIT</td><td>3</td><td>等待重试</td></tr><tr><td>TIMER_RUN_STATUS_SUCCESS</td><td>4</td><td>成功</td></tr><tr><td>TIMER_RUN_STATUS_DEAD</td><td>5</td><td>失败终态 (重试耗尽 / 不可重试)</td></tr><tr><td>TIMER_RUN_STATUS_CANCELLED</td><td>6</td><td>被任务暂停/删除/修改取消</td></tr></tbody></table>",
+          "example": "5",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -3786,8 +3764,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器id</p>",
+          "example": "b62b21d9-dff1-4841-b357-304ca4d7edfe",
           "member": "string",
           "name": "TriggerId",
           "output_required": false,
@@ -3797,8 +3775,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>是否已读</p>",
+          "example": "true",
           "member": "bool",
           "name": "Unread",
           "output_required": false,
@@ -3808,8 +3786,19 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>访客Id</p>",
+          "example": "cuiyongchao",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行id</p>",
+          "example": "wfr-0b3f2488-4255-4d54-b67e-2479a2a58fb3",
           "member": "string",
           "name": "WorkflowRunId",
           "output_required": false,
@@ -3825,8 +3814,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器定时配置</p>",
+          "example": "无",
           "member": "TimerScheduleConfig",
           "name": "Schedule",
           "output_required": false,
@@ -3842,8 +3831,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>最近一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-07-29T10:52:58+08:00",
           "member": "string",
           "name": "LastFireTime",
           "output_required": false,
@@ -3853,8 +3842,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>下一次触发时间</p><p>参数格式：格式为YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-07-16T18:00:00+08:00",
           "member": "string",
           "name": "NextFireTime",
           "output_required": false,
@@ -3864,8 +3853,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发方式</p>",
+          "example": "仅手动触发",
           "member": "string",
           "name": "PolicySummary",
           "output_required": false,
@@ -3881,8 +3870,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>应用ID</p>",
+          "example": "2078002407236474624",
           "member": "string",
           "name": "AppId",
           "output_required": false,
@@ -3892,8 +3881,8 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_PROMPT</td><td>1</td><td>指令执行</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_WORKFLOW</td><td>2</td><td>工作流执行</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_PROMPT</td><td>1</td><td>指令执行</td></tr><tr><td>APP_TRIGGER_EXECUTE_TYPE_WORKFLOW</td><td>2</td><td>工作流执行</td></tr></tbody></table>",
+          "example": "2",
           "member": "int64",
           "name": "ExecuteType",
           "output_required": false,
@@ -3903,8 +3892,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>失败次数</p>",
+          "example": "0",
           "member": "string",
           "name": "FailedCount",
           "output_required": false,
@@ -3914,8 +3903,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>最近一次会话id</p>",
+          "example": "b01cdf5f-0d55-4cc4-9137-7772593cd949",
           "member": "string",
           "name": "LastSessionId",
           "output_required": false,
@@ -3925,8 +3914,19 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_STATUS_ENABLED</td><td>1</td><td>启用</td></tr><tr><td>APP_TRIGGER_STATUS_PAUSED</td><td>2</td><td>暂停</td></tr><tr><td>APP_TRIGGER_STATUS_DELETED</td><td>3</td><td>已删除</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table><p>取值范围：[0, 2]</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_STATUS_ENABLED</td><td>1</td><td>启用</td></tr><tr><td>APP_TRIGGER_STATUS_PAUSED</td><td>2</td><td>暂停</td></tr><tr><td>APP_TRIGGER_STATUS_DELETED</td><td>3</td><td>已删除</td></tr></tbody></table>",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -3936,8 +3936,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>成功次数</p>",
+          "example": "1",
           "member": "string",
           "name": "SuccessCount",
           "output_required": false,
@@ -3947,8 +3947,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器id</p>",
+          "example": "b62b21d9-dff1-4841-b357-304ca4d7edfe",
           "member": "string",
           "name": "TriggerId",
           "output_required": false,
@@ -3958,8 +3958,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器名称</p>",
+          "example": "C端测试",
           "member": "string",
           "name": "TriggerName",
           "output_required": false,
@@ -3969,8 +3969,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器执行状态</p>",
+          "example": "无",
           "member": "TriggerStatus",
           "name": "TriggerStatus",
           "output_required": false,
@@ -3980,8 +3980,8 @@
         },
         {
           "disabled": false,
-          "document": "<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_TYPE_SCHEDULED</td><td>1</td><td>定时触发</td></tr><tr><td>APP_TRIGGER_TYPE_WEBHOOK</td><td>2</td><td>Webhook 触发</td></tr></table>",
-          "example": "",
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_TYPE_SCHEDULED</td><td>1</td><td>定时触发</td></tr><tr><td>APP_TRIGGER_TYPE_WEBHOOK</td><td>2</td><td>Webhook 触发</td></tr></tbody></table>",
+          "example": "2",
           "member": "int64",
           "name": "TriggerType",
           "output_required": false,
@@ -3991,10 +3991,21 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>未读日志的数量</p>",
+          "example": "1",
           "member": "string",
           "name": "UnreadRunLogCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyo******",
+          "member": "string",
+          "name": "UserId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -4008,8 +4019,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器webhook参数配置</p>",
+          "example": "无",
           "member": "AppTriggerWebhookParamSchemaConfig",
           "name": "ParamSchemaConfig",
           "output_required": false,
@@ -4019,8 +4030,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>webhook的key</p>",
+          "example": "9fb9a978-6bf5-48d0-a5b3-69ca8e033412",
           "member": "string",
           "name": "WebhookKey",
           "output_required": false,
@@ -4030,8 +4041,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>webhook的密钥</p>",
+          "example": "bc7569b77c8e30a24537693eaf77e1b010545185d5c04f76",
           "member": "string",
           "name": "WebhookToken",
           "output_required": false,
@@ -4041,8 +4052,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>webhook的地址</p>",
+          "example": "https://tde.xiaowei.cloud.tencent.com/adp/v2/app/2075415763781738240/trigger/webhook/9fb9a978-6bf5-48d0-a5b3-69ca8e033412",
           "member": "string",
           "name": "WebhookUrl",
           "output_required": false,
@@ -4058,8 +4069,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>触发器API参数列表</p>",
+          "example": "无",
           "member": "AppTriggerParamSchema",
           "name": "SchemaList",
           "output_required": false,
@@ -4075,8 +4086,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>推送Webbook地址</p>",
+          "example": "https://tde.xiaowei.cloud.tencent.com/adp/v2/app/2075415763781738240/trigger/webhook/9fb9a978-6bf5-48d0-a5b3-69ca8e033412",
           "member": "string",
           "name": "WebhookUrl",
           "output_required": false,
@@ -4126,7 +4137,7 @@
         {
           "disabled": false,
           "document": "<p>工作流名字</p>",
-          "example": "",
+          "example": "测试工作流",
           "member": "string",
           "name": "WorkflowName",
           "output_required": false,
@@ -5419,6 +5430,206 @@
       ],
       "usage": "both"
     },
+    "ConversationRecordErrorInfo": {
+      "document": "单次对话失败信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对话失败错误码</p>",
+          "example": "460722",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对话失败错误信息</p>",
+          "example": "type:business, code:460722, msg:ErrAPPResourceLimitQPM",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationRecordSummary": {
+      "document": "单次对话记录统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回复记录 ID，对应 messages 中回复消息的 record_id</p>",
+          "example": "rcd_70b72a39-b7fc-405f-a0b9-32f786a3effc",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户提问记录 ID，对应 messages 中用户消息的 record_id</p>",
+          "example": "req_70b72a39-b7fc-405f-a0b9-32f786a3effc",
+          "member": "string",
+          "name": "RelatedRecordId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次对话耗时信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationRecordTimeUsage",
+          "name": "TimeUsage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次对话 token 消耗信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationRecordTokenUsage",
+          "name": "TokenUsage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次对话失败信息；成功时为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationRecordErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次员工助理对话当前状态</p><p>枚举值：</p><ul><li>pending： 待处理</li><li>processing： 处理中</li><li>success： 成功</li><li>failed： 失败</li><li>stop： 停止</li></ul>",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationRecordTimeUsage": {
+      "document": "单次对话耗时信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单次对话总耗时，单位毫秒</p>",
+          "example": "9374",
+          "member": "string",
+          "name": "Elapsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>首 token 耗时，单位毫秒</p>",
+          "example": "3294",
+          "member": "string",
+          "name": "FirstTokenCost",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型推理总耗时，单位毫秒</p>",
+          "example": "9374",
+          "member": "string",
+          "name": "TotalCost",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationRecordTokenUsage": {
+      "document": "单次对话 token 消耗信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入 token 总数</p>",
+          "example": "71070",
+          "member": "string",
+          "name": "InputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出 token 总数</p>",
+          "example": "1437",
+          "member": "string",
+          "name": "OutputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消耗 token 总数</p>",
+          "example": "72507",
+          "member": "string",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存命中 token 总数</p>",
+          "example": "0",
+          "member": "string",
+          "name": "CachedTokens",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理 token 总数</p>",
+          "example": "71",
+          "member": "string",
+          "name": "ReasoningTokens",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ConversationReference": {
       "document": "Reference 参考来源信息",
       "members": [
@@ -5823,6 +6034,15 @@
         },
         {
           "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>触发器配置</p>",
           "example": "无",
           "member": "TriggerConfig",
@@ -5847,6 +6067,15 @@
           "name": "TriggerType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "823dc33b-464b-467c-a467-d7ddcfe05280",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6385,151 +6614,6 @@
       ],
       "type": "object"
     },
-    "CreateTimerTaskRequest": {
-      "document": "CreateTimerTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "\n枚举值:\n| uint | 描述 |\n| --- | --- |\n| 0 |  |\n| 1 | 页面手动创建 |\n| 2 | 自然语言对话创建 |",
-          "example": "1",
-          "member": "int64",
-          "name": "CreateSource",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "输入上下文",
-          "example": "你好",
-          "member": "string",
-          "name": "InputContextSnapshot",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "模型",
-          "example": "TCADP/glm-5.1",
-          "member": "string",
-          "name": "ModelId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "提示词",
-          "example": "帮我总结今天的新闻",
-          "member": "string",
-          "name": "Prompt",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "推送配置",
-          "example": "无",
-          "member": "TimerPushConfig",
-          "name": "PushConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "定时配置",
-          "example": "无",
-          "member": "TimerScheduleConfig",
-          "name": "Schedule",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "skill",
-          "example": "skill快照",
-          "member": "string",
-          "name": "SkillSnapshot",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "空间",
-          "example": "space-123",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务名称",
-          "example": "每日新闻摘要",
-          "member": "string",
-          "name": "TaskName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "工具",
-          "example": "工具快照",
-          "member": "string",
-          "name": "ToolSnapshot",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "工作空间",
-          "example": "工作目录",
-          "member": "string",
-          "name": "WorkspaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "主用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTimerTaskResponse": {
-      "document": "CreateTimerTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "bbe5163d-7900-4230-941a-9b196a9bdfcc",
-          "member": "string",
-          "name": "TimerId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateVariableRequest": {
       "document": "CreateVariable请求参数结构体",
       "members": [
@@ -6916,10 +7000,28 @@
         },
         {
           "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>触发器ID</p>",
           "example": "77ec7105-0cb8-4c87-ac30-d7eb6688bf4c",
           "member": "string",
           "name": "TriggerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "823dc33b-464b-467c-a467-d7ddcfe05280",
+          "member": "string",
+          "name": "UserId",
           "required": false,
           "type": "string"
         }
@@ -7172,60 +7274,6 @@
     },
     "DeleteSpaceResponse": {
       "document": "DeleteSpace返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteTimerTaskRequest": {
-      "document": "DeleteTimerTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "default_space",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "b6fa3335-4f72-4f75-bc9e-290c694a13bd",
-          "member": "string",
-          "name": "TimerId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "主用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteTimerTaskResponse": {
-      "document": "DeleteTimerTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7725,6 +7773,24 @@
           "name": "InstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyo******",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7765,10 +7831,28 @@
         },
         {
           "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>应用触发器ID</p>",
           "example": "febb4930-0e2b-470b-9e24-04b73f9d773b",
           "member": "string",
           "name": "TriggerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyo******",
+          "member": "string",
+          "name": "UserId",
           "required": false,
           "type": "string"
         }
@@ -7838,10 +7922,28 @@
         },
         {
           "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>应用触发器ID</p>",
           "example": "64201696-52ee-49f6-a95b-0773b60a8e6b",
           "member": "string",
           "name": "TriggerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyo******",
+          "member": "string",
+          "name": "UserId",
           "required": false,
           "type": "string"
         }
@@ -7925,6 +8027,24 @@
           "example": "定时",
           "member": "string",
           "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyo******",
+          "member": "string",
+          "name": "UserId",
           "required": false,
           "type": "string"
         }
@@ -8388,6 +8508,16 @@
           "name": "ResetInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次对话记录统计列表，与 message_list 通过 record_id / related_record_id 关联</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationRecordSummary",
+          "name": "RecordSummaryList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -9288,252 +9418,6 @@
       ],
       "type": "object"
     },
-    "DescribeTimerTaskRequest": {
-      "document": "DescribeTimerTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "空间id",
-          "example": "space-123",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务id",
-          "example": "timer-abc123",
-          "member": "string",
-          "name": "TimerId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>主用户Uin</p>",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>子用户Uin</p>",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTimerTaskResponse": {
-      "document": "DescribeTimerTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务",
-          "example": "无",
-          "member": "TimerTask",
-          "name": "Task",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTimerTaskRunLogListRequest": {
-      "document": "DescribeTimerTaskRunLogList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "工作空间ID",
-          "example": "space-123",
-          "member": "string",
-          "name": "SpaceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "定时任务ID，必须按任务维度查询",
-          "example": "timer-abc123",
-          "member": "string",
-          "name": "TimerId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "过滤条件，支持: Status(执行状态，值为枚举int); Unread(仅未读，值为\"true\"/\"false\")",
-          "example": "无",
-          "member": "Filter",
-          "name": "FilterList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "<p>子用户Uin</p>",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>主用户Uin</p>",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "页码，从0开始",
-          "example": "0",
-          "member": "uint64",
-          "name": "PageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "每页数目，最大100",
-          "example": "20",
-          "member": "uint64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTimerTaskRunLogListResponse": {
-      "document": "DescribeTimerTaskRunLogList返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTimerTaskSummaryListRequest": {
-      "document": "DescribeTimerTaskSummaryList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "查询条件",
-          "example": "无",
-          "member": "Filter",
-          "name": "FilterList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "页码",
-          "example": "1",
-          "member": "uint64",
-          "name": "PageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "页大小",
-          "example": "10",
-          "member": "uint64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "查询关键字",
-          "example": "你好",
-          "member": "string",
-          "name": "Query",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "default_space",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>子用户Uin</p>",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>主用户Uin</p>",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTimerTaskSummaryListResponse": {
-      "document": "DescribeTimerTaskSummaryList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务列表",
-          "example": "无",
-          "member": "TimerTaskSummary",
-          "name": "TaskList",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总数量",
-          "example": "0",
-          "member": "string",
-          "name": "TotalCount",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeVariableListRequest": {
       "document": "DescribeVariableList请求参数结构体",
       "members": [
@@ -9902,11 +9786,11 @@
       "type": "object"
     },
     "FieldMask": {
-      "document": "字段掩码",
+      "document": "FieldMask",
       "members": [
         {
           "disabled": false,
-          "document": "字段路径列表",
+          "document": "<p>参数名称</p><p>参数格式：需要获取的指定字段路径</p>",
           "example": "[\"SkillList\"]",
           "member": "string",
           "name": "Paths",
@@ -10301,134 +10185,6 @@
         }
       ],
       "usage": "both"
-    },
-    "MarkAppTriggerRunLogReadRequest": {
-      "document": "MarkAppTriggerRunLogRead请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>应用ID</p>",
-          "example": "2075415763781738240",
-          "member": "string",
-          "name": "AppId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>应用触发器运行实例ID列表</p>",
-          "example": "[\"5131aa02-b9f9-415b-a7f4-e58d48ed3181\"]",
-          "member": "string",
-          "name": "InstanceIdList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "<p>应用触发器ID</p>",
-          "example": "febb4930-0e2b-470b-9e24-04b73f9d773b",
-          "member": "string",
-          "name": "TriggerId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "MarkAppTriggerRunLogReadResponse": {
-      "document": "MarkAppTriggerRunLogRead返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>成功标记个数</p>",
-          "example": "0",
-          "member": "uint64",
-          "name": "MarkedCount",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "MarkTimerTaskRunLogReadRequest": {
-      "document": "MarkTimerTaskRunLogRead请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例列表",
-          "example": "[\"fi-abc123\"]",
-          "member": "string",
-          "name": "FireInstanceIdList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "space-123",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "timer-abc123",
-          "member": "string",
-          "name": "TimerId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "主用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "MarkTimerTaskRunLogReadResponse": {
-      "document": "MarkTimerTaskRunLogRead返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "标记为已读的数量",
-          "example": "43",
-          "member": "uint64",
-          "name": "MarkedCount",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "Model": {
       "document": "模型完整信息",
@@ -11211,6 +10967,15 @@
         },
         {
           "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>触发器信息</p>",
           "example": "无",
           "member": "AppTrigger",
@@ -11235,6 +11000,15 @@
           "name": "UpdateMask",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyo******",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11584,88 +11358,6 @@
       ],
       "type": "object"
     },
-    "ModifyTimerTaskRequest": {
-      "document": "ModifyTimerTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "space-123",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "timer-abc123",
-          "member": "string",
-          "name": "TimerId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务",
-          "example": "无",
-          "member": "TimerTask",
-          "name": "TimerTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "修改的内容",
-          "example": "无",
-          "member": "FieldMask",
-          "name": "UpdateMask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "<p>主用户Uin</p>",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>子用户Uin</p>",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyTimerTaskResponse": {
-      "document": "ModifyTimerTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "下次触发时间",
-          "example": "2026-06-10T12:00:00+08:00",
-          "member": "string",
-          "name": "NextFireTime",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyVariableRequest": {
       "document": "ModifyVariable请求参数结构体",
       "members": [
@@ -11845,10 +11537,28 @@
         },
         {
           "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>应用触发器ID</p>",
           "example": "febb4930-0e2b-470b-9e24-04b73f9d773b",
           "member": "string",
           "name": "TriggerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyo******",
+          "member": "string",
+          "name": "UserId",
           "required": false,
           "type": "string"
         }
@@ -11857,60 +11567,6 @@
     },
     "PauseAppTriggerResponse": {
       "document": "PauseAppTrigger返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "PauseTimerTaskRequest": {
-      "document": "PauseTimerTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "default_space",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "b6fa3335-4f72-4f75-bc9e-290c694a13bd",
-          "member": "string",
-          "name": "TimerId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "主用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "PauseTimerTaskResponse": {
-      "document": "PauseTimerTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12997,10 +12653,28 @@
         },
         {
           "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>应用触发器ID</p>",
           "example": "febb4930-0e2b-470b-9e24-04b73f9d773b",
           "member": "string",
           "name": "TriggerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "cuiyo******",
+          "member": "string",
+          "name": "UserId",
           "required": false,
           "type": "string"
         }
@@ -13009,60 +12683,6 @@
     },
     "ResumeAppTriggerResponse": {
       "document": "ResumeAppTrigger返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ResumeTimerTaskRequest": {
-      "document": "ResumeTimerTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "default_space",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "b6fa3335-4f72-4f75-bc9e-290c694a13bd",
-          "member": "string",
-          "name": "TimerId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "主用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ResumeTimerTaskResponse": {
-      "document": "ResumeTimerTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13176,10 +12796,28 @@
         },
         {
           "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>应用触发器ID</p>",
           "example": "64201696-52ee-49f6-a95b-0773b60a8e6b",
           "member": "string",
           "name": "TriggerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客ID</p>",
+          "example": "823dc33b-464b-467c-a467-d7ddcfe05280",
+          "member": "string",
+          "name": "UserId",
           "required": false,
           "type": "string"
         }
@@ -13195,70 +12833,6 @@
           "example": "2e41cd4a-39cc-455e-a530-8a543db8ac13",
           "member": "string",
           "name": "InstanceId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RunTimerTaskNowRequest": {
-      "document": "RunTimerTaskNow请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "space-123",
-          "member": "string",
-          "name": "SpaceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "timer-abc123",
-          "member": "string",
-          "name": "TimerId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "主用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginUin",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子用户",
-          "example": "700001046587",
-          "member": "string",
-          "name": "LoginSubAccountUin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RunTimerTaskNowResponse": {
-      "document": "RunTimerTaskNow返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "f4c6bd13-910e-49f2-bc46-d33a2aea34d8",
-          "member": "string",
-          "name": "FireInstanceId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -14238,134 +13812,12 @@
       ],
       "usage": "both"
     },
-    "TimerConfig": {
-      "document": "TimerConfig",
-      "members": [
-        {
-          "disabled": false,
-          "document": "推送配置",
-          "example": "无",
-          "member": "TimerPushConfig",
-          "name": "PushConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "定时配置",
-          "example": "无",
-          "member": "TimerScheduleConfig",
-          "name": "Schedule",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "TimerProfile": {
-      "document": "TimerProfile",
-      "members": [
-        {
-          "disabled": false,
-          "document": "\n枚举值:\n| uint | 描述 |\n| --- | --- |\n| 0 |  |\n| 1 | 页面手动创建 |\n| 2 | 自然语言对话创建 |",
-          "example": "1",
-          "member": "int64",
-          "name": "CreateSource",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "输入上下文快照",
-          "example": "InputContextSnapshot",
-          "member": "string",
-          "name": "InputContextSnapshot",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "模型",
-          "example": "TCADP/glm-5.1",
-          "member": "string",
-          "name": "ModelId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "提示词",
-          "example": "2",
-          "member": "string",
-          "name": "Prompt",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "skill快照",
-          "example": "SkillSnapshot",
-          "member": "string",
-          "name": "SkillSnapshot",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务名称",
-          "example": "1",
-          "member": "string",
-          "name": "TaskName",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "工具快照",
-          "example": "ToolSnapshot",
-          "member": "string",
-          "name": "ToolSnapshot",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "工作目录",
-          "example": "default-folder",
-          "member": "string",
-          "name": "WorkspaceId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
     "TimerPushConfig": {
       "document": "TimerPushConfig",
       "members": [
         {
           "disabled": false,
-          "document": "\n枚举值:\n| uint | 描述 |\n| --- | --- |\n| 0 |  |\n| 1 | 不推送 |\n| 2 | 微信公众号 |\n| 3 | 企业微信 AI 机器人 |",
+          "document": "<p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 不推送 |<br>| 2 | 微信公众号 |<br>| 3 | 企业微信 AI 机器人 |</p>",
           "example": "2",
           "member": "int64",
           "name": "PushChannel",
@@ -14376,7 +13828,7 @@
         },
         {
           "disabled": false,
-          "document": "推送会话ID",
+          "document": "<p>推送会话ID</p>",
           "example": "oxxxxxxx",
           "member": "string",
           "name": "PushTargetId",
@@ -14387,7 +13839,7 @@
         },
         {
           "disabled": false,
-          "document": "\n枚举值:\n| uint | 描述 |\n| --- | --- |\n| 0 |  |\n| 1 | 用户 (微信公众号 openid) |\n| 2 | 群聊 (企微机器人 chat_id) |",
+          "document": "<p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 |  |<br>| 1 | 用户 (微信公众号 openid) |<br>| 2 | 群聊 (企微机器人 chat_id) |</p>",
           "example": "1",
           "member": "int64",
           "name": "PushTargetType",
@@ -14398,8 +13850,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>推送webhook的url</p>",
+          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=446c1200-3738-4cdc-ac9e-01234578987",
           "member": "string",
           "name": "PushWebhookUrl",
           "output_required": false,
@@ -14499,244 +13951,6 @@
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "TimerStatus": {
-      "document": "TimerStatus",
-      "members": [
-        {
-          "disabled": false,
-          "document": "失败次数",
-          "example": "0",
-          "member": "string",
-          "name": "FailedCount",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "上次触发时间",
-          "example": "2026-06-10T14:00:00+08:00",
-          "member": "string",
-          "name": "LastFireTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "最近一次会话ID",
-          "example": "ffd8f689-2874-44b9-ae4c-f32d07a9efc8",
-          "member": "string",
-          "name": "LastSessionId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "下次触发时间",
-          "example": "2026-06-10T15:00:00+08:00",
-          "member": "string",
-          "name": "NextFireTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "\n枚举值:\n| uint | 描述 |\n| --- | --- |\n| 0 |  |\n| 1 | 启用 |\n| 2 | 暂停 |\n| 3 | 一次性任务已完成 |",
-          "example": "1",
-          "member": "int64",
-          "name": "Status",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "成功次数",
-          "example": "48",
-          "member": "string",
-          "name": "SuccessCount",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "未读数量",
-          "example": "1",
-          "member": "string",
-          "name": "UnreadRunLogCount",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "TimerTask": {
-      "document": "TimerTask",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务配置",
-          "example": "无",
-          "member": "TimerConfig",
-          "name": "Config",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "staffBizId",
-          "example": "user-123",
-          "member": "string",
-          "name": "OwnerUserId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "定时配置概要",
-          "example": "每天 09:00",
-          "member": "string",
-          "name": "PolicySummary",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "概要信息",
-          "example": "无",
-          "member": "TimerProfile",
-          "name": "Profile",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "space-123",
-          "member": "string",
-          "name": "SpaceId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务状态",
-          "example": "无",
-          "member": "TimerStatus",
-          "name": "Status",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "timer-abc123",
-          "member": "string",
-          "name": "TimerId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "TimerTaskSummary": {
-      "document": "TimerTaskSummary",
-      "members": [
-        {
-          "disabled": false,
-          "document": "OwnerUserId",
-          "example": "1932008810606356480",
-          "member": "string",
-          "name": "OwnerUserId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "定时配置概要",
-          "example": "仅手动触发",
-          "member": "string",
-          "name": "PolicySummary",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "空间ID",
-          "example": "default_space",
-          "member": "string",
-          "name": "SpaceId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务相关状态",
-          "example": "无",
-          "member": "TimerStatus",
-          "name": "Status",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务名称",
-          "example": "1",
-          "member": "string",
-          "name": "TaskName",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "bbe5163d-7900-4230-941a-9b196a9bdfcc",
-          "member": "string",
-          "name": "TimerId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -15021,6 +14235,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访客id</p>",
+          "example": "cuiyongchao",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -7,7 +7,8 @@ Input:
 ```
 tccli adp PauseAppTrigger --cli-unfold-argument  \
     --AppId 2075415763781738240 \
-    --TriggerId febb4930-0e2b-470b-9e24-04b73f9d773b
+    --TriggerId febb4930-0e2b-470b-9e24-04b73f9d773b \
+    --UserId cuiyo******
 ```
 
 Output: 

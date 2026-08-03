@@ -337,7 +337,7 @@
           "member": "uint64",
           "name": "Bandwidth",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1074,7 +1074,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>名称，最大长度不能超过128个字节，不能为空。</p><p>参数格式：满足正则 ^[a-zA-Z\\u4e00-\\u9fa5]（首字符是英文字母或汉字），并且不满足正则 ^[\\d._-]*$（整串不能只由数字/./_/-组成）。</p>",
+          "document": "<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>",
           "example": "ga-name",
           "member": "string",
           "name": "Name",
@@ -1092,7 +1092,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述信息，最大长度不能超过100个字节。</p>",
+          "document": "<p>描述信息。</p><p>参数格式：最大长度不超过100 个字符。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -1230,7 +1230,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称，最大长度不能超过128个字符。</p>",
+          "document": "<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -1293,7 +1293,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启会话保持。支持配置&#39;Open&#39;, &#39;Close&#39;。</p><p>枚举值：</p><ul><li>Open： 开启。</li><li>Close： 关闭。</li></ul>",
+          "document": "<p>是否开启会话保持。支持配置&#39;Open&#39;, &#39;Close&#39;。</p><p>枚举值：</p><ul><li>Open： 开启。</li><li>Close： 关闭。</li></ul><p>仅支持4层监听器 ，7层不支持修改</p>",
           "example": "Open",
           "member": "string",
           "name": "ClientAffinity",
@@ -1338,7 +1338,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务器证书。</p><p>当是HTTPS监听器时，此字段必传。</p>",
+          "document": "<p>服务器证书。</p><p>入参限制：当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。</p><p>当是HTTPS监听器时，此字段必传。</p>",
           "example": "[\"LBNUH4N3\"]",
           "member": "string",
           "name": "ServerCertificates",
@@ -1347,7 +1347,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>客户端证书。</p><p>当时HTTPS监听器且开启双向认证时，此字段必传。</p>",
+          "document": "<p>客户端证书。</p><p>入参限制：1、当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。2、证书必须为CA证书。</p><p>当时HTTPS监听器且开启双向认证时，此字段必传。</p>",
           "example": "[\"LBNUH4N3\"]",
           "member": "string",
           "name": "ClientCaCertificates",
@@ -2761,7 +2761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>终端节点组名称。</p><p>最大长度不能超过128个字节。必须以字母（a-z, A-Z）或中文字符开头。</p>",
+          "document": "<p>终端节点组名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -4139,7 +4139,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称。</p><p>入参限制：最大长度不能超过128个字节。</p><p>以大小写字母或中文开头。</p>",
+          "document": "<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -4701,7 +4701,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;, &#39;ALL&#39;。</p>",
+          "document": "<p>协议。</p><p>入参限制：支持选择&#39;TCP&#39;, &#39;UDP&#39;。</p>",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -4783,7 +4783,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称，最大长度不能超过60个字节。</p>",
+          "document": "<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -4792,7 +4792,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述信息，最大长度不能超过100个字节。</p>",
+          "document": "<p>描述信息。</p><p>参数格式：最大长度不超过100 个字符。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -4865,7 +4865,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称，最大长度不能超过60个字节。</p>",
+          "document": "<p>名称。</p><p>参数格式：以字母或中文开头，长度 2–128 个字符，支持字母、数字、中文、. - _</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -4946,7 +4946,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务器证书。</p><p>HTTPS监听器才支持此参数修改。</p>",
+          "document": "<p>服务器证书。</p><p>入参限制：当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。</p><p>HTTPS监听器才支持此参数修改。</p>",
           "example": "[\"LBNUH4N3\"]",
           "member": "string",
           "name": "ServerCertificates",
@@ -4955,7 +4955,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>客户端证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>",
+          "document": "<p>客户端证书。</p><p>入参限制：1、当前仅支持传入一本证书；如果要使用多本证书，使用证书接口CreateListenerAdditionalCert来加其他证书。2、证书必须为CA证书。</p><p>HTTPS监听器才支持此参数修改，并且开启双向认证。</p>",
           "example": "[\"KVfO6PUQ\"]",
           "member": "string",
           "name": "ClientCaCertificates",

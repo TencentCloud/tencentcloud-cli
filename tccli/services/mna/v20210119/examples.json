@@ -351,7 +351,7 @@
     "ModifyPackageRenewFlag": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelFlowPackage\n<公共请求参数>\n\n{\n    \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\",\n    \"RenewFlag\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageRenewFlag\n<公共请求参数>\n\n{\n    \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\",\n    \"RenewFlag\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\"\n    }\n}",
         "title": "示例1"
       }
@@ -437,7 +437,7 @@
     "UpdateL3Cidr": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTenant\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"l3conn-c0rkbqhig\",\n    \"DeviceId1\": \"mna-f8v7e6o432\",\n    \"Cidr1\": \"192.168.0.16/28\",\n    \"DeviceId2\": \"mna-f8v7e6o43g\",\n    \"Cidr2\": \"192.168.0.16/28\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateL3Cidr\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"l3conn-c0rkbqhig\",\n    \"DeviceId1\": \"mna-f8v7e6o432\",\n    \"Cidr1\": \"192.168.0.16/28\",\n    \"DeviceId2\": \"mna-f8v7e6o43g\",\n    \"Cidr2\": \"192.168.0.16/28\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ab57398-d79f-4195-b0d4-3aef1e43b9c7\"\n    }\n}",
         "title": "示例1"
       }
@@ -453,7 +453,7 @@
     "UpdateL3Switch": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTenant\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"id\",\n    \"Enable\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateL3Switch\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"id\",\n    \"Enable\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7fa2c35a-ecca-454b-9521-65e17601143e\"\n    }\n}",
         "title": "示例1"
       }

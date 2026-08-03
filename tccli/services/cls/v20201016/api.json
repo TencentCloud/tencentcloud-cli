@@ -29152,6 +29152,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型返回的思考签名，执行工具后需在后续请求中原样回传</p>",
+          "example": "random_signature",
+          "member": "string",
+          "name": "ThoughtSignature",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

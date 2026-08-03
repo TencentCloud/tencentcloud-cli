@@ -1,4 +1,4 @@
-**Example 1: 重置ClawAgent模式对话**
+**Example 1: 重置会话**
 
 
 

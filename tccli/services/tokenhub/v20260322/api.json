@@ -3729,8 +3729,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "自动调整配额",
-          "example": "0",
+          "document": "<p>自动调整配额</p>",
+          "example": "1",
           "member": "int64",
           "name": "AutoAdjustQuota",
           "required": false,

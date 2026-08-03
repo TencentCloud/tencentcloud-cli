@@ -12,7 +12,8 @@ tccli adp DescribeAppTriggerRunLogList --cli-unfold-argument  \
     --FilterList.0.ValueList 4 \
     --PageNumber 1 \
     --PageSize 10 \
-    --TriggerId 64201696-52ee-49f6-a95b-0773b60a8e6b
+    --TriggerId 64201696-52ee-49f6-a95b-0773b60a8e6b \
+    --UserId cuiyo******
 ```
 
 Output: 

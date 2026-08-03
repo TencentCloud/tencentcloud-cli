@@ -8,10 +8,10 @@ Input:
 tccli cngw CreateCloudNativeAPIGatewaySecretKey --cli-unfold-argument  \
     --GatewayId gateway-xxx \
     --SecretType ApiKey \
-    --Name 测试KMS密钥 \
+    --Name KMS密钥示例 \
     --GenerateType KMS \
     --ResourceType Consumer \
-    --KmsKeyName XX \
+    --KmsKeyName kms-key-example \
     --KmsKeyVersion v1 \
     --Description 测试密钥
 ```

@@ -141,7 +141,7 @@
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayLLMModelAPIs": {
-      "document": "查询 LLM 模型 API 列表。",
+      "document": "查询指定网关实例下的所有 LLM 模型 API 列表。支持按名称关键词模糊搜索、按过滤器筛选，以及分页查询。用于绑定场景时，可通过 ConsumerGroupId 和 UseToBind 参数筛选可绑定的模型 API。",
       "input": "DescribeCloudNativeAPIGatewayLLMModelAPIsRequest",
       "name": "查询 LLM 模型 API 列表",
       "output": "DescribeCloudNativeAPIGatewayLLMModelAPIsResponse",
@@ -222,6 +222,13 @@
       "input": "DescribeCloudNativeAPIGatewayMCPToolListRequest",
       "name": "查询AI网关MCP Tool 列表",
       "output": "DescribeCloudNativeAPIGatewayMCPToolListResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayMCPToolsFromFile": {
+      "document": "从OpenAPI文件中解析出可导入的MCP tools",
+      "input": "DescribeCloudNativeAPIGatewayMCPToolsFromFileRequest",
+      "name": "查询导入的OpenAPI文件里可导入Tools",
+      "output": "DescribeCloudNativeAPIGatewayMCPToolsFromFileResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewaySecretKey": {
@@ -341,6 +348,13 @@
       "input": "UnbindCloudNativeAPIGatewaySecretKeyRequest",
       "name": "解绑AI网关密钥",
       "output": "UnbindCloudNativeAPIGatewaySecretKeyResponse",
+      "status": "online"
+    },
+    "UpdateCloudNativeAPIGatewayMCPTools": {
+      "document": "批量导入从OpenAPI文件中解析的MCP Tools",
+      "input": "UpdateCloudNativeAPIGatewayMCPToolsRequest",
+      "name": "批量导入MCP tools",
+      "output": "UpdateCloudNativeAPIGatewayMCPToolsResponse",
       "status": "online"
     }
   },
@@ -886,17 +900,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>JWT 消费者标识，iss claim</p>",
-          "example": "my-org-test-ES256",
-          "member": "string",
-          "name": "Key",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "<p>签名算法，取值：HS256 HS384 HS512 RS256 RS384 RS512 ES256 ES384 ES512</p>",
           "example": "ES256",
           "member": "string",
@@ -908,10 +911,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>",
-          "example": "E95****vs=",
+          "document": "<p>JWT 消费者标识，iss claim</p>",
+          "example": "my-org-test-ES256",
           "member": "string",
-          "name": "Secret",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>RS/ES PEM 格式公钥，仅 Algorithm 为 RS256/RS384/RS512/ES256/ES384/ES512 时必填；HS* 时留空</p>",
+          "example": "-----BEGIN PUBLIC KEY-----\n******************************************************************************************************************************************************",
+          "member": "string",
+          "name": "RSAPublicKey",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -919,10 +933,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>RS/ES PEM 格式公钥，仅 Algorithm 为 RS256/RS384/RS512/ES256/ES384/ES512 时必填；HS* 时留空</p>",
-          "example": "-----BEGIN PUBLIC KEY-----\nMF***w*H*o**z**CA*YI**Z****DAQcDQgAEkNDGy2m27I07R065H9ndO***ms****x*V*/x*q*ns*a*****bEvvRBjs*C*H*+S**p*******nMX1WCQGh27kMg==\n-----END PUBLIC KEY-----",
+          "document": "<p>HS 对称密钥，仅 Algorithm 为 HS256/HS384/HS512 时必填；RS/ES* 时留空</p>",
+          "example": "********************************************",
           "member": "string",
-          "name": "RSAPublicKey",
+          "name": "Secret",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1068,6 +1082,17 @@
           "example": "0",
           "member": "int64",
           "name": "TPMLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>并发数限流</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "ConcurrentCountLimit",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -2285,8 +2310,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>客户端ID</p>",
-          "example": "96d9f101-****-**************f224e5f3",
+          "document": "<p>OAuth2 client_id</p>",
+          "example": "96d9f101-ada5-414c-b768-************",
           "member": "string",
           "name": "ClientId",
           "output_required": true,
@@ -2296,12 +2321,23 @@
         },
         {
           "disabled": false,
-          "document": "<p>客户端密钥</p>",
-          "example": "432****f00",
+          "document": "<p>OAuth2 client_secret</p>",
+          "example": "****************************************************************",
           "member": "string",
           "name": "ClientSecret",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>OAuth2 授权回调地址</p>",
+          "example": "http://example.com",
+          "member": "string",
+          "name": "RedirectURIs",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2462,8 +2498,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>客户端密钥</p><p>参数格式：IdP 注册的 client_secret</p>",
-          "example": "Ey0****xyY",
+          "document": "<p>IdP 注册的 client_secret</p>",
+          "example": "********************************",
           "member": "string",
           "name": "ClientSecret",
           "output_required": true,
@@ -2474,7 +2510,7 @@
         {
           "disabled": false,
           "document": "<p>IdP Issuer URL</p>",
-          "example": "http://**.*.*********/realms/test",
+          "example": "*********************************",
           "member": "string",
           "name": "IssuerURL",
           "output_required": true,
@@ -2506,7 +2542,7 @@
           "member": "string",
           "name": "Host",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2517,7 +2553,7 @@
           "member": "int64",
           "name": "Port",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2538,6 +2574,28 @@
           "example": "Tsf123456+",
           "member": "string",
           "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Redis配置ID</p>",
+          "example": "redis-config-abc123",
+          "member": "string",
+          "name": "RedisConfigId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Redis部署类型，如standalone（单机）、cluster（集群）</p>",
+          "example": "standalone",
+          "member": "string",
+          "name": "Type",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -3038,17 +3096,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功",
-          "example": "true",
-          "member": "bool",
-          "name": "Success",
-          "output_required": true,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "对应的id 值",
           "example": "consumer-xxx",
           "member": "string",
@@ -3056,6 +3103,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -3343,15 +3401,159 @@
       ],
       "usage": "both"
     },
+    "CNAPIGwMCPToolPreview": {
+      "document": "通过OpenAPI文件导入MCP tools的预览内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MCP Tool入参的ContentType</p><p>枚举值：</p><ul><li>application/json： json格式</li><li>application/x-www-form-urlencoded： 表单格式</li></ul>",
+          "example": "application/json",
+          "member": "string",
+          "name": "ContentType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Tool的描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "List all pets",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Tool的参数</p>",
+          "example": "无",
+          "member": "CNAPIGwMCPToolParam",
+          "name": "InputParams",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Tool的请求方法</p>",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Tool名字</p>",
+          "example": "listPets",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Tool的请求路径</p>",
+          "example": "/pets",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Tool的状态</p><p>枚举值：</p><ul><li>Valid： 可导入</li><li>Invalid： 不可导入</li></ul>",
+          "example": "invalid",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不可导入的原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "parameter nesting depth exceeds the maximum of 3 levels",
+          "member": "string",
+          "name": "StatusMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>虚拟MCP Server的tools的完整url路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://petstore.example.com/v1/pets",
+          "member": "string",
+          "name": "UpstreamUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CNAPIGwParseMCPToolsResult": {
+      "document": "DescribeCloudNativeAPIGatewayMCPToolsFromFile接口的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MCP Tools列表</p>",
+          "example": "无",
+          "member": "CNAPIGwMCPToolPreview",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP tools的数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CNAPIGwSecretKey": {
       "document": "密钥信息",
       "members": [
         {
           "disabled": false,
-          "document": "<p>密钥id</p>",
-          "example": "secret-xxx",
+          "document": "<p>绑定数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BindCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可以绑定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanBind",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2025-11-11 11:11:11",
           "member": "string",
-          "name": "SecretKeyId",
+          "name": "CreateTime",
           "output_required": true,
           "required": false,
           "type": "string",
@@ -3359,36 +3561,14 @@
         },
         {
           "disabled": false,
-          "document": "<p>密钥名字</p>",
-          "example": "name",
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "密钥描述",
           "member": "string",
-          "name": "Name",
-          "output_required": true,
+          "name": "Description",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>密钥协议类型。</p>",
-          "example": "ApiKey",
-          "member": "string",
-          "name": "SecretType",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>",
-          "example": "Enable",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3403,13 +3583,13 @@
         },
         {
           "disabled": false,
-          "document": "<p>密钥明文</p>",
-          "example": "value",
-          "member": "string",
-          "name": "SecretValue",
-          "output_required": true,
+          "document": "<p>JWT凭证配置</p>",
+          "example": "无",
+          "member": "AIGWJWTCredentialConfig",
+          "name": "JWTCredentialConfig",
+          "output_required": false,
           "required": false,
-          "type": "string",
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -3436,39 +3616,6 @@
         },
         {
           "disabled": false,
-          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "密钥描述",
-          "member": "string",
-          "name": "Description",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "<p>是否可以绑定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "true",
-          "member": "bool",
-          "name": "CanBind",
-          "output_required": false,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "<p>创建时间</p>",
-          "example": "2025-11-11 11:11:11",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "<p>修改时间</p>",
           "example": "2025-11-11 11:11:11",
           "member": "string",
@@ -3480,21 +3627,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定数</p>",
-          "example": "0",
-          "member": "uint64",
-          "name": "BindCount",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>",
-          "example": "Consumer",
+          "document": "<p>密钥名字</p>",
+          "example": "name",
           "member": "string",
-          "name": "ResourceType",
+          "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
@@ -3502,18 +3638,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>JWT凭证配置</p>",
-          "example": "无",
-          "member": "AIGWJWTCredentialConfig",
-          "name": "JWTCredentialConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>OAuth2凭证配置</p>",
+          "document": "<p>OAuth凭证配置</p>",
           "example": "无",
           "member": "AIGWOAuthCredentialConfig",
           "name": "OAuthCredentialConfig",
@@ -3535,11 +3660,66 @@
         },
         {
           "disabled": false,
-          "document": "<p>Agent 密钥类型</p>",
+          "document": "<p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>",
           "example": "Dify",
           "member": "string",
           "name": "Provider",
           "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>",
+          "example": "Consumer",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥id</p>",
+          "example": "secret-xxx",
+          "member": "string",
+          "name": "SecretKeyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥协议类型。</p>",
+          "example": "ApiKey",
+          "member": "string",
+          "name": "SecretType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥明文</p>",
+          "example": "value",
+          "member": "string",
+          "name": "SecretValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>",
+          "example": "Enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3553,7 +3733,7 @@
         {
           "disabled": false,
           "document": "<p>模型 API ID。</p>",
-          "example": "9006154d-8770-xx",
+          "example": "9006154d87704d3a9e5c839fda1461c1",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -3564,7 +3744,7 @@
         {
           "disabled": false,
           "document": "<p>创建时间</p>",
-          "example": "2021-09-09 11:52:30",
+          "example": "2026-01-15 10:30:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -3575,7 +3755,7 @@
         {
           "disabled": false,
           "document": "<p>修改时间</p>",
-          "example": "2021-09-09 11:52:30",
+          "example": "2026-07-28 19:00:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
@@ -3630,7 +3810,7 @@
         {
           "disabled": false,
           "document": "<p>为API设置统一的前缀，格式：以/开头，支持字母、数字、短横线。</p>",
-          "example": "/base/qq",
+          "example": "/api/v1",
           "member": "string",
           "name": "BasePath",
           "output_required": false,
@@ -3652,7 +3832,7 @@
         {
           "disabled": false,
           "document": "<p>模型 API 的相关描述。</p>",
-          "example": "大模型统一聊天 API",
+          "example": "OpenAI 兼容格式大模型聊天 API",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -3663,7 +3843,7 @@
         {
           "disabled": false,
           "document": "<p>模型服务Id</p>",
-          "example": "8006154d-8770-xx",
+          "example": "8006154d87704d3a9e5c839fda1461c1",
           "member": "string",
           "name": "ModelServiceId",
           "output_required": false,
@@ -3674,7 +3854,7 @@
         {
           "disabled": false,
           "document": "<p>模型服务名称</p>",
-          "example": "openai 服务",
+          "example": "openai-service",
           "member": "string",
           "name": "ModelServiceName",
           "output_required": false,
@@ -3695,7 +3875,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>无</p>",
+          "document": "<p>HTTP 请求头匹配规则，用于按请求头路由到不同模型服务。</p>",
           "example": "无",
           "member": "AIGWKVMatch",
           "name": "MatchHeaders",
@@ -4896,6 +5076,42 @@
           "name": "KeyRotationPeriodDays",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源服务 ID。</p>",
+          "example": "openai-source-id-xxxxxxxx",
+          "member": "string",
+          "name": "SourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间。</p>",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称。</p>",
+          "example": "openai-mock-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议类型，如 OpenAI、Custom。</p>",
+          "example": "OpenAI",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5146,10 +5362,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>",
-          "example": "ApiKey",
+          "document": "<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>",
+          "example": "KMS",
           "member": "string",
-          "name": "SecretType",
+          "name": "GenerateType",
           "required": true,
           "type": "string"
         },
@@ -5164,15 +5380,6 @@
         },
         {
           "disabled": false,
-          "document": "<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System：系统自动生成</li><li>Custom：用户自定义（需传 SecretValue）</li><li>KMS：使用 KMS 密钥（需传 KmsKeyName 与 KmsKeyVersion）</li></ul>",
-          "example": "KMS",
-          "member": "string",
-          "name": "GenerateType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>",
           "example": "Consumer",
           "member": "string",
@@ -5182,29 +5389,11 @@
         },
         {
           "disabled": false,
-          "document": "<p>KMS 密钥名称。GenerateType=KMS 时必填。</p>",
-          "example": "name",
+          "document": "<p>密钥协议类型。</p><p>枚举值：</p><ul><li>ApiKey</li><li>Basic</li><li>Hmac</li><li>OAuth2</li><li>JWT</li></ul>",
+          "example": "ApiKey",
           "member": "string",
-          "name": "KmsKeyName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>KMS 密钥版本。GenerateType=KMS 时必填。</p>",
-          "example": "v1",
-          "member": "string",
-          "name": "KmsKeyVersion",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>",
-          "example": "value",
-          "member": "string",
-          "name": "SecretValue",
-          "required": false,
+          "name": "SecretType",
+          "required": true,
           "type": "string"
         },
         {
@@ -5227,7 +5416,25 @@
         },
         {
           "disabled": false,
-          "document": "<p>Oauth2凭证配置</p>",
+          "document": "<p>KMS 密钥名称。GenerateType=KMS 时必填。</p>",
+          "example": "name",
+          "member": "string",
+          "name": "KmsKeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS 密钥版本。GenerateType=KMS 时必填。</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "KmsKeyVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>OAuth2.0凭证配置</p>",
           "example": "无",
           "member": "AIGWOAuthCredentialConfig",
           "name": "OAuthCredentialConfig",
@@ -5242,6 +5449,24 @@
           "name": "OIDCCredentialConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方平台类型</p><p>枚举值：</p><ul><li>Dify： Dify平台</li></ul>",
+          "example": "Dify",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥值，长度 8-256。GenerateType=Custom 时必填。</p>",
+          "example": "value",
+          "member": "string",
+          "name": "SecretValue",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5779,7 +6004,7 @@
         {
           "disabled": false,
           "document": "<p>模糊匹配模型 API 名称。</p>",
-          "example": "搜索关键词",
+          "example": "openai",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -5802,6 +6027,15 @@
           "name": "UseToBind",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者 ID（以 consumer- 开头）。</p>",
+          "example": "consumer-xxxxxxxx",
+          "member": "string",
+          "name": "ConsumerId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6486,6 +6720,70 @@
       ],
       "type": "object"
     },
+    "DescribeCloudNativeAPIGatewayMCPToolsFromFileRequest": {
+      "document": "DescribeCloudNativeAPIGatewayMCPToolsFromFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>OpenAPI文件内容</p>",
+          "example": "{\"openapi\":\"3.0.0\",\"info\":{\"title\":\"Petstore\",\"version\":\"1.0.0\"},\"paths\":{\"/pets\":{\"post\":{\"operationId\":\"createPet\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"}}}}}}}}}}",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件内容格式</p>",
+          "example": "JSON",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关实例ID</p>",
+          "example": "gateway-6fa655a5",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Server ID</p>",
+          "example": "a610d9b2-1b7d-4240-9af0-7761791b3ba1",
+          "member": "string",
+          "name": "MCPServerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayMCPToolsFromFileResponse": {
+      "document": "DescribeCloudNativeAPIGatewayMCPToolsFromFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>解析结果</p>",
+          "example": "无",
+          "member": "CNAPIGwParseMCPToolsResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewaySecretKeyRequest": {
       "document": "DescribeCloudNativeAPIGatewaySecretKey请求参数结构体",
       "members": [
@@ -6583,8 +6881,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤参数名",
-          "example": "",
+          "document": "<p>过滤参数名</p>",
+          "example": "Name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6592,8 +6890,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤参数值",
-          "example": "",
+          "document": "<p>过滤参数值</p>",
+          "example": "[\"openai\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -7153,6 +7451,42 @@
           "name": "KeyRotationPeriodDays",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源服务 ID。</p>",
+          "example": "openai-source-id-xxxxxxxx",
+          "member": "string",
+          "name": "SourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间。</p>",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称。</p>",
+          "example": "openai-mock-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议类型，如 OpenAI、Custom。</p>",
+          "example": "OpenAI",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7937,6 +8271,61 @@
     "UnbindCloudNativeAPIGatewaySecretKeyResponse": {
       "document": "UnbindCloudNativeAPIGatewaySecretKey返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCloudNativeAPIGatewayMCPToolsRequest": {
+      "document": "UpdateCloudNativeAPIGatewayMCPTools请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例ID</p>",
+          "example": "gateway-6fa655a5",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Server ID</p>",
+          "example": "a610d9b2-1b7d-4240-9af0-7761791b3ba1",
+          "member": "string",
+          "name": "MCPServerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待导入的MCP Tools列表</p>",
+          "example": "无",
+          "member": "CNAPIGwMCPTool",
+          "name": "Tools",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCloudNativeAPIGatewayMCPToolsResponse": {
+      "document": "UpdateCloudNativeAPIGatewayMCPTools返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导入任务的ID</p>",
+          "example": "task-cc6ddf7e",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

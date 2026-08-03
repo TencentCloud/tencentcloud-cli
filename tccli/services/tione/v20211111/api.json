@@ -4423,7 +4423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集id",
+          "document": "<p>数据集id</p>",
           "example": "rodftv7u3gg",
           "member": "string",
           "name": "DatasetId",
@@ -4432,12 +4432,21 @@
         },
         {
           "disabled": false,
-          "document": "是否删除cos标签文件",
+          "document": "<p>是否删除cos标签文件</p>",
           "example": "false",
           "member": "bool",
           "name": "DeleteLabelEnable",
           "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4447,7 +4456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除的datasetId",
+          "document": "<p>删除的datasetId</p>",
           "example": "rodb7j1r20w",
           "member": "string",
           "name": "DatasetId",
@@ -4817,6 +4826,15 @@
           "name": "Limit",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

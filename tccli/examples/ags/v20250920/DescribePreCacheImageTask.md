@@ -1,4 +1,4 @@
-**Example 1: 查询预热任务状态**
+**Example 1: 查询用户 VPC 可达第三方镜像预热状态**
 
 
 
@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli ags DescribePreCacheImageTask --cli-unfold-argument  \
-    --Image test.tencentcloudcr.com/example/app:0.2.2 \
-    --ImageDigest sha256:39e2c18395c3105fce919dasdqwe85cd775d380e83581b132d8d742761123a1e675 \
-    --ImageRegistryType enterprise
+    --Image harbor.internal.example.com/team/app:1.0 \
+    --ImageDigest sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \
+    --ImageRegistryType custom
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Image": "test.tencentcloudcr.com/example/app:0.2.2",
-        "ImageDigest": "sha256:39e2c18395c3105fce919dasdqwe85cd775d380e83581b132d8d742761123a1e675",
-        "ImageRegistryType": "enterprise",
-        "Message": "........",
-        "RequestId": "a34158c5-d383-49ae-9b36-d37da3fde06f",
-        "Status": "Success"
+        "Image": "harbor.internal.example.com/team/app:1.0",
+        "ImageDigest": "sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "ImageRegistryType": "custom",
+        "Status": "Success",
+        "Message": "conversion-backed precache completed",
+        "RequestId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     }
 }
 ```

@@ -238,6 +238,45 @@
       ],
       "type": "object"
     },
+    "AgentBucketStorageSource": {
+      "document": "用于记录 Agent Bucket 的 Storage Source",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用于传入 AgentBucket 的 LibraryID</p>",
+          "example": "smh2ke12fou96sys",
+          "member": "string",
+          "name": "LibraryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于传入 AgentBucket 的 spaceId</p>",
+          "example": "space2ws4kk3o7ujpa",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于传入 AgentBucket 的 AccessDomain</p>",
+          "example": "smh2rnostb718pgk.ap-beijing.api.tencentsmh.cn",
+          "member": "string",
+          "name": "AccessDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CLSConfig": {
       "document": "沙箱工具日志推送CLS相关配置",
       "members": [
@@ -399,15 +438,6 @@
           "name": "ImageRegistryType",
           "required": true,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>预热超时时长</p>",
-          "example": "60",
-          "member": "int64",
-          "name": "TimeoutMinutes",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -606,7 +636,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code></p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
@@ -711,7 +741,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code>。</p><p>枚举值：</p><ul><li>enterprise： TCR 企业容器镜像服务</li><li>personal： CCR 个人容器镜像服务</li></ul>",
           "example": "TCR",
           "member": "string",
           "name": "ImageRegistryType",
@@ -946,7 +976,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -955,7 +985,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像 Digest",
+          "document": "<p>镜像 Digest</p>",
           "example": "sha256:abcdefg123...",
           "member": "string",
           "name": "ImageDigest",
@@ -964,7 +994,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
@@ -979,7 +1009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -989,7 +1019,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像 Digest",
+          "document": "<p>镜像 Digest</p>",
           "example": "sha256:abcdefg123...",
           "member": "string",
           "name": "ImageDigest",
@@ -999,7 +1029,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
@@ -1009,7 +1039,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像预热状态",
+          "document": "<p>镜像预热状态</p>",
           "example": "Success",
           "member": "string",
           "name": "Status",
@@ -1019,7 +1049,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像预热状态描述",
+          "document": "<p>镜像预热状态描述</p>",
           "example": "镜像预热成功",
           "member": "string",
           "name": "Message",
@@ -1293,7 +1323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "ccr.ccs.tencentyun.com/example/nginx:latest",
           "member": "string",
           "name": "Reference",
@@ -1304,7 +1334,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>。</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
@@ -1315,7 +1345,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像内部的路径",
+          "document": "<p>镜像内部的路径</p>",
           "example": "/mnt/sub",
           "member": "string",
           "name": "SubPath",
@@ -1326,7 +1356,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像 Digest，请求时无需传入",
+          "document": "<p>镜像 Digest，请求时无需传入</p>",
           "example": "sha256:abcdefg123...",
           "member": "string",
           "name": "Digest",
@@ -1500,6 +1530,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选。带内存暂停，恢复后保留进程和内存状态。true=带内存；false=仅磁盘；不传=系统默认（当前默认 true，带内存）。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Memory",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1681,11 +1720,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "沙箱实例ID",
+          "document": "<p>沙箱实例ID</p>",
           "example": "4729e19d67fb4ba38854dbbfc63c72e9",
           "member": "string",
           "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>",
+          "example": "5m",
+          "member": "string",
+          "name": "Timeout",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2115,7 +2163,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 默认，即 TOKEN 认证</li><li>TOKEN： Token认证，即所有端口访问都需携带TOKEN</li><li>NONE： 免认证，即所有端口访问无需携带TOKEN</li><li>PUBLIC： 公开模式，即ENVD管理端口（49983）访问需携带TOKEN，其他端口无需携带TOKEN</li></ul><p>默认值：DEFAULT</p>",
+          "document": "<p>沙箱访问认证模式</p><p>枚举值：</p><ul><li>DEFAULT： 默认，即TOKEN认证</li><li>TOKEN： Token认证，即所有端口访问都需携带Token</li><li>NONE： 免认证，即所有端口访问无需携带Token</li><li>PUBLIC： 公开模式，即ENVD管理端口（49983）访问需携带Token，其他端口无需携带Token</li></ul><p>默认值：DEFAULT</p>",
           "example": "DEFAULT",
           "member": "string",
           "name": "AuthMode",
@@ -2188,7 +2236,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "存储挂载配置名称",
+          "document": "<p>存储挂载配置名称</p>",
           "example": "Storage1",
           "member": "string",
           "name": "Name",
@@ -2199,18 +2247,18 @@
         },
         {
           "disabled": false,
-          "document": "存储配置",
+          "document": "<p>存储配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StorageSource",
           "name": "StorageSource",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "沙箱实例本地挂载路径",
+          "document": "<p>沙箱实例本地挂载路径</p>",
           "example": "/home/user",
           "member": "string",
           "name": "MountPath",
@@ -2221,7 +2269,7 @@
         },
         {
           "disabled": false,
-          "document": "存储挂载读写权限配置，默认为false",
+          "document": "<p>存储挂载读写权限配置，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
@@ -2264,6 +2312,17 @@
           "example": "无",
           "member": "CfsStorageSource",
           "name": "Cfs",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentBucket 存储配置</p>",
+          "example": "无",
+          "member": "AgentBucketStorageSource",
+          "name": "AgentBucket",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -2351,7 +2410,7 @@
         {
           "disabled": false,
           "document": "<p>沙箱工具ID</p>",
-          "example": "sdt-********",
+          "example": "sdt-ee4ywozw",
           "member": "string",
           "name": "ToolId",
           "required": true,

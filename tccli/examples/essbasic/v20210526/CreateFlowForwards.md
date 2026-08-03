@@ -23,7 +23,7 @@ Output:
     "Response": {
         "FailedFlows": [
             {
-                "ErrorDetail": "转发人状态非待签署或待填写，禁止转发",
+                "ErrorDetail": "参与方状态不支持转发，请检查",
                 "FlowId": "yDtSPUU**********************PHG7JhZM"
             }
         ],

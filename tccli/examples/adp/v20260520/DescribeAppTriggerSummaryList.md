@@ -9,7 +9,8 @@ tccli adp DescribeAppTriggerSummaryList --cli-unfold-argument  \
     --AppId 2075415763781738240 \
     --PageNumber 1 \
     --PageSize 30 \
-    --Query 定时
+    --Query 定时 \
+    --UserId cuiyo******
 ```
 
 Output: 

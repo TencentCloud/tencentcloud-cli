@@ -19,9 +19,9 @@
     "CreatePreCacheImageTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n    \"ImageRegistryType\": \"enterprise\",\n    \"TimeoutMinutes\": 60\n}",
-        "output": "{\n    \"Response\": {\n        \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n        \"ImageDigest\": \"sha256:axxxxxxxxxb98e195ae1d8c85d59fe1fb8c282bcccf1071f877db20f\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"RequestId\": \"b538f3f1-da59-49e5-ac4b-41a440396ec6\"\n    }\n}",
-        "title": "预热镜像"
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n    \"ImageRegistryType\": \"custom\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n        \"ImageDigest\": \"sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"ImageRegistryType\": \"custom\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "预热用户 VPC 可达第三方镜像"
       }
     ],
     "CreateSandboxTool": [
@@ -30,6 +30,12 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"browser-sandbox\",\n    \"ToolType\": \"browser\",\n    \"Description\": \"浏览器沙箱环境\",\n    \"DefaultTimeout\": \"30m\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"Tags\": [\n        {\n            \"Key\": \"Environment\",\n            \"Value\": \"Production\"\n        },\n        {\n            \"Key\": \"Team\",\n            \"Value\": \"AI-Agent\"\n        }\n    ],\n    \"ClientToken\": \"unique-token-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-ee4ywozw\",\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
         "title": "创建沙箱工具"
+      },
+      {
+        "document": "创建沙箱工具时关联两条访问策略。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"browser-policy-sandbox\",\n    \"ToolType\": \"browser\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"ClientToken\": \"create-tool-with-access-policy-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-policy123\",\n        \"RequestId\": \"req-create-tool-policy-example\"\n    }\n}",
+        "title": "创建并关联访问策略的沙箱工具"
       }
     ],
     "DeleteAPIKey": [
@@ -59,9 +65,9 @@
     "DescribePreCacheImageTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n    \"ImageDigest\": \"sha256:39e2c18395c3105fce919dasdqwe85cd775d380e83581b132d8d742761123a1e675\",\n    \"ImageRegistryType\": \"enterprise\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Image\": \"test.tencentcloudcr.com/example/app:0.2.2\",\n        \"ImageDigest\": \"sha256:39e2c18395c3105fce919dasdqwe85cd775d380e83581b132d8d742761123a1e675\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"Message\": \"........\",\n        \"RequestId\": \"a34158c5-d383-49ae-9b36-d37da3fde06f\",\n        \"Status\": \"Success\"\n    }\n}",
-        "title": "查询预热任务状态"
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n    \"ImageDigest\": \"sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n    \"ImageRegistryType\": \"custom\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n        \"ImageDigest\": \"sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"ImageRegistryType\": \"custom\",\n        \"Status\": \"Success\",\n        \"Message\": \"conversion-backed precache completed\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询用户 VPC 可达第三方镜像预热状态"
       }
     ],
     "DescribeSandboxInstanceList": [
@@ -98,10 +104,16 @@
     ],
     "StartSandboxInstance": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolName\": \"test-abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"AuthMode\": \"DEFAULT\",\n            \"CreateTime\": \"2026-04-14T21:12:48+08:00\",\n            \"CustomConfiguration\": {\n                \"Args\": [\n                    \"-g\"\n                ],\n                \"Command\": [\n                    \"nginx\"\n                ],\n                \"Image\": \"ccr.ccs.tencentyun.com/library/nginx:alpine\",\n                \"ImageDigest\": \"sha256:e7e5b7fa7a0b1ab2f59d6066092a6d35984864cc8baf2caf7c088ee409657e57\",\n                \"ImageRegistryType\": \"personal\",\n                \"Probe\": {\n                    \"FailureThreshold\": 10,\n                    \"HttpGet\": {\n                        \"Path\": \"/\",\n                        \"Port\": 80,\n                        \"Scheme\": \"HTTP\"\n                    },\n                    \"ProbePeriodMs\": 1000,\n                    \"ProbeTimeoutMs\": 1000,\n                    \"ReadyTimeoutMs\": 30000,\n                    \"SuccessThreshold\": 1\n                },\n                \"Resources\": {\n                    \"CPU\": \"1\",\n                    \"Memory\": \"1Gi\"\n                }\n            },\n            \"ExpiresAt\": \"2026-04-14T22:02:46+08:00\",\n            \"InstanceId\": \"f72t34xiwxop6rpcunzbs3lnlqxjscawrihz26bn\",\n            \"NetworkMode\": \"PUBLIC\",\n            \"Persistent\": false,\n            \"Status\": \"RUNNING\",\n            \"TimeoutSeconds\": 3600,\n            \"ToolId\": \"sdt-m6abdmgv\",\n            \"ToolName\": \"test-abc\",\n            \"UpdateTime\": \"2026-04-14T21:12:48+08:00\"\n        },\n        \"RequestId\": \"3a2c71e2-869c-4117-9239-5362b928d568\"\n    }\n}",
-        "title": "成功启动实例"
+        "document": "通过 ToolId 启动一个沙箱实例",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Timeout\": \"30m\",\n    \"ClientToken\": \"start-sandbox-basic-example\",\n    \"AuthMode\": \"TOKEN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"48dd1132cfb96ccee5fd0aa58da2562d2fe3a929\",\n            \"ToolId\": \"sdt-ee4ywozw\",\n            \"ToolName\": \"coding-agent\",\n            \"Status\": \"STARTING\"\n        },\n        \"RequestId\": \"req-start-sandbox-example\"\n    }\n}",
+        "title": "启动普通沙箱"
+      },
+      {
+        "document": "启动沙箱时声明只作用于该实例的收窄策略。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\",\n    \"ClientToken\": \"start-instance-with-access-policy-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"ins-policy123\",\n            \"ToolId\": \"sdt-policy123\",\n            \"ToolName\": \"browser-policy-sandbox\",\n            \"Status\": \"STARTING\"\n        },\n        \"RequestId\": \"req-start-instance-policy-example\"\n    }\n}",
+        "title": "启动带实例级访问策略的沙箱"
       }
     ],
     "StopSandboxInstance": [
@@ -118,14 +130,38 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gw524aigytlvl2qwzsgw5yud5cjuiq3worjeir57\",\n    \"Timeout\": \"30m\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0846f2dc-f1d2-465a-93a2-d1873c66f715\"\n    }\n}",
         "title": "更新实例超时时间"
+      },
+      {
+        "document": "完整替换当前实例的实例级访问策略。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"953e15d3655e4daab120b885c908edf7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f8be2d7-b47c-4f55-95c8-1739fcd4e7a1\"\n    }\n}",
+        "title": "替换实例级访问策略"
+      },
+      {
+        "document": "传入空对象撤销当前实例的实例级访问策略，实例随后仅受 Sandbox Tool 关联的访问策略约束。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"953e15d3655e4daab120b885c908edf7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2c491e8-6db5-4f02-96c3-f710ed025ba4\"\n    }\n}",
+        "title": "撤销实例级访问策略"
       }
     ],
     "UpdateSandboxTool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-********\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678-1234-1234-1234-1234567890ab\"\n    }\n}",
         "title": "更新沙箱工具"
+      },
+      {
+        "document": "完整替换沙箱工具当前关联的访问策略。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-update-tool-policy-example\"\n    }\n}",
+        "title": "替换沙箱工具关联的访问策略"
+      },
+      {
+        "document": "使用空数组解除沙箱工具的全部访问策略关联。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-clear-tool-policy-example\"\n    }\n}",
+        "title": "解除沙箱工具的全部访问策略关联"
       }
     ]
   },

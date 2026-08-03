@@ -14207,7 +14207,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "灾备实例状态",
+          "document": "<p>灾备实例状态</p><p>枚举值：</p><ul><li>0： 创建中</li><li>1： 运行中</li><li>4： 正在进行隔离操作</li><li>5： 已隔离</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -14217,7 +14217,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息",
+          "document": "<p>可用区信息</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -14227,7 +14227,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cdb-***",
           "member": "string",
           "name": "InstanceId",
@@ -14237,7 +14237,7 @@
         },
         {
           "disabled": false,
-          "document": "地域信息",
+          "document": "<p>地域信息</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
@@ -14247,7 +14247,7 @@
         },
         {
           "disabled": false,
-          "document": "实例同步状态。可能的返回值为：\n0 - 灾备未同步；\n1 - 灾备同步中；\n2 - 灾备同步成功；\n3 - 灾备同步失败；\n4 - 灾备同步修复中。",
+          "document": "<p>实例同步状态。可能的返回值为：<br>0 - 灾备未同步；<br>1 - 灾备同步中；<br>2 - 灾备同步成功；<br>3 - 灾备同步失败；<br>4 - 灾备同步修复中。</p>",
           "example": "2",
           "member": "int64",
           "name": "SyncStatus",
@@ -14257,7 +14257,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "******",
           "member": "string",
           "name": "InstanceName",
@@ -14267,7 +14267,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceType",

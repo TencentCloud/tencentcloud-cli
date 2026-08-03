@@ -7,7 +7,8 @@ Input:
 ```
 tccli adp DescribeAppTriggerInstance --cli-unfold-argument  \
     --AppId 2072866150944382336 \
-    --InstanceId 2e41cd4a-39cc-455e-a530-8a543db8ac13
+    --InstanceId 2e41cd4a-39cc-455e-a530-8a543db8ac13 \
+    --UserId cuiyo******
 ```
 
 Output: 

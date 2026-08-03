@@ -260,7 +260,7 @@
       "status": "online"
     },
     "CreateFlowForwards": {
-      "document": "该接口用于将合同中本企业当前经办人转为本企业其他员工进行操作。\n\n注意：\n1. 转交的目标经办人需要已经加入企业，且完成实名。\n2. 仅企业拥有`超管`、`法人`或者`合同管理员`角色的员工才有调用本接口的权限。如果使用主带子方式调用，请确保您已经加入子企业，且账号在子企业中担任任一上述角色。\n3. 仅支持当前经办人为待签署或待填写状态时进行转交操作。\n4. 若原合同有填写控件，且当前经办人已经完成填写，则不支持进行转交。\n5. 若当前经办人已签署完成，或者处于签署流程中，则不支持进行转交。",
+      "document": "该接口用于将合同中本企业当前经办人转为本企业其他员工进行操作。\n\n注意：\n1. 转交的目标经办人需要已经加入企业，且完成实名。\n2. 仅企业拥有`超管`、`法人`或者`合同管理员`角色的员工才有调用本接口的权限。如果使用主带子方式调用，请确保您已经加入子企业，且账号在子企业中担任任一上述角色。\n5. 若原合同有填写控件，且当前经办人已经完成填写，则不支持进行转交。\n6. 若当前经办人已签署完成，或者处于签署流程中，或合同处于完成态（例如：签署完成，拒签，撤销，过期等），则不支持进行转交。",
       "input": "CreateFlowForwardsRequest",
       "name": "变更本企业待签合同的经办人",
       "output": "CreateFlowForwardsResponse",
@@ -6566,7 +6566,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "document": "<p>执行本接口操作的员工信息。注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -6575,7 +6575,7 @@
         },
         {
           "disabled": false,
-          "document": "合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。\n\n注意：`需要保证目标经办人已经加入企业且已实名`",
+          "document": "<p>合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。</p><p>注意：<code>需要保证目标经办人已经加入企业且已实名</code></p>",
           "example": "yDwfGUieurag8Uy0AthwPa6bOntYp6x0",
           "member": "string",
           "name": "TargetUserId",
@@ -6584,7 +6584,7 @@
         },
         {
           "disabled": false,
-          "document": "企业签署方的合同及对应签署方",
+          "document": "<p>企业签署方的合同及对应签署方</p>",
           "example": "无",
           "member": "FlowForwardInfo",
           "name": "FlowForwardInfos",
@@ -6593,7 +6593,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "<p>代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -6608,7 +6608,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "失败的合同id以及错误详情",
+          "document": "<p>失败的合同id以及错误详情</p>",
           "example": "无",
           "member": "FlowForwardResult",
           "name": "FailedFlows",
@@ -6618,7 +6618,7 @@
         },
         {
           "disabled": false,
-          "document": "成功的合同id",
+          "document": "<p>成功的合同id</p>",
           "example": "[\"yDtCvUUlal1z9fUEyCjfI8TAPPwBtFzu\"]",
           "member": "string",
           "name": "SuccessFlows",
