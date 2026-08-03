@@ -15,7 +15,7 @@ from tccli.self_ref import is_action_self_referencing
 BASE_TYPE = ["int64", "uint64", "string", "float", "bool", "date", "datetime", "datetime_iso", "binary"]
 CLI_BASE_TYPE = ["Integer", "String", "Float", "Timestamp", "Boolean", "Binary"]
 
-# --cli-unfold-argument 模式下扁平 key 的最大点号段数（含数字下标段），超过则报错。
+# --cli-unfold-argument 模式下扁平 key 的最大非数字段数（数字下标段不计），超过则报错。
 MAX_INPUT_DEPTH = 30
 
 # 自引用截断点 / 超限输入的统一替代写法提示文案。

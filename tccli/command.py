@@ -326,7 +326,7 @@ class ActionCommand(BaseCommand):
                 remaining.append(parsed_args.help)
 
         extra_unfold_args = OrderedDict()
-        oversized_tokens = []  # [(key, depth, prefix, type_name)]
+        oversized_tokens = []  # [(key, depth)]
         if self._call_mode == Options_define.CliUnfoldArgument and remaining:
             remaining = self._extract_deep_nested_args(
                 remaining, extra_unfold_args, oversized_tokens)
@@ -342,7 +342,7 @@ class ActionCommand(BaseCommand):
                     "Input nesting depth exceeds MAX_INPUT_DEPTH=%d: %s"
                     % (MAX_INPUT_DEPTH,
                        ', '.join("--%s (depth=%d)" % (k, d)
-                                 for k, d, _p, _t in oversized_tokens)))
+                                 for k, d in oversized_tokens)))
             msg = "\n".join(error_parts)
             tail_hints = [h for h in (hint, oversized_hint) if h]
             if tail_hints:
@@ -436,7 +436,7 @@ class ActionCommand(BaseCommand):
 
         :param remaining: argparse 未识别 token 列表。
         :param extra_unfold_args: 输出，深度 ≤ MAX_INPUT_DEPTH 的 ``OrderedDict[key, value]``。
-        :param oversized_tokens: 输出，深度超限的 ``List[(key, depth, prefix, type_name)]``。
+        :param oversized_tokens: 输出，深度超限的 ``List[(key, depth)]``。
         :return: 剔除已消费 token 后剩余的未识别 token 列表。
         """
         if not remaining:
@@ -474,57 +474,71 @@ class ActionCommand(BaseCommand):
                     j += 1
                 has_eq, advance = False, 1 + len(paired)
 
-            # --- 最长前缀匹配 ---
-            prefix, type_name = self._match_truncated_prefix(key, truncated)
-            if prefix is None:
+            # 截断前缀只负责判断该 key 是否允许进入补偿链路。
+            if not self._is_recursive_key(key, truncated):
                 new_remaining.append(tok)
                 new_remaining.extend(paired)
                 i += advance
                 continue
 
-            # --- 取值 ---
-            if has_eq:
-                value = eq_value
-            elif paired:
-                value = paired[0] if len(paired) == 1 else paired
-            else:
+            # 深度限制优先于 schema 查询，超限参数无需加载和遍历 API 模型。
+            depth = sum(1 for seg in key.split(".") if not seg.isdigit())
+            if depth > MAX_INPUT_DEPTH:
+                oversized_tokens.append((key, depth))
+                i += advance
+                continue
+
+            if not has_eq and not paired:
                 new_remaining.append(tok)
                 i += advance
                 continue
-            if not isinstance(value, list):
-                if object_model is None:
-                    try:
-                        service_model = self._cli_data.get_service_model(
-                            self._service_name, self._version)
-                        object_model = service_model.get("objects", {})
-                    except Exception:
-                        object_model = {}
-                if self._is_deep_list_parameter(
-                        key, prefix, type_name, object_model):
-                    value = [value]
 
-            # --- 深度检查并分流 ---
-            depth = sum(1 for seg in key.split(".") if not seg.isdigit())
-            if depth > MAX_INPUT_DEPTH:
-                oversized_tokens.append((key, depth, prefix, type_name))
+            if object_model is None:
+                try:
+                    service_model = self._cli_data.get_service_model(
+                        self._service_name, self._version)
+                    object_model = service_model.get("objects", {})
+                except Exception:
+                    object_model = {}
+            shape = self._get_key_type(
+                key, self._action_name + "Request", object_model)
+            if shape is None:
+                new_remaining.append(tok)
+                new_remaining.extend(paired)
+                i += advance
+                continue
+
+            if has_eq:
+                value = [eq_value] if shape == "list" else eq_value
+            elif shape == "list":
+                value = paired
+            elif len(paired) == 1:
+                value = paired[0]
             else:
-                extra_unfold_args[key] = value
+                # 标量参数只接受一个值，保持未消费以沿用 Unknown options 错误路径。
+                new_remaining.append(tok)
+                new_remaining.extend(paired)
+                i += advance
+                continue
+
+            extra_unfold_args[key] = value
             i += advance
 
         return new_remaining
 
     @staticmethod
-    def _is_deep_list_parameter(key, prefix, type_name, object_model):
-        """判断自引用截断点以下的扁平参数是否对应 list 字段。"""
-        if not type_name or not object_model:
-            return False
-        suffix = key[len(prefix) + 1:].split(".")
-        current_type = type_name
-        for index, segment in enumerate(suffix):
+    def _get_key_type(key, root_type, object_model):
+        """查询完整扁平 key 的值形态，返回 ``list``、``scalar`` 或 ``None``。"""
+        if not key or not root_type or not object_model:
+            return None
+
+        segments = key.split(".")
+        current_type = root_type
+        index = 0
+        while index < len(segments):
+            segment = segments[index]
             if segment.isdigit():
-                if index == len(suffix) - 1:
-                    return False
-                continue
+                return None
 
             members = object_model.get(current_type, {}).get("members", [])
             if isinstance(members, dict):
@@ -533,27 +547,31 @@ class ActionCommand(BaseCommand):
                 member_info = next(
                     (item for item in members if item.get("name") == segment), None)
             if not member_info:
-                return False
+                return None
 
             member_type = str(member_info.get("type", "")).lower()
-            if index == len(suffix) - 1:
-                return member_type in ("list", "array")
-            if member_type not in ("list", "array", "object"):
-                return False
-            current_type = member_info.get("member")
-        return False
+            if index == len(segments) - 1:
+                return "list" if member_type in ("list", "array") else "scalar"
+
+            member = member_info.get("member")
+            if member_type in ("list", "array"):
+                index += 1
+                if index >= len(segments) or not segments[index].isdigit():
+                    return None
+                # 数组下标只能用于继续定位元素字段，不能作为完整 key 的末段。
+                if index == len(segments) - 1:
+                    return None
+
+            if member not in object_model:
+                return None
+            current_type = member
+            index += 1
+        return None
 
     @staticmethod
-    def _match_truncated_prefix(key, truncated):
-        """在 ``truncated`` 中按最长前缀匹配 ``key``，返回 ``(prefix, type_name)`` 或 ``(None, "")``。"""
-        best_prefix = None
-        best_type = ""
-        for prefix, type_name in truncated.items():
-            if key.startswith(prefix + ".") and \
-                    (best_prefix is None or len(prefix) > len(best_prefix)):
-                best_prefix = prefix
-                best_type = type_name
-        return best_prefix, best_type
+    def _is_recursive_key(key, truncated):
+        """判断 ``key`` 是否严格位于任一自引用截断前缀之下。"""
+        return any(key.startswith(prefix + ".") for prefix in truncated)
 
     def _build_oversized_hint(self, oversized_tokens):
         """为深度超限项构造错误提示文案，指向 --cli-input-json file://；空列表返回空串。"""
@@ -561,10 +579,9 @@ class ActionCommand(BaseCommand):
             return ""
         lines = ["Hint: the following option(s) exceed --cli-unfold-argument's "
                  "supported nesting depth (MAX_INPUT_DEPTH=%d):" % MAX_INPUT_DEPTH]
-        for key, depth, prefix, type_name in oversized_tokens:
-            lines.append("  --%s  (depth=%d, exceeds MAX_INPUT_DEPTH=%d, "
-                         "under --%s, type: %s)"
-                         % (key, depth, MAX_INPUT_DEPTH, prefix, type_name or "unknown"))
+        for key, depth in oversized_tokens:
+            lines.append("  --%s  (depth=%d, exceeds MAX_INPUT_DEPTH=%d)"
+                         % (key, depth, MAX_INPUT_DEPTH))
         lines.append("")
         lines.append("To pass this request:")
         lines.append("  " + RECURSIVE_HINT_FILE_OPTION)
