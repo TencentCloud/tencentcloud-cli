@@ -993,19 +993,7 @@ def test_F5_action_caller_is_invoked_in_normal_mode():
 #   * 合法 + 超限混合场景：合法部分仍可被收集，但超限触发的整体抛错优先级更高。
 # ============================================================
 def _build_self_ref_path(num_layers):
-    """基于 billing CreateGatherRule 截断前缀 ``RuleList.RuleDetail.Children.0``
-    构造一段共 ``D`` 段（数字下标段含在内）的扁平参数 key，便于精确控制 depth。
-
-    :param num_layers: 在 4 段截断前缀之外再叠加多少层 ``Children.0``，
-        最后再追加 1 段叶子 ``RuleKey``。
-    :return: ``(key, depth)``，其中 ``depth = 4 + num_layers * 2 + 1``。
-
-    示例：
-      * ``num_layers=0`` → ``RuleList.RuleDetail.Children.0.RuleKey`` (D=5)
-      * ``num_layers=1`` → ``RuleList.RuleDetail.Children.0.Children.0.RuleKey`` (D=7)
-      * ``num_layers=13`` → 30 段 (D=30) —— 边界放行
-      * ``num_layers=14`` → 32 段 (D=32) —— 超限
-    """
+    """Construct a self-ref path ending with RuleKey and return non-digit field depth."""
     base = ["RuleList", "RuleDetail", "Children", "0"]
     for _ in range(num_layers):
         base += ["Children", "0"]
