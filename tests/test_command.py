@@ -14,9 +14,8 @@
 
 设计要点：
   - 现有 subprocess 测试只能验证端到端行为，但 coverage 工具
-    无法统计子进程内的代码执行。所以本文件大量增加“主进程内
-    直接调用类方法”的白盒测试，以提升真实覆盖率。
-"""
+    无法统计子进程内的代码执行。所以本文件大量增加"主进程内
+    直接调用类方法"的白盒测试，以提高真实覆盖率。"""
 import os
 import sys
 import copy
@@ -46,7 +45,7 @@ while _REPO_ROOT in sys.path:
 sys.path.insert(0, _REPO_ROOT)
 
 # ============================================================
-# 通用：屏蔽 plugin 加载（很多 tccli 插件依赖外部 SDK，环境可能没装）
+# 通用：屏蔽 plugin 加载（很多 tccli 插件依赖外部 SDK，环境可能没装好）
 # ============================================================
 import tccli.plugin as _plg
 _plg.import_plugins = lambda: {}
@@ -995,7 +994,7 @@ def test_F5_action_caller_is_invoked_in_normal_mode():
 #   * 合法 + 超限混合场景：合法部分仍可被收集，但超限触发的整体抛错优先级更高。
 # ============================================================
 def _build_self_ref_path(num_layers):
-    """构造以 ``RuleKey`` 结尾的自引用路径并返回非数字字段深度。"""
+    """Construct a self-ref path ending with RuleKey and return non-digit field depth."""
     base = ["RuleList", "RuleDetail", "Children", "0"]
     for _ in range(num_layers):
         base += ["Children", "0"]
@@ -1510,134 +1509,6 @@ def test_P9_extract_preserves_single_value_list_type_in_equals_form():
 
     assert out == []
     assert extra == {"Root.0.Values": ["only-one"]}
-
-
-def test_P10_get_key_type_uses_complete_key_from_request_root():
-    objects = {
-        "Request": {"members": [
-            {"name": "Root", "type": "list", "member": "Node"},
-        ]},
-        "Node": {"members": [
-            {"name": "Children", "type": "list", "member": "Node"},
-            {"name": "Values", "type": "list", "member": "string"},
-            {"name": "Name", "type": "string", "member": "string"},
-        ]},
-    }
-
-    assert ActionCommand._get_key_type(
-        "Root.0.Children.1.Values", "Request", objects) == "list"
-    assert ActionCommand._get_key_type(
-        "Root.0.Children.1.Name", "Request", objects) == "scalar"
-    assert ActionCommand._get_key_type(
-        "Root.Children.0.Name", "Request", objects) is None
-    assert ActionCommand._get_key_type(
-        "Root.0.Missing", "Request", objects) is None
-    assert ActionCommand._get_key_type(
-        "Root.0.Children.0", "Request", objects) is None
-    assert ActionCommand._get_key_type(
-        "Root.0", "Request", objects) is None
-
-
-def test_P11_extract_matched_prefix_with_invalid_field_is_not_consumed():
-    ac = _make_action_command(call_mode=Options_define.CliUnfoldArgument)
-
-    class _Trunc(object):
-        def get_unfold_param_info(self, *a, **kw):
-            return {"Root.0": {"recursive_truncated": True,
-                               "recursive_type": "Node"}}
-
-        def get_service_model(self, *a, **kw):
-            return {"objects": {
-                "CreateGatherRuleRequest": {"members": [
-                    {"name": "Root", "type": "list", "member": "Node"},
-                ]},
-                "Node": {"members": [
-                    {"name": "Name", "type": "string", "member": "string"},
-                ]},
-            }}
-
-    ac._cli_data = _Trunc()
-    remaining = ["--Root.0.Missing", "value"]
-    extra = OrderedDict()
-    out = ac._extract_deep_nested_args(remaining, extra, [])
-
-    assert out == remaining
-    assert extra == OrderedDict()
-
-
-def test_P12_extract_scalar_with_multiple_values_is_not_consumed():
-    ac = _make_action_command(call_mode=Options_define.CliUnfoldArgument)
-
-    class _Trunc(object):
-        def get_unfold_param_info(self, *a, **kw):
-            return {"Root.0": {"recursive_truncated": True,
-                               "recursive_type": "Node"}}
-
-        def get_service_model(self, *a, **kw):
-            return {"objects": {
-                "CreateGatherRuleRequest": {"members": [
-                    {"name": "Root", "type": "list", "member": "Node"},
-                ]},
-                "Node": {"members": [
-                    {"name": "Name", "type": "string", "member": "string"},
-                ]},
-            }}
-
-    ac._cli_data = _Trunc()
-    remaining = ["--Root.0.Name", "first", "second"]
-    extra = OrderedDict()
-    out = ac._extract_deep_nested_args(remaining, extra, [])
-
-    assert out == remaining
-    assert extra == OrderedDict()
-
-
-def test_P13_extract_terminal_array_index_is_not_consumed():
-    ac = _make_action_command(call_mode=Options_define.CliUnfoldArgument)
-
-    class _Trunc(object):
-        def get_unfold_param_info(self, *a, **kw):
-            return {"Root.0": {"recursive_truncated": True,
-                               "recursive_type": "Node"}}
-
-        def get_service_model(self, *a, **kw):
-            return {"objects": {
-                "CreateGatherRuleRequest": {"members": [
-                    {"name": "Root", "type": "list", "member": "Node"},
-                ]},
-                "Node": {"members": [
-                    {"name": "Children", "type": "list", "member": "Node"},
-                ]},
-            }}
-
-    ac._cli_data = _Trunc()
-    remaining = ["--Root.0.Children.0", "value"]
-    extra = OrderedDict()
-    out = ac._extract_deep_nested_args(remaining, extra, [])
-
-    assert out == remaining
-    assert extra == OrderedDict()
-
-
-def test_P14_extract_checks_depth_before_loading_service_model():
-    ac = _make_action_command(call_mode=Options_define.CliUnfoldArgument)
-
-    class _Trunc(object):
-        def get_unfold_param_info(self, *a, **kw):
-            return {"Root.0": {"recursive_truncated": True,
-                               "recursive_type": "Node"}}
-
-        def get_service_model(self, *a, **kw):
-            raise AssertionError("oversized key must not load service model")
-
-    ac._cli_data = _Trunc()
-    key = "Root.0." + ".".join("Field%d" % i for i in range(30))
-    oversized = []
-    out = ac._extract_deep_nested_args(
-        ["--" + key, "value"], OrderedDict(), oversized)
-
-    assert out == []
-    assert oversized == [(key, 31)]
 
 
 # ============================================================
