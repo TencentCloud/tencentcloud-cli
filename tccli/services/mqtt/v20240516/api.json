@@ -35,6 +35,13 @@
       "output": "CreateAuthorizationPolicyResponse",
       "status": "online"
     },
+    "CreateBlockRule": {
+      "document": "创建封禁规则",
+      "input": "CreateBlockRuleRequest",
+      "name": "创建封禁规则",
+      "output": "CreateBlockRuleResponse",
+      "status": "online"
+    },
     "CreateDeviceIdentity": {
       "document": "创建一机一密设备签名",
       "input": "CreateDeviceIdentityRequest",
@@ -126,6 +133,13 @@
       "output": "DeleteAuthorizationPolicyResponse",
       "status": "online"
     },
+    "DeleteBlockRule": {
+      "document": "删除封禁规则",
+      "input": "DeleteBlockRuleRequest",
+      "name": "删除封禁规则",
+      "output": "DeleteBlockRuleResponse",
+      "status": "online"
+    },
     "DeleteCaCertificate": {
       "document": "删除Ca证书",
       "input": "DeleteCaCertificateRequest",
@@ -201,6 +215,13 @@
       "input": "DescribeAuthorizationPoliciesRequest",
       "name": "查询授权策略",
       "output": "DescribeAuthorizationPoliciesResponse",
+      "status": "online"
+    },
+    "DescribeBlockRuleList": {
+      "document": "封禁规则列表",
+      "input": "DescribeBlockRuleListRequest",
+      "name": "查询封禁策略列表",
+      "output": "DescribeBlockRuleListResponse",
       "status": "online"
     },
     "DescribeCaCertificate": {
@@ -404,6 +425,13 @@
       "input": "ModifyAuthorizationPolicyRequest",
       "name": "修改授权策略",
       "output": "ModifyAuthorizationPolicyResponse",
+      "status": "online"
+    },
+    "ModifyBlockRule": {
+      "document": "修改封禁规则",
+      "input": "ModifyBlockRuleRequest",
+      "name": "修改封禁规则",
+      "output": "ModifyBlockRuleResponse",
       "status": "online"
     },
     "ModifyDeviceIdentity": {
@@ -900,6 +928,92 @@
       ],
       "usage": "both"
     },
+    "BlockRuleItem": {
+      "document": "MQTT集群用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>封禁策略名</p>",
+          "example": "aaaccc1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁策略类型</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息</p>",
+          "example": "this is remark",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含规则</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Include",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除规则</p>",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "Excludes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间，毫秒级时间戳 。</p>",
+          "example": "1774597703556",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间，毫秒级时间戳 。</p>",
+          "example": "1775040065000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，毫秒级时间戳 。</p>",
+          "example": "1775040065000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BodyItem": {
       "document": "HTTP 认证器body",
       "members": [
@@ -1204,6 +1318,107 @@
           "name": "Id",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlockRuleRequest": {
+      "document": "CreateBlockRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-zj944d74",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则名，不可重复，只支持数字字母中划线",
+          "example": "aaaccc",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则类型\n    CLIENT_ID(1), 默认值\n    USERNAME(2),\n    IP_ADDRESS(3);",
+          "example": "3",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "包含表达式支持*（多个字符）和？（一个字符）",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Include",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排除表达式支持*（多个字符）和？（一个字符），最多三条。",
+          "example": "[\"0.0.0.0/0\"]",
+          "member": "string",
+          "name": "Excludes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，毫秒级时间戳",
+          "example": "1774597703556",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注，最长 128 字符",
+          "example": "this is remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlockRuleResponse": {
+      "document": "CreateBlockRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-zj944d74",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则名",
+          "example": "aaaccc",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2129,6 +2344,42 @@
       ],
       "type": "object"
     },
+    "DeleteBlockRuleRequest": {
+      "document": "DeleteBlockRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-3ja5wo5b",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则名",
+          "example": "deny-client3",
+          "member": "string",
+          "name": "BlockRuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlockRuleResponse": {
+      "document": "DeleteBlockRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCaCertificateRequest": {
       "document": "DeleteCaCertificate请求参数结构体",
       "members": [
@@ -2515,6 +2766,53 @@
           "member": "AuthorizationPolicyItem",
           "name": "Data",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockRuleListRequest": {
+      "document": "DescribeBlockRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-3ja5wo5b",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockRuleListResponse": {
+      "document": "DescribeBlockRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则列表",
+          "example": "无",
+          "member": "BlockRuleItem",
+          "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6767,6 +7065,78 @@
     },
     "ModifyAuthorizationPolicyResponse": {
       "document": "ModifyAuthorizationPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockRuleRequest": {
+      "document": "ModifyBlockRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-zj944d74",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待修改的封禁规则名",
+          "example": "aaaccc",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包含表达式支持*（多个字符）和？（一个字符）",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Include",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排除表达式支持*（多个字符）和？（一个字符），最多三条。",
+          "example": "[\"0.0.0.0/0\"]",
+          "member": "string",
+          "name": "Excludes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，毫秒级时间戳",
+          "example": "1774597703556",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注，最长 128 字符",
+          "example": "this is remakr update",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockRuleResponse": {
+      "document": "ModifyBlockRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

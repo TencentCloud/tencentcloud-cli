@@ -161,6 +161,27 @@
       "output": "CheckLockMetaDataResponse",
       "status": "online"
     },
+    "CheckModifyPartition": {
+      "document": "变配校验：判断用户的目标配置是否可以执行变配。校验逻辑：对于缩容场景（目标值 < 当前值），检查 default 队列的 min 值是否足够承受缩容差值。",
+      "input": "CheckModifyPartitionRequest",
+      "name": "变配校验",
+      "output": "CheckModifyPartitionResponse",
+      "status": "online"
+    },
+    "CheckQueueName": {
+      "document": "资源队列名称合法性检测：校验队列名称是否合法，包括非空校验、格式校验（以小写字母开头，只允许小写字母、数字和连字符，长度1~11）和同分区下重名校验。",
+      "input": "CheckQueueNameRequest",
+      "name": "资源队列名称合法性检测",
+      "output": "CheckQueueNameResponse",
+      "status": "online"
+    },
+    "CheckResourceName": {
+      "document": "校验资源名称合法性",
+      "input": "CheckResourceNameRequest",
+      "name": "校验资源名称",
+      "output": "CheckResourceNameResponse",
+      "status": "online"
+    },
     "CopyJobSpec": {
       "document": "复制一份已有的作业配置",
       "input": "CopyJobSpecRequest",
@@ -238,6 +259,13 @@
       "output": "CreateImportTaskResponse",
       "status": "online"
     },
+    "CreateInferenceModel": {
+      "document": "创建推理模型（模型上传）",
+      "input": "CreateInferenceModelRequest",
+      "name": "创建推理模型",
+      "output": "CreateInferenceModelResponse",
+      "status": "online"
+    },
     "CreateInternalTable": {
       "document": "创建托管存储内表（该接口已废弃）",
       "input": "CreateInternalTableRequest",
@@ -285,6 +313,20 @@
       "input": "CreateNotebookSessionStatementSupportBatchSQLRequest",
       "name": "创建交互式session并执行SQL任务",
       "output": "CreateNotebookSessionStatementSupportBatchSQLResponse",
+      "status": "online"
+    },
+    "CreatePartition": {
+      "document": "新增资源包",
+      "input": "CreatePartitionRequest",
+      "name": "新增资源包",
+      "output": "CreatePartitionResponse",
+      "status": "online"
+    },
+    "CreatePartitionQueue": {
+      "document": "新增资源队列：在指定分区下创建一个新的资源队列，支持设置队列名称、描述、资源规格列表和队列类型。",
+      "input": "CreatePartitionQueueRequest",
+      "name": "新增资源队列",
+      "output": "CreatePartitionQueueResponse",
       "status": "online"
     },
     "CreateRayCluster": {
@@ -488,6 +530,13 @@
       "input": "DeleteNotebookSessionRequest",
       "name": "删除交互式session（notebook）",
       "output": "DeleteNotebookSessionResponse",
+      "status": "online"
+    },
+    "DeletePartitionQueue": {
+      "document": "删除资源队列",
+      "input": "DeletePartitionQueueRequest",
+      "name": "删除资源队列",
+      "output": "DeletePartitionQueueResponse",
       "status": "online"
     },
     "DeleteRayCluster": {
@@ -735,6 +784,20 @@
       "output": "DescribeEngineUsageInfoResponse",
       "status": "online"
     },
+    "DescribeFlowDetailList": {
+      "document": "分页查询指定分区的流程详情列表，包含每个流程的基本信息和活动列表",
+      "input": "DescribeFlowDetailListRequest",
+      "name": "查询流程详情列表",
+      "output": "DescribeFlowDetailListResponse",
+      "status": "online"
+    },
+    "DescribeFlowList": {
+      "document": "查询指定分区的流程列表",
+      "input": "DescribeFlowListRequest",
+      "name": "查询分区流程列表",
+      "output": "DescribeFlowListResponse",
+      "status": "online"
+    },
     "DescribeForbiddenTablePro": {
       "document": "本接口（DescribeForbiddenTablePro）用于查询被禁用的表属性列表（新）",
       "input": "DescribeForbiddenTableProRequest",
@@ -847,6 +910,27 @@
       "output": "DescribeOtherCHDFSBindingListResponse",
       "status": "online"
     },
+    "DescribePartitionDetail": {
+      "document": "获取指定资源分区详情",
+      "input": "DescribePartitionDetailRequest",
+      "name": "获取分区详情",
+      "output": "DescribePartitionDetailResponse",
+      "status": "online"
+    },
+    "DescribePartitionQueues": {
+      "document": "查询指定分区的所有队列列表",
+      "input": "DescribePartitionQueuesRequest",
+      "name": "查询指定分区的所有队列列表",
+      "output": "DescribePartitionQueuesResponse",
+      "status": "online"
+    },
+    "DescribePartitions": {
+      "document": "获取分区列表信息",
+      "input": "DescribePartitionsRequest",
+      "name": "查询分区列表",
+      "output": "DescribePartitionsResponse",
+      "status": "online"
+    },
     "DescribeResourceGroupUsageInfo": {
       "document": "本接口根据资源组ID查询资源组CU使用情况",
       "input": "DescribeResourceGroupUsageInfoRequest",
@@ -859,6 +943,20 @@
       "input": "DescribeResultDownloadRequest",
       "name": "查询结果下载任务",
       "output": "DescribeResultDownloadResponse",
+      "status": "online"
+    },
+    "DescribeSaleRegions": {
+      "document": "查询可售卖的地域列表，仅返回状态为AVAILABLE的地域",
+      "input": "DescribeSaleRegionsRequest",
+      "name": "查询可售卖的地域列表",
+      "output": "DescribeSaleRegionsResponse",
+      "status": "online"
+    },
+    "DescribeSaleResourceInfo": {
+      "document": "查询当前地域可售卖的资源规格和最大配额",
+      "input": "DescribeSaleResourceInfoRequest",
+      "name": "查询可售卖资源规格",
+      "output": "DescribeSaleResourceInfoResponse",
       "status": "online"
     },
     "DescribeScripts": {
@@ -1197,6 +1295,13 @@
       "output": "GetExampleDetailResponse",
       "status": "online"
     },
+    "GetInferenceModel": {
+      "document": "获取单个模型详情",
+      "input": "GetInferenceModelRequest",
+      "name": "获取单个模型详情",
+      "output": "GetInferenceModelResponse",
+      "status": "online"
+    },
     "GetJobSpec": {
       "document": "根据配置ID获取作业配置详情",
       "input": "GetJobSpecRequest",
@@ -1414,6 +1519,13 @@
       "output": "ListExamplesResponse",
       "status": "online"
     },
+    "ListInferenceModels": {
+      "document": "列出推理模型（支持关键词过滤 + 分页）",
+      "input": "ListInferenceModelsRequest",
+      "name": "列出推理模型",
+      "output": "ListInferenceModelsResponse",
+      "status": "online"
+    },
     "ListJobSpecs": {
       "document": "分页查询作业配置列表",
       "input": "ListJobSpecsRequest",
@@ -1517,6 +1629,20 @@
       "input": "ModifyLabPriorityRequest",
       "name": "修改实验室优先级",
       "output": "ModifyLabPriorityResponse",
+      "status": "online"
+    },
+    "ModifyPartitionDescription": {
+      "document": "修改分区描述",
+      "input": "ModifyPartitionDescriptionRequest",
+      "name": "修改分区描述",
+      "output": "ModifyPartitionDescriptionResponse",
+      "status": "online"
+    },
+    "ModifyPartitionQueue": {
+      "document": "编辑资源队列：根据队列ID修改指定资源队列的名称、描述、资源规格列表和队列类型等信息。",
+      "input": "ModifyPartitionQueueRequest",
+      "name": "编辑资源队列",
+      "output": "ModifyPartitionQueueResponse",
       "status": "online"
     },
     "ModifySparkApp": {
@@ -1748,6 +1874,13 @@
       "input": "UpdateEngineResourceGroupNetworkConfigInfoRequest",
       "name": "更新标准引擎资源组网络配置信息",
       "output": "UpdateEngineResourceGroupNetworkConfigInfoResponse",
+      "status": "online"
+    },
+    "UpdateInferenceModel": {
+      "document": "更新推理模型（编辑标签、描述、参数量）",
+      "input": "UpdateInferenceModelRequest",
+      "name": "更新推理模型",
+      "output": "UpdateInferenceModelResponse",
       "status": "online"
     },
     "UpdateJobSpec": {
@@ -3663,6 +3796,155 @@
           "member": "string",
           "name": "LockState",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckModifyPartitionRequest": {
+      "document": "CheckModifyPartition请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区编码</p>",
+          "example": "dlc-p-ofvhyjzn",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标资源配额列表（计费项+目标数量）</p>",
+          "example": "无",
+          "member": "ResourceQuota",
+          "name": "TargetResourceQuotaList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckModifyPartitionResponse": {
+      "document": "CheckModifyPartition返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否允许变配：true-允许，false-不允许</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CanModify",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>校验失败时的不足资源描述信息列表，校验通过时为null</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MessageItem",
+          "name": "MessageList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckQueueNameRequest": {
+      "document": "CheckQueueName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "队列名称",
+          "example": "my-queue",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分区编码，用于校验同分区下队列名称是否重复",
+          "example": "partition-001",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckQueueNameResponse": {
+      "document": "CheckQueueName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验是否通过：true-通过，false-不通过",
+          "example": "true",
+          "member": "string",
+          "name": "IsValid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验失败原因，校验通过时为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "同一分区下队列名称已存在，请使用其他名称",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckResourceNameRequest": {
+      "document": "CheckResourceName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称",
+          "example": "HELLO",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckResourceNameResponse": {
+      "document": "CheckResourceName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验是否通过",
+          "example": "true",
+          "member": "string",
+          "name": "IsValid",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5776,6 +6058,323 @@
       ],
       "type": "object"
     },
+    "CreateInferenceModelRequest": {
+      "document": "CreateInferenceModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称（最长 256）</p>",
+          "example": "capi_test_123",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型（如 LLM、Embedding、Reranker、ASR、TTS 等）</p>",
+          "example": "ML",
+          "member": "string",
+          "name": "ModelType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始版本号（必填，如 v1、v1.5）</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "InitialVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供方</p>",
+          "example": "personal",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述</p>",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型参数量（如 7B、1.5B）</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ParameterSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标签列表</p>",
+          "example": "[\"thisistag\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型存储 URI（可选，如 cos://bucket-name/models/name/）</p>",
+          "example": "storageUri",
+          "member": "string",
+          "name": "StorageUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用用户自带存储桶（默认 false 表示平台托管）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "UseCustomStorage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型列表（如 [&quot;Text Generation&quot;, &quot;Embedding&quot;]）</p>",
+          "example": "[\"thisistask\"]",
+          "member": "string",
+          "name": "Tasks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 UID（可选，前端预先生成的 UID，不传则后端自动生成）</p>",
+          "example": "thisismodelUid12345",
+          "member": "string",
+          "name": "ModelUid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInferenceModelResponse": {
+      "document": "CreateInferenceModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型UID</p>",
+          "example": "thisismodelUid12345",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "capi_test_123",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供方</p>",
+          "example": "personal",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述</p>",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型</p>",
+          "example": "ML",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数大小</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ParameterSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标签</p>",
+          "example": "[\"thisistag\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的推理服务数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ServiceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有存储</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasStorage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用用户自带存储桶</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasCustomStorage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储后端类型</p>",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否内置模型</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "BuiltIn",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型列表</p>",
+          "example": "[\"thisistask\"]",
+          "member": "string",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>APPID</p>",
+          "example": "260200066",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1781579668983",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1781579668983",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Sub UIN</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateInternalTableRequest": {
       "document": "CreateInternalTable请求参数结构体",
       "members": [
@@ -7296,6 +7895,189 @@
           "name": "NotebookSessionStatementBatches",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartitionQueueRequest": {
+      "document": "CreatePartitionQueue请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区编码</p>",
+          "example": "dlc-p-ofvhyjzn",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称</p>",
+          "example": "122211",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源规格列表，定义队列的资源类型及大小范围</p>",
+          "example": "无",
+          "member": "ResourceUsage",
+          "name": "ResourceUsages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列类型：1-独占型，2-共享型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "QueueType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列描述</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartitionQueueResponse": {
+      "document": "CreatePartitionQueue返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>新创建的资源队列ID</p>",
+          "example": "140",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartitionRequest": {
+      "document": "CreatePartition请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>交易类型：purchase-新购，renew-续费，modify-变配</p>",
+          "example": "purchase",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式：0-后付费，1-预付费</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配额列表（计费项+数量）</p>",
+          "example": "无",
+          "member": "ResourceQuota",
+          "name": "ResourceQuotaList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间大小，预付费时为购买月数，后付费时为3600</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间单位，预付费为m（月），后付费为s（秒）</p>",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标志：0-默认，1-自动续费，2-不自动续费（仅预付费有效）</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性资源池名称，用于订单页展示</p>",
+          "example": "de**n1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列描述</p>",
+          "example": "t***2",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartitionResponse": {
+      "document": "CreatePartition返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子订单号</p>",
+          "example": "202606116*******0515691",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大订单号</p>",
+          "example": "202606116********515681",
+          "member": "string",
+          "name": "BigDealId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -13389,6 +14171,51 @@
       ],
       "type": "object"
     },
+    "DeletePartitionQueueRequest": {
+      "document": "DeletePartitionQueue请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区编码",
+          "example": "HELLO",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列名称",
+          "example": "QUEUE",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列ID",
+          "example": "31",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePartitionQueueResponse": {
+      "document": "DeletePartitionQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRayClusterRequest": {
       "document": "DeleteRayCluster请求参数结构体",
       "members": [
@@ -15987,6 +16814,136 @@
       ],
       "type": "object"
     },
+    "DescribeFlowDetailListRequest": {
+      "document": "DescribeFlowDetailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区编码",
+          "example": "dlc-p-5f246106",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，从1开始，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回数量，默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowDetailListResponse": {
+      "document": "DescribeFlowDetailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程详情列表",
+          "example": "无",
+          "member": "FlowDetail",
+          "name": "FlowDetailList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowListRequest": {
+      "document": "DescribeFlowList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区编码",
+          "example": "dlc-p-5f246106",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，从1开始，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回数量，默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowListResponse": {
+      "document": "DescribeFlowList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程列表",
+          "example": "无",
+          "member": "FlowInfo",
+          "name": "FlowInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeForbiddenTableProRequest": {
       "document": "DescribeForbiddenTablePro请求参数结构体",
       "members": [],
@@ -16906,6 +17863,210 @@
       ],
       "type": "object"
     },
+    "DescribePartitionDetailRequest": {
+      "document": "DescribePartitionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区编码",
+          "example": "dlc-ae511d85",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePartitionDetailResponse": {
+      "document": "DescribePartitionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区详情",
+          "example": "无",
+          "member": "PartitionDetail",
+          "name": "PartitionDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePartitionQueuesRequest": {
+      "document": "DescribePartitionQueues请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区编码",
+          "example": "partition-001",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段列表",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回数量",
+          "example": "11",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePartitionQueuesResponse": {
+      "document": "DescribePartitionQueues返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "队列列表",
+          "example": "无",
+          "member": "QueueInfo",
+          "name": "QueueList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认队列信息",
+          "example": "无",
+          "member": "QueueInfo",
+          "name": "DefaultQueue",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "2",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePartitionsRequest": {
+      "document": "DescribePartitions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从1开始，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回数量，默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段列表，按数组顺序依次应用，可选",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件列表，多个条件之间为AND关系，可选",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePartitionsResponse": {
+      "document": "DescribePartitions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包列表",
+          "example": "无",
+          "member": "PartitionInfo",
+          "name": "Partitions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceGroupUsageInfoRequest": {
       "document": "DescribeResourceGroupUsageInfo请求参数结构体",
       "members": [
@@ -17039,6 +18200,60 @@
           "name": "Token",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSaleRegionsRequest": {
+      "document": "DescribeSaleRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSaleRegionsResponse": {
+      "document": "DescribeSaleRegions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可售卖地域列表",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSaleResourceInfoRequest": {
+      "document": "DescribeSaleResourceInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSaleResourceInfoResponse": {
+      "document": "DescribeSaleResourceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可售卖资源规格列表",
+          "example": "无",
+          "member": "ResourceSaleInfo",
+          "name": "SaleResourceInfoList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -21361,6 +22576,178 @@
       ],
       "usage": "both"
     },
+    "FlowActivityDetail": {
+      "document": "流程活动详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>活动编码</p>",
+          "example": "CREATE_NAMESPACE",
+          "member": "string",
+          "name": "ActivityCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>活动状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-15 10:30:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>耗时（秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FlowDetail": {
+      "document": "流程详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程ID（数据库主键）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Temporal Workflow ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "workflow-abc123",
+          "member": "string",
+          "name": "WorkFlowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程编码</p>",
+          "example": "CREATE_PARTITION",
+          "member": "string",
+          "name": "WorkFlowCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程进度，0~100</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-15 10:30:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程活动列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlowActivityDetail",
+          "name": "Activities",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FlowInfo": {
+      "document": "流程简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程ID</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程编码</p>",
+          "example": "CREATE_PARTITION",
+          "member": "string",
+          "name": "WorkFlowCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程状态</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GPUInfo": {
       "document": "GPU 机型",
       "members": [
@@ -21883,6 +23270,263 @@
           "name": "Popularity",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInferenceModelRequest": {
+      "document": "GetInferenceModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型UID</p>",
+          "example": "m-qwen3-5-4b-6a223aba-951c",
+          "member": "string",
+          "name": "ModelUid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInferenceModelResponse": {
+      "document": "GetInferenceModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型ID</p>",
+          "example": "20",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型UID</p>",
+          "example": "m-qwen3-5-4b-6a223aba-951c",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "Qwen3.5-4B",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供方</p>",
+          "example": "Qwen",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述</p>",
+          "example": "Qwen3.5-4B 是阿里云通义千问团队推出的小尺寸稠密语言模型，采用原生多模态训练与最新模型架构，支持 256K 上下文长度，适用于端侧及边缘设备的高性能轻量级应用场景。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型</p>",
+          "example": "LLM",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型参数量</p>",
+          "example": "4B",
+          "member": "string",
+          "name": "ParameterSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标签列表</p>",
+          "example": "[\"对话\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本号</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的推理服务数量</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "ServiceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有存储</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasStorage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用用户自带存储桶</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HasCustomStorage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储后端类型</p>",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否内置模型</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "BuiltIn",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型列表</p>",
+          "example": "[\"Text Generation\"]",
+          "member": "string",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型支持的推理引擎列表</p>",
+          "example": "[\"vllm\"]",
+          "member": "string",
+          "name": "SupportedEngines",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>UIN</p>",
+          "example": "system",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>APPID</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1780628154611",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1780628154611",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Sub UIN</p>",
+          "example": "system",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -25455,6 +27099,265 @@
       ],
       "usage": "out"
     },
+    "InferenceModelInfo": {
+      "document": "推理模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Model ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "48",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型业务唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-xgboost-aaa-6a301c6f-17e6",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xgboost_aaa",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供方</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "个人",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.3BN0.3BN0.3BN0.3BN",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Reranker",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的引擎</p>",
+          "example": "[\"vllm\"]",
+          "member": "string",
+          "name": "SupportedEngines",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParameterSize",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"te=2\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "VersionCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的推理服务数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ServiceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有存储（内置模型和用户上传模型均为 true）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasStorage",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用用户自带存储桶</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasCustomStorage",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储后端类型（如 COS、GOOSEFS、CFSTURBO）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是内置模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "BuiltIn",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Rerank\"]",
+          "member": "string",
+          "name": "Tasks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>云账户的 APP ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260200066",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>云账户的 UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002655694",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（毫秒时间戳）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781537914533",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（毫秒时间戳）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781537937432",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>云账户的 Sub UIN</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InitializeTCLakeRequest": {
       "document": "InitializeTCLake请求参数结构体",
       "members": [],
@@ -27483,6 +29386,146 @@
       ],
       "type": "object"
     },
+    "ListInferenceModelsRequest": {
+      "document": "ListInferenceModels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码（从1开始）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量（最大 200）</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "1111",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p>",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型参数最小值</p>",
+          "example": "5",
+          "member": "float",
+          "name": "ParameterSizeMin",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型参数最大值</p>",
+          "example": "6",
+          "member": "float",
+          "name": "ParameterSizeMax",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "ListInferenceModelsResponse": {
+      "document": "ListInferenceModels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理模型列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InferenceModelInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总记录数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总页数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListJobSpecsRequest": {
       "document": "ListJobSpecs请求参数结构体",
       "members": [
@@ -29097,6 +31140,32 @@
       ],
       "usage": "both"
     },
+    "MessageItem": {
+      "document": "校验消息项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计费项标识</p>",
+          "example": "sv_dlc_standard_cu_standard_cu",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>校验失败描述信息</p>",
+          "example": "[标准CU]缩容需要释放20，但default队列仅有min=10可释放，不足10",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MetaDatabaseInfo": {
       "document": "元数据库基本信息",
       "members": [
@@ -29911,6 +31980,114 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPartitionDescriptionRequest": {
+      "document": "ModifyPartitionDescription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区编码",
+          "example": "dlc-p-5f246106",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分区描述",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPartitionDescriptionResponse": {
+      "document": "ModifyPartitionDescription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPartitionQueueRequest": {
+      "document": "ModifyPartitionQueue请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源队列ID",
+          "example": "12345",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分区编码",
+          "example": "partition-001",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列名称",
+          "example": "my-queue",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列描述",
+          "example": "测试队列",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源规格列表，定义队列的资源类型及大小范围",
+          "example": "无",
+          "member": "ResourceUsage",
+          "name": "ResourceUsages",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "队列类型：1-独占型，2-共享型",
+          "example": "1",
+          "member": "int64",
+          "name": "QueueType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPartitionQueueResponse": {
+      "document": "ModifyPartitionQueue返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -32029,6 +34206,239 @@
       ],
       "usage": "both"
     },
+    "PartitionDetail": {
+      "document": "资源分区详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区编码</p>",
+          "example": "dlc-p-ofvhyjzn",
+          "member": "string",
+          "name": "PartitionCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区名称</p>",
+          "example": "甘露-测试04",
+          "member": "string",
+          "name": "PartitionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试环境",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"name\":\"名称\",\"value\":\"甘露-测试04\"},{\"name\":\"地域\",\"value\":\"广州\"},{\"name\":\"描述\",\"value\":\"测试环境\"}]",
+          "member": "string",
+          "name": "ProductInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源池编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dlc-a1fa1ed6",
+          "member": "string",
+          "name": "ResourcePoolCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配额列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceQuota",
+          "name": "ResourceQuota",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费标志</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度器类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "KUEUE",
+          "member": "string",
+          "name": "Scheduler",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PartitionInfo": {
+      "document": "资源分区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区名称</p>",
+          "example": "jyunnkolitest",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区编码</p>",
+          "example": "dlc-p-pojjeefi",
+          "member": "string",
+          "name": "PartitionCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试环境",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态：11-发货中，1-运行中，2-隔离中，3-已销毁</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列数量</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "QueueCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配置（配额）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceQuota",
+          "name": "ResourceQuota",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费类型：1-包年包月，0-按量计费</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-19 18:00:49",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-27T12:58:28",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-04-19 00:16:25",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PauseStandardEngineResourceGroupsRequest": {
       "document": "PauseStandardEngineResourceGroups请求参数结构体",
       "members": [
@@ -32730,6 +35140,78 @@
         }
       ],
       "type": "object"
+    },
+    "QueueInfo": {
+      "document": "队列信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>队列ID</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源用量列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceUsage",
+          "name": "ResourceUsage",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为默认队列</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDefault",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列类型：1-独占型，2-共享型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "QueueType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RayClusterEntity": {
       "document": "Ray集群实体",
@@ -33525,6 +36007,45 @@
       ],
       "usage": "both"
     },
+    "RegionInfo": {
+      "document": "可售卖地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域编码，如 ap-chongqing</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域名称，如 重庆</p>",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域状态：AVAILABLE-可用，UNAVAILABLE-不可用</p>",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RegisterThirdPartyAccessUserRequest": {
       "document": "RegisterThirdPartyAccessUser请求参数结构体",
       "members": [],
@@ -33883,6 +36404,195 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceQuota": {
+      "document": "资源配额",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可售卖资源规格</p>",
+          "example": "无",
+          "member": "ResourceSpec",
+          "name": "ResourceSpec",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额数量</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Quota",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceSaleInfo": {
+      "document": "可售卖资源规格信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可售卖资源规格</p>",
+          "example": "无",
+          "member": "ResourceSpec",
+          "name": "ResourceSpec",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格步长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32",
+          "member": "int64",
+          "name": "Step",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大资源数量，仅GU有值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192",
+          "member": "int64",
+          "name": "MaxSpec",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceSpec": {
+      "document": "资源规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源包类型</p>",
+          "example": "GPU",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型，例如X40/T20，仅GU有值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PNV6",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>四层计费项</p>",
+          "example": "sv_dlc_pnv6_pnv64xlarge160",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格描述</p>",
+          "example": "1 GU = 1 × H20 · 96GB VRAM · 16vCPU · 160GB Memory",
+          "member": "string",
+          "name": "SpecDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格，格式为 {gpu}:{cpu}:{mem}:{vram}</p>",
+          "example": "1:16:160:96",
+          "member": "string",
+          "name": "Spec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU类型，仅GU有值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "H20",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单个物理节点上该计费项对应的最大 GPU 卡数，CPU / HM_CPU 恒为 0</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "MaxCardPerNode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceUsage": {
+      "document": "资源用量信息，描述某种资源类型的用量范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源规格</p>",
+          "example": "无",
+          "member": "ResourceSpec",
+          "name": "ResourceSpec",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小用量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Min",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大用量</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Max",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -40672,6 +43382,269 @@
     "UpdateEngineResourceGroupNetworkConfigInfoResponse": {
       "document": "UpdateEngineResourceGroupNetworkConfigInfo返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInferenceModelRequest": {
+      "document": "UpdateInferenceModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理模型UID</p>",
+          "example": "m-capi-test-6a30b76e-aa04",
+          "member": "string",
+          "name": "ModelUid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称（可选，不传则不修改）</p>",
+          "example": "capi_test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述（可选）</p>",
+          "example": "Description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型参数量（可选，如 7B、1.5B）</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ParameterSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标签列表（可选）</p>",
+          "example": "[\"tagnew\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInferenceModelResponse": {
+      "document": "UpdateInferenceModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理模型ID</p>",
+          "example": "51",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理模型UID</p>",
+          "example": "m-capi-test-6a30b76e-aa04",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "capi_test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供方</p>",
+          "example": "personal",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述</p>",
+          "example": "Description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型</p>",
+          "example": "ml",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型参数量</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ParameterSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"tagnew\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本号</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的推理服务数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ServiceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有存储</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasStorage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用用户自带存储桶</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HasCustomStorage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储后端类型</p>",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否内置模型</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "BuiltIn",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型列表</p>",
+          "example": "[\"thisistask\"]",
+          "member": "string",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>APPID</p>",
+          "example": "260200066",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1781577582219",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1781578511252",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SUB UIN</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

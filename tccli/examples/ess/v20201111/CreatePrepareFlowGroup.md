@@ -1,4 +1,53 @@
-**Example 1: 文件发起嵌入式合同组**
+**Example 1: 生成发起合同组嵌入页面链接**
+
+生成发起合同组嵌入页面链接，通过FlowGroupOptions参数对发起页面个性化设置
+
+Input: 
+
+```
+tccli ess CreatePrepareFlowGroup --cli-unfold-argument  \
+    --Operator.UserId yDwJ5UUckpkym9i3UuyDyBp9wV0ZbPhf \
+    --FlowGroupName 我是合同组 \
+    --FlowGroupInfos.0.FlowName 第一个子合同 \
+    --FlowGroupInfos.0.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.0.Approvers.0.ApproverName 刘*** \
+    --FlowGroupInfos.0.Approvers.0.ApproverMobile 1*********3 \
+    --FlowGroupInfos.0.Approvers.0.OrganizationName 中土大陆测试 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosY 260 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.0.FileIds yD3irUUckpeyqbvwU5hlTiRzGjk6McbK \
+    --FlowGroupInfos.0.FlowType dfdfdsaf \
+    --FlowGroupInfos.0.Deadline 1787803572 \
+    --ResourceType 2 \
+    --FlowGroupOptions.FlowGroupNeedWorkflow True \
+    --FlowGroupOptions.NoEditFlowName True \
+    --FlowGroupOptions.NoEditFlowType True \
+    --FlowGroupOptions.NoEditDeadline True \
+    --FlowGroupOptions.SignComponentConfig.HideDate True \
+    --FlowGroupOptions.HideSignCodeAfterStart True \
+    --FlowGroupOptions.SignAfterStart True \
+    --FlowGroupOptions.PreviewAfterStart True \
+    --FlowGroupType 67687让674 \
+    --FlowGroupDeadline 1787803572
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowGroupId": "yD3irUUckpey34dgU1Uxi2iAm8dh2RJL",
+        "PrepareUrl": "https://embed.test.qian.tencent.cn/contract-create?embed=1&expiredOn=1785827973&code=yD3irUUckpey3uc9Uxi2iAmvsCzcVxdS&businessId=yD3irUUckpey34dgU1Uxi2iAm8dh2RJL&channel=TENCENTCLOUD&operateSource=byFileGroup&themeId=saas_web_theme_yDwf3UUckpshchk9Uuan1OkFOE0qLixm&isGroupWorkflow=true",
+        "RequestId": "d86ee7b6-0050-4d67-8e3d-481929fdd61a"
+    }
+}
+```
+
+**Example 2: 文件发起嵌入式合同组**
 
 文件发起嵌入式合同组
 
@@ -60,7 +109,7 @@ Output:
 }
 ```
 
-**Example 2: 文件发起嵌入式合同组-开启合同组发起审批流**
+**Example 3: 文件发起嵌入式合同组-开启合同组发起审批流**
 
 文件发起嵌入式合同组-开启合同组发起审批流
 

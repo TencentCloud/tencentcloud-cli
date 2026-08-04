@@ -9666,7 +9666,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "document": "<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -9675,7 +9675,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
+          "document": "<p>合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。</p>",
           "example": "入职合同集",
           "member": "string",
           "name": "FlowGroupName",
@@ -9684,7 +9684,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）组的子合同信息，支持2-50个子合同",
+          "document": "<p>合同（流程）组的子合同信息，支持2-50个子合同</p>",
           "example": "无",
           "member": "FlowGroupInfo",
           "name": "FlowGroupInfos",
@@ -9693,7 +9693,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>",
+          "document": "<p>资源类型，取值有： <ul><li> <strong>1</strong>：模板</li> <li> <strong>2</strong>：文件</li></ul></p>",
           "example": "2",
           "member": "int64",
           "name": "ResourceType",
@@ -9702,7 +9702,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -9711,12 +9711,30 @@
         },
         {
           "disabled": false,
-          "document": "合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批",
+          "document": "<p>合同组发起控制参数，例如FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批</p>",
           "example": "无",
           "member": "FlowGroupOptions",
           "name": "FlowGroupOptions",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同组类型，发起合同组后会应用到所有子合同</p>",
+          "example": "合同组类型",
+          "member": "string",
+          "name": "FlowGroupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>合同组过期时间，发起合同组后会应用到所有子合同</p>",
+          "example": "1787803572",
+          "member": "int64",
+          "name": "FlowGroupDeadline",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9726,7 +9744,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同(流程)组的合同组Id",
+          "document": "<p>合同(流程)组的合同组Id</p>",
           "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "FlowGroupId",
@@ -9736,7 +9754,7 @@
         },
         {
           "disabled": false,
-          "document": "嵌入式合同组发起链接",
+          "document": "<p>嵌入式合同组发起链接</p>",
           "example": "https://embed.test.qian.tencent.cn/contract-create?embed=1&expiredOn=1744785243&code=yDtBLUUckpx65&businessId=yDtBLUUckYNlO&channel=TENCENTCLOUD&operateSource=byFileGroup&themeId=saas_web_theme",
           "member": "string",
           "name": "PrepareUrl",
@@ -18158,7 +18176,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署人校验方式,支持以下类型\n<ul><li>VerifyCheck : 人脸识别 (默认值)</li>\n<li>MobileCheck : 手机号验证</li></ul>\n参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
+          "document": "<p>签署人校验方式,支持以下类型</p><ul><li>VerifyCheck : 人脸识别 (默认值)</li><li>MobileCheck : 手机号验证</li></ul>参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
           "example": "VerifyCheck",
           "member": "string",
           "name": "ApproverVerifyType",
@@ -18167,7 +18185,7 @@
         },
         {
           "disabled": false,
-          "document": "发起合同（流程）组本方企业经办人通知方式\n签署通知类型，支持以下类型\n<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
+          "document": "<p>发起合同（流程）组本方企业经办人通知方式<br>签署通知类型，支持以下类型</p><ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
           "example": "none",
           "member": "string",
           "name": "SelfOrganizationApproverNotifyType",
@@ -18176,7 +18194,7 @@
         },
         {
           "disabled": false,
-          "document": "发起合同（流程）组他方经办人通知方式\n签署通知类型，支持以下类型\n<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
+          "document": "<p>发起合同（流程）组他方经办人通知方式<br>签署通知类型，支持以下类型</p><ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
           "example": "none",
           "member": "string",
           "name": "OtherApproverNotifyType",
@@ -18185,10 +18203,82 @@
         },
         {
           "disabled": false,
-          "document": "是否开启发起合同组的发起审批，默认：false(不开启)，开启后，发起合同组会提交电子签内置审批流",
+          "document": "<p>是否开启发起合同组的发起审批，默认：false(不开启)，开启后，发起合同组会提交电子签内置审批流</p>",
           "example": "true",
           "member": "bool",
           "name": "FlowGroupNeedWorkflow",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否不可编辑合同名称 true-不可编辑 false-可编辑(默认)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NoEditFlowName",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否不可编辑合同类型 true-不可编辑 false-可编辑(默认)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NoEditFlowType",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否不可编辑合同截止日期 true-不可编辑 false-可编辑(默认)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NoEditDeadline",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署控件配置(如是否默认展示日期)，用于嵌入式发起页面配置</p>",
+          "example": "无",
+          "member": "SignComponentConfig",
+          "name": "SignComponentConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁止编辑水印控件属性 true-禁止 false-否(默认)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidEditWatermark",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发起成功后是否隐藏签署码 true-隐藏 false-否(默认)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HideSignCodeAfterStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发起成功后是否签署合同,仅当前经办人为签署人时生效 true-展示签署 false-否(默认)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SignAfterStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发起成功后是否预览合同 true-展示预览按钮 false-否(默认)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PreviewAfterStart",
           "required": false,
           "type": "bool"
         }

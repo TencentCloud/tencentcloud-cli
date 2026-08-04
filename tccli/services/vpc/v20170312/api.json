@@ -12193,7 +12193,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPN网关实例ID。",
+          "document": "<p>VPN网关实例ID。</p>",
           "example": "vpngw-1w9tue3d",
           "member": "string",
           "name": "VpnGatewayId",
@@ -12202,7 +12202,7 @@
         },
         {
           "disabled": false,
-          "document": "对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。",
+          "document": "<p>对端网关ID。例如：cgw-2wqq41m9，可通过<a href=\"https://cloud.tencent.com/document/product/215/17516\">DescribeCustomerGateways</a>接口查询对端网关。</p>",
           "example": "cgw-qa9sxpy7",
           "member": "string",
           "name": "CustomerGatewayId",
@@ -12211,7 +12211,7 @@
         },
         {
           "disabled": false,
-          "document": "通道名称，可任意命名，但不得超过60个字符。",
+          "document": "<p>通道名称，可任意命名，但不得超过60个字符。</p>",
           "example": "TEST_CONN",
           "member": "string",
           "name": "VpnConnectionName",
@@ -12220,7 +12220,7 @@
         },
         {
           "disabled": false,
-          "document": "预共享密钥。",
+          "document": "<p>预共享密钥。</p>",
           "example": "654321",
           "member": "string",
           "name": "PreShareKey",
@@ -12229,7 +12229,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。\nCCN VPN 形的通道 可以不传VPCID",
+          "document": "<p>VPC实例ID。VPC类型网关可通过<a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a>接口返回值中的VpcId获取，CCN类型网关传空值即可。</p>",
           "example": "vpc-gapcv96p",
           "member": "string",
           "name": "VpcId",
@@ -12238,8 +12238,8 @@
         },
         {
           "disabled": false,
-          "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
-          "example": "[{'LocalCidrBlock': '10.40.1.12/24', 'RemoteCidrBlock': ['172.123.10.5/16', '10.7.10.0/16']}]",
+          "document": "<p>SPD策略组，例如：{&quot;10.0.0.5/24&quot;:[&quot;172.123.10.5/16&quot;]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。</p>",
+          "example": "无",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabases",
           "required": false,
@@ -12247,8 +12247,8 @@
         },
         {
           "disabled": false,
-          "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议",
-          "example": "{'LocalIdentity': 'ADDRESS', 'LocalAddress': 'dddd'}",
+          "document": "<p>IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议</p>",
+          "example": "无",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
           "required": false,
@@ -12256,8 +12256,8 @@
         },
         {
           "disabled": false,
-          "document": "IPSec配置，腾讯云提供IPSec安全会话设置",
-          "example": "{'IPSECSaLifetimeSeconds': 7200}",
+          "document": "<p>IPSec配置，腾讯云提供IPSec安全会话设置</p>",
+          "example": "无",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
           "required": false,
@@ -12265,8 +12265,8 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
-          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
+          "document": "<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -12274,8 +12274,8 @@
         },
         {
           "disabled": false,
-          "document": "是否支持隧道内健康检查，默认为False。",
-          "example": "True",
+          "document": "<p>是否支持隧道内健康检查，默认为False。</p>",
+          "example": "true",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
@@ -12283,7 +12283,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。",
+          "document": "<p>健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>",
           "example": "169.254.128.1",
           "member": "string",
           "name": "HealthCheckLocalIp",
@@ -12292,7 +12292,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。",
+          "document": "<p>健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。</p>",
           "example": "169.254.128.2",
           "member": "string",
           "name": "HealthCheckRemoteIp",
@@ -12301,7 +12301,7 @@
         },
         {
           "disabled": false,
-          "document": "通道类型, 例如:[\"STATIC\", \"StaticRoute\", \"Policy\"]",
+          "document": "<p>通道类型, 例如:[&quot;STATIC&quot;, &quot;StaticRoute&quot;, &quot;Policy&quot;, &quot;Bgp&quot;]</p><p>枚举值：</p><ul><li>StaticRoute： 目的路由类型</li><li>Policy： SPD策略类型</li><li>Bgp： BGP类型</li></ul><p>默认值：STATIC</p>",
           "example": "STATIC",
           "member": "string",
           "name": "RouteType",
@@ -12310,7 +12310,7 @@
         },
         {
           "disabled": false,
-          "document": "协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）",
+          "document": "<p>协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）</p>",
           "example": "active",
           "member": "string",
           "name": "NegotiationType",
@@ -12319,7 +12319,7 @@
         },
         {
           "disabled": false,
-          "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）",
+          "document": "<p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>",
           "example": "1",
           "member": "int64",
           "name": "DpdEnable",
@@ -12328,7 +12328,7 @@
         },
         {
           "disabled": false,
-          "document": "DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒",
+          "document": "<p>DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒</p>",
           "example": "30",
           "member": "string",
           "name": "DpdTimeout",
@@ -12337,7 +12337,7 @@
         },
         {
           "disabled": false,
-          "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）",
+          "document": "<p>DPD超时后的动作。</p><p>入参限制：dpdEnable为1（开启）时有效。</p><p>枚举值：</p><ul><li>clear： 断开</li><li>restart： 重试</li></ul><p>默认值：restart</p>",
           "example": "clear",
           "member": "string",
           "name": "DpdAction",
@@ -12345,9 +12345,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "创建通道路由信息。",
-          "example": "{     'DestinationCidrBlock': '10.0.0.0/32',     'Priority': 1 }",
+          "disabled": true,
+          "document": "<p>创建通道路由信息。</p>",
+          "example": "无",
           "member": "CreateVpnConnRoute",
           "name": "Route",
           "required": false,
@@ -12355,8 +12355,8 @@
         },
         {
           "disabled": false,
-          "document": "BGP配置。",
-          "example": "{'TunnelCidr': '169.254.128.0/30', 'LocalBgpIp': '169.254.128.1', 'RemoteBgpIp': '169.254.128.2'}",
+          "document": "<p>BGP配置。</p>",
+          "example": "无",
           "member": "BgpConfig",
           "name": "BgpConfig",
           "required": false,
@@ -12364,8 +12364,8 @@
         },
         {
           "disabled": false,
-          "document": "健康检查NQA配置。",
-          "example": "{'ProbeType': '123', 'ProbeInterval': 60, 'ProbeThreshold': 3, 'ProbeTimeout': 30}",
+          "document": "<p>健康检查NQA配置。</p>",
+          "example": "无",
           "member": "HealthCheckConfig",
           "name": "HealthCheckConfig",
           "required": false,
@@ -12379,7 +12379,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道实例对象。",
+          "document": "<p>通道实例对象。</p>",
           "example": "无",
           "member": "VpnConnection",
           "name": "VpnConnection",

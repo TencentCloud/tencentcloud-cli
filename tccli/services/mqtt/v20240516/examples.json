@@ -40,6 +40,14 @@
         "title": "示例"
       }
     ],
+    "CreateBlockRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-zj944d74\",\n    \"Name\": \"aaaccc\",\n    \"Type\": 3,\n    \"Include\": \"127.0.0.1\",\n    \"Excludes\": [\n        \"0.0.0.0/0\"\n    ],\n    \"ExpireTime\": 1774597703556,\n    \"Remark\": \"this is remark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"mqtt-zj944d74\",\n        \"Name\": \"aaaccc\",\n        \"RequestId\": \"9eee3852-13cd-491e-833c-92977cf047a5\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateDeviceIdentity": [
       {
         "document": "示例",
@@ -144,6 +152,14 @@
         "title": "示例"
       }
     ],
+    "DeleteBlockRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlockRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-3ja5wo5b\",\n    \"BlockRuleName\": \"deny-client3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60c72a4f-8122-42c5-94d9-7789f37a55cf\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteCaCertificate": [
       {
         "document": "示例",
@@ -229,6 +245,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuthorizationPolicies\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mzd7ewkr\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Actions\": \"connect,pub,sub\",\n                \"ClientId\": \"client1\",\n                \"CreatedTime\": 1742387322000,\n                \"Effect\": \"allow\",\n                \"Id\": 3867,\n                \"InstanceId\": \"mqtt-mzd7ewkr\",\n                \"Ip\": \"0.0.0.0/0\",\n                \"PolicyName\": \"default_policy\",\n                \"Priority\": 1,\n                \"Qos\": \"0,1,2\",\n                \"Remark\": \"\",\n                \"Resources\": \"topic1\",\n                \"Retain\": 3,\n                \"UpdateTime\": 1742458867000,\n                \"Username\": \"default_user\",\n                \"Version\": 1\n            }\n        ],\n        \"RequestId\": \"9c44531d-37bd-4c8f-ab9f-b35589fa5b4d\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeBlockRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlockRuleList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-3ja5wo5b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreateTime\": 1774597726000,\n                \"ExpireTime\": 1774597703556,\n                \"Include\": \"client*\",\n                \"Name\": \"cleint\",\n                \"Remark\": \"this is remark\",\n                \"Type\": 1,\n                \"UpdateTime\": 1774597726000\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"b5cf470b-e1d9-49de-9e30-3988cb8a68dd\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -467,6 +491,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuthorizationPolicy\n<公共请求参数>\n\n{\n    \"Id\": 18,\n    \"InstanceId\": \"mqtt-jeredv33\",\n    \"PolicyName\": \"policy-1\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"657a771d-a70e-4c0d-a70a-eb7f82471000\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyBlockRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-zj944d74\",\n    \"Name\": \"aaaccc\",\n    \"Remark\": \"this is remakr update\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ac9f8f1-d26c-4a70-865f-18f7b52b8f41\"\n    }\n}",
         "title": "示例"
       }
     ],

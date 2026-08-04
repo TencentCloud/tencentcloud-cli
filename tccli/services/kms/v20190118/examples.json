@@ -472,6 +472,14 @@
         "title": "重加密接口示例"
       }
     ],
+    "RotateKey": [
+      {
+        "document": "立即轮转密钥",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RotateKey\n<公共请求参数>\n\n{\n    \"KeyId\": \"6ce625e3-01a4-11f1-9481-525400faed4b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"3027e0ed-28f1-11f1-b397-525400796650\",\n        \"RequestId\": \"a09e3218-fb08-4560-8377-189e1b791032\"\n    }\n}",
+        "title": "立即轮转密钥"
+      }
+    ],
     "ScheduleDataKeyDeletion": [
       {
         "document": "计划删除数据密钥",

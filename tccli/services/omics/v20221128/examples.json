@@ -24,6 +24,14 @@
         "title": "删除环境"
       }
     ],
+    "DeleteEnvironmentCache": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironmentCache\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"env-3rj01v5x\",\n    \"CacheType\": \"RUNTIME\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkflowUuid\": \"15797d6e-f366-40c3-9a98-5013ef2f3265\",\n        \"RequestId\": \"e9430697-70df-45a5-ba9a-38af25d60518\"\n    }\n}",
+        "title": "删除环境缓存"
+      }
+    ],
     "DeleteVolume": [
       {
         "document": "删除缓存卷。",

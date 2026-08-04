@@ -9612,7 +9612,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步对象类型 Partial(部分对象)",
+          "document": "<p>同步对象类型 Partial(部分对象)</p>",
           "example": "Partial",
           "member": "string",
           "name": "Mode",
@@ -9623,7 +9623,7 @@
         },
         {
           "disabled": false,
-          "document": "同步对象，当 Mode 为 Partial 时，不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>同步对象，当 Mode 为 Partial 时，不为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Database",
           "name": "Databases",
@@ -9634,7 +9634,7 @@
         },
         {
           "disabled": false,
-          "document": "高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full",
+          "document": "<p>高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full</p>",
           "example": "[\"function\"]",
           "member": "string",
           "name": "AdvancedObjects",
@@ -9645,7 +9645,18 @@
         },
         {
           "disabled": false,
-          "document": "库/表/视图级 DML/DDL 白名单",
+          "document": "<p>此字段已废弃。对于临时表的同步应该使用Objects.Databases[n].Tables[n].TmpTables传入。</p>",
+          "example": "无",
+          "member": "OnlineDDL",
+          "name": "OnlineDDL",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>库/表/视图级 DML/DDL 白名单</p>",
           "example": "无",
           "member": "DBOpFilter",
           "name": "DatabasesOpFilter",
@@ -9682,6 +9693,23 @@
         }
       ],
       "usage": "out"
+    },
+    "OnlineDDL": {
+      "document": "OnlineDDL类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态，ON-启用，OFF-不启用。",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OpFilter": {
       "document": "DDL/DML 过滤规则",

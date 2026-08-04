@@ -21,6 +21,13 @@
       "output": "DeleteEnvironmentResponse",
       "status": "online"
     },
+    "DeleteEnvironmentCache": {
+      "document": "删除环境缓存。",
+      "input": "DeleteEnvironmentCacheRequest",
+      "name": "删除环境缓存",
+      "output": "DeleteEnvironmentCacheResponse",
+      "status": "online"
+    },
     "DeleteVolume": {
       "document": "删除缓存卷。",
       "input": "DeleteVolumeRequest",
@@ -903,6 +910,61 @@
         }
       ],
       "usage": "in"
+    },
+    "DeleteEnvironmentCacheRequest": {
+      "document": "DeleteEnvironmentCache请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID。</p>",
+          "example": "menv-ry46abcd",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存类型</p><p>枚举值：</p><ul><li>RUNTIME： 清理默认缓存卷的运行缓存目录</li><li>INPUT： 清理默认缓存卷的输入缓存目录</li><li>ALL： 清空环境下全部有效缓存卷</li><li>PATH： 指定缓存卷下指定路径，需要在Path中填入实际绝对路径</li></ul>",
+          "example": "RUNTIME",
+          "member": "string",
+          "name": "CacheType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定路径删除</p><p>入参限制：以盘符开头的绝对路径地址</p>",
+          "example": "/vol-t5k4il7q/env/test",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentCacheResponse": {
+      "document": "DeleteEnvironmentCache返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作流UUID。</p>",
+          "example": "15797d6e-f366-40c3-9a98-5013ef2f3265",
+          "member": "string",
+          "name": "WorkflowUuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteEnvironmentRequest": {
       "document": "DeleteEnvironment请求参数结构体",

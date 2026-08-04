@@ -196,6 +196,30 @@
         "title": "元数据锁检查"
       }
     ],
+    "CheckModifyPartition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckModifyPartition\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"dlc-p-ofvhyjzn\",\n    \"TargetResourceQuotaList\": [\n        {\n            \"ResourceSpec\": {\n                \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\"\n            },\n            \"Quota\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CanModify\": false,\n        \"MessageList\": [\n            {\n                \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                \"Message\": \"[sv_dlc_standard_cu_standard_cu]缩容需要释放191，但default队列仅有min=4可释放，不足187\"\n            }\n        ],\n        \"RequestId\": \"57f96148-6c60-470e-9874-021444328acc\"\n    }\n}",
+        "title": "变配校验"
+      }
+    ],
+    "CheckQueueName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckQueueName\n<公共请求参数>\n\n{\n    \"QueueName\": \"default\",\n    \"PartitionCode\": \"dlc-p-ofvhyjzn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsValid\": \"false\",\n        \"Message\": \"同一分区下队列名称已存在，请使用其他名称\",\n        \"RequestId\": \"2233e6a9-2829-47fa-ab07-d2b53b80050a\"\n    }\n}",
+        "title": "check queue name"
+      }
+    ],
+    "CheckResourceName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckResourceName\n<公共请求参数>\n\n{\n    \"ResourceName\": \"HELLO\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsValid\": \"true\",\n        \"RequestId\": \"8c8c07b5-f244-4040-8a9d-8eb06175f49f\"\n    }\n}",
+        "title": "Check Resource Name"
+      }
+    ],
     "CopyJobSpec": [
       {
         "document": "",
@@ -284,6 +308,14 @@
         "title": "创建数据导入任务"
       }
     ],
+    "CreateInferenceModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInferenceModel\n<公共请求参数>\n\n{\n    \"Name\": \"capi_test_123\",\n    \"ModelType\": \"ML\",\n    \"InitialVersion\": \"v1\",\n    \"Provider\": \"personal\",\n    \"Description\": \"description\",\n    \"ParameterSize\": \"1\",\n    \"Tags\": [\n        \"thisistag\"\n    ],\n    \"StorageUri\": \"storageUri\",\n    \"UseCustomStorage\": true,\n    \"Tasks\": [\n        \"thisistask\"\n    ],\n    \"ModelUid\": \"thisismodelUid12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 260200066,\n        \"BuiltIn\": false,\n        \"CreateTime\": 1781579668983,\n        \"Description\": \"description\",\n        \"HasCustomStorage\": true,\n        \"HasStorage\": true,\n        \"LatestVersion\": \"v1\",\n        \"ModelId\": \"60\",\n        \"ModelType\": \"ML\",\n        \"ModelUid\": \"thisismodelUid12345\",\n        \"Name\": \"capi_test_123\",\n        \"ParameterSize\": \"1\",\n        \"Provider\": \"personal\",\n        \"ServiceCount\": 0,\n        \"StorageType\": \"COS\",\n        \"SubAccountUin\": \"700002655694\",\n        \"Tags\": [\n            \"thisistag\"\n        ],\n        \"Tasks\": [\n            \"thisistask\"\n        ],\n        \"UpdateTime\": 1781579668983,\n        \"VersionCount\": 1,\n        \"RequestId\": \"48031f8c-c648-4cfb-8237-d9d219149211\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateInternalTable": [
       {
         "document": "",
@@ -338,6 +370,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookSessionStatementSupportBatchSQL\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"Code\": \"select 1;\",\n    \"Kind\": \"sql\",\n    \"SaveResult\": true\n}",
         "output": "{\n    \"Response\": {\n        \"NotebookSessionStatementBatches\": {\n            \"NotebookSessionStatementBatch\": [\n                {\n                    \"Completed\": 0,\n                    \"Started\": 0,\n                    \"Progress\": 0,\n                    \"StatementId\": \"ksiked7-ekd4-4e5e-993e-e5db64fa21c1\",\n                    \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n                    \"Code\": \"select 1\",\n                    \"BatchId\": \"eiosldd7-ekd4-4e5e-993e-e5db64fa21c1\",\n                    \"State\": \"available\",\n                    \"OutPut\": {\n                        \"ExecutionCount\": 0,\n                        \"Data\": [\n                            {\n                                \"Key\": \"testKey\",\n                                \"Value\": \"testValue\"\n                            }\n                        ],\n                        \"Status\": \"available\",\n                        \"ErrorName\": \"testErrorName\",\n                        \"ErrorValue\": \"testErrorValue\",\n                        \"ErrorMessage\": [\n                            \"testErrorMessage\"\n                        ],\n                        \"SQLResult\": \"result\"\n                    }\n                }\n            ],\n            \"IsAvailable\": true,\n            \"SessionId\": \"ksjeldd7-ekd4-4e5e-993e-e5db64fa21c1\",\n            \"BatchId\": \"eiosldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
         "title": "创建交互式session并执行SQL任务"
+      }
+    ],
+    "CreatePartition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartition\n<公共请求参数>\n\n{\n    \"ActionType\": \"purchase\",\n    \"PayMode\": 1,\n    \"ResourceQuotaList\": [\n        {\n            \"ResourceSpec\": {\n                \"ResourceType\": \"CPU\",\n                \"InstanceType\": \"GN10Xp\",\n                \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                \"SpecDesc\": \"1 GU = 1 × H20 · 0GB VRAM · 16vCPU · 160GB Memory\",\n                \"Spec\": \"0:1:4\",\n                \"GpuType\": \"V100\",\n                \"MaxCardPerNode\": 1\n            },\n            \"Quota\": 32\n        }\n    ],\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"AutoRenewFlag\": 0,\n    \"Name\": \"de**n1\",\n    \"Description\": \"t***2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealId\": \"202606116********515681\",\n        \"DealName\": \"202606116*******0515691\",\n        \"RequestId\": \"73ee4b3e-c4a8-40f8-b2d8-f63dbfb150dd\"\n    }\n}",
+        "title": "新购分区"
+      }
+    ],
+    "CreatePartitionQueue": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartitionQueue\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"dlc-p-ofvhyjzn\",\n    \"QueueName\": \"122211\",\n    \"ResourceUsages\": [\n        {\n            \"ResourceSpec\": {\n                \"ResourceType\": \"1\",\n                \"InstanceType\": \"1\",\n                \"BillingItem\": \"2\",\n                \"SpecDesc\": \"2\",\n                \"Spec\": \"1\"\n            },\n            \"Min\": 1,\n            \"Max\": 11\n        }\n    ],\n    \"QueueType\": 1,\n    \"Description\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 140,\n        \"RequestId\": \"298077fc-eb59-46d3-8149-767329913006\"\n    }\n}",
+        "title": "新增资源队列"
       }
     ],
     "CreateRayCluster": [
@@ -570,6 +618,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNotebookSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
         "title": "删除交互式session（notebook）"
+      }
+    ],
+    "DeletePartitionQueue": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePartitionQueue\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"HELLO\",\n    \"QueueName\": \"QUEUE\",\n    \"Id\": 31\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"264c28c4-f7ae-494f-92fe-d11ea7408917\"\n    }\n}",
+        "title": "Delete Partition Queue"
       }
     ],
     "DeleteRayCluster": [
@@ -864,6 +920,22 @@
         "title": "查询数据引擎资源使用情况"
       }
     ],
+    "DescribeFlowDetailList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowDetailList\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"dlc-p-5f246106\",\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowDetailList\": [\n            {\n                \"Activities\": [\n                    {\n                        \"ActivityCode\": \"ACQUIRE_RESOURCE_POOL\",\n                        \"CreateTime\": \"2026-03-14T23:08:34\",\n                        \"Duration\": 1,\n                        \"Status\": 2\n                    }\n                ],\n                \"CreateTime\": \"2026-03-14T23:08:34\",\n                \"FlowId\": 65,\n                \"Progress\": 100,\n                \"Status\": 2,\n                \"WorkFlowCode\": \"CREATE_PARTITION\",\n                \"WorkFlowId\": \"wf-b262cf27-dlc-p-5f246106\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"e2883ff2-2fbc-431d-beb5-80873a677020\"\n    }\n}",
+        "title": "DescribeFlowDetailList"
+      }
+    ],
+    "DescribeFlowList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowList\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"dlc-p-5f246106\",\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowInfoList\": [\n            {\n                \"FlowId\": 65,\n                \"Status\": 2,\n                \"WorkFlowCode\": \"CREATE_PARTITION\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"7558a775-5f51-4d6a-940f-25011407f143\"\n    }\n}",
+        "title": "DescribeFlowList"
+      }
+    ],
     "DescribeForbiddenTablePro": [
       {
         "document": "查询被禁用的表属性列表（新）",
@@ -992,6 +1064,30 @@
         "title": "示例"
       }
     ],
+    "DescribePartitionDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePartitionDetail\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"dlc-ae511d85\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PartitionDetail\": {\n            \"PartitionCode\": \"dlc-ae511d85\",\n            \"PartitionName\": \"dlc-ae511d85\",\n            \"PayMode\": 1,\n            \"Region\": 1,\n            \"ResourcePoolCode\": \"dlc-ae511d85_2\",\n            \"Scheduler\": \"KUEUE\",\n            \"Status\": 1\n        },\n        \"RequestId\": \"f11aa289-824c-42e9-b7b2-dca6ed75d9ba\"\n    }\n}",
+        "title": "DescribePartitionDetail"
+      }
+    ],
+    "DescribePartitionQueues": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePartitionQueues\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"dlc-p-bazbypwy\",\n    \"Page\": 1,\n    \"PageSize\": 11\n}",
+        "output": "{\n    \"Response\": {\n        \"DefaultQueue\": {\n            \"Id\": 121,\n            \"IsDefault\": 1,\n            \"QueueName\": \"default\",\n            \"ResourceUsage\": [\n                {\n                    \"Max\": 32,\n                    \"Min\": 32,\n                    \"ResourceSpec\": {\n                        \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                        \"InstanceType\": \"\",\n                        \"ResourceType\": \"CPU\",\n                        \"Spec\": \"0:1:4\",\n                        \"SpecDesc\": \"1CPU / 4GB\"\n                    }\n                }\n            ]\n        },\n        \"QueueList\": [\n            {\n                \"Id\": 121,\n                \"IsDefault\": 1,\n                \"QueueName\": \"default\",\n                \"ResourceUsage\": [\n                    {\n                        \"Max\": 32,\n                        \"Min\": 32,\n                        \"ResourceSpec\": {\n                            \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                            \"InstanceType\": \"\",\n                            \"ResourceType\": \"CPU\",\n                            \"Spec\": \"0:1:4\",\n                            \"SpecDesc\": \"1CPU / 4GB\"\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"4e1e0c64-d54d-4669-8076-dd0cde9c1754\"\n    }\n}",
+        "title": "DescribePartitionQueues"
+      }
+    ],
+    "DescribePartitions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePartitions\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Partitions\": [\n            {\n                \"Name\": \"asfas\",\n                \"PartitionCode\": \"dlc-p-ogwlzmvs\",\n                \"PayMode\": 1,\n                \"QueueCount\": 1,\n                \"ResourceQuota\": [\n                    {\n                        \"Quota\": 32,\n                        \"ResourceSpec\": {\n                            \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                            \"InstanceType\": \"\",\n                            \"ResourceType\": \"CPU\"\n                        }\n                    }\n                ],\n                \"Status\": 11,\n                \"UpdateTime\": \"2026-03-19T15:12:19\"\n            }\n        ],\n        \"Total\": 10,\n        \"RequestId\": \"8160ca16-3a24-4779-a75c-d8e2e453815f\"\n    }\n}",
+        "title": "DescribePartitions"
+      }
+    ],
     "DescribeResourceGroupUsageInfo": [
       {
         "document": "查询标准引擎资源CU使用情况",
@@ -1006,6 +1102,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResultDownload\n<公共请求参数>\n\n{\n    \"DownloadId\": \"31f36df6-7510-4e3e-a467-c1d86494ad1d\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"869b7f1f-880b-4458-9b00-37256470e430\",\n        \"Path\": \"cosn://geoli-test/dlc/DLCQueryResults/2024/12/29/*/*/download/download-daace.csv\",\n        \"Status\": \"success\",\n        \"Reason\": \"\",\n        \"SecretId\": \"AKIDEbKkzWJThxxx\",\n        \"SecretKey\": \"Yxo9NW4xxx\",\n        \"Token\": \"KHripBvMoTbyZYXD2oxxxxdfxxx\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DescribeSaleRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSaleRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionList\": [\n            {\n                \"RegionCode\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\",\n                \"Status\": \"AVAILABLE\"\n            }\n        ],\n        \"RequestId\": \"4ca43105-ce0a-410d-995a-2bc6b62d6ff2\"\n    }\n}",
+        "title": "DescribeSaleRegions"
+      }
+    ],
+    "DescribeSaleResourceInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSaleResourceInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SaleResourceInfoList\": [\n            {\n                \"MaxSpec\": 192,\n                \"ResourceSpec\": {\n                    \"InstanceType\": \"\",\n                    \"ResourceType\": \"CPU\"\n                },\n                \"Step\": 32\n            }\n        ],\n        \"RequestId\": \"313630c6-9e14-44ae-b9d6-00f019357803\"\n    }\n}",
+        "title": "DescribeSaleResourceInfo"
       }
     ],
     "DescribeScripts": [
@@ -1422,6 +1534,14 @@
         "title": "GetExampleDetail"
       }
     ],
+    "GetInferenceModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetInferenceModel\n<公共请求参数>\n\n{\n    \"ModelUid\": \"m-qwen3-5-4b-6a223aba-951c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 0,\n        \"BuiltIn\": true,\n        \"CreateTime\": 1780628154611,\n        \"Description\": \"Qwen3.5-4B 是阿里云通义千问团队推出的小尺寸稠密语言模型，采用原生多模态训练与最新模型架构，支持 256K 上下文长度，适用于端侧及边缘设备的高性能轻量级应用场景。\",\n        \"HasCustomStorage\": false,\n        \"HasStorage\": true,\n        \"LatestVersion\": \"v1\",\n        \"ModelId\": \"20\",\n        \"ModelType\": \"LLM\",\n        \"ModelUid\": \"m-qwen3-5-4b-6a223aba-951c\",\n        \"Name\": \"Qwen3.5-4B\",\n        \"ParameterSize\": \"4B\",\n        \"Provider\": \"Qwen\",\n        \"ServiceCount\": 5,\n        \"StorageType\": \"COS\",\n        \"SubAccountUin\": \"system\",\n        \"SupportedEngines\": [\n            \"vllm\"\n        ],\n        \"Tags\": [\n            \"对话\"\n        ],\n        \"Tasks\": [\n            \"Text Generation\"\n        ],\n        \"Uin\": \"system\",\n        \"UpdateTime\": 1780628154611,\n        \"VersionCount\": 1,\n        \"RequestId\": \"de055bc8-f7bc-4c71-bbae-d09238c51286\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "GetJobSpec": [
       {
         "document": "",
@@ -1676,6 +1796,14 @@
         "title": "ListExamples"
       }
     ],
+    "ListInferenceModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListInferenceModels\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 2,\n    \"StartTime\": 0,\n    \"EndTime\": 1111,\n    \"ParameterSizeMin\": 5,\n    \"ParameterSizeMax\": 6\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"Page\": 1,\n        \"PageSize\": 2,\n        \"Total\": 0,\n        \"TotalPages\": 0,\n        \"RequestId\": \"3b46d143-1f21-456f-9a3f-3e8d568f413c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ListJobSpecs": [
       {
         "document": "",
@@ -1794,6 +1922,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLabPriority\n<公共请求参数>\n\n{\n    \"Id\": \"raylab-20260602155816-6cmm\",\n    \"Priority\": 8\n}",
         "output": "{\n    \"Response\": {\n        \"AdvancedOptions\": \"{\\\"spec.headGroupSpec.rayStartParams.dashboard-host\\\":\\\"0.0.0.0\\\"}\",\n        \"AppId\": 260200065,\n        \"Catalog\": \"{\\\"CFSVolumes\\\":[],\\\"CFSTurboVolumes\\\":null,\\\"COSVolumes\\\":null,\\\"GooseFSVolumes\\\":null}\",\n        \"CodeArchiveUrl\": \"https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/models/examples/example-001-ray-core-basics.zip\\n\",\n        \"CreateTime\": 1780391421602,\n        \"Description\": \"测试测试\",\n        \"EnableToken\": false,\n        \"ExampleId\": \"example-001-ray-core-basics\",\n        \"GroupId\": \"rayclustergroup-tfh4u6-bcqz\",\n        \"GroupName\": \"group_test_sunny\",\n        \"Id\": \"raylab-20260602155816-6cmm\",\n        \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu\",\n        \"ImagePullPolicy\": \"Always\",\n        \"Name\": \"leionwu_test\",\n        \"Priority\": 8,\n        \"Queue\": \"default\",\n        \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"default-head\\\",\\\"PodCpu\\\":4,\\\"PodMem\\\":2,\\\"GpuType\\\":null,\\\"GpuNum\\\":null,\\\"Envs\\\":null,\\\"Labels\\\":null,\\\"ResourcesLabels\\\":null,\\\"Tolerations\\\":null,\\\"ResourceType\\\":null,\\\"InstanceType\\\":null,\\\"Spec\\\":null,\\\"BillingItem\\\":null,\\\"VideoMemory\\\":null,\\\"PodNum\\\":1,\\\"HighAvailability\\\":null},\\\"Worker\\\":[{\\\"Name\\\":\\\"default-worker\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":2,\\\"GpuType\\\":null,\\\"GpuNum\\\":null,\\\"Envs\\\":null,\\\"Labels\\\":null,\\\"ResourcesLabels\\\":null,\\\"Tolerations\\\":null,\\\"ResourceType\\\":null,\\\"InstanceType\\\":null,\\\"Spec\\\":null,\\\"BillingItem\\\":null,\\\"VideoMemory\\\":null,\\\"MinPodNum\\\":4,\\\"MaxPodNum\\\":4}]}\",\n        \"ResourceConfigId\": \"11\",\n        \"ResourcePartitionId\": \"dlc-p-bleurqnv\",\n        \"ResourcePartitionName\": \"test_andrewmao\",\n        \"Services\": [\n            {\n                \"Key\": \"JUPYTER\"\n            }\n        ],\n        \"Status\": \"STARTING\",\n        \"SubAccountUin\": \"700002655693\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"env\",\n                \"TagValue\": \"dev\"\n            }\n        ],\n        \"Type\": \"RAY_LAB\",\n        \"Uin\": \"700002655693\",\n        \"RequestId\": \"a7c72580-e58c-4881-89e6-9765fd8cb53f\"\n    }\n}",
         "title": "ModifyLabPriority"
+      }
+    ],
+    "ModifyPartitionDescription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPartitionDescription\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"dlc-p-5f246106\",\n    \"Description\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75cf776a-5464-420d-912a-9bd815c7d082\"\n    }\n}",
+        "title": "ModifyPartitionDescription"
+      }
+    ],
+    "ModifyPartitionQueue": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPartitionQueue\n<公共请求参数>\n\n{\n    \"PartitionCode\": \"partition-mock-001\",\n    \"QueueName\": \"data-etl\",\n    \"ResourceUsages\": [\n        {\n            \"ResourceSpec\": {\n                \"ResourceType\": \"1\",\n                \"InstanceType\": \"2\",\n                \"BillingItem\": \"1\"\n            },\n            \"Min\": 0,\n            \"Max\": 0\n        }\n    ],\n    \"Id\": 12,\n    \"Description\": \"33\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d46b441-2315-4381-ae5c-62e64fd3bb10\"\n    }\n}",
+        "title": "ModifyPartitionQueue"
       }
     ],
     "ModifySparkApp": [
@@ -2058,6 +2202,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEngineResourceGroupNetworkConfigInfo\n<公共请求参数>\n\n{\n    \"EngineResourceGroupId\": \"rg-b6fxxxxxx2a0\",\n    \"IsEffectiveNow\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b186332-1885-4161-8dfb-a8de667eb5c0\"\n    }\n}",
         "title": "修改资源组网络配置"
+      }
+    ],
+    "UpdateInferenceModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInferenceModel\n<公共请求参数>\n\n{\n    \"ModelUid\": \"m-capi-test-6a30b76e-aa04\",\n    \"Name\": \"capi_test\",\n    \"Description\": \"Description\",\n    \"ParameterSize\": \"1\",\n    \"Tags\": [\n        \"tagnew\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 260200066,\n        \"BuiltIn\": false,\n        \"CreateTime\": 1781577582219,\n        \"Description\": \"Description\",\n        \"HasCustomStorage\": false,\n        \"HasStorage\": true,\n        \"LatestVersion\": \"v1\",\n        \"ModelId\": \"51\",\n        \"ModelType\": \"ml\",\n        \"ModelUid\": \"m-capi-test-6a30b76e-aa04\",\n        \"Name\": \"capi_test\",\n        \"ParameterSize\": \"1\",\n        \"Provider\": \"personal\",\n        \"ServiceCount\": 0,\n        \"StorageType\": \"COS\",\n        \"SubAccountUin\": \"700002655694\",\n        \"Tags\": [\n            \"tagnew\"\n        ],\n        \"Tasks\": [\n            \"thisistask\"\n        ],\n        \"UpdateTime\": 1781578511252,\n        \"VersionCount\": 1,\n        \"RequestId\": \"4c7528af-fe6f-416d-b452-5b2921eea309\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "UpdateJobSpec": [

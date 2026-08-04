@@ -7535,7 +7535,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间",
+          "document": "执行时间,单位：毫秒",
           "example": "1",
           "member": "uint64",
           "name": "ExecTime",
@@ -14237,16 +14237,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "<p>策略类型</p>",
           "example": "ExposingPublicNetworkAccess",
           "member": "string",
           "name": "StrategyType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -14255,7 +14255,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单",
+          "document": "<p>白名单</p>",
           "example": "白名单名",
           "member": "string",
           "name": "Name",
@@ -14264,7 +14264,7 @@
         },
         {
           "disabled": false,
-          "document": "规则",
+          "document": "<p>规则</p>",
           "example": "{\"feature_value\":some.sql.tencentcdb.com:63808\"}",
           "member": "string",
           "name": "Rule",
@@ -14273,7 +14273,7 @@
         },
         {
           "disabled": false,
-          "document": "资产id",
+          "document": "<p>资产id</p>",
           "example": "cdb-7ukt2wbx",
           "member": "string",
           "name": "AssetId",
@@ -14282,7 +14282,7 @@
         },
         {
           "disabled": false,
-          "document": "账号",
+          "document": "<p>账号</p>",
           "example": "root",
           "member": "string",
           "name": "Account",
@@ -14291,7 +14291,7 @@
         },
         {
           "disabled": false,
-          "document": "主机",
+          "document": "<p>主机</p>",
           "example": "%",
           "member": "string",
           "name": "Host",
@@ -14300,7 +14300,7 @@
         },
         {
           "disabled": false,
-          "document": "风险id",
+          "document": "<p>风险id</p>",
           "example": "0259bfad-ac18-44eb-b004-05c26af4e361",
           "member": "string",
           "name": "RiskId",
@@ -14309,10 +14309,19 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "\"添加白名单\"",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>白名单的类型</p><p>枚举值：</p><ul><li>static_risk： 静态配置扫描的白名单规则</li><li>audit： 审计白名单规则</li><li>ueba： ueba相关的白名单规则</li></ul>",
+          "example": "audit,ueba,static_risk",
+          "member": "string",
+          "name": "WhitelistType",
           "required": false,
           "type": "string"
         }
@@ -14324,7 +14333,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "白名单id",
+          "document": "<p>白名单id</p>",
           "example": "064abdec-1ebc-4c4c-b6fc-d2251dd62ed2",
           "member": "string",
           "name": "WhitelistStrategyId",
@@ -15981,7 +15990,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -23350,7 +23359,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -23584,7 +23593,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库类型",
+          "document": "数据库类型, 支持的值：cdb，mariadb",
           "example": "[\"mysql\"]",
           "member": "string",
           "name": "DbTypes",
@@ -24433,7 +24442,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -24489,7 +24498,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -24777,7 +24786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -35193,7 +35202,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "<p>策略类型</p>",
           "example": "ExposingPublicNetworkAccess",
           "member": "string",
           "name": "StrategyType",
@@ -35203,7 +35212,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名",
+          "document": "<p>策略名</p>",
           "example": "暴露公网访问入口",
           "member": "string",
           "name": "Name",
@@ -35213,7 +35222,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "<p>策略类型</p>",
           "example": "ConfigurationRisk",
           "member": "string",
           "name": "StrategyCategory",
@@ -35223,7 +35232,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用。0-禁用 1-启用",
+          "document": "<p>是否启用。0-禁用 1-启用</p>",
           "example": "0",
           "member": "int64",
           "name": "IsEnabled",
@@ -35233,7 +35242,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级。",
+          "document": "<p>风险等级。</p>",
           "example": "Info",
           "member": "string",
           "name": "RiskLevel",
@@ -35243,7 +35252,7 @@
         },
         {
           "disabled": false,
-          "document": "策略规则",
+          "document": "<p>策略规则</p>",
           "example": "{\"ThresholdValue\": \"2\"}",
           "member": "string",
           "name": "Rule",
@@ -35253,7 +35262,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "风险策略备注",
           "member": "string",
           "name": "Remark",
@@ -35263,7 +35272,7 @@
         },
         {
           "disabled": false,
-          "document": "策略内容",
+          "document": "<p>策略内容</p>",
           "example": "数据库实例启用公网地址",
           "member": "string",
           "name": "Description",
@@ -35273,7 +35282,7 @@
         },
         {
           "disabled": false,
-          "document": "命中次数",
+          "document": "<p>命中次数</p>",
           "example": "0",
           "member": "int64",
           "name": "HitCount",
@@ -35283,7 +35292,7 @@
         },
         {
           "disabled": false,
-          "document": "风险类型。risk-风险；alarm-告警。",
+          "document": "<p>风险类型。risk-风险；alarm-告警。</p>",
           "example": "risk",
           "member": "string",
           "name": "RiskType",
@@ -35293,7 +35302,7 @@
         },
         {
           "disabled": false,
-          "document": "资产所属账号app id",
+          "document": "<p>资产所属账号app id</p>",
           "example": "1000000000",
           "member": "uint64",
           "name": "AppId",
@@ -35303,7 +35312,7 @@
         },
         {
           "disabled": false,
-          "document": "账号昵称",
+          "document": "<p>账号昵称</p>",
           "example": "账号昵称",
           "member": "string",
           "name": "NickName",
@@ -35313,7 +35322,7 @@
         },
         {
           "disabled": false,
-          "document": "资产所属账号uin",
+          "document": "<p>资产所属账号uin</p>",
           "example": "2000000000",
           "member": "string",
           "name": "Uin",
@@ -35323,12 +35332,42 @@
         },
         {
           "disabled": false,
-          "document": "策略id",
+          "document": "<p>策略id</p>",
           "example": "10000",
           "member": "uint64",
           "name": "StrategyId",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "custom",
+          "member": "string",
+          "name": "RuleSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的资产类型</p>",
+          "example": "[\"cdb\"]",
+          "member": "string",
+          "name": "AssetTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险描述</p>",
+          "example": "告警的风险描述",
+          "member": "string",
+          "name": "RiskDescription",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -35339,7 +35378,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "<p>策略类型</p>",
           "example": "ExposingPublicNetworkAccess",
           "member": "string",
           "name": "StrategyType",
@@ -35349,7 +35388,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名",
+          "document": "<p>策略名</p>",
           "example": "暴露公网访问入口",
           "member": "string",
           "name": "Name",
@@ -35359,7 +35398,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "<p>策略类型</p>",
           "example": "ConfigurationRisk",
           "member": "string",
           "name": "StrategyCategory",
@@ -35369,7 +35408,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用。0-禁用 1-启用",
+          "document": "<p>是否启用。0-禁用 1-启用</p>",
           "example": "0",
           "member": "int64",
           "name": "IsEnabled",
@@ -35379,7 +35418,7 @@
         },
         {
           "disabled": false,
-          "document": "命中次数",
+          "document": "<p>命中次数</p>",
           "example": "1",
           "member": "int64",
           "name": "HitCount",
@@ -35389,7 +35428,7 @@
         },
         {
           "disabled": false,
-          "document": "风险类型。risk-风险；alarm-告警。",
+          "document": "<p>风险类型。risk-风险；alarm-告警。</p>",
           "example": "risk",
           "member": "string",
           "name": "RiskType",
@@ -35399,13 +35438,23 @@
         },
         {
           "disabled": false,
-          "document": "策略列表",
+          "document": "<p>策略列表</p>",
           "example": "无",
           "member": "DspmRiskStrategy",
           "name": "StrategyList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "builtin",
+          "member": "string",
+          "name": "RuleSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -35830,7 +35879,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "白名单策略id",
+          "document": "<p>白名单策略id</p>",
           "example": "3a6dcad2-dbac-483e-8d5a-f48eb3a2330b",
           "member": "string",
           "name": "WhitelistStrategyId",
@@ -35840,7 +35889,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "<p>策略类型</p>",
           "example": "ExposingPublicNetworkAccess",
           "member": "string",
           "name": "StrategyType",
@@ -35850,7 +35899,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单策略名",
+          "document": "<p>白名单策略名</p>",
           "example": "暴露公网访问入口白名单",
           "member": "string",
           "name": "Name",
@@ -35860,7 +35909,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "<p>策略类型</p>",
           "example": "ConfigurationRisk",
           "member": "string",
           "name": "StrategyCategory",
@@ -35870,7 +35919,7 @@
         },
         {
           "disabled": false,
-          "document": "策略规则",
+          "document": "<p>策略规则</p>",
           "example": "{\"TimeRange\":\"21:01:00~21:30:00\"}",
           "member": "string",
           "name": "Rule",
@@ -35880,7 +35929,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "测试策略备注",
           "member": "string",
           "name": "Remark",
@@ -35890,7 +35939,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2025-03-01 12:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -35900,7 +35949,7 @@
         },
         {
           "disabled": false,
-          "document": "资产id",
+          "document": "<p>资产id</p>",
           "example": "cdb-7ukt2wpx",
           "member": "string",
           "name": "AssetId",
@@ -35910,7 +35959,7 @@
         },
         {
           "disabled": false,
-          "document": "账号",
+          "document": "<p>账号</p>",
           "example": "root",
           "member": "string",
           "name": "Account",
@@ -35920,7 +35969,7 @@
         },
         {
           "disabled": false,
-          "document": "主机",
+          "document": "<p>主机</p>",
           "example": "%",
           "member": "string",
           "name": "Host",
@@ -35930,7 +35979,7 @@
         },
         {
           "disabled": false,
-          "document": "策略规则内容描述",
+          "document": "<p>策略规则内容描述</p>",
           "example": "测试策略描述内容",
           "member": "string",
           "name": "Description",
@@ -35940,7 +35989,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单类型。risk-风险白名单；alarm-告警白名单。",
+          "document": "<p>白名单类型。risk-风险白名单；alarm-告警白名单。</p>",
           "example": "risk",
           "member": "string",
           "name": "RiskType",
@@ -35950,7 +35999,7 @@
         },
         {
           "disabled": false,
-          "document": "资产所属账号app id",
+          "document": "<p>资产所属账号app id</p>",
           "example": "1000000000",
           "member": "uint64",
           "name": "AppId",
@@ -35960,7 +36009,7 @@
         },
         {
           "disabled": false,
-          "document": "账号昵称",
+          "document": "<p>账号昵称</p>",
           "example": "账号昵称",
           "member": "string",
           "name": "NickName",
@@ -35970,10 +36019,20 @@
         },
         {
           "disabled": false,
-          "document": "资产所属账号uin",
+          "document": "<p>资产所属账号uin</p>",
           "example": "2000000000",
           "member": "string",
           "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>白名单类型</p>",
+          "example": "audit",
+          "member": "string",
+          "name": "WhitelistType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42567,7 +42626,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -42576,7 +42635,7 @@
         },
         {
           "disabled": false,
-          "document": "风险策略类型",
+          "document": "<p>风险策略类型</p>",
           "example": "ExposingPublicNetworkAccess",
           "member": "string",
           "name": "StrategyType",
@@ -42585,7 +42644,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用",
+          "document": "<p>是否启用</p>",
           "example": "0",
           "member": "int64",
           "name": "IsEnabled",
@@ -42594,7 +42653,7 @@
         },
         {
           "disabled": false,
-          "document": "策略内容，如：{     ThresholdValue: \"100\" }",
+          "document": "<p>策略内容，如：{     ThresholdValue: &quot;100&quot; }</p>",
           "example": "{     ThresholdValue: \"100\" }",
           "member": "string",
           "name": "Rule",
@@ -42603,7 +42662,7 @@
         },
         {
           "disabled": false,
-          "document": "可选值：Info/Low/Medium/High",
+          "document": "<p>可选值：Info/Low/Medium/High</p>",
           "example": "Low",
           "member": "string",
           "name": "RiskLevel",
@@ -42612,12 +42671,39 @@
         },
         {
           "disabled": false,
-          "document": "策略id",
+          "document": "<p>策略id</p>",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "StrategyId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略名</p>",
+          "example": "审计风险策略4",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>",
+          "example": "测试用",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的数据库类型</p>",
+          "example": "cdb",
+          "member": "string",
+          "name": "DbTypes",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -42639,7 +42725,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
