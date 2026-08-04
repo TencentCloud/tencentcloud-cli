@@ -26,6 +26,7 @@ except ImportError:
 
 import tccli.options_define as OptionsDefine
 from tccli import __version__
+from tccli.action_caller import GenericActionCaller
 from tccli.configure import (
     BasicConfigure,
     ConfigureGetCommand,
@@ -33,7 +34,6 @@ from tccli.configure import (
     ConfigureSetCommand,
 )
 from tccli.loaders import HELPER_MAP, Loader
-from tccli.services.cvm import cvm_client
 
 
 # ----------------------------------------------------------------------------
@@ -147,7 +147,7 @@ class TestParseGlobalArgRequestClient(unittest.TestCase):
     # ---- tests ---------------------------------------------------------
     def test_no_cli_no_config_value_is_none(self):
         parsed = _build_parsed_globals(self.profile, request_client=None)
-        g = cvm_client.parse_global_arg(parsed)
+        g = GenericActionCaller("cvm", "DescribeRegions").parse_global_arg(parsed)
         self.assertIsNone(g[OptionsDefine.RequestClient.replace("-", "_")])
 
     def test_value_from_configure_file(self):
@@ -156,7 +156,7 @@ class TestParseGlobalArgRequestClient(unittest.TestCase):
         self._write_configure(cfg)
 
         parsed = _build_parsed_globals(self.profile, request_client=None)
-        g = cvm_client.parse_global_arg(parsed)
+        g = GenericActionCaller("cvm", "DescribeRegions").parse_global_arg(parsed)
         self.assertEqual(
             g[OptionsDefine.RequestClient.replace("-", "_")], "my-cli-from-conf"
         )
@@ -167,14 +167,14 @@ class TestParseGlobalArgRequestClient(unittest.TestCase):
         self._write_configure(cfg)
 
         parsed = _build_parsed_globals(self.profile, request_client="from-cli")
-        g = cvm_client.parse_global_arg(parsed)
+        g = GenericActionCaller("cvm", "DescribeRegions").parse_global_arg(parsed)
         self.assertEqual(
             g[OptionsDefine.RequestClient.replace("-", "_")], "from-cli"
         )
 
     def test_cli_value_used_when_no_configure_entry(self):
         parsed = _build_parsed_globals(self.profile, request_client="from-cli-only")
-        g = cvm_client.parse_global_arg(parsed)
+        g = GenericActionCaller("cvm", "DescribeRegions").parse_global_arg(parsed)
         self.assertEqual(
             g[OptionsDefine.RequestClient.replace("-", "_")], "from-cli-only"
         )
@@ -183,27 +183,8 @@ class TestParseGlobalArgRequestClient(unittest.TestCase):
 # ----------------------------------------------------------------------------
 # 3. End-to-end: verify the value finally ends up on ClientProfile
 # ----------------------------------------------------------------------------
-class _FakeCvmModule(object):
-    """A drop-in stand-in for ``tencentcloud.cvm.v20170312.cvm_client``."""
-
-    captured_profile = None
-
-    class CvmClient(object):
-        def __init__(self, cred, region, profile):
-            _FakeCvmModule.captured_profile = profile
-            self._sdkVersion = "SDK_PYTHON_FAKE"
-
-        def DescribeRegions(self, model):
-            class _Resp(object):
-                def to_json_string(self):
-                    return json.dumps({"RequestId": "fake"})
-
-            return _Resp()
-
-
 class TestProfileRequestClientAssembly(unittest.TestCase):
-    """Drive a real action through ``doDescribeRegions`` and inspect the
-    resulting ``ClientProfile.request_client``."""
+    """Build a CommonClient and inspect its ClientProfile.request_client."""
 
     def setUp(self):
         self.tmp_home = tempfile.mkdtemp(prefix="tccli_test_home_")
@@ -228,30 +209,19 @@ class TestProfileRequestClientAssembly(unittest.TestCase):
         with open(os.path.join(self.cli_path, self.profile + ".configure"), "w") as f:
             json.dump(cfg, f)
 
-        # Replace the real cvm v20170312 client module so the action does not
-        # send any HTTP request.
-        _FakeCvmModule.captured_profile = None
-        self._client_map_patcher = mock.patch.object(
-            cvm_client, "CLIENT_MAP", {"v20170312": _FakeCvmModule}
-        )
-        self._client_map_patcher.start()
-
-        # Silence FormatOutput stdout noise during the test run.
-        self._format_patcher = mock.patch.object(
-            cvm_client.FormatOutput, "output", lambda *a, **kw: None
-        )
-        self._format_patcher.start()
-
     def tearDown(self):
-        self._format_patcher.stop()
-        self._client_map_patcher.stop()
         self._expand_patcher.stop()
         shutil.rmtree(self.tmp_home, ignore_errors=True)
 
     def _run(self, request_client):
         parsed = _build_parsed_globals(self.profile, request_client=request_client)
-        cvm_client.doDescribeRegions({}, parsed)
-        return _FakeCvmModule.captured_profile
+        caller = GenericActionCaller("cvm", "DescribeRegions")
+        g_param = caller.parse_global_arg(parsed)
+        fake_client = mock.Mock()
+        fake_client._sdkVersion = "SDK_PYTHON_FAKE"
+        with mock.patch("tccli.action_caller.CommonClient", return_value=fake_client) as common_client:
+            caller._create_client(g_param)
+        return common_client.call_args[0][4]
 
     def test_default_request_client_only_cli_marker(self):
         profile = self._run(None)

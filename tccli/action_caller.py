@@ -85,11 +85,19 @@ class GenericActionCaller(object):
             proxy=g_param[options_define.HttpsProxy.replace('-', '_')]
         )
         cpf = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+        cpf.request_client = "_CLI_" + __version__
+        request_client = g_param[options_define.RequestClient.replace('-', '_')]
+        if request_client:
+            if "\r" in request_client or "\n" in request_client:
+                raise ParamError("`--request-client` must not contain CR or LF characters.")
+            cpf.request_client += "; " + request_client
         if g_param[options_define.Language]:
             cpf.language = g_param[options_define.Language]
         version = self.convert_version_str(g_param[options_define.Version])
+        service_model = Loader().get_service_model(self._module, version)
+        service = service_model["metadata"].get("serviceShortName") or self._module
         region = g_param[options_define.Region]
-        client = CommonClient(self._module, version, cred, region, cpf)
+        client = CommonClient(service, version, cred, region, cpf)
         client._sdkVersion += ("_CLI_" + __version__)
         return client
 
@@ -218,6 +226,9 @@ class GenericActionCaller(object):
                         g_param[param] = conf[options_define.SysParam][param]
                     elif param != options_define.Language:
                         raise ConfigurationError("%s is invalid" % param)
+                elif param == options_define.RequestClient.replace('-', '_'):
+                    if options_define.RequestClient in conf[options_define.SysParam]:
+                        g_param[param] = conf[options_define.SysParam][options_define.RequestClient]
                 elif param.replace('_', '-') in [options_define.RoleArn, options_define.RoleSessionName]:
                     if param.replace('_', '-') in cred:
                         g_param[param] = cred[param.replace('_', '-')]

@@ -50,6 +50,7 @@ def client_globals(version="v20201016"):
         options_define.Endpoint: "cls.tencentcloudapi.com",
         options_define.HttpsProxy.replace('-', '_'): None,
         options_define.Language: None,
+        options_define.RequestClient.replace('-', '_'): None,
         options_define.Region: "ap-guangzhou",
         "sts_cred_endpoint": None,
     })
@@ -100,11 +101,37 @@ def test_generic_action_uses_tc3_profile(monkeypatch):
     with patch("tccli.action_caller.credential.Credential") as credential_mock, \
             patch("tccli.action_caller.HttpProfile", return_value=http_profile), \
             patch("tccli.action_caller.ClientProfile") as profile_mock, \
-            patch("tccli.action_caller.CommonClient", return_value=client):
+            patch("tccli.action_caller.Loader") as loader_mock, \
+            patch("tccli.action_caller.CommonClient", return_value=client) as common_client_mock:
+        loader_mock.return_value.get_service_model.return_value = {
+            "metadata": {"serviceShortName": "cls"},
+        }
         caller._create_client(params)
 
     credential_mock.assert_called_once_with("secret-id", "secret-key", None)
     profile_mock.assert_called_once_with(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    common_client_mock.assert_called_once_with(
+        "cls", "2020-10-16", credential_mock.return_value, "ap-guangzhou", profile_mock.return_value
+    )
+
+
+def test_generic_action_uses_service_short_name_for_signing(monkeypatch):
+    caller = GenericActionCaller("autoscaling", "DescribeScalingPolicies")
+    params = client_globals(version="v20180419")
+    params[options_define.Endpoint] = "as.tencentcloudapi.com"
+    client = Mock()
+    client._sdkVersion = "SDK"
+
+    monkeypatch.setattr(action_caller.os, "getenv", lambda name: None)
+    with patch("tccli.action_caller.Loader") as loader_mock, \
+            patch("tccli.action_caller.CommonClient", return_value=client) as common_client_mock:
+        loader_mock.return_value.get_service_model.return_value = {
+            "metadata": {"serviceShortName": "as"},
+        }
+        caller._create_client(params)
+
+    loader_mock.return_value.get_service_model.assert_called_once_with("autoscaling", "2018-04-19")
+    assert common_client_mock.call_args[0][0] == "as"
 
 
 def test_generic_action_calls_json(monkeypatch):
