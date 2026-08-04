@@ -757,6 +757,15 @@
           "name": "Annotations",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>跳过校验选项，支持 &quot;VpcDnsCheck&quot;</p>",
+          "example": "[\"VpcDnsCheck\"]",
+          "member": "string",
+          "name": "SkipValidateOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

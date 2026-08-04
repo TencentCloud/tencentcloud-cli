@@ -236,6 +236,14 @@
         "title": "为 DB Custom 集群修改标签"
       }
     ],
+    "ModifyDBCustomNodeAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomNodeAttributes\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-qv204bsi\",\n    \"HostName\": \"host-2026.07.30\",\n    \"NodeName\": \"host-2026.07.30\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1760,\n        \"RequestId\": \"de4430f5-b00f-464e-850d-966d7d417993\"\n    }\n}",
+        "title": "修改主机 HostName 并重启"
+      }
+    ],
     "ModifyDBCustomNodeSecurityGroups": [
       {
         "document": "本接口（ModifyDBCustomNodeSecurityGroups）用于修改节点的安全组",

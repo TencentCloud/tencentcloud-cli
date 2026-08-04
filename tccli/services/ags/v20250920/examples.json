@@ -86,6 +86,12 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"browser-sandbox\",\n    \"ToolType\": \"browser\",\n    \"Description\": \"浏览器沙箱环境\",\n    \"DefaultTimeout\": \"30m\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"Tags\": [\n        {\n            \"Key\": \"Environment\",\n            \"Value\": \"Production\"\n        },\n        {\n            \"Key\": \"Team\",\n            \"Value\": \"AI-Agent\"\n        }\n    ],\n    \"ClientToken\": \"unique-token-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-ee4ywozw\",\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
         "title": "创建沙箱工具"
+      },
+      {
+        "document": "创建沙箱工具时关联两条访问策略。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"browser-policy-sandbox\",\n    \"ToolType\": \"browser\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"ClientToken\": \"create-tool-with-access-policy-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-policy123\",\n        \"RequestId\": \"req-create-tool-policy-example\"\n    }\n}",
+        "title": "创建并关联访问策略的沙箱工具"
       }
     ],
     "CreateSession": [
@@ -374,6 +380,12 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Timeout\": \"30m\",\n    \"ClientToken\": \"start-sandbox-basic-example\",\n    \"AuthMode\": \"TOKEN\"\n}",
         "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"48dd1132cfb96ccee5fd0aa58da2562d2fe3a929\",\n            \"ToolId\": \"sdt-ee4ywozw\",\n            \"ToolName\": \"coding-agent\",\n            \"Status\": \"STARTING\"\n        },\n        \"RequestId\": \"req-start-sandbox-example\"\n    }\n}",
         "title": "启动普通沙箱"
+      },
+      {
+        "document": "启动沙箱时声明只作用于该实例的收窄策略。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\",\n    \"ClientToken\": \"start-instance-with-access-policy-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"ins-policy123\",\n            \"ToolId\": \"sdt-policy123\",\n            \"ToolName\": \"browser-policy-sandbox\",\n            \"Status\": \"STARTING\"\n        },\n        \"RequestId\": \"req-start-instance-policy-example\"\n    }\n}",
+        "title": "启动带实例级访问策略的沙箱"
       }
     ],
     "StopSandboxInstance": [
@@ -390,14 +402,38 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gw524aigytlvl2qwzsgw5yud5cjuiq3worjeir57\",\n    \"Timeout\": \"30m\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0846f2dc-f1d2-465a-93a2-d1873c66f715\"\n    }\n}",
         "title": "更新实例超时时间"
+      },
+      {
+        "document": "完整替换当前实例的实例级访问策略。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"953e15d3655e4daab120b885c908edf7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f8be2d7-b47c-4f55-95c8-1739fcd4e7a1\"\n    }\n}",
+        "title": "替换实例级访问策略"
+      },
+      {
+        "document": "传入空对象撤销当前实例的实例级访问策略，实例随后仅受 Sandbox Tool 关联的访问策略约束。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"953e15d3655e4daab120b885c908edf7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2c491e8-6db5-4f02-96c3-f710ed025ba4\"\n    }\n}",
+        "title": "撤销实例级访问策略"
       }
     ],
     "UpdateSandboxTool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-********\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678-1234-1234-1234-1234567890ab\"\n    }\n}",
         "title": "更新沙箱工具"
+      },
+      {
+        "document": "完整替换沙箱工具当前关联的访问策略。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-update-tool-policy-example\"\n    }\n}",
+        "title": "替换沙箱工具关联的访问策略"
+      },
+      {
+        "document": "使用空数组解除沙箱工具的全部访问策略关联。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-clear-tool-policy-example\"\n    }\n}",
+        "title": "解除沙箱工具的全部访问策略关联"
       }
     ]
   },

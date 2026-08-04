@@ -16,6 +16,14 @@
         "title": "检查操作"
       }
     ],
+    "CheckUpdateInstance": [
+      {
+        "document": "变配检查",
+        "input": "https://es.tencentcloudapi.com/?Action=CheckUpdateInstance\n&InstanceId=es-xxxxxxxx\n&NodeType=ES.S1.MEDIUM4\n&DiskSize=150\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AllowUpdate\": true,\n        \"RequestId\": \"dd3f624d-9a72-4057-85cb-f5d32exxxxxx\",\n        \"ErrMsg\": \"error\"\n    }\n}",
+        "title": "变配检查"
+      }
+    ],
     "CreateAutoBackUpStrategy": [
       {
         "document": "",
@@ -568,6 +576,14 @@
         "title": "demo"
       }
     ],
+    "ModifyAutoScaleDiskInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScaleDiskInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxx\",\n    \"AutoScaleDiskInfoList\": [\n        {\n            \"NodeType\": \"hotData\",\n            \"ScaleType\": 0,\n            \"Threshold\": 80,\n            \"Duration\": 60,\n            \"PercentSize\": 20,\n            \"FixSize\": 0,\n            \"MaxSize\": 500\n        },\n        {\n            \"NodeType\": \"WarmData\",\n            \"ScaleType\": 1,\n            \"Threshold\": 0,\n            \"Duration\": 90,\n            \"PercentSize\": 0,\n            \"FixSize\": 100,\n            \"MaxSize\": 1000\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "ModifyEsVipSecurityGroup": [
       {
         "document": "修改集群VIP绑定的安全组信息",
@@ -790,6 +806,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"Password\": \"newPwd_123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
         "title": "重置Kibana密码"
+      }
+    ],
+    "UpdateInstancePublicAccess": [
+      {
+        "document": "用以对开启ES现有集群的kibana公网访问权限",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstancePublicAccess\n<公共请求参数>\n\n{\n    \"WebNodeTypeInfo\": {\n        \"NodeNum\": 1,\n        \"NodeType\": \"1\"\n    },\n    \"KibanaAlteringPublicAccess\": [\n        \"1\"\n    ],\n    \"MasterNodeType\": \"1\",\n    \"EsConfigSet\": {\n        \"Type\": \"1\",\n        \"EsConfig\": \"1\"\n    },\n    \"NodeNum\": 1,\n    \"EnableCerebro\": true,\n    \"MasterNodeDiskSize\": 1,\n    \"CerebroPublicAccess\": \"1\",\n    \"EsPublicAcl\": {\n        \"BlackIpList\": [\n            \"1\"\n        ],\n        \"WhiteIpList\": [\n            \"1\"\n        ]\n    },\n    \"KibanaPublicAccess\": \"1\",\n    \"KibanaPrivateAccess\": \"1\",\n    \"InstanceId\": \"1\",\n    \"OperationDuration\": {\n        \"TimeStart\": \"1\",\n        \"TimeZone\": \"1\",\n        \"MoreInstances\": [\n            \"1\"\n        ],\n        \"Periods\": [\n            1\n        ],\n        \"TimeEnd\": \"1\"\n    },\n    \"BasicSecurityType\": 0,\n    \"CosBackup\": {\n        \"IsAutoBackup\": true,\n        \"BackupTime\": \"1\"\n    },\n    \"MasterNodeNum\": 1,\n    \"CerebroPrivateAccess\": \"1\",\n    \"SceneType\": 0,\n    \"Password\": \"1\",\n    \"ScaleType\": 0,\n    \"NodeInfoList\": [\n        {\n            \"LocalDiskInfo\": {\n                \"LocalDiskType\": \"1\",\n                \"LocalDiskSize\": 1,\n                \"LocalDiskCount\": 1\n            },\n            \"NodeType\": \"1\",\n            \"DiskEncrypt\": 1,\n            \"DiskCount\": 1,\n            \"DiskType\": \"1\",\n            \"CpuNum\": 1,\n            \"NodeNum\": 1,\n            \"DiskSize\": 1,\n            \"MemSize\": 0,\n            \"Type\": \"1\"\n        }\n    ],\n    \"KibanaPrivatePort\": 1,\n    \"MultiZoneInfo\": [\n        {\n            \"SubnetId\": \"1\",\n            \"Zone\": \"1\"\n        }\n    ],\n    \"EsConfig\": \"1\",\n    \"DiskSize\": 1,\n    \"SwitchPrivateLink\": \"1\",\n    \"InstanceName\": \"1\",\n    \"EsAcl\": {\n        \"BlackIpList\": [\n            \"1\"\n        ],\n        \"WhiteIpList\": [\n            \"1.1.1.1\"\n        ]\n    },\n    \"NodeType\": \"1\",\n    \"PublicAccess\": \"1\",\n    \"ForceRestart\": true,\n    \"KibanaConfig\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
+        "title": "ES集群开启kibana公网访问"
       }
     ],
     "UpdateIpTraceStatus": [

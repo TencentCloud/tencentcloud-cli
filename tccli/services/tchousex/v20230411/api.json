@@ -1758,7 +1758,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名称，cam用户传uin",
+          "document": "<p>用户名称，cam用户传uin</p>",
           "example": "u1",
           "member": "string",
           "name": "AccountName",
@@ -1769,7 +1769,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的账号类型，可选：cam\\\\ldap,所有非cam都为ldap",
+          "document": "<p>支持的账号类型，可选：cam、ldap,所有非cam都为ldap</p><p>枚举值：</p><ul><li>cam： cam登录</li><li>ldap： ldap账号密码登录</li></ul>",
           "example": "cam",
           "member": "string",
           "name": "AccountType",
@@ -1780,7 +1780,7 @@
         },
         {
           "disabled": false,
-          "document": "账号身份，可选：sysadmin\\\\admin\\\\user",
+          "document": "<p>账号身份，可选：sysadmin、admin、user</p>",
           "example": "admin",
           "member": "string",
           "name": "AccountIdentity",
@@ -1791,7 +1791,7 @@
         },
         {
           "disabled": false,
-          "document": "账号密码，实例支持的ldap类型为local时必填",
+          "document": "<p>账号密码，实例支持的ldap类型为local时必填</p>",
           "example": "rwrQ9Bb8J2LTAWeNtWihlg==",
           "member": "string",
           "name": "AccountPasswd",
@@ -1802,7 +1802,7 @@
         },
         {
           "disabled": false,
-          "document": "映射的腾讯云uin",
+          "document": "<p>映射的腾讯云uin</p>",
           "example": "46582342",
           "member": "string",
           "name": "Uin",
@@ -1813,7 +1813,7 @@
         },
         {
           "disabled": false,
-          "document": "拓展属性",
+          "document": "<p>拓展属性</p>",
           "example": "无",
           "member": "Map",
           "name": "Attrs",

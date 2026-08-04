@@ -687,6 +687,8 @@ tccli/services/monitor/__init__.py
 tccli/services/monitor/monitor_client.py
 tccli/services/monitor/v20180724/api.json
 tccli/services/monitor/v20180724/examples.json
+tccli/services/mpa/__init__.py
+tccli/services/mpa/mpa_client.py
 tccli/services/mps/__init__.py
 tccli/services/mps/mps_client.py
 tccli/services/mps/v20190612/api.json

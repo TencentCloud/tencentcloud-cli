@@ -2493,6 +2493,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用 AI 能力</p><p>单位：无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DisableAiAbility",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7048,7 +7058,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启探针头采样</p>",
+          "document": "<p>是否开启探针头采样</p><p>（受限）</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableHeadSampler",
@@ -7057,7 +7067,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul>",
+          "document": "<p>头采类型</p><p>枚举值：</p><ul><li>parentbased_traceidratio： 默认</li></ul><p>（受限）</p>",
           "example": "parentbased_traceidratio",
           "member": "string",
           "name": "HeadSamplerType",
@@ -7066,10 +7076,19 @@
         },
         {
           "disabled": false,
-          "document": "<p>头采采样率</p><p>取值范围：[0, 100]</p>",
+          "document": "<p>头采采样率</p><p>取值范围：[0, 100]</p><p>（受限）</p>",
           "example": "100",
           "member": "int64",
           "name": "HeadSamplerArg",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用 AI 能力</p><p>单位：无</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DisableAiAbility",
           "required": false,
           "type": "int"
         }

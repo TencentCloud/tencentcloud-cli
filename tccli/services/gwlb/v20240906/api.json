@@ -1814,7 +1814,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启健康检查。",
+          "document": "<p>是否开启健康检查。</p>",
           "example": "true",
           "member": "bool",
           "name": "HealthSwitch",
@@ -1825,7 +1825,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查使用的协议。支持PING和TCP两种方式，默认为PING。\n\n- icmp: 使用PING的方式进行健康检查\n- tcp: 使用TCP连接的方式进行健康检查",
+          "document": "<p>健康检查使用的协议。支持PING和TCP两种方式，默认为PING。</p><ul><li>icmp: 使用PING的方式进行健康检查</li><li>tcp: 使用TCP连接的方式进行健康检查</li></ul>",
           "example": "icmp",
           "member": "string",
           "name": "Protocol",
@@ -1836,7 +1836,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查端口，探测协议为tcp时，该参数必填。\n",
+          "document": "<p>健康检查端口，探测协议为tcp时，该参数必填。</p>",
           "example": "80",
           "member": "int64",
           "name": "Port",
@@ -1847,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查超时时间。 默认为2秒。 可配置范围：2 - 30秒。",
+          "document": "<p>健康检查超时时间。 默认为2秒。 可配置范围：2 - 30秒。</p>",
           "example": "2",
           "member": "int64",
           "name": "Timeout",
@@ -1858,7 +1858,7 @@
         },
         {
           "disabled": false,
-          "document": "检测间隔时间。 默认为5秒。 可配置范围：2 - 300秒。",
+          "document": "<p>检测间隔时间。 默认为5秒。 可配置范围：2 - 300秒。</p>",
           "example": "5",
           "member": "int64",
           "name": "IntervalTime",
@@ -1869,7 +1869,7 @@
         },
         {
           "disabled": false,
-          "document": "检测健康阈值。 默认为3次。 可配置范围：2 - 10次。",
+          "document": "<p>检测健康阈值。 默认为3次。 可配置范围：2 - 10次。</p>",
           "example": "3",
           "member": "int64",
           "name": "HealthNum",
@@ -1880,13 +1880,24 @@
         },
         {
           "disabled": false,
-          "document": "检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。",
+          "document": "<p>检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。</p>",
           "example": "3",
           "member": "int64",
           "name": "UnHealthNum",
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标组下的所有rs的探测包是否开启巨帧。默认开启。仅GWLB类型目标组支持该参数。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "JumboFrame",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

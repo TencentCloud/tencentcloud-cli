@@ -28,3 +28,27 @@ Output:
 }
 ```
 
+**Example 2: 创建并关联访问策略的沙箱工具**
+
+创建沙箱工具时关联两条访问策略。
+
+Input: 
+
+```
+tccli ags CreateSandboxTool --cli-unfold-argument  \
+    --ToolName browser-policy-sandbox \
+    --ToolType browser \
+    --NetworkConfiguration.NetworkMode PUBLIC \
+    --ClientToken create-tool-with-access-policy-example
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ToolId": "sdt-policy123",
+        "RequestId": "req-create-tool-policy-example"
+    }
+}
+```
+

@@ -586,9 +586,9 @@
     ],
     "DescribeUserInfo": [
       {
-        "document": "用户信息",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AppId\": 1300055108,\n        \"Groups\": [\n            \"暴露面管理\"\n        ],\n        \"Id\": 1300055108,\n        \"LoginMode\": \"yunapi\",\n        \"Name\": \"600000560604\",\n        \"NickName\": \"1300055108\",\n        \"Remark\": \"\",\n        \"RequestId\": \"05241abc-66c6-47cf-8260-db6ab3c1388f\",\n        \"Uin\": \"600000560604\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 1300055108,\n        \"CanViewAllData\": true,\n        \"CreatedAt\": \"2026-07-29 14:13:05\",\n        \"EnablePhishingMonitor\": true,\n        \"ExpiredAt\": \"2026-07-29 15:12:05\",\n        \"Groups\": [\n            \"暴露面管理\"\n        ],\n        \"HasScanPermission\": false,\n        \"HasSubmitQuestionnaire\": true,\n        \"Id\": 1300055108,\n        \"IsDemoMode\": false,\n        \"IsEnableHook\": false,\n        \"IsPay\": true,\n        \"LoginMode\": \"yunapi\",\n        \"Name\": \"600000560604\",\n        \"NickName\": \"1300055108\",\n        \"Remark\": \"\",\n        \"Role\": \"\",\n        \"Status\": \"购买已到期\",\n        \"SubAccountUin\": \"600000560604\",\n        \"SubUserRole\": \"\",\n        \"Uin\": \"600000560604\",\n        \"RequestId\": \"22a5021c-714d-440c-889d-5eb115f07f04\"\n    }\n}",
         "title": "用户信息"
       }
     ],

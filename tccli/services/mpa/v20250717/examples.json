@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "AssociateVpc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mpa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateVpc\n<公共请求参数>\n\n{\n    \"AgentAcceleratorId\": \"aat-a8kx2ye5\",\n    \"VpcInfo\": [\n        {\n            \"VpcId\": \"vpc-gmjjk6sn\",\n            \"VpcRegion\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"47dbbb6d-9df5-4549-94cc-065f54dada14\",\n        \"RequestId\": \"82f917b9-902e-4a5b-99ef-32e6fa402c0f\"\n    }\n}",
+        "title": "关联VPC"
+      }
+    ],
+    "CreateAgentAccelerator": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mpa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentAccelerator\n<公共请求参数>\n\n{\n    \"Name\": \"garendu-test\",\n    \"SiteIds\": [\n        \"site-00w0tfmu\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentAcceleratorId\": \"aat-0003ssc7\",\n        \"TaskId\": \"4175266475\",\n        \"RequestId\": \"921235d3-d8d1-46bc-9326-bdeabea8558e\"\n    }\n}",
+        "title": "创建Agent加速模型"
+      }
+    ],
+    "DeleteAgentAccelerator": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mpa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentAccelerator\n<公共请求参数>\n\n{\n    \"AgentAcceleratorId\": \"aat-7ozrwsv3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"d35e1d9f-37cc-414b-ac04-ad91ae1d8161\",\n        \"RequestId\": \"32916d8f-f191-48d0-8156-75fa39a8644e\"\n    }\n}",
+        "title": "删除Agent加速器"
+      }
+    ],
+    "DescribeAgentAccelerators": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mpa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentAccelerators\n<公共请求参数>\n\n{\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentAcceleratorSet\": [\n            {\n                \"AgentAcceleratorId\": \"aat-0003ssc7\",\n                \"CnameDomain\": \"ga-o87nep3a.tencentcloudga005.com\",\n                \"CreateTime\": \"2026-04-02 17:33:31\",\n                \"Name\": \"garendu-test\",\n                \"SiteIds\": [\n                    \"site-00w0tfmu\"\n                ],\n                \"Status\": \"\",\n                \"UpdateTime\": \"2026-04-02 17:33:35\",\n                \"VpcSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"531ced0e-bffa-4ed3-8a39-3426e5e957ec\"\n    }\n}",
+        "title": "查询Agent加速模型列表"
+      }
+    ],
+    "DisassociateVpc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mpa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateVpc\n<公共请求参数>\n\n{\n    \"AgentAcceleratorId\": \"aat-ei8fzf27\",\n    \"VpcInfo\": [\n        {\n            \"VpcId\": \"vpc-gmjjk6sn\",\n            \"VpcRegion\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"0a459a12-74b0-418a-80fb-a76e2c837d71\",\n        \"RequestId\": \"a361d374-0273-40b9-bcf0-a840636b52d0\"\n    }\n}",
+        "title": "解关联VPC"
+      }
+    ],
+    "ModifyAgentAccelerator": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mpa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentAccelerator\n<公共请求参数>\n\n{\n    \"AgentAcceleratorId\": \"aat-8paj4jbl\",\n    \"Name\": \"kerntest1\",\n    \"SiteIds\": [\n        \"site-rf798efc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"365ea08d-fc1b-48a4-8639-0d5986a4706e\",\n        \"RequestId\": \"ba670098-5079-4e99-8a36-c13a12ea6382\"\n    }\n}",
+        "title": "修改Agent加速模型"
+      }
+    ]
+  },
+  "version": "1.0"
+}

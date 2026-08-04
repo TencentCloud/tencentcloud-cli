@@ -319,8 +319,8 @@
     "QueryDirectCustomersCredit": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDirectCustomersCredit\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"RemainingCredit\": 0.01,\n                \"TotalCredit\": 100.01,\n                \"Uin\": 1\n            },\n            {\n                \"RemainingCredit\": 0.01,\n                \"TotalCredit\": 100.01,\n                \"Uin\": 1\n            }\n        ],\n        \"RequestId\": \"0abe4d4f7fdb79c9829d945c2161ff9b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDirectCustomersCredit\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 200,\n        \"Data\": [\n            {\n                \"RemainingCredit\": 0.01,\n                \"TotalCredit\": 100.01,\n                \"Uin\": 1\n            },\n            {\n                \"RemainingCredit\": 0.01,\n                \"TotalCredit\": 100.01,\n                \"Uin\": 1\n            }\n        ],\n        \"RequestId\": \"0abe4d4f7fdb79c9829d945c2161ff9b\"\n    }\n}",
         "title": "查询直接子客信用"
       }
     ],

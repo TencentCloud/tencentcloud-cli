@@ -728,6 +728,13 @@
       "output": "DescribeMysqlTableRowsResponse",
       "status": "online"
     },
+    "DescribeOssJobDetail": {
+      "document": "查询OSS侧异步任务信息",
+      "input": "DescribeOssJobDetailRequest",
+      "name": "查询OSS侧异步任务详情",
+      "output": "DescribeOssJobDetailResponse",
+      "status": "online"
+    },
     "DescribeParamTemplateInfo": {
       "document": "该接口（DescribeParamTemplateInfo）用于查询参数模板详情。\n说明：参数模板为公共组件，配置完成后全地域生效。接口调用配置地域可选择广州、新加坡。",
       "input": "DescribeParamTemplateInfoRequest",
@@ -740,6 +747,13 @@
       "input": "DescribeParamTemplatesRequest",
       "name": "查询参数模板列表",
       "output": "DescribeParamTemplatesResponse",
+      "status": "online"
+    },
+    "DescribePerformanceSchemaEnabledInstances": {
+      "document": "查询已开启PFS功能的实例",
+      "input": "DescribePerformanceSchemaEnabledInstancesRequest",
+      "name": "查询已开启PFS功能的实例",
+      "output": "DescribePerformanceSchemaEnabledInstancesResponse",
       "status": "online"
     },
     "DescribeProjectSecurityGroups": {
@@ -1321,6 +1335,13 @@
       "input": "SwitchForUpgradeRequest",
       "name": "切换访问新实例",
       "output": "SwitchForUpgradeResponse",
+      "status": "online"
+    },
+    "SwitchInstancePerformanceSchema": {
+      "document": "切换实例PFS功能的开关",
+      "input": "SwitchInstancePerformanceSchemaRequest",
+      "name": "切换实例DFS功能开关",
+      "output": "SwitchInstancePerformanceSchemaResponse",
       "status": "online"
     },
     "UpgradeCDBProxyVersion": {
@@ -14012,6 +14033,112 @@
       ],
       "type": "object"
     },
+    "DescribeOssJobDetailRequest": {
+      "document": "DescribeOssJobDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
+          "example": "cdb-1yrgrdmr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步任务的请求 ID</p>",
+          "example": "148123648",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOssJobDetailResponse": {
+      "document": "DescribeOssJobDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务执行结果</p>",
+          "example": "pause",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行进度</p>",
+          "example": "33",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务当前执行步骤</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StepNow",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务总执行步骤</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "StepAll",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前接口的调用结果</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "WorkErrorNo",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行信息描述</p>",
+          "example": "任务执行成功",
+          "member": "string",
+          "name": "WorkError",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间</p>",
+          "example": "2026-05-18 18:08:57",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeParamTemplateInfoRequest": {
       "document": "DescribeParamTemplateInfo请求参数结构体",
       "members": [
@@ -14181,6 +14308,43 @@
           "member": "ParamTemplateInfo",
           "name": "Items",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePerformanceSchemaEnabledInstancesRequest": {
+      "document": "DescribePerformanceSchemaEnabledInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id集合</p>",
+          "example": "[\"cdb-qyew35pd\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePerformanceSchemaEnabledInstancesResponse": {
+      "document": "DescribePerformanceSchemaEnabledInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>已开启PFS功能实例的信息</p>",
+          "example": "无",
+          "member": "PerformanceSchemaInstanceInfo",
+          "name": "Items",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15942,7 +16106,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "灾备实例状态",
+          "document": "<p>灾备实例状态</p><p>枚举值：</p><ul><li>0： 创建中</li><li>1： 运行中</li><li>4： 正在进行隔离操作</li><li>5： 已隔离</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -15952,7 +16116,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息",
+          "document": "<p>可用区信息</p>",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -15962,7 +16126,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cdb-***",
           "member": "string",
           "name": "InstanceId",
@@ -15972,7 +16136,7 @@
         },
         {
           "disabled": false,
-          "document": "地域信息",
+          "document": "<p>地域信息</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
@@ -15982,7 +16146,7 @@
         },
         {
           "disabled": false,
-          "document": "实例同步状态。可能的返回值为：\n0 - 灾备未同步；\n1 - 灾备同步中；\n2 - 灾备同步成功；\n3 - 灾备同步失败；\n4 - 灾备同步修复中。",
+          "document": "<p>实例同步状态。可能的返回值为：<br>0 - 灾备未同步；<br>1 - 灾备同步中；<br>2 - 灾备同步成功；<br>3 - 灾备同步失败；<br>4 - 灾备同步修复中。</p>",
           "example": "2",
           "member": "int64",
           "name": "SyncStatus",
@@ -15992,7 +16156,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "******",
           "member": "string",
           "name": "InstanceName",
@@ -16002,7 +16166,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "2",
           "member": "int64",
           "name": "InstanceType",
@@ -21389,6 +21553,67 @@
       ],
       "usage": "out"
     },
+    "PerformanceSchemaInstanceInfo": {
+      "document": "已开启PFS功能的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点类型，如：master、ro</p>",
+          "example": "master",
+          "member": "string",
+          "name": "InstType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该实例已开启的 instruments 列表</p>",
+          "example": "[\"wait/%\"]",
+          "member": "string",
+          "name": "Instruments",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该实例已开启的 consumers 列表</p>",
+          "example": "[\"events_waits_current\"]",
+          "member": "string",
+          "name": "Consumers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PFS状态</p>",
+          "example": "enable",
+          "member": "string",
+          "name": "CollectStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PeriodStrategy": {
       "document": "按周期扩容策略中的所选择的周期",
       "members": [
@@ -25553,6 +25778,79 @@
     "SwitchForUpgradeResponse": {
       "document": "SwitchForUpgrade返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchInstancePerformanceSchemaRequest": {
+      "document": "SwitchInstancePerformanceSchema请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
+          "example": "cdb-1yrgrdmr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型，支持开启或关闭指定instruments列表、可关闭PFS功能总开关</p>",
+          "example": "disable_all",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>instruments 列表</p>",
+          "example": "[\"wait\"]",
+          "member": "string",
+          "name": "Instruments",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>consumers 列表</p>",
+          "example": "[\"events_statements_history\"]",
+          "member": "string",
+          "name": "Consumers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型，支持开启或关闭指定instruments列表</p>",
+          "example": "enable",
+          "member": "string",
+          "name": "CollectOperation",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchInstancePerformanceSchemaResponse": {
+      "document": "SwitchInstancePerformanceSchema返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务id</p>",
+          "example": "148123648",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

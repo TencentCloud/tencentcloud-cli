@@ -868,6 +868,13 @@
       "output": "DescribeMaxResourcePackagesCanBoundResponse",
       "status": "online"
     },
+    "DescribeOssJobDetail": {
+      "document": "通用接口：根据 InstanceId + JobId 查询后端管控任务执行状态。\n\n**通用接口说明**：凡是\"由 APIServer 同步调用后端 cgi 提交一个 OSS Job 后返回 JobId\"的场景，均可使用本接口轮询任务状态，**不仅限于 PFS 场景**。\n\n**重要设计差异**：\n1. **HTTP/网络层失败**（连接超时、解包失败等）→ 返回 OssJobQueryCgiCallError；\n2. **后端业务层失败**（HTTP 200 返回，但 Errno != 0）→ APIServer **不视为接口失败**，将后端响应（Errno / Error / Status / Message 等）原样透传给调用方，由调用方自行判断业务结果。\n\n**状态校验差异**：与 SwitchInstancePerformanceSchema / DescribePerformanceSchemaEnabledInstances 不同，本接口属于任务进度查询，**不校验实例运行状态**——只要实例在 biz_instance 表中存在、未被删除、归属当前 AppId 即可放行。\n\n**字段命名说明**：响应字段按云 API 标准 PascalCase 风格命名（对底层 cgi snake_case 字段做大写化映射，如 message_code → MessageCode）。后端 cgi 的 OutParams（任务输出 map）属于内部异构数据结构，**不对外暴露**。",
+      "input": "DescribeOssJobDetailRequest",
+      "name": "查询后端管控任务详情",
+      "output": "DescribeOssJobDetailResponse",
+      "status": "online"
+    },
     "DescribeParamTemplateDetail": {
       "document": "本接口（DescribeParamTemplateDetail）用于查询用户参数模板详情。",
       "input": "DescribeParamTemplateDetailRequest",
@@ -880,6 +887,13 @@
       "input": "DescribeParamTemplatesRequest",
       "name": "查询参数模板信息",
       "output": "DescribeParamTemplatesResponse",
+      "status": "online"
+    },
+    "DescribePerformanceSchemaEnabledInstances": {
+      "document": "按 InstanceIds 批量查询当前用户已开启 Performance Schema（PFS）的实例信息。\n\n说明：\n- InstanceIds **必传**，长度范围 [1, 100]，调用方需在自己侧分页。\n- 未开启 PFS 的实例不会出现在 Items 列表中。\n- 实例必须处于 Running 状态；Serverless 实例必须处于 Resume 状态。\n- 不属于当前 AppId 的实例会被静默过滤，不会单独报错。",
+      "input": "DescribePerformanceSchemaEnabledInstancesRequest",
+      "name": "查询已开启 PFS 的实例信息",
+      "output": "DescribePerformanceSchemaEnabledInstancesResponse",
       "status": "online"
     },
     "DescribeProjectSecurityGroups": {
@@ -1771,6 +1785,13 @@
       "output": "SwitchFromCDBResponse",
       "status": "online"
     },
+    "SwitchInstancePerformanceSchema": {
+      "document": "切换实例的 Performance Schema（PFS）开关。\n\n本接口为同步接口：APIServer 直接调用后端管控接口提交 PFS 切换任务，把后端返回的 JobId 透传给调用方。调用方拿到 JobId 后可使用 DescribeOssJobDetail 接口轮询任务状态。\n\n操作类型 Operation 取值：\n- enable：开启指定的 instruments / consumers\n- disable：关闭指定的 instruments / consumers\n- disable_all：关闭 PFS 总开关（**会触发实例重启，任务时间通常分钟级**）\n\n说明：\n- 当 Operation 为 enable / disable 时，Instruments 与 Consumers 不能同时为空，由后端进行业务校验。\n- 实例必须处于 Running 状态；Serverless 实例必须处于 Resume 状态。",
+      "input": "SwitchInstancePerformanceSchemaRequest",
+      "name": "切换实例 PFS 开关",
+      "output": "SwitchInstancePerformanceSchemaResponse",
+      "status": "online"
+    },
     "SwitchProxyVpc": {
       "document": "本接口（SwitchProxyVpc）用于更换数据库代理vpc。",
       "input": "SwitchProxyVpcRequest",
@@ -1785,6 +1806,13 @@
       "output": "SwitchSpecResponse",
       "status": "online"
     },
+    "TransferClusterPrepayToPostpay": {
+      "document": "本接口（TransferClusterPrepayToPostpay）用于将预付费集群转为后付费集群",
+      "input": "TransferClusterPrepayToPostpayRequest",
+      "name": "预付费集群转后付费集群",
+      "output": "TransferClusterPrepayToPostpayResponse",
+      "status": "online"
+    },
     "TransferClusterZone": {
       "document": "本接口（TransferClusterZone）用于发起跨可用区迁移。",
       "input": "TransferClusterZoneRequest",
@@ -1797,6 +1825,13 @@
       "input": "TransferFromCDBRequest",
       "name": "从cdb迁移到本产品",
       "output": "TransferFromCDBResponse",
+      "status": "online"
+    },
+    "TransferStoragePrepayToPostpay": {
+      "document": "本接口（TransferStoragePrepayToPostpay）用于将预付费存储转为后付费存储",
+      "input": "TransferStoragePrepayToPostpayRequest",
+      "name": "预付费存储转后付费存储",
+      "output": "TransferStoragePrepayToPostpayResponse",
       "status": "online"
     },
     "TriggerAIOptimizerTraining": {
@@ -6795,6 +6830,16 @@
       "document": "CreateAccounts返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "123",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7819,6 +7864,24 @@
           "name": "CynosVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步方式。可选值：async、semisync、sync。</p>",
+          "example": "async",
+          "member": "string",
+          "name": "SyncWay",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。</p><p>取值范围：[1000, 4294967295]</p><p>单位：毫秒</p><p>默认值：10000</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "SemiSyncTimeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -18483,6 +18546,152 @@
       ],
       "type": "object"
     },
+    "DescribeOssJobDetailRequest": {
+      "document": "DescribeOssJobDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。用于反查 ClusterId、确定后端 OssCluster，以及做越权校验。</p>",
+          "example": "cynosdbmysql-ins-qjtwvlxa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端管控任务 ID（即 SwitchInstancePerformanceSchema 等接口返回的 JobId，与底层 cgi 协议保持 String 类型）。</p>",
+          "example": "18290681",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOssJobDetailResponse": {
+      "document": "DescribeOssJobDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>管控错误码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrNo",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端业务错误描述（仅 Errno != 0 时有值）。</p><p>命名说明：cgi 字段 error 在响应里映射为 ErrorMessage —— 因为云 API 框架的错误响应预留字段为 Response.Error.{Code,Message}，使用 Error 会与框架冲突。</p>",
+          "example": "success but no data return on key:step_info",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端任务 ID。</p>",
+          "example": "18290681",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端任务类型。如：set_pfs_status、ncdb_set_mysql_params 等。</p>",
+          "example": "set_pfs_status",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间。</p>",
+          "example": "2026-05-18 15:42:04",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务结束时间（任务未结束时为空字符串）。</p>",
+          "example": "2026-05-18 15:42:26",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务发起方。</p>",
+          "example": "700001815885",
+          "member": "string",
+          "name": "Author",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务进度，范围 [0, 100]。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端任务状态（数值枚举，具体含义以后端管控为准；常见值：运行中 / 成功 / 暂停 / 已撤销 / 撤销失败 等）。语义不做翻译，调用方需按后端约定自行解析。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端业务消息码（用于细分错误场景，对应底层 cgi 的 message_code 字段）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MessageCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端业务消息描述。</p>",
+          "example": "EnsurePfsGlobalEnabled:master",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeParamTemplateDetailRequest": {
       "document": "DescribeParamTemplateDetail请求参数结构体",
       "members": [
@@ -18705,6 +18914,43 @@
           "member": "ParamTemplateListInfo",
           "name": "Items",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePerformanceSchemaEnabledInstancesRequest": {
+      "document": "DescribePerformanceSchemaEnabledInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID 列表，长度范围 [1, 100]，调用方需自行分页。</p>",
+          "example": "[\"cynosdbmysql-ins-qjtwvlxa\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePerformanceSchemaEnabledInstancesResponse": {
+      "document": "DescribePerformanceSchemaEnabledInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>已开启 PFS 的实例信息列表。未开启 PFS 的实例不会出现在列表中。</p>",
+          "example": "无",
+          "member": "PerformanceSchemaInstanceInfo",
+          "name": "Items",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -31331,6 +31577,67 @@
       ],
       "type": "object"
     },
+    "PerformanceSchemaInstanceInfo": {
+      "document": "已开启 PFS 的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。",
+          "example": "cynosdbmysql-ins-46slmv8w",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型。取值：\n- master：主节点\n- ro：只读节点",
+          "example": "master",
+          "member": "string",
+          "name": "InstType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "底层采集开关状态。取值：\n- enable：采集已开启\n- disable：采集已关闭\n\n与 PFS 总开关解耦，可能出现\"PFS 开启 + 采集关闭\"的场景。",
+          "example": "enable",
+          "member": "string",
+          "name": "CollectStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该实例已开启的 instruments 列表。",
+          "example": "[\"wait/%\",\"statement/%\"]",
+          "member": "string",
+          "name": "Instruments",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该实例已开启的 consumers 列表。",
+          "example": "[\"events_statements_history\",\"events_waits_current\"]",
+          "member": "string",
+          "name": "Consumers",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PolicyRule": {
       "document": "安全组规则",
       "members": [
@@ -35258,6 +35565,33 @@
           "name": "FromSaveBackup",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步方式。可选值：async、semisync、sync，默认异步。</p>",
+          "example": "async",
+          "member": "string",
+          "name": "SyncWay",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。</p><p>取值范围：[1000, 4294967295]</p><p>单位：毫秒</p><p>默认值：10000</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "SemiSyncTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备可用区</p>",
+          "example": "ap-guangzhou-5",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -37002,6 +37336,79 @@
       ],
       "type": "object"
     },
+    "SwitchInstancePerformanceSchemaRequest": {
+      "document": "SwitchInstancePerformanceSchema请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。</p>",
+          "example": "cynosdbmysql-ins-6hwb9ix7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型，枚举值：</p><ul><li>enable：开启指定的 instruments / consumers</li><li>disable：关闭指定的 instruments / consumers</li><li>disable_all：关闭 PFS 总开关（会触发实例重启）</li></ul>",
+          "example": "enable",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>instruments 列表。当 Operation 为 enable / disable 时，Instruments 与 Consumers 不能同时为空。支持模式如：wait/%、statement/%、memory/%、stage/sql/copy to tmp table 等。</p>",
+          "example": "[\"wait/%\"]",
+          "member": "string",
+          "name": "Instruments",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>consumers 列表。当 Operation 为 enable / disable 时，Instruments 与 Consumers 不能同时为空。如：events_statements_history、events_waits_current、events_statements_summary_by_digest 等。</p>",
+          "example": "[\"events_waits_current\"]",
+          "member": "string",
+          "name": "Consumers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>底层采集开关操作（与 PFS 总开关解耦），可选值：</p><ul><li>enable：开启采集</li><li>disable：关闭采集</li></ul><p>不传则不修改采集状态，用于&quot;开了 PFS 但暂时停采集&quot;的场景，节省采集开销。</p>",
+          "example": "enable",
+          "member": "string",
+          "name": "CollectOperation",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchInstancePerformanceSchemaResponse": {
+      "document": "SwitchInstancePerformanceSchema返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>后端管控任务 ID。调用方可使用本 JobId 通过 DescribeOssJobDetail 接口轮询任务执行状态。</p>",
+          "example": "24817776",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SwitchProxyVpcRequest": {
       "document": "SwitchProxyVpc请求参数结构体",
       "members": [
@@ -37663,6 +38070,23 @@
       ],
       "usage": "out"
     },
+    "TransferClusterPrepayToPostpayRequest": {
+      "document": "TransferClusterPrepayToPostpay请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "TransferClusterPrepayToPostpayResponse": {
+      "document": "TransferClusterPrepayToPostpay返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TransferClusterZoneRequest": {
       "document": "TransferClusterZone请求参数结构体",
       "members": [
@@ -37782,6 +38206,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferStoragePrepayToPostpayRequest": {
+      "document": "TransferStoragePrepayToPostpay请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "TransferStoragePrepayToPostpayResponse": {
+      "document": "TransferStoragePrepayToPostpay返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

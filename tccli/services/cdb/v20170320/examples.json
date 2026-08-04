@@ -880,6 +880,14 @@
         "title": "查询表行数"
       }
     ],
+    "DescribeOssJobDetail": [
+      {
+        "document": "查询当前异步任务已暂停",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOssJobDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-1yrgrdmr\",\n    \"JobId\": \"148123648\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2026-05-18 18:08:57\",\n        \"Progress\": 33,\n        \"Status\": \"pause\",\n        \"StepAll\": 2,\n        \"StepNow\": 1,\n        \"WorkError\": \"\",\n        \"WorkErrorNo\": 0,\n        \"RequestId\": \"7dd44bb2-6889-44bf-bdb0-9c2573bf48df\"\n    }\n}",
+        "title": "查询异步任务"
+      }
+    ],
     "DescribeParamTemplateInfo": [
       {
         "document": "该接口用于查询参数模板详细详情。",
@@ -894,6 +902,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplates\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"TemplateId\": 2333,\n                \"Name\": \"andy\",\n                \"Description\": \"5.7\",\n                \"EngineVersion\": \"5.7\",\n                \"TemplateType\": \"HIGH_STABILITY\",\n                \"EngineType\": \"InnoDB\"\n            }\n        ],\n        \"RequestId\": \"756bb037-a44a-4b4f-abe0-6efd34a6c792\"\n    }\n}",
         "title": "查询参数模板列表"
+      }
+    ],
+    "DescribePerformanceSchemaEnabledInstances": [
+      {
+        "document": "当前指定实例未开启PFS功能",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePerformanceSchemaEnabledInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdb-qyew35pd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"RequestId\": \"9e40f7f4-ce7a-4376-94ed-52e113359d97\"\n    }\n}",
+        "title": "查询指定实例中已开启PFS功能的信息"
       }
     ],
     "DescribeProjectSecurityGroups": [
@@ -1564,6 +1580,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=SwitchForUpgrade\n&InstanceId=cdb-eb2w7dto\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "切换访问新实例"
+      }
+    ],
+    "SwitchInstancePerformanceSchema": [
+      {
+        "document": "成功开启实例PFS功能",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchInstancePerformanceSchema\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-1yrgrdmr\",\n    \"Operation\": \"enable\",\n    \"Instruments\": [\n        \"wait\"\n    ],\n    \"Consumers\": [\n        \"events_statements_history\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"148123648\",\n        \"RequestId\": \"610d5d6a-402b-457e-bab3-a7678ac94770\"\n    }\n}",
+        "title": "开启实例PFS功能"
       }
     ],
     "UpgradeCDBProxyVersion": [

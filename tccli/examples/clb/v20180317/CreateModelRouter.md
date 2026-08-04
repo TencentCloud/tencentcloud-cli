@@ -7,24 +7,21 @@ Input:
 ```
 tccli clb CreateModelRouter --cli-unfold-argument  \
     --ModelRouterType Enterprise \
-    --ModelRouterName test-enterprise-modelrouter \
-    --Schema HTTPS \
-    --Port 443 \
-    --CertId SCkPG15A \
+    --ModelRouterName 模型路由实例 \
     --NetworkType Intranet \
-    --VpcId vpc-fc7eyow9 \
+    --Port 80 \
+    --Schema HTTP \
     --SubnetId subnet-2cxt138a \
-    --RateLimitConfig.TPM 100000 \
-    --RateLimitConfig.RPM 60 \
-    --RouterSetting.RoutingStrategy SimpleShuffle
+    --VpcId vpc-fc7eyow9 \
+    --ClientToken 3e727335-f94c-468f-9989-21759a3b6de8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ModelRouterId": "cmr-c8q8ltxn",
-        "RequestId": "87343b8e-0928-4c01-b874-058851db309b"
+        "ModelRouterId": "cmr-g6rpjqmg",
+        "RequestId": "406dfed3-ad8e-44d2-b742-c3b5c36dc060"
     }
 }
 ```

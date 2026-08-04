@@ -4849,7 +4849,26 @@
     },
     "QueryDirectCustomersCreditRequest": {
       "document": "QueryDirectCustomersCredit请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页数</p><p>单位：1</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页数量</p><p>单位：个</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "QueryDirectCustomersCreditResponse": {
@@ -4857,12 +4876,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "直接子客信息列表",
-          "example": "{...}",
+          "document": "<p>直接子客信息列表</p>",
+          "example": "无",
           "member": "QueryDirectCustomersCreditData",
           "name": "Data",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数目</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

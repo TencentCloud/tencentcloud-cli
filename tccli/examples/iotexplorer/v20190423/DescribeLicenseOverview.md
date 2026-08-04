@@ -13,6 +13,19 @@ Output:
 ```
 {
     "Response": {
+        "Data": [
+            {
+                "ActivationLicense": [
+                    {
+                        "Period": "5_year",
+                        "ServiceType": "basic",
+                        "TotalLicenseNum": 34650,
+                        "UsedLicenseNum": 23331
+                    }
+                ],
+                "LicenseType": "basic"
+            }
+        ],
         "RequestId": "c383b1f6-4666-47fe-9a3d-c1741d7b5f22"
     }
 }

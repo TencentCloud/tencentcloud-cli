@@ -1010,6 +1010,14 @@
         "title": "查询cynos集群最大可绑定资源包个数"
       }
     ],
+    "DescribeOssJobDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOssJobDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qjtwvlxa\",\n    \"JobId\": \"18290681\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Author\": \"700001815885\",\n        \"CreateTime\": \"2026-05-18 15:42:04\",\n        \"EndTime\": \"2026-05-18 15:42:26\",\n        \"ErrNo\": 0,\n        \"ErrorMessage\": \"\",\n        \"JobId\": \"18290681\",\n        \"JobType\": \"set_pfs_status\",\n        \"Message\": \"\",\n        \"MessageCode\": 0,\n        \"Progress\": 100,\n        \"Status\": 0,\n        \"RequestId\": \"ce0b0f75-38d9-43fa-b579-258acfc83a19\"\n    }\n}",
+        "title": "查询管控jobid"
+      }
+    ],
     "DescribeParamTemplateDetail": [
       {
         "document": "查询参数模板详情",
@@ -1024,6 +1032,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplates\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"fc791b35-d5e5-4e08-859d-1c095e783199\",\n        \"Items\": [\n            {\n                \"TemplateDescription\": \"API测试\",\n                \"TemplateName\": \"API测试\",\n                \"Id\": 27,\n                \"EngineVersion\": \"5.7\",\n                \"ParamInfoSet\": [\n                    {\n                        \"CurrentValue\": \"12\",\n                        \"Description\": \"API测试\",\n                        \"Min\": \"10\",\n                        \"Default\": \"10\",\n                        \"Max\": \"10000\",\n                        \"ParamType\": \"integer\",\n                        \"EnumValue\": [\n                            \"ON\",\n                            \"OFF\"\n                        ],\n                        \"ParamName\": \"param1\",\n                        \"NeedReboot\": 0\n                    }\n                ],\n                \"DbMode\": \"NORMAL\"\n            },\n            {\n                \"TemplateName\": \"API测试\",\n                \"TemplateDescription\": \"API测试\",\n                \"Id\": 28,\n                \"EngineVersion\": \"5.7\",\n                \"ParamInfoSet\": [\n                    {\n                        \"CurrentValue\": \"12\",\n                        \"Description\": \"API测试\",\n                        \"Min\": \"10\",\n                        \"Default\": \"10\",\n                        \"Max\": \"10000\",\n                        \"ParamType\": \"integer\",\n                        \"EnumValue\": [\n                            \"21\",\n                            \"22\"\n                        ],\n                        \"ParamName\": \"param2\",\n                        \"NeedReboot\": 0\n                    }\n                ],\n                \"DbMode\": \"NORMAL\"\n            }\n        ]\n    }\n}",
         "title": "参数板列表"
+      }
+    ],
+    "DescribePerformanceSchemaEnabledInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePerformanceSchemaEnabledInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cynosdbmysql-ins-qjtwvlxa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CollectStatus\": \"disable\",\n                \"Consumers\": [\n                    \"events_statements_history\"\n                ],\n                \"InstType\": \"master\",\n                \"InstanceId\": \"cynosdbmysql-ins-qjtwvlxa\",\n                \"Instruments\": [\n                    \"wait/%\"\n                ]\n            }\n        ],\n        \"RequestId\": \"c54a5f28-b81d-4ebb-9e4b-d7cae879f119\"\n    }\n}",
+        "title": "查询实例PFS设置"
       }
     ],
     "DescribeProjectSecurityGroups": [
@@ -2054,6 +2070,14 @@
         "title": "发起切换任务"
       }
     ],
+    "SwitchInstancePerformanceSchema": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchInstancePerformanceSchema\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-6hwb9ix7\",\n    \"Operation\": \"enable\",\n    \"Instruments\": [\n        \"wait/%\"\n    ],\n    \"Consumers\": [\n        \"events_waits_current\"\n    ],\n    \"CollectOperation\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"24817776\",\n        \"RequestId\": \"e72cd32c-45a1-40e8-a05e-667e3d06a9e6\"\n    }\n}",
+        "title": "开启pfs"
+      }
+    ],
     "SwitchProxyVpc": [
       {
         "document": "",
@@ -2070,6 +2094,14 @@
         "title": "实例规格映射"
       }
     ],
+    "TransferClusterPrepayToPostpay": [
+      {
+        "document": "预付费集群转后付费集群",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n  \"ClusterId\": \"cynosdbmysql-3xazs3u5\"\n}\n\n",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "预付费集群转后付费集群"
+      }
+    ],
     "TransferClusterZone": [
       {
         "document": "发起跨可用区迁移",
@@ -2084,6 +2116,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferFromCDB\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"MigrateDBTaskId\": 123,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "迁移cdb"
+      }
+    ],
+    "TransferStoragePrepayToPostpay": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferStoragePrepayToPostpay\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b28507e-ab37-49de-9b5b-0fb54d18863f\"\n    }\n}",
+        "title": "存储包年包月转按量"
       }
     ],
     "TriggerAIOptimizerTraining": [

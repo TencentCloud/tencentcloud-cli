@@ -5,12 +5,16 @@
 Input: 
 
 ```
-tccli intlpartnersmgt QueryDirectCustomersCredit --cli-unfold-argument ```
+tccli intlpartnersmgt QueryDirectCustomersCredit --cli-unfold-argument  \
+    --Page 1 \
+    --PageSize 20
+```
 
 Output: 
 ```
 {
     "Response": {
+        "Total": 200,
         "Data": [
             {
                 "RemainingCredit": 0.01,

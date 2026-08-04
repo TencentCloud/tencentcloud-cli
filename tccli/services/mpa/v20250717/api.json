@@ -1,0 +1,500 @@
+{
+  "actions": {
+    "AssociateVpc": {
+      "document": "关联VPC",
+      "input": "AssociateVpcRequest",
+      "name": "关联VPC",
+      "output": "AssociateVpcResponse",
+      "status": "online"
+    },
+    "CreateAgentAccelerator": {
+      "document": "创建Agent加速模型",
+      "input": "CreateAgentAcceleratorRequest",
+      "name": "创建Agent加速模型",
+      "output": "CreateAgentAcceleratorResponse",
+      "status": "online"
+    },
+    "DeleteAgentAccelerator": {
+      "document": "删除Agent加速器",
+      "input": "DeleteAgentAcceleratorRequest",
+      "name": "删除Agent加速器",
+      "output": "DeleteAgentAcceleratorResponse",
+      "status": "online"
+    },
+    "DescribeAgentAccelerators": {
+      "document": "查询Agent加速模型列表",
+      "input": "DescribeAgentAcceleratorsRequest",
+      "name": "查询Agent加速模型列表",
+      "output": "DescribeAgentAcceleratorsResponse",
+      "status": "online"
+    },
+    "DisassociateVpc": {
+      "document": "解关联VPC",
+      "input": "DisassociateVpcRequest",
+      "name": "解关联VPC",
+      "output": "DisassociateVpcResponse",
+      "status": "online"
+    },
+    "ModifyAgentAccelerator": {
+      "document": "修改Agent加速模型",
+      "input": "ModifyAgentAcceleratorRequest",
+      "name": "修改Agent加速模型",
+      "output": "ModifyAgentAcceleratorResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-07-17",
+    "api_brief": "介绍如何使用API对小程序加速进行操作。",
+    "serviceNameCN": "小程序加速",
+    "serviceShortName": "mpa"
+  },
+  "objects": {
+    "AgentAcceleratorSet": {
+      "document": "agent加速器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>agent加速实例ID</p>",
+          "example": "aat-io4863kn",
+          "member": "string",
+          "name": "AgentAcceleratorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "www.ga2.com",
+          "member": "string",
+          "name": "CnameDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名字</p>",
+          "example": "garendu-test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加速应用ID</p>",
+          "example": "[\"site-00w0tfmu\"]",
+          "member": "string",
+          "name": "SiteIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-03-25 21:56:05",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-03-25 21:56:05",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc信息</p>",
+          "example": "无",
+          "member": "VpcSet",
+          "name": "VpcSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssociateVpcRequest": {
+      "document": "AssociateVpc请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加速实例ID</p>",
+          "example": "aat-a8kx2ye5",
+          "member": "string",
+          "name": "AgentAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc信息</p>",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateVpcResponse": {
+      "document": "AssociateVpc返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "47dbbb6d-9df5-4549-94cc-065f54dada14",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAcceleratorRequest": {
+      "document": "CreateAgentAccelerator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "garendu-test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用</p>",
+          "example": "[\"site-00w0tfmu\"]",
+          "member": "string",
+          "name": "SiteIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否腾讯云側场景</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTencent",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAcceleratorResponse": {
+      "document": "CreateAgentAccelerator返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "aat-0003ssc7",
+          "member": "string",
+          "name": "AgentAcceleratorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "4175266475",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAcceleratorRequest": {
+      "document": "DeleteAgentAccelerator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent加速器ID</p>",
+          "example": "aat-7ozrwsv3",
+          "member": "string",
+          "name": "AgentAcceleratorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAcceleratorResponse": {
+      "document": "DeleteAgentAccelerator返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "d35e1d9f-37cc-414b-ac04-ad91ae1d8161",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAcceleratorsRequest": {
+      "document": "DescribeAgentAccelerators请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAcceleratorsResponse": {
+      "document": "DescribeAgentAccelerators返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加速实例信息</p>",
+          "example": "无",
+          "member": "AgentAcceleratorSet",
+          "name": "AgentAcceleratorSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateVpcRequest": {
+      "document": "DisassociateVpc请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>agent加速实例ID</p>",
+          "example": "aat-ei8fzf27",
+          "member": "string",
+          "name": "AgentAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc信息</p>",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateVpcResponse": {
+      "document": "DisassociateVpc返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "0a459a12-74b0-418a-80fb-a76e2c837d71",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentAcceleratorRequest": {
+      "document": "ModifyAgentAccelerator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "aat-8paj4jbl",
+          "member": "string",
+          "name": "AgentAcceleratorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "kerntest1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "[\"site-rf798efc\"]",
+          "member": "string",
+          "name": "SiteIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentAcceleratorResponse": {
+      "document": "ModifyAgentAccelerator返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "365ea08d-fc1b-48a4-8639-0d5986a4706e",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VpcInfo": {
+      "document": "VPC信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vpc实例ID</p>",
+          "example": "vpc-gmjjk6sn",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "VpcRegion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcSet": {
+      "document": "VPC信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vpc实例ID</p>",
+          "example": "vpc-gmjjk6sn",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc实例所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "VpcRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

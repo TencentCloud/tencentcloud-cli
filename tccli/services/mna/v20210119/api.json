@@ -4568,7 +4568,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量包的唯一资源ID",
+          "document": "<p>流量包的唯一资源ID</p>",
           "example": "56d11777-50f7-4c60-9c89-e7076c8529a9-0",
           "member": "string",
           "name": "ResourceId",
@@ -4577,7 +4577,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。true代表自动续费，false代表不自动续费",
+          "document": "<p>自动续费标识。true代表自动续费，false代表不自动续费</p>",
           "example": "true",
           "member": "bool",
           "name": "RenewFlag",
@@ -5314,7 +5314,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "互通规则ID",
+          "document": "<p>互通规则ID</p>",
           "example": "\"l3conn-c0rkbqhig\"",
           "member": "string",
           "name": "L3ConnId",
@@ -5323,7 +5323,7 @@
         },
         {
           "disabled": false,
-          "document": "互通规则CIDR",
+          "document": "<p>互通规则CIDR</p>",
           "example": "\"192.168.0.0/28\"",
           "member": "string",
           "name": "Cidr1",
@@ -5332,7 +5332,7 @@
         },
         {
           "disabled": false,
-          "document": "互通设备ID",
+          "document": "<p>互通设备ID</p>",
           "example": "mna-f8v7e6o43g",
           "member": "string",
           "name": "DeviceId1",
@@ -5341,7 +5341,7 @@
         },
         {
           "disabled": false,
-          "document": "互通设备ID",
+          "document": "<p>互通设备ID</p>",
           "example": "mna-f8v7e6o432",
           "member": "string",
           "name": "DeviceId2",
@@ -5350,7 +5350,7 @@
         },
         {
           "disabled": false,
-          "document": "互通规则CIDR",
+          "document": "<p>互通规则CIDR</p>",
           "example": "\"192.168.0.16/28\"",
           "member": "string",
           "name": "Cidr2",
@@ -5413,7 +5413,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "互通规则ID",
+          "document": "<p>互通规则ID</p>",
           "example": "\"id-1\"",
           "member": "string",
           "name": "L3ConnId",
@@ -5422,7 +5422,7 @@
         },
         {
           "disabled": false,
-          "document": "互通规则开关",
+          "document": "<p>互通规则开关</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",

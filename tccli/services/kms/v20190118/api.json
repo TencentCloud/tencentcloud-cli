@@ -413,6 +413,13 @@
       "output": "ReEncryptResponse",
       "status": "online"
     },
+    "RotateKey": {
+      "document": "对指定的CMK（用户主密钥）执行立即轮转操作。可以通过调用DescribeKey，返回上次轮转时间和下次轮转时间，判断是否轮转成功。",
+      "input": "RotateKeyRequest",
+      "name": "立即轮转密钥",
+      "output": "RotateKeyResponse",
+      "status": "online"
+    },
     "ScheduleDataKeyDeletion": {
       "document": "计划删除数据密钥",
       "input": "ScheduleDataKeyDeletionRequest",
@@ -4741,6 +4748,52 @@
         }
       ],
       "usage": "both"
+    },
+    "RotateKeyRequest": {
+      "document": "RotateKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CMK的全局唯一标识符</p>",
+          "example": "6ce625e3-01a4-11f1-9481-525400faed4b",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>成员账号信息，用于多账号场景</p>",
+          "example": "无",
+          "member": "MemberAccount",
+          "name": "MemberAccount",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RotateKeyResponse": {
+      "document": "RotateKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>轮转任务ID，用于标识本次轮转任务。可以通过调用DescribeKey，返回上次轮转时间和下次轮转时间，判断是否轮转成功。</p>",
+          "example": "3027e0ed-28f1-11f1-b397-525400796650",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ScheduleDataKeyDeletionRequest": {
       "document": "ScheduleDataKeyDeletion请求参数结构体",
