@@ -2,6 +2,7 @@
 import json
 import os
 import os.path as path
+import sys
 import time
 
 import six
@@ -14,19 +15,36 @@ from tencentcloud.common.profile.http_profile import HttpProfile
 import tccli.format_output as format_output
 import tccli.options_define as options_define
 from tccli import __version__
-from tccli.exceptions import ConfigurationError, ClientError
+from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tccli.loaders import Loader, BASE_TYPE
 from tccli.utils import Utils
 
 
 class GenericActionCaller(object):
+    _ACTION_TRAITS = {
+        ("cls", "v20201016", "UploadLog"): {
+            "request_mode": "octet-stream",
+            "header_prefix": "X-CLS-",
+            "header_fields": ("TopicId", "HashKey", "CompressType"),
+        },
+    }
+
     def __init__(self, module, action):
         self._module = module
         self._action = action
         self._avail_vers = []
 
     def __call__(self, args, parsed_globals):
-        self._call_json(args, parsed_globals)
+        g_param = self.parse_global_arg(parsed_globals)
+        traits = self._get_action_traits(g_param)
+        client = self._create_client(g_param)
+        if traits and traits["request_mode"] == "octet-stream":
+            self._call_octet_stream(args, g_param, client, traits)
+        else:
+            self._call_json(args, g_param, client)
+
+    def _get_action_traits(self, g_param):
+        return self._ACTION_TRAITS.get((self._module.lower(), g_param[options_define.Version], self._action))
 
     def available_versions(self):
         if not self._avail_vers:
@@ -43,9 +61,7 @@ class GenericActionCaller(object):
     def convert_version_str(ver):
         return ver[1:5] + "-" + ver[5:7] + "-" + ver[7:9]
 
-    def _call_json(self, args, parsed_globals):
-        g_param = self.parse_global_arg(parsed_globals)
-
+    def _create_client(self, g_param):
         if g_param[options_define.UseCVMRole.replace('-', '_')]:
             cred = credential.CVMRoleCredential()
         elif g_param[options_define.RoleArn.replace('-', '_')] and g_param[
@@ -68,14 +84,16 @@ class GenericActionCaller(object):
             endpoint=g_param[options_define.Endpoint],
             proxy=g_param[options_define.HttpsProxy.replace('-', '_')]
         )
-        cpf = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+        cpf = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
         if g_param[options_define.Language]:
             cpf.language = g_param[options_define.Language]
         version = self.convert_version_str(g_param[options_define.Version])
         region = g_param[options_define.Region]
         client = CommonClient(self._module, version, cred, region, cpf)
         client._sdkVersion += ("_CLI_" + __version__)
+        return client
 
+    def _call_json(self, args, g_param, client):
         start_time = time.time()
         while True:
             raw = client.call_json(self._action, args)
@@ -97,6 +115,42 @@ class GenericActionCaller(object):
             time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
 
         format_output.output("action", json_obj, g_param[options_define.Output], g_param[options_define.Filter])
+
+    def _call_octet_stream(self, args, g_param, client, traits):
+        if g_param[options_define.Waiter]:
+            raise ParamError("`--waiter` is not supported for UploadLog to avoid duplicate log uploads.")
+
+        headers = self._build_octet_stream_headers(args, traits)
+        body = self._read_binary_stdin()
+        raw = client.call_octet_stream(self._action, headers, body)
+        json_obj = raw.get("Response", raw) if isinstance(raw, dict) else raw
+        json_obj = self._filter_response(json_obj, g_param[options_define.Version])
+        format_output.output("action", json_obj, g_param[options_define.Output], g_param[options_define.Filter])
+
+    @staticmethod
+    def _read_binary_stdin():
+        if sys.stdin.isatty():
+            raise ParamError("Missing required input, you can use `< /path/to/file` to input your binary file.")
+        if six.PY2:
+            return sys.stdin.read()
+        return sys.stdin.buffer.read()
+
+    @staticmethod
+    def _build_octet_stream_headers(args, traits):
+        if not isinstance(args, dict):
+            raise ParamError("UploadLog request parameters must be a JSON object.")
+
+        headers = {}
+        for field in traits["header_fields"]:
+            value = args.get(field)
+            if value is None:
+                continue
+            if not isinstance(value, six.string_types):
+                raise ParamError("UploadLog parameter `%s` must be a string." % field)
+            if "\r" in value or "\n" in value:
+                raise ParamError("UploadLog parameter `%s` must not contain CR or LF characters." % field)
+            headers[traits["header_prefix"] + field] = value
+        return headers
 
     def parse_global_arg(self, parsed_globals):
         g_param = parsed_globals
