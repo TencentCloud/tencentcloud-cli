@@ -41,8 +41,9 @@ except ImportError:
 
 _TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.dirname(_TESTS_DIR)
-if _REPO_ROOT not in sys.path:
-    sys.path.insert(0, _REPO_ROOT)
+while _REPO_ROOT in sys.path:
+    sys.path.remove(_REPO_ROOT)
+sys.path.insert(0, _REPO_ROOT)
 
 # ============================================================
 # 通用：屏蔽 plugin 加载（很多 tccli 插件依赖外部 SDK，环境可能没装）
