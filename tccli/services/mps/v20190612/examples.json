@@ -205,7 +205,7 @@
     "CreateDocToVideoTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDocToVideoTask\n<公共请求参数>\n\n{\n    \"Input\": {\n        \"FileUrl\": [\n            \"https://aigc-test-image-1303333058.cos.ap-guangzhou.myqcloud***********************************************************6%96%AD-%E7%BB%84%E5%90%88%E6%8E%92%E5%88%971%E9%81%93.docx\"\n        ],\n        \"Prompt\": \"帮我生成一个视频，详细讲解文档中的内容。\",\n        \"ModelName\": \"Wand\",\n        \"ModelVersion\": \"1.0\",\n        \"Ratio\": \"16:9\",\n        \"Language\": \"zh\",\n        \"EnableTTS\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDocToVideoTask\n<公共请求参数>\n\n{\n    \"Input\": {\n        \"FileUrl\": [\n            \"https://aigc-test-image-1303333058.cos.ap-guangzhou.myqcloud***********************************************************6%96%AD-%E7%BB%84%E5%90%88%E6%8E%92%E5%88%971%E9%81%93.docx\"\n        ],\n        \"Prompt\": \"帮我生成一个视频，详细讲解文档中的内容。\",\n        \"ModelName\": \"Wand\",\n        \"ModelVersion\": \"1.0\",\n        \"Ratio\": \"16:9\",\n        \"Language\": \"zh\",\n        \"EnableTTS\": true\n    },\n    \"ResourceId\": \"vts-********-1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"e084efaa-d25************6b85e473c0e5\",\n        \"RequestId\": \"a2644899-acbf-4973-b8ea-1a93772be6f7\"\n    }\n}",
         "title": "测试样例"
       }

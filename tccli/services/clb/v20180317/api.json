@@ -1123,7 +1123,7 @@
   },
   "metadata": {
     "apiVersion": "2018-03-17",
-    "api_brief": "介绍如何使用API对负载均衡进行操作，包括创建、查询负载均衡实例、管理监听等。",
+    "api_brief": "介绍如何使用API的方式使用负载均衡服务，包含实例的创建、配置和查询等内容。",
     "serviceNameCN": "负载均衡",
     "serviceShortName": "clb"
   },

@@ -3772,6 +3772,15 @@
           "name": "AccountName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "BackendJobId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4227,7 +4236,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
+          "document": "<p>订阅实例id，可通过<a href=\"https://cloud.tencent.com/document/product/571/102943\">DescribeSubscribeJobs</a>接口获取。</p>",
           "example": "subs-47damshnra",
           "member": "string",
           "name": "SubscribeId",
@@ -4236,7 +4245,7 @@
         },
         {
           "disabled": false,
-          "document": "返回记录的起始偏移量。默认0",
+          "document": "<p>返回记录的起始偏移量。默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4245,7 +4254,7 @@
         },
         {
           "disabled": false,
-          "document": "单次返回的记录数量。默认10",
+          "document": "<p>单次返回的记录数量。默认10</p>",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -4260,7 +4269,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定实例下的消费者组总数",
+          "document": "<p>指定实例下的消费者组总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -4270,7 +4279,7 @@
         },
         {
           "disabled": false,
-          "document": "消费者组列表",
+          "document": "<p>消费者组列表</p>",
           "example": "无",
           "member": "GroupInfo",
           "name": "Items",
@@ -5221,7 +5230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
+          "document": "<p>订阅实例ID，可通过<a href=\"https://cloud.tencent.com/document/product/571/102943\">DescribeSubscribeJobs</a>接口获取。</p>",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -5236,7 +5245,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅的ID，形如subs-b6x64o31tm",
+          "document": "<p>数据订阅的ID，形如subs-b6x64o31tm</p>",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -5246,7 +5255,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例的名称",
+          "document": "<p>数据订阅实例的名称</p>",
           "example": "binlog订阅",
           "member": "string",
           "name": "SubscribeName",
@@ -5256,7 +5265,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)",
+          "document": "<p>订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -5266,7 +5275,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的云数据库实例ID，只有订阅云数据库该值才有意义",
+          "document": "<p>订阅的云数据库实例ID，只有订阅云数据库该值才有意义</p>",
           "example": "cdb-xxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -5276,7 +5285,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的云数据库实例状态，只有订阅云数据库该值才有意义。可能值为：running, isolated, offline",
+          "document": "<p>订阅的云数据库实例状态，只有订阅云数据库该值才有意义。可能值为：running, isolated, offline</p>",
           "example": "running",
           "member": "string",
           "name": "InstanceStatus",
@@ -5286,7 +5295,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅任务计费状态，可能值为：正常normal, 隔离中isolating, 已隔离isolated, 下线中offlining, 按量转包年包月中 post2PrePayIng",
+          "document": "<p>订阅任务计费状态，可能值为：正常normal, 隔离中isolating, 已隔离isolated, 下线中offlining, 按量转包年包月中 post2PrePayIng</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -5296,7 +5305,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅任务状态，可能值为：未启动notStarted, 校验中checking, 校验不通过checkNotPass, 校验通过checkPass, 启动中starting, 运行中running, 异常出错error",
+          "document": "<p>订阅任务状态，可能值为：未启动notStarted, 校验中checking, 校验不通过checkNotPass, 校验通过checkPass, 启动中starting, 运行中running, 异常出错error</p>",
           "example": "running",
           "member": "string",
           "name": "SubsStatus",
@@ -5306,7 +5315,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间，时间格式如：Y-m-d h:m:s",
+          "document": "<p>修改时间。</p>",
           "example": "2023-06-30 12:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -5316,7 +5325,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，时间格式如：Y-m-d h:m:s",
+          "document": "<p>创建时间。</p>",
           "example": "2023-06-30 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -5326,7 +5335,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00",
+          "document": "<p>隔离时间。</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "IsolateTime",
@@ -5336,7 +5345,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00",
+          "document": "<p>包年包月任务的到期时间。</p>",
           "example": "2023-07-30 12:00:00",
           "member": "string",
           "name": "ExpireTime",
@@ -5346,7 +5355,7 @@
         },
         {
           "disabled": false,
-          "document": "下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00",
+          "document": "<p>下线时间。</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "OfflineTime",
@@ -5356,7 +5365,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式，可能值为：0-包年包月，1-按量计费",
+          "document": "<p>付费方式，可能值为：0-包年包月，1-按量计费</p>",
           "example": "0",
           "member": "int64",
           "name": "PayType",
@@ -5366,7 +5375,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费",
+          "document": "<p>自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -5376,7 +5385,7 @@
         },
         {
           "disabled": false,
-          "document": "任务所在地域",
+          "document": "<p>任务所在地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -5386,7 +5395,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka topic",
+          "document": "<p>Kafka topic</p>",
           "example": "topic-subs-9n0q6o7tok-cdb-ixunfa27",
           "member": "string",
           "name": "Topic",
@@ -5396,7 +5405,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka服务Broker地址",
+          "document": "<p>Kafka服务Broker地址</p>",
           "example": "guangzhoutest-kafka-5.cdb-dts.tencentcs.com.cn:32339",
           "member": "string",
           "name": "Broker",
@@ -5406,7 +5415,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅的类型，当 Product 不为 mongodb 时，可能值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 Product 为 mongodb 时，可能值为 all-全实例更新；database-订阅单库；collection-订阅单集合",
+          "document": "<p>数据订阅的类型，当 Product 不为 mongodb 时，可能值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 Product 为 mongodb 时，可能值为 all-全实例更新；database-订阅单库；collection-订阅单集合</p>",
           "example": "dmlAndDdl",
           "member": "string",
           "name": "SubscribeMode",
@@ -5416,7 +5425,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅数据格式。如果为空则用的默认格式: mysql\\cynosdbmysql\\mariadb\\percona\\tdsqlpercona\\tdpg是protobuf，mongo是json。当 DatabaseType 为 mysql和cynosdbmysql 时有三种可选协议：protobuf\\avro\\json。数据格式详情参考官网的消费demo文档",
+          "document": "<p>订阅数据格式。如果为空则用的默认格式: mysql\\cynosdbmysql\\mariadb\\percona\\tdsqlpercona\\tdpg是protobuf，mongo是json。当 DatabaseType 为 mysql和cynosdbmysql 时有三种可选协议：protobuf\\avro\\json。数据格式详情参考官网的消费demo文档</p>",
           "example": "protobuf",
           "member": "string",
           "name": "Protocol",
@@ -5426,7 +5435,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的数据库表信息",
+          "document": "<p>订阅的数据库表信息</p>",
           "example": "无",
           "member": "SubscribeObject",
           "name": "SubscribeObjects",
@@ -5436,7 +5445,7 @@
         },
         {
           "disabled": false,
-          "document": "kafka配置信息",
+          "document": "<p>kafka配置信息</p>",
           "example": "无",
           "member": "SubscribeKafkaConfig",
           "name": "KafkaConfig",
@@ -5446,7 +5455,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅内置kafka的版本信息",
+          "document": "<p>订阅内置kafka的版本信息</p>",
           "example": "2.6.0",
           "member": "string",
           "name": "KafkaVersion",
@@ -5456,7 +5465,7 @@
         },
         {
           "disabled": false,
-          "document": "源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力",
+          "document": "<p>源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力</p>",
           "example": "cdb",
           "member": "string",
           "name": "AccessType",
@@ -5466,7 +5475,7 @@
         },
         {
           "disabled": false,
-          "document": "接入类型信息",
+          "document": "<p>接入类型信息</p>",
           "example": "无",
           "member": "EndpointItem",
           "name": "Endpoints",
@@ -5476,7 +5485,7 @@
         },
         {
           "disabled": false,
-          "document": "mongo输出聚合设置",
+          "document": "<p>mongo输出聚合设置</p>",
           "example": "无",
           "member": "PipelineInfo",
           "name": "PipelineInfo",
@@ -5486,7 +5495,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -5496,7 +5505,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅任务报错信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>订阅任务报错信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubsErr",
           "name": "Errors",
@@ -5506,7 +5515,7 @@
         },
         {
           "disabled": false,
-          "document": "为业务添加的额外信息。参数名作key，参数值作value。\nmysql选填参数：ProcessXA-是否处理XA事务，为true处理，其他不处理。\nmongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。",
+          "document": "<p>为业务添加的额外信息。参数名作key，参数值作value。<br>mysql选填参数：ProcessXA-是否处理XA事务，为true处理，其他不处理。<br>mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。</p>",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
@@ -5516,7 +5525,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅版本, 当前支持kafka和kafkaPro（专业版）",
+          "document": "<p>数据订阅版本, 当前支持kafka和kafkaPro（专业版）</p>",
           "example": "kafka",
           "member": "string",
           "name": "SubscribeVersion",
@@ -5526,7 +5535,7 @@
         },
         {
           "disabled": false,
-          "document": "消费端地址所在vpc",
+          "document": "<p>消费端地址所在vpc</p>",
           "example": "vpc-r9rir3i9",
           "member": "string",
           "name": "ConsumerVpcId",
@@ -5536,7 +5545,7 @@
         },
         {
           "disabled": false,
-          "document": "消费端地址所在子网",
+          "document": "<p>消费端地址所在子网</p>",
           "example": "subnet-jgyd4txs",
           "member": "string",
           "name": "ConsumerSubnetId",
@@ -5546,7 +5555,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅实例规格",
+          "document": "<p>订阅实例规格</p>",
           "example": "small",
           "member": "string",
           "name": "InstanceClass",
@@ -7854,7 +7863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消费者组账号",
+          "document": "<p>消费者组账号</p>",
           "example": "account-subs-47damshnra-group-1",
           "member": "string",
           "name": "Account",
@@ -7864,7 +7873,7 @@
         },
         {
           "disabled": false,
-          "document": "消费者组名称",
+          "document": "<p>消费者组名称</p>",
           "example": "consumer-grp-subs-47damshnra-jason",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -7874,7 +7883,7 @@
         },
         {
           "disabled": false,
-          "document": "消费者组备注",
+          "document": "<p>消费者组备注</p>",
           "example": "binlog订阅",
           "member": "string",
           "name": "Description",
@@ -7884,7 +7893,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段",
+          "document": "<p>消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段</p>",
           "example": "-1",
           "member": "int64",
           "name": "ConsumerGroupOffset",
@@ -7894,7 +7903,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段",
+          "document": "<p>消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段</p>",
           "example": "0",
           "member": "int64",
           "name": "ConsumerGroupLag",
@@ -7904,7 +7913,7 @@
         },
         {
           "disabled": false,
-          "document": "消费延迟(单位为秒)",
+          "document": "<p>消费延迟(单位为秒)</p>",
           "example": "9",
           "member": "int64",
           "name": "Latency",
@@ -7914,7 +7923,7 @@
         },
         {
           "disabled": false,
-          "document": "各分区的消费状态",
+          "document": "<p>各分区的消费状态</p>",
           "example": "无",
           "member": "MonitorInfo",
           "name": "StateOfPartition",
@@ -7924,7 +7933,7 @@
         },
         {
           "disabled": false,
-          "document": "消费者组创建时间，格式为YYYY-MM-DD hh:mm:ss",
+          "document": "<p>消费者组创建时间。</p>",
           "example": "2022-03-25 17:31:31",
           "member": "string",
           "name": "CreatedAt",
@@ -7934,7 +7943,7 @@
         },
         {
           "disabled": false,
-          "document": "消费者组修改时间，格式为YYYY-MM-DD hh:mm:ss",
+          "document": "<p>消费者组修改时间。</p>",
           "example": "2022-03-25 17:31:31",
           "member": "string",
           "name": "UpdatedAt",
@@ -7944,7 +7953,7 @@
         },
         {
           "disabled": false,
-          "document": "消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作",
+          "document": "<p>消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作</p>",
           "example": "Stable",
           "member": "string",
           "name": "ConsumerGroupState",
@@ -7954,7 +7963,7 @@
         },
         {
           "disabled": false,
-          "document": "每个消费者正在消费的分区",
+          "document": "<p>每个消费者正在消费的分区</p>",
           "example": "无",
           "member": "PartitionAssignment",
           "name": "PartitionAssignment",
@@ -11690,7 +11699,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅的实例ID",
+          "document": "<p>数据订阅的实例ID</p>",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -11700,7 +11709,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例的名称",
+          "document": "<p>数据订阅实例的名称</p>",
           "example": "binlog订阅",
           "member": "string",
           "name": "SubscribeName",
@@ -11710,7 +11719,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅实例发送数据的kafka topic",
+          "document": "<p>订阅实例发送数据的kafka topic</p>",
           "example": "topic-subs-l4d3a7izai-cdb-24ifcx43",
           "member": "string",
           "name": "Topic",
@@ -11720,7 +11729,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)",
+          "document": "<p>订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -11730,7 +11739,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。",
+          "document": "<p>订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。</p>",
           "example": "cdb-kdxona7h",
           "member": "string",
           "name": "InstanceId",
@@ -11740,7 +11749,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空",
+          "document": "<p>云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空</p>",
           "example": "running",
           "member": "string",
           "name": "InstanceStatus",
@@ -11750,7 +11759,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng",
+          "document": "<p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -11760,7 +11769,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error",
+          "document": "<p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>",
           "example": "running",
           "member": "string",
           "name": "SubsStatus",
@@ -11770,7 +11779,7 @@
         },
         {
           "disabled": false,
-          "document": "上次修改时间，时间格式如：Y-m-d h:m:s",
+          "document": "<p>上次修改时间，时间格式如：Y-m-d h:m:s</p>",
           "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "ModifyTime",
@@ -11780,7 +11789,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，时间格式如：Y-m-d h:m:s",
+          "document": "<p>创建时间，时间格式如：Y-m-d h:m:s</p>",
           "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "CreateTime",
@@ -11790,7 +11799,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00",
+          "document": "<p>隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>",
           "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "IsolateTime",
@@ -11800,7 +11809,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00",
+          "document": "<p>包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>",
           "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "ExpireTime",
@@ -11810,7 +11819,7 @@
         },
         {
           "disabled": false,
-          "document": "下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00",
+          "document": "<p>下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00</p>",
           "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "OfflineTime",
@@ -11820,7 +11829,7 @@
         },
         {
           "disabled": false,
-          "document": "计费方式，0 - 包年包月，1 - 按量计费",
+          "document": "<p>计费方式，0 - 包年包月，1 - 按量计费</p>",
           "example": "0",
           "member": "int64",
           "name": "PayType",
@@ -11830,7 +11839,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费",
+          "document": "<p>自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -11840,7 +11849,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例所属地域",
+          "document": "<p>数据订阅实例所属地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -11850,7 +11859,7 @@
         },
         {
           "disabled": false,
-          "document": "接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)",
+          "document": "<p>接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)</p>",
           "example": "cdb",
           "member": "string",
           "name": "AccessType",
@@ -11860,7 +11869,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库节点信息",
+          "document": "<p>数据库节点信息</p>",
           "example": "无",
           "member": "EndpointItem",
           "name": "Endpoints",
@@ -11870,7 +11879,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅版本, 当前支持kafka和kafkaPro（专业版）",
+          "document": "<p>数据订阅版本, 当前支持kafka和kafkaPro（专业版）</p>",
           "example": "kafka",
           "member": "string",
           "name": "SubscribeVersion",
@@ -11880,7 +11889,7 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -11890,7 +11899,7 @@
         },
         {
           "disabled": false,
-          "document": "任务报错信息，如果有的话。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务报错信息，如果有的话。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubsErr",
           "name": "Errors",
@@ -11900,10 +11909,20 @@
         },
         {
           "disabled": false,
-          "document": "订阅实例规格",
+          "document": "<p>订阅实例规格</p>",
           "example": "small",
           "member": "string",
           "name": "InstanceClass",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新版订阅消费端路由阶段</p>",
+          "example": "running",
+          "member": "string",
+          "name": "ConsumerRoutePhase",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

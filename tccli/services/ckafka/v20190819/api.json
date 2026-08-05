@@ -147,6 +147,13 @@
       "output": "CreateRouteResponse",
       "status": "online"
     },
+    "CreateThrottleRule": {
+      "document": "实例限流规则相关接口",
+      "input": "CreateThrottleRuleRequest",
+      "name": "批量创建限流规则",
+      "output": "CreateThrottleRuleResponse",
+      "status": "online"
+    },
     "CreateToken": {
       "document": "创建最高权限的token",
       "input": "CreateTokenRequest",
@@ -250,6 +257,13 @@
       "input": "DeleteRouteTriggerTimeRequest",
       "name": "修改路由触发时间",
       "output": "DeleteRouteTriggerTimeResponse",
+      "status": "online"
+    },
+    "DeleteThrottleRule": {
+      "document": "删除实例限流规则",
+      "input": "DeleteThrottleRuleRequest",
+      "name": "删除限流规则",
+      "output": "DeleteThrottleRuleResponse",
       "status": "online"
     },
     "DeleteTopic": {
@@ -448,6 +462,13 @@
       "output": "DescribeTaskStatusResponse",
       "status": "online"
     },
+    "DescribeThrottleRules": {
+      "document": "获取实例限流规则列表",
+      "input": "DescribeThrottleRulesRequest",
+      "name": "查询实例限流规则列表",
+      "output": "DescribeThrottleRulesResponse",
+      "status": "online"
+    },
     "DescribeTopic": {
       "document": "接口请求域名：https://ckafka.tencentcloudapi.com\n本接口（DescribeTopic）用于在用户获取消息队列 CKafka 实例的主题列表",
       "input": "DescribeTopicRequest",
@@ -635,6 +656,13 @@
       "input": "ModifyRoutineMaintenanceTaskRequest",
       "name": "设置自动化运维属性",
       "output": "ModifyRoutineMaintenanceTaskResponse",
+      "status": "online"
+    },
+    "ModifyThrottleRule": {
+      "document": "修改限流规则接口",
+      "input": "ModifyThrottleRuleRequest",
+      "name": "修改实例限流规则",
+      "output": "ModifyThrottleRuleResponse",
       "status": "online"
     },
     "ModifyTopicAttributes": {
@@ -4722,6 +4750,106 @@
       ],
       "type": "object"
     },
+    "CreateThrottleRuleRequest": {
+      "document": "CreateThrottleRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例Id</p>",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流类型:</p><p>枚举值：</p><ul><li>1： 用户/客户端限流</li><li>2： 消费组维度限流</li><li>3： Topic限流</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ThrottleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费组名</p>",
+          "example": "[\"group-test\"]",
+          "member": "string",
+          "name": "GroupNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费限流值,生产消费限流值,必填一个单位MB/s</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "ConsumeThrottle",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生产限流值,生产消费限流值,单位MB/s</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "ProduceThrottle",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户客户端id</p>",
+          "example": "[\"client-test\"]",
+          "member": "string",
+          "name": "ClientIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "[\"user-test\"]",
+          "member": "string",
+          "name": "UserNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>topic名称</p>",
+          "example": "[\"topic-test\"]",
+          "member": "string",
+          "name": "TopicNameList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateThrottleRuleResponse": {
+      "document": "CreateThrottleRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回信息</p>",
+          "example": "无",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTokenRequest": {
       "document": "CreateToken请求参数结构体",
       "members": [
@@ -6359,6 +6487,52 @@
     "DeleteRouteTriggerTimeResponse": {
       "document": "DeleteRouteTriggerTime返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteThrottleRuleRequest": {
+      "document": "DeleteThrottleRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限流规则Id",
+          "example": "1",
+          "member": "string",
+          "name": "ThrottleRuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例标识",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteThrottleRuleResponse": {
+      "document": "DeleteThrottleRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "无",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9026,6 +9200,79 @@
           "member": "TaskStatusResponse",
           "name": "Result",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeThrottleRulesRequest": {
+      "document": "DescribeThrottleRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例Id</p>",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键字</p>",
+          "example": "keyword",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，不填则默认为20，最大值200</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移数，默认为0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流维度</p><p>枚举值：</p><ul><li>1： 实例维度限流</li><li>2： topic维度限流</li></ul><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ThrottleDimension",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeThrottleRulesResponse": {
+      "document": "DescribeThrottleRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回信息</p>",
+          "example": "无",
+          "member": "ThrottleRuleResult",
+          "name": "Result",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15300,6 +15547,61 @@
       ],
       "type": "object"
     },
+    "ModifyThrottleRuleRequest": {
+      "document": "ModifyThrottleRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则标识",
+          "example": "1",
+          "member": "uint64",
+          "name": "ThrottleRuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费限流值单位MB/s",
+          "example": "100",
+          "member": "uint64",
+          "name": "ConsumeThrottle",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyThrottleRuleResponse": {
+      "document": "ModifyThrottleRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "无",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTopicAttributesRequest": {
       "document": "ModifyTopicAttributes请求参数结构体",
       "members": [
@@ -18705,6 +19007,126 @@
         }
       ],
       "usage": "both"
+    },
+    "ThrottleRuleDetail": {
+      "document": "限流规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>限流规则标识</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ThrottleRuleId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流类型</p><p>枚举值：</p><ul><li>1： 用户/客户端限流</li><li>2： 消费组限流</li><li>3： topic限流</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ThrottleType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端id</p>",
+          "example": "client-test",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "user-test",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费限流值,单位MB/s</p>",
+          "example": "1024",
+          "member": "uint64",
+          "name": "ConsumeThrottle",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2025-07-31",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>topic名称</p>",
+          "example": "topic-test",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>topicId</p>",
+          "example": "topic-id",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ThrottleRuleResult": {
+      "document": "限流规则列表返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "ThrottleRuleDetail",
+          "name": "ThrottleRuleList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Topic": {
       "document": "返回的topic对象",

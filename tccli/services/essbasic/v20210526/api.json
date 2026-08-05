@@ -15,14 +15,14 @@
       "status": "online"
     },
     "ChannelBatchCancelFlows": {
-      "document": "通过合同编号批量撤销合同，单次最多支持撤销100份合同。\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask)主动查询。\n\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>\n- 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
+      "document": "通过合同编号批量撤销合同，单次最多支持撤销100份合同。\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask)主动查询。\n\n**合同额度返还规则**:\n\n1.撤销服务按照合同份额 1:1赠送免费撤销次数。例如购买 100 份合同，赠送 100 次免费撤销额度。\n2.仅当没有任何参与方签署过，或仅自动签署完成的合同，撤销后才会使用免费撤销额度。\n3.当赠送的免费撤销额度使用完后，后续仍可撤销合同，但不会返还合同额度。\n\n**注**:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
       "input": "ChannelBatchCancelFlowsRequest",
       "name": "批量撤销合同流程",
       "output": "ChannelBatchCancelFlowsResponse",
       "status": "online"
     },
     "ChannelCancelFlow": {
-      "document": "撤销签署流程接口\n\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>\n- 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
+      "document": "撤销签署流程接口\n\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n**合同额度返还规则**:\n\n1.撤销服务按照合同份额 1:1赠送免费撤销次数。例如购买 100 份合同，赠送 100 次免费撤销额度。\n2.仅当没有任何参与方签署过，或仅自动签署完成的合同，撤销后才会使用免费撤销额度。\n3.当赠送的免费撤销额度使用完后，后续仍可撤销合同，但不会返还合同额度。\n\n**注**:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
       "input": "ChannelCancelFlowRequest",
       "name": "撤销合同流程",
       "output": "ChannelCancelFlowResponse",
@@ -43,7 +43,7 @@
       "status": "online"
     },
     "ChannelCreateBatchCancelFlowUrl": {
-      "document": "通过合同编号生成批量撤销合同的链接，单次最多支持撤销100份合同,   返回的链接需要有此权限的人<font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>在<font color='red'>**手机端**</font>打开,  跳转到腾讯电子签小程序输入撤销原因来进行撤销合同\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask)主动查询。\n\n注:\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>\n- 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
+      "document": "通过合同编号生成批量撤销合同的链接，单次最多支持撤销100份合同,   返回的链接需要有此权限的人<font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>在<font color='red'>**手机端**</font>打开,  跳转到腾讯电子签小程序输入撤销原因来进行撤销合同\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask)主动查询。\n\n**合同额度返还规则**:\n\n1.撤销服务按照合同份额 1:1赠送免费撤销次数。例如购买 100 份合同，赠送 100 次免费撤销额度。\n2.仅当没有任何参与方签署过，或仅自动签署完成的合同，撤销后才会使用免费撤销额度。\n3.当赠送的免费撤销额度使用完后，后续仍可撤销合同，但不会返还合同额度。\n\n**注**:\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
       "input": "ChannelCreateBatchCancelFlowUrlRequest",
       "name": "获取批量撤销合同流程的腾讯电子签小程序链接",
       "output": "ChannelCreateBatchCancelFlowUrlResponse",
@@ -2957,7 +2957,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否为预览模式，取值如下： <ul><li> <strong>false</strong>：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> <strong>true</strong>：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul></p>",
+          "document": "<p>是否为预览模式，取值如下： <ul><li> <strong>false</strong>：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> <strong>true</strong>：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul></p><p><strong>注</strong>: 预览服务按照合同份额 1:2的比例赠送预览次数。例如：购买 100 份合同，将赠送 200 次合同预览额度。当赠送的预览额度使用完后，如需继续使用预览服务，则需要单独购买预览服务额度。</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedPreview",
@@ -5388,7 +5388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5397,7 +5397,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页每页返回的数据条数，单页最大支持 100。默认值为20",
+          "document": "<p>指定分页每页返回的数据条数，单页最大支持 100。默认值为20</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5406,7 +5406,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询偏移量，默认为0，最大为20000",
+          "document": "<p>分页查询偏移量，默认为0，最大为20000</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5415,7 +5415,7 @@
         },
         {
           "disabled": false,
-          "document": "查询授权用户信息类型，取值如下：\n\n<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>",
+          "document": "<p>查询授权用户信息类型，取值如下：</p><ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>",
           "example": "1",
           "member": "int64",
           "name": "InfoType",
@@ -5424,7 +5424,7 @@
         },
         {
           "disabled": false,
-          "document": "印章id，是否查询特定的印章（没有输入返回所有）\n\n注:  `没有输入返回所有记录，最大返回100条。`",
+          "document": "<p>印章id，是否查询特定的印章（没有输入返回所有）</p><p>注:  <code>没有输入返回所有记录，最大返回100条。</code></p>",
           "example": "yDSxWUUckptu4clgUuLlo0OwJKbYCO48",
           "member": "string",
           "name": "SealId",
@@ -5433,8 +5433,8 @@
         },
         {
           "disabled": false,
-          "document": "电子印章类型 , 可选类型如下: <ul><li>**OFFICIAL**: 公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li><li>**LEGAL_PERSON_SEAL**: 法定代表人章;</li><li>**EMPLOYEE_QUALIFICATION_SEAL**: 员工执业章</li><li>**OTHER**: 其他类型印章</li></ul>注:  `1.为空时查询所有类型的印章。`",
-          "example": "INVOICE",
+          "document": "<p>电子印章类型 , 可选类型如下: <ul><li><strong>OFFICIAL</strong>: 公章</li><li><strong>CONTRACT</strong>: 合同专用章;</li><li><strong>FINANCE</strong>: 财务专用章;</li><li><strong>PERSONNEL</strong>: 人事专用章</li><li><strong>INVOICE</strong>: 发票专用章</li><li><strong>LEGAL_PERSON_SEAL</strong>: 法定代表人章;</li><li><strong>EMPLOYEE_QUALIFICATION_SEAL</strong>: 员工执业章</li><li><strong>OTHER</strong>: 其他类型印章</li><li><strong>OTHER_XX</strong>: 其他印章子类型</li></ul>注:  <code>1.为空时查询所有类型的印章。</code><br>注:  <code>2.OTHER_XX该类型为其他印章子类型，如需使用，请联系对接客服申请开通。具体可传入的子类型值，需在申请开通后由客服提供。</code></p>",
+          "example": "[\"INVOICE\"]",
           "member": "string",
           "name": "SealTypes",
           "required": false,
@@ -5442,8 +5442,8 @@
         },
         {
           "disabled": false,
-          "document": "\n需查询的印章状态列表。\n\n<ul> <li>空，()仅查询启用状态的印章；</li> <li><strong>ALL</strong>，查询所有状态的印章；</li> <li><strong>CHECKING</strong>，查询待审核的印章；</li> <li><strong>SUCCESS</strong>，查询启用状态的印章；</li> <li><strong>FAIL</strong>，查询印章审核拒绝的印章；</li> <li><strong>DISABLE</strong>，查询已停用的印章；</li> <li><strong>STOPPED</strong>，查询已终止的印章；</li> <li><strong>VOID</strong>，查询已作废的印章；</li> <li><strong>INVALID</strong>，查询已失效的印章。</li> </ul>",
-          "example": "ALL",
+          "document": "<p>需查询的印章状态列表。</p><ul> <li>空，()仅查询启用状态的印章；</li> <li><strong>ALL</strong>，查询所有状态的印章；</li> <li><strong>CHECKING</strong>，查询待审核的印章；</li> <li><strong>SUCCESS</strong>，查询启用状态的印章；</li> <li><strong>FAIL</strong>，查询印章审核拒绝的印章；</li> <li><strong>DISABLE</strong>，查询已停用的印章；</li> <li><strong>STOPPED</strong>，查询已终止的印章；</li> <li><strong>VOID</strong>，查询已作废的印章；</li> <li><strong>INVALID</strong>，查询已失效的印章。</li> </ul>",
+          "example": "[\"ALL\"]",
           "member": "string",
           "name": "SealStatuses",
           "required": false,
@@ -5457,7 +5457,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "在设定了SealId时，返回值为0或1；若未设定SealId，则返回公司的总印章数量",
+          "document": "<p>在设定了SealId时，返回值为0或1；若未设定SealId，则返回公司的总印章数量</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -5467,7 +5467,7 @@
         },
         {
           "disabled": false,
-          "document": "查询到的印章结果数组",
+          "document": "<p>查询到的印章结果数组</p>",
           "example": "无",
           "member": "OccupiedSeal",
           "name": "Seals",
@@ -8602,7 +8602,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同的发起企业和发起人信息，<a href=\"https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png\" target=\"_blank\">点击查看合同发起企业和人展示的位置</a>\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png\" target=\"_blank\">Agent.AppId</a></li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li>\n</ul>",
+          "document": "<p>合同的发起企业和发起人信息，<a href=\"https://qcloudimg.tencent-cloud.cn/raw/b69f8aad306c40b7b78d096e39b2edbb.png\" target=\"_blank\">点击查看合同发起企业和人展示的位置</a></p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png\" target=\"_blank\">Agent.AppId</a></li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（合同的发起企业）</li><li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （合同的发起人）</li></ul>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -8611,7 +8611,7 @@
         },
         {
           "disabled": false,
-          "document": "要创建的合同信息列表，最多支持一次创建20个合同",
+          "document": "<p>要创建的合同信息列表，最多支持一次创建20个合同</p>",
           "example": "无",
           "member": "FlowInfo",
           "name": "FlowInfos",
@@ -8620,7 +8620,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为预览模式，取值如下：\n<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>\n<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。 <font color=\"red\">注意： 以预览模式创建的合同仅供查看，因此参与方无法进行签署操作</font></li></ul>\n\n注:\n\n`如果预览的文件中指定了动态表格控件，此时此接口返回的是合成前的文档预览链接，合成完成后的文档预览链接需要通过回调通知的方式或使用返回的TaskInfo中的TaskId通过ChannelGetTaskResultApi接口查询得到`\n",
+          "document": "<p>是否为预览模式，取值如下：</p><ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li><li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。 <font color=\"red\">注意： 以预览模式创建的合同仅供查看，因此参与方无法进行签署操作</font></li></ul><p><strong>注1</strong>: 如果预览的文件中指定了动态表格控件，此时此接口返回的是合成前的文档预览链接，合成完成后的文档预览链接需要通过回调通知的方式或使用返回的TaskInfo中的TaskId通过ChannelGetTaskResultApi接口查询得到</p><p><strong>注2</strong>: 预览服务按照合同份额 1:2的比例赠送预览次数。例如：购买 100 份合同，将赠送 200 次合同预览额度。当赠送的预览额度使用完后，如需继续使用预览服务，则需要单独购买预览服务额度。</p>",
           "example": "false",
           "member": "bool",
           "name": "NeedPreview",
@@ -8629,7 +8629,7 @@
         },
         {
           "disabled": false,
-          "document": "预览模式下产生的预览链接类型 \n<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>\n<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>\n注: `此参数在NeedPreview 为true时有效`\n",
+          "document": "<p>预览模式下产生的预览链接类型 </p><ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li><li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>注: <code>此参数在NeedPreview 为true时有效</code>",
           "example": "0",
           "member": "int64",
           "name": "PreviewType",
@@ -8638,7 +8638,7 @@
         },
         {
           "disabled": true,
-          "document": "操作者的信息，不用传",
+          "document": "<p>操作者的信息，不用传</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -8653,7 +8653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的合同流程ID数组，合同流程ID为32位字符串。\n建议开发者妥善保存此流程ID数组，以便于顺利进行后续操作。\n\n[点击产看FlowId在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)",
+          "document": "<p>生成的合同流程ID数组，合同流程ID为32位字符串。<br>建议开发者妥善保存此流程ID数组，以便于顺利进行后续操作。</p><p><a href=\"https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png\">点击产看FlowId在控制台上的位置</a></p>",
           "example": "[\"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\"yDwFmUUckpst10i3UubBSat8PWOt2iQF\"]",
           "member": "string",
           "name": "FlowIds",
@@ -8663,8 +8663,8 @@
         },
         {
           "disabled": false,
-          "document": "第三方应用平台的业务信息, 与创建合同的FlowInfos数组中的CustomerData一一对应",
-          "example": "eyJpZCI6ImNvbWVmIiwibmFtZSI6IuWRseWRseWPqyJ9",
+          "document": "<p>第三方应用平台的业务信息, 与创建合同的FlowInfos数组中的CustomerData一一对应</p>",
+          "example": "[\"yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR\"]",
           "member": "string",
           "name": "CustomerData",
           "output_required": true,
@@ -8673,7 +8673,7 @@
         },
         {
           "disabled": false,
-          "document": "创建消息，对应多个合同ID，\n成功为“”,创建失败则对应失败消息",
+          "document": "<p>创建消息，对应多个合同ID，<br>成功为“”,创建失败则对应失败消息</p>",
           "example": "[\"缺少用户信息\",\"缺少手机信息\"]",
           "member": "string",
           "name": "ErrorMessages",
@@ -8683,7 +8683,7 @@
         },
         {
           "disabled": false,
-          "document": "合同预览链接URL数组。\n\n注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL\n如果预览的文件中指定了动态表格控件，此时此接口返回的是合成前的文档预览链接，合成完成后的文档预览链接需要通过[合同文档合成完成回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E5%8D%81%E4%B8%80-%E5%90%88%E5%90%8C%E6%96%87%E6%A1%A3%E5%90%88%E6%88%90%E5%AE%8C%E6%88%90%E5%9B%9E%E8%B0%83)获取或使用返回的TaskInfo中的TaskId通过[查询转换任务状态\n](https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi)接口查询得到",
+          "document": "<p>合同预览链接URL数组。</p><p>注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL<br>如果预览的文件中指定了动态表格控件，此时此接口返回的是合成前的文档预览链接，合成完成后的文档预览链接需要通过<a href=\"https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E5%8D%81%E4%B8%80-%E5%90%88%E5%90%8C%E6%96%87%E6%A1%A3%E5%90%88%E6%88%90%E5%AE%8C%E6%88%90%E5%9B%9E%E8%B0%83\">合同文档合成完成回调</a>获取或使用返回的TaskInfo中的TaskId通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\">查询转换任务状态</a>接口查询得到</p>",
           "example": "[\"https://test.ess.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDwqoUUcKny&codeType=QUICK&businessType=RESOURCE&businessId=yDwqcUUck\"]",
           "member": "string",
           "name": "PreviewUrls",
@@ -8693,7 +8693,7 @@
         },
         {
           "disabled": false,
-          "document": "复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；\n如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；",
+          "document": "<p>复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；<br>如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；</p>",
           "example": "无",
           "member": "TaskInfo",
           "name": "TaskInfos",
@@ -8703,7 +8703,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方信息，如角色ID、角色名称等",
+          "document": "<p>签署方信息，如角色ID、角色名称等</p>",
           "example": "无",
           "member": "FlowApproverItem",
           "name": "FlowApprovers",
@@ -9229,6 +9229,15 @@
           "example": "circle",
           "member": "string",
           "name": "SealStyle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>  印章其他子类型。仅当 <code>SealType=OTHER</code> 且 <code>GenerateSource=SealGenerateSourceSystem</code> 时生效（ <font color=\"red\">不支持图片上传方式创建子类型印章</font>）。<br> <b>注1：</b>调用时请勿传入 <code>SealHorizontalText</code> 字段，系统将自动使用子印章类型名称填充该字段。<br>  <b>注2：</b>本字段为白名单受控功能。如需使用，请联系客服开通并获取支持的子类型枚举值。</p>",
+          "example": "OTHER_58",
+          "member": "string",
+          "name": "SubSealType",
           "required": false,
           "type": "string"
         },

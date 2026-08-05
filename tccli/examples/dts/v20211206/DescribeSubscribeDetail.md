@@ -6,61 +6,104 @@ Input:
 
 ```
 tccli dts DescribeSubscribeDetail --cli-unfold-argument  \
-    --SubscribeId subs-0b2up6hk4u
+    --SubscribeId subs-p383pfn0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Region": "ap-guangzhou",
         "AccessType": "cdb",
-        "AutoRenewFlag": 0,
-        "Broker": "guangzhoutest-kafka-3.cdb-dts.tencentcs.com.cn:32339",
-        "CreateTime": "2023-12-06 14:31:27",
+        "AutoRenewFlag": 1,
+        "Broker": "21.84.0.234:9092",
+        "ConsumerSubnetId": "subnet-hyscbnec",
+        "ConsumerVpcId": "vpc-gvemho5j",
+        "CreateTime": "2026-07-28 19:38:57",
         "Endpoints": [
             {
+                "CcnId": "",
+                "CcnOwnerUin": "",
+                "ChildInstanceId": "",
+                "ChildInstanceType": "",
+                "CvmInstanceId": "",
+                "DatabaseNetEnv": "",
                 "DatabaseRegion": "ap-guangzhou",
-                "EncryptConn": "UnEncrypted",
-                "InstanceId": "cdb-kdxona7h",
-                "User": "root"
+                "EncryptConn": "",
+                "ExtraAttr": [],
+                "HostName": "",
+                "InstanceId": "tdsqlshard-dg58wo8z",
+                "Password": "",
+                "Port": 0,
+                "SubnetId": "",
+                "UniqDcgId": "",
+                "UniqVpnGwId": "",
+                "User": "user_00",
+                "VpcId": ""
             }
         ],
-        "ExpireTime": "0000-00-00 00:00:00",
-        "InstanceId": "cdb-kdxona7h",
+        "Errors": null,
+        "ExpireTime": "2026-08-28 19:38:57",
+        "ExtraAttr": [],
+        "InstanceClass": "small",
+        "InstanceId": "tdsqlshard-dg58wo8z",
         "InstanceStatus": "running",
         "IsolateTime": "0000-00-00 00:00:00",
         "KafkaConfig": {
-            "DistributeRules": [
-                {
-                    "DbPattern": "db1",
-                    "RuleType": "cols",
-                    "TablePattern": "table1",
-                    "Columns": [
-                        "id"
-                    ]
-                },
-                {
-                    "DbPattern": ".*",
-                    "RuleType": "table",
-                    "TablePattern": ".*",
-                    "Columns": []
-                }
-            ],
-            "NumberOfPartitions": 8
+            "DefaultRuleType": "",
+            "DistributeRules": [],
+            "NumberOfPartitions": 0
         },
-        "ModifyTime": "2023-12-06 14:33:47",
-        "OfflineTime": "0000-00-00 00:00:00",
+        "KafkaVersion": "2.8.1",
+        "ModifyTime": "2026-08-05 16:35:33",
+        "OfflineTime": "2026-09-04 19:38:57",
         "PayType": 0,
-        "Product": "mysql",
-        "Protocol": "json",
+        "PipelineInfo": [],
+        "Product": "tdsqlpercona",
+        "Protocol": "",
+        "Region": "ap-guangzhou",
+        "RequestId": "3c417b08-e79d-473a-9de6-8ce0883df94e",
         "Status": "normal",
         "SubsStatus": "running",
-        "SubscribeId": "subs-0b2up6hk4u",
-        "SubscribeName": "binlog订阅",
-        "SubscribeMode": "all",
-        "Topic": "topic-subs-0b2up6hk4u-cdb-kdxona7h",
-        "RequestId": "7bd11a40-9406-11ee-9689-216abbbe2107"
+        "SubscribeId": "subs-p383pfn0",
+        "SubscribeMode": "dml",
+        "SubscribeName": "jf-order-center-new-cluster",
+        "SubscribeObjects": [
+            {
+                "Database": "order_center",
+                "ObjectType": "table",
+                "Tables": [
+                    "deal"
+                ]
+            }
+        ],
+        "SubscribeVersion": "kafkaPro",
+        "Tags": [
+            {
+                "TagKey": "备份负责人",
+                "TagValue": "leohlliu"
+            },
+            {
+                "TagKey": "二级业务",
+                "TagValue": "[交易][order_center]_1230743"
+            },
+            {
+                "TagKey": "一级业务",
+                "TagValue": "[N][腾讯云计费产品其它]_979685"
+            },
+            {
+                "TagKey": "负责人",
+                "TagValue": "shaynefei"
+            },
+            {
+                "TagKey": "运营产品",
+                "TagValue": "腾讯云计费产品其它_1649"
+            },
+            {
+                "TagKey": "运营部门",
+                "TagValue": "计费产品中心_1013"
+            }
+        ],
+        "Topic": "topic-subs-p383pfn0"
     }
 }
 ```

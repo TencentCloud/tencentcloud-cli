@@ -1,12 +1,12 @@
-**Example 1: 获取数据订阅的消费组**
+**Example 1: 查询某个订阅任务的消费组**
 
-获取数据订阅的消费组
+
 
 Input: 
 
 ```
 tccli dts DescribeConsumerGroups --cli-unfold-argument  \
-    --SubscribeId subs-9jyki7hniw
+    --SubscribeId subs-p383pfn0
 ```
 
 Output: 
@@ -15,68 +15,39 @@ Output:
     "Response": {
         "Items": [
             {
-                "Account": "account-subs-47damshnra-3",
-                "ConsumerGroupLag": 464948,
-                "ConsumerGroupName": "consumer-grp-subs-47damshnra-3",
-                "ConsumerGroupOffset": -1,
-                "ConsumerGroupState": "Dead",
-                "CreatedAt": "2022-03-25 17:31:31",
-                "Description": "sdfjo",
-                "Latency": 528268,
-                "PartitionAssignment": [],
+                "Account": "account-subs-p383pfn0-order-system-distributer",
+                "ConsumerGroupLag": 0,
+                "ConsumerGroupName": "consumer-grp-subs-p383pfn0-order-system-distributer",
+                "ConsumerGroupOffset": 626960429,
+                "ConsumerGroupState": "Stable",
+                "CreatedAt": "2026-07-31 11:12:50",
+                "Description": "order-system-distributer",
+                "Latency": 0,
+                "PartitionAssignment": [
+                    {
+                        "ClientId": "consumer-consumer-grp-subs-p383pfn0-order-system-distributer-2",
+                        "PartitionNo": []
+                    },
+                    {
+                        "ClientId": "consumer-consumer-grp-subs-p383pfn0-order-system-distributer-1",
+                        "PartitionNo": [
+                            0
+                        ]
+                    }
+                ],
                 "StateOfPartition": [
                     {
-                        "ConsumerGroupLag": 464948,
-                        "ConsumerGroupOffset": -1,
-                        "Latency": 528268,
+                        "ConsumerGroupLag": 0,
+                        "ConsumerGroupOffset": 626960429,
+                        "Latency": 0,
                         "PartitionNo": 0
                     }
                 ],
-                "UpdatedAt": "2022-03-25 17:31:31"
-            },
-            {
-                "Account": "account-subs-47damshnra-2",
-                "ConsumerGroupLag": 464948,
-                "ConsumerGroupName": "consumer-grp-subs-47damshnra-2",
-                "ConsumerGroupOffset": -1,
-                "ConsumerGroupState": "Dead",
-                "CreatedAt": "2022-03-22 17:34:31",
-                "Description": "sdfjo",
-                "Latency": 528268,
-                "PartitionAssignment": [],
-                "StateOfPartition": [
-                    {
-                        "ConsumerGroupLag": 464948,
-                        "ConsumerGroupOffset": -1,
-                        "Latency": 528268,
-                        "PartitionNo": 0
-                    }
-                ],
-                "UpdatedAt": "2022-03-22 17:34:31"
-            },
-            {
-                "Account": "account-subs-47damshnra-1",
-                "ConsumerGroupLag": 464948,
-                "ConsumerGroupName": "consumer-grp-subs-47damshnra-1",
-                "ConsumerGroupOffset": -1,
-                "ConsumerGroupState": "Dead",
-                "CreatedAt": "2022-03-04 15:14:18",
-                "Description": "sdfjo",
-                "Latency": 528268,
-                "PartitionAssignment": [],
-                "StateOfPartition": [
-                    {
-                        "ConsumerGroupLag": 464948,
-                        "ConsumerGroupOffset": -1,
-                        "Latency": 528268,
-                        "PartitionNo": 0
-                    }
-                ],
-                "UpdatedAt": "2022-03-04 15:14:18"
+                "UpdatedAt": "2026-07-31 11:12:50"
             }
         ],
-        "RequestId": "68c04ba0-b0d8-11ec-98f5-11f9ac4a2e37",
-        "TotalCount": 3
+        "RequestId": "4d0c123d-11a3-4b7b-b4d5-861bd763038e",
+        "TotalCount": 1
     }
 }
 ```

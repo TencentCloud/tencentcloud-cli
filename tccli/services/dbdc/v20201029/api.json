@@ -1003,6 +1003,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点绑定的安全组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-npc8gt3f\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1437,6 +1447,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点绑定的安全组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-4aa1cvuv\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

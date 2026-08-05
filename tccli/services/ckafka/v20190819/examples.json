@@ -198,6 +198,14 @@
         "title": "成功请求"
       }
     ],
+    "CreateThrottleRule": [
+      {
+        "document": "创建实例限流规则接口",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateThrottleRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-o9gv345o\",\n    \"GroupNameList\": [\n        \"test5\"\n    ],\n    \"ConsumeThrottle\": 15,\n    \"ThrottleType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58d37b32-3288-4856-b539-3c7c399b74f9\",\n        \"Result\": {\n            \"Data\": {\n                \"FlowId\": 0\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"apply ok\"\n        }\n    }\n}",
+        "title": "创建实例限流规则接口"
+      }
+    ],
     "CreateToken": [
       {
         "document": "生产的时候clentId带上token 可以绕过acl(需要提工单升级broker版本)",
@@ -316,6 +324,14 @@
         "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteRouteTriggerTime\n&InstanceId='ckafka-xxx'\n&DelayTime='2020-08-21 11:15:54'\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"91b6b112-7f0a-4e18-b353-5202bcafd2c2\"\n    }\n}",
         "title": "修改路由触发时间"
+      }
+    ],
+    "DeleteThrottleRule": [
+      {
+        "document": "删除实例消费组限流接口",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteThrottleRule\n<公共请求参数>\n\n{\n    \"ThrottleRuleId\": \"1\",\n    \"InstanceId\": \"ckafka-o9gv345o\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c7d2d0d-b636-4eba-8c21-31ef7be54820\",\n        \"Result\": {\n            \"Data\": {\n                \"FlowId\": 0\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"apply ok\"\n        }\n    }\n}",
+        "title": "删除实例消费组限流"
       }
     ],
     "DeleteTopic": [
@@ -542,6 +558,14 @@
         "title": "查询任务状态"
       }
     ],
+    "DescribeThrottleRules": [
+      {
+        "document": "查询实例消费组限流规则接口",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeThrottleRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-o9gv345o\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d225d275-a152-4d35-ae9e-529b024a609c\",\n        \"Result\": {\n            \"ThrottleRuleList\": [\n                {\n                    \"ClientId\": \"test3\",\n                    \"ConsumeThrottle\": 10,\n                    \"ThrottleRuleId\": 2,\n                    \"UpdateTime\": \"2025-09-02 17:49:28\",\n                    \"UserName\": \"\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
+        "title": "查询实例消费组限流规则接口示例"
+      }
+    ],
     "DescribeTopic": [
       {
         "document": "",
@@ -756,6 +780,14 @@
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoutineMaintenanceTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-9jnejnb9\",\n    \"MaintenanceType\": \"RE_BALANCE\",\n    \"MaintenanceSubtype\": \"INSTANCE_PARTITION_RE_BALANCE\",\n    \"PlannedTime\": 79200,\n    \"Status\": 1,\n    \"Week\": \"1,2,3,4,5,6,7\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"success\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"fcfb7c89-3973-44f1-9a3e-a2811c67434e\"\n    }\n}",
         "title": "设置实例属性"
+      }
+    ],
+    "ModifyThrottleRule": [
+      {
+        "document": "修改实例限流规则接口",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyThrottleRule\n<公共请求参数>\n\n{\n    \"ThrottleRuleId\": 2,\n    \"InstanceId\": \"ckafka-o9gv345o\",\n    \"ConsumeThrottle\": 13\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8beb3efd-9451-44ee-b975-6b61d266f5af\",\n        \"Result\": {\n            \"Data\": null,\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"success\"\n        }\n    }\n}",
+        "title": "修改实例限流规则接口"
       }
     ],
     "ModifyTopicAttributes": [

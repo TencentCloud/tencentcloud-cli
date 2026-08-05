@@ -10503,7 +10503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "默认值",
+          "document": "<p>默认值</p>",
           "example": "0.7",
           "member": "string",
           "name": "DefaultValue",
@@ -10513,8 +10513,8 @@
         },
         {
           "disabled": false,
-          "document": "可选值列表",
-          "example": "[]",
+          "document": "<p>可选值列表</p>",
+          "example": "[\"\\\"enabled\\\",\\\"disabled\\\"\"]",
           "member": "string",
           "name": "EnumValueList",
           "output_required": false,
@@ -10523,7 +10523,7 @@
         },
         {
           "disabled": false,
-          "document": "最大值（仅数值类型有效）",
+          "document": "<p>最大值（仅数值类型有效）</p>",
           "example": "1.0",
           "member": "float",
           "name": "MaxValue",
@@ -10533,7 +10533,7 @@
         },
         {
           "disabled": false,
-          "document": "最小值（仅数值类型有效）",
+          "document": "<p>最小值（仅数值类型有效）</p>",
           "example": "0.0",
           "member": "float",
           "name": "MinValue",
@@ -10543,7 +10543,7 @@
         },
         {
           "disabled": false,
-          "document": "超参名称",
+          "document": "<p>超参名称</p>",
           "example": "temperature",
           "member": "string",
           "name": "Name",
@@ -10553,7 +10553,7 @@
         },
         {
           "disabled": false,
-          "document": "超参类型。1-浮点数, 2-整数, 3-字符串",
+          "document": "<p>超参类型。1-浮点数, 2-整数, 3-字符串</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",

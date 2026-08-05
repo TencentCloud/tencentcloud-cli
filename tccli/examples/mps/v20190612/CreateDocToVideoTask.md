@@ -12,7 +12,8 @@ tccli mps CreateDocToVideoTask --cli-unfold-argument  \
     --Input.ModelVersion 1.0 \
     --Input.Ratio 16:9 \
     --Input.Language zh \
-    --Input.EnableTTS True
+    --Input.EnableTTS True \
+    --ResourceId vts-********-1
 ```
 
 Output: 

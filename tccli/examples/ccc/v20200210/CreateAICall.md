@@ -15,7 +15,8 @@ tccli ccc CreateAICall --cli-unfold-argument  \
     --APIKey sk-proj-xxxxx \
     --APIUrl https://api.openai.com/v1/ \
     --VoiceType ZhiXi \
-    --EndFunctionEnable True
+    --EndFunctionEnable True \
+    --CustomSTTConfig {"STTType":"trtc","AppId":"1300168489","SecretId":"************************************","SecretKey":"********************************"}
 ```
 
 Output: 

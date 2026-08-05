@@ -851,6 +851,75 @@
       ],
       "usage": "in"
     },
+    "AgoraParam": {
+      "document": "声网拉流参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>声网提供的应用标识</p>",
+          "example": "76a6688760654a30a7f33851cd1c16f2",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声网提供的频道名</p>",
+          "example": "314765",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声网录制的频道模式， 可选值如下：（默认值为0） 0: 通信（默认）,即常见的 1 对 1 单聊或群聊， 频道内任何用户可以自由说话； 1: 直播，有两种用户角色: 主播和观众。</p><p>枚举值：</p><ul><li>0:： 通信（默认）</li><li>1： 直播</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelProfile",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定频道生成的临时Token</p>",
+          "example": "007eJxTYAh3nOqkU2dtG/reQYZhmoJpzpqjn/duZXWZzKZgftjdKkiBwdws0czMwsLczMDM1CTR2CDRPM3Y2MLUMDnFMNnQLM2Id3dhVkMgI8PNe7oMjFAI4rMxGBuamJuZMjAAADfvGuM=",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID</p>",
+          "example": "1234213",
+          "member": "uint64",
+          "name": "Uid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>信任用户的列表</p>",
+          "example": "[43221]",
+          "member": "uint64",
+          "name": "TrustedUserIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非信任用户的列表</p>",
+          "example": "[43221]",
+          "member": "uint64",
+          "name": "UntrustedUserIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "AlignmentItem": {
       "document": "字幕对齐",
       "members": [
@@ -2002,7 +2071,7 @@
           "example": "*********rtmp-test",
           "member": "string",
           "name": "DataId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5130,7 +5199,7 @@
           "example": "rtmp://43**7*.*5*.79/pull/rtmp_test?sdkappid=1404311&userid=inspecuse*sig=eJwsjt8KgjAUh9-l3BZyphv",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5141,6 +5210,15 @@
           "name": "Format",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声网拉流进房参数</p>",
+          "example": "无",
+          "member": "AgoraParam",
+          "name": "AgoraParam",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"

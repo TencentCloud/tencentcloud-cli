@@ -699,6 +699,13 @@
       "name": "修改文档型数据库表索引信息",
       "output": "UpdateTableResponse",
       "status": "online"
+    },
+    "VerifyHTTPServiceRoute": {
+      "document": "覆盖的校验项包括：\n1. Ownership：域名所有权（TXT/CNAME 记录）；\n2. Cert：证书与域名匹配（CertId 为空时跳过）；\n3. Quota：环境下域名/路径数量配额；\n4. RouteConflict：同域名下路由路径冲突；\n5. DomainConflict：域名被其他环境占用；\n6. InternalAccount：内部域名且非内部账号；\n7. Blacklist：域名黑名单；\n8. CDNResource：AccessType=CDN 时 CDN 资源存在性 / 状态（含 ICP 未备案提示）；\n9. EO：AccessType=EO 时 EdgeOne 侧域名冲突 / 备案 / 归属权预检。\n\n使用方式：\n- 调用本接口前置校验，若 Passed=true 表示所有启用检查项均通过，可继续调用 CreateHTTPServiceRoute 正式创建；\n- 若 Passed=false，前端应根据各 CheckItem 的 Code 精确渲染对应的错误提示与用户操作指引（如 DNS 归属权配置、ICP 备案指引等），用户修正参数后可重复调用本接口，直到通过后再进行创建。\n\n注意：本接口为只读 dry-run 操作，不落库、不创建任何资源，仅返回各项检查的详细结果。本接口通过不代表 CreateHTTPServiceRoute 必然成功（例如证书运行时状态、并发抢占等仍需创建时最终判定），但本接口不通过则 CreateHTTPServiceRoute 必然不通过。",
+      "input": "VerifyHTTPServiceRouteRequest",
+      "name": "校验HTTP访问服务路由",
+      "output": "VerifyHTTPServiceRouteResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -14611,6 +14618,188 @@
         }
       ],
       "usage": "both"
+    },
+    "VerifyHTTPServiceRouteCheckItem": {
+      "document": "VerifyHTTPServiceRoute单项前置校验结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检查状态</p><p>枚举值：</p><ul><li>PASS： 通过</li><li>SKIPPED： 跳过（无需校验，视为通过）</li><li>FAIL： 失败</li></ul><p>默认值：SKIPPED</p>",
+          "example": "FAIL",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>前置校验子项失败原因枚举，仅在 Status=FAIL 时有值，供前端根据 Code 精确渲染提示与操作指引</p><p>枚举值：</p><ul><li>INTERNAL_CHECK_ERROR： 预检过程中依赖服务/内部资源异常</li><li>OWNERSHIP_DNS_LOOKUP_FAILED： DNS解析失败</li><li>OWNERSHIP_VERIFY_FAILED： DNS记录内容与预期dns记录值不匹配</li><li>CERT_VERIFY_FAILED： 证书校验失败：不匹配当前域名 / 已过期 / 不属于当前 uin 等</li><li>QUOTA_EXCEEDED： 域名或路径数量超出配额限制</li><li>ROUTE_CONFLICT： 存在同域名下已被占用的路径，前端应提示用户修改路径</li><li>DOMAIN_IN_USE： 域名已被其他环境占用，无法在当前环境接入</li><li>NON_INTERNAL_ACCOUNT： 使用了内部域名但当前账号不是内部账号</li><li>DOMAIN_IN_BLACKLIST： 域名被列入黑名单，禁止接入</li><li>CDN_RESOURCE_PROCESSING： CDN 资源正处于变更中，需稍后重试</li><li>CDN_RESOURCE_OFFLINE： CDN 资源已下线，需重新上线后才能绑定</li><li>EO_OWNERSHIP_VERIFY_FAILED： EdgeOne 侧归属权未通过，响应体中 OwnershipVerification 会给出，EdgeOne要求配置的 DNS/文件 verification 指引</li><li>EO_DOMAIN_NOT_ICP： EdgeOne 检测到域名未备案</li><li>EO_DOMAIN_IN_USE： EdgeOne 检测到域名已被其他账号接入 EdgeOne</li></ul>",
+          "example": "OWNERSHIP_VERIFY_FAILED",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>详细描述；Skipped 时给出跳过原因；Pass 时可为空</p>",
+          "example": "域名尚未备案",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名归属权验证指引信息，仅在所有权校验未通过时有值</p>",
+          "example": "无",
+          "member": "OwnershipVerificationInfo",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VerifyHTTPServiceRouteRequest": {
+      "document": "VerifyHTTPServiceRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "*****************-7ezncwdd421446",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名路由信息</p>",
+          "example": "无",
+          "member": "HTTPServiceDomainParam",
+          "name": "Domain",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyHTTPServiceRouteResponse": {
+      "document": "VerifyHTTPServiceRoute返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>前置校验总开关。所有启用的检查项均为 PASS 或 SKIPPED 时为 true，任一检查项为 FAIL 时为 false。当为 false 时，前端应根据各 CheckItem 的 Code 精确渲染错误提示和操作指引；当为 true 时可继续调用 CreateHTTPServiceRoute 完成创建。 示例值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Passed",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名归属权校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "Ownership",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书校验结果；CertId 为空时 Status=SKIPPED</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "Cert",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名/路径数量配额校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "Quota",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同域名下路由路径冲突校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "RouteConflict",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名被其他环境占用校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "DomainConflict",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内部域名且非内部账号校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "InternalAccount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名黑名单校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "Blacklist",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AccessType=CDN 时 CDN 资源存在性 / 状态校验结果（含 ICP 未备案的提示）</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "CDNResource",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AccessType=EO 时的 EdgeOne 预检结果（域名冲突/备案/归属权）</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "EO",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VmInstance": {
       "document": "云主机实例",

@@ -141,7 +141,7 @@
       "status": "online"
     },
     "CreateDocToVideoTask": {
-      "document": "创建 AiGC 文档生成视频任务",
+      "document": "创建 AIGC 文档生成视频任务\n（使用 DescribeAigcTaskStatus 接口进行任务查询）",
       "input": "CreateDocToVideoTaskRequest",
       "name": "创建AIGC文档生视频任务",
       "output": "CreateDocToVideoTaskResponse",
@@ -5303,6 +5303,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>抠图模型选择，可不填。</p><p>枚举值：</p><ul><li>auto： 自动选择合适的模型</li><li>WAND-cutout-1.0-lite： 标准版，速度最快</li><li>WAND-cutout-2.0-lite： 增强版，速度最快</li><li>WAND-cutout-2.0-flash： 增强版，质量-速度平衡</li></ul>",
+          "example": "WAND-cutout-1.0-lite",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -13563,6 +13574,15 @@
           "name": "CosInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>",
+          "example": "vts-********-1",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

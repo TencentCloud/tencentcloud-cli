@@ -266,6 +266,13 @@
       "output": "CreateInferenceModelResponse",
       "status": "online"
     },
+    "CreateInferenceService": {
+      "document": "创建推理服务（含默认部署）",
+      "input": "CreateInferenceServiceRequest",
+      "name": "创建推理服务",
+      "output": "CreateInferenceServiceResponse",
+      "status": "online"
+    },
     "CreateInternalTable": {
       "document": "创建托管存储内表（该接口已废弃）",
       "input": "CreateInternalTableRequest",
@@ -292,6 +299,13 @@
       "input": "CreateMetaDatabaseRequest",
       "name": "创建元数据库",
       "output": "CreateMetaDatabaseResponse",
+      "status": "online"
+    },
+    "CreateModelVersion": {
+      "document": "创建模型新版本",
+      "input": "CreateModelVersionRequest",
+      "name": "创建模型新版本",
+      "output": "CreateModelVersionResponse",
       "status": "online"
     },
     "CreateNotebookSession": {
@@ -1302,6 +1316,13 @@
       "output": "GetInferenceModelResponse",
       "status": "online"
     },
+    "GetInferenceService": {
+      "document": "获取单个推理服务详情",
+      "input": "GetInferenceServiceRequest",
+      "name": "获取单个推理服务详情",
+      "output": "GetInferenceServiceResponse",
+      "status": "online"
+    },
     "GetJobSpec": {
       "document": "根据配置ID获取作业配置详情",
       "input": "GetJobSpecRequest",
@@ -1356,6 +1377,27 @@
       "input": "GetLabYamlRequest",
       "name": "获取实验室对应的RayCluster YAML内容",
       "output": "GetLabYamlResponse",
+      "status": "online"
+    },
+    "GetModelConfig": {
+      "document": "获取模型 config.json 配置（默认最新版本）",
+      "input": "GetModelConfigRequest",
+      "name": "获取模型config",
+      "output": "GetModelConfigResponse",
+      "status": "online"
+    },
+    "GetModelFiles": {
+      "document": "获取模型文件树（默认最新版本）",
+      "input": "GetModelFilesRequest",
+      "name": "获取模型文件树",
+      "output": "GetModelFilesResponse",
+      "status": "online"
+    },
+    "GetModelReadme": {
+      "document": "获取模型 README 信息（默认最新版本）",
+      "input": "GetModelReadmeRequest",
+      "name": "获取模型README",
+      "output": "GetModelReadmeResponse",
       "status": "online"
     },
     "GetOptimizerPolicy": {
@@ -1519,11 +1561,25 @@
       "output": "ListExamplesResponse",
       "status": "online"
     },
+    "ListInferenceEngines": {
+      "document": "列出推理引擎",
+      "input": "ListInferenceEnginesRequest",
+      "name": "列出推理引擎及其信息",
+      "output": "ListInferenceEnginesResponse",
+      "status": "online"
+    },
     "ListInferenceModels": {
       "document": "列出推理模型（支持关键词过滤 + 分页）",
       "input": "ListInferenceModelsRequest",
       "name": "列出推理模型",
       "output": "ListInferenceModelsResponse",
+      "status": "online"
+    },
+    "ListInferenceServices": {
+      "document": "列出推理服务（支持关键词和状态过滤 + 分页）",
+      "input": "ListInferenceServicesRequest",
+      "name": "列出推理服务",
+      "output": "ListInferenceServicesResponse",
       "status": "online"
     },
     "ListJobSpecs": {
@@ -1545,6 +1601,13 @@
       "input": "ListLabsRequest",
       "name": "列出实验室",
       "output": "ListLabsResponse",
+      "status": "online"
+    },
+    "ListModelVersions": {
+      "document": "列出模型所有版本",
+      "input": "ListModelVersionsRequest",
+      "name": "列出模型所有版本",
+      "output": "ListModelVersionsResponse",
       "status": "online"
     },
     "ListRayClusterJobs": {
@@ -1694,11 +1757,32 @@
       "output": "PauseStandardEngineResourceGroupsResponse",
       "status": "online"
     },
+    "QueryDashboardOverview": {
+      "document": "返回指定时间范围内所有推理服务的聚合 KPI 值。",
+      "input": "QueryDashboardOverviewRequest",
+      "name": "查询监控大盘概览 KPI",
+      "output": "QueryDashboardOverviewResponse",
+      "status": "online"
+    },
+    "QueryDashboardServiceList": {
+      "document": "查询监控大盘服务列表",
+      "input": "QueryDashboardServiceListRequest",
+      "name": "查询监控大盘服务列表",
+      "output": "QueryDashboardServiceListResponse",
+      "status": "online"
+    },
     "QueryInternalTableWarehouse": {
       "document": "本接口（QueryInternalTableWarehouse）用于获取原生表warehouse路径",
       "input": "QueryInternalTableWarehouseRequest",
       "name": "获取原生表warehouse路径",
       "output": "QueryInternalTableWarehouseResponse",
+      "status": "online"
+    },
+    "QueryMonitorOverview": {
+      "document": "查询监控概览数据（瞬时值）",
+      "input": "QueryMonitorOverviewRequest",
+      "name": "查询监控概览数据（瞬时值）",
+      "output": "QueryMonitorOverviewResponse",
       "status": "online"
     },
     "QueryResult": {
@@ -1743,6 +1827,13 @@
       "output": "RestartDataEngineResponse",
       "status": "online"
     },
+    "RestartInferenceService": {
+      "document": "重启推理服务（操作所有部署）。",
+      "input": "RestartInferenceServiceRequest",
+      "name": "重启推理服务",
+      "output": "RestartInferenceServiceResponse",
+      "status": "online"
+    },
     "RevokeDLCCatalogAccess": {
       "document": "撤销DLC Catalog访问权限",
       "input": "RevokeDLCCatalogAccessRequest",
@@ -1783,6 +1874,13 @@
       "input": "StartRayClusterRequest",
       "name": "启动集群",
       "output": "StartRayClusterResponse",
+      "status": "online"
+    },
+    "StopInferenceService": {
+      "document": "停止推理服务（操作所有部署）。",
+      "input": "StopInferenceServiceRequest",
+      "name": "停止推理服务",
+      "output": "StopInferenceServiceResponse",
       "status": "online"
     },
     "StopLab": {
@@ -4942,6 +5040,45 @@
       ],
       "usage": "both"
     },
+    "CpuSummaryItem": {
+      "document": "CPU resource summary item aggregated from all running deployments.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CPU 总核数（headCpu + cpu × replicas 的总和）</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCpuCores",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存总量（headMem + mem × replicas 的总和，单位 GB）</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "TotalMemoryGB",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中的副本总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Replicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateCHDFSBindingProductRequest": {
       "document": "CreateCHDFSBindingProduct请求参数结构体",
       "members": [
@@ -6375,6 +6512,446 @@
       ],
       "type": "object"
     },
+    "CreateInferenceServiceRequest": {
+      "document": "CreateInferenceService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务名称</p>",
+          "example": "xxxteste",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 UID（业务级唯一标识）</p>",
+          "example": "m-qwen2-5-6a1d83a2-db4d",
+          "member": "string",
+          "name": "ModelUid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理引擎（vllm / xgboost）</p>",
+          "example": "vllm",
+          "member": "string",
+          "name": "Engine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>副本数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源分区 ID（目标 K8s 集群分区）</p>",
+          "example": "dlc-p-mghaaeha",
+          "member": "string",
+          "name": "ResourcePartitionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray Serve 部署镜像</p>",
+          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:3.0.0.dev0-py311-cu125-extra-xgboost",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>",
+          "example": "m-qwen2-5-1234567",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名（K8s namespace）</p>",
+          "example": "default",
+          "member": "string",
+          "name": "Queue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署名称（可选，未提供时自动生成）</p>",
+          "example": "test-dep-01",
+          "member": "string",
+          "name": "DeploymentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本（如 v1, v2），未提供时使用最新版本</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ray head 是否开始高可用（是否申请 redis 实例用于 head 连接）</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HeadHighAvailabilityEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级参数（JSON 字符串，可选）</p>",
+          "example": "{\"EngineArgs\":[{}],\"EnvVars\":[],\"ExtraFlags\":\"\",\"RayOptions\":[{\"key\":\"max_ongoing_requests\",\"value\":\"200\"}]}",
+          "member": "string",
+          "name": "AdvancedParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像拉取策略（默认 IfNotPresent）</p>",
+          "example": "IfNotPresent",
+          "member": "string",
+          "name": "ImagePullPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用弹性伸缩</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoscalingEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小副本数（启用弹性伸缩时生效，0 表示缩容到 0）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大副本数（启用弹性伸缩时生效）</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Autoscaler 配置（JSON 字符串）</p>",
+          "example": "{\"upscalingMode\":\"Aggressive\",\"idleTimeoutSeconds\":60,\"resourceSpec\":\"small\",\"resources\":{\"cpu\":\"500m\",\"memory\":\"512Mi\"}}",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ApiKeyIds</p>",
+          "example": "[\"apikey-migrated-00000003\"]",
+          "member": "string",
+          "name": "ApiKeyIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInferenceServiceResponse": {
+      "document": "CreateInferenceService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svc-20260606153737-53cr",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxteste",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型UID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-qwen2-5-6a1d83a2-db4d",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qwen2.5",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-qwen2-5-1234567",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联模型的类型（LLM / VLM / Embedding / Reranker / TTS / ASR / CV / NLP / ML）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LLM",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务状态（Running/Stopped/Deploying/Failed）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Deploying",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端点URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/xxxteste/v1",
+          "member": "string",
+          "name": "EndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>OpenAI 兼容统一入口 URL（通过 API-Key 路由，适用于 LLM/Embedding/Reranker）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/v1",
+          "member": "string",
+          "name": "UnifiedEndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>KServe V2 协议统一入口 URL（通过 API-Key + model name 路由，适用于 XGBoost 等传统 ML 模型）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443",
+          "member": "string",
+          "name": "UnifiedV2EndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>ray head 是否开启高可用</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HeadHighAvailabilityEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260200066",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主账号UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002655694",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1780731457322",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1780731457580",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DeploymentCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在至少一个运行中的部署</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HasRunningDeployment",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用 API-Key 鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否强制开启 API-Key 鉴权（生产环境为 true，不允许关闭）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthForceEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过 TLS 证书验证（自签证书场景，前端 curl 命令需加 -k 参数）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipTlsVerify",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>API Key 绑定结果（success 表示成功，其他为错误信息）</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ApiKeyBindMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子账号UIN（实际操作者）</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中部署的 CPU 资源汇总</p>",
+          "example": "无",
+          "member": "CpuSummaryItem",
+          "name": "CpuResourceSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配置（JSON 字符串，取自第一个部署）</p>",
+          "example": "{\"workerBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"headSpec\":1,\"gpu\":\"T4\",\"gpuNum\":1,\"cpu\":20,\"mem\":80,\"headCpu\":20,\"headMem\":80}",
+          "member": "string",
+          "name": "ResourceConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateInternalTableRequest": {
       "document": "CreateInternalTable请求参数结构体",
       "members": [
@@ -7584,6 +8161,159 @@
           "name": "TaskIdSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelVersionRequest": {
+      "document": "CreateModelVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型UID</p>",
+          "example": "m-xgboost-mao-6a2fc583-14cb",
+          "member": "string",
+          "name": "ModelUid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本号</p>",
+          "example": "v4",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本说明</p>",
+          "example": "test model, 7B",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>该版本的存储 URI（可选，如 cos://bucket-name/models/name/v2/）</p>",
+          "example": "cos://common-job-packages-251233710/models/",
+          "member": "string",
+          "name": "StorageUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用用户自带存储桶（默认 false 表示平台托管）</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UseCustomStorage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelVersionResponse": {
+      "document": "CreateModelVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "65",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该版本的存储 URI</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos://common-job-packages-251233710/models/",
+          "member": "string",
+          "name": "StorageUri",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本说明</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test model, 7B",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（毫秒时间戳）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781516236155",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（毫秒时间戳）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781516236155",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的推理服务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinkedServiceInfo",
+          "name": "LinkedServices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本号</p>",
+          "example": "v4",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用用户自带存储桶（true=用户自带桶，false=平台托管）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "UseCustomStorage",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -21859,6 +22589,67 @@
       ],
       "usage": "both"
     },
+    "EngineCapabilities": {
+      "document": "描述一个推理引擎的能力",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>GPU 是否可选</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "GpuOptional",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持并行配置</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportsParallelConfig",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持远程代码</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportsRemoteCode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 显存配置键名</p>",
+          "example": "gpu-memory-utilization",
+          "member": "string",
+          "name": "GpuMemoryKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>并行配置键名列表</p>",
+          "example": "无",
+          "member": "ParallelKeyMapping",
+          "name": "ParallelKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EngineNetworkInfo": {
       "document": "引擎网络信息",
       "members": [
@@ -22532,6 +23323,67 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FileNode": {
+      "document": "文件/目录节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件/目录名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "README.md",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点类型：file 或 directory</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "file",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小（字节），目录为 null</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6730",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子节点列表（仅目录有效）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileNode",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件最后修改时间（毫秒时间戳）</p><p>单位：ms</p>",
+          "example": "1781008616000",
+          "member": "int64",
+          "name": "LastModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -23525,6 +24377,283 @@
           "example": "system",
           "member": "string",
           "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInferenceServiceRequest": {
+      "document": "GetInferenceService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ServiceId</p>",
+          "example": "svc-20260609105932-vebf",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInferenceServiceResponse": {
+      "document": "GetInferenceService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ServiceId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svc-20260609105932-vebf",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-bge-v2-m3-test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型UID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-bge-reranker-v2-m3-6a223aba-2e20",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bge-reranker-v2-m3",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-bge-v2-m3",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联模型的类型（LLM / VLM / Embedding / Reranker / TTS / ASR / CV / NLP / ML）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Reranker",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务状态（Running/Stopped/Deploying/Failed）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端点URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/m-bge-v2-m3-test/v1",
+          "member": "string",
+          "name": "EndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>OpenAI 兼容统一入口 URL（通过 API-Key 路由，适用于 LLM/Embedding/Reranker）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/v1",
+          "member": "string",
+          "name": "UnifiedEndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>KServe V2 协议统一入口 URL（通过 API-Key + model name 路由，适用于 XGBoost 等传统 ML 模型）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443",
+          "member": "string",
+          "name": "UnifiedV2EndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260200066",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主账号UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002655694",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1780973972980",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1780989802316",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DeploymentCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在至少一个运行中的部署</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasRunningDeployment",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray Dashboard 访问地址（通过 Ingress 代理）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cls-p9d8s1gc.tcray-gateway.ap-guangzhou.cloud.tencent.com:443/dlc-p-zntmtydc/rayserve-20260615170317-5xex-dshzh/",
+          "member": "string",
+          "name": "RayDashboardUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用 API-Key 鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否强制开启 API-Key 鉴权（生产环境为 true，不允许关闭）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthForceEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过 TLS 证书验证（自签证书场景，前端 curl 命令需加 -k 参数）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipTlsVerify",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中部署的 GPU 资源汇总</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GpuSummaryItem",
+          "name": "GpuResourceSummary",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子账号UIN（实际操作者）</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中部署的 CPU 资源汇总</p>",
+          "example": "无",
+          "member": "CpuSummaryItem",
+          "name": "CpuResourceSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配置（JSON 字符串，取自第一个部署）</p>",
+          "example": "{\"workerBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"headSpec\":1,\"gpu\":\"T4\",\"gpuNum\":1,\"cpu\":20,\"mem\":80,\"headCpu\":1,\"headMem\":4}",
+          "member": "string",
+          "name": "ResourceConfig",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -24711,6 +25840,224 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelConfigRequest": {
+      "document": "GetModelConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型UID</p>",
+          "example": "m-bge-reranker-v2-m3-6a223aba-2e20",
+          "member": "string",
+          "name": "ModelUid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelConfigResponse": {
+      "document": "GetModelConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bge-reranker-v2-m3",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>config.json 原始内容（JSON 字符串）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{  \"_name_or_path\": \"BAAI/bge-m3\",  \"architectures\": [    \"XLMRobertaForSequenceClassification\"  ],  \"attention_probs_dropout_prob\": 0.1,   \"layer_norm_eps\": 1e-05,  \"vocab_size\": 250002}",
+          "member": "string",
+          "name": "ConfigJson",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelFilesRequest": {
+      "document": "GetModelFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型UID</p>",
+          "example": "m-xgboost-aaa-6a301c6f-17e6",
+          "member": "string",
+          "name": "ModelUid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelFilesResponse": {
+      "document": "GetModelFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "48",
+          "member": "int64",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xgboost_aaa",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件树根节点列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileNode",
+          "name": "Files",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelReadmeRequest": {
+      "document": "GetModelReadme请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型UID</p>",
+          "example": "m-xgboost-6a159272-99b2",
+          "member": "string",
+          "name": "ModelUid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelReadmeResponse": {
+      "document": "GetModelReadme返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xgboost",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供方</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "个人",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ML",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "string",
+          "name": "ParameterSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是内置模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "BuiltIn",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>README 内容（Markdown 格式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "# WeProduct-Large## 来源腾",
+          "member": "string",
+          "name": "Readme",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26511,6 +27858,11 @@
       ],
       "type": "object"
     },
+    "GpuSummaryItem": {
+      "document": "运行中部署的 GPU 资源汇总",
+      "members": [],
+      "usage": "both"
+    },
     "GrantDLCCatalogAccessRequest": {
       "document": "GrantDLCCatalogAccess请求参数结构体",
       "members": [
@@ -27099,6 +28451,111 @@
       ],
       "usage": "out"
     },
+    "InferenceEngineInfo": {
+      "document": "推理引擎具体信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>引擎标识符</p>",
+          "example": "vllm",
+          "member": "string",
+          "name": "EngineId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎名称</p>",
+          "example": "WeProduct",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎版本</p>",
+          "example": "v1.0",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎描述</p>",
+          "example": "腾讯自研商品图像 Embedding 模型，仅支持图片输入，支持多维度输出（768/384/256/128/64），适用于商品图像检索场景",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "[\"图像检索\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的模型类型</p>",
+          "example": "[\"Embedding\"]",
+          "member": "string",
+          "name": "ModelTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否独占，如果为 true，表示自定义模型看不到这个推理引擎，通常用于自研内置模型</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Exclusive",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎能力声明</p>",
+          "example": "无",
+          "member": "EngineCapabilities",
+          "name": "Capabilities",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InferenceModelInfo": {
       "document": "推理模型信息",
       "members": [
@@ -27350,6 +28807,298 @@
           "example": "700002655694",
           "member": "string",
           "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InferenceServiceInfo": {
+      "document": "推理服务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svc-20260610145259-6s6v",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-qwen3-5-4b-6a223aba-951c-svczwc",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ModelId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型UID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-weclip-v2-base-6a223aba-d1fc",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "weclip-v2-base",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-25",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-qwen3-5-4b-6a223aba-951c-v12",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联模型的类型（LLM / VLM / Embedding / Reranker / TTS / ASR / CV / NLP / ML）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TimeSeries",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务状态（Running/Stopped/Deploying/Failed）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Deploying",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端点URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/m-qwen3-5-4b-6a223aba-951c-svczwc/v1",
+          "member": "string",
+          "name": "EndpointUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>OpenAI 兼容统一入口 URL（通过 API-Key 路由，适用于 LLM/Embedding/Reranker）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/v1",
+          "member": "string",
+          "name": "UnifiedEndpointUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>KServe V2 协议统一入口 URL（通过 API-Key + model name 路由，适用于 XGBoost 等传统 ML 模型）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443",
+          "member": "string",
+          "name": "UnifiedV2EndpointUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260200066",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主账号UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002655694",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781074272540",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781074380029",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "DeploymentCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在至少一个运行中的部署</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasRunningDeployment",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray Dashboard 访问地址（通过 Ingress 代理）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cls-p9d8s1gc.tcray-gateway.ap-guangzhou.cloud.tencent.com:443/dlc-p-jhzmcfna/rayserve-20260609212201-pu9o-f654t/",
+          "member": "string",
+          "name": "RayDashboardUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用 API-Key 鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否强制开启 API-Key 鉴权（生产环境为 true，不允许关闭）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthForceEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过 TLS 证书验证（自签证书场景，前端 curl 命令需加 -k 参数）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipTlsVerify",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中部署的 GPU 资源汇总</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GpuSummaryItem",
+          "name": "GpuResourceSummary",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子账号UIN（实际操作者）</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中部署的 CPU 资源汇总</p>",
+          "example": "无",
+          "member": "CpuSummaryItem",
+          "name": "CpuResourceSummary",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配置（JSON 字符串，取自第一个部署）</p>",
+          "example": "{\"workerBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"workerSpec\":2,\"headBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"headSpec\":1,\"gpu\":\"\",\"gpuNum\":0,\"cpu\":2,\"mem\":8,\"headCpu\":1,\"headMem\":4}",
+          "member": "string",
+          "name": "ResourceConfig",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -28893,6 +30642,34 @@
       ],
       "type": "object"
     },
+    "LinkedServiceInfo": {
+      "document": "关联的推理服务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务 UID</p>",
+          "example": "svc-20260615233939-ayda",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-xgboost-aaa-bbb",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ListClusterGroupsRequest": {
       "document": "ListClusterGroups请求参数结构体",
       "members": [
@@ -29386,6 +31163,128 @@
       ],
       "type": "object"
     },
+    "ListInferenceEnginesRequest": {
+      "document": "ListInferenceEngines请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页的数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间起始过滤-时间戳（毫秒，可选）</p><p>单位：ms</p>",
+          "example": "1780934400000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间截止过滤-时间戳（毫秒，可选）</p><p>单位：ms</p>",
+          "example": "1781539199000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段列表</p>",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListInferenceEnginesResponse": {
+      "document": "ListInferenceEngines返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据列表</p>",
+          "example": "无",
+          "member": "InferenceEngineInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总记录数</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页的数量</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总的页数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListInferenceModelsRequest": {
       "document": "ListInferenceModels请求参数结构体",
       "members": [
@@ -29511,6 +31410,128 @@
           "disabled": false,
           "document": "<p>总页数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListInferenceServicesRequest": {
+      "document": "ListInferenceServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码（从1开始）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量（最大 200）</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间起始过滤-时间戳（毫秒，可选）</p><p>单位：ms</p>",
+          "example": "1780934400000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间截止过滤-时间戳（毫秒，可选）</p><p>单位：ms</p>",
+          "example": "1781539199000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段列表</p>",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListInferenceServicesResponse": {
+      "document": "ListInferenceServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InferenceServiceInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总记录数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "25",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总页数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "int64",
           "name": "TotalPages",
           "output_required": false,
@@ -29890,6 +31911,137 @@
           "name": "Items",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListModelVersionsRequest": {
+      "document": "ListModelVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型UID</p>",
+          "example": "m-xgb-test-tangbo-6a2d680b-67ac",
+          "member": "string",
+          "name": "ModelUid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间起始过滤-毫秒时间戳</p><p>单位：ms</p>",
+          "example": "1781515730059",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间截止过滤-毫秒时间戳</p><p>单位：ms</p>",
+          "example": "1781519930059",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段列表</p>",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码（默认1）</p><p>取值范围：[1, 2147483647]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量（默认200）</p><p>取值范围：[1, 2147483647]</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListModelVersionsResponse": {
+      "document": "ListModelVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型版本列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelVersionInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型总数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前多少页</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页模型数量</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果总页数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -31192,6 +33344,188 @@
       ],
       "usage": "both"
     },
+    "MetricsData": {
+      "document": "监控指标数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每秒请求数（QPS）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "RequestsPerSecond",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误率（0~1）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "ErrorRate",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>P95 延迟（毫秒）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "P95LatencyMs",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>P99 延迟（毫秒）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "P99LatencyMs",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列深度（排队中的请求数）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "QueueDepth",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TTFT P99 延迟（毫秒，仅 vLLM）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "TimeToFirstTokenP99Ms",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPOT P99 延迟（毫秒，仅 vLLM）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "TimePerOutputTokenP99Ms",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 吞吐量（tokens/s，仅 vLLM）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "TokenThroughput",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 利用率（0~100，百分比）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "GpuUtilization",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 显存已用（MB）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "GpuMemoryUsedMB",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 显存总量（MB）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "GpuMemoryTotalMB",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 利用率（0~100，百分比）</p>",
+          "example": "5.85",
+          "member": "float",
+          "name": "CpuUtilization",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存已用（字节）</p>",
+          "example": "339243008",
+          "member": "float",
+          "name": "MemoryUsedBytes",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存总量（字节）</p>",
+          "example": "4294967296",
+          "member": "float",
+          "name": "MemoryTotalBytes",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络接收速度（MB/s）</p>",
+          "example": "0.000652536193076531",
+          "member": "float",
+          "name": "NetworkReceiveMBPerSecond",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络发送速度（MB/s）</p>",
+          "example": "0.0033786183012526174",
+          "member": "float",
+          "name": "NetworkSendMBPerSecond",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MixedTablePartitions": {
       "document": "DLC分区信息查询返回数据结构",
       "members": [
@@ -31247,6 +33581,111 @@
         }
       ],
       "usage": "out"
+    },
+    "ModelVersionInfo": {
+      "document": "模型版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "68",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本号（如 v1, v2）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v4",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该版本的存储 URI</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/models/m-generatemodeluid-6a3109a3-f09c/v1/",
+          "member": "string",
+          "name": "StorageUri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本说明</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test model, 7B",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（毫秒时间戳）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781598645959",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（毫秒时间戳）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781598645959",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的推理服务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinkedServiceInfo",
+          "name": "LinkedServices",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用用户自带存储桶（true=用户自带桶，false=平台托管）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "UseCustomStorage",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModifyAdvancedStoreLocationRequest": {
       "document": "ModifyAdvancedStoreLocation请求参数结构体",
@@ -34101,6 +36540,62 @@
       ],
       "usage": "both"
     },
+    "OverviewItem": {
+      "document": "概览数据项，用于监控",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图表类型（与请求中的 ChartTypes 对应）</p>",
+          "example": "HTTP_QPS",
+          "member": "string",
+          "name": "ChartType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前瞬时值（如 QPS=15.2、延迟=120.5ms、利用率=85.0%）。查询失败或无数据时为 null</p>",
+          "example": "0",
+          "member": "float",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ParallelKeyMapping": {
+      "document": "ParallelKeyMapping 用于 inference engine 并行配置参数 key 映射",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>并行类型</p>",
+          "example": "TensorParallelSize",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该并行类型对应的参数 key 列表</p>",
+          "example": "[\"tensor-parallel-size\"]",
+          "member": "string",
+          "name": "Keys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Param": {
       "document": "对指定参数的更新、增加、删除",
       "members": [
@@ -34918,6 +37413,176 @@
       ],
       "usage": "out"
     },
+    "QueryDashboardOverviewRequest": {
+      "document": "QueryDashboardOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>时间范围起始（Unix 时间戳，秒）</p>",
+          "example": "1780402821",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间范围结束（Unix 时间戳，秒）</p>",
+          "example": "1780403121",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDashboardOverviewResponse": {
+      "document": "QueryDashboardOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>时间范围内所有服务的总 QPS（每秒请求数）均值</p><p>单位：请求每秒</p>",
+          "example": "0",
+          "member": "float",
+          "name": "TotalRequestsPerSecond",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间范围内全局 P99 延迟均值（毫秒）</p><p>单位：毫秒</p>",
+          "example": "0",
+          "member": "float",
+          "name": "AverageP99LatencyMs",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间范围内全局错误率均值（0~1，如 0.02 表示 2%）</p><p>取值范围：[0, 1]</p>",
+          "example": "0",
+          "member": "float",
+          "name": "ErrorRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDashboardServiceListRequest": {
+      "document": "QueryDashboardServiceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码（默认1）</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量（默认20）</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。支持的过滤字段：Keyword（服务名称/模型名称模糊搜索）、Status（服务状态精确匹配，如 Running）、Engine（推理引擎匹配，如 vllm，用于 LLM 推理专项 tab，只要服务有至少一个 deployment 的 engine 匹配即返回）、ResourcePartitionId（资源分区精确匹配）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段列表（全局排序，支持按指标字段排序）</p>",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDashboardServiceListResponse": {
+      "document": "QueryDashboardServiceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>匹配过滤条件的服务总数</p>",
+          "example": "8",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总页数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务监控指标列表</p>",
+          "example": "无",
+          "member": "ServiceMetricsItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryInternalTableWarehouseRequest": {
       "document": "QueryInternalTableWarehouse请求参数结构体",
       "members": [
@@ -34962,6 +37627,52 @@
           "name": "WarehousePath",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMonitorOverviewRequest": {
+      "document": "QueryMonitorOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图表类型列表（批量查询多个指标的当前值）</p>",
+          "example": "[\"HTTP_QPS\"]",
+          "member": "string",
+          "name": "ChartTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务 ID（业务唯一标识）</p>",
+          "example": "svc-migrated-00000022",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMonitorOverviewResponse": {
+      "document": "QueryMonitorOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>概览数据项列表，每项对应一个请求的 ChartType</p>",
+          "example": "无",
+          "member": "OverviewItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -36126,6 +38837,34 @@
       ],
       "type": "object"
     },
+    "ReplicaInfo": {
+      "document": "副本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>期望副本数</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "Desired",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用（就绪）副本数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Available",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ReportHeartbeatMetaDataRequest": {
       "document": "ReportHeartbeatMetaData请求参数结构体",
       "members": [
@@ -36425,8 +39164,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>配额数量</p>",
-          "example": "100",
+          "document": "<p>配额数量</p><p>请注意，CPU类型计费项为32的整数倍，GPU类型计费项为1的整数倍。</p>",
+          "example": "32",
           "member": "int64",
           "name": "Quota",
           "output_required": false,
@@ -36503,8 +39242,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>四层计费项</p>",
-          "example": "sv_dlc_pnv6_pnv64xlarge160",
+          "document": "<p>四层计费项</p><p>枚举值：</p><ul><li>sv_dlc_standard_cu_standard_cu： 标准型cpu，最小单位32</li><li>sv_dlc_high_memory_cu_high_memory_cu： 高内存型cpu，最小单位32</li><li>sv_dlc_gn7_gn75xlarge80： T4，最小单位1</li><li>sv_dlc_gn10xp_gn10xp2xlarge40： V100，最小单位1</li></ul><p>若您想要了解更多的计费规格和产品细节，欢迎联系我们。</p>",
+          "example": "sv_dlc_standard_cu_standard_cu",
           "member": "string",
           "name": "BillingItem",
           "output_required": false,
@@ -36515,7 +39254,7 @@
         {
           "disabled": false,
           "document": "<p>规格描述</p>",
-          "example": "1 GU = 1 × H20 · 96GB VRAM · 16vCPU · 160GB Memory",
+          "example": "1 GU = 1 × T4 · 16GB VRAM · 20vCPU · 80GB Memory",
           "member": "string",
           "name": "SpecDesc",
           "output_required": false,
@@ -36536,7 +39275,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>GPU类型，仅GU有值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GPU类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "H20",
           "member": "string",
           "name": "GpuType",
@@ -36625,6 +39364,263 @@
     "RestartDataEngineResponse": {
       "document": "RestartDataEngine返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartInferenceServiceRequest": {
+      "document": "RestartInferenceService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务ID</p>",
+          "example": "svc-20260615170317-kt6r",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartInferenceServiceResponse": {
+      "document": "RestartInferenceService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svc-20260615170317-kt6r",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qzzhu_061503",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型UID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-xgboost-6a159272-99b2",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xgboost",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qzzhu_061503",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联模型的类型（LLM / VLM / Embedding / Reranker / TTS / ASR / CV / NLP / ML）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ML",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务状态（Running/Stopped/Deploying/Failed）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Deploying",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端点URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/qzzhu_061503",
+          "member": "string",
+          "name": "EndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>OpenAI 兼容统一入口 URL（通过 API-Key 路由，适用于 LLM/Embedding/Reranker）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/v1",
+          "member": "string",
+          "name": "UnifiedEndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>KServe V2 协议统一入口 URL（通过 API-Key + model name 路由，适用于 XGBoost 等传统 ML 模型）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443",
+          "member": "string",
+          "name": "UnifiedV2EndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260200066",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主账号UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002655694",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781514197876",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1781523710617",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "DeploymentCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在至少一个运行中的部署</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HasRunningDeployment",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用 API-Key 鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否强制开启 API-Key 鉴权（生产环境为 true，不允许关闭）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthForceEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过 TLS 证书验证（自签证书场景，前端 curl 命令需加 -k 参数）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipTlsVerify",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子账号UIN（实际操作者）</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中部署的 CPU 资源汇总</p>",
+          "example": "无",
+          "member": "CpuSummaryItem",
+          "name": "CpuResourceSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配置（JSON 字符串，取自第一个部署）</p>",
+          "example": "{\"workerBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"headSpec\":1,\"gpu\":\"\",\"gpuNum\":0,\"cpu\":1,\"mem\":4,\"headCpu\":1,\"headMem\":4}",
+          "member": "string",
+          "name": "ResourceConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -37142,6 +40138,100 @@
         }
       ],
       "usage": "out"
+    },
+    "ServiceMetricsItem": {
+      "document": "服务监控指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务 UID，服务唯一标识</p>",
+          "example": "svc-20260606214706-paqu",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务显示名称</p>",
+          "example": "xgboost-xgbxgb",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务状态</p>",
+          "example": "Failed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理引擎</p>",
+          "example": "vllm",
+          "member": "string",
+          "name": "Engine",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "xgboost",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>OpenAI 兼容的模型标识符</p>",
+          "example": "xgbxgb",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>副本信息</p>",
+          "example": "无",
+          "member": "ReplicaInfo",
+          "name": "Replicas",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>监控指标数据</p>",
+          "example": "无",
+          "member": "MetricsData",
+          "name": "Metrics",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SessionResourceTemplate": {
       "document": "Spark批作业集群Session资源配置模板；",
@@ -39564,6 +42654,263 @@
         }
       ],
       "usage": "out"
+    },
+    "StopInferenceServiceRequest": {
+      "document": "StopInferenceService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务ID</p>",
+          "example": "svc-20260606145826-3tlg",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInferenceServiceResponse": {
+      "document": "StopInferenceService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svc-20260606145826-3tlg",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-qwen35",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型UID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-qwen3-5-4b-6a223aba-951c",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Qwen3.5-4B",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的模型版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qwen35-4b",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联模型的类型（LLM / VLM / Embedding / Reranker / TTS / ASR / CV / NLP / ML）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LLM",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务状态（Running/Stopped/Deploying/Failed）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Stopped",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端点URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/test-qwen35/v1",
+          "member": "string",
+          "name": "EndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>OpenAI 兼容统一入口 URL（通过 API-Key 路由，适用于 LLM/Embedding/Reranker）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/v1",
+          "member": "string",
+          "name": "UnifiedEndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>KServe V2 协议统一入口 URL（通过 API-Key + model name 路由，适用于 XGBoost 等传统 ML 模型）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443",
+          "member": "string",
+          "name": "UnifiedV2EndpointUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260200066",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主账号UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002655694",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1780729106761",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（Unix 时间戳，毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1780731592421",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DeploymentCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在至少一个运行中的部署</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HasRunningDeployment",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用 API-Key 鉴权</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否强制开启 API-Key 鉴权（生产环境为 true，不允许关闭）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ApiKeyAuthForceEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过 TLS 证书验证（自签证书场景，前端 curl 命令需加 -k 参数）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipTlsVerify",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子账号UIN（实际操作者）</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中部署的 CPU 资源汇总</p>",
+          "example": "无",
+          "member": "CpuSummaryItem",
+          "name": "CpuResourceSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配置（JSON 字符串，取自第一个部署）</p>",
+          "example": "{\"workerBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_postpay_cu_standard_cu\",\"headSpec\":1,\"gpu\":\"T4\",\"gpuNum\":1,\"cpu\":20,\"mem\":80,\"headCpu\":1,\"headMem\":4}",
+          "member": "string",
+          "name": "ResourceConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StopLabRequest": {
       "document": "StopLab请求参数结构体",
