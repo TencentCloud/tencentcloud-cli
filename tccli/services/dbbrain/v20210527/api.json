@@ -10074,8 +10074,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
-          "example": "",
+          "document": "<p>实例ID。</p>",
+          "example": "cmgo-r7x73lc1",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -10085,8 +10085,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。",
-          "example": "",
+          "document": "<p>数据库类型，如 mysql、cynosdb、mariadb、dcdb、mongodb、postgres、redis、dbbrain-mysql、tdstore。</p>",
+          "example": "MongoDB",
           "member": "string",
           "name": "Product",
           "output_required": false,
@@ -10096,8 +10096,8 @@
         },
         {
           "disabled": false,
-          "document": "地域英文ID。",
-          "example": "",
+          "document": "<p>地域英文ID。</p>",
+          "example": "na-ashburn",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -10107,8 +10107,8 @@
         },
         {
           "disabled": false,
-          "document": "集群ID，仅集群类产品返回。",
-          "example": "",
+          "document": "<p>集群ID，仅集群类产品返回。</p>",
+          "example": "cynosdbmysql-2asdsyu0",
           "member": "string",
           "name": "ClusterId",
           "output_required": false,
@@ -10118,8 +10118,8 @@
         },
         {
           "disabled": false,
-          "document": "引擎版本。",
-          "example": "",
+          "document": "<p>引擎版本。</p>",
+          "example": "8.0 WiredTiger",
           "member": "string",
           "name": "EngineVersion",
           "output_required": false,
@@ -10129,8 +10129,8 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，1表示运行中。",
-          "example": "",
+          "document": "<p>实例状态，1表示运行中。</p>",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -10140,8 +10140,8 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间。",
-          "example": "",
+          "document": "<p>实例创建时间。</p>",
+          "example": "2026-06-29 16:41:15",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -10151,8 +10151,8 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间。",
-          "example": "",
+          "document": "<p>实例到期时间。</p>",
+          "example": "2026-07-29 16:41:15",
           "member": "string",
           "name": "DeadlineTime",
           "output_required": false,

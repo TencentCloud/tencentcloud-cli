@@ -1246,6 +1246,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>flinkui jnsgw 打通信息</p>",
+          "example": "无",
+          "member": "FlinkUIEndpoint",
+          "name": "FlinkUIEndpoint",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6118,6 +6128,34 @@
       ],
       "usage": "out"
     },
+    "FlinkUIEndpoint": {
+      "document": "flinkui jnsgw 打通信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>jnsgw ip</p>",
+          "example": "21.2.12.x",
+          "member": "string",
+          "name": "JnsgwVip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>jnsgw 端口</p>",
+          "example": "23423",
+          "member": "uint64",
+          "name": "JnsgwVport",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GatewayRefItem": {
       "document": "Gateway引用资源信息",
       "members": [
@@ -7709,6 +7747,46 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康分数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "HealthScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新诊断时间</p><p>参数格式：RFC3339</p>",
+          "example": "2026-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "LastDiagnoseTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>负责人Uin</p>",
+          "example": "700000******",
+          "member": "string",
+          "name": "ManagerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>flinkui JnsGw 地址</p>",
+          "example": "无",
+          "member": "FlinkUIEndpoint",
+          "name": "FlinkUIEndpoint",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -5244,6 +5244,15 @@
           "name": "EnableStagedGeneration",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启后处理，开启后将只输出一个模型链接，默认关闭。  （开启此接口后，需额外增加20积分）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePostProcess",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -3088,7 +3088,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li></ul>",
+          "document": "<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -3172,6 +3172,16 @@
           "example": "2026-05-02T00:00:00Z",
           "member": "datetime_iso",
           "name": "OfflineAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止新购时间</p>",
+          "example": "2026-05-02T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "DiscontinuedAt",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

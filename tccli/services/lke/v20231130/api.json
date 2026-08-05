@@ -10293,6 +10293,34 @@
       ],
       "usage": "both"
     },
+    "EnumOption": {
+      "document": "枚举通用option结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可选项的值</p>",
+          "example": "disabled",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选项的展示内容</p>",
+          "example": "关闭",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExportAttributeLabelRequest": {
       "document": "ExportAttributeLabel请求参数结构体",
       "members": [
@@ -17400,6 +17428,28 @@
           "required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选值列表，跟EnumValueList对应</p>",
+          "example": "无",
+          "member": "EnumOption",
+          "name": "EnumOptionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>显示条件，为空代表永远展示</p>",
+          "example": "${deep_thinking === 'enabled'}",
+          "member": "string",
+          "name": "VisibleOn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
