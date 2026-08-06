@@ -104,16 +104,10 @@
     ],
     "StartSandboxInstance": [
       {
-        "document": "通过 ToolId 启动一个沙箱实例",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Timeout\": \"30m\",\n    \"ClientToken\": \"start-sandbox-basic-example\",\n    \"AuthMode\": \"TOKEN\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"48dd1132cfb96ccee5fd0aa58da2562d2fe3a929\",\n            \"ToolId\": \"sdt-ee4ywozw\",\n            \"ToolName\": \"coding-agent\",\n            \"Status\": \"STARTING\"\n        },\n        \"RequestId\": \"req-start-sandbox-example\"\n    }\n}",
-        "title": "启动普通沙箱"
-      },
-      {
-        "document": "启动沙箱时声明只作用于该实例的收窄策略。",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\",\n    \"ClientToken\": \"start-instance-with-access-policy-example\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"ins-policy123\",\n            \"ToolId\": \"sdt-policy123\",\n            \"ToolName\": \"browser-policy-sandbox\",\n            \"Status\": \"STARTING\"\n        },\n        \"RequestId\": \"req-start-instance-policy-example\"\n    }\n}",
-        "title": "启动带实例级访问策略的沙箱"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolName\": \"test_tool\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"AuthMode\": \"DEFAULT\",\n            \"CreateTime\": \"2026-08-06T08:10:44+08:00\",\n            \"CustomConfiguration\": {\n                \"Args\": [\n                    \"-c\"\n                ],\n                \"Command\": [\n                    \"/bin/bash\"\n                ],\n                \"Image\": \"ccr.ccs.tencentyun.com/******************:2.19-alpine-with-envd\",\n                \"ImageDigest\": \"sha256:8c14af9fd97819411ea7368c8c9b85823085c8abf911675cfa16c5475d1b627c\",\n                \"ImageRegistryType\": \"personal\",\n                \"Ports\": [\n                    {\n                        \"Name\": \"http\",\n                        \"Port\": 8080,\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"Probe\": {\n                    \"FailureThreshold\": 10,\n                    \"HttpGet\": {\n                        \"Path\": \"/health\",\n                        \"Port\": 49983,\n                        \"Scheme\": \"HTTP\"\n                    },\n                    \"ProbePeriodMs\": 3000,\n                    \"ProbeTimeoutMs\": 1000,\n                    \"ReadyTimeoutMs\": 30000,\n                    \"SuccessThreshold\": 1\n                },\n                \"Resources\": {\n                    \"CPU\": \"1000m\",\n                    \"Memory\": \"500Mi\",\n                    \"Storage\": \"1024Mi\"\n                }\n            },\n            \"ExpiresAt\": \"2026-08-06T08:15:40+08:00\",\n            \"InstanceId\": \"v4bstpofq5tkvgsaywzkscssvoftz4q4mh6c5jdr\",\n            \"NetworkMode\": \"PUBLIC\",\n            \"Persistent\": false,\n            \"Status\": \"RUNNING\",\n            \"TimeoutSeconds\": 300,\n            \"ToolId\": \"sdt-********\",\n            \"ToolName\": \"test_tool\",\n            \"UpdateTime\": \"2026-08-06T08:10:44+08:00\"\n        },\n        \"RequestId\": \"2fb58122-4e85-4640-b0ed-16af015e0bae\"\n    }\n}",
+        "title": "启动沙箱实例"
       }
     ],
     "StopSandboxInstance": [

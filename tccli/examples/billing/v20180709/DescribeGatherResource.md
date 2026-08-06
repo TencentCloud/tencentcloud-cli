@@ -70,6 +70,7 @@ Output:
                 "RuleName": "公共服务公摊",
                 "SplitItemId": "",
                 "SplitItemName": "",
+                "EffectiveMode": "1",
                 "Tag": [
                     {
                         "TagKey": "dms-common",

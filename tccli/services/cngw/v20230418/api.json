@@ -119,6 +119,13 @@
       "output": "DeleteCloudNativeAPIGatewaySecretKeyResponse",
       "status": "online"
     },
+    "DescribeCNGWServicesWithRoutes": {
+      "document": "查询云原生网关服务和路由列表",
+      "input": "DescribeCNGWServicesWithRoutesRequest",
+      "name": "查询云原生网关服务和路由列表",
+      "output": "DescribeCNGWServicesWithRoutesResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGatewayConsumer": {
       "document": "查询云原生消费者详情",
       "input": "DescribeCloudNativeAPIGatewayConsumerRequest",
@@ -5824,6 +5831,70 @@
       ],
       "type": "object"
     },
+    "DescribeCNGWServicesWithRoutesRequest": {
+      "document": "DescribeCNGWServicesWithRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关ID</p>",
+          "example": "gateway-2c8a4896",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表 offset</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType</p>",
+          "example": "无",
+          "member": "ListFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCNGWServicesWithRoutesResponse": {
+      "document": "DescribeCNGWServicesWithRoutes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务及路由查询结果</p>",
+          "example": "无",
+          "member": "KongServiceWithRoutes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayConsumerGroupRequest": {
       "document": "DescribeCloudNativeAPIGatewayConsumerGroup请求参数结构体",
       "members": [
@@ -6900,6 +6971,34 @@
       ],
       "usage": "in"
     },
+    "KVMapping": {
+      "document": "键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键值映射的键",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "键值映射的值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "KeyValue": {
       "document": "Key/Value结构",
       "members": [
@@ -6924,6 +7023,762 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KongRoutePreview": {
+      "document": "云原生网关路由信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名字</p>",
+          "example": "huidu-route",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求方法列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"GET\"]",
+          "member": "string",
+          "name": "Methods",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由Paths列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/v1/users\"]",
+          "member": "string",
+          "name": "Paths",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由Hosts列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tencent.com\"]",
+          "member": "string",
+          "name": "Hosts",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议列表</p>",
+          "example": "[\"http\"]",
+          "member": "string",
+          "name": "Protocols",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保留Host头</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PreserveHost",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTPS重定向状态码</p>",
+          "example": "426",
+          "member": "int64",
+          "name": "HttpsRedirectStatusCode",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否去除路径前缀</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "StripPath",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2024-11-25 10:49:23",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>强制转换 https</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceHttps",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名</p>",
+          "example": "learn",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "2a212560-220a-46f6-b139-3238eb8ea041",
+          "member": "string",
+          "name": "ServiceID",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目的端口</p>",
+          "example": "[8000]",
+          "member": "uint64",
+          "name": "DestinationPorts",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>headers</p>",
+          "example": "无",
+          "member": "KVMapping",
+          "name": "Headers",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否缓存请求body，默认true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RequestBuffering",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否缓存响应body，默认true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ResponseBuffering",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正则优先级</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RegexPriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>querystring参数</p>",
+          "example": "无",
+          "member": "KVMapping",
+          "name": "QueryStringParameters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由来源</p>",
+          "example": "Original",
+          "member": "string",
+          "name": "RouteSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KongServicePreview": {
+      "document": "云原生网关服务预览信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-11-25 10:49:23",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑",
+          "example": "true",
+          "member": "bool",
+          "name": "Editable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名字",
+          "example": "demo-service",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/open",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "[\"demo\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端配置",
+          "example": "无",
+          "member": "KongUpstreamInfo",
+          "name": "UpstreamInfo",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端类型",
+          "example": "HostIP",
+          "member": "string",
+          "name": "UpstreamType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KongServiceRoute": {
+      "document": "kong实例的服务和路由列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务信息</p>",
+          "example": "无",
+          "member": "KongServicePreview",
+          "name": "Service",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由总数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RouteTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否还有更多路由</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "RouteHasMore",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由列表</p>",
+          "example": "无",
+          "member": "KongRoutePreview",
+          "name": "Routes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KongServiceWithRoutes": {
+      "document": "返回kong的服务和路由列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务及路由列表",
+          "example": "无",
+          "member": "KongServiceRoute",
+          "name": "ServiceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KongTarget": {
+      "document": "Kong Upstream中的Target",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标主机地址",
+          "example": "8.8.8.8",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "100",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-11-25 10:49:23",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM实例ID",
+          "example": "ins-ze3124da",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM实例名称",
+          "example": "在线学习服务",
+          "member": "string",
+          "name": "CvmInstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康状态",
+          "example": "HEALTHY",
+          "member": "string",
+          "name": "Health",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Target的来源",
+          "example": "AutoScaling",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "target标签",
+          "example": "[\"learn\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KongUpstreamInfo": {
+      "document": "服务的后端配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing",
+          "example": "round-robin",
+          "member": "string",
+          "name": "Algorithm",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM弹性伸缩组端口",
+          "example": "80",
+          "member": "uint64",
+          "name": "AutoScalingCvmPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM弹性伸缩组ID",
+          "example": "as-4se0czf7",
+          "member": "string",
+          "name": "AutoScalingGroupID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM弹性伸缩组生命周期挂钩状态",
+          "example": "Normal",
+          "member": "string",
+          "name": "AutoScalingHookStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM弹性伸缩组使用的CVM TAT命令状态",
+          "example": "Normal",
+          "member": "string",
+          "name": "AutoScalingTatCmdStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "upstream健康状态HEALTHY（健康）, UNHEALTHY（异常）, HEALTHCHECKS_OFF（未开启）和NONE（不支持健康检查）",
+          "example": "HEALTHY",
+          "member": "string",
+          "name": "HealthStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP或域名",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "Default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "80",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精确的服务来源类型，新建服务来源时候传入的类型",
+          "example": "TKE",
+          "member": "string",
+          "name": "RealSourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云函数是否开启CAM鉴权，不填时默认为开启(true)",
+          "example": "true",
+          "member": "bool",
+          "name": "ScfCamAuthEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云函数是否开启Base64编码，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "ScfIsBase64Encoded",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云函数是否开启响应集成，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "ScfIsIntegratedResponse",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCF函数名",
+          "example": "helloworld",
+          "member": "string",
+          "name": "ScfLambdaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCF函数版本",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "ScfLambdaQualifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCF函数命名空间",
+          "example": "Default",
+          "member": "string",
+          "name": "ScfNamespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SCF函数类型",
+          "example": "event",
+          "member": "string",
+          "name": "ScfType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务（注册中心或Kubernetes中的服务）名字",
+          "example": "demo-service",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "冷启动时间，单位秒",
+          "example": "60",
+          "member": "int64",
+          "name": "SlowStart",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源ID",
+          "example": "ins-102555d0",
+          "member": "string",
+          "name": "SourceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源的名字",
+          "example": "tse-polaris",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源类型",
+          "example": "TKE",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务后端类型是IPList时提供\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongTarget",
+          "name": "Targets",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6979,6 +7834,30 @@
         }
       ],
       "usage": "out"
+    },
+    "ListFilter": {
+      "document": "列表过滤条件，模糊匹配",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤值",
+          "example": "user-stu",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ModifyCloudNativeAPIGatewayConsumerGroupRequest": {
       "document": "ModifyCloudNativeAPIGatewayConsumerGroup请求参数结构体",

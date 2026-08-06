@@ -15740,7 +15740,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>",
+          "document": "<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p><p>枚举值：</p><ul><li>all： 全部</li><li>none： 未归集</li><li>allocation： 已公摊资源</li><li>gather： 已归集资源</li></ul>",
           "example": "all",
           "member": "string",
           "name": "GatherType",
@@ -17170,7 +17170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识",
+          "document": "<p>支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识</p>",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
@@ -17180,7 +17180,7 @@
         },
         {
           "disabled": false,
-          "document": "使用者 UIN：实际使用资源的账号 ID",
+          "document": "<p>使用者 UIN：实际使用资源的账号 ID</p>",
           "example": "909619400",
           "member": "string",
           "name": "OwnerUin",
@@ -17190,7 +17190,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）",
+          "document": "<p>操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）</p>",
           "example": "909619400",
           "member": "string",
           "name": "OperateUin",
@@ -17200,7 +17200,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型编码",
+          "document": "<p>实例类型编码</p>",
           "example": "si",
           "member": "string",
           "name": "InstanceType",
@@ -17210,7 +17210,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”",
+          "document": "<p>实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”</p>",
           "example": "节省计划",
           "member": "string",
           "name": "InstanceTypeName",
@@ -17220,7 +17220,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名",
+          "document": "<p>资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名</p>",
           "example": "ins-m232g34d",
           "member": "string",
           "name": "ResourceId",
@@ -17230,7 +17230,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名",
+          "document": "<p>实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名</p>",
           "example": "chongqing1vd-eq22",
           "member": "string",
           "name": "ResourceName",
@@ -17240,7 +17240,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元唯一标识",
+          "document": "<p>分账单元唯一标识</p>",
           "example": "1010224120-65bb6cdfssasdece",
           "member": "string",
           "name": "TreeNodeUniqKey",
@@ -17250,7 +17250,7 @@
         },
         {
           "disabled": false,
-          "document": "分账单元名称",
+          "document": "<p>分账单元名称</p>",
           "example": "DiyCamTemp",
           "member": "string",
           "name": "TreeNodeUniqKeyName",
@@ -17260,7 +17260,7 @@
         },
         {
           "disabled": false,
-          "document": "资源命中公摊规则ID",
+          "document": "<p>资源命中公摊规则ID</p>",
           "example": "191027",
           "member": "uint64",
           "name": "RuleId",
@@ -17270,7 +17270,7 @@
         },
         {
           "disabled": false,
-          "document": "资源命中公摊规则名称",
+          "document": "<p>资源命中公摊规则名称</p>",
           "example": "公共服务公摊",
           "member": "string",
           "name": "RuleName",
@@ -17280,7 +17280,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码",
+          "document": "<p>产品编码</p>",
           "example": "p_cls",
           "member": "string",
           "name": "BusinessCode",
@@ -17290,7 +17290,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称：用户所采购的各类云产品",
+          "document": "<p>产品名称：用户所采购的各类云产品</p>",
           "example": "日志服务CLS",
           "member": "string",
           "name": "BusinessCodeName",
@@ -17300,7 +17300,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称编码",
+          "document": "<p>组件名称编码</p>",
           "example": "sv_cls_request",
           "member": "string",
           "name": "ItemCode",
@@ -17310,7 +17310,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称：用户购买的产品或服务，所包含的具体组件",
+          "document": "<p>组件名称：用户购买的产品或服务，所包含的具体组件</p>",
           "example": "日志服务CLS-请求次数",
           "member": "string",
           "name": "ItemCodeName",
@@ -17320,7 +17320,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "4",
           "member": "uint64",
           "name": "RegionId",
@@ -17330,7 +17330,7 @@
         },
         {
           "disabled": false,
-          "document": "地域名称：资源所属地域",
+          "document": "<p>地域名称：资源所属地域</p>",
           "example": "华东地区（上海）",
           "member": "string",
           "name": "RegionName",
@@ -17340,8 +17340,8 @@
         },
         {
           "disabled": false,
-          "document": "分账标签：资源绑定的标签",
-          "example": "[{\"tagKey\":\"dms-common\",\"tagValue\":\"prod\"}]",
+          "document": "<p>分账标签：资源绑定的标签</p>",
+          "example": "无",
           "member": "BillTag",
           "name": "Tag",
           "output_required": true,
@@ -17350,7 +17350,7 @@
         },
         {
           "disabled": false,
-          "document": "优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率",
+          "document": "<p>优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率</p>",
           "example": "0.31454454",
           "member": "string",
           "name": "RealTotalCost",
@@ -17360,7 +17360,7 @@
         },
         {
           "disabled": false,
-          "document": "现金账户支出(元)：通过现金账户支付的金额",
+          "document": "<p>现金账户支出(元)：通过现金账户支付的金额</p>",
           "example": "0.31454454",
           "member": "string",
           "name": "CashPayAmount",
@@ -17370,7 +17370,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额",
+          "document": "<p>代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -17380,7 +17380,7 @@
         },
         {
           "disabled": false,
-          "document": "赠送账户支出(元)：使用赠送金支付的金额",
+          "document": "<p>赠送账户支出(元)：使用赠送金支付的金额</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -17390,7 +17390,7 @@
         },
         {
           "disabled": false,
-          "document": "分成账户支出(元)：通过分成金账户支付的金额",
+          "document": "<p>分成账户支出(元)：通过分成金账户支付的金额</p>",
           "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
@@ -17400,7 +17400,7 @@
         },
         {
           "disabled": false,
-          "document": "费用归集类型：费用来源类型，分摊、归集、未分配\n0 - 分摊\n1 - 归集\n-1 - 未分配",
+          "document": "<p>费用归集类型：费用来源类型，分摊、归集、未分配<br>0 - 分摊<br>1 - 归集<br>-1 - 未分配</p>",
           "example": "1",
           "member": "int64",
           "name": "AllocationType",
@@ -17410,8 +17410,8 @@
         },
         {
           "disabled": false,
-          "document": "当前归属单元信息",
-          "example": "{\"TreeNodeUniqKey\":\"1000366-66456debe\",\"TreeNodeUniqKeyName\":\"公共基础服务\"}",
+          "document": "<p>当前归属单元信息</p>",
+          "example": "无",
           "member": "AllocationTreeNode",
           "name": "BelongTreeNodeUniqKey",
           "output_required": true,
@@ -17420,8 +17420,8 @@
         },
         {
           "disabled": false,
-          "document": "当前资源命中公摊规则信息",
-          "example": "{\"RuleId\":862324,\"RuleName\":\"公摊规则\"}",
+          "document": "<p>当前资源命中公摊规则信息</p>",
+          "example": "无",
           "member": "AllocationRule",
           "name": "BelongRule",
           "output_required": true,
@@ -17430,8 +17430,8 @@
         },
         {
           "disabled": false,
-          "document": "其它归属单元信息",
-          "example": "[{\"TreeNodeUniqKey\":\"909619400-67290cae5\",\"TreeNodeUniqKeyName\":\"z-自动创建\"},{\"TreeNodeUniqKey\":\"909619400-447c2c41d\",\"TreeNodeUniqKeyName\":\"f-二组\"}]",
+          "document": "<p>其它归属单元信息</p>",
+          "example": "无",
           "member": "AllocationTreeNode",
           "name": "OtherTreeNodeUniqKeys",
           "output_required": true,
@@ -17440,8 +17440,8 @@
         },
         {
           "disabled": false,
-          "document": "其他命中规则信息",
-          "example": "[{\"RuleId\":48462324,\"RuleName\":\"公摊规则\"}]",
+          "document": "<p>其他命中规则信息</p>",
+          "example": "无",
           "member": "AllocationRule",
           "name": "OtherRules",
           "output_required": true,
@@ -17450,7 +17450,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
@@ -17460,7 +17460,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目",
+          "document": "<p>项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目</p>",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
@@ -17470,7 +17470,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码",
+          "document": "<p>子产品编码</p>",
           "example": "sp_emr_sa5",
           "member": "string",
           "name": "ProductCode",
@@ -17480,7 +17480,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称：用户采购的具体产品细分类型",
+          "document": "<p>子产品名称：用户采购的具体产品细分类型</p>",
           "example": "弹性MapReduce_标准型SA5",
           "member": "string",
           "name": "ProductCodeName",
@@ -17490,7 +17490,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式编码",
+          "document": "<p>计费模式编码</p>",
           "example": "postPay",
           "member": "string",
           "name": "PayMode",
@@ -17500,7 +17500,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费",
+          "document": "<p>计费模式：资源的计费模式，区分为包年包月和按量计费</p>",
           "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
@@ -17510,7 +17510,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型编码",
+          "document": "<p>交易类型编码</p>",
           "example": "postpay_deduct_h",
           "member": "string",
           "name": "ActionType",
@@ -17520,7 +17520,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型：明细交易类型",
+          "document": "<p>交易类型：明细交易类型</p>",
           "example": "按量计费小时结",
           "member": "string",
           "name": "ActionTypeName",
@@ -17530,8 +17530,8 @@
         },
         {
           "disabled": true,
-          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asdf",
           "member": "string",
           "name": "SplitItemId",
           "output_required": false,
@@ -17540,13 +17540,23 @@
         },
         {
           "disabled": true,
-          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>分拆项名称：涉及分拆产品的分拆后的分拆项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asdf",
           "member": "string",
           "name": "SplitItemName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>归集方式</p><p>枚举值：</p><ul><li>0： 未归集</li><li>1： 自动命中</li><li>2： 手动分配待生效</li><li>3： 手动分配已生效</li></ul>",
+          "example": "0",
+          "member": "string",
+          "name": "EffectiveMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

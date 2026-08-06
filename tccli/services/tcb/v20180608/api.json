@@ -294,6 +294,13 @@
       "output": "DescribeCloudBaseBuildServiceResponse",
       "status": "online"
     },
+    "DescribeCloudBaseRunBuildLog": {
+      "document": "查询构建日志",
+      "input": "DescribeCloudBaseRunBuildLogRequest",
+      "name": "查询构建日志",
+      "output": "DescribeCloudBaseRunBuildLogResponse",
+      "status": "online"
+    },
     "DescribeCloudBaseRunServerVersion": {
       "document": "查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize",
       "input": "DescribeCloudBaseRunServerVersionRequest",
@@ -1926,6 +1933,52 @@
           "name": "Steps",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudBaseRunBuildLog": {
+      "document": "BuildLog",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触达ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Delivered",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否更多\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "More",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -5072,6 +5125,78 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunBuildLogRequest": {
+      "document": "DescribeCloudBaseRunBuildLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本名称",
+          "example": "",
+          "member": "string",
+          "name": "ServiceVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "构建ID",
+          "example": "",
+          "member": "int64",
+          "name": "BuildId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移记录",
+          "example": "",
+          "member": "int64",
+          "name": "Start",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunBuildLogResponse": {
+      "document": "DescribeCloudBaseRunBuildLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "CloudBaseRunBuildLog",
+          "name": "Log",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

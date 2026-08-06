@@ -11738,6 +11738,15 @@
           "name": "ImagePullSecretList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于区分使用sidecar的版本是稳定版还是发行版</p><p>枚举值：</p><ul><li>stable： sidecar稳定版</li><li>release： sidecar发行版</li></ul>",
+          "example": "release",
+          "member": "string",
+          "name": "MeshSidecarVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

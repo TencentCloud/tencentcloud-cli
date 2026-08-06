@@ -10473,7 +10473,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kibana节点IP",
+          "document": "<p>Kibana节点IP</p>",
           "example": "9.15.123.xxx",
           "member": "string",
           "name": "Ip",
@@ -10483,7 +10483,7 @@
         },
         {
           "disabled": false,
-          "document": "节点总磁盘大小",
+          "document": "<p>节点总磁盘大小</p>",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -10493,7 +10493,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘使用率",
+          "document": "<p>磁盘使用率</p>",
           "example": "0.1967",
           "member": "float",
           "name": "DiskUsage",
@@ -10503,7 +10503,7 @@
         },
         {
           "disabled": false,
-          "document": "节点内存大小",
+          "document": "<p>节点内存大小</p>",
           "example": "2",
           "member": "int64",
           "name": "MemSize",
@@ -10513,7 +10513,7 @@
         },
         {
           "disabled": false,
-          "document": "内存使用率",
+          "document": "<p>内存使用率</p>",
           "example": "0",
           "member": "float",
           "name": "MemUsage",
@@ -10523,7 +10523,7 @@
         },
         {
           "disabled": false,
-          "document": "节点cpu个数",
+          "document": "<p>节点cpu个数</p>",
           "example": "1",
           "member": "int64",
           "name": "CpuNum",
@@ -10533,7 +10533,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu使用率",
+          "document": "<p>cpu使用率</p>",
           "example": "0.029166666666667",
           "member": "float",
           "name": "CpuUsage",
@@ -10543,7 +10543,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-beijing-7",
           "member": "string",
           "name": "Zone",
@@ -10553,11 +10553,21 @@
         },
         {
           "disabled": false,
-          "document": "ts-0noqayxu-az6-hot-03222010-0",
+          "document": "<p>ts-0noqayxu-az6-hot-03222010-0</p>",
           "example": "1658386193000764xxx",
           "member": "string",
           "name": "NodeId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户侧Ip信息</p>",
+          "example": "10.*.*.**",
+          "member": "string",
+          "name": "UserIp",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

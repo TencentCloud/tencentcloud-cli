@@ -525,8 +525,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ctsdbi-xxxxxxx",
           "member": "string",
           "name": "ClusterID",
           "output_required": true,
@@ -536,8 +536,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>数据库名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test1",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -547,8 +547,8 @@
         },
         {
           "disabled": false,
-          "document": "降冷时间（天）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>降冷时间（天）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "CoolDownInDays",
           "output_required": true,
@@ -558,8 +558,8 @@
         },
         {
           "disabled": false,
-          "document": "数据保留时间（天）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>数据保留时间（天）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RetentionInDays",
           "output_required": true,
@@ -569,8 +569,8 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -580,8 +580,8 @@
         },
         {
           "disabled": false,
-          "document": "状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>状态：0: 资源初始化中， 1: 资源创建中， 2: 正常状态， 3: 资源删除中， 4: 资源已删除， 5: 资源禁用中， 6: 资源已禁用， 7: 资源异常，需要人工操作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -591,8 +591,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-01T06:31:26Z",
           "member": "datetime_iso",
           "name": "CreatedAt",
           "output_required": true,
@@ -602,11 +602,22 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>最后修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-01T06:31:26Z",
           "member": "datetime_iso",
           "name": "UpdatedAt",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>降冷开启时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-01T06:31:26Z",
+          "member": "datetime_iso",
+          "name": "CoolDownTime",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

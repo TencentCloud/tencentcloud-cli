@@ -448,6 +448,13 @@
       "output": "DescribeAutoScalerResourceStrategyBindingGroupsResponse",
       "status": "online"
     },
+    "DescribeCNGWServicesWithRoutes": {
+      "document": "查询云原生网关服务和路由列表",
+      "input": "DescribeCNGWServicesWithRoutesRequest",
+      "name": "查询云原生网关服务和路由列表",
+      "output": "DescribeCNGWServicesWithRoutesResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGateway": {
       "document": "获取云原生API网关实例信息",
       "input": "DescribeCloudNativeAPIGatewayRequest",
@@ -10962,6 +10969,70 @@
       ],
       "type": "object"
     },
+    "DescribeCNGWServicesWithRoutesRequest": {
+      "document": "DescribeCNGWServicesWithRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关ID</p>",
+          "example": "gateway-2c8a4896",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表 offset</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType</p>",
+          "example": "无",
+          "member": "ListFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCNGWServicesWithRoutesResponse": {
+      "document": "DescribeCNGWServicesWithRoutes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "KongServiceWithRoutes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayCORSRequest": {
       "document": "DescribeCloudNativeAPIGatewayCORS请求参数结构体",
       "members": [
@@ -12428,7 +12499,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关ID",
+          "document": "<p>网关ID</p>",
           "example": "gateway-962b7d7c",
           "member": "string",
           "name": "GatewayId",
@@ -12437,7 +12508,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页单页查询限制数量[0,1000], 默认值0",
+          "document": "<p>翻页单页查询限制数量[0,1000], 默认值0</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -12446,7 +12517,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页单页偏移量，默认值0",
+          "document": "<p>翻页单页偏移量，默认值0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -12455,7 +12526,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的名字，精确匹配",
+          "document": "<p>服务的名字，精确匹配</p>",
           "example": "test-service",
           "member": "string",
           "name": "ServiceName",
@@ -12464,7 +12535,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的名字，精确匹配",
+          "document": "<p>路由的名字，精确匹配</p>",
           "example": "test-route",
           "member": "string",
           "name": "RouteName",
@@ -12473,12 +12544,48 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，多个过滤条件之间是与的关系，支持 name, path, host, method, service, protocol",
+          "document": "<p>过滤条件，多个过滤条件之间是与的关系，支持 name, path, host, method, service, protocol</p>",
           "example": "无",
           "member": "ListFilter",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由类型</p>",
+          "example": "[\"Original\",\"Gray\"]",
+          "member": "string",
+          "name": "RouteTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否将灰度规则可能带来的路由排在原始路由前</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "GrayRoutesFirst",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p>",
+          "example": "CreatedTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>DESC： 降序</li><li>ASC： 升序</li></ul>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12488,7 +12595,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "无",
           "member": "KongServiceRouteList",
           "name": "Result",
@@ -12776,7 +12883,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关ID",
+          "document": "<p>网关ID</p>",
           "example": "gateway-962b7d7c",
           "member": "string",
           "name": "GatewayId",
@@ -12785,7 +12892,7 @@
         },
         {
           "disabled": false,
-          "document": "列表数量",
+          "document": "<p>列表数量</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -12794,7 +12901,7 @@
         },
         {
           "disabled": false,
-          "document": "列表 offset",
+          "document": "<p>列表 offset</p>",
           "example": "10",
           "member": "int64",
           "name": "Offset",
@@ -12803,12 +12910,30 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType",
+          "document": "<p>过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType</p>",
           "example": "无",
           "member": "ListFilter",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p>",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>DESC： 降序</li><li>ASC： 升序</li></ul>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12818,7 +12943,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "无",
           "member": "KongServices",
           "name": "Result",
@@ -18362,7 +18487,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主动健康检查健康探测间隔，单位：秒，0表示不开启",
+          "document": "<p>主动健康检查健康探测间隔，单位：秒，0表示不开启</p>",
           "example": "0",
           "member": "uint64",
           "name": "HealthyInterval",
@@ -18373,7 +18498,7 @@
         },
         {
           "disabled": false,
-          "document": "主动健康检查异常探测间隔，单位：秒，0表示不开启",
+          "document": "<p>主动健康检查异常探测间隔，单位：秒，0表示不开启</p>",
           "example": "0",
           "member": "uint64",
           "name": "UnHealthyInterval",
@@ -18384,7 +18509,7 @@
         },
         {
           "disabled": false,
-          "document": "在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。",
+          "document": "<p>在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。</p>",
           "example": "/v1/users",
           "member": "string",
           "name": "HttpPath",
@@ -18395,13 +18520,24 @@
         },
         {
           "disabled": false,
-          "document": "GET HTTP 请求的超时时间，单位：秒。默认 60。",
+          "document": "<p>GET HTTP 请求的超时时间，单位：秒。默认 60。</p>",
           "example": "60",
           "member": "float",
           "name": "Timeout",
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Host头</p>",
+          "example": "tse.test.com",
+          "member": "string",
+          "name": "HostHeader",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -18597,7 +18733,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
           "member": "string",
           "name": "ID",
@@ -18608,7 +18744,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名字",
+          "document": "<p>服务名字</p>",
           "example": "test-service",
           "member": "string",
           "name": "Name",
@@ -18619,7 +18755,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>无</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"GET\"]",
           "member": "string",
           "name": "Methods",
@@ -18630,7 +18766,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>无</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"/v1/users\"]",
           "member": "string",
           "name": "Paths",
@@ -18641,7 +18777,7 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>无</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"tencent.com\"]",
           "member": "string",
           "name": "Hosts",
@@ -18652,7 +18788,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "[\"http\"]",
           "member": "string",
           "name": "Protocols",
@@ -18663,7 +18799,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "true",
           "member": "bool",
           "name": "PreserveHost",
@@ -18674,7 +18810,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "426",
           "member": "int64",
           "name": "HttpsRedirectStatusCode",
@@ -18685,7 +18821,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "true",
           "member": "bool",
           "name": "StripPath",
@@ -18696,7 +18832,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "<p>无</p>",
           "example": "2024-11-25 10:49:23",
           "member": "string",
           "name": "CreatedTime",
@@ -18707,7 +18843,7 @@
         },
         {
           "disabled": true,
-          "document": "是否开启了强制HTTPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启了强制HTTPS</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "ForceHttps",
@@ -18718,7 +18854,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名",
+          "document": "<p>服务名</p>",
           "example": "learn",
           "member": "string",
           "name": "ServiceName",
@@ -18729,7 +18865,7 @@
         },
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "2a212560-220a-46f6-b139-3238eb8ea041",
           "member": "string",
           "name": "ServiceID",
@@ -18740,7 +18876,7 @@
         },
         {
           "disabled": false,
-          "document": "目的端口",
+          "document": "<p>目的端口</p>",
           "example": "[8000]",
           "member": "uint64",
           "name": "DestinationPorts",
@@ -18751,7 +18887,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的Headers",
+          "document": "<p>路由的Headers</p>",
           "example": "无",
           "member": "KVMapping",
           "name": "Headers",
@@ -18762,7 +18898,7 @@
         },
         {
           "disabled": false,
-          "document": "是否缓存请求body，默认true",
+          "document": "<p>是否缓存请求body，默认true</p>",
           "example": "true",
           "member": "bool",
           "name": "RequestBuffering",
@@ -18773,7 +18909,7 @@
         },
         {
           "disabled": false,
-          "document": "是否缓存响应body，默认true",
+          "document": "<p>是否缓存响应body，默认true</p>",
           "example": "true",
           "member": "bool",
           "name": "ResponseBuffering",
@@ -18784,7 +18920,7 @@
         },
         {
           "disabled": false,
-          "document": "正则优先级",
+          "document": "<p>正则优先级</p>",
           "example": "0",
           "member": "int64",
           "name": "RegexPriority",
@@ -18795,13 +18931,24 @@
         },
         {
           "disabled": false,
-          "document": "querystring参数",
+          "document": "<p>querystring参数</p>",
           "example": "无",
           "member": "KVMapping",
           "name": "QueryStringParameters",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由来源</p>",
+          "example": "Original",
+          "member": "string",
+          "name": "RouteSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -19035,7 +19182,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务ID",
+          "document": "<p>服务ID</p>",
           "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
           "member": "string",
           "name": "ID",
@@ -19046,7 +19193,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名字",
+          "document": "<p>服务名字</p>",
           "example": "test-service",
           "member": "string",
           "name": "Name",
@@ -19057,8 +19204,8 @@
         },
         {
           "disabled": false,
-          "document": "标签",
-          "example": "[\"test\"]",
+          "document": "<p>标签</p>",
+          "example": "[\"TSE-Service-Type:DNS\"]",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -19068,7 +19215,7 @@
         },
         {
           "disabled": false,
-          "document": "后端配置",
+          "document": "<p>后端配置</p>",
           "example": "无",
           "member": "KongUpstreamInfo",
           "name": "UpstreamInfo",
@@ -19079,7 +19226,7 @@
         },
         {
           "disabled": false,
-          "document": "后端类型",
+          "document": "<p>后端类型</p>",
           "example": "HostIP",
           "member": "string",
           "name": "UpstreamType",
@@ -19090,7 +19237,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-11-25 10:49:23",
           "member": "string",
           "name": "CreatedTime",
@@ -19101,7 +19248,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可编辑",
+          "document": "<p>是否可编辑</p>",
           "example": "true",
           "member": "bool",
           "name": "Editable",
@@ -19112,7 +19259,7 @@
         },
         {
           "disabled": false,
-          "document": "请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>请求路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/open",
           "member": "string",
           "name": "Path",
@@ -19123,6 +19270,52 @@
         }
       ],
       "usage": "both"
+    },
+    "KongServiceRoute": {
+      "document": "kong实例的服务和路由列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务信息</p>",
+          "example": "无",
+          "member": "KongServicePreview",
+          "name": "Service",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由总条数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "RouteTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有未返回的路由</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RouteHasMore",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由信息</p>",
+          "example": "无",
+          "member": "KongRoutePreview",
+          "name": "Routes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "KongServiceRouteList": {
       "document": "kong服务路由列表",
@@ -19151,6 +19344,32 @@
         }
       ],
       "usage": "both"
+    },
+    "KongServiceWithRoutes": {
+      "document": "返回kong的服务和路由列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "KongServiceRoute",
+          "name": "ServiceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "KongServices": {
       "document": "kong实例的服务列表",

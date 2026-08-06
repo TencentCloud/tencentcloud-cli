@@ -1,40 +1,4 @@
-**Example 1: 查询最新1条任务记录**
-
-查询最新1条任务记录
-
-Input: 
-
-```
-tccli postgres DescribeTasks --cli-unfold-argument  \
-    --Limit 1 \
-    --Offset 0 \
-    --OrderBy StartTime \
-    --OrderByType desc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TaskSet": [
-            {
-                "TaskId": 1202345,
-                "TaskType": "RestoreDatabase",
-                "DBInstanceId": "postgres-q6fj84vb",
-                "StartTime": "2024-09-27 13:14:11",
-                "EndTime": "2024-09-27 13:18:11",
-                "Status": "Success",
-                "Progress": 100,
-                "TaskDetail": {}
-            }
-        ],
-        "RequestId": "3f164712-8746-464f-a490-3084a470000e",
-        "TotalCount": 20
-    }
-}
-```
-
-**Example 2: 查询指定任务ID的任务**
+**Example 1: 查询指定任务ID的任务**
 
 查询指定任务ID的任务
 
@@ -72,7 +36,7 @@ Output:
 }
 ```
 
-**Example 3: 查询指定实例的任务**
+**Example 2: 查询指定实例的任务**
 
 分页查询指定实例的所有任务
 
@@ -182,6 +146,42 @@ Output:
             }
         ],
         "TotalCount": 6
+    }
+}
+```
+
+**Example 3: 查询最新1条任务记录**
+
+查询最新1条任务记录
+
+Input: 
+
+```
+tccli postgres DescribeTasks --cli-unfold-argument  \
+    --Limit 1 \
+    --Offset 0 \
+    --OrderBy StartTime \
+    --OrderByType desc
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskSet": [
+            {
+                "TaskId": 1202345,
+                "TaskType": "RestoreDatabase",
+                "DBInstanceId": "postgres-q6fj84vb",
+                "StartTime": "2024-09-27 13:14:11",
+                "EndTime": "2024-09-27 13:18:11",
+                "Status": "Success",
+                "Progress": 100,
+                "TaskDetail": {}
+            }
+        ],
+        "RequestId": "3f164712-8746-464f-a490-3084a470000e",
+        "TotalCount": 20
     }
 }
 ```

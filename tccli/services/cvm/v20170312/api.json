@@ -8038,7 +8038,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区。",
+          "document": "<p>可用区。</p>",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
@@ -8048,7 +8048,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型。",
+          "document": "<p>实例机型。</p>",
           "example": "S5.LARGE4",
           "member": "string",
           "name": "InstanceType",
@@ -8058,7 +8058,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型系列。",
+          "document": "<p>实例机型系列。</p>",
           "example": "S5",
           "member": "string",
           "name": "InstanceFamily",
@@ -8068,7 +8068,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU核数，单位：核。",
+          "document": "<p>GPU核数，单位：核。</p>",
           "example": "1",
           "member": "int64",
           "name": "GPU",
@@ -8078,7 +8078,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数，单位：核。",
+          "document": "<p>CPU核数，单位：核。</p>",
           "example": "4",
           "member": "int64",
           "name": "CPU",
@@ -8088,7 +8088,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量，单位：`GiB`。",
+          "document": "<p>内存容量，单位：<code>GiB</code>。</p>",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -8098,7 +8098,7 @@
         },
         {
           "disabled": false,
-          "document": "FPGA核数，单位：核。",
+          "document": "<p>FPGA核数，单位：核。</p>",
           "example": "1",
           "member": "int64",
           "name": "FPGA",
@@ -8108,11 +8108,31 @@
         },
         {
           "disabled": false,
-          "document": "实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。",
+          "document": "<p>实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。</p>",
           "example": "1.0",
           "member": "float",
           "name": "GpuCount",
           "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例GPU类型</p>",
+          "example": "N88a",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例GPU单块显存,单位：GiB。</p>",
+          "example": "8",
+          "member": "float",
+          "name": "GpuMemory",
+          "output_required": false,
           "type": "float",
           "value_allowed_null": false
         }

@@ -458,6 +458,32 @@
         "title": "创建防火墙(组)"
       }
     ],
+    "CreateWhiteRule": [
+      {
+        "document": "RuleType=2；Rules[].Info.SrcIP、DstIP 两个字段中恰好填写一个，CoverDuplicate 可省略。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhiteRule\n\n{\n    \"Rules\": [\n        {\n            \"RuleName\": \"办公出口 IP 加白\",\n            \"FwType\": 31,\n            \"Comment\": \"可信办公出口\",\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Info\": {\n                \"SrcIP\": \"198.51.100.201\"\n            }\n        }\n    ],\n    \"RuleType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\"\n    }\n}",
+        "title": "创建精确源 IP 白名单"
+      },
+      {
+        "document": "RuleType=3，域名填写 Rules[].Info.Ioc。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhiteRule\n\n{\n    \"Rules\": [\n        {\n            \"RuleName\": \"可信业务域名\",\n            \"FwType\": 31,\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Info\": {\n                \"Ioc\": \"api.example.com\"\n            }\n        }\n    ],\n    \"RuleType\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\"\n    }\n}",
+        "title": "创建域名白名单"
+      },
+      {
+        "document": "RuleType=8 用于 CIDR/端口/组合；精确单 IP 用 RuleType=2。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhiteRule\n\n{\n    \"Rules\": [\n        {\n            \"RuleName\": \"可信源网段\",\n            \"FwType\": 2,\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Info\": {\n                \"SrcIP\": \"198.51.100.0/30\"\n            }\n        }\n    ],\n    \"RuleType\": 8\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\"\n    }\n}",
+        "title": "创建 CIDR 扩展白名单"
+      },
+      {
+        "document": "RuleType=9 且 FwType=16；多 UA 用 <#cfw-splite#>。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhiteRule\n\n{\n    \"Rules\": [\n        {\n            \"RuleName\": \"可信扫描器 UA\",\n            \"FwType\": 16,\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Info\": {\n                \"UserAgent\": \"TrustedScanner/1.0\"\n            }\n        }\n    ],\n    \"RuleType\": 9\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\"\n    }\n}",
+        "title": "创建 NDR User-Agent 白名单"
+      }
+    ],
     "DeleteAcRule": [
       {
         "document": "删除规则",
@@ -542,6 +568,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcFwGroup\n<公共请求参数>\n\n{\n    \"FwGroupId\": \"cfwg-0752de63\",\n    \"DeleteFwGroup\": 0,\n    \"VpcFwInsList\": [\n        \"cfwew-0752de63\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0752de63-570c-4c2e-bbd2-78574e22a1ae\"\n    }\n}",
         "title": "删除防火墙(组)"
+      }
+    ],
+    "DeleteWhiteRule": [
+      {
+        "document": "批量删除时在数组中传入多个 WhiteId。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWhiteRule\n\n{\n    \"WhiteIdList\": [\n        \"wl-xxxxxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\"\n    }\n}",
+        "title": "按 WhiteId 删除"
       }
     ],
     "DescribeAcLists": [
@@ -1636,6 +1670,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcFwSequenceRules\n<公共请求参数>\n\n{\n    \"RuleChangeItems\": [\n        {\n            \"OrderIndex\": 2,\n            \"NewOrderIndex\": 1\n        },\n        {\n            \"OrderIndex\": 1,\n            \"NewOrderIndex\": 2\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "vpc间规则快速排序"
+      }
+    ],
+    "ModifyWhiteRule": [
+      {
+        "document": "将 DescribeWhiteRule.Data[].WhiteId 写入 Rule.Info.WhiteId；单值 Rule.Info 更新原策略，本示例保留匹配条件并延长有效期。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWhiteRule\n\n{\n    \"Rule\": {\n        \"RuleName\": \"办公出口 IP 加白\",\n        \"FwType\": 1,\n        \"Comment\": \"延长有效期\",\n        \"EndTime\": \"2099-01-01 00:00:00\",\n        \"Info\": {\n            \"SrcIP\": \"198.51.100.201\",\n            \"WhiteId\": \"wl-xxxxxxxx\"\n        }\n    },\n    \"RuleType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\"\n    }\n}",
+        "title": "修改单条白名单策略"
       }
     ],
     "OpenClusterNatFwSwitch": [

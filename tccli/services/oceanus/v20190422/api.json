@@ -3663,8 +3663,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个集群 ID 查询，每次请求的集群上限为 100",
-          "example": "cluster-xxxx",
+          "document": "<p>按照一个或者多个集群 ID 查询，每次请求的集群上限为 100</p>",
+          "example": "[\"cluster-m68k3d2m\"]",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
@@ -3672,7 +3672,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认 0",
+          "document": "<p>偏移量，默认 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3681,7 +3681,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的集群数量，默认 20，最大值 100",
+          "document": "<p>请求的集群数量，默认 20，最大值 100</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -3690,7 +3690,7 @@
         },
         {
           "disabled": false,
-          "document": "集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序",
+          "document": "<p>集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序</p>",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
@@ -3699,7 +3699,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤规则\n    \n- Name\n    按照集群的名字进行模糊查询。例如：测试\n    类型： String\n    必选： 否\n    ",
+          "document": "<p>过滤规则</p><ul><li>Name<br>  按照集群的名字进行模糊查询。例如：测试<br>  类型： String<br>  必选： 否</li></ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3708,7 +3708,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
@@ -3723,7 +3723,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群总数",
+          "document": "<p>集群总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -3733,7 +3733,7 @@
         },
         {
           "disabled": false,
-          "document": "集群列表",
+          "document": "<p>集群列表</p>",
           "example": "无",
           "member": "Cluster",
           "name": "ClusterSet",
@@ -4399,8 +4399,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。",
-          "example": "[\"cql-123\"]",
+          "document": "<p>按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。</p>",
+          "example": "[\"cql-c02rgjsj\"]",
           "member": "string",
           "name": "JobIds",
           "required": false,
@@ -4408,7 +4408,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。",
+          "document": "<p>过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4417,7 +4417,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "<p>偏移量，默认为0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4426,7 +4426,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认为20，最大值为100",
+          "document": "<p>分页大小，默认为20，最大值为100</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -4435,7 +4435,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
@@ -4444,7 +4444,7 @@
         },
         {
           "disabled": false,
-          "document": "查询额外的作业信息,例如 JobEventInfo\t",
+          "document": "<p>查询额外的作业信息,例如 JobEventInfo</p>",
           "example": "[\"JobEventInfo\"]",
           "member": "string",
           "name": "ExtraResult",
@@ -4453,7 +4453,7 @@
         },
         {
           "disabled": false,
-          "document": "查询引用connector",
+          "document": "<p>查询引用connector</p>",
           "example": "setats",
           "member": "string",
           "name": "ConnectorOptions",
@@ -4468,7 +4468,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业总数",
+          "document": "<p>作业总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -4478,7 +4478,7 @@
         },
         {
           "disabled": false,
-          "document": "作业列表",
+          "document": "<p>作业列表</p>",
           "example": "无",
           "member": "JobV1",
           "name": "JobSet",

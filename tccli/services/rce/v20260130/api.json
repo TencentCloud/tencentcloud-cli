@@ -278,6 +278,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>综合风险分数。</p><p>取值范围：[1, 1000]</p><p>数值越大，风险越大。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "150",
+          "member": "int64",
+          "name": "RiskScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -397,6 +407,26 @@
           "example": "200700",
           "member": "string",
           "name": "SdkBuildVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验签token，验签功能启用请联系我们。</p>",
+          "example": "-75016888***Ux8XhJzSTZI=",
+          "member": "string",
+          "name": "SignToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>token生成时间戳，毫秒级。</p>",
+          "example": "1785490616309",
+          "member": "string",
+          "name": "TokenTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -414,6 +414,14 @@
         "title": "获取云托管代码上传url"
       }
     ],
+    "DescribeCloudBaseRunBuildLog": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunBuildLog\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeCloudBaseRunServerVersion": [
       {
         "document": "查询版本信息",

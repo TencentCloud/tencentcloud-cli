@@ -1,13 +1,12 @@
-**Example 1: 查询作业**
+**Example 1: demo**
 
-查询作业
+
 
 Input: 
 
 ```
 tccli oceanus DescribeJobs --cli-unfold-argument  \
-    --Limit 1 \
-    --WorkSpaceId space-53rqk422
+    --JobIds cql-c02rgjsj
 ```
 
 Output: 
@@ -16,42 +15,48 @@ Output:
     "Response": {
         "JobSet": [
             {
-                "AppId": 1257048945,
-                "ClusterId": "cluster-5c43n3a5",
-                "ClusterName": "cluster-test",
-                "ClusterStatus": 2,
-                "CreateTime": "2023-11-20 15:19:57",
-                "CreatorUin": "100032489761",
-                "CuMem": 4,
-                "CurrentRunMillis": 0,
-                "FlinkVersion": "Flink-1.13",
-                "JobId": "cql-e92rh2pb",
+                "JobId": "cql-c02rgjsj",
+                "Region": "ap-chongqing",
+                "Zone": "ap-chongqing-1",
+                "AppId": 1257052345,
+                "OwnerUin": "1002342346",
+                "CreatorUin": "1000372342342",
+                "Name": "paimon120test",
                 "JobType": 1,
-                "LastOpResult": "",
-                "LatestJobConfigVersion": 0,
-                "Name": "create_job_test",
-                "OwnerUin": "100006376216",
-                "PublishedJobConfigVersion": -1,
-                "Region": "ap-guangzhou",
+                "ClusterName": "rwr0707",
+                "RunningCuNum": 2,
+                "RunningCu": 2,
+                "CuMem": 4,
+                "LatestJobConfigVersion": 1,
+                "LatestValidJobConfigVersion": 1,
+                "PublishedJobConfigVersion": 1,
+                "Status": 4,
+                "StatusDesc": "running",
+                "CreateTime": "2026-07-30 16:26:29",
+                "StartTime": "2026-07-30 16:29:44",
+                "StopTime": "2026-07-30 16:30:06",
+                "UpdateTime": "2026-07-30 16:30:06",
+                "CurrentRunMillis": 424807099,
+                "TotalRunMillis": 424807099,
                 "Remark": "",
-                "RunningCu": 0,
-                "RunningCuNum": 0,
+                "Description": "",
+                "LastOpResult": "",
+                "ClusterId": "cluster-sdfsa",
+                "WebUIUrl": "https://ap-chongqing.flinkui.qcloudoceanus.com/cluster-sdfsa/cql-c02rgjsj-837534/?defaultToken=0",
                 "SchedulerType": 2,
-                "StartTime": "2025-11-11 11:11:11",
-                "Status": 1,
-                "StatusDesc": "create",
-                "StopTime": "2025-11-11 11:11:11",
+                "ClusterStatus": 2,
+                "FlinkVersion": "Flink-1.20",
+                "JdkVersion": "8",
+                "WorkSpaceId": "space-dzsdfn3",
+                "WorkSpaceName": "Default",
                 "Tags": null,
-                "TotalRunMillis": 0,
-                "UpdateTime": "2023-11-20 15:19:57",
-                "WebUIUrl": "",
-                "WorkSpaceId": "space-53rek422",
-                "WorkSpaceName": "name",
-                "Zone": "ap-guangzhou-7"
+                "EventInfo": {
+                    "ErrorEventTotal": 0
+                }
             }
         ],
-        "RequestId": "ac6a62a7-45f1-4066-963d-eabea0f2824d",
-        "TotalCount": 5
+        "RequestId": "e27d0353-bsdfs7-496c-b13f-1b241d935d6f",
+        "TotalCount": 31
     }
 }
 ```
