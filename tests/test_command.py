@@ -75,13 +75,18 @@ def _run_tccli(args):
         "import tccli.plugin as _p; _p.import_plugins=lambda: {};\n"
         "from tccli.main import main; sys.argv = %r; sys.exit(main())"
     ) % (_REPO_ROOT, ["tccli"] + list(args))
+    env = dict(os.environ)
+    env["PYTHONIOENCODING"] = "utf-8"
     proc = subprocess.Popen(
         [sys.executable, "-c", code],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        env={**os.environ, "PYTHONIOENCODING": "utf-8"},
+        env=env,
     )
-    out, err = proc.communicate(timeout=60)
+    if sys.version_info[0] < 3:
+        out, err = proc.communicate()
+    else:
+        out, err = proc.communicate(timeout=60)
     return proc.returncode, out.decode("utf-8", "replace"), err.decode("utf-8", "replace")
 
 

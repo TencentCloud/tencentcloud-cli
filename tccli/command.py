@@ -3,6 +3,7 @@
 import os
 import sys
 import copy
+import six
 import tccli.services as Services
 import tccli.options_define as Options_define
 from collections import OrderedDict
@@ -319,7 +320,7 @@ class ActionCommand(BaseCommand):
             return help_command(remaining, parsed_globals)
         elif parsed_args.help:
             for idx, tok in enumerate(remaining):
-                if isinstance(tok, str) and tok.startswith("--"):
+                if isinstance(tok, six.string_types) and tok.startswith("--"):
                     remaining.insert(idx + 1, parsed_args.help)
                     break
             else:
@@ -394,7 +395,7 @@ class ActionCommand(BaseCommand):
 
         matched = OrderedDict()  # 命中的非法参数 -> (截断前缀, 自引用类型名)
         for token in remaining:
-            if not isinstance(token, str) or not token.startswith("--"):
+            if not isinstance(token, six.string_types) or not token.startswith("--"):
                 continue
             key = token[2:]
             for prefix, type_name in truncated.items():
@@ -468,7 +469,7 @@ class ActionCommand(BaseCommand):
                 key = tok[2:]
                 j = i + 1
                 paired = []
-                while j < n and isinstance(remaining[j], str) \
+                while j < n and isinstance(remaining[j], six.string_types) \
                         and not remaining[j].startswith("--"):
                     paired.append(remaining[j])
                     j += 1
@@ -628,7 +629,7 @@ class ActionCommand(BaseCommand):
                 i += 1
                 continue
             is_last = (i == n - 1)
-            next_is_opt = (not is_last) and isinstance(args[i + 1], str) \
+            next_is_opt = (not is_last) and isinstance(args[i + 1], six.string_types) \
                 and args[i + 1].startswith("--")
             if is_last or next_is_opt:
                 orphan_tokens.append(tok)

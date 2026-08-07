@@ -79,7 +79,13 @@ class _FakeDoc(object):
 
 
 def _flat(doc):
-    return "\n".join(str(x) for x in doc.lines)
+    parts = []
+    for x in doc.lines:
+        try:
+            parts.append(str(x))
+        except UnicodeEncodeError:
+            parts.append(x.encode("utf-8"))
+    return "\n".join(parts)
 
 
 # ============================================================
@@ -565,7 +571,7 @@ def _stub_get_param_info(params):
     return _impl
 
 
-def test_G1_base_parameter_empty_writes_无():
+def test_G1_base_parameter_empty_writes():
     doc = _FakeDoc()
     h = _make_action_handler(doc)
     _patch_loader(

@@ -648,7 +648,7 @@ class Loader(object):
                 if not isinstance(members_container, dict) or item not in members_container:
                     # 该 leaf 是被环检测截断的占位项，不再向下钻取
                     recursive_truncated = True
-                    recursive_type = members_container if isinstance(members_container, str) \
+                    recursive_type = members_container if isinstance(members_container, six.string_types) \
                         else (res.get("type_name") or "")
                     break
                 res = members_container[item]
@@ -667,12 +667,12 @@ class Loader(object):
             if not recursive_truncated:
                 final_members = res.get("members")
                 if isinstance(final_members, list) and len(final_members) == 1 \
-                        and isinstance(final_members[0], str) \
+                        and isinstance(final_members[0], six.string_types) \
                         and final_members[0] not in BASE_TYPE \
                         and final_members[0] not in CLI_BASE_TYPE:
                     recursive_truncated = True
                     recursive_type = final_members[0]
-                elif isinstance(final_members, str) \
+                elif isinstance(final_members, six.string_types) \
                         and final_members not in BASE_TYPE \
                         and final_members not in CLI_BASE_TYPE:
                     recursive_truncated = True
@@ -726,8 +726,11 @@ class Loader(object):
         return examples
 
     def translate_cli_example(self, module, action, example):
-        if example["input"].startswith("https"):
-            input_param_list = example["input"].replace(u"&<公共请求参数>", "").split("&")[1:]
+        example_input = example["input"]
+        if isinstance(example_input, bytes):
+            example_input = example_input.decode("utf-8")
+        if example_input.startswith("https"):
+            input_param_list = example_input.replace(u"&<公共请求参数>", "").split("&")[1:]
             return self.translate_get_cli_param(input_param_list)
         elif example["input"].startswith("POST"):
             input_param = example["input"].split('\n\n')[-1]
@@ -782,7 +785,7 @@ class Loader(object):
     def _translate_post_cli_param(self, input_param, param_list, all_param_list):
         # basic type
         if not isinstance(input_param, list) and not isinstance(input_param, dict):
-            if isinstance(input_param, str) and " " in input_param:
+            if isinstance(input_param, six.string_types) and " " in input_param:
                 input_param = "'" + input_param + "'"
             param_list.append(str(input_param))
             tmp = copy.deepcopy(param_list)

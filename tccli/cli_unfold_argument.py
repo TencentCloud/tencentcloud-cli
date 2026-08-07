@@ -57,7 +57,7 @@ class CliUnfoldArgument(CustomArgument):
                 raise UnknownArgumentError(
                     "The index of the array parameter: %s must start from 0, "
                     "and the step size is 1" % parent_key)
-            params = list(params.values())
+            params = [params[k] for k in sorted(params.keys(), key=int)]
             for idx, item in enumerate(params):
                 prefix_param = parent_key+str(idx) if parent_key == "--" else parent_key+"."+str(idx)
                 params[idx] = self.handle_array(item, prefix_param)
