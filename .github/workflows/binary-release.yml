@@ -1,0 +1,78 @@
+name: Build and Release with PyInstaller
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ windows-latest ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+          pip install -e .
+
+      - name: Run PyInstaller
+        run: |
+          pyinstaller tccli/main.py -y -F --collect-all tccli --exclude-module tccli.examples --name tccli 
+
+      - name: Package binary (Linux/macOS)
+        if: runner.os == 'Linux'
+        run: |
+          zip -j "dist/tccli-linux.zip" "dist/tccli"
+
+      - name: Package binary (Linux/macOS)
+        if: runner.os == 'macOS'
+        run: |
+          zip -j "dist/tccli-macos.zip" "dist/tccli"
+
+      - name: Package binary (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          # 在 Windows 上使用 PowerShell 压缩
+          Compress-Archive -Path "dist\tccli.exe" -DestinationPath "dist\tccli-windows.zip"
+        shell: powershell
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: "tccli-${{ runner.os }}"
+          path: dist/*.zip
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: artifacts/*/*.zip
