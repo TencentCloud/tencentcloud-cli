@@ -139,6 +139,29 @@ set  http_proxy=https://myproxy.com:1111
 tccli cvm DescribeRegions --https-proxy https://192.168.1.1:1111
 ```
 
+## OAuth 登录
+通过浏览器授权获取临时凭证，无需手动配置密钥。
+```bash
+tccli auth login
+```
+在无浏览器环境中，使用其他设备打开终端输出的链接并输入验证码：
+```bash
+tccli auth login --browser no
+```
+登录后可执行 `tccli cvm DescribeRegions` 验证。详见[通过浏览器授权获取凭证](https://cloud.tencent.com/document/product/440/111345)。
+
+## SSO 登录
+从集团身份管理获取用户登录 URL 后，配置并登录：
+```bash
+tccli sso configure --url <用户登录URL>
+tccli sso login
+```
+可通过 `--uin`、`--rolename` 指定账号和角色，或通过 `--profile <名称>` 隔离多套凭证：
+```bash
+tccli sso login --uin <账号ID> --rolename <角色名称> --profile <名称>
+```
+详见[通过 SSO 登录](https://cloud.tencent.com/document/product/440/132374)。
+
 # 凭证管理
 
 腾讯云命令行工具（TCCLI）目前支持以下几种方式进行凭证管理，获取凭证的优先级：实例角色 > 角色 > TKE OIDC > 临时密钥 > 永久密钥：
