@@ -10,9 +10,21 @@ from tccli import __version__
 from tccli.services import SERVICE_VERSIONS
 from collections import OrderedDict
 import tccli.plugin as plugin
+from tccli.self_ref import is_action_self_referencing
 
 BASE_TYPE = ["int64", "uint64", "string", "float", "bool", "date", "datetime", "datetime_iso", "binary"]
 CLI_BASE_TYPE = ["Integer", "String", "Float", "Timestamp", "Boolean", "Binary"]
+
+# --cli-unfold-argument 模式下扁平 key 的最大非数字段数（数字下标段不计），超过则报错。
+MAX_INPUT_DEPTH = 30
+
+# 自引用截断点 / 超限输入的统一替代写法提示文案。
+RECURSIVE_HINT_FILE_OPTION = (
+    "Use --cli-input-json file://<path/to/request.json> to provide the entire "
+    "request as a JSON file (the value must begin with 'file://'; raw JSON "
+    "strings are not accepted; run with --generate-cli-skeleton to get a JSON "
+    "template)."
+)
 
 PARAM_TYPE_MAP = {
     'int64': 'Integer',
@@ -353,15 +365,63 @@ class Loader(object):
                     self._filling_param_info(param_info, para, para["member"], para["member"])
         return param_info
 
+    def _get_param_info_safe(self, param_model, object_model, visited=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
+        # visited 沿当前 DFS 路径记录已展开的复合类型名，命中即截断
+        if visited is None:
+            visited = frozenset()
+        param_info = {}
+        for para in param_model:
+            member = para["member"]
+            recursive_hit = member not in BASE_TYPE and member in visited
+            if para["type"] == "list":
+                if member not in BASE_TYPE:
+                    if recursive_hit:
+                        self._filling_param_info(
+                            param_info, para, "list", [member])
+                    else:
+                        self._filling_param_info(
+                            param_info, para, "list",
+                            [self._get_param_info_safe(
+                                object_model[member]["members"], object_model,
+                                visited | {member})])
+                else:
+                    self._filling_param_info(
+                        param_info, para, "list", [member])
+            else:
+                if member not in BASE_TYPE:
+                    if recursive_hit:
+                        param_info = self._filling_param_info(
+                            param_info, para, member, member)
+                    else:
+                        param_info = self._filling_param_info(
+                            param_info, para, member,
+                            self._get_param_info_safe(
+                                object_model[member]["members"], object_model,
+                                visited | {member}))
+                else:
+                    self._filling_param_info(param_info, para, member, member)
+        return param_info
+
     def get_param_info(self, service, version, action):
         service_model = self.get_service_model(service, version)
         param_model = service_model["objects"]
-        return self._get_param_info(param_model[action + "Request"]["members"], param_model)
+        if is_action_self_referencing(service, version, action, service_model):
+            return self._get_param_info_safe(
+                param_model[action + "Request"]["members"], param_model)
+        return self._get_param_info(
+            param_model[action + "Request"]["members"], param_model)
 
     def get_output_param_info(self, service, version, action):
         service_model = self.get_service_model(service, version)
         param_model = service_model["objects"]
-        return self._get_param_info(param_model[action + "Response"]["members"], param_model)
+        # 输出侧走 Response 类型图，其环结构可能与 Request 不同，必须独立判定
+        if is_action_self_referencing(service, version, action, service_model,
+                                      root_suffix="Response"):
+            return self._get_param_info_safe(
+                param_model[action + "Response"]["members"], param_model)
+        return self._get_param_info(
+            param_model[action + "Response"]["members"], param_model)
 
     def _generate_param_skeleton(self, param_model, name):
         param_skeleton = {}
@@ -380,14 +440,66 @@ class Loader(object):
                     param_skeleton[para["name"]] = PARAM_TYPE_MAP[para["member"]]
         return param_skeleton
 
+    def _generate_param_skeleton_safe(self, param_model, name, visited=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
+        # visited 沿路径记录已展开的复合类型名，命中即以字符串占位表示自引用
+        if visited is None:
+            visited = frozenset()
+        param_skeleton = {}
+        for para in param_model:
+            member = para["member"]
+            recursive_hit = member not in BASE_TYPE and member in visited
+            if para["type"] == "list":
+                if member not in BASE_TYPE:
+                    if recursive_hit:
+                        param_skeleton[para["name"]] = [
+                            "<recursive: fill '%s' with a JSON object of type %s (self-referenced)>"
+                            % (para["name"], member)]
+                    else:
+                        param_skeleton[para["name"]] = \
+                            [self._generate_param_skeleton_safe(
+                                name[member]["members"], name,
+                                visited | {member})]
+                else:
+                    param_skeleton[para["name"]] = [PARAM_TYPE_MAP[member]]
+            else:
+                if member not in BASE_TYPE:
+                    if recursive_hit:
+                        param_skeleton[para["name"]] = \
+                            "<recursive: fill '%s' with a JSON object of type %s (self-referenced)>" \
+                            % (para["name"], member)
+                    else:
+                        param_skeleton[para["name"]] = \
+                            self._generate_param_skeleton_safe(
+                                name[member]["members"], name,
+                                visited | {member})
+                else:
+                    param_skeleton[para["name"]] = PARAM_TYPE_MAP[member]
+        return param_skeleton
+
     def generate_param_skeleton(self, service, version, action):
         service_model = self.get_service_model(service, version)
         param_model = service_model["objects"]
-        return self._generate_param_skeleton(param_model[action + "Request"]["members"], param_model)
+        if is_action_self_referencing(service, version, action, service_model):
+            return self._generate_param_skeleton_safe(
+                param_model[action + "Request"]["members"], param_model)
+        return self._generate_param_skeleton(
+            param_model[action + "Request"]["members"], param_model)
 
     def get_unfold_param_info(self, service, version, action, profile="default", param_array=False):
         service_model = self.get_service_model(service, version)
         object_model = service_model["objects"]
+
+        if is_action_self_referencing(service, version, action, service_model):
+            all_param_list = []
+            for para in object_model[action + "Request"]["members"]:
+                param_list = []
+                self._get_unfold_param_info_safe(object_model, all_param_list, param_list, para)
+            if param_array:
+                all_param_list = self._add_array_item(all_param_list, profile)
+            return self._filling_unfold_param_info_safe(
+                all_param_list, service, version, action, object_model)
+
         all_param_list = []
         for para in object_model[action + "Request"]["members"]:
             param_list = []
@@ -421,6 +533,14 @@ class Loader(object):
         if param_list.pop().isdigit():
             param_list.pop()
 
+    def _recur_get_unfold_param_info_safe(self, param_model, object_model, return_param_list, param_list,
+                                          visited=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
+        for para in param_model:
+            self._get_unfold_param_info_safe(object_model, return_param_list, param_list, para, visited)
+        if param_list.pop().isdigit():
+            param_list.pop()
+
     def _get_unfold_param_info(self, object_model, return_param_list, param_list, para):
         param_list.append(para["name"])
         if para["type"] == "list" and para["member"] not in BASE_TYPE:
@@ -428,6 +548,32 @@ class Loader(object):
         if para["member"] not in BASE_TYPE:
             self._recur_get_unfold_param_info(object_model[para["member"]]["members"],
                                               object_model, return_param_list, param_list)
+        else:
+            tmp = copy.deepcopy(param_list)
+            return_param_list.append(tmp)
+
+            if param_list.pop().isdigit():
+                param_list.pop()
+
+    def _get_unfold_param_info_safe(self, object_model, return_param_list, param_list, para, visited=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
+        # visited 沿路径维护，识别自引用类型（如 AllocationRuleExpression.Children）
+        if visited is None:
+            visited = frozenset()
+        param_list.append(para["name"])
+        if para["type"] == "list" and para["member"] not in BASE_TYPE:
+            param_list.append('0')
+        member = para["member"]
+        if member not in BASE_TYPE:
+            if member in visited:
+                tmp = copy.deepcopy(param_list)
+                return_param_list.append(tmp)
+                if param_list.pop().isdigit():
+                    param_list.pop()
+                return
+            self._recur_get_unfold_param_info_safe(object_model[member]["members"],
+                                                   object_model, return_param_list, param_list,
+                                                   visited | {member})
         else:
             tmp = copy.deepcopy(param_list)
             return_param_list.append(tmp)
@@ -475,6 +621,88 @@ class Loader(object):
             unfold_param[".".join(param)]["document"] = document
         return unfold_param
 
+    def _filling_unfold_param_info_safe(self, param_list, service, version, action, object_model=None):
+        # 【自引用数据结构专属链路】仅自引用接口经 dispatch 进入，非自引用接口不会走到。
+        # 相比原始版额外识别被截断的 leaf，打上 recursive_truncated / recursive_type 标记。
+        unfold_param = {}
+        param_info = self.get_param_info(service, version, action)
+        for param in param_list:
+            unfold_param[".".join(param)] = {}
+
+            tmp_param = [item for item in param if not item.isdigit()]
+            res = param_info[tmp_param[0]]
+
+            param_type = res["type"]
+            type_name = res["type_name"]
+            required = res.get("required")
+            document = res["document"]
+            recursive_truncated = False
+            recursive_type = None
+
+            for idx, item in enumerate(tmp_param[1:]):
+                # 命中自引用截断：当前 res 的 members 是占位字符串（类型名）而非 dict
+                if res["type"] == "Array":
+                    members_container = res["members"][0]
+                else:
+                    members_container = res["members"]
+                if not isinstance(members_container, dict) or item not in members_container:
+                    # 该 leaf 是被环检测截断的占位项，不再向下钻取
+                    recursive_truncated = True
+                    recursive_type = members_container if isinstance(members_container, six.string_types) \
+                        else (res.get("type_name") or "")
+                    break
+                res = members_container[item]
+
+                if required == "Required" and res["required"] == "Optional":
+                    required = "Optional"
+
+                if idx == len(tmp_param) - 2:
+                    param_type = res["type"]
+                    type_name = res["type_name"] if res["type"] == "Array" \
+                        else res["type_name"]
+                    document = res["document"]
+                    break
+
+            # 二次判定：路径走完后，若该 leaf 自身是被环检测截断的复合类型（members 为占位）
+            if not recursive_truncated:
+                final_members = res.get("members")
+                if isinstance(final_members, list) and len(final_members) == 1 \
+                        and isinstance(final_members[0], six.string_types) \
+                        and final_members[0] not in BASE_TYPE \
+                        and final_members[0] not in CLI_BASE_TYPE:
+                    recursive_truncated = True
+                    recursive_type = final_members[0]
+                elif isinstance(final_members, six.string_types) \
+                        and final_members not in BASE_TYPE \
+                        and final_members not in CLI_BASE_TYPE:
+                    recursive_truncated = True
+                    recursive_type = final_members
+
+            if len([item for item in param if item.isdigit() and int(item) > 0]) > 0:
+                required = "Optional"
+
+            if recursive_truncated:
+                # 自引用截断点统一标记为 Object，提示用户用 JSON 整体传入
+                param_type = "Object"
+                type_name = recursive_type or "Object"
+                required = "Optional"
+                document = (document or "") + \
+                    ("\nNote: this field is a self-referencing type %s. "
+                     "--cli-unfold-argument only expands the first level. "
+                     "For deeper nesting:\n  %s"
+                     % (recursive_type or "", RECURSIVE_HINT_FILE_OPTION))
+
+            unfold_param[".".join(param)]["type"] = param_type
+            unfold_param[".".join(param)]["type_name"] = type_name
+            unfold_param[".".join(param)]["required"] = required
+            unfold_param[".".join(param)]["document"] = document
+            # 稳定字段：供上层（如 command.py）在客户深入自引用路径报 Unknown options 时
+            # 给出针对性提示，无需依赖 document 文案
+            if recursive_truncated:
+                unfold_param[".".join(param)]["recursive_truncated"] = True
+                unfold_param[".".join(param)]["recursive_type"] = recursive_type or ""
+        return unfold_param
+
     def get_action_example_model(self, service, version, action):
         services_path = self.get_services_path()
         version = "v" + version.replace('-', '')
@@ -498,8 +726,11 @@ class Loader(object):
         return examples
 
     def translate_cli_example(self, module, action, example):
-        if example["input"].startswith("https"):
-            input_param_list = example["input"].replace(u"&<公共请求参数>", "").split("&")[1:]
+        example_input = example["input"]
+        if isinstance(example_input, bytes):
+            example_input = example_input.decode("utf-8")
+        if example_input.startswith("https"):
+            input_param_list = example_input.replace(u"&<公共请求参数>", "").split("&")[1:]
             return self.translate_get_cli_param(input_param_list)
         elif example["input"].startswith("POST"):
             input_param = example["input"].split('\n\n')[-1]
@@ -554,7 +785,7 @@ class Loader(object):
     def _translate_post_cli_param(self, input_param, param_list, all_param_list):
         # basic type
         if not isinstance(input_param, list) and not isinstance(input_param, dict):
-            if isinstance(input_param, str) and " " in input_param:
+            if isinstance(input_param, six.string_types) and " " in input_param:
                 input_param = "'" + input_param + "'"
             param_list.append(str(input_param))
             tmp = copy.deepcopy(param_list)
