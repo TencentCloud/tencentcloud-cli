@@ -49,6 +49,20 @@
       "output": "CreateJobConfigResponse",
       "status": "online"
     },
+    "CreateMetaDatabase": {
+      "document": "创建元数据库",
+      "input": "CreateMetaDatabaseRequest",
+      "name": "创建元数据库",
+      "output": "CreateMetaDatabaseResponse",
+      "status": "online"
+    },
+    "CreateMetaTable": {
+      "document": "创建元数据表",
+      "input": "CreateMetaTableRequest",
+      "name": "创建元数据表",
+      "output": "CreateMetaTableResponse",
+      "status": "online"
+    },
     "CreateOceanusCluster": {
       "document": "创建Oceanus集群",
       "input": "CreateOceanusClusterRequest",
@@ -292,6 +306,13 @@
       "input": "ModifyJobRequest",
       "name": "更新作业",
       "output": "ModifyJobResponse",
+      "status": "online"
+    },
+    "ModifyMetaTable": {
+      "document": "修改元数据表",
+      "input": "ModifyMetaTableRequest",
+      "name": "元数据表编辑",
+      "output": "ModifyMetaTableResponse",
       "status": "online"
     },
     "ModifyWorkSpace": {
@@ -2793,6 +2814,179 @@
           "name": "JobId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaDatabaseRequest": {
+      "document": "CreateMetaDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "CatalogId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "库名",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaDatabaseResponse": {
+      "document": "CreateMetaDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "DatabaseId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaTableRequest": {
+      "document": "CreateMetaTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Catalog Id</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CatalogId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>库Id</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "DatabaseId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>建表语句</p><p>参数格式：需要base64加密</p>",
+          "example": "Y3JlYXRlIHRhYmxl",
+          "member": "string",
+          "name": "SqlCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "维表",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "cluster-aaa",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用资源</p>",
+          "example": "无",
+          "member": "ResourceRef",
+          "name": "ResourceRefs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Flink版本</p>",
+          "example": "Flink-1.11",
+          "member": "string",
+          "name": "FlinkVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间 SerialId</p>",
+          "example": "space-aaaa",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步id</p>",
+          "example": "407D2293-E7A8-456B-97F8-B242677AE72D",
+          "member": "string",
+          "name": "AsyncTaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaTableResponse": {
+      "document": "CreateMetaTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表Id</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TableId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7526,6 +7720,78 @@
       ],
       "type": "object"
     },
+    "ModifyMetaTableRequest": {
+      "document": "ModifyMetaTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群唯一id</p>",
+          "example": "cluster-12",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据表唯一id</p>",
+          "example": "table-12",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL</p><p>参数格式：base64加密</p>",
+          "example": "Y3JlYXRlIHRhYmxl",
+          "member": "string",
+          "name": "SqlCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Flink版本</p>",
+          "example": "Flink-1.14",
+          "member": "string",
+          "name": "FlinkVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间唯一id</p>",
+          "example": "spave-12",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMetaTableResponse": {
+      "document": "ModifyMetaTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyWorkSpaceRequest": {
       "document": "ModifyWorkSpace请求参数结构体",
       "members": [
@@ -8823,7 +9089,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cluster-lq6dtnk5",
           "member": "string",
           "name": "ClusterId",
@@ -8832,8 +9098,8 @@
         },
         {
           "disabled": false,
-          "document": "需要执行的sql，该sql会被Sql Gateway执行，当前支持的是paimon修改需求，因此主要是DDL语句",
-          "example": "select 1",
+          "document": "<p>需要执行的sql，需要对其进行base64编译后传入</p>",
+          "example": "c2hvdyBkYXRhYmFzZXM7",
           "member": "string",
           "name": "Sql",
           "required": true,
@@ -8841,7 +9107,7 @@
         },
         {
           "disabled": false,
-          "document": "Sql Gateway会话ID，可不填，如果不填则会自动创建一个会话ID，每个会话ID都有一个存活时间，测试环境为10分钟，线上默认是30分钟",
+          "document": "<p>Sql Gateway会话ID，可不填，如果不填则会自动创建一个会话ID，每个会话ID都有一个存活时间，测试环境为10分钟，线上默认是30分钟</p>",
           "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
           "member": "string",
           "name": "SessionId",
@@ -8856,8 +9122,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"error\"]",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -8866,7 +9132,7 @@
         },
         {
           "disabled": false,
-          "document": "会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致",
+          "document": "<p>会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致</p>",
           "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
           "member": "string",
           "name": "SessionId",
@@ -8876,7 +9142,7 @@
         },
         {
           "disabled": false,
-          "document": "返回执行id，可以根据该执行id和会话id获取执行结果",
+          "document": "<p>返回执行id，可以根据该执行id和会话id获取执行结果</p>",
           "example": "操作ID",
           "member": "string",
           "name": "OperationHandleId",

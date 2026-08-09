@@ -74,6 +74,22 @@
         "title": "新建Jar作业配置示例"
       }
     ],
+    "CreateMetaDatabase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateMetaDatabase\n<公共请求参数>\n\n{\n    \"CatalogId\": 0,\n    \"DatabaseName\": \"xxx\",\n    \"Comment\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DatabaseId\": 1,\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
+        "title": "创建元数据库"
+      }
+    ],
+    "CreateMetaTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaTable\n<公共请求参数>\n\n{\n    \"CatalogId\": 0,\n    \"DatabaseId\": 0,\n    \"SqlCode\": \"Q1JFQVRFIFRBQkxFIFNvdXJjZVRhYmxlICggICAgICBmX3NlcXVlbmNlIElOVCwgICAgICBmX3JhbmRvbSBJTlQsICAgICAgZl9yYW5kb21fc3RyIFNUUklORyAgKSBXSVRIICggICAgICAnY29ubmVjdG9yJyA9ICdteXNxbC1jZGMnLCAgICAgICdkYXRhYmFzZS1uYW1lJyA9ICd0ZXN0JywgICAgICAnaG9zdG5hbWUnID0gJzEwLjAuMC4xNicsICAgICAgJ3Bhc3N3b3JkJyA9ICdRY2xvdWRWNSEnLCAgICAgICdwb3J0JyA9ICczMzA2JywgICAgICAndGFibGUtbmFtZScgPSAnbXlfdGVzdCcsICAgICAgJ3VzZXJuYW1lJyA9ICdyb290JyApIA==\",\n    \"Comment\": \"维表\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff2de498-281d-4b26-8f31-f3cdd9904559\",\n        \"TableId\": 0\n    }\n}",
+        "title": "创建元数据表"
+      }
+    ],
     "CreateOceanusCluster": [
       {
         "document": "创建Oceanus集群",
@@ -372,6 +388,14 @@
         "title": "更新作业"
       }
     ],
+    "ModifyMetaTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMetaTable\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-xxx\",\n    \"TableId\": \"1\",\n    \"SqlCode\": \"Q1JFQVRFIFRBQkxFIGRhdGFnZW5fc291cmNlX3RhYmxlICggCiAgICBpZCBJTlQsIAogICAgbmFtZSBTVFJJTkcgCikgV0lUSCAoCidjb25uZWN0b3InPSdkYXRhZ2VuJywKJ3Jvd3MtcGVyLXNlY29uZCcgPSAnMScKKTs=\",\n    \"FlinkVersion\": \"Flink-1.13\",\n    \"WorkSpaceId\": \"space-xx\",\n    \"Remark\": \"remark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"407D2293-E7A8-456B-97F8-B242677AE71D\"\n    }\n}",
+        "title": "元数据表编辑"
+      }
+    ],
     "ModifyWorkSpace": [
       {
         "document": "",
@@ -407,8 +431,8 @@
     "RunSqlGatewayStatement": [
       {
         "document": "执行Statement",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunSqlGatewayStatement\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"SessionId\": \"abc\",\n    \"Sql\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": [\n            \"abc\"\n        ],\n        \"SessionId\": \"abc\",\n        \"OperationHandleId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunSqlGatewayStatement\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-ok9rljv8\",\n    \"Sql\": \"c2hvdyBkYXRhYmFzZXM7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": null,\n        \"OperationHandleId\": \"b8884f52-751c-4af6-b738-0423b0b326cf\",\n        \"SessionId\": \"bddbce98-4d7c-4dde-b00d-4268e0c26e55\",\n        \"RequestId\": \"0ee87c03-b224-4cf4-b317-95cf8e7a8c97\"\n    }\n}",
         "title": "执行Statement"
       }
     ],

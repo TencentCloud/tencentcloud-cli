@@ -28,7 +28,9 @@ Output:
                 "PackageName": "com.turingfd",
                 "Platform": "2",
                 "SdkBuildVersion": "90",
-                "SystemVersion": "11"
+                "SystemVersion": "11",
+                "SignToken": "-75016888***Ux8XhJzSTZI=",
+                "TokenTime": "1785490616309"
             },
             "Score": {
                 "RiskLabels": [
@@ -37,7 +39,8 @@ Output:
                         "Reason": "Debuggable USB connection (Android)"
                     }
                 ],
-                "RiskLevel": 2
+                "RiskLevel": 2,
+                "RiskScore": 150
             },
             "Environment": {
                 "Location": {
