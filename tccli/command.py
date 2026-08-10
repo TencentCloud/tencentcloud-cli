@@ -458,7 +458,7 @@ class ActionCommand(BaseCommand):
         while i < n:
             tok = remaining[i]
             # --- 内联 token 解析：支持 --key=value 和 --key v1 v2 两种形式 ---
-            if not isinstance(tok, str) or not tok.startswith("--"):
+            if not isinstance(tok, six.string_types) or not tok.startswith("--"):
                 new_remaining.append(tok)
                 i += 1
                 continue
@@ -622,7 +622,7 @@ class ActionCommand(BaseCommand):
         i = 0
         while i < n:
             tok = args[i]
-            if not isinstance(tok, str) or not tok.startswith("--") or "=" in tok:
+            if not isinstance(tok, six.string_types) or not tok.startswith("--") or "=" in tok:
                 i += 1
                 continue
             if tok in valueless_opts:
