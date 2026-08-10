@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from tccli.loaders import Loader, BASE_TYPE, CLI_BASE_TYPE
-
+import six
 
 class BaseDocumentHandler(object):
     def __init__(self, doc):
@@ -175,7 +175,7 @@ class ActionDocumentHandler(BaseDocumentHandler):
                     self.doc.write('[%s ...]' % (param_info["members"]))
                 else:
                     self.doc.doc_description('[%s ...]' % (param_info["members"]))
-            elif isinstance(param_info["members"], str):
+            elif isinstance(param_info["members"], six.string_types):
                 # 自引用截断占位：members 为类型名字符串（如 "AllocationRuleExpression"），
                 # 直接渲染 recursive 提示占位，不再向下展开
                 placeholder = '[<recursive: fill with a JSON object of type %s, same shape as parent> ...]' % param_info["members"]
@@ -197,7 +197,7 @@ class ActionDocumentHandler(BaseDocumentHandler):
         else:
             if param_info["members"] in BASE_TYPE:
                 return
-            if isinstance(param_info["members"], str):
+            if isinstance(param_info["members"], six.string_types):
                 # 自引用截断占位（非 Array 形态）：members 为类型名字符串，
                 # 直接渲染 recursive 提示占位
                 self.doc.doc_description(
@@ -232,7 +232,7 @@ class ActionDocumentHandler(BaseDocumentHandler):
         if not param_info["type"] == "Array" and param_info["members"] in BASE_TYPE:
             return
         # 自引用截断占位：非 Array 且 members 为类型名字符串，无可展开内容，直接跳过
-        if not param_info["type"] == "Array" and isinstance(param_info["members"], str):
+        if not param_info["type"] == "Array" and isinstance(param_info["members"], six.string_types):
             return
 
         self.doc.style.new_line()
