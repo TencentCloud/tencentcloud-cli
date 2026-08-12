@@ -27,7 +27,8 @@ tccli redis CreateInstances --cli-unfold-argument  \
     --NodeSet.1.ZoneName ap-guangzhou-3 \
     --ResourceTags.0.TagKey None \
     --ResourceTags.0.TagValue None \
-    --DryRun False
+    --DryRun False \
+    --ConnectionMode 1
 ```
 
 Output: 

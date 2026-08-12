@@ -280,10 +280,10 @@
     ],
     "DeployResource": [
       {
-        "document": "开通服务，初始化资源，只针对新购资源",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployResource\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-bhtest\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"ResourceId\": \"bh-saas-bhtest\",\n    \"ApCode\": \"ap-guangzhou\",\n    \"SubnetId\": \"subnet-bhtest\",\n    \"CidrBlock\": \"10.10.10.0/32\",\n    \"VpcName\": \"vpc1\",\n    \"VpcCidrBlock\": \"10.10.0.0/16\",\n    \"SubnetName\": \"subnet1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec7676f4-a498-4ef5-ad68-6678b16e45d7\"\n    }\n}",
-        "title": "开通服务"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-************\",\n    \"ApCode\": \"ap-guangzhou\",\n    \"Zone\": \"ap-guangzhou-6\",\n    \"VpcId\": \"vpc-q1of5***\",\n    \"SubnetId\": \"subnet-dp102ji4\",\n    \"CidrBlock\": \"192.168.24.0/24\",\n    \"VpcName\": \"gordan-test1\",\n    \"VpcCidrBlock\": \"192.168.0.0/16\",\n    \"SubnetName\": \"zone6\",\n    \"WebAccess\": 1,\n    \"ClientAccess\": 1,\n    \"IntranetAccess\": 1,\n    \"ExternalAccess\": 1,\n    \"DeploySubnets\": [\n        {\n            \"SubnetId\": \"subnet-dp102***\",\n            \"SubnetName\": \"zone6\",\n            \"Zone\": \"ap-guangzhou-6\",\n            \"SubnetCidrBlock\": \"192.168.24.0/24\"\n        }\n    ],\n    \"IntranetVpcId\": \"vpc-q1of5***\",\n    \"IntranetVpcCidrBlock\": \"192.168.0.0/16\",\n    \"IntranetVpcName\": \"gordan-test1\",\n    \"IntranetSubnets\": [\n        {\n            \"SubnetId\": \"subnet-dp102***\",\n            \"SubnetName\": \"zone6\",\n            \"Zone\": \"ap-guangzhou-6\",\n            \"SubnetCidrBlock\": \"192.168.24.0/24\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e4ae08b-bcca-43a2-86f3-2c3613154299\"\n    }\n}",
+        "title": "实例1"
       }
     ],
     "DescribeAccessWhiteListRules": [

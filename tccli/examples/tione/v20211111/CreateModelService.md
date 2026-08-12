@@ -1,6 +1,6 @@
-**Example 1: 创建示例**
+**Example 1: 新建在线服务**
 
-创建一个基于自定义镜像的服务
+
 
 Input: 
 
@@ -35,22 +35,26 @@ Output:
             "ServiceId": "ms-skdg89rx-1",
             "ServiceGroupName": "demo-create",
             "ServiceDescription": "",
+            "Uin": "100030513581",
+            "SubUin": "100030513581",
+            "CreatedBy": "100044299491",
             "ServiceInfo": {
                 "Replicas": 1,
                 "ImageInfo": {
                     "ImageType": "CCR",
-                    "ImageUrl": "ccr.ccs.tencentyun.com/test-ccr/hellotest",
+                    "ImageUrl": "ccr.ccs.tencentyun.com/jiaqi-3581-test/mock_service:tione_20250509",
                     "RegistryRegion": "ap-guangzhou",
                     "RegistryId": ""
                 },
                 "Env": [],
                 "Resources": {
-                    "Cpu": 2000,
-                    "Memory": 4096,
+                    "Cpu": 1000,
+                    "Memory": 1024,
                     "Gpu": 0,
                     "RealGpu": 0,
-                    "GpuType": "none",
-                    "RealGpuDetailSet": []
+                    "GpuType": "GPU-GN7",
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false
                 },
                 "InstanceType": "TI.S.MEDIUM.POST",
                 "ModelInfo": null,
@@ -80,11 +84,8 @@ Output:
             "ResourceGroupName": "",
             "Tags": [],
             "IngressName": "user-ingress-1",
-            "CreatedBy": "10000000000",
             "CreateTime": "",
             "UpdateTime": "",
-            "Uin": "10000000000",
-            "SubUin": "10000000000",
             "AppId": 10000000000,
             "BusinessStatus": "CREATING",
             "CreateFailedReason": "",

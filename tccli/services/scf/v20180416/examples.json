@@ -30,6 +30,14 @@
         "title": "示例2"
       }
     ],
+    "CreateDebugVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDebugVersion\n<公共请求参数>\n\n{\n    \"FunctionName\": \"debug-test-v2\",\n    \"Namespace\": \"zed\",\n    \"StartCommand\": \"sleep infinity\",\n    \"PersistenceTime\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"928ec139-ad8d-4b32-a0f4-012017606e28\"\n    }\n}",
+        "title": "启动函数debug版本"
+      }
+    ],
     "CreateFunction": [
       {
         "document": "创建函数",

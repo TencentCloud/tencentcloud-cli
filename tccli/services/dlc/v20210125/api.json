@@ -182,6 +182,13 @@
       "output": "CheckQueueNameResponse",
       "status": "online"
     },
+    "CheckRayOnDLCResourceRole": {
+      "document": "判断是否授权服务角色",
+      "input": "CheckRayOnDLCResourceRoleRequest",
+      "name": "校验客户账号下是否存在RayOnDLC服务角色",
+      "output": "CheckRayOnDLCResourceRoleResponse",
+      "status": "online"
+    },
     "CheckRegionCHDFSEnable": {
       "document": "此接口（CheckRegionCHDFSEnable）用于检查当前地域是否支持元数据加速桶能力",
       "input": "CheckRegionCHDFSEnableRequest",
@@ -4403,6 +4410,43 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckRayOnDLCResourceRoleRequest": {
+      "document": "CheckRayOnDLCResourceRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待校验服务角色名称，不填默认校验DLC_QCSLinkedRoleInRayOnDLC",
+          "example": "CheckRayOnDLCResourceRole",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckRayOnDLCResourceRoleResponse": {
+      "document": "CheckRayOnDLCResourceRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否已授权",
+          "example": "false",
+          "member": "bool",
+          "name": "Granted",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15194,7 +15238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Mysql数据源连接的属性",
+          "document": "<p>Mysql数据源连接的属性</p>",
           "example": "无",
           "member": "MysqlInfo",
           "name": "Mysql",
@@ -15205,7 +15249,7 @@
         },
         {
           "disabled": false,
-          "document": "Hive数据源连接的属性",
+          "document": "<p>Hive数据源连接的属性</p>",
           "example": "无",
           "member": "HiveInfo",
           "name": "Hive",
@@ -15216,7 +15260,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka数据源连接的属性",
+          "document": "<p>Kafka数据源连接的属性</p>",
           "example": "无",
           "member": "KafkaInfo",
           "name": "Kafka",
@@ -15227,7 +15271,7 @@
         },
         {
           "disabled": false,
-          "document": "其他数据源连接的属性",
+          "document": "<p>其他数据源连接的属性</p>",
           "example": "无",
           "member": "OtherDatasourceConnection",
           "name": "OtherDatasourceConnection",
@@ -15238,7 +15282,7 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL数据源连接的属性",
+          "document": "<p>PostgreSQL数据源连接的属性</p>",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "PostgreSql",
@@ -15249,7 +15293,7 @@
         },
         {
           "disabled": false,
-          "document": "SQLServer数据源连接的属性",
+          "document": "<p>SQLServer数据源连接的属性</p>",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "SqlServer",
@@ -15260,7 +15304,7 @@
         },
         {
           "disabled": false,
-          "document": "ClickHouse数据源连接的属性",
+          "document": "<p>ClickHouse数据源连接的属性</p>",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "ClickHouse",
@@ -15271,7 +15315,7 @@
         },
         {
           "disabled": false,
-          "document": "Elasticsearch数据源连接的属性",
+          "document": "<p>Elasticsearch数据源连接的属性</p>",
           "example": "无",
           "member": "ElasticsearchInfo",
           "name": "Elasticsearch",
@@ -15282,7 +15326,7 @@
         },
         {
           "disabled": false,
-          "document": "TDSQL-PostgreSQL数据源连接的属性",
+          "document": "<p>TDSQL-PostgreSQL数据源连接的属性</p>",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "TDSQLPostgreSql",
@@ -15293,7 +15337,7 @@
         },
         {
           "disabled": false,
-          "document": "Doris数据源连接的属性",
+          "document": "<p>Doris数据源连接的属性</p>",
           "example": "无",
           "member": "TCHouseD",
           "name": "TCHouseD",
@@ -15304,7 +15348,7 @@
         },
         {
           "disabled": false,
-          "document": "TccHive数据目录连接信息",
+          "document": "<p>TccHive数据目录连接信息</p>",
           "example": "无",
           "member": "TccHive",
           "name": "TccHive",
@@ -15315,11 +15359,22 @@
         },
         {
           "disabled": false,
-          "document": "MongoDB 数据源",
+          "document": "<p>MongoDB 数据源</p>",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "MongoDB",
           "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TCHouseP数据源</p>",
+          "example": "无",
+          "member": "TCHousePInfo",
+          "name": "TCHouseP",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -47607,6 +47662,100 @@
       ],
       "usage": "both"
     },
+    "TCHousePInfo": {
+      "document": "TCHouseP 结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "cdwpg-3xngvacw",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "friend",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>JdbcUrl</p>",
+          "example": "jdbc:postgresql://10.0.0.4:9000",
+          "member": "string",
+          "name": "JdbcUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "dbadmin",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码</p>",
+          "example": "123456myq!",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址</p>",
+          "example": "无",
+          "member": "DatasourceConnectionLocation",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "DbName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址信息</p>",
+          "example": "\"[{\\\"address\\\":\\\"10.0.0.4:9000\\\",\\\"protocol\\\":\\\"tcp\\\"}]\"",
+          "member": "string",
+          "name": "AccessInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TColumn": {
       "document": "表字段描述信息",
       "members": [
@@ -48977,6 +49126,16 @@
           "name": "QueueTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组类型</p>",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "ResourceGroupType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -1,0 +1,390 @@
+{
+  "actions": {
+    "DescribeKeys": {
+      "document": "查询指定实例的 API Key 列表。",
+      "input": "DescribeKeysRequest",
+      "name": "查询指定模型路由实例的API Key列表",
+      "output": "DescribeKeysResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-03-17",
+    "api_brief": "您可以通过 API Explorer 在线调试本产品接口，也可以参考 API 概览 了解全部接口能力。CMR 支持通过控制台、SDK、Terraform 等多种方式进行创建与管理。",
+    "serviceNameCN": "模型路由",
+    "serviceShortName": "cmr"
+  },
+  "objects": {
+    "CreditUsage": {
+      "document": "Credit使用情况。该结构用于 CreditUsageSet 数组中的逐周期用量。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Budget刷新周期。</p><p>枚举值：</p><ul><li>1d：按天刷新</li><li>7d：按周刷新</li><li>30d：按月刷新</li></ul><p>仅在 CreditUsageSet 数组元素中返回。</p>",
+          "example": "30d",
+          "member": "string",
+          "name": "BudgetDuration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下次刷新时间。</p><p>用户组关联Budget且Budget设置重置周期时返回；未关联Budget或未设置重置周期时为空。</p>",
+          "example": "2026-07-01T00:00:00+08:00",
+          "member": "string",
+          "name": "BudgetResetAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Credit上限。</p><p>用户组关联Budget且Budget设置最大预算时返回；未设置最大预算时为空。</p>",
+          "example": "1000",
+          "member": "float",
+          "name": "Limit",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组已使用的Credit数量。</p>",
+          "example": "128.45",
+          "member": "float",
+          "name": "Used",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeKeysRequest": {
+      "document": "DescribeKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由实例ID</p>",
+          "example": "cmr-pm53f9c3",
+          "member": "string",
+          "name": "ModelRouterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤列表</p><p>支持：KeyName、BudgetId、tag-key、tag:&lt;tag-key&gt;。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API Key的ID列表</p>",
+          "example": "[\"vkey-lboa0hhh\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询限制的数量</p><p>取值范围：[1, 100]</p><p>默认值：20</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询偏移量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKeysResponse": {
+      "document": "DescribeKeys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API Key列表</p>",
+          "example": "无",
+          "member": "KeyInfo",
+          "name": "Keys",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "过滤器条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤器的名称</p>",
+          "example": "UserGroupId",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器的值数组</p>",
+          "example": "[\"ugrp-ungrouped\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "KeyInfo": {
+      "document": "Key信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否禁用Key</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Blocked",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key关联的Budget ID。</p><p>未关联Budget时返回空字符串。</p>",
+          "example": "budget-1a2b3c4d",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key关联的Budget名称。</p><p>未关联Budget时返回空字符串。</p>",
+          "example": "production-budget",
+          "member": "string",
+          "name": "BudgetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-04-07T14:45:32+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key按Budget刷新周期划分的Credit使用情况。</p><p>当关联Budget配置多个刷新周期时，按1d、7d、30d顺序返回各周期用量；未关联Budget时返回空数组。</p>",
+          "example": "无",
+          "member": "CreditUsage",
+          "name": "CreditUsageSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key的值</p>",
+          "example": "sk-***BRk",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key的ID</p>",
+          "example": "vkey-onkfcokh",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key名称</p>",
+          "example": "2",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2026-04-07T22:45:31+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>限速信息</p>",
+          "example": "无",
+          "member": "RateLimitConfigForKey",
+          "name": "RateLimitConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Key状态</p><p>枚举值：</p><ul><li>Active： 正常</li></ul>",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属的用户组ID</p>",
+          "example": "ugrp-ungrouped",
+          "member": "string",
+          "name": "UserGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属的用户组名称</p>",
+          "example": "ungrouped",
+          "member": "string",
+          "name": "UserGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RateLimitConfigForKey": {
+      "document": "限速配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最大并发请求数量</p><p>单位：次</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxParallelRequest",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每分钟限制的请求数量</p><p>单位：次/分钟</p>",
+          "example": "30",
+          "member": "uint64",
+          "name": "RPM",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每分钟限制的Token数量</p><p>单位：个/分钟</p>",
+          "example": "50000",
+          "member": "uint64",
+          "name": "TPM",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagInfo": {
+      "document": "模型路由实例的标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签的键",
+          "example": "key-xxx",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签的值",
+          "example": "value-xxx",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

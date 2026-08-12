@@ -2240,7 +2240,7 @@ def doListResourceConfigs(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteRayCluster(args, parsed_globals):
+def doCheckRayOnDLCResourceRole(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2274,11 +2274,11 @@ def doDeleteRayCluster(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteRayClusterRequest()
+    model = models.CheckRayOnDLCResourceRoleRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteRayCluster(model)
+        rsp = client.CheckRayOnDLCResourceRole(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3722,7 +3722,7 @@ def doGetRayJobYaml(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetLabDetail(args, parsed_globals):
+def doGetRayClusterHistory(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3756,11 +3756,11 @@ def doGetLabDetail(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetLabDetailRequest()
+    model = models.GetRayClusterHistoryRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.GetLabDetail(model)
+        rsp = client.GetRayClusterHistory(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4235,7 +4235,7 @@ def doGetInferenceModel(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetRayClusterHistory(args, parsed_globals):
+def doGetLabDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4269,11 +4269,11 @@ def doGetRayClusterHistory(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetRayClusterHistoryRequest()
+    model = models.GetLabDetailRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.GetRayClusterHistory(model)
+        rsp = client.GetLabDetail(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6782,6 +6782,63 @@ def doDescribeSessionImageVersion(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeSessionImageVersion(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteDataEngine(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDataEngineRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteDataEngine(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -12044,7 +12101,7 @@ def doDescribeUserVpcConnection(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteDataEngine(args, parsed_globals):
+def doDeleteRayCluster(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -12078,11 +12135,11 @@ def doDeleteDataEngine(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteDataEngineRequest()
+    model = models.DeleteRayClusterRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteDataEngine(model)
+        rsp = client.DeleteRayCluster(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -18136,7 +18193,7 @@ ACTION_MAP = {
     "DeleteDataMaskStrategy": doDeleteDataMaskStrategy,
     "DescribeDLCCatalogAccess": doDescribeDLCCatalogAccess,
     "ListResourceConfigs": doListResourceConfigs,
-    "DeleteRayCluster": doDeleteRayCluster,
+    "CheckRayOnDLCResourceRole": doCheckRayOnDLCResourceRole,
     "UpdateJobSpecPriority": doUpdateJobSpecPriority,
     "CreateSparkSubmitTask": doCreateSparkSubmitTask,
     "ModifyPartitionDescription": doModifyPartitionDescription,
@@ -18162,7 +18219,7 @@ ACTION_MAP = {
     "DescribeDatabases": doDescribeDatabases,
     "CheckGrantedPermission": doCheckGrantedPermission,
     "GetRayJobYaml": doGetRayJobYaml,
-    "GetLabDetail": doGetLabDetail,
+    "GetRayClusterHistory": doGetRayClusterHistory,
     "AlterDMSPartition": doAlterDMSPartition,
     "DescribeClusterGroupClusters": doDescribeClusterGroupClusters,
     "GetRayClusterPodYaml": doGetRayClusterPodYaml,
@@ -18171,7 +18228,7 @@ ACTION_MAP = {
     "GetLabHistory": doGetLabHistory,
     "CreateUser": doCreateUser,
     "GetInferenceModel": doGetInferenceModel,
-    "GetRayClusterHistory": doGetRayClusterHistory,
+    "GetLabDetail": doGetLabDetail,
     "DescribeTables": doDescribeTables,
     "ListTaskJobLogName": doListTaskJobLogName,
     "AssociateDatasourceHouse": doAssociateDatasourceHouse,
@@ -18216,6 +18273,7 @@ ACTION_MAP = {
     "DescribeThirdPartyAccessUser": doDescribeThirdPartyAccessUser,
     "RollbackDataEngineImage": doRollbackDataEngineImage,
     "DescribeSessionImageVersion": doDescribeSessionImageVersion,
+    "DeleteDataEngine": doDeleteDataEngine,
     "DescribeSubUserAccessPolicy": doDescribeSubUserAccessPolicy,
     "DescribeDLCTableList": doDescribeDLCTableList,
     "ListExampleCategories": doListExampleCategories,
@@ -18308,7 +18366,7 @@ ACTION_MAP = {
     "DescribePartitionQueues": doDescribePartitionQueues,
     "GetRayJobEvent": doGetRayJobEvent,
     "DescribeUserVpcConnection": doDescribeUserVpcConnection,
-    "DeleteDataEngine": doDeleteDataEngine,
+    "DeleteRayCluster": doDeleteRayCluster,
     "DeleteUser": doDeleteUser,
     "DescribeDMSTables": doDescribeDMSTables,
     "DescribeDataEngineSessionParameters": doDescribeDataEngineSessionParameters,

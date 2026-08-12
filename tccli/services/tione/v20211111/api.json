@@ -1455,7 +1455,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cfs的实例的ID",
+          "document": "<p>cfs的实例的ID</p>",
           "example": "cfs-myCfsId",
           "member": "string",
           "name": "Id",
@@ -1466,7 +1466,7 @@
         },
         {
           "disabled": false,
-          "document": "存储的路径",
+          "document": "<p>存储的路径</p>",
           "example": "/my/path",
           "member": "string",
           "name": "Path",
@@ -1477,7 +1477,7 @@
         },
         {
           "disabled": false,
-          "document": "cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE",
+          "document": "<p>cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE</p>",
           "example": "STORAGE",
           "member": "string",
           "name": "MountType",
@@ -1488,7 +1488,7 @@
         },
         {
           "disabled": false,
-          "document": "协议 1: NFS, 2: TURBO",
+          "document": "<p>协议 1: NFS, 2: TURBO</p>",
           "example": "NFS",
           "member": "string",
           "name": "Protocol",
@@ -1496,6 +1496,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否平台预置存储</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPresetStorage",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1760,6 +1771,56 @@
         }
       ],
       "usage": "out"
+    },
+    "ClusterRoomInfo": {
+      "document": "集群机房信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "cls-x01",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机房id</p>",
+          "example": "sr-001",
+          "member": "string",
+          "name": "RoomId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列id</p>",
+          "example": "q-001",
+          "member": "string",
+          "name": "QueueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>供给说明</p>",
+          "example": "tencent cloud",
+          "member": "string",
+          "name": "Supplier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CodeRepoConfig": {
       "document": "代码仓库配置",
@@ -3331,6 +3392,15 @@
           "name": "ResourceSupplyAttribute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列id</p>",
+          "example": "q-bj-2f0a9dca",
+          "member": "string",
+          "name": "QueueId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4335,6 +4405,15 @@
           "name": "ResourceSupplyAttribute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列ID</p>",
+          "example": "[\"q-bj-2f0a9dca\"]",
+          "member": "string",
+          "name": "Queues",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7033,6 +7112,15 @@
           "example": "TIDE",
           "member": "string",
           "name": "SupplyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型，DEFAULT-默认；THIRD-三方集群</p><p>枚举值：</p><ul><li>DEFAULT： 默认</li><li>THIRD： 三方集群</li></ul>",
+          "example": "THIRD",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }
@@ -11393,7 +11481,7 @@
           "example": "ap-beijiang",
           "member": "string",
           "name": "RegistryRegion",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11404,7 +11492,7 @@
           "example": "t-asfffasf",
           "member": "string",
           "name": "RegistryId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14258,6 +14346,15 @@
           "name": "TargetProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列id</p>",
+          "example": "q-bj-2f0a9dca",
+          "member": "string",
+          "name": "QueueId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17303,7 +17400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有连接所在的VPCID",
+          "document": "<p>私有连接所在的VPCID</p>",
           "example": "vpc-2413",
           "member": "string",
           "name": "VpcId",
@@ -17314,7 +17411,7 @@
         },
         {
           "disabled": false,
-          "document": "私有连接所在的子网ID",
+          "document": "<p>私有连接所在的子网ID</p>",
           "example": "subnet-123",
           "member": "string",
           "name": "SubnetId",
@@ -17325,8 +17422,8 @@
         },
         {
           "disabled": false,
-          "document": "HTTP内网调用地址",
-          "example": "无",
+          "document": "<p>HTTP内网调用地址</p>",
+          "example": "[\"http://vpc-8roerp50/ms-26jczvwg\"]",
           "member": "string",
           "name": "InnerHttpAddr",
           "output_required": false,
@@ -17336,8 +17433,8 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS内网调用地址",
-          "example": "无",
+          "document": "<p>HTTPS内网调用地址</p>",
+          "example": "[\"http://vpc-8roerp50/ms-26jczvwg\"]",
           "member": "string",
           "name": "InnerHttpsAddr",
           "output_required": false,
@@ -17347,7 +17444,7 @@
         },
         {
           "disabled": false,
-          "document": "私有连接状态",
+          "document": "<p>私有连接状态</p>",
           "example": "CreateSuccess",
           "member": "string",
           "name": "State",
@@ -17358,13 +17455,46 @@
         },
         {
           "disabled": false,
-          "document": "grpc内网调用地址",
-          "example": "grpc://127.0.0.1:8090",
+          "document": "<p>grpc内网调用地址</p>",
+          "example": "[\"http://vpc-8roerp50/ms-26jczvwg\"]",
           "member": "string",
           "name": "InnerGrpcAddr",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者 UIN</p>",
+          "example": "创建者子用户UIN",
+          "member": "string",
+          "name": "CreatedBy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户名称</p>",
+          "example": "子用户名称",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -18905,6 +19035,17 @@
           "example": "TIDE",
           "member": "string",
           "name": "SupplyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>DEFAULT： 默认集群</li><li>THIRD： 第三方集群</li></ul><p>默认值：DEFAULT</p>",
+          "example": "THIRD",
+          "member": "string",
+          "name": "ClusterType",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -21195,6 +21336,16 @@
           "name": "Quota",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的集群队列列表</p>",
+          "example": "无",
+          "member": "ClusterRoomInfo",
+          "name": "SupportedClusterList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

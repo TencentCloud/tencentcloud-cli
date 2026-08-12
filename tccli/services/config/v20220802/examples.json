@@ -96,6 +96,14 @@
         "title": "删除规则"
       }
     ],
+    "DeleteAggregators": [
+      {
+        "document": "删除账号组",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAggregators\n<公共请求参数>\n\n{\n    \"OwnerUin\": 234234324,\n    \"AccountGroupId\": \"ca-sdfs7734h24h3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"857db07e-d8b5-41f8-ae80-e9c4eec09386\"\n    }\n}",
+        "title": "删除账号组"
+      }
+    ],
     "DeleteAlarmPolicy": [
       {
         "document": "",
@@ -256,6 +264,14 @@
         "title": "某个规则下资源的评估结果列表"
       }
     ],
+    "ListAggregateConfigRuleResourceEvaluationResults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAggregateConfigRuleResourceEvaluationResults\n<公共请求参数>\n\n{\n    \"AccountGroupId\": \"ca-MEcWXoKFeeHdJq7LvXNA\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Annotation\": {\n                    \"Configuration\": \"Active\",\n                    \"DesiredValue\": \"Inactive\",\n                    \"Operator\": \"Equals\",\n                    \"Property\": \"$.User.ConsoleLogin & $.User.AccessKeys\"\n                },\n                \"ResourceId\": \"100000006214\",\n                \"ResourceName\": \"jj9\",\n                \"ResourceRegion\": \"global\",\n                \"ResourceTags\": [],\n                \"ResourceType\": \"QCS::CAM::User\",\n                \"RuleDescription\": \"23424\",\n                \"RuleId\": \"cr-wCkGQBmxKpxm4EhDldf7\",\n                \"RuleIdentifier\": \"cam-user-login-check\",\n                \"RuleName\": \"CAM访问管理用户登陆权限检测\",\n                \"RuleOwnerId\": 100000005287,\n                \"RuleRiskLevel\": 3\n            }\n        ],\n        \"TotalCount\": 8,\n        \"RequestId\": \"5f68cd09-4116-4524-b700-35a4966918ae\"\n    }\n}",
+        "title": "获取不合规评估结果"
+      }
+    ],
     "ListAggregateConfigRules": [
       {
         "document": "账号组获取规则列表",
@@ -302,6 +318,14 @@
         "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConfigRuleEvaluationResults\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"ConfigRuleId\": \"cr-2d3brhnvyazqb9j1el6o\",\n    \"ResourceType\": [],\n    \"ComplianceType\": [\n        \"NON_COMPLIANT\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"46e3ce2c-0fd0-4403-97de-590d85408248\",\n        \"Items\": [\n            {\n                \"Annotation\": {\n                    \"Configuration\": \"0\",\n                    \"DesiredValue\": \"1\",\n                    \"Operator\": \"GreaterOrEquals\",\n                    \"Property\": \"$User.GroupBindNum\"\n                },\n                \"CompliancePackId\": \"\",\n                \"ComplianceType\": \"NON_COMPLIANT\",\n                \"ConfigRuleId\": \"cr-2d3brhnvyazqb9j1el6o\",\n                \"ConfigRuleInvokedTime\": \"2022-11-16 11:36:47\",\n                \"ConfigRuleName\": \"CAM访问管理子用户必须关联用户组\",\n                \"InvokingEventMessageType\": \"[{\\\"messageType\\\":\\\"ScheduledNotification\\\",\\\"maximumExecutionFrequency\\\":{\\\"value\\\":\\\"TwentyFour_Hours\\\"}}]\",\n                \"ResourceId\": \"100028282616\",\n                \"ResourceName\": \"2\",\n                \"ResourceRegion\": \"global\",\n                \"ResourceType\": \"QCS::CAM::User\",\n                \"ResultRecordedTime\": \"2022-11-16 11:36:44\",\n                \"RiskLevel\": 3\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "某个规则下资源的评估结果列表"
+      }
+    ],
+    "ListConfigRuleResourceEvaluationResults": [
+      {
+        "document": "查询配置规则资源评估结果",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConfigRuleResourceEvaluationResults\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Annotation\": {\n                    \"Configuration\": \"false\",\n                    \"DesiredValue\": \"false[123, 123, 123]\",\n                    \"Operator\": \"\",\n                    \"Property\": \"AttachedPolicy[resource, effect, action]\"\n                },\n                \"ResourceId\": \"4611686018427872551\",\n                \"ResourceName\": \"Orgnization_QCSLinkedRoleInCIC\",\n                \"ResourceRegion\": \"global\",\n                \"ResourceTags\": [],\n                \"ResourceType\": \"QCS::CAM::Role\",\n                \"RuleDescription\": \"CAMu89d2u8272u7ed1u5b9au4e86u6307u5b9au7684u7b56u7565\",\n                \"RuleId\": \"cr-9JY91Ayx1LamXSoa3geQ\",\n                \"RuleIdentifier\": \"cam-role-attached-specified-policy\",\n                \"RuleName\": \"CAMu89d2u8272u7ed1u5b9au4e86u6307u5b9au7684u7b56u7565\",\n                \"RuleOwnerId\": 700000145543,\n                \"RuleRiskLevel\": 1\n            }\n        ],\n        \"RequestId\": \"40e6fc5f-6b54-461d-8a5e-c0b7c276cebe\"\n    }\n}",
+        "title": "查询配置规则资源评估结果"
       }
     ],
     "ListConfigRules": [
@@ -446,6 +470,14 @@
         "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAggregateConfigRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"cr-bdunf5kx3aywn0ac5bkk\",\n    \"RuleName\": \"CAM访问管理子用户必须关联用户组\",\n    \"Description\": \"帐号访问管理中用户至少关联一个用户组，则符合规则。\",\n    \"RiskLevel\": 3,\n    \"TriggerType\": [\n        {\n            \"MessageType\": \"ScheduledNotification\",\n            \"MaximumExecutionFrequency\": \"TwentyFour_Hours\"\n        }\n    ],\n    \"InputParameter\": [],\n    \"AccountGroupId\": \"ca-sdfs7734h24h3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"da85d5e2-4432-4f02-9863-0ab07adeff33\"\n    }\n}",
         "title": "编辑规则"
+      }
+    ],
+    "UpdateAggregator": [
+      {
+        "document": "编辑账号组",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAggregator\n<公共请求参数>\n\n{\n    \"OwnerUin\": 234234,\n    \"Description\": \"账号组描述\",\n    \"AccountGroupId\": \"ca-accountGroupNo1\",\n    \"Name\": \"账号组名称\",\n    \"AggregatorAccounts\": [\n        {\n            \"MemberUin\": \"110000000001\",\n            \"MemberName\": \"test124\"\n        },\n        {\n            \"MemberUin\": \"110000000002\",\n            \"MemberName\": \"test_ckafka\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da85d5e2-4432-4f02-9863-0ab07adeff33\"\n    }\n}",
+        "title": "编辑账号组"
       }
     ],
     "UpdateAlarmPolicy": [

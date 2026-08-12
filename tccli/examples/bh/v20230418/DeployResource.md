@@ -1,27 +1,42 @@
-**Example 1: 开通服务**
+**Example 1: 实例1**
 
-开通服务，初始化资源，只针对新购资源
+
 
 Input: 
 
 ```
 tccli bh DeployResource --cli-unfold-argument  \
-    --VpcId vpc-bhtest \
-    --Zone ap-guangzhou-1 \
-    --ResourceId bh-saas-bhtest \
+    --ResourceId bh-saas-************ \
     --ApCode ap-guangzhou \
-    --SubnetId subnet-bhtest \
-    --CidrBlock 10.10.10.0/32 \
-    --VpcName vpc1 \
-    --VpcCidrBlock 10.10.0.0/16 \
-    --SubnetName subnet1
+    --Zone ap-guangzhou-6 \
+    --VpcId vpc-q1of5*** \
+    --SubnetId subnet-dp102ji4 \
+    --CidrBlock 192.168.24.0/24 \
+    --VpcName gordan-test1 \
+    --VpcCidrBlock 192.168.0.0/16 \
+    --SubnetName zone6 \
+    --WebAccess 1 \
+    --ClientAccess 1 \
+    --IntranetAccess 1 \
+    --ExternalAccess 1 \
+    --DeploySubnets.0.SubnetId subnet-dp102*** \
+    --DeploySubnets.0.SubnetName zone6 \
+    --DeploySubnets.0.Zone ap-guangzhou-6 \
+    --DeploySubnets.0.SubnetCidrBlock 192.168.24.0/24 \
+    --IntranetVpcId vpc-q1of5*** \
+    --IntranetVpcCidrBlock 192.168.0.0/16 \
+    --IntranetVpcName gordan-test1 \
+    --IntranetSubnets.0.SubnetId subnet-dp102*** \
+    --IntranetSubnets.0.SubnetName zone6 \
+    --IntranetSubnets.0.Zone ap-guangzhou-6 \
+    --IntranetSubnets.0.SubnetCidrBlock 192.168.24.0/24
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ec7676f4-a498-4ef5-ad68-6678b16e45d7"
+        "RequestId": "6e4ae08b-bcca-43a2-86f3-2c3613154299"
     }
 }
 ```

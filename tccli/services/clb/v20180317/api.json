@@ -5757,7 +5757,7 @@
         {
           "disabled": false,
           "document": "<p>接入类型：PublicBYOK/PublicCustom/PrivateCustom</p>",
-          "example": "PrivateCustom",
+          "example": "PublicCustom",
           "member": "string",
           "name": "AccessType",
           "required": true,
@@ -5766,7 +5766,7 @@
         {
           "disabled": false,
           "document": "<p>模型提供商</p>",
-          "example": "openai",
+          "example": "OpenAI",
           "member": "string",
           "name": "ModelProvider",
           "required": false,
@@ -5793,7 +5793,7 @@
         {
           "disabled": false,
           "document": "<p>BYOK ID(在自定义模型时在部署网络后必须填写)</p>",
-          "example": "byok-fqn7vwbl",
+          "example": "byok-ksiersax",
           "member": "string",
           "name": "ServiceProviderId",
           "required": false,
@@ -5802,7 +5802,7 @@
         {
           "disabled": false,
           "document": "<p>服务供应商(创建BYOK自定义名称)。</p>",
-          "example": "custom",
+          "example": "textbyok-publicbyok",
           "member": "string",
           "name": "ServiceProviderName",
           "required": false,
@@ -5820,7 +5820,7 @@
         {
           "disabled": false,
           "document": "<p>API Base URL</p>",
-          "example": "http://127.0.0.1:8080",
+          "example": "https://deepseek.api.com",
           "member": "string",
           "name": "ApiBase",
           "required": false,
@@ -5829,7 +5829,7 @@
         {
           "disabled": false,
           "document": "<p>VPC ID</p>",
-          "example": "vpc-j5bxoqef",
+          "example": "vpc-lkdok8j3",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -5838,7 +5838,7 @@
         {
           "disabled": false,
           "document": "<p>子网 ID</p>",
-          "example": "subnet-60enc8ny",
+          "example": "subnet-i6vm7n84",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -5847,7 +5847,7 @@
         {
           "disabled": false,
           "document": "<p>转发请求时添加的Host请求头</p>",
-          "example": "www.a.com",
+          "example": "gpt.com",
           "member": "string",
           "name": "HostHeader",
           "required": false,
@@ -5865,11 +5865,20 @@
         {
           "disabled": false,
           "document": "<p>是否校验服务提供商的SSL证书</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "VerifySSL",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查配置</p>",
+          "example": "无",
+          "member": "ServiceProviderHealthCheckConfigInput",
+          "name": "HealthCheckConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5880,7 +5889,7 @@
         {
           "disabled": false,
           "document": "<p>服务供应商ID</p>",
-          "example": "byok-d4yf0jkd",
+          "example": "byok-dhd4w2eg",
           "member": "string",
           "name": "ServiceProviderId",
           "output_required": true,
@@ -5890,7 +5899,7 @@
         {
           "disabled": false,
           "document": "<p>生成的 Key ID 列表</p>",
-          "example": "[\"mkey-ec5ukd0r\"]",
+          "example": "[\"mkey-0b39bh7u\"]",
           "member": "string",
           "name": "KeyIds",
           "output_required": true,
@@ -9945,6 +9954,15 @@
           "name": "VpcId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器，Name取值：</p><ul><li>ModelName：按照模型名称过滤。</li><li>ServiceProviderId：按照BYOK ID过滤。</li><li>InputModalitiesUnion：按照模态过滤。</li></ul>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15597,7 +15615,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li><li>Deleting： 删除中</li><li>ProvisionFailed： 创建失败</li><li>ConfigureFailed： 变配失败</li><li>DeletionFailed： 删除失败</li><li>Disabled： 已禁用</li></ul>",
+          "document": "<p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>",
           "example": "Provisioning",
           "member": "string",
           "name": "Status",
@@ -15644,6 +15662,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查配置</p>",
+          "example": "无",
+          "member": "ServiceProviderHealthCheckConfigOutput",
+          "name": "HealthCheckConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -20330,7 +20358,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转发规则的路径。长度限制为：1~200。",
+          "document": "<p>转发规则的路径。长度限制为：1~200。</p>",
           "example": "/xxxx",
           "member": "string",
           "name": "Url",
@@ -20339,7 +20367,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
+          "document": "<p>转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>",
           "example": "www.xxxx.com",
           "member": "string",
           "name": "Domain",
@@ -20348,7 +20376,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。",
+          "document": "<p>会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。</p>",
           "example": "30",
           "member": "int64",
           "name": "SessionExpireTime",
@@ -20357,7 +20385,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)",
+          "document": "<p>健康检查信息。详情请参见：<a href=\"https://cloud.tencent.com/document/product/214/6097\">健康检查</a></p>",
           "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
@@ -20366,7 +20394,7 @@
         },
         {
           "disabled": false,
-          "document": "证书信息；此参数和MultiCertInfo不能同时传入。",
+          "document": "<p>证书信息；此参数和MultiCertInfo不能同时传入。</p>",
           "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
@@ -20375,7 +20403,7 @@
         },
         {
           "disabled": false,
-          "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
+          "document": "<p>规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH<br>分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。</p>",
           "example": "WRR",
           "member": "string",
           "name": "Scheduler",
@@ -20384,7 +20412,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。",
+          "document": "<p>负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。</p>",
           "example": "HTTP",
           "member": "string",
           "name": "ForwardType",
@@ -20393,7 +20421,7 @@
         },
         {
           "disabled": false,
-          "document": "是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。",
+          "document": "<p>是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。</p>",
           "example": "true",
           "member": "bool",
           "name": "DefaultServer",
@@ -20402,7 +20430,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启Http2，注意，只有HTTPS域名才能开启Http2。",
+          "document": "<p>是否开启Http2，注意，只有HTTPS域名才能开启Http2。</p>",
           "example": "true",
           "member": "bool",
           "name": "Http2",
@@ -20411,7 +20439,7 @@
         },
         {
           "disabled": false,
-          "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组",
+          "document": "<p>后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组</p><p>枚举值：</p><ul><li>NODE： 绑定普通节点</li><li>TARGETGROUP： 绑定目标组 v1</li><li>TARGETGROUP-V2： 绑定目标组 v2</li></ul>",
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
@@ -20420,7 +20448,7 @@
         },
         {
           "disabled": false,
-          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。",
+          "document": "<p>TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。</p>",
           "example": "trpcall",
           "member": "string",
           "name": "TrpcCallee",
@@ -20429,7 +20457,7 @@
         },
         {
           "disabled": false,
-          "document": "TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放",
+          "document": "<p>TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放</p>",
           "example": "trpcFunc",
           "member": "string",
           "name": "TrpcFunc",
@@ -20438,7 +20466,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启QUIC，注意，只有HTTPS域名才能开启QUIC",
+          "document": "<p>是否开启QUIC，注意，只有HTTPS域名才能开启QUIC</p>",
           "example": "true",
           "member": "bool",
           "name": "Quic",
@@ -20447,7 +20475,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
+          "document": "<p>转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。</p>",
           "example": "[\"www.xxxx.com\"]",
           "member": "string",
           "name": "Domains",
@@ -20456,7 +20484,7 @@
         },
         {
           "disabled": false,
-          "document": "证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。",
+          "document": "<p>证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。</p>",
           "example": "无",
           "member": "MultiCertInfo",
           "name": "MultiCertInfo",
@@ -20465,7 +20493,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义cookie名",
+          "document": "<p>自定义cookie名</p>",
           "example": "test_cookie",
           "member": "string",
           "name": "CookieName",
@@ -20996,6 +21024,37 @@
           "name": "ServiceProviderName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceProviderHealthCheckConfigInput": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启健康检查</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckEnabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "ServiceProviderHealthCheckConfigOutput": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启健康检查</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckEnabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

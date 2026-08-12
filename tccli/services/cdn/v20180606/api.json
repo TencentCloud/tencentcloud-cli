@@ -5788,7 +5788,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名 ID",
+          "document": "<p>域名 ID</p>",
           "example": "cdn-00001x",
           "member": "string",
           "name": "ResourceId",
@@ -5798,7 +5798,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云账号ID",
+          "document": "<p>腾讯云账号ID</p>",
           "example": "100000001",
           "member": "int64",
           "name": "AppId",
@@ -5808,7 +5808,7 @@
         },
         {
           "disabled": false,
-          "document": "加速域名",
+          "document": "<p>加速域名</p>",
           "example": "www.test.com",
           "member": "string",
           "name": "Domain",
@@ -5818,7 +5818,7 @@
         },
         {
           "disabled": false,
-          "document": "域名对应的 CNAME 地址",
+          "document": "<p>域名对应的 CNAME 地址</p>",
           "example": "www.test.com.cdn.dnsv1.com",
           "member": "string",
           "name": "Cname",
@@ -5828,7 +5828,7 @@
         },
         {
           "disabled": false,
-          "document": "加速服务状态\nrejected：域名审核未通过，域名备案过期/被注销导致\nprocessing：部署中\nclosing：关闭中\nonline：已启动\noffline：已关闭",
+          "document": "<p>加速服务状态<br>rejected：域名审核未通过，域名备案过期/被注销导致<br>processing：部署中<br>closing：关闭中<br>online：已启动<br>offline：已关闭</p>",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -5838,7 +5838,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID，可前往腾讯云项目管理页面查看",
+          "document": "<p>项目 ID，可前往腾讯云项目管理页面查看</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -5848,7 +5848,7 @@
         },
         {
           "disabled": false,
-          "document": "加速域名业务类型\nweb：网页小文件\ndownload：下载大文件\nmedia：音视频点播\nhybrid:  动静加速\ndynamic:  动态加速",
+          "document": "<p>加速域名业务类型<br>web：网页小文件<br>download：下载大文件<br>media：音视频点播<br>hybrid:  动静加速<br>dynamic:  动态加速</p>",
           "example": "web",
           "member": "string",
           "name": "ServiceType",
@@ -5858,7 +5858,7 @@
         },
         {
           "disabled": false,
-          "document": "域名创建时间",
+          "document": "<p>域名创建时间</p>",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
@@ -5868,7 +5868,7 @@
         },
         {
           "disabled": false,
-          "document": "域名更新时间",
+          "document": "<p>域名更新时间</p>",
           "example": "2021-01-01 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
@@ -5878,7 +5878,7 @@
         },
         {
           "disabled": false,
-          "document": "源站配置",
+          "document": "<p>源站配置</p>",
           "example": "无",
           "member": "Origin",
           "name": "Origin",
@@ -5888,7 +5888,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单配置",
+          "document": "<p>IP 黑白名单配置</p>",
           "example": "无",
           "member": "IpFilter",
           "name": "IpFilter",
@@ -5898,7 +5898,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 访问限频配置",
+          "document": "<p>IP 访问限频配置</p>",
           "example": "无",
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
@@ -5908,7 +5908,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码缓存配置",
+          "document": "<p>状态码缓存配置</p>",
           "example": "无",
           "member": "StatusCodeCache",
           "name": "StatusCodeCache",
@@ -5918,7 +5918,7 @@
         },
         {
           "disabled": false,
-          "document": "智能压缩配置",
+          "document": "<p>智能压缩配置</p>",
           "example": "无",
           "member": "Compression",
           "name": "Compression",
@@ -5928,7 +5928,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽封顶配置",
+          "document": "<p>带宽封顶配置</p>",
           "example": "无",
           "member": "BandwidthAlert",
           "name": "BandwidthAlert",
@@ -5938,7 +5938,7 @@
         },
         {
           "disabled": false,
-          "document": "Range 回源配置",
+          "document": "<p>Range 回源配置</p>",
           "example": "无",
           "member": "RangeOriginPull",
           "name": "RangeOriginPull",
@@ -5948,7 +5948,7 @@
         },
         {
           "disabled": false,
-          "document": "301/302 回源自动跟随配置",
+          "document": "<p>301/302 回源自动跟随配置</p>",
           "example": "无",
           "member": "FollowRedirect",
           "name": "FollowRedirect",
@@ -5958,7 +5958,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页面配置",
+          "document": "<p>自定义错误页面配置</p>",
           "example": "无",
           "member": "ErrorPage",
           "name": "ErrorPage",
@@ -5968,7 +5968,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义请求头部配置",
+          "document": "<p>自定义请求头部配置</p>",
           "example": "无",
           "member": "RequestHeader",
           "name": "RequestHeader",
@@ -5978,7 +5978,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义响应头部配置",
+          "document": "<p>自定义响应头部配置</p>",
           "example": "无",
           "member": "ResponseHeader",
           "name": "ResponseHeader",
@@ -5988,7 +5988,7 @@
         },
         {
           "disabled": false,
-          "document": "单链接下行限速配置",
+          "document": "<p>单链接下行限速配置</p>",
           "example": "无",
           "member": "DownstreamCapping",
           "name": "DownstreamCapping",
@@ -5998,7 +5998,7 @@
         },
         {
           "disabled": false,
-          "document": "带参/不带参缓存配置",
+          "document": "<p>带参/不带参缓存配置</p>",
           "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
@@ -6008,7 +6008,7 @@
         },
         {
           "disabled": false,
-          "document": "源站头部缓存配置",
+          "document": "<p>源站头部缓存配置</p>",
           "example": "无",
           "member": "ResponseHeaderCache",
           "name": "ResponseHeaderCache",
@@ -6018,7 +6018,7 @@
         },
         {
           "disabled": false,
-          "document": "视频拖拽配置",
+          "document": "<p>视频拖拽配置</p>",
           "example": "无",
           "member": "VideoSeek",
           "name": "VideoSeek",
@@ -6028,7 +6028,7 @@
         },
         {
           "disabled": false,
-          "document": "节点缓存过期规则配置",
+          "document": "<p>节点缓存过期规则配置</p>",
           "example": "无",
           "member": "Cache",
           "name": "Cache",
@@ -6038,7 +6038,7 @@
         },
         {
           "disabled": false,
-          "document": "跨国链路优化配置（功能灰度中，敬请期待）",
+          "document": "<p>跨国链路优化配置（功能灰度中，敬请期待）</p>",
           "example": "无",
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",
@@ -6048,7 +6048,7 @@
         },
         {
           "disabled": false,
-          "document": "Https 加速相关配置",
+          "document": "<p>Https 加速相关配置</p>",
           "example": "无",
           "member": "Https",
           "name": "Https",
@@ -6058,7 +6058,7 @@
         },
         {
           "disabled": false,
-          "document": "时间戳防盗链配置",
+          "document": "<p>时间戳防盗链配置</p>",
           "example": "无",
           "member": "Authentication",
           "name": "Authentication",
@@ -6068,7 +6068,7 @@
         },
         {
           "disabled": false,
-          "document": "SEO 优化配置",
+          "document": "<p>SEO 优化配置</p>",
           "example": "无",
           "member": "Seo",
           "name": "Seo",
@@ -6078,7 +6078,7 @@
         },
         {
           "disabled": false,
-          "document": "域名封禁状态\nnormal：正常状态\noverdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务\nmalicious：域名出现恶意行为，强制关闭加速服务\nddos：域名被大规模 DDoS 攻击，关闭加速服务\nddos_risk: 域名存在ddos攻击风险\nidle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务\nunlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务\ncapping：触发配置的带宽阈值上限\nreadonly：域名存在特殊配置，被锁定",
+          "document": "<p>域名封禁状态<br>normal：正常状态<br>overdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务<br>malicious：域名出现恶意行为，强制关闭加速服务<br>ddos：域名被大规模 DDoS 攻击，关闭加速服务<br>ddos_risk: 域名存在ddos攻击风险<br>idle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务<br>unlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务<br>capping：触发配置的带宽阈值上限<br>readonly：域名存在特殊配置，被锁定</p>",
           "example": "normal",
           "member": "string",
           "name": "Disable",
@@ -6088,7 +6088,7 @@
         },
         {
           "disabled": false,
-          "document": "访问协议强制跳转配置",
+          "document": "<p>访问协议强制跳转配置</p>",
           "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
@@ -6098,7 +6098,7 @@
         },
         {
           "disabled": false,
-          "document": "Referer 防盗链配置",
+          "document": "<p>Referer 防盗链配置</p>",
           "example": "无",
           "member": "Referer",
           "name": "Referer",
@@ -6108,7 +6108,7 @@
         },
         {
           "disabled": false,
-          "document": "浏览器缓存过期规则配置（功能灰度中，敬请期待）",
+          "document": "<p>浏览器缓存过期规则配置（功能灰度中，敬请期待）</p>",
           "example": "无",
           "member": "MaxAge",
           "name": "MaxAge",
@@ -6118,7 +6118,7 @@
         },
         {
           "disabled": false,
-          "document": "Ipv6 回源配置（功能灰度中，敬请期待）",
+          "document": "<p>Ipv6 回源配置（功能灰度中，敬请期待）</p>",
           "example": "无",
           "member": "Ipv6",
           "name": "Ipv6",
@@ -6128,7 +6128,7 @@
         },
         {
           "disabled": false,
-          "document": "是否兼容旧版本配置（内部兼容性字段）",
+          "document": "<p>是否兼容旧版本配置（内部兼容性字段）</p>",
           "example": "无",
           "member": "Compatibility",
           "name": "Compatibility",
@@ -6138,7 +6138,7 @@
         },
         {
           "disabled": false,
-          "document": "区域特殊配置",
+          "document": "<p>区域特殊配置</p>",
           "example": "无",
           "member": "SpecificConfig",
           "name": "SpecificConfig",
@@ -6148,7 +6148,7 @@
         },
         {
           "disabled": false,
-          "document": "加速区域\nmainland：中国境内加速\noverseas：中国境外加速\nglobal：全球加速",
+          "document": "<p>加速区域<br>mainland：中国境内加速<br>overseas：中国境外加速<br>global：全球加速</p>",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -6158,7 +6158,7 @@
         },
         {
           "disabled": false,
-          "document": "域名锁定状态\nnormal：未锁定\nmainland：中国境内锁定\noverseas：中国境外锁定\nglobal：全球锁定",
+          "document": "<p>域名锁定状态<br>normal：未锁定<br>mainland：中国境内锁定<br>overseas：中国境外锁定<br>global：全球锁定</p>",
           "example": "normal",
           "member": "string",
           "name": "Readonly",
@@ -6168,7 +6168,7 @@
         },
         {
           "disabled": false,
-          "document": "回源超时配置",
+          "document": "<p>回源超时配置</p>",
           "example": "无",
           "member": "OriginPullTimeout",
           "name": "OriginPullTimeout",
@@ -6178,7 +6178,7 @@
         },
         {
           "disabled": false,
-          "document": "回源S3鉴权配置",
+          "document": "<p>回源S3鉴权配置</p>",
           "example": "无",
           "member": "AwsPrivateAccess",
           "name": "AwsPrivateAccess",
@@ -6188,7 +6188,7 @@
         },
         {
           "disabled": false,
-          "document": "Scdn配置",
+          "document": "<p>Scdn配置</p>",
           "example": "无",
           "member": "SecurityConfig",
           "name": "SecurityConfig",
@@ -6198,7 +6198,7 @@
         },
         {
           "disabled": false,
-          "document": "ImageOptimization配置",
+          "document": "<p>ImageOptimization配置</p>",
           "example": "无",
           "member": "ImageOptimization",
           "name": "ImageOptimization",
@@ -6208,7 +6208,7 @@
         },
         {
           "disabled": false,
-          "document": "UA黑白名单配置",
+          "document": "<p>UA黑白名单配置</p>",
           "example": "无",
           "member": "UserAgentFilter",
           "name": "UserAgentFilter",
@@ -6218,7 +6218,7 @@
         },
         {
           "disabled": false,
-          "document": "访问控制",
+          "document": "<p>访问控制</p>",
           "example": "无",
           "member": "AccessControl",
           "name": "AccessControl",
@@ -6228,7 +6228,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持高级配置项\non：支持\noff：不支持",
+          "document": "<p>是否支持高级配置项<br>on：支持<br>off：不支持</p>",
           "example": "on",
           "member": "string",
           "name": "Advance",
@@ -6238,7 +6238,7 @@
         },
         {
           "disabled": false,
-          "document": "URL重定向配置",
+          "document": "<p>URL重定向配置</p>",
           "example": "无",
           "member": "UrlRedirect",
           "name": "UrlRedirect",
@@ -6248,7 +6248,7 @@
         },
         {
           "disabled": false,
-          "document": "访问端口配置",
+          "document": "<p>访问端口配置</p>",
           "example": "[80,8080,443]",
           "member": "int64",
           "name": "AccessPort",
@@ -6258,7 +6258,7 @@
         },
         {
           "disabled": false,
-          "document": "标签配置",
+          "document": "<p>标签配置</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tag",
@@ -6268,7 +6268,7 @@
         },
         {
           "disabled": false,
-          "document": "时间戳防盗链高级配置，白名单功能",
+          "document": "<p>时间戳防盗链高级配置，白名单功能</p>",
           "example": "无",
           "member": "AdvancedAuthentication",
           "name": "AdvancedAuthentication",
@@ -6278,7 +6278,7 @@
         },
         {
           "disabled": false,
-          "document": "回源鉴权高级配置，白名单功能",
+          "document": "<p>回源鉴权高级配置，白名单功能</p>",
           "example": "无",
           "member": "OriginAuthentication",
           "name": "OriginAuthentication",
@@ -6288,7 +6288,7 @@
         },
         {
           "disabled": false,
-          "document": "Ipv6访问配置",
+          "document": "<p>Ipv6访问配置</p>",
           "example": "无",
           "member": "Ipv6Access",
           "name": "Ipv6Access",
@@ -6298,7 +6298,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置集合",
+          "document": "<p>高级配置集合</p>",
           "example": "无",
           "member": "AdvanceConfig",
           "name": "AdvanceSet",
@@ -6308,7 +6308,7 @@
         },
         {
           "disabled": false,
-          "document": "离线缓存（功能灰度中，尚未全量，请等待后续全量发布）",
+          "document": "<p>离线缓存（功能灰度中，尚未全量，请等待后续全量发布）</p>",
           "example": "无",
           "member": "OfflineCache",
           "name": "OfflineCache",
@@ -6318,7 +6318,7 @@
         },
         {
           "disabled": false,
-          "document": "合并回源（白名单功能）",
+          "document": "<p>合并回源（白名单功能）</p>",
           "example": "无",
           "member": "OriginCombine",
           "name": "OriginCombine",
@@ -6328,7 +6328,7 @@
         },
         {
           "disabled": false,
-          "document": "POST上传配置项",
+          "document": "<p>POST上传配置项</p>",
           "example": "无",
           "member": "PostSize",
           "name": "PostMaxSize",
@@ -6338,7 +6338,7 @@
         },
         {
           "disabled": false,
-          "document": "Quic配置",
+          "document": "<p>Quic配置</p>",
           "example": "无",
           "member": "Quic",
           "name": "Quic",
@@ -6348,7 +6348,7 @@
         },
         {
           "disabled": false,
-          "document": "回源OSS私有鉴权",
+          "document": "<p>回源OSS私有鉴权</p>",
           "example": "无",
           "member": "OssPrivateAccess",
           "name": "OssPrivateAccess",
@@ -6358,7 +6358,7 @@
         },
         {
           "disabled": false,
-          "document": "WebSocket配置",
+          "document": "<p>WebSocket配置</p>",
           "example": "无",
           "member": "WebSocket",
           "name": "WebSocket",
@@ -6368,7 +6368,7 @@
         },
         {
           "disabled": false,
-          "document": "远程鉴权配置",
+          "document": "<p>远程鉴权配置</p>",
           "example": "无",
           "member": "RemoteAuthentication",
           "name": "RemoteAuthentication",
@@ -6378,7 +6378,7 @@
         },
         {
           "disabled": false,
-          "document": "共享CNAME配置（白名单功能）",
+          "document": "<p>共享CNAME配置（白名单功能）</p>",
           "example": "无",
           "member": "ShareCname",
           "name": "ShareCname",
@@ -6388,7 +6388,7 @@
         },
         {
           "disabled": false,
-          "document": "规则引擎",
+          "document": "<p>规则引擎</p>",
           "example": "无",
           "member": "RuleEngine",
           "name": "RuleEngine",
@@ -6398,7 +6398,7 @@
         },
         {
           "disabled": false,
-          "document": "主域名",
+          "document": "<p>主域名</p>",
           "example": "qq.com",
           "member": "string",
           "name": "ParentHost",
@@ -6408,7 +6408,7 @@
         },
         {
           "disabled": false,
-          "document": "华为云对象存储回源鉴权",
+          "document": "<p>华为云对象存储回源鉴权</p>",
           "example": "无",
           "member": "HwPrivateAccess",
           "name": "HwPrivateAccess",
@@ -6418,7 +6418,7 @@
         },
         {
           "disabled": false,
-          "document": "七牛云对象存储回源鉴权",
+          "document": "<p>七牛云对象存储回源鉴权</p>",
           "example": "无",
           "member": "QnPrivateAccess",
           "name": "QnPrivateAccess",
@@ -6428,7 +6428,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS服务，缺省时默认开启",
+          "document": "<p>HTTPS服务，缺省时默认开启</p>",
           "example": "无",
           "member": "HttpsBilling",
           "name": "HttpsBilling",
@@ -6438,7 +6438,7 @@
         },
         {
           "disabled": false,
-          "document": "其他厂商对象存储回源鉴权",
+          "document": "<p>其他厂商对象存储回源鉴权</p>",
           "example": "无",
           "member": "OthersPrivateAccess",
           "name": "OthersPrivateAccess",
@@ -6448,7 +6448,7 @@
         },
         {
           "disabled": false,
-          "document": "参数黑名单",
+          "document": "<p>参数黑名单</p>",
           "example": "无",
           "member": "ParamFilter",
           "name": "ParamFilter",
@@ -6458,7 +6458,7 @@
         },
         {
           "disabled": false,
-          "document": "流量一键防盗刷配置",
+          "document": "<p>流量一键防盗刷配置</p>",
           "example": "无",
           "member": "AutoGuard",
           "name": "AutoGuard",
@@ -6468,7 +6468,7 @@
         },
         {
           "disabled": false,
-          "document": "区域访问控制配置",
+          "document": "<p>区域访问控制配置</p>",
           "example": "无",
           "member": "GeoBlocker",
           "name": "GeoBlocker",

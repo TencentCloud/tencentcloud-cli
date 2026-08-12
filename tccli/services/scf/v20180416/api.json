@@ -21,6 +21,13 @@
       "output": "CreateCustomDomainResponse",
       "status": "online"
     },
+    "CreateDebugVersion": {
+      "document": "启动函数debug版本",
+      "input": "CreateDebugVersionRequest",
+      "name": "创建函数调试版本",
+      "output": "CreateDebugVersionResponse",
+      "status": "online"
+    },
     "CreateFunction": {
       "document": "该接口根据传入参数创建新的函数。",
       "input": "CreateFunctionRequest",
@@ -1360,6 +1367,60 @@
     },
     "CreateCustomDomainResponse": {
       "document": "CreateCustomDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDebugVersionRequest": {
+      "document": "CreateDebugVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数名称",
+          "example": "debug-function",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "debug实例存活时间",
+          "example": "60",
+          "member": "int64",
+          "name": "PersistenceTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "debug 版本的启动命令",
+          "example": "bash entrypoint.sh",
+          "member": "string",
+          "name": "StartCommand",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDebugVersionResponse": {
+      "document": "CreateDebugVersion返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

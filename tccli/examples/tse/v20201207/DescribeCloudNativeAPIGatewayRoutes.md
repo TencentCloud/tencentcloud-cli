@@ -1,57 +1,46 @@
-**Example 1: 查询云原生网关路由列表**
+**Example 1: 查询**
 
-查询云原生网关路由列表
+
 
 Input: 
 
 ```
 tccli tse DescribeCloudNativeAPIGatewayRoutes --cli-unfold-argument  \
-    --GatewayId gateway-dde03767 \
-    --Limit 20 \
-    --Offset 0 \
-    --ServiceName svc1 \
-    --RouteName route1 \
-    --Filters.0.Key name \
-    --Filters.0.Value global
+    --GatewayId gateway-5796a718
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "d4dad8c0-7634-474a-ba7b-22e3e5b45911",
+        "RequestId": "2929fa42-0493-4629-9c08-e6637950c378",
         "Result": {
             "RouteList": [
                 {
-                    "Name": "route1",
-                    "ID": "d751b7fa-afcb-479c-818b-d1957432b246",
-                    "Methods": [
-                        "GET"
-                    ],
+                    "CreatedTime": "2026-07-13 14:26:25",
+                    "DestinationPorts": [],
+                    "ForceHttps": false,
+                    "Headers": [],
+                    "Hosts": null,
+                    "HttpsRedirectStatusCode": 426,
+                    "ID": "fdb7a827-f99a-4b6a-a2c6-dbe077796aa4",
+                    "Methods": null,
+                    "Name": null,
                     "Paths": [
-                        "/v1/users"
+                        "/huidu"
                     ],
-                    "Hosts": [
-                        "tencent.com"
-                    ],
+                    "PreserveHost": false,
                     "Protocols": [
                         "http",
                         "https"
                     ],
-                    "PreserveHost": false,
-                    "ForceHttps": false,
-                    "HttpsRedirectStatusCode": 426,
-                    "StripPath": true,
-                    "CreatedTime": "2024-11-25 10:49:23",
-                    "DestinationPorts": [],
-                    "ServiceName": "svc1",
-                    "ServiceID": "67695fc9-6d40-4450-83b5-ea57baaaad6d",
-                    "Headers": [
-                        {
-                            "Key": "app",
-                            "Value": "learn"
-                        }
-                    ]
+                    "RegexPriority": 0,
+                    "RequestBuffering": true,
+                    "ResponseBuffering": true,
+                    "RouteSource": "Original",
+                    "ServiceID": "557a0cd8-87b8-40b1-a1d8-4d49ab70423b",
+                    "ServiceName": "huidu-bench",
+                    "StripPath": true
                 }
             ],
             "TotalCount": 1

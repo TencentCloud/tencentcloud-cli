@@ -2291,103 +2291,102 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件结构体版本（cloudevents 遵循版本，目前仅支持1.0）",
+          "document": "<p>事件结构体版本（cloudevents 遵循版本，目前仅支持1.0）</p>",
           "example": "1.0",
           "member": "string",
           "name": "SpecVersion",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "事件唯一ID",
+          "document": "<p>事件唯一ID</p>",
           "example": "f583f408-6cf1-432e-b69f-68d4bf4f380a",
           "member": "string",
           "name": "Id",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "事件来源\t",
+          "document": "<p>事件来源</p>",
           "example": "cvm.cloud.tencent",
           "member": "string",
           "name": "Source",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "事件名称\t",
+          "document": "<p>事件名称</p>",
           "example": "cvm:statuspage:xxx",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "事件发生时间戳，单位毫秒",
+          "document": "<p>事件发生时间戳，单位毫秒</p>",
           "example": "1675666108658",
           "member": "int64",
           "name": "Time",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "地域信息，按照地域管理系统的查询产品支持的地域列表上报\t",
+          "document": "<p>地域信息，按照地域管理系统的查询产品支持的地域列表上报</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "数据类型申明（默认：application/json）\t",
+          "document": "<p>数据类型申明（默认：application/json）</p>",
           "example": "application/json;charset=utf-8",
           "member": "string",
           "name": "DataContentType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "事件状态,\"0\"：通知/提示，\"1\"：正常，\"2\"：故障/异常\n",
+          "document": "<p>事件状态,&quot;0&quot;：通知/提示，&quot;1&quot;：正常，&quot;2&quot;：故障/异常</p>",
           "example": "1",
           "member": "string",
           "name": "Status",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "事件扩展字段（json字符串格式）\t",
-          "example": "无",
+          "document": "<p>事件扩展字段（json字符串格式）</p>",
+          "example": "{\"additionalMsg\":[{\"key\":\"ip\",\"value\":\"1.1.1.1\"},{\"key\":\"alias\",\"value\":\"test\"},{\"key\":\"deviceLanIp\",\"value\":\"10.0.16.7\"},{\"key\":\"uniqVpcId\",\"value\":\"vpc-12d8hwva\"}],\"appId\":1311114728,\"dimensions\":[{\"key\":\"uuid\",\"value\":\"33a4ddcc490b\"}]}",
           "member": "string",
           "name": "Data",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "事件对象\t",
+          "document": "<p>事件对象</p>",
           "example": "all",
           "member": "string",
           "name": "Subject",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定向投递给指定用户的资源ID信息。参数不为空时，平台事件不会广播给所有用户。</p>",
+          "example": "无",
+          "member": "UserSubjects",
+          "name": "Subjects",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -5129,6 +5128,34 @@
         }
       ],
       "type": "object"
+    },
+    "UserSubjects": {
+      "document": "用户受影响资源ID",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户APPID</p>",
+          "example": "1347652832",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户资源ID</p>",
+          "example": "[\"ins-ffss**gt\", \"ins-utif**lo\"]",
+          "member": "string",
+          "name": "Subjects",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

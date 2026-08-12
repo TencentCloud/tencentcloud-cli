@@ -220,6 +220,14 @@
         "title": "check queue name"
       }
     ],
+    "CheckRayOnDLCResourceRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRayOnDLCResourceRole\n<公共请求参数>\n\n{\n    \"RoleName\": \"CheckRayOnDLCResourceRole\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Granted\": false,\n        \"RequestId\": \"89af137a-e6ee-4925-822c-aedf8ebaf5ae\"\n    }\n}",
+        "title": "通过 STS AssumeRole 接口判断指定服务角色是否存在"
+      }
+    ],
     "CheckRegionCHDFSEnable": [
       {
         "document": "示例",

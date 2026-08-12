@@ -7150,7 +7150,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "手机",
+          "document": "<p>手机</p>",
           "example": "0",
           "member": "uint64",
           "name": "Phone",
@@ -7161,7 +7161,7 @@
         },
         {
           "disabled": false,
-          "document": "硬token",
+          "document": "<p>硬token</p>",
           "example": "0",
           "member": "uint64",
           "name": "Token",
@@ -7172,7 +7172,7 @@
         },
         {
           "disabled": false,
-          "document": "软token",
+          "document": "<p>软token</p>",
           "example": "0",
           "member": "uint64",
           "name": "Stoken",
@@ -7183,7 +7183,7 @@
         },
         {
           "disabled": false,
-          "document": "微信",
+          "document": "<p>微信</p>",
           "example": "0",
           "member": "uint64",
           "name": "Wechat",
@@ -7194,7 +7194,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义",
+          "document": "<p>自定义</p>",
           "example": "0",
           "member": "uint64",
           "name": "Custom",
@@ -7205,7 +7205,7 @@
         },
         {
           "disabled": false,
-          "document": "邮件",
+          "document": "<p>邮件</p>",
           "example": "0",
           "member": "uint64",
           "name": "Mail",
@@ -7216,10 +7216,21 @@
         },
         {
           "disabled": false,
-          "document": "u2f硬件token",
+          "document": "<p>u2f硬件token</p>",
           "example": "0",
           "member": "uint64",
           "name": "U2FToken",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>passkey通行密钥</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Passkey",
           "output_required": false,
           "required": false,
           "type": "int",

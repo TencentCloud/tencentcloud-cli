@@ -9035,7 +9035,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区。",
+          "document": "<p>可用区。</p>",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
@@ -9045,7 +9045,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型。",
+          "document": "<p>实例机型。</p>",
           "example": "S5.LARGE4",
           "member": "string",
           "name": "InstanceType",
@@ -9055,7 +9055,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型系列。",
+          "document": "<p>实例机型系列。</p>",
           "example": "S5",
           "member": "string",
           "name": "InstanceFamily",
@@ -9065,7 +9065,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU核数，单位：核。",
+          "document": "<p>GPU核数，单位：核。</p>",
           "example": "1",
           "member": "int64",
           "name": "GPU",
@@ -9075,7 +9075,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数，单位：核。",
+          "document": "<p>CPU核数，单位：核。</p>",
           "example": "4",
           "member": "int64",
           "name": "CPU",
@@ -9085,7 +9085,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量，单位：`GiB`。",
+          "document": "<p>内存容量，单位：<code>GiB</code>。</p>",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -9095,7 +9095,7 @@
         },
         {
           "disabled": false,
-          "document": "FPGA核数，单位：核。",
+          "document": "<p>FPGA核数，单位：核。</p>",
           "example": "1",
           "member": "int64",
           "name": "FPGA",
@@ -9105,7 +9105,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。",
+          "document": "<p>实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。</p>",
           "example": "1.0",
           "member": "float",
           "name": "GpuCount",
@@ -9115,12 +9115,32 @@
         },
         {
           "disabled": false,
-          "document": "实例GPU类型。",
-          "example": "NVIDIA T4",
+          "document": "<p>实例GPU类型</p>",
+          "example": "GPU",
           "member": "string",
           "name": "GPUType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例GPU类型</p>",
+          "example": "N88a",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例GPU单块显存,单位：GiB。</p>",
+          "example": "8",
+          "member": "float",
+          "name": "GpuMemory",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -11279,7 +11299,7 @@
       "type": "object"
     },
     "NetworkInterfaces": {
-      "document": "创建实例时的网卡配置信息，包含主网卡和辅助网卡的VPC、子网、IP分配等网络参数。",
+      "document": "创建实例时的网卡配置信息，包含主网卡和辅助网卡的VPC、子网、IP分配等网络参数。\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
       "members": [
         {
           "disabled": false,
@@ -11292,8 +11312,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>含义同RunInstances.VirtualPrivateCloud.VpcId，用于表示待创建网卡将绑定的VPC。</p>",
-          "example": "vpc-xxxxx",
+          "document": "<p>私有网络ID，形如<code>vpc-xxx</code>。有效的VpcId可通过登录<a href=\"https://console.cloud.tencent.com/vpc/vpc?rid=1\">控制台</a>查询；也可以调用接口 <a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a> ，从接口返回中的<code>VpcId</code>字段获取。若在创建子机时VpcId与SubnetId同时传入<code>DEFAULT</code>，则强制使用默认vpc网络。</p>",
+          "example": "vpc-h2rxr2iv",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -11301,8 +11321,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>含义同RunInstances.VirtualPrivateCloud.SubnetId，用于表示待创建网卡将绑定的子网。注意：SubnetId的zone属性必须与RunInstances.Placement.Zone保持一致。</p>",
-          "example": "subnet-xxxxx",
+          "document": "<p>私有网络子网ID，形如<code>subnet-xxx</code>。有效的私有网络子网ID可通过登录<a href=\"https://console.cloud.tencent.com/vpc/subnet?rid=1\">控制台</a>查询；也可以调用接口  <a href=\"https://cloud.tencent.com/document/product/215/15784\">DescribeSubnets</a> ，从接口返回中的<code>SubnetId</code>字段获取。若在创建子机时SubnetId与VpcId同时传入<code>DEFAULT</code>，则强制使用默认vpc网络。</p>",
+          "example": "subnet-bshmz62m",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -11310,7 +11330,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>此字段是必填字段，表示每张网卡自动分配私有网卡IP个数。注意：不允许客户同时指定ip且动态分配ip。</p>",
+          "document": "<p>此字段是必填字段，表示每张网卡自动分配私有网卡IP个数。注意：不允许客户同时指定ip且动态分配ip。</p><p>取值范围：[1, 50]</p>",
           "example": "1",
           "member": "int64",
           "name": "PrivateIpv4AddressCount",
@@ -11319,8 +11339,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定存量的网卡ID用于绑定。只对辅助网卡生效，主网卡的生成采用既有流程。注：客户手动指定已有弹性网卡时，RunInstances.InstanceCount必须为1。主网卡不支持指定。</p>",
-          "example": "eni-xxxxx",
+          "document": "<p>指定存量的网卡ID用于绑定。只对辅助网卡生效，主网卡的生成采用既有流程。注：客户手动指定已有弹性网卡时，相关接口InstanceCount必须为1。主网卡不支持指定。</p>",
+          "example": "eni-l6gdyio1",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": false,
@@ -11328,8 +11348,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>含义同RunInstances.SecurityGroupIds，表示某个弹性网卡待绑定的安全组列表。</p>",
-          "example": "[\"sg-xxxxx\"]",
+          "document": "<p>实例所属安全组。该参数可以通过调用 <a href=\"https://cloud.tencent.com/document/api/215/15808\">DescribeSecurityGroups</a> 的返回值中的 <code>SecurityGroupId</code> 字段来获取。若不指定该参数，则绑定指定项目下的默认安全组，如默认安全组不存在则将自动创建。</p><p>每个用户在每个地域每个项目下最多可设置50个安全组。</p>",
+          "example": "[\"sg-os13k3gt\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -11337,7 +11357,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否随CVM删除绑定的弹性网卡，参数只对辅助网卡生效。默认保留辅助网卡兼容当前线上行为。该参数放置在主网卡上不生效，主网卡会随着CVM一同销毁。默认值：False。</p>",
+          "document": "<p>是否随CVM删除绑定的弹性网卡，参数只对辅助网卡生效。默认保留辅助网卡兼容当前线上行为。该参数放置在主网卡上不生效，主网卡会随着CVM一同销毁。</p><p>默认值：<code>false</code></p>",
           "example": "false",
           "member": "bool",
           "name": "DeleteWithInstance",

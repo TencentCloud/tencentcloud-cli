@@ -88,6 +88,30 @@
         "title": "取消任务预热"
       }
     ],
+    "CheckAttachedGooseFSMountPointRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAttachedGooseFSMountPointRole\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsBind\": true,\n        \"RequestId\": \"783a3bbd-0a87-4f1a-afd4-2fe5cf4d14eb\"\n    }\n}",
+        "title": "检查GooseFS MountPoint服务角色绑定"
+      }
+    ],
+    "CheckGooseFSMountPointResourceByRoleName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckGooseFSMountPointResourceByRoleName\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            \"qcs::goosefs:ap-guangzhou:uin:700002256997:filesystem/g_cvm_9zb79k0d\"\n        ],\n        \"RequestId\": \"502a71ff-1110-426d-8c87-912f2e457e47\"\n    }\n}",
+        "title": "检查服务角色是否被使用"
+      }
+    ],
+    "CreateClusterNodeMountPointConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterNodeMountPointConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-riQxF21P\",\n    \"ConfigName\": \"cosfs2.yaml\",\n    \"Description\": \"测试中文回显\",\n    \"ConfigItems\": [\n        {\n            \"Key\": \"file-system.temp-dir\",\n            \"Value\": \"\\\"/tmp/write/dir/\\\"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigInstance\": {\n            \"ClusterId\": \"clst-riQxF21P\",\n            \"ConfigId\": \"cosfs2-config-id-89848918-ccbf-466f-8861-e6afeae3c819\",\n            \"ConfigItems\": [\n                {\n                    \"Key\": \"file-system.temp-dir\",\n                    \"Value\": \"/tmp/write/dir/\"\n                }\n            ],\n            \"ConfigName\": \"cosfs2.yaml\",\n            \"CreateTime\": 1779355099,\n            \"Description\": \"测试中文回显\",\n            \"MPCount\": 0,\n            \"UpdateTime\": 1779355099,\n            \"Version\": 1\n        },\n        \"RequestId\": \"2764f5d5-4d3a-47e3-9a52-b5de173a65f3\"\n    }\n}",
+        "title": "在某集群内新建一个配置，指定配置名称和配置详情。"
+      }
+    ],
     "CreateDataRepositoryTask": [
       {
         "document": "",
@@ -126,6 +150,30 @@
         "title": "创建MetadataLoad预热任务"
       }
     ],
+    "CreateMountPointCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMountPointCluster\n<公共请求参数>\n\n{\n    \"Name\": \"hello goosefs mount point\",\n    \"Description\": \"hello goosefs mount point\",\n    \"NodeIds\": [\n        \"ins-0vtvh***\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"clst-Icq926tk\",\n        \"RequestId\": \"a0ae68c6-45e4-4bc8-8b5a-4672763b3af4\"\n    }\n}",
+        "title": "创建GooseFS MountPoint集群"
+      }
+    ],
+    "CreateMountPointInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMountPointInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-riQxF21P\",\n    \"MountItems\": [\n        {\n            \"NodeId\": \"ins-018x8uuh\",\n            \"MountPath\": \"/mnt/goosefs\",\n            \"MountSource\": \"cos://bucket-1234567890.cos.ap-guangzhou.myqcloud.com/\",\n            \"ConfigId\": \"cosfs2-config-id-test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MountPointIds\": [\n            \"mpc-0fTpu6yK\"\n        ],\n        \"RequestId\": \"b6ee1f2d-1e63-419a-89f3-eb3cd5f12afe\"\n    }\n}",
+        "title": "创建GooseFS MountPoint实例"
+      }
+    ],
+    "DeleteClusterNodeMountPointConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterNodeMountPointConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-Rg6BbE1K\",\n    \"ConfigId\": \"cosfs2-config-id-7f2222ba-b2c9-4b09-985c-52be8ab1f0ef\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bccf6cfe-e664-42b0-a544-25830a009bc3\"\n    }\n}",
+        "title": "用配置ID指定删除该配置"
+      }
+    ],
     "DeleteCrossVpcSubnetSupportForClientNode": [
       {
         "document": "为客户端节点删除跨vpc子网访问能力",
@@ -158,6 +206,22 @@
         "title": "删除Fileset"
       }
     ],
+    "DeleteMountPointCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMountPointCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-rreI22zJ\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"784e14ac-a84c-4cd2-b5b3-abfa1dad0e22\"\n    }\n}",
+        "title": "删除GooseFS MountPoint集群"
+      }
+    ],
+    "DeleteMountPointInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMountPointInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-riQxF21P\",\n    \"MountPointIds\": [\n        \"mpc-rH4CJwWf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b7cb999-4721-424d-8e95-a165483c02a9\"\n    }\n}",
+        "title": "删除GooseFS MountPoint服务"
+      }
+    ],
     "DescribeClientNodes": [
       {
         "document": "",
@@ -180,6 +244,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"x_c60_r3c4fa1f\",\n    \"ConfigFilename\": \"goosefs-site.properties\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\",\n        \"ConfigContent\": \"a2V5PXZhbHVl\"\n    }\n}",
         "title": "创建集群配置"
+      }
+    ],
+    "DescribeClusterNodeMountPointConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterNodeMountPointConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-Rg6BbE1K\",\n    \"ConfigId\": \"cosfs2-config-id-3ee70bd7-3244-4068-81ae-7dbee09235f6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigInstance\": {\n            \"ClusterId\": \"clst-Rg6BbE1K\",\n            \"ConfigId\": \"cosfs2-config-id-3ee70bd7-3244-4068-81ae-7dbee09235f6\",\n            \"ConfigItems\": [\n                {\n                    \"Key\": \"file-cache.cache-dir\",\n                    \"Value\": \"/tmp/write/test-string-type-new\"\n                }\n            ],\n            \"ConfigName\": \"cosfs2.yaml\",\n            \"CreateTime\": 1779336128,\n            \"Description\": \"测试中文回显\",\n            \"MPCount\": 0,\n            \"UpdateTime\": 1779336128,\n            \"Version\": 5\n        },\n        \"RequestId\": \"95e4d44d-7805-4d70-b57f-73d3d9f6f97a\"\n    }\n}",
+        "title": "使用集群ID和配置ID查询当前配置"
       }
     ],
     "DescribeClusterRoleToken": [
@@ -270,6 +342,30 @@
         "title": "查询目标预热任务"
       }
     ],
+    "DescribeMountPointClusterSubTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMountPointClusterSubTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-1vURpywj\",\n    \"TaskId\": \"K1rzyihaW5pg\",\n    \"SubTaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"CreateTime\": 1784196744,\n                \"EndTime\": 1784196744,\n                \"EntityId\": \"mpc-yz9572iP\",\n                \"Message\": \"keepalive failed\",\n                \"NodeId\": \"ins-otbj03yi\",\n                \"NodeIp\": \"10.0.0.4\",\n                \"Status\": \"FAILED\",\n                \"SubTaskId\": 1,\n                \"TaskId\": \"K1rzyihaW5pg\"\n            }\n        ],\n        \"ExistDetail\": true,\n        \"Message\": \"keepalive failed\",\n        \"Status\": \"FAILED\",\n        \"SubTaskId\": 1,\n        \"SubTaskName\": \"保活超限处理\",\n        \"TaskId\": \"K1rzyihaW5pg\",\n        \"TotalDetails\": 1,\n        \"RequestId\": \"79228f07-a330-424f-a973-8338a20311f4\"\n    }\n}",
+        "title": "查询子任务的具体信息"
+      }
+    ],
+    "DescribeMountPointClusterTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMountPointClusterTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-1vURpywj\",\n    \"TaskId\": \"0006ev4bX0iq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"{\\\"retry_time\\\":1782843960}\",\n        \"CreateTime\": 1782843960,\n        \"EndTime\": 1782843962,\n        \"Message\": \"保活重启成功\",\n        \"Status\": \"SUCCESS\",\n        \"SubTasks\": [],\n        \"TaskId\": \"0006ev4bX0iq\",\n        \"TaskName\": \"保活自动重启\",\n        \"RequestId\": \"447fc85b-f827-4be2-ba73-ed96368eb76b\"\n    }\n}",
+        "title": "查询任务信息"
+      }
+    ],
+    "DescribeMountPointInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMountPointInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-riQxF21P\",\n    \"MountPointId\": \"mpc-rH4CJwWf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98e10c05-b1e9-4608-a98d-71282d210f88\"\n    }\n}",
+        "title": "获取挂载点信息"
+      }
+    ],
     "DetachFileSystemBucket": [
       {
         "document": "解绑文件系统与Bucket的映射",
@@ -286,12 +382,44 @@
         "title": "扩展文件系统容量"
       }
     ],
+    "ListClusterNodeMountPointConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListClusterNodeMountPointConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-a1uM4Bry \",\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigAbstractList\": [\n            {\n                \"ClusterId\": \"clst-a1uM4Bry\",\n                \"ConfigId\": \"cosfs2-cfg-1f7178ba-1c30\",\n                \"ConfigName\": \"test-config\",\n                \"CreateTime\": 1784709541,\n                \"Description\": \"test-create-config\",\n                \"MPCount\": 0,\n                \"UpdateTime\": 1784709541,\n                \"Version\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4be0f714-1f78-411a-b67d-7d0cb9ea7170\"\n    }\n}",
+        "title": "指定MountPoint集群ID，返回结果按配置ID排序，返回第一页的配置列表，且最多返回100项"
+      }
+    ],
     "ListLoadTasks": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLoadTasks\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_hlg97c61\",\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"StartTimestamp\": 1767859318,\n    \"EndTimestamp\": 1767859328\n}",
         "output": "{\n    \"Response\": {\n        \"LoadTaskList\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"3a0256cf-ddb6-4273-ae44-205a007707ed\"\n    }\n}",
         "title": "列出预热任务信息"
+      }
+    ],
+    "ListMountPointClusterTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListMountPointClusterTasks\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-1vURpywj\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"StartTimestamp\": 1782875372,\n    \"EndTimestamp\": 1784603399\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"Content\": \"\",\n                \"CreateTime\": 1784196744,\n                \"EndTime\": 1784196744,\n                \"Status\": \"FAILED\",\n                \"TaskId\": \"K1rzyihaW5pg\",\n                \"TaskMessage\": \"\",\n                \"TaskName\": \"保活失败\"\n            }\n        ],\n        \"TotalCount\": 120572,\n        \"RequestId\": \"b797efee-57e8-440c-8e8e-3e3da08ef09d\"\n    }\n}",
+        "title": "集群任务信息"
+      }
+    ],
+    "ListMountPointClusters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListMountPointClusters\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClientCount\": {\n                    \"Running\": 0,\n                    \"Stopped\": 0,\n                    \"Total\": 0\n                },\n                \"ClusterId\": \"clst-gcUwDSBZ\",\n                \"CreateTime\": 1782963773,\n                \"Description\": \"test desc\",\n                \"Name\": \"test-probe2\",\n                \"Networks\": {\n                    \"VpcIds\": []\n                },\n                \"NodeCount\": {\n                    \"Offline\": 0,\n                    \"Online\": 0,\n                    \"Total\": 0\n                },\n                \"Region\": \"ap-guangzhou\",\n                \"UpdateTime\": 1782963773\n            }\n        ],\n        \"TotalCount\": 99,\n        \"RequestId\": \"b57b384c-6529-41b9-85f6-3b38a8f84b42\"\n    }\n}",
+        "title": "列举集群信息"
+      }
+    ],
+    "ListMountPointInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListMountPointInstances\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-fpINuigO\",\n    \"NodeId\": \"ins-0vtvhyru\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"MountPoints\": [\n            {\n                \"ClusterId\": \"clst-fpINuigO\",\n                \"ConfigChanged\": false,\n                \"ConfigId\": \"cosfs2-cfg-44fcf50c-6fd8\",\n                \"ConfigName\": \"test-conf1\",\n                \"CosBucketName\": \"goosefs-******-test-**********\",\n                \"CreateTime\": 1782788710,\n                \"KeepaliveEnabled\": false,\n                \"KeepaliveStatus\": \"\",\n                \"MountPath\": \"/mnt/conf_test10\",\n                \"MountPointId\": \"mpc-HTVHoaAn\",\n                \"MountSource\": \"cos://goosefs-******-test-**********/\",\n                \"NodeId\": \"ins-0vtvhyru\",\n                \"NodeIp\": \"10.0.0.15\",\n                \"Status\": \"STOPPED\",\n                \"UpdateTime\": 1784690423\n            }\n        ],\n        \"TotalCount\": 22,\n        \"RequestId\": \"20e2a6e4-10e1-4da7-9223-0fc129166d61\"\n    }\n}",
+        "title": "获取MountPoint实例信息"
       }
     ],
     "MarkCvmResource": [
@@ -366,6 +494,14 @@
         "title": "更换EC集群里面的故障节点"
       }
     ],
+    "RestartMountPointInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartMountPointInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-0eIIIvX1\",\n    \"MountPointIds\": [\n        \"mpc-S4JZ0dMo\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c63f605-a623-4e45-b136-538f33f6b2fe\"\n    }\n}",
+        "title": "重启GooseFS MountPoint服务"
+      }
+    ],
     "SharedVersionImage": [
       {
         "document": "示例",
@@ -374,12 +510,36 @@
         "title": "示例"
       }
     ],
+    "StartMountPointInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMountPointInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-0eIIIvX1\",\n    \"MountPointIds\": [\n        \"mpc-S4JZ0dMo\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db9632cc-706a-4c49-b155-29531e3faa9c\"\n    }\n}",
+        "title": "启动服务"
+      }
+    ],
+    "SuspendMountPointInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SuspendMountPointInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-0eIIIvX1\",\n    \"MountPointIds\": [\n        \"mpc-S4JZ0dMo\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fef50c1a-e8b1-4458-bc5a-5e7fbb474f04\"\n    }\n}",
+        "title": "停止服务"
+      }
+    ],
     "TerminateCvmResource": [
       {
         "document": "退还备份资源",
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateCvmResource\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-90vfhebq\",\n        \"ins-gwya5yg0\",\n        \"ins-1zsltx2e\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c579ea0b-d04f-4cc0-a6e2-fc6bad036017\"\n    }\n}",
         "title": "退还备份资源"
+      }
+    ],
+    "UpdateClusterNodeMountPointConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateClusterNodeMountPointConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-Rg6BbE1K\",\n    \"ConfigId\": \"cosfs2-config-id-3ee70bd7-3244-4068-81ae-7dbee09235f6\",\n    \"NewConfigItems\": [\n        {\n            \"Key\": \"cos.test.key\",\n            \"Value\": \"cos.test.value1\"\n        }\n    ],\n    \"NewConfigName\": \"cosfs2.yaml\",\n    \"NewDescription\": \"测试中文回显\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigInstance\": {\n            \"ClusterId\": \"clst-Rg6BbE1K\",\n            \"ConfigId\": \"cosfs2-config-id-3ee70bd7-3244-4068-81ae-7dbee09235f6\",\n            \"ConfigItems\": [\n                {\n                    \"Key\": \"cos.test.key\",\n                    \"Value\": \"cos.test.value1\"\n                }\n            ],\n            \"ConfigName\": \"cosfs2.yaml\",\n            \"CreateTime\": 1779335847,\n            \"Description\": \"测试中文回显\",\n            \"MPCount\": 0,\n            \"UpdateTime\": 1779335847,\n            \"Version\": 3\n        },\n        \"RequestId\": \"c48e4bf6-0780-4025-851f-fdd182658446\"\n    }\n}",
+        "title": "根据集群ID和配置ID，更新配置名称和配置描述，并全量覆盖配置详情。"
       }
     ],
     "UpdateFileset": [
@@ -404,6 +564,22 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateLoadTaskPriority\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_36brs5g2\",\n    \"TaskId\": \"2c4a3356-28d5-4f87-98c3-78745b5d6bbf\",\n    \"Priority\": 666\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2650658c-e716-4ba0-b96a-2f9cfbcb5cb1\"\n    }\n}",
         "title": "修改目标预热任务优先级"
+      }
+    ],
+    "UpdateMountPointCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateMountPointCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-fpINuigO\",\n    \"Name\": \"update cluster infos\",\n    \"Description\": \"update cluster infos\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5100906-1361-467d-9ec2-f7472d16aada\"\n    }\n}",
+        "title": "更新集群信息"
+      }
+    ],
+    "UpdateMountPointInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateMountPointInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clst-fpINuigO\",\n    \"MountPointId\": \"mpc-HTVHoaAn\",\n    \"ConfigId\": \"cosfs2-cfg-05379d79-9c3a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"470932de-780f-4c28-9803-8d8b4b26bea6\"\n    }\n}",
+        "title": "更新GooseFS MountPoint服务相关信息"
       }
     ]
   },

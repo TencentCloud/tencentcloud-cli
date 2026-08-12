@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeys\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-pm53f9c3\",\n    \"KeyIds\": [\n        \"vkey-lboa0hhh\"\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Keys\": [\n            {\n                \"KeyId\": \"vkey-lboa0hhh\",\n                \"KeyName\": \"prod-key\",\n                \"Key\": \"sk-***BRk\",\n                \"Status\": \"Active\",\n                \"RateLimitConfig\": {\n                    \"TPM\": 50000,\n                    \"RPM\": 30,\n                    \"MaxParallelRequest\": 10\n                },\n                \"BudgetId\": \"budget-1a2b3c4d\",\n                \"BudgetName\": \"production-budget\",\n                \"CreditUsageSet\": [\n                    {\n                        \"BudgetDuration\": \"1d\",\n                        \"Limit\": 100,\n                        \"Used\": 12.34,\n                        \"BudgetResetAt\": \"2026-04-17T00:00:00+08:00\"\n                    },\n                    {\n                        \"BudgetDuration\": \"30d\",\n                        \"Limit\": 1000,\n                        \"Used\": 123.45,\n                        \"BudgetResetAt\": \"2026-05-01T00:00:00+08:00\"\n                    }\n                ],\n                \"Tags\": [],\n                \"CreatedTime\": \"2026-04-07T14:45:32+08:00\",\n                \"ModifiedTime\": \"2026-04-07T22:45:31+08:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"dde9fece-1d15-4494-ae62-1632cc6b9f6f\"\n    }\n}",
+        "title": "查询模型路由实例下的Key列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -77,6 +77,27 @@
       "output": "CancelLoadTaskResponse",
       "status": "online"
     },
+    "CheckAttachedGooseFSMountPointRole": {
+      "document": "提供前端服务角色是否绑定",
+      "input": "CheckAttachedGooseFSMountPointRoleRequest",
+      "name": "检查MountPoint服务角色是否被绑定",
+      "output": "CheckAttachedGooseFSMountPointRoleResponse",
+      "status": "online"
+    },
+    "CheckGooseFSMountPointResourceByRoleName": {
+      "document": "提供CAM服务角色资源检测",
+      "input": "CheckGooseFSMountPointResourceByRoleNameRequest",
+      "name": "检查服务角色是否关联资源",
+      "output": "CheckGooseFSMountPointResourceByRoleNameResponse",
+      "status": "online"
+    },
+    "CreateClusterNodeMountPointConfig": {
+      "document": "创建集群挂载点配置。",
+      "input": "CreateClusterNodeMountPointConfigRequest",
+      "name": "创建集群挂载点配置",
+      "output": "CreateClusterNodeMountPointConfigResponse",
+      "status": "online"
+    },
     "CreateDataRepositoryTask": {
       "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
       "input": "CreateDataRepositoryTaskRequest",
@@ -103,6 +124,27 @@
       "input": "CreateLoadTaskRequest",
       "name": "创建 GooseFS 预热任务",
       "output": "CreateLoadTaskResponse",
+      "status": "online"
+    },
+    "CreateMountPointCluster": {
+      "document": "创建挂载点集群。\n\n创建后可向集群中添加节点和挂载点。",
+      "input": "CreateMountPointClusterRequest",
+      "name": "创建挂载点集群",
+      "output": "CreateMountPointClusterResponse",
+      "status": "online"
+    },
+    "CreateMountPointInstance": {
+      "document": "批量创建挂载点实例。\n\n传入挂载点列表，每个挂载点指定节点、路径、配置等信息。",
+      "input": "CreateMountPointInstanceRequest",
+      "name": "创建挂载点实例",
+      "output": "CreateMountPointInstanceResponse",
+      "status": "online"
+    },
+    "DeleteClusterNodeMountPointConfig": {
+      "document": "删除集群挂载点配置",
+      "input": "DeleteClusterNodeMountPointConfigRequest",
+      "name": "删除集群挂载点配置",
+      "output": "DeleteClusterNodeMountPointConfigResponse",
       "status": "online"
     },
     "DeleteCrossVpcSubnetSupportForClientNode": {
@@ -133,6 +175,20 @@
       "output": "DeleteFilesetResponse",
       "status": "online"
     },
+    "DeleteMountPointCluster": {
+      "document": "删除挂载点集群。\n\n调用接口后，若通过 ListMountPointClusters 查询不到对应的集群，则表示删除成功。",
+      "input": "DeleteMountPointClusterRequest",
+      "name": "删除MountPoint集群",
+      "output": "DeleteMountPointClusterResponse",
+      "status": "online"
+    },
+    "DeleteMountPointInstance": {
+      "document": "批量删除挂载点实例。\n\n传入挂载点 ID 列表进行批量删除，操作不可逆。删除成功后通过 ListMountPointInstances 接口查询不到对应挂载点则表示删除成功。",
+      "input": "DeleteMountPointInstanceRequest",
+      "name": "删除挂载点实例",
+      "output": "DeleteMountPointInstanceResponse",
+      "status": "online"
+    },
     "DescribeClientNodes": {
       "document": "列出集群中所有的客户端节点",
       "input": "DescribeClientNodesRequest",
@@ -152,6 +208,13 @@
       "input": "DescribeClusterConfigRequest",
       "name": "查看集群配置",
       "output": "DescribeClusterConfigResponse",
+      "status": "online"
+    },
+    "DescribeClusterNodeMountPointConfig": {
+      "document": "获取集群挂载点配置",
+      "input": "DescribeClusterNodeMountPointConfigRequest",
+      "name": "获取集群挂载点配置",
+      "output": "DescribeClusterNodeMountPointConfigResponse",
       "status": "online"
     },
     "DescribeClusterRoleToken": {
@@ -231,6 +294,27 @@
       "output": "DescribeLoadTaskResponse",
       "status": "online"
     },
+    "DescribeMountPointClusterSubTask": {
+      "document": "查询指定子任务的执行详情，包括各实体的执行状态。",
+      "input": "DescribeMountPointClusterSubTaskRequest",
+      "name": "查询集群子任务执行详情",
+      "output": "DescribeMountPointClusterSubTaskResponse",
+      "status": "online"
+    },
+    "DescribeMountPointClusterTask": {
+      "document": "查询指定任务的详细信息，包括子任务列表。",
+      "input": "DescribeMountPointClusterTaskRequest",
+      "name": "查询集群任务详情",
+      "output": "DescribeMountPointClusterTaskResponse",
+      "status": "online"
+    },
+    "DescribeMountPointInstance": {
+      "document": "查询单个挂载点实例的详细信息。",
+      "input": "DescribeMountPointInstanceRequest",
+      "name": "查询挂载点实例详情",
+      "output": "DescribeMountPointInstanceResponse",
+      "status": "online"
+    },
     "DetachFileSystemBucket": {
       "document": "解绑文件系统与Bucket的映射",
       "input": "DetachFileSystemBucketRequest",
@@ -245,11 +329,39 @@
       "output": "ExpandCapacityResponse",
       "status": "online"
     },
+    "ListClusterNodeMountPointConfig": {
+      "document": "列出集群挂摘点配置",
+      "input": "ListClusterNodeMountPointConfigRequest",
+      "name": "列出集群挂载点配置",
+      "output": "ListClusterNodeMountPointConfigResponse",
+      "status": "online"
+    },
     "ListLoadTasks": {
       "document": "列出该集群下所有预热任务。注意，该接口需要 GooseFS 集群版本 ≥ 1.5.1。",
       "input": "ListLoadTasksRequest",
       "name": "列出 GooseFS 预热任务",
       "output": "ListLoadTasksResponse",
+      "status": "online"
+    },
+    "ListMountPointClusterTasks": {
+      "document": "查询指定集群的任务列表，支持按时间范围过滤和分页。",
+      "input": "ListMountPointClusterTasksRequest",
+      "name": "查询集群任务列表",
+      "output": "ListMountPointClusterTasksResponse",
+      "status": "online"
+    },
+    "ListMountPointClusters": {
+      "document": "查询挂载点集群列表，支持分页。\n\n返回集群基本信息，包括名称、描述、节点数量等。",
+      "input": "ListMountPointClustersRequest",
+      "name": "查询集群列表",
+      "output": "ListMountPointClustersResponse",
+      "status": "online"
+    },
+    "ListMountPointInstances": {
+      "document": "查询挂载点实例列表。\n\n支持按节点 ID、集群 ID 筛选，返回挂载点实例的详细信息列表。",
+      "input": "ListMountPointInstancesRequest",
+      "name": "查询挂载点实例列表",
+      "output": "ListMountPointInstancesResponse",
       "status": "online"
     },
     "MarkCvmResource": {
@@ -315,6 +427,13 @@
       "output": "ReplaceDisasterECNodeResponse",
       "status": "online"
     },
+    "RestartMountPointInstance": {
+      "document": "批量重启挂载点。\n\n传入挂载点 ID 列表进行批量重启，重启成功后可通过 DescribeMountPointInstance 接口查询状态确认。",
+      "input": "RestartMountPointInstanceRequest",
+      "name": "重启挂载点",
+      "output": "RestartMountPointInstanceResponse",
+      "status": "online"
+    },
     "SharedVersionImage": {
       "document": "镜像管理-共享镜像",
       "input": "SharedVersionImageRequest",
@@ -322,11 +441,32 @@
       "output": "SharedVersionImageResponse",
       "status": "online"
     },
+    "StartMountPointInstance": {
+      "document": "批量启动挂载点。\n\n传入挂载点 ID 列表进行批量启动，启动成功后可通过 DescribeMountPointInstance 接口查询状态确认。",
+      "input": "StartMountPointInstanceRequest",
+      "name": "启动挂载点",
+      "output": "StartMountPointInstanceResponse",
+      "status": "online"
+    },
+    "SuspendMountPointInstance": {
+      "document": "批量停止挂载点。\n\n传入挂载点 ID 列表进行批量停止，停止成功后可通过 DescribeMountPointInstance 接口查询状态确认。",
+      "input": "SuspendMountPointInstanceRequest",
+      "name": "停止挂载点",
+      "output": "SuspendMountPointInstanceResponse",
+      "status": "online"
+    },
     "TerminateCvmResource": {
       "document": "销毁CVM资源, 包括集群中的节点或者预留的资源. 销毁过程中包括删除数据库记录, 退还跨租户网卡, 删除tag等",
       "input": "TerminateCvmResourceRequest",
       "name": "退还CVM资源(包括集群中节点与预留的资源)",
       "output": "TerminateCvmResourceResponse",
+      "status": "online"
+    },
+    "UpdateClusterNodeMountPointConfig": {
+      "document": "更新集群挂载点配置项",
+      "input": "UpdateClusterNodeMountPointConfigRequest",
+      "name": "更新集群挂载点配置",
+      "output": "UpdateClusterNodeMountPointConfigResponse",
       "status": "online"
     },
     "UpdateFileset": {
@@ -348,6 +488,20 @@
       "input": "UpdateLoadTaskPriorityRequest",
       "name": "变更 GooseFS 预热任务优先级",
       "output": "UpdateLoadTaskPriorityResponse",
+      "status": "online"
+    },
+    "UpdateMountPointCluster": {
+      "document": "更新集群名称和描述。\n\n调用后若能通过 ListMountPointClusters 查询到更新后的信息，则更新成功。",
+      "input": "UpdateMountPointClusterRequest",
+      "name": "更新集群信息",
+      "output": "UpdateMountPointClusterResponse",
+      "status": "online"
+    },
+    "UpdateMountPointInstance": {
+      "document": "更新挂载点实例信息。\n\n可更新名称、描述、保活状态和配置。更新成功后可通过 DescribeMountPointInstance 接口查询确认。",
+      "input": "UpdateMountPointInstanceRequest",
+      "name": "更新挂载点实例",
+      "output": "UpdateMountPointInstanceResponse",
       "status": "online"
     }
   },
@@ -987,6 +1141,70 @@
       ],
       "usage": "both"
     },
+    "CheckAttachedGooseFSMountPointRoleRequest": {
+      "document": "CheckAttachedGooseFSMountPointRole请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CheckAttachedGooseFSMountPointRoleResponse": {
+      "document": "CheckAttachedGooseFSMountPointRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否绑定GooseFS MountPoint服务角色</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsBind",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckGooseFSMountPointResourceByRoleNameRequest": {
+      "document": "CheckGooseFSMountPointResourceByRoleName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务角色名称</p>",
+          "example": "GooseFSMountPoint_QCSLinkedRoleInManageCloudServic",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckGooseFSMountPointResourceByRoleNameResponse": {
+      "document": "CheckGooseFSMountPointResourceByRoleName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回正在使用的资源信息</p>",
+          "example": "[\"qcs::goosefs:ap-guangzhou:uin:700002256997:filesystem/g_cvm_9zb79k0d\"]",
+          "member": "string",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ClientClusterManagerNodeInfo": {
       "document": "客户侧集群管理节点信息",
       "members": [
@@ -1029,6 +1247,42 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClientCount": {
+      "document": "客户端数量统计。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总客户端数。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中客户端数。</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "Running",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>已停止客户端数。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Stopped",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1318,6 +1572,280 @@
         }
       ],
       "usage": "both"
+    },
+    "ClusterNodeConfigAbstract": {
+      "document": "挂载点配置概览，不包含细粒度的ConfigItem。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MountPoint集群ID</p>",
+          "example": "clst-Rg6BbE1K",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置ID</p>",
+          "example": "cosfs2-config-id-16938028-d564-4902-93ab-6d069ac09d39",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置名称</p>",
+          "example": "test-load-cluster",
+          "member": "string",
+          "name": "ConfigName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置的版本号，更新配置时，版本号自增。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Version",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于记录该配置的使用场景或创建原因等</p>",
+          "example": "test-create-config",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建配置时的UTC秒级时间戳</p>",
+          "example": "1779265361",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近更新配置时的UTC秒级时间戳</p>",
+          "example": "1779265361",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联该配置的挂载点数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MPCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterNodeConfigAttribute": {
+      "document": "挂载点配置属性信息，不包含Credential相关信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MountPoint集群ID</p>",
+          "example": "clst-riQxF21P",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置ID</p>",
+          "example": "cosfs2-config-id-89848918-ccbf-466f-8861-e6afeae3c819",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置名称</p>",
+          "example": "cosfs2.yaml",
+          "member": "string",
+          "name": "ConfigName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置的版本号，更新配置时，版本号自增。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Version",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于记录该配置的使用场景或创建原因等</p>",
+          "example": "测试中文回显",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>COSFS2进程所需的具体配置项</p>",
+          "example": "无",
+          "member": "ConfigItem",
+          "name": "ConfigItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建配置时的UTC秒级时间戳</p>",
+          "example": "1779355173",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近更新配置时的UTC秒级时间戳</p>",
+          "example": "1779355173",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联该配置的挂载点数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MPCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConfigItem": {
+      "document": "配置以String类型键值对形式传入后端。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配置项的键</p>",
+          "example": "file-system.temp-dir",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置项的值</p>",
+          "example": "\"/tmp/write/dir-new/\"",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateClusterNodeMountPointConfigRequest": {
+      "document": "CreateClusterNodeMountPointConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MountPoint集群ID</p>",
+          "example": "clst-riQxF21P",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置名称</p>",
+          "example": "cosfs2.yaml",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于记录该配置的使用场景或创建原因等</p>",
+          "example": "测试中文回显",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>COSFS2进程的具体配置项，不包含Credential相关配置。</p>",
+          "example": "无",
+          "member": "ConfigItem",
+          "name": "ConfigItems",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterNodeMountPointConfigResponse": {
+      "document": "CreateClusterNodeMountPointConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>挂载点配置属性信息。</p>",
+          "example": "无",
+          "member": "ClusterNodeConfigAttribute",
+          "name": "ConfigInstance",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDataRepositoryTaskRequest": {
       "document": "CreateDataRepositoryTask请求参数结构体",
@@ -1701,6 +2229,107 @@
       ],
       "type": "object"
     },
+    "CreateMountPointClusterRequest": {
+      "document": "CreateMountPointCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群名称，最大 255 字符。</p>",
+          "example": "hello goosefs mount point",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群描述，最大 1024 字符。</p>",
+          "example": "hello goosefs mount point",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时绑定的节点 ID 列表，最多支持 100 个。</p>",
+          "example": "[\"ins-0vtvh***\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMountPointClusterResponse": {
+      "document": "CreateMountPointCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "clst-Icq926tk",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMountPointInstanceRequest": {
+      "document": "CreateMountPointInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，可通过 ListMountPointClusters 接口获取。</p>",
+          "example": "clst-riQxF21P",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载点列表，至少一项。</p>",
+          "example": "无",
+          "member": "MountItem",
+          "name": "MountItems",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMountPointInstanceResponse": {
+      "document": "CreateMountPointInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>成功创建的挂载点 ID 列表，最多 100 个。</p>",
+          "example": "[\"mpc-0fTpu6yK\"]",
+          "member": "string",
+          "name": "MountPointIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CustomerClusterAttr": {
       "document": "goosefsx客户端集群信息",
       "members": [
@@ -1796,6 +2425,42 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteClusterNodeMountPointConfigRequest": {
+      "document": "DeleteClusterNodeMountPointConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MountPoint集群ID</p>",
+          "example": "clst-Rg6BbE1K",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置ID</p>",
+          "example": "cosfs2-config-id-7f2222ba-b2c9-4b09-985c-52be8ab1f0ef",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterNodeMountPointConfigResponse": {
+      "document": "DeleteClusterNodeMountPointConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteCrossVpcSubnetSupportForClientNodeRequest": {
       "document": "DeleteCrossVpcSubnetSupportForClientNode请求参数结构体",
@@ -1932,6 +2597,69 @@
       ],
       "type": "object"
     },
+    "DeleteMountPointClusterRequest": {
+      "document": "DeleteMountPointCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "clst-rreI22zJ",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMountPointClusterResponse": {
+      "document": "DeleteMountPointCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMountPointInstanceRequest": {
+      "document": "DeleteMountPointInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，可通过 ListMountPointClusters 接口获取。</p>",
+          "example": "clst-riQxF21P",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载点 ID 列表，单次最多 100 个。</p>",
+          "example": "[\"mpc-rH4CJwWf\"]",
+          "member": "string",
+          "name": "MountPointIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMountPointInstanceResponse": {
+      "document": "DeleteMountPointInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClientNodesRequest": {
       "document": "DescribeClientNodes请求参数结构体",
       "members": [
@@ -2058,6 +2786,52 @@
           "member": "string",
           "name": "ConfigContent",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodeMountPointConfigRequest": {
+      "document": "DescribeClusterNodeMountPointConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MountPoint集群ID</p>",
+          "example": "clst-Rg6BbE1K",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置ID</p>",
+          "example": "cosfs2-config-id-3ee70bd7-3244-4068-81ae-7dbee09235f6",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodeMountPointConfigResponse": {
+      "document": "DescribeClusterNodeMountPointConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>挂载点配置属性信息。</p>",
+          "example": "无",
+          "member": "ClusterNodeConfigAttribute",
+          "name": "ConfigInstance",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2610,6 +3384,283 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMountPointClusterSubTaskRequest": {
+      "document": "DescribeMountPointClusterSubTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "clst-1vURpywj",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "K1rzyihaW5pg",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务 ID。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SubTaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMountPointClusterSubTaskResponse": {
+      "document": "DescribeMountPointClusterSubTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "K1rzyihaW5pg",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务 ID。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SubTaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务名称。</p>",
+          "example": "保活超限处理",
+          "member": "string",
+          "name": "SubTaskName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。</p>",
+          "example": "FAILED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息。</p>",
+          "example": "keepalive failed",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在详情。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ExistDetail",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>详情总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalDetails",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行详情列表。</p>",
+          "example": "无",
+          "member": "SubTaskDetailItem",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMountPointClusterTaskRequest": {
+      "document": "DescribeMountPointClusterTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "clst-1vURpywj",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "0006ev4bX0iq",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMountPointClusterTaskResponse": {
+      "document": "DescribeMountPointClusterTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "0006ev4bX0iq",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称。</p>",
+          "example": "保活自动重启",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态。</p>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务消息。</p>",
+          "example": "保活重启成功",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "1782843960",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间。</p>",
+          "example": "1782843962",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务内容。</p>",
+          "example": "{\"retry_time\":1782843960}",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务列表。</p>",
+          "example": "无",
+          "member": "SubTaskItem",
+          "name": "SubTasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMountPointInstanceRequest": {
+      "document": "DescribeMountPointInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，可通过 ListMountPointClusters 接口获取。</p>",
+          "example": "clst-riQxF21P",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载点 ID，可通过 ListMountPointInstances 接口获取。</p>",
+          "example": "mpc-rH4CJwWf",
+          "member": "string",
+          "name": "MountPointId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMountPointInstanceResponse": {
+      "document": "DescribeMountPointInstance返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3781,6 +4832,71 @@
       ],
       "usage": "in"
     },
+    "ListClusterNodeMountPointConfigRequest": {
+      "document": "ListClusterNodeMountPointConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MountPoint集群ID</p>",
+          "example": "clst-a1uM4Bry",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最多返回的配置数量</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListClusterNodeMountPointConfigResponse": {
+      "document": "ListClusterNodeMountPointConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该集群内的配置总量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载点配置概览的列表</p>",
+          "example": "无",
+          "member": "ClusterNodeConfigAbstract",
+          "name": "ConfigAbstractList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListLoadTasksRequest": {
       "document": "ListLoadTasks请求参数结构体",
       "members": [
@@ -3868,6 +4984,228 @@
           "document": "任务数总量",
           "example": "0",
           "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListMountPointClusterTasksRequest": {
+      "document": "ListMountPointClusterTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "clst-1vURpywj",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间戳。</p>",
+          "example": "1782875372",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间戳。</p>",
+          "example": "1784603399",
+          "member": "int64",
+          "name": "EndTimestamp",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListMountPointClusterTasksResponse": {
+      "document": "ListMountPointClusterTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务总数。</p>",
+          "example": "120572",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务具体详情</p>",
+          "example": "无",
+          "member": "TaskSummaryInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListMountPointClustersRequest": {
+      "document": "ListMountPointClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认为 20。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按照ClusterId进行过滤</p>",
+          "example": "[\"ClusterId\"]",
+          "member": "string",
+          "name": "ClusterIdFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListMountPointClustersResponse": {
+      "document": "ListMountPointClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群总数。</p>",
+          "example": "99",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每个集群的基本信息</p>",
+          "example": "无",
+          "member": "MountPointClusterInfo",
+          "name": "Clusters",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListMountPointInstancesRequest": {
+      "document": "ListMountPointInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，可通过 ListMountPointClusters 接口获取。</p>",
+          "example": "clst-fpINuigO",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点 ID，用于筛选，可通过 ListComputeNodes 接口获取。</p>",
+          "example": "ins-0vtvhyru",
+          "member": "string",
+          "name": "NodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认为 20，最大值为 100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListMountPointInstancesResponse": {
+      "document": "ListMountPointInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MountPoint实例信息</p>",
+          "example": "无",
+          "member": "MountPointInstanceInfo",
+          "name": "MountPoints",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数量。</p>",
+          "example": "22",
+          "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
@@ -4435,6 +5773,48 @@
       ],
       "type": "object"
     },
+    "MountItem": {
+      "document": "挂载项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>目标节点 ID，可通过 ListComputeNodes 接口获取。</p>",
+          "example": "node-a1b2c3d4",
+          "member": "string",
+          "name": "NodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本地挂载路径。</p>",
+          "example": "/mnt/goosefs",
+          "member": "string",
+          "name": "MountPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载源，cos:// 开头。</p>",
+          "example": "cos://bucket-1234567890.cos.ap-guangzhou.myqcloud.com/",
+          "member": "string",
+          "name": "MountSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置 ID，可通过 DescribeMountPointBaseConfigTemplate 接口获取。</p>",
+          "example": "cfg-123",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "MountMultipleStorageFileSystemRequest": {
       "document": "MountMultipleStorageFileSystem请求参数结构体",
       "members": [
@@ -4479,6 +5859,310 @@
         }
       ],
       "type": "object"
+    },
+    "MountPointClusterInfo": {
+      "document": "MountPointCluster集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "clst-nRtDEnj7",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>",
+          "example": "test-probe2",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群描述</p>",
+          "example": "test desc",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建集群时间戳</p><p>单位：s</p>",
+          "example": "1784773968",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新集群时间戳</p><p>单位：s</p>",
+          "example": "1784773968",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点数量信息</p>",
+          "example": "无",
+          "member": "NodeCount",
+          "name": "NodeCount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群中客户端数量</p>",
+          "example": "无",
+          "member": "ClientCount",
+          "name": "ClientCount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群网络信息</p>",
+          "example": "无",
+          "member": "Networks",
+          "name": "Networks",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MountPointInstanceInfo": {
+      "document": "挂载点实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>挂载点 ID，可通过 ListMountPointInstances 接口获取。</p>",
+          "example": "mp-001",
+          "member": "string",
+          "name": "MountPointId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点 ID，可通过 ListComputeNodes 接口获取。</p>",
+          "example": "node-a1b2c3d4",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，可通过 ListMountPointClusters 接口获取。</p>",
+          "example": "cluster-a1b2c3d4",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置 ID，可通过 DescribeMountPointBaseConfigTemplate 接口获取。</p>",
+          "example": "cfg-123",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置名称。</p>",
+          "example": "default-config",
+          "member": "string",
+          "name": "ConfigName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本地挂载路径。</p>",
+          "example": "/mnt/goosefs",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载源，cos:// 开头。</p>",
+          "example": "cos://bucket-1234567890.cos.ap-guangzhou.myqcloud.com/",
+          "member": "string",
+          "name": "MountSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。</p>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用保活。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "KeepaliveEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>保活运行时状态。</p>",
+          "example": "HEALTHY",
+          "member": "string",
+          "name": "KeepaliveStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "1779194827",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "1779194827",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所在节点IP</p>",
+          "example": "10.0.0.15",
+          "member": "string",
+          "name": "NodeIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载的COS Bucket</p>",
+          "example": "0001-test-1253960454",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置文件是否有变更</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ConfigChanged",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Networks": {
+      "document": "网络信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群节点所在的VPC信息</p>",
+          "example": "[\"vpc-lfm8urf3\"]",
+          "member": "string",
+          "name": "VpcIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeCount": {
+      "document": "节点数量统计。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总节点数。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>在线节点数。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Online",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>离线节点数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offline",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "QueryClientNodeMountCommandRequest": {
       "document": "QueryClientNodeMountCommand请求参数结构体",
@@ -4725,6 +6409,42 @@
       ],
       "type": "object"
     },
+    "RestartMountPointInstanceRequest": {
+      "document": "RestartMountPointInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，可通过 ListMountPointClusters 接口获取。</p>",
+          "example": "clst-0eIIIvX1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载点 ID 列表，单次最多 100 个。</p>",
+          "example": "[\"mpc-S4JZ0dMo\"]",
+          "member": "string",
+          "name": "MountPointIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartMountPointInstanceResponse": {
+      "document": "RestartMountPointInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RoleToken": {
       "document": "角色凭证",
       "members": [
@@ -4787,6 +6507,214 @@
       ],
       "type": "object"
     },
+    "StartMountPointInstanceRequest": {
+      "document": "StartMountPointInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，可通过 ListMountPointClusters 接口获取。</p>",
+          "example": "clst-0eIIIvX1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载点 ID 列表，单次最多 100 个。</p>",
+          "example": "[\"mpc-S4JZ0dMo\"]",
+          "member": "string",
+          "name": "MountPointIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMountPointInstanceResponse": {
+      "document": "StartMountPointInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubTaskDetailItem": {
+      "document": "子任务执行详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "K1rzyihaW5pg",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务 ID。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SubTaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体 ID。</p>",
+          "example": "mpc-yz9572iP",
+          "member": "string",
+          "name": "EntityId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点 ID。</p>",
+          "example": "ins-otbj03yi",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点 IP。</p>",
+          "example": "10.0.0.4",
+          "member": "string",
+          "name": "NodeIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。</p>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息。</p>",
+          "example": "keepalive failed",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "1784196744",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间。</p>",
+          "example": "1784196744",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubTaskItem": {
+      "document": "子任务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子任务 ID。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SubTaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子任务名称。</p>",
+          "example": "创建挂载点",
+          "member": "string",
+          "name": "SubTaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。</p>",
+          "example": "FAILED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息。</p>",
+          "example": "keepalive failed",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "1779945937",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间。</p>",
+          "example": "1779945939",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在详情。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ExistDetail",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SubnetInfo": {
       "document": "vpc子网信息",
       "members": [
@@ -4848,6 +6776,42 @@
       ],
       "usage": "both"
     },
+    "SuspendMountPointInstanceRequest": {
+      "document": "SuspendMountPointInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，可通过 ListMountPointClusters 接口获取。</p>",
+          "example": "clst-0eIIIvX1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载点 ID 列表，单次最多 100 个。</p>",
+          "example": "[\"mpc-S4JZ0dMo\"]",
+          "member": "string",
+          "name": "MountPointIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SuspendMountPointInstanceResponse": {
+      "document": "SuspendMountPointInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Tag": {
       "document": "文件系统关联的标签",
       "members": [
@@ -4873,6 +6837,82 @@
         }
       ],
       "usage": "both"
+    },
+    "TaskSummaryInfo": {
+      "document": "任务摘要信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "Bh4VN5ag1hgo",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称。</p>",
+          "example": "保活失败",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务消息。</p>",
+          "example": "保活重启成功",
+          "member": "string",
+          "name": "TaskMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态。</p>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "1782997365",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间。</p>",
+          "example": "1782997368",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务内容。</p>",
+          "example": "{\"retry_time\":1782997360}",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TerminateCvmResourceRequest": {
       "document": "TerminateCvmResource请求参数结构体",
@@ -4928,6 +6968,79 @@
     "TerminateCvmResourceResponse": {
       "document": "TerminateCvmResource返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateClusterNodeMountPointConfigRequest": {
+      "document": "UpdateClusterNodeMountPointConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MountPoint集群ID</p>",
+          "example": "clst-Rg6BbE1K",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置ID</p>",
+          "example": "cosfs2-config-id-3ee70bd7-3244-4068-81ae-7dbee09235f6",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新后的全量配置项，不包含Credential相关的配置项。</p>",
+          "example": "无",
+          "member": "ConfigItem",
+          "name": "NewConfigItems",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新后的配置名称</p>",
+          "example": "cosfs2.yaml",
+          "member": "string",
+          "name": "NewConfigName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新后的配置描述</p>",
+          "example": "测试中文回显",
+          "member": "string",
+          "name": "NewDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateClusterNodeMountPointConfigResponse": {
+      "document": "UpdateClusterNodeMountPointConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新完成后，挂载点配置属性信息。</p>",
+          "example": "无",
+          "member": "ClusterNodeConfigAttribute",
+          "name": "ConfigInstance",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5071,6 +7184,105 @@
     },
     "UpdateLoadTaskPriorityResponse": {
       "document": "UpdateLoadTaskPriority返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateMountPointClusterRequest": {
+      "document": "UpdateMountPointCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "clst-fpINuigO",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新集群名称，最大 255 字符。</p>",
+          "example": "update cluster infos",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新集群描述，最大 1024 字符。</p>",
+          "example": "update cluster infos",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateMountPointClusterResponse": {
+      "document": "UpdateMountPointCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateMountPointInstanceRequest": {
+      "document": "UpdateMountPointInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "clst-fpINuigO",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载点 ID，可通过 ListMountPointInstances 接口获取。</p>",
+          "example": "mpc-HTVHoaAn",
+          "member": "string",
+          "name": "MountPointId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用保活。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "KeepaliveEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置 ID，可通过 DescribeMountPointBaseConfigTemplate 接口获取。</p>",
+          "example": "cosfs2-cfg-05379d79-9c3a",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateMountPointInstanceResponse": {
+      "document": "UpdateMountPointInstance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

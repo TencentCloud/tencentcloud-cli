@@ -56,6 +56,20 @@
       "output": "CreateJobConfigResponse",
       "status": "online"
     },
+    "CreateMetaDatabase": {
+      "document": "创建元数据库",
+      "input": "CreateMetaDatabaseRequest",
+      "name": "创建元数据库",
+      "output": "CreateMetaDatabaseResponse",
+      "status": "online"
+    },
+    "CreateMetaTable": {
+      "document": "创建元数据表",
+      "input": "CreateMetaTableRequest",
+      "name": "创建元数据表",
+      "output": "CreateMetaTableResponse",
+      "status": "online"
+    },
     "CreateOceanusCluster": {
       "document": "创建Oceanus集群",
       "input": "CreateOceanusClusterRequest",
@@ -320,6 +334,13 @@
       "input": "ModifyJobRequest",
       "name": "更新作业",
       "output": "ModifyJobResponse",
+      "status": "online"
+    },
+    "ModifyMetaTable": {
+      "document": "修改元数据表",
+      "input": "ModifyMetaTableRequest",
+      "name": "元数据表编辑",
+      "output": "ModifyMetaTableResponse",
       "status": "online"
     },
     "ModifyWorkSpace": {
@@ -2952,6 +2973,198 @@
       ],
       "type": "object"
     },
+    "CreateMetaDatabaseRequest": {
+      "document": "CreateMetaDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "CatalogId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "库名",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaDatabaseResponse": {
+      "document": "CreateMetaDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "DatabaseId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaTableRequest": {
+      "document": "CreateMetaTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Catalog Id</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CatalogId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>库Id</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "DatabaseId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>建表语句</p><p>参数格式：需要base64加密</p>",
+          "example": "Y3JlYXRlIHRhYmxl",
+          "member": "string",
+          "name": "SqlCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "维表",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "cluster-aaa",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用资源</p>",
+          "example": "无",
+          "member": "ResourceRef",
+          "name": "ResourceRefs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Flink版本</p>",
+          "example": "Flink-1.11",
+          "member": "string",
+          "name": "FlinkVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间 SerialId</p>",
+          "example": "space-aaaa",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步id</p>",
+          "example": "407D2293-E7A8-456B-97F8-B242677AE72D",
+          "member": "string",
+          "name": "AsyncTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否异步</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAsync",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetaTableResponse": {
+      "document": "CreateMetaTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表Id</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TableId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AsyncStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOceanusClusterRequest": {
       "document": "CreateOceanusCluster请求参数结构体",
       "members": [
@@ -3911,8 +4124,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个集群 ID 查询，每次请求的集群上限为 100",
-          "example": "cluster-xxxx",
+          "document": "<p>按照一个或者多个集群 ID 查询，每次请求的集群上限为 100</p>",
+          "example": "[\"cluster-m68k3d2m\"]",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
@@ -3920,7 +4133,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认 0",
+          "document": "<p>偏移量，默认 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3929,7 +4142,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的集群数量，默认 20，最大值 100",
+          "document": "<p>请求的集群数量，默认 20，最大值 100</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -3938,7 +4151,7 @@
         },
         {
           "disabled": false,
-          "document": "集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序",
+          "document": "<p>集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序</p>",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
@@ -3947,7 +4160,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤规则\n    \n- Name\n    按照集群的名字进行模糊查询。例如：测试\n    类型： String\n    必选： 否\n    ",
+          "document": "<p>过滤规则</p><ul><li>Name<br>  按照集群的名字进行模糊查询。例如：测试<br>  类型： String<br>  必选： 否</li></ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3956,12 +4169,21 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用类型</p><p>枚举值：</p><ul><li>1： oceanus 集群</li><li>2： setats 集群</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "CallType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3971,7 +4193,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群总数",
+          "document": "<p>集群总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -3981,7 +4203,7 @@
         },
         {
           "disabled": false,
-          "document": "集群列表",
+          "document": "<p>集群列表</p>",
           "example": "无",
           "member": "Cluster",
           "name": "ClusterSet",
@@ -4702,8 +4924,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。",
-          "example": "[\"cql-123\"]",
+          "document": "<p>按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。</p>",
+          "example": "[\"cql-c02rgjsj\"]",
           "member": "string",
           "name": "JobIds",
           "required": false,
@@ -4711,7 +4933,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。",
+          "document": "<p>过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4720,7 +4942,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "<p>偏移量，默认为0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4729,7 +4951,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认为20，最大值为100",
+          "document": "<p>分页大小，默认为20，最大值为100</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -4738,7 +4960,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
@@ -4747,7 +4969,7 @@
         },
         {
           "disabled": false,
-          "document": "查询额外的作业信息,例如 JobEventInfo\t",
+          "document": "<p>查询额外的作业信息,例如 JobEventInfo</p>",
           "example": "[\"JobEventInfo\"]",
           "member": "string",
           "name": "ExtraResult",
@@ -4756,7 +4978,7 @@
         },
         {
           "disabled": false,
-          "document": "查询引用connector",
+          "document": "<p>查询引用connector</p>",
           "example": "setats",
           "member": "string",
           "name": "ConnectorOptions",
@@ -4771,7 +4993,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业总数",
+          "document": "<p>作业总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -4781,7 +5003,7 @@
         },
         {
           "disabled": false,
-          "document": "作业列表",
+          "document": "<p>作业列表</p>",
           "example": "无",
           "member": "JobV1",
           "name": "JobSet",
@@ -8108,6 +8330,106 @@
       ],
       "type": "object"
     },
+    "ModifyMetaTableRequest": {
+      "document": "ModifyMetaTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群唯一id</p>",
+          "example": "cluster-12",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据表唯一id</p>",
+          "example": "table-12",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL</p><p>参数格式：base64加密</p>",
+          "example": "Y3JlYXRlIHRhYmxl",
+          "member": "string",
+          "name": "SqlCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Flink版本</p>",
+          "example": "Flink-1.14",
+          "member": "string",
+          "name": "FlinkVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间唯一id</p>",
+          "example": "spave-12",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步id</p>",
+          "example": "557D2293-E7A8-456B-97F8-B242677AE77D",
+          "member": "string",
+          "name": "AsyncTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否异步</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAsync",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMetaTableResponse": {
+      "document": "ModifyMetaTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>1 ing 2 done</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AsyncStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyWorkSpaceRequest": {
       "document": "ModifyWorkSpace请求参数结构体",
       "members": [
@@ -9405,7 +9727,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cluster-lq6dtnk5",
           "member": "string",
           "name": "ClusterId",
@@ -9414,8 +9736,8 @@
         },
         {
           "disabled": false,
-          "document": "需要执行的sql，该sql会被Sql Gateway执行，当前支持的是paimon修改需求，因此主要是DDL语句",
-          "example": "select 1",
+          "document": "<p>需要执行的sql，需要对其进行base64编译后传入</p>",
+          "example": "c2hvdyBkYXRhYmFzZXM7",
           "member": "string",
           "name": "Sql",
           "required": true,
@@ -9423,7 +9745,7 @@
         },
         {
           "disabled": false,
-          "document": "Sql Gateway会话ID，可不填，如果不填则会自动创建一个会话ID，每个会话ID都有一个存活时间，测试环境为10分钟，线上默认是30分钟",
+          "document": "<p>Sql Gateway会话ID，可不填，如果不填则会自动创建一个会话ID，每个会话ID都有一个存活时间，测试环境为10分钟，线上默认是30分钟</p>",
           "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
           "member": "string",
           "name": "SessionId",
@@ -9438,8 +9760,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误信息",
-          "example": "无",
+          "document": "<p>错误信息</p>",
+          "example": "[\"error\"]",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -9448,7 +9770,7 @@
         },
         {
           "disabled": false,
-          "document": "会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致",
+          "document": "<p>会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致</p>",
           "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
           "member": "string",
           "name": "SessionId",
@@ -9458,7 +9780,7 @@
         },
         {
           "disabled": false,
-          "document": "返回执行id，可以根据该执行id和会话id获取执行结果",
+          "document": "<p>返回执行id，可以根据该执行id和会话id获取执行结果</p>",
           "example": "操作ID",
           "member": "string",
           "name": "OperationHandleId",

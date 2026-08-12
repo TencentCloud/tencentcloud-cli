@@ -25,6 +25,7 @@ tccli/main.py
 tccli/oauth.py
 tccli/options_define.py
 tccli/plugin.py
+tccli/self_ref.py
 tccli/sso.py
 tccli/style.py
 tccli/table.py
@@ -323,6 +324,8 @@ tccli/services/cmq/__init__.py
 tccli/services/cmq/cmq_client.py
 tccli/services/cmq/v20190304/api.json
 tccli/services/cmq/v20190304/examples.json
+tccli/services/cmr/__init__.py
+tccli/services/cmr/cmr_client.py
 tccli/services/cms/__init__.py
 tccli/services/cms/cms_client.py
 tccli/services/cms/v20190321/api.json

@@ -220,6 +220,14 @@
         "title": "隔离 DB Custom 节点"
       }
     ],
+    "ModifyDBCustomClusterAttributes": [
+      {
+        "document": "开启集群删除保护",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomClusterAttributes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"dbcc-hq867qji\",\n    \"DeletionProtection\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ba3094b-eea5-4f62-ac2f-97b44f251944\"\n    }\n}",
+        "title": "修改 DB Custom 集群属性"
+      }
+    ],
     "ModifyDBCustomClusterNodeConfig": [
       {
         "document": "本接口（ModifyDBCustomClusterNodeConfig） 用于修改 DB Custom 集群节点的标签与污点配置",
