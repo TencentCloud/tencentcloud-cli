@@ -4,7 +4,6 @@ import os
 import sys
 import copy
 import six
-import tccli.services as Services
 import tccli.options_define as Options_define
 from collections import OrderedDict
 
@@ -326,6 +325,7 @@ class ActionCommand(BaseCommand):
                     break
             else:
                 remaining.append(parsed_args.help)
+        delattr(parsed_args, "help")
 
         extra_unfold_args = OrderedDict()
         oversized_tokens = []  # [(key, depth)]

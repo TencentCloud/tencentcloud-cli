@@ -21,3 +21,6 @@ Classifier: Programming Language :: Python :: 3.4
 Classifier: Programming Language :: Python :: 3.5
 Classifier: Programming Language :: Python :: 3.6
 License-File: LICENSE
+Requires-Dist: tencentcloud-sdk-python-common>=3.0.1503
+Requires-Dist: jmespath>=0.10.0
+Requires-Dist: six>=1.16.0

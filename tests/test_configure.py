@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-import io
 import json
 import os
 import sys
 
 import pytest
+import six
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
@@ -17,6 +17,10 @@ from utils import shell, recover_profile
 
 def _make_set_cmd():
     return ConfigureSetCommand()
+
+
+def _write_json_text(path, data):
+    path.write_text(six.text_type(json.dumps(data)))
 
 
 @pytest.mark.parametrize("bad_output", ["xml", "yaml", ""])
@@ -75,9 +79,9 @@ def test_configure_get_nonexistent_key_raises(tmp_path, monkeypatch):
     monkeypatch.setattr(cmd, "cli_path", str(tmp_path))
 
     conf_path = tmp_path / "unit_test.configure"
-    conf_path.write_text(json.dumps({"_sys_param": {"region": "ap-guangzhou"}}))
+    _write_json_text(conf_path, {"_sys_param": {"region": "ap-guangzhou"}})
     cred_path = tmp_path / "unit_test.credential"
-    cred_path.write_text(json.dumps({}))
+    _write_json_text(cred_path, {})
 
     class FakeArgs:
         varname = ["nonexistent_key"]
@@ -90,14 +94,14 @@ def test_configure_get_nonexistent_key_raises(tmp_path, monkeypatch):
 
 
 def test_configure_get_existing_key_outputs_value(tmp_path, monkeypatch):
-    stream = io.StringIO()
+    stream = six.StringIO()
     cmd = ConfigureGetCommand(stream=stream)
     monkeypatch.setattr(cmd, "cli_path", str(tmp_path))
 
     conf_path = tmp_path / "unit_test.configure"
-    conf_path.write_text(json.dumps({"_sys_param": {"region": "ap-beijing"}}))
+    _write_json_text(conf_path, {"_sys_param": {"region": "ap-beijing"}})
     cred_path = tmp_path / "unit_test.credential"
-    cred_path.write_text(json.dumps({}))
+    _write_json_text(cred_path, {})
 
     class FakeArgs:
         varname = ["region"]
