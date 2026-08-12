@@ -1973,6 +1973,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>是否关闭超线程。true：扩容实例时关闭超线程。false（默认）：扩容实例时不关闭超线程。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableHyperThreading",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "<p>高性能计算集群ID。可通过调用<a href=\"https://cloud.tencent.com/document/product/213/83220\">DescribeHpcClusters</a>接口获取该参数。注意：此字段默认为空。</p>",
           "example": "hpc-gt4es2q1",
           "member": "string",
@@ -5959,6 +5968,15 @@
           "name": "CamRoleName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否关闭超线程。\ntrue：扩容实例时关闭超线程。\nfalse（默认）：扩容实例时不关闭超线程。",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableHyperThreading",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,

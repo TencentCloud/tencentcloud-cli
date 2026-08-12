@@ -1,15 +1,15 @@
-**Example 1: CreateUserGroup**
+**Example 1: 成功**
 
-添加用户组
+
 
 Input: 
 
 ```
 tccli bi CreateUserGroup --cli-unfold-argument  \
-    --AdminUserId userId \
-    --Description /描述 \
-    --GroupName 测试用户组 \
-    --Location 0 \
+    --AdminUserId 700000231283 \
+    --Description 用户组描述 \
+    --GroupName test0812001 \
+    --Location -1 \
     --ParentId -1
 ```
 
@@ -18,19 +18,19 @@ Output:
 {
     "Response": {
         "Data": {
-            "AdminUserId": "userId",
-            "Description": "/描述",
-            "GroupName": "测试用户组",
-            "Id": 273,
+            "AdminUserId": "700000231283",
+            "Description": "用户组描述",
+            "GroupName": "test0812001",
+            "Id": 382,
             "IsDefault": 0,
-            "Location": 7,
+            "Location": 12,
             "ParentId": -1,
             "ParentName": null,
             "UserList": null
         },
         "Extra": "",
         "Msg": "默认业务成功",
-        "RequestId": "7b8dad84-4285-4717-ac6d-5a76a29cb815"
+        "RequestId": "25ede453-df25-4cb5-ae6f-e48c4fc87ea7"
     }
 }
 ```

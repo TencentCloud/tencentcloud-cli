@@ -3987,7 +3987,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "<p>作业ID</p>",
           "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
@@ -3996,7 +3996,7 @@
         },
         {
           "disabled": false,
-          "document": "调试作业ID",
+          "document": "<p>调试作业ID</p>",
           "example": "123",
           "member": "int64",
           "name": "DebugId",
@@ -4005,8 +4005,8 @@
         },
         {
           "disabled": false,
-          "document": "表名",
-          "example": "a",
+          "document": "<p>表名</p>",
+          "example": "logger",
           "member": "string",
           "name": "TableName",
           "required": true,
@@ -4014,7 +4014,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间 SerialId",
+          "document": "<p>工作空间 SerialId</p>",
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",

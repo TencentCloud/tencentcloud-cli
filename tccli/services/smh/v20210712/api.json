@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateClawProSpaceInternal": {
+      "document": "创建 ClawPro 专用空间",
+      "input": "CreateClawProSpaceInternalRequest",
+      "name": "创建 ClawPro 专用空间",
+      "output": "CreateClawProSpaceInternalResponse",
+      "status": "online"
+    },
     "CreateLibrary": {
       "document": "创建 PaaS 服务媒体库",
       "input": "CreateLibraryRequest",
@@ -7,11 +14,32 @@
       "output": "CreateLibraryResponse",
       "status": "online"
     },
+    "DeleteClawProSpaceInternal": {
+      "document": "删除 ClawPro 专用空间",
+      "input": "DeleteClawProSpaceInternalRequest",
+      "name": "删除 ClawPro 专用空间",
+      "output": "DeleteClawProSpaceInternalResponse",
+      "status": "online"
+    },
     "DeleteLibrary": {
       "document": "删除 PaaS 服务媒体库",
       "input": "DeleteLibraryRequest",
       "name": "删除媒体库",
       "output": "DeleteLibraryResponse",
+      "status": "online"
+    },
+    "DescribeClawProSpacesInternal": {
+      "document": "内部查询 clawpro space 统计信息接口",
+      "input": "DescribeClawProSpacesInternalRequest",
+      "name": "查询clawpro专用空间信息",
+      "output": "DescribeClawProSpacesInternalResponse",
+      "status": "online"
+    },
+    "DescribeClawProTrafficInternal": {
+      "document": "查询 Library 粒度的流量包汇总和使用情况",
+      "input": "DescribeClawProTrafficInternalRequest",
+      "name": "查询clawpro流量信息",
+      "output": "DescribeClawProTrafficInternalResponse",
       "status": "online"
     },
     "DescribeLibraries": {
@@ -49,6 +77,20 @@
       "output": "DescribeTrafficPackagesResponse",
       "status": "online"
     },
+    "DestroyClawProSpaceInternal": {
+      "document": "销毁已隔离的 ClawPro 专用空间",
+      "input": "DestroyClawProSpaceInternalRequest",
+      "name": "销毁已隔离的 ClawPro 专用空间",
+      "output": "DestroyClawProSpaceInternalResponse",
+      "status": "online"
+    },
+    "ImportClawProSpaceInternal": {
+      "document": "ClawPro 存量 space 导入接口",
+      "input": "ImportClawProSpaceInternalRequest",
+      "name": "clawpro 存量 Space 迁移",
+      "output": "ImportClawProSpaceInternalResponse",
+      "status": "online"
+    },
     "ModifyLibrary": {
       "document": "修改 PaaS 服务媒体库配置项",
       "input": "ModifyLibraryRequest",
@@ -56,11 +98,25 @@
       "output": "ModifyLibraryResponse",
       "status": "online"
     },
+    "OrderClawProTrafficPackageInternal": {
+      "document": "创建 ClawPro 专用空间",
+      "input": "OrderClawProTrafficPackageInternalRequest",
+      "name": "下单 ClawPro 流量资源包",
+      "output": "OrderClawProTrafficPackageInternalResponse",
+      "status": "online"
+    },
     "SendSmsCode": {
       "document": "发送用于换绑官方云盘实例的超级管理员账号的短信验证码",
       "input": "SendSmsCodeRequest",
       "name": "发送短信验证码",
       "output": "SendSmsCodeResponse",
+      "status": "online"
+    },
+    "SetClawProSpaceRenewFlagInternal": {
+      "document": "设置或取消个人空间的自动续费标记",
+      "input": "SetClawProSpaceRenewFlagInternalRequest",
+      "name": "设置 clawpro 专属空间自动续费标记",
+      "output": "SetClawProSpaceRenewFlagInternalResponse",
       "status": "online"
     },
     "VerifySmsCode": {
@@ -78,6 +134,62 @@
     "serviceShortName": "smh"
   },
   "objects": {
+    "CreateClawProSpaceInternalRequest": {
+      "document": "CreateClawProSpaceInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh2t687mtt76zfg",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVM 实例 ID</p>",
+          "example": "ins-08071943",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClawProSpaceInternalResponse": {
+      "document": "CreateClawProSpaceInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>Complete： 创建完成</li><li>Pending： 创建中</li></ul>",
+          "example": "Complete",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p>",
+          "example": "space38l28eikdg305",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLibraryRequest": {
       "document": "CreateLibrary请求参数结构体",
       "members": [
@@ -179,6 +291,60 @@
       ],
       "type": "object"
     },
+    "DeleteClawProSpaceInternalRequest": {
+      "document": "DeleteClawProSpaceInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh2t6*****76zfg",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVM 实例 ID</p>",
+          "example": "ins-****1943",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的空间 ID，用于验证</p>",
+          "example": "space3******kdg305",
+          "member": "string",
+          "name": "ExpectedSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许从回收站恢复</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Recoverable",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClawProSpaceInternalResponse": {
+      "document": "DeleteClawProSpaceInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLibraryRequest": {
       "document": "DeleteLibrary请求参数结构体",
       "members": [
@@ -197,6 +363,137 @@
     "DeleteLibraryResponse": {
       "document": "DeleteLibrary返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClawProSpacesInternalRequest": {
+      "document": "DescribeClawProSpacesInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh23s*****noax2",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVM 实例 ID 列表</p>",
+          "example": "[\"ins-****7i3u\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页参数</p>",
+          "example": "p0li51m9_smh314r****************bkf356w_2sQF5qKf",
+          "member": "string",
+          "name": "Marker",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次拉取数量</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClawProSpacesInternalResponse": {
+      "document": "DescribeClawProSpacesInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页参数</p>",
+          "example": "p1718fjk_smh3jkm****************z3xhj91_AATplEg0",
+          "member": "string",
+          "name": "NextMarker",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间信息</p>",
+          "example": "无",
+          "member": "InstanceSpaceInfo",
+          "name": "InstanceSpaceInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClawProTrafficInternalRequest": {
+      "document": "DescribeClawProTrafficInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh314*****fgfl3",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClawProTrafficInternalResponse": {
+      "document": "DescribeClawProTrafficInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh314*****fgfl3",
+          "member": "string",
+          "name": "LibraryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Library 当前流量包总量（字节），含免费包与付费包</p><p>单位：字节</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TrafficTotalBytes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Library 已用外网下行流量（字节）</p><p>单位：字节</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TrafficUsedBytes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -605,6 +902,123 @@
       ],
       "type": "object"
     },
+    "DestroyClawProSpaceInternalRequest": {
+      "document": "DestroyClawProSpaceInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh2t6*****76zfg",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVM 实例 ID</p>",
+          "example": "ins-****1943",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的空间 ID，用于验证</p>",
+          "example": "space3******kdg305",
+          "member": "string",
+          "name": "ExpectedSpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyClawProSpaceInternalResponse": {
+      "document": "DestroyClawProSpaceInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportClawProSpaceInternalRequest": {
+      "document": "ImportClawProSpaceInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh2eq*****a3ydv",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p>",
+          "example": "space2******mvkaci",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVM 实例 ID</p>",
+          "example": "dummy*****nceId",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期隔离时间</p>",
+          "example": "2026-08-12T04:20:00Z",
+          "member": "datetime_iso",
+          "name": "IsolateAt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>NORMAL： 正常</li><li>ISOLATED： 隔离</li></ul>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许从回收站恢复</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Recoverable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportClawProSpaceInternalResponse": {
+      "document": "ImportClawProSpaceInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Instance": {
       "document": "官方云盘实例信息",
       "members": [
@@ -727,6 +1141,52 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceSpaceInfo": {
+      "document": "Claw Pro 实例空间信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CVM 实例 ID 或公共空间特殊值</p>",
+          "example": "ins-bj6e7i3u",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>免费资格是否已消耗。仅个人空间有意义；公共空间恒为 false 且无业务含义</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FreeEligibilityConsumed",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>免费资格开始时间</p>",
+          "example": "2026-08-09T09:29:03Z",
+          "member": "datetime_iso",
+          "name": "ConsumedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的 Space 详情</p>",
+          "example": "无",
+          "member": "SpaceInfo",
+          "name": "SpaceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1113,6 +1573,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为ClawPro专用媒体库</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsClawPro",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1161,6 +1632,42 @@
     },
     "ModifyLibraryResponse": {
       "document": "ModifyLibrary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderClawProTrafficPackageInternalRequest": {
+      "document": "OrderClawProTrafficPackageInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh2t6*****76zfg",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVM 实例 ID</p>",
+          "example": "instan*****42247",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderClawProTrafficPackageInternalResponse": {
+      "document": "OrderClawProTrafficPackageInternal返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1224,6 +1731,207 @@
         }
       ],
       "type": "object"
+    },
+    "SetClawProSpaceRenewFlagInternalRequest": {
+      "document": "SetClawProSpaceRenewFlagInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>媒体库 ID</p>",
+          "example": "smh314r4e77fgfl3",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "s2vkfExGzT002",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费标记</p><p>枚举值：</p><ul><li>MANUAL_RENEW： 手动续费；到期前不自动扣费，用户自行在购买页续费；到期后进入欠费隔离</li><li>AUTO_RENEW： 自动续费；到期前计费平台自动扣费顺延，不进入隔离</li><li>NOTIFY_EXPIRE： 到期不续；明确表达&quot;不再续费&quot;，到期后进入欠费隔离</li></ul>",
+          "example": "MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetClawProSpaceRenewFlagInternalResponse": {
+      "document": "SetClawProSpaceRenewFlagInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "s2vkfExGzT002",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>媒体库空间 ID</p>",
+          "example": "space3vnsam2g0c2ff",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费标记</p><p>枚举值：</p><ul><li>MANUAL_RENEW： 手动续费</li><li>AUTO_RENEW： 自动续费</li><li>NOTIFY_EXPIRE： 到期不续</li></ul>",
+          "example": "MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SpaceInfo": {
+      "document": "内部查询 clawpro 空间信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预付费实例资源 ID</p>",
+          "example": "p045k4t5_smh306i356mx85kc_1jqqw6u5zq3bs_5GiCOQem",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p>",
+          "example": "space2xyb6z87jca00",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间类型</p><p>枚举值：</p><ul><li>public： 公共空间类型</li><li>personal： 个人空间类型</li></ul>",
+          "example": "public",
+          "member": "string",
+          "name": "SpaceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间状态</p><p>枚举值：</p><ul><li>NORMAL： 正常状态</li><li>ISOLATED： 隔离状态</li></ul>",
+          "example": "ISOLATED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储套餐包容量上限（字节）</p>",
+          "example": "53687091200",
+          "member": "uint64",
+          "name": "Capacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>免费存储配额部分（字节）</p>",
+          "example": "53687091200",
+          "member": "uint64",
+          "name": "FreeStorageQuota",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储包到期时间（ISO 8601）</p>",
+          "example": "2026-08-05T07:59:01Z",
+          "member": "datetime_iso",
+          "name": "StorageExpiresAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前流量包到期时间（ISO 8601）</p>",
+          "example": "2026-09-05T06:20:28Z",
+          "member": "datetime_iso",
+          "name": "TrafficExpiresAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标记</p><p>枚举值：</p><ul><li>MANUAL_RENEW： 手动续费    到期前不自动扣费，用户自行在购买页续费；到期后进入欠费隔离</li><li>AUTO_RENEW： 自动续费    到期前计费平台自动扣费顺延，不进入隔离</li><li>NOTIFY_EXPIRE： 到期不需    明确表达\"不再续费\"，到期后进入欠费隔离</li></ul>",
+          "example": "NOTIFY_EXPIRE",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许付费恢复</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Recoverable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间创建时间（ISO 8601）</p>",
+          "example": "2026-08-05T04:36:39Z",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进入欠费隔离时间（ISOLATED 状态时返回）</p>",
+          "example": "2026-08-05T07:59:01Z",
+          "member": "datetime_iso",
+          "name": "IsolatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TrafficPackage": {
       "document": "流量资源包信息",

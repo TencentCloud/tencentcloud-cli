@@ -7467,8 +7467,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集id列表",
-          "example": "['dataset_id_1']",
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据集id列表</p>",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "DatasetIds",
           "required": false,
@@ -7476,7 +7485,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集查询过滤条件，多个Filter之间的关系为逻辑与（AND）关系，过滤字段Filter.Name，类型为String\nDatasetName，数据集名称\nDatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC",
+          "document": "<p>数据集查询过滤条件，多个Filter之间的关系为逻辑与（AND）关系，过滤字段Filter.Name，类型为String<br>DatasetName，数据集名称<br>DatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7485,7 +7494,7 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤条件",
+          "document": "<p>标签过滤条件</p>",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -7494,7 +7503,7 @@
         },
         {
           "disabled": false,
-          "document": "排序值，支持Asc或Desc，默认Desc",
+          "document": "<p>排序值，支持Asc或Desc，默认Desc</p>",
           "example": "Desc",
           "member": "string",
           "name": "Order",
@@ -7503,7 +7512,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，支持CreateTime或UpdateTime，默认CreateTime",
+          "document": "<p>排序字段，支持CreateTime或UpdateTime，默认CreateTime</p>",
           "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
@@ -7512,7 +7521,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移值",
+          "document": "<p>偏移值</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -7521,7 +7530,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数据个数，默认20，最大支持200",
+          "document": "<p>返回数据个数，默认20，最大支持200</p>",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -7530,8 +7539,8 @@
         },
         {
           "disabled": false,
-          "document": "是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。",
-          "example": "无",
+          "document": "<p>是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。</p>",
+          "example": "false",
           "member": "bool",
           "name": "CFSChecking",
           "required": false,
@@ -7539,8 +7548,8 @@
         },
         {
           "disabled": false,
-          "document": "是否返回CFS详情。",
-          "example": "无",
+          "document": "<p>是否返回CFS详情。</p>",
+          "example": "false",
           "member": "bool",
           "name": "CFSDetail",
           "required": false,
@@ -7554,7 +7563,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集总量（名称维度）",
+          "document": "<p>数据集总量（名称维度）</p>",
           "example": "23",
           "member": "uint64",
           "name": "TotalCount",
@@ -7564,7 +7573,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集按照数据集名称聚合的分组",
+          "document": "<p>数据集按照数据集名称聚合的分组</p>",
           "example": "无",
           "member": "DatasetGroup",
           "name": "DatasetGroups",
@@ -7574,7 +7583,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集ID总量",
+          "document": "<p>数据集ID总量</p>",
           "example": "100",
           "member": "uint64",
           "name": "DatasetIdNums",
@@ -7584,8 +7593,8 @@
         },
         {
           "disabled": false,
-          "document": "若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。",
-          "example": "无",
+          "document": "<p>若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。</p>",
+          "example": "false",
           "member": "bool",
           "name": "CFSNotReady",
           "output_required": false,
@@ -22929,7 +22938,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成</p>",
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",
@@ -23245,7 +23254,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>任务状态，eg：SUBMITTING提交中、PENDING排队中、<br>STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成</p>",
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 提交中</li><li>PENDING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>",
           "example": "SUBMITTING",
           "member": "string",
           "name": "Status",

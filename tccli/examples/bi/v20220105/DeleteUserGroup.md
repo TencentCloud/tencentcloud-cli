@@ -1,4 +1,4 @@
-**Example 1: DeleteUserGroup**
+**Example 1: 成功**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bi DeleteUserGroup --cli-unfold-argument  \
-    --Id 274
+    --Id 382
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
         "Data": null,
         "Extra": "",
         "Msg": "默认业务成功",
-        "RequestId": "f0695353-deaa-4220-9aa1-f4c42a9dc81a"
+        "RequestId": "5b81111c-682a-4655-9b6a-7828387cdf45"
     }
 }
 ```

@@ -991,7 +991,7 @@
     "CreateConsoleLoginUrl": [
       {
         "document": "生成到模板详情的控制台链接",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDwFdUUckpsvet4jUEn0aFRxtu5TdalM\",\n    \"MenuStatus\": \"ENABLE\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDwFdUUckpsvet4jUEn0aFRxtu5TdalM\",\n    \"MenuStatus\": \"ENABLE\",\n    \"BusinessLicenseId\": \"yDRSR*U**gj6**w*********c193c2hH\"\n}",
         "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://es*.ap*.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
         "title": "生成到模板详情的控制台链接"
       },

@@ -694,7 +694,7 @@
       "status": "online"
     },
     "UploadFiles": {
-      "document": "此接口（UploadFiles）文件上传。<br/>\n\n适用场景：用于合同，印章的文件上传。文件上传以后，\n如果是PDF格式文件可配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>接口进行合同流程的发起\n如果是其他类型可以配合<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>接口转换成PDF文件\n\n注: \n1. 图片类型(png/jpg/jpeg)限制大小为5M以下, PDF/word/excel等其他格式限制大小为60M以下\n2. <font color='red'>此接口调用时需要单独设置Domain请求域名 </font>,  联调开发环境为 <font color='red'>file.test.ess.tencent.cn</font>，正式环境需要设置为<font color='red'>file.ess.tencent.cn</font>，代码示例\n```\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");\n```\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/essbasic-UploadFiles.mp4\" target=\"_blank\">【上传文件代码】编写示例</a><br>",
+      "document": "此接口（UploadFiles）文件上传。<br/>\n\n适用场景：用于合同，印章的文件上传。文件上传以后，\n如果是PDF格式文件可配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>接口进行合同流程的发起\n如果是其他类型可以配合<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>接口转换成PDF文件\n\n注: \n1. 图片类型(png/jpg/jpeg)限制大小为8M以下, PDF/word/excel等其他格式限制大小为60M以下\n2. <font color='red'>此接口调用时需要单独设置Domain请求域名 </font>,  联调开发环境为 <font color='red'>file.test.ess.tencent.cn</font>，正式环境需要设置为<font color='red'>file.ess.tencent.cn</font>，代码示例\n```\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");\n```\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/essbasic-UploadFiles.mp4\" target=\"_blank\">【上传文件代码】编写示例</a><br>",
       "input": "UploadFilesRequest",
       "name": "文件上传",
       "output": "UploadFilesResponse",
@@ -7872,7 +7872,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。</p>",
+          "document": "<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。<br>和BusinessLicenseId二选一即可</p>",
           "example": "aHR0cHM6Ly9jYXBpLndvYS5jb20vhaWwlM0ZpZCUzRGVzc2Jhc2ljJTI2dGFiJTNEYXBp..图片base64省略",
           "member": "string",
           "name": "BusinessLicense",
@@ -7948,6 +7948,15 @@
           "example": "USCC",
           "member": "string",
           "name": "ProxyOrganizationIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营业执照正面照（支持PNG或JPG格式）的FileId（通过UploadFiles获取），且文件大小不得超过8MB。<br>和BusinessLicense二选一即可</p>",
+          "example": "yDRSR*U**gj6**w*********c193c2hH",
+          "member": "string",
+          "name": "BusinessLicenseId",
           "required": false,
           "type": "string"
         }
@@ -16028,7 +16037,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件对应业务类型,可以选择的类型如下<ul><li> <strong>TEMPLATE</strong> : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li><li> <strong>DOCUMENT</strong> : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> <strong>SEAL</strong> : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li><li> <strong>ARCHIVE</strong> : 此文件用于归档文件夹，文件类型支持.pdf/.zip格式</li></ul></p><p>枚举值：</p><ul><li>TEMPLATE： 此上传的文件用户生成合同模板</li><li>DOCUMENT： 此文件用来发起合同流程</li><li>SEAL： 此文件用于印章的生成</li><li>ARCHIVE： 此文件用于归档文件夹</li></ul>",
+          "document": "<p>文件对应业务类型,可以选择的类型如下<ul><li> <strong>TEMPLATE</strong> : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li><li> <strong>DOCUMENT</strong> : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> <strong>SEAL</strong> : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li><li> <strong>ARCHIVE</strong> : 此文件用于归档文件夹，文件类型支持.pdf/.zip格式</li></ul></p><p>枚举值：</p><ul><li>TEMPLATE： 此上传的文件用户生成合同模板</li><li>DOCUMENT： 此文件用来发起合同流程</li><li>SEAL： 此文件用于印章的生成</li><li>ARCHIVE： 此文件用于归档文件夹</li><li>BUSINESSLICENSE： 此文件用于上传营业执照，文件类型只能是JPG或者PNG，限制8M以内</li></ul>",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",

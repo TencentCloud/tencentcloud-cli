@@ -12,7 +12,8 @@ tccli essbasic CreateConsoleLoginUrl --cli-unfold-argument  \
     --Agent.AppId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
     --Module TEMPLATE \
     --ModuleId yDwFdUUckpsvet4jUEn0aFRxtu5TdalM \
-    --MenuStatus ENABLE
+    --MenuStatus ENABLE \
+    --BusinessLicenseId yDRSR*U**gj6**w*********c193c2hH
 ```
 
 Output: 

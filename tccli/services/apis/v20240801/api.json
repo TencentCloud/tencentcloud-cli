@@ -92,11 +92,11 @@
       "status": "online"
     },
     "CreateApp": {
-      "document": "创建API分组",
+      "document": "不再使用\n\n创建API分组",
       "input": "CreateAppRequest",
       "name": "创建API分组",
       "output": "CreateAppResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateMcpServer": {
       "document": "创建mcp server",
@@ -190,11 +190,11 @@
       "status": "online"
     },
     "DeleteApp": {
-      "document": "删除API分组",
+      "document": "不再使用\n\n删除API分组",
       "input": "DeleteAppRequest",
       "name": "删除API分组",
       "output": "DeleteAppResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteMcpServer": {
       "document": "删除mcp server",
@@ -295,11 +295,11 @@
       "status": "online"
     },
     "DescribeApps": {
-      "document": "分页查询API分组列表",
+      "document": "不再使用\n\n分页查询API分组列表",
       "input": "DescribeAppsRequest",
       "name": "分页查询API分组列表",
       "output": "DescribeAppsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMcpSecurityRule": {
       "document": "查询mcp 安全规则详情",

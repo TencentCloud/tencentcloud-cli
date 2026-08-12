@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateClawProSpaceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClawProSpaceInternal\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh2t687mtt76zfg\",\n    \"InstanceId\": \"ins-08071943\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SpaceId\": \"space38l28eikdg305\",\n        \"Status\": \"Complete\",\n        \"RequestId\": \"3d68abbb-4a50-4b59-bbf9-04173715446a\"\n    }\n}",
+        "title": "创建空间"
+      }
+    ],
     "CreateLibrary": [
       {
         "document": "创建媒体库",
@@ -8,12 +16,36 @@
         "title": "创建媒体库"
       }
     ],
+    "DeleteClawProSpaceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClawProSpaceInternal\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh2t6*****76zfg\",\n    \"InstanceId\": \"ins-****1943\",\n    \"ExpectedSpaceId\": \"space3******kdg305\",\n    \"Recoverable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15f9742d-2354-472e-8da3-5207e4cca6e4\"\n    }\n}",
+        "title": "删除空间并放入回收站"
+      }
+    ],
     "DeleteLibrary": [
       {
         "document": "删除媒体库",
         "input": "POST / HTTP/1.1 \nHost: smh.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: DeleteLibrary \n\n{\n    \"LibraryId\": \"smh0q8nrvsg7t6y6\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea829232-caa0-4dfe-9bbb-2f428cfae08c\"\n    }\n}",
         "title": "删除媒体库"
+      }
+    ],
+    "DescribeClawProSpacesInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClawProSpacesInternal\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh23s*****noax2\",\n    \"InstanceIds\": [\n        \"ins-****7i3u\"\n    ],\n    \"Marker\": \"p0li51m9_smh314r****************bkf356w_2sQF5qKf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSpaceInfo\": [\n            {\n                \"ConsumedAt\": \"2026-08-09T09:29:03Z\",\n                \"FreeEligibilityConsumed\": true,\n                \"InstanceId\": \"ins-bj6e7i3u\",\n                \"SpaceInfo\": {\n                    \"Capacity\": 53687091200,\n                    \"CreatedAt\": \"2026-08-09T09:29:03Z\",\n                    \"FreeStorageQuota\": 0,\n                    \"RenewFlag\": \"NOTIFY_EXPIRE\",\n                    \"ResourceId\": \"p0mq6398_smh23sb****************gxw8r15_UirRoMbI\",\n                    \"SpaceId\": \"space2******6rar9n\",\n                    \"SpaceType\": \"personal\",\n                    \"Status\": \"NORMAL\",\n                    \"StorageExpiresAt\": \"2027-08-09T01:34:44Z\",\n                    \"TrafficExpiresAt\": \"2026-09-09T09:36:49Z\"\n                }\n            }\n        ],\n        \"NextMarker\": \"p1718fjk_smh3jkm****************z3xhj91_AATplEg0\",\n        \"RequestId\": \"e41b30b9-de9d-4101-b5c9-5d9b908f1545\"\n    }\n}",
+        "title": "查询实例信息"
+      }
+    ],
+    "DescribeClawProTrafficInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClawProTrafficInternal\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh314*****fgfl3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LibraryId\": \"smh314*****fgfl3\",\n        \"TrafficTotalBytes\": 0,\n        \"TrafficUsedBytes\": 0,\n        \"RequestId\": \"491e9e7a-fd32-47bf-b34a-e6604c4ef297\"\n    }\n}",
+        "title": "查询 clawpro 媒体库流量信息"
       }
     ],
     "DescribeLibraries": [
@@ -56,6 +88,22 @@
         "title": "查询官方实例"
       }
     ],
+    "DestroyClawProSpaceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyClawProSpaceInternal\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh2t6*****76zfg\",\n    \"InstanceId\": \"ins-****1943\",\n    \"ExpectedSpaceId\": \"space3******kdg305\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7dc25069-e9a8-434b-8f29-40d996cdfbfb\"\n    }\n}",
+        "title": "销毁空间"
+      }
+    ],
+    "ImportClawProSpaceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportClawProSpaceInternal\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh2eq*****a3ydv\",\n    \"SpaceId\": \"space2******mvkaci\",\n    \"InstanceId\": \"dummy*****nceId\",\n    \"IsolateAt\": \"2026-08-12 04:20:00\",\n    \"Status\": \"NORMAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5df4db5e-085e-4fa6-a053-07b7fccd2162\"\n    }\n}",
+        "title": "迁入空间"
+      }
+    ],
     "ModifyLibrary": [
       {
         "document": "",
@@ -64,12 +112,28 @@
         "title": "修改媒体库配置项"
       }
     ],
+    "OrderClawProTrafficPackageInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OrderClawProTrafficPackageInternal\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh2t6*****76zfg\",\n    \"InstanceId\": \"instan*****42247\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"185c9ce2-7917-4bc9-b14d-9af1747485d7\"\n    }\n}",
+        "title": "发放免费流量资源包"
+      }
+    ],
     "SendSmsCode": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendSmsCode\n<公共请求参数>\n\n{\n    \"Purpose\": \"BindSuperAdmin\",\n    \"InstanceId\": \"n0v9tdme\",\n    \"PhoneNumber\": \"18999999999\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"37c3c855-caee-4c44-9778-bdec5998e5f1\"\n    }\n}",
         "title": "发送短信验证码"
+      }
+    ],
+    "SetClawProSpaceRenewFlagInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetClawProSpaceRenewFlagInternal\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh314r4e77fgfl3\",\n    \"InstanceId\": \"s2vkfExGzT002\",\n    \"RenewFlag\": \"MANUAL_RENEW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"s2vkfExGzT002\",\n        \"RenewFlag\": \"MANUAL_RENEW\",\n        \"SpaceId\": \"space3vnsam2g0c2ff\",\n        \"RequestId\": \"178cf44e-a878-4d82-859a-77a1c3da4f3a\"\n    }\n}",
+        "title": "设置 clawpro 实例续费标记"
       }
     ],
     "VerifySmsCode": [
