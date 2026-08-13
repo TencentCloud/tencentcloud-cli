@@ -312,6 +312,14 @@
         "title": "DescribeCatalogsByNames"
       }
     ],
+    "DescribeClustersVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClustersVersion\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TenantMode\": 2,\n        \"RequestId\": \"81f054f3-4621-4041-af2d-50cc64088833\"\n    }\n}",
+        "title": "查询集群模式"
+      }
+    ],
     "DescribeFavoriteMetadataObjects": [
       {
         "document": "",

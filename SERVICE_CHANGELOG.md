@@ -1,4 +1,4 @@
-# Release 3.0.1470.1
+# Release 3.0.1471.1
 
 ## AI Agent 安全网关(apis) 版本：2024-08-01
 
@@ -188,6 +188,35 @@
 * [LibraryExtension](http://document.tencentcloudapi.woa.com/document/product/1689/79772#LibraryExtension)
 
 	* 新增成员：IsClawPro
+
+
+
+
+## 多模态智能数据湖 TCLake(tccatalog) 版本：2024-10-24
+
+### 第 13 次发布
+
+发布时间：2026-08-13 16:12:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeClustersVersion](http://document.tencentcloudapi.woa.com/document/product/1785/92280)
+
+修改接口：
+
+* [CreateMetastoreInstance](http://document.tencentcloudapi.woa.com/document/product/1785/88319)
+
+	* 新增入参：TenantMode
+
+* [DescribeMetastoreInstance](http://document.tencentcloudapi.woa.com/document/product/1785/88318)
+
+	* <font color="#dd0000">**修改入参**：</font>InstanceId
+
+	* 新增出参：Endpoints
 
 
 

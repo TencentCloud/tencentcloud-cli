@@ -265,7 +265,7 @@
 | tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | [查看](http://document.tencentcloudapi.woa.com/document/product/596/39655) | 2026-05-28 02:14:40 |
 | tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | [查看](http://document.tencentcloudapi.woa.com/document/product/876/34816) | 2026-08-07 02:28:25 |
 | tcbr | [云托管 CloudBase Run](http://document.tencentcloudapi.woa.com/document/product/1243) | [查看](http://document.tencentcloudapi.woa.com/document/product/1711/80411) | 2026-08-12 01:58:49 |
-| tccatalog | [多模态智能数据湖 TCLake](http://document.tencentcloudapi.woa.com/document/product/1784) | [查看](http://document.tencentcloudapi.woa.com/document/product/1785/85716) | 2026-04-30 02:16:34 |
+| tccatalog | [多模态智能数据湖 TCLake](http://document.tencentcloudapi.woa.com/document/product/1784) | [查看](http://document.tencentcloudapi.woa.com/document/product/1785/85716) | 2026-08-13 16:12:29 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | [查看](http://document.tencentcloudapi.woa.com/document/product/1266/49002) | 2022-07-21 06:03:13 |
 | tchd | [腾讯云健康看板](http://document.tencentcloudapi.woa.com/document/product/1688) | [查看](http://document.tencentcloudapi.woa.com/document/product/1737/81055) | 2026-01-20 02:27:02 |
 | tchousex | [腾讯云数据仓库TCHouse-X](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1741/81606) | 2026-08-04 02:31:16 |
