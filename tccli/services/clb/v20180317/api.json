@@ -5105,7 +5105,7 @@
         {
           "disabled": false,
           "document": "<p>接入类型：PublicBYOK/PublicCustom/PrivateCustom</p>",
-          "example": "PrivateCustom",
+          "example": "PublicCustom",
           "member": "string",
           "name": "AccessType",
           "required": true,
@@ -5114,7 +5114,7 @@
         {
           "disabled": false,
           "document": "<p>模型提供商</p>",
-          "example": "openai",
+          "example": "OpenAI",
           "member": "string",
           "name": "ModelProvider",
           "required": false,
@@ -5141,7 +5141,7 @@
         {
           "disabled": false,
           "document": "<p>BYOK ID(在自定义模型时在部署网络后必须填写)</p>",
-          "example": "byok-fqn7vwbl",
+          "example": "byok-ksiersax",
           "member": "string",
           "name": "ServiceProviderId",
           "required": false,
@@ -5150,7 +5150,7 @@
         {
           "disabled": false,
           "document": "<p>服务供应商(创建BYOK自定义名称)。</p>",
-          "example": "custom",
+          "example": "textbyok-publicbyok",
           "member": "string",
           "name": "ServiceProviderName",
           "required": false,
@@ -5168,7 +5168,7 @@
         {
           "disabled": false,
           "document": "<p>API Base URL</p>",
-          "example": "http://127.0.0.1:8080",
+          "example": "https://deepseek.api.com",
           "member": "string",
           "name": "ApiBase",
           "required": false,
@@ -5177,7 +5177,7 @@
         {
           "disabled": false,
           "document": "<p>VPC ID</p>",
-          "example": "vpc-j5bxoqef",
+          "example": "vpc-lkdok8j3",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -5186,7 +5186,7 @@
         {
           "disabled": false,
           "document": "<p>子网 ID</p>",
-          "example": "subnet-60enc8ny",
+          "example": "subnet-i6vm7n84",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -5195,7 +5195,7 @@
         {
           "disabled": false,
           "document": "<p>转发请求时添加的Host请求头</p>",
-          "example": "www.a.com",
+          "example": "gpt.com",
           "member": "string",
           "name": "HostHeader",
           "required": false,
@@ -5213,11 +5213,20 @@
         {
           "disabled": false,
           "document": "<p>是否校验服务提供商的SSL证书</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "VerifySSL",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查配置</p>",
+          "example": "无",
+          "member": "ServiceProviderHealthCheckConfigInput",
+          "name": "HealthCheckConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5228,7 +5237,7 @@
         {
           "disabled": false,
           "document": "<p>服务供应商ID</p>",
-          "example": "byok-d4yf0jkd",
+          "example": "byok-dhd4w2eg",
           "member": "string",
           "name": "ServiceProviderId",
           "output_required": true,
@@ -5238,7 +5247,7 @@
         {
           "disabled": false,
           "document": "<p>生成的 Key ID 列表</p>",
-          "example": "[\"mkey-ec5ukd0r\"]",
+          "example": "[\"mkey-0b39bh7u\"]",
           "member": "string",
           "name": "KeyIds",
           "output_required": true,
@@ -8834,6 +8843,15 @@
           "name": "VpcId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器，Name取值：</p><ul><li>ModelName：按照模型名称过滤。</li><li>ServiceProviderId：按照BYOK ID过滤。</li><li>InputModalitiesUnion：按照模态过滤。</li></ul>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14221,7 +14239,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li><li>Deleting： 删除中</li><li>ProvisionFailed： 创建失败</li><li>ConfigureFailed： 变配失败</li><li>DeletionFailed： 删除失败</li><li>Disabled： 已禁用</li></ul>",
+          "document": "<p>模型状态</p><p>枚举值：</p><ul><li>Active： 运行中</li><li>Provisioning： 创建中</li><li>Configuring： 变配中</li></ul>",
           "example": "Provisioning",
           "member": "string",
           "name": "Status",
@@ -14268,6 +14286,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查配置</p>",
+          "example": "无",
+          "member": "ServiceProviderHealthCheckConfigOutput",
+          "name": "HealthCheckConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19295,6 +19323,37 @@
           "name": "ServiceProviderName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceProviderHealthCheckConfigInput": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启健康检查</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckEnabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "ServiceProviderHealthCheckConfigOutput": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启健康检查</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckEnabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -777,6 +777,13 @@
       "output": "ModifyNamespaceResponse",
       "status": "online"
     },
+    "ModifyReplication": {
+      "document": "修改实例同步规则",
+      "input": "ModifyReplicationRequest",
+      "name": "更新实例同步规则",
+      "output": "ModifyReplicationResponse",
+      "status": "online"
+    },
     "ModifyRepository": {
       "document": "更新镜像仓库信息，可修改仓库描述信息",
       "input": "ModifyRepositoryRequest",
@@ -8371,6 +8378,111 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyReplicationRequest": {
+      "document": "ModifyReplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>复制源实例ID</p>",
+          "example": "tcr-f3ouwtzl",
+          "member": "string",
+          "name": "SourceRegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例同步规则名称</p>",
+          "example": "rule1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步规则</p>",
+          "example": "无",
+          "member": "ModifyReplicationRule",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则描述</p>",
+          "example": "replication_rule",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReplicationResponse": {
+      "document": "ModifyReplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReplicationRule": {
+      "document": "修改同步规则参数，用于 ModifyReplication 接口更新已有的实例同步规则配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>目标命名空间</p>",
+          "example": "nginx",
+          "member": "string",
+          "name": "DestNamespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否覆盖</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Override",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否同步删除事件</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Deletion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤同步条件</p>",
+          "example": "无",
+          "member": "ReplicationFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启规则</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "ModifyRepositoryAccessPersonalRequest": {
       "document": "ModifyRepositoryAccessPersonal请求参数结构体",

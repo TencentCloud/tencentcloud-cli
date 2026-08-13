@@ -1,4 +1,4 @@
-**Example 1: 停止服务**
+**Example 1: 更新在线服务**
 
 
 
@@ -14,102 +14,83 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d3d242fd-c8e7-44f5-8b28-a0e1bcfe92d5",
         "Service": {
-            "AppId": 1317564324,
-            "ArchiveStatus": "",
-            "BillingInfo": "",
-            "BusinessStatus": "CREATE_SUCCEED",
-            "Changer": "",
-            "ChangerName": "",
-            "ChargeType": "POSTPAID_BY_HOUR",
-            "ClusterId": "manger",
-            "CreateFailedReason": "CREATE_SUCCEED",
-            "CreateSource": "NORMAL",
-            "CreateTime": "2026-07-08T13:16:17Z",
-            "CreatedBy": "100041882933",
-            "DeployType": "DIST",
-            "ExternalResourceGroups": [],
-            "IngressName": "none",
-            "LatestVersion": "",
-            "MonitorSource": "NORMAL",
-            "Namespace": "infer-100030513581",
-            "ProjectId": "0",
-            "Region": "ap-shanghai",
-            "ResourceGroupId": "",
-            "ResourceGroupName": "",
-            "ResourceGroupSWType": "NONE",
-            "SchedulingPolicy": {
-                "CrossResourceGroupScheduling": false
-            },
+            "ServiceGroupId": "ms-skdg89rx",
+            "ServiceId": "ms-skdg89rx-1",
+            "ServiceGroupName": "demo-create",
             "ServiceDescription": "",
-            "ServiceGroupId": "ms-h29wqz2b",
-            "ServiceGroupName": "luis-test-new2_copy",
-            "ServiceId": "ms-h29wqz2b-1",
+            "Uin": "100030513581",
+            "SubUin": "100030513581",
+            "CreatedBy": "100044299491",
             "ServiceInfo": {
-                "AuthorizationEnable": false,
-                "Command": "",
-                "CronScaleJobs": [],
-                "Env": [],
-                "GrpcEnable": false,
-                "HybridBillingPrepaidReplicas": 0,
+                "Replicas": 1,
                 "ImageInfo": {
                     "ImageType": "CCR",
-                    "ImageUrl": "ccr.ccs.tencentyun.com/luis-test/hellotest:v1",
-                    "RegistryId": "",
-                    "RegistryRegion": "ap-guangzhou"
+                    "ImageUrl": "ccr.ccs.tencentyun.com/jiaqi-3581-test/mock_service:tione_20250509",
+                    "RegistryRegion": "ap-guangzhou",
+                    "RegistryId": ""
                 },
-                "InstanceAlias": "",
-                "InstancePerReplicas": 1,
-                "InstanceType": "TI.S6.2XLARGE16.POST",
-                "LogEnable": false,
-                "ModelHotUpdateEnable": false,
-                "ModelTurboEnable": false,
-                "NodeCount": 0,
-                "OldHybridBillingPrepaidReplicas": 0,
-                "OldReplicas": 0,
-                "PodInfos": [],
-                "PodList": [],
-                "PreStopCommand": [],
-                "Replicas": 2,
+                "Env": [],
                 "Resources": {
-                    "Cpu": 8000,
-                    "EnableRDMA": false,
+                    "Cpu": 1000,
+                    "Memory": 1024,
                     "Gpu": 0,
-                    "GpuType": "",
-                    "Memory": 16384,
                     "RealGpu": 0,
-                    "RealGpuDetailSet": []
+                    "GpuType": "GPU-GN7",
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false
                 },
-                "ResourceTotal": "",
-                "ScaleMode": "",
+                "InstanceType": "TI.S.MEDIUM.POST",
+                "ModelInfo": null,
+                "LogEnable": false,
+                "LogConfig": null,
+                "AuthorizationEnable": false,
+                "ScaleMode": "MANUAL",
+                "HorizontalPodAutoscaler": null,
+                "CronScaleJobs": [],
                 "ScaleStrategy": "",
-                "SchedulingStrategy": "",
-                "ServicePort": 0,
-                "TerminationGracePeriodSeconds": 30,
-                "VolumeMounts": [],
-                "Weight": 0,
-                "Status": {
-                    "Replicas": 2,
-                    "UpdatedReplicas": 2,
-                    "ReadyReplicas": 2,
-                    "AvailableReplicas": 2,
-                    "UnavailableReplicas": 0,
-                    "Status": "Normal",
-                    "Reason": "",
-                    "Conditions": [],
-                    "StatefulSetCondition": []
-                }
+                "Status": null,
+                "Weight": 100,
+                "PodList": [],
+                "Pods": null,
+                "PodInfos": [],
+                "ResourceTotal": null,
+                "OldReplicas": 0,
+                "HybridBillingPrepaidReplicas": 0,
+                "OldHybridBillingPrepaidReplicas": 0,
+                "ModelHotUpdateEnable": false
             },
-            "Status": "",
-            "SubUin": "100041882933",
-            "SubUinName": "",
+            "ClusterId": "",
+            "Region": "ap-guangzhou",
+            "Namespace": "",
+            "ChargeType": "POSTPAID_BY_HOUR",
+            "ResourceGroupId": "",
+            "ResourceGroupName": "",
             "Tags": [],
-            "Uin": "100030513581",
-            "UpdateTime": "2026-07-21T03:12:31Z",
-            "Version": "1",
-            "Weight": 100
-        }
+            "IngressName": "user-ingress-1",
+            "CreateTime": "",
+            "UpdateTime": "",
+            "AppId": 10000000000,
+            "BusinessStatus": "CREATING",
+            "CreateFailedReason": "",
+            "Status": "",
+            "BillingInfo": "",
+            "Weight": 100,
+            "CreateSource": "DEFAULT",
+            "Version": "",
+            "LatestVersion": "",
+            "ServiceLimit": {
+                "EnableInstanceRpsLimit": false,
+                "InstanceRpsLimit": 0,
+                "EnableInstanceReqLimit": false,
+                "InstanceReqLimit": 0
+            },
+            "ScheduledAction": {
+                "ScheduleStop": false,
+                "ScheduleStopTime": "2023-04-24T11:54:53+08:00"
+            }
+        },
+        "RequestId": "b8f848e4-64ea-475c-864e-6d4b0c9ec6ea"
     }
 }
 ```

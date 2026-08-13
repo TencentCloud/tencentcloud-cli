@@ -18,7 +18,7 @@ Output:
         "DatasetGroups": [
             {
                 "DatasetId": "ds-c4lbz9gg",
-                "DatasetName": "test",
+                "DatasetName": "mydataset",
                 "Creator": "100007955047",
                 "DatasetVersion": "v1",
                 "DatasetType": "TYPE_DATASET_TEXT",

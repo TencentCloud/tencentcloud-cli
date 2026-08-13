@@ -5410,7 +5410,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>",
+          "document": "<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse： Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li><li>Agent： 用户创建 Agent 应用时，系统按统一规范自动创建对应的 CLS 主题（Topic），并为主题打上统一标签，便于后续在 Agent 可观测场景下做统一管理与检索。</li></ul>",
           "example": "Langfuse",
           "member": "string",
           "name": "AccessType",
@@ -5423,7 +5423,7 @@
           "example": "leotest-custom-logset-1254077820",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],

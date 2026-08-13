@@ -5389,7 +5389,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-brjqpljb",
           "member": "string",
           "name": "ClusterId",
@@ -5398,7 +5398,7 @@
         },
         {
           "disabled": false,
-          "document": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784\n",
+          "document": "<p>集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784</p>",
           "example": "subnet-3ht1odzw",
           "member": "string",
           "name": "SubnetId",
@@ -5407,7 +5407,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
+          "document": "<p>是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）</p>",
           "example": "true",
           "member": "bool",
           "name": "IsExtranet",
@@ -5416,7 +5416,7 @@
         },
         {
           "disabled": false,
-          "document": "设置域名",
+          "document": "<p>设置域名</p>",
           "example": "cls.domain.com",
           "member": "string",
           "name": "Domain",
@@ -5425,7 +5425,7 @@
         },
         {
           "disabled": false,
-          "document": "使用的安全组（开启内外网访问且不使用已有clb时可传，内网访问需要先找clb侧加白使用）。获取方式：https://cloud.tencent.com/document/api/215/15808",
+          "document": "<p>使用的安全组（开启内外网访问且不使用已有clb时可传，内网访问需要先找clb侧加白使用）。获取方式：https://cloud.tencent.com/document/api/215/15808</p>",
           "example": "sg-kineiakx",
           "member": "string",
           "name": "SecurityGroup",
@@ -5434,7 +5434,7 @@
         },
         {
           "disabled": false,
-          "document": "创建lb参数，只有外网访问需要设置，是一个json格式化后的字符串：{\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":200},\"VipIsp\":\"\",\"BandwidthPackageId\":\"\"}。\n各个参数意义：\nInternetAccessible.InternetChargeType含义：TRAFFIC_POSTPAID_BY_HOUR按流量按小时后计费;BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;InternetAccessible.BANDWIDTH_PACKAGE 按带宽包计费。\nInternetMaxBandwidthOut含义：最大出带宽，单位Mbps，范围支持0到2048，默认值10。\nVipIsp含义：CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费BANDWIDTH_PACKAGE。\nBandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式InternetAccessible.InternetChargeType只支持按带宽包计费BANDWIDTH_PACKAGE。",
+          "document": "<p>创建lb参数，只有外网访问需要设置，是一个json格式化后的字符串：{&quot;InternetAccessible&quot;:{&quot;InternetChargeType&quot;:&quot;TRAFFIC_POSTPAID_BY_HOUR&quot;,&quot;InternetMaxBandwidthOut&quot;:200},&quot;VipIsp&quot;:&quot;&quot;,&quot;BandwidthPackageId&quot;:&quot;&quot;}。<br>各个参数意义：<br>InternetAccessible.InternetChargeType含义：TRAFFIC_POSTPAID_BY_HOUR按流量按小时后计费;BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;InternetAccessible.BANDWIDTH_PACKAGE 按带宽包计费。<br>InternetMaxBandwidthOut含义：最大出带宽，单位Mbps，范围支持0到2048，默认值10。<br>VipIsp含义：CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费BANDWIDTH_PACKAGE。<br>BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式InternetAccessible.InternetChargeType只支持按带宽包计费BANDWIDTH_PACKAGE。</p>",
           "example": "{\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":200}}",
           "member": "string",
           "name": "ExtensiveParameters",
@@ -5443,7 +5443,7 @@
         },
         {
           "disabled": false,
-          "document": "使用已有clb开启内网或外网访问",
+          "document": "<p>使用已有clb开启内网或外网访问</p>",
           "example": "lb-n18gb6t3",
           "member": "string",
           "name": "ExistedLoadBalancerId",

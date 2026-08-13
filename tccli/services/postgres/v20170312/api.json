@@ -154,6 +154,13 @@
       "output": "DeleteDBInstanceNetworkAccessResponse",
       "status": "online"
     },
+    "DeleteDatabase": {
+      "document": "本接口（DeleteDatabase）用于删除指定 PostgreSQL 实例中的数据库。删除操作会直接调用底层存储引擎执行，为保障数据安全和系统稳定，接口在执行前会进行多项前置校验。\n使用限制\n\n- 实例状态限制：仅允许对运行中的实例执行删除数据库操作。\n\n- 只读实例限制：只读实例不支持删除数据库操作。由于只读实例的数据来源于主实例同步，不允许在只读侧执行库级别的删除变更。若对只读实例发起此请求，将直接被拦截并返回错误。\n\n- 数据库名合法性限制：待删除的数据库名称必须通过以下校验，否则报错：\n长度符合 PostgreSQL 命名规范\n字符集合法（仅允许字母、数字、下划线，且不能以数字开头）\n不能为系统保留库名（如 postgres、template0、template1 等）\n不能为 PostgreSQL 关键字/保留字\n\n- 不可逆操作：数据库一经删除，数据将无法恢复。执行前请确认已做好必要的数据备份。",
+      "input": "DeleteDatabaseRequest",
+      "name": "删除数据库",
+      "output": "DeleteDatabaseResponse",
+      "status": "online"
+    },
     "DeleteLogBackup": {
       "document": "本接口（DeleteLogBackup）用于删除实例指定日志备份。",
       "input": "DeleteLogBackupRequest",
@@ -4994,6 +5001,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDatabaseRequest": {
+      "document": "DeleteDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
+          "example": "postgres-ii8hwu75",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "db_name_underscore",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDatabaseResponse": {
+      "document": "DeleteDatabase返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

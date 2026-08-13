@@ -689,12 +689,29 @@
       ],
       "usage": "out"
     },
+    "AgentCredentialApiKeyDTO": {
+      "document": "API Key类型凭据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API Key</p>",
+          "example": "example1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AgentCredentialContentDTO": {
       "document": "凭证内容",
       "members": [
         {
           "disabled": false,
-          "document": "如果认证类型为sts时，该项必填",
+          "document": "<p>如果认证类型为sts时，该项必填</p>",
           "example": "tencent",
           "member": "string",
           "name": "STSSystem",
@@ -705,7 +722,7 @@
         },
         {
           "disabled": false,
-          "document": "如果认证类型为sts时，该项必填",
+          "document": "<p>如果认证类型为sts时，该项必填</p>",
           "example": "cos",
           "member": "string",
           "name": "STSService",
@@ -716,7 +733,7 @@
         },
         {
           "disabled": false,
-          "document": "如果认证类型为reqKey时，该项必填",
+          "document": "<p>如果认证类型为reqKey时，该项必填</p>",
           "example": "无",
           "member": "AgentCredentialContentHeaderDTO",
           "name": "Headers",
@@ -724,6 +741,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果认证类型为apiKey时，该项必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentCredentialApiKeyDTO",
+          "name": "ApiKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>容错策略，仅Type为apiKey时支持</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FaultToleranceDTO",
+          "name": "FaultTolerance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1863,6 +1902,33 @@
           "name": "RawCustomModelProtocolConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由策略</p><p>枚举值：</p><ul><li>weight： 权重</li><li>taskComplexity： 任务复杂度</li><li>tokenLength： token长度</li></ul>",
+          "example": "taskComplexity",
+          "member": "string",
+          "name": "RouteStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>token长度路由策略</p>",
+          "example": "无",
+          "member": "TokenLengthRouteDTO",
+          "name": "TokenLengthRoute",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务复杂度路由策略</p>",
+          "example": "无",
+          "member": "TaskComplexityRouteDTO",
+          "name": "TaskComplexityRoute",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4459,6 +4525,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "taskComplexity",
+          "member": "string",
+          "name": "RouteStrategy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>token长度路由配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TokenLengthRouteDTO",
+          "name": "TokenLengthRoute",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务复杂度路由配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskComplexityRouteDTO",
+          "name": "TaskComplexityRoute",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4860,6 +4956,78 @@
         }
       ],
       "type": "object"
+    },
+    "FaultToleranceDTO": {
+      "document": "API Key容错策略配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否启用API Key容错配置</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常判定状态码，固定3位数字或字母</p>",
+          "example": "[\"429\"]",
+          "member": "string",
+          "name": "ErrorCodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连续异常次数</p><p>单位：次</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "ErrorCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离时长</p><p>单位：秒</p>",
+          "example": "300",
+          "member": "int64",
+          "name": "IsolationTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最多切换次数</p><p>置0为不开启自动切换</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "MaxSwitchCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>切换总时间预算</p><p>单位：秒</p>",
+          "example": "600",
+          "member": "int64",
+          "name": "SwitchTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "FieldValueDTO": {
       "document": "FieldValue结构体",
@@ -6309,6 +6477,33 @@
           "name": "RawCustomModelProtocolConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由策略</p><p>枚举值：</p><ul><li>weight： 权重</li><li>taskComplexity： 任务复杂度</li><li>tokenLength： token长度</li></ul>",
+          "example": "taskComplexity",
+          "member": "string",
+          "name": "RouteStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>token长度路由策略</p>",
+          "example": "无",
+          "member": "TokenLengthRouteDTO",
+          "name": "TokenLengthRoute",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务复杂度路由策略</p>",
+          "example": "无",
+          "member": "TaskComplexityRouteDTO",
+          "name": "TaskComplexityRoute",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8037,6 +8232,45 @@
       ],
       "usage": "both"
     },
+    "TaskComplexityRouteDTO": {
+      "document": "任务复杂度路由参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>倾向度</p><p>取值范围：[0, 1]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "ComplexityBias",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>简单模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetModelDTO",
+          "name": "SimpleTargetModels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>复杂模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetModelDTO",
+          "name": "ComplexTargetModels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TmsConfigDTO": {
       "document": "内容安全配置",
       "members": [
@@ -8115,6 +8349,45 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TokenLengthRouteDTO": {
+      "document": "token长度路由参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Token 区间下限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MinTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 区间上限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
+          "member": "int64",
+          "name": "MaxTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetModelDTO",
+          "name": "TargetModels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

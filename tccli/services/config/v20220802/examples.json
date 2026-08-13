@@ -96,6 +96,14 @@
         "title": "删除规则"
       }
     ],
+    "DeleteAggregators": [
+      {
+        "document": "删除账号组",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAggregators\n<公共请求参数>\n\n{\n    \"OwnerUin\": 234234324,\n    \"AccountGroupId\": \"ca-sdfs7734h24h3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"857db07e-d8b5-41f8-ae80-e9c4eec09386\"\n    }\n}",
+        "title": "删除账号组"
+      }
+    ],
     "DeleteAlarmPolicy": [
       {
         "document": "",
@@ -462,6 +470,14 @@
         "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAggregateConfigRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"cr-bdunf5kx3aywn0ac5bkk\",\n    \"RuleName\": \"CAM访问管理子用户必须关联用户组\",\n    \"Description\": \"帐号访问管理中用户至少关联一个用户组，则符合规则。\",\n    \"RiskLevel\": 3,\n    \"TriggerType\": [\n        {\n            \"MessageType\": \"ScheduledNotification\",\n            \"MaximumExecutionFrequency\": \"TwentyFour_Hours\"\n        }\n    ],\n    \"InputParameter\": [],\n    \"AccountGroupId\": \"ca-sdfs7734h24h3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"da85d5e2-4432-4f02-9863-0ab07adeff33\"\n    }\n}",
         "title": "编辑规则"
+      }
+    ],
+    "UpdateAggregator": [
+      {
+        "document": "编辑账号组",
+        "input": "POST / HTTP/1.1\nHost: config.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAggregator\n<公共请求参数>\n\n{\n    \"OwnerUin\": 234234,\n    \"Description\": \"账号组描述\",\n    \"AccountGroupId\": \"ca-accountGroupNo1\",\n    \"Name\": \"账号组名称\",\n    \"AggregatorAccounts\": [\n        {\n            \"MemberUin\": \"110000000001\",\n            \"MemberName\": \"test124\"\n        },\n        {\n            \"MemberUin\": \"110000000002\",\n            \"MemberName\": \"test_ckafka\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da85d5e2-4432-4f02-9863-0ab07adeff33\"\n    }\n}",
+        "title": "编辑账号组"
       }
     ],
     "UpdateAlarmPolicy": [

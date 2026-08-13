@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli oceanus DeleteTableConfig --cli-unfold-argument  \
-    --JobId cql-6ntmhryo \
+    --JobId cql-0ihi2g5w \
     --DebugId 1 \
-    --TableName tabale_test
+    --TableName logger \
+    --WorkSpaceId space-byjf3bha
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3998cdae-e624-4e23-b497-17dbf8c90b0f"
+        "RequestId": "e71758a5-fa2a-42b0-befd-e7b06cc63ff8"
     }
 }
 ```

@@ -24727,7 +24727,7 @@
         {
           "disabled": false,
           "document": "<p>智能体描述</p>",
-          "example": "儿童玩具智能体模版",
+          "example": "TWeTalkAgent 联调示例",
           "member": "string",
           "name": "Description",
           "output_required": false,

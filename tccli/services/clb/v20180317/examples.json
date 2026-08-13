@@ -271,15 +271,9 @@
     "CreateModel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModel\n<公共请求参数>\n\n{\n    \"AccessType\": \"PrivateCustom\",\n    \"ModelIds\": [\n        {\n            \"ModelId\": \"gpt-4o\",\n            \"ModelAlias\": \"2rasd\"\n        }\n    ],\n    \"Keys\": [\n        {\n            \"ApiKey\": \"sk-test-openai-key-003\",\n            \"Name\": \"test-key-5\"\n        }\n    ],\n    \"ModelProvider\": \"openai\",\n    \"ServiceProviderName\": \"custom\",\n    \"ApiBase\": \"http://127.0.0.1:8080\",\n    \"VpcId\": \"vpc-j5bxoqef\",\n    \"SubnetId\": \"subnet-60enc8ny\",\n    \"HostHeader\": \"www.a.com\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"ekkocao\",\n            \"TagValue\": \"t3\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"KeyIds\": [\n            \"mkey-ec5ukd0r\"\n        ],\n        \"ServiceProviderId\": \"byok-d4yf0jkd\",\n        \"RequestId\": \"65f4eb1b-14a8-401a-86c3-3394d1ee96cd\"\n    }\n}",
-        "title": "创建BYOK模型"
-      },
-      {
-        "document": "创建仅支持文本输入的byok实例",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModel\n<公共请求参数>\n\n{\n    \"AccessType\": \"PublicCustom\",\n    \"ModelProvider\": \"openai\",\n    \"ModelIds\": [\n        {\n            \"ModelId\": \"gpt-4o\",\n            \"ModelAlias\": \"my-gpt-4o\",\n            \"InputModalities\": [\n                \"text\"\n            ]\n        }\n    ],\n    \"Keys\": [\n        {\n            \"ApiKey\": \"sk-111111111\",\n            \"Name\": \"sk-1\"\n        }\n    ],\n    \"ApiBase\": \"http://11.141.93.26:10000/v1\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"text\",\n            \"TagValue\": \"text\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"KeyIds\": [\n            \"mkey-qd6kwrnt\"\n        ],\n        \"ServiceProviderId\": \"byok-lfwolo91\",\n        \"RequestId\": \"ff11ef23-44dc-45d5-88d2-5ca2f2338380\"\n    }\n}",
-        "title": "创建仅支持文本输入的byok实例"
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModel\n<公共请求参数>\n\n{\n    \"AccessType\": \"PublicCustom\",\n    \"ModelProvider\": \"OpenAI\",\n    \"ModelIds\": [\n        {\n            \"ModelId\": \"gpt-4o\"\n        }\n    ],\n    \"Keys\": [\n        {\n            \"ApiKey\": \"sk-awdawe12esfd1211d\"\n        }\n    ],\n    \"ApiBase\": \"https://deepseek.api.com\",\n    \"HealthCheckConfig\": {\n        \"HealthCheckEnabled\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyIds\": [\n            \"mkey-0b39bh7u\"\n        ],\n        \"ServiceProviderId\": \"byok-dhd4w2eg\",\n        \"RequestId\": \"1f5b0825-105c-4a52-8b62-65fce5296d92\"\n    }\n}",
+        "title": "创建第三方BYOK"
       }
     ],
     "CreateModelRouter": [

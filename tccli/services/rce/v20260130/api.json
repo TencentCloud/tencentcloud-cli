@@ -20,6 +20,20 @@
       "name": "环境风险评估",
       "output": "AssessEnvironmentRiskResponse",
       "status": "online"
+    },
+    "AssessRisk": {
+      "document": "事件风险评估",
+      "input": "AssessRiskRequest",
+      "name": "事件风险评估",
+      "output": "AssessRiskResponse",
+      "status": "online"
+    },
+    "ReportEvent": {
+      "document": "事件信息上报",
+      "input": "ReportEventRequest",
+      "name": "事件信息上报",
+      "output": "ReportEventResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -29,6 +43,264 @@
     "serviceShortName": "rce"
   },
   "objects": {
+    "AddPromotionEvent": {
+      "document": "参加营销活动事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>营销活动ID</p>",
+          "example": "pro*************01",
+          "member": "string",
+          "name": "PromotionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动名称</p>",
+          "example": "双十一购物节大促活动",
+          "member": "string",
+          "name": "PromotionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动描述</p>",
+          "example": "年度最大促销活动，全场商品享受优惠",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人ID</p>",
+          "example": "b5********a2",
+          "member": "string",
+          "name": "InviterUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动关联的优惠券</p>",
+          "example": "无",
+          "member": "Coupon",
+          "name": "Coupon",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动关联的积分活动</p>",
+          "example": "无",
+          "member": "CreditPoint",
+          "name": "Point",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参加营销活动结果</p>",
+          "example": "无",
+          "member": "Result",
+          "name": "Result",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Address": {
+      "document": "地址",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>国家</p><p>参数格式：符合ISO 3166标准</p>",
+          "example": "US",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份</p>",
+          "example": "NY",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>城市</p>",
+          "example": "New York",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地区</p>",
+          "example": "Manhattan",
+          "member": "string",
+          "name": "District",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>详细地址</p>",
+          "example": "456 Broadway",
+          "member": "string",
+          "name": "Detail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邮政编码</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "ZipCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Amount": {
+      "document": "金额",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>原始货币类型</p><p>参数格式：符合ISO 4217标准</p>",
+          "example": "USD",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始金额</p>",
+          "example": "299.99",
+          "member": "float",
+          "name": "OriginalAmount",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前币种对美金的汇率</p>",
+          "example": "1",
+          "member": "float",
+          "name": "ExchangeRateUSD",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前币种对人民币的汇率</p>",
+          "example": "7.0413",
+          "member": "float",
+          "name": "ExchangeRateCNY",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
+    },
+    "App": {
+      "document": "应用程序信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用程序运行的移动设备的操作系统类型</p>",
+          "example": "ios",
+          "member": "string",
+          "name": "OS",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序运行的移动设备的操作系统版本</p>",
+          "example": "16.0",
+          "member": "string",
+          "name": "OSVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序运行的移动设备的生产厂商</p>",
+          "example": "Apple",
+          "member": "string",
+          "name": "DeviceManufacturer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序运行的移动设备的型号</p>",
+          "example": "iPhone 14 Pro",
+          "member": "string",
+          "name": "DeviceModel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序运行的移动设备的唯一ID，对于iOS为IFV标识，对于Android为Android ID</p>",
+          "example": "de*************23",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序名称</p>",
+          "example": "MyShoppingApp",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序版本</p>",
+          "example": "3.2.1",
+          "member": "string",
+          "name": "AppVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序提供的语言</p>",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "ClientLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "AssessDeviceRiskPremiumProRequest": {
       "document": "AssessDeviceRiskPremiumPro请求参数结构体",
       "members": [
@@ -266,6 +538,893 @@
       ],
       "usage": "out"
     },
+    "AssessRiskRequest": {
+      "document": "AssessRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事件码，标准事件包含：</p><p>枚举值：</p><ul><li>login： 登录</li><li>register： 注册</li><li>create_order： 创建订单</li><li>transaction： 交易支付</li><li>charge_back： 拒付</li><li>sms： 短信</li><li>logout： 登出</li><li>modify_account： 修改账号</li><li>modify_password： 修改密码</li><li>security_verification： 安全验证</li><li>add_promotion： 参加营销活动</li><li>redeem： 兑奖</li><li>withdraw： 提现</li><li>cust_event： 自定义事件，cust_xxx</li><li>scan_code： 扫码</li><li>lucky_draw： 抽奖</li><li>task： 做任务</li><li>invitation： 邀请</li><li>claim_red_packet： 领红包</li><li>browse： 浏览</li></ul><p>自定义事件可与RCE约定后进行风险评估</p>",
+          "example": "login",
+          "member": "string",
+          "name": "EventCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件的发生时间</p><p>参数格式：符合ISO 8601标准的带UTC时区的毫秒级时间</p>",
+          "example": "2026-07-08T15:56:31.000+08:00",
+          "member": "string",
+          "name": "EventTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户当前会话 ID， 用于关联用户登录前后的动作，如果没有传UserId，则SessionId必传，如缺失则可填充空字符串</p>",
+          "example": "se****************56",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户设备指纹token标识，在您的网站或者应用程序中集成设备指纹的SDK后获取</p>",
+          "example": "v3:******************************************************************bzxeC9FTtHon0Vq+zEB0iKhM5OGvG",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端 IP 地址（IPv4或IPv6）</p>",
+          "example": "192.***.*.100",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件详情，根据您输入的事件码传入对应的事件信息</p>",
+          "example": "无",
+          "member": "EventDetail",
+          "name": "EventDetail",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户在您系统中的唯一ID</p>",
+          "example": "u********6",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户邮箱</p>",
+          "example": "u***********.com",
+          "member": "string",
+          "name": "UserEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户提供的联系方式</p><p>参数格式：符合E.164标准的带“+”、地区编码和号码的格式</p>",
+          "example": "+86138********",
+          "member": "string",
+          "name": "UserPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>web浏览器相关信息，若您已集成我们的设备指纹SDK，则无需传入此字段</p>",
+          "example": "无",
+          "member": "Browser",
+          "name": "Browser",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序、操作系统和移动设备详细信息，若您已集成我们的设备指纹SDK，则无需传入此字段</p>",
+          "example": "无",
+          "member": "App",
+          "name": "App",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据授权信息，国内地域必填</p>",
+          "example": "无",
+          "member": "DataAuthorization",
+          "name": "DataAuthorization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>手机号码加密方式，国内地域必填</p><p>枚举值：</p><ul><li>md5： md5加密</li><li>plain： 明文</li></ul>",
+          "example": "plain",
+          "member": "string",
+          "name": "UserPhoneEncrypt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信开放账号</p>",
+          "example": "ob************************8E",
+          "member": "string",
+          "name": "WeChatOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>QQ开放账号</p>",
+          "example": "c*****w",
+          "member": "string",
+          "name": "QQOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>QQ应用ID，当传入QQ开放账号时，该字段必填，QQ分配给网站或应用的AppId，用来唯一标识网站或应用</p>",
+          "example": "10****4",
+          "member": "string",
+          "name": "QQAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessRiskResponse": {
+      "document": "AssessRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事件风险评估结果</p>",
+          "example": "无",
+          "member": "AssessRiskRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessRiskRsp": {
+      "document": "事件风险评估返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>决策信息</p>",
+          "example": "无",
+          "member": "Decision",
+          "name": "Decision",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险分，根据您开启的产品服务计算的评分结果</p>",
+          "example": "无",
+          "member": "Score",
+          "name": "Score",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Cust",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Billing": {
+      "document": "账单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账单地址</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "Address",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账单联系电话</p><p>参数格式：符合E.164标准的带“+”、地区编码和号码的格式</p>",
+          "example": "+86131********",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账单邮箱</p>",
+          "example": "***************.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账单接收人姓名</p>",
+          "example": "Zh******n",
+          "member": "string",
+          "name": "Recipient",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "BrowseEvent": {
+      "document": "浏览事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前浏览网页的类型，例如主页、搜索页等</p>",
+          "example": "主页",
+          "member": "string",
+          "name": "PageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前浏览的网页URL</p>",
+          "example": "http://*********.com",
+          "member": "string",
+          "name": "PageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>浏览耗时</p><p>单位：毫秒</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网页内容类型，例如广告、视频、文章等</p>",
+          "example": "文章",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网页内容ID</p>",
+          "example": "550e8400-****-****-****-446655440000",
+          "member": "string",
+          "name": "ContentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一个网页的类型，例如主页、搜索页等</p>",
+          "example": "搜索页",
+          "member": "string",
+          "name": "ReferPageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一个网页URL</p>",
+          "example": "http://****.com",
+          "member": "string",
+          "name": "ReferPageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>游客账号ID</p>",
+          "example": "oUp*******************6o",
+          "member": "string",
+          "name": "GuestId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Browser": {
+      "document": "浏览器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>与网站交互的浏览器的用户代理</p>",
+          "example": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+          "member": "string",
+          "name": "UserAgent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>浏览器支持的用户请求语言</p><p>参数格式：符合ISO 3166标准</p>",
+          "example": "zh-CN,zh;q=0.9,en;q=0.8",
+          "member": "string",
+          "name": "AcceptLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>浏览器当前网站内容的语言</p><p>参数格式：符合ISO 3166标准</p>",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "ContentLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Card": {
+      "document": "银行卡",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>发卡行识别码卡号前6位</p><p>参数格式：符合ISO 13616-1标准</p>",
+          "example": "C*****",
+          "member": "string",
+          "name": "CardBin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发卡行识别码卡号后4位</p><p>参数格式：符合ISO 13616-1标准</p>",
+          "example": "1**2",
+          "member": "string",
+          "name": "LastFourDigits",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发行国家</p>",
+          "example": "US",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发行银行</p>",
+          "example": "Chase Bank",
+          "member": "string",
+          "name": "Bank",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付卡类型</p><p>枚举值：</p><ul><li>credit： 信用卡</li><li>debit： 借记卡</li><li>charge： 签账卡</li></ul>",
+          "example": "credit",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付卡品牌</p>",
+          "example": "Visa",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付卡等级</p>",
+          "example": "Platinum",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>持有者姓名</p>",
+          "example": "ZH******",
+          "member": "string",
+          "name": "HolderName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期日期</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "2028-12-31",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ChargeBackEvent": {
+      "document": "拒付事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>交易ID</p>",
+          "example": "tr**************01",
+          "member": "string",
+          "name": "TransactionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单 ID，当一笔交易关联多个订单（合并支付）时请输入所有订单ID</p>",
+          "example": "[\"13********34\"]",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拒付理由码，参考各卡组织定义的拒付码，例如：10.1、13.1、 4870、4871等</p>",
+          "example": "4871",
+          "member": "string",
+          "name": "ChargeBackCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拒付原因，参考各卡组织定义的拒付原因，例如：未收到商品、欺诈等</p>",
+          "example": "fraud",
+          "member": "string",
+          "name": "ChargeBackReason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拒付申诉阶段</p><p>枚举值：</p><ul><li>need_response： 需要商家回应</li><li>information_supplied： 商家已提供信息</li><li>chargeback_reversed： 拒付已撤销</li><li>chargeback_sustained： 拒付已成立</li></ul>",
+          "example": "need_response",
+          "member": "string",
+          "name": "ChargeBackProcess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拒付金额</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "ChargeBackAmount",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ClaimRedPacketEvent": {
+      "document": "领红包事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>营销活动ID</p>",
+          "example": "CA**********86",
+          "member": "string",
+          "name": "PromotionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动名称</p>",
+          "example": "夏日狂欢邀新领红包",
+          "member": "string",
+          "name": "PromotionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动描述</p>",
+          "example": "邀请好友完成首单，双方各得红包奖励",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人ID</p>",
+          "example": "U******27",
+          "member": "string",
+          "name": "InviterUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>红包ID</p>",
+          "example": "RP********5",
+          "member": "string",
+          "name": "RedPacketId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>红包类型，如手气红包、口令红包、均分红包等</p>",
+          "example": "均分红包",
+          "member": "string",
+          "name": "RedPacketType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>红包金额</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "RedPacketAmount",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Coupon": {
+      "document": "优惠券",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>优惠券ID</p>",
+          "example": "C*********01",
+          "member": "string",
+          "name": "CouponId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优惠券名称</p>",
+          "example": "全场八折优惠券",
+          "member": "string",
+          "name": "CouponName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优惠券开始时间</p><p>参数格式：符合ISO 8601标准的带UTC时区的毫秒级时间</p>",
+          "example": "2026-01-01T00:00:00.000+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优惠券过期时间</p><p>参数格式：符合ISO 8601标准的带UTC时区的毫秒级时间</p>",
+          "example": "2026-01-01T23:59:59.999+08:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>折扣百分比，如果折扣为 10%，则发送“0.1”</p>",
+          "example": "0.2",
+          "member": "float",
+          "name": "PercentageRate",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>折扣金额</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "DiscountAmount",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优惠券门槛</p>",
+          "example": "300",
+          "member": "float",
+          "name": "Threshold",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOrderEvent": {
+      "document": "创建订单事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>订单ID</p>",
+          "example": "OI*********th",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单金额</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "Amount",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家信息</p>",
+          "example": "无",
+          "member": "Merchant",
+          "name": "Merchant",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账单信息</p>",
+          "example": "无",
+          "member": "Billing",
+          "name": "Billing",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品信息</p>",
+          "example": "无",
+          "member": "Item",
+          "name": "Items",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>物流信息</p>",
+          "example": "无",
+          "member": "Delivery",
+          "name": "Delivery",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动信息</p>",
+          "example": "无",
+          "member": "Promotion",
+          "name": "Promotions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreditPoint": {
+      "document": "账号积分",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>积分分值</p>",
+          "example": "10",
+          "member": "float",
+          "name": "Point",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>积分类型</p>",
+          "example": "credit_point",
+          "member": "string",
+          "name": "PointType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Cust": {
+      "document": "与RCE约定的定制化参数，K:V 格式的对象数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标识符</p>",
+          "example": "registration_channel",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "web",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CustEvent": {
+      "document": "自定义事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "DataAuthorization": {
+      "document": "数据授权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据委托方，客户主体名称</p>",
+          "example": "**公司",
+          "member": "string",
+          "name": "DataProviderName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据受托方，腾讯云主体名称，固定填：腾讯云计算（北京）有限责任公司</p>",
+          "example": "腾讯云计算（北京）有限责任公司",
+          "member": "string",
+          "name": "DataRecipientName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户请求RCE所提供的用户数据类型，支持多选</p><p>枚举值：</p><ul><li>1： 手机号</li><li>2： 微信开放账号</li><li>3： QQ开放账号</li><li>4： IP地址</li><li>5： URL网址</li><li>999： 其他</li></ul>",
+          "example": "[4]",
+          "member": "int64",
+          "name": "UserDataType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户是否已按合规指南要求获取用户授权，同意客户委托腾讯云处理入参信息</p><p>枚举值：</p><ul><li>true： 已授权</li><li>false： 未授权</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAuthorized",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户是否已按合规指南要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户</p><p>枚举值：</p><ul><li>true： 已授权</li><li>false： 未授权</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOrderHanding",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户获得的用户授权期限Unix时间戳（单位秒），不填默认无固定期限</p>",
+          "example": "1793070635",
+          "member": "int64",
+          "name": "AuthorizationDeadline",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户获得用户授权所依赖的协议地址</p>",
+          "example": "http:*********.com",
+          "member": "string",
+          "name": "PrivacyPolicyLink",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "DataScore": {
       "document": "风险分信息",
       "members": [
@@ -327,6 +1486,93 @@
         }
       ],
       "usage": "out"
+    },
+    "Delivery": {
+      "document": "物流信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>物流方式</p><ul><li>physical：物理投送</li><li>electonic：电子投送</li></ul>",
+          "example": "physical",
+          "member": "string",
+          "name": "DeliveryMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>物流费用</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "DeliveryAmount",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>收货地址</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "DeliveryAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>收货人电话</p><p>参数格式：符合E.164标准的带“+”、地区编码和号码的格式</p>",
+          "example": "+86131********",
+          "member": "string",
+          "name": "ConsigneePhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>收货人邮箱</p>",
+          "example": "***************.com",
+          "member": "string",
+          "name": "ConsigneeEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>收货人姓名</p>",
+          "example": "李*",
+          "member": "string",
+          "name": "ConsigneeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否加急</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Expedited",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>物流厂商，一般是物流的公司</p>",
+          "example": "顺丰速运",
+          "member": "string",
+          "name": "DeliveryCarrier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>物流追踪单号</p>",
+          "example": "SF12******90",
+          "member": "string",
+          "name": "DeliveryTracking",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "Device": {
       "document": "设备基础信息",
@@ -454,6 +1700,48 @@
       ],
       "usage": "out"
     },
+    "DigitalOrder": {
+      "document": "数字订单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数字资产</p>",
+          "example": "BTC",
+          "member": "string",
+          "name": "DigitalAsset",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字资产类型</p><p>枚举值：</p><ul><li>coin： 代币</li><li>commodity： 大宗商品</li><li>crypto： 加密货币</li><li>fiat： 法币</li><li>token： 通证</li><li>stock： 股票</li><li>bond： 债券</li></ul>",
+          "example": "crypto",
+          "member": "string",
+          "name": "AssetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单类型</p><p>枚举值：</p><ul><li>limit： 限价单</li><li>market： 市价单</li><li>stop_limit： 止损限价单</li><li>stop_loss： 止损单</li><li>take_profit： 止盈单</li><li>take_profit_limit： 止盈限价单</li></ul>",
+          "example": "limit",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字资产的数量</p>",
+          "example": "0.5",
+          "member": "float",
+          "name": "Volume",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
+    },
     "Environment": {
       "document": "环境基础信息",
       "members": [
@@ -479,6 +1767,192 @@
         }
       ],
       "usage": "out"
+    },
+    "EventDetail": {
+      "document": "事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>登录</p>",
+          "example": "无",
+          "member": "LoginEvent",
+          "name": "Login",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>注册（变更用户信息）</p>",
+          "example": "无",
+          "member": "RegisterEvent",
+          "name": "Register",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建订单</p>",
+          "example": "无",
+          "member": "CreateOrderEvent",
+          "name": "CreateOrder",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>交易支付</p>",
+          "example": "无",
+          "member": "TransactionEvent",
+          "name": "Transaction",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信</p>",
+          "example": "无",
+          "member": "SMSEvent",
+          "name": "Sms",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拒付</p>",
+          "example": "无",
+          "member": "ChargeBackEvent",
+          "name": "ChargeBack",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登出</p>",
+          "example": "无",
+          "member": "LogoutEvent",
+          "name": "Logout",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改账号</p>",
+          "example": "无",
+          "member": "ModifyAccountEvent",
+          "name": "ModifyAccount",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改密码</p>",
+          "example": "无",
+          "member": "ModifyPasswordEvent",
+          "name": "ModifyPassword",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全验证</p>",
+          "example": "无",
+          "member": "SecurityVerificationEvent",
+          "name": "SecurityVerification",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参加营销活动</p>",
+          "example": "无",
+          "member": "AddPromotionEvent",
+          "name": "AddPromotion",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>兑奖</p>",
+          "example": "无",
+          "member": "RedeemEvent",
+          "name": "Redeem",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提现</p>",
+          "example": "无",
+          "member": "WithdrawEvent",
+          "name": "Withdraw",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义事件</p>",
+          "example": "无",
+          "member": "CustEvent",
+          "name": "CustEvent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫码</p>",
+          "example": "无",
+          "member": "ScanCodeEvent",
+          "name": "ScanCode",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>抽奖</p>",
+          "example": "无",
+          "member": "LuckyDrawEvent",
+          "name": "LuckyDraw",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>做任务</p>",
+          "example": "无",
+          "member": "TaskEvent",
+          "name": "Task",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请</p>",
+          "example": "无",
+          "member": "InvitationEvent",
+          "name": "Invitation",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>领红包</p>",
+          "example": "无",
+          "member": "ClaimRedPacketEvent",
+          "name": "ClaimRedPacket",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>浏览</p>",
+          "example": "无",
+          "member": "BrowseEvent",
+          "name": "Browse",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     },
     "IPLocation": {
       "document": "IP地理位置信息",
@@ -742,6 +2216,1230 @@
       ],
       "usage": "out"
     },
+    "InvitationEvent": {
+      "document": "邀请事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>受邀请人ID</p>",
+          "example": "U*********04",
+          "member": "string",
+          "name": "InviteeUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动ID</p>",
+          "example": "CA**********86",
+          "member": "string",
+          "name": "PromotionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动名称</p>",
+          "example": "夏日狂欢老带新立减20元",
+          "member": "string",
+          "name": "PromotionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动描述</p>",
+          "example": "邀请好友完成首单，邀请人可得20元无门槛优惠券",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>受邀请人电话号码</p><p>参数格式：符合E.164标准的带“+”、地区编码和号码的格式</p>",
+          "example": "+86138********",
+          "member": "string",
+          "name": "InviteePhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请码</p>",
+          "example": "IN*********2P",
+          "member": "string",
+          "name": "InvitationCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请链接</p>",
+          "example": "https://*******************************2P",
+          "member": "string",
+          "name": "InvitationUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请渠道，如微信、抖音、小红书等</p>",
+          "example": "WeChat",
+          "member": "string",
+          "name": "InvitationChannel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Inviter": {
+      "document": "邀请人信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>邀请人ID</p>",
+          "example": "ub****x",
+          "member": "string",
+          "name": "InviterUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人电话号码</p><p>参数格式：符合E.164标准的带“+”、地区编码和号码的格式</p>",
+          "example": "+86131********",
+          "member": "string",
+          "name": "InviterPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请码</p>",
+          "example": "INV*****4",
+          "member": "string",
+          "name": "InviteCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请渠道</p>",
+          "example": "微信好友",
+          "member": "string",
+          "name": "InviteChannel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Item": {
+      "document": "商品信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>商品ID</p>",
+          "example": "c509************************20dc",
+          "member": "string",
+          "name": "ItemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品名称</p>",
+          "example": "Bear doll",
+          "member": "string",
+          "name": "ItemName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品类别</p>",
+          "example": "toy",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品单价</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "Price",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果商品有UPC码（Universal Product Code），请提供</p>",
+          "example": "96782361357",
+          "member": "string",
+          "name": "UPC",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果商品有EAN码（European Article Number），请提供</p>",
+          "example": "12345231953",
+          "member": "string",
+          "name": "EAN",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果商品有SKU码（Stock Keeping Unit），请提供</p>",
+          "example": "TOY-BLACK-1554",
+          "member": "string",
+          "name": "SKU",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果商品有ISBN码（International Standard Book Number ），请提供</p>",
+          "example": "1425546",
+          "member": "string",
+          "name": "ISBN",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品品牌</p>",
+          "example": "July",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Quantity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生产厂商</p>",
+          "example": "Ford Toy Company",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品标签</p>",
+          "example": "funny,doll",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "LoginEvent": {
+      "document": "登录事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户基础信息</p>",
+          "example": "无",
+          "member": "User",
+          "name": "UserInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户登录时输入的用户名</p>",
+          "example": "u_dscv",
+          "member": "string",
+          "name": "UserLoginName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录结果</p>",
+          "example": "无",
+          "member": "Result",
+          "name": "LoginResult",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "LogoutEvent": {
+      "document": "登出事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户基础信息</p>",
+          "example": "无",
+          "member": "User",
+          "name": "UserInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户登录时输入的用户名</p>",
+          "example": "zh*********90",
+          "member": "string",
+          "name": "UserLoginName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "LuckyDrawEvent": {
+      "document": "抽奖事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>营销活动ID</p>",
+          "example": "CA**********86",
+          "member": "string",
+          "name": "PromotionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动名称</p>",
+          "example": "夏日狂欢幸运大转盘",
+          "member": "string",
+          "name": "PromotionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动描述</p>",
+          "example": "完成每日任务即可获得抽奖机会",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人ID</p>",
+          "example": "U*******7",
+          "member": "string",
+          "name": "InviterUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>抽奖次数</p><p>单位：次数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "LuckyDrawCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>抽奖类型</p>",
+          "example": "TURN_TABLE",
+          "member": "string",
+          "name": "LuckyDrawType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Merchant": {
+      "document": "商家信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>商家ID</p>",
+          "example": "M****",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家名称</p>",
+          "example": "July's Toy",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家的注册时间</p><p>参数格式：符合ISO 8601标准的带UTC时区的毫秒级时间</p>",
+          "example": "2023-01-01T10:00:00.000+08:00",
+          "member": "string",
+          "name": "RegisterTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家类别代码</p><p>参数格式：符合ISO 18245标准的4位编号</p>",
+          "example": "5945",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家电话</p><p>参数格式：符合E.164标准的带“+”、地区编码和号码的格式</p>",
+          "example": "+86131********",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家邮件</p>",
+          "example": "****************.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家店铺网址</p>",
+          "example": "https://julytoy.com",
+          "member": "string",
+          "name": "URL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家地址</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "Address",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家等级</p>",
+          "example": "金牌商家",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>经营类型</p><p>枚举值：</p><ul><li>person： 个人</li><li>company： 企业</li></ul>",
+          "example": "person",
+          "member": "string",
+          "name": "BusinessType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家在售商品数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "GoodsQuantity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家历史销售数量</p>",
+          "example": "500",
+          "member": "int64",
+          "name": "HistoricSalesQuantity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家历史销售总额</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "HistoricSalesAmount",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyAccountEvent": {
+      "document": "修改账号事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户基础信息</p>",
+          "example": "无",
+          "member": "User",
+          "name": "UserInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户填写的个人信息</p>",
+          "example": "无",
+          "member": "Person",
+          "name": "Person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户填写的账单地址</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "BillingAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户填写的收货地址</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "DeliveryAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyPasswordEvent": {
+      "document": "修改密码事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>修改原因</p><p>枚举值：</p><ul><li>user_modify： 用户主动修改</li><li>forgot_password： 忘记密码</li><li>forced_reset： 系统强制重置</li></ul>",
+          "example": "user_modify",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Order": {
+      "document": "订单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>订单ID</p>",
+          "example": "20*************01",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单金额</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "Amount",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品信息</p>",
+          "example": "无",
+          "member": "Item",
+          "name": "Items",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>物流信息</p>",
+          "example": "无",
+          "member": "Delivery",
+          "name": "Delivery",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "PaymentMethod": {
+      "document": "支付方式，支持多种支付方式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>支付方式</p><p>枚举值：</p><ul><li>cash： 现金</li><li>check： 支票</li><li>credit_card： 信用卡</li><li>debit_card： 借记卡</li><li>crypto_currency： 加密货币</li><li>digital_wallet： 数字钱包</li><li>gift_card： 礼品卡</li><li>points： 积分</li><li>in_app_purchase： APP内购买</li><li>electronic_fund_transfer： 电子资金转账</li><li>financing： 融资</li><li>invoice： 发票</li><li>prepaid_card： 预付卡</li><li>sepa_credit： SEPA信用转账</li></ul>",
+          "example": "credit_card",
+          "member": "string",
+          "name": "PaymentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付渠道</p>",
+          "example": "stripe",
+          "member": "string",
+          "name": "PaymentChannel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>银行卡信息，当用支付方式是credit_card、debit_card时必填</p>",
+          "example": "无",
+          "member": "Card",
+          "name": "Card",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SEPA直接借记授权</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "SEPADirectDebitMandate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字钱包</p>",
+          "example": "无",
+          "member": "Wallet",
+          "name": "DigitalWallet",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "PaymentResult": {
+      "document": "支付结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>支付状态</p><p>枚举值：</p><ul><li>success： 成功</li><li>failure： 失败</li></ul>",
+          "example": "failure",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付失败原因</p>",
+          "example": "交易被拒",
+          "member": "string",
+          "name": "FailureReason",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用3DS，枚举值：</p><ul><li>是：true</li><li>否：false</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "ThreeDomainSecure",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ECI返回码</p>",
+          "example": "05",
+          "member": "string",
+          "name": "ECICode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AVS响应结果（地址验证）</p>",
+          "example": "Y",
+          "member": "string",
+          "name": "AVSCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVC验证结果（交易真实性验证）</p>",
+          "example": "M",
+          "member": "string",
+          "name": "CVCCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Person": {
+      "document": "个人信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>姓名全称</p>",
+          "example": "Tom Smith",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别</p>",
+          "example": "male",
+          "member": "string",
+          "name": "Gender",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>出生日期</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "1990-10-01",
+          "member": "string",
+          "name": "Birthday",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>学历</p>",
+          "example": "bachelor",
+          "member": "string",
+          "name": "Degree",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>职业</p>",
+          "example": "engineer",
+          "member": "string",
+          "name": "Occupation",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Promotion": {
+      "document": "营销活动",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>营销活动ID</p>",
+          "example": "p******01",
+          "member": "string",
+          "name": "PromotionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动名称</p>",
+          "example": "注册福利",
+          "member": "string",
+          "name": "PromotionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动描述</p>",
+          "example": "2026新用户注册福利",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人ID</p>",
+          "example": "e0*****b",
+          "member": "string",
+          "name": "InviterUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优惠券</p>",
+          "example": "无",
+          "member": "Coupon",
+          "name": "Coupon",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>积分</p>",
+          "example": "无",
+          "member": "CreditPoint",
+          "name": "CreditPoint",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "PromotionCode": {
+      "document": "营销活动码",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>活动码ID</p>",
+          "example": "A8******M5",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>活动码类型，例如：qrcode-二维码、barcode-条形码、miniprogram_code-小程序码</p>",
+          "example": "qrcode",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>活动码图片URL或链接</p>",
+          "example": "https://********************************",
+          "member": "string",
+          "name": "ImageLink",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动码使用地址</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "Address",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动码关联的商品</p>",
+          "example": "无",
+          "member": "Item",
+          "name": "Items",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "RedeemEvent": {
+      "document": "兑奖事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>营销活动ID</p>",
+          "example": "pro*************01",
+          "member": "string",
+          "name": "PromotionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动名称</p>",
+          "example": "双十一购物节大促活动",
+          "member": "string",
+          "name": "PromotionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动描述</p>",
+          "example": "年度最大促销活动，全场商品享受优惠",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人ID</p>",
+          "example": "b5********a2",
+          "member": "string",
+          "name": "InviterUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>兑奖关联的订单信息</p>",
+          "example": "无",
+          "member": "Order",
+          "name": "Order",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>兑奖结果</p>",
+          "example": "无",
+          "member": "Result",
+          "name": "Result",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "RegisterEvent": {
+      "document": "注册事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>注册结果</p>",
+          "example": "无",
+          "member": "Result",
+          "name": "RegisterResult",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户基础信息</p>",
+          "example": "无",
+          "member": "User",
+          "name": "UserInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户注册时填写的个人信息</p>",
+          "example": "无",
+          "member": "Person",
+          "name": "Person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户注册时填写的账单地址</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "BillingAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户注册时填写的收货地址</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "DeliveryAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人信息</p>",
+          "example": "无",
+          "member": "Inviter",
+          "name": "Inviter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ReportEventRequest": {
+      "document": "ReportEvent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事件码，标准事件包含：</p><p>枚举值：</p><ul><li>login： 登录</li><li>register： 注册</li><li>create_order： 创建订单</li><li>transaction： 交易支付</li><li>charge_back： 拒付</li><li>sms： 短信</li><li>logout： 登出</li><li>modify_account： 修改账号</li><li>modify_password： 修改密码</li><li>security_verification： 安全验证</li><li>add_promotion： 参加营销活动</li><li>redeem： 兑奖</li><li>withdraw： 提现</li><li>cust_event： 自定义事件，cust_xxx</li><li>scan_code： 扫码</li><li>lucky_draw： 抽奖</li><li>task： 做任务</li><li>invitation： 邀请</li><li>claim_red_packet： 领红包</li><li>browse： 浏览</li></ul><p>自定义事件可与RCE约定后进行风险评估</p>",
+          "example": "login",
+          "member": "string",
+          "name": "EventCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件的发生时间</p><p>参数格式：符合ISO 8601标准的带UTC时区的毫秒级时间</p>",
+          "example": "2026-07-07T15:16:31.000+08:00",
+          "member": "string",
+          "name": "EventTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户当前会话 ID， 用于关联用户登录前后的动作，如果没有传UserId，则SessionId必传，如缺失则可填充空字符串</p>",
+          "example": "se****************56",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户设备指纹token标识，在您的网站或者应用程序中集成设备指纹的SDK后获取</p>",
+          "example": "v3:**********************************************************************************************bzxeC9FTtHon0Vq+zEB0iKhM5OGvG",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端 IP 地址（IPv4或IPv6）</p>",
+          "example": "192.***.*.100",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件详情，根据您输入的事件码传入对应的事件信息</p>",
+          "example": "无",
+          "member": "EventDetail",
+          "name": "EventDetail",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户在您系统中的唯一ID</p>",
+          "example": "u*******56",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户邮箱</p>",
+          "example": "u***********.com",
+          "member": "string",
+          "name": "UserEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户提供的联系方式</p><p>参数格式：符合E.164标准的带“+”、地区编码和号码的格式</p>",
+          "example": "+86138********",
+          "member": "string",
+          "name": "UserPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>web浏览器相关信息，若您已集成我们的设备指纹SDK，则无需传入此字段</p>",
+          "example": "无",
+          "member": "Browser",
+          "name": "Browser",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用程序、操作系统和移动设备详细信息，若您已集成我们的设备指纹SDK，则无需传入此字段</p>",
+          "example": "无",
+          "member": "App",
+          "name": "App",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据授权信息，国内地域必填</p>",
+          "example": "无",
+          "member": "DataAuthorization",
+          "name": "DataAuthorization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>手机号码加密方式，国内地域必填</p><p>枚举值：</p><ul><li>md5： md5加密</li><li>plain： 明文</li></ul>",
+          "example": "plain",
+          "member": "string",
+          "name": "UserPhoneEncrypt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信开放账号</p>",
+          "example": "ob************************8E",
+          "member": "string",
+          "name": "WeChatOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>QQ开放账号</p>",
+          "example": "cs****w",
+          "member": "string",
+          "name": "QQOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>QQ应用ID，当传入QQ开放账号时，该字段必填，QQ分配给网站或应用的AppId，用来唯一标识网站或应用</p>",
+          "example": "1****74",
+          "member": "string",
+          "name": "QQAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportEventResponse": {
+      "document": "ReportEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Result": {
+      "document": "事件结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实际是否完成状态</p><p>枚举值：</p><ul><li>success： 成功</li><li>failure： 失败</li></ul>",
+          "example": "failure",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因</p>",
+          "example": "登录用户名或密码错误",
+          "member": "string",
+          "name": "FailureReason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "RiskLabel": {
       "document": "风险标签",
       "members": [
@@ -767,6 +3465,566 @@
         }
       ],
       "usage": "out"
+    },
+    "SMSEvent": {
+      "document": "短信事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户基础信息</p>",
+          "example": "无",
+          "member": "User",
+          "name": "UserInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次短信发送标识 ID</p>",
+          "example": "sms_***********01",
+          "member": "string",
+          "name": "SMSId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户实际完成验证码时间</p><p>参数格式：符合ISO 8601标准的带UTC时区的毫秒级时间</p>",
+          "example": "2026-07-07T11:07:31.000+08:00",
+          "member": "string",
+          "name": "ReceivedTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录用户收到短信的动作</p><ul><li>no_action：用户无动作</li><li>safe：用户确认本人操作</li><li>compromised：用户反馈为第三方操作</li></ul>",
+          "example": "no_action",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>短信回执结果</p>",
+          "example": "无",
+          "member": "Result",
+          "name": "SMSResult",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ScanCodeEvent": {
+      "document": "扫码事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>营销活动码</p>",
+          "example": "无",
+          "member": "PromotionCode",
+          "name": "PromotionCode",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动ID</p>",
+          "example": "CA**********86",
+          "member": "string",
+          "name": "PromotionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动名称</p>",
+          "example": "夏日狂欢老带新立减20元",
+          "member": "string",
+          "name": "PromotionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动描述</p>",
+          "example": "邀请好友完成首单，邀请人可得20元无门槛优惠券",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人ID</p>",
+          "example": "U*******7",
+          "member": "string",
+          "name": "InviterUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组， 示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Score": {
+      "document": "风险分",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>风险分值，范围[1, 1000]，分值越大，风险越高</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "RiskScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险标签</p>",
+          "example": "无",
+          "member": "RiskLabel",
+          "name": "RiskLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityVerificationEvent": {
+      "document": "安全验证事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>安全验证所处的事件类型</p><p>枚举值：</p><ul><li>register： 注册</li><li>login： 登录</li><li>modify_account： 修改账号</li><li>modify_password： 修改密码</li><li>create_order： 创建订单</li><li>transaction： 交易支付</li><li>modify_order： 修改订单</li><li>withdraw： 提现</li><li>add_promotion： 参加营销活动</li><li>redeem： 兑奖</li></ul>",
+          "example": "add_promotion",
+          "member": "string",
+          "name": "VerificationEvent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全验证类型，sms-短信、phone_call-电话、email-邮件、captcha-验证码、shared_knowledge-共享知识、face-人脸、fingerprint-指纹等</p>",
+          "example": "sms",
+          "member": "string",
+          "name": "VerificationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全验证的内容，例如：用于验证的电话号码、邮件、验证码或者问题，当安全验证类型是sms、phone_call、email、captcha、shared_knowledge时输入</p>",
+          "example": "+86138********",
+          "member": "string",
+          "name": "VerificationContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全验证结果</p>",
+          "example": "无",
+          "member": "Result",
+          "name": "VerificationResult",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskEvent": {
+      "document": "做任务事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>营销活动ID</p>",
+          "example": "CA**********86",
+          "member": "string",
+          "name": "PromotionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动名称</p>",
+          "example": "夏日狂欢积分大放送",
+          "member": "string",
+          "name": "PromotionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营销活动描述</p>",
+          "example": "完成指定任务可获得双倍积分",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>邀请人ID</p>",
+          "example": "U*******7",
+          "member": "string",
+          "name": "InviterUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "TA******12",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "每日签到打卡",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型，如签到打卡、观看广告、累计步数等</p>",
+          "example": "签到打卡",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务完成耗时</p><p>单位：毫秒</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "TaskCostTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "TransactionEvent": {
+      "document": "交易事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>交易唯一标识</p>",
+          "example": "tx******************01",
+          "member": "string",
+          "name": "TransactionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>您系统中的订单 ID，当一笔交易关联多个订单（合并支付）时请输入所有订单ID</p>",
+          "example": "[\"OI**********h\"]",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>交易金额</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "PaymentAmount",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付方式，支持多种支付方式</p>",
+          "example": "无",
+          "member": "PaymentMethod",
+          "name": "PaymentMethod",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>交易类型</p><p>枚举值：</p><ul><li>sale： 一次性完成授权与扣款（最常见）</li><li>authorize： 仅授权（冻结金额）</li><li>capture： 执行扣款（在授权后）</li><li>void： 取消待处理的授权或扣款</li><li>refund： 退款（部分或全部）</li><li>deposit： 向账户存款</li><li>withdrawal： 从账户提现</li><li>transfer： 账户间转账</li><li>buy： 购买资产（如加密货币）</li><li>sell： 出售资产</li><li>send： 发送资金/资产（如跨钱包转账）</li><li>receive： 接收资金/资产</li></ul><p>默认值：sale</p>",
+          "example": "sale",
+          "member": "string",
+          "name": "TransactionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账单信息</p>",
+          "example": "无",
+          "member": "Billing",
+          "name": "Billing",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>物流信息</p>",
+          "example": "无",
+          "member": "Delivery",
+          "name": "Delivery",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商家信息</p>",
+          "example": "无",
+          "member": "Merchant",
+          "name": "Merchant",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支付结果</p>",
+          "example": "无",
+          "member": "PaymentResult",
+          "name": "PaymentResult",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接收方的用户ID，适用于 transfer 交易类型</p>",
+          "example": "re*************89",
+          "member": "string",
+          "name": "TransferRecipientUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发送方的物理地址，适用于 transfer 交易类型</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "TransferSentAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接收方的物理地址，适用于 transfer 交易类型</p>",
+          "example": "无",
+          "member": "Address",
+          "name": "TransferReceivedAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字订单列表</p>",
+          "example": "无",
+          "member": "DigitalOrder",
+          "name": "DigitalOrders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接收加密货币的钱包</p>",
+          "example": "无",
+          "member": "Wallet",
+          "name": "ReceiverWallet",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "User": {
+      "document": "账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户等级</p>",
+          "example": "golden",
+          "member": "string",
+          "name": "UserLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户积分</p>",
+          "example": "无",
+          "member": "CreditPoint",
+          "name": "UserPoint",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户类型</p>",
+          "example": "person",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Wallet": {
+      "document": "数字钱包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>钱包类型</p><p>枚举值：</p><ul><li>crypto： 加密货币</li><li>digital： 数字货币</li><li>fiat： 法币</li></ul>",
+          "example": "crypto",
+          "member": "string",
+          "name": "WalletType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>钱包地址，通常为钱包的唯一标识</p>",
+          "example": "0x74******************c1",
+          "member": "string",
+          "name": "WalletAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>钱包归属人姓名</p>",
+          "example": "Li**",
+          "member": "string",
+          "name": "WalletHolderName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>钱包供应商，wechat、alipay、paypal等</p>",
+          "example": "metamask",
+          "member": "string",
+          "name": "WalletProvider",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "WithdrawEvent": {
+      "document": "提现事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提现金额</p>",
+          "example": "无",
+          "member": "Amount",
+          "name": "Amount",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提现方式</p><p>枚举值：</p><ul><li>card： 银行卡</li><li>wallet： 电子钱包</li></ul>",
+          "example": "card",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提现银行卡，当提现方式是card时必填</p>",
+          "example": "无",
+          "member": "Card",
+          "name": "Card",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提现数字钱包，当提现方式是wallet时必填</p>",
+          "example": "无",
+          "member": "Wallet",
+          "name": "Wallet",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提现结果</p>",
+          "example": "无",
+          "member": "Result",
+          "name": "Result",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

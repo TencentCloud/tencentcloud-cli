@@ -56,7 +56,17 @@ Output:
             "SuggestScheme": "1.检查恶意进程及非法端口，删除可疑的启动项和定时任务；2.隔离或者删除相关的木马文件；3.对系统进行风险排查，并进行安全加固",
             "ThreatTags": [],
             "Verdict": "",
-            "VerdictBasis": ""
+            "VerdictBasis": "",
+            "ContainerName": "nginx-container",
+            "ImageName": "nginx:latest",
+            "ClusterName": "cls-demo",
+            "RunStatus": "RUNNING",
+            "PodName": "nginx-pod",
+            "PodIp": "10.0.0.5",
+            "Namespace": "default",
+            "PodWorkloadType": "Deployment",
+            "ClusterCaMD5": "d41d8cd98f00b204e9800998ecf8427e",
+            "PodUniqueId": "pod-uniq-001"
         },
         "RequestId": "f8998684-7376-4fcf-9c6d-4f20dd0591a0"
     }

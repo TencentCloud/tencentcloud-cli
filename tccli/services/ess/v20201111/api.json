@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreateBatchQuickSignUrl": {
-      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n3. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n4. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n5. H5签署现在仅支持中国大陆身份证和中国港澳台居民居住证。",
+      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n3. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n4. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "CreateBatchQuickSignUrlRequest",
       "name": "获取H5批量签署或查看链接",
       "output": "CreateBatchQuickSignUrlResponse",
@@ -309,7 +309,7 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP、支付宝打开或浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在**仅支持中国大陆身份证、中国港澳台居民居住证**。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP、支付宝打开或浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "CreateFlowSignUrlRequest",
       "name": "获取H5签署链接",
       "output": "CreateFlowSignUrlResponse",
@@ -6991,7 +6991,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。\n<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>",
+          "document": "<p>是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。<br><br>true：允许编辑<br>false：不允许编辑（默认值）<br></p>",
           "example": "true",
           "member": "bool",
           "name": "CanEditFlow",
@@ -7000,7 +7000,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许编辑模板控件\n<br/>true:允许编辑模板控件信息\n<br/>false:不允许编辑模板控件信息（默认值）\n<br/>",
+          "document": "<p>是否允许编辑模板控件<br><br>true:允许编辑模板控件信息<br><br>false:不允许编辑模板控件信息（默认值）<br><br></p>",
           "example": "true",
           "member": "bool",
           "name": "CanEditFormField",
@@ -7009,7 +7009,7 @@
         },
         {
           "disabled": false,
-          "document": "发起页面隐藏合同名称展示\n<br/>true:发起页面隐藏合同名称展示\n<br/>false:发起页面不隐藏合同名称展示（默认值）\n<br/>",
+          "document": "<p>发起页面隐藏合同名称展示<br><br>true:发起页面隐藏合同名称展示<br><br>false:发起页面不隐藏合同名称展示（默认值）<br><br></p>",
           "example": "true",
           "member": "bool",
           "name": "HideShowFlowName",
@@ -7018,7 +7018,7 @@
         },
         {
           "disabled": false,
-          "document": "发起页面隐藏合同类型展示\n<br/>true:发起页面隐藏合同类型展示\n<br/>false:发起页面不隐藏合同类型展示（默认值）\n<br/>\n",
+          "document": "<p>发起页面隐藏合同类型展示<br><br>true:发起页面隐藏合同类型展示<br><br>false:发起页面不隐藏合同类型展示（默认值）<br><br></p>",
           "example": "true",
           "member": "bool",
           "name": "HideShowFlowType",
@@ -7027,7 +7027,7 @@
         },
         {
           "disabled": false,
-          "document": "发起页面隐藏合同截止日期展示\n<br/>true:发起页面隐藏合同截止日期展示\n<br/>false:发起页面不隐藏合同截止日期展示（默认值）\n<br/>",
+          "document": "<p>发起页面隐藏合同截止日期展示<br><br>true:发起页面隐藏合同截止日期展示<br><br>false:发起页面不隐藏合同截止日期展示（默认值）<br><br></p>",
           "example": "true",
           "member": "bool",
           "name": "HideShowDeadline",
@@ -7036,7 +7036,7 @@
         },
         {
           "disabled": false,
-          "document": "发起页面允许跳过添加签署人环节\n<br/>true:发起页面允许跳过添加签署人环节\n<br/>false:发起页面不允许跳过添加签署人环节（默认值）\n<br/>\n",
+          "document": "<p>发起页面允许跳过添加签署人环节<br><br>true:发起页面允许跳过添加签署人环节<br><br>false:发起页面不允许跳过添加签署人环节（默认值）<br><br></p>",
           "example": "true",
           "member": "bool",
           "name": "CanSkipAddApprover",
@@ -7045,7 +7045,7 @@
         },
         {
           "disabled": false,
-          "document": "文件发起页面跳过文件上传步骤\n<br/>true:文件发起页面跳过文件上传步骤\n<br/>false:文件发起页面不跳过文件上传步骤（默认值）\n<br/>",
+          "document": "<p>文件发起页面跳过文件上传步骤<br><br>true:文件发起页面跳过文件上传步骤<br><br>false:文件发起页面不跳过文件上传步骤（默认值）<br><br></p>",
           "example": "true",
           "member": "bool",
           "name": "SkipUploadFile",
@@ -7054,7 +7054,7 @@
         },
         {
           "disabled": false,
-          "document": "禁止编辑填写控件\n<br/>true:禁止编辑填写控件\n<br/>false:允许编辑填写控件（默认值）\n<br/>",
+          "document": "<p>禁止编辑填写控件<br><br>true:禁止编辑填写控件<br><br>false:允许编辑填写控件（默认值）<br><br></p>",
           "example": "true",
           "member": "bool",
           "name": "ForbidEditFillComponent",
@@ -7063,7 +7063,7 @@
         },
         {
           "disabled": false,
-          "document": "定制化发起合同弹窗的描述信息，描述信息最长500字符\n",
+          "document": "<p>定制化发起合同弹窗的描述信息，描述信息最长500字符</p>",
           "example": "\"合同不能转发和截图\"",
           "member": "string",
           "name": "CustomCreateFlowDescription",
@@ -7072,7 +7072,7 @@
         },
         {
           "disabled": false,
-          "document": " 禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”\n",
+          "document": "<p>禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”</p>",
           "example": "true",
           "member": "bool",
           "name": "ForbidAddApprover",
@@ -7081,7 +7081,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以编辑签署人包括新增，修改，删除 \n<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>\n\n注意：如果设置参数为  true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空",
+          "document": "<p>是否可以编辑签署人包括新增，修改，删除 </p><ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul><p>注意：如果设置参数为  true， 则 参数签署人 <a href=\"https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow\">FlowApproverList</a> 不能为空</p>",
           "example": "false",
           "member": "bool",
           "name": "ForbidEditApprover",
@@ -7090,7 +7090,7 @@
         },
         {
           "disabled": false,
-          "document": "  禁止设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板\n",
+          "document": "<p>禁止设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板</p>",
           "example": "true",
           "member": "bool",
           "name": "ForbidEditFlowProperties",
@@ -7099,7 +7099,7 @@
         },
         {
           "disabled": false,
-          "document": "在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用（注: \n<font color='red'>空数组代表未指定</font>），具体的控件类型如下\n\n<ul><li>SIGN_SIGNATURE : 个人签名/印章</li>\n<li>SIGN_SEAL : 企业印章</li>\n<li>SIGN_PAGING_SEAL : 骑缝章</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>\n<li>SIGN_APPROVE : 签批</li>\n<li>SIGN_OPINION : 签署意见</li>\n<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>\n<li>BUSI-FULL-NAME  : 企业全称</li>\n<li>BUSI-CREDIT-CODE : 统一社会信用代码</li>\n<li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>\n<li>PERSONAL-NAME : 签署人姓名</li>\n<li>PERSONAL-MOBILE : 签署人手机号</li>\n<li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li>\n<li>PERSONAL-IDCARD : 签署人证件号</li>\n<li>TEXT : 单行文本</li>\n<li>MULTI_LINE_TEXT : 多行文本</li>\n<li>CHECK_BOX : 勾选框</li>\n<li>SELECTOR : 选择器</li>\n<li>DIGIT : 数字</li>\n<li>DATE : 日期</li>\n<li>FILL_IMAGE : 图片</li>\n<li>ATTACHMENT : 附件</li>\n<li>EMAIL : 邮箱</li>\n<li>LOCATION : 地址</li>\n<li>EDUCATION : 学历</li>\n<li>GENDER : 性别</li>\n<li>DISTRICT : 省市区</li></ul>",
+          "document": "<p>在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用（注:<br><font color=\"red\">空数组代表未指定</font>），具体的控件类型如下</p><ul><li>SIGN_SIGNATURE : 个人签名/印章</li><li>SIGN_SEAL : 企业印章</li><li>SIGN_PAGING_SEAL : 骑缝章</li><li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li><li>SIGN_APPROVE : 签批</li><li>SIGN_OPINION : 签署意见</li><li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li><li>BUSI-FULL-NAME  : 企业全称</li><li>BUSI-CREDIT-CODE : 统一社会信用代码</li><li>BUSI-LEGAL-NAME : 法人/经营者姓名</li><li>PERSONAL-NAME : 签署人姓名</li><li>PERSONAL-MOBILE : 签署人手机号</li><li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li><li>PERSONAL-IDCARD : 签署人证件号</li><li>TEXT : 单行文本</li><li>MULTI_LINE_TEXT : 多行文本</li><li>CHECK_BOX : 勾选框</li><li>SELECTOR : 选择器</li><li>DIGIT : 数字</li><li>DATE : 日期</li><li>FILL_IMAGE : 图片</li><li>ATTACHMENT : 附件</li><li>EMAIL : 邮箱</li><li>LOCATION : 地址</li><li>EDUCATION : 学历</li><li>GENDER : 性别</li><li>DISTRICT : 省市区</li></ul>",
           "example": "[\"MULTI_LINE_TEXT\"]",
           "member": "string",
           "name": "HideComponentTypes",
@@ -7108,7 +7108,7 @@
         },
         {
           "disabled": false,
-          "document": "在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用（注: \n<font color='red'>空数组代表未指定</font>），具体的控件类型如下\n<ul><li>SIGN_SIGNATURE : 个人签名/印章</li>\n<li>SIGN_SEAL : 企业印章</li>\n<li>SIGN_PAGING_SEAL : 骑缝章</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>\n<li>SIGN_APPROVE : 签批</li>\n<li>SIGN_OPINION : 签署意见</li>\n<li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li>\n<li>BUSI-FULL-NAME  : 企业全称</li>\n<li>BUSI-CREDIT-CODE : 统一社会信用代码</li>\n<li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>\n<li>PERSONAL-NAME : 签署人姓名</li>\n<li>PERSONAL-MOBILE : 签署人手机号</li>\n<li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li>\n<li>PERSONAL-IDCARD : 签署人证件号</li>\n<li>TEXT : 单行文本</li>\n<li>MULTI_LINE_TEXT : 多行文本</li>\n<li>CHECK_BOX : 勾选框</li>\n<li>SELECTOR : 选择器</li>\n<li>DIGIT : 数字</li>\n<li>DATE : 日期</li>\n<li>FILL_IMAGE : 图片</li>\n<li>ATTACHMENT : 附件</li>\n<li>EMAIL : 邮箱</li>\n<li>LOCATION : 地址</li>\n<li>EDUCATION : 学历</li>\n<li>GENDER : 性别</li>\n<li>DISTRICT : 省市区</li></ul>",
+          "document": "<p>在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用（注:<br><font color=\"red\">空数组代表未指定</font>），具体的控件类型如下</p><ul><li>SIGN_SIGNATURE : 个人签名/印章</li><li>SIGN_SEAL : 企业印章</li><li>SIGN_PAGING_SEAL : 骑缝章</li><li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li><li>SIGN_APPROVE : 签批</li><li>SIGN_OPINION : 签署意见</li><li>SIGN_PAGING_SIGNATURE : 手写签名骑缝控件</li><li>BUSI-FULL-NAME  : 企业全称</li><li>BUSI-CREDIT-CODE : 统一社会信用代码</li><li>BUSI-LEGAL-NAME : 法人/经营者姓名</li><li>PERSONAL-NAME : 签署人姓名</li><li>PERSONAL-MOBILE : 签署人手机号</li><li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li><li>PERSONAL-IDCARD : 签署人证件号</li><li>TEXT : 单行文本</li><li>MULTI_LINE_TEXT : 多行文本</li><li>CHECK_BOX : 勾选框</li><li>SELECTOR : 选择器</li><li>DIGIT : 数字</li><li>DATE : 日期</li><li>FILL_IMAGE : 图片</li><li>ATTACHMENT : 附件</li><li>EMAIL : 邮箱</li><li>LOCATION : 地址</li><li>EDUCATION : 学历</li><li>GENDER : 性别</li><li>DISTRICT : 省市区</li></ul>",
           "example": "[\"MULTI_LINE_TEXT\"]",
           "member": "string",
           "name": "ShowComponentTypes",
@@ -7117,7 +7117,7 @@
         },
         {
           "disabled": false,
-          "document": "发起流程的可嵌入页面结果页配置",
+          "document": "<p>发起流程的可嵌入页面结果页配置</p>",
           "example": "无",
           "member": "CreateResultPageConfig",
           "name": "ResultPageConfig",
@@ -7126,7 +7126,7 @@
         },
         {
           "disabled": false,
-          "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括 \n - 签署控件 是否默认展示日期.",
+          "document": "<p>签署控件的配置信息，用在嵌入式发起的页面配置，包括 </p><ul><li>签署控件 是否默认展示日期.</li></ul>",
           "example": "无",
           "member": "SignComponentConfig",
           "name": "SignComponentConfig",
@@ -7135,7 +7135,7 @@
         },
         {
           "disabled": false,
-          "document": "是否禁止编辑（展示）水印控件属性\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
+          "document": "<p>是否禁止编辑（展示）水印控件属性</p><ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "ForbidEditWatermark",
@@ -7144,7 +7144,7 @@
         },
         {
           "disabled": true,
-          "document": "隐藏操作指引: 具体的控件类型如下\n\n<ul><li>1 : 操作指引入口</li>\n<li>2 : 操作文档</li>\n<li>3 : 操作视频</li>\n</ul>\n注：仅对新版页面生效",
+          "document": "<p>隐藏操作指引: 具体的控件类型如下</p><ul><li>1 : 操作指引入口</li><li>2 : 操作文档</li><li>3 : 操作视频</li></ul>注：仅对新版页面生效",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "HideOperationInstructions",
@@ -7153,7 +7153,7 @@
         },
         {
           "disabled": false,
-          "document": "隐藏操作步骤: 具体的控件类型如下\n\n<ul><li>1 : 选择文件及签署方</li>\n<li>2 : 补充文件内容</li>\n<li>4 : 发起前合同信息与设置确认</li>\n</ul>\n注：仅对新版页面生效",
+          "document": "<p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>1 : 选择文件及签署方</li><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效",
           "example": "[1,2,4]",
           "member": "uint64",
           "name": "HideOperationSteps",
@@ -7162,7 +7162,7 @@
         },
         {
           "disabled": false,
-          "document": "本企业简称，注：仅对新版页面生效",
+          "document": "<p>本企业简称，注：仅对新版页面生效</p>",
           "example": "本企业",
           "member": "string",
           "name": "SelfName",
@@ -7171,7 +7171,7 @@
         },
         {
           "disabled": false,
-          "document": "发起后签署码隐藏，默认false，注：仅对新版页面生效",
+          "document": "<p>发起后签署码隐藏，默认false，注：仅对新版页面生效</p>",
           "example": "true",
           "member": "bool",
           "name": "HideSignCodeAfterStart",
@@ -7180,7 +7180,7 @@
         },
         {
           "disabled": false,
-          "document": "发起成功后是否预览合同 <ul><li>（默认） false -否</li> <li> true - 展示预览按钮</li></ul>\t",
+          "document": "<p>发起成功后是否预览合同 <ul><li>（默认） false -否</li> <li> true - 展示预览按钮</li></ul></p>",
           "example": "false",
           "member": "bool",
           "name": "PreviewAfterStart",
@@ -7189,7 +7189,7 @@
         },
         {
           "disabled": false,
-          "document": "发起成功之后是否签署合同，仅当前经办人作为签署人时生效 <ul><li>（默认） false -否</li> <li> true - 展示签署按钮</li></ul>\t",
+          "document": "<p>发起成功之后是否签署合同，仅当前经办人作为签署人时生效 <ul><li>（默认） false -否</li> <li> true - 展示签署按钮</li></ul></p>",
           "example": "false",
           "member": "bool",
           "name": "SignAfterStart",
@@ -7198,12 +7198,21 @@
         },
         {
           "disabled": false,
-          "document": "发起过程中是否保存草稿",
+          "document": "<p>发起过程中是否保存草稿</p>",
           "example": "false",
           "member": "bool",
           "name": "NeedFlowDraft",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>若指定了合同抄送人，此参数用来控制操作人能否在嵌入式页面看见或编辑（修改、增加、删除）抄送人信息。</p><p>枚举值：</p><ul><li>0： 不可见不可编辑</li><li>1： 可见不可编辑</li><li>2： 可见可编辑</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CcInfoVisibility",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -9493,6 +9502,15 @@
           "name": "AuthToMe",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式</li><li>1： 仅按印章类型授权</li><li>2： 仅按印章id授权</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "LimitAuthType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -20082,6 +20100,15 @@
           "name": "SealTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式 </li><li>1： 仅按印章类型授权</li><li>2： 仅按印章id授权</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "LimitAuthType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -24180,7 +24207,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件过期时间的时间戳</p><p>取值范围：[1782835200, 4102329600]</p><p>单位：秒</p><p>设置上传文件的过期时间，此功能为付费能力，请联系电子签运营人员开通</p>",
+          "document": "<p>文件的截止有效期，最长有效期是当前时间后的一年。如果超过截止有效期则文件会失效。此功能是白名单功能，如需使用，请联系电子签开通</p><p>如果没有传入，则默认过期时间是上传时间加1小时</p>",
           "example": "1782835200",
           "member": "int64",
           "name": "Deadline",

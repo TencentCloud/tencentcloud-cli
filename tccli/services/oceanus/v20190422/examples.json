@@ -181,8 +181,8 @@
     "DeleteTableConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DeleteFolders\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-6ntmhryo\",\n    \"DebugId\": 1,\n    \"TableName\": \"tabale_test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3998cdae-e624-4e23-b497-17dbf8c90b0f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTableConfig\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-0ihi2g5w\",\n    \"DebugId\": 1,\n    \"TableName\": \"logger\",\n    \"WorkSpaceId\": \"space-byjf3bha\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e71758a5-fa2a-42b0-befd-e7b06cc63ff8\"\n    }\n}",
         "title": "删除作业表配置"
       }
     ],

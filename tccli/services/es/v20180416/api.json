@@ -6343,7 +6343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cos桶名",
+          "document": "<p>cos桶名</p>",
           "example": "user-cos",
           "member": "string",
           "name": "CosBucket",
@@ -6352,7 +6352,7 @@
         },
         {
           "disabled": false,
-          "document": "bucket 桶下的备份路径",
+          "document": "<p>bucket 桶下的备份路径</p>",
           "example": "dir/",
           "member": "string",
           "name": "BasePath",
@@ -6361,10 +6361,19 @@
         },
         {
           "disabled": false,
-          "document": "云上集群迁移集群名",
+          "document": "<p>云上集群迁移集群名</p>",
           "example": "es-feaifhie",
           "member": "string",
           "name": "ClusterInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>es 集群仓库</p>",
+          "example": "ES_AUTO_BACKUP",
+          "member": "string",
+          "name": "PaasEsRepository",
           "required": false,
           "type": "string"
         }
@@ -6376,7 +6385,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "cos 快照信息列表",
+          "document": "<p>cos 快照信息列表</p>",
           "example": "无",
           "member": "CosSnapShotInfo",
           "name": "CosSnapshotInfoList",
@@ -6386,7 +6395,7 @@
         },
         {
           "disabled": false,
-          "document": "cos 快照数量",
+          "document": "<p>cos 快照数量</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",

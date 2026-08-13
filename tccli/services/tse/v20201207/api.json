@@ -21076,7 +21076,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关ID",
+          "document": "<p>网关ID</p>",
           "example": "gateway-962b7d7c",
           "member": "string",
           "name": "GatewayId",
@@ -21085,7 +21085,7 @@
         },
         {
           "disabled": false,
-          "document": "所属服务的ID",
+          "document": "<p>所属服务的ID</p>",
           "example": "104dd157-5008-4d3c-9feb-4767667863ff",
           "member": "string",
           "name": "ServiceID",
@@ -21094,7 +21094,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的ID，实例级别唯一",
+          "document": "<p>路由的ID，实例级别唯一</p>",
           "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
           "member": "string",
           "name": "RouteID",
@@ -21103,7 +21103,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的名字，实例级别唯一，可以不提供",
+          "document": "<p>路由的名字，实例级别唯一，可以不提供</p>",
           "example": "route-demo",
           "member": "string",
           "name": "RouteName",
@@ -21112,7 +21112,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的方法，其中方法可选值：\n- GET\n- POST\n- DELETE\n- PUT\n- OPTIONS\n- PATCH\n- HEAD\n- ANY\n- TRACE\n- COPY\n- MOVE\n- PROPFIND\n- PROPPATCH\n- MKCOL\n- LOCK\n- UNLOCK",
+          "document": "<p>路由的方法，其中方法可选值：</p><ul><li>GET</li><li>POST</li><li>DELETE</li><li>PUT</li><li>OPTIONS</li><li>PATCH</li><li>HEAD</li><li>ANY</li><li>TRACE</li><li>COPY</li><li>MOVE</li><li>PROPFIND</li><li>PROPPATCH</li><li>MKCOL</li><li>LOCK</li><li>UNLOCK</li></ul>",
           "example": "[\"GET\"]",
           "member": "string",
           "name": "Methods",
@@ -21121,7 +21121,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的域名",
+          "document": "<p>路由的域名</p>",
           "example": "[\"www.demo.com\"]",
           "member": "string",
           "name": "Hosts",
@@ -21130,7 +21130,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的路径",
+          "document": "<p>路由的路径</p>",
           "example": "[\"/\"]",
           "member": "string",
           "name": "Paths",
@@ -21139,7 +21139,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的协议，可选\n- https\n- http",
+          "document": "<p>路由的协议，可选</p><ul><li>https</li><li>http</li></ul>",
           "example": "[\"https\"]",
           "member": "string",
           "name": "Protocols",
@@ -21148,7 +21148,7 @@
         },
         {
           "disabled": false,
-          "document": "转发到后端时是否保留Host",
+          "document": "<p>转发到后端时是否保留Host</p>",
           "example": "true",
           "member": "bool",
           "name": "PreserveHost",
@@ -21157,7 +21157,7 @@
         },
         {
           "disabled": false,
-          "document": "https重定向状态码",
+          "document": "<p>https重定向状态码</p>",
           "example": "308",
           "member": "int64",
           "name": "HttpsRedirectStatusCode",
@@ -21166,7 +21166,7 @@
         },
         {
           "disabled": false,
-          "document": "转发到后端时是否StripPath",
+          "document": "<p>转发到后端时是否StripPath</p>",
           "example": "true",
           "member": "bool",
           "name": "StripPath",
@@ -21175,7 +21175,7 @@
         },
         {
           "disabled": true,
-          "document": "是否开启强制HTTPS",
+          "document": "<p>是否开启强制HTTPS</p>",
           "example": "false",
           "member": "bool",
           "name": "ForceHttps",
@@ -21184,7 +21184,7 @@
         },
         {
           "disabled": false,
-          "document": "四层匹配的目的端口\t",
+          "document": "<p>四层匹配的目的端口</p>",
           "example": "[8000]",
           "member": "uint64",
           "name": "DestinationPorts",
@@ -21193,7 +21193,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的Headers",
+          "document": "<p>路由的Headers</p>",
           "example": "无",
           "member": "KVMapping",
           "name": "Headers",
@@ -21202,7 +21202,7 @@
         },
         {
           "disabled": false,
-          "document": "是否缓存请求body，默认true",
+          "document": "<p>是否缓存请求body，默认true</p>",
           "example": "true",
           "member": "bool",
           "name": "RequestBuffering",
@@ -21211,7 +21211,7 @@
         },
         {
           "disabled": false,
-          "document": "是否缓存响应body，默认true",
+          "document": "<p>是否缓存响应body，默认true</p>",
           "example": "true",
           "member": "bool",
           "name": "ResponseBuffering",
@@ -21220,7 +21220,7 @@
         },
         {
           "disabled": false,
-          "document": "增加优先级",
+          "document": "<p>增加优先级</p>",
           "example": "0",
           "member": "int64",
           "name": "RegexPriority",
@@ -21229,7 +21229,7 @@
         },
         {
           "disabled": false,
-          "document": "querysring参数",
+          "document": "<p>querysring参数</p>",
           "example": "无",
           "member": "KVMapping",
           "name": "QueryStringParameters",

@@ -26630,8 +26630,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "代码内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>base64编码的代码内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IyEvYmluL2Jhc2gKZWNobyAiVGFzayAyOiBIZWxsbyBmcm9tIFdlRGF0YSBNQ1AiCmVjaG8gIkN1cnJlbnQgdGltZTogJChkYXRlKSIKZWNobyAiSG9zdG5hbWU6ICQoaG9zdG5hbWUpIg==",
           "member": "string",
           "name": "CodeInfo",
           "output_required": false,
@@ -26640,8 +26640,8 @@
         },
         {
           "disabled": false,
-          "document": "代码文件大小，单位KB\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>代码文件大小，单位KB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "144",
           "member": "string",
           "name": "CodeFileSize",
           "output_required": false,

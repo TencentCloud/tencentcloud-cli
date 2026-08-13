@@ -419,7 +419,7 @@
     "DescribeDSPAAssessmentRiskSideList": [
       {
         "document": "查询风险面的列表",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskSideItemList\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-abcd1234\",\n    \"TemplateId\": 100118\n}",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskSideList\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-abcd1234\",\n    \"TemplateId\": 100118\n}",
         "output": "{\n    \"Response\": {\n        \"RiskSideItmeList\": [\n            {\n                \"Key\": \"cloudstorage_security\",\n                \"Value\": 3\n            }\n        ],\n        \"RequestId\": \"test-001\"\n    }\n}",
         "title": "风险面列表"
       }

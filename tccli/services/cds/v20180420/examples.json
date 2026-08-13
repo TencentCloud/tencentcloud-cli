@@ -1,5 +1,29 @@
 {
   "actions": {
+    "CreateReportPdf": [
+      {
+        "document": "下载报表PDF",
+        "input": "POST / HTTP/1.1\nHost: cds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReportPdf\n<公共请求参数>\n\n{\n    \"Id\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"https://regionid.cds.tencent.com/path/数据安全审计报表_周期_语句_yyyyMMdd_hhmm.pdf?q-sign-algorithm=sha1&q-ak=AK_xxx&q-sign-time=timestamp;timestamp&q-key-time=timestamp;1730430057&q-header-list=host&q-url-param-list=&q-signature=7c86df8edf4b8ec8ac5b632f689295b18e0f3117\",\n        \"RequestId\": \"8ad5a3f5-fd37-4d77-8448-ab680d513500\"\n    }\n}",
+        "title": "下载报表PDF"
+      }
+    ],
+    "CreateTimerReport": [
+      {
+        "document": "新建定时报表",
+        "input": "POST / HTTP/1.1\nHost: cds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTimerReport\n<公共请求参数>\n\n{\n    \"TplName\": \"tpl-8ad5a3f5\",\n    \"CntTime\": 1730455722,\n    \"CntCycle\": 0,\n    \"Receivers\": \"admin\",\n    \"CntDay\": 1,\n    \"CntDate\": \"2020-12-12\",\n    \"Remark\": \"测试报表数据\",\n    \"TemplateId\": 0,\n    \"ReportType\": 0,\n    \"AssetsId\": [\n        1\n    ],\n    \"Notification\": 0,\n    \"MissionStart\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ad5a3f5-fd37-4d77-8448-ab680d513500\"\n    }\n}",
+        "title": "新建定时报表"
+      }
+    ],
+    "DescribeAssetsList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetsList\n<公共请求参数>\n\n{\n    \"Limit\": 4,\n    \"Permission\": -1,\n    \"AliveStatus\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AddTime\": 1783668764,\n                \"AddType\": 2,\n                \"AgentOn\": 0,\n                \"Aid\": 354,\n                \"AliveStatus\": 1,\n                \"AssetGroupId\": 30,\n                \"AssetGroups\": [\n                    {\n                        \"Id\": 30,\n                        \"Name\": \"测试分组\"\n                    }\n                ],\n                \"AssetSubnetId\": \"subnet-490b608i\",\n                \"AssetsAddType\": 4,\n                \"AssetsIp\": \"1.1.1.1\",\n                \"AssetsName\": \"11.1.1.1\",\n                \"AssetsPort\": 11,\n                \"AssetsType\": \"MySQL\",\n                \"AssetsVersion\": \"\",\n                \"AuditScope\": \"REGION\",\n                \"Available\": \"PROXY_OFF\",\n                \"BidirectionAllow\": 1,\n                \"BidirectionDelivery\": 0,\n                \"BidirectionMaxLine\": 99,\n                \"BidirectionMaxStorage\": 16,\n                \"BidirectionOn\": 0,\n                \"CasbOn\": 0,\n                \"CdbErrorMsg\": \"\",\n                \"CdbOn\": 0,\n                \"DbCharset\": \"UTF-8\",\n                \"DbPlatform\": \"64\",\n                \"GroupId\": \"\",\n                \"GroupName\": \"测试分组\",\n                \"InstanceGroupId\": \"\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"IsNewCloudAudit\": false,\n                \"OsPolicy\": \"linux\",\n                \"Permission\": 0,\n                \"RegionId\": \"ap-guangzhou\",\n                \"RoStatus\": \"\",\n                \"Status\": 1,\n                \"TrafficMirrorOn\": 0,\n                \"UpdateTime\": 1783674156,\n                \"UploadPem\": 0,\n                \"VpcId\": \"vpc-4gy7nrkb\"\n            }\n        ],\n        \"TotalCount\": 7,\n        \"RequestId\": \"59b1f5e9-99ef-4f54-92f9-bd9aedfc4e34\"\n    }\n}",
+        "title": "查看当前的资产"
+      }
+    ],
     "DescribeDbauditInstanceType": [
       {
         "document": "本示例用于查询数据安全审计产品规格信息列表",
@@ -22,6 +46,22 @@
         "input": "https://cds.tencentcloudapi.com/?Action= DescribeDbauditUsedRegions\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\",\n                \"RegionId\": \"1\",\n                \"RegionState\": 1\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"RegionName\": \"上海\",\n                \"RegionId\": 4,\n                \"RegionState\": 1\n            }\n        ]\n    }\n}",
         "title": "查询可售卖地域列表"
+      }
+    ],
+    "DescribeReportList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReportList\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Name\": \"ip-report\",\n    \"StartTime\": 0,\n    \"EndTime\": 0,\n    \"ReportType\": 0,\n    \"ReportStatus\": 0,\n    \"TemplateId\": 0,\n    \"Field\": \"ip\",\n    \"Sort\": \"desc\",\n    \"CntDay\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"AddTime\": 1730446418,\n                \"EndTime\": 1730446418,\n                \"Id\": 0,\n                \"InstanceId\": 0,\n                \"IsDelete\": 0,\n                \"Receivers\": \"bob\",\n                \"Remark\": \"11 月会话分析\",\n                \"ReportFile\": \"file.html\",\n                \"ReportStatus\": 0,\n                \"ReportTmpStatus\": 0,\n                \"ReportType\": 0,\n                \"SendResult\": \"success\",\n                \"SendType\": \"site\",\n                \"StartTime\": 1730446418,\n                \"Title\": \"11 月会话分析\",\n                \"TemplateId\": 1,\n                \"AssetsList\": [],\n                \"CntDay\": 1\n            }\n        ],\n        \"RequestId\": \"a8aa8bbc-c255-42b1-88c4-04419f435a77\"\n    }\n}",
+        "title": "查询报表列表"
+      }
+    ],
+    "DescribeReportMissionList": [
+      {
+        "document": "查询报表任务列表",
+        "input": "POST / HTTP/1.1\nHost: cds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReportMissionList\n<公共请求参数>\n\n{\n    \"TplName\": \"tpl-12ews\",\n    \"ReportType\": 0,\n    \"TemplateId\": 0,\n    \"MissionStatus\": 0,\n    \"Field\": \"ip\",\n    \"Sort\": \"desc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"Id\": 0,\n                \"TplName\": \"11 月会话分析\",\n                \"ReportType\": 0,\n                \"Remark\": \"单次\",\n                \"TemplateId\": 0,\n                \"AssetsList\": [],\n                \"NextStartTime\": 0,\n                \"MissionStatus\": 0,\n                \"MissionStatusMessage\": \"40%\",\n                \"ReportCount\": 0,\n                \"MissionStart\": 0,\n                \"CntDay\": 0,\n                \"CntCycle\": 0,\n                \"CntTime\": 0,\n                \"CntDate\": \"16:02\",\n                \"Receivers\": \"bob\",\n                \"Notification\": 0\n            }\n        ],\n        \"RequestId\": \"a8aa8bbc-c255-42b1-88c4-04419f435a77\"\n    }\n}",
+        "title": "查询报表任务列表"
       }
     ],
     "InquiryPriceDbauditInstance": [

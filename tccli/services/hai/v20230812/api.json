@@ -3028,7 +3028,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务id",
+          "document": "<p>服务id</p>",
           "example": "svc-6cidi7xs",
           "member": "string",
           "name": "ServiceId",
@@ -3038,7 +3038,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名称",
+          "document": "<p>服务名称</p>",
           "example": "hai-infer",
           "member": "string",
           "name": "ServiceName",
@@ -3048,7 +3048,7 @@
         },
         {
           "disabled": false,
-          "document": "服务状态",
+          "document": "<p>服务状态</p>",
           "example": "RUNNING",
           "member": "string",
           "name": "ServiceState",
@@ -3058,7 +3058,7 @@
         },
         {
           "disabled": false,
-          "document": "运行中的副本数",
+          "document": "<p>运行中的副本数</p>",
           "example": "1",
           "member": "uint64",
           "name": "RunningReplicas",
@@ -3068,7 +3068,7 @@
         },
         {
           "disabled": false,
-          "document": "期望的副本总数",
+          "document": "<p>期望的副本总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalReplicas",
@@ -3078,7 +3078,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2026-02-13 12:25:55",
           "member": "string",
           "name": "CreateTime",
@@ -3088,7 +3088,7 @@
         },
         {
           "disabled": false,
-          "document": "算力套餐详情",
+          "document": "<p>算力套餐详情</p>",
           "example": "无",
           "member": "ComputeDetail",
           "name": "ComputeSet",
@@ -3098,7 +3098,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "<p>模型名称</p>",
           "example": "Kimi-k2.5",
           "member": "string",
           "name": "ModelName",
@@ -3108,7 +3108,7 @@
         },
         {
           "disabled": false,
-          "document": "服务部署信息",
+          "document": "<p>服务部署信息</p>",
           "example": "无",
           "member": "DeploymentConfig",
           "name": "DeploymentConfigs",
@@ -3118,7 +3118,7 @@
         },
         {
           "disabled": false,
-          "document": "服务超参数配置",
+          "document": "<p>服务超参数配置</p>",
           "example": "无",
           "member": "HyperParam",
           "name": "HyperParam",
@@ -3128,8 +3128,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>安全类型</p>",
+          "example": "CONFIDENTIAL",
           "member": "string",
           "name": "SecurityType",
           "output_required": false,
@@ -3138,8 +3138,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>角色算力配置列表</p>",
+          "example": "无",
           "member": "ComputeDetail",
           "name": "RoleComputeSet",
           "output_required": false,
@@ -3148,8 +3148,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>目标副本数</p>",
+          "example": "1",
           "member": "uint64",
           "name": "TargetReplicas",
           "output_required": false,
@@ -3158,8 +3158,8 @@
         },
         {
           "disabled": false,
-          "document": "计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)",
-          "example": "",
+          "document": "<p>计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)</p>",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "output_required": false,
@@ -3168,8 +3168,8 @@
         },
         {
           "disabled": false,
-          "document": "到期时间(包月)，按量为空",
-          "example": "",
+          "document": "<p>到期时间(包月)，按量为空</p>",
+          "example": "2026-08-09 18:05:29",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -3178,8 +3178,8 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识(包月)",
-          "example": "",
+          "document": "<p>自动续费标识(包月)</p>",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "output_required": false,
@@ -3188,8 +3188,8 @@
         },
         {
           "disabled": false,
-          "document": "受限状态(如欠费隔离)",
-          "example": "",
+          "document": "<p>受限状态(如欠费隔离)</p>",
+          "example": "ISOLATED",
           "member": "string",
           "name": "RestrictState",
           "output_required": false,
@@ -3198,8 +3198,8 @@
         },
         {
           "disabled": false,
-          "document": "是否自定义部署：1是 0否",
-          "example": "",
+          "document": "<p>是否自定义部署：1是 0否</p>",
+          "example": "0",
           "member": "int64",
           "name": "IsCustomDeploy",
           "output_required": false,

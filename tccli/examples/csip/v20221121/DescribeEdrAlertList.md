@@ -55,7 +55,10 @@ Output:
                 "RuleId": "mp_15003",
                 "RuleName": "",
                 "RuleType": 0,
-                "Status": "PENDING"
+                "Status": "PENDING",
+                "ContainerName": "nginx-container",
+                "ImageName": "nginx:latest",
+                "ClusterName": "cls-demo"
             }
         ],
         "TotalCount": 3496,

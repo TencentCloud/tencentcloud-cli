@@ -1,51 +1,27 @@
-# Release 3.1.146.1
+# Release 3.1.147.1
 
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
+## T-Sec-数据安全审计（DSA）(cds) 版本：2018-04-20
 
-### 第 91 次发布
+### 第 6 次发布
 
-发布时间：2026-08-10 01:45:44
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateMetaDatabase](https://cloud.tencent.com/document/api/849/135774)
-* [CreateMetaTable](https://cloud.tencent.com/document/api/849/135776)
-* [ModifyMetaTable](https://cloud.tencent.com/document/api/849/135775)
-
-
-
-## 风险识别 RCE(rce) 版本：2026-01-30
-
-### 第 4 次发布
-
-发布时间：2026-08-10 01:48:29
+发布时间：2026-08-13 14:59:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AuditCapability
 
 修改数据结构：
 
-* [AssessDeviceRiskRsp](https://cloud.tencent.com/document/api/1343/134560#AssessDeviceRiskRsp)
+* [AssetsInfo](https://cloud.tencent.com/document/api/856/33913#AssetsInfo)
 
-	* 新增成员：Environment
+	* 新增成员：AssetGroups
 
-* [Decision](https://cloud.tencent.com/document/api/1343/134560#Decision)
+	* <font color="#dd0000">**删除成员**：</font>AuditCapability
 
-	* 新增成员：Disposition
-
-
-
-
-## 风险识别 RCE(rce) 版本：2025-04-25
-
-
-
-## 风险识别 RCE(rce) 版本：2020-11-03
 
 
 

@@ -1906,6 +1906,56 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关内网IP。</p>",
+          "example": "11.141.108.***",
+          "member": "string",
+          "name": "GatewayIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名。</p>",
+          "example": "jacky",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关接入token。</p>",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJpYXQiOjE3ODUxNTY2MDEuNjE3MjM5LCJuYmYiOjE3ODUxNTY2MDEuNjE3MjR9LCJnd0lkIjoibXBndy1ycDZ0ZmRmcHFwIiwibWdtdElwIjoiMTEuMTQxLjEwOC4yNDIifQ.etq0nOn1x0F59lXl3vBsiHx0b6HO0NtkQrd9Q6*****",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关注册URL。</p>",
+          "example": "reg-rest-****.multipath.tencent-cloud.com:9300",
+          "member": "string",
+          "name": "RegisterCenterUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关上报URL。</p>",
+          "example": "21.0.21.***:65002",
+          "member": "string",
+          "name": "TelemetryUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

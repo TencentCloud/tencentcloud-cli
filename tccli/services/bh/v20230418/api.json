@@ -4648,7 +4648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要开通服务的资源ID",
+          "document": "<p>需要开通服务的资源ID</p>",
           "example": "bh-saas-test",
           "member": "string",
           "name": "ResourceId",
@@ -4657,7 +4657,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通服务的地域",
+          "document": "<p>需要开通服务的地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ApCode",
@@ -4666,7 +4666,7 @@
         },
         {
           "disabled": false,
-          "document": "子网所在可用区",
+          "document": "<p>子网所在可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -4675,7 +4675,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通服务的VPC",
+          "document": "<p>需要开通服务的VPC</p>",
           "example": "vpc-bhtest",
           "member": "string",
           "name": "VpcId",
@@ -4684,7 +4684,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通服务的子网ID",
+          "document": "<p>需要开通服务的子网ID</p>",
           "example": "subnet-bhtest",
           "member": "string",
           "name": "SubnetId",
@@ -4693,7 +4693,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通服务的子网网段",
+          "document": "<p>需要开通服务的子网网段</p>",
           "example": "10.10.10.0/24",
           "member": "string",
           "name": "CidrBlock",
@@ -4702,7 +4702,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通服务的VPC名称",
+          "document": "<p>需要开通服务的VPC名称</p>",
           "example": "vpc1",
           "member": "string",
           "name": "VpcName",
@@ -4711,7 +4711,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通服务的VPC对应的网段",
+          "document": "<p>需要开通服务的VPC对应的网段</p>",
           "example": "10.10.0.0/16",
           "member": "string",
           "name": "VpcCidrBlock",
@@ -4720,7 +4720,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通服务的子网名称",
+          "document": "<p>需要开通服务的子网名称</p>",
           "example": "subnet1",
           "member": "string",
           "name": "SubnetName",
@@ -4729,7 +4729,7 @@
         },
         {
           "disabled": false,
-          "document": "需要开通实例所属的CDC集群ID",
+          "document": "<p>需要开通实例所属的CDC集群ID</p>",
           "example": "cdc-bhtest",
           "member": "string",
           "name": "CdcClusterId",
@@ -4738,7 +4738,7 @@
         },
         {
           "disabled": false,
-          "document": "开通堡垒机指定共享的clbId",
+          "document": "<p>开通堡垒机指定共享的clbId</p>",
           "example": "lb-xefesef",
           "member": "string",
           "name": "ShareClbId",
@@ -4747,7 +4747,7 @@
         },
         {
           "disabled": false,
-          "document": "0-关闭web访问堡垒机，1-开启web访问堡垒机",
+          "document": "<p>0-关闭web访问堡垒机，1-开启web访问堡垒机</p>",
           "example": "1",
           "member": "uint64",
           "name": "WebAccess",
@@ -4756,7 +4756,7 @@
         },
         {
           "disabled": false,
-          "document": "0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机",
+          "document": "<p>0-关闭客户端访问堡垒机，1-开启客户端访问堡垒机</p>",
           "example": "1",
           "member": "uint64",
           "name": "ClientAccess",
@@ -4765,7 +4765,7 @@
         },
         {
           "disabled": false,
-          "document": "0-关闭内网访问堡垒机，1-开启内网访问堡垒机",
+          "document": "<p>0-关闭内网访问堡垒机，1-开启内网访问堡垒机</p>",
           "example": "0",
           "member": "uint64",
           "name": "IntranetAccess",
@@ -4774,12 +4774,57 @@
         },
         {
           "disabled": false,
-          "document": "0-关闭公网访问堡垒机，1-开启公网访问堡垒机",
+          "document": "<p>0-关闭公网访问堡垒机，1-开启公网访问堡垒机</p>",
           "example": "1",
           "member": "uint64",
           "name": "ExternalAccess",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开通堡垒机的子网信息</p>",
+          "example": "无",
+          "member": "ParamInitResourceSubnet",
+          "name": "DeploySubnets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开通内网访问的VPC ID</p>",
+          "example": "vpc-q1of50wz",
+          "member": "string",
+          "name": "IntranetVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开通内网访问的VPC 网段</p>",
+          "example": "192.168.0.0/16",
+          "member": "string",
+          "name": "IntranetVpcCidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开通内网访问的VPC名称</p>",
+          "example": "gordan-test1",
+          "member": "string",
+          "name": "IntranetVpcName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开通内网访问的子网信息</p>",
+          "example": "无",
+          "member": "ParamInitResourceSubnet",
+          "name": "IntranetSubnets",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7901,7 +7946,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "堡垒机实例id",
+          "document": "<p>堡垒机实例id</p>",
           "example": "bh-saas-ssafee1d",
           "member": "string",
           "name": "ResourceId",
@@ -7910,7 +7955,7 @@
         },
         {
           "disabled": false,
-          "document": "开通内网访问的vpc id",
+          "document": "<p>开通内网访问的vpc id</p>",
           "example": "vpc-dfawsdae",
           "member": "string",
           "name": "VpcId",
@@ -7919,7 +7964,25 @@
         },
         {
           "disabled": false,
-          "document": "vpc的网段",
+          "document": "<p>vpc名称</p>",
+          "example": "分区1网络",
+          "member": "string",
+          "name": "VpcName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc地域</p>",
+          "example": "ap_guangzhou",
+          "member": "string",
+          "name": "VpcRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpc的网段</p>",
           "example": "10.0.0.0/0",
           "member": "string",
           "name": "VpcCidrBlock",
@@ -7927,8 +7990,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "开通内网访问的subnet id",
+          "disabled": true,
+          "document": "<p>开通内网访问的subnet id</p>",
           "example": "subnet-weafawe",
           "member": "string",
           "name": "SubnetId",
@@ -7937,12 +8000,21 @@
         },
         {
           "disabled": false,
-          "document": "内网ip的自定义域名，可为空",
+          "document": "<p>内网ip的自定义域名，可为空</p>",
           "example": "test.com",
           "member": "string",
           "name": "DomainName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开通内网的子网信息</p>",
+          "example": "无",
+          "member": "ParamInitResourceSubnet",
+          "name": "IntranetSubnets",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10540,6 +10612,48 @@
       ],
       "usage": "out"
     },
+    "ParamInitResourceSubnet": {
+      "document": "开通堡垒机的子网",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>xa0子网id</p>",
+          "example": "subnet-dp102ji4",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网名称</p>",
+          "example": "zone6",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网可用区</p>",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网cidr</p>",
+          "example": "192.168.24.0/24",
+          "member": "string",
+          "name": "SubnetCidrBlock",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "PasswordSetting": {
       "document": "密码要求设置。",
       "members": [
@@ -10787,7 +10901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务实例ID，如bh-saas-s3ed4r5e",
+          "document": "<p>服务实例ID，如bh-saas-s3ed4r5e</p>",
           "example": "bh-saas-s3ed4r5e",
           "member": "string",
           "name": "ResourceId",
@@ -10797,7 +10911,7 @@
         },
         {
           "disabled": false,
-          "document": "地域编码",
+          "document": "<p>地域编码</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ApCode",
@@ -10807,7 +10921,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例规格信息",
+          "document": "<p>服务实例规格信息</p>",
           "example": "sv_cds_dasb_saas_xxx",
           "member": "string",
           "name": "SvArgs",
@@ -10817,7 +10931,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID",
+          "document": "<p>VPC ID</p>",
           "example": "vpc-adfer-ade",
           "member": "string",
           "name": "VpcId",
@@ -10827,7 +10941,7 @@
         },
         {
           "disabled": false,
-          "document": "服务规格对应的资产数",
+          "document": "<p>服务规格对应的资产数</p>",
           "example": "50",
           "member": "uint64",
           "name": "Nodes",
@@ -10837,7 +10951,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费",
+          "document": "<p>自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费</p>",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -10847,7 +10961,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
@@ -10857,7 +10971,7 @@
         },
         {
           "disabled": false,
-          "document": "资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中",
+          "document": "<p>资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -10867,7 +10981,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例名，如T-Sec-堡垒机（SaaS型）",
+          "document": "<p>服务实例名，如T-Sec-堡垒机（SaaS型）</p>",
           "example": "T-Sec-堡垒机（SaaS型）",
           "member": "string",
           "name": "ResourceName",
@@ -10877,7 +10991,7 @@
         },
         {
           "disabled": false,
-          "document": "定价模型ID",
+          "document": "<p>定价模型ID</p>",
           "example": "1007488",
           "member": "uint64",
           "name": "Pid",
@@ -10887,7 +11001,7 @@
         },
         {
           "disabled": false,
-          "document": "资源创建时间",
+          "document": "<p>资源创建时间</p>",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -10897,7 +11011,7 @@
         },
         {
           "disabled": false,
-          "document": "商品码, p_cds_dasb",
+          "document": "<p>商品码, p_cds_dasb</p>",
           "example": "p_cds_dasb",
           "member": "string",
           "name": "ProductCode",
@@ -10907,7 +11021,7 @@
         },
         {
           "disabled": false,
-          "document": "子商品码, sp_cds_dasb_bh_saas",
+          "document": "<p>子商品码, sp_cds_dasb_bh_saas</p>",
           "example": "sp_cds_dasb_bh_saas",
           "member": "string",
           "name": "SubProductCode",
@@ -10917,7 +11031,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -10927,7 +11041,7 @@
         },
         {
           "disabled": false,
-          "document": "是否过期，true-过期，false-未过期",
+          "document": "<p>是否过期，true-过期，false-未过期</p>",
           "example": "true",
           "member": "bool",
           "name": "Expired",
@@ -10937,7 +11051,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通，true-开通，false-未开通",
+          "document": "<p>是否开通，true-开通，false-未开通</p>",
           "example": "true",
           "member": "bool",
           "name": "Deployed",
@@ -10947,7 +11061,7 @@
         },
         {
           "disabled": false,
-          "document": "开通服务的 VPC 名称",
+          "document": "<p>开通服务的 VPC 名称</p>",
           "example": "vpc1",
           "member": "string",
           "name": "VpcName",
@@ -10957,7 +11071,7 @@
         },
         {
           "disabled": false,
-          "document": "开通服务的 VPC 对应的网段",
+          "document": "<p>开通服务的 VPC 对应的网段</p>",
           "example": "10.10.10.0/16",
           "member": "string",
           "name": "VpcCidrBlock",
@@ -10967,7 +11081,7 @@
         },
         {
           "disabled": false,
-          "document": "开通服务的子网ID",
+          "document": "<p>开通服务的子网ID</p>",
           "example": "subnet-adecft-exder",
           "member": "string",
           "name": "SubnetId",
@@ -10977,7 +11091,7 @@
         },
         {
           "disabled": false,
-          "document": "开通服务的子网名称",
+          "document": "<p>开通服务的子网名称</p>",
           "example": "subnet1",
           "member": "string",
           "name": "SubnetName",
@@ -10987,7 +11101,7 @@
         },
         {
           "disabled": false,
-          "document": "开通服务的子网网段",
+          "document": "<p>开通服务的子网网段</p>",
           "example": "10.10.10.0/24",
           "member": "string",
           "name": "CidrBlock",
@@ -10997,7 +11111,7 @@
         },
         {
           "disabled": false,
-          "document": "外部IP",
+          "document": "<p>外部IP</p>",
           "example": "[\"192.168.41.10\"]",
           "member": "string",
           "name": "PublicIpSet",
@@ -11007,7 +11121,7 @@
         },
         {
           "disabled": false,
-          "document": "内部IP",
+          "document": "<p>内部IP</p>",
           "example": "[\"172.10.12.13\"]",
           "member": "string",
           "name": "PrivateIpSet",
@@ -11017,7 +11131,7 @@
         },
         {
           "disabled": false,
-          "document": "服务开通的高级功能列表，如:[DB]",
+          "document": "<p>服务开通的高级功能列表，如:[DB]</p>",
           "example": "[\"DB\"]",
           "member": "string",
           "name": "ModuleSet",
@@ -11027,7 +11141,7 @@
         },
         {
           "disabled": false,
-          "document": "已使用的授权点数",
+          "document": "<p>已使用的授权点数</p>",
           "example": "10",
           "member": "uint64",
           "name": "UsedNodes",
@@ -11037,7 +11151,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展点数",
+          "document": "<p>扩展点数</p>",
           "example": "50",
           "member": "uint64",
           "name": "ExtendPoints",
@@ -11047,7 +11161,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽扩展包个数(4M)",
+          "document": "<p>带宽扩展包个数(4M)</p>",
           "example": "1",
           "member": "uint64",
           "name": "PackageBandwidth",
@@ -11057,7 +11171,7 @@
         },
         {
           "disabled": false,
-          "document": "授权点数扩展包个数(50点)",
+          "document": "<p>授权点数扩展包个数(50点)</p>",
           "example": "1",
           "member": "uint64",
           "name": "PackageNode",
@@ -11067,7 +11181,7 @@
         },
         {
           "disabled": false,
-          "document": "日志投递规格信息",
+          "document": "<p>日志投递规格信息</p>",
           "example": "sv_cds_dasb_saas_xxx",
           "member": "string",
           "name": "LogDeliveryArgs",
@@ -11077,7 +11191,7 @@
         },
         {
           "disabled": false,
-          "document": "堡垒机资源LB\t",
+          "document": "<p>堡垒机资源LB</p>",
           "example": "无",
           "member": "Clb",
           "name": "ClbSet",
@@ -11087,7 +11201,7 @@
         },
         {
           "disabled": false,
-          "document": "网络域个数",
+          "document": "<p>网络域个数</p>",
           "example": "0",
           "member": "uint64",
           "name": "DomainCount",
@@ -11097,7 +11211,7 @@
         },
         {
           "disabled": false,
-          "document": "已经使用的网络域个数",
+          "document": "<p>已经使用的网络域个数</p>",
           "example": "1",
           "member": "uint64",
           "name": "UsedDomainCount",
@@ -11107,7 +11221,17 @@
         },
         {
           "disabled": false,
-          "document": "0 非试用版，1 试用版",
+          "document": "<p>开启的网络域个数（不包含默认网络域）</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnabledDomainCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0 非试用版，1 试用版</p>",
           "example": "0",
           "member": "uint64",
           "name": "Trial",
@@ -11117,7 +11241,7 @@
         },
         {
           "disabled": false,
-          "document": "日志投递规格信息",
+          "document": "<p>日志投递规格信息</p>",
           "example": "sc_cds_dasb_saas_xxx",
           "member": "string",
           "name": "LogDelivery",
@@ -11127,7 +11251,7 @@
         },
         {
           "disabled": false,
-          "document": "cdc集群id",
+          "document": "<p>cdc集群id</p>",
           "example": "cdc-dead-exdeas",
           "member": "string",
           "name": "CdcClusterId",
@@ -11137,7 +11261,7 @@
         },
         {
           "disabled": false,
-          "document": "部署模式 默认0 0-cvm 1-tke",
+          "document": "<p>部署模式 默认0 0-cvm 1-tke</p>",
           "example": "0",
           "member": "uint64",
           "name": "DeployModel",
@@ -11147,7 +11271,7 @@
         },
         {
           "disabled": false,
-          "document": "0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中",
+          "document": "<p>0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中</p>",
           "example": "0",
           "member": "uint64",
           "name": "IntranetAccess",
@@ -11157,7 +11281,7 @@
         },
         {
           "disabled": false,
-          "document": "内网访问的ip",
+          "document": "<p>内网访问的ip</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "IntranetPrivateIpSet",
@@ -11167,7 +11291,7 @@
         },
         {
           "disabled": false,
-          "document": "开通内网访问的vpc",
+          "document": "<p>开通内网访问的vpc</p>",
           "example": "vpc-se23s3rf",
           "member": "string",
           "name": "IntranetVpcId",
@@ -11176,8 +11300,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "开通内网访问的subnetId",
+          "disabled": true,
+          "document": "<p>开通内网访问的subnetId</p>",
           "example": "subnet-32dw32",
           "member": "string",
           "name": "IntranetSubnetId",
@@ -11187,7 +11311,17 @@
         },
         {
           "disabled": false,
-          "document": "开通内网访问vpc的网段",
+          "document": "<p>开通内网访问的子网集合</p>",
+          "example": "[\"subnet-dp102ji4\"]",
+          "member": "string",
+          "name": "IntranetSubnetIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开通内网访问vpc的网段</p>",
           "example": "172.9.9.1/0",
           "member": "string",
           "name": "IntranetVpcCidr",
@@ -11197,7 +11331,7 @@
         },
         {
           "disabled": false,
-          "document": "堡垒机内网ip自定义域名",
+          "document": "<p>堡垒机内网ip自定义域名</p>",
           "example": "test.com",
           "member": "string",
           "name": "DomainName",
@@ -11207,7 +11341,7 @@
         },
         {
           "disabled": false,
-          "document": "是否共享clb，true-共享clb，false-独享clb",
+          "document": "<p>是否共享clb，true-共享clb，false-独享clb</p>",
           "example": "false",
           "member": "bool",
           "name": "ShareClb",
@@ -11217,7 +11351,7 @@
         },
         {
           "disabled": false,
-          "document": "共享clb id",
+          "document": "<p>共享clb id</p>",
           "example": "lb-5fa81478",
           "member": "string",
           "name": "OpenClbId",
@@ -11227,7 +11361,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商信息",
+          "document": "<p>运营商信息</p>",
           "example": "CMCC/CTCC/CUCC",
           "member": "string",
           "name": "LbVipIsp",
@@ -11237,7 +11371,7 @@
         },
         {
           "disabled": false,
-          "document": "linux资产命令行运维端口",
+          "document": "<p>linux资产命令行运维端口</p>",
           "example": "10001",
           "member": "int64",
           "name": "TUICmdPort",
@@ -11247,7 +11381,7 @@
         },
         {
           "disabled": false,
-          "document": "linux资产直连端口",
+          "document": "<p>linux资产直连端口</p>",
           "example": "10002",
           "member": "int64",
           "name": "TUIDirectPort",
@@ -11257,7 +11391,7 @@
         },
         {
           "disabled": false,
-          "document": "1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中",
+          "document": "<p>1 默认值，web访问开启，0 web访问关闭，2 web访问开通中，3 web访问关闭中</p>",
           "example": "1",
           "member": "uint64",
           "name": "WebAccess",
@@ -11267,7 +11401,7 @@
         },
         {
           "disabled": false,
-          "document": "1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中",
+          "document": "<p>1 默认值，客户单访问开启，0 客户端访问关闭，2 客户端访问开通中，3 客户端访问关闭中</p>",
           "example": "1",
           "member": "uint64",
           "name": "ClientAccess",
@@ -11277,7 +11411,7 @@
         },
         {
           "disabled": false,
-          "document": "1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中",
+          "document": "<p>1 默认值，外网访问开启，0 外网访问关闭，2 外网访问开通中，3 外网访问关闭中</p>",
           "example": "1",
           "member": "uint64",
           "name": "ExternalAccess",
@@ -11287,7 +11421,7 @@
         },
         {
           "disabled": false,
-          "document": "0默认值。0-免费版（试用版）ioa，1-付费版ioa",
+          "document": "<p>0默认值。0-免费版（试用版）ioa，1-付费版ioa</p>",
           "example": "0",
           "member": "uint64",
           "name": "IOAResource",
@@ -11297,7 +11431,7 @@
         },
         {
           "disabled": false,
-          "document": "零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数",
+          "document": "<p>零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数</p>",
           "example": "1",
           "member": "uint64",
           "name": "PackageIOAUserCount",
@@ -11307,7 +11441,7 @@
         },
         {
           "disabled": false,
-          "document": " 零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽",
+          "document": "<p>零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽</p>",
           "example": "1",
           "member": "uint64",
           "name": "PackageIOABandwidth",
@@ -11317,7 +11451,7 @@
         },
         {
           "disabled": false,
-          "document": "堡垒机实例对应的零信任实例id",
+          "document": "<p>堡垒机实例对应的零信任实例id</p>",
           "example": "ioa-bh-1-833ae717984772235e780aa",
           "member": "string",
           "name": "IOAResourceId",
@@ -11327,7 +11461,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm",
+          "document": "<p>资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm</p>",
           "example": "pro",
           "member": "string",
           "name": "ResourceEdition",
@@ -11337,7 +11471,7 @@
         },
         {
           "disabled": false,
-          "document": "计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p",
+          "document": "<p>计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p</p>",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -11347,7 +11481,7 @@
         },
         {
           "disabled": false,
-          "document": "计费时长",
+          "document": "<p>计费时长</p>",
           "example": "1",
           "member": "uint64",
           "name": "TimeSpan",
@@ -11357,7 +11491,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式 0后付费，1预付费",
+          "document": "<p>计费模式 0后付费，1预付费</p>",
           "example": "1",
           "member": "uint64",
           "name": "PayMode",
@@ -11367,7 +11501,7 @@
         },
         {
           "disabled": false,
-          "document": "计费侧地域",
+          "document": "<p>计费侧地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BillingRegion",
@@ -11377,11 +11511,127 @@
         },
         {
           "disabled": false,
-          "document": "计费侧可用区",
+          "document": "<p>计费侧可用区</p>",
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "BillingZone",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署的cvm个数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "DeployCvmCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>堡垒机实例的可用区信息</p>",
+          "example": "无",
+          "member": "ResourceDeployZone",
+          "name": "ResourceZoneSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceDeployZone": {
+      "document": "堡垒机实例部署的可用区",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>部署堡垒机的VpcId</p>",
+          "example": "vpc-q1of50wz",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署堡垒机vpc的名称</p>",
+          "example": "gordan-test1",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署堡垒机vpc的cidr</p>",
+          "example": "192.168.0.0/16",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署堡垒机的子网Id</p>",
+          "example": "subnet-dp102ji4",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署堡垒机的子网名称</p>",
+          "example": "zone6",
+          "member": "string",
+          "name": "SubnetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网cidr</p>",
+          "example": "192.168.24.0/24",
+          "member": "string",
+          "name": "SubnetCidrBlock",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署堡垒机的地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署堡垒机的可用区</p>",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网的作用场景</p><p>枚举值：</p><ul><li>DEPLOY： 部署堡垒机的子网</li><li>INTERNAL： 开通内网访问的子网</li></ul>",
+          "example": "DEPLOY",
+          "member": "string",
+          "name": "SubnetUsageType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

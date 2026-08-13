@@ -46,7 +46,11 @@ Output:
                 "RuleType": 0,
                 "Status": 0,
                 "SupportBlock": 0,
-                "TCSSScope": 1
+                "TCSSScope": 1,
+                "ClusterIDs": [
+                    "cls-8c5v0u8k"
+                ],
+                "ExcludeClusterIDs": []
             }
         ],
         "TotalCount": 688,

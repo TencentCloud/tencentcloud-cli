@@ -1506,6 +1506,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Teams 工作流渠道</p>",
+          "example": "无",
+          "member": "TeamsWorkflowRobotNoticeTmplMatcher",
+          "name": "TeamsWorkflowRobot",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1990,6 +2001,73 @@
           "document": "模板配置",
           "example": "无",
           "member": "TeamsRobotNoticeTmpl",
+          "name": "Template",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TeamsWorkflowRobotNoticeTmpl": {
+      "document": "Microsoft Teams 工作流内容模板配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>内容模板</p>",
+          "example": "5ZGK6K2m6YCa55+l",
+          "member": "string",
+          "name": "ContentTmpl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>区分 TeamsWorkflow 是自定义内容还是自定义 POST BODY</p><p>枚举值：</p><ul><li>WorkflowText： 自定义内容</li><li>WorkflowJson： 自定义 POST BODY</li></ul>",
+          "example": "WorkflowText",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标题模版</p>",
+          "example": "VGVhbXMgV29ya2Zsb3c=",
+          "member": "string",
+          "name": "TitleTmpl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TeamsWorkflowRobotNoticeTmplMatcher": {
+      "document": "Microsoft Teams 工作流通知模板的匹配器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>匹配状态 Invalid; Trigger 告警触发; Recovery 告警恢复</p><p>枚举值：</p><ul><li>Trigger： 告警触发</li><li>Recovery： 告警恢复</li></ul>",
+          "example": "[\"Trigger\"]",
+          "member": "string",
+          "name": "MatchingStatus",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板配置</p>",
+          "example": "无",
+          "member": "TeamsWorkflowRobotNoticeTmpl",
           "name": "Template",
           "output_required": false,
           "required": true,

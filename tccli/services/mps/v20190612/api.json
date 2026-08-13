@@ -644,6 +644,13 @@
       "output": "DescribeAigcImageTaskResponse",
       "status": "online"
     },
+    "DescribeAigcTaskList": {
+      "document": "查询AIGC任务列表详细信息",
+      "input": "DescribeAigcTaskListRequest",
+      "name": "查询AIGC任务列表详情",
+      "output": "DescribeAigcTaskListResponse",
+      "status": "online"
+    },
     "DescribeAigcTaskStatus": {
       "document": "查询AIGC场景任务接口",
       "input": "DescribeAigcTaskStatusRequest",
@@ -8849,6 +8856,132 @@
         }
       ],
       "usage": "both"
+    },
+    "AigcTaskListItem": {
+      "document": "Aigc任务详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "fa3329e2-dfd1-****-9f0a-bb8612af7dc5",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型</p><p>枚举值：</p><ul><li>VideoRedraw： 转绘任务</li><li>AIDrama： AI漫剧任务</li></ul>",
+          "example": "RedrawVideo",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>PENDING： 任务等待调度</li><li>RUNNING： 任务运行中</li><li>FINISHED： 任务执行成功</li><li>STOP： 任务被中止</li><li>FAILED： 任务失败</li><li>TIMEOUT： 任务超时</li></ul>",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间</p>",
+          "example": "2026-03-20 17:15:31",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务开始调度时间</p>",
+          "example": "2026-03-20 17:15:31",
+          "member": "string",
+          "name": "ScheduledTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务结束时间</p>",
+          "example": "2026-03-20 17:15:32",
+          "member": "string",
+          "name": "FinishedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务结果Url</p>",
+          "example": "[\"https://****-******-output-**********.cos.ap-guangzhou.myqcloud.com/1300057355/3275abd8-4347-db32-3c29-eec0d2f5b739-202606121322-0.mp4\"]",
+          "member": "string",
+          "name": "Urls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行错误码</p>",
+          "example": "-403",
+          "member": "int64",
+          "name": "TaskResultCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行错误信息</p>",
+          "example": "task is busy",
+          "member": "string",
+          "name": "TaskResultMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出视频的分辨率</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "720p",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出视频的宽高比</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16:9",
+          "member": "string",
+          "name": "Ratio",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务请求包</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Input\":{\"Url\":\"https://lewis-1302487817.cos.ap-guangzhou.myqcloud.com/replace-test/1s.mp4\"},\"Action\":\"CreateVideoRedrawTask\",\"RequestId\":\"3a35e21a-f31a-4a49-983f-0b7fc4ab5214\",\"Uin\":\"600000563781\",\"ApiModule\":\"mps\",\"Region\":\"\",\"AppId\":1300057355}",
+          "member": "string",
+          "name": "RequestBody",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AigcVideoExtraParam": {
       "document": "用于AIGC创作视频时用到的扩展参数信息。",
@@ -18301,6 +18434,91 @@
       ],
       "type": "object"
     },
+    "DescribeAigcTaskListRequest": {
+      "document": "DescribeAigcTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始查询页</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页要获取多少数据</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询过滤条件</p>",
+          "example": "无",
+          "member": "QueryTaskFilter",
+          "name": "QueryTaskFilter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcTaskListResponse": {
+      "document": "DescribeAigcTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前任务待返回总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始查询页</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页要获取数据条目数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务详情数据</p>",
+          "example": "无",
+          "member": "AigcTaskListItem",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAigcTaskStatusRequest": {
       "document": "DescribeAigcTaskStatus请求参数结构体",
       "members": [
@@ -19130,7 +19348,7 @@
           "example": "24000191-ViralClone-92e56dab-2a5b-4537-b49f-854563d4903f",
           "member": "string",
           "name": "TaskId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -26779,7 +26997,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>视频输出时长</p><p>取值范围：[1, 15]</p><p>单位：秒</p><p>默认值：15</p>",
+          "document": "<p>视频输出时长</p><p>取值范围：[4, 15]</p><p>单位：秒</p><p>默认值：15</p>",
           "example": "15",
           "member": "uint64",
           "name": "Duration",
@@ -26824,7 +27042,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 汉语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>",
+          "document": "<p>口播/字幕语言</p><p>枚举值：</p><ul><li>english： 英文</li><li>chinese： 中文</li><li>japanese： 日语</li><li>korean： 韩语</li><li>spanish： 西班牙语</li><li>portuguese： 葡萄牙语</li><li>music_only： 纯音乐无口播</li></ul>",
           "example": "chinese",
           "member": "string",
           "name": "Language",
@@ -29065,6 +29283,17 @@
           "example": "无",
           "member": "AiStoryboardConfig",
           "name": "AiStoryboardConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片理解配置</p>",
+          "example": "无",
+          "member": "UnderstandImageConfig",
+          "name": "UnderstandImageConfig",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -39972,6 +40201,57 @@
       ],
       "type": "object"
     },
+    "QueryTaskFilter": {
+      "document": "查询AIGC任务列表过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "5ddc84c0-fe47-4cc8-35b8-ae8c313d1b9e",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型</p>",
+          "example": "RedrawVideo",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p>",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分辨率</p>",
+          "example": "720p",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>宽高比</p>",
+          "example": "16:9",
+          "member": "string",
+          "name": "Ratio",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "RTMPAddressDestination": {
       "document": "RTMP转推的目标地址信息。",
       "members": [
@@ -48604,6 +48884,34 @@
       ],
       "usage": "both"
     },
+    "UnderstandImageConfig": {
+      "document": "图片理解任务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片理解模型</p><p>枚举值：</p><ul><li>WAND-understand-1.0-lite： 轻量理解模型</li><li>WAND-understand-1.0-flash： 质量-速度平衡理解模型</li><li>WAND-understand-1.0-pro： 高质量理解模型</li></ul>",
+          "example": "",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片理解指令</p>",
+          "example": "",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateProjectRequest": {
       "document": "UpdateProject请求参数结构体",
       "members": [
@@ -50782,6 +51090,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色所属引擎</p>",
+          "example": "tts-l1",
+          "member": "string",
+          "name": "Engine",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

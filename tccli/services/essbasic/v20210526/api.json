@@ -50,7 +50,7 @@
       "status": "online"
     },
     "ChannelCreateBatchQuickSignUrl": {
-      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n7. H5签署现在仅支持中国大陆身份证和中国港澳台居民居住证。",
+      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "ChannelCreateBatchQuickSignUrlRequest",
       "name": "获取H5批量签署或查看链接",
       "output": "ChannelCreateBatchQuickSignUrlResponse",
@@ -71,7 +71,7 @@
       "status": "online"
     },
     "ChannelCreateConvertTaskApi": {
-      "document": "此接口（ChannelCreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n<font color=\"red\">此接口于 2026 年 12月 31 日下线</font>，请使用新接口: <a href=\"https://qian.tencent.com/developers/partnerApis/files/CreateFileConvertTask\" target=\"_blank\">查询文件转换任务状态（CreateFileConvertTask）</a><br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
+      "document": "此接口（ChannelCreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n<font color=\"red\">此接口于 2026 年 12月 31 日下线</font>，请使用新接口: <a href=\"https://qian.tencent.com/developers/partnerApis/files/CreateFileConvertTask\" target=\"_blank\">新建文件转换任务（CreateFileConvertTask）</a><br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
       "input": "ChannelCreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "ChannelCreateConvertTaskApiResponse",
@@ -134,7 +134,7 @@
       "status": "online"
     },
     "ChannelCreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n\n⚠️ **注意**\n1. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持在支付宝、APP打开、浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n   如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在**仅支持中国大陆身份证、中国港澳台居民居住证**。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n\n⚠️ **注意**\n1. 该签署链接**默认有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持在支付宝、APP打开、浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n   如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "ChannelCreateFlowSignUrlRequest",
       "name": "获取用户H5签署链接",
       "output": "ChannelCreateFlowSignUrlResponse",
@@ -694,7 +694,7 @@
       "status": "online"
     },
     "UploadFiles": {
-      "document": "此接口（UploadFiles）文件上传。<br/>\n\n适用场景：用于合同，印章的文件上传。文件上传以后，\n如果是PDF格式文件可配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>接口进行合同流程的发起\n如果是其他类型可以配合<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>接口转换成PDF文件\n\n注: \n1. 图片类型(png/jpg/jpeg)限制大小为5M以下, PDF/word/excel等其他格式限制大小为60M以下\n2. <font color='red'>此接口调用时需要单独设置Domain请求域名 </font>,  联调开发环境为 <font color='red'>file.test.ess.tencent.cn</font>，正式环境需要设置为<font color='red'>file.ess.tencent.cn</font>，代码示例\n```\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");\n```\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/essbasic-UploadFiles.mp4\" target=\"_blank\">【上传文件代码】编写示例</a><br>",
+      "document": "此接口（UploadFiles）文件上传。<br/>\n\n适用场景：用于合同，印章的文件上传。文件上传以后，\n如果是PDF格式文件可配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>接口进行合同流程的发起\n如果是其他类型可以配合<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>接口转换成PDF文件\n\n注: \n1. 图片类型(png/jpg/jpeg)限制大小为8M以下, PDF/word/excel等其他格式限制大小为60M以下\n2. <font color='red'>此接口调用时需要单独设置Domain请求域名 </font>,  联调开发环境为 <font color='red'>file.test.ess.tencent.cn</font>，正式环境需要设置为<font color='red'>file.ess.tencent.cn</font>，代码示例\n```\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");\n```\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/essbasic-UploadFiles.mp4\" target=\"_blank\">【上传文件代码】编写示例</a><br>",
       "input": "UploadFilesRequest",
       "name": "文件上传",
       "output": "UploadFilesResponse",
@@ -7862,7 +7862,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。</p>",
+          "document": "<p>营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。<br>和BusinessLicenseId二选一即可</p>",
           "example": "aHR0cHM6Ly9jYXBpLndvYS5jb20vhaWwlM0ZpZCUzRGVzc2Jhc2ljJTI2dGFiJTNEYXBp..图片base64省略",
           "member": "string",
           "name": "BusinessLicense",
@@ -7938,6 +7938,15 @@
           "example": "USCC",
           "member": "string",
           "name": "ProxyOrganizationIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>营业执照正面照（支持PNG或JPG格式）的FileId（通过UploadFiles获取），且文件大小不得超过8MB。<br>和BusinessLicense二选一即可</p>",
+          "example": "yDRSR*U**gj6**w*********c193c2hH",
+          "member": "string",
+          "name": "BusinessLicenseId",
           "required": false,
           "type": "string"
         }
@@ -8959,6 +8968,15 @@
           "name": "AuthorizedOrganizationNames",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式</li><li>1： 仅按印章类型授权</li><li>2： 仅按印章id授权</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "LimitAuthType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13191,6 +13209,15 @@
           "name": "SealTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制授权方式</p><p>枚举值：</p><ul><li>0： 默认，授权页面展示全部授权方式 </li><li>1： 仅按印章类型授权 </li><li>3： 仅按印章id授权</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "string",
+          "name": "LimitAuthType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15980,7 +16007,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件对应业务类型,可以选择的类型如下<ul><li> <strong>TEMPLATE</strong> : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li><li> <strong>DOCUMENT</strong> : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> <strong>SEAL</strong> : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li><li> <strong>ARCHIVE</strong> : 此文件用于归档文件夹，文件类型支持.pdf/.zip格式</li></ul></p><p>枚举值：</p><ul><li>TEMPLATE： 此上传的文件用户生成合同模板</li><li>DOCUMENT： 此文件用来发起合同流程</li><li>SEAL： 此文件用于印章的生成</li><li>ARCHIVE： 此文件用于归档文件夹</li></ul>",
+          "document": "<p>文件对应业务类型,可以选择的类型如下<ul><li> <strong>TEMPLATE</strong> : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li><li> <strong>DOCUMENT</strong> : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> <strong>SEAL</strong> : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li><li> <strong>ARCHIVE</strong> : 此文件用于归档文件夹，文件类型支持.pdf/.zip格式</li></ul></p><p>枚举值：</p><ul><li>TEMPLATE： 此上传的文件用户生成合同模板</li><li>DOCUMENT： 此文件用来发起合同流程</li><li>SEAL： 此文件用于印章的生成</li><li>ARCHIVE： 此文件用于归档文件夹</li><li>BUSINESSLICENSE： 此文件用于上传营业执照，文件类型只能是JPG或者PNG，限制8M以内</li></ul>",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",
@@ -16007,7 +16034,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件的截止有效期，最长有效期是当前时间后的一年。如果超过截止有效期则文件会失效。此功能是白名单功能，如需使用，请联系电子签开通</p><p>如果没有传入，则默认过期时间是上传时间加10分钟</p>",
+          "document": "<p>文件的截止有效期，最长有效期是当前时间后的一年。如果超过截止有效期则文件会失效。此功能是白名单功能，如需使用，请联系电子签开通</p><p>如果没有传入，则默认过期时间是上传时间加1小时</p>",
           "example": "1783415184",
           "member": "int64",
           "name": "Deadline",

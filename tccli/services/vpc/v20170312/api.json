@@ -6523,7 +6523,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关联实例ID。",
+          "document": "<p>关联实例ID。</p>",
           "example": "vpc-lt6ork07",
           "member": "string",
           "name": "InstanceId",
@@ -6534,7 +6534,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例ID所属大区，例如：ap-guangzhou。",
+          "document": "<p>关联实例ID所属大区，例如：ap-guangzhou。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
@@ -6545,7 +6545,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例类型，可选值：\n<li>`VPC`：私有网络</li>\n<li>`DIRECTCONNECT`：专线网关</li>\n<li>`BMVPC`：黑石私有网络</li>\n<li>`VPNGW`：VPNGW类型</li>",
+          "document": "<p>关联实例类型，可选值：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li><li><code>VPNGW</code>：VPNGW类型</li>",
           "example": "VPC",
           "member": "string",
           "name": "InstanceType",
@@ -6556,7 +6556,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "remark",
           "member": "string",
           "name": "Description",
@@ -6567,7 +6567,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的路由表ID。",
+          "document": "<p>实例关联的路由表ID。</p>",
           "example": "ccnrtb-1234edfr",
           "member": "string",
           "name": "RouteTableId",
@@ -6578,7 +6578,7 @@
         },
         {
           "disabled": false,
-          "document": "实例付费方式",
+          "document": "<p>实例付费方式</p><p>枚举值：</p><ul><li>PayByCcnOwner： CCN所在账号付费</li><li>PayByInstanceOwner： 关联实例所在账号付费</li></ul>",
           "example": "PayByCcnOwner",
           "member": "string",
           "name": "OrderType",

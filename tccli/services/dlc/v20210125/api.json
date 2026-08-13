@@ -14062,7 +14062,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Mysql数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Mysql数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MysqlInfo",
           "name": "Mysql",
@@ -14073,7 +14073,7 @@
         },
         {
           "disabled": false,
-          "document": "Hive数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Hive数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HiveInfo",
           "name": "Hive",
@@ -14084,7 +14084,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Kafka数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KafkaInfo",
           "name": "Kafka",
@@ -14095,7 +14095,7 @@
         },
         {
           "disabled": false,
-          "document": "其他数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>其他数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OtherDatasourceConnection",
           "name": "OtherDatasourceConnection",
@@ -14106,7 +14106,7 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>PostgreSQL数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "PostgreSql",
@@ -14117,7 +14117,7 @@
         },
         {
           "disabled": false,
-          "document": "SQLServer数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SQLServer数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "SqlServer",
@@ -14128,7 +14128,7 @@
         },
         {
           "disabled": false,
-          "document": "ClickHouse数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>ClickHouse数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "ClickHouse",
@@ -14139,7 +14139,7 @@
         },
         {
           "disabled": false,
-          "document": "Elasticsearch数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Elasticsearch数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ElasticsearchInfo",
           "name": "Elasticsearch",
@@ -14150,7 +14150,7 @@
         },
         {
           "disabled": false,
-          "document": "TDSQL-PostgreSQL数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>TDSQL-PostgreSQL数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "TDSQLPostgreSql",
@@ -14161,7 +14161,7 @@
         },
         {
           "disabled": false,
-          "document": "Doris数据源连接的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Doris数据源连接的属性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TCHouseD",
           "name": "TCHouseD",
@@ -14172,7 +14172,7 @@
         },
         {
           "disabled": false,
-          "document": "TccHive数据目录连接信息",
+          "document": "<p>TccHive数据目录连接信息</p>",
           "example": "无",
           "member": "TccHive",
           "name": "TccHive",
@@ -14183,11 +14183,22 @@
         },
         {
           "disabled": false,
-          "document": "MongoDB 数据源",
+          "document": "<p>MongoDB 数据源</p>",
           "example": "无",
           "member": "DataSourceInfo",
           "name": "MongoDB",
           "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TCHouseP数据源</p>",
+          "example": "无",
+          "member": "TCHousePInfo",
+          "name": "TCHouseP",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -43804,6 +43815,100 @@
       ],
       "usage": "both"
     },
+    "TCHousePInfo": {
+      "document": "TCHouseP 结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwpg-3xngvacw",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "friend",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>JdbcUrl</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jdbc:postgresql://10.0.0.4:9000",
+          "member": "string",
+          "name": "JdbcUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dbadmin",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456myq!",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DatasourceConnectionLocation",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres",
+          "member": "string",
+          "name": "DbName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"[{\\\"address\\\":\\\"10.0.0.4:9000\\\",\\\"protocol\\\":\\\"tcp\\\"}]\"",
+          "member": "string",
+          "name": "AccessInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TColumn": {
       "document": "表字段描述信息",
       "members": [
@@ -45154,6 +45259,16 @@
           "name": "QueueTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组类型</p>",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "ResourceGroupType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

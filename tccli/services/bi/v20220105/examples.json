@@ -90,10 +90,10 @@
     ],
     "CreateUserGroup": [
       {
-        "document": "添加用户组",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"AdminUserId\": \"userId\",\n    \"Description\": \"/描述\",\n    \"GroupName\": \"测试用户组\",\n    \"Location\": 0,\n    \"ParentId\": -1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AdminUserId\": \"userId\",\n            \"Description\": \"/描述\",\n            \"GroupName\": \"测试用户组\",\n            \"Id\": 273,\n            \"IsDefault\": 0,\n            \"Location\": 7,\n            \"ParentId\": -1,\n            \"ParentName\": null,\n            \"UserList\": null\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"7b8dad84-4285-4717-ac6d-5a76a29cb815\"\n    }\n}",
-        "title": "CreateUserGroup"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"AdminUserId\": \"700000231283\",\n    \"Description\": \"用户组描述\",\n    \"GroupName\": \"test0812001\",\n    \"Location\": -1,\n    \"ParentId\": -1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AdminUserId\": \"700000231283\",\n            \"Description\": \"用户组描述\",\n            \"GroupName\": \"test0812001\",\n            \"Id\": 382,\n            \"IsDefault\": 0,\n            \"Location\": 12,\n            \"ParentId\": -1,\n            \"ParentName\": null,\n            \"UserList\": null\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"25ede453-df25-4cb5-ae6f-e48c4fc87ea7\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "CreateUserGroupMember": [
@@ -153,9 +153,9 @@
     "DeleteUserGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroup\n\n{\n    \"Id\": 274\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"f0695353-deaa-4220-9aa1-f4c42a9dc81a\"\n    }\n}",
-        "title": "DeleteUserGroup"
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroup\n<公共请求参数>\n\n{\n    \"Id\": 382\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"5b81111c-682a-4655-9b6a-7828387cdf45\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "DeleteUserGroupMember": [
@@ -414,10 +414,10 @@
     ],
     "ModifyUserGroup": [
       {
-        "document": "ModifyUserGroup",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n\n{\n    \"UpdateList\": [\n        {\n            \"AdminUserId\": \"700000280185\",\n            \"Description\": \"/描述\",\n            \"GroupName\": \"测试用户组\",\n            \"Location\": 0,\n            \"ParentId\": -1,\n            \"Id\": 273\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AdminUserId\": \"700000280185\",\n                \"Description\": \"/描述\",\n                \"GroupName\": \"测试用户组\",\n                \"Id\": 273,\n                \"IsDefault\": 0,\n                \"Location\": 0,\n                \"ParentId\": -1\n            }\n        ],\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"fae2a374-801a-49df-8544-8fd865d4d34a\"\n    }\n}",
-        "title": "ModifyUserGroup"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"UpdateList\": [\n        {\n            \"AdminUserId\": \"700000231283\",\n            \"Description\": \"用户组描述\",\n            \"GroupName\": \"test0812001\",\n            \"Location\": 12,\n            \"ParentId\": -1,\n            \"Id\": 382\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AdminUserId\": \"700000231283\",\n                \"Description\": \"用户组描述\",\n                \"GroupName\": \"test0812001\",\n                \"Id\": 382,\n                \"IsDefault\": 0,\n                \"Location\": 12,\n                \"ParentId\": -1,\n                \"ParentName\": null,\n                \"UserList\": null\n            }\n        ],\n        \"Extra\": \"\",\n        \"Msg\": \"默认业务成功\",\n        \"RequestId\": \"0e2e19c9-b201-403e-90a9-c7f8a3cd08e7\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "ModifyUserRole": [

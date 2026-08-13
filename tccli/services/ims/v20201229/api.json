@@ -241,7 +241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](https://console.cloud.tencent.com/cms/clouds/manage)中配置。\n备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。",
+          "document": "<p>该字段表示使用的策略的具体编号，该字段需要先在<a href=\"https://console.cloud.tencent.com/cms/clouds/manage\">内容安全控制台</a>中配置。<br>备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。</p>",
           "example": "TencentCloudDefault",
           "member": "string",
           "name": "BizType",
@@ -250,7 +250,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。",
+          "document": "<p>该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，<strong>长度不超过64个字符</strong>。</p>",
           "example": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
           "member": "string",
           "name": "DataId",
@@ -259,7 +259,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的**Base64编码内容大小不得超过10MB**。<br/>备注：**该字段与FileUrl必须选择输入其中一个**。",
+          "document": "<p>该字段表示待检测图片文件内容的Base64编码，由于云API对请求包体有大小限制，图片的<strong>Base64编码内容大小不得超过10MB</strong>。<br>备注：<strong>该字段与FileUrl必须选择输入其中一个</strong>。</p>",
           "example": "aHR0cDovL2lubmVycG9ybnNjcmVlbnNob3QtMTI1MjgxMzg1MC5jb3MuYXAtZ3Vh",
           "member": "string",
           "name": "FileContent",
@@ -268,7 +268,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示待检测图片文件的访问链接，URL源图**大小不超过30MB**。<br />备注：该字段与FileContent必须选择输入其中一个。",
+          "document": "<p>该字段表示待检测图片文件的访问链接，URL源图<strong>大小不超过30MB</strong>。<br>备注：该字段与FileContent必须选择输入其中一个。</p>",
           "example": "https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "FileUrl",
@@ -277,7 +277,7 @@
         },
         {
           "disabled": false,
-          "document": "**GIF检测专用**，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。",
+          "document": "<p><strong>GIF检测专用</strong>，用于表示GIF截帧频率（每隔多少张图片抽取一帧进行检测）；默认值为0，此时只会检测GIF的第一帧或不进行切分处理。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>",
           "example": "0",
           "member": "int64",
           "name": "Interval",
@@ -286,7 +286,7 @@
         },
         {
           "disabled": false,
-          "document": "**GIF检测专用**，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。",
+          "document": "<p><strong>GIF检测专用</strong>，用于标识最大截帧数量；默认值为1，此时只会检测输入GIF的第一帧不进行切分处理（可能会造成处理超时）。<br>备注：Interval与MaxFrames参数需要组合使用。例如，Interval=3, MaxFrames=400，则代表在检测GIF时，将每间隔2帧检测一次且最多检测400帧。</p>",
           "example": "5",
           "member": "int64",
           "name": "MaxFrames",
@@ -295,7 +295,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。",
+          "document": "<p>该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。</p>",
           "example": "无",
           "member": "User",
           "name": "User",
@@ -304,7 +304,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。",
+          "document": "<p>该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。</p>",
           "example": "无",
           "member": "Device",
           "name": "Device",
@@ -313,10 +313,19 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。",
+          "document": "<p>该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。</p>",
           "example": "IMAGE_AIGC",
           "member": "string",
           "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>该字段表示输入的策略标识用于调用业务来区分策略场景</p>",
+          "example": "TencentCloudDefault",
+          "member": "string",
+          "name": "BizTag",
           "required": false,
           "type": "string"
         }
@@ -328,7 +337,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段用于返回Label标签下的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
+          "document": "<p>该字段用于返回Label标签下的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：<strong>Block</strong>：建议屏蔽，<strong>Review</strong> ：建议人工复审，<strong>Pass</strong>：建议通过</p>",
           "example": "Block",
           "member": "string",
           "name": "Suggestion",
@@ -338,7 +347,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果（LabelResults）中所对应的**优先级最高的恶意标签**，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值标签示例：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；（说明：文档仅示例了部分风险类型，更多返回类型请以实际值为准或[提交工单](https://console.cloud.tencent.com/workorder/category)进行咨询）。",
+          "document": "<p>该字段用于返回检测结果（LabelResults）中所对应的<strong>优先级最高的恶意标签</strong>，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值标签示例：<strong>Normal</strong>：正常，<strong>Porn</strong>：色情，<strong>Abuse</strong>：谩骂，<strong>Ad</strong>：广告；（说明：文档仅示例了部分风险类型，更多返回类型请以实际值为准或<a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a>进行咨询）。</p>",
           "example": "Porn",
           "member": "string",
           "name": "Label",
@@ -348,7 +357,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果所命中优先级最高的恶意标签下的子标签名称，如：*色情--性行为*；若未命中任何子标签则返回空字符串。",
+          "document": "<p>该字段用于返回检测结果所命中优先级最高的恶意标签下的子标签名称，如：<em>色情--性行为</em>；若未命中任何子标签则返回空字符串。</p>",
           "example": "SexyBehavior",
           "member": "string",
           "name": "SubLabel",
@@ -358,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表图片越有可能属于当前返回的标签；如：*色情 99*，则表明该图片非常有可能属于色情内容；*色情 0*，则表明该图片不属于色情内容。",
+          "document": "<p>该字段用于返回当前标签（Label）下的置信度，取值范围：0（<strong>置信度最低</strong>）-100（<strong>置信度最高</strong> ），越高代表图片越有可能属于当前返回的标签；如：<em>色情 99</em>，则表明该图片非常有可能属于色情内容；<em>色情 0</em>，则表明该图片不属于色情内容。</p>",
           "example": "90",
           "member": "int64",
           "name": "Score",
@@ -368,7 +377,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回分类检测模型的详细检测结果；表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。详细返回值信息可参阅对应的数据结构（LabelResults）描述。\n\n返回值标签示例：Normal:正常，Porn:色情，Abuse:谩骂，Ad:广告（说明：文档仅示例了部分风险类型，更多返回类型请以实际值为准或[提交工单](https://console.cloud.tencent.com/workorder/category)进行咨询）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该字段用于返回分类检测模型的详细检测结果；表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。详细返回值信息可参阅对应的数据结构（LabelResults）描述。</p><p>返回值标签示例：Normal:正常，Porn:色情，Abuse:谩骂，Ad:广告（说明：文档仅示例了部分风险类型，更多返回类型请以实际值为准或<a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a>进行咨询）<br>注意：此字段可能返回 null，表示取不到有效值。</p>",
           "example": "无",
           "member": "LabelResult",
           "name": "LabelResults",
@@ -378,7 +387,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回物体检测模型的详细检测结果；包括：实体、广告台标、二维码等内容命中的标签名称、标签分数、坐标信息、场景识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（ObjectResults）描述。",
+          "document": "<p>该字段用于返回物体检测模型的详细检测结果；包括：实体、广告台标、二维码等内容命中的标签名称、标签分数、坐标信息、场景识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（ObjectResults）描述。</p>",
           "example": "无",
           "member": "ObjectResult",
           "name": "ObjectResults",
@@ -388,7 +397,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回OCR文本识别的详细检测结果；包括：文本坐标信息、文本识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（OcrResults）描述。",
+          "document": "<p>该字段用于返回OCR文本识别的详细检测结果；包括：文本坐标信息、文本识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（OcrResults）描述。</p>",
           "example": "无",
           "member": "OcrResult",
           "name": "OcrResults",
@@ -398,7 +407,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回基于图片风险库（风险黑库与正常白库）识别的结果,详细返回值信息可参阅对应的数据结构（LibResults）描述。<br>备注：图片风险库目前**暂不支持自定义库**。",
+          "document": "<p>该字段用于返回基于图片风险库（风险黑库与正常白库）识别的结果,详细返回值信息可参阅对应的数据结构（LibResults）描述。<br>备注：图片风险库目前<strong>暂不支持自定义库</strong>。</p>",
           "example": "无",
           "member": "LibResult",
           "name": "LibResults",
@@ -408,7 +417,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回检测对象对应请求参数中的DataId。",
+          "document": "<p>该字段用于返回检测对象对应请求参数中的DataId。</p>",
           "example": "9756432",
           "member": "string",
           "name": "DataId",
@@ -418,7 +427,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回检测对象对应请求参数中的BizType。",
+          "document": "<p>该字段用于返回检测对象对应请求参数中的BizType。</p>",
           "example": "tymod",
           "member": "string",
           "name": "BizType",
@@ -428,7 +437,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"{\\\"QRcodeInfo\\\":[{\\\"HitInfo\\\":\\\"QRCODE\\\",\\\"Label\\\":\\\"Ad\\\"}]}\"",
           "member": "string",
           "name": "Extra",
@@ -438,7 +447,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回检测对象对应的MD5校验值，以方便校验文件完整性。",
+          "document": "<p>该字段用于返回检测对象对应的MD5校验值，以方便校验文件完整性。</p>",
           "example": "4c7bbbc76bf4b317222e25067e8e9739",
           "member": "string",
           "name": "FileMD5",
@@ -448,7 +457,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回仅识别图片元素的模型结果；包括：场景模型命中的标签、置信度和位置信息",
+          "document": "<p>该字段用于返回仅识别图片元素的模型结果；包括：场景模型命中的标签、置信度和位置信息</p>",
           "example": "无",
           "member": "RecognitionResult",
           "name": "RecognitionResults",

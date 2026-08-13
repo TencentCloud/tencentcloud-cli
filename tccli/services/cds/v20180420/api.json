@@ -1,5 +1,26 @@
 {
   "actions": {
+    "CreateReportPdf": {
+      "document": "下载报表PDF",
+      "input": "CreateReportPdfRequest",
+      "name": "下载报表PDF",
+      "output": "CreateReportPdfResponse",
+      "status": "online"
+    },
+    "CreateTimerReport": {
+      "document": "新建报表任务",
+      "input": "CreateTimerReportRequest",
+      "name": "新建报表任务",
+      "output": "CreateTimerReportResponse",
+      "status": "online"
+    },
+    "DescribeAssetsList": {
+      "document": "查询资产列表",
+      "input": "DescribeAssetsListRequest",
+      "name": "查询资产列表",
+      "output": "DescribeAssetsListResponse",
+      "status": "online"
+    },
     "DescribeDbauditInstanceType": {
       "document": "本接口 (DescribeDbauditInstanceType) 用于查询可售卖的产品规格列表。",
       "input": "DescribeDbauditInstanceTypeRequest",
@@ -19,6 +40,20 @@
       "input": "DescribeDbauditUsedRegionsRequest",
       "name": "查询可售卖地域列表",
       "output": "DescribeDbauditUsedRegionsResponse",
+      "status": "online"
+    },
+    "DescribeReportList": {
+      "document": "查询报表列表",
+      "input": "DescribeReportListRequest",
+      "name": "查询报表列表",
+      "output": "DescribeReportListResponse",
+      "status": "online"
+    },
+    "DescribeReportMissionList": {
+      "document": "查询报表任务列表",
+      "input": "DescribeReportMissionListRequest",
+      "name": "查询报表任务列表",
+      "output": "DescribeReportMissionListResponse",
       "status": "online"
     },
     "InquiryPriceDbauditInstance": {
@@ -43,6 +78,507 @@
     "serviceShortName": "cds"
   },
   "objects": {
+    "AssetsInfo": {
+      "document": "资产列表数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AddTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产 ID</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Aid",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据资产 IP</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "AssetsIp",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据资产名称</p>",
+          "example": "审计测试资产",
+          "member": "string",
+          "name": "AssetsName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据资产端口</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AssetsPort",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据资产类型</p>",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "AssetsType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产版本</p>",
+          "example": "8.0",
+          "member": "string",
+          "name": "AssetsVersion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否动态</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AssetsAddType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否删除</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后一次修改时间</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产的vpc</p>",
+          "example": "vpc-aweafdad",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计权限</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Permission",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-istestis",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "审计测试机器",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用来区分自建资产是已通过cvm还是添加ip的方式</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AddType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网Id</p>",
+          "example": "subnet-istestid",
+          "member": "string",
+          "name": "AssetSubnetId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已上传数据库私钥（0 否，1 是）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "UploadPem",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产状态栏 0:正常 1:已删除（目前仅对tencentDB有效）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AliveStatus",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启agent(0:关闭;1:开启)</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentOn",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启agent(0:关闭;1:开启)</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "CasbOn",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>只读组/集群ID</p>",
+          "example": "rg-istestid",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PROXY_OFF: 未开启Casb代理;PROXY_ERROR:Casb代理接口返回异常;PROXY_BOUND:已绑定;PROXY_UNBOUND:未绑定;UNPAID:未购买;UNSUPPORTED:类型不支持;METADATA_NOT_FOUND:元数据不存在;QUOTA_EXCEEDED:Casb额度不足</p>",
+          "example": "PROXY_BOUND",
+          "member": "string",
+          "name": "Available",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cdbOn</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "CdbOn",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台位数 32位 64位</p>",
+          "example": "64位",
+          "member": "string",
+          "name": "DbPlatform",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>编码</p>",
+          "example": "utf-8",
+          "member": "string",
+          "name": "DbCharset",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统</p>",
+          "example": "linux",
+          "member": "string",
+          "name": "OsPolicy",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启双向审计</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "BidirectionOn",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大返回行数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "BidirectionMaxLine",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大返回大小</p>",
+          "example": "99",
+          "member": "int64",
+          "name": "BidirectionMaxStorage",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许开通双向审计(1.允许；0不允许)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "BidirectionAllow",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启双向审计的日志投递(1.开启;0.关闭)</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "BidirectionDelivery",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>只读状态</p>",
+          "example": "1",
+          "member": "string",
+          "name": "RoStatus",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前资产是否开启了对当前Agent的采集策略</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AgentBound",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "Cdb接口异常，请稍后关闭后重新开启",
+          "member": "string",
+          "name": "CdbErrorMsg",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产 DSGC 绑定信息</p>",
+          "example": "无",
+          "member": "DsgcBindingInfo",
+          "name": "DsgcBindingInfo",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的规则Ids</p>",
+          "example": "无",
+          "member": "IdWithName",
+          "name": "BindingRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的模型Ids</p>",
+          "example": "无",
+          "member": "IdWithName",
+          "name": "BindingModels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属组名</p>",
+          "example": "groupName",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产组Id</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "AssetGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是新云原生审计流程</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNewCloudAudit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1</p><p>取值范围：[0, 1]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TrafficMirrorOn",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量镜像审计范围</p><p>枚举值：</p><ul><li>ALL： 全地域</li><li>REGION： 资产所在地域</li><li>VPC： 资产所在VPC</li></ul><p>默认值：REGION</p>",
+          "example": "REGION",
+          "member": "string",
+          "name": "AuditScope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例集群ID</p>",
+          "example": "cmgo-18dja01",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该资产所在的资产组</p>",
+          "example": "无",
+          "member": "IdWithName",
+          "name": "AssetGroups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CdsAuditInstance": {
       "document": "数据安全产品实例信息",
       "members": [
@@ -209,6 +745,169 @@
       ],
       "usage": "out"
     },
+    "CreateReportPdfRequest": {
+      "document": "CreateReportPdf请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>报表 Id</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReportPdfResponse": {
+      "document": "CreateReportPdf返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下载地址</p>",
+          "example": "https://regionid.cds.tencent.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTimerReportRequest": {
+      "document": "CreateTimerReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称 不变更为\"\"",
+          "example": "tpl-1730429903",
+          "member": "string",
+          "name": "TplName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行日期 重复周期为天：无意义周：星期几1-7月每月几号 1-31",
+          "example": "7",
+          "member": "int64",
+          "name": "CntTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重复周期",
+          "example": "0",
+          "member": "int64",
+          "name": "CntCycle",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "发送目标",
+          "example": "admin",
+          "member": "string",
+          "name": "Receivers",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0",
+          "example": "0",
+          "member": "int64",
+          "name": "CntDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "执行时间 格式15:04 到分钟",
+          "example": "12:00",
+          "member": "string",
+          "name": "CntDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "报告说明",
+          "example": "每周报表数据",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模版Id",
+          "example": "0",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "报表类型",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关联的资产数组",
+          "example": "[10,11,12,13]",
+          "member": "int64",
+          "name": "AssetsId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "报表通知 1关闭 2开启 不变更为0",
+          "example": "1",
+          "member": "int64",
+          "name": "Notification",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务起停 1:关闭 2:开启 单次报表默认为2",
+          "example": "0",
+          "member": "int64",
+          "name": "MissionStart",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTimerReportResponse": {
+      "document": "CreateTimerReport返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DbauditTypesInfo": {
       "document": "数据安全审计产品规格信息",
       "members": [
@@ -284,6 +983,188 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAssetsListRequest": {
+      "document": "DescribeAssetsList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>限制数目</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例Id/实例名称/资产名称</p>",
+          "example": "无",
+          "member": "NameValueString",
+          "name": "SearchValues",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据资产类型</p>",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "AssetsType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询的资产类型（1:cdb、2:cvm、3:others）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AssetsAddType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计权限</p>",
+          "example": "-1",
+          "member": "int64",
+          "name": "Permission",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AliveStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>1.代理开启 0.代理关闭 -1.全查</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CasbOn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>1.Agent开启 0.Agent关闭 -1.全查</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AgentOn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0.关闭，1.开启，2.关闭中，3.开启中 -1.全查</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CdbOn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展分类，如sensitive，指定查询支持敏感数据识别的资产</p>",
+          "example": "sensitive",
+          "member": "string",
+          "name": "ExtendCategory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产组Id（Id=0 暂未分组；id&gt;0 组Id）</p>",
+          "example": "[0, 5]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产Id</p>",
+          "example": "[0, 5]",
+          "member": "uint64",
+          "name": "Aids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询绑定状态（1:查询规则绑定数量；2:查询模型绑定数量）</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "BindingState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡是否开启流量审计</p><p>取值范围：[-1, 1]</p>",
+          "example": "-1",
+          "member": "int64",
+          "name": "TrafficMirrorOn",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetsListResponse": {
+      "document": "DescribeAssetsList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数目</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据列表</p>",
+          "example": "无",
+          "member": "AssetsInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeDbauditInstanceTypeRequest": {
       "document": "DescribeDbauditInstanceType请求参数结构体",
@@ -404,6 +1285,342 @@
       ],
       "type": "object"
     },
+    "DescribeReportListRequest": {
+      "document": "DescribeReportList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限制数目",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "报告名称",
+          "example": "name-1730446355",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1720446355",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1730446355",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "报告类型",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "报告状态",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "报表模版id",
+          "example": "10010",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要排序的字段",
+          "example": "StartTime",
+          "member": "string",
+          "name": "Field",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序 asc desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0",
+          "example": "1",
+          "member": "int64",
+          "name": "CntDay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReportListResponse": {
+      "document": "DescribeReportList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据列表",
+          "example": "[{   \"AddTime\": 1730446418,   \"EndTime\": 1730446418,   \"Id\": 0,   \"InstanceId\": 0,   \"IsDelete\": 0,   \"Receivers\": \"bob\",   \"Remark\": \"11 月会话分析\",   \"ReportFile\": \"file.html\",   \"ReportStatus\": 0,   \"ReportTmpStatus\": 0,   \"ReportType\": 0,   \"SendResult\": \"success\",   \"SendType\": \"site\",   \"StartTime\": 1730446418,   \"Title\": \"11 月会话分析\",   \"TemplateId\": 1,   \"AssetsList\": [],   \"CntDay\": 1 }]",
+          "member": "Reports",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReportMissionListRequest": {
+      "document": "DescribeReportMissionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "报表名 可模糊查询",
+          "example": "tpl-1730448474",
+          "member": "string",
+          "name": "TplName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "报表类型 1:单次报表 2:周期报表 0全查",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "报表模板 1:综合分析报告 2:等保合规报告 0全查",
+          "example": "10010",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态0全查 1:生成中 2:待生成 3:已生成 4:生成失败 5:已暂停",
+          "example": "1",
+          "member": "int64",
+          "name": "MissionStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段 支持“NextStartTime” 与 “MissionStatus”",
+          "example": "NextStartTime",
+          "member": "string",
+          "name": "Field",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "‘desc' | 'asc'",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限制条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReportMissionListResponse": {
+      "document": "DescribeReportMissionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报表列表",
+          "example": "[{   \"Id\": 0,   \"TplName\": \"11 月会话分析\",   \"ReportType\": 0,   \"Remark\": \"单次\",   \"TemplateId\": 0,   \"AssetsList\": [],   \"NextStartTime\": 0,   \"MissionStatus\": 0,   \"MissionStatusMessage\": \"40%\",   \"ReportCount\": 0,   \"MissionStart\": 0,   \"CntDay\": 0,   \"CntCycle\": 0,   \"CntTime\": 0,   \"CntDate\": \"16:02\",   \"Receivers\": \"bob\",   \"Notification\": 0 }]",
+          "member": "ReportMission",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DsgcBindingInfo": {
+      "document": "资产 DSGC 绑定信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "dspa实例id",
+          "example": "dspa-awsdasda",
+          "member": "string",
+          "name": "DspaId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dspa绑定模板/合规组 id ComplianceGroupId",
+          "example": "2",
+          "member": "uint64",
+          "name": "DspaCgId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dspa绑定模板/合规组名称",
+          "example": "通用规则集",
+          "member": "string",
+          "name": "DspaCgName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dspa实例状态 0 正常 1 隔离 2 销毁",
+          "example": "0",
+          "member": "uint64",
+          "name": "DspaStatus",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板状态 0: 正常   1: 已删除",
+          "example": "0",
+          "member": "uint64",
+          "name": "DspaCgStatus",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IdWithName": {
+      "document": "IdWithName",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "hen",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InquiryPriceDbauditInstanceRequest": {
       "document": "InquiryPriceDbauditInstance请求参数结构体",
       "members": [
@@ -523,6 +1740,34 @@
       ],
       "type": "object"
     },
+    "NameValueString": {
+      "document": "Name and String Value",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "InstanceName",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "pre_cdb_ins",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RegionInfo": {
       "document": "数盾地域信息",
       "members": [
@@ -562,6 +1807,385 @@
           "example": "3",
           "member": "int64",
           "name": "RegionState",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReportMission": {
+      "document": "任务对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "报表任务id",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "11 月会话分析",
+          "member": "string",
+          "name": "TplName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报表类型 1:单次报表 2:周期报表",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报告说明",
+          "example": "单次",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报表模板 1:综合分析报告 2:等保合规报告",
+          "example": "0",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含资产",
+          "example": "[]",
+          "member": "AssetsInfo",
+          "name": "AssetsList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下次启动时间",
+          "example": "0",
+          "member": "int64",
+          "name": "NextStartTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态 1:生成中 2:待生成3:已生成4:生成失败5:已暂停",
+          "example": "0",
+          "member": "int64",
+          "name": "MissionStatus",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态说明 仅生成中和生成失败有效",
+          "example": "40%",
+          "member": "string",
+          "name": "MissionStatusMessage",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已生成报表数",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务起停 1:关闭 2:开启 仅周期报表有效",
+          "example": "0",
+          "member": "int64",
+          "name": "MissionStart",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计周期 1:24小时 7:近一周 30:近30天 90:近90天 180:",
+          "example": "0",
+          "member": "int64",
+          "name": "CntDay",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重复周期 1:每天 2:每周 3:每月",
+          "example": "0",
+          "member": "uint64",
+          "name": "CntCycle",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行日期 重复周期为天：无意义 周：星期几 1-7  月每月",
+          "example": "0",
+          "member": "uint64",
+          "name": "CntTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行时间 格式15:04 到分钟",
+          "example": "16:02",
+          "member": "string",
+          "name": "CntDate",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者 0:内置 其余存放用户(uin)",
+          "example": "bob",
+          "member": "string",
+          "name": "Receivers",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Notification  int  1关闭 2开启 不变更为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Notification",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Reports": {
+      "document": "报表列表字段数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成时间",
+          "example": "0",
+          "member": "int64",
+          "name": "AddTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "0",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报告 ID",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计 ID",
+          "example": "0",
+          "member": "int64",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已删除",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDelete",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发送目标",
+          "example": "bob",
+          "member": "string",
+          "name": "Receivers",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报告说明",
+          "example": "11 月会话分析",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报告文件",
+          "example": "file.html",
+          "member": "string",
+          "name": "ReportFile",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportTmpStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报告类型",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发送结果",
+          "example": "success",
+          "member": "string",
+          "name": "SendResult",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发送类型",
+          "example": "site",
+          "member": "string",
+          "name": "SendType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "0",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报告名称",
+          "example": "11 月会话分析",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报表模板",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含资产",
+          "example": "[]",
+          "member": "AssetsInfo",
+          "name": "AssetsList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间范围 1:24小时 7:近一周 30:近30天 90:近90天 180:近180天 不变更为0",
+          "example": "0",
+          "member": "int64",
+          "name": "CntDay",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
