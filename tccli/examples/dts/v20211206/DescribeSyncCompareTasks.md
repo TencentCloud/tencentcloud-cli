@@ -55,7 +55,7 @@ Output:
                     ],
                     "ObjectMode": "partial",
                     "AdvancedObjects": [
-                        "abc"
+                        "function"
                     ]
                 },
                 "CreatedAt": "2022-07-11 17:21:02",

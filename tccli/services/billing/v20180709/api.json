@@ -16925,7 +16925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量，最大值为100",
+          "document": "<p>数量，最大值为100</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -16934,7 +16934,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -16943,7 +16943,7 @@
         },
         {
           "disabled": false,
-          "document": "周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。",
+          "document": "<p>周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>",
           "example": "2025-01-01 00:00:00",
           "member": "datetime",
           "name": "BeginTime",
@@ -16952,7 +16952,7 @@
         },
         {
           "disabled": false,
-          "document": "周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。",
+          "document": "<p>周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。</p>",
           "example": "2025-01-31 23:59:59",
           "member": "datetime",
           "name": "EndTime",
@@ -16961,7 +16961,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "document": "<p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>",
           "example": "0",
           "member": "uint64",
           "name": "NeedRecordNum",
@@ -16970,7 +16970,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。",
+          "document": "<p>月份，格式为yyyy-mm，Month和BeginTime&amp;EndTime必传一个，如果有传BeginTime&amp;EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。</p>",
           "example": "2025-01",
           "member": "string",
           "name": "Month",
@@ -16979,7 +16979,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指定产品信息",
+          "document": "<p>查询指定产品信息</p>",
           "example": "sp_cls",
           "member": "string",
           "name": "ProductCode",
@@ -16988,7 +16988,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式 prePay/postPay",
+          "document": "<p>付费模式 prePay/postPay</p>",
           "example": "postPay",
           "member": "string",
           "name": "PayMode",
@@ -16997,10 +16997,37 @@
         },
         {
           "disabled": false,
-          "document": "查询指定资源信息",
+          "document": "<p>查询指定资源信息</p>",
           "example": "1400532488",
           "member": "string",
           "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称代码</p>",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID:资源所属项目ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "RegionId",
           "required": false,
           "type": "string"
         }
@@ -17012,7 +17039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消耗明细",
+          "document": "<p>消耗明细</p>",
           "example": "无",
           "member": "CostDetail",
           "name": "DetailSet",
@@ -17022,7 +17049,7 @@
         },
         {
           "disabled": false,
-          "document": "记录数",
+          "document": "<p>记录数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -17547,7 +17574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "document": "<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>",
           "example": "2024-11",
           "member": "string",
           "name": "BeginTime",
@@ -17556,7 +17583,7 @@
         },
         {
           "disabled": false,
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "document": "<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。</p>",
           "example": "2024-11",
           "member": "string",
           "name": "EndTime",
@@ -17565,7 +17592,7 @@
         },
         {
           "disabled": false,
-          "document": "每次获取数据量，最大值为100",
+          "document": "<p>每次获取数据量，最大值为100</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -17574,7 +17601,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量,默认从0开始",
+          "document": "<p>偏移量,默认从0开始</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -17583,7 +17610,7 @@
         },
         {
           "disabled": false,
-          "document": "查询账单数据的用户UIN",
+          "document": "<p>查询账单数据的用户UIN</p>",
           "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
@@ -17592,7 +17619,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回记录数量，0不需要，1需要，默认不需要",
+          "document": "<p>是否需要返回记录数量，0不需要，1需要，默认不需要</p>",
           "example": "0",
           "member": "uint64",
           "name": "NeedRecordNum",
@@ -17601,7 +17628,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回过滤条件，0不需要，1需要，默认不需要",
+          "document": "<p>是否需要返回过滤条件，0不需要，1需要，默认不需要</p>",
           "example": "0",
           "member": "uint64",
           "name": "NeedConditionValue",
@@ -17610,12 +17637,30 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）",
+          "document": "<p>过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）</p>",
           "example": "无",
           "member": "Conditions",
           "name": "Conditions",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分账标签键，用户自定义</p>",
+          "example": "olinatest",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分账标签值，该参数为空表示该标签键下未设置标签值的记录</p>",
+          "example": "选项4",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17625,7 +17670,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0未准备好，1准备好",
+          "document": "<p>数据是否准备好，0未准备好，1准备好</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
@@ -17635,7 +17680,7 @@
         },
         {
           "disabled": false,
-          "document": "消耗详情",
+          "document": "<p>消耗详情</p>",
           "example": "无",
           "member": "ConsumptionSummaryTotal",
           "name": "Total",
@@ -17645,7 +17690,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "<p>过滤条件</p>",
           "example": "无",
           "member": "ConsumptionResourceSummaryConditionValue",
           "name": "ConditionValue",
@@ -17655,7 +17700,7 @@
         },
         {
           "disabled": false,
-          "document": "记录数量",
+          "document": "<p>记录数量</p>",
           "example": "29",
           "member": "uint64",
           "name": "RecordNum",
@@ -17665,7 +17710,7 @@
         },
         {
           "disabled": false,
-          "document": "资源消耗详情",
+          "document": "<p>资源消耗详情</p>",
           "example": "无",
           "member": "ConsumptionResourceSummaryDataItem",
           "name": "Data",

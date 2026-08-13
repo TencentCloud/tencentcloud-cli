@@ -9957,7 +9957,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区</p>",
+          "document": "<p>集群主可用区</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -10257,7 +10257,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>主可用区</p>",
+          "document": "<p>读写实例当前所在可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "MasterZone",
@@ -10504,6 +10504,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例当前所在可用区</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "RealZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10629,7 +10639,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可用区</p>",
+          "document": "<p>集群主可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -11029,7 +11039,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>主可用区</p>",
+          "document": "<p>读写实例当前所在可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "MasterZone",
@@ -11133,6 +11143,16 @@
           "example": "cynosdbmysql-gdn-cgsxflsb",
           "member": "string",
           "name": "GdnId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例当前所在可用区</p>",
+          "example": "ap-guangzhou-5",
+          "member": "string",
+          "name": "RealZone",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15128,7 +15148,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群Id",
+          "document": "<p>集群Id</p>",
           "example": "cynosdbpg-5804k48e",
           "member": "string",
           "name": "ClusterId",
@@ -15137,12 +15157,21 @@
         },
         {
           "disabled": false,
-          "document": "是否获取更多服务器信息，可选值yes no",
+          "document": "<p>是否获取更多服务器信息，可选值yes no</p>",
           "example": "yes",
           "member": "string",
           "name": "GetServerInfo",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>信息降级的模块列表</p>",
+          "example": "[\"netInfo\"]",
+          "member": "string",
+          "name": "DegradeModules",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15152,7 +15181,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群详细信息",
+          "document": "<p>集群详细信息</p>",
           "example": "无",
           "member": "CynosdbClusterDetail",
           "name": "Detail",
