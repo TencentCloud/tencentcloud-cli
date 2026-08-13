@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DescribeMigrationCheckJob": {
-      "document": "本接口用于创建校验后,获取校验的结果. 能查询到当前校验的状态和进度. \n若通过校验, 则可调用'StartMigrateJob' 开始迁移.\n若未通过校验, 则能查询到校验失败的原因. 请按照报错, 通过'ModifyMigrationJob'修改迁移配置或是调整源/目标实例的相关参数.",
+      "document": "本接口用于创建校验后，获取校验的结果，能查询到当前校验的状态和进度。",
       "input": "DescribeMigrationCheckJobRequest",
       "name": "查询迁移校验任务结果",
       "output": "DescribeMigrationCheckJobResponse",
@@ -797,7 +797,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "校验配置参数",
+          "document": "<p>校验配置参数</p>",
           "example": "无",
           "member": "CompareOptions",
           "name": "Options",
@@ -807,7 +807,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性校验对比对象",
+          "document": "<p>一致性校验对比对象</p>",
           "example": "无",
           "member": "CompareObject",
           "name": "Objects",
@@ -817,7 +817,7 @@
         },
         {
           "disabled": false,
-          "document": "对比结论: same,different",
+          "document": "<p>对比结论: same,different</p>",
           "example": "same",
           "member": "string",
           "name": "Conclusion",
@@ -827,7 +827,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态: success,failed",
+          "document": "<p>任务状态: success,failed</p>",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -837,7 +837,7 @@
         },
         {
           "disabled": false,
-          "document": "总的表数量",
+          "document": "<p>总的表数量</p>",
           "example": "100",
           "member": "uint64",
           "name": "TotalTables",
@@ -847,7 +847,7 @@
         },
         {
           "disabled": false,
-          "document": "已校验的表数量",
+          "document": "<p>已校验的表数量</p>",
           "example": "100",
           "member": "uint64",
           "name": "CheckedTables",
@@ -857,7 +857,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致的表数量",
+          "document": "<p>不一致的表数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "DifferentTables",
@@ -867,7 +867,7 @@
         },
         {
           "disabled": false,
-          "document": "跳过校验的表数量",
+          "document": "<p>跳过校验的表数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "SkippedTables",
@@ -877,7 +877,7 @@
         },
         {
           "disabled": false,
-          "document": "预估表总数",
+          "document": "<p>预估表总数</p>",
           "example": "100",
           "member": "uint64",
           "name": "NearlyTableCount",
@@ -887,7 +887,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致的数据行数量",
+          "document": "<p>不一致的数据行数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "DifferentRows",
@@ -897,7 +897,7 @@
         },
         {
           "disabled": false,
-          "document": "源库行数，当对比类型为**行数对比**时此项有意义",
+          "document": "<p>源库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>",
           "example": "100000",
           "member": "uint64",
           "name": "SrcSampleRows",
@@ -907,7 +907,7 @@
         },
         {
           "disabled": false,
-          "document": "目标库行数，当对比类型为**行数对比**时此项有意义",
+          "document": "<p>目标库行数，当对比类型为<strong>行数对比</strong>时此项有意义</p>",
           "example": "100000",
           "member": "uint64",
           "name": "DstSampleRows",
@@ -917,7 +917,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-19 15:54:18",
           "member": "string",
           "name": "StartedAt",
@@ -927,7 +927,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-19 15:58:18",
           "member": "string",
           "name": "FinishedAt",
@@ -1095,7 +1095,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "db1",
           "member": "string",
           "name": "DbName",
@@ -1106,7 +1106,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象",
+          "document": "<p>数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象</p>",
           "example": "all",
           "member": "string",
           "name": "DbMode",
@@ -1117,7 +1117,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名称",
+          "document": "<p>schema名称</p>",
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
@@ -1128,7 +1128,7 @@
         },
         {
           "disabled": false,
-          "document": "表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象",
+          "document": "<p>表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象</p>",
           "example": "all",
           "member": "string",
           "name": "TableMode",
@@ -1139,7 +1139,7 @@
         },
         {
           "disabled": false,
-          "document": "用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写",
+          "document": "<p>用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写</p>",
           "example": "无",
           "member": "CompareTableItem",
           "name": "Tables",
@@ -1150,7 +1150,7 @@
         },
         {
           "disabled": false,
-          "document": "视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)",
+          "document": "<p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)</p>",
           "example": "all",
           "member": "string",
           "name": "ViewMode",
@@ -1161,7 +1161,7 @@
         },
         {
           "disabled": false,
-          "document": "用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写(一致性校验不校验视图，当前参数未启作用)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompareViewItem",
           "name": "Views",
@@ -1348,7 +1348,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "库名",
+          "document": "<p>库名</p>",
           "example": "db1",
           "member": "string",
           "name": "Db",
@@ -1358,7 +1358,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名",
+          "document": "<p>schema名</p>",
           "example": "schema1",
           "member": "string",
           "name": "Schema",
@@ -1368,7 +1368,7 @@
         },
         {
           "disabled": false,
-          "document": "表名",
+          "document": "<p>表名</p>",
           "example": "tab1",
           "member": "string",
           "name": "Table",
@@ -1378,7 +1378,7 @@
         },
         {
           "disabled": false,
-          "document": "校验结果",
+          "document": "<p>校验结果</p>",
           "example": "different",
           "member": "string",
           "name": "Conclusion",
@@ -1388,7 +1388,7 @@
         },
         {
           "disabled": false,
-          "document": "校验状态。仅全量阶段有意义",
+          "document": "<p>校验状态。仅全量阶段有意义</p>",
           "example": "Completed",
           "member": "string",
           "name": "Status",
@@ -1398,7 +1398,7 @@
         },
         {
           "disabled": false,
-          "document": "校验进度。仅全量阶段有意义",
+          "document": "<p>校验进度。仅全量阶段有意义</p>",
           "example": "100",
           "member": "int64",
           "name": "Progress",
@@ -1408,7 +1408,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致行数",
+          "document": "<p>不一致行数</p>",
           "example": "50",
           "member": "int64",
           "name": "RowCount",
@@ -1418,7 +1418,7 @@
         },
         {
           "disabled": false,
-          "document": "该表开始校验的时间",
+          "document": "<p>该表开始校验的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2025-06-03 12:00:00",
           "member": "string",
           "name": "StartedAt",
@@ -1428,7 +1428,7 @@
         },
         {
           "disabled": false,
-          "document": "该表校验结束的时间",
+          "document": "<p>该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2025-06-03 14:00:00",
           "member": "string",
           "name": "FinishedAt",
@@ -1438,7 +1438,7 @@
         },
         {
           "disabled": false,
-          "document": "预计该表校验结束的时间",
+          "document": "<p>预计该表校验结束的时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2025-06-03 14:00:00",
           "member": "string",
           "name": "ExpectedAt",
@@ -1448,7 +1448,7 @@
         },
         {
           "disabled": false,
-          "document": "源端行数，如果是行数校验此值有意义",
+          "document": "<p>源端行数，如果是行数校验此值有意义</p>",
           "example": "100",
           "member": "string",
           "name": "SrcItem",
@@ -1458,7 +1458,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端行数，如果是行数校验此值有意义",
+          "document": "<p>目标端行数，如果是行数校验此值有意义</p>",
           "example": "100",
           "member": "string",
           "name": "DstItem",
@@ -1500,7 +1500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "dts-e7ukka6g",
           "member": "string",
           "name": "JobId",
@@ -1510,7 +1510,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务 Id",
+          "document": "<p>对比任务 Id</p>",
           "example": "dts-e7ukka6g-cmp-c7tnusmo",
           "member": "string",
           "name": "CompareTaskId",
@@ -1520,7 +1520,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务名称",
+          "document": "<p>对比任务名称</p>",
           "example": "compare",
           "member": "string",
           "name": "TaskName",
@@ -1530,7 +1530,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止",
+          "document": "<p>对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -1540,7 +1540,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务配置",
+          "document": "<p>对比任务配置</p>",
           "example": "无",
           "member": "CompareObject",
           "name": "Config",
@@ -1550,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务校验详情",
+          "document": "<p>对比任务校验详情</p>",
           "example": "无",
           "member": "ProcessProgress",
           "name": "CheckProcess",
@@ -1560,7 +1560,7 @@
         },
         {
           "disabled": false,
-          "document": "对比任务运行详情",
+          "document": "<p>对比任务运行详情</p>",
           "example": "无",
           "member": "ProcessProgress",
           "name": "CompareProcess",
@@ -1570,7 +1570,7 @@
         },
         {
           "disabled": false,
-          "document": "对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过",
+          "document": "<p>对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过</p>",
           "example": "same",
           "member": "string",
           "name": "Conclusion",
@@ -1580,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "CreatedAt",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启动时间",
+          "document": "<p>任务启动时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "StartedAt",
@@ -1600,7 +1600,7 @@
         },
         {
           "disabled": false,
-          "document": "对比结束时间",
+          "document": "<p>对比结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "FinishedAt",
@@ -1610,7 +1610,7 @@
         },
         {
           "disabled": false,
-          "document": "对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)",
+          "document": "<p>对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)</p>",
           "example": "dataCheck",
           "member": "string",
           "name": "Method",
@@ -1620,7 +1620,7 @@
         },
         {
           "disabled": false,
-          "document": "对比配置信息",
+          "document": "<p>对比配置信息</p>",
           "example": "无",
           "member": "CompareOptions",
           "name": "Options",
@@ -1630,7 +1630,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性校验提示信息",
+          "document": "<p>一致性校验提示信息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -1879,7 +1879,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>期待启动时间，当RunMode取值为Timed时，此值必填，形如：&quot;2006-01-02 15:04:05&quot;</p>",
+          "document": "<p>期待启动时间，当 <code>RunMode</code> 取值为 <code>Timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）传入</p>",
           "example": "2022-12-06 00:00:00",
           "member": "string",
           "name": "ExpectRunTime",
@@ -1951,7 +1951,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速</p>",
+          "document": "<p>同步任务选项</p>",
           "example": "无",
           "member": "Options",
           "name": "Options",
@@ -3165,7 +3165,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要迁移或同步的库名，当ObjectMode为partial时，此项必填",
+          "document": "<p>需要迁移或同步的库名，当ObjectMode为partial时，此项必填</p>",
           "example": "db1",
           "member": "string",
           "name": "DbName",
@@ -3176,7 +3176,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移或同步后的库名，默认与源库相同",
+          "document": "<p>迁移或同步后的库名，默认与源库相同</p>",
           "example": "db1_new",
           "member": "string",
           "name": "NewDbName",
@@ -3187,7 +3187,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移或同步的 schema",
+          "document": "<p>迁移或同步的 schema</p>",
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
@@ -3198,7 +3198,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移或同步后的 schema name",
+          "document": "<p>迁移或同步后的 schema name</p>",
           "example": "schema1_new",
           "member": "string",
           "name": "NewSchemaName",
@@ -3209,7 +3209,7 @@
         },
         {
           "disabled": false,
-          "document": "DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填",
+          "document": "<p>DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填</p>",
           "example": "all",
           "member": "string",
           "name": "DBMode",
@@ -3220,7 +3220,7 @@
         },
         {
           "disabled": false,
-          "document": "schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)",
+          "document": "<p>schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)</p>",
           "example": "all",
           "member": "string",
           "name": "SchemaMode",
@@ -3231,7 +3231,7 @@
         },
         {
           "disabled": false,
-          "document": "表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填",
+          "document": "<p>表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填</p>",
           "example": "all",
           "member": "string",
           "name": "TableMode",
@@ -3242,7 +3242,7 @@
         },
         {
           "disabled": false,
-          "document": "表图对象集合，当 TableMode 为 partial 时，此项需要填写",
+          "document": "<p>表图对象集合，当 TableMode 为 partial 时，此项需要填写</p>",
           "example": "无",
           "member": "TableItem",
           "name": "Tables",
@@ -3253,7 +3253,7 @@
         },
         {
           "disabled": false,
-          "document": "视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象",
+          "document": "<p>视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象</p>",
           "example": "all",
           "member": "string",
           "name": "ViewMode",
@@ -3264,7 +3264,7 @@
         },
         {
           "disabled": false,
-          "document": "视图对象集合，当 ViewMode 为 partial 时， 此项需要填写",
+          "document": "<p>视图对象集合，当 ViewMode 为 partial 时， 此项需要填写</p>",
           "example": "无",
           "member": "ViewItem",
           "name": "Views",
@@ -3275,7 +3275,7 @@
         },
         {
           "disabled": false,
-          "document": "postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象",
+          "document": "<p>postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象</p>",
           "example": "all",
           "member": "string",
           "name": "RoleMode",
@@ -3286,7 +3286,7 @@
         },
         {
           "disabled": false,
-          "document": "postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写",
+          "document": "<p>postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写</p>",
           "example": "无",
           "member": "RoleItem",
           "name": "Roles",
@@ -3297,7 +3297,7 @@
         },
         {
           "disabled": false,
-          "document": "选择要同步的模式，partial为部分，all为整选",
+          "document": "<p>选择要同步的模式，partial为部分，all为整选</p>",
           "example": "all",
           "member": "string",
           "name": "FunctionMode",
@@ -3308,7 +3308,7 @@
         },
         {
           "disabled": false,
-          "document": "选择要同步的模式，partial为部分，all为整选",
+          "document": "<p>选择要同步的模式，partial为部分，all为整选</p>",
           "example": "all",
           "member": "string",
           "name": "TriggerMode",
@@ -3319,7 +3319,7 @@
         },
         {
           "disabled": false,
-          "document": "选择要同步的模式，partial为部分，all为整选",
+          "document": "<p>选择要同步的模式，partial为部分，all为整选</p>",
           "example": "all",
           "member": "string",
           "name": "EventMode",
@@ -3330,7 +3330,7 @@
         },
         {
           "disabled": false,
-          "document": "选择要同步的模式，partial为部分，all为整选",
+          "document": "<p>选择要同步的模式，partial为部分，all为整选</p>",
           "example": "all",
           "member": "string",
           "name": "ProcedureMode",
@@ -3341,7 +3341,7 @@
         },
         {
           "disabled": false,
-          "document": "FunctionMode取值为partial时需要填写",
+          "document": "<p>FunctionMode取值为partial时需要填写</p>",
           "example": "[\"function_name\"]",
           "member": "string",
           "name": "Functions",
@@ -3352,7 +3352,7 @@
         },
         {
           "disabled": false,
-          "document": "ProcedureMode取值为partial时需要填写",
+          "document": "<p>ProcedureMode取值为partial时需要填写</p>",
           "example": "[\"procedure_name\"]",
           "member": "string",
           "name": "Procedures",
@@ -3363,7 +3363,7 @@
         },
         {
           "disabled": false,
-          "document": "EventMode取值为partial时需要填写",
+          "document": "<p>EventMode取值为partial时需要填写</p>",
           "example": "[\"event_name\"]",
           "member": "string",
           "name": "Events",
@@ -3374,7 +3374,7 @@
         },
         {
           "disabled": false,
-          "document": "TriggerMode取值为partial时需要填写",
+          "document": "<p>TriggerMode取值为partial时需要填写</p>",
           "example": "[\"trigger_name\"]",
           "member": "string",
           "name": "Triggers",
@@ -3915,7 +3915,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "<p>迁移任务 Id</p>",
           "example": "dts-test1234",
           "member": "string",
           "name": "JobId",
@@ -3924,7 +3924,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务 Id",
+          "document": "<p>校验任务 Id</p>",
           "example": "dts-test1234-cmp-test1234",
           "member": "string",
           "name": "CompareTaskId",
@@ -3933,7 +3933,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "db1",
           "member": "string",
           "name": "DBName",
@@ -3942,7 +3942,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名",
+          "document": "<p>schema名</p>",
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
@@ -3951,7 +3951,7 @@
         },
         {
           "disabled": false,
-          "document": "数据表名",
+          "document": "<p>数据表名</p>",
           "example": "tbl1",
           "member": "string",
           "name": "TableName",
@@ -3960,7 +3960,7 @@
         },
         {
           "disabled": false,
-          "document": "数据分块号",
+          "document": "<p>数据分块号</p>",
           "example": "1",
           "member": "int64",
           "name": "ChunkId",
@@ -3969,7 +3969,7 @@
         },
         {
           "disabled": false,
-          "document": "分页条件，查询结果返回条数",
+          "document": "<p>分页条件，查询结果返回条数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -3978,7 +3978,7 @@
         },
         {
           "disabled": false,
-          "document": "分页条件，查询的起始位置",
+          "document": "<p>分页条件，查询的起始位置</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3993,7 +3993,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询结果的数量",
+          "document": "<p>查询结果的数量</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -4003,7 +4003,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>查询结果详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiffChunkItem",
           "name": "Items",
@@ -4153,7 +4153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id，可通过 [DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084) 接口获取。\n",
+          "document": "<p>迁移任务 Id，可通过 <a href=\"https://cloud.tencent.com/document/product/571/82084\">DescribeMigrationJobs</a> 接口获取。</p>",
           "example": "dts-e7ukka6g",
           "member": "string",
           "name": "JobId",
@@ -4162,7 +4162,7 @@
         },
         {
           "disabled": false,
-          "document": "分页设置，表示每页显示多少条任务，默认为 20",
+          "document": "<p>分页设置，表示每页显示多少条任务，默认为 20</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -4171,7 +4171,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量",
+          "document": "<p>分页偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -4180,7 +4180,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务 ID",
+          "document": "<p>校验任务 ID</p>",
           "example": "dts-5ftw8366-compare-n0pee6pc",
           "member": "string",
           "name": "CompareTaskId",
@@ -4189,7 +4189,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止",
+          "document": "<p>任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>",
           "example": "[\"running\"]",
           "member": "string",
           "name": "Status",
@@ -4204,7 +4204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量",
+          "document": "<p>数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -4214,7 +4214,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性校验列表",
+          "document": "<p>一致性校验列表</p>",
           "example": "无",
           "member": "CompareTaskItem",
           "name": "Items",
@@ -4581,7 +4581,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
+          "document": "<p>数据迁移任务ID，可通过<a href=\"https://cloud.tencent.com/document/product/571/82084\">DescribeMigrationJobs</a>接口获取。</p>",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -4596,7 +4596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "<p>数据迁移任务ID</p>",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -4606,7 +4606,7 @@
         },
         {
           "disabled": false,
-          "document": "数据迁移任务名称",
+          "document": "<p>数据迁移任务名称</p>",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobName",
@@ -4616,7 +4616,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>任务创建(提交)时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "CreateTime",
@@ -4626,7 +4626,7 @@
         },
         {
           "disabled": false,
-          "document": "任务更新时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>任务更新时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "UpdateTime",
@@ -4636,7 +4636,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>任务开始执行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "StartTime",
@@ -4646,7 +4646,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>任务执行结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "EndTime",
@@ -4656,7 +4656,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移任务简要错误信息",
+          "document": "<p>迁移任务简要错误信息</p>",
           "example": "dial tcp : i/o timeout",
           "member": "string",
           "name": "BriefMsg",
@@ -4666,7 +4666,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、\npausing(暂停中)、\nmanualPaused(已暂停)",
+          "document": "<p>任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、<br>pausing(暂停中)、<br>manualPaused(已暂停)</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -4676,7 +4676,7 @@
         },
         {
           "disabled": false,
-          "document": "任务操作信息",
+          "document": "<p>任务操作信息</p>",
           "example": "无",
           "member": "MigrateAction",
           "name": "Action",
@@ -4686,7 +4686,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息",
+          "document": "<p>迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息</p>",
           "example": "无",
           "member": "MigrateDetailInfo",
           "name": "StepInfo",
@@ -4696,7 +4696,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例信息",
+          "document": "<p>源实例信息</p>",
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "SrcInfo",
@@ -4706,7 +4706,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端信息",
+          "document": "<p>目标端信息</p>",
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "DstInfo",
@@ -4716,7 +4716,7 @@
         },
         {
           "disabled": false,
-          "document": "数据一致性校验结果",
+          "document": "<p>数据一致性校验结果</p>",
           "example": "无",
           "member": "CompareTaskInfo",
           "name": "CompareTask",
@@ -4726,7 +4726,7 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
+          "document": "<p>标签信息</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -4736,7 +4736,7 @@
         },
         {
           "disabled": false,
-          "document": "运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)",
+          "document": "<p>运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)</p>",
           "example": "immediate",
           "member": "string",
           "name": "RunMode",
@@ -4746,7 +4746,7 @@
         },
         {
           "disabled": false,
-          "document": "期待启动时间，当RunMode取值为timed时，此值必填，形如：\"2006-01-02 15:04:05\"",
+          "document": "<p>期待启动时间，当 <code>RunMode</code> 取值为 <code>timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "ExpectRunTime",
@@ -4756,7 +4756,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移选项，描述任务如何执行迁移等一系列配置信息",
+          "document": "<p>迁移选项，描述任务如何执行迁移等一系列配置信息</p>",
           "example": "无",
           "member": "MigrateOption",
           "name": "MigrateOption",
@@ -4766,7 +4766,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务运行详情",
+          "document": "<p>校验任务运行详情</p>",
           "example": "无",
           "member": "CheckStepInfo",
           "name": "CheckStepInfo",
@@ -4776,7 +4776,7 @@
         },
         {
           "disabled": false,
-          "document": "描述计费相关的信息",
+          "document": "<p>描述计费相关的信息</p>",
           "example": "无",
           "member": "TradeInfo",
           "name": "TradeInfo",
@@ -4786,7 +4786,7 @@
         },
         {
           "disabled": false,
-          "document": "任务错误信息",
+          "document": "<p>任务错误信息</p>",
           "example": "无",
           "member": "ErrorInfoItem",
           "name": "ErrorInfo",
@@ -4796,7 +4796,7 @@
         },
         {
           "disabled": false,
-          "document": "全量导出可重入标识：enum::\"yes\"/\"no\"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传",
+          "document": "<p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>",
           "example": "yes",
           "member": "string",
           "name": "DumperResumeCtrl",
@@ -4806,7 +4806,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的限速信息",
+          "document": "<p>任务的限速信息</p>",
           "example": "无",
           "member": "RateLimitOption",
           "name": "RateLimitOption",
@@ -5087,7 +5087,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
+          "document": "<p>数据订阅实例的 ID，可通过<a href=\"https://cloud.tencent.com/document/product/571/102943\">DescribeSubscribeJobs</a>接口获取。</p>",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -5096,7 +5096,7 @@
         },
         {
           "disabled": false,
-          "document": "时间点，格式为：Y-m-d h:m:s。如果输入时间比当前时间晚的多，相当于查询最新offset；如果输入时间比当前时间早的多，相当于查询最老offset；如果输入空，默认0时间，等价于查询最老offset。",
+          "document": "<p>时间。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>Y-m-d h:m:s</code>（北京时间）传入。如果输入时间比当前时间晚的多，相当于查询最新 offset；如果输入时间比当前时间早的多，相当于查询最老 offset；如果输入空，默认 0 时间，等价于查询最老 offset。</p><p>参数格式：2026-04-23T20:21:35+08:00</p>",
           "example": "2023-05-15 16:31:33",
           "member": "string",
           "name": "Time",
@@ -5111,7 +5111,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间与Offset的对应",
+          "document": "<p>时间与Offset的对应</p>",
           "example": "无",
           "member": "OffsetTimeMap",
           "name": "Items",
@@ -5315,7 +5315,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>修改时间。</p>",
+          "document": "<p>修改时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>",
           "example": "2023-06-30 12:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -5325,7 +5325,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间。</p>",
+          "document": "<p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>",
           "example": "2023-06-30 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -5335,7 +5335,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>隔离时间。</p>",
+          "document": "<p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "IsolateTime",
@@ -5345,7 +5345,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>包年包月任务的到期时间。</p>",
+          "document": "<p>包年包月任务的到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>",
           "example": "2023-07-30 12:00:00",
           "member": "string",
           "name": "ExpireTime",
@@ -5355,7 +5355,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>下线时间。</p>",
+          "document": "<p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>Y-m-d h:m:s</code>（北京时间）。</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "OfflineTime",
@@ -5577,7 +5577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅 ID 筛选，精确匹配",
+          "document": "<p>订阅 ID 筛选，精确匹配</p>",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -5586,8 +5586,8 @@
         },
         {
           "disabled": false,
-          "document": "订阅 ID 筛选，精确匹配",
-          "example": "[\"subs-9jyki7hniw\",\"subs-31adyjj41f\"]\"]",
+          "document": "<p>订阅 ID 筛选，精确匹配</p>",
+          "example": "[\"subs-9jyki7hniw\",\"subs-31adyjj41f\"]",
           "member": "string",
           "name": "SubscribeIds",
           "required": false,
@@ -5595,7 +5595,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅名称，前缀模糊匹配",
+          "document": "<p>订阅名称，前缀模糊匹配</p>",
           "example": "binlog订阅",
           "member": "string",
           "name": "SubscribeName",
@@ -5604,7 +5604,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的云上数据库实例的 ID，精确匹配",
+          "document": "<p>订阅的云上数据库实例的 ID，精确匹配</p>",
           "example": "cdb-kdxona7h",
           "member": "string",
           "name": "InstanceId",
@@ -5613,7 +5613,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的topicName",
+          "document": "<p>订阅的topicName</p>",
           "example": "topic-subs-g9k9ct7gmc--6itdltb8",
           "member": "string",
           "name": "Topic",
@@ -5622,7 +5622,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式筛选，可能的值：0-包年包月，1-按量计费",
+          "document": "<p>计费模式筛选，可能的值：0-包年包月，1-按量计费</p>",
           "example": "1",
           "member": "int64",
           "name": "PayType",
@@ -5631,7 +5631,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)",
+          "document": "<p>订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -5640,8 +5640,8 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng",
-          "example": "normal",
+          "document": "<p>数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng</p>",
+          "example": "[\"normal\"]",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -5649,8 +5649,8 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error",
-          "example": "running",
+          "document": "<p>数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error</p>",
+          "example": "[\"running\"]",
           "member": "string",
           "name": "SubsStatus",
           "required": false,
@@ -5658,7 +5658,7 @@
         },
         {
           "disabled": false,
-          "document": "返回记录的起始偏移量。默认0",
+          "document": "<p>返回记录的起始偏移量。默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5667,7 +5667,7 @@
         },
         {
           "disabled": false,
-          "document": "单次返回的记录数量。默认20，最大100",
+          "document": "<p>单次返回的记录数量。默认20，最大100</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -5676,7 +5676,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方向，可选的值为\"DESC\"和\"ASC\"，默认为\"DESC\"，按创建时间逆序排序",
+          "document": "<p>排序方向，可选的值为&quot;DESC&quot;和&quot;ASC&quot;，默认为&quot;DESC&quot;，按创建时间逆序排序</p>",
           "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
@@ -5685,7 +5685,7 @@
         },
         {
           "disabled": false,
-          "document": "tag 过滤条件，多个 TagFilter 之间关系为且",
+          "document": "<p>tag 过滤条件，多个 TagFilter 之间关系为且</p>",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -5700,7 +5700,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合查询条件的实例总数",
+          "document": "<p>符合查询条件的实例总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -5710,7 +5710,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例的信息列表",
+          "document": "<p>数据订阅实例的信息列表</p>",
           "example": "无",
           "member": "SubscribeInfo",
           "name": "Items",
@@ -5779,7 +5779,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "<p>迁移任务 Id</p>",
           "example": "dts-test1234",
           "member": "string",
           "name": "JobId",
@@ -5788,7 +5788,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务 Id",
+          "document": "<p>校验任务 Id</p>",
           "example": "dts-test1234-cmp-test1234",
           "member": "string",
           "name": "CompareTaskId",
@@ -5797,7 +5797,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "db1",
           "member": "string",
           "name": "DBName",
@@ -5806,7 +5806,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名",
+          "document": "<p>schema名</p>",
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
@@ -5815,7 +5815,7 @@
         },
         {
           "disabled": false,
-          "document": "数据表名",
+          "document": "<p>数据表名</p>",
           "example": "tbl1",
           "member": "string",
           "name": "TableName",
@@ -5824,7 +5824,7 @@
         },
         {
           "disabled": false,
-          "document": "数据分块号",
+          "document": "<p>数据分块号</p>",
           "example": "1",
           "member": "int64",
           "name": "ChunkId",
@@ -5833,7 +5833,7 @@
         },
         {
           "disabled": false,
-          "document": "分页条件，查询结果返回条数",
+          "document": "<p>分页条件，查询结果返回条数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5842,7 +5842,7 @@
         },
         {
           "disabled": false,
-          "document": "分页条件，查询的起始位置",
+          "document": "<p>分页条件，查询的起始位置</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5857,7 +5857,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询结果的数量",
+          "document": "<p>查询结果的数量</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -5867,7 +5867,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>查询结果详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiffChunkItem",
           "name": "Items",
@@ -6027,7 +6027,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 Id",
+          "document": "<p>任务 Id</p>",
           "example": "sync-e7ukka6g",
           "member": "string",
           "name": "JobId",
@@ -6036,7 +6036,7 @@
         },
         {
           "disabled": false,
-          "document": "分页设置，表示每页显示多少条任务，默认为 20",
+          "document": "<p>分页设置，表示每页显示多少条任务，默认为 20</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -6045,7 +6045,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量",
+          "document": "<p>分页偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6054,7 +6054,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务 ID",
+          "document": "<p>校验任务 ID</p>",
           "example": "sync-5ftw8366-compare-n0pee6pc",
           "member": "string",
           "name": "CompareTaskId",
@@ -6063,7 +6063,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止",
+          "document": "<p>任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止</p>",
           "example": "[\"running\"]",
           "member": "string",
           "name": "Status",
@@ -6078,7 +6078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -6088,7 +6088,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性校验任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>一致性校验任务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompareTaskItem",
           "name": "Items",
@@ -6195,7 +6195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id，如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
+          "document": "<p>同步任务id，如sync-werwfs23，可通过<a href=\"https://cloud.tencent.com/document/product/571/82103\">DescribeSyncJobs</a>接口获取。</p>",
           "example": "sync-n3gh7md9",
           "member": "string",
           "name": "JobId",
@@ -6204,7 +6204,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务id列表，如[\"sync-n3gh7md9\"]",
+          "document": "<p>同步任务id列表，如[&quot;sync-n3gh7md9&quot;]</p>",
           "example": "[\"sync-n3gh7md9\"]",
           "member": "string",
           "name": "JobIds",
@@ -6213,7 +6213,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务名",
+          "document": "<p>同步任务名</p>",
           "example": "sync-n3gh7md9",
           "member": "string",
           "name": "JobName",
@@ -6222,7 +6222,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，目前仅支持CreateTime字段排序",
+          "document": "<p>排序字段，目前仅支持CreateTime字段排序</p>",
           "example": "CreateTime",
           "member": "string",
           "name": "Order",
@@ -6231,7 +6231,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，升序为ASC，降序为DESC，默认为CreateTime降序",
+          "document": "<p>排序方式，升序为ASC，降序为DESC，默认为CreateTime降序</p>",
           "example": "DESC",
           "member": "string",
           "name": "OrderSeq",
@@ -6240,7 +6240,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "<p>偏移量，默认为0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6249,7 +6249,7 @@
         },
         {
           "disabled": false,
-          "document": "返回同步任务实例数量，默认20，有效区间[1,100]",
+          "document": "<p>返回同步任务实例数量，默认20，有效区间[1,100]</p>",
           "example": "2",
           "member": "uint64",
           "name": "Limit",
@@ -6258,7 +6258,7 @@
         },
         {
           "disabled": false,
-          "document": "状态集合，如Initialized(初始化),CheckPass(校验通过),Running(运行中),ResumableErr(恢复中),Stopped(已结束)",
+          "document": "<p>状态集合，如Initialized(初始化),CheckPass(校验通过),Running(运行中),ResumableErr(恢复中),Stopped(已结束)</p>",
           "example": "[\"Running\"]",
           "member": "string",
           "name": "Status",
@@ -6267,7 +6267,7 @@
         },
         {
           "disabled": false,
-          "document": "运行模式，如Immediate:立即运行，Timed:定时运行",
+          "document": "<p>运行模式，如Immediate:立即运行，Timed:定时运行</p>",
           "example": "Immediate",
           "member": "string",
           "name": "RunMode",
@@ -6276,7 +6276,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型，如mysql2mysql：msyql同步到mysql;可取值有mysql2mysql、mysql2kafka、tdsqlmysql2kafka、tdsqlmysql2tdsqlmysql、tdsqlmysql2mysql、mysql2tdsqlmysql、mysql2mariadb、mariadb2mariadb、mariadb2kafka、cynosdbmysql2kafka、cynosdbmysql2cynosdbmysql、cynosdbmysql2mysql、mysql2cynosdbmysql、mariadb2tdsqlmysql、tdsqlmysql2cynosdbmysql、cynosdbmysql2tdsqlmysql、tdstore2mysql、tdstore2percona、tdstore2mariadb、tdstore2cynosdbmysql、cynosdbmysql2mariadb、mariadb2cynosdbmysql、tdsqlmysql2mariadb、mariadb2mysql、percona2mariadb、postgresql2postgresql、tdstore2tdsqlmysql、mongodb2mongodb",
+          "document": "<p>任务类型，如mysql2mysql：msyql同步到mysql;可取值有mysql2mysql、mysql2kafka、tdsqlmysql2kafka、tdsqlmysql2tdsqlmysql、tdsqlmysql2mysql、mysql2tdsqlmysql、mysql2mariadb、mariadb2mariadb、mariadb2kafka、cynosdbmysql2kafka、cynosdbmysql2cynosdbmysql、cynosdbmysql2mysql、mysql2cynosdbmysql、mariadb2tdsqlmysql、tdsqlmysql2cynosdbmysql、cynosdbmysql2tdsqlmysql、tdstore2mysql、tdstore2percona、tdstore2mariadb、tdstore2cynosdbmysql、cynosdbmysql2mariadb、mariadb2cynosdbmysql、tdsqlmysql2mariadb、mariadb2mysql、percona2mariadb、postgresql2postgresql、tdstore2tdsqlmysql、mongodb2mongodb</p>",
           "example": "mysql2mysql",
           "member": "string",
           "name": "JobType",
@@ -6285,7 +6285,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，PrePay：预付费，PostPay：后付费",
+          "document": "<p>付费类型，PrePay：预付费，PostPay：后付费</p>",
           "example": "PostPay",
           "member": "string",
           "name": "PayMode",
@@ -6294,7 +6294,7 @@
         },
         {
           "disabled": false,
-          "document": "tag",
+          "document": "<p>tag</p>",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -6303,7 +6303,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据库连接信息，可以输入实例ID或者IP等",
+          "document": "<p>源端数据库连接信息，可以输入实例ID或者IP等</p>",
           "example": "cdb-jk09iy6a",
           "member": "string",
           "name": "SrcInfoPattern",
@@ -6312,7 +6312,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端数据库连接信息，可以输入实例ID或者IP等",
+          "document": "<p>目标端数据库连接信息，可以输入实例ID或者IP等</p>",
           "example": "cdb-jk09iy6a",
           "member": "string",
           "name": "DstInfoPattern",
@@ -6327,7 +6327,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务数目",
+          "document": "<p>任务数目</p>",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
@@ -6337,7 +6337,7 @@
         },
         {
           "disabled": false,
-          "document": "任务详情数组",
+          "document": "<p>任务详情数组</p>",
           "example": "无",
           "member": "SyncJobInfo",
           "name": "JobList",
@@ -6526,7 +6526,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据库名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db1",
           "member": "string",
           "name": "DBName",
@@ -6536,7 +6536,7 @@
         },
         {
           "disabled": false,
-          "document": "schema名",
+          "document": "<p>schema名</p>",
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
@@ -6546,7 +6546,7 @@
         },
         {
           "disabled": false,
-          "document": "数据表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据表名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tbl1",
           "member": "string",
           "name": "TableName",
@@ -6556,7 +6556,7 @@
         },
         {
           "disabled": false,
-          "document": "分块号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分块号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ChunkId",
@@ -6566,7 +6566,7 @@
         },
         {
           "disabled": false,
-          "document": "数据标识符，比如主键信息等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据标识符，比如主键信息等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
           "member": "string",
           "name": "Identifier",
@@ -6576,7 +6576,7 @@
         },
         {
           "disabled": false,
-          "document": "不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>不一致类型，可能的取值为：data - 两边数据不一致；srcLack - 源缺失；dstLack - 目标缺失</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "srcLack",
           "member": "string",
           "name": "DiffType",
@@ -6586,7 +6586,7 @@
         },
         {
           "disabled": false,
-          "document": "表结构信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表结构信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"id\",\"name\"]",
           "member": "string",
           "name": "SchemaInfo",
@@ -6596,7 +6596,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>源端数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1\",\"dts\"]",
           "member": "string",
           "name": "SrcItem",
@@ -6606,7 +6606,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标端数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"2\",\"sync\"]",
           "member": "string",
           "name": "DstItem",
@@ -6616,7 +6616,7 @@
         },
         {
           "disabled": false,
-          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-01-31 10:00:00",
           "member": "string",
           "name": "FinishedAt",
@@ -6892,7 +6892,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "db1",
           "member": "string",
           "name": "Db",
@@ -6902,7 +6902,7 @@
         },
         {
           "disabled": false,
-          "document": "schema",
+          "document": "<p>schema</p>",
           "example": "schema1",
           "member": "string",
           "name": "Schema",
@@ -6912,7 +6912,7 @@
         },
         {
           "disabled": false,
-          "document": "表名",
+          "document": "<p>表名</p>",
           "example": "t1",
           "member": "string",
           "name": "Table",
@@ -6922,7 +6922,7 @@
         },
         {
           "disabled": false,
-          "document": "分块号",
+          "document": "<p>分块号</p>",
           "example": "10",
           "member": "int64",
           "name": "Chunk",
@@ -6932,7 +6932,7 @@
         },
         {
           "disabled": false,
-          "document": "源库数值",
+          "document": "<p>源库数值</p>",
           "example": "1",
           "member": "string",
           "name": "SrcItem",
@@ -6942,7 +6942,7 @@
         },
         {
           "disabled": false,
-          "document": "目标库数值",
+          "document": "<p>目标库数值</p>",
           "example": "0",
           "member": "string",
           "name": "DstItem",
@@ -6952,7 +6952,7 @@
         },
         {
           "disabled": false,
-          "document": "索引名称",
+          "document": "<p>索引名称</p>",
           "example": "PRIMARY",
           "member": "string",
           "name": "IndexName",
@@ -6962,7 +6962,7 @@
         },
         {
           "disabled": false,
-          "document": "索引下边界",
+          "document": "<p>索引下边界</p>",
           "example": "[\"1\",\"1\",\"2023-12-26\"]",
           "member": "string",
           "name": "LowerBoundary",
@@ -6972,7 +6972,7 @@
         },
         {
           "disabled": false,
-          "document": "索引上边界",
+          "document": "<p>索引上边界</p>",
           "example": "[\"+inf\"]",
           "member": "string",
           "name": "UpperBoundary",
@@ -6982,7 +6982,7 @@
         },
         {
           "disabled": false,
-          "document": "对比消耗时间,单位为 ms",
+          "document": "<p>对比消耗时间,单位为 ms</p>",
           "example": "0.48",
           "member": "float",
           "name": "CostTime",
@@ -6992,7 +6992,7 @@
         },
         {
           "disabled": false,
-          "document": "完成时间",
+          "document": "<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-26 05:14:24",
           "member": "string",
           "name": "FinishedAt",
@@ -8116,7 +8116,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "<p>数据迁移任务ID</p>",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -8126,7 +8126,7 @@
         },
         {
           "disabled": false,
-          "document": "数据迁移任务名称",
+          "document": "<p>数据迁移任务名称</p>",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobName",
@@ -8136,7 +8136,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>任务创建(提交)时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "CreateTime",
@@ -8146,7 +8146,7 @@
         },
         {
           "disabled": false,
-          "document": "任务更新时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>任务更新时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "UpdateTime",
@@ -8156,7 +8156,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>任务开始执行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "StartTime",
@@ -8166,7 +8166,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>任务执行结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "EndTime",
@@ -8176,7 +8176,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移任务错误信息",
+          "document": "<p>迁移任务错误信息</p>",
           "example": "execute fail: Error 1146: Table '__tencentdb__.eg_dts-4lcse9uh' doesn't exist",
           "member": "string",
           "name": "BriefMsg",
@@ -8186,7 +8186,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，取值为：creating(创建中)、created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(终止中)、completing(完成中)、pausing(暂停中)、manualPaused(已暂停)、resumableErr(可重试错误)、resuming(重试中)、unknown(未知状态)、error(任务错误)、canceled(已取消)",
+          "document": "<p>任务状态，取值为：creating(创建中)、created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(终止中)、completing(完成中)、pausing(暂停中)、manualPaused(已暂停)、resumableErr(可重试错误)、resuming(重试中)、unknown(未知状态)、error(任务错误)、canceled(已取消)</p>",
           "example": "created",
           "member": "string",
           "name": "Status",
@@ -8196,7 +8196,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行模式，值包括：immediate(立即运行)，timed(定时运行)",
+          "document": "<p>任务运行模式，值包括：immediate(立即运行)，timed(定时运行)</p>",
           "example": "immediate",
           "member": "string",
           "name": "RunMode",
@@ -8206,7 +8206,7 @@
         },
         {
           "disabled": false,
-          "document": "期待启动时间，当RunMode取值为timed时，此值必填，形如：2022-07-11 16:20:49",
+          "document": "<p>期待启动时间，当 <code>RunMode</code> 取值为 <code>timed</code> 时此值必填。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "ExpectRunTime",
@@ -8216,7 +8216,7 @@
         },
         {
           "disabled": false,
-          "document": "任务操作信息",
+          "document": "<p>任务操作信息</p>",
           "example": "无",
           "member": "MigrateAction",
           "name": "Action",
@@ -8226,7 +8226,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移执行过程信息",
+          "document": "<p>迁移执行过程信息</p>",
           "example": "无",
           "member": "MigrateDetailInfo",
           "name": "StepInfo",
@@ -8236,7 +8236,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例信息",
+          "document": "<p>源实例信息</p>",
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "SrcInfo",
@@ -8246,7 +8246,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端信息",
+          "document": "<p>目标端信息</p>",
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "DstInfo",
@@ -8256,7 +8256,7 @@
         },
         {
           "disabled": false,
-          "document": "数据一致性校验结果",
+          "document": "<p>数据一致性校验结果</p>",
           "example": "无",
           "member": "CompareTaskInfo",
           "name": "CompareTask",
@@ -8266,7 +8266,7 @@
         },
         {
           "disabled": false,
-          "document": "计费状态信息",
+          "document": "<p>计费状态信息</p>",
           "example": "无",
           "member": "TradeInfo",
           "name": "TradeInfo",
@@ -8276,7 +8276,7 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
+          "document": "<p>标签信息</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -8286,7 +8286,7 @@
         },
         {
           "disabled": false,
-          "document": "自动重试时间段信息",
+          "document": "<p>自动重试时间段信息</p>",
           "example": "5",
           "member": "int64",
           "name": "AutoRetryTimeRangeMinutes",
@@ -8296,7 +8296,7 @@
         },
         {
           "disabled": false,
-          "document": "全量导出可重入标识：enum::\"yes\"/\"no\"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传",
+          "document": "<p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>",
           "example": "yes",
           "member": "string",
           "name": "DumperResumeCtrl",
@@ -8615,7 +8615,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>其他附加信息，对于特定库可设置额外参数，Redis可定义如下的参数:<br>[&quot;DstWriteMode&quot;:normal,     目标库写入模式,可取值clearData(清空目标实例数据)、overwrite(以覆盖写的方式执行任务)、normal(要求目标端为空，否则校验不通过) ，不显示指定默认以覆盖写的方式执行任务    &quot;IsDstReadOnly&quot;:true,     是否在迁移时设置目标库只读,true(设置只读)、false(不设置只读)     &quot;ClientOutputBufferHardLimit&quot;:512,     从机缓冲区的硬性容量限制(MB)     &quot;ClientOutputBufferSoftLimit&quot;:512,     从机缓冲区的软性容量限制(MB)     &quot;ClientOutputBufferPersistTime&quot;:60, 从机缓冲区的软性限制持续时间(秒)     &quot;ReplBacklogSize&quot;:512,     环形缓冲区容量限制(MB)     &quot;ReplTimeout&quot;:120，        复制超时时间(秒)     &quot;IsExpireKey&quot;:&quot;true&quot;,过期key自动淘汰]</p>",
+          "document": "<p>其他附加信息，对于特定库可设置额外参数。<br>Redis可定义如下的参数:<br>[&quot;DstWriteMode&quot;:normal,     目标库写入模式,可取值clearData(清空目标实例数据)、overwrite(以覆盖写的方式执行任务)、normal(要求目标端为空，否则校验不通过) ，不显示指定默认以覆盖写的方式执行任务    &quot;IsDstReadOnly&quot;:true,     是否在迁移时设置目标库只读,true(设置只读)、false(不设置只读)     &quot;ClientOutputBufferHardLimit&quot;:512,     从机缓冲区的硬性容量限制(MB)     &quot;ClientOutputBufferSoftLimit&quot;:512,     从机缓冲区的软性容量限制(MB)     &quot;ClientOutputBufferPersistTime&quot;:60, 从机缓冲区的软性限制持续时间(秒)     &quot;ReplBacklogSize&quot;:512,     环形缓冲区容量限制(MB)     &quot;ReplTimeout&quot;:120，        复制超时时间(秒)     &quot;IsExpireKey&quot;:&quot;true&quot;,过期key自动淘汰]</p><p>Tidb可定义如下的参数<br>[&quot;tidb_increment_enable&quot;:true,     增量迁移开关,可取值true(开启增量,平台从下列ticdc_kafka_<em>字段提取用户自建Kafka配置)、false或不传(仅做结构+全量迁移,忽略所有ticdc_kafka_</em>字段) ,严格匹配字符串true(不区分大小写)才算开启    &quot;ticdc_kafka_broker&quot;:&quot;1.1.1.1:9092&quot;,     TiCDC输出的Kafka broker地址(用户自建Kafka,平台不负责创建/回收topic),增量开启时必填    &quot;ticdc_kafka_topic&quot;:&quot;tidb_topic&quot;,     TiCDC输出的Kafka topic,增量开启时必填(连通性测试场景可不填)    &quot;ticdc_kafka_data_format&quot;:&quot;open-protocol&quot;,     数据格式,可取值open-protocol(默认,不传时按此处理)、canal-json,其他值校验不通过    &quot;ticdc_kafka_security_protocol&quot;:&quot;PLAINTEXT&quot;,     传输层安全协议,可取值PLAINTEXT(默认,无认证,忽略下方认证字段)、SASL_PLAINTEXT、SASL_SSL,其他值校验不通过    &quot;ticdc_kafka_sasl_mechanism&quot;:&quot;SCRAM-SHA-256&quot;,     SASL认证机制,可取值SCRAM-SHA-256、SCRAM-SHA-512,当security_protocol为SASL_PLAINTEXT/SASL_SSL时必填    &quot;ticdc_kafka_username&quot;:&quot;user&quot;,     Kafka SASL用户名,当security_protocol为SASL_PLAINTEXT/SASL_SSL时必填    &quot;ticdc_kafka_password&quot;:&quot;password&quot;,     Kafka SASL密码,当security_protocol为SASL_PLAINTEXT/SASL_SSL时必填(不做trim,允许首尾空格)    &quot;ticdc_kafka_ssl_ca_base64_content&quot;:&quot;base64字符串&quot;,     base64编码的CA证书内容,仅security_protocol=SASL_SSL时使用,可选(为空表示信任系统根证书)]</p>",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
@@ -9152,7 +9152,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>期待启动时间，当RunMode取值为timed时，此值必填，形如：&quot;2006-01-02 15:04:05&quot;</p>",
+          "document": "<p>期待启动时间，当RunMode取值为timed时，此值必填。</p><p>参数格式：当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）传入</p>",
           "example": "2022-07-11 17:20:56",
           "member": "string",
           "name": "ExpectRunTime",
@@ -9503,7 +9503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务ID，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
+          "document": "<p>同步任务ID，可通过<a href=\"https://cloud.tencent.com/document/product/571/82103\">DescribeSyncJobs</a>接口获取。</p>",
           "example": "sync-saasxa",
           "member": "string",
           "name": "JobId",
@@ -9512,7 +9512,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务全量导出线程数、有效值为 1-16",
+          "document": "<p>同步任务全量导出线程数、有效值为 1-16</p>",
           "example": "8",
           "member": "int64",
           "name": "DumpThread",
@@ -9521,7 +9521,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000",
+          "document": "<p>同步任务全量导出的 Rps 限制、需要大于 0;对于mongodb最大值为20000，其他数据库最大值为50000000</p>",
           "example": "20000",
           "member": "int64",
           "name": "DumpRps",
@@ -9530,7 +9530,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务全量导入线程数、有效值为 1-16",
+          "document": "<p>同步任务全量导入线程数、有效值为 1-16</p>",
           "example": "8",
           "member": "int64",
           "name": "LoadThread",
@@ -9539,7 +9539,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务增量导入线程数、有效值为 1-128",
+          "document": "<p>同步任务增量导入线程数、有效值为 1-128</p>",
           "example": "32",
           "member": "int64",
           "name": "SinkerThread",
@@ -9548,7 +9548,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务全量导入的Rps",
+          "document": "<p>同步任务全量导入的Rps</p>",
           "example": "8",
           "member": "int64",
           "name": "LoadRps",
@@ -9682,7 +9682,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "kafka分区编号",
+          "document": "<p>kafka分区编号</p>",
           "example": "0",
           "member": "uint64",
           "name": "PartitionNo",
@@ -9692,7 +9692,7 @@
         },
         {
           "disabled": false,
-          "document": "kafka offset",
+          "document": "<p>kafka offset</p>",
           "example": "1234565",
           "member": "uint64",
           "name": "Offset",
@@ -10420,7 +10420,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
+          "document": "<p>订阅实例id，可通过<a href=\"https://cloud.tencent.com/document/product/571/82103\">DescribeSyncJobs</a>接口获取。</p>",
           "example": "subs-7l2ly86kao",
           "member": "string",
           "name": "SubscribeId",
@@ -10429,7 +10429,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的kafka topic，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
+          "document": "<p>订阅的kafka topic，可通过<a href=\"https://cloud.tencent.com/document/product/571/82103\">DescribeSyncJobs</a>接口获取。</p>",
           "example": "topic-subs-7l2ly86kao-cdb-5jr9ms95",
           "member": "string",
           "name": "TopicName",
@@ -10438,7 +10438,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)接口获取。",
+          "document": "<p>消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过<a href=\"https://cloud.tencent.com/document/api/571/102947\">DescribeConsumerGroups</a>接口获取。</p>",
           "example": "consumer-grp-subs-7l2ly86kao-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -10447,7 +10447,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改offset的分区编号，可通过[DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)接口获取。",
+          "document": "<p>需要修改offset的分区编号，可通过<a href=\"https://cloud.tencent.com/document/api/571/102946\">DescribeOffsetByTime</a>接口获取。</p>",
           "example": "[0,1,2,3]",
           "member": "int64",
           "name": "PartitionNos",
@@ -10456,7 +10456,7 @@
         },
         {
           "disabled": false,
-          "document": "重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费",
+          "document": "<p>重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费</p>",
           "example": "earliest",
           "member": "string",
           "name": "ResetMode",
@@ -10465,7 +10465,7 @@
         },
         {
           "disabled": false,
-          "document": "当 ResetMode 为 datetime 时，该项需要填，格式为：Y-m-d h:m:s。如果不填，默认用0时间，效果与earliest相同。",
+          "document": "<p>当 <code>ResetMode</code> 为 <code>datetime</code> 时该项需要填。当 <code>DateTimeISOFormat=true</code> 时按 RFC 3339 传入（如 <code>2026-04-23T20:21:35+08:00</code>），否则按 <code>Y-m-d h:m:s</code>（北京时间）传入。如果不填，默认用 0 时间，效果与 <code>earliest</code> 相同。 </p><p>参数格式：2026-04-23T20:21:35+08:00</p>",
           "example": "2022-04-01 11:00:00",
           "member": "string",
           "name": "ResetDatetime",
@@ -10645,7 +10645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
+          "document": "<p>同步任务id，可通过<a href=\"https://cloud.tencent.com/document/product/571/82103\">DescribeSyncJobs</a>接口获取。</p>",
           "example": "sync-09vy1os1",
           "member": "string",
           "name": "JobId",
@@ -11295,7 +11295,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>步骤开始时间，可能为空</p>",
+          "document": "<p>步骤开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-19 15:54:18",
           "member": "string",
           "name": "StartTime",
@@ -11306,7 +11306,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>完成时间</p>",
+          "document": "<p>完成时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2026-06-11 15:54:18",
           "member": "string",
           "name": "FinishTime",
@@ -12169,7 +12169,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id，如：sync-btso140",
+          "document": "<p>同步任务id，如：sync-btso140</p>",
           "example": "sync-btso140",
           "member": "string",
           "name": "JobId",
@@ -12179,7 +12179,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务名",
+          "document": "<p>同步任务名</p>",
           "example": "sync-btso140",
           "member": "string",
           "name": "JobName",
@@ -12189,7 +12189,7 @@
         },
         {
           "disabled": false,
-          "document": "付款方式，PostPay(按量付费)、PrePay(包年包月)",
+          "document": "<p>付款方式，PostPay(按量付费)、PrePay(包年包月)</p>",
           "example": "PostPay",
           "member": "string",
           "name": "PayMode",
@@ -12199,7 +12199,7 @@
         },
         {
           "disabled": false,
-          "document": "运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)",
+          "document": "<p>运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)</p>",
           "example": "Immediate",
           "member": "string",
           "name": "RunMode",
@@ -12209,7 +12209,7 @@
         },
         {
           "disabled": false,
-          "document": "期待运行时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>期待运行时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-08 16:24:32",
           "member": "string",
           "name": "ExpectRunTime",
@@ -12219,7 +12219,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的所有操作",
+          "document": "<p>支持的所有操作</p>",
           "example": "[\"pause（暂停）\",\"stop（终止）\",\"limitRate（限速）\",\"view（查看）\",\"resize（调整规格）\",\"isolate（隔离）\",\"postPay2prePay（按量转包年包月）\",\"configureOptObj（修改同步对象）\"]",
           "member": "string",
           "name": "AllActions",
@@ -12229,7 +12229,7 @@
         },
         {
           "disabled": false,
-          "document": "当前状态能进行的操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前状态能进行的操作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"pause（暂停）\",\"stop（终止）\",\"limitRate（限速）\",\"view（查看）\",\"resize（调整规格）\",\"isolate（隔离）\",\"postPay2prePay（按量转包年包月）\",\"configureOptObj（修改同步对象）\"]",
           "member": "string",
           "name": "Actions",
@@ -12239,7 +12239,7 @@
         },
         {
           "disabled": false,
-          "document": "同步选项",
+          "document": "<p>同步选项</p>",
           "example": "无",
           "member": "Options",
           "name": "Options",
@@ -12249,7 +12249,7 @@
         },
         {
           "disabled": false,
-          "document": "同步库表对象",
+          "document": "<p>同步库表对象</p>",
           "example": "无",
           "member": "Objects",
           "name": "Objects",
@@ -12259,7 +12259,7 @@
         },
         {
           "disabled": false,
-          "document": "任务规格",
+          "document": "<p>任务规格</p>",
           "example": "large",
           "member": "string",
           "name": "Specification",
@@ -12269,7 +12269,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>过期时间，格式为 yyyy-mm-dd hh:mm:ss</p>",
           "example": "2023-12-08 16:24:32",
           "member": "string",
           "name": "ExpireTime",
@@ -12279,7 +12279,7 @@
         },
         {
           "disabled": false,
-          "document": "源端地域，如：ap-guangzhou等",
+          "document": "<p>源端地域，如：ap-guangzhou等</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcRegion",
@@ -12289,7 +12289,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。",
+          "document": "<p>源端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>",
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -12299,7 +12299,7 @@
         },
         {
           "disabled": false,
-          "document": "源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)",
+          "document": "<p>源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>",
           "example": "cdb",
           "member": "string",
           "name": "SrcAccessType",
@@ -12309,7 +12309,7 @@
         },
         {
           "disabled": false,
-          "document": "源端信息，单节点数据库使用",
+          "document": "<p>源端信息，单节点数据库使用</p>",
           "example": "无",
           "member": "Endpoint",
           "name": "SrcInfo",
@@ -12319,7 +12319,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster",
+          "document": "<p>枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster</p>",
           "example": "cluster",
           "member": "string",
           "name": "SrcNodeType",
@@ -12329,7 +12329,7 @@
         },
         {
           "disabled": false,
-          "document": "源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。",
+          "document": "<p>源端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>",
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "SrcInfos",
@@ -12339,7 +12339,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端地域，如：ap-guangzhou等",
+          "document": "<p>目标端地域，如：ap-guangzhou等</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "DstRegion",
@@ -12349,7 +12349,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。",
+          "document": "<p>目标端数据库类型，mysql,tdsqlmysql,mariadb,cynosdbmysql(表示tdsql-c实例),tdstore,percona,postgresql,mongodb等。</p>",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
@@ -12359,7 +12359,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)",
+          "document": "<p>目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)</p>",
           "example": "cdb",
           "member": "string",
           "name": "DstAccessType",
@@ -12369,7 +12369,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端信息，单节点数据库使用",
+          "document": "<p>目标端信息，单节点数据库使用</p>",
           "example": "无",
           "member": "Endpoint",
           "name": "DstInfo",
@@ -12379,7 +12379,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster",
+          "document": "<p>枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster</p>",
           "example": "cluster",
           "member": "string",
           "name": "DstNodeType",
@@ -12389,7 +12389,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。",
+          "document": "<p>目标端信息，若SrcNodeType=cluster，则源端信息在这个字段里，mongodb链路使用此参数透传。</p>",
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "DstInfos",
@@ -12399,7 +12399,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>创建时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-08 16:24:32",
           "member": "string",
           "name": "CreateTime",
@@ -12409,7 +12409,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>开始时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-08 16:24:32",
           "member": "string",
           "name": "StartTime",
@@ -12419,7 +12419,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)",
+          "document": "<p>任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)</p>",
           "example": "CheckPass",
           "member": "string",
           "name": "Status",
@@ -12429,7 +12429,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>结束时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-08 16:24:32",
           "member": "string",
           "name": "EndTime",
@@ -12439,7 +12439,7 @@
         },
         {
           "disabled": false,
-          "document": "标签相关信息",
+          "document": "<p>标签相关信息</p>",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
@@ -12449,7 +12449,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务运行步骤信息",
+          "document": "<p>同步任务运行步骤信息</p>",
           "example": "无",
           "member": "SyncDetailInfo",
           "name": "Detail",
@@ -12459,7 +12459,7 @@
         },
         {
           "disabled": false,
-          "document": "用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)",
+          "document": "<p>用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)</p>",
           "example": "Normal",
           "member": "string",
           "name": "TradeStatus",
@@ -12469,7 +12469,7 @@
         },
         {
           "disabled": false,
-          "document": "同步链路规格，如micro,small,medium,large",
+          "document": "<p>同步链路规格，如micro,small,medium,large</p>",
           "example": "medium",
           "member": "string",
           "name": "InstanceClass",
@@ -12479,7 +12479,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）",
+          "document": "<p>自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenew",
@@ -12489,7 +12489,7 @@
         },
         {
           "disabled": false,
-          "document": "下线时间，格式为 yyyy-mm-dd hh:mm:ss",
+          "document": "<p>下线时间，格式为 yyyy-mm-dd hh:mm:ss</p>",
           "example": "2023-12-08 16:24:32",
           "member": "string",
           "name": "OfflineTime",
@@ -12499,7 +12499,7 @@
         },
         {
           "disabled": false,
-          "document": "动态修改对象，修改任务的状态等",
+          "document": "<p>动态修改对象，修改任务的状态等</p>",
           "example": "Normal",
           "member": "string",
           "name": "OptObjStatus",
@@ -12509,7 +12509,7 @@
         },
         {
           "disabled": false,
-          "document": "自动重试时间段设置",
+          "document": "<p>自动重试时间段设置</p>",
           "example": "5",
           "member": "int64",
           "name": "AutoRetryTimeRangeMinutes",
@@ -12519,7 +12519,7 @@
         },
         {
           "disabled": false,
-          "document": "全量导出可重入标识：enum::\"yes\"/\"no\"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传",
+          "document": "<p>全量导出可重入标识：enum::&quot;yes&quot;/&quot;no&quot;。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传</p>",
           "example": "yes",
           "member": "string",
           "name": "DumperResumeCtrl",
@@ -12833,7 +12833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "交易订单号",
+          "document": "<p>交易订单号</p>",
           "example": "20220711715001047929481",
           "member": "string",
           "name": "DealName",
@@ -12843,7 +12843,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次交易订单号",
+          "document": "<p>上一次交易订单号</p>",
           "example": "20220711715001047929340",
           "member": "string",
           "name": "LastDealName",
@@ -12853,7 +12853,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格，包括：micro、small、medium、large、xlarge、2xlarge等",
+          "document": "<p>实例规格，包括：micro、small、medium、large、xlarge、2xlarge等</p>",
           "example": "xlarge",
           "member": "string",
           "name": "InstanceClass",
@@ -12863,7 +12863,7 @@
         },
         {
           "disabled": false,
-          "document": "计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)",
+          "document": "<p>计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)</p>",
           "example": "normal",
           "member": "string",
           "name": "TradeStatus",
@@ -12873,7 +12873,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间，格式为\"yyyy-mm-dd hh:mm:ss\"",
+          "document": "<p>到期时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-12 15:54:18",
           "member": "string",
           "name": "ExpireTime",
@@ -12883,7 +12883,7 @@
         },
         {
           "disabled": false,
-          "document": "下线时间，格式为\"yyyy-mm-dd hh:mm:ss\"",
+          "document": "<p>下线时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-19 15:54:18",
           "member": "string",
           "name": "OfflineTime",
@@ -12893,7 +12893,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间，格式为\"yyyy-mm-dd hh:mm:ss\"",
+          "document": "<p>隔离时间。当 <code>DateTimeISOFormat=true</code> 时返回 RFC 3339 格式（如 <code>2026-04-23T20:21:35+08:00</code>），否则返回 <code>yyyy-mm-dd hh:mm:ss</code>（北京时间）</p>",
           "example": "2023-12-11 15:54:18",
           "member": "string",
           "name": "IsolateTime",
@@ -12903,7 +12903,7 @@
         },
         {
           "disabled": false,
-          "document": "下线原因",
+          "document": "<p>下线原因</p>",
           "example": "user_offline",
           "member": "string",
           "name": "OfflineReason",
@@ -12913,7 +12913,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离原因",
+          "document": "<p>隔离原因</p>",
           "example": "user_isolate",
           "member": "string",
           "name": "IsolateReason",
@@ -12923,7 +12923,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，包括：postpay(后付费)、prepay(预付费)",
+          "document": "<p>付费类型，包括：postpay(后付费)、prepay(预付费)</p>",
           "example": "postpay",
           "member": "string",
           "name": "PayType",
@@ -12933,7 +12933,7 @@
         },
         {
           "disabled": false,
-          "document": "任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)",
+          "document": "<p>任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)</p>",
           "example": "billing",
           "member": "string",
           "name": "BillingType",

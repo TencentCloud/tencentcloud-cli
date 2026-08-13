@@ -1270,6 +1270,50 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0:关闭 1:开启图谱构建（入库时构建图谱），默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableGraphBuild",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0:关闭 1:开启树构建（入库时构建树），默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableTreeBuild",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "GraphBuildStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图谱构建状态：null=未启用图谱; 0=待入库; 1=入库中; 2=入库成功; -1=入库失败（仅 EnableGraphBuild=1 时有意义）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TreeBuildStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1812,6 +1856,28 @@
           "example": "1",
           "member": "int64",
           "name": "EnableExtractDb",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0:关闭 1:开启图谱构建（入库时），默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableGraphBuild",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0:关闭 1:开启树构建（入库时），默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableTreeBuild",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -2805,7 +2871,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检索类型：0:混合搜索 1：向量搜索 2：全文搜索",
+          "document": "<p>检索类型：0:混合搜索 1：向量搜索 2：全文搜索</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -2816,7 +2882,7 @@
         },
         {
           "disabled": false,
-          "document": "召回数量最大值",
+          "document": "<p>召回数量最大值</p>",
           "example": "100",
           "member": "int64",
           "name": "Num",
@@ -2827,7 +2893,7 @@
         },
         {
           "disabled": false,
-          "document": "权重配置",
+          "document": "<p>权重配置</p>",
           "example": "0.5",
           "member": "float",
           "name": "EmbeddingWeight",
@@ -2838,7 +2904,7 @@
         },
         {
           "disabled": false,
-          "document": "0:关闭 1:开启，默认1",
+          "document": "<p>0:关闭 1:开启，默认1</p>",
           "example": "1",
           "member": "int64",
           "name": "Rerank",
@@ -2849,7 +2915,7 @@
         },
         {
           "disabled": false,
-          "document": "0:关闭 1:开启，默认0",
+          "document": "<p>0:关闭 1:开启，默认0</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRag",
@@ -2860,7 +2926,7 @@
         },
         {
           "disabled": false,
-          "document": "AutoRag关联的知识库ID列表",
+          "document": "<p>AutoRag关联的知识库ID列表</p>",
           "example": "[\"kb001\"]",
           "member": "string",
           "name": "KnowledgeBaseIds",
@@ -2871,10 +2937,32 @@
         },
         {
           "disabled": false,
-          "document": "AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效",
+          "document": "<p>AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效</p>",
           "example": "1",
           "member": "int64",
           "name": "SearchStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0:关闭 1:开启图谱检索，默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableGraphSearch",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0:关闭 1:开启树检索，默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableTreeSearch",
           "output_required": false,
           "required": false,
           "type": "int",

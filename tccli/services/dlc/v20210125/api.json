@@ -967,7 +967,7 @@
       "status": "online"
     },
     "DescribeSaleResourceInfo": {
-      "document": "查询当前地域可售卖的资源规格和最大配额",
+      "document": "查询当前地域可售卖的资源规格、最大配额，以及库存情况。StatusCategory 与 DescribePartitionAvailableQuota 数据同源，将实时可新增数量映射为库存分级；当请求 Region 与资源池实际部署地域不一致，或服务 cold-start 快照尚未就绪时，StatusCategory 为 null。",
       "input": "DescribeSaleResourceInfoRequest",
       "name": "查询可售卖资源规格",
       "output": "DescribeSaleResourceInfoResponse",
@@ -1559,6 +1559,13 @@
       "input": "ListExamplesRequest",
       "name": "分页查询案例列表",
       "output": "ListExamplesResponse",
+      "status": "online"
+    },
+    "ListImages": {
+      "document": "列出所有镜像",
+      "input": "ListImagesRequest",
+      "name": "列出所有镜像",
+      "output": "ListImagesResponse",
       "status": "online"
     },
     "ListInferenceEngines": {
@@ -18989,7 +18996,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可售卖资源规格列表",
+          "document": "可售卖资源规格列表，包含规格、步长、单账户上限、以及库存情况",
           "example": "无",
           "member": "ResourceSaleInfo",
           "name": "SaleResourceInfoList",
@@ -28462,6 +28469,100 @@
       ],
       "usage": "out"
     },
+    "ImageDto": {
+      "document": "镜像响应类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像ID</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像名称</p>",
+          "example": "tcray-3.0.0.dev0-py311-cpu",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像地址</p>",
+          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:3.0.0.dev0-py311-cpu",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像描述</p>",
+          "example": "podman 测试镜像",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像类型（Ray/Workspace）</p>",
+          "example": "Workspace",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像内置的 Ray 版本号</p>",
+          "example": "3.0.0",
+          "member": "string",
+          "name": "RayVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1772610372061",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1773052310425",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InferenceEngineInfo": {
       "document": "推理引擎具体信息",
       "members": [
@@ -31160,6 +31261,110 @@
           "document": "<p>案例管理列表</p>",
           "example": "无",
           "member": "ExampleEntity",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListImagesRequest": {
+      "document": "ListImages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词搜索（模糊匹配名称或描述）",
+          "example": "tcray",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型过滤（Ray/Workspace）",
+          "example": "Ray",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListImagesResponse": {
+      "document": "ListImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页码（从1开始）",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像列表",
+          "example": "无",
+          "member": "ImageDto",
           "name": "Items",
           "output_required": false,
           "type": "list",
@@ -39221,6 +39426,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>库存情况，对当前地域该计费项实时可新增数量的分级预估。取值复用 BcpConstants 库存状态常量：</p><ul><li>EnoughStock：余量充足（&gt;100）</li><li>NormalStock：余量正常（50~100）</li><li>UnderStock：余量紧张（1~49）</li><li>WithoutStock：无库存（0）</li></ul><p>该值为底层提供的预估值，不代表保证可发货量，仅用于展示库存概况。当请求 Region 与资源池地域不一致、cold-start 缓存未 ready、或该计费项在快照中缺失时返回 null。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EnoughStock",
+          "member": "string",
+          "name": "StatusCategory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -55,6 +55,19 @@ Output:
                             }
                         ]
                     }
+                ],
+                "HitSnippetInfos": [
+                    {
+                        "Snippet": "你好呀",
+                        "AtomicName": "",
+                        "AtomicId": "",
+                        "Positions": [
+                            {
+                                "Start": 0,
+                                "End": 3
+                            }
+                        ]
+                    }
                 ]
             },
             {
@@ -67,7 +80,8 @@ Output:
                 "LibId": "",
                 "LibName": "",
                 "Tags": null,
-                "HitInfos": []
+                "HitInfos": [],
+                "HitSnippetInfos": []
             },
             {
                 "Label": "Ad",
@@ -79,7 +93,8 @@ Output:
                 "LibId": "",
                 "LibName": "",
                 "Tags": null,
-                "HitInfos": []
+                "HitInfos": [],
+                "HitSnippetInfos": []
             },
             {
                 "Label": "Teenager",
@@ -91,7 +106,8 @@ Output:
                 "LibId": "",
                 "LibName": "",
                 "Tags": null,
-                "HitInfos": []
+                "HitInfos": [],
+                "HitSnippetInfos": []
             },
             {
                 "Label": "Porn",
@@ -103,7 +119,8 @@ Output:
                 "LibId": "",
                 "LibName": "",
                 "Tags": null,
-                "HitInfos": []
+                "HitInfos": [],
+                "HitSnippetInfos": []
             },
             {
                 "Label": "Terror",
@@ -115,7 +132,8 @@ Output:
                 "LibId": "",
                 "LibName": "",
                 "Tags": null,
-                "HitInfos": []
+                "HitInfos": [],
+                "HitSnippetInfos": []
             },
             {
                 "Label": "Value",
@@ -127,7 +145,8 @@ Output:
                 "LibId": "",
                 "LibName": "",
                 "Tags": null,
-                "HitInfos": []
+                "HitInfos": [],
+                "HitSnippetInfos": []
             },
             {
                 "Label": "Polity",
@@ -139,7 +158,8 @@ Output:
                 "LibId": "",
                 "LibName": "",
                 "Tags": null,
-                "HitInfos": []
+                "HitInfos": [],
+                "HitSnippetInfos": []
             }
         ],
         "RiskDetails": null,

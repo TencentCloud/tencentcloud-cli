@@ -13,12 +13,18 @@ Output:
     "Response": {
         "SaleResourceInfoList": [
             {
-                "MaxSpec": 192,
                 "ResourceSpec": {
+                    "ResourceType": "CPU",
                     "InstanceType": "",
-                    "ResourceType": "CPU"
+                    "GpuType": "",
+                    "BillingItem": "sv_dlc_standard_cu_standard_cu",
+                    "SpecDesc": "1 CU = 1 × vCPU * 4GB Memory",
+                    "Spec": "0:1:4:0",
+                    "MaxCardPerNode": 0
                 },
-                "Step": 32
+                "Step": 32,
+                "MaxSpec": 4096,
+                "StatusCategory": "EnoughStock"
             }
         ],
         "RequestId": "313630c6-9e14-44ae-b9d6-00f019357803"

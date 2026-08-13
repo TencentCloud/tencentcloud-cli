@@ -5787,11 +5787,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志下载任务的ID",
+          "document": "<p>日志下载任务的ID</p>",
           "example": "export-a85ac32e-42a8-49e3-b19b-c2a9ba831b40",
           "member": "string",
           "name": "ExportId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -5802,7 +5811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志下载任务的ID",
+          "document": "<p>日志下载任务的ID</p>",
           "example": "export-a85ac32e-42a8-49e3-b19b-c2a9ba831b40",
           "member": "string",
           "name": "ExportId",
@@ -5812,7 +5821,7 @@
         },
         {
           "disabled": false,
-          "document": "日志下载文件名",
+          "document": "<p>日志下载文件名</p>",
           "example": "log_001a191a-aaff-4bde-9267-94e2ecf6f8da_20240528_export-a85ac32e-42a8-49e3-b19b-c2a9ba831b40.tar.gz",
           "member": "string",
           "name": "FileName",
@@ -5822,7 +5831,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出路径,有效期一个小时，请尽快使用该路径下载。",
+          "document": "<p>日志导出路径,有效期一个小时，请尽快使用该路径下载。</p>",
           "example": "https://clstest01-xxxxxx.cos.ap-shanghai.myqcloud.com/xxxxxx",
           "member": "string",
           "name": "CosPath",
@@ -5832,7 +5841,7 @@
         },
         {
           "disabled": false,
-          "document": "下载任务创建时间",
+          "document": "<p>下载任务创建时间</p>",
           "example": "2024-05-28T03:39:06Z",
           "member": "string",
           "name": "CreateTime",
@@ -5842,7 +5851,7 @@
         },
         {
           "disabled": false,
-          "document": "日志文件大小",
+          "document": "<p>日志文件大小</p>",
           "example": "65535",
           "member": "string",
           "name": "FileSize",
@@ -5852,7 +5861,7 @@
         },
         {
           "disabled": false,
-          "document": "日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中",
+          "document": "<p>日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中</p>",
           "example": "Expired",
           "member": "string",
           "name": "Status",

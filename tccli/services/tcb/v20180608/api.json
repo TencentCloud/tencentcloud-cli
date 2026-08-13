@@ -8828,7 +8828,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "xxx.***************.cn",
           "member": "string",
           "name": "Domain",
@@ -8838,7 +8838,7 @@
         },
         {
           "disabled": false,
-          "document": "域名类型。 HTTPSERVICE: HTTP访问服务，CBR: 云托管服务，ANYSERVICE: 任意服务，AI_AGENT: AI agent，VM: 主机，INTEGRATION_CALLBACK: 集成回调",
+          "document": "<p>域名类型。 HTTPSERVICE: HTTP访问服务，CBR: 云托管服务，ANYSERVICE: 任意服务，AI_AGENT: AI agent，VM: 主机，INTEGRATION_CALLBACK: 集成回调</p>",
           "example": "HTTPSERVICE",
           "member": "string",
           "name": "DomainType",
@@ -8848,7 +8848,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）",
+          "document": "<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>",
           "example": "CDN",
           "member": "string",
           "name": "AccessType",
@@ -8858,7 +8858,7 @@
         },
         {
           "disabled": false,
-          "document": "证书ID。当前账户下SSL平台的证书ID",
+          "document": "<p>证书ID。当前账户下SSL平台的证书ID</p>",
           "example": "VF******",
           "member": "string",
           "name": "CertId",
@@ -8868,7 +8868,7 @@
         },
         {
           "disabled": false,
-          "document": "协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向",
+          "document": "<p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>",
           "example": "HTTP_AND_HTTPS",
           "member": "string",
           "name": "Protocol",
@@ -8878,7 +8878,7 @@
         },
         {
           "disabled": false,
-          "document": "配置DNS解析的CNAME。根据AccessType返回不同的CNAME值。",
+          "document": "<p>配置DNS解析的CNAME。根据AccessType返回不同的CNAME值。</p>",
           "example": "xxx.******************.tcbaccess-expr.tencentcloudbase.com",
           "member": "string",
           "name": "Cname",
@@ -8888,7 +8888,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是默认域名",
+          "document": "<p>是否是默认域名</p>",
           "example": "true",
           "member": "bool",
           "name": "IsDefault",
@@ -8898,7 +8898,7 @@
         },
         {
           "disabled": false,
-          "document": "域名开启状态",
+          "document": "<p>域名开启状态</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -8908,7 +8908,7 @@
         },
         {
           "disabled": false,
-          "document": "状态。PROCESSING、FAIL，SUCCESS。",
+          "document": "<p>状态。</p><p>枚举值：</p><ul><li>PROCESSING： 处理中</li><li>FAIL： 失败</li><li>EO_PENDING_VERIFICATION： 待验证edgeone归属权</li><li>SUCCESS： 成功</li></ul>",
           "example": "PROCESSING",
           "member": "string",
           "name": "Status",
@@ -8918,7 +8918,7 @@
         },
         {
           "disabled": false,
-          "document": "DNS解析状态。OK： 解析正常，INVALID：解析不正确，域名未解析到当前Cname域名。",
+          "document": "<p>DNS解析状态</p><p>枚举值：</p><ul><li>OK： 正常，命中目标 cname</li><li>EMPTY： 解析为空，域名尚未配置 CNAME 或未生效</li><li>INVALID： 异常，解析到其他非目标地址</li></ul>",
           "example": "INVALID",
           "member": "string",
           "name": "DNSStatus",
@@ -8928,7 +8928,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP访问服务路由信息",
+          "document": "<p>HTTP访问服务路由信息</p>",
           "example": "无",
           "member": "HTTPServiceRoute",
           "name": "Routes",
@@ -8938,7 +8938,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段，内部包含headers处理等",
+          "document": "<p>扩展字段，内部包含headers处理等</p>",
           "example": "无",
           "member": "HTTPServiceExtension",
           "name": "Extension",
@@ -8948,7 +8948,7 @@
         },
         {
           "disabled": false,
-          "document": "域名创建时间",
+          "document": "<p>域名创建时间</p>",
           "example": "2026-03-13T10:03:25+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -8958,7 +8958,7 @@
         },
         {
           "disabled": false,
-          "document": "域名更新时间",
+          "document": "<p>域名更新时间</p>",
           "example": "2026-03-13T10:03:25+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",

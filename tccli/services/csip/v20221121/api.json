@@ -21,6 +21,13 @@
       "output": "AddVulWhitelistResponse",
       "status": "online"
     },
+    "CancelEdrAlertIgnore": {
+      "document": "取消已永久忽略的EDR多行为告警，从AI-Link永久忽略白名单移除对应主机+规则记录，并将告警状态恢复为待处理（PENDING）",
+      "input": "CancelEdrAlertIgnoreRequest",
+      "name": "取消忽略EDR多行为告警",
+      "output": "CancelEdrAlertIgnoreResponse",
+      "status": "online"
+    },
     "CreateAccessKeyCheckTask": {
       "document": "检测AK 异步任务",
       "input": "CreateAccessKeyCheckTaskRequest",
@@ -33,6 +40,13 @@
       "input": "CreateAccessKeySyncTaskRequest",
       "name": "创建访问密钥的资产同步任务",
       "output": "CreateAccessKeySyncTaskResponse",
+      "status": "online"
+    },
+    "CreateCSIPManualMalwareScan": {
+      "document": "CSIP 手动扫描创建接口",
+      "input": "CreateCSIPManualMalwareScanRequest",
+      "name": "CSIP 手动扫描创建接口",
+      "output": "CreateCSIPManualMalwareScanResponse",
       "status": "online"
     },
     "CreateCosAssetSyncTask": {
@@ -196,6 +210,20 @@
       "output": "CreateDspmWhitelistStrategyResponse",
       "status": "online"
     },
+    "CreateEDRManualScan": {
+      "document": "点击开始扫描后触发，支持多账号、多资产类型。同时选主机和容器集群时拆分为两个独立任务（主机+容器）。",
+      "input": "CreateEDRManualScanRequest",
+      "name": "创建手动EDR扫描任务",
+      "output": "CreateEDRManualScanResponse",
+      "status": "online"
+    },
+    "CreateEdrAlertExportJob": {
+      "document": "创建EDR告警导出任务",
+      "input": "CreateEdrAlertExportJobRequest",
+      "name": "创建EDR告警导出任务",
+      "output": "CreateEdrAlertExportJobResponse",
+      "status": "online"
+    },
     "CreateHostVulExportJob": {
       "document": "创建主机列漏洞表导出任务",
       "input": "CreateHostVulExportJobRequest",
@@ -271,6 +299,13 @@
       "input": "CreateVulScanManualRequest",
       "name": "创建漏洞扫描（一键扫描）",
       "output": "CreateVulScanManualResponse",
+      "status": "online"
+    },
+    "DeleteCSIPMalwareScanTask": {
+      "document": "CSIP 手动扫描任务删除接口",
+      "input": "DeleteCSIPMalwareScanTaskRequest",
+      "name": "CSIP 手动扫描任务删除接口",
+      "output": "DeleteCSIPMalwareScanTaskResponse",
       "status": "online"
     },
     "DeleteCosAkAsset": {
@@ -383,6 +418,20 @@
       "input": "DeleteDspmWhitelistStrategyRequest",
       "name": "删除Dspm白名单策略",
       "output": "DeleteDspmWhitelistStrategyResponse",
+      "status": "online"
+    },
+    "DeleteEDRRules": {
+      "document": "删除EDR策略",
+      "input": "DeleteEDRRulesRequest",
+      "name": "删除EDR策略",
+      "output": "DeleteEDRRulesResponse",
+      "status": "online"
+    },
+    "DeleteEDRScanTask": {
+      "document": "删除已终止的扫描任务（物理删除主表及明细表）。只允许删除终态任务，只有创建者可操作。",
+      "input": "DeleteEDRScanTaskRequest",
+      "name": "删除EDR扫描任务",
+      "output": "DeleteEDRScanTaskResponse",
       "status": "online"
     },
     "DeleteIaCAccessToken": {
@@ -551,6 +600,20 @@
       "input": "DescribeCLSLogListV3Request",
       "name": "日志分析cls日志检索v3",
       "output": "DescribeCLSLogListV3Response",
+      "status": "online"
+    },
+    "DescribeCSIPMalwareScanTaskDetail": {
+      "document": "CSIP 扫描任务主机详情接口",
+      "input": "DescribeCSIPMalwareScanTaskDetailRequest",
+      "name": "CSIP 扫描任务主机详情接口",
+      "output": "DescribeCSIPMalwareScanTaskDetailResponse",
+      "status": "online"
+    },
+    "DescribeCSIPMalwareScanTaskProgress": {
+      "document": "CSIP 手动扫描进度查询接口",
+      "input": "DescribeCSIPMalwareScanTaskProgressRequest",
+      "name": "CSIP 手动扫描进度查询接口",
+      "output": "DescribeCSIPMalwareScanTaskProgressResponse",
       "status": "online"
     },
     "DescribeCSIPRiskStatistics": {
@@ -1225,6 +1288,34 @@
       "output": "DescribeEDRRuleListResponse",
       "status": "online"
     },
+    "DescribeEDRScanRecordList": {
+      "document": "查询扫描任务列表。Filter.Filters支持Name：Keyword(模糊OperatorType=9)、ScanType(MANUAL/CYCLE)、TaskType(HOST/CONTAINER)、Status(WAIT/SCANNING/FINISHED/FAILED/CANCELED)、AppId(账号)。",
+      "input": "DescribeEDRScanRecordListRequest",
+      "name": "查询EDR扫描任务列表",
+      "output": "DescribeEDRScanRecordListResponse",
+      "status": "online"
+    },
+    "DescribeEDRScanTaskDetail": {
+      "document": "查询扫描任务详情。Filter.Filters支持Name：Status（资产扫描状态，OperatorType=7 IN匹配，取值WAIT/SCANNING/FINISHED/FAILED）。",
+      "input": "DescribeEDRScanTaskDetailRequest",
+      "name": "查询EDR扫描任务详情",
+      "output": "DescribeEDRScanTaskDetailResponse",
+      "status": "online"
+    },
+    "DescribeEdrAlertCountForAsset": {
+      "document": "获取EDR告警数量统计，供资产模块调用。根据传入的MemberId和InstanceIDs，查询EDR告警表并返回告警记录条数信息。当InstanceIDs为空时返回汇总统计，非空时按InstanceIDs粒度分别返回统计。",
+      "input": "DescribeEdrAlertCountForAssetRequest",
+      "name": "获取EDR告警数量统计（资产模块）",
+      "output": "DescribeEdrAlertCountForAssetResponse",
+      "status": "online"
+    },
+    "DescribeEdrAlertCountForContainer": {
+      "document": "容器场景告警数量统计",
+      "input": "DescribeEdrAlertCountForContainerRequest",
+      "name": "容器场景告警数量统计",
+      "output": "DescribeEdrAlertCountForContainerResponse",
+      "status": "online"
+    },
     "DescribeEdrAlertInfo": {
       "document": "获取EDR告警详情，包含告警内容JSON、资产富化、情报富化等完整信息",
       "input": "DescribeEdrAlertInfoRequest",
@@ -1237,6 +1328,34 @@
       "input": "DescribeEdrAlertListRequest",
       "name": "获取EDR告警列表",
       "output": "DescribeEdrAlertListResponse",
+      "status": "online"
+    },
+    "DescribeEdrAlertMultiAttackStages": {
+      "document": "EDR告警多攻击阶段查询",
+      "input": "DescribeEdrAlertMultiAttackStagesRequest",
+      "name": "EDR告警多攻击阶段查询",
+      "output": "DescribeEdrAlertMultiAttackStagesResponse",
+      "status": "online"
+    },
+    "DescribeEdrAlertSummary": {
+      "document": "获取EDR告警统计",
+      "input": "DescribeEdrAlertSummaryRequest",
+      "name": "获取EDR告警统计",
+      "output": "DescribeEdrAlertSummaryResponse",
+      "status": "online"
+    },
+    "DescribeEdrExportJobDownloadURL": {
+      "document": "获取EDR导出下载链接",
+      "input": "DescribeEdrExportJobDownloadURLRequest",
+      "name": "获取EDR导出下载链接",
+      "output": "DescribeEdrExportJobDownloadURLResponse",
+      "status": "online"
+    },
+    "DescribeEdrExportJobList": {
+      "document": "导出EDR任务列表",
+      "input": "DescribeEdrExportJobListRequest",
+      "name": "导出EDR任务列表",
+      "output": "DescribeEdrExportJobListResponse",
       "status": "online"
     },
     "DescribeExposeAssetCategory": {
@@ -1386,6 +1505,13 @@
       "output": "DescribeNICAssetsResponse",
       "status": "online"
     },
+    "DescribeNetAttackSetting": {
+      "document": "查询网络攻击检测开关及资产范围配置",
+      "input": "DescribeNetAttackSettingRequest",
+      "name": "查询网络攻击设置",
+      "output": "DescribeNetAttackSettingResponse",
+      "status": "online"
+    },
     "DescribeNotifyAssetConfig": {
       "document": "获取通知资产范围配置",
       "input": "DescribeNotifyAssetConfigRequest",
@@ -1447,6 +1573,13 @@
       "input": "DescribeRepositoryImageAssetsRequest",
       "name": "仓库镜像列表",
       "output": "DescribeRepositoryImageAssetsResponse",
+      "status": "online"
+    },
+    "DescribeReverseShellSystemPolicyConfig": {
+      "document": "查询反弹Shell内网告警与资产范围配置",
+      "input": "DescribeReverseShellSystemPolicyConfigRequest",
+      "name": "查询反弹Shell系统策略配置",
+      "output": "DescribeReverseShellSystemPolicyConfigResponse",
       "status": "online"
     },
     "DescribeRiskBucketList": {
@@ -1820,6 +1953,20 @@
       "output": "DownloadDspmExportLogResponse",
       "status": "online"
     },
+    "ExportCSIPMalwareScanTaskDetail": {
+      "document": "导出CSIP扫描任务主机详情为Excel文件，异步生成后通过DescribeExportMachines查询下载地址",
+      "input": "ExportCSIPMalwareScanTaskDetailRequest",
+      "name": "导出CSIP扫描任务主机详情",
+      "output": "ExportCSIPMalwareScanTaskDetailResponse",
+      "status": "online"
+    },
+    "ExportEDRRules": {
+      "document": "导出EDR策略列表",
+      "input": "ExportEDRRulesRequest",
+      "name": "导出EDR策略列表",
+      "output": "ExportEDRRulesResponse",
+      "status": "online"
+    },
     "ModifyAILinkSetting": {
       "document": "修改AI-Link智链引擎配置",
       "input": "ModifyAILinkSettingRequest",
@@ -2051,11 +2198,39 @@
       "output": "ModifyEDRRuleResponse",
       "status": "online"
     },
+    "ModifyEDRRuleStatus": {
+      "document": "修改EDR策略开关状态",
+      "input": "ModifyEDRRuleStatusRequest",
+      "name": "修改EDR策略开关状态",
+      "output": "ModifyEDRRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifyEDRRulesAction": {
+      "document": "批量修改EDR策略动作",
+      "input": "ModifyEDRRulesActionRequest",
+      "name": "批量修改EDR策略动作",
+      "output": "ModifyEDRRulesActionResponse",
+      "status": "online"
+    },
+    "ModifyEdrAlertIsolation": {
+      "document": "EDR告警隔离和恢复",
+      "input": "ModifyEdrAlertIsolationRequest",
+      "name": "EDR告警隔离和恢复",
+      "output": "ModifyEdrAlertIsolationResponse",
+      "status": "online"
+    },
     "ModifyEdrAlertPermanentIgnore": {
       "document": "永久忽略EDR多行为告警，将告警对应的主机+规则加入AI-Link永久忽略白名单，后续同类告警将自动丢弃",
       "input": "ModifyEdrAlertPermanentIgnoreRequest",
       "name": "永久忽略EDR多行为告警",
       "output": "ModifyEdrAlertPermanentIgnoreResponse",
+      "status": "online"
+    },
+    "ModifyEdrAlertStatus": {
+      "document": "EDR告警状态处置",
+      "input": "ModifyEdrAlertStatusRequest",
+      "name": "EDR告警状态处置",
+      "output": "ModifyEdrAlertStatusResponse",
       "status": "online"
     },
     "ModifyIaCTokenPeriod": {
@@ -2070,6 +2245,13 @@
       "input": "ModifyMachineRemarkRequest",
       "name": "修改主机备注信息",
       "output": "ModifyMachineRemarkResponse",
+      "status": "online"
+    },
+    "ModifyNetAttackSetting": {
+      "document": "修改网络攻击检测开关及资产范围配置",
+      "input": "ModifyNetAttackSettingRequest",
+      "name": "修改网络攻击设置",
+      "output": "ModifyNetAttackSettingResponse",
       "status": "online"
     },
     "ModifyNotifyAssetConfig": {
@@ -2105,6 +2287,13 @@
       "input": "ModifyPolicyStatusRequest",
       "name": "修改策略状态",
       "output": "ModifyPolicyStatusResponse",
+      "status": "online"
+    },
+    "ModifyReverseShellSystemPolicyConfig": {
+      "document": "修改反弹Shell内网告警与资产范围配置",
+      "input": "ModifyReverseShellSystemPolicyConfigRequest",
+      "name": "修改反弹Shell系统策略配置",
+      "output": "ModifyReverseShellSystemPolicyConfigResponse",
       "status": "online"
     },
     "ModifyRiskCenterRiskStatus": {
@@ -2170,11 +2359,39 @@
       "output": "RevertDspmAssetAccountResponse",
       "status": "online"
     },
+    "ScanCSIPTaskAgain": {
+      "document": "CSIP 手动扫描任务删除接口",
+      "input": "ScanCSIPTaskAgainRequest",
+      "name": "CSIP 手动扫描重扫接口",
+      "output": "ScanCSIPTaskAgainResponse",
+      "status": "online"
+    },
+    "ScanEDRTaskAgain": {
+      "document": "基于原任务配置新建扫描任务。AssetId为空时从TaskId获取全部资产信息；AssetId非空时仅含该单资产。",
+      "input": "ScanEDRTaskAgainRequest",
+      "name": "重新扫描EDR任务",
+      "output": "ScanEDRTaskAgainResponse",
+      "status": "online"
+    },
     "SendDspmAssetLoginSmsCode": {
       "document": "发送Dspm资产访问验证码",
       "input": "SendDspmAssetLoginSmsCodeRequest",
       "name": "发送Dspm资产访问验证码",
       "output": "SendDspmAssetLoginSmsCodeResponse",
+      "status": "online"
+    },
+    "StopCSIPManualMalwareScan": {
+      "document": "CSIP 手动扫描停止接口",
+      "input": "StopCSIPManualMalwareScanRequest",
+      "name": "CSIP 手动扫描停止接口",
+      "output": "StopCSIPManualMalwareScanResponse",
+      "status": "online"
+    },
+    "StopEDRScanTask": {
+      "document": "停止或取消扫描任务。SCANNING状态调RPC停止，WAIT状态直接改库取消。只有任务创建者可操作。",
+      "input": "StopEDRScanTaskRequest",
+      "name": "停止或取消EDR扫描任务",
+      "output": "StopEDRScanTaskResponse",
       "status": "online"
     },
     "StopRiskCenterTask": {
@@ -8764,6 +8981,205 @@
       ],
       "usage": "both"
     },
+    "CSIPMachineExtraInfo": {
+      "document": "CSIP扫描任务主机额外资产信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>公网IP</p>",
+          "example": "119.91.109.215",
+          "member": "string",
+          "name": "WanIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网IP</p>",
+          "example": "172.16.32.11",
+          "member": "string",
+          "name": "PrivateIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID（CVM/BM/ECM唯一标识）</p>",
+          "example": "ins-3mj2ypdw",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CSIPMalwareScanUuidDetailItem": {
+      "document": "文件查杀手动扫描详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>UUID</p>",
+          "example": "9996260f-37ad-4e90-b6e2-e9cb1d821ff2",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>QUUID</p>",
+          "example": "9996260f-37ad-4e90-b6e2-e9cb1d821ff2",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器APPID</p>",
+          "example": "260199983",
+          "member": "uint64",
+          "name": "MachineAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器名</p>",
+          "example": "VM-32-11-tencentos",
+          "member": "string",
+          "name": "MachineName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器IP</p>",
+          "example": "172.16.32.11",
+          "member": "string",
+          "name": "MachineIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "Windows_Server_2025_Datacenter-ServerDatacenter",
+          "member": "string",
+          "name": "OsType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机额外信息（公网IP、内网IP、实例ID）</p>",
+          "example": "无",
+          "member": "CSIPMachineExtraInfo",
+          "name": "MachineExtraInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险个数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RiskCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描耗时（秒）</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "UsedTimeS",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Exception",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ExceptionMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-06-29 19:08:41",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2026-06-29 19:09:09",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CSIPTag": {
       "document": "安全中心标签",
       "members": [
@@ -9823,6 +10239,52 @@
       ],
       "usage": "out"
     },
+    "CancelEdrAlertIgnoreRequest": {
+      "document": "CancelEdrAlertIgnore请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警定位列表（支持跨账号），最多500条</p>",
+          "example": "无",
+          "member": "EdrAlertTargetForIgnore",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-*********************429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelEdrAlertIgnoreResponse": {
+      "document": "CancelEdrAlertIgnore返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CancelledCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CheckViewRiskItem": {
       "document": "检查项视角风险",
       "members": [
@@ -10185,6 +10647,34 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClusterWithAppIdItem": {
+      "document": "集群定位信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-6aiypsza",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群所属AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260082268",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -13167,6 +13657,115 @@
       ],
       "type": "object"
     },
+    "CreateCSIPManualMalwareScanRequest": {
+      "document": "CreateCSIPManualMalwareScan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>扫描模式：0=全盘扫描 / 1=快速扫描，与 cwp_malware Scan RPC 的 scan_type 字段语义一致</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ScanPattern",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效范围档位：0=指定主机（ScopeSpecified） / 1=全选 CSIP 付费机器（ScopeAll）。旧前端不传时零值默认 0，保持兼容</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Scope",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用内存马扫描（0/1），透传给 cwp_malware</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableMemShellScan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单机扫描超时秒数；&lt;=0 时取默认 3600</p>",
+          "example": "3600",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多账号体系目标 AppId 列表；为空时 fallback 到 [req.AppID]（仅自身）。无论 Scope=0/1，均经过 csip.ValidateTargetAppIDsViaCSIP 校验</p>",
+          "example": "[260199983]",
+          "member": "uint64",
+          "name": "TargetAppIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描引擎类型，cloudapi 层透传给 cwp_malware，不持久化到主表，引擎模式 1标准模式 2增强模式 3严格模式枚举值：1： 标准模式2： 增强模式3： 严格模式</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EngineType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定机器列表，实例ID版本</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "InstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全选时候排除的机器，实例ID版本</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "ExcludeInstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCSIPManualMalwareScanResponse": {
+      "document": "CreateCSIPManualMalwareScan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCosAssetSyncTaskRequest": {
       "document": "CreateCosAssetSyncTask请求参数结构体",
       "members": [
@@ -14807,6 +15406,224 @@
       ],
       "type": "object"
     },
+    "CreateEDRManualScanRequest": {
+      "document": "CreateEDRManualScan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产选择方式：all-全部资产/tag-按标签选择(仅主机)/direct-直接选择</p>",
+          "example": "tag",
+          "member": "string",
+          "name": "AssetSelectionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测模式：full-全盘检测/quick-快速检测/include-仅检测指定路径/exclude-排除指定路径</p>",
+          "example": "include",
+          "member": "string",
+          "name": "ScanType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-54213b157ddf7170\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>直接选择的主机列表（AssetSelectionType=direct或all时使用）</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "InstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除的主机列表（AssetSelectionType=all时使用）</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "ExcludeInstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机对应的标签ID</p>",
+          "example": "[139]",
+          "member": "uint64",
+          "name": "TagIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>直接选择的集群列表</p>",
+          "example": "无",
+          "member": "ClusterWithAppIdItem",
+          "name": "ClusterIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除的集群列表（AssetSelectionType=all时使用）</p>",
+          "example": "无",
+          "member": "ClusterWithAppIdItem",
+          "name": "ExcludeClusterIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自选路径列表（ScanType=include或exclude时必填，最多100条）</p>",
+          "example": "[\"/tmp\"]",
+          "member": "string",
+          "name": "CustomPaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间（秒），上限7200</p>",
+          "example": "1800",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启深度检测：0-否/1-是</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableMemShellScan",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEDRManualScanResponse": {
+      "document": "CreateEDRManualScan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建的任务列表（主机和容器分别一条）</p>",
+          "example": "无",
+          "member": "CreatedTaskItem",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdrAlertExportJobRequest": {
+      "document": "CreateEdrAlertExportJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>PolicyType - int - 是否必填：否 - 策略类型PolicyName - string - 是否必填：否 - 策略名称Domain - string - 是否必填：否 - 域名(先对域名做urlencode,再base64)PolicyAction- int - 是否必填：否 - 策略动作IsEnabled - int - 是否必填：否 - 是否生效</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制条数,默认10,最大100</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量,默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式: [ASC:升序|DESC:降序]</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选排序列: [LatestDetectTime]</p>",
+          "example": "LatestDetectTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义任务名，允许重复；传空自动生成默认名 alert_{appid}_{时间戳}（如 alert_1234567890_20260501114522）；仅支持数字/字母/下划线/短横线/中文，≤100 字符（按字符/rune 计，中文按 1 个字符），校验失败返回 InvalidParameter（文案 TextEdrExportJobNameInvalid）</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "JobName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdrAlertExportJobResponse": {
+      "document": "CreateEdrAlertExportJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导出任务ID</p>",
+          "example": "36b2c9ab-ad68-407c-9379-5293e9a1eae8",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateHostVulExportJobRequest": {
       "document": "CreateHostVulExportJob请求参数结构体",
       "members": [
@@ -15614,6 +16431,42 @@
       ],
       "type": "object"
     },
+    "CreatedTaskItem": {
+      "document": "创建任务返回项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "944",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型：HOST-主机扫描/CONTAINER-容器扫描</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CONTAINER",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务所属账号AppId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260199972",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CredentialEffectScope": {
       "document": "生效机器范围，用于指定凭证在哪些机器上生效",
       "members": [
@@ -16276,6 +17129,62 @@
       ],
       "usage": "out"
     },
+    "DeleteCSIPMalwareScanTaskRequest": {
+      "document": "DeleteCSIPMalwareScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "[3086642]",
+          "member": "uint64",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCSIPMalwareScanTaskResponse": {
+      "document": "DeleteCSIPMalwareScanTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实际物理删除的任务数（主表 affected rows）</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>因运行中（子表 status IN {0,1,11} 计数 &gt; 0）而未删除的 TaskId 列表；越权 / 不存在的 ID 不出现在此</p>",
+          "example": "[3086644]",
+          "member": "uint64",
+          "name": "FailedIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCosAkAssetRequest": {
       "document": "DeleteCosAkAsset请求参数结构体",
       "members": [
@@ -16907,6 +17816,106 @@
     "DeleteDspmWhitelistStrategyResponse": {
       "document": "DeleteDspmWhitelistStrategy返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEDRRulesRequest": {
+      "document": "DeleteEDRRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID数组. (最大100条)</p>",
+          "example": "[\"6f727eb3-13b6-47c4-aba8-4aeb67c21905\"]",
+          "member": "string",
+          "name": "RuleIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则类型，0-system 1-custom，目前只支持删除自定义规则</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除策略对应的APPID</p>",
+          "example": "[260199983]",
+          "member": "uint64",
+          "name": "TargetAppIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEDRRulesResponse": {
+      "document": "DeleteEDRRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEDRScanTaskRequest": {
+      "document": "DeleteEDRScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "2320",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-54213b157ddf7170\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEDRScanTaskResponse": {
+      "document": "DeleteEDRScanTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>被删除任务的taskId</p>",
+          "example": "2320",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -18937,6 +19946,283 @@
           "name": "Topics",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCSIPMalwareScanTaskDetailRequest": {
+      "document": "DescribeCSIPMalwareScanTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>PolicyType - int - 是否必填：否 - 策略类型PolicyName - string - 是否必填：否 - 策略名称Domain - string - 是否必填：否 - 域名(先对域名做urlencode,再base64)PolicyAction- int - 是否必填：否 - 策略动作IsEnabled - int - 是否必填：否 - 是否生效</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制条数,默认10,最大100</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量,默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式: [ASC:升序|DESC:降序]</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选排序列，暂不支持排序，默认按照id降序排列</p>",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCSIPMalwareScanTaskDetailResponse": {
+      "document": "DescribeCSIPMalwareScanTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "21",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表</p>",
+          "example": "无",
+          "member": "CSIPMalwareScanUuidDetailItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描开始时间，格式 2006-01-02 15:04:05</p>",
+          "example": "2026-06-29 19:08:41",
+          "member": "string",
+          "name": "ScanBeginTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描结束时间，格式 2006-01-02 15:04:05，扫描未完成时为空字符串</p>",
+          "example": "2026-06-29 19:09:20",
+          "member": "string",
+          "name": "ScanEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描机器总数</p>",
+          "example": "21",
+          "member": "uint64",
+          "name": "ScanMachineCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响机器数（有风险的机器数）</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RiskMachineCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描内容，0-全盘扫描 1-快速扫描</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "ScanContent",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型，0-一键扫描 1-定时扫描 2-重新扫描</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预估剩余扫描时间（分钟），扫描完成时为0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScanLeftTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否所有机器正在停止中，true表示停止中</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "StoppingAll",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCSIPMalwareScanTaskProgressRequest": {
+      "document": "DescribeCSIPMalwareScanTaskProgress请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCSIPMalwareScanTaskProgressResponse": {
+      "document": "DescribeCSIPMalwareScanTaskProgress返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务整体状态枚举值：0： NeverScanned1： Scanning2： Finished3： Stopping4： Stopped</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进度百分比 0~100（公式：20 + 80 × finished/total，含运行中机器时强制 ≤ 99；Status=Stopped 时强制 100）</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Schedule",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子表机器总数</p>",
+          "example": "21",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进入终态的机器数（含 Terminating(6) / Terminated(7)）</p>",
+          "example": "21",
+          "member": "uint64",
+          "name": "FinishedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>累计风险告警数（来自主表 total_risk_count）</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RiskCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -25940,6 +27226,446 @@
       ],
       "type": "object"
     },
+    "DescribeEDRScanRecordListRequest": {
+      "document": "DescribeEDRScanRecordList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-54213b157ddf7170\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用查询参数（含Filters/Limit/Offset/Order/By）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEDRScanRecordListResponse": {
+      "document": "DescribeEDRScanRecordList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数</p>",
+          "example": "857",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描任务记录列表</p>",
+          "example": "无",
+          "member": "EDRScanRecordItem",
+          "name": "RecordList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEDRScanTaskDetailRequest": {
+      "document": "DescribeEDRScanTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-54213b157ddf7170\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用查询参数（含Filters/Limit/Offset）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEDRScanTaskDetailResponse": {
+      "document": "DescribeEDRScanTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "Malware_20260707_151616",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>整体状态：WAIT/SCANNING/FINISHED/FAILED/CANCELED/TERMINATED/TIMEOUT</p>",
+          "example": "SCANNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型：HOST/CONTAINER</p>",
+          "example": "HOST",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发方式：MANUAL/CYCLE</p>",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务开始时间</p>",
+          "example": "2026-07-07 15:16:17",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务结束时间</p>",
+          "example": "2026-07-08 12:16:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测模式：full/quick/include/exclude</p>",
+          "example": "full",
+          "member": "string",
+          "name": "ScanType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自选路径列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/home/ubuntu/.openclaw/workspace/AgentSecEval/dataset/malicious_samples\"]",
+          "member": "string",
+          "name": "CustomPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间（秒）</p>",
+          "example": "3600",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启深度检测：0-否/1-是</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableMemShellScan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者账号AppId</p>",
+          "example": "260199982",
+          "member": "uint64",
+          "name": "CreateAppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建者账号名称（后端富化）</p>",
+          "example": "委派管理员1",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者云类型</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务总资产数</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "TotalAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已完成资产数</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "FinishedAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险资产数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RiskAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机资产列表（TaskType=HOST时有值）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EDRScanTaskHostItem",
+          "name": "HostList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器资产列表（TaskType=CONTAINER时有值）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EDRScanTaskContainerItem",
+          "name": "ContainerList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前筛选条件下资产列表总条数</p>",
+          "example": "7",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrAlertCountForAssetRequest": {
+      "document": "DescribeEdrAlertCountForAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机instance_id列表，为空时返回MemberId对应appid范围内的汇总统计，非空时按每个instance_id粒度分别返回统计</p>",
+          "example": "[\"ins-f9324z7u\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选条件列表，与DescribeEdrAlertList保持一致。支持的Name取值及对应Values枚举：Status - string - 是否必填：否 - 告警状态。Values取值：PENDING（待处理）、WHITELISTED（已加白）、PROCESSED（已处理）、IGNORED（已忽略）Level - string - 是否必填：否 - 告警等级。Values取值：CRITICAL（严重）、HIGH（高危）、MEDIUM（中危）、LOW（低危）、INFO（提示）DetectMode - string - 是否必填：否 - 检测模式。Values取值：PRECISE（精准）、BALANCED（均衡）、DEEP（深度）AlertCategory - string - 是否必填：否 - 告警大类。Values取值：VIRUS_TROJAN（病毒木马）、ABNORMAL_LOGIN（异常登录）、HOST_BEHAVIOR（主机行为）、NETWORK_BEHAVIOR（网络行为）、AI_LINK_ENGINE（AI关联引擎）AlertSubType - string - 是否必填：否 - 告警子类型。Values取值：MALWARE_FILE（恶意文件）、MALWARE_PROCESS（恶意进程）、RISK_LOGIN（异常登录）、BRUTE_FORCE（密码破解）、DNS（恶意请求）、BASH（高危命令）、PRIV_ESCALATION（本地提权）、REVERSE_SHELL（反弹Shell）、NET_ATTACK（网络攻击）、VUL_DEFENCE（漏洞防御）、MEMORY_SHELL_INJECT（内存马注入）、MEMORY_SHELL_SCAN（内存马扫描）、MULTI_BEHAVIOR_ATTACK（多行为攻击）AttackStage - string - 是否必填：否 - ATT&amp;CK攻击阶段。Values取值：TA0001~TA0011、TA0040、TA0042、TA0043，空字符串表示未分类AlertSource - string - 是否必填：否 - 告警来源。Values取值：HOST（主机）StartTime - string - 是否必填：否 - 起始时间，格式YYYY-MM-DD HH:MM:SS，不传默认近180天EndTime - string - 是否必填：否 - 结束时间，格式YYYY-MM-DD HH:MM:SS，不传默认当前时间</p>",
+          "example": "无",
+          "member": "EDRFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrAlertCountForAssetResponse": {
+      "document": "DescribeEdrAlertCountForAsset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全局汇总统计（Quuids为空时返回）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EdrAlertCountItem",
+          "name": "GlobalCount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>按quuid粒度统计列表（Quuids非空时返回）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EdrAlertCountItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrAlertCountForContainerRequest": {
+      "document": "DescribeEdrAlertCountForContainer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID 列表（≤500）；非空且 ContainerIds 为空时按集群分组统计</p>",
+          "example": "[\"cls-nac4o61q\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器 ID 列表（≤500）；非空时按容器分组统计（优先级高于 ClusterIds）</p>",
+          "example": "[\"058282413b99b87b10b4c24ab353db46d72b72deba2490969758296b54743676\"]",
+          "member": "string",
+          "name": "ContainerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<li>PolicyType - int - 是否必填：否 - 策略类型</li><li>PolicyName - string - 是否必填：否 - 策略名称</li><li>Domain - string - 是否必填：否 - 域名(先对域名做urlencode,再base64)</li><li>PolicyAction- int - 是否必填：否 - 策略动作</li><li>IsEnabled - int - 是否必填：否 - 是否生效</li><li>ContainerId - string - 是否必填：否 - 容器ID（精确/IN，容器维度筛选）</li><li>ClusterId - string - 是否必填：否 - 集群ID（精确/IN，容器维度筛选）</li><li>ClusterName - string - 是否必填：否 - 集群名称（前缀模糊）</li><li>ContainerName - string - 是否必填：否 - 容器名称（前缀模糊）</li><li>AlertSource - string - 是否必填：否 - 告警来源：HOST-主机告警 / CONTAINER-容器告警，不传返回全部</li>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrAlertCountForContainerResponse": {
+      "document": "DescribeEdrAlertCountForContainer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全局模式返回（两个 ID 数组都为空时）；分组模式为 null</p>",
+          "example": "无",
+          "member": "EdrContainerGlobalCount",
+          "name": "GlobalCount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组模式返回（ContainerIds 或 ClusterIds 非空时）；空返回 []</p>",
+          "example": "无",
+          "member": "EdrContainerAlertCountItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEdrAlertInfoRequest": {
       "document": "DescribeEdrAlertInfo请求参数结构体",
       "members": [
@@ -26085,6 +27811,247 @@
           "example": "无",
           "member": "EdrAlertCategoryCount",
           "name": "AlertCategoryCounts",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrAlertMultiAttackStagesRequest": {
+      "document": "DescribeEdrAlertMultiAttackStages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>目标告警信息</p>",
+          "example": "无",
+          "member": "EdrAlertTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrAlertMultiAttackStagesResponse": {
+      "document": "DescribeEdrAlertMultiAttackStages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>多攻击阶段详情</p>",
+          "example": "无",
+          "member": "MultiAttackStageItem",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrAlertSummaryRequest": {
+      "document": "DescribeEdrAlertSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\\n\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrAlertSummaryResponse": {
+      "document": "DescribeEdrAlertSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>严重+高危待处理数（Level IN CRITICAL,HIGH，DB 内部值 1,5）</p>",
+          "example": "737",
+          "member": "int64",
+          "name": "CriticalPendingCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全部待处理数</p>",
+          "example": "1554",
+          "member": "int64",
+          "name": "TotalPendingCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrExportJobDownloadURLRequest": {
+      "document": "DescribeEdrExportJobDownloadURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出任务 ID</p>",
+          "example": "9124707a-2220-4abb-8b8e-51dd82a58527",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrExportJobDownloadURLResponse": {
+      "document": "DescribeEdrExportJobDownloadURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>COS 预签名下载链接（2 小时有效）</p>",
+          "example": "https://0d9",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>",
+          "example": "260199983-edr-alert-20260629-1.xlsx",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrExportJobListRequest": {
+      "document": "DescribeEdrExportJobList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-3481ca5ac562771f\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>PolicyType - int - 是否必填：否 - 策略类型PolicyName - string - 是否必填：否 - 策略名称Domain - string - 是否必填：否 - 域名(先对域名做urlencode,再base64)PolicyAction- int - 是否必填：否 - 策略动作IsEnabled - int - 是否必填：否 - 是否生效</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制条数,默认10,最大100</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量,默认0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按 任务创建时间排序方向，仅支持 <code>ASC</code> / <code>DESC</code></p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，目前仅支持 InsertTime（按任务下发时间排序），不传默认 InsertTime；传入其他值返回 InvalidParameter</p>",
+          "example": "InsertTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrExportJobListResponse": {
+      "document": "DescribeEdrExportJobList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下载文件数量</p>",
+          "example": "308",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载文件信息</p>",
+          "example": "无",
+          "member": "EDRExportJobItem",
+          "name": "List",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -27584,6 +29551,133 @@
       ],
       "type": "object"
     },
+    "DescribeNetAttackSettingRequest": {
+      "document": "DescribeNetAttackSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-b624e485fee5fe29\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetAttackSettingResponse": {
+      "document": "DescribeNetAttackSetting返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>0 关闭网络攻击检测，1开启网络攻击检测</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "NetAttackEnable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "NetAttackAlarmStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增资产自动包含 0 不包含 1包含</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoInclude",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机范围</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CWPScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定主机instance_id列表</p>",
+          "example": "[\"eks-bxblqkm5\"]",
+          "member": "string",
+          "name": "InstanceIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除主机instance_id列表</p>",
+          "example": "[\"ins-o969mktq\"]",
+          "member": "string",
+          "name": "ExcludeInstanceIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID列表</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "TagIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器范围</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TCSSScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定集群ID列表</p>",
+          "example": "[\"cls-051zf14m\"]",
+          "member": "string",
+          "name": "ClusterIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除集群ID列表</p>",
+          "example": "[\"cls-051zf14m\"]",
+          "member": "string",
+          "name": "ExcludeClusterIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNotifyAssetConfigRequest": {
       "document": "DescribeNotifyAssetConfig请求参数结构体",
       "members": [
@@ -28147,6 +30241,123 @@
           "member": "FilterDataObject",
           "name": "RegionList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellSystemPolicyConfigRequest": {
+      "document": "DescribeReverseShellSystemPolicyConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-b624e485fee5fe29\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellSystemPolicyConfigResponse": {
+      "document": "DescribeReverseShellSystemPolicyConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>内网告警展示</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "InnerNetAlarmShow",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网ip展示</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "InnerIPShow",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机范围</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CWPScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定主机instance_id列表</p>",
+          "example": "[\"eks-bxblqkm5\"]",
+          "member": "string",
+          "name": "InstanceIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除主机instance_id列表</p>",
+          "example": "[\"eks-bxblqkm5\"]",
+          "member": "string",
+          "name": "ExcludeInstanceIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID列表</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "TagIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器范围</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TCSSScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定集群ID列表</p>",
+          "example": "[\"cls-051zf14m\"]",
+          "member": "string",
+          "name": "ClusterIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除集群ID列表</p>",
+          "example": "[\"cls-051zf14m\"]",
+          "member": "string",
+          "name": "ExcludeClusterIDs",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -39073,6 +41284,92 @@
       ],
       "usage": "out"
     },
+    "EDRExportJobItem": {
+      "document": "EDR任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "mock-job-0001",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名</p>",
+          "example": "mock-export-job",
+          "member": "string",
+          "name": "JobName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源</p>",
+          "example": "edr_alert",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出状态</p>",
+          "example": "FAILURE",
+          "member": "string",
+          "name": "ExportStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出进度</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "ExportProgress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败信息</p>",
+          "example": "export timeout",
+          "member": "string",
+          "name": "FailureMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间</p>",
+          "example": "2026-01-01 00:00:00",
+          "member": "string",
+          "name": "Timeout",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>插入时间</p>",
+          "example": "2026-01-01 00:00:00",
+          "member": "string",
+          "name": "InsertTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EDRFilter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n\n* 最多只能有5个Filter\n* 同一个Filter存在多个Values，Values值数量最多不能超过5个。\n",
       "members": [
@@ -39097,6 +41394,39 @@
         {
           "disabled": false,
           "document": "<p>模糊搜索</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "EDRFilters": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤键的名称。</p>",
+          "example": "AlertCategory",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>一个或者多个过滤值。</p>",
+          "example": "[\"ABNORMAL_LOGIN\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否模糊匹配，前端框架会带上，可以不管</p>",
           "example": "true",
           "member": "bool",
           "name": "ExactMatch",
@@ -39565,6 +41895,454 @@
       ],
       "usage": "both"
     },
+    "EDRScanRecordItem": {
+      "document": "扫描任务记录项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务主键 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "205",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称，如 Malware_20260702_030000</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Malware_20260708_163357",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描类型</p><p>枚举值：</p><ul><li>MANNAL： 手动扫描</li><li>CYCLE： 定时扫描</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时调度描述（ScanType=1 时有值），如“每天 03:00:00”</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "定时扫描：10:00:00～22:00:00",
+          "member": "string",
+          "name": "ScheduleDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务资产类型：0=主机扫描，1=容器扫描</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CONTAINER",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描目标涉及的账号AppId列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[260199982]",
+          "member": "uint64",
+          "name": "TargetAppIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建者账号名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "委派管理员1",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>云类型：0=腾讯云，1=AWS，2=Azure，4=阿里云</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产选择方式：all=全部资产，tag=按标签选择，direct=直接选择</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag",
+          "member": "string",
+          "name": "AssetSelectionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描资产总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "int64",
+          "name": "TotalAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者账号AppId（前端据此判断操作权限）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260199972",
+          "member": "uint64",
+          "name": "CreateAppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者账号uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002653567",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者账号名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "管理_700002653567",
+          "member": "string",
+          "name": "CreatorName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者云类型：0=腾讯云, 1=AWS, 2=Azure, 4=阿里云</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CreatorCloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务开始时间，格式 2006-01-02 15:04:05</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-07-08 15:32:21",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务结束时间，未结束为空字符串</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-07-08 17:22:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>WAIT：待扫描，SCANNING：扫描中，FINISHED：已完成，FAILED：失败，CANCELED：已停止</p><p>枚举值：</p><ul><li>WAIT： 待扫描</li><li>SCANNING： 扫描中</li><li>FINISHED： 已完成</li><li>FAILED： 失败</li><li>CANCELED： 已停止</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FAILED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EDRScanTaskContainerItem": {
+      "document": "容器资产扫描详情项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>容器ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0ba886b2f9b517832d5cb243f1dfa312cc5f3619ba391851fcb840c4f6d0d842",
+          "member": "string",
+          "name": "ContainerID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "centos-pod",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Pod名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "centos-pod",
+          "member": "string",
+          "name": "PodName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-ivhnr5q4",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fengqqian_tke2",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TKE_MANAGED_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产所属账号名称（后端富化）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成员账号test2",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属账号AppId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260199983",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>云类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描状态：WAIT/SCANNING/FINISHED/FAILED</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FAILED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "容器不存在或已销毁",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>解决方案</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "请确认容器仍在运行后重新扫描",
+          "member": "string",
+          "name": "FixSuggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EDRScanTaskHostItem": {
+      "document": "主机资产扫描详情项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主机唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "73863ca9-8128-47bb-b4d7-687b39b5db8a",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "as-tke-np-j3772qd2-1",
+          "member": "string",
+          "name": "HostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-7i5f82hu",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "119.45.55.151",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.16.16.2",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Ubuntu 24.04.4 LTS",
+          "member": "string",
+          "name": "OsType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产所属账号名称（后端富化）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "委派管理员1",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产所属账号AppId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "260199982",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>云类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描状态：WAIT/SCANNING/FINISHED/FAILED</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TIMEOUT",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
+          "member": "int64",
+          "name": "RiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务下发失败（客户端已离线）",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>解决方案</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "请确认主机在线且客户端运行正常后重新扫描",
+          "member": "string",
+          "name": "FixSuggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "EdrAlertCategoryCount": {
       "document": "EDR告警大类对应的告警数量",
       "members": [
@@ -39586,6 +42364,89 @@
           "member": "int64",
           "name": "Count",
           "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EdrAlertCountItem": {
+      "document": "EDR告警数量统计项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询实例ID</p>",
+          "example": "ins-f9324z7u",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总告警条数</p>",
+          "example": "255",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>病毒木马（VIRUS_TROJAN）数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VirusTrojanCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常登录（ABNORMAL_LOGIN）数量</p>",
+          "example": "255",
+          "member": "int64",
+          "name": "AbnormalLoginCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机行为（HOST_BEHAVIOR）数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "HostBehaviorCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络行为（NETWORK_BEHAVIOR）数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "NetworkBehaviorCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存在告警的主机数量（仅 GlobalCount 模式有值）</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "InstancesCount",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -40717,6 +43578,73 @@
       ],
       "usage": "both"
     },
+    "EdrContainerAlertCountItem": {
+      "document": "容器告警分组统计项（仅返回 TotalCount，不做告警大类拆分）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID（按集群分组时有值，否则空串）</p>",
+          "example": "cls-nac4o61q",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器 ID（按容器分组时有值，否则空串）</p>",
+          "example": "058282413b99b87b10b4c24ab353db46d72b72deba2490969758296b54743676",
+          "member": "string",
+          "name": "ContainerId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该集群/容器的告警总条数</p>",
+          "example": "27",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EdrContainerGlobalCount": {
+      "document": "容器告警全局统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总告警条数</p>",
+          "example": "62",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存在告警的集群数量（COUNT(DISTINCT cluster_id)，排除空 cluster_id）</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClustersCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Element": {
       "document": "统计条目",
       "members": [
@@ -40744,6 +43672,125 @@
         }
       ],
       "usage": "both"
+    },
+    "ExportCSIPMalwareScanTaskDetailRequest": {
+      "document": "ExportCSIPMalwareScanTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CSIP扫描任务ID</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Status - int - 是否必填：否 - 扫描状态过滤Quuid - string - 是否必填：否 - 主机Quuid过滤MachineName - string - 是否必填：否 - 主机名称模糊搜索InstanceID - string - 是否必填：否 - 实例ID过滤（单值模糊匹配，多值精确匹配）IP - string - 是否必填：否 - IP地址过滤（内网IP+公网IP双向模糊匹配）</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportCSIPMalwareScanTaskDetailResponse": {
+      "document": "ExportCSIPMalwareScanTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导出任务ID，用于查询导出结果</p>",
+          "example": "1782731545",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportEDRRulesRequest": {
+      "document": "ExportEDRRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-3481ca5ac562771f\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件：Name、RuleContent、RuleType、ContentType、Action、Level、DetectMode、DetectType、AttackStage、Status</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序，大小写无关：ASC 升序，DESC降序</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序列，ModifyTime</p>",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportEDRRulesResponse": {
+      "document": "ExportEDRRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID,需要到接口 <a href=\"https://cloud.tencent.com/document/product/296/52508\" target=\"_blank\">异步导出任务</a>获取DownloadUrl下载地址</p>",
+          "example": "1782730904",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExportTask": {
       "document": "导出任务列表",
@@ -47299,6 +50346,177 @@
       ],
       "type": "object"
     },
+    "ModifyEDRRuleStatusRequest": {
+      "document": "ModifyEDRRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开启状态：0-开启，1-关闭</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略ID数组</p>",
+          "example": "[\"d1ef35a5-1bef-48fb-9a5b-3928932f1769\"]",
+          "member": "string",
+          "name": "RuleIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略类型，0-system 1-custom</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改策略对应的APPID</p>",
+          "example": "[260199983]",
+          "member": "uint64",
+          "name": "TargetAppIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEDRRuleStatusResponse": {
+      "document": "ModifyEDRRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEDRRulesActionRequest": {
+      "document": "ModifyEDRRulesAction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略ID数组</p>",
+          "example": "[\"44ff42d6-70ee-4d20-84ad-5240d8286a07\"]",
+          "member": "string",
+          "name": "RuleIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标 Action：0-告警 1-放行 2-告警并拦截</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AlertAction",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标账号 AppId 列表</p>",
+          "example": "[260199983]",
+          "member": "uint64",
+          "name": "TargetAppIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEDRRulesActionResponse": {
+      "document": "ModifyEDRRulesAction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdrAlertIsolationRequest": {
+      "document": "ModifyEdrAlertIsolation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警定位列表（1-500）</p>",
+          "example": "无",
+          "member": "EdrAlertTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型：Isolate（隔离）/ RestoreIsolate（恢复隔离）/ KillProcess（进程查杀）枚举值：Isolate： 隔离RestoreIsolate： 恢复隔离KillProcess： 进程查杀</p>",
+          "example": "Isolate",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否终止关联进程，仅 Status=Isolate 有效，Status=KillProcess 时忽略</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "KillProcess",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdrAlertIsolationResponse": {
+      "document": "ModifyEdrAlertIsolation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEdrAlertPermanentIgnoreRequest": {
       "document": "ModifyEdrAlertPermanentIgnore请求参数结构体",
       "members": [
@@ -47336,6 +50554,51 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdrAlertStatusRequest": {
+      "document": "ModifyEdrAlertStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>目标告警信息</p>",
+          "example": "无",
+          "member": "EdrAlertTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>想达到的告警状态枚举值：PROCESSED： 已处理WHITELISTED： 已加白IGNORED： 已忽略DELETED： 已删除-软删除</p>",
+          "example": "PROCESSED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdrAlertStatusResponse": {
+      "document": "ModifyEdrAlertStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -47416,6 +50679,123 @@
     },
     "ModifyMachineRemarkResponse": {
       "document": "ModifyMachineRemark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetAttackSettingRequest": {
+      "document": "ModifyNetAttackSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>0 关闭网络攻击检测，1开启网络攻击检测</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "NetAttackEnable",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-b624e485fee5fe29\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "NetAttackAlarmStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增资产自动包含 0 不包含 1包含</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoInclude",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机范围：0-指定 1-全部 2-专业版 3-旗舰版 4-专业+旗舰</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CWPScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定主机列表（CWPScope=0时使用）</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "InstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除主机列表</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "ExcludeInstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID列表</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "TagIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器范围：0-指定集群 1-全部集群</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TCSSScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定集群列表（TCSSScope=0时使用）</p>",
+          "example": "无",
+          "member": "ClusterIDWithAppIdItem",
+          "name": "ClusterIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除集群列表</p>",
+          "example": "无",
+          "member": "ClusterIDWithAppIdItem",
+          "name": "ExcludeClusterIDsWithAppId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetAttackSettingResponse": {
+      "document": "ModifyNetAttackSetting返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -47624,6 +51004,114 @@
     },
     "ModifyPolicyStatusResponse": {
       "document": "ModifyPolicyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReverseShellSystemPolicyConfigRequest": {
+      "document": "ModifyReverseShellSystemPolicyConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-b624e485fee5fe29\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网告警展示</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "InnerNetAlarmShow",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网ip展示</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "InnerIPShow",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机范围：0-指定 1-全部 2-专业版 3-旗舰版 4-专业+旗舰</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CWPScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定主机列表（CWPScope=0时使用）</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "InstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除主机列表</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "ExcludeInstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID列表</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "TagIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器范围：0-指定集群 1-全部集群</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TCSSScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定集群列表（TCSSScope=0时使用）</p>",
+          "example": "无",
+          "member": "ClusterIDWithAppIdItem",
+          "name": "ClusterIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除集群列表</p>",
+          "example": "无",
+          "member": "ClusterIDWithAppIdItem",
+          "name": "ExcludeClusterIDsWithAppId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReverseShellSystemPolicyConfigResponse": {
+      "document": "ModifyReverseShellSystemPolicyConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -48178,6 +51666,52 @@
         }
       ],
       "type": "object"
+    },
+    "MultiAttackStageItem": {
+      "document": "告警对应的多攻击阶段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表id</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>APPID</p>",
+          "example": "260199983",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警ID</p>",
+          "example": "mock-alert-id-0001",
+          "member": "string",
+          "name": "AlertId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击阶段列表</p>",
+          "example": "[\"TA0001\"]",
+          "member": "string",
+          "name": "AttackStages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "NICAsset": {
       "document": "网卡资产",
@@ -51054,6 +54588,135 @@
       ],
       "usage": "out"
     },
+    "ScanCSIPTaskAgainRequest": {
+      "document": "ScanCSIPTaskAgain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>扫描任务ID</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限定本次重扫的目标主机列表；为空时取主表对应子表的全量 实例ID；长度上限 1000</p>",
+          "example": "[\"ins-f9324z7u\"]",
+          "member": "string",
+          "name": "InstanceIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描超时时长（秒），可选。非零时更新一键扫描超时配置并同步更新子表 timeout 字段。上限 7200 秒（2小时），超出返回 InvalidParameter。</p>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TimeoutPeriod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ScanCSIPTaskAgainResponse": {
+      "document": "ScanCSIPTaskAgain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>本次实际触发重扫的机器数（= 状态白名单过滤后的候选机器数）单位：个</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原任务 ID（与入参一致；CWP 原版同样返回原 ID 而非新 ID，重扫为原地复用）</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScanEDRTaskAgainRequest": {
+      "document": "ScanEDRTaskAgain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>原任务ID</p>",
+          "example": "2318",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-54213b157ddf7170\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机Quuid或ContainerID（详情页单资产重扫时传，为空则全量重扫）</p>",
+          "example": "1f665110-706a-4f2c-bef7-9b0f15827419",
+          "member": "string",
+          "name": "AssetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScanEDRTaskAgainResponse": {
+      "document": "ScanEDRTaskAgain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>新建任务的TaskId</p>",
+          "example": "2324",
+          "member": "uint64",
+          "name": "NewTaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ScanTaskInfo": {
       "document": "扫描任务详情",
       "members": [
@@ -52662,6 +56325,98 @@
         }
       ],
       "usage": "both"
+    },
+    "StopCSIPManualMalwareScanRequest": {
+      "document": "StopCSIPManualMalwareScan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCSIPManualMalwareScanResponse": {
+      "document": "StopCSIPManualMalwareScan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "3086642",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopEDRScanTaskRequest": {
+      "document": "StopEDRScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "2324",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-54213b157ddf7170\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopEDRScanTaskResponse": {
+      "document": "StopEDRScanTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "2324",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StopRiskCenterTaskRequest": {
       "document": "StopRiskCenterTask请求参数结构体",

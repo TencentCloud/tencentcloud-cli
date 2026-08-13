@@ -1132,7 +1132,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSaleResourceInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"SaleResourceInfoList\": [\n            {\n                \"MaxSpec\": 192,\n                \"ResourceSpec\": {\n                    \"InstanceType\": \"\",\n                    \"ResourceType\": \"CPU\"\n                },\n                \"Step\": 32\n            }\n        ],\n        \"RequestId\": \"313630c6-9e14-44ae-b9d6-00f019357803\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SaleResourceInfoList\": [\n            {\n                \"ResourceSpec\": {\n                    \"ResourceType\": \"CPU\",\n                    \"InstanceType\": \"\",\n                    \"GpuType\": \"\",\n                    \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                    \"SpecDesc\": \"1 CU = 1 × vCPU * 4GB Memory\",\n                    \"Spec\": \"0:1:4:0\",\n                    \"MaxCardPerNode\": 0\n                },\n                \"Step\": 32,\n                \"MaxSpec\": 4096,\n                \"StatusCategory\": \"EnoughStock\"\n            }\n        ],\n        \"RequestId\": \"313630c6-9e14-44ae-b9d6-00f019357803\"\n    }\n}",
         "title": "DescribeSaleResourceInfo"
       }
     ],
@@ -1842,6 +1842,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListExamples\n<公共请求参数>\n\n{\n    \"Category\": \"data-processing\",\n    \"Keyword\": \"批量\",\n    \"Tags\": [\n        \"ETL\"\n    ],\n    \"OrderBy\": \"Popularity\",\n    \"Page\": 1,\n    \"PageSize\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Category\": \"data-processing\",\n                \"CodeArchiveUrl\": \"https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/models/examples/example-005-raydp-raydata.zip\",\n                \"CreateTime\": 1779764566348,\n                \"Deleted\": 0,\n                \"Description\": \"使用 RayDP (Spark on Ray) 进行分布式数据预处理，再通过 Ray Data 进行分布式批量推理，构建端到端 ML 流水线\",\n                \"Difficulty\": \"advanced\",\n                \"EstimatedTime\": 25,\n                \"ExampleId\": \"example-005-raydp-raydata\",\n                \"Id\": 9,\n                \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-extra\",\n                \"IsEnabled\": true,\n                \"LabImage\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-extra-lab\",\n                \"Popularity\": 3,\n                \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"default-head\\\",\\\"PodCpu\\\":2,\\\"PodMem\\\":4,\\\"PodNum\\\":1},\\\"Worker\\\":[{\\\"Name\\\":\\\"default-worker\\\",\\\"PodCpu\\\":2,\\\"PodMem\\\":4,\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1}]}\",\n                \"SortOrder\": 5,\n                \"Tags\": [\n                    \"RayDP\"\n                ],\n                \"Title\": \"RayDP + Ray Data: Spark ETL 到分布式批量推理\",\n                \"UpdateTime\": 1779764566348\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 2,\n        \"Total\": 1,\n        \"TotalPages\": 1,\n        \"RequestId\": \"d5e4e25a-7505-42a5-85dc-a8d9b2f30e40\"\n    }\n}",
         "title": "ListExamples"
+      }
+    ],
+    "ListImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListImages\n<公共请求参数>\n\n{\n    \"Keyword\": \"tcray\",\n    \"Type\": \"Ray\",\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": 1772610344431,\n                \"Description\": \"Ray 集群镜像，用于 Head 和 Worker 节点\",\n                \"Id\": 4,\n                \"Name\": \"tcray-3.0.0.dev0-py311-cpu\",\n                \"Type\": \"Ray\",\n                \"UpdateTime\": 1773052310425,\n                \"Url\": \"ccr.ccs.tencentyun.com/emr-image/tcray:3.0.0.dev0-py311-cpu\"\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 10,\n        \"Total\": 1,\n        \"TotalPages\": 1,\n        \"RequestId\": \"f4103770-7d4a-4528-a300-e990f598018e\"\n    }\n}",
+        "title": "列出所有镜像"
       }
     ],
     "ListInferenceEngines": [

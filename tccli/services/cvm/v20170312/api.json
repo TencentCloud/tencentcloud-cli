@@ -1172,7 +1172,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CHC物理服务器ID。",
+          "document": "<p>CHC物理服务器ID。</p>",
           "example": "chc-1a2b3c4d",
           "member": "string",
           "name": "ChcId",
@@ -1182,7 +1182,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "托管服务器1",
           "member": "string",
           "name": "InstanceName",
@@ -1192,7 +1192,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器序列号。",
+          "document": "<p>服务器序列号。</p>",
           "example": "sn34asdfabd",
           "member": "string",
           "name": "SerialNumber",
@@ -1202,7 +1202,7 @@
         },
         {
           "disabled": false,
-          "document": "CHC的状态<br/>\n<ul>\n<li>INIT: 设备已录入。还未配置带外和部署网络</li>\n<li>READY: 已配置带外和部署网络</li>\n<li>PREPARED: 可分配云主机</li>\n<li>ONLINE: 已分配云主机</li>\n<li>OPERATING: 设备操作中，如正在配置带外网络等。</li>\n<li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li>\n</ul>",
+          "document": "<p>CHC的状态<br></p><ul><li>INIT: 设备已录入。还未配置带外和部署网络</li><li>READY: 已配置带外和部署网络</li><li>PREPARED: 可分配云主机</li><li>ONLINE: 已分配云主机</li><li>OPERATING: 设备操作中，如正在配置带外网络等。</li><li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li></ul>",
           "example": "ONLINE",
           "member": "string",
           "name": "InstanceState",
@@ -1212,7 +1212,7 @@
         },
         {
           "disabled": false,
-          "document": "设备类型。",
+          "document": "<p>设备类型。</p>",
           "example": "CHC_HS1",
           "member": "string",
           "name": "DeviceType",
@@ -1222,7 +1222,7 @@
         },
         {
           "disabled": false,
-          "document": "所属可用区",
+          "document": "<p>所属可用区。</p>",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
@@ -1232,7 +1232,7 @@
         },
         {
           "disabled": false,
-          "document": "带外网络。",
+          "document": "<p>带外网络。</p>",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "BmcVirtualPrivateCloud",
@@ -1242,7 +1242,7 @@
         },
         {
           "disabled": false,
-          "document": "带外网络Ip。",
+          "document": "<p>带外网络IP。</p>",
           "example": "10.12.10.34",
           "member": "string",
           "name": "BmcIp",
@@ -1252,7 +1252,7 @@
         },
         {
           "disabled": false,
-          "document": "带外网络安全组Id。",
+          "document": "<p>带外网络安全组ID。</p>",
           "example": "[\"sg-1a2b34af\"]",
           "member": "string",
           "name": "BmcSecurityGroupIds",
@@ -1262,7 +1262,7 @@
         },
         {
           "disabled": false,
-          "document": "部署网络。",
+          "document": "<p>部署网络。</p>",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "DeployVirtualPrivateCloud",
@@ -1272,7 +1272,7 @@
         },
         {
           "disabled": false,
-          "document": "部署网络Ip。",
+          "document": "<p>部署网络IP。</p>",
           "example": "10.12.10.34",
           "member": "string",
           "name": "DeployIp",
@@ -1282,7 +1282,7 @@
         },
         {
           "disabled": false,
-          "document": "部署网络安全组Id。",
+          "document": "<p>部署网络安全组ID。</p>",
           "example": "[\"sg-1a2b34af\"]",
           "member": "string",
           "name": "DeploySecurityGroupIds",
@@ -1292,7 +1292,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的云主机Id。",
+          "document": "<p>关联的云主机ID。</p>",
           "example": "ins-34as43at",
           "member": "string",
           "name": "CvmInstanceId",
@@ -1302,7 +1302,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器导入的时间。",
+          "document": "<p>服务器导入的时间。</p>",
           "example": "2020-03-10T02:43:51Z",
           "member": "string",
           "name": "CreatedTime",
@@ -1312,8 +1312,8 @@
         },
         {
           "disabled": false,
-          "document": "机型的硬件描述，分别为CPU核数，内存容量和磁盘容量",
-          "example": "128C 22GB 2424GB",
+          "document": "<p>机型的硬件描述，分别为CPU核数，内存容量和磁盘容量。</p>",
+          "example": "128C 384GB 10T Disk",
           "member": "string",
           "name": "HardwareDescription",
           "output_required": true,
@@ -1322,7 +1322,7 @@
         },
         {
           "disabled": false,
-          "document": "CHC物理服务器的CPU核数",
+          "document": "<p>CHC物理服务器的CPU核数。</p>",
           "example": "128",
           "member": "int64",
           "name": "CPU",
@@ -1332,8 +1332,8 @@
         },
         {
           "disabled": false,
-          "document": "CHC物理服务器的内存大小，单位为GB",
-          "example": "22",
+          "document": "<p>CHC物理服务器的内存大小，单位为GB。</p>",
+          "example": "384",
           "member": "int64",
           "name": "Memory",
           "output_required": true,
@@ -1342,7 +1342,7 @@
         },
         {
           "disabled": false,
-          "document": "CHC物理服务器的磁盘信息",
+          "document": "<p>CHC物理服务器的磁盘信息。</p>",
           "example": "10T",
           "member": "string",
           "name": "Disk",
@@ -1352,7 +1352,7 @@
         },
         {
           "disabled": false,
-          "document": "带外网络下分配的MAC地址",
+          "document": "<p>带外网络下分配的MAC地址。</p>",
           "example": "51:94:20:9C:B1:CB",
           "member": "string",
           "name": "BmcMAC",
@@ -1362,7 +1362,7 @@
         },
         {
           "disabled": false,
-          "document": "部署网络下分配的MAC地址",
+          "document": "<p>部署网络下分配的MAC地址。</p>",
           "example": "51:94:20:9C:B1:CB",
           "member": "string",
           "name": "DeployMAC",
@@ -1372,7 +1372,7 @@
         },
         {
           "disabled": false,
-          "document": "设备托管类型。\nHOSTING: 托管\nTENANT: 租赁",
+          "document": "<p>设备托管类型。</p><p>枚举值：</p><ul><li>HOSTING： 托管类型。</li><li>TENANT： 租赁类型。</li></ul>",
           "example": "HOSTING",
           "member": "string",
           "name": "TenantType",
@@ -1382,7 +1382,7 @@
         },
         {
           "disabled": false,
-          "document": "chc dhcp选项，用于minios调试。",
+          "document": "<p>CHC DHCP选项，用于客户自建PXE环境。</p>",
           "example": "无",
           "member": "ChcDeployExtraConfig",
           "name": "DeployExtraConfig",
@@ -1392,7 +1392,7 @@
         },
         {
           "disabled": false,
-          "document": "GPU型号。",
+          "document": "<p>GPU型号。</p>",
           "example": "2 * NVIDIA P40",
           "member": "string",
           "name": "Gpu",
@@ -1402,7 +1402,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡型号。主要指RDMA网卡。",
+          "document": "<p>网卡型号。主要指RDMA网卡。</p>",
           "example": "ConnectX-5",
           "member": "string",
           "name": "NetworkCard",
@@ -1412,7 +1412,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是预定义机型。",
+          "document": "<p>是否是预定义机型。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsPredefinedType",
@@ -1422,7 +1422,7 @@
         },
         {
           "disabled": false,
-          "document": "CHC云主机机型。",
+          "document": "<p>CHC云主机机型。</p>",
           "example": "CHCS5.128C256M",
           "member": "string",
           "name": "ChcInstanceType",
@@ -1432,7 +1432,7 @@
         },
         {
           "disabled": false,
-          "document": "CHC云主机机型簇。",
+          "document": "<p>CHC云主机机型簇。</p>",
           "example": "CHCS5",
           "member": "string",
           "name": "ChcInstanceFamily",
@@ -1442,7 +1442,7 @@
         },
         {
           "disabled": false,
-          "document": "CHC云主机机型簇名称。",
+          "document": "<p>CHC云主机机型簇名称。</p>",
           "example": "标准型CHCS5",
           "member": "string",
           "name": "ChcInstanceFamilyName",
@@ -1452,7 +1452,7 @@
         },
         {
           "disabled": false,
-          "document": "转售客户的AppId。",
+          "document": "<p>转售客户的AppID。</p>",
           "example": "12510001001",
           "member": "string",
           "name": "ResaleAppId",
@@ -1462,7 +1462,7 @@
         },
         {
           "disabled": false,
-          "document": "转售客户的账号ID。",
+          "document": "<p>转售客户的账号ID。</p>",
           "example": "100002300442",
           "member": "string",
           "name": "ResaleAccountId",
@@ -1472,7 +1472,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖状态。<br/>\n<ul>\n<li>NOT_FOR_SALE:不可售卖</li>\n<li>AVAILABLE: 可售卖</li>\n<li>SOLD: 已售卖</li>\n</ul>\n",
+          "document": "<p>售卖状态。<br></p><ul><li>NOT_FOR_SALE:不可售卖</li><li>AVAILABLE: 可售卖</li><li>SOLD: 已售卖</li></ul>",
           "example": "SOLD",
           "member": "string",
           "name": "SaleStatus",
@@ -1482,7 +1482,7 @@
         },
         {
           "disabled": false,
-          "document": "CHC物理服务器关联的标签列表。",
+          "document": "<p>CHC物理服务器关联的标签列表。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1492,7 +1492,7 @@
         },
         {
           "disabled": false,
-          "document": "最近操作",
+          "document": "<p>最近操作。</p>",
           "example": "ChcPrepare",
           "member": "string",
           "name": "LatestOperation",
@@ -1502,7 +1502,7 @@
         },
         {
           "disabled": false,
-          "document": "最近操作错误码",
+          "document": "<p>最近操作错误码。</p>",
           "example": "IpmiFailed",
           "member": "string",
           "name": "LatestOperationErrorCode",
@@ -1512,7 +1512,7 @@
         },
         {
           "disabled": false,
-          "document": "最近操作错误详情和建议项",
+          "document": "<p>最近操作错误详情和建议项。</p>",
           "example": "执行IPMI命令失败：1、账号能够拥有远程执行IPMI命令权限；2、在BIOS中设置允许LAN执行IPMI命令。",
           "member": "string",
           "name": "LatestOperationErrorMsg",
@@ -1522,7 +1522,7 @@
         },
         {
           "disabled": false,
-          "document": "最近操作名称",
+          "document": "<p>最近操作名称。</p>",
           "example": "带外检查失败",
           "member": "string",
           "name": "LatestOperationName",
@@ -1532,10 +1532,40 @@
         },
         {
           "disabled": false,
-          "document": "最近操作状态",
+          "document": "<p>最近操作状态。</p><p>枚举值：</p><ul><li>SUCCESS： 成功。</li><li>FAILED： 失败。</li></ul>",
           "example": "FAILED",
           "member": "string",
           "name": "LatestOperationState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所在的CHC网关的ID，只有专属网关才会返回。</p>",
+          "example": "chcgw-cluster-jy6853yh-1",
+          "member": "string",
+          "name": "ChcGatewayId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属的CDC集群ID。</p>",
+          "example": "cluster-34afsd9x",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务网卡网络模式。</p><p>枚举值：</p><ul><li>DEPLOY： 部署网络模式</li><li>BUSINESS： 业务网络模式</li></ul>",
+          "example": "BUSINESS",
+          "member": "string",
+          "name": "NetworkMode",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
