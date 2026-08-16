@@ -16,12 +16,28 @@
         "title": "新建应用"
       }
     ],
+    "AddCustomerGatewayCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCustomerGatewayCluster\n<公共请求参数>\n\n{\n    \"ClusterName\": \"jacky-test-cluster\",\n    \"BigArea\": \"CN\",\n    \"RegionId\": \"ap-beijing\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cluster-vpqultrhw6\",\n        \"RequestId\": \"3aef0745-b036-4a09-8d32-35d2a6c876d0\"\n    }\n}",
+        "title": "新增集群"
+      }
+    ],
     "AddDevice": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"mna-test1\",\n    \"Remark\": \"mna-test1\",\n    \"DataKey\": \"mna-test1\",\n    \"Encrypted\": \"false\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\",\n        \"DeviceId\": \"mna-test1\",\n        \"DataKey\": \"dasdfrfwer32e4r\",\n        \"Signature\": \"dasdfrfwer32e4r\"\n    }\n}",
         "title": "新建设备"
+      }
+    ],
+    "AddGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddGateway\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-vpqultrhw6\",\n    \"Username\": \"jacky\",\n    \"Password\": \"Qjlzjl****\",\n    \"GatewayIp\": \"11.***.108.242\",\n    \"RegionId\": \"ap-chengdu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayId\": \"mpgw-rp6tfdfpqp\",\n        \"RegisterCenterUrl\": \"reg-rest-****.multipath.tencent-cloud.com:9300\",\n        \"TelemetryUrl\": \"21.0.21.***:65002\",\n        \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJpYXQiOjE3ODUxNTY2MDEuNjE3MjM5LCJuYmYiOjE3ODUxNTY2MDEuNjE3MjR9LCJ******joibXBndy1ycDZ0ZmRmcHFwIiwibWdtdElwIjoiMTEuMTQxLjEwOC4yNDIifQ.etq0nOn1x0F59lXl3vBsiHx0b6HO0NtkQrd9Q6nZFbQ\",\n        \"RequestId\": \"fac62d02-a63c-4c67-a528-3cca18ed44c6\"\n    }\n}",
+        "title": "添加网关"
       }
     ],
     "AddGroup": [
@@ -64,12 +80,28 @@
         "title": "删除应用"
       }
     ],
+    "DeleteCustomerGatewayCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomerGatewayCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-vcn2uf3lhz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9d3cfa8-465f-4de8-983b-818a8b317b1e\"\n    }\n}",
+        "title": "删除集群"
+      }
+    ],
     "DeleteDevice": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"mna-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "删除设备接口"
+      }
+    ],
+    "DeleteGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGateway\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-vpqultrhw6\",\n    \"GatewayId\": \"mpgw-rp6tfdfpqp\",\n    \"GatewayIp\": \"11.141.108.***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9f3031a-f9a5-4b52-8b20-276c57d93c68\"\n    }\n}",
+        "title": "删除指定网关"
       }
     ],
     "DeleteGroup": [
@@ -86,6 +118,20 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnIdList\": [\n        \"lcn-test1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd89e515-20b4-445b-a88d-7355e76f8d22\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DescribeAccessPointList": [
+      {
+        "document": "此场景为查询全部接入点列表",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessPointList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AccessPointList\": [\n            {\n                \"Available\": true,\n                \"BigArea\": \"CN\",\n                \"GwGroupId\": \"devGrp-2evt2qy*****\",\n                \"PublicAddr\": \"49.233.112.***:443\",\n                \"Region\": \"ap-beijing\",\n                \"Vendor\": \"CHINA_TELECOM\"\n            }\n        ],\n        \"RequestId\": \"4957c0d9-ddc6-460c-9ee2-a56f9e4f7173\"\n    }\n}",
+        "title": "查询全部接入点列表"
+      },
+      {
+        "document": "此场景为查询指定地域接入点列表",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessPointList\n<公共请求参数>\n\n{\n    \"Regions\": [\n        \"ap-beijing\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessPointList\": [\n            {\n                \"Available\": true,\n                \"BigArea\": \"CN\",\n                \"GwGroupId\": \"devGrp-2evt2qyd****\",\n                \"PublicAddr\": \"49.233.112.***:443\",\n                \"Region\": \"ap-beijing\",\n                \"Vendor\": \"CHINA_TELECOM\"\n            }\n        ],\n        \"RequestId\": \"5883dde6-d0ef-4519-b6a2-6875457f3120\"\n    }\n}",
+        "title": "查询指定地域接入点列表"
       }
     ],
     "DescribeAccessRegions": [
@@ -118,6 +164,14 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetApplication\n<公共请求参数>\n\n{\n    \"MpApplicationId\": \"mna-94p8c5zyst\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\",\n        \"MpApplicationId\": \"mna-test1\",\n        \"MpApplicationKey\": \"dasdfrfwer32e4r\",\n        \"MpApplicationName\": \"mna-test1\"\n    }\n}",
         "title": "应用查询"
+      }
+    ],
+    "GetCustomerGatewayClusterList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCustomerGatewayClusterList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ClusterList\": [\n            {\n                \"ClusterId\": \"cluster-vpqultrhw6\",\n                \"ClusterName\": \"jacky-test-cluster\",\n                \"CreateTime\": 1785132647,\n                \"GatewayList\": [\n                    {\n                        \"CreateTime\": 1785144,\n                        \"GatewayId\": \"mpgw-s6mubb4u11\",\n                        \"GatewayIp\": \"21.0.***.246\",\n                        \"GatewayName\": \"multipath-bj-test1-0\",\n                        \"InstanceSize\": 4,\n                        \"RegisterCenterUrl\": \"reg-*********.multipath.tencent-cloud.com:9300\",\n                        \"Status\": 1,\n                        \"TelemetryUrl\": \"21.0.21.***:65002\",\n                        \"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJpYX******ODUxNDQxODAuOTU1MjE3LCJuYmYiOjE3ODUxNDQxODAuOTU1MjE3OH0sImd3SWQiOiJtcGd3LXM2bXViYjR1MTEiLCJtZ210SXAiOiIyMS4wLjE3My4yNDYifQ.fvqaWPrJReE6p4S73tdcs1YFJ2UIc-U6YidE-yk6V-4\",\n                        \"Username\": \"jacky\"\n                    }\n                ],\n                \"InstanceCount\": 1,\n                \"PublicIp\": \"39.156.***.229:443\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"31159f39-3adc-45cb-87ab-d946abe27067\"\n    }\n}",
+        "title": "查询所有集群"
       }
     ],
     "GetDestIPByName": [
@@ -348,6 +402,14 @@
         "title": "修改设备可接入网关地域"
       }
     ],
+    "ModifyDeviceAccessScope": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceAccessScope\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"mna-4lu951li5h\"\n    ],\n    \"AccessScope\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d354cf97-4818-4d00-81a0-a1da52707bd7\"\n    }\n}",
+        "title": "修改设备接入网关类型"
+      }
+    ],
     "ModifyPackageRenewFlag": [
       {
         "document": "",
@@ -402,6 +464,14 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApplicationKey\n<公共请求参数>\n\n{\n    \"MpApplicationKey\": \"mna-test1\",\n    \"MpApplicationId\": \"mna-test1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\"\n    }\n}",
         "title": "更新应用密钥"
+      }
+    ],
+    "UpdateCustomerGatewayCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomerGatewayCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-vpqultrhw6\",\n    \"PublicIp\": \"39.156.136.229\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62a21707-127d-44a4-bf54-9656424f74d9\"\n    }\n}",
+        "title": "更新集群接入点IP"
       }
     ],
     "UpdateDevice": [

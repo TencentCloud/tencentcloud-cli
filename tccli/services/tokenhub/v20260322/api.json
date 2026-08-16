@@ -3018,6 +3018,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>模型id别名列表</p>",
+          "example": "[\"deepseek\"]",
+          "member": "string",
+          "name": "ExtraModelIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>模型显示名称。</p>",
           "example": "Hy3 preview",
           "member": "string",
@@ -3323,6 +3333,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格描述，例如视觉/语音类模型有值（如 有参考视频 540P、图生视频 首帧 720P、动作控制 1080P、有声-未指定音色），其他模型为空。</p>",
+          "example": "有参考视频 540P",
+          "member": "string",
+          "name": "Specification",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 用量描述，例如视觉/语音类模型有值（如 第1秒 62,500 Tokens，后续每秒 15,625 Tokens），其他模型为空。</p>",
+          "example": "第1秒 62,500 Tokens，后续每秒 15,625 Tokens",
+          "member": "string",
+          "name": "Usage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考费用/预估费用描述，例如视觉/语音类模型有值（如 第1秒 0.625 元，后续每秒 0.15625 元），其他模型为空。</p>",
+          "example": "第1秒 0.625 元，后续每秒 0.15625 元",
+          "member": "string",
+          "name": "ReferencePrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3362,6 +3402,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>模型id别名列表</p>",
+          "example": "[\"deepseek\"]",
+          "member": "string",
+          "name": "ExtraModelIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>模型名称。</p>",
           "example": "deepseek-v4-pro",
           "member": "string",
@@ -3377,6 +3427,16 @@
           "member": "string",
           "name": "Status",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li><li>offline： 下线</li></ul>",
+          "example": "online",
+          "member": "string",
+          "name": "ModelStatus",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

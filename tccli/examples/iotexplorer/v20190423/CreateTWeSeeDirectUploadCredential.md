@@ -34,3 +34,33 @@ Output:
 }
 ```
 
+**Example 2: 创建 TWeSee COS 直传凭据：自定义设备**
+
+应用设备的视觉理解配置
+
+Input: 
+
+```
+tccli iotexplorer CreateTWeSeeDirectUploadCredential --cli-unfold-argument  \
+    --ProductId default \
+    --DeviceName dev001 \
+    --ServiceType VID_COMP \
+    --UploadTarget stream
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ExpiredTime": 1786671039,
+        "SecretId": "AKIDl91RWoKtXsC4YdteFMv***********************HTEPcEOoYlgR-GEJITPKFP",
+        "SecretKey": "v4gj7+PAT4nTKJS***************kMYj2IAyzlv84=",
+        "StorageBucket": "twesee-input-test-1258344699",
+        "StoragePath": "Direct/*********711/vid-***-s/",
+        "StorageRegion": "ap-guangzhou",
+        "Token": "LFUdDeWVqtxi6UddhKNS5JFTSHaWLTBa3d345ff28ec0bb71857c10755332e38fYM-NEVJ8xUQbPHVBSKfbdtwetWsRfhNxhJCHAEJAz_xOximbqk0WdCU18IVTUNF1E0JcwZ4DOpJaPdaAfUVs26vnQLcRfmWYjqD4vL1wz2-DraawXn**********************************************************************************************************************************************************************************K__OGsHfYdxE4DRlCy2swWb34Du5l19tU9pN0cKa6DEyetxK5oiSuM7mZqpc0gGuaVHbqvmzso4mxqMHpQVRHNvy-6wZ2NaCr0PJe4Hcd1n76zBZpmOZCuOGkuF0fBdDdSC3ZG_XPPeefDdf73cldeqzrL__YmUYRaGzeoC0VVppX9dJ_w",
+        "RequestId": "a810654c-5c9f-4850-b980-0c74961963cf"
+    }
+}
+```
+

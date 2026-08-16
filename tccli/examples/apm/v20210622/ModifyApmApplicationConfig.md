@@ -1,4 +1,4 @@
-**Example 1: 修改应用配置**
+**Example 1: 测试更新**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apm ModifyApmApplicationConfig --cli-unfold-argument  \
-    --InstanceId apm-eDyXPD6FF \
-    --ServiceName quote \
+    --InstanceId apm-pH1QqEWcU \
+    --ServiceName tapm-api-junjiewwang \
     --UrlConvergenceSwitch 0 \
     --ExceptionFilter  \
     --UrlConvergence  \
@@ -26,7 +26,6 @@ tccli apm ModifyApmApplicationConfig --cli-unfold-argument  \
     --InstrumentList.0.Enable True \
     --AgentOperationConfigView.RetentionValid False \
     --AgentOperationConfigView.IgnoreOperation  \
-    --AgentOperationConfigView.RetentionOperation  \
     --EnableLogConfig False \
     --EnableDashboardConfig False \
     --IsRelatedDashboard 0 \
@@ -43,7 +42,6 @@ tccli apm ModifyApmApplicationConfig --cli-unfold-argument  \
     --IsUploadAnyFileAnalysis 0 \
     --IsIncludeAnyFileAnalysis 0 \
     --IsDirectoryTraversalAnalysis 0 \
-    --IsTemplateEngineInjectionAnalysis 0 \
     --IsScriptEngineInjectionAnalysis 0 \
     --IsExpressionInjectionAnalysis 0 \
     --IsJNDIInjectionAnalysis 0 \
@@ -57,7 +55,7 @@ tccli apm ModifyApmApplicationConfig --cli-unfold-argument  \
     --DisableCpuUsed 100 \
     --DbStatementParametersEnabled False \
     --SlowSQLThresholds.0.Key default \
-    --SlowSQLThresholds.0.Value 2001 \
+    --SlowSQLThresholds.0.Value 2000 \
     --EnableDesensitizationRule 0 \
     --DesensitizationRule  \
     --LogSpanIdKey  \
@@ -77,7 +75,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "7f53b1e8-a093-4150-9720-a0d9e887d89f"
+        "RequestId": "8c980121-edc7-4a52-9d6f-a1fdf76bbeb7"
     }
 }
 ```

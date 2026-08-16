@@ -5653,6 +5653,78 @@
       ],
       "usage": "both"
     },
+    "CrOverrides": {
+      "document": "RayService CR 自定义字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对应 RayService.spec.suspend，暂停服务（保留 CR，副本数变 0）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Suspend",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>/dev/shm 大小</p>",
+          "example": "64",
+          "member": "int64",
+          "name": "SHMSizeMi",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPC 模式；Host 时打开 hostIPC</p>",
+          "example": "Host",
+          "member": "string",
+          "name": "IPCMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ulimits.memlock 上限</p>",
+          "example": "64",
+          "member": "string",
+          "name": "ULimitMemLock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ulimits.stack 栈大小</p>",
+          "example": "64",
+          "member": "string",
+          "name": "ULimitStack",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ulimits.nofile 打开文件数上限</p>",
+          "example": "64",
+          "member": "int64",
+          "name": "ULimitNoFile",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateCHDFSBindingProductRequest": {
       "document": "CreateCHDFSBindingProduct请求参数结构体",
       "members": [
@@ -6912,7 +6984,7 @@
         {
           "disabled": false,
           "document": "<p>模型名称（最长 256）</p>",
-          "example": "capi_test_123",
+          "example": "dasdas",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6921,7 +6993,7 @@
         {
           "disabled": false,
           "document": "<p>模型类型（如 LLM、Embedding、Reranker、ASR、TTS 等）</p>",
-          "example": "ML",
+          "example": "LLM",
           "member": "string",
           "name": "ModelType",
           "required": true,
@@ -6939,7 +7011,7 @@
         {
           "disabled": false,
           "document": "<p>模型提供方</p>",
-          "example": "personal",
+          "example": "Personal",
           "member": "string",
           "name": "Provider",
           "required": false,
@@ -6957,7 +7029,7 @@
         {
           "disabled": false,
           "document": "<p>模型参数量（如 7B、1.5B）</p>",
-          "example": "1",
+          "example": "1B",
           "member": "string",
           "name": "ParameterSize",
           "required": false,
@@ -7007,6 +7079,33 @@
           "name": "ModelUid",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型文件来源于goosefs</p>",
+          "example": "无",
+          "member": "GooseFSConfig",
+          "name": "GooseFSConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型上传来源类型</p><p>枚举值：</p><ul><li>Local： 本地上传</li><li>COS： COS上传</li><li>CFS： CFS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul>",
+          "example": "Local",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7017,7 +7116,7 @@
         {
           "disabled": false,
           "document": "<p>模型ID</p>",
-          "example": "60",
+          "example": "122",
           "member": "string",
           "name": "ModelId",
           "output_required": false,
@@ -7027,7 +7126,7 @@
         {
           "disabled": false,
           "document": "<p>模型UID</p>",
-          "example": "thisismodelUid12345",
+          "example": "m-dasdas-6a7ebeeb-f470",
           "member": "string",
           "name": "ModelUid",
           "output_required": false,
@@ -7037,7 +7136,7 @@
         {
           "disabled": false,
           "document": "<p>模型名称</p>",
-          "example": "capi_test_123",
+          "example": "dasdas",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -7067,7 +7166,7 @@
         {
           "disabled": false,
           "document": "<p>模型类型</p>",
-          "example": "ML",
+          "example": "LLM",
           "member": "string",
           "name": "ModelType",
           "output_required": false,
@@ -7077,7 +7176,7 @@
         {
           "disabled": false,
           "document": "<p>支持引擎类型</p>",
-          "example": "[\"vllm\"]",
+          "example": "[\"ada\"]",
           "member": "string",
           "name": "SupportedEngines",
           "output_required": false,
@@ -7157,7 +7256,7 @@
         {
           "disabled": false,
           "document": "<p>是否使用用户自带存储桶</p>",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "HasCustomStorage",
           "output_required": false,
@@ -7197,7 +7296,7 @@
         {
           "disabled": false,
           "document": "<p>UIN</p>",
-          "example": "12347890",
+          "example": "213123213",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -7217,7 +7316,7 @@
         {
           "disabled": false,
           "document": "<p>创建时间</p>",
-          "example": "1781579668983",
+          "example": "1786691307765",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
@@ -7227,7 +7326,7 @@
         {
           "disabled": false,
           "document": "<p>更新时间</p>",
-          "example": "1781579668983",
+          "example": "1786691307765",
           "member": "int64",
           "name": "UpdateTime",
           "output_required": false,
@@ -7245,6 +7344,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7259,7 +7368,7 @@
         {
           "disabled": false,
           "document": "<p>推理服务名称</p>",
-          "example": "xxxteste",
+          "example": "capi-test-svc-004",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -7268,7 +7377,7 @@
         {
           "disabled": false,
           "document": "<p>模型 UID（业务级唯一标识）</p>",
-          "example": "m-qwen2-5-6a1d83a2-db4d",
+          "example": "thisismodelUid",
           "member": "string",
           "name": "ModelUid",
           "required": true,
@@ -7295,7 +7404,7 @@
         {
           "disabled": false,
           "document": "<p>资源分区 ID（目标 K8s 集群分区）</p>",
-          "example": "dlc-p-mghaaeha",
+          "example": "dlc-p-jhzmcfna",
           "member": "string",
           "name": "ResourcePartitionId",
           "required": true,
@@ -7304,7 +7413,7 @@
         {
           "disabled": false,
           "document": "<p>Ray Serve 部署镜像</p>",
-          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:3.0.0.dev0-py311-cu125-extra-xgboost",
+          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cu125-serve",
           "member": "string",
           "name": "Image",
           "required": true,
@@ -7313,7 +7422,7 @@
         {
           "disabled": false,
           "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>",
-          "example": "m-qwen2-5-1234567",
+          "example": "thisismodelUid",
           "member": "string",
           "name": "ModelIdentifier",
           "required": true,
@@ -7349,7 +7458,7 @@
         {
           "disabled": false,
           "document": "<p>ray head 是否开始高可用（是否申请 redis 实例用于 head 连接）</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "HeadHighAvailabilityEnabled",
           "required": false,
@@ -7358,7 +7467,7 @@
         {
           "disabled": false,
           "document": "<p>高级参数（JSON 字符串，可选）</p>",
-          "example": "{\"EngineArgs\":[{}],\"EnvVars\":[],\"ExtraFlags\":\"\",\"RayOptions\":[{\"key\":\"max_ongoing_requests\",\"value\":\"200\"}]}",
+          "example": "{\"EnableRemoteCode\":true,\"GpuMemoryUtilization\":90,\"EngineArgs\":[{\"Key\":\"tensor-parallel-size\",\"Value\":\"2\"},{\"Key\":\"dtype\",\"Value\":\"auto\"},{\"Key\":\"max-num-seqs\",\"Value\":\"16\"},{\"Key\":\"max-model-len\",\"Value\":\"4096\"}]}",
           "member": "string",
           "name": "AdvancedParams",
           "required": false,
@@ -7417,6 +7526,186 @@
           "name": "ApiKeyIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AdvancedOptions 高级参数 JSON 字符串（可选），扁平 KV 结构，作用于 K8s RayService CR YAML 字段级</p>",
+          "example": "{\"spec.excludeHeadPodFromServeSvc\":\"true\"}",
+          "member": "string",
+          "name": "AdvancedOptions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像拉取类型（Builtin: 内置, Custom: 自定义）</p>",
+          "example": "Custom",
+          "member": "string",
+          "name": "ImagePullType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署模式</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "DeploymentMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义RayServe提交</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCustom",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像拉取密钥</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "ImagePullSecret",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型来源类型</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "ModelSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>匿名 COS 模型路径</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "AnonymousCosUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像内自带模型路径</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "ModelPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎类型</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>gpu架构</p>",
+          "example": "t4",
+          "member": "string",
+          "name": "GpuArch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义代码入口路径</p>",
+          "example": "serve:app",
+          "member": "string",
+          "name": "ImportPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户代码包 URL</p>",
+          "example": "sampleUri",
+          "member": "string",
+          "name": "CodePackageUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户代原始名称</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "CodePackageOriginalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>python runtime env</p>",
+          "example": "{\n  \"pip\": [\n    \"mineru[pipeline]==2.5.4\"\n  ],\n  \"envVars\": {\n    \"MINERU_DEFAULT_LANG\": \"auto\"\n  }\n}",
+          "member": "string",
+          "name": "RuntimeEnv",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cr 覆盖字段</p>",
+          "example": "无",
+          "member": "CrOverrides",
+          "name": "CrOverrides",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器内模型挂载路径</p>",
+          "example": "/mnt/pkgs",
+          "member": "string",
+          "name": "MountPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码包来源</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "CodePackageSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码包版本号</p>",
+          "example": "v1.0",
+          "member": "string",
+          "name": "CodePackageVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声明的路由前缀（供 Endpoint 拼装）</p>",
+          "example": "sample",
+          "member": "string",
+          "name": "RoutePrefix",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7427,7 +7716,7 @@
         {
           "disabled": false,
           "document": "<p>服务ID</p>",
-          "example": "svc-20260606153737-53cr",
+          "example": "svc-20260806171539-3iwd",
           "member": "string",
           "name": "ServiceId",
           "output_required": false,
@@ -7437,7 +7726,7 @@
         {
           "disabled": false,
           "document": "<p>服务名称</p>",
-          "example": "xxxteste",
+          "example": "sample-svc-test-new",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -7457,7 +7746,7 @@
         {
           "disabled": false,
           "document": "<p>关联的模型UID</p>",
-          "example": "m-qwen2-5-6a1d83a2-db4d",
+          "example": "thisismodelUid",
           "member": "string",
           "name": "ModelUid",
           "output_required": false,
@@ -7467,7 +7756,7 @@
         {
           "disabled": false,
           "document": "<p>关联的模型名称</p>",
-          "example": "qwen2.5",
+          "example": "capi_test_123",
           "member": "string",
           "name": "ModelName",
           "output_required": false,
@@ -7487,7 +7776,7 @@
         {
           "disabled": false,
           "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>",
-          "example": "m-qwen2-5-1234567",
+          "example": "thisismodelUid",
           "member": "string",
           "name": "ModelIdentifier",
           "output_required": false,
@@ -7497,7 +7786,7 @@
         {
           "disabled": false,
           "document": "<p>关联模型的类型（LLM / VLM / Embedding / Reranker / TTS / ASR / CV / NLP / ML）</p>",
-          "example": "LLM",
+          "example": "ML",
           "member": "string",
           "name": "ModelType",
           "output_required": false,
@@ -7517,7 +7806,7 @@
         {
           "disabled": false,
           "document": "<p>服务端点URL</p>",
-          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/xxxteste/v1",
+          "example": "https://cls-p9d8s1gc.tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/aaasss",
           "member": "string",
           "name": "EndpointUrl",
           "output_required": false,
@@ -7547,7 +7836,7 @@
         {
           "disabled": false,
           "document": "<p>ray head 是否开启高可用</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "HeadHighAvailabilityEnabled",
           "output_required": false,
@@ -7577,7 +7866,7 @@
         {
           "disabled": false,
           "document": "<p>创建时间（Unix 时间戳，毫秒）</p>",
-          "example": "1780731457322",
+          "example": "1786007739628",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
@@ -7587,7 +7876,7 @@
         {
           "disabled": false,
           "document": "<p>更新时间（Unix 时间戳，毫秒）</p>",
-          "example": "1780731457580",
+          "example": "1786007739788",
           "member": "int64",
           "name": "UpdateTime",
           "output_required": false,
@@ -7697,11 +7986,61 @@
         {
           "disabled": false,
           "document": "<p>资源配置（JSON 字符串，取自第一个部署）</p>",
-          "example": "{\"workerBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"headSpec\":1,\"gpu\":\"T4\",\"gpuNum\":1,\"cpu\":20,\"mem\":80,\"headCpu\":20,\"headMem\":80}",
+          "example": "{\"workerBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"headSpec\":1,\"gpu\":\"\",\"gpuNum\":0,\"cpu\":1,\"mem\":4,\"headCpu\":1,\"headMem\":4}",
           "member": "string",
           "name": "ResourceConfig",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AdvancedOptions 高级参数 JSON 字符串（扁平 KV 结构，取自第一个部署）</p>",
+          "example": "{\"spec.excludeHeadPodFromServeSvc\":\"true\"}",
+          "member": "string",
+          "name": "AdvancedOptions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署模式</p>",
+          "example": "ModelHub",
+          "member": "string",
+          "name": "DeploymentMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由前缀</p>",
+          "example": "sampleprefix",
+          "member": "string",
+          "name": "RoutePrefix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是自定义 RayServe 创建</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCustom",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -8958,7 +9297,7 @@
         {
           "disabled": false,
           "document": "<p>模型UID</p>",
-          "example": "m-xgboost-mao-6a2fc583-14cb",
+          "example": "m-self-defined-model-6a79ed1a-f6f6",
           "member": "string",
           "name": "ModelUid",
           "required": true,
@@ -8967,7 +9306,7 @@
         {
           "disabled": false,
           "document": "<p>模型版本号</p>",
-          "example": "v4",
+          "example": "v6",
           "member": "string",
           "name": "ModelVersion",
           "required": true,
@@ -8994,11 +9333,29 @@
         {
           "disabled": false,
           "document": "<p>是否使用用户自带存储桶（默认 false 表示平台托管）</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "UseCustomStorage",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建模型时，模型从goosfe里面选取，则需要传递该参数</p>",
+          "example": "无",
+          "member": "GooseFSConfig",
+          "name": "GooseFSConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型上传路径类型</p><p>枚举值：</p><ul><li>LOCAL： 本地上传</li><li>CFS： CFS上传</li><li>COS： COS上传</li><li>CFSTurbo： CFSTurbo上传</li><li>GooseFS： GooseFS上传</li></ul><p>选择cos、cfs、cfstrubo则必须要传storageuri，选择local时不能传递goosefsconfig</p>",
+          "example": "Local",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9009,7 +9366,7 @@
         {
           "disabled": false,
           "document": "<p>版本ID</p>",
-          "example": "65",
+          "example": "155",
           "member": "string",
           "name": "VersionId",
           "output_required": false,
@@ -9019,7 +9376,7 @@
         {
           "disabled": false,
           "document": "<p>关联的模型ID</p>",
-          "example": "45",
+          "example": "112",
           "member": "string",
           "name": "ModelId",
           "output_required": false,
@@ -9029,7 +9386,7 @@
         {
           "disabled": false,
           "document": "<p>该版本的存储 URI</p>",
-          "example": "cos://common-job-packages-251233710/models/",
+          "example": "cos://common-job-packages-251233710/models/m-self-defined-model-6a79ed1a-f6f6/v6/",
           "member": "string",
           "name": "StorageUri",
           "output_required": false,
@@ -9049,7 +9406,7 @@
         {
           "disabled": false,
           "document": "<p>创建时间（毫秒时间戳）</p>",
-          "example": "1781516236155",
+          "example": "1786690586382",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
@@ -9059,7 +9416,7 @@
         {
           "disabled": false,
           "document": "<p>更新时间（毫秒时间戳）</p>",
-          "example": "1781516236155",
+          "example": "1786690586382",
           "member": "int64",
           "name": "UpdateTime",
           "output_required": false,
@@ -9079,7 +9436,7 @@
         {
           "disabled": false,
           "document": "<p>模型版本号</p>",
-          "example": "v4",
+          "example": "v6",
           "member": "string",
           "name": "Version",
           "output_required": false,
@@ -9089,7 +9446,7 @@
         {
           "disabled": false,
           "document": "<p>是否使用用户自带存储桶（true=用户自带桶，false=平台托管）</p>",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "UseCustomStorage",
           "output_required": false,
@@ -19631,6 +19988,15 @@
           "name": "TaskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一次请求数据</p>",
+          "example": "1",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -26685,6 +27051,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -26699,7 +27075,7 @@
         {
           "disabled": false,
           "document": "<p>ServiceId</p>",
-          "example": "svc-20260609105932-vebf",
+          "example": "svc-20260731164626-fgja",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -26714,7 +27090,7 @@
         {
           "disabled": false,
           "document": "<p>ServiceId</p>",
-          "example": "svc-20260609105932-vebf",
+          "example": "svc-20260731164626-fgja",
           "member": "string",
           "name": "ServiceId",
           "output_required": false,
@@ -26724,7 +27100,7 @@
         {
           "disabled": false,
           "document": "<p>服务名称</p>",
-          "example": "m-bge-v2-m3-test",
+          "example": "m-chronos-2-6a2812f7-5ed6-2026073116-svc",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -26734,7 +27110,7 @@
         {
           "disabled": false,
           "document": "<p>关联的模型UID</p>",
-          "example": "m-bge-reranker-v2-m3-6a223aba-2e20",
+          "example": "m-chronos-2-6a2812f7-5ed6",
           "member": "string",
           "name": "ModelUid",
           "output_required": false,
@@ -26744,7 +27120,7 @@
         {
           "disabled": false,
           "document": "<p>关联的模型名称</p>",
-          "example": "bge-reranker-v2-m3",
+          "example": "Chronos-2",
           "member": "string",
           "name": "ModelName",
           "output_required": false,
@@ -26764,7 +27140,7 @@
         {
           "disabled": false,
           "document": "<p>模型标识符（OpenAI 兼容 API 中的 model 字段）</p>",
-          "example": "m-bge-v2-m3",
+          "example": "m-chronos-2-6a2812f7-5ed6-2026073116-v1",
           "member": "string",
           "name": "ModelIdentifier",
           "output_required": false,
@@ -26774,7 +27150,7 @@
         {
           "disabled": false,
           "document": "<p>关联模型的类型（LLM / VLM / Embedding / Reranker / TTS / ASR / CV / NLP / ML）</p>",
-          "example": "Reranker",
+          "example": "TimeSeries",
           "member": "string",
           "name": "ModelType",
           "output_required": false,
@@ -26794,7 +27170,7 @@
         {
           "disabled": false,
           "document": "<p>服务端点URL</p>",
-          "example": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/m-bge-v2-m3-test/v1",
+          "example": "https://cls-p9d8s1gc.tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/m-chronos-2-6a2812f7-5ed6-2026073116-svc",
           "member": "string",
           "name": "EndpointUrl",
           "output_required": false,
@@ -26844,7 +27220,7 @@
         {
           "disabled": false,
           "document": "<p>创建时间（Unix 时间戳，毫秒）</p>",
-          "example": "1780973972980",
+          "example": "1785487586929",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
@@ -26854,7 +27230,7 @@
         {
           "disabled": false,
           "document": "<p>更新时间（Unix 时间戳，毫秒）</p>",
-          "example": "1780989802316",
+          "example": "1785487587084",
           "member": "int64",
           "name": "UpdateTime",
           "output_required": false,
@@ -26864,7 +27240,7 @@
         {
           "disabled": false,
           "document": "<p>部署数量</p>",
-          "example": "1",
+          "example": "2",
           "member": "int64",
           "name": "DeploymentCount",
           "output_required": false,
@@ -26884,7 +27260,7 @@
         {
           "disabled": false,
           "document": "<p>Ray Dashboard 访问地址（通过 Ingress 代理）</p>",
-          "example": "https://cls-p9d8s1gc.tcray-gateway.ap-guangzhou.cloud.tencent.com:443/dlc-p-zntmtydc/rayserve-20260615170317-5xex-dshzh/",
+          "example": "https://cls-p9d8s1gc.tcray-gateway.ap-guangzhou.cloud.tencent.com:443/dlc-p-jhzmcfna/rayserve-20260805203359-r2b7-9jkhq/",
           "member": "string",
           "name": "RayDashboardUrl",
           "output_required": false,
@@ -26954,11 +27330,51 @@
         {
           "disabled": false,
           "document": "<p>资源配置（JSON 字符串，取自第一个部署）</p>",
-          "example": "{\"workerBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"headSpec\":1,\"gpu\":\"T4\",\"gpuNum\":1,\"cpu\":20,\"mem\":80,\"headCpu\":1,\"headMem\":4}",
+          "example": "{\"workerBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"workerSpec\":2,\"headBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"headSpec\":1,\"gpu\":\"\",\"gpuNum\":0,\"cpu\":2,\"mem\":8,\"headCpu\":1,\"headMem\":4}",
           "member": "string",
           "name": "ResourceConfig",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署模式</p>",
+          "example": "ModelHub",
+          "member": "string",
+          "name": "DeploymentMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>声明的路由前缀（用于 Endpoint 拼接）</p>",
+          "example": "/sampleurl",
+          "member": "string",
+          "name": "RoutePrefix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为自定义代码部署</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCustom",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -30320,13 +30736,63 @@
       ],
       "type": "object"
     },
+    "GooseFSConfig": {
+      "document": "推理模型接入goosefs参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>goosefs集群id</p>",
+          "example": "g_cvm_ufw40z53",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>goosefs命名空间名称</p>",
+          "example": "dlc-andrew-260200066",
+          "member": "string",
+          "name": "GooseFSPath",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主从节点信息</p>",
+          "example": "[\"[\\\"10.0.0.5:9200\\\", \\\"10.0.0.2:9200\\\", \\\"10.0.0.3:9200\\\"]\"]",
+          "member": "string",
+          "name": "MasterAddresses",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载路径</p>",
+          "example": "/models",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GpuSummaryItem": {
       "document": "运行中部署的 GPU 资源汇总",
       "members": [
         {
           "disabled": false,
           "document": "<p>GPU 型号</p>",
-          "example": "V100",
+          "example": "T4",
           "member": "string",
           "name": "GpuType",
           "output_required": false,
@@ -30337,7 +30803,7 @@
         {
           "disabled": false,
           "document": "<p>GPU 总数（gpuNum × replicas）</p>",
-          "example": "16",
+          "example": "1",
           "member": "int64",
           "name": "GpuCount",
           "output_required": false,
@@ -30348,7 +30814,7 @@
         {
           "disabled": false,
           "document": "<p>运行中的副本数</p>",
-          "example": "2",
+          "example": "1",
           "member": "int64",
           "name": "Replicas",
           "output_required": false,
@@ -31412,6 +31878,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -42617,7 +43094,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>库存情况，对当前地域该计费项实时可新增数量的分级预估。取值复用 BcpConstants 库存状态常量：</p><ul><li>EnoughStock：余量充足（&gt;100）</li><li>NormalStock：余量正常（50~100）</li><li>UnderStock：余量紧张（1~49）</li><li>WithoutStock：无库存（0）</li></ul><p>该值为底层提供的预估值，不代表保证可发货量，仅用于展示库存概况。当请求 Region 与资源池地域不一致、cold-start 缓存未 ready、或该计费项在快照中缺失时返回 null。</p>",
+          "document": "<p>库存情况，对当前地域该计费项实时可新增数量的分级预估。取值复用 BcpConstants 库存状态常量：</p><ul><li>EnoughStock：余量充足</li><li>NormalStock：余量正常</li><li>UnderStock：余量紧张</li><li>WithoutStock：无库存</li></ul><p>该值为底层提供的预估值，不代表保证可发货量，仅用于展示库存概况。当请求 Region 与资源池地域不一致、cold-start 缓存未 ready、或该计费项在快照中缺失时返回 null。</p>",
           "example": "EnoughStock",
           "member": "string",
           "name": "StatusCategory",
@@ -43054,6 +43531,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -46796,6 +47283,46 @@
           "name": "ResourceConfig",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署模式</p>",
+          "example": "ModelHub",
+          "member": "string",
+          "name": "DeploymentMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>声明的路由前缀（用于 Endpoint 拼接）</p>",
+          "example": "/sampleurl",
+          "member": "string",
+          "name": "RoutePrefix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为自定义代码部署</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCustom",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -51109,6 +51636,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -51345,6 +51881,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
