@@ -1864,7 +1864,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n<li>action-AIQualityControl：媒体质检</li>\n<li>action-SmartSubtitles：智能字幕</li>\n<li>action-exec-rules：判断规则</li>\n<li>action-SmartErase：智能擦除</li>\n\n\n",
+          "document": "<p>原子任务类型：</p><li>input: 起始节点</li><li>output：终止节点</li><li>action-trans：转码</li><li>action-samplesnapshot：采样截图</li><li>action-AIAnalysis: 分析</li><li>action-AIRecognition：识别</li><li>action-aiReview：审核</li><li>action-animated-graphics：转动图</li><li>action-image-sprite：雪碧图</li><li>action-snapshotByTimeOffset: 时间点截图</li><li>action-adaptive-substream：自适应码流</li><li>action-AIQualityControl：媒体质检</li><li>action-SmartSubtitles：智能字幕</li><li>action-exec-rules：判断规则</li><li>action-SmartErase：智能擦除</li>",
           "example": "input",
           "member": "string",
           "name": "ActivityType",
@@ -1875,7 +1875,7 @@
         },
         {
           "disabled": false,
-          "document": "后驱节点索引数组",
+          "document": "<p>后驱节点索引数组</p>",
           "example": "[3]",
           "member": "int64",
           "name": "ReardriveIndex",
@@ -1886,7 +1886,7 @@
         },
         {
           "disabled": false,
-          "document": "原子任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原子任务参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ActivityPara",
           "name": "ActivityPara",
@@ -11320,6 +11320,16 @@
           "example": "https://*********************.cos.accelerate.myqcloud.com/speech/771bdded-b55b-4745-82ae-caafb1136d7f-preview.mp3",
           "member": "string",
           "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息，json字符串</p>",
+          "example": "{\"duration\":2.34,\"chars\":21}",
+          "member": "string",
+          "name": "ExtInfo",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -26247,7 +26257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "区域左上角X坐标。\n如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。",
+          "document": "<p>区域左上角X坐标。<br>如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。</p>",
           "example": "0.0500",
           "member": "float",
           "name": "LeftTopX",
@@ -26258,7 +26268,7 @@
         },
         {
           "disabled": false,
-          "document": "区域左上角Y坐标。\n如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。",
+          "document": "<p>区域左上角Y坐标。<br>如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。</p>",
           "example": "0.1000",
           "member": "float",
           "name": "LeftTopY",
@@ -26269,7 +26279,7 @@
         },
         {
           "disabled": false,
-          "document": "区域右下角X坐标。\n如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。",
+          "document": "<p>区域右下角X坐标。<br>如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。</p>",
           "example": "0.7500",
           "member": "float",
           "name": "RightBottomX",
@@ -26280,7 +26290,7 @@
         },
         {
           "disabled": false,
-          "document": "区域右下角Y坐标。\n如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。",
+          "document": "<p>区域右下角Y坐标。<br>如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。</p>",
           "example": "0.9000",
           "member": "float",
           "name": "RightBottomY",
@@ -26291,7 +26301,7 @@
         },
         {
           "disabled": false,
-          "document": "坐标单位\n- 1 百分比\n- 2 像素值",
+          "document": "<p>坐标单位</p><ul><li>1 百分比</li><li>2 像素值</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "Unit",
@@ -38992,7 +39002,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体处理的文件输入信息。",
+          "document": "<p>媒体处理的文件输入信息。</p>",
           "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
@@ -39001,7 +39011,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。\n注意：当InputInfo.Type为URL时，该参数是必填项",
+          "document": "<p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项</p>",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -39010,7 +39020,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。\n如果不填，表示与 InputInfo 中文件所在的目录一致。",
+          "document": "<p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>",
           "example": "/movie/test/",
           "member": "string",
           "name": "OutputDir",
@@ -39019,7 +39029,7 @@
         },
         {
           "disabled": false,
-          "document": "编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li>\n<li>即输出设置的优先级：编排子任务节点 > 任务接口指定 > 对应编排内的配置 </li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。\n\n注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。",
+          "document": "<p>编排ID。<br>注意1：对于OutputStorage、OutputDir参数：</p><li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li><li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li><li>即输出设置的优先级：编排子任务节点 &gt; 任务接口指定 &gt; 对应编排内的配置 </li>注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。<p>注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。</p>",
           "example": "157482",
           "member": "int64",
           "name": "ScheduleId",
@@ -39028,7 +39038,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理类型任务参数。",
+          "document": "<p>媒体处理类型任务参数。</p>",
           "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
@@ -39037,7 +39047,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容审核类型任务参数。",
+          "document": "<p>视频内容审核类型任务参数。</p>",
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
@@ -39046,7 +39056,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析类型任务参数。",
+          "document": "<p>视频内容分析类型任务参数。</p>",
           "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
@@ -39055,7 +39065,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容识别类型任务参数。",
+          "document": "<p>视频内容识别类型任务参数。</p>",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
@@ -39064,7 +39074,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检类型任务参数。",
+          "document": "<p>媒体质检类型任务参数。</p>",
           "example": "无",
           "member": "AiQualityControlTaskInput",
           "name": "AiQualityControlTask",
@@ -39073,7 +39083,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕",
+          "document": "<p>智能字幕</p>",
           "example": "无",
           "member": "SmartSubtitlesTaskInput",
           "name": "SmartSubtitlesTask",
@@ -39082,7 +39092,7 @@
         },
         {
           "disabled": false,
-          "document": "智能擦除类型任务参数",
+          "document": "<p>智能擦除类型任务参数</p>",
           "example": "无",
           "member": "SmartEraseTaskInput",
           "name": "SmartEraseTask",
@@ -39091,7 +39101,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "document": "<p>任务的事件通知信息，不填代表不获取事件通知。</p>",
           "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
@@ -39100,7 +39110,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
+          "document": "<p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>",
           "example": "0",
           "member": "int64",
           "name": "TasksPriority",
@@ -39109,7 +39119,7 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。",
+          "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。</p>",
           "example": "85c94a33-6227-43d5-8179-69b0602f6346",
           "member": "string",
           "name": "SessionId",
@@ -39118,7 +39128,7 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
           "example": "userxxxx",
           "member": "string",
           "name": "SessionContext",
@@ -39127,7 +39137,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型，默认Online\n<li> Online：实时任务</li>\n<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>",
+          "document": "<p>任务类型，默认Online</p><li> Online：实时任务</li><li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>",
           "example": "Online",
           "member": "string",
           "name": "TaskType",
@@ -39136,7 +39146,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。",
+          "document": "<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>",
           "example": "vts-24000-0",
           "member": "string",
           "name": "ResourceId",
@@ -39145,7 +39155,16 @@
         },
         {
           "disabled": false,
-          "document": "是否跳过元信息获取，可选值： \n0：表示不跳过 \n1：表示跳过 \n默认值：0\t",
+          "document": "<p>媒体编排任务组<br>注意：填写此参数ScheduleId字段将失效，Activities优先级大于ScheduleId</p>",
+          "example": "无",
+          "member": "Activity",
+          "name": "Activities",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>",
           "example": "0",
           "member": "int64",
           "name": "SkipMateData",
@@ -39160,7 +39179,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID。",
+          "document": "<p>任务 ID。</p>",
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",

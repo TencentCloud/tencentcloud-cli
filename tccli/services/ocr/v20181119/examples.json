@@ -686,6 +686,14 @@
         "title": "企业四要素核验"
       }
     ],
+    "VerifyGeneralCardWarn": [
+      {
+        "document": "身份证检测",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyGeneralCardWarn\n<公共请求参数>\n\n{\n    \"CardType\": \"0101\",\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Blur\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.01\n        },\n        \"BorderIncomplete\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.01\n        },\n        \"Copy\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.01\n        },\n        \"Cover\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.01\n        },\n        \"Electron\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0\n        },\n        \"Overlap\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.01\n        },\n        \"Reflection\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.01\n        },\n        \"RemakeScreen\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.01\n        },\n        \"Screenshot\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.01\n        },\n        \"Synthesis\": {\n            \"IsWarn\": true,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.9999985\n        },\n        \"Tamper\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0\n        },\n        \"Template\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0\n        },\n        \"TextWatermark\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0\n        },\n        \"WatermarkContent\": \"\",\n        \"RequestId\": \"5d75b7af-e03b-45d0-ae0f-1cd00ea06035\"\n    }\n}",
+        "title": "身份证检测告警"
+      }
+    ],
     "VerifyOfdVatInvoiceOCR": [
       {
         "document": "ofd发票识别",

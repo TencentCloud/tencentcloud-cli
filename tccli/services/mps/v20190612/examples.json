@@ -1925,7 +1925,7 @@
       },
       {
         "document": "对指定 COS 地址的视频发起转码任务，转出20，30，40三种格式。",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ]\n    },\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Region\": \"ap-chongqing\",\n            \"Object\": \"/movie/201907/WildAnimal.mov\",\n            \"Bucket\": \"TopRankVideo-125xxx88\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": 30\n            },\n            {\n                \"Definition\": 20\n            },\n            {\n                \"Definition\": 40\n            }\n        ]\n    },\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Region\": \"ap-chongqing\",\n            \"Object\": \"/movie/201907/WildAnimal.mov\",\n            \"Bucket\": \"TopRankVideo-125xxx88\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起转码任务"
       }
