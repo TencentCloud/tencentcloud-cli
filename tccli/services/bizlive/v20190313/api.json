@@ -1,11 +1,11 @@
 {
   "actions": {
     "DescribeStreamPlayInfoList": {
-      "document": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。",
+      "document": "产品已下线\n\n查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。",
       "input": "DescribeStreamPlayInfoListRequest",
       "name": "查询流的播放信息列表",
       "output": "DescribeStreamPlayInfoListResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

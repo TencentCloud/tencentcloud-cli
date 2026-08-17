@@ -28,8 +28,7 @@ tccli cdb CreateDBInstanceHour --cli-unfold-argument  \
     --Cpu 1 \
     --ParamTemplateType HIGH_STABILITY \
     --EngineType InnoDB \
-    --DestroyProtect off \
-    --EnableCL5 1
+    --DestroyProtect off
 ```
 
 Output: 

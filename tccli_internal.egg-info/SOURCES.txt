@@ -156,6 +156,8 @@ tccli/services/bda/__init__.py
 tccli/services/bda/bda_client.py
 tccli/services/bda/v20200324/api.json
 tccli/services/bda/v20200324/examples.json
+tccli/services/bdrc/__init__.py
+tccli/services/bdrc/bdrc_client.py
 tccli/services/bh/__init__.py
 tccli/services/bh/bh_client.py
 tccli/services/bi/__init__.py

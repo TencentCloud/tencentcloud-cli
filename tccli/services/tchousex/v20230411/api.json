@@ -8914,8 +8914,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
-          "example": "xxx",
+          "document": "<p>集群id</p>",
+          "example": "ins-x",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8923,7 +8923,7 @@
         },
         {
           "disabled": false,
-          "document": "limit",
+          "document": "<p>limit</p>",
           "example": "3",
           "member": "int64",
           "name": "Limit",
@@ -8932,7 +8932,7 @@
         },
         {
           "disabled": false,
-          "document": "offset",
+          "document": "<p>offset</p>",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -8941,7 +8941,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "--",
           "member": "string",
           "name": "StartTime",
@@ -8950,7 +8950,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "--",
           "member": "string",
           "name": "EndTime",
@@ -8959,8 +8959,8 @@
         },
         {
           "disabled": false,
-          "document": "状态",
-          "example": "--",
+          "document": "<p>状态</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -8968,7 +8968,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 代表查询spark sql， 1：代表查询spark job下的task",
+          "document": "<p>0: 代表查询spark sql， 1：代表查询spark job下的task</p>",
           "example": "0",
           "member": "int64",
           "name": "SparkTaskType",
@@ -8977,8 +8977,8 @@
         },
         {
           "disabled": false,
-          "document": "-",
-          "example": "-",
+          "document": "<p>-</p>",
+          "example": "task-id",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -8986,8 +8986,8 @@
         },
         {
           "disabled": false,
-          "document": "-",
-          "example": "-",
+          "document": "<p>-</p>",
+          "example": "axd",
           "member": "string",
           "name": "Creator",
           "required": false,
@@ -8995,8 +8995,8 @@
         },
         {
           "disabled": false,
-          "document": "-",
-          "example": "-",
+          "document": "<p>-</p>",
+          "example": "asc",
           "member": "string",
           "name": "CreateTimeOrder",
           "required": false,
@@ -9004,8 +9004,8 @@
         },
         {
           "disabled": false,
-          "document": "-",
-          "example": "-",
+          "document": "<p>-</p>",
+          "example": "asc",
           "member": "string",
           "name": "ExecuteTimeOrder",
           "required": false,
@@ -9013,12 +9013,57 @@
         },
         {
           "disabled": false,
-          "document": "-",
-          "example": "-",
+          "document": "<p>-</p>",
+          "example": "asc",
           "member": "string",
           "name": "UserName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>离线版本号</p>",
+          "example": "3.1",
+          "member": "string",
+          "name": "OfflineVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时长最小秒数</p>",
+          "example": "123",
+          "member": "int64",
+          "name": "MinExecuteDurationSec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时长最大秒数</p>",
+          "example": "456",
+          "member": "int64",
+          "name": "MaxExecuteDurationSec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算资源用量最小值（CU·h）</p>",
+          "example": "1.1",
+          "member": "float",
+          "name": "MinResourceUsage",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算资源用量最大值（CU·h）</p>",
+          "example": "2.3",
+          "member": "float",
+          "name": "MaxResourceUsage",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"
@@ -9028,7 +9073,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务总数",
+          "document": "<p>任务总数</p>",
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
@@ -9038,8 +9083,8 @@
         },
         {
           "disabled": false,
-          "document": "spark任务拓展信息",
-          "example": "--",
+          "document": "<p>spark任务拓展信息</p>",
+          "example": "无",
           "member": "SparkTaskExtendInfo",
           "name": "SparkTasksDetail",
           "output_required": false,
@@ -9048,8 +9093,8 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
-          "example": "--",
+          "document": "<p>错误信息</p>",
+          "example": "ok",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,
@@ -12633,6 +12678,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型，normal:独占-x集群 shard_appid:共享APPID-x集群 normal_appid:独占appid账号集群</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "AuthInstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15243,7 +15299,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间，时间戳",
+          "document": "<p>开始时间，时间戳</p>",
           "example": "1770480000000",
           "member": "int64",
           "name": "StartTime",
@@ -15252,7 +15308,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，时间戳",
+          "document": "<p>结束时间，时间戳</p>",
           "example": "1773039020209",
           "member": "int64",
           "name": "EndTime",
@@ -15261,7 +15317,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "10",
           "member": "int64",
           "name": "Offset",
@@ -15270,7 +15326,7 @@
         },
         {
           "disabled": false,
-          "document": "limit",
+          "document": "<p>limit</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -15279,7 +15335,7 @@
         },
         {
           "disabled": false,
-          "document": "sql的查询id",
+          "document": "<p>sql的查询id</p>",
           "example": "abcdefg-aaaa",
           "member": "string",
           "name": "QueryID",
@@ -15288,7 +15344,7 @@
         },
         {
           "disabled": false,
-          "document": "提交用户名",
+          "document": "<p>提交用户名</p>",
           "example": "root",
           "member": "string",
           "name": "SubmitUser",
@@ -15297,7 +15353,7 @@
         },
         {
           "disabled": false,
-          "document": "运行状态",
+          "document": "<p>运行状态</p>",
           "example": "FAILED",
           "member": "string",
           "name": "State",
@@ -15306,7 +15362,7 @@
         },
         {
           "disabled": false,
-          "document": "是否根据开始时间排序",
+          "document": "<p>是否根据开始时间排序</p>",
           "example": "desc、asc",
           "member": "string",
           "name": "StartTimeOrder",
@@ -15315,7 +15371,7 @@
         },
         {
           "disabled": false,
-          "document": "是否根据运行时间排序",
+          "document": "<p>是否根据运行时间排序</p>",
           "example": "desc、asc",
           "member": "string",
           "name": "ExecuteTimeOrder",
@@ -15324,7 +15380,7 @@
         },
         {
           "disabled": false,
-          "document": "继承角色",
+          "document": "<p>继承角色</p>",
           "example": "role1",
           "member": "string",
           "name": "SessionRole",
@@ -15333,12 +15389,66 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "tchousex-z1v46c",
           "member": "string",
           "name": "TaskId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库过滤</p>",
+          "example": "db1",
+          "member": "string",
+          "name": "CurrDatabase",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>sql类型过滤</p>",
+          "example": "USE",
+          "member": "string",
+          "name": "StatementType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>sql内容过滤</p>",
+          "example": "select 1",
+          "member": "string",
+          "name": "Statement",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>VirtualWarehouse过滤</p>",
+          "example": "vm-x",
+          "member": "string",
+          "name": "VirtualWarehouse",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行耗时最小值（秒）</p>",
+          "example": "10",
+          "member": "float",
+          "name": "MinDuration",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行耗时最大值（秒）</p>",
+          "example": "99",
+          "member": "float",
+          "name": "MaxDuration",
+          "required": false,
+          "type": "float"
         }
       ],
       "usage": "in"
@@ -17375,33 +17485,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "Job创建者",
-          "example": "xxx",
+          "document": "<p>Job创建者</p>",
+          "example": "u1",
           "member": "string",
           "name": "JobCreator",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "spark任务详情",
-          "example": "--",
+          "document": "<p>spark任务详情</p>",
+          "example": "无",
           "member": "SparkTaskInfo",
           "name": "SparkTask",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Job 名称",
-          "example": "---",
+          "document": "<p>Job 名称</p>",
+          "example": "jobtest",
           "member": "string",
           "name": "JobName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用计量</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "ResourceUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

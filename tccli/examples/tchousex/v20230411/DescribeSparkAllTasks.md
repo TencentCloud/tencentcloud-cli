@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tchousex DescribeSparkAllTasks --cli-unfold-argument  \
-    --InstanceId test
+    --InstanceId ins-1
 ```
 
 Output: 
