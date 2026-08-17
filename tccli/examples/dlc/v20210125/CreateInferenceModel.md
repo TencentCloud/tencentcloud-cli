@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 创建模型**
 
 
 
@@ -6,17 +6,10 @@ Input:
 
 ```
 tccli dlc CreateInferenceModel --cli-unfold-argument  \
-    --Name capi_test_123 \
-    --ModelType ML \
+    --Name dasdas \
+    --ModelType LLM \
     --InitialVersion v1 \
-    --Provider personal \
-    --Description description \
-    --ParameterSize 1 \
-    --Tags thisistag \
-    --StorageUri storageUri \
-    --UseCustomStorage True \
-    --Tasks thisistask \
-    --ModelUid thisismodelUid12345
+    --StorageType Local
 ```
 
 Output: 
@@ -25,29 +18,24 @@ Output:
     "Response": {
         "AppId": 260200066,
         "BuiltIn": false,
-        "CreateTime": 1781579668983,
-        "Description": "description",
-        "HasCustomStorage": true,
+        "CreateTime": 1786691307765,
+        "HasCustomStorage": false,
         "HasStorage": true,
         "LatestVersion": "v1",
-        "ModelId": "60",
-        "ModelType": "ML",
-        "ModelUid": "thisismodelUid12345",
-        "Name": "capi_test_123",
-        "ParameterSize": "1",
+        "ModelId": "122",
+        "ModelType": "LLM",
+        "ModelUid": "m-dasdas-6a7ebeeb-f470",
+        "Name": "dasdas",
         "Provider": "personal",
+        "ResourceTags": [],
         "ServiceCount": 0,
         "StorageType": "COS",
         "SubAccountUin": "700002655694",
-        "Tags": [
-            "thisistag"
-        ],
-        "Tasks": [
-            "thisistask"
-        ],
-        "UpdateTime": 1781579668983,
+        "Tags": [],
+        "Tasks": [],
+        "UpdateTime": 1786691307765,
         "VersionCount": 1,
-        "RequestId": "48031f8c-c648-4cfb-8237-d9d219149211"
+        "RequestId": "1d27fdf0-35b5-49dc-869e-0b7c99c36730"
     }
 }
 ```

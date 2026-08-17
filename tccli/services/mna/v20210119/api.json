@@ -14,11 +14,25 @@
       "output": "AddApplicationResponse",
       "status": "online"
     },
+    "AddCustomerGatewayCluster": {
+      "document": "创建客户自有网关集群。\n\n用于承载客户侧的自有网关实例，创建成功后返回集群 ID。",
+      "input": "AddCustomerGatewayClusterRequest",
+      "name": "创建客户自有网关集群",
+      "output": "AddCustomerGatewayClusterResponse",
+      "status": "online"
+    },
     "AddDevice": {
       "document": "新建设备记录",
       "input": "AddDeviceRequest",
       "name": "新建设备",
       "output": "AddDeviceResponse",
+      "status": "online"
+    },
+    "AddGateway": {
+      "document": "向指定的客户自有网关集群注册一个网关实例。\n\n注册成功后返回网关实例 ID、鉴权 Token 及 Agent 相关地址信息，用于后续网关 Agent 上报。",
+      "input": "AddGatewayRequest",
+      "name": "注册客户自有网关实例",
+      "output": "AddGatewayResponse",
       "status": "online"
     },
     "AddGroup": {
@@ -56,11 +70,25 @@
       "output": "DeleteApplicationResponse",
       "status": "online"
     },
+    "DeleteCustomerGatewayCluster": {
+      "document": "删除客户自有网关集群。\n\n删除指定的客户自有网关集群，操作不可逆。调用接口后，若通过 GetCustomerGatewayClusterList 接口查询不到对应集群，则表示删除成功。",
+      "input": "DeleteCustomerGatewayClusterRequest",
+      "name": "删除客户自有网关集群",
+      "output": "DeleteCustomerGatewayClusterResponse",
+      "status": "online"
+    },
     "DeleteDevice": {
       "document": "删除设备信息",
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
       "output": "DeleteDeviceResponse",
+      "status": "online"
+    },
+    "DeleteGateway": {
+      "document": "从指定集群下删除一个客户自有网关实例。\n\n删除后，通过 GetCustomerGatewayClusterList 查询不到对应实例，则表示删除成功。",
+      "input": "DeleteGatewayRequest",
+      "name": "删除客户自有网关实例",
+      "output": "DeleteGatewayResponse",
       "status": "online"
     },
     "DeleteGroup": {
@@ -75,6 +103,13 @@
       "input": "DeleteL3ConnRequest",
       "name": "删除互通规则",
       "output": "DeleteL3ConnResponse",
+      "status": "online"
+    },
+    "DescribeAccessPointList": {
+      "document": "此接口用来查询接入点列表。",
+      "input": "DescribeAccessPointListRequest",
+      "name": "获取接入点列表",
+      "output": "DescribeAccessPointListResponse",
       "status": "online"
     },
     "DescribeAccessRegions": {
@@ -103,6 +138,13 @@
       "input": "GetApplicationRequest",
       "name": "获取应用信息",
       "output": "GetApplicationResponse",
+      "status": "online"
+    },
+    "GetCustomerGatewayClusterList": {
+      "document": "查询客户自有网关集群列表。\n\n支持按集群名称关键字过滤，使用 Offset/Limit 分页返回集群及其下网关实例信息。",
+      "input": "GetCustomerGatewayClusterListRequest",
+      "name": "查询客户自有网关集群列表",
+      "output": "GetCustomerGatewayClusterListResponse",
       "status": "online"
     },
     "GetDestIPByName": {
@@ -294,6 +336,13 @@
       "output": "ModifyDeviceAccessRegionsResponse",
       "status": "online"
     },
+    "ModifyDeviceAccessScope": {
+      "document": "修改设备接入网关类型。",
+      "input": "ModifyDeviceAccessScopeRequest",
+      "name": "修改设备接入网关类型",
+      "output": "ModifyDeviceAccessScopeResponse",
+      "status": "online"
+    },
     "ModifyPackageRenewFlag": {
       "document": "可开启/关闭流量包自动续费，不影响当前周期正在生效的流量包。",
       "input": "ModifyPackageRenewFlagRequest",
@@ -341,6 +390,13 @@
       "input": "UpdateApplicationKeyRequest",
       "name": "更新应用密钥",
       "output": "UpdateApplicationKeyResponse",
+      "status": "online"
+    },
+    "UpdateCustomerGatewayCluster": {
+      "document": "更新客户自有网关集群配置。\n\n目前仅支持修改集群的公网访问 IP。",
+      "input": "UpdateCustomerGatewayClusterRequest",
+      "name": "更新客户自有网关集群",
+      "output": "UpdateCustomerGatewayClusterResponse",
       "status": "online"
     },
     "UpdateDevice": {
@@ -393,6 +449,72 @@
     "serviceShortName": "mna"
   },
   "objects": {
+    "AccessPointInfo": {
+      "document": "接入点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入点运营商。</p>",
+          "example": "CHINA_TELECOM",
+          "member": "string",
+          "name": "Vendor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入点地址。</p>",
+          "example": "49.233.112.218:443",
+          "member": "string",
+          "name": "PublicAddr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入点地域。</p>",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入点大区。</p>",
+          "example": "CN",
+          "member": "string",
+          "name": "BigArea",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入点是否可用。</p><p>枚举值：</p><ul><li>true： 接入点可用</li><li>false： 接入点不可用</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "Available",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "devGrp-2evt2qydr76f",
+          "member": "string",
+          "name": "GwGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ActivateHardware": {
       "document": "激活设备",
       "members": [
@@ -667,6 +789,61 @@
       ],
       "type": "object"
     },
+    "AddCustomerGatewayClusterRequest": {
+      "document": "AddCustomerGatewayCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群名称。最大 64 字符，支持字母、数字、中划线、下划线、点及中文。</p>",
+          "example": "jacky-test-cluster",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署大区标识。最大 32 字符。例如 CN 表示中国大陆。</p>",
+          "example": "CN",
+          "member": "string",
+          "name": "BigArea",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域标识。最大 32 字符。例如 ap-guangzhou。</p>",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCustomerGatewayClusterResponse": {
+      "document": "AddCustomerGatewayCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "cluster-vpqultrhw6",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddDeviceRequest": {
       "document": "AddDevice请求参数结构体",
       "members": [
@@ -783,6 +960,109 @@
           "example": "\"test\"",
           "member": "string",
           "name": "Signature",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddGatewayRequest": {
+      "document": "AddGateway请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。可通过 GetCustomerGatewayClusterList 接口获取。</p>",
+          "example": "cluster-vpqultrhw6",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关登录用户名。最大 64 字符。</p>",
+          "example": "jacky",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关登录密码。最大 128 字符。</p>",
+          "example": "Qjlzjl****",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关内网IP。</p>",
+          "example": "11.***.108.242",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域标识。最大 32 字符。例如 ap-guangzhou。可通过 DescribeAccessPointList 接口获取。</p>",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "RegionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddGatewayResponse": {
+      "document": "AddGateway返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关ID。</p>",
+          "example": "mpgw-rp6tfdfpqp",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关鉴权 Token。</p>",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJpYXQiOjE3ODUxNTY2MDEuNjE3MjM5LCJuYmYiOjE3ODUxNTY2MDEuNjE3MjR9LCJ******joibXBndy1ycDZ0ZmRmcHFwIiwibWdtdElwIjoiMTEuMTQxLjEwOC4yNDIifQ.etq0nOn1x0F59lXl3vBsiHx0b6HO0NtkQrd9Q6nZFbQ",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关注册地址。</p>",
+          "example": "reg-rest-****.multipath.tencent-cloud.com:9300",
+          "member": "string",
+          "name": "RegisterCenterUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关上报地址。</p>",
+          "example": "21.0.21.***:65002",
+          "member": "string",
+          "name": "TelemetryUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1021,6 +1301,33 @@
       ],
       "type": "object"
     },
+    "DeleteCustomerGatewayClusterRequest": {
+      "document": "DeleteCustomerGatewayCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。可通过 GetCustomerGatewayClusterList 接口获取。</p>",
+          "example": "cluster-vcn2uf3lhz",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomerGatewayClusterResponse": {
+      "document": "DeleteCustomerGatewayCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDeviceRequest": {
       "document": "DeleteDevice请求参数结构体",
       "members": [
@@ -1038,6 +1345,51 @@
     },
     "DeleteDeviceResponse": {
       "document": "DeleteDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayRequest": {
+      "document": "DeleteGateway请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。可通过 GetCustomerGatewayClusterList 接口获取。</p>",
+          "example": "cluster-vpqultrhw6",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关ID。</p>",
+          "example": "mpgw-rp6tfdfpqp",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关内网IP。</p>",
+          "example": "11.141.108.***",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayResponse": {
+      "document": "DeleteGateway返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1093,6 +1445,43 @@
     "DeleteL3ConnResponse": {
       "document": "DeleteL3Conn返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessPointListRequest": {
+      "document": "DescribeAccessPointList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域列表</p>",
+          "example": "[\"ap-beijing\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessPointListResponse": {
+      "document": "DescribeAccessPointList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入点列表</p>",
+          "example": "无",
+          "member": "AccessPointInfo",
+          "name": "AccessPointList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1854,6 +2243,72 @@
       ],
       "usage": "out"
     },
+    "GatewayClusterInfo": {
+      "document": "客户自有网关集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "cgw-a1b2c3d4",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称。</p>",
+          "example": "jacky-test-cluster",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "1785132647",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网访问 IP。</p>",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群下网关实例数量。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关列表。</p>",
+          "example": "无",
+          "member": "GatewayInfo",
+          "name": "GatewayList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GatewayInfo": {
       "document": "网关信息",
       "members": [
@@ -2158,6 +2613,71 @@
           "member": "int64",
           "name": "AccessScope",
           "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCustomerGatewayClusterListRequest": {
+      "document": "GetCustomerGatewayClusterList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>按集群名称模糊匹配的关键字。最大 64 字符。</p>",
+          "example": "gateway",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前查看页码。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页显示记录数。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCustomerGatewayClusterListResponse": {
+      "document": "GetCustomerGatewayClusterList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群列表。</p>",
+          "example": "无",
+          "member": "GatewayClusterInfo",
+          "name": "ClusterList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4613,6 +5133,42 @@
       ],
       "type": "object"
     },
+    "ModifyDeviceAccessScopeRequest": {
+      "document": "ModifyDeviceAccessScope请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备ID</p>",
+          "example": "[\"mna-4lu951li5h\"]",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入网关类型</p><p>枚举值：</p><ul><li>0： 公有云网关</li><li>1： 客户私有网关</li></ul><p>默认值：0</p><p>如果不传，则默认修改为接入公有云网关。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AccessScope",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceAccessScopeResponse": {
+      "document": "ModifyDeviceAccessScope返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPackageRenewFlagRequest": {
       "document": "ModifyPackageRenewFlag请求参数结构体",
       "members": [
@@ -5205,6 +5761,42 @@
     },
     "UpdateApplicationKeyResponse": {
       "document": "UpdateApplicationKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomerGatewayClusterRequest": {
+      "document": "UpdateCustomerGatewayCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。可通过 GetCustomerGatewayClusterList 接口获取。</p>",
+          "example": "cluster-vpqultrhw6",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网访问 IP。最大 64 字符，需为合法的 IPv4 或 IPv6 地址。</p>",
+          "example": "39.156.136.229",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomerGatewayClusterResponse": {
+      "document": "UpdateCustomerGatewayCluster返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

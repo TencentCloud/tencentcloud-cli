@@ -5802,6 +5802,15 @@
           "name": "UploadMethod",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上传目标</p><p>枚举值：</p><ul><li>session： 一次性上传会话（默认，通过入参传递 ComprehensionConfig 等上传参数）</li><li>stream： 上传到指定设备（加载对应设备的 ComprehensionConfig 等配置）</li></ul><p>默认值：session</p>",
+          "example": "stream",
+          "member": "string",
+          "name": "UploadTarget",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18632,7 +18641,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品 ID",
+          "document": "<p>产品 ID</p>",
           "example": "4AHMY9X89Y",
           "member": "string",
           "name": "ProductId",
@@ -18641,7 +18650,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "dev002",
           "member": "string",
           "name": "DeviceName",
@@ -18650,7 +18659,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类目。可选值：\n- `COMPREHENSION`：视觉理解\n- `HIGHLIGHT`：视频浓缩",
+          "document": "<p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>",
           "example": "COMPREHENSION",
           "member": "string",
           "name": "ServiceCategory",
@@ -18659,7 +18668,7 @@
         },
         {
           "disabled": false,
-          "document": "分页拉取数量",
+          "document": "<p>分页拉取数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -18668,7 +18677,7 @@
         },
         {
           "disabled": false,
-          "document": "分页拉取偏移",
+          "document": "<p>分页拉取偏移</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -18677,7 +18686,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类型。\n\n当 ServiceCategory 为 `COMPREHENSION` 时，可选值包括：\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解\n- `CONT_PERSON_MOTIONLESS`：静姿检测\n\n当 ServiceCategory 为 `HIGHLIGHT` 时，可选值包括：\n- `COMP_HIGHLIGHT`：视频浓缩",
+          "document": "<p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>",
           "example": "[\"VID_COMP\"]",
           "member": "string",
           "name": "ServiceTypes",
@@ -18686,7 +18695,7 @@
         },
         {
           "disabled": false,
-          "document": "通道 ID",
+          "document": "<p>通道 ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChannelId",
@@ -18695,7 +18704,7 @@
         },
         {
           "disabled": false,
-          "document": "查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。",
+          "document": "<p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>",
           "example": "1776621600000",
           "member": "int64",
           "name": "StartTimeMs",
@@ -18704,7 +18713,7 @@
         },
         {
           "disabled": false,
-          "document": "查询任务时间范围的结束时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。",
+          "document": "<p>查询任务时间范围的结束时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>",
           "example": "1776636000000",
           "member": "int64",
           "name": "EndTimeMs",
@@ -18713,7 +18722,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的任务的状态条件。不传则不按照状态过滤，可选值：\n\n- `1`：失败\n- `2`：空结果\n- `3`：有效结果",
+          "document": "<p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>",
           "example": "3",
           "member": "int64",
           "name": "Status",
@@ -18722,12 +18731,21 @@
         },
         {
           "disabled": false,
-          "document": "下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL",
+          "document": "<p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p>",
           "example": "1780022332",
           "member": "int64",
           "name": "FileURLExpireTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务结果过滤条件</p>",
+          "example": "无",
+          "member": "VisionRecognitionTaskFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -18737,7 +18755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务列表",
+          "document": "<p>任务列表</p>",
           "example": "无",
           "member": "SeeTaskInfo",
           "name": "Tasks",
@@ -18747,7 +18765,7 @@
         },
         {
           "disabled": false,
-          "document": "任务数量",
+          "document": "<p>任务数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -23502,7 +23520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "<p>任务 ID</p>",
           "example": "comp-aed98063-6574-867d-7e9e-a689e3aefbb5",
           "member": "string",
           "name": "TaskId",
@@ -23512,7 +23530,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。可能取值：\n\n- `1`：失败\n- `2`：空结果\n- `3`：有效结果\n- `4`：处理中",
+          "document": "<p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -23522,7 +23540,7 @@
         },
         {
           "disabled": false,
-          "document": "任务元数据",
+          "document": "<p>任务元数据</p>",
           "example": "无",
           "member": "SeeTaskMetadata",
           "name": "Metadata",
@@ -23532,7 +23550,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类目。可能取值：\n\n- `COMPREHENSION`：视觉理解\n- `HIGHLIGHT`：视频浓缩",
+          "document": "<p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>",
           "example": "COMPREHENSION",
           "member": "string",
           "name": "ServiceCategory",
@@ -23542,7 +23560,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类型。可能取值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解\n- `COMP_HIGHLIGHT`：视频浓缩",
+          "document": "<p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>",
           "example": "VID_COMP",
           "member": "string",
           "name": "ServiceType",
@@ -23552,7 +23570,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐规格。可能取值：\n\n- `POSTPAID`：后付费（适用于视频理解、图片理解）\n- `BASIC`：包年包月基础版（适用于视频理解）",
+          "document": "<p>套餐规格。可能取值：</p><ul><li><code>POSTPAID</code>：后付费（适用于视频理解、图片理解）</li><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>",
           "example": "POSTPAID",
           "member": "string",
           "name": "ServiceTier",
@@ -23562,7 +23580,7 @@
         },
         {
           "disabled": false,
-          "document": "视觉理解结果（适用于视频理解、图片理解）",
+          "document": "<p>视觉理解结果（适用于视频理解、图片理解）</p>",
           "example": "无",
           "member": "SeeComprehensionResult",
           "name": "ComprehensionResult",
@@ -23572,7 +23590,7 @@
         },
         {
           "disabled": false,
-          "document": "视频语义浓缩结果（适用于视频语义浓缩）",
+          "document": "<p>视频语义浓缩结果（适用于视频语义浓缩）</p>",
           "example": "无",
           "member": "SeeCompHighlightResult",
           "name": "CompHighlightResult",
@@ -23582,7 +23600,7 @@
         },
         {
           "disabled": false,
-          "document": "标签持续检测结果",
+          "document": "<p>标签持续检测结果</p>",
           "example": "无",
           "member": "SeeDetectContinuousResult",
           "name": "DetectContinuousResult",
@@ -23592,7 +23610,7 @@
         },
         {
           "disabled": false,
-          "document": "完成该任务所消耗的基础能力额度",
+          "document": "<p>完成该任务所消耗的基础能力额度</p>",
           "example": "1",
           "member": "int64",
           "name": "CostBasic",
@@ -23602,7 +23620,7 @@
         },
         {
           "disabled": false,
-          "document": "完成该任务所消耗的高级能力额度",
+          "document": "<p>完成该任务所消耗的高级能力额度</p>",
           "example": "1",
           "member": "int64",
           "name": "CostAdvanced",
@@ -23612,7 +23630,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件名列表",
+          "document": "<p>输出文件名列表</p>",
           "example": "[\"output.mp4\"]",
           "member": "string",
           "name": "Files",
@@ -23622,7 +23640,7 @@
         },
         {
           "disabled": false,
-          "document": "输出文件详情列表",
+          "document": "<p>输出文件详情列表</p>",
           "example": "无",
           "member": "CloudStorageAIServiceTaskFileInfo",
           "name": "FilesInfo",
@@ -23632,7 +23650,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "1776619154",
           "member": "int64",
           "name": "CreateTime",
@@ -23642,12 +23660,22 @@
         },
         {
           "disabled": false,
-          "document": "最后更新时间",
+          "document": "<p>最后更新时间</p>",
           "example": "1776619157",
           "member": "int64",
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>直传 COS 的对象 URI</p>",
+          "example": "cos://twesee-input-test-125*****99.ap-guangzhou/Direct/*********711/019ffdf0-*********-8ad0-5e70d23ae269/***************-lTXjNweg/1786671516_1786671526.ts",
+          "member": "string",
+          "name": "COSURI",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -27460,6 +27488,30 @@
         }
       ],
       "usage": "out"
+    },
+    "VisionRecognitionTaskFilter": {
+      "document": "TWeSee 语义理解任务过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段",
+          "example": "DetectedClassifications",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的值",
+          "example": "[\"person\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "VisionSummaryConfig": {
       "document": "视频摘要配置",

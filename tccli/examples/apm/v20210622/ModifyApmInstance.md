@@ -1,6 +1,6 @@
-**Example 1: 测试修改业务系统名称**
+**Example 1: 更改名称**
 
-
+更改名称
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "7be019e6-2e96-4ce9-8cf7-49a211678a35"
+        "RequestId": "6c44e486-5372-4a0f-ad4e-7fdbf0eeab78"
     }
 }
 ```

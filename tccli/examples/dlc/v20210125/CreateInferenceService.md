@@ -1,4 +1,4 @@
-**Example 1: 创建推理服务（含默认部署）**
+**Example 1: 示例**
 
 
 
@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli dlc CreateInferenceService --cli-unfold-argument  \
-    --Name xxxteste \
-    --ModelUid m-qwen2-5-6a1d83a2-db4d \
-    --Engine vllm \
+    --Name aaasss \
+    --ModelUid thisismodelUid \
+    --Engine xgboost \
     --Replicas 1 \
-    --ResourcePartitionId dlc-p-mghaaeha \
-    --Image ccr.ccs.tencentyun.com/emr-image/tcray:3.0.0.dev0-py311-cu125-extra-xgboost \
-    --ModelIdentifier m-qwen2-5-1234567 \
+    --ResourcePartitionId dlc-p-jhzmcfna \
+    --Image aasssss \
+    --ModelIdentifier thisismodelUid \
     --Queue default
 ```
 
@@ -24,25 +24,28 @@ Output:
         "ApiKeyAuthForceEnabled": true,
         "ApiKeyBindMessage": "success",
         "AppId": 260200066,
-        "CreateTime": 1780731457322,
+        "CreateTime": 1786007739628,
         "DeploymentCount": 1,
-        "EndpointUrl": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/xxxteste/v1",
+        "DeploymentMode": "ModelHub",
+        "EndpointUrl": "https://cls-p9d8s1gc.tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/aaasss",
         "HasRunningDeployment": false,
-        "ModelIdentifier": "m-qwen2-5-1234567",
-        "ModelName": "qwen2.5",
-        "ModelType": "LLM",
-        "ModelUid": "m-qwen2-5-6a1d83a2-db4d",
+        "IsCustom": false,
+        "ModelIdentifier": "thisismodelUid",
+        "ModelName": "capi_test_123",
+        "ModelType": "ML",
+        "ModelUid": "thisismodelUid",
         "ModelVersion": "v1",
-        "Name": "xxxteste",
-        "ResourceConfig": "{\"workerBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_gn7_gn75xlarge80\",\"headSpec\":1,\"gpu\":\"T4\",\"gpuNum\":1,\"cpu\":20,\"mem\":80,\"headCpu\":20,\"headMem\":80}",
-        "ServiceId": "svc-20260606153737-53cr",
+        "Name": "aaasss",
+        "ResourceConfig": "{\"workerBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"workerSpec\":1,\"headBillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"headSpec\":1,\"gpu\":\"\",\"gpuNum\":0,\"cpu\":1,\"mem\":4,\"headCpu\":1,\"headMem\":4}",
+        "ResourceTags": [],
+        "ServiceId": "svc-20260806171539-3iwd",
         "SkipTlsVerify": false,
         "Status": "Deploying",
         "SubAccountUin": "700002655694",
         "Uin": "700002655694",
-        "UnifiedEndpointUrl": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/v1",
-        "UpdateTime": 1780731457580,
-        "RequestId": "c7aaa137-69a2-4514-a8ed-29b977c9f040"
+        "UnifiedV2EndpointUrl": "https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443",
+        "UpdateTime": 1786007739788,
+        "RequestId": "7bcb5817-ad24-42e8-a5f3-e78e25714e80"
     }
 }
 ```

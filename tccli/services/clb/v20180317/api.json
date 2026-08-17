@@ -5340,7 +5340,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>路由配置</p>",
+          "document": "<p>路由配置</p><p>新创建实例时，默认会开启粘连路由</p>",
           "example": "无",
           "member": "RouterSettingWithoutFallBack",
           "name": "RouterSetting",
@@ -5400,6 +5400,24 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性公网IP的ID</p>",
+          "example": "eip-kxle429x",
+          "member": "string",
+          "name": "EipAddressId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单位</p><p>取值范围：[1, 2048]</p><p>单位：Mbps</p>",
+          "example": "30",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -14372,6 +14390,42 @@
       ],
       "usage": "in"
     },
+    "ModelRouterBillingConfigOutput": {
+      "document": "模型路由计费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型路由计费模式</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量计费</li><li>RESOURCE_PACKAGE： 按资源包抵扣</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RESOURCE_PACKAGE",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例规格</p><p>枚举值：</p><ul><li>t1.nano-01： 入门版</li><li>t1.nano-02： 轻量版</li><li>t1.nano-03： 轻量增强版</li><li>t1.micro-01： 微型版</li><li>t1.micro-02： 基础版</li><li>t1.small-01： 标准版</li><li>t1.small-02： 标准增强版</li><li>t1.medium-01： 进阶版</li><li>t1.medium-02： 进阶增强版</li><li>t1.large-01： 专业版</li><li>t1.large-02： 专业增强版</li><li>t1.xlarge-01： 旗舰版</li><li>t1.xlarge-02： 至尊版</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "t1.small-01",
+          "member": "string",
+          "name": "SlaType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否关联资源包抵扣</p><p>枚举值：</p><ul><li>true： 关联</li><li>false： 不关联</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AssociateResourcePackage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModelRouterDetail": {
       "document": "查询单个实例详细信息",
       "members": [
@@ -14613,6 +14667,16 @@
           "name": "EipAddressId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费信息</p>",
+          "example": "无",
+          "member": "ModelRouterBillingConfigOutput",
+          "name": "BillingConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -15349,13 +15413,13 @@
         },
         {
           "disabled": false,
-          "document": "<p>带宽</p><p>单位：Mbps</p>",
+          "document": "<p>带宽</p><p>单位：Mbps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "Bandwidth",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -15365,6 +15429,16 @@
           "name": "EipAddressId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费信息</p>",
+          "example": "无",
+          "member": "ModelRouterBillingConfigOutput",
+          "name": "BillingConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -18398,6 +18472,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>粘连配置参数</p>",
+          "example": "无",
+          "member": "StickyConfig",
+          "name": "StickyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18440,6 +18525,15 @@
           "name": "NumRetries",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>粘连路由配置参数</p>",
+          "example": "无",
+          "member": "StickyConfig",
+          "name": "StickyConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -19828,6 +19922,23 @@
         }
       ],
       "usage": "out"
+    },
+    "StickyConfig": {
+      "document": "粘连路由配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启粘连路由</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TagInfo": {
       "document": "模型路由实例的标签信息",
