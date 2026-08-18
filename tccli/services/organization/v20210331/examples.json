@@ -499,8 +499,8 @@
     "DescribeOrganizationMembersAuthPolicy": [
       {
         "document": "查询组织成员访问授权策略列表",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListOrganizationMembersAuthPolicy\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2022-01-13 10:27:11\",\n                \"IdentityId\": 1,\n                \"IdentityRoleAliasName\": \"Admin\",\n                \"IdentityRoleName\": \"TestRole\",\n                \"MemberName\": \"\",\n                \"MemberUin\": 111111111111,\n                \"OrgSubAccountName\": \"test001\",\n                \"OrgSubAccountUin\": 222222222222,\n                \"PolicyId\": 111,\n                \"PolicyName\": \"pocy01131027\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"ab3628b0-cce5-4337-9a01-e68f5242931e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationMembersAuthPolicy\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2022-01-13 10:27:11\",\n                \"IdentityId\": 1,\n                \"IdentityRoleAliasName\": \"Admin\",\n                \"IdentityRoleName\": \"TestRole\",\n                \"MemberName\": \"\",\n                \"MemberUin\": 111111111111,\n                \"OrgSubAccountName\": \"test001\",\n                \"OrgSubAccountUin\": 222222222222,\n                \"PolicyId\": 111,\n                \"PolicyName\": \"pocy01131027\",\n                \"BindType\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"ab3628b0-cce5-4337-9a01-e68f5242931e\"\n    }\n}",
         "title": "查询组织成员访问授权策略列表"
       }
     ],
@@ -811,7 +811,7 @@
     "ListRoleConfigurations": [
       {
         "document": "查询权限配置列表",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-s9h39sdn2\",\n    \"NextToken\": \"sisndpmfisdnlk\",\n    \"MaxResults\": 10,\n    \"Filter\": \"conf1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRoleConfigurations\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-s9h39sdn2\",\n    \"NextToken\": \"sisndpmfisdnlk\",\n    \"MaxResults\": 10,\n    \"Filter\": \"conf1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCounts\": 20,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"NextToken\": \"3si2ns92ns82bos\",\n        \"RoleConfigurations\": [\n            {\n                \"RoleConfigurationId\": \"rc-s2ns92ns***\",\n                \"RoleConfigurationName\": \"conf1\",\n                \"Description\": \"this is role configuration\",\n                \"SessionDuration\": 900,\n                \"RelayState\": \"https://console.cloud.tencent.com\",\n                \"CreateTime\": \"2019-01-01 12:12:12\",\n                \"UpdateTime\": \"2019-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "查询权限配置列表"
       }

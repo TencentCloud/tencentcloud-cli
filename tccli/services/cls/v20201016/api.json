@@ -6278,7 +6278,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集配置名称\n- 名称种不得包含特殊字符｜\n- 名称最长255字符，超过截断",
+          "document": "<p>采集配置名称</p><ul><li>名称种不得包含特殊字符｜</li><li>名称最长255字符，超过截断</li></ul>",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -6287,7 +6287,7 @@
         },
         {
           "disabled": false,
-          "document": "采集配置所属日志主题ID即TopicId\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>采集配置所属日志主题ID即TopicId</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "f948972f-a063-408c-a59f-8c3230bddaf6",
           "member": "string",
           "name": "Output",
@@ -6296,7 +6296,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集路径，包含文件名，支持多个路径，多个路径之间英文逗号分隔，文件采集情况下必填",
+          "document": "<p>日志采集路径，包含文件名，支持多个路径，多个路径之间英文逗号分隔，文件采集情况下必填</p>",
           "example": "/data/nginx/log/**/access.log",
           "member": "string",
           "name": "Path",
@@ -6305,7 +6305,7 @@
         },
         {
           "disabled": false,
-          "document": "采集的日志类型，默认为minimalist_log。支持以下类型：\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；\n- service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；\n- windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。",
+          "document": "<p>采集的日志类型，默认为minimalist_log。支持以下类型：</p><ul><li>json_log代表：JSON-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/17419\">使用 JSON 提取模式采集日志</a>）；</li><li>delimiter_log代表：分隔符-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/17420\">使用分隔符提取模式采集日志</a>）；</li><li>minimalist_log代表：单行全文-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/17421\">使用单行全文提取模式采集日志</a>）；</li><li>fullregex_log代表：单行完全正则-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/52365\">使用单行-完全正则提取模式采集日志</a>）；</li><li>multiline_log代表：多行全文-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/17422\">使用多行全文提取模式采集日志</a>）；</li><li>multiline_fullregex_log代表：多行完全正则-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/52366\">使用多行-完全正则提取模式采集日志</a>）；</li><li>user_define_log代表：组合解析（适用于多格式嵌套的日志，详见<a href=\"https://cloud.tencent.com/document/product/614/61310\">使用组合解析提取模式采集日志</a>）；</li><li>service_syslog代表：syslog 采集（详见<a href=\"https://cloud.tencent.com/document/product/614/81454\">采集 Syslog</a>）；</li><li>windows_event_log代表：Windows事件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/96678\">采集 Windows 事件日志</a>）。</li><li>journal_log代表：journal日志采集</li></ul>",
           "example": "delimiter_log",
           "member": "string",
           "name": "LogType",
@@ -6314,7 +6314,7 @@
         },
         {
           "disabled": false,
-          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
+          "document": "<p>提取规则，如果设置了ExtractRule，则必须设置LogType</p>",
           "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
@@ -6323,7 +6323,7 @@
         },
         {
           "disabled": false,
-          "document": "采集黑名单路径列表",
+          "document": "<p>采集黑名单路径列表</p>",
           "example": "无",
           "member": "ExcludePathInfo",
           "name": "ExcludePaths",
@@ -6332,7 +6332,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义采集规则，Json格式序列化的字符串。当LogType为user_define_log时，必填。",
+          "document": "<p>用户自定义采集规则，Json格式序列化的字符串。当LogType为user_define_log时，必填。</p>",
           "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]}}]}\"",
           "member": "string",
           "name": "UserDefineRule",
@@ -6341,7 +6341,7 @@
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：\n`{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}`\n\n控制台默认占位值：`{\\\"ClsAgentDefault\\\":0}`",
+          "document": "<p>高级采集配置。 Json字符串， Key/Value定义为如下：</p><ul><li>ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时</li><li>ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数</li><li>ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false<br>样例：<br><code>{\\&quot;ClsAgentFileTimeout\\&quot;:0,\\&quot;ClsAgentMaxDepth\\&quot;:10,\\&quot;ClsAgentParseFailMerge\\&quot;:true}</code></li></ul><p>控制台默认占位值：<code>{\\&quot;ClsAgentDefault\\&quot;:0}</code></p>",
           "example": "\"{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}\"",
           "member": "string",
           "name": "AdvancedConfig",
@@ -6350,7 +6350,7 @@
         },
         {
           "disabled": false,
-          "document": "日志输入类型（<span style=\"color:red; font-weight:bold\">注：windows场景必填且仅支持file和windows_event类型</span>）\n- file: 文件类型采集\n- windows_event：windows事件采集\n- syslog：系统日志采集",
+          "document": "<p>日志输入类型（<span style=\"color:red; font-weight:bold\">注：windows场景必填且仅支持file和windows_event类型</span>）</p><ul><li>file: 文件类型采集</li><li>windows_event：windows事件采集</li><li>syslog：系统日志采集</li></ul>",
           "example": "file",
           "member": "string",
           "name": "InputType",
@@ -6365,7 +6365,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集配置ID",
+          "document": "<p>采集配置ID</p>",
           "example": "72294392-a730-410a-bbdc-d998c27ecd4f",
           "member": "string",
           "name": "ConfigId",
@@ -12249,7 +12249,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "agent的版本号",
+          "document": "<p>agent的版本号</p>",
           "example": "1.0",
           "member": "string",
           "name": "AgentVersion",
@@ -12258,8 +12258,8 @@
         },
         {
           "disabled": false,
-          "document": "agent的IP地址",
-          "example": "10.10.1.119",
+          "document": "<p>agent的IP地址</p>",
+          "example": "10.10.1.1**",
           "member": "string",
           "name": "AgentIp",
           "required": true,
@@ -12267,8 +12267,8 @@
         },
         {
           "disabled": false,
-          "document": "机器组标签列表",
-          "example": "label",
+          "document": "<p>机器组标签列表</p>",
+          "example": "[\"*label*\"]",
           "member": "string",
           "name": "Labels",
           "required": false,
@@ -12276,7 +12276,7 @@
         },
         {
           "disabled": false,
-          "document": "agent的instance id",
+          "document": "<p>agent的instance id</p>",
           "example": "loglistener-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -12291,7 +12291,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>采集配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogConfigInfo",
           "name": "LogConfigs",
@@ -12301,7 +12301,7 @@
         },
         {
           "disabled": false,
-          "document": "服务日志的配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务日志的配置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceLogConfigInfo",
           "name": "ServiceLogConfigs",
@@ -12311,8 +12311,8 @@
         },
         {
           "disabled": false,
-          "document": "弃用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>弃用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "****",
           "member": "string",
           "name": "LastVersion",
           "required": true,
@@ -12321,8 +12321,8 @@
         },
         {
           "disabled": false,
-          "document": "弃用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>弃用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "NeedUpdate",
           "required": true,
@@ -12331,8 +12331,8 @@
         },
         {
           "disabled": false,
-          "document": "弃用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>弃用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "htpp://***",
           "member": "string",
           "name": "URL",
           "required": true,
@@ -12341,8 +12341,8 @@
         },
         {
           "disabled": false,
-          "document": "弃用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>弃用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*****",
           "member": "string",
           "name": "FileMd5",
           "required": true,
@@ -18079,6 +18079,61 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集范围。空数组表示采集全部Unit，非空数组表示采集指定Unit</p>",
+          "example": "[\"***\"]",
+          "member": "string",
+          "name": "Units",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否采集内核日志</p><p>默认值：true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeKernel",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用journal原始时间。true ：用 journal 原始时间；false： 用采集时间 </p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "UseJournalTime",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段间分隔符数组（长度 = keys.length），每个元素是前一字段结尾到当前字段开头的分隔串</p>",
+          "example": "[\"[ ]\"]",
+          "member": "string",
+          "name": "KeysDelimiter",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段标志位数组（长度 = keys.length），<code>0</code> = 普通字段，<code>1</code> = 包含子字段需二次拆分</p>",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "KeysFlag",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21658,7 +21713,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集规则配置ID，通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)返回信息获取。",
+          "document": "<p>采集规则配置ID，通过<a href=\"https://cloud.tencent.com/document/product/614/58616\">获取采集规则配置</a>返回信息获取。</p>",
           "example": "a2c6342c-270a-4468-86cf-92625e466401",
           "member": "string",
           "name": "ConfigId",
@@ -21667,7 +21722,7 @@
         },
         {
           "disabled": false,
-          "document": "采集规则配置名称\n- 不能包含特殊字符｜\n- 长度不能超过255字符，超过会被截断",
+          "document": "<p>采集规则配置名称</p><ul><li>不能包含特殊字符｜</li><li>长度不能超过255字符，超过会被截断</li></ul>",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -21676,7 +21731,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集路径，包含文件名",
+          "document": "<p>日志采集路径，包含文件名</p>",
           "example": "/data/nginx/log/access.log",
           "member": "string",
           "name": "Path",
@@ -21685,7 +21740,7 @@
         },
         {
           "disabled": false,
-          "document": "采集的日志类型。支持以下类型：\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；\n- service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；\n- windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。\n\n",
+          "document": "<p>采集的日志类型。支持以下类型：</p><ul><li>json_log代表：JSON-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/17419\">使用 JSON 提取模式采集日志</a>）；</li><li>delimiter_log代表：分隔符-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/17420\">使用分隔符提取模式采集日志</a>）；</li><li>minimalist_log代表：单行全文-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/17421\">使用单行全文提取模式采集日志</a>）；</li><li>fullregex_log代表：单行完全正则-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/52365\">使用单行-完全正则提取模式采集日志</a>）；</li><li>multiline_log代表：多行全文-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/17422\">使用多行全文提取模式采集日志</a>）；</li><li>multiline_fullregex_log代表：多行完全正则-文件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/52366\">使用多行-完全正则提取模式采集日志</a>）；</li><li>user_define_log代表：组合解析（适用于多格式嵌套的日志，详见<a href=\"https://cloud.tencent.com/document/product/614/61310\">使用组合解析提取模式采集日志</a>）；</li><li>service_syslog代表：syslog 采集（详见<a href=\"https://cloud.tencent.com/document/product/614/81454\">采集 Syslog</a>）；</li><li>windows_event_log代表：Windows事件日志（详见<a href=\"https://cloud.tencent.com/document/product/614/96678\">采集 Windows 事件日志</a>）。</li><li>journal_log代表：journal日志采集</li></ul>",
           "example": "delimiter_log",
           "member": "string",
           "name": "LogType",
@@ -21694,7 +21749,7 @@
         },
         {
           "disabled": false,
-          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
+          "document": "<p>提取规则，如果设置了ExtractRule，则必须设置LogType</p>",
           "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
@@ -21703,7 +21758,7 @@
         },
         {
           "disabled": false,
-          "document": "采集黑名单路径列表",
+          "document": "<p>采集黑名单路径列表</p>",
           "example": "无",
           "member": "ExcludePathInfo",
           "name": "ExcludePaths",
@@ -21712,7 +21767,7 @@
         },
         {
           "disabled": false,
-          "document": "采集配置关联的日志主题（TopicId）\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>采集配置关联的日志主题（TopicId）</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "Output",
@@ -21721,7 +21776,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义解析字符串，Json格式序列化的字符串。",
+          "document": "<p>用户自定义解析字符串，Json格式序列化的字符串。</p>",
           "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]}}]}\"",
           "member": "string",
           "name": "UserDefineRule",
@@ -21730,7 +21785,7 @@
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：\n`{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}`",
+          "document": "<p>高级采集配置。 Json字符串， Key/Value定义为如下：</p><ul><li>ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时</li><li>ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数</li><li>ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false<br>样例：<br><code>{\\&quot;ClsAgentFileTimeout\\&quot;:0,\\&quot;ClsAgentMaxDepth\\&quot;:10,\\&quot;ClsAgentParseFailMerge\\&quot;:true}</code></li></ul>",
           "example": "\"{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}\"",
           "member": "string",
           "name": "AdvancedConfig",
@@ -21739,7 +21794,7 @@
         },
         {
           "disabled": false,
-          "document": "日志输入类型（<span style=\"color:red; font-weight:bold\">注：windows场景必填且仅支持file和windows_event类型</span>）\n- file: 文件类型采集\n- windows_event：windows事件采集\n- syslog：系统日志采集",
+          "document": "<p>日志输入类型（<span style=\"color:red; font-weight:bold\">注：windows场景必填且仅支持file和windows_event类型</span>）</p><ul><li>file: 文件类型采集</li><li>windows_event：windows事件采集</li><li>syslog：系统日志采集</li></ul>",
           "example": "file",
           "member": "string",
           "name": "InputType",

@@ -4180,16 +4180,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务工单类型",
-          "example": "['rackPowerOn']",
-          "member": "string",
-          "name": "WorkOrderType",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "要导出的工单的起始时间",
+          "document": "<p>要导出的工单的起始时间</p>",
           "example": "2024-11-22 00:00:00",
           "member": "string",
           "name": "BeginDateTime",
@@ -4198,12 +4189,21 @@
         },
         {
           "disabled": false,
-          "document": "要导出的工单的结束时间",
+          "document": "<p>要导出的工单的结束时间</p>",
           "example": "2025-05-11 00:00:00",
           "member": "string",
           "name": "EndDateTime",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务工单类型</p>",
+          "example": "[\"rackOn\"]",
+          "member": "string",
+          "name": "WorkOrderType",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4213,8 +4213,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回下载地址",
-          "example": "无",
+          "document": "<p>返回下载地址</p>",
+          "example": "\"https://xxxx\"",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": true,

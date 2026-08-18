@@ -67,7 +67,7 @@
     "CreateService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateService\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"awdrw1256\"\n    }\n}",
         "title": "创建服务"
       }
@@ -107,7 +107,7 @@
     "DeleteAgentCredential": [
       {
         "document": "删除Credential",
-        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableAgentCredential\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentCredential\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ff5f982-8e21-42e9-834a-e6f4e50bb83d\"\n    }\n}",
         "title": "删除Credential"
       }
@@ -139,8 +139,8 @@
     "DeleteService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{\n    \"InstanceID\": \"\",\n    \"ID\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"\",\n    \"ID\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
         "title": "删除服务"
       }
     ],
@@ -251,16 +251,16 @@
     "DescribeService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{\n    \"InstanceID\": \"\",\n    \"ID\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeService\n<公共请求参数>\n\n{\n    \"InstanceID\": \"\",\n    \"ID\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
         "title": "查询服务详情"
       }
     ],
     "DescribeServices": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServices\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
         "title": "查询服务列表"
       }
     ],

@@ -144,7 +144,7 @@
   "metadata": {
     "apiVersion": "2022-03-25",
     "api_brief": "介绍如何使用API对etcd服务进行操作，包括创建etcd实例，创建备份以及恢复备份等。",
-    "serviceNameCN": "云原生xa0etcd",
+    "serviceNameCN": "云原生etcd",
     "serviceShortName": "cetcd"
   },
   "objects": {

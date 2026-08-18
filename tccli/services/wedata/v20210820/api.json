@@ -21805,7 +21805,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "5c6f6968-97c0-4e40-b25b-8258c0170f4",
           "member": "string",
           "name": "TaskId",
@@ -21814,7 +21814,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
@@ -21823,7 +21823,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型",
+          "document": "<p>任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型</p>",
           "example": "201",
           "member": "uint64",
           "name": "TaskType",
@@ -21832,7 +21832,7 @@
         },
         {
           "disabled": false,
-          "document": "提交版本号",
+          "document": "<p>提交版本号</p>",
           "example": "12",
           "member": "int64",
           "name": "InstanceVersion",
@@ -21841,7 +21841,7 @@
         },
         {
           "disabled": false,
-          "document": "额外参数",
+          "document": "<p>额外参数</p>",
           "example": "无",
           "member": "RecordField",
           "name": "ExtConfig",
@@ -21856,7 +21856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntegrationTaskInfo",
           "name": "TaskInfo",
@@ -21866,7 +21866,7 @@
         },
         {
           "disabled": false,
-          "document": "采集器统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>采集器统计信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AgentStatus",
           "name": "AgentStatus",
@@ -21876,13 +21876,23 @@
         },
         {
           "disabled": false,
-          "document": "任务版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务版本信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskVersionInstance",
           "name": "TaskVersion",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>历史实例信息</p>",
+          "example": "无",
+          "member": "RealtimeTaskInstanceVO",
+          "name": "TaskVersionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26803,6 +26813,15 @@
           "name": "JobType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>滚动查询游标</p>",
+          "example": "Y29udGV4dC1kMjA2MjRhZS1lYTRhLTQwMGUtODE3Zi0yZmI3NGU2OTMzNDAxNzg2NDE4NDk3MTAz",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -26829,6 +26848,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>滚动查询游标</p>",
+          "example": "Y29udGV4dC1kMjA2MjRhZS1lYTRhLTQwMGUtODE3Zi0yZmI3NGU2OTMzNDAxNzg2NDE4NDk3MTAz",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -27010,7 +27039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表ID",
+          "document": "<p>表ID</p>",
           "example": "1000",
           "member": "string",
           "name": "TableId",
@@ -27019,7 +27048,7 @@
         },
         {
           "disabled": false,
-          "document": "组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA",
+          "document": "<p>组件类型枚举值，支持的值有 HDFS/HBASE/HIVE/KAFKA</p>",
           "example": "HIVE",
           "member": "string",
           "name": "TechnologyType",
@@ -27028,7 +27057,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "emr-111",
           "member": "string",
           "name": "ClusterId",
@@ -27037,7 +27066,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE",
+          "document": "<p>资源类型枚举值，支持的值有TOPIC/PATH/TABLE/DATABASE</p>",
           "example": "TABLE",
           "member": "string",
           "name": "ResourceType",
@@ -27046,7 +27075,7 @@
         },
         {
           "disabled": false,
-          "document": "表名",
+          "document": "<p>表名</p>",
           "example": "user",
           "member": "string",
           "name": "TableName",
@@ -27055,7 +27084,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "1051972427153674240",
           "member": "string",
           "name": "ProjectId",
@@ -27064,7 +27093,7 @@
         },
         {
           "disabled": false,
-          "document": "预览的行数，默认10行",
+          "document": "<p>预览的行数，默认10行</p>",
           "example": "5",
           "member": "int64",
           "name": "RowNum",
@@ -27073,7 +27102,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名，kafka或其他无数据库概念的不填",
+          "document": "<p>数据库名，kafka或其他无数据库概念的不填</p>",
           "example": "useful",
           "member": "string",
           "name": "DatabaseName",
@@ -27082,7 +27111,7 @@
         },
         {
           "disabled": false,
-          "document": "异步查询预览结果时填写",
+          "document": "<p>异步查询预览结果时填写</p>",
           "example": "100",
           "member": "string",
           "name": "TaskId",
@@ -27091,10 +27120,37 @@
         },
         {
           "disabled": false,
-          "document": "分区信息",
+          "document": "<p>分区信息</p>",
           "example": "dt=2025-07-01/region=west",
           "member": "string",
           "name": "PartitionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组ID</p>",
+          "example": "20260807150201900040",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行SQL</p>",
+          "example": "U0VMRUNUICogRlJPTSBgYV9kYl9hX2hpdmVfbGNfcXVlcnlfb2N1d18xNzg1NzY2Mzg0YC5gaGl2ZV9sY19xdWVyeV9hYnBuXzE3ODU3NjYzODRgIFdIRVJFIDE9MSBMSU1JVCA1",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎名</p>",
+          "example": "Studio专用",
+          "member": "string",
+          "name": "EngineId",
           "required": false,
           "type": "string"
         }
@@ -27106,7 +27162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表的列名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表的列名列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"col\"]",
           "member": "string",
           "name": "ColumnNames",
@@ -27116,7 +27172,7 @@
         },
         {
           "disabled": false,
-          "document": "表的行数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表的行数据列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TableRecord",
           "name": "TableRecordSet",
@@ -27126,7 +27182,7 @@
         },
         {
           "disabled": false,
-          "document": "异步预览任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>异步预览任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "string",
           "name": "TaskId",
@@ -27136,7 +27192,7 @@
         },
         {
           "disabled": false,
-          "document": "异步预览结果状态: 0 初始化， 1 执行中， 2 执行成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>异步预览结果状态: 0 初始化， 1 执行中， 2 执行成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "AsyncState",
@@ -48943,6 +48999,32 @@
           "name": "BytesLogSpeed",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RealtimeTaskInstanceVO": {
+      "document": "历史实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例生成时间</p>",
+          "example": "2026-08-13 17:11:35",
+          "member": "string",
+          "name": "InstanceDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RunningOrderId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

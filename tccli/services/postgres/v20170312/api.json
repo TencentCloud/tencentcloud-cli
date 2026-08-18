@@ -6725,7 +6725,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，形如postgres-6bwgamo3。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例ID，形如postgres-6bwgamo3。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-6bwgamo3",
           "member": "string",
           "name": "DBInstanceId",
@@ -6740,7 +6740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true 代表开通 ，false 代表未开通",
+          "document": "<p>true 代表开通 ，false 代表未开通</p>",
           "example": "false",
           "member": "bool",
           "name": "SSLEnabled",
@@ -6750,7 +6750,7 @@
         },
         {
           "disabled": false,
-          "document": "云端根证书下载链接",
+          "document": "<p>云端根证书下载链接</p>",
           "example": "http://testdownload.url",
           "member": "string",
           "name": "CAUrl",
@@ -6760,10 +6760,40 @@
         },
         {
           "disabled": false,
-          "document": "服务器证书中配置的内网或外网连接地址",
+          "document": "<p>服务器证书中配置的内网或外网连接地址</p>",
           "example": "10.0.0.23",
           "member": "string",
           "name": "ConnectAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CA证书公钥，仅云盘版</p>",
+          "example": "CertValue",
+          "member": "string",
+          "name": "CACert",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JKS公钥，仅云盘版</p>",
+          "example": "JKSValue",
+          "member": "string",
+          "name": "CAJKS",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CAP7B公钥，仅云盘版</p>",
+          "example": "CAP7BValue",
+          "member": "string",
+          "name": "CAP7B",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

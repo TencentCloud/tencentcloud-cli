@@ -1015,6 +1015,13 @@
       "output": "ModifyPrometheusGlobalNotificationResponse",
       "status": "deprecated"
     },
+    "ModifyPrometheusInstanceAccessPoints": {
+      "document": "ModifyPrometheusInstanceAccessPoints 用于管理 Prometheus 实例的访问入口，当前支持 HTTP 与 HTTPS 两种协议：默认启用 HTTP，HTTPS（mTLS）为可选项，但至少需启用一种协议。现阶段对 Prometheus 的读写均通过私有网络入口完成；由于 HTTPS 依赖 mTLS，配置与运维复杂度更高，且在绝大多数场景下并无必要，因此通常不建议启用。",
+      "input": "ModifyPrometheusInstanceAccessPointsRequest",
+      "name": "修改 Prometheus 实例的访问入口（开启关闭 HTTP、HTTPS 等）",
+      "output": "ModifyPrometheusInstanceAccessPointsResponse",
+      "status": "online"
+    },
     "ModifyPrometheusInstanceAttributes": {
       "document": "修改 Prometheus 实例相关属性",
       "input": "ModifyPrometheusInstanceAttributesRequest",
@@ -18088,6 +18095,23 @@
     },
     "ModifyPrometheusGlobalNotificationResponse": {
       "document": "ModifyPrometheusGlobalNotification返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusInstanceAccessPointsRequest": {
+      "document": "ModifyPrometheusInstanceAccessPoints请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyPrometheusInstanceAccessPointsResponse": {
+      "document": "ModifyPrometheusInstanceAccessPoints返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

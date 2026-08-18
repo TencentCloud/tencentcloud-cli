@@ -2275,7 +2275,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "hpc-xxx",
           "member": "string",
           "name": "ClusterId",
@@ -2290,7 +2290,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业任务数量",
+          "document": "<p>作业任务数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "JobTotal",
@@ -2300,7 +2300,7 @@
         },
         {
           "disabled": false,
-          "document": "排队中的作业任务数量",
+          "document": "<p>排队中的作业任务数量</p>",
           "example": "2",
           "member": "uint64",
           "name": "QueuingJobTotal",
@@ -2310,7 +2310,7 @@
         },
         {
           "disabled": false,
-          "document": "运行中的作业数量",
+          "document": "<p>运行中的作业数量</p>",
           "example": "3",
           "member": "uint64",
           "name": "RunningJobTotal",
@@ -2619,7 +2619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "hpc-2j8ntf9l",
           "member": "string",
           "name": "ClusterId",
@@ -2628,7 +2628,7 @@
         },
         {
           "disabled": false,
-          "document": "集群中的节点id",
+          "document": "<p>集群中的节点id</p>",
           "example": "[\"node-9workmoi\"]",
           "member": "string",
           "name": "NodeIds",

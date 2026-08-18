@@ -5832,6 +5832,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不影响任务执行的警告信息</p>",
+          "example": "不影响任务执行的警告信息",
+          "member": "string",
+          "name": "WarnMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6302,7 +6312,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "<p>ckafka集群实例Id</p>",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6311,7 +6321,7 @@
         },
         {
           "disabled": false,
-          "document": "消费分组名称",
+          "document": "<p>消费分组名称</p>",
           "example": "group-test",
           "member": "string",
           "name": "Group",
@@ -6320,7 +6330,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名",
+          "document": "<p>主题名</p>",
           "example": "topic-test",
           "member": "string",
           "name": "Topic",
@@ -6335,8 +6345,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "document": "<p>返回结果</p>",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -8030,6 +8040,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不影响任务执行的警告信息</p>",
+          "example": "不影响任务执行的警告信息",
+          "member": "string",
+          "name": "WarnMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9465,6 +9485,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索topic时是否忽略大小写敏感</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SearchWordIgnoreCaseFlag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15648,7 +15677,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例级别消息保留大小</p>单位：byte<br>默认值：-1<br><p>实例级别消息保留大小</p>",
+          "document": "<p>实例级别消息保留大小</p><p>单位：byte</p><p>默认值：-1</p><p>实例级别消息保留大小</p>",
           "example": "1073741824",
           "member": "int64",
           "name": "RetentionBytes",
@@ -15666,7 +15695,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>事务ID最大空闲时间，超时未提交的事务将被标记为过期</p>取值范围：[3600000, 604800000]<br>单位：ms",
+          "document": "<p>事务ID最大空闲时间，超时未提交的事务将被标记为过期</p><p>取值范围：[3600000, 604800000]</p><p>单位：ms</p>",
           "example": "604800000",
           "member": "int64",
           "name": "TransactionalIdExpirationMs",
@@ -18362,7 +18391,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>实例接入方式0：PLAINTEXT (明文方式，没有带用户信息老版本及社区版本都支持)1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）</p>",
+          "document": "<p>实例接入方式<br>0：PLAINTEXT (明文方式，没有带用户信息老版本及社区版本都支持)<br>1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）<br>2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）<br>3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）</p>",
           "example": "1",
           "member": "int64",
           "name": "AccessType",
@@ -18897,7 +18926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "手动设置的flag标志，true表示售罄，false表示可售。",
+          "document": "<p>手动设置的flag标志，true表示售罄，false表示可售。</p>",
           "example": "false",
           "member": "bool",
           "name": "Flag",
@@ -18907,7 +18936,7 @@
         },
         {
           "disabled": false,
-          "document": "ckafka版本号(1.1.1/2.4.2/0.10.2)",
+          "document": "<p>ckafka版本号(1.1.1/2.4.2/0.10.2)</p>",
           "example": "1.1.1",
           "member": "string",
           "name": "Version",
@@ -18917,7 +18946,7 @@
         },
         {
           "disabled": false,
-          "document": "专业版、标准版标志",
+          "document": "<p>专业版、标准版标志</p>",
           "example": "standard",
           "member": "string",
           "name": "Platform",
@@ -18927,7 +18956,7 @@
         },
         {
           "disabled": false,
-          "document": "售罄标志：true售罄",
+          "document": "<p>售罄标志：true售罄</p>",
           "example": "true",
           "member": "bool",
           "name": "SoldOut",
@@ -20682,7 +20711,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>版本升级类型</p><p>枚举值：</p><ul><li>1： 小版本迁移升级(推荐)</li></ul>",
+          "document": "<p>版本升级类型</p><p>枚举值：</p><ul><li>1： 小版本迁移升级(推荐)</li><li>5： 小版原地升级</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Type",

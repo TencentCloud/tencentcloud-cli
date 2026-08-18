@@ -167,8 +167,8 @@
     "DescribeDedicatedClusterDiskStatistics": [
       {
         "document": "查询CVM CDC集群云硬盘容量信息统计",
-        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedClusterDiskStatistics\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bbe8a3ff-8874-4196-b152-dbc8d912b3dd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedClusterDiskStatistics\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DedicatedClusterDiskStatisticSet\": [\n            {\n                \"AvailableDiskSize\": 100,\n                \"DiskType\": \"CLOUD_SSD\",\n                \"TotalDiskSize\": 100,\n                \"UsedDiskSize\": 100\n            }\n        ],\n        \"RequestId\": \"bbe8a3ff-8874-4196-b152-dbc8d912b3dd\"\n    }\n}",
         "title": "查询CVM CDC集群云硬盘容量信息统计"
       }
     ],
@@ -230,15 +230,15 @@
     ],
     "DescribeRemoteDisks": [
       {
-        "document": "按可用区和状态过滤查询单副本SSD硬盘。",
-        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteDisks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-guangzhou-2\"\n            ]\n        },\n        {\n            \"Name\": \"remote-disk-state\",\n            \"Values\": [\n                \"ATTACHED\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "document": "按状态过滤查询单副本SSD硬盘。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteDisks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"remote-disk-state\",\n            \"Values\": [\n                \"ATTACHED\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RemoteDiskSet\": [\n            {\n                \"Placement\": {\n                    \"CageId\": \"\",\n                    \"CdcId\": \"\",\n                    \"CdcName\": \"\",\n                    \"DedicatedClusterId\": \"\",\n                    \"ProjectId\": 0,\n                    \"ProjectName\": \"\",\n                    \"Zone\": \"ap-guangzhou-2\"\n                }\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"55e81553-b057-4a64-8e63-590d84aa2d7f\"\n    }\n}",
         "title": "按条件查询单副本SSD硬盘列表"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteDisks\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RemoteDiskSet\": [\n            {\n                \"Placement\": {\n                    \"CageId\": \"\",\n                    \"CdcId\": \"\",\n                    \"CdcName\": \"\",\n                    \"DedicatedClusterId\": \"\",\n                    \"ProjectId\": 0,\n                    \"ProjectName\": \"\",\n                    \"Zone\": \"ap-guangzhou-2\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b15edc0e-549d-4160-8796-78881ea55d48\"\n    }\n}",
         "title": "查询单副本SSD硬盘列表"
       }
     ],

@@ -6,278 +6,120 @@ Input:
 
 ```
 tccli wedata DescribeIntegrationTask --cli-unfold-argument  \
-    --TaskId c6f6968-97c0-4e40-b25b-8258c0170f4 \
-    --ProjectId 1486446569620893696 \
-    --TaskType 201 \
-    --InstanceVersion 12
+    --TaskId r8f71567c-90eb-4452-98ee-432b7d516053 \
+    --ProjectId 2804706451775033344
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "AgentStatus": null,
         "TaskInfo": {
-            "TaskName": "testtaskname",
-            "Description": "testdesc",
-            "SyncType": 2,
-            "TaskType": 202,
-            "WorkflowId": "",
-            "TaskId": "n11a6d01c-0ec6-4efc-bd14-97a921d01d3f",
-            "ScheduleTaskId": "cql-hjlx38yl",
-            "TaskGroupId": "a5d814828-452c-46f6-b128-19c1a3249bf0",
-            "ProjectId": "1486446569620893696",
-            "CreatorUin": "100022187073",
-            "OperatorUin": "100022187073",
-            "OwnerUin": "100022187073",
-            "AppId": "1257305888",
-            "Status": 3,
-            "Nodes": [
-                {
-                    "Id": "130973",
-                    "TaskId": "n11a6d01c-0ec6-4efc-bd14-97a921d01d3f",
-                    "Name": "nodeTestName",
-                    "NodeType": "INPUT",
-                    "DataSourceType": "MYSQL",
-                    "Description": "testdesc",
-                    "DatasourceId": "914840",
-                    "Config": [
-                        {
-                            "Name": "Type",
-                            "Value": "MYSQL"
-                        },
-                        {
-                            "Name": "splitPk",
-                            "Value": "id"
-                        },
-                        {
-                            "Name": "Database",
-                            "Value": "databasetestname"
-                        },
-                        {
-                            "Name": "TableNames",
-                            "Value": "tabletestname"
-                        },
-                        {
-                            "Name": "PrimaryKey",
-                            "Value": "id"
-                        },
-                        {
-                            "Name": "isNew",
-                            "Value": "true"
-                        },
-                        {
-                            "Name": "PrimaryKey_INPUT_SYMBOL",
-                            "Value": "input"
-                        },
-                        {
-                            "Name": "splitPk_INPUT_SYMBOL",
-                            "Value": "input"
-                        },
-                        {
-                            "Name": "isClean",
-                            "Value": "0"
-                        },
-                        {
-                            "Name": "encoding",
-                            "Value": "utf-8"
-                        }
-                    ],
-                    "ExtConfig": [
-                        {
-                            "Name": "x1",
-                            "Value": "300"
-                        },
-                        {
-                            "Name": "y2",
-                            "Value": "260"
-                        },
-                        {
-                            "Name": "iconPosition",
-                            "Value": "left"
-                        },
-                        {
-                            "Name": "size",
-                            "Value": "m"
-                        }
-                    ],
-                    "Schema": [
-                        {
-                            "Type": "String",
-                            "Alias": "name",
-                            "Comment": "名字",
-                            "Id": "616042880",
-                            "Name": "name",
-                            "Value": "nihao",
-                            "Properties": [
-                                {
-                                    "Name": "exttestname",
-                                    "Value": "exttestvalue"
-                                }
-                            ]
-                        }
-                    ],
-                    "NodeMapping": {
-                        "SourceId": "130973",
-                        "SinkId": "130972",
-                        "SourceSchema": [
-                            {
-                                "Id": "597853056",
-                                "Name": "name",
-                                "Value": "testschema",
-                                "Type": "String",
-                                "Alias": "name",
-                                "Comment": "名称",
-                                "Properties": [
-                                    {
-                                        "Name": "exttestname",
-                                        "Value": "exttestvalue"
-                                    }
-                                ]
-                            }
-                        ],
-                        "SchemaMappings": [
-                            {
-                                "SourceSchemaId": "597853056",
-                                "SinkSchemaId": "616042880"
-                            }
-                        ],
-                        "ExtConfig": [
-                            {
-                                "Name": "Type",
-                                "Value": "MYSQL"
-                            }
-                        ]
-                    },
-                    "AppId": "1315051999",
-                    "ProjectId": "1486446569620893696",
-                    "CreatorUin": "100028644005",
-                    "OperatorUin": "100028644005",
-                    "OwnerUin": "100028644005",
-                    "CreateTime": "2022-05-07 10:13:21",
-                    "UpdateTime": "2022-05-07 10:13:21"
-                }
-            ],
-            "ExecutorId": "20220331190555092303",
-            "Mappings": [
-                {
-                    "SourceId": "130973",
-                    "SinkId": "130972",
-                    "SourceSchema": [
-                        {
-                            "Id": "597853056",
-                            "Name": "name",
-                            "Value": "testschema",
-                            "Type": "String",
-                            "Alias": "name",
-                            "Comment": "名称",
-                            "Properties": [
-                                {
-                                    "Name": "exttestname",
-                                    "Value": "exttestvalue"
-                                }
-                            ]
-                        }
-                    ],
-                    "SchemaMappings": [
-                        {
-                            "SourceSchemaId": "597853056",
-                            "SinkSchemaId": "616042880"
-                        }
-                    ],
-                    "ExtConfig": [
-                        {
-                            "Name": "Type",
-                            "Value": "MYSQL"
-                        }
-                    ]
-                }
-            ],
-            "TaskMode": "1",
-            "Incharge": "100028625403",
-            "OfflineTaskAddEntity": {
-                "WorkflowName": "",
-                "DependencyWorkflow": "",
-                "StartTime": "2024-04-10 00:00:00",
-                "EndTime": "2099-12-31 00:00:00",
-                "CycleType": 1,
-                "CycleStep": 5,
-                "DelayTime": 0,
-                "CrontabExpression": "",
-                "RetryWait": 3,
-                "Retriable": 1,
-                "TryLimit": 3,
-                "RunPriority": 6,
-                "ProductName": "DATA_INTEGRATION",
-                "SelfDepend": 3,
-                "TaskAction": "",
-                "ExecutionEndTime": "23:59",
-                "ExecutionStartTime": "00:00",
-                "TaskAutoSubmit": true,
-                "InstanceInitStrategy": "T+0"
-            },
-            "ExecutorGroupName": "资源组01",
-            "InLongManagerUrl": "172.16.64.68:8083",
-            "InLongStreamId": "f8317843e-68f9-4373-914f-241d7200a9a4",
-            "InLongManagerVersion": "v17",
-            "DataProxyUrl": [
-                "172.16.64.68:8086"
-            ],
-            "Submit": true,
-            "InputDatasourceType": "MYSQL",
-            "OutputDatasourceType": "DLC",
-            "NumRecordsIn": 1000,
-            "NumRecordsOut": 1000,
-            "ReaderDelay": 5,
-            "NumRestarts": 2,
-            "CreateTime": "2022-05-07 10:13:21",
-            "UpdateTime": "2022-05-07 10:13:21",
-            "LastRunTime": "2022-05-07 10:13:21",
-            "StopTime": "2022-05-07 10:13:21",
-            "HasVersion": true,
-            "Locked": true,
-            "Locker": "100022187073",
-            "RunningCu": 2,
-            "TaskAlarmRegularList": [
-                "1769,1768"
-            ],
-            "SwitchResource": 1,
-            "ReadPhase": 0,
-            "InstanceVersion": 12,
-            "ArrangeSpaceTaskId": "20230112170349643",
-            "OfflineTaskStatus": 1,
+            "AppId": "1300298608",
+            "ArrangeSpaceTaskId": null,
+            "BusinessLatency": null,
             "Config": [
                 {
-                    "Name": "Type",
-                    "Value": "MYSQL"
+                    "Name": "TableType",
+                    "Value": "in"
                 }
             ],
-            "ExtConfig": [
+            "CreateTime": "2026-07-27 16:18:27",
+            "CreatorUin": "700001601851",
+            "CurrentSyncPosition": null,
+            "DataProxyUrl": null,
+            "Description": "",
+            "ErrorMessage": null,
+            "ExecuteContext": [],
+            "ExecutorGroupName": null,
+            "ExecutorId": "20260604232305097989",
+            "ExtConfig": null,
+            "HasVersion": true,
+            "InLongManagerUrl": null,
+            "InLongManagerVersion": null,
+            "InLongStreamId": "",
+            "Incharge": "700001815122",
+            "InputDatasourceType": "MYSQL",
+            "InstanceVersion": 3,
+            "LastOperateInfo": {
+                "CreatedTime": "2026-08-17 19:27:54",
+                "ErrorMsg": null,
+                "OperateId": "df73c92c-052c-4024-b7d6-dfe2a7095f1a",
+                "TaskEvent": "STOP",
+                "UpdatedTime": "2026-08-17 19:28:09"
+            },
+            "LastRunTime": null,
+            "Locked": true,
+            "Locker": "700001601851",
+            "Mappings": null,
+            "Nodes": [
                 {
-                    "Name": "Type",
-                    "Value": "MYSQL"
+                    "AppId": "1300298608",
+                    "Config": [
+                        {
+                            "Name": "StartupMode",
+                            "Value": "INIT"
+                        }
+                    ],
+                    "CreateTime": null,
+                    "CreatorUin": null,
+                    "DataSourceType": "MYSQL",
+                    "DatasourceId": "65614",
+                    "Description": null,
+                    "ExtConfig": null,
+                    "Id": "1",
+                    "Name": "mysql_menghuiyu",
+                    "NodeMapping": null,
+                    "NodeType": "INPUT",
+                    "OperatorUin": null,
+                    "OwnerUin": "700001601851",
+                    "ProjectId": "2804706451775033344",
+                    "Schema": null,
+                    "TaskId": "r8f71567c-90eb-4452-98ee-432b7d516053",
+                    "UpdateTime": null
                 }
             ],
-            "ExecuteContext": [
-                {
-                    "Name": "Type",
-                    "Value": "MYSQL"
-                }
-            ]
+            "NotExistsCheckPoint": null,
+            "NumRecordsIn": -1,
+            "NumRecordsOut": -1,
+            "NumRestarts": -1,
+            "OfflineTaskAddEntity": null,
+            "OfflineTaskStatus": 1,
+            "OperatorUin": "700001601851",
+            "OutputDatasourceType": "DLC",
+            "OwnerUin": "700001601851",
+            "ProjectId": "2804706451775033344",
+            "ReadPhase": null,
+            "ReaderDelay": -1,
+            "RunningCu": 0,
+            "SavePointId": null,
+            "SavePointPath": null,
+            "ScheduleTaskId": "",
+            "Status": 6,
+            "StopTime": null,
+            "Submit": null,
+            "SwitchResource": null,
+            "SyncType": 1,
+            "TagList": null,
+            "TaskAlarmRegularList": null,
+            "TaskGroupId": "-1",
+            "TaskId": "r8f71567c-90eb-4452-98ee-432b7d516053",
+            "TaskImportInfo": null,
+            "TaskMode": "",
+            "TaskName": "test_cheneiwang2",
+            "TaskType": 201,
+            "UpdateTime": "2026-08-17 19:28:10",
+            "WorkflowId": "-1"
         },
-        "AgentStatus": {
-            "Running": 0,
-            "Abnormal": 0,
-            "InOperation": 0
-        },
-        "TaskVersion": {
-            "InstanceVersion": 12,
-            "VersionDesc": "版本描述",
-            "ChangeType": 0,
-            "SubmitterUin": "100006908545",
-            "InstanceDate": "2022-09-29 16:40:38",
-            "InstanceStatus": 0
-        },
-        "RequestId": "4ec1ea77-7729-47bc-b541-e73412fc5fd7"
+        "TaskVersion": null,
+        "TaskVersionList": [
+            {
+                "InstanceDate": "2026-08-13 17:11:35",
+                "RunningOrderId": 1
+            }
+        ],
+        "RequestId": "6cbbf4d0-1b01-410d-8860-84c5d3c1be7b"
     }
 }
 ```

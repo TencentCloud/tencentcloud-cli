@@ -17,74 +17,64 @@ Output:
     "Response": {
         "LogConfigs": [
             {
-                "LogFormat": "xx",
-                "LogType": "xx",
+                "LogsetId": "logset-***",
+                "Path": "/var/***",
+                "GroupIds": [
+                    "group-****"
+                ],
+                "ConfigId": "config-*****",
+                "LogFormat": "**",
+                "LogType": "**",
                 "ExtractRule": {
-                    "LogRegex": "xx",
+                    "LogRegex": "**",
                     "Keys": [
                         "content"
                     ],
                     "FilterKeyRegex": [
                         {
-                            "Regex": "xx",
-                            "Key": "xx"
+                            "Regex": "**",
+                            "Key": "**"
                         }
                     ],
-                    "TimeKey": "xx",
-                    "BeginRegex": "xx",
-                    "Delimiter": "xx",
-                    "TimeFormat": "xx",
+                    "TimeKey": "**",
+                    "BeginRegex": "**",
+                    "Delimiter": "**",
+                    "TimeFormat": "**",
                     "UnMatchUpLoadSwitch": true,
                     "UnMatchLogKey": "testlog",
-                    "Backtracking": 1048576
-                },
-                "ExcludePaths": [
-                    {
-                        "Type": "xx",
-                        "Value": "xxxxxxx"
-                    }
-                ],
-                "TopicId": "xx",
-                "UserDefineRule": "xxxx"
-            },
-            {
-                "TopicId": "xx",
-                "LogFormat": "xx",
-                "ExtractRule": {
-                    "TimeKey": "xx",
-                    "Keys": [
-                        "content"
-                    ],
-                    "FilterKeyRegex": [
+                    "Backtracking": 1048576,
+                    "MetadataType": 1,
+                    "Protocol": "***",
+                    "JsonStandard": 1,
+                    "IsGBK": 1,
+                    "Address": "**",
+                    "ParseProtocol": "**",
+                    "MetaTags": [
                         {
-                            "Key": "xx",
-                            "Regex": "xx"
+                            "Key": "**",
+                            "Value": "**"
                         }
                     ],
-                    "LogRegex": "xx",
-                    "BeginRegex": "xx",
-                    "Delimiter": "xx",
-                    "TimeFormat": "xx"
+                    "PathRegex": "**"
                 },
                 "ExcludePaths": [
                     {
-                        "Type": "xx",
-                        "Value": "xxxxxxx"
+                        "Type": "**",
+                        "Value": "*****"
                     }
                 ],
-                "LogType": "xx",
-                "UserDefineRule": "xxxx"
+                "TopicId": "x**",
+                "UserDefineRule": "x***"
             }
         ],
         "ServiceLogConfigs": [
-            {},
             {}
         ],
-        "URL": "xx",
+        "URL": "****",
         "NeedUpdate": true,
-        "FileMd5": "xx",
-        "LastVersion": "xx",
-        "RequestId": "xx"
+        "FileMd5": "****",
+        "LastVersion": "****",
+        "RequestId": "****"
     }
 }
 ```

@@ -313,7 +313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "词表名称，长度在1-20之间\n仅限中英文数字-_",
+          "document": "<p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>",
           "example": "测试词表",
           "member": "string",
           "name": "Name",
@@ -322,7 +322,7 @@
         },
         {
           "disabled": false,
-          "document": "词文件（纯文本文件）的二进制base64编码，以行分隔\n格式要求：TXT\n每行只有一个词，不满足格式则报错无法上传\n每个词限制**5个汉字，15个字符**，单个词库最多不超过100个词\n注意不要有空行，尤其是最后一行",
+          "document": "<p>词文件（纯文本文件）的二进制base64编码，以行分隔<br>格式要求：TXT<br>每行只有一个词，不满足格式则报错无法上传<br>每个词限制<strong>5个汉字，15个字符</strong>，单个词库最多不超过100个词<br>注意不要有空行，尤其是最后一行</p>",
           "example": "避风港(进行base64编码)",
           "member": "string",
           "name": "KeyWordFile",
@@ -337,8 +337,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "词表ID数据",
-          "example": "空",
+          "document": "<p>词表ID数据</p>",
+          "example": "无",
           "member": "KeyWordLibIdData",
           "name": "Data",
           "output_required": true,
@@ -2461,7 +2461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关键词表ID",
+          "document": "<p>关键词表ID</p>",
           "example": "aa6f402******2ea856fc81fbecfd0sd",
           "member": "string",
           "name": "KeyWordLibId",
@@ -2470,7 +2470,7 @@
         },
         {
           "disabled": false,
-          "document": "词表名称，长度在1-20之间\n仅限中英文数字-_",
+          "document": "<p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>",
           "example": "新的词表名称",
           "member": "string",
           "name": "Name",
@@ -2479,7 +2479,7 @@
         },
         {
           "disabled": false,
-          "document": "- 词文件（纯文本文件）以行分隔 ，进行二进制base64编码\n- 格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 \n- 每个词最多5个汉字或15个字符，单个词库最多不超过100个词\n- 此参数为空则只更新词表名称",
+          "document": "<ul><li>词文件（纯文本文件）以行分隔 ，进行二进制base64编码</li><li>格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 </li><li>每个词最多5个汉字或15个字符，单个词库最多不超过100个词</li><li>此参数为空则只更新词表名称</li></ul>",
           "example": "<文件base64>",
           "member": "string",
           "name": "KeyWordFile",
@@ -2494,7 +2494,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关键词表ID数据",
+          "document": "<p>关键词表ID数据</p>",
           "example": "无",
           "member": "KeyWordLibIdData",
           "name": "Data",

@@ -7748,7 +7748,7 @@
           "example": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu",
           "member": "string",
           "name": "Image",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -48614,7 +48614,7 @@
           "example": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu",
           "member": "string",
           "name": "Image",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

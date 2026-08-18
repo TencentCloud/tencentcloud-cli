@@ -245,6 +245,20 @@
       "output": "DescribeAuditLogMetaResponse",
       "status": "online"
     },
+    "DescribeConcurrencyLimitDetailList": {
+      "document": "查询并发超限明细，包含QPM/TPM超限与专属并发超限记录，返回超限发生时间、空间、应用、模型及请求内容",
+      "input": "DescribeConcurrencyLimitDetailListRequest",
+      "name": "查询并发超限明细",
+      "output": "DescribeConcurrencyLimitDetailListResponse",
+      "status": "online"
+    },
+    "DescribeConsumptionDetailList": {
+      "document": "查询资源消耗明细，包含计费相关字段（消耗类型、消耗目标、消耗场景、套餐包及PU消耗等）",
+      "input": "DescribeConsumptionDetailListRequest",
+      "name": "查询资源消耗明细",
+      "output": "DescribeConsumptionDetailListResponse",
+      "status": "online"
+    },
     "DescribeConversation": {
       "document": "查看会话信息",
       "input": "DescribeConversationRequest",
@@ -271,6 +285,13 @@
       "input": "DescribeLatestReleaseRequest",
       "name": "拉取最新发布信息",
       "output": "DescribeLatestReleaseResponse",
+      "status": "online"
+    },
+    "DescribeMetricOverviewList": {
+      "document": "查询看板总览KPI卡片数据，通过resource_type区分资源看板与业务看板域，返回各域KPI指标列表",
+      "input": "DescribeMetricOverviewListRequest",
+      "name": "查询看板总览KPI卡片",
+      "output": "DescribeMetricOverviewListResponse",
       "status": "online"
     },
     "DescribeModelList": {
@@ -348,6 +369,20 @@
       "input": "DescribeSystemVariableListRequest",
       "name": "获取系统变量",
       "output": "DescribeSystemVariableListResponse",
+      "status": "online"
+    },
+    "DescribeUsageDetailList": {
+      "document": "查询资源调用时序明细，支持模型和插件两类资源，按时间顺序返回每条调用记录的详细信息",
+      "input": "DescribeUsageDetailListRequest",
+      "name": "查询资源调用时序明细",
+      "output": "DescribeUsageDetailListResponse",
+      "status": "online"
+    },
+    "DescribeUsageSummaryList": {
+      "document": "查询资源用量聚合明细，支持模型、插件、平台三类资源，按空间/应用维度聚合展示调用次数、Token消耗等指标",
+      "input": "DescribeUsageSummaryListRequest",
+      "name": "查询资源用量聚合明细",
+      "output": "DescribeUsageSummaryListResponse",
       "status": "online"
     },
     "DescribeVariable": {
@@ -4587,6 +4622,45 @@
       ],
       "usage": "both"
     },
+    "CallSource": {
+      "document": "调用来源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用主体 ID，含义由 subject_type 决定（如 app_id、kb_id 等）</p>",
+          "example": "10023456",
+          "member": "string",
+          "name": "SubjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用主体名称</p>",
+          "example": "智能客服应用",
+          "member": "string",
+          "name": "SubjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用主体类型：APP/KB/WIDGET/OPEN_CLAW/KB_RECALL_TEST/WORKBENCH/MODEL_API</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>METRIC_SOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>METRIC_SOURCE_TYPE_APP</td><td>1</td><td>应用开发</td></tr><tr><td>METRIC_SOURCE_TYPE_KB</td><td>2</td><td>知识库</td></tr><tr><td>METRIC_SOURCE_TYPE_WIDGET</td><td>3</td><td>Widget</td></tr><tr><td>METRIC_SOURCE_TYPE_OPEN_CLAW</td><td>4</td><td>ClawPro</td></tr><tr><td>METRIC_SOURCE_TYPE_KB_RECALL_TEST</td><td>5</td><td>知识库召回测试</td></tr><tr><td>METRIC_SOURCE_TYPE_WORKBENCH</td><td>6</td><td>智能工作台</td></tr><tr><td>METRIC_SOURCE_TYPE_MODEL_API</td><td>7</td><td>模型 API 调用</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "SubjectType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CamAuthConfig": {
       "document": "CAM授权信息",
       "members": [
@@ -4670,17 +4744,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方自定义配置(控制C端用户在对话时可动态传入哪些自定义配置)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ClawAgentCustomConfig",
-          "name": "CustomConfig",
-          "output_required": false,
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "Agent团队协作配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClawAgentAgentTeamConfig",
@@ -4700,23 +4763,6 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
-    },
-    "ClawAgentCustomConfig": {
-      "document": "ClawAgent调用方自定义配置开关集合",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>是否允许C端用户在对话时动态传入自定义Agent配置</p>",
-          "example": "true",
-          "member": "bool",
-          "name": "Enabled",
-          "output_required": false,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4850,6 +4896,239 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConcurrencyLimitDetail": {
+      "document": "并发超限明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用来源（subject_type 决定 subject_id/subject_name 的含义，如 APP 时 subject_id=app_id、subject_name=app_name）</p>",
+          "example": "无",
+          "member": "CallSource",
+          "name": "CallSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超限发生时间（Unix秒）</p>",
+          "example": "1754956800",
+          "member": "string",
+          "name": "EventTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "hunyuan-turbo",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求内容（用户请求的原始查询文本）</p>",
+          "example": "请帮我分析以下合同条款中的风险点，合同内容如下：甲方...",
+          "member": "string",
+          "name": "RequestQuery",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p>",
+          "example": "space_abc123",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConsumptionClassification": {
+      "document": "消耗分类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消耗场景（如推理/训练/评测等）</p>",
+          "example": "chat",
+          "member": "string",
+          "name": "ConsumptionScene",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消耗目标（如具体模型名/插件名/平台功能名）</p>",
+          "example": "hunyuan-turbo",
+          "member": "string",
+          "name": "ConsumptionTarget",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消耗类型，取值集合由业务方定义（如 model/plugin/platform 等）</p>",
+          "example": "model",
+          "member": "string",
+          "name": "ConsumptionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐包名称</p>",
+          "example": "企业标准套餐包",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConsumptionDetail": {
+      "document": "资源消耗明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消耗分类（类型/目标/场景/套餐包）</p>",
+          "example": "无",
+          "member": "ConsumptionClassification",
+          "name": "Classification",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消耗发生时间，Unix 秒</p>",
+          "example": "1754956800",
+          "member": "string",
+          "name": "EventTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用量来源类型</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>METRIC_SOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>METRIC_SOURCE_TYPE_APP</td><td>1</td><td>应用开发</td></tr><tr><td>METRIC_SOURCE_TYPE_KB</td><td>2</td><td>知识库</td></tr><tr><td>METRIC_SOURCE_TYPE_WIDGET</td><td>3</td><td>Widget</td></tr><tr><td>METRIC_SOURCE_TYPE_OPEN_CLAW</td><td>4</td><td>ClawPro</td></tr><tr><td>METRIC_SOURCE_TYPE_KB_RECALL_TEST</td><td>5</td><td>知识库召回测试</td></tr><tr><td>METRIC_SOURCE_TYPE_WORKBENCH</td><td>6</td><td>智能工作台</td></tr><tr><td>METRIC_SOURCE_TYPE_MODEL_API</td><td>7</td><td>模型 API 调用</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "MetricSourceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "智能客服应用",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间名称</p>",
+          "example": "产品研发空间",
+          "member": "string",
+          "name": "SpaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消耗用量（数值/单位/PU 消耗）</p>",
+          "example": "无",
+          "member": "ConsumptionUsage",
+          "name": "Usage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名称</p>",
+          "example": "张三",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConsumptionUsage": {
+      "document": "消耗用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消耗PU</p>",
+          "example": "0.00897",
+          "member": "float",
+          "name": "ConsumptionPU",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用量数值</p>",
+          "example": "8970",
+          "member": "float",
+          "name": "Usage",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用量单位，枚举值 DosageUnit</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOSAGE_UNIT_TOKEN</td><td>0</td><td>token（默认）</td></tr><tr><td>DOSAGE_UNIT_PAGE_COUNT</td><td>1</td><td>page_count（页数）</td></tr><tr><td>DOSAGE_UNIT_TIMES</td><td>2</td><td>times（次数）</td></tr><tr><td>DOSAGE_UNIT_SECOND</td><td>3</td><td>second（秒）</td></tr><tr><td>DOSAGE_UNIT_ITEM</td><td>4</td><td>item（条）</td></tr><tr><td>DOSAGE_UNIT_SHEET</td><td>5</td><td>sheet（张）</td></tr><tr><td>DOSAGE_UNIT_CHARACTER</td><td>6</td><td>character（字符）</td></tr><tr><td>DOSAGE_UNIT_GB</td><td>7</td><td>GB</td></tr><tr><td>DOSAGE_UNIT_NUMBER</td><td>8</td><td>number（个数）</td></tr><tr><td>DOSAGE_UNIT_MILL_SECOND</td><td>9</td><td>mill_second（毫秒）</td></tr></tbody></table>",
+          "example": "0",
+          "member": "int64",
+          "name": "UsageUnit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5853,7 +6132,7 @@
         },
         {
           "disabled": false,
-          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SHARE_SCOPE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ALL</td><td>1</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ACCOUNT</td><td>2</td><td></td></tr></tbody></table>",
+          "document": "<p>共享范围类型，1：企业全员，2：指定账户，3：指定空间</p>",
           "example": "1",
           "member": "int64",
           "name": "ShareScope",
@@ -5868,6 +6147,17 @@
           "example": "[\"1990010100000000001\"]",
           "member": "string",
           "name": "TagIdList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享范围信息(用户时StrId为uin,Name为用户名称;空间时StrId为空间ID,Name为空间名称)</p>",
+          "example": "无",
+          "member": "Identity",
+          "name": "ShareScopeList",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -8205,6 +8495,172 @@
       ],
       "type": "object"
     },
+    "DescribeConcurrencyLimitDetailListRequest": {
+      "document": "DescribeConcurrencyLimitDetailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围（Unix 秒）</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRange",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图范围：企业视图 / 空间视图/ 应用视图</p>",
+          "example": "无",
+          "member": "ViewScope",
+          "name": "ViewScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展过滤。Filter 组合规则：多项 AND，同项 value_list OR。支持 Name：concurrency_type（qpm_tpm/dedicated，默认 qpm_tpm）、model_name（必填）、space_id、app_id/resource_id/source_id（应用ID，多选）、metric_source_type（METRIC_SOURCE_TYPE_* 枚举名或整数）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从 0 开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，最大 100</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrencyLimitDetailListResponse": {
+      "document": "DescribeConcurrencyLimitDetailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>并发超限明细列表</p>",
+          "example": "无",
+          "member": "ConcurrencyLimitDetail",
+          "name": "ConcurrencyLimitDetailList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总记录数，用于前端分页</p>",
+          "example": "47",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumptionDetailListRequest": {
+      "document": "DescribeConsumptionDetailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围（Unix 秒）</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRange",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图范围：企业视图 / 空间视图</p>",
+          "example": "无",
+          "member": "ViewScope",
+          "name": "ViewScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展过滤。Filter 组合规则：多项 AND，同项 value_list OR。支持 Name：metric_source_type（METRIC_SOURCE_TYPE_* 或整数）、source_ids（多选来源ID）、resource_id/source_id（单选来源ID，source_ids 未传时生效）、space_id、user_id</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从 0 开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，最大 100</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumptionDetailListResponse": {
+      "document": "DescribeConsumptionDetailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源消耗明细列表</p>",
+          "example": "无",
+          "member": "ConsumptionDetail",
+          "name": "ConsumptionDetailList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总记录数，用于前端分页</p>",
+          "example": "328",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConversationListRequest": {
       "document": "DescribeConversationList请求参数结构体",
       "members": [
@@ -8737,6 +9193,80 @@
           "name": "ReleaseSummary",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricOverviewListRequest": {
+      "document": "DescribeMetricOverviewList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>看板域，必填，决定返回哪个域的 KPI 数据</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量</td></tr><tr><td>RESOURCE_TYPE_PLATFORM</td><td>3</td><td>平台功能用量</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围（Unix 秒）</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRange",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图范围：企业视图 / 空间视图</p>",
+          "example": "无",
+          "member": "ViewScope",
+          "name": "ViewScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展过滤（resource_type=MODEL）。Filter 组合规则：多项 AND，同项 value_list OR。支持 Name：model_name（模型名）、user_id（用户ID）、space_id（空间ID）、resource_id/source_id（来源ID）、metric_source_type（METRIC_SOURCE_TYPE_* 枚举名或整数）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricOverviewListResponse": {
+      "document": "DescribeMetricOverviewList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>所有域 Overview 统一出参：KPI 卡片列表，key 字符串标识指标，客户端按 resource_type 解析；key 白名单参考 platform.common.v2.MetricOverview 注释</p>",
+          "example": "无",
+          "member": "MetricOverview",
+          "name": "MetricList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总记录数，等于 MetricList 长度，仅为列表接口一致性预留</p>",
+          "example": "12",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9429,6 +9959,190 @@
       ],
       "type": "object"
     },
+    "DescribeUsageDetailListRequest": {
+      "document": "DescribeUsageDetailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型，限定为 RESOURCE_TYPE_MODEL / RESOURCE_TYPE_PLUGIN</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量</td></tr><tr><td>RESOURCE_TYPE_PLATFORM</td><td>3</td><td>平台功能用量</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围（Unix 秒）</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRange",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图范围：企业视图 / 空间视图 / 应用视图</p>",
+          "example": "无",
+          "member": "ViewScope",
+          "name": "ViewScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展过滤（resource_type=MODEL）。Filter 组合规则：多项 AND，同项 value_list OR。支持 Name：model_name、user_id、space_id、resource_id/source_id、metric_source_type（METRIC_SOURCE_TYPE_* 或整数）、call_type（调用类型）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从 0 开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，最大 100</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageDetailListResponse": {
+      "document": "DescribeUsageDetailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总记录数，用于前端分页</p>",
+          "example": "12580",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源调用时序明细列表</p>",
+          "example": "无",
+          "member": "UsageDetail",
+          "name": "UsageDetailList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageSummaryListRequest": {
+      "document": "DescribeUsageSummaryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型，限定为 MODEL / PLUGIN / PLATFORM</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量</td></tr><tr><td>RESOURCE_TYPE_PLATFORM</td><td>3</td><td>平台功能用量</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围（Unix 秒）</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRange",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图范围：企业视图 / 空间视图 / 应用视图</p>",
+          "example": "无",
+          "member": "ViewScope",
+          "name": "ViewScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展过滤（resource_type=MODEL）。Filter 组合规则：多项 AND，同项 value_list OR。支持 Name：model_name（模型名）、user_id（用户ID）、space_id（空间ID）、resource_id/source_id（来源ID）、metric_source_type（METRIC_SOURCE_TYPE_* 枚举名或整数）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从 0 开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，最大 100</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageSummaryListResponse": {
+      "document": "DescribeUsageSummaryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总记录数，用于前端分页</p>",
+          "example": "86",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源用量聚合明细列表</p>",
+          "example": "无",
+          "member": "UsageSummary",
+          "name": "UsageSummaryList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVariableListRequest": {
       "document": "DescribeVariableList请求参数结构体",
       "members": [
@@ -9991,6 +10705,56 @@
       ],
       "usage": "both"
     },
+    "Identity": {
+      "document": "通用身份信息（支持数字 ID 与字符串 ID 两种形态）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "标签信息描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字 ID</p>",
+          "example": "1990010100000000001",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "办公协作",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符串 ID</p>",
+          "example": "1990010100000000001",
+          "member": "string",
+          "name": "StrId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InputBoxConfig": {
       "document": "输入框配置",
       "members": [
@@ -10209,6 +10973,56 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricOverview": {
+      "document": "总览 KPI 卡片指标项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指标键，取值参考 MetricOverview 注释中的 key 白名单</p>",
+          "example": "total_calls",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环比百分比，无环比时填 0</p>",
+          "example": "0.15",
+          "member": "float",
+          "name": "Mom",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标单位，枚举值 DosageUnit；key 与 unit 的对应关系参考 MetricOverview 注释白名单</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOSAGE_UNIT_TOKEN</td><td>0</td><td>token（默认）</td></tr><tr><td>DOSAGE_UNIT_PAGE_COUNT</td><td>1</td><td>page_count（页数）</td></tr><tr><td>DOSAGE_UNIT_TIMES</td><td>2</td><td>times（次数）</td></tr><tr><td>DOSAGE_UNIT_SECOND</td><td>3</td><td>second（秒）</td></tr><tr><td>DOSAGE_UNIT_ITEM</td><td>4</td><td>item（条）</td></tr><tr><td>DOSAGE_UNIT_SHEET</td><td>5</td><td>sheet（张）</td></tr><tr><td>DOSAGE_UNIT_CHARACTER</td><td>6</td><td>character（字符）</td></tr><tr><td>DOSAGE_UNIT_GB</td><td>7</td><td>GB</td></tr><tr><td>DOSAGE_UNIT_NUMBER</td><td>8</td><td>number（个数）</td></tr><tr><td>DOSAGE_UNIT_MILL_SECOND</td><td>9</td><td>mill_second（毫秒）</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Unit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标数值</p>",
+          "example": "12580",
+          "member": "float",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -10816,6 +11630,128 @@
         }
       ],
       "usage": "out"
+    },
+    "ModelUsageDetail": {
+      "document": "模型调用明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用类型，来源于计费 scene_billing（与 filter.call_type 对应）</p>",
+          "example": "chat",
+          "member": "string",
+          "name": "CallType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否默认知识库</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefaultKB",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "hunyuan-turbo",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MODEL 域单次调用的消耗计量列表（权威字段）：按单位+label 分项列出每类计量。unit=TOKEN 时 label 区分 Token 子类别（input/output/avg_*/cache_*），label 为空表示 total_tokens；unit=PAGE_COUNT 表示模型消耗页数</p>",
+          "example": "无",
+          "member": "ResourceConsumption",
+          "name": "ResourceConsumptionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次调用消耗 PU 量</p>",
+          "example": "0.008",
+          "member": "float",
+          "name": "ConsumptionPU",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelUsageSummary": {
+      "document": "模型资源用量聚合明细（MODEL 域专属）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用次数（业务调用维度的顶层计数）</p>",
+          "example": "1800",
+          "member": "float",
+          "name": "CallCount",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否默认知识库</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefaultKB",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称，标识使用的 AI 模型</p>",
+          "example": "hunyuan-pro",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MODEL 域消耗计量列表（权威字段）：按单位+label 分项列出每类计量。unit=TOKEN 时 label 区分 Token 子类别（input/output/avg_*/cache_*），label 为空表示 total_tokens；unit=PAGE_COUNT 表示模型消耗页数</p>",
+          "example": "无",
+          "member": "ResourceConsumption",
+          "name": "ResourceConsumptionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>",
+          "example": "194395",
+          "member": "float",
+          "name": "ConsumptionPU",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModifyAgentRequest": {
       "document": "ModifyAgent请求参数结构体",
@@ -11605,6 +12541,23 @@
       ],
       "type": "object"
     },
+    "PlatformUsageSummary": {
+      "document": "平台资源用量聚合明细（PLATFORM 域专属）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>PLATFORM 域消耗计量列表（权威字段）：按单位+label 分项列出每类计量，label 取 PlatformBizType 枚举名称字符串；典型如 unit=TIMES + label=PLATFORM_BIZ_TYPE_SECURITY_AUDIT/WEB_SEARCH/OPEN_CLAW/APP_INVOKE，unit=ITEM + label=PLATFORM_BIZ_TYPE_LONG_TERM_MEMORY</p>",
+          "example": "无",
+          "member": "ResourceConsumption",
+          "name": "ResourceConsumptionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Plugin": {
       "document": "插件详情",
       "members": [
@@ -12079,6 +13032,73 @@
           "example": "无",
           "member": "ToolSummary",
           "name": "ToolList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PluginUsageDetail": {
+      "document": "插件调用明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件名称</p>",
+          "example": "doc-parser-v2",
+          "member": "string",
+          "name": "PluginName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PLUGIN 域单次调用的消耗计量列表（权威字段）：按单位+label 分项列出每类计量。unit=TOKEN 时 label 区分 Token 子类别（input/output/avg_*），label 为空表示 total_tokens</p>",
+          "example": "无",
+          "member": "ResourceConsumption",
+          "name": "ResourceConsumptionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>插件工具名（tool_name）</p>",
+          "example": "parse_document",
+          "member": "string",
+          "name": "ToolName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PluginUsageSummary": {
+      "document": "插件资源用量聚合明细（PLUGIN 域专属）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用次数（业务调用维度的顶层计数）</p>",
+          "example": "560",
+          "member": "float",
+          "name": "CallCount",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PLUGIN 域消耗计量列表（权威字段）：按单位+label 分项列出每类计量。unit=TOKEN 时 label 区分 Token 子类别（input/output/avg_*），label 为空表示 total_tokens</p>",
+          "example": "无",
+          "member": "ResourceConsumption",
+          "name": "ResourceConsumptionList",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -12605,6 +13625,45 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceConsumption": {
+      "document": "单项消耗计量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>功能标签，PLATFORM 场景取 PlatformBizType 枚举名称；MODEL/PLUGIN 场景为空</p>",
+          "example": "avg_cache_miss",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消耗计量单位</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOSAGE_UNIT_TOKEN</td><td>0</td><td>token（默认）</td></tr><tr><td>DOSAGE_UNIT_PAGE_COUNT</td><td>1</td><td>page_count（页数）</td></tr><tr><td>DOSAGE_UNIT_TIMES</td><td>2</td><td>times（次数）</td></tr><tr><td>DOSAGE_UNIT_SECOND</td><td>3</td><td>second（秒）</td></tr><tr><td>DOSAGE_UNIT_ITEM</td><td>4</td><td>item（条）</td></tr><tr><td>DOSAGE_UNIT_SHEET</td><td>5</td><td>sheet（张）</td></tr><tr><td>DOSAGE_UNIT_CHARACTER</td><td>6</td><td>character（字符）</td></tr><tr><td>DOSAGE_UNIT_GB</td><td>7</td><td>GB</td></tr><tr><td>DOSAGE_UNIT_NUMBER</td><td>8</td><td>number（个数）</td></tr><tr><td>DOSAGE_UNIT_MILL_SECOND</td><td>9</td><td>mill_second（毫秒）</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "Unit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消耗数值</p>",
+          "example": "2187",
+          "member": "float",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ResponseParam": {
       "document": "ResponseParam",
@@ -13840,6 +14899,34 @@
       ],
       "usage": "both"
     },
+    "TimeRange": {
+      "document": "查询时间范围（Unix 秒）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结束时间，Unix 秒</p>",
+          "example": "1786550699",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间，Unix 秒</p>",
+          "example": "1786550399",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TimerPushConfig": {
       "document": "TimerPushConfig",
       "members": [
@@ -14373,6 +15460,161 @@
       ],
       "type": "object"
     },
+    "UsageDetail": {
+      "document": "资源调用时序明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用来源</p>",
+          "example": "无",
+          "member": "CallSource",
+          "name": "CallSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计量 ID，用于对账/回溯</p>",
+          "example": "dosage_9988776655",
+          "member": "string",
+          "name": "DosageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时间戳（Unix 秒）</p>",
+          "example": "1754956800",
+          "member": "string",
+          "name": "EventTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MODEL 域专属</p>",
+          "example": "无",
+          "member": "ModelUsageDetail",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PLUGIN 域专属</p>",
+          "example": "无",
+          "member": "PluginUsageDetail",
+          "name": "Plugin",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用链路追踪 ID</p>",
+          "example": "trace_abc123def456",
+          "member": "string",
+          "name": "TraceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 ID</p>",
+          "example": "user_001",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UsageSummary": {
+      "document": "资源用量聚合明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MODEL 域专属</p>",
+          "example": "无",
+          "member": "ModelUsageSummary",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PLATFORM 域专属</p>",
+          "example": "无",
+          "member": "PlatformUsageSummary",
+          "name": "Platform",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PLUGIN 域专属</p>",
+          "example": "无",
+          "member": "PluginUsageSummary",
+          "name": "Plugin",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源 ID；CORP 视图=space_id（企业视图按 space 分组），SPACE 视图=app_id（uint64 字符串），APP 视图=app_id</p>",
+          "example": "space_abc123",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源名称；CORP 视图=space_name，SPACE 视图=app_name，APP 视图=app_name</p>",
+          "example": "产品研发空间",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图类型，决定 SourceId/SourceName 的业务含义</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>VIEW_TYPE_UNSPECIFIED</td><td>0</td><td>未指定（无效值，请求勿传）</td></tr><tr><td>VIEW_TYPE_CORP</td><td>1</td><td>企业视图</td></tr><tr><td>VIEW_TYPE_SPACE</td><td>2</td><td>空间视图</td></tr><tr><td>VIEW_TYPE_APP</td><td>3</td><td>应用视图</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "ViewType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Variable": {
       "document": "变量信息",
       "members": [
@@ -14473,6 +15715,34 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ViewScope": {
+      "document": "视图范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视图类型；枚举值：VIEW_TYPE_CORP(1) 企业视图、VIEW_TYPE_SPACE(2) 空间视图、VIEW_TYPE_APP(3) 应用视图</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>VIEW_TYPE_UNSPECIFIED</td><td>0</td><td>未指定（无效值，请求勿传）</td></tr><tr><td>VIEW_TYPE_CORP</td><td>1</td><td>企业视图</td></tr><tr><td>VIEW_TYPE_SPACE</td><td>2</td><td>空间视图</td></tr><tr><td>VIEW_TYPE_APP</td><td>3</td><td>应用视图</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "ViewType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图范围 ID；VIEW_TYPE_CORP 留空；VIEW_TYPE_SPACE 填 space_id；VIEW_TYPE_APP 填 app_id（uint64 雪花 ID 的十进制字符串）</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "ScopeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

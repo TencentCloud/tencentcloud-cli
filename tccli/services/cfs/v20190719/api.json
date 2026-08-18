@@ -358,7 +358,7 @@
       "status": "online"
     },
     "SetUserQuota": {
-      "document": "设置文件系统配额，提供UID/GID的配额设置的接口（仅部分Turbo实例能使用，若需要调用请提交工单与我们联系）",
+      "document": "设置文件系统配额，提供UID/GID的配额设置的接口（仅指定版本的Turbo实例能使用，若调用失败请提交工单与我们联系）",
       "input": "SetUserQuotaRequest",
       "name": "设置文件系统配额",
       "output": "SetUserQuotaResponse",
@@ -461,7 +461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生命周期管理策略ID",
+          "document": "<p>生命周期管理策略ID</p>",
           "example": "policy-xxxxxx",
           "member": "string",
           "name": "LifecyclePolicyID",
@@ -470,7 +470,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期管理策略关联目录的绝对路径列表",
+          "document": "<p>生命周期管理策略所关联的目录路径列表，每个路径必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。</p><p>示例：</p><ul><li>若挂载的是CFS根目录 /，需关联挂载路径下的 test1/test2，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需关联挂载路径下的 test1/test2，则入参值为 /cfs/subdir/test1/test2</li></ul>",
           "example": "无",
           "member": "PathInfo",
           "name": "Paths",
@@ -485,7 +485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "有规则冲突时返回的已有冲突规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>有规则冲突时返回的已有冲突规则信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CheckResult",
           "name": "CheckResults",
@@ -1704,7 +1704,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID ，通过查询文件系统 [DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170) 获取",
+          "document": "<p>文件系统 ID ，通过查询文件系统 <a href=\"https://cloud.tencent.com/document/product/582/38170\">DescribeCfsFileSystems</a> 获取</p>",
           "example": "cfs-4abkgaga",
           "member": "string",
           "name": "FileSystemId",
@@ -1713,7 +1713,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据类型；包含S3_COS，S3_L5 ",
+          "document": "<p>源端数据类型；包含S3_COS，S3_L5</p>",
           "example": "S3_COS",
           "member": "string",
           "name": "SourceStorageType",
@@ -1722,7 +1722,7 @@
         },
         {
           "disabled": false,
-          "document": "源端存储地址",
+          "document": "<p>源端存储地址</p>",
           "example": "https://cfs-test-1251000014.cos.ap-shanghai.myqcloud.com",
           "member": "string",
           "name": "SourceStorageAddress",
@@ -1731,7 +1731,7 @@
         },
         {
           "disabled": false,
-          "document": "源端路径",
+          "document": "<p>源端路径</p>",
           "example": "/cos/test",
           "member": "string",
           "name": "SourcePath",
@@ -1740,7 +1740,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统内目标路径",
+          "document": "<p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>",
           "example": "/cfs/12a3",
           "member": "string",
           "name": "TargetPath",
@@ -1749,7 +1749,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥 ID",
+          "document": "<p>密钥 ID</p>",
           "example": "asafsafsa",
           "member": "string",
           "name": "SecretId",
@@ -1758,7 +1758,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥 key",
+          "document": "<p>密钥 key</p>",
           "example": "ssafsafas",
           "member": "string",
           "name": "SecretKey",
@@ -1767,7 +1767,7 @@
         },
         {
           "disabled": false,
-          "document": "数据流动名称；支持不超过64字符长度，支持中文、数字、_、-",
+          "document": "<p>数据流动名称；支持不超过64字符长度，支持中文、数字、_、-</p>",
           "example": "default",
           "member": "string",
           "name": "DataFlowName",
@@ -1776,7 +1776,7 @@
         },
         {
           "disabled": false,
-          "document": " 0：不开启自动更新  1：开启自动更新",
+          "document": "<p>0：不开启自动更新  1：开启自动更新</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRefresh",
@@ -1785,7 +1785,7 @@
         },
         {
           "disabled": false,
-          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "document": "<p>KafkaConsumer 消费时使用的Topic参数</p>",
           "example": "1251000004-e37d71b2-4fb1-4b2c-b7d0-522946d17d93",
           "member": "string",
           "name": "UserKafkaTopic",
@@ -1794,7 +1794,7 @@
         },
         {
           "disabled": false,
-          "document": "\t服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "document": "<p>服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095</p>",
           "example": "kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -1803,7 +1803,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka消费用户名.示例值：name",
+          "document": "<p>Kafka消费用户名.示例值：name</p>",
           "example": "name",
           "member": "string",
           "name": "UserName",
@@ -1812,7 +1812,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka消费用户密码。默认${SecretId}#${SecretKey}。",
+          "document": "<p>Kafka消费用户密码。默认${SecretId}#${SecretKey}。</p>",
           "example": "xbxcxdxexcxdxa",
           "member": "string",
           "name": "Password",
@@ -1827,7 +1827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据流动管理 ID",
+          "document": "<p>数据流动管理 ID</p>",
           "example": "cfs-dataflow-abcdefgh",
           "member": "string",
           "name": "DataFlowId",
@@ -1994,7 +1994,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>",
+          "document": "<p>数据清单文件路径，清单文件内每行为待处理文件的完整路径。所有路径（包括清单文件路径、清单文件内每行表示的待处理文件的路径）必须以 /cfs 开头，指向CFS文件系统内已存在的文件，与 TaskPath 参数二选一填写。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，清单文件位于挂载路径下的 lists/archive_list.txt，则入参值为 /cfs/lists/archive_list.txt</li><li>若挂载的是CFS子目录 /subdir，清单文件位于挂载路径下的 lists/archive_list.txt，则入参值为 /cfs/subdir/lists/archive_list.txt</li></ul>",
           "example": "/cfs/datalist",
           "member": "string",
           "name": "ListPath",
@@ -2177,8 +2177,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件系统路径</p>",
-          "example": "/cfs/123",
+          "document": "<p>文件系统内目录路径，不涉及实际挂载子目录/根目录，无需以/cfs/作为前缀</p>",
+          "example": "/filepathincfs",
           "member": "string",
           "name": "FsPath",
           "required": true,
@@ -2295,7 +2295,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据流动管理 ID",
+          "document": "<p>数据流动管理 ID</p>",
           "example": "dataflow-gagag",
           "member": "string",
           "name": "DataFlowId",
@@ -2305,8 +2305,8 @@
         },
         {
           "disabled": false,
-          "document": "数据流动名称",
-          "example": "default",
+          "document": "<p>数据流动名称</p>",
+          "example": "cfsdataflowname",
           "member": "string",
           "name": "DataFlowName",
           "output_required": true,
@@ -2315,7 +2315,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据类型",
+          "document": "<p>源端数据类型</p>",
           "example": "S3",
           "member": "string",
           "name": "SourceStorageType",
@@ -2325,7 +2325,7 @@
         },
         {
           "disabled": false,
-          "document": "源端存储地址",
+          "document": "<p>源端存储地址</p>",
           "example": "https://cos.xx.xx.xx",
           "member": "string",
           "name": "SourceStorageAddress",
@@ -2335,7 +2335,7 @@
         },
         {
           "disabled": false,
-          "document": "源端路径",
+          "document": "<p>源端路径</p>",
           "example": "/cos/test",
           "member": "string",
           "name": "SourcePath",
@@ -2345,7 +2345,7 @@
         },
         {
           "disabled": false,
-          "document": "目录路径",
+          "document": "<p>设置数据流动时指定的文件系统内目标路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需将对象存储上的源端目录与挂载路径下的 test1/test2 建立映射关系，则入参值为 /cfs/subdir/test1/test2</li></ul>",
           "example": "/cfs/defaule-test",
           "member": "string",
           "name": "TargetPath",
@@ -2355,7 +2355,7 @@
         },
         {
           "disabled": false,
-          "document": "available：已生效\npending：配置中\nunavailable：失效\ndeleting：删除中",
+          "document": "<p>available：已生效<br>pending：配置中<br>unavailable：失效<br>deleting：删除中</p>",
           "example": "available",
           "member": "string",
           "name": "Status",
@@ -2365,7 +2365,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-10-30 12:43",
           "member": "string",
           "name": "CreationTime",
@@ -2375,7 +2375,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统 ID",
+          "document": "<p>文件系统 ID</p>",
           "example": "cfs-4agagkkgal",
           "member": "string",
           "name": "FileSystemId",
@@ -2385,7 +2385,7 @@
         },
         {
           "disabled": false,
-          "document": "0：不开启自动更新\n\n1：开启自动更新",
+          "document": "<p>0：不开启自动更新</p><p>1：开启自动更新</p>",
           "example": "1",
           "member": "uint64",
           "name": "AutoRefresh",
@@ -2395,7 +2395,7 @@
         },
         {
           "disabled": false,
-          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "document": "<p>KafkaConsumer 消费时使用的Topic参数</p>",
           "example": "1251000004-e37d71b2-4fb1-4b2c-b7d0-522946d17d93",
           "member": "string",
           "name": "UserKafkaTopic",
@@ -2405,7 +2405,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址",
+          "document": "<p>服务地址</p>",
           "example": "kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -2415,7 +2415,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka消费用户名",
+          "document": "<p>Kafka消费用户名</p>",
           "example": "name",
           "member": "string",
           "name": "UserName",
@@ -2425,7 +2425,7 @@
         },
         {
           "disabled": false,
-          "document": "自动刷新的状态，available：已生效\npending：配置中\nunavailable：失效",
+          "document": "<p>自动刷新的状态，available：已生效<br>pending：配置中<br>unavailable：失效</p>",
           "example": "pending",
           "member": "string",
           "name": "AutoRefreshStatus",
@@ -2435,7 +2435,7 @@
         },
         {
           "disabled": false,
-          "document": "自动刷新开启时间",
+          "document": "<p>自动刷新开启时间</p>",
           "example": "2024-10-30 12:43",
           "member": "string",
           "name": "AutoRefreshTime",
@@ -3035,7 +3035,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
+          "document": "<p>文件系统ID，通过查询文件系统列表获取；<a href=\"https://cloud.tencent.com/document/product/582/38170\">DescribeCfsFileSystems</a></p>",
           "example": "cfs-12345efg",
           "member": "string",
           "name": "FileSystemId",
@@ -3044,7 +3044,7 @@
         },
         {
           "disabled": false,
-          "document": "指定配额类型，包括Uid（按用户ID限制）、Gid（按用户组ID限制）、Dir（按目录限制）",
+          "document": "<p>指定配额类型，包括Uid（按用户ID限制）、Gid（按用户组ID限制）、Dir（按目录限制）</p>",
           "example": "Uid",
           "member": "string",
           "name": "UserType",
@@ -3053,7 +3053,7 @@
         },
         {
           "disabled": false,
-          "document": "UID/GID信息，和DirectoryPath参数，两者必须填写一个",
+          "document": "<p>UID/GID信息，和DirectoryPath参数，两者必须填写一个</p>",
           "example": "1000",
           "member": "string",
           "name": "UserId",
@@ -3062,7 +3062,7 @@
         },
         {
           "disabled": false,
-          "document": "设置目录配额的目录的绝对路径，和UserId参数，两者必须填写一个",
+          "document": "<p>需删除配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。该参数与 UserId 参数至少填写一个。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需删除挂载路径下 test1/test2 的配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需删除挂载路径下 test1/test2 的配额，则入参值为 /cfs/subdir/test1/test2</li></ul>",
           "example": "/cfs/xx",
           "member": "string",
           "name": "DirectoryPath",
@@ -4354,7 +4354,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID。当前仅 Turbo 系列文件系统支持调用此接口，通用系列文件系统（含增强型）不支持调用。",
+          "document": "<p>文件系统 ID。当前仅 Turbo 系列文件系统支持调用此接口，通用系列文件系统（含增强型）不支持调用。</p>",
           "example": "cfs-5xxxyyyzz",
           "member": "string",
           "name": "FileSystemId",
@@ -4363,7 +4363,7 @@
         },
         {
           "disabled": false,
-          "document": "create：创建目录，等同于mkdir。\ncheck：确认目录是否存在，等同于stat。\nmove：对文件/目录进行重命名，等同于mv。",
+          "document": "<p>create：创建目录，等同于mkdir。<br>check：确认目录是否存在，等同于stat。<br>move：对文件/目录进行重命名，等同于mv。</p>",
           "example": "check",
           "member": "string",
           "name": "OpetationType",
@@ -4372,7 +4372,7 @@
         },
         {
           "disabled": false,
-          "document": "目录的绝对路径  默认递归创建（即如果目录中有子目录不存在，则先创建出对应子目录）",
+          "document": "<p>系统会默认递归创建路径中的所有父级目录。路径必须从 /cfs/ 开始，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li><p>若操作为 create/check</p><ul><li>若挂载的是CFS根目录 /，需在挂载路径下创建/检查是否存在 test1/test2，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需在挂载路径下创建/检查是否存在 test1/test2，则入参值为 /cfs/subdir/test1/test2</li></ul></li><li><p>若操作为 move</p><ul><li>若挂载的是CFS根目录 /，需在挂载路径下移动 test1/test2 下的文件到 DestPath，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需在挂载路径下挂载路径下移动 test1/test2 下的文件到 DestPath，则入参值为 /cfs/subdir/test1/test2</li></ul></li></ul>",
           "example": "/user1/dir2/",
           "member": "string",
           "name": "DirectoryPath",
@@ -4381,7 +4381,7 @@
         },
         {
           "disabled": false,
-          "document": "创建目录的权限，若不传，默认为0755。若OperationType为 check，此值无实际意义。",
+          "document": "<p>创建目录的权限，若不传，默认为0755。若OperationType为 check，此值无实际意义。</p>",
           "example": "0777",
           "member": "string",
           "name": "Mode",
@@ -4390,7 +4390,7 @@
         },
         {
           "disabled": false,
-          "document": "mv 操作的目标目录名称。路径必须以/cfs/开头",
+          "document": "<p>mv 操作的目标目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需将 DirectoryPath 下的文件移动到挂载路径下的 test3/test4，则入参值为 /cfs/test3/test4</li><li>若挂载的是CFS子目录 /subdir，需将 DirectoryPath 下的文件移动到挂载路径下的 test3/test4，则入参值为 /cfs/subdir/ test3/test4</li></ul>",
           "example": "/cfs/testa",
           "member": "string",
           "name": "DestPath",
@@ -4405,7 +4405,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1:成功 0:失败。创建目录的操作，1表示创建成功，0表示创建失败。  确认目录是否存在的操作，1表示目录存在，0表示目录不存在。此外，创建目录操作若目录已存在，也会返回创建成功。",
+          "document": "<p>1:成功 0:失败。创建目录的操作，1表示创建成功，0表示创建失败。  确认目录是否存在的操作，1表示目录存在，0表示目录不存在。此外，创建目录操作若目录已存在，也会返回创建成功。</p>",
           "example": "1",
           "member": "int64",
           "name": "Result",
@@ -5160,7 +5160,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>",
+          "document": "<p>数据清单文件路径，清单文件内每行为待处理文件的完整路径。所有路径（包括清单文件路径、清单文件内每行表示的待处理文件的路径）必须以 /cfs 开头，指向CFS文件系统内已存在的文件，与 TaskPath 参数二选一填写。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，清单文件位于挂载路径下的 lists/archive_list.txt，则入参值为 /cfs/lists/archive_list.txt</li><li>若挂载的是CFS子目录 /subdir，清单文件位于挂载路径下的 lists/archive_list.txt，则入参值为 /cfs/subdir/lists/archive_list.txt</li></ul>",
           "example": "/cfs/lists/archive_list.txt",
           "member": "string",
           "name": "ListPath",
@@ -5482,7 +5482,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件系统路径</p>",
+          "document": "<p>文件系统内目录路径，不涉及实际挂载子目录/根目录，无需以/cfs/作为前缀</p>",
           "example": "/cfs/test",
           "member": "string",
           "name": "FsPath",
@@ -6468,7 +6468,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID,通过[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)获取",
+          "document": "<p>文件系统 ID,通过<a href=\"https://cloud.tencent.com/document/api/582/38170\">查询文件系统列表</a>获取</p>",
           "example": "cfs-abc12345",
           "member": "string",
           "name": "FileSystemId",
@@ -6477,7 +6477,7 @@
         },
         {
           "disabled": false,
-          "document": "指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额",
+          "document": "<p>指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额</p>",
           "example": "Uid",
           "member": "string",
           "name": "UserType",
@@ -6486,7 +6486,7 @@
         },
         {
           "disabled": false,
-          "document": "UID/GID信息",
+          "document": "<p>UID/GID信息</p>",
           "example": "1000",
           "member": "string",
           "name": "UserId",
@@ -6495,7 +6495,7 @@
         },
         {
           "disabled": false,
-          "document": "容量硬限制，单位GiB。设置范围10-10000000。",
+          "document": "<p>容量硬限制，单位GiB。设置范围10-10000000。</p>",
           "example": "10",
           "member": "uint64",
           "name": "CapacityHardLimit",
@@ -6504,7 +6504,7 @@
         },
         {
           "disabled": false,
-          "document": "文件硬限制，单位个。设置范围1000-100000000",
+          "document": "<p>文件硬限制，单位个。设置范围1000-100000000</p>",
           "example": "10000",
           "member": "uint64",
           "name": "FileHardLimit",
@@ -6513,7 +6513,7 @@
         },
         {
           "disabled": false,
-          "document": "需设置目录配额的目录绝对路径，不同目录不可存在包含关系",
+          "document": "<p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>",
           "example": "/cfs/xx",
           "member": "string",
           "name": "DirectoryPath",
@@ -6528,7 +6528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "UID/GID信息",
+          "document": "<p>UID/GID信息</p>",
           "example": "10000",
           "member": "string",
           "name": "UserId",
@@ -7557,7 +7557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定配额类型，包括Uid、Gid、Dir",
+          "document": "<p>指定配额类型，包括Uid、Gid、Dir</p>",
           "example": "Uid",
           "member": "string",
           "name": "UserType",
@@ -7568,7 +7568,7 @@
         },
         {
           "disabled": false,
-          "document": "UID/GID信息",
+          "document": "<p>UID/GID信息</p>",
           "example": "1000",
           "member": "string",
           "name": "UserId",
@@ -7579,7 +7579,7 @@
         },
         {
           "disabled": false,
-          "document": "容量硬限制，单位GiB",
+          "document": "<p>容量硬限制，单位GiB</p>",
           "example": "10",
           "member": "uint64",
           "name": "CapacityHardLimit",
@@ -7590,7 +7590,7 @@
         },
         {
           "disabled": false,
-          "document": "文件硬限制，单位个",
+          "document": "<p>文件硬限制，单位个</p>",
           "example": "10000",
           "member": "uint64",
           "name": "FileHardLimit",
@@ -7601,7 +7601,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统ID",
+          "document": "<p>文件系统ID</p>",
           "example": "cfs-1245",
           "member": "string",
           "name": "FileSystemId",
@@ -7612,7 +7612,7 @@
         },
         {
           "disabled": false,
-          "document": "容量使用，单位GiB",
+          "document": "<p>容量使用，单位GiB</p>",
           "example": "9",
           "member": "uint64",
           "name": "CapacityUsed",
@@ -7623,7 +7623,7 @@
         },
         {
           "disabled": false,
-          "document": "文件使用个数，单位个",
+          "document": "<p>文件使用个数，单位个</p>",
           "example": "9999",
           "member": "uint64",
           "name": "FileUsed",
@@ -7634,7 +7634,7 @@
         },
         {
           "disabled": false,
-          "document": "目录配额的目录绝对路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>需设置配额的目录路径，必须以 /cfs/ 开头，代表文件存储实例内部的逻辑路径，而非本地挂载点路径。不同目录之间不可存在包含关系。<br>示例：</p><ul><li>若挂载的是CFS根目录 /，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/test1/test2</li><li>若挂载的是CFS子目录 /subdir，需对挂载路径下的 test1/test2 设置配额，则入参值为 /cfs/subdir/test1/test2</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/cfs/xx",
           "member": "string",
           "name": "DirectoryPath",
@@ -7645,7 +7645,7 @@
         },
         {
           "disabled": false,
-          "document": "配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败",
+          "document": "<p>配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败</p>",
           "example": "available",
           "member": "string",
           "name": "Status",

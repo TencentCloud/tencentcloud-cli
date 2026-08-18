@@ -4310,7 +4310,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量。取值是limit的整数倍。默认值 : 0。",
+          "document": "<p>偏移量。取值是limit的整数倍。默认值 : 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4319,7 +4319,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目。取值范围：1~50。默认值：10。",
+          "document": "<p>限制数目。取值范围：1~50。默认值：10。</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -4328,7 +4328,7 @@
         },
         {
           "disabled": false,
-          "document": "成员uin。",
+          "document": "<p>成员uin。</p>",
           "example": "0",
           "member": "int64",
           "name": "MemberUin",
@@ -4337,7 +4337,7 @@
         },
         {
           "disabled": false,
-          "document": "集团管理员子账号uin。",
+          "document": "<p>集团管理员子账号uin。</p>",
           "example": "0",
           "member": "int64",
           "name": "OrgSubAccountUin",
@@ -4346,7 +4346,7 @@
         },
         {
           "disabled": false,
-          "document": "成员访问策略Id。",
+          "document": "<p>成员访问策略Id。</p>",
           "example": "0",
           "member": "int64",
           "name": "PolicyId",
@@ -4361,7 +4361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问授权策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>访问授权策略列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgMembersAuthPolicy",
           "name": "Items",
@@ -4371,7 +4371,7 @@
         },
         {
           "disabled": false,
-          "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总数目。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Total",
@@ -7900,7 +7900,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "空间 ID。",
+          "document": "<p>空间 ID。</p>",
           "example": "z-3ds73bs****",
           "member": "string",
           "name": "ZoneId",
@@ -7909,7 +7909,7 @@
         },
         {
           "disabled": false,
-          "document": "查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。",
+          "document": "<p>查询返回结果下一页的令牌。首次调用 API 不需要NextToken。  当您首次调用 API 时，如果返回数据总条数超过MaxResults限制，数据会被截断，只返回MaxResults条数据，同时，返回参数IsTruncated为true，返回一个NextToken。您可以使用上一次返回的NextToken继续调用 API，其他请求参数保持不变，查询被截断的数据。您可以按此方法多次查询，直到IsTruncated为false，表示全部数据查询完毕。</p>",
           "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
           "member": "string",
           "name": "NextToken",
@@ -7918,7 +7918,7 @@
         },
         {
           "disabled": false,
-          "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
+          "document": "<p>每页的最大数据条数。  取值范围：1~100。  默认值：10。</p>",
           "example": "20",
           "member": "int64",
           "name": "MaxResults",
@@ -7927,7 +7927,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤文本。不区分大小写。目前，支持 RoleConfigurationName和Description. 示例：Filter = \"test\"，表示查询名称或描述里包含 test 的权限配置。",
+          "document": "<p>过滤文本。不区分大小写。目前，支持 RoleConfigurationName和Description. 示例：Filter = &quot;test&quot;，表示查询名称或描述里包含 test 的权限配置。</p>",
           "example": "conf1",
           "member": "string",
           "name": "Filter",
@@ -7936,7 +7936,7 @@
         },
         {
           "disabled": false,
-          "document": "检索成员账号是否配置过权限，如果配置过返回IsSelected: true, 否则返回false。",
+          "document": "<p>检索成员账号是否配置过权限，如果配置过返回IsSelected: true, 否则返回false。</p>",
           "example": "[100002322,1000033232]",
           "member": "int64",
           "name": "FilterTargets",
@@ -7945,7 +7945,7 @@
         },
         {
           "disabled": false,
-          "document": "授权的用户UserId或者用户组的GroupId，必须和入参数FilterTargets一起设置",
+          "document": "<p>授权的用户UserId或者用户组的GroupId，必须和入参数FilterTargets一起设置</p>",
           "example": "u-s9wme92ne",
           "member": "string",
           "name": "PrincipalId",
@@ -7960,7 +7960,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合请求参数条件的数据总条数。",
+          "document": "<p>符合请求参数条件的数据总条数。</p>",
           "example": "20",
           "member": "int64",
           "name": "TotalCounts",
@@ -7970,7 +7970,7 @@
         },
         {
           "disabled": false,
-          "document": "每页的最大数据条数。",
+          "document": "<p>每页的最大数据条数。</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxResults",
@@ -7980,7 +7980,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果是否被截断。取值：  true：已截断。 false：未截断。",
+          "document": "<p>返回结果是否被截断。取值：  true：已截断。 false：未截断。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsTruncated",
@@ -7990,7 +7990,7 @@
         },
         {
           "disabled": false,
-          "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
+          "document": "<p>查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。</p>",
           "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
           "member": "string",
           "name": "NextToken",
@@ -8000,7 +8000,7 @@
         },
         {
           "disabled": false,
-          "document": "权限配置列表。",
+          "document": "<p>权限配置列表。</p>",
           "example": "无",
           "member": "RoleConfiguration",
           "name": "RoleConfigurations",

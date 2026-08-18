@@ -7,13 +7,6 @@
       "output": "AddChunkResponse",
       "status": "online"
     },
-    "AddScene": {
-      "document": "新增场景",
-      "input": "AddSceneRequest",
-      "name": "新增场景",
-      "output": "AddSceneResponse",
-      "status": "online"
-    },
     "AppendKnowledgeTask": {
       "document": "追加文件",
       "input": "AppendKnowledgeTaskRequest",
@@ -47,13 +40,6 @@
       "input": "DeleteDataAgentSessionRequest",
       "name": "删除会话",
       "output": "DeleteDataAgentSessionResponse",
-      "status": "online"
-    },
-    "DeleteScene": {
-      "document": "删除场景",
-      "input": "DeleteSceneRequest",
-      "name": "删除场景",
-      "output": "DeleteSceneResponse",
       "status": "online"
     },
     "ExecuteAgentApi": {
@@ -154,13 +140,6 @@
       "output": "QueryModelsResponse",
       "status": "online"
     },
-    "QuerySceneList": {
-      "document": "查询场景列表",
-      "input": "QuerySceneListRequest",
-      "name": "查询场景列表",
-      "output": "QuerySceneListResponse",
-      "status": "online"
-    },
     "QueryUserAuthority": {
       "document": "查询对象权限",
       "input": "QueryUserAuthorityRequest",
@@ -173,13 +152,6 @@
       "input": "StopChatAIRequest",
       "name": "终止问答返回流",
       "output": "StopChatAIResponse",
-      "status": "online"
-    },
-    "UpdateScene": {
-      "document": "更新场景",
-      "input": "UpdateSceneRequest",
-      "name": "更新场景",
-      "output": "UpdateSceneResponse",
       "status": "online"
     },
     "UploadAndCommitFile": {
@@ -275,70 +247,6 @@
           "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
           "member": "string",
           "name": "ChunkId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "AddSceneRequest": {
-      "document": "AddScene请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "da-sdfasdaf",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "场景",
-          "example": "无",
-          "member": "Scene",
-          "name": "Scene",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "1仅自己使用，2指定用户，0全员",
-          "example": "1",
-          "member": "int64",
-          "name": "UseScope",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "可使用用户列表",
-          "example": "[\"00001\",\"00002\"]",
-          "member": "string",
-          "name": "AuthorityUins",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "AddSceneResponse": {
-      "document": "AddScene返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "场景id",
-          "example": "sn001",
-          "member": "string",
-          "name": "SceneId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -883,114 +791,6 @@
         }
       ],
       "type": "object"
-    },
-    "DeleteSceneRequest": {
-      "document": "DeleteScene请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "da-sdfasdaf",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "场景id",
-          "example": "sn01",
-          "member": "string",
-          "name": "SceneId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteSceneResponse": {
-      "document": "DeleteScene返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ExampleQA": {
-      "document": "问答数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "示例记录的唯一业务 ID",
-          "example": "001",
-          "member": "string",
-          "name": "ExampleId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "问题列表",
-          "example": "[\"100\"]",
-          "member": "string",
-          "name": "Questions",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "对应的标准答案或回复",
-          "example": "dfsb",
-          "member": "string",
-          "name": "Answer",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "内容类型，类型包含 'text', 'sql', 'code' ",
-          "example": "code",
-          "member": "string",
-          "name": "Type",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "记录的创建时间",
-          "example": "2025-10-10 10:10:10",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "记录的最后更新时间",
-          "example": "2025-10-10 11:12:10",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "ExecuteAgentApiRequest": {
       "document": "ExecuteAgentApi请求参数结构体",
@@ -2430,89 +2230,6 @@
       ],
       "type": "object"
     },
-    "QuerySceneListRequest": {
-      "document": "QuerySceneList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "da-jijsdfj8",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "场景id",
-          "example": "s001",
-          "member": "string",
-          "name": "SceneId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "场景名称",
-          "example": "sn001",
-          "member": "string",
-          "name": "SceneName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "页数",
-          "example": "1",
-          "member": "int64",
-          "name": "Page",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "页的大小",
-          "example": "1",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "QuerySceneListResponse": {
-      "document": "QuerySceneList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "场景列表",
-          "example": "无",
-          "member": "Scene",
-          "name": "Datas",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总数",
-          "example": "100",
-          "member": "int64",
-          "name": "Total",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "QueryUserAuthorityRequest": {
       "document": "QueryUserAuthority请求参数结构体",
       "members": [
@@ -2739,238 +2456,6 @@
       ],
       "usage": "both"
     },
-    "Scene": {
-      "document": "场景",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>场景ID</p>",
-          "example": "sn001",
-          "member": "string",
-          "name": "SceneId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>场景名称</p>",
-          "example": "cran_sn",
-          "member": "string",
-          "name": "SceneName",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）</p>",
-          "example": "[\"rag\"]",
-          "member": "string",
-          "name": "Skills",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>提示词文本</p>",
-          "example": "key",
-          "member": "string",
-          "name": "Prompt",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>描述</p>",
-          "example": "mytest",
-          "member": "string",
-          "name": "Description",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>检索配置</p>",
-          "example": "无",
-          "member": "SearchConfig",
-          "name": "SearchConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>示例问答列表</p>",
-          "example": "无",
-          "member": "ExampleQA",
-          "name": "ExampleQAList",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>记录的创建时间</p>",
-          "example": "2025-11-02 12:12:12",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>记录的最后更新时间</p>",
-          "example": "2025-11-02 12:12:12",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>创建者Uin</p>",
-          "example": "10104343253",
-          "member": "string",
-          "name": "CreatorUin",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>知识</p>",
-          "example": "ufo",
-          "member": "string",
-          "name": "Knowledge",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "SearchConfig": {
-      "document": "检索配置",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>检索类型：0:混合搜索 1：向量搜索 2：全文搜索</p>",
-          "example": "1",
-          "member": "int64",
-          "name": "Type",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>召回数量最大值</p>",
-          "example": "100",
-          "member": "int64",
-          "name": "Num",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>权重配置</p>",
-          "example": "0.5",
-          "member": "float",
-          "name": "EmbeddingWeight",
-          "output_required": false,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>0:关闭 1:开启，默认1</p>",
-          "example": "1",
-          "member": "int64",
-          "name": "Rerank",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>0:关闭 1:开启，默认0</p>",
-          "example": "1",
-          "member": "int64",
-          "name": "AutoRag",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>AutoRag关联的知识库ID列表</p>",
-          "example": "[\"kb001\"]",
-          "member": "string",
-          "name": "KnowledgeBaseIds",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>AutoRag搜索状态：0-未完成，1-已完成。仅当AutoRag=1时，该字段有效</p>",
-          "example": "1",
-          "member": "int64",
-          "name": "SearchStatus",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>0:关闭 1:开启图谱检索，默认0</p>",
-          "example": "0",
-          "member": "int64",
-          "name": "EnableGraphSearch",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>0:关闭 1:开启树检索，默认0</p>",
-          "example": "0",
-          "member": "int64",
-          "name": "EnableTreeSearch",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
     "StepExpand": {
       "document": "步骤扩展结构",
       "members": [
@@ -3188,42 +2673,6 @@
         }
       ],
       "usage": "both"
-    },
-    "UpdateSceneRequest": {
-      "document": "UpdateScene请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "da-sdfasdaf",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "场景",
-          "example": "无",
-          "member": "Scene",
-          "name": "Scene",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateSceneResponse": {
-      "document": "UpdateScene返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "UploadAndCommitFileRequest": {
       "document": "UploadAndCommitFile请求参数结构体",

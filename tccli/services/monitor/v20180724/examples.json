@@ -1358,6 +1358,20 @@
         "title": "修改全局告警通知渠道"
       }
     ],
+    "ModifyPrometheusInstanceAccessPoints": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusInstanceAccessPoints\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2833f373-9bb9-4326-98ab-0ab6a1387de6\"\n    }\n}",
+        "title": "开启 HTTPS"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusInstanceAccessPoints\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6785e2d-eb7b-40d1-b305-c23603290057\"\n    }\n}",
+        "title": "关闭 HTTPS 并检查最近是否有写入流量"
+      }
+    ],
     "ModifyPrometheusInstanceAttributes": [
       {
         "document": "",

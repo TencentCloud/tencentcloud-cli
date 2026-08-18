@@ -310,6 +310,22 @@
         "title": "查询审计日志元信息"
       }
     ],
+    "DescribeConcurrencyLimitDetailList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrencyLimitDetailList\n<公共请求参数>\n\n{\n    \"TimeRange\": {\n        \"EndTime\": \"1786463999\",\n        \"StartTime\": \"1786377600\"\n    },\n    \"ViewScope\": {\n        \"ViewType\": 1,\n        \"ScopeId\": \"default_space\"\n    },\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ConcurrencyLimitDetailList\": [\n            {\n                \"CallSource\": {\n                    \"SubjectId\": \"10023456\",\n                    \"SubjectName\": \"智能客服应用\",\n                    \"SubjectType\": 1\n                },\n                \"EventTime\": \"1754956800\",\n                \"ModelName\": \"hunyuan-turbo\",\n                \"RequestQuery\": \"请帮我分析以下合同条款中的风险点，合同内容如下：甲方...\",\n                \"SpaceId\": \"space_abc123\"\n            }\n        ],\n        \"TotalCount\": \"47\",\n        \"RequestId\": \"0ce01e90-96e4-4646-914f-8565942b1492\"\n    }\n}",
+        "title": "DescribeConcurrencyLimitDetailList"
+      }
+    ],
+    "DescribeConsumptionDetailList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumptionDetailList\n<公共请求参数>\n\n{\n    \"TimeRange\": {\n        \"EndTime\": \"1786550699\",\n        \"StartTime\": \"1786550399\"\n    },\n    \"ViewScope\": {\n        \"ViewType\": 1,\n        \"ScopeId\": \"default_space\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsumptionDetailList\": [\n            {\n                \"Classification\": {\n                    \"ConsumptionScene\": \"chat\",\n                    \"ConsumptionTarget\": \"hunyuan-turbo\",\n                    \"ConsumptionType\": \"model\",\n                    \"PackageName\": \"企业标准套餐包\"\n                },\n                \"EventTime\": \"1754956800\",\n                \"MetricSourceType\": 1,\n                \"Name\": \"智能客服应用\",\n                \"SpaceName\": \"产品研发空间\",\n                \"Usage\": {\n                    \"ConsumptionPU\": 0.00897,\n                    \"Usage\": 8970,\n                    \"UsageUnit\": 0\n                },\n                \"UserName\": \"张三\"\n            }\n        ],\n        \"TotalCount\": \"328\",\n        \"RequestId\": \"90431410-173a-4e44-b79e-d77a399da29b\"\n    }\n}",
+        "title": "DescribeConsumptionDetailList"
+      }
+    ],
     "DescribeConversation": [
       {
         "document": "",
@@ -340,6 +356,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLatestRelease\n<公共请求参数>\n\n{\n    \"AppId\": \"206************5184\"\n}",
         "output": "{\n    \"Response\": {\n        \"IsChanged\": false,\n        \"ReleaseSummary\": {\n            \"ChannelIdList\": [],\n            \"CreateTime\": \"1780389728\",\n            \"Description\": \"我的发布信息\",\n            \"ReleaseId\": \"2061***********7232\",\n            \"Status\": 3,\n            \"StatusDescription\": \"发布成功\"\n        },\n        \"RequestId\": \"0db8ec29-fb0f-45a3-8067-57206b475d1b\"\n    }\n}",
         "title": "DescribeLatestRelease"
+      }
+    ],
+    "DescribeMetricOverviewList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetricOverviewList\n<公共请求参数>\n\n{\n    \"ResourceType\": 1,\n    \"TimeRange\": {\n        \"EndTime\": \"1786463999\",\n        \"StartTime\": \"1786377600\"\n    },\n    \"ViewScope\": {\n        \"ViewType\": 2,\n        \"ScopeId\": \"default_space\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricList\": [\n            {\n                \"Key\": \"total_calls\",\n                \"Mom\": 0.15,\n                \"Unit\": 2,\n                \"Value\": 12580\n            }\n        ],\n        \"TotalCount\": \"12\",\n        \"RequestId\": \"72c3b5b9-9c94-4fb3-9073-498bc50d0981\"\n    }\n}",
+        "title": "DescribeMetricOverviewList"
       }
     ],
     "DescribeModelList": [
@@ -428,6 +452,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSystemVariableList\n<公共请求参数>\n\n{\n    \"AppId\": \"206***********85184\"\n}",
         "output": "{\n    \"Response\": {\n        \"SystemVariableList\": [\n            {\n                \"Description\": \"本轮对话内容\",\n                \"Name\": \"SYS.UserQuery\"\n            }\n        ],\n        \"RequestId\": \"9a337709-a67a-4d9f-a484-8450c5608b30\"\n    }\n}",
         "title": "DescribeSystemVariableList"
+      }
+    ],
+    "DescribeUsageDetailList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsageDetailList\n<公共请求参数>\n\n{\n    \"ResourceType\": 1,\n    \"TimeRange\": {\n        \"EndTime\": \"1786463999\",\n        \"StartTime\": \"1786377600\"\n    },\n    \"ViewScope\": {\n        \"ViewType\": 2,\n        \"ScopeId\": \"default_space\"\n    },\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": \"12580\",\n        \"UsageDetailList\": [\n            {\n                \"CallSource\": {\n                    \"SubjectId\": \"10023456\",\n                    \"SubjectName\": \"智能客服应用\",\n                    \"SubjectType\": 1\n                },\n                \"DosageId\": \"dosage_9988776655\",\n                \"EventTime\": \"1754956800\",\n                \"Model\": {\n                    \"CallType\": \"chat\",\n                    \"IsDefaultKB\": false,\n                    \"ModelName\": \"hunyuan-turbo\",\n                    \"ResourceConsumptionList\": [\n                        {\n                            \"Label\": \"\",\n                            \"Unit\": 0,\n                            \"Value\": 8970\n                        }\n                    ]\n                },\n                \"TraceId\": \"trace_abc123def456\",\n                \"UserId\": \"user_001\"\n            }\n        ],\n        \"RequestId\": \"4cfbc421-7c7f-47c8-ac7e-7e3c5eb92ac1\"\n    }\n}",
+        "title": "DescribeUsageDetailList"
+      }
+    ],
+    "DescribeUsageSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsageSummaryList\n<公共请求参数>\n\n{\n    \"ResourceType\": 1,\n    \"TimeRange\": {\n        \"EndTime\": \"1786463999\",\n        \"StartTime\": \"1786377600\"\n    },\n    \"ViewScope\": {\n        \"ViewType\": 2,\n        \"ScopeId\": \"default_space\"\n    },\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": \"86\",\n        \"UsageSummaryList\": [\n            {\n                \"Model\": {\n                    \"CallCount\": 3200,\n                    \"IsDefaultKB\": false,\n                    \"ModelName\": \"hunyuan-turbo\",\n                    \"ResourceConsumptionList\": [\n                        {\n                            \"Label\": \"\",\n                            \"Unit\": 0,\n                            \"Value\": 25600000\n                        }\n                    ]\n                },\n                \"SourceId\": \"space_abc123\",\n                \"SourceName\": \"产品研发空间\",\n                \"ViewType\": 1\n            }\n        ],\n        \"RequestId\": \"b08c3f61-9655-4fa4-85bb-e35e14e289c4\"\n    }\n}",
+        "title": "DescribeUsageSummaryList"
       }
     ],
     "DescribeVariable": [

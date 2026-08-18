@@ -436,16 +436,16 @@
     ],
     "DescribeDBInstanceSSLConfig": [
       {
-        "document": "查询结果显示实例SSL信息",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hf8jo5pr\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"25cc2555-14a2-454f-af08-6bd691315335\",\n        \"SSLEnabled\": true,\n        \"CAUrl\": \"http://testdownload.url\",\n        \"ConnectAddress\": \"10.0.0.4\"\n    }\n}",
-        "title": "实例SSL处于开启状态"
-      },
-      {
         "document": "查询结果显示实例SSL关闭，无下载链接及保护地址信息",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-6bwgamo3\"\n}",
         "output": "{\n    \"Response\": {\n        \"CAUrl\": \"\",\n        \"ConnectAddress\": \"\",\n        \"RequestId\": \"042e21a5-14b2-4b41-8dd4-4cf870ae10bf\",\n        \"SSLEnabled\": false\n    }\n}",
         "title": "实例SSL处于关闭状态"
+      },
+      {
+        "document": "查询结果显示实例SSL信息",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hf8jo5pr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"25cc2555-14a2-454f-af08-6bd691315335\",\n        \"SSLEnabled\": true,\n        \"CAUrl\": \"http://testdownload.url\",\n        \"ConnectAddress\": \"10.0.0.4\"\n    }\n}",
+        "title": "实例SSL处于开启状态"
       }
     ],
     "DescribeDBInstanceSecurityGroups": [
