@@ -8617,7 +8617,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AIGC 生图任务的输出文件信息。",
+          "document": "<p>AIGC 生图任务的输出文件信息。</p>",
           "example": "无",
           "member": "AigcImageTaskOutputFileInfo",
           "name": "FileInfos",

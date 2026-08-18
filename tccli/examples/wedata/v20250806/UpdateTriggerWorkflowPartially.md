@@ -1,14 +1,23 @@
-**Example 1: 成功示例**
+**Example 1: 更新工作流成功**
 
-成功示例
+更新工作流成功
 
 Input: 
 
 ```
 tccli wedata UpdateTriggerWorkflowPartially --cli-unfold-argument  \
-    --ProjectId 1460947878944567296 \
-    --WorkflowId c6df7416-ee03-405e-adf1-094d26b8c98b \
-    --NewSetting.WorkflowName test_wk_3
+    --ProjectId 3310733480531783680 \
+    --WorkflowId 2248eb04-d812-4041-b3cb-2d20a602fc79 \
+    --NewSetting.TriggerWorkflowSchedulerConfigurations.0.ExtraInfo  \
+    --NewSetting.TriggerWorkflowSchedulerConfigurations.0.ConfigMode COMMON \
+    --NewSetting.TriggerWorkflowSchedulerConfigurations.0.TriggerId 33153442-9785-11f1-b20e-b8599fc0ab4a \
+    --NewSetting.TriggerWorkflowSchedulerConfigurations.0.FileArrivalPath cosn://dqtest8-251433363/ \
+    --NewSetting.TriggerWorkflowSchedulerConfigurations.0.FileNamePattern t1.csv \
+    --NewSetting.TriggerWorkflowSchedulerConfigurations.0.Recursive 1 \
+    --NewSetting.TriggerWorkflowRunConfiguration.MaxConcurrentNum 1 \
+    --NewSetting.TriggerWorkflowRunConfiguration.QueuingMode 1 \
+    --NewSetting.SchedulerStatus PAUSED \
+    --NewSetting.TriggerMode FILE_ARRIVAL
 ```
 
 Output: 
@@ -18,7 +27,7 @@ Output:
         "Data": {
             "Status": true
         },
-        "RequestId": "854f7e7d-9ff7-4a14-b439-54e02f281496"
+        "RequestId": "bad98336-674c-4eaa-8224-5ede55488f7c"
     }
 }
 ```

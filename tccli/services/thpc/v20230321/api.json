@@ -161,6 +161,13 @@
       "output": "DetachNodesResponse",
       "status": "online"
     },
+    "InquirePriceModifyWorkspacesChargeType": {
+      "document": "查询按量计费工作空间转换为包年包月的价格。不会创建订单或变更资源。",
+      "input": "InquirePriceModifyWorkspacesChargeTypeRequest",
+      "name": "询价工作空间转换计费模式",
+      "output": "InquirePriceModifyWorkspacesChargeTypeResponse",
+      "status": "online"
+    },
     "ModifyClusterDeletionProtection": {
       "document": "修改集群删除保护状态",
       "input": "ModifyClusterDeletionProtectionRequest",
@@ -187,6 +194,13 @@
       "input": "ModifyWorkspacesAttributeRequest",
       "name": "修改工作空间的属性",
       "output": "ModifyWorkspacesAttributeResponse",
+      "status": "online"
+    },
+    "ModifyWorkspacesChargeType": {
+      "document": "正式提交按量计费工作空间转包年包月订单。仅支持 ONLINE 且计费模式为 POSTPAID_BY_HOUR 的工作空间。",
+      "input": "ModifyWorkspacesChargeTypeRequest",
+      "name": "工作空间转换计费模式",
+      "output": "ModifyWorkspacesChargeTypeResponse",
       "status": "online"
     },
     "ModifyWorkspacesRenewFlag": {
@@ -3048,6 +3062,70 @@
       ],
       "usage": "out"
     },
+    "InquirePriceModifyWorkspacesChargeTypeRequest": {
+      "document": "InquirePriceModifyWorkspacesChargeType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间 ID 列表。每次请求的工作空间计费模式必须一致。</p>",
+          "example": "[\"wks-q8b3h7xt\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转换的目标计费模式。当前仅支持 PREPAID（按量计费转包年包月）。</p>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "SpaceChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否只进行参数和资源预检。true：不发起询价、组单或正式下单；false：执行对应操作。默认为 false。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费参数。Period 和 RenewFlag 均为可选字段；未传入时后端使用默认值 Period=1、RenewFlag=NOTIFY_AND_MANUAL_RENEW。</p>",
+          "example": "无",
+          "member": "SpaceChargePrepaid",
+          "name": "SpaceChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyWorkspacesChargeTypeResponse": {
+      "document": "InquirePriceModifyWorkspacesChargeType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该参数表示对应规格工作空间的价格</p>",
+          "example": "无",
+          "member": "Price",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstanceChargePrepaid": {
       "document": "描述了实例的计费模式",
       "members": [
@@ -3099,6 +3177,82 @@
         }
       ],
       "usage": "both"
+    },
+    "ItemPrice": {
+      "document": "描述了单项的价格信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预支合计费用的原价，预付费模式使用，单位：元。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预支合计费用的折扣价，预付费模式使用，单位：元。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
+          "member": "float",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20.0",
+          "member": "float",
+          "name": "Discount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后续合计费用的原价，后付费模式使用，单位：元。\n\n如返回了其他时间区间项，如UnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
+          "member": "float",
+          "name": "UnitPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后续合计费用的折扣价，后付费模式使用，单位：元\n\n如返回了其他时间区间项，如DiscountUnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
+          "member": "float",
+          "name": "DiscountUnitPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后续计价单元，后付费模式使用，可取值范围：\n\nHOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：\nGB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HOUR",
+          "member": "string",
+          "name": "ChargeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后续合计费用的折扣价，后付费模式使用，单位：元\n\n如返回了其他时间区间项，如UnitPriceDiscount\nfloat，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时",
+          "example": "100.0",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Job": {
       "document": "提交Job作业信息",
@@ -3660,6 +3814,60 @@
       ],
       "type": "object"
     },
+    "ModifyWorkspacesChargeTypeRequest": {
+      "document": "ModifyWorkspacesChargeType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间 ID 列表。每次请求的工作空间计费模式必须一致。</p>",
+          "example": "[\"wks-azkpgmz5\"]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转换的目标计费模式。当前仅支持 PREPAID（按量计费转包年包月）。</p>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "SpaceChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否只进行参数和资源预检。true：不发起询价、组单或正式下单；false：执行对应操作。默认为 false。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费参数。Period 和 RenewFlag 均为可选字段；未传入时后端使用默认值 Period=1、RenewFlag=NOTIFY_AND_MANUAL_RENEW。</p>",
+          "example": "无",
+          "member": "SpaceChargePrepaid",
+          "name": "SpaceChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkspacesChargeTypeResponse": {
+      "document": "ModifyWorkspacesChargeType返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyWorkspacesRenewFlagRequest": {
       "document": "ModifyWorkspacesRenewFlag请求参数结构体",
       "members": [
@@ -3940,6 +4148,32 @@
         }
       ],
       "usage": "both"
+    },
+    "Price": {
+      "document": "价格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间价格",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "SpacePrice",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络价格",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "BandwidthPrice",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "QueueConfig": {
       "document": "扩容队列配置。",

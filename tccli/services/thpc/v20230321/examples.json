@@ -184,6 +184,14 @@
         "title": "从集群解绑计算节点"
       }
     ],
+    "InquirePriceModifyWorkspacesChargeType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceModifyWorkspacesChargeType\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-q8b3h7xt\"\n    ],\n    \"SpaceChargeType\": \"PREPAID\",\n    \"SpaceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"SpacePrice\": {\n                \"Discount\": 100,\n                \"DiscountPrice\": 146171.22999999998,\n                \"OriginalPrice\": 146171.22999999998\n            }\n        },\n        \"RequestId\": \"faf63fd0-001b-4321-9f5e-99fa433bb83e\"\n    }\n}",
+        "title": "询价工作空间转换计费模式"
+      }
+    ],
     "ModifyClusterDeletionProtection": [
       {
         "document": "",
@@ -220,6 +228,14 @@
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspacesAttribute\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-gzut2d4n\"\n    ],\n    \"SpaceName\": \"Workspace\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbfa8866-7644-4181-806f-2334ea2da591\"\n    }\n}",
         "title": "修改工作空间的名称"
+      }
+    ],
+    "ModifyWorkspacesChargeType": [
+      {
+        "document": "按量转包年包月",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspacesChargeType\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-azkpgmz5\"\n    ],\n    \"SpaceChargeType\": \"PREPAID\",\n    \"DryRun\": false,\n    \"SpaceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f80f09b-f157-4ba6-9197-6622a1195c9a\"\n    }\n}",
+        "title": "工作空间转换计费模式"
       }
     ],
     "ModifyWorkspacesRenewFlag": [

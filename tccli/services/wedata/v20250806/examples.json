@@ -1700,14 +1700,20 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTriggerWorkflow\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowId\": \"c6df7416-ee03-405e-adf1-094d26b8c98b\",\n    \"WorkflowName\": \"test_wk_2\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"e213b6b0-385b-482d-ae96-3f1d0e81d944\"\n    }\n}",
         "title": "成功示例"
+      },
+      {
+        "document": "成功示例2",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTriggerWorkflow\n<公共请求参数>\n\n{\n    \"ProjectId\": \"31*6203***********0\",\n    \"WorkflowId\": \"90d110b4-79b4-4617-87f4-eee91a821fad\",\n    \"WorkflowName\": \"******_workflow_0729\",\n    \"OwnerUin\": \"*0****8936*1\",\n    \"WorkflowDesc\": \"1\",\n    \"WorkflowParams\": [],\n    \"TriggerWorkflowSchedulerConfigurations\": [\n        {\n            \"TriggerMode\": \"TIME_TRIGGER\",\n            \"ScheduleTimeZone\": \"UTC+8\",\n            \"StartTime\": \"2026-07-29 00:00:00\",\n            \"EndTime\": \"2099-12-31 23:59:59\",\n            \"ConfigMode\": \"COMMON\",\n            \"CycleType\": \"DAY_CYCLE\",\n            \"CrontabExpression\": \"0 0 0 * * ? *\",\n            \"TriggerId\": \"af1f5d11-8b49-11f1-9a90-0c42a11d9e4a\",\n            \"SchedulerStatus\": \"ACTIVE\"\n        }\n    ],\n    \"GeneralTaskParams\": [],\n    \"TriggerWorkflowRunConfiguration\": {\n        \"MaxConcurrentNum\": 1,\n        \"QueuingMode\": 1\n    },\n    \"SchedulerStatus\": \"ACTIVE\",\n    \"TriggerMode\": \"TIME_TRIGGER\",\n    \"ExecuteUserUin\": \"****01******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"dd582699-b79b-4fc7-a9aa-2b47e961dda0\"\n    }\n}",
+        "title": "成功示例2"
       }
     ],
     "UpdateTriggerWorkflowPartially": [
       {
-        "document": "成功示例",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTriggerWorkflowPartially\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowId\": \"c6df7416-ee03-405e-adf1-094d26b8c98b\",\n    \"NewSetting\": {\n        \"WorkflowName\": \"test_wk_3\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"854f7e7d-9ff7-4a14-b439-54e02f281496\"\n    }\n}",
-        "title": "成功示例"
+        "document": "更新工作流成功",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTriggerWorkflowPartially\n<公共请求参数>\n\n{\n    \"ProjectId\": \"3310733480531783680\",\n    \"WorkflowId\": \"2248eb04-d812-4041-b3cb-2d20a602fc79\",\n    \"NewSetting\": {\n        \"TriggerWorkflowSchedulerConfigurations\": [\n            {\n                \"ExtraInfo\": \"\",\n                \"ConfigMode\": \"COMMON\",\n                \"TriggerId\": \"33153442-9785-11f1-b20e-b8599fc0ab4a\",\n                \"FileArrivalPath\": \"cosn://dqtest8-251433363/\",\n                \"FileNamePattern\": \"t1.csv\",\n                \"Recursive\": 1\n            }\n        ],\n        \"TriggerWorkflowRunConfiguration\": {\n            \"MaxConcurrentNum\": 1,\n            \"QueuingMode\": 1\n        },\n        \"SchedulerStatus\": \"PAUSED\",\n        \"TriggerMode\": \"FILE_ARRIVAL\"\n    },\n    \"FieldToRemoveList\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"bad98336-674c-4eaa-8224-5ede55488f7c\"\n    }\n}",
+        "title": "更新工作流成功"
       }
     ],
     "UpdateWorkflow": [

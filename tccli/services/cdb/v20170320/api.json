@@ -6373,6 +6373,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>CDC集群ID，非CDC场景无需指定该入参</p>",
+          "example": "cluster-xxx",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群</p>",
           "example": "cage",
           "member": "string",

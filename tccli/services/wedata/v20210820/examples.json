@@ -2132,28 +2132,10 @@
     ],
     "ModifyProject": [
       {
-        "document": "modify project",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"DisplayName\": \"bs_test\",\n    \"Description\": \"bs_test\",\n    \"TaskSubmitApproval\": true,\n    \"ProjectId\": \"111111111111\",\n    \"ResourcePoolInfo\": {\n        \"ResourcePools\": [\n            \"1234455555\"\n        ],\n        \"StorageSize\": 0,\n        \"StorageFileNum\": 0,\n        \"ClusterId\": \"123123123123\",\n        \"StorageType\": \"123123123\"\n    },\n    \"ProjectManagers\": [\n        \"12312312312\"\n    ],\n    \"TaskStrictMode\": true,\n    \"ExtraOptions\": \"12312312\",\n    \"Model\": \"123123123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "样例"
-      },
-      {
-        "document": "modify project",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"TaskSubmitApproval\": \"true\",\n    \"ProjectId\": \"978203585769070592\",\n    \"DisplayName\": \"bs_test\",\n    \"Description\": \"bs_test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72fda28b-e1c8-4017-9fd0-a67c79178bde\"\n    }\n}",
-        "title": "modify project"
-      },
-      {
-        "document": "升级到标准模式",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"2082166847290601472\",\n    \"Model\": \"STANDARD\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"059e6ab7-b35c-42be-b1a6-cc0fc1329441\"\n    }\n}",
-        "title": "升级到标准模式"
-      },
-      {
-        "document": "modify project",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64f07492-8c96-4928-a06f-f37c61382e06\"\n    }\n}",
-        "title": "modify task script ready only"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"3327634653348638720\",\n    \"ExtraOptions\": \"{\\\"can_not_copy_sql\\\":true}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e93d700-ce95-47b5-a2dc-66b6150e446a\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "ModifyRule": [

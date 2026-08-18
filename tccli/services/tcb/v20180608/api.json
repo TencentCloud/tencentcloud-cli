@@ -8928,6 +8928,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>是否CNAME到平台任一网关入口，默认接入/CDN/EO，不含CustomCname</p><p>枚举值：</p><ul><li>EMPTY： 解析为空</li><li>OK： 命中</li><li>INVALID：  解析到其他非目标地址</li></ul>",
+          "example": "OK",
+          "member": "string",
+          "name": "PlatformCnameDNSStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>HTTP访问服务路由信息</p>",
           "example": "无",
           "member": "HTTPServiceRoute",
@@ -8948,7 +8958,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>域名创建时间</p>",
+          "document": "<p>域名创建时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>",
           "example": "2026-03-13T10:03:25+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -8958,7 +8968,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>域名更新时间</p>",
+          "document": "<p>域名更新时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>",
           "example": "2026-03-13T10:03:25+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
@@ -9203,7 +9213,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "路径",
+          "document": "<p>路径</p>",
           "example": "/api/v1",
           "member": "string",
           "name": "Path",
@@ -9213,7 +9223,7 @@
         },
         {
           "disabled": false,
-          "document": "路径重写",
+          "document": "<p>路径重写规则</p>",
           "example": "无",
           "member": "HTTPServicePathRewrite",
           "name": "PathRewrite",
@@ -9223,7 +9233,7 @@
         },
         {
           "disabled": false,
-          "document": "上游服务类型。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse",
+          "document": "<p>上游服务类型。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse</p>",
           "example": "CBR",
           "member": "string",
           "name": "UpstreamResourceType",
@@ -9233,7 +9243,7 @@
         },
         {
           "disabled": false,
-          "document": "上游服务名",
+          "document": "<p>上游服务名</p>",
           "example": "my-service",
           "member": "string",
           "name": "UpstreamResourceName",
@@ -9243,7 +9253,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启安全域名",
+          "document": "<p>是否开启安全域名</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableSafeDomain",
@@ -9253,7 +9263,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启身份认证",
+          "document": "<p>是否开启身份认证</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableAuth",
@@ -9263,7 +9273,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启路径透传",
+          "document": "<p>是否开启路径透传</p>",
           "example": "true",
           "member": "bool",
           "name": "EnablePathTransmission",
@@ -9273,7 +9283,7 @@
         },
         {
           "disabled": false,
-          "document": "QPS限频策略",
+          "document": "<p>QPS限频策略</p>",
           "example": "无",
           "member": "HTTPServiceRouteQPSPolicy",
           "name": "QPSPolicy",
@@ -9283,7 +9293,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启路由",
+          "document": "<p>是否开启路由</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -9293,7 +9303,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段，内部包含headers处理等",
+          "document": "<p>扩展字段，内部包含headers处理等</p>",
           "example": "无",
           "member": "HTTPServiceExtension",
           "name": "Extension",
@@ -9303,7 +9313,7 @@
         },
         {
           "disabled": false,
-          "document": "路由创建时间",
+          "document": "<p>路由创建时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>",
           "example": "2026-03-13T10:03:26+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -9313,7 +9323,7 @@
         },
         {
           "disabled": false,
-          "document": "路由更新时间",
+          "document": "<p>路由更新时间，格式  YYYY-MM-DDTHH:mm:ss±HH:mm，时区为 UTC+8</p>",
           "example": "2026-03-13T10:03:26+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",

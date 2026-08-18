@@ -164,6 +164,14 @@
         "title": "查询状态为NORMAL的定期快照策略"
       }
     ],
+    "DescribeDedicatedClusterDiskStatistics": [
+      {
+        "document": "查询CVM CDC集群云硬盘容量信息统计",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedClusterDiskStatistics\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bbe8a3ff-8874-4196-b152-dbc8d912b3dd\"\n    }\n}",
+        "title": "查询CVM CDC集群云硬盘容量信息统计"
+      }
+    ],
     "DescribeDiskAssociatedAutoSnapshotPolicy": [
       {
         "document": "通过云硬盘ID查询云硬盘绑定的定期快照策略",

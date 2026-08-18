@@ -17068,8 +17068,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>tcr情况下instance_id</p>",
-          "example": "1",
+          "document": "<p>TCR实例ID</p>",
+          "example": "tcr-xvz",
           "member": "string",
           "name": "InstanceID",
           "output_required": false,

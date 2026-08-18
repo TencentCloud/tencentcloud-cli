@@ -58361,6 +58361,104 @@
       ],
       "usage": "out"
     },
+    "VPRExplainDimension": {
+      "document": "VPR解释卡片中的单个维度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签key</p>",
+          "example": "asset_value",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签名称</p>",
+          "example": "资产价值",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签子项</p>",
+          "example": "无",
+          "member": "VPRExplainDimensionItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VPRExplainDimensionItem": {
+      "document": "VPR解释卡片中的单个标签项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "important",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签名称</p>",
+          "example": "核心:核心",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签描述</p>",
+          "example": "核心资产",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VPRExplainInfo": {
+      "document": "VPR评级解释卡片",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>漏洞情报</p>",
+          "example": "无",
+          "member": "VPRExplainDimension",
+          "name": "VulIntel",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产上下文</p>",
+          "example": "无",
+          "member": "VPRExplainDimension",
+          "name": "AssetContext",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VPRLabel": {
       "document": "漏洞VPR标签",
       "members": [
@@ -61131,7 +61229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "漏洞ID",
+          "document": "<p>漏洞ID</p>",
           "example": "10001",
           "member": "int64",
           "name": "VulId",
@@ -61141,7 +61239,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞名称",
+          "document": "<p>漏洞名称</p>",
           "example": "CVE-2024-12345",
           "member": "string",
           "name": "VulName",
@@ -61151,7 +61249,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞等级\n枚举值：\nLOW：低危\nMEDIUM：中危\nHIGH：高危\nCRITICAL：严重",
+          "document": "<p>漏洞等级<br>枚举值：<br>LOW：低危<br>MEDIUM：中危<br>HIGH：高危<br>CRITICAL：严重</p>",
           "example": "HIGH",
           "member": "string",
           "name": "Level",
@@ -61161,7 +61259,7 @@
         },
         {
           "disabled": false,
-          "document": "VPR 评级信息（包含评级结果、说明和分阶段评分），与 DescribeHostVulRiskList 一致",
+          "document": "<p>VPR 评级信息（包含评级结果、说明和分阶段评分），与 DescribeHostVulRiskList 一致</p>",
           "example": "无",
           "member": "VPRRatingInfo",
           "name": "VRPRatingInfo",
@@ -61171,7 +61269,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞类型\n枚举值：\nLINUX：Linux软件漏洞\nWINDOWS：Windows系统补丁漏洞\nWEB_CMS：Web-CMS漏洞\nAPPLICATION：应用漏洞\nEMERGENCY：应急漏洞",
+          "document": "<p>漏洞类型<br>枚举值：<br>LINUX：Linux软件漏洞<br>WINDOWS：Windows系统补丁漏洞<br>WEB_CMS：Web-CMS漏洞<br>APPLICATION：应用漏洞<br>EMERGENCY：应急漏洞</p>",
           "example": "LINUX",
           "member": "string",
           "name": "VulCategory",
@@ -61181,7 +61279,7 @@
         },
         {
           "disabled": false,
-          "document": "CVE编号",
+          "document": "<p>CVE编号</p>",
           "example": "CVE-2024-12345",
           "member": "string",
           "name": "CveId",
@@ -61191,7 +61289,7 @@
         },
         {
           "disabled": false,
-          "document": "修复主机名称",
+          "document": "<p>修复主机名称</p>",
           "example": "web-server-01",
           "member": "string",
           "name": "MachineName",
@@ -61201,7 +61299,7 @@
         },
         {
           "disabled": false,
-          "document": "修复主机实例ID",
+          "document": "<p>修复主机实例ID</p>",
           "example": "ins-abc12345",
           "member": "string",
           "name": "InstanceId",
@@ -61211,7 +61309,7 @@
         },
         {
           "disabled": false,
-          "document": "关联组件&路径数量",
+          "document": "<p>关联组件&amp;路径数量</p>",
           "example": "2",
           "member": "int64",
           "name": "ComponentCount",
@@ -61221,7 +61319,7 @@
         },
         {
           "disabled": false,
-          "document": "关联组件&路径列表",
+          "document": "<p>关联组件&amp;路径列表</p>",
           "example": "[\"openssl 1.1.1 /usr/lib/libssl.so\",\"openssl 1.1.1 /usr/bin/openssl\"]",
           "member": "string",
           "name": "Components",
@@ -61231,12 +61329,22 @@
         },
         {
           "disabled": false,
-          "document": "最近一次修复时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "document": "<p>最近一次修复时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
           "example": "2025-06-26T10:05:00+08:00",
           "member": "string",
           "name": "LatestFixTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPR评级依据</p>",
+          "example": "无",
+          "member": "VPRExplainInfo",
+          "name": "VPRExplainInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

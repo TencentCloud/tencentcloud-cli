@@ -43941,7 +43941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标修改的项目ID",
+          "document": "<p>目标修改的项目ID</p>",
           "example": "\"1426\"",
           "member": "string",
           "name": "ProjectId",
@@ -43950,7 +43950,7 @@
         },
         {
           "disabled": false,
-          "document": "项目显示名称，可以为中文名,需要租户范围内唯一",
+          "document": "<p>项目显示名称，可以为中文名,需要租户范围内唯一</p>",
           "example": "testpj",
           "member": "string",
           "name": "DisplayName",
@@ -43959,7 +43959,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "备注test",
           "member": "string",
           "name": "Description",
@@ -43968,7 +43968,7 @@
         },
         {
           "disabled": false,
-          "document": "true/false则修改，不带该参数不修改。",
+          "document": "<p>true/false则修改，不带该参数不修改。</p>",
           "example": "true",
           "member": "bool",
           "name": "TaskSubmitApproval",
@@ -43977,7 +43977,7 @@
         },
         {
           "disabled": false,
-          "document": "资源池信息",
+          "document": "<p>资源池信息</p>",
           "example": "无",
           "member": "ResourcePoolInfo",
           "name": "ResourcePoolInfo",
@@ -43986,7 +43986,7 @@
         },
         {
           "disabled": false,
-          "document": "项目管理员",
+          "document": "<p>项目管理员</p>",
           "example": "[\"1001\"]",
           "member": "string",
           "name": "ProjectManagers",
@@ -43995,7 +43995,7 @@
         },
         {
           "disabled": false,
-          "document": "调度任务严格模式",
+          "document": "<p>调度任务严格模式</p>",
           "example": "false",
           "member": "bool",
           "name": "TaskStrictMode",
@@ -44004,7 +44004,7 @@
         },
         {
           "disabled": false,
-          "document": "以后新增选项可以直接通过前端的json格式写入去实现",
+          "document": "<p>以后新增选项可以直接通过前端的json格式写入去实现</p>",
           "example": "\"无\"",
           "member": "string",
           "name": "ExtraOptions",
@@ -44013,7 +44013,7 @@
         },
         {
           "disabled": false,
-          "document": "项目类型，SIMPLE：简单模式 STANDARD：标准模式",
+          "document": "<p>项目类型，SIMPLE：简单模式 STANDARD：标准模式</p>",
           "example": "\"SIMPLE\"",
           "member": "string",
           "name": "Model",
@@ -44022,7 +44022,7 @@
         },
         {
           "disabled": false,
-          "document": "项目负责人",
+          "document": "<p>项目负责人</p>",
           "example": "[\"1001\"]",
           "member": "string",
           "name": "ProjectOwner",
@@ -44031,7 +44031,7 @@
         },
         {
           "disabled": false,
-          "document": "更新类型",
+          "document": "<p>更新类型</p>",
           "example": "gitConfig",
           "member": "string",
           "name": "ModifyType",
@@ -69131,7 +69131,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6c199238-5641-4fba-9bf2-91e2d2b0b471",
           "member": "string",
           "name": "WorkflowId",
@@ -69142,7 +69142,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>责任人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user",
           "member": "string",
           "name": "Owner",
@@ -69153,7 +69153,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>责任人ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100028538763",
           "member": "string",
           "name": "OwnerId",
@@ -69164,7 +69164,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1460726726769418240",
           "member": "string",
           "name": "ProjectId",
@@ -69175,7 +69175,7 @@
         },
         {
           "disabled": false,
-          "document": "项目标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ident",
           "member": "string",
           "name": "ProjectIdent",
@@ -69186,7 +69186,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>项目名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "auto_test",
           "member": "string",
           "name": "ProjectName",
@@ -69197,7 +69197,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "描述信息",
           "member": "string",
           "name": "WorkflowDesc",
@@ -69208,7 +69208,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "workflowName",
           "member": "string",
           "name": "WorkflowName",
@@ -69219,7 +69219,7 @@
         },
         {
           "disabled": false,
-          "document": "文件夹ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件夹ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6c199238-5641-4fba-9bf2-91e2d2b0b471",
           "member": "string",
           "name": "FolderId",
@@ -69230,7 +69230,7 @@
         },
         {
           "disabled": false,
-          "document": "SparkSQL参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SparkSQL参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "memory=100",
           "member": "string",
           "name": "SparkParams",
@@ -69241,7 +69241,7 @@
         },
         {
           "disabled": false,
-          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskDsDTO",
           "name": "Tasks",
@@ -69252,7 +69252,7 @@
         },
         {
           "disabled": false,
-          "document": "任务链接列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务链接列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskLinkDsDTO",
           "name": "Links",
@@ -69263,7 +69263,7 @@
         },
         {
           "disabled": false,
-          "document": "参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParameterTaskDsDto",
           "name": "Params",
@@ -69274,7 +69274,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流类型, 取值示例\n\n- cycle 周期工作流\n- manual 手动工作流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流类型, 取值示例</p><ul><li>cycle 周期工作流</li><li>manual 手动工作流</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cycle",
           "member": "string",
           "name": "WorkflowType",
@@ -69285,7 +69285,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最近更新人名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user",
           "member": "string",
           "name": "UpdateUser",
@@ -69296,7 +69296,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最近更新人id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100028578763",
           "member": "string",
           "name": "UpdateUserId",
@@ -69307,7 +69307,7 @@
         },
         {
           "disabled": false,
-          "document": "BundleId CI/CD工程生成的bundle唯一标识\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>BundleId CI/CD工程生成的bundle唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6c199238-5641-4fba-9bf2-91e2d2b0b471",
           "member": "string",
           "name": "BundleId",
@@ -69318,10 +69318,32 @@
         },
         {
           "disabled": false,
-          "document": "BundleId信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>BundleId信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"bundlePath\":\"/Workspace/Users/wedata-test7@tencent.com/.bundle/asdasd/prod/files/resources/workflow/bundle_example_workflow.yml\",\"bundleName\":\"asdasd\"}",
           "member": "string",
           "name": "BundleInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行账号ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "135797531",
+          "member": "string",
+          "name": "ExecuteUserUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行账号名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "student",
+          "member": "string",
+          "name": "ExecuteUserName",
           "output_required": false,
           "required": false,
           "type": "string",

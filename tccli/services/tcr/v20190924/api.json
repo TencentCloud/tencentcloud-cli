@@ -9337,7 +9337,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Token有效时间</p>",
+          "document": "<p>Token有效时间，单位：小时</p>",
           "example": "87600",
           "member": "uint64",
           "name": "TokenValidTime",
@@ -10939,7 +10939,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Tag名称",
+          "document": "<p>Tag名称</p>",
           "example": "4",
           "member": "string",
           "name": "TagName",
@@ -10949,7 +10949,7 @@
         },
         {
           "disabled": false,
-          "document": "制品的 ID",
+          "document": "<p>制品的 ID</p>",
           "example": "sha256:369a4a10ed88e84519de6d492049a9439d625b663c186edaf7f8b84a90170449",
           "member": "string",
           "name": "TagId",
@@ -10959,7 +10959,7 @@
         },
         {
           "disabled": false,
-          "document": "docker image 可以看到的id",
+          "document": "<p>docker image 可以看到的id</p>",
           "example": "sha256:0111d1811773a9e0f11fe99d068079bd9d3d7eb6f79694cf0574a1bad0922c7a",
           "member": "string",
           "name": "ImageId",
@@ -10969,7 +10969,7 @@
         },
         {
           "disabled": false,
-          "document": "大小",
+          "document": "<p>大小</p>",
           "example": "294 MB",
           "member": "string",
           "name": "Size",
@@ -10979,7 +10979,7 @@
         },
         {
           "disabled": false,
-          "document": "制品的创建时间",
+          "document": "<p>制品的创建时间</p>",
           "example": "2025-01-02 15:14:45 +0800 CST",
           "member": "string",
           "name": "CreationTime",
@@ -10989,7 +10989,7 @@
         },
         {
           "disabled": false,
-          "document": "制品创建至今时间长度",
+          "document": "<p>制品创建至今时间长度</p>",
           "example": "empty",
           "member": "string",
           "name": "DurationDays",
@@ -10999,7 +10999,7 @@
         },
         {
           "disabled": false,
-          "document": "标注的制品作者",
+          "document": "<p>标注的制品作者</p>",
           "example": "nico",
           "member": "string",
           "name": "Author",
@@ -11009,7 +11009,7 @@
         },
         {
           "disabled": false,
-          "document": "标注的制品平台",
+          "document": "<p>标注的制品平台</p>",
           "example": "arm64",
           "member": "string",
           "name": "Architecture",
@@ -11019,7 +11019,7 @@
         },
         {
           "disabled": false,
-          "document": "创建制品的 Docker 版本",
+          "document": "<p>创建制品的 Docker 版本</p>",
           "example": "Docker version 26.0.0, build 2ae903e",
           "member": "string",
           "name": "DockerVersion",
@@ -11029,7 +11029,7 @@
         },
         {
           "disabled": false,
-          "document": "标注的制品操作系统",
+          "document": "<p>标注的制品操作系统</p>",
           "example": "linux",
           "member": "string",
           "name": "OS",
@@ -11039,7 +11039,7 @@
         },
         {
           "disabled": false,
-          "document": "制品大小",
+          "document": "<p>制品大小，单位：Byte</p>",
           "example": "294736583",
           "member": "int64",
           "name": "SizeByte",
@@ -11049,7 +11049,7 @@
         },
         {
           "disabled": false,
-          "document": "序号",
+          "document": "<p>序号</p>",
           "example": "21118257",
           "member": "int64",
           "name": "Id",
@@ -11059,7 +11059,7 @@
         },
         {
           "disabled": false,
-          "document": "数据更新时间",
+          "document": "<p>数据更新时间</p>",
           "example": "2025-01-02 15:14:56 +0800 CST",
           "member": "string",
           "name": "UpdateTime",
@@ -11069,7 +11069,7 @@
         },
         {
           "disabled": false,
-          "document": "制品更新时间",
+          "document": "<p>制品更新时间</p>",
           "example": "2025-01-02 15:14:45 +0800 CST",
           "member": "string",
           "name": "PushTime",
@@ -11079,7 +11079,7 @@
         },
         {
           "disabled": false,
-          "document": "制品类型",
+          "document": "<p>制品类型</p>",
           "example": "Artifact::application/vnd.docker.distribution.manifest.v2+json",
           "member": "string",
           "name": "Kind",
