@@ -11,7 +11,8 @@ tccli postgres ModifyDBInstanceSpec --cli-unfold-argument  \
     --Storage 100 \
     --Cpu 1 \
     --SyncModifyParams.0.Name max_connections \
-    --SyncModifyParams.0.ExpectedValue 2048
+    --SyncModifyParams.0.ExpectedValue 2048 \
+    --CallerToken th***s******oken
 ```
 
 Output: 

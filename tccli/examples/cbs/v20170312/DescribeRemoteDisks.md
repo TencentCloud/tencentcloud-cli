@@ -1,22 +1,34 @@
 **Example 1: 按条件查询单副本SSD硬盘列表**
 
-按可用区和状态过滤查询单副本SSD硬盘。
+按状态过滤查询单副本SSD硬盘。
 
 Input: 
 
 ```
 tccli cbs DescribeRemoteDisks --cli-unfold-argument  \
-    --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-2 \
-    --Filters.1.Name remote-disk-state \
-    --Filters.1.Values ATTACHED
+    --Filters.0.Name remote-disk-state \
+    --Filters.0.Values ATTACHED
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d"
+        "RemoteDiskSet": [
+            {
+                "Placement": {
+                    "CageId": "",
+                    "CdcId": "",
+                    "CdcName": "",
+                    "DedicatedClusterId": "",
+                    "ProjectId": 0,
+                    "ProjectName": "",
+                    "Zone": "ap-guangzhou-2"
+                }
+            }
+        ],
+        "TotalCount": 2,
+        "RequestId": "55e81553-b057-4a64-8e63-590d84aa2d7f"
     }
 }
 ```
@@ -34,7 +46,21 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d"
+        "RemoteDiskSet": [
+            {
+                "Placement": {
+                    "CageId": "",
+                    "CdcId": "",
+                    "CdcName": "",
+                    "DedicatedClusterId": "",
+                    "ProjectId": 0,
+                    "ProjectName": "",
+                    "Zone": "ap-guangzhou-2"
+                }
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "b15edc0e-549d-4160-8796-78881ea55d48"
     }
 }
 ```

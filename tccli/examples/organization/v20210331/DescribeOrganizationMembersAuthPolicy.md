@@ -25,7 +25,8 @@ Output:
                 "OrgSubAccountName": "test001",
                 "OrgSubAccountUin": 222222222222,
                 "PolicyId": 111,
-                "PolicyName": "pocy01131027"
+                "PolicyName": "pocy01131027",
+                "BindType": 1
             }
         ],
         "Total": 1,

@@ -1418,20 +1418,20 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "warehouse-7y9wfplk",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "账号名称",
           "example": "test2222",
           "member": "string",
           "name": "UserName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "warehouse-7y9wfplk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
           "type": "string"
         },
         {

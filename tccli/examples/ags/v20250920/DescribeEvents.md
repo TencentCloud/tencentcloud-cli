@@ -1,18 +1,14 @@
 **Example 1: 查询事件列表**
 
-
+查询指定会话空间下的指定会话事件列表。
 
 Input: 
 
 ```
 tccli ags DescribeEvents --cli-unfold-argument  \
-    --AgentId rocz-test-agent-0706v1 \
-    --UserId 0001 \
-    --SessionId strands-calc1-20e007ae \
-    --Author assistant \
-    --AfterTimestamp 2026-07-07T11:30:01.53Z \
-    --Offset 0 \
-    --Limit 1
+    --SpaceId space-198577ac-324e-4e1b-bfda-f75a2365c9df \
+    --UserId customer-32874234 \
+    --SessionId 9e527749-0313-4871-85dc-4b9055561c06
 ```
 
 Output: 
@@ -22,25 +18,28 @@ Output:
         "Events": [
             {
                 "Actions": {
-                    "StateDelta": "null"
+                    "StateDelta": "{\"currentTask\":\"refund_status_lookup\",\"user:lastChannel\":\"web\"}"
                 },
-                "Author": "assistant",
+                "Author": "user",
                 "Content": {
                     "Parts": [
                         {
-                            "Text": "Now let me add 902:"
+                            "FunctionCall": "null",
+                            "FunctionResponse": "null",
+                            "Text": "Please help me check the refund status for my order."
                         }
                     ],
-                    "Role": "model"
+                    "Role": "user"
                 },
-                "EventId": "05e05278-c798-45d6-bee7-43747f9c83d6",
-                "Extensions": "{\"strands\":{\"agent_id\":\"rocz-test-agent-0706v1\",\"kind\":\"session_message\",\"message_id\":7,\"session_message\":{\"created_at\":\"2026-07-07T11:30:06.023646+00:00\",\"message\":{\"content\":[{\"text\":\"Now let me add 902:\"},{\"toolUse\":{\"input\":{\"a\":33512972,\"b\":902},\"name\":\"add\",\"toolUseId\":\"call_00_7Dawl47iOHcfm2vQdDUx4716\"}}],\"metadata\":{\"metrics\":{\"latencyMs\":0,\"timeToFirstByteMs\":1257},\"usage\":{\"cacheReadInputTokens\":640,\"inputTokens\":854,\"outputTokens\":85,\"totalTokens\":939}},\"role\":\"assistant\"},\"message_id\":7,\"redact_message\":null,\"updated_at\":\"2026-07-07T11:30:06.023673+00:00\"}}}",
-                "InvocationId": "cb91cab5-fcbf-4bf3-9a1d-996e82e2a918",
-                "Timestamp": "2026-07-07T11:30:06.389Z"
+                "EventId": "event-refund-status-20260817-0001",
+                "Extensions": "{\"Source\":\"customer-portal\"}",
+                "InvocationId": "invocation-order-assistance-20260817-0001",
+                "Metadata": "{\"Channel\":\"web\",\"TurnComplete\":true}",
+                "Timestamp": "2026-08-17T09:28:54.216Z"
             }
         ],
-        "TotalCount": 2,
-        "RequestId": "2f9047ca-8064-4ce0-a32e-be1d01341520"
+        "TotalCount": 1,
+        "RequestId": "909e1ece-2cea-426f-ad67-d98b0393c676"
     }
 }
 ```

@@ -16,8 +16,8 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnCode": "abc",
-            "ReturnMessage": "abc",
+            "ReturnCode": "0",
+            "ReturnMessage": "delete group offset succeed.",
             "Data": {
                 "FlowId": 0,
                 "RouteDTO": {
@@ -25,7 +25,7 @@ Output:
                 }
             }
         },
-        "RequestId": "abc"
+        "RequestId": "20e995ed-75b9-43bb-84c0-35676567e1a8"
     }
 }
 ```

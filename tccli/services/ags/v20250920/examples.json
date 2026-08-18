@@ -26,10 +26,10 @@
     ],
     "AppendEvent": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AppendEvent\n<公共请求参数>\n\n{\n    \"AgentId\": \"rocz-test-agent-0706v1\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"strands-calc1-20e007ae\",\n    \"Event\": {\n        \"EventId\": \"e-t001\",\n        \"InvocationId\": \"i-t001\",\n        \"Author\": \"user\",\n        \"Content\": {\n            \"Role\": \"user\",\n            \"Parts\": [\n                {\n                    \"Text\": \"hello \",\n                    \"Thought\": true,\n                    \"FunctionCall\": \"{\\\"k\\\":\\\"v\\\"}\",\n                    \"FunctionResponse\": \"{\\\"k\\\":\\\"v\\\"}\",\n                    \"InlineData\": {\n                        \"MimeType\": \"text\",\n                        \"Data\": \"dGVzdAo=\"\n                    }\n                }\n            ]\n        },\n        \"Actions\": {\n            \"StateDelta\": \"{\\\"k\\\":\\\"v\\\"}\"\n        },\n        \"Metadata\": \"{\\\"k\\\":\\\"v\\\"}\",\n        \"Extensions\": \"{\\\"k\\\":\\\"v\\\"}\",\n        \"ErrorCode\": \"503\",\n        \"ErrorMessage\": \"timeout\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Event\": {\n            \"Actions\": {\n                \"StateDelta\": \"{\\\"k\\\":\\\"v\\\"}\"\n            },\n            \"Author\": \"user\",\n            \"Content\": {\n                \"Parts\": [\n                    {\n                        \"FunctionCall\": \"{\\\"Name\\\":\\\"\\\",\\\"Args\\\":null}\",\n                        \"FunctionResponse\": \"{\\\"Name\\\":\\\"\\\",\\\"Response\\\":null}\",\n                        \"Text\": \"hello \",\n                        \"Thought\": true\n                    }\n                ],\n                \"Role\": \"user\"\n            },\n            \"ErrorCode\": \"503\",\n            \"ErrorMessage\": \"timeout\",\n            \"EventId\": \"e-t001\",\n            \"Extensions\": \"{\\\"k\\\":\\\"v\\\"}\",\n            \"InvocationId\": \"i-t001\",\n            \"Metadata\": \"{\\\"k\\\":\\\"v\\\"}\",\n            \"Timestamp\": \"2026-07-08T06:27:42.997Z\"\n        },\n        \"RequestId\": \"782c656b-c216-4ae4-8114-bf431a5b2a9e\"\n    }\n}",
-        "title": "新建 Event "
+        "document": "向指定的订单协助会话追加用户退款状态查询事件，同时更新当前任务和用户最近访问渠道等状态信息。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AppendEvent\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\",\n    \"Event\": {\n        \"EventId\": \"event-user-message-20260817-0001\",\n        \"InvocationId\": \"invocation-order-assistance-20260817-0001\",\n        \"Author\": \"user\",\n        \"Content\": {\n            \"Role\": \"user\",\n            \"Parts\": [\n                {\n                    \"Text\": \"Please help me check the refund status for my order.\"\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Event\": {\n            \"Author\": \"user\",\n            \"Content\": {\n                \"Parts\": [\n                    {\n                        \"FunctionCall\": \"null\",\n                        \"FunctionResponse\": \"null\",\n                        \"Text\": \"Please help me check the refund status for my order.\"\n                    }\n                ],\n                \"Role\": \"user\"\n            },\n            \"EventId\": \"event-user-message-20260817-0001\",\n            \"InvocationId\": \"invocation-order-assistance-20260817-0001\",\n            \"Timestamp\": \"2026-08-17T09:08:09.463Z\"\n        },\n        \"RequestId\": \"dd3bdbb7-1093-4a91-a708-2ba848f8a960\"\n    }\n}",
+        "title": "追加事件"
       }
     ],
     "CompleteOAuth2AccessTokenAuth": [
@@ -96,10 +96,18 @@
     ],
     "CreateSession": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"AgentId\": \"rocz-test-agent-0706v1\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"strands-calc1-20e007ae\",\n    \"Title\": \"TestTitle\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"AgentId\": \"rocz-test-agent-0706v1\",\n            \"AgentName\": \"rocz-test-agent-0706v1\",\n            \"CreateTime\": \"2026-07-07T11:28:00Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"strands-calc1-20e007ae\",\n            \"State\": {\n                \"CustomState\": \"{\\\"k\\\":\\\"v\\\",\\\"strands:agents:rocz-test-agent-0706v1\\\":{\\\"_internal_state\\\":{\\\"interrupt_state\\\":{\\\"activated\\\":false,\\\"context\\\":{},\\\"interrupts\\\":{}},\\\"model_state\\\":{}},\\\"agent_id\\\":\\\"rocz-test-agent-0706v1\\\",\\\"conversation_manager_state\\\":{\\\"__name__\\\":\\\"SlidingWindowConversationManager\\\",\\\"model_call_count\\\":0,\\\"removed_message_count\\\":0},\\\"created_at\\\":\\\"2026-07-07T11:30:07.250313+00:00\\\",\\\"state\\\":{},\\\"updated_at\\\":\\\"2026-07-07T11:30:07.250335+00:00\\\"},\\\"strands:session\\\":{\\\"created_at\\\":\\\"2026-07-07T11:27:59.572348+00:00\\\",\\\"session_id\\\":\\\"strands-calc1-20e007ae\\\",\\\"session_type\\\":\\\"AGENT\\\",\\\"updated_at\\\":\\\"2026-07-07T11:27:59.572360+00:00\\\"}}\"\n            },\n            \"Title\": \"Strands session strands-calc1-20e007ae\",\n            \"UpdateTime\": \"2026-07-08T06:27:42Z\",\n            \"UserId\": \"0001\"\n        },\n        \"RequestId\": \"3070cf7d-5f10-4d61-9d55-1ba9cd9aea45\"\n    }\n}",
-        "title": "创建 Session"
+        "document": "在指定会话空间中创建会话，记录初始标题及用户语言等会话状态。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\",\n    \"Title\": \"Order refund assistance\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-08-17T08:15:18Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"session-order-assistance-20260817-0001\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Title\": \"Order refund assistance\",\n            \"UpdateTime\": \"2026-08-17T08:15:18Z\",\n            \"UserId\": \"customer-32874915\"\n        },\n        \"RequestId\": \"e549dab5-9f94-42b4-8549-ed96c082d501\"\n    }\n}",
+        "title": "创建会话"
+      }
+    ],
+    "CreateSessionSpace": [
+      {
+        "document": "为生产环境的客服应用创建独立会话空间，用于隔离会话、事件和用户状态数据。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSessionSpace\n<公共请求参数>\n\n{\n    \"Name\": \"Customer Service Production Space\",\n    \"Description\": \"Stores sessions for the production customer service application.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpace\": {\n            \"CreateTime\": \"2026-08-17T03:35:11.868Z\",\n            \"Default\": false,\n            \"Description\": \"Stores sessions for the production customer service application.\",\n            \"Name\": \"Customer Service Production Space\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Status\": \"Active\",\n            \"UpdateTime\": \"2026-08-17T03:35:11.868Z\"\n        },\n        \"RequestId\": \"5bf9b472-8e6d-453f-ab2f-f2b7c332fc5c\"\n    }\n}",
+        "title": "创建生产环境会话空间"
       }
     ],
     "CreateWorkloadAccessTokenForUserId": [
@@ -160,10 +168,18 @@
     ],
     "DeleteSession": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSession\n<公共请求参数>\n\n{\n    \"AgentId\": \"ae-test\",\n    \"UserId\": \"u_8697b7b61a4d2d3e678f\",\n    \"SessionId\": \"s-1782974067962-owicgz\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f147e945-f2cf-4500-abcf-d11eccb0daf7\"\n    }\n}",
-        "title": "删除指定会话"
+        "document": "删除指定会话空间下的指定会话。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"afdb8139-1c10-475b-876d-6b8d791a8a2e\"\n    }\n}",
+        "title": "删除会话"
+      }
+    ],
+    "DeleteSessionSpace": [
+      {
+        "document": "删除不再使用且不包含任何会话、事件或用户状态数据的普通会话空间。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSessionSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-22eed49f-e3ae-4b4a-8efa-4cd961bf4764\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34b2cdc8-973c-4990-a1d9-614113e08f4f\"\n    }\n}",
+        "title": "删除空的非默认会话空间"
       }
     ],
     "DescribeAPIKeyList": [
@@ -240,9 +256,9 @@
     ],
     "DescribeEvents": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"AgentId\": \"rocz-test-agent-0706v1\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"strands-calc1-20e007ae\",\n    \"Author\": \"assistant\",\n    \"AfterTimestamp\": \"2026-07-07T11:30:01.53Z\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Actions\": {\n                    \"StateDelta\": \"null\"\n                },\n                \"Author\": \"assistant\",\n                \"Content\": {\n                    \"Parts\": [\n                        {\n                            \"Text\": \"Now let me add 902:\"\n                        }\n                    ],\n                    \"Role\": \"model\"\n                },\n                \"EventId\": \"05e05278-c798-45d6-bee7-43747f9c83d6\",\n                \"Extensions\": \"{\\\"strands\\\":{\\\"agent_id\\\":\\\"rocz-test-agent-0706v1\\\",\\\"kind\\\":\\\"session_message\\\",\\\"message_id\\\":7,\\\"session_message\\\":{\\\"created_at\\\":\\\"2026-07-07T11:30:06.023646+00:00\\\",\\\"message\\\":{\\\"content\\\":[{\\\"text\\\":\\\"Now let me add 902:\\\"},{\\\"toolUse\\\":{\\\"input\\\":{\\\"a\\\":33512972,\\\"b\\\":902},\\\"name\\\":\\\"add\\\",\\\"toolUseId\\\":\\\"call_00_7Dawl47iOHcfm2vQdDUx4716\\\"}}],\\\"metadata\\\":{\\\"metrics\\\":{\\\"latencyMs\\\":0,\\\"timeToFirstByteMs\\\":1257},\\\"usage\\\":{\\\"cacheReadInputTokens\\\":640,\\\"inputTokens\\\":854,\\\"outputTokens\\\":85,\\\"totalTokens\\\":939}},\\\"role\\\":\\\"assistant\\\"},\\\"message_id\\\":7,\\\"redact_message\\\":null,\\\"updated_at\\\":\\\"2026-07-07T11:30:06.023673+00:00\\\"}}}\",\n                \"InvocationId\": \"cb91cab5-fcbf-4bf3-9a1d-996e82e2a918\",\n                \"Timestamp\": \"2026-07-07T11:30:06.389Z\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"2f9047ca-8064-4ce0-a32e-be1d01341520\"\n    }\n}",
+        "document": "查询指定会话空间下的指定会话事件列表。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874234\",\n    \"SessionId\": \"9e527749-0313-4871-85dc-4b9055561c06\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Actions\": {\n                    \"StateDelta\": \"{\\\"currentTask\\\":\\\"refund_status_lookup\\\",\\\"user:lastChannel\\\":\\\"web\\\"}\"\n                },\n                \"Author\": \"user\",\n                \"Content\": {\n                    \"Parts\": [\n                        {\n                            \"FunctionCall\": \"null\",\n                            \"FunctionResponse\": \"null\",\n                            \"Text\": \"Please help me check the refund status for my order.\"\n                        }\n                    ],\n                    \"Role\": \"user\"\n                },\n                \"EventId\": \"event-refund-status-20260817-0001\",\n                \"Extensions\": \"{\\\"Source\\\":\\\"customer-portal\\\"}\",\n                \"InvocationId\": \"invocation-order-assistance-20260817-0001\",\n                \"Metadata\": \"{\\\"Channel\\\":\\\"web\\\",\\\"TurnComplete\\\":true}\",\n                \"Timestamp\": \"2026-08-17T09:28:54.216Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"909e1ece-2cea-426f-ad67-d98b0393c676\"\n    }\n}",
         "title": "查询事件列表"
       }
     ],
@@ -288,18 +304,34 @@
     ],
     "DescribeSession": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSession\n<公共请求参数>\n\n{\n    \"AgentId\": \"ae-test\",\n    \"UserId\": \"u_8697b7b61a4d2d3e678f\",\n    \"SessionId\": \"s-1782874989487-b38jan\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"AgentId\": \"ae-test\",\n            \"AgentName\": \"ae-test\",\n            \"CreateTime\": \"2026-07-02T11:59:57Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"s-1782874989487-b38jan\",\n            \"Title\": \"会话测试\",\n            \"UpdateTime\": \"2026-07-02T11:59:57Z\",\n            \"UserId\": \"u_8697b7b61a4d2d3e678f\"\n        },\n        \"RequestId\": \"74bef511-5b34-4a8a-925f-04592b3ed083\"\n    }\n}",
-        "title": "查询会话详情"
+        "document": "根据会话空间 ID、用户 ID 和会话 ID，查询指定会话的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-08-17T08:15:18Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"session-order-assistance-20260817-0001\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Title\": \"Order refund assistance\",\n            \"UpdateTime\": \"2026-08-17T08:15:18Z\",\n            \"UserId\": \"customer-32874915\"\n        },\n        \"RequestId\": \"82581530-d12d-40b2-8e11-9f3c308367c7\"\n    }\n}",
+        "title": "查询指定会话详情"
+      }
+    ],
+    "DescribeSessionSpace": [
+      {
+        "document": "根据会话空间 ID 查询生产客服会话空间的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpace\": {\n            \"CreateTime\": \"2026-08-17T03:35:11.868Z\",\n            \"Default\": false,\n            \"Description\": \"Stores sessions for the production customer service application.\",\n            \"Name\": \"Customer Service Production Space\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Status\": \"Active\",\n            \"UpdateTime\": \"2026-08-17T03:35:11.868Z\"\n        },\n        \"RequestId\": \"7764a908-369a-4bab-8ffb-6446c86b54d6\"\n    }\n}",
+        "title": "查询指定会话空间详情"
+      }
+    ],
+    "DescribeSessionSpaces": [
+      {
+        "document": "查询当前应用及地域下的会话空间列表，每页返回 20 条数据。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionSpaces\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpaces\": [\n            {\n                \"CreateTime\": \"2026-08-17T03:51:17.608Z\",\n                \"Default\": false,\n                \"Description\": \"Reserved for sessions generated during a seasonal marketing campaign.\",\n                \"Name\": \"Seasonal Campaign Temporary Space\",\n                \"SpaceId\": \"space-22eed49f-e3ae-4b4a-8efa-4cd961bf4764\",\n                \"Status\": \"Active\",\n                \"UpdateTime\": \"2026-08-17T03:51:17.608Z\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"9d08f066-c47e-4e5d-ae9c-a51d7edf01a6\"\n    }\n}",
+        "title": "分页查询会话空间"
       }
     ],
     "DescribeSessions": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessions\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Sessions\": [\n            {\n                \"AgentId\": \"roc-test\",\n                \"AgentName\": \"roc-test\",\n                \"CreateTime\": \"2026-07-03T03:38:32Z\",\n                \"EventCount\": 4,\n                \"SessionId\": \"s-1783049906698-z7iyl7\",\n                \"Title\": \"echo hi\",\n                \"UpdateTime\": \"2026-07-03T03:38:32Z\",\n                \"UserId\": \"u_8697b7b61a4d2d3e678f\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"15b91e12-2c2a-4ecd-bdf3-4fd3c84b4bac\"\n    }\n}",
-        "title": "查询 Session 列表"
+        "document": "查询指定会话空间中的会话列表。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessions\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Sessions\": [\n            {\n                \"CreateTime\": \"2026-08-17T08:15:18Z\",\n                \"EventCount\": 0,\n                \"SessionId\": \"session-order-assistance-20260817-0001\",\n                \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n                \"Title\": \"Order refund assistance after update\",\n                \"UpdateTime\": \"2026-08-17T08:45:02Z\",\n                \"UserId\": \"customer-32874915\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"1012d8c4-3e85-400e-8863-5e9f1b76556c\"\n    }\n}",
+        "title": "查询指定空间会话列表"
       }
     ],
     "ModifyAgent": [
@@ -326,11 +358,19 @@
         "title": "修改 ExecutionRuntime"
       }
     ],
+    "ModifySessionSpace": [
+      {
+        "document": "调整会话空间名称和描述，使其覆盖订单、退款及售后业务场景。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySessionSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-75ef3dc0-8523-4e5c-81e3-57ff8a453c7a\",\n    \"Name\": \"Order and After-Sales Service Space\",\n    \"Description\": \"Stores sessions for order, refund, and after-sales service workflows.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpace\": {\n            \"CreateTime\": \"2026-08-17T03:50:59.655Z\",\n            \"Default\": false,\n            \"Description\": \"Stores sessions for order, refund, and after-sales service workflows.\",\n            \"Name\": \"Order and After-Sales Service Space\",\n            \"SpaceId\": \"space-75ef3dc0-8523-4e5c-81e3-57ff8a453c7a\",\n            \"Status\": \"Active\",\n            \"UpdateTime\": \"2026-08-17T06:08:18.127Z\"\n        },\n        \"RequestId\": \"accebb0a-563d-43a5-ac93-f2f5ce5ae943\"\n    }\n}",
+        "title": "修改会话空间信息"
+      }
+    ],
     "ModifySessionTitle": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySessionTitle\n<公共请求参数>\n\n{\n    \"AgentId\": \"rocz-test-agent-0706v1\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"strands-calc1-isolated-ba854acb\",\n    \"Title\": \"New Title\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"AgentId\": \"rocz-test-agent-0706v1\",\n            \"AgentName\": \"rocz-test-agent-0706v1\",\n            \"CreateTime\": \"2026-07-07T08:43:37Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"strands-calc1-isolated-ba854acb\",\n            \"State\": {\n                \"CustomState\": \"{\\\"agentengine:agents:default\\\":{\\\"framework\\\":\\\"strands\\\",\\\"framework_state\\\":{\\\"strands\\\":{\\\"_internal_state\\\":{\\\"interrupt_state\\\":{\\\"activated\\\":false,\\\"context\\\":{},\\\"interrupts\\\":{}},\\\"model_state\\\":{}},\\\"agent_id\\\":\\\"default\\\",\\\"conversation_manager_state\\\":{\\\"__name__\\\":\\\"SlidingWindowConversationManager\\\",\\\"model_call_count\\\":0,\\\"removed_message_count\\\":0},\\\"created_at\\\":\\\"2026-07-07T08:43:39.070250+00:00\\\",\\\"state\\\":{},\\\"updated_at\\\":\\\"2026-07-07T08:43:39.070278+00:00\\\"}}},\\\"agentengine:session\\\":{\\\"framework\\\":\\\"strands\\\",\\\"framework_state\\\":{\\\"strands\\\":{\\\"created_at\\\":\\\"2026-07-07T08:43:36.568761+00:00\\\",\\\"session_id\\\":\\\"strands-calc1-isolated-ba854acb\\\",\\\"session_type\\\":\\\"AGENT\\\",\\\"updated_at\\\":\\\"2026-07-07T08:43:36.568778+00:00\\\"}},\\\"schema_version\\\":\\\"v1\\\"}}\"\n            },\n            \"Title\": \"New Title\",\n            \"UpdateTime\": \"2026-07-08T06:41:22Z\",\n            \"UserId\": \"0001\"\n        },\n        \"RequestId\": \"70470e40-29da-4ee9-a7b9-5c641c27973d\"\n    }\n}",
+        "document": "修改指定会话的标题。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySessionTitle\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\",\n    \"Title\": \"Order refund assistance after update\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-08-17T08:15:18Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"session-order-assistance-20260817-0001\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Title\": \"Order refund assistance after update\",\n            \"UpdateTime\": \"2026-08-17T08:45:02Z\",\n            \"UserId\": \"customer-32874915\"\n        },\n        \"RequestId\": \"5f5c6054-42c6-4137-bfcd-3aceb8611a38\"\n    }\n}",
         "title": "修改会话标题"
       }
     ],

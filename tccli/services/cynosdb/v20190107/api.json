@@ -34271,7 +34271,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RollbackId",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {

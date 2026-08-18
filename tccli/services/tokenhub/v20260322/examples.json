@@ -144,6 +144,14 @@
         "title": "DescribeModelList"
       }
     ],
+    "DescribeModelQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelQuota\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f6c89c0-b82c-4e4d-9f39-11d27eb449ca\"\n    }\n}",
+        "title": "正常响应"
+      }
+    ],
     "DescribeTokenPlan": [
       {
         "document": "测试查询 TokenPlan 套餐详情",

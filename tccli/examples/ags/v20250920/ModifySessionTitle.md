@@ -1,15 +1,15 @@
 **Example 1: 修改会话标题**
 
-
+修改指定会话的标题。
 
 Input: 
 
 ```
 tccli ags ModifySessionTitle --cli-unfold-argument  \
-    --AgentId rocz-test-agent-0706v1 \
-    --UserId 0001 \
-    --SessionId strands-calc1-isolated-ba854acb \
-    --Title New Title
+    --SpaceId space-198577ac-324e-4e1b-bfda-f75a2365c9df \
+    --UserId customer-32874915 \
+    --SessionId session-order-assistance-20260817-0001 \
+    --Title Order refund assistance after update
 ```
 
 Output: 
@@ -17,19 +17,15 @@ Output:
 {
     "Response": {
         "Session": {
-            "AgentId": "rocz-test-agent-0706v1",
-            "AgentName": "rocz-test-agent-0706v1",
-            "CreateTime": "2026-07-07T08:43:37Z",
+            "CreateTime": "2026-08-17T08:15:18Z",
             "EventCount": 0,
-            "SessionId": "strands-calc1-isolated-ba854acb",
-            "State": {
-                "CustomState": "{\"agentengine:agents:default\":{\"framework\":\"strands\",\"framework_state\":{\"strands\":{\"_internal_state\":{\"interrupt_state\":{\"activated\":false,\"context\":{},\"interrupts\":{}},\"model_state\":{}},\"agent_id\":\"default\",\"conversation_manager_state\":{\"__name__\":\"SlidingWindowConversationManager\",\"model_call_count\":0,\"removed_message_count\":0},\"created_at\":\"2026-07-07T08:43:39.070250+00:00\",\"state\":{},\"updated_at\":\"2026-07-07T08:43:39.070278+00:00\"}}},\"agentengine:session\":{\"framework\":\"strands\",\"framework_state\":{\"strands\":{\"created_at\":\"2026-07-07T08:43:36.568761+00:00\",\"session_id\":\"strands-calc1-isolated-ba854acb\",\"session_type\":\"AGENT\",\"updated_at\":\"2026-07-07T08:43:36.568778+00:00\"}},\"schema_version\":\"v1\"}}"
-            },
-            "Title": "New Title",
-            "UpdateTime": "2026-07-08T06:41:22Z",
-            "UserId": "0001"
+            "SessionId": "session-order-assistance-20260817-0001",
+            "SpaceId": "space-198577ac-324e-4e1b-bfda-f75a2365c9df",
+            "Title": "Order refund assistance after update",
+            "UpdateTime": "2026-08-17T08:45:02Z",
+            "UserId": "customer-32874915"
         },
-        "RequestId": "70470e40-29da-4ee9-a7b9-5c641c27973d"
+        "RequestId": "5f5c6054-42c6-4137-bfcd-3aceb8611a38"
     }
 }
 ```

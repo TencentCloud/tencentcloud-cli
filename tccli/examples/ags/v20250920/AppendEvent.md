@@ -1,29 +1,19 @@
-**Example 1: 新建 Event **
+**Example 1: 追加事件**
 
-
+向指定的订单协助会话追加用户退款状态查询事件，同时更新当前任务和用户最近访问渠道等状态信息。
 
 Input: 
 
 ```
 tccli ags AppendEvent --cli-unfold-argument  \
-    --AgentId rocz-test-agent-0706v1 \
-    --UserId 0001 \
-    --SessionId strands-calc1-20e007ae \
-    --Event.EventId e-t001 \
-    --Event.InvocationId i-t001 \
+    --SpaceId space-198577ac-324e-4e1b-bfda-f75a2365c9df \
+    --UserId customer-32874915 \
+    --SessionId session-order-assistance-20260817-0001 \
+    --Event.EventId event-user-message-20260817-0001 \
+    --Event.InvocationId invocation-order-assistance-20260817-0001 \
     --Event.Author user \
     --Event.Content.Role user \
-    --Event.Content.Parts.0.Text hello  \
-    --Event.Content.Parts.0.Thought True \
-    --Event.Content.Parts.0.FunctionCall {"k":"v"} \
-    --Event.Content.Parts.0.FunctionResponse {"k":"v"} \
-    --Event.Content.Parts.0.InlineData.MimeType text \
-    --Event.Content.Parts.0.InlineData.Data dGVzdAo= \
-    --Event.Actions.StateDelta {"k":"v"} \
-    --Event.Metadata {"k":"v"} \
-    --Event.Extensions {"k":"v"} \
-    --Event.ErrorCode 503 \
-    --Event.ErrorMessage timeout
+    --Event.Content.Parts.0.Text Please help me check the refund status for my order.
 ```
 
 Output: 
@@ -31,30 +21,22 @@ Output:
 {
     "Response": {
         "Event": {
-            "Actions": {
-                "StateDelta": "{\"k\":\"v\"}"
-            },
             "Author": "user",
             "Content": {
                 "Parts": [
                     {
-                        "FunctionCall": "{\"Name\":\"\",\"Args\":null}",
-                        "FunctionResponse": "{\"Name\":\"\",\"Response\":null}",
-                        "Text": "hello ",
-                        "Thought": true
+                        "FunctionCall": "null",
+                        "FunctionResponse": "null",
+                        "Text": "Please help me check the refund status for my order."
                     }
                 ],
                 "Role": "user"
             },
-            "ErrorCode": "503",
-            "ErrorMessage": "timeout",
-            "EventId": "e-t001",
-            "Extensions": "{\"k\":\"v\"}",
-            "InvocationId": "i-t001",
-            "Metadata": "{\"k\":\"v\"}",
-            "Timestamp": "2026-07-08T06:27:42.997Z"
+            "EventId": "event-user-message-20260817-0001",
+            "InvocationId": "invocation-order-assistance-20260817-0001",
+            "Timestamp": "2026-08-17T09:08:09.463Z"
         },
-        "RequestId": "782c656b-c216-4ae4-8114-bf431a5b2a9e"
+        "RequestId": "dd3bdbb7-1093-4a91-a708-2ba848f8a960"
     }
 }
 ```

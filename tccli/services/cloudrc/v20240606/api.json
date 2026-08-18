@@ -186,7 +186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视图名称",
+          "document": "<p>视图名称</p>",
           "example": "后付费资源视图",
           "member": "string",
           "name": "ViewName",
@@ -195,7 +195,7 @@
         },
         {
           "disabled": false,
-          "document": "视图条件",
+          "document": "<p>视图条件</p>",
           "example": "无",
           "member": "ConditionRule",
           "name": "ConditionRule",
@@ -204,7 +204,16 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "ExtendedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -278,6 +287,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ExtendedFilter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤条件键</p><p>枚举值：</p><ul><li>ResourceType： 资源类型</li><li>ResourceId： 资源ID</li><li>ResourceAlias： 资源名称</li><li>PayMode： 计费模式</li><li>RegionCode： 地域编码</li><li>ZoneCode： 可用区编码</li><li>PublicIpAddress： 外网IP</li><li>PrivateIpAddress： 内网IP</li><li>VpcId： VPC ID</li><li>SubnetId： 子网ID</li><li>Tag： 标签</li></ul>",
+          "example": "RegionCode",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件值</p>",
+          "example": "[\"ins-test\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配方式</p><p>枚举值：</p><ul><li>Equals： 等于</li><li>NotEquals： 不等于</li><li>Contains： 包含</li><li>NotContains： 不包含</li><li>Exists： 存在</li><li>NotExists： 不存在</li></ul>",
+          "example": "NotEquals",
+          "member": "string",
+          "name": "MatchType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "FieldDefine": {
       "document": "字段定义",
@@ -1025,7 +1073,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视图ID",
+          "document": "<p>视图ID</p>",
           "example": "vw-6wyborpx",
           "member": "string",
           "name": "ViewId",
@@ -1034,7 +1082,7 @@
         },
         {
           "disabled": false,
-          "document": "视图名称",
+          "document": "<p>视图名称</p>",
           "example": "后付费资源视图",
           "member": "string",
           "name": "ViewName",
@@ -1043,12 +1091,21 @@
         },
         {
           "disabled": false,
-          "document": "视图条件",
+          "document": "<p>视图条件</p>",
           "example": "无",
           "member": "ConditionRule",
           "name": "ConditionRule",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "ExtendedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

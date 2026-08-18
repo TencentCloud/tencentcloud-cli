@@ -1369,6 +1369,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "MountPointEntry",
+          "name": "MountPoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2421,6 +2431,36 @@
           "name": "ClusterMountSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "uint64",
+          "name": "MountStorageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "StorageFileSystemId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5955,6 +5995,34 @@
         }
       ],
       "usage": "out"
+    },
+    "MountPointEntry": {
+      "document": "客户端挂载点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "StorageFileSystemId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "MountDir",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MountPointInstanceInfo": {
       "document": "挂载点实例信息。",

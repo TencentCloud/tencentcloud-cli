@@ -1,21 +1,21 @@
-**Example 1: 删除指定会话**
+**Example 1: 删除会话**
 
-
+删除指定会话空间下的指定会话。
 
 Input: 
 
 ```
 tccli ags DeleteSession --cli-unfold-argument  \
-    --AgentId ae-test \
-    --UserId u_8697b7b61a4d2d3e678f \
-    --SessionId s-1782974067962-owicgz
+    --SpaceId space-198577ac-324e-4e1b-bfda-f75a2365c9df \
+    --UserId customer-32874915 \
+    --SessionId session-order-assistance-20260817-0001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "f147e945-f2cf-4500-abcf-d11eccb0daf7"
+        "RequestId": "afdb8139-1c10-475b-876d-6b8d791a8a2e"
     }
 }
 ```

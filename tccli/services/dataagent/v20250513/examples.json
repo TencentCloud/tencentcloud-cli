@@ -8,14 +8,6 @@
         "title": "文档切片新增"
       }
     ],
-    "AddScene": [
-      {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddScene\n<公共请求参数>\n\n{\n    \"InstanceId\": \"instance001\",\n    \"Scene\": {\n        \"SceneName\": \"sn0010\",\n        \"Skills\": [\n            \"rag\"\n        ],\n        \"Prompt\": \"keyword\",\n        \"SearchConfig\": {\n            \"Type\": 1,\n            \"Num\": 100,\n            \"EmbeddingWeight\": 0.5,\n            \"Rerank\": 1,\n            \"AutoRag\": \"1\",\n            \"KnowledgeBaseIds\": [\n                \"kb001\"\n            ]\n        },\n        \"ExampleQAList\": [\n            {\n                \"ExampleId\": \"e001\",\n                \"Questions\": [\n                    \"who?\"\n                ],\n                \"Answer\": \"cran\",\n                \"Type\": \"dfs\"\n            }\n        ],\n        \"CreateTime\": \"2025-11-02 12:12:12\",\n        \"UpdateTime\": \"2025-11-02 12:12:12\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"699ecd6f-2fbc-4d28-8dd0-683c8c0e9673\",\n        \"SceneId\": \"sn001\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
     "AppendKnowledgeTask": [
       {
         "document": "示例",
@@ -54,14 +46,6 @@
         "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataAgentSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"ee8b5304-3ef0-4942-beb2-8c9354a3ed4e\",\n    \"InstanceId\": \"dataagent-hLhMpd0H\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3dab21f-66af-48c3-9212-c6ec967e91b3\",\n        \"SessionId\": \"ee8b5304-3ef0-4942-beb2-8c9354a3ed4e\"\n    }\n}",
         "title": "删除会话"
-      }
-    ],
-    "DeleteScene": [
-      {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScene\n<公共请求参数>\n\n{\n    \"InstanceId\": \"instacne001\",\n    \"SceneId\": \"sn001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db2ac17a-1904-4336-9275-69d0fab51990\"\n    }\n}",
-        "title": "示例"
       }
     ],
     "ExecuteAgentApi": [
@@ -176,14 +160,6 @@
         "title": "示例"
       }
     ],
-    "QuerySceneList": [
-      {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QuerySceneList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"instance001\",\n    \"SceneId\": \"s001\",\n    \"SceneName\": \"sn001\",\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 100,\n        \"Datas\": [\n            {\n                \"ExampleQAList\": [\n                    {\n                        \"Answer\": \"1\",\n                        \"ExampleId\": \"1\",\n                        \"Questions\": [\n                            \"1\"\n                        ],\n                        \"Type\": \"\"\n                    }\n                ],\n                \"Prompt\": \"testkeyword\",\n                \"SceneId\": \"1\",\n                \"SceneName\": \"1\",\n                \"SearchConfig\": {\n                    \"EmbeddingWeight\": 0.5,\n                    \"KnowledgeBaseIds\": [\n                        \"klbase-1234567890\"\n                    ],\n                    \"Num\": 10,\n                    \"Rerank\": 1,\n                    \"Type\": 1\n                },\n                \"Skills\": [\n                    \"rag\",\n                    \"data_analytics\"\n                ]\n            }\n        ],\n        \"RequestId\": \"4b54d5f7-c23b-4227-9589-57cab0d95f27\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
     "QueryUserAuthority": [
       {
         "document": "示例",
@@ -198,14 +174,6 @@
         "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopChatAI\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0681ca0e-7917-4495-a2a7-be6ece8a706a\",\n        \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\"\n    }\n}",
         "title": "中断DataAgent的回答输出"
-      }
-    ],
-    "UpdateScene": [
-      {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScene\n<公共请求参数>\n\n{\n    \"InstanceId\": \"instance001\",\n    \"Scene\": {\n        \"SceneId\": \"sn001\",\n        \"SceneName\": \"sn_cran\",\n        \"Skills\": [\n            \"rag\"\n        ],\n        \"Prompt\": \"keyword\",\n        \"SearchConfig\": {\n            \"Type\": 1,\n            \"Num\": 100,\n            \"EmbeddingWeight\": 0.3,\n            \"Rerank\": 1,\n            \"AutoRag\": \"1\",\n            \"KnowledgeBaseIds\": [\n                \"kb002\"\n            ]\n        },\n        \"ExampleQAList\": [\n            {\n                \"ExampleId\": \"e002\",\n                \"Questions\": [\n                    \"where?\"\n                ],\n                \"Answer\": \"home\",\n                \"Type\": \"fd\"\n            }\n        ],\n        \"CreateTime\": \"2025-11-03 12:12:12\",\n        \"UpdateTime\": \"2025-11-03 12:12:12\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f618ef45-6b04-4fdd-b2db-ece2289d290f\"\n    }\n}",
-        "title": "示例"
       }
     ],
     "UploadAndCommitFile": [

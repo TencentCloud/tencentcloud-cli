@@ -1,11 +1,13 @@
-**Example 1: 查询 Session 列表**
+**Example 1: 查询指定空间会话列表**
 
-
+查询指定会话空间中的会话列表。
 
 Input: 
 
 ```
-tccli ags DescribeSessions --cli-unfold-argument ```
+tccli ags DescribeSessions --cli-unfold-argument  \
+    --SpaceId space-198577ac-324e-4e1b-bfda-f75a2365c9df
+```
 
 Output: 
 ```
@@ -13,18 +15,17 @@ Output:
     "Response": {
         "Sessions": [
             {
-                "AgentId": "roc-test",
-                "AgentName": "roc-test",
-                "CreateTime": "2026-07-03T03:38:32Z",
-                "EventCount": 4,
-                "SessionId": "s-1783049906698-z7iyl7",
-                "Title": "echo hi",
-                "UpdateTime": "2026-07-03T03:38:32Z",
-                "UserId": "u_8697b7b61a4d2d3e678f"
+                "CreateTime": "2026-08-17T08:15:18Z",
+                "EventCount": 0,
+                "SessionId": "session-order-assistance-20260817-0001",
+                "SpaceId": "space-198577ac-324e-4e1b-bfda-f75a2365c9df",
+                "Title": "Order refund assistance after update",
+                "UpdateTime": "2026-08-17T08:45:02Z",
+                "UserId": "customer-32874915"
             }
         ],
-        "TotalCount": 10,
-        "RequestId": "15b91e12-2c2a-4ecd-bdf3-4fd3c84b4bac"
+        "TotalCount": 2,
+        "RequestId": "1012d8c4-3e85-400e-8863-5e9f1b76556c"
     }
 }
 ```

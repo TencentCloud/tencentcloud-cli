@@ -1,14 +1,14 @@
-**Example 1: 查询会话详情**
+**Example 1: 查询指定会话详情**
 
-
+根据会话空间 ID、用户 ID 和会话 ID，查询指定会话的详细信息。
 
 Input: 
 
 ```
 tccli ags DescribeSession --cli-unfold-argument  \
-    --AgentId ae-test \
-    --UserId u_8697b7b61a4d2d3e678f \
-    --SessionId s-1782874989487-b38jan
+    --SpaceId space-198577ac-324e-4e1b-bfda-f75a2365c9df \
+    --UserId customer-32874915 \
+    --SessionId session-order-assistance-20260817-0001
 ```
 
 Output: 
@@ -16,16 +16,15 @@ Output:
 {
     "Response": {
         "Session": {
-            "AgentId": "ae-test",
-            "AgentName": "ae-test",
-            "CreateTime": "2026-07-02T11:59:57Z",
+            "CreateTime": "2026-08-17T08:15:18Z",
             "EventCount": 0,
-            "SessionId": "s-1782874989487-b38jan",
-            "Title": "会话测试",
-            "UpdateTime": "2026-07-02T11:59:57Z",
-            "UserId": "u_8697b7b61a4d2d3e678f"
+            "SessionId": "session-order-assistance-20260817-0001",
+            "SpaceId": "space-198577ac-324e-4e1b-bfda-f75a2365c9df",
+            "Title": "Order refund assistance",
+            "UpdateTime": "2026-08-17T08:15:18Z",
+            "UserId": "customer-32874915"
         },
-        "RequestId": "74bef511-5b34-4a8a-925f-04592b3ed083"
+        "RequestId": "82581530-d12d-40b2-8e11-9f3c308367c7"
     }
 }
 ```
