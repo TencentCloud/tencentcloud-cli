@@ -1875,6 +1875,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>前驱节点索引数组。<br>注意：创建和修改编排时，该参数无效，由服务端自动生成。</p>",
+          "example": "[0]",
+          "member": "int64",
+          "name": "PredriveIndex",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>后驱节点索引数组</p>",
           "example": "[3]",
           "member": "int64",
@@ -13794,6 +13805,17 @@
           "example": "3:4",
           "member": "string",
           "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>附加参数。</p>",
+          "example": "{\"topP\":0.6}",
+          "member": "string",
+          "name": "AdditionalParameters",
           "output_required": false,
           "required": false,
           "type": "string",
