@@ -10,7 +10,7 @@ tccli es UpdateIpTraceStatus --cli-unfold-argument  \
     --FilterKibanaIp False \
     --OpenIpTrace False \
     --DurationTime 0 \
-    --IpTraceConfig.EnableRequest False \
+    --IpTraceConfig.EnableRequest True \
     --IpTraceConfig.EnableResponse False \
     --IpTraceConfig.EnableRequestBody False \
     --IpTraceConfig.EnableResponseBody False \

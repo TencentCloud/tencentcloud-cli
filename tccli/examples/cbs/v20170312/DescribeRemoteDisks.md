@@ -16,6 +16,11 @@ Output:
     "Response": {
         "RemoteDiskSet": [
             {
+                "CreateTime": "2026-08-17T09:57:06+08:00",
+                "DeadlineTime": "2026-10-17T18:11:09+08:00",
+                "DiskChargeType": "PREPAID",
+                "DiskSize": 2000,
+                "InstanceId": "ins-1zmijkcu",
                 "Placement": {
                     "CageId": "",
                     "CdcId": "",
@@ -24,7 +29,12 @@ Output:
                     "ProjectId": 0,
                     "ProjectName": "",
                     "Zone": "ap-guangzhou-2"
-                }
+                },
+                "RemoteDiskId": "rdisk-80wdaldb",
+                "RemoteDiskName": "未命名",
+                "RemoteDiskState": "ATTACHED",
+                "RemoteDiskType": "ELASTIC_REMOTE_SSD",
+                "RenewFlag": "DISABLE_NOTIFY_AND_MANUAL_RENEW"
             }
         ],
         "TotalCount": 2,
@@ -48,6 +58,11 @@ Output:
     "Response": {
         "RemoteDiskSet": [
             {
+                "CreateTime": "2026-05-22T03:44:36+08:00",
+                "DeadlineTime": "2026-06-22T11:44:36+08:00",
+                "DiskChargeType": "PREPAID",
+                "DiskSize": 3000,
+                "InstanceId": "ins-kmmjtaxw",
                 "Placement": {
                     "CageId": "",
                     "CdcId": "",
@@ -56,7 +71,12 @@ Output:
                     "ProjectId": 0,
                     "ProjectName": "",
                     "Zone": "ap-guangzhou-2"
-                }
+                },
+                "RemoteDiskId": "rdisk-4idfknif",
+                "RemoteDiskName": "未命名",
+                "RemoteDiskState": "ATTACHED",
+                "RemoteDiskType": "ELASTIC_REMOTE_SSD",
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW"
             }
         ],
         "TotalCount": 1,

@@ -21,6 +21,13 @@
       "output": "DeleteViewResponse",
       "status": "online"
     },
+    "DescribeResource": {
+      "document": "查询资源详情",
+      "input": "DescribeResourceRequest",
+      "name": "查询资源详情",
+      "output": "DescribeResourceResponse",
+      "status": "online"
+    },
     "GetBoundTags": {
       "document": "获取已绑定资源的标签集合",
       "input": "GetBoundTagsRequest",
@@ -82,6 +89,13 @@
       "input": "ModifyViewRequest",
       "name": "修改视图",
       "output": "ModifyViewResponse",
+      "status": "online"
+    },
+    "SearchResources": {
+      "document": "搜索资源",
+      "input": "SearchResourcesRequest",
+      "name": "搜索资源",
+      "output": "SearchResourcesResponse",
       "status": "online"
     }
   },
@@ -253,6 +267,190 @@
     "DeleteViewResponse": {
       "document": "DeleteView返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceRequest": {
+      "document": "DescribeResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "qcs::vpc::vpc",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域编码</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID</p>",
+          "example": "vpc-m3ul053f",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图ID</p>",
+          "example": "vw-42dfl9y1",
+          "member": "string",
+          "name": "ViewId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceResponse": {
+      "document": "DescribeResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源ID</p>",
+          "example": "vpc-m3ul053f",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源别名</p>",
+          "example": "******Test",
+          "member": "string",
+          "name": "ResourceAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>uin</p>",
+          "example": "909600000",
+          "member": "int64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "qcs::vpc::vpc",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域编码</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区编码</p>",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费类型</p>",
+          "example": "Free",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源创建时间</p>",
+          "example": "2017-12-05 15:28:22",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源过期时间</p>",
+          "example": "2021-04-18 17:30:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网IP</p>",
+          "example": "[\"10.*******\"]",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网IP</p>",
+          "example": "[\"139.**********\"]",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源属性</p>",
+          "example": "{\"CidrBlock\":\"10.*****/16\"}",
+          "member": "string",
+          "name": "Properties",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1274,6 +1472,132 @@
       ],
       "usage": "out"
     },
+    "ResourceSummary": {
+      "document": "资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源ID</p>",
+          "example": "vpc-ls*****p",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源别名</p>",
+          "example": "******_test",
+          "member": "string",
+          "name": "ResourceAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>uin</p>",
+          "example": "909600000",
+          "member": "int64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "qcs::vpc::vpc",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域编码</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区编码</p>",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费类型，包括后付费(0)、预付费(1)、预留实例(2)</p>",
+          "example": "Prepaid",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源创建时间</p>",
+          "example": "2018-06-15 15:46:44",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源过期时间</p>",
+          "example": "2021-04-18 17:30:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网IP</p>",
+          "example": "[\"10.*******\"]",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网IP</p>",
+          "example": "[\"139.**********\"]",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResourcesSummary": {
       "document": "资源概要信息",
       "members": [
@@ -1409,6 +1733,98 @@
         }
       ],
       "usage": "out"
+    },
+    "SearchResourcesRequest": {
+      "document": "SearchResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视图ID</p>",
+          "example": "vw-42dfl9y1",
+          "member": "string",
+          "name": "ViewId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回的最大记录数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页Token，首次查询不传</p>",
+          "example": "fsyNjBUtwUUGuHeSCnd5PiDz7jR9Fbe0Zegjt1OjpJLq9RFeXTU2e+YUOCXdrR7cp9WxaydUTd4fHZo2lBJdwAQeLj7/mmZzBHm+YFxmhjpO6YE/WGmI1vladteuoN7IzQefWu+FAq4K0XiagxPUeUf7CpAfuSgU6JWPs+HS8lNGVzqzzULRVUc0GmOGLo1eUFGfhOT79iwLii2tG+l6NQ==",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件列表</p>",
+          "example": "无",
+          "member": "ExtendedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序条件</p><p>枚举值：</p><ul><li>CreateTime： 表示按资源创建时间排序</li><li>ExpireTime： 表示按资源到期时间排序</li><li>IpAddress： 表示按资源IP地址排序</li></ul>",
+          "example": "ExpireTime",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序顺序</p><p>枚举值：</p><ul><li>Asc： 升序</li><li>Desc： 降序</li></ul><p>默认值：Asc</p>",
+          "example": "Asc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchResourcesResponse": {
+      "document": "SearchResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下一页Token，为空时表示无更多数据</p>",
+          "example": "cCuk41e5JoaacP6PzhydNNStUM5couVJsUY7klW3qet5afBsukPVCXcoxUCPUKqjLbDDjuaDL3cC5XRuEeAMgi/I/niv6ZxB0DgTIxXnSqU4ehEYAKgHOR6uVc1aDaQnAKiuk4bOLqtxYuppLEd2N2WFoJrxLMUwvvX8Bw9DzXJ9zCHD5eD0oa81KYmKolmdAjViZfdi0kcvw4qv4uaTdzDEHoc=",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源列表</p>",
+          "example": "无",
+          "member": "ResourceSummary",
+          "name": "Resources",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Tag": {
       "document": "标签键值对",

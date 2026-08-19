@@ -9671,7 +9671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ES集群ID",
+          "document": "<p>ES集群ID</p>",
           "example": "es-xasdsfsa",
           "member": "string",
           "name": "InstanceId",
@@ -9680,7 +9680,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "2020-12-28 14:37:36",
           "member": "string",
           "name": "StartTime",
@@ -9689,7 +9689,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "2020-12-28 14:37:36",
           "member": "string",
           "name": "EndTime",
@@ -9698,7 +9698,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量",
+          "document": "<p>起始偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -9707,7 +9707,7 @@
         },
         {
           "disabled": false,
-          "document": "数据条数",
+          "document": "<p>数据条数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -9716,7 +9716,7 @@
         },
         {
           "disabled": false,
-          "document": "访问IP",
+          "document": "<p>访问IP</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "RemoteIp",
@@ -9725,7 +9725,7 @@
         },
         {
           "disabled": false,
-          "document": "Request/Response 请求/返回, 非必填",
+          "document": "<p>Request/Response 请求/返回, 非必填</p>",
           "example": "[\"Request\"]",
           "member": "string",
           "name": "TraceType",
@@ -9734,7 +9734,7 @@
         },
         {
           "disabled": false,
-          "document": "Public/Private 公网访问/内网访问, 非必填",
+          "document": "<p>Public/Private 公网访问/内网访问, 非必填</p>",
           "example": "[\"Public\"]",
           "member": "string",
           "name": "NetType",
@@ -9743,7 +9743,7 @@
         },
         {
           "disabled": false,
-          "document": "POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填",
+          "document": "<p>POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填</p>",
           "example": "[\"OK\",\"GET\"]",
           "member": "string",
           "name": "ReqTypeOrRspStatus",
@@ -9752,7 +9752,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字模糊查询，支持Lucene Query String",
+          "document": "<p>关键字模糊查询，支持Lucene Query String</p>",
           "example": "message:abc",
           "member": "string",
           "name": "SearchKey",
@@ -9761,7 +9761,7 @@
         },
         {
           "disabled": false,
-          "document": "uri搜索",
+          "document": "<p>uri搜索</p>",
           "example": "/index/_search",
           "member": "string",
           "name": "Uri",
@@ -9770,7 +9770,7 @@
         },
         {
           "disabled": false,
-          "document": "集群节点IP",
+          "document": "<p>集群节点IP</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "NodeIp",
@@ -9785,7 +9785,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IP时间列表",
+          "document": "<p>IP时间列表</p>",
           "example": "无",
           "member": "IpTimePair",
           "name": "IpTraceList",
@@ -9934,7 +9934,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "es-xassddsa",
           "member": "string",
           "name": "InstanceId",
@@ -9949,7 +9949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启IP溯源",
+          "document": "<p>是否开启IP溯源</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenIpTrace",
@@ -9959,7 +9959,7 @@
         },
         {
           "disabled": false,
-          "document": "IP溯源开启持续时间，单位：秒",
+          "document": "<p>IP溯源开启持续时间，单位：秒</p>",
           "example": "300",
           "member": "int64",
           "name": "DurationTime",
@@ -9969,7 +9969,7 @@
         },
         {
           "disabled": false,
-          "document": "IP溯源配置",
+          "document": "<p>IP溯源配置</p>",
           "example": "无",
           "member": "IpTraceConfig",
           "name": "IpTraceConfig",
@@ -9979,7 +9979,7 @@
         },
         {
           "disabled": false,
-          "document": "上次执行时间",
+          "document": "<p>上次执行时间</p>",
           "example": "2024-12-28 14:35:31",
           "member": "string",
           "name": "LastStartTime",
@@ -9989,7 +9989,7 @@
         },
         {
           "disabled": false,
-          "document": "上次关闭时间",
+          "document": "<p>上次关闭时间</p>",
           "example": "2024-12-29 14:35:31",
           "member": "string",
           "name": "LastEndTime",
@@ -9999,7 +9999,7 @@
         },
         {
           "disabled": false,
-          "document": "是否过滤Kibana节点IP",
+          "document": "<p>是否过滤Kibana节点IP</p>",
           "example": "false",
           "member": "bool",
           "name": "FilterKibanaIp",
@@ -15396,7 +15396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ES集群ID",
+          "document": "<p>ES集群ID</p>",
           "example": "es-xasdsfsa",
           "member": "string",
           "name": "InstanceId",
@@ -15405,7 +15405,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "2020-12-28 14:37:36",
           "member": "string",
           "name": "StartTime",
@@ -15414,7 +15414,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "2020-12-28 14:37:36",
           "member": "string",
           "name": "EndTime",
@@ -15423,7 +15423,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量",
+          "document": "<p>起始偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -15432,7 +15432,7 @@
         },
         {
           "disabled": false,
-          "document": "数据条数",
+          "document": "<p>数据条数</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -15441,7 +15441,7 @@
         },
         {
           "disabled": false,
-          "document": "访问IP",
+          "document": "<p>访问IP</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "RemoteIp",
@@ -15450,7 +15450,7 @@
         },
         {
           "disabled": false,
-          "document": "Request/Response 请求/返回, 非必填",
+          "document": "<p>Request/Response 请求/返回, 非必填</p>",
           "example": "[\"Request\"]",
           "member": "string",
           "name": "TraceType",
@@ -15459,7 +15459,7 @@
         },
         {
           "disabled": false,
-          "document": "Public/Private 公网访问/内网访问, 非必填",
+          "document": "<p>Public/Private 公网访问/内网访问, 非必填</p>",
           "example": "[\"Public\"]",
           "member": "string",
           "name": "NetType",
@@ -15468,7 +15468,7 @@
         },
         {
           "disabled": false,
-          "document": "POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填",
+          "document": "<p>POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填</p>",
           "example": "[\"OK\",\"GET\"]",
           "member": "string",
           "name": "ReqTypeOrRspStatus",
@@ -15477,7 +15477,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字模糊查询，支持Lucene Query String",
+          "document": "<p>关键字模糊查询，支持Lucene Query String</p>",
           "example": "message:abc",
           "member": "string",
           "name": "SearchKey",
@@ -15486,7 +15486,7 @@
         },
         {
           "disabled": false,
-          "document": "Uri搜索",
+          "document": "<p>Uri搜索</p>",
           "example": "/index/_search",
           "member": "string",
           "name": "Uri",
@@ -15495,7 +15495,7 @@
         },
         {
           "disabled": false,
-          "document": "集群节点IP",
+          "document": "<p>集群节点IP</p>",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "NodeIp",
@@ -15510,7 +15510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "123",
           "member": "int64",
           "name": "Total",
@@ -15520,7 +15520,7 @@
         },
         {
           "disabled": false,
-          "document": "IP溯源日志列表",
+          "document": "<p>IP溯源日志列表</p>",
           "example": "无",
           "member": "IpTraceLogEntry",
           "name": "IpTraceLogList",
@@ -19786,7 +19786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID。该字段为必填字段。</p>",
           "example": "es-xasdasd",
           "member": "string",
           "name": "InstanceId",
@@ -19795,7 +19795,7 @@
         },
         {
           "disabled": false,
-          "document": "IP溯源配置开关",
+          "document": "<p>IP溯源配置开关。该字段为必填字段。</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenIpTrace",
@@ -19804,7 +19804,7 @@
         },
         {
           "disabled": false,
-          "document": "IP溯源开启持续时间，单位：秒",
+          "document": "<p>IP溯源开启持续时间，单位：秒。该字段为必填字段。</p>",
           "example": "300",
           "member": "int64",
           "name": "DurationTime",
@@ -19813,7 +19813,7 @@
         },
         {
           "disabled": false,
-          "document": "IP溯源配置",
+          "document": "<p>IP溯源配置。该字段为必填字段。</p>",
           "example": "无",
           "member": "IpTraceConfig",
           "name": "IpTraceConfig",
@@ -19822,7 +19822,7 @@
         },
         {
           "disabled": false,
-          "document": "是否过滤kibana节点IP",
+          "document": "<p>是否过滤kibana节点IP。</p>",
           "example": "false",
           "member": "bool",
           "name": "FilterKibanaIp",

@@ -1,137 +1,55 @@
-# Release 3.0.1475.1
-
-## Agent 沙箱服务(ags) 版本：2025-09-20
-
-### 第 23 次发布
-
-发布时间：2026-08-19 01:08:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateSessionSpace](http://document.tencentcloudapi.woa.com/document/product/1804/92389)
-* [DeleteSessionSpace](http://document.tencentcloudapi.woa.com/document/product/1804/92388)
-* [DescribeSessionSpace](http://document.tencentcloudapi.woa.com/document/product/1804/92387)
-* [DescribeSessionSpaces](http://document.tencentcloudapi.woa.com/document/product/1804/92386)
-* [ModifySessionSpace](http://document.tencentcloudapi.woa.com/document/product/1804/92385)
-
-修改接口：
-
-* [AppendEvent](http://document.tencentcloudapi.woa.com/document/product/1804/91853)
-
-	* 新增入参：SpaceId
-
-	* <font color="#dd0000">**修改入参**：</font>AgentId
-
-* [CreateSession](http://document.tencentcloudapi.woa.com/document/product/1804/91852)
-
-	* 新增入参：SpaceId
-
-	* <font color="#dd0000">**修改入参**：</font>AgentId
-
-* [DeleteSession](http://document.tencentcloudapi.woa.com/document/product/1804/91851)
-
-	* 新增入参：SpaceId
-
-	* <font color="#dd0000">**修改入参**：</font>AgentId
-
-* [DescribeEvents](http://document.tencentcloudapi.woa.com/document/product/1804/91850)
-
-	* 新增入参：SpaceId
-
-	* <font color="#dd0000">**修改入参**：</font>AgentId
-
-* [DescribeSession](http://document.tencentcloudapi.woa.com/document/product/1804/91849)
-
-	* 新增入参：SpaceId
-
-	* <font color="#dd0000">**修改入参**：</font>AgentId
-
-* [DescribeSessions](http://document.tencentcloudapi.woa.com/document/product/1804/91848)
-
-	* 新增入参：SpaceId
-
-	* <font color="#dd0000">**删除入参**：</font>AgentNames
-
-* [ModifySessionTitle](http://document.tencentcloudapi.woa.com/document/product/1804/91847)
-
-	* 新增入参：SpaceId
-
-	* <font color="#dd0000">**修改入参**：</font>AgentId
-
-
-新增数据结构：
-
-* [SessionSpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#SessionSpaceInfo)
-
-修改数据结构：
-
-* [SessionInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#SessionInfo)
-
-	* 新增成员：SpaceId
-
-	* <font color="#dd0000">**删除成员**：</font>AgentName
-
-
-
+# Release 3.0.1476.1
 
 ## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 59 次发布
+### 第 60 次发布
 
-发布时间：2026-08-19 01:20:54
+发布时间：2026-08-20 01:19:04
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [DescribeDedicatedClusterDiskStatistics](http://document.tencentcloudapi.woa.com/document/product/362/92382)
-
-	* 新增入参：DedicatedClusterId
-
-	* 新增出参：DedicatedClusterDiskStatisticSet
-
-* [DescribeRemoteDisks](http://document.tencentcloudapi.woa.com/document/product/362/90691)
-
-	* 新增出参：RemoteDiskSet, TotalCount
-
-
-新增数据结构：
-
-* [DedicatedClusterDiskStatistic](http://document.tencentcloudapi.woa.com/document/product/362/15669#DedicatedClusterDiskStatistic)
 * [RemoteDiskDetail](http://document.tencentcloudapi.woa.com/document/product/362/15669#RemoteDiskDetail)
 
-
-
-## 云托付物理服务器(chc) 版本：2023-04-18
-
-### 第 6 次发布
-
-发布时间：2026-08-19 01:27:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ExportCustomerWorkOrderDetail](http://document.tencentcloudapi.woa.com/document/product/1790/87349)
-
-	* <font color="#dd0000">**修改入参**：</font>WorkOrderType
+	* 新增成员：CreateTime, DeadlineTime, DiskChargeType, DiskSize, InstanceId, RemoteDiskId, RemoteDiskName, RemoteDiskState, RemoteDiskType, RenewFlag
 
 
 
 
 ## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
 
-### 第 117 次发布
+### 第 118 次发布
 
-发布时间：2026-08-19 01:28:49
+发布时间：2026-08-20 01:26:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AssociateRoutesSecurityGroup](http://document.tencentcloudapi.woa.com/document/product/597/92395)
+* [DisassociateRoutesSecurityGroup](http://document.tencentcloudapi.woa.com/document/product/597/92394)
+* [ModifyRouteSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/597/92393)
+
+新增数据结构：
+
+* [SecurityGroupRouteOperateResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#SecurityGroupRouteOperateResp)
+
+
+
+## 负载均衡(clb) 版本：2023-04-17
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 94 次发布
+
+发布时间：2026-08-20 01:27:35
 
 本次发布包含了以下内容：
 
@@ -139,197 +57,39 @@
 
 修改接口：
 
-* [DescribeTopicDetail](http://document.tencentcloudapi.woa.com/document/product/597/40845)
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/214/46802)
 
-	* 新增入参：SearchWordIgnoreCaseFlag
-
-
-修改数据结构：
-
-* [DatahubTaskInfo](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubTaskInfo)
-
-	* 新增成员：WarnMessage
-
-* [DescribeDatahubTaskRes](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeDatahubTaskRes)
-
-	* 新增成员：WarnMessage
+	* 新增入参：Tags
 
 
 
 
 ## 资源中心(cloudrc) 版本：2024-06-06
 
-### 第 3 次发布
+### 第 4 次发布
 
-发布时间：2026-08-19 01:32:12
+发布时间：2026-08-20 01:29:35
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateView](http://document.tencentcloudapi.woa.com/document/product/1782/87005)
-
-	* 新增入参：Filters
-
-* [ModifyView](http://document.tencentcloudapi.woa.com/document/product/1782/87001)
-
-	* 新增入参：Filters
-
+* [DescribeResource](http://document.tencentcloudapi.woa.com/document/product/1782/92397)
+* [SearchResources](http://document.tencentcloudapi.woa.com/document/product/1782/92396)
 
 新增数据结构：
 
-* [ExtendedFilter](http://document.tencentcloudapi.woa.com/document/product/1782/87013#ExtendedFilter)
+* [ResourceSummary](http://document.tencentcloudapi.woa.com/document/product/1782/87013#ResourceSummary)
 
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 189 次发布
+### 第 190 次发布
 
-发布时间：2026-08-19 01:38:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [RollBackCluster](http://document.tencentcloudapi.woa.com/document/product/1003/70115)
-
-	* <font color="#dd0000">**修改入参**：</font>RollbackId
-
-
-
-
-## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
-
-### 第 21 次发布
-
-发布时间：2026-08-19 01:40:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* AddScene
-* DeleteScene
-* QuerySceneList
-* UpdateScene
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ExampleQA
-* Scene
-* SearchConfig
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 176 次发布
-
-发布时间：2026-08-19 01:43:47
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateLab](http://document.tencentcloudapi.woa.com/document/product/1342/92122)
-
-	* <font color="#dd0000">**修改入参**：</font>Image
-
-* [UpdateLab](http://document.tencentcloudapi.woa.com/document/product/1342/92109)
-
-	* <font color="#dd0000">**修改入参**：</font>Image
-
-
-
-
-## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
-
-### 第 34 次发布
-
-发布时间：2026-08-19 02:18:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [MountPointEntry](http://document.tencentcloudapi.woa.com/document/product/1716/81241#MountPointEntry)
-
-修改数据结构：
-
-* [ClientNodeAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientNodeAttribute)
-
-	* 新增成员：MountPoints
-
-* [CustomerClusterAttr](http://document.tencentcloudapi.woa.com/document/product/1716/81241#CustomerClusterAttr)
-
-	* 新增成员：Zone, MountStorageNum, StorageFileSystemId
-
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 63 次发布
-
-发布时间：2026-08-19 02:43:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyDBInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/240/38565)
-
-	* 新增入参：ModifyShardList
-
-
-新增数据结构：
-
-* [ModifyShardSpecInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#ModifyShardSpecInfo)
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2023-06-16
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 134 次发布
-
-发布时间：2026-08-19 02:44:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyPrometheusInstanceAccessPoints](http://document.tencentcloudapi.woa.com/document/product/248/92390)
-
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 90 次发布
-
-发布时间：2026-08-19 02:47:02
+发布时间：2026-08-20 01:36:22
 
 本次发布包含了以下内容：
 
@@ -337,45 +97,18 @@
 
 修改数据结构：
 
-* [JobConfig](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobConfig)
+* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
 
-	* 新增成员：IsLocked
-
-
-
-
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
-
-### 第 66 次发布
-
-发布时间：2026-08-19 02:49:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeClasses](http://document.tencentcloudapi.woa.com/document/product/409/77295)
-
-	* 新增入参：InstanceCategory
-
-* [DescribeDBInstanceSSLConfig](http://document.tencentcloudapi.woa.com/document/product/409/85761)
-
-	* 新增出参：CACert, CAJKS, CAP7B
-
-* [ModifyDBInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/409/63689)
-
-	* 新增入参：CallerSource, CallerToken
+	* 新增成员：StorageOverUse, StorageAutoExpand
 
 
 
 
-## 凭据管理系统(ssm) 版本：2019-09-23
+## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 20 次发布
+### 第 107 次发布
 
-发布时间：2026-08-19 02:56:12
+发布时间：2026-08-20 01:50:55
 
 本次发布包含了以下内容：
 
@@ -383,26 +116,24 @@
 
 修改接口：
 
-* [DescribeSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40526)
+* [GetFaceIdResult](http://document.tencentcloudapi.woa.com/document/product/1007/49199)
 
-	* 新增出参：NextRotationTime
+	* 新增出参：IdCardFrontBase64
 
-* [GetSecretValue](http://document.tencentcloudapi.woa.com/document/product/1140/40522)
+* [GetFaceIdToken](http://document.tencentcloudapi.woa.com/document/product/1007/49198)
 
-	* 新增入参：EncryptionPublicKey, EncryptionAlgorithm
+	* 新增入参：MetaData
 
-* [ListSecrets](http://document.tencentcloudapi.woa.com/document/product/1140/40519)
-
-	* 新增入参：InstanceID
+	* 新增出参：ClientConfig
 
 
 
 
-## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
+## 腾讯云数据库 AI 服务(tdai) 版本：2025-07-17
 
-### 第 17 次发布
+### 第 3 次发布
 
-发布时间：2026-08-19 02:59:54
+发布时间：2026-08-20 02:31:09
 
 本次发布包含了以下内容：
 
@@ -410,26 +141,73 @@
 
 修改接口：
 
-* [AuthorizedSql](http://document.tencentcloudapi.woa.com/document/product/1741/90593)
+* [CreateAgentInstance](http://document.tencentcloudapi.woa.com/document/product/1802/91666)
 
-	* <font color="#dd0000">**修改入参**：</font>InstanceId
+	* 新增入参：UsePlatformAccount
 
+
+修改数据结构：
+
+* [AgentInstance](http://document.tencentcloudapi.woa.com/document/product/1802/91680#AgentInstance)
+
+	* 新增成员：RoleName, OfflineTime, ProductName
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 152 次发布
+
+发布时间：2026-08-20 02:34:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChatCompletion](http://document.tencentcloudapi.woa.com/document/product/851/81592)
+
+	* 新增入参：TiProjectId
+
+* [CreateModelServiceAuthToken](http://document.tencentcloudapi.woa.com/document/product/851/87050)
+
+	* 新增入参：TiProjectId
+
+* [DeleteModelServiceAuthToken](http://document.tencentcloudapi.woa.com/document/product/851/87049)
+
+	* 新增入参：TiProjectId
+
+* [ModifyModelServiceAuthToken](http://document.tencentcloudapi.woa.com/document/product/851/87048)
+
+	* 新增入参：TiProjectId
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 
 
 ## TokenHub(tokenhub) 版本：2026-03-22
 
-### 第 18 次发布
+### 第 19 次发布
 
-发布时间：2026-08-19 03:11:33
+发布时间：2026-08-20 02:38:38
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
 * [DescribeModelQuota](http://document.tencentcloudapi.woa.com/document/product/1814/92392)
+
+	* 新增入参：ModelId
+
+	* 新增出参：ModelId, TPMLimit, RPMLimit, TPMInputQuotaLimit, TPMOutputQuotaLimit, TPMInputReserveLimit, TPMOutputReserveLimit
+
 
 
 
