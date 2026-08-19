@@ -1696,6 +1696,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐私浏览器类型，当检测到隐私浏览器时返回，仅H5。</p>",
+          "example": "brave",
+          "member": "string",
+          "name": "PrivacyBrowser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

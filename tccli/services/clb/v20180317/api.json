@@ -5732,7 +5732,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题的名称。",
+          "document": "<p>日志主题的名称。</p>",
           "example": "clb-topic",
           "member": "string",
           "name": "TopicName",
@@ -5741,7 +5741,7 @@
         },
         {
           "disabled": false,
-          "document": "主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。",
+          "document": "<p>主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。</p>",
           "example": "3",
           "member": "uint64",
           "name": "PartitionCount",
@@ -5750,7 +5750,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。",
+          "document": "<p>日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。</p>",
           "example": "ACCESS",
           "member": "string",
           "name": "TopicType",
@@ -5759,7 +5759,7 @@
         },
         {
           "disabled": false,
-          "document": "存储时间，单位天，默认为 30。\n- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。\n- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。",
+          "document": "<p>存储时间，单位天，默认为 30。</p><ul><li>日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。</li><li>日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。</li></ul>",
           "example": "30",
           "member": "uint64",
           "name": "Period",
@@ -5768,12 +5768,21 @@
         },
         {
           "disabled": false,
-          "document": "日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。",
+          "document": "<p>日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。</p>",
           "example": "HOT",
           "member": "string",
           "name": "StorageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p><p>最多支持一次传入20个</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5783,7 +5792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题的 ID。",
+          "document": "<p>日志主题的 ID。</p>",
           "example": "b046ae5f-00cf-4e90-880c-215e5ae7b6xy",
           "member": "string",
           "name": "TopicId",

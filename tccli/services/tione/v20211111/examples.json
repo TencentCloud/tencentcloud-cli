@@ -3,7 +3,7 @@
     "ChatCompletion": [
       {
         "document": "与大模型聊天",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Chat\n<公共请求参数>\n\n{\n    \"Model\": \"ms-zqs2zsgd\",\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你好\"\n        },\n        {\n            \"Role\": \"assistant\",\n            \"Content\": \"你好！我可以帮助你回答问题或提供信息。你想问什么？\"\n        },\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你是谁\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletion\n<公共请求参数>\n\n{\n    \"Model\": \"ms-zqs2zsgd\",\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你好\"\n        },\n        {\n            \"Role\": \"assistant\",\n            \"Content\": \"你好！我可以帮助你回答问题或提供信息。你想问什么？\"\n        },\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你是谁\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Choices\": [\n            {\n                \"Message\": {\n                    \"Role\": \"assistant\",\n                    \"Content\": \"我是一个人工智能模型，能够理解和回复语言。我的目的在于提供信息、回答问题和聊天。\"\n                },\n                \"FinishReason\": \"stop\",\n                \"Index\": 0\n            }\n        ],\n        \"Model\": \"ms-zqs2zsgd\",\n        \"Id\": \"e847bcd7-bff2-4cb2-a01e-92ae0aebe560\",\n        \"Usage\": {\n            \"CompletionTokens\": 29,\n            \"PromptTokens\": 67,\n            \"TotalTokens\": 96\n        },\n        \"RequestId\": \"e847bcd7-bff2-4cb2-a01e-92ae0aebe560\"\n    }\n}",
         "title": "与大模型聊天"
       }
@@ -43,7 +43,7 @@
     "CreateModelServiceAuthToken": [
       {
         "document": "创建一个AuthToken",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"Name\": \"testname\",\n    \"Description\": \"testdesc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelServiceAuthToken\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"Name\": \"testname\",\n    \"Description\": \"testdesc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f254c3b-2161-4583-8316-fc6ed570d4cc\"\n    }\n}",
         "title": "创建示例"
       }
@@ -123,7 +123,7 @@
     "DeleteModelServiceAuthToken": [
       {
         "document": "删除一个 token",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"AuthTokenValue\": \"MTc0NTQ5NDY5NzI\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelServiceAuthToken\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"AuthTokenValue\": \"MTc0NTQ5NDY5NzI\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3dca072-937b-44da-8ffb-8e00190a2044\"\n    }\n}",
         "title": "删除示例"
       }
@@ -497,7 +497,7 @@
     "ModifyModelServiceAuthToken": [
       {
         "document": "修改一个 token",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"NeedReset\": false,\n    \"AuthToken\": {\n        \"Base\": {\n            \"Value\": \"MTc0NDgwMjgxMTU\",\n            \"Name\": \"示例\",\n            \"Description\": \"desc\",\n            \"CreateTime\": \"2025-04-16T11:26:51Z\",\n            \"Status\": \"Enabled\"\n        },\n        \"Limits\": []\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelServiceAuthToken\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"NeedReset\": false,\n    \"AuthToken\": {\n        \"Base\": {\n            \"Value\": \"MTc0NDgwMjgxMTU\",\n            \"Name\": \"示例\",\n            \"Description\": \"desc\",\n            \"CreateTime\": \"2025-04-16T11:26:51Z\",\n            \"Status\": \"Enabled\"\n        },\n        \"Limits\": []\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71d3ba29-c044-4142-91c4-777c8fcec877\"\n    }\n}",
         "title": "修改示例"
       }

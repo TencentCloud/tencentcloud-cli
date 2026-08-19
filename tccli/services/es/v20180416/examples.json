@@ -419,7 +419,7 @@
     "ExportIpTraceLog": [
       {
         "document": "只返回IP和访问时间",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportIpTraceLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"StartTime\": \"2024-08-11 12:00:00\",\n    \"EndTime\": \"2024-08-11 12:10:00\",\n    \"Offset\": 1,\n    \"Limit\": 100,\n    \"RemoteIp\": [\n        \"127.0.0.1\"\n    ],\n    \"TraceType\": [\n        \"Request\"\n    ],\n    \"NetType\": [\n        \"Public\"\n    ],\n    \"ReqTypeOrRspStatus\": [\n        \"POST\"\n    ],\n    \"SearchKey\": \"idx-abc\",\n    \"NodeIp\": [\n        \"127.0.0.1\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportIpTraceLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"StartTime\": \"2024-08-11 12:00:00\",\n    \"EndTime\": \"2024-08-11 12:10:00\",\n    \"Offset\": 1,\n    \"Limit\": 100,\n    \"RemoteIp\": [\n        \"127.0.0.1\"\n    ],\n    \"TraceType\": [\n        \"Request\"\n    ],\n    \"NetType\": [\n        \"Public\"\n    ],\n    \"ReqTypeOrRspStatus\": [\n        \"POST\"\n    ],\n    \"SearchKey\": \"idx-abc\",\n    \"NodeIp\": [\n        \"127.0.0.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"IpTraceList\": [\n            {\n                \"NodeIp\": \"127.0.0.1\",\n                \"Ip\": \"127.0.0.1\",\n                \"Timestamp\": 171939488883\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "导出IP溯源日志原始数据"
       }
@@ -435,7 +435,7 @@
     "GetIpTraceStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetIpTraceStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xasddassd\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetIpTraceStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xasddassd\"\n}",
         "output": "{\n    \"Response\": {\n        \"OpenIpTrace\": false,\n        \"FilterKibanaIp\": false,\n        \"DurationTime\": 0,\n        \"IpTraceConfig\": {\n            \"EnableRequest\": false,\n            \"EnableResponse\": false,\n            \"EnableRequestBody\": false,\n            \"EnableResponseBody\": false,\n            \"RemoteIpInclude\": [\n                \"\"\n            ],\n            \"RemoteIpExclude\": [\n                \"\"\n            ],\n            \"UriInclude\": [\n                \"\"\n            ],\n            \"UriExclude\": [\n                \"\"\n            ]\n        },\n        \"LastStartTime\": \"2020-12-28 14:37:36\",\n        \"LastEndTime\": \"2020-12-28 14:37:36\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询IP溯源状态"
       }
@@ -499,7 +499,7 @@
     "QueryIpTraceLog": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryIpTraceLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"StartTime\": \"2024-08-11 12:00:00\",\n    \"EndTime\": \"2024-08-11 12:10:00\",\n    \"Offset\": 1,\n    \"Limit\": 100,\n    \"RemoteIp\": [\n        \"127.0.0.1\"\n    ],\n    \"TraceType\": [\n        \"Request\"\n    ],\n    \"NetType\": [\n        \"Public\"\n    ],\n    \"ReqTypeOrRspStatus\": [\n        \"POST\"\n    ],\n    \"SearchKey\": \"idx-abc\",\n    \"NodeIp\": [\n        \"127.0.0.1\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryIpTraceLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"StartTime\": \"2024-08-11 12:00:00\",\n    \"EndTime\": \"2024-08-11 12:10:00\",\n    \"Offset\": 1,\n    \"Limit\": 100,\n    \"RemoteIp\": [\n        \"127.0.0.1\"\n    ],\n    \"TraceType\": [\n        \"Request\"\n    ],\n    \"NetType\": [\n        \"Public\"\n    ],\n    \"ReqTypeOrRspStatus\": [\n        \"POST\"\n    ],\n    \"SearchKey\": \"idx-abc\",\n    \"NodeIp\": [\n        \"127.0.0.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"IpTraceLogList\": [\n            {\n                \"Timestamp\": \"\",\n                \"RemoteIp\": \"127.0.0.1\",\n                \"TraceType\": \"req\",\n                \"NetType\": \"Public\",\n                \"Message\": \"\",\n                \"Uri\": \"message\",\n                \"PublicIp\": \"null\",\n                \"ReqTypeOrRspStatus\": \"\",\n                \"NodeIp\": \"127.0.0.1\"\n            }\n        ],\n        \"Total\": 12,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询IP溯源日志"
       }
@@ -667,7 +667,7 @@
     "UpdateIpTraceStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIpTraceStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xasdadas\",\n    \"FilterKibanaIp\": false,\n    \"OpenIpTrace\": false,\n    \"DurationTime\": 0,\n    \"IpTraceConfig\": {\n        \"EnableRequest\": false,\n        \"EnableResponse\": false,\n        \"EnableRequestBody\": false,\n        \"EnableResponseBody\": false,\n        \"RemoteIpInclude\": [\n            \"\"\n        ],\n        \"RemoteIpExclude\": [\n            \"\"\n        ],\n        \"UriInclude\": [\n            \"\"\n        ],\n        \"UriExclude\": [\n            \"\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIpTraceStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xasdadas\",\n    \"FilterKibanaIp\": false,\n    \"OpenIpTrace\": false,\n    \"DurationTime\": 0,\n    \"IpTraceConfig\": {\n        \"EnableRequest\": true,\n        \"EnableResponse\": false,\n        \"EnableRequestBody\": false,\n        \"EnableResponseBody\": false,\n        \"RemoteIpInclude\": [\n            \"\"\n        ],\n        \"RemoteIpExclude\": [\n            \"\"\n        ],\n        \"UriInclude\": [\n            \"\"\n        ],\n        \"UriExclude\": [\n            \"\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "更新ES集群IP溯源状态"
       }

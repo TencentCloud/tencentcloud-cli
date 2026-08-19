@@ -1198,7 +1198,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务流程ID。\n- 用于细分客户使用场景, 可为业务配置不同的业务流程。\n- 申请开通服务后，登录腾讯云[慧眼人脸核身控制](https://console.cloud.tencent.com/faceid)进行创建，审核通过后即可调用。\n- 如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。",
+          "document": "<p>业务流程ID。</p><ul><li>用于细分客户使用场景, 可为业务配置不同的业务流程。</li><li>申请开通服务后，登录腾讯云<a href=\"https://console.cloud.tencent.com/faceid\">慧眼人脸核身控制</a>进行创建，审核通过后即可调用。</li><li>如有疑问，请添加<a href=\"https://cloud.tencent.com/document/product/1007/56130\">腾讯云人脸核身小助手</a>进行咨询。</li></ul>",
           "example": "1",
           "member": "string",
           "name": "RuleId",
@@ -1207,7 +1207,7 @@
         },
         {
           "disabled": false,
-          "document": "本接口不需要传递此参数。",
+          "document": "<p>本接口不需要传递此参数。</p>",
           "example": "本接口不需要传递此参数。",
           "member": "string",
           "name": "TerminalType",
@@ -1216,7 +1216,7 @@
         },
         {
           "disabled": false,
-          "document": "验证人的身份证号码。\n- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。\n",
+          "document": "<p>验证人的身份证号码。</p><ul><li>调用 detectAuth 时，该字段是否必传，以在<a href=\"https://console.cloud.tencent.com/faceid/access\">控制台</a>申请 ruleId 时的配置提示为准，具体必填字段请参阅控制台界面。</li><li>若身份证号包含字母，该字母必须为大写 X，小写 x 将无法通过校验。</li></ul>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -1225,7 +1225,7 @@
         },
         {
           "disabled": false,
-          "document": "验证人的姓名。\n- 是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示。\n- 最长长度32位。中文请使用UTF-8编码。",
+          "document": "<p>验证人的姓名。</p><ul><li>调用 detectAuth 时，该字段是否必传，以在<a href=\"https://console.cloud.tencent.com/faceid/access\">控制台</a>申请 ruleId 时的配置提示为准，具体必填字段请参阅控制台界面。</li><li>最长长度32位。中文请使用UTF-8编码。</li></ul>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -1234,7 +1234,7 @@
         },
         {
           "disabled": false,
-          "document": "认证结束后重定向的回调链接地址，仅微信H5场景使用。\n- 最长长度1024位。\n- 默认值：[腾讯云人脸核身产品介绍页](URL Here)https://cloud.tencent.com/product/faceid?Is=sdk-topnav \n",
+          "document": "<p>认证结束后重定向的回调链接地址，仅微信H5场景使用。</p><ul><li>最长长度1024位。</li><li>默认值：[腾讯云人脸核身产品介绍页](URL Here)https://cloud.tencent.com/product/faceid?Is=sdk-topnav</li></ul>",
           "example": "https://www.qq.com",
           "member": "string",
           "name": "RedirectUrl",
@@ -1243,7 +1243,7 @@
         },
         {
           "disabled": false,
-          "document": "透传字段，在获取验证结果时返回。\n- 最长长度1024位。",
+          "document": "<p>透传字段，在获取验证结果时返回。</p><ul><li>最长长度1024位。</li></ul>",
           "example": "Orderid=f904f4cf75db4f8fdc4f942c7f7a",
           "member": "string",
           "name": "Extra",
@@ -1252,7 +1252,7 @@
         },
         {
           "disabled": false,
-          "document": "用于人脸比对的图像数据，使用base64编码。\n- Base64编码后的图片数据大小不超过3M。\n- 仅支持jpg、png格式。\n- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
+          "document": "<p>用于人脸比对的图像数据，使用base64编码。</p><ul><li>Base64编码后的图片数据大小不超过3M。</li><li>仅支持jpg、png格式。</li><li>请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。</li></ul>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -1261,7 +1261,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。</p>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -1270,7 +1270,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（朗读模式）使用的文案。\n- 若未使用意愿核身（朗读模式），则该字段无需传入。\n- 最长可接受120的字符串长度。",
+          "document": "<p>意愿核身（朗读模式）使用的文案。</p><ul><li>若未使用意愿核身（朗读模式），则该字段无需传入。</li><li>最长可接受120的字符串长度。</li></ul>",
           "example": "我同意办理该业务。",
           "member": "string",
           "name": "IntentionVerifyText",
@@ -1279,7 +1279,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（语音播报+语音回答模式）使用的文案。\n- 包括：系统语音播报的文本、需要核验的标准文本。\n- 问答模式支持1-10轮（不超过10轮）的意愿确认。",
+          "document": "<p>意愿核身（语音播报+语音回答模式）使用的文案。</p><ul><li>包括：系统语音播报的文本、需要核验的标准文本。</li><li>问答模式支持1-10轮（不超过10轮）的意愿确认。</li></ul>",
           "example": "无",
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
@@ -1288,7 +1288,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（点头确认模式）使用的文案。\n- 若未使用意愿核身（点头确认模式），则该字段无需传入。\n- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。",
+          "document": "<p>意愿核身（点头确认模式）使用的文案。</p><ul><li>若未使用意愿核身（点头确认模式），则该字段无需传入。</li><li>点头确认模式支持1-10轮（不超过10轮）的意愿确认。</li></ul>",
           "example": "无",
           "member": "IntentionActionConfig",
           "name": "IntentionActions",
@@ -1297,7 +1297,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身流程配置。",
+          "document": "<p>意愿核身流程配置。</p>",
           "example": "无",
           "member": "RuleIdConfig",
           "name": "Config",
@@ -1312,7 +1312,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用于发起核身流程的URL，仅微信H5场景使用。",
+          "document": "<p>用于发起核身流程的URL，仅微信H5场景使用。</p>",
           "example": "https://faceid.qq.com?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442",
           "member": "string",
           "name": "Url",
@@ -1322,7 +1322,7 @@
         },
         {
           "disabled": false,
-          "document": "一次核验流程的唯一标识。\n- 有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。\n- 完成人脸核验后，需根据此标识调用[获取实名核身结果信息增强版](https://cloud.tencent.com/document/api/1007/41957)获取用户最终验证结果信息。",
+          "document": "<p>一次核验流程的唯一标识。</p><ul><li>有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。</li><li>完成人脸核验后，需根据此标识调用<a href=\"https://cloud.tencent.com/document/api/1007/41957\">获取实名核身结果信息增强版</a>获取用户最终验证结果信息。</li></ul>",
           "example": "81EEF6178-28EE-4759-A823E-6CBBBE6BC442",
           "member": "string",
           "name": "BizToken",
@@ -2801,7 +2801,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SDK人脸核身流程的标识。\n- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。",
+          "document": "<p>SDK人脸核身流程的标识。</p><ul><li>调用<a href=\"https://cloud.tencent.com/document/product/1007/49198\">GetFaceIdToken</a>接口时生成。</li></ul>",
           "example": "CE6613F1A-0F1E-45BD-BE13-34C05CEA76181",
           "member": "string",
           "name": "FaceIdToken",
@@ -2810,7 +2810,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要拉取视频。\n- 默认false：不需要。",
+          "document": "<p>是否需要拉取视频。</p><ul><li>默认false：不需要。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "IsNeedVideo",
@@ -2819,7 +2819,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要拉取截帧。\n- 默认false：不需要。",
+          "document": "<p>是否需要拉取截帧。</p><ul><li>默认false：不需要。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "IsNeedBestFrame",
@@ -2828,7 +2828,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对回包整体进行加密。",
+          "document": "<p>是否对回包整体进行加密。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsEncryptResponse",
@@ -2837,7 +2837,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要对返回中的敏感信息进行加密。  \n只需指定加密算法Algorithm即可，其余字段传入默认值。",
+          "document": "<p>是否需要对返回中的敏感信息进行加密。<br>只需指定加密算法Algorithm即可，其余字段传入默认值。</p>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -2852,7 +2852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证。",
+          "document": "<p>身份证。</p>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -2862,7 +2862,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。",
+          "document": "<p>姓名。</p>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -2872,7 +2872,7 @@
         },
         {
           "disabled": false,
-          "document": "业务核验结果。\n- 参考：https://cloud.tencent.com/document/product/1007/47912。",
+          "document": "<p>业务核验结果。</p><ul><li>参考：https://cloud.tencent.com/document/product/1007/47912。</li></ul>",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -2882,7 +2882,7 @@
         },
         {
           "disabled": false,
-          "document": "业务核验描述。",
+          "document": "<p>业务核验描述。</p>",
           "example": "成功",
           "member": "string",
           "name": "Description",
@@ -2892,7 +2892,7 @@
         },
         {
           "disabled": false,
-          "document": "相似度。\n- 取值：0-100。\n- 数值越大相似度越高。",
+          "document": "<p>相似度。</p><ul><li>取值：0-100。</li><li>数值越大相似度越高。</li></ul>",
           "example": "97.7",
           "member": "float",
           "name": "Similarity",
@@ -2902,7 +2902,7 @@
         },
         {
           "disabled": false,
-          "document": "用户核验的视频base64。\n- 如果选择了使用cos，返回完整cos地址，如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户核验的视频base64。</p><ul><li>如果选择了使用cos，返回完整cos地址，如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AAAAGGZ0eX...5Zin4btI4A",
           "member": "string",
           "name": "VideoBase64",
@@ -2912,7 +2912,7 @@
         },
         {
           "disabled": false,
-          "document": "用户核验视频的截帧base64。\n- 如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户核验视频的截帧base64。</p><ul><li>如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/9j/4AAQSk...TYkEBjj//Z",
           "member": "string",
           "name": "BestFrameBase64",
@@ -2922,7 +2922,7 @@
         },
         {
           "disabled": false,
-          "document": "获取token时透传的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>获取token时透传的信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "202411011707591990200060000",
           "member": "string",
           "name": "Extra",
@@ -2932,7 +2932,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求所在设备的风险标签。\n- 详情如下：\n06-疑似黑产设备。\nnull-无设备风险。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>plus版：描述当前请求所在设备的风险标签。</p><ul><li>详情如下：<br>01-设备疑似被Root/设备疑似越狱。<br>02-设备疑似被注入。<br>03-设备疑似为模拟器。<br>04-设备疑似存在风险操作。<br>05-摄像头疑似被劫持。<br>06-疑似黑产设备。<br>null-无设备风险。</li><li>增强版：此字段不生效，默认为null。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "06",
           "member": "string",
           "name": "DeviceInfoTag",
@@ -2942,7 +2942,7 @@
         },
         {
           "disabled": false,
-          "document": "行为风险标签。\n- 仅错误码返回1007（设备疑似被劫持）时返回风险标签。\n- 标签说明：\n02：攻击风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>行为风险标签。</p><ul><li>仅错误码返回1007（设备疑似被劫持）时返回风险标签。</li><li>标签说明：<br>02：攻击风险</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "02",
           "member": "string",
           "name": "RiskInfoTag",
@@ -2952,7 +2952,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。\n- 详情如下：\n01-用户全程闭眼。\n02-用户未完成指定动作。\n03-疑似翻拍攻击。\n04-疑似合成图片。\n05-疑似合成视频。\n06-疑似合成动作。\n07-疑似黑产模板。\n08-疑似存在水印。\n09-反光校验未通过。\n10-最佳帧校验未通过。\n11-人脸质量过差。\n12-人脸距离不匹配。\n13-疑似对抗样本攻击。\nnull-无。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>plus版：描述当前请求活体阶段被拒绝的详细原因。</p><ul><li>详情如下：<br>01-用户全程闭眼。<br>02-用户未完成指定动作。<br>03-疑似翻拍攻击。<br>04-疑似合成图片。<br>05-疑似合成视频。<br>06-疑似合成动作。<br>07-疑似黑产模板。<br>08-疑似存在水印。<br>09-反光校验未通过。<br>10-最佳帧校验未通过。<br>11-人脸质量过差。<br>12-人脸距离不匹配。<br>13-疑似对抗样本攻击。<br>null-无。</li><li>增强版：此字段不生效，默认为null。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01",
           "member": "string",
           "name": "LivenessInfoTag",
@@ -2962,7 +2962,7 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求所在设备的风险等级，共4级。\n- 详情如下：\n1 - 安全。\n2 - 低风险。\n3 - 中风险。\n4 - 高危。\nnull - 未获取到风险等级。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>plus版：描述当前请求所在设备的风险等级，共4级。</p><ul><li>详情如下：<br>1 - 安全。<br>2 - 低风险。<br>3 - 中风险。<br>4 - 高危。<br>null - 未获取到风险等级。</li><li>增强版：此字段不生效，默认为null。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "DeviceInfoLevel",
@@ -2972,7 +2972,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>敏感数据加密信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -2982,13 +2982,23 @@
         },
         {
           "disabled": false,
-          "document": "加密后的数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>加密后的数据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0hMvx6fX6n...gXE0adJA==",
           "member": "string",
           "name": "EncryptedBody",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户核验的身份证人像页base64</p>",
+          "example": "0hMvx6fX6n...gXE0adJA==",
+          "member": "string",
+          "name": "IdCardFrontBase64",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3091,7 +3101,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "比对库。\n- 取值范围：\nLOCAL：本地上传照片。\nBUSINESS：商业库。",
+          "document": "<p>比对库。</p><ul><li>取值范围：<br>LOCAL：本地上传照片。<br>BUSINESS：商业库。</li></ul>",
           "example": "BUSINESS",
           "member": "string",
           "name": "CompareLib",
@@ -3100,7 +3110,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证。\n- CompareLib为商业库时必传。",
+          "document": "<p>身份证。</p><ul><li>CompareLib为商业库时必传。</li></ul>",
           "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
@@ -3109,7 +3119,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。\n- CompareLib为商业库时必传。",
+          "document": "<p>姓名。</p><ul><li>CompareLib为商业库时必传。</li></ul>",
           "example": "韦小宝",
           "member": "string",
           "name": "Name",
@@ -3118,7 +3128,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的Base64。\n- CompareLib为上传照片比对时必传。\n- Base64后图片最大8MB。\n- 请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
+          "document": "<p>图片的Base64。</p><ul><li>CompareLib为上传照片比对时必传。</li><li>Base64后图片最大8MB。</li><li>请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。</li></ul>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -3127,8 +3137,8 @@
         },
         {
           "disabled": false,
-          "document": "SDK中生成的Meta字符串。",
-          "example": "无",
+          "document": "<p>SDK中生成的Meta字符串。</p>",
+          "example": "202411011707591990200060000",
           "member": "string",
           "name": "Meta",
           "required": false,
@@ -3136,8 +3146,8 @@
         },
         {
           "disabled": false,
-          "document": "透传参数。\n- 1000长度字符串",
-          "example": "无",
+          "document": "<p>透传参数。</p><ul><li>1000长度字符串</li></ul>",
+          "example": "Orderid=f904f4cf75db4f8fdc4f942c7f7a",
           "member": "string",
           "name": "Extra",
           "required": false,
@@ -3145,7 +3155,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用cos桶。\n- 默认为false。\n- 设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。\n- 开通地址见https://console.cloud.tencent.com/faceid/cos\n- 【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。",
+          "document": "<p>是否使用cos桶。</p><ul><li>默认为false。</li><li>设置该参数为true后，核身过程中的视频图片将会存储在人脸核身控制台授权cos的bucket中，拉取结果时会返回对应资源完整cos地址。</li><li>开通地址见https://console.cloud.tencent.com/faceid/cos</li><li>【注意】选择该参数为true后将不返回base64数据，请根据接入情况谨慎修改。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "UseCos",
@@ -3154,7 +3164,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、自传照片）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "<p>敏感数据加密信息。对传入信息（姓名、身份证号、自传照片）有加密需求的用户可使用此参数，详情请点击左侧链接。</p>",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -3163,10 +3173,19 @@
         },
         {
           "disabled": false,
-          "document": "用于细分客户使用场景。\n- 申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。\n- 如有疑问，请添加腾讯云人脸核身小助手进行咨询。",
+          "document": "<p>用于细分客户使用场景。</p><ul><li>申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。</li><li>如有疑问，请添加腾讯云人脸核身小助手进行咨询。</li></ul>",
           "example": "12",
           "member": "string",
           "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SDK和用户设备的元信息。该字段的值由HuiYan SDK以JSON字符串格式返回。  说明：不要修改返回值，直接传递即可。</p>",
+          "example": "9sdf/wed=",
+          "member": "string",
+          "name": "MetaData",
           "required": false,
           "type": "string"
         }
@@ -3178,11 +3197,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "token值。- 有效期 10分钟。- 只能完成1次核身。",
+          "document": "<p>token值。- 有效期 10分钟。- 只能完成1次核身。</p>",
           "example": "42S4B131D-5974-4674-EABB-8FFF1EC99F189",
           "member": "string",
           "name": "FaceIdToken",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端配置信息，SDK将使用该配置进行后续操作。请将返回值原样传递给客户端SDK。</p>",
+          "example": "9sdf/wed=",
+          "member": "string",
+          "name": "ClientConfig",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

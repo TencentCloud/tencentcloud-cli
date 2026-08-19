@@ -5257,6 +5257,56 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>单副本SSD硬盘的创建时间。</p>",
+          "example": "2026-08-17T09:57:06+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘到期时间。按小时后付费单副本SSD硬盘可能为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-17T18:11:09+08:00",
+          "member": "datetime_iso",
+          "name": "DeadlineTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘计费类型。</p><p>枚举值：</p><ul><li>PREPAID： 预付费</li><li>POSTPAID_BY_HOUR： 按小时后付费</li></ul>",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "DiskChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘大小，单位为 GiB。</p>",
+          "example": "5000",
+          "member": "uint64",
+          "name": "DiskSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘挂载的云服务器实例ID。未挂载时为空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-1zmijkcu",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>单副本SSD硬盘所在的位置。</p>",
           "example": "无",
           "member": "Placement",
@@ -5264,6 +5314,56 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘ID。</p>",
+          "example": "rdisk-80wdaldb",
+          "member": "string",
+          "name": "RemoteDiskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘名称。</p>",
+          "example": "TestRemoteSSD",
+          "member": "string",
+          "name": "RemoteDiskName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘状态。</p><p>枚举值：</p><ul><li>UNATTACHED： 未挂载</li><li>ATTACHED： 已挂载</li><li>TORECYCLE： 待回收</li></ul>",
+          "example": "UNATTACHED",
+          "member": "string",
+          "name": "RemoteDiskState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单副本SSD硬盘类型。</p><p>枚举值：</p><ul><li>REMOTE_SSD： 单副本SSD硬盘</li><li>ELASTIC_REMOTE_SSD： 弹性单副本SSD硬盘</li></ul>",
+          "example": "REMOTE_SSD",
+          "member": "string",
+          "name": "RemoteDiskType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标识。</p><p>枚举值：</p><ul><li>NOTIFY_AND_AUTO_RENEW： 通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW： 通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW： 不通知过期不自动续费</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DISABLE_NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

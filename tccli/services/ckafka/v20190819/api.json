@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AssociateRoutesSecurityGroup": {
+      "document": "绑定路由安全组",
+      "input": "AssociateRoutesSecurityGroupRequest",
+      "name": "绑定路由安全组",
+      "output": "AssociateRoutesSecurityGroupResponse",
+      "status": "online"
+    },
     "AuthorizeToken": {
       "document": "给实例授权token",
       "input": "AuthorizeTokenRequest",
@@ -532,6 +539,13 @@
       "output": "DescribeUserResponse",
       "status": "online"
     },
+    "DisassociateRoutesSecurityGroup": {
+      "document": "解绑路由安全组",
+      "input": "DisassociateRoutesSecurityGroupRequest",
+      "name": "解绑路由安全组",
+      "output": "DisassociateRoutesSecurityGroupResponse",
+      "status": "online"
+    },
     "FetchDatahubMessageByOffset": {
       "document": "根据指定offset位置的消息",
       "input": "FetchDatahubMessageByOffsetRequest",
@@ -649,6 +663,13 @@
       "input": "ModifyPasswordRequest",
       "name": "修改密码",
       "output": "ModifyPasswordResponse",
+      "status": "online"
+    },
+    "ModifyRouteSecurityGroups": {
+      "document": "修改路由安全组关联",
+      "input": "ModifyRouteSecurityGroupsRequest",
+      "name": "修改路由安全组关联",
+      "output": "ModifyRouteSecurityGroupsResponse",
       "status": "online"
     },
     "ModifyRoutineMaintenanceTask": {
@@ -1093,6 +1114,52 @@
         }
       ],
       "usage": "out"
+    },
+    "AssociateRoutesSecurityGroupRequest": {
+      "document": "AssociateRoutesSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定路由的列表",
+          "example": "无",
+          "member": "InstanceRoute",
+          "name": "InstanceRoutes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "安全组id",
+          "example": "sg-test",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateRoutesSecurityGroupResponse": {
+      "document": "AssociateRoutesSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "SecurityGroupRouteOperateResp",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AuthorizeTokenRequest": {
       "document": "AuthorizeToken请求参数结构体",
@@ -9995,6 +10062,52 @@
       ],
       "type": "object"
     },
+    "DisassociateRoutesSecurityGroupRequest": {
+      "document": "DisassociateRoutesSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解绑路由的列表",
+          "example": "无",
+          "member": "InstanceRoute",
+          "name": "InstanceRoutes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "安全组id",
+          "example": "sg-test",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateRoutesSecurityGroupResponse": {
+      "document": "DisassociateRoutesSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "SecurityGroupRouteOperateResp",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DorisConnectParam": {
       "document": "Doris 连接源参数",
       "members": [
@@ -15855,6 +15968,52 @@
       ],
       "type": "object"
     },
+    "ModifyRouteSecurityGroupsRequest": {
+      "document": "ModifyRouteSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例路由",
+          "example": "无",
+          "member": "InstanceRoute",
+          "name": "InstanceRoute",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的安全组有序列表。\n注意:不指定此参数或传空列表则代表解绑所有关联的安全组。",
+          "example": "[\"sg-test\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRouteSecurityGroupsResponse": {
+      "document": "ModifyRouteSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "\t返回结果",
+          "example": "无",
+          "member": "SecurityGroupRouteOperateResp",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRoutineMaintenanceTaskRequest": {
       "document": "ModifyRoutineMaintenanceTask请求参数结构体",
       "members": [
@@ -19120,6 +19279,32 @@
         }
       ],
       "usage": "both"
+    },
+    "SecurityGroupRouteOperateResp": {
+      "document": "安全组路由操作结果返回值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作返回的code，0为正常，非0为错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ReturnCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作返回的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SecurityGroupRouteResp": {
       "document": "安全组路由信息返回结果",

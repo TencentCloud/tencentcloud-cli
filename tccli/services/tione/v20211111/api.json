@@ -1140,7 +1140,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对话的目标模型ID。\n自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-q7pfr29p。",
+          "document": "<p>对话的目标模型ID。<br>自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-q7pfr29p。</p>",
           "example": "ms-q7pfr29p",
           "member": "string",
           "name": "Model",
@@ -1149,7 +1149,7 @@
         },
         {
           "disabled": false,
-          "document": "输入对话历史。旧的对话在前，数组中最后一项应该为这次的问题。",
+          "document": "<p>输入对话历史。旧的对话在前，数组中最后一项应该为这次的问题。</p>",
           "example": "无",
           "member": "Message",
           "name": "Messages",
@@ -1158,7 +1158,16 @@
         },
         {
           "disabled": false,
-          "document": "仅当模型为自行部署的开源大模型时生效。采样随机值，默认值为0.7，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。",
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当模型为自行部署的开源大模型时生效。采样随机值，默认值为0.7，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。</p>",
           "example": "0.7",
           "member": "float",
           "name": "Temperature",
@@ -1167,7 +1176,7 @@
         },
         {
           "disabled": false,
-          "document": "仅当模型为自行部署的开源大模型时生效。核采样，默认值为1，取值范围[0,1]。指的是预先设置一个概率界限 p，然后将所有可能生成的token，根据概率大小从高到低排列，依次选取。当这些选取的token的累积概率大于或等于 p 值时停止，然后从已经选取的token中进行采样，生成下一个token。例如top_p为0.1时意味着模型只考虑累积概率为10%的token。建议仅修改此参数或Temperature，不建议两者都修改。",
+          "document": "<p>仅当模型为自行部署的开源大模型时生效。核采样，默认值为1，取值范围[0,1]。指的是预先设置一个概率界限 p，然后将所有可能生成的token，根据概率大小从高到低排列，依次选取。当这些选取的token的累积概率大于或等于 p 值时停止，然后从已经选取的token中进行采样，生成下一个token。例如top_p为0.1时意味着模型只考虑累积概率为10%的token。建议仅修改此参数或Temperature，不建议两者都修改。</p>",
           "example": "1",
           "member": "float",
           "name": "TopP",
@@ -1176,7 +1185,7 @@
         },
         {
           "disabled": false,
-          "document": "仅当模型为自行部署的开源大模型时生效。默认 512，模型可生成内容的最长 token 数量，最大不能超过模型支持的上下文长度。",
+          "document": "<p>仅当模型为自行部署的开源大模型时生效。默认 512，模型可生成内容的最长 token 数量，最大不能超过模型支持的上下文长度。</p>",
           "example": "512",
           "member": "int64",
           "name": "MaxTokens",
@@ -1191,7 +1200,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对话的模型服务组ID",
+          "document": "<p>对话的模型服务组ID</p>",
           "example": "ms-q7pfr29p",
           "member": "string",
           "name": "Model",
@@ -1201,7 +1210,7 @@
         },
         {
           "disabled": false,
-          "document": "本次问答的答案。",
+          "document": "<p>本次问答的答案。</p>",
           "example": "无",
           "member": "Choice",
           "name": "Choices",
@@ -1211,7 +1220,7 @@
         },
         {
           "disabled": false,
-          "document": "会话Id。",
+          "document": "<p>会话Id。</p>",
           "example": "86eb3227-06f5-4e2f-8333-4d41ca30195b",
           "member": "string",
           "name": "Id",
@@ -1221,7 +1230,7 @@
         },
         {
           "disabled": false,
-          "document": "token统计",
+          "document": "<p>token统计</p>",
           "example": "无",
           "member": "Usage",
           "name": "Usage",
@@ -1829,7 +1838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务组 id",
+          "document": "<p>服务组 id</p>",
           "example": "ms-xxx",
           "member": "string",
           "name": "ServiceGroupId",
@@ -1838,7 +1847,16 @@
         },
         {
           "disabled": false,
-          "document": "token 名称",
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>token 名称</p>",
           "example": "这是 token 名称",
           "member": "string",
           "name": "Name",
@@ -1847,7 +1865,7 @@
         },
         {
           "disabled": false,
-          "document": "Description 描述",
+          "document": "<p>Description 描述</p>",
           "example": "这是 token 描述",
           "member": "string",
           "name": "Description",
@@ -4525,7 +4543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务组 id",
+          "document": "<p>服务组 id</p>",
           "example": "ms-xxx",
           "member": "string",
           "name": "ServiceGroupId",
@@ -4534,7 +4552,16 @@
         },
         {
           "disabled": false,
-          "document": "token 值",
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>token 值</p>",
           "example": "8PyrHoGd6uZ52hQ",
           "member": "string",
           "name": "AuthTokenValue",
@@ -10238,7 +10265,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务组 id",
+          "document": "<p>服务组 id</p>",
           "example": "ms-xxx",
           "member": "string",
           "name": "ServiceGroupId",
@@ -10247,7 +10274,16 @@
         },
         {
           "disabled": false,
-          "document": "是否需要重置，如果为 true，重置 token 值",
+          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要重置，如果为 true，重置 token 值</p>",
           "example": "false",
           "member": "bool",
           "name": "NeedReset",
@@ -10256,7 +10292,7 @@
         },
         {
           "disabled": false,
-          "document": "AuthToken 数据",
+          "document": "<p>AuthToken 数据</p>",
           "example": "无",
           "member": "AuthToken",
           "name": "AuthToken",

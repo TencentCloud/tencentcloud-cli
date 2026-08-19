@@ -147,8 +147,8 @@
     "DescribeModelQuota": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelQuota\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f6c89c0-b82c-4e4d-9f39-11d27eb449ca\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelQuota\n<公共请求参数>\n\n{\n    \"ModelId\": \"deepseek-v3.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelId\": \"deepseek-v3.2\",\n        \"RequestId\": \"8f6c89c0-b82c-4e4d-9f39-11d27eb449ca\",\n        \"TPMLimit\": 300000\n    }\n}",
         "title": "正常响应"
       }
     ],

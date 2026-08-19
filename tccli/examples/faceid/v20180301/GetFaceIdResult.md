@@ -1,36 +1,4 @@
-**Example 1: 获取SDK核验结果成功示例**
-
-
-
-Input: 
-
-```
-tccli faceid GetFaceIdResult --cli-unfold-argument  \
-    --FaceIdToken CE661F1A-0F1E-45BD-BE113-34C05CEA76811
-```
-
-Output: 
-```
-{
-    "Response": {
-        "BestFrameBase64": "/9j/4AAQSk...1Udr+R/9k=",
-        "Description": "成功",
-        "DeviceInfoLevel": null,
-        "DeviceInfoTag": null,
-        "Extra": "",
-        "IdCard": "",
-        "LivenessInfoTag": null,
-        "Name": "",
-        "RequestId": "13c51421-3b1d-4b40-8206-8dacedec2d32",
-        "Result": "0",
-        "RiskInfoTag": "",
-        "Similarity": 0,
-        "VideoBase64": ""
-    }
-}
-```
-
-**Example 2: 获取SDK核验结果人脸检测失败示例**
+**Example 1: 获取SDK核验结果人脸检测失败示例**
 
 
 
@@ -58,6 +26,38 @@ Output:
         "RiskInfoTag": "",
         "Similarity": 0,
         "VideoBase64": "AAAAGGZ0eX...AAAAAAAAA="
+    }
+}
+```
+
+**Example 2: 获取SDK核验结果成功示例**
+
+
+
+Input: 
+
+```
+tccli faceid GetFaceIdResult --cli-unfold-argument  \
+    --FaceIdToken CE661F1A-0F1E-45BD-BE113-34C05CEA76811
+```
+
+Output: 
+```
+{
+    "Response": {
+        "BestFrameBase64": "/9j/4AAQSk...1Udr+R/9k=",
+        "Description": "成功",
+        "DeviceInfoLevel": null,
+        "DeviceInfoTag": null,
+        "Extra": "",
+        "IdCard": "",
+        "LivenessInfoTag": null,
+        "Name": "",
+        "RequestId": "13c51421-3b1d-4b40-8206-8dacedec2d32",
+        "Result": "0",
+        "RiskInfoTag": "",
+        "Similarity": 0,
+        "VideoBase64": ""
     }
 }
 ```

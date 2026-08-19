@@ -19531,7 +19531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>错误码，成功时返回0</p>",
+          "document": "<p>错误码，成功时返回0，处理中返回100</p>",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -28763,6 +28763,23 @@
       ],
       "usage": "out"
     },
+    "ImageQualityConfig": {
+      "document": "图片质量评估任务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片质量评估维度</p><p>枚举值：</p><ul><li>Brightness： 亮度评估</li><li>Contrast： 对比度评估</li><li>Sharpness： 清晰度评估</li><li>IQA： 综合质量评估</li></ul>",
+          "example": "[\"Brightness\"]",
+          "member": "string",
+          "name": "Attributes",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ImageQualityEnhanceConfig": {
       "document": "综合增强配置",
       "members": [
@@ -29326,6 +29343,17 @@
           "example": "无",
           "member": "UnderstandImageConfig",
           "name": "UnderstandImageConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片质量评估配置</p>",
+          "example": "无",
+          "member": "ImageQualityConfig",
+          "name": "ImageQualityConfig",
           "output_required": false,
           "required": false,
           "type": "object",

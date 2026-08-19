@@ -1,4 +1,4 @@
-**Example 1: 微信小程序获取BizToken成功示例**
+**Example 1: H5获取BizToken成功示例**
 
 
 
@@ -8,7 +8,9 @@ Input:
 tccli faceid DetectAuth --cli-unfold-argument  \
     --RuleId 0 \
     --IdCard 11204416541220243X \
-    --Name 韦小宝
+    --Name 韦小宝 \
+    --Extra Orderid=f904f4cf75db4f8fdc4f942c7f7a \
+    --RedirectUrl http://www.qq.com
 ```
 
 Output: 
@@ -22,7 +24,7 @@ Output:
 }
 ```
 
-**Example 2: H5获取BizToken成功示例**
+**Example 2: 微信小程序获取BizToken成功示例**
 
 
 
@@ -32,9 +34,7 @@ Input:
 tccli faceid DetectAuth --cli-unfold-argument  \
     --RuleId 0 \
     --IdCard 11204416541220243X \
-    --Name 韦小宝 \
-    --Extra Orderid=f904f4cf75db4f8fdc4f942c7f7a \
-    --RedirectUrl http://www.qq.com
+    --Name 韦小宝
 ```
 
 Output: 

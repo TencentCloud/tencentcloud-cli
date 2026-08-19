@@ -2285,16 +2285,16 @@
     "DescribeReverseShellRulesAggregation": [
       {
         "document": "查看全部规则",
-        "input": "POST / HTTP/1.1\nHost: xxx\nContent-Type: application/json\nX-TC-Action: DescribeReverseShellRulesAggregation\n<公共请求参数>\n\n{\n    \"Limit\": 2,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"WhiteType\",\n            \"Values\": [\n                \"0\",\n                \"1\"\n            ]\n        }\n    ],\n    \"By\": \"ModifyTime\",\n    \"Order\": \"DESC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CreateTime\": \"2024-07-11 19:01:28\",\n                \"DestIp\": \"\",\n                \"DestPort\": \"\",\n                \"GroupID\": \"adc1\",\n                \"HandleHistory\": 1,\n                \"Id\": 1,\n                \"IsGlobal\": 1,\n                \"MachinesNums\": \"全部服务器\",\n                \"ModifyTime\": \"2024-07-11 19:01:28\",\n                \"Operator\": \"\",\n                \"ProcessName\": \"\",\n                \"RuleRegexp\": \"ssh*.d\",\n                \"Status\": 0,\n                \"UuidHostips\": [\n                    {\n                        \"Hostip\": \"\",\n                        \"Uuid\": \"\"\n                    }\n                ],\n                \"WhiteType\": 1\n            },\n            {\n                \"CreateTime\": \"2024-07-09 20:05:43\",\n                \"DestIp\": \"\",\n                \"DestPort\": \"\",\n                \"GroupID\": \"adc1\",\n                \"HandleHistory\": 1,\n                \"Id\": 2,\n                \"IsGlobal\": 0,\n                \"MachinesNums\": \"2\",\n                \"ModifyTime\": \"2024-07-11 16:57:00\",\n                \"Operator\": \"\",\n                \"ProcessName\": \"\",\n                \"RuleRegexp\": \"sshd*c\",\n                \"Status\": 0,\n                \"UuidHostips\": [\n                    {\n                        \"Hostip\": \"1.1.1.2\",\n                        \"Uuid\": \"8c09e1b1-5611-45b3-9c02-737996011b81\"\n                    },\n                    {\n                        \"Hostip\": \"2.3.4.5\",\n                        \"Uuid\": \"8c09e1b1-5611-45b3-9c02-737996011b82\"\n                    }\n                ],\n                \"WhiteType\": 1\n            }\n        ],\n        \"RequestId\": \"8c09e1b1-5611-45b3-9c02-737996011b8d\",\n        \"TotalCount\": 21\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReverseShellRulesAggregation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"a7a313be-9cce-496b-b5e9-65959460fa3f\"\n    }\n}",
         "title": "查看全部规则"
       }
     ],
     "DescribeReverseShellSystemPolicyConfig": [
       {
         "document": "查询反弹shell系统策略配置",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReverseShellSystemPolicyConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"InnerNetAlarmShow\": true,\n        \"InnerIPShow\": true,\n        \"RequestId\": \"acdd5474-6360-4fd4-bfc7-843162cb8116\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReverseShellSystemPolicyConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InnerIPShow\": true,\n        \"InnerNetAlarmShow\": true,\n        \"RequestId\": \"da9e3cd7-ebdb-42b0-9bb3-3c75f696aab9\"\n    }\n}",
         "title": "DescribeReverseShellSystemPolicyConfig"
       }
     ],

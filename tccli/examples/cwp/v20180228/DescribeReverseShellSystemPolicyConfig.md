@@ -11,9 +11,9 @@ Output:
 ```
 {
     "Response": {
-        "InnerNetAlarmShow": true,
         "InnerIPShow": true,
-        "RequestId": "acdd5474-6360-4fd4-bfc7-843162cb8116"
+        "InnerNetAlarmShow": true,
+        "RequestId": "da9e3cd7-ebdb-42b0-9bb3-3c75f696aab9"
     }
 }
 ```
