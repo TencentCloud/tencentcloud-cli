@@ -24,6 +24,14 @@
         "title": "获取环境对应的临时密钥"
       }
     ],
+    "BindCls": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindCls\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"ClsRegion\": \"ap-shanghai\",\n    \"ClsLogsetId\": \"xxxxx\",\n    \"ClsTopicId\": \"yyyyy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "绑定自定义日志"
+      }
+    ],
     "BindStorageSource": [
       {
         "document": "",

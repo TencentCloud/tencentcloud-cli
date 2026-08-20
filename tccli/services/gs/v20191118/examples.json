@@ -185,7 +185,7 @@
     "DeleteAndroidInstanceImages": [
       {
         "document": "删除安卓实例镜像",
-        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceImages\n<公共请求参数>\n\n{\n    \"AndroidInstanceImageIds\": [\n        \"agc\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceImages\n<公共请求参数>\n\n{\n    \"AndroidInstanceImageIds\": [\n        \"image-0gbwwopx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "删除安卓实例镜像"
       }

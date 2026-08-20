@@ -4323,7 +4323,7 @@
         {
           "disabled": false,
           "document": "过滤字段名称。",
-          "example": "Brand",
+          "example": "ResourceType",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4341,7 +4341,7 @@
         {
           "disabled": false,
           "document": "过滤值列表。最多支持 10 个。",
-          "example": "[\"Tencent\"]",
+          "example": "[\"model\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -4356,7 +4356,7 @@
         {
           "disabled": false,
           "document": "排序字段名称。",
-          "example": "RecommendWeight",
+          "example": "CreatedAt",
           "member": "string",
           "name": "Name",
           "required": true,

@@ -14,6 +14,14 @@
         "title": "申请公网Ipv6"
       }
     ],
+    "CreateEdgeNodeService": [
+      {
+        "document": "为广州一区开通边缘物理机计费能力。",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeNodeService\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5f6a789-4c3d-5b2e-af01-8d7c6b5a4e3f\"\n    }\n}",
+        "title": "开通指定可用区的边缘物理机计费能力"
+      }
+    ],
     "CreateInstances": [
       {
         "document": "在广州一区创建一台物理机实例，使用 CentOS 7.9 镜像，并启用 IPv6。",

@@ -782,6 +782,15 @@
           "name": "AllowUploadPhoto",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启浅色背景检测</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBotBgDetection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5536,6 +5545,15 @@
           "name": "RetryLimit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启浅色背景检测</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBotBgDetection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

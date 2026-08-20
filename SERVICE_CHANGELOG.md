@@ -1,55 +1,10 @@
-# Release 3.0.1476.1
+# Release 3.0.1477.1
 
-## 云硬盘(cbs) 版本：2017-03-12
+## 文件存储(cfs) 版本：2019-07-19
 
-### 第 60 次发布
+### 第 50 次发布
 
-发布时间：2026-08-20 01:19:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [RemoteDiskDetail](http://document.tencentcloudapi.woa.com/document/product/362/15669#RemoteDiskDetail)
-
-	* 新增成员：CreateTime, DeadlineTime, DiskChargeType, DiskSize, InstanceId, RemoteDiskId, RemoteDiskName, RemoteDiskState, RemoteDiskType, RenewFlag
-
-
-
-
-## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
-
-### 第 118 次发布
-
-发布时间：2026-08-20 01:26:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AssociateRoutesSecurityGroup](http://document.tencentcloudapi.woa.com/document/product/597/92395)
-* [DisassociateRoutesSecurityGroup](http://document.tencentcloudapi.woa.com/document/product/597/92394)
-* [ModifyRouteSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/597/92393)
-
-新增数据结构：
-
-* [SecurityGroupRouteOperateResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#SecurityGroupRouteOperateResp)
-
-
-
-## 负载均衡(clb) 版本：2023-04-17
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 94 次发布
-
-发布时间：2026-08-20 01:27:35
+发布时间：2026-08-21 01:14:56
 
 本次发布包含了以下内容：
 
@@ -57,39 +12,25 @@
 
 修改接口：
 
-* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/214/46802)
+* [CreateCfsFileSystem](http://document.tencentcloudapi.woa.com/document/product/582/38174)
 
-	* 新增入参：Tags
-
-
+	* 新增入参：Scenario
 
 
-## 资源中心(cloudrc) 版本：2024-06-06
+修改数据结构：
 
-### 第 4 次发布
+* [FileSystemInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#FileSystemInfo)
 
-发布时间：2026-08-20 01:29:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeResource](http://document.tencentcloudapi.woa.com/document/product/1782/92397)
-* [SearchResources](http://document.tencentcloudapi.woa.com/document/product/1782/92396)
-
-新增数据结构：
-
-* [ResourceSummary](http://document.tencentcloudapi.woa.com/document/product/1782/87013#ResourceSummary)
+	* 新增成员：Scenario
 
 
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 190 次发布
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-发布时间：2026-08-20 01:36:22
+### 第 60 次发布
+
+发布时间：2026-08-21 01:20:40
 
 本次发布包含了以下内容：
 
@@ -97,43 +38,38 @@
 
 修改数据结构：
 
-* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
+* [TopSqlTpl](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TopSqlTpl)
 
-	* 新增成员：StorageOverUse, StorageAutoExpand
+	* <font color="#dd0000">**修改成员**：</font>IoWaitTimeMin
 
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 边缘可用区(edgezone) 版本：2026-04-01
+
+### 第 2 次发布
+
+发布时间：2026-08-21 01:23:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEdgeNodeService](http://document.tencentcloudapi.woa.com/document/product/1812/92398)
 
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 107 次发布
+### 第 108 次发布
 
-发布时间：2026-08-20 01:50:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [GetFaceIdResult](http://document.tencentcloudapi.woa.com/document/product/1007/49199)
-
-	* 新增出参：IdCardFrontBase64
-
-* [GetFaceIdToken](http://document.tencentcloudapi.woa.com/document/product/1007/49198)
-
-	* 新增入参：MetaData
-
-	* 新增出参：ClientConfig
-
-
-
-
-## 腾讯云数据库 AI 服务(tdai) 版本：2025-07-17
-
-### 第 3 次发布
-
-发布时间：2026-08-20 02:31:09
+发布时间：2026-08-21 01:24:49
 
 本次发布包含了以下内容：
 
@@ -141,25 +77,139 @@
 
 修改接口：
 
-* [CreateAgentInstance](http://document.tencentcloudapi.woa.com/document/product/1802/91666)
+* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
 
-	* 新增入参：UsePlatformAccount
+	* 新增入参：EnableBotBgDetection
+
+* [GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)
+
+	* 新增入参：EnableBotBgDetection
+
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 35 次发布
+
+发布时间：2026-08-21 01:26:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeServices](http://document.tencentcloudapi.woa.com/document/product/1750/88983)
+
+	* 新增入参：States
 
 
 修改数据结构：
 
-* [AgentInstance](http://document.tencentcloudapi.woa.com/document/product/1802/91680#AgentInstance)
+* [ComputeDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ComputeDetail)
 
-	* 新增成员：RoleName, OfflineTime, ProductName
-
-
+	* 新增成员：Role
 
 
-## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 152 次发布
 
-发布时间：2026-08-20 02:34:47
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 97 次发布
+
+发布时间：2026-08-21 01:30:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteTWeSeeTasksByCondition](http://document.tencentcloudapi.woa.com/document/product/1081/92399)
+
+新增数据结构：
+
+* [SeeDeleteTaskCondition](http://document.tencentcloudapi.woa.com/document/product/1081/34988#SeeDeleteTaskCondition)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2023-06-16
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 135 次发布
+
+发布时间：2026-08-21 01:34:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeGrafanaVersions](http://document.tencentcloudapi.woa.com/document/product/248/92400)
+
+修改接口：
+
+* [CreateGrafanaInstance](http://document.tencentcloudapi.woa.com/document/product/248/75697)
+
+	* 新增入参：DockerImage
+
+
+新增数据结构：
+
+* [GrafanaVersion](http://document.tencentcloudapi.woa.com/document/product/248/30354#GrafanaVersion)
+
+
+
+## 官网门户服务(portal) 版本：2023-04-13
+
+### 第 16 次发布
+
+发布时间：2026-08-21 01:37:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SearchDocuments](http://document.tencentcloudapi.woa.com/document/product/1732/92402)
+
+新增数据结构：
+
+* [SearchDocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#SearchDocumentItem)
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 61 次发布
+
+发布时间：2026-08-21 01:41:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindCls](http://document.tencentcloudapi.woa.com/document/product/876/92403)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 137 次发布
+
+发布时间：2026-08-21 01:45:32
 
 本次发布包含了以下内容：
 
@@ -167,46 +217,16 @@
 
 修改接口：
 
-* [ChatCompletion](http://document.tencentcloudapi.woa.com/document/product/851/81592)
+* [DescribeOSImages](http://document.tencentcloudapi.woa.com/document/product/457/86797)
 
-	* 新增入参：TiProjectId
-
-* [CreateModelServiceAuthToken](http://document.tencentcloudapi.woa.com/document/product/851/87050)
-
-	* 新增入参：TiProjectId
-
-* [DeleteModelServiceAuthToken](http://document.tencentcloudapi.woa.com/document/product/851/87049)
-
-	* 新增入参：TiProjectId
-
-* [ModifyModelServiceAuthToken](http://document.tencentcloudapi.woa.com/document/product/851/87048)
-
-	* 新增入参：TiProjectId
+	* 新增入参：Filters
 
 
+修改数据结构：
 
+* [OSImage](http://document.tencentcloudapi.woa.com/document/product/457/31866#OSImage)
 
-## TI-ONE 训练平台(tione) 版本：2019-10-22
-
-
-
-## TokenHub(tokenhub) 版本：2026-03-22
-
-### 第 19 次发布
-
-发布时间：2026-08-20 02:38:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeModelQuota](http://document.tencentcloudapi.woa.com/document/product/1814/92392)
-
-	* 新增入参：ModelId
-
-	* 新增出参：ModelId, TPMLimit, RPMLimit, TPMInputQuotaLimit, TPMOutputQuotaLimit, TPMInputReserveLimit, TPMOutputReserveLimit
+	* 新增成员：Arch
 
 
 

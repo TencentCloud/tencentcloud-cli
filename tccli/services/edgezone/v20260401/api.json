@@ -7,6 +7,13 @@
       "output": "ApplyPublicIpsResponse",
       "status": "online"
     },
+    "CreateEdgeNodeService": {
+      "document": "开通边缘节点计费服务。",
+      "input": "CreateEdgeNodeServiceRequest",
+      "name": "开通边缘节点计费服务",
+      "output": "CreateEdgeNodeServiceResponse",
+      "status": "online"
+    },
     "CreateInstances": {
       "document": "创建物理机实例，系统自动分配物理机资源并完成装机。如果用户未在当前可用区开通计费，系统自动开通。支持并发分配物理机资源，异步执行网络分配和装机任务。",
       "input": "CreateInstancesRequest",
@@ -180,6 +187,33 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeNodeServiceRequest": {
+      "document": "CreateEdgeNodeService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区代码，如 ap-guangzhou-1。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeNodeServiceResponse": {
+      "document": "CreateEdgeNodeService返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
