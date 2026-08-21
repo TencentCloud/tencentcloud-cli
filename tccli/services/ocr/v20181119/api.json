@@ -20179,7 +20179,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目名称",
+          "document": "<p>项目名称</p>",
           "example": "代理服务",
           "member": "string",
           "name": "Name",
@@ -20189,7 +20189,7 @@
         },
         {
           "disabled": false,
-          "document": "数量",
+          "document": "<p>数量</p>",
           "example": "1",
           "member": "string",
           "name": "Quantity",
@@ -20199,7 +20199,7 @@
         },
         {
           "disabled": false,
-          "document": "规格型号",
+          "document": "<p>规格型号</p>",
           "example": "规格",
           "member": "string",
           "name": "Specification",
@@ -20209,7 +20209,7 @@
         },
         {
           "disabled": false,
-          "document": "单价",
+          "document": "<p>单价</p>",
           "example": "12",
           "member": "string",
           "name": "Price",
@@ -20219,7 +20219,7 @@
         },
         {
           "disabled": false,
-          "document": "金额",
+          "document": "<p>金额</p>",
           "example": "24",
           "member": "string",
           "name": "Total",
@@ -20229,7 +20229,7 @@
         },
         {
           "disabled": false,
-          "document": "税率",
+          "document": "<p>税率</p>",
           "example": "1%",
           "member": "string",
           "name": "TaxRate",
@@ -20239,7 +20239,7 @@
         },
         {
           "disabled": false,
-          "document": "税额",
+          "document": "<p>税额</p>",
           "example": "1",
           "member": "string",
           "name": "Tax",
@@ -20249,7 +20249,7 @@
         },
         {
           "disabled": false,
-          "document": "单位",
+          "document": "<p>单位</p>",
           "example": "次",
           "member": "string",
           "name": "Unit",
@@ -20259,7 +20259,7 @@
         },
         {
           "disabled": false,
-          "document": "运输工具类型",
+          "document": "<p>运输工具类型</p>",
           "example": "轿车",
           "member": "string",
           "name": "VehicleType",
@@ -20269,7 +20269,7 @@
         },
         {
           "disabled": false,
-          "document": "运输工具牌号",
+          "document": "<p>运输工具牌号</p>",
           "example": "A123456",
           "member": "string",
           "name": "VehicleBrand",
@@ -20279,7 +20279,7 @@
         },
         {
           "disabled": false,
-          "document": "起始地",
+          "document": "<p>起始地</p>",
           "example": "深圳",
           "member": "string",
           "name": "DeparturePlace",
@@ -20289,7 +20289,7 @@
         },
         {
           "disabled": false,
-          "document": "到达地",
+          "document": "<p>到达地</p>",
           "example": "深圳",
           "member": "string",
           "name": "ArrivalPlace",
@@ -20299,7 +20299,7 @@
         },
         {
           "disabled": false,
-          "document": "运输货物名称，仅货物运输服务发票返回",
+          "document": "<p>运输货物名称，仅货物运输服务发票返回</p>",
           "example": "水果",
           "member": "string",
           "name": "TransportItemsName",
@@ -20309,7 +20309,7 @@
         },
         {
           "disabled": false,
-          "document": "建筑服务发生地，仅建筑发票返回",
+          "document": "<p>建筑服务发生地，仅建筑发票返回</p>",
           "example": "深圳",
           "member": "string",
           "name": "PlaceOfBuildingService",
@@ -20319,7 +20319,7 @@
         },
         {
           "disabled": false,
-          "document": "建筑项目名称，仅建筑发票返回",
+          "document": "<p>建筑项目名称，仅建筑发票返回</p>",
           "example": "建筑项目",
           "member": "string",
           "name": "BuildingName",
@@ -20329,7 +20329,7 @@
         },
         {
           "disabled": false,
-          "document": "产权证书/不动产权证号，仅不动产经营租赁服务发票返回",
+          "document": "<p>产权证书/不动产权证号，仅不动产经营租赁服务发票返回</p>",
           "example": "440300094040109",
           "member": "string",
           "name": "EstateNumber",
@@ -20339,7 +20339,7 @@
         },
         {
           "disabled": false,
-          "document": "面积单位，仅不动产经营租赁服务发票返回",
+          "document": "<p>面积单位，仅不动产经营租赁服务发票返回</p>",
           "example": "10",
           "member": "string",
           "name": "AreaUnit",
@@ -20349,8 +20349,8 @@
         },
         {
           "disabled": false,
-          "document": "出行人，仅旅客运输服务发票返回",
-          "example": "无",
+          "document": "<p>出行人，仅旅客运输服务发票返回</p>",
+          "example": "张三",
           "member": "string",
           "name": "Traveler",
           "output_required": true,
@@ -20359,8 +20359,8 @@
         },
         {
           "disabled": false,
-          "document": "有效身份证件号，仅旅客运输服务发票返回",
-          "example": "无",
+          "document": "<p>有效身份证件号，仅旅客运输服务发票返回</p>",
+          "example": "350204********6010",
           "member": "string",
           "name": "TravelerID",
           "output_required": true,
@@ -20369,8 +20369,8 @@
         },
         {
           "disabled": false,
-          "document": "出行日期，仅旅客运输服务发票返回",
-          "example": "无",
+          "document": "<p>出行日期，仅旅客运输服务发票返回</p>",
+          "example": "2024-12-18",
           "member": "string",
           "name": "TravelDate",
           "output_required": true,
@@ -20379,11 +20379,31 @@
         },
         {
           "disabled": false,
-          "document": "等级，仅旅客运输服务发票返回",
-          "example": "无",
+          "document": "<p>等级，仅旅客运输服务发票返回</p>",
+          "example": "1",
           "member": "string",
           "name": "TravelLevel",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通行日期起</p>",
+          "example": "2024-12-18",
+          "member": "string",
+          "name": "DateStart",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通行日期止</p>",
+          "example": "2024-12-18",
+          "member": "string",
+          "name": "DateEnd",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -23185,7 +23205,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>场景类型参数，如果场景无法细分请选用该大类的第一个子类，目前支持以下类型：<br><strong>经营场所照</strong><br>0101 门头照<br>0102 店内照<br>0103 流动经营照</p>",
+          "document": "<p>场景类型参数，如果场景无法细分请选用该大类的第一个子类，目前支持以下类型：<br><strong>经营场所照</strong><br>0101 门头照<br>0102 店内照<br>0103 流动经营照    </p><p><strong>车牌业务照</strong><br>0201 车牌</p>",
           "example": "0101",
           "member": "string",
           "name": "Scene",

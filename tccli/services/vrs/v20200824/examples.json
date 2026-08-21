@@ -19,7 +19,7 @@
     "DescribeVRSTaskStatus": [
       {
         "document": "声音复刻任务结果查询",
-        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVrsTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"ed461a019355c5cd1ce31ab4dfb8cb12\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVRSTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"ed461a019355c5cd1ce31ab4dfb8cb12\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"ce68122c-0ca8-4fa6-99b1-90a2867\",\n            \"Status\": 2,\n            \"StatusStr\": \"waiting in queue\",\n            \"VoiceType\": 200000000,\n            \"FastVoiceType\": \"WCHN-353xxxx0f3eace0c1\",\n            \"ErrorMsg\": \"\"\n        },\n        \"RequestId\": \"63f43c3d6e30af6bd63735b0\"\n    }\n}",
         "title": "声音复刻任务结果查询"
       }
@@ -27,7 +27,7 @@
     "DetectEnvAndSoundQuality": [
       {
         "document": "音质检测",
-        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectionEnvAndSoundQuality\n<公共请求参数>\n\n{\n    \"TextId\": \"00020\",\n    \"AudioData\": \"\",\n    \"Codec\": \"wav\",\n    \"TypeId\": 2\n}",
+        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectEnvAndSoundQuality\n<公共请求参数>\n\n{\n    \"TextId\": \"00020\",\n    \"AudioData\": \"\",\n    \"Codec\": \"wav\",\n    \"TypeId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AudioId\": \"vrs8270f89c-51f8-41c9-8bee-19fb5b8b9708\",\n            \"DetectionCode\": 0,\n            \"DetectionMsg\": \"Success\",\n            \"DetectionTip\": [\n                {\n                    \"PronAccuracy\": 0,\n                    \"PronFluency\": 0,\n                    \"Tag\": 0,\n                    \"Word\": \"我\"\n                }\n            ]\n        },\n        \"RequestId\": \"63f43c3d6e30af6bd63735b0\"\n    }\n}",
         "title": "音质检测"
       }
@@ -43,7 +43,7 @@
     "GetTrainingText": [
       {
         "document": "获取训练文本信息",
-        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVrsTrainingText\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTrainingText\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"63f89e17a6f281d5108ab7b0\",\n        \"Data\": {\n            \"TrainingTextList\": [\n                {\n                    \"TextId\": \"00001\",\n                    \"Text\": \"在很久很久以前 鸟群中有一只小鸟\"\n                },\n                {\n                    \"TextId\": \"00005\",\n                    \"Text\": \"那时候的凤凰还不是鸟中之王 只是一个很不起眼的小鸟\"\n                }\n            ]\n        }\n    }\n}",
         "title": "获取训练文本信息"
       }

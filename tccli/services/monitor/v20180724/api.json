@@ -546,6 +546,13 @@
       "output": "DescribeGrafanaNotificationChannelsResponse",
       "status": "online"
     },
+    "DescribeGrafanaVersions": {
+      "document": "列出 Grafana 版本",
+      "input": "DescribeGrafanaVersionsRequest",
+      "name": "列出 Grafana 版本",
+      "output": "DescribeGrafanaVersionsResponse",
+      "status": "online"
+    },
     "DescribeGrafanaWhiteList": {
       "document": "列出 Grafana 白名单",
       "input": "DescribeGrafanaWhiteListRequest",
@@ -4603,7 +4610,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "<p>实例名</p>",
           "example": "my-grafana",
           "member": "string",
           "name": "InstanceName",
@@ -4612,7 +4619,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID (私有网络 ID)",
+          "document": "<p>VPC ID (私有网络 ID)</p>",
           "example": "vpc-id",
           "member": "string",
           "name": "VpcId",
@@ -4621,7 +4628,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID 数组(VPC ID下的子网 ID，只取第一个)。\n注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）",
+          "document": "<p>子网 ID 数组(VPC ID下的子网 ID，只取第一个)。<br>注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）</p>",
           "example": "[\"subnet-id1\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -4630,7 +4637,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用外网",
+          "document": "<p>是否启用外网</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableInternet",
@@ -4639,7 +4646,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)",
+          "document": "<p>Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)</p>",
           "example": "admin",
           "member": "string",
           "name": "GrafanaInitPassword",
@@ -4648,7 +4655,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "PrometheusTag",
           "name": "TagSpecification",
@@ -4657,7 +4664,16 @@
         },
         {
           "disabled": false,
-          "document": "是否自动选择代金券，默认为 false",
+          "document": "<p>自定义版本，可用版本从 DescribeGrafanaVersions 接口获取</p>",
+          "example": "v10.4.19",
+          "member": "string",
+          "name": "DockerImage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动选择代金券，默认为 false</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
@@ -4672,7 +4688,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "<p>实例名</p>",
           "example": "my-grafana",
           "member": "string",
           "name": "InstanceId",
@@ -9832,6 +9848,33 @@
           "example": "无",
           "member": "GrafanaNotificationChannel",
           "name": "NotificationChannelSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaVersionsRequest": {
+      "document": "DescribeGrafanaVersions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeGrafanaVersionsResponse": {
+      "document": "DescribeGrafanaVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可选版本",
+          "example": "[]",
+          "member": "GrafanaVersion",
+          "name": "Versions",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -16141,6 +16184,32 @@
         }
       ],
       "usage": "both"
+    },
+    "GrafanaVersion": {
+      "document": "Grafana 版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本别名",
+          "example": "v7.4.2",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "v7.4.2",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InstallPluginsRequest": {
       "document": "InstallPlugins请求参数结构体",

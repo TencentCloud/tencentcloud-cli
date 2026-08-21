@@ -792,6 +792,14 @@
         "title": "列出 Grafana 告警通道"
       }
     ],
+    "DescribeGrafanaVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaVersions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            {\n                \"Version\": \"v7.4.2\",\n                \"Alias\": \"v7.4.2\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "列出 Grafana 可选版本"
+      }
+    ],
     "DescribeGrafanaWhiteList": [
       {
         "document": "列出 Grafana 白名单",

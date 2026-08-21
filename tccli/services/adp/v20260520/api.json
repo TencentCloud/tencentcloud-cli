@@ -42,6 +42,13 @@
       "output": "CreateConversationResponse",
       "status": "online"
     },
+    "CreateMsgRecordCategory": {
+      "document": "创建一条消息记录分类，支持指定分类名称与父分类（ParentId 为 0 时表示一级分类）",
+      "input": "CreateMsgRecordCategoryRequest",
+      "name": "创建消息记录分类",
+      "output": "CreateMsgRecordCategoryResponse",
+      "status": "online"
+    },
     "CreatePlugin": {
       "document": "获取插件详情",
       "input": "CreatePluginRequest",
@@ -124,6 +131,13 @@
       "input": "DeleteConversationRequest",
       "name": "删除会话",
       "output": "DeleteConversationResponse",
+      "status": "online"
+    },
+    "DeleteMsgRecordCategory": {
+      "document": "删除指定的消息记录分类",
+      "input": "DeleteMsgRecordCategoryRequest",
+      "name": "删除消息记录分类",
+      "output": "DeleteMsgRecordCategoryResponse",
       "status": "online"
     },
     "DeletePlugin": {
@@ -301,6 +315,20 @@
       "output": "DescribeModelListResponse",
       "status": "online"
     },
+    "DescribeMsgRecordCategoryList": {
+      "document": "查询应用的消息记录分类树，返回分类及子分类、各分类下记录数量与操作权限",
+      "input": "DescribeMsgRecordCategoryListRequest",
+      "name": "查询消息记录分类列表",
+      "output": "DescribeMsgRecordCategoryListResponse",
+      "status": "online"
+    },
+    "DescribeMsgRecordList": {
+      "document": "查询应用的对话消息记录列表，支持按渠道类型、反馈类型、意图、调用结果等条件过滤，并支持游标分页与按创建时间排序",
+      "input": "DescribeMsgRecordListRequest",
+      "name": "查询消息列表",
+      "output": "DescribeMsgRecordListResponse",
+      "status": "online"
+    },
     "DescribePlugin": {
       "document": "获取插件详情",
       "input": "DescribePluginRequest",
@@ -439,6 +467,13 @@
       "input": "ModifyConversationRequest",
       "name": "修改会话信息",
       "output": "ModifyConversationResponse",
+      "status": "online"
+    },
+    "ModifyMsgRecordCategory": {
+      "document": "修改指定消息记录分类的名称",
+      "input": "ModifyMsgRecordCategoryRequest",
+      "name": "修改消息记录分类",
+      "output": "ModifyMsgRecordCategoryResponse",
       "status": "online"
     },
     "ModifyPlugin": {
@@ -4711,6 +4746,45 @@
       ],
       "usage": "both"
     },
+    "CategoryPermission": {
+      "document": "CategoryPermission",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前用户是否可新增子分类</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanAdd",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户是否可删除该分类</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanDelete",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户是否可编辑该分类</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanEdit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClawAgentAgentTeamConfig": {
       "document": "ClawAgent Agent团队协作配置",
       "members": [
@@ -6503,6 +6577,61 @@
       ],
       "type": "object"
     },
+    "CreateMsgRecordCategoryRequest": {
+      "document": "CreateMsgRecordCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类名称</p>",
+          "example": "生活类问答",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用 ID</p>",
+          "example": "2062456131215815616",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>父分类业务 ID，0 表示一级分类（未分类）</p>",
+          "example": "2087095266081654784",
+          "member": "string",
+          "name": "ParentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMsgRecordCategoryResponse": {
+      "document": "CreateMsgRecordCategory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>新建分类的业务 ID</p>",
+          "example": "2087101876648506112",
+          "member": "string",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePluginRequest": {
       "document": "CreatePlugin请求参数结构体",
       "members": [
@@ -7403,6 +7532,42 @@
     },
     "DeleteConversationResponse": {
       "document": "DeleteConversation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMsgRecordCategoryRequest": {
+      "document": "DeleteMsgRecordCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 ID</p>",
+          "example": "2062456131215815616",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待删除的分类业务 ID</p>",
+          "example": "2087095343458174976",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMsgRecordCategoryResponse": {
+      "document": "DeleteMsgRecordCategory返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9359,6 +9524,156 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMsgRecordCategoryListRequest": {
+      "document": "DescribeMsgRecordCategoryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 ID</p>",
+          "example": "2062456131215815616",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMsgRecordCategoryListResponse": {
+      "document": "DescribeMsgRecordCategoryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消息记录分类树列表</p>",
+          "example": "无",
+          "member": "MsgRecordCategory",
+          "name": "CategoryList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMsgRecordListRequest": {
+      "document": "DescribeMsgRecordList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 ID</p>",
+          "example": "2087429578337166592",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件列表，支持：ChannelType（渠道类型，0 全部）、FeedbackType（反馈类型，-1 为全部）、QueryType、Query、CategoryId、ReplyMethod、StartTime、EndTime（秒时间戳）、Cursor（游标信息，上一页取响应 PrevCursor，下一页取响应 NextCursor）、Direction（方向，next 下一页，prev 上一页）、CallResult（调用结果，默认 0 为全部，1 为成功，2 为失败）、FailReason、Intent</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从 0 开始；不传时按 0 处理</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，最大 100；不传或传 0 时按默认分页大小处理</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序条件，只支持按 CreateTime 排序</p>",
+          "example": "无",
+          "member": "Sort",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMsgRecordListResponse": {
+      "document": "DescribeMsgRecordList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否有更多页</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HasMore",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息记录列表</p>",
+          "example": "无",
+          "member": "MsgRecord",
+          "name": "MsgRecordList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一页游标信息</p>",
+          "example": "{\"cursor_time\":\"2026-08-12 14:43:24\",\"skipped\":6}",
+          "member": "string",
+          "name": "NextCursor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一页游标信息</p>",
+          "example": "{\"cursor_time\":\"2026-08-12 17:13:29\",\"skipped\":0}",
+          "member": "string",
+          "name": "PrevCursor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总记录数，用于前端分页显示</p>",
+          "example": "6",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -12088,6 +12403,51 @@
       ],
       "type": "object"
     },
+    "ModifyMsgRecordCategoryRequest": {
+      "document": "ModifyMsgRecordCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 ID</p>",
+          "example": "2062456131215815616",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待修改的分类业务 ID</p>",
+          "example": "2087100220301236928",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改后的分类名称</p>",
+          "example": "电子产品使用类咨询",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMsgRecordCategoryResponse": {
+      "document": "ModifyMsgRecordCategory返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPluginRequest": {
       "document": "ModifyPlugin请求参数结构体",
       "members": [
@@ -12357,6 +12717,375 @@
         }
       ],
       "type": "object"
+    },
+    "MsgRecord": {
+      "document": "MsgRecord",
+      "members": [
+        {
+          "disabled": false,
+          "document": "答案",
+          "example": "你好！有什么我可以帮助你的吗？",
+          "member": "string",
+          "name": "Answer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "2059116175760018240",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类ID",
+          "example": "0",
+          "member": "string",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1780390822",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "意图",
+          "example": "聊天",
+          "member": "string",
+          "name": "Intent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "意图分类",
+          "example": "self_awareness",
+          "member": "string",
+          "name": "IntentCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是智能分类",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSmart",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问题",
+          "example": "你好",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录ID",
+          "example": "9cf_20260602_170021_708_05qBgUfb",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示消息的回复方式，枚举 ReplyMethod：0=未指定, 1=大模型直接回复, 2=保守回复, 3=拒答, 4=敏感回复, 5=问答对优先回复, 6=欢迎语, 7=并发超限, 8=全局干预知识, 9=任务流程过程回复, 10=任务流程答案, 11=搜索引擎, 12=知识润色, 13=图片理解, 14=实时文档, 15=澄清确认, 16=工作流回复, 17=工作流结束, 18=智能体回复, 19=多意图, 20=中断, 21=智能体计划预览, 22=智能体计划结果, 23=智能体结构化输出。",
+          "example": "10",
+          "member": "int64",
+          "name": "ReplyMethod",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "MsgRecordResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Score",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "0fad7bb5-6b75-4667-bfea-64ec2503a964",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "无",
+          "member": "MsgRecordSource",
+          "name": "Source",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "trace_id",
+          "example": "bf21a83c67a647e3a8e2925ecbfda598",
+          "member": "string",
+          "name": "TraceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MsgRecordCategory": {
+      "document": "MsgRecordCategory",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类的业务 ID</p>",
+          "example": "2087095266081654784",
+          "member": "string",
+          "name": "CategoryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子分类列表，树形嵌套</p>",
+          "example": "无",
+          "member": "MsgRecordCategory",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类名称</p>",
+          "example": "公众号渠道",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户对该分类的操作权限</p>",
+          "example": "无",
+          "member": "CategoryPermission",
+          "name": "Permission",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该分类下消息记录的数量</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MsgRecordResult": {
+      "document": "MsgRecordResult",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示该条消息的调用结果：0=CALL_RESULT_UNKNOWN（全部/未知）, 1=CALL_RESULT_SUCCESS（成功）, 2=CALL_RESULT_FAILED（失败）；fail_reason（string）为调用失败时的失败原因描述。",
+          "example": "1",
+          "member": "int64",
+          "name": "CallResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量，json字符串",
+          "example": "{\"name\":\"naevar\"}",
+          "member": "string",
+          "name": "CustomerVariable",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因",
+          "example": "0",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首token耗时",
+          "example": "4636",
+          "member": "uint64",
+          "name": "FirstTokenLatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入token数",
+          "example": "0",
+          "member": "uint64",
+          "name": "InputToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出token数",
+          "example": "0",
+          "member": "uint64",
+          "name": "OutputToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总token数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总token耗时",
+          "example": "5673",
+          "member": "uint64",
+          "name": "TotalTokenLatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MsgRecordSource": {
+      "document": "MsgRecordSource",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话消息的接入渠道类型：0=未指定, 1=坐席, 2=体验页面(腾讯云), 3=评测端对话, 4=体验页面(手机号), 5=对话端API接入, 6=评测任务对话, 10=工作流调试, 10000=微信公众号, 10001=微信服务号, 10002=企微应用, 10003=网页组件, 10004=微信客服, 10005=微信小程序, 10006=元器, 10007=应用宝, 10008=元宝, 10009=企微智能机器人, 10010=元器API, 10011=LINE, 10012=Telegram, 10100=电脑管家, 20001=荣耀智能体平台, 20002=小米应用商店；user_id（string）为该渠道下的访客唯一标识。",
+          "example": "3",
+          "member": "uint64",
+          "name": "ChannelType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "180",
+          "member": "string",
+          "name": "FromId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息发送者的用户来源类型：1=用户（访客/C端用户）, 2=机器人（AI回复）, 3=坐席（人工客服）；from_id（string）为该来源类型下的用户唯一标识 ID。",
+          "example": "2",
+          "member": "uint64",
+          "name": "FromType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户头像",
+          "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_monkey01.png",
+          "member": "string",
+          "name": "UserAvatar",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访客ID",
+          "example": "1747547736783716352",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访客名称",
+          "example": "coco测试11",
+          "member": "string",
+          "name": "UserNickname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "MultiAgentConfig": {
       "document": "多智能体配置",
@@ -14743,6 +15472,34 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Sort": {
+      "document": "<p>排序条件</p>",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>排序字段名，如 create_time</p>",
+          "example": "create_time",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向，1 升序，2 降序</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SORT_ORDER_INVALID</td><td>0</td><td>无效</td></tr><tr><td>SORT_ORDER_ASC</td><td>1</td><td>升序</td></tr><tr><td>SORT_ORDER_DESC</td><td>2</td><td>降序</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

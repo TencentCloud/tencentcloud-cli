@@ -66,6 +66,14 @@
         "title": "创建会话"
       }
     ],
+    "CreateMsgRecordCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMsgRecordCategory\n<公共请求参数>\n\n{\n    \"Name\": \"生活类问答\",\n    \"AppId\": \"2062456131215815616\",\n    \"ParentId\": \"2087095266081654784\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryId\": \"2087101876648506112\",\n        \"RequestId\": \"a603fd5d-7103-41de-82b7-28202eaf4412\"\n    }\n}",
+        "title": "创建问答分类"
+      }
+    ],
     "CreatePlugin": [
       {
         "document": "",
@@ -166,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConversation\n<公共请求参数>\n\n{\n    \"ConversationId\": \"e0b7f1cc-cc54-4f51-a1e0-e7653a20ea9f\",\n    \"Type\": 2,\n    \"AppKey\": \"1\",\n    \"ShareCode\": \"1\",\n    \"LoginSubAccountUin\": \"700001046587\",\n    \"LoginUin\": \"700001046587\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b42487dc-6af7-4965-829e-9cf1a6aa8e94\"\n    }\n}",
         "title": "删除ClawAgent模式的对话"
+      }
+    ],
+    "DeleteMsgRecordCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMsgRecordCategory\n<公共请求参数>\n\n{\n    \"AppId\": \"2062456131215815616\",\n    \"CategoryId\": \"2087095343458174976\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cef8a28b-28c9-4e7d-b1d6-ce3dd2327ebe\"\n    }\n}",
+        "title": "删除分类"
       }
     ],
     "DeletePlugin": [
@@ -374,6 +390,22 @@
         "title": "模型列表"
       }
     ],
+    "DescribeMsgRecordCategoryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMsgRecordCategoryList\n<公共请求参数>\n\n{\n    \"AppId\": \"2062456131215815616\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryList\": [\n            {\n                \"CategoryId\": \"0\",\n                \"Children\": [\n                    {\n                        \"CategoryId\": \"2087095266081654784\",\n                        \"Children\": [\n                            {\n                                \"CategoryId\": \"2087095343458174976\",\n                                \"Children\": [],\n                                \"Name\": \"公众号渠道\",\n                                \"Permission\": {\n                                    \"CanAdd\": true,\n                                    \"CanDelete\": true,\n                                    \"CanEdit\": true\n                                },\n                                \"TotalCount\": \"0\"\n                            }\n                        ],\n                        \"Name\": \"营销\",\n                        \"Permission\": {\n                            \"CanAdd\": true,\n                            \"CanDelete\": true,\n                            \"CanEdit\": true\n                        },\n                        \"TotalCount\": \"0\"\n                    }\n                ],\n                \"Name\": \"全部分类\",\n                \"Permission\": {\n                    \"CanAdd\": true,\n                    \"CanDelete\": false,\n                    \"CanEdit\": false\n                },\n                \"TotalCount\": \"61\"\n            }\n        ],\n        \"RequestId\": \"eae0d14b-8c50-46df-a791-0f449de920a3\"\n    }\n}",
+        "title": "获取某个应用下所有消息分类"
+      }
+    ],
+    "DescribeMsgRecordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMsgRecordList\n<公共请求参数>\n\n{\n    \"AppId\": \"2087429578337166592\",\n    \"FilterList\": [\n        {\n            \"Name\": \"StartTime\",\n            \"ValueList\": [\n                \"1786118400\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HasMore\": false,\n        \"MsgRecordList\": [\n            {\n                \"Answer\": \"# 《逆天仙途》\\n\\n## 第一章：废柴逆命\\n\\n---\\n\\n苍莽山脉深处，云雾缭绕如海。\\n\\n落云城外，一座破旧的柴房内，少年林渊盘膝而坐，双目紧闭，额上青筋暴起，豆大的汗珠顺着脸颊滚落。\\n\\n\\\"又失败了。\\\"\\n\\n他缓缓睁开眼，眸中满是苦涩。十六岁，练\",\n                \"AppId\": \"2087429578337166592\",\n                \"CategoryId\": \"0\",\n                \"CreateTime\": \"1786526009\",\n                \"Intent\": \"其他问题\",\n                \"IntentCategory\": \"default\",\n                \"IsSmart\": false,\n                \"Question\": \"帮我写一个修仙小说 不调用任何工具\",\n                \"RecordId\": \"Gwx_20260812_171328_602_BAZ2vswt\",\n                \"ReplyMethod\": 10,\n                \"Result\": {\n                    \"CallResult\": 3,\n                    \"CustomerVariable\": \"**\",\n                    \"FailReason\": \"0\",\n                    \"FirstTokenLatency\": 2685,\n                    \"InputToken\": 1991,\n                    \"OutputToken\": 44,\n                    \"TotalToken\": 2035,\n                    \"TotalTokenLatency\": 6444\n                },\n                \"Score\": 0,\n                \"SessionId\": \"c0a10dbb-b9fa-4aae-89fd-7f0d44a8eec0\",\n                \"Source\": {\n                    \"ChannelType\": 2,\n                    \"FromId\": \"1319\",\n                    \"FromType\": 2,\n                    \"UserAvatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_sheep01.png\",\n                    \"UserId\": \"1932008810606356480\",\n                    \"UserNickname\": \"ty_02@tt.com\"\n                },\n                \"TraceId\": \"34e89fa8029842ebaaac03cd31192d23\"\n            }\n        ],\n        \"NextCursor\": \"{\\\"cursor_time\\\":\\\"2026-08-12 14:43:24\\\",\\\"skipped\\\":6}\",\n        \"PrevCursor\": \"{\\\"cursor_time\\\":\\\"2026-08-12 17:13:29\\\",\\\"skipped\\\":0}\",\n        \"TotalCount\": \"6\",\n        \"RequestId\": \"b3eedba2-e542-4e7e-aa84-0b2d46f8ec1f\"\n    }\n}",
+        "title": "用例1"
+      }
+    ],
     "DescribePlugin": [
       {
         "document": "",
@@ -532,6 +564,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConversation\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"AppId\": \"205***********75456\",\n    \"ConversationId\": \"e9261687-****-*********-1980aedad3f2\",\n    \"Title\": \"查找深大校长\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"33d1dfd7-b8fd-4487-8edb-f2f635b3d895\"\n    }\n}",
         "title": "修改会话标题"
+      }
+    ],
+    "ModifyMsgRecordCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMsgRecordCategory\n<公共请求参数>\n\n{\n    \"AppId\": \"2062456131215815616\",\n    \"CategoryId\": \"2087100220301236928\",\n    \"Name\": \"电子产品使用类咨询\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1533ac3d-173a-4f6d-a3ca-3f3a15d68ee3\"\n    }\n}",
+        "title": "修改消息分类"
       }
     ],
     "ModifyPlugin": [

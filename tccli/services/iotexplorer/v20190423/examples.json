@@ -684,6 +684,32 @@
         "title": "删除 TWeSee 回调目标"
       }
     ],
+    "DeleteTWeSeeTasksByCondition": [
+      {
+        "document": "精确匹配任务来源 COS URI，删除对应的视觉理解任务。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeTasksByCondition\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ChannelId\": 0,\n    \"ServiceCategory\": \"COMPREHENSION\",\n    \"Conditions\": [\n        {\n            \"Type\": \"COSURI\",\n            \"Values\": [\n                \"cos://bucket.ap-guangzhou/Direct/10001/session-id/video.mp4\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e24e488-7948-4ff6-9bd1-76eb3a0cd112\"\n    }\n}",
+        "title": "按 COS URI 删除 TWeSee 视觉理解任务"
+      },
+      {
+        "document": "匹配指定 COS URI 前缀，删除该前缀下的视觉理解任务。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeTasksByCondition\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ChannelId\": 0,\n    \"ServiceCategory\": \"COMPREHENSION\",\n    \"Conditions\": [\n        {\n            \"Type\": \"COSURIPrefix\",\n            \"Values\": [\n                \"cos://bucket.ap-guangzhou/Direct/10001/session-id/\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"069dc8b7-2d75-4377-8907-6c99ceba8b92\"\n    }\n}",
+        "title": "按 COS URI 前缀删除 TWeSee 视觉理解任务"
+      },
+      {
+        "document": "删除指定任务 ID 对应的视觉理解任务。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeTasksByCondition\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ChannelId\": 0,\n    \"ServiceCategory\": \"COMPREHENSION\",\n    \"Conditions\": [\n        {\n            \"Type\": \"TaskId\",\n            \"Values\": [\n                \"comp-d57939bb-b155-5623-c7e7-1fb8dd0654dd\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecdb8ebc-b257-43f0-af93-105b0cfa94c0\"\n    }\n}",
+        "title": "按任务 ID 删除 TWeSee 视觉理解任务"
+      },
+      {
+        "document": "删除任务时间范围与指定时间范围有重合的视觉理解任务。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeTasksByCondition\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ChannelId\": 0,\n    \"ServiceCategory\": \"COMPREHENSION\",\n    \"Conditions\": [\n        {\n            \"Type\": \"TimeRange\",\n            \"Values\": [\n                \"1776621600,1776636000\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93651c85-82f1-4214-befa-e737777852eb\"\n    }\n}",
+        "title": "按时间范围删除 TWeSee 视觉理解任务"
+      }
+    ],
     "DeleteTWeTalkAIBot": [
       {
         "document": "",

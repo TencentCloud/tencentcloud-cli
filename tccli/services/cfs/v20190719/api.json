@@ -1162,7 +1162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>可用区名称，例如ap-beijing-1，请参考 <a href=\"https://cloud.tencent.com/document/product/582/13225\">概览</a> 文档中的地域与可用区列表</p>",
+          "document": "<p>可用区名称</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/product/213/15707?\">查询可用区列表</a></p>",
           "example": "ap-beijing-1",
           "member": "string",
           "name": "Zone",
@@ -1171,7 +1171,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>网络类型，可选值为 VPC，CCN；其中 VPC 为私有网络， CCN 为云联网。通用标准型/性能型请选择VPC，Turbo标准型/性能型请选择CCN。</p>",
+          "document": "<p>网络类型</p><p>枚举值：</p><ul><li><p>VPC： 私有网络</p></li><li><p>CCN： 云联网</p></li><li><p>通用标准型/性能型（含增强型）、吞吐型请选择VPC</p></li><li><p>Turbo标准型/性能型可选VPC或CCN</p></li><li><p>当 Scenario=AgentSandbox 时，即创建 AgentCFS时无需传入，传入将被忽略。</p></li></ul>",
           "example": "VPC",
           "member": "string",
           "name": "NetInterface",
@@ -1180,7 +1180,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取<a href=\"https://cloud.tencent.com/document/product/582/38157\">DescribeCfsPGroups</a></p>",
+          "document": "<p>权限组 ID。权限组规定了一组可来访白名单及操作权限。</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/582/38157\">DescribeCfsPGroups</a></p><ul><li>pgroupbasic 为【默认权限组】，【默认权限组】允许所有IP地址访问及读写权限。 </li><li>注意：当 Scenario=AgentSandbox 时，即创建 AgentCFS ，必须传入 pgroupbasic【默认权限组】，传其他值报错。</li></ul>",
           "example": "pgroupbasic",
           "member": "string",
           "name": "PGroupId",
@@ -1189,7 +1189,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择TURBO，不支持NFS、CIFS</p>",
+          "document": "<p>文件系统协议类型</p><p>枚举值：</p><ul><li>NFS： 通用标准型（含增强型）、通用性能型（含增强型）支持创建此协议的实例</li><li>CIFS： 即SMB协议，仅部分可用区的通用标准型、吞吐型支持此协议。</li><li>TURBO： Turbo标准型/Turbo性能型/AgentCFS是支持创建此协议的实例</li></ul><p>默认值：NFS</p>",
           "example": "NFS",
           "member": "string",
           "name": "Protocol",
@@ -1198,7 +1198,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p>",
+          "document": "<p>文件系统存储类型其中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p><p>枚举值：</p><ul><li>SD： 通用标准型（含增强型）。通用标准型 version = v1.5，通用标准型（增强型） version = v3.1。</li><li>HP： 通用性能型（含增强型）。通用性能型 version = v1.5，通用性能型（增强型） version = v3.1。</li><li>TB： Turbo标准型</li><li>TP： Turbo性能型</li><li>THP： 吞吐型</li></ul><p>默认值：SD</p>",
           "example": "SD",
           "member": "string",
           "name": "StorageType",
@@ -1207,7 +1207,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，<br><a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a></p>",
+          "document": "<p>私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/product/215/15778\">查询VPC列表</a></p><p>当 Scenario=AgentSandbox 时，即创建 AgentCFS 时无需传入，传入将被忽略。</p>",
           "example": "vpc-abc123",
           "member": "string",
           "name": "VpcId",
@@ -1216,7 +1216,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，<br><a href=\"https://cloud.tencent.com/document/product/215/15784\">DescribeSubnets</a></p>",
+          "document": "<p>子网 ID，若网络类型选择的是VPC，该字段为必填。</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/product/215/15784\">查询子网列表</a></p><p>当 Scenario=AgentSandbox 时，即创建 AgentCFS 时无需传入，传入将被忽略。</p>",
           "example": "subnet-abc234",
           "member": "string",
           "name": "SubnetId",
@@ -1270,7 +1270,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口<br><a href=\"https://cloud.tencent.com/document/product/215/19199\">DescribeCcns</a></p>",
+          "document": "<p>云联网ID， 若网络类型选择的是CCN，该字段为必填</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/product/215/19199\">查询CCN列表</a></p><p>当 Scenario=AgentSandbox 时，即创建 AgentCFS 时无需传入，传入将被忽略</p>",
           "example": "ccn-abc123",
           "member": "string",
           "name": "CcnId",
@@ -1279,7 +1279,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突</p>",
+          "document": "<p>云联网中CFS使用的网段， 若网络类型选择的是CCN，该字段为必填，且不能和Ccn中已经绑定的网段冲突</p><p>当 Scenario=AgentSandbox 时，即创建 AgentCFS 时无需传入，传入将被忽略</p>",
           "example": "10.0.0.1/24",
           "member": "string",
           "name": "CidrBlock",
@@ -1288,7 +1288,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。</p>",
+          "document": "<p>文件系统容量，turbo系列必填</p><p>单位：GiB</p><p>Turbo标准型起售20TiB，即20480 GiB，扩容步长10TiB，即10240 GiB。Turbo性能型起售10TiB，即10240 GiB，扩容步长10TiB，即10240 GiB。</p>",
           "example": "40960",
           "member": "uint64",
           "name": "Capacity",
@@ -1297,7 +1297,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件系统快照ID，通过查询快照列表获取该参数，<br><a href=\"https://cloud.tencent.com/document/product/582/80206\">DescribeCfsSnapshots</a></p>",
+          "document": "<p>文件系统快照 ID</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/582/80206\">DescribeCfsSnapshots</a></p>",
           "example": "snapcfs-abc1234",
           "member": "string",
           "name": "SnapshotId",
@@ -1306,7 +1306,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>定期快照策略ID，通过查询快照策略信息获取,<br><a href=\"https://cloud.tencent.com/document/product/582/38157\">DescribeAutoSnapshotPolicies</a></p>",
+          "document": "<p>定期快照策略 ID</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/582/80208\">DescribeAutoSnapshotPolicies</a></p>",
           "example": "asp-abc1234",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
@@ -1315,7 +1315,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启默认扩容，仅turbo类型文件存储支持</p>",
+          "document": "<p>是否开启自动扩容策略，仅turbo类型文件存储支持</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableAutoScaleUp",
@@ -1324,7 +1324,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>v1.5：创建普通版的通用文件系统；<br>v3.1：创建增强版的通用文件系统<br>说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。</p>",
+          "document": "<p>文件系统版本号。</p><p>枚举值：</p><ul><li>v1.5： 创建通用标准型/通用性能型文件系统</li><li>v3.1： 创建通用标准型（增强型）/通用性能型（增强型）文件系统，如需创建增强型，此为必填项。</li><li>v4.0： 创建Turbo标准型、Turbo性能型、吞吐型文件系统，非必填项</li></ul><p>创建通用标准型（增强型）、通用性能型（增强型）须加白主账号，如需使用请联系我们。</p>",
           "example": "v1.5",
           "member": "string",
           "name": "CfsVersion",
@@ -1333,10 +1333,19 @@
         },
         {
           "disabled": false,
-          "document": "<p>turbo文件系统元数据属性<br>basic：创建标准型的元数据<br>enhanced：创建增强型的元数据</p>",
+          "document": "<p>turbo文件系统元数据类型</p><p>枚举值：</p><ul><li>basic： 创建标准版元数据。</li><li>enhanced： 创建增强版元数据</li></ul><p>详情参见<a href=\"https://cloud.tencent.com/document/product/582/116836\">Turbo 文件系统元数据类型</a></p>",
           "example": "basic",
           "member": "string",
           "name": "MetaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务场景。</p><p>枚举值：</p><ul><li>AgentSandbox： 创建 AgentCFS 时必传</li></ul>",
+          "example": "AgentSandbox",
+          "member": "string",
+          "name": "Scenario",
           "required": false,
           "type": "string"
         }
@@ -4595,7 +4604,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2020-08-11 20:57:17",
           "member": "string",
           "name": "CreationTime",
@@ -4605,7 +4614,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义名称",
+          "document": "<p>用户自定义名称</p>",
           "example": "default",
           "member": "string",
           "name": "CreationToken",
@@ -4615,7 +4624,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统 ID",
+          "document": "<p>文件系统 ID</p>",
           "example": "cfs-gabtqtq",
           "member": "string",
           "name": "FileSystemId",
@@ -4625,7 +4634,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统状态。取值范围：\n- creating:创建中\n- mounting:挂载中\n- create_failed:创建失败\n- available:可使用\n- unserviced:停服中\n- upgrading:升级中",
+          "document": "<p>文件系统状态。取值范围：</p><ul><li>creating:创建中</li><li>mounting:挂载中</li><li>create_failed:创建失败</li><li>available:可使用</li><li>unserviced:停服中</li><li>upgrading:升级中</li></ul>",
           "example": "creating",
           "member": "string",
           "name": "LifeCycleState",
@@ -4635,7 +4644,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统已使用容量。单位：Byte",
+          "document": "<p>文件系统已使用容量。单位：Byte</p>",
           "example": "10",
           "member": "uint64",
           "name": "SizeByte",
@@ -4645,7 +4654,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统空间限制。单位:GiB",
+          "document": "<p>文件系统空间限制。单位:GiB</p>",
           "example": "50",
           "member": "uint64",
           "name": "SizeLimit",
@@ -4655,7 +4664,7 @@
         },
         {
           "disabled": false,
-          "document": "区域 ID",
+          "document": "<p>区域 ID</p>",
           "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
@@ -4665,7 +4674,7 @@
         },
         {
           "disabled": false,
-          "document": "区域名称",
+          "document": "<p>区域名称</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -4675,7 +4684,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统协议类型, 支持 NFS,CIFS,TURBO",
+          "document": "<p>文件系统协议类型, 支持 NFS,CIFS,TURBO</p>",
           "example": "NFS",
           "member": "string",
           "name": "Protocol",
@@ -4685,7 +4694,7 @@
         },
         {
           "disabled": false,
-          "document": "存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型",
+          "document": "<p>存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型</p>",
           "example": "HP",
           "member": "string",
           "name": "StorageType",
@@ -4695,7 +4704,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统绑定的预付费存储包",
+          "document": "<p>文件系统绑定的预付费存储包</p>",
           "example": "cfspkg-xx",
           "member": "string",
           "name": "StorageResourcePkg",
@@ -4705,7 +4714,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统绑定的预付费带宽包（暂未支持）",
+          "document": "<p>文件系统绑定的预付费带宽包（暂未支持）</p>",
           "example": "cfspkg-xx",
           "member": "string",
           "name": "BandwidthResourcePkg",
@@ -4715,8 +4724,8 @@
         },
         {
           "disabled": false,
-          "document": "文件系统绑定权限组信息",
-          "example": "pgroupbasic",
+          "document": "<p>文件系统绑定权限组信息</p>",
+          "example": "无",
           "member": "PGroup",
           "name": "PGroup",
           "output_required": true,
@@ -4725,7 +4734,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义名称",
+          "document": "<p>用户自定义名称</p>",
           "example": "default",
           "member": "string",
           "name": "FsName",
@@ -4735,7 +4744,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统是否加密,true：代表加密，false：非加密",
+          "document": "<p>文件系统是否加密,true：代表加密，false：非加密</p>",
           "example": "true",
           "member": "bool",
           "name": "Encrypted",
@@ -4745,7 +4754,7 @@
         },
         {
           "disabled": false,
-          "document": "加密所使用的密钥，可以为密钥的 ID 或者 ARN",
+          "document": "<p>加密所使用的密钥，可以为密钥的 ID 或者 ARN</p>",
           "example": "gaglkjgfpnggagalkinebn14tw",
           "member": "string",
           "name": "KmsKeyId",
@@ -4755,8 +4764,8 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "1000443xxxx",
+          "document": "<p>应用ID</p>",
+          "example": "1300275735",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -4765,7 +4774,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定. 单位MiB/s",
+          "document": "<p>文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定. 单位MiB/s</p>",
           "example": "100",
           "member": "float",
           "name": "BandwidthLimit",
@@ -4775,7 +4784,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统关联的快照策略",
+          "document": "<p>文件系统关联的快照策略</p>",
           "example": "asp-gabgat",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
@@ -4785,7 +4794,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统处理快照状态,snapping：快照中，normal：正常状态",
+          "document": "<p>文件系统处理快照状态,snapping：快照中，normal：正常状态</p>",
           "example": "snapping",
           "member": "string",
           "name": "SnapStatus",
@@ -4795,7 +4804,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统容量规格上限\n单位:GiB",
+          "document": "<p>文件系统容量规格上限<br>单位:GiB</p>",
           "example": "100",
           "member": "uint64",
           "name": "Capacity",
@@ -4805,8 +4814,8 @@
         },
         {
           "disabled": false,
-          "document": "文件系统标签列表",
-          "example": "\"TagKey\": \"xxxxx\", \"TagValue\": \"xxxxx\"",
+          "document": "<p>文件系统标签列表</p>",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
@@ -4815,7 +4824,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统生命周期管理状态\nNotAvailable：不可用\nAvailable:可用",
+          "document": "<p>文件系统生命周期管理状态<br>NotAvailable：不可用<br>Available:可用</p>",
           "example": "NotAvailable",
           "member": "string",
           "name": "TieringState",
@@ -4825,8 +4834,8 @@
         },
         {
           "disabled": false,
-          "document": "分层存储详情",
-          "example": "\"TieringSizeInBytes\": 0",
+          "document": "<p>分层存储详情</p>",
+          "example": "无",
           "member": "TieringDetailInfo",
           "name": "TieringDetail",
           "output_required": true,
@@ -4835,8 +4844,8 @@
         },
         {
           "disabled": false,
-          "document": "文件系统自动扩容策略",
-          "example": "\"Status\":close",
+          "document": "<p>文件系统自动扩容策略</p>",
+          "example": "无",
           "member": "AutoScaleUpRule",
           "name": "AutoScaleUpRule",
           "output_required": true,
@@ -4845,7 +4854,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统版本",
+          "document": "<p>文件系统版本</p>",
           "example": "v1.0",
           "member": "string",
           "name": "Version",
@@ -4855,8 +4864,8 @@
         },
         {
           "disabled": false,
-          "document": "额外性能信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"Type\": \"fixed\", \"Performance\": 300",
+          "document": "<p>额外性能信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ExstraPerformanceInfo",
           "name": "ExstraPerformanceInfo",
           "output_required": false,
@@ -4865,10 +4874,20 @@
         },
         {
           "disabled": false,
-          "document": "basic：标准版元数据类型\nenhanced：增项版元数据类型",
+          "document": "<p>basic：标准版元数据类型<br>enhanced：增项版元数据类型</p>",
           "example": "basic",
           "member": "string",
           "name": "MetaType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务场景。</p><p>枚举值：</p><ul><li>AgentSandbox： 创建 AgentCFS</li></ul>",
+          "example": "AgentSandbox",
+          "member": "string",
+          "name": "Scenario",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

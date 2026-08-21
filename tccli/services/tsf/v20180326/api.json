@@ -31292,8 +31292,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>部署组资源类型</p>",
-          "example": "C",
+          "document": "<p>部署组资源类型</p><p>枚举值：</p><ul><li>GW： 网关</li><li>DEF： 普通业务部署组</li><li>SVL： Serverless</li></ul>",
+          "example": "GW",
           "member": "string",
           "name": "GroupResourceType",
           "output_required": true,
@@ -31538,6 +31538,296 @@
           "name": "LivenessAutoRestart",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mesh Sidecar 数据面版本通道</p><p>枚举值：</p><ul><li>stable： 稳定版</li><li>release： 最新版</li></ul>",
+          "example": "stable",
+          "member": "string",
+          "name": "MeshSidecarVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务日志配置 ID 列表</p>",
+          "example": "apm-busi-log-cfg-l6ymxbag",
+          "member": "string",
+          "name": "BusinessLogConfigIdList",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务系统 ID</p>",
+          "example": "bs-skwueb",
+          "member": "string",
+          "name": "BusinessLogDeliveryConfigIdList",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>String型普通说明场景</p>",
+          "example": "bs-skwueb",
+          "member": "string",
+          "name": "BusinessSystemId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务系统名称</p>",
+          "example": "system",
+          "member": "string",
+          "name": "BusinessSystemName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CLS 机器组 ID</p>",
+          "example": "cls-mg-fwrsw",
+          "member": "string",
+          "name": "ClsMachineGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启服务治理</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableGovernance",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启可观测</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableTelemetry",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启 OT Agent</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableTelemetryAgent",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启单元化</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnabledUnit",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>独享注册中心/配置中心实例列表</p>",
+          "example": "无",
+          "member": "ExclusiveInstance",
+          "name": "ExclusiveInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架接入类型</p>",
+          "example": "springcloud",
+          "member": "string",
+          "name": "FrameworkType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务治理实例模式</p>",
+          "example": "SHARE",
+          "member": "string",
+          "name": "GovernanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署组关联实例 ID 列表</p>",
+          "example": "[\"ins-weswed\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署组是否处于停止状态</p>",
+          "example": "0",
+          "member": "string",
+          "name": "IsStop",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>K8s 命名空间名称</p>",
+          "example": "default",
+          "member": "string",
+          "name": "K8sNamespaceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求语言</p>",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "Language",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>微服务子类型</p>",
+          "example": "N",
+          "member": "string",
+          "name": "MicroserviceSubType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>非侵入接入子类型</p>",
+          "example": "JavaAgent",
+          "member": "string",
+          "name": "NonInvasiveType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预停止脚本内容</p>",
+          "example": "#!/bin/bash\\necho prestop",
+          "member": "string",
+          "name": "PreStopScript",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实际使用的 K8s 命名空间名称</p>",
+          "example": "default",
+          "member": "string",
+          "name": "RealNamespaceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mesh 服务端口与健康检查配置列表</p>",
+          "example": "无",
+          "member": "ServiceConfig",
+          "name": "ServiceConfigList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务治理配置聚合对象</p>",
+          "example": "无",
+          "member": "ServiceGovernanceConfig",
+          "name": "ServiceGovernanceConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署组标签列表</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Tapm OT Agent 版本</p>",
+          "example": "latest",
+          "member": "string",
+          "name": "TapmOtAgentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单元环境类型</p>",
+          "example": "PROD",
+          "member": "string",
+          "name": "UnitEnvType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单元 ID</p>",
+          "example": "unit-wfsegs",
+          "member": "string",
+          "name": "UnitId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单元类型</p>",
+          "example": "unit-a",
+          "member": "string",
+          "name": "UnitName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署组资源类型</p>",
+          "example": "GDU",
+          "member": "string",
+          "name": "UnitType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

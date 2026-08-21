@@ -12624,7 +12624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -12633,7 +12633,7 @@
         },
         {
           "disabled": false,
-          "document": "数量，最大值为100",
+          "document": "<p>数量，最大值为100</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -12642,7 +12642,7 @@
         },
         {
           "disabled": true,
-          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
+          "document": "<p>周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往<a href=\"https://console.cloud.tencent.com/expense/bill/overview\">账单概览</a>页面顶部查看确认您的账单统计周期类型。</p>",
           "example": "byPayTime",
           "member": "string",
           "name": "PeriodType",
@@ -12651,7 +12651,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。最多可拉取近18个月内的数据。",
+          "document": "<p>月份，格式为yyyy-mm，Month和BeginTime&amp;EndTime必传一个，如果有传BeginTime&amp;EndTime则Month字段无效。最多可拉取近18个月内的数据。</p>",
           "example": "2018-07",
           "member": "string",
           "name": "Month",
@@ -12660,7 +12660,7 @@
         },
         {
           "disabled": false,
-          "document": "周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。最多可拉取18个月内的数据。",
+          "document": "<p>周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。最多可拉取18个月内的数据。</p>",
           "example": "2018-11-01 00:00:00",
           "member": "string",
           "name": "BeginTime",
@@ -12669,7 +12669,7 @@
         },
         {
           "disabled": false,
-          "document": "周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。最多可拉取近18个月内的数据。",
+          "document": "<p>周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&amp;EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。最多可拉取近18个月内的数据。</p>",
           "example": "2018-11-01 23:59:59",
           "member": "string",
           "name": "EndTime",
@@ -12678,7 +12678,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "document": "<p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedRecordNum",
@@ -12687,7 +12687,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式 prePay(表示包年包月)/postPay(表示按时按量)",
+          "document": "<p>付费模式 prePay(表示包年包月)/postPay(表示按时按量)</p>",
           "example": "prePay",
           "member": "string",
           "name": "PayMode",
@@ -12696,7 +12696,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指定资源信息",
+          "document": "<p>查询指定资源信息</p>",
           "example": "ins-49zhx6z1",
           "member": "string",
           "name": "ResourceId",
@@ -12705,7 +12705,7 @@
         },
         {
           "disabled": false,
-          "document": "查询交易类型（请使用交易类型名称入参），入参示例枚举如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款 \n按量计费扣费 \n线下项目扣费 \n线下产品扣费 \n调账扣费 \n调账补偿 \n按量计费小时结 \n按量计费日结 \n按量计费月结 \n竞价实例小时结 \n线下项目调账补偿 \n线下产品调账补偿 \n优惠扣费 \n优惠补偿 \n按量计费迁入资源 \n按量计费迁出资源 \n包年包月迁入资源 \n包年包月迁出资源 \n预付费用 \n小时费用 \n预留实例退款 \n按量计费冲正 \n包年包月转按量 \n保底扣款 \n节省计划小时费用",
+          "document": "<p>查询交易类型（请使用交易类型名称入参），入参示例枚举如下：<br>包年包月新购<br>包年包月续费<br>包年包月配置变更<br>包年包月退款<br>按量计费扣费<br>线下项目扣费<br>线下产品扣费<br>调账扣费<br>调账补偿<br>按量计费小时结<br>按量计费日结<br>按量计费月结<br>竞价实例小时结<br>线下项目调账补偿<br>线下产品调账补偿<br>优惠扣费<br>优惠补偿<br>按量计费迁入资源<br>按量计费迁出资源<br>包年包月迁入资源<br>包年包月迁出资源<br>预付费用<br>小时费用<br>预留实例退款<br>按量计费冲正<br>包年包月转按量<br>保底扣款<br>节省计划小时费用</p>",
           "example": "按量计费日结",
           "member": "string",
           "name": "ActionType",
@@ -12714,7 +12714,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID:资源所属项目ID",
+          "document": "<p>项目ID:资源所属项目ID</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -12723,7 +12723,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
+          "document": "<p>产品名称代码<br>备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a></p>",
           "example": "p_cvm",
           "member": "string",
           "name": "BusinessCode",
@@ -12732,7 +12732,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次请求返回的上下文信息，翻页查询Month>=2023-05的月份的数据可加快查询速度，数据量10万级别以上的用户建议使用，查询速度可提升2~10倍",
+          "document": "<p>上一次请求返回的上下文信息，翻页查询Month&gt;=2023-05的月份的数据可加快查询速度，数据量10万级别以上的用户建议使用，查询速度可提升2~10倍</p>",
           "example": "UEEJBfSsteS7dZgAaEEziWS40d4sn4urG7",
           "member": "string",
           "name": "Context",
@@ -12747,7 +12747,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情列表",
+          "document": "<p>详情列表</p>",
           "example": "无",
           "member": "DistributionBillDetail",
           "name": "DetailSet",
@@ -12757,7 +12757,7 @@
         },
         {
           "disabled": false,
-          "document": "总记录数，24小时缓存一次，可能比实际总记录数少\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总记录数，24小时缓存一次，可能比实际总记录数少</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11841",
           "member": "uint64",
           "name": "Total",
@@ -12767,7 +12767,7 @@
         },
         {
           "disabled": false,
-          "document": "本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度",
+          "document": "<p>本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度</p>",
           "example": "UEEJBfSsteS7dZgAaEEziWS40d4sn4urG7",
           "member": "string",
           "name": "Context",
@@ -13238,7 +13238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -13247,7 +13247,7 @@
         },
         {
           "disabled": false,
-          "document": "数量，最大值为1000",
+          "document": "<p>数量，最大值为1000</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -13256,7 +13256,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份",
+          "document": "<p>月份，格式为yyyy-mm。不能早于开通账单2.0的月份</p>",
           "example": "2018-08",
           "member": "string",
           "name": "Month",
@@ -13265,7 +13265,7 @@
         },
         {
           "disabled": true,
-          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
+          "document": "<p>周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往<a href=\"https://console.cloud.tencent.com/expense/bill/overview\">账单概览</a>页面顶部查看确认您的账单统计周期类型。</p>",
           "example": "byPayTime",
           "member": "string",
           "name": "PeriodType",
@@ -13274,7 +13274,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "document": "<p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedRecordNum",
@@ -13283,7 +13283,7 @@
         },
         {
           "disabled": false,
-          "document": "查询交易类型（请使用交易类型名称入参），入参示例枚举如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款 \n按量计费扣费 \n线下项目扣费 \n线下产品扣费 \n调账扣费 \n调账补偿 \n按量计费小时结 \n按量计费日结 \n按量计费月结 \n竞价实例小时结 \n线下项目调账补偿 \n线下产品调账补偿 \n优惠扣费 \n优惠补偿 \n按量计费迁入资源 \n按量计费迁出资源 \n包年包月迁入资源 \n包年包月迁出资源 \n预付费用 \n小时费用 \n预留实例退款 \n按量计费冲正 \n包年包月转按量 \n保底扣款 \n节省计划小时费用",
+          "document": "<p>查询交易类型（请使用交易类型名称入参），入参示例枚举如下：<br>包年包月新购<br>包年包月续费<br>包年包月配置变更<br>包年包月退款<br>按量计费扣费<br>线下项目扣费<br>线下产品扣费<br>调账扣费<br>调账补偿<br>按量计费小时结<br>按量计费日结<br>按量计费月结<br>竞价实例小时结<br>线下项目调账补偿<br>线下产品调账补偿<br>优惠扣费<br>优惠补偿<br>按量计费迁入资源<br>按量计费迁出资源<br>包年包月迁入资源<br>包年包月迁出资源<br>预付费用<br>小时费用<br>预留实例退款<br>按量计费冲正<br>包年包月转按量<br>保底扣款<br>节省计划小时费用</p>",
           "example": "按量计费扣费",
           "member": "string",
           "name": "ActionType",
@@ -13292,7 +13292,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指定资源信息",
+          "document": "<p>查询指定资源信息</p>",
           "example": "ins-1op7g2iz",
           "member": "string",
           "name": "ResourceId",
@@ -13301,7 +13301,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式 prePay/postPay",
+          "document": "<p>付费模式 prePay/postPay</p>",
           "example": "prePay",
           "member": "string",
           "name": "PayMode",
@@ -13310,7 +13310,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
+          "document": "<p>产品名称代码<br>备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a></p>",
           "example": "p_cvm",
           "member": "string",
           "name": "BusinessCode",
@@ -13319,7 +13319,7 @@
         },
         {
           "disabled": false,
-          "document": "分账标签键，用户自定义（支持2021-01以后账单查询）",
+          "document": "<p>分账标签键，用户自定义（支持2021-01以后账单查询）</p>",
           "example": "province",
           "member": "string",
           "name": "TagKey",
@@ -13328,7 +13328,7 @@
         },
         {
           "disabled": false,
-          "document": "分账标签值，该参数为空表示该标签键下未设置标签值的记录\n（支持2021-01以后账单查询）",
+          "document": "<p>分账标签值，该参数为空表示该标签键下未设置标签值的记录<br>（支持2021-01以后账单查询）</p>",
           "example": "0",
           "member": "string",
           "name": "TagValue",
@@ -13343,8 +13343,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源汇总列表",
-          "example": "[{\"PayerUin\":\"909619400\",\"OwnerUin\":\"909619400\",\"OperateUin\":\"909619400\",\"BusinessCodeName\":\"COS 对象存储\",\"ProductCodeName\":\"COS 标准存储\",\"BusinessCode\":\"p_cos\",\"ProductCode\":\"sp_cos_std\"}]",
+          "document": "<p>资源汇总列表</p>",
+          "example": "无",
           "member": "BillDistributionResourceSummary",
           "name": "ResourceSummarySet",
           "output_required": true,
@@ -13353,7 +13353,7 @@
         },
         {
           "disabled": false,
-          "document": "资源汇总列表总数，入参NeedRecordNum为0时不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源汇总列表总数，入参NeedRecordNum为0时不返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "103",
           "member": "int64",
           "name": "Total",
@@ -13893,7 +13893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账单月份，格式为2023-04",
+          "document": "<p>账单月份，格式为2023-04</p>",
           "example": "2023-05",
           "member": "string",
           "name": "Month",
@@ -13902,7 +13902,7 @@
         },
         {
           "disabled": false,
-          "document": "账单维度类型，枚举值如下：business、project、region、payMode、tag",
+          "document": "<p>账单维度类型，枚举值如下：business、project、region、payMode、tag</p>",
           "example": "business",
           "member": "string",
           "name": "GroupType",
@@ -13911,8 +13911,8 @@
         },
         {
           "disabled": false,
-          "document": "标签键，GroupType=tag获取标签维度账单时传",
-          "example": "测试键",
+          "document": "<p>标签键，GroupType=tag获取标签维度账单时传</p>",
+          "example": "[\"测试键\"]",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -13926,7 +13926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）",
+          "document": "<p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>",
           "example": "0",
           "member": "uint64",
           "name": "Ready",
@@ -13936,8 +13936,8 @@
         },
         {
           "disabled": false,
-          "document": "账单多维度汇总消费详情",
-          "example": "{\"GroupKey\":\"p_cvm\",\"GroupValue\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"Business\":[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器\",\"TotalCost\":\"4.00000000\"}]}",
+          "document": "<p>账单多维度汇总消费详情</p>",
+          "example": "无",
           "member": "SummaryDetail",
           "name": "SummaryDetail",
           "output_required": true,

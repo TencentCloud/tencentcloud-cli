@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gs DeleteAndroidInstanceImages --cli-unfold-argument  \
-    --AndroidInstanceImageIds agc
+    --AndroidInstanceImageIds image-0gbwwopx
 ```
 
 Output: 

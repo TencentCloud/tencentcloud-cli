@@ -13932,7 +13932,17 @@
     },
     "DescribeOSImagesRequest": {
       "document": "DescribeOSImages请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像拉取接口增加过滤字段</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeOSImagesResponse": {
@@ -13940,7 +13950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像信息列表",
+          "document": "<p>镜像信息列表</p>",
           "example": "无",
           "member": "OSImage",
           "name": "OSImageSeriesSet",
@@ -13950,7 +13960,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像数量",
+          "document": "<p>镜像数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -24225,7 +24235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "os聚合名称",
+          "document": "<p>os聚合名称</p>",
           "example": "centos7.2x86_64",
           "member": "string",
           "name": "SeriesName",
@@ -24235,7 +24245,7 @@
         },
         {
           "disabled": false,
-          "document": "os别名",
+          "document": "<p>os别名</p>",
           "example": "CentOS 7.2 64bit",
           "member": "string",
           "name": "Alias",
@@ -24245,7 +24255,7 @@
         },
         {
           "disabled": false,
-          "document": "os名称",
+          "document": "<p>os名称</p>",
           "example": "centos7.2x86_64",
           "member": "string",
           "name": "OsName",
@@ -24255,7 +24265,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)",
+          "document": "<p>操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)</p>",
           "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
@@ -24265,7 +24275,7 @@
         },
         {
           "disabled": false,
-          "document": "os是否下线(online表示在线,offline表示下线)",
+          "document": "<p>os是否下线(online表示在线,offline表示下线)</p>",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -24275,10 +24285,20 @@
         },
         {
           "disabled": false,
-          "document": "镜像id",
+          "document": "<p>镜像id</p>",
           "example": "img-pb422c9z",
           "member": "string",
           "name": "ImageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>架构</p>",
+          "example": "x86",
+          "member": "string",
+          "name": "Arch",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

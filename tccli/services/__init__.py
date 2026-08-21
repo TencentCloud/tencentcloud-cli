@@ -234,6 +234,9 @@ SERVICE_VERSIONS = {
     "cloudmate": [
         "2025-10-30"
     ],
+    "cloudrc": [
+        "2024-06-06"
+    ],
     "cloudstudio": [
         "2023-05-08"
     ],
@@ -560,6 +563,9 @@ SERVICE_VERSIONS = {
     ],
     "partners": [
         "2018-03-21"
+    ],
+    "portal": [
+        "2023-04-13"
     ],
     "postgres": [
         "2017-03-12"

@@ -13,16 +13,17 @@ Output:
     "Response": {
         "OSImageSeriesSet": [
             {
-                "Alias": "CentOS 7.2 64bit",
-                "ImageId": "img-rkiynh11",
+                "Alias": "TencentOS Server 2.4 (TK4) HCC",
+                "Arch": "amd64",
+                "ImageId": "img-nannz3uj",
                 "OsCustomizeType": "GENERAL",
-                "OsName": "centos7.2x86_64",
-                "SeriesName": "centos7.2x86_64",
+                "OsName": "tlinux2.4(tkernel4)x86_64_HCC",
+                "SeriesName": "TencentOS Server 2.4 (TK4) HCC",
                 "Status": "online"
             }
         ],
-        "RequestId": "899c6fe7-f87d-4232-b1a8-82b81acfa037",
-        "TotalCount": 1
+        "TotalCount": 17,
+        "RequestId": "72c5ebe4-166f-40a2-95b1-d3e9dfcdd5da"
     }
 }
 ```

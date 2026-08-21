@@ -347,7 +347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "算力套餐ID",
+          "document": "<p>算力套餐ID</p>",
           "example": "96G_A*8",
           "member": "string",
           "name": "BundleType",
@@ -357,7 +357,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数量",
+          "document": "<p>节点数量</p>",
           "example": "2",
           "member": "int64",
           "name": "Count",
@@ -367,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "显卡数量",
+          "document": "<p>显卡数量</p>",
           "example": "16",
           "member": "string",
           "name": "GPUCount",
@@ -377,7 +377,7 @@
         },
         {
           "disabled": false,
-          "document": "显存",
+          "document": "<p>显存</p>",
           "example": "1536",
           "member": "string",
           "name": "GPUMemory",
@@ -387,7 +387,7 @@
         },
         {
           "disabled": false,
-          "document": "算力",
+          "document": "<p>算力</p>",
           "example": "704",
           "member": "string",
           "name": "GPUPerformance",
@@ -397,7 +397,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数",
+          "document": "<p>CPU核数</p>",
           "example": "768",
           "member": "string",
           "name": "CPU",
@@ -407,7 +407,7 @@
         },
         {
           "disabled": false,
-          "document": "内存",
+          "document": "<p>内存</p>",
           "example": "4608",
           "member": "string",
           "name": "Memory",
@@ -417,8 +417,8 @@
         },
         {
           "disabled": false,
-          "document": "该套餐是否支持包年包月",
-          "example": "",
+          "document": "<p>该套餐是否支持包年包月</p>",
+          "example": "true",
           "member": "bool",
           "name": "PrepaidEnable",
           "output_required": false,
@@ -427,8 +427,8 @@
         },
         {
           "disabled": false,
-          "document": "该套餐是否支持按量计费",
-          "example": "",
+          "document": "<p>该套餐是否支持按量计费</p>",
+          "example": "true",
           "member": "bool",
           "name": "PostpaidEnable",
           "output_required": false,
@@ -1525,6 +1525,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>CREATING： 创建中</li><li>CREATE_FAILED： 部署失败</li><li>DELETING： 删除中</li><li>UPDATING： 更新中</li><li>RESTARTING： 重启中</li><li>ISOLATING： 隔离中</li><li>ARREARS： 欠费中</li><li>RESTORING： 冲正恢复中</li></ul>",
+          "example": "[\"CREATE_FAILED\"]",
+          "member": "string",
+          "name": "States",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

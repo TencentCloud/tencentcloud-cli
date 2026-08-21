@@ -43,7 +43,7 @@
     "CreateCloudTranscription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudTranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 14000000,\n    \"RoomId\": \"295000\",\n    \"RoomIdType\": 0,\n    \"TranscriptionParam\": {\n        \"UserId\": \"trtc_test_1\",\n        \"UserSig\": \"eJjdaVgrxCdYrzkx*************BLATRT\",\n        \"SubscribeList\": [\n            {\n                \"UserId\": \"user_1\"\n            }\n        ],\n        \"MaxIdleTime\": 30,\n        \"SendCustomMode\": 2\n    },\n    \"AsrParam\": {\n        \"Lang\": \"16k_zh_en\",\n        \"VadSilenceTime\": 2000\n    },\n    \"TranslationParam\": {\n        \"TargetLang\": [\n            \"en\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudTranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 14000000,\n    \"RoomId\": \"295000\",\n    \"RoomIdType\": 0,\n    \"TranscriptionParam\": {\n        \"UserId\": \"trtc_test_1\",\n        \"UserSig\": \"eJjdaVgrxCdYrzkx*************BLATRT\",\n        \"SubscribeList\": [\n            {\n                \"UserId\": \"user_1\"\n            }\n        ],\n        \"MaxIdleTime\": 30,\n        \"SendCustomMode\": 1\n    },\n    \"AsrParam\": {\n        \"Lang\": \"16k_zh_en\",\n        \"VadSilenceTime\": 2000\n    },\n    \"TranslationParam\": {\n        \"TargetLang\": [\n            \"en\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nE5dafd3iq51******41fnF8bp2NI65pgE.\",\n        \"RequestId\": \"f98cb56d-2c70******b0-213ee0ef73ac\"\n    }\n}",
         "title": "发起转录任务"
       }

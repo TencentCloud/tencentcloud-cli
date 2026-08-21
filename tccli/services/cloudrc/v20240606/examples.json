@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResource\n<公共请求参数>\n\n{\n    \"ResourceType\": \"qcs::vpc::vpc\",\n    \"RegionCode\": \"ap-guangzhou\",\n    \"ResourceId\": \"vpc-m3ul053f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2017-12-05 15:28:22\",\n        \"PayMode\": \"Free\",\n        \"PrivateIpAddress\": [\n            \"10.*******\"\n        ],\n        \"Properties\": \"{\\\"CidrBlock\\\":\\\"10.*****/16\\\"}\",\n        \"PublicIpAddress\": [\n            \"139.**********\"\n        ],\n        \"RegionCode\": \"ap-guangzhou\",\n        \"ResourceAlias\": \"******Test\",\n        \"ResourceId\": \"vpc-m3ul053f\",\n        \"ResourceType\": \"qcs::vpc::vpc\",\n        \"Tags\": [],\n        \"Uin\": 909600000,\n        \"RequestId\": \"6699693a-6ef2-4707-b010-c0bb7ca83f6a\"\n    }\n}",
+        "title": "资源详情"
+      }
+    ],
+    "SearchResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchResources\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"RegionCode\",\n            \"Values\": [\n                \"ap-guangzhou\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"cCuk41e5JoaacP6PzhydNNStUM5couVJsUY7klW3qet5afBsukPVCXcoxUCPUKqjLbDDjuaDL3cC5XRuEeAMgi/I/niv6ZxB0DgTIxXnSqU4ehEYAKgHOR6uVc1aDaQnAKiuk4bOLqtxYuppLEd2N2WFoJrxLMUwvvX8Bw9DzXJ9zCHD5eD0oa81KYmKolmdAjViZfdi0kcvw4qv4uaTdzDEHoc=\",\n        \"Resources\": [\n            {\n                \"CreateTime\": \"2017-12-05 15:28:22\",\n                \"PayMode\": \"Free\",\n                \"PrivateIpAddress\": [],\n                \"PublicIpAddress\": [],\n                \"RegionCode\": \"ap-guangzhou\",\n                \"ResourceAlias\": \"******Test\",\n                \"ResourceId\": \"vpc-m3ul053f\",\n                \"ResourceType\": \"qcs::vpc::vpc\",\n                \"Tags\": [],\n                \"Uin\": 909600000\n            }\n        ],\n        \"RequestId\": \"64ec7bde-2b9b-4b65-b66a-676a795d84ea\"\n    }\n}",
+        "title": "查询广州的资源"
+      }
+    ]
+  },
+  "version": "1.0"
+}

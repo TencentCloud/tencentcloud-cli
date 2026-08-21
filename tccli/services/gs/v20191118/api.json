@@ -594,7 +594,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安卓应用 Id",
+          "document": "<p>安卓应用 Id</p>",
           "example": "apk-sdfddc",
           "member": "string",
           "name": "AndroidAppId",
@@ -604,7 +604,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用名称",
+          "document": "<p>安卓应用名称</p>",
           "example": "猫耳",
           "member": "string",
           "name": "Name",
@@ -614,7 +614,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用状态（上架、下架）",
+          "document": "<p>安卓应用状态（上架、下架）</p>",
           "example": "ONLINE|OFFLINE",
           "member": "string",
           "name": "State",
@@ -624,8 +624,8 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用版本列表",
-          "example": "[{\"ver-a1b2c3\",\"NORMAL\"}]",
+          "document": "<p>安卓应用版本列表</p>",
+          "example": "无",
           "member": "AndroidAppVersionInfo",
           "name": "AndroidAppVersionInfo",
           "output_required": false,
@@ -634,8 +634,8 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用创建时间",
-          "example": "\"2022-02-15T01:51:55.786Z\"\t",
+          "document": "<p>安卓应用创建时间</p>",
+          "example": "2022-02-15T01:51:55.786Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -644,7 +644,7 @@
         },
         {
           "disabled": false,
-          "document": "用户 Id",
+          "document": "<p>用户 Id</p>",
           "example": "userId",
           "member": "string",
           "name": "UserId",
@@ -654,7 +654,7 @@
         },
         {
           "disabled": false,
-          "document": "应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）",
+          "document": "<p>应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "AppMode",
@@ -664,7 +664,7 @@
         },
         {
           "disabled": false,
-          "document": "应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态",
+          "document": "<p>应用更新状态，取值：UPLOADING 上传中、CREATING 创建中、CREATE_FAIL 创建失败、CREATE_SUCCESS 创建成功、PACKAGE_NAME_MISMATCH 包名不匹配、VERSION_ALREADY_EXISTS 版本已存在、APP_PARSE_FAIL app 解析失败、APP_EXISTS_SECURITY_RISK app 存在安全风险、NORMAL 默认状态</p>",
           "example": "CREATE_SUCCESS",
           "member": "string",
           "name": "UpdateState",
@@ -674,7 +674,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用包名",
+          "document": "<p>安卓应用包名</p>",
           "example": "app_pakcage_name",
           "member": "string",
           "name": "PackageName",
@@ -714,7 +714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安卓应用版本",
+          "document": "<p>安卓应用版本</p>",
           "example": "\"ver-a1b2c3\"",
           "member": "string",
           "name": "AndroidAppVersion",
@@ -724,7 +724,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功",
+          "document": "<p>安卓应用版本创建状态，取值：NORMAL：无（默认）、UPLOADING：上传中、CREATING： 创建中、CREATE_FAIL：创建失败、PACKAGE_NAME_MISMATCH：包名不匹配、VERSION_ALREADY_EXISTS：版本已存在、APP_PARSE_FAIL： app 解析失败、APP_EXISTS_SECURITY_RISK：app 存在安全风险、CREATE_SUCCESS：创建成功</p>",
           "example": "\"NORMAL|UPLOADING|CREATING|CREATE_FAIL|CREATE_SUCCESS\"",
           "member": "string",
           "name": "State",
@@ -734,8 +734,8 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用版本创建时间",
-          "example": "\"2022-02-15T01:51:55.786Z\"",
+          "document": "<p>安卓应用版本创建时间</p>",
+          "example": "2022-02-15T01:51:55.786Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -744,7 +744,7 @@
         },
         {
           "disabled": false,
-          "document": "shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "document": "<p>shell 安装命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>",
           "example": "\"tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh\"",
           "member": "string",
           "name": "Command",
@@ -754,7 +754,7 @@
         },
         {
           "disabled": false,
-          "document": "shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "document": "<p>shell 卸载命令（支持多条命令执行，通过 &amp;&amp; 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）</p>",
           "example": "\"tar -zxvf test-1\"cd test-1.0.X && ./uninstall.sh\"",
           "member": "string",
           "name": "UninstallCommand",
@@ -764,7 +764,7 @@
         },
         {
           "disabled": false,
-          "document": "应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。",
+          "document": "<p>应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。</p>",
           "example": "\"CLEANUP_ON_UNINSTALL\"",
           "member": "string",
           "name": "CleanupMode",
@@ -774,7 +774,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用版本名称（版本描述、备注）",
+          "document": "<p>安卓应用版本名称（版本描述、备注）</p>",
           "example": "\"version_name\"",
           "member": "string",
           "name": "AndroidAppVersionName",
@@ -784,8 +784,8 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用启动页",
-          "example": "\".MainActivity\"",
+          "document": "<p>安卓应用启动页</p>",
+          "example": "\"MainActivity\"",
           "member": "string",
           "name": "Activity",
           "output_required": true,
@@ -794,7 +794,7 @@
         },
         {
           "disabled": false,
-          "document": "应用版本号（Version Name）",
+          "document": "<p>应用版本号（Version Name）</p>",
           "example": "\"6.5.2\"",
           "member": "string",
           "name": "VersionName",
@@ -804,8 +804,8 @@
         },
         {
           "disabled": false,
-          "document": "应用包 MD5",
-          "example": "无",
+          "document": "<p>应用包 MD5</p>",
+          "example": "48497f806a9967cf4346f11cc653d57a",
           "member": "string",
           "name": "MD5",
           "output_required": true,
@@ -814,7 +814,7 @@
         },
         {
           "disabled": false,
-          "document": "应用包文件大小（字节）",
+          "document": "<p>应用包文件大小（字节）</p>",
           "example": "102400",
           "member": "int64",
           "name": "FileSize",
@@ -824,7 +824,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用包名",
+          "document": "<p>安卓应用包名</p>",
           "example": "app_pakcage_name",
           "member": "string",
           "name": "PackageName",
@@ -3238,8 +3238,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像 ID 列表",
-          "example": "image-abc",
+          "document": "<p>镜像 ID 列表</p>",
+          "example": "[\"image-0gbwwopx\"]",
           "member": "string",
           "name": "AndroidInstanceImageIds",
           "required": true,
@@ -3301,7 +3301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页偏移",
+          "document": "<p>分页偏移</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3310,7 +3310,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "<p>每页数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -3319,8 +3319,8 @@
         },
         {
           "disabled": false,
-          "document": "应用ID数组",
-          "example": "[\"xxx\"]",
+          "document": "<p>应用ID数组</p>",
+          "example": "[\"apk-ne70ubtu\",\"apk-d6fyydrc\"]",
           "member": "string",
           "name": "AndroidAppIds",
           "required": false,
@@ -3328,8 +3328,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。",
-          "example": "[{\"Name\":\"UserId\",\"Values\":[\"user1\"]}]\t",
+          "document": "<p>过滤条件，支持过滤的字段有：UserId、State、UpdateState、Name、AppMode 。其中 Name 为模糊匹配，其他参数为精确匹配。</p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3343,7 +3343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安卓应用列表",
+          "document": "<p>安卓应用列表</p>",
           "example": "无",
           "member": "AndroidApp",
           "name": "Apps",
@@ -3353,7 +3353,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用列表长度",
+          "document": "<p>安卓应用列表长度</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -4020,8 +4020,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "安卓实例 ID 列表",
-          "example": "[\"abc\", \"def\"]",
+          "document": "<p>安卓实例 ID 列表</p>",
+          "example": "[\"cai-251006279-ea99W33CnVL\"]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -5446,8 +5446,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表",
-          "example": "[\"abc\"]",
+          "document": "<p>实例ID列表</p>",
+          "example": "[\"cai-abcd1234\"]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -5455,8 +5455,8 @@
         },
         {
           "disabled": false,
-          "document": "指定有效的镜像 ID。\n默认取值：默认使用当前镜像。",
-          "example": "image-abc",
+          "document": "<p>指定有效的镜像 ID。<br>默认取值：默认使用当前镜像。</p>",
+          "example": "\"image-a1b2c3d4\"",
           "member": "string",
           "name": "AndroidInstanceImageId",
           "required": false,
@@ -5464,8 +5464,8 @@
         },
         {
           "disabled": false,
-          "document": "重置模式。在 AndroidInstanceImageId 不为空时才生效。\n\nCleanData：默认选项，清理系统属性和用户数据\nKeepSystemProperties：只保留系统属性\nKeepData: 保留系统属性和用户数据",
-          "example": "CleanData",
+          "document": "<p>重置模式。在 AndroidInstanceImageId 不为空时才生效。</p><p>CleanData：默认选项，清理系统属性和用户数据<br>KeepSystemProperties：只保留系统属性<br>KeepData: 保留系统属性和用户数据</p>",
+          "example": "\"CleanData\"",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -5479,7 +5479,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合",
+          "document": "<p>任务集合</p>",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",
@@ -6423,8 +6423,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "cai-abcd1234",
+          "document": "<p>实例ID</p>",
+          "example": "[\"cai-abcd1234\"]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -6432,8 +6432,8 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "app-testabcd",
+          "document": "<p>应用ID</p>",
+          "example": "\"apk-drkmskmd\"",
           "member": "string",
           "name": "AndroidAppId",
           "required": false,
@@ -6441,8 +6441,8 @@
         },
         {
           "disabled": false,
-          "document": "包名",
-          "example": "com.tencent.abc",
+          "document": "<p>包名</p>",
+          "example": "\"com.tencent.abc\"",
           "member": "string",
           "name": "PackageName",
           "required": false,
@@ -6456,7 +6456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合",
+          "document": "<p>任务集合</p>",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",

@@ -441,6 +441,13 @@
       "output": "DeleteTWeSeeCallbackResponse",
       "status": "online"
     },
+    "DeleteTWeSeeTasksByCondition": {
+      "document": "按条件删除指定设备和算法类目下的 TWeSee 任务及其关联数据。",
+      "input": "DeleteTWeSeeTasksByConditionRequest",
+      "name": "删除 TWeSee 任务",
+      "output": "DeleteTWeSeeTasksByConditionResponse",
+      "status": "online"
+    },
     "DeleteTWeTalkAIBot": {
       "document": "用于删除TWeTalk智能体。",
       "input": "DeleteTWeTalkAIBotRequest",
@@ -7666,6 +7673,69 @@
     },
     "DeleteTWeSeeCallbackResponse": {
       "document": "DeleteTWeSeeCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeSeeTasksByConditionRequest": {
+      "document": "DeleteTWeSeeTasksByCondition请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品 ID</p>",
+          "example": "default",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名称</p>",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li></ul>",
+          "example": "COMPREHENSION",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务删除条件，至少传入一个条件。不同条件之间为 AND 关系，同一条件的 Values 之间为 OR 关系。</p>",
+          "example": "无",
+          "member": "SeeDeleteTaskCondition",
+          "name": "Conditions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道 ID</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeSeeTasksByConditionResponse": {
+      "document": "DeleteTWeSeeTasksByCondition返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23374,6 +23444,30 @@
         }
       ],
       "usage": "out"
+    },
+    "SeeDeleteTaskCondition": {
+      "document": "TWeSee 任务删除条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>条件类型。</p><p>枚举值：</p><ul><li>TaskId： 精确匹配任务 ID</li><li>TimeRange： 匹配任务时间范围与指定范围有重合的任务。值的格式为 <code>UnixTimestampStart,UnixTimestampEnd</code>，其中起止时间均为秒级 UNIX 时间戳，且结束时间不早于起始时间</li><li>CreateTimeBefore： 匹配在指定时间前创建的任务。值为秒级 UNIX 时间戳</li><li>COSURI： 精确匹配任务来源 COS URI，值必须以 <code>cos://</code> 开头</li><li>COSURIPrefix： 按前缀匹配任务来源 COS URI，值必须以 <code>cos://</code> 开头</li></ul>",
+          "example": "TaskId",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>条件值列表。同一条件内的多个值之间为 OR 关系，至少传入一个非空值。</p>",
+          "example": "[\"comp-d57939bb-****-****-****-1fb8dd0654dd\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "SeeDetectContinuousConfig": {
       "document": "TWeSee 标签持续检测配置",

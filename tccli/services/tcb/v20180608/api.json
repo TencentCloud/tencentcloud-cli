@@ -21,6 +21,13 @@
       "output": "AssumeRoleForAllocatedEnvResponse",
       "status": "online"
     },
+    "BindCls": {
+      "document": "绑定自定义CLS日志主题\n\n**绑定自定义 CLS 日志主题需调用腾讯云 CLS「[DescribeTopics](https://cloud.tencent.com/document/api/614/56454)」接口，按传入的 `Region` 拉取用户日志主题列表，仅筛选 `AssumerName` 为空的自有主题，并将其 `LogsetId`、`TopicId` 分别回填为绑定参数 `ClsLogsetId`、`ClsTopicId`（地域取请求参数 `Region` 作为 `ClsRegion`）。**",
+      "input": "BindClsRequest",
+      "name": "绑定用户自定义CLS日志主题",
+      "output": "BindClsResponse",
+      "status": "online"
+    },
     "BindStorageSource": {
       "document": "为云存储绑定外部云存储源。\n将一个用户自有的 COS桶 作为外部存储源绑定到指定云开发环境的云存储。绑定后，该环境的云存储文件操作将指向此桶，通过 BasePath 路径前缀实现与其他环境的数据隔离。\n每个环境仅允许绑定 1 个外部云存储源。",
       "input": "BindStorageSourceRequest",
@@ -1475,6 +1482,60 @@
         }
       ],
       "usage": "both"
+    },
+    "BindClsRequest": {
+      "document": "BindCls请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-xxxxxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CLS地域",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "ClsRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CLS 日志集id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CLS 日志主题ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClsTopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindClsResponse": {
+      "document": "BindCls返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BindStorageSourceRequest": {
       "document": "BindStorageSource请求参数结构体",

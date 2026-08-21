@@ -17814,6 +17814,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志导出创建时间，毫秒时间戳</p><p>单位：ms</p>",
+          "example": "1785848285000",
+          "member": "uint64",
+          "name": "CreateTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -13,7 +13,7 @@ tccli trtc CreateCloudTranscription --cli-unfold-argument  \
     --TranscriptionParam.UserSig eJjdaVgrxCdYrzkx*************BLATRT \
     --TranscriptionParam.SubscribeList.0.UserId user_1 \
     --TranscriptionParam.MaxIdleTime 30 \
-    --TranscriptionParam.SendCustomMode 2 \
+    --TranscriptionParam.SendCustomMode 1 \
     --AsrParam.Lang 16k_zh_en \
     --AsrParam.VadSilenceTime 2000 \
     --TranslationParam.TargetLang en
