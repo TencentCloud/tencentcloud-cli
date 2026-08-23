@@ -22,6 +22,12 @@ Output:
                     "BackupStatus": "success",
                     "BackupType": "snapshot",
                     "CopyStatus": "done",
+                    "ExistRegions": [
+                        {
+                            "BackupId": 631,
+                            "BackupRegion": "ap-guangzhou"
+                        }
+                    ],
                     "FileName": "backupT_202602021412_20260202150536",
                     "FileSize": 4183356,
                     "FinishTime": "2026-02-02 15:05:41",

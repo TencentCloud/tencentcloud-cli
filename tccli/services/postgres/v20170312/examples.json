@@ -952,10 +952,10 @@
     ],
     "ModifyDBProxyAddress": [
       {
-        "document": "修改地址配置",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBProxyAddress\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-l4mvde5d\",\n    \"ProxyGroupId\": \"proxy-o0rx08tn\",\n    \"AddressId\": \"proxyaddr-3fhqchao\",\n    \"ConnectionPool\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c34ee392-54cf-4aa5-bcce-ed4991f9f4c2\"\n    }\n}",
-        "title": "修改地址配置"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBProxyAddress\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-2wvpv38j\",\n    \"AddressId\": \"proxyaddr-hw78kg1m\",\n    \"ProxyGroupId\": \"proxy-nlpsb4jp\",\n    \"Description\": \"modify\",\n    \"ConnectionPool\": false,\n    \"WeightMode\": \"custom\",\n    \"ProxyAllocation\": [\n        {\n            \"NodeId\": \"postgres-2wvpv38j\",\n            \"Role\": \"master\",\n            \"Status\": \"online\"\n        }\n    ],\n    \"RoAutoAdd\": false,\n    \"LatencyRemove\": false,\n    \"LatencyRemoveTime\": 10,\n    \"MinRouteNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100201,\n        \"RequestId\": \"15624379-9192-459e-97f4-52cdc4043a3a\"\n    }\n}",
+        "title": "修改读写分离参数"
       }
     ],
     "ModifyDatabaseOwner": [

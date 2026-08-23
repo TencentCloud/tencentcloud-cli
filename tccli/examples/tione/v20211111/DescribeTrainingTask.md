@@ -52,6 +52,7 @@ Output:
                 "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-torch-1.9.0-devel:1.0.9",
                 "RegistryRegion": "",
                 "RegistryId": "",
+                "ImageSecret": null,
                 "ImageName": "torch1.9-py3.8-cuda11.1-gpu"
             },
             "CodePackagePath": {

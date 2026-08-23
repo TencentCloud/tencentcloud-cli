@@ -16,6 +16,14 @@
         "title": "添加资产管理员"
       }
     ],
+    "AddImageRegistry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddImageRegistry\n<公共请求参数>\n\n{\n    \"Name\": \"测试环境内网harbor\",\n    \"Username\": \"admin\",\n    \"Password\": \"Har********\",\n    \"Url\": \"http://172.16.0.25\",\n    \"RegistryType\": \"harbor\",\n    \"NetType\": \"public\",\n    \"RegistryVersion\": \"1.0\",\n    \"RegistryRegion\": \"ap-guangzhou\",\n    \"SpeedLimit\": 50,\n    \"Insecure\": 1,\n    \"NeedScan\": false,\n    \"SyncMode\": 0,\n    \"InstanceId\": \"harbor-instance\",\n    \"ConnectivityDetectConfig\": [\n        {\n            \"Quuid\": \"2d85debe-8049-****-****-2f29000a6a23\",\n            \"Uuid\": \"2d85debe-8049-****-****-2f29000a6a23\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": 33,\n        \"RequestId\": \"cff2e236-e654-4db3-baf5-3f97e4c891ba\"\n    }\n}",
+        "title": "添加镜像仓库信息"
+      }
+    ],
     "AddLoginWhiteLists": [
       {
         "document": "入侵检测-登录审计-批量添加异地登录白名单",
@@ -48,6 +56,38 @@
         "title": "编辑策略"
       }
     ],
+    "BatchModifyImageRegistryTimedScanTaskConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyImageRegistryTimedScanTaskConfig\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": [\n        5\n    ],\n    \"Enable\": false,\n    \"ScanType\": [\n        \"VUL\"\n    ],\n    \"Schedule\": {\n        \"CycleType\": \"DAILY\",\n        \"CycleDays\": [\n            2\n        ],\n        \"StartTime\": \"12:00\",\n        \"Timezone\": \"Asia/Shanghai\"\n    },\n    \"Timeout\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96918abb-84c4-4eba-ba93-9cce36777935\"\n    }\n}",
+        "title": "批量修改镜像仓库定时扫描任务配置"
+      }
+    ],
+    "BatchModifyImageSensitiveWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyImageSensitiveWhitelist\n<公共请求参数>\n\n{\n    \"RuleId\": [\n        89\n    ],\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0359f603-5888-4dd4-aa34-1e3e3433114d\"\n    }\n}",
+        "title": "批量修改容器镜像敏感信息白名单"
+      }
+    ],
+    "BatchModifyImageVirusWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyImageVirusWhitelist\n<公共请求参数>\n\n{\n    \"RuleId\": [\n        7\n    ],\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c95b245d-bd76-45a0-b846-59fb568b6ac5\"\n    }\n}",
+        "title": "批量修改镜像木马白名单"
+      }
+    ],
+    "BatchModifyImageVulWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyImageVulWhitelist\n<公共请求参数>\n\n{\n    \"RuleId\": [\n        120\n    ],\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"696d0201-24ce-4785-88a1-613c078eb32f\"\n    }\n}",
+        "title": "批量修改容器镜像漏洞白名单"
+      }
+    ],
     "BindClusterOwner": [
       {
         "document": "",
@@ -70,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCWPExposePathPermission\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"UltimateList\": [\n            {\n                \"AppID\": 1300448058,\n                \"IsUltimateVersion\": false\n            }\n        ],\n        \"RequestId\": \"89295b70-bbea-4e77-b3a5-4987472c3f28\"\n    }\n}",
         "title": "获取用户是否旗舰版信息"
+      }
+    ],
+    "CheckImageRegistryInstanceNameDuplicate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckImageRegistryInstanceNameDuplicate\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Name\": \"s*******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsDuplicated\": false,\n        \"RequestId\": \"76bb31a3-e708-4b40-9320-270f36de2e9d\"\n    }\n}",
+        "title": "检查镜像仓库实例名是否重复"
       }
     ],
     "CheckIsUltimateVersion": [
@@ -126,6 +174,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAllAssetsExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-0acb10f*f**4da*e\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"Order\": \"UpdateTime\",\n    \"By\": \"Desc\",\n    \"IsCloudHost\": true\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"679f0712-8d72-4525-b6ff-e7b081815ee9\",\n        \"RequestId\": \"dc9b60d6-d853-4e29-8058-22b67d8b8bd3\"\n    }\n}",
         "title": "导出全部资产"
+      }
+    ],
+    "CreateAssetComponentListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetComponentListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Save\": 1,\n    \"ExportName\": \"asset_component\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"a9e94405-5853-403e-9431-00c2ea9339e2\",\n        \"RequestId\": \"4878a387-f2fc-455a-b0d7-0f4ab2130e40\"\n    }\n}",
+        "title": "创建镜像资产中组件列表导出任务"
+      }
+    ],
+    "CreateAssetComponentRelatedImageListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetComponentRelatedImageListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": \"10\",\n    \"Save\": 1,\n    \"ExportName\": \"asset_component\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"a80fbb1d-77bf-416d-a076-47875f2fb283\",\n        \"RequestId\": \"6c6c6d41-0fd0-4749-ba49-b4827725088a\"\n    }\n}",
+        "title": "创建镜像仓库组件关联镜像列表导出任务"
       }
     ],
     "CreateAssetFilterView": [
@@ -552,6 +616,134 @@
         "title": "示例1"
       }
     ],
+    "CreateImageAssetListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageAssetListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Save\": 1,\n    \"ExportName\": \"asset_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"8a487ee1-f811-40a1-91f8-53cd45c408c7\",\n        \"RequestId\": \"67baed5c-a947-47e9-b5f7-4259e6f8de0e\"\n    }\n}",
+        "title": "创建镜像资产列表导出任务"
+      }
+    ],
+    "CreateImageAssociatedContainerListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageAssociatedContainerListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": 30,\n    \"Save\": 1,\n    \"ExportName\": \"container_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"3af9e46b-2be3-40a3-90eb-6621619ab965\",\n        \"RequestId\": \"9d379630-c358-4453-8086-162e6a558c2a\"\n    }\n}",
+        "title": "创建镜像关联容器资产导出任务"
+      }
+    ],
+    "CreateImageAssociatedHostListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageAssociatedHostListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": 10,\n    \"Save\": 1,\n    \"ExportName\": \"host_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"5de4e9a0-f935-4258-b070-267d99e65230\",\n        \"RequestId\": \"25680a74-aea7-483e-89d8-4ccc3520065f\"\n    }\n}",
+        "title": "创建镜像关联主机资产列表导出任务"
+      }
+    ],
+    "CreateImageComponentListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageComponentListExportJob\n<公共请求参数>\n\n{\n    \"Id\": \"20\",\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Save\": 1,\n    \"ExportName\": \"component_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"efcd0b16-b60e-4b8d-ac8d-045f2a0c9cdd\",\n        \"RequestId\": \"d257f5f4-5fa2-4863-89ae-6f8c99775a36\"\n    }\n}",
+        "title": "创建镜像组件列表导出任务"
+      }
+    ],
+    "CreateImageLayerVulListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageLayerVulListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": \"100\",\n    \"Save\": 1,\n    \"ExportName\": \"vul_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"db1857b1-8dcd-47e8-9ab3-6a762064bbdf\",\n        \"RequestId\": \"b3a8fcf3-2bf2-4f1d-a3a1-8c2ddeffbb6e\"\n    }\n}",
+        "title": "创建镜像层漏洞列表导出任务"
+      }
+    ],
+    "CreateImageRegistryConnectivityTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageRegistryConnectivityTask\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"RegistryName\": \"测试镜像仓库\",\n    \"RegistryRegion\": \"ap-guangzhou\",\n    \"RegistryType\": \"tcr\",\n    \"ApiVersion\": \"1.0\",\n    \"UserName\": \"default-user\",\n    \"Password\": \"default-password\",\n    \"Url\": \"ccr.ccs.tencentyun.com\",\n    \"Params\": [\n        {\n            \"InstanceUuid\": \"backend\",\n            \"Region\": \"ap-guangzhou\",\n            \"Quuid\": \"backend\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"5a19ab3b-66a0-4f57-bad9-72c5cc17fc2f\",\n        \"RequestId\": \"317f9a9e-7db9-4955-ba70-3f558e479f11\"\n    }\n}",
+        "title": "创建镜像仓库联通性检查任务"
+      }
+    ],
+    "CreateImageRegistryListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageRegistryListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Save\": 1,\n    \"ExportName\": \"registry_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"b6643d91-8fff-4aed-af2e-798df35d85fd\",\n        \"RequestId\": \"02ec7957-1e1c-41df-bca7-37ad9d9f0e4e\"\n    }\n}",
+        "title": "创建镜像仓库列表导出任务"
+      }
+    ],
+    "CreateImageRegistryScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageRegistryScanTask\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"ScanType\": [\n        \"VUL\"\n    ],\n    \"Timeout\": 3600,\n    \"Name\": \"手动测试\",\n    \"Target\": {\n        \"Mode\": \"ALL\",\n        \"ExcludeImages\": [\n            784\n        ],\n        \"Images\": [\n            790\n        ],\n        \"AutoMatch\": {}\n    },\n    \"Filter\": {\n        \"RegistryType\": [\n            \"ccr\"\n        ],\n        \"Namespace\": [\n            \"openclaw\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c7728fc-49ef-4438-bf18-b55493421991\"\n    }\n}",
+        "title": "创建镜像扫描任务"
+      }
+    ],
+    "CreateImageRegistryTimedScanTaskConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageRegistryTimedScanTaskConfig\n<公共请求参数>\n\n{\n    \"Name\": \"手动定时任务1\",\n    \"Enable\": false,\n    \"ScanType\": [\n        \"0\"\n    ],\n    \"Schedule\": {\n        \"CycleType\": \"DAILY\",\n        \"CycleDays\": [\n            3\n        ],\n        \"StartTime\": \"16:00\",\n        \"Timezone\": \"Asia/Shanghai\"\n    },\n    \"Target\": {\n        \"Mode\": \"AUTO_MATCH\",\n        \"ExcludeImages\": [\n            \"1\"\n        ],\n        \"Images\": [\n            \"2\"\n        ],\n        \"AutoMatch\": {\n            \"Modes\": [\n                \"BY_CLUSTER\"\n            ],\n            \"Clusters\": [\n                \"cls-ed8yg8pq\"\n            ]\n        }\n    },\n    \"Timeout\": 600\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c5c2594-1c4e-4717-93cf-8571534dfc59\"\n    }\n}",
+        "title": "创建镜像仓库镜像扫描任务配置"
+      }
+    ],
+    "CreateImageSensitiveInfoListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageSensitiveInfoListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Save\": 1,\n    \"ExportName\": \"info_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"b9f8665d-bc76-4308-93fe-9096012c3c5e\",\n        \"RequestId\": \"2a204d72-0110-4c44-b837-a890e559f11d\"\n    }\n}",
+        "title": "创建镜像敏感信息列表导出任务"
+      }
+    ],
+    "CreateImageSensitiveWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageSensitiveWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Behavior\": 1,\n    \"ImageIds\": [\n        \"1\"\n    ],\n    \"Scope\": 0,\n    \"Status\": 0,\n    \"Remark\": \"敏感信息白名单\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09dda0d0-697e-484b-b33d-8b141d148f6f\"\n    }\n}",
+        "title": "创建容器镜像敏感信息白名单"
+      }
+    ],
+    "CreateImageVirusListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageVirusListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Save\": 1,\n    \"ExportName\": \"virus_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"58054077-87e9-46a7-b73b-6a7ff9cddb67\",\n        \"RequestId\": \"bd413208-7500-42d9-b0ad-154e68f3fda1\"\n    }\n}",
+        "title": "创建镜像木马病毒列表导出任务"
+      }
+    ],
+    "CreateImageVirusWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageVirusWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Md5List\": [\n        \"B8C*******************9559EBB996\"\n    ],\n    \"Scope\": 1,\n    \"ImageIds\": [\n        1\n    ],\n    \"Remark\": \"木马白名单\",\n    \"VirusId\": [\n        1\n    ],\n    \"Name\": \"木马白名单0629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e86e6fbc-461c-4334-b44e-eb09e9f6a752\"\n    }\n}",
+        "title": "创建镜像木马白名单"
+      }
+    ],
+    "CreateImageVulListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageVulListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Save\": 1,\n    \"ExportName\": \"vul_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"0c179c7d-81b2-44b8-b70f-44d73df46ef4\",\n        \"RequestId\": \"072d69f1-1d69-41a5-a137-d981bbf6fa50\"\n    }\n}",
+        "title": "创建镜像漏洞列表导出任务"
+      }
+    ],
+    "CreateImageVulSummaryListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageVulSummaryListExportJob\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Save\": 1,\n    \"ExportName\": \"summary_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobID\": \"6bbbc6fe-1b9f-466f-be68-9a55fc591f69\",\n        \"RequestId\": \"5cf47934-8d9b-4287-9e4d-2ae60f221429\"\n    }\n}",
+        "title": "创建镜像漏洞概览列表导出任务"
+      }
+    ],
+    "CreateImageVulWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageVulWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"PocId\": [\n        \"tvd736\"\n    ],\n    \"ImageIds\": [\n        \"1\"\n    ],\n    \"Scope\": 1,\n    \"Status\": 1,\n    \"Remark\": \"tvd白名单\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21b05fc7-5807-4786-89c4-8b292e1c5d81\"\n    }\n}",
+        "title": "创建容器镜像漏洞白名单"
+      }
+    ],
     "CreatePodContainerListExportJob": [
       {
         "document": "",
@@ -896,6 +1088,54 @@
         "title": "示例1"
       }
     ],
+    "DeleteImageRegistry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageRegistry\n<公共请求参数>\n\n{\n    \"RegistryId\": [\n        5\n    ],\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49936daf-aff0-4c4c-bd61-9ee0640494a5\"\n    }\n}",
+        "title": "删除镜像仓库信息"
+      }
+    ],
+    "DeleteImageRegistryScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageRegistryScanTask\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"TaskId\": [\n        2040\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db96a033-5628-4ad2-8aa2-b6a3bf1507e9\"\n    }\n}",
+        "title": "删除镜像仓库扫描任务"
+      }
+    ],
+    "DeleteImageRegistryTimedScanTaskConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageRegistryTimedScanTaskConfig\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Ids\": [\n        2\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1bfffa6f-0e0f-4495-a0d8-ab77b4249b74\"\n    }\n}",
+        "title": "删除镜像仓库定时扫描任务配置"
+      }
+    ],
+    "DeleteImageSensitiveWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageSensitiveWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"RuleId\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2655fa61-4e1d-4c5b-82e8-bf105964c471\"\n    }\n}",
+        "title": "删除容器镜像敏感信息白名单"
+      }
+    ],
+    "DeleteImageVirusWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageVirusWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"RuleId\": [\n        2\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6981701-4807-47ff-b79a-f810a9d724e1\"\n    }\n}",
+        "title": "删除镜像木马白名单"
+      }
+    ],
+    "DeleteImageVulWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageVulWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"RuleId\": [\n        2\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09d549a9-7e54-4141-bb80-8ce9e5ec13ef\"\n    }\n}",
+        "title": "删除容器镜像漏洞白名单"
+      }
+    ],
     "DeleteLoginWhiteList": [
       {
         "document": "",
@@ -918,6 +1158,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRiskScanTask\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-********\"\n    ],\n    \"TaskIdList\": [\n        {\n            \"TaskId\": \"rmis-****\",\n            \"TargetAppId\": \"135641233\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7429061e-dabd-e1ee-e135-43364c7bb15d\"\n    }\n}",
         "title": "删除风险中心扫描任务"
+      }
+    ],
+    "DeleteSandboxLLMAuditRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSandboxLLMAuditRule\n<公共请求参数>\n\n{\n    \"IDList\": [\n        6001,\n        6002\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "批量删除 LLM 审计规则示例"
       }
     ],
     "DeleteVulWhitelist": [
@@ -949,6 +1197,30 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAgentAssetList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"ebdae81e-e3cf-4694-a081-196d38c0038e\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeAIAgentCredentialList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAgentCredentialList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CredentialList\": [\n            {\n                \"CredName\": \"openclaw_gateway_token_env\",\n                \"CredType\": \"UNKNOWN\",\n                \"DetectTime\": \"2026-05-12T16:49:59Z\",\n                \"ID\": 835,\n                \"Locations\": [\n                    {\n                        \"ContainerID\": \"78ba821d5aa4d5c4117935ae8430b014f3af9bbbace58515032460fec2537a87\",\n                        \"Content\": \"OPENCL***a09e\",\n                        \"DelegateID\": 0,\n                        \"InstanceID\": \"ins-7xdsd8tg\",\n                        \"Line\": 14,\n                        \"Path\": \"/proc/7926/environ\",\n                        \"Status\": 0\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 8,\n        \"RequestId\": \"9d9a9182-3c03-4e36-9fcf-3021a3af27ba\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeAIAgentCredentialLocationList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAgentCredentialLocationList\n<公共请求参数>\n\n{\n    \"ID\": 3628,\n    \"MemberId\": [\n        \"mem-tencent-6f5795752f66e429\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Locations\": [\n            {\n                \"ContainerID\": \"\",\n                \"Content\": \"\\\"apiKey\\\": \\\"sk-Nsq***mJ2l\\\",\",\n                \"DelegateID\": 0,\n                \"InstanceID\": \"ins-ncsifjqf\",\n                \"Line\": 126,\n                \"Path\": \"/home/ubuntu/.openclaw/openclaw.json\",\n                \"Status\": 0\n            }\n        ],\n        \"TotalCount\": 11,\n        \"RequestId\": \"08b1cb53-5cb5-4bae-866a-a0b254635ee1\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "DescribeAIAgentSkillList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAgentSkillList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-be585a79534c48b6\"\n    ],\n    \"AgentName\": \"OpenClaw\",\n    \"InstanceID\": \"ins-kfrn1bfy\",\n    \"ContainerID\": \"b7356313e628d518691774cc4a99b759e1027b44ec008b57112b7dea98b808f3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SkillList\": [\n            {\n                \"Description\": \"A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured commands.\",\n                \"Name\": \"Agent Browser\",\n                \"Path\": \"/root/.openclaw/workspace/skills/agent-browser\",\n                \"Version\": \"0.2.0\"\n            }\n        ],\n        \"TotalCount\": 17,\n        \"RequestId\": \"4056c5ed-2474-440a-9aa8-fa029da62363\"\n    }\n}",
         "title": "调用示例"
       }
     ],
@@ -1152,6 +1424,22 @@
         "title": "告警中心全量告警示例"
       }
     ],
+    "DescribeAssetComponentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetComponentList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ComponentList\": [\n            {\n                \"FirstFoundTime\": \"2026-06-28 21:11:02\",\n                \"Id\": \"1\",\n                \"LatestFoundTime\": \"2026-06-29 21:11:02\",\n                \"Name\": \"openssl\",\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"Type\": \"SYSTEM_COMPONENT\",\n                \"Version\": \"1.0.1f-1ubuntu2.11\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4913fc5d-68eb-4126-a17c-31ae8abed7b2\"\n    }\n}",
+        "title": "查询资产中组件列表"
+      }
+    ],
+    "DescribeAssetComponentRelatedImageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetComponentRelatedImageList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageList\": [\n            {\n                \"CriticalLevelVulCnt\": 0,\n                \"HighLevelVulCnt\": 0,\n                \"Id\": \"802\",\n                \"ImageCreateTime\": \"2026-04-07T11:07:15+08:00\",\n                \"ImageDigest\": \"sha256:0074e38a3b63c1768b964b7dfd194cae98a528aafb71b870a230ea23470e1503\",\n                \"ImageId\": \"sha256:048a5bc1641e14f0884742973c842a640e4010883491c5ef79723a8de6fce388\",\n                \"ImageName\": \"yancyw\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/****/******\",\n                \"ImageSize\": 125067215,\n                \"ImageTag\": \"qi******\",\n                \"InstanceId\": \"tcr-instance\",\n                \"InstanceName\": \"ccr-sa-saopaulo\",\n                \"IsAuthorized\": 1,\n                \"IsLatestImage\": false,\n                \"LatestScanTime\": \"2026-07-01T11:59:34+08:00\",\n                \"LowLevelVulCnt\": 0,\n                \"MediumLevelVulCnt\": 0,\n                \"Namespace\": \"csip\",\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"RegistryRegion\": \"sa-saopaulo\",\n                \"ScanStatus\": 10,\n                \"SensitiveCnt\": 0,\n                \"VirusCnt\": 0,\n                \"VulCnt\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"814ca926-af90-42f1-80fd-db1db47b4f7c\"\n    }\n}",
+        "title": "查询镜像仓库组件关联镜像列表"
+      }
+    ],
     "DescribeAssetDetail": [
       {
         "document": "",
@@ -1270,6 +1558,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssumeRole\n<公共请求参数>\n\n{\n    \"RoleName\": \"TencentCloudRoleName\"\n}",
         "output": "{\n    \"Response\": {\n        \"Bind\": 1,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "查询是否绑定角色"
+      }
+    ],
+    "DescribeBackendScanEngineRegionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackendScanEngineRegionList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DefaultRegion\": \"ap-guangzhou\",\n        \"Regions\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionCode\": \"gz\",\n                \"RegionId\": 1,\n                \"RegionName\": \"华南地区（广州）\",\n                \"RegionNameEn\": \"South China (Guangzhou)\"\n            }\n        ],\n        \"RequestId\": \"2e27016b-46b6-4243-b548-298180f20c49\"\n    }\n}",
+        "title": "查询后台扫描引擎地域列表"
       }
     ],
     "DescribeBanMode": [
@@ -1632,6 +1928,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallRecord\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKey\": \"AKID*****\",\n                \"AccessKeyID\": 10022,\n                \"AccessKeyRemark\": \"\",\n                \"AppID\": 100001,\n                \"CallCount\": 241,\n                \"CallID\": \"202528000005473835\",\n                \"Code\": 0,\n                \"Date\": \"2025-07-11 00:00:00\",\n                \"EventName\": \"GetFederationToken\",\n                \"EventType\": 1,\n                \"FirstCallTime\": \"2025-07-11 00:00:00\",\n                \"IPType\": 3,\n                \"ISP\": \"腾讯云\",\n                \"InstanceID\": \"\",\n                \"InstanceName\": \"\",\n                \"LastCallTime\": \"2025-07-11 14:19:00\",\n                \"PolicySet\": [\n                    \"default-policy\"\n                ],\n                \"ProductName\": \"sts\",\n                \"Region\": \"中国-广东省-广州市\",\n                \"ShowStatus\": true,\n                \"SourceIP\": \"106.55.123.**\",\n                \"SourceIPRemark\": \"remark\",\n                \"UserName\": \"name\",\n                \"UserType\": \"CAMUser\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "获取调用记录列表"
+      }
+    ],
+    "DescribeCheckConnectivityHostList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCheckConnectivityHostList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HostList\": [\n            {\n                \"ClusterId\": \"cls-law7jgc6\",\n                \"ClusterName\": \"openclaw-Test\",\n                \"DockerFileSystemDriver\": \"overlay\",\n                \"DockerVersion\": \"v1.6.9-tke.8\",\n                \"HostId\": \"d2fc28e6-6513-4989-8614-9f84ce628da2\",\n                \"HostIp\": \"172.16.0.199\",\n                \"HostName\": \"cls-law7jgc6_np-3qr9l30o-gf957\",\n                \"HostRegion\": \"ap-guangzhou\",\n                \"HostRegionId\": 1,\n                \"InstanceId\": \"eks-8z0pj6qn\",\n                \"IsContainerd\": true,\n                \"MachineType\": \"EKS-NATIVE\",\n                \"Project\": {\n                    \"ProjectId\": 0,\n                    \"ProjectName\": \"0\"\n                },\n                \"PublicIp\": \"\",\n                \"Status\": \"ONLINE\",\n                \"Tags\": [],\n                \"Uuid\": \"d2fc28e6-6513-4989-8614-9f84ce628da2\"\n            }\n        ],\n        \"TotalCount\": 18,\n        \"RequestId\": \"ad69f33f-cdde-42de-947a-26c3f7a214e5\"\n    }\n}",
+        "title": "查询联通性检测主机列表"
       }
     ],
     "DescribeCheckViewRisks": [
@@ -2922,6 +3226,206 @@
         "title": "示例1"
       }
     ],
+    "DescribeImageAssetDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAssetDetail\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": \"802\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"Id\": \"802\",\n            \"ImageCreateTime\": \"2026-04-07T11:07:15+08:00\",\n            \"ImageDigest\": \"sha256:0074e38a3b63c1768b964b7dfd194cae98a528aafb71b870a230ea23470e1503\",\n            \"ImageId\": \"sha256:048a5bc1641e14f0884742973c842a640e4010883491c5ef79723a8de6fce388\",\n            \"ImageName\": \"yanc**\",\n            \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/****/******\",\n            \"ImageSize\": 125067215,\n            \"ImageTag\": \"qi******\",\n            \"InstanceId\": \"\",\n            \"InstanceName\": \"ccr-sa-********\",\n            \"IsAuthorized\": 0,\n            \"Namespace\": \"csip\",\n            \"OwnerAccountName\": \"70000*******\",\n            \"OwnerAppId\": 260000000,\n            \"OwnerUin\": \"7000********\",\n            \"RegistryRegion\": \"sa-********\",\n            \"RegistryType\": \"ccr\",\n            \"ScanStatus\": 0,\n            \"SensitiveCnt\": 0,\n            \"VirusCnt\": 0,\n            \"VulCnt\": 0\n        },\n        \"RequestId\": \"200c0a7f-83b2-48df-8ec7-87a62e344cce\"\n    }\n}",
+        "title": "查询镜像资产详情"
+      }
+    ],
+    "DescribeImageAssetList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAssetList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageList\": [\n            {\n                \"CriticalLevelVulCnt\": 0,\n                \"HighLevelVulCnt\": 0,\n                \"Id\": \"802\",\n                \"ImageCreateTime\": \"2026-04-07T11:07:15+08:00\",\n                \"ImageDigest\": \"sha256:0074e38a3b63c1768b964b7dfd194cae98a528aafb71b870a230ea23470e1503\",\n                \"ImageId\": \"sha256:048a5bc1641e14f0884742973c842a640e4010883491c5ef79723a8de6fce388\",\n                \"ImageName\": \"yancyw\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/csip/yancyw\",\n                \"ImageSize\": 125067215,\n                \"ImageTag\": \"qinglong\",\n                \"InstanceId\": \"tcr-instance\",\n                \"InstanceName\": \"ccr-sa-saopaulo\",\n                \"IsAuthorized\": 0,\n                \"IsLatestImage\": false,\n                \"LatestScanTime\": \"2026-06-29T10:45:14+08:00\",\n                \"LowLevelVulCnt\": 0,\n                \"MediumLevelVulCnt\": 0,\n                \"Namespace\": \"csip\",\n                \"OwnerAccountName\": \"700002365149\",\n                \"OwnerAppId\": 260083796,\n                \"OwnerUin\": \"700002365149\",\n                \"RegistryRegion\": \"sa-saopaulo\",\n                \"ScanStatus\": 0,\n                \"SensitiveCnt\": 0,\n                \"VirusCnt\": 0,\n                \"VulCnt\": 0\n            }\n        ],\n        \"TotalCount\": 287,\n        \"RequestId\": \"8411b494-84eb-4af3-aac1-dae15d54bf9e\"\n    }\n}",
+        "title": "查询镜像资产列表"
+      }
+    ],
+    "DescribeImageAssociatedAssetCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAssociatedAssetCount\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": [\n        3390\n    ],\n    \"PreviewId\": [\n        1000\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageCountList\": [\n            {\n                \"ContainerCount\": 0,\n                \"HostCount\": 2,\n                \"Id\": 3390,\n                \"OwnerAccountName\": \"***-管理*\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\"\n            }\n        ],\n        \"RequestId\": \"facd87e4-82e2-43e9-b231-0f042b89732c\"\n    }\n}",
+        "title": "查询镜像关联资产数"
+      }
+    ],
+    "DescribeImageAssociatedContainerList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAssociatedContainerList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": 806\n}",
+        "output": "{\n    \"Response\": {\n        \"ContainerList\": [\n            {\n                \"ClusterId\": \"cls-********\",\n                \"ClusterName\": \"yan***\",\n                \"ClusterStatus\": \"Running\",\n                \"ContainerId\": \"cc51f61a9ae01****************3f276c89cfefd****************0f125b\",\n                \"ContainerName\": \"open****-**\",\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"9313572c-b43a-4462-aa9c-542b452c7e62\"\n    }\n}",
+        "title": "查询镜像关联容器资产"
+      }
+    ],
+    "DescribeImageAssociatedHostList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAssociatedHostList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": 807\n}",
+        "output": "{\n    \"Response\": {\n        \"HostList\": [\n            {\n                \"AgentStatus\": \"ONLINE\",\n                \"HostName\": \"y*****自建集群\",\n                \"InnerIp\": \"172.**.*.*\",\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"PublicIp\": \"223.160.1.1\",\n                \"QUuid\": \"21fb6c0b-****-****-bd32-7739ab4d9d7c\",\n                \"Uuid\": \"21fb6c0b-****-****-bd32-7739ab4d9d7c\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"0417863b-9e50-464c-9d4d-a026d4acae2e\"\n    }\n}",
+        "title": "查询镜像关联主机资产"
+      }
+    ],
+    "DescribeImageComponentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageComponentList\n<公共请求参数>\n\n{\n    \"Id\": \"802\",\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ComponentList\": [\n            {\n                \"ImageID\": \"802\",\n                \"Name\": \"openssl-devel\",\n                \"Path\": \"/data/openssl\",\n                \"Type\": \"SYSTEM_COMPONENT\",\n                \"Version\": \"1:1.0.1e-51.tl2.9\",\n                \"VulCount\": 0\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"e0be4de8-697b-4694-8818-f781d9451517\"\n    }\n}",
+        "title": "查询镜像组件列表"
+      }
+    ],
+    "DescribeImageExportJobList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageExportJobList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobList\": [\n            {\n                \"ExportCreateTime\": \"2026-08-12T20:40:10+08:00\",\n                \"ExportType\": \"ImageAssetList\",\n                \"JobID\": \"8a487ee1-f811-40a1-91f8-53cd45c408c7\",\n                \"Name\": \"asset_list\",\n                \"OwnerAppId\": 260000000,\n                \"Status\": \"SUCCESS\"\n            }\n        ],\n        \"TotalCount\": 88,\n        \"RequestId\": \"341177b1-9a65-4759-88a5-d73545d60944\"\n    }\n}",
+        "title": "查询镜像仓库导出任务列表"
+      }
+    ],
+    "DescribeImageLayerList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageLayerList\n<公共请求参数>\n\n{\n    \"Id\": \"802\",\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LayerList\": [\n            {\n                \"CriticalLevelVulCnt\": 0,\n                \"HighLevelVulCnt\": 0,\n                \"LayerCmd\": \"ADD alpine-minirootfs-3.23.3-x86_64.tar.gz / # buildkit\",\n                \"LayerId\": \"sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153\",\n                \"LayerIndex\": 0,\n                \"LowLevelVulCnt\": 0,\n                \"MediumLevelVulCnt\": 0,\n                \"SensitiveCnt\": 0,\n                \"Size\": 3861821,\n                \"VirusCnt\": 0\n            }\n        ],\n        \"TotalCount\": 11,\n        \"RequestId\": \"daf3db40-d4ba-41bc-b910-efb7cd4bb444\"\n    }\n}",
+        "title": "查询镜像层信息列表"
+      }
+    ],
+    "DescribeImageLayerVulList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageLayerVulList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Filter\": {\n        \"Limit\": 1,\n        \"Offset\": 2,\n        \"Filters\": [\n            {\n                \"Name\": \"ComponentId\",\n                \"Values\": [\n                    \"185391\"\n                ]\n            }\n        ]\n    },\n    \"Id\": \"913\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageLayerVulList\": [\n            {\n                \"FirstFoundTime\": \"2026-07-16T03:16:08+08:00\",\n                \"ID\": 133,\n                \"ImageId\": \"913\",\n                \"LatestFoundTime\": \"2026-07-20T11:37:15+08:00\",\n                \"LayerId\": \"sha256:f4af6e45a5238091268325f642727a3b8c521b25f42793a12d491930eba9e07a\",\n                \"OwnerAccountName\": \"***-管**\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"VulInfo\": {\n                    \"AffectProduct\": \"pnpm\",\n                    \"AffectVendor\": \"\",\n                    \"CVEID\": \"CVE-2026-23890\",\n                    \"CVSSLevel\": \"MEDIUM\",\n                    \"Category\": \"APPLICATION\",\n                    \"CheckMethod\": \"VersionCompare\",\n                    \"CvssScore\": \"6.5\",\n                    \"DefendStatus\": \"NOT_ENABLED\",\n                    \"EPSSScore\": 0.00438,\n                    \"FixSolution\": \"建议关注厂商公告或升级到最新版本。\",\n                    \"KVERecord\": false,\n                    \"Mechanism\": \"\",\n                    \"Name\": \"pnpm 安全漏洞(CVE-2026-23890)\",\n                    \"PocId\": \"TVD-2026-4551\",\n                    \"Precondition\": \"1. 受害者系统安装了存在漏洞版本的 pnpm（版本小于 10.28.1）\\n2. 攻击者能够诱导受害者安装一个包含恶意 bin 定义的 npm 包（例如通过 `pnpm add` 命令安装本地或远程恶意包）\\n3. 恶意包的 bin 名称需以 '@' 开头（如 '@scope/../../evil'），以绕过 pnpm 的 bin 名称验证逻辑\",\n                    \"PublishTime\": \"2026-01-27 06:15:00\",\n                    \"RefLink\": \"https://github.com/pnpm/pnpm/releases/tag/v10.28.1,https://github.com/pnpm/pnpm/security/advisories/GHSA-xpqm-wm3m-f34h,https://github.com/pnpm/pnpm/commit/8afbb1598445d37985d91fda18abb4795ae5062d\",\n                    \"Remark\": \"\",\n                    \"Summary\": \"pnpm是pnpm开源的一个包管理器。 pnpm 10.28.1之前版本存在安全漏洞，该漏洞源于二进制链接存在路径遍历，可能导致恶意npm包在node_modules/.bin外创建可执行文件或符号链接。\",\n                    \"SupportFix\": false\n                }\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"470a3c93-6b62-4596-b1d0-7fa6e619f1b2\"\n    }\n}",
+        "title": "查询镜像层漏洞列表"
+      }
+    ],
+    "DescribeImageRegistryAssetOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryAssetOverview\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ComponentCnt\": 4805,\n        \"ImageCnt\": 319,\n        \"ImageScannedCnt\": 189,\n        \"RemainingQuota\": 1010,\n        \"SensitiveCnt\": 118,\n        \"TimedScanTaskConfigCnt\": 5,\n        \"TotalQuota\": 1010,\n        \"TrialQuota\": 0,\n        \"UsedQuota\": 0,\n        \"VirusCnt\": 496,\n        \"VulCnt\": 419,\n        \"RequestId\": \"aa4beda5-11ef-4295-a4c9-2713255b7e96\"\n    }\n}",
+        "title": "查询镜像仓库资产总览"
+      }
+    ],
+    "DescribeImageRegistryConnectivityTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryConnectivityTaskResult\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"TaskId\": \"5a19ab3b-66a0-4f57-bad9-72c5cc17fc2f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnDetectResult\": [],\n        \"Finished\": 1,\n        \"RequestId\": \"d5a5bd41-3b86-448d-963c-3af4639c1783\"\n    }\n}",
+        "title": "查询镜像仓库联通性检查任务结果"
+      }
+    ],
+    "DescribeImageRegistryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageRegistryList\": [\n            {\n                \"ConnDetectDetail\": [\n                    {\n                        \"ConnDetectMessage\": \"\",\n                        \"ConnDetectStatus\": \"status_connecting\",\n                        \"FailReason\": \"\",\n                        \"Quuid\": \"backend\",\n                        \"Solution\": \"\",\n                        \"Uuid\": \"backend\"\n                    }\n                ],\n                \"InstanceID\": \"\",\n                \"Name\": \"ccr-default\",\n                \"RegistryId\": 5,\n                \"RegistryRegion\": \"default\",\n                \"RegistryType\": \"ccr\",\n                \"RegistryVersion\": \"\",\n                \"SyncMode\": 0,\n                \"Url\": \"https://ccr.ccs.tencentyun.com\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"45694c4e-008c-4fae-9c64-bcba5a91062a\"\n    }\n}",
+        "title": "查询镜像仓库列表"
+      }
+    ],
+    "DescribeImageRegistryNamespaceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryNamespaceList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NamespaceList\": [\n            {\n                \"Namespace\": \"csip\"\n            }\n        ],\n        \"TotalCount\": 5,\n        \"RequestId\": \"ee4b9f43-470e-472b-a937-4e1da081fc44\"\n    }\n}",
+        "title": "查询镜像仓库命名空间列表"
+      }
+    ],
+    "DescribeImageRegistryScanSubTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryScanSubTaskList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"TaskId\": 2038\n}",
+        "output": "{\n    \"Response\": {\n        \"SubTaskList\": [\n            {\n                \"FailedReason\": \"\",\n                \"ImageId\": \"sha256:6b56d305145037350b3aaa3a7cd7b818543875c8344436b0e2805778b859656e\",\n                \"ImageName\": \"myimages_v7\",\n                \"ImageRepoAddress\": \"172.**.*.**/csip-test/myimages_v7\",\n                \"ImageTag\": \"1.0\",\n                \"IsLatestImage\": false,\n                \"OwnerAccountName\": \"***-管**\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"RegistryType\": \"harbor\",\n                \"ScanStatus\": \"FINISHED\",\n                \"Solution\": \"\",\n                \"SubTaskId\": 86411\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"dbecc1fb-c925-4dec-b319-a20035390462\"\n    }\n}",
+        "title": "查询镜像仓库扫描子任务信息"
+      }
+    ],
+    "DescribeImageRegistryScanTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryScanTaskList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskList\": [\n            {\n                \"CancelReason\": \"手动取消\",\n                \"FailureImageCount\": 0,\n                \"Id\": 2,\n                \"ImageIds\": [\n                    3\n                ],\n                \"Name\": \"测试手动扫描任务\",\n                \"OwnerAccountName\": \"700002365149\",\n                \"OwnerAppId\": 260083796,\n                \"OwnerUin\": \"700002365149\",\n                \"ScanEndTime\": \"2026-06-29T22:50:51+08:00\",\n                \"ScanImageCount\": 0,\n                \"ScanStartTime\": \"2026-06-29T22:30:51+08:00\",\n                \"ScanType\": [\n                    \"MANUAL\"\n                ],\n                \"Status\": 5,\n                \"SuccessImageCount\": 0,\n                \"TimedScanConfigId\": 0,\n                \"Timeout\": 3600\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d6674432-32a8-414e-96fa-8cbb421447c6\"\n    }\n}",
+        "title": "查询镜像仓库镜像扫描任务列表"
+      }
+    ],
+    "DescribeImageRegistryTimedScanTaskConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryTimedScanTaskConfig\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskInfo\": [\n            {\n                \"Enable\": false,\n                \"Id\": 3,\n                \"Name\": \"定时扫描任务_20260629114052_260083796\",\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"ScanType\": [\n                    \"VIRUS\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"335929c6-74db-4f87-8d19-8d5e27299dcf\"\n    }\n}",
+        "title": "查看镜像仓库定时扫描任务配置"
+      }
+    ],
+    "DescribeImageRegistryTimedScanTaskPreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryTimedScanTaskPreview\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"TaskId\": 1123,\n    \"TargetType\": \"MANUAL_CONFIG\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Images\": [\n            {\n                \"Id\": 43428,\n                \"ImageId\": \"sha256*************0433f2e69028fdbdaae4bf922ead8af36db5d60fa1523b49f6cc\",\n                \"ImageName\": \"myimages-v05\",\n                \"ImageRepoAddress\": \"43.***.**.***:****/****-test/myimages-v05\",\n                \"ImageTag\": \"v05\",\n                \"IsLatestImage\": true,\n                \"OwnerAccountName\": \"多**-管理*\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"RegistryType\": \"harbor\"\n            }\n        ],\n        \"PreviewUpdatedAt\": \"2026-08-12T20:43:06+08:00\",\n        \"TotalCount\": 9,\n        \"RequestId\": \"aa0dade0-d8e0-4488-8a3e-ac00ee4e817d\"\n    }\n}",
+        "title": "查询镜像仓库定时扫描任务预览"
+      }
+    ],
+    "DescribeImageSensitiveInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageSensitiveInfoList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Filter\": {\n        \"Filters\": [\n            {\n                \"Name\": \"Id\",\n                \"Values\": [\n                    \"802\"\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SensitiveInfoList\": [\n            {\n                \"Behavior\": 2,\n                \"Describe\": \"sensitive file zh\",\n                \"ImageId\": \"802\",\n                \"InstructionContent\": \"cat /etc/secret/bulk0530-token-0999414\",\n                \"Level\": 2,\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"Type\": 114\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"aa11082d-719a-48ac-833f-260460df9fc8\"\n    }\n}",
+        "title": "查询镜像敏感信息列表"
+      }
+    ],
+    "DescribeImageSensitiveWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageSensitiveWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"WhiteList\": [\n            {\n                \"Behavior\": 1,\n                \"ImageIds\": [\n                    1\n                ],\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"Remark\": \"敏感信息白名单\",\n                \"RuleId\": 1,\n                \"Scope\": 0,\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"b0f177f7-540f-4118-af3e-e84d57636afa\"\n    }\n}",
+        "title": "查询容器镜像敏感信息白名单"
+      }
+    ],
+    "DescribeImageVirusList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageVirusList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"VirusList\": [\n            {\n                \"Category\": \"1\",\n                \"FileMd5\": \"7d75cec50ce24e459d6f86364bb819fd\",\n                \"FileName\": \"webshell.php\",\n                \"FileSize\": 40,\n                \"FileType\": \"BIN\",\n                \"FirstDetectedTime\": \"2026-06-29T23:57:03+08:00\",\n                \"ImageId\": \"681\",\n                \"LatestDetectedTime\": \"2026-01-19T17:30:40+08:00\",\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"Path\": \"/bin/webshell.php\",\n                \"RiskLevel\": \"CRITICAL\",\n                \"Tags\": \"BIN\",\n                \"VirusName\": \"Php.Trojan.Php.Dnhl\"\n            }\n        ],\n        \"RequestId\": \"fa3dff5d-34a8-4d8e-9bd4-ec81b838056f\"\n    }\n}",
+        "title": "查询镜像木马病毒列表"
+      }
+    ],
+    "DescribeImageVirusWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageVirusWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"WhiteList\": [\n            {\n                \"ImageIds\": 1,\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"7000********\",\n                \"Remark\": \"木马白名单\",\n                \"RuleId\": 1,\n                \"Scope\": 1\n            }\n        ],\n        \"RequestId\": \"5a1c2b01-7534-456c-8071-ec6bff2c2886\"\n    }\n}",
+        "title": "查询镜像木马白名单"
+      }
+    ],
+    "DescribeImageVirusWhitelistDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageVirusWhitelistDetail\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"RuleId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"Md5List\": [\n                \"D66D49C5242F9D4B0B2883D014AB4940\"\n            ],\n            \"OwnerAccountName\": \"70000*******\",\n            \"OwnerAppId\": 260000000,\n            \"OwnerUin\": \"70000*******\",\n            \"Remark\": \"木马白名单\",\n            \"RuleId\": 1,\n            \"Scope\": 1\n        },\n        \"RequestId\": \"3dc013ef-bb67-4665-8890-5913d7403d6c\"\n    }\n}",
+        "title": "查询镜像木马白名单详情"
+      }
+    ],
+    "DescribeImageVulList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageVulList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Filter\": {\n        \"Limit\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageVulList\": [\n            {\n                \"ID\": 22624,\n                \"ImageId\": \"681\",\n                \"OwnerAccountName\": \"700002365149\",\n                \"OwnerAppId\": 260083796,\n                \"OwnerUin\": \"700002365149\"\n            }\n        ],\n        \"TotalCount\": 7,\n        \"RequestId\": \"b88efe8e-0ea8-4017-807d-9a34544db703\"\n    }\n}",
+        "title": "查询镜像漏洞列表"
+      }
+    ],
+    "DescribeImageVulSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageVulSummaryList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageVulSummaryList\": [\n            {\n                \"AffectImageCount\": 58,\n                \"FirstFoundTime\": \"2026-07-25T17:19:53+08:00\",\n                \"ID\": 412,\n                \"LatestFoundTime\": \"2026-08-12T20:58:03+08:00\",\n                \"OwnerAccountName\": \"***-*理*\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"VulInfo\": {\n                    \"AffectProduct\": \"libxml2\",\n                    \"AffectVendor\": \"xmlsoft\",\n                    \"CVEID\": \"CVE-2016-3709\",\n                    \"CVSSLevel\": \"MEDIUM\",\n                    \"Category\": \"LINUX\",\n                    \"CheckMethod\": \"VersionCompare\",\n                    \"CvssScore\": \"6.1\",\n                    \"DefendStatus\": \"NOT_ENABLED\",\n                    \"EPSSScore\": 0.00116,\n                    \"FixSolution\": \"建议您更新当前系统或软件至最新版，完成漏洞的修复。\",\n                    \"KVERecord\": false,\n                    \"Label\": [\n                        \"远程利用\"\n                    ],\n                    \"Mechanism\": \"\",\n                    \"Name\": \"libxml2 跨站脚本漏洞(CVE-2016-3709)\",\n                    \"PocId\": \"TVD-2016-17163\",\n                    \"Precondition\": \"利用此漏洞需交互\\n\",\n                    \"PublishTime\": \"2022-07-29 01:15:00\",\n                    \"RefLink\": \"https://mail.gnome.org/archives/xml/2018-January/msg00010.html\",\n                    \"Remark\": \"\",\n                    \"Summary\": \"libxml2是开源的一个用来解析XML文档的函数库。它用C语言写成，并且能为多种语言所调用，例如C语言，C++，XSH。 libxml2 存在安全漏洞，该漏洞源于提交960f0e2后libxml中可能存在跨站脚本漏洞。\",\n                    \"SupportFix\": true\n                }\n            }\n        ],\n        \"TotalCount\": 419,\n        \"RequestId\": \"304f8470-3cff-4b48-997c-02281cd21e22\"\n    }\n}",
+        "title": "查询镜像漏洞概览列表"
+      }
+    ],
+    "DescribeImageVulWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageVulWhitelist\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"WhiteList\": [\n            {\n                \"OwnerAccountName\": \"70000*******\",\n                \"OwnerAppId\": 260000000,\n                \"OwnerUin\": \"70000*******\",\n                \"PocId\": \"tvd736\",\n                \"Remark\": \"漏洞白名单\",\n                \"RuleId\": 1,\n                \"Scope\": 1,\n                \"VulName\": \" Oracle MySQL Server 安全漏洞 (CVE-2017-3600)\"\n            }\n        ],\n        \"RequestId\": \"4c833cf5-50cb-42b0-9028-bfcdc9656215\"\n    }\n}",
+        "title": "查询容器镜像漏洞白名单"
+      }
+    ],
     "DescribeIpInvokeRecord": [
       {
         "document": "",
@@ -3160,6 +3664,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeNotifySettingAk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotifySettingAk\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Alert\": [\n            {\n                \"Level\": [\n                    3\n                ],\n                \"Type\": \"LeakDetect\"\n            }\n        ],\n        \"AlertGranularity\": 1,\n        \"Asset\": [],\n        \"BeginTime\": \"09:00:00\",\n        \"EndTime\": \"18:00:00\",\n        \"RequestId\": \"9940e3f8-0324-4ede-aaad-9dc6c3e26ab0\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeNotifySettingAlert": [
       {
         "document": "",
@@ -3284,6 +3796,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRaspLicenseList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c484eae-c3a5-4819-8158-2a1b45f0a25a\",\n        \"List\": [],\n        \"TotalCount\": 0\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeRegistryOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegistryOverview\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RegistryConnectFailedCount\": 0,\n        \"RegistryCount\": 14,\n        \"RegistryTypeList\": [\n            {\n                \"Count\": 12,\n                \"RegistryType\": \"ccr\"\n            }\n        ],\n        \"RequestId\": \"fa62e68d-9180-41df-a549-0b9d708f54b5\"\n    }\n}",
+        "title": "查询仓库总览"
+      }
+    ],
+    "DescribeRegistryRegionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegistryRegionList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DefaultRegion\": \"ap-guangzhou\",\n        \"Regions\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionCode\": \"gz\",\n                \"RegionId\": 1,\n                \"RegionName\": \"华南地区（广州）\",\n                \"RegionNameEn\": \"South China (Guangzhou)\"\n            }\n        ],\n        \"RequestId\": \"d7145fdb-8d92-4343-8c27-b482f63fb06a\"\n    }\n}",
+        "title": "查询镜像仓库地域列表"
       }
     ],
     "DescribeRepositoryImageAssets": [
@@ -3478,6 +4006,46 @@
         "title": "查询广州地域 SCF 命名空间"
       }
     ],
+    "DescribeSandboxACLAlertList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxACLAlertList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"PENDING\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 7001,\n                \"BelongAssetType\": \"HOST\",\n                \"RuleID\": 2001,\n                \"RuleName\": \"禁止出站访问未知域名\",\n                \"UUID\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n                \"InstanceId\": \"ins-a1b2c3d4\",\n                \"InstanceName\": \"app-server-01\",\n                \"Exe\": \"/usr/bin/curl\",\n                \"Param\": \"curl -X GET https://evil.example.com/c2\",\n                \"Target\": \"GET https://evil.example.com/c2\",\n                \"Protocol\": \"https\",\n                \"Level\": \"HIGH\",\n                \"Status\": \"PENDING\",\n                \"Count\": 12,\n                \"FirstAlertTime\": \"2025-03-10T08:00:00+08:00\",\n                \"LastAlertTime\": \"2025-03-15T14:30:00+08:00\",\n                \"RuleAction\": \"BLOCK\"\n            }\n        ],\n        \"TotalCount\": 42,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 ACL 告警列表示例"
+      }
+    ],
+    "DescribeSandboxACLRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxACLRuleList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"ON\"\n            ]\n        }\n    ],\n    \"MemberId\": [\n        \"mem-tencent-7*************ef\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 2001,\n                \"RuleName\": \"禁止出站访问未知域名\",\n                \"Level\": \"HIGH\",\n                \"Status\": \"ON\",\n                \"BelongAssetType\": \"HOST\",\n                \"SystemRuleContent\": [\n                    {\n                        \"DstRule\": {\n                            \"DstIP\": [\n                                \"10.10.20.30\",\n                                \"172.16.0.0/16\"\n                            ],\n                            \"DstIPExcept\": [\n                                \"10.10.20.100\"\n                            ],\n                            \"DstPort\": [\n                                \"443\",\n                                \"8080-8090\"\n                            ],\n                            \"DstPortExcept\": [\n                                \"22\"\n                            ]\n                        },\n                        \"URLRule\": {\n                            \"URL\": [\n                                \"*.example.com\",\n                                \"api.example.com/v1/*\"\n                            ],\n                            \"URLExcept\": [\n                                \"test.example.com\"\n                            ],\n                            \"Protocol\": [\n                                \"http\",\n                                \"https\"\n                            ],\n                            \"Method\": [\n                                \"GET\",\n                                \"POST\"\n                            ]\n                        }\n                    }\n                ],\n                \"UserRuleContent\": [\n                    {\n                        \"DstRule\": {\n                            \"DstIP\": [\n                                \"10.10.20.30\",\n                                \"172.16.0.0/16\"\n                            ],\n                            \"DstIPExcept\": [\n                                \"10.10.20.100\"\n                            ],\n                            \"DstPort\": [\n                                \"443\",\n                                \"8080-8090\"\n                            ],\n                            \"DstPortExcept\": [\n                                \"22\"\n                            ]\n                        },\n                        \"URLRule\": {\n                            \"URL\": [\n                                \"*.example.com\",\n                                \"api.example.com/v1/*\"\n                            ],\n                            \"URLExcept\": [\n                                \"test.example.com\"\n                            ],\n                            \"Protocol\": [\n                                \"http\",\n                                \"https\"\n                            ],\n                            \"Method\": [\n                                \"GET\",\n                                \"POST\"\n                            ]\n                        }\n                    }\n                ],\n                \"EffectScope\": {\n                    \"EffectType\": \"INCLUDE\",\n                    \"EffectAssets\": [\n                        {\n                            \"InstanceId\": \"ins-a1b2c3d4\",\n                            \"ContainerId\": \"docker-container-abc123\"\n                        }\n                    ]\n                },\n                \"InactiveAssets\": [\n                    {\n                        \"InstanceId\": \"ins-a1b2c3d4\",\n                        \"ContainerId\": \"\",\n                        \"TrafficPluginState\": {\n                            \"InstallStatus\": \"INSTALL_FAIL\",\n                            \"Status\": \"IPTABLE_FAILED\",\n                            \"Message\": \"iptables 规则下发失败\",\n                            \"ActivityTime\": \"2025-03-19T10:35:00+08:00\"\n                        }\n                    }\n                ],\n                \"InsertTime\": \"2025-01-01T10:00:00+08:00\",\n                \"UpdateTime\": \"2025-03-15T14:30:00+08:00\",\n                \"RuleAction\": \"BLOCK\"\n            }\n        ],\n        \"TotalCount\": 15,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 ACL 规则列表示例"
+      }
+    ],
+    "DescribeSandboxACLSystemRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxACLSystemRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 1001,\n                \"RuleName\": \"禁止访问常见命令控制 IP\",\n                \"RuleContent\": [\n                    {\n                        \"DstRule\": {\n                            \"DstIP\": [\n                                \"10.10.20.30\",\n                                \"172.16.0.0/16\"\n                            ],\n                            \"DstIPExcept\": [\n                                \"10.10.20.100\"\n                            ],\n                            \"DstPort\": [\n                                \"443\",\n                                \"8080-8090\"\n                            ],\n                            \"DstPortExcept\": [\n                                \"22\"\n                            ]\n                        },\n                        \"URLRule\": {\n                            \"URL\": [\n                                \"*.example.com\",\n                                \"api.example.com/v1/*\"\n                            ],\n                            \"URLExcept\": [\n                                \"test.example.com\"\n                            ],\n                            \"Protocol\": [\n                                \"http\",\n                                \"https\"\n                            ],\n                            \"Method\": [\n                                \"GET\",\n                                \"POST\"\n                            ]\n                        }\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 32,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 ACL 系统规则列表示例"
+      }
+    ],
+    "DescribeSandboxDLPSystemRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxDLPSystemRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 3001,\n                \"RuleName\": \"身份证号识别\",\n                \"RuleContent\": \"[1-9]\\\\d{5}(19|20)\\\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\\\d|3[01])\\\\d{3}[0-9Xx]\"\n            }\n        ],\n        \"TotalCount\": 28,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 DLP 系统规则列表示例"
+      }
+    ],
+    "DescribeSandboxFileRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxFileRuleList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-6*************29\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleList\": [\n            {\n                \"RuleContent\": {\n                    \"Action\": \"RO\",\n                    \"BelongAssetType\": \"HOST\",\n                    \"EffectScope\": {\n                        \"EffectAssets\": [],\n                        \"EffectType\": \"EXCLUDE\"\n                    },\n                    \"PathWhitelist\": [\n                        \"/home/dev/.local/bin\"\n                    ],\n                    \"RuleName\": \"allow dot local bin\",\n                    \"Status\": \"ON\"\n                },\n                \"RuleID\": 2,\n                \"RuleType\": \"CUSTOM\",\n                \"UpdateTime\": \"2026-04-26T06:22:35Z\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"a51b3fc4-cb94-4ada-b23e-1f8401f79bd2\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DescribeScanReportList": [
       {
         "document": "获取扫描报告列表",
@@ -3558,6 +4126,22 @@
         "title": "获取安全评分规则"
       }
     ],
+    "DescribeSkillScanAlertDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillScanAlertDetail\n<公共请求参数>\n\n{\n    \"ID\": 10001\n}",
+        "output": "{\n    \"Response\": {\n        \"ID\": 10001,\n        \"UUID\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"HostIP\": \"10.0.1.100\",\n        \"InstanceID\": \"ins-a1b2c3d4\",\n        \"BelongAssetType\": \"HOST\",\n        \"SkillName\": \"code-review-assistant\",\n        \"SkillPath\": \"/home/user/.local/share/skills/code-review-assistant\",\n        \"Scope\": \"user\",\n        \"Version\": \"1.2.3\",\n        \"ContentHash\": \"sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\n        \"RiskLevel\": \"malicious\",\n        \"SecurityScore\": 35,\n        \"PrimaryRuleID\": \"90001\",\n        \"EngineVersion\": 3,\n        \"Status\": 0,\n        \"Level\": \"high\",\n        \"CreateTime\": \"2026-06-20T10:30:00Z\",\n        \"SkillDescription\": \"该 Skill 具备文件读写和网络访问能力\",\n        \"Mitigation\": \"建议立即禁用该 Skill 并审查其执行历史\",\n        \"CapabilityTags\": [\n            {\n                \"ID\": \"file_access\",\n                \"Name\": \"文件访问\"\n            }\n        ],\n        \"RuleCatalog\": [\n            {\n                \"RuleID\": \"90001\",\n                \"RuleName\": \"代码注入风险\"\n            }\n        ],\n        \"ScanItems\": [\n            {\n                \"ScanType\": \"AI\",\n                \"RuleList\": [\n                    {\n                        \"RuleID\": \"90001\",\n                        \"Description\": \"检测到可疑的代码执行逻辑\"\n                    }\n                ]\n            }\n        ],\n        \"ReportURL\": \"https://skillscan.example.com/reports/abc123\",\n        \"ScannedAt\": \"2026-06-20T10:28:00Z\",\n        \"RequestId\": \"c368eae2-8739-4cc2-b4f8-8f4284a93b41\"\n    }\n}",
+        "title": "查询告警详情"
+      }
+    ],
+    "DescribeSkillScanAlertList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillScanAlertList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"RiskLevel\",\n            \"Values\": [\n                \"malicious\"\n            ]\n        }\n    ],\n    \"Order\": \"DESC\",\n    \"By\": \"CreateTime\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AlertList\": [\n            {\n                \"ID\": 10001,\n                \"UUID\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n                \"HostIP\": \"10.0.1.100\",\n                \"InstanceID\": \"ins-a1b2c3d4\",\n                \"BelongAssetType\": \"HOST\",\n                \"SkillName\": \"code-review-assistant\",\n                \"SkillPath\": \"/home/user/.local/share/skills/code-review-assistant\",\n                \"Scope\": \"user\",\n                \"Version\": \"1.2.3\",\n                \"ContentHash\": \"sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\n                \"RiskLevel\": \"malicious\",\n                \"SecurityScore\": 35,\n                \"PrimaryRuleID\": \"90001\",\n                \"EngineVersion\": 3,\n                \"Status\": 0,\n                \"Level\": \"high\",\n                \"CreateTime\": \"2026-06-20T10:30:00Z\",\n                \"UpdateTime\": \"2026-06-21T14:15:00Z\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询告警列表"
+      }
+    ],
     "DescribeSkillScanPayInfo": [
       {
         "document": "",
@@ -3614,6 +4198,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubnetAssets\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68b8087a65268000\"\n    ],\n    \"Filter\": {\n        \"Limit\": 1,\n        \"Offset\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"AppIdList\": [\n            {\n                \"Text\": \"1827324\",\n                \"Value\": \"1827324\"\n            }\n        ],\n        \"Data\": [\n            {\n                \"AppId\": \"1827324\",\n                \"AssetId\": \"subnet-0pptyoj8\",\n                \"AssetName\": \"sub2\",\n                \"AvailableIp\": 253,\n                \"CIDR\": \"192.168.25.0/24\",\n                \"CVM\": 0,\n                \"ConfigureRisk\": 1,\n                \"CreateTime\": \"2024-06-12 18:01:54\",\n                \"IsCore\": 2,\n                \"IsNewAsset\": 0,\n                \"LastScanTime\": \"2024-10-30 11:16:07\",\n                \"Nick\": \"yooyan\",\n                \"Region\": \"ap-guangzhou\",\n                \"ScanTask\": 193,\n                \"Tag\": null,\n                \"Uin\": \"100014592178\",\n                \"VpcId\": \"vpc-9eoyt5v\",\n                \"VpcName\": \"feoyian2\",\n                \"Zone\": \"ap-guangzhou-6\"\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Text\": \"广州\",\n                \"Value\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"0604124a-7416-408c-9c70-793880a82005\",\n        \"TotalCount\": 54,\n        \"VpcList\": [\n            {\n                \"Text\": \"vpc_c2\",\n                \"Value\": \"vpc-2toy3vhb\"\n            },\n            {\n                \"Text\": \"vpc-gz-0\",\n                \"Value\": \"vpc-68toym89\"\n            }\n        ],\n        \"ZoneList\": [\n            {\n                \"Text\": \"广州六区\",\n                \"Value\": \"ap-guangzhou-6\"\n            },\n            {\n                \"Text\": \"广州三区\",\n                \"Value\": \"ap-guangzhou-3\"\n            }\n        ]\n    }\n}",
         "title": "获取子网列表"
+      }
+    ],
+    "DescribeTCRInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTCRInstanceList\n<公共请求参数>\n\n{\n    \"AccessKey\": \"AKID********************************\",\n    \"SecretKey\": \"c5Owz***************************\",\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"RegistryRegion\": [\n        \"ap-guangzhou\"\n    ],\n    \"RegistryId\": \"5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Registries\": [\n            {\n                \"PublicDomain\": \"s*******.tencentcloudcr.com\",\n                \"RegistryId\": \"tcr-7*******\",\n                \"RegistryName\": \"s*******\",\n                \"RegistryRegion\": \"ap-guangzhou\",\n                \"RegistryRegionId\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"ebcaba23-3c9c-484e-8868-64fa65dbf717\"\n    }\n}",
+        "title": "获取TCR实例列表"
       }
     ],
     "DescribeTagRuleAssets": [
@@ -4502,6 +5094,46 @@
         "title": "示例1"
       }
     ],
+    "ModifyImageRegistry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageRegistry\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Name\": \"ccr-default\",\n    \"Username\": \"default-user\",\n    \"Password\": \"default-password\",\n    \"Url\": \"https://ccr.ccs.tencentyun.com\",\n    \"RegistryType\": \"ccr\",\n    \"NetType\": \"public\",\n    \"RegistryVersion\": \"1.0\",\n    \"RegistryRegion\": \"ap-guangzhou\",\n    \"SpeedLimit\": 50,\n    \"Insecure\": 0,\n    \"NeedScan\": true,\n    \"SyncMode\": 0,\n    \"InstanceId\": \"ccr-instance\",\n    \"ConnectivityDetectConfig\": [\n        {\n            \"Quuid\": \"backend\",\n            \"Uuid\": \"backend\"\n        }\n    ],\n    \"Id\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": 5,\n        \"RequestId\": \"359e7e65-cd0c-4293-85a3-b5fb249c383a\"\n    }\n}",
+        "title": "修改镜像仓库信息"
+      }
+    ],
+    "ModifyImageRegistryTimedScanTaskConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageRegistryTimedScanTaskConfig\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Id\": 3,\n    \"Name\": \"定时扫描任务7\",\n    \"Enable\": false,\n    \"ScanType\": [\n        \"VUL\"\n    ],\n    \"Schedule\": {\n        \"CycleType\": \"DAILY\",\n        \"CycleDays\": [\n            1\n        ],\n        \"StartTime\": \"16:00\",\n        \"Timezone\": \"Asia/Shanghai\"\n    },\n    \"Target\": {\n        \"Mode\": \"MANUAL\",\n        \"ExcludeImages\": [\n            518\n        ],\n        \"Images\": [\n            573\n        ],\n        \"AutoMatch\": {\n            \"Clusters\": [\n                \"1\"\n            ]\n        }\n    },\n    \"Filter\": {\n        \"RegistryType\": [\n            \"ccr\"\n        ],\n        \"Namespace\": [\n            \"openclaw\"\n        ]\n    },\n    \"Timeout\": 1800\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ceb5ef9d-f276-4406-b5fc-b0f95083ea6f\"\n    }\n}",
+        "title": "修改镜像仓库定时扫描任务配置"
+      }
+    ],
+    "ModifyImageSensitiveWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSensitiveWhitelist\n<公共请求参数>\n\n{\n    \"RuleId\": 1,\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Behavior\": 2,\n    \"ImageIds\": [\n        \"1\"\n    ],\n    \"Scope\": 0,\n    \"Status\": 0,\n    \"Remark\": \"敏感信息白名单\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4cea968-49df-4ec5-b417-6462c2733129\"\n    }\n}",
+        "title": "修改容器镜像敏感信息白名单"
+      }
+    ],
+    "ModifyImageVirusWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageVirusWhitelist\n<公共请求参数>\n\n{\n    \"RuleId\": 1,\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"Md5List\": [\n        \"5FEC0F7****************BBF2E9B89\"\n    ],\n    \"Scope\": 1,\n    \"ImageIds\": [\n        \"1\"\n    ],\n    \"Remark\": \"木马白名单\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6dde640-5779-4ee2-b652-5fe94e879147\"\n    }\n}",
+        "title": "修改镜像木马白名单"
+      }
+    ],
+    "ModifyImageVulWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageVulWhitelist\n<公共请求参数>\n\n{\n    \"RuleId\": 1,\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"PocId\": \"tvd736\",\n    \"ImageIds\": [\n        \"1\"\n    ],\n    \"Scope\": 1,\n    \"Status\": 1,\n    \"Remark\": \"漏洞白名单\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c3c0132-cfb2-4ceb-872a-90a7cc8110c2\"\n    }\n}",
+        "title": "修改容器镜像漏洞白名单"
+      }
+    ],
     "ModifyLoginWhiteRecord": [
       {
         "document": "编辑登录审计白名单",
@@ -4588,11 +5220,27 @@
         "title": "示例"
       }
     ],
+    "ModifyNotifyMember": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotifyMember\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-ae85b7873563d4bc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f2040e-94e2-47bd-8989-cd1dea29e0e7\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "ModifyNotifySetting": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotifySetting\n<公共请求参数>\n\n{\n    \"Module\": \"AkSk\",\n    \"Mode\": 0,\n    \"Status\": 1,\n    \"BeginTime\": \"09:00:00\",\n    \"EndTime\": \"18:00:00\",\n    \"Option\": [\n        \"CRITICAL\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"caaa7927-5161-4511-973f-971189e8dbdb\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyNotifySettingAk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotifySettingAk\n<公共请求参数>\n\n{\n    \"Alert\": [\n        {\n            \"Type\": \"AbnBehavior\",\n            \"Level\": [\n                4\n            ]\n        }\n    ],\n    \"AlertGranularity\": 1,\n    \"Asset\": [\n        \"NewAk\"\n    ],\n    \"BeginTime\": \"10:30:00\",\n    \"EndTime\": \"16:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2072a3f8-0b0c-476f-a156-05122d57b828\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -4682,6 +5330,14 @@
         "title": "更新用户周期检测计划"
       }
     ],
+    "ModifySandboxLLMAuditRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxLLMAuditRuleStatus\n<公共请求参数>\n\n{\n    \"IDList\": [\n        6001,\n        6002\n    ],\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "批量启用 LLM 审计规则示例"
+      }
+    ],
     "ModifySecurityScoreRule": [
       {
         "document": "",
@@ -4696,6 +5352,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyShareUserCSPM\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68b8087a611258000\"\n    ],\n    \"SharedAppIDList\": [\n        11293719\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"Msg\": \"success\",\n        \"RequestId\": \"4a5e197b-1f6d-4e9f-8407-a2a54555716c\"\n    }\n}",
         "title": "编辑共享账号列表"
+      }
+    ],
+    "ModifySkillScanAlertStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySkillScanAlertStatus\n<公共请求参数>\n\n{\n    \"IDs\": [\n        10001,\n        10002\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 2,\n        \"RequestId\": \"7d7bf0da-5893-4588-90ff-bdc1cc3ea19a\"\n    }\n}",
+        "title": "批量修改告警状态"
       }
     ],
     "ModifyUebaRuleSwitch": [
@@ -4890,6 +5554,14 @@
         "title": "停止TaskId为2324的任务"
       }
     ],
+    "StopImageRegistryScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopImageRegistryScanTask\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"ImageId\": [\n        \"3389\"\n    ],\n    \"TaskId\": 2040\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a42ec41-0e6a-4e67-b8ab-45d53616095f\"\n    }\n}",
+        "title": "停止镜像仓库镜像扫描任务"
+      }
+    ],
     "StopPreventUninstall": [
       {
         "document": "关闭防卸载",
@@ -4936,6 +5608,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncDspmUsers\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\"\n    }\n}",
         "title": "同步dspm用户列表"
+      }
+    ],
+    "SyncImageRegistry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncImageRegistry\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"RegistryIds\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7e1a435-c286-4d4d-a96e-8e940e20c810\"\n    }\n}",
+        "title": "镜像仓库同步"
       }
     ],
     "TestWebhookReceiver": [

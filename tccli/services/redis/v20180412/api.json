@@ -672,6 +672,13 @@
       "output": "ModifyInstancePasswordResponse",
       "status": "online"
     },
+    "ModifyInstancePasswordPolicy": {
+      "document": "本接口（ModifyInstancePasswordPolicy）用于修改实例密码复杂度。",
+      "input": "ModifyInstancePasswordPolicyRequest",
+      "name": "修改存量实例密码复杂度",
+      "output": "ModifyInstancePasswordPolicyResponse",
+      "status": "online"
+    },
     "ModifyInstanceReadOnly": {
       "document": "本接口（ModifyInstanceReadOnly）用于设置实例输入模式。",
       "input": "ModifyInstanceReadOnlyRequest",
@@ -11324,6 +11331,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancePasswordPolicyRequest": {
+      "document": "ModifyInstancePasswordPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/redis\">Redis 控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-5x9h****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的密码复杂度策略控制对象，包含密码长度及各类字符（字母/数字/特殊符号）最小数量的校验指标。</p>",
+          "example": "无",
+          "member": "PasswordPolicy",
+          "name": "PasswordPolicy",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancePasswordPolicyResponse": {
+      "document": "ModifyInstancePasswordPolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -8575,7 +8575,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像",
+          "document": "<p>镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像</p>",
           "example": "TCR",
           "member": "string",
           "name": "ImageType",
@@ -8586,7 +8586,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "ccr.ccs.tencentyun.com/ti-platform/hellotest:http-test",
           "member": "string",
           "name": "ImageUrl",
@@ -8597,7 +8597,7 @@
         },
         {
           "disabled": false,
-          "document": "TCR镜像对应的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>TCR镜像对应的地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijiang",
           "member": "string",
           "name": "RegistryRegion",
@@ -8608,7 +8608,7 @@
         },
         {
           "disabled": false,
-          "document": "TCR镜像对应的实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>TCR镜像对应的实例id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "t-asfffasf",
           "member": "string",
           "name": "RegistryId",
@@ -8619,7 +8619,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许导出全部内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否允许导出全部内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "AllowSaveAllContent",
@@ -8630,7 +8630,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>镜像名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "LLM",
           "member": "string",
           "name": "ImageName",
@@ -8641,13 +8641,74 @@
         },
         {
           "disabled": false,
-          "document": "是否支持数据构建\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否支持数据构建</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "SupportDataPipeline",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageSecret",
+          "name": "ImageSecret",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageSecret": {
+      "document": "自定义镜像仓库凭据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于加密密码的KMS公钥ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9a3b93e2-0f68-11ef-9b3e-5254000fd567",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_user",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码,base64编码； 当keyId不为空时，密码是加密后的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dGVzdF9wYXNzd29yZAo=",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户凭据ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100033215875_1000321732173_ap-guangzhou_NOTEBOOK_S7RkFublldbD",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

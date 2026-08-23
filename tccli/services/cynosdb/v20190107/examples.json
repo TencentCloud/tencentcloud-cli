@@ -526,7 +526,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupListByVault\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-a6ed23f2-f03e-4410-b946-624d1e7d9b5a\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupList\": [\n            {\n                \"BackupFileInfo\": {\n                    \"BackupId\": 631,\n                    \"BackupMethod\": \"manual\",\n                    \"BackupName\": \"\",\n                    \"BackupStatus\": \"success\",\n                    \"BackupType\": \"snapshot\",\n                    \"CopyStatus\": \"done\",\n                    \"FileName\": \"backupT_202602021412_20260202150536\",\n                    \"FileSize\": 4183356,\n                    \"FinishTime\": \"2026-02-02 15:05:41\",\n                    \"SnapShotType\": \"full\",\n                    \"SnapshotId\": 631,\n                    \"SnapshotTime\": \"2026-02-02 14:47:38\",\n                    \"StartTime\": \"2026-02-02 15:05:36\"\n                },\n                \"ClusterId\": \"cynosdbmysql-h30xf5d7\",\n                \"ClusterName\": \"backupT_202602021412\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"805500d0-0399-4f8c-acaf-3d6de1d607d5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupList\": [\n            {\n                \"BackupFileInfo\": {\n                    \"BackupId\": 631,\n                    \"BackupMethod\": \"manual\",\n                    \"BackupName\": \"\",\n                    \"BackupStatus\": \"success\",\n                    \"BackupType\": \"snapshot\",\n                    \"CopyStatus\": \"done\",\n                    \"ExistRegions\": [\n                        {\n                            \"BackupId\": 631,\n                            \"BackupRegion\": \"ap-guangzhou\"\n                        }\n                    ],\n                    \"FileName\": \"backupT_202602021412_20260202150536\",\n                    \"FileSize\": 4183356,\n                    \"FinishTime\": \"2026-02-02 15:05:41\",\n                    \"SnapShotType\": \"full\",\n                    \"SnapshotId\": 631,\n                    \"SnapshotTime\": \"2026-02-02 14:47:38\",\n                    \"StartTime\": \"2026-02-02 15:05:36\"\n                },\n                \"ClusterId\": \"cynosdbmysql-h30xf5d7\",\n                \"ClusterName\": \"backupT_202602021412\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"805500d0-0399-4f8c-acaf-3d6de1d607d5\"\n    }\n}",
         "title": "查询保险箱下数据备份列表"
       }
     ],
@@ -688,6 +688,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterServerlessScalePlans\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xdbsbsgg\",\n    \"PlanId\": 12541\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ServerlessScalePlans\": [\n            {\n                \"PlanId\": 1231,\n                \"ClusterId\": \"cynosdbmysql-xbhshsbh\",\n                \"ObjectInstance\": \"cynosdbmysql-ins-xbhshsbh\",\n                \"PolicyId\": \"cynosdbmysql-spd-rye0gd5b\",\n                \"PolicyType\": \"PolicyTypePeriodScale\",\n                \"SourceMinCpu\": \"1.0\",\n                \"SourceMaxCpu\": \"8.0\",\n                \"TargetMinCpu\": \"2.0\",\n                \"TargetMaxCpu\": \"4.0\",\n                \"ExpectedStartTime\": \"2025-12-01 00:12:00\",\n                \"ExpectedEndTime\": \"2025-12-01 00:20:00\",\n                \"Status\": \"success\",\n                \"ScaleTaskId\": 131,\n                \"FailReason\": \"\",\n                \"ResetTaskId\": 0\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询计划"
+      }
+    ],
+    "DescribeClusterStorageAutoExpand": [
+      {
+        "document": "Describe Cluster Storage Auto Expand",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterStorageAutoExpand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-kdyalkr6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpandStep\": 0,\n        \"MaxStorageLimit\": 0,\n        \"StorageAutoExpand\": \"\",\n        \"StorageUsageThreshold\": 0,\n        \"RequestId\": \"208d25c1-09d2-4279-9ab1-e4f9edb7dc3e\"\n    }\n}",
+        "title": "自动扩容配置详情"
       }
     ],
     "DescribeClusterTransparentEncryptInfo": [

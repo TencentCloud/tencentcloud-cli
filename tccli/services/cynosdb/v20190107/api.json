@@ -588,6 +588,13 @@
       "output": "DescribeClusterServerlessScalePlansResponse",
       "status": "online"
     },
+    "DescribeClusterStorageAutoExpand": {
+      "document": "本接口（DescribeClusterStorageAutoExpand）用于查询自动库容配置。",
+      "input": "DescribeClusterStorageAutoExpandRequest",
+      "name": "查看自动扩容配置",
+      "output": "DescribeClusterStorageAutoExpandResponse",
+      "status": "online"
+    },
     "DescribeClusterTransparentEncryptInfo": {
       "document": "查询集群透明加密信息",
       "input": "DescribeClusterTransparentEncryptInfoRequest",
@@ -3884,6 +3891,16 @@
           "name": "BackupName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份文件所在地域</p>",
+          "example": "无",
+          "member": "BackupRegionAndIds",
+          "name": "ExistRegions",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -15135,6 +15152,73 @@
           "name": "ServerlessScalePlans",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterStorageAutoExpandRequest": {
+      "document": "DescribeClusterStorageAutoExpand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "cynosdbmysql-kdyalkr6",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterStorageAutoExpandResponse": {
+      "document": "DescribeClusterStorageAutoExpand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储使用率阈值</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "StorageUsageThreshold",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩容步长</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ExpandStep",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大存储上限</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxStorageLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启：yes-开启，no-关闭</p>",
+          "example": "no",
+          "member": "string",
+          "name": "StorageAutoExpand",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

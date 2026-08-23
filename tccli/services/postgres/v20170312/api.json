@@ -10640,7 +10640,7 @@
         {
           "disabled": false,
           "document": "<p>实例ID</p>",
-          "example": "postgres-l4mvde5d",
+          "example": "postgres-2wvpv38j",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -10649,7 +10649,7 @@
         {
           "disabled": false,
           "document": "<p>Proxy地址ID</p>",
-          "example": "proxyaddr-3fhqchao",
+          "example": "proxyaddr-hw78kg1m",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -10658,7 +10658,7 @@
         {
           "disabled": false,
           "document": "<p>Proxy代理组 ID（不传则默认操作该实例下唯一的代理）</p>",
-          "example": "proxy-o0rx08tn",
+          "example": "proxy-nlpsb4jp",
           "member": "string",
           "name": "ProxyGroupId",
           "required": false,
@@ -10667,7 +10667,7 @@
         {
           "disabled": false,
           "document": "<p>地址描述/备注（最多 256 字符）</p>",
-          "example": "eriktestupdate",
+          "example": "modify",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -10676,11 +10676,74 @@
         {
           "disabled": false,
           "document": "<p>连接池开关</p><p>枚举值：</p><ul><li>true： 开启</li><li>false： 关闭</li></ul>",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "ConnectionPool",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>权重模式</p><p>枚举值：</p><ul><li>system： 系统自动分配权重</li><li>custom： 自定义权重，此模式下ProxyAllocation参数必传</li></ul><p>默认值：system</p>",
+          "example": "custom",
+          "member": "string",
+          "name": "WeightMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>system</p><p>入参限制：路由权重列表。若 WeightMode 传的是system或不传 ，则传入的权重不生效，由系统分配默认权重。</p>",
+          "example": "无",
+          "member": "ProxyRoute",
+          "name": "ProxyAllocation",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增只读实例是否自动加入当前连接地址，仅后续新建实例生效</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "RoAutoAdd",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟剔除开关</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "LatencyRemove",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟剔除阈值，仅在延迟剔除开关打开时有效</p><p>单位：秒</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "LatencyRemoveTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小保留路由数。在延迟/故障剔除时，至少保留的路由数量，防止所有节点被剔除导致服务不可用。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinRouteNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡策略</p><p>枚举值：</p><ul><li>0： 按活跃连接数(默认)</li><li>1： 按请求数</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "LoadBalancePolicy",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10688,6 +10751,16 @@
     "ModifyDBProxyAddressResponse": {
       "document": "ModifyDBProxyAddress返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务 ID，用于 DescribeTasks 查询进度</p>",
+          "example": "100201",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12064,6 +12137,86 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>读写分离开关。启用后 proxy 将读请求分发到只读节点，写请求仍走主节点。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RwSplitEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权重模式</p><p>枚举值：</p><ul><li>system： 系统自动分配</li><li>custom： 用户自定义权重</li></ul>",
+          "example": "system",
+          "member": "string",
+          "name": "WeightMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增只读是否自动加入读写分离</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RoAutoAdd",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟剔除开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LatencyRemove",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟剔除阈值</p><p>单位：秒</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "LatencyRemoveTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小保留路由数。在延迟/故障剔除时，至少保留的路由数量，防止所有节点被剔除导致服务不可用。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinRouteNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>只读全部异常时是否回切到主</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FailOver",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡策略</p><p>枚举值：</p><ul><li>0： 按活跃连接数(默认)</li><li>1： 按请求数</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "LoadBalancePolicy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12290,6 +12443,7 @@
           "member": "string",
           "name": "NodeId",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12300,6 +12454,7 @@
           "member": "string",
           "name": "Role",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12310,21 +12465,23 @@
           "member": "int64",
           "name": "Weight",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<p>路由状态：available/unavailable</p>",
-          "example": "available",
+          "document": "<p>路由状态：online/offline</p><p>枚举值：</p><ul><li>online： 节点处于在线状态</li><li>offline： 节点处于下线状态</li></ul>",
+          "example": "online",
           "member": "string",
           "name": "Status",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ProxySpecItem": {
       "document": "Proxy可售规格信息",
