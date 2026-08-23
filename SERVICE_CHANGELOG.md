@@ -1,59 +1,10 @@
-# Release 3.0.1477.1
+# Release 3.0.1478.1
 
-## 文件存储(cfs) 版本：2019-07-19
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 50 次发布
+### 第 191 次发布
 
-发布时间：2026-08-21 01:14:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCfsFileSystem](http://document.tencentcloudapi.woa.com/document/product/582/38174)
-
-	* 新增入参：Scenario
-
-
-修改数据结构：
-
-* [FileSystemInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#FileSystemInfo)
-
-	* 新增成员：Scenario
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
-
-### 第 60 次发布
-
-发布时间：2026-08-21 01:20:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TopSqlTpl](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TopSqlTpl)
-
-	* <font color="#dd0000">**修改成员**：</font>IoWaitTimeMin
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 边缘可用区(edgezone) 版本：2026-04-01
-
-### 第 2 次发布
-
-发布时间：2026-08-21 01:23:26
+发布时间：2026-08-24 01:33:49
 
 本次发布包含了以下内容：
 
@@ -61,88 +12,96 @@
 
 新增接口：
 
-* [CreateEdgeNodeService](http://document.tencentcloudapi.woa.com/document/product/1812/92398)
+* [DescribeClusterStorageAutoExpand](http://document.tencentcloudapi.woa.com/document/product/1003/92405)
+
+修改数据结构：
+
+* [BackupFileInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BackupFileInfo)
+
+	* 新增成员：ExistRegions
+
+
+
+
+## 云数据库独享集群(dbdc) 版本：2020-10-29
+
+### 第 11 次发布
+
+发布时间：2026-08-24 01:37:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RemoveNodesFromDBCustomCluster](http://document.tencentcloudapi.woa.com/document/product/1671/90783)
+
+	* 新增入参：Force
+
 
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 108 次发布
+### 第 109 次发布
 
-发布时间：2026-08-21 01:24:49
+发布时间：2026-08-24 01:48:10
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
 修改接口：
-
-* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
-
-	* 新增入参：EnableBotBgDetection
 
 * [GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)
 
-	* 新增入参：EnableBotBgDetection
+	* 新增出参：ServerParamInfo
 
 
 
 
-## 高性能应用服务(hai) 版本：2023-08-12
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
 
-### 第 35 次发布
+### 第 67 次发布
 
-发布时间：2026-08-21 01:26:56
+发布时间：2026-08-24 02:14:05
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [ResetTCBAccountPassword](http://document.tencentcloudapi.woa.com/document/product/409/92406)
+
 修改接口：
 
-* [DescribeServices](http://document.tencentcloudapi.woa.com/document/product/1750/88983)
+* [ModifyDBProxyAddress](http://document.tencentcloudapi.woa.com/document/product/409/92003)
 
-	* 新增入参：States
+	* 新增入参：WeightMode, ProxyAllocation, RoAutoAdd, LatencyRemove, LatencyRemoveTime, MinRouteNum, FailOver, LoadBalancePolicy
+
+	* 新增出参：TaskId
 
 
 修改数据结构：
 
-* [ComputeDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ComputeDetail)
+* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/409/16778#ProxyAddress)
 
-	* 新增成员：Role
+	* 新增成员：RwSplitEnable, WeightMode, RoAutoAdd, LatencyRemove, LatencyRemoveTime, MinRouteNum, FailOver, LoadBalancePolicy
 
+* [ProxyRoute](http://document.tencentcloudapi.woa.com/document/product/409/16778#ProxyRoute)
 
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 97 次发布
-
-发布时间：2026-08-21 01:30:47
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteTWeSeeTasksByCondition](http://document.tencentcloudapi.woa.com/document/product/1081/92399)
-
-新增数据结构：
-
-* [SeeDeleteTaskCondition](http://document.tencentcloudapi.woa.com/document/product/1081/34988#SeeDeleteTaskCondition)
+	* <font color="#dd0000">**修改成员**：</font>NodeId, Role, Weight, Status
 
 
 
-## 腾讯云可观测平台(monitor) 版本：2023-06-16
 
+## 云数据库Redis(redis) 版本：2018-04-12
 
+### 第 75 次发布
 
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 135 次发布
-
-发布时间：2026-08-21 01:34:43
+发布时间：2026-08-24 02:16:12
 
 本次发布包含了以下内容：
 
@@ -150,84 +109,27 @@
 
 新增接口：
 
-* [DescribeGrafanaVersions](http://document.tencentcloudapi.woa.com/document/product/248/92400)
-
-修改接口：
-
-* [CreateGrafanaInstance](http://document.tencentcloudapi.woa.com/document/product/248/75697)
-
-	* 新增入参：DockerImage
-
-
-新增数据结构：
-
-* [GrafanaVersion](http://document.tencentcloudapi.woa.com/document/product/248/30354#GrafanaVersion)
-
-
-
-## 官网门户服务(portal) 版本：2023-04-13
-
-### 第 16 次发布
-
-发布时间：2026-08-21 01:37:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [SearchDocuments](http://document.tencentcloudapi.woa.com/document/product/1732/92402)
-
-新增数据结构：
-
-* [SearchDocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#SearchDocumentItem)
-
-
-
-## 云开发 CloudBase(tcb) 版本：2018-06-08
-
-### 第 61 次发布
-
-发布时间：2026-08-21 01:41:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [BindCls](http://document.tencentcloudapi.woa.com/document/product/876/92403)
+* [ModifyInstancePasswordPolicy](http://document.tencentcloudapi.woa.com/document/product/239/92407)
 
 
 
 ## 容器服务(tke) 版本：2022-05-01
 
+### 第 26 次发布
 
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 137 次发布
-
-发布时间：2026-08-21 01:45:32
+发布时间：2026-08-24 02:35:08
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeOSImages](http://document.tencentcloudapi.woa.com/document/product/457/86797)
-
-	* 新增入参：Filters
+* [DetachApplicationRole](http://document.tencentcloudapi.woa.com/document/product/457/92408)
 
 
-修改数据结构：
 
-* [OSImage](http://document.tencentcloudapi.woa.com/document/product/457/31866#OSImage)
-
-	* 新增成员：Arch
-
+## 容器服务(tke) 版本：2018-05-25
 
 
 

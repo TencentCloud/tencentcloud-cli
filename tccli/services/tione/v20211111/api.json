@@ -11500,7 +11500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像",
+          "document": "<p>镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像</p>",
           "example": "TCR",
           "member": "string",
           "name": "ImageType",
@@ -11511,7 +11511,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像地址",
+          "document": "<p>镜像地址</p>",
           "example": "ccr.ccs.tencentyun.com/ti-platform/hellotest:http-test",
           "member": "string",
           "name": "ImageUrl",
@@ -11522,7 +11522,7 @@
         },
         {
           "disabled": false,
-          "document": "TCR镜像对应的地域",
+          "document": "<p>TCR镜像对应的地域</p>",
           "example": "ap-beijiang",
           "member": "string",
           "name": "RegistryRegion",
@@ -11533,7 +11533,7 @@
         },
         {
           "disabled": false,
-          "document": "TCR镜像对应的实例id",
+          "document": "<p>TCR镜像对应的实例id</p>",
           "example": "t-asfffasf",
           "member": "string",
           "name": "RegistryId",
@@ -11544,7 +11544,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许导出全部内容",
+          "document": "<p>是否允许导出全部内容</p>",
           "example": "false",
           "member": "bool",
           "name": "AllowSaveAllContent",
@@ -11555,7 +11555,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名称",
+          "document": "<p>镜像名称</p>",
           "example": "LLM",
           "member": "string",
           "name": "ImageName",
@@ -11566,7 +11566,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持数据构建",
+          "document": "<p>是否支持数据构建</p>",
           "example": "false",
           "member": "bool",
           "name": "SupportDataPipeline",
@@ -11577,7 +11577,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)",
+          "document": "<p>镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)</p>",
           "example": "无",
           "member": "ImageSecret",
           "name": "ImageSecret",
@@ -11588,7 +11588,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID",
+          "document": "<p>镜像ID</p>",
           "example": "t-test",
           "member": "string",
           "name": "ImageId",
@@ -11599,7 +11599,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像支持的地域 all(所有地域)/autonomous(自动驾驶地域)/general(通用地域)\t",
+          "document": "<p>镜像支持的地域 all(所有地域)/autonomous(自动驾驶地域)/general(通用地域)</p>",
           "example": "autonomous",
           "member": "string",
           "name": "RegionScope",
@@ -11610,7 +11610,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像入口",
+          "document": "<p>镜像入口</p>",
           "example": "bash -c /app/start.sh",
           "member": "string",
           "name": "EntryPoint",
@@ -11621,7 +11621,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像工作目录",
+          "document": "<p>镜像工作目录</p>",
           "example": "/app",
           "member": "string",
           "name": "WorkDir",
@@ -11632,7 +11632,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持导出时指定entrypoint和workdir",
+          "document": "<p>是否支持导出时指定entrypoint和workdir</p>",
           "example": "false",
           "member": "bool",
           "name": "SupportEntryPointExport",

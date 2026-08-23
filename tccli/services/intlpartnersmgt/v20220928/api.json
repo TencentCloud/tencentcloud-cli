@@ -634,7 +634,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "经销商账号",
+          "document": "<p>经销商账号</p>",
           "example": "800000448722",
           "member": "int64",
           "name": "PayerAccountId",
@@ -644,7 +644,7 @@
         },
         {
           "disabled": false,
-          "document": "子客账号",
+          "document": "<p>子客账号</p>",
           "example": "800000448824",
           "member": "int64",
           "name": "OwnerAccountId",
@@ -654,7 +654,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者账号",
+          "document": "<p>操作者账号</p>",
           "example": "800000448824",
           "member": "int64",
           "name": "OperatorAccountId",
@@ -664,7 +664,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称",
+          "document": "<p>产品名称</p>",
           "example": "cloud block storage",
           "member": "string",
           "name": "ProductName",
@@ -674,7 +674,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式\nMonthly subscription 包年包月\nPay-As-You-Go resources 按量计费\nStandard RI 预留实",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>yearly/monthly subscription： 包年包月</li><li>Pay-As-You-Go resources ： 按量计费Standard RI 预留实</li></ul>",
           "example": "Pay-As-You-Go resources",
           "member": "string",
           "name": "BillingMode",
@@ -684,7 +684,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称\n",
+          "document": "<p>项目名称</p>",
           "example": "default",
           "member": "string",
           "name": "ProjectName",
@@ -694,7 +694,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属区域",
+          "document": "<p>资源所属区域</p>",
           "example": "East China (Shanghai)",
           "member": "string",
           "name": "Region",
@@ -704,7 +704,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属可用区",
+          "document": "<p>资源所属可用区</p>",
           "example": "Shanghai Zone 1",
           "member": "string",
           "name": "AvailabilityZone",
@@ -714,7 +714,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "disk-ekoob7ok",
           "member": "string",
           "name": "InstanceId",
@@ -724,7 +724,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "HDD cloud",
           "member": "string",
           "name": "InstanceName",
@@ -734,7 +734,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名\n",
+          "document": "<p>子产品名</p>",
           "example": "HDD cloud block storage",
           "member": "string",
           "name": "SubProductName",
@@ -744,7 +744,7 @@
         },
         {
           "disabled": false,
-          "document": "结算类型",
+          "document": "<p>结算类型</p>",
           "example": "Hourly settlement",
           "member": "string",
           "name": "TransactionType",
@@ -754,7 +754,7 @@
         },
         {
           "disabled": false,
-          "document": "交易流水ID",
+          "document": "<p>交易流水ID</p>",
           "example": "20230228722000247298552",
           "member": "string",
           "name": "TransactionId",
@@ -764,7 +764,7 @@
         },
         {
           "disabled": false,
-          "document": "结算时间\n",
+          "document": "<p>结算时间</p>",
           "example": "2023-02-28 13:01:23",
           "member": "string",
           "name": "TransactionTime",
@@ -774,7 +774,7 @@
         },
         {
           "disabled": false,
-          "document": "资源开始使用时间",
+          "document": "<p>资源开始使用时间</p>",
           "example": "2023-02-28 12:00:00",
           "member": "string",
           "name": "UsageStartTime",
@@ -784,7 +784,7 @@
         },
         {
           "disabled": false,
-          "document": "资源结束使用时间",
+          "document": "<p>资源结束使用时间</p>",
           "example": "2023-02-28 12:59:59",
           "member": "string",
           "name": "UsageEndTime",
@@ -794,7 +794,7 @@
         },
         {
           "disabled": false,
-          "document": "组件",
+          "document": "<p>组件</p>",
           "example": "volume size",
           "member": "string",
           "name": "ComponentType",
@@ -804,7 +804,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称",
+          "document": "<p>组件名称</p>",
           "example": "HDD cloud block storage-volume size",
           "member": "string",
           "name": "ComponentName",
@@ -814,7 +814,7 @@
         },
         {
           "disabled": false,
-          "document": "组件刊例价",
+          "document": "<p>组件刊例价</p>",
           "example": "0.00000003",
           "member": "string",
           "name": "ComponentListPrice",
@@ -824,7 +824,7 @@
         },
         {
           "disabled": false,
-          "document": "价格单位",
+          "document": "<p>价格单位</p>",
           "example": "USD/GB/Second",
           "member": "string",
           "name": "ComponentPriceMeasurementUnit",
@@ -834,7 +834,7 @@
         },
         {
           "disabled": false,
-          "document": "组件用量",
+          "document": "<p>组件用量</p>",
           "example": "250",
           "member": "string",
           "name": "ComponentUsage",
@@ -844,7 +844,7 @@
         },
         {
           "disabled": false,
-          "document": "组件用量单位",
+          "document": "<p>组件用量单位</p>",
           "example": "GB",
           "member": "string",
           "name": "ComponentUsageUnit",
@@ -854,7 +854,7 @@
         },
         {
           "disabled": false,
-          "document": "资源使用时长",
+          "document": "<p>资源使用时长</p>",
           "example": "478",
           "member": "string",
           "name": "UsageDuration",
@@ -864,7 +864,7 @@
         },
         {
           "disabled": false,
-          "document": "时长单位",
+          "document": "<p>时长单位</p>",
           "example": "Second",
           "member": "string",
           "name": "DurationUnit",
@@ -874,7 +874,7 @@
         },
         {
           "disabled": false,
-          "document": "原始总价\nOriginal Cost = Component List Price * Component Usage * Usage Duration",
+          "document": "<p>原始总价<br>Original Cost = Component List Price * Component Usage * Usage Duration</p>",
           "example": "0.003585",
           "member": "string",
           "name": "OriginalCost",
@@ -884,7 +884,7 @@
         },
         {
           "disabled": false,
-          "document": "折扣（默认为1）-已废弃",
+          "document": "<p>折扣（默认为1）-已废弃</p>",
           "example": "1",
           "member": "string",
           "name": "DiscountRate",
@@ -894,7 +894,7 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>币种</p>",
           "example": "USD",
           "member": "string",
           "name": "Currency",
@@ -904,7 +904,7 @@
         },
         {
           "disabled": false,
-          "document": "折后总费用",
+          "document": "<p>折后总费用</p>",
           "example": "0.003585",
           "member": "string",
           "name": "TotalAmountAfterDiscount",
@@ -914,7 +914,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券扣减金额",
+          "document": "<p>代金券扣减金额</p>",
           "example": "0",
           "member": "string",
           "name": "VoucherDeduction",
@@ -924,7 +924,7 @@
         },
         {
           "disabled": false,
-          "document": "= Total Amount After Discount - Voucher Deduction",
+          "document": "<p>= Total Amount After Discount - Voucher Deduction</p>",
           "example": "0.003585",
           "member": "string",
           "name": "TotalCost",
@@ -934,7 +934,7 @@
         },
         {
           "disabled": false,
-          "document": "id标识",
+          "document": "<p>id标识</p>",
           "example": "4998689516778477313",
           "member": "string",
           "name": "Id",
@@ -944,7 +944,7 @@
         },
         {
           "disabled": false,
-          "document": "子客折扣率。适用于经销商的子客的折扣率，由经销商设置，默认值等于 1。",
+          "document": "<p>子客折扣率。适用于经销商的子客的折扣率，由经销商设置，默认值等于 1。</p>",
           "example": "1",
           "member": "string",
           "name": "CustomerDiscountRate",
@@ -954,7 +954,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码",
+          "document": "<p>产品编码</p>",
           "example": "p_cbs",
           "member": "string",
           "name": "BusinessCode",
@@ -964,7 +964,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码",
+          "document": "<p>子产品编码</p>",
           "example": "sp_cbs_premium",
           "member": "string",
           "name": "ProductCode",
@@ -974,7 +974,7 @@
         },
         {
           "disabled": false,
-          "document": "组件类型编码",
+          "document": "<p>组件类型编码</p>",
           "example": "v_cbs_memspace",
           "member": "string",
           "name": "ComponentCode",
@@ -984,7 +984,7 @@
         },
         {
           "disabled": false,
-          "document": "组件编码",
+          "document": "<p>组件编码</p>",
           "example": "sv_cbs_memspace_premium",
           "member": "string",
           "name": "ItemCode",
@@ -1687,7 +1687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "经销商账号",
+          "document": "<p>经销商账号</p>",
           "example": "800000400309",
           "member": "int64",
           "name": "PayerAccountId",
@@ -1697,7 +1697,7 @@
         },
         {
           "disabled": false,
-          "document": "子客账号",
+          "document": "<p>子客账号</p>",
           "example": "800000425835",
           "member": "int64",
           "name": "OwnerAccountId",
@@ -1707,7 +1707,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者账号",
+          "document": "<p>操作者账号</p>",
           "example": "800000425835",
           "member": "int64",
           "name": "OperatorAccountId",
@@ -1717,7 +1717,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称",
+          "document": "<p>产品名称</p>",
           "example": "Cloud Virtual Machine(CVM)",
           "member": "string",
           "name": "ProductName",
@@ -1727,7 +1727,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式\nMonthly subscription 包年包月\nPay-As-You-Go resources 按量计费\nStandard RI 预留实",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>yearly/monthly subscription： 包年包月</li><li>Pay-As-You-Go resources： 按量计费Standard RI 预留实</li></ul>",
           "example": "Pay-As-You-Go resources",
           "member": "string",
           "name": "BillingMode",
@@ -1737,7 +1737,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名称\n",
+          "document": "<p>项目名称</p>",
           "example": "default",
           "member": "string",
           "name": "ProjectName",
@@ -1747,7 +1747,7 @@
         },
         {
           "disabled": false,
-          "document": "资源所属区域",
+          "document": "<p>资源所属区域</p>",
           "example": "Southeast Asia (Singapore)",
           "member": "string",
           "name": "Region",
@@ -1757,8 +1757,8 @@
         },
         {
           "disabled": false,
-          "document": "资源所属可用区",
-          "example": "Singapore Zone ",
+          "document": "<p>资源所属可用区</p>",
+          "example": "Singapore Zone",
           "member": "string",
           "name": "AvailabilityZone",
           "output_required": true,
@@ -1767,7 +1767,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-kxzoyw6c",
           "member": "string",
           "name": "InstanceId",
@@ -1777,7 +1777,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cdz_i18n_xjp",
           "member": "string",
           "name": "InstanceName",
@@ -1787,7 +1787,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名\n",
+          "document": "<p>子产品名</p>",
           "example": "CVM Standard S5",
           "member": "string",
           "name": "SubProductName",
@@ -1797,7 +1797,7 @@
         },
         {
           "disabled": false,
-          "document": "结算类型",
+          "document": "<p>结算类型</p>",
           "example": "Hourly settlement",
           "member": "string",
           "name": "TransactionType",
@@ -1807,7 +1807,7 @@
         },
         {
           "disabled": false,
-          "document": "交易流水ID",
+          "document": "<p>交易流水ID</p>",
           "example": "20231024309000174935042",
           "member": "string",
           "name": "TransactionId",
@@ -1817,7 +1817,7 @@
         },
         {
           "disabled": false,
-          "document": "结算时间\n",
+          "document": "<p>结算时间</p>",
           "example": "2023-10-24 20:14:37",
           "member": "string",
           "name": "TransactionTime",
@@ -1827,7 +1827,7 @@
         },
         {
           "disabled": false,
-          "document": "资源开始使用时间",
+          "document": "<p>资源开始使用时间</p>",
           "example": "2023-10-24 13:00:00",
           "member": "string",
           "name": "UsageStartTime",
@@ -1837,7 +1837,7 @@
         },
         {
           "disabled": false,
-          "document": "资源结束使用时间",
+          "document": "<p>资源结束使用时间</p>",
           "example": "2023-10-24 13:59:59",
           "member": "string",
           "name": "UsageEndTime",
@@ -1847,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "组件",
+          "document": "<p>组件</p>",
           "example": "memory",
           "member": "string",
           "name": "ComponentType",
@@ -1857,7 +1857,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称",
+          "document": "<p>组件名称</p>",
           "example": "Memory S5",
           "member": "string",
           "name": "ComponentName",
@@ -1867,7 +1867,7 @@
         },
         {
           "disabled": false,
-          "document": "组件刊例价",
+          "document": "<p>组件刊例价</p>",
           "example": "0.00000311",
           "member": "string",
           "name": "ComponentListPrice",
@@ -1877,7 +1877,7 @@
         },
         {
           "disabled": false,
-          "document": "价格单位",
+          "document": "<p>价格单位</p>",
           "example": "USD/GiB/Second",
           "member": "string",
           "name": "ComponentPriceMeasurementUnit",
@@ -1887,7 +1887,7 @@
         },
         {
           "disabled": false,
-          "document": "组件用量",
+          "document": "<p>组件用量</p>",
           "example": "4",
           "member": "string",
           "name": "ComponentUsage",
@@ -1897,7 +1897,7 @@
         },
         {
           "disabled": false,
-          "document": "组件用量单位",
+          "document": "<p>组件用量单位</p>",
           "example": "GiB",
           "member": "string",
           "name": "ComponentUsageUnit",
@@ -1907,7 +1907,7 @@
         },
         {
           "disabled": false,
-          "document": "资源使用时长",
+          "document": "<p>资源使用时长</p>",
           "example": "3600",
           "member": "string",
           "name": "UsageDuration",
@@ -1917,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "时长单位",
+          "document": "<p>时长单位</p>",
           "example": "Second",
           "member": "string",
           "name": "DurationUnit",
@@ -1927,7 +1927,7 @@
         },
         {
           "disabled": false,
-          "document": "原始总价\nOriginal Cost = Component List Price * Component Usage * Usage Duration",
+          "document": "<p>原始总价<br>Original Cost = Component List Price * Component Usage * Usage Duration</p>",
           "example": "0.044784",
           "member": "string",
           "name": "OriginalCost",
@@ -1937,7 +1937,7 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>币种</p>",
           "example": "USD",
           "member": "string",
           "name": "Currency",
@@ -1947,7 +1947,7 @@
         },
         {
           "disabled": false,
-          "document": "= Total Amount After Discount - Voucher Deduction",
+          "document": "<p>= Total Amount After Discount - Voucher Deduction</p>",
           "example": "0.044784",
           "member": "string",
           "name": "TotalCost",
@@ -1957,7 +1957,7 @@
         },
         {
           "disabled": false,
-          "document": "Id标识",
+          "document": "<p>Id标识</p>",
           "example": "6383749774386128833",
           "member": "string",
           "name": "Id",
@@ -1967,8 +1967,8 @@
         },
         {
           "disabled": false,
-          "document": "标签信息",
-          "example": "[\"tagKey\": \"1\", \"tagValue\":\"2\"]",
+          "document": "<p>标签信息</p>",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": false,
@@ -1977,7 +1977,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码",
+          "document": "<p>产品编码</p>",
           "example": "p_cbs",
           "member": "string",
           "name": "BusinessCode",
@@ -1987,7 +1987,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码",
+          "document": "<p>子产品编码</p>",
           "example": "sp_cbs_premium",
           "member": "string",
           "name": "ProductCode",
@@ -1997,7 +1997,7 @@
         },
         {
           "disabled": false,
-          "document": "组件类型编码",
+          "document": "<p>组件类型编码</p>",
           "example": "v_cbs_memspace",
           "member": "string",
           "name": "ComponentCode",
@@ -2007,7 +2007,7 @@
         },
         {
           "disabled": false,
-          "document": "组件编码",
+          "document": "<p>组件编码</p>",
           "example": "sv_cbs_memspace_premium",
           "member": "string",
           "name": "ItemCode",
@@ -2023,7 +2023,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询月份，格式为：YYYY-MM。例如：2023-01",
+          "document": "<p>查询月份，格式为：YYYY-MM。例如：2023-01</p>",
           "example": "2023-04",
           "member": "string",
           "name": "Month",
@@ -2032,7 +2032,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数：每页条数，取值范围: [1, 200]",
+          "document": "<p>分页参数：每页条数，取值范围: [1, 200]</p>",
           "example": "20",
           "member": "int64",
           "name": "PageSize",
@@ -2041,7 +2041,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数：当前页数，最小取值为1",
+          "document": "<p>分页参数：当前页数，最小取值为1</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -2050,7 +2050,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，取值： prePay (Monthly subscription) postPay (Pay-As-You-Go resources)",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>prePay： yearly/monthly subscription</li><li>postPay： Pay-As-You-Go resources</li></ul>",
           "example": "postPay",
           "member": "string",
           "name": "PayMode",
@@ -2059,7 +2059,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型，取值： prepay_purchase (Purchase) prepay_renew (Renewal) prepay_modify (Upgrade/Downgrade) prepay_return ( Monthly subscription refund) postpay_deduct (Pay-as-you-go) postpay_deduct_h (Hourly settlement) postpay_deduct_d (Daily settlement) postpay_deduct_m (Monthly settlement) offline_deduct (Offline project deduction) online_deduct (Offline product deduction) recon_deduct (Adjustment - deduction) recon_increase (Adjustment - compensation) ripay_purchase (One-off RI Fee) postpay_deduct_s (Spot) ri_hour_pay (Hourly RI fee) prePurchase (New monthly subscription) preRenew (Monthly subscription renewal) preUpgrade (Upgrade/Downgrade) preDowngrade (Upgrade/Downgrade) svp_hour_pay (Hourly Savings Plan fee) recon_guarantee (Minimum spend deduction) pre_purchase (New monthly subscription) pre_renew (Monthly subscription renewal) pre_upgrade (Upgrade/Downgrade) pre_downgrade (Upgrade/Downgrade)",
+          "document": "<p>交易类型</p><p>枚举值：</p><ul><li>prepay_purchase： Purchase</li><li>prepay_renew： Renewal</li><li>prepay_modify： Upgrade/Downgrade</li><li>prepay_return： yearly/monthly subscription refund</li><li>postpay_deduct： Pay-as-you-go</li><li>postpay_deduct_h： Hourly settlement</li><li>postpay_deduct_d： Daily settlement</li><li>postpay_deduct_m： Monthly settlement</li><li>offline_deduct： Offline project deduction</li><li>online_deduct： Offline product deduction</li><li>recon_deduct： Adjustment - deduction</li><li>recon_increase： Adjustment - compensation</li><li>ripay_purchase： One-off RI Fee</li><li>postpay_deduct_s： Spot</li><li>ri_hour_pay： Hourly RI fee</li><li>prePurchase： New yearly/monthly subscription</li><li>preRenew： yearly/monthly subscription renewal</li><li>preUpgrade： Upgrade/Downgrade</li><li>preDowngrade： Upgrade/Downgrade</li><li>svp_hour_pay： Hourly Savings Plan fee</li><li>recon_guarantee： Minimum spend deduction</li><li>pre_purchase： New yearly/monthly subscription</li><li>pre_renew： yearly/monthly subscription renewal</li><li>pre_upgrade： Upgrade/Downgrade</li><li>pre_downgrade： Upgrade/Downgrade</li></ul>",
           "example": "postpay_deduct_h",
           "member": "string",
           "name": "ActionType",
@@ -2074,7 +2074,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据详情",
+          "document": "<p>数据详情</p>",
           "example": "无",
           "member": "CustomerBillDetailData",
           "name": "DetailSet",
@@ -2084,7 +2084,7 @@
         },
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "1",
           "member": "int64",
           "name": "Total",
@@ -2401,7 +2401,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客uin",
+          "document": "<p>子客uin</p>",
           "example": "800000448824",
           "member": "uint64",
           "name": "CustomerUin",
@@ -2410,7 +2410,7 @@
         },
         {
           "disabled": false,
-          "document": "查询月份，格式为：YYYY-MM。例如：2023-01",
+          "document": "<p>查询月份，格式为：YYYY-MM。例如：2023-01</p>",
           "example": "2023-02",
           "member": "string",
           "name": "Month",
@@ -2419,7 +2419,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数：每页条数，取值范围: [1, 200]",
+          "document": "<p>分页参数：每页条数，取值范围: [1, 200]</p>",
           "example": "1",
           "member": "int64",
           "name": "PageSize",
@@ -2428,7 +2428,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数：当前页数，最小取值为1",
+          "document": "<p>分页参数：当前页数，最小取值为1</p>",
           "example": "10",
           "member": "int64",
           "name": "Page",
@@ -2437,7 +2437,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，取值：\nprePay (Monthly subscription)\npostPay (Pay-As-You-Go resources)",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>prePay： yearly/monthly subscription</li><li>postPay： Pay-As-You-Go resources</li></ul>",
           "example": "prePay",
           "member": "string",
           "name": "PayMode",
@@ -2446,7 +2446,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型，取值：\nprepay_purchase (Purchase)\nprepay_renew (Renewal)\nprepay_modify (Upgrade/Downgrade)\nprepay_return ( Monthly subscription refund)\npostpay_deduct (Pay-as-you-go)\npostpay_deduct_h (Hourly settlement)\npostpay_deduct_d (Daily settlement)\npostpay_deduct_m (Monthly settlement)\noffline_deduct (Offline project deduction)\nonline_deduct (Offline product deduction)\nrecon_deduct (Adjustment - deduction)\nrecon_increase (Adjustment - compensation)\nripay_purchase (One-off RI Fee)\npostpay_deduct_s (Spot)\nri_hour_pay (Hourly RI fee)\nprePurchase (New monthly subscription)\npreRenew (Monthly subscription renewal)\npreUpgrade (Upgrade/Downgrade)\npreDowngrade (Upgrade/Downgrade)\nsvp_hour_pay (Hourly Savings Plan fee)\nrecon_guarantee (Minimum spend deduction)\npre_purchase (New monthly subscription)\npre_renew (Monthly subscription renewal)\npre_upgrade (Upgrade/Downgrade)\npre_downgrade (Upgrade/Downgrade)",
+          "document": "<p>交易类型</p><p>枚举值：</p><ul><li>prepay_purchase： Purchase</li><li>prepay_renew： Renewal</li><li>prepay_modify： Upgrade/Downgrade</li><li>prepay_return： yearly/monthly subscription refund</li><li>postpay_deduct： Pay-as-you-go</li><li>postpay_deduct_h： Hourly settlement</li><li>postpay_deduct_d： Daily settlement</li><li>postpay_deduct_m： Monthly settlement</li><li>offline_deduct： Offline project deduction</li><li>online_deduct： Offline product deduction</li><li>recon_deduct： Adjustment - deduction</li><li>recon_increase： Adjustment - compensation</li><li>ripay_purchase： One-off RI Fee</li><li>postpay_deduct_s： Spot</li><li>ri_hour_pay： Hourly RI fee</li><li>prePurchase： New yearly/monthly subscription</li><li>preRenew： yearly/monthly subscription renewal</li><li>preUpgrade： Upgrade/Downgrade</li><li>preDowngrade： Upgrade/Downgrade</li><li>svp_hour_pay： Hourly Savings Plan fee</li><li>recon_guarantee： Minimum spend deduction</li><li>pre_purchase： New yearly/monthly subscription</li><li>pre_renew： yearly/monthly subscription renewal</li><li>pre_upgrade： Upgrade/Downgrade</li><li>pre_downgrade： Upgrade/Downgrade</li></ul>",
           "example": "pre_upgrade",
           "member": "string",
           "name": "ActionType",
@@ -2455,7 +2455,7 @@
         },
         {
           "disabled": false,
-          "document": "支付状态\n0:不区分\n1:已付款\n2:未付款",
+          "document": "<p>支付状态<br>0:不区分<br>1:已付款<br>2:未付款</p>",
           "example": "1",
           "member": "string",
           "name": "IsConfirmed",
@@ -2470,7 +2470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据总条数",
+          "document": "<p>数据总条数</p>",
           "example": "10",
           "member": "int64",
           "name": "Total",
@@ -2480,7 +2480,7 @@
         },
         {
           "disabled": false,
-          "document": "数据详情",
+          "document": "<p>数据详情</p>",
           "example": "无",
           "member": "BillDetailData",
           "name": "DetailSet",
@@ -2585,7 +2585,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客uin",
+          "document": "<p>子客uin</p>",
           "example": "800000400309",
           "member": "uint64",
           "name": "CustomerUin",
@@ -2594,7 +2594,7 @@
         },
         {
           "disabled": false,
-          "document": "查询月份，格式为：YYYY-MM。例如：2023-01",
+          "document": "<p>查询月份，格式为：YYYY-MM。例如：2023-01</p>",
           "example": "2023-02",
           "member": "string",
           "name": "Month",
@@ -2603,7 +2603,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式，取值：\nprePay (Monthly subscription)\npostPay (Pay-As-You-Go resources)",
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>prePay： yearly/monthly subscription</li><li>postPay： Pay-As-You-Go resources</li></ul>",
           "example": "prePay",
           "member": "string",
           "name": "PayMode",
@@ -2612,7 +2612,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型，取值：\nprepay_purchase (Purchase)\nprepay_renew (Renewal)\nprepay_modify (Upgrade/Downgrade)\nprepay_return ( Monthly subscription refund)\npostpay_deduct (Pay-as-you-go)\npostpay_deduct_h (Hourly settlement)\npostpay_deduct_d (Daily settlement)\npostpay_deduct_m (Monthly settlement)\noffline_deduct (Offline project deduction)\nonline_deduct (Offline product deduction)\nrecon_deduct (Adjustment - deduction)\nrecon_increase (Adjustment - compensation)\nripay_purchase (One-off RI Fee)\npostpay_deduct_s (Spot)\nri_hour_pay (Hourly RI fee)\nprePurchase (New monthly subscription)\npreRenew (Monthly subscription renewal)\npreUpgrade (Upgrade/Downgrade)\npreDowngrade (Upgrade/Downgrade)\nsvp_hour_pay (Hourly Savings Plan fee)\nrecon_guarantee (Minimum spend deduction)\npre_purchase (New monthly subscription)\npre_renew (Monthly subscription renewal)\npre_upgrade (Upgrade/Downgrade)\npre_downgrade (Upgrade/Downgrade)",
+          "document": "<p>交易类型</p><p>枚举值：</p><ul><li>prepay_purchase： Purchase</li><li>prepay_renew： Renewal</li><li>prepay_modify： Upgrade/Downgrade</li><li>prepay_return： yearly/monthly subscription refund</li><li>postpay_deduct： Pay-as-you-go</li><li>postpay_deduct_h： Hourly settlement</li><li>postpay_deduct_d： Daily settlement</li><li>postpay_deduct_m： Monthly settlement</li><li>offline_deduct： Offline project deduction</li><li>online_deduct： Offline product deduction</li><li>recon_deduct： Adjustment - deduction</li><li>ripay_purchase： One-off RI Fee</li><li>postpay_deduct_s： Spot</li><li>ri_hour_pay： Hourly RI fee</li><li>prePurchase： New yearly/monthly subscription</li><li>preRenew： yearly/monthly subscription renewal</li><li>preUpgrade： Upgrade/Downgrade</li></ul>",
           "example": "pre_upgrade",
           "member": "string",
           "name": "ActionType",
@@ -2621,7 +2621,7 @@
         },
         {
           "disabled": false,
-          "document": "支付状态\n0:不区分\n1:已付款\n2:未付款",
+          "document": "<p>支付状态<br>0:不区分<br>1:已付款<br>2:未付款</p>",
           "example": "1",
           "member": "string",
           "name": "IsConfirmed",
@@ -2636,7 +2636,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总金额",
+          "document": "<p>总金额</p>",
           "example": "123.45",
           "member": "float",
           "name": "TotalCost",
