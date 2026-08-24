@@ -1,19 +1,23 @@
-**Example 1: 修改模型 API**
+**Example 1: 修改模型API**
 
-修改模型 API
+
 
 Input: 
 
 ```
 tccli cngw ModifyCloudNativeAPIGatewayLLMModelAPI --cli-unfold-argument  \
-    --GatewayId gateway-2abb07bf \
-    --ModelAPIId 323e58bceacf4128823c60c93bbe9ca1 \
-    --Name test1 \
-    --BasePath /test1 \
+    --GatewayId gateway-bb346e76 \
+    --ModelAPIId cae62c8faa894a93b48c4dcfe4a8c80e \
+    --Name modelapi \
+    --BasePath /basepath2 \
     --Description  \
-    --EnableCrossServiceFallback True \
-    --CrossServiceFallbackConfig.TriggerConditions ServiceUnavailable \
-    --CrossServiceFallbackConfig.FallbackServiceChain.0.ModelServiceId 3dcaac5d48cc4d39a8ed79937fe720c6
+    --ListModelServiceId c6549138344a463a87ae091127471bbe \
+    --ModelServiceRoute.SelectedTypes ModelName \
+    --ModelServiceRoute.ModelNameConfig.0.ModelServiceId c6549138344a463a87ae091127471bbe \
+    --ModelServiceRoute.ModelNameConfig.0.MatchModelName * \
+    --EnableCrossServiceFallback False \
+    --LogConfig.EnableRequestLogPayloads False \
+    --LogConfig.EnableResponseLogPayloads False
 ```
 
 Output: 
@@ -21,7 +25,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "9b9acb5f-9230-4a4b-abcb-180211952df0"
+        "RequestId": "a8f3bd5a-253a-45c8-b208-e8e13d96f580"
     }
 }
 ```

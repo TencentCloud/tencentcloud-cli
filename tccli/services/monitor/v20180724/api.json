@@ -6155,7 +6155,7 @@
         {
           "disabled": false,
           "document": "<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>",
-          "example": "myGrafana",
+          "example": "grafana-fs***ad",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6163,7 +6163,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户账号 ID ，例如：10000000</p>",
+          "document": "<p>用户子账号 ID ，例如：10000000</p>",
           "example": "1000000000",
           "member": "string",
           "name": "UserId",
@@ -6196,8 +6196,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>已添加的用户 UIN</p>",
-          "example": "*",
+          "document": "<p>已添加的子账号ID</p>",
+          "example": "1000000000",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -10326,7 +10326,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询偏移量",
+          "document": "<p>查询偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -10335,7 +10335,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数量",
+          "document": "<p>查询数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -10344,8 +10344,8 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 实例 ID 数组",
-          "example": "[\"instance-id\"]",
+          "document": "<p>Grafana 实例 ID 数组</p>",
+          "example": "[\"grafana-gd***see\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -10353,8 +10353,8 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 实例名，支持前缀模糊搜索",
-          "example": "instance-id",
+          "document": "<p>Grafana 实例名，支持前缀模糊搜索</p>",
+          "example": "myGrafana",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -10362,7 +10362,7 @@
         },
         {
           "disabled": false,
-          "document": "查询状态",
+          "document": "<p>查询状态</p>",
           "example": "[2]",
           "member": "int64",
           "name": "InstanceStatus",
@@ -10371,7 +10371,7 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤数组",
+          "document": "<p>标签过滤数组</p>",
           "example": "无",
           "member": "PrometheusTag",
           "name": "TagFilters",
@@ -10386,7 +10386,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "已废弃，请使用 Instances",
+          "document": "<p>已废弃，请使用 Instances</p>",
           "example": "无",
           "member": "GrafanaInstanceInfo",
           "name": "InstanceSet",
@@ -10396,7 +10396,7 @@
         },
         {
           "disabled": false,
-          "document": "符合查询条件的实例总数",
+          "document": "<p>符合查询条件的实例总数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -10406,7 +10406,7 @@
         },
         {
           "disabled": false,
-          "document": "实例列表",
+          "document": "<p>实例列表</p>",
           "example": "无",
           "member": "GrafanaInstanceInfo",
           "name": "Instances",

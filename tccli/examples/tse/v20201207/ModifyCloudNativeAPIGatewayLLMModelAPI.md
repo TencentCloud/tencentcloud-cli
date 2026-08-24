@@ -1,19 +1,25 @@
-**Example 1: 修改模型 API**
+**Example 1: 修改成功**
 
-修改模型 API
+
 
 Input: 
 
 ```
 tccli tse ModifyCloudNativeAPIGatewayLLMModelAPI --cli-unfold-argument  \
-    --GatewayId gateway-2abb07bf \
-    --ModelAPIId 323e58bceacf4128823c60c93bbe9ca1 \
-    --Name test1 \
-    --BasePath /test1 \
+    --GatewayId gateway-ad373895 \
+    --ModelAPIId fa4525b78d364cd2ac4540fe3dbcb7f1 \
+    --Name multi-weight \
+    --BasePath /weight \
     --Description  \
-    --EnableCrossServiceFallback True \
-    --CrossServiceFallbackConfig.TriggerConditions ServiceUnavailable \
-    --CrossServiceFallbackConfig.FallbackServiceChain.0.ModelServiceId 3dcaac5d48cc4d39a8ed79937fe720c6
+    --ListModelServiceId 39bced9f01d3462e903d1a5ba8f9221e \
+    --ModelServiceRoute.SelectedTypes Weighted \
+    --ModelServiceRoute.WeightedConfig.0.ModelServiceId 39bced9f01d3462e903d1a5ba8f9221e \
+    --ModelServiceRoute.WeightedConfig.0.Weight 10 \
+    --EnableCrossServiceFallback False \
+    --LogConfig.EnableRequestLogPayloads False \
+    --LogConfig.EnableResponseLogPayloads False \
+    --SensitiveWordRoute.Enabled True \
+    --SensitiveWordRoute.ModelServiceRefs b14f1d835fe240d593c9d0befd31aacc
 ```
 
 Output: 
@@ -21,7 +27,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "9b9acb5f-9230-4a4b-abcb-180211952df0"
+        "RequestId": "5ce87fdb-9260-4cb8-8d83-7f2973ecab07"
     }
 }
 ```

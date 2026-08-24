@@ -8492,7 +8492,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "备份策略ID",
           "example": "asp-67890xyz",
           "member": "string",
@@ -8546,7 +8546,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "备份库ID",
           "example": "vault-qjhn63ku",
           "member": "string",

@@ -804,7 +804,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云盘类型",
+          "document": "<p>云盘类型</p>",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
@@ -815,7 +815,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统(ext3/ext4/xfs)",
+          "document": "<p>文件系统(ext3/ext4/xfs)</p>",
           "example": "ext4",
           "member": "string",
           "name": "FileSystem",
@@ -826,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘大小(G）",
+          "document": "<p>云盘大小(G）</p>",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -837,7 +837,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动化格式盘并挂载",
+          "document": "<p>是否自动化格式盘并挂载</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoFormatAndMount",
@@ -848,7 +848,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载设备名或分区名",
+          "document": "<p>挂载设备名或分区名</p>",
           "example": "/dev/vdb",
           "member": "string",
           "name": "DiskPartition",
@@ -859,7 +859,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载目录",
+          "document": "<p>挂载目录</p>",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "MountTarget",
@@ -870,7 +870,7 @@
         },
         {
           "disabled": false,
-          "document": "传入该参数用于创建加密云盘，取值固定为ENCRYPT",
+          "document": "<p>传入该参数用于创建加密云盘，取值固定为ENCRYPT</p>",
           "example": "ENCRYPT",
           "member": "string",
           "name": "Encrypt",
@@ -881,7 +881,7 @@
         },
         {
           "disabled": false,
-          "document": "购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空",
+          "document": "<p>购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空</p>",
           "example": "06a83929-0050-11ee-8cbc-5254001955d1",
           "member": "string",
           "name": "KmsKeyId",
@@ -892,7 +892,7 @@
         },
         {
           "disabled": false,
-          "document": "快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照",
+          "document": "<p>快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照</p>",
           "example": "snap-2ubk61lh",
           "member": "string",
           "name": "SnapshotId",
@@ -903,7 +903,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能",
+          "document": "<p>云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能</p>",
           "example": "10",
           "member": "uint64",
           "name": "ThroughputPerformance",
@@ -914,7 +914,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像缓存 id",
+          "document": "<p>镜像缓存 id</p>",
           "example": "imc-jkyxqhyz",
           "member": "string",
           "name": "ImageCacheId",

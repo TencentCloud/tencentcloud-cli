@@ -9,6 +9,7 @@ tccli postgres ModifyDBInstanceSpec --cli-unfold-argument  \
     --DBInstanceId postgres-hys3shmz \
     --Memory 2 \
     --Storage 100 \
+    --DryRun True \
     --Cpu 1 \
     --SyncModifyParams.0.Name max_connections \
     --SyncModifyParams.0.ExpectedValue 2048 \

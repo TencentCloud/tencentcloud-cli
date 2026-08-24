@@ -22,7 +22,8 @@ Output:
                 "Memory": 131072,
                 "MinStorage": 1000,
                 "QPS": 79000,
-                "SpecCode": "cdb.pg.sh1.128g"
+                "SpecCode": "cdb.pg.sh1.128g",
+                "SpecName": "20 core 128 GiB"
             },
             {
                 "CPU": 48,
@@ -30,7 +31,8 @@ Output:
                 "Memory": 491520,
                 "MinStorage": 1000,
                 "QPS": 238000,
-                "SpecCode": "cdb.pg.sh1.480g"
+                "SpecCode": "cdb.pg.sh1.480g",
+                "SpecName": "48 core 480 GiB"
             }
         ],
         "RequestId": "012ed950-e375-4a2e-a7f8-15ec9fcd1d48"
@@ -63,7 +65,8 @@ Output:
                 "Memory": 2048,
                 "MinStorage": 10,
                 "QPS": 1800,
-                "SpecCode": "pg.it.small2"
+                "SpecCode": "pg.it.small2",
+                "SpecName": "1 core 2 GiB"
             }
         ],
         "RequestId": "8f9ec783-2944-4068-94ff-a33e9498cf6c"

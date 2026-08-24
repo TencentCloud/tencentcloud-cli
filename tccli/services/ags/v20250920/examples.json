@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AcquireDeploymentToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcquireDeploymentToken\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"dpt_ZXhhbXBsZS10b2tlbg\",\n        \"ExpiresAt\": \"2026-08-07T08:00:00Z\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取 Deployment Token"
+      }
+    ],
     "AcquireEnvironment": [
       {
         "document": "",
@@ -62,6 +70,20 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentVersion\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-0c6c69201e87d43229f82b485d69311b\",\n    \"AgentVersion\": \"v2\",\n    \"AgentConfig\": {\n        \"Image\": \"ccr.ccs.tencentyun.com/ags.dev/nginx:alpine\",\n        \"Command\": [\n            \"nginx\"\n        ],\n        \"Args\": [\n            \"-g\"\n        ],\n        \"Env\": [\n            {\n                \"Name\": \"TEST_ENV_2\",\n                \"Value\": \"true\"\n            }\n        ],\n        \"Resources\": {\n            \"CPU\": \"500m\",\n            \"Memory\": \"500Mi\"\n        },\n        \"Ports\": [\n            {\n                \"Name\": \"web\",\n                \"Port\": 80,\n                \"Protocol\": \"TCP\"\n            }\n        ],\n        \"HealthCheck\": {\n            \"HttpGet\": {\n                \"Path\": \"/\",\n                \"Port\": 80,\n                \"Scheme\": \"HTTP\"\n            }\n        }\n    },\n    \"ProviderConfig\": {\n        \"ProviderKind\": \"TENCENT_AGS\",\n        \"TencentAGS\": {\n            \"RoleArn\": \"qcs::cam::uin/3321337994:roleName/cos-tcr-full-ags\",\n            \"ImageRegistryType\": \"personal\",\n            \"NetworkConfiguration\": {\n                \"NetworkMode\": \"PUBLIC\"\n            }\n        }\n    },\n    \"DefaultEnvironmentTemplateId\": \"envt-6311dafca27b87a106d00045c570e14c\"\n}",
         "output": "{\n    \"Response\": {\n        \"AgentVersion\": {\n            \"AgentConfig\": {\n                \"Args\": [\n                    \"-g\"\n                ],\n                \"Command\": [\n                    \"nginx\"\n                ],\n                \"Env\": [\n                    {\n                        \"Name\": \"TEST_ENV_2\",\n                        \"Value\": \"true\"\n                    }\n                ],\n                \"HealthCheck\": {\n                    \"HttpGet\": {\n                        \"Path\": \"/\",\n                        \"Port\": 80,\n                        \"Scheme\": \"HTTP\"\n                    }\n                },\n                \"Image\": \"ccr.ccs.tencentyun.com/ags.dev/nginx:alpine\",\n                \"Ports\": [\n                    {\n                        \"Name\": \"web\",\n                        \"Port\": 80,\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"Resources\": {\n                    \"CPU\": \"500m\",\n                    \"Memory\": \"500Mi\"\n                }\n            },\n            \"AgentId\": \"ag-0c6c69201e87d43229f82b485d69311b\",\n            \"CreatedTime\": \"2026-07-13T07:00:47Z\",\n            \"DefaultEnvironmentTemplateId\": \"envt-6311dafca27b87a106d00045c570e14c\",\n            \"ProviderConfig\": {\n                \"ProviderKind\": \"TENCENT_AGS\",\n                \"TencentAGS\": {\n                    \"ImageRegistryType\": \"personal\",\n                    \"NetworkConfiguration\": {\n                        \"NetworkMode\": \"PUBLIC\"\n                    },\n                    \"RoleArn\": \"qcs::cam::uin/3321337994:roleName/cos-tcr-full-ags\"\n                }\n            },\n            \"ProviderStatus\": {\n                \"TencentAGS\": {}\n            },\n            \"Status\": \"CREATING\",\n            \"UpdatedTime\": \"2026-07-13T07:00:47Z\",\n            \"Version\": \"v2\"\n        },\n        \"RequestId\": \"73a5aad3-9b81-44d8-b1f5-6615fb8dc769\"\n    }\n}",
         "title": "创建成功"
+      }
+    ],
+    "CreateDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeployment\n<公共请求参数>\n\n{\n    \"DeploymentName\": \"workspace-service\",\n    \"ToolId\": \"sdt-a1b2c3d4\",\n    \"LifecycleConfiguration\": {\n        \"IdleTimeoutSeconds\": 300,\n        \"IdleAction\": \"PAUSE\"\n    },\n    \"AffinityConfiguration\": {\n        \"Mode\": \"EXCLUSIVE\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployment\": {\n            \"DeploymentId\": \"dpl-a1b2c3d4\",\n            \"DeploymentName\": \"workspace-service\",\n            \"ToolId\": \"sdt-a1b2c3d4\",\n            \"ScalingConfiguration\": {\n                \"MinInstanceCount\": 0,\n                \"MaxInstanceCount\": 10,\n                \"MaxInstanceRequestConcurrency\": 100\n            },\n            \"LifecycleConfiguration\": {\n                \"IdleTimeoutSeconds\": 300,\n                \"IdleAction\": \"PAUSE\"\n            },\n            \"AffinityConfiguration\": {\n                \"Mode\": \"EXCLUSIVE\",\n                \"HeaderName\": \"X-Tencent-Agr-Affinity-Id\"\n            },\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-08-06T08:00:00Z\",\n            \"UpdatedTime\": \"2026-08-06T08:00:00Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建 Deployment"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeployment\n<公共请求参数>\n\n{\n    \"DeploymentName\": \"hello\",\n    \"ToolId\": \"sdt-95hq0b7k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployment\": {\n            \"CreatedTime\": \"2026-08-18T03:08:11Z\",\n            \"DeploymentId\": \"dpl-amfzcemg\",\n            \"DeploymentName\": \"hello\",\n            \"LifecycleConfiguration\": {\n                \"IdleAction\": \"STOP\",\n                \"IdleTimeoutSeconds\": 300\n            },\n            \"ScalingConfiguration\": {\n                \"MaxInstanceCount\": 10,\n                \"MaxInstanceRequestConcurrency\": 100,\n                \"MinInstanceCount\": 0\n            },\n            \"Status\": \"ACTIVE\",\n            \"ToolId\": \"sdt-95hq0b7k\",\n            \"UpdatedTime\": \"2026-08-18T03:08:11Z\"\n        },\n        \"RequestId\": \"2fda2af5-a50e-465e-bc71-849828d9b1f2\"\n    }\n}",
+        "title": "创建 Deployment - 2"
       }
     ],
     "CreateEnvironmentTemplate": [
@@ -142,6 +164,14 @@
         "title": "删除 AgentVersion"
       }
     ],
+    "DeleteDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除 Deployment"
+      }
+    ],
     "DeleteEnvironment": [
       {
         "document": "",
@@ -220,6 +250,22 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentVersionList\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"version\",\n            \"Values\": [\n                \"v2\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AgentVersionSet\": [\n            {\n                \"AgentId\": \"ag-example\",\n                \"Version\": \"v2\",\n                \"AgentConfig\": {\n                    \"Image\": \"example.com/agent-engine/example-agent:v2\",\n                    \"Command\": [\n                        \"/usr/local/bin/example-agent\"\n                    ],\n                    \"Args\": [\n                        \"serve\",\n                        \"--port\",\n                        \"8080\"\n                    ],\n                    \"Env\": [\n                        {\n                            \"Name\": \"EXAMPLE_LOG_LEVEL\",\n                            \"Value\": \"info\"\n                        }\n                    ],\n                    \"Resources\": {\n                        \"CPU\": \"1000m\",\n                        \"Memory\": \"512Mi\"\n                    },\n                    \"Ports\": [\n                        {\n                            \"Name\": \"http\",\n                            \"Port\": 8080,\n                            \"Protocol\": \"TCP\"\n                        }\n                    ],\n                    \"HealthCheck\": {\n                        \"HttpGet\": {\n                            \"Path\": \"/healthz\",\n                            \"Port\": 8080,\n                            \"Scheme\": \"HTTP\"\n                        }\n                    }\n                },\n                \"ProviderConfig\": {\n                    \"ProviderKind\": \"TENCENT_AGS\",\n                    \"TencentAGS\": {\n                        \"RoleArn\": \"qcs::cam::uin/123456789012:roleName/example-agent-engine-role\",\n                        \"ImageRegistryType\": \"personal\",\n                        \"NetworkConfiguration\": {\n                            \"NetworkMode\": \"PUBLIC\"\n                        }\n                    }\n                },\n                \"ProviderStatus\": {\n                    \"TencentAGS\": {\n                        \"ToolId\": \"sdt-example-agent-v1\"\n                    }\n                },\n                \"DefaultWorkspaceTemplateId\": \"wst-example\",\n                \"Status\": \"ACTIVE\",\n                \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n                \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "查询 AgentVersion 列表"
+      }
+    ],
+    "DescribeDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployment\": {\n            \"DeploymentId\": \"dpl-a1b2c3d4\",\n            \"DeploymentName\": \"workspace-service\",\n            \"ToolId\": \"sdt-a1b2c3d4\",\n            \"ScalingConfiguration\": {\n                \"MinInstanceCount\": 0,\n                \"MaxInstanceCount\": 10,\n                \"MaxInstanceRequestConcurrency\": 100\n            },\n            \"LifecycleConfiguration\": {\n                \"IdleTimeoutSeconds\": 300,\n                \"IdleAction\": \"PAUSE\"\n            },\n            \"AffinityConfiguration\": {\n                \"Mode\": \"EXCLUSIVE\",\n                \"HeaderName\": \"X-Tencent-Agr-Affinity-Id\"\n            },\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-08-06T08:00:00Z\",\n            \"UpdatedTime\": \"2026-08-06T08:00:00Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 Deployment"
+      }
+    ],
+    "DescribeDeploymentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeploymentList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"deployment-name\",\n            \"Values\": [\n                \"workspace-service\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeploymentSet\": [\n            {\n                \"DeploymentId\": \"dpl-a1b2c3d4\",\n                \"DeploymentName\": \"workspace-service\",\n                \"ToolId\": \"sdt-a1b2c3d4\",\n                \"ScalingConfiguration\": {\n                    \"MinInstanceCount\": 0,\n                    \"MaxInstanceCount\": 10,\n                    \"MaxInstanceRequestConcurrency\": 100\n                },\n                \"LifecycleConfiguration\": {\n                    \"IdleTimeoutSeconds\": 300,\n                    \"IdleAction\": \"PAUSE\"\n                },\n                \"AffinityConfiguration\": {\n                    \"Mode\": \"EXCLUSIVE\",\n                    \"HeaderName\": \"X-Tencent-Agr-Affinity-Id\"\n                },\n                \"Status\": \"ACTIVE\",\n                \"CreatedTime\": \"2026-08-06T08:00:00Z\",\n                \"UpdatedTime\": \"2026-08-06T08:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 Deployment 列表"
       }
     ],
     "DescribeEnvironment": [
@@ -340,6 +386,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\",\n    \"AgentName\": \"example-agent-updated\",\n    \"DefaultVersion\": \"v2\"\n}",
         "output": "{\n    \"Response\": {\n        \"Agent\": {\n            \"AgentId\": \"ag-example\",\n            \"AgentName\": \"example-agent-updated\",\n            \"AgentType\": \"CLOUD\",\n            \"DefaultVersion\": \"v2\",\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改 Agent"
+      }
+    ],
+    "ModifyDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-amfzcemg\",\n    \"LifecycleConfiguration\": {\n        \"IdleTimeoutSeconds\": 30,\n        \"IdleAction\": \"STOP\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployment\": {\n            \"CreatedTime\": \"2026-08-18T03:08:11Z\",\n            \"DeploymentId\": \"dpl-amfzcemg\",\n            \"DeploymentName\": \"hello\",\n            \"LifecycleConfiguration\": {\n                \"IdleAction\": \"STOP\",\n                \"IdleTimeoutSeconds\": 30\n            },\n            \"ScalingConfiguration\": {\n                \"MaxInstanceCount\": 10,\n                \"MaxInstanceRequestConcurrency\": 100,\n                \"MinInstanceCount\": 0\n            },\n            \"Status\": \"ACTIVE\",\n            \"ToolId\": \"sdt-95hq0b7k\",\n            \"UpdatedTime\": \"2026-08-18T03:10:42Z\"\n        },\n        \"RequestId\": \"c24cd623-f7f2-47b2-a5be-e25987405d6d\"\n    }\n}",
+        "title": "修改 Deployment"
       }
     ],
     "ModifyEnvironmentTemplate": [

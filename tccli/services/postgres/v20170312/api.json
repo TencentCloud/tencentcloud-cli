@@ -2060,6 +2060,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>规格名称</p>",
+          "example": "8 core 16 GiB",
+          "member": "string",
+          "name": "SpecName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>规格状态：0-不可用，1-可用</p>",
           "example": "1",
           "member": "uint64",
@@ -11550,6 +11560,15 @@
           "name": "SwitchEndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否对本次修改实例规格操作执行预检查。</p><li>true：执行预检查</li>操作，不发起修改规格操作。<li>false：发起正常请求，通过检查后直接修改实例规格。</li>默认值：false",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,

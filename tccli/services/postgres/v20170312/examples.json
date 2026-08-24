@@ -380,13 +380,13 @@
       {
         "document": "查询在售卖的规格列表",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClasses\n<公共请求参数>\n\n{\n    \"DBEngine\": \"postgresql\",\n    \"DBMajorVersion\": \"12\",\n    \"Zone\": \"ap-guangzhou-3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [\n            {\n                \"CPU\": 16,\n                \"MaxStorage\": 3000,\n                \"Memory\": 131072,\n                \"MinStorage\": 1000,\n                \"QPS\": 79000,\n                \"SpecCode\": \"cdb.pg.sh1.128g\"\n            },\n            {\n                \"CPU\": 48,\n                \"MaxStorage\": 6000,\n                \"Memory\": 491520,\n                \"MinStorage\": 1000,\n                \"QPS\": 238000,\n                \"SpecCode\": \"cdb.pg.sh1.480g\"\n            }\n        ],\n        \"RequestId\": \"012ed950-e375-4a2e-a7f8-15ec9fcd1d48\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [\n            {\n                \"CPU\": 16,\n                \"MaxStorage\": 3000,\n                \"Memory\": 131072,\n                \"MinStorage\": 1000,\n                \"QPS\": 79000,\n                \"SpecCode\": \"cdb.pg.sh1.128g\",\n                \"SpecName\": \"20 core 128 GiB\"\n            },\n            {\n                \"CPU\": 48,\n                \"MaxStorage\": 6000,\n                \"Memory\": 491520,\n                \"MinStorage\": 1000,\n                \"QPS\": 238000,\n                \"SpecCode\": \"cdb.pg.sh1.480g\",\n                \"SpecName\": \"48 core 480 GiB\"\n            }\n        ],\n        \"RequestId\": \"012ed950-e375-4a2e-a7f8-15ec9fcd1d48\"\n    }\n}",
         "title": "查询规格列表"
       },
       {
         "document": "根据指定磁盘类型查询规格列表",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClasses\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-7\",\n    \"DBEngine\": \"postgresql\",\n    \"DBMajorVersion\": \"17\",\n    \"StorageType\": \"PHYSICAL_LOCAL_SSD\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [\n            {\n                \"CPU\": 1,\n                \"MaxStorage\": 3000,\n                \"Memory\": 2048,\n                \"MinStorage\": 10,\n                \"QPS\": 1800,\n                \"SpecCode\": \"pg.it.small2\"\n            }\n        ],\n        \"RequestId\": \"8f9ec783-2944-4068-94ff-a33e9498cf6c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [\n            {\n                \"CPU\": 1,\n                \"MaxStorage\": 3000,\n                \"Memory\": 2048,\n                \"MinStorage\": 10,\n                \"QPS\": 1800,\n                \"SpecCode\": \"pg.it.small2\",\n                \"SpecName\": \"1 core 2 GiB\"\n            }\n        ],\n        \"RequestId\": \"8f9ec783-2944-4068-94ff-a33e9498cf6c\"\n    }\n}",
         "title": "根据指定磁盘类型查询规格列表"
       }
     ],
@@ -971,7 +971,7 @@
     "ModifyDBInstanceSpec": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hys3shmz\",\n    \"Memory\": 2,\n    \"Storage\": 100,\n    \"Cpu\": 1,\n    \"SyncModifyParams\": [\n        {\n            \"Name\": \"max_connections\",\n            \"ExpectedValue\": \"2048\"\n        }\n    ],\n    \"CallerToken\": \"th***s******oken\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hys3shmz\",\n    \"Memory\": 2,\n    \"Storage\": 100,\n    \"DryRun\": true,\n    \"Cpu\": 1,\n    \"SyncModifyParams\": [\n        {\n            \"Name\": \"max_connections\",\n            \"ExpectedValue\": \"2048\"\n        }\n    ],\n    \"CallerToken\": \"th***s******oken\"\n}",
         "output": "{\n    \"Response\": {\n        \"BillId\": \"\",\n        \"DealName\": \"\",\n        \"RequestId\": \"2f149335-b67e-48f9-bbfa-1448d85631e5\"\n    }\n}",
         "title": "变配同时修改规格相关的参数"
       }
