@@ -959,6 +959,13 @@
       "output": "DestroyPostCLSFlowResponse",
       "status": "online"
     },
+    "EnableClientMsg": {
+      "document": "开关开启后，会将客户端的ip和port透传到后端",
+      "input": "EnableClientMsgRequest",
+      "name": "配置是否开启透传客户端信息",
+      "output": "EnableClientMsgResponse",
+      "status": "online"
+    },
     "EnableRateLimitsV2": {
       "document": "批量更改自研版限流规则开关",
       "input": "EnableRateLimitsV2Request",
@@ -1461,6 +1468,13 @@
       "input": "QueryBypassAllStatusRequest",
       "name": "查询该用户是否被加入了全局的bypass列表",
       "output": "QueryBypassAllStatusResponse",
+      "status": "online"
+    },
+    "QueryClientMsg": {
+      "document": "查询是否开启透传客户端信息",
+      "input": "QueryClientMsgRequest",
+      "name": "查询是否开启透传客户端信息",
+      "output": "QueryClientMsgResponse",
       "status": "online"
     },
     "RefreshAccessCheckResult": {
@@ -20856,6 +20870,52 @@
       ],
       "usage": "out"
     },
+    "EnableClientMsgRequest": {
+      "document": "EnableClientMsg请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0表示关闭1表示开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "\"test.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableClientMsgResponse": {
+      "document": "EnableClientMsg返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0：成功，1：失败",
+          "example": "0",
+          "member": "int64",
+          "name": "RetCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableLimitRuleItem": {
       "document": "EnableLimitRuleItem",
       "members": [
@@ -32344,6 +32404,43 @@
           "name": "Result",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClientMsgRequest": {
+      "document": "QueryClientMsg请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClientMsgResponse": {
+      "document": "QueryClientMsg返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0表示关闭，1表示开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

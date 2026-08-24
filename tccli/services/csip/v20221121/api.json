@@ -378,6 +378,13 @@
       "output": "CreateDspmAssetsExportJobResponse",
       "status": "online"
     },
+    "CreateDspmAuditFilterStrategy": {
+      "document": "创建Dspm审计过滤策略",
+      "input": "CreateDspmAuditFilterStrategyRequest",
+      "name": "创建Dspm审计过滤策略",
+      "output": "CreateDspmAuditFilterStrategyResponse",
+      "status": "online"
+    },
     "CreateDspmExportTask": {
       "document": "创建日志导出任务",
       "input": "CreateDspmExportTaskRequest",
@@ -448,11 +455,25 @@
       "output": "CreateDspmPersonalIdentifyResponse",
       "status": "online"
     },
+    "CreateDspmResource": {
+      "document": "创建Dspm实例",
+      "input": "CreateDspmResourceRequest",
+      "name": "创建Dspm实例",
+      "output": "CreateDspmResourceResponse",
+      "status": "online"
+    },
     "CreateDspmRiskExportJob": {
       "document": "创建Dspm风险导出任务",
       "input": "CreateDspmRiskExportJobRequest",
       "name": "创建Dspm风险导出任务",
       "output": "CreateDspmRiskExportJobResponse",
+      "status": "online"
+    },
+    "CreateDspmRiskStrategy": {
+      "document": "创建Dspm自定义风险策略",
+      "input": "CreateDspmRiskStrategyRequest",
+      "name": "创建Dspm自定义风险策略",
+      "output": "CreateDspmRiskStrategyResponse",
       "status": "online"
     },
     "CreateDspmWhitelistStrategy": {
@@ -833,11 +854,25 @@
       "output": "DeleteDspmAssetAccountResponse",
       "status": "online"
     },
+    "DeleteDspmAuditFilterStrategy": {
+      "document": "删除Dspm审计过滤策略",
+      "input": "DeleteDspmAuditFilterStrategyRequest",
+      "name": "删除Dspm审计过滤策略",
+      "output": "DeleteDspmAuditFilterStrategyResponse",
+      "status": "online"
+    },
     "DeleteDspmBackupLogList": {
       "document": "删除备份日志",
       "input": "DeleteDspmBackupLogListRequest",
       "name": "删除备份日志",
       "output": "DeleteDspmBackupLogListResponse",
+      "status": "online"
+    },
+    "DeleteDspmCkafkaConfig": {
+      "document": "取消日志投递配置",
+      "input": "DeleteDspmCkafkaConfigRequest",
+      "name": "取消日志投递配置",
+      "output": "DeleteDspmCkafkaConfigResponse",
       "status": "online"
     },
     "DeleteDspmExportTask": {
@@ -901,6 +936,20 @@
       "input": "DeleteDspmRestoreLogListRequest",
       "name": "删除恢复日志",
       "output": "DeleteDspmRestoreLogListResponse",
+      "status": "online"
+    },
+    "DeleteDspmRiskStrategy": {
+      "document": "删除Dspm自定义风险策略。仅支持删除自定义策略（rule_source=custom）；内置策略不可删除，请通过 ModifyDspmRiskStrategy 的 IsEnabled 禁用。",
+      "input": "DeleteDspmRiskStrategyRequest",
+      "name": "删除Dspm自定义风险策略",
+      "output": "DeleteDspmRiskStrategyResponse",
+      "status": "online"
+    },
+    "DeleteDspmShareUserData": {
+      "document": "删除dspmg共享账号数据",
+      "input": "DeleteDspmShareUserDataRequest",
+      "name": "删除dspm共享用户数据",
+      "output": "DeleteDspmShareUserDataResponse",
       "status": "online"
     },
     "DeleteDspmWhitelistStrategy": {
@@ -2324,6 +2373,13 @@
       "output": "DescribeDspmAssetsResponse",
       "status": "online"
     },
+    "DescribeDspmAuditFilterStrategy": {
+      "document": "查询dspm审计过滤策略",
+      "input": "DescribeDspmAuditFilterStrategyRequest",
+      "name": "查询Dspm审计过滤策略",
+      "output": "DescribeDspmAuditFilterStrategyResponse",
+      "status": "online"
+    },
     "DescribeDspmBackupLogList": {
       "document": "查询备份日志列表",
       "input": "DescribeDspmBackupLogListRequest",
@@ -2336,6 +2392,20 @@
       "input": "DescribeDspmBackupSettingRequest",
       "name": "查询日志备份配置",
       "output": "DescribeDspmBackupSettingResponse",
+      "status": "online"
+    },
+    "DescribeDspmCkafkaRouteList": {
+      "document": "查询Ckafka实例的路由信息",
+      "input": "DescribeDspmCkafkaRouteListRequest",
+      "name": "查询Ckafka实例的路由信息",
+      "output": "DescribeDspmCkafkaRouteListResponse",
+      "status": "online"
+    },
+    "DescribeDspmCkafkaTopicList": {
+      "document": "查询实例的主题列表",
+      "input": "DescribeDspmCkafkaTopicListRequest",
+      "name": "查询实例的主题列表",
+      "output": "DescribeDspmCkafkaTopicListResponse",
       "status": "online"
     },
     "DescribeDspmDictionaryList": {
@@ -2436,11 +2506,25 @@
       "output": "DescribeDspmIdentifyRuleTestResultResponse",
       "status": "online"
     },
+    "DescribeDspmLogDeliveryType": {
+      "document": "查询日志投递的日志类型",
+      "input": "DescribeDspmLogDeliveryTypeRequest",
+      "name": "查询日志投递的日志类型",
+      "output": "DescribeDspmLogDeliveryTypeResponse",
+      "status": "online"
+    },
     "DescribeDspmLogList": {
       "document": "查询日志列表信息",
       "input": "DescribeDspmLogListRequest",
       "name": "日志列表信息",
       "output": "DescribeDspmLogListResponse",
+      "status": "online"
+    },
+    "DescribeDspmLogTypeConfigList": {
+      "document": "查询租户日志投递配置",
+      "input": "DescribeDspmLogTypeConfigListRequest",
+      "name": "查询租户日志投递配置",
+      "output": "DescribeDspmLogTypeConfigListResponse",
       "status": "online"
     },
     "DescribeDspmPayInfo": {
@@ -2462,6 +2546,13 @@
       "input": "DescribeDspmPersonalIdentifyListRequest",
       "name": "查询Dspm个人身份信息列表",
       "output": "DescribeDspmPersonalIdentifyListResponse",
+      "status": "online"
+    },
+    "DescribeDspmResource": {
+      "document": "查询Dspm实例",
+      "input": "DescribeDspmResourceRequest",
+      "name": "查询Dspm实例",
+      "output": "DescribeDspmResourceResponse",
       "status": "online"
     },
     "DescribeDspmRisk": {
@@ -2499,6 +2590,13 @@
       "output": "DescribeDspmRiskTendencyResponse",
       "status": "online"
     },
+    "DescribeDspmSessionList": {
+      "document": "查询审计会话列表信息",
+      "input": "DescribeDspmSessionListRequest",
+      "name": "审计会话列表信息",
+      "output": "DescribeDspmSessionListResponse",
+      "status": "online"
+    },
     "DescribeDspmStatistics": {
       "document": "查询Dspm统计信息",
       "input": "DescribeDspmStatisticsRequest",
@@ -2525,6 +2623,13 @@
       "input": "DescribeDspmSyncUsersStatusRequest",
       "name": "查询Dspm同步用户状态",
       "output": "DescribeDspmSyncUsersStatusResponse",
+      "status": "online"
+    },
+    "DescribeDspmUserCkafkaInstanceList": {
+      "document": "查询租户ckafka实例列表",
+      "input": "DescribeDspmUserCkafkaInstanceListRequest",
+      "name": "查询租户ckafka实例列表",
+      "output": "DescribeDspmUserCkafkaInstanceListResponse",
       "status": "online"
     },
     "DescribeDspmWhitelistStrategy": {
@@ -4193,11 +4298,39 @@
       "output": "ModifyDspmAssetSecurityAnalysisSwitchResponse",
       "status": "online"
     },
+    "ModifyDspmAuditFilterStrategy": {
+      "document": "修改Dspm审计过滤策略",
+      "input": "ModifyDspmAuditFilterStrategyRequest",
+      "name": "修改Dspm审计过滤策略",
+      "output": "ModifyDspmAuditFilterStrategyResponse",
+      "status": "online"
+    },
     "ModifyDspmBackupSetting": {
       "document": "修改日志备份设置",
       "input": "ModifyDspmBackupSettingRequest",
       "name": "修改日志备份设置",
       "output": "ModifyDspmBackupSettingResponse",
+      "status": "online"
+    },
+    "ModifyDspmCkafkaSave": {
+      "document": "租户Ckafka配置保存",
+      "input": "ModifyDspmCkafkaSaveRequest",
+      "name": "租户Ckafka配置保存",
+      "output": "ModifyDspmCkafkaSaveResponse",
+      "status": "online"
+    },
+    "ModifyDspmCkafkaStart": {
+      "document": "日志投递开启",
+      "input": "ModifyDspmCkafkaStartRequest",
+      "name": "日志投递开启",
+      "output": "ModifyDspmCkafkaStartResponse",
+      "status": "online"
+    },
+    "ModifyDspmCkafkaStop": {
+      "document": "日志类型投递关闭",
+      "input": "ModifyDspmCkafkaStopRequest",
+      "name": "日志类型投递关闭",
+      "output": "ModifyDspmCkafkaStopResponse",
       "status": "online"
     },
     "ModifyDspmIdentifyCategory": {
@@ -4268,6 +4401,13 @@
       "input": "ModifyDspmIpInfoRequest",
       "name": "修改DspmIp信息",
       "output": "ModifyDspmIpInfoResponse",
+      "status": "online"
+    },
+    "ModifyDspmLogDeliveryType": {
+      "document": "修改日志投递配置信息",
+      "input": "ModifyDspmLogDeliveryTypeRequest",
+      "name": "修改日志投递配置信息",
+      "output": "ModifyDspmLogDeliveryTypeResponse",
       "status": "online"
     },
     "ModifyDspmPersonalIdentify": {
@@ -4606,6 +4746,13 @@
       "output": "ModifyShareUserCSPMResponse",
       "status": "online"
     },
+    "ModifyShareUserDspm": {
+      "document": "编辑dspm监测账号",
+      "input": "ModifyShareUserDspmRequest",
+      "name": "修改dspm监测账号",
+      "output": "ModifyShareUserDspmResponse",
+      "status": "online"
+    },
     "ModifySkillScanAlertStatus": {
       "document": "批量修改 Skill 安全检测告警的处理状态",
       "input": "ModifySkillScanAlertStatusRequest",
@@ -4744,6 +4891,13 @@
       "input": "SendDspmAssetLoginSmsCodeRequest",
       "name": "发送Dspm资产访问验证码",
       "output": "SendDspmAssetLoginSmsCodeResponse",
+      "status": "online"
+    },
+    "SendDspmCkafkaTest": {
+      "document": "租户Ckafka联通性测试",
+      "input": "SendDspmCkafkaTestRequest",
+      "name": "租户Ckafka联通性测试",
+      "output": "SendDspmCkafkaTestResponse",
       "status": "online"
     },
     "StartOrModifyPreventUninstall": {
@@ -18596,6 +18750,42 @@
       ],
       "usage": "out"
     },
+    "CkafkaInstance": {
+      "document": "租户ckafka信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "ckafka-weafasdd",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "name",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClbListenerItem": {
       "document": "CLB监听器",
       "members": [
@@ -26766,6 +26956,88 @@
       ],
       "type": "object"
     },
+    "CreateDspmAuditFilterStrategyRequest": {
+      "document": "CreateDspmAuditFilterStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略名</p>",
+          "example": "过滤删除操作",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则内容</p><p>参数格式：json</p>",
+          "example": "{\"Fields\":[{\"Key\":\"ClientIp\",\"Operator\":\"include\",\"Value\":\"1.1.1.1\"}]}",
+          "member": "string",
+          "name": "Rule",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p><p>枚举值：</p><ul><li>1： 启用</li><li>0： 禁用</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnabled",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>",
+          "example": "删除操作不用保存",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "删除操作不用保存",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-112\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmAuditFilterStrategyResponse": {
+      "document": "CreateDspmAuditFilterStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略ID</p>",
+          "example": "2154",
+          "member": "uint64",
+          "name": "AuditFilterStrategyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDspmExportTaskRequest": {
       "document": "CreateDspmExportTask请求参数结构体",
       "members": [
@@ -27611,6 +27883,33 @@
       ],
       "type": "object"
     },
+    "CreateDspmResourceRequest": {
+      "document": "CreateDspmResource请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateDspmResourceResponse": {
+      "document": "CreateDspmResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产id",
+          "example": "dspm-testinst",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDspmRiskExportJobRequest": {
       "document": "CreateDspmRiskExportJob请求参数结构体",
       "members": [
@@ -27645,6 +27944,134 @@
           "member": "string",
           "name": "JobID",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmRiskStrategyRequest": {
+      "document": "CreateDspmRiskStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略名</p>",
+          "example": "自定义SQL注入审计规则",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略规则，JSON 字符串</p>",
+          "example": "{\"RuleType\":1,\"Fields\":[{\"Key\":\"SqlText\",\"Operator\":\"contains\",\"Value\":\"sleep(\"}],\"RuleIdentifier\":\"CustomSqlInjection\",\"SaveToDb\":true}",
+          "member": "string",
+          "name": "Rule",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-12345\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>英文策略名</p>",
+          "example": "Custom SQL Injection Audit Rule",
+          "member": "string",
+          "name": "EnName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>",
+          "example": "命中自定义SQL注入审计规则",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>英文策略描述</p>",
+          "example": "Hit custom SQL injection audit rule",
+          "member": "string",
+          "name": "EnDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险等级，可选值：Info/Low/Medium/High。不传默认 Medium</p>",
+          "example": "High",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用。0-禁用，1-启用，不传默认启用</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnabled",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险类型。当前仅支持 alarm，不传默认 alarm</p>",
+          "example": "alarm",
+          "member": "string",
+          "name": "RiskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略类别。当前仅支持 SQLOperationAnomaly，不传默认 SQLOperationAnomaly</p>",
+          "example": "SQLOperationAnomaly",
+          "member": "string",
+          "name": "StrategyCategory",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDspmRiskStrategyResponse": {
+      "document": "CreateDspmRiskStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略id</p>",
+          "example": "190001",
+          "member": "int64",
+          "name": "StrategyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略类型</p>",
+          "example": "CustomAudit_8f6b5b0c2c1b4bb7a1e4bcb828c97a6a",
+          "member": "string",
+          "name": "StrategyType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32552,6 +32979,42 @@
       ],
       "type": "object"
     },
+    "DeleteDspmAuditFilterStrategyRequest": {
+      "document": "DeleteDspmAuditFilterStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略ID</p>",
+          "example": "[2155]",
+          "member": "uint64",
+          "name": "AuditFilterStrategyId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-123\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmAuditFilterStrategyResponse": {
+      "document": "DeleteDspmAuditFilterStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDspmBackupLogListRequest": {
       "document": "DeleteDspmBackupLogList请求参数结构体",
       "members": [
@@ -32578,6 +33041,33 @@
     },
     "DeleteDspmBackupLogListResponse": {
       "document": "DeleteDspmBackupLogList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmCkafkaConfigRequest": {
+      "document": "DeleteDspmCkafkaConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmCkafkaConfigResponse": {
+      "document": "DeleteDspmCkafkaConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -32921,6 +33411,89 @@
     "DeleteDspmRestoreLogListResponse": {
       "document": "DeleteDspmRestoreLogList返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmRiskStrategyRequest": {
+      "document": "DeleteDspmRiskStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略id，仅支持删除自定义策略（rule_source=custom）；内置策略请通过 ModifyDspmRiskStrategy 的 IsEnabled 禁用</p>",
+          "example": "[190001]",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-1234\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmRiskStrategyResponse": {
+      "document": "DeleteDspmRiskStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmShareUserDataRequest": {
+      "document": "DeleteDspmShareUserData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "251010687",
+          "member": "uint64",
+          "name": "DeleteDataAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDspmShareUserDataResponse": {
+      "document": "DeleteDspmShareUserData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-成功，1-失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功或失败信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -47792,6 +48365,189 @@
       ],
       "type": "object"
     },
+    "DescribeDspmAuditFilterStrategy": {
+      "document": "过滤规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略ID</p>",
+          "example": "14",
+          "member": "uint64",
+          "name": "AuditFilterStrategyId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略名</p>",
+          "example": "过滤规则-去除查询操作",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>",
+          "example": "用于过滤无效的查询日志操作",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则内容</p>",
+          "example": "{\"Fields\":[{\"Key\":\"DbName\",\"Operator\":\"include\",\"Value\":\"select\"}]}",
+          "member": "string",
+          "name": "Rule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p><p>枚举值：</p><ul><li>0： 禁用</li><li>1： 启用</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "用于过滤无效的查询日志操作",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：2026-07-16T11:44:45+08</p>",
+          "example": "2026-07-16T11:44:45+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：2026-07-16T11:44:45+08</p>",
+          "example": "2026-08-04T08:54:13+08:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云账号ID</p>",
+          "example": "260085118",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户标识</p>",
+          "example": "700002365149",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号昵称</p>",
+          "example": "多账号-管理员",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeDspmAuditFilterStrategyRequest": {
+      "document": "DescribeDspmAuditFilterStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-1223\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmAuditFilterStrategyResponse": {
+      "document": "DescribeDspmAuditFilterStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略内容</p>",
+          "example": "无",
+          "member": "DescribeDspmAuditFilterStrategy",
+          "name": "StrategySet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDspmBackupLogListRequest": {
       "document": "DescribeDspmBackupLogList请求参数结构体",
       "members": [
@@ -47996,6 +48752,172 @@
           "member": "int64",
           "name": "MaxOnlineLogCount",
           "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmCkafkaRouteListRequest": {
+      "document": "DescribeDspmCkafkaRouteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Ckafka接入类型",
+          "example": "1",
+          "member": "int64",
+          "name": "VipType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的地域",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的id",
+          "example": "\"ckafkaid\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的名称",
+          "example": "\"ckafkaname\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmCkafkaRouteListResponse": {
+      "document": "DescribeDspmCkafkaRouteList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Ckafka实例的路由列表",
+          "example": "无",
+          "member": "RouteInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ckafka实例的路由列表个数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmCkafkaTopicListRequest": {
+      "document": "DescribeDspmCkafkaTopicList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka的实例接入类型",
+          "example": "1",
+          "member": "int64",
+          "name": "VipType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ckafka的实例地域",
+          "example": "“ap-guangzhou”",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ckafka的实例id",
+          "example": "“abc”",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ckafka的实例名称",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmCkafkaTopicListResponse": {
+      "document": "DescribeDspmCkafkaTopicList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka实例的主题列表",
+          "example": "无",
+          "member": "TopicInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ckafka实例的主题列表的总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -49023,6 +49945,53 @@
       ],
       "type": "object"
     },
+    "DescribeDspmLogDeliveryTypeRequest": {
+      "document": "DescribeDspmLogDeliveryType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmLogDeliveryTypeResponse": {
+      "document": "DescribeDspmLogDeliveryType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持日志投递的类型列表",
+          "example": "无",
+          "member": "LogDeliveryType",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持日志投递类型的总数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDspmLogListRequest": {
       "document": "DescribeDspmLogList请求参数结构体",
       "members": [
@@ -49365,6 +50334,53 @@
           "name": "List",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmLogTypeConfigListRequest": {
+      "document": "DescribeDspmLogTypeConfigList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmLogTypeConfigListResponse": {
+      "document": "DescribeDspmLogTypeConfigList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ckafka配置，以及日志投递配置",
+          "example": "无",
+          "member": "LogDeliveryCkafkaConfig",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -49734,6 +50750,43 @@
           "name": "InfoSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmResourceRequest": {
+      "document": "DescribeDspmResource请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDspmResourceResponse": {
+      "document": "DescribeDspmResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产id",
+          "example": "dspm-testinst",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产状态: 0 未初始化，1 正常，2 隔离，3 销毁，4 初始化失败，5 初始化中",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -50273,6 +51326,179 @@
       ],
       "type": "object"
     },
+    "DescribeDspmSessionListRequest": {
+      "document": "DescribeDspmSessionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"12334455\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制数目</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登陆状态(0 全部 1 成功 2 失败)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "LoginType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库端口</p>",
+          "example": "user",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DbPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库 IP</p>",
+          "example": "192.56.12.2",
+          "member": "string",
+          "name": "DbIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产 ID</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AssetsId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID</p>",
+          "example": "1711987200000-140227893131008-2045",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端 IP</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ClientSideIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "root",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量来源  取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两者都传或不传则返回所有</p>",
+          "example": "[\"Agent\"]",
+          "member": "string",
+          "name": "SourceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>[&quot;MySQL&quot;]</p>",
+          "example": "[\"MySQL\"]",
+          "member": "string",
+          "name": "DbTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmSessionListResponse": {
+      "document": "DescribeDspmSessionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数目</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计会话列表信息</p>",
+          "example": "无",
+          "member": "DspmAuditSessionInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDspmStatisticsRequest": {
       "document": "DescribeDspmStatistics请求参数结构体",
       "members": [
@@ -50438,6 +51664,53 @@
           "member": "int64",
           "name": "Status",
           "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmUserCkafkaInstanceListRequest": {
+      "document": "DescribeDspmUserCkafkaInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmUserCkafkaInstanceListResponse": {
+      "document": "DescribeDspmUserCkafkaInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户ckafka列表",
+          "example": "无",
+          "member": "CkafkaInstance",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回租户ckafka数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -68615,6 +69888,242 @@
       ],
       "usage": "out"
     },
+    "DspmAuditSessionInfo": {
+      "document": "审计会话列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审计日志数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SqlCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登出时间</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoutTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端 IP</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ClientIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端端口</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ClientPort",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库 IP</p>",
+          "example": "10.0.3.2",
+          "member": "string",
+          "name": "DbIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "audit_db",
+          "member": "string",
+          "name": "DbName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库端口</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DbPort",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库用户</p>",
+          "example": "root",
+          "member": "string",
+          "name": "DbUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计单元 ID</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作时间(时间)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OpTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RetNo",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话Id</p>",
+          "example": "13dfs04-34cvnvsdj",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录时间</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "LoginTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据资产名称</p>",
+          "example": "instance_name",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据资产名称</p>",
+          "example": "审计测试mysql",
+          "member": "string",
+          "name": "AssetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量来源</p>",
+          "example": "casb",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量来源英文</p>",
+          "example": "casb",
+          "member": "string",
+          "name": "SourceTypeEn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产所属账号app id</p>",
+          "example": "251237296",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量来源</p>",
+          "example": "MySQL",
+          "member": "string",
+          "name": "SourceTypeEnDisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>昵称</p>",
+          "example": "dspm_cdb01@tencent.com",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID</p>",
+          "example": "700002401105",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库类型</p><p>枚举值：</p><ul><li>MongoDB： mongodb</li></ul>",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型</p><p>枚举值：</p><ul><li>cdb： mysql</li><li>mongodb： mongodb</li></ul>",
+          "example": "cdb",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DspmColumnPrivilege": {
       "document": "列权限信息",
       "members": [
@@ -82583,6 +84092,251 @@
       ],
       "usage": "both"
     },
+    "LogDeliveryCkafkaConfig": {
+      "document": "日志投递信息配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入类型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "VipType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "ckafka-istestid",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "测试 Ckafka",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>虚拟ip  VipType 为7 有效</p>",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>虚拟端口 VipType 为7有效</p>",
+          "example": "9092",
+          "member": "string",
+          "name": "Vport",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名  VipType 为1有效</p>",
+          "example": "ckafka-istestid.ap-guangzhou.ckafka.tencentcloudmq.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名端口 VipType 为1有效</p>",
+          "example": "9092",
+          "member": "string",
+          "name": "DomainPort",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例vpc</p>",
+          "example": "vpc-istestid",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例子网</p>",
+          "example": "subnet-istestid",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例健康状态， 1：健康，2：告警，3：异常&#39;, 4: 实例不存在</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Healthy",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递的topicid</p>",
+          "example": "topic-istestid",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递的topicname</p>",
+          "example": "alarm_topic",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "StatusMessages",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启or关闭，投递状态1为开启，0 关闭，默认开启，但是如果没有topic 则关闭</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsOpen",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogDeliveryInfo": {
+      "document": "日志类型投递主题配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递的topicid",
+          "example": "“abc”",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递的topicname",
+          "example": "“abc”",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "LogDeliveryType": {
+      "document": "日志投递日志类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志投递类型",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递日志类型的名称",
+          "example": "审计日志",
+          "member": "string",
+          "name": "LogTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递日志类型的描述",
+          "example": "全量的审计日志",
+          "member": "string",
+          "name": "LogTypeDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LogDynamicIndex": {
       "document": "日志动态索引信息",
       "members": [
@@ -86749,6 +88503,87 @@
       ],
       "type": "object"
     },
+    "ModifyDspmAuditFilterStrategyRequest": {
+      "document": "ModifyDspmAuditFilterStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略ID</p>",
+          "example": "2154",
+          "member": "uint64",
+          "name": "AuditFilterStrategyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-1234\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略名称</p>",
+          "example": "过滤删除操作",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>",
+          "example": "过滤删除操作",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略规则内容</p>",
+          "example": "{\"Fields\":[{\"Key\":\"ClientIp\",\"Operator\":\"include\",\"Value\":\"1.1.1.1,1.2.2.1\"}]}",
+          "member": "string",
+          "name": "Rule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p><p>枚举值：</p><ul><li>0： 不启用</li><li>1： 启用</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnabled",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmAuditFilterStrategyResponse": {
+      "document": "ModifyDspmAuditFilterStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDspmBackupSettingRequest": {
       "document": "ModifyDspmBackupSetting请求参数结构体",
       "members": [
@@ -86802,6 +88637,186 @@
     },
     "ModifyDspmBackupSettingResponse": {
       "document": "ModifyDspmBackupSetting返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmCkafkaSaveRequest": {
+      "document": "ModifyDspmCkafkaSave请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入类型，当前支持 1和7, 类型vip网络类型（1:外网TGW 2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）",
+          "example": "1",
+          "member": "int64",
+          "name": "VipType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例的id",
+          "example": "ins-f784fkre",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "测试DB",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例的接入信息",
+          "example": "无",
+          "member": "RouteInfo",
+          "name": "RouteInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "接入为域名的时候，有效",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接入为域名的时候，有效",
+          "example": "pwd@root",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志投递的主题配置",
+          "example": "无",
+          "member": "LogDeliveryInfo",
+          "name": "LogDeliveryInfo",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOverwrite",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmCkafkaSaveResponse": {
+      "document": "ModifyDspmCkafkaSave返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmCkafkaStartRequest": {
+      "document": "ModifyDspmCkafkaStart请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志类型的主题投递",
+          "example": "无",
+          "member": "LogDeliveryInfo",
+          "name": "LogDeliveryInfo",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmCkafkaStartResponse": {
+      "document": "ModifyDspmCkafkaStart返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmCkafkaStopRequest": {
+      "document": "ModifyDspmCkafkaStop请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志投递类型的配置",
+          "example": "无",
+          "member": "LogDeliveryInfo",
+          "name": "LogDeliveryInfo",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmCkafkaStopResponse": {
+      "document": "ModifyDspmCkafkaStop返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -87333,6 +89348,60 @@
     },
     "ModifyDspmIpInfoResponse": {
       "document": "ModifyDspmIpInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmLogDeliveryTypeRequest": {
+      "document": "ModifyDspmLogDeliveryType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递的topicid",
+          "example": "topic-kkhvui30",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递的topicname",
+          "example": "topic_name_kkhvui30",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDspmLogDeliveryTypeResponse": {
+      "document": "ModifyDspmLogDeliveryType返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -91246,6 +93315,62 @@
           "disabled": false,
           "document": "0-成功，1-失败",
           "example": "1",
+          "member": "int64",
+          "name": "Result",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功或失败信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyShareUserDspmRequest": {
+      "document": "ModifyShareUserDspm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "增加监测账号",
+          "example": "[1308951234]",
+          "member": "int64",
+          "name": "SharedAppIDList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyShareUserDspmResponse": {
+      "document": "ModifyShareUserDspm返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-成功，1-失败",
+          "example": "0",
           "member": "int64",
           "name": "Result",
           "output_required": true,
@@ -96272,6 +98397,56 @@
       ],
       "usage": "both"
     },
+    "RouteInfo": {
+      "document": "路由信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入端口",
+          "example": "80",
+          "member": "string",
+          "name": "Vport",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入域名",
+          "example": "www.xxx.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入域名端口",
+          "example": "5454",
+          "member": "string",
+          "name": "DomainPort",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RuleContentCmdLine": {
       "document": "EDR命令行规则",
       "members": [
@@ -97893,6 +100068,105 @@
     },
     "SendDspmAssetLoginSmsCodeResponse": {
       "document": "SendDspmAssetLoginSmsCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendDspmCkafkaTestRequest": {
+      "document": "SendDspmCkafkaTest请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1为外网，7为支撑环境接入",
+          "example": "1",
+          "member": "int64",
+          "name": "VipType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ckafka实例id",
+          "example": "ins-vfot25kf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "为7有效",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为7有效",
+          "example": "3306",
+          "member": "string",
+          "name": "Vport",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名，VipType为1有效",
+          "example": "www.domain.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名端口，VipType为1有效",
+          "example": "80",
+          "member": "string",
+          "name": "DomainPort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，VipType为1有效",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户密码，VipType为1有效",
+          "example": "root@pwd",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendDspmCkafkaTestResponse": {
+      "document": "SendDspmCkafkaTest返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -101089,6 +103363,32 @@
         }
       ],
       "usage": "both"
+    },
+    "TopicInfo": {
+      "document": "ckafka实例的topic信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka主题id",
+          "example": "topic-istestid",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ckafka主题名称",
+          "example": "topic_alarm",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TrafficPluginState": {
       "document": "AI Agent 流量沙箱插件状态",

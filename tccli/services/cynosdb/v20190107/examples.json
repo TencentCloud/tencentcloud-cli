@@ -1897,8 +1897,8 @@
     "TransferClusterPrepayToPostpay": [
       {
         "document": "预付费集群转后付费集群",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n  \"ClusterId\": \"cynosdbmysql-3xazs3u5\"\n}\n\n",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-3xazs3u5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"20260716054021858214051\"\n        ],\n        \"TranId\": \"20260716054021858214051\",\n        \"DealNames\": [\n            \"20260716054021858214051\"\n        ],\n        \"ResourceIds\": [\n            \"cynosdbmysql-3xazs3u5\"\n        ],\n        \"ClusterIds\": [\n            \"cynosdbmysql-3xazs3u5\"\n        ],\n        \"RequestId\": \"sjhkuyfa348969-fsfsdf\"\n    }\n}",
         "title": "预付费集群转后付费集群"
       }
     ],

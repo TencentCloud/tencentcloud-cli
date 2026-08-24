@@ -27153,6 +27153,15 @@
           "name": "EngineId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎类型详情</p><ul><li>SparkSQL：SparkSQL</li><li>PrestoSQL：Presto</li><li>SparkBatch：Spark作业</li><li>StandardPresto：Presto</li><li>StandardSpark：Spark</li></ul>",
+          "example": "StandardSpark",
+          "member": "string",
+          "name": "EngineTypeDetail",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -10169,7 +10169,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例状态</p>",
+          "document": "<p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 从回收站重新恢复</li><li>offlining： 下线中</li><li>offlined： 已下线</li><li>deleting： 删除中</li><li>deleted： 已删除</li></ul>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -34978,12 +34978,72 @@
     },
     "TransferClusterPrepayToPostpayRequest": {
       "document": "TransferClusterPrepayToPostpay请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "cynosdbmysql-asw25d5t",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "TransferClusterPrepayToPostpayResponse": {
       "document": "TransferClusterPrepayToPostpay返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>预付费总订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20260716554023189630411\"]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>冻结流水</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20260716054021858214051\"]",
+          "member": "string",
+          "name": "TranId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20260515988144840141851\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbmysql-asw25d5t\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbmysql-asw25d5t\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

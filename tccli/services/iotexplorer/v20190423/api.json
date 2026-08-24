@@ -273,6 +273,13 @@
       "output": "CreateTWeSeeDirectUploadCredentialResponse",
       "status": "online"
     },
+    "CreateTWeSeePerson": {
+      "document": "创建一个 TWeSee 人员，可关联已导入的人脸。",
+      "input": "CreateTWeSeePersonRequest",
+      "name": "创建 TWeSee 人员",
+      "output": "CreateTWeSeePersonResponse",
+      "status": "online"
+    },
     "CreateTWeSeePostPaidService": {
       "document": "开通 TWeSee 后付费服务",
       "input": "CreateTWeSeePostPaidServiceRequest",
@@ -439,6 +446,20 @@
       "input": "DeleteTWeSeeCallbackRequest",
       "name": "删除 TWeSee 回调目标",
       "output": "DeleteTWeSeeCallbackResponse",
+      "status": "online"
+    },
+    "DeleteTWeSeeFace": {
+      "document": "删除指定 TWeSee 人脸。",
+      "input": "DeleteTWeSeeFaceRequest",
+      "name": "删除 TWeSee 人脸",
+      "output": "DeleteTWeSeeFaceResponse",
+      "status": "online"
+    },
+    "DeleteTWeSeePerson": {
+      "document": "删除指定 TWeSee 人员，可选择同时删除其关联人脸。",
+      "input": "DeleteTWeSeePersonRequest",
+      "name": "删除 TWeSee 人员",
+      "output": "DeleteTWeSeePersonResponse",
       "status": "online"
     },
     "DeleteTWeSeeTasksByCondition": {
@@ -889,6 +910,20 @@
       "output": "DescribeTWeSeeConfigResponse",
       "status": "online"
     },
+    "DescribeTWeSeeFace": {
+      "document": "查询指定 TWeSee 人脸详情。",
+      "input": "DescribeTWeSeeFaceRequest",
+      "name": "查询 TWeSee 人脸详情",
+      "output": "DescribeTWeSeeFaceResponse",
+      "status": "online"
+    },
+    "DescribeTWeSeePerson": {
+      "document": "查询指定 TWeSee 人员详情及其代表人脸。",
+      "input": "DescribeTWeSeePersonRequest",
+      "name": "查询 TWeSee 人员详情",
+      "output": "DescribeTWeSeePersonResponse",
+      "status": "online"
+    },
     "DescribeTWeSeePostPaidService": {
       "document": "查询 TWeSee 后付费服务",
       "input": "DescribeTWeSeePostPaidServiceRequest",
@@ -1190,6 +1225,13 @@
       "output": "GetWechatDeviceTicketResponse",
       "status": "online"
     },
+    "ImportTWeSeeFaces": {
+      "document": "检测图片中的人脸，并返回可用于人员管理的人脸元数据。",
+      "input": "ImportTWeSeeFacesRequest",
+      "name": "导入 TWeSee 人脸",
+      "output": "ImportTWeSeeFacesResponse",
+      "status": "online"
+    },
     "InheritCloudStorageUser": {
       "document": "继承云存用户",
       "input": "InheritCloudStorageUserRequest",
@@ -1293,6 +1335,13 @@
       "input": "ListTWeSeeCallbackRequest",
       "name": "查询 TWeSee 回调目标列表",
       "output": "ListTWeSeeCallbackResponse",
+      "status": "online"
+    },
+    "ListTWeSeePersons": {
+      "document": "查询指定设备的 TWeSee 人员列表。",
+      "input": "ListTWeSeePersonsRequest",
+      "name": "查询 TWeSee 人员列表",
+      "output": "ListTWeSeePersonsResponse",
       "status": "online"
     },
     "ListTWeSeeTasks": {
@@ -1419,6 +1468,20 @@
       "input": "ModifyTWeSeeConfigRequest",
       "name": "修改 TWeSee 配置",
       "output": "ModifyTWeSeeConfigResponse",
+      "status": "online"
+    },
+    "ModifyTWeSeeFace": {
+      "document": "将 TWeSee 人脸关联到指定人员，或修改其代表人脸状态。",
+      "input": "ModifyTWeSeeFaceRequest",
+      "name": "修改 TWeSee 人脸",
+      "output": "ModifyTWeSeeFaceResponse",
+      "status": "online"
+    },
+    "ModifyTWeSeePerson": {
+      "document": "修改指定 TWeSee 人员的名称或记忆状态。Name、IsRemembered 至少传入一项，不支持取消持久记忆。",
+      "input": "ModifyTWeSeePersonRequest",
+      "name": "修改 TWeSee 人员",
+      "output": "ModifyTWeSeePersonResponse",
       "status": "online"
     },
     "ModifyTWeSeeSubscription": {
@@ -5904,6 +5967,79 @@
       ],
       "type": "object"
     },
+    "CreateTWeSeePersonRequest": {
+      "document": "CreateTWeSeePerson请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人员名称，最多 64 个字符",
+          "example": "爸爸",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人脸 ID 列表，最多 5 个",
+          "example": "[\"face-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"]",
+          "member": "string",
+          "name": "FaceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeSeePersonResponse": {
+      "document": "CreateTWeSeePerson返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人员信息",
+          "example": "无",
+          "member": "SeePersonInfo",
+          "name": "Person",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTWeSeePostPaidServiceRequest": {
       "document": "CreateTWeSeePostPaidService请求参数结构体",
       "members": [
@@ -7673,6 +7809,123 @@
     },
     "DeleteTWeSeeCallbackResponse": {
       "document": "DeleteTWeSeeCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeSeeFaceRequest": {
+      "document": "DeleteTWeSeeFace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人脸 ID",
+          "example": "face-dddddddd-eeee-ffff-0000-111111111111",
+          "member": "string",
+          "name": "FaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeSeeFaceResponse": {
+      "document": "DeleteTWeSeeFace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeSeePersonRequest": {
+      "document": "DeleteTWeSeePerson请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人员 ID",
+          "example": "person-11111111-2222-3333-4444-555555555555",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否同时删除关联人脸，默认值为 false。人员仍有关联人脸时可设为 true 同步删除",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteFaces",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeSeePersonResponse": {
+      "document": "DeleteTWeSeePerson返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12236,6 +12489,143 @@
       ],
       "type": "object"
     },
+    "DescribeTWeSeeFaceRequest": {
+      "document": "DescribeTWeSeeFace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人脸 ID",
+          "example": "face-cccccccc-dddd-eeee-ffff-000000000000",
+          "member": "string",
+          "name": "FaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeFaceResponse": {
+      "document": "DescribeTWeSeeFace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人脸元数据",
+          "example": "无",
+          "member": "SeeFaceInfo",
+          "name": "Face",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeePersonRequest": {
+      "document": "DescribeTWeSeePerson请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人员 ID",
+          "example": "person-11111111-2222-3333-4444-555555555555",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回的代表人脸数量，取值范围为 1 到 5，默认值为 1",
+          "example": "3",
+          "member": "uint64",
+          "name": "FaceLimit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeePersonResponse": {
+      "document": "DescribeTWeSeePerson返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人员信息",
+          "example": "无",
+          "member": "SeePersonInfo",
+          "name": "Person",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTWeSeePostPaidServiceRequest": {
       "document": "DescribeTWeSeePostPaidService请求参数结构体",
       "members": [
@@ -16478,6 +16868,80 @@
       ],
       "usage": "both"
     },
+    "ImportTWeSeeFacesRequest": {
+      "document": "ImportTWeSeeFaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片 URL，支持 HTTP(S) URL 或 JPG、PNG、BMP 格式的 data URL，图片大小不超过 5 MiB",
+          "example": "https://example.com/photos/group.jpg",
+          "member": "string",
+          "name": "ImageURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportTWeSeeFacesResponse": {
+      "document": "ImportTWeSeeFaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测到的人脸列表",
+          "example": "无",
+          "member": "SeeFaceInfo",
+          "name": "Faces",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次人脸导入任务 ID",
+          "example": "ft-123e4567-e89b-12d3-a456-426614174000",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InheritCloudStorageUserRequest": {
       "document": "InheritCloudStorageUser请求参数结构体",
       "members": [
@@ -17364,7 +17828,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入视频 / 图片的 URL",
+          "document": "<p>输入视频 / 图片的 URL</p>",
           "example": "https://****-test-125*****22.cos.ap-guangzhou.myqcloud.com/********.jpg",
           "member": "string",
           "name": "InputURL",
@@ -17373,7 +17837,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "document": "<p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li></ul>",
           "example": "IMG_COMP",
           "member": "string",
           "name": "ServiceType",
@@ -17382,7 +17846,7 @@
         },
         {
           "disabled": false,
-          "document": "任务元数据",
+          "document": "<p>任务元数据</p>",
           "example": "无",
           "member": "SeeTaskMetadata",
           "name": "Metadata",
@@ -17391,7 +17855,7 @@
         },
         {
           "disabled": false,
-          "document": "视觉理解配置项",
+          "document": "<p>视觉理解配置项</p>",
           "example": "无",
           "member": "SeeComprehensionConfig",
           "name": "ComprehensionConfig",
@@ -17400,7 +17864,7 @@
         },
         {
           "disabled": false,
-          "document": "等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。",
+          "document": "<p>等待结果的超时时间（单位：秒）。填 0 表示无需等待结果。最大超时时长 25 秒，默认超时时长 20 秒。</p>",
           "example": "20",
           "member": "int64",
           "name": "WaitResultTimeout",
@@ -17409,7 +17873,7 @@
         },
         {
           "disabled": false,
-          "document": "回调目标 ID",
+          "document": "<p>回调目标 ID</p>",
           "example": "cb-n9sl1wur",
           "member": "string",
           "name": "CallbackId",
@@ -17424,7 +17888,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "<p>任务 ID</p>",
           "example": "comp-12e89917-c932-c27d-977f-bd16cc5c3b92",
           "member": "string",
           "name": "TaskId",
@@ -17434,7 +17898,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。可能取值：\n\n- `1`：失败\n- `2`：空结果\n- `3`：有效结果\n- `4`：处理中",
+          "document": "<p>任务状态。可能取值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li><li><code>4</code>：处理中</li></ul>",
           "example": "3",
           "member": "uint64",
           "name": "Status",
@@ -17444,7 +17908,7 @@
         },
         {
           "disabled": false,
-          "document": "视觉理解结果",
+          "document": "<p>视觉理解结果</p>",
           "example": "无",
           "member": "SeeComprehensionResult",
           "name": "ComprehensionResult",
@@ -17454,7 +17918,7 @@
         },
         {
           "disabled": false,
-          "document": "完成该任务所消耗的基础能力额度",
+          "document": "<p>完成该任务所消耗的基础能力额度</p>",
           "example": "1",
           "member": "int64",
           "name": "CostBasic",
@@ -17464,7 +17928,7 @@
         },
         {
           "disabled": false,
-          "document": "完成该任务所消耗的高级能力额度",
+          "document": "<p>完成该任务所消耗的高级能力额度</p>",
           "example": "0",
           "member": "int64",
           "name": "CostAdvanced",
@@ -18693,6 +19157,127 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTWeSeePersonsRequest": {
+      "document": "ListTWeSeePersons请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取数量，取值范围为 1 到 100",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取偏移，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每个人员返回的代表人脸数量，取值范围为 1 到 5，默认值为 1",
+          "example": "3",
+          "member": "uint64",
+          "name": "FaceLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "人员记忆状态。true：仅查询持久记忆人员；false：仅查询非持久记忆人员；不传时查询全部人员",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRemembered",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTWeSeePersonsResponse": {
+      "document": "ListTWeSeePersons返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次请求的分页数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次请求的分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人员列表",
+          "example": "无",
+          "member": "SeePersonInfo",
+          "name": "Persons",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的人员总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -20272,6 +20857,160 @@
     },
     "ModifyTWeSeeConfigResponse": {
       "document": "ModifyTWeSeeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeeFaceRequest": {
+      "document": "ModifyTWeSeeFace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人员 ID",
+          "example": "person-11111111-2222-3333-4444-555555555555",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人脸 ID",
+          "example": "face-eeeeeeee-ffff-0000-1111-222222222222",
+          "member": "string",
+          "name": "FaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否设为代表人脸。关联未归属的人脸时，默认值为 true",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPrototype",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeeFaceResponse": {
+      "document": "ModifyTWeSeeFace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人脸元数据",
+          "example": "无",
+          "member": "SeeFaceInfo",
+          "name": "Face",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeePersonRequest": {
+      "document": "ModifyTWeSeePerson请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "PRODUCTID1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人员 ID",
+          "example": "person-66666666-7777-8888-9999-000000000000",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID，默认值为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否标记为持久记忆。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRemembered",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "人员名称，最多 64 个字符",
+          "example": "妈妈",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeePersonResponse": {
+      "document": "ModifyTWeSeePerson返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23375,6 +24114,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启人脸检测</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableFaceDetection",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>画面旋转角度</p><p>枚举值：</p><ul><li>0： 不旋转</li><li>90： 顺时针旋转90度</li><li>-90： 逆时针旋转90度</li><li>180： 旋转180度</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "InputRotateDegree",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -23563,6 +24324,154 @@
       ],
       "usage": "both"
     },
+    "SeeFaceInfo": {
+      "document": "TWeSee 人脸元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人脸框坐标，依次为左、上、右、下，取值范围为 0 到 1",
+          "example": "[0.1,0.2,0.42,0.68]",
+          "member": "float",
+          "name": "BoundingBox",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸 ID",
+          "example": "face-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+          "member": "string",
+          "name": "FaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸裁剪图 URL",
+          "example": "https://example.com/face.jpg",
+          "member": "string",
+          "name": "CropImageURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为代表人脸",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPrototype",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人员 ID",
+          "example": "person-11111111-2222-3333-4444-555555555555",
+          "member": "string",
+          "name": "PersonId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建来源。0：自动识别；1：图片导入",
+          "example": "0",
+          "member": "uint64",
+          "name": "Source",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸所在画面的毫秒级 UNIX 时间戳",
+          "example": "1710000000123",
+          "member": "int64",
+          "name": "TimestampMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeFaceRecognitionResult": {
+      "document": "TWeSee 人脸识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别到的人员列表",
+          "example": "无",
+          "member": "SeeTaskPersonInfo",
+          "name": "Persons",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeePersonInfo": {
+      "document": "TWeSee 人员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代表人脸列表",
+          "example": "无",
+          "member": "SeeFaceInfo",
+          "name": "Faces",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已标记为持久记忆",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRemembered",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人员名称",
+          "example": "妈妈",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人员 ID",
+          "example": "person-11111111-2222-3333-4444-555555555555",
+          "member": "string",
+          "name": "PersonId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建来源。0：自动识别；1：用户创建",
+          "example": "0",
+          "member": "uint64",
+          "name": "Source",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SeeStatItem": {
       "document": "TWeSee 统计数据点",
       "members": [
@@ -23603,6 +24512,52 @@
           "member": "int64",
           "name": "CostAdvanced",
           "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeTaskFaceInfo": {
+      "document": "TWeSee 任务人脸元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人脸裁剪图下载 URL，仅在请求 FileURLExpireTime 时返回",
+          "example": "https://example.com/face.jpg",
+          "member": "string",
+          "name": "CropImageURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸 ID",
+          "example": "face-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+          "member": "string",
+          "name": "FaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人员 ID",
+          "example": "person-11111111-2222-3333-4444-555555555555",
+          "member": "string",
+          "name": "PersonId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸所在画面的毫秒级 UNIX 时间戳",
+          "example": "1710000000123",
+          "member": "int64",
+          "name": "TimestampMs",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -23698,6 +24653,16 @@
           "example": "无",
           "member": "SeeDetectContinuousResult",
           "name": "DetectContinuousResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>人脸检测结果</p>",
+          "example": "无",
+          "member": "SeeFaceRecognitionResult",
+          "name": "FaceRecognitionResult",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -23846,6 +24811,62 @@
         }
       ],
       "usage": "both"
+    },
+    "SeeTaskPersonInfo": {
+      "document": "TWeSee 任务人员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该人员在任务中的人脸列表",
+          "example": "无",
+          "member": "SeeTaskFaceInfo",
+          "name": "Faces",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已标记为持久记忆",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRemembered",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人员名称",
+          "example": "爸爸",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人员 ID",
+          "example": "person-11111111-2222-3333-4444-555555555555",
+          "member": "string",
+          "name": "PersonId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建来源。0：自动识别；1：用户创建",
+          "example": "1",
+          "member": "uint64",
+          "name": "Source",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ShareDeviceToUserRequest": {
       "document": "ShareDeviceToUser请求参数结构体",

@@ -414,6 +414,14 @@
         "title": "创建 TWeSee COS 直传凭据：自定义设备"
       }
     ],
+    "CreateTWeSeePerson": [
+      {
+        "document": "创建人员并关联已导入的人脸。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeePerson\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"Name\": \"爸爸\",\n    \"FaceIds\": [\n        \"face-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Person\": {\n            \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n            \"Name\": \"爸爸\",\n            \"Source\": 1,\n            \"IsRemembered\": true,\n            \"Faces\": [\n                {\n                    \"FaceId\": \"face-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\",\n                    \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n                    \"Source\": 1,\n                    \"IsPrototype\": true,\n                    \"TimestampMs\": 1710000000123,\n                    \"BoundingBox\": [\n                        0.1,\n                        0.2,\n                        0.42,\n                        0.68\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"req-create-person-1\"\n    }\n}",
+        "title": "创建 TWeSee 人员"
+      }
+    ],
     "CreateTWeSeePostPaidService": [
       {
         "document": "",
@@ -682,6 +690,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeCallback\n<公共请求参数>\n\n{\n    \"CallbackId\": \"callback-iak6g98u\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c190696-3fd7-43c6-bb8b-5f484d07b0cf\"\n    }\n}",
         "title": "删除 TWeSee 回调目标"
+      }
+    ],
+    "DeleteTWeSeeFace": [
+      {
+        "document": "删除指定人脸。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeFace\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"FaceId\": \"face-dddddddd-eeee-ffff-0000-111111111111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-delete-face-1\"\n    }\n}",
+        "title": "删除 TWeSee 人脸"
+      }
+    ],
+    "DeleteTWeSeePerson": [
+      {
+        "document": "删除人员及其关联人脸。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeePerson\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n    \"DeleteFaces\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-delete-person-1\"\n    }\n}",
+        "title": "删除 TWeSee 人员"
       }
     ],
     "DeleteTWeSeeTasksByCondition": [
@@ -1220,6 +1244,22 @@
         "title": "查询 TWeSee 配置"
       }
     ],
+    "DescribeTWeSeeFace": [
+      {
+        "document": "查询指定人脸详情。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeFace\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"FaceId\": \"face-cccccccc-dddd-eeee-ffff-000000000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Face\": {\n            \"FaceId\": \"face-cccccccc-dddd-eeee-ffff-000000000000\",\n            \"PersonId\": \"person-66666666-7777-8888-9999-000000000000\",\n            \"Source\": 0,\n            \"IsPrototype\": true,\n            \"TimestampMs\": 1710000000123,\n            \"BoundingBox\": [\n                0.1,\n                0.2,\n                0.42,\n                0.68\n            ]\n        },\n        \"RequestId\": \"req-describe-face-1\"\n    }\n}",
+        "title": "查询 TWeSee 人脸详情"
+      }
+    ],
+    "DescribeTWeSeePerson": [
+      {
+        "document": "查询人员详情及其代表人脸。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeePerson\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n    \"FaceLimit\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"Person\": {\n            \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n            \"Name\": \"爸爸\",\n            \"Source\": 1,\n            \"IsRemembered\": true,\n            \"Faces\": []\n        },\n        \"RequestId\": \"req-describe-person-1\"\n    }\n}",
+        "title": "查询 TWeSee 人员详情"
+      }
+    ],
     "DescribeTWeSeePostPaidService": [
       {
         "document": "",
@@ -1582,6 +1622,14 @@
         "title": "成功示例"
       }
     ],
+    "ImportTWeSeeFaces": [
+      {
+        "document": "检测图片中的人脸。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportTWeSeeFaces\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"ImageURL\": \"https://example.com/photos/group.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"ft-123e4567-e89b-12d3-a456-426614174000\",\n        \"Faces\": [\n            {\n                \"FaceId\": \"face-eeeeeeee-ffff-0000-1111-222222222222\",\n                \"Source\": 1,\n                \"IsPrototype\": false,\n                \"TimestampMs\": 1710000000123,\n                \"BoundingBox\": [\n                    0.1,\n                    0.2,\n                    0.3,\n                    0.6\n                ]\n            }\n        ],\n        \"RequestId\": \"req-import-faces-1\"\n    }\n}",
+        "title": "导入 TWeSee 人脸"
+      }
+    ],
     "InheritCloudStorageUser": [
       {
         "document": "",
@@ -1786,6 +1834,14 @@
         "title": "查询 TWeSee 回调目标列表"
       }
     ],
+    "ListTWeSeePersons": [
+      {
+        "document": "查询已标记为持久记忆的人员。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTWeSeePersons\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"IsRemembered\": true,\n    \"FaceLimit\": 3,\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 20,\n        \"Persons\": [\n            {\n                \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n                \"Name\": \"爸爸\",\n                \"Source\": 1,\n                \"IsRemembered\": true,\n                \"Faces\": []\n            }\n        ],\n        \"RequestId\": \"req-list-persons-1\"\n    }\n}",
+        "title": "查询 TWeSee 人员列表"
+      }
+    ],
     "ListTWeSeeTasks": [
       {
         "document": "",
@@ -1952,6 +2008,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"EnableSummary\": true,\n    \"EnableSearch\": true,\n    \"SummaryConfig\": {\n        \"DetectTypes\": [\n            \"baby_crying\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
         "title": "对指定设备开启 TWeSee 摘要能力并添加更多的检测标签"
+      }
+    ],
+    "ModifyTWeSeeFace": [
+      {
+        "document": "关联人脸并设置代表人脸状态。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeFace\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"FaceId\": \"face-eeeeeeee-ffff-0000-1111-222222222222\",\n    \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n    \"IsPrototype\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Face\": {\n            \"FaceId\": \"face-eeeeeeee-ffff-0000-1111-222222222222\",\n            \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n            \"Source\": 1,\n            \"IsPrototype\": false,\n            \"TimestampMs\": 1710000000123,\n            \"BoundingBox\": [\n                0.12,\n                0.18,\n                0.48,\n                0.72\n            ]\n        },\n        \"RequestId\": \"req-modify-face-1\"\n    }\n}",
+        "title": "修改 TWeSee 人脸"
+      }
+    ],
+    "ModifyTWeSeePerson": [
+      {
+        "document": "修改人员名称并标记为持久记忆。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeePerson\n<公共请求参数>\n\n{\n    \"ProductId\": \"PRODUCTID1\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"PersonId\": \"person-66666666-7777-8888-9999-000000000000\",\n    \"Name\": \"妈妈\",\n    \"IsRemembered\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-modify-person-1\"\n    }\n}",
+        "title": "修改 TWeSee 人员"
       }
     ],
     "ModifyTWeSeeSubscription": [

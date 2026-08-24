@@ -1,45 +1,47 @@
-**Example 1: 查询DDoS攻击时序数据**
+**Example 1: 查询 DDoS 攻击带宽时序数据**
 
-
+在 ZoneId 为 zone-2psss4drfg29 的站点下，以分钟为数据统计粒度，查询被攻击目的 IP 的 DDoS 攻击带宽时序数据。
 
 Input: 
 
 ```
 tccli teo DescribeDDoSAttackData --cli-unfold-argument  \
-    --MetricNames ddos_attackMaxBandwidth \
-    --Interval min \
+    --StartTime 2025-08-22T00:00:00+00:00 \
+    --EndTime 2025-08-22T00:00:59+00:00 \
+    --MetricNames ddos_attackBandwidth \
+    --ZoneIds zone-2psss4drfg29 \
     --PolicyIds 1706 \
-    --ZoneIds zone-21xfqlh4qjee \
-    --StartTime 2022-08-22T00:00:00+00:00 \
-    --EndTime 2022-08-23T00:00:00+00:00 \
-    --Area overseas
+    --Interval min \
+    --Filters.0.Key ddos-attack-dip \
+    --Filters.0.Operator equals \
+    --Filters.0.Value 1**.2*.1**.1*
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "Data": [
             {
+                "Key": "ddos_attackBandwidth",
                 "Value": [
                     {
-                        "Max": 100,
-                        "Metric": "ddos_attackMaxBandwidth",
                         "Avg": 100,
                         "Detail": [
                             {
-                                "Timestamp": 1660010100,
+                                "Timestamp": 1755820800,
                                 "Value": 100
                             }
                         ],
+                        "Max": 100,
+                        "Metric": "ddos_attackBandwidth",
                         "Sum": 100
                     }
-                ],
-                "Key": "ddos_attackMaxBandwidth"
+                ]
             }
         ],
-        "RequestId": "a79e60f8-34cc-4ee5-a7f9-a24adb572c68"
+        "TotalCount": 1,
+        "RequestId": "60b91eaf-e560-4b59-a388-61d85b637f34"
     }
 }
 ```

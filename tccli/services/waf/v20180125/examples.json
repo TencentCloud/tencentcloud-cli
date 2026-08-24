@@ -1150,6 +1150,14 @@
         "title": "销毁CLS投递流任务"
       }
     ],
+    "EnableClientMsg": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableClientMsg\n<公共请求参数>\n\n{\n    \"Domain\": \"100.com\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RetCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "EnableClientMsg"
+      }
+    ],
     "EnableRateLimitsV2": [
       {
         "document": "",
@@ -1455,7 +1463,7 @@
     "ModifyDomainIpv6Status": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainIpv6Status\n<公共请求参数>\n\n{\n    \"InstanceId\": \"waf_2kw60zgy0908e8j3\",\n    \"Domain\": \"randygz2.qcloudwaf.com\",\n    \"DomainId\": \"7d58ebf3db7e5f7e8f91eb017c6a7b31\",\n    \"Status\": 2\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainIpv6Status\n<公共请求参数>\n\n{\n    \"InstanceId\": \"waf_2kw60zgy0908e8j3\",\n    \"Domain\": \"randygz2.qcloudwaf.com\",\n    \"DomainId\": \"7d58ebf3db7e5f7e8f91eb017c6a7b31\",\n    \"Status\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e73994cd-f205-4f64-9878-aff70d81655d\",\n        \"Ipv6Status\": 1\n    }\n}",
         "title": "切换域名ipv6开关"
       }
@@ -1766,6 +1774,14 @@
         "input": "https://waf.tencentcloudapi.com/?Action=QueryBypassAllStatus\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"261736d8cf924fc33217cf7f7ab83f19\",\n        \"Result\": false\n    }\n}",
         "title": "查询该用户是否被加入了全局的bypass列表"
+      }
+    ],
+    "QueryClientMsg": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryClientMsg\n<公共请求参数>\n\n{\n    \"Domain\": \"100.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b71d47f4-5882-4e59-9624-7041bd7314a6\",\n        \"Status\": 0\n    }\n}",
+        "title": "QueryClientMsg"
       }
     ],
     "RefreshAccessCheckResult": [

@@ -398,6 +398,157 @@
       ],
       "usage": "out"
     },
+    "AIGWAKSKCredentialConfig": {
+      "document": "aksk类型密钥",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AccessKeyId</p>",
+          "example": "FKI****EE8",
+          "member": "string",
+          "name": "AccessKeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SecretAccessKey</p>",
+          "example": "fak****ake",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWAuthModelScopeItem": {
+      "document": "AI网关授权模型访问范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>授权主体 ID，如消费者组、消费者</p>",
+          "example": "cg-393266dc6f5f2c",
+          "member": "string",
+          "name": "PrincipalId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权主体名称，如消费者组、消费者</p>",
+          "example": "deepx",
+          "member": "string",
+          "name": "PrincipalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型范围原始配置</p>",
+          "example": "无",
+          "member": "AIGWModelScope",
+          "name": "ModelScope",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MAG 已展开、保序去重后的可用模型名称列表</p>",
+          "example": "[\"deepseek-v4-flash\"]",
+          "member": "string",
+          "name": "EffectiveModelNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWBasicCredentialConfig": {
+      "document": "AI网关 Basic Auth 凭证物料配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密码</p>",
+          "example": "my-secret*********",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWBearerTokenCredentialConfig": {
+      "document": "AI网关 Bearer Token 凭证配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Token凭证</p>",
+          "example": "sk-test-demo-**************",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWCAMCredentialConfig": {
+      "document": "CAM类型密钥",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SecretId</p>",
+          "example": "fak****-ak",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SecretKey</p>",
+          "example": "fak****-sk",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AIGWCacheAwareRouteCandidate": {
       "document": "缓存感知路由候选模型服务",
       "members": [
@@ -469,6 +620,34 @@
       ],
       "usage": "out"
     },
+    "AIGWConsumerModelScope": {
+      "document": "AI网关消费者模型范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消费者模型生效范围类型</p><p>枚举值：</p><ul><li>INHERIT： 继承所在消费者组的生效模型范围</li><li>ALLOWLIST： 自定义白名单，必须 ⊆ 所在组针对该资源的生效模型集合</li></ul>",
+          "example": "ALLOWLIST",
+          "member": "string",
+          "name": "ScopeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型授权白名单列表</p>",
+          "example": "[\"claude-haiku-4-5\"]",
+          "member": "string",
+          "name": "AllowList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AIGWCrossServiceFallbackConfig": {
       "document": "跨服务降级配置",
       "members": [
@@ -509,12 +688,12 @@
       "usage": "both"
     },
     "AIGWCustomDesensitizeRule": {
-      "document": "AI 网关自定义脱敏规则（A 层 / B 层共用结构体，MaskFormat 含义随所属层不同）",
+      "document": "AI 网关自定义脱敏规则",
       "members": [
         {
           "disabled": false,
-          "document": "<p>自定义脱敏规则名称</p>",
-          "example": "gonghao",
+          "document": "<p>规则名称，同一配置内唯一，最长 64</p>",
+          "example": "员工工号",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -524,8 +703,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义脱敏规则匹配正则</p>",
-          "example": "E\\d{6}",
+          "document": "<p>RE2 兼容的正则表达式</p>",
+          "example": "EMP-[0-9]{6}",
           "member": "string",
           "name": "Pattern",
           "output_required": true,
@@ -535,8 +714,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义脱敏规则掩码</p>",
-          "example": "[REDACTED_EMP]",
+          "document": "<p>日志场景为掩码格式，转发场景为占位符；最长 64</p>",
+          "example": "E***",
           "member": "string",
           "name": "MaskFormat",
           "output_required": true,
@@ -546,13 +725,41 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义脱敏规则开关</p>",
+          "document": "<p>单条自定义规则是否启用</p>",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWCustomHeaderCredentialConfig": {
+      "document": "AI网关自定义 Header 凭证配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Header名</p>",
+          "example": "X-App-Token",
+          "member": "string",
+          "name": "HeaderName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Header值</p>",
+          "example": "my-custom-****************",
+          "member": "string",
+          "name": "HeaderValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -587,11 +794,11 @@
       "usage": "both"
     },
     "AIGWForwardDesensitizeConfig": {
-      "document": "AI 网关 A 层转发脱敏配置（请求转发到 LLM 供应商前对 messages 替换为占位符）",
+      "document": "AI 网关转发脱敏配置",
       "members": [
         {
           "disabled": false,
-          "document": "<p>转发脱敏开关</p>",
+          "document": "<p>转发脱敏配置总开关</p>",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -602,44 +809,44 @@
         },
         {
           "disabled": false,
-          "document": "<p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 电子邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>",
-          "example": "[\"Phone\"]",
+          "document": "<p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>",
+          "example": "[\"Phone\", \"Email\"]",
           "member": "string",
           "name": "PredefinedRuleTypes",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<p>自定义脱敏规则</p>",
+          "document": "<p>自定义规则，最多 20 条</p>",
           "example": "无",
           "member": "AIGWCustomDesensitizeRule",
           "name": "CustomRules",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<p>掩码</p>",
-          "example": "[{类型名}]",
+          "document": "<p>内置规则占位符格式，最长 32；为空时默认 [{type}]</p>",
+          "example": "[{type}]",
           "member": "string",
           "name": "PlaceholderFormat",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<p>脱敏异常处理</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>Skip： 跳过</li></ul>",
+          "document": "<p>脱敏失败处理：Reject（拒绝请求）或 Skip（跳过脱敏并转发）</p>",
           "example": "Reject",
           "member": "string",
           "name": "OnFailure",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -985,6 +1192,67 @@
           "name": "Operator",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWLLMHealthCheckSetting": {
+      "document": "AI网关LLM健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检查失败阈值</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthCheckFailThreshold",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检查间隔</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "HealthCheckIntervalSecond",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检查恢复阈值</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthCheckRecoverThreshold",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检查超时时间</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "HealthCheckTimeout",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检查路径</p>",
+          "example": "/health",
+          "member": "string",
+          "name": "HealthCheckPath",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1392,6 +1660,23 @@
       ],
       "usage": "both"
     },
+    "AIGWLoadBalanceConfig": {
+      "document": "负载均衡配置，仅服务来源（ServiceSource，SourceId 非空）场景生效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>负载均衡类型</p><p>枚举值：</p><ul><li>RoundRobin： 轮询</li><li>WeightedRoundRobin： 加权轮询</li><li>LeastConnections： 最少连接</li><li>Random： 随机</li></ul><p>默认值：RoundRobin</p>",
+          "example": "WeightedRoundRobin",
+          "member": "string",
+          "name": "Algorithm",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AIGWLogConfig": {
       "document": "AI 网关日志输出配置",
       "members": [
@@ -1465,11 +1750,11 @@
       "usage": "both"
     },
     "AIGWLogDesensitizeConfig": {
-      "document": "AI 网关 B 层日志脱敏配置（写入 LLM Log 前对 payload 掩码）",
+      "document": "AI 网关日志脱敏配置",
       "members": [
         {
           "disabled": false,
-          "document": "<p>日志脱敏开关</p>",
+          "document": "<p>日志脱敏配置总开关</p>",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -1480,33 +1765,33 @@
         },
         {
           "disabled": false,
-          "document": "<p>预定义规则类型</p><p>枚举值：</p><ul><li>Phone： 电话号码</li><li>IdCard： 身份证号</li><li>BankCard： 银行卡号</li><li>Email： 邮箱地址</li><li>IP： IP地址</li><li>Name： 姓名</li></ul>",
-          "example": "[\"Phone\"]",
+          "document": "<p>内置规则类型：Phone、IdCard、BankCard、Email、IP、Name</p>",
+          "example": "[\"Phone\", \"Email\"]",
           "member": "string",
           "name": "PredefinedRuleTypes",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<p>自定义脱敏规则</p>",
+          "document": "<p>自定义规则，最多 20 条</p>",
           "example": "无",
           "member": "AIGWCustomDesensitizeRule",
           "name": "CustomRules",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<p>日志脱敏范围</p><p>枚举值：</p><ul><li>Request： 请求</li><li>Response： 响应</li></ul>",
-          "example": "[\"Request\"]",
+          "document": "<p>脱敏方向：Request、Response；为空时默认两者</p>",
+          "example": "[\"Request\", \"Response\"]",
           "member": "string",
           "name": "Scope",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -1735,6 +2020,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启保留原Host功能</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PreserveHost",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -2092,6 +2388,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TLS认证配置</p>",
+          "example": "无",
+          "member": "AIGWUpstreamTLSConfig",
+          "name": "TLSConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2230,6 +2537,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TLS配置</p>",
+          "example": "无",
+          "member": "AIGWUpstreamTLSConfig",
+          "name": "TLSConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2257,6 +2575,45 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWModelScope": {
+      "document": "AI网关模型可用范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>范围类型</p><p>枚举值：</p><ul><li>ALL： 允许全部访问</li><li>ALLOWLIST： 允许访问的模型列表</li><li>MAG： 模型访问组</li></ul>",
+          "example": "MAG",
+          "member": "string",
+          "name": "ScopeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>允许访问的模型列表，ScopeType=ALLOWLIST时设置</p>",
+          "example": "[\"deepseek-v4-pro\"]",
+          "member": "string",
+          "name": "AllowList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型访问组，ScopeType=MAG时设置</p>",
+          "example": "[\"mag-ba1a8bd0bada106d\"]",
+          "member": "string",
+          "name": "MagRefs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2539,6 +2896,34 @@
       ],
       "usage": "both"
     },
+    "AIGWQueryParamCredentialConfig": {
+      "document": "AI网关 Query Param 凭证物料配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数名</p>",
+          "example": "api_key",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数值</p>",
+          "example": "my-query-***************",
+          "member": "string",
+          "name": "ParamValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AIGWRedisConfig": {
       "document": "精确缓存 redis 配置",
       "members": [
@@ -2611,6 +2996,34 @@
       ],
       "usage": "both"
     },
+    "AIGWRerankMaxDocumentsConfig": {
+      "document": "AI 网关Rerank场景最大文档数限制配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>启用最大文档数限制</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMaxDocuments",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Rerank场景最大文档数限制</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "MaxDocumentValue",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AIGWRouteModelServiceConfig": {
       "document": "AI 网关指定模型路由（暂时只用在Token长度路由时的子路由选择）",
       "members": [
@@ -2623,6 +3036,78 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWSensitiveWordRoute": {
+      "document": "AI GW Sensitive Word Route",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型API ID列表</p>",
+          "example": "[\"a6ac4163b6544e1eb95c7bc422c32b1b\"]",
+          "member": "string",
+          "name": "ModelServiceRefs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询接口会返回模型API的Name列表</p>",
+          "example": "[\"backup-service\"]",
+          "member": "string",
+          "name": "ModelServiceNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由方式</p><p>枚举值：</p><ul><li>Weighted： 权重路由</li><li>ModelName： 按模型名称路由</li></ul>",
+          "example": "[\"Weighted\"]",
+          "member": "string",
+          "name": "SelectedTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权重路由配置</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy",
+          "name": "WeightedConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由名称路由配置</p>",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy",
+          "name": "ModelNameConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2769,6 +3254,45 @@
         }
       ],
       "usage": "out"
+    },
+    "AIGWUpstreamTLSConfig": {
+      "document": "AI网关Upstream TLS配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否校验上游服务端证书</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TLSVerify",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端证书 ID（mTLS 用）</p>",
+          "example": "bf6ff0bf-737e-49ef-85ab-2ee71c45ac14",
+          "member": "string",
+          "name": "ClientCertId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>信任的 CA 证书 ID 列表</p>",
+          "example": "[\"c4b5d580-1a93-4747-a120-5b6eef6682f7\"]",
+          "member": "string",
+          "name": "UpstreamCACertIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AddCloudNativeAPIGatewayConsumerGroupAuthRequest": {
       "document": "AddCloudNativeAPIGatewayConsumerGroupAuth请求参数结构体",
@@ -2992,6 +3516,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>",
+          "example": "High",
+          "member": "string",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "消费者描述",
           "member": "string",
@@ -3011,6 +3546,39 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li></ul>",
+          "example": "Fail",
+          "member": "string",
+          "name": "SyncStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li><li>Consumer： 消费者</li><li>SecretKey： 密钥</li></ul>",
+          "example": "Private",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步版本</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "SyncedVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3020,7 +3588,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组id",
+          "document": "<p>分组id</p>",
           "example": "cg-xxx",
           "member": "string",
           "name": "ConsumerGroupId",
@@ -3031,7 +3599,7 @@
         },
         {
           "disabled": false,
-          "document": "名字",
+          "document": "<p>名字</p>",
           "example": "消费者组名称",
           "member": "string",
           "name": "Name",
@@ -3042,7 +3610,7 @@
         },
         {
           "disabled": false,
-          "document": "状态Disable/Enable",
+          "document": "<p>状态Disable/Enable</p>",
           "example": "Enable",
           "member": "string",
           "name": "Status",
@@ -3053,7 +3621,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "消费者组描述",
           "member": "string",
           "name": "Description",
@@ -3064,7 +3632,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2023-01-01 10:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -3075,7 +3643,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间 yyyy-MM-dd hh:mm:ss",
+          "document": "<p>更新时间 yyyy-MM-dd hh:mm:ss</p>",
           "example": "2023-01-01 10:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -3086,7 +3654,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的消费者数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的消费者数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "BindCount",
@@ -3094,6 +3662,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Succes： 成功</li></ul>",
+          "example": "Waiting",
+          "member": "string",
+          "name": "SyncStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源已删除</li></ul>",
+          "example": "Private",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步版本</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "SyncedVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3645,7 +4246,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>OAuth凭证配置</p>",
+          "document": "<p>OAuth2凭证配置</p>",
           "example": "无",
           "member": "AIGWOAuthCredentialConfig",
           "name": "OAuthCredentialConfig",
@@ -3667,7 +4268,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>",
+          "document": "<p>Agent 密钥类型</p>",
           "example": "Dify",
           "member": "string",
           "name": "Provider",
@@ -3729,6 +4330,105 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>",
+          "example": "Success",
+          "member": "string",
+          "name": "SyncStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>",
+          "example": "Private",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步版本</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "SyncedVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AK/SK凭证配置</p>",
+          "example": "无",
+          "member": "AIGWAKSKCredentialConfig",
+          "name": "AKSKCredentialConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CAM凭证配置</p>",
+          "example": "无",
+          "member": "AIGWCAMCredentialConfig",
+          "name": "CAMCredentialConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Bearer Token凭证配置</p>",
+          "example": "无",
+          "member": "AIGWBearerTokenCredentialConfig",
+          "name": "BearerTokenCredentialConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Basic Auth凭证配置</p>",
+          "example": "无",
+          "member": "AIGWBasicCredentialConfig",
+          "name": "BasicCredentialConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义Header凭证配置</p>",
+          "example": "无",
+          "member": "AIGWCustomHeaderCredentialConfig",
+          "name": "CustomHeaderCredentialConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义Query参数凭证配置</p>",
+          "example": "无",
+          "member": "AIGWQueryParamCredentialConfig",
+          "name": "QueryParamCredentialConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -3963,6 +4663,50 @@
           "example": "无",
           "member": "AIGWForwardDesensitizeConfig",
           "name": "ForwardDesensitizeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>rerank documents 上限</p>",
+          "example": "无",
+          "member": "AIGWRerankMaxDocumentsConfig",
+          "name": "MaxDocumentsConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感词路由配置</p>",
+          "example": "无",
+          "member": "AIGWSensitiveWordRoute",
+          "name": "SensitiveWordRoute",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组模型范围</p>",
+          "example": "无",
+          "member": "AIGWAuthModelScopeItem",
+          "name": "ConsumerGroupModelScopes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者继承的模型范围</p>",
+          "example": "无",
+          "member": "AIGWConsumerModelScope",
+          "name": "ConsumerInheritModelScope",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -4392,6 +5136,105 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡配置。</p>",
+          "example": "无",
+          "member": "AIGWLoadBalanceConfig",
+          "name": "LoadBalanceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可以发布到广场</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanPublish",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发布状态</p><p>枚举值：</p><ul><li>Unpublished： 未发布</li><li>Published： 已发布</li></ul>",
+          "example": "Unpublished",
+          "member": "string",
+          "name": "PublishStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步状态</p><p>枚举值：</p><ul><li>Success： 成功</li><li>Fail： 失败</li></ul>",
+          "example": "Waiting",
+          "member": "string",
+          "name": "SyncStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>",
+          "example": "Private",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步版本</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "SyncedVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型服务状态</p><p>枚举值：</p><ul><li>Online：  已上线</li><li>Offline： 已下线</li><li>Error： 健康检查异常</li></ul>",
+          "example": "Online",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用健康检查</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查配置</p>",
+          "example": "无",
+          "member": "AIGWLLMHealthCheckSetting",
+          "name": "HealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4615,7 +5458,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关实例id",
+          "document": "<p>网关实例id</p>",
           "example": "gateway-xxx",
           "member": "string",
           "name": "GatewayId",
@@ -4629,6 +5472,15 @@
           "member": "string",
           "name": "Name",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>",
+          "example": "High",
+          "member": "string",
+          "name": "Priority",
+          "required": false,
           "type": "string"
         },
         {
@@ -4671,7 +5523,7 @@
         {
           "disabled": false,
           "document": "<p>网关 id。</p>",
-          "example": "gateway-4eb46023",
+          "example": "gateway-bb346e76",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -4680,7 +5532,7 @@
         {
           "disabled": false,
           "document": "<p>模型 API 名称，最长 60 字符。同一网关下唯一。</p>",
-          "example": "openai_chat",
+          "example": "modelapi",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4707,7 +5559,7 @@
         {
           "disabled": false,
           "document": "<p>关联的模型服务 ID 列表，长度 1-10。</p><p>注：字段名建议改为 ModelServiceIds，当前保留用于兼容。</p>",
-          "example": "[\"d0742b86605340438a8018c658156622\"]",
+          "example": "[\"c6549138344a463a87ae091127471bbe\"]",
           "member": "string",
           "name": "ListModelServiceId",
           "required": true,
@@ -4725,7 +5577,7 @@
         {
           "disabled": false,
           "document": "<p>统一前缀路径（可选）。例如 /v1/openai。</p>",
-          "example": "/v1/openai",
+          "example": "/basepath",
           "member": "string",
           "name": "BasePath",
           "required": false,
@@ -4793,6 +5645,24 @@
           "name": "LogConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Rerank场景最大文档数高级配置</p>",
+          "example": "无",
+          "member": "AIGWRerankMaxDocumentsConfig",
+          "name": "MaxDocumentsConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感词路由配置</p>",
+          "example": "无",
+          "member": "AIGWSensitiveWordRoute",
+          "name": "SensitiveWordRoute",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4813,7 +5683,7 @@
         {
           "disabled": false,
           "document": "<p>模型 API ID，全局唯一标识。</p>",
-          "example": "9006154d-8770-xx",
+          "example": "cae62c8faa894a93b48c4dcfe4a8c80e",
           "member": "string",
           "name": "ModelAPIId",
           "output_required": false,
@@ -5119,6 +5989,15 @@
           "name": "Protocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡配置</p>",
+          "example": "无",
+          "member": "AIGWLoadBalanceConfig",
+          "name": "LoadBalanceConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5274,6 +6153,15 @@
           "name": "HealthCheck",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启保留原Host功能</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PreserveHost",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5474,6 +6362,60 @@
           "name": "SecretValue",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AK/SK凭证配置</p>",
+          "example": "无",
+          "member": "AIGWAKSKCredentialConfig",
+          "name": "AKSKCredentialConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CAM凭证配置</p>",
+          "example": "无",
+          "member": "AIGWCAMCredentialConfig",
+          "name": "CAMCredentialConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Bearer Token凭证配置</p>",
+          "example": "无",
+          "member": "AIGWBearerTokenCredentialConfig",
+          "name": "BearerTokenCredentialConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义Header凭证配置</p>",
+          "example": "无",
+          "member": "AIGWCustomHeaderCredentialConfig",
+          "name": "CustomHeaderCredentialConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义Query参数凭证配置</p>",
+          "example": "无",
+          "member": "AIGWQueryParamCredentialConfig",
+          "name": "QueryParamCredentialConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Basic Auth凭证配置</p>",
+          "example": "无",
+          "member": "AIGWBasicCredentialConfig",
+          "name": "BasicCredentialConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6514,7 +7456,7 @@
         {
           "disabled": false,
           "document": "<p>实例 ID</p>",
-          "example": "gateway-3fbee12c",
+          "example": "gateway-9a766f25",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -6523,7 +7465,7 @@
         {
           "disabled": false,
           "document": "<p>分页大小</p>",
-          "example": "20",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -6537,6 +7479,15 @@
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥凭证ID</p>",
+          "example": "secret-f60091e9e0a43e",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6952,8 +7903,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>过滤参数名</p>",
-          "example": "Name",
+          "document": "过滤参数名",
+          "example": "filter-name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6961,8 +7912,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤参数值</p>",
-          "example": "[\"openai\"]",
+          "document": "过滤参数值",
+          "example": "[]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -7927,7 +8878,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关实例id",
+          "document": "<p>网关实例id</p>",
           "example": "gateway-xxx",
           "member": "string",
           "name": "GatewayId",
@@ -7950,6 +8901,15 @@
           "member": "string",
           "name": "Name",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者优先级</p><p>枚举值：</p><ul><li>High： 高优</li><li>Medium： 中优</li><li>Low： 低优</li></ul>",
+          "example": "High",
+          "member": "string",
+          "name": "Priority",
+          "required": false,
           "type": "string"
         },
         {
@@ -7982,7 +8942,7 @@
         {
           "disabled": false,
           "document": "<p>网关 id。</p>",
-          "example": "gateway-4eb46023",
+          "example": "gateway-bb346e76",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -7991,7 +8951,7 @@
         {
           "disabled": false,
           "document": "<p>模型 API ID，全局唯一标识。</p>",
-          "example": "a1b2c3d4e5f6789012345678901234ab",
+          "example": "cae62c8faa894a93b48c4dcfe4a8c80e",
           "member": "string",
           "name": "ModelAPIId",
           "required": true,
@@ -8000,7 +8960,7 @@
         {
           "disabled": false,
           "document": "<p>模型 API 名称，最长 60 字符。</p>",
-          "example": "openai_chat",
+          "example": "modelapi",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -8009,7 +8969,7 @@
         {
           "disabled": false,
           "document": "<p>统一前缀路径（可选）。例如 /v1/openai。</p>",
-          "example": "/v1/openai",
+          "example": "/basepath2",
           "member": "string",
           "name": "BasePath",
           "required": false,
@@ -8027,7 +8987,7 @@
         {
           "disabled": false,
           "document": "<p>关联的模型服务 ID 列表，长度 1-10。</p>",
-          "example": "[\"d0742b86605340438a8018c658156622\"]",
+          "example": "[\"c6549138344a463a87ae091127471bbe\"]",
           "member": "string",
           "name": "ListModelServiceId",
           "required": false,
@@ -8084,6 +9044,24 @@
           "example": "无",
           "member": "AIGWLogConfig",
           "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI 网关Rerank场景最大文档数限制配置</p>",
+          "example": "无",
+          "member": "AIGWRerankMaxDocumentsConfig",
+          "name": "MaxDocumentsConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感词路由配置</p>",
+          "example": "无",
+          "member": "AIGWSensitiveWordRoute",
+          "name": "SensitiveWordRoute",
           "required": false,
           "type": "object"
         }
@@ -8366,6 +9344,24 @@
           "name": "Protocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义供应商名称</p>",
+          "example": "新名称A",
+          "member": "string",
+          "name": "CustomProviderName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡配置</p>",
+          "example": "无",
+          "member": "AIGWLoadBalanceConfig",
+          "name": "LoadBalanceConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8628,6 +9624,15 @@
           "name": "HealthCheck",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启保留原Host功能</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PreserveHost",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

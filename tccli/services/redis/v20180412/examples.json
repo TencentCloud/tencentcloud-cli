@@ -376,6 +376,14 @@
         "title": "查询实例参数列表"
       }
     ],
+    "DescribeInstancePasswordPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancePasswordPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5x9h****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PasswordPolicy\": {\n            \"Enabled\": true,\n            \"MinDigitCount\": 2,\n            \"MinLength\": 8,\n            \"MinLetterCount\": 2,\n            \"MinSpecialCount\": 2\n        },\n        \"RequestId\": \"8b5dce2d-3bce-468f-bead-d9c91f52fbe1\"\n    }\n}",
+        "title": "查询实例密码复杂度策略"
+      }
+    ],
     "DescribeInstanceSecurityGroup": [
       {
         "document": "查询安全组",

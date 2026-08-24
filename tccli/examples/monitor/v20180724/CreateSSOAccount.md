@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor CreateSSOAccount --cli-unfold-argument  \
-    --InstanceId grafana-abcdefgh \
+    --InstanceId grafana-fs***ad \
     --UserId 100000000 \
     --Role.0.Organization Org \
     --Role.0.Role Admin \
@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "UserId": "*",
+        "UserId": "1000000000",
         "RequestId": "requestid"
     }
 }

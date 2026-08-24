@@ -10005,6 +10005,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群待迁移的VIP</p>",
+          "example": "1**.16.0.6",
+          "member": "string",
+          "name": "OldEsVip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群待迁移的TCP地址</p>",
+          "example": "1**.16.0.12:9300",
+          "member": "string",
+          "name": "OldEsPrivateTcpUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

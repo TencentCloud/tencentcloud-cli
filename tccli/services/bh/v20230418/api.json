@@ -4684,7 +4684,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>需要开通服务的子网ID</p>",
+          "document": "<p>需要开通服务的子网ID，此字段即将废除，请填写DeploySubnets包含的子网</p>",
           "example": "subnet-bhtest",
           "member": "string",
           "name": "SubnetId",
@@ -4693,7 +4693,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>需要开通服务的子网网段</p>",
+          "document": "<p>需要开通服务的子网网段，此字段即将废除，请填写DeploySubnets包含的子网</p>",
           "example": "10.10.10.0/24",
           "member": "string",
           "name": "CidrBlock",
@@ -4720,7 +4720,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>需要开通服务的子网名称</p>",
+          "document": "<p>需要开通服务的子网名称，此字段即将废除，请填写DeploySubnets包含的子网</p>",
           "example": "subnet1",
           "member": "string",
           "name": "SubnetName",
@@ -4783,7 +4783,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>开通堡垒机的子网信息</p>",
+          "document": "<p>开通堡垒机的子网信息，最多支持2个子网</p>",
           "example": "无",
           "member": "ParamInitResourceSubnet",
           "name": "DeploySubnets",
@@ -4819,7 +4819,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>开通内网访问的子网信息</p>",
+          "document": "<p>开通内网访问的子网信息，最多支持2个子网</p>",
           "example": "无",
           "member": "ParamInitResourceSubnet",
           "name": "IntranetSubnets",

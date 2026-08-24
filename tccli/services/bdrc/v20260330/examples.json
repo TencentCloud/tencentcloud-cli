@@ -1,0 +1,613 @@
+{
+  "actions": {
+    "ApplyBackupGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyBackupGroup\n<公共请求参数>\n\n{\n    \"BackupGroupId\": \"cbackup-n3thksnh\",\n    \"ApplyDisks\": [\n        {\n            \"BackupId\": \"backup-4odzwf0l\",\n            \"DiskId\": \"disk-22u8462w\"\n        }\n    ],\n    \"AutoStopInstance\": true,\n    \"AutoStartInstance\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b2d33b5-68a0-41f8-b9df-6f29912f5176\"\n    }\n}",
+        "title": "备份组回滚"
+      }
+    ],
+    "BindAutoBackupPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAutoBackupPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0fd9fa5b-b6a1-4461-a596-0d976253b927\"\n    }\n}",
+        "title": "绑定定期备份策略"
+      }
+    ],
+    "CreateAutoBackupPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoBackupPolicy\n<公共请求参数>\n\n{\n    \"Policy\": [\n        {\n            \"DayOfWeek\": [\n                5\n            ],\n            \"Hour\": [\n                2,\n                3\n            ],\n            \"IntervalDays\": 3\n        }\n    ],\n    \"IsPermanent\": false,\n    \"AutoBackupPolicyName\": \"test-policy\",\n    \"IsActivated\": true,\n    \"RetentionDays\": 3,\n    \"StorageType\": \"VAULT\",\n    \"VaultId\": \"vault-qjhn63ku\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoBackupPolicyId\": \"abp-p5ylj73z\",\n        \"RequestId\": \"7b50a8c7-1685-4136-96fe-f18fcde35414\"\n    }\n}",
+        "title": "创建备份库备份策略"
+      }
+    ],
+    "CreateBackupGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupGroup\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-22u8462w\"\n    ],\n    \"BackupGroupName\": \"kairoslliu_test_bakcupgroup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupGroupId\": \"cbackup-n3thksnh\",\n        \"RequestId\": \"a2dd25d8-3f06-4622-be4c-44315fc9d5e5\"\n    }\n}",
+        "title": "创建备份组"
+      }
+    ],
+    "CreateBackupVault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupVault\n<公共请求参数>\n\n{\n    \"VaultName\": \"asgag\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b55cde8-2441-491e-abef-d3ac4058a703\",\n        \"VaultId\": \"vault-01l1gcyc\"\n    }\n}",
+        "title": "新建备份库"
+      }
+    ],
+    "CreateDisasterRecoveryProtectGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisasterRecoveryProtectGroup\n<公共请求参数>\n\n{\n    \"SitePairId\": \"sitepair-0wxbktxr\",\n    \"ProtectGroupType\": \"INSTANCE\",\n    \"RecoveryPointObjective\": 15,\n    \"ProtectGroupName\": \"todelete from api\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProtectGroupId\": \"pg-bb93pcar\",\n        \"RequestId\": \"f2e157c2-6425-47bd-84bb-c63d6fec1d4e\"\n    }\n}",
+        "title": "创建保护组"
+      }
+    ],
+    "CreateDisasterRecoverySitePair": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisasterRecoverySitePair\n<公共请求参数>\n\n{\n    \"DisasterRecoveryType\": \"CROSS_ZONE\",\n    \"SourceRegion\": \"ap-guangzhou\",\n    \"SourceZone\": \"ap-guangzhou-2\",\n    \"TargetRegion\": \"ap-guangzhou\",\n    \"TargetZone\": \"ap-guangzhou-3\",\n    \"SourceVpc\": \"vpc-i9pwklpn\",\n    \"TargetVpc\": \"vpc-ap4fkwyt\",\n    \"SitePairProductType\": \"INSTANCE\",\n    \"SitePairName\": \"fromapi-1\",\n    \"CopyType\": \"ASY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SitePairId\": \"sitepair-3k23fkmn\",\n        \"RequestId\": \"8e63c7c6-d644-4520-b3fa-c26e4aa13b67\"\n    }\n}",
+        "title": "创建容灾策略"
+      }
+    ],
+    "CreateDisasterRecoveryVpcMapping": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisasterRecoveryVpcMapping\n<公共请求参数>\n\n{\n    \"SourceVpcId\": \"vpc-i9pwklpn\",\n    \"SourceSubnetId\": \"subnet-9pqg3i8o\",\n    \"TargetVpcId\": \"vpc-ap4fkwyt\",\n    \"TargetSubnetId\": \"subnet-kw0s0e5u\",\n    \"SitePairId\": \"sitepair-3k23fkmn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d844f18d-aaad-4e45-b20f-92e1b7023a74\"\n    }\n}",
+        "title": "创建VPC映射"
+      }
+    ],
+    "CreateFileBackup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileBackup\n<公共请求参数>\n\n{\n    \"ResourceId\": \"ins-0dl6ai18\",\n    \"BackupPaths\": [\n        \"/var/log\"\n    ],\n    \"ExcludeSystemDirectories\": true,\n    \"BackupStorageId\": \"vault-ivsapm9k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupId\": \"fb-hjyz84u8\",\n        \"RequestId\": \"4fcb2255-91b4-466b-98a1-1169ede37e8f\"\n    }\n}",
+        "title": "创建文件备份点"
+      }
+    ],
+    "CreateFileBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileBackupPlan\n<公共请求参数>\n\n{\n    \"PolicyId\": \"abp-5c5l02gj\",\n    \"PlanName\": \"test-new-plan\",\n    \"BackupStorageId\": \"vault-qjhn63ku\",\n    \"Resources\": [\n        {\n            \"ResourceId\": \"ins-7630gzfm\",\n            \"BackupPaths\": [\n                \"/var/log\"\n            ],\n            \"IncludeFileTypes\": [\n                \"*.log\"\n            ],\n            \"ExcludeSystemDirectories\": true,\n            \"ExecuteImmediately\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PlanIds\": [\n            \"fbp-d66961s5\"\n        ],\n        \"RequestId\": \"e7b880e6-f80d-43b5-a080-26d595b1f83d\"\n    }\n}",
+        "title": "创建备份计划"
+      }
+    ],
+    "CreateFileRestoreTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileRestoreTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7dfb24b7-5b67-43c0-842d-1e184256fec5\"\n    }\n}",
+        "title": "创建文件备份恢复任务"
+      }
+    ],
+    "CreateInstanceCopyPair": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceCopyPair\n<公共请求参数>\n\n{\n    \"ProtectGroupId\": \"pg-awh08zgp\",\n    \"CreateTargetInstanceParameters\": [\n        {\n            \"SourceInstanceId\": \"ins-103kuwr2\",\n            \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n            \"Placement\": {\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            \"ImageId\": \"img-l8og963d\",\n            \"SystemDisk\": {\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"DiskSize\": 50\n            },\n            \"InstanceType\": \"S2.MEDIUM2\",\n            \"VirtualPrivateCloud\": {\n                \"VpcId\": \"vpc-ap4fkwyt\",\n                \"SubnetId\": \"subnet-kw0s0e5u\"\n            },\n            \"LoginSettings\": {\n                \"Password\": \"Tencent@123\"\n            }\n        }\n    ],\n    \"InstanceCopyPairName\": \"CopyPair1\",\n    \"RecoveryPointObjective\": 15\n}",
+        "output": "{\n    \"Response\": {\n        \"CopyPairIds\": [\n            \"cvmcopypair-9wfdmidr\"\n        ],\n        \"RequestId\": \"b0afa241-f75b-4048-9230-e0c82f9f4d25\"\n    }\n}",
+        "title": "创建cvm复制对"
+      }
+    ],
+    "CreateInstanceDrillPairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceDrillPairs\n<公共请求参数>\n\n{\n    \"ProtectGroupId\": \"pg-cepq4abv\",\n    \"DrillPairGroupVpc\": \"vpc-3pwbhict\",\n    \"DrillPairGroupName\": \"my drill test2\",\n    \"CreateTargetInstanceParameters\": [\n        {\n            \"SourceInstanceId\": \"ins-f8upbkwy\",\n            \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n            \"Placement\": {\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            \"ImageId\": \"img-l8og963d\",\n            \"SystemDisk\": {\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"DiskSize\": 50\n            },\n            \"InstanceType\": \"S2.MEDIUM2\",\n            \"VirtualPrivateCloud\": {\n                \"VpcId\": \"vpc-3pwbhict\",\n                \"SubnetId\": \"subnet-lreo8zy4\"\n            },\n            \"CopyPairId\": \"cvmcopypair-gd8gq26l\",\n            \"RecoveryTime\": \"2026-06-05 17:50:06\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DrillPairIds\": [\n            \"drillpair-f93za7wl\"\n        ],\n        \"RequestId\": \"121b01bd-33a0-4e26-86bf-3159968e49e1\"\n    }\n}",
+        "title": "创建演练"
+      }
+    ],
+    "CreateSecurityGroupMapping": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupMapping\n<公共请求参数>\n\n{\n    \"SrcSecurityGroupId\": \"sg-5mmgq8xt\",\n    \"TargetSecurityGroupId\": \"sg-5mmgq8xt\",\n    \"SitePairId\": \"sitepair-3k23fkmn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"839cca5f-66e2-4765-b835-1059dc2be466\"\n    }\n}",
+        "title": "创建安全组映射"
+      }
+    ],
+    "DeleteAutoBackupPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoBackupPolicies\n<公共请求参数>\n\n{\n    \"AutoBackupPolicyIds\": [\n        \"abp-i55a3egv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b96b624c-5ad1-48c0-a3a5-d721edb43525\"\n    }\n}",
+        "title": "删除定期备份策略"
+      }
+    ],
+    "DeleteBackupGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupGroups\n<公共请求参数>\n\n{\n    \"BackupGroupIds\": [\n        \"cbackup-4hihvf51\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6784a42-fa0a-4633-95f2-78b4e7c8a4a4\"\n    }\n}",
+        "title": "删除备份组"
+      }
+    ],
+    "DeleteBackupVaults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupVaults\n<公共请求参数>\n\n{\n    \"VaultIds\": [\n        \"vault-01l1gcyc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"615467f8-1c58-48f8-a35b-2b4ea1d81f7f\"\n    }\n}",
+        "title": "删除备份库"
+      }
+    ],
+    "DeleteCopyPairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCopyPairs\n<公共请求参数>\n\n{\n    \"CopyPairIds\": [\n        \"cvmcopypair-ibd2jvbj\"\n    ],\n    \"CopyPairType\": \"INSTANCE\",\n    \"DeleteTargetResource\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ca66765-96dd-496d-b453-46bb11c5ddc1\"\n    }\n}",
+        "title": "删除复制对"
+      }
+    ],
+    "DeleteDisasterRecoveryProtectGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDisasterRecoveryProtectGroups\n<公共请求参数>\n\n{\n    \"ProtectGroups\": [\n        \"pg-m9oph0dj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11745f07-aaa6-4f9d-a5e8-7bda926296d2\"\n    }\n}",
+        "title": "删除保护组"
+      }
+    ],
+    "DeleteDisasterRecoverySitePairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDisasterRecoverySitePairs\n<公共请求参数>\n\n{\n    \"SitePairIds\": [\n        \"sitepair-7h5fm9lx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a827ec10-2b86-4980-ba79-07480c41bbd0\"\n    }\n}",
+        "title": "删除容灾策略"
+      }
+    ],
+    "DeleteDisasterRecoveryVpcMapping": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDisasterRecoveryVpcMapping\n<公共请求参数>\n\n{\n    \"VpcMappingIds\": [\n        2668\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ccd15bb-ced9-4d22-9d93-0673bfb06e2b\"\n    }\n}",
+        "title": "删除VPC映射"
+      }
+    ],
+    "DeleteDrillPairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDrillPairs\n<公共请求参数>\n\n{\n    \"DrillPairType\": \"INSTANCE\",\n    \"DrillPairIds\": [\n        \"drillpair-2zjmpdlb\"\n    ],\n    \"DrillGroupIds\": [\n        \"dg-2zjmpdlb\"\n    ],\n    \"DeleteDrillResource\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteDrillPairGroupSet\": [\n            \"dg-2zjmpdlb\"\n        ],\n        \"DeleteDrillPairResultSet\": [\n            {\n                \"Code\": \"Success\",\n                \"DrillPairId\": \"drillpair-2zjmpdlb\",\n                \"Message\": \"\"\n            }\n        ],\n        \"RequestId\": \"c60affa9-8642-4265-8a87-8ac8c496f480\"\n    }\n}",
+        "title": "删除演练"
+      }
+    ],
+    "DeleteFileBackupPlans": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupPlans\n<公共请求参数>\n\n{\n    \"PlanIds\": [\n        \"fbp-5e88050t\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc2636dc-428a-4b96-b81c-bbca02478765\"\n    }\n}",
+        "title": "删除已有的备份计划"
+      }
+    ],
+    "DeleteFileBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFileBackups\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"693035a6-d8e1-4149-81fe-8810ecfd7605\"\n    }\n}",
+        "title": "删除文件备份点"
+      }
+    ],
+    "DeleteSecurityGroupMapping": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupMapping\n<公共请求参数>\n\n{\n    \"SitePairId\": \"sitepair-3zmneevh\",\n    \"SecurityGroupMappingIds\": [\n        \"sgmap-2vnut58v\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb69fe91-960c-4036-8e54-7f7a4ffb88f9\"\n    }\n}",
+        "title": "删除安全组映射"
+      }
+    ],
+    "DescribeAutoBackupPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoBackupPolicies\n<公共请求参数>\n\n{\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoBackupPolicySet\": [\n            {\n                \"AccountName\": \"\",\n                \"AccountUin\": \"700002687914\",\n                \"AdvancedRetentionPolicy\": {},\n                \"AppId\": 260202272,\n                \"AutoBackupPolicyId\": \"abp-fz96zo6z\",\n                \"AutoBackupPolicyName\": \"[01.00_18.00]full_system_backup_strategy\",\n                \"AutoBackupPolicyState\": \"NORMAL\",\n                \"CreateTime\": \"2026-06-08T17:37:38+08:00\",\n                \"InstanceIdSet\": [\n                    \"ins-mpd1f3mq\"\n                ],\n                \"IsActivated\": true,\n                \"IsPermanent\": false,\n                \"NextTriggerTime\": \"2026-06-10T01:00:00+08:00\",\n                \"Policy\": [\n                    {\n                        \"Hour\": [\n                            1\n                        ],\n                        \"IntervalDays\": 1\n                    }\n                ],\n                \"RetentionAmount\": 3,\n                \"RetentionDays\": 0,\n                \"RetentionMonths\": 0,\n                \"StorageType\": \"COMMON\",\n                \"SubAccountUin\": \"700002687914\",\n                \"VaultId\": \"\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"a5fc934f-e73e-4c7c-9e1c-204898acc607\"\n    }\n}",
+        "title": "查询定期备份策略列表"
+      }
+    ],
+    "DescribeBackupGroupRollbackTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupGroupRollbackTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RollbackTaskSet\": [\n            {\n                \"AppId\": 251246004,\n                \"BackupGroupId\": \"cbackup-n3thksnh\",\n                \"BackupGroupName\": \"kairoslliu_test_bakcupgroup\",\n                \"EndTime\": \"2026-06-10T15:19:14+08:00\",\n                \"FailReason\": \"\",\n                \"Percent\": 100,\n                \"RollbackType\": \"ORIGINAL\",\n                \"SourceInstanceId\": \"ins-jzqjqa8a\",\n                \"StartTime\": \"2026-06-10T15:18:15+08:00\",\n                \"Status\": \"done\",\n                \"TargetInstanceId\": \"ins-jzqjqa8a\",\n                \"TaskId\": \"crollback-788qdm6d\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"071ed354-2566-497b-993d-e559493146ca\"\n    }\n}",
+        "title": "查询备份组恢复任务"
+      }
+    ],
+    "DescribeBackupGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupGroups\n<公共请求参数>\n\n{\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupGroupSet\": [\n            {\n                \"AccountName\": \"\",\n                \"AccountUin\": \"700002507474\",\n                \"AppId\": 260094408,\n                \"AutoBackupPolicyId\": \"abp-fys0uzmf\",\n                \"BackupBindDisk\": [\n                    {\n                        \"BackupId\": \"backup-lnlg6z35\",\n                        \"DiskId\": \"disk-f6wjotd4\"\n                    }\n                ],\n                \"BackupGroupId\": \"cbackup-9mge8cx1\",\n                \"BackupGroupName\": \"auto_ins-kjpsunqm_20260430_00\",\n                \"BackupGroupState\": \"NORMAL\",\n                \"CreateTime\": \"2026-04-30T00:15:20+08:00\",\n                \"DeadlineTime\": null,\n                \"InstanceDetails\": \"{\\\"Placement\\\": {\\\"Zone\\\": \\\"ap-guangzhou-2\\\", \\\"HostId\\\": null, \\\"ProjectId\\\": 0, \\\"ProjectName\\\": \\\"\\\\u9ed8\\\\u8ba4\\\\u9879\\\\u76ee\\\"}, \\\"InstanceId\\\": \\\"ins-kjpsunqm\\\", \\\"Uuid\\\": \\\"15b65cc6-47b9-4271-a2a4-24552aba54dc\\\", \\\"OperatorUin\\\": \\\"4611686018428206758\\\", \\\"InstanceState\\\": \\\"STOPPED\\\", \\\"ApplicationRole\\\": \\\"\\\", \\\"RestrictState\\\": \\\"NORMAL\\\", \\\"InstanceType\\\": \\\"SA9.MEDIUM2\\\", \\\"CPU\\\": 2, \\\"Memory\\\": 2, \\\"InstanceName\\\": \\\"FROM cbackup-orpxx9gp\\\", \\\"InstanceChargeType\\\": \\\"PREPAID\\\", \\\"SystemDisk\\\": {\\\"DiskType\\\": \\\"CLOUD_BSSD\\\", \\\"DiskId\\\": \\\"disk-f6wjotd4\\\", \\\"DiskSize\\\": 50, \\\"Encrypt\\\": false, \\\"KmsKeyId\\\": null, \\\"ThroughputPerformance\\\": 0, \\\"CdcId\\\": null}, \\\"DataDisks\\\": [], \\\"PrivateIpAddresses\\\": [\\\"172.16.0.2\\\"], \\\"PublicIpAddresses\\\": null, \\\"IPv6Addresses\\\": null, \\\"InternetAccessible\\\": {\\\"InternetMaxBandwidthOut\\\": 1, \\\"InternetChargeType\\\": null}, \\\"VirtualPrivateCloud\\\": {\\\"VpcId\\\": \\\"vpc-hj1e0yef\\\", \\\"SubnetId\\\": \\\"subnet-8hu0ievu\\\", \\\"AsVpcGateway\\\": false, \\\"VpcName\\\": \\\"Default-VPC\\\", \\\"SubnetName\\\": \\\"Default-Subnet\\\"}, \\\"SecurityGroupIds\\\": [\\\"sg-kqieqb8n\\\"], \\\"LoginSettings\\\": {\\\"KeyIds\\\": null}, \\\"ImageId\\\": \\\"img-6n21msk1\\\", \\\"DefaultLoginUser\\\": \\\"root\\\", \\\"DefaultLoginPort\\\": 22, \\\"RenewFlag\\\": \\\"NOTIFY_AND_AUTO_RENEW\\\", \\\"CreatedTime\\\": \\\"2026-04-22T09:57:42Z\\\", \\\"ExpiredTime\\\": \\\"2026-05-22T09:57:42Z\\\", \\\"UnderwriteExpiredTime\\\": null, \\\"Tags\\\": [], \\\"PlatformProjectId\\\": null, \\\"DisasterRecoverGroupId\\\": \\\"\\\", \\\"DedicatedClusterId\\\": \\\"\\\", \\\"CamRoleName\\\": \\\"\\\", \\\"LatestOperation\\\": \\\"RollbackInstanceSnapshot\\\", \\\"LatestOperationState\\\": \\\"SUCCESS\\\", \\\"LatestOperationRequestId\\\": \\\"3e55411e-ce86-456e-8f17-7a17c41c7d10\\\", \\\"IsolatedSource\\\": \\\"NOTISOLATED\\\", \\\"ChcInstanceType\\\": \\\"\\\", \\\"HpcClusterId\\\": \\\"\\\", \\\"DisableApiTermination\\\": false, \\\"RdmaIpAddresses\\\": null, \\\"VmEniTrunking\\\": \\\"off\\\", \\\"OsName\\\": \\\"TencentOS Server 4 for x86_64\\\", \\\"EnableJumboFrame\\\": false, \\\"LicenseType\\\": \\\"TencentCloud\\\", \\\"StopChargingMode\\\": \\\"NOT_APPLICABLE\\\", \\\"CpuTopology\\\": {\\\"ThreadPerCore\\\": 2, \\\"CoreCount\\\": 1}, \\\"ImageType\\\": \\\"PUBLIC_IMAGE\\\", \\\"InstanceFamily\\\": \\\"SA9\\\", \\\"GPU\\\": 0, \\\"InnerVpcId\\\": 11314404, \\\"DeviceId\\\": 637560910, \\\"Architecture\\\": \\\"\\\", \\\"IsolatedTime\\\": null, \\\"IsSafeIsolated\\\": false, \\\"SafeIsolatedInfo\\\": null, \\\"NewCreationIdentify\\\": false, \\\"InstanceClass\\\": \\\"S\\\", \\\"KeyPairIds\\\": null, \\\"OperationMask\\\": 2002494157813, \\\"RunFlag\\\": 4, \\\"Hypervisor\\\": 0, \\\"SwapDisks\\\": {}, \\\"LatestOperationErrorMsg\\\": null, \\\"BootMode\\\": \\\"Legacy BIOS\\\"}\",\n                \"InstanceId\": \"ins-kjpsunqm\",\n                \"IsPermanent\": false,\n                \"ModifyTime\": \"2026-04-30T00:16:31+08:00\",\n                \"Percent\": 100,\n                \"SubAccountUin\": \"700002507474\"\n            }\n        ],\n        \"TotalCount\": 172,\n        \"RequestId\": \"be6a944e-8e47-4a47-a61f-ad448e3a551a\"\n    }\n}",
+        "title": "查询实例备份列表"
+      }
+    ],
+    "DescribeBackupGroupsDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupGroupsDeniedActions\n<公共请求参数>\n\n{\n    \"BackupGroupIds\": [\n        \"cbackup-n3thksnh\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupGroupDeniedActionSet\": [\n            {\n                \"BackupGroupId\": \"cbackup-n3thksnh\",\n                \"DeniedActions\": [\n                    {\n                        \"Action\": \"CreateDisks\",\n                        \"Code\": \"UnsupportedOperation.NotSupported\",\n                        \"Message\": \"备份组包含系统盘备份，不支持新建云硬盘\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"50a49442-ec5e-4771-a976-6e36839473ee\"\n    }\n}",
+        "title": "查询备份组的操作掩码"
+      }
+    ],
+    "DescribeBackupInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupInstances\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"BackupInstanceSet\": [\n            {\n                \"AppId\": 251246004,\n                \"AutoBackupPolicyIdSet\": [\n                    \"abp-djgairw5\"\n                ],\n                \"BackupGroupIdSet\": [],\n                \"CreateTime\": \"2026-06-10T16:45:07+08:00\",\n                \"InstanceId\": \"ins-izhhpsw2\",\n                \"InstanceName\": \"\",\n                \"LatestBackupTime\": null,\n                \"ModifyTime\": \"2026-06-10T16:45:07+08:00\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"ee58624e-828c-481d-b384-de99743fa4ad\"\n    }\n}",
+        "title": "查询受备份保护的实例列表"
+      }
+    ],
+    "DescribeBackupOverviewGeneral": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupOverviewGeneral\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"BackupPolicyOverview\": {\n            \"BoundCount\": 8,\n            \"TotalCount\": 45,\n            \"UnboundCount\": 37\n        },\n        \"BackupVaultOverview\": {\n            \"TotalCount\": 16,\n            \"TotalSizeMb\": 118031\n        },\n        \"FileBackupOverview\": {\n            \"BackupCount\": 20,\n            \"BackupResourceCount\": 5,\n            \"BackupSizeMb\": 118031,\n            \"CreatingBackupCount\": 3,\n            \"FailedBackupCount\": 0,\n            \"RestoringBackupCount\": 1,\n            \"SuccessBackupCount\": 16\n        },\n        \"InstanceBackupOverview\": {\n            \"BackupCount\": 217,\n            \"BackupResourceCount\": 9,\n            \"BackupSizeMb\": 67225600,\n            \"CreatingBackupCount\": 0,\n            \"FailedBackupCount\": 0,\n            \"RestoringBackupCount\": 0,\n            \"SuccessBackupCount\": 217\n        },\n        \"ProtectedResourceOverview\": {\n            \"CFS\": {\n                \"ProtectedCount\": 12,\n                \"TotalCount\": 8\n            },\n            \"Cvm\": {\n                \"ProtectedCount\": 9,\n                \"TotalCount\": 8\n            },\n            \"TotalProtectedCount\": 21,\n            \"TotalResourceCount\": 16\n        },\n        \"RequestId\": \"89bb101d-133d-48a9-abec-98c857e031aa\"\n    }\n}",
+        "title": "查询备份概览信息"
+      }
+    ],
+    "DescribeBackupPlans": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupPlans\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"BackupPlanSet\": [\n            {\n                \"AutoBackupPolicyId\": \"abp-i55a3egv\",\n                \"BackupCount\": 0,\n                \"CreateTime\": \"2026-06-10T15:55:37+08:00\",\n                \"InstanceId\": \"ins-az7px5xk\",\n                \"LastTriggerError\": \"\",\n                \"LastTriggerTime\": null,\n                \"ModifyTime\": \"2026-06-10T15:55:37+08:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"982dc596-965b-4b36-9fea-34f2197e9717\"\n    }\n}",
+        "title": "查询整机备份计划"
+      }
+    ],
+    "DescribeBackupVaults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupVaults\n<公共请求参数>\n\n{\n    \"VaultIds\": [\n        \"vault-qjhn63ku\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupVaultSet\": [\n            {\n                \"BackupPolicySet\": [],\n                \"BackupSet\": [],\n                \"CreateTime\": \"2026-03-26T17:38:17+08:00\",\n                \"Description\": \"brctest\",\n                \"EncryptType\": \"NONE\",\n                \"KmsKeyId\": \"\",\n                \"Region\": \"gz\",\n                \"Status\": \"READ_WRITE\",\n                \"VaultId\": \"vault-qjhn63ku\",\n                \"VaultName\": \"112233\",\n                \"VaultType\": \"COMMON\"\n            }\n        ],\n        \"RequestId\": \"9f209ef5-1add-4ca4-8260-bcb6902ddf85\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询备份库信息"
+      }
+    ],
+    "DescribeBackupVaultsDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupVaultsDeniedActions\n<公共请求参数>\n\n{\n    \"VaultIds\": [\n        \"vault-qjhn63ku\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupVaultDeniedActionSet\": [\n            {\n                \"DeniedActions\": [],\n                \"VaultId\": \"vault-qjhn63ku\"\n            }\n        ],\n        \"RequestId\": \"0d86eaa9-1aac-4cab-98e1-8e25c9e7f5b0\"\n    }\n}",
+        "title": "查询备份库操作掩码"
+      }
+    ],
+    "DescribeCommonBackupPoints": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCommonBackupPoints\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-mpd1f3mq\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CommonBackupPointSet\": [\n            {\n                \"BackupCommonTime\": \"2026-06-09T19:00:00+08:00\",\n                \"BackupDetailSet\": [\n                    {\n                        \"BackupBindDisk\": [\n                            {\n                                \"BackupId\": \"backup-515yr2uf\",\n                                \"DiskId\": \"disk-qadf2ekm\"\n                            }\n                        ],\n                        \"BackupId\": \"cbackup-nb7fb5wh\",\n                        \"CreateTime\": \"2026-06-09T19:00:18+08:00\",\n                        \"InstanceId\": \"ins-mpd1f3mq\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"b395ed79-c79b-432d-aefd-1291b78bf07d\"\n    }\n}",
+        "title": "查询共同备份点"
+      }
+    ],
+    "DescribeCopyPairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCopyPairs\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"CopyPairType\": \"INSTANCE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CopyPairSet\": [\n            {\n                \"AccountUin\": \"700002579593\",\n                \"AppId\": 260132668,\n                \"CopyPairId\": \"cvmcopypair-ibd2jvbj\",\n                \"CopyPairName\": \"t5-0\",\n                \"CopyPairState\": \"INIT\",\n                \"CopyPairType\": \"INSTANCE\",\n                \"CreateFrom\": \"LOCAL\",\n                \"CreateTime\": \"2026-06-09 12:00:16\",\n                \"DataDirection\": \"POSITIVE\",\n                \"DeferredCreate\": true,\n                \"DisasterRecoveryType\": \"CROSS_ZONE\",\n                \"DiskCopyPairSet\": [\n                    {\n                        \"CopyPairId\": \"copypair-9wgl3suj\",\n                        \"CopyPairName\": \"t5-0-0\",\n                        \"CreateTime\": \"2026-06-09 12:00:16\",\n                        \"SourceResourceId\": \"disk-a8ys45xk\",\n                        \"TargetResourceId\": \"\"\n                    }\n                ],\n                \"DrillGroupId\": null,\n                \"InstanceCopyPairId\": \"cvmcopypair-ibd2jvbj\",\n                \"InstanceId\": \"ins-ggpv137w\",\n                \"LatestProtectionTime\": null,\n                \"PeerCloudName\": null,\n                \"Percent\": null,\n                \"ProtectGroupId\": \"pg-awh08zgp\",\n                \"ProtectGroupName\": \"pg5-new\",\n                \"ProtectionTimeSet\": null,\n                \"RecoveryPointObjective\": 15,\n                \"RollbackPercent\": 0,\n                \"Rollbacking\": 0,\n                \"SitePairId\": \"sitepair-0wxbktxr\",\n                \"SitePairName\": \"scenario-lifecycle-test-sitepair\",\n                \"SourceRegion\": \"ap-guangzhou\",\n                \"SourceResourceId\": \"ins-ggpv137w\",\n                \"SourceVpc\": \"vpc-i9pwklpn\",\n                \"SourceZone\": \"ap-guangzhou-2\",\n                \"SubAccountUin\": \"700002579593\",\n                \"TargetCvmCreated\": false,\n                \"TargetRegion\": \"ap-guangzhou\",\n                \"TargetResourceId\": \"drp-17ixt9oj\",\n                \"TargetVpc\": \"vpc-ap4fkwyt\",\n                \"TargetZone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"TotalCount\": 5,\n        \"RequestId\": \"58fa46d6-954d-45dd-a2ee-4422e77d5c34\"\n    }\n}",
+        "title": "查询复制对"
+      }
+    ],
+    "DescribeCopyPairsDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCopyPairsDeniedActions\n<公共请求参数>\n\n{\n    \"CopyPairIds\": [\n        \"cvmcopypair-ibd2jvbj\"\n    ],\n    \"CopyPairType\": \"INSTANCE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CopyPairDeniedActionSet\": [\n            {\n                \"CopyPairId\": \"cvmcopypair-ibd2jvbj\",\n                \"DeniedActions\": [\n                    {\n                        \"Action\": \"StopDiskCopyPairTasks\",\n                        \"Code\": \"UnsupportedOperation.CopyPairStateError\",\n                        \"Message\": \"复制对(cvmcopypair-ibd2jvbj)的状态不支持当前操作\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c30d60d4-c201-440b-a562-c0738983727d\"\n    }\n}",
+        "title": "查询复制对掩码"
+      }
+    ],
+    "DescribeDisasterRecoveryDrillGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisasterRecoveryDrillGroups\n<公共请求参数>\n\n{\n    \"DrillGroupType\": \"INSTANCE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DrillGroupSet\": [\n            {\n                \"AccountUin\": \"700002579593\",\n                \"AppId\": 260132668,\n                \"BindDrilledResourceCount\": 1,\n                \"CopyType\": \"ASY\",\n                \"CreateTime\": \"2026-06-08 21:17:16\",\n                \"DataDirection\": \"POSITIVE\",\n                \"DisasterRecoveryType\": \"CROSS_ZONE\",\n                \"DrillGroupId\": \"dg-flxbvmo3\",\n                \"DrillGroupName\": \"drll tee new\",\n                \"DrillGroupType\": \"INSTANCE\",\n                \"DrillRegion\": \"ap-guangzhou\",\n                \"DrillSecurityGroup\": null,\n                \"DrillVpc\": \"vpc-3pwbhict\",\n                \"DrillZone\": \"ap-guangzhou-3\",\n                \"DrilledResourceStatusSet\": [\n                    {\n                        \"ResourceCount\": 1,\n                        \"ResourceStatus\": \"NORMAL\"\n                    }\n                ],\n                \"Id\": 48,\n                \"LifeState\": \"NORMAL\",\n                \"LocalCloudName\": null,\n                \"ModifyTime\": \"2026-06-09 10:50:10\",\n                \"PeerCloudName\": null,\n                \"ProtectGroupId\": \"pg-4tqdwtqj\",\n                \"RecoveryTime\": null,\n                \"SitePairId\": \"sitepair-0wxbktxr\",\n                \"SourceRegion\": \"ap-guangzhou\",\n                \"SourceVpc\": \"vpc-i9pwklpn\",\n                \"SourceZone\": \"ap-guangzhou-2\",\n                \"SubAccountUin\": \"700002579593\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"77ab184f-e266-4fb7-b152-b3152eda3074\"\n    }\n}",
+        "title": "查询演练组列表"
+      }
+    ],
+    "DescribeDisasterRecoveryOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisasterRecoveryOverview\n<公共请求参数>\n\n{\n    \"CopyPairType\": \"ALL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DisasterRecoveryOverview\": {\n            \"CopyPairCount\": 5,\n            \"CopyPairErrorRPOCount\": 2,\n            \"CopyPairSuccessRPOCount\": 3,\n            \"DrillPairCount\": 2,\n            \"DrillPairDrillingCount\": 0,\n            \"DrillPairFailedCount\": 0,\n            \"DrillPairSuccessCount\": 2,\n            \"FailoverFailedCount\": 0,\n            \"ProtectGroupCount\": 296,\n            \"ProtectGroupCrossCloudCount\": 0,\n            \"ProtectGroupCrossRegionCount\": 0,\n            \"ProtectGroupCrossZoneCount\": 296,\n            \"ProtectedResourceCopyingCount\": 2,\n            \"ProtectedResourceCount\": 5,\n            \"ProtectedResourceStoppedCount\": 3,\n            \"SitePairCount\": 2,\n            \"SitePairCrossCloudCount\": 0,\n            \"SitePairCrossRegionCount\": 0,\n            \"SitePairCrossZoneCount\": 2\n        },\n        \"OverviewInRegionSet\": [\n            {\n                \"CopyPairCount\": 5,\n                \"CopyPairErrorRPOCount\": 2,\n                \"CopyPairSuccessRPOCount\": 3,\n                \"DrillPairCount\": 2,\n                \"DrillPairDrillingCount\": 0,\n                \"DrillPairFailedCount\": 0,\n                \"DrillPairSuccessCount\": 2,\n                \"FailoverFailedCount\": 0,\n                \"ProtectGroupCount\": 296,\n                \"ProtectGroupCrossCloudCount\": 0,\n                \"ProtectGroupCrossRegionCount\": 0,\n                \"ProtectGroupCrossZoneCount\": 296,\n                \"ProtectedResourceCopyingCount\": 2,\n                \"ProtectedResourceCount\": 5,\n                \"ProtectedResourceStoppedCount\": 3,\n                \"Region\": \"ap-guangzhou\",\n                \"SitePairCount\": 2,\n                \"SitePairCrossCloudCount\": 0,\n                \"SitePairCrossRegionCount\": 0,\n                \"SitePairCrossZoneCount\": 2\n            }\n        ],\n        \"RequestId\": \"9fd291d3-19d9-4214-b53f-10f438959210\"\n    }\n}",
+        "title": "查询当前容灾概览"
+      }
+    ],
+    "DescribeDisasterRecoveryProtectGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisasterRecoveryProtectGroups\n<公共请求参数>\n\n{\n    \"ProtectGroupType\": \"INSTANCE\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ProtectGroupSet\": [\n            {\n                \"AccountUin\": \"700002579593\",\n                \"AppId\": 260132668,\n                \"BindProtectedResourceCount\": 1,\n                \"CopyType\": \"ASY\",\n                \"CreateFrom\": \"LOCAL\",\n                \"CreateTime\": \"2026-06-09 11:25:39\",\n                \"DataDirection\": \"POSITIVE\",\n                \"DisasterRecoveryType\": \"CROSS_ZONE\",\n                \"ErrorRecoveryPointObjectiveCount\": 0,\n                \"LifeState\": \"NORMAL\",\n                \"ModifyTime\": \"2026-06-09 11:25:39\",\n                \"ProtectGroupId\": \"pg-awh08zgp\",\n                \"ProtectGroupName\": \"pg5-new\",\n                \"ProtectGroupType\": \"INSTANCE\",\n                \"ProtectedResourceStatusSet\": [\n                    {\n                        \"Count\": 1,\n                        \"Status\": \"INIT\"\n                    }\n                ],\n                \"RecoveryPointObjective\": 15,\n                \"SitePairId\": \"sitepair-0wxbktxr\",\n                \"SitePairName\": \"scenario-lifecycle-test-sitepair\",\n                \"SourceRegion\": \"ap-guangzhou\",\n                \"SourceVpc\": \"vpc-i9pwklpn\",\n                \"SourceZone\": \"ap-guangzhou-2\",\n                \"SubAccountUin\": \"700002579593\",\n                \"TargetRegion\": \"ap-guangzhou\",\n                \"TargetVpc\": \"vpc-ap4fkwyt\",\n                \"TargetZone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"TotalCount\": 294,\n        \"RequestId\": \"3e397705-f35f-4cdd-83f5-e02ba22aa567\"\n    }\n}",
+        "title": "查询保护组"
+      }
+    ],
+    "DescribeDisasterRecoverySitePairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisasterRecoverySitePairs\n<公共请求参数>\n\n{\n    \"SitePairType\": \"INSTANCE\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"SitePairSet\": [\n            {\n                \"AccountUin\": \"700002591018\",\n                \"AppId\": 260147302,\n                \"BindProtectGroupCount\": 4,\n                \"CopyType\": \"ASY\",\n                \"CreateFrom\": \"LOCAL\",\n                \"CreateTime\": \"2026-06-01 16:14:29\",\n                \"CrossCloudDetails\": null,\n                \"DisasterRecoveryType\": \"CROSS_ZONE\",\n                \"ErrorRecoveryPointObjectiveCopyPairSet\": [],\n                \"ProtectedResourceSet\": [\n                    {\n                        \"ResourceIdSet\": [\n                            \"ins-8tjecaei\"\n                        ],\n                        \"ResourceType\": \"INSTANCE\"\n                    }\n                ],\n                \"ProtectedResourceStatusSet\": [\n                    {\n                        \"Count\": 6,\n                        \"Status\": \"FULL_COPYING\"\n                    }\n                ],\n                \"SitePairId\": \"sitepair-po028nwp\",\n                \"SitePairName\": \"drc_az\",\n                \"SitePairState\": \"NORMAL\",\n                \"SitePairType\": \"INSTANCE\",\n                \"SourceRegion\": \"ap-guangzhou\",\n                \"SourceVpc\": \"vpc-mfgxt19j\",\n                \"SourceZone\": \"ap-guangzhou-2\",\n                \"SubAccountUin\": \"700002591018\",\n                \"TargetRegion\": \"ap-guangzhou\",\n                \"TargetVpc\": \"vpc-mfgxt19j\",\n                \"TargetZone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"TotalCount\": 41,\n        \"RequestId\": \"08f41fce-913a-47c4-96fa-c5d38158e759\"\n    }\n}",
+        "title": "查询站点对列表"
+      }
+    ],
+    "DescribeDisasterRecoverySitePairsDeniedActions": [
+      {
+        "document": "传入一批容灾策略ID，返回每个策略当前不允许执行的操作列表（包含操作名、错误码与错误信息）。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisasterRecoverySitePairsDeniedActions\n<公共请求参数>\n\n{\n    \"SitePairIds\": [\n        \"sitepair-2zjmpdlb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\",\n        \"SitePairDeniedActionSet\": [\n            {\n                \"DeniedActions\": [\n                    {\n                        \"Action\": \"DeleteDisasterRecoverySitePair\",\n                        \"Code\": \"SitePairOperationConflict\",\n                        \"Message\": \"当前容灾策略存在未完成的任务，禁止执行该操作\"\n                    }\n                ],\n                \"SitePairId\": \"sitepair-2zjmpdlb\"\n            }\n        ]\n    }\n}",
+        "title": "查询容灾策略操作掩码"
+      }
+    ],
+    "DescribeDisasterRecoverySupportRegion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisasterRecoverySupportRegion\n<公共请求参数>\n\n{\n    \"Status\": \"valid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SupportRegionSet\": [\n            {\n                \"SourceRegion\": \"ap-guangzhou\",\n                \"Status\": \"valid\",\n                \"SupportType\": \"REGION\",\n                \"SupportZoneRules\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fafbc7ed-5129-4383-8c5b-b01af94d2661\"\n    }\n}",
+        "title": "查询支持的地域"
+      }
+    ],
+    "DescribeDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-a8ys45xk\"\n    ],\n    \"DiskRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskInfoSet\": [\n            {\n                \"DiskId\": \"disk-a8ys45xk\",\n                \"ImageFormat\": \"RAW\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"3a9f90a2-3841-43ce-880e-4bd1bee5a335\"\n    }\n}",
+        "title": "查看容灾盘信息"
+      }
+    ],
+    "DescribeDrillPairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDrillPairs\n<公共请求参数>\n\n{\n    \"DrillPairType\": \"INSTANCE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DrillPairSet\": [\n            {\n                \"AccountUin\": \"700002579593\",\n                \"AppId\": 260132668,\n                \"CopyPairId\": \"cvmcopypair-ifytsjpr\",\n                \"CopyPairName\": \"t3-0-new\",\n                \"CreateTime\": \"2026-06-08 21:17:17\",\n                \"DrillGroupId\": \"dg-flxbvmo3\",\n                \"DrillGroupName\": \"drll tee new\",\n                \"DrillPairId\": \"drillpair-p50csne5\",\n                \"DrillPairName\": \"NewGroup\",\n                \"DrillPairState\": \"NORMAL\",\n                \"DrillPairType\": \"INSTANCE\",\n                \"EndTime\": \"2026-06-08 21:19:05\",\n                \"ProtectGroupId\": \"pg-4tqdwtqj\",\n                \"RecoveryTime\": \"2026-06-05 17:50:09\",\n                \"RollbackPercent\": 0,\n                \"Rollbacking\": 0,\n                \"SitePairId\": \"sitepair-0wxbktxr\",\n                \"Size\": 60,\n                \"SourceRegion\": \"ap-guangzhou\",\n                \"SourceResourceId\": \"ins-q8gh28qy\",\n                \"SourceZone\": \"ap-guangzhou-2\",\n                \"SubAccountUin\": \"700002579593\",\n                \"TargetRegion\": \"ap-guangzhou\",\n                \"TargetResourceId\": \"ins-3bpdkqti\",\n                \"TargetZone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"2d67a4d7-649b-4620-a831-366475d71cac\"\n    }\n}",
+        "title": "查询演练对"
+      }
+    ],
+    "DescribeDrillPairsDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDrillPairsDeniedActions\n<公共请求参数>\n\n{\n    \"DrillPairType\": \"INSTANCE\",\n    \"DrillPairIds\": [\n        \"drillpair-p50csne5\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DrillPairDeniedActionSet\": [\n            {\n                \"DeniedActions\": [],\n                \"DrillPairId\": \"drillpair-p50csne5\"\n            }\n        ],\n        \"RequestId\": \"55237331-f650-4023-bc60-2a091c6c9201\"\n    }\n}",
+        "title": "查询演练操作掩码"
+      }
+    ],
+    "DescribeFileBackupObjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileBackupObjects\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ab4775a-68fc-4194-aecf-f4d920eb17b1\"\n    }\n}",
+        "title": "浏览备份目录文件信息"
+      }
+    ],
+    "DescribeFileBackupPlans": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileBackupPlans\n<公共请求参数>\n\n{\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PlanSet\": [\n            {\n                \"AspPolicy\": {\n                    \"AspId\": \"abp-7riwzmpp\",\n                    \"AspName\": \"adminpolicy\",\n                    \"AspState\": \"normal\",\n                    \"CreateTime\": \"2026-06-10T21:15:45\",\n                    \"IsActivated\": true,\n                    \"IsPermanent\": false,\n                    \"Policy\": [\n                        {\n                            \"Hour\": [\n                                0\n                            ],\n                            \"IntervalDays\": 1\n                        }\n                    ],\n                    \"RetentionDays\": 0\n                },\n                \"BackupCount\": 0,\n                \"BackupPaths\": [\n                    \"/tmp\"\n                ],\n                \"CreatedTime\": \"2026-06-10T21:16:12\",\n                \"ExcludePatterns\": [],\n                \"ExcludeSystemDirectories\": true,\n                \"FlowControlSettings\": [],\n                \"IncludeFileTypes\": [],\n                \"LastExecuteTime\": \"2026-06-11T00:00:14\",\n                \"LastTriggerError\": \"\",\n                \"NextTriggerTime\": \"2026-06-12T00:00:00\",\n                \"PlanId\": \"fbp-rbr9gp29\",\n                \"PlanName\": \"未命名\",\n                \"ResourceIds\": [\n                    \"ins-852rp810\"\n                ],\n                \"Status\": \"normal\",\n                \"VaultId\": \"vault-ivsapm9k\"\n            }\n        ],\n        \"TotalCount\": 8,\n        \"RequestId\": \"d9e76b63-23cb-431c-afc2-beb98e132c65\"\n    }\n}",
+        "title": "查询备份计划列表"
+      }
+    ],
+    "DescribeFileBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileBackups\n<公共请求参数>\n\n{\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupSet\": [\n            {\n                \"AspInstanceId\": \"\",\n                \"BackupFileCount\": 1351200,\n                \"BackupId\": \"fb-m9nvo7l4\",\n                \"BackupName\": \"\",\n                \"BackupPaths\": [\n                    \"/data\"\n                ],\n                \"BackupSize\": 40205298693,\n                \"BackupSizeFormatted\": \"37.44 GiB\",\n                \"CreatedTime\": \"2026-04-01T15:00:34\",\n                \"EndTime\": \"\",\n                \"ExcludePatterns\": null,\n                \"ExcludeSystemDirectories\": true,\n                \"IncludeFileTypes\": null,\n                \"JobId\": \"j-20260401070034-a018b0d8\",\n                \"PlanId\": null,\n                \"Progress\": 34.14,\n                \"ResourceId\": \"ins-7630gzfm\",\n                \"ScannedFileCount\": 4000000,\n                \"ScannedSize\": 117760571686,\n                \"ScannedSizeFormatted\": \"109.67 GiB\",\n                \"StartTime\": \"2026-04-01T15:01:44\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"c7ffb5b2-1000-400c-806a-ce2bd1ae86c8\",\n        \"TotalCount\": 28\n    }\n}",
+        "title": "查询备份列表详情"
+      }
+    ],
+    "DescribeFileBackupsDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileBackupsDeniedActions\n<公共请求参数>\n\n{\n    \"BackupIds\": [\n        \"fb-nwb6txnq\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupDeniedActionSet\": [\n            {\n                \"BackupId\": \"fb-nwb6txnq\",\n                \"DeniedActions\": [\n                    {\n                        \"Action\": \"DeleteFileBackups\",\n                        \"Code\": \"UnsupportedOperation.FileBackupStateError\",\n                        \"Message\": \"FileBackup(fb-nwb6txnq) status is creating, not support\"\n                    },\n                    {\n                        \"Action\": \"CreateFileRestoreTask\",\n                        \"Code\": \"UnsupportedOperation.FileBackupStateError\",\n                        \"Message\": \"FileBackup(fb-nwb6txnq) status is creating, not support\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"cd7cf6d1-71f8-476b-95e6-ae8e2021c8ef\"\n    }\n}",
+        "title": "查询备份点禁止操作列表"
+      }
+    ],
+    "DescribeFileRestoreTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileRestoreTasks\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a60051d-a34f-47ef-8578-db41c3297533\",\n        \"RestoreTaskSet\": [\n            {\n                \"BackupId\": \"fb-op7apew4\",\n                \"CreatedTime\": \"2026-03-31T21:36:08\",\n                \"EndTime\": \"2026-03-31T21:36:49\",\n                \"JobId\": \"j-20260331133609-7fcf71f2\",\n                \"Progress\": 100,\n                \"ResourceId\": \"ins-7630gzfm\",\n                \"RestoreFileCount\": 0,\n                \"RestorePaths\": [\n                    \"/data\"\n                ],\n                \"RestoreSize\": 0,\n                \"RestoreSizeFormatted\": \"0 B\",\n                \"StartTime\": \"\",\n                \"Status\": \"success\",\n                \"TargetLocation\": \"/data1\",\n                \"TargetResourceId\": \"ins-eej84hs4\",\n                \"TaskId\": \"frt-0qu9s8ec\",\n                \"TotalFileCount\": 0,\n                \"TotalSize\": 0,\n                \"TotalSizeFormatted\": \"0 B\"\n            },\n            {\n                \"BackupId\": \"fb-p7xd1l0k\",\n                \"CreatedTime\": \"2026-03-31T18:04:56\",\n                \"EndTime\": \"2026-03-31T18:06:16\",\n                \"JobId\": \"j-20260331100457-df0ca872\",\n                \"Progress\": 100,\n                \"ResourceId\": \"ins-7630gzfm\",\n                \"RestoreFileCount\": 0,\n                \"RestorePaths\": [\n                    \"/data\"\n                ],\n                \"RestoreSize\": 0,\n                \"RestoreSizeFormatted\": \"0 B\",\n                \"StartTime\": \"\",\n                \"Status\": \"success\",\n                \"TargetLocation\": \"/data1\",\n                \"TargetResourceId\": \"ins-7630gzfm\",\n                \"TaskId\": \"frt-26k507t2\",\n                \"TotalFileCount\": 0,\n                \"TotalSize\": 0,\n                \"TotalSizeFormatted\": \"0 B\"\n            },\n            {\n                \"BackupId\": \"fb-p7xd1l0k\",\n                \"CreatedTime\": \"2026-03-31T17:38:44\",\n                \"EndTime\": \"2026-03-31T17:39:46\",\n                \"JobId\": \"j-20260331093845-f371f289\",\n                \"Progress\": 100,\n                \"ResourceId\": \"ins-7630gzfm\",\n                \"RestoreFileCount\": 0,\n                \"RestorePaths\": [\n                    \"data\"\n                ],\n                \"RestoreSize\": 0,\n                \"RestoreSizeFormatted\": \"0 B\",\n                \"StartTime\": \"\",\n                \"Status\": \"success\",\n                \"TargetLocation\": \"/data1\",\n                \"TargetResourceId\": \"ins-7630gzfm\",\n                \"TaskId\": \"frt-lsi51aiq\",\n                \"TotalFileCount\": 0,\n                \"TotalSize\": 0,\n                \"TotalSizeFormatted\": \"0 B\"\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询文件备份恢复任务列表"
+      }
+    ],
+    "DescribeJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec3e013e-c4c2-4232-8f99-2564b7077947\"\n    }\n}",
+        "title": "查询agent任务"
+      }
+    ],
+    "DescribePriceCreateCopyPairs": [
+      {
+        "document": "查询创建3个CVM复制对的价格，盘容量分别为50GB、100GB、200GB",
+        "input": "https://bdrc.tencentcloudapi.com/?Action=DescribePriceCreateCopyPairs\n&DataCapacities.0=50\n&DataCapacities.1=100\n&DataCapacities.2=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CopyPairPrices\": [\n            {\n                \"UnitPrice\": 0.23,\n                \"UnitPriceHigh\": \"0.225\",\n                \"UnitPriceDiscount\": 0.23,\n                \"UnitPriceDiscountHigh\": \"0.225\",\n                \"Discount\": 100,\n                \"ChargeUnit\": \"HOUR\",\n                \"DetailPrices\": [\n                    {\n                        \"PriceName\": \"InstanceDataCapacity\",\n                        \"PriceTitle\": \"容灾CVM实例数据量\",\n                        \"UnitPrice\": 0.03,\n                        \"UnitPriceDiscount\": 0.03,\n                        \"Discount\": 100,\n                        \"ChargeUnit\": \"HOUR\"\n                    },\n                    {\n                        \"PriceName\": \"InstanceCount\",\n                        \"PriceTitle\": \"容灾CVM实例数\",\n                        \"UnitPrice\": 0.2,\n                        \"UnitPriceDiscount\": 0.2,\n                        \"Discount\": 100,\n                        \"ChargeUnit\": \"HOUR\"\n                    }\n                ]\n            },\n            {\n                \"UnitPrice\": 0.26,\n                \"UnitPriceHigh\": \"0.255\",\n                \"UnitPriceDiscount\": 0.26,\n                \"UnitPriceDiscountHigh\": \"0.255\",\n                \"Discount\": 100,\n                \"ChargeUnit\": \"HOUR\",\n                \"DetailPrices\": [\n                    {\n                        \"PriceName\": \"InstanceDataCapacity\",\n                        \"PriceTitle\": \"容灾CVM实例数据量\",\n                        \"UnitPrice\": 0.06,\n                        \"UnitPriceDiscount\": 0.06,\n                        \"Discount\": 100,\n                        \"ChargeUnit\": \"HOUR\"\n                    },\n                    {\n                        \"PriceName\": \"InstanceCount\",\n                        \"PriceTitle\": \"容灾CVM实例数\",\n                        \"UnitPrice\": 0.2,\n                        \"UnitPriceDiscount\": 0.2,\n                        \"Discount\": 100,\n                        \"ChargeUnit\": \"HOUR\"\n                    }\n                ]\n            },\n            {\n                \"UnitPrice\": 0.32,\n                \"UnitPriceHigh\": \"0.315\",\n                \"UnitPriceDiscount\": 0.32,\n                \"UnitPriceDiscountHigh\": \"0.315\",\n                \"Discount\": 100,\n                \"ChargeUnit\": \"HOUR\",\n                \"DetailPrices\": [\n                    {\n                        \"PriceName\": \"InstanceDataCapacity\",\n                        \"PriceTitle\": \"容灾CVM实例数据量\",\n                        \"UnitPrice\": 0.12,\n                        \"UnitPriceDiscount\": 0.12,\n                        \"Discount\": 100,\n                        \"ChargeUnit\": \"HOUR\"\n                    },\n                    {\n                        \"PriceName\": \"InstanceCount\",\n                        \"PriceTitle\": \"容灾CVM实例数\",\n                        \"UnitPrice\": 0.2,\n                        \"UnitPriceDiscount\": 0.2,\n                        \"Discount\": 100,\n                        \"ChargeUnit\": \"HOUR\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"7b946c85-57bd-4dc9-b509-899e2c9a736d\"\n    }\n}",
+        "title": "查询创建CVM复制对的后付费价格"
+      }
+    ],
+    "DescribeProtectGroupsDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectGroupsDeniedActions\n<公共请求参数>\n\n{\n    \"ProtectGroupIds\": [\n        \"pg-f9dgd2h3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ProtectGroupDeniedActionSet\": [\n            {\n                \"DeniedActions\": [\n                    {\n                        \"Action\": \"DeleteDrcProtectGroups\",\n                        \"Code\": \"UnsupportedOperation.DisasterRecoveryProtectGroupBindResource\",\n                        \"Message\": \"容灾保护组(pg-f9dgd2h3)已关联复制对，不能删除\"\n                    }\n                ],\n                \"ProtectGroupId\": \"pg-f9dgd2h3\"\n            }\n        ],\n        \"RequestId\": \"f0b6f67e-0036-42c4-806c-e473921868e8\"\n    }\n}",
+        "title": "查询保护组操作掩码"
+      }
+    ],
+    "DescribeProtectedInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectedInstances\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"AgentId\": \"ins-7630gzfm\",\n                \"AgentStatus\": \"online\",\n                \"AgentVersion\": \"2.9.20.1\",\n                \"BackupCount\": 26,\n                \"CreatedTime\": \"2026-03-26T19:39:11\",\n                \"ExtraInfo\": \"{\\\"Placement\\\": {\\\"Zone\\\": \\\"ap-guangzhou-2\\\", \\\"HostId\\\": null, \\\"ProjectId\\\": 0}, \\\"InstanceId\\\": \\\"ins-7630gzfm\\\", \\\"Uuid\\\": \\\"295eee23-26f1-463c-900c-3a1ba5fe3c7a\\\", \\\"OperatorUin\\\": \\\"700002520084\\\", \\\"InstanceState\\\": \\\"RUNNING\\\", \\\"ApplicationRole\\\": \\\"\\\", \\\"RestrictState\\\": \\\"NORMAL\\\", \\\"InstanceType\\\": \\\"SA9.LARGE8\\\", \\\"CPU\\\": 4, \\\"Memory\\\": 8, \\\"InstanceName\\\": \\\"\\\\u672a\\\\u547d\\\\u540d\\\", \\\"InstanceChargeType\\\": \\\"POSTPAID_BY_HOUR\\\", \\\"SystemDisk\\\": {\\\"DiskType\\\": \\\"CLOUD_BSSD\\\", \\\"DiskId\\\": \\\"disk-8ltp5xeu\\\", \\\"DiskSize\\\": 50, \\\"Encrypt\\\": false, \\\"KmsKeyId\\\": null, \\\"ThroughputPerformance\\\": 0, \\\"CdcId\\\": null}, \\\"DataDisks\\\": [], \\\"PrivateIpAddresses\\\": [\\\"172.16.16.3\\\"], \\\"PublicIpAddresses\\\": null, \\\"IPv6Addresses\\\": null, \\\"InternetAccessible\\\": {\\\"InternetMaxBandwidthOut\\\": 13, \\\"InternetChargeType\\\": null}, \\\"VirtualPrivateCloud\\\": {\\\"VpcId\\\": \\\"vpc-5ccfnmj1\\\", \\\"SubnetId\\\": \\\"subnet-acz7jgvw\\\", \\\"AsVpcGateway\\\": false}, \\\"SecurityGroupIds\\\": [\\\"sg-i3tijpur\\\"], \\\"LoginSettings\\\": {\\\"KeyIds\\\": null}, \\\"ImageId\\\": \\\"img-6n21msk1\\\", \\\"DefaultLoginUser\\\": \\\"root\\\", \\\"DefaultLoginPort\\\": 22, \\\"RenewFlag\\\": null, \\\"CreatedTime\\\": \\\"2026-03-26T08:32:29Z\\\", \\\"ExpiredTime\\\": null, \\\"UnderwriteExpiredTime\\\": null, \\\"Tags\\\": [], \\\"PlatformProjectId\\\": null, \\\"DisasterRecoverGroupId\\\": \\\"\\\", \\\"DedicatedClusterId\\\": \\\"\\\", \\\"CamRoleName\\\": \\\"cvm-cos\\\", \\\"LatestOperation\\\": \\\"ModifyInstancesAttribute.CamRoleName\\\", \\\"LatestOperationState\\\": \\\"SUCCESS\\\", \\\"LatestOperationRequestId\\\": \\\"cb7a51f0-5084-44b5-9b02-2ed66ef148ea\\\", \\\"IsolatedSource\\\": \\\"NOTISOLATED\\\", \\\"ChcInstanceType\\\": \\\"\\\", \\\"HpcClusterId\\\": \\\"\\\", \\\"DisableApiTermination\\\": false, \\\"RdmaIpAddresses\\\": null, \\\"VmEniTrunking\\\": \\\"off\\\", \\\"OsName\\\": \\\"TencentOS Server 4 for x86_64\\\", \\\"EnableJumboFrame\\\": false, \\\"LicenseType\\\": \\\"TencentCloud\\\", \\\"StopChargingMode\\\": \\\"NOT_APPLICABLE\\\", \\\"CpuTopology\\\": {\\\"ThreadPerCore\\\": 2, \\\"CoreCount\\\": 2}, \\\"ImageType\\\": \\\"PUBLIC_IMAGE\\\", \\\"InstanceFamily\\\": \\\"SA9\\\", \\\"LatestOperationErrorMsg\\\": null, \\\"BootMode\\\": \\\"Legacy BIOS\\\"}\",\n                \"InstanceId\": \"ins-7630gzfm\",\n                \"LastHeartbeatTime\": \"2026-04-01T14:32:13\"\n            }\n        ],\n        \"RequestId\": \"30d39f56-3b4f-4818-866e-45d788725744\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询受保护列表信息"
+      }
+    ],
+    "DescribeSecurityGroupMappings": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupMappings\n<公共请求参数>\n\n{\n    \"SitePairId\": \"sitepair-0wxbktxr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SecurityGroupMappingSet\": [\n            {\n                \"LifeState\": \"NORMAL\",\n                \"SecurityGroupMappingId\": \"sgmap-88ylio5h\",\n                \"SitePairId\": \"sitepair-0wxbktxr\",\n                \"SourceSecurityGroupId\": \"sg-h8pnwgld\",\n                \"TargetSecurityGroupId\": \"sg-h8pnwgld\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9c40a9f1-fbb2-4f7f-87a7-58a30d6232d2\"\n    }\n}",
+        "title": "查询安全组映射"
+      }
+    ],
+    "DescribeVpcMappings": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcMappings\n<公共请求参数>\n\n{\n    \"SitePairId\": \"sitepair-0wxbktxr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"VpcMappingSet\": [\n            {\n                \"Id\": 106,\n                \"LifeState\": \"NORMAL\",\n                \"SitePairId\": \"sitepair-0wxbktxr\",\n                \"SourceSubnet\": \"subnet-9pqg3i8o\",\n                \"SourceVpc\": \"vpc-i9pwklpn\",\n                \"Status\": \"\",\n                \"TargetSubnet\": \"subnet-kw0s0e5u\",\n                \"TargetVpc\": \"vpc-ap4fkwyt\"\n            }\n        ],\n        \"RequestId\": \"b450cce0-7254-46e1-baeb-05a974f67c3b\"\n    }\n}",
+        "title": "查询容灾站点VPC映射"
+      }
+    ],
+    "FinishFailoverCopyPairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FinishFailoverCopyPairs\n<公共请求参数>\n\n{\n    \"CopyPairIds\": [\n        \"cvmcopypair-ifytsjpr\"\n    ],\n    \"CopyPairType\": \"INSTANCE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b970c51b-d78a-457b-a678-e43d3e48b18c\"\n    }\n}",
+        "title": "完成切换"
+      }
+    ],
+    "ModifyAutoBackupPolicyAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoBackupPolicyAttribute\n<公共请求参数>\n\n{\n    \"AutoBackupPolicyId\": \"abp-djgairw5\",\n    \"AutoBackupPolicyName\": \"备份策略1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"65f9e2ae-778b-4950-91fd-2400aaa1420f\"\n    }\n}",
+        "title": "修改定期备份策略"
+      }
+    ],
+    "ModifyBackupAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupAttribute\n<公共请求参数>\n\n{\n    \"BackupId\": \"cbackup-9tt5vm7h\",\n    \"IsPermanent\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08583fe4-083d-4d6e-bfcb-e9fe8b7253ad\"\n    }\n}",
+        "title": "修改备份信息"
+      }
+    ],
+    "ModifyBackupVaultAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupVaultAttribute\n<公共请求参数>\n\n{\n    \"VaultId\": \"vault-01l1gcyc\",\n    \"VaultName\": \"test-modify-vault\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea68add8-e4ad-442f-a994-f9d3664c99cc\"\n    }\n}",
+        "title": "修改备份库名称"
+      }
+    ],
+    "ModifyCopyPairAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCopyPairAttribute\n<公共请求参数>\n\n{\n    \"CopyPairId\": \"cvmcopypair-ifytsjpr\",\n    \"CopyPairType\": \"INSTANCE\",\n    \"CopyPairName\": \"new copy pair 3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa6b373a-1b6a-42e7-af40-a7b23f49118a\"\n    }\n}",
+        "title": "修改CVM复制对名称"
+      }
+    ],
+    "ModifyDrillGroupAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDrillGroupAttribute\n<公共请求参数>\n\n{\n    \"DrillGroupId\": \"dg-flxbvmo3\",\n    \"DrillGroupName\": \"DrilGroup1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3aeb305b-2919-4e90-80ba-78a799bbf111\"\n    }\n}",
+        "title": "修改容灾演练组名称"
+      }
+    ],
+    "ModifyDrillPairAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDrillPairAttribute\n<公共请求参数>\n\n{\n    \"DrillPairId\": \"drillpair-p50csne5\",\n    \"DrillPairName\": \"NewGroup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e400ccb-43f6-40e0-8693-a42a0ab1a068\"\n    }\n}",
+        "title": "修改演练对名称"
+      }
+    ],
+    "ModifyFileBackupAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFileBackupAttribute\n<公共请求参数>\n\n{\n    \"BackupId\": \"fb-bjmp85m6\",\n    \"BackupName\": \"test-modify\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"afd3ed5e-fe49-427e-9e5b-402bd06f86be\"\n    }\n}",
+        "title": "修改文件备份信息"
+      }
+    ],
+    "ModifyFileBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFileBackupPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"fbp-08kq3o8z\",\n    \"PlanName\": \"test-modi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c0cce30-0f69-4a52-aaf4-7c88d511a984\"\n    }\n}",
+        "title": "修改备份计划信息"
+      }
+    ],
+    "ModifyProtectGroupAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProtectGroupAttribute\n<公共请求参数>\n\n{\n    \"ProtectGroupId\": \"pg-30bfo4g5\",\n    \"ProtectGroupName\": \"pg11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad73ae00-e2ea-49f0-9cc0-99703acac946\"\n    }\n}",
+        "title": "修改保护组名称"
+      }
+    ],
+    "ModifySitePairAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySitePairAttribute\n<公共请求参数>\n\n{\n    \"SitePairId\": \"sitepair-azxr1djh\",\n    \"SitePairName\": \"spsp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a158f4e6-00ec-4508-b432-c91b1e90f9fd\"\n    }\n}",
+        "title": "删除容灾策略"
+      }
+    ],
+    "ReportAgentMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportAgentMetrics\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73e066a3-673b-4913-bf36-740c9e6f5f27\"\n    }\n}",
+        "title": "上报agent机器指标信息"
+      }
+    ],
+    "ReportGatewayHeartbeat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportGatewayHeartbeat\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5073ee21-3e7c-4ef5-a2f6-35e229528fa7\"\n    }\n}",
+        "title": "Agent上报心跳信息"
+      }
+    ],
+    "ReportJobProgress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportJobProgress\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a290b0d8-6814-4f9a-9b97-543921b01e9e\"\n    }\n}",
+        "title": "上报任务进度"
+      }
+    ],
+    "RunCopyPairTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunCopyPairTasks\n<公共请求参数>\n\n{\n    \"CopyPairIds\": [\n        \"cvmcopypair-843b73an\"\n    ],\n    \"CopyPairType\": \"INSTANCE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CopyPairIds\": [\n            \"cvmcopypair-843b73an\"\n        ],\n        \"RequestId\": \"ca1ea64c-3f4e-4451-9deb-e7c7e16a6cf2\"\n    }\n}",
+        "title": "启动复制对"
+      }
+    ],
+    "RunFailoverCopyPairs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunFailoverCopyPairs\n<公共请求参数>\n\n{\n    \"CopyPairIds\": [\n        \"cvmcopypair-ifytsjpr\"\n    ],\n    \"CopyPairType\": \"INSTANCE\",\n    \"FailoverType\": \"NOW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 12156,\n        \"RequestId\": \"abfb2ffc-c5eb-493f-892b-fd5e6e111cf6\"\n    }\n}",
+        "title": "故障切换"
+      }
+    ],
+    "RunInstancesWithBackupGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunInstancesWithBackupGroup\n<公共请求参数>\n\n{\n    \"BackupGroupId\": \"cbackup-n3thksnh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"ins-izhhpsw2\"\n        ],\n        \"RequestId\": \"e68630db-1b9b-4191-b184-d94b0a1620c1\"\n    }\n}",
+        "title": "备份组新建云服务器"
+      }
+    ],
+    "StopCopyPairTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCopyPairTasks\n<公共请求参数>\n\n{\n    \"CopyPairIds\": [\n        \"cvmcopypair-3v6dtfan\"\n    ],\n    \"CopyPairType\": \"INSTANCE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"519c0449-3952-4745-b489-313330034b54\"\n    }\n}",
+        "title": "停止复制对"
+      }
+    ],
+    "UnbindAutoBackupPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindAutoBackupPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cf4dedd-1a1d-4506-a661-19672ee4bcc7\"\n    }\n}",
+        "title": "UnbindAutoBackupPolicy 解绑定期备份策略"
+      }
+    ]
+  },
+  "version": "1.0"
+}

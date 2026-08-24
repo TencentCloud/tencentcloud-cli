@@ -1027,21 +1027,15 @@
     "UpdateTable": [
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=UpdateTable\n&TableName=adise\n&Tag=tnt-jas2zvl90\n&CreateIndexes.0.IndexName=test-index\n&CreateIndexes.0.MgoKeySchema.MgoIndexKeys.0.Name=adise\n&CreateIndexes.0.MgoKeySchema.MgoIndexKeys.0.Direction=1\n&CreateIndexes.0.MgoKeySchema.MgoIsUnique=false\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"C563943B-3BEA-FE92-29FE-591EAEB7871F\"\n    }\n}",
-        "title": "创建索引"
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTable\n<公共请求参数>\n\n{\n    \"TableName\": \"testxishu\",\n    \"CreateIndexes\": [\n        {\n            \"IndexName\": \"xishu2\",\n            \"MgoKeySchema\": {\n                \"MgoIndexKeys\": [\n                    {\n                        \"Name\": \"age\",\n                        \"Direction\": \"1\"\n                    }\n                ],\n                \"MgoIsUnique\": true,\n                \"MgoIsSparse\": false,\n                \"PartialFilterExpression\": \"{\\\"age\\\":{\\\"$gt\\\":18}}\"\n            }\n        }\n    ],\n    \"EnvId\": \"mike-qiye-mongo2-d4eiui5538d249d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e942c859-c64a-4753-983d-1a1747a45e5f\"\n    }\n}",
+        "title": "给集合 testxishu 增加稀疏索引"
       },
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=UpdateTable\n&TableName=adise\n&Tag=tnt-jas2zvl90\n&DropIndexes.0.IndexName=testIndex\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"C563943B-3BEA-FE92-29FE-591EAEB7871F\"\n    }\n}",
-        "title": "删除索引"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTable\n<公共请求参数>\n\n{\n    \"TableName\": \"test2\",\n    \"CreateIndexes\": [\n        {\n            \"IndexName\": \"adise\",\n            \"MgoKeySchema\": {\n                \"MgoIndexKeys\": [\n                    {\n                        \"Name\": \"adise\",\n                        \"Direction\": \"1\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"EnvId\": \"lowcode-1g1ac0pjd4eca700\",\n    \"MongoConnector\": {\n        \"InstanceId\": \"luke_test2\",\n        \"DatabaseName\": \"adise\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5811a2a8-a892-4600-a7dc-96bf1c4b28ab\"\n    }\n}",
-        "title": "创建索引-使用MongoDB连接器"
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTable\n<公共请求参数>\n\n{\n    \"TableName\": \"demo_items\",\n    \"CreateIndexes\": [\n        {\n            \"IndexName\": \"xishu2\",\n            \"MgoKeySchema\": {\n                \"MgoIndexKeys\": [\n                    {\n                        \"Name\": \"age\",\n                        \"Direction\": \"1\"\n                    }\n                ],\n                \"MgoIsUnique\": false\n            }\n        }\n    ],\n    \"EnvId\": \"mike-qiye-mongo2-d4eiui5538d249d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5a74bae-6743-4079-8114-137582a94c18\"\n    }\n}",
+        "title": "给集合 demo_items 增加索引"
       }
     ],
     "VerifyHTTPServiceRoute": [

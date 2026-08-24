@@ -75,9 +75,9 @@
     "CropEnhanceImageOCR": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CropEnhanceImageOCR\n<公共请求参数>\n\n{\n    \"ImageBase64\": \"/9j/4AAQSkZJRg.....s97n//2Q==\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CroppedHeight\": 1128,\n        \"CroppedImage\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"CroppedWidth\": 756,\n        \"Position\": [\n            75,\n            285,\n            644,\n            267,\n            791,\n            1135,\n            38,\n            1135\n        ],\n        \"RequestId\": \"6d9a9d4c-f3d1-49ce-a01a-41e2ec7c09bd\"\n    }\n}",
-        "title": "图像增强"
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CropEnhanceImageOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg\",\n    \"PdfPageNumber\": 2,\n    \"Crop\": 1,\n    \"Deskew\": 1,\n    \"OnlyPosition\": 0,\n    \"EnhanceType\": 2,\n    \"AdjustOrientation\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Angle\": 1,\n        \"CroppedHeight\": 1464,\n        \"CroppedImage\": \"\",\n        \"CroppedImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg\",\n        \"CroppedWidth\": 2059,\n        \"Position\": [\n            35\n        ],\n        \"RequestId\": \"f91d5881-6be8-4d0d-a9b9-4f646ff8076c\"\n    }\n}",
+        "title": "测试用例"
       }
     ],
     "DescribeExtractDocAgentJob": [

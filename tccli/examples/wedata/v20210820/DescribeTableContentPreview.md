@@ -12,7 +12,8 @@ tccli wedata DescribeTableContentPreview --cli-unfold-argument  \
     --ResourceType TABLE \
     --TableName t1 \
     --ProjectId 2566642341118603264 \
-    --DatabaseName worinimao
+    --DatabaseName worinimao \
+    --EngineTypeDetail StandardSpark
 ```
 
 Output: 

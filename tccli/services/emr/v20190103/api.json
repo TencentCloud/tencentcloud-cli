@@ -1457,7 +1457,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置ID。",
+          "document": "<p>配置ID。</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -1468,7 +1468,7 @@
         },
         {
           "disabled": false,
-          "document": "集群实例ID。",
+          "document": "<p>集群实例ID。</p>",
           "example": "240143022",
           "member": "int64",
           "name": "ClusterId",
@@ -1479,7 +1479,7 @@
         },
         {
           "disabled": false,
-          "document": "自动扩缩容保留最小实例数。",
+          "document": "<p>自动扩缩容保留最小实例数。</p>",
           "example": "0",
           "member": "int64",
           "name": "ScaleLowerBound",
@@ -1490,7 +1490,7 @@
         },
         {
           "disabled": false,
-          "document": "自动扩缩容最大实例数。",
+          "document": "<p>自动扩缩容最大实例数。</p>",
           "example": "29",
           "member": "int64",
           "name": "ScaleUpperBound",
@@ -1501,7 +1501,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则",
+          "document": "<p>扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则</p>",
           "example": "1",
           "member": "int64",
           "name": "StrategyType",
@@ -1512,7 +1512,7 @@
         },
         {
           "disabled": false,
-          "document": "下次可扩容时间。",
+          "document": "<p>下次可扩容时间。</p>",
           "example": "1726015182",
           "member": "uint64",
           "name": "NextTimeCanScale",
@@ -1523,7 +1523,7 @@
         },
         {
           "disabled": false,
-          "document": "优雅缩容开关",
+          "document": "<p>优雅缩容开关</p>",
           "example": "true",
           "member": "bool",
           "name": "GraceDownFlag",
@@ -1534,7 +1534,7 @@
         },
         {
           "disabled": false,
-          "document": "\"CVM\"表示规格全部使用CVM相关类型，\"POD\"表示规格使用容器相关类型,默认为\"CVM\"。",
+          "document": "<p>&quot;CVM&quot;表示规格全部使用CVM相关类型，&quot;POD&quot;表示规格使用容器相关类型,默认为&quot;CVM&quot;。</p>",
           "example": "HOST",
           "member": "string",
           "name": "HardwareType",
@@ -1545,7 +1545,7 @@
         },
         {
           "disabled": false,
-          "document": "\"POSTPAY\"表示只使用按量计费，\"SPOT_FIRST\"表示竞价实例优先，只有HardwareType为\"HOST\"时支持竞价实例优先，\"POD\"只支持纯按量计费。",
+          "document": "<p>&quot;POSTPAY&quot;表示只使用按量计费，&quot;SPOT_FIRST&quot;表示竞价实例优先，只有HardwareType为&quot;HOST&quot;时支持竞价实例优先，&quot;POD&quot;只支持纯按量计费。</p>",
           "example": "POSTPAY",
           "member": "string",
           "name": "PayMode",
@@ -1556,7 +1556,7 @@
         },
         {
           "disabled": false,
-          "document": "竞价实例优先的场景下，按量计费资源数量的最低百分比，整数",
+          "document": "<p>竞价实例优先的场景下，按量计费资源数量的最低百分比，整数</p>",
           "example": "50",
           "member": "int64",
           "name": "PostPayPercentMin",
@@ -1567,7 +1567,7 @@
         },
         {
           "disabled": false,
-          "document": "预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选",
+          "document": "<p>预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选</p>",
           "example": "0",
           "member": "int64",
           "name": "ChangeToPod",
@@ -1578,7 +1578,7 @@
         },
         {
           "disabled": false,
-          "document": "伸缩组名",
+          "document": "<p>伸缩组名</p>",
           "example": "GroupName-test",
           "member": "string",
           "name": "GroupName",
@@ -1589,7 +1589,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "node1",
           "member": "string",
           "name": "YarnNodeLabel",
@@ -1600,7 +1600,7 @@
         },
         {
           "disabled": false,
-          "document": "对应的计算组",
+          "document": "<p>对应的计算组</p>",
           "example": "test11",
           "member": "string",
           "name": "WarehouseName",
@@ -1611,7 +1611,7 @@
         },
         {
           "disabled": false,
-          "document": "伸缩组状态",
+          "document": "<p>伸缩组状态</p>",
           "example": "1",
           "member": "int64",
           "name": "GroupStatus",
@@ -1622,7 +1622,7 @@
         },
         {
           "disabled": false,
-          "document": "并行伸缩 0关闭；1开启",
+          "document": "<p>并行伸缩 0关闭；1开启</p>",
           "example": "0",
           "member": "int64",
           "name": "Parallel",
@@ -1633,7 +1633,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持MNode",
+          "document": "<p>是否支持MNode</p>",
           "example": "0",
           "member": "int64",
           "name": "EnableMNode",
@@ -1644,7 +1644,7 @@
         },
         {
           "disabled": false,
-          "document": "伸缩组更多设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>伸缩组更多设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AutoScaleGroupAdvanceAttrs",
           "name": "ExtraAdvanceAttrs",
@@ -1652,6 +1652,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义主机名</p>",
+          "example": "test3",
+          "member": "string",
+          "name": "CustomNodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18377,6 +18388,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义主机名</p>",
+          "example": "test001",
+          "member": "string",
+          "name": "CustomNodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18984,7 +19006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EMR实例ID",
+          "document": "<p>EMR实例ID</p>",
           "example": "269553004",
           "member": "int64",
           "name": "InstanceId",
@@ -18994,7 +19016,7 @@
         },
         {
           "disabled": false,
-          "document": "操作名称",
+          "document": "<p>操作名称</p>",
           "example": "扩容",
           "member": "string",
           "name": "Operation",
@@ -19004,7 +19026,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型",
+          "document": "<p>操作类型</p>",
           "example": "3",
           "member": "int64",
           "name": "OperationType",
@@ -19014,7 +19036,7 @@
         },
         {
           "disabled": false,
-          "document": "用户类型",
+          "document": "<p>用户类型</p>",
           "example": "1",
           "member": "int64",
           "name": "UserType",
@@ -19024,7 +19046,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者",
+          "document": "<p>操作者</p>",
           "example": "700000446528",
           "member": "string",
           "name": "Operator",
@@ -19034,7 +19056,7 @@
         },
         {
           "disabled": false,
-          "document": "操作时间",
+          "document": "<p>操作时间</p>",
           "example": "2025-11-05 15:02:27",
           "member": "string",
           "name": "CreateTime",
@@ -19044,7 +19066,7 @@
         },
         {
           "disabled": false,
-          "document": "操作对象",
+          "document": "<p>操作对象</p>",
           "example": "集群",
           "member": "string",
           "name": "Operand",
@@ -19054,7 +19076,7 @@
         },
         {
           "disabled": false,
-          "document": "操作详情",
+          "document": "<p>操作详情</p>",
           "example": "节点信息: S2.2XLARGE16*1(master), SA2.LARGE16*2(core)",
           "member": "string",
           "name": "OperationDesc",
@@ -19064,11 +19086,21 @@
         },
         {
           "disabled": false,
-          "document": "安全级别",
+          "document": "<p>安全级别</p>",
           "example": "一般",
           "member": "string",
           "name": "SecurityLevel",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者名称</p>",
+          "example": "SslxSxcms@rsl.com",
+          "member": "string",
+          "name": "OperatorName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

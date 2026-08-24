@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AcquireDeploymentToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcquireDeploymentToken\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"dpt_ZXhhbXBsZS10b2tlbg\",\n        \"ExpiresAt\": \"2026-08-07T08:00:00Z\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取 Deployment Token"
+      }
+    ],
     "AcquireSandboxInstanceToken": [
       {
         "document": "",
@@ -14,6 +22,20 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAPIKey\n<公共请求参数>\n\n{\n    \"Name\": \"LocalDev\"\n}",
         "output": "{\n    \"Response\": {\n        \"APIKey\": \"ark_nXe8gccx2MGJ0oZ3bCf3Rq1I6bMtLEbJKB5k1NPK_rg\",\n        \"KeyId\": \"ark-3edcft6y\",\n        \"Name\": \"str\",\n        \"RequestId\": \"fb33859c-a89b-4626-bee1-bab5e53803b3\"\n    }\n}",
         "title": "创建API密钥"
+      }
+    ],
+    "CreateDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeployment\n<公共请求参数>\n\n{\n    \"DeploymentName\": \"workspace-service\",\n    \"ToolId\": \"sdt-a1b2c3d4\",\n    \"LifecycleConfiguration\": {\n        \"IdleTimeoutSeconds\": 300,\n        \"IdleAction\": \"PAUSE\"\n    },\n    \"AffinityConfiguration\": {\n        \"Mode\": \"EXCLUSIVE\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployment\": {\n            \"DeploymentId\": \"dpl-a1b2c3d4\",\n            \"DeploymentName\": \"workspace-service\",\n            \"ToolId\": \"sdt-a1b2c3d4\",\n            \"ScalingConfiguration\": {\n                \"MinInstanceCount\": 0,\n                \"MaxInstanceCount\": 10,\n                \"MaxInstanceRequestConcurrency\": 100\n            },\n            \"LifecycleConfiguration\": {\n                \"IdleTimeoutSeconds\": 300,\n                \"IdleAction\": \"PAUSE\"\n            },\n            \"AffinityConfiguration\": {\n                \"Mode\": \"EXCLUSIVE\",\n                \"HeaderName\": \"X-Tencent-Agr-Affinity-Id\"\n            },\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-08-06T08:00:00Z\",\n            \"UpdatedTime\": \"2026-08-06T08:00:00Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建 Deployment"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeployment\n<公共请求参数>\n\n{\n    \"DeploymentName\": \"hello\",\n    \"ToolId\": \"sdt-95hq0b7k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployment\": {\n            \"CreatedTime\": \"2026-08-18T03:08:11Z\",\n            \"DeploymentId\": \"dpl-amfzcemg\",\n            \"DeploymentName\": \"hello\",\n            \"LifecycleConfiguration\": {\n                \"IdleAction\": \"STOP\",\n                \"IdleTimeoutSeconds\": 300\n            },\n            \"ScalingConfiguration\": {\n                \"MaxInstanceCount\": 10,\n                \"MaxInstanceRequestConcurrency\": 100,\n                \"MinInstanceCount\": 0\n            },\n            \"Status\": \"ACTIVE\",\n            \"ToolId\": \"sdt-95hq0b7k\",\n            \"UpdatedTime\": \"2026-08-18T03:08:11Z\"\n        },\n        \"RequestId\": \"2fda2af5-a50e-465e-bc71-849828d9b1f2\"\n    }\n}",
+        "title": "创建 Deployment - 2"
       }
     ],
     "CreatePreCacheImageTask": [
@@ -46,6 +68,14 @@
         "title": "删除API密钥"
       }
     ],
+    "DeleteDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除 Deployment"
+      }
+    ],
     "DeleteSandboxTool": [
       {
         "document": "",
@@ -60,6 +90,22 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIKeyList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"APIKeySet\": [\n            {\n                \"CreatedAt\": \"2025-09-12T14:09:05.242Z\",\n                \"KeyId\": \"ark-3edcft6y\",\n                \"MaskedKey\": \"ark_Au****kKjo\",\n                \"Name\": \"LocalDev\",\n                \"Status\": \"API_KEY_STATUS_ACTIVE\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"37e8ed19-80cd-49f3-9b5a-eaea1bf9c6c1\"\n    }\n}",
         "title": "获取API密钥简略信息列表"
+      }
+    ],
+    "DescribeDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployment\": {\n            \"DeploymentId\": \"dpl-a1b2c3d4\",\n            \"DeploymentName\": \"workspace-service\",\n            \"ToolId\": \"sdt-a1b2c3d4\",\n            \"ScalingConfiguration\": {\n                \"MinInstanceCount\": 0,\n                \"MaxInstanceCount\": 10,\n                \"MaxInstanceRequestConcurrency\": 100\n            },\n            \"LifecycleConfiguration\": {\n                \"IdleTimeoutSeconds\": 300,\n                \"IdleAction\": \"PAUSE\"\n            },\n            \"AffinityConfiguration\": {\n                \"Mode\": \"EXCLUSIVE\",\n                \"HeaderName\": \"X-Tencent-Agr-Affinity-Id\"\n            },\n            \"Status\": \"ACTIVE\",\n            \"CreatedTime\": \"2026-08-06T08:00:00Z\",\n            \"UpdatedTime\": \"2026-08-06T08:00:00Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 Deployment"
+      }
+    ],
+    "DescribeDeploymentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeploymentList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"deployment-name\",\n            \"Values\": [\n                \"workspace-service\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeploymentSet\": [\n            {\n                \"DeploymentId\": \"dpl-a1b2c3d4\",\n                \"DeploymentName\": \"workspace-service\",\n                \"ToolId\": \"sdt-a1b2c3d4\",\n                \"ScalingConfiguration\": {\n                    \"MinInstanceCount\": 0,\n                    \"MaxInstanceCount\": 10,\n                    \"MaxInstanceRequestConcurrency\": 100\n                },\n                \"LifecycleConfiguration\": {\n                    \"IdleTimeoutSeconds\": 300,\n                    \"IdleAction\": \"PAUSE\"\n                },\n                \"AffinityConfiguration\": {\n                    \"Mode\": \"EXCLUSIVE\",\n                    \"HeaderName\": \"X-Tencent-Agr-Affinity-Id\"\n                },\n                \"Status\": \"ACTIVE\",\n                \"CreatedTime\": \"2026-08-06T08:00:00Z\",\n                \"UpdatedTime\": \"2026-08-06T08:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询 Deployment 列表"
       }
     ],
     "DescribePreCacheImageTask": [
@@ -84,6 +130,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxToolList\n<公共请求参数>\n\n{\n    \"ToolIds\": [\n        \"sdt-ee4ywozw\",\n        \"sdt-another123\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SandboxToolSet\": [\n            {\n                \"ToolId\": \"sdt-ee4ywozw\",\n                \"ToolName\": \"browser-sandbox\",\n                \"ToolType\": \"browser\",\n                \"Status\": \"ACTIVE\",\n                \"Description\": \"浏览器沙箱环境\",\n                \"Tags\": [],\n                \"CreateTime\": \"2024-01-15T10:30:00Z\",\n                \"UpdateTime\": \"2024-01-15T10:30:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
         "title": "查询沙箱工具列表"
+      }
+    ],
+    "ModifyDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-amfzcemg\",\n    \"LifecycleConfiguration\": {\n        \"IdleTimeoutSeconds\": 30,\n        \"IdleAction\": \"STOP\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployment\": {\n            \"CreatedTime\": \"2026-08-18T03:08:11Z\",\n            \"DeploymentId\": \"dpl-amfzcemg\",\n            \"DeploymentName\": \"hello\",\n            \"LifecycleConfiguration\": {\n                \"IdleAction\": \"STOP\",\n                \"IdleTimeoutSeconds\": 30\n            },\n            \"ScalingConfiguration\": {\n                \"MaxInstanceCount\": 10,\n                \"MaxInstanceRequestConcurrency\": 100,\n                \"MinInstanceCount\": 0\n            },\n            \"Status\": \"ACTIVE\",\n            \"ToolId\": \"sdt-95hq0b7k\",\n            \"UpdatedTime\": \"2026-08-18T03:10:42Z\"\n        },\n        \"RequestId\": \"c24cd623-f7f2-47b2-a5be-e25987405d6d\"\n    }\n}",
+        "title": "修改 Deployment"
       }
     ],
     "PauseSandboxInstance": [

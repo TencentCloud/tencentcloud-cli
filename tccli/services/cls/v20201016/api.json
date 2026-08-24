@@ -7484,7 +7484,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题Id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "<p>日志主题Id</p><ul><li>通过<a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li></ul>",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
           "name": "TopicId",
@@ -7493,7 +7493,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出数量,  最大值5000万",
+          "document": "<p>日志导出数量,  最大值5000万</p>",
           "example": "100",
           "member": "uint64",
           "name": "Count",
@@ -7502,7 +7502,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出检索语句，不支持<a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>",
+          "document": "<p>日志导出检索语句，不支持<a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a></p>",
           "example": "status:200",
           "member": "string",
           "name": "Query",
@@ -7511,7 +7511,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出起始时间，毫秒时间戳",
+          "document": "<p>日志导出起始时间，毫秒时间戳</p>",
           "example": "1607499107000",
           "member": "int64",
           "name": "From",
@@ -7520,7 +7520,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出结束时间，毫秒时间戳",
+          "document": "<p>日志导出结束时间，毫秒时间戳</p>",
           "example": "1607499207000",
           "member": "int64",
           "name": "To",
@@ -7529,7 +7529,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出时间排序。desc，asc，默认为desc",
+          "document": "<p>日志导出时间排序。desc，asc，默认为desc</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -7538,7 +7538,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出数据格式。json，csv，默认为json",
+          "document": "<p>日志导出数据格式。json，csv，默认为json</p>",
           "example": "json",
           "member": "string",
           "name": "Format",
@@ -7547,7 +7547,7 @@
         },
         {
           "disabled": false,
-          "document": "语法规则,  默认值为0。\n0：Lucene语法，1：CQL语法。",
+          "document": "<p>检索语法规则，默认值为1，推荐使用1 。</p><ul><li>0：Lucene语法</li><li>1：CQL语法（CLS Query Language，日志服务专用检索语法）</li></ul><p>详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>。</p>",
           "example": "1",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -7556,7 +7556,7 @@
         },
         {
           "disabled": false,
-          "document": "导出字段",
+          "document": "<p>导出字段</p>",
           "example": "[\"__timestamp__\"]",
           "member": "string",
           "name": "DerivedFields",
@@ -7571,7 +7571,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志导出ID。",
+          "document": "<p>日志导出ID。</p>",
           "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
           "name": "ExportId",

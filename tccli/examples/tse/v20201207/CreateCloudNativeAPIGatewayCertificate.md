@@ -1,22 +1,26 @@
-**Example 1: 创建云原生网关证书**
+**Example 1: 创建客户端证书示例**
 
-创建云原生网关证书
+
 
 Input: 
 
 ```
 tccli tse CreateCloudNativeAPIGatewayCertificate --cli-unfold-argument  \
-    --GatewayId gateway-9abf3b79 \
-    --Name tencent.com \
-    --BindDomains tencent.com \
-    --CertId 12412rew43-5fdsf35
+    --GatewayId gateway-9a766f25 \
+    --CertId ZTQSzGeI \
+    --Name client-cert-test \
+    --CertType SVR \
+    --CertUsage CLIENT
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "741e4e82-371d-48de-a843-867c69ff114d"
+        "Result": {
+            "Id": "386ead60-b5b9-454f-95cd-b1aed1c092b0"
+        },
+        "RequestId": "eb569733-5b0c-462f-9101-9bb471fddf85"
     }
 }
 ```

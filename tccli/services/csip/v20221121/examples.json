@@ -432,6 +432,14 @@
         "title": "创建Dspm资产列表导出任务"
       }
     ],
+    "CreateDspmAuditFilterStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmAuditFilterStrategy\n<公共请求参数>\n\n{\n    \"Name\": \"过滤删除操作\",\n    \"Rule\": \"{\\\"Fields\\\":[{\\\"Key\\\":\\\"ClientIp\\\",\\\"Operator\\\":\\\"include\\\",\\\"Value\\\":\\\"1.1.1.1\\\"}]}\",\n    \"IsEnabled\": 1,\n    \"Description\": \"删除操作不用保存\",\n    \"Remark\": \"删除操作不用保存\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditFilterStrategyId\": 2154,\n        \"RequestId\": \"70a950a7-0b13-4e15-98fb-72faac1f3c89\"\n    }\n}",
+        "title": "创建过滤规则"
+      }
+    ],
     "CreateDspmExportTask": [
       {
         "document": "",
@@ -512,12 +520,28 @@
         "title": "创建Dspm个人身份id"
       }
     ],
+    "CreateDspmResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmResource\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ResourceId\": \"dspm-testinst\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm实例"
+      }
+    ],
     "CreateDspmRiskExportJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmRiskExportJob\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"JobID\": \"job-21c491y9\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "创建Dspm风险导出任务"
+      }
+    ],
+    "CreateDspmRiskStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDspmRiskStrategy\n<公共请求参数>\n\n{\n    \"Name\": \"自定义SQL注入审计规则\",\n    \"Rule\": \"{\\\"RuleType\\\":1,\\\"Fields\\\":[{\\\"Key\\\":\\\"SqlText\\\",\\\"Operator\\\":\\\"contains\\\",\\\"Value\\\":\\\"sleep(\\\"}],\\\"RuleIdentifier\\\":\\\"CustomSqlInjection\\\",\\\"SaveToDb\\\":true}\",\n    \"RiskLevel\": \"High\",\n    \"IsEnabled\": \"1\",\n    \"RiskType\": \"alarm\",\n    \"StrategyCategory\": \"SQLOperationAnomaly\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StrategyId\": \"190001\",\n        \"StrategyType\": \"CustomAudit_8f6b5b0c2c1b4bb7a1e4bcb828c97a6a\",\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "创建Dspm自定义风险策略"
       }
     ],
     "CreateDspmWhitelistStrategy": [
@@ -952,12 +976,28 @@
         "title": "删除Dspm资产账号"
       }
     ],
+    "DeleteDspmAuditFilterStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmAuditFilterStrategy\n<公共请求参数>\n\n{\n    \"AuditFilterStrategyId\": [\n        2155\n    ],\n    \"MemberId\": [\n        \"mem-123\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e22912b7-dfa4-4360-929c-ad841362dd4b\"\n    }\n}",
+        "title": "删除策略"
+      }
+    ],
     "DeleteDspmBackupLogList": [
       {
         "document": "删除备份日志",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmBackupLogList\n<公共请求参数>\n\n{\n    \"Id\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123-12343-abc\"\n    }\n}",
         "title": "删除备份日志"
+      }
+    ],
+    "DeleteDspmCkafkaConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmCkafkaConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\"\n    }\n}",
+        "title": "DeleteCkafkaConfig"
       }
     ],
     "DeleteDspmExportTask": [
@@ -1030,6 +1070,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmRestoreLogList\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae461ef6-abc7-4a3d-9224-09a56b94fcfc\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DeleteDspmRiskStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmRiskStrategy\n<公共请求参数>\n\n{\n    \"StrategyId\": [\n        190001\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "删除Dspm自定义风险策略"
+      }
+    ],
+    "DeleteDspmShareUserData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDspmShareUserData\n<公共请求参数>\n\n{\n    \"DeleteDataAppId\": 1308953346\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"752ac038-4e0f-4b30-895b-e0e84a20fb8d\",\n        \"Result\": 0\n    }\n}",
+        "title": "删除dspm监测账号数据"
       }
     ],
     "DeleteDspmWhitelistStrategy": [
@@ -2674,6 +2730,14 @@
         "title": "查询Dspm资产列表"
       }
     ],
+    "DescribeDspmAuditFilterStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAuditFilterStrategy\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-1223\"\n    ],\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"Order\": \"desc\",\n        \"By\": \"ModifyTime\",\n        \"Filters\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StrategySet\": [\n            {\n                \"AppId\": 260085118,\n                \"AuditFilterStrategyId\": 14,\n                \"CreateTime\": \"2026-07-17T06:57:52+08:00\",\n                \"Description\": \"用于过滤无效的查询日志操作\",\n                \"IsEnabled\": 0,\n                \"ModifyTime\": \"2026-08-04T08:54:13+08:00\",\n                \"Name\": \"过滤规则-去除查询操作\",\n                \"Remark\": \"用于过滤无效的查询日志操作\",\n                \"Rule\": \"{\\\"Fields\\\":[{\\\"Key\\\":\\\"DbName\\\",\\\"Operator\\\":\\\"include\\\",\\\"Value\\\":\\\"select\\\"}]}\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"3db2d4da-9b8c-42ca-8537-e0987161d3ca\"\n    }\n}",
+        "title": "获取当前用户的过滤策略列表"
+      }
+    ],
     "DescribeDspmBackupLogList": [
       {
         "document": "查询备份日志列表",
@@ -2688,6 +2752,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmBackupSetting\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"BackupLogSaveTime\": 0,\n        \"RestoreLogSaveTime\": 0,\n        \"LogMaxSaveTime\": 180,\n        \"OnlineLogMaxSaveTime\": 30,\n        \"RequestId\": \"qwedaexczcqwe\"\n    }\n}",
         "title": "查询日志备份配置"
+      }
+    ],
+    "DescribeDspmCkafkaRouteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmCkafkaRouteList\n<公共请求参数>\n\n{\n    \"VipType\": 0,\n    \"RegionId\": \"ap-guangzhou\",\n    \"InstanceId\": \"ins-woinsla\",\n    \"InstanceName\": \"ins-2wqsasad\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Vip\": \"vpc-2wqsa\",\n                \"Vport\": \"3006\",\n                \"Domain\": \"www.mysql.com\",\n                \"DomainPort\": \"80\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"24adbdda-a605-4501-9e8c-3f0894936a62\"\n    }\n}",
+        "title": "DescribeCkafkaRouteList"
+      }
+    ],
+    "DescribeDspmCkafkaTopicList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmCkafkaTopicList\n<公共请求参数>\n\n{\n    \"VipType\": 0,\n    \"RegionId\": \"vpc-sads32we\",\n    \"InstanceId\": \"ins-2ws43refg\",\n    \"InstanceName\": \"ins-21wsd5r\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"TopicId\": \"topic-wqsa\",\n                \"TopicName\": \"sender_alarm\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"013dced9-2c45-472f-9b28-862666348d0d\"\n    }\n}",
+        "title": "DescribeCkafkaTopicList"
       }
     ],
     "DescribeDspmDictionaryList": [
@@ -2820,12 +2900,28 @@
         "title": "DescribeDspmIdentifyRuleTestResult"
       }
     ],
+    "DescribeDspmLogDeliveryType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmLogDeliveryType\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"LogType\": 0,\n                \"LogTypeName\": \"无where更新\",\n                \"LogTypeDesc\": \"更新无where条件\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a8dab301-cce3-48bc-849e-edd0baa7d47a\"\n    }\n}",
+        "title": "DescribeLogDeliveryType"
+      }
+    ],
     "DescribeDspmLogList": [
       {
         "document": "根据风险等级升序查询日志列表",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmLogList\n<公共请求参数>\n\n{\n    \"Sort\": \"desc\",\n    \"DbPort\": 0,\n    \"FuzzySearch\": \"select\",\n    \"HitRule\": 0,\n    \"DangerLevel\": \"high\",\n    \"RestoreLogId\": 0,\n    \"AssetsId\": 0,\n    \"UserName\": \"root\",\n    \"DbIp\": \"127.0.0.1\",\n    \"Field\": \"ip\",\n    \"SessionId\": \"1711987200000-140227893131008-2045\",\n    \"Limit\": 1,\n    \"StartTime\": 0,\n    \"Offset\": 1,\n    \"EndTime\": 0,\n    \"ClientSideIp\": \"127.0.0.1\",\n    \"DbName\": \"mysql\",\n    \"ClientName\": \"Proxy\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"AiScore\": 1,\n                \"AppUser\": \"testuser\",\n                \"BackPacket\": \"\",\n                \"ClientIp\": \"127.0.0.1\",\n                \"ClientMac\": \"52:54:00:c9:38:87\",\n                \"ClientName\": \"root\",\n                \"ClientUser\": \"39510\",\n                \"ClientPort\": 3306,\n                \"DangerLevel\": 1,\n                \"DbIp\": \"127.0.0.1\",\n                \"DbName\": \"monitor\",\n                \"DbPort\": 3306,\n                \"DbUser\": \"root\",\n                \"EffectRow\": 0,\n                \"ExecTime\": 1,\n                \"HitRule\": \"10000\",\n                \"Id\": 104709,\n                \"InstanceId\": 1,\n                \"InstanceName\": \"审计测试资产\",\n                \"OpSql\": \"login\",\n                \"OpTime\": 1631760308,\n                \"RetMsg\": \"login failed\",\n                \"RetNo\": 0,\n                \"SessionId\": \"1631721600000-140388847871744-5319\",\n                \"SqlType\": \"LOGIN\",\n                \"TableName\": \"information_schema\",\n                \"AssetName\": \"审计测试资产\",\n                \"HitRules\": [],\n                \"SourceType\": \"cdb\",\n                \"ReqId\": \"req-testidaseeada\",\n                \"SqlMainType\": \"DML\",\n                \"TableNames\": [\n                    \"table1,table2,table3\"\n                ],\n                \"FieldNames\": [\n                    \"field1,field2,field3\"\n                ],\n                \"FieldName\": \"phonenum,username,id\",\n                \"DbType\": \"MYSQL\",\n                \"ClientDriverName\": \"mongosh\"\n            }\n        ],\n        \"RequestId\": \"a8aa8bbc-c255-42b1-88c4-04419f435a77\"\n    }\n}",
         "title": "根据风险等级升序查询日志列表"
+      }
+    ],
+    "DescribeDspmLogTypeConfigList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmLogTypeConfigList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"VipType\": 1,\n                \"InstanceId\": \"ckafka-istestid\",\n                \"InstanceName\": \"测试 Ckafka\",\n                \"Vip\": \"1.1.1.1\",\n                \"Vport\": \"9092\",\n                \"Domain\": \"ckafka-istestid.ap-guangzhou.ckafka.tencentcloudmq.com\",\n                \"DomainPort\": \"9092\",\n                \"RegionId\": \"ap-guangzhou\",\n                \"VpcId\": \"vpc-istestid\",\n                \"SubnetId\": \"subnet-istestid\",\n                \"Healthy\": 1,\n                \"LogType\": 1,\n                \"TopicId\": \"topic-istestid\",\n                \"TopicName\": \"alarm_topic\",\n                \"Status\": 1,\n                \"StatusMessages\": \"success\",\n                \"IsOpen\": 1\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"b0b75456-b364-4935-abf3-9c83dfbd7b4c\"\n    }\n}",
+        "title": "DescribeLogTypeConfigList"
       }
     ],
     "DescribeDspmPayInfo": [
@@ -2856,6 +2952,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmPersonalIdentifyList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InfoSet\": [],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "查询Dspm个人身份信息列表"
+      }
+    ],
+    "DescribeDspmResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmResource\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ResourceId\": \"dspm-testinst\",\n        \"Status\": 1,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
+        "title": "查询Dspm实例"
       }
     ],
     "DescribeDspmRisk": [
@@ -2898,6 +3002,14 @@
         "title": "查询Dspm风险趋势"
       }
     ],
+    "DescribeDspmSessionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmSessionList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"EndTime\": 1782489599,\n    \"StartTime\": 946656000,\n    \"DbTypes\": [\n        \"cdb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppId\": 260085118,\n                \"AssetName\": \"cdb-l8hhoqwd\",\n                \"AssetType\": \"cdb\",\n                \"ClientIp\": \"169.254.128.1\",\n                \"ClientPort\": 58008,\n                \"DbIp\": \"10.0.0.5\",\n                \"DbName\": \"\",\n                \"DbPort\": 3306,\n                \"DbType\": \"MYSQL\",\n                \"DbUser\": \"dspmsc_seybalbp\",\n                \"InstanceId\": 259954,\n                \"InstanceName\": \"自动化测试实例-勿动\",\n                \"LoginTime\": 1782181126,\n                \"LogoutTime\": 1782181126,\n                \"OpTime\": 1782181126,\n                \"RetNo\": 1,\n                \"SessionId\": \"0_0_1462470\",\n                \"SourceType\": \"云数据库\",\n                \"SourceTypeEn\": \"cdb\",\n                \"SourceTypeEnDisplayName\": \"cdb\",\n                \"SqlCount\": 2\n            }\n        ],\n        \"TotalCount\": 10000,\n        \"RequestId\": \"e34db94f-6139-4310-9f71-48b0f973f730\"\n    }\n}",
+        "title": "获取会话列表"
+      }
+    ],
     "DescribeDspmStatistics": [
       {
         "document": "",
@@ -2928,6 +3040,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmSyncUsersStatus\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "查询Dspm同步用户状态"
+      }
+    ],
+    "DescribeDspmUserCkafkaInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmUserCkafkaInstanceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"InstanceId\": \"ckafka-weafasdd\",\n                \"InstanceName\": \"name\",\n                \"RegionId\": \"ap-guangzhou\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"d1cb1d17-2bb1-4bbc-b766-aa9fec453ffa\"\n    }\n}",
+        "title": "查询租户ckafka实例列表"
       }
     ],
     "DescribeDspmWhitelistStrategy": [
@@ -4870,12 +4990,44 @@
         "title": "修改Dspm安全分析开关"
       }
     ],
+    "ModifyDspmAuditFilterStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmAuditFilterStrategy\n<公共请求参数>\n\n{\n    \"AuditFilterStrategyId\": 2154,\n    \"MemberId\": [\n        \"mem-1234\"\n    ],\n    \"Name\": \"过滤删除操作\",\n    \"Description\": \"过滤删除操作\",\n    \"IsEnabled\": 1,\n    \"Remark\": \"remark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aefe7c14-4242-440f-8f4c-aaadf8e98865\"\n    }\n}",
+        "title": "修改过滤规则"
+      }
+    ],
     "ModifyDspmBackupSetting": [
       {
         "document": "修改日志备份设置",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmBackupSetting\n<公共请求参数>\n\n{\n    \"BackupLogSaveTime\": 0,\n    \"RestoreLogSaveTime\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdqw123aweqweq\"\n    }\n}",
         "title": "修改日志备份设置"
+      }
+    ],
+    "ModifyDspmCkafkaSave": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmCkafkaSave\n<公共请求参数>\n\n{\n    \"VipType\": 1,\n    \"RegionId\": \"ap-guangzhou\",\n    \"InstanceId\": \"uins-21ws\",\n    \"InstanceName\": \"测试资产\",\n    \"RouteInfo\": {\n        \"Vip\": \"127.0.0.1\",\n        \"Vport\": \"3083\",\n        \"Domain\": \"www.root.com\",\n        \"DomainPort\": \"3306\"\n    },\n    \"Username\": \"root\",\n    \"Password\": \"root@pwd\",\n    \"LogDeliveryInfo\": [\n        {\n            \"LogType\": 0,\n            \"TopicId\": \"topic-2ws\",\n            \"TopicName\": \"send_mail\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\"\n    }\n}",
+        "title": "ModifyCkafkaSave"
+      }
+    ],
+    "ModifyDspmCkafkaStart": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmCkafkaStart\n<公共请求参数>\n\n{\n    \"LogDeliveryInfo\": [\n        {\n            \"LogType\": 0,\n            \"TopicId\": \"topc-2ws\",\n            \"TopicName\": \"send-mail\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\"\n    }\n}",
+        "title": "ModifyCkafkaStart"
+      }
+    ],
+    "ModifyDspmCkafkaStop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmCkafkaStop\n<公共请求参数>\n\n{\n    \"LogDeliveryInfo\": [\n        {\n            \"LogType\": 0,\n            \"TopicId\": \"topic-wwqsa\",\n            \"TopicName\": \"send-mail\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\"\n    }\n}",
+        "title": "ModifyCkafkaStop"
       }
     ],
     "ModifyDspmIdentifyCategory": [
@@ -4956,6 +5108,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmIpInfo\n<公共请求参数>\n\n{\n    \"Ip\": \"10.10.10.10\",\n    \"Remark\": \"测试ip\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "修改DspmIp信息"
+      }
+    ],
+    "ModifyDspmLogDeliveryType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDspmLogDeliveryType\n<公共请求参数>\n\n{\n    \"LogType\": 0,\n    \"TopicId\": \"topc-12ws\",\n    \"TopicName\": \"send-mail\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\"\n    }\n}",
+        "title": "ModifyLogDeliveryType"
       }
     ],
     "ModifyDspmPersonalIdentify": [
@@ -5354,6 +5514,14 @@
         "title": "编辑共享账号列表"
       }
     ],
+    "ModifyShareUserDspm": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyShareUserDspm\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68b8087a65261234\",\n        \"mem-ac092bdbb93c1234\",\n        \"mem-tencent-5090192288531234\",\n        \"mem-56c68ef19541234\",\n        \"mem-94eace433ec11234\",\n        \"mem-7c6daa49836d1234\"\n    ],\n    \"SharedAppIDList\": [\n        1308951234,\n        1301841234,\n        1256291234,\n        1258641234\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"da0a28f2-c2d8-4f89-b4bc-f3928571f014\",\n        \"Result\": 0\n    }\n}",
+        "title": "修改dspm监测账号"
+      }
+    ],
     "ModifySkillScanAlertStatus": [
       {
         "document": "",
@@ -5512,6 +5680,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendDspmAssetLoginSmsCode\n<公共请求参数>\n\n{\n    \"PersonId\": \"pid_zdazymzh\",\n    \"AssetId\": \"cdb-c2thbt00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
         "title": "发送Dspm资产访问验证码"
+      }
+    ],
+    "SendDspmCkafkaTest": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendDspmCkafkaTest\n<公共请求参数>\n\n{\n    \"VipType\": 0,\n    \"InstanceId\": \"ins-2w3ed\",\n    \"Vip\": \"127.0.0.1\",\n    \"Vport\": \"3306\",\n    \"Domain\": \"www.domain.com\",\n    \"DomainPort\": \"3307\",\n    \"Username\": \"root\",\n    \"Password\": \"root@pwd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\"\n    }\n}",
+        "title": "SendCkafkaTest"
       }
     ],
     "StartOrModifyPreventUninstall": [

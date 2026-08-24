@@ -9882,7 +9882,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。\n说明：仅能输入实例架构为云盘版的实例 ID，对应控制台实例配置显示为“云盘版（云盘）”的实例。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。<br>说明：仅能输入实例架构为云盘版的实例 ID，对应控制台实例配置显示为“云盘版（云盘）”的实例。</p>",
           "example": "cdb-dctw4edd",
           "member": "string",
           "name": "InstanceId",
@@ -9897,7 +9897,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "cdb38936",
           "member": "string",
           "name": "ClusterName",
@@ -9907,8 +9907,8 @@
         },
         {
           "disabled": false,
-          "document": "云盘版实例的读写地址信息。",
-          "example": "10.1.*.1:3306",
+          "document": "<p>云盘版实例的读写地址信息。</p>",
+          "example": "无",
           "member": "AddressInfo",
           "name": "ReadWriteAddress",
           "output_required": false,
@@ -9917,8 +9917,8 @@
         },
         {
           "disabled": false,
-          "document": "云盘版实例的只读地址信息。",
-          "example": "10.1.*.2:3306",
+          "document": "<p>云盘版实例的只读地址信息。</p>",
+          "example": "无",
           "member": "AddressInfo",
           "name": "ReadOnlyAddress",
           "output_required": false,
@@ -9927,8 +9927,8 @@
         },
         {
           "disabled": false,
-          "document": "云盘版实例的节点列表信息。",
-          "example": "[{\"NodeId\": \"dbn-qqeo1111\",\"Role\": \"master\",\"Zone\": \"ap-guangzhou-1\",\"Weight\": 1,\"Status\": \"online\"},{\"NodeId\": \"dbn-qqeo2222\",\"Role\": \"slave\",\"Zone\": \"ap-guangzhou-2\",\"Weight\": 1,\"Status\": \"online\"}]",
+          "document": "<p>云盘版实例的节点列表信息。</p>",
+          "example": "无",
           "member": "ClusterNodeInfo",
           "name": "NodeList",
           "output_required": false,
@@ -9937,7 +9937,7 @@
         },
         {
           "disabled": false,
-          "document": "只读空间保护阈值,单位GB",
+          "document": "<p>只读空间保护阈值,单位GB</p>",
           "example": "2",
           "member": "int64",
           "name": "ReadonlyLimit",
@@ -9947,7 +9947,7 @@
         },
         {
           "disabled": false,
-          "document": "实例节点数。",
+          "document": "<p>实例节点数。</p>",
           "example": "2",
           "member": "int64",
           "name": "NodeCount",

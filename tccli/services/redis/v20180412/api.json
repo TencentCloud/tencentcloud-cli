@@ -329,6 +329,13 @@
       "output": "DescribeInstanceParamsResponse",
       "status": "online"
     },
+    "DescribeInstancePasswordPolicy": {
+      "document": "查询指定实例当前密码复杂度配置",
+      "input": "DescribeInstancePasswordPolicyRequest",
+      "name": "查询实例当前密码复杂度配置",
+      "output": "DescribeInstancePasswordPolicyResponse",
+      "status": "online"
+    },
     "DescribeInstanceSecurityGroup": {
       "document": "本接口（DescribeInstanceSecurityGroup）用于查询实例安全组信息。",
       "input": "DescribeInstanceSecurityGroupRequest",
@@ -5034,6 +5041,43 @@
           "name": "InstanceMultiParam",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancePasswordPolicyRequest": {
+      "document": "DescribeInstancePasswordPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/redis\">Redis 控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-5x9h****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancePasswordPolicyResponse": {
+      "document": "DescribeInstancePasswordPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例密码复杂度策略。</p>",
+          "example": "无",
+          "member": "PasswordPolicy",
+          "name": "PasswordPolicy",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

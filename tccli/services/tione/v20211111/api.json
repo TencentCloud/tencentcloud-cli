@@ -2312,6 +2312,15 @@
           "name": "ResourceSupplyAttribute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理模板 ID</p>",
+          "example": "Qwen3.5-9B",
+          "member": "string",
+          "name": "InferTemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10746,6 +10755,15 @@
           "name": "TargetProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理模板 ID，在内置大模型场景下使用</p>",
+          "example": "Qwen3.5-9B",
+          "member": "string",
+          "name": "InferTemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15744,6 +15762,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理模板Id</p><p>参数格式：推理模板 ID</p>",
+          "example": "Qwen3.5-9B",
+          "member": "string",
+          "name": "InferTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
