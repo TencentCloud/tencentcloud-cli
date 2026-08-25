@@ -7,7 +7,7 @@ exclude = ["tccli/examples"]
 
 [project]
 name = "tccli"
-version = "3.1.170.1rc3"
+version = "3.1.170.1rc4"
 authors = [
   { name="tencentcloudapi", email="tencentcloudapi@tencent.com" },
 ]
