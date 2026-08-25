@@ -66,10 +66,10 @@
     ],
     "CreateRejectedQuestion": [
       {
-        "document": "创建新的拒答问题",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRejectedQuestion\n<公共请求参数>\n\n{\n    \"LoginUin\": \"600000562455\",\n    \"LoginSubAccountUin\": \"600000562455\",\n    \"BotBizId\": \"1714970520775950336\",\n    \"Question\": \"吃饭了吗哥哥\",\n    \"BusinessSource\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52a3bc37-f211-4e15-97cf-00eb36f3e17a\"\n    }\n}",
-        "title": "创建新的拒答问题"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"2078368566271856448\",\n    \"Question\": \"今天天气怎么样\",\n    \"BusinessSource\": 2,\n    \"EnableScope\": 2,\n    \"CustomReply\": {\n        \"Enabled\": true,\n        \"Content\": \"今天晴天\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f317129b-dca4-4b73-942a-f54678516819\"\n    }\n}",
+        "title": "CreateRejectedQuestion"
       }
     ],
     "CreateRelease": [
@@ -772,10 +772,10 @@
     ],
     "ModifyRejectedQuestion": [
       {
-        "document": "修改拒答问题",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRejectedQuestion\n<公共请求参数>\n\n{\n    \"LoginUin\": \"600000562455\",\n    \"LoginSubAccountUin\": \"600000562455\",\n    \"BotBizId\": \"1714970520775950336\",\n    \"Question\": \"吃了什么122222222211111111111\",\n    \"RejectedBizId\": \"1732953678087585792\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1acee7c3-21d2-4aa4-aa46-289928b4bbb0\"\n    }\n}",
-        "title": "修改拒答问题"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"2078368566271856448\",\n    \"Question\": \"今天天气怎么样？x\",\n    \"RejectedBizId\": \"2092258772108747904\",\n    \"EnableScope\": 2,\n    \"CustomReply\": {\n        \"Enabled\": true,\n        \"Content\": \"今天下雨\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be66a916-01b4-4c95-a221-c09c06bd6d94\"\n    }\n}",
+        "title": "ModifyRejectedQuestion"
       }
     ],
     "RateMsgRecord": [

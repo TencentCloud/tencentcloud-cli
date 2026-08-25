@@ -464,6 +464,14 @@
         "title": "获取主被叫受保护的电话话单示例"
       }
     ],
+    "DescribeSTTGlobalConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSTTGlobalConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd89aaf-5311-401f-b485-4c4ca8bbd01d\"\n    }\n}",
+        "title": "查询后台支持的STT配置"
+      }
+    ],
     "DescribeSessionDetail": [
       {
         "document": "查询通话详情示例",

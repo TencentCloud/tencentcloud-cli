@@ -1,23 +1,24 @@
-**Example 1: 创建新的拒答问题**
+**Example 1: CreateRejectedQuestion**
 
-创建新的拒答问题
+
 
 Input: 
 
 ```
 tccli lke CreateRejectedQuestion --cli-unfold-argument  \
-    --LoginUin 600000562455 \
-    --LoginSubAccountUin 600000562455 \
-    --BotBizId 1714970520775950336 \
-    --Question 吃饭了吗哥哥 \
-    --BusinessSource 2
+    --BotBizId 2078368566271856448 \
+    --Question 今天天气怎么样 \
+    --BusinessSource 2 \
+    --EnableScope 2 \
+    --CustomReply.Enabled True \
+    --CustomReply.Content 今天晴天
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "52a3bc37-f211-4e15-97cf-00eb36f3e17a"
+        "RequestId": "f317129b-dca4-4b73-942a-f54678516819"
     }
 }
 ```

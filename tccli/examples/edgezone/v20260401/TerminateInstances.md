@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli edgezone TerminateInstances --cli-unfold-argument  \
-    --InstanceIds bms-mnop3456 bms-abcd1234
+    --InstanceIds epm-mnop3456 epm-abcd1234
 ```
 
 Output: 
@@ -36,7 +36,7 @@ Input:
 
 ```
 tccli edgezone TerminateInstances --cli-unfold-argument  \
-    --InstanceIds bms-mnop3456
+    --InstanceIds epm-mnop3456
 ```
 
 Output: 

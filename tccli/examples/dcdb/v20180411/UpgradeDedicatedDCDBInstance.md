@@ -1,24 +1,27 @@
-**Example 1: 升级TDSQL独享集群实例**
+**Example 1: 调用成功示例**
 
-升级TDSQL独享集群实例
+
 
 Input: 
 
 ```
 tccli dcdb UpgradeDedicatedDCDBInstance --cli-unfold-argument  \
     --UpgradeType EXPAND \
-    --InstanceId tdsqlshard-jv8z8fhl \
-    --ExpandShardConfig.ShardInstanceIds shard-xxx1 shard-xxx2 \
+    --InstanceId tdsqlshard-f2jujx9wap \
+    --ExpandShardConfig.ShardInstanceIds shard-5lfxfz1z3f \
     --ExpandShardConfig.ShardMemory 2 \
-    --ExpandShardConfig.ShardStorage 20
+    --ExpandShardConfig.ShardStorage 10 \
+    --SwitchStartTime 2026-08-24 22:00:00 \
+    --SwitchEndTime 2026-08-24 22:15:00 \
+    --SwitchInterval 5
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "14f6980a-7fe1-11ea-b896-525400542aa6",
-        "FlowId": 1122
+        "FlowId": 75,
+        "RequestId": "d7dca4f8-43c2-4608-8f00-25afcdb18521"
     }
 }
 ```

@@ -1,23 +1,24 @@
-**Example 1: 修改拒答问题**
+**Example 1: ModifyRejectedQuestion**
 
-修改拒答问题
+
 
 Input: 
 
 ```
 tccli lke ModifyRejectedQuestion --cli-unfold-argument  \
-    --LoginUin 600000562455 \
-    --LoginSubAccountUin 600000562455 \
-    --BotBizId 1714970520775950336 \
-    --Question 吃了什么122222222211111111111 \
-    --RejectedBizId 1732953678087585792
+    --BotBizId 2078368566271856448 \
+    --Question 今天天气怎么样？x \
+    --RejectedBizId 2092258772108747904 \
+    --EnableScope 2 \
+    --CustomReply.Enabled True \
+    --CustomReply.Content 今天下雨
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1acee7c3-21d2-4aa4-aa46-289928b4bbb0"
+        "RequestId": "be66a916-01b4-4c95-a221-c09c06bd6d94"
     }
 }
 ```

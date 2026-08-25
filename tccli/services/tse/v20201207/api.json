@@ -570,7 +570,7 @@
     "DescribeCloudNativeAPIGatewayLatestTaskPhases": {
       "document": "当执行部分流程较长的任务时，任务会被拆分为多个阶段进行异步执行。此接口用于查询最新提交的任务的执行状态。",
       "input": "DescribeCloudNativeAPIGatewayLatestTaskPhasesRequest",
-      "name": "查询云原生网关实例最新任务执行阶段信息",
+      "name": "查询网关实例最新任务执行阶段",
       "output": "DescribeCloudNativeAPIGatewayLatestTaskPhasesResponse",
       "status": "online"
     },
@@ -6127,7 +6127,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行的阶段",
+          "document": "<p>任务执行的阶段</p>",
           "example": "KongPhaseDeleteAll",
           "member": "string",
           "name": "Phase",
@@ -6137,7 +6137,7 @@
         },
         {
           "disabled": false,
-          "document": "任务所处阶段执行的状态",
+          "document": "<p>任务所处阶段执行的状态</p>",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -6147,7 +6147,7 @@
         },
         {
           "disabled": false,
-          "document": "处于当前状态的原因",
+          "document": "<p>处于当前状态的原因</p>",
           "example": "success",
           "member": "string",
           "name": "Reason",
@@ -6157,7 +6157,7 @@
         },
         {
           "disabled": false,
-          "document": "处于当前状态的详细信息",
+          "document": "<p>处于当前状态的详细信息</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -6167,7 +6167,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1663579655000",
           "member": "uint64",
           "name": "StartTime",
@@ -6177,7 +6177,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1663579708000",
           "member": "uint64",
           "name": "EndTime",
@@ -6187,7 +6187,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "<p>任务Id</p>",
           "example": "task-374244ab",
           "member": "string",
           "name": "TaskId",
@@ -6197,7 +6197,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许重试",
+          "document": "<p>是否允许重试</p>",
           "example": "true",
           "member": "bool",
           "name": "AllowRetry",
@@ -6207,8 +6207,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>预估耗时</p><p>单位：秒</p>",
+          "example": "46",
           "member": "uint64",
           "name": "EstimatedCostSeconds",
           "output_required": false,
@@ -6217,8 +6217,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>实际耗时</p><p>单位：秒</p>",
+          "example": "102",
           "member": "uint64",
           "name": "ActualCostSeconds",
           "output_required": false,
@@ -13076,7 +13076,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云原生网关实例ID",
+          "document": "<p>云原生网关实例ID</p>",
           "example": "gateway-10aeff54",
           "member": "string",
           "name": "GatewayId",
@@ -13085,7 +13085,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "<p>任务类型</p>",
           "example": "upgrade",
           "member": "string",
           "name": "Type",
@@ -13100,7 +13100,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行阶段列表",
+          "document": "<p>任务执行阶段列表</p>",
           "example": "无",
           "member": "CloudNativeAPIGatewayTaskPhase",
           "name": "Phases",
@@ -13110,7 +13110,7 @@
         },
         {
           "disabled": false,
-          "document": "任务阶段总数",
+          "document": "<p>任务阶段总数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalPhase",
@@ -13120,10 +13120,30 @@
         },
         {
           "disabled": false,
-          "document": "当前执行的任务阶段",
+          "document": "<p>当前执行的任务阶段</p>",
           "example": "6",
           "member": "int64",
           "name": "CurrentPhase",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>整体创建预估总耗时</p><p>单位：秒</p>",
+          "example": "537",
+          "member": "uint64",
+          "name": "EstimatedTotalCostSeconds",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>整体已实际耗时</p><p>单位：秒</p>",
+          "example": "341",
+          "member": "uint64",
+          "name": "ActualTotalCostSeconds",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

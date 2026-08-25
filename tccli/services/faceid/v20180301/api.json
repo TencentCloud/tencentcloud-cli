@@ -11772,7 +11772,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>认证的安全等级：<br>1：静默活体；<br>2：动作活体；<br>3：光线活体；<br>4：动作+光线活体；<br>5：动作+光线活体（高安全）；<br>默认值为3。</p>",
+          "document": "<p>认证的安全等级：<br>1：静默活体；<br>2：动作活体；<br>3：光线活体；<br>4：动作+光线活体；<br>默认值为3。</p>",
           "example": "3",
           "member": "int64",
           "name": "SecurityLevel",

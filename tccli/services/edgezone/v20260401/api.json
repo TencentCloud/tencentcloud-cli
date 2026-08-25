@@ -92,9 +92,9 @@
       "status": "online"
     },
     "DescribeZones": {
-      "document": "跨地域聚合查询，返回指定 AppId 在所有已配置 region 下的可用区列表。本地域直查数据库，远程地域并发 HTTP 请求各地域的 DescribeAppZones 接口后合并返回。",
+      "document": "跨地域聚合查询所有已配置 region 下的可用区列表。支持通过 FilterByAppId 参数控制是否按账号过滤：默认仅返回账号关联的可用区，设为 False 时返回所有可用区。本地域直查数据库，远程地域并发 HTTP 请求后合并返回。",
       "input": "DescribeZonesRequest",
-      "name": "查询边缘物理机可用区列表",
+      "name": "查询所有地域可用区列表",
       "output": "DescribeZonesResponse",
       "status": "online"
     },
@@ -228,7 +228,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区代码，如 ap-guangzhou-1。",
+          "document": "<p>可用区代码，如 ap-guangzhou-1。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -237,7 +237,7 @@
         },
         {
           "disabled": false,
-          "document": "机型规格，如 BMS5.MEDIUM8。",
+          "document": "<p>机型规格，如 BMS5.MEDIUM8。</p>",
           "example": "BMS5.MEDIUM8",
           "member": "string",
           "name": "InstanceType",
@@ -246,16 +246,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
-          "example": "my-epm-instance",
-          "member": "string",
-          "name": "InstanceName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "内网网络实例ID，格式如 net-xxx。",
+          "document": "<p>内网网络实例ID，格式如 net-xxx。</p>",
           "example": "net-private-001",
           "member": "string",
           "name": "PrivateNetworkId",
@@ -264,7 +255,7 @@
         },
         {
           "disabled": false,
-          "document": "公网网络实例ID，格式如 net-xxx。",
+          "document": "<p>公网网络实例ID，格式如 net-xxx。</p>",
           "example": "net-public-001",
           "member": "string",
           "name": "PublicNetworkId",
@@ -273,7 +264,16 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID，如 img-centos-7.9。",
+          "document": "<p>实例名称。</p>",
+          "example": "my-epm-instance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像ID，如 img-centos-7.9。</p>",
           "example": "img-centos-7.9",
           "member": "string",
           "name": "ImageId",
@@ -282,7 +282,7 @@
         },
         {
           "disabled": false,
-          "document": "创建数量，默认1，最大50。",
+          "document": "<p>创建数量，默认1，最大50。</p>",
           "example": "1",
           "member": "uint64",
           "name": "InstanceCount",
@@ -291,7 +291,25 @@
         },
         {
           "disabled": false,
-          "document": "镜像版本号，仅公共镜像有版本概念。",
+          "document": "<p>登录密码，与SSHKey二选一</p>",
+          "example": "Tencent@epm1",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSH密钥公钥字符串，与Password二选一</p>",
+          "example": "AAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWb3BlbnNzaC1rZXktdjEAAAAABG5vbmU TsC85sqFfWw9JxFT3j9ul582QAAAJj6oDbs+qA2QyNTUxOQAAACC5aPbeBgxRy7Be3cl6S",
+          "member": "string",
+          "name": "SSHKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>镜像版本号，仅公共镜像有版本概念。</p>",
           "example": "7.9.2009",
           "member": "string",
           "name": "VersionNumber",
@@ -299,8 +317,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "是否启用公网IPv6，默认false。启用后系统会在分配IPv4后额外分配一个IPv6地址。",
+          "disabled": true,
+          "document": "<p>是否启用公网IPv6，默认false。启用后系统会在分配IPv4后额外分配一个IPv6地址。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableIpv6",
@@ -315,7 +333,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建成功的实例ID列表。",
+          "document": "<p>创建成功的实例ID列表。</p>",
           "example": "[\"ins-abcd1234\"]",
           "member": "string",
           "name": "InstanceIdSet",
@@ -325,7 +343,7 @@
         },
         {
           "disabled": false,
-          "document": "创建失败的实例个数。仅部分失败时返回，全部成功时不返回该字段。",
+          "document": "<p>创建失败的实例个数。仅部分失败时返回，全部成功时不返回该字段。</p>",
           "example": "1",
           "member": "uint64",
           "name": "FailedCount",
@@ -544,6 +562,24 @@
           "name": "Zone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量,默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认20，最大100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -585,8 +621,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表，用于按实例ID筛选",
-          "example": "[\"bms-abcd1234\"]",
+          "document": "<p>实例ID列表，用于按实例ID筛选</p>",
+          "example": "[\"epm-abcd1234\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -594,7 +630,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称，支持模糊匹配",
+          "document": "<p>实例名称，支持模糊匹配</p>",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceName",
@@ -603,7 +639,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区代码，用于筛选指定可用区的实例",
+          "document": "<p>可用区代码，用于筛选指定可用区的实例</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -612,7 +648,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态列表，用于按状态筛选实例。可选值：allocating、running、isolating、isolated、terminating、error",
+          "document": "<p>实例状态列表，用于按状态筛选实例。可选值：allocating、running、isolating、isolated、terminating、error</p>",
           "example": "[\"running\"]",
           "member": "string",
           "name": "InstanceStatus",
@@ -621,7 +657,25 @@
         },
         {
           "disabled": false,
-          "document": "公网IPv4地址列表，用于按公网IP筛选实例",
+          "document": "<p>公网网络ID</p>",
+          "example": "epn-223dedd6",
+          "member": "string",
+          "name": "PublicNetworkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID</p>",
+          "example": "ein-5df44fef",
+          "member": "string",
+          "name": "PrivateNetworkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网IPv4地址列表，用于按公网IP筛选实例</p>",
           "example": "[\"203.0.113.10\"]",
           "member": "string",
           "name": "PublicIps",
@@ -630,7 +684,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -639,7 +693,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大100",
+          "document": "<p>返回数量，默认20，最大100</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -654,7 +708,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例详细信息列表",
+          "document": "<p>实例详细信息列表</p>",
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
@@ -664,7 +718,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的实例数量",
+          "document": "<p>符合条件的实例数量</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -1032,7 +1086,17 @@
     },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否按照账号过滤。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FilterByAppId",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "DescribeZonesResponse": {
@@ -1040,7 +1104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所有地域的可用区列表。",
+          "document": "<p>所有地域的可用区列表。</p>",
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
@@ -1050,7 +1114,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区总数量。",
+          "document": "<p>可用区总数量。</p>",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
@@ -1093,7 +1157,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "Instance bms-abcd1234 is not in running status",
+          "example": "Instance bms-abcd1234 operate status is normal, cannot start",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": false,
@@ -1108,7 +1172,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "bms-abcd1234",
           "member": "string",
           "name": "InstanceId",
@@ -1118,7 +1182,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "my-epm-instance",
           "member": "string",
           "name": "InstanceName",
@@ -1128,7 +1192,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的物理机ID",
+          "document": "<p>绑定的物理机ID</p>",
           "example": "srv-abcd1234",
           "member": "string",
           "name": "MachineId",
@@ -1138,7 +1202,7 @@
         },
         {
           "disabled": false,
-          "document": "机型规格",
+          "document": "<p>机型规格</p>",
           "example": "BM.S5.LARGE8",
           "member": "string",
           "name": "InstanceType",
@@ -1148,7 +1212,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区代码",
+          "document": "<p>可用区代码</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -1158,7 +1222,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID",
+          "document": "<p>镜像ID</p>",
           "example": "img-centos-7.9",
           "member": "string",
           "name": "ImageId",
@@ -1167,8 +1231,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "镜像版本号",
+          "disabled": true,
+          "document": "<p>镜像版本号</p>",
           "example": "7.9.2009",
           "member": "string",
           "name": "VersionNumber",
@@ -1178,7 +1242,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，可选值：allocating、running、isolating、isolated、terminating、error",
+          "document": "<p>实例状态，可选值：allocating、running、isolating、isolated、terminating、error</p>",
           "example": "running",
           "member": "string",
           "name": "InstanceStatus",
@@ -1188,7 +1252,7 @@
         },
         {
           "disabled": false,
-          "document": "操作状态，可选值：normal、starting、stopping、stopped、rebooting",
+          "document": "<p>操作状态，可选值：normal、starting、stopping、stopped、rebooting</p>",
           "example": "normal",
           "member": "string",
           "name": "OperateStatus",
@@ -1198,7 +1262,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "<p>私有网络ID</p>",
           "example": "net-private-001",
           "member": "string",
           "name": "PrivateNetworkId",
@@ -1208,7 +1272,7 @@
         },
         {
           "disabled": false,
-          "document": "私有IPv4地址",
+          "document": "<p>私有IPv4地址</p>",
           "example": "10.0.0.1",
           "member": "string",
           "name": "PrivateIp",
@@ -1218,7 +1282,7 @@
         },
         {
           "disabled": false,
-          "document": "私有IPv6地址",
+          "document": "<p>私有IPv6地址</p>",
           "example": "fd00::1",
           "member": "string",
           "name": "PrivateIpV6",
@@ -1228,7 +1292,7 @@
         },
         {
           "disabled": false,
-          "document": "公网网络ID",
+          "document": "<p>公网网络ID</p>",
           "example": "net-public-001",
           "member": "string",
           "name": "PublicNetworkId",
@@ -1238,7 +1302,7 @@
         },
         {
           "disabled": false,
-          "document": "公网IPv4地址",
+          "document": "<p>公网IPv4地址</p>",
           "example": "203.0.113.10",
           "member": "string",
           "name": "PublicIp",
@@ -1248,7 +1312,7 @@
         },
         {
           "disabled": false,
-          "document": "公网IPv6地址",
+          "document": "<p>公网IPv6地址</p>",
           "example": "2001:db8::1",
           "member": "string",
           "name": "PublicIpV6",
@@ -1258,12 +1322,72 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "document": "<p>文件系统类型</p>",
+          "example": "ext3",
+          "member": "string",
+          "name": "FileSystemType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。</p>",
           "example": "2026-01-13T10:00:00Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型族标识</p>",
+          "example": "S",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型族名称</p>",
+          "example": "标准型S5",
+          "member": "string",
+          "name": "InstanceFamilyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 型号</p>",
+          "example": "Intel Xeon Platinum 8255C",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 核数</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小</p>",
+          "example": "32",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1298,6 +1422,16 @@
           "example": "BM.S5",
           "member": "string",
           "name": "InstanceFamily",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型族名称",
+          "example": "标准型",
+          "member": "string",
+          "name": "InstanceFamilyName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1570,7 +1704,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "新的公网IP（需从该实例所绑定公网实例的可用IP中选择）。与 InstanceName 至少传入一个。",
           "example": "203.0.113.20",
           "member": "string",
@@ -1579,7 +1713,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "IP类型，ipv4 或 ipv6，默认 ipv4。仅在指定 NewPublicIp 时有效。",
           "example": "ipv4",
           "member": "string",
@@ -2008,8 +2142,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表，最多100个。",
-          "example": "[\"bms-mnop3456\"]",
+          "document": "<p>实例ID列表，最多100个。</p>",
+          "example": "[\"epm-mnop3456\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2023,8 +2157,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "销毁成功的实例ID列表。",
-          "example": "[\"bms-mnop3456\"]",
+          "document": "<p>销毁成功的实例ID列表。</p>",
+          "example": "[\"epm-mnop3456\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "output_required": false,
@@ -2033,7 +2167,7 @@
         },
         {
           "disabled": false,
-          "document": "销毁失败的实例信息列表（部分成功时返回）。",
+          "document": "<p>销毁失败的实例信息列表（部分成功时返回）。</p>",
           "example": "无",
           "member": "FailedInstance",
           "name": "FailedInstanceSet",
@@ -2105,7 +2239,7 @@
         },
         {
           "disabled": false,
-          "document": "区域代码",
+          "document": "区域代码。",
           "example": "asia_pacific_1",
           "member": "string",
           "name": "Location",
@@ -2115,7 +2249,7 @@
         },
         {
           "disabled": false,
-          "document": "区域名称",
+          "document": "区域名称。",
           "example": "亚太1",
           "member": "string",
           "name": "LocationName",

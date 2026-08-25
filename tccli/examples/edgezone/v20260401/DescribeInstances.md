@@ -18,7 +18,7 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "InstanceId": "bms-efgh5678",
+                "InstanceId": "epm-efgh5678",
                 "InstanceName": "web-server-01",
                 "MachineId": "srv-efgh5678",
                 "InstanceType": "BM.S5.LARGE8",
@@ -50,7 +50,7 @@ Input:
 
 ```
 tccli edgezone DescribeInstances --cli-unfold-argument  \
-    --InstanceIds bms-abcd1234 \
+    --InstanceIds epm-abcd1234 \
     --Offset 0 \
     --Limit 20
 ```
@@ -61,7 +61,7 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "InstanceId": "bms-abcd1234",
+                "InstanceId": "epm-abcd1234",
                 "InstanceName": "my-epm-instance",
                 "MachineId": "srv-abcd1234",
                 "InstanceType": "BM.S5.LARGE8",

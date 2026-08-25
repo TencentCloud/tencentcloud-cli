@@ -7,23 +7,21 @@ Input:
 ```
 tccli advisor DownloadReportFileAsync --cli-unfold-argument  \
     --Id 0 \
-    --Type abc \
-    --TaskId abc \
-    --Env abc \
-    --Tags.0.TagKey abc \
-    --Tags.0.TagValues abc \
-    --TaskType abc \
+    --Type Group \
+    --TaskId a0b7cfdd-83e6-49c5-b156-37272bada0da \
+    --Env public \
+    --TaskType allTaskType \
     --TopicType 0 \
-    --CloudMapUuid abc
+    --CloudMapUuid arch-rm9u9s8g
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultId": "abc",
+        "ResultId": "-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616",
         "ReportAuthorized": true,
-        "RequestId": "abc"
+        "RequestId": "eb710d64-cd7d-4b22-975b-1edf1a6330c8"
     }
 }
 ```

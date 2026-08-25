@@ -1410,7 +1410,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "评估结果对应产品的Id，与Type字段配合使用。当Type为Group时，表示类别Id（-1：总览，1：安全，2：可靠，3：服务限制），当Type为Strategy时，表示策略Id。",
+          "document": "<p>评估结果对应产品的Id，与Type字段配合使用。当Type为Group时，表示类别Id（-1：总览，1：安全，2：可靠，3：服务限制），当Type为Strategy时，表示策略Id。</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -1419,7 +1419,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型，可为Group（类别）和Strategy（策略）。",
+          "document": "<p>产品类型，可为Group（类别）和Strategy（策略）。</p>",
           "example": "Group",
           "member": "string",
           "name": "Type",
@@ -1428,7 +1428,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Id。",
+          "document": "<p>任务Id。</p>",
           "example": "a0b7cfdd-83e6-49c5-b156-37272bada0da",
           "member": "string",
           "name": "TaskId",
@@ -1437,7 +1437,7 @@
         },
         {
           "disabled": false,
-          "document": "环境",
+          "document": "<p>环境</p>",
           "example": "\"public\"",
           "member": "string",
           "name": "Env",
@@ -1446,7 +1446,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
@@ -1455,7 +1455,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "<p>任务类型</p>",
           "example": "\"allTaskType\"",
           "member": "string",
           "name": "TaskType",
@@ -1464,7 +1464,7 @@
         },
         {
           "disabled": false,
-          "document": "传0走tsa页面下载，传1走架构巡检下载",
+          "document": "<p>传0走tsa页面下载，传1走架构巡检下载</p>",
           "example": "0",
           "member": "int64",
           "name": "TopicType",
@@ -1473,8 +1473,8 @@
         },
         {
           "disabled": false,
-          "document": "架构图cmp-id",
-          "example": "无",
+          "document": "<p>架构图cmp-id</p>",
+          "example": "arch-rm9u9s8g",
           "member": "string",
           "name": "CloudMapUuid",
           "required": false,
@@ -1488,7 +1488,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "根据上述的参数，返回的唯一id，用于后续excel下载。",
+          "document": "<p>根据上述的参数，返回的唯一id，用于后续excel下载。</p>",
           "example": "-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616",
           "member": "string",
           "name": "ResultId",
@@ -1498,7 +1498,7 @@
         },
         {
           "disabled": false,
-          "document": "是否授权报告",
+          "document": "<p>是否授权报告</p>",
           "example": "true",
           "member": "bool",
           "name": "ReportAuthorized",

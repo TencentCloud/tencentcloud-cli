@@ -1,89 +1,62 @@
-**Example 1: 创建EMR容器实例**
+**Example 1: 创建tke集群**
 
-创建EMR容器实例
+
 
 Input: 
 
 ```
 tccli emr CreateCloudInstance --cli-unfold-argument  \
-    --InstanceName EMR-dzrgkpwq \
-    --LoginSettings.Password xxxxxxxxxx \
-    --VPCSettings.SubnetId subnet-xxxxo3x0 \
-    --VPCSettings.VpcId vpc-xxxxqmqz \
-    --CosBucket coslcl-xxxxxxxxxx \
-    --CloudResources.0.ComponentName QuorumPeerMain \
-    --CloudResources.0.PodNumber 3 \
-    --CloudResources.0.LimitCpu 1 \
-    --CloudResources.0.LimitMemory 2 \
-    --CloudResources.0.Service ZOOKEEPER \
-    --CloudResources.0.VolumeDir.VolumeType NEW_PVC \
-    --CloudResources.0.VolumeDir.HostPath.Path  \
-    --CloudResources.0.VolumeDir.HostPath.Type DirectoryOrCreate \
-    --CloudResources.0.Disks.0.DiskType CLOUD_PREMIUM \
-    --CloudResources.0.Disks.0.DiskCapacity 100 \
-    --CloudResources.0.Disks.0.DiskNumber 1 \
-    --CloudResources.1.ComponentName Slapd \
-    --CloudResources.1.PodNumber 2 \
-    --CloudResources.1.LimitCpu 1 \
-    --CloudResources.1.LimitMemory 2 \
-    --CloudResources.1.Service OPENLDAP \
-    --CloudResources.1.VolumeDir.VolumeType NEW_PVC \
-    --CloudResources.1.VolumeDir.HostPath.Path  \
-    --CloudResources.1.VolumeDir.HostPath.Type DirectoryOrCreate \
-    --CloudResources.1.Disks.0.DiskType CLOUD_PREMIUM \
-    --CloudResources.1.Disks.0.DiskCapacity 100 \
-    --CloudResources.1.Disks.0.DiskNumber 1 \
-    --CloudResources.2.ComponentName HiveServer2Node \
-    --CloudResources.2.PodNumber 1 \
-    --CloudResources.2.LimitCpu 1 \
-    --CloudResources.2.LimitMemory 2 \
-    --CloudResources.2.Service HIVESERVER2 \
-    --CloudResources.2.VolumeDir.VolumeType NEW_PVC \
-    --CloudResources.2.VolumeDir.HostPath.Path  \
-    --CloudResources.2.VolumeDir.HostPath.Type DirectoryOrCreate \
-    --CloudResources.2.Disks.0.DiskType CLOUD_PREMIUM \
-    --CloudResources.2.Disks.0.DiskCapacity 100 \
-    --CloudResources.2.Disks.0.DiskNumber 1 \
-    --CloudResources.3.ComponentName HiveMetaStoreNode \
-    --CloudResources.3.PodNumber 1 \
-    --CloudResources.3.LimitCpu 1 \
-    --CloudResources.3.LimitMemory 2 \
-    --CloudResources.3.Service METASTORE \
-    --CloudResources.3.VolumeDir.VolumeType NEW_PVC \
-    --CloudResources.3.VolumeDir.HostPath.Path  \
-    --CloudResources.3.VolumeDir.HostPath.Type DirectoryOrCreate \
-    --CloudResources.3.Disks.0.DiskType CLOUD_PREMIUM \
-    --CloudResources.3.Disks.0.DiskCapacity 100 \
-    --CloudResources.3.Disks.0.DiskNumber 1 \
-    --CloudResources.4.ComponentName SparkJobHistoryServer \
-    --CloudResources.4.PodNumber 1 \
-    --CloudResources.4.LimitCpu 2 \
-    --CloudResources.4.LimitMemory 4 \
-    --CloudResources.4.Service SPARK \
-    --CloudResources.4.VolumeDir.VolumeType NEW_PVC \
-    --CloudResources.4.VolumeDir.HostPath.Path  \
-    --CloudResources.4.VolumeDir.HostPath.Type DirectoryOrCreate \
-    --CloudResources.4.Disks.0.DiskType CLOUD_PREMIUM \
-    --CloudResources.4.Disks.0.DiskCapacity 100 \
-    --CloudResources.4.Disks.0.DiskNumber 1 \
-    --Tags.0.TagKey test-key \
-    --Tags.0.TagValue v1 \
-    --MetaDBInfo.MetaType EMR_DEFAULT_META \
-    --Software zookeeper-3.6.3 metastore-3.1.3 openldap-2.4.44 hiveserver2-3.1.3 spark-3.3.2 \
+    --InstanceName DataEngine-8w2mzvtn \
     --ClusterClass EMR-TKE \
-    --PlatFormType tke \
-    --EksClusterId cls-xxxxxl3o \
-    --ProductId 60 \
-    --SgId sg-1111123nt \
-    --ZoneId 1000010
+    --Software virtualspark-3.2.2 \
+    --PlatFormType eks \
+    --CosBucket dlc-test-gz-1305424723 \
+    --EksClusterId cls-m88ufafu \
+    --ProductId 56 \
+    --ClientToken 2026-08-24 10:32:37 \
+    --ApplicationRole EMR_QCSLinkedRoleInApplicationDataAccess \
+    --VPCSettings.VpcId vpc-qqrxzbel \
+    --VPCSettings.SubnetId subnet-glx7lnes \
+    --CloudResources.0.ComponentName driver \
+    --CloudResources.0.PodNumber 1 \
+    --CloudResources.0.LimitCpu 8 \
+    --CloudResources.0.LimitMemory 32 \
+    --CloudResources.0.CpuType amd \
+    --CloudResources.0.RequestCpu 8 \
+    --CloudResources.0.RequestMemory 32 \
+    --CloudResources.0.Service VIRTUALSPARK \
+    --CloudResources.0.VolumeDir.VolumeType NEW_PVC \
+    --CloudResources.0.Disks.0.DiskType CLOUD_PREMIUM \
+    --CloudResources.0.Disks.0.DiskCapacity 50 \
+    --CloudResources.0.Disks.0.DiskNumber 1 \
+    --CloudResources.1.ComponentName executor \
+    --CloudResources.1.PodNumber 15 \
+    --CloudResources.1.LimitCpu 8 \
+    --CloudResources.1.LimitMemory 32 \
+    --CloudResources.1.CpuType amd \
+    --CloudResources.1.RequestCpu 8 \
+    --CloudResources.1.RequestMemory 32 \
+    --CloudResources.1.Service VIRTUALSPARK \
+    --CloudResources.1.VolumeDir.VolumeType NEW_PVC \
+    --CloudResources.1.Disks.0.DiskType CLOUD_PREMIUM \
+    --CloudResources.1.Disks.0.DiskCapacity 50 \
+    --CloudResources.1.Disks.0.DiskNumber 1 \
+    --SgId sg-ivnxb2xc \
+    --LoginSettings.Password 0sw8yq8A@ \
+    --ZoneId 900004 \
+    --Configurations.0.Classification cluster.properties \
+    --Configurations.0.Properties { "spark.hadoop.fs.cosn.bucket.region":"ap-singapore", "spark.kubernetes.executor.volumes.hostPath.spark-local-dir-0.mount.path":"/opt/dfs/0","spark.kubernetes.executor.volumes.hostPath.spark-local-dir-0.options.path":"/data","spark.kubernetes.driver.volumes.hostPath.spark-local-dir-0.mount.path":"/opt/dfs/0","spark.kubernetes.driver.volumes.hostPath.spark-local-dir-0.options.path":"/data","spark.kubernetes.executor.annotation.eks.tke.cloud.tencent.com/root-cbs-size":"250","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/root-cbs-size":"250", "spark.kubernetes.executor.oversubscriptionFactor":"1.0","spark.kubernetes.driver.oversubscriptionFactor":"1.0", "spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/use-image-cache":"auto","spark.kubernetes.executor.annotation.eks.tke.cloud.tencent.com/use-image-cache":"auto", "spark.dlc.extensions.scope":"function","spark.hadoop.alluxio.user.client.cache.dirs":"/tmp/cache/disk3","spark.hadoop.alluxio.user.client.cache.include.mtime":"true","spark.hadoop.alluxio.user.client.cache.size":"10GB","spark.hadoop.alluxio.user.metrics.collection.enabled":"false","spark.hadoop.alluxio.user.shimfs.block.location.local.cache.enabled":"true","spark.hadoop.alluxio.user.shimfs.bypass.ufs.impl.list":"fs.cosn.impl:org.apache.hadoop.fs.CosFileSystem,hadoop.fs.AbstractFileSystem.cosn.impl:org.apache.hadoop.fs.CosN","spark.hadoop.alluxio.user.shimfs.client.cache.enable":"true","spark.hadoop.alluxio.user.shimfs.fs.mode":"PURE","spark.hadoop.alluxio.user.shimfs.local.cache.node.manager.enabled":"true","spark.hadoop.alluxio.user.shimfs.local.cache.node.selection.hash.strategy":"CONSISTENT_HASHING","spark.hadoop.alluxio.user.shimfs.local.cache.node.util.class":"org.apache.spark.util.SparkLocalCacheUtils","spark.hadoop.alluxio.user.shimfs.scheme":"cosn","spark.dlc.user":"{{.AppidAndSubUin}}","spark.dlc.user.group":"{{.AuthGroup}}","spark.kubernetes.driver.annotation.tke.cloud.tencent.com/cross-tenant-eni-enable":"{{.EniEnabled}}","spark.kubernetes.driver.annotation.tke.cloud.tencent.com/networks":"{{.EniNetWorks}}","spark.driver.resource.direct-eni.amount":"{{.EniAmount}}","spark.driver.resource.direct-eni.vendor":"{{.EniVendor}}","spark.kubernetes.executor.annotation.tke.cloud.tencent.com/cross-tenant-eni-enable":"{{.EniEnabled}}","spark.kubernetes.executor.annotation.tke.cloud.tencent.com/networks":"{{.EniNetWorks}}","spark.executor.resource.direct-eni.amount":"{{.EniAmount}}","spark.executor.resource.direct-eni.vendor":"{{.EniVendor}}","spark.kubernetes.driver.annotation.tke.cloud.tencent.com/cross-tenant-eni-config":"{{.EniConfigFirst}}","spark.kubernetes.executor.annotation.tke.cloud.tencent.com/cross-tenant-eni-config":"{{.EniConfigFirst}}","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/reserve-sandbox-duration":"1m","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/reserve-succeeded-sandbox":"true","spark.kubernetes.init.container.image":"sgccr.ccs.tencentyun.com/dlc_cloud/dlc_init2:v2","spark.ranger.plugin.appId":"eos","spark.ranger.plugin.auth.cache.enable":"false","spark.ranger.plugin.auth.impl":"org.apache.ranger.admin.client.RangerHttpAuthClient","spark.ranger.plugin.auth.service.auto.degrade.enable":"false","spark.ranger.plugin.auth.service.base.url":"http://10.90.0.3:8081","spark.ranger.plugin.auth.user.service.mapping.provider":"org.apache.ranger.admin.client.RangerHybrisUserServiceMapping","spark.ranger.plugin.hive.authorize.columns.in.separate.resources":"true","spark.ranger.plugin.hive.authorize.in.single.call":"true","spark.ranger.plugin.service.name":"presto","spark.ranger.plugin.service.type":"hive","spark.ranger.plugin.userGroupProvider":"org.apache.kyuubi.plugin.spark.authz.ranger.DlcUserGroupInfoProvider","spark.sql.warehouse.dir":"{{.WarehouseDir}}","spark.hadoop.hive.metastore.uris":"thrift://169.254.0.171:8007","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/cpu-type":"amd,intel","spark.kubernetes.executor.annotation.eks.tke.cloud.tencent.com/cpu-type":"amd,intel","spark.hadoop.fs.ofs.impl.disable.cache":"true","spark.hadoop.fs.ofs.tmp.cache.dir":"/tmp/cache1","spark.hadoop.fs.ofs.upload.flush.flag":"false","spark.hadoop.fs.ofs.impl":"com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter","spark.hadoop.fs.cosn.trsf.fs.ofs.impl":"com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter","spark.hadoop.fs.cosn.trsf.fs.ofs.tmp.cache.dir":"/data/emr/hdfs/tmp/chdfs/","spark.hadoop.fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl":"com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter","spark.hadoop.fs.AbstractFileSystem.ofs.impl":"com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter","spark.hadoop.fs.cosn.merge.bucket.nogateway.impl":"com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter","spark.hadoop.fs.cosn.merge.bucket.gateway.mode.enabled":"false","spark.shuffle.clean.immediately.enable":"false","spark.cleaner.periodicGC.interval":"5min","spark.shuffle.io.maxRetries":"10","spark.sql.catalog.DataLakeCatalog":"org.apache.spark.dlc.SuperSessionCatalog","spark.sql.catalog.DataLakeCatalog.type":"hive","spark.hadoop.mapreduce.input.fileinputformat.input.dir.recursive":"true","spark.shuffle.file.buffer":"128k","spark.serializer":"org.apache.spark.serializer.KryoSerializer","spark.ui.meta.log.rolling.maxSurvivalTime":"30s","spark.sql.adaptive.enabled":"true","spark.sql.debug.maxToStringFields":"2000","spark.hadoop.mapreduce.input.fileinputformat.split.minsize":"0","spark.hadoop.mapreduce.input.fileinputformat.split.maxsize":"128000000","spark.kubernetes.allocation.batch.size":"100","spark.hadoop.hive.default.fileformat":"PARQUET","spark.sql.extensions":"org.apache.spark.dlc.extensions.DLCSparkSessionExtensions,org.apache.kyuubi.plugin.spark.authz.ranger.RangerSparkExtension,org.apache.amoro.spark.MixedFormatSparkExtensions,org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions,org.apache.sedona.sql.SedonaSqlExtensions","spark.shuffle.manager":"sort","spark.shuffle.remote.reuseFileHandle":"true","spark.shuffle.remote.index.cache.size":"30m","spark.shuffle.task.level.enable":"false","spark.sorter.spill.remote.enable":"true","spark.sorter.remote.filesRootDirectory":"/sorter","spark.sorter.local.usage.waterLevel":"0.8","spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version":"2","spark.hadoopRDD.ignoreEmptySplits":"true","spark.network.timeout":"300","spark.ui.meta.log.enabled":"true","spark.ui.meta.log.compress":"false","spark.ui.meta.log.buffer.kb":"10k","spark.ui.meta.log.overwrite":"false","spark.ui.meta.log.rolling.enabled":"true","spark.driver.extraJavaOptions":"-Dlog4j.configuration=file:///opt/spark/log-conf/log4j.properties -Xlog:gc*=info:file=/tmp/dev/logs/gc.log:time,tags:filecount=2,filesize=50M -XX:ErrorFile=/tmp/dev/logs/hs_err_pid%p.log -XX:+ExitOnOutOfMemoryError","spark.executor.extraJavaOptions":"-XX:+UseG1GC -XX:G1HeapRegionSize=8m -XX:MaxGCPauseMillis=100 -Xlog:gc*=info:file=/tmp/dev/logs/gc.log:time,tags:filecount=2,filesize=50M -Dlog4j.configuration=file:///opt/spark/log-conf/log4j.properties -XX:ErrorFile=/tmp/dev/logs/hs_err_pid%p.log -XX:+ExitOnOutOfMemoryError","spark.ui.meta.log.rolling.maxFileSize":"64m","spark.sql.catalog.dynamicCatalog.enable":"true","spark.sql.catalog.dynamicCatalogImplementation":"org.apache.spark.sql.connector.catalog.HiveCatalog","spark.sql.catalog.icebergCatalogImplementation":"org.apache.iceberg.spark.SparkHybrisSessionCatalog","spark.sql.session.timeZone":"GMT+08:00","spark.hadoop.parquet.column.index.access":"false","spark.sql.catalogImplementation":"hive","spark.hadoop.fs.lakefs.impl":"org.apache.hadoop.fs.lakefs.LakeFileSystem","spark.hadoop.fs.AbstractFileSystem.lakefs.impl":"org.apache.hadoop.fs.lakefs.LakeFs","spark.hadoop.fs.cosn.credentials.provider":"org.apache.hadoop.fs.auth.LakeFsCredentialsProvider","spark.hadoop.fs.cosn.impl":"org.apache.hadoop.fs.CosFileSystem","spark.hadoop.fs.AbstractFileSystem.cosn.impl":"org.apache.hadoop.fs.CosN","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/use-image-cache":"auto","spark.kubernetes.executor.annotation.eks.tke.cloud.tencent.com/use-image-cache":"auto","spark.scheduler.mode":"FAIR","spark.kubernetes.driver.label.log-collection":"stdout","spark.kubernetes.executor.label.log-collection":"stdout","spark.ui.meta.log.dir":"lakefs://900002246b4b6ed6b150029838e99ceab3cf3661c6e208753f2fc08e2177a8dcfbc5cb34@dlc72f6-sysid001-1652966127-100017307912-1304028854/sysid001/1312166090/log","spark.sql.catalog.hybris.uri":"http://10.90.0.3:8089","spark.hadoop.fs.ofs.user.appid":"1312166090","spark.sql.catalog.hybris.appid":"1312166090","spark.hadoop.lake.fs.user.appid":"1312166090","spark.hadoop.fs.cosn.trsf.fs.ofs.user.appid":"1304028854","spark.hadoop.fs.cosn.trsf.fs.ofs.bucket.region":"ap-singapore","spark.hadoop.lake.fs.running.token":"00.1787567546.b330d5f6.-.0.SPARK.00224.YTAzYmQ2ZmHLcaf+2OjrHuure1jXiZNEHoyW4GMiWu1+mwWwMRp+fg==","spark.sorter.remote.storageMasterUri":"{{.StorageMasterUri}}","spark.shuffle.remote.storageMasterUri":"{{.StorageMasterUri}}","spark.shuffle.remote.filesRootDirectory":"{{.RootDir}}","spark.kubernetes.container.image":"{{.SparkImage}}","spark.hadoop.lake.fs.authentication.url":"http://10.90.0.3:2027/v1/internal/GetLakeFsAccessToken","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/cbs-reuse-key":"{{.SparkImage}}","spark.kubernetes.executor.annotation.eks.tke.cloud.tencent.com/cbs-reuse-key":"{{.SparkImage}}","spark.kubernetes.driver.dnsConfig.options.timeout":"30","spark.kubernetes.driver.dnsConfig.options.attempts":"5","spark.kubernetes.driver.dnsConfig.options.ndots":"4","spark.kubernetes.executor.dnsConfig.options.timeout":"30","spark.kubernetes.executor.dnsConfig.options.attempts":"5","spark.kubernetes.executor.dnsConfig.options.ndots":"4","spark.hadoop.fs.ofs.bucket.region":"ap-singapore","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/security-group-id":"sg-ivnxb2xc","spark.kubernetes.executor.annotation.eks.tke.cloud.tencent.com/security-group-id":"sg-ivnxb2xc","spark.ui.liveUpdate.period":"100ms","spark.ui.liveUpdate.minFlushPeriod":"24h","spark.kubernetes.resource.type":"java","spark.submit.deployMode":"cluster","spark.yarn.submit.waitAppCompletion":"false","spark.kubernetes.namespace":"default","spark.kubernetes.executor.podAffinityOnZone.enabled":"false","spark.dynamicAllocation.shuffleTracking.enabled":"{{.ShuffleTrackingEnabled}}","spark.dynamicAllocation.enabled":"{{.DynamicAllocationEnabled}}","spark.dynamicAllocation.minExecutors":"{{.ExecutorNums}}","spark.dynamicAllocation.maxExecutors":"{{.MaxExecutorNums}}","spark.dynamicAllocation.executorIdleTimeout":"300","spark.kubernetes.memoryOverheadFactor":"{{.MemoryOverheadFactor}}","spark.driver.cores":"{{.DriverCores}}","spark.driver.memoryOverhead":"{{.DriverMemoryOverhead}}M","spark.driver.memory":"{{.DriverMemory}}M","spark.executor.cores":"{{.ExecutorCores}}","spark.executor.memoryOverhead":"{{.ExecutorMemoryOverhead}}M","spark.executor.memory":"{{.ExecutorMemory}}M","spark.executor.instances":"{{.ExecutorNums}}","spark.sql.legacy.castComplexTypesToString.enabled":"false","spark.sql.createLocationIceberg":"true","spark.dlc.extraListeners":"org.apache.spark.dlc.listener.AnalyserListener,org.apache.spark.dlc.listener.StreamingListener,org.apache.spark.dlc.alert.MonitorListener","spark.dlc.analysisListener.version":"1","spark.dlc.analysis.maxCollectTaskSize":"600000","spark.hadoop.mapreduce.fileoutputcommitter.cleanup-failures.ignored":"true","spark.task.reaper.killTimeout":"1800000","spark.hadoop.hybris.auth.header":"1312166090:DataLakeCatalog:zYBEmJFg:u7CzujF","spark.sql.namespacesWithoutLocation":"true","spark.dlc.engine.type":"StandardSpark","spark.sql.optimizer.ConvertInnerToSemiJoins.enabled":"false","spark.sql.optimizer.AggregatePushdownThroughJoins.enabled":"false","spark.sql.optimizer.EliminateInnerJoinWithAgg.enabled":"false","spark.sql.adaptive.insert.repartition.legacy":"false","spark.dlc.monitorFileSizeThreshold":"4MB","spark.task.reaper.enabled":"true","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/enable-pod-rescheduler":"true","spark.kubernetes.executor.annotation.eks.tke.cloud.tencent.com/enable-evict-cbs":"true","spark.sql.catalog.DataLakeCatalog.table-formats":"mixed_iceberg","spark.sql.catalog.tcIcebergCatalogImplementation":"org.apache.amoro.spark.MixedFormatSparkSessionCatalog","spark.kubernetes.checkEmptyUid":"true","spark.kubernetes.checkEmptyCount":"300","spark.sql.replaceDefaultUsingIceberg":"true","spark.executorEnv.APPID":"1312166090","spark.executorEnv.LAKEFS_URL":"http://10.90.0.3:2027/v1/internal/GetLakeFsAccessToken","spark.executorEnv.DLC_REGION":"ap-singapore","spark.kubernetes.driverEnv.APPID":"1312166090","spark.kubernetes.driverEnv.LAKEFS_URL":"http://10.90.0.3:2027/v1/internal/GetLakeFsAccessToken","spark.kubernetes.driverEnv.DLC_REGION":"ap-singapore","spark.dlclib.skip_all_install":"false","spark.wedata.sql.queryExecutionListeners":"com.tencent.cloud.wedata.lineage.LineageListener","spark.dlc.analysis.taskType":"{{.AnalysisTaskType}}","spark.kubernetes.driver.limit.cores":"{{.DriverCores}}","spark.kubernetes.executor.limit.cores":"{{.ExecutorCores}}","spark.plugins":"org.apache.spark.dlc.plugins.ContainerPlugins,org.apache.spark.metrics.SystemMetricPlugin","spark.kubernetes.executor.annotation.eks.tke.cloud.tencent.com/image-cache-disk-size":"400","spark.kubernetes.driver.annotation.eks.tke.cloud.tencent.com/image-cache-disk-size":"200","spark.dlc.sleepBeforeStop":"3100","spark.sql.sources.partitionOverwriteMode":"dynamic","spark.sql.dataframeDefaultIceberg":"true","spark.sql.disallowCreateDefaultDatabase.enabled":"true","spark.sql.dlc.customSessionCatalogName":"DataLakeCatalog","spark.sql.datasource.outputSchema.defaultLowerCase":"true","spark.sql.gravitino.metalake":"default","spark.sql.gravitino.uri":"","spark.tc-catalog.enabled":"false","spark.dlc.tclake-client-user":"100025765424","spark.sql.gravitino.authType":"dlc","spark.executorEnv.LD_PRELOAD":"/opt/spark/tcmalloc/libtcmalloc_and_profiler.so","spark.shuffle.reduceLocality.enabled":"false","spark.sql.optimizer.enableNormalizePartitionFilterCasts":"true","spark.sql.hive.createWithUniqueTableLocation.enabled":"true","spark.sql.catalog.DataLakeCatalog.io-impl":"org.apache.iceberg.hadoop.HadoopFileIO","spark.sql.catalog.DataLakeCatalog.io.manifest.cache-enabled":"true","spark.sql.catalog.DataLakeCatalog.cache.expiration-interval-ms":"1200000","spark.sql.catalog.DataLakeCatalog.cache.force-refresh":"true","spark.sql.catalog.DataLakeCatalog.cache.max-entries-num":"300","spark.kubernetes.driver.annotation.emr.tencentyun.com/emr-instance":"","spark.kubernetes.executor.annotation.emr.tencentyun.com/emr-instance":"","spark.sql.prod.blacklist.transform.script":"bash,/bin/bash,/bin/sh","spark.sql.catalog.DataLakeCatalog.io.manifest.cache.expiration-interval-ms":"1200000","spark.sql.prod.whitelist.transform.script":"python,python3","spark.sql.fallback.extend.functions":"false","spark.sql.iceberg.statistics-cache.enabled":"false","spark.executor.processTreeMetrics.enabled":"true","spark.kubernetes.driverEnv.LD_PRELOAD":"/opt/spark/tcmalloc/libtcmalloc_and_profiler.so","spark.sql.adaptive.optimizer.dynamicPartitionPruningFilter.enabled":"false","spark.sql.adaptive.autoShufflePartitions.enabled":"true","spark.sql.optimizer.topNAgg.enabled":"false","spark.hadoop.fs.cosn.trsf.fs.ofs.block.memory.trunk.byte":"4194304","spark.hadoop.fs.ofs.block.memory.trunk.byte":"4194304","spark.hadoop.fs.cosn.trsf.fs.ofs.prev.read.block.count":"2","spark.hadoop.fs.ofs.prev.read.block.count":"2","spark.hadoop.fs.cosn.upload_thread_pool":"32","spark.sql.execution.topKSortFallbackThreshold":"1000000","spark.sql.optimizer.ConvertInnerToSemiJoin.enabled":"true"} \
+    --AuthenticationInfo.RequestFrom DLC \
+    --AuthenticationInfo.IdentifierCode dlc@1$^7 \
+    --AuthenticationInfo.ProductName dlc-intl
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "d830face-6587-4263-8ab0-56bda2657xxx",
-        "InstanceId": "emr-xxxx"
+        "InstanceId": "emr-mt1cgnyo",
+        "RequestId": "d17645a5-957e-4f5e-9b6a-a068d07035c1"
     }
 }
 ```

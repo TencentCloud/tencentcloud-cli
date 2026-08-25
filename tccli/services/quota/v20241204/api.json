@@ -390,6 +390,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>配额名称</p>",
+          "example": "1",
+          "member": "string",
+          "name": "QuotaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>配额维度</p>",
           "example": "无",
           "member": "QuotaDimension",

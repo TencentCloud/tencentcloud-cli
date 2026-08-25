@@ -2368,6 +2368,15 @@
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组节点来源类型</p><p>枚举值：</p><ul><li>TIDE： 潮汐</li><li>EXCLUSIVE： 独占</li></ul>",
+          "example": "EXCLUSIVE",
+          "member": "string",
+          "name": "ResourceMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18429,7 +18438,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组id",
+          "document": "<p>资源组id</p>",
           "example": "ersg-9hw7jfk6",
           "member": "string",
           "name": "ResourceGroupId",
@@ -18439,7 +18448,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组名称",
+          "document": "<p>资源组名称</p>",
           "example": "test2",
           "member": "string",
           "name": "ResourceGroupName",
@@ -18449,7 +18458,7 @@
         },
         {
           "disabled": false,
-          "document": "可用节点个数(运行中的节点)",
+          "document": "<p>可用节点个数(运行中的节点)</p>",
           "example": "1",
           "member": "uint64",
           "name": "FreeInstance",
@@ -18459,7 +18468,7 @@
         },
         {
           "disabled": false,
-          "document": "总节点个数(所有节点)",
+          "document": "<p>总节点个数(所有节点)</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalInstance",
@@ -18469,7 +18478,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组已用的资源",
+          "document": "<p>资源组已用的资源</p>",
           "example": "无",
           "member": "GroupResource",
           "name": "UsedResource",
@@ -18479,7 +18488,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组总资源",
+          "document": "<p>资源组总资源</p>",
           "example": "无",
           "member": "GroupResource",
           "name": "TotalResource",
@@ -18489,7 +18498,7 @@
         },
         {
           "disabled": false,
-          "document": "节点信息",
+          "document": "<p>节点信息</p>",
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
@@ -18499,7 +18508,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
@@ -18509,7 +18518,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为热备资源组",
+          "document": "<p>是否为热备资源组</p>",
           "example": "false",
           "member": "bool",
           "name": "IsHotBackupResourceGroup",
@@ -18519,7 +18528,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组负责人",
+          "document": "<p>资源组负责人</p>",
           "example": "无",
           "member": "ResourceGroupSupervisor",
           "name": "Supervisors",
@@ -18529,7 +18538,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组创建时间",
+          "document": "<p>资源组创建时间</p>",
           "example": "2025-11-25 13:59:59",
           "member": "string",
           "name": "CreateTime",
@@ -18539,7 +18548,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组绑定的工作空间",
+          "document": "<p>资源组绑定的工作空间</p>",
           "example": "无",
           "member": "WorkspaceBriefInfo",
           "name": "WorkspaceBriefInfos",
@@ -18549,7 +18558,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组回收策略，开启资源出借的情况下默认为unified-scheduling，取值范围：unified-scheduling（统一调度）或 force-reclaim（强制回收）",
+          "document": "<p>资源组回收策略，开启资源出借的情况下默认为unified-scheduling，取值范围：unified-scheduling（统一调度）或 force-reclaim（强制回收）</p>",
           "example": "unified-scheduling",
           "member": "string",
           "name": "ReclaimPolicy",
@@ -18559,12 +18568,32 @@
         },
         {
           "disabled": false,
-          "document": "是否启用空间编辑, true-启用，false-禁用",
+          "document": "<p>是否启用空间编辑, true-启用，false-禁用</p>",
           "example": "true",
           "member": "bool",
           "name": "SpaceEditEnabled",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组节点来源类型</p><p>枚举值：</p><ul><li>TIDE： 潮汐资源</li><li>EXCLUSIVE： 独占资源</li></ul>",
+          "example": "EXCLUSIVE",
+          "member": "string",
+          "name": "ResourceMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>潮汐预约计划信息</p>",
+          "example": "无",
+          "member": "TideInfo",
+          "name": "TideInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -22178,6 +22207,174 @@
       ],
       "usage": "both"
     },
+    "TideInfo": {
+      "document": "潮汐预约计划详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>潮汐可用开始时间</p>",
+          "example": "00:00",
+          "member": "string",
+          "name": "AvailableTimeStart",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>潮汐可用结束时间</p>",
+          "example": "08:00",
+          "member": "string",
+          "name": "AvailableTimeEnd",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>tide-plan-muz7ahCheoth</p>",
+          "example": "tide-plan-muz7ahCheoth",
+          "member": "string",
+          "name": "ReservationPlanId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预约计划生效状态</p><p>枚举值：</p><ul><li>CANCELED： 已取消，尚未销毁</li><li>EFFECTIVE： 生效中</li><li>UNFROZEN： 已销毁</li><li>FROZEN： 已冻结资金</li></ul>",
+          "example": "FROZEN",
+          "member": "string",
+          "name": "PlanStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>期望节点数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "ExpectCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型</p>",
+          "example": "HCCPA1.96XLARGE2304",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU卡型号</p>",
+          "example": "HCC-308X",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格详情</p>",
+          "example": "无",
+          "member": "TideInstanceSpec",
+          "name": "InstanceSpec",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最少可接受节点数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinAcceptCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TideInstanceSpec": {
+      "document": "潮汐资源规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>机型</p>",
+          "example": "HCCPA1.96XLARGE2304",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU卡型号</p>",
+          "example": "HCC-MI308X",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU核数</p><p>单位：0.001核</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存容量</p><p>单位：MB</p>",
+          "example": "40000",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU卡数量</p><p>单位：0.01卡</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Gpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>显存容量</p><p>单位：MB</p>",
+          "example": "1000000",
+          "member": "uint64",
+          "name": "GpuMemory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TrainParam": {
       "document": "训练超参",
       "members": [
@@ -24159,6 +24356,7 @@
           "member": "string",
           "name": "TiProjectId",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24169,11 +24367,12 @@
           "member": "string",
           "name": "TiProjectName",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     }
   },
   "version": "1.0"
