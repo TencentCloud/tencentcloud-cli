@@ -1,0 +1,280 @@
+name: Build tccli binary pre-release
+
+run-name: Build binaries for ${{ inputs.tag }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing version tag to build, for example v3.1.170.1rc1"
+        required: true
+        type: string
+      publish_release:
+        description: "Create a GitHub pre-release after all binary builds succeed"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: binary-prerelease-${{ github.repository }}-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build ${{ matrix.target }}
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            target: linux-x86_64
+          - os: windows-2022
+            target: windows-x86_64
+          - os: macos-15-intel
+            target: darwin-x86_64
+          - os: macos-14
+            target: darwin-arm64
+    steps:
+      - name: Check out the requested tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate tag and package version
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+
+          if [[ ! "$RELEASE_TAG" =~ ^v[0-9][0-9A-Za-z.]*$ ]]; then
+            echo "tag must start with v and contain only version characters" >&2
+            exit 1
+          fi
+
+          git rev-parse --verify --quiet "refs/tags/${RELEASE_TAG}^{commit}" >/dev/null
+
+          release_version="${RELEASE_TAG#v}"
+          project_version="$(python - <<'PY'
+          from pathlib import Path
+          import tomllib
+
+          data = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
+          print(data["project"]["version"])
+          PY
+          )"
+
+          if [[ "$project_version" != "$release_version" ]]; then
+            echo "tag version ${release_version} does not match pyproject.toml version ${project_version}" >&2
+            exit 1
+          fi
+
+          echo "RELEASE_VERSION=${release_version}" >> "$GITHUB_ENV"
+          echo "SOURCE_SHA=$(git rev-parse "${RELEASE_TAG}^{commit}")" >> "$GITHUB_ENV"
+
+      - name: Install build dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install \
+            --index-url https://pypi.org/simple/ \
+            --pre \
+            . \
+            "pyinstaller==6.11.1"
+
+      - name: Build binary on Linux or macOS
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m PyInstaller \
+            --noconfirm \
+            --clean \
+            --onedir \
+            --name tccli \
+            --paths "$GITHUB_WORKSPACE" \
+            --collect-all tccli \
+            --collect-all tencentcloud \
+            --collect-all certifi \
+            tccli/main.py
+
+      - name: Build binary on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          python -m PyInstaller `
+            --noconfirm `
+            --clean `
+            --onedir `
+            --name tccli `
+            --paths $env:GITHUB_WORKSPACE `
+            --collect-all tccli `
+            --collect-all tencentcloud `
+            --collect-all certifi `
+            tccli/main.py
+          if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+          }
+
+      - name: Smoke test binary on Linux or macOS
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          set -euo pipefail
+          smoke_dir="$RUNNER_TEMP/tccli-smoke"
+          mkdir -p "$smoke_dir"
+          cd "$smoke_dir"
+          "$GITHUB_WORKSPACE/dist/tccli/tccli" --version
+          "$GITHUB_WORKSPACE/dist/tccli/tccli" cvm help
+
+      - name: Smoke test binary on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $smokeDir = Join-Path $env:RUNNER_TEMP "tccli-smoke"
+          New-Item -ItemType Directory -Force -Path $smokeDir | Out-Null
+          Push-Location $smokeDir
+          try {
+            $binary = Join-Path $env:GITHUB_WORKSPACE "dist\tccli\tccli.exe"
+            & $binary --version
+            if ($LASTEXITCODE -ne 0) {
+              exit $LASTEXITCODE
+            }
+            & $binary cvm help
+            if ($LASTEXITCODE -ne 0) {
+              exit $LASTEXITCODE
+            }
+          }
+          finally {
+            Pop-Location
+          }
+
+      - name: Package binary for Linux or macOS
+        if: runner.os != 'Windows'
+        shell: bash
+        env:
+          TARGET: ${{ matrix.target }}
+        run: |
+          set -euo pipefail
+          mkdir -p release
+          tar -C dist -czf "release/tccli-${RELEASE_VERSION}-${TARGET}.tar.gz" tccli
+
+      - name: Package binary for Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          TARGET: ${{ matrix.target }}
+        run: |
+          New-Item -ItemType Directory -Force -Path release | Out-Null
+          $archive = "release\tccli-$env:RELEASE_VERSION-$env:TARGET.zip"
+          Compress-Archive -Path (Join-Path $PWD "dist\tccli") -DestinationPath $archive -Force
+
+      - name: Upload binary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tccli-${{ matrix.target }}
+          path: release/*
+          if-no-files-found: error
+          retention-days: 14
+
+  publish:
+    name: Publish GitHub pre-release
+    needs: build
+    if: ${{ inputs.publish_release }}
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the requested tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Validate tag and package version
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+
+          if [[ ! "$RELEASE_TAG" =~ ^v[0-9][0-9A-Za-z.]*$ ]]; then
+            echo "tag must start with v and contain only version characters" >&2
+            exit 1
+          fi
+
+          git rev-parse --verify --quiet "refs/tags/${RELEASE_TAG}^{commit}" >/dev/null
+
+          release_version="${RELEASE_TAG#v}"
+          project_version="$(awk -F'"' '/^version[[:space:]]*=/ { print $2; exit }' pyproject.toml)"
+          if [[ "$project_version" != "$release_version" ]]; then
+            echo "tag version ${release_version} does not match pyproject.toml version ${project_version}" >&2
+            exit 1
+          fi
+
+          echo "RELEASE_VERSION=${release_version}" >> "$GITHUB_ENV"
+          echo "SOURCE_SHA=$(git rev-parse "${RELEASE_TAG}^{commit}")" >> "$GITHUB_ENV"
+
+      - name: Download platform artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: tccli-*
+          path: release
+          merge-multiple: true
+
+      - name: Generate release checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          assets=(release/tccli-"${RELEASE_VERSION}"-*)
+          if (( ${#assets[@]} == 0 )); then
+            echo "No binary artifacts were downloaded." >&2
+            exit 1
+          fi
+          for asset in "${assets[@]}"; do
+            test -f "$asset"
+          done
+          sha256sum "${assets[@]}" > release/SHA256SUMS.txt
+          cat release/SHA256SUMS.txt
+
+      - name: Create pre-release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          if gh release view "$RELEASE_TAG" --repo "$REPOSITORY" >/dev/null 2>&1; then
+            echo "A release already exists for ${RELEASE_TAG}; refusing to replace published assets." >&2
+            exit 1
+          fi
+
+          {
+            printf 'Pre-release binary artifacts for `%s`.\n\n' "$RELEASE_TAG"
+            printf 'Source commit: `%s`\n' "$SOURCE_SHA"
+          } > release-notes.md
+
+          gh release create "$RELEASE_TAG" release/* \
+            --repo "$REPOSITORY" \
+            --verify-tag \
+            --prerelease \
+            --title "tccli ${RELEASE_VERSION}" \
+            --notes-file release-notes.md
