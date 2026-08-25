@@ -101,6 +101,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          codesign_args=()
+          if [[ "$RUNNER_OS" == "macOS" ]]; then
+            codesign_args=(--codesign-identity -)
+          fi
+
           python -m PyInstaller \
             --noconfirm \
             --clean \
@@ -110,7 +115,36 @@ jobs:
             --collect-all tccli \
             --collect-all tencentcloud \
             --collect-all certifi \
+            "${codesign_args[@]}" \
             tccli/main.py
+
+      - name: Re-sign and verify macOS bundle
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          set -euo pipefail
+          bundle="$GITHUB_WORKSPACE/dist/tccli"
+          main_binary="$bundle/tccli"
+          python_library="$bundle/_internal/Python.framework/Versions/3.11/Python"
+
+          test -x "$main_binary"
+          test -f "$python_library"
+
+          while IFS= read -r -d '' binary; do
+            if [[ "$binary" == "$main_binary" ]]; then
+              continue
+            fi
+            if file -b "$binary" | grep -q 'Mach-O'; then
+              codesign --remove-signature "$binary" 2>/dev/null || true
+              codesign --force --sign - "$binary"
+            fi
+          done < <(find "$bundle" -type f -print0)
+
+          codesign --remove-signature "$main_binary" 2>/dev/null || true
+          codesign --force --sign - "$main_binary"
+
+          codesign --verify --deep --strict --verbose=4 "$main_binary"
+          codesign --verify --strict --verbose=4 "$python_library"
 
       - name: Build binary on Windows
         if: runner.os == 'Windows'
