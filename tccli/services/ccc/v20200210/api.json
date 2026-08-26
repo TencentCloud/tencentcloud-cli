@@ -2549,7 +2549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -2558,7 +2558,7 @@
         },
         {
           "disabled": false,
-          "document": "AI智能体ID",
+          "document": "<p>AI智能体ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "AIAgentId",
@@ -2567,7 +2567,7 @@
         },
         {
           "disabled": false,
-          "document": "被叫号码",
+          "document": "<p>被叫号码</p>",
           "example": "008613012345678",
           "member": "string",
           "name": "Callee",
@@ -2576,7 +2576,7 @@
         },
         {
           "disabled": false,
-          "document": "主叫号码列表",
+          "document": "<p>主叫号码列表</p>",
           "example": "[\"008601012341234\", \"008601012341235\"]",
           "member": "string",
           "name": "Callers",
@@ -2585,7 +2585,7 @@
         },
         {
           "disabled": true,
-          "document": "提示词变量",
+          "document": "<p>提示词变量</p>",
           "example": "无",
           "member": "Variable",
           "name": "PromptVariables",
@@ -2594,7 +2594,7 @@
         },
         {
           "disabled": false,
-          "document": "通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  \n\n1. dify-inputs-xxx 为dify的inputs变量\n2.  dify-inputs-user 为dify的user值\n3.  dify-inputs-conversation_id 为dify的conversation_id值",
+          "document": "<p>通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  </p><ol><li>dify-inputs-xxx 为dify的inputs变量</li><li>dify-inputs-user 为dify的user值</li><li>dify-inputs-conversation_id 为dify的conversation_id值</li></ol>",
           "example": "无",
           "member": "Variable",
           "name": "Variables",
@@ -2603,10 +2603,19 @@
         },
         {
           "disabled": false,
-          "document": "最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数",
+          "document": "<p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>",
           "example": "15",
           "member": "int64",
           "name": "MaxRingTimeoutSecond",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体并发不足时，排队等待超时时间，单位秒</p><p>取值范围：[0, 5]</p><p>默认值：5</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "AcquireTimeoutSecond",
           "required": false,
           "type": "int"
         }
@@ -2618,7 +2627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新创建的会话 ID",
+          "document": "<p>新创建的会话 ID</p>",
           "example": "adcf61b8-dbb9-4c20-87bf-c0744c04bade",
           "member": "string",
           "name": "SessionId",

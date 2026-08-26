@@ -24417,7 +24417,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>错误码，成功时返回0</p>",
+          "document": "<p>错误码，成功时返回0，处理中返回100</p>",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -33929,8 +33929,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "转码后文件的目标存储。",
-          "example": "null",
+          "document": "<p>转码后文件的目标存储。</p>",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "output_required": true,
@@ -33939,7 +33939,7 @@
         },
         {
           "disabled": false,
-          "document": "转码后的视频文件路径。",
+          "document": "<p>转码后的视频文件路径。</p>",
           "example": "/output/test.mp4",
           "member": "string",
           "name": "Path",
@@ -33949,7 +33949,7 @@
         },
         {
           "disabled": false,
-          "document": "转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/862/37042)。",
+          "document": "<p>转码规格 ID，参见<a href=\"https://cloud.tencent.com/document/product/862/37042\">转码参数模板</a>。</p>",
           "example": "10",
           "member": "int64",
           "name": "Definition",
@@ -33959,7 +33959,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流码率平均值与音频流码率平均值之和， 单位：bps。",
+          "document": "<p>视频流码率平均值与音频流码率平均值之和， 单位：bps。</p>",
           "example": "1000",
           "member": "int64",
           "name": "Bitrate",
@@ -33969,7 +33969,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流高度的最大值，单位：px。",
+          "document": "<p>视频流高度的最大值，单位：px。</p>",
           "example": "1080",
           "member": "int64",
           "name": "Height",
@@ -33979,7 +33979,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流宽度的最大值，单位：px。",
+          "document": "<p>视频流宽度的最大值，单位：px。</p>",
           "example": "1920",
           "member": "int64",
           "name": "Width",
@@ -33989,7 +33989,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。",
+          "document": "<p>媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。</p>",
           "example": "20000",
           "member": "int64",
           "name": "Size",
@@ -33999,7 +33999,7 @@
         },
         {
           "disabled": false,
-          "document": "视频时长，单位：秒。",
+          "document": "<p>视频时长，单位：秒。</p>",
           "example": "15",
           "member": "float",
           "name": "Duration",
@@ -34009,7 +34009,7 @@
         },
         {
           "disabled": false,
-          "document": "容器类型，例如 m4a，mp4 等。",
+          "document": "<p>容器类型，例如 m4a，mp4 等。</p>",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -34019,7 +34019,7 @@
         },
         {
           "disabled": false,
-          "document": "视频的 md5 值。",
+          "document": "<p>视频的 md5 值。</p>",
           "example": "\"xxxx\"",
           "member": "string",
           "name": "Md5",
@@ -34029,7 +34029,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流信息。",
+          "document": "<p>音频流信息。</p>",
           "example": "无",
           "member": "MediaAudioStreamItem",
           "name": "AudioStreamSet",
@@ -34039,7 +34039,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流信息。",
+          "document": "<p>视频流信息。</p>",
           "example": "无",
           "member": "MediaVideoStreamItem",
           "name": "VideoStreamSet",
@@ -34049,16 +34049,76 @@
         },
         {
           "disabled": false,
-          "document": "视频转码使用增强项说明，增强项解释\n<li>hdr：HDR配置</li>\n<li>wd_fps：插帧帧率配置</li>\n<li>video_super_resolution：\t超分配置</li>\n<li>repair：综合增强配置</li>\n<li>denoise：视频降噪配置</li>\n<li>color_enhance：色彩增强配置</li>\n<li>scratch：去划痕配置</li>\n<li>artifact：去伪影（毛刺）配置</li>\n<li>sharp：细节增强配置</li>\n<li>low_light：低光照增强配置</li>\n<li>face_enhance：人脸增强配置</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频转码使用增强项说明，增强项解释</p><li>hdr：HDR配置</li><li>wd_fps：插帧帧率配置</li><li>video_super_resolution：    超分配置</li><li>repair：综合增强配置</li><li>denoise：视频降噪配置</li><li>color_enhance：色彩增强配置</li><li>scratch：去划痕配置</li><li>artifact：去伪影（毛刺）配置</li><li>sharp：细节增强配置</li><li>low_light：低光照增强配置</li><li>face_enhance：人脸增强配置</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"{\\\"enhance_item\\\":[\\\"hdr\\\",\\\"color_enhance\\\"]}\"",
           "member": "string",
           "name": "CallBackExtInfo",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MediaTranscodeItem</p>",
+          "example": "无",
+          "member": "MediaUsageItem",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "MediaUsageItem": {
+      "document": "AIGC用量数据展示",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入图片数</p><p>单位：个数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InputImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入秒数</p><p>单位：秒</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "InputSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出秒数</p><p>单位：秒</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "OutputSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总秒数</p><p>单位：秒</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MediaVideoStreamItem": {
       "document": "点播文件视频流信息",

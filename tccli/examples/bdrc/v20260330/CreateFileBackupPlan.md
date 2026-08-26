@@ -6,14 +6,13 @@ Input:
 
 ```
 tccli bdrc CreateFileBackupPlan --cli-unfold-argument  \
-    --PolicyId abp-5c5l02gj \
-    --PlanName test-new-plan \
-    --BackupStorageId vault-qjhn63ku \
-    --Resources.0.ResourceId ins-7630gzfm \
-    --Resources.0.BackupPaths /var/log \
-    --Resources.0.IncludeFileTypes *.log \
+    --PolicyId abp-peu8v28r \
+    --BackupStorageId vault-hrvkughn \
+    --Resources.0.ResourceId cfs-o5vnh8qh \
+    --Resources.0.BackupPaths /mnt \
     --Resources.0.ExcludeSystemDirectories True \
-    --Resources.0.ExecuteImmediately False
+    --Resources.0.ExecuteImmediately False \
+    --ResourceType CFS_AGENT
 ```
 
 Output: 
@@ -21,9 +20,9 @@ Output:
 {
     "Response": {
         "PlanIds": [
-            "fbp-d66961s5"
+            "bplan-pij7q4vk"
         ],
-        "RequestId": "e7b880e6-f80d-43b5-a080-26d595b1f83d"
+        "RequestId": "5533b400-2d05-4649-952b-3e523de60561"
     }
 }
 ```

@@ -13792,7 +13792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组id",
+          "document": "<p>资源组id</p>",
           "example": "ersg-9hw7jfk6",
           "member": "string",
           "name": "ResourceGroupId",
@@ -13802,7 +13802,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组名称",
+          "document": "<p>资源组名称</p>",
           "example": "test2",
           "member": "string",
           "name": "ResourceGroupName",
@@ -13812,7 +13812,7 @@
         },
         {
           "disabled": false,
-          "document": "可用节点个数(运行中的节点)",
+          "document": "<p>可用节点个数(运行中的节点)</p>",
           "example": "1",
           "member": "uint64",
           "name": "FreeInstance",
@@ -13822,7 +13822,7 @@
         },
         {
           "disabled": false,
-          "document": "总节点个数(所有节点)",
+          "document": "<p>总节点个数(所有节点)</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalInstance",
@@ -13832,7 +13832,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组已用的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组已用的资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupResource",
           "name": "UsedResource",
@@ -13842,7 +13842,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组总资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组总资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupResource",
           "name": "TotalResource",
@@ -13852,7 +13852,7 @@
         },
         {
           "disabled": false,
-          "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
@@ -13862,7 +13862,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",

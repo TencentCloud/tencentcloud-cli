@@ -1,5 +1,26 @@
 {
   "actions": {
+    "CancelAIWorkbenchChat": {
+      "document": "取消对话执行",
+      "input": "CancelAIWorkbenchChatRequest",
+      "name": "取消对话执行",
+      "output": "CancelAIWorkbenchChatResponse",
+      "status": "online"
+    },
+    "CreateAIWorkbenchAgent": {
+      "document": "创建 Agent",
+      "input": "CreateAIWorkbenchAgentRequest",
+      "name": "创建 Agent",
+      "output": "CreateAIWorkbenchAgentResponse",
+      "status": "online"
+    },
+    "CreateAIWorkbenchTask": {
+      "document": "创建任务",
+      "input": "CreateAIWorkbenchTaskRequest",
+      "name": "创建任务",
+      "output": "CreateAIWorkbenchTaskResponse",
+      "status": "online"
+    },
     "CreateNoticeContentTmpl": {
       "document": "创建自定义通知内容模板",
       "input": "CreateNoticeContentTmplRequest",
@@ -7,11 +28,46 @@
       "output": "CreateNoticeContentTmplResponse",
       "status": "online"
     },
+    "DeleteAIWorkbenchAgent": {
+      "document": "删除 Agent",
+      "input": "DeleteAIWorkbenchAgentRequest",
+      "name": "删除 Agent",
+      "output": "DeleteAIWorkbenchAgentResponse",
+      "status": "online"
+    },
+    "DeleteAIWorkbenchTask": {
+      "document": "删除任务",
+      "input": "DeleteAIWorkbenchTaskRequest",
+      "name": "删除任务",
+      "output": "DeleteAIWorkbenchTaskResponse",
+      "status": "online"
+    },
     "DeleteNoticeContentTmpls": {
       "document": "删除通知内容模板",
       "input": "DeleteNoticeContentTmplsRequest",
       "name": "批量删除通知内容模板",
       "output": "DeleteNoticeContentTmplsResponse",
+      "status": "online"
+    },
+    "DescribeAIWorkbenchAgent": {
+      "document": "查询 Agent 详情",
+      "input": "DescribeAIWorkbenchAgentRequest",
+      "name": "查询 Agent 详情",
+      "output": "DescribeAIWorkbenchAgentResponse",
+      "status": "online"
+    },
+    "DescribeAIWorkbenchArtifact": {
+      "document": "查询制品详情",
+      "input": "DescribeAIWorkbenchArtifactRequest",
+      "name": "查询制品详情",
+      "output": "DescribeAIWorkbenchArtifactResponse",
+      "status": "online"
+    },
+    "DescribeAIWorkbenchExecution": {
+      "document": "查询执行详情",
+      "input": "DescribeAIWorkbenchExecutionRequest",
+      "name": "查询执行详情",
+      "output": "DescribeAIWorkbenchExecutionResponse",
       "status": "online"
     },
     "DescribeAIWorkbenchSREDigitalTwinTaskList": {
@@ -35,6 +91,20 @@
       "output": "DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse",
       "status": "online"
     },
+    "DescribeAIWorkbenchSession": {
+      "document": "查询会话详情",
+      "input": "DescribeAIWorkbenchSessionRequest",
+      "name": "查询会话详情",
+      "output": "DescribeAIWorkbenchSessionResponse",
+      "status": "online"
+    },
+    "DescribeAIWorkbenchSkill": {
+      "document": "查询技能详情",
+      "input": "DescribeAIWorkbenchSkillRequest",
+      "name": "查询技能详情",
+      "output": "DescribeAIWorkbenchSkillResponse",
+      "status": "online"
+    },
     "DescribeAlarmNotifyHistories": {
       "document": "按需查询告警的通知历史",
       "input": "DescribeAlarmNotifyHistoriesRequest",
@@ -49,6 +119,83 @@
       "output": "DescribeNoticeContentTmplResponse",
       "status": "online"
     },
+    "GetAIWorkbenchArtifactDownloadURL": {
+      "document": "获取AI工作台制品的下载地址",
+      "input": "GetAIWorkbenchArtifactDownloadURLRequest",
+      "name": "获取AI工作台制品的下载地址",
+      "output": "GetAIWorkbenchArtifactDownloadURLResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchAgents": {
+      "document": "查询 Agent 列表",
+      "input": "ListAIWorkbenchAgentsRequest",
+      "name": "查询 Agent 列表",
+      "output": "ListAIWorkbenchAgentsResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchArtifacts": {
+      "document": "查询产物列表",
+      "input": "ListAIWorkbenchArtifactsRequest",
+      "name": "查询制品列表",
+      "output": "ListAIWorkbenchArtifactsResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchExecutions": {
+      "document": "查询执行列表",
+      "input": "ListAIWorkbenchExecutionsRequest",
+      "name": "查询执行列表",
+      "output": "ListAIWorkbenchExecutionsResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchMCPs": {
+      "document": "查询 MCP 列表",
+      "input": "ListAIWorkbenchMCPsRequest",
+      "name": "查询 MCP 列表",
+      "output": "ListAIWorkbenchMCPsResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchMessages": {
+      "document": "查询消息列表",
+      "input": "ListAIWorkbenchMessagesRequest",
+      "name": "查询消息列表",
+      "output": "ListAIWorkbenchMessagesResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchResourceInstances": {
+      "document": "列出资源实例",
+      "input": "ListAIWorkbenchResourceInstancesRequest",
+      "name": "列出资源实例",
+      "output": "ListAIWorkbenchResourceInstancesResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchResourceMaps": {
+      "document": "查询资源地图列表",
+      "input": "ListAIWorkbenchResourceMapsRequest",
+      "name": "查询资源地图列表",
+      "output": "ListAIWorkbenchResourceMapsResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchSessions": {
+      "document": "查询会话列表",
+      "input": "ListAIWorkbenchSessionsRequest",
+      "name": "查询会话列表",
+      "output": "ListAIWorkbenchSessionsResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchSkills": {
+      "document": "查询技能列表",
+      "input": "ListAIWorkbenchSkillsRequest",
+      "name": "查询技能列表",
+      "output": "ListAIWorkbenchSkillsResponse",
+      "status": "online"
+    },
+    "ListAIWorkbenchTasks": {
+      "document": "查询任务列表",
+      "input": "ListAIWorkbenchTasksRequest",
+      "name": "查询任务列表",
+      "output": "ListAIWorkbenchTasksResponse",
+      "status": "online"
+    },
     "ModifyNoticeContentTmpl": {
       "document": "修改通知内容模板",
       "input": "ModifyNoticeContentTmplRequest",
@@ -61,6 +208,20 @@
       "input": "TriggerAIWorkbenchSREDigitalTwinTaskRequest",
       "name": "触发AI工作台SRE数字分身任务",
       "output": "TriggerAIWorkbenchSREDigitalTwinTaskResponse",
+      "status": "online"
+    },
+    "TriggerAIWorkbenchTask": {
+      "document": "手动触发任务",
+      "input": "TriggerAIWorkbenchTaskRequest",
+      "name": "手动触发任务",
+      "output": "TriggerAIWorkbenchTaskResponse",
+      "status": "online"
+    },
+    "UpdateAIWorkbenchAgent": {
+      "document": "更新 Agent",
+      "input": "UpdateAIWorkbenchAgentRequest",
+      "name": "更新 Agent",
+      "output": "UpdateAIWorkbenchAgentResponse",
       "status": "online"
     }
   },
@@ -327,6 +488,112 @@
       ],
       "usage": "out"
     },
+    "AgentInfo": {
+      "document": "Agent 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "peter************",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NewDesc",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 分类</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "monitor",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态: draft/configured/running/standby/disabled</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联技能 ID 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"skill-xx\"]",
+          "member": "string",
+          "name": "SkillIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的资源地图 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "map-id",
+          "member": "string",
+          "name": "ResourceMapId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的mcp id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"mcp-xxx\"]",
+          "member": "string",
+          "name": "MCPIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "CamTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent运行时所需环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AlarmLable": {
       "document": "告警中的Label",
       "members": [
@@ -531,6 +798,139 @@
       ],
       "usage": "out"
     },
+    "ArtifactInfo": {
+      "document": "产物实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产物 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a3***************************1b2",
+          "member": "string",
+          "name": "ArtifactId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c**********s.j**n",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>物理类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "application/json",
+          "member": "string",
+          "name": "MimeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小(字节)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "646",
+          "member": "int64",
+          "name": "SizeBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否公共</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsGlobal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间 Unix 秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>产生该制品的 Agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>产生该制品的 Skill ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skl-********",
+          "member": "string",
+          "name": "SkillId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于解析调用下载接口</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sandbox_file://ses-************/******************-20260804.md",
+          "member": "string",
+          "name": "StoragePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CancelAIWorkbenchChatRequest": {
+      "document": "CancelAIWorkbenchChat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话id</p>",
+          "example": "ses-************",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelAIWorkbenchChatResponse": {
+      "document": "CancelAIWorkbenchChat返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelsReceivers": {
       "document": "接受人详情信息",
       "members": [
@@ -569,6 +969,315 @@
         }
       ],
       "usage": "both"
+    },
+    "ContentBlockInfo": {
+      "document": "每个 ContentBlockInfo 对应下游 ContentBlock 转换而来的一个 AGUI 事件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "TOOL_CALL_RESULT",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据内容</p>",
+          "example": "{\"messageId\":\"ent-l0fj1miwg6ty\",\"role\":\"assistant\",\"timestamp\":1786516818000,\"type\":\"TEXT_MESSAGE_START\"}",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAIWorkbenchAgentRequest": {
+      "document": "CreateAIWorkbenchAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 名称</p>",
+          "example": "资源巡检助手",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 描述</p>",
+          "example": "用于协助进行资源地图的巡检",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 分类</p>",
+          "example": "monitor",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 标签</p>",
+          "example": "[\"monitor\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 提示词</p>",
+          "example": "无",
+          "member": "InstructionConfig",
+          "name": "Instruction",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联技能 ID 列表</p>",
+          "example": "[\"skill-cust-file-parser-002\"]",
+          "member": "string",
+          "name": "SkillIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源: builtin / custom</p>",
+          "example": "custom",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的资源地图 ID</p>",
+          "example": "coll-********",
+          "member": "string",
+          "name": "ResourceMapId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的mcp工具</p>",
+          "example": "[\"mcp-***\"]",
+          "member": "string",
+          "name": "MCPIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "CamTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent运行时环境变量</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAIWorkbenchAgentResponse": {
+      "document": "CreateAIWorkbenchAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAIWorkbenchTaskRequest": {
+      "document": "CreateAIWorkbenchTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "策略触发",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务描述</p>",
+          "example": "用于测试任务创建",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联 Agent ID</p>",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词模板</p>",
+          "example": "任务目标：分析指定账号下近N天的告警历史分布情况，识别频繁告警的对象并进一步获取详细信息进行摘要分析，输出结构化告警分析报告",
+          "member": "string",
+          "name": "PromptTemplate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出格式: markdown / json</p>",
+          "example": "markdown",
+          "member": "string",
+          "name": "OutputFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发类型: manual / cron / webhook</p>",
+          "example": "cron",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cron 表达式</p>",
+          "example": "* * * * * ?",
+          "member": "string",
+          "name": "CronExpr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cron 时区</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "CronTimezone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联资源地图 ID</p>",
+          "example": "coll-********",
+          "member": "string",
+          "name": "ResourceMapId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能 ID 列表</p>",
+          "example": "[\"skl-********\"]",
+          "member": "string",
+          "name": "SkillIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP 端点 ID 列表</p>",
+          "example": "[\"mcp-********\"]",
+          "member": "string",
+          "name": "McpEndpointIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间(秒)</p>",
+          "example": "600",
+          "member": "int64",
+          "name": "TimeoutSec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "RetryCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAIWorkbenchTaskResponse": {
+      "document": "CreateAIWorkbenchTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tsk-********",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateNoticeContentTmplRequest": {
       "document": "CreateNoticeContentTmpl请求参数结构体",
@@ -634,6 +1343,60 @@
       ],
       "type": "object"
     },
+    "DeleteAIWorkbenchAgentRequest": {
+      "document": "DeleteAIWorkbenchAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID</p>",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAIWorkbenchAgentResponse": {
+      "document": "DeleteAIWorkbenchAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAIWorkbenchTaskRequest": {
+      "document": "DeleteAIWorkbenchTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "tsk-********",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAIWorkbenchTaskResponse": {
+      "document": "DeleteAIWorkbenchTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNoticeContentTmplsRequest": {
       "document": "DeleteNoticeContentTmpls请求参数结构体",
       "members": [
@@ -652,6 +1415,146 @@
     "DeleteNoticeContentTmplsResponse": {
       "document": "DeleteNoticeContentTmpls返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchAgentRequest": {
+      "document": "DescribeAIWorkbenchAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID</p>",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchAgentResponse": {
+      "document": "DescribeAIWorkbenchAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentInfo",
+          "name": "Agent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchArtifactRequest": {
+      "document": "DescribeAIWorkbenchArtifact请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产物 ID</p>",
+          "example": "a9***************************c86",
+          "member": "string",
+          "name": "ArtifactId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要下载 URL</p><p><code>1</code> = 需要，<code>0</code> 或不传 = 不需要</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedDownloadURL",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchArtifactResponse": {
+      "document": "DescribeAIWorkbenchArtifact返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产物信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ArtifactInfo",
+          "name": "Artifact",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS 预签名下载 URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://observability-*********",
+          "member": "string",
+          "name": "DownloadURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载 URL 过期时间（RFC3339 格式）</p>",
+          "example": "2026-05-26T08:50:29Z",
+          "member": "string",
+          "name": "DownloadURLExpiredAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchExecutionRequest": {
+      "document": "DescribeAIWorkbenchExecution请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行 ID</p>",
+          "example": "exe-************",
+          "member": "string",
+          "name": "ExecutionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchExecutionResponse": {
+      "document": "DescribeAIWorkbenchExecution返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行记录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutionInfo",
+          "name": "Execution",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -828,6 +1731,80 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSessionRequest": {
+      "document": "DescribeAIWorkbenchSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话 ID</p>",
+          "example": "ses-************",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSessionResponse": {
+      "document": "DescribeAIWorkbenchSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SessionInfo",
+          "name": "Session",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSkillRequest": {
+      "document": "DescribeAIWorkbenchSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>技能 ID</p>",
+          "example": "skl-********",
+          "member": "string",
+          "name": "SkillId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIWorkbenchSkillResponse": {
+      "document": "DescribeAIWorkbenchSkill返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>技能信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SkillInfo",
+          "name": "Skill",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1126,6 +2103,158 @@
       ],
       "usage": "both"
     },
+    "EnvEntry": {
+      "document": "环境变量entry",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境变量value</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sk-**********",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否脱敏</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Sensitive",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvVar": {
+      "document": "agent运行时所需环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境变量key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API_KEY",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量value</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnvEntry",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecutionInfo": {
+      "document": "执行记录实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务名</p>",
+          "example": "基础报告生成测试",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tsk-********",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "exe-************",
+          "member": "string",
+          "name": "ExecutionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ses-************",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发类型: manual / cron / webhook</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "manual",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态: pending/running/completed/failed/timeout/cancelled</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "completed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行摘要</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务为基于用户提供的固定内容生成每日APM告警分析报告。助手已确认任务要求，并等待用户提供报告正文内容，尚未生成最终报告。目前无异常，处于等待输入状态。",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行耗时(毫秒)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18948",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FeiShuRobotNoticeTmpl": {
       "document": "飞书机器人内容模板配置",
       "members": [
@@ -1182,6 +2311,62 @@
       ],
       "usage": "both"
     },
+    "GetAIWorkbenchArtifactDownloadURLRequest": {
+      "document": "GetAIWorkbenchArtifactDownloadURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话ID</p>",
+          "example": "ses-************",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>制品ID</p>",
+          "example": "08****************************05",
+          "member": "string",
+          "name": "ArtifactId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAIWorkbenchArtifactDownloadURLResponse": {
+      "document": "GetAIWorkbenchArtifactDownloadURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>COS 预签名 HTTPS 下载 URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://ob*****************************",
+          "member": "string",
+          "name": "DownloadURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL 过期时间（RFC3339 格式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-06-02**********",
+          "member": "string",
+          "name": "ExpiredAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GoogleChatRobotNoticeTmpl": {
       "document": "Google Chat 机器人内容模板配置",
       "members": [
@@ -1226,6 +2411,1134 @@
         }
       ],
       "usage": "both"
+    },
+    "InstructionConfig": {
+      "document": "分身提示词配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色定义</p>",
+          "example": "腾讯云可观测平台用户的运维数字分身",
+          "member": "string",
+          "name": "RolePosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>核心职责</p>",
+          "example": "线上故障应急响应：快速定位异常根因",
+          "member": "string",
+          "name": "CoreDuty",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>核心原则</p>",
+          "example": "主动前置不被动：不等你追问，预判需求、提前行动",
+          "member": "string",
+          "name": "CoreTruths",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风格约束</p>",
+          "example": "直白接地气：拒绝黑话堆砌",
+          "member": "string",
+          "name": "Vibe",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注意事项</p>",
+          "example": "不擅自执行生产环境高危操作",
+          "member": "string",
+          "name": "Boundaries",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ListAIWorkbenchAgentsRequest": {
+      "document": "ListAIWorkbenchAgents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态筛选</p>",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类筛选</p>",
+          "example": "monitor",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键词</p>",
+          "example": "keyword",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源筛选</p>",
+          "example": "custom",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent ID 列表筛选</p>",
+          "example": "[\"agt-********\"]",
+          "member": "string",
+          "name": "AgentIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchAgentsResponse": {
+      "document": "ListAIWorkbenchAgents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentInfo",
+          "name": "Agents",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchArtifactsRequest": {
+      "document": "ListAIWorkbenchArtifacts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话ID</p>",
+          "example": "[\"ses-************\"]",
+          "member": "string",
+          "name": "SessionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息内容类型</p>",
+          "example": "[\"application/json\"]",
+          "member": "string",
+          "name": "MimeTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序</p><p>枚举值：</p><ul><li>ASC： 正序</li><li>DESC： 倒序</li></ul>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchArtifactsResponse": {
+      "document": "ListAIWorkbenchArtifacts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产物列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ArtifactInfo",
+          "name": "Artifacts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchExecutionsRequest": {
+      "document": "ListAIWorkbenchExecutions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按 Agent 筛选</p>",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按状态筛选</p>",
+          "example": "completed",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行 ID 列表筛选</p>",
+          "example": "[\"exe-************\"]",
+          "member": "string",
+          "name": "ExecutionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "[\"tsk-********\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发方式</p>",
+          "example": "manual",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键值</p>",
+          "example": "报告生成",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchExecutionsResponse": {
+      "document": "ListAIWorkbenchExecutions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutionInfo",
+          "name": "Executions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchMCPsRequest": {
+      "document": "ListAIWorkbenchMCPs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按传输协议筛选</p>",
+          "example": "streamable_http",
+          "member": "string",
+          "name": "Transport",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键词</p>",
+          "example": "tencent",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用筛选</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的mcp</p>",
+          "example": "[\"mcp-********\"]",
+          "member": "string",
+          "name": "MCPIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP类型（内置/私有）</p><p>枚举值：</p><ul><li>builtin： 平台内置</li><li>private： 用户自定义</li></ul>",
+          "example": "builtin",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchMCPsResponse": {
+      "document": "ListAIWorkbenchMCPs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MCP 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MCPInfo",
+          "name": "MCPs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchMessagesRequest": {
+      "document": "ListAIWorkbenchMessages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话 ID</p>",
+          "example": "ses-************",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>游标分页的定位标记</p>",
+          "example": "ent-************",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>窗口大小</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拉取顺序</p>",
+          "example": "forward",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchMessagesResponse": {
+      "document": "ListAIWorkbenchMessages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消息列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MessageInfo",
+          "name": "Messages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一个游标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ent-************",
+          "member": "string",
+          "name": "NextCursor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>还有后续吗</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HasMore",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchResourceInstancesRequest": {
+      "document": "ListAIWorkbenchResourceInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源地图 ID</p>",
+          "example": "coll-********",
+          "member": "string",
+          "name": "ResourceMapId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页参数</p>",
+          "example": "无",
+          "member": "PageByNumParams",
+          "name": "PageParams",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchResourceInstancesResponse": {
+      "document": "ListAIWorkbenchResourceInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源实例列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceInstance",
+          "name": "Instances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchResourceMapsRequest": {
+      "document": "ListAIWorkbenchResourceMaps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按名称搜索</p>",
+          "example": "sre",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchResourceMapsResponse": {
+      "document": "ListAIWorkbenchResourceMaps返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源地图列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceMapInfo",
+          "name": "ResourceMaps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchSessionsRequest": {
+      "document": "ListAIWorkbenchSessions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按 Agent 筛选</p>",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键词</p>",
+          "example": "keyword",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID 列表筛选</p>",
+          "example": "[\"ses-************\"]",
+          "member": "string",
+          "name": "SessionIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchSessionsResponse": {
+      "document": "ListAIWorkbenchSessions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SessionInfo",
+          "name": "Sessions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchSkillsRequest": {
+      "document": "ListAIWorkbenchSkills请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按类型筛选</p>",
+          "example": "custom",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键词</p>",
+          "example": "技能",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用筛选</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能 ID 列表筛选</p>",
+          "example": "[\"skl-********\"]",
+          "member": "string",
+          "name": "SkillIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchSkillsResponse": {
+      "document": "ListAIWorkbenchSkills返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>技能列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SkillInfo",
+          "name": "Skills",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchTasksRequest": {
+      "document": "ListAIWorkbenchTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按 Agent 筛选</p>",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按触发类型筛选</p>",
+          "example": "manual",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键词</p>",
+          "example": "报告生成",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 ID 列表筛选</p>",
+          "example": "[\"tsk-********\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用筛选</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAIWorkbenchTasksResponse": {
+      "document": "ListAIWorkbenchTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PageByNumResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MCPInfo": {
+      "document": "MCP 实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>mcp的ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcp-********",
+          "member": "string",
+          "name": "MCPId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcop-cls-mcp",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP 描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcp的描述信息",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.testmcp.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>传输协议: sse / streamable_http / stdio</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "streamable_http",
+          "member": "string",
+          "name": "Transport",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证类型: none / bearer / basic / api_key</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aksk",
+          "member": "string",
+          "name": "AuthType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证密钥(响应时脱敏)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "***vfsz",
+          "member": "string",
+          "name": "AuthSecret",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间(秒)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RetryCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求头 JSON</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "***tX\"}",
+          "member": "string",
+          "name": "Headers",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MessageInfo": {
+      "document": "消息实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实体id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ent-************",
+          "member": "string",
+          "name": "EntryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ses-************",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色: user / assistant</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "分析云服务器最近三天的告警历史分布",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "completed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>块内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentBlockInfo",
+          "name": "ContentBlocks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ModifyNoticeContentTmplRequest": {
       "document": "ModifyNoticeContentTmpl请求参数结构体",
@@ -1636,6 +3949,69 @@
       ],
       "usage": "both"
     },
+    "PageByNumParams": {
+      "document": "按第几页进行分页的入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每个分页的数量</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>第几个分页，从1开始</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "PageByNumResult": {
+      "document": "分页结果参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总共有多少数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "178",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总共有多少个分页</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前的分页号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentPageNo",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PagerDutyRobotNoticeTmpl": {
       "document": "告警通知自定义PagerDutyRobot内容模板",
       "members": [
@@ -1920,6 +4296,204 @@
       ],
       "usage": "both"
     },
+    "ResourceInstance": {
+      "document": "资源实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "doc-********",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCOP",
+          "member": "string",
+          "name": "Service",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否就绪</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsReady",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceMapInfo": {
+      "document": "资源地图实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源地图 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "coll-********",
+          "member": "string",
+          "name": "ResourceMapId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源地图名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*****-test-******",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源地图描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总实例数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "42",
+          "member": "int64",
+          "name": "InstanceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SessionInfo": {
+      "document": "会话实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ses-************",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话标题</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务目标：\n分析指定账号下近N天的告警历史分布情况，识别频繁告警的对象并进一步获取详细信息进行摘要分",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态: active / archived / deleted</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果该会话由任务触发，则携带触发其会话的任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tsk-********",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillInfo": {
+      "document": "技能实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>技能 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skl-********",
+          "member": "string",
+          "name": "SkillId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcop-prometheus",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云监控数据查询助手",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SlackRobotNoticeTmpl": {
       "document": "企业微信机器人内容模板配置",
       "members": [
@@ -1964,6 +4538,190 @@
         }
       ],
       "usage": "both"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签key",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签value",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskInfo": {
+      "document": "任务实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tsk-********",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "基础报告生成测试",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "每日定时生成一份APM告警分析报告，基于固定模板内容输出结构化报告。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联 Agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agt-********",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词模板</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务目标：分析指定时间范围内的告警情况，包括告警概览统计、告警历史分布、关键实例告警详情，并生成包含问题诊断与优化建议的结构化告警分析报告。",
+          "member": "string",
+          "name": "PromptTemplate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出格式: markdown / json</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "markdown",
+          "member": "string",
+          "name": "OutputFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发类型: manual / cron / webhook</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "external",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cron 表达式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0 0 * * *",
+          "member": "string",
+          "name": "CronExpr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cron 时区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "CronTimezone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联技能 ID 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"skl-********\"]",
+          "member": "string",
+          "name": "SkillIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联 MCP 端点 ID 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"mcp-********\"]",
+          "member": "string",
+          "name": "McpEndpointIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间(秒)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "int64",
+          "name": "TimeoutSec",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RetryCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"notice-********\"]",
+          "member": "string",
+          "name": "NotifyIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TeamsRobotNoticeTmpl": {
       "document": "企业微信机器人内容模板配置",
@@ -2124,6 +4882,43 @@
       ],
       "type": "object"
     },
+    "TriggerAIWorkbenchTaskRequest": {
+      "document": "TriggerAIWorkbenchTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "tsk-********",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TriggerAIWorkbenchTaskResponse": {
+      "document": "TriggerAIWorkbenchTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "exe-************",
+          "member": "string",
+          "name": "ExecutionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TriggerDigitalTwinTaskResp": {
       "document": "触发数字分身任务响应",
       "members": [
@@ -2140,6 +4935,142 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateAIWorkbenchAgentRequest": {
+      "document": "UpdateAIWorkbenchAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent ID</p>",
+          "example": "agt-wolwtuoo",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 名称</p>",
+          "example": "NewName",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 描述</p>",
+          "example": "NewDesc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 分类</p>",
+          "example": "monitor",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 标签</p>",
+          "example": "[\"monitor\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 提示词</p>",
+          "example": "无",
+          "member": "InstructionConfig",
+          "name": "Instruction",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联技能 ID 列表</p>",
+          "example": "[\"skill-xx\"]",
+          "member": "string",
+          "name": "SkillIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源</p>",
+          "example": "custom",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "standby",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的资源地图 ID</p>",
+          "example": "map-id",
+          "member": "string",
+          "name": "ResourceMapId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的mcp</p>",
+          "example": "[\"mcp-xxx\"]",
+          "member": "string",
+          "name": "MCPIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent运行时环境变量</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAIWorkbenchAgentResponse": {
+      "document": "UpdateAIWorkbenchAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新后的 Agent 信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentInfo",
+          "name": "Agent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "WeWorkRobotNoticeTmpl": {
       "document": "企业微信机器人内容模板配置",

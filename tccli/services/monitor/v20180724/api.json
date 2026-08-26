@@ -35,6 +35,13 @@
       "output": "CleanGrafanaInstanceResponse",
       "status": "online"
     },
+    "CreateAlarmHistoryShield": {
+      "document": "创建小程序告警屏蔽规则",
+      "input": "CreateAlarmHistoryShieldRequest",
+      "name": "创建小程序告警屏蔽规则",
+      "output": "CreateAlarmHistoryShieldResponse",
+      "status": "online"
+    },
     "CreateAlarmNotice": {
       "document": "创建通知模板",
       "input": "CreateAlarmNoticeRequest",
@@ -203,6 +210,13 @@
       "output": "CreateSSOAccountResponse",
       "status": "online"
     },
+    "DeleteAlarmHistoryShields": {
+      "document": "删除小程序告警屏蔽规则",
+      "input": "DeleteAlarmHistoryShieldsRequest",
+      "name": "删除小程序告警屏蔽规则",
+      "output": "DeleteAlarmHistoryShieldsResponse",
+      "status": "online"
+    },
     "DeleteAlarmNotices": {
       "document": "删除告警通知模板",
       "input": "DeleteAlarmNoticesRequest",
@@ -369,6 +383,13 @@
       "input": "DescribeAlarmHistoriesRequest",
       "name": "查询告警历史",
       "output": "DescribeAlarmHistoriesResponse",
+      "status": "online"
+    },
+    "DescribeAlarmHistoryShield": {
+      "document": "获取小程序告警屏蔽规则",
+      "input": "DescribeAlarmHistoryShieldRequest",
+      "name": "获取小程序告警屏蔽规则",
+      "output": "DescribeAlarmHistoryShieldResponse",
       "status": "online"
     },
     "DescribeAlarmMetrics": {
@@ -929,6 +950,13 @@
       "input": "InstallPluginsRequest",
       "name": "安装 Grafana Plugin",
       "output": "InstallPluginsResponse",
+      "status": "online"
+    },
+    "ModifyAlarmHistoryShield": {
+      "document": "修改小程序告警屏蔽规则",
+      "input": "ModifyAlarmHistoryShieldRequest",
+      "name": "修改小程序告警屏蔽规则",
+      "output": "ModifyAlarmHistoryShieldResponse",
       "status": "online"
     },
     "ModifyAlarmNotice": {
@@ -3670,6 +3698,187 @@
       ],
       "usage": "both"
     },
+    "CreateAlarmHistoryShieldRequest": {
+      "document": "CreateAlarmHistoryShield请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块名，这里填“monitor”",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽策略名称",
+          "example": "测试屏蔽",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽策略id",
+          "example": "policy-sceil8f8",
+          "member": "string",
+          "name": "ShieldPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽\t",
+          "example": "LOOP_SHIELD",
+          "member": "string",
+          "name": "ShieldTimeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间即策略类型",
+          "example": "cvm_device",
+          "member": "string",
+          "name": "NameSpace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽对象",
+          "example": "[\"{\\\"appid\\\":\\\"1258344699\\\",\\\"tke_cluster_instance_id\\\":\\\"cls-9d80vq6y\\\",\\\"region\\\":\\\"ap-guangzhou\\\"}\"]",
+          "member": "string",
+          "name": "ShieldObject",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "qemu_vcpu_usage",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽指标 为空则为全部指标",
+          "example": "[\"UnconsumeTopic\", \"MaxOffsetTopic\"]",
+          "member": "string",
+          "name": "ShieldMetric",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0\t",
+          "example": "36000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0\t",
+          "example": "72000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "循环开始日期 2022/04/01 缺省:0\t",
+          "example": "1648742400",
+          "member": "uint64",
+          "name": "LoopStartDate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "循环结束日期 2022/04/05 缺省:0\t",
+          "example": "1649088000",
+          "member": "uint64",
+          "name": "LoopEndDate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要屏蔽的告警等级，取值范围Warn,Remind,Serious\t",
+          "example": "Warn",
+          "member": "string",
+          "name": "ShieldAlarmLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽规则的描述",
+          "example": "规则描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时区，东八区+8，西八区减8，以此类推\t",
+          "example": "8.5",
+          "member": "float",
+          "name": "TimeZone",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "被屏蔽的告警会话ID(历史的alarmId)",
+          "example": "sshejshee",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmHistoryShieldResponse": {
+      "document": "CreateAlarmHistoryShield返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "屏蔽规则的Id",
+          "example": "Shield-xxxx",
+          "member": "string",
+          "name": "ShieldId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAlarmNoticeRequest": {
       "document": "CreateAlarmNotice请求参数结构体",
       "members": [
@@ -6005,6 +6214,51 @@
       ],
       "usage": "out"
     },
+    "DeleteAlarmHistoryShieldsRequest": {
+      "document": "DeleteAlarmHistoryShields请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块名，这里填“monitor”",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽策略Id列表",
+          "example": "[\"Shield-2a2818gxe6\"]",
+          "member": "string",
+          "name": "Shields",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmHistoryShieldsResponse": {
+      "document": "DeleteAlarmHistoryShields返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAlarmNoticesRequest": {
       "document": "DeleteAlarmNotices请求参数结构体",
       "members": [
@@ -7397,6 +7651,306 @@
           "name": "Histories",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmHistoryShieldRequest": {
+      "document": "DescribeAlarmHistoryShield请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块名，这里填“monitor”",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略id",
+          "example": "policy-xxx",
+          "member": "string",
+          "name": "ShieldPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警历史维度",
+          "example": "[\"{\\\"appid\\\":\\\"1258344699\\\",\\\"tke_cluster_instance_id\\\":\\\"cls-9d80vq6y\\\",\\\"region\\\":\\\"ap-guangzhou\\\"}\"]",
+          "member": "string",
+          "name": "ShieldObject",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "MetricName",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽策略Id",
+          "example": "Shield-xxxx",
+          "member": "string",
+          "name": "ShieldId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警等级",
+          "example": "[\"Warn\"]",
+          "member": "string",
+          "name": "ShieldAlarmLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警历史会话ID",
+          "example": "session-id",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmHistoryShieldResponse": {
+      "document": "DescribeAlarmHistoryShield返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警屏蔽规则的ID",
+          "example": "Shield-xxxx",
+          "member": "string",
+          "name": "ShieldId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽策略名称",
+          "example": "测试屏蔽",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 1=开启 0=关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控类型展示名称",
+          "example": "云产品监控",
+          "member": "string",
+          "name": "MonitorTypeShowName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间即策略类型",
+          "example": "CKAFKA-CONSUMERGROUP-TOPIC",
+          "member": "string",
+          "name": "NameSpace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型展示名称",
+          "example": "消息队列Kafka-ConsumerGroup-Topic",
+          "member": "string",
+          "name": "NameSpaceShowName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cafka-xxx\", \"cafka-xxx\"]",
+          "member": "string",
+          "name": "ShieldObject",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ShieldMetric",
+          "name": "ShieldMetric",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽",
+          "example": "LOOP_SHIELD",
+          "member": "string",
+          "name": "ShieldTimeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间 10:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "36000",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间 20:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "72000",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "循环开始日期 2022/04/01\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1648742400",
+          "member": "uint64",
+          "name": "LoopStartDate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "循环结束日期 2022/04/05\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1649088000",
+          "member": "uint64",
+          "name": "LoopEndDate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NOT_TRIGGERED:未生效 TRIGGERING:生效中 EXPIRED:已过期",
+          "example": "NOT_TRIGGERED",
+          "member": "string",
+          "name": "CurrentStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要屏蔽的策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12245",
+          "member": "string",
+          "name": "ShieldPolicyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要屏蔽的告警等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Warn\"]",
+          "member": "string",
+          "name": "ShieldAlarmLevel",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽类型，1为维度屏蔽，0为实例名称屏蔽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ShieldTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "MetricName",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8.5",
+          "member": "float",
+          "name": "TimeZone",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警历史会话ID",
+          "example": "session-i",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -17066,6 +17620,168 @@
       ],
       "usage": "in"
     },
+    "ModifyAlarmHistoryShieldRequest": {
+      "document": "ModifyAlarmHistoryShield请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块名，这里填“monitor”",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽策略的Id",
+          "example": "Shield-xxxx",
+          "member": "string",
+          "name": "ShieldId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽策略名称",
+          "example": "测试屏蔽",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽",
+          "example": "LOOP_SHIELD",
+          "member": "string",
+          "name": "ShieldTimeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要屏蔽的策略ID",
+          "example": "policy-xxx",
+          "member": "string",
+          "name": "ShieldPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间即策略类型",
+          "example": "CKAFKA-CONSUMERGROUP-TOPIC",
+          "member": "string",
+          "name": "NameSpace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽对象",
+          "example": "[\"cafka-xxx\", \"cafka-xxx\"]",
+          "member": "string",
+          "name": "ShieldObject",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "CpuUsage",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0",
+          "example": "36000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0",
+          "example": "72000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "循环开始日期 2022/04/01 缺省:0",
+          "example": "1648742400",
+          "member": "uint64",
+          "name": "LoopStartDate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "循环结束日期 2022/04/05 缺省:0",
+          "example": "1649088000",
+          "member": "uint64",
+          "name": "LoopEndDate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要屏蔽的告警等级",
+          "example": "WARN",
+          "member": "string",
+          "name": "ShieldAlarmLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 时区，东八区+8，西八区减8，以此类推",
+          "example": "8.5",
+          "member": "float",
+          "name": "TimeZone",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "告警历史会话ID",
+          "example": "sessionxxx",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmHistoryShieldResponse": {
+      "document": "ModifyAlarmHistoryShield返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAlarmNoticeRequest": {
       "document": "ModifyAlarmNotice请求参数结构体",
       "members": [
@@ -20068,7 +20784,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
@@ -20077,7 +20793,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群 和外部集群",
+          "document": "<p>集群类型。可填入tke、eks、tkeedge、tdcc、external，分别代表标准集群、弹性集群、边缘集群、注册集群 和外部集群</p>",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -20086,7 +20802,7 @@
         },
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "<p>集群 ID</p>",
           "example": "cls-abc",
           "member": "string",
           "name": "ClusterId",
@@ -20095,7 +20811,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启公网 CLB",
+          "document": "<p>是否开启公网 CLB</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableExternal",
@@ -20104,8 +20820,8 @@
         },
         {
           "disabled": false,
-          "document": "集群内部署组件的pod 配置",
-          "example": "pod配置",
+          "document": "<p>集群内部署组件的pod 配置</p>",
+          "example": "无",
           "member": "PrometheusClusterAgentPodConfig",
           "name": "InClusterPodConfig",
           "required": false,
@@ -20113,8 +20829,8 @@
         },
         {
           "disabled": false,
-          "document": "该集群采集的所有指标都会带上这些labels",
-          "example": "额外的labels",
+          "document": "<p>该集群采集的所有指标都会带上这些labels</p>",
+          "example": "无",
           "member": "Label",
           "name": "ExternalLabels",
           "required": false,
@@ -20122,7 +20838,7 @@
         },
         {
           "disabled": false,
-          "document": "是否安装默认采集 exporter 和采集配置",
+          "document": "<p>是否安装默认采集 exporter 和采集配置</p>",
           "example": "false",
           "member": "bool",
           "name": "NotInstallBasicScrape",
@@ -20131,7 +20847,7 @@
         },
         {
           "disabled": false,
-          "document": "是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置",
+          "document": "<p>是否安装采集配置，true 只安装采集 exporter 不会安装采集配置，false 会同时安装采集配置</p>",
           "example": "false",
           "member": "bool",
           "name": "NotScrape",
@@ -20140,7 +20856,7 @@
         },
         {
           "disabled": false,
-          "document": "是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标",
+          "document": "<p>是否丢弃所有指标，true 代表丢弃所有指标，false 代表采集默认指标</p>",
           "example": "false",
           "member": "bool",
           "name": "DropAll",
@@ -20149,7 +20865,16 @@
         },
         {
           "disabled": false,
-          "document": "是否开启默认预聚合规则",
+          "document": "<p>是否采集全部指标</p><p>枚举值：</p><ul><li>false： 不采集</li><li>true： 采集</li></ul><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CollectAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启默认预聚合规则</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenDefaultRecord",
@@ -22790,6 +23515,32 @@
         }
       ],
       "type": "object"
+    },
+    "ShieldMetric": {
+      "document": "告警屏蔽的指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "屏蔽指标",
+          "example": "UnconsumeTopic",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽指标展示名称",
+          "example": "取消消费主题",
+          "member": "string",
+          "name": "MetricShowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SingleOrderedDataPoint": {
       "document": "单个有序数据点",

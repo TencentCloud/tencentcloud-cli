@@ -10,8 +10,8 @@
   },
   "metadata": {
     "apiVersion": "2020-02-10",
-    "api_brief": "介绍如何使用API对流量反欺诈进行操作，包括流量反欺诈-虚假TA识别、流量反欺诈-活跃度检测等。",
-    "serviceNameCN": "流量反欺诈",
+    "api_brief": "介绍如何使用API对广告作弊检测进行操作，包括广告作弊检测-虚假TA识别、广告作弊检测-活跃度检测等。",
+    "serviceNameCN": "广告作弊检测",
     "serviceShortName": "taf"
   },
   "objects": {

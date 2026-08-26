@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli csip DescribeDspmIdentifyRuleList --cli-unfold-argument  \
-    --MemberId mem-829jduqa \
-    --Filter.Limit 10 \
-    --Filter.Offset 0
+    --Filter.Filters.0.Name Scope \
+    --Filter.Filters.0.Values 1
 ```
 
 Output: 
@@ -17,16 +16,18 @@ Output:
     "Response": {
         "DataSet": [
             {
-                "Description": "自定义描述",
-                "Id": 5929,
-                "Name": "自定义",
+                "Description": "",
+                "Id": 10006,
+                "Name": "kyrie-kv-rule-001",
                 "Status": 1,
+                "StructuredStatus": true,
                 "Type": 1,
-                "UpdateTime": "2026-04-27 17:51:34"
+                "UnStructuredStatus": false,
+                "UpdateTime": "2026-05-27 18:04:57"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "a439d1f6-3598-4010-9192-921d2d12a788"
+        "TotalCount": 136,
+        "RequestId": "8cc2afe2-d1fe-4cf6-92b6-bea279c710ef"
     }
 }
 ```

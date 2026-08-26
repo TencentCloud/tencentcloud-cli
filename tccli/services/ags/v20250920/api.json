@@ -795,6 +795,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>桌面电脑环境类沙箱配置</p>",
+          "example": "无",
+          "member": "ComputerConfiguration",
+          "name": "ComputerConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>沙箱工具日志推送相关配置</p>",
           "example": "无",
           "member": "LogConfiguration",
@@ -3074,6 +3083,15 @@
           "example": "无",
           "member": "CustomConfiguration",
           "name": "CustomConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面电脑环境类沙箱配置</p>",
+          "example": "无",
+          "member": "ComputerConfiguration",
+          "name": "ComputerConfiguration",
           "required": false,
           "type": "object"
         }

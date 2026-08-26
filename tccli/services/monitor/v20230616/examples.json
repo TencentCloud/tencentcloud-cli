@@ -1,5 +1,29 @@
 {
   "actions": {
+    "CancelAIWorkbenchChat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAIWorkbenchChat\n<公共请求参数>\n\n{\n    \"SessionId\": \"ses-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"276dc1c8-cfb7-4a3f-b974-69dcb58b79c7\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "CreateAIWorkbenchAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIWorkbenchAgent\n<公共请求参数>\n\n{\n    \"Name\": \"testname\",\n    \"Description\": \"desc\",\n    \"Category\": \"monitor\",\n    \"Tags\": [\n        \"monitor\"\n    ],\n    \"Instruction\": {\n        \"RolePosition\": \"你身边的实战派 SRE 排障搭子\",\n        \"CoreDuty\": \"线上故障应急响应：快速定位异常根因\",\n        \"CoreTruths\": \"主动前置不被动：不等你追问，预判需求、提前行动\",\n        \"Vibe\": \"直白接地气：拒绝黑话堆砌\",\n        \"Boundaries\": \"不擅自执行生产环境高危操作\"\n    },\n    \"Source\": \"custom\",\n    \"ResourceMapId\": \"coll-********\",\n    \"MCPIds\": [\n        \"mcp-***\"\n    ],\n    \"SkillIds\": [\n        \"skill-cust-file-parser-002\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"agt-********\",\n        \"RequestId\": \"9132e8b0-f470-4f51-aab0-e180e549163c\"\n    }\n}",
+        "title": "create"
+      }
+    ],
+    "CreateAIWorkbenchTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIWorkbenchTask\n<公共请求参数>\n\n{\n    \"Name\": \"测试任务\",\n    \"Description\": \"用于测试任务创建\",\n    \"AgentId\": \"agt-********\",\n    \"TriggerType\": \"cron\",\n    \"ResourceMapId\": \"coll-********\",\n    \"SkillIds\": [\n        \"skl-********\"\n    ],\n    \"TimeoutSec\": 61,\n    \"RetryCount\": 4,\n    \"Enabled\": true,\n    \"McpEndpointIds\": [\n        \"mcp-********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"tsk-********\",\n        \"RequestId\": \"ea9b8eba-07bf-4384-a2db-6e316b6bcb2e\"\n    }\n}",
+        "title": "测试任务创建"
+      }
+    ],
     "CreateNoticeContentTmpl": [
       {
         "document": "测试环境真实请求",
@@ -8,12 +32,52 @@
         "title": "创建模板"
       }
     ],
+    "DeleteAIWorkbenchAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAIWorkbenchAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DeleteAIWorkbenchTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAIWorkbenchTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"tsk-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DeleteNoticeContentTmpls": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNoticeContentTmpls\n<公共请求参数>\n\n{\n    \"TmplIDs\": [\n        \"tmpl-xx1\",\n        \"tmpl-xx2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"tmp-jehsy\"\n    }\n}",
         "title": "删除通知内容模板"
+      }
+    ],
+    "DescribeAIWorkbenchAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIWorkbenchAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeAIWorkbenchArtifact": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIWorkbenchArtifact\n<公共请求参数>\n\n{\n    \"ArtifactId\": \"a9***************************c86\",\n    \"NeedDownloadURL\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Artifact\": {\n            \"AgentId\": \"agt-fl41a45q\",\n            \"ArtifactId\": \"a9b50a2ab7fd09af3ae37c6f0262cc86\",\n            \"CreatedAt\": 0,\n            \"IsGlobal\": false,\n            \"MimeType\": \"application/json\",\n            \"Name\": \"instances.json\",\n            \"SizeBytes\": 41,\n            \"SkillId\": \"skl-183na51w\",\n            \"StoragePath\": \"sandbox_file://ses-n3qlvaiqqfwn/instances.json\",\n            \"UpdatedAt\": 0\n        },\n        \"DownloadURL\": \"https://observability-*****************************************************************************************************************************************************************************************************************************************************************************************************************************\",\n        \"DownloadURLExpiredAt\": \"2026-05-26T08:50:29Z\",\n        \"RequestId\": \"8fe8e08b-a92d-4b0a-82bd-08404a3365c4\"\n    }\n}",
+        "title": "查询制品详情"
+      }
+    ],
+    "DescribeAIWorkbenchExecution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIWorkbenchExecution\n<公共请求参数>\n\n{\n    \"ExecutionId\": \"exe-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
       }
     ],
     "DescribeAIWorkbenchSREDigitalTwinTaskList": [
@@ -40,6 +104,22 @@
         "title": "成功"
       }
     ],
+    "DescribeAIWorkbenchSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIWorkbenchSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"ses-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeAIWorkbenchSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIWorkbenchSkill\n<公共请求参数>\n\n{\n    \"SkillId\": \"skl-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DescribeAlarmNotifyHistories": [
       {
         "document": "",
@@ -56,6 +136,94 @@
         "title": "查询模板"
       }
     ],
+    "GetAIWorkbenchArtifactDownloadURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAIWorkbenchArtifactDownloadURL\n<公共请求参数>\n\n{\n    \"SessionId\": \"ses-************\",\n    \"ArtifactId\": \"08****************************05\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadURL\": \"https://ob*****************************\",\n        \"ExpiredAt\": \"2026-06-02**********\",\n        \"RequestId\": \"7321c63c-0b6a-460f-bb69-0353fdebd69a\"\n    }\n}",
+        "title": "获取制品的 COS 预签名下载 URL"
+      }
+    ],
+    "ListAIWorkbenchAgents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchAgents\n<公共请求参数>\n\n{\n    \"AgentIds\": [\n        \"agt-********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ListAIWorkbenchArtifacts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchArtifacts\n<公共请求参数>\n\n{\n    \"PerPage\": 10,\n    \"PageNo\": 1,\n    \"SessionIds\": [\n        \"ses-************\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Artifacts\": [\n            {\n                \"AgentId\": \"agt-fl41a45q\",\n                \"ArtifactId\": \"a3ad713a514a00056779f487fb1b51b2\",\n                \"CreatedAt\": 0,\n                \"IsGlobal\": false,\n                \"MimeType\": \"application/json\",\n                \"Name\": \"custom_rules.json\",\n                \"SizeBytes\": 646,\n                \"SkillId\": \"skl-183na51w\",\n                \"StoragePath\": \"sandbox_file://ses-gqohe600bjp2/custom_rules.json\",\n                \"UpdatedAt\": 0\n            }\n        ],\n        \"PageResult\": {\n            \"CurrentPageNo\": 1,\n            \"TotalCount\": 3,\n            \"TotalPage\": 1\n        },\n        \"RequestId\": \"b3bd2b5f-c268-46ea-8644-a37add135bba\"\n    }\n}",
+        "title": "测试环境真实示例"
+      }
+    ],
+    "ListAIWorkbenchExecutions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchExecutions\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-********\",\n    \"ExecutionIds\": [\n        \"exe-************\"\n    ],\n    \"TaskIds\": [\n        \"tsk-********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Executions\": [],\n        \"PageResult\": {\n            \"CurrentPageNo\": 0,\n            \"TotalCount\": 0,\n            \"TotalPage\": 0\n        },\n        \"RequestId\": \"d3445330-9348-41f9-9713-36a2f336ba26\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ListAIWorkbenchMCPs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchMCPs\n<公共请求参数>\n\n{\n    \"MCPIds\": [\n        \"mcp-********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MCPs\": [\n            {\n                \"AuthSecret\": \"***\",\n                \"AuthType\": \"none\",\n                \"Description\": \"tcop-rum-mcp\",\n                \"Enabled\": true,\n                \"Headers\": \"***tX\\\"}\",\n                \"MCPId\": \"mcp-635dx35o\",\n                \"Name\": \"tcop-rum-mcp\",\n                \"RetryCount\": 3,\n                \"Timeout\": 30,\n                \"Transport\": \"streamable_http\",\n                \"Url\": \"***/sse\"\n            }\n        ],\n        \"PageResult\": {\n            \"CurrentPageNo\": 1,\n            \"TotalCount\": 7,\n            \"TotalPage\": 1\n        },\n        \"RequestId\": \"5d27dc0e-0158-4f06-b2e4-89c477114b78\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ListAIWorkbenchMessages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchMessages\n<公共请求参数>\n\n{\n    \"SessionId\": \"ses-************\",\n    \"Cursor\": \"ent-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HasMore\": false,\n        \"Messages\": [\n            {\n                \"Content\": \"根据查询结果，最近三天（2023年10月18日至2023年10月20日）内没有云服务器的告警历史记录。这可能意味着：\\n\\n1. **系统运行正常**：云服务器在此期间未触发任何告警。\\n2. **告警策略未配置**：可能未设置相关告警策略，导致未捕获异常情况。\\n3. **数据延迟或未上报**：告警数据可能存在延迟或未及时上报。\\n\\n如果需要进一步确认，可以检查告警策略配置或扩大时间范围重新查询。\",\n                \"ContentBlocks\": [\n                    {\n                        \"Data\": \"{\\\"messageId\\\":\\\"ent-v05jrikcax7p\\\",\\\"role\\\":\\\"assistant\\\",\\\"timestamp\\\":1775800599000,\\\"type\\\":\\\"TEXT_MESSAGE_START\\\"}\",\n                        \"Type\": \"TEXT_MESSAGE_START\"\n                    }\n                ],\n                \"EntryId\": \"ent-v05jrikcax7p\",\n                \"Role\": \"assistant\",\n                \"SessionId\": \"ses-ddgf8e7ne7ak\",\n                \"Status\": \"completed\"\n            }\n        ],\n        \"NextCursor\": \"ent-************\",\n        \"RequestId\": \"0c3f9c3a-fac9-40b9-8249-79eb32271c4a\"\n    }\n}",
+        "title": "按顺序获取历史会话"
+      }
+    ],
+    "ListAIWorkbenchResourceInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchResourceInstances\n<公共请求参数>\n\n{\n    \"ResourceMapId\": \"coll-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ListAIWorkbenchResourceMaps": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchResourceMaps\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ListAIWorkbenchSessions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchSessions\n<公共请求参数>\n\n{\n    \"SessionIds\": [\n        \"ses-************\"\n    ],\n    \"AgentId\": \"agt-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ListAIWorkbenchSkills": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchSkills\n<公共请求参数>\n\n{\n    \"PerPage\": 100,\n    \"PageNo\": 1,\n    \"SkillIds\": [\n        \"skl-********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PageResult\": {\n            \"CurrentPageNo\": 1,\n            \"TotalCount\": 5,\n            \"TotalPage\": 1\n        },\n        \"Skills\": [\n            {\n                \"Description\": \"解析PDF/Word/Excel文件并提取文本内容\",\n                \"Enabled\": true,\n                \"Name\": \"文件解析\",\n                \"SkillId\": \"skill-cust-file-parser-002\"\n            }\n        ],\n        \"RequestId\": \"c05cd8e1-89a7-4260-a07e-a8047be55a45\"\n    }\n}",
+        "title": "Mock返回示例"
+      }
+    ],
+    "ListAIWorkbenchTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAIWorkbenchTasks\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-********\",\n    \"TaskIds\": [\n        \"tsk-********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "ModifyNoticeContentTmpl": [
       {
         "document": "测试环境真实请求",
@@ -70,6 +238,22 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerAIWorkbenchSREDigitalTwinTask\n<公共请求参数>\n\n{\n    \"TaskID\": 228\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskID\": 228\n        },\n        \"JSONStrPaths\": [\n            \"null\"\n        ],\n        \"RequestId\": \"14fe4fec-536c-47e7-80a6-29f42979f4c0\"\n    }\n}",
         "title": "触发AI工作台SRE数字分身任务"
+      }
+    ],
+    "TriggerAIWorkbenchTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerAIWorkbenchTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"tsk-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\",\n        \"ExecutionId\": \"exe-************\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "UpdateAIWorkbenchAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAIWorkbenchAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"agt-wolwtuoo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Agent\": {\n            \"AgentId\": \"agt-wolwtuoo\",\n            \"Category\": \"\",\n            \"Description\": \"\",\n            \"MCPIds\": [\n                \"mcp-546fc85o\"\n            ],\n            \"Name\": \"mask_test\",\n            \"ResourceMapId\": \"\",\n            \"SkillIds\": [\n                \"skl-otbs5v1r\"\n            ],\n            \"Status\": \"standby\"\n        },\n        \"RequestId\": \"52c51e04-199e-4d1a-b802-2f238683ae15\"\n    }\n}",
+        "title": "UpdateMask"
       }
     ]
   },

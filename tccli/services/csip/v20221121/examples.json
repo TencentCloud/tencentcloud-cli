@@ -608,6 +608,14 @@
         "title": "创建高危基线风险导出任务"
       }
     ],
+    "CreateHostImageListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHostImageListExportJob\n<公共请求参数>\n\n{\n    \"ClusterCaMD5\": \"5f65*********************5d63e8a\",\n    \"MemberId\": [\n        \"mem-tencent-*********f66e429\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"32ce0493-60b3-4874-a3a5-15607d01b258\",\n        \"RequestId\": \"0bb3e913-2f7f-47bf-8593-139765d81d64\"\n    }\n}",
+        "title": "1"
+      }
+    ],
     "CreateHostVulExportJob": [
       {
         "document": "创建扫描导出任务",
@@ -806,6 +814,38 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCfgRiskDetailExportJob\n<公共请求参数>\n\n{\n    \"RiskRuleId\": \"tc_001\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"f9b6bcfc-1d74-4794-a9a9-e8efb35f032f\",\n        \"RequestId\": \"b1d83e8f-eff1-4180-b5e2-ece410f108ad\"\n    }\n}",
         "title": "创建云资源配置风险详情导出任务"
+      }
+    ],
+    "CreateSandboxACLRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxACLRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"禁止出站访问未知域名\",\n    \"Level\": \"HIGH\",\n    \"BelongAssetType\": \"HOST\",\n    \"SystemRuleIDList\": [\n        1001\n    ],\n    \"EffectScope\": {\n        \"EffectType\": \"EXCLUDE\"\n    },\n    \"RuleAction\": \"BLOCK\",\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ID\": 2001,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "创建 ACL 规则示例"
+      }
+    ],
+    "CreateSandboxDLPRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxDLPRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"出境敏感数据防护\",\n    \"Level\": \"HIGH\",\n    \"BelongAssetType\": \"CONTAINER\",\n    \"UserRuleContent\": [\n        {\n            \"RuleName\": \"身份证号\",\n            \"RuleContent\": \"[1-9]\\\\d{5}(19|20)\\\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\\\d|3[01])\\\\d{3}[0-9Xx]\"\n        }\n    ],\n    \"EffectScope\": {\n        \"EffectType\": \"EXCLUDE\"\n    },\n    \"RuleAction\": \"BLOCK\",\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ID\": 4001,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "创建 DLP 规则示例"
+      }
+    ],
+    "CreateSandboxFileRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxFileRule\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-6*************29\"\n    ],\n    \"RuleContent\": {\n        \"RuleName\": \"allow dot local bin\",\n        \"BelongAssetType\": \"HOST\",\n        \"EffectScope\": {\n            \"EffectType\": \"EXCLUDE\"\n        },\n        \"Action\": \"RO\",\n        \"PathWhitelist\": [\n            \"/home/dev/.local/bin\"\n        ],\n        \"Status\": \"ON\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleID\": 2,\n        \"RequestId\": \"56fc76be-fbee-4b60-987f-d557be45db33\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "CreateSandboxLLMAuditRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxLLMAuditRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"敏感意图审计\",\n    \"Level\": \"HIGH\",\n    \"BelongAssetType\": \"HOST\",\n    \"SystemRuleIDList\": [\n        \"grl-safety-politics-std\",\n        \"grl-safety-prompt-001\"\n    ],\n    \"EffectScope\": {\n        \"EffectType\": \"EXCLUDE\"\n    },\n    \"RuleAction\": \"BLOCK\",\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ID\": 6001,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "创建 LLM 审计规则示例"
       }
     ],
     "CreateScanStatisticExportJob": [
@@ -1216,6 +1256,30 @@
         "title": "删除风险中心扫描任务"
       }
     ],
+    "DeleteSandboxACLRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSandboxACLRule\n<公共请求参数>\n\n{\n    \"IDList\": [\n        2001,\n        2002\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "批量删除 ACL 规则示例"
+      }
+    ],
+    "DeleteSandboxDLPRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSandboxDLPRule\n<公共请求参数>\n\n{\n    \"IDList\": [\n        4001,\n        4002\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "批量删除 DLP 规则示例"
+      }
+    ],
+    "DeleteSandboxFileRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSandboxFileRule\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-0************50\"\n    ],\n    \"IDList\": [\n        44\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IDList\": [\n            44\n        ],\n        \"RequestId\": \"fb48d33f-dd24-4e8b-8ca8-74df8d0bb246\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DeleteSandboxLLMAuditRule": [
       {
         "document": "",
@@ -1446,6 +1510,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyUserList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKeyAlarmList\": [\n                    {\n                        \"Count\": 12,\n                        \"Type\": 0\n                    }\n                ],\n                \"AccessKeyRiskList\": [\n                    {\n                        \"Count\": 1,\n                        \"Type\": 0\n                    }\n                ],\n                \"AccessType\": 1,\n                \"ActionFlag\": 0,\n                \"Advice\": 1,\n                \"AppID\": 13000008,\n                \"CheckStatus\": 0,\n                \"ID\": 200631,\n                \"ISP\": \"电信\",\n                \"LoginFlag\": 0,\n                \"LoginIP\": \"113.108.**.73\",\n                \"LoginLocation\": \"中国-广东省-深圳市\",\n                \"LoginTime\": \"2025-05-07 15:21:05\",\n                \"Name\": \"name\",\n                \"Nickname\": \"name\",\n                \"SubNickname\": \"name\",\n                \"SubUin\": \"1000***72635\",\n                \"Type\": 1,\n                \"Uin\": \"1000***6646\"\n            }\n        ],\n        \"RequestId\": \"fabb0428-3853-46df-b473-afbc7021fed4\",\n        \"Total\": 1\n    }\n}",
         "title": "查询用户的账号列表"
+      }
+    ],
+    "DescribeAccessKeyWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyWhiteList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AKList\": [\n                    \"AKIDZ***ABA4\",\n                    \"AK***Va\",\n                    \"AKI***k\"\n                ],\n                \"ActionList\": [],\n                \"AkImportType\": 0,\n                \"AppID\": 1256299843,\n                \"CallType\": 0,\n                \"CreateTime\": \"2025-02-27 20:01:23\",\n                \"ErrorCodeList\": [],\n                \"ID\": 10000,\n                \"IPList\": [],\n                \"Name\": \"test\",\n                \"Nickname\": \"name\",\n                \"Remark\": \"\",\n                \"Uin\": \"10000450***\",\n                \"UpdateTime\": \"2025-02-27 20:01:23\"\n            }\n        ],\n        \"RequestId\": \"b8e179b8-1135-4e34-a69a-ecb4ba8a86b2\",\n        \"Total\": 1\n    }\n}",
+        "title": "访问密钥告警记录列表"
       }
     ],
     "DescribeAgentConfigSetting": [
@@ -1858,6 +1930,14 @@
         "title": "DescribeCLSLogListV3-test2"
       }
     ],
+    "DescribeCSCPayInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlanPayInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"NewUser\": 1,\n        \"RequestId\": \"16a42165-319b-48b0-8a18-00ba52a07cf6\",\n        \"Uin\": \"700******039\",\n        \"NickName\": \"700******039\"\n    }\n}",
+        "title": "正常请求"
+      }
+    ],
     "DescribeCSIPLicenseBindSchedule": [
       {
         "document": "",
@@ -1888,6 +1968,20 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCSIPRiskStatistics\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CFGHighLevel\": 46,\n            \"CFGTotal\": 333,\n            \"LastScanTime\": \"2025-04-11 00:00:09\",\n            \"PortHighLevel\": 1,\n            \"PortTotal\": 66,\n            \"ServerHighLevel\": 0,\n            \"ServerTotal\": 6,\n            \"VULHighLevel\": 31,\n            \"VULTotal\": 596,\n            \"WeakPasswordHighLevel\": 0,\n            \"WeakPasswordTotal\": 0,\n            \"WebsiteHighLevel\": 0,\n            \"HostBaseLineRiskTotal\": 0,\n            \"HostBaseLineRiskHighLevel\": 0,\n            \"PodBaseLineRiskTotal\": 0,\n            \"PodBaseLineRiskHighLevel\": 0,\n            \"WebsiteTotal\": 15\n        },\n        \"RequestId\": \"14a5d202-861d-4669-8ca7-592c0acd2dc9\"\n    }\n}",
         "title": "获取风险中心风险概况"
+      }
+    ],
+    "DescribeCSPMPayInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCSPMPayInfo\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68b8087a611258000\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AppID\": 12117826,\n        \"AutoRenew\": 1,\n        \"BeginTime\": \"2025-04-10 10:37:02\",\n        \"BetaEndTime\": \"2025-05-10 10:37:02\",\n        \"CSPMNum\": 15000,\n        \"EndTime\": \"2025-05-10 10:37:02\",\n        \"GrantedCSPMNum\": 5000,\n        \"IsSelfBuy\": 2,\n        \"IsShareToOther\": 1,\n        \"NickName\": \"声声乌龙\",\n        \"OrderStatus\": 1,\n        \"PayMode\": 1,\n        \"RequestId\": \"5b8e1c47-0671-4021-9a11-8aeb1c03e461\",\n        \"ResourceId\": \"csip-cspm-241\",\n        \"TimeNow\": \"2025-05-10 10:37:02\",\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"m\",\n        \"Uin\": \"100011132178\",\n        \"UsedCount\": 3200\n    }\n}",
+        "title": "获取已购CSPM订单信息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCSPMPayInfo\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-6def087a65268000\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AppID\": 0,\n        \"AutoRenew\": 0,\n        \"BeginTime\": \"\",\n        \"BetaEndTime\": \"2025-05-06 12:00:00\",\n        \"CSPMNum\": 0,\n        \"EndTime\": \"\",\n        \"GrantedCSPMNum\": 0,\n        \"IsSelfBuy\": 0,\n        \"IsShareToOther\": 0,\n        \"NickName\": \"\",\n        \"OrderStatus\": 0,\n        \"PayMode\": 0,\n        \"RequestId\": \"6014aa34-c145-47c7-b039-14ee95b0e737\",\n        \"ResourceId\": \"\",\n        \"TimeNow\": \"2025-05-23 10:49:55\",\n        \"TimeSpan\": 0,\n        \"TimeUnit\": \"\",\n        \"Uin\": \"\",\n        \"UsedCount\": 0\n    }\n}",
+        "title": "获取未购买账号的CSPM信息"
       }
     ],
     "DescribeCVMAssetInfo": [
@@ -2887,8 +2981,8 @@
     "DescribeDspmIdentifyRuleList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyRuleList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-829jduqa\"\n    ],\n    \"Filter\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Description\": \"自定义描述\",\n                \"Id\": 5929,\n                \"Name\": \"自定义\",\n                \"Status\": 1,\n                \"Type\": 1,\n                \"UpdateTime\": \"2026-04-27 17:51:34\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a439d1f6-3598-4010-9192-921d2d12a788\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyRuleList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Filters\": [\n            {\n                \"Name\": \"Scope\",\n                \"Values\": [\n                    \"1\"\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSet\": [\n            {\n                \"Description\": \"\",\n                \"Id\": 10006,\n                \"Name\": \"kyrie-kv-rule-001\",\n                \"Status\": 1,\n                \"StructuredStatus\": true,\n                \"Type\": 1,\n                \"UnStructuredStatus\": false,\n                \"UpdateTime\": \"2026-05-27 18:04:57\"\n            }\n        ],\n        \"TotalCount\": 136,\n        \"RequestId\": \"8cc2afe2-d1fe-4cf6-92b6-bea279c710ef\"\n    }\n}",
         "title": "查询dspm数据识别数据项列表"
       }
     ],
@@ -4150,6 +4244,22 @@
         "title": "查询 ACL 系统规则列表示例"
       }
     ],
+    "DescribeSandboxDLPAlertList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxDLPAlertList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-7*************ef\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 8001,\n                \"BelongAssetType\": \"CONTAINER\",\n                \"RuleID\": 4001,\n                \"RuleName\": \"出境敏感数据防护\",\n                \"UUID\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n                \"InstanceId\": \"ins-a1b2c3d4\",\n                \"InstanceName\": \"app-server-01\",\n                \"ClusterId\": \"cls-abcd1234\",\n                \"ContainerId\": \"docker-container-abc123\",\n                \"ContainerName\": \"payment-svc\",\n                \"Exe\": \"/usr/local/bin/python3\",\n                \"Param\": \"python3 upload.py\",\n                \"Target\": \"POST https://external.example.com/upload\",\n                \"MatchScope\": \"req_body\",\n                \"MatchContent\": \"*********************card=xxxxxxxxxxxxxxxxxx\",\n                \"MatchContentSample\": \"*****345678\",\n                \"UpProto\": \"multipart\",\n                \"FileName\": \"customer_list.xlsx\",\n                \"FileType\": \"zip\",\n                \"FileSize\": 20480,\n                \"Level\": \"HIGH\",\n                \"Status\": \"PENDING\",\n                \"Count\": 3,\n                \"FirstAlertTime\": \"2025-03-10T08:00:00+08:00\",\n                \"LastAlertTime\": \"2025-03-15T14:30:00+08:00\",\n                \"RuleAction\": \"BLOCK\"\n            }\n        ],\n        \"TotalCount\": 42,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 DLP 告警列表示例"
+      }
+    ],
+    "DescribeSandboxDLPRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxDLPRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 4001,\n                \"RuleName\": \"出境敏感数据防护\",\n                \"Level\": \"HIGH\",\n                \"Status\": \"ON\",\n                \"BelongAssetType\": \"CONTAINER\",\n                \"SystemRuleContent\": [\n                    {\n                        \"RuleName\": \"身份证号\",\n                        \"RuleContent\": \"[1-9]\\\\d{5}(19|20)\\\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\\\d|3[01])\\\\d{3}[0-9Xx]\"\n                    }\n                ],\n                \"UserRuleContent\": [\n                    {\n                        \"RuleName\": \"身份证号\",\n                        \"RuleContent\": \"[1-9]\\\\d{5}(19|20)\\\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\\\d|3[01])\\\\d{3}[0-9Xx]\"\n                    }\n                ],\n                \"UserRuleInfo\": {\n                    \"FileName\": [\n                        \"*.pem\",\n                        \"*.key\"\n                    ],\n                    \"FileSize\": {\n                        \"Min\": 1024,\n                        \"Max\": 1048576\n                    },\n                    \"FileType\": [\n                        \".pdf\",\n                        \".zip\"\n                    ],\n                    \"URLRule\": {\n                        \"URL\": [\n                            \"http://*.cos.*.myqcloud.com/*\"\n                        ],\n                        \"URLExcept\": []\n                    },\n                    \"TrafficRule\": [\n                        {\n                            \"RuleName\": \"身份证号\",\n                            \"RuleContent\": \"[1-9]\\\\d{5}(19|20)\\\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\\\d|3[01])\\\\d{3}[0-9Xx]\"\n                        }\n                    ]\n                },\n                \"EffectScope\": {\n                    \"EffectType\": \"INCLUDE\",\n                    \"EffectAssets\": [\n                        {\n                            \"InstanceId\": \"ins-a1b2c3d4\",\n                            \"ContainerId\": \"docker-container-abc123\"\n                        }\n                    ]\n                },\n                \"InactiveAssets\": [\n                    {\n                        \"InstanceId\": \"\",\n                        \"ContainerId\": \"docker-container-abc123\",\n                        \"TrafficPluginState\": {\n                            \"InstallStatus\": \"INSTALL_FAIL\",\n                            \"Status\": \"IPTABLE_FAILED\",\n                            \"Message\": \"iptables 规则下发失败\",\n                            \"ActivityTime\": \"2025-03-19T10:35:00+08:00\"\n                        }\n                    }\n                ],\n                \"InsertTime\": \"2025-01-01T10:00:00+08:00\",\n                \"UpdateTime\": \"2025-03-15T14:30:00+08:00\",\n                \"RuleAction\": \"BLOCK\"\n            }\n        ],\n        \"TotalCount\": 12,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 DLP 规则列表示例"
+      }
+    ],
     "DescribeSandboxDLPSystemRuleList": [
       {
         "document": "",
@@ -4164,6 +4274,30 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxFileRuleList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-6*************29\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RuleList\": [\n            {\n                \"RuleContent\": {\n                    \"Action\": \"RO\",\n                    \"BelongAssetType\": \"HOST\",\n                    \"EffectScope\": {\n                        \"EffectAssets\": [],\n                        \"EffectType\": \"EXCLUDE\"\n                    },\n                    \"PathWhitelist\": [\n                        \"/home/dev/.local/bin\"\n                    ],\n                    \"RuleName\": \"allow dot local bin\",\n                    \"Status\": \"ON\"\n                },\n                \"RuleID\": 2,\n                \"RuleType\": \"CUSTOM\",\n                \"UpdateTime\": \"2026-04-26T06:22:35Z\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"a51b3fc4-cb94-4ada-b23e-1f8401f79bd2\"\n    }\n}",
         "title": "调用示例"
+      }
+    ],
+    "DescribeSandboxLLMAuditAlertList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxLLMAuditAlertList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 9001,\n                \"BelongAssetType\": \"HOST\",\n                \"RuleID\": 6001,\n                \"RuleName\": \"敏感意图审计\",\n                \"SystemRuleName\": \"涉政内容-标准\",\n                \"InstanceId\": \"ins-a1b2c3d4\",\n                \"InstanceName\": \"app-server-01\",\n                \"ClusterId\": \"\",\n                \"ContainerId\": \"\",\n                \"ContainerName\": \"\",\n                \"HitPayload\": \"风险类型:越狱提示词,风险内容:用户询问越狱方法\",\n                \"RuleAction\": \"BLOCK\",\n                \"Level\": \"HIGH\",\n                \"Status\": \"BLOCK\",\n                \"FirstAlertTime\": \"2025-03-10T08:00:00+08:00\",\n                \"LastAlertTime\": \"2025-03-15T14:30:00+08:00\"\n            }\n        ],\n        \"TotalCount\": 42,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 LLM 审计告警列表示例"
+      }
+    ],
+    "DescribeSandboxLLMAuditRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxLLMAuditRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ID\": 6001,\n                \"RuleName\": \"敏感意图审计\",\n                \"Level\": \"HIGH\",\n                \"Status\": \"ON\",\n                \"BelongAssetType\": \"HOST\",\n                \"SystemRuleRefs\": [\n                    {\n                        \"SystemRuleID\": \"grl-safety-politics-std\",\n                        \"SystemRuleName\": \"涉政内容-标准\"\n                    }\n                ],\n                \"EffectScope\": {\n                    \"EffectType\": \"INCLUDE\",\n                    \"EffectAssets\": [\n                        {\n                            \"InstanceId\": \"ins-a1b2c3d4\",\n                            \"ContainerId\": \"docker-container-abc123\"\n                        }\n                    ]\n                },\n                \"InactiveAssets\": [\n                    {\n                        \"InstanceId\": \"ins-a1b2c3d4\",\n                        \"ContainerId\": \"\",\n                        \"TrafficPluginState\": {\n                            \"InstallStatus\": \"INSTALL_FAIL\",\n                            \"Status\": \"IPTABLE_FAILED\",\n                            \"Message\": \"iptables 规则下发失败\",\n                            \"ActivityTime\": \"2025-03-19T10:35:00+08:00\"\n                        }\n                    }\n                ],\n                \"InsertTime\": \"2025-01-01T10:00:00+08:00\",\n                \"UpdateTime\": \"2025-03-15T14:30:00+08:00\",\n                \"RuleAction\": \"BLOCK\"\n            }\n        ],\n        \"TotalCount\": 8,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 LLM 审计规则列表示例"
+      }
+    ],
+    "DescribeSandboxLLMAuditSystemRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxLLMAuditSystemRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"LLMRules\": [\n            {\n                \"RuleID\": \"grl-safety-politics-std\",\n                \"RuleName\": \"涉政内容-标准\",\n                \"Description\": \"检测输出中的涉政敏感内容（标准级别）\"\n            }\n        ],\n        \"ToolCallRules\": [\n            {\n                \"RuleID\": \"gtc-baseline-001\",\n                \"RuleName\": \"高危系统命令工具阻断\",\n                \"Description\": \"拦截 rm -rf /、mkfs 格式化设备、dd 覆写块设备、shutdown/reboot 关机重启等确定性破坏命令\"\n            }\n        ],\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询 LLM 审计系统规则列表示例"
       }
     ],
     "DescribeScanReportList": [
@@ -4304,6 +4438,14 @@
         "title": "获取用户访问密钥资产列表"
       }
     ],
+    "DescribeSourceIPDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourceIPDetail\n<公共请求参数>\n\n{\n    \"ID\": 10349\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f6869a2-5acb-4fe4-b142-3c010782a29b\",\n        \"SourceIPInfo\": {\n            \"AKInfo\": [],\n            \"AccessKeyAlarmList\": [],\n            \"ActionCount\": 0,\n            \"AppID\": 0,\n            \"EventType\": 0,\n            \"ID\": 0,\n            \"IPType\": 0,\n            \"InstanceID\": \"\",\n            \"InstanceName\": \"\",\n            \"LastAccessTime\": \"\",\n            \"Nickname\": \"\",\n            \"Region\": \"\",\n            \"Remark\": \"\",\n            \"SourceIP\": \"\",\n            \"Uin\": \"\"\n        }\n    }\n}",
+        "title": "1"
+      }
+    ],
     "DescribeSubUserInfo": [
       {
         "document": "",
@@ -4392,6 +4534,14 @@
         "title": "test"
       }
     ],
+    "DescribeUserAKInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAKInfoList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68b808aa14568000\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"List\": [\n            {\n                \"AKNum\": 12,\n                \"AppID\": 1302114615,\n                \"IsSelfBuy\": 2,\n                \"IsShared\": 2,\n                \"NickName\": \"声声乌龙\",\n                \"ShareFromAppID\": 0,\n                \"Uin\": \"100011132178\"\n            }\n        ],\n        \"RequestId\": \"7e6e0b47-0671-4021-9a11-8aeb1c03e459\",\n        \"SelectedAKNum\": 0\n    }\n}",
+        "title": "获取多账号AK数据"
+      }
+    ],
     "DescribeUserCSPMInfoList": [
       {
         "document": "",
@@ -4454,6 +4604,14 @@
         "input": "https://csip.tencentcloudapi.com/?Action=DescribeVdbAndPocInfo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"VdbUpdateTime\": \"2020-03-04 00:00:05\",\n        \"PocUpdateTime\": \"2020-02-20 11:30:50\",\n        \"RequestId\": \"53cd61ca-1984-8098-8e48-2c99a114e0e3\"\n    }\n}",
         "title": "获取病毒库及POC的更新信息"
+      }
+    ],
+    "DescribeVoucherEligibility": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoucherEligibility\n<公共请求参数>\n\n{\n    \"ActivityID\": 10001,\n    \"ActID\": 20001\n}",
+        "output": "{\n    \"Response\": {\n        \"Available\": 1,\n        \"RequestId\": \"e5b0c8f2-3a7d-4b1e-9c6f-2d8a4e5f7b3c\"\n    }\n}",
+        "title": "正常请求"
       }
     ],
     "DescribeVpcAssets": [
@@ -4686,6 +4844,22 @@
         "title": "批量安装多个集群容器安全Agent"
       }
     ],
+    "InstallKeySandboxSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallKeySandboxSkill\n<公共请求参数>\n\n{\n    \"InstanceIdList\": [\n        \"ins-abc12345\",\n        \"ins-def67890\",\n        \"ins-ghi11111\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "批量安装密钥沙箱SKILL"
+      }
+    ],
+    "InstallSandboxPlugin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallSandboxPlugin\n<公共请求参数>\n\n{\n    \"BelongAssetType\": \"HOST\",\n    \"EffectScope\": {\n        \"EffectType\": \"INCLUDE\",\n        \"EffectAssets\": [\n            {\n                \"InstanceId\": \"ins-a1b2c3d4\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "对指定主机下发流量沙箱插件安装任务"
+      }
+    ],
     "ModifyAILinkSetting": [
       {
         "document": "",
@@ -4870,6 +5044,14 @@
         "title": "解绑RASP授权"
       }
     ],
+    "ModifyClusterDefendStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterDefendStatus\n<公共请求参数>\n\n{\n    \"DefendStatus\": true,\n    \"ClusterCaMD5List\": [\n        \"af9570*********b57b**d475974a859\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83d6bf79-ff89-4f23-9fb4-a58108fb4aad\"\n    }\n}",
+        "title": "1"
+      }
+    ],
     "ModifyCosAuditBucketMonitorStatus": [
       {
         "document": "",
@@ -4897,8 +5079,8 @@
     "ModifyCosAuditObjectSampleRate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosAuditObjectSampleRate\n<公共请求参数>\n\n{\n    \"BucketIdSet\": [\n        1346438\n    ],\n    \"SampleRateSet\": [\n        0.5\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"466d34ac-169a-4b5e-b194-9541b0871a66\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosAuditObjectSampleRate\n<公共请求参数>\n\n{\n    \"BucketIdSet\": [\n        1346438\n    ],\n    \"SampleRateSet\": [\n        0.5\n    ],\n    \"TargetAppId\": 260209268,\n    \"DefaultSampleRate\": 0.01\n}",
+        "output": "{\n    \"Response\": {\n        \"DefaultSampleRate\": 0.01,\n        \"DefaultSampleRateUpdated\": true,\n        \"RequestId\": \"466d34ac-169a-4b5e-b194-9541b0871a66\",\n        \"UpdatedBucketCount\": 1\n    }\n}",
         "title": "修改COS审计采样率"
       }
     ],
@@ -5490,6 +5672,70 @@
         "title": "更新用户周期检测计划"
       }
     ],
+    "ModifySandboxACLRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxACLRule\n<公共请求参数>\n\n{\n    \"ID\": 2001,\n    \"Level\": \"CRITICAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "修改 ACL 规则示例"
+      }
+    ],
+    "ModifySandboxACLRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxACLRuleStatus\n<公共请求参数>\n\n{\n    \"IDList\": [\n        2001,\n        2002\n    ],\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "批量启用 ACL 规则示例"
+      }
+    ],
+    "ModifySandboxAlertStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxAlertStatus\n<公共请求参数>\n\n{\n    \"AlertType\": \"ACL\",\n    \"BelongAssetType\": \"HOST\",\n    \"IDList\": [\n        7001,\n        7002\n    ],\n    \"Status\": \"HANDLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "批量更新告警状态示例"
+      }
+    ],
+    "ModifySandboxDLPRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxDLPRule\n<公共请求参数>\n\n{\n    \"ID\": 4001,\n    \"Level\": \"CRITICAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "修改 DLP 规则示例"
+      }
+    ],
+    "ModifySandboxDLPRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxDLPRuleStatus\n<公共请求参数>\n\n{\n    \"IDList\": [\n        4001,\n        4002\n    ],\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "批量启用 DLP 规则示例"
+      }
+    ],
+    "ModifySandboxFileRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxFileRule\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-0************50\"\n    ],\n    \"RuleID\": 43,\n    \"RuleContent\": {\n        \"RuleName\": \"modify-example\",\n        \"BelongAssetType\": \"HOST\",\n        \"EffectScope\": {\n            \"EffectType\": \"EXCLUDE\"\n        },\n        \"Action\": \"RO\",\n        \"PathWhitelist\": [\n            \"/etc/\"\n        ],\n        \"Status\": \"ON\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleID\": 43,\n        \"RequestId\": \"0683f7cc-4545-42a5-ac79-baaab13ce400\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "ModifySandboxFileRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxFileRuleStatus\n<公共请求参数>\n\n{\n    \"IDList\": [\n        1\n    ],\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IDList\": [\n            1\n        ],\n        \"RequestId\": \"177e4074-c704-44fa-b7d0-0f45cb9c822f\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "ModifySandboxLLMAuditRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySandboxLLMAuditRule\n<公共请求参数>\n\n{\n    \"ID\": 6001,\n    \"Level\": \"CRITICAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "修改 LLM 审计规则示例"
+      }
+    ],
     "ModifySandboxLLMAuditRuleStatus": [
       {
         "document": "",
@@ -5504,6 +5750,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityScoreRule\n<公共请求参数>\n\n{\n    \"Rules\": [],\n    \"MemberId\": [\n        \"mem-*********************429\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Rules\": [],\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "修改安全评分规则"
+      }
+    ],
+    "ModifyShareUserAK": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyShareUserAK\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68b8087a611258000\"\n    ],\n    \"SharedAppIDList\": [\n        \"11293719\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"Msg\": \"success\",\n        \"RequestId\": \"4a5e197b-1f6d-4e9f-8407-a2a54555716c\"\n    }\n}",
+        "title": "编辑监测账号列表"
       }
     ],
     "ModifyShareUserCSPM": [
@@ -5814,6 +6068,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallClusterAgent\n<公共请求参数>\n\n{\n    \"ClusterCaMD5List\": [\n        \"e3b0c44298fc1c149afbf4c8996fb924\",\n        \"d41d8cd98f00b204e9800998ecf8427e\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d479fbf3-9840-4dd3-c5f9-9f5395ba4c52\"\n    }\n}",
         "title": "批量卸载多个集群容器安全Agent"
+      }
+    ],
+    "UninstallKeySandboxSkill": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallKeySandboxSkill\n<公共请求参数>\n\n{\n    \"InstanceIdList\": [\n        \"ins-abc12345\",\n        \"ins-def67890\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1e2d3c4-b5a6-7890-fedc-ba0987654321\"\n    }\n}",
+        "title": "批量卸载密钥沙箱SKILL"
       }
     ],
     "UpdateAccessKeyAlarmStatus": [

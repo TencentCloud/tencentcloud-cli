@@ -75,8 +75,8 @@
     "CreateFileBackupPlan": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileBackupPlan\n<公共请求参数>\n\n{\n    \"PolicyId\": \"abp-5c5l02gj\",\n    \"PlanName\": \"test-new-plan\",\n    \"BackupStorageId\": \"vault-qjhn63ku\",\n    \"Resources\": [\n        {\n            \"ResourceId\": \"ins-7630gzfm\",\n            \"BackupPaths\": [\n                \"/var/log\"\n            ],\n            \"IncludeFileTypes\": [\n                \"*.log\"\n            ],\n            \"ExcludeSystemDirectories\": true,\n            \"ExecuteImmediately\": false\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"PlanIds\": [\n            \"fbp-d66961s5\"\n        ],\n        \"RequestId\": \"e7b880e6-f80d-43b5-a080-26d595b1f83d\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileBackupPlan\n<公共请求参数>\n\n{\n    \"PolicyId\": \"abp-peu8v28r\",\n    \"BackupStorageId\": \"vault-hrvkughn\",\n    \"Resources\": [\n        {\n            \"ResourceId\": \"cfs-o5vnh8qh\",\n            \"BackupPaths\": [\n                \"/mnt\"\n            ],\n            \"ExcludeSystemDirectories\": true,\n            \"ExecuteImmediately\": false\n        }\n    ],\n    \"ResourceType\": \"CFS_AGENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlanIds\": [\n            \"bplan-pij7q4vk\"\n        ],\n        \"RequestId\": \"5533b400-2d05-4649-952b-3e523de60561\"\n    }\n}",
         "title": "创建备份计划"
       }
     ],

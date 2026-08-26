@@ -10528,7 +10528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "document": "<p>待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。</p>",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
@@ -10537,7 +10537,7 @@
         },
         {
           "disabled": false,
-          "document": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
+          "document": "<p>升级类型，取值范围: </p><li> ADD: 新增分片 </li>  <li> EXPAND: 升级实例中的已有分片 </li>  <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
           "example": "ADD",
           "member": "string",
           "name": "UpgradeType",
@@ -10546,7 +10546,7 @@
         },
         {
           "disabled": false,
-          "document": "新增分片配置，当UpgradeType为ADD时生效。",
+          "document": "<p>新增分片配置，当UpgradeType为ADD时生效。</p>",
           "example": "无",
           "member": "AddShardConfig",
           "name": "AddShardConfig",
@@ -10555,7 +10555,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容分片配置，当UpgradeType为EXPAND时生效。",
+          "document": "<p>扩容分片配置，当UpgradeType为EXPAND时生效。</p>",
           "example": "无",
           "member": "ExpandShardConfig",
           "name": "ExpandShardConfig",
@@ -10564,7 +10564,7 @@
         },
         {
           "disabled": false,
-          "document": "切分分片配置，当UpgradeType为SPLIT时生效。",
+          "document": "<p>切分分片配置，当UpgradeType为SPLIT时生效。</p>",
           "example": "无",
           "member": "SplitShardConfig",
           "name": "SplitShardConfig",
@@ -10573,7 +10573,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券进行支付，默认不使用。",
+          "document": "<p>是否自动使用代金券进行支付，默认不使用。</p>",
           "example": "false",
           "member": "bool",
           "name": "AutoVoucher",
@@ -10582,7 +10582,7 @@
         },
         {
           "disabled": false,
-          "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "document": "<p>代金券ID列表，目前仅支持指定一张代金券。</p>",
           "example": "[\"ZRPCQJGMYSYV73IYOTFJD8\"]",
           "member": "string",
           "name": "VoucherIds",
@@ -10591,7 +10591,7 @@
         },
         {
           "disabled": false,
-          "document": "变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区",
+          "document": "<p>变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区</p>",
           "example": "[\"ap-guangzhou-3\", \"ap-guangzhou-4\"]",
           "member": "string",
           "name": "Zones",
@@ -10600,7 +10600,7 @@
         },
         {
           "disabled": false,
-          "document": "切换开始时间，格式如: \"2019-12-12 07:00:00\"。开始时间必须在当前时间一个小时以后，3天以内。",
+          "document": "<p>切换开始时间，格式如: &quot;2019-12-12 07:00:00&quot;。开始时间必须在当前时间一个小时以后，3天以内。</p>",
           "example": "2019-12-12 07:00:00",
           "member": "string",
           "name": "SwitchStartTime",
@@ -10609,7 +10609,7 @@
         },
         {
           "disabled": false,
-          "document": "切换结束时间, 格式如: \"2019-12-12 07:15:00\"，结束时间必须大于开始时间。",
+          "document": "<p>切换结束时间, 格式如: &quot;2019-12-12 07:15:00&quot;，结束时间必须大于开始时间。</p>",
           "example": "2019-12-12 07:15:00",
           "member": "string",
           "name": "SwitchEndTime",
@@ -10618,10 +10618,19 @@
         },
         {
           "disabled": false,
-          "document": "是否自动重试。 0：不自动重试 1：自动重试",
+          "document": "<p>是否自动重试。 0：不自动重试 1：自动重试</p>",
           "example": "1",
           "member": "int64",
           "name": "SwitchAutoRetry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多个分片同时发起扩容，并发切换中的切换时间间隔，即当前分片切换开始时间和下一个分片的切换开始时间间隔，不传默认为1。</p><p>取值范围：[1, 180]</p><p>单位：秒</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchInterval",
           "required": false,
           "type": "int"
         }
@@ -10633,7 +10642,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
+          "document": "<p>长订单号。可以据此调用 DescribeOrders<br> 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。</p>",
           "example": "20180103110035",
           "member": "string",
           "name": "DealName",
@@ -10655,7 +10664,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片",
+          "document": "<p>升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片</p>",
           "example": "EXPAND",
           "member": "string",
           "name": "UpgradeType",
@@ -10664,7 +10673,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID，形如 dcdbt-mlfjm74h",
+          "document": "<p>实例ID，形如 dcdbt-mlfjm74h</p>",
           "example": "dcdbt-mlfjm74h",
           "member": "string",
           "name": "InstanceId",
@@ -10673,7 +10682,7 @@
         },
         {
           "disabled": false,
-          "document": "当UpgradeType取值为ADD时，添加分片的配置参数",
+          "document": "<p>当UpgradeType取值为ADD时，添加分片的配置参数</p>",
           "example": "无",
           "member": "AddShardConfig",
           "name": "AddShardConfig",
@@ -10682,7 +10691,7 @@
         },
         {
           "disabled": false,
-          "document": "当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数",
+          "document": "<p>当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数</p>",
           "example": "无",
           "member": "ExpandShardConfig",
           "name": "ExpandShardConfig",
@@ -10691,7 +10700,7 @@
         },
         {
           "disabled": false,
-          "document": "当UpgradeType取值为SPLIT时，切分分片的配置参数",
+          "document": "<p>当UpgradeType取值为SPLIT时，切分分片的配置参数</p>",
           "example": "无",
           "member": "SplitShardConfig",
           "name": "SplitShardConfig",
@@ -10700,7 +10709,7 @@
         },
         {
           "disabled": false,
-          "document": "错过切换时间窗口时，是否自动重试一次，0-否，1-是",
+          "document": "<p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>",
           "example": "1",
           "member": "int64",
           "name": "SwitchAutoRetry",
@@ -10709,7 +10718,7 @@
         },
         {
           "disabled": false,
-          "document": "切换时间窗口开始时间",
+          "document": "<p>切换时间窗口开始时间</p>",
           "example": "2020-12-01 00:30:00",
           "member": "string",
           "name": "SwitchStartTime",
@@ -10718,12 +10727,21 @@
         },
         {
           "disabled": false,
-          "document": "切换时间窗口结束时间",
+          "document": "<p>切换时间窗口结束时间</p>",
           "example": "2020-12-01 00:45:00",
           "member": "string",
           "name": "SwitchEndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多个分片同时发起扩容，并发切换中的切换时间间隔，即当前分片切换开始时间和下一个分片的切换开始时间间隔，不传默认为1。</p><p>取值范围：[1, 180]</p><p>单位：秒</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchInterval",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10733,10 +10751,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务流程ID",
+          "document": "<p>异步任务流程ID</p>",
           "example": "11",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10754,7 +10773,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "document": "<p>待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。</p>",
           "example": "dcdbt-ow728lmc",
           "member": "string",
           "name": "InstanceId",
@@ -10763,7 +10782,7 @@
         },
         {
           "disabled": false,
-          "document": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
+          "document": "<p>升级类型，取值范围: </p><li> ADD: 新增分片 </li>  <li> EXPAND: 升级实例中的已有分片 </li>  <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
           "example": "EXPAND",
           "member": "string",
           "name": "UpgradeType",
@@ -10772,7 +10791,7 @@
         },
         {
           "disabled": false,
-          "document": "新增分片配置，当UpgradeType为ADD时生效。",
+          "document": "<p>新增分片配置，当UpgradeType为ADD时生效。</p>",
           "example": "无",
           "member": "AddShardConfig",
           "name": "AddShardConfig",
@@ -10781,7 +10800,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容分片配置，当UpgradeType为EXPAND时生效。",
+          "document": "<p>扩容分片配置，当UpgradeType为EXPAND时生效。</p>",
           "example": "无",
           "member": "ExpandShardConfig",
           "name": "ExpandShardConfig",
@@ -10790,7 +10809,7 @@
         },
         {
           "disabled": false,
-          "document": "切分分片配置，当UpgradeType为SPLIT时生效。",
+          "document": "<p>切分分片配置，当UpgradeType为SPLIT时生效。</p>",
           "example": "无",
           "member": "SplitShardConfig",
           "name": "SplitShardConfig",
@@ -10799,7 +10818,7 @@
         },
         {
           "disabled": false,
-          "document": "切换开始时间，格式如: \"2019-12-12 07:00:00\"。开始时间必须在当前时间一个小时以后，3天以内。",
+          "document": "<p>切换开始时间，格式如: &quot;2019-12-12 07:00:00&quot;。开始时间必须在当前时间一个小时以后，3天以内。</p>",
           "example": "2019-12-12 07:00:00",
           "member": "datetime",
           "name": "SwitchStartTime",
@@ -10808,7 +10827,7 @@
         },
         {
           "disabled": false,
-          "document": "切换结束时间,  格式如: \"2019-12-12 07:15:00\"，结束时间必须大于开始时间。",
+          "document": "<p>切换结束时间,  格式如: &quot;2019-12-12 07:15:00&quot;，结束时间必须大于开始时间。</p>",
           "example": "2019-12-12 07:15:00",
           "member": "datetime",
           "name": "SwitchEndTime",
@@ -10817,7 +10836,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动重试。 0：不自动重试  1：自动重试",
+          "document": "<p>是否自动重试。 0：不自动重试  1：自动重试</p>",
           "example": "1",
           "member": "int64",
           "name": "SwitchAutoRetry",
@@ -10826,12 +10845,21 @@
         },
         {
           "disabled": false,
-          "document": "变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区",
+          "document": "<p>变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区</p>",
           "example": "[\"ap-guangzhou-3\",\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多个分片同时发起扩容，并发切换中的切换时间间隔，即当前分片切换开始时间和下一个分片的切换开始时间间隔，不传默认为1。</p><p>取值范围：[1, 180]</p><p>单位：秒</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchInterval",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

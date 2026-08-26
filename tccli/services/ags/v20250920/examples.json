@@ -49,15 +49,15 @@
     "CreateSandboxTool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"browser-sandbox\",\n    \"ToolType\": \"browser\",\n    \"Description\": \"浏览器沙箱环境\",\n    \"DefaultTimeout\": \"30m\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"Tags\": [\n        {\n            \"Key\": \"Environment\",\n            \"Value\": \"Production\"\n        },\n        {\n            \"Key\": \"Team\",\n            \"Value\": \"AI-Agent\"\n        }\n    ],\n    \"ClientToken\": \"unique-token-123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-ee4ywozw\",\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
-        "title": "创建沙箱工具"
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"demo-tst\",\n    \"ToolType\": \"waa\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-mm3241p7\",\n        \"RequestId\": \"1d3f073a-3d3e-4a10-8628-f94020498665\"\n    }\n}",
+        "title": "创建tool"
       },
       {
-        "document": "创建沙箱工具时关联两条访问策略。",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"browser-policy-sandbox\",\n    \"ToolType\": \"browser\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"ClientToken\": \"create-tool-with-access-policy-example\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-policy123\",\n        \"RequestId\": \"req-create-tool-policy-example\"\n    }\n}",
-        "title": "创建并关联访问策略的沙箱工具"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"tool_img_tst\",\n    \"ToolType\": \"waa\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"ComputerConfiguration\": {\n        \"WAAConfiguration\": {\n            \"ImageId\": \"img-pamebyja\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-p8auk8v3\",\n        \"RequestId\": \"75310f95-d0ff-4756-891e-6c0e8b0c64f2\"\n    }\n}",
+        "title": "创建自定义镜像的tool"
       }
     ],
     "DeleteAPIKey": [
@@ -195,21 +195,9 @@
     "UpdateSandboxTool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678-1234-1234-1234-1234567890ab\"\n    }\n}",
-        "title": "更新沙箱工具"
-      },
-      {
-        "document": "完整替换沙箱工具当前关联的访问策略。",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-update-tool-policy-example\"\n    }\n}",
-        "title": "替换沙箱工具关联的访问策略"
-      },
-      {
-        "document": "使用空数组解除沙箱工具的全部访问策略关联。",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-policy123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-clear-tool-policy-example\"\n    }\n}",
-        "title": "解除沙箱工具的全部访问策略关联"
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-mm3241p7\",\n    \"Description\": \"update tool\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"SANDBOX\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02ceed72-623c-46fe-af01-6ea4a59944b7\"\n    }\n}",
+        "title": "update tool"
       }
     ]
   },

@@ -532,6 +532,13 @@
       "output": "CreateHighBaseLineRisksExportJobResponse",
       "status": "online"
     },
+    "CreateHostImageListExportJob": {
+      "document": "创建本地镜像列表导出任务。导出字段包含镜像ID、镜像名、镜像版本、关联容器数、关联主机数、创建时间、所属账号昵称，以及扫描状态/漏洞/木马/敏感信息等风险字段。支持Filter过滤。导出通过异步任务实现，返回JobId后前端轮询查询导出任务状态。单账号模式下自动排除NickName字段。",
+      "input": "CreateHostImageListExportJobRequest",
+      "name": "创建主机镜像列表导出任务",
+      "output": "CreateHostImageListExportJobResponse",
+      "status": "online"
+    },
     "CreateHostVulExportJob": {
       "document": "创建主机列漏洞表导出任务",
       "input": "CreateHostVulExportJobRequest",
@@ -705,6 +712,34 @@
       "input": "CreateRiskDetailExportJobRequest",
       "name": "创建云资源配置风险详情导出任务",
       "output": "CreateRiskDetailExportJobResponse",
+      "status": "online"
+    },
+    "CreateSandboxACLRule": {
+      "document": "创建一条 ACL 用户访问控制规则。可选择引用若干条系统规则，亦可自定义规则，两者至少提供其一",
+      "input": "CreateSandboxACLRuleRequest",
+      "name": "创建 ACL 规则",
+      "output": "CreateSandboxACLRuleResponse",
+      "status": "online"
+    },
+    "CreateSandboxDLPRule": {
+      "document": "创建一条 DLP 用户规则。可引用若干系统规则（SystemRuleIDList），亦可自定义规则（UserRuleContent，名称 + 正则），两者至少提供其一；UserRuleInfo 为新增可选的结构化入参，与 UserRuleContent 同时传入时以 UserRuleInfo 为准",
+      "input": "CreateSandboxDLPRuleRequest",
+      "name": "创建 DLP 规则",
+      "output": "CreateSandboxDLPRuleResponse",
+      "status": "online"
+    },
+    "CreateSandboxFileRule": {
+      "document": "创建命令沙箱文件访问规则",
+      "input": "CreateSandboxFileRuleRequest",
+      "name": "创建命令沙箱文件访问规则",
+      "output": "CreateSandboxFileRuleResponse",
+      "status": "online"
+    },
+    "CreateSandboxLLMAuditRule": {
+      "document": "创建一条 LLM 审计用户规则。必须引用至少一条系统规则，不支持用户自定义规则内容",
+      "input": "CreateSandboxLLMAuditRuleRequest",
+      "name": "创建 LLM 审计规则",
+      "output": "CreateSandboxLLMAuditRuleResponse",
       "status": "online"
     },
     "CreateScanStatisticExportJob": {
@@ -1064,6 +1099,27 @@
       "output": "DeleteRiskScanTaskResponse",
       "status": "online"
     },
+    "DeleteSandboxACLRule": {
+      "document": "批量删除 ACL 用户规则。删除后规则不再返回到列表查询，并不再对流量生效。任一 ID 不存在或属于其他租户时整体返回错误",
+      "input": "DeleteSandboxACLRuleRequest",
+      "name": "删除 ACL 规则",
+      "output": "DeleteSandboxACLRuleResponse",
+      "status": "online"
+    },
+    "DeleteSandboxDLPRule": {
+      "document": "批量删除 DLP 用户规则。任一 ID 不存在或属于其他租户时整体返回错误",
+      "input": "DeleteSandboxDLPRuleRequest",
+      "name": "删除 DLP 规则",
+      "output": "DeleteSandboxDLPRuleResponse",
+      "status": "online"
+    },
+    "DeleteSandboxFileRule": {
+      "document": "创建命令沙箱文件访问规则",
+      "input": "DeleteSandboxFileRuleRequest",
+      "name": "批量删除命令沙箱文件访问规则",
+      "output": "DeleteSandboxFileRuleResponse",
+      "status": "online"
+    },
     "DeleteSandboxLLMAuditRule": {
       "document": "批量删除 LLM 审计用户规则。任一 ID 不存在或属于其他租户时整体返回错误",
       "input": "DeleteSandboxLLMAuditRuleRequest",
@@ -1265,6 +1321,13 @@
       "input": "DescribeAccessKeyUserListRequest",
       "name": "获取访问密钥的账号列表",
       "output": "DescribeAccessKeyUserListResponse",
+      "status": "online"
+    },
+    "DescribeAccessKeyWhiteList": {
+      "document": "访问密钥告警记录列表",
+      "input": "DescribeAccessKeyWhiteListRequest",
+      "name": "获取访问密钥告警白名单",
+      "output": "DescribeAccessKeyWhiteListResponse",
       "status": "online"
     },
     "DescribeAgentConfigSetting": {
@@ -1610,6 +1673,13 @@
       "output": "DescribeCLSLogListV3Response",
       "status": "online"
     },
+    "DescribeCSCPayInfo": {
+      "document": "查询当前账号的合并版计费信息，包括订单状态、付费模式以及配额等详细信息。",
+      "input": "DescribeCSCPayInfoRequest",
+      "name": "查询合并版计费信息",
+      "output": "DescribeCSCPayInfoResponse",
+      "status": "online"
+    },
     "DescribeCSIPLicenseBindSchedule": {
       "document": "查询ModifyCSIPLicenseBinds返回的异步绑定任务进度。",
       "input": "DescribeCSIPLicenseBindScheduleRequest",
@@ -1636,6 +1706,13 @@
       "input": "DescribeCSIPRiskStatisticsRequest",
       "name": "资产风险概览统计接口",
       "output": "DescribeCSIPRiskStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeCSPMPayInfo": {
+      "document": "获取已购CSPM订单信息",
+      "input": "DescribeCSPMPayInfoRequest",
+      "name": "获取已购CSPM订单的信息",
+      "output": "DescribeCSPMPayInfoResponse",
       "status": "online"
     },
     "DescribeCVMAssetInfo": {
@@ -3584,6 +3661,20 @@
       "output": "DescribeSandboxACLSystemRuleListResponse",
       "status": "online"
     },
+    "DescribeSandboxDLPAlertList": {
+      "document": "分页查询 DLP 数据泄露告警日志列表。支持按 Filter.Name=ID 精确过滤单条告警用于详情页场景",
+      "input": "DescribeSandboxDLPAlertListRequest",
+      "name": "查询 DLP 告警列表",
+      "output": "DescribeSandboxDLPAlertListResponse",
+      "status": "online"
+    },
+    "DescribeSandboxDLPRuleList": {
+      "document": "查询当前租户的 DLP 用户规则列表。传入 Filter.Name=RuleID 可精确查询单条规则（用于详情页面场景）",
+      "input": "DescribeSandboxDLPRuleListRequest",
+      "name": "查询用户 DLP 规则列表",
+      "output": "DescribeSandboxDLPRuleListResponse",
+      "status": "online"
+    },
     "DescribeSandboxDLPSystemRuleList": {
       "document": "查询流量沙箱数据泄露防护（DLP）系统规则列表，系统规则由 CSIP 平台内置，可被用户规则引用",
       "input": "DescribeSandboxDLPSystemRuleListRequest",
@@ -3596,6 +3687,27 @@
       "input": "DescribeSandboxFileRuleListRequest",
       "name": "获取命令沙箱文件访问规则列表",
       "output": "DescribeSandboxFileRuleListResponse",
+      "status": "online"
+    },
+    "DescribeSandboxLLMAuditAlertList": {
+      "document": "分页查询 LLM 审计告警日志列表。支持按 Filter.Name=ID 精确过滤单条告警用于详情页场景",
+      "input": "DescribeSandboxLLMAuditAlertListRequest",
+      "name": "查询 LLM 审计告警列表",
+      "output": "DescribeSandboxLLMAuditAlertListResponse",
+      "status": "online"
+    },
+    "DescribeSandboxLLMAuditRuleList": {
+      "document": "查询当前租户的 LLM 审计用户规则列表。LLM 审计规则不支持用户自定义内容，只能引用系统规则组合。传入 Filter.Name=RuleID 可精确查询单条规则（用于详情页面场景）",
+      "input": "DescribeSandboxLLMAuditRuleListRequest",
+      "name": "查询 LLM 审计规则列表",
+      "output": "DescribeSandboxLLMAuditRuleListResponse",
+      "status": "online"
+    },
+    "DescribeSandboxLLMAuditSystemRuleList": {
+      "document": "查询 LLM 审计系统规则列表，系统规则由 CSIP 平台内置（来源于 LLM 审计系统规则库），按 LLM 推理防护 / ToolCall 防护拆分为两个扁平规则数组返回，可被用户规则引用",
+      "input": "DescribeSandboxLLMAuditSystemRuleListRequest",
+      "name": "查询 LLM 审计系统规则列表",
+      "output": "DescribeSandboxLLMAuditSystemRuleListResponse",
       "status": "online"
     },
     "DescribeScanReportList": {
@@ -3703,6 +3815,13 @@
       "output": "DescribeSourceIPAssetResponse",
       "status": "online"
     },
+    "DescribeSourceIPDetail": {
+      "document": "获取用户访问密钥资产列表（源IP视角）",
+      "input": "DescribeSourceIPDetailRequest",
+      "name": "获取访问密钥资产详情（源IP视角）",
+      "output": "DescribeSourceIPDetailResponse",
+      "status": "online"
+    },
     "DescribeSubUserInfo": {
       "document": "查询集团的子账号列表",
       "input": "DescribeSubUserInfoRequest",
@@ -3780,6 +3899,13 @@
       "output": "DescribeUebaUserSummaryResponse",
       "status": "online"
     },
+    "DescribeUserAKInfoList": {
+      "document": "获取账号AK信息",
+      "input": "DescribeUserAKInfoListRequest",
+      "name": "获取用户AK信息列表",
+      "output": "DescribeUserAKInfoListResponse",
+      "status": "online"
+    },
     "DescribeUserCSPMInfoList": {
       "document": "获取账号CSPM信息",
       "input": "DescribeUserCSPMInfoListRequest",
@@ -3834,6 +3960,13 @@
       "input": "DescribeVdbAndPocInfoRequest",
       "name": "获取病毒库及POC的更新信息",
       "output": "DescribeVdbAndPocInfoResponse",
+      "status": "online"
+    },
+    "DescribeVoucherEligibility": {
+      "document": "检查当前用户是否有资格领取指定活动的代金券。",
+      "input": "DescribeVoucherEligibilityRequest",
+      "name": "检查代金券领取资格",
+      "output": "DescribeVoucherEligibilityResponse",
       "status": "online"
     },
     "DescribeVpcAssets": {
@@ -4032,6 +4165,20 @@
       "output": "InstallClusterAgentResponse",
       "status": "online"
     },
+    "InstallKeySandboxSkill": {
+      "document": "在指定的机器实例上安装密钥沙箱SKILL。支持批量操作，一次可传入多个实例ID。安装后，目标机器上的AI Agent即可通过密钥沙箱代理访问凭据，无需接触明文密钥。已安装的实例重复调用不会报错（幂等），直接视为成功。",
+      "input": "InstallKeySandboxSkillRequest",
+      "name": "安装密钥沙箱SKILL",
+      "output": "InstallKeySandboxSkillResponse",
+      "status": "online"
+    },
+    "InstallSandboxPlugin": {
+      "document": "触发将流量沙箱插件安装到指定范围内的 AI Agent 资产。通过 BelongAssetType 区分主机/容器维度，通过 EffectScope 指定安装目标（INCLUDE=仅安装到指定资产，EXCLUDE=全部资产减去指定资产）。接口仅触发下发动作，不等待完成",
+      "input": "InstallSandboxPluginRequest",
+      "name": "安装流量沙箱插件",
+      "output": "InstallSandboxPluginResponse",
+      "status": "online"
+    },
     "ModifyAILinkSetting": {
       "document": "修改AI-Link智链引擎配置",
       "input": "ModifyAILinkSettingRequest",
@@ -4191,6 +4338,13 @@
       "input": "ModifyCSIPRaspLicenseUnBindsRequest",
       "name": "解绑RASP授权",
       "output": "ModifyCSIPRaspLicenseUnBindsResponse",
+      "status": "online"
+    },
+    "ModifyClusterDefendStatus": {
+      "document": "修改集群防护状态",
+      "input": "ModifyClusterDefendStatusRequest",
+      "name": "修改集群防护状态",
+      "output": "ModifyClusterDefendStatusResponse",
       "status": "online"
     },
     "ModifyCosAuditBucketMonitorStatus": {
@@ -4725,6 +4879,62 @@
       "output": "ModifyRiskScanCronConfigResponse",
       "status": "online"
     },
+    "ModifySandboxACLRule": {
+      "document": "修改已有的 ACL 用户规则。未传字段保持原值，支持部分字段更新",
+      "input": "ModifySandboxACLRuleRequest",
+      "name": "修改 ACL 规则",
+      "output": "ModifySandboxACLRuleResponse",
+      "status": "online"
+    },
+    "ModifySandboxACLRuleStatus": {
+      "document": "批量切换 ACL 用户规则的启禁用状态。任一规则不存在、属于其他租户或已删除时整体返回错误",
+      "input": "ModifySandboxACLRuleStatusRequest",
+      "name": "批量启用或禁用 ACL 规则",
+      "output": "ModifySandboxACLRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifySandboxAlertStatus": {
+      "document": "批量更新流量沙箱告警（覆盖 ACL / DLP / LLM 审计三类）。通过 AlertType + BelongAssetType 定位告警来源。Status 支持 HANDLED / IGNORE 修改状态，以及 DELETE 删除。任一告警 ID 不存在或属于其他租户时整体返回错误。注：加白（PASS）不经本接口，由 Create/Modify***Rule 通过 AlertID 回写触发",
+      "input": "ModifySandboxAlertStatusRequest",
+      "name": "批量更新告警处理状态",
+      "output": "ModifySandboxAlertStatusResponse",
+      "status": "online"
+    },
+    "ModifySandboxDLPRule": {
+      "document": "修改已存在的 DLP 用户规则。未传字段保持原值，支持部分字段更新；不支持修改 BelongAssetType",
+      "input": "ModifySandboxDLPRuleRequest",
+      "name": "修改 DLP 规则",
+      "output": "ModifySandboxDLPRuleResponse",
+      "status": "online"
+    },
+    "ModifySandboxDLPRuleStatus": {
+      "document": "批量切换 DLP 用户规则的启禁用状态。任一规则不存在、属于其他租户或已删除时整体返回错误",
+      "input": "ModifySandboxDLPRuleStatusRequest",
+      "name": "批量启用或禁用 DLP 规则",
+      "output": "ModifySandboxDLPRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifySandboxFileRule": {
+      "document": "修改命令沙箱文件访问规则",
+      "input": "ModifySandboxFileRuleRequest",
+      "name": "修改命令沙箱文件访问规则",
+      "output": "ModifySandboxFileRuleResponse",
+      "status": "online"
+    },
+    "ModifySandboxFileRuleStatus": {
+      "document": "批量启用或禁用命令沙箱文件访问规则",
+      "input": "ModifySandboxFileRuleStatusRequest",
+      "name": "批量启用或禁用命令沙箱文件访问规则",
+      "output": "ModifySandboxFileRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifySandboxLLMAuditRule": {
+      "document": "修改已有的 LLM 审计用户规则。未传字段保持原值，支持部分字段更新",
+      "input": "ModifySandboxLLMAuditRuleRequest",
+      "name": "修改 LLM 审计规则",
+      "output": "ModifySandboxLLMAuditRuleResponse",
+      "status": "online"
+    },
     "ModifySandboxLLMAuditRuleStatus": {
       "document": "批量切换 LLM 审计用户规则的启禁用状态。任一规则不存在、属于其他租户或已删除时整体返回错误",
       "input": "ModifySandboxLLMAuditRuleStatusRequest",
@@ -4737,6 +4947,13 @@
       "input": "ModifySecurityScoreRuleRequest",
       "name": "修改安全评分规则",
       "output": "ModifySecurityScoreRuleResponse",
+      "status": "online"
+    },
+    "ModifyShareUserAK": {
+      "document": "编辑ak监测账号",
+      "input": "ModifyShareUserAKRequest",
+      "name": "修改ak监测账号",
+      "output": "ModifyShareUserAKResponse",
       "status": "online"
     },
     "ModifyShareUserCSPM": {
@@ -5003,6 +5220,13 @@
       "input": "UninstallClusterAgentRequest",
       "name": "卸载集群容器安全Agent",
       "output": "UninstallClusterAgentResponse",
+      "status": "online"
+    },
+    "UninstallKeySandboxSkill": {
+      "document": "从指定的机器实例上卸载密钥沙箱SKILL。支持批量操作，一次可传入多个实例ID。卸载后，目标机器上的AI Agent将无法再通过密钥沙箱代理访问凭据。未安装的实例重复调用不会报错（幂等），直接视为成功。",
+      "input": "UninstallKeySandboxSkillRequest",
+      "name": "卸载密钥沙箱SKILL",
+      "output": "UninstallKeySandboxSkillResponse",
       "status": "online"
     },
     "UpdateAccessKeyAlarmStatus": {
@@ -6680,6 +6904,202 @@
           "name": "CloudType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessKeyWhiteList": {
+      "document": "访问密钥告警规则白名单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单ID",
+          "example": "10001",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单策略名称",
+          "example": "业务来源加白",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak加白列表",
+          "example": "[\"ak1\",\"ak2\"]",
+          "member": "string",
+          "name": "AKList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip加白列表",
+          "example": "[\"1.*.*.1\",\"2.*.*.2\"]",
+          "member": "string",
+          "name": "IPList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip类型列表 IP类型 0:账号内（未备注） 1:账号外（未备注） 2:账号内 (已备注) 3:账号外 (已备注) 4:局域网（未备注）5:局域网（已备注）",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "IPTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口加白列表",
+          "example": "[\"action1\",\"describe2\"]",
+          "member": "string",
+          "name": "ActionList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用方式加白\n0 全部调用方式\n1 控制台\n2 API\n-1 不存在",
+          "example": "0",
+          "member": "int64",
+          "name": "CallType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码白名单（其他错误码待补充）\n0 成功\n",
+          "example": "[0,221]",
+          "member": "int64",
+          "name": "ErrorCodeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略内容/描述",
+          "example": "策略内容",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-01-21 18:23:01",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-01-21 18:24:05",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak输入类型 \n0:从现有选择\n1:手动输入\n2:临时密钥\n3:长期密钥\n4:全部密钥\n-1:无",
+          "example": "0",
+          "member": "int64",
+          "name": "AkImportType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号AppID",
+          "example": "100**31",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属主账号uin",
+          "example": "1000***094",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属主账号 昵称",
+          "example": "生生乌龙",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否处理过去的告警",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedDealPastAlarm",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理状态\n0 处理完成\n1 正在处理",
+          "example": "0",
+          "member": "int64",
+          "name": "DealStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口选择\n0:自定义输入\n1:产品+接口形式交互选择\n2:全部接口",
+          "example": "0",
+          "member": "int64",
+          "name": "ActionType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定策略id列表，为空代表全局生效",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "AlarmPolicyID",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -22372,17 +22792,47 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "CosIdentifyRuleDetail",
+          "name": "RuleDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>无</p>",
+          "example": "无",
+          "member": "CosIdentifyLevelDetail",
+          "name": "LevelDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已发起全量扫描</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFullScanned",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
     },
     "CosAssetFileIdentifyInfo": {
-      "document": "cos审计文件数据识别信息",
+      "document": "对象存储审计文件数据识别信息",
       "members": [
         {
           "disabled": false,
-          "document": "文件名称",
-          "example": "",
+          "document": "<p>文件名称</p>",
+          "example": "files.7z",
           "member": "string",
           "name": "FileName",
           "output_required": false,
@@ -22391,8 +22841,8 @@
         },
         {
           "disabled": false,
-          "document": "文件路径",
-          "example": "",
+          "document": "<p>文件路径</p>",
+          "example": "/files.7z/files",
           "member": "string",
           "name": "DirName",
           "output_required": false,
@@ -22401,12 +22851,82 @@
         },
         {
           "disabled": false,
-          "document": "分类数据项详情",
-          "example": "",
+          "document": "<p>分类数据项详情</p>",
+          "example": "无",
           "member": "CosIdentifyCategoryDetail",
           "name": "CategoryDetails",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储桶信息</p>",
+          "example": "无",
+          "member": "CosBucketInfo",
+          "name": "BucketInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后一次扫描时间</p>",
+          "example": "1786507230962",
+          "member": "uint64",
+          "name": "LastScanTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处置状态</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "HandleStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果唯一标识</p>",
+          "example": "0362837584100982790",
+          "member": "string",
+          "name": "ResultId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则详情</p>",
+          "example": "无",
+          "member": "CosIdentifyRuleDetail",
+          "name": "RuleDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别详情</p>",
+          "example": "无",
+          "member": "CosIdentifyLevelDetail",
+          "name": "LevelDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板ID</p>",
+          "example": "9050",
+          "member": "int64",
+          "name": "ComplianceId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -23128,6 +23648,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该 AppId 新增桶默认采样率，单位为 0～1 比率</p><p>取值范围：[0.001, 1]</p>",
+          "example": "0.5",
+          "member": "float",
+          "name": "DefaultSampleRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否白名单，仅用于控制前端范围和精度</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "BucketSamplingRateWhitelist",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23237,7 +23777,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "appid",
+          "document": "<p>appid</p>",
           "example": "13124124",
           "member": "int64",
           "name": "AppId",
@@ -23247,7 +23787,7 @@
         },
         {
           "disabled": false,
-          "document": "存储桶名",
+          "document": "<p>存储桶名</p>",
           "example": "braun-121413555",
           "member": "string",
           "name": "BucketName",
@@ -23257,7 +23797,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "task-11waddqwe",
           "member": "string",
           "name": "TaskId",
@@ -23267,10 +23807,30 @@
         },
         {
           "disabled": false,
-          "document": "最后一次扫描时间",
-          "example": "",
+          "document": "<p>最后一次扫描时间</p>",
+          "example": "1787554104433",
           "member": "int64",
           "name": "LastScanTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>识别文件数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdentifyFileCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感文件数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SensitiveFileCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -23328,13 +23888,49 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>数据项集合</p>",
           "example": "无",
           "member": "CosIdentifyRuleDetail",
           "name": "RuleSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosIdentifyLevelDetail": {
+      "document": "cos审计级别结果项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>级别id</p>",
+          "example": "8",
+          "member": "uint64",
+          "name": "LevelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别名称</p>",
+          "example": "敏感",
+          "member": "string",
+          "name": "LevelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>级别敏感程度</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "LevelScore",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -23536,11 +24132,11 @@
       "usage": "both"
     },
     "CosOverview": {
-      "document": "cos概览页面数据结构",
+      "document": "对象存储审计概览页面数据结构",
       "members": [
         {
           "disabled": false,
-          "document": "资产总数",
+          "document": "<p>资产总数</p>",
           "example": "100",
           "member": "int64",
           "name": "AssetCount",
@@ -23550,7 +24146,7 @@
         },
         {
           "disabled": false,
-          "document": "需要立即处理的资产数",
+          "document": "<p>需要立即处理的资产数</p>",
           "example": "1",
           "member": "int64",
           "name": "AlarmAssetCount",
@@ -23560,7 +24156,7 @@
         },
         {
           "disabled": false,
-          "document": "需要加固的资产数",
+          "document": "<p>需要加固的资产数</p>",
           "example": "99",
           "member": "int64",
           "name": "RiskAssetCount",
@@ -23570,7 +24166,7 @@
         },
         {
           "disabled": false,
-          "document": "告警总数",
+          "document": "<p>告警总数</p>",
           "example": "1",
           "member": "int64",
           "name": "AlarmCount",
@@ -23580,7 +24176,7 @@
         },
         {
           "disabled": false,
-          "document": "当日新增告警总数",
+          "document": "<p>当日新增告警总数</p>",
           "example": "2",
           "member": "int64",
           "name": "IncrementAlarmCount",
@@ -23590,7 +24186,7 @@
         },
         {
           "disabled": false,
-          "document": "风险总数",
+          "document": "<p>风险总数</p>",
           "example": "4",
           "member": "int64",
           "name": "RiskCount",
@@ -23600,7 +24196,7 @@
         },
         {
           "disabled": false,
-          "document": "当日新增告警总数",
+          "document": "<p>当日新增告警总数</p>",
           "example": "7",
           "member": "int64",
           "name": "IncrementRiskCount",
@@ -23610,8 +24206,8 @@
         },
         {
           "disabled": false,
-          "document": "风险top详情",
-          "example": "[{\"PolicyName\":\"权限过大\"}]",
+          "document": "<p>风险top详情</p>",
+          "example": "无",
           "member": "CosRiskInfo",
           "name": "RiskTop",
           "output_required": true,
@@ -23620,12 +24216,22 @@
         },
         {
           "disabled": false,
-          "document": "告警风险top",
-          "example": "",
+          "document": "<p>告警风险top</p>",
+          "example": "无",
           "member": "CosRiskInfo",
           "name": "AlarmTop",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高等级敏感文件数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "HighLevelSensitiveFileCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -27355,6 +27961,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27419,6 +28034,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27471,6 +28095,15 @@
           "example": "模板复制描述",
           "member": "string",
           "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
           "required": false,
           "type": "string"
         }
@@ -27546,6 +28179,15 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27610,6 +28252,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27710,6 +28361,15 @@
           "name": "LevelItems",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27790,6 +28450,15 @@
           "example": "1",
           "member": "string",
           "name": "UnStructuredRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
           "required": false,
           "type": "string"
         }
@@ -28860,6 +29529,70 @@
           "disabled": false,
           "document": "导出任务ID",
           "example": "job id",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostImageListExportJobRequest": {
+      "document": "CreateHostImageListExportJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群CA证书MD5（32位十六进制，必填）</p>",
+          "example": "5f65*********************5d63e8a",
+          "member": "string",
+          "name": "ClusterCaMD5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-*********f66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用ListFilter结构（含Filters数组 + ListFindOption分页）<br>支持的过滤字段：Host / ImageId / ImageName / HasRunningContainer</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出字段列表（不传则导出全部字段）<br>枚举值：<br>ImageId：镜像ID<br>ImageName：镜像名<br>ImageVersion：镜像版本<br>ContainerCount：关联容器数<br>HostCount：关联主机数<br>CreateTime：创建时间<br>NickName：所属账号昵称（单账号模式下自动排除）<br>ScanStatus：扫描状态<br>LastScanTime：最近扫描完成时间<br>VulCountCritical：critical级别漏洞数<br>VulCountHigh：high级别漏洞数<br>VulCountMedium：medium级别漏洞数<br>VulCountLow：low级别漏洞数<br>VirusCountCritical：critical级别木马数<br>VirusCountHigh：high级别木马数<br>VirusCountMedium：medium级别木马数<br>VirusCountLow：low级别木马数<br>SensitiveCountCritical：critical级别敏感信息数<br>SensitiveCountHigh：high级别敏感信息数<br>SensitiveCountMedium：medium级别敏感信息数<br>SensitiveCountLow：low级别敏感信息数</p>",
+          "example": "[\"ImageId\"]",
+          "member": "string",
+          "name": "ExportFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostImageListExportJobResponse": {
+      "document": "CreateHostImageListExportJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导出任务ID<br>取值参考：前端轮询导出任务状态时使用</p>",
+          "example": "32ce0493-60b3-4874-a3a5-15607d01b258",
           "member": "string",
           "name": "JobId",
           "output_required": true,
@@ -30750,6 +31483,352 @@
       ],
       "type": "object"
     },
+    "CreateSandboxACLRuleRequest": {
+      "document": "CreateSandboxACLRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称\n入参限制：长度 1-128",
+          "example": "禁止出站访问未知域名",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则级别\n枚举值：\nINFO：提示\nLOW：低危\nMEDIUM：中危\nHIGH：高危\nCRITICAL：严重",
+          "example": "HIGH",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "归属资产类型\n枚举值：\nHOST：主机\nCONTAINER：容器",
+          "example": "HOST",
+          "member": "string",
+          "name": "BelongAssetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生效范围\n入参限制：EffectScope.EffectType=INCLUDE 时 EffectAssets 必须非空",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "初始状态\n枚举值：\nON：启用\nOFF：禁用",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则动作(RuleAction)\n枚举值：\nPASS：加白\nBLOCK：拦截并告警\nMONITOR：告警",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引用的系统规则 ID 列表\n入参限制：最多 100 个；与 UserRuleContent 至少提供其一",
+          "example": "[1001,1002]",
+          "member": "int64",
+          "name": "SystemRuleIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义规则内容\n入参限制：最多 100 条子规则；与 SystemRuleIDList 至少提供其一",
+          "example": "无",
+          "member": "TrafficSandboxACLRuleContentItem",
+          "name": "UserRuleContent",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxACLRuleResponse": {
+      "document": "CreateSandboxACLRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新建规则的 ID",
+          "example": "2001",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxDLPRuleRequest": {
+      "document": "CreateSandboxDLPRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则名称<br>入参限制：长度 1-128</p>",
+          "example": "出境敏感数据防护",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则级别<br>枚举值：<br>INFO：提示<br>LOW：低危<br>MEDIUM：中危<br>HIGH：高危<br>CRITICAL：严重</p>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则动作<br>枚举值：<br>PASS：加白<br>BLOCK：拦截并告警<br>MONITOR：告警</p>",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属资产类型<br>枚举值：<br>HOST：主机<br>CONTAINER：容器</p>",
+          "example": "CONTAINER",
+          "member": "string",
+          "name": "BelongAssetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效范围</p>",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始状态<br>枚举值：<br>ON：启用<br>OFF：禁用</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用的系统规则 ID 列表<br>入参限制：最多 1000 个；与 UserRuleContent 至少提供其一</p>",
+          "example": "[3001]",
+          "member": "int64",
+          "name": "SystemRuleIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户自定义规则内容<br>入参限制：最多 100 条子规则；与 UserRuleInfo 二选一传入即可，二者同时传入时以 UserRuleInfo 为准</p>",
+          "example": "无",
+          "member": "TrafficSandboxDLPRuleContentItem",
+          "name": "UserRuleContent",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增可选的结构化入参，支持 5 个检测维度（文件名称/文件大小/文件格式/外发域名/外发内容），各维度可选、至少命中一项。与 UserRuleContent 同时传入时优先生效</p>",
+          "example": "无",
+          "member": "TrafficSandboxDLPUserRuleInfo",
+          "name": "UserRuleInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxDLPRuleResponse": {
+      "document": "CreateSandboxDLPRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>新建规则的 ID</p>",
+          "example": "4001",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxFileRuleRequest": {
+      "document": "CreateSandboxFileRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-6*************29\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则内容</p>",
+          "example": "无",
+          "member": "CommandSandboxFileRuleBase",
+          "name": "RuleContent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxFileRuleResponse": {
+      "document": "CreateSandboxFileRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则 ID</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxLLMAuditRuleRequest": {
+      "document": "CreateSandboxLLMAuditRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称\n入参限制：长度 1-128",
+          "example": "敏感意图审计",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则级别\n枚举值：\nINFO：提示\nLOW：低危\nMEDIUM：中危\nHIGH：高危\nCRITICAL：严重",
+          "example": "HIGH",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "归属资产类型\n枚举值：\nHOST：主机\nCONTAINER：容器",
+          "example": "HOST",
+          "member": "string",
+          "name": "BelongAssetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引用的 LLM 审计系统规则 ID 列表（字符串，由 DescribeSandboxLLMAuditSystemRuleList 返回的 LLMRules[].RuleID / ToolCallRules[].RuleID 提供）\n入参限制：非空，最多 1000 个；单个元素长度 1-128",
+          "example": "[\"grl-safety-politics-std\",\"grl-safety-prompt-001\"]",
+          "member": "string",
+          "name": "SystemRuleIDList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生效范围",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "初始状态\n枚举值：\nON：启用\nOFF：禁用",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则动作(RuleAction)\n枚举值：\nPASS：加白\nBLOCK：拦截并告警\nMONITOR：告警",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxLLMAuditRuleResponse": {
+      "document": "CreateSandboxLLMAuditRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新建规则的 ID",
+          "example": "6001",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateScanStatisticExportJobRequest": {
       "document": "CreateScanStatisticExportJob请求参数结构体",
       "members": [
@@ -31078,7 +32157,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>快照名称，CreateSnapshot为true时有效<br>入参限制：最长128个字符</p>",
+          "document": "<p>快照名称，CreateSnapshot为true时有效入参限制：最长60个字符超长自动截断</p>",
           "example": "fix-snapshot-20250626",
           "member": "string",
           "name": "SnapshotName",
@@ -33134,6 +34213,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -33179,6 +34267,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -33215,6 +34312,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -33269,6 +34375,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -33305,6 +34420,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -33341,6 +34465,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -34090,6 +35223,106 @@
     "DeleteRiskScanTaskResponse": {
       "document": "DeleteRiskScanTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxACLRuleRequest": {
+      "document": "DeleteSandboxACLRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID 列表\n入参限制：非空，长度 1-100，去重后生效",
+          "example": "[2001,2002]",
+          "member": "int64",
+          "name": "IDList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxACLRuleResponse": {
+      "document": "DeleteSandboxACLRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxDLPRuleRequest": {
+      "document": "DeleteSandboxDLPRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID 列表\n入参限制：非空，长度 1-100，去重后生效",
+          "example": "[4001,4002]",
+          "member": "int64",
+          "name": "IDList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxDLPRuleResponse": {
+      "document": "DeleteSandboxDLPRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxFileRuleRequest": {
+      "document": "DeleteSandboxFileRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-0************50\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则 ID 组</p>",
+          "example": "[44]",
+          "member": "int64",
+          "name": "IDList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxFileRuleResponse": {
+      "document": "DeleteSandboxFileRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则 ID 组</p>",
+          "example": "[44]",
+          "member": "int64",
+          "name": "IDList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -35936,6 +37169,62 @@
           "disabled": false,
           "document": "总数",
           "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessKeyWhiteListRequest": {
+      "document": "DescribeAccessKeyWhiteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "过滤器",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessKeyWhiteListResponse": {
+      "document": "DescribeAccessKeyWhiteList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警规则列表",
+          "example": "告警规则列表",
+          "member": "AccessKeyWhiteList",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "23",
           "member": "int64",
           "name": "Total",
           "output_required": true,
@@ -39658,6 +40947,163 @@
       ],
       "type": "object"
     },
+    "DescribeCSCPayInfoRequest": {
+      "document": "DescribeCSCPayInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCSCPayInfoResponse": {
+      "document": "DescribeCSCPayInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>租户AppID。</p>",
+          "example": "260095525",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单状态。取值：0（未购买）、1（正常）、2（隔离）、3（销毁）、4（修改）、5（续费）、6（试用）、7（过期）、8（试用到期）。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式。取值：0（后付费）、1（预付费）。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单开始时间，格式：2006-01-02 15:04:05。</p>",
+          "example": "2026-03-27 10:11:03",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单结束时间，格式：2006-01-02 15:04:05。</p>",
+          "example": "2026-04-27 10:11:03",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标志。取值：0（未设置）、1（自动续费）、2（不自动续费）。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买时长。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间单位，如 m（月）。</p>",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID。</p>",
+          "example": "csc-34d2fbec-2982-11f1-b5cc-525400e2504e",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前服务器时间，格式：2006-01-02 15:04:05。</p>",
+          "example": "2026-04-02 11:47:41",
+          "member": "string",
+          "name": "TimeNow",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号UIN。</p>",
+          "example": "700******039",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号昵称。</p>",
+          "example": "700******039",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为新用户。取值：1（新用户）、0（旧用户）。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "NewUser",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户计费信息，Key为L4</p>",
+          "example": "无",
+          "member": "OrderQuotaInfo",
+          "name": "QuotaList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCSIPLicenseBindScheduleRequest": {
       "document": "DescribeCSIPLicenseBindSchedule请求参数结构体",
       "members": [
@@ -40104,6 +41550,213 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCSPMPayInfoRequest": {
+      "document": "DescribeCSPMPayInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCSPMPayInfoResponse": {
+      "document": "DescribeCSPMPayInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "APPID",
+          "example": "12117826",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已购CSPM扫描配额",
+          "example": "15000",
+          "member": "int64",
+          "name": "CSPMNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已消耗CSPM扫描配额",
+          "example": "3200",
+          "member": "int64",
+          "name": "UsedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "赠送CSPM扫描配额",
+          "example": "5000",
+          "member": "int64",
+          "name": "GrantedCSPMNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支付模式，0-后付费 1-预付费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否单独购买，1-单独购买，2-被其它账号共享",
+          "example": "2",
+          "member": "int64",
+          "name": "IsSelfBuy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单开始时间",
+          "example": "2025-04-10 10:37:02",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单到期时间",
+          "example": "2025-05-10 10:37:02",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenew",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单时长",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时长单位",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "csip-cspm-241",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公测结束时间",
+          "example": "2025-05-10 10:37:02",
+          "member": "string",
+          "name": "BetaEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统当前时间",
+          "example": "2025-05-10 10:37:02",
+          "member": "string",
+          "name": "TimeNow",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否分享给其它账号，1-是，2-否",
+          "example": "1",
+          "member": "int64",
+          "name": "IsShareToOther",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "100011132178",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "声声乌龙",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -45423,7 +47076,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -45470,7 +47123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -45843,7 +47496,7 @@
         },
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-a6df317cb6a8c424\"]",
           "member": "string",
           "name": "MemberId",
@@ -48959,6 +50612,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49079,6 +50741,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49153,6 +50824,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49209,6 +50889,15 @@
           "name": "Id",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49345,6 +51034,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49665,6 +51363,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49721,6 +51428,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49827,6 +51543,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49837,7 +51562,7 @@
         {
           "disabled": false,
           "document": "<p>总数</p><p>单位：数量</p>",
-          "example": "1",
+          "example": "136",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
@@ -49917,6 +51642,15 @@
           "example": "kyrie@tencent.com",
           "member": "string",
           "name": "UnStructuredTestContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
           "required": false,
           "type": "string"
         }
@@ -62031,6 +63765,154 @@
       ],
       "type": "object"
     },
+    "DescribeSandboxDLPAlertListRequest": {
+      "document": "DescribeSandboxDLPAlertList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 10，上限 200</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件<br>支持的过滤项：<br>ID：按告警记录 ID 查询单条<br>BelongAssetType：归属资产类型，可选值：HOST（主机） / CONTAINER（容器）<br>RuleName：按命中规则名称搜索<br>RuleAction：命中动作，可选值：PASS（加白） / BLOCK（拦截并告警） / MONITOR（告警）<br>InstanceId：按资产实例 ID 精确过滤（用于资产详情页查看该资产的告警列表等场景）<br>InstanceName：按资产实例名模糊搜索，多个值之间为&quot;或&quot;关系<br>Status：处理状态，可选值：PENDING（未处理） / HANDLED（已处理） / IGNORE（已忽略） / PASS（已加白） / BLOCK（已拦截）</p>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-7*************ef\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxDLPAlertListResponse": {
+      "document": "DescribeSandboxDLPAlertList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警列表</p>",
+          "example": "无",
+          "member": "TrafficSandboxDLPAlertInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "42",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxDLPRuleListRequest": {
+      "document": "DescribeSandboxDLPRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 10，上限 200",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件\n支持的过滤项：\nRuleID：规则 ID，用于查询单条规则\nRuleName：按规则名称搜索\nStatus：规则状态，可选值：ON（启用） / OFF（禁用）\nLevel：规则级别，可选值：INFO（提示） / LOW（低危） / MEDIUM（中危） / HIGH（高危） / CRITICAL（严重）\nRuleAction：规则动作，可选值：PASS（加白） / BLOCK（拦截并告警） / MONITOR（告警）\nBelongAssetType：归属资产类型，可选值：HOST（主机） / CONTAINER（容器）",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-7*************ef\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxDLPRuleListResponse": {
+      "document": "DescribeSandboxDLPRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "TrafficSandboxDLPRuleInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSandboxDLPSystemRuleListRequest": {
       "document": "DescribeSandboxDLPSystemRuleList请求参数结构体",
       "members": [
@@ -62140,6 +64022,182 @@
           "member": "CommandSandboxFileRule",
           "name": "RuleList",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxLLMAuditAlertListRequest": {
+      "document": "DescribeSandboxLLMAuditAlertList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 10，上限 200</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件<br>支持的过滤项：<br>ID：按告警记录 ID 查询单条<br>BelongAssetType：归属资产类型，可选值：HOST（主机） / CONTAINER（容器）<br>RuleName：按用户规则名称搜索<br>RuleAction：命中动作，可选值：PASS（加白） / BLOCK（拦截并告警） / MONITOR（告警）<br>InstanceId：按资产实例 ID 精确过滤（用于资产详情页查看该资产的告警列表等场景）<br>InstanceName：按资产实例名模糊搜索，多个值之间为&quot;或&quot;关系<br>Status：处理状态，可选值：PENDING（未处理） / HANDLED（已处理） / IGNORE（已忽略） / PASS（已加白） / BLOCK（已拦截）</p>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxLLMAuditAlertListResponse": {
+      "document": "DescribeSandboxLLMAuditAlertList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警列表</p>",
+          "example": "无",
+          "member": "TrafficSandboxLLMAuditAlertInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "42",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxLLMAuditRuleListRequest": {
+      "document": "DescribeSandboxLLMAuditRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 10，上限 200</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件<br>支持的过滤项：<br>RuleID：规则 ID，用于查询单条规则<br>RuleName：按规则名称搜索<br>Status：规则状态，可选值：ON（启用） / OFF（禁用）<br>Level：规则级别，可选值：INFO（提示） / LOW（低危） / MEDIUM（中危） / HIGH（高危） / CRITICAL（严重）<br>RuleAction：规则动作，可选值：PASS（加白） / BLOCK（拦截并告警） / MONITOR（告警）<br>BelongAssetType：归属资产类型，可选值：HOST（主机） / CONTAINER（容器）</p>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-a1b2c3\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxLLMAuditRuleListResponse": {
+      "document": "DescribeSandboxLLMAuditRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则列表</p>",
+          "example": "无",
+          "member": "TrafficSandboxLLMAuditRuleInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxLLMAuditSystemRuleListRequest": {
+      "document": "DescribeSandboxLLMAuditSystemRuleList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSandboxLLMAuditSystemRuleListResponse": {
+      "document": "DescribeSandboxLLMAuditSystemRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "LLM 推理防护规则列表",
+          "example": "无",
+          "member": "TrafficSandboxLLMAuditSystemRuleItem",
+          "name": "LLMRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ToolCall 防护规则列表",
+          "example": "无",
+          "member": "TrafficSandboxLLMAuditSystemRuleItem",
+          "name": "ToolCallRules",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -63613,6 +65671,52 @@
       ],
       "type": "object"
     },
+    "DescribeSourceIPDetailRequest": {
+      "document": "DescribeSourceIPDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源IP的ID",
+          "example": "100002",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSourceIPDetailResponse": {
+      "document": "DescribeSourceIPDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问密钥资产详情",
+          "example": "无",
+          "member": "SourceIPAsset",
+          "name": "SourceIPInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSubUserInfoRequest": {
       "document": "DescribeSubUserInfo请求参数结构体",
       "members": [
@@ -64414,6 +66518,72 @@
       ],
       "type": "object"
     },
+    "DescribeUserAKInfoListRequest": {
+      "document": "DescribeUserAKInfoList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserAKInfoListResponse": {
+      "document": "DescribeUserAKInfoList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号ak列表",
+          "example": "无",
+          "member": "UserAKInfo",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已勾选账号ak总数",
+          "example": "100",
+          "member": "int64",
+          "name": "SelectedAKNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak总数",
+          "example": "200",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserCSPMInfoListRequest": {
       "document": "DescribeUserCSPMInfoList请求参数结构体",
       "members": [
@@ -64971,6 +67141,52 @@
           "name": "PocUpdateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoucherEligibilityRequest": {
+      "document": "DescribeVoucherEligibility请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "活动 ID。",
+          "example": "10001",
+          "member": "int64",
+          "name": "ActivityID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "代金券批次 ID。",
+          "example": "20001",
+          "member": "int64",
+          "name": "ActID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoucherEligibilityResponse": {
+      "document": "DescribeVoucherEligibility返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否有资格领取代金券。取值：1（有资格）、0（无资格）。",
+          "example": "1",
+          "member": "int64",
+          "name": "Available",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -82695,6 +84911,78 @@
       ],
       "type": "object"
     },
+    "InstallKeySandboxSkillRequest": {
+      "document": "InstallKeySandboxSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器实例ID列表\n入参限制：最多一次操作100个",
+          "example": "[\"ins-abc12345\",\"ins-def67890\",\"ins-ghi11111\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员ID",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallKeySandboxSkillResponse": {
+      "document": "InstallKeySandboxSkill返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallSandboxPluginRequest": {
+      "document": "InstallSandboxPlugin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "归属资产类型\n枚举值：\nHOST：主机\nCONTAINER：容器",
+          "example": "HOST",
+          "member": "string",
+          "name": "BelongAssetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安装目标范围\n入参限制：EffectType=INCLUDE 时 EffectAssets 必须非空；EffectType=EXCLUDE 时 EffectAssets 可为空数组（表示对全部 AI Agent 资产下发）",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallSandboxPluginResponse": {
+      "document": "InstallSandboxPlugin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstanceIDWithAppIdItem": {
       "document": "主机实例定位信息",
       "members": [
@@ -87742,6 +90030,78 @@
       ],
       "type": "object"
     },
+    "ModifyClusterDefendStatusRequest": {
+      "document": "ModifyClusterDefendStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>防护开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DefendStatus",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "关闭防护时是否同步解绑集群下主机 License\n枚举值：\ntrue：同步解绑集群所有节点主机授权\nfalse：仅停止容器计费，节点保留主机安全防护\n默认值：false\n补充说明：仅 DefendStatus=false（关闭防护）时生效",
+          "example": "false",
+          "member": "bool",
+          "name": "UnbindHostLicense",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": true,
+          "document": "<p>集群id数组</p>",
+          "example": "[\"86693c5bf9e9fbdce993d557b1038fd8\"]",
+          "member": "string",
+          "name": "ClusterAssetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "被调用的集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "OperatedMemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群ca证书md5值，集群的唯一标识</p>",
+          "example": "[\"af9570*********b57b**d475974a859\"]",
+          "member": "string",
+          "name": "ClusterCaMD5List",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterDefendStatusResponse": {
+      "document": "ModifyClusterDefendStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCosAuditBucketMonitorStatusRequest": {
       "document": "ModifyCosAuditBucketMonitorStatus请求参数结构体",
       "members": [
@@ -87877,7 +90237,7 @@
           "example": "[1346438]",
           "member": "uint64",
           "name": "BucketIdSet",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -87886,8 +90246,26 @@
           "example": "[0.5]",
           "member": "float",
           "name": "SampleRateSet",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>appid；传 DefaultSampleRate 时必填；只修改已有桶时可选</p>",
+          "example": "260209268",
+          "member": "uint64",
+          "name": "TargetAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>传入时修改 TargetAppId 的新增桶默认值； 不传时不修改默认值</p><p>取值范围：[0.001, 1]</p>",
+          "example": "0.01",
+          "member": "float",
+          "name": "DefaultSampleRate",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"
@@ -87895,6 +90273,36 @@
     "ModifyCosAuditObjectSampleRateResponse": {
       "document": "ModifyCosAuditObjectSampleRate返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>本次是否实际提交了默认采样率</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultSampleRateUpdated",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DefaultSampleRateUpdated=true 时返回修改后的值</p>",
+          "example": "0.01",
+          "member": "float",
+          "name": "DefaultSampleRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次成功提交的已有桶数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "UpdatedBucketCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -88071,6 +90479,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -88856,6 +91273,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -88919,6 +91345,15 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -88964,6 +91399,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -89018,6 +91462,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -89117,6 +91570,15 @@
           "name": "LevelItems",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -89171,6 +91633,15 @@
           "name": "LevelScore",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -89252,6 +91723,15 @@
           "name": "UnStructuredRule",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -89297,6 +91777,15 @@
           "name": "MemberId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作来源：空/dspm=数据库风险监测入口，cos=对象存储风险监测入口</p>",
+          "example": "dspm",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -93202,6 +95691,503 @@
       ],
       "usage": "both"
     },
+    "ModifySandboxACLRuleRequest": {
+      "document": "ModifySandboxACLRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID",
+          "example": "2001",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n入参限制：长度 1-128\n默认值：不传则不修改",
+          "example": "禁止出站访问未知域名（更新）",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则级别\n枚举值：\nINFO：提示\nLOW：低危\nMEDIUM：中危\nHIGH：高危\nCRITICAL：严重\n默认值：不传则不修改",
+          "example": "CRITICAL",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引用的系统规则 ID 列表\n入参限制：传空数组表示清空；不传表示不修改",
+          "example": "[1001,1003]",
+          "member": "int64",
+          "name": "SystemRuleIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义规则内容\n入参限制：传空数组表示清空；不传表示不修改",
+          "example": "无",
+          "member": "TrafficSandboxACLRuleContentItem",
+          "name": "UserRuleContent",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生效范围\n默认值：不传则不修改",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "规则动作(RuleAction)\n枚举值：\nPASS：加白\nBLOCK：拦截并告警\nMONITOR：告警\n默认值：不传则不修改",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标状态\n枚举值：\nON：启用\nOFF：禁用\n默认值：不传则不修改",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxACLRuleResponse": {
+      "document": "ModifySandboxACLRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxACLRuleStatusRequest": {
+      "document": "ModifySandboxACLRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID 列表\n入参限制：非空，长度 1-100",
+          "example": "[2001,2002]",
+          "member": "int64",
+          "name": "IDList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目标状态\n枚举值：\nON：启用\nOFF：禁用",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxACLRuleStatusResponse": {
+      "document": "ModifySandboxACLRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxAlertStatusRequest": {
+      "document": "ModifySandboxAlertStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警类型\n枚举值：\nACL：访问控制\nDLP：数据泄露防护\nLLM_AUDIT：LLM 审计",
+          "example": "ACL",
+          "member": "string",
+          "name": "AlertType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "归属资产类型\n枚举值：\nHOST：主机\nCONTAINER：容器",
+          "example": "HOST",
+          "member": "string",
+          "name": "BelongAssetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警记录 ID 列表\n入参限制：非空，长度 1-100，去重后生效",
+          "example": "[7001,7002]",
+          "member": "int64",
+          "name": "IDList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目标操作\n枚举值：\nHANDLED：已处理\nIGNORE：已忽略\nPASS：已加白\nDELETE：删除（不可恢复）",
+          "example": "HANDLED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxAlertStatusResponse": {
+      "document": "ModifySandboxAlertStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxDLPRuleRequest": {
+      "document": "ModifySandboxDLPRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则 ID</p>",
+          "example": "4001",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则名称<br>入参限制：长度 1-128<br>默认值：不传则不修改</p>",
+          "example": "出境敏感数据防护（更新）",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则级别<br>枚举值：<br>INFO：提示<br>LOW：低危<br>MEDIUM：中危<br>HIGH：高危<br>CRITICAL：严重<br>默认值：不传则不修改</p>",
+          "example": "CRITICAL",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则动作<br>枚举值：<br>PASS：加白<br>BLOCK：拦截并告警<br>MONITOR：告警<br>默认值：不传则不修改</p>",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用的系统规则 ID 列表<br>入参限制：最多 1000 个；传入时整体覆盖原有集合；不传表示不修改</p>",
+          "example": "[3001]",
+          "member": "int64",
+          "name": "SystemRuleIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户自定义规则内容<br>入参限制：传入时整体覆盖原有集合（允许传空数组以清空）；不传表示不修改</p>",
+          "example": "无",
+          "member": "TrafficSandboxDLPRuleContentItem",
+          "name": "UserRuleContent",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化入参，支持 5 个检测维度（文件名称/文件大小/文件格式/外发域名/外发内容），各维度可选、至少命中一项。传入时整体覆盖原有集合；不传表示不修改。与 UserRuleContent 同时传入时优先生效</p>",
+          "example": "无",
+          "member": "TrafficSandboxDLPUserRuleInfo",
+          "name": "UserRuleInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效范围<br>默认值：不传则不修改</p>",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标状态<br>枚举值：<br>ON：启用<br>OFF：禁用<br>默认值：不传则不修改</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxDLPRuleResponse": {
+      "document": "ModifySandboxDLPRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxDLPRuleStatusRequest": {
+      "document": "ModifySandboxDLPRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID 列表\n入参限制：非空，长度 1-100",
+          "example": "[4001,4002]",
+          "member": "int64",
+          "name": "IDList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目标状态\n枚举值：\nON：启用\nOFF：禁用",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxDLPRuleStatusResponse": {
+      "document": "ModifySandboxDLPRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxFileRuleRequest": {
+      "document": "ModifySandboxFileRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-0************50\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则 ID</p>",
+          "example": "43",
+          "member": "int64",
+          "name": "RuleID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则内容</p>",
+          "example": "无",
+          "member": "CommandSandboxFileRuleBase",
+          "name": "RuleContent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxFileRuleResponse": {
+      "document": "ModifySandboxFileRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则 ID</p>",
+          "example": "43",
+          "member": "int64",
+          "name": "RuleID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxFileRuleStatusRequest": {
+      "document": "ModifySandboxFileRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则 ID 列表<br>入参限制：非空，长度 1-100</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "IDList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标状态<br>枚举值：<br>ON：启用<br>OFF：禁用</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxFileRuleStatusResponse": {
+      "document": "ModifySandboxFileRuleStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作规则 ID 列表</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "IDList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxLLMAuditRuleRequest": {
+      "document": "ModifySandboxLLMAuditRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID",
+          "example": "6001",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n入参限制：长度 1-128\n默认值：不传则不修改",
+          "example": "敏感意图审计（更新）",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则级别\n枚举值：\nINFO：提示\nLOW：低危\nMEDIUM：中危\nHIGH：高危\nCRITICAL：严重\n默认值：不传则不修改",
+          "example": "CRITICAL",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引用的 LLM 审计系统规则 ID 列表（字符串）\n入参限制：不传表示不修改；传值则覆盖全量，长度 1-1000；单个元素长度 1-128",
+          "example": "[\"grl-safety-politics-std\",\"grl-safety-prompt-001\"]",
+          "member": "string",
+          "name": "SystemRuleIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生效范围\n默认值：不传则不修改",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "规则动作(RuleAction)\n枚举值：\nPASS：加白\nBLOCK：拦截并告警\nMONITOR：告警\n默认值：不传则不修改",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标状态\n枚举值：\nON：启用\nOFF：禁用\n默认值：不传则不修改",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySandboxLLMAuditRuleResponse": {
+      "document": "ModifySandboxLLMAuditRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySandboxLLMAuditRuleStatusRequest": {
       "document": "ModifySandboxLLMAuditRuleStatus请求参数结构体",
       "members": [
@@ -93273,6 +96259,62 @@
           "name": "Rules",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyShareUserAKRequest": {
+      "document": "ModifyShareUserAK请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "增加监测账号",
+          "example": "[11782198]",
+          "member": "int64",
+          "name": "SharedAppIDList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyShareUserAKResponse": {
+      "document": "ModifyShareUserAK返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-成功，1-失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功或失败信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -95150,6 +98192,42 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OrderQuotaInfo": {
+      "document": "订单配额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配额键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "QuotaKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配额总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "QuotaNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配额已使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "QuotaUsed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -103956,6 +107034,464 @@
       ],
       "usage": "both"
     },
+    "TrafficSandboxDLPAlertInfo": {
+      "document": "DLP 告警数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警记录 ID</p>",
+          "example": "8001",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属资产类型<br>枚举值：<br>HOST：主机<br>CONTAINER：容器</p>",
+          "example": "CONTAINER",
+          "member": "string",
+          "name": "BelongAssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的用户规则 ID</p>",
+          "example": "4001",
+          "member": "int64",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的用户规则名称</p>",
+          "example": "出境敏感数据防护",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent UUID</p>",
+          "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+          "member": "string",
+          "name": "UUID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "ins-a1b2c3d4",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "app-server-01",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID<br>入参限制：仅容器告警返回</p>",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器 ID<br>入参限制：仅容器告警返回</p>",
+          "example": "docker-container-abc123",
+          "member": "string",
+          "name": "ContainerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器名称<br>入参限制：仅容器告警返回</p>",
+          "example": "payment-svc",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进程 exe 路径</p>",
+          "example": "/usr/local/bin/python3",
+          "member": "string",
+          "name": "Exe",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进程命令行参数</p>",
+          "example": "python3 upload.py",
+          "member": "string",
+          "name": "Param",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标地址</p>",
+          "example": "POST https://external.example.com/upload",
+          "member": "string",
+          "name": "Target",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配范围<br>枚举值：<br>req_head：请求头<br>req_body：请求体<br>rsp_head：响应头<br>rsp_body：响应体</p>",
+          "example": "req_body",
+          "member": "string",
+          "name": "MatchScope",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent 上报的 match_content 完整内容<br>入参限制：最长 256 字节；前一半字符已脱敏打码</p>",
+          "example": "*********************card=xxxxxxxxxxxxxxxxxx",
+          "member": "string",
+          "name": "MatchContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>真正触发规则的匹配片段<br>入参限制：前一半字符已脱敏打码；规则缺失/未命中时退化为与 MatchContent 相同</p>",
+          "example": "*****345678",
+          "member": "string",
+          "name": "MatchContentSample",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上传协议</p>",
+          "example": "multipart",
+          "member": "string",
+          "name": "UpProto",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "customer_list.xlsx",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件类型</p>",
+          "example": "zip",
+          "member": "string",
+          "name": "FileType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小</p><p>单位：Byte</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警级别<br>枚举值：<br>INFO：提示<br>LOW：低危<br>MEDIUM：中危<br>HIGH：高危<br>CRITICAL：严重</p>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理状态<br>枚举值：<br>PENDING：未处理<br>HANDLED：已处理<br>IGNORE：已忽略<br>PASS：已加白<br>BLOCK：已拦截</p>",
+          "example": "PENDING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警次数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>首次告警时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
+          "example": "2025-03-10T08:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "FirstAlertTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后告警时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
+          "example": "2025-03-15T14:30:00+08:00",
+          "member": "datetime_iso",
+          "name": "LastAlertTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中动作<br>枚举值：<br>PASS：加白<br>BLOCK：拦截并告警<br>MONITOR：告警</p>",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficSandboxDLPFileSizeRange": {
+      "document": "文件大小限制区间，单位 Byte；Min/Max 为 0 表示该侧无限制",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下限，单位 Byte；0 表示无下限",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Min",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上限，单位 Byte；0 表示无上限",
+          "example": "1048576",
+          "member": "uint64",
+          "name": "Max",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TrafficSandboxDLPRuleContentItem": {
+      "document": "DLP 规则内容。子规则 ID 由服务端内部管理不对外暴露，作用域由后端默认应用到全部范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子规则名称\n入参限制：长度 1-128",
+          "example": "身份证号",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则内容\n入参限制：正则表达式，最大长度 2048",
+          "example": "[1-9]\\d{5}(19|20)\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])\\d{3}[0-9Xx]",
+          "member": "string",
+          "name": "RuleContent",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TrafficSandboxDLPRuleInfo": {
+      "document": "DLP 用户规则数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID",
+          "example": "4001",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "出境敏感数据防护",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则级别\n枚举值：\nINFO：提示\nLOW：低危\nMEDIUM：中危\nHIGH：高危\nCRITICAL：严重",
+          "example": "HIGH",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则状态\n枚举值：\nON：启用\nOFF：禁用",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归属资产类型\n枚举值：\nHOST：主机\nCONTAINER：容器",
+          "example": "CONTAINER",
+          "member": "string",
+          "name": "BelongAssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用的系统规则内容快照",
+          "example": "无",
+          "member": "TrafficSandboxDLPRuleContentItem",
+          "name": "SystemRuleContent",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义规则内容",
+          "example": "无",
+          "member": "TrafficSandboxDLPRuleContentItem",
+          "name": "UserRuleContent",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户规则的结构化视图，按检测维度返回规则内容，便于前端按「文件名称/文件大小/文件格式/外发域名/外发内容」分区渲染。只读输出字段，不影响 Create/Modify 入参",
+          "example": "无",
+          "member": "TrafficSandboxDLPUserRuleInfo",
+          "name": "UserRuleInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则的生效范围",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未生效资产列表：策略目标生效资产中流量沙箱插件未已安装（TrafficPluginState.InstallStatus 不为 INSTALLED）的 AI Agent 资产，返回机器的 InstanceId / ContainerId 及 TrafficPluginState。无未生效资产时返回空数组",
+          "example": "无",
+          "member": "TrafficSandboxInactiveAsset",
+          "name": "InactiveAssets",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2025-01-01T10:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "InsertTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2025-03-15T14:30:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则动作\n枚举值：\nPASS：加白\nBLOCK：拦截并告警\nMONITOR：告警",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TrafficSandboxDLPSystemRuleItem": {
       "document": "DLP 系统规则数据结构",
       "members": [
@@ -103991,6 +107527,123 @@
         }
       ],
       "usage": "out"
+    },
+    "TrafficSandboxDLPTrafficRuleItem": {
+      "document": "外发内容检测行（名称 + 正则）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子规则名称",
+          "example": "身份证",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正则内容（Hyperscan 兼容）",
+          "example": "[1-9]\\d{5}(19|20)\\d{2}",
+          "member": "string",
+          "name": "RuleContent",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TrafficSandboxDLPURLRuleItem": {
+      "document": "外发域名检测维度（URL / 排除 URL）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "外发对象列表（域名/URL）",
+          "example": "[\"http://*.cos.*.myqcloud.com/*\"]",
+          "member": "string",
+          "name": "URL",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除对象列表",
+          "example": "[]",
+          "member": "string",
+          "name": "URLExcept",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TrafficSandboxDLPUserRuleInfo": {
+      "document": "DLP 用户规则结构化视图，按「检测规则」5 个检测维度返回，便于前端按维度渲染。只读输出字段，不影响 Create/Modify 入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称匹配维度：汇总去重后的文件名/正则列表",
+          "example": "[\"*.pem\",\"*.key\"]",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小限制维度（区间）",
+          "example": "无",
+          "member": "TrafficSandboxDLPFileSizeRange",
+          "name": "FileSize",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件格式限制维度：汇总去重后的格式/类目列表",
+          "example": "[\".pdf\",\".zip\"]",
+          "member": "string",
+          "name": "FileType",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外发域名检测维度（单值对象）",
+          "example": "无",
+          "member": "TrafficSandboxDLPURLRuleItem",
+          "name": "URLRule",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外发内容检测维度（可多行，名称 + 正则）",
+          "example": "无",
+          "member": "TrafficSandboxDLPTrafficRuleItem",
+          "name": "TrafficRule",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TrafficSandboxEffectScope": {
       "document": "流量沙箱规则的生效范围",
@@ -104051,6 +107704,350 @@
           "name": "TrafficPluginState",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficSandboxLLMAuditAlertInfo": {
+      "document": "LLM 审计告警数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警记录 ID</p>",
+          "example": "9001",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属资产类型<br>枚举值：<br>HOST：主机<br>CONTAINER：容器</p>",
+          "example": "HOST",
+          "member": "string",
+          "name": "BelongAssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的用户规则 ID</p>",
+          "example": "6001",
+          "member": "int64",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的用户规则名称</p>",
+          "example": "敏感意图审计",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的 LLM 审计系统规则名称</p>",
+          "example": "审计痕迹清理与日志销毁阻断",
+          "member": "string",
+          "name": "SystemRuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "ins-a1b2c3d4",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "app-server-01",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID</p>",
+          "example": "cls-a1b2c3",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器 ID</p>",
+          "example": "9617dc3c5c84ba8fd06ba9b6d3bd62789bb2dd6faa85de8d0b406d5368a75b82",
+          "member": "string",
+          "name": "ContainerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器名称</p>",
+          "example": "container_name",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中风险描述</p>",
+          "example": "风险类型:越狱提示词,风险内容:用户询问越狱方法",
+          "member": "string",
+          "name": "HitPayload",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中动作<br>枚举值：<br>PASS：加白<br>BLOCK：拦截并告警<br>MONITOR：告警</p>",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警级别<br>枚举值：<br>INFO：提示<br>LOW：低危<br>MEDIUM：中危<br>HIGH：高危<br>CRITICAL：严重</p>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理状态<br>枚举值：<br>PENDING：未处理<br>HANDLED：已处理<br>IGNORE：已忽略<br>PASS：已加白<br>BLOCK：已拦截</p>",
+          "example": "PENDING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>首次告警时间</p>",
+          "example": "2025-03-10T08:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "FirstAlertTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后告警时间</p>",
+          "example": "2025-03-15T14:30:00+08:00",
+          "member": "datetime_iso",
+          "name": "LastAlertTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficSandboxLLMAuditRuleInfo": {
+      "document": "LLM 审计用户规则数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID",
+          "example": "6001",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "敏感意图审计",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则级别\n枚举值：\nINFO：提示\nLOW：低危\nMEDIUM：中危\nHIGH：高危\nCRITICAL：严重",
+          "example": "HIGH",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则状态\n枚举值：\nON：启用\nOFF：禁用",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归属资产类型\n枚举值：\nHOST：主机\nCONTAINER：容器",
+          "example": "HOST",
+          "member": "string",
+          "name": "BelongAssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用的系统规则列表（含系统规则名称）",
+          "example": "无",
+          "member": "TrafficSandboxLLMAuditRuleRef",
+          "name": "SystemRuleRefs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则的生效范围",
+          "example": "无",
+          "member": "TrafficSandboxEffectScope",
+          "name": "EffectScope",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未生效资产列表：策略目标生效资产中流量沙箱插件未已安装（TrafficPluginState.InstallStatus 不为 INSTALLED）的 AI Agent 资产，返回机器的 InstanceId / ContainerId 及 TrafficPluginState。无未生效资产时返回空数组",
+          "example": "无",
+          "member": "TrafficSandboxInactiveAsset",
+          "name": "InactiveAssets",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2025-01-01T10:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "InsertTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2025-03-15T14:30:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则动作\n枚举值：\nPASS：加白\nBLOCK：拦截并告警\nMONITOR：告警",
+          "example": "BLOCK",
+          "member": "string",
+          "name": "RuleAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficSandboxLLMAuditRuleRef": {
+      "document": "LLM 审计规则对 LLM 审计系统规则的引用项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "LLM 审计系统规则 ID（字符串）",
+          "example": "grl-safety-politics-std",
+          "member": "string",
+          "name": "SystemRuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "LLM 审计系统规则名称",
+          "example": "涉政内容-标准",
+          "member": "string",
+          "name": "SystemRuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrafficSandboxLLMAuditSystemRuleItem": {
+      "document": "LLM 审计系统子规则（LLM 审计系统规则）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "LLM 审计系统规则 ID（字符串）",
+          "example": "grl-safety-politics-std",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "涉政内容-标准",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "检测输出中的涉政敏感内容（标准级别）",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -104569,6 +108566,42 @@
       ],
       "type": "object"
     },
+    "UninstallKeySandboxSkillRequest": {
+      "document": "UninstallKeySandboxSkill请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器实例ID列表\n入参限制：最多一次操作100个",
+          "example": "[\"ins-abc12345\",\"ins-def67890\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员ID",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallKeySandboxSkillResponse": {
+      "document": "UninstallKeySandboxSkill返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateAccessKeyAlarmStatusRequest": {
       "document": "UpdateAccessKeyAlarmStatus请求参数结构体",
       "members": [
@@ -104853,6 +108886,92 @@
         }
       ],
       "type": "object"
+    },
+    "UserAKInfo": {
+      "document": "账号ak数量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "APPID",
+          "example": "11452198",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "UIN",
+          "example": "114168211009",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号昵称",
+          "example": "声声乌龙",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号下ak数量",
+          "example": "100",
+          "member": "int64",
+          "name": "AKNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否被共享，1-被共享，2-未被共享",
+          "example": "2",
+          "member": "int64",
+          "name": "IsShared",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否单独购买，1-单独购买，2-未单独购买",
+          "example": "2",
+          "member": "int64",
+          "name": "IsSelfBuy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额来源账号",
+          "example": "116732198",
+          "member": "int64",
+          "name": "ShareFromAppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商类型\n0:腾讯云\n1:亚马逊云\n2:微软云\n3:谷歌云\n4:阿里云\n5:华为云",
+          "example": "",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UserCSPMInfo": {
       "document": "账号CSPM信息",

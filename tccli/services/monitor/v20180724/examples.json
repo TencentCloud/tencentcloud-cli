@@ -40,6 +40,14 @@
         "title": "强制销毁 Grafana 实例"
       }
     ],
+    "CreateAlarmHistoryShield": [
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarmHistoryShield\n<公共请求参数>\n\n{\n    \"Module\": \"xyz\",\n    \"Name\": \"exampleName\",\n    \"MonitorType\": \"exampleMonitorType\",\n    \"NameSpace\": \"exampleNamespace\",\n    \"ShieldObject\": [\n        \"exampleObject\"\n    ],\n    \"ShieldPolicyId\": \"examplePolicyId\",\n    \"ShieldMetric\": [\n        \"exampleMetric\"\n    ],\n    \"ShieldTimeType\": \"exampleTimeType\",\n    \"StartTime\": 1620000000,\n    \"EndTime\": 1620003600,\n    \"LoopStartDate\": 1620000000,\n    \"LoopEndDate\": 1620003600,\n    \"ShieldAlarmLevel\": \"high\",\n    \"Description\": \"This is an example description.\",\n    \"TimeZone\": 8,\n    \"MetricName\": \"exampleMetricName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83716565-3baf-4d13-b633-73707dd93d02\",\n        \"ShieldId\": \"Shield-3ham9evt0k\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "CreateAlarmNotice": [
       {
         "document": "",
@@ -382,6 +390,14 @@
         "title": "授权腾讯云用户"
       }
     ],
+    "DeleteAlarmHistoryShields": [
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarmHistoryShields\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"Shields\": [\n        \"Shield-oxnhzol0kd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"271b2eb0-a2ec-47a1-946f-9e551442a767\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "DeleteAlarmNotices": [
       {
         "document": "删除两个告警通知模板",
@@ -578,6 +594,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmHistories\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"StartTime\": 1598976507,\n    \"EndTime\": 1599019707,\n    \"MonitorTypes\": [\n        \"MT_QCE\"\n    ],\n    \"Namespaces\": [\n        {\n            \"MonitorType\": \"MT_QCE\",\n            \"Namespace\": \"cvm_device\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"Histories\": [\n            {\n                \"AlarmId\": \"23456789-12ab-45cd-8ef0-123456789\",\n                \"MonitorType\": \"cvm\",\n                \"Namespace\": \"cvm_device\",\n                \"AlarmObject\": \"ins-123456\",\n                \"Content\": \"实例 ins-123456 CPU 使用率过高\",\n                \"FirstOccurTime\": 1672531200,\n                \"LastOccurTime\": 1672534800,\n                \"AlarmStatus\": \"2\",\n                \"PolicyId\": \"policy-123456\",\n                \"PolicyName\": \"云服务器 CPU 使用率告警策略\",\n                \"VPC\": \"vpc-123456\",\n                \"ProjectId\": 12345,\n                \"ProjectName\": \"项目 A\",\n                \"InstanceGroup\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"生产环境实例组\"\n                    }\n                ],\n                \"ReceiverUids\": [\n                    1001,\n                    1002\n                ],\n                \"ReceiverGroups\": [\n                    2001\n                ],\n                \"NoticeWays\": [\n                    \"sms\",\n                    \"email\"\n                ],\n                \"OriginId\": \"1234567890\",\n                \"AlarmType\": \"metric_alarm\",\n                \"EventId\": 123456,\n                \"Region\": \"ap-guangzhou\",\n                \"PolicyExists\": 1,\n                \"MetricsInfo\": [\n                    {\n                        \"QceNamespace\": \"qce/cvm\",\n                        \"MetricName\": \"cpu_utilization\",\n                        \"Period\": 60,\n                        \"Value\": \"80\",\n                        \"Description\": \"云服务器 CPU 使用率指标\"\n                    }\n                ],\n                \"Dimensions\": \"{\\\"InstanceId\\\":\\\"ins-123456\\\"}\",\n                \"AlarmLevel\": \"high\"\n            }\n        ],\n        \"RequestId\": \"1234567890abcdef\"\n    }\n}",
         "title": "查询“云服务器-基础监控”的告警历史"
+      }
+    ],
+    "DescribeAlarmHistoryShield": [
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmHistoryShield\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"ShieldPolicyId\": \"2754411\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CurrentStatus\": \"EXPIRED\",\n        \"Enable\": 1,\n        \"EndTime\": 1728577188,\n        \"LoopEndDate\": 0,\n        \"LoopStartDate\": 0,\n        \"MetricName\": \"cpu_usage\",\n        \"MonitorType\": \"MT_QCE\",\n        \"MonitorTypeShowName\": \"云产品监控\",\n        \"Name\": \"\",\n        \"NameSpace\": \"cvm_device\",\n        \"NameSpaceShowName\": \"云服务器-基础监控\",\n        \"RequestId\": \"3e08f0cc-7123-4274-8026-8e7fa147379a\",\n        \"ShieldAlarmLevel\": null,\n        \"ShieldId\": \"Shield-hbvoj4siyh\",\n        \"ShieldMetric\": null,\n        \"ShieldObject\": [\n            \"{\\\"appid\\\":\\\"251000916\\\"\",\n            \"\\\"projectid\\\":\\\"0\\\"\",\n            \"\\\"vm_uuid\\\":\\\"b08d0134-3803-48ce-ba67-5cb38f0dd7d2\\\"}\"\n        ],\n        \"ShieldPolicyId\": \"2754411\",\n        \"ShieldTag\": \"ALARMHISTORY\",\n        \"ShieldTimeType\": \"PERIOD_SHIELD\",\n        \"StartTime\": 1728573588,\n        \"TimeZone\": 8\n    }\n}",
+        "title": "测试"
       }
     ],
     "DescribeAlarmMetrics": [
@@ -1254,6 +1278,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallPlugins\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Plugins\": [\n        {\n            \"PluginId\": \"grafana-clock-panel\",\n            \"Version\": \"1.2.0\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"PluginIds\": [\n            \"grafana-clock-panel\"\n        ],\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "安装 Grafana 插件"
+      }
+    ],
+    "ModifyAlarmHistoryShield": [
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmHistoryShield\n<公共请求参数>\n\n{\n    \"Module\": \"xyz\",\n    \"Name\": \"exampleName\",\n    \"MonitorType\": \"exampleMonitorType\",\n    \"NameSpace\": \"exampleNamespace\",\n    \"ShieldObject\": [\n        \"exampleObject\"\n    ],\n    \"ShieldPolicyId\": \"examplePolicyId\",\n    \"ShieldId\": \"shield-xxx\",\n    \"ShieldTimeType\": \"exampleTimeType\",\n    \"StartTime\": 1620000000,\n    \"EndTime\": 1620003600,\n    \"LoopStartDate\": 1620000000,\n    \"LoopEndDate\": 1620003600,\n    \"ShieldAlarmLevel\": \"high\",\n    \"TimeZone\": 8,\n    \"MetricName\": \"exampleMetricName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"55591ca4-f797-43ac-b1af-3b09ca24091f\"\n    }\n}",
+        "title": "测试"
       }
     ],
     "ModifyAlarmNotice": [

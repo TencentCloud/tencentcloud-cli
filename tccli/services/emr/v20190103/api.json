@@ -3916,6 +3916,24 @@
           "name": "EnableSparkAppMonitorInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>已有EMR资源节点组Id列表</p>",
+          "example": "[\"ng-asic12da\"]",
+          "member": "string",
+          "name": "ComputeResourceGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启实例保护</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TerminateProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10741,6 +10759,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启HistoryServer</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHistoryServer",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12478,6 +12507,89 @@
           "example": "-Xms4g -Xmx8g -XX:MaxDirectMemorySize=8g -XX:+UseG1GC",
           "member": "string",
           "name": "JvmOptions",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GpuImageDriverSpec": {
+      "document": "GPU机型镜像与驱动配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像ID</p>",
+          "example": "img-eb30mz89",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>驱动名称</p>",
+          "example": "NVIDIA-Linux-x86_64-580.126.20.run",
+          "member": "string",
+          "name": "DriverName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>驱动版本</p>",
+          "example": "580.126.20",
+          "member": "string",
+          "name": "DriverVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CUDA名称</p>",
+          "example": "cuda_12.8.1_570.124.06_linux.run",
+          "member": "string",
+          "name": "CUDAName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CUDA版本</p>",
+          "example": "12.8.1",
+          "member": "string",
+          "name": "CUDAVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CUDNN名称</p>",
+          "example": "cudnn-linux-x86_64-9.10.2.21_cuda12-archive.tar.xz",
+          "member": "string",
+          "name": "CUDNNName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CUDNN版本</p>",
+          "example": "9.10.2",
+          "member": "string",
+          "name": "CUDNNVersion",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -21567,6 +21679,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义主机名</p>",
+          "example": "tasktest测试",
+          "member": "string",
+          "name": "CustomNodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU镜像驱动配置</p>",
+          "example": "无",
+          "member": "GpuImageDriverSpec",
+          "name": "GpuImageDriver",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -26121,7 +26255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "hadoop",
           "member": "string",
           "name": "UserName",
@@ -26131,7 +26265,7 @@
         },
         {
           "disabled": false,
-          "document": "用户所属的组",
+          "document": "<p>用户所属的组</p>",
           "example": "hadoop",
           "member": "string",
           "name": "UserGroup",
@@ -26141,7 +26275,7 @@
         },
         {
           "disabled": false,
-          "document": "Manager表示管理员、NormalUser表示普通用户",
+          "document": "<p>Manager表示管理员、NormalUser表示普通用户</p>",
           "example": "NormalUser",
           "member": "string",
           "name": "UserType",
@@ -26151,7 +26285,7 @@
         },
         {
           "disabled": false,
-          "document": "用户创建时间",
+          "document": "<p>用户创建时间</p>",
           "example": "2022-04-28 18:08:28",
           "member": "string",
           "name": "CreateTime",
@@ -26161,7 +26295,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义",
+          "document": "<p>是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义</p>",
           "example": "true",
           "member": "bool",
           "name": "SupportDownLoadKeyTab",
@@ -26171,12 +26305,82 @@
         },
         {
           "disabled": false,
-          "document": "keytab文件的下载地址",
+          "document": "<p>keytab文件的下载地址</p>",
           "example": "https://image-xxx.cos.region.xx.com/12323/someone.keytab",
           "member": "string",
           "name": "DownLoadKeyTabUrl",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组</p>",
+          "example": "[\"group1\"]",
+          "member": "string",
+          "name": "Groups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户UIN</p>",
+          "example": "1283471221",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户状态</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示密码更新时间</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DisplayPasswdUpdateTime",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码最近更新时间</p>",
+          "example": "2026-08-21 16:07:54",
+          "member": "string",
+          "name": "PasswdUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已经使用的天数</p><p>单位：天</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PasswdUsedDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已经使用的小时数</p><p>单位：时</p>",
+          "example": "15",
+          "member": "int64",
+          "name": "PasswdUsedHour",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

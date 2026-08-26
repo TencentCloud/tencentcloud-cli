@@ -4648,7 +4648,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>计费类型</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 目标计费类型为按量计费</li><li>PREPAID： 目标计费类型为包年包月计费</li></ul>",
+          "document": "<p>计费类型</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 目标计费类型为按量计费</li><li>PREPAID： 目标计费类型为包年包月计费</li><li>UNDERWRITE： 目标计费类型为包销计费</li></ul>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",

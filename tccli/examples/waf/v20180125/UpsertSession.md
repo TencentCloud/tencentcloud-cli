@@ -1,4 +1,4 @@
-**Example 1: Waf  会话定义 Upsert接口**
+**Example 1: 新增会话定义**
 
 
 
@@ -22,6 +22,7 @@ Output:
 {
     "Response": {
         "Data": "success",
+        "SessionID": 200000001,
         "RequestId": "5029e2b0-493c-4dcc-9e4e-d53ab98ede99"
     }
 }

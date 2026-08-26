@@ -27162,6 +27162,15 @@
           "name": "EngineTypeDetail",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源ID</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "DatasourceId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

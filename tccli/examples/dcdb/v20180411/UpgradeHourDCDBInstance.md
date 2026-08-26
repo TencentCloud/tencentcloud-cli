@@ -1,23 +1,27 @@
-**Example 1: 升级TDSQL按量计费实例**
+**Example 1: 扩容调用成功示例**
 
-升级TDSQL按量计费实例
+
 
 Input: 
 
 ```
 tccli dcdb UpgradeHourDCDBInstance --cli-unfold-argument  \
-    --InstanceId dcdbt-fdpjf5zh \
-    --UpgradeType ADD \
-    --AddShardConfig.ShardCount 2 \
-    --AddShardConfig.ShardMemory 2 \
-    --AddShardConfig.ShardStorage 10
+    --InstanceId tdsqlshard-8q7j1jpih1 \
+    --UpgradeType EXPAND \
+    --ExpandShardConfig.ShardInstanceIds shard-ezn4l0i8mf \
+    --ExpandShardConfig.ShardMemory 2 \
+    --ExpandShardConfig.ShardStorage 35 \
+    --ExpandShardConfig.ShardNodeCount 2 \
+    --SwitchStartTime 2026-08-20 18:00:00 \
+    --SwitchEndTime 2026-08-20 18:15:00 \
+    --SwitchInterval 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a"
+        "RequestId": "c0748a45-727c-49e1-bdbc-20b5e7fd508e"
     }
 }
 ```

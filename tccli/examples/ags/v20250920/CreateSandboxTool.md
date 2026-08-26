@@ -1,4 +1,4 @@
-**Example 1: 创建沙箱工具**
+**Example 1: 创建tool**
 
 
 
@@ -6,48 +6,41 @@ Input:
 
 ```
 tccli ags CreateSandboxTool --cli-unfold-argument  \
-    --ToolName browser-sandbox \
-    --ToolType browser \
-    --Description 浏览器沙箱环境 \
-    --DefaultTimeout 30m \
-    --NetworkConfiguration.NetworkMode PUBLIC \
-    --Tags.0.Key Environment \
-    --Tags.0.Value Production \
-    --Tags.1.Key Team \
-    --Tags.1.Value AI-Agent \
-    --ClientToken unique-token-123
+    --ToolName demo-tst \
+    --ToolType waa \
+    --NetworkConfiguration.NetworkMode PUBLIC
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ToolId": "sdt-ee4ywozw",
-        "RequestId": "custom-request-id-123"
+        "ToolId": "sdt-mm3241p7",
+        "RequestId": "1d3f073a-3d3e-4a10-8628-f94020498665"
     }
 }
 ```
 
-**Example 2: 创建并关联访问策略的沙箱工具**
+**Example 2: 创建自定义镜像的tool**
 
-创建沙箱工具时关联两条访问策略。
+
 
 Input: 
 
 ```
 tccli ags CreateSandboxTool --cli-unfold-argument  \
-    --ToolName browser-policy-sandbox \
-    --ToolType browser \
+    --ToolName tool_img_tst \
+    --ToolType waa \
     --NetworkConfiguration.NetworkMode PUBLIC \
-    --ClientToken create-tool-with-access-policy-example
+    --ComputerConfiguration.WAAConfiguration.ImageId img-pamebyja
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ToolId": "sdt-policy123",
-        "RequestId": "req-create-tool-policy-example"
+        "ToolId": "sdt-p8auk8v3",
+        "RequestId": "75310f95-d0ff-4756-891e-6c0e8b0c64f2"
     }
 }
 ```

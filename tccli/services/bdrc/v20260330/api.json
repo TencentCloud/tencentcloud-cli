@@ -3123,7 +3123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份策略ID",
+          "document": "<p>备份策略ID</p>",
           "example": "asp-19fxiaxi",
           "member": "string",
           "name": "PolicyId",
@@ -3132,16 +3132,16 @@
         },
         {
           "disabled": false,
-          "document": "备份库ID",
+          "document": "<p>备份库ID</p>",
           "example": "vault-qjhn63ku",
           "member": "string",
           "name": "BackupStorageId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "计划名称",
+          "document": "<p>计划名称</p>",
           "example": "brc-plan",
           "member": "string",
           "name": "PlanName",
@@ -3150,12 +3150,21 @@
         },
         {
           "disabled": false,
-          "document": "实例配置列表，[1,20]",
+          "document": "<p>实例配置列表，[1,20]</p>",
           "example": "无",
           "member": "ResourcePlan",
           "name": "Resources",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>",
+          "example": "CVM_AGENT",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3165,7 +3174,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份计划 ID 列表",
+          "document": "<p>备份计划 ID 列表</p>",
           "example": "[\"fbp-x0sxkaid\"]",
           "member": "string",
           "name": "PlanIds",

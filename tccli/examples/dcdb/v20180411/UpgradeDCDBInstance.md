@@ -1,4 +1,4 @@
-**Example 1: 升级分布式数据库**
+**Example 1: 分布式垂直扩容示例**
 
 
 
@@ -6,20 +6,23 @@ Input:
 
 ```
 tccli dcdb UpgradeDCDBInstance --cli-unfold-argument  \
-    --InstanceId dcdbt-fdpjf5zh \
-    --UpgradeType ADD \
-    --AddShardConfig.ShardCount 2 \
-    --AddShardConfig.ShardMemory 2 \
-    --AddShardConfig.ShardStorage 10 \
-    --AutoVoucher false
+    --InstanceId tdsqlshard-8q7j1jpih1 \
+    --UpgradeType EXPAND \
+    --ExpandShardConfig.ShardInstanceIds shard-ezn4l0i8mf \
+    --ExpandShardConfig.ShardMemory 2 \
+    --ExpandShardConfig.ShardStorage 20 \
+    --ExpandShardConfig.ShardNodeCount 2 \
+    --SwitchStartTime 2026-08-20 18:00:00 \
+    --SwitchEndTime 2026-08-20 18:15:00 \
+    --SwitchInterval 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a",
-        "DealName": "20180103110035"
+        "DealName": "20260820013023408391271",
+        "RequestId": "01f590d7-6046-4625-b4ac-b72ed110aeff"
     }
 }
 ```
