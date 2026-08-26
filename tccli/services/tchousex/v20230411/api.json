@@ -9064,6 +9064,15 @@
           "name": "MaxResourceUsage",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业ID</p>",
+          "example": "job-xx",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15290,6 +15299,56 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TotalBytesRead</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TotalBytesRead",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>QueryCompilationTime</p>",
+          "example": "0",
+          "member": "string",
+          "name": "QueryCompilationTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TotalCacheHitPercentage</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TotalCacheHitPercentage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PeakMem</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PeakMem",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ShuffleBytes</p>",
+          "example": "0",
+          "member": "string",
+          "name": "ShuffleBytes",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15449,6 +15508,51 @@
           "name": "MaxDuration",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据读取数据量排序</p>",
+          "example": "desc、asc",
+          "member": "string",
+          "name": "TotalBytesReadOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据查询编译耗时排序</p>",
+          "example": "desc、asc",
+          "member": "string",
+          "name": "QueryCompilationTimeOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据缓存命中率排序</p>",
+          "example": "desc、asc",
+          "member": "string",
+          "name": "TotalCacheHitPercentageOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据峰值内存排序</p>",
+          "example": "desc、asc",
+          "member": "string",
+          "name": "PeakMemOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据 shuffle 数据量排序</p>",
+          "example": "desc、asc",
+          "member": "string",
+          "name": "ShuffleBytesOrder",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

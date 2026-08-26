@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli goosefs BuildClientNodeMountCommand --cli-unfold-argument  \
-    --FileSystemId x-c60-a2b3d4 \
-    --CustomMountDir /train_data
+    --FileSystemId x-c60-053lg6hi \
+    --CustomMountDir /test1 \
+    --ClusterId x-c60-053lg6hi-client-cluster-default
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Command": "wget https://goosefsx-bucket-12510000.cos.ap-beijing.myqcloud.com/client_env_package/agent/install-goosefsx-client.sh；chmod +x install-goosefsx-client.sh; ./install-goosefsx-client.sh; 172.3.1.2:55533,172.3.1.3:55533,172.3.1.4:55533 /train_data",
-        "RequestId": "c579ea0b-d04f-4cc0-a6e2-fc6bad036017"
+        "Command": "wget https://gfsx-cfg-bj-***-**********.cos.ap-beijing.myqcloud.com/client_env_package/agent/install-goosefsx-client.sh; chmod +x install-goosefsx-client.sh; ./install-goosefsx-client.sh 10.3.30.109:55533,10.3.30.161:55533,10.3.30.181:55533 /test1",
+        "RequestId": "92084d7c-416b-4aca-b10e-821df90aeec4"
     }
 }
 ```

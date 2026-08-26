@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor DeleteOnCallForms --cli-unfold-argument  \
-    --Module abc \
-    --OnCallFormIDs abc
+    --Module monitor \
+    --OnCallFormIDs form-zahdhgjo form-adhdhgjc
 ```
 
 Output: 
@@ -15,12 +15,12 @@ Output:
 {
     "Response": {
         "FailedOnCallFormIDs": [
-            "abc"
+            "form-zahdhgjo"
         ],
         "SuccessOnCallFormIDs": [
-            "abc"
+            "form-adhdhgjc"
         ],
-        "RequestId": "abc"
+        "RequestId": "e3873490-7ca2-4efc-8792-77"
     }
 }
 ```

@@ -1,4 +1,4 @@
-**Example 1: 创建接口调用示例**
+**Example 1: 调用**
 
 
 
@@ -6,19 +6,22 @@ Input:
 
 ```
 tccli goosefs CreateDataRepositoryTask --cli-unfold-argument  \
-    --TaskType FS_TO_COS \
-    --Bucket goosefsx-bj-df-test02-1252246555 \
-    --FileSystemId x-c60-3980hscb \
-    --TaskPath ace_test/ \
-    --TaskName ace测试
+    --TaskType COS_TO_FS \
+    --Bucket ace-bj-donot-del-xxxxx \
+    --FileSystemId x-c60-xxxx \
+    --TaskPath dup/ \
+    --TaskName 预热测试_1 \
+    --EnableCustomDestPath False \
+    --OutputBucket ace-bj-donot-del-xxxxx \
+    --OutputPrefix data-repository-task-results/
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "x_task_1782965149652",
-        "RequestId": "64ba388d-d33e-4194-8006-81b1cc2d1a00"
+        "TaskId": "x_task_1787660399825",
+        "RequestId": "17015b3c-9d94-4c0a-8e00-5d53cc86fca5"
     }
 }
 ```

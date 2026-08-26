@@ -43,3 +43,36 @@ Output:
 }
 ```
 
+**Example 2: 创建互联网边界规则组（地址簿）**
+
+
+
+Input: 
+
+```
+tccli fwm CreateEdgeAclRuleGroup --cli-unfold-argument  \
+    --GroupName one \
+    --Product cfw_edge_acl \
+    --Rules.0.OrderIndex 1 \
+    --Rules.0.Direction 1 \
+    --Rules.0.SourceContent 0.0.0.0/0 \
+    --Rules.0.SourceType net \
+    --Rules.0.TargetContent fwmipt-04qx4ugtau \
+    --Rules.0.TargetType addressbook \
+    --Rules.0.Port -1/-1 \
+    --Rules.0.Protocol TCP \
+    --Rules.0.RuleAction accept \
+    --Rules.0.Description zero \
+    --Rules.0.Scope all
+```
+
+Output: 
+```
+{
+    "Response": {
+        "GroupId": "fwmrg-cuj7peunsf",
+        "RequestId": "ed023b6c-15c2-4a02-8403-ebc69fd0d4d2"
+    }
+}
+```
+

@@ -5330,7 +5330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -5339,8 +5339,8 @@
         },
         {
           "disabled": false,
-          "document": "值班表名称",
-          "example": "form-12345",
+          "document": "<p>值班表名称</p>",
+          "example": "form-zahdhgjo",
           "member": "string",
           "name": "OnCallFormName",
           "required": true,
@@ -5348,7 +5348,7 @@
         },
         {
           "disabled": false,
-          "document": "值班人员id组",
+          "document": "<p>值班人员id组</p>",
           "example": "无",
           "member": "StaffInfo",
           "name": "StaffInfos",
@@ -5357,8 +5357,8 @@
         },
         {
           "disabled": false,
-          "document": "轮转类型",
-          "example": "无",
+          "document": "<p>轮转类型</p>",
+          "example": "day",
           "member": "string",
           "name": "RotationType",
           "required": true,
@@ -5366,7 +5366,7 @@
         },
         {
           "disabled": false,
-          "document": "换班时间",
+          "document": "<p>换班时间</p>",
           "example": "12:00",
           "member": "string",
           "name": "ShiftTime",
@@ -5375,7 +5375,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期开始时间，单位s",
+          "document": "<p>有效期开始时间，单位s</p>",
           "example": "1648742400",
           "member": "int64",
           "name": "EffectiveStartTime",
@@ -5384,7 +5384,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期结束时间，单位s",
+          "document": "<p>有效期结束时间，单位s</p>",
           "example": "1649520000",
           "member": "int64",
           "name": "EffectiveEndTime",
@@ -5393,7 +5393,7 @@
         },
         {
           "disabled": false,
-          "document": "时区(-12 - 12)",
+          "document": "<p>时区(-12 - 12)</p>",
           "example": "9",
           "member": "float",
           "name": "TimeZone",
@@ -5402,8 +5402,8 @@
         },
         {
           "disabled": false,
-          "document": "值班表描述",
-          "example": "无",
+          "document": "<p>值班表描述</p>",
+          "example": "值班分组",
           "member": "string",
           "name": "OnCallFormDesc",
           "required": false,
@@ -5411,7 +5411,7 @@
         },
         {
           "disabled": false,
-          "document": "轮班信息",
+          "document": "<p>轮班信息</p>",
           "example": "无",
           "member": "CoverStaffInfo",
           "name": "CoverStaffInfos",
@@ -5420,7 +5420,7 @@
         },
         {
           "disabled": false,
-          "document": "模板绑定的标签",
+          "document": "<p>模板绑定的标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -5435,8 +5435,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "值班表id",
-          "example": "form-12345",
+          "document": "<p>值班表id</p>",
+          "example": "form-zahdhgjo",
           "member": "string",
           "name": "OnCallFormID",
           "output_required": true,
@@ -7113,7 +7113,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -7122,8 +7122,8 @@
         },
         {
           "disabled": false,
-          "document": "要删除的值班表id",
-          "example": "无",
+          "document": "<p>要删除的值班表id</p>",
+          "example": "[\"form-zahdhgjo\",\"form-adhdhgjc\"]",
           "member": "string",
           "name": "OnCallFormIDs",
           "required": true,
@@ -7137,8 +7137,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "失败删除的排班id",
-          "example": "无",
+          "document": "<p>失败删除的排班id</p>",
+          "example": "[\"form-zahdhgjo\"]",
           "member": "string",
           "name": "FailedOnCallFormIDs",
           "type": "list",
@@ -7146,8 +7146,8 @@
         },
         {
           "disabled": false,
-          "document": "成功删除的排班id",
-          "example": "无",
+          "document": "<p>成功删除的排班id</p>",
+          "example": "[\"form-adhdhgjc\"]",
           "member": "string",
           "name": "SuccessOnCallFormIDs",
           "type": "list",
@@ -11551,7 +11551,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -11560,8 +11560,8 @@
         },
         {
           "disabled": false,
-          "document": "值班id",
-          "example": "无",
+          "document": "<p>值班id</p>",
+          "example": "form-zahdhgjo",
           "member": "string",
           "name": "OnCallFormID",
           "required": true,
@@ -11575,7 +11575,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "值班详情",
+          "document": "<p>值班详情</p>",
           "example": "无",
           "member": "OneOnCallForm",
           "name": "OnCallForm",
@@ -11596,8 +11596,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
-          "example": "无",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -11605,8 +11605,8 @@
         },
         {
           "disabled": false,
-          "document": "分页查询起始位",
-          "example": "无",
+          "document": "<p>分页查询起始位</p>",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -11614,8 +11614,8 @@
         },
         {
           "disabled": false,
-          "document": "分页查询页数",
-          "example": "无",
+          "document": "<p>分页查询页数</p>",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -11623,8 +11623,8 @@
         },
         {
           "disabled": false,
-          "document": "支持userId进行检索",
-          "example": "无",
+          "document": "<p>支持userId进行检索</p>",
+          "example": "[\"317528\"]",
           "member": "string",
           "name": "OnCallFormStaffIDs",
           "required": false,
@@ -11632,8 +11632,8 @@
         },
         {
           "disabled": false,
-          "document": "值班类型",
-          "example": "无",
+          "document": "<p>值班类型</p>",
+          "example": "day",
           "member": "string",
           "name": "RotationType",
           "required": false,
@@ -11641,8 +11641,8 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
-          "example": "无",
+          "document": "<p>排序方式</p>",
+          "example": "desc",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -11650,8 +11650,8 @@
         },
         {
           "disabled": false,
-          "document": "支持id、name进行检索",
-          "example": "无",
+          "document": "<p>支持id、name进行检索</p>",
+          "example": "值班分组",
           "member": "string",
           "name": "OnCallFormName",
           "required": false,
@@ -11665,7 +11665,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "排班信息",
+          "document": "<p>排班信息</p>",
           "example": "无",
           "member": "OnCallForm",
           "name": "OnCallForms",
@@ -11674,8 +11674,8 @@
         },
         {
           "disabled": false,
-          "document": "总数",
-          "example": "无",
+          "document": "<p>总数</p>",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
@@ -27008,7 +27008,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -27017,8 +27017,8 @@
         },
         {
           "disabled": false,
-          "document": "值班表id",
-          "example": "form-12345",
+          "document": "<p>值班表id</p>",
+          "example": "form-zahdhgjo",
           "member": "string",
           "name": "OnCallFormID",
           "required": true,
@@ -27026,8 +27026,8 @@
         },
         {
           "disabled": false,
-          "document": "值班表名称",
-          "example": "test",
+          "document": "<p>值班表名称</p>",
+          "example": "值班分组",
           "member": "string",
           "name": "OnCallFormName",
           "required": true,
@@ -27035,7 +27035,7 @@
         },
         {
           "disabled": false,
-          "document": "值班人员id组",
+          "document": "<p>值班人员id组</p>",
           "example": "无",
           "member": "StaffInfo",
           "name": "StaffInfos",
@@ -27044,7 +27044,7 @@
         },
         {
           "disabled": false,
-          "document": "轮转类型",
+          "document": "<p>轮转类型</p>",
           "example": "day/week",
           "member": "string",
           "name": "RotationType",
@@ -27053,7 +27053,7 @@
         },
         {
           "disabled": false,
-          "document": "换班时间",
+          "document": "<p>换班时间</p>",
           "example": "12:00",
           "member": "string",
           "name": "ShiftTime",
@@ -27062,7 +27062,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期开始时间，单位s",
+          "document": "<p>有效期开始时间，单位s</p>",
           "example": "1648742400",
           "member": "int64",
           "name": "EffectiveStartTime",
@@ -27071,7 +27071,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期结束时间，单位s",
+          "document": "<p>有效期结束时间，单位s</p>",
           "example": "1649520000",
           "member": "int64",
           "name": "EffectiveEndTime",
@@ -27080,8 +27080,8 @@
         },
         {
           "disabled": false,
-          "document": "时区(-12 - 12)",
-          "example": "无",
+          "document": "<p>时区(-12 - 12)</p>",
+          "example": "8",
           "member": "float",
           "name": "TimeZone",
           "required": true,
@@ -27089,8 +27089,8 @@
         },
         {
           "disabled": false,
-          "document": "值班表描述",
-          "example": "无",
+          "document": "<p>值班表描述</p>",
+          "example": "值班分组",
           "member": "string",
           "name": "OnCallFormDesc",
           "required": false,
@@ -27098,7 +27098,7 @@
         },
         {
           "disabled": false,
-          "document": "轮班信息",
+          "document": "<p>轮班信息</p>",
           "example": "无",
           "member": "CoverStaffInfo",
           "name": "CoverStaffInfos",
@@ -27113,10 +27113,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "值班表id",
+          "document": "<p>值班表id</p>",
           "example": "form-12345",
           "member": "string",
           "name": "OnCallFormID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

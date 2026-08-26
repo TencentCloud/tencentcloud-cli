@@ -371,6 +371,13 @@
       "output": "DescribeMaskRulesSTDV2Response",
       "status": "online"
     },
+    "DescribeMetaDBInfo": {
+      "document": "集群metadb数据",
+      "input": "DescribeMetaDBInfoRequest",
+      "name": "获取集群db数据",
+      "output": "DescribeMetaDBInfoResponse",
+      "status": "online"
+    },
     "DescribeNodeDataDisks": {
       "document": "查询节点数据盘信息",
       "input": "DescribeNodeDataDisksRequest",
@@ -5221,6 +5228,15 @@
           "name": "EnableCbsSysEncryptFlag",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义metadb数据</p>",
+          "example": "无",
+          "member": "CustomMetaDBInfo",
+          "name": "MetaDBGroupInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8436,7 +8452,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "emr-cf5zdrxk",
           "member": "string",
           "name": "InstanceId",
@@ -8445,7 +8461,7 @@
         },
         {
           "disabled": false,
-          "document": "指定需要导出的配置",
+          "document": "<p>指定需要导出的配置</p>",
           "example": "无",
           "member": "ExportConfContext",
           "name": "ExportConfContexts",
@@ -8454,8 +8470,8 @@
         },
         {
           "disabled": false,
-          "document": "配置组id",
-          "example": "无",
+          "document": "<p>配置组id</p>",
+          "example": "0",
           "member": "uint64",
           "name": "ConfGroupId",
           "required": false,
@@ -8463,8 +8479,8 @@
         },
         {
           "disabled": false,
-          "document": "导出类型",
-          "example": "无",
+          "document": "<p>导出类型</p><p>枚举值：</p><ul><li>0： 全部配置</li><li>1： 只导出自定义和修改过的配置</li></ul>",
+          "example": "0",
           "member": "int64",
           "name": "ExportType",
           "required": false,
@@ -8472,8 +8488,8 @@
         },
         {
           "disabled": false,
-          "document": "节点ip",
-          "example": "无",
+          "document": "<p>节点ip</p>",
+          "example": "10.0.10.210",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -8481,12 +8497,21 @@
         },
         {
           "disabled": false,
-          "document": "是否内部调用",
-          "example": "无",
+          "document": "<p>是否内部调用</p>",
+          "example": "true",
           "member": "bool",
           "name": "InnerCall",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置组名称</p>",
+          "example": "yarn-core-defaultGroup",
+          "member": "string",
+          "name": "ConfGroupName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8496,7 +8521,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导出配置参数",
+          "document": "<p>导出配置参数</p>",
           "example": "无",
           "member": "ExportConfMeta",
           "name": "ExportConfParamList",
@@ -8506,7 +8531,7 @@
         },
         {
           "disabled": false,
-          "document": "导出原格式配置文件列表",
+          "document": "<p>导出原格式配置文件列表</p>",
           "example": "无",
           "member": "ExportOriginalConf",
           "name": "ExportConfFileParamList",
@@ -10093,6 +10118,43 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetaDBInfoRequest": {
+      "document": "DescribeMetaDBInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "emr-pxsbezre",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetaDBInfoResponse": {
+      "document": "DescribeMetaDBInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义db数据</p>",
+          "example": "无",
+          "member": "CustomMetaDBInfo",
+          "name": "MetaDBGroupInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -14524,23 +14586,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务配置",
-          "example": "",
+          "document": "<p>服务配置</p>",
+          "example": "1",
           "member": "int64",
           "name": "ServiceType",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "文件名",
-          "example": "",
+          "document": "<p>文件名</p>",
+          "example": "test.xml",
           "member": "string",
           "name": "FileName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "yarn",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -14550,46 +14619,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "组件名称",
-          "example": "",
+          "document": "<p>组件名称</p>",
+          "example": "YARN",
           "member": "string",
           "name": "ServiceName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "文件名",
-          "example": "",
+          "document": "<p>文件名</p>",
+          "example": "yarn-env.sh",
           "member": "string",
           "name": "Classification",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "组件版本",
-          "example": "",
+          "document": "<p>组件版本</p>",
+          "example": "3.3.5",
           "member": "string",
           "name": "ServiceVersion",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "导出配置参数",
-          "example": "",
+          "document": "<p>导出配置参数</p>",
+          "example": "djsaflda",
           "member": "string",
           "name": "Properties",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ExportOriginalConf": {
       "document": "组件和所属配置文件信息",

@@ -30,6 +30,12 @@
         "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeAclRuleGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"edge\",\n    \"Product\": \"cfw_edge_acl\",\n    \"Rules\": [\n        {\n            \"OrderIndex\": 1,\n            \"Direction\": 1,\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"0.0.0.0/0\",\n            \"TargetType\": \"net\",\n            \"Port\": \"-1/-1\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"1212\",\n            \"Scope\": \"all\"\n        },\n        {\n            \"OrderIndex\": 2,\n            \"Direction\": 1,\n            \"SourceContent\": \"bj11\",\n            \"SourceType\": \"location\",\n            \"TargetContent\": \"cfwnat-e366d270\",\n            \"TargetType\": \"instance\",\n            \"Port\": \"-1/-1\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"3232\",\n            \"Scope\": \"all\",\n            \"BelongMemberId\": \"1300448058\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"GroupId\": \"fwmrg_4ae6vv1l7c\",\n        \"RequestId\": \"fcb93770-4c26-4b35-9ded-8daec5b99a19\"\n    }\n}",
         "title": "创建互联网边界规则组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeAclRuleGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"one\",\n    \"Product\": \"cfw_edge_acl\",\n    \"Rules\": [\n        {\n            \"OrderIndex\": 1,\n            \"Direction\": 1,\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"TargetContent\": \"fwmipt-04qx4ugtau\",\n            \"TargetType\": \"addressbook\",\n            \"Port\": \"-1/-1\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Description\": \"zero\",\n            \"Scope\": \"all\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"fwmrg-cuj7peunsf\",\n        \"RequestId\": \"ed023b6c-15c2-4a02-8403-ebc69fd0d4d2\"\n    }\n}",
+        "title": "创建互联网边界规则组（地址簿）"
       }
     ],
     "CreateNatAclRule": [
