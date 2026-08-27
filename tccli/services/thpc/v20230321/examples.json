@@ -192,6 +192,14 @@
         "title": "从集群解绑计算节点"
       }
     ],
+    "InquirePriceCreateWorkspaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateWorkspaces\n<公共请求参数>\n\n{\n    \"SpaceChargeType\": \"PREPAID\",\n    \"SpaceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    },\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\",\n        \"ProjectId\": 0\n    },\n    \"VirtualPrivateCloud\": {\n        \"AsVpcGateway\": false,\n        \"VpcId\": \"vpc-nrqwfyzv\",\n        \"SubnetId\": \"subnet-0tmm4ywk\",\n        \"Ipv6AddressCount\": 0\n    },\n    \"SpaceType\": \"96A.96XLARGE2304\",\n    \"ImageId\": \"img-9qrfy1xt\",\n    \"SystemDisk\": {\n        \"DiskSize\": 50,\n        \"DiskType\": \"CLOUD_PREMIUM\"\n    },\n    \"DataDisks\": [\n        {\n            \"DiskSize\": 50,\n            \"DiskType\": \"CLOUD_PREMIUM\"\n        },\n        {\n            \"DiskSize\": 50,\n            \"DiskType\": \"CLOUD_PREMIUM\"\n        }\n    ],\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": true,\n        \"InternetMaxBandwidthOut\": 5\n    },\n    \"SecurityGroupIds\": [\n        \"sg-fsx9rsr1\"\n    ],\n    \"SpaceCount\": 1,\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": true\n        },\n        \"MonitorService\": {\n            \"Enabled\": true\n        },\n        \"AutomationService\": {\n            \"Enabled\": true\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"SpacePrice\": {\n                \"OriginalPrice\": 123630.3,\n                \"DiscountPrice\": 123630.3,\n                \"Discount\": 100\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.8,\n                \"DiscountUnitPrice\": 0.8,\n                \"ChargeUnit\": \"GB\",\n                \"Discount\": 100\n            }\n        },\n        \"RequestId\": \"dcec1ad4-54a4-4a49-b754-f65cd7274c82\"\n    }\n}",
+        "title": "创建实例询价"
+      }
+    ],
     "InquirePriceModifyWorkspacesChargeType": [
       {
         "document": "",

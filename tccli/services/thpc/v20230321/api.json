@@ -168,6 +168,13 @@
       "output": "DetachNodesResponse",
       "status": "online"
     },
+    "InquirePriceCreateWorkspaces": {
+      "document": "本接口(InquirePriceCreateWorkspaces)用于创建实例询价。",
+      "input": "InquirePriceCreateWorkspacesRequest",
+      "name": "创建工作空间询价",
+      "output": "InquirePriceCreateWorkspacesResponse",
+      "status": "online"
+    },
     "InquirePriceModifyWorkspacesChargeType": {
       "document": "查询按量计费工作空间转换为包年包月的价格。不会创建订单或变更资源。",
       "input": "InquirePriceModifyWorkspacesChargeTypeRequest",
@@ -3115,6 +3122,232 @@
         }
       ],
       "usage": "out"
+    },
+    "InquirePriceCreateWorkspacesRequest": {
+      "document": "InquirePriceCreateWorkspaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。 <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>",
+          "example": "无",
+          "member": "SpacePlacement",
+          "name": "Placement",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "SpaceChargePrepaid",
+          "name": "SpaceChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间计费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "SpaceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间规格",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "img-irmer45l",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间系统盘信息",
+          "example": "无",
+          "member": "SpaceSystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间数据盘信息",
+          "example": "无",
+          "member": "SpaceDataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络相关信息",
+          "example": "无",
+          "member": "SpaceVirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽相关信息设置",
+          "example": "无",
+          "member": "SpaceInternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "购买工作空间数量",
+          "example": "1",
+          "member": "int64",
+          "name": "SpaceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间显示名称",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间登陆设置",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间所属安全组",
+          "example": "[\"sg-ajhn9qtq\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "增强服务",
+          "example": "无",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否只预检此次请求",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "提供给工作空间使用的用户数据",
+          "example": "TXlVc2VyRGF0YQo=",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组id",
+          "example": "['ps-3p88qhfo']",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签描述列表",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群ID",
+          "example": "hpc-a5n666lo",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM角色名称",
+          "example": "testroleName001",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li><br><li>Windows 实例：主机名名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。</li><br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li><br><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server{R:3}`，购买1台时，实例主机名为`server3`；购买2台时，实例主机名分别为`server3`，`server4`。支持指定多个模式串`{R:x}`。</li><br><li>购买多台实例，如果不指定模式串，则在实例主机名添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server`，购买2台时，实例主机名分别为`server1`，`server2`。</li>",
+          "example": "MyHostName",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceCreateWorkspacesResponse": {
+      "document": "InquirePriceCreateWorkspaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该参数表示对应配置实例的价格",
+          "example": "无",
+          "member": "Price",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InquirePriceModifyWorkspacesChargeTypeRequest": {
       "document": "InquirePriceModifyWorkspacesChargeType请求参数结构体",

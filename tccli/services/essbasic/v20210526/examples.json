@@ -1155,9 +1155,9 @@
     "CreateRequestWithEncryption": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRequestWithEncryption\n<公共请求参数>\n\n{\n    \"RequestAction\": \"DescribeFlowComponents\",\n    \"ApplicationId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n    \"IV\": \"mJc2aKe4B71d9p62y6bp2A==\",\n    \"EncryptedData\": \"riUP2CKf+QGCfN9VMjTgCbsPidmXJulBUD8jxdg3YZwecWCF1CTg+4zB1nEICbGPRedPjF0+zZ1ybTDEc/xG/nQ5J7n4+uNiWCCOqRsjDcwzoD1gZ+y1W++qdjjCns/z8SMxciKmSS7h/cL5kwUARg==\",\n    \"EncryptionSignature\": \"vzOw7yV+oAaYBmpbDDGfl7OGxuN3M38IjpJG/mTnEzE=\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EncryptedData\": \"a5iZ2f7i02NJZQ4ErVIxbJffDsp/7mdTX1KcS3SGmWmy6B0MhdJx8sWFsP10RJjgiXyBxBDlPI3GMnFMrXLTgv+FMsNjSegEJwJCHsPQ5fzRkhuA9084LviPMFQuKRIDzGHMnHHCR0PerppIupGlEHXga/Cmn5Tx1YZIGESVf8zPncDGttYB8W8HHLVq4Jcg5s2GdjAW95Vu/vt+crXZBFvppLcYB7hja6xZIwkROkE=\",\n        \"EncryptionSignature\": \"INxBHAiknWJ2tshbEhOGDKjezZMEfhyq6LpSGir4t9s=\",\n        \"IV\": \"E3j3s8oySTLGgWP25IgRZA==\",\n        \"RequestId\": \"1dc99e1d-71f1-4841-a5df-d1cb389d018d\"\n    }\n}",
-        "title": "通过加密请求体进行请求"
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRequestWithEncryption\n<公共请求参数>\n\n{\n    \"RequestAction\": \"ChannelDescribeFlowComponents\",\n    \"ApplicationId\": \"yD******************************\",\n    \"IV\": \"mJc2aKe4B71d9p62y6bp2A==\",\n    \"EncryptedData\": \"riUP2CKf+QGCfN9VMjTgCbsPidmXJulBUD8jxdg3YZwecWCF1CTg+4zB1nEICbGPRedPjF0+zZ1ybTDEc/xG/nQ5J7n4+uNiWCCOqRsjDcwzoD1gZ+y1W++qdjjCns/z8SMxciKmSS7h/cL5kwUARg==\",\n    \"EncryptionSignature\": \"vzOw7yV+oAaYBmpbDDGfl7OGxuN3M38IjpJG/mTnEzE=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EncryptedData\": \"vPMmeHGhjZOh5uBcnTmcsgamkGHPrwVCcf9ifqAp03M/pdi3yalY86ytw5fL1VbUg+97j/DZpcejEld5mq5Qa1Sk+L6WIgKc8Wc2Bu5LNB5ktM6b5Xy09MXdWvxQV0l40XlhEEQ2bNqI/G7AfJpRLxNLRbK2VH/DFy+ga8o6snHQE3OojM3ZQgM6gLcQ/6MudNChL95Bf3SEWnrr4lqKLdZWJxOOj/XR/iQD/VSr1XE=\",\n        \"EncryptionSignature\": \"ReXDVVwCHf1bgoW/al4NAs9r2dzWWfmV0zVNDl1Kne8=\",\n        \"IV\": \"xJVzDCv28EtziawMOIhgGA==\",\n        \"RequestId\": \"b91d7791-644f-4404-984b-b0c8a10e58b0\"\n    }\n}",
+        "title": "以加密请求体方式创建请求"
       }
     ],
     "CreateSealByImage": [

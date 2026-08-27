@@ -2866,6 +2866,15 @@
           "name": "ShareType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品线/云集群类型，取值 ROCKETMQ、MQTT、RABBITMQ。空则不过滤。",
+          "example": "MQTT",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

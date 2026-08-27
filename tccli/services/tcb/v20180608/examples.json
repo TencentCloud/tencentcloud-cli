@@ -854,6 +854,14 @@
         "title": "打开qps按量计费，qps按量计费上限为1200"
       }
     ],
+    "ModifyEnvExtra": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvExtra\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-felixx-d7gokw0dv1c0b0fd6\",\n    \"EnableOverrun\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"319fce36-1aaf-45e6-9727-1cdde881986a\"\n    }\n}",
+        "title": "修改环境按量配额上限"
+      }
+    ],
     "ModifyEnvPlan": [
       {
         "document": "将云开发环境变更为标准版，并自动使用代金券抵扣。\n变配是异步操作，下单成功后，可以通过DescribeBillingInfo接口查到当前环境的套餐是否已生效。",

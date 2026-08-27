@@ -1568,12 +1568,12 @@
       "usage": "out"
     },
     "Account": {
-      "document": "数据库账号信息",
+      "document": "账号信息",
       "members": [
         {
           "disabled": false,
-          "document": "<p>账号名，可输入1 - 32个字符。</p>",
-          "example": "andy1",
+          "document": "账号名称",
+          "example": "testuser",
           "member": "string",
           "name": "User",
           "output_required": false,
@@ -1583,8 +1583,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>账号的主机。</p><p>IP 形式，支持填入%。</p>",
-          "example": "172.1.1.1",
+          "document": "账号的主机地址",
+          "example": "%",
           "member": "string",
           "name": "Host",
           "output_required": false,
@@ -8663,7 +8663,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
           "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
@@ -8672,7 +8672,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库的账号名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
+          "document": "<p>数据库的账号名称。可通过 <a href=\"https://cloud.tencent.com/document/api/236/17499\">DescribeAccounts</a> 接口获取。</p>",
           "example": "ajnnw",
           "member": "string",
           "name": "User",
@@ -8681,7 +8681,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库的账号域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
+          "document": "<p>数据库的账号域名。可通过 <a href=\"https://cloud.tencent.com/document/api/236/17499\">DescribeAccounts</a> 接口获取。</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Host",
@@ -8696,7 +8696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全局权限数组。",
+          "document": "<p>全局权限数组。</p>",
           "example": "[\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"...\",\"TRIGGER\"]",
           "member": "string",
           "name": "GlobalPrivileges",
@@ -8706,8 +8706,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库权限数组。",
-          "example": "[{\"Privileges\": [\"CREATE\",\"DROP\"],\"Database\": \"jersey\"}]",
+          "document": "<p>数据库权限数组。</p>",
+          "example": "无",
           "member": "DatabasePrivilege",
           "name": "DatabasePrivileges",
           "output_required": true,
@@ -8716,8 +8716,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库中的表权限数组。",
-          "example": "[{\"Table\": \"user\",\"Privileges\": [\"SELECT\",\"INSERT\"],\"Database\": \"mysql\"}]",
+          "document": "<p>数据库中的表权限数组。</p>",
+          "example": "无",
           "member": "TablePrivilege",
           "name": "TablePrivileges",
           "output_required": true,
@@ -8726,12 +8726,22 @@
         },
         {
           "disabled": false,
-          "document": "数据库表中的列权限数组。",
-          "example": "[{\"Column\": \"Host\",\"Table\": \"user\",\"Privileges\": [\"SELECT\",\"INSERT\"],\"Database\": \"mysql\"}]",
+          "document": "<p>数据库表中的列权限数组。</p>",
+          "example": "无",
           "member": "ColumnPrivilege",
           "name": "ColumnPrivileges",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号是否拥有 WITH GRANT OPTION 权限</p><p>枚举值：</p><ul><li>true： 拥有 WITH GRANT OPTION 权限</li><li>false： 未拥有 WITH GRANT OPTION 权限</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasWithGrantOption",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -18836,7 +18846,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
           "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
@@ -18845,8 +18855,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库的账号，包括用户名和域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
-          "example": "[{\"User\": \"andy\",\"Host\": \"%\"}]",
+          "document": "<p>数据库的账号，包括用户名和域名。可通过 <a href=\"https://cloud.tencent.com/document/api/236/17499\">DescribeAccounts</a> 接口获取。</p>",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -18854,7 +18864,7 @@
         },
         {
           "disabled": false,
-          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
+          "document": "<p>全局权限。其中，GlobalPrivileges 中权限的可选值为：&quot;SELECT&quot;,&quot;INSERT&quot;,&quot;UPDATE&quot;,&quot;DELETE&quot;,&quot;CREATE&quot;, &quot;PROCESS&quot;, &quot;DROP&quot;,&quot;REFERENCES&quot;,&quot;INDEX&quot;,&quot;ALTER&quot;,&quot;SHOW DATABASES&quot;,&quot;CREATE TEMPORARY TABLES&quot;,&quot;LOCK TABLES&quot;,&quot;EXECUTE&quot;,&quot;CREATE VIEW&quot;,&quot;SHOW VIEW&quot;,&quot;CREATE ROUTINE&quot;,&quot;ALTER ROUTINE&quot;,&quot;EVENT&quot;,&quot;TRIGGER&quot;,&quot;CREATE USER&quot;,&quot;RELOAD&quot;,&quot;REPLICATION CLIENT&quot;,&quot;REPLICATION SLAVE&quot;。<br>注意，ModifyAction为空时，不传该参数表示清除该权限。</p>",
           "example": "[\"SELECT\"]",
           "member": "string",
           "name": "GlobalPrivileges",
@@ -18863,8 +18873,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
-          "example": "[\"SELECT\",\"INSERT\"]",
+          "document": "<p>数据库的权限。Privileges 权限的可选值为：&quot;SELECT&quot;,&quot;INSERT&quot;,&quot;UPDATE&quot;,&quot;DELETE&quot;,&quot;CREATE&quot;,    &quot;DROP&quot;,&quot;REFERENCES&quot;,&quot;INDEX&quot;,&quot;ALTER&quot;,&quot;CREATE TEMPORARY TABLES&quot;,&quot;LOCK TABLES&quot;,&quot;EXECUTE&quot;,&quot;CREATE VIEW&quot;,&quot;SHOW VIEW&quot;,&quot;CREATE ROUTINE&quot;,&quot;ALTER ROUTINE&quot;,&quot;EVENT&quot;,&quot;TRIGGER&quot;。<br>注意，ModifyAction为空时，不传该参数表示清除该权限。</p>",
+          "example": "无",
           "member": "DatabasePrivilege",
           "name": "DatabasePrivileges",
           "required": false,
@@ -18872,8 +18882,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
-          "example": "[\"SELECT\",\"INSERT\"]",
+          "document": "<p>数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：&quot;SELECT&quot;,&quot;INSERT&quot;,&quot;UPDATE&quot;,&quot;DELETE&quot;,&quot;CREATE&quot;,    &quot;DROP&quot;,&quot;REFERENCES&quot;,&quot;INDEX&quot;,&quot;ALTER&quot;,&quot;CREATE VIEW&quot;,&quot;SHOW VIEW&quot;, &quot;TRIGGER&quot;。<br>注意，ModifyAction为空时，不传该参数表示清除该权限。</p>",
+          "example": "无",
           "member": "TablePrivilege",
           "name": "TablePrivileges",
           "required": false,
@@ -18881,8 +18891,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
-          "example": "[\"SELECT\",\"INSERT\"]",
+          "document": "<p>数据库表中列的权限。Privileges 权限的可选值为：&quot;SELECT&quot;,&quot;INSERT&quot;,&quot;UPDATE&quot;,&quot;REFERENCES&quot;。<br>注意，ModifyAction为空时，不传该参数表示清除该权限。</p>",
+          "example": "无",
           "member": "ColumnPrivilege",
           "name": "ColumnPrivileges",
           "required": false,
@@ -18890,10 +18900,19 @@
         },
         {
           "disabled": false,
-          "document": "该参数不为空时，为批量修改权限。可选值为：grant - 授予权限，revoke - 回收权限。",
-          "example": "grant ",
+          "document": "<p>该参数不为空时，为批量修改权限。可选值为：grant - 授予权限，revoke - 回收权限。</p>",
+          "example": "grant",
           "member": "string",
           "name": "ModifyAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否授予WITH GRANT OPTION权限。</p><p>枚举值：</p><ul><li>0： 不授予该权限</li><li>1： 授予该权限</li></ul>",
+          "example": "1",
+          "member": "string",
+          "name": "IsWithGrantOption",
           "required": false,
           "type": "string"
         }
@@ -18905,7 +18924,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "document": "<p>异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。</p>",
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
