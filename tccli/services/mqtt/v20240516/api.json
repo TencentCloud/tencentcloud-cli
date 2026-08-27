@@ -6223,7 +6223,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p>",
           "example": "mqtt-tcp",
           "member": "string",
           "name": "Type",
@@ -6234,7 +6234,7 @@
         },
         {
           "disabled": false,
-          "document": "接入点",
+          "document": "<p>接入点</p>",
           "example": "mqtt-12345-cd.mqtt.public.tencenttdmq.com:1883",
           "member": "string",
           "name": "Url",
@@ -6245,7 +6245,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc信息",
+          "document": "<p>vpc信息</p>",
           "example": "vpc-23dada",
           "member": "string",
           "name": "VpcId",
@@ -6256,7 +6256,7 @@
         },
         {
           "disabled": false,
-          "document": "子网信息",
+          "document": "<p>子网信息</p>",
           "example": "subnet-1acd3",
           "member": "string",
           "name": "SubnetId",
@@ -6267,7 +6267,7 @@
         },
         {
           "disabled": false,
-          "document": "主机",
+          "document": "<p>主机</p>",
           "example": "mqtt-12345-cd.mqtt.public.tencenttdmq.com",
           "member": "string",
           "name": "Host",
@@ -6278,7 +6278,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "1883",
           "member": "int64",
           "name": "Port",
@@ -6289,10 +6289,32 @@
         },
         {
           "disabled": false,
-          "document": "接入点ip",
+          "document": "<p>接入点ip</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口是否打开</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "PortEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vpce唯一id</p>",
+          "example": "vpce-1",
+          "member": "string",
+          "name": "VpcEndpointId",
           "output_required": false,
           "required": false,
           "type": "string",

@@ -391,8 +391,8 @@
     "CreatePartition": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartition\n<公共请求参数>\n\n{\n    \"ActionType\": \"purchase\",\n    \"PayMode\": 1,\n    \"ResourceQuotaList\": [\n        {\n            \"ResourceSpec\": {\n                \"ResourceType\": \"CPU\",\n                \"InstanceType\": \"GN10Xp\",\n                \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                \"SpecDesc\": \"1 GU = 1 × H20 · 0GB VRAM · 16vCPU · 160GB Memory\",\n                \"Spec\": \"0:1:4\",\n                \"GpuType\": \"V100\",\n                \"MaxCardPerNode\": 1\n            },\n            \"Quota\": 32\n        }\n    ],\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"AutoRenewFlag\": 0,\n    \"Name\": \"de**n1\",\n    \"Description\": \"t***2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BigDealId\": \"202606116********515681\",\n        \"DealName\": \"202606116*******0515691\",\n        \"RequestId\": \"73ee4b3e-c4a8-40f8-b2d8-f63dbfb150dd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartition\n<公共请求参数>\n\n{\n    \"ActionType\": \"purchase\",\n    \"PayMode\": 1,\n    \"ResourceQuotaList\": [\n        {\n            \"ResourceSpec\": {\n                \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\"\n            },\n            \"Quota\": 32\n        }\n    ],\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"Name\": \"my_part\",\n    \"Description\": \"This is my part\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealId\": \"20260826585023461942451\",\n        \"DealName\": \"20260826585023461942461\",\n        \"RequestId\": \"7cf550ab-e4b1-4e45-9391-a5df1ba1515a\"\n    }\n}",
         "title": "新购分区"
       }
     ],

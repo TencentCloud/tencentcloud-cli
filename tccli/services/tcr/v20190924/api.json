@@ -532,6 +532,13 @@
       "output": "DescribeRegionsResponse",
       "status": "online"
     },
+    "DescribeReplicationExecutions": {
+      "document": "实例同步/实例复制策略执行记录列表",
+      "input": "DescribeReplicationExecutionsRequest",
+      "name": "获取复制实例策略执行记录",
+      "output": "DescribeReplicationExecutionsResponse",
+      "status": "online"
+    },
     "DescribeReplicationInstanceCreateTasks": {
       "document": "查询创建从实例任务状态",
       "input": "DescribeReplicationInstanceCreateTasksRequest",
@@ -558,6 +565,13 @@
       "input": "DescribeReplicationPoliciesRequest",
       "name": "查询实例同步策略列表",
       "output": "DescribeReplicationPoliciesResponse",
+      "status": "online"
+    },
+    "DescribeReplicationTasks": {
+      "document": "实例同步/实例复制执行任务列表",
+      "input": "DescribeReplicationTasksRequest",
+      "name": "获取复制实例任务列表",
+      "output": "DescribeReplicationTasksResponse",
       "status": "online"
     },
     "DescribeRepositories": {
@@ -5252,6 +5266,89 @@
       ],
       "type": "object"
     },
+    "DescribeReplicationExecutionsRequest": {
+      "document": "DescribeReplicationExecutions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "复制实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "ReplicationInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页数，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示个数，默认为100",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationExecutionsResponse": {
+      "document": "DescribeReplicationExecutions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像分发执行记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReplicationExecution",
+          "name": "ReplicationExecutionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行记录总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReplicationInstanceCreateTasksRequest": {
       "document": "DescribeReplicationInstanceCreateTasks请求参数结构体",
       "members": [
@@ -5530,6 +5627,80 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationTasksRequest": {
+      "document": "DescribeReplicationTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行记录ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页数，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示个数，默认为100",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationTasksResponse": {
+      "document": "DescribeReplicationTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReplicationTask",
+          "name": "ReplicationTaskList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务列表总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9589,6 +9760,82 @@
       ],
       "type": "object"
     },
+    "ReplicationExecution": {
+      "document": "策略执行记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行记录ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutionID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succeed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行任务成功数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "Succeed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-01T03:45:04.038408Z",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "023-08-01T03:45:04.038408Z",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ReplicationFilter": {
       "document": "同步规则过滤器",
       "members": [
@@ -9901,6 +10148,82 @@
         }
       ],
       "usage": "in"
+    },
+    "ReplicationTask": {
+      "document": "实例同步/实例复制任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "image",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test/test:[5g]",
+          "member": "string",
+          "name": "SrcResource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test/test:[5g]",
+          "member": "string",
+          "name": "DstResource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Job任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "747c6571c2de465587690929",
+          "member": "string",
+          "name": "JobID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Succeed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-14T03:42:09.95279Z",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-14T03:42:17Z",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RepoInfo": {
       "document": "仓库的信息",

@@ -6823,7 +6823,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量，分页用",
+          "document": "<p>偏移量，分页用</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6832,7 +6832,7 @@
         },
         {
           "disabled": false,
-          "document": "条数，分页用",
+          "document": "<p>条数，分页用</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -6841,7 +6841,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数",
+          "document": "<p>排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数</p>",
           "example": "UpdateTime",
           "member": "string",
           "name": "By",
@@ -6850,7 +6850,7 @@
         },
         {
           "disabled": false,
-          "document": "排序，取值 ：asc正序，desc逆序",
+          "document": "<p>排序，取值 ：asc正序，desc逆序</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -6859,7 +6859,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索值",
+          "document": "<p>搜索值</p>",
           "example": "name",
           "member": "string",
           "name": "SearchValue",
@@ -6868,7 +6868,7 @@
         },
         {
           "disabled": false,
-          "document": "检索地址模板唯一id",
+          "document": "<p>检索地址模板唯一id</p>",
           "example": "mb_appid_1704179380581",
           "member": "string",
           "name": "Uuid",
@@ -6877,7 +6877,7 @@
         },
         {
           "disabled": false,
-          "document": "模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板",
+          "document": "<p>模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板</p>",
           "example": "1",
           "member": "string",
           "name": "TemplateType",
@@ -6886,10 +6886,19 @@
         },
         {
           "disabled": false,
-          "document": "模板Id",
+          "document": "<p>模板Id</p>",
           "example": "ip-d5fbfc11",
           "member": "string",
           "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板来源</p>",
+          "example": "0,3",
+          "member": "string",
+          "name": "SourceType",
           "required": false,
           "type": "string"
         }
@@ -6901,7 +6910,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板总数",
+          "document": "<p>模板总数</p>",
           "example": "100",
           "member": "int64",
           "name": "Total",
@@ -6911,8 +6920,8 @@
         },
         {
           "disabled": false,
-          "document": "模板列表数据",
-          "example": "[{\"Detail\":\"\",\"IPNum\":4,\"InsertTime\":\"2024-02-21 16:33:11\",\"IpString\":\"10.222.0.0/16,10.222.0.14,10.26.26.11,10.115.1.12\",\"IpVersion\":0,\"Name\":\"出向白名单\",\"ProtocolType\":\"\",\"RulesNum\":5,\"TemplateId\":\"ip-863papye\",\"Type\":1,\"UpdateTime\":\"2024-09-11 10:14:42\",\"Uuid\":\"mb_appid_1708504391199\"}]",
+          "document": "<p>模板列表数据</p>",
+          "example": "无",
           "member": "TemplateListInfo",
           "name": "Data",
           "output_required": true,
@@ -6921,8 +6930,8 @@
         },
         {
           "disabled": false,
-          "document": "模板名称列表",
-          "example": "['name']",
+          "document": "<p>模板名称列表</p>",
+          "example": "[\"name\"]",
           "member": "string",
           "name": "NameList",
           "output_required": true,
@@ -6931,7 +6940,7 @@
         },
         {
           "disabled": false,
-          "document": "Ip地址模板数量",
+          "document": "<p>Ip地址模板数量</p>",
           "example": "20",
           "member": "int64",
           "name": "IpTemplateCount",
@@ -6941,7 +6950,7 @@
         },
         {
           "disabled": false,
-          "document": "域名地址模板数量",
+          "document": "<p>域名地址模板数量</p>",
           "example": "30",
           "member": "int64",
           "name": "DomainTemplateCount",
@@ -6951,7 +6960,7 @@
         },
         {
           "disabled": false,
-          "document": "协议端口模板数量",
+          "document": "<p>协议端口模板数量</p>",
           "example": "50",
           "member": "int64",
           "name": "PortTemplateCount",
@@ -6961,7 +6970,7 @@
         },
         {
           "disabled": false,
-          "document": "已使用的地址模板数",
+          "document": "<p>已使用的地址模板数</p>",
           "example": "10",
           "member": "int64",
           "name": "UsedTemplateCount",
@@ -6971,10 +6980,20 @@
         },
         {
           "disabled": false,
-          "document": "地址模板配额数量",
+          "document": "<p>地址模板配额数量</p>",
           "example": "100",
           "member": "int64",
           "name": "TemplateQuotaCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器服务地址模板数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "TkeTemplateCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10062,7 +10081,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "<p>每页条数</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -10071,7 +10090,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移值",
+          "document": "<p>偏移值</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10080,7 +10099,7 @@
         },
         {
           "disabled": false,
-          "document": "需要查询的索引，特定场景使用，可不填",
+          "document": "<p>需要查询的索引，特定场景使用，可不填</p>",
           "example": "vpc_rule",
           "member": "string",
           "name": "Index",
@@ -10089,7 +10108,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件组合",
+          "document": "<p>过滤条件组合</p>",
           "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
@@ -10098,7 +10117,7 @@
         },
         {
           "disabled": false,
-          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "document": "<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -10107,7 +10126,7 @@
         },
         {
           "disabled": false,
-          "document": "排序所用到的字段",
+          "document": "<p>排序所用到的字段</p>",
           "example": "id",
           "member": "string",
           "name": "By",
@@ -10122,51 +10141,51 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则详情",
+          "document": "<p>规则详情</p>",
           "example": "无",
           "member": "IpsRuleDetailNew",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回状态码 0 成功 非0不成功",
+          "document": "<p>返回状态码 0 成功 非0不成功</p>",
           "example": "0",
           "member": "int64",
           "name": "ReturnCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回信息  success 成功 其他 不成功",
+          "document": "<p>返回信息  success 成功 其他 不成功</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"a\",\"b\",\"c\"]",
+          "document": "<p>字段类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"SQL注入攻击\"]",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15229,7 +15248,148 @@
     },
     "IpsRuleDetailNew": {
       "document": "IPS规则展示字段相关结构",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID</p>",
+          "example": "20001",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则名称</p>",
+          "example": "XSS攻击",
+          "member": "string",
+          "name": "EventName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则描述</p>",
+          "example": "本规则用于检测攻击者在WebGate多个产品中通过缓冲区溢出漏洞执行任意代码 (CVE-2015-2097, CVE-2015-2099)。本规则匹配的目标是HTTP响应body。",
+          "member": "string",
+          "name": "EventNameDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则类型</p>",
+          "example": "XSS攻击",
+          "member": "string",
+          "name": "Category",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>置信度</p>",
+          "example": "高",
+          "member": "string",
+          "name": "Confidence",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自增id</p>",
+          "example": "177919",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>漏洞对象</p>",
+          "example": "Zabbix、Yapi、Confluence、 PHP、Joomla、Extmail、CMS、HFS、CactiEZ、Phpstudy、Resin、UEditor、SolarWinds、Larvel、Jumpserver、Jellyfin、QuarkMail、RConfig、ForgeRock、vBulletin",
+          "member": "string",
+          "name": "VulTarget",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>漏洞编号</p>",
+          "example": "CVE-2015-2099",
+          "member": "string",
+          "name": "Cve",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态 0 关闭 1打开</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0观察, 1阻断</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Action",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认策略</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DefaultAction",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基础防御/虚拟补丁</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>危险等级</p>",
+          "example": "高危",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>FwType字段 1 border 2 nat 4 vpc</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "int64",
+          "name": "FwType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "LogInfo": {
@@ -21977,7 +22137,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "<p>模板ID</p>",
           "example": "mb_1300448058_1636944838448",
           "member": "string",
           "name": "Uuid",
@@ -21987,7 +22147,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称",
+          "document": "<p>模板名称</p>",
           "example": "出向白名单",
           "member": "string",
           "name": "Name",
@@ -21997,7 +22157,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "放通出方向目的ip",
           "member": "string",
           "name": "Detail",
@@ -22007,7 +22167,7 @@
         },
         {
           "disabled": false,
-          "document": "IP模板",
+          "document": "<p>IP模板</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "IpString",
@@ -22017,7 +22177,7 @@
         },
         {
           "disabled": false,
-          "document": "插入时间",
+          "document": "<p>插入时间</p>",
           "example": "2021-11-15 10:53:58",
           "member": "string",
           "name": "InsertTime",
@@ -22027,7 +22187,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2021-11-15 10:53:58",
           "member": "string",
           "name": "UpdateTime",
@@ -22037,7 +22197,7 @@
         },
         {
           "disabled": false,
-          "document": "模板类型",
+          "document": "<p>模板类型</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -22047,7 +22207,7 @@
         },
         {
           "disabled": false,
-          "document": "关联规则条数",
+          "document": "<p>关联规则条数</p>",
           "example": "1",
           "member": "int64",
           "name": "RulesNum",
@@ -22057,7 +22217,7 @@
         },
         {
           "disabled": false,
-          "document": "模板Id",
+          "document": "<p>模板Id</p>",
           "example": "pp-15181",
           "member": "string",
           "name": "TemplateId",
@@ -22067,7 +22227,7 @@
         },
         {
           "disabled": false,
-          "document": "协议端口模板，协议类型，4:4层协议，7:7层协议",
+          "document": "<p>协议端口模板，协议类型，4:4层协议，7:7层协议</p>",
           "example": "4",
           "member": "string",
           "name": "ProtocolType",
@@ -22077,7 +22237,7 @@
         },
         {
           "disabled": false,
-          "document": "模板包含地址数量",
+          "document": "<p>模板包含地址数量</p>",
           "example": "1",
           "member": "int64",
           "name": "IPNum",
@@ -22087,7 +22247,7 @@
         },
         {
           "disabled": false,
-          "document": "IP版本,0,IPv4;1,IPv6",
+          "document": "<p>IP版本,0,IPv4;1,IPv6</p>",
           "example": "0",
           "member": "int64",
           "name": "IpVersion",

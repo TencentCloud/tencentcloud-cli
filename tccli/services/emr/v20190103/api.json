@@ -315,6 +315,13 @@
       "output": "DescribeKyuubiQueryInfoResponse",
       "status": "online"
     },
+    "DescribeMetaDBInfo": {
+      "document": "集群metadb数据",
+      "input": "DescribeMetaDBInfoRequest",
+      "name": "获取集群db数据",
+      "output": "DescribeMetaDBInfoResponse",
+      "status": "online"
+    },
     "DescribeNodeDataDisks": {
       "document": "查询节点数据盘信息",
       "input": "DescribeNodeDataDisksRequest",
@@ -4223,6 +4230,15 @@
           "name": "EnableCbsSysEncryptFlag",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义metadb数据</p>",
+          "example": "无",
+          "member": "CustomMetaDBInfo",
+          "name": "MetaDBGroupInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8329,6 +8345,43 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetaDBInfoRequest": {
+      "document": "DescribeMetaDBInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "emr-pxsbezre",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetaDBInfoResponse": {
+      "document": "DescribeMetaDBInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义db数据</p>",
+          "example": "无",
+          "member": "CustomMetaDBInfo",
+          "name": "MetaDBGroupInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

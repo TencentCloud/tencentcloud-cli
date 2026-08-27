@@ -605,9 +605,9 @@
     "DescribeAddressTemplateList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressTemplateList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"SearchValue\": \"出向白名单\",\n    \"TemplateType\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Detail\": \"放通出方向目的ip\",\n                \"IPNum\": 4,\n                \"InsertTime\": \"2024-02-21 16:33:11\",\n                \"IpString\": \"10.222.0.0/16,10.222.0.14,10.26.26.11,10.115.1.12\",\n                \"IpVersion\": 0,\n                \"Name\": \"出向白名单\",\n                \"ProtocolType\": \"4\",\n                \"RulesNum\": 5,\n                \"TemplateId\": \"ip-863papye\",\n                \"Type\": 1,\n                \"UpdateTime\": \"2024-09-11 10:14:42\",\n                \"Uuid\": \"mb_appid_1708504391199\"\n            }\n        ],\n        \"DomainTemplateCount\": 0,\n        \"IpTemplateCount\": 1,\n        \"NameList\": [\n            \"dora\"\n        ],\n        \"PortTemplateCount\": 0,\n        \"RequestId\": \"f68d4fbb-4887-4fbb-91cb-e964131d5b4c\",\n        \"TemplateQuotaCount\": 300,\n        \"Total\": 1,\n        \"UsedTemplateCount\": 1\n    }\n}",
-        "title": "查询地址模板列表"
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressTemplateList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Detail\": \"\",\n                \"IPNum\": 1,\n                \"InsertTime\": \"2026-08-21 11:08:24\",\n                \"IpString\": \"*domai.com\",\n                \"IpVersion\": 0,\n                \"Name\": \"1121212\",\n                \"ProtocolType\": \"\",\n                \"RulesNum\": 1,\n                \"TemplateId\": \"dm-d7zc5d4i\",\n                \"Type\": 5,\n                \"UpdateTime\": \"2026-08-21 11:08:24\",\n                \"Uuid\": \"mb_1300448058_1787281704076\"\n            }\n        ],\n        \"DomainTemplateCount\": 3,\n        \"IpTemplateCount\": 2,\n        \"NameList\": [\n            \"tke模板\"\n        ],\n        \"PortTemplateCount\": 2,\n        \"TemplateQuotaCount\": 10,\n        \"TkeTemplateCount\": 0,\n        \"Total\": 7,\n        \"UsedTemplateCount\": 9,\n        \"RequestId\": \"1030842f-ad26-414d-9b7d-bde6dc24c765\"\n    }\n}",
+        "title": "查询模板列表"
       }
     ],
     "DescribeAssetSync": [
@@ -970,15 +970,9 @@
     ],
     "DescribeIpsRuleListNew": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpsRuleListNew\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Protocol\",\n            \"Values\": [\n                \"ANY\",\n                \"TCP\",\n                \"ICMP\"\n            ],\n            \"OperatorType\": 9\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"desc\",\n    \"By\": \"sequence\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ReturnMsg\": \"xx\",\n        \"ReturnCode\": 0,\n        \"Data\": [\n            {}\n        ],\n        \"Category\": [\n            \"a\",\n            \"b\",\n            \"c\"\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
-        "title": "IPS规则查询接口"
-      },
-      {
         "document": "规则列表最新调用示例",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpsRuleListNew\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Category\": [\n            \"SQL注入攻击\",\n            \"web攻击\",\n            \"XSS攻击\",\n            \"一般攻击\",\n            \"信息泄露\",\n            \"已知弱点\",\n            \"恶意文件下载\",\n            \"恶意机器人检测\",\n            \"恶意调用\",\n            \"木马\",\n            \"横向移动\",\n            \"漏洞利用\",\n            \"漏洞利用攻击\",\n            \"网络攻击\",\n            \"网络爆破\"\n        ],\n        \"Data\": [\n            {}\n        ],\n        \"RequestId\": \"b775e058-734b-4de8-ac54-66f199d5ba88\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Total\": 3512\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Category\": [\n            \"SQL注入攻击\",\n            \"web攻击\",\n            \"XSS攻击\",\n            \"一般攻击\",\n            \"信息泄露\",\n            \"已知弱点\",\n            \"恶意文件下载\",\n            \"恶意机器人检测\",\n            \"恶意调用\",\n            \"木马\",\n            \"横向移动\",\n            \"漏洞利用\",\n            \"漏洞利用攻击\",\n            \"网络攻击\",\n            \"网络爆破\"\n        ],\n        \"Data\": [\n            {\n                \"Action\": 1,\n                \"Category\": \"XSS攻击\",\n                \"Confidence\": \"高\",\n                \"Cve\": \"\",\n                \"DefaultAction\": 1,\n                \"EventName\": \"XSS攻击\",\n                \"EventNameDesc\": \"这条规则用于防止黑客通过注入生成一\\\"onunload\\\"消息的处理函数，攻击可出现于HTTP请求的URL或者HTTP参数中\",\n                \"FwType\": 7,\n                \"Id\": 177919,\n                \"Level\": \"高危\",\n                \"RuleID\": \"20001\",\n                \"RuleType\": 2,\n                \"Status\": 1,\n                \"VulTarget\": \"\"\n            }\n        ],\n        \"RequestId\": \"b775e058-734b-4de8-ac54-66f199d5ba88\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Total\": 3512\n    }\n}",
         "title": "规则列表最新调用示例"
       }
     ],

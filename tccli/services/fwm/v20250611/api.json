@@ -1103,8 +1103,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "SecurityGroupId",
+          "document": "筛选字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PublicIp",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1114,8 +1114,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>筛选值列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"sg-79w20e4r\"]",
+          "document": "筛选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"106.55.203.88\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,
@@ -1125,8 +1125,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>操作类型。1=等于，7=in，9=模糊匹配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "7",
+          "document": "操作类型：1-精确匹配 9-模糊匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "OperatorType",
           "output_required": false,
@@ -1188,7 +1188,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则组名称，长度1-50字符",
+          "document": "<p>规则组名称，长度1-50字符</p>",
           "example": "Edge边界规则组-测试",
           "member": "string",
           "name": "GroupName",
@@ -1197,7 +1197,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型，固定为 cfw_edge_acl",
+          "document": "<p>产品类型，固定为 cfw_edge_acl</p>",
           "example": "cfw_edge_acl",
           "member": "string",
           "name": "Product",
@@ -1206,7 +1206,7 @@
         },
         {
           "disabled": false,
-          "document": "规则列表",
+          "document": "<p>规则列表</p>",
           "example": "无",
           "member": "EdgeAclRuleInfo",
           "name": "Rules",
@@ -1221,7 +1221,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的规则组ID",
+          "document": "<p>创建的规则组ID</p>",
           "example": "fwmrg_abc123xyz",
           "member": "string",
           "name": "GroupId",
@@ -3534,7 +3534,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员AppId",
+          "document": "<p>成员AppId</p>",
           "example": "16898822",
           "member": "string",
           "name": "AppId",
@@ -3545,7 +3545,7 @@
         },
         {
           "disabled": false,
-          "document": "成员Uin",
+          "document": "<p>成员Uin</p>",
           "example": "12121212",
           "member": "string",
           "name": "Uin",
@@ -3556,7 +3556,7 @@
         },
         {
           "disabled": false,
-          "document": "成员昵称",
+          "document": "<p>成员昵称</p>",
           "example": "天空之蓝",
           "member": "string",
           "name": "Nickname",
@@ -3567,10 +3567,21 @@
         },
         {
           "disabled": false,
-          "document": "成员Id",
+          "document": "<p>成员Id</p>",
           "example": "1212-3232",
           "member": "string",
           "name": "MemberId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属部门</p>",
+          "example": "安全部",
+          "member": "string",
+          "name": "NodeName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -4484,7 +4495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成员 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mem-1300448058-100027980407",
           "member": "string",
           "name": "MemberId",
@@ -4494,7 +4505,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号 AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成员账号 AppId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1302385041",
           "member": "string",
           "name": "AppId",
@@ -4504,7 +4515,7 @@
         },
         {
           "disabled": false,
-          "document": "账号Uin",
+          "document": "<p>账号Uin</p>",
           "example": "100027980407",
           "member": "string",
           "name": "Uin",
@@ -4514,7 +4525,7 @@
         },
         {
           "disabled": false,
-          "document": "账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>账号名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "子公司A",
           "member": "string",
           "name": "Nickname",
@@ -4524,7 +4535,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子账号数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
           "name": "SubAccountCount",
@@ -4534,7 +4545,7 @@
         },
         {
           "disabled": false,
-          "document": "所属组织架构节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属组织架构节点名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "技术部",
           "member": "string",
           "name": "NodeName",
@@ -4544,7 +4555,7 @@
         },
         {
           "disabled": false,
-          "document": "成员身份：admin-管理员，delegatedAdmin-委派管理员，member-普通成员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成员身份：admin-管理员，delegatedAdmin-委派管理员，member-普通成员</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "member",
           "member": "string",
           "name": "Role",
@@ -4554,7 +4565,7 @@
         },
         {
           "disabled": false,
-          "document": "成员身份显示名称（前端展示用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成员身份显示名称（前端展示用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "普通成员",
           "member": "string",
           "name": "RoleDisplay",
@@ -4564,7 +4575,7 @@
         },
         {
           "disabled": false,
-          "document": "所属账户组 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属账户组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AccountGroupInfo",
           "name": "AccountGroup",
@@ -4574,7 +4585,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙纳管状态：0-未纳管，1-已纳管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云防火墙纳管状态：0-未纳管，1-已纳管</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CfwManaged",
@@ -4584,7 +4595,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙共享角色：sharer-共享者，user-使用者，none-未设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云防火墙共享角色：sharer-共享者，user-使用者，none-未设置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sharer",
           "member": "string",
           "name": "CfwShareRole",
@@ -4594,7 +4605,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙共享角色显示名称（前端展示用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云防火墙共享角色显示名称（前端展示用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "共享者",
           "member": "string",
           "name": "CfwShareRoleDisplay",
@@ -4604,7 +4615,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙共享者 AppId，成员角色为使用者时有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云防火墙共享者 AppId，成员角色为使用者时有值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1300448058",
           "member": "string",
           "name": "CfwSharerAppId",
@@ -4614,7 +4625,7 @@
         },
         {
           "disabled": false,
-          "document": "云防火墙计费实例 ID，非空表示已购买云防火墙\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云防火墙计费实例 ID，非空表示已购买云防火墙</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cfwins-abc12345",
           "member": "string",
           "name": "CfwInstanceId",
@@ -4624,7 +4635,7 @@
         },
         {
           "disabled": false,
-          "document": "策略分析权限：0-关闭，1-开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>策略分析权限：0-关闭，1-开启</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "PolicyAnalysisEnabled",
@@ -4634,7 +4645,7 @@
         },
         {
           "disabled": false,
-          "document": "成员加入集团时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>成员加入集团时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-01-15 10:30:00",
           "member": "string",
           "name": "MemberCreateTime",
@@ -4644,12 +4655,52 @@
         },
         {
           "disabled": false,
-          "document": "账号加入方式",
+          "document": "<p>账号加入方式</p>",
           "example": "invite",
           "member": "string",
           "name": "JoinType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云防火墙套餐状态</p><p>枚举值：</p><ul><li>0： 未购买</li><li>2： 已购买</li><li>3： 试用中</li><li>4： 已过期</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "CfwPayStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否具备云防火墙使用能力</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CfwCapable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有安全组纳管开关， 0:未纳管，1:已纳管</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SgManaged",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是后付费云防版本</p><p>枚举值：</p><ul><li>1： 后付费</li><li>0： 非后付费</li><li>-1： 未知</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCfwPostPay",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

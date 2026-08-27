@@ -1342,6 +1342,14 @@
         "title": "发起解除协议（替换原流程中本企业的参与人并指定签署人角色、签署控件）"
       }
     ],
+    "CreateRequestWithEncryption": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRequestWithEncryption\n<公共请求参数>\n\n{\n    \"RequestAction\": \"DescribeFlowComponents\",\n    \"IV\": \"ZeuAMEj5nEGZUtekyKqxKw==\",\n    \"EncryptedData\": \"v7vwDVtF+ftVANPClwZxrCCKM1dgOq+X5rCDGdlNqwQ6wRzndA8QxLc7YA+txKeU92cqTdtuji3e+Il+uVJ0qQ4fnVM/A5WmLEp6adq7+iW7LxHc9qo72suf630bdYHrA9iuzr0nqUd05ronubzSFQ==\",\n    \"EncryptionSignature\": \"uSnCx/PE/CTlckq5tZ+xqJMC2dd5Bg8Zg/ATSK0apkI=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EncryptedData\": \"60m8IgrRfRDWarWGd1KngYXdG0zYRNAv29iRMsR333F4nNoZhQvhXZo61DbUcm8YlEUfdLhDjK9f9fRXMr+ARH+3vOI/3k+owr3IYJAQeQ4p0zky95j8znlae3JBOwm06P/ED+dU90s9tb8pM3n0S06TpAxBZxryVmPpnqFyuDlbt9W5eb1KVz56WbPTp4QyjKWksc6tezquKe9FLx8u/x1/ZzHaunur2+StM2KkSZ8=\",\n        \"EncryptionSignature\": \"z2aKvBr/WkSXWKwpu0LX2V1S2ZGP9K3LLP1hEfhJOWM=\",\n        \"IV\": \"z/p4htlS/UwLpHwxHbyrFw==\",\n        \"RequestId\": \"bde98308-b4b9-49c1-b46b-51d1d55d41da\"\n    }\n}",
+        "title": "通过加密请求体进行请求"
+      }
+    ],
     "CreateRiskIdentificationTaskFeedback": [
       {
         "document": "",

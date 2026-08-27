@@ -12,6 +12,8 @@ tccli wedata UpdateTriggerWorkflowPartially --cli-unfold-argument  \
     --NewSetting.TriggerWorkflowSchedulerConfigurations.0.ConfigMode COMMON \
     --NewSetting.TriggerWorkflowSchedulerConfigurations.0.TriggerId 33153442-9785-11f1-b20e-b8599fc0ab4a \
     --NewSetting.TriggerWorkflowSchedulerConfigurations.0.FileArrivalPath cosn://dqtest8-251433363/ \
+    --NewSetting.TriggerWorkflowSchedulerConfigurations.0.TriggerMinimumInterval 5 \
+    --NewSetting.TriggerWorkflowSchedulerConfigurations.0.TriggerWaitTime 5 \
     --NewSetting.TriggerWorkflowSchedulerConfigurations.0.FileNamePattern t1.csv \
     --NewSetting.TriggerWorkflowSchedulerConfigurations.0.Recursive 1 \
     --NewSetting.TriggerWorkflowRunConfiguration.MaxConcurrentNum 1 \

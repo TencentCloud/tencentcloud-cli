@@ -830,9 +830,69 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent 忽略该字段与</p>",
+          "example": "无",
+          "member": "AgentExternalToolConfig",
+          "name": "ExternalToolList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "AgentExternalToolConfig": {
+      "document": "调用方执行的 Function Tool 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工具类型</p><p>入参限制：目前仅支持 &quot;function&quot;</p>",
+          "example": "function",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具名称</p>",
+          "example": "get_weather",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具描述</p>",
+          "example": "根据城市查询天气",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具入参定义</p>",
+          "example": "无",
+          "member": "RequestParam",
+          "name": "Parameters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AgentInput": {
       "document": "Agent输入值，支持直接赋值和引用",
@@ -1476,7 +1536,7 @@
         },
         {
           "disabled": false,
-          "document": "系统提示词",
+          "document": "<p>系统提示词</p>",
           "example": "你是一个ai助手",
           "member": "string",
           "name": "Instructions",
@@ -1485,7 +1545,7 @@
         },
         {
           "disabled": false,
-          "document": "主模型配置",
+          "document": "<p>主模型配置</p>",
           "example": "无",
           "member": "AgentModelConfig",
           "name": "Model",
@@ -1521,12 +1581,21 @@
         },
         {
           "disabled": false,
-          "document": "高级设置",
+          "document": "<p>高级设置</p>",
           "example": "无",
           "member": "AgentAdvancedConfig",
           "name": "AdvancedConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用方执行的 Function Tool 列表</p><p>入参限制：仅在 C 端用户态 Agent 场景可用，B 端配置态 Agent  忽略该字段与</p>",
+          "example": "无",
+          "member": "AgentExternalToolConfig",
+          "name": "ExternalToolList",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

@@ -48,6 +48,14 @@
         "title": "请求示例"
       }
     ],
+    "ChangeVoice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeVoice\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/jojoxiang/tmp/clip_005_%E5%B0%8F%E9%BE%99_21321_22622_input.wav\",\n    \"VoiceId\": \"s1_ztAZoOVtdtfWNjK/yHUUsbZf/1PUSlZxcBZ3reJv1+6FtgY=\",\n    \"Output\": {\n        \"Type\": \"url\"\n    },\n    \"ExtParam\": \"{\\\"timeRange\\\": [0.5, 1.0]}\",\n    \"AudioData\": \"*****sdasf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioUrl\": \"https://laurie-tmp-1300828900.cos.accelerate.myqcloud.com/speech/fbc68f06-ce0c-4b9d-860a-709be6c5779d.mp3\",\n        \"ErrorCode\": 0,\n        \"Msg\": \"success\",\n        \"RequestId\": \"fbc68f06-ce0c-4b9d-860a-709be6c5779d\"\n    }\n}",
+        "title": "发起音色转换"
+      }
+    ],
     "CloneViral": [
       {
         "document": "",

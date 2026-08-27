@@ -632,6 +632,14 @@
         "title": "列出TCR可用区域"
       }
     ],
+    "DescribeReplicationExecutions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDistributionExecutions\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-xxx\",\n    \"PolicyId\": \"1\",\n    \"ReplicationInstanceId\": \"tcr-xxx-1-xxx\",\n    \"Page\": \"1\",\n    \"PageSize\": \"20\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ReplicationExecutionList\": [\n            {\n                \"ExecutionID\": \"10\",\n                \"PolicyID\": \"19\",\n                \"Status\": \"succeed\",\n                \"Total\": \"3\",\n                \"Succeed\": \"3\",\n                \"StartTime\": \"2023-08-01T12:00:00+00:00\",\n                \"EndTime\": \"2023-08-01T12:00:01+00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询实例同步/实例复制执行记录列表"
+      }
+    ],
     "DescribeReplicationInstanceCreateTasks": [
       {
         "document": "",
@@ -662,6 +670,14 @@
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplicationPolicies\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-xxx\",\n    \"Page\": 1,\n    \"PageSize\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ReplicationPolicyInfoList\": [\n            {\n                \"ID\": \"1\",\n                \"Name\": \"test\",\n                \"Description\": \"test\",\n                \"Filters\": [\n                    {\n                        \"Type\": \"tag\",\n                        \"Value\": \"v1\"\n                    }\n                ],\n                \"Override\": true,\n                \"Enabled\": true,\n                \"SrcResource\": \"test/event-center/eric:v1 ap-chengdu\",\n                \"DestResource\": \"tcr-e8pg46c6/event-center/eric ap-guangzhou\",\n                \"CreationTime\": \"2023-08-01T03:45:03+08:00\",\n                \"UpdateTime\": \"2023-08-01T03:45:03+08:00\"\n            }\n        ],\n        \"RequestId\": \"request-xxxxx\"\n    }\n}",
         "title": "获取实例同步策略列表"
+      }
+    ],
+    "DescribeReplicationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDistributionTasks\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-xxx\",\n    \"ExecutionId\": 10,\n    \"Page\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ReplicationTaskList\": [\n            {\n                \"ResourceType\": \"image\",\n                \"SrcResource\": \"test/test:[1g]\",\n                \"DstResource\": \"test/test:[1g]\",\n                \"JobID\": \"747c6571c2de465587690929\",\n                \"Status\": \"Succeed\",\n                \"StartTime\": \"2023-07-14T03:42:09.95279Z\",\n                \"EndTime\": \"2023-07-14T03:42:17Z\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询实例同步/实例复制任务列表"
       }
     ],
     "DescribeRepositories": [

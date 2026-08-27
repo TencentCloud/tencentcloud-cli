@@ -8852,7 +8852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>交易类型：purchase-新购，renew-续费，modify-变配</p>",
+          "document": "<p>交易类型：purchase-新购</p>",
           "example": "purchase",
           "member": "string",
           "name": "ActionType",
@@ -8861,7 +8861,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>付费模式：0-后付费，1-预付费</p>",
+          "document": "<p>付费模式：1-预付费</p>",
           "example": "1",
           "member": "uint64",
           "name": "PayMode",
@@ -8879,7 +8879,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>时间大小，预付费时为购买月数，后付费时为3600</p>",
+          "document": "<p>时间大小，预付费时为购买月数</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -8888,7 +8888,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>时间单位，预付费为m（月），后付费为s（秒）</p>",
+          "document": "<p>时间单位，预付费为m（月）</p>",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -8907,7 +8907,7 @@
         {
           "disabled": false,
           "document": "<p>弹性资源池名称，用于订单页展示</p>",
-          "example": "de**n1",
+          "example": "my_part",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -8915,8 +8915,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>队列描述</p>",
-          "example": "t***2",
+          "document": "<p>资源包描述</p>",
+          "example": "This is my part",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -8931,7 +8931,7 @@
         {
           "disabled": false,
           "document": "<p>子订单号</p>",
-          "example": "202606116*******0515691",
+          "example": "20260826585023461942461",
           "member": "string",
           "name": "DealName",
           "output_required": false,
@@ -8941,7 +8941,7 @@
         {
           "disabled": false,
           "document": "<p>大订单号</p>",
-          "example": "202606116********515681",
+          "example": "20260826585023461942451",
           "member": "string",
           "name": "BigDealId",
           "output_required": false,

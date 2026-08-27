@@ -269,8 +269,8 @@
     "CreateOnCallForm": [
       {
         "document": "创建值班表",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormName\": \"abc\",\n    \"OnCallFormDesc\": \"abc\",\n    \"StaffInfos\": [\n        {\n            \"StaffIDs\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"RotationType\": \"abc\",\n    \"ShiftTime\": \"abc\",\n    \"EffectiveStartTime\": 0,\n    \"EffectiveEndTime\": 0,\n    \"TimeZone\": 0,\n    \"CoverStaffInfos\": [\n        {\n            \"CoverStaffIDs\": [\n                \"abc\"\n            ],\n            \"CoverStartTime\": 0,\n            \"CoverEndTime\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"OnCallFormID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"OnCallFormName\": \"值班分组\",\n    \"OnCallFormDesc\": \"值班分组\",\n    \"StaffInfos\": [\n        {\n            \"StaffIDs\": [\n                \"317528\"\n            ]\n        }\n    ],\n    \"RotationType\": \"day\",\n    \"ShiftTime\": \"12:00\",\n    \"EffectiveStartTime\": 1648742400,\n    \"EffectiveEndTime\": 1649520000,\n    \"TimeZone\": 8,\n    \"CoverStaffInfos\": [\n        {\n            \"CoverStaffIDs\": [\n                \"317528\"\n            ],\n            \"CoverStartTime\": 1648742400,\n            \"CoverEndTime\": 1649520000\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallFormID\": \"form-zahdhgjo\",\n        \"RequestId\": \"e3873490-7ca2-4efc-8792-a54e440fe1bd\"\n    }\n}",
         "title": "创建值班表"
       }
     ],
@@ -465,8 +465,8 @@
     "DeleteOnCallForms": [
       {
         "document": "删除值班表",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOnCallForms\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormIDs\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailedOnCallFormIDs\": [\n            \"abc\"\n        ],\n        \"SuccessOnCallFormIDs\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOnCallForms\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"OnCallFormIDs\": [\n        \"form-zahdhgjo\",\n        \"form-adhdhgjc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedOnCallFormIDs\": [\n            \"form-zahdhgjo\"\n        ],\n        \"SuccessOnCallFormIDs\": [\n            \"form-adhdhgjc\"\n        ],\n        \"RequestId\": \"e3873490-7ca2-4efc-8792-77\"\n    }\n}",
         "title": "删除值班表"
       }
     ],
@@ -873,16 +873,16 @@
     "DescribeOnCallForm": [
       {
         "document": "查询值班表详情\n\n",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormID\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"OnCallForm\": {\n            \"OnCallFormID\": \"abc\",\n            \"OnCallFormName\": \"abc\",\n            \"OnCallFormDesc\": \"abc\",\n            \"StaffInfos\": [\n                {\n                    \"StaffIDs\": [\n                        \"abc\"\n                    ]\n                }\n            ],\n            \"RotationType\": \"abc\",\n            \"ShiftTime\": \"abc\",\n            \"EffectiveStartTime\": 0,\n            \"EffectiveEndTime\": 0,\n            \"TimeZone\": 0,\n            \"CoverStaffInfos\": [\n                {\n                    \"CoverStaffIDs\": [\n                        \"abc\"\n                    ],\n                    \"CoverStartTime\": 0,\n                    \"CoverEndTime\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"OnCallFormID\": \"form-zahdhgjo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallForm\": {\n            \"OnCallFormID\": \"form-zahdhgjo\",\n            \"OnCallFormName\": \"值班分组\",\n            \"OnCallFormDesc\": \"值班分组\",\n            \"StaffInfos\": [\n                {\n                    \"StaffIDs\": [\n                        \"317528\"\n                    ]\n                }\n            ],\n            \"RotationType\": \"day\",\n            \"ShiftTime\": \"12:00\",\n            \"EffectiveStartTime\": 1648742400,\n            \"EffectiveEndTime\": 1649520000,\n            \"TimeZone\": 8,\n            \"CoverStaffInfos\": [\n                {\n                    \"CoverStaffIDs\": [\n                        \"317528\"\n                    ],\n                    \"CoverStartTime\": 1648742400,\n                    \"CoverEndTime\": 1649520000\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"Key\": \"petertest\",\n                    \"Value\": \"petertest\"\n                }\n            ]\n        },\n        \"RequestId\": \"e3873490-7ca2-4efc-8792-a54e440fe1bd\"\n    }\n}",
         "title": "查询值班表详情"
       }
     ],
     "DescribeOnCallForms": [
       {
         "document": "查询值班列表",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnCallForms\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormStaffIDs\": [\n        \"abc\"\n    ],\n    \"RotationType\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Order\": \"abc\",\n    \"OnCallFormName\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"OnCallForms\": [\n            {\n                \"OnCallFormID\": \"abc\",\n                \"OnCallFormName\": \"abc\",\n                \"OnCallFormDesc\": \"abc\",\n                \"RotationType\": \"abc\",\n                \"ShiftTime\": \"abc\",\n                \"EffectiveStartTime\": 0,\n                \"EffectiveEndTime\": 0,\n                \"TimeZone\": 0,\n                \"CurrOnCallStaffs\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnCallForms\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"OnCallFormStaffIDs\": [\n        \"317528\"\n    ],\n    \"RotationType\": \"day\",\n    \"Offset\": 1,\n    \"Limit\": 10,\n    \"Order\": \"desc\",\n    \"OnCallFormName\": \"值班分组\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallForms\": [\n            {\n                \"OnCallFormID\": \"form-zahdhgjo\",\n                \"OnCallFormName\": \"值班分组\",\n                \"OnCallFormDesc\": \"值班分组\",\n                \"RotationType\": \"day\",\n                \"ShiftTime\": \"12:00\",\n                \"EffectiveStartTime\": 1648742400,\n                \"EffectiveEndTime\": 1649520000,\n                \"TimeZone\": 8,\n                \"CurrOnCallStaffs\": [\n                    \"317528\"\n                ],\n                \"Tags\": [\n                    {\n                        \"Key\": \"petertest\",\n                        \"Value\": \"petertest\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"e3873490-7ca2-4efc-8792-77\"\n    }\n}",
         "title": "查询值班列表"
       }
     ],
@@ -1663,8 +1663,8 @@
     "UpdateOnCallForm": [
       {
         "document": "修改值班表\n\n",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"abc\",\n    \"OnCallFormID\": \"abc\",\n    \"OnCallFormName\": \"abc\",\n    \"OnCallFormDesc\": \"abc\",\n    \"StaffInfos\": [\n        {\n            \"StaffIDs\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"RotationType\": \"abc\",\n    \"ShiftTime\": \"abc\",\n    \"EffectiveStartTime\": 0,\n    \"EffectiveEndTime\": 0,\n    \"TimeZone\": 0,\n    \"CoverStaffInfos\": [\n        {\n            \"CoverStaffIDs\": [\n                \"abc\"\n            ],\n            \"CoverStartTime\": 0,\n            \"CoverEndTime\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"OnCallFormID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOnCallForm\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"OnCallFormID\": \"form-zahdhgjo\",\n    \"OnCallFormName\": \"值班分组\",\n    \"OnCallFormDesc\": \"值班分组\",\n    \"StaffInfos\": [\n        {\n            \"StaffIDs\": [\n                \"317528\"\n            ]\n        }\n    ],\n    \"RotationType\": \"week\",\n    \"ShiftTime\": \"12:00\",\n    \"EffectiveStartTime\": 1648742400,\n    \"EffectiveEndTime\": 1649520000,\n    \"TimeZone\": 0,\n    \"CoverStaffInfos\": [\n        {\n            \"CoverStaffIDs\": [\n                \"317528\"\n            ],\n            \"CoverStartTime\": 1648742400,\n            \"CoverEndTime\": 1649520000\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"OnCallFormID\": \"form-zahdhgjo\",\n        \"RequestId\": \"e3873490-7ca2-4efc-8792-a54e440fe1bd\"\n    }\n}",
         "title": "修改值班表"
       }
     ],

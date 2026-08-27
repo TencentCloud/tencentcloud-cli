@@ -360,6 +360,14 @@
         "title": "DescribeKyuubiQueryInfo"
       }
     ],
+    "DescribeMetaDBInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetaDBInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-pxsbezre\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MetaDBGroupInfo\": [\n            {\n                \"Components\": [\n                    \"OOZIE\"\n                ],\n                \"DefaultMetaVersion\": \"mysql8\",\n                \"LinkInstanceId\": \"emr-pxsbezre\",\n                \"MetaDataJdbcUrl\": \"jdbc:mysql://10.0.10.227:3306\",\n                \"MetaDataPass\": \"\",\n                \"MetaDataUser\": \"\",\n                \"MetaType\": \"EMR_DEFAULT_META\",\n                \"UnifyMetaInstanceId\": \"cdb-4sjbbt6x\"\n            }\n        ],\n        \"RequestId\": \"21ef4e99-1130-4177-b414-95a98ee2e262\"\n    }\n}",
+        "title": "自定义db数据"
+      }
+    ],
     "DescribeNodeDataDisks": [
       {
         "document": "",

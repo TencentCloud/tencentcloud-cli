@@ -18089,7 +18089,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。",
+          "document": "<p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>",
           "example": "[\"havip-bk4275i0\",\"havip-2kce8v4q\"]",
           "member": "string",
           "name": "HaVipIds",
@@ -18098,8 +18098,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。<li>havip-id - String - `HAVIP`唯一`ID`，形如：`havip-9o233uri`。</li><li>havip-name - String - `HAVIP`名称。</li><li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li><li>subnet-id - String - `HAVIP`所在子网`ID`。</li><li>vip - String - `HAVIP`的地址`VIP`。</li><li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li><li>havip-association.instance-id - String - `HAVIP`绑定的子机或网卡。</li><li>havip-association.instance-type - String - `HAVIP`绑定的类型，取值:CVM, ENI。</li><li>check-associate - Bool - 是否开启HaVip飘移时校验绑定的子机或网卡。</li><li>cdc-id - String - CDC实例ID。</li>\n<li>type- String - HAVIP类型。取值: NORMAL(普通); GWLB(网关负载均衡); OPTIMIZATION(优化模式)。</li>",
-          "example": "[{\"Name\": \"havip-id\", \"Values\"; [\"havip-bk4275i0\"]}]",
+          "document": "<p>过滤条件，参数不支持同时指定<code>HaVipIds</code>和<code>Filters</code>。Filter 数量限制为10个，以及单Filter 的value值限制为5个。<li>havip-id - String - <code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</li><li>havip-name - String - <code>HAVIP</code>名称。</li><li>vpc-id - String - <code>HAVIP</code>所在私有网络<code>ID</code>。</li><li>subnet-id - String - <code>HAVIP</code>所在子网<code>ID</code>。</li><li>vip - String - <code>HAVIP</code>的地址<code>VIP</code>。</li><li>address-ip - String - <code>HAVIP</code>绑定的弹性公网<code>IP</code>。</li><li>havip-association.instance-id - String - <code>HAVIP</code>绑定的子机或网卡。</li><li>havip-association.instance-type - String - <code>HAVIP</code>绑定的类型，取值:CVM, ENI。</li><li>check-associate - Bool - 是否开启HaVip飘移时校验绑定的子机或网卡。</li><li>cdc-id - String - CDC实例ID。</li></p><li>type - String - HAVIP类型。取值: NORMAL(普通); GWLB(网关负载均衡); OPTIMIZATION(优化模式)。</li><li>termination-protection - String - 删除保护。取值: true; false。</li><li>traffic-protection - String - 流量保护。取值: true; false。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -18107,7 +18107,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。\n",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -18116,7 +18116,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。\n",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -18131,7 +18131,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的对象数。",
+          "document": "<p>符合条件的对象数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -18141,8 +18141,8 @@
         },
         {
           "disabled": false,
-          "document": "`HAVIP`对象数组。",
-          "example": "[{\"HaVipId\": \"havip-pnpcflil\", \"HaVipName\": \"HaVipName1\", \"VpcId\": \"vpc-nswq8wkq\", \"SubnetId\": \"subnet-21zswllr\", \"NetworkInterfaceId\": \"\", \"State\": \"AVAILABLE\", \"Business\": \"\", \"CdcId\": \"\", \"IsCdc\": False, \"Visible\": True, \"Vip\": \"10.0.0.7\"}]",
+          "document": "<p><code>HAVIP</code>对象数组。</p>",
+          "example": "无",
           "member": "HaVip",
           "name": "HaVipSet",
           "output_required": true,
@@ -26566,7 +26566,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "`HAVIP`的`ID`，是`HAVIP`的唯一标识。",
+          "document": "<p><code>HAVIP</code>的<code>ID</code>，是<code>HAVIP</code>的唯一标识。</p>",
           "example": "havip-nswq8wkq",
           "member": "string",
           "name": "HaVipId",
@@ -26576,7 +26576,7 @@
         },
         {
           "disabled": false,
-          "document": "`HAVIP`名称。",
+          "document": "<p><code>HAVIP</code>名称。</p>",
           "example": "demo",
           "member": "string",
           "name": "HaVipName",
@@ -26586,7 +26586,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟IP地址。",
+          "document": "<p>虚拟IP地址。</p>",
           "example": "10.0.0.10",
           "member": "string",
           "name": "Vip",
@@ -26596,7 +26596,7 @@
         },
         {
           "disabled": false,
-          "document": "`HAVIP`所在私有网络`ID`。",
+          "document": "<p><code>HAVIP</code>所在私有网络<code>ID</code>。</p>",
           "example": "vpc-hj3he929",
           "member": "string",
           "name": "VpcId",
@@ -26606,7 +26606,7 @@
         },
         {
           "disabled": false,
-          "document": "`HAVIP`所在子网`ID`。",
+          "document": "<p><code>HAVIP</code>所在子网<code>ID</code>。</p>",
           "example": "subnet-4t7fr3fi",
           "member": "string",
           "name": "SubnetId",
@@ -26616,7 +26616,7 @@
         },
         {
           "disabled": false,
-          "document": "`HAVIP`关联弹性网卡`ID`。",
+          "document": "<p><code>HAVIP</code>关联弹性网卡<code>ID</code>。</p>",
           "example": "eni-pnpcflil",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -26626,7 +26626,7 @@
         },
         {
           "disabled": false,
-          "document": "被绑定的实例`ID`。",
+          "document": "<p>被绑定的实例<code>ID</code>。</p>",
           "example": "ins-kngiybxl",
           "member": "string",
           "name": "InstanceId",
@@ -26636,7 +26636,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定`EIP`。",
+          "document": "<p>绑定<code>EIP</code>。</p>",
           "example": "100.10.123.131",
           "member": "string",
           "name": "AddressIp",
@@ -26646,7 +26646,7 @@
         },
         {
           "disabled": false,
-          "document": "状态：\n<li>`AVAILABLE`：运行中</li>\n<li>`UNBIND`：未绑定</li>",
+          "document": "<p>状态：</p><li><code>AVAILABLE</code>：运行中</li><li><code>UNBIND</code>：未绑定</li>",
           "example": "AVAILABLE",
           "member": "string",
           "name": "State",
@@ -26656,7 +26656,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2018-10-10 17:03:09",
           "member": "datetime",
           "name": "CreatedTime",
@@ -26666,7 +26666,7 @@
         },
         {
           "disabled": false,
-          "document": "使用havip的业务标识。",
+          "document": "<p>使用havip的业务标识。</p>",
           "example": "SCF",
           "member": "string",
           "name": "Business",
@@ -26676,7 +26676,7 @@
         },
         {
           "disabled": false,
-          "document": "`HAVIP`的飘移范围。",
+          "document": "<p><code>HAVIP</code>的飘移范围。</p>",
           "example": "无",
           "member": "HaVipAssociation",
           "name": "HaVipAssociationSet",
@@ -26686,7 +26686,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启`HAVIP`的漂移范围校验。",
+          "document": "<p>是否开启<code>HAVIP</code>的漂移范围校验。</p>",
           "example": "true",
           "member": "bool",
           "name": "CheckAssociate",
@@ -26696,7 +26696,7 @@
         },
         {
           "disabled": false,
-          "document": "CDC实例ID。",
+          "document": "<p>CDC实例ID。</p>",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
@@ -26706,7 +26706,7 @@
         },
         {
           "disabled": false,
-          "document": "HAVIP 刷新时间。该参数只作为出参数。以下场景会触发FlushedTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00",
+          "document": "<p>HAVIP 刷新时间。该参数只作为出参数。以下场景会触发FlushedTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00</p>",
           "example": "2024-06-06 22:24:45",
           "member": "string",
           "name": "FlushedTime",
@@ -26716,7 +26716,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t",
+          "document": "<p>标签键值对。</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",

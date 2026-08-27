@@ -21,6 +21,13 @@
       "output": "CreateAIWorkbenchTaskResponse",
       "status": "online"
     },
+    "CreateDispenseExternalRule": {
+      "document": "转发接口：创建转发规则",
+      "input": "CreateDispenseExternalRuleRequest",
+      "name": "转发规则创建3.0",
+      "output": "CreateDispenseExternalRuleResponse",
+      "status": "online"
+    },
     "CreateNoticeContentTmpl": {
       "document": "创建自定义通知内容模板",
       "input": "CreateNoticeContentTmplRequest",
@@ -40,6 +47,13 @@
       "input": "DeleteAIWorkbenchTaskRequest",
       "name": "删除任务",
       "output": "DeleteAIWorkbenchTaskResponse",
+      "status": "online"
+    },
+    "DeleteDispenseExternalRule": {
+      "document": "规则删除接口",
+      "input": "DeleteDispenseExternalRuleRequest",
+      "name": "转发规则删除3.0",
+      "output": "DeleteDispenseExternalRuleResponse",
       "status": "online"
     },
     "DeleteNoticeContentTmpls": {
@@ -110,6 +124,48 @@
       "input": "DescribeAlarmNotifyHistoriesRequest",
       "name": "查询告警通知历史",
       "output": "DescribeAlarmNotifyHistoriesResponse",
+      "status": "online"
+    },
+    "DescribeDispenseExternalRule": {
+      "document": "转发规则查询接口",
+      "input": "DescribeDispenseExternalRuleRequest",
+      "name": "转发规则查询3.0",
+      "output": "DescribeDispenseExternalRuleResponse",
+      "status": "online"
+    },
+    "DescribeDispenseExternalRuleList": {
+      "document": "查询所有列表",
+      "input": "DescribeDispenseExternalRuleListRequest",
+      "name": "转发规则查询列表3.0",
+      "output": "DescribeDispenseExternalRuleListResponse",
+      "status": "online"
+    },
+    "DescribeDispenseRegion": {
+      "document": "转发地域列表查询接口",
+      "input": "DescribeDispenseRegionRequest",
+      "name": "查询转发部署地域",
+      "output": "DescribeDispenseRegionResponse",
+      "status": "online"
+    },
+    "DescribeExtMetric": {
+      "document": "查询对外指标",
+      "input": "DescribeExtMetricRequest",
+      "name": "查询对外指标",
+      "output": "DescribeExtMetricResponse",
+      "status": "online"
+    },
+    "DescribeExtNamespace": {
+      "document": "转发查询对外命名空间接口",
+      "input": "DescribeExtNamespaceRequest",
+      "name": "转发查询对外命名空间",
+      "output": "DescribeExtNamespaceResponse",
+      "status": "online"
+    },
+    "DescribeKafka": {
+      "document": "转发kafka连通性测试",
+      "input": "DescribeKafkaRequest",
+      "name": "转发kafka连通性查询",
+      "output": "DescribeKafkaResponse",
       "status": "online"
     },
     "DescribeNoticeContentTmpl": {
@@ -194,6 +250,20 @@
       "input": "ListAIWorkbenchTasksRequest",
       "name": "查询任务列表",
       "output": "ListAIWorkbenchTasksResponse",
+      "status": "online"
+    },
+    "ModifyDispenseExternalRule": {
+      "document": "转发规则更新接口",
+      "input": "ModifyDispenseExternalRuleRequest",
+      "name": "转发规则修改3.0",
+      "output": "ModifyDispenseExternalRuleResponse",
+      "status": "online"
+    },
+    "ModifyDispenseExternalRuleStatus": {
+      "document": "新增规则开启关闭接口",
+      "input": "ModifyDispenseExternalRuleStatusRequest",
+      "name": "转发规则开启或关闭3.0",
+      "output": "ModifyDispenseExternalRuleStatusResponse",
       "status": "online"
     },
     "ModifyNoticeContentTmpl": {
@@ -1279,6 +1349,97 @@
       ],
       "type": "object"
     },
+    "CreateDispenseExternalRuleRequest": {
+      "document": "CreateDispenseExternalRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "honor-qce/lb-lb_vip",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云监控对外命名空间",
+          "example": "QCE/LB",
+          "member": "string",
+          "name": "ExtNamespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发目标消信息",
+          "example": "\"Producer\": {     \t\"ProtocolType\": 1,         \"Type\": \"Kafka\",         \"Brokers\": \"127.0.0.1\",         \"Topic\": \"Barad_Comm\"\t     }",
+          "member": "Producer",
+          "name": "Producer",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "转发部署地域列表",
+          "example": "[\"gz\"]",
+          "member": "string",
+          "name": "DispenseRegions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云监控对外指标",
+          "example": "[\"VConnum\",\"VNewConn\"]",
+          "member": "string",
+          "name": "ExtMetrics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标统计周期",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "转发过滤条件信息",
+          "example": "无",
+          "member": "DispenseCondition",
+          "name": "DispenseConditions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDispenseExternalRuleResponse": {
+      "document": "CreateDispenseExternalRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发规则Id",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNoticeContentTmplRequest": {
       "document": "CreateNoticeContentTmpl请求参数结构体",
       "members": [
@@ -1387,6 +1548,33 @@
     },
     "DeleteAIWorkbenchTaskResponse": {
       "document": "DeleteAIWorkbenchTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDispenseExternalRuleRequest": {
+      "document": "DeleteDispenseExternalRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的规则Id",
+          "example": "[8388612]",
+          "member": "int64",
+          "name": "RuleIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDispenseExternalRuleResponse": {
+      "document": "DeleteDispenseExternalRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1916,6 +2104,254 @@
       ],
       "type": "object"
     },
+    "DescribeDispenseExternalRuleListRequest": {
+      "document": "DescribeDispenseExternalRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面大小",
+          "example": "2",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转发部署地域",
+          "example": "[\"gz\"]",
+          "member": "string",
+          "name": "DispenseRegions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键字搜索规则名",
+          "example": "qce/lb",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDispenseExternalRuleListResponse": {
+      "document": "DescribeDispenseExternalRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Rule",
+          "name": "RuleList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDispenseExternalRuleRequest": {
+      "document": "DescribeDispenseExternalRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDispenseExternalRuleResponse": {
+      "document": "DescribeDispenseExternalRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则",
+          "example": "无",
+          "member": "Rule",
+          "name": "Rule",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDispenseRegionRequest": {
+      "document": "DescribeDispenseRegion请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDispenseRegionResponse": {
+      "document": "DescribeDispenseRegion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发地域列表",
+          "example": "无",
+          "member": "DispenseRegion",
+          "name": "RegionList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtMetricRequest": {
+      "document": "DescribeExtMetric请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对外命名空间",
+          "example": "QCE/LB",
+          "member": "string",
+          "name": "ExtNamespace",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtMetricResponse": {
+      "document": "DescribeExtMetric返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对外指标",
+          "example": "无",
+          "member": "ExtMetric",
+          "name": "ExtMetricList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtNamespaceRequest": {
+      "document": "DescribeExtNamespace请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeExtNamespaceResponse": {
+      "document": "DescribeExtNamespace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对外命名空间列表",
+          "example": "无",
+          "member": "string",
+          "name": "ExtNamespaceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaRequest": {
+      "document": "DescribeKafka请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kafka地址",
+          "example": "127.0.0.1:8080",
+          "member": "string",
+          "name": "Brokers",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发部署地域列表",
+          "example": "[\"gz\"]",
+          "member": "string",
+          "name": "DispenseRegions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaResponse": {
+      "document": "DescribeKafka返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连通性列表",
+          "example": "无",
+          "member": "KafkaConnectivity",
+          "name": "KafkaConnectivityList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNoticeContentTmplRequest": {
       "document": "DescribeNoticeContentTmpl请求参数结构体",
       "members": [
@@ -2103,6 +2539,162 @@
       ],
       "usage": "both"
     },
+    "DispenseCondition": {
+      "document": "转发过滤条件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对外指标名",
+          "example": "InvisibleMsgNum",
+          "member": "string",
+          "name": "ExtMetric",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件表",
+          "example": "无",
+          "member": "DispenseFilter",
+          "name": "DispenseFilters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件id",
+          "example": "条件id",
+          "member": "int64",
+          "name": "ConditionId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DispenseFilter": {
+      "document": "过滤表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度名称",
+          "example": "uuid",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维度值列表",
+          "example": "[\"abc\",\"def\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示式",
+          "example": "equal或者in",
+          "member": "string",
+          "name": "Expression",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DispenseGlobalTag": {
+      "document": "全局维度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度key",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维度值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DispenseRegion": {
+      "document": "转发地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域缩写",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域中文名",
+          "example": "无",
+          "member": "string",
+          "name": "RegionCnName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域英文名",
+          "example": "无",
+          "member": "string",
+          "name": "RegionEnName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则数量",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleNumber",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EnvEntry": {
       "document": "环境变量entry",
       "members": [
@@ -2254,6 +2846,78 @@
         }
       ],
       "usage": "out"
+    },
+    "ExtMetric": {
+      "document": "对外指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中文指标名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MetricCName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中文含义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CNMeaning",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文含义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnMeaning",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否配置对外维度",
+          "example": "无",
+          "member": "bool",
+          "name": "DimensionFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "FeiShuRobotNoticeTmpl": {
       "document": "飞书机器人内容模板配置",
@@ -2468,6 +3132,34 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KafkaConnectivity": {
+      "document": "kafka连通性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连通",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -3540,6 +4232,132 @@
       ],
       "usage": "out"
     },
+    "ModifyDispenseExternalRuleRequest": {
+      "document": "ModifyDispenseExternalRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "honor-qce/lb-lb_vip",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云监控对外命名空间",
+          "example": "QCE/LB",
+          "member": "string",
+          "name": "ExtNamespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发目标消信息",
+          "example": "无",
+          "member": "Producer",
+          "name": "Producer",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "8388612",
+          "member": "int64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转发部署地域列表",
+          "example": "[\"gz\"]",
+          "member": "string",
+          "name": "DispenseRegions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云监控对外指标",
+          "example": "[\"VConnum\",\"VNewConn\"]",
+          "member": "string",
+          "name": "ExtMetrics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标统计周期",
+          "example": "[60]",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "转发过滤信息",
+          "example": "无",
+          "member": "DispenseCondition",
+          "name": "DispenseConditions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDispenseExternalRuleResponse": {
+      "document": "ModifyDispenseExternalRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDispenseExternalRuleStatusRequest": {
+      "document": "ModifyDispenseExternalRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则id列表",
+          "example": "[8388611]",
+          "member": "int64",
+          "name": "RuleIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDispenseExternalRuleStatusResponse": {
+      "document": "ModifyDispenseExternalRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNoticeContentTmplRequest": {
       "document": "ModifyNoticeContentTmpl请求参数结构体",
       "members": [
@@ -4107,6 +4925,111 @@
       ],
       "usage": "both"
     },
+    "Producer": {
+      "document": "转发目标对象信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发协议类型，0-stormRetPb, 1-tcbDispensePb, 2-stormRetJson, 3-ADPPb(废弃)，4-中台pb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProtocolType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转发kafka地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Brokers",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转发kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否合并指标,默认是1，合并",
+          "example": "无",
+          "member": "int64",
+          "name": "Merge",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局维度组",
+          "example": "无",
+          "member": "DispenseGlobalTag",
+          "name": "GlobalTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认维度组，只提供维度即可",
+          "example": "无",
+          "member": "string",
+          "name": "DefaultTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kafka用户名",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kafka密码",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "QCloudYeheNoticeTmpl": {
       "document": "官网通知内容模板",
       "members": [
@@ -4388,6 +5311,112 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Rule": {
+      "document": "转发规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则Id",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对外namespace",
+          "example": "无",
+          "member": "string",
+          "name": "ExtNamespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对外指标列表",
+          "example": "无",
+          "member": "ExtMetric",
+          "name": "ExtMetric",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出信息",
+          "example": "无",
+          "member": "Producer",
+          "name": "Producer",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则触发状态",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标粒度周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转发过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DispenseCondition",
+          "name": "DispenseConditions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转发地域列表",
+          "example": "无",
+          "member": "string",
+          "name": "DispenseRegions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

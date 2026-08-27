@@ -476,6 +476,13 @@
       "output": "CreateReleaseFlowResponse",
       "status": "online"
     },
+    "CreateRequestWithEncryption": {
+      "document": "该接口支持对请求内容进行加密传输。调用方需使用约定的 AES-CBC 或 SM4-CBC 算法对请求内容进行加密，并使用 HMAC-SHA256 或 HMAC-SM3 算法对 IV 和加密后的数据进行完整性校验，防止请求内容被篡改。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/391df0a37c2b213445c4909ba98824ac.svg)\n\n**请求端加密流程**\n1. 每次请求使用密码学安全的随机源生成 16 字节 的 IV。每次请求必须重新生成，严禁复用。\n2. 使用约定的 AES-CBC 或 SM4-CBC 算法对原始请求体进行加密，使用 PKCS#7 Padding。\n3. 将加密后的密文原始字节进行标准 Base64 编码，作为 EncryptedData 参数。\n4. 将 IV 原始字节进行标准 Base64 编码，作为 IV 参数。\n5. 对 IV 原始字节和密文原始字节直接拼接（不添加分隔符），计算 HMAC-SHA256 或 HMAC-SM4：HMAC(Key, IVBytes || CiphertextBytes)\n6. 将 HMAC 的结果进行 标准 Base64 编码，作为 EncryptionSignature 参数。\n\n**响应端解密流程**\n1. 先判断本接口自身是否返回外层错误，此时错误为明文（标准腾讯云错误体），有则直接失败处理。\n2. 分别对 IV、EncryptedData、EncryptionSignature 做标准 Base64 解码，得到原始字节。\n3. 将 IV 与密文原始字节直接拼接（无分隔符），计算 HMAC-SHA256 或 HMAC-SM4：HMAC(Key, IVBytes || CiphertextBytes)。\n4. 与响应中 EncryptionSignature 解码后的字节做恒定时间比较，不一致立即失败，不得继续解密。\n5. 使用约定的 AES-CBC 或 SM4-CBC，以 IV 和密钥解密 EncryptedData，去除 PKCS#7 Padding 得到明文。\n6. 先用腾讯云标准错误体反序列化明文，判断被加密业务接口是否返回 Error。\n7. 无业务错误时，再用目标业务接口的响应结构体反序列化明文，取出实际业务参数。\n\n**响应端错误处理**\n1. 外层错误（本接口本身调用失败）：返回标准腾讯云错误 JSON（含 Error.Code / Error.Message），无 EncryptedData，不需要解密即可处理。\n2. 内层错误（业务接口执行失败）：外层成功，但解密后的明文里包含 Error.Code / Error.Message，按目标业务接口的错误规范处理。\n\n**处理过程示例**\n```\n# ========== 前置约定 ==========\nAESKey  : 加密 密钥（AES 32 字节，SM4 16 字节）\nHMACKey : HMAC 密钥（与加密密钥需要不同）\nALGO    : AES-CBC 或 SM4-CBC，双方约定\nHMAC    : ALGO == AES-CBC ? HMAC-SHA256 : HMAC-SM3\n\n# ========== 请求端：加密并调用 ==========\nfunction CallWithEncryption(bizAction, bizRequestObj):\n    # 1. 序列化业务请求\n    plaintext = JSON.stringify(bizRequestObj)\n    # 2. 生成 16 字节随机 IV（每次新生成，禁止复用）\n    iv = SecureRandom(16)\n    # 3. 对称加密（PKCS#7 Padding）\n    ciphertext = SymmetricEncrypt(ALGO, AESKey, iv, plaintext)\n    # 4. 计算完整性签名：HMAC(Key, IV || Ciphertext)\n    signature = HMAC(HMACKey, concat(iv, ciphertext))\n    # 5. 组装外层请求参数（三段均为标准 Base64）\n    encReq = {\n        RequestAction:       bizAction,\n        IV:                  Base64(iv),\n        EncryptedData:       Base64(ciphertext),\n        EncryptionSignature: Base64(signature),\n    }\n    # 6. 调用 CreateRequestWithEncryption\n    #    TC3-HMAC-SHA256 鉴权由官方 SDK 自动完成\n    encResp = CloudAPI.CreateRequestWithEncryption(encReq)\n    # 7. 外层错误：明文，直接抛出\n    if encResp.Error != nil:\n        raise OuterError(encResp.Error)\n    # 8. 解密并返回业务响应\n    return DecryptResponse(encResp.Response)\n\n# ========== 响应端：校验并解密 ==========\nfunction DecryptResponse(resp):\n    # 1. Base64 解码\n    ivBytes  = Base64Decode(resp.IV)\n    ctBytes  = Base64Decode(resp.EncryptedData)\n    sigBytes = Base64Decode(resp.EncryptionSignature)\n    # 2. 重新计算 HMAC\n    expected = HMAC(HMACKey, concat(ivBytes, ctBytes))\n    # 3. 恒定时间比较，失败立即终止（不得继续解密）\n    if not ConstantTimeEqual(expected, sigBytes):\n        raise SignatureMismatch\n    # 4. 对称解密，去除 PKCS#7 Padding\n    plaintext = SymmetricDecrypt(ALGO, AESKey, ivBytes, ctBytes)\n    # 5. 先按腾讯云错误体解析，判断业务是否失败\n    bizErr = TryParseTencentCloudError(plaintext)\n    if bizErr != nil:\n        raise BusinessError(bizErr)\n    # 6. 按目标业务接口的响应结构反序列化\n    return JSON.parse(plaintext, BizResponseSchema)\n```\n\n**AES-CBC 示例**\n以下示例参数及结果可用于验证 AES-CBC 加密和 HMAC-SHA256 签名算法的实现是否正确。\n\n加密密钥：AES-CBC-Key-1234\n签名密钥：AES-HMAC-Key-123\nIV：1234567890abcdef\n请求内容：{\"Request\": \"This is a test.\"}\n\n最终请求参数：\n```\n{\n  \"RequestAction\": \"DescribeFlowComponents\",\n  \"IV\": \"MTIzNDU2Nzg5MGFiY2RlZg==\",\n  \"EncryptedData\": \"Iqp2W1jislwMNmE7bH9dKZZiMQsfkAPyvAAqDFRnWLw=\",\n  \"EncryptionSignature\": \"4TT3PUCZgZT7YmEPtXDm5PDcM6xT7FoYHfMW8xunB5I=\"\n}\n```\n\n**SM4-CBC 示例**\n以下示例参数及结果可用于验证 SM4-CBC 加密和 HMAC-SM4 签名算法的实现是否正确。\n\n加密密钥：SM4-CBC-Key-1234\n签名密钥：SM4-HMAC-Key-123\nIV：fedcba0987654321\n请求内容：{\"Request\": \"This is a test.\"}\n\n最终请求参数：\n```\n{\n  \"RequestAction\": \"DescribeFlowComponents\",\n  \"IV\": \"ZmVkY2JhMDk4NzY1NDMyMQ==\",\n  \"EncryptedData\": \"GwUovQhNUPaUnVM/UDXMtPOYTpTSi2B1oyZDFbyyvns=\",\n  \"EncryptionSignature\": \"nHB/v/AvOaDCQ66esFNnp12lHKcGkwaLGid0Warl/KE=\"\n}\n```",
+      "input": "CreateRequestWithEncryptionRequest",
+      "name": "以加密请求体方式创建请求",
+      "output": "CreateRequestWithEncryptionResponse",
+      "status": "online"
+    },
     "CreateRiskIdentificationTaskFeedback": {
       "document": "此接口（CreateRiskIdentificationTaskFeedback）用于创建合同审查任务结果反馈。",
       "input": "CreateRiskIdentificationTaskFeedbackRequest",
@@ -10277,6 +10284,90 @@
           "member": "string",
           "name": "FlowId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRequestWithEncryptionRequest": {
+      "document": "CreateRequestWithEncryption请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作的接口名称。取值参考接口文档输入参数章节关于公共参数 Action 的说明。</p>",
+          "example": "DescribeFlowComponents",
+          "member": "string",
+          "name": "RequestAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密算法使用的初始化向量。固定为 16 字节，将 IV 原始字节使用标准 Base64 编码后传入。</p>",
+          "example": "ZeuAMEj5nEGZUtekyKqxKw==",
+          "member": "string",
+          "name": "IV",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用 AES-CBC 或 SM4-CBC 加密请求内容得到的密文。加密前请求内容采用 PKCS#7 Padding；将密文原始字节使用标准 Base64 编码后传入。</p>",
+          "example": "v7vwDVtF+ftVANPClwZxrCCKM1dgOq+X5rCDGdlNqwQ6wRzndA8QxLc7YA+txKeU92cqTdtuji3e+Il+uVJ0qQ4fnVM/A5WmLEp6adq7+iW7LxHc9qo72suf630bdYHrA9iuzr0nqUd05ronubzSFQ==",
+          "member": "string",
+          "name": "EncryptedData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于校验请求数据完整性。对 IV 原始字节和密文原始字节直接拼接（不加拼接符）后计算 HMAC-SHA256，再将计算结果使用标准 Base64 编码后传入。</p>",
+          "example": "uSnCx/PE/CTlckq5tZ+xqJMC2dd5Bg8Zg/ATSK0apkI=",
+          "member": "string",
+          "name": "EncryptionSignature",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRequestWithEncryptionResponse": {
+      "document": "CreateRequestWithEncryption返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加密算法使用的初始化向量。固定为 16 字节，将 IV 原始字节使用标准 Base64 编码后传入。</p>",
+          "example": "z/p4htlS/UwLpHwxHbyrFw==",
+          "member": "string",
+          "name": "IV",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用 AES-CBC 或 SM4-CBC 加密返回内容得到的密文。加密前返回内容采用 PKCS#7 Padding；将密文原始字节使用标准 Base64 编码后传入。</p>",
+          "example": "60m8IgrRfRDWarWGd1KngYXdG0zYRNAv29iRMsR333F4nNoZhQvhXZo61DbUcm8YlEUfdLhDjK9f9fRXMr+ARH+3vOI/3k+owr3IYJAQeQ4p0zky95j8znlae3JBOwm06P/ED+dU90s9tb8pM3n0S06TpAxBZxryVmPpnqFyuDlbt9W5eb1KVz56WbPTp4QyjKWksc6tezquKe9FLx8u/x1/ZzHaunur2+StM2KkSZ8=",
+          "member": "string",
+          "name": "EncryptedData",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于校验请求数据完整性。对 IV 原始字节和密文原始字节直接拼接（不加拼接符）后计算 HMAC-SHA256，再将计算结果使用标准 Base64 编码后传入。</p>",
+          "example": "z2aKvBr/WkSXWKwpu0LX2V1S2ZGP9K3LLP1hEfhJOWM=",
+          "member": "string",
+          "name": "EncryptionSignature",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

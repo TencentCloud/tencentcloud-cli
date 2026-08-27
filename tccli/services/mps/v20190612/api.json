@@ -42,6 +42,13 @@
       "output": "BatchStopStreamLinkFlowResponse",
       "status": "online"
     },
+    "ChangeVoice": {
+      "document": "同步音色转换，根据输入音频和指定音色将输入音频转换为指定音色",
+      "input": "ChangeVoiceRequest",
+      "name": "同步音色转换",
+      "output": "ChangeVoiceResponse",
+      "status": "online"
+    },
     "CloneViral": {
       "document": "爆款复刻。输入爆款参考视频+商品图，生成风格/节奏对齐的视频",
       "input": "CloneViralRequest",
@@ -10835,6 +10842,109 @@
         }
       ],
       "usage": "out"
+    },
+    "ChangeVoiceRequest": {
+      "document": "ChangeVoice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待转换音频base64编码</p>",
+          "example": "*****sdasf",
+          "member": "string",
+          "name": "AudioData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待转换音频Url，AudioData为空时有效</p>",
+          "example": "https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/jojoxiang/tmp/clip_005_%E5%B0%8F%E9%BE%99_21321_22622_input.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色ID</p>",
+          "example": "s1_ztAZoOVtdtfWNjK/yHUUsbZf/1PUSlZxcBZ3reJv1+6FtgY=",
+          "member": "string",
+          "name": "VoiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出相关参数</p>",
+          "example": "无",
+          "member": "SyncDubbingOutputOption",
+          "name": "Output",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数，json字符串</p>",
+          "example": "{\"timeRange\": [0.5, 1.0]}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeVoiceResponse": {
+      "document": "ChangeVoice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码，成功时返回0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息，成功时返回success</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果音频的base64编码，默认mp3格式</p>",
+          "example": "SUQzBAA*",
+          "member": "string",
+          "name": "AudioData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果音频url，有效期24小时</p>",
+          "example": "https://laurie-tmp-1300828900.cos.accelerate.myqcloud.com/speech/fbc68f06-ce0c-4b9d-860a-709be6c5779d.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ChannelAlertResp": {
       "document": "线性组装频道告警返回信息。",

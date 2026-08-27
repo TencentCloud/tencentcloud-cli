@@ -1,4 +1,4 @@
-**Example 1: 查询地址模板列表**
+**Example 1: 查询模板列表**
 
 
 
@@ -7,9 +7,7 @@ Input:
 ```
 tccli cfw DescribeAddressTemplateList --cli-unfold-argument  \
     --Offset 0 \
-    --Limit 20 \
-    --SearchValue 出向白名单 \
-    --TemplateType 1
+    --Limit 10
 ```
 
 Output: 
@@ -18,30 +16,31 @@ Output:
     "Response": {
         "Data": [
             {
-                "Detail": "放通出方向目的ip",
-                "IPNum": 4,
-                "InsertTime": "2024-02-21 16:33:11",
-                "IpString": "10.222.0.0/16,10.222.0.14,10.26.26.11,10.115.1.12",
+                "Detail": "",
+                "IPNum": 1,
+                "InsertTime": "2026-08-21 11:08:24",
+                "IpString": "*domai.com",
                 "IpVersion": 0,
-                "Name": "出向白名单",
-                "ProtocolType": "4",
-                "RulesNum": 5,
-                "TemplateId": "ip-863papye",
-                "Type": 1,
-                "UpdateTime": "2024-09-11 10:14:42",
-                "Uuid": "mb_appid_1708504391199"
+                "Name": "1121212",
+                "ProtocolType": "",
+                "RulesNum": 1,
+                "TemplateId": "dm-d7zc5d4i",
+                "Type": 5,
+                "UpdateTime": "2026-08-21 11:08:24",
+                "Uuid": "mb_1300448058_1787281704076"
             }
         ],
-        "DomainTemplateCount": 0,
-        "IpTemplateCount": 1,
+        "DomainTemplateCount": 3,
+        "IpTemplateCount": 2,
         "NameList": [
-            "dora"
+            "tke模板"
         ],
-        "PortTemplateCount": 0,
-        "RequestId": "f68d4fbb-4887-4fbb-91cb-e964131d5b4c",
-        "TemplateQuotaCount": 300,
-        "Total": 1,
-        "UsedTemplateCount": 1
+        "PortTemplateCount": 2,
+        "TemplateQuotaCount": 10,
+        "TkeTemplateCount": 0,
+        "Total": 7,
+        "UsedTemplateCount": 9,
+        "RequestId": "1030842f-ad26-414d-9b7d-bde6dc24c765"
     }
 }
 ```

@@ -8,8 +8,8 @@ Input:
 
 ```
 tccli monitor DescribeOnCallForm --cli-unfold-argument  \
-    --Module abc \
-    --OnCallFormID abc
+    --Module monitor \
+    --OnCallFormID form-zahdhgjo
 ```
 
 Output: 
@@ -17,32 +17,38 @@ Output:
 {
     "Response": {
         "OnCallForm": {
-            "OnCallFormID": "abc",
-            "OnCallFormName": "abc",
-            "OnCallFormDesc": "abc",
+            "OnCallFormID": "form-zahdhgjo",
+            "OnCallFormName": "值班分组",
+            "OnCallFormDesc": "值班分组",
             "StaffInfos": [
                 {
                     "StaffIDs": [
-                        "abc"
+                        "317528"
                     ]
                 }
             ],
-            "RotationType": "abc",
-            "ShiftTime": "abc",
-            "EffectiveStartTime": 0,
-            "EffectiveEndTime": 0,
-            "TimeZone": 0,
+            "RotationType": "day",
+            "ShiftTime": "12:00",
+            "EffectiveStartTime": 1648742400,
+            "EffectiveEndTime": 1649520000,
+            "TimeZone": 8,
             "CoverStaffInfos": [
                 {
                     "CoverStaffIDs": [
-                        "abc"
+                        "317528"
                     ],
-                    "CoverStartTime": 0,
-                    "CoverEndTime": 0
+                    "CoverStartTime": 1648742400,
+                    "CoverEndTime": 1649520000
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "petertest",
+                    "Value": "petertest"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "e3873490-7ca2-4efc-8792-a54e440fe1bd"
     }
 }
 ```

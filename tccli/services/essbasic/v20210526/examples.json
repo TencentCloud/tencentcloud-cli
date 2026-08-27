@@ -1152,6 +1152,14 @@
         "title": "创建个人用户证明证书图片"
       }
     ],
+    "CreateRequestWithEncryption": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRequestWithEncryption\n<公共请求参数>\n\n{\n    \"RequestAction\": \"DescribeFlowComponents\",\n    \"ApplicationId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n    \"IV\": \"mJc2aKe4B71d9p62y6bp2A==\",\n    \"EncryptedData\": \"riUP2CKf+QGCfN9VMjTgCbsPidmXJulBUD8jxdg3YZwecWCF1CTg+4zB1nEICbGPRedPjF0+zZ1ybTDEc/xG/nQ5J7n4+uNiWCCOqRsjDcwzoD1gZ+y1W++qdjjCns/z8SMxciKmSS7h/cL5kwUARg==\",\n    \"EncryptionSignature\": \"vzOw7yV+oAaYBmpbDDGfl7OGxuN3M38IjpJG/mTnEzE=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EncryptedData\": \"a5iZ2f7i02NJZQ4ErVIxbJffDsp/7mdTX1KcS3SGmWmy6B0MhdJx8sWFsP10RJjgiXyBxBDlPI3GMnFMrXLTgv+FMsNjSegEJwJCHsPQ5fzRkhuA9084LviPMFQuKRIDzGHMnHHCR0PerppIupGlEHXga/Cmn5Tx1YZIGESVf8zPncDGttYB8W8HHLVq4Jcg5s2GdjAW95Vu/vt+crXZBFvppLcYB7hja6xZIwkROkE=\",\n        \"EncryptionSignature\": \"INxBHAiknWJ2tshbEhOGDKjezZMEfhyq6LpSGir4t9s=\",\n        \"IV\": \"E3j3s8oySTLGgWP25IgRZA==\",\n        \"RequestId\": \"1dc99e1d-71f1-4841-a5df-d1cb389d018d\"\n    }\n}",
+        "title": "通过加密请求体进行请求"
+      }
+    ],
     "CreateSealByImage": [
       {
         "document": "1.设置GenerateSource为SealGenerateSourceSystem 2.设置SealType为发票专用章INVOICE 3.设置SealStyle为椭圆形ellipse 4.设置SealSize为40_30",

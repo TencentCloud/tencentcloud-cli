@@ -6,26 +6,26 @@ Input:
 
 ```
 tccli monitor CreateOnCallForm --cli-unfold-argument  \
-    --Module abc \
-    --OnCallFormName abc \
-    --OnCallFormDesc abc \
-    --StaffInfos.0.StaffIDs abc \
-    --RotationType abc \
-    --ShiftTime abc \
-    --EffectiveStartTime 0 \
-    --EffectiveEndTime 0 \
-    --TimeZone 0 \
-    --CoverStaffInfos.0.CoverStaffIDs abc \
-    --CoverStaffInfos.0.CoverStartTime 0 \
-    --CoverStaffInfos.0.CoverEndTime 0
+    --Module monitor \
+    --OnCallFormName 值班分组 \
+    --OnCallFormDesc 值班分组 \
+    --StaffInfos.0.StaffIDs 317528 \
+    --RotationType day \
+    --ShiftTime 12:00 \
+    --EffectiveStartTime 1648742400 \
+    --EffectiveEndTime 1649520000 \
+    --TimeZone 8 \
+    --CoverStaffInfos.0.CoverStaffIDs 317528 \
+    --CoverStaffInfos.0.CoverStartTime 1648742400 \
+    --CoverStaffInfos.0.CoverEndTime 1649520000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "OnCallFormID": "abc",
-        "RequestId": "abc"
+        "OnCallFormID": "form-zahdhgjo",
+        "RequestId": "e3873490-7ca2-4efc-8792-a54e440fe1bd"
     }
 }
 ```
