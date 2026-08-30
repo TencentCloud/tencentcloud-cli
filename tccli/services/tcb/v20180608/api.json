@@ -3226,7 +3226,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的函数名称",
+          "document": "<p>创建的函数名称</p>",
           "example": "helloworld",
           "member": "string",
           "name": "FunctionName",
@@ -3235,7 +3235,7 @@
         },
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "<p>环境ID</p>",
           "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
@@ -3244,7 +3244,7 @@
         },
         {
           "disabled": false,
-          "document": "函数处理方法名称",
+          "document": "<p>函数处理方法名称</p>",
           "example": "index.main_handler",
           "member": "string",
           "name": "Handler",
@@ -3253,7 +3253,7 @@
         },
         {
           "disabled": false,
-          "document": "函数运行时内存大小",
+          "document": "<p>函数运行时内存大小</p>",
           "example": "128",
           "member": "int64",
           "name": "MemorySize",
@@ -3262,7 +3262,7 @@
         },
         {
           "disabled": false,
-          "document": "函数最长执行时间",
+          "document": "<p>函数最长执行时间</p>",
           "example": "3",
           "member": "int64",
           "name": "Timeout",
@@ -3271,7 +3271,7 @@
         },
         {
           "disabled": false,
-          "document": "此参数公司内部展示。是否使用GPU进行计算",
+          "document": "<p>此参数公司内部展示。是否使用GPU进行计算</p>",
           "example": "FALSE",
           "member": "string",
           "name": "UseGpu",
@@ -3280,7 +3280,7 @@
         },
         {
           "disabled": false,
-          "document": "在线依赖安装",
+          "document": "<p>在线依赖安装</p>",
           "example": "FALSE",
           "member": "string",
           "name": "InstallDependency",
@@ -3289,7 +3289,7 @@
         },
         {
           "disabled": false,
-          "document": "此参数公司内部展示。用于小程序，GPU集群，不对外",
+          "document": "<p>此参数公司内部展示。用于小程序，GPU集群，不对外</p>",
           "example": "default",
           "member": "string",
           "name": "Stamp",
@@ -3298,7 +3298,7 @@
         },
         {
           "disabled": false,
-          "document": "函数绑定的角色",
+          "document": "<p>函数绑定的角色</p>",
           "example": "SCF_ExecuteRole",
           "member": "string",
           "name": "Role",
@@ -3307,7 +3307,7 @@
         },
         {
           "disabled": false,
-          "document": "函数描述",
+          "document": "<p>函数描述</p>",
           "example": "hello world!",
           "member": "string",
           "name": "Description",
@@ -3316,7 +3316,7 @@
         },
         {
           "disabled": false,
-          "document": "函数运行环境",
+          "document": "<p>函数运行环境</p>",
           "example": "Python3.6",
           "member": "string",
           "name": "Runtime",
@@ -3325,7 +3325,7 @@
         },
         {
           "disabled": false,
-          "document": "函数日志投递到的CLS TopicID",
+          "document": "<p>函数日志投递到的CLS TopicID</p>",
           "example": "topic-xxyyzad",
           "member": "string",
           "name": "ClsTopicId",
@@ -3334,7 +3334,7 @@
         },
         {
           "disabled": false,
-          "document": "函数日志投递到的CLS LogsetID",
+          "document": "<p>函数日志投递到的CLS LogsetID</p>",
           "example": "logset-xjckuisd",
           "member": "string",
           "name": "ClsLogsetId",
@@ -3343,7 +3343,7 @@
         },
         {
           "disabled": false,
-          "document": "包含函数代码文件的zip格式文件",
+          "document": "<p>包含函数代码文件的zip格式文件</p>",
           "example": "无",
           "member": "CodeReq",
           "name": "Code",
@@ -3352,7 +3352,7 @@
         },
         {
           "disabled": false,
-          "document": "云函数配置项",
+          "document": "<p>云函数配置项</p>",
           "example": "无",
           "member": "PrivateConfig",
           "name": "PrivateConfig",
@@ -3361,7 +3361,7 @@
         },
         {
           "disabled": false,
-          "document": "函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP",
+          "document": "<p>函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP</p>",
           "example": "Event",
           "member": "string",
           "name": "Type",
@@ -3370,7 +3370,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS",
+          "document": "<p>HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS</p>",
           "example": "WS",
           "member": "string",
           "name": "ProtocolType",
@@ -3379,10 +3379,109 @@
         },
         {
           "disabled": false,
-          "document": "环境变量",
+          "document": "<p>环境变量</p>",
           "example": "无",
           "member": "FunctionEnvironment",
           "name": "Environment",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数初始化超时时间，默认 65s，镜像部署函数默认 90s。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "InitTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码来源，支持ZipFile, Cos, Demo 其中之一</p>",
+          "example": "ZipFile",
+          "member": "string",
+          "name": "CodeSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数的私有网络配置</p>",
+          "example": "无",
+          "member": "FunctionVpcConfig",
+          "name": "VpcConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。</p>",
+          "example": "无",
+          "member": "FunctionLayer",
+          "name": "Layers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网访问配置</p>",
+          "example": "无",
+          "member": "FunctionPublicNetConfig",
+          "name": "PublicNetConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启异步属性，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AsyncRunEnable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启事件追踪，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "TraceEnable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动创建cls主题，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AutoCreateClsTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动创建cls索引，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AutoDeployClsTopicIndex",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "DnsCache",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>EipConfig固定ip配置</p>",
+          "example": "无",
+          "member": "FunctionEipConfigFixed",
+          "name": "EipConfig",
           "required": false,
           "type": "object"
         }
@@ -3394,7 +3493,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用scf返回的错误码",
+          "document": "<p>调用scf返回的错误码</p>",
           "example": "FailedOperation.Namespace",
           "member": "string",
           "name": "SCFErrorCode",
@@ -3404,7 +3503,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码对应的描述信息",
+          "document": "<p>错误码对应的描述信息</p>",
           "example": "命名空间已存在，请勿重复创建。",
           "member": "string",
           "name": "SCFErrorMsg",
@@ -9370,7 +9469,7 @@
         {
           "disabled": false,
           "document": "<p>云开发环境ID</p>",
-          "example": "pg-mikejliu-0g9cqmar358527a9",
+          "example": "lo**od*-*********10a94df",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -9379,7 +9478,7 @@
         {
           "disabled": false,
           "document": "<p>要执行的SQL语句</p>",
-          "example": "select column_name FROM information_schema.columns WHERE table_schema = 'public'   AND table_name = 'test_products'",
+          "example": "select * from pg_namespace",
           "member": "string",
           "name": "Sql",
           "required": true,
@@ -9413,7 +9512,7 @@
         {
           "disabled": false,
           "document": "<p>字段名列表</p>",
-          "example": "[\"column_name\"]",
+          "example": "[\"oid\"]",
           "member": "string",
           "name": "Columns",
           "output_required": true,
@@ -9423,7 +9522,7 @@
         {
           "disabled": false,
           "document": "<p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>",
-          "example": "[\"[\\\"id\\\"]\"]",
+          "example": "[\"[\\\"99\\\",\\\"pg_toast\\\",\\\"10\\\",null]\"]",
           "member": "string",
           "name": "Rows",
           "output_required": true,
@@ -9433,7 +9532,7 @@
         {
           "disabled": false,
           "document": "<p>SQL执行耗时</p><p>单位：毫秒</p>",
-          "example": "58",
+          "example": "8",
           "member": "int64",
           "name": "ExecutionTimeMs",
           "output_required": true,
@@ -9532,8 +9631,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改时间",
-          "example": "",
+          "document": "<p>修改时间</p>",
+          "example": "2026-08-11 19:26:00",
           "member": "string",
           "name": "ModTime",
           "output_required": false,
@@ -9542,8 +9641,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "",
+          "document": "<p>创建时间</p>",
+          "example": "2026-08-05 10:57:37",
           "member": "string",
           "name": "AddTime",
           "output_required": false,
@@ -9552,8 +9651,8 @@
         },
         {
           "disabled": false,
-          "document": "运行时",
-          "example": "",
+          "document": "<p>运行时</p>",
+          "example": "Nodejs20.19",
           "member": "string",
           "name": "Runtime",
           "output_required": false,
@@ -9562,8 +9661,8 @@
         },
         {
           "disabled": false,
-          "document": "函数名称",
-          "example": "",
+          "document": "<p>函数名称</p>",
+          "example": "agt-hy3test-6gwc9lew899fa266",
           "member": "string",
           "name": "FunctionName",
           "output_required": false,
@@ -9572,8 +9671,8 @@
         },
         {
           "disabled": false,
-          "document": "函数ID",
-          "example": "",
+          "document": "<p>函数ID</p>",
+          "example": "lam-57ifs4pt",
           "member": "string",
           "name": "FunctionId",
           "output_required": false,
@@ -9582,8 +9681,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
-          "example": "",
+          "document": "<p>命名空间</p>",
+          "example": "jackvyli-d1g5v7p5e7191af47",
           "member": "string",
           "name": "Namespace",
           "output_required": false,
@@ -9592,8 +9691,8 @@
         },
         {
           "disabled": false,
-          "document": "函数状态，状态值",
-          "example": "",
+          "document": "<p>函数状态，状态值</p>",
+          "example": "Active",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -9602,8 +9701,8 @@
         },
         {
           "disabled": false,
-          "document": "函数状态详情",
-          "example": "",
+          "document": "<p>函数状态详情</p>",
+          "example": "可用",
           "member": "string",
           "name": "StatusDesc",
           "output_required": false,
@@ -9612,8 +9711,8 @@
         },
         {
           "disabled": false,
-          "document": "函数描述",
-          "example": "",
+          "document": "<p>函数描述</p>",
+          "example": "Nodejs 语言 空白 helloworld 模板",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -9622,8 +9721,8 @@
         },
         {
           "disabled": false,
-          "document": "函数标签",
-          "example": "",
+          "document": "<p>函数标签</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
@@ -9632,8 +9731,8 @@
         },
         {
           "disabled": false,
-          "document": "函数类型，取值为 HTTP 或者 Event",
-          "example": "",
+          "document": "<p>函数类型，取值为 HTTP 或者 Event</p>",
+          "example": "HTTP",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -9642,8 +9741,8 @@
         },
         {
           "disabled": false,
-          "document": "函数状态失败原因",
-          "example": "",
+          "document": "<p>函数状态失败原因</p>",
+          "example": "无",
           "member": "StatusReason",
           "name": "StatusReasons",
           "output_required": false,
@@ -9652,8 +9751,8 @@
         },
         {
           "disabled": false,
-          "document": "函数所有版本预置并发内存总和",
-          "example": "",
+          "document": "<p>函数所有版本预置并发内存总和</p>",
+          "example": "0",
           "member": "int64",
           "name": "TotalProvisionedConcurrencyMem",
           "output_required": false,
@@ -9662,8 +9761,8 @@
         },
         {
           "disabled": false,
-          "document": "函数并发保留内存",
-          "example": "",
+          "document": "<p>函数并发保留内存</p>",
+          "example": "0",
           "member": "int64",
           "name": "ReservedConcurrencyMem",
           "output_required": false,
@@ -9672,8 +9771,8 @@
         },
         {
           "disabled": false,
-          "document": "函数异步属性，取值 TRUE 或者 FALSE",
-          "example": "",
+          "document": "<p>函数异步属性，取值 TRUE 或者 FALSE</p>",
+          "example": "FALSE",
           "member": "string",
           "name": "AsyncRunEnable",
           "output_required": false,
@@ -9682,8 +9781,8 @@
         },
         {
           "disabled": false,
-          "document": "异步函数是否开启调用追踪，取值 TRUE 或者 FALSE",
-          "example": "",
+          "document": "<p>异步函数是否开启调用追踪，取值 TRUE 或者 FALSE</p>",
+          "example": "FALSE",
           "member": "string",
           "name": "TraceEnable",
           "output_required": false,
@@ -9692,6 +9791,38 @@
         }
       ],
       "usage": "out"
+    },
+    "FunctionEipConfig": {
+      "document": "云函数公网访问固定ip配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Eip开启状态，取值['ENABLE','DISABLE']",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "EipStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionEipConfigFixed": {
+      "document": "固定 IP 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否固定 IP，TRUE / FALSE</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "EipFixed",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "FunctionEnvironment": {
       "document": "函数的环境变量参数",
@@ -9735,6 +9866,84 @@
         }
       ],
       "usage": "out"
+    },
+    "FunctionLayer": {
+      "document": "云函数Layer版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>层名称</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "LayerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>层版本号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "LayerVersion",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "FunctionPublicNetConfig": {
+      "document": "云函数公网访问配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启公网访问能力取值['DISABLE','ENABLE']",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "PublicNetStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Eip配置",
+          "example": "无",
+          "member": "FunctionEipConfig",
+          "name": "EipConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionVpcConfig": {
+      "document": "私有网络参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有网络 的 id",
+          "example": "",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网的 id",
+          "example": "",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GatewayVersionItem": {
       "document": "网关版本详情",
@@ -11088,7 +11297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "<p>命名空间</p>",
           "example": "lowcode-5gtny6fc61de9566",
           "member": "string",
           "name": "EnvId",
@@ -11097,7 +11306,7 @@
         },
         {
           "disabled": false,
-          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "document": "<p>以升序还是降序的方式返回结果，可选值 ASC 和 DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -11106,7 +11315,7 @@
         },
         {
           "disabled": false,
-          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName",
+          "document": "<p>根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName</p>",
           "example": "ModTime",
           "member": "string",
           "name": "Orderby",
@@ -11115,7 +11324,7 @@
         },
         {
           "disabled": false,
-          "document": "数据偏移量，默认值为 0",
+          "document": "<p>数据偏移量，默认值为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -11124,7 +11333,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数据长度，默认值为 20",
+          "document": "<p>返回数据长度，默认值为 20</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -11133,7 +11342,7 @@
         },
         {
           "disabled": false,
-          "document": "支持FunctionName模糊匹配",
+          "document": "<p>支持FunctionName模糊匹配</p>",
           "example": "kong555",
           "member": "string",
           "name": "SearchKey",
@@ -11142,7 +11351,7 @@
         },
         {
           "disabled": false,
-          "document": "函数描述，支持模糊搜索",
+          "document": "<p>函数描述，支持模糊搜索</p>",
           "example": "kong555",
           "member": "string",
           "name": "Description",
@@ -11151,7 +11360,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤特定属性或者有特定标签的函数。- 传值方式key-value 进行传值 例如：\"Filters\": [{ \"Name\": \"Status\", \"Values\": [\"CreateFailed\",\"Creating\"]}, {\"Name\": \"Type\",\"Values\": [\"HTTP\"]}]上述条件的函数是，函数状态为创建失败或者创建中，且函数类型为 HTTP 函数如果通过标签进行过滤：- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。示例值：\"Filters\": [{\"Name\":\"tag-dmtest\",\"Values\":[\"dmtest\"]}]入参限制：1.每次请求的Filters的上限为10，Filter.Values的上限为5。2.[VpcId', 'SubnetId', 'ClsTopicId', 'ClsLogsetId', 'Role', 'CfsId', 'CfsMountInsId', 'Eip'] 过滤的Name 为这些属性时， values 只能传一个值3.['Status', 'Runtime', 'Type', 'PublicNetStatus', 'AsyncRunEnable', 'TraceEnable', 'Stamp'] 过滤的Name 为这些属性时 ，values 可以传多个值",
+          "document": "<p>过滤特定属性或者有特定标签的函数。- 传值方式key-value 进行传值 例如：&quot;Filters&quot;: [{ &quot;Name&quot;: &quot;Status&quot;, &quot;Values&quot;: [&quot;CreateFailed&quot;,&quot;Creating&quot;]}, {&quot;Name&quot;: &quot;Type&quot;,&quot;Values&quot;: [&quot;HTTP&quot;]}]上述条件的函数是，函数状态为创建失败或者创建中，且函数类型为 HTTP 函数如果通过标签进行过滤：- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。示例值：&quot;Filters&quot;: [{&quot;Name&quot;:&quot;tag-dmtest&quot;,&quot;Values&quot;:[&quot;dmtest&quot;]}]入参限制：1.每次请求的Filters的上限为10，Filter.Values的上限为5。2.[VpcId&#39;, &#39;SubnetId&#39;, &#39;ClsTopicId&#39;, &#39;ClsLogsetId&#39;, &#39;Role&#39;, &#39;CfsId&#39;, &#39;CfsMountInsId&#39;, &#39;Eip&#39;] 过滤的Name 为这些属性时， values 只能传一个值3.[&#39;Status&#39;, &#39;Runtime&#39;, &#39;Type&#39;, &#39;PublicNetStatus&#39;, &#39;AsyncRunEnable&#39;, &#39;TraceEnable&#39;, &#39;Stamp&#39;] 过滤的Name 为这些属性时 ，values 可以传多个值</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -11166,17 +11375,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "函数列表",
+          "document": "<p>函数列表</p>",
           "example": "无",
           "member": "Function",
           "name": "Functions",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "5",
           "member": "int64",
           "name": "TotalCount",

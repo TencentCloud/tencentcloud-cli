@@ -11470,10 +11470,19 @@
         },
         {
           "disabled": false,
-          "document": "<p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx</p>",
+          "document": "<p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx，预留参数</p>",
           "example": "byok-ipjuuwnd",
           "member": "string",
           "name": "ServiceProviderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>    CMR 私网管道ID </p>",
+          "example": "pnt-lbepdi5o",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
           "required": false,
           "type": "string"
         }
@@ -22902,7 +22911,7 @@
         {
           "disabled": false,
           "document": "<p>待探测的模型（原始模型名称）</p>",
-          "example": "gpt-5",
+          "example": "chat",
           "member": "string",
           "name": "Model",
           "required": true,
@@ -22911,7 +22920,7 @@
         {
           "disabled": false,
           "document": "<p>待探测的API Key（明文）</p>",
-          "example": "sk-1111",
+          "example": "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",
           "member": "string",
           "name": "ProviderKey",
           "required": false,
@@ -22920,7 +22929,7 @@
         {
           "disabled": false,
           "document": "<p>已创建的BYOK API Key ID（与ProviderKey二选一传入）</p>",
-          "example": "mkey-lgcd245h",
+          "example": "mkey-fanvvkf8",
           "member": "string",
           "name": "ProviderKeyId",
           "required": false,
@@ -22929,7 +22938,7 @@
         {
           "disabled": false,
           "document": "<p>BYOK类型，当ProviderKey传入时必填</p>",
-          "example": "PublicCustom",
+          "example": "PrivateCustom",
           "member": "string",
           "name": "AccessType",
           "required": false,
@@ -22947,7 +22956,7 @@
         {
           "disabled": false,
           "document": "<p>模型的厂商</p>",
-          "example": "tokenhub",
+          "example": "openai",
           "member": "string",
           "name": "ModelProvider",
           "required": false,
@@ -22956,7 +22965,7 @@
         {
           "disabled": false,
           "document": "<p>自定义ApiBase，当ProviderKey传入且AccessType且PrivateCustom/PublicCustom时必填</p>",
-          "example": "http://11.141.93.26:10000/v1",
+          "example": "https://openrouter.ai/api/v1",
           "member": "string",
           "name": "ApiBase",
           "required": false,
@@ -22974,7 +22983,7 @@
         {
           "disabled": false,
           "document": "<p>BYOK实例ID，当AccessType为PrivateCustom时生效，ProviderKey传入时必填</p>",
-          "example": "byok-j4qstgul",
+          "example": "byok-l1l4echw",
           "member": "string",
           "name": "ServiceProviderId",
           "required": false,
@@ -22983,7 +22992,7 @@
         {
           "disabled": false,
           "document": "<p>是否校验服务提供商的SSL证书</p><p>PublicBYOK时为True且禁止传入；若传入VerifySSL，则优先同步入参逻辑；若传入了ServiceProviderId则同步已创建的Byok实例该Model的逻辑；否则PublicCustom模式下为True，PrivateCustom模式下为False。</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "VerifySSL",
           "required": false,
@@ -22997,6 +23006,15 @@
           "name": "HealthCheckProtocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CMR私网管道ID</p>",
+          "example": "pnt-lbepdi5o",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -23007,7 +23025,7 @@
         {
           "disabled": false,
           "document": "<p>探测的模型</p>",
-          "example": "gpt-5",
+          "example": "chat",
           "member": "string",
           "name": "Model",
           "output_required": true,
@@ -23142,6 +23160,15 @@
           "example": "chat",
           "member": "string",
           "name": "HealthCheckProtocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>    CMR 私网管道ID </p>",
+          "example": "pnt-lbepdi5o",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
           "required": false,
           "type": "string"
         }
