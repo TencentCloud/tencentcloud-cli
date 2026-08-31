@@ -408,7 +408,7 @@ class ConfigureCommand(BasicConfigure):
                "    Default region name [ap-guangzhou]:\n" \
                "    Default output format [json]:\n" \
                "\n\n" \
-               "To update just the region name (credentials except CVM role mode will be cleared and secretId/secretKey re-prompted)::\n" \
+               "To update just the region name::\n" \
                "    $ tccli configure\n" \
                "    TencentCloud API secretId [None]:\n" \
                "    TencentCloud API secretKey [None]:\n" \
