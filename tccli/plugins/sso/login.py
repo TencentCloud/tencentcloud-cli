@@ -14,6 +14,10 @@ from tccli import sso
 from tccli.plugins.sso import texts, terminal, configs
 from tccli.plugins.sso.texts import get as _
 
+_DURATION_MIN = 1800
+_DURATION_MAX = 43200
+_DURATION_DEFAULT = 7200
+
 
 def print_message(msg):
     print(msg)
@@ -34,6 +38,11 @@ def login_command_entrypoint(args, parsed_globals):
 
 
 def login(args, profile, language):
+    duration = args.get("duration", _DURATION_DEFAULT)
+    if not (_DURATION_MIN <= duration <= _DURATION_MAX):
+        print_message(_("invalid_duration") % duration)
+        return
+
     cred_path = sso.cred_path_of_profile(profile)
     auth_url = ""
     if os.path.exists(cred_path):
@@ -106,7 +115,7 @@ def login(args, profile, language):
     role_arn = "qcs::cam::uin/%s:roleName/TencentCloudSSO-%s" % (account["Uin"], role["RoleConfigurationName"])
     principal_arn = "qcs::cam::uin/%s:saml-provider/TencentReservedSSO-%s" % (account["Uin"], token_info["ZoneId"])
     cred = sso.assume_role_with_saml(
-        saml_resp["SAMLResponse"], principal_arn, role_arn, "ses-%s" % uuid.uuid4(), args.get("duration", 7200), site)
+        saml_resp["SAMLResponse"], principal_arn, role_arn, "ses-%s" % uuid.uuid4(), duration, site)
 
     sso_info = {
         "token": login_token,

@@ -408,10 +408,10 @@ class ConfigureCommand(BasicConfigure):
                "    Default region name [ap-guangzhou]:\n" \
                "    Default output format [json]:\n" \
                "\n\n" \
-               "To update just the region name::\n" \
+               "To update just the region name (credentials except CVM role mode will be cleared and secretId/secretKey re-prompted)::\n" \
                "    $ tccli configure\n" \
-               "    TencentCloud API secretId [****]:\n" \
-               "    TencentCloud API secretKey [****]:\n" \
+               "    TencentCloud API secretId [None]:\n" \
+               "    TencentCloud API secretKey [None]:\n" \
                "    Default region name [ap-guangzhou]: ap-beijing\n" \
                "    Default output format [json]:\n"
     SUBCOMMANDS = [
@@ -442,16 +442,38 @@ class ConfigureCommand(BasicConfigure):
             OptionsDefine.Output: "json"
         }
 
-        cred = {
-            OptionsDefine.SecretId: "None",
-            OptionsDefine.SecretKey: "None"
-        }
-
         is_conf_exist, config_path = self._profile_existed(profile_name + ".configure")
         is_cred_exist, cred_path = self._profile_existed(profile_name + ".credential")
 
         conf_data = {}
         cred_data = {}
+        old_cred_data = Utils.load_json_msg(cred_path) if is_cred_exist else {}
+        credential_type = old_cred_data.get("type")
+        if "type" not in old_cred_data or credential_type == "default":
+            dynamic_credential = False
+        elif credential_type in ("sso", "oauth", "cvm-role"):
+            dynamic_credential = True
+        else:
+            raise ConfigurationError("Invalid credential type: %s" % credential_type)
+
+        if dynamic_credential:
+            display_type = {
+                "sso": "SSO",
+                "oauth": "OAuth",
+                "cvm-role": "CVM Role"
+            }[credential_type]
+            print("Current authentication method: %s." % display_type)
+            print("Continuing will switch to static SecretId/SecretKey credentials.")
+            print("The existing credential refresh capability will no longer be used.")
+            if self._compat_input("Continue? [y/N]: ").strip().lower() != "y":
+                print("Configuration cancelled. No changes were saved.")
+                return
+
+        cred = {
+            OptionsDefine.SecretId: old_cred_data.get(OptionsDefine.SecretId, "") or "None",
+            OptionsDefine.SecretKey: old_cred_data.get(OptionsDefine.SecretKey, "") or "None"
+        }
+
         if is_conf_exist:
             conf_data = Utils.load_json_msg(config_path)
             for c in config:
@@ -459,12 +481,6 @@ class ConfigureCommand(BasicConfigure):
                         and c in conf_data[OptionsDefine.SysParam] \
                         and conf_data[OptionsDefine.SysParam][c]:
                     config[c] = conf_data[OptionsDefine.SysParam][c]
-        if is_cred_exist:
-            cred_data = Utils.load_json_msg(cred_path)
-            for c in cred:
-                if c in cred_data and cred_data[c]:
-                    cred[c] = cred_data[c]
-
         if OptionsDefine.SysParam not in conf_data:
             conf_data[OptionsDefine.SysParam] = {}
 
@@ -484,12 +500,35 @@ class ConfigureCommand(BasicConfigure):
                 else:
                     conf_data[OptionsDefine.SysParam][index] = response if response else config[index]
             else:
-                response = self._compat_input(
-                    "%s[%s]: " % (prompt_text, "*"+cred[index][-4:] if cred[index] != "None" else cred[index]))
-                cred_data[index] = response if response else cred[index]
+                old_value = old_cred_data.get(index, "")
+                while True:
+                    response = self._compat_input(
+                        "%s[%s]: " % (prompt_text, "*" + cred[index][-4:] if cred[index] != "None" else cred[index]))
+                    if response:
+                        cred_data[index] = response
+                        break
+                    if not dynamic_credential:
+                        cred_data[index] = old_value
+                        break
+                    field_name = "SecretId" if index == OptionsDefine.SecretId else "SecretKey"
+                    print("%s will be replaced with an empty value." % field_name)
+                    if self._compat_input("Continue? [y/N]: ").strip().lower() == "y":
+                        cred_data[index] = ""
+                        break
 
         self._init_configure(profile_name + ".configure", conf_data)
-        self._init_configure(profile_name + ".credential", cred_data)
+        Utils.dump_json_msg(cred_path, cred_data)
+
+        secret_id = cred_data.get(OptionsDefine.SecretId, "")
+        secret_key = cred_data.get(OptionsDefine.SecretKey, "")
+        if dynamic_credential:
+            print('Profile "%s" has been switched from %s to static credentials.' % (
+                profile_name, display_type))
+        if not secret_id or not secret_key:
+            print("Warning: SecretId or SecretKey is empty. Subsequent API requests may fail authentication.")
+            print("Run `tccli configure --profile %s` to update the credentials." % profile_name)
+        elif not dynamic_credential:
+            print("Configure saved successfully.")
 
     def init_configures(self):
         config = {}
