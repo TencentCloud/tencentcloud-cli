@@ -5,6 +5,8 @@ import time
 import requests
 import uuid
 
+from tccli.utils import Utils
+
 _API_ENDPOINT = "https://cli.cloud.tencent.com"
 _CRED_REFRESH_SAFE_DUR = 60 * 5
 _ACCESS_REFRESH_SAFE_DUR = 60 * 5
@@ -111,5 +113,4 @@ def save_credential(token, new_cred, profile):
             "site": token["site"],
         },
     }
-    with open(cred_path, "w") as cred_file:
-        json.dump(cred, cred_file, indent=4)
+    Utils.dump_json_msg(cred_path, cred)
