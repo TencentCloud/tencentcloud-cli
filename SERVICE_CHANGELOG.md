@@ -1,10 +1,30 @@
-# Release 3.0.1483.1
+# Release 3.0.1484.1
 
-## 商业智能分析 BI(bi) 版本：2022-01-05
+## 应用性能监控(apm) 版本：2021-06-22
 
-### 第 41 次发布
+### 第 39 次发布
 
-发布时间：2026-08-31 01:10:30
+发布时间：2026-09-02 01:11:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRelatedServicesOnTrace](http://document.tencentcloudapi.woa.com/document/product/1463/92489)
+
+新增数据结构：
+
+* [ServiceRelation](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ServiceRelation)
+
+
+
+## 腾讯云智能体开发平台(lke) 版本：2023-11-30
+
+### 第 43 次发布
+
+发布时间：2026-09-02 02:05:16
 
 本次发布包含了以下内容：
 
@@ -12,118 +32,84 @@
 
 修改接口：
 
-* [DescribeUserRoleList](http://document.tencentcloudapi.woa.com/document/product/1707/82001)
+* [ListAttributeLabel](http://document.tencentcloudapi.woa.com/document/product/1759/83667)
 
-	* 新增入参：IdentityType
+	* 新增入参：ShowMeta
 
+* [ListDoc](http://document.tencentcloudapi.woa.com/document/product/1759/83688)
 
-修改数据结构：
+	* 新增入参：ShowMeta
 
-* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#UserInfo)
+* [ListDocCate](http://document.tencentcloudapi.woa.com/document/product/1759/88264)
 
-	* 新增成员：IdentityType
+	* 新增入参：ShowMeta
 
-* [UserRoleListDataUserRoleInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#UserRoleListDataUserRoleInfo)
+* [ListQA](http://document.tencentcloudapi.woa.com/document/product/1759/83654)
 
-	* 新增成员：IdentityType
+	* 新增入参：ShowMeta
 
+* [ListQACate](http://document.tencentcloudapi.woa.com/document/product/1759/83653)
 
-
-
-## 负载均衡(clb) 版本：2023-04-17
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 96 次发布
-
-发布时间：2026-08-31 01:15:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeUpperModels](http://document.tencentcloudapi.woa.com/document/product/214/91017)
-
-	* 新增入参：CMRPrivateNetworkTunnelId
-
-* [TestModelInputModalities](http://document.tencentcloudapi.woa.com/document/product/214/91011)
-
-	* 新增入参：CMRPrivateNetworkTunnelId
-
-* [TestServiceProviderConnection](http://document.tencentcloudapi.woa.com/document/product/214/91010)
-
-	* 新增入参：CMRPrivateNetworkTunnelId
-
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 99 次发布
-
-发布时间：2026-08-31 01:31:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeTWeSeeSubscription](http://document.tencentcloudapi.woa.com/document/product/1081/91258)
-
-	* 新增出参：SummarizeConfig
-
-* [DescribeTWeSeeTask](http://document.tencentcloudapi.woa.com/document/product/1081/91257)
-
-	* 新增入参：FileURLExpireTime
-
-* [ModifyTWeSeeSubscription](http://document.tencentcloudapi.woa.com/document/product/1081/91248)
-
-	* 新增入参：SummarizeConfig
+	* 新增入参：ShowMeta
 
 
 新增数据结构：
 
-* [SeeSummarizeConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#SeeSummarizeConfig)
-* [SeeSummarizeResult](http://document.tencentcloudapi.woa.com/document/product/1081/34988#SeeSummarizeResult)
+* [MetaValue](http://document.tencentcloudapi.woa.com/document/product/1759/83593#MetaValue)
 
 修改数据结构：
 
-* [SeeTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#SeeTaskInfo)
+* [AttrLabelDetail](http://document.tencentcloudapi.woa.com/document/product/1759/83593#AttrLabelDetail)
 
-	* 新增成员：SummarizeResult
+	* 新增成员：MetaConfig
 
+* [CateInfo](http://document.tencentcloudapi.woa.com/document/product/1759/83593#CateInfo)
+
+	* 新增成员：MetaConfig
+
+* [ListDocItem](http://document.tencentcloudapi.woa.com/document/product/1759/83593#ListDocItem)
+
+	* 新增成员：MetaRefList
+
+* [ListQaItem](http://document.tencentcloudapi.woa.com/document/product/1759/83593#ListQaItem)
+
+	* 新增成员：MetaRefList
+
+* [QACate](http://document.tencentcloudapi.woa.com/document/product/1759/83593#QACate)
+
+	* 新增成员：MetaConfig
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 35 次发布
+
+发布时间：2026-09-02 02:06:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* GetDataSourceToken
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* DataSourceMeetingToken
+* DataSourceQQDocsToken
+* DataSourceQQMapToken
+* DataSourceToken
 
 
 
 ## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
 
-### 第 69 次发布
+### 第 70 次发布
 
-发布时间：2026-08-31 01:37:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CloseDBProxyAddress](http://document.tencentcloudapi.woa.com/document/product/409/92475)
-* [CreateDBProxyAddress](http://document.tencentcloudapi.woa.com/document/product/409/92474)
-* [DescribeDBProxySSLConfig](http://document.tencentcloudapi.woa.com/document/product/409/92473)
-* [ModifyDBProxySSLConfig](http://document.tencentcloudapi.woa.com/document/product/409/92472)
-
-
-
-## 云开发 CloudBase(tcb) 版本：2018-06-08
-
-### 第 65 次发布
-
-发布时间：2026-08-31 01:41:35
+发布时间：2026-09-02 02:13:56
 
 本次发布包含了以下内容：
 
@@ -131,52 +117,52 @@
 
 修改接口：
 
-* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/876/89198)
+* [CreateAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/409/90098)
 
-	* 新增入参：InitTimeout, CodeSource, VpcConfig, Layers, PublicNetConfig, AsyncRunEnable, TraceEnable, AutoCreateClsTopic, AutoDeployClsTopicIndex, DnsCache, EipConfig
-
-
-新增数据结构：
-
-* [FunctionEipConfig](http://document.tencentcloudapi.woa.com/document/product/876/34822#FunctionEipConfig)
-* [FunctionEipConfigFixed](http://document.tencentcloudapi.woa.com/document/product/876/34822#FunctionEipConfigFixed)
-* [FunctionLayer](http://document.tencentcloudapi.woa.com/document/product/876/34822#FunctionLayer)
-* [FunctionPublicNetConfig](http://document.tencentcloudapi.woa.com/document/product/876/34822#FunctionPublicNetConfig)
-* [FunctionVpcConfig](http://document.tencentcloudapi.woa.com/document/product/876/34822#FunctionVpcConfig)
+	* 新增出参：FileName
 
 
 
-## 高性能计算平台(thpc) 版本：2023-03-21
 
-### 第 36 次发布
+## 云开发 CloudBase(tcb) 版本：2018-06-08
 
-发布时间：2026-08-31 01:45:47
+### 第 67 次发布
+
+发布时间：2026-09-02 02:21:47
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [CreateScheduledAction](http://document.tencentcloudapi.woa.com/document/product/1701/92483)
-* [DeleteScheduledAction](http://document.tencentcloudapi.woa.com/document/product/1701/92482)
-* [DescribeInstanceFamilies](http://document.tencentcloudapi.woa.com/document/product/1701/92481)
-* [DescribeQueueAutoScaling](http://document.tencentcloudapi.woa.com/document/product/1701/92480)
-* [DescribeQueueAutoScalingOverview](http://document.tencentcloudapi.woa.com/document/product/1701/92479)
-* [DescribeScheduledActions](http://document.tencentcloudapi.woa.com/document/product/1701/92478)
-* [ModifyScheduledAction](http://document.tencentcloudapi.woa.com/document/product/1701/92477)
-* [SetQueueAutoScaling](http://document.tencentcloudapi.woa.com/document/product/1701/92476)
+* [ExecutePGSql](http://document.tencentcloudapi.woa.com/document/product/876/89978)
 
-新增数据结构：
+	* 新增出参：ColumnTypes
 
-* [ExpansionPolicy](http://document.tencentcloudapi.woa.com/document/product/1701/80209#ExpansionPolicy)
-* [ExpansionPriority](http://document.tencentcloudapi.woa.com/document/product/1701/80209#ExpansionPriority)
-* [ScalingPolicy](http://document.tencentcloudapi.woa.com/document/product/1701/80209#ScalingPolicy)
-* [TemplateOverrides](http://document.tencentcloudapi.woa.com/document/product/1701/80209#TemplateOverrides)
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
 
 
 
 ## 高性能计算平台(thpc) 版本：2022-04-01
+
+### 第 6 次发布
+
+发布时间：2026-09-02 02:31:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterActivities](http://document.tencentcloudapi.woa.com/document/product/1701/80154)
+
+	* 新增入参：Filters
+
 
 
 

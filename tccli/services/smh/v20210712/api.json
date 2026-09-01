@@ -255,6 +255,15 @@
           "name": "BucketTag",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>媒体库标签列表。</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -550,6 +559,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -620,7 +638,7 @@
           "example": "smh3ptyc9mscifdi",
           "member": "string",
           "name": "LibraryId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -630,7 +648,7 @@
           "example": "9b04bf875752253f44505c6e4a8d3513d75a979e1faef1575a8f72e30f312a23",
           "member": "string",
           "name": "LibrarySecret",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1196,7 +1214,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体库 ID",
+          "document": "<p>媒体库 ID</p>",
           "example": "smh3ptyc9mscifdi",
           "member": "string",
           "name": "LibraryId",
@@ -1206,7 +1224,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库友好名称",
+          "document": "<p>媒体库友好名称</p>",
           "example": "个人相册",
           "member": "string",
           "name": "Name",
@@ -1216,7 +1234,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "用于家庭内部共享",
           "member": "string",
           "name": "Remark",
@@ -1226,7 +1244,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库绑定的 COS 存储桶",
+          "document": "<p>媒体库绑定的 COS 存储桶</p>",
           "example": "smh-1250000000",
           "member": "string",
           "name": "BucketName",
@@ -1236,7 +1254,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库绑定的 COS 存储桶所在的地域",
+          "document": "<p>媒体库绑定的 COS 存储桶所在的地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
@@ -1246,7 +1264,7 @@
         },
         {
           "disabled": false,
-          "document": "该媒体库的业务 API 访问域名",
+          "document": "<p>该媒体库的业务 API 访问域名</p>",
           "example": "smh3ptyc9mscifdi.api.tencentsmh.cn",
           "member": "string",
           "name": "AccessDomain",
@@ -1256,7 +1274,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库创建时间",
+          "document": "<p>媒体库创建时间</p>",
           "example": "2021-10-12T03:53:29Z",
           "member": "datetime_iso",
           "name": "CreationTime",
@@ -1266,7 +1284,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库配置项",
+          "document": "<p>媒体库配置项</p>",
           "example": "无",
           "member": "LibraryExtension",
           "name": "LibraryExtension",
@@ -1276,7 +1294,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。",
+          "document": "<p>媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。</p>",
           "example": "182736273",
           "member": "string",
           "name": "Size",
@@ -1286,7 +1304,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体库目录数，由于数字类型精度限制，该字段为 String 类型。",
+          "document": "<p>媒体库目录数，由于数字类型精度限制，该字段为 String 类型。</p>",
           "example": "12",
           "member": "string",
           "name": "DirNum",
@@ -1296,12 +1314,42 @@
         },
         {
           "disabled": false,
-          "document": "媒体库文件数，由于数字类型精度限制，该字段为 String 类型。",
+          "document": "<p>媒体库文件数，由于数字类型精度限制，该字段为 String 类型。</p>",
           "example": "3746",
           "member": "string",
           "name": "FileNum",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前媒体库所在的独立集群标签，如果为公共集群则不返回该字段。</p>",
+          "example": "workbuddy",
+          "member": "string",
+          "name": "ClusterTag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前媒体库是否用于 Agent Bucket，如果未用于 Agent Bucket，则不返回该字段。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAgentBucketLibrary",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>媒体库关联的标签列表。</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1626,6 +1674,15 @@
           "name": "LibraryExtension",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>媒体库标签列表。</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1677,6 +1734,34 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceTag": {
+      "document": "资源标签的键和值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签键。</p>",
+          "example": "",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值。</p>",
+          "example": "",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SendSmsCodeRequest": {
       "document": "SendSmsCode请求参数结构体",
@@ -1932,6 +2017,30 @@
         }
       ],
       "usage": "out"
+    },
+    "TagFilter": {
+      "document": "标签过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用于筛选媒体库的标签键。</p>",
+          "example": "",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于筛选媒体库的标签值列表。</p>",
+          "example": "",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "TrafficPackage": {
       "document": "流量资源包信息",

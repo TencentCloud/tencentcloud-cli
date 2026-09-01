@@ -154,13 +154,6 @@
       "output": "DescribeWxAppInfoResponse",
       "status": "online"
     },
-    "GetDataSourceToken": {
-      "document": "90无调用\n\nGetDataSourceTokenRequestVO",
-      "input": "GetDataSourceTokenRequest",
-      "name": "获取数据源授权token",
-      "output": "GetDataSourceTokenResponse",
-      "status": "deprecated"
-    },
     "ModifyDataSource": {
       "document": "修改数据源信息",
       "input": "ModifyDataSourceRequest",
@@ -1192,42 +1185,6 @@
       ],
       "usage": "out"
     },
-    "DataSourceMeetingToken": {
-      "document": "腾讯会议token",
-      "members": [
-        {
-          "disabled": false,
-          "document": "腾讯会议access_token",
-          "example": "无",
-          "member": "string",
-          "name": "AccessToken",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "腾讯会议openid",
-          "example": "无",
-          "member": "string",
-          "name": "OpenId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "token过期时间",
-          "example": "无",
-          "member": "string",
-          "name": "ExpireTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "DataSourceMysqlDetail": {
       "document": "数据模型mysql表信息",
       "members": [
@@ -1252,98 +1209,6 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
-    },
-    "DataSourceQQDocsToken": {
-      "document": "腾讯文档token",
-      "members": [
-        {
-          "disabled": false,
-          "document": "腾讯文档asscee_token",
-          "example": "无",
-          "member": "string",
-          "name": "AccessToken",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "腾讯文档应用id",
-          "example": "无",
-          "member": "string",
-          "name": "ClientId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "用户openid",
-          "example": "无",
-          "member": "string",
-          "name": "OpenId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "用户token类型",
-          "example": "无",
-          "member": "string",
-          "name": "TokenType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "用户授权范围",
-          "example": "无",
-          "member": "string",
-          "name": "Scope",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "token过期时间",
-          "example": "无",
-          "member": "string",
-          "name": "ExpireTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DataSourceQQMapToken": {
-      "document": "腾讯地图token",
-      "members": [
-        {
-          "disabled": false,
-          "document": "腾讯地图key",
-          "example": "无",
-          "member": "string",
-          "name": "Key",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "过期时间",
-          "example": "无",
-          "member": "string",
-          "name": "ExpireTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1463,42 +1328,6 @@
           "name": "AuthUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DataSourceToken": {
-      "document": "外部数据源token",
-      "members": [
-        {
-          "disabled": false,
-          "document": "腾讯文档token",
-          "example": "无",
-          "member": "DataSourceQQDocsToken",
-          "name": "QQDocsToken",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "腾讯会议token",
-          "example": "无",
-          "member": "DataSourceMeetingToken",
-          "name": "MeetingToken",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "腾讯地图token",
-          "example": "无",
-          "member": "DataSourceQQMapToken",
-          "name": "QQMapToken",
-          "required": true,
-          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -3048,43 +2877,6 @@
         }
       ],
       "usage": "in"
-    },
-    "GetDataSourceTokenRequest": {
-      "document": "GetDataSourceToken请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "数据源id",
-          "example": "无",
-          "member": "string",
-          "name": "DataSourceId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetDataSourceTokenResponse": {
-      "document": "GetDataSourceToken返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "无",
-          "example": "无",
-          "member": "DataSourceToken",
-          "name": "Data",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "GroupPermission": {
       "document": "组可读可写权限",

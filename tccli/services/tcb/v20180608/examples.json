@@ -125,9 +125,9 @@
     "CreateCloudApp": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudApp\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-*********f985f96\",\n    \"ServiceName\": \"html\",\n    \"DeployType\": \"static-hosting\",\n    \"BuildType\": \"ZIP\",\n    \"StaticConfig\": {\n        \"Framework\": \"other\",\n        \"NodeJsVersion\": \"18\",\n        \"AppPath\": \"/html\",\n        \"CosTimestamp\": \"17****9**5\",\n        \"CosSuffix\": \"zip\",\n        \"StaticCmd\": {\n            \"DeployCmd\": \"tcb hosting deploy ./ /html\"\n        }\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"BuildId\": \"26014**8*2\",\n        \"ServiceName\": \"html\",\n        \"VersionName\": \"html-002\",\n        \"RequestId\": \"ba0e079a-c85d-43ec-a313-7e88f251646c\"\n    }\n}",
-        "title": "创建云应用"
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudApp\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-****************\",\n    \"ServiceName\": \"my-vue-app-01\",\n    \"DeployType\": \"custom\",\n    \"Source\": {\n        \"Type\": \"git\",\n        \"Repo\": \"https://gi**u*********************-**********.git\",\n        \"Ref\": \"master\",\n        \"Channel\": \"github\"\n    },\n    \"CustomSteps\": [\n        {\n            \"Name\": \"ls\",\n            \"Command\": \"node -v\"\n        }\n    ],\n    \"NodeJsVersion\": \"22\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BuildId\": \"**********\",\n        \"ServiceName\": \"my-***-***-**\",\n        \"VersionName\": \"my-vue-app-01-001\",\n        \"RequestId\": \"75628170-c5b9-4bda-b370-fec9dd4362f0\"\n    }\n}",
+        "title": "创建 custom 服务"
       }
     ],
     "CreateCustomLoginKey": [

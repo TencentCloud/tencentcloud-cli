@@ -66,7 +66,7 @@
       {
         "document": "创建审计日志文件",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-nqg1hcnj\",\n    \"StartTime\": \"2026-03-25 00:00:00\",\n    \"EndTime\": \"2026-03-25 01:00:00\",\n    \"Product\": \"postgres\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56707f2b-f311-4448-97bf-8c6323072aef\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FileName\": \"\",\n        \"RequestId\": \"56707f2b-f311-4448-97bf-8c6323072aef\"\n    }\n}",
         "title": "创建审计日志文件"
       }
     ],

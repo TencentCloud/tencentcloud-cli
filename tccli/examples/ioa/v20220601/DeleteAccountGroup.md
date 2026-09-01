@@ -1,4 +1,4 @@
-**Example 1: 示例1**
+**Example 1: 删除分组**
 
 
 
@@ -6,14 +6,15 @@ Input:
 
 ```
 tccli ioa DeleteAccountGroup --cli-unfold-argument  \
-    --AccountGroupId 5980
+    --DomainInstanceId 1 \
+    --AccountGroupId 1048
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "0b4b0915-03b4-4b48-9dca-6af22550ab1b"
+        "RequestId": "427ded2e-f340-47e2-b9a3-965c0e2c331a"
     }
 }
 ```

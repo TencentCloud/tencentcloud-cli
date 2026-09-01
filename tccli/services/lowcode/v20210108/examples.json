@@ -182,14 +182,6 @@
         "title": "查询微信小程序信息"
       }
     ],
-    "GetDataSourceToken": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDataSourceToken\n<公共请求参数>\n\n{\n    \"DataSourceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"QQDocsToken\": {\n                \"OpenId\": \"xx\",\n                \"ClientId\": \"xx\",\n                \"AccessToken\": \"xx\",\n                \"TokenType\": \"xx\",\n                \"Scope\": \"xx\"\n            },\n            \"MeetingToken\": {\n                \"OpenId\": \"xx\",\n                \"AccessToken\": \"xx\"\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取数据源授权token示例"
-      }
-    ],
     "ModifyDataSource": [
       {
         "document": "数据源修改",

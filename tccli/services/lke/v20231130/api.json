@@ -3567,7 +3567,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签ID",
+          "document": "<p>标签ID</p>",
           "example": "1998645228471574272",
           "member": "string",
           "name": "AttrBizId",
@@ -3577,7 +3577,7 @@
         },
         {
           "disabled": true,
-          "document": "标签标识",
+          "document": "<p>标签标识</p>",
           "example": "FyOgpuPs",
           "member": "string",
           "name": "AttrKey",
@@ -3587,7 +3587,7 @@
         },
         {
           "disabled": false,
-          "document": "标签名称",
+          "document": "<p>标签名称</p>",
           "example": "部门名",
           "member": "string",
           "name": "AttrName",
@@ -3597,17 +3597,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值名称",
-          "example": "[\"lke\"]",
-          "member": "string",
-          "name": "LabelNames",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "标签是否在更新中",
+          "document": "<p>标签是否在更新中</p>",
           "example": "true",
           "member": "bool",
           "name": "IsUpdating",
@@ -3617,7 +3607,27 @@
         },
         {
           "disabled": false,
-          "document": "发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)",
+          "document": "<p>标签值名称</p>",
+          "example": "[\"lke\"]",
+          "member": "string",
+          "name": "LabelNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值总数</p>",
+          "example": "1",
+          "member": "string",
+          "name": "LabelTotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发布状态。可选值：</p><ul><li><code>1</code>：待发布</li><li><code>2</code>：发布中</li><li><code>3</code>：已发布</li><li><code>4</code>：发布失败</li><li><code>5</code>：发布更新中</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -3627,7 +3637,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述",
+          "document": "<p>状态描述</p>",
           "example": "待发布",
           "member": "string",
           "name": "StatusDesc",
@@ -3637,13 +3647,13 @@
         },
         {
           "disabled": false,
-          "document": "标签值总数",
-          "example": "1",
-          "member": "string",
-          "name": "LabelTotalCount",
+          "document": "<p>属性标签元数据配置</p>",
+          "example": "无",
+          "member": "MetaValue",
+          "name": "MetaConfig",
           "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4180,37 +4190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分类ID",
-          "example": "1978461293957811200",
-          "member": "string",
-          "name": "CateBizId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "分类名称\n",
-          "example": "未分类",
-          "member": "string",
-          "name": "Name",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "分类下的Record（如文档、同义词等）数量",
-          "example": "10",
-          "member": "int64",
-          "name": "Total",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否可新增\n",
+          "document": "<p>是否可新增</p>",
           "example": "true",
           "member": "bool",
           "name": "CanAdd",
@@ -4220,17 +4200,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可编辑\n",
-          "example": "true",
-          "member": "bool",
-          "name": "CanEdit",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否可删除\n",
+          "document": "<p>是否可删除</p>",
           "example": "true",
           "member": "bool",
           "name": "CanDelete",
@@ -4240,7 +4210,27 @@
         },
         {
           "disabled": false,
-          "document": "子分类",
+          "document": "<p>是否可编辑</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanEdit",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类ID</p>",
+          "example": "1978461293957811200",
+          "member": "string",
+          "name": "CateBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子分类</p>",
           "example": "无",
           "member": "CateInfo",
           "name": "Children",
@@ -4250,12 +4240,42 @@
         },
         {
           "disabled": false,
-          "document": "是否为叶子节点",
+          "document": "<p>是否为叶子节点</p>",
           "example": "false",
           "member": "bool",
           "name": "IsLeaf",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类名称</p>",
+          "example": "未分类",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类下的Record（如文档、同义词等）数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类元数据配置</p>",
+          "example": "无",
+          "member": "MetaValue",
+          "name": "MetaConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -14089,7 +14109,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
+          "document": "<p>应用ID，获取方法参看如何获取<a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">BotBizId</a></p>",
           "example": "1696822786072117248",
           "member": "string",
           "name": "BotBizId",
@@ -14098,7 +14118,7 @@
         },
         {
           "disabled": false,
-          "document": "页码，取值范围：大于0",
+          "document": "<p>页码，取值范围：大于0</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -14107,7 +14127,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，取值范围：大于0",
+          "document": "<p>每页数量，取值范围：大于0</p>",
           "example": "15",
           "member": "uint64",
           "name": "PageSize",
@@ -14116,7 +14136,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户主账号(集成商模式必填)",
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginUin",
@@ -14125,7 +14145,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户子账号(集成商模式必填)",
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
@@ -14134,7 +14154,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容，同时匹配标签内容和标签值内容",
+          "document": "<p>查询内容，同时匹配标签内容和标签值内容</p>",
           "example": "标签一",
           "member": "string",
           "name": "Query",
@@ -14143,12 +14163,21 @@
         },
         {
           "disabled": false,
-          "document": "每个标签同步拉取的标签值数量。即在展示标签列表时，为每一个标签加载多少个具体的标签值。",
+          "document": "<p>每个标签同步拉取的标签值数量。即在展示标签列表时，为每一个标签加载多少个具体的标签值。</p>",
           "example": "1",
           "member": "uint64",
           "name": "LabelSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示元数据配置</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowMeta",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14158,7 +14187,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "15",
           "member": "string",
           "name": "Total",
@@ -14168,7 +14197,7 @@
         },
         {
           "disabled": false,
-          "document": "列表",
+          "document": "<p>列表</p>",
           "example": "无",
           "member": "AttrLabelDetail",
           "name": "List",
@@ -14300,7 +14329,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "1951173265057644542",
           "member": "string",
           "name": "BotBizId",
@@ -14309,7 +14338,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户主账号(集成商模式必填)",
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginUin",
@@ -14318,7 +14347,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户子账号(集成商模式必填)",
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
@@ -14327,7 +14356,7 @@
         },
         {
           "disabled": false,
-          "document": "分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路",
+          "document": "<p>分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路</p>",
           "example": "1",
           "member": "uint64",
           "name": "QueryType",
@@ -14336,7 +14365,7 @@
         },
         {
           "disabled": false,
-          "document": "QueryType=1时，父节点分类ID",
+          "document": "<p>QueryType=1时，父节点分类ID</p>",
           "example": "1951173265057644545",
           "member": "string",
           "name": "ParentCateBizId",
@@ -14345,7 +14374,7 @@
         },
         {
           "disabled": false,
-          "document": "QueryType=1时，页码（从1开始）",
+          "document": "<p>QueryType=1时，页码（从1开始）</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -14354,7 +14383,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量（默认10）",
+          "document": "<p>每页数量（默认10）</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -14363,12 +14392,21 @@
         },
         {
           "disabled": false,
-          "document": "QueryType=2时，搜索内容",
+          "document": "<p>QueryType=2时，搜索内容</p>",
           "example": "我搜索的分类",
           "member": "string",
           "name": "Query",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示元数据配置</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowMeta",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14378,7 +14416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "列表",
+          "document": "<p>列表</p>",
           "example": "无",
           "member": "CateInfo",
           "name": "List",
@@ -14400,7 +14438,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文档ID",
+          "document": "<p>文档ID</p>",
           "example": "1222",
           "member": "string",
           "name": "DocBizId",
@@ -14410,7 +14448,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名称",
+          "document": "<p>文件名称</p>",
           "example": "\"text\"",
           "member": "string",
           "name": "FileName",
@@ -14420,7 +14458,7 @@
         },
         {
           "disabled": false,
-          "document": "重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称",
+          "document": "<p>重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称</p>",
           "example": "\"newName\"",
           "member": "string",
           "name": "NewName",
@@ -14430,7 +14468,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型",
+          "document": "<p>文件类型</p>",
           "example": "\"pdf\"",
           "member": "string",
           "name": "FileType",
@@ -14440,7 +14478,7 @@
         },
         {
           "disabled": false,
-          "document": "cos路径",
+          "document": "<p>cos路径</p>",
           "example": "\"cos/test\"",
           "member": "string",
           "name": "CosUrl",
@@ -14450,7 +14488,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "\"2023-11-30\"",
           "member": "string",
           "name": "UpdateTime",
@@ -14460,7 +14498,7 @@
         },
         {
           "disabled": false,
-          "document": "文档状态",
+          "document": "<p>文档状态</p>",
           "example": "19",
           "member": "int64",
           "name": "Status",
@@ -14470,7 +14508,7 @@
         },
         {
           "disabled": false,
-          "document": "文档状态描述",
+          "document": "<p>文档状态描述</p>",
           "example": "\"学习中\"",
           "member": "string",
           "name": "StatusDesc",
@@ -14480,7 +14518,7 @@
         },
         {
           "disabled": false,
-          "document": "原因",
+          "document": "<p>原因</p>",
           "example": "\"xxxx\"",
           "member": "string",
           "name": "Reason",
@@ -14490,7 +14528,7 @@
         },
         {
           "disabled": false,
-          "document": "答案中是否引用",
+          "document": "<p>答案中是否引用</p>",
           "example": "true",
           "member": "bool",
           "name": "IsRefer",
@@ -14500,7 +14538,7 @@
         },
         {
           "disabled": false,
-          "document": "问答对数量",
+          "document": "<p>问答对数量</p>",
           "example": "1",
           "member": "int64",
           "name": "QaNum",
@@ -14510,7 +14548,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已删除",
+          "document": "<p>是否已删除</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDeleted",
@@ -14520,7 +14558,7 @@
         },
         {
           "disabled": false,
-          "document": "文档来源",
+          "document": "<p>文档来源</p>",
           "example": "1",
           "member": "int64",
           "name": "Source",
@@ -14530,7 +14568,7 @@
         },
         {
           "disabled": false,
-          "document": "文档来源描述",
+          "document": "<p>文档来源描述</p>",
           "example": "\"网页\"",
           "member": "string",
           "name": "SourceDesc",
@@ -14540,7 +14578,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许重新生成",
+          "document": "<p>是否允许重新生成</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAllowRestart",
@@ -14550,7 +14588,7 @@
         },
         {
           "disabled": false,
-          "document": "qa是否已删除",
+          "document": "<p>qa是否已删除</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDeletedQa",
@@ -14560,7 +14598,7 @@
         },
         {
           "disabled": false,
-          "document": "问答是否生成中",
+          "document": "<p>问答是否生成中</p>",
           "example": "false",
           "member": "bool",
           "name": "IsCreatingQa",
@@ -14570,7 +14608,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许删除",
+          "document": "<p>是否允许删除</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAllowDelete",
@@ -14580,7 +14618,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许操作引用开关",
+          "document": "<p>是否允许操作引用开关</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAllowRefer",
@@ -14590,7 +14628,7 @@
         },
         {
           "disabled": false,
-          "document": "问答是否生成过",
+          "document": "<p>问答是否生成过</p>",
           "example": "false",
           "member": "bool",
           "name": "IsCreatedQa",
@@ -14600,7 +14638,7 @@
         },
         {
           "disabled": false,
-          "document": "文档字符量",
+          "document": "<p>文档字符量</p>",
           "example": "\"1022\"",
           "member": "string",
           "name": "DocCharSize",
@@ -14610,7 +14648,7 @@
         },
         {
           "disabled": false,
-          "document": "属性标签适用范围",
+          "document": "<p>属性标签适用范围</p>",
           "example": "1",
           "member": "uint64",
           "name": "AttrRange",
@@ -14620,7 +14658,7 @@
         },
         {
           "disabled": false,
-          "document": "属性标签",
+          "document": "<p>属性标签</p>",
           "example": "无",
           "member": "AttrLabel",
           "name": "AttrLabels",
@@ -14630,7 +14668,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许编辑",
+          "document": "<p>是否允许编辑</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAllowEdit",
@@ -14640,7 +14678,7 @@
         },
         {
           "disabled": false,
-          "document": "外部引用链接类型 0：系统链接 1：自定义链接\n值为1时，WebUrl 字段不能为空，否则不生效。",
+          "document": "<p>外部引用链接类型 0：系统链接 1：自定义链接<br>值为1时，WebUrl 字段不能为空，否则不生效。</p>",
           "example": "1",
           "member": "uint64",
           "name": "ReferUrlType",
@@ -14650,7 +14688,7 @@
         },
         {
           "disabled": false,
-          "document": "网页(或自定义链接)地址",
+          "document": "<p>网页(或自定义链接)地址</p>",
           "example": "\"http://\"",
           "member": "string",
           "name": "WebUrl",
@@ -14660,7 +14698,7 @@
         },
         {
           "disabled": false,
-          "document": "有效开始时间，unix时间戳",
+          "document": "<p>有效开始时间，unix时间戳</p>",
           "example": "\"1970-01-01\"",
           "member": "string",
           "name": "ExpireStart",
@@ -14670,7 +14708,7 @@
         },
         {
           "disabled": false,
-          "document": "有效结束时间，unix时间戳，0代表永久有效",
+          "document": "<p>有效结束时间，unix时间戳，0代表永久有效</p>",
           "example": "\"1971-01-01\"",
           "member": "string",
           "name": "ExpireEnd",
@@ -14680,7 +14718,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许重试，0：否，1：是",
+          "document": "<p>是否允许重试，0：否，1：是</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAllowRetry",
@@ -14690,7 +14728,7 @@
         },
         {
           "disabled": false,
-          "document": "0:文档比对处理 1:文档生成问答",
+          "document": "<p>0:文档比对处理 1:文档生成问答</p>",
           "example": "[1]",
           "member": "int64",
           "name": "Processing",
@@ -14700,7 +14738,7 @@
         },
         {
           "disabled": false,
-          "document": "文档创建落库时间",
+          "document": "<p>文档创建落库时间</p>",
           "example": "\"2023-11-30\"",
           "member": "string",
           "name": "CreateTime",
@@ -14710,7 +14748,7 @@
         },
         {
           "disabled": false,
-          "document": "文档所属分类ID",
+          "document": "<p>文档所属分类ID</p>",
           "example": "\"11988765442\"",
           "member": "string",
           "name": "CateBizId",
@@ -14720,7 +14758,7 @@
         },
         {
           "disabled": false,
-          "document": "文档的用户自定义ID",
+          "document": "<p>文档的用户自定义ID</p>",
           "example": "\"11988765442\"",
           "member": "string",
           "name": "CustomerKnowledgeId",
@@ -14730,7 +14768,7 @@
         },
         {
           "disabled": false,
-          "document": "文档的属性标记，0: 不做用户外部权限校验",
+          "document": "<p>文档的属性标记，0: 不做用户外部权限校验</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "AttributeFlags",
@@ -14740,7 +14778,7 @@
         },
         {
           "disabled": false,
-          "document": "false:未停用，ture:已停用",
+          "document": "<p>false:未停用，ture:已停用</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDisabled",
@@ -14750,7 +14788,7 @@
         },
         {
           "disabled": false,
-          "document": "员工名称",
+          "document": "<p>员工名称</p>",
           "example": "\"lihua\"",
           "member": "string",
           "name": "StaffName",
@@ -14760,7 +14798,7 @@
         },
         {
           "disabled": false,
-          "document": "文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效",
+          "document": "<p>文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -14770,12 +14808,22 @@
         },
         {
           "disabled": false,
-          "document": "文档大小，单位：字节",
+          "document": "<p>文档大小，单位：字节</p>",
           "example": "1024",
           "member": "string",
           "name": "DocSize",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档元数据</p>",
+          "example": "无",
+          "member": "MetaValue",
+          "name": "MetaRefList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -14918,6 +14966,15 @@
           "name": "Source",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示文档元数据</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowMeta",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15032,7 +15089,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
+          "document": "<p>应用ID<br>若要操作共享知识库，传KnowledgeBizId</p>",
           "example": "1951173265057644542",
           "member": "string",
           "name": "BotBizId",
@@ -15041,7 +15098,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户主账号(集成商模式必填)",
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginUin",
@@ -15050,7 +15107,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户子账号(集成商模式必填)",
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
@@ -15059,7 +15116,7 @@
         },
         {
           "disabled": false,
-          "document": "分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路",
+          "document": "<p>分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路</p>",
           "example": "1",
           "member": "uint64",
           "name": "QueryType",
@@ -15068,7 +15125,7 @@
         },
         {
           "disabled": false,
-          "document": "QueryType=1时，父节点分类ID",
+          "document": "<p>QueryType=1时，父节点分类ID</p>",
           "example": "1951173265057644545",
           "member": "string",
           "name": "ParentCateBizId",
@@ -15077,7 +15134,7 @@
         },
         {
           "disabled": false,
-          "document": "QueryType=1时，页码（从1开始）",
+          "document": "<p>QueryType=1时，页码（从1开始）</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -15086,7 +15143,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量（默认10）",
+          "document": "<p>每页数量（默认10）</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -15095,12 +15152,21 @@
         },
         {
           "disabled": false,
-          "document": "QueryType=2时，搜索内容",
+          "document": "<p>QueryType=2时，搜索内容</p>",
           "example": "我搜索的分类",
           "member": "string",
           "name": "Query",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示元数据配置</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowMeta",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15110,7 +15176,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "列表",
+          "document": "<p>列表</p>",
           "example": "无",
           "member": "QACate",
           "name": "List",
@@ -15291,6 +15357,15 @@
           "name": "UpdateTime",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示问答元数据</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowMeta",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15372,27 +15447,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "问答ID",
-          "example": "\"1343444444\"",
-          "member": "string",
-          "name": "QaBizId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "问题",
-          "example": "\"你好吗？\"",
-          "member": "string",
-          "name": "Question",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "答案",
+          "document": "<p>答案</p>",
           "example": "\"我很好\"",
           "member": "string",
           "name": "Answer",
@@ -15402,167 +15457,7 @@
         },
         {
           "disabled": false,
-          "document": "来源",
-          "example": "1",
-          "member": "int64",
-          "name": "Source",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "来源描述",
-          "example": "\"手动导入\"",
-          "member": "string",
-          "name": "SourceDesc",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "更新时间",
-          "example": "\"2025-11-20\"",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态",
-          "example": "2",
-          "member": "int64",
-          "name": "Status",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态描述",
-          "example": "\"待发布\"",
-          "member": "string",
-          "name": "StatusDesc",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文档ID",
-          "example": "\"123333333\"",
-          "member": "string",
-          "name": "DocBizId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "\"2025-11-20\"",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否允许编辑",
-          "example": "false",
-          "member": "bool",
-          "name": "IsAllowEdit",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否允许删除",
-          "example": "false",
-          "member": "bool",
-          "name": "IsAllowDelete",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否允许校验",
-          "example": "false",
-          "member": "bool",
-          "name": "IsAllowAccept",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文档名称",
-          "example": "\"text\"",
-          "member": "string",
-          "name": "FileName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文档类型",
-          "example": "\"md\"",
-          "member": "string",
-          "name": "FileType",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "问答字符数",
-          "example": "1k\"",
-          "member": "string",
-          "name": "QaCharSize",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "有效开始时间，unix时间戳",
-          "example": "\"1970-01-01\"",
-          "member": "string",
-          "name": "ExpireStart",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "有效结束时间，unix时间戳，0代表永久有效",
-          "example": "\"1970-01-01\"",
-          "member": "string",
-          "name": "ExpireEnd",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "属性标签适用范围 1：全部，2：按条件",
-          "example": "1",
-          "member": "int64",
-          "name": "AttrRange",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "属性标签",
+          "document": "<p>属性标签</p>",
           "example": "无",
           "member": "AttrLabel",
           "name": "AttrLabels",
@@ -15572,57 +15467,37 @@
         },
         {
           "disabled": false,
-          "document": "相似问个数",
-          "example": "0",
-          "member": "uint64",
-          "name": "SimilarQuestionNum",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "返回问答关联的相似问,联动搜索,仅展示一条",
-          "example": "\"相似问\"",
-          "member": "string",
-          "name": "SimilarQuestionTips",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "问答是否停用，false:未停用，ture:已停用",
-          "example": "false",
-          "member": "bool",
-          "name": "IsDisabled",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "员工名称",
-          "example": "\"lihua\"",
-          "member": "string",
-          "name": "StaffName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效",
+          "document": "<p>属性标签适用范围 1：全部，2：按条件</p>",
           "example": "1",
           "member": "int64",
-          "name": "EnableScope",
+          "name": "AttrRange",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "问答关联的文档生效域：1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。\n若问答未关联文档，则该字段值同问答生效域。",
+          "document": "<p>创建时间</p>",
+          "example": "\"2025-11-20\"",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档ID</p>",
+          "example": "\"123333333\"",
+          "member": "string",
+          "name": "DocBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答关联的文档生效域：1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。<br>若问答未关联文档，则该字段值同问答生效域。</p>",
           "example": "1",
           "member": "int64",
           "name": "DocEnableScope",
@@ -15632,12 +15507,222 @@
         },
         {
           "disabled": false,
-          "document": "问答大小（含相似问），单位：字节",
+          "document": "<p>问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效结束时间，unix时间戳，0代表永久有效</p>",
+          "example": "\"1970-01-01\"",
+          "member": "string",
+          "name": "ExpireEnd",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效开始时间，unix时间戳</p>",
+          "example": "\"1970-01-01\"",
+          "member": "string",
+          "name": "ExpireStart",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档名称</p>",
+          "example": "\"text\"",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档类型</p>",
+          "example": "\"md\"",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许校验</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAllowAccept",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许删除</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAllowDelete",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许编辑</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAllowEdit",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答是否停用，false:未停用，ture:已停用</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDisabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答ID</p>",
+          "example": "\"1343444444\"",
+          "member": "string",
+          "name": "QaBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答字符数</p>",
+          "example": "1k\"",
+          "member": "string",
+          "name": "QaCharSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答大小（含相似问），单位：字节</p>",
           "example": "1024",
           "member": "string",
           "name": "QaSize",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题</p>",
+          "example": "\"你好吗？\"",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>相似问个数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SimilarQuestionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回问答关联的相似问,联动搜索,仅展示一条</p>",
+          "example": "\"相似问\"",
+          "member": "string",
+          "name": "SimilarQuestionTips",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Source",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源描述</p>",
+          "example": "\"手动导入\"",
+          "member": "string",
+          "name": "SourceDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>员工名称</p>",
+          "example": "\"lihua\"",
+          "member": "string",
+          "name": "StaffName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态描述</p>",
+          "example": "\"待发布\"",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "\"2025-11-20\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问答元数据</p>",
+          "example": "无",
+          "member": "MetaValue",
+          "name": "MetaRefList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -17104,6 +17189,56 @@
         }
       ],
       "type": "object"
+    },
+    "MetaValue": {
+      "document": "元数据值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>元数据值 ID（属性、分类业务id）</p><p>全部传all</p>",
+          "example": "all",
+          "member": "string",
+          "name": "RefValueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据值类型</p><p>枚举值：</p><ul><li>1： 属性标签</li><li>2： 文档分类</li><li>3： 问答分类</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ValueType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据场景</p><p>枚举值：</p><ul><li>1： 仅检索使用</li><li>2： 检索和生成都使用</li></ul>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Scene",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据引用名称</p>",
+          "example": "未分类",
+          "member": "string",
+          "name": "RefName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModelInfo": {
       "document": "模型信息",
@@ -19928,7 +20063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "QA分类的业务ID",
+          "document": "<p>QA分类的业务ID</p>",
           "example": "1985999991020214592",
           "member": "string",
           "name": "CateBizId",
@@ -19938,7 +20073,7 @@
         },
         {
           "disabled": false,
-          "document": "分类名称\n",
+          "document": "<p>分类名称</p>",
           "example": "未分类",
           "member": "string",
           "name": "Name",
@@ -19948,7 +20083,7 @@
         },
         {
           "disabled": false,
-          "document": "分类下QA数量\n",
+          "document": "<p>分类下QA数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Total",
@@ -19958,7 +20093,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可新增\n",
+          "document": "<p>是否可新增</p>",
           "example": "true",
           "member": "bool",
           "name": "CanAdd",
@@ -19968,7 +20103,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可编辑\n",
+          "document": "<p>是否可编辑</p>",
           "example": "true",
           "member": "bool",
           "name": "CanEdit",
@@ -19978,7 +20113,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可删除\n",
+          "document": "<p>是否可删除</p>",
           "example": "true",
           "member": "bool",
           "name": "CanDelete",
@@ -19988,7 +20123,7 @@
         },
         {
           "disabled": false,
-          "document": "子分类",
+          "document": "<p>子分类</p>",
           "example": "无",
           "member": "QACate",
           "name": "Children",
@@ -19998,12 +20133,22 @@
         },
         {
           "disabled": false,
-          "document": "是否是叶子节点",
+          "document": "<p>是否是叶子节点</p>",
           "example": "false",
           "member": "bool",
           "name": "IsLeaf",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分类元数据配置</p>",
+          "example": "无",
+          "member": "MetaValue",
+          "name": "MetaConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

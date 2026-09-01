@@ -1,6 +1,6 @@
-**Example 1: 修改云数据库实例账号的密码**
+**Example 1: 重置密码**
 
-
+重置密码时保留旧密码
 
 Input: 
 
@@ -8,6 +8,7 @@ Input:
 tccli cdb ModifyAccountPassword --cli-unfold-argument  \
     --InstanceId cdb-xxxx \
     --NewPassword your_new_password \
+    --IsRetainOldPassword 1 \
     --Accounts.0.Host % \
     --Accounts.0.User user1
 ```

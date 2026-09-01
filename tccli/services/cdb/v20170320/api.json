@@ -18764,7 +18764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
           "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
@@ -18773,7 +18773,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。",
+          "document": "<p>数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&amp;=!@#$%^*()）中的两种，长度为8-64个字符。</p>",
           "example": "Gx18ux23F^X",
           "member": "string",
           "name": "NewPassword",
@@ -18782,7 +18782,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
+          "document": "<p>云数据库账号。可通过 <a href=\"https://cloud.tencent.com/document/api/236/17499\">DescribeAccounts</a> 接口获取。</p>",
           "example": "无",
           "member": "Account",
           "name": "Accounts",
@@ -18791,7 +18791,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法版本号标识。",
+          "document": "<p>加密算法版本号标识。</p>",
           "example": "12",
           "member": "string",
           "name": "EncryptMethod",
@@ -18800,7 +18800,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已废弃。",
+          "document": "<p>该字段已废弃。</p>",
           "example": "false",
           "member": "bool",
           "name": "SkipValidatePassword",
@@ -18809,12 +18809,21 @@
         },
         {
           "disabled": false,
-          "document": "是否跳过校验密码复杂度",
+          "document": "<p>是否跳过校验密码复杂度</p>",
           "example": "false",
           "member": "bool",
           "name": "SkipPasswordValidate",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改密码时是否保留旧密码，默认保留旧密码。</p><p>枚举值：</p><ul><li>0： 不保留旧密码</li><li>1/不传： 保留旧密码</li></ul>",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "IsRetainOldPassword",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18824,7 +18833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "document": "<p>异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。</p>",
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",

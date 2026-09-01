@@ -42,7 +42,8 @@ Output:
                     }
                 ],
                 "StartTime": "2023-12-10 00:00:00",
-                "ExpireTime": "2025-11-10 00:00:00"
+                "ExpireTime": "2025-11-10 00:00:00",
+                "PackageVersion": "common"
             }
         ],
         "RequestId": "e0c28bb4-a0f2-4194-a646-b8bcf777b5ce"

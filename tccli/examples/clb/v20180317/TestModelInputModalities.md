@@ -7,7 +7,7 @@ Input:
 ```
 tccli clb TestModelInputModalities --cli-unfold-argument  \
     --Model chat \
-    --ProviderKey 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 \
+    --ProviderKey sk-or-v1-************************************************************07c5 \
     --AccessType PrivateCustom \
     --ApiBase https://openrouter.ai/api/v1 \
     --ServiceProviderId byok-l1l4echw

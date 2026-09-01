@@ -2887,7 +2887,7 @@
         {
           "disabled": false,
           "document": "<p>环境ID</p>",
-          "example": "lowcode-*********f985f96",
+          "example": "lowcode-****************",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -2896,7 +2896,7 @@
         {
           "disabled": false,
           "document": "<p>服务名</p>",
-          "example": "html",
+          "example": "my-vue-app-01",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -2905,7 +2905,7 @@
         {
           "disabled": false,
           "document": "<p>部署类型</p>",
-          "example": "static-hosting",
+          "example": "custom",
           "member": "string",
           "name": "DeployType",
           "required": true,
@@ -2973,6 +2973,15 @@
           "name": "Secrets",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择 NodeRuntime 版本: 16,18,20,22,24 等</p>",
+          "example": "22",
+          "member": "string",
+          "name": "NodeJsVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2983,7 +2992,7 @@
         {
           "disabled": false,
           "document": "<p>构建Id</p>",
-          "example": "26014**8*2",
+          "example": "**********",
           "member": "string",
           "name": "BuildId",
           "output_required": false,
@@ -2993,7 +3002,7 @@
         {
           "disabled": false,
           "document": "<p>版本名称</p>",
-          "example": "html-002",
+          "example": "my-vue-app-01-001",
           "member": "string",
           "name": "VersionName",
           "output_required": false,
@@ -3003,7 +3012,7 @@
         {
           "disabled": false,
           "document": "<p>服务名称</p>",
-          "example": "html",
+          "example": "my-***-***-**",
           "member": "string",
           "name": "ServiceName",
           "output_required": false,
@@ -9516,6 +9525,16 @@
           "member": "string",
           "name": "Columns",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段类型名</p>",
+          "example": "[\"date\"]",
+          "member": "string",
+          "name": "ColumnTypes",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },

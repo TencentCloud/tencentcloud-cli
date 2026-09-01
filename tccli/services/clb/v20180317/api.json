@@ -22911,7 +22911,7 @@
         {
           "disabled": false,
           "document": "<p>待探测的模型（原始模型名称）</p>",
-          "example": "chat",
+          "example": "gpt-4o",
           "member": "string",
           "name": "Model",
           "required": true,
@@ -22920,7 +22920,7 @@
         {
           "disabled": false,
           "document": "<p>待探测的API Key（明文）</p>",
-          "example": "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",
+          "example": "sk-or-v1-************************************************************07c5",
           "member": "string",
           "name": "ProviderKey",
           "required": false,
@@ -23025,7 +23025,7 @@
         {
           "disabled": false,
           "document": "<p>探测的模型</p>",
-          "example": "chat",
+          "example": "gpt-4o",
           "member": "string",
           "name": "Model",
           "output_required": true,

@@ -19673,7 +19673,7 @@
           "example": "4",
           "member": "int64",
           "name": "NodeNum",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {

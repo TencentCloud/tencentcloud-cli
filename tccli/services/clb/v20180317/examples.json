@@ -1707,7 +1707,7 @@
     "TestModelInputModalities": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TestModelInputModalities\n<公共请求参数>\n\n{\n    \"Model\": \"chat\",\n    \"ProviderKey\": \"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\",\n    \"AccessType\": \"PrivateCustom\",\n    \"ApiBase\": \"https://openrouter.ai/api/v1\",\n    \"ServiceProviderId\": \"byok-l1l4echw\"\n}",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TestModelInputModalities\n<公共请求参数>\n\n{\n    \"Model\": \"chat\",\n    \"ProviderKey\": \"sk-or-v1-************************************************************07c5\",\n    \"AccessType\": \"PrivateCustom\",\n    \"ApiBase\": \"https://openrouter.ai/api/v1\",\n    \"ServiceProviderId\": \"byok-l1l4echw\"\n}",
         "output": "{\n    \"Response\": {\n        \"Model\": \"chat\",\n        \"ProbeDetails\": [\n            {\n                \"ErrorInfo\": {\n                    \"ErrorStatus\": \"UpstreamServiceError\",\n                    \"HttpCode\": 500,\n                    \"OriginalMessage\": \"Unable to determine text input support (probe failed with HTTP 500).\"\n                },\n                \"Modality\": \"text\",\n                \"Status\": \"Inconclusive\"\n            }\n        ],\n        \"SupportedModalities\": [],\n        \"RequestId\": \"e488fac5-b43e-4dc7-8fc8-c5852f3da0ff\"\n    }\n}",
         "title": "输入多模态能力检测"
       }
