@@ -16,6 +16,14 @@
         "title": "关联字幕"
       }
     ],
+    "CloneVoiceAsync": [
+      {
+        "document": "音色克隆",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneVoiceAsync\n<公共请求参数>\n\n{\n    \"SubAppId\": \"260***028\",\n    \"AudioUrl\": \"https://laurie-tmp-1300828900.cos.accelerate.m**********************************************136a4dea53b5db4493680d0d51bf33e2t-preview.mp3\",\n    \"LanguageBoost\": \"zh\",\n    \"ExtParam\": \"{ \\\"model\\\":\\\"minimax-speech-02-hd\\\", \\\"text\\\": \\\"种子在土里沉默是为了破土时的惊雷\\\" }\",\n    \"SessionId\": \"6bb56a09278***********6dab783efe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"260085028-CloneVoiceAsync-d56011ff47099d4f1788e0b7f851c1e1t\",\n        \"RequestId\": \"ede949b5-2f8e-40e8-9fde-ee5cdb64d24b\"\n    }\n}",
+        "title": "音色克隆"
+      }
+    ],
     "CommitUpload": [
       {
         "document": "",
@@ -800,6 +808,14 @@
         "title": "删除点播加速域名"
       }
     ],
+    "DeleteVoice": [
+      {
+        "document": "删除音色",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVoice\n<公共请求参数>\n\n{\n    \"VoiceId\": \"ttv-voice-20************26-qaFeULIp\",\n    \"SubAppId\": \"260***028\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a7ec44e-7934-4ff4-8b6a-2030afea4a2a\"\n    }\n}",
+        "title": "删除音色"
+      }
+    ],
     "DeleteWatermarkTemplate": [
       {
         "document": "",
@@ -1392,6 +1408,14 @@
         "title": "查询所有域名"
       }
     ],
+    "DescribeVoices": [
+      {
+        "document": "查询克隆音色",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoices\n<公共请求参数>\n\n{\n    \"SubAppId\": \"260***028\",\n    \"VoiceType\": \"clone\",\n    \"VoiceId\": \"v1_aBbiY3aN7tm7ff3S1gBZa************************plXzQDwNTiJQp2aYilZGv0=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Voices\": [\n            {\n                \"Age\": \"unknown\",\n                \"AudioUrl\": \"\",\n                \"Category\": \"clone\",\n                \"Description\": \"克隆音色\",\n                \"Gender\": \"male\",\n                \"Labels\": [\n                    \"磁性\"\n                ],\n                \"Languages\": [\n                    \"zh\"\n                ],\n                \"Name\": \"克隆音色\",\n                \"Scenes\": [\n                    \"解说\"\n                ],\n                \"VoiceId\": \"v1_aBbiY3aN7tm7ff3S1gBZamsLQyEsQswXoEpreGEStjnx2plXzQDwNTiJQp2aYilZGv0=\"\n            }\n        ],\n        \"RequestId\": \"3e71a833-176c-418c-a515-c14a43b5f8b8\"\n    }\n}",
+        "title": "查询克隆音色"
+      }
+    ],
     "DescribeWatermarkTemplates": [
       {
         "document": "",
@@ -1412,6 +1436,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeWordSamples\n&Usages.0=Recognition\n&Usages.1=Review.Ocr\n&Keywords.0=张三\n&Tags.0=明星\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"WordSet\": [\n            {\n                \"Keyword\": \"张三\",\n                \"TagSet\": [\n                    \"明星\",\n                    \"艺人\"\n                ],\n                \"UsageSet\": [\n                    \"Recognition.Ocr\",\n                    \"Recognition.Asr\"\n                ],\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
         "title": "获取关键词样本列表-有条件"
+      }
+    ],
+    "DesignVoiceAsync": [
+      {
+        "document": "音色设计",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DesignVoiceAsync\n<公共请求参数>\n\n{\n    \"SubAppId\": \"221157\",\n    \"Prompt\": \"严肃女声\",\n    \"VoiceSettings\": {\n        \"Name\": \"音色设计\",\n        \"Description\": \"音色设计描述\",\n        \"Gender\": \"female\",\n        \"Age\": \"child\"\n    },\n    \"PreviewText\": \"通过API发送请求等同于真实操作，请小心进行\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"221157-DesignVoiceAsync-7b6d025eb99dcdb9d4eeb6828c6847fdt\",\n        \"RequestId\": \"5524f480-7bf7-4816-a643-84c28a677c5a\"\n    }\n}",
+        "title": "音色设计"
       }
     ],
     "EditMedia": [
@@ -2292,12 +2324,28 @@
         "title": "对点播中的一个文件进行拆条，生成两个新的视频"
       }
     ],
+    "TextToSpeechAsync": [
+      {
+        "document": "语音合成",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechAsync\n<公共请求参数>\n\n{\n    \"Text\": \"语音合成测试\",\n    \"VoiceId\": \"ttv-voice-20************26-qaFeULIp\",\n    \"SubAppId\": \"260***028\",\n    \"SessionId\": \"6bb56a09278***********6dab783eff\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"260085028-TextToSpeec********************5b37f06c0e0b890c60ct\",\n        \"RequestId\": \"e6dd5ca8-43f2-4bcd-9f4a-4e58e4cb4e19\"\n    }\n}",
+        "title": "语音合成"
+      }
+    ],
     "UpdateAigcApiToken": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAigcApiToken\n<公共请求参数>\n\n{\n    \"SubAppId\": 251441341,\n    \"ApiToken\": \"D2JJ0DHJ********************rXFX\",\n    \"ActionType\": \"Merge\",\n    \"ExtInfo\": \"{\\\"ip\\\":{\\\"9.134.4.21\\\":true}}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"96a1da82-7443-4765-82e4-c1065959f908\"\n    }\n}",
         "title": "更新ip限制"
+      }
+    ],
+    "UpdateVoice": [
+      {
+        "document": "更新音色信息",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVoice\n<公共请求参数>\n\n{\n    \"SubAppId\": \"260***028\",\n    \"VoiceId\": \"v1_aBbiY3aN7tm7ff3S1gBZa************************plXzQDwNTiJQp2aYilZGv0=\",\n    \"VoiceFields\": {\n        \"Name\": \"音色\",\n        \"Description\": \"音色简介\",\n        \"Gender\": \"male\",\n        \"Age\": \"middle_aged\",\n        \"Languages\": [\n            \"zh\"\n        ],\n        \"Labels\": [\n            \"知性\"\n        ],\n        \"Scenes\": [\n            \"通用\"\n        ],\n        \"AudioUrl\": \"https://laurie-tmp-1300828900.cos.ap-nanjing.myqcloud.com/sync_dubbing/27111c32-93e3-476e-8ab5-e7fb5838f994.wav\"\n    },\n    \"ExtParam\": \"{\\\"engine\\\": \\\"auto\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Voice\": {\n            \"Age\": \"middle_aged\",\n            \"AudioUrl\": \"\",\n            \"Category\": \"clone\",\n            \"Description\": \"音色简介\",\n            \"Gender\": \"male\",\n            \"Labels\": [\n                \"知性\"\n            ],\n            \"Languages\": [\n                \"zh\"\n            ],\n            \"Name\": \"音色\",\n            \"Scenes\": [\n                \"通用\"\n            ],\n            \"VoiceId\": \"v1_aBbiY3aN7tm7ff3S1gBZamsLQyEsQswXoEpreGEStjnx2plXzQDwNTiJQp2aYilZGv0=\"\n        },\n        \"RequestId\": \"83593c53-3379-4359-a25b-815bb562bf37\"\n    }\n}",
+        "title": "更新音色信息"
       }
     ],
     "VerifyDomainRecord": [

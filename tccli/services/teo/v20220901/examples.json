@@ -870,6 +870,14 @@
         "title": "查询应用代理列表"
       }
     ],
+    "DescribeAvailableCustomActionsForRuleEngine": [
+      {
+        "document": "查询站点下规则引擎可用的定制配置列表。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableCustomActionsForRuleEngine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3**********x\",\n    \"Filters\": [\n        {\n            \"Name\": \"action-id\",\n            \"Values\": [\n                \"ca-3**********n\"\n            ]\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"SortBy\": \"action-id\",\n    \"SortOrder\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomActionSet\": [\n            {\n                \"ActionId\": \"ca-3**********n\",\n                \"Description\": \"Rate limiting for client IP access.\",\n                \"Name\": \"ClientIPRateLimit\",\n                \"Parameters\": [\n                    {\n                        \"Default\": \"100\",\n                        \"Description\": \"The maximum QPS of the client IP\",\n                        \"MaxValue\": 10000,\n                        \"MinValue\": 1,\n                        \"Name\": \"MaxQPS\",\n                        \"Required\": false,\n                        \"ValueType\": \"Integer\"\n                    }\n                ],\n                \"SupportedConditions\": [\n                    \"http.request.host\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"bbd3abd8-aeb6-4ca5-a623-6502f8f19c1a\"\n    }\n}",
+        "title": "查询规则引擎可用的定制配置列表"
+      }
+    ],
     "DescribeAvailablePlans": [
       {
         "document": "",

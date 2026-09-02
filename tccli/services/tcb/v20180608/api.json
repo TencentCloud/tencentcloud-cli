@@ -581,6 +581,13 @@
       "output": "ModifyEnvResponse",
       "status": "online"
     },
+    "ModifyEnvExtra": {
+      "document": "修改环境额外配置",
+      "input": "ModifyEnvExtraRequest",
+      "name": "修改环境额外配置",
+      "output": "ModifyEnvExtraResponse",
+      "status": "online"
+    },
     "ModifyEnvPlan": {
       "document": "本接口用于变更云开发环境套餐。\n该接口会自动下单并支付，会在腾讯云账户中扣除余额（余额不足会下单失败）。\n该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。",
       "input": "ModifyEnvPlanRequest",
@@ -2606,7 +2613,7 @@
         {
           "disabled": false,
           "document": "<p>环境ID</p>",
-          "example": "lowcode-*********f985f96",
+          "example": "lowcode-****************",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -2615,7 +2622,7 @@
         {
           "disabled": false,
           "document": "<p>服务名</p>",
-          "example": "html",
+          "example": "my-vue-app-01",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -2624,7 +2631,7 @@
         {
           "disabled": false,
           "document": "<p>部署类型</p>",
-          "example": "static-hosting",
+          "example": "custom",
           "member": "string",
           "name": "DeployType",
           "required": true,
@@ -2692,6 +2699,15 @@
           "name": "Secrets",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择 NodeRuntime 版本: 16,18,20,22,24 等</p>",
+          "example": "22",
+          "member": "string",
+          "name": "NodeJsVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2702,7 +2718,7 @@
         {
           "disabled": false,
           "document": "<p>构建Id</p>",
-          "example": "26014**8*2",
+          "example": "**********",
           "member": "string",
           "name": "BuildId",
           "output_required": false,
@@ -2712,7 +2728,7 @@
         {
           "disabled": false,
           "document": "<p>版本名称</p>",
-          "example": "html-002",
+          "example": "my-vue-app-01-001",
           "member": "string",
           "name": "VersionName",
           "output_required": false,
@@ -2722,7 +2738,7 @@
         {
           "disabled": false,
           "document": "<p>服务名称</p>",
-          "example": "html",
+          "example": "my-***-***-**",
           "member": "string",
           "name": "ServiceName",
           "output_required": false,
@@ -8538,7 +8554,7 @@
         {
           "disabled": false,
           "document": "<p>云开发环境ID</p>",
-          "example": "pg-mikejliu-0g9cqmar358527a9",
+          "example": "lo**od*-*********10a94df",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -8547,7 +8563,7 @@
         {
           "disabled": false,
           "document": "<p>要执行的SQL语句</p>",
-          "example": "select column_name FROM information_schema.columns WHERE table_schema = 'public'   AND table_name = 'test_products'",
+          "example": "select * from pg_namespace",
           "member": "string",
           "name": "Sql",
           "required": true,
@@ -8581,7 +8597,7 @@
         {
           "disabled": false,
           "document": "<p>字段名列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"column_name\"]",
+          "example": "[\"oid\"]",
           "member": "string",
           "name": "Columns",
           "output_required": true,
@@ -8590,8 +8606,18 @@
         },
         {
           "disabled": false,
+          "document": "<p>字段类型名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"date\"]",
+          "member": "string",
+          "name": "ColumnTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>数据行。每一行数据都是一个JSON串，将JSON进行反序列化将得到了每列的值。值可能是 null 或者 字符串，如果是 null 说明该列的值为 &lt;null&gt;，如果是字符串则为该列的值的字符串表示形式。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"[\\\"id\\\"]\"]",
+          "example": "[\"[\\\"99\\\",\\\"pg_toast\\\",\\\"10\\\",null]\"]",
           "member": "string",
           "name": "Rows",
           "output_required": true,
@@ -8601,7 +8627,7 @@
         {
           "disabled": false,
           "document": "<p>SQL执行耗时</p><p>单位：毫秒</p>",
-          "example": "58",
+          "example": "8",
           "member": "int64",
           "name": "ExecutionTimeMs",
           "output_required": true,
@@ -11322,6 +11348,42 @@
     },
     "ModifyDatabaseACLResponse": {
       "document": "ModifyDatabaseACL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvExtraRequest": {
+      "document": "ModifyEnvExtra请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "env-xxxxxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启或关闭 <code>超限转按量</code>。<br>可取值： TRUE/FALSE （字符串类型）<br>非法制、不传、为空 则不变更该字段。</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "EnableOverrun",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvExtraResponse": {
+      "document": "ModifyEnvExtra返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

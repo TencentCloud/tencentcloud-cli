@@ -67,7 +67,8 @@ Output:
                 "Database": "jersey"
             }
         ]
-    }
+    },
+    "HasWithGrantOption": true
 }
 ```
 

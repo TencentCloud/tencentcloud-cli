@@ -569,7 +569,7 @@
       "usage": "both"
     },
     "AutoScalingConfig": {
-      "document": "serverless实例的ccu范围",
+      "document": "serverless实例的资源范围\nResourceType 为 cpu 时表示 ccu\n为 nodecount 时表示节点数范围",
       "members": [
         {
           "disabled": false,
@@ -592,6 +592,17 @@
           "required": true,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回的 range 参数对应的资源类型</p><p>枚举值：</p><ul><li>cpu： 返回的是 cpu 调整返回限制，当不存在mem限制时代表 ccu</li><li>nodecount： 返回的是水平扩缩容的节点数限制范围</li></ul>",
+          "example": "cpu",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1993,7 +2004,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>svls实例的ccu变配配置</p>",
+          "document": "<p>SVLS 实例的ccu变配配置</p><p>入参限制：同时传入 AutoScaleConfigs 时此参数不再生效</p>",
           "example": "无",
           "member": "AutoScalingConfig",
           "name": "AutoScaleConfig",
@@ -2035,6 +2046,15 @@
           "name": "EncryptionEnable",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SVLS 实例的自动变配相关限制</p><p>入参限制：传入时 AutoScaleConfig 参数不再生效</p>",
+          "example": "无",
+          "member": "AutoScalingConfig",
+          "name": "AutoScaleConfigs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3300,6 +3320,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>serverless自动变配配置</p>",
+          "example": "无",
+          "member": "AutoScalingConfig",
+          "name": "AutoScaleConfigs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3344,6 +3374,24 @@
           "example": "libra",
           "member": "string",
           "name": "EngineType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询Order By字段，支持 StorageNodeNum/CreateTime/CreateVersion</p>",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向</p><p>枚举值：</p><ul><li>ASC： 升序</li><li>DESC： 降序</li></ul><p>默认值：DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderDirection",
           "required": false,
           "type": "string"
         }
@@ -4876,6 +4924,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>serverless节点数量配置</p>",
+          "example": "无",
+          "member": "ServerlessNodeNumSpec",
+          "name": "ServerlessNodeNumSpec",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5936,6 +5994,16 @@
           "name": "AnalysisInstanceInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>有关该实例的多个自动变配相关配置，ccu、nodecount 值</p>",
+          "example": "无",
+          "member": "AutoScalingConfig",
+          "name": "AutoScaleConfigs",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -7498,17 +7566,17 @@
           "disabled": false,
           "document": "<p>ccu最小值</p>",
           "example": "1",
-          "member": "int64",
+          "member": "float",
           "name": "MinCcu",
           "output_required": false,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "<p>ccu最大值范围</p>",
           "example": "[1]",
-          "member": "int64",
+          "member": "float",
           "name": "MaxCcu",
           "output_required": false,
           "type": "list",
@@ -7516,6 +7584,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ServerlessNodeNumSpec": {
+      "document": "Serverless 实例允许调整的 hybrid 节点数量上下限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最小节点数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "MinNodeNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大节点数</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "MaxNodeNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SlowLogData": {
       "document": "慢日志信息",

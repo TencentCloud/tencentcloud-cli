@@ -32407,8 +32407,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "该用户是否被加入了全局的bypass列表",
-          "example": "True,False",
+          "document": "<p>该用户是否被加入了全局的bypass列表</p>",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,

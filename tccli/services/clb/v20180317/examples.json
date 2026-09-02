@@ -271,9 +271,9 @@
     "CreateModel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModel\n<公共请求参数>\n\n{\n    \"AccessType\": \"PublicCustom\",\n    \"ModelProvider\": \"OpenAI\",\n    \"ModelIds\": [\n        {\n            \"ModelId\": \"gpt-4o\"\n        }\n    ],\n    \"Keys\": [\n        {\n            \"ApiKey\": \"sk-awdawe12esfd1211d\"\n        }\n    ],\n    \"ApiBase\": \"https://deepseek.api.com\",\n    \"HealthCheckConfig\": {\n        \"HealthCheckEnabled\": false\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"KeyIds\": [\n            \"mkey-0b39bh7u\"\n        ],\n        \"ServiceProviderId\": \"byok-dhd4w2eg\",\n        \"RequestId\": \"1f5b0825-105c-4a52-8b62-65fce5296d92\"\n    }\n}",
-        "title": "创建第三方BYOK"
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModel\n<公共请求参数>\n\n{\n    \"AccessType\": \"PrivateCustom\",\n    \"ModelProvider\": \"openai\",\n    \"ModelIds\": [\n        {\n            \"ModelId\": \"gpt-40\"\n        }\n    ],\n    \"Keys\": [\n        {\n            \"ApiKey\": \"skey-xasd123fasdadcasdasasd\",\n            \"Name\": \"ekko-test\"\n        }\n    ],\n    \"ServiceProviderName\": \"textbyok-publicbyok\",\n    \"Protocol\": \"openai\",\n    \"ApiBases\": [\n        {\n            \"Protocol\": \"chat\",\n            \"ApiBase\": \"https://example.com\"\n        }\n    ],\n    \"VerifySSL\": false,\n    \"CMRPrivateNetworkTunnelId\": \"pnt-lbepdi5o\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyIds\": [\n            \"mkey-oieh9r1e\"\n        ],\n        \"ServiceProviderId\": \"byok-m910btm4\",\n        \"RequestId\": \"82771acb-a2fe-4c42-8f90-ba4b21ea67fe\"\n    }\n}",
+        "title": "创建 BYOK Model"
       }
     ],
     "CreateModelRouter": [
@@ -1554,10 +1554,10 @@
     ],
     "TestModelInputModalities": [
       {
-        "document": "\t\n模型支持图像输入",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TestModelInputModalities\n<公共请求参数>\n\n{\n    \"Model\": \"gpt-5\",\n    \"ProviderKey\": \"sk-1111\",\n    \"AccessType\": \"PublicCustom\",\n    \"ApiBase\": \"http://11.141.93.26:10000/v1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Model\": \"gpt-5\",\n        \"ProbeDetails\": [\n            {\n                \"ErrorInfo\": {\n                    \"ErrorStatus\": \"\",\n                    \"HttpCode\": 0,\n                    \"OriginalMessage\": \"\"\n                },\n                \"Modality\": \"image\",\n                \"Status\": \"Supported\"\n            }\n        ],\n        \"SupportedModalities\": [\n            \"text\"\n        ],\n        \"RequestId\": \"1c31d4b4-f209-4866-99d0-25248db915aa\"\n    }\n}",
-        "title": "模型支持图像输入"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TestModelInputModalities\n<公共请求参数>\n\n{\n    \"Model\": \"chat\",\n    \"ProviderKey\": \"sk-or-v1-************************************************************07c5\",\n    \"AccessType\": \"PrivateCustom\",\n    \"ApiBase\": \"https://openrouter.ai/api/v1\",\n    \"ServiceProviderId\": \"byok-l1l4echw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Model\": \"chat\",\n        \"ProbeDetails\": [\n            {\n                \"ErrorInfo\": {\n                    \"ErrorStatus\": \"UpstreamServiceError\",\n                    \"HttpCode\": 500,\n                    \"OriginalMessage\": \"Unable to determine text input support (probe failed with HTTP 500).\"\n                },\n                \"Modality\": \"text\",\n                \"Status\": \"Inconclusive\"\n            }\n        ],\n        \"SupportedModalities\": [],\n        \"RequestId\": \"e488fac5-b43e-4dc7-8fc8-c5852f3da0ff\"\n    }\n}",
+        "title": "输入多模态能力检测"
       }
     ],
     "TestServiceProviderConnection": [

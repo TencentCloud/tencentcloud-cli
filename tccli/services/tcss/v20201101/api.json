@@ -30717,37 +30717,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启实时监控",
+          "document": "<p>是否开启实时监控</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableScan",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "true:包含路径 false:排除路径",
+          "document": "<p>true:包含路径 false:排除路径</p>",
           "example": "true",
           "member": "bool",
           "name": "IsIncludePath",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自选排除或扫描的地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "<p>自选排除或扫描的地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/path\"]",
           "member": "string",
           "name": "ScanPath",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "document": "<p>扫描路径模式：<br>SCAN_PATH_ALL：全部路径<br>SCAN_PATH_DEFAULT：默认路径<br>SCAN_PATH_USER_DEFINE：用户自定义路径</p>",
           "example": "SCAN_PATH_ALL",
           "member": "string",
           "name": "ScanPathMode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30874,7 +30878,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启定期扫描",
+          "document": "<p>是否开启定期扫描</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableScan",
@@ -30883,7 +30887,7 @@
         },
         {
           "disabled": false,
-          "document": "检测周期每隔多少天",
+          "document": "<p>检测周期每隔多少天</p>",
           "example": "1",
           "member": "uint64",
           "name": "Cycle",
@@ -30892,7 +30896,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描开始时间",
+          "document": "<p>扫描开始时间</p>",
           "example": "10:00:00",
           "member": "string",
           "name": "BeginScanAt",
@@ -30901,7 +30905,7 @@
         },
         {
           "disabled": false,
-          "document": "超时时长，单位小时",
+          "document": "<p>超时时长，单位小时</p>",
           "example": "1",
           "member": "uint64",
           "name": "Timeout",
@@ -30910,7 +30914,7 @@
         },
         {
           "disabled": false,
-          "document": "SCAN_NODE:扫描节点\nSCAN_CONTAINER:扫描容器",
+          "document": "<p>SCAN_NODE:扫描节点<br>SCAN_CONTAINER:扫描容器</p>",
           "example": "SCAN_NODE",
           "member": "string",
           "name": "ScanRangeType",
@@ -30919,8 +30923,8 @@
         },
         {
           "disabled": false,
-          "document": "自选扫描范围的容器id或者节点id ",
-          "example": "[]",
+          "document": "<p>自选扫描范围的容器id或者节点id</p>",
+          "example": "无",
           "member": "ScanRangeInfo",
           "name": "ScanIDs",
           "type": "list",
@@ -30928,8 +30932,8 @@
         },
         {
           "disabled": false,
-          "document": "自选排除或扫描的地址",
-          "example": "[]",
+          "document": "<p>自选排除或扫描的地址</p>",
+          "example": "[\"'/path\"]",
           "member": "string",
           "name": "ScanPath",
           "type": "list",
@@ -30937,7 +30941,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "document": "<p>扫描路径模式：<br>SCAN_PATH_ALL：全部路径<br>SCAN_PATH_DEFAULT：默认路径<br>SCAN_PATH_USER_DEFINE：用户自定义路径</p>",
           "example": "SCAN_PATH_ALL",
           "member": "string",
           "name": "ScanPathMode",
@@ -30946,7 +30950,7 @@
         },
         {
           "disabled": false,
-          "document": "true:包含路径\nfalse:排除路径",
+          "document": "<p>true:包含路径<br>false:排除路径</p>",
           "example": "true",
           "member": "bool",
           "name": "IsIncludePath",

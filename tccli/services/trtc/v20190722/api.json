@@ -56,6 +56,13 @@
       "output": "CreatePictureResponse",
       "status": "online"
     },
+    "CreateRecognizeVocabV3": {
+      "document": "接口说明：\n用户通过本接口进行热词表的创建。\n\n• 默认最多可创建30个热词表。\n• 每个热词表最多可添加1000个词，每个词最长10个汉字或30个英文字符，不能超出限制。\n• 热词表可以通过数组或者本地文件形式上传。\n• 本地文件必须为UTF-8编码格式，每行仅添加一个热词且不能包含标点和特殊字符。\n• 热词权重取值范围为[1,11]之间的整数或者100，权重越大代表该词被识别出来的概率越大。\n• 注意: 热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。",
+      "input": "CreateRecognizeVocabV3Request",
+      "name": "创建智能识别热词表V3",
+      "output": "CreateRecognizeVocabV3Response",
+      "status": "online"
+    },
     "DeleteCloudModeration": {
       "document": "成功开启AI 内容理解任务后，可以使用此接口来停止进行内容识别。",
       "input": "DeleteCloudModerationRequest",
@@ -96,6 +103,13 @@
       "input": "DeletePictureRequest",
       "name": "删除图片",
       "output": "DeletePictureResponse",
+      "status": "online"
+    },
+    "DeleteRecognizeVocabV3": {
+      "document": "接口说明：\n用户通过本接口进行热词表的删除。",
+      "input": "DeleteRecognizeVocabV3Request",
+      "name": "删除智能识别热词表V3",
+      "output": "DeleteRecognizeVocabV3Response",
       "status": "online"
     },
     "DeleteVoicePrint": {
@@ -350,6 +364,27 @@
       "output": "DismissRoomByStrRoomIdResponse",
       "status": "online"
     },
+    "DownloadRecognizeVocabV3": {
+      "document": "接口说明：\n用户通过本接口进行热词表的下载，获得词表权重文件形式的 base64 值，文件形式为通过 “|” 分割的词和权重，即 word|weight 的形式。",
+      "input": "DownloadRecognizeVocabV3Request",
+      "name": "下载智能识别热词表V3",
+      "output": "DownloadRecognizeVocabV3Response",
+      "status": "online"
+    },
+    "GetRecognizeVocabListV3": {
+      "document": "接口说明：\n用户通过本接口分页列举所有的热词表。",
+      "input": "GetRecognizeVocabListV3Request",
+      "name": "列举智能识别热词表V3",
+      "output": "GetRecognizeVocabListV3Response",
+      "status": "online"
+    },
+    "GetRecognizeVocabV3": {
+      "document": "接口说明：\n用户根据词表的ID可以获取对应的热词表信息",
+      "input": "GetRecognizeVocabV3Request",
+      "name": "获取智能识别热词表V3",
+      "output": "GetRecognizeVocabV3Response",
+      "status": "online"
+    },
     "ModifyCloudModeration": {
       "document": "成功开启AI 内容理解任务后，可以使用此接口来更新订阅黑白名单。",
       "input": "ModifyCloudModerationRequest",
@@ -397,6 +432,13 @@
       "input": "RemoveUserByStrRoomIdRequest",
       "name": "移出用户（字符串房间号）",
       "output": "RemoveUserByStrRoomIdResponse",
+      "status": "online"
+    },
+    "SetVocabStateV3": {
+      "document": "接口说明：\n用户通过该接口可以设置热词表的默认状态。初始状态为0，用户可设置状态为1，即为默认状态。默认状态表示用户在请求识别时，如不设置热词表ID，则默认使用状态为1的热词表。",
+      "input": "SetVocabStateV3Request",
+      "name": "设置智能识别热词表状态V3",
+      "output": "SetVocabStateV3Response",
       "status": "online"
     },
     "StartAIConversation": {
@@ -523,6 +565,13 @@
       "input": "UpdatePublishCdnStreamRequest",
       "name": "更新转推任务",
       "output": "UpdatePublishCdnStreamResponse",
+      "status": "online"
+    },
+    "UpdateRecognizeVocabV3": {
+      "document": "接口说明：\n用户通过本接口进行热词表的更新。",
+      "input": "UpdateRecognizeVocabV3Request",
+      "name": "更新智能识别热词表V3",
+      "output": "UpdateRecognizeVocabV3Response",
       "status": "online"
     },
     "UpdateStreamIngest": {
@@ -2217,6 +2266,33 @@
       ],
       "type": "object"
     },
+    "CreateRecognizeVocabV3Request": {
+      "document": "CreateRecognizeVocabV3请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户维度唯一标识</p>",
+          "example": "1400000001",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRecognizeVocabV3Response": {
+      "document": "CreateRecognizeVocabV3返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCloudModerationRequest": {
       "document": "DeleteCloudModeration请求参数结构体",
       "members": [
@@ -2473,6 +2549,23 @@
     },
     "DeletePictureResponse": {
       "document": "DeletePicture返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecognizeVocabV3Request": {
+      "document": "DeleteRecognizeVocabV3请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteRecognizeVocabV3Response": {
+      "document": "DeleteRecognizeVocabV3返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4966,6 +5059,23 @@
       ],
       "type": "object"
     },
+    "DownloadRecognizeVocabV3Request": {
+      "document": "DownloadRecognizeVocabV3请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DownloadRecognizeVocabV3Response": {
+      "document": "DownloadRecognizeVocabV3返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EmulateMobileParams": {
       "document": "渲染移动模式参数，不渲染移动模式时，请勿设置此参数。",
       "members": [
@@ -5189,6 +5299,40 @@
         }
       ],
       "usage": "out"
+    },
+    "GetRecognizeVocabListV3Request": {
+      "document": "GetRecognizeVocabListV3请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetRecognizeVocabListV3Response": {
+      "document": "GetRecognizeVocabListV3返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRecognizeVocabV3Request": {
+      "document": "GetRecognizeVocabV3请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetRecognizeVocabV3Response": {
+      "document": "GetRecognizeVocabV3返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Input": {
       "document": "拉流输入源",
@@ -8282,6 +8426,23 @@
       ],
       "usage": "in"
     },
+    "SetVocabStateV3Request": {
+      "document": "SetVocabStateV3请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SetVocabStateV3Response": {
+      "document": "SetVocabStateV3返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SingleSubscribeParams": {
       "document": "单流旁路转推的用户上行信息。",
       "members": [
@@ -10803,6 +10964,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRecognizeVocabV3Request": {
+      "document": "UpdateRecognizeVocabV3请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "UpdateRecognizeVocabV3Response": {
+      "document": "UpdateRecognizeVocabV3返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

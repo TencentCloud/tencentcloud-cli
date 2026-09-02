@@ -827,7 +827,7 @@
       "status": "online"
     },
     "DeleteNatGateway": {
-      "document": "本接口（DeleteNatGateway）用于删除NAT网关。\n删除 NAT 网关后，系统会自动删除路由表中包含此 NAT 网关的路由项，同时也会解绑弹性公网IP（EIP）。",
+      "document": "本接口（DeleteNatGateway）用于删除NAT网关。\n删除 NAT 网关后，系统会自动删除路由表中包含此 NAT 网关的路由项，同时也会解绑弹性公网IP（EIP）。\n删除 NAT 网关时需解绑关联 EIP，因此调用方需要具备 vpc:DisassociateAddress 和 vpc:ModifyAddressesBandwidth 的 CAM 权限。",
       "input": "DeleteNatGatewayRequest",
       "name": "删除NAT网关",
       "output": "DeleteNatGatewayResponse",
@@ -5807,7 +5807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网唯一ID",
+          "document": "<p>云联网唯一ID</p>",
           "example": "ccn-c21f68nb",
           "member": "string",
           "name": "CcnId",
@@ -5817,7 +5817,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网名称",
+          "document": "<p>云联网名称</p>",
           "example": "ccn-01",
           "member": "string",
           "name": "CcnName",
@@ -5827,7 +5827,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网描述信息",
+          "document": "<p>云联网描述信息</p>",
           "example": "ccn",
           "member": "string",
           "name": "CcnDescription",
@@ -5837,7 +5837,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例数量",
+          "document": "<p>关联实例数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "InstanceCount",
@@ -5847,7 +5847,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-09-15 11:41:35",
           "member": "datetime",
           "name": "CreateTime",
@@ -5857,7 +5857,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。",
+          "document": "<p>实例状态， &#39;ISOLATED&#39;: 隔离中（欠费停服），&#39;AVAILABLE&#39;：运行中。</p>",
           "example": "ISOLATED",
           "member": "string",
           "name": "State",
@@ -5867,7 +5867,7 @@
         },
         {
           "disabled": false,
-          "document": "实例服务质量，’PT’：白金，'AU'：金，'AG'：银。",
+          "document": "<p>实例服务质量，’PT’：白金，&#39;AU&#39;：金，&#39;AG&#39;：银。</p>",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -5877,7 +5877,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，PREPAID为预付费，POSTPAID为后付费。",
+          "document": "<p>付费类型，PREPAID为预付费，POSTPAID为后付费。</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -5887,7 +5887,7 @@
         },
         {
           "disabled": false,
-          "document": "计量类型",
+          "document": "<p>计量类型</p>",
           "example": "BANDWIDTH",
           "member": "string",
           "name": "InstanceMeteringType",
@@ -5897,7 +5897,7 @@
         },
         {
           "disabled": false,
-          "document": "限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。",
+          "document": "<p>限速类型，<code>INTER_REGION_LIMIT</code> 为地域间限速；<code>OUTER_REGION_LIMIT</code> 为地域出口限速。</p>",
           "example": "INTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
@@ -5907,7 +5907,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。",
+          "document": "<p>标签键值对。</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
@@ -5917,7 +5917,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。",
+          "document": "<p>是否支持云联网路由优先级的功能。<code>False</code>：不支持，<code>True</code>：支持。</p>",
           "example": "true",
           "member": "bool",
           "name": "RoutePriorityFlag",
@@ -5927,7 +5927,7 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的路由表个数。",
+          "document": "<p>实例关联的路由表个数。</p>",
           "example": "0",
           "member": "uint64",
           "name": "RouteTableCount",
@@ -5937,7 +5937,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启云联网多路由表特性。`False`：未开启，`True`：开启。",
+          "document": "<p>是否开启云联网多路由表特性。<code>False</code>：未开启，<code>True</code>：开启。</p>",
           "example": "true",
           "member": "bool",
           "name": "RouteTableFlag",
@@ -5947,7 +5947,7 @@
         },
         {
           "disabled": false,
-          "document": "`true`：实例已被封禁，流量不通，`false`:解封禁。",
+          "document": "<p><code>true</code>：实例已被封禁，流量不通，<code>false</code>:解封禁。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSecurityLock",
@@ -5957,7 +5957,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启云联网路由传播策略。`False` 未开启，`True` 开启。",
+          "document": "<p>是否开启云联网路由传播策略。<code>False</code> 未开启，<code>True</code> 开启。</p>",
           "example": "true",
           "member": "bool",
           "name": "RouteBroadcastPolicyFlag",
@@ -5967,7 +5967,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启等价路由功能。`False` 未开启，`True` 开启。",
+          "document": "<p>是否开启等价路由功能。<code>False</code> 未开启，<code>True</code> 开启。</p>",
           "example": "true",
           "member": "bool",
           "name": "RouteECMPFlag",
@@ -5977,7 +5977,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启路由重叠功能。`False` 未开启，`True` 开启。",
+          "document": "<p>是否开启路由重叠功能。<code>False</code> 未开启，<code>True</code> 开启。</p>",
           "example": "true",
           "member": "bool",
           "name": "RouteOverlapFlag",
@@ -5987,7 +5987,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启QOS。",
+          "document": "<p>是否开启QOS。</p>",
           "example": "true",
           "member": "bool",
           "name": "TrafficMarkingPolicyFlag",
@@ -5997,7 +5997,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启路由表选择策略。",
+          "document": "<p>是否开启路由表选择策略。</p>",
           "example": "true",
           "member": "bool",
           "name": "RouteSelectPolicyFlag",
@@ -6007,7 +6007,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启二层云联网通道。",
+          "document": "<p>是否开启二层云联网通道。</p>",
           "example": "true",
           "member": "bool",
           "name": "DirectConnectAccelerateChannelFlag",
@@ -6017,7 +6017,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持ipv6路由表",
+          "document": "<p>是否支持ipv6路由表</p>",
           "example": "true",
           "member": "bool",
           "name": "Ipv6Flag",
@@ -6027,7 +6027,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持路由表聚合策略",
+          "document": "<p>是否支持路由表聚合策略</p>",
           "example": "true",
           "member": "bool",
           "name": "MrtbAggregatePolicyFlag",
@@ -6037,7 +6037,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持AsPath策略值",
+          "document": "<p>是否支持AsPath策略值</p>",
           "example": "true",
           "member": "bool",
           "name": "MrtbPolicyValueFlag",
@@ -6047,7 +6047,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持Community策略值",
+          "document": "<p>是否支持Community策略值</p>",
           "example": "true",
           "member": "bool",
           "name": "RouteTablePolicyValueCommunityFlag",
@@ -6057,12 +6057,22 @@
         },
         {
           "disabled": false,
-          "document": "是否支持策略路由",
+          "document": "<p>是否支持策略路由</p>",
           "example": "true",
           "member": "bool",
           "name": "PolicyBasedRoutingFlag",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务等级模式</p><p>枚举值：</p><ul><li>0： 云联网模式</li><li>1： 地域间模式</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ServiceLevelMode",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6073,7 +6083,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网实例ID。",
+          "document": "<p>云联网实例ID。</p>",
           "example": "ccn-31zf3vib",
           "member": "string",
           "name": "CcnId",
@@ -6083,7 +6093,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例类型：\n<li>`VPC`：私有网络</li>\n<li>`DIRECTCONNECT`：专线网关</li>\n<li>`BMVPC`：黑石私有网络</li>",
+          "document": "<p>关联实例类型：</p><li><code>VPC</code>：私有网络</li><li><code>DIRECTCONNECT</code>：专线网关</li><li><code>BMVPC</code>：黑石私有网络</li>",
           "example": "VPC",
           "member": "string",
           "name": "InstanceType",
@@ -6093,7 +6103,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例ID。",
+          "document": "<p>关联实例ID。</p>",
           "example": "vpc-lt6ork07",
           "member": "string",
           "name": "InstanceId",
@@ -6103,7 +6113,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例名称。",
+          "document": "<p>关联实例名称。</p>",
           "example": "ccn_instance_1",
           "member": "string",
           "name": "InstanceName",
@@ -6113,7 +6123,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例所属大区，例如：ap-guangzhou。",
+          "document": "<p>关联实例所属大区，例如：ap-guangzhou。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
@@ -6123,7 +6133,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例所属UIN（根账号）。",
+          "document": "<p>关联实例所属UIN（根账号）。</p>",
           "example": "100000072292",
           "member": "string",
           "name": "InstanceUin",
@@ -6133,8 +6143,8 @@
         },
         {
           "disabled": false,
-          "document": "关联实例CIDR。",
-          "example": "10.1.0.0/16",
+          "document": "<p>关联实例CIDR。</p>",
+          "example": "[\"10.1.0.0/16\"]",
           "member": "string",
           "name": "CidrBlock",
           "output_required": true,
@@ -6143,7 +6153,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例状态：\n<li>`PENDING`：申请中</li>\n<li>`ACTIVE`：已连接</li>\n<li>`EXPIRED`：已过期</li>\n<li>`REJECTED`：已拒绝</li>\n<li>`DELETED`：已删除</li>\n<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>\n<li>`ATTACHING`：关联中</li>\n<li>`DETACHING`：解关联中</li>\n<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>",
+          "document": "<p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>",
           "example": "ACTIVE",
           "member": "string",
           "name": "State",
@@ -6153,7 +6163,7 @@
         },
         {
           "disabled": false,
-          "document": "关联时间。",
+          "document": "<p>关联时间。</p>",
           "example": "2021-03-03 16:19:44",
           "member": "datetime",
           "name": "AttachedTime",
@@ -6163,7 +6173,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网所属UIN（根账号）。",
+          "document": "<p>云联网所属UIN（根账号）。</p>",
           "example": "100000072292",
           "member": "string",
           "name": "CcnUin",
@@ -6173,8 +6183,8 @@
         },
         {
           "disabled": false,
-          "document": "关联实例所属的大地域，如: CHINA_MAINLAND",
-          "example": " CHINA_MAINLAND",
+          "document": "<p>关联实例所属的大地域，如: CHINA_MAINLAND</p>",
+          "example": "CHINA_MAINLAND",
           "member": "string",
           "name": "InstanceArea",
           "output_required": true,
@@ -6183,7 +6193,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "remark",
           "member": "string",
           "name": "Description",
@@ -6193,7 +6203,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表ID",
+          "document": "<p>路由表ID</p>",
           "example": "ccnrtb-1234edfr",
           "member": "string",
           "name": "RouteTableId",
@@ -6203,11 +6213,31 @@
         },
         {
           "disabled": false,
-          "document": "路由表名称",
+          "document": "<p>路由表名称</p>",
           "example": "route_1",
           "member": "string",
           "name": "RouteTableName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名类型</p>",
+          "example": "VPC",
+          "member": "string",
+          "name": "AliasType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名ID</p>",
+          "example": "vpc-nb107zhp",
+          "member": "string",
+          "name": "AliasInstanceId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6976,7 +7006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "路由策略ID",
+          "document": "<p>路由策略ID</p>",
           "example": "ccnr-hs2yc3ha",
           "member": "string",
           "name": "RouteId",
@@ -6986,7 +7016,7 @@
         },
         {
           "disabled": false,
-          "document": "目的端",
+          "document": "<p>目的端</p>",
           "example": "10.1.19.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
@@ -6996,7 +7026,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT",
+          "document": "<p>下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT</p>",
           "example": "VPC",
           "member": "string",
           "name": "InstanceType",
@@ -7006,7 +7036,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳（关联实例）",
+          "document": "<p>下一跳（关联实例）</p>",
           "example": "vpc-fc21z82c",
           "member": "string",
           "name": "InstanceId",
@@ -7016,7 +7046,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳名称（关联实例名称）",
+          "document": "<p>下一跳名称（关联实例名称）</p>",
           "example": "测试name",
           "member": "string",
           "name": "InstanceName",
@@ -7026,7 +7056,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳所属地域（关联实例所属地域）",
+          "document": "<p>下一跳所属地域（关联实例所属地域）</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
@@ -7036,7 +7066,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2022-11-19 15:20:25",
           "member": "datetime",
           "name": "UpdateTime",
@@ -7046,8 +7076,8 @@
         },
         {
           "disabled": false,
-          "document": "路由是否启用",
-          "example": "True",
+          "document": "<p>路由是否启用</p>",
+          "example": "false",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
@@ -7056,7 +7086,7 @@
         },
         {
           "disabled": false,
-          "document": "关联实例所属UIN（根账号）",
+          "document": "<p>关联实例所属UIN（根账号）</p>",
           "example": "151241551",
           "member": "string",
           "name": "InstanceUin",
@@ -7066,7 +7096,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的扩展状态",
+          "document": "<p>路由的扩展状态</p>",
           "example": "Running",
           "member": "string",
           "name": "ExtraState",
@@ -7076,8 +7106,8 @@
         },
         {
           "disabled": false,
-          "document": "是否动态路由",
-          "example": "False",
+          "document": "<p>是否动态路由</p>",
+          "example": "false",
           "member": "bool",
           "name": "IsBgp",
           "output_required": true,
@@ -7086,7 +7116,7 @@
         },
         {
           "disabled": false,
-          "document": "路由优先级",
+          "document": "<p>路由优先级</p>",
           "example": "50",
           "member": "uint64",
           "name": "RoutePriority",
@@ -7096,7 +7126,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳扩展名称（关联实例的扩展名称）",
+          "document": "<p>下一跳扩展名称（关联实例的扩展名称）</p>",
           "example": "test-name",
           "member": "string",
           "name": "InstanceExtraName",
@@ -7106,7 +7136,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "VPC",
           "member": "string",
           "name": "AliasType",
@@ -7116,10 +7146,30 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "alias-instance-id",
           "member": "string",
           "name": "AliasInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由表ID</p>",
+          "example": "ccnrtb-2u41xs92",
+          "member": "string",
+          "name": "RouteTableId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AS-PATH</p>",
+          "example": "1122/3333",
+          "member": "string",
+          "name": "AsPath",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7234,8 +7284,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "路由条件",
-          "example": "{'Name': 'instance-id', 'Values': ['DIRECTCONNECT'], 'MatchPattern': 1}",
+          "document": "<p>路由条件</p>",
+          "example": "无",
           "member": "CcnRouteBroadcastPolicyRouteCondition",
           "name": "RouteConditions",
           "output_required": true,
@@ -7245,8 +7295,8 @@
         },
         {
           "disabled": false,
-          "document": "传播条件",
-          "example": "{'Name': 'instance-id', 'Values': ['DIRECTCONNECT'], 'MatchPattern': 1}",
+          "document": "<p>传播条件</p>",
+          "example": "无",
           "member": "CcnRouteBroadcastPolicyRouteCondition",
           "name": "BroadcastConditions",
           "output_required": true,
@@ -7256,7 +7306,7 @@
         },
         {
           "disabled": false,
-          "document": "路由行为，`accept` 允许，`drop` 拒绝",
+          "document": "<p>路由行为，<code>accept</code> 允许，<code>drop</code> 拒绝</p>",
           "example": "accept",
           "member": "string",
           "name": "Action",
@@ -7267,7 +7317,7 @@
         },
         {
           "disabled": false,
-          "document": "策略描述",
+          "document": "<p>策略描述</p>",
           "example": "接收指定关联实例路由",
           "member": "string",
           "name": "Description",
@@ -7278,7 +7328,7 @@
         },
         {
           "disabled": false,
-          "document": "as-path操作",
+          "document": "<p>as-path操作</p>",
           "example": "63551/63552",
           "member": "string",
           "name": "OperateAsPath",
@@ -7289,7 +7339,7 @@
         },
         {
           "disabled": false,
-          "document": "as-path操作模式",
+          "document": "<p>as-path操作模式</p>",
           "example": "prepend",
           "member": "string",
           "name": "AsPathOperateMode",
@@ -7300,7 +7350,7 @@
         },
         {
           "disabled": false,
-          "document": "community操作",
+          "document": "<p>community操作</p>",
           "example": "[\"65001:65001\"]",
           "member": "string",
           "name": "OperateCommunitySet",
@@ -7311,7 +7361,7 @@
         },
         {
           "disabled": false,
-          "document": "community操作模式",
+          "document": "<p>community操作模式</p>",
           "example": "add",
           "member": "string",
           "name": "CommunityOperateMode",
@@ -27701,7 +27751,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网ID。",
+          "document": "<p>云联网ID。</p>",
           "example": "ccn-245ecr35",
           "member": "string",
           "name": "CcnId",
@@ -27711,7 +27761,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。",
+          "document": "<p>实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。</p>",
           "example": "VPC",
           "member": "string",
           "name": "InstanceType",
@@ -27721,7 +27771,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "InstanceId",
@@ -27731,7 +27781,7 @@
         },
         {
           "disabled": false,
-          "document": "实例绑定路由表的时间。",
+          "document": "<p>实例绑定路由表的时间。</p>",
           "example": "2021-05-20 16:39:34",
           "member": "datetime",
           "name": "InstanceBindTime",
@@ -27741,7 +27791,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表ID。",
+          "document": "<p>路由表ID。</p>",
           "example": "ccnrtb-1234edfr",
           "member": "string",
           "name": "RouteTableId",
@@ -27751,7 +27801,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "<p>实例名称。</p>",
           "example": "tesetsa",
           "member": "string",
           "name": "InstanceName",
@@ -27761,7 +27811,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在地域。",
+          "document": "<p>实例所在地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
@@ -27771,7 +27821,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的账户uin。",
+          "document": "<p>实例所属的账户uin。</p>",
           "example": "329087131",
           "member": "string",
           "name": "InstanceUin",
@@ -27781,11 +27831,31 @@
         },
         {
           "disabled": false,
-          "document": "关联实例状态：\n<li>`PENDING`：申请中</li>\n<li>`ACTIVE`：已连接</li>\n<li>`EXPIRED`：已过期</li>\n<li>`REJECTED`：已拒绝</li>\n<li>`DELETED`：已删除</li>\n<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>\n<li>`ATTACHING`：关联中</li>\n<li>`DETACHING`：解关联中</li>\n<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>",
+          "document": "<p>关联实例状态：</p><li><code>PENDING</code>：申请中</li><li><code>ACTIVE</code>：已连接</li><li><code>EXPIRED</code>：已过期</li><li><code>REJECTED</code>：已拒绝</li><li><code>DELETED</code>：已删除</li><li><code>FAILED</code>：失败的（2小时后将异步强制解关联）</li><li><code>ATTACHING</code>：关联中</li><li><code>DETACHING</code>：解关联中</li><li><code>DETACHFAILED</code>：解关联失败（2小时后将异步强制解关联）</li>",
           "example": "ACTIVE",
           "member": "string",
           "name": "State",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名类型</p>",
+          "example": "VPC",
+          "member": "string",
+          "name": "AliasType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名实例ID</p>",
+          "example": "vpc-nb107zhp",
+          "member": "string",
+          "name": "AliasInstanceId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

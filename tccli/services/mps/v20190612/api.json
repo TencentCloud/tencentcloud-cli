@@ -84,6 +84,13 @@
       "output": "CreateAdaptiveDynamicStreamingTemplateResponse",
       "status": "online"
     },
+    "CreateAgentRecordTask": {
+      "document": "调用该接口，用于创建Agent录制任务。",
+      "input": "CreateAgentRecordTaskRequest",
+      "name": "创建Agent录制任务",
+      "output": "CreateAgentRecordTaskResponse",
+      "status": "online"
+    },
     "CreateAiDramaTask": {
       "document": "Ai漫剧工作流，输入剧本，自动拆分分镜，生成Ai漫剧",
       "input": "CreateAiDramaTaskRequest",
@@ -635,6 +642,13 @@
       "input": "DescribeAdaptiveDynamicStreamingTemplatesRequest",
       "name": "获取转自适应码流模板列表",
       "output": "DescribeAdaptiveDynamicStreamingTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeAgentRecordTask": {
+      "document": "调用该接口，用于查询Agent录制任务的进度以及获取生成结果。",
+      "input": "DescribeAgentRecordTaskRequest",
+      "name": "查询Agent录制任务",
+      "output": "DescribeAgentRecordTaskResponse",
       "status": "online"
     },
     "DescribeAigcAudioTask": {
@@ -1470,6 +1484,13 @@
       "output": "ProcessMediaResponse",
       "status": "online"
     },
+    "QueryHunyuan3DTask": {
+      "document": "查询混元3D任务对应的结果",
+      "input": "QueryHunyuan3DTaskRequest",
+      "name": "查询混元3D任务结果",
+      "output": "QueryHunyuan3DTaskResponse",
+      "status": "online"
+    },
     "QueryProject": {
       "document": "剧集项目查询",
       "input": "QueryProjectRequest",
@@ -1524,6 +1545,13 @@
       "input": "StopStreamPackageLinearAssemblyChannelRequest",
       "name": "停止线性组装频道",
       "output": "StopStreamPackageLinearAssemblyChannelResponse",
+      "status": "online"
+    },
+    "SubmitHunyuan3DTask": {
+      "document": "提交创建混元3D的任务",
+      "input": "SubmitHunyuan3DTaskRequest",
+      "name": "提交混元3D任务",
+      "output": "SubmitHunyuan3DTaskResponse",
       "status": "online"
     },
     "SyncDubbing": {
@@ -3026,6 +3054,45 @@
       ],
       "usage": "both"
     },
+    "AgentStoreCosParam": {
+      "document": "Agent结果文件上传COS时，需传入的信息。 需创建并授权MPS_QcsRole角色。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储至 cos 的 bucket 桶名称。需要cos存储时，该值必填。 示例值：bucket。</p>",
+          "example": "******-test-live-record-task-***",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储至 cos 的 bucket 区域。与bucket所属区域相同，上传cos时必填。 示例值：ap-guangzhou</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储至 cos 的 bucket 路径。<br>可选。<br>示例值：my_file</p>",
+          "example": "record-only",
+          "member": "string",
+          "name": "CosBucketPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AiAnalysisResult": {
       "document": "智能分析结果",
       "members": [
@@ -3239,8 +3306,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "NULL",
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。</p>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -3249,8 +3316,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "NULL",
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
+          "example": "70000",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -3259,8 +3326,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
-          "example": "NULL",
+          "document": "<p>错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。</p>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": true,
@@ -3269,8 +3336,8 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。",
-          "example": "NULL",
+          "document": "<p>错误信息。</p>",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -3279,8 +3346,8 @@
         },
         {
           "disabled": false,
-          "document": "智能分类任务输入。",
-          "example": "NULL",
+          "document": "<p>智能分类任务输入。</p>",
+          "example": "无",
           "member": "AiAnalysisTaskClassificationInput",
           "name": "Input",
           "output_required": true,
@@ -3289,8 +3356,8 @@
         },
         {
           "disabled": false,
-          "document": "智能分类任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "<p>智能分类任务输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskClassificationOutput",
           "name": "Output",
           "output_required": true,
@@ -3357,8 +3424,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "NULL",
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。</p>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -3367,8 +3434,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "NULL",
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -3377,8 +3444,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
-          "example": "NULL",
+          "document": "<p>错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。</p>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": true,
@@ -3387,8 +3454,8 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。",
-          "example": "NULL",
+          "document": "<p>错误信息。</p>",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -3397,8 +3464,8 @@
         },
         {
           "disabled": false,
-          "document": "智能封面任务输入。",
-          "example": "NULL",
+          "document": "<p>智能封面任务输入。</p>",
+          "example": "无",
           "member": "AiAnalysisTaskCoverInput",
           "name": "Input",
           "output_required": true,
@@ -3407,8 +3474,8 @@
         },
         {
           "disabled": false,
-          "document": "智能封面任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "<p>智能封面任务输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskCoverOutput",
           "name": "Output",
           "output_required": true,
@@ -4069,8 +4136,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "NULL",
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。</p>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -4079,8 +4146,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "NULL",
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -4089,8 +4156,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
-          "example": "NULL",
+          "document": "<p>错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。</p>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": true,
@@ -4099,8 +4166,8 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。",
-          "example": "NULL",
+          "document": "<p>错误信息。</p>",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -4109,8 +4176,8 @@
         },
         {
           "disabled": false,
-          "document": "智能按帧标签任务输入。",
-          "example": "NULL",
+          "document": "<p>智能按帧标签任务输入。</p>",
+          "example": "无",
           "member": "AiAnalysisTaskFrameTagInput",
           "name": "Input",
           "output_required": true,
@@ -4119,8 +4186,8 @@
         },
         {
           "disabled": false,
-          "document": "智能按帧标签任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "<p>智能按帧标签任务输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskFrameTagOutput",
           "name": "Output",
           "output_required": true,
@@ -8399,7 +8466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人物 ID。",
+          "document": "<p>人物 ID。</p>",
           "example": "9527",
           "member": "string",
           "name": "PersonId",
@@ -8409,7 +8476,7 @@
         },
         {
           "disabled": false,
-          "document": "人物名称。",
+          "document": "<p>人物名称。</p>",
           "example": "Default",
           "member": "string",
           "name": "Name",
@@ -8419,7 +8486,7 @@
         },
         {
           "disabled": false,
-          "document": "人物描述。",
+          "document": "<p>人物描述。</p>",
           "example": "张三",
           "member": "string",
           "name": "Description",
@@ -8429,8 +8496,8 @@
         },
         {
           "disabled": false,
-          "document": "人脸信息。",
-          "example": "NULL",
+          "document": "<p>人脸信息。</p>",
+          "example": "无",
           "member": "AiSampleFaceInfo",
           "name": "FaceInfoSet",
           "output_required": true,
@@ -8439,8 +8506,8 @@
         },
         {
           "disabled": false,
-          "document": "人物标签。",
-          "example": "NULL",
+          "document": "<p>人物标签。</p>",
+          "example": "[\"张三\"]",
           "member": "string",
           "name": "TagSet",
           "output_required": true,
@@ -8449,8 +8516,8 @@
         },
         {
           "disabled": false,
-          "document": "应用场景。",
-          "example": "NULL",
+          "document": "<p>应用场景。</p>",
+          "example": "[\"场景\"]",
           "member": "string",
           "name": "UsageSet",
           "output_required": true,
@@ -8459,8 +8526,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "2025-03-25T06:16:39Z\t",
+          "document": "<p>创建时间，使用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>",
+          "example": "2025-03-25T06:16:39Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -8469,8 +8536,8 @@
         },
         {
           "disabled": false,
-          "document": "最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "2025-03-25T06:16:39Z\t",
+          "document": "<p>最后修改时间，使用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>",
+          "example": "2025-03-25T06:16:39Z",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -8485,7 +8552,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作类型，可选值：add（添加）、delete（删除）、reset（重置）。",
+          "document": "<p>操作类型，可选值：add（添加）、delete（删除）、reset（重置）。</p>",
           "example": "add",
           "member": "string",
           "name": "Type",
@@ -8494,8 +8561,8 @@
         },
         {
           "disabled": false,
-          "document": "标签，长度限制：128 个字符。",
-          "example": "明星",
+          "document": "<p>标签，长度限制：128 个字符。</p>",
+          "example": "[\"明星\"]",
           "member": "string",
           "name": "Tags",
           "required": true,
@@ -9123,8 +9190,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "参考视频url。需要外网可访问。\n可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声\n通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频\n参考视频为待编辑视频时，不能定义视频首尾帧。",
-          "example": "",
+          "document": "<p>参考视频url。需要外网可访问。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声<br>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频<br>参考视频为待编辑视频时，不能定义视频首尾帧。</p>",
+          "example": "http://video-mps-cos/output/video.mp4",
           "member": "string",
           "name": "VideoUrl",
           "output_required": false,
@@ -9134,8 +9201,8 @@
         },
         {
           "disabled": false,
-          "document": "通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。",
-          "example": "",
+          "document": "<p>通过ReferType参数区分参考视频类型：feature为特征参考视频，base为待编辑视频。</p>",
+          "example": "feature",
           "member": "string",
           "name": "ReferType",
           "output_required": false,
@@ -9145,8 +9212,8 @@
         },
         {
           "disabled": false,
-          "document": "通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。",
-          "example": "",
+          "document": "<p>通过KeepOriginalSound参数选择是否保留视频原声，yes为保留，no为不保留；当前参数对特征参考视频（feature）也生效。</p>",
+          "example": "yes",
           "member": "string",
           "name": "KeepOriginalSound",
           "output_required": false,
@@ -9812,7 +9879,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "document": "<p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -9823,8 +9890,8 @@
         },
         {
           "disabled": false,
-          "document": "类型，可多选，可选值：\n<li>declick：杂音去除</li>\n<li>deesser：齿音压制</li>\n默认值：declick。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "declick",
+          "document": "<p>类型，可多选，可选值：</p><li>declick：杂音去除</li><li>deesser：齿音压制</li>默认值：declick。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"declick\"]",
           "member": "string",
           "name": "Types",
           "output_required": true,
@@ -12945,6 +13012,79 @@
       ],
       "type": "object"
     },
+    "CreateAgentRecordTaskRequest": {
+      "document": "CreateAgentRecordTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>直播间URL</p>",
+          "example": "https://****.******.com/***********",
+          "member": "string",
+          "name": "LiveRoomUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最长录制时长</p><p>单位：分</p><p>最长支持720分</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxDurationMinutes",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>",
+          "example": "无",
+          "member": "AgentStoreCosParam",
+          "name": "StoreCosParam",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时录制开始时刻</p><p>参数格式：2026-07-01T15:31:32+08:00</p><p>空表示提交后立即开始录制；非空表示从该时刻开始录制</p>",
+          "example": "2026-07-03T12:10:28.065902+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>中断策略</p><p>枚举值：</p><ul><li>STOP_ON_INTERRUPT： 直播流中断后立即结束录制</li><li>CONTINUE_UNTIL_END： 直播流中断时忽略中断，继续录制直到任务结束时间</li></ul><p>默认值：STOP_ON_INTERRUPT</p>",
+          "example": "CONTINUE_UNTIL_END",
+          "member": "string",
+          "name": "InterruptPolicy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentRecordTaskResponse": {
+      "document": "CreateAgentRecordTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>",
+          "example": "task_9fac9a28f27292d8fbdf26e63beaeb03",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAiDramaTaskRequest": {
       "document": "CreateAiDramaTask请求参数结构体",
       "members": [
@@ -14804,7 +14944,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转推的目标IP。",
+          "document": "<p>转推的目标IP。</p>",
           "example": "ip",
           "member": "string",
           "name": "Ip",
@@ -14814,8 +14954,8 @@
         },
         {
           "disabled": false,
-          "document": "转推的目标端口。",
-          "example": "port",
+          "document": "<p>转推的目标端口。</p>",
+          "example": "9090",
           "member": "int64",
           "name": "Port",
           "required": true,
@@ -18452,6 +18592,63 @@
       ],
       "type": "object"
     },
+    "DescribeAgentRecordTaskRequest": {
+      "document": "DescribeAgentRecordTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建Agent录制任务时，返回的任务ID。</p>",
+          "example": "24000192-MllmVideoTest-9baf86edd37b1491037414981e556bf0",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentRecordTaskResponse": {
+      "document": "DescribeAgentRecordTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务当前状态。 </p><p>枚举值：</p><ul><li>WAITING： 等待中</li><li>RUNNING： 执行中</li><li>SUCCESS： 成功</li><li>FAILED： 失败</li></ul>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当任务状态为 FAILED 时，返回失败信息。</p>",
+          "example": "copy to bucket failed: copy object failed",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当任务状态为 SUCCESS 时，返回录制文件Url列表。</p>",
+          "example": "[\"https://***********-live-record-task-**********.cos.ap-guangzhou.myqcloud.com/record-only/24000192-MllmVideoTest-7fedc0fb7c4fc718fd9792ca8e04e80f-2026-07-15-12-04-29.mp4\"]",
+          "member": "string",
+          "name": "RecordUrls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAigcAudioTaskRequest": {
       "document": "DescribeAigcAudioTask请求参数结构体",
       "members": [
@@ -19779,7 +19976,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流Id。",
+          "document": "<p>流Id。</p>",
           "example": "01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "FlowId",
@@ -19789,7 +19986,7 @@
         },
         {
           "disabled": false,
-          "document": "流名称。",
+          "document": "<p>流名称。</p>",
           "example": "example-flow",
           "member": "string",
           "name": "FlowName",
@@ -19799,7 +19996,7 @@
         },
         {
           "disabled": false,
-          "document": "流状态，目前有IDLE/RUNNING。",
+          "document": "<p>流状态，目前有IDLE/RUNNING。</p>",
           "example": "IDLE",
           "member": "string",
           "name": "State",
@@ -19809,7 +20006,7 @@
         },
         {
           "disabled": false,
-          "document": "最大带宽值。",
+          "document": "<p>最大带宽值。</p>",
           "example": "10000000",
           "member": "int64",
           "name": "MaxBandwidth",
@@ -19819,7 +20016,7 @@
         },
         {
           "disabled": false,
-          "document": "输入组。",
+          "document": "<p>输入组。</p>",
           "example": "无",
           "member": "DescribeInput",
           "name": "InputGroup",
@@ -19829,7 +20026,7 @@
         },
         {
           "disabled": false,
-          "document": "输出组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出组。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutput",
           "name": "OutputGroup",
@@ -19839,7 +20036,7 @@
         },
         {
           "disabled": false,
-          "document": "该Flow关联的媒体传输事件EventId。",
+          "document": "<p>该Flow关联的媒体传输事件EventId。</p>",
           "example": "eventid",
           "member": "string",
           "name": "EventId",
@@ -19849,7 +20046,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体传输输入流所属的区域，取值和InputRegion相同。",
+          "document": "<p>媒体传输输入流所属的区域，取值和InputRegion相同。</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -19859,8 +20056,8 @@
         },
         {
           "disabled": false,
-          "document": "该Flow允许创建的输入协议",
-          "example": "[SRT, RTMP]",
+          "document": "<p>该Flow允许创建的输入协议</p>",
+          "example": "[\"SRT\", \"RTMP\"]",
           "member": "string",
           "name": "AllowedInputProtocols",
           "output_required": false,
@@ -19869,8 +20066,8 @@
         },
         {
           "disabled": false,
-          "document": "该Flow允许创建的输出协议",
-          "example": "[SRT, RTMP]",
+          "document": "<p>该Flow允许创建的输出协议</p>",
+          "example": "[\"SRT\", \"RTMP\"]",
           "member": "string",
           "name": "AllowedOutputProtocols",
           "output_required": false,
@@ -20286,7 +20483,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入Id。",
+          "document": "<p>输入Id。</p>",
           "example": "id",
           "member": "string",
           "name": "InputId",
@@ -20296,7 +20493,7 @@
         },
         {
           "disabled": false,
-          "document": "输入名称。",
+          "document": "<p>输入名称。</p>",
           "example": "inputName",
           "member": "string",
           "name": "InputName",
@@ -20306,7 +20503,7 @@
         },
         {
           "disabled": false,
-          "document": "输入描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入描述。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -20316,7 +20513,7 @@
         },
         {
           "disabled": false,
-          "document": "输入协议。",
+          "document": "<p>输入协议。</p>",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -20326,8 +20523,8 @@
         },
         {
           "disabled": false,
-          "document": "输入地址列表。",
-          "example": "0",
+          "document": "<p>输入地址列表。</p>",
+          "example": "无",
           "member": "InputAddress",
           "name": "InputAddressList",
           "output_required": true,
@@ -20336,8 +20533,8 @@
         },
         {
           "disabled": false,
-          "document": "输入IP白名单列表。",
-          "example": "0",
+          "document": "<p>输入IP白名单列表。</p>",
+          "example": "[\"0.0.0.0\"]",
           "member": "string",
           "name": "AllowIpList",
           "output_required": true,
@@ -20346,8 +20543,8 @@
         },
         {
           "disabled": false,
-          "document": "输入的SRT配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "<p>输入的SRT配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeInputSRTSettings",
           "name": "SRTSettings",
           "output_required": true,
@@ -20356,8 +20553,8 @@
         },
         {
           "disabled": false,
-          "document": "输入的RTP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "<p>输入的RTP配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeInputRTPSettings",
           "name": "RTPSettings",
           "output_required": true,
@@ -20366,7 +20563,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的地区。",
+          "document": "<p>输入的地区。</p>",
           "example": "ap-hongkong",
           "member": "string",
           "name": "InputRegion",
@@ -20376,8 +20573,8 @@
         },
         {
           "disabled": false,
-          "document": "输入的RTMP配置信息。",
-          "example": "0",
+          "document": "<p>输入的RTMP配置信息。</p>",
+          "example": "无",
           "member": "DescribeInputRTMPSettings",
           "name": "RTMPSettings",
           "output_required": true,
@@ -20386,7 +20583,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的主备开关。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入的主备开关。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOSE",
           "member": "string",
           "name": "FailOver",
@@ -20396,7 +20593,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的RTMP_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入的RTMP_PULL配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInputRTMPPullSettings",
           "name": "RTMPPullSettings",
@@ -20406,7 +20603,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的RTSP_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入的RTSP_PULL配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInputRTSPPullSettings",
           "name": "RTSPPullSettings",
@@ -20416,7 +20613,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的HLS_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入的HLS_PULL配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInputHLSPullSettings",
           "name": "HLSPullSettings",
@@ -20426,7 +20623,7 @@
         },
         {
           "disabled": false,
-          "document": "延播平滑吐流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>延播平滑吐流配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResilientStreamConf",
           "name": "ResilientStream",
@@ -20436,7 +20633,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的输入安全组 ID。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的输入安全组 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ff96r1fd7ab41ekj06497cdecbb0\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -20446,7 +20643,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。\t",
+          "document": "<p>可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。</p>",
           "example": "[\"ap-shanghai-1\"]",
           "member": "string",
           "name": "Zones",
@@ -20456,7 +20653,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的RIST配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入的RIST配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInputRISTSettings",
           "name": "RISTSettings",
@@ -20466,7 +20663,7 @@
         },
         {
           "disabled": false,
-          "document": "输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址",
+          "document": "<p>输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址</p>",
           "example": "无",
           "member": "StreamUrlDetail",
           "name": "StreamUrls",
@@ -20576,7 +20773,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否FEC。",
+          "document": "<p>是否FEC。</p>",
           "example": "FEC",
           "member": "string",
           "name": "FEC",
@@ -20586,8 +20783,8 @@
         },
         {
           "disabled": false,
-          "document": "空闲超时时间。",
-          "example": "timeout",
+          "document": "<p>空闲超时时间。</p>",
+          "example": "3000",
           "member": "int64",
           "name": "IdleTimeout",
           "required": true,
@@ -20834,12 +21031,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要获取元信息的文件输入信息。",
+          "document": "<p>需要获取元信息的文件输入信息。</p>",
           "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定为slow时，增加接口超时时间</p><p>枚举值：</p><ul><li>slow： 增加接口超时时间</li></ul>",
+          "example": "slow",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -20849,7 +21055,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体元信息。",
+          "document": "<p>媒体元信息。</p>",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -21321,7 +21527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转推的目标的地址信息列表，SRT模式为CALLER时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转推的目标的地址信息列表，SRT模式为CALLER时使用。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SRTAddressDestination",
           "name": "Destinations",
@@ -21331,7 +21537,7 @@
         },
         {
           "disabled": false,
-          "document": "流Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>流Id。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "StreamId",
           "member": "string",
           "name": "StreamId",
@@ -21341,7 +21547,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>延迟。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Latency",
@@ -21351,7 +21557,7 @@
         },
         {
           "disabled": false,
-          "document": "接收延迟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>接收延迟。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "120",
           "member": "int64",
           "name": "RecvLatency",
@@ -21361,7 +21567,7 @@
         },
         {
           "disabled": false,
-          "document": "对端延迟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>对端延迟。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "PeerLatency",
@@ -21371,7 +21577,7 @@
         },
         {
           "disabled": false,
-          "document": "对端空闲超时时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>对端空闲超时时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5000",
           "member": "int64",
           "name": "PeerIdleTimeout",
@@ -21381,8 +21587,8 @@
         },
         {
           "disabled": false,
-          "document": "加密密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>加密密钥。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sdk-xxxxx",
           "member": "string",
           "name": "Passphrase",
           "output_required": true,
@@ -21391,7 +21597,7 @@
         },
         {
           "disabled": false,
-          "document": "加密密钥长度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>加密密钥长度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "PbKeyLen",
@@ -21401,7 +21607,7 @@
         },
         {
           "disabled": false,
-          "document": "SRT模式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SRT模式。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CALLER",
           "member": "string",
           "name": "Mode",
@@ -21411,7 +21617,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器监听地址，SRT模式为LISTENER时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务器监听地址，SRT模式为LISTENER时使用。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutputSRTSourceAddressResp",
           "name": "SourceAddresses",
@@ -21421,7 +21627,7 @@
         },
         {
           "disabled": false,
-          "document": "FEC 配置",
+          "document": "<p>FEC 配置</p>",
           "example": "无",
           "member": "SRTFECFullOptions",
           "name": "FEC",
@@ -27134,6 +27340,45 @@
       ],
       "usage": "both"
     },
+    "File3D": {
+      "document": "Query 返回的单个产物文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件类型，OBJ / GLB / FBX / STL / USDZ</p><p>枚举值：</p><ul><li>OBJ： 3D 通用交换格式</li><li>GLB： glTF 2.0 二进制（&quot;3D 界的 JPEG&quot;）</li><li>FBX： Autodesk 影视/游戏工业标准</li><li>STL： 3D 打印/CAD 三角面片</li><li>USDZ： Pixar/Apple 打包场景描述</li></ul>",
+          "example": "GLB",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件下载 URL（临时签名，TTL 一般 24h）</p>",
+          "example": "https://hunyuan-3d-1258344703.cos.ap-guangzhou.myqcloud.com/gen_tmp_test/7c97f2df77f94e06a5fbc1778cd05ea4/4686c1366f887be9fa0cb92e218e577a.glb",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预览图 URL（若有）</p>",
+          "example": "https://hunyuan-base-prod-1258344703.cos.ap-guangzhou.myqcloud.com/openapi/text2img/ddc9dedf69b20c6603f949516672e21a.png",
+          "member": "string",
+          "name": "PreviewImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FissionTaskInfo": {
       "document": "商品裂变任务信息",
       "members": [
@@ -27368,8 +27613,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间戳，单位为秒。",
-          "example": "12 ",
+          "document": "<p>时间戳，单位为秒。</p>",
+          "example": "12",
           "member": "int64",
           "name": "Timestamp",
           "required": true,
@@ -27378,8 +27623,8 @@
         },
         {
           "disabled": false,
-          "document": "输入输出类型（input/output）。",
-          "example": " input",
+          "document": "<p>输入输出类型（input/output）。</p>",
+          "example": "input",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -27388,8 +27633,8 @@
         },
         {
           "disabled": false,
-          "document": "输入或输出Id。",
-          "example": " 12478",
+          "document": "<p>输入或输出Id。</p>",
+          "example": "12478",
           "member": "string",
           "name": "InputOutputId",
           "required": true,
@@ -27398,8 +27643,8 @@
         },
         {
           "disabled": false,
-          "document": "协议。",
-          "example": " RTMP",
+          "document": "<p>协议。</p>",
+          "example": "RTMP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -27408,8 +27653,8 @@
         },
         {
           "disabled": false,
-          "document": "事件代码。",
-          "example": " 10224",
+          "document": "<p>事件代码。</p>",
+          "example": "10224",
           "member": "string",
           "name": "EventCode",
           "required": true,
@@ -27418,8 +27663,8 @@
         },
         {
           "disabled": false,
-          "document": "事件信息。",
-          "example": " test",
+          "document": "<p>事件信息。</p>",
+          "example": "succes",
           "member": "string",
           "name": "EventMessage",
           "required": true,
@@ -27428,8 +27673,8 @@
         },
         {
           "disabled": false,
-          "document": "对端IP。",
-          "example": " ip",
+          "document": "<p>对端IP。</p>",
+          "example": "ip",
           "member": "string",
           "name": "RemoteIp",
           "required": true,
@@ -27438,8 +27683,8 @@
         },
         {
           "disabled": false,
-          "document": "对端端口。",
-          "example": " port",
+          "document": "<p>对端端口。</p>",
+          "example": "port",
           "member": "string",
           "name": "RemotePort",
           "required": true,
@@ -27448,8 +27693,8 @@
         },
         {
           "disabled": false,
-          "document": "主备通道，0为主通道，1为备通道。",
-          "example": " 1",
+          "document": "<p>主备通道，0为主通道，1为备通道。</p>",
+          "example": "1",
           "member": "string",
           "name": "Pipeline",
           "required": true,
@@ -27458,8 +27703,8 @@
         },
         {
           "disabled": false,
-          "document": "输入或输出的名称。",
-          "example": " name",
+          "document": "<p>输入或输出的名称。</p>",
+          "example": "name",
           "member": "string",
           "name": "InputOutputName",
           "required": true,
@@ -29624,7 +29869,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入地址的IP。",
+          "document": "<p>输入地址的IP。</p>",
           "example": "ip",
           "member": "string",
           "name": "Ip",
@@ -29634,8 +29879,8 @@
         },
         {
           "disabled": false,
-          "document": "输入地址的端口。",
-          "example": "port",
+          "document": "<p>输入地址的端口。</p>",
+          "example": "9090",
           "member": "int64",
           "name": "Port",
           "required": true,
@@ -29651,7 +29896,7 @@
         {
           "disabled": false,
           "document": "<p>问题分类标签。</p>",
-          "example": "",
+          "example": "motion_blur",
           "member": "string",
           "name": "Tag",
           "output_required": false,
@@ -29661,7 +29906,7 @@
         {
           "disabled": false,
           "document": "<p>问题描述。</p>",
-          "example": "",
+          "example": "暗光环境下人物正在进行剧烈动作，画面中人物躯干和手臂出现明显的方向性条状拖影，且边缘严重模糊导致细节丢失，符合运动模糊特征。",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -29671,7 +29916,7 @@
         {
           "disabled": false,
           "document": "<p>该问题的质量得分，范围 [0, 100]。</p>",
-          "example": "",
+          "example": "80",
           "member": "float",
           "name": "Score",
           "output_required": false,
@@ -29681,7 +29926,7 @@
         {
           "disabled": false,
           "document": "<p>该问题的判断置信度，范围 [0, 100]。</p>",
-          "example": "",
+          "example": "80",
           "member": "float",
           "name": "Confidence",
           "output_required": false,
@@ -29691,7 +29936,7 @@
         {
           "disabled": false,
           "document": "<p>问题起始时间（毫秒）。</p>",
-          "example": "",
+          "example": "7200",
           "member": "int64",
           "name": "StartTimeMs",
           "output_required": false,
@@ -29701,7 +29946,7 @@
         {
           "disabled": false,
           "document": "<p>问题结束时间（毫秒）</p>",
-          "example": "",
+          "example": "7200",
           "member": "int64",
           "name": "EndTimeMs",
           "output_required": false,
@@ -29711,7 +29956,7 @@
         {
           "disabled": false,
           "document": "<p>附加数据（JSON 格式），如严重程度等补充信息。</p>",
-          "example": "",
+          "example": "{\"severity\":\"low\"}",
           "member": "string",
           "name": "ExtraData",
           "output_required": false,
@@ -29727,7 +29972,7 @@
         {
           "disabled": false,
           "document": "<p>检测结果数量。</p>",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "ResultCount",
           "output_required": true,
@@ -31756,8 +32001,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体处理任务 ID。",
-          "example": "NULL",
+          "document": "<p>媒体处理任务 ID。</p>",
+          "example": "24000-procedure-live-61a9c338",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -31766,8 +32011,8 @@
         },
         {
           "disabled": false,
-          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
-          "example": "NULL",
+          "document": "<p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -31776,8 +32021,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，其他值表示失败。",
-          "example": "NULL",
+          "document": "<p>错误码，0 表示成功，其他值表示失败。</p>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -31786,8 +32031,8 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。",
-          "example": "NULL",
+          "document": "<p>错误信息。</p>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -31796,8 +32041,8 @@
         },
         {
           "disabled": false,
-          "document": "直播流 URL。",
-          "example": "NULL",
+          "document": "<p>直播流 URL。</p>",
+          "example": "http://mp/live/mpf302.flv",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -33253,8 +33498,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "NULL",
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。</p>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -33263,8 +33508,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "NULL",
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
+          "example": "InternalError",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -33273,8 +33518,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
-          "example": "NULL",
+          "document": "<p>错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。</p>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -33283,8 +33528,8 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。",
-          "example": "NULL",
+          "document": "<p>错误信息。</p>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -33293,8 +33538,8 @@
         },
         {
           "disabled": false,
-          "document": "对视频转自适应码流任务的输入。",
-          "example": "NULL",
+          "document": "<p>对视频转自适应码流任务的输入。</p>",
+          "example": "无",
           "member": "AdaptiveDynamicStreamingTaskInput",
           "name": "Input",
           "required": true,
@@ -33303,8 +33548,8 @@
         },
         {
           "disabled": false,
-          "document": "对视频转自适应码流任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "<p>对视频转自适应码流任务的输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AdaptiveDynamicStreamingInfoItem",
           "name": "Output",
           "required": true,
@@ -33313,7 +33558,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务开始执行的时间，采用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
@@ -33323,7 +33568,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务执行完毕的时间，采用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
@@ -33339,8 +33584,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "NULL",
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。</p>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -33349,8 +33594,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "NULL",
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -33359,8 +33604,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
-          "example": "NULL",
+          "document": "<p>错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。</p>",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": true,
@@ -33369,8 +33614,8 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。",
-          "example": "NULL",
+          "document": "<p>错误信息。</p>",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -33379,8 +33624,8 @@
         },
         {
           "disabled": false,
-          "document": "转动图任务的输入。",
-          "example": "NULL",
+          "document": "<p>转动图任务的输入。</p>",
+          "example": "无",
           "member": "AnimatedGraphicTaskInput",
           "name": "Input",
           "output_required": true,
@@ -33389,8 +33634,8 @@
         },
         {
           "disabled": false,
-          "document": "转动图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "<p>转动图任务的输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaAnimatedGraphicsItem",
           "name": "Output",
           "output_required": true,
@@ -33399,7 +33644,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务开始执行的时间，采用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
@@ -33409,7 +33654,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务执行完毕的时间，采用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
@@ -33901,7 +34146,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采样截图规格 ID，参见[采样截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。",
+          "document": "<p>采样截图规格 ID，参见<a href=\"https://cloud.tencent.com/document/product/266/33480#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF\">采样截图参数模板</a>。</p>",
           "example": "10",
           "member": "int64",
           "name": "Definition",
@@ -33911,7 +34156,7 @@
         },
         {
           "disabled": false,
-          "document": "采样方式，取值范围：\n<li>Percent：根据百分比间隔采样。</li>\n<li>Time：根据时间间隔采样。</li>",
+          "document": "<p>采样方式，取值范围：</p><li>Percent：根据百分比间隔采样。</li><li>Time：根据时间间隔采样。</li>",
           "example": "Percent",
           "member": "string",
           "name": "SampleType",
@@ -33921,7 +34166,7 @@
         },
         {
           "disabled": false,
-          "document": "采样间隔\n<li>当 SampleType 为 Percent 时，该值表示多少百分比一张图。</li>\n<li>当 SampleType 为 Time 时，该值表示多少时间间隔一张图，单位秒， 第一张图均为视频首帧。</li>",
+          "document": "<p>采样间隔</p><li>当 SampleType 为 Percent 时，该值表示多少百分比一张图。</li><li>当 SampleType 为 Time 时，该值表示多少时间间隔一张图，单位秒， 第一张图均为视频首帧。</li>",
           "example": "10",
           "member": "int64",
           "name": "Interval",
@@ -33931,8 +34176,8 @@
         },
         {
           "disabled": false,
-          "document": "截图后文件的存储位置。",
-          "example": "{     \"Type\": \"COS\",     \"CosOutputStorage\": {         \"Bucket\": \"mpstest-12xxxxxx7\",         \"Region\": \"ap-nanjing\"} }",
+          "document": "<p>截图后文件的存储位置。</p>",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "Storage",
           "output_required": true,
@@ -33941,7 +34186,7 @@
         },
         {
           "disabled": false,
-          "document": "生成的截图 path 列表。",
+          "document": "<p>生成的截图 path 列表。</p>",
           "example": "[\"/output/test_sampleByOffset_10_0.jpg\"]",
           "member": "string",
           "name": "ImagePathSet",
@@ -33951,8 +34196,8 @@
         },
         {
           "disabled": false,
-          "document": "截图如果被打上了水印，被打水印的模板 ID 列表。",
-          "example": "100001",
+          "document": "<p>截图如果被打上了水印，被打水印的模板 ID 列表。</p>",
+          "example": "[100001]",
           "member": "int64",
           "name": "WaterMarkDefinition",
           "output_required": true,
@@ -37124,8 +37369,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "原点位置，目前仅支持：\n<li>TopLeft：表示坐标原点位于视频图像左上角，马赛克原点为图片或文字的左上角。</li>\n默认值：TopLeft。",
-          "example": "NULL",
+          "document": "<p>原点位置，目前仅支持：</p><li>TopLeft：表示坐标原点位于视频图像左上角，马赛克原点为图片或文字的左上角。</li>默认值：TopLeft。",
+          "example": "TopLeft",
           "member": "string",
           "name": "CoordinateOrigin",
           "required": false,
@@ -37134,8 +37379,8 @@
         },
         {
           "disabled": false,
-          "document": "马赛克原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示马赛克 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示马赛克 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。",
-          "example": "NULL",
+          "document": "<p>马赛克原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：</p><li>当字符串以 % 结尾，表示马赛克 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li><li>当字符串以 px 结尾，表示马赛克 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>默认值：0px。",
+          "example": "20px",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -37144,8 +37389,8 @@
         },
         {
           "disabled": false,
-          "document": "马赛克原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示马赛克 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示马赛克 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。",
-          "example": "NULL",
+          "document": "<p>马赛克原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：</p><li>当字符串以 % 结尾，表示马赛克 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li><li>当字符串以 px 结尾，表示马赛克 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>默认值：0px。",
+          "example": "30px",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -37154,8 +37399,8 @@
         },
         {
           "disabled": false,
-          "document": "马赛克的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示马赛克 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示马赛克 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>\n默认值：10%。",
-          "example": "NULL",
+          "document": "<p>马赛克的宽度。支持 %、px 两种格式：</p><li>当字符串以 % 结尾，表示马赛克 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li><li>当字符串以 px 结尾，表示马赛克 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>默认值：10%。",
+          "example": "200px",
           "member": "string",
           "name": "Width",
           "required": false,
@@ -37164,8 +37409,8 @@
         },
         {
           "disabled": false,
-          "document": "马赛克的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示马赛克 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示马赛克 Height 单位为像素，如 100px 表示 Height 为 100 像素。</li>\n默认值：10%。",
-          "example": "NULL",
+          "document": "<p>马赛克的高度。支持 %、px 两种格式：</p><li>当字符串以 % 结尾，表示马赛克 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li><li>当字符串以 px 结尾，表示马赛克 Height 单位为像素，如 100px 表示 Height 为 100 像素。</li>默认值：10%。",
+          "example": "150px",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -37174,8 +37419,8 @@
         },
         {
           "disabled": false,
-          "document": "马赛克的起始时间偏移，单位：秒。不填或填0，表示马赛克从画面出现时开始显现。\n<li>不填或填0，表示马赛克从画面开始就出现；</li>\n<li>当数值大于0时（假设为 n），表示马赛克从画面开始的第 n 秒出现；</li>\n<li>当数值小于0时（假设为 -n），表示马赛克从离画面结束 n 秒前开始出现。</li>",
-          "example": "NULL",
+          "document": "<p>马赛克的起始时间偏移，单位：秒。不填或填0，表示马赛克从画面出现时开始显现。</p><li>不填或填0，表示马赛克从画面开始就出现；</li><li>当数值大于0时（假设为 n），表示马赛克从画面开始的第 n 秒出现；</li><li>当数值小于0时（假设为 -n），表示马赛克从离画面结束 n 秒前开始出现。</li>",
+          "example": "0",
           "member": "float",
           "name": "StartTimeOffset",
           "required": false,
@@ -37184,8 +37429,8 @@
         },
         {
           "disabled": false,
-          "document": "马赛克的结束时间偏移，单位：秒。\n<li>不填或填0，表示马赛克持续到画面结束；</li>\n<li>当数值大于0时（假设为 n），表示马赛克持续到第 n 秒时消失；</li>\n<li>当数值小于0时（假设为 -n），表示马赛克持续到离画面结束 n 秒前消失。</li>",
-          "example": "NULL",
+          "document": "<p>马赛克的结束时间偏移，单位：秒。</p><li>不填或填0，表示马赛克持续到画面结束；</li><li>当数值大于0时（假设为 n），表示马赛克持续到第 n 秒时消失；</li><li>当数值小于0时（假设为 -n），表示马赛克持续到离画面结束 n 秒前消失。</li>",
+          "example": "2",
           "member": "float",
           "name": "EndTimeOffset",
           "required": false,
@@ -38411,7 +38656,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "画面涉敏任务开关，可选值：\n<li>ON：开启画面涉敏任务；</li>\n<li>OFF：关闭画面涉敏任务。</li>",
+          "document": "<p>画面涉敏任务开关，可选值：</p><li>ON：开启画面涉敏任务；</li><li>OFF：关闭画面涉敏任务。</li>",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -38421,8 +38666,8 @@
         },
         {
           "disabled": false,
-          "document": "画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>violation_photo：违规图标；</li>\n<li>politician：涉敏人物；</li>\n<li>entertainment：娱乐人物；</li>\n<li>sport：体育人物；</li>\n<li>entrepreneur：商业人物；</li>\n<li>scholar：教育学者；</li>\n<li>celebrity：知名人物；</li>\n<li>military：军事人物。</li>",
-          "example": "violation_photo",
+          "document": "<p>画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>violation_photo：违规图标；</li><li>politician：涉敏人物；</li><li>entertainment：娱乐人物；</li><li>sport：体育人物；</li><li>entrepreneur：商业人物；</li><li>scholar：教育学者；</li><li>celebrity：知名人物；</li><li>military：军事人物。</li>",
+          "example": "[\"violation_photo\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -38431,7 +38676,7 @@
         },
         {
           "disabled": false,
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 97 分。取值范围：0~100。",
+          "document": "<p>判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 97 分。取值范围：0~100。</p>",
           "example": "97",
           "member": "int64",
           "name": "BlockConfidence",
@@ -38441,7 +38686,7 @@
         },
         {
           "disabled": false,
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 95 分。取值范围：0~100。",
+          "document": "<p>判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 95 分。取值范围：0~100。</p>",
           "example": "95",
           "member": "int64",
           "name": "ReviewConfidence",
@@ -38457,7 +38702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "画面涉敏任务开关，可选值：\n<li>ON：开启画面涉敏任务；</li>\n<li>OFF：关闭画面涉敏任务。</li>",
+          "document": "<p>画面涉敏任务开关，可选值：</p><li>ON：开启画面涉敏任务；</li><li>OFF：关闭画面涉敏任务。</li>",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -38467,8 +38712,8 @@
         },
         {
           "disabled": false,
-          "document": "画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>violation_photo：违规图标；</li>\n<li>politician：涉敏人物；</li>\n<li>entertainment：娱乐人物；</li>\n<li>sport：体育人物；</li>\n<li>entrepreneur：商业人物；</li>\n<li>scholar：教育学者；</li>\n<li>celebrity：知名人物；</li>\n<li>military：军事人物。</li>",
-          "example": "violation_photo",
+          "document": "<p>画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>violation_photo：违规图标；</li><li>politician：涉敏人物；</li><li>entertainment：娱乐人物；</li><li>sport：体育人物；</li><li>entrepreneur：商业人物；</li><li>scholar：教育学者；</li><li>celebrity：知名人物；</li><li>military：军事人物。</li>",
+          "example": "[\"violation_photo\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -38477,7 +38722,7 @@
         },
         {
           "disabled": false,
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "<p>判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。</p>",
           "example": "0",
           "member": "int64",
           "name": "BlockConfidence",
@@ -38487,7 +38732,7 @@
         },
         {
           "disabled": false,
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "<p>判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。</p>",
           "example": "0",
           "member": "int64",
           "name": "ReviewConfidence",
@@ -40366,6 +40611,83 @@
       ],
       "usage": "out"
     },
+    "QueryHunyuan3DTaskRequest": {
+      "document": "QueryHunyuan3DTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "4deda860-a9a0-47e3-81f1-00cadf02a44c",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryHunyuan3DTaskResponse": {
+      "document": "QueryHunyuan3DTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>WAIT： 已排队，等待执行</li><li>RUN： 正在执行</li><li>DONE： 已成功完成，ResultFile3Ds 有值</li><li>FAIL： 已失败，ErrorCode / ErrorMessage 有值</li></ul>",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进度百分比，0~100。未知时为 0；DONE 时应为 100；FAIL 时保留最后一次已知值</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅 Status=FAIL 时有值，字符串错误码（如 InternalError.ModelInference）</p>",
+          "example": "ResourceNotFound.TaskId",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅 Status=FAIL 时有值，详细文案</p>",
+          "example": "task not found or expired",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅 Status=DONE 时有值，产物文件列表</p>",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryProjectRequest": {
       "document": "QueryProject请求参数结构体",
       "members": [
@@ -40548,7 +40870,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转推的目标地址的IP。",
+          "document": "<p>转推的目标地址的IP。</p>",
           "example": "ip",
           "member": "string",
           "name": "Ip",
@@ -40558,8 +40880,8 @@
         },
         {
           "disabled": false,
-          "document": "转推的目标地址的端口。",
-          "example": "port",
+          "document": "<p>转推的目标地址的端口。</p>",
+          "example": "9090",
           "member": "int64",
           "name": "Port",
           "required": true,
@@ -41610,7 +41932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标地址的IP。",
+          "document": "<p>目标地址的IP。</p>",
           "example": "ip",
           "member": "string",
           "name": "Ip",
@@ -41620,8 +41942,8 @@
         },
         {
           "disabled": false,
-          "document": "目标地址的端口。",
-          "example": "port",
+          "document": "<p>目标地址的端口。</p>",
+          "example": "9090",
           "member": "int64",
           "name": "Port",
           "output_required": true,
@@ -42715,7 +43037,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。</p>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
@@ -42725,8 +43047,8 @@
         },
         {
           "disabled": false,
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": " ",
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -42735,7 +43057,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "document": "<p>错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。</p>",
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
@@ -42745,7 +43067,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息。",
+          "document": "<p>错误信息。</p>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Message",
@@ -42755,8 +43077,8 @@
         },
         {
           "disabled": false,
-          "document": "审核任务的输入。",
-          "example": "NULL",
+          "document": "<p>审核任务的输入。</p>",
+          "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "Input",
           "output_required": true,
@@ -42765,8 +43087,8 @@
         },
         {
           "disabled": false,
-          "document": "审核任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "<p>审核任务的输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiContentReviewResult",
           "name": "Output",
           "output_required": true,
@@ -42775,7 +43097,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务开始执行的时间，采用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
@@ -42785,7 +43107,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务执行完毕的时间，采用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
@@ -43171,7 +43493,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组 ID。",
+          "document": "<p>安全组 ID。</p>",
           "example": "id",
           "member": "string",
           "name": "Id",
@@ -43181,7 +43503,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组名称。",
+          "document": "<p>安全组名称。</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -43191,8 +43513,8 @@
         },
         {
           "disabled": false,
-          "document": "白名单列表。",
-          "example": "0.0.0.0/0",
+          "document": "<p>白名单列表。</p>",
+          "example": "[\"0.0.0.0/0\"]",
           "member": "string",
           "name": "Whitelist",
           "output_required": true,
@@ -43201,7 +43523,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的输入流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的输入流列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"034561fd7ab41ea506497cdecbbc\"]",
           "member": "string",
           "name": "OccupiedInputs",
@@ -43211,7 +43533,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组地址。",
+          "document": "<p>安全组地址。</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -43221,7 +43543,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的输出流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的输出流列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"094561fd7ab41ea506497cdfffc\"]",
           "member": "string",
           "name": "OccupiedOutputs",
@@ -45718,8 +46040,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务规格。",
-          "example": "",
+          "document": "<p>任务规格。</p>",
+          "example": "Delogo.desubtitle.FHD",
           "member": "string",
           "name": "Specification",
           "required": true,
@@ -45728,8 +46050,8 @@
         },
         {
           "disabled": false,
-          "document": "统计数据。",
-          "example": "",
+          "document": "<p>统计数据。</p>",
+          "example": "无",
           "member": "TaskStatDataItem",
           "name": "Data",
           "required": true,
@@ -46048,6 +46370,133 @@
         }
       ],
       "usage": "out"
+    },
+    "SubmitHunyuan3DTaskRequest": {
+      "document": "SubmitHunyuan3DTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文生 3D 的提示词</p><p>入参限制：最长 1024 utf-8 字符</p>",
+          "example": "a warrior holding a sword",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图生 3D 的图片 URL（http/https）</p>",
+          "example": "https://hunyuan-base-test-1258344703.cos.ap-guangzhou.myqcloud.com/public/test/eba3542f-5e19-4862-b95d-c2d28e7ef91e-latent.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多视角图生 3D，至少 2 张，且必须包含 front 视角</p>",
+          "example": "无",
+          "member": "ViewImage",
+          "name": "MultiViewImages",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成类型</p><p>枚举值：</p><ul><li>Normal： 生成完整 3D 资产（几何 + 纹理）</li><li>Geometry： 只生成几何体（无纹理，输出速度更快）</li><li>Texture： 只生成纹理（需要传 MeshUrl）</li></ul><p>默认值：Normal</p>",
+          "example": "Normal",
+          "member": "string",
+          "name": "GenerateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>已有 3D 模型的 URL（仅支持 .glb / .obj）。传了 MeshUrl → 强制 GenerateType=Texture（贴纹理场景）</p>",
+          "example": "https://hunyuan-base-test-1258344703.cos.ap-guangzhou.myqcloud.com/public/test/5a6554c25b5ef0eec4c5e9de7107cdf3.obj",
+          "member": "string",
+          "name": "MeshUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否输出 PBR 材质</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePBR",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>面片数，范围 [3000, 1500000]。仅 Normal / Geometry 分支生效</p><p>取值范围：[3000, 1500000]</p><p>默认值：500000</p>",
+          "example": "500000",
+          "member": "uint64",
+          "name": "FaceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保留 UV 展开</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "KeepUV",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>除默认返回的 obj + glb 外，附加输出的一种格式。当前仅支持 FBX</p>",
+          "example": "FBX",
+          "member": "string",
+          "name": "ResultFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>随机种子，同一 Seed 输入下结果可复现</p>",
+          "example": "20260815",
+          "member": "uint64",
+          "name": "Seed",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>风格控制词</p>",
+          "example": "cyberpunk",
+          "member": "string",
+          "name": "Style",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuan3DTaskResponse": {
+      "document": "SubmitHunyuan3DTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "r_fbdac9ac98c311f18af6166e9d240373",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubtitleArea": {
       "document": "自动探测硬字幕区域中，表示字幕区域坐标的数据结构。同时包含置信度。",
@@ -47871,7 +48320,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "画面涉敏任务开关，可选值：\n<li>ON：开启画面涉敏任务；</li>\n<li>OFF：关闭画面涉敏任务。</li>",
+          "document": "<p>画面涉敏任务开关，可选值：</p><li>ON：开启画面涉敏任务；</li><li>OFF：关闭画面涉敏任务。</li>",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -47881,8 +48330,8 @@
         },
         {
           "disabled": false,
-          "document": "画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：涉敏旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：涉敏人物；</li>",
-          "example": "bloody",
+          "document": "<p>画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>guns：武器枪支；</li><li>crowd：人群聚集；</li><li>bloody：血腥画面；</li><li>police：警察部队；</li><li>banners：涉敏旗帜；</li><li>militant：武装分子；</li><li>explosion：爆炸火灾；</li><li>terrorists：涉敏人物；</li>",
+          "example": "[\"bloody\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -47891,7 +48340,7 @@
         },
         {
           "disabled": false,
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。",
+          "document": "<p>判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。</p>",
           "example": "95",
           "member": "int64",
           "name": "BlockConfidence",
@@ -47901,7 +48350,7 @@
         },
         {
           "disabled": false,
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 80 分。取值范围：0~100。",
+          "document": "<p>判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 80 分。取值范围：0~100。</p>",
           "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
@@ -47917,7 +48366,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "画面涉敏任务开关，可选值：\n<li>ON：开启画面涉敏任务；</li>\n<li>OFF：关闭画面涉敏任务。</li>",
+          "document": "<p>画面涉敏任务开关，可选值：</p><li>ON：开启画面涉敏任务；</li><li>OFF：关闭画面涉敏任务。</li>",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -47927,8 +48376,8 @@
         },
         {
           "disabled": false,
-          "document": "画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：涉敏旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：涉敏人物；</li>",
-          "example": "guns",
+          "document": "<p>画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：</p><li>guns：武器枪支；</li><li>crowd：人群聚集；</li><li>bloody：血腥画面；</li><li>police：警察部队；</li><li>banners：涉敏旗帜；</li><li>militant：武装分子；</li><li>explosion：爆炸火灾；</li><li>terrorists：涉敏人物；</li>",
+          "example": "[\"guns\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -47937,7 +48386,7 @@
         },
         {
           "disabled": false,
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "<p>判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。</p>",
           "example": "95",
           "member": "int64",
           "name": "BlockConfidence",
@@ -47947,7 +48396,7 @@
         },
         {
           "disabled": false,
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "<p>判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。</p>",
           "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
@@ -51229,6 +51678,30 @@
       ],
       "usage": "both"
     },
+    "ViewImage": {
+      "document": "多视角图生 3D 场景下，MultiViewImages 数组中的单个视角。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视角类型</p><p>枚举值：</p><ul><li>front： 正视图 （必填）</li><li>back： 背视图</li><li>left： 左视图</li><li>right： 右视图</li><li>top： 顶视图</li><li>bottom： 底视图</li><li>left_front： 左前 45°</li><li>right_front： 右前 45°</li></ul><p>MultiViewImages 数组长度 ≥ 2 ; 必须包含 front 视角;  同一 ViewType 不允许重复; 每项必须提供 ViewImageUrl</p>",
+          "example": "front",
+          "member": "string",
+          "name": "ViewType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片 URL（http / https）</p>",
+          "example": "https://hunyuan-base-test-1258344703.cos.ap-guangzhou.myqcloud.com/public/test/eba3542f-5e19-4862-b95d-c2d28e7ef91e-latent.png",
+          "member": "string",
+          "name": "ViewImageUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "VoiceInfo": {
       "document": "音色信息",
       "members": [
@@ -51550,8 +52023,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "水印模板 ID。",
-          "example": "NULL",
+          "document": "<p>水印模板 ID。</p>",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
@@ -51561,8 +52034,8 @@
         },
         {
           "disabled": false,
-          "document": "水印自定义参数，当 Definition 填 0 时有效。\n该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。\n水印自定义参数不支持截图打水印。",
-          "example": "NULL",
+          "document": "<p>水印自定义参数，当 Definition 填 0 时有效。<br>该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。<br>水印自定义参数不支持截图打水印。</p>",
+          "example": "无",
           "member": "RawWatermarkParameter",
           "name": "RawParameter",
           "output_required": true,
@@ -51572,8 +52045,8 @@
         },
         {
           "disabled": false,
-          "document": "文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。\n文字水印不支持截图打水印。",
-          "example": "NULL",
+          "document": "<p>文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。<br>文字水印不支持截图打水印。</p>",
+          "example": "文字示例",
           "member": "string",
           "name": "TextContent",
           "output_required": true,
@@ -51583,8 +52056,8 @@
         },
         {
           "disabled": false,
-          "document": "SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。\nSVG 水印不支持截图打水印。",
-          "example": "NULL",
+          "document": "<p>SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。<br>SVG 水印不支持截图打水印。</p>",
+          "example": "svg示例",
           "member": "string",
           "name": "SvgContent",
           "output_required": true,
@@ -51594,8 +52067,8 @@
         },
         {
           "disabled": false,
-          "document": "水印的起始时间偏移，单位：秒。不填或填0，表示水印从画面出现时开始显现。\n<li>不填或填0，表示水印从画面开始就出现；</li>\n<li>当数值大于0时（假设为 n），表示水印从画面开始的第 n 秒出现；</li>\n<li>当数值小于0时（假设为 -n），表示水印从离画面结束 n 秒前开始出现。</li>\n注：只用于视频场景，截图不支持。",
-          "example": "NULL",
+          "document": "<p>水印的起始时间偏移，单位：秒。不填或填0，表示水印从画面出现时开始显现。</p><li>不填或填0，表示水印从画面开始就出现；</li><li>当数值大于0时（假设为 n），表示水印从画面开始的第 n 秒出现；</li><li>当数值小于0时（假设为 -n），表示水印从离画面结束 n 秒前开始出现。</li>注：只用于视频场景，截图不支持。",
+          "example": "0",
           "member": "float",
           "name": "StartTimeOffset",
           "output_required": true,
@@ -51605,8 +52078,8 @@
         },
         {
           "disabled": false,
-          "document": "水印的结束时间偏移，单位：秒。\n<li>不填或填0，表示水印持续到画面结束；</li>\n<li>当数值大于0时（假设为 n），表示水印持续到第 n 秒时消失；</li>\n<li>当数值小于0时（假设为 -n），表示水印持续到离画面结束 n 秒前消失。</li>\n注：只用于视频场景，截图不支持。",
-          "example": "NULL",
+          "document": "<p>水印的结束时间偏移，单位：秒。</p><li>不填或填0，表示水印持续到画面结束；</li><li>当数值大于0时（假设为 n），表示水印持续到第 n 秒时消失；</li><li>当数值小于0时（假设为 -n），表示水印持续到离画面结束 n 秒前消失。</li>注：只用于视频场景，截图不支持。",
+          "example": "0",
           "member": "float",
           "name": "EndTimeOffset",
           "output_required": true,

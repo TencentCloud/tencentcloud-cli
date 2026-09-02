@@ -22,7 +22,55 @@ Output:
 }
 ```
 
-**Example 2: 设置输出语言**
+**Example 2: 设置启用视频搜索高级功能**
+
+
+
+Input: 
+
+```
+tccli iotexplorer ModifyTWeSeeSubscription --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName dev002 \
+    --ServiceType VID_COMP \
+    --ChannelId 0 \
+    --ComprehensionConfig.EnableSearch True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "8f0e601e-cbac-4e5c-8443-e3c1478ec5a2"
+    }
+}
+```
+
+**Example 3: 设置多摄布局**
+
+
+
+Input: 
+
+```
+tccli iotexplorer ModifyTWeSeeSubscription --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName dev002 \
+    --ServiceType VID_COMP \
+    --ChannelId 0 \
+    --ComprehensionConfig.MultiCameraLayout Vertical,Num=2,Index=0;1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "5f73ced5-7059-4698-ba18-3d1683f1e06a"
+    }
+}
+```
+
+**Example 4: 设置输出语言**
 
 
 
@@ -47,31 +95,7 @@ Output:
 }
 ```
 
-**Example 3: 设置启用视频搜索高级功能**
-
-
-
-Input: 
-
-```
-tccli iotexplorer ModifyTWeSeeSubscription --cli-unfold-argument  \
-    --ProductId 4AHMY9X89Y \
-    --DeviceName dev002 \
-    --ServiceType VID_COMP \
-    --ChannelId 0 \
-    --ComprehensionConfig.EnableSearch True
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "8f0e601e-cbac-4e5c-8443-e3c1478ec5a2"
-    }
-}
-```
-
-**Example 4: 设置需检测的事件标签**
+**Example 5: 设置需检测的事件标签**
 
 
 
@@ -91,30 +115,6 @@ Output:
 {
     "Response": {
         "RequestId": "1b32234f-60bb-48dc-9791-2fffc690b035"
-    }
-}
-```
-
-**Example 5: 设置多摄布局**
-
-
-
-Input: 
-
-```
-tccli iotexplorer ModifyTWeSeeSubscription --cli-unfold-argument  \
-    --ProductId 4AHMY9X89Y \
-    --DeviceName dev002 \
-    --ServiceType VID_COMP \
-    --ChannelId 0 \
-    --ComprehensionConfig.MultiCameraLayout Vertical,Num=2,Index=0;1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "5f73ced5-7059-4698-ba18-3d1683f1e06a"
     }
 }
 ```

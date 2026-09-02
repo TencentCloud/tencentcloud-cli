@@ -1,23 +1,32 @@
-**Example 1: 修改云数据库实例账号的权限**
+**Example 1: 修改账号权限**
 
-
+修改账号权限时授予全局WITH GRANT OPTION权限
 
 Input: 
 
 ```
 tccli cdb ModifyAccountPrivileges --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj \
-    --Accounts.0.Host 127.0.0.1 \
-    --Accounts.0.User ajnnw \
-    --GlobalPrivileges SELECT
+    --InstanceId cdb-iun70ygb \
+    --Accounts.0.User user \
+    --Accounts.0.Host % \
+    --GlobalPrivileges SELECT \
+    --DatabasePrivileges.0.Privileges SELECT \
+    --DatabasePrivileges.0.Database Custom \
+    --TablePrivileges.0.Database Custom \
+    --TablePrivileges.0.Table Product \
+    --TablePrivileges.0.Privileges SELECT \
+    --ColumnPrivileges.0.Database Custom \
+    --ColumnPrivileges.0.Table Product \
+    --ColumnPrivileges.0.Column category \
+    --ColumnPrivileges.0.Privileges SELECT
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "AsyncRequestId": "256117ed-efa08b54-61784d44-91781bbd"
+        "AsyncRequestId": "d1ad7033-496c905f-6af10457-3b283706",
+        "RequestId": "23626d57-74d4-483d-8a8e-a81162050fe5"
     }
 }
 ```

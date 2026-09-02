@@ -125,9 +125,9 @@
     "CreateCloudApp": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudApp\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-*********f985f96\",\n    \"ServiceName\": \"html\",\n    \"DeployType\": \"static-hosting\",\n    \"BuildType\": \"ZIP\",\n    \"StaticConfig\": {\n        \"Framework\": \"other\",\n        \"NodeJsVersion\": \"18\",\n        \"AppPath\": \"/html\",\n        \"CosTimestamp\": \"17****9**5\",\n        \"CosSuffix\": \"zip\",\n        \"StaticCmd\": {\n            \"DeployCmd\": \"tcb hosting deploy ./ /html\"\n        }\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"BuildId\": \"26014**8*2\",\n        \"ServiceName\": \"html\",\n        \"VersionName\": \"html-002\",\n        \"RequestId\": \"ba0e079a-c85d-43ec-a313-7e88f251646c\"\n    }\n}",
-        "title": "创建云应用"
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudApp\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-****************\",\n    \"ServiceName\": \"my-vue-app-01\",\n    \"DeployType\": \"custom\",\n    \"Source\": {\n        \"Type\": \"git\",\n        \"Repo\": \"https://gi**u*********************-**********.git\",\n        \"Ref\": \"master\",\n        \"Channel\": \"github\"\n    },\n    \"CustomSteps\": [\n        {\n            \"Name\": \"ls\",\n            \"Command\": \"node -v\"\n        }\n    ],\n    \"NodeJsVersion\": \"22\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BuildId\": \"**********\",\n        \"ServiceName\": \"my-***-***-**\",\n        \"VersionName\": \"my-vue-app-01-001\",\n        \"RequestId\": \"75628170-c5b9-4bda-b370-fec9dd4362f0\"\n    }\n}",
+        "title": "创建 custom 服务"
       }
     ],
     "CreateCustomLoginKey": [
@@ -727,15 +727,9 @@
     "ExecutePGSql": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecutePGSql\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-mikejliu-0g9cqmar358527a9\",\n    \"Sql\": \"CREATE TABLE test_products (\\n    id SERIAL PRIMARY KEY,                        -- 产品唯一标识\\n    sku VARCHAR(20) UNIQUE NOT NULL,             -- 库存单位编码，唯一且必填\\n    name TEXT NOT NULL,                          -- 产品名称\\n    category VARCHAR(50),                        -- 分类\\n    price NUMERIC(12, 2) NOT NULL DEFAULT 0.00,  -- 单价\\n    stock_quantity INTEGER DEFAULT 0,            -- 库存数量\\n    tags JSONB,                                  -- 标签（使用 JSONB 存储扩展属性）\\n    last_updated TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW() -- 最后更新时间\\n);\",\n    \"Role\": \"cloudbase_********\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AffectedRows\": 0,\n        \"Columns\": null,\n        \"ExecutionTimeMs\": 34,\n        \"Rows\": null,\n        \"RequestId\": \"5cf1d355-cdb7-4879-bd22-4e89ddc10095\"\n    }\n}",
-        "title": "创建表"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecutePGSql\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-mikejliu-0g9cqmar358527a9\",\n    \"Sql\": \"select column_name FROM information_schema.columns WHERE table_schema = 'public'   AND table_name = 'test_products'\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AffectedRows\": 0,\n        \"Columns\": [\n            \"column_name\"\n        ],\n        \"ExecutionTimeMs\": 58,\n        \"Rows\": [\n            \"[\\\"id\\\"]\"\n        ],\n        \"RequestId\": \"21b3df84-7ea3-4487-9583-e4de88b4ab89\"\n    }\n}",
-        "title": "查询表字段"
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecutePGSql\n<公共请求参数>\n\n{\n    \"EnvId\": \"lo**od*-*********10a94df\",\n    \"Sql\": \"select * from pg_namespace\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AffectedRows\": 0,\n        \"Columns\": [\n            \"oid\"\n        ],\n        \"ExecutionTimeMs\": 8,\n        \"Rows\": [\n            \"[\\\"99\\\",\\\"pg_toast\\\",\\\"10\\\",null]\"\n        ],\n        \"RequestId\": \"6907a086-5639-4c9d-89bf-66921dd1168e\"\n    }\n}",
+        "title": "ExecutePGSql"
       }
     ],
     "GetProviders": [
@@ -812,6 +806,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnv\n<公共请求参数>\n\n{\n    \"EnvId\": \"yn-1ghgrw28fa37efa1\",\n    \"CustomQps\": 1200\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"09d6a0f4-7b89-485e-b02b-4b480613e7b3\"\n    }\n}",
         "title": "打开qps按量计费，qps按量计费上限为1200"
+      }
+    ],
+    "ModifyEnvExtra": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvExtra\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-felixx-d7gokw0dv1c0b0fd6\",\n    \"EnableOverrun\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"319fce36-1aaf-45e6-9727-1cdde881986a\"\n    }\n}",
+        "title": "修改环境按量配额上限"
       }
     ],
     "ModifyEnvPlan": [

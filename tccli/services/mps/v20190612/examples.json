@@ -120,6 +120,20 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAgentRecordTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentRecordTask\n<公共请求参数>\n\n{\n    \"LiveRoomUrl\": \"https://****.******.com/***********\",\n    \"MaxDurationMinutes\": 1,\n    \"StoreCosParam\": {\n        \"CosBucketName\": \"******-test-live-record-task-**********\",\n        \"CosBucketRegion\": \"ap-guangzhou\",\n        \"CosBucketPath\": \"record-only\"\n    },\n    \"StartTime\": \"2026-07-03T12:10:28.065902+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task_857a704be0d4da429630928dc35f8b33\",\n        \"RequestId\": \"7bf98ed1-4e2b-4be6-ab54-ae0f4d1e502d\"\n    }\n}",
+        "title": "定时开始录制"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentRecordTask\n<公共请求参数>\n\n{\n    \"LiveRoomUrl\": \"https://****.******.com/***********\",\n    \"MaxDurationMinutes\": 1,\n    \"StoreCosParam\": {\n        \"CosBucketName\": \"******-test-live-record-task-**********\",\n        \"CosBucketRegion\": \"ap-guangzhou\",\n        \"CosBucketPath\": \"record-only\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task_9fac9a28f27292d8fbdf26e63beaeb03\",\n        \"RequestId\": \"8a3e4c65-b473-456f-9158-57f3b0a5aff6\"\n    }\n}",
+        "title": "立即开始录制"
+      }
+    ],
     "CreateAiDramaTask": [
       {
         "document": "创建ai漫剧任务",
@@ -816,6 +830,14 @@
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeAdaptiveDynamicStreamingTemplates\n&Definitions.0=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Comment\": \"转自适应码流模板1\",\n                \"Definition\": 1001,\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DisableHigherVideoBitrate\": 1,\n                \"Name\": \"转自适应码流模板1\",\n                \"Format\": \"HLS\",\n                \"DisableHigherVideoResolution\": 1,\n                \"StreamInfos\": [\n                    {\n                        \"RemoveVideo\": 0,\n                        \"Audio\": {\n                            \"Codec\": \"libfdk_aac\",\n                            \"SampleRate\": 44100,\n                            \"AudioChannel\": 2,\n                            \"Bitrate\": 200\n                        },\n                        \"Video\": {\n                            \"Fps\": 25,\n                            \"Width\": 1080,\n                            \"Height\": 960,\n                            \"Vcrf\": 23,\n                            \"Codec\": \"libx264\",\n                            \"ResolutionAdaptive\": \"open\",\n                            \"FillType\": \"black\",\n                            \"Bitrate\": 1000,\n                            \"Gop\": 50\n                        },\n                        \"RemoveAudio\": 0\n                    }\n                ],\n                \"Type\": \"Preset\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询转自适应码流模板列表"
+      }
+    ],
+    "DescribeAgentRecordTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentRecordTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"24000192-MllmVideoTest-9baf86edd37b1491037414981e556bf0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordUrls\": [\n            \"https://***********-live-record-task-**********.cos.ap-guangzhou.myqcloud.com/record-only/24000192-MllmVideoTest-7fedc0fb7c4fc718fd9792ca8e04e80f-2026-07-15-12-04-29.mp4\"\n        ],\n        \"Status\": \"RUNNING\",\n        \"RequestId\": \"092b9f39-6bbd-4d34-b9aa-b5693f639edf\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeAigcAudioTask": [
@@ -1938,6 +1960,14 @@
         "title": "发起转码任务"
       }
     ],
+    "QueryHunyuan3DTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuan3DTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"4deda860-a9a0-47e3-81f1-00cadf02a44c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"ResourceNotFound.TaskId\",\n        \"ErrorMessage\": \"task not found or expired\",\n        \"RequestId\": \"cec25a1e-0875-44f0-87da-2a1ebabee48b\"\n    }\n}",
+        "title": "任务不存在"
+      }
+    ],
     "QueryProject": [
       {
         "document": "",
@@ -2000,6 +2030,14 @@
         "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamPackageLinearAssemblyChannel\n<公共请求参数>\n\n{\n    \"Id\": \"66503E8E0000930000F3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-xxx\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "SubmitHunyuan3DTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuan3DTask\n<公共请求参数>\n\n{\n    \"MultiViewImages\": [\n        {\n            \"ViewType\": \"front\",\n            \"ViewImageUrl\": \"https://hunyuan-base-test-1258344703.cos.ap-guangzhou.myqcloud.com/public/test/eba3542f-5e19-4862-b95d-c2d28e7ef91e-latent.png\"\n        }\n    ],\n    \"EnablePBR\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"r_fbdac9ac98c311f18af6166e9d240373\",\n        \"RequestId\": \"1a15321e-f92f-404e-8ccc-8b33d5359f14\"\n    }\n}",
+        "title": "多视角图生 3D"
       }
     ],
     "SyncDubbing": [

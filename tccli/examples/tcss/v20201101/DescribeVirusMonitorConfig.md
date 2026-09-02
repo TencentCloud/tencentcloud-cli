@@ -11,13 +11,11 @@ Output:
 ```
 {
     "Response": {
-        "EnableScan": true,
+        "EnableScan": false,
         "IsIncludePath": true,
-        "ScanPath": [
-            "abc"
-        ],
-        "ScanPathMode": "abc",
-        "RequestId": "abc"
+        "ScanPath": [],
+        "ScanPathMode": "SCAN_PATH_DEFAULT",
+        "RequestId": "3850591f-7654-4491-a704-15d7e6050afb"
     }
 }
 ```

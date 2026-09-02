@@ -56,6 +56,13 @@
       "output": "CreatePrivilegeCodeResponse",
       "status": "online"
     },
+    "DeleteAccountGroupResources": {
+      "document": "删除账户组资源授权，私有化调用path为：capi/NGN/DeleteAccountGroupResources",
+      "input": "DeleteAccountGroupResourcesRequest",
+      "name": "删除账户组资源",
+      "output": "DeleteAccountGroupResourcesResponse",
+      "status": "online"
+    },
     "DeleteDeviceVirtualGroup": {
       "document": "删除终端自定义分组，私有化调用path为：/capi/Assets/Device/DeleteDeviceVirtualGroup",
       "input": "DeleteDeviceVirtualGroupRequest",
@@ -1474,6 +1481,42 @@
       ],
       "usage": "both"
     },
+    "DeleteAccountGroupResourcesRequest": {
+      "document": "DeleteAccountGroupResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源集",
+          "example": "无",
+          "member": "DeleteResourceData",
+          "name": "ResourceList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "账户组Id(只支持32位)",
+          "example": "无",
+          "member": "uint64",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountGroupResourcesResponse": {
+      "document": "DeleteAccountGroupResources返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDeviceVirtualGroupRequest": {
       "document": "DeleteDeviceVirtualGroup请求参数结构体",
       "members": [
@@ -1518,6 +1561,32 @@
         }
       ],
       "type": "object"
+    },
+    "DeleteResourceData": {
+      "document": "资源集",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型 ,1:资源 2:资源组(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源或资源组Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "ResourceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DescribeAccountGroupsData": {
       "document": "账号分组信息",
@@ -4039,6 +4108,66 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多网卡数据</p>",
+          "example": "无",
+          "member": "DeviceNetworkCardBrief",
+          "name": "NetworkCards",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多显卡数据</p>",
+          "example": "无",
+          "member": "DeviceVideoCardBrief",
+          "name": "VideoCards",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主板型号</p>",
+          "example": "Intel Corporation 440BX Desktop Reference Platform",
+          "member": "string",
+          "name": "MainBoard",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主板序列号</p>",
+          "example": "6D93F1BFE42A4D56",
+          "member": "string",
+          "name": "BaseBoardSn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主板制造商</p>",
+          "example": "Intel Corporation",
+          "member": "string",
+          "name": "BaseBoardManufacturer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>声卡</p>",
+          "example": "High Definition Audio 设备",
+          "member": "string",
+          "name": "AudioCard",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6278,6 +6407,78 @@
       ],
       "usage": "both"
     },
+    "DeviceNetworkCardBrief": {
+      "document": "多网卡MAC地址等列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MAC地址</p>",
+          "example": "00:0C:29:89:EE:15",
+          "member": "string",
+          "name": "MacAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡名称</p>",
+          "example": "Intel(R) 82574L Gigabit Network Connection",
+          "member": "string",
+          "name": "NetworkCardName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡类型</p><p>枚举值：</p><ul><li>1： 物理网卡</li><li>2： 虚拟网卡</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "NetworkCardType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网卡状态</p><p>枚举值：</p><ul><li>1： 启用中</li><li>2： 未启用</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "NetworkCardStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv4地址</p>",
+          "example": "192.168.18.185",
+          "member": "string",
+          "name": "Ipv4Address",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv6地址</p>",
+          "example": "fe80::86c5:61d6:217:75fd",
+          "member": "string",
+          "name": "Ipv6Address",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeviceNetworkInfo": {
       "document": "分页的具体数据对象",
       "members": [
@@ -6523,6 +6724,23 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceVideoCardBrief": {
+      "document": "设备显卡简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>显卡名称</p>",
+          "example": "SVGA II Adapter",
+          "member": "string",
+          "name": "VideoCardName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

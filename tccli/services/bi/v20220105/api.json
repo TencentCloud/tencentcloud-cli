@@ -5590,7 +5590,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "<p>页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNo",
@@ -5599,7 +5599,7 @@
         },
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -5608,7 +5608,7 @@
         },
         {
           "disabled": false,
-          "document": "全部页码",
+          "document": "<p>全部页码</p>",
           "example": "true",
           "member": "bool",
           "name": "AllPage",
@@ -5617,7 +5617,7 @@
         },
         {
           "disabled": false,
-          "document": "0 企业用户 1 访客 不填表示所有用户",
+          "document": "<p>0 企业用户 1 访客 不填表示所有用户</p>",
           "example": "0",
           "member": "string",
           "name": "UserType",
@@ -5626,7 +5626,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索的关键字",
+          "document": "<p>模糊搜索的关键字</p>",
           "example": "zhangsan",
           "member": "string",
           "name": "Keyword",
@@ -5635,7 +5635,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id",
+          "document": "<p>项目id</p>",
           "example": "1101",
           "member": "string",
           "name": "ProjectId",
@@ -5644,12 +5644,21 @@
         },
         {
           "disabled": false,
-          "document": "是否只获取绑定企微应用的",
+          "document": "<p>是否只获取绑定企微应用的</p>",
           "example": "true",
           "member": "bool",
           "name": "IsOnlyBindAppUser",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户类型</p>",
+          "example": "role",
+          "member": "string",
+          "name": "IdentityType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5669,7 +5678,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展描述信息(提供更多异常信息,用于辅助判断)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>扩展描述信息(提供更多异常信息,用于辅助判断)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "用户参数错误,xx字段不存在",
           "member": "string",
           "name": "Extra",
@@ -5679,8 +5688,8 @@
         },
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "json",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserRoleListData",
           "name": "Data",
           "output_required": true,
@@ -5689,7 +5698,7 @@
         },
         {
           "disabled": false,
-          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "默认业务成功",
           "member": "string",
           "name": "Msg",
@@ -11295,6 +11304,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "IdentityType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11456,7 +11476,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID",
+          "document": "<p>业务ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -11466,7 +11486,7 @@
         },
         {
           "disabled": false,
-          "document": "角色列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>角色列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserRoleListDataRoleInfo",
           "name": "RoleList",
@@ -11476,7 +11496,7 @@
         },
         {
           "disabled": false,
-          "document": "角色ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>角色ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1101,112210]",
           "member": "uint64",
           "name": "RoleIdList",
@@ -11486,7 +11506,7 @@
         },
         {
           "disabled": false,
-          "document": "用户ID",
+          "document": "<p>用户ID</p>",
           "example": "1101",
           "member": "string",
           "name": "UserId",
@@ -11496,7 +11516,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "zhangsan",
           "member": "string",
           "name": "UserName",
@@ -11506,7 +11526,7 @@
         },
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "12102",
           "member": "string",
           "name": "CorpId",
@@ -11516,7 +11536,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>邮箱</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123***@qq.com",
           "member": "string",
           "name": "Email",
@@ -11526,7 +11546,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "CreatedUser",
@@ -11536,7 +11556,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-10-23 21:32:45",
           "member": "string",
           "name": "CreatedAt",
@@ -11546,7 +11566,7 @@
         },
         {
           "disabled": false,
-          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan1",
           "member": "string",
           "name": "UpdatedUser",
@@ -11556,7 +11576,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-10-23 21:32:45",
           "member": "string",
           "name": "UpdatedAt",
@@ -11566,8 +11586,8 @@
         },
         {
           "disabled": false,
-          "document": "最后一次登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "zhangsan1",
+          "document": "<p>最后一次登录时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-20T19:51:23+08:00",
           "member": "datetime_iso",
           "name": "LastLogin",
           "output_required": true,
@@ -11576,7 +11596,7 @@
         },
         {
           "disabled": false,
-          "document": "账号状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>账号状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -11586,7 +11606,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "+8631***321",
           "member": "string",
           "name": "PhoneNumber",
@@ -11596,7 +11616,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>手机号区号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "086",
           "member": "string",
           "name": "AreaCode",
@@ -11606,7 +11626,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否为主账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "RootAccount",
@@ -11616,7 +11636,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为企业管理员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否为企业管理员</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "CorpAdmin",
@@ -11626,7 +11646,7 @@
         },
         {
           "disabled": false,
-          "document": "企微用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企微用户id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1101",
           "member": "string",
           "name": "AppUserId",
@@ -11636,7 +11656,7 @@
         },
         {
           "disabled": false,
-          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>昵称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "AppUserAliasName",
@@ -11646,7 +11666,7 @@
         },
         {
           "disabled": false,
-          "document": "应用用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "AppUserName",
@@ -11656,7 +11676,7 @@
         },
         {
           "disabled": false,
-          "document": "是否在可见范围内\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否在可见范围内</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "InValidateAppRange",
@@ -11666,7 +11686,7 @@
         },
         {
           "disabled": false,
-          "document": "用户openid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户openid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10012",
           "member": "string",
           "name": "AppOpenUserId",
@@ -11676,7 +11696,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱激活状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>邮箱激活状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "EmailActivationStatus",
@@ -11686,12 +11706,22 @@
         },
         {
           "disabled": false,
-          "document": "用户组信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Id\":1}]",
+          "document": "<p>用户组信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserGroupDTO",
           "name": "UserGroupList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "IdentityType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -154,6 +154,13 @@
       "output": "DescribeOPRAllVulCountResponse",
       "status": "online"
     },
+    "DescribeRelatedServicesOnTrace": {
+      "document": "根据链路查询目标服务的上下游相关服务",
+      "input": "DescribeRelatedServicesOnTraceRequest",
+      "name": "根据链路查询目标服务的上下游服务",
+      "output": "DescribeRelatedServicesOnTraceResponse",
+      "status": "online"
+    },
     "DescribeServiceOverview": {
       "document": "应用概览数据拉取",
       "input": "DescribeServiceOverviewRequest",
@@ -4849,6 +4856,109 @@
       ],
       "type": "object"
     },
+    "DescribeRelatedServicesOnTraceRequest": {
+      "document": "DescribeRelatedServicesOnTrace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务系统 ID",
+          "example": "apm-6xYKFXYxo",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间",
+          "example": "1764101580",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "1764144780",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "service-A",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为应用拓扑查询",
+          "example": "false",
+          "member": "bool",
+          "name": "IsServiceTopology",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRelatedServicesOnTraceResponse": {
+      "document": "DescribeRelatedServicesOnTrace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的总链路数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalTraces",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询到的应用的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalServices",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挑选的链路数量",
+          "example": "0",
+          "member": "int64",
+          "name": "SelectedTraces",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相关的服务/应用名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceRelation",
+          "name": "ServiceRelations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServiceOverviewRequest": {
       "document": "DescribeServiceOverview请求参数结构体",
       "members": [
@@ -7222,6 +7332,45 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceRelation": {
+      "document": "应用对应的链路上下游应用集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "java-delivery-service",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上游应用集合",
+          "example": "[\"java-order-service_java-delivery-service\"]",
+          "member": "string",
+          "name": "UpstreamServices",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下游应用集合",
+          "example": "[\"java-user-service_go-member-service\"]",
+          "member": "string",
+          "name": "DownstreamServices",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

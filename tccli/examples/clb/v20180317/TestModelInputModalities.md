@@ -1,38 +1,36 @@
-**Example 1: 模型支持图像输入**
+**Example 1: 输入多模态能力检测**
 
-	
-模型支持图像输入
+
 
 Input: 
 
 ```
 tccli clb TestModelInputModalities --cli-unfold-argument  \
-    --Model gpt-5 \
-    --ProviderKey sk-1111 \
-    --AccessType PublicCustom \
-    --ApiBase http://11.141.93.26:10000/v1
+    --Model chat \
+    --ProviderKey sk-or-v1-************************************************************07c5 \
+    --AccessType PrivateCustom \
+    --ApiBase https://openrouter.ai/api/v1 \
+    --ServiceProviderId byok-l1l4echw
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Model": "gpt-5",
+        "Model": "chat",
         "ProbeDetails": [
             {
                 "ErrorInfo": {
-                    "ErrorStatus": "",
-                    "HttpCode": 0,
-                    "OriginalMessage": ""
+                    "ErrorStatus": "UpstreamServiceError",
+                    "HttpCode": 500,
+                    "OriginalMessage": "Unable to determine text input support (probe failed with HTTP 500)."
                 },
-                "Modality": "image",
-                "Status": "Supported"
+                "Modality": "text",
+                "Status": "Inconclusive"
             }
         ],
-        "SupportedModalities": [
-            "text"
-        ],
-        "RequestId": "1c31d4b4-f209-4866-99d0-25248db915aa"
+        "SupportedModalities": [],
+        "RequestId": "e488fac5-b43e-4dc7-8fc8-c5852f3da0ff"
     }
 }
 ```

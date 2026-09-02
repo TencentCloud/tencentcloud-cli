@@ -567,6 +567,13 @@
       "output": "DescribeApplicationProxiesResponse",
       "status": "online"
     },
+    "DescribeAvailableCustomActionsForRuleEngine": {
+      "document": "查询站点规则引擎操作可用的定制配置列表。",
+      "input": "DescribeAvailableCustomActionsForRuleEngineRequest",
+      "name": "查询规则引擎可用的定制配置列表",
+      "output": "DescribeAvailableCustomActionsForRuleEngineResponse",
+      "status": "online"
+    },
     "DescribeAvailablePlans": {
       "document": "查询当前账户可用套餐信息列表",
       "input": "DescribeAvailablePlansRequest",
@@ -12178,6 +12185,98 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableCustomActionsForRuleEngineRequest": {
+      "document": "DescribeAvailableCustomActionsForRuleEngine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3**********x",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件，多个条件为且关系，Filters.Values 的上限为 20。该参数不填写时，返回当前站点下所有可用的规则引擎定制配置。详细的过滤条件如下：</p><li>action-id：按照定制配置唯一标识 ID 进行过滤；</li><li>name：按照定制配置名称进行过滤。</li>模糊查询时仅支持过滤字段名为 <code>name</code>。<p></p>",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询限制数目。</p><p>取值范围：[0, 1000]</p><p>默认值：20</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，取值有：</p><li>action-id：按照定制配置唯一标识 ID 排序；</li><li>create-time：按照定制配置创建时间排序。</li>默认值：<code>action-id</code>。<p></p>",
+          "example": "action-id",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式，取值有：</p><li>asc：升序排序；</li><li>desc：降序排序。</li>默认值：desc。<p></p>",
+          "example": "desc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableCustomActionsForRuleEngineResponse": {
+      "document": "DescribeAvailableCustomActionsForRuleEngine返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的规则引擎定制配置的总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的规则引擎定制配置的列表。</p>",
+          "example": "无",
+          "member": "RuleEngineCustomAction",
+          "name": "CustomActionSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -32286,6 +32385,228 @@
         }
       ],
       "usage": "both"
+    },
+    "RuleEngineCustomAction": {
+      "document": "规则引擎操作定制配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>定制配置唯一 ID。</p>",
+          "example": "ca-3tid7liju20n",
+          "member": "string",
+          "name": "ActionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定制配置名称。</p>",
+          "example": "ClientIPRateLimit",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定制配置描述。</p>",
+          "example": "Rate limiting for client IP access.",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定制配置参数定义列表。</p>",
+          "example": "无",
+          "member": "RuleEngineCustomActionParameterSchema",
+          "name": "Parameters",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定制配置支持的匹配条件。</p><p>支持匹配条件参考官方文档 <a href=\"https://cloud.tencent.com/document/product/1552/125344\">通用参考-配置语法-变量</a>。</p>",
+          "example": "[\"http.request.uri.path\"]",
+          "member": "string",
+          "name": "SupportedConditions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleEngineCustomActionParameterSchema": {
+      "document": "规则引擎操作定制配置参数结构定义。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数字段名称。</p>",
+          "example": "KeepaliveTimeout",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段类型，取值有：<li>Boolean：布尔；</li><li>Integer：整型；</li><li>Float：浮点型；</li><li>String：字符串；</li><li>ArrayOfInteger：整型数组；</li><li>ArrayOfFloat：浮点型数组；</li><li>ArrayOfString：字符串数组。</li></p>",
+          "example": "Integer",
+          "member": "string",
+          "name": "ValueType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段描述。</p>",
+          "example": "回源 TCP 长连接保活时间。单位：秒；取值范围：1-7200；默认值：600。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段默认值。</p>",
+          "example": "600",
+          "member": "string",
+          "name": "Default",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段单位。</p>",
+          "example": "s",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段是否必填。</p><p>默认值：false</p><p>若填充，则适用于所有参数字段类型校验；若不填充则不校验。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Required",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段最小值。</p><p>若填充，适用于整数、浮点数、整数数组、浮点数数组类型参数的数值校验；若不填充则不校验。</p>",
+          "example": "1",
+          "member": "float",
+          "name": "MinValue",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段最大值。</p><p>若填充，适用于整数、浮点数、整数数组、浮点数数组类型参数的数值校验；若不填充则不校验。</p>",
+          "example": "100",
+          "member": "float",
+          "name": "MaxValue",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段最小长度。</p><p>若填充，适用于字符串、字符串数组类型参数的数值校验；若不填充则不校验。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段最大长度。</p><p>若填充，适用于字符串、字符串数组类型参数的数值校验；若不填充则不校验。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段最小项数。</p><p>若填充，适用于各类数组类型参数的数值校验；若不填充则不校验。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinItems",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段最大项数。</p><p>若填充，适用于各类数组类型参数的数值校验；若不填充则不校验。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxItems",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段项是否唯一。</p><p>默认值：false</p><p>若填充，适用于各类数组类型参数的数值校验；若不填充则不校验。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "UniqueItems",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段允许的格式。</p><p>若填充，需要校验字符串或者字符串数组内容合适；若不填充则不校验。</p>",
+          "example": "^[a-z0-9.-]+$",
+          "member": "string",
+          "name": "AllowedPattern",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段允许的取值，若为空则不校验。</p><p>若本参数填充，则说明对应参数为枚举类型，仅允许填充本参数数组中的值；若不填充则不校验。</p>",
+          "example": "[\"HTTP\"]",
+          "member": "string",
+          "name": "AllowedValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数字段最小步长。若填充，适用于浮点型和浮点型数组类型参数的数值校验；若不填充则不校验。</p>",
+          "example": "0.01",
+          "member": "string",
+          "name": "MultipleOf",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RuleEngineItem": {
       "document": "规则引擎规则详情。",

@@ -354,7 +354,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountPrivileges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"Host\": \"127.0.0.1\",\n    \"User\": \"ajnnw\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TablePrivileges\": [\n            {\n                \"Table\": \"user\",\n                \"Privileges\": [\n                    \"SELECT\",\n                    \"INSERT\"\n                ],\n                \"Database\": \"mysql\"\n            }\n        ],\n        \"GlobalPrivileges\": [\n            \"SELECT\",\n            \"INSERT\",\n            \"UPDATE\",\n            \"DELETE\",\n            \"CREATE\",\n            \"DROP\",\n            \"REFERENCES\",\n            \"INDEX\",\n            \"ALTER\",\n            \"SHOW DATABASES\",\n            \"CREATE TEMPORARY TABLES\",\n            \"LOCK TABLES\",\n            \"EXECUTE\",\n            \"CREATE VIEW\",\n            \"SHOW VIEW\",\n            \"CREATE ROUTINE\",\n            \"ALTER ROUTINE\",\n            \"EVENT\",\n            \"TRIGGER\"\n        ],\n        \"ColumnPrivileges\": [\n            {\n                \"Column\": \"Host\",\n                \"Table\": \"user\",\n                \"Privileges\": [\n                    \"SELECT\",\n                    \"INSERT\"\n                ],\n                \"Database\": \"mysql\"\n            }\n        ],\n        \"DatabasePrivileges\": [\n            {\n                \"Privileges\": [\n                    \"CREATE\",\n                    \"DROP\"\n                ],\n                \"Database\": \"jersey\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TablePrivileges\": [\n            {\n                \"Table\": \"user\",\n                \"Privileges\": [\n                    \"SELECT\",\n                    \"INSERT\"\n                ],\n                \"Database\": \"mysql\"\n            }\n        ],\n        \"GlobalPrivileges\": [\n            \"SELECT\",\n            \"INSERT\",\n            \"UPDATE\",\n            \"DELETE\",\n            \"CREATE\",\n            \"DROP\",\n            \"REFERENCES\",\n            \"INDEX\",\n            \"ALTER\",\n            \"SHOW DATABASES\",\n            \"CREATE TEMPORARY TABLES\",\n            \"LOCK TABLES\",\n            \"EXECUTE\",\n            \"CREATE VIEW\",\n            \"SHOW VIEW\",\n            \"CREATE ROUTINE\",\n            \"ALTER ROUTINE\",\n            \"EVENT\",\n            \"TRIGGER\"\n        ],\n        \"ColumnPrivileges\": [\n            {\n                \"Column\": \"Host\",\n                \"Table\": \"user\",\n                \"Privileges\": [\n                    \"SELECT\",\n                    \"INSERT\"\n                ],\n                \"Database\": \"mysql\"\n            }\n        ],\n        \"DatabasePrivileges\": [\n            {\n                \"Privileges\": [\n                    \"CREATE\",\n                    \"DROP\"\n                ],\n                \"Database\": \"jersey\"\n            }\n        ]\n    },\n    \"HasWithGrantOption\": true\n}",
         "title": "查询云数据库账户的权限信息"
       }
     ],
@@ -986,18 +986,18 @@
     ],
     "ModifyAccountPassword": [
       {
-        "document": "",
+        "document": "重置密码时保留旧密码",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxxx\",\n    \"NewPassword\": \"your_new_password\",\n    \"Accounts\": [\n        {\n            \"Host\": \"%\",\n            \"User\": \"user1\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
-        "title": "修改云数据库实例账号的密码"
+        "title": "重置密码"
       }
     ],
     "ModifyAccountPrivileges": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountPrivileges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"Accounts\": [\n        {\n            \"Host\": \"127.0.0.1\",\n            \"User\": \"ajnnw\"\n        }\n    ],\n    \"GlobalPrivileges\": [\n        \"SELECT\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
-        "title": "修改云数据库实例账号的权限"
+        "document": "修改账号权限时授予全局WITH GRANT OPTION权限",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountPrivileges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-iun70ygb\",\n    \"Accounts\": [\n        {\n            \"User\": \"user\",\n            \"Host\": \"%\"\n        }\n    ],\n    \"GlobalPrivileges\": [\n        \"SELECT\"\n    ],\n    \"DatabasePrivileges\": [\n        {\n            \"Privileges\": [\n                \"SELECT\"\n            ],\n            \"Database\": \"Custom\"\n        }\n    ],\n    \"TablePrivileges\": [\n        {\n            \"Database\": \"Custom\",\n            \"Table\": \"Product\",\n            \"Privileges\": [\n                \"SELECT\"\n            ]\n        }\n    ],\n    \"ColumnPrivileges\": [\n        {\n            \"Database\": \"Custom\",\n            \"Table\": \"Product\",\n            \"Column\": \"category\",\n            \"Privileges\": [\n                \"SELECT\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"d1ad7033-496c905f-6af10457-3b283706\",\n        \"RequestId\": \"23626d57-74d4-483d-8a8e-a81162050fe5\"\n    }\n}",
+        "title": "修改账号权限"
       }
     ],
     "ModifyAuditConfig": [

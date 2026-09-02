@@ -2035,27 +2035,27 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"OutputLang\": \"zh\",\n        \"AlternativeOutputLang\": \"en\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6d53e3e-15c5-4a56-8331-d3b680c12220\"\n    }\n}",
-        "title": "设置输出语言"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"EnableSearch\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f0e601e-cbac-4e5c-8443-e3c1478ec5a2\"\n    }\n}",
         "title": "设置启用视频搜索高级功能"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"DetectTypes\": [\n            \"person_climbing_fence\"\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b32234f-60bb-48dc-9791-2fffc690b035\"\n    }\n}",
-        "title": "设置需检测的事件标签"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"MultiCameraLayout\": \"Vertical,Num=2,Index=0;1\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f73ced5-7059-4698-ba18-3d1683f1e06a\"\n    }\n}",
         "title": "设置多摄布局"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"OutputLang\": \"zh\",\n        \"AlternativeOutputLang\": \"en\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6d53e3e-15c5-4a56-8331-d3b680c12220\"\n    }\n}",
+        "title": "设置输出语言"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0,\n    \"ComprehensionConfig\": {\n        \"DetectTypes\": [\n            \"person_climbing_fence\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b32234f-60bb-48dc-9791-2fffc690b035\"\n    }\n}",
+        "title": "设置需检测的事件标签"
       }
     ],
     "ModifyTWeSeeSubscriptionRenewFlag": [

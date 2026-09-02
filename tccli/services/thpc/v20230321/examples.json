@@ -40,6 +40,14 @@
         "title": "创建集群"
       }
     ],
+    "CreateScheduledAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledAction\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-qd1qqnyt\",\n    \"QueueName\": \"lurka-auto-as\",\n    \"ScheduledActionName\": \"scale-out-morning\",\n    \"StartTime\": \"2026-08-14T00:00:00+08:00\",\n    \"DesiredCapacity\": 3,\n    \"EndTime\": \"2026-08-31T23:59:59+08:00\",\n    \"Recurrence\": \"0 9 * * 1-5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21aed752-2433-4ee7-8351-e986261f270d\"\n    }\n}",
+        "title": "创建定时任务"
+      }
+    ],
     "CreateWorkspaces": [
       {
         "document": "创建工作空间",
@@ -88,6 +96,14 @@
         "title": "删除队列"
       }
     ],
+    "DeleteScheduledAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScheduledAction\n<公共请求参数>\n\n{\n    \"ScheduledActionIds\": [\n        \"as-824b4600\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3e058e1-9c1a-4641-a85f-ee39d0c138eb\"\n    }\n}",
+        "title": "删除已经配置的定时任务"
+      }
+    ],
     "DescribeAutoScalingConfiguration": [
       {
         "document": "查询集群ID为hpc-rv7hahw2的集群弹性伸缩配置信息。",
@@ -128,6 +144,14 @@
         "title": "查询节点初始化脚本信息"
       }
     ],
+    "DescribeInstanceFamilies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceFamilies\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-pgzjxqkf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f218388-68cb-47ca-a6f5-8bf38268fc91\"\n    }\n}",
+        "title": "查询可用机型族列表"
+      }
+    ],
     "DescribeJobSubmitInfo": [
       {
         "document": "查询指定作业的提交信息",
@@ -160,12 +184,42 @@
         "title": "查询指定集群节点概览信息。"
       }
     ],
+    "DescribeQueueAutoScaling": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueueAutoScaling\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-d9ng14l3\",\n    \"QueueName\": \"lurka-auto-as\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"539a36cc-f30c-4e2b-8f4f-f56a6b2ca141\"\n    }\n}",
+        "title": "查询队列弹性伸缩配置"
+      }
+    ],
+    "DescribeQueueAutoScalingOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueueAutoScalingOverview\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-d9ng14l3\",\n    \"QueueNames\": [\n        \"lurka-auto-as\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18738ab9-7cbe-412e-92b7-5097ef4b01e7\"\n    }\n}",
+        "title": "查询队列伸缩概览"
+      }
+    ],
     "DescribeQueues": [
       {
         "document": "查询集群队列概览信息列表。",
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueues\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-prkxbd7c\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"QueueSet\": [\n            {\n                \"QueueName\": \"compute\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"13ee84a5-7846-4682-8877-1c8f94962dd5\"\n    }\n}",
         "title": "查询集群队列概览信息列表"
+      }
+    ],
+    "DescribeScheduledActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledActions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-brv22s4t\",\n    \"QueueName\": \"thpc-as\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8a16885-b53d-4392-bfae-6622da419431\"\n    }\n}",
+        "title": "按照队列查询定时任务配置"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledActions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-brv22s4t\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2bb70350-b162-427e-99cf-78b465277563\"\n    }\n}",
+        "title": "按照集群查询定时任务配置"
       }
     ],
     "DescribeWorkspaces": [
@@ -182,6 +236,14 @@
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"NodeIds\": [\n        \"node-8workmoi\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40c2e07e-8500-4460-8db8-666d0e791ee5\"\n    }\n}",
         "title": "从集群解绑计算节点"
+      }
+    ],
+    "InquirePriceCreateWorkspaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateWorkspaces\n<公共请求参数>\n\n{\n    \"SpaceChargeType\": \"PREPAID\",\n    \"SpaceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    },\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\",\n        \"ProjectId\": 0\n    },\n    \"VirtualPrivateCloud\": {\n        \"AsVpcGateway\": false,\n        \"VpcId\": \"vpc-nrqwfyzv\",\n        \"SubnetId\": \"subnet-0tmm4ywk\",\n        \"Ipv6AddressCount\": 0\n    },\n    \"SpaceType\": \"96A.96XLARGE2304\",\n    \"ImageId\": \"img-9qrfy1xt\",\n    \"SystemDisk\": {\n        \"DiskSize\": 50,\n        \"DiskType\": \"CLOUD_PREMIUM\"\n    },\n    \"DataDisks\": [\n        {\n            \"DiskSize\": 50,\n            \"DiskType\": \"CLOUD_PREMIUM\"\n        },\n        {\n            \"DiskSize\": 50,\n            \"DiskType\": \"CLOUD_PREMIUM\"\n        }\n    ],\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": true,\n        \"InternetMaxBandwidthOut\": 5\n    },\n    \"SecurityGroupIds\": [\n        \"sg-fsx9rsr1\"\n    ],\n    \"SpaceCount\": 1,\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": true\n        },\n        \"MonitorService\": {\n            \"Enabled\": true\n        },\n        \"AutomationService\": {\n            \"Enabled\": true\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"SpacePrice\": {\n                \"OriginalPrice\": 123630.3,\n                \"DiscountPrice\": 123630.3,\n                \"Discount\": 100\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.8,\n                \"DiscountUnitPrice\": 0.8,\n                \"ChargeUnit\": \"GB\",\n                \"Discount\": 100\n            }\n        },\n        \"RequestId\": \"dcec1ad4-54a4-4a49-b754-f65cd7274c82\"\n    }\n}",
+        "title": "创建实例询价"
       }
     ],
     "InquirePriceModifyWorkspacesChargeType": [
@@ -222,6 +284,14 @@
         "title": "隔离节点"
       }
     ],
+    "ModifyScheduledAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledAction\n<公共请求参数>\n\n{\n    \"ScheduledActionId\": \"as-6be93212\",\n    \"ScheduledActionName\": \"scale-out-morning\",\n    \"Status\": \"ACTIVE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9540742-a232-4707-a2a7-7f358215e561\"\n    }\n}",
+        "title": "修改定时任务名称"
+      }
+    ],
     "ModifyWorkspacesAttribute": [
       {
         "document": "",
@@ -252,6 +322,14 @@
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAutoScalingConfiguration\n<公共请求参数>\n\n{\n    \"DryRun\": false,\n    \"ShrinkIdleTime\": 300,\n    \"ExpansionBusyTime\": 120,\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1d90874-f565-463d-ba1d-c707517eece1\"\n    }\n}",
         "title": "设置弹性伸缩配置"
+      }
+    ],
+    "SetQueueAutoScaling": [
+      {
+        "document": "MULTI_CARD + 混合卡数",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetQueueAutoScaling\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-r7cjxd9c\",\n    \"QueueName\": \"as-it-queue\",\n    \"ScalingPolicy\": {\n        \"DesiredCapacity\": 8,\n        \"ScalingUnit\": \"GPU_CARD\"\n    },\n    \"ExpansionPolicy\": {\n        \"ExpansionMode\": \"MULTI_CARD\",\n        \"LaunchTemplateIds\": [\n            \"lt-1dtaw7fw\"\n        ],\n        \"TemplateOverrides\": {\n            \"InstanceFamilies\": [\n                \"GN10X\"\n            ],\n            \"EnableMixedGpuCount\": true,\n            \"EnableMultiZone\": true\n        },\n        \"ExpansionPriority\": {\n            \"InstanceSpecPriority\": \"LARGE_FIRST\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0fa65b3-2174-4534-87d5-e9434e858b3f\"\n    }\n}",
+        "title": "设置队列弹性伸缩配置"
       }
     ],
     "SubmitJob": [

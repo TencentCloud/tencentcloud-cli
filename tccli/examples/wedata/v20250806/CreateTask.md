@@ -507,14 +507,13 @@ Input:
 
 ```
 tccli wedata CreateTask --cli-unfold-argument  \
-    --ProjectId 2428908825624145920 \
-    --TaskBaseAttribute.TaskName api_etl_code_250829_094215 \
+    --ProjectId 3400466011251712000 \
+    --TaskBaseAttribute.TaskName 离线集成测试4 \
     --TaskBaseAttribute.TaskTypeId 26 \
-    --TaskBaseAttribute.WorkflowId 8f9915b8-683c-4732-b0b2-b3a5ff0d90f1 \
-    --TaskBaseAttribute.OwnerUin 100028596846 \
-    --TaskBaseAttribute.TaskDescription 250829_093945 \
-    --TaskConfiguration.ResourceGroup 20240927151912348498 \
-    --TaskConfiguration.CodeContent eyJjb3JlIjp7InRyYW5zcG9ydCI6eyJjaGFubmVsIjp7InNwZWVkIjp7ImJ5dGUiOi0xfX19fSwiam9iIjp7ImNvbnRlbnQiOlt7InJlYWRlciI6eyJwYXJhbWV0ZXIiOnsicGFzc3dvcmQiOiIqKioqKioiLCJkYXRhc291cmNlIjoibXlzcWxfeXVuXzAzMDQiLCJjb2x1bW4iOlsiKiJdLCJjb25uZWN0aW9uIjpbeyJqZGJjVXJsIjpbImpkYmM6bXlzcWw6Ly8xNzIuMTYuMC43MDozMzA2L3dlZGF0YV90ZXN0P3Jld3JpdGVCYXRjaGVkU3RhdGVtZW50cz10cnVlJnRpbnlJbnQxaXNCaXQ9ZmFsc2Umc2VydmVyVGltZXpvbmU9VVRDJTJCNyZjaGFyYWN0ZXJFbmNvZGluZz11dGY4JmF1dG9SZWNvbm5lY3Q9dHJ1ZSJdLCJ0YWJsZSI6WyJiYXJyeXRlc3QiXX1dLCJ1c2VybmFtZSI6InJvb3QifSwibmFtZSI6Im15c3FscmVhZGVyIn0sInRyYW5zZm9ybWVyIjpbXSwid3JpdGVyIjp7InBhcmFtZXRlciI6eyJwYXNzd29yZCI6IioqKioqKiIsInNlc3Npb24iOlsic2V0IHNlc3Npb24gc3FsX21vZGU9J0FOU0knIl0sImRhdGFzb3VyY2UiOiJteXNxbF95dW5fMDMwNCIsImNvbHVtbiI6WyIqIl0sImNvbm5lY3Rpb24iOlt7ImpkYmNVcmwiOiJqZGJjOm15c3FsOi8vMTcyLjE2LjAuNzA6MzMwNi93ZWRhdGFfdGVzdD9yZXdyaXRlQmF0Y2hlZFN0YXRlbWVudHM9dHJ1ZSZ0aW55SW50MWlzQml0PWZhbHNlJnNlcnZlclRpbWV6b25lPVVUQyUyQjcmY2hhcmFjdGVyRW5jb2Rpbmc9dXRmOCZhdXRvUmVjb25uZWN0PXRydWUiLCJ0YWJsZSI6WyJsYXJnZV90YWJsZSJdfV0sImJhdGNoU2l6ZSI6MjA0OCwidXNlcm5hbWUiOiJyb290Iiwib24iOlsiaWQiXX0sIm5hbWUiOiJteXNxbHdyaXRlciJ9fV0sInNldHRpbmciOnsibWVtb3J5Ijp7InRhc2tMaW1pdCI6MzM1NTQ0MzIwLCJjaGFubmVsTGltaXQiOjY3MTA4ODY0LCJ3cml0ZXJMaW1pdCI6MTM0MjE3NzI4LCJqb2JMaW1pdCI6ODcyNDE1MjMyLCJyZWFkZXJMaW1pdCI6MTM0MjE3NzI4fSwiZXJyb3JMaW1pdCI6eyJyZWNvcmQiOjB9LCJzcGVlZCI6eyJieXRlIjotMSwiY2hhbm5lbCI6MX19fX0= \
+    --TaskBaseAttribute.WorkflowId 26ac11dc-c0cc-46c3-9584-3e86f3c6731a \
+    --TaskBaseAttribute.OwnerUin 700002383657 \
+    --TaskBaseAttribute.TaskDescription  \
+    --TaskConfiguration.CodeContent eyJTY3JpcHRDb250ZW50IjoiIiwiTm9kZUluZm9zIjoiW3tcIk5vZGVUeXBlXCI6XCJJTlBVVFwiLFwiRGF0YVNvdXJjZVR5cGVcIjpcIk1ZU1FMXCIsXCJEYXRhc291cmNlSWRcIjpcIjY2NDQ1XCIsXCJOYW1lXCI6XCJpbnB1dF8xXCIsXCJDb25maWdcIjpbe1wiTmFtZVwiOlwiVHlwZVwiLFwiVmFsdWVcIjpcIk1ZU1FMXCJ9LHtcIk5hbWVcIjpcIkRhdGFiYXNlXCIsXCJWYWx1ZVwiOlwieWF1bHVvX3Rlc3RfODBcIn0se1wiTmFtZVwiOlwiVGFibGVOYW1lc1wiLFwiVmFsdWVcIjpcImJpel9mdWxsX3R5cGVcIn0se1wiTmFtZVwiOlwic3BsaXRQa1wiLFwiVmFsdWVcIjpcImlkXCJ9LHtcIk5hbWVcIjpcIlByaW1hcnlLZXlcIixcIlZhbHVlXCI6XCJpZFwifSx7XCJOYW1lXCI6XCJpc0NsZWFuXCIsXCJWYWx1ZVwiOlwiMFwifSx7XCJOYW1lXCI6XCJlbmNvZGluZ1wiLFwiVmFsdWVcIjpcInV0Zi04XCJ9XSxcIlNjaGVtYVwiOlt7XCJJZFwiOlwiMVwiLFwiTmFtZVwiOlwiaWRcIixcIlR5cGVcIjpcIklOVFwiLFwiQWxpYXNcIjpcImlkXCJ9LHtcIklkXCI6XCIyXCIsXCJOYW1lXCI6XCJuYW1lXCIsXCJUeXBlXCI6XCJWQVJDSEFSXCIsXCJBbGlhc1wiOlwibmFtZVwifV19LHtcIk5vZGVUeXBlXCI6XCJPVVRQVVRcIixcIkRhdGFTb3VyY2VUeXBlXCI6XCJNWVNRTFwiLFwiRGF0YXNvdXJjZUlkXCI6XCI2NjQ0NVwiLFwiTmFtZVwiOlwib3V0cHV0XzFcIixcIkNvbmZpZ1wiOlt7XCJOYW1lXCI6XCJUeXBlXCIsXCJWYWx1ZVwiOlwiTVlTUUxcIn0se1wiTmFtZVwiOlwiRGF0YWJhc2VcIixcIlZhbHVlXCI6XCJ5YXVsdW9fdGVzdF84MFwifSx7XCJOYW1lXCI6XCJUYWJsZU5hbWVzXCIsXCJWYWx1ZVwiOlwiYml6X29yZGVyXCJ9LHtcIk5hbWVcIjpcIndyaXRlTW9kZVwiLFwiVmFsdWVcIjpcImFwcGVuZFwifSx7XCJOYW1lXCI6XCJiYXRjaFNpemVcIixcIlZhbHVlXCI6XCIxMDI0XCJ9LHtcIk5hbWVcIjpcImlzQ2xlYW5cIixcIlZhbHVlXCI6XCIwXCJ9LHtcIk5hbWVcIjpcImVuY29kaW5nXCIsXCJWYWx1ZVwiOlwidXRmLThcIn1dLFwiU2NoZW1hXCI6W3tcIklkXCI6XCIxXCIsXCJOYW1lXCI6XCJpZFwiLFwiVHlwZVwiOlwiSU5UXCIsXCJBbGlhc1wiOlwiaWRcIn0se1wiSWRcIjpcIjJcIixcIk5hbWVcIjpcIm5hbWVcIixcIlR5cGVcIjpcIlZBUkNIQVJcIixcIkFsaWFzXCI6XCJuYW1lXCJ9XSxcIk5vZGVNYXBwaW5nXCI6e1wiU291cmNlU2NoZW1hXCI6W3tcIklkXCI6XCIxXCIsXCJOYW1lXCI6XCJpZFwiLFwiVHlwZVwiOlwiSU5UXCIsXCJBbGlhc1wiOlwiaWRcIn0se1wiSWRcIjpcIjJcIixcIk5hbWVcIjpcIm5hbWVcIixcIlR5cGVcIjpcIlZBUkNIQVJcIixcIkFsaWFzXCI6XCJuYW1lXCJ9XSxcIlNjaGVtYU5hbWVNYXBwaW5nc1wiOlt7XCJTb3VyY2VTY2hlbWFOYW1lXCI6XCJpZFwiLFwiU2lua1NjaGVtYU5hbWVcIjpcImlkXCJ9LHtcIlNvdXJjZVNjaGVtYU5hbWVcIjpcIm5hbWVcIixcIlNpbmtTY2hlbWFOYW1lXCI6XCJuYW1lXCJ9XX19XSJ9 \
     --TaskConfiguration.TaskExtConfigurationList.0.ParamKey enableDataContrast \
     --TaskConfiguration.TaskExtConfigurationList.0.ParamValue false \
     --TaskConfiguration.TaskExtConfigurationList.1.ParamKey target_service_type \
@@ -526,7 +525,7 @@ tccli wedata CreateTask --cli-unfold-argument  \
     --TaskConfiguration.TaskExtConfigurationList.4.ParamKey executionTTLStrategy \
     --TaskConfiguration.TaskExtConfigurationList.4.ParamValue fail \
     --TaskConfiguration.TaskExtConfigurationList.5.ParamKey target_service \
-    --TaskConfiguration.TaskExtConfigurationList.5.ParamValue 81467 \
+    --TaskConfiguration.TaskExtConfigurationList.5.ParamValue 66445 \
     --TaskConfiguration.TaskExtConfigurationList.6.ParamKey dirtyDataThresholdUnit \
     --TaskConfiguration.TaskExtConfigurationList.6.ParamValue percentage \
     --TaskConfiguration.TaskExtConfigurationList.7.ParamKey sourceIncrementCondition \
@@ -534,13 +533,13 @@ tccli wedata CreateTask --cli-unfold-argument  \
     --TaskConfiguration.TaskExtConfigurationList.8.ParamKey syncRateLimitUnit \
     --TaskConfiguration.TaskExtConfigurationList.8.ParamValue 0 \
     --TaskConfiguration.TaskExtConfigurationList.9.ParamKey source_service \
-    --TaskConfiguration.TaskExtConfigurationList.9.ParamValue 81467 \
+    --TaskConfiguration.TaskExtConfigurationList.9.ParamValue 66445 \
     --TaskConfiguration.TaskExtConfigurationList.10.ParamKey calendar_id \
     --TaskConfiguration.TaskExtConfigurationList.10.ParamValue  \
     --TaskConfiguration.TaskExtConfigurationList.11.ParamKey syncRateLimit \
     --TaskConfiguration.TaskExtConfigurationList.11.ParamValue -1 \
     --TaskConfiguration.TaskExtConfigurationList.12.ParamKey data_cluster \
-    --TaskConfiguration.TaskExtConfigurationList.12.ParamValue 107773e6-088b-45fb-8cbc-ba2bc0c5f906 \
+    --TaskConfiguration.TaskExtConfigurationList.12.ParamValue 532e8beb-31e6-457d-bcfd-0a5b55d3a967 \
     --TaskConfiguration.TaskExtConfigurationList.13.ParamKey calendar_open \
     --TaskConfiguration.TaskExtConfigurationList.13.ParamValue 0 \
     --TaskConfiguration.TaskExtConfigurationList.14.ParamKey calendar_name \
@@ -556,41 +555,39 @@ tccli wedata CreateTask --cli-unfold-argument  \
     --TaskConfiguration.TaskExtConfigurationList.19.ParamKey waitExecutionTotalTTLStrategy \
     --TaskConfiguration.TaskExtConfigurationList.19.ParamValue fail \
     --TaskConfiguration.TaskExtConfigurationList.20.ParamKey tenantId \
-    --TaskConfiguration.TaskExtConfigurationList.20.ParamValue 1257305158 \
+    --TaskConfiguration.TaskExtConfigurationList.20.ParamValue 251436275 \
     --TaskConfiguration.TaskExtConfigurationList.21.ParamKey sourceScope \
     --TaskConfiguration.TaskExtConfigurationList.21.ParamValue ALL \
     --TaskConfiguration.TaskExtConfigurationList.22.ParamKey source_server \
     --TaskConfiguration.TaskExtConfigurationList.22.ParamValue default \
     --TaskConfiguration.TaskExtConfigurationList.23.ParamKey source_cluster \
-    --TaskConfiguration.TaskExtConfigurationList.23.ParamValue 107773e6-088b-45fb-8cbc-ba2bc0c5f906 \
+    --TaskConfiguration.TaskExtConfigurationList.23.ParamValue 532e8beb-31e6-457d-bcfd-0a5b55d3a967 \
     --TaskConfiguration.TaskExtConfigurationList.24.ParamKey target_server \
     --TaskConfiguration.TaskExtConfigurationList.24.ParamValue default \
     --TaskConfiguration.TaskExtConfigurationList.25.ParamKey extraInfo \
     --TaskConfiguration.TaskExtConfigurationList.25.ParamValue {"taskMode":"3","fromMapping":false} \
     --TaskConfiguration.TaskExtConfigurationList.26.ParamKey targetIncrementCondition \
     --TaskConfiguration.TaskExtConfigurationList.26.ParamValue  \
-    --TaskConfiguration.DataCluster 107773e6-088b-45fb-8cbc-ba2bc0c5f906 \
+    --TaskConfiguration.DataCluster 532e8beb-31e6-457d-bcfd-0a5b55d3a967 \
     --TaskConfiguration.BrokerIp any \
-    --TaskConfiguration.SourceServiceId ;81467; \
-    --TaskConfiguration.TargetServiceId ;81467; \
     --TaskSchedulerConfiguration.CycleType DAY_CYCLE \
     --TaskSchedulerConfiguration.ScheduleTimeZone UTC+8 \
-    --TaskSchedulerConfiguration.StartTime 2025-08-29 00:00:00 \
+    --TaskSchedulerConfiguration.CrontabExpression 0 0 0 * * ? * \
+    --TaskSchedulerConfiguration.StartTime 2026-08-13 00:00:00 \
     --TaskSchedulerConfiguration.EndTime 2099-12-31 23:59:59 \
     --TaskSchedulerConfiguration.ExecutionStartTime 00:00 \
     --TaskSchedulerConfiguration.ExecutionEndTime 23:59 \
-    --TaskSchedulerConfiguration.ScheduleType 0 \
     --TaskSchedulerConfiguration.CalendarOpen 0 \
     --TaskSchedulerConfiguration.CalendarId  \
     --TaskSchedulerConfiguration.SelfDepend serial \
+    --TaskSchedulerConfiguration.AllowRedoType ALL \
+    --TaskSchedulerConfiguration.InitStrategy T_PLUS_0 \
+    --TaskSchedulerConfiguration.ScheduleType 0 \
     --TaskSchedulerConfiguration.RunPriorityType 6 \
     --TaskSchedulerConfiguration.RetryWaitMinute 5 \
     --TaskSchedulerConfiguration.MaxRetryNumber 4 \
     --TaskSchedulerConfiguration.ExecutionTTLMinute -1 \
-    --TaskSchedulerConfiguration.WaitExecutionTotalTTLMinute -1 \
-    --TaskSchedulerConfiguration.AllowRedoType ALL \
-    --TaskSchedulerConfiguration.CrontabExpression 0 0 0 * * ? * \
-    --TaskSchedulerConfiguration.InitStrategy T_PLUS_0
+    --TaskSchedulerConfiguration.WaitExecutionTotalTTLMinute -1
 ```
 
 Output: 
@@ -598,9 +595,9 @@ Output:
 {
     "Response": {
         "Data": {
-            "TaskId": "20250910174556007"
+            "TaskId": "20260827180855008"
         },
-        "RequestId": "31ce344f-2059-4e5e-a938-86c84c89abc3"
+        "RequestId": "0fe71836-6e5f-49a1-a176-78291ff40d46"
     }
 }
 ```

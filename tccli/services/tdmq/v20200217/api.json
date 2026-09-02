@@ -57,9 +57,9 @@
       "status": "online"
     },
     "CreateProCluster": {
-      "document": "创建专业集群——预付费，仅通过api调用",
+      "document": "创建Pulsar标准版或专业版实例——预付费，仅通过api调用",
       "input": "CreateProClusterRequest",
-      "name": "创建专业集群",
+      "name": "创建Pulsar标准版或专业版实例",
       "output": "CreateProClusterResponse",
       "status": "online"
     },
@@ -381,7 +381,7 @@
     "DescribeClusters": {
       "document": "获取集群列表",
       "input": "DescribeClustersRequest",
-      "name": "获取集群列表",
+      "name": "获取虚拟集群列表",
       "output": "DescribeClustersResponse",
       "status": "online"
     },
@@ -491,16 +491,16 @@
       "status": "online"
     },
     "DescribePulsarProInstanceDetail": {
-      "document": "获取Pulsar专业版集群实例信息",
+      "document": "获取Pulsar标准版或专业版实例信息",
       "input": "DescribePulsarProInstanceDetailRequest",
-      "name": "获取Pulsar专业版集群实例信息",
+      "name": "获取Pulsar标准版或专业版实例信息",
       "output": "DescribePulsarProInstanceDetailResponse",
       "status": "online"
     },
     "DescribePulsarProInstances": {
-      "document": "查询用户已购的Pulsar专业版实例列表",
+      "document": "查询用户已购的Pulsar实例列表",
       "input": "DescribePulsarProInstancesRequest",
-      "name": "查询Pulsar专业版实例列表",
+      "name": "查询Pulsar标准版和专业版实例列表",
       "output": "DescribePulsarProInstancesResponse",
       "status": "online"
     },
@@ -820,9 +820,9 @@
       "status": "deprecated"
     },
     "ModifyCluster": {
-      "document": "更新集群信息",
+      "document": "更新虚拟集群信息",
       "input": "ModifyClusterRequest",
-      "name": "更新集群信息",
+      "name": "更新虚拟集群信息",
       "output": "ModifyClusterResponse",
       "status": "online"
     },
@@ -3543,7 +3543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>当选择PULSAR.P2.MINI1 时只支持两个可用区，其他支持三个可用区</p>",
+          "document": "<p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>专业版：当选择PULSAR.P2.MINI1时只支持两个可用区，其他规格支持三个可用区<br>标准版（PULSAR.S2系列）：只支持两个可用区</p>",
           "example": "[200002,200003,200004]",
           "member": "int64",
           "name": "ZoneIds",
@@ -3630,6 +3630,24 @@
           "name": "InstanceVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户自定义租户名，可选。<br>不能为空，支持数字、字母以及符号 “-_=:.”，长度不超过 64 个字符。<br>未传时使用默认规则（实例 ID 作为租户名）。</p>",
+          "example": "my-tenant_01",
+          "member": "string",
+          "name": "UserTenant",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启弹性TPS（1：开启，0：关闭），仅专业版P1固定存储集群支持</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ElasticTpsEnabled",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8274,7 +8292,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件过滤器",
+          "document": "<p>查询条件过滤器</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -8283,7 +8301,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数目上限，默认20",
+          "document": "<p>查询数目上限，默认20</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -8292,7 +8310,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "<p>查询起始位置</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -8307,7 +8325,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "未分页的总数目",
+          "document": "<p>未分页的总数目</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -8317,7 +8335,7 @@
         },
         {
           "disabled": false,
-          "document": "实例信息列表",
+          "document": "<p>实例信息列表</p>",
           "example": "无",
           "member": "PulsarProInstance",
           "name": "Instances",
@@ -16108,7 +16126,7 @@
       "usage": "out"
     },
     "PulsarProClusterInfo": {
-      "document": "Pulsar专业版集群信息",
+      "document": "Pulsar标准版或专业版集群信息",
       "members": [
         {
           "disabled": false,
@@ -16202,7 +16220,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PULSAR.P1/PULSAR.P2",
           "member": "string",
           "name": "BillingLabelVersion",
@@ -16242,7 +16260,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>",
+          "document": "<p>用户自定义的租户别名，如果没有，会复用集群 ID</p>",
           "example": "pulsar-mw4qmgaq298g",
           "member": "string",
           "name": "Tenant",
@@ -16279,12 +16297,22 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启磁盘自动扩容。枚举值：0-关闭，1-开启</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoExpansionEnabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
     },
     "PulsarProClusterSpecInfo": {
-      "document": "Pulsar专业版集群规格信息",
+      "document": "Pulsar标准版或专业版集群规格信息",
       "members": [
         {
           "disabled": false,
@@ -16420,11 +16448,11 @@
       "usage": "out"
     },
     "PulsarProInstance": {
-      "document": "Pulsar专业版实例信息",
+      "document": "Pulsar标准版或专业版实例信息",
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "pulsar-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -16434,7 +16462,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "cluster-test",
           "member": "string",
           "name": "InstanceName",
@@ -16444,7 +16472,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本",
+          "document": "<p>实例版本</p>",
           "example": "2.7.2",
           "member": "string",
           "name": "InstanceVersion",
@@ -16454,7 +16482,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败",
+          "document": "<p>实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -16464,7 +16492,7 @@
         },
         {
           "disabled": false,
-          "document": "实例配置规格名称",
+          "document": "<p>实例配置规格名称</p>",
           "example": "基础型",
           "member": "string",
           "name": "ConfigDisplay",
@@ -16474,7 +16502,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值TPS",
+          "document": "<p>峰值TPS</p>",
           "example": "10000",
           "member": "uint64",
           "name": "MaxTps",
@@ -16484,7 +16512,7 @@
         },
         {
           "disabled": false,
-          "document": "存储容量，GB为单位",
+          "document": "<p>存储容量，GB为单位</p>",
           "example": "100",
           "member": "uint64",
           "name": "MaxStorage",
@@ -16494,7 +16522,7 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间，毫秒为单位",
+          "document": "<p>实例到期时间，毫秒为单位</p>",
           "example": "100000",
           "member": "uint64",
           "name": "ExpireTime",
@@ -16504,7 +16532,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "document": "<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -16514,7 +16542,7 @@
         },
         {
           "disabled": false,
-          "document": "0-后付费，1-预付费",
+          "document": "<p>0-后付费，1-预付费</p>",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -16524,7 +16552,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备注信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -16534,7 +16562,7 @@
         },
         {
           "disabled": false,
-          "document": "实例配置ID",
+          "document": "<p>实例配置ID</p>",
           "example": "vip-basic-1",
           "member": "string",
           "name": "SpecName",
@@ -16544,7 +16572,7 @@
         },
         {
           "disabled": false,
-          "document": "规格外弹性TPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>规格外弹性TPS</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
           "name": "ScalableTps",
@@ -16554,7 +16582,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>VPC的id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
@@ -16564,7 +16592,7 @@
         },
         {
           "disabled": false,
-          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子网id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
@@ -16574,7 +16602,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值带宽。单位：mbps",
+          "document": "<p>峰值带宽。单位：mbps</p>",
           "example": "100",
           "member": "uint64",
           "name": "MaxBandWidth",
@@ -16584,8 +16612,8 @@
         },
         {
           "disabled": false,
-          "document": "集群的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{ \"TagKey\": \"aaa\",  \"TagValue\": \"aaa\" }]",
+          "document": "<p>集群的标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -16594,7 +16622,7 @@
         },
         {
           "disabled": false,
-          "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-12-08 10:25:51",
           "member": "string",
           "name": "CreateTime",
@@ -16604,7 +16632,7 @@
         },
         {
           "disabled": false,
-          "document": "代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>代表是专业版和标准版的不同计费规格<br>PULSAR.P1固定存储<br>PULSAR.P2弹性存储<br>PULSAR.S2标准版</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PULSAR.P1/PULSAR.P2",
           "member": "string",
           "name": "BillingLabelVersion",
@@ -16614,7 +16642,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义租户",
+          "document": "<p>自定义租户</p>",
           "example": "tenant",
           "member": "string",
           "name": "Tenant",
@@ -16624,8 +16652,8 @@
         },
         {
           "disabled": false,
-          "document": "集群的证书列表",
-          "example": "[{}]",
+          "document": "<p>集群的证书列表</p>",
+          "example": "无",
           "member": "CertificateInfo",
           "name": "CertificateList",
           "output_required": false,
@@ -23837,6 +23865,7 @@
           "example": "vpc-9dlrd5h1",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -23847,6 +23876,7 @@
           "example": "subnet-jadmas",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

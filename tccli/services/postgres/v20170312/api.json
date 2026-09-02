@@ -35,6 +35,13 @@
       "output": "CloseDBExtranetAccessResponse",
       "status": "online"
     },
+    "CloseDBProxyAddress": {
+      "document": "本接口用于关闭（删除）数据库代理的指定地址。接口为异步操作，返回 TaskId 供调用方通过 DescribeTasks 查询任务执行进度。约束：代理组至少保留一个地址，不允许删除最后一个地址。",
+      "input": "CloseDBProxyAddressRequest",
+      "name": "关闭数据库代理地址",
+      "output": "CloseDBProxyAddressResponse",
+      "status": "online"
+    },
     "CreateAccount": {
       "document": "此接口用于创建数据账号，返回的Oid为账号唯一标识。与数据库系统表pg_roles中记录的oid一致。",
       "input": "CreateAccountRequest",
@@ -75,6 +82,13 @@
       "input": "CreateDBProxyRequest",
       "name": "创建数据库代理",
       "output": "CreateDBProxyResponse",
+      "status": "online"
+    },
+    "CreateDBProxyAddress": {
+      "document": "本接口（CreateDBProxyAddress）用于为指定实例的数据库代理创建连接地址。该接口为异步接口，调用成功后返回 TaskId，可通过 DescribeTasks 接口查询任务执行进度。<p>支持同时配置读写分离策略，包括权重模式、路由分配、延迟剔除、故障转移等高级功能。</p>",
+      "input": "CreateDBProxyAddressRequest",
+      "name": "创建代理连接地址",
+      "output": "CreateDBProxyAddressResponse",
       "status": "online"
     },
     "CreateDatabase": {
@@ -348,6 +362,13 @@
       "input": "DescribeDBProxyRequest",
       "name": "查询数据库代理",
       "output": "DescribeDBProxyResponse",
+      "status": "online"
+    },
+    "DescribeDBProxySSLConfig": {
+      "document": "本接口用于查询指定代理连接地址的 SSL 配置信息，包括 SSL 是否开启、连接地址和 CA 证书下载地址。",
+      "input": "DescribeDBProxySSLConfigRequest",
+      "name": "查询代理 SSL 配置",
+      "output": "DescribeDBProxySSLConfigResponse",
       "status": "online"
     },
     "DescribeDBProxySpecs": {
@@ -684,6 +705,13 @@
       "input": "ModifyDBProxyAddressRequest",
       "name": "修改代理地址配置",
       "output": "ModifyDBProxyAddressResponse",
+      "status": "online"
+    },
+    "ModifyDBProxySSLConfig": {
+      "document": "本接口（ModifyDBProxySSLConfig）用于修改数据库代理连接地址的 SSL 配置。该接口为异步接口，调用成功后返回 TaskId，可通过 DescribeTasks 接口查询任务执行进度。<p>当前仅支持物理机（local）存储类型的代理开启 SSL。SSL 开启时需提供 ConnectAddress，且必须与代理地址的 Vip 保持一致。</p><p>当 SSL 状态与当前配置一致时，接口直接返回成功，TaskId 为 0，无需等待任务。</p>",
+      "input": "ModifyDBProxySSLConfigRequest",
+      "name": "修改代理 SSL 配置",
+      "output": "ModifyDBProxySSLConfigResponse",
       "status": "online"
     },
     "ModifyDatabaseOwner": {
@@ -2372,6 +2400,61 @@
       ],
       "type": "object"
     },
+    "CloseDBProxyAddressRequest": {
+      "document": "CloseDBProxyAddress请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，指定要关闭代理地址的目标实例</p>",
+          "example": "postgres-2wvpv38j",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理地址 ID，指定要关闭（删除）的代理地址</p>",
+          "example": "proxyaddr-0p3p1r76",
+          "member": "string",
+          "name": "AddressId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理组 ID。不传则按实例自动查找其默认代理组</p>",
+          "example": "proxy-89ap4mrx",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseDBProxyAddressResponse": {
+      "document": "CloseDBProxyAddress返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务 ID，可通过 DescribeFlow 查询任务进度</p>",
+          "example": "100282",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAccountRequest": {
       "document": "CreateAccount请求参数结构体",
       "members": [
@@ -2498,6 +2581,16 @@
     "CreateAuditLogFileResponse": {
       "document": "CreateAuditLogFile返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件名称</p>",
+          "example": "postgres-0ii80qnk_20260325-164204_to_20260325-194204_1774438927390.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2712,6 +2805,160 @@
           "disabled": false,
           "document": "任务ID",
           "example": "26345",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBProxyAddressRequest": {
+      "document": "CreateDBProxyAddress请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，指定要创建代理地址的目标实例</p>",
+          "example": "postgres-2wvpv38j",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC ID，代理地址所属的私有网络</p>",
+          "example": "vpc-1dq8ehm3",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网 ID，代理地址所属的子网</p>",
+          "example": "subnet-6yui3ok8",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理组 ID。不传则按实例自动查找其默认代理组</p>",
+          "example": "proxy-nlpsb4jp",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组 ID 列表，用于代理地址的网络安全控制</p>",
+          "example": "[\"sg-9rlup3c5\"]",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理地址备注信息，最长 256 个字符</p>",
+          "example": "create new address",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接池开关。true：开启连接池；false：关闭连接池</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ConnectionPool",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>权重模式。取值：<ul><li>system：系统自动分配权重</li><li>custom：手动指定权重，需配合 ProxyAllocation 参数使用</li></ul></p>",
+          "example": "custom",
+          "member": "string",
+          "name": "WeightMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由权重列表。WeightMode 为 custom 时必填。若WeightMode传system或不传 ，则传入的权重不生效，由系统分配默认权重。</p>",
+          "example": "无",
+          "member": "ProxyRoute",
+          "name": "ProxyAllocation",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动将新增的只读实例加入读写分离。true：自动加入；false：不自动加入</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RoAutoAdd",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟剔除开关。true：开启延迟剔除，当只读实例延迟超过阈值时自动剔除路由；false：关闭延迟剔除。开启时 LatencyRemoveTime 必填</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LatencyRemove",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>延迟剔除阈值，单位秒，取值范围 [1, 10000]。LatencyRemove 为 true 时必填</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "LatencyRemoveTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小路由节点数，取值范围 [0, 256]。用于防止延迟剔除将所有节点剔除后的兜底策略</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinRouteNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡策略</p><p>枚举值：</p><ul><li>0： 按活跃连接数(默认)</li><li>1： 按请求数</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "LoadBalancePolicy",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBProxyAddressResponse": {
+      "document": "CreateDBProxyAddress返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务 ID。可通过 DescribeTasks 接口查询任务执行进度</p>",
+          "example": "100200",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -6992,6 +7239,81 @@
       ],
       "type": "object"
     },
+    "DescribeDBProxySSLConfigRequest": {
+      "document": "DescribeDBProxySSLConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。</p>",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理组 ID。</p>",
+          "example": "proxy-xxxxxxxx",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理连接地址 ID。</p>",
+          "example": "proxy-address-xxxxxxxx",
+          "member": "string",
+          "name": "ProxyAddressId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBProxySSLConfigResponse": {
+      "document": "DescribeDBProxySSLConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SSL 是否开启。true 表示已开启，false 表示未开启。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SSLEnabled",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL 连接的地址（VIP 或域名）。</p>",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ConnectAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CA 证书下载地址。仅在 SSL 开启时有值。</p>",
+          "example": "https://example.com/ca-cert.pem",
+          "member": "string",
+          "name": "CAUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBProxySpecsRequest": {
       "document": "DescribeDBProxySpecs请求参数结构体",
       "members": [
@@ -10859,6 +11181,79 @@
           "name": "DealName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBProxySSLConfigRequest": {
+      "document": "ModifyDBProxySSLConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，指定要修改 SSL 配置的数据库代理所属的目标实例",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理组 ID，指定要修改 SSL 配置的代理组",
+          "example": "proxygrp-xxxxxxxx",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理地址 ID，指定要修改 SSL 配置的代理连接地址",
+          "example": "proxyaddr-xxxxxxxx",
+          "member": "string",
+          "name": "ProxyAddressId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSL 开关。true：开启 SSL；false：关闭 SSL",
+          "example": "true",
+          "member": "bool",
+          "name": "SSLEnabled",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "连接地址。SSLEnabled 为 true 时必填，需与代理地址的 Vip 保持一致，用于 SSL 证书校验",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ConnectAddress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBProxySSLConfigResponse": {
+      "document": "ModifyDBProxySSLConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务 ID。可通过 DescribeTasks 接口查询任务执行进度。当 SSL 状态无变更时返回 0，无需等待任务",
+          "example": "12",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

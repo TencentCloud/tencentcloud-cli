@@ -11,26 +11,16 @@ Output:
 ```
 {
     "Response": {
-        "EnableScan": true,
-        "Cycle": 1,
-        "BeginScanAt": "abc",
-        "Timeout": 1,
-        "ScanRangeType": "abc",
-        "ScanIDs": [
-            {
-                "IsAll": true,
-                "RangeType": "abc",
-                "IDs": [
-                    "abc"
-                ]
-            }
-        ],
-        "ScanPath": [
-            "abc"
-        ],
-        "ScanPathMode": "abc",
-        "IsIncludePath": true,
-        "RequestId": "abc"
+        "BeginScanAt": "",
+        "Cycle": 0,
+        "EnableScan": false,
+        "IsIncludePath": false,
+        "ScanIDs": [],
+        "ScanPath": [],
+        "ScanPathMode": "SCAN_PATH_DEFAULT",
+        "ScanRangeType": "",
+        "Timeout": 0,
+        "RequestId": "0b3485e4-f03f-4df6-9bd5-ab7bc2f75c51"
     }
 }
 ```

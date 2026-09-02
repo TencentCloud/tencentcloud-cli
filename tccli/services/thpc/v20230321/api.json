@@ -35,6 +35,13 @@
       "output": "CreateClusterResponse",
       "status": "online"
     },
+    "CreateScheduledAction": {
+      "document": "为指定集群队列创建定时伸缩任务，按计划时间自动调整队列的节点数量。",
+      "input": "CreateScheduledActionRequest",
+      "name": "创建定时伸缩任务",
+      "output": "CreateScheduledActionResponse",
+      "status": "online"
+    },
     "CreateWorkspaces": {
       "document": "本接口 (CreateWorkspaces) 用于创建工作空间。",
       "input": "CreateWorkspacesRequest",
@@ -77,6 +84,13 @@
       "output": "DeleteQueueResponse",
       "status": "online"
     },
+    "DeleteScheduledAction": {
+      "document": "删除指定的定时伸缩任务。",
+      "input": "DeleteScheduledActionRequest",
+      "name": "删除定时伸缩任务",
+      "output": "DeleteScheduledActionResponse",
+      "status": "online"
+    },
     "DescribeAutoScalingConfiguration": {
       "document": "本接口(DescribeAutoScalingConfiguration)用于查询集群弹性伸缩配置信息。本接口仅适用于弹性伸缩类型为THPC_AS的集群。",
       "input": "DescribeAutoScalingConfigurationRequest",
@@ -112,6 +126,13 @@
       "output": "DescribeInitNodeScriptsResponse",
       "status": "online"
     },
+    "DescribeInstanceFamilies": {
+      "document": "查询指定集群可用的机型族列表，用于弹性伸缩配置时选择机型族。",
+      "input": "DescribeInstanceFamiliesRequest",
+      "name": "查询可用机型族列表",
+      "output": "DescribeInstanceFamiliesResponse",
+      "status": "online"
+    },
     "DescribeJobSubmitInfo": {
       "document": "本接口用于查询作业的提交信息。",
       "input": "DescribeJobSubmitInfoRequest",
@@ -140,11 +161,32 @@
       "output": "DescribeNodesResponse",
       "status": "online"
     },
+    "DescribeQueueAutoScaling": {
+      "document": "查询指定集群的队列弹性伸缩配置信息。",
+      "input": "DescribeQueueAutoScalingRequest",
+      "name": "查询队列弹性伸缩配置",
+      "output": "DescribeQueueAutoScalingResponse",
+      "status": "online"
+    },
+    "DescribeQueueAutoScalingOverview": {
+      "document": "查询指定集群的队列弹性伸缩概览信息，包括期望容量、当前容量、当前动态节点数、有效定时任务数等。",
+      "input": "DescribeQueueAutoScalingOverviewRequest",
+      "name": "查询队列弹性伸缩概览",
+      "output": "DescribeQueueAutoScalingOverviewResponse",
+      "status": "online"
+    },
     "DescribeQueues": {
       "document": "本接口(DescribeQueues)用于查询指定集群队列概览信息列表。",
       "input": "DescribeQueuesRequest",
       "name": "查询队列列表",
       "output": "DescribeQueuesResponse",
+      "status": "online"
+    },
+    "DescribeScheduledActions": {
+      "document": "查询指定集群队列的定时伸缩任务列表。",
+      "input": "DescribeScheduledActionsRequest",
+      "name": "查询定时伸缩任务",
+      "output": "DescribeScheduledActionsResponse",
       "status": "online"
     },
     "DescribeWorkspaces": {
@@ -159,6 +201,13 @@
       "input": "DetachNodesRequest",
       "name": "从集群解绑节点",
       "output": "DetachNodesResponse",
+      "status": "online"
+    },
+    "InquirePriceCreateWorkspaces": {
+      "document": "本接口(InquirePriceCreateWorkspaces)用于创建实例询价。",
+      "input": "InquirePriceCreateWorkspacesRequest",
+      "name": "创建工作空间询价",
+      "output": "InquirePriceCreateWorkspacesResponse",
       "status": "online"
     },
     "InquirePriceModifyWorkspacesChargeType": {
@@ -189,6 +238,13 @@
       "output": "ModifyNodeAttributeResponse",
       "status": "online"
     },
+    "ModifyScheduledAction": {
+      "document": "修改指定的定时伸缩任务配置。",
+      "input": "ModifyScheduledActionRequest",
+      "name": "修改定时伸缩任务",
+      "output": "ModifyScheduledActionResponse",
+      "status": "online"
+    },
     "ModifyWorkspacesAttribute": {
       "document": "本接口 (ModifyWorkspacesAttribute) 用于修改工作空间的属性（目前只支持修改工作空间的名称）。",
       "input": "ModifyWorkspacesAttributeRequest",
@@ -215,6 +271,13 @@
       "input": "SetAutoScalingConfigurationRequest",
       "name": "设置弹性伸缩配置信息",
       "output": "SetAutoScalingConfigurationResponse",
+      "status": "online"
+    },
+    "SetQueueAutoScaling": {
+      "document": "为指定集群的队列配置弹性伸缩策略，包括伸缩容量、扩容方式等。",
+      "input": "SetQueueAutoScalingRequest",
+      "name": "配置队列弹性伸缩",
+      "output": "SetQueueAutoScalingResponse",
       "status": "online"
     },
     "SubmitJob": {
@@ -1512,6 +1575,87 @@
       ],
       "type": "object"
     },
+    "CreateScheduledActionRequest": {
+      "document": "CreateScheduledAction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "hpc-qd1qqnyt",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称。</p>",
+          "example": "lurka-auto-as",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时伸缩任务名称。</p>",
+          "example": "scale-out-morning",
+          "member": "string",
+          "name": "ScheduledActionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时伸缩任务生效起始时间，格式：YYYY-MM-DD HH:MM:SS。</p>",
+          "example": "2026-08-14T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时触发后队列期望节点数。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "DesiredCapacity",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时伸缩任务生效结束时间，格式：YYYY-MM-DD HH:MM:SS。不传则永久有效。</p>",
+          "example": "2026-08-31T23:59:59+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重复策略，遵循 cron 表达式格式。不传则只执行一次。</p>",
+          "example": "0 9 * * 1-5",
+          "member": "string",
+          "name": "Recurrence",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScheduledActionResponse": {
+      "document": "CreateScheduledAction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateWorkspacesRequest": {
       "document": "CreateWorkspaces请求参数结构体",
       "members": [
@@ -1926,6 +2070,33 @@
       ],
       "type": "object"
     },
+    "DeleteScheduledActionRequest": {
+      "document": "DeleteScheduledAction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>定时伸缩任务 ID 列表，最多 20 个。</p>",
+          "example": "[\"as-824b4600\"]",
+          "member": "string",
+          "name": "ScheduledActionIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScheduledActionResponse": {
+      "document": "DeleteScheduledAction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAutoScalingConfigurationRequest": {
       "document": "DescribeAutoScalingConfiguration请求参数结构体",
       "members": [
@@ -2213,6 +2384,42 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceFamiliesRequest": {
+      "document": "DescribeInstanceFamilies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "hpc-pgzjxqkf",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 厂商过滤条件。</p>",
+          "example": "HYGON",
+          "member": "string",
+          "name": "Vendor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceFamiliesResponse": {
+      "document": "DescribeInstanceFamilies返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeJobSubmitInfoRequest": {
       "document": "DescribeJobSubmitInfo请求参数结构体",
       "members": [
@@ -2475,6 +2682,78 @@
       ],
       "type": "object"
     },
+    "DescribeQueueAutoScalingOverviewRequest": {
+      "document": "DescribeQueueAutoScalingOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID。",
+          "example": "hpc-d9ng14l3",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列名称列表。不传则返回所有队列的弹性伸缩概览信息。",
+          "example": "[\"lurka-auto-as\"]",
+          "member": "string",
+          "name": "QueueNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueueAutoScalingOverviewResponse": {
+      "document": "DescribeQueueAutoScalingOverview返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueueAutoScalingRequest": {
+      "document": "DescribeQueueAutoScaling请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID。",
+          "example": "hpc-r7cjxd9c",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列名称。不传则返回所有队列的弹性伸缩配置。",
+          "example": "as-it-queue",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueueAutoScalingResponse": {
+      "document": "DescribeQueueAutoScaling返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQueuesRequest": {
       "document": "DescribeQueues请求参数结构体",
       "members": [
@@ -2531,6 +2810,60 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledActionsRequest": {
+      "document": "DescribeScheduledActions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "hpc-brv22s4t",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称。</p>",
+          "example": "thpc-as",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时伸缩任务 ID 列表。</p>",
+          "example": "[\"as-9904c9b\"]",
+          "member": "string",
+          "name": "ScheduledActionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态过滤条件。</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledActionsResponse": {
+      "document": "DescribeScheduledActions返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2901,6 +3234,84 @@
       ],
       "usage": "out"
     },
+    "ExpansionPolicy": {
+      "document": "扩容方式配置，定义用什么创建节点。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>扩容方式。可选值：LAUNCH_TEMPLATE（启动模板）、MULTI_CARD（多卡型混扩）。</p>",
+          "example": "LAUNCH_TEMPLATE",
+          "member": "string",
+          "name": "ExpansionMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动模板 ID 列表，最多 10 个。ExpansionMode=LAUNCH_TEMPLATE 时使用。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"lt-klioxlot\"]",
+          "member": "string",
+          "name": "LaunchTemplateIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考实例 ID，根据已有实例配置生成启动模板。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-nwjnj1cv",
+          "member": "string",
+          "name": "ReferenceInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动模板扩容覆盖配置。ExpansionMode=MULTI_CARD 时使用。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TemplateOverrides",
+          "name": "TemplateOverrides",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>候选规格排序策略。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExpansionPriority",
+          "name": "ExpansionPriority",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExpansionPriority": {
+      "document": "候选计算资源规格排序策略。LARGE_FIRST/SMALL_FIRST 表示按规格大小选择候选资源，GPU 场景按卡数判断大小。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>候选规格排序方式。可选值：LARGE_FIRST（大规格优先）、SMALL_FIRST（小规格优先）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LARGE_FIRST",
+          "member": "string",
+          "name": "InstanceSpecPriority",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。",
       "members": [
@@ -3061,6 +3472,232 @@
         }
       ],
       "usage": "out"
+    },
+    "InquirePriceCreateWorkspacesRequest": {
+      "document": "InquirePriceCreateWorkspaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。 <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>",
+          "example": "无",
+          "member": "SpacePlacement",
+          "name": "Placement",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "SpaceChargePrepaid",
+          "name": "SpaceChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间计费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "SpaceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间规格",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "img-irmer45l",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间系统盘信息",
+          "example": "无",
+          "member": "SpaceSystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间数据盘信息",
+          "example": "无",
+          "member": "SpaceDataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络相关信息",
+          "example": "无",
+          "member": "SpaceVirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽相关信息设置",
+          "example": "无",
+          "member": "SpaceInternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "购买工作空间数量",
+          "example": "1",
+          "member": "int64",
+          "name": "SpaceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间显示名称",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间登陆设置",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间所属安全组",
+          "example": "[\"sg-ajhn9qtq\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "增强服务",
+          "example": "无",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否只预检此次请求",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "提供给工作空间使用的用户数据",
+          "example": "TXlVc2VyRGF0YQo=",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组id",
+          "example": "['ps-3p88qhfo']",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签描述列表",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群ID",
+          "example": "hpc-a5n666lo",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CAM角色名称",
+          "example": "testroleName001",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li><br><li>Windows 实例：主机名名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。</li><br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li><br><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server{R:3}`，购买1台时，实例主机名为`server3`；购买2台时，实例主机名分别为`server3`，`server4`。支持指定多个模式串`{R:x}`。</li><br><li>购买多台实例，如果不指定模式串，则在实例主机名添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server`，购买2台时，实例主机名分别为`server1`，`server2`。</li>",
+          "example": "MyHostName",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceCreateWorkspacesResponse": {
+      "document": "InquirePriceCreateWorkspaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该参数表示对应配置实例的价格",
+          "example": "无",
+          "member": "Price",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InquirePriceModifyWorkspacesChargeTypeRequest": {
       "document": "InquirePriceModifyWorkspacesChargeType请求参数结构体",
@@ -3768,6 +4405,60 @@
     },
     "ModifyNodeAttributeResponse": {
       "document": "ModifyNodeAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyScheduledActionRequest": {
+      "document": "ModifyScheduledAction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>定时伸缩任务 ID。</p>",
+          "example": "as-6be93212",
+          "member": "string",
+          "name": "ScheduledActionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时伸缩任务名称。</p>",
+          "example": "scale-out-morning",
+          "member": "string",
+          "name": "ScheduledActionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>定时触发后队列期望节点数。</p>",
+          "example": "",
+          "member": "int64",
+          "name": "DesiredCapacity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态。</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyScheduledActionResponse": {
+      "document": "ModifyScheduledAction返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4536,6 +5227,34 @@
       ],
       "usage": "both"
     },
+    "ScalingPolicy": {
+      "document": "伸缩策略配置，定义队列的容量语义。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>期望节点数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "DesiredCapacity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>伸缩单位。可选值：NODE（按节点）、GPU_CARD（按 GPU 卡）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NODE",
+          "member": "string",
+          "name": "ScalingUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SetAutoScalingConfigurationRequest": {
       "document": "SetAutoScalingConfiguration请求参数结构体",
       "members": [
@@ -4589,6 +5308,60 @@
     },
     "SetAutoScalingConfigurationResponse": {
       "document": "SetAutoScalingConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetQueueAutoScalingRequest": {
+      "document": "SetQueueAutoScaling请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID。",
+          "example": "hpc-r7cjxd9c",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列名称。",
+          "example": "as-it-queue",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>伸缩容量策略，用于设置目标容量及容量单位。单独传入时仅更新容量相关配置，未传字段保持原值。</p>",
+          "example": "无",
+          "member": "ScalingPolicy",
+          "name": "ScalingPolicy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩容策略，用于配置启动模板、机型族、GPU 卡数、规格优先级和多可用区等扩容方式。单独传入时仅更新扩容相关配置，未传字段保持原值。</p>",
+          "example": "无",
+          "member": "ExpansionPolicy",
+          "name": "ExpansionPolicy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SetQueueAutoScalingResponse": {
+      "document": "SetQueueAutoScaling返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5403,6 +6176,56 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TemplateOverrides": {
+      "document": "启动模板扩容覆盖配置。ExpansionMode=MULTI_CARD 时通过此对象指定机型族、卡数折算等覆盖参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>候选机型族列表，最多 10 个。MULTI_CARD 模式的明确标志字段。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"GC50s\"]",
+          "member": "string",
+          "name": "InstanceFamilies",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>每节点 GPU 卡数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "GpuCountPerNode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用混合 GPU 卡数折算，默认 false。未传时保持已持久化的混卡开关。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMixedGpuCount",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用多可用区扩容。未传时保持已持久化的分区策略，局部更新不得覆盖。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMultiZone",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

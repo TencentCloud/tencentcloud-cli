@@ -4002,7 +4002,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定值，为\"monitor\"",
+          "document": "<p>固定值，为&quot;monitor&quot;</p>",
           "example": "monitor",
           "member": "string",
           "name": "Module",
@@ -4011,7 +4011,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称，不超过60字符",
+          "document": "<p>策略名称，不超过60字符</p>",
           "example": "云服务器告警策略",
           "member": "string",
           "name": "PolicyName",
@@ -4020,7 +4020,7 @@
         },
         {
           "disabled": false,
-          "document": "监控类型 MT_QCE=云产品监控",
+          "document": "<p>监控类型 MT_QCE=云产品监控</p>",
           "example": "MT_QCE",
           "member": "string",
           "name": "MonitorType",
@@ -4029,7 +4029,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device",
+          "document": "<p>告警策略类型，由 <a href=\"https://cloud.tencent.com/document/product/248/48683\">DescribeAllNamespaces</a> 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device</p>",
           "example": "cvm_device",
           "member": "string",
           "name": "Namespace",
@@ -4038,7 +4038,7 @@
         },
         {
           "disabled": false,
-          "document": "备注，不超过100字符，仅支持中英文、数字、下划线、-",
+          "document": "<p>备注，不超过100字符，仅支持中英文、数字、下划线、-</p>",
           "example": "策略demo",
           "member": "string",
           "name": "Remark",
@@ -4047,7 +4047,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用 0=停用 1=启用，可不传 默认为1",
+          "document": "<p>是否启用 0=停用 1=启用，可不传 默认为1</p>",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -4056,7 +4056,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。",
+          "document": "<p>项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 <a href=\"https://console.cloud.tencent.com/project\">账号中心-项目管理</a> 中查看。</p>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -4065,7 +4065,7 @@
         },
         {
           "disabled": false,
-          "document": "触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 [DescribeConditionsTemplateList](https://cloud.tencent.com/document/api/248/70250) 接口获取。",
+          "document": "<p>触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 <a href=\"https://cloud.tencent.com/document/api/248/70250\">DescribeConditionsTemplateList</a> 接口获取。</p>",
           "example": "9674169",
           "member": "int64",
           "name": "ConditionTemplateId",
@@ -4074,7 +4074,7 @@
         },
         {
           "disabled": false,
-          "document": "指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。",
+          "document": "<p>指标触发条件，支持的指标可以从 <a href=\"https://cloud.tencent.com/document/product/248/51283\">DescribeAlarmMetrics</a> 查询。</p>",
           "example": "无",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
@@ -4083,7 +4083,7 @@
         },
         {
           "disabled": false,
-          "document": "事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。",
+          "document": "<p>事件触发条件，支持的事件可以从 <a href=\"https://cloud.tencent.com/document/product/248/51284\">DescribeAlarmEvents</a> 查询。</p>",
           "example": "无",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
@@ -4092,7 +4092,7 @@
         },
         {
           "disabled": false,
-          "document": "通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得",
+          "document": "<p>通知规则 Id 列表，由 <a href=\"https://cloud.tencent.com/document/product/248/51280\">DescribeAlarmNotices</a> 获得</p>",
           "example": "[\"notice-bv9b4ghqbg\",\"notice-gj2n9wnt29\"]",
           "member": "string",
           "name": "NoticeIds",
@@ -4101,7 +4101,7 @@
         },
         {
           "disabled": false,
-          "document": "触发任务列表",
+          "document": "<p>触发任务列表</p>",
           "example": "无",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
@@ -4110,7 +4110,7 @@
         },
         {
           "disabled": false,
-          "document": "全局过滤条件",
+          "document": "<p>全局过滤条件</p>",
           "example": "无",
           "member": "AlarmPolicyFilter",
           "name": "Filter",
@@ -4119,7 +4119,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合维度列表，指定按哪些维度 key 来做 group by",
+          "document": "<p>聚合维度列表，指定按哪些维度 key 来做 group by</p>",
           "example": "[\"service_name\"]",
           "member": "string",
           "name": "GroupBy",
@@ -4128,7 +4128,16 @@
         },
         {
           "disabled": false,
-          "document": "模板绑定的标签",
+          "document": "<p>是否绑定全部对象。如果是的话，不需要再传filter或者调用BindPolicyObject，0=否，1=是，默认为否</p><p>取值范围：[0, 1]</p><p>默认值：0</p><p>不是所有策略类型都支持绑定全部对象</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsBindAll",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板绑定的标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -4137,7 +4146,7 @@
         },
         {
           "disabled": false,
-          "document": "日志告警信息",
+          "document": "<p>日志告警信息</p>",
           "example": "无",
           "member": "LogAlarmReq",
           "name": "LogAlarmReqInfo",
@@ -4146,8 +4155,8 @@
         },
         {
           "disabled": false,
-          "document": "告警分级通知规则配置",
-          "example": "[NoticeId:\"notice-xxxx,Classification:\"[\"Warn\"],PolicyId:\"policy-xxx\"]",
+          "document": "<p>告警分级通知规则配置</p>",
+          "example": "无",
           "member": "AlarmHierarchicalNotice",
           "name": "HierarchicalNotices",
           "required": false,
@@ -4155,7 +4164,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑",
+          "document": "<p>迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑</p>",
           "example": "1",
           "member": "int64",
           "name": "MigrateFlag",
@@ -4164,7 +4173,7 @@
         },
         {
           "disabled": false,
-          "document": "事件配置的告警",
+          "document": "<p>事件配置的告警</p>",
           "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
@@ -4173,7 +4182,7 @@
         },
         {
           "disabled": false,
-          "document": "附加告警内容",
+          "document": "<p>附加告警内容</p>",
           "example": "1 AND 2",
           "member": "string",
           "name": "AdditionalAlarmContent",
@@ -4182,8 +4191,8 @@
         },
         {
           "disabled": false,
-          "document": "通知模板绑定信息",
-          "example": "[{\"NoticeContentTmplID\":\"tmpl-xxx\",\"PolicyID\":\"policy-xxx\",\"NoticeID\":\"notice-xxx\"}]",
+          "document": "<p>通知模板绑定信息</p>",
+          "example": "无",
           "member": "NoticeContentTmplBindInfo",
           "name": "NoticeContentTmplBindInfos",
           "required": false,
@@ -4197,7 +4206,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略 ID",
+          "document": "<p>告警策略 ID</p>",
           "example": "policy-hi498gw3h2",
           "member": "string",
           "name": "PolicyId",
@@ -4207,7 +4216,7 @@
         },
         {
           "disabled": false,
-          "document": "可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID",
+          "document": "<p>可用于实例、实例组的绑定和解绑接口（<a href=\"https://cloud.tencent.com/document/product/248/40421\">BindingPolicyObject</a>、<a href=\"https://cloud.tencent.com/document/product/248/40568\">UnBindingAllPolicyObject</a>、<a href=\"https://cloud.tencent.com/document/product/248/40567\">UnBindingPolicyObject</a>）的策略 ID</p>",
           "example": "1234556",
           "member": "string",
           "name": "OriginId",

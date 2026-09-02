@@ -16926,7 +16926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例唯一标识符（字符串表示）。",
+          "document": "<p>实例唯一标识符（字符串表示）。</p>",
           "example": "emr-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -16935,7 +16935,7 @@
         },
         {
           "disabled": false,
-          "document": "需要变更的区域名称。",
+          "document": "<p>需要变更的区域名称。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -16944,21 +16944,30 @@
         },
         {
           "disabled": false,
-          "document": "该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。",
+          "document": "<p>该区域变配后的目标节点数量，所有区域节点总数应大于等于3，小于等于50。</p>",
           "example": "4",
           "member": "int64",
           "name": "NodeNum",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808\t",
+          "document": "<p>唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae360632808</p>",
           "example": "sdcdwxxxws",
           "member": "string",
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储空间大小，需要是100的倍数，且不允许比当前存储空间小（只允许扩容）</p><p>单位：GB</p>",
+          "example": "300",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

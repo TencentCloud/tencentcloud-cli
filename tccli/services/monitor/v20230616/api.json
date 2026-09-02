@@ -1488,7 +1488,7 @@
         {
           "disabled": false,
           "document": "<p>自定义内容模板ID</p>",
-          "example": "*",
+          "example": "ntpl-slv***bm",
           "member": "string",
           "name": "TmplID",
           "output_required": false,
@@ -2924,7 +2924,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内容模板",
+          "document": "<p>内容模板</p>",
           "example": "告警通知模板{{.PolicyName}}",
           "member": "string",
           "name": "ContentTmpl",
@@ -2935,13 +2935,24 @@
         },
         {
           "disabled": false,
-          "document": "标题模板",
+          "document": "<p>标题模板</p>",
           "example": "标题{{.PolicyName}}",
           "member": "string",
           "name": "TitleTmpl",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知内容模版标题自定义颜色</p>",
+          "example": "无",
+          "member": "RobotNoticeTitleColor",
+          "name": "TitleColor",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -5314,6 +5325,73 @@
         }
       ],
       "usage": "out"
+    },
+    "RobotNoticeTitleColor": {
+      "document": "告警通知内容模版自定义标题颜色",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通知内容模版自定义标题颜色默认颜色</p>",
+          "example": "violet",
+          "member": "string",
+          "name": "Default",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知内容模版自定义标题颜色规则，label 匹配设置颜色</p>",
+          "example": "无",
+          "member": "RobotNoticeTitleColorRules",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RobotNoticeTitleColorRules": {
+      "document": "告警通知内容模版自定义标题颜色 key-value 匹配规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通知内容模版自定义颜色 Label 匹配的 Key</p>",
+          "example": "current_level",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知内容模版自定义颜色 Label 匹配的 Value</p>",
+          "example": "Serious",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知内容模版自定义颜色</p>",
+          "example": "wathet",
+          "member": "string",
+          "name": "Color",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Rule": {
       "document": "转发规则",

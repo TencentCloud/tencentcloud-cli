@@ -1012,7 +1012,7 @@
       {
         "document": "查询资源包列表\n",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourcePackageList\n<公共请求参数>\n\n{\n    \"PackageId\": [\n        \"package-bst68sh3\"\n    ],\n    \"PackageName\": [\n        \"自定义资源包名称-1\"\n    ],\n    \"PackageType\": [\n        \"CCU\"\n    ],\n    \"PackageRegion\": [\n        \"chineseMainland\"\n    ],\n    \"Status\": [\n        \"using\"\n    ],\n    \"OrderBy\": [\n        \"createTime\"\n    ],\n    \"OrderDirection\": \"desc\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 20,\n        \"Detail\": [\n            {\n                \"AppId\": 12387234,\n                \"PackageId\": \"package-cbhsyegx\",\n                \"PackageName\": \"MyPackageName\",\n                \"PackageType\": \"CCU\",\n                \"PackageRegion\": \"chineseMainland\",\n                \"Status\": \"using\",\n                \"PackageTotalSpec\": 10000000,\n                \"PackageUsedSpec\": 2394.3,\n                \"HasQuota\": true,\n                \"BindInstanceInfos\": [\n                    {\n                        \"InstanceId\": \"cynosdbpg-ins-bzkxxrmt\",\n                        \"InstanceRegion\": \"ap-guangzhou\",\n                        \"InstanceType\": \"cynosdb-serverless\"\n                    }\n                ],\n                \"StartTime\": \"2023-12-10 00:00:00\",\n                \"ExpireTime\": \"2025-11-10 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"e0c28bb4-a0f2-4194-a646-b8bcf777b5ce\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 20,\n        \"Detail\": [\n            {\n                \"AppId\": 12387234,\n                \"PackageId\": \"package-cbhsyegx\",\n                \"PackageName\": \"MyPackageName\",\n                \"PackageType\": \"CCU\",\n                \"PackageRegion\": \"chineseMainland\",\n                \"Status\": \"using\",\n                \"PackageTotalSpec\": 10000000,\n                \"PackageUsedSpec\": 2394.3,\n                \"HasQuota\": true,\n                \"BindInstanceInfos\": [\n                    {\n                        \"InstanceId\": \"cynosdbpg-ins-bzkxxrmt\",\n                        \"InstanceRegion\": \"ap-guangzhou\",\n                        \"InstanceType\": \"cynosdb-serverless\"\n                    }\n                ],\n                \"StartTime\": \"2023-12-10 00:00:00\",\n                \"ExpireTime\": \"2025-11-10 00:00:00\",\n                \"PackageVersion\": \"common\"\n            }\n        ],\n        \"RequestId\": \"e0c28bb4-a0f2-4194-a646-b8bcf777b5ce\"\n    }\n}",
         "title": "查询资源包列表"
       }
     ],
@@ -1358,6 +1358,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterGlobalEncryption\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"IsOpenGlobalEncryption\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"22f221ae-40d7-4b73-84bb-ae2d090a3beb\",\n        \"TaskId\": 177736\n    }\n}",
         "title": "关闭全局加密"
+      }
+    ],
+    "ModifyClusterLevel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterLevel\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-6g29wqnh\",\n    \"ClusterLevel\": \"L2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 41854,\n        \"RequestId\": \"90e294d3-3e02-4854-bec4-cf80c39ae827\"\n    }\n}",
+        "title": "修改集群级别"
       }
     ],
     "ModifyClusterName": [

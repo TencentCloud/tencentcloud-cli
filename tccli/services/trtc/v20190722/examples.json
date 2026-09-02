@@ -64,6 +64,14 @@
         "title": "上传图片"
       }
     ],
+    "CreateRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecognizeVocabV3\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3196438f-39ef-47c0-98b8-8a50a7b4a313\"\n    }\n}",
+        "title": "创建热词列表示例"
+      }
+    ],
     "DeleteCloudModeration": [
       {
         "document": "",
@@ -110,6 +118,14 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=DeletePicture\n&PictureId=18813\n&SdkAppId=140000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "删除图片"
+      }
+    ],
+    "DeleteRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecognizeVocabV3\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aadd2e37-9878-44ff-91f5-2f60b38739bc\"\n    }\n}",
+        "title": "删除词表"
       }
     ],
     "DeleteVoicePrint": [
@@ -406,6 +422,30 @@
         "title": "解散房间"
       }
     ],
+    "DownloadRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadRecognizeVocabV3\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cab3e8a6-6318-415e-9d3d-bd9e93465950\"\n    }\n}",
+        "title": "下载词表内容"
+      }
+    ],
+    "GetRecognizeVocabListV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecognizeVocabListV3\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f612975e-4bca-4028-8eb6-d065f09f8345\"\n    }\n}",
+        "title": "查询词表列表示例"
+      }
+    ],
+    "GetRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecognizeVocabV3\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0448aaa-e778-4495-b37a-32dc7475a7fd\"\n    }\n}",
+        "title": "查询单个词表示例"
+      }
+    ],
     "ModifyCloudModeration": [
       {
         "document": "",
@@ -460,6 +500,14 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUserByStrRoomId\n&SdkAppId=1400000001\n&RoomId=abcd\n&UserIds.0=test1\n&UserIds.1=test2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "移出用户"
+      }
+    ],
+    "SetVocabStateV3": [
+      {
+        "document": "1=设为默认（激活），0=取消",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetVocabStateV3\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5032e115-d218-45af-8987-c8e2873db233\"\n    }\n}",
+        "title": "设置默认词表/激活状态"
       }
     ],
     "StartAIConversation": [
@@ -658,6 +706,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePublishCdnStream\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"TaskId\": \"-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..\",\n    \"SequenceNumber\": 20,\n    \"WithTranscoding\": 1,\n    \"PublishCdnParams\": [\n        {\n            \"IsTencentCdn\": 1,\n            \"PublishCdnUrl\": \"rtmp://3891.livepush.myqcloud.com/live/trtc_publishcdn_test2?bizid=3891&txSecret=23aeb6ec16fd275af0d00a447b2282f7&txTime=62635BDE\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"-nHPekVU7h******sceOqAZ1YVQE.\"\n    }\n}",
         "title": "更新转推参数"
+      }
+    ],
+    "UpdateRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecognizeVocabV3\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ed76420-65dc-4a75-a3b3-0e224ec2d050\"\n    }\n}",
+        "title": "更新词表"
       }
     ],
     "UpdateStreamIngest": [

@@ -40,6 +40,14 @@
         "title": "关闭实例外网"
       }
     ],
+    "CloseDBProxyAddress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseDBProxyAddress\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-2wvpv38j\",\n    \"AddressId\": \"proxyaddr-0p3p1r76\",\n    \"ProxyGroupId\": \"proxy-89ap4mrx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100282,\n        \"RequestId\": \"c390a1f8-1907-47fd-b40f-d9eb5de8d0d1\"\n    }\n}",
+        "title": "删除指定Proxy的连接地址"
+      }
+    ],
     "CreateAccount": [
       {
         "document": "创建数据库普通账号",
@@ -58,7 +66,7 @@
       {
         "document": "创建审计日志文件",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-nqg1hcnj\",\n    \"StartTime\": \"2026-03-25 00:00:00\",\n    \"EndTime\": \"2026-03-25 01:00:00\",\n    \"Product\": \"postgres\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56707f2b-f311-4448-97bf-8c6323072aef\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FileName\": \"\",\n        \"RequestId\": \"56707f2b-f311-4448-97bf-8c6323072aef\"\n    }\n}",
         "title": "创建审计日志文件"
       }
     ],
@@ -92,6 +100,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBProxy\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-ll68q8z3\",\n    \"VpcId\": \"vpc-evvog2gd\",\n    \"SubnetId\": \"subnet-clk8il4i\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 2,\n            \"Zone\": \"ap-guangzhou-3\",\n            \"Cpu\": 2,\n            \"Mem\": 4\n        }\n    ],\n    \"SecurityGroup\": [\n        \"sg-xxxxxxxx\"\n    ],\n    \"Description\": \"test proxy\",\n    \"ConnectionPoolLimit\": 200\n}",
         "output": "{\n    \"Response\": {\n        \"DealName\": \"20260523594022883452641\",\n        \"ProxyGroupId\": \"proxygroup-1x2edzxh\",\n        \"RequestId\": \"ba9bf5a6-907a-43de-b81b-41c7430c1f6c\"\n    }\n}",
         "title": "创建数据库代理"
+      }
+    ],
+    "CreateDBProxyAddress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBProxyAddress\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-2wvpv38j\",\n    \"VpcId\": \"vpc-1dq8ehm3\",\n    \"SubnetId\": \"subnet-6yui3ok8\",\n    \"ProxyGroupId\": \"proxy-nlpsb4jp\",\n    \"SecurityGroup\": [\n        \"sg-9rlup3c5\"\n    ],\n    \"Description\": \"create new address\",\n    \"ConnectionPool\": true,\n    \"WeightMode\": \"custom\",\n    \"ProxyAllocation\": [\n        {\n            \"NodeId\": \"postgres-2wvpv38j\",\n            \"Role\": \"master\",\n            \"Weight\": 100,\n            \"Status\": \"online\"\n        }\n    ],\n    \"RoAutoAdd\": true,\n    \"LatencyRemove\": true,\n    \"LatencyRemoveTime\": 10,\n    \"MinRouteNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100200,\n        \"RequestId\": \"d55c34b5-dfe0-43bf-96e8-df7880f9bace\"\n    }\n}",
+        "title": "创建Proxy连接地址"
       }
     ],
     "CreateDatabase": [
@@ -482,6 +498,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBProxy\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-oul13k0b\"\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"ProxyInfos\": [\n            {\n                \"ConnectionPoolLimit\": 0,\n                \"CreateTime\": \"2026-06-17 16:46:12\",\n                \"Description\": \"\",\n                \"ProxyAddressSet\": [\n                    {\n                        \"AddressId\": \"proxyaddr-80ab0kho\",\n                        \"ConnectionPool\": true,\n                        \"ConnectionPoolLimit\": 300,\n                        \"Description\": \"\",\n                        \"Routes\": [\n                            {\n                                \"NodeId\": \"postgres-oul13k0b\",\n                                \"Role\": \"master\",\n                                \"Status\": \"online\",\n                                \"Weight\": 100\n                            }\n                        ],\n                        \"SubnetId\": \"6888276\",\n                        \"Vip\": \"10.0.0.91\",\n                        \"VpcId\": \"12115942\",\n                        \"Vport\": 5432\n                    }\n                ],\n                \"ProxyGroupId\": \"proxy-i36xgkkt\",\n                \"ProxyNodeSet\": [\n                    {\n                        \"Connection\": 0,\n                        \"Cpu\": 2,\n                        \"Mem\": 4000,\n                        \"ProxyNodeId\": \"proxynode-d1d9to0k\",\n                        \"Status\": \"online\",\n                        \"Zone\": \"ap-guangzhou-3\"\n                    }\n                ],\n                \"ProxyVersion\": \"1.4.9\",\n                \"Status\": \"online\",\n                \"TaskStatus\": \"\"\n            }\n        ],\n        \"RequestId\": \"81a642d4-3ec9-43b3-b74e-be7b22dc391e\"\n    }\n}",
         "title": "查询数据库代理"
+      }
+    ],
+    "DescribeDBProxySSLConfig": [
+      {
+        "document": "查询代理 SSL 配置成功，返回 SSL 开启状态、连接地址及 CA 证书下载链接。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBProxySSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-xxxxxxxx\",\n    \"ProxyGroupId\": \"proxy-group-xxxxxxxx\",\n    \"ProxyAddressId\": \"proxy-address-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SSLEnabled\": true,\n        \"ConnectAddress\": \"10.0.0.1\",\n        \"CAUrl\": \"https://example.com/ca-cert.pem\",\n        \"RequestId\": \"ba9bf5a6-907a-43de-b81b-41c7430c1f6c\"\n    }\n}",
+        "title": "查询代理 SSL 配置"
       }
     ],
     "DescribeDBProxySpecs": [
@@ -956,6 +980,20 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBProxyAddress\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-2wvpv38j\",\n    \"AddressId\": \"proxyaddr-hw78kg1m\",\n    \"ProxyGroupId\": \"proxy-nlpsb4jp\",\n    \"Description\": \"modify\",\n    \"ConnectionPool\": false,\n    \"WeightMode\": \"custom\",\n    \"ProxyAllocation\": [\n        {\n            \"NodeId\": \"postgres-2wvpv38j\",\n            \"Role\": \"master\",\n            \"Status\": \"online\"\n        }\n    ],\n    \"RoAutoAdd\": false,\n    \"LatencyRemove\": false,\n    \"LatencyRemoveTime\": 10,\n    \"MinRouteNum\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 100201,\n        \"RequestId\": \"15624379-9192-459e-97f4-52cdc4043a3a\"\n    }\n}",
         "title": "修改读写分离参数"
+      }
+    ],
+    "ModifyDBProxySSLConfig": [
+      {
+        "document": "为指定代理连接地址开启 SSL，需传入与代理地址 Vip 一致的 ConnectAddress",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBProxySSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-xxxxxxxx\",\n    \"ProxyGroupId\": \"proxygrp-xxxxxxxx\",\n    \"ProxyAddressId\": \"proxyaddr-xxxxxxxx\",\n    \"SSLEnabled\": true,\n    \"ConnectAddress\": \"10.0.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba9bf5a6-907a-43de-b81b-41c7430c1f6c\",\n        \"TaskId\": \"12\"\n    }\n}",
+        "title": "开启代理 SSL"
+      },
+      {
+        "document": "关闭指定代理连接地址的 SSL，无需传 ConnectAddress",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBProxySSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-xxxxxxxx\",\n    \"ProxyGroupId\": \"proxygrp-xxxxxxxx\",\n    \"ProxyAddressId\": \"proxyaddr-xxxxxxxx\",\n    \"SSLEnabled\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba9bf5a6-907a-43de-b81b-41c7430c1f6c\",\n        \"TaskId\": \"13\"\n    }\n}",
+        "title": "关闭代理 SSL"
       }
     ],
     "ModifyDatabaseOwner": [

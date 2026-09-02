@@ -4750,7 +4750,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云端特效 ID。",
+          "document": "<p>云端特效 ID。</p>",
           "example": "1001",
           "member": "string",
           "name": "Id",
@@ -4761,7 +4761,7 @@
         },
         {
           "disabled": false,
-          "document": "云端特效描述词。",
+          "document": "<p>云端特效描述词。</p>",
           "example": "小狗",
           "member": "string",
           "name": "Prompt",
@@ -4772,7 +4772,7 @@
         },
         {
           "disabled": false,
-          "document": "云端特效标签。",
+          "document": "<p>云端特效标签。</p>",
           "example": "动物",
           "member": "string",
           "name": "Flag",
@@ -4783,7 +4783,7 @@
         },
         {
           "disabled": false,
-          "document": "云端特效生成状态。\n生成中 - GENERATING。\n处理中 - PROCESSING。\n生成失败 - FAILED。\n已完成 - FINISH。\n",
+          "document": "<p>云端特效生成状态。<br>生成中 - GENERATING。<br>处理中 - PROCESSING。<br>生成失败 - FAILED。<br>已完成 - FINISH。</p>",
           "example": "FINISH",
           "member": "string",
           "name": "Status",
@@ -4794,7 +4794,7 @@
         },
         {
           "disabled": false,
-          "document": "特效信息，生成失败时，此处返回失败原因。",
+          "document": "<p>特效信息，生成失败时，此处返回失败原因。</p>",
           "example": "success",
           "member": "string",
           "name": "Message",
@@ -4805,7 +4805,7 @@
         },
         {
           "disabled": false,
-          "document": "云端特效预览图片。",
+          "document": "<p>云端特效预览图片。</p>",
           "example": "http://preview.image.com/pic.jpg",
           "member": "string",
           "name": "PreviewImageUrl",
@@ -4816,7 +4816,7 @@
         },
         {
           "disabled": false,
-          "document": "云端特效类型。\nPGC : 官方精品特效。\nAIGC : AI生成的特效。\nUGC : 用户上传特效。",
+          "document": "<p>云端特效类型。<br>PGC : 官方精品特效。<br>AIGC : AI生成的特效。<br>UGC : 用户上传特效。</p>",
           "example": "system_preset",
           "member": "string",
           "name": "Type",
@@ -4827,7 +4827,7 @@
         },
         {
           "disabled": false,
-          "document": "云端特效创建时间。",
+          "document": "<p>云端特效创建时间。</p>",
           "example": "2025-05-19T00:00:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -4838,7 +4838,7 @@
         },
         {
           "disabled": false,
-          "document": "云端特效更新时间。",
+          "document": "<p>云端特效更新时间。</p>",
           "example": "2025-05-20T00:00:00Z",
           "member": "string",
           "name": "UpdateTime",
@@ -11490,6 +11490,16 @@
           "example": "无",
           "member": "CloudEffectTemplateInfo",
           "name": "EffectTemplateList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>惩罚特效模板信息列表。</p>",
+          "example": "无",
+          "member": "CloudEffectTemplateInfo",
+          "name": "PunishmentEffectTemplateList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

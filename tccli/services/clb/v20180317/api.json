@@ -890,7 +890,7 @@
       "status": "online"
     },
     "ModifyLoadBalancerSla": {
-      "document": "本接口（ModifyLoadBalancerSla）用于调整按量计费模式实例的性能容量型规格，如共享型升级性能容量型，性能容量型实例规格调整。<br/>\n限制条件：\n- 共享型升级为性能容量型实例后，不支持再回退到共享型实例。\n- 传统型负载均衡实例不支持升级为性能容量型实例。",
+      "document": "本接口（ModifyLoadBalancerSla）用于调整按量计费模式实例的性能容量型规格，如共享型升级性能容量型，性能容量型实例规格调整。<br/>\n限制条件：\n- 共享型升级为性能容量型实例后，不支持再回退到共享型实例。\n- 传统型负载均衡实例不支持升级为性能容量型实例。\n\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。",
       "input": "ModifyLoadBalancerSlaRequest",
       "name": "调整实例的性能容量型规格",
       "output": "ModifyLoadBalancerSlaResponse",
@@ -1218,6 +1218,34 @@
         }
       ],
       "type": "object"
+    },
+    "ApiBaseItem": {
+      "document": "多协议 ApiBase 单条目。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>后端转发协议</p>",
+          "example": "chat",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Api Base URL</p>",
+          "example": "https://example.com",
+          "member": "string",
+          "name": "ApiBase",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AssociateBudgetRequest": {
       "document": "AssociateBudget请求参数结构体",
@@ -5114,7 +5142,7 @@
         {
           "disabled": false,
           "document": "<p>模型提供商</p>",
-          "example": "OpenAI",
+          "example": "openai",
           "member": "string",
           "name": "ModelProvider",
           "required": false,
@@ -5176,6 +5204,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>多协议 Api Base URL</p>",
+          "example": "无",
+          "member": "ApiBaseItem",
+          "name": "ApiBases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "<p>VPC ID</p>",
           "example": "vpc-lkdok8j3",
           "member": "string",
@@ -5195,7 +5232,7 @@
         {
           "disabled": false,
           "document": "<p>转发请求时添加的Host请求头</p>",
-          "example": "gpt.com",
+          "example": "www.a.com",
           "member": "string",
           "name": "HostHeader",
           "required": false,
@@ -5213,7 +5250,7 @@
         {
           "disabled": false,
           "document": "<p>是否校验服务提供商的SSL证书</p>",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "VerifySSL",
           "required": false,
@@ -5227,6 +5264,24 @@
           "name": "HealthCheckConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私网管道 ID</p>",
+          "example": "pnt-lbepdi5o",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查配置</p>",
+          "example": "无",
+          "member": "ServiceProviderHealthCheckConfigItemInput",
+          "name": "HealthCheckConfigs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5237,7 +5292,7 @@
         {
           "disabled": false,
           "document": "<p>服务供应商ID</p>",
-          "example": "byok-dhd4w2eg",
+          "example": "byok-m910btm4",
           "member": "string",
           "name": "ServiceProviderId",
           "output_required": true,
@@ -5247,7 +5302,7 @@
         {
           "disabled": false,
           "document": "<p>生成的 Key ID 列表</p>",
-          "example": "[\"mkey-0b39bh7u\"]",
+          "example": "[\"mkey-oieh9r1e\"]",
           "member": "string",
           "name": "KeyIds",
           "output_required": true,
@@ -10267,10 +10322,19 @@
         },
         {
           "disabled": false,
-          "document": "<p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx</p>",
+          "document": "<p>BYOK 业务 ID，可选</p><p>格式：byok-xxxxxxxx，预留参数</p>",
           "example": "byok-ipjuuwnd",
           "member": "string",
           "name": "ServiceProviderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>    CMR 私网管道ID </p>",
+          "example": "pnt-lbepdi5o",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
           "required": false,
           "type": "string"
         }
@@ -14166,6 +14230,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>多协议 API Base URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiBaseItem",
+          "name": "ApiBases",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>模型创建时间（ISO 8601）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2026-04-09T03:36:08+00:00",
           "member": "string",
@@ -14322,6 +14396,36 @@
           "name": "HealthCheckConfig",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私网管道 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pnt-lbepdi5o",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>私网管道名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tunnel-dp-5e30",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查配置</p>",
+          "example": "无",
+          "member": "ServiceProviderHealthCheckConfigItemOutput",
+          "name": "HealthCheckConfigs",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -14660,13 +14764,13 @@
         },
         {
           "disabled": false,
-          "document": "<p>带宽</p><p>单位：Mbps</p>",
+          "document": "<p>带宽</p><p>单位：Mbps</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2048",
           "member": "uint64",
           "name": "Bandwidth",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -19446,6 +19550,113 @@
       ],
       "usage": "in"
     },
+    "ServiceProviderHealthCheckConfigItemInput": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启健康检查</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查间隔。支持以300s为步长配置。</p><p>取值范围：[300, 14400]</p><p>单位：s</p><p>默认值：300</p>",
+          "example": "600",
+          "member": "uint64",
+          "name": "HealthCheckInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>不健康阈值。表示当模型连续多少次不健康时认为该模型不健康。</p><p>取值范围：[1, 10]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthCheckUnhealthyThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>取值范围：[1, 1024]</p><p>默认值：1</p>",
+          "example": "16",
+          "member": "uint64",
+          "name": "HealthCheckMaxTokens",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/v1/messages协议</li></ul>",
+          "example": "chat",
+          "member": "string",
+          "name": "HealthCheckProtocol",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ServiceProviderHealthCheckConfigItemOutput": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启健康检查</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthCheckEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查间隔。支持以300s为步长配置。</p><p>单位：s</p><p>默认值：300</p>",
+          "example": "6000",
+          "member": "uint64",
+          "name": "HealthCheckInterval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不健康阈值。表示当模型连续多少次不健康时认为该模型不健康。</p><p>取值范围：[1, 10]</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthCheckUnhealthyThreshold",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>默认值：1</p>",
+          "example": "16",
+          "member": "uint64",
+          "name": "HealthCheckMaxTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/v1/messages协议</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "messages",
+          "member": "string",
+          "name": "HealthCheckProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ServiceProviderHealthCheckConfigOutput": {
       "document": "健康检查配置",
       "members": [
@@ -20880,7 +21091,7 @@
         {
           "disabled": false,
           "document": "<p>待探测的模型（原始模型名称）</p>",
-          "example": "gpt-5",
+          "example": "gpt-4o",
           "member": "string",
           "name": "Model",
           "required": true,
@@ -20889,7 +21100,7 @@
         {
           "disabled": false,
           "document": "<p>待探测的API Key（明文）</p>",
-          "example": "sk-1111",
+          "example": "sk-or-v1-************************************************************07c5",
           "member": "string",
           "name": "ProviderKey",
           "required": false,
@@ -20898,7 +21109,7 @@
         {
           "disabled": false,
           "document": "<p>已创建的BYOK API Key ID（与ProviderKey二选一传入）</p>",
-          "example": "mkey-lgcd245h",
+          "example": "mkey-fanvvkf8",
           "member": "string",
           "name": "ProviderKeyId",
           "required": false,
@@ -20907,7 +21118,7 @@
         {
           "disabled": false,
           "document": "<p>BYOK类型，当ProviderKey传入时必填</p>",
-          "example": "PublicCustom",
+          "example": "PrivateCustom",
           "member": "string",
           "name": "AccessType",
           "required": false,
@@ -20925,7 +21136,7 @@
         {
           "disabled": false,
           "document": "<p>模型的厂商</p>",
-          "example": "tokenhub",
+          "example": "openai",
           "member": "string",
           "name": "ModelProvider",
           "required": false,
@@ -20934,7 +21145,7 @@
         {
           "disabled": false,
           "document": "<p>自定义ApiBase，当ProviderKey传入且AccessType且PrivateCustom/PublicCustom时必填</p>",
-          "example": "http://11.141.93.26:10000/v1",
+          "example": "https://openrouter.ai/api/v1",
           "member": "string",
           "name": "ApiBase",
           "required": false,
@@ -20952,7 +21163,7 @@
         {
           "disabled": false,
           "document": "<p>BYOK实例ID，当AccessType为PrivateCustom时生效，ProviderKey传入时必填</p>",
-          "example": "byok-j4qstgul",
+          "example": "byok-l1l4echw",
           "member": "string",
           "name": "ServiceProviderId",
           "required": false,
@@ -20961,11 +21172,29 @@
         {
           "disabled": false,
           "document": "<p>是否校验服务提供商的SSL证书</p><p>PublicBYOK时为True且禁止传入；若传入VerifySSL，则优先同步入参逻辑；若传入了ServiceProviderId则同步已创建的Byok实例该Model的逻辑；否则PublicCustom模式下为True，PrivateCustom模式下为False。</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "VerifySSL",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/responses协议</li></ul>",
+          "example": "chat",
+          "member": "string",
+          "name": "HealthCheckProtocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CMR私网管道ID</p>",
+          "example": "pnt-lbepdi5o",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -20976,7 +21205,7 @@
         {
           "disabled": false,
           "document": "<p>探测的模型</p>",
-          "example": "gpt-5",
+          "example": "gpt-4o",
           "member": "string",
           "name": "Model",
           "output_required": true,
@@ -21104,6 +21333,24 @@
           "name": "VerifySSL",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查协议</p><p>枚举值：</p><ul><li>chat： 表示/chat/completion协议</li><li>messages： 表示/v1/messages协议</li><li>responses： 表示/responses协议</li></ul>",
+          "example": "chat",
+          "member": "string",
+          "name": "HealthCheckProtocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>    CMR 私网管道ID </p>",
+          "example": "pnt-lbepdi5o",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

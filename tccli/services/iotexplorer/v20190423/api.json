@@ -7959,7 +7959,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li></ul>",
+          "document": "<p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li><li>SUMMARIZATION： 每日/每周总结</li></ul>",
           "example": "COMPREHENSION",
           "member": "string",
           "name": "ServiceCategory",
@@ -12724,7 +12724,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品 ID",
+          "document": "<p>产品 ID</p>",
           "example": "4AHMY9X89Y",
           "member": "string",
           "name": "ProductId",
@@ -12733,7 +12733,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "dev002",
           "member": "string",
           "name": "DeviceName",
@@ -12742,7 +12742,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "document": "<p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li></ul>",
           "example": "VID_COMP",
           "member": "string",
           "name": "ServiceType",
@@ -12751,7 +12751,7 @@
         },
         {
           "disabled": false,
-          "document": "通道 ID",
+          "document": "<p>通道 ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChannelId",
@@ -12766,7 +12766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源 ID",
+          "document": "<p>资源 ID</p>",
           "example": "twesee-753yd29x30********jqww1",
           "member": "string",
           "name": "ResourceId",
@@ -12776,7 +12776,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐规格。可能取值：\n\n- `BASIC`：包年包月基础版（适用于视频理解）",
+          "document": "<p>套餐规格。可能取值：</p><ul><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>",
           "example": "BASIC",
           "member": "string",
           "name": "ServiceTier",
@@ -12786,7 +12786,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间，秒级时间戳",
+          "document": "<p>到期时间，秒级时间戳</p>",
           "example": "1781897528",
           "member": "int64",
           "name": "ExpireTime",
@@ -12796,7 +12796,7 @@
         },
         {
           "disabled": false,
-          "document": "启用状态，`true` 为开启，`false` 为关闭",
+          "document": "<p>启用状态，<code>true</code> 为开启，<code>false</code> 为关闭</p>",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -12806,7 +12806,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅状态。可能取值：\n\n- `NORMAL`：正常\n- `ISOLATED`：隔离",
+          "document": "<p>订阅状态。可能取值：</p><ul><li><code>NORMAL</code>：正常</li><li><code>ISOLATED</code>：隔离</li></ul>",
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
@@ -12816,7 +12816,7 @@
         },
         {
           "disabled": false,
-          "document": "视觉理解配置（适用于视频理解、图片理解）",
+          "document": "<p>视觉理解配置（适用于视频理解、图片理解）</p>",
           "example": "无",
           "member": "SeeComprehensionConfig",
           "name": "ComprehensionConfig",
@@ -12826,7 +12826,7 @@
         },
         {
           "disabled": false,
-          "document": "视频语义浓缩配置（适用于视频语义浓缩）",
+          "document": "<p>视频语义浓缩配置（适用于视频语义浓缩）</p>",
           "example": "无",
           "member": "SeeCompHighlightConfig",
           "name": "CompHighlightConfig",
@@ -12836,7 +12836,7 @@
         },
         {
           "disabled": false,
-          "document": "云存事件 ID 过滤规则配置项",
+          "document": "<p>云存事件 ID 过滤规则配置项</p>",
           "example": "无",
           "member": "SeeEventIdFilterConfig",
           "name": "EventIdFilterConfig",
@@ -12846,7 +12846,17 @@
         },
         {
           "disabled": false,
-          "document": "当前周期基础能力总额度",
+          "document": "<p>每日与每周总结配置</p>",
+          "example": "无",
+          "member": "SeeSummarizeConfig",
+          "name": "SummarizeConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期基础能力总额度</p>",
           "example": "3000",
           "member": "int64",
           "name": "QuotaBasic",
@@ -12856,7 +12866,7 @@
         },
         {
           "disabled": false,
-          "document": "当前周期基础能力已用额度",
+          "document": "<p>当前周期基础能力已用额度</p>",
           "example": "2",
           "member": "int64",
           "name": "QuotaUsedBasic",
@@ -12866,7 +12876,7 @@
         },
         {
           "disabled": false,
-          "document": "当前周期高级能力总额度",
+          "document": "<p>当前周期高级能力总额度</p>",
           "example": "0",
           "member": "int64",
           "name": "QuotaAdvanced",
@@ -12876,7 +12886,7 @@
         },
         {
           "disabled": false,
-          "document": "当前周期高级能力已用额度",
+          "document": "<p>当前周期高级能力已用额度</p>",
           "example": "0",
           "member": "int64",
           "name": "QuotaUsedAdvanced",
@@ -12886,7 +12896,7 @@
         },
         {
           "disabled": false,
-          "document": "额度刷新时间",
+          "document": "<p>额度刷新时间</p>",
           "example": "1779219128",
           "member": "int64",
           "name": "QuotaRefreshTime",
@@ -12908,12 +12918,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "<p>任务 ID</p>",
           "example": "comp-d57939bb-b155-5623-c7e7-1fb8dd0654dd",
           "member": "string",
           "name": "TaskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL</p><p>单位：秒</p>",
+          "example": "1787815820",
+          "member": "int64",
+          "name": "FileURLExpireTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12923,7 +12942,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务信息",
+          "document": "<p>任务信息</p>",
           "example": "无",
           "member": "SeeTaskInfo",
           "name": "TaskInfo",
@@ -19296,28 +19315,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>产品 ID</p>",
-          "example": "4AHMY9X89Y",
-          "member": "string",
-          "name": "ProductId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "<p>设备名称</p>",
           "example": "dev002",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>",
-          "example": "COMPREHENSION",
-          "member": "string",
-          "name": "ServiceCategory",
           "required": true,
           "type": "string"
         },
@@ -19332,21 +19333,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>分页拉取偏移</p>",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
+          "document": "<p>产品 ID</p>",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "<p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>",
-          "example": "[\"VID_COMP\"]",
+          "document": "<p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>",
+          "example": "COMPREHENSION",
           "member": "string",
-          "name": "ServiceTypes",
-          "required": false,
-          "type": "list"
+          "name": "ServiceCategory",
+          "required": true,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -19359,28 +19360,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>",
-          "example": "1776621600000",
-          "member": "int64",
-          "name": "StartTimeMs",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "<p>查询任务时间范围的结束时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>",
           "example": "1776636000000",
           "member": "int64",
           "name": "EndTimeMs",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>",
-          "example": "3",
-          "member": "int64",
-          "name": "Status",
           "required": false,
           "type": "int"
         },
@@ -19401,6 +19384,42 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页拉取偏移</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>算法类型。</p><p>当 ServiceCategory 为 <code>COMPREHENSION</code> 时，可选值包括：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>CONT_PERSON_MOTIONLESS</code>：静姿检测</li></ul><p>当 ServiceCategory 为 <code>HIGHLIGHT</code> 时，可选值包括：</p><ul><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul><p>当 ServiceCategory 为 <code>SUMMARIZATION</code> 时，可选值包括：</p><ul><li><code>DAILY_SUM</code>：每日总结</li><li><code>WEEKLY_SUM</code>：每周总结</li></ul>",
+          "example": "[\"VID_COMP\"]",
+          "member": "string",
+          "name": "ServiceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询任务时间范围的起始时间（毫秒级 UNIX 时间戳）。不传则不生效时间范围条件。</p>",
+          "example": "1776621600000",
+          "member": "int64",
+          "name": "StartTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要查询的任务的状态条件。不传则不按照状态过滤，可选值：</p><ul><li><code>1</code>：失败</li><li><code>2</code>：空结果</li><li><code>3</code>：有效结果</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -21089,19 +21108,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品 ID",
-          "example": "4AHMY9X89Y",
+          "document": "设备名称",
+          "example": "dev002",
           "member": "string",
-          "name": "ProductId",
+          "name": "DeviceName",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "设备名称",
-          "example": "dev002",
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
           "member": "string",
-          "name": "DeviceName",
+          "name": "ProductId",
           "required": true,
           "type": "string"
         },
@@ -21125,12 +21144,12 @@
         },
         {
           "disabled": false,
-          "document": "功能开关。`true` 为开启，`false` 为关闭；不传表示不修改",
-          "example": "true",
-          "member": "bool",
-          "name": "Enabled",
+          "document": "视频语义浓缩配置（适用于视频语义浓缩），不传则不修改",
+          "example": "无",
+          "member": "SeeCompHighlightConfig",
+          "name": "CompHighlightConfig",
           "required": false,
-          "type": "bool"
+          "type": "object"
         },
         {
           "disabled": false,
@@ -21143,12 +21162,12 @@
         },
         {
           "disabled": false,
-          "document": "视频语义浓缩配置（适用于视频语义浓缩），不传则不修改",
-          "example": "无",
-          "member": "SeeCompHighlightConfig",
-          "name": "CompHighlightConfig",
+          "document": "功能开关。`true` 为开启，`false` 为关闭；不传表示不修改",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
           "required": false,
-          "type": "object"
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -21156,6 +21175,15 @@
           "example": "无",
           "member": "SeeEventIdFilterConfig",
           "name": "EventIdFilterConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "每日与每周总结配置，不传则不修改",
+          "example": "无",
+          "member": "SeeSummarizeConfig",
+          "name": "SummarizeConfig",
           "required": false,
           "type": "object"
         }
@@ -24518,6 +24546,61 @@
       ],
       "usage": "out"
     },
+    "SeeSummarizeConfig": {
+      "document": "TWeSee 每日与每周总结配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启每日总结",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDailySummary",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启每周总结",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableWeeklySummary",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成总结的详细程度</p><p>枚举值：</p><ul><li>low： 精简</li><li>medium： 概要（默认值）</li></ul>",
+          "example": "low",
+          "member": "string",
+          "name": "SummaryVerbosity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SeeSummarizeResult": {
+      "document": "TWeSee 每日或每周总结结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总结文本",
+          "example": "今天家中整体情况正常。上午有人在客厅活动及外出，傍晚有快递员将包裹放置在门口，未发现异常人员、跌倒或其他安全风险。",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SeeTaskFaceInfo": {
       "document": "TWeSee 任务人脸元数据",
       "members": [
@@ -24599,7 +24682,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>算法类目。可能取值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li></ul>",
+          "document": "<p>算法类目。</p><p>枚举值：</p><ul><li>COMPREHENSION： 视觉理解</li><li>HIGHLIGHT： 视频浓缩</li><li>SUMMARIZATION： 每日/每周总结</li></ul>",
           "example": "COMPREHENSION",
           "member": "string",
           "name": "ServiceCategory",
@@ -24609,7 +24692,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>算法类型。可能取值：</p><ul><li><code>VID_COMP</code>：视频理解</li><li><code>IMG_COMP</code>：图片理解</li><li><code>COMP_HIGHLIGHT</code>：视频浓缩</li></ul>",
+          "document": "<p>算法类型。</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li><li>IMG_COMP： 图片理解</li><li>COMP_HIGHLIGHT： 视频浓缩</li><li>DAILY_SUM： 每日总结</li><li>WEEKLY_SUM： 每周总结</li></ul>",
           "example": "VID_COMP",
           "member": "string",
           "name": "ServiceType",
@@ -24663,6 +24746,16 @@
           "example": "无",
           "member": "SeeFaceRecognitionResult",
           "name": "FaceRecognitionResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每日或每周总结结果</p>",
+          "example": "无",
+          "member": "SeeSummarizeResult",
+          "name": "SummarizeResult",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

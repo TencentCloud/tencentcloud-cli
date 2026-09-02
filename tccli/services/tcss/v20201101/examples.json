@@ -2209,8 +2209,8 @@
     "DescribeVirusMonitorConfig": [
       {
         "document": "运行时查询文件查杀实时监控设置信息",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusMonitorSettingV2\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"EnableScan\": true,\n        \"IsIncludePath\": true,\n        \"ScanPath\": [\n            \"abc\"\n        ],\n        \"ScanPathMode\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusMonitorConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"EnableScan\": false,\n        \"IsIncludePath\": true,\n        \"ScanPath\": [],\n        \"ScanPathMode\": \"SCAN_PATH_DEFAULT\",\n        \"RequestId\": \"3850591f-7654-4491-a704-15d7e6050afb\"\n    }\n}",
         "title": "运行时查询文件查杀实时监控设置信息"
       }
     ],
@@ -2233,8 +2233,8 @@
     "DescribeVirusScanConfig": [
       {
         "document": "运行时查询文件查杀新设置",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusScanSettingV2\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"EnableScan\": true,\n        \"Cycle\": 1,\n        \"BeginScanAt\": \"abc\",\n        \"Timeout\": 1,\n        \"ScanRangeType\": \"abc\",\n        \"ScanIDs\": [\n            {\n                \"IsAll\": true,\n                \"RangeType\": \"abc\",\n                \"IDs\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"ScanPath\": [\n            \"abc\"\n        ],\n        \"ScanPathMode\": \"abc\",\n        \"IsIncludePath\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusScanConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"BeginScanAt\": \"\",\n        \"Cycle\": 0,\n        \"EnableScan\": false,\n        \"IsIncludePath\": false,\n        \"ScanIDs\": [],\n        \"ScanPath\": [],\n        \"ScanPathMode\": \"SCAN_PATH_DEFAULT\",\n        \"ScanRangeType\": \"\",\n        \"Timeout\": 0,\n        \"RequestId\": \"0b3485e4-f03f-4df6-9bd5-ab7bc2f75c51\"\n    }\n}",
         "title": "运行时查询文件查杀新设置"
       }
     ],

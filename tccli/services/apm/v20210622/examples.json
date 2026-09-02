@@ -194,6 +194,14 @@
         "title": "成功示例"
       }
     ],
+    "DescribeRelatedServicesOnTrace": [
+      {
+        "document": "查询与目标应用存在调用关联的上下游服务",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRelatedServicesOnTrace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-6xYKFXYxo\",\n    \"StartTime\": 1764101580,\n    \"EndTime\": 1764144780,\n    \"ServiceName\": \"service-A\",\n    \"IsServiceTopology\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"SelectedTraces\": 0,\n        \"ServiceRelations\": [\n            {\n                \"DownstreamServices\": [],\n                \"ServiceName\": \"service-A\",\n                \"UpstreamServices\": []\n            }\n        ],\n        \"TotalServices\": 1,\n        \"TotalTraces\": 0,\n        \"RequestId\": \"434b0ac9-870c-43a9-b83f-40d930d24e77\"\n    }\n}",
+        "title": "查询与目标应用存在调用关联的上下游服务"
+      }
+    ],
     "DescribeServiceOverview": [
       {
         "document": "",

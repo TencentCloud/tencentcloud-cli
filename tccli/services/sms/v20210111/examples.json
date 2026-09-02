@@ -48,6 +48,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeSendRecordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSendRecordList\n<公共请求参数>\n\n{\n    \"PhoneNumber\": \"+86136****8015\",\n    \"SmsSdkAppId\": \"140***9515\",\n    \"BeginTime\": 1787850451,\n    \"EndTime\": 1787902550,\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"SendRecordSet\": [\n            {\n                \"Content\": \"【腾讯云通信】您的验证码为0****1，5分钟内有效。\",\n                \"IsoCode\": \"CN\",\n                \"PhoneNumber\": \"+86136****8015\",\n                \"RequestCode\": \"Ok\",\n                \"SendStatus\": 2,\n                \"SendTime\": 1787902541,\n                \"SerialNo\": \"4719:106022169717827487984377125\",\n                \"StatusCode\": \"DELIVRD\",\n                \"UserReceiveTime\": 1787902571\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"22f73024-57b5-4f32-9657-85ef83239929\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeSmsSignList": [
       {
         "document": "",

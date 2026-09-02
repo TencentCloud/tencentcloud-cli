@@ -88,6 +88,14 @@
         "title": "测试"
       }
     ],
+    "DeleteAccountGroupResources": [
+      {
+        "document": "取消用户组的业务资源授权",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccountGroupResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        {\n            \"ResourceType\": 2,\n            \"ResourceId\": 3684\n        }\n    ],\n    \"AccountGroupId\": 189477\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"491edf66-4522-462a-b6d7-5d4653a81360\"\n    }\n}",
+        "title": "取消用户组资源授权"
+      }
+    ],
     "DeleteDeviceVirtualGroup": [
       {
         "document": "删除终端自定义分组",
