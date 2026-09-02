@@ -4786,7 +4786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自适应码率转码模板，子模板Id。\n入参时候，填写此字段，表示更新子模板，否则是新增子模板。",
+          "document": "<p>自适应码率转码模板，子模板Id。<br>入参时候，填写此字段，表示更新子模板，否则是新增子模板。</p>",
           "example": "485142",
           "member": "int64",
           "name": "TemplateId",
@@ -4797,7 +4797,7 @@
         },
         {
           "disabled": false,
-          "document": "子模板名称。",
+          "document": "<p>子模板名称。</p>",
           "example": "p_500",
           "member": "string",
           "name": "TemplateName",
@@ -4808,7 +4808,7 @@
         },
         {
           "disabled": false,
-          "document": "视频编码：h264/h265/origin，默认origin。\n\norigin: 保持原始编码格式。",
+          "document": "<p>视频编码：h264/h265/origin，默认origin。</p><p>origin: 保持原始编码格式。</p>",
           "example": "origin",
           "member": "string",
           "name": "Vcodec",
@@ -4819,7 +4819,7 @@
         },
         {
           "disabled": false,
-          "document": "视频码率。范围：0kbps - 8000kbps。\n0为保持原始码率。\n注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。",
+          "document": "<p>视频码率。范围：0kbps - 8000kbps。<br>0为保持原始码率。<br>注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。</p>",
           "example": "1080",
           "member": "int64",
           "name": "VideoBitrate",
@@ -4830,7 +4830,7 @@
         },
         {
           "disabled": false,
-          "document": "宽，默认0。\n范围[0-3000]。\n数值必须是2的倍数，0是原始宽度。",
+          "document": "<p>宽，默认0。<br>范围[0-3000]。<br>数值必须是2的倍数，0是原始宽度。</p>",
           "example": "0",
           "member": "int64",
           "name": "Width",
@@ -4841,7 +4841,7 @@
         },
         {
           "disabled": false,
-          "document": "高，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始高度。",
+          "document": "<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度。</p>",
           "example": "0",
           "member": "int64",
           "name": "Height",
@@ -4852,7 +4852,7 @@
         },
         {
           "disabled": false,
-          "document": "帧率，默认0。\n范围0-60fps。",
+          "document": "<p>帧率，默认0。<br>范围0-60fps。</p>",
           "example": "0",
           "member": "int64",
           "name": "Fps",
@@ -4863,7 +4863,7 @@
         },
         {
           "disabled": false,
-          "document": "关键帧间隔，单位：秒。\n默认原始的间隔。\n范围2-6。\n同一个父模板下面的所有子模板，gop必须相等且存在。",
+          "document": "<p>关键帧间隔，单位：秒。<br>默认原始的间隔。<br>范围2-6。<br>同一个父模板下面的所有子模板，gop必须相等且存在。</p>",
           "example": "2",
           "member": "int64",
           "name": "Gop",
@@ -4874,7 +4874,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留视频，0：否，1：是。默认1。",
+          "document": "<p>是否保留视频，0：否，1：是。默认1。</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedVideo",
@@ -4885,7 +4885,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保留音频，0：否，1：是。默认1。",
+          "document": "<p>是否保留音频，0：否，1：是。默认1。</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedAudio",
@@ -4896,7 +4896,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的码率>原始码率时，是否以原始码率为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的码率&gt;原始码率时，是否以原始码率为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "BitrateToOrig",
@@ -4907,7 +4907,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的高度>原始高度时，是否以原始高度为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的高度&gt;原始高度时，是否以原始高度为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "HeightToOrig",
@@ -4918,7 +4918,7 @@
         },
         {
           "disabled": false,
-          "document": "当设置的帧率>原始帧率时，是否以原始帧率为准。\n0：否， 1：是\n默认 0。",
+          "document": "<p>当设置的帧率&gt;原始帧率时，是否以原始帧率为准。<br>0：否， 1：是<br>默认 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "FpsToOrig",
@@ -4929,7 +4929,7 @@
         },
         {
           "disabled": false,
-          "document": "是否以短边作为高度，0：否，1：是。默认0。",
+          "document": "<p>是否以短边作为高度，0：否，1：是。默认0。</p>",
           "example": "0",
           "member": "int64",
           "name": "ShortEdgeAsHeight",
@@ -4940,7 +4940,7 @@
         },
         {
           "disabled": false,
-          "document": "HLS 分片类型。\n可选值：ts、fmp4。\n注：编码方式为 H.265 时生效。",
+          "document": "<p>HLS 分片类型。<br>可选值：ts、fmp4。<br>注：编码方式为 H.265 时生效。</p>",
           "example": "ts",
           "member": "string",
           "name": "HlsContainerFormat",
@@ -4951,7 +4951,7 @@
         },
         {
           "disabled": false,
-          "document": "编码标签。\n可选值：hvc1、hev1。\n注：HLS 分片类型选择 fmp4 时生效。",
+          "document": "<p>编码标签。<br>可选值：hvc1、hev1。<br>注：HLS 分片类型选择 fmp4 时生效。</p>",
           "example": "hvc1",
           "member": "string",
           "name": "HlsMp4VideoCodecTag",
@@ -4959,6 +4959,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子流音频编码类型。默认为&quot;自动适配&quot;</p>",
+          "example": "aac",
+          "member": "string",
+          "name": "Acodec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子流音频码率</p><p>单位：Kbps</p>",
+          "example": "128",
+          "member": "int64",
+          "name": "AudioBitrate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8061,7 +8083,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>",
+          "document": "<p>音频编码。默认为自动适配</p>",
           "example": "aac",
           "member": "string",
           "name": "Acodec",
@@ -21331,7 +21353,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>",
+          "document": "<p>音频编码。默认为自动适配</p>",
           "example": "aac",
           "member": "string",
           "name": "Acodec",
@@ -25993,7 +26015,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>音频编码：aac，默认aac。<br>注意：当前该参数未生效，待后续支持！</p>",
+          "document": "<p>音频编码。默认为自动适配</p>",
           "example": "aac",
           "member": "string",
           "name": "Acodec",

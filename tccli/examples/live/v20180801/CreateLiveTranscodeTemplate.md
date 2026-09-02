@@ -6,31 +6,32 @@ Input:
 
 ```
 tccli live CreateLiveTranscodeTemplate --cli-unfold-argument  \
-    --Profile main \
-    --AudioBitrate 500 \
-    --Rotate 0 \
-    --Description transcode \
-    --TemplateName 900m \
-    --VideoBitrate 900 \
-    --Vcodec h264 \
-    --Height 250 \
-    --Width 250 \
-    --NeedAudio 1 \
-    --FpsToOrig 0 \
-    --Fps 30 \
-    --BitrateToOrig 0 \
-    --HeightToOrig 0 \
-    --NeedVideo 1 \
-    --Gop 3 \
-    --Acodec aac
+    --TemplateName jiang8 \
+    --VideoBitrate 0 \
+    --Description  \
+    --IsAdaptiveBitRate 1 \
+    --AdaptiveChildren.0.TemplateName jiang9 \
+    --AdaptiveChildren.0.Vcodec origin \
+    --AdaptiveChildren.0.VideoBitrate 3000 \
+    --AdaptiveChildren.0.Height 2000 \
+    --AdaptiveChildren.0.Fps 0 \
+    --AdaptiveChildren.0.Gop 0 \
+    --AdaptiveChildren.0.NeedVideo 1 \
+    --AdaptiveChildren.0.NeedAudio 1 \
+    --AdaptiveChildren.0.BitrateToOrig 0 \
+    --AdaptiveChildren.0.HeightToOrig 0 \
+    --AdaptiveChildren.0.FpsToOrig 0 \
+    --AdaptiveChildren.0.ShortEdgeAsHeight 0 \
+    --AdaptiveChildren.0.HlsContainerFormat ts \
+    --AdaptiveChildren.0.HlsMp4VideoCodecTag hev1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TemplateId": 1000,
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "TemplateId": 8453014,
+        "RequestId": "12306f18-9332-412f-bf15-e5b47f6fcaf1"
     }
 }
 ```

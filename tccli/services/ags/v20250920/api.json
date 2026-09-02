@@ -1268,7 +1268,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>Agent ID。可选。</p>",
           "example": "rocz-test-agent-0706v1",
           "member": "string",
@@ -2129,7 +2129,7 @@
         {
           "disabled": false,
           "document": "<p>会话所属空间 ID。</p>",
-          "example": "space-198577ac-324e-4e1b-bfda-f75a2365c9df",
+          "example": "space-75f28517-9fb3-4234-9530-afa323f496bc",
           "member": "string",
           "name": "SpaceId",
           "required": true,
@@ -2138,14 +2138,14 @@
         {
           "disabled": false,
           "document": "<p>用户 ID。可通过调用方业务系统接口获取。</p>",
-          "example": "customer-32874915",
+          "example": "0001",
           "member": "string",
           "name": "UserId",
           "required": true,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>Agent ID。可选。</p>",
           "example": "ae-test",
           "member": "string",
@@ -2165,7 +2165,7 @@
         {
           "disabled": false,
           "document": "<p>会话标题，最大长度 256 字符。</p>",
-          "example": "Order refund assistance",
+          "example": "0902 test",
           "member": "string",
           "name": "Title",
           "required": false,
@@ -2179,6 +2179,15 @@
           "name": "State",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建会话时设置的初始元数据，以键值对数组形式表示。每个元素包含 Metadata 名称和对应值。</p><p>入参限制：本参数可选，最多支持 64 项。Name 不能为空或重复，最大长度为 253 字节；Value 最大长度为 1024 字节，允许为空字符串。Metadata 序列化后的总大小不能超过 64 KiB。</p>",
+          "example": "无",
+          "member": "MetadataVar",
+          "name": "Metadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2845,7 +2854,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>Agent ID。可选。</p>",
           "example": "ae-test",
           "member": "string",
@@ -3618,7 +3627,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>Agent ID。可选。</p>",
           "example": "rocz-test-agent-0706v1",
           "member": "string",
@@ -4110,7 +4119,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>Agent ID。可选。</p>",
           "example": "ag-d0b471e0611ba0b541b57c559d412fd7",
           "member": "string",
@@ -4260,14 +4269,14 @@
         {
           "disabled": false,
           "document": "<p>查询的会话空间 ID。</p>",
-          "example": "space-198577ac-324e-4e1b-bfda-f75a2365c9df",
+          "example": "space-75f28517-9fb3-4234-9530-afa323f496bc",
           "member": "string",
           "name": "SpaceId",
           "required": true,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>Agent ID 列表，最多支持 100 个。</p>",
           "example": "[\"ae-test\"]",
           "member": "string",
@@ -4310,6 +4319,15 @@
           "name": "SessionIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件列表，最多支持 10 个。当前仅支持按 Session Metadata 过滤，Filter.Name 格式为 metadata:MetadataKey，例如 metadata:env。同一个 Filter 中多个 Values 之间为“或”关系，多个 Filter 之间为“且”关系。</p><p>入参限制：最多传入 10 个 Filter，每个 Filter 最多支持 100 个 Values。Filter.Name 必须以 metadata: 开头，冒号后需填写完整的 Metadata Key。</p><p>例如 Name 为 metadata:env，Values 为 [&quot;dev&quot;,&quot;test&quot;]，表示查询 Metadata 中存在 env，并且其值为 dev 或 test 的 Session。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4320,7 +4338,7 @@
         {
           "disabled": false,
           "document": "<p>符合条件的会话总数。</p>",
-          "example": "2",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
@@ -5423,7 +5441,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>沙箱元数据名</p>",
+          "document": "<p>元数据名</p>",
           "example": "b",
           "member": "string",
           "name": "Name",
@@ -5434,7 +5452,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>沙箱元数据值</p>",
+          "document": "<p>元数据值</p>",
           "example": "b",
           "member": "string",
           "name": "Value",
@@ -6755,6 +6773,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>会话元数据，以键值对数组形式表示。每个元素包含 Metadata 名称和对应值，最多支持 64 项。</p>",
+          "example": "无",
+          "member": "MetadataVar",
+          "name": "Metadata",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
           "document": "<p>Agent ID。</p>",
           "example": "agent-a1b2c3d4",
           "member": "string",

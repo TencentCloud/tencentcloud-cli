@@ -1,4 +1,52 @@
-**Example 1: 查询集群活动历史记录**
+**Example 1: 查询队列的弹性伸缩历史记录**
+
+按照队列名称进行过滤
+
+Input: 
+
+```
+tccli thpc DescribeClusterActivities --cli-unfold-argument  \
+    --ClusterId hpc-k2uwxvhn \
+    --Offset 0 \
+    --Limit 20 \
+    --Filters.0.Name queue-name \
+    --Filters.0.Values compute
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ClusterActivitySet": [
+            {
+                "ActivityId": "cha-m9uxy80u",
+                "ActivityStatus": "SUCCESSFUL",
+                "ActivityStatusCode": "ActivitySuccess",
+                "ActivityType": "CreateAndAddNodes",
+                "Cause": "AutoScaleOut",
+                "ClusterId": "hpc-k2uwxvhn",
+                "Description": "弹性扩容，创建实例并添加进集群，队列：compute 增加 2个节点，总共扩容2个节点。",
+                "EndTime": "2026-08-31T03:51:51Z",
+                "QueueName": "compute",
+                "RelatedNodeActivitySet": [
+                    {
+                        "NodeActivityStatus": "SUCCESSFUL",
+                        "NodeActivityStatusCode": "ActivitySuccess",
+                        "NodeActivityStatusReason": "Activity success.",
+                        "NodeInstanceId": "ins-7236kgtn"
+                    }
+                ],
+                "ResultDetail": "Activity success.",
+                "StartTime": "2026-08-31T03:49:33Z"
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "4e4ec467-cfa6-4212-9c1f-0c548278a43e"
+    }
+}
+```
+
+**Example 2: 查询集群活动历史记录**
 
 根据集群ID查询集群活动历史记录。
 
@@ -24,6 +72,7 @@ Output:
                 "ActivityStatusCode": "ActivitySuccess",
                 "ResultDetail": "Activity success.",
                 "Cause": "DeleteCluster",
+                "QueueName": "compute",
                 "Description": "删除指定集群，销毁实例，销毁所有节点。",
                 "RelatedNodeActivitySet": [
                     {

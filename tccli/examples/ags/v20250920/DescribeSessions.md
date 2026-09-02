@@ -1,12 +1,14 @@
-**Example 1: 查询指定空间会话列表**
+**Example 1: 按 Metadata 过滤 Session**
 
-查询指定会话空间中的会话列表。
+查询 Metadata 中 env 字段值为 dev 的 Session 列表。
 
 Input: 
 
 ```
 tccli ags DescribeSessions --cli-unfold-argument  \
-    --SpaceId space-198577ac-324e-4e1b-bfda-f75a2365c9df
+    --SpaceId space-75f28517-9fb3-4234-9530-afa323f496bc \
+    --Filters.0.Name metadata:env \
+    --Filters.0.Values dev
 ```
 
 Output: 
@@ -15,17 +17,23 @@ Output:
     "Response": {
         "Sessions": [
             {
-                "CreateTime": "2026-08-17T08:15:18Z",
+                "CreateTime": "2026-09-02T08:00:03Z",
                 "EventCount": 0,
-                "SessionId": "session-order-assistance-20260817-0001",
-                "SpaceId": "space-198577ac-324e-4e1b-bfda-f75a2365c9df",
-                "Title": "Order refund assistance after update",
-                "UpdateTime": "2026-08-17T08:45:02Z",
-                "UserId": "customer-32874915"
+                "Metadata": [
+                    {
+                        "Name": "env",
+                        "Value": "dev"
+                    }
+                ],
+                "SessionId": "ffa6e867-a315-447e-917b-ba01ea557c02",
+                "SpaceId": "space-75f28517-9fb3-4234-9530-afa323f496bc",
+                "Title": "modify titile",
+                "UpdateTime": "2026-09-02T08:08:23Z",
+                "UserId": "0001"
             }
         ],
-        "TotalCount": 2,
-        "RequestId": "1012d8c4-3e85-400e-8863-5e9f1b76556c"
+        "TotalCount": 1,
+        "RequestId": "823e1eb7-3b87-459c-a239-cfe1efafcd32"
     }
 }
 ```

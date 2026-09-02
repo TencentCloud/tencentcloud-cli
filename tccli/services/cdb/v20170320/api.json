@@ -609,6 +609,13 @@
       "output": "DescribeDatabasesResponse",
       "status": "online"
     },
+    "DescribeDatabasesAndTablesForInstance": {
+      "document": "本接口(DescribeDatabasesAndTablesForInstance)用于在回档时，批量查询回档后云数据库实例的新的库名和表名是否与原有的库名和表名重复，仅支持主实例的灾备实例，不支持只读实例",
+      "input": "DescribeDatabasesAndTablesForInstanceRequest",
+      "name": "批量查询实例的库和表",
+      "output": "DescribeDatabasesAndTablesForInstanceResponse",
+      "status": "online"
+    },
     "DescribeDbTknPwdRules": {
       "document": "查询轮转密码规则",
       "input": "DescribeDbTknPwdRulesRequest",
@@ -4213,7 +4220,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "售卖实例名称。\nZ3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。\nCVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。\nTKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。\nCLOUD_NATIVE_CLUSTER：表示云盘版标准型。\nCLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。\nECONOMICAL：表示经济型。",
+          "document": "<p>售卖实例名称。<br>Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。<br>CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。<br>TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。<br>CLOUD_NATIVE_CLUSTER：表示云盘版标准型。<br>CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。<br>CLOUD_NATIVE_CLUSTER_ULTRA：表示云盘版旗舰型。<br>CLOUD_NATIVE_SINGLE_NODE：表示云盘版单节点<br>ECONOMICAL：表示经济型。</p>",
           "example": "Z3",
           "member": "string",
           "name": "TypeName",
@@ -4223,7 +4230,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎版本号",
+          "document": "<p>引擎版本号</p>",
           "example": "[\"5.6\",\"5.7\"]",
           "member": "string",
           "name": "EngineVersion",
@@ -4233,7 +4240,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖规格Id",
+          "document": "<p>售卖规格Id</p>",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ConfigIds",
@@ -8042,6 +8049,34 @@
         }
       ],
       "usage": "out"
+    },
+    "DBInfo": {
+      "document": "实例的数据库名称和表名称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库的库名",
+          "example": "\"dbName\"",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库中包含的表的名称",
+          "example": "[\"tableName\"]",
+          "member": "string",
+          "name": "TableNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DBSwitchInfo": {
       "document": "云数据库切换记录",
@@ -12599,6 +12634,52 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesAndTablesForInstanceRequest": {
+      "document": "DescribeDatabasesAndTablesForInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例下的数据库和表",
+          "example": "无",
+          "member": "DBInfo",
+          "name": "DBName",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesAndTablesForInstanceResponse": {
+      "document": "DescribeDatabasesAndTablesForInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的库表的集合",
+          "example": "无",
+          "member": "DBInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -19982,7 +20063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "document": "<p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用<a href=\"https://cloud.tencent.com/document/api/236/15872\">查询实例列表</a> 接口获取，其值为输出参数中字段 InstanceId 的值。此接口不支持设置云盘版实例为只读。</p>",
           "example": "cdb-uns231ns",
           "member": "string",
           "name": "InstanceId",
@@ -19991,7 +20072,7 @@
         },
         {
           "disabled": false,
-          "document": "是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态",
+          "document": "<p>是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态</p>",
           "example": "0",
           "member": "int64",
           "name": "ReadOnly",

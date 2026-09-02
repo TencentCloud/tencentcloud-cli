@@ -24,6 +24,14 @@
         "title": "绑定license"
       }
     ],
+    "CreateBatchVideoAnnotationJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchVideoAnnotationJob\n<公共请求参数>\n\n{\n    \"InputStorage\": {\n        \"Bucket\": \"ai-annotation-test-input-1258344699\",\n        \"Endpoint\": \"cos-internal.ap-guangzhou.tencentcos.cn\",\n        \"Region\": \"ap-guangzhou\",\n        \"Prefix\": \"batch-test/\",\n        \"Secret\": {\n            \"SecretId\": \"************************************\",\n            \"SecretKey\": \"********************************\"\n        },\n        \"Filter\": \"^1qLI.*\\\\.mp4$\",\n        \"IsCos\": 1\n    },\n    \"AnnotationType\": 3,\n    \"AnnotationContext\": {\n        \"TaskGoal\": \"把香蕉从盘子中夹起来\",\n        \"KeyObjects\": [\n            \"香蕉\"\n        ],\n        \"AtomicVerbs\": [\n            \"拿取\"\n        ]\n    },\n    \"OutputStorage\": {\n        \"Bucket\": \"ai-annotation-test-input-1258344699\",\n        \"Endpoint\": \"cos-internal.ap-guangzhou.tencentcos.cn\",\n        \"Region\": \"ap-guangzhou\",\n        \"Secret\": {\n            \"SecretId\": \"************************************\",\n            \"SecretKey\": \"********************************\"\n        },\n        \"Prefix\": \"batch-result/\",\n        \"NameRule\": \"$YYYY$mm$dd_$FileName_$TaskId.json\"\n    },\n    \"CallbackInfo\": {\n        \"Url\": \"https://callback.example.com/annotation\",\n        \"Secret\": \"test-callback-secret-0f1e2d3c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"3uixqpy6yywr\",\n        \"RequestId\": \"e2fb02e7-7dad-40bf-a100-69e6eab7af28\"\n    }\n}",
+        "title": "调用示例1"
+      }
+    ],
     "CreateCloudRecording": [
       {
         "document": "",
@@ -48,6 +56,36 @@
         "title": "创建项目示例"
       }
     ],
+    "CreateVideoAnnotationJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoAnnotationJob\n<公共请求参数>\n\n{\n    \"InputType\": 1,\n    \"AnnotationType\": 3,\n    \"S3SourceInfo\": {\n        \"Bucket\": \"ai-annotation-test-input-1258344699\",\n        \"Endpoint\": \"cos-internal.ap-guangzhou.tencentcos.cn\",\n        \"Region\": \"ap-guangzhou\",\n        \"Key\": \"batch-test/1qLIfbvfNo_0003.mp4\",\n        \"Secret\": {\n            \"SecretId\": \"************************************\",\n            \"SecretKey\": \"********************************\"\n        },\n        \"IsCos\": 1\n    },\n    \"AnnotationContext\": {\n        \"TaskGoal\": \"把香蕉从盘子中夹出来\",\n        \"KeyObjects\": [\n            \"香蕉\"\n        ],\n        \"AtomicVerbs\": [\n            \"拿取\"\n        ]\n    },\n    \"OutputInfo\": {\n        \"Bucket\": \"ai-annotation-test-input-1258344699\",\n        \"Endpoint\": \"cos-internal.ap-guangzhou.tencentcos.cn\",\n        \"Region\": \"ap-guangzhou\",\n        \"Key\": \"annotation-result/1qLIfbvfNo_0003.json\",\n        \"Secret\": {\n            \"SecretId\": \"************************************\",\n            \"SecretKey\": \"********************************\"\n        }\n    },\n    \"CallbackInfo\": {\n        \"Url\": \"https://callback.example.com/annotation\",\n        \"Secret\": \"test-callback-secret-0f1e2d3c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"3uixltd7dni3\",\n        \"RequestId\": \"15df6e34-08b8-42c4-ab24-5b8dbac82a07\"\n    }\n}",
+        "title": "调用示例1-对象存储源"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoAnnotationJob\n<公共请求参数>\n\n{\n    \"InputType\": 2,\n    \"AnnotationType\": 3,\n    \"HttpUrl\": \"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"3uimnz9razwb\",\n        \"RequestId\": \"b38bba35-d582-45de-a7ea-e0749145839e\"\n    }\n}",
+        "title": "调用示例2-HTTP源"
+      }
+    ],
+    "DeleteAnnotationJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAnnotationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"3uemtd4p8nv8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2f56090-ca65-43ed-8709-94d0ad639fa0\"\n    }\n}",
+        "title": "调用示例1"
+      }
+    ],
+    "DeleteAnnotationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAnnotationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"3uemtd4p8nv8_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ecf804d-6939-4d1c-9d79-0902c23d1cd4\"\n    }\n}",
+        "title": "调用示例1"
+      }
+    ],
     "DeleteCloudRecording": [
       {
         "document": "",
@@ -62,6 +100,42 @@
         "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"f3glr49rc96pralw\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除项目示例"
+      }
+    ],
+    "DescribeAnnotationJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAnnotationJobs\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Status\": 1,\n    \"InputPath\": \"ai-annotation-test-input\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Jobs\": [\n            {\n                \"AnnotationType\": 3,\n                \"CreateTime\": \"1788184838\",\n                \"FinishTime\": \"0\",\n                \"IngestStatus\": 1,\n                \"InputPath\": \"ai-annotation-test-input-1258344699/batch-test/1qLIfbvfNo_0099.mp4\",\n                \"JobId\": \"3ufulistdemo01\",\n                \"JobType\": 1,\n                \"Status\": 1,\n                \"TotalNumber\": 2\n            }\n        ],\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"TotalCount\": 4,\n        \"RequestId\": \"c814dcbd-4269-49d6-999f-da2eea7ee42f\"\n    }\n}",
+        "title": "调用示例1"
+      }
+    ],
+    "DescribeAnnotationResults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAnnotationResults\n<公共请求参数>\n\n{\n    \"TaskId\": \"3uimegtqfkfv_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"1788345644\",\n        \"ErrorMsg\": \"\",\n        \"FileName\": \"1qLIfbvfNo_0003.mp4\",\n        \"FinishTime\": \"1788345702\",\n        \"Result\": \"{\\\"schema\\\": \\\"fine4.semantic\\\", \\\"version\\\": \\\"1.0\\\", \\\"overview\\\": {\\\"video_id\\\": \\\"1qLIfbvfNo_0003\\\", \\\"video_path\\\": \\\"/data/ann_videos/3uimegtqfkfv_1/1qLIfbvfNo_0003.mp4\\\", \\\"task_goal\\\": \\\"检查并手动旋转自行车脚踏板以测试传动系统\\\", \\\"duration_s\\\": 8.133, \\\"fps\\\": 30.0, \\\"w\\\": 1280, \\\"h\\\": 720, \\\"n_subtasks\\\": 2, \\\"n_actions\\\": 3, \\\"n_atomic\\\": 4, \\\"n_scenes\\\": 1, \\\"key_objects\\\": [\\\"手\\\", \\\"工具\\\", \\\"自行车\\\", \\\"脚踏板\\\"], \\\"injected_context\\\": {\\\"task_goal\\\": \\\"标注视频中的手部操作动作\\\", \\\"key_objects\\\": [\\\"手\\\", \\\"工具\\\"], \\\"atomic_verbs\\\": [\\\"拿取\\\", \\\"放置\\\"]}, \\\"scenes\\\": [{\\\"scene_idx\\\": 0, \\\"start\\\": 0.0, \\\"end\\\": 8.133, \\\"start_frame\\\": 0, \\\"end_frame\\\": 244, \\\"n_frames\\\": 244}]}, \\\"subtasks\\\": [{\\\"idx\\\": 0, \\\"title\\\": \\\"伸手接近并接触自行车脚踏板\\\", \\\"start\\\": 0.0, \\\"end\\\": 0.8, \\\"actions\\\": [{\\\"idx\\\": 0, \\\"verb\\\": \\\"reach\\\", \\\"object_labels\\\": [\\\"脚踏板\\\"], \\\"desc_hand_centric\\\": \\\"右手快速伸向脚踏板，左手在旁辅助移动\\\", \\\"desc_object_centric\\\": \\\"手部接近静止的自行车脚踏板\\\", \\\"start\\\": 0.0, \\\"end\\\": 0.8, \\\"atomic_actions\\\": [{\\\"idx\\\": 0, \\\"start\\\": 0.0, \\\"end\\\": 0.8, \\\"verb\\\": \\\"reach\\\", \\\"object_labels\\\": [\\\"脚踏板\\\"], \\\"desc_hand_centric\\\": \\\"右手快速伸向脚踏板，左手在旁辅助移动\\\", \\\"desc_object_centric\\\": \\\"手部接近静止的自行车脚踏板\\\", \\\"relations\\\": [], \\\"relation_events\\\": []}]}]}, {\\\"idx\\\": 1, \\\"title\\\": \\\"抓握并旋转脚踏板进行测试\\\", \\\"start\\\": 0.8, \\\"end\\\": 8.133, \\\"actions\\\": [{\\\"idx\\\": 0, \\\"verb\\\": \\\"grasp\\\", \\\"object_labels\\\": [\\\"脚踏板\\\"], \\\"desc_hand_centric\\\": \\\"右手抓住脚踏板，左手在画面外或未参与\\\", \\\"desc_object_centric\\\": \\\"脚踏板被手抓握准备旋转\\\", \\\"start\\\": 0.8, \\\"end\\\": 4.0, \\\"atomic_actions\\\": [{\\\"idx\\\": 1, \\\"start\\\": 0.8, \\\"end\\\": 2.0, \\\"verb\\\": \\\"grasp\\\", \\\"object_labels\\\": [\\\"脚踏板\\\"], \\\"desc_hand_centric\\\": \\\"右手抓住脚踏板，左手在画面外或未参与\\\", \\\"desc_object_centric\\\": \\\"脚踏板被手抓握准备旋转\\\", \\\"relations\\\": [], \\\"relation_events\\\": []}, {\\\"idx\\\": 2, \\\"start\\\": 2.0, \\\"end\\\": 4.0, \\\"verb\\\": \\\"rotate\\\", \\\"object_labels\\\": [\\\"脚踏板\\\"], \\\"desc_hand_centric\\\": \\\"右手持续转动脚踏板，带动链条运动\\\", \\\"desc_object_centric\\\": \\\"脚踏板在手作用下旋转，后轮随之转动\\\", \\\"relations\\\": [], \\\"relation_events\\\": []}]}, {\\\"idx\\\": 1, \\\"verb\\\": \\\"rotate\\\", \\\"object_labels\\\": [\\\"脚踏板\\\"], \\\"desc_hand_centric\\\": \\\"右手持续转动脚踏板，带动链条运动\\\", \\\"desc_object_centric\\\": \\\"脚踏板在手作用下旋转，后轮随之转动\\\", \\\"start\\\": 4.0, \\\"end\\\": 8.133, \\\"atomic_actions\\\": [{\\\"idx\\\": 3, \\\"start\\\": 4.0, \\\"end\\\": 8.133, \\\"verb\\\": \\\"release\\\", \\\"object_labels\\\": [\\\"脚踏板\\\"], \\\"desc_hand_centric\\\": \\\"右手松开脚踏板，双手逐渐移出画面\\\", \\\"desc_object_centric\\\": \\\"脚踏板停止旋转，恢复静止状态\\\", \\\"relations\\\": [], \\\"relation_events\\\": []}]}]}]}\",\n        \"ResultSize\": 2741,\n        \"Status\": 6,\n        \"TaskId\": \"3uimegtqfkfv_1\",\n        \"RequestId\": \"3ec3f1d6-300d-4ef4-9d79-02ed43290167\"\n    }\n}",
+        "title": "调用示例1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAnnotationResults\n<公共请求参数>\n\n{\n    \"TaskId\": \"3ufx9vwq22ms_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"1788182323\",\n        \"ErrorMsg\": \"manual set for retry test\",\n        \"FileName\": \"1qLIfbvfNo_0003.mp4\",\n        \"FinishTime\": \"1788182330\",\n        \"Result\": \"\",\n        \"ResultSize\": 0,\n        \"Status\": 4,\n        \"TaskId\": \"3ufx9vwq22ms_1\",\n        \"RequestId\": \"3588b486-116c-43cf-9267-b337c09465f0\"\n    }\n}",
+        "title": "调用示例2"
+      }
+    ],
+    "DescribeAnnotationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAnnotationTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"3ueigpf29yac\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"FileName\": \"1qLI\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"3ueigpf29yac\",\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"Tasks\": [\n            {\n                \"CreateTime\": \"1788184646\",\n                \"ErrorMsg\": \"\",\n                \"FileName\": \"1qLIfbvfNo_0099.mp4\",\n                \"FinishTime\": \"0\",\n                \"InputPath\": \"ai-annotation-test-input-1258344699/batch-test/1qLIfbvfNo_0099.mp4\",\n                \"Status\": 1,\n                \"TaskId\": \"3ueigpf29yac_99\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6f129a1c-7ddd-48a4-b298-bfb8273d4d97\"\n    }\n}",
+        "title": "调用示例1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAnnotationTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"3ufulistdemo01\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Status\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"3ufulistdemo01\",\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"Tasks\": [\n            {\n                \"CreateTime\": \"1788184838\",\n                \"ErrorMsg\": \"stage2 semantic failed: VLM call timeout after 3 retries\",\n                \"FileName\": \"1qLIfbvfNo_0098.mp4\",\n                \"FinishTime\": \"1788185661\",\n                \"InputPath\": \"ai-annotation-test-input-1258344699/batch-test/1qLIfbvfNo_0098.mp4\",\n                \"Status\": 4,\n                \"TaskId\": \"3ufulistdemo01_1\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"f23d2625-15d8-4180-bdd9-3d2c35d116c2\"\n    }\n}",
+        "title": "调用示例2"
       }
     ],
     "DescribeDeviceInfo": [
@@ -142,6 +216,14 @@
         "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionStatisticsByInterval\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abcdefg\",\n    \"StatisticInterval\": \"hour\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": 1670000000,\n    \"EndTime\": 1670000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefg-774e-4756-9f5b-8faa55ae1e5b\",\n        \"SessionStatistics\": [\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 1,\n                \"StartTime\": 1661151600,\n                \"EndTime\": 1661152600,\n                \"TotalDuration\": 20,\n                \"NotBadSessionRatio\": 50\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 2,\n                \"StartTime\": 1661162400,\n                \"EndTime\": 1661152600,\n                \"TotalDuration\": 20,\n                \"NotBadSessionRatio\": 10\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 1,\n                \"SessionNum\": 4,\n                \"StartTime\": 1661166000,\n                \"EndTime\": 1661176000,\n                \"TotalDuration\": 604,\n                \"NotBadSessionRatio\": 20\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 1,\n                \"StartTime\": 1661166000,\n                \"EndTime\": 1661176000,\n                \"TotalDuration\": 10,\n                \"NotBadSessionRatio\": 30\n            }\n        ]\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeVideoPlayUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoPlayUrl\n<公共请求参数>\n\n{\n    \"TaskId\": \"3ueigpf29yac_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": \"1788187801\",\n        \"VideoUrl\": \"https://ai-annotation-t*s**input-1258344699.cos-i*ter*al.ap-gu**gzhou.t*nc**tco*.cn/batch-test*07***z***8_0152.mp4?X-Amz-Algor*****AWS*-HMAC-SHA25*******-C*******-*od*=ENABLED*X-Amz-C*e*entia**AKIDCHD*mNm*82jICuQ**l*D*******BQo24%**2*2*08*1%2Fap-g*angz***%2Fs3%2Faws4_request&X-Amz-D***=***60831T135001Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=666dd5ca45e0ca293c99a5b0677a9728210923722398094da96bfbaf7c338879\",\n        \"RequestId\": \"a12348e8-5e44-4d03-9429-964dcaff5b1c\"\n    }\n}",
+        "title": "调用示例1"
       }
     ],
     "GetDeviceLicense": [
@@ -232,6 +314,14 @@
         "title": "修改项目授权模式"
       }
     ],
+    "RetryAnnotationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryAnnotationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"3uen9jt0kd78_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a84e8b13-8462-4fcb-8ad0-16a4a2a9d1c7\"\n    }\n}",
+        "title": "调用示例1"
+      }
+    ],
     "StartPublishLiveStream": [
       {
         "document": "",
@@ -246,6 +336,14 @@
         "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishLiveStream\n<公共请求参数>\n\n{\n    \"TaskId\": \"D0xOlGVRsurq9PRB-Iuak6f-J0ac-twfB4hQwbFucIB9muIw9pP0FOpOYkgdMNK52kIoPlhHe96RlTGxKzJwUgzjD-8pZgA.\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"StopPublishCdnStream-1\"\n    }\n}",
         "title": "停止转推任务"
+      }
+    ],
+    "UploadVideoAnnotationResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadVideoAnnotationResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"3uen9jt0kd78_1\",\n    \"Confirmed\": 1,\n    \"Result\": \"{\\\"schema\\\": \\\"fine4.final\\\", \\\"subtasks\\\": [{\\\"demo\\\": \\\"edited-content\\\"}]}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CommitId\": \"3ufy30xay6l0\",\n        \"RequestId\": \"29a08fd8-d887-43ef-80d0-b36645d89fbf\"\n    }\n}",
+        "title": "调用示例1"
       }
     ]
   },

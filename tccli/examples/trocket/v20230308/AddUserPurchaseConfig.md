@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trocket AddUserPurchaseConfig --cli-unfold-argument  \
-    --CustomerAppId 123 \
-    --CustomerUin 123 \
+    --CustomerAppId 1293673453 \
+    --CustomerUin 112936734523 \
     --ProductSpec rocket-vip-basic-0 \
     --CustomerRegion 19 \
     --Zones 190001 \

@@ -14,7 +14,8 @@ tccli gme DescribeApplicationList --cli-unfold-argument  \
     --ProjectId 0 \
     --SearchText app_game \
     --PageSize 10 \
-    --PageNo 0
+    --PageNo 0 \
+    --NewVersion 1
 ```
 
 Output: 

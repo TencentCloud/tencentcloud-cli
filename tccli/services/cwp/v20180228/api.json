@@ -13313,6 +13313,45 @@
       ],
       "usage": "out"
     },
+    "CWPTags": {
+      "document": "主机标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>记录ID</p>",
+          "example": "18442",
+          "member": "int64",
+          "name": "Rid",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签名</p>",
+          "example": "tagsA",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID</p>",
+          "example": "18442",
+          "member": "int64",
+          "name": "TagId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CanFixVulInfo": {
       "document": "批量修复漏洞二次弹窗 漏洞主机信息",
       "members": [
@@ -31440,7 +31479,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件\n- AssetType 资产类型(CWP 主机安全资产, TCSS_HOST 容器主机节点,TCSS_EKS 容器超级节点)\n- PluginStatus 插件状态(Normal 使用正常,Abnormal 存在异常,Unused 未使用)\n- ProtectionSwitch 防护开关(Enable 开启,Disable 未开启)\n- ProtectionVersion 防护版本(Rasp 重保授权包,Unauthorized 未授权)\n- InstanceID 实例ID\n- InstanceName 实例名称\n- InstanceIP 实例IP(内网IP/外网IP)\n- NodeID 容器节点ID\n- NodeName 容器节点名称\n- ClusterID 容器集群ID\n- ClusterName 容器集群名称",
+          "document": "过滤条件\n- AssetType 资产类型(CWP 主机安全资产, TCSS_HOST 容器主机节点,TCSS_EKS 容器超级节点)\n- PluginStatus 插件状态(Normal 使用正常,Abnormal 存在异常,Unused 未使用)\n- ProtectionSwitch 防护开关(Enable 开启,Disable 未开启)\n- ProtectionVersion 防护版本(Rasp 重保授权包,Unauthorized 未授权)\n- InstanceID 实例ID\n- InstanceName 实例名称\n- InstanceIP 实例IP(内网IP/外网IP)\n- NodeID 容器节点ID\n- NodeName 容器节点名称\n- ClusterID 容器集群ID\n- ClusterName 容器集群名称\n- CWPTags 主机标签(值为标签ID,多个取并集,仅AssetType=CWP/TCSS_HOST生效)",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -52741,7 +52780,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID",
+          "document": "<p>资源ID</p>",
           "example": "cwplic-xxxx",
           "member": "string",
           "name": "ResourceID",
@@ -52751,7 +52790,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项",
+          "document": "<p>计费项</p>",
           "example": "sv_yunjing_xxx",
           "member": "string",
           "name": "InquireKey",
@@ -52761,10 +52800,20 @@
         },
         {
           "disabled": false,
-          "document": "订单状态\n- 1 正常\n- 2 隔离期\n- 3 已销毁",
+          "document": "<p>订单状态</p><ul><li>1 正常</li><li>2 隔离期</li><li>3 已销毁</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源类型</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SourceType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -56761,7 +56810,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器唯一ID",
+          "document": "<p>机器唯一ID</p>",
           "example": "e0b41ad5-cf93-49d5-94d0-ffb6febdbed0",
           "member": "string",
           "name": "QUUID",
@@ -56771,7 +56820,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "机器名称",
           "member": "string",
           "name": "InstanceName",
@@ -56781,7 +56830,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -56791,7 +56840,7 @@
         },
         {
           "disabled": false,
-          "document": "公网IP",
+          "document": "<p>公网IP</p>",
           "example": "0.0.0.0",
           "member": "string",
           "name": "PublicIP",
@@ -56801,7 +56850,7 @@
         },
         {
           "disabled": false,
-          "document": "内网IP",
+          "document": "<p>内网IP</p>",
           "example": "0.0.0.0",
           "member": "string",
           "name": "PrivateIP",
@@ -56811,8 +56860,8 @@
         },
         {
           "disabled": false,
-          "document": "云标签信息",
-          "example": "[\"tag name\"]",
+          "document": "<p>云标签信息</p>",
+          "example": "无",
           "member": "Tags",
           "name": "Tags",
           "output_required": false,
@@ -56821,8 +56870,18 @@
         },
         {
           "disabled": false,
-          "document": "防护版本信息\n- CriticalProtection 重保防护包\n- Pro 容器安全-专业版\n- Ultimate 主机安全-旗舰版",
-          "example": "防护版本",
+          "document": "<p>主机标签信息(仅AssetType=CWP/TCSS_HOST有值)</p>",
+          "example": "无",
+          "member": "CWPTags",
+          "name": "CWPTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防护版本信息</p><ul><li>CriticalProtection 重保防护包</li><li>Pro 容器安全-专业版</li><li>Ultimate 主机安全-旗舰版</li></ul>",
+          "example": "[\"Ultimate\"]",
           "member": "string",
           "name": "ProtectionVersion",
           "output_required": false,
@@ -56831,7 +56890,7 @@
         },
         {
           "disabled": false,
-          "document": "防护设置\n- 0 未配置\n- 1 已配置",
+          "document": "<p>防护设置</p><ul><li>0 未配置</li><li>1 已配置</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "ConfigurationSetting",
@@ -56841,7 +56900,7 @@
         },
         {
           "disabled": false,
-          "document": "总开关\n- 0 未开启\n- 1已开启",
+          "document": "<p>总开关</p><ul><li>0 未开启</li><li>1已开启</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "Enable",
@@ -56851,7 +56910,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞防御开关\n- 0 未开启\n- 1 开启",
+          "document": "<p>漏洞防御开关</p><ul><li>0 未开启</li><li>1 开启</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "VulDefEnable",
@@ -56861,7 +56920,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞防御模式\n- 0 标准\n- 1 重保",
+          "document": "<p>漏洞防御模式</p><ul><li>0 标准</li><li>1 重保</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "VulDefMode",
@@ -56871,7 +56930,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞防御动作\n- 0 仅检测\n- 1 检测+防御",
+          "document": "<p>漏洞防御动作</p><ul><li>0 仅检测</li><li>1 检测+防御</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "VulDefAction",
@@ -56881,7 +56940,7 @@
         },
         {
           "disabled": false,
-          "document": "内存马防御开关\n- 0 未开启\n- 1 开启",
+          "document": "<p>内存马防御开关</p><ul><li>0 未开启</li><li>1 开启</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "MemShellDefEnable",
@@ -56891,7 +56950,7 @@
         },
         {
           "disabled": false,
-          "document": "更多防护\n- 0 不注入会重启的进程 \n- 1 注入会重启的进程",
+          "document": "<p>更多防护</p><ul><li>0 不注入会重启的进程 </li><li>1 注入会重启的进程</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "SafeInject",
@@ -56901,7 +56960,7 @@
         },
         {
           "disabled": false,
-          "document": "性能阈值配置开关\n- 0 未开启\n- 1 开启",
+          "document": "<p>性能阈值配置开关</p><ul><li>0 未开启</li><li>1 开启</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "PerformanceLimit",
@@ -56911,7 +56970,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU阈值,取值1-99",
+          "document": "<p>CPU阈值,取值1-99</p>",
           "example": "0",
           "member": "uint64",
           "name": "PerformanceLimitCpu",
@@ -56921,7 +56980,7 @@
         },
         {
           "disabled": false,
-          "document": "内存阈值,取值1-99",
+          "document": "<p>内存阈值,取值1-99</p>",
           "example": "0",
           "member": "uint64",
           "name": "PerformanceLimitMem",
@@ -56931,7 +56990,7 @@
         },
         {
           "disabled": false,
-          "document": "内存剩余阈值",
+          "document": "<p>内存剩余阈值</p>",
           "example": "0",
           "member": "uint64",
           "name": "PerformanceLimitMemAmount",
@@ -56941,7 +57000,7 @@
         },
         {
           "disabled": false,
-          "document": "插件状态\n- 0 使用正常\n- 1 存在异常\n- 2 未使用",
+          "document": "<p>插件状态</p><ul><li>0 使用正常</li><li>1 存在异常</li><li>2 未使用</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "RaspException",
@@ -56951,7 +57010,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间",
+          "document": "<p>最近更新时间</p>",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "LatestUpdateTime",
@@ -56961,7 +57020,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID,仅容器资产有值",
+          "document": "<p>集群ID,仅容器资产有值</p>",
           "example": "cls-id",
           "member": "string",
           "name": "ClusterName",
@@ -56971,7 +57030,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称,仅容器资产有值",
+          "document": "<p>集群名称,仅容器资产有值</p>",
           "example": "集群名称",
           "member": "string",
           "name": "ClusterId",
@@ -56981,8 +57040,8 @@
         },
         {
           "disabled": false,
-          "document": "订单信息",
-          "example": "订单信息",
+          "document": "<p>订单信息</p>",
+          "example": "无",
           "member": "OrderDetail",
           "name": "OrderDetail",
           "output_required": false,
@@ -56991,7 +57050,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许解绑,fasle 不允许 true 允许",
+          "document": "<p>是否允许解绑,fasle 不允许 true 允许</p>",
           "example": "false",
           "member": "bool",
           "name": "IsUnBind",
@@ -57001,7 +57060,7 @@
         },
         {
           "disabled": false,
-          "document": "uuid 机器唯一ID,仅AssetType = CWP 时有值",
+          "document": "<p>uuid 机器唯一ID,仅AssetType = CWP 时有值</p>",
           "example": "e0b41ad5-cf93-49d5-94d0-ffb6febdbed0",
           "member": "string",
           "name": "UUID",
@@ -57011,7 +57070,7 @@
         },
         {
           "disabled": false,
-          "document": "无注入/注入失败原因",
+          "document": "<p>无注入/注入失败原因</p>",
           "example": "存在多种异常情况，请点击 插件状态 查看插件注入详情",
           "member": "string",
           "name": "Reason",
@@ -63086,7 +63145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键",
+          "document": "<p>标签键</p>",
           "example": "business1",
           "member": "string",
           "name": "TagKey",
@@ -63097,7 +63156,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值",
+          "document": "<p>标签值</p>",
           "example": "businessValue",
           "member": "string",
           "name": "TagValue",

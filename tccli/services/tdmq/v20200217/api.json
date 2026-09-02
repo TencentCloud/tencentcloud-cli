@@ -6257,7 +6257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "mq-instance",
           "member": "string",
           "name": "Name",
@@ -6266,7 +6266,16 @@
         },
         {
           "disabled": false,
-          "document": "集群规格，支持规格有 1.通用型:rocket-vip-basic-0; 2.基础型:rocket-vip-basic-1; 3.标准型:rocket-vip-basic-2; 4.高阶Ⅰ型:rocket-vip-basic-3; 5.高阶Ⅱ型:rocket-vip-basic-4",
+          "document": "<p>VPC信息</p>",
+          "example": "无",
+          "member": "RocketMQVpcInfo",
+          "name": "VpcInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群规格，支持规格有 1.通用型:rocket-vip-basic-0; 2.基础型:rocket-vip-basic-1; 3.标准型:rocket-vip-basic-2; 4.高阶Ⅰ型:rocket-vip-basic-3; 5.高阶Ⅱ型:rocket-vip-basic-4</p>",
           "example": "rocket-vip-basic-1",
           "member": "string",
           "name": "Spec",
@@ -6275,7 +6284,7 @@
         },
         {
           "disabled": false,
-          "document": "单节点存储空间，GB为单位，最低200GB",
+          "document": "<p>单节点存储空间，GB为单位，最低200GB</p>",
           "example": "500",
           "member": "int64",
           "name": "StorageSize",
@@ -6284,7 +6293,7 @@
         },
         {
           "disabled": false,
-          "document": "节点部署的区域ID列表，如广州一区，则是100001，具体可查询腾讯云官网",
+          "document": "<p>节点部署的可用区域ID列表，如广州一区，则是100001，具体可查询腾讯云官网</p>",
           "example": "[\"100001\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -6293,34 +6302,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC信息",
-          "example": "无",
-          "member": "VpcInfo",
-          "name": "VpcInfo",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "购买时长，月为单位",
-          "example": "12",
-          "member": "int64",
-          "name": "TimeSpan",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "节点数量，创建专享集群时必填",
-          "example": "6",
-          "member": "int64",
-          "name": "NodeCount",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "通用集群规格标识，新购通用集群时必填，从 [DescribeRocketMQGeneralSKUs](https://cloud.tencent.com/document/api/1179/127066) 接口返回的 [GeneralSKU](https://cloud.tencent.com/document/api/1179/46089#GeneralSKU) 字段获取。",
+          "document": "<p>通用集群规格标识，新购通用集群时必填，从 <a href=\"https://cloud.tencent.com/document/api/1179/127066\">DescribeRocketMQGeneralSKUs</a> 接口返回的 <a href=\"https://cloud.tencent.com/document/api/1179/46089#GeneralSKU\">GeneralSKU</a> 字段获取。</p>",
           "example": "general_12k",
           "member": "string",
           "name": "GeneralSkuCode",
@@ -6329,16 +6311,16 @@
         },
         {
           "disabled": false,
-          "document": "是否用于迁移上云，默认为false",
-          "example": "false",
-          "member": "bool",
-          "name": "SupportsMigrateToCloud",
+          "document": "<p>节点数量，创建专享集群时必填</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "NodeCount",
           "required": false,
-          "type": "bool"
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "是否开启公网",
+          "document": "<p>是否开启公网</p>",
           "example": "false",
           "member": "bool",
           "name": "EnablePublic",
@@ -6347,7 +6329,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽，在开启公网情况下为必传字段",
+          "document": "<p>公网带宽，在开启公网情况下为必传字段</p>",
           "example": "0",
           "member": "int64",
           "name": "Bandwidth",
@@ -6356,7 +6338,7 @@
         },
         {
           "disabled": false,
-          "document": "公网白名单",
+          "document": "<p>公网白名单</p>",
           "example": "无",
           "member": "PublicAccessRule",
           "name": "IpRules",
@@ -6365,12 +6347,66 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>公网是否按流量计费</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "BillingFlow",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大topic数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxTopicNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费模式</p><p>枚举值：</p><ul><li>POSTPAID： 后付费</li><li>PREPAID： 预付费</li></ul>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买时长，月为单位</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动续费</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "<p>是否用于迁移上云，默认为false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportsMigrateToCloud",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6380,7 +6416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "rocketmq-7drjznvjqzee",
           "member": "string",
           "name": "ClusterId",
@@ -12909,7 +12945,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "rocketmq-4k4orqgq",
           "member": "string",
           "name": "ClusterId",
@@ -12918,7 +12954,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "document": "<p>命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>",
           "example": "test_ns",
           "member": "string",
           "name": "EnvironmentId",
@@ -12927,7 +12963,7 @@
         },
         {
           "disabled": false,
-          "document": "主题，rocketmq查询死信时值为groupId",
+          "document": "<p>主题，rocketmq查询死信时值为groupId</p>",
           "example": "test_topic",
           "member": "string",
           "name": "TopicName",
@@ -12936,7 +12972,7 @@
         },
         {
           "disabled": false,
-          "document": "消息id",
+          "document": "<p>消息id</p>",
           "example": "092BAE5A1656070DEA4E276DF0760089",
           "member": "string",
           "name": "MsgId",
@@ -12945,7 +12981,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组、订阅",
+          "document": "<p>消费组、订阅</p>",
           "example": "test_group",
           "member": "string",
           "name": "GroupName",
@@ -12954,7 +12990,7 @@
         },
         {
           "disabled": true,
-          "document": "查询死信时该值为true",
+          "document": "<p>查询死信时该值为true</p>",
           "example": "false",
           "member": "bool",
           "name": "QueryDLQMsg",
@@ -12963,12 +12999,21 @@
         },
         {
           "disabled": false,
-          "document": "查询死信时该值为true",
+          "document": "<p>查询死信时该值为true</p>",
           "example": "false",
           "member": "string",
           "name": "QueryDeadLetterMessage",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在查询延迟消息的轨迹</p><p>枚举值：</p><ul><li>true： 查询延迟消息轨迹</li><li>false： 查询非延迟消息轨迹</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "QueryDelayMessage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -12978,7 +13023,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "轨迹详情列表",
+          "document": "<p>轨迹详情列表</p>",
           "example": "无",
           "member": "TraceResult",
           "name": "Result",
@@ -12988,7 +13033,7 @@
         },
         {
           "disabled": false,
-          "document": "消息轨迹页展示的topic名称",
+          "document": "<p>消息轨迹页展示的topic名称</p>",
           "example": "test_topic",
           "member": "string",
           "name": "ShowTopicName",
@@ -23246,7 +23291,7 @@
           "disabled": false,
           "document": "<p>VPC信息</p>",
           "example": "无",
-          "member": "VpcConfig",
+          "member": "RocketMQVpcInfo",
           "name": "Vpcs",
           "output_required": true,
           "type": "list",
@@ -23481,6 +23526,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式</p><p>枚举值：</p><ul><li>后付费： 0</li><li>预付费： 1</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23885,7 +23940,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "<p>命名空间</p>",
           "example": "test_ns",
           "member": "string",
           "name": "Namespace",
@@ -23894,7 +23949,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称",
+          "document": "<p>消费组名称</p>",
           "example": "test_group",
           "member": "string",
           "name": "GroupName",
@@ -23903,7 +23958,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启广播消费",
+          "document": "<p>是否开启广播消费</p>",
           "example": "false",
           "member": "bool",
           "name": "ConsumeBroadcastEnable",
@@ -23912,7 +23967,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启消费",
+          "document": "<p>是否开启消费</p>",
           "example": "false",
           "member": "bool",
           "name": "ConsumeEnable",
@@ -23921,7 +23976,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "remark info",
           "member": "string",
           "name": "Remark",
@@ -23930,12 +23985,21 @@
         },
         {
           "disabled": false,
-          "document": "协议类型，支持以下枚举值\nTCP;\nHTTP;",
+          "document": "<p>协议类型，支持以下枚举值<br>TCP;<br>HTTP;</p>",
           "example": "TCP",
           "member": "string",
           "name": "ConsumerGroupType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的标签列表</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -25076,7 +25140,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "<p>命名空间</p>",
           "example": "test_ns",
           "member": "string",
           "name": "Namespace",
@@ -25085,7 +25149,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "<p>主题名称</p>",
           "example": "test_topic",
           "member": "string",
           "name": "TopicName",
@@ -25094,7 +25158,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型：\nNormal，普通\nPartitionedOrder, 分区顺序\nTransaction，事务消息\nDelayScheduled，延迟/定时消息",
+          "document": "<p>主题类型：<br>Normal，普通<br>PartitionedOrder, 分区顺序<br>Transaction，事务消息<br>DelayScheduled，延迟/定时消息</p>",
           "example": "Normal",
           "member": "string",
           "name": "Type",
@@ -25103,7 +25167,7 @@
         },
         {
           "disabled": false,
-          "document": "分区个数",
+          "document": "<p>分区个数</p>",
           "example": "3",
           "member": "int64",
           "name": "Partitions",
@@ -25112,12 +25176,21 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "remark info",
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的标签列表</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -25343,6 +25416,45 @@
         }
       ],
       "usage": "out"
+    },
+    "RocketMQVpcInfo": {
+      "document": "VPC 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vpc信息</p>",
+          "example": "vpc-cpqt7iik",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网信息</p>",
+          "example": "subnet-cwg9hmyx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC 名称</p>",
+          "example": "test_vpc",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Role": {
       "document": "角色实例",
@@ -28278,34 +28390,6 @@
         }
       ],
       "usage": "out"
-    },
-    "VpcConfig": {
-      "document": "VPC配置信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "vpc的id",
-          "example": "vpc-9dlrd5h1",
-          "member": "string",
-          "name": "VpcId",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "子网id",
-          "example": "subnet-jadmas",
-          "member": "string",
-          "name": "SubnetId",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "VpcEndpointInfo": {
       "document": "VPC接入点信息",

@@ -744,6 +744,14 @@
         "title": "查询数据库"
       }
     ],
+    "DescribeDatabasesAndTablesForInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabasesAndTablesForInstance\n<公共请求参数>\n\n{\n\t\"DBName\": [\n\t\t{\n\t \t\t\"DatabaseName\":\"test1\",   \n\t \t\t\"TableNames\":[\n\n\t \t\t]\n\t\t},\n\t\t{\n\t \t\t\"DatabaseName\":\"test2\",  \n\t \t\t\"TableNames\":[\n\t\t\t\t\"table1\",\n\t\t\t\t\"table2\",\n\t\t\t\t\"table3\"\n\t \t\t]\n\t\t}\n\t],\n\t\"InstanceId\": \"cdb-f35wr6wj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A8\",\n        \"Items\": [\n            {\n                \"DatabaseName\": \"test2\",\n                \"TableNames\": [\n                    \"table1\",\n                    \"table2\",\n                    \"table3\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "校验回档时实例的数据库名和表名是否重复"
+      }
+    ],
     "DescribeDbTknPwdRules": [
       {
         "document": "",

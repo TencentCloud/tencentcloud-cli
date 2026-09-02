@@ -4907,6 +4907,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP APP相关信息返回</p>",
+          "example": "无",
+          "member": "ConversationMcpApp",
+          "name": "McpApp",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5058,6 +5069,56 @@
         }
       ],
       "usage": "out"
+    },
+    "ConversationMcpApp": {
+      "document": "MCP App 内容，供历史会话重建可交互 App",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力边界：一次请求只能读该 plugin 的资源</p>",
+          "example": "86866d29-3c28-4d41-9b5b-b86a72c62ccb",
+          "member": "string",
+          "name": "PluginId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ui:// 资源，前端据此调 ReadMCPResource 拉 HTML</p>",
+          "example": "ui://pd/query-records-v1.0.0",
+          "member": "string",
+          "name": "ResourceUri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent-exec 侧 thread</p>",
+          "example": "73251347-32c8-49a1-bea5-32a6aeb82ebc",
+          "member": "string",
+          "name": "ThreadId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON：完整 CallToolResult 原文，供历史会话重建时重放</p>",
+          "example": "{\"_meta\":{\"viewUUID\":\"400db013-2eb3-480e-9d94-356715c3d989\"},\"content\":[{\"text\":\"已打开加班申请表单，请员工在表单中核对并补全信息，然后点击「确认提交」。表单",
+          "member": "string",
+          "name": "ToolResult",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CreateAppRequest": {
       "document": "CreateApp请求参数结构体",

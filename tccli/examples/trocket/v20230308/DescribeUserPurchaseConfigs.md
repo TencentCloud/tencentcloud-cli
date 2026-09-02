@@ -1,6 +1,6 @@
-**Example 1: 1**
+**Example 1: 查询购买配置**
 
-1
+查询购买配置
 
 Input: 
 

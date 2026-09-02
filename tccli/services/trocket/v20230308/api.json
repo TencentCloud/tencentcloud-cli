@@ -806,7 +806,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户APPID",
+          "document": "<p>客户APPID</p>",
           "example": "1000000",
           "member": "uint64",
           "name": "CustomerAppId",
@@ -815,8 +815,8 @@
         },
         {
           "disabled": false,
-          "document": "客户UIN",
-          "example": "123455",
+          "document": "<p>客户UIN</p>",
+          "example": "1293673455",
           "member": "string",
           "name": "CustomerUin",
           "required": true,
@@ -824,7 +824,7 @@
         },
         {
           "disabled": false,
-          "document": "产品配置名称",
+          "document": "<p>产品配置名称</p>",
           "example": "rocket-vip-basic-0",
           "member": "string",
           "name": "ProductSpec",
@@ -833,8 +833,8 @@
         },
         {
           "disabled": false,
-          "document": "开放的地域ID",
-          "example": "1",
+          "document": "<p>开放的地域ID</p>",
+          "example": "16",
           "member": "uint64",
           "name": "CustomerRegion",
           "required": true,
@@ -842,8 +842,8 @@
         },
         {
           "disabled": false,
-          "document": "开放的可用区列表",
-          "example": "无",
+          "document": "<p>开放的可用区列表</p>",
+          "example": "[\"16001\"]",
           "member": "string",
           "name": "Zones",
           "required": true,
@@ -851,7 +851,7 @@
         },
         {
           "disabled": false,
-          "document": "最大可购买节点数",
+          "document": "<p>最大可购买节点数</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxNodes",
@@ -860,12 +860,21 @@
         },
         {
           "disabled": false,
-          "document": "最小可购买节点数",
+          "document": "<p>最小可购买节点数</p>",
           "example": "1",
           "member": "int64",
           "name": "MinNodes",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例版本选择</p><p>枚举值：</p><ul><li>ROCKETMQ4： RocketMQ 4.x实例</li><li>ROCKETMQ5： RocketMQ 5.x实例</li></ul>",
+          "example": "ROCKETMQ5",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2988,7 +2997,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端ID，从 [DescribeConsumerClientList](https://cloud.tencent.com/document/api/1493/120140) 接口中的 [ConsumerClient](https://cloud.tencent.com/document/api/1493/96031#ConsumerClient) 出参中获得。",
+          "document": "<p>客户端ID，从 <a href=\"https://cloud.tencent.com/document/api/1493/120140\">DescribeConsumerClientList</a> 接口中的 <a href=\"https://cloud.tencent.com/document/api/1493/96031#ConsumerClient\">ConsumerClient</a> 出参中获得。</p>",
           "example": "11.139.244.247@75043#6734858812769343",
           "member": "string",
           "name": "ClientId",
@@ -3039,7 +3048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端详情",
+          "document": "<p>客户端详情</p>",
           "example": "无",
           "member": "ConsumerClient",
           "name": "Client",
@@ -3049,13 +3058,23 @@
         },
         {
           "disabled": false,
-          "document": "主题消费信息",
+          "document": "<p>主题消费信息</p>",
           "example": "无",
           "member": "TopicConsumeStats",
           "name": "TopicList",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>订阅主题总数</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "TopicTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4623,6 +4642,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "<p>5.x 时间轮定时消息状态，仅在查询定时消息（命中 RMQ_SYS_WHEEL_TIMER）时返回。枚举值：PENDING（未到期）、DELIVERED（已到期投递）、RECALLED（已撤回）、NOT_FOUND（消息不存在）、UNSUPPORTED（该消息类型不支持状态查询，如 4.x DelayLevel 延迟消息）。</p>",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "DelayMessageStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6147,7 +6176,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户的appid",
+          "document": "<p>客户的appid</p>",
           "example": "1000012",
           "member": "int64",
           "name": "CustomerAppId",
@@ -6156,12 +6185,21 @@
         },
         {
           "disabled": false,
-          "document": "客户地域id",
+          "document": "<p>客户地域id</p>",
           "example": "1",
           "member": "uint64",
           "name": "CustomerRegionId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例版本选择</p><p>枚举值：</p><ul><li>ROCKETMQ4： RocketMQ 4.x实例</li><li>ROCKETMQ5： RocketMQ 5.x实例</li></ul>",
+          "example": "ROCKETMQ5",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6177,11 +6215,11 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可售卖配置信息列表",
+          "document": "<p>可售卖配置信息列表</p>",
           "example": "无",
           "member": "UserPurchaseConfig",
           "name": "Configs",
@@ -10552,7 +10590,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品规格标识",
+          "document": "<p>产品规格标识</p>",
           "example": "rocket-vip1",
           "member": "string",
           "name": "ProductSpec",
@@ -10563,7 +10601,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Region",
@@ -10574,7 +10612,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区ID",
+          "document": "<p>可用区ID</p>",
           "example": "100001",
           "member": "uint64",
           "name": "Zone",
@@ -10585,7 +10623,7 @@
         },
         {
           "disabled": false,
-          "document": "最大可购买节点数",
+          "document": "<p>最大可购买节点数</p>",
           "example": "10",
           "member": "uint64",
           "name": "MaxNodes",
@@ -10596,7 +10634,7 @@
         },
         {
           "disabled": false,
-          "document": "最小可购买节点数",
+          "document": "<p>最小可购买节点数</p>",
           "example": "1",
           "member": "uint64",
           "name": "MinNodes",
@@ -10607,7 +10645,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已售罄",
+          "document": "<p>是否已售罄</p>",
           "example": "true",
           "member": "bool",
           "name": "SoldOut",
@@ -10618,7 +10656,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId",
+          "document": "<p>用户AppId</p>",
           "example": "1000000",
           "member": "uint64",
           "name": "AppId",
@@ -10629,10 +10667,21 @@
         },
         {
           "disabled": false,
-          "document": "用户uin",
-          "example": "123456",
+          "document": "<p>用户uin</p>",
+          "example": "308362398",
           "member": "string",
           "name": "Uin",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例版本选择</p><p>枚举值：</p><ul><li>ROCKETMQ4： RocketMQ 4.x实例</li><li>ROCKETMQ5： RocketMQ 5.x实例</li></ul>",
+          "example": "ROCKETMQ4",
+          "member": "string",
+          "name": "InstanceVersion",
           "output_required": true,
           "required": false,
           "type": "string",

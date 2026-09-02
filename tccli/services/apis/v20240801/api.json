@@ -531,7 +531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp server id",
+          "document": "<p>mcp server id</p>",
           "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "ID",
@@ -541,8 +541,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "是否需要鉴权",
+          "disabled": true,
+          "document": "<p>是否需要鉴权（已废弃，请勿使用）</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedAuth",
@@ -552,8 +552,8 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "凭据代填的ID",
+          "disabled": true,
+          "document": "<p>凭据代填的ID（已废弃，请勿使用）</p>",
           "example": "agc-xxxxxxxx",
           "member": "string",
           "name": "AgentCredentialID",
@@ -564,7 +564,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识",
+          "document": "<p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>",
           "example": "http://127.0.0.1/_llmsgw_/sse/aga-05b85106/mcp-2fc41d77",
           "member": "string",
           "name": "SSEResourceIdentifier",
@@ -575,7 +575,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识",
+          "document": "<p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>",
           "example": "http://127.0.0.1/_llmsgw_/mcp/aga-05b85106/mcp-2fc41d77",
           "member": "string",
           "name": "StreamableResourceIdentifier",
@@ -887,8 +887,8 @@
           "type": "object"
         },
         {
-          "disabled": false,
-          "document": "<p>是否要认证</p>",
+          "disabled": true,
+          "document": "<p>是否要认证（已废弃，请勿使用）</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedAuth",
@@ -896,8 +896,8 @@
           "type": "bool"
         },
         {
-          "disabled": false,
-          "document": "<p>凭据ID</p>",
+          "disabled": true,
+          "document": "<p>凭据ID（已废弃，请勿使用）</p>",
           "example": "agc-aca72fd4",
           "member": "string",
           "name": "AgentCredentialID",
@@ -2500,6 +2500,33 @@
           "name": "IgnoreHealthCheck",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2934,6 +2961,24 @@
           "name": "TaskComplexityRoute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3855,7 +3900,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "租户应用ID",
+          "document": "<p>租户应用ID</p>",
           "example": "1300",
           "member": "int64",
           "name": "AppID",
@@ -3865,7 +3910,7 @@
         },
         {
           "disabled": false,
-          "document": "租户ID",
+          "document": "<p>租户ID</p>",
           "example": "7000",
           "member": "string",
           "name": "Uin",
@@ -3875,17 +3920,17 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceID",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "凭据ID",
+          "document": "<p>凭据ID</p>",
           "example": "crd-xxxxxxxx",
           "member": "string",
           "name": "ID",
@@ -3895,7 +3940,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据名称",
+          "document": "<p>凭据名称</p>",
           "example": "teststs",
           "member": "string",
           "name": "Name",
@@ -3905,7 +3950,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p>",
           "example": "sts",
           "member": "string",
           "name": "Type",
@@ -3915,7 +3960,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2026-03-16T05:32:00.134Z",
           "member": "string",
           "name": "CreateTime",
@@ -3925,7 +3970,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2026-03-16T05:32:00.134Z",
           "member": "string",
           "name": "LastUpdateTime",
@@ -3935,7 +3980,7 @@
         },
         {
           "disabled": false,
-          "document": "普通凭据",
+          "document": "<p>普通凭据</p>",
           "example": "无",
           "member": "AccessCredential",
           "name": "Access",
@@ -3945,7 +3990,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "[\"testtag\"]",
           "member": "string",
           "name": "Tags",
@@ -3955,7 +4000,7 @@
         },
         {
           "disabled": false,
-          "document": "STS凭据",
+          "document": "<p>STS凭据</p>",
           "example": "无",
           "member": "STSCredential",
           "name": "STS",
@@ -3965,43 +4010,53 @@
         },
         {
           "disabled": false,
-          "document": "资源ID列表",
+          "document": "<p>资源ID列表</p>",
           "example": "[\"res-LDFxL6nq\"]",
           "member": "string",
           "name": "ResourceIDs",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "绑定智能体详情列表",
+          "document": "<p>绑定智能体详情列表</p>",
           "example": "无",
           "member": "DescribeAIMCredentialAgentItem",
           "name": "Agents",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "绑定资源详情列表",
+          "document": "<p>绑定资源详情列表</p>",
           "example": "无",
           "member": "DescribeAIMCredentialResourceItem",
           "name": "Resources",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "绑定智能体数量，仅列表接口返回",
+          "document": "<p>绑定智能体数量，仅列表接口返回</p>",
           "example": "2",
           "member": "uint64",
           "name": "AgentCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源名称</p>",
+          "example": "[\"腾讯云资源测试\"]",
+          "member": "string",
+          "name": "ResourceNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6210,6 +6265,46 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据名称</p>",
+          "example": "测试凭据",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7082,6 +7177,26 @@
           "name": "TaskComplexityRoute",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -8333,7 +8448,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间窗口，分钟",
+          "document": "<p>时间窗口，分钟</p>",
           "example": "10",
           "member": "uint64",
           "name": "Interval",
@@ -8344,13 +8459,35 @@
         },
         {
           "disabled": false,
-          "document": "累计上限，k",
+          "document": "<p>累计上限，k</p>",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li><li>timeRange： 时间范围</li></ul>",
+          "example": "minute",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间区间配置</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRange",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -9621,6 +9758,33 @@
           "name": "IgnoreHealthCheck",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10110,6 +10274,24 @@
           "name": "TaskComplexityRoute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11567,6 +11749,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据名称</p>",
+          "example": "测试凭据",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11916,6 +12131,34 @@
       ],
       "usage": "both"
     },
+    "TimeRange": {
+      "document": "时间区间配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>起始时间</p><p>参数格式：格式：09:00:00</p>",
+          "example": "09:00:00",
+          "member": "string",
+          "name": "Start",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：格式：12:00:00</p>",
+          "example": "12:00:00",
+          "member": "string",
+          "name": "End",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TmsConfigDTO": {
       "document": "内容安全配置",
       "members": [
@@ -12042,7 +12285,7 @@
       "document": "Token限流配置",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>",
           "example": "day",
           "member": "string",

@@ -19,7 +19,7 @@
     "AddUserPurchaseConfig": [
       {
         "document": "添加成功响应",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserPurchaseConfig\n<公共请求参数>\n\n{\n    \"CustomerAppId\": 123,\n    \"CustomerUin\": \"123\",\n    \"ProductSpec\": \"rocket-vip-basic-0\",\n    \"CustomerRegion\": 19,\n    \"Zones\": [\n        \"190001\"\n    ],\n    \"MaxNodes\": \"2\",\n    \"MinNodes\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserPurchaseConfig\n<公共请求参数>\n\n{\n    \"CustomerAppId\": 1293673453,\n    \"CustomerUin\": \"112936734523\",\n    \"ProductSpec\": \"rocket-vip-basic-0\",\n    \"CustomerRegion\": 19,\n    \"Zones\": [\n        \"190001\"\n    ],\n    \"MaxNodes\": \"2\",\n    \"MinNodes\": \"1\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"74cf1776-786c-42a4-aeab-77043c69a017\"\n    }\n}",
         "title": "添加成功"
       }
@@ -492,10 +492,10 @@
     ],
     "DescribeUserPurchaseConfigs": [
       {
-        "document": "1",
+        "document": "查询购买配置",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPurchaseConfigs\n<公共请求参数>\n\n{\n    \"CustomerAppId\": 0,\n    \"CustomerRegionId\": 16\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Configs\": [],\n        \"RequestId\": \"81a4ee19-6daa-419f-bce0-bc877b5ff808\",\n        \"TotalCount\": 0\n    }\n}",
-        "title": "1"
+        "title": "查询购买配置"
       }
     ],
     "DoHealthCheckOnMigratingTopic": [

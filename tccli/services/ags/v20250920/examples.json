@@ -118,10 +118,10 @@
     ],
     "CreateSession": [
       {
-        "document": "在指定会话空间中创建会话，记录初始标题及用户语言等会话状态。",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\",\n    \"Title\": \"Order refund assistance\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-08-17T08:15:18Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"session-order-assistance-20260817-0001\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Title\": \"Order refund assistance\",\n            \"UpdateTime\": \"2026-08-17T08:15:18Z\",\n            \"UserId\": \"customer-32874915\"\n        },\n        \"RequestId\": \"e549dab5-9f94-42b4-8549-ed96c082d501\"\n    }\n}",
-        "title": "创建会话"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n    \"UserId\": \"0001\",\n    \"Title\": \"0902 test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-09-02T08:00:03Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"ffa6e867-a315-447e-917b-ba01ea557c02\",\n            \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n            \"Title\": \"0902 test\",\n            \"UpdateTime\": \"2026-09-02T08:00:03Z\",\n            \"UserId\": \"0001\"\n        },\n        \"RequestId\": \"604abedd-3dfe-4d3d-a842-addbe6e28053\"\n    }\n}",
+        "title": "创建session"
       }
     ],
     "CreateSessionSpace": [
@@ -374,10 +374,10 @@
     ],
     "DescribeSessions": [
       {
-        "document": "查询指定会话空间中的会话列表。",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessions\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Sessions\": [\n            {\n                \"CreateTime\": \"2026-08-17T08:15:18Z\",\n                \"EventCount\": 0,\n                \"SessionId\": \"session-order-assistance-20260817-0001\",\n                \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n                \"Title\": \"Order refund assistance after update\",\n                \"UpdateTime\": \"2026-08-17T08:45:02Z\",\n                \"UserId\": \"customer-32874915\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"1012d8c4-3e85-400e-8863-5e9f1b76556c\"\n    }\n}",
-        "title": "查询指定空间会话列表"
+        "document": "查询 Metadata 中 env 字段值为 dev 的 Session 列表。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessions\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n    \"Filters\": [\n        {\n            \"Name\": \"metadata:env\",\n            \"Values\": [\n                \"dev\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Sessions\": [\n            {\n                \"CreateTime\": \"2026-09-02T08:00:03Z\",\n                \"EventCount\": 0,\n                \"Metadata\": [\n                    {\n                        \"Name\": \"env\",\n                        \"Value\": \"dev\"\n                    }\n                ],\n                \"SessionId\": \"ffa6e867-a315-447e-917b-ba01ea557c02\",\n                \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n                \"Title\": \"modify titile\",\n                \"UpdateTime\": \"2026-09-02T08:08:23Z\",\n                \"UserId\": \"0001\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"823e1eb7-3b87-459c-a239-cfe1efafcd32\"\n    }\n}",
+        "title": "按 Metadata 过滤 Session"
       }
     ],
     "ModifyAgent": [
