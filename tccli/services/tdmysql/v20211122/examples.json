@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BreakStandbyDBInstanceRelation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BreakStandbyDBInstanceRelation\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-da028619\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 37564,\n        \"RequestId\": \"test\"\n    }\n}",
+        "title": "BreakStandbyDBInstanceRelation 示例"
+      }
+    ],
     "CancelIsolateDBInstances": [
       {
         "document": "",
@@ -30,6 +38,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBSBackup\n<公共请求参数>\n\n{\n    \"BackupMethod\": \"physical\",\n    \"BackupType\": \"full\",\n    \"InstanceId\": \"tdsql3-3f17e49d\",\n    \"BackupName\": \"myback\"\n}",
         "output": "{\n    \"Response\": {\n        \"BackupSetId\": 73165397733012,\n        \"IsSuccess\": true,\n        \"RequestId\": \"048bd43c-279c-4d32-97a4-c65b378bf550\"\n    }\n}",
         "title": "创建手工备份"
+      }
+    ],
+    "CreateStandbyDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStandbyDBInstance\n<公共请求参数>\n\n{\n    \"PrimaryInstanceId\": \"tdsql3-c5eab757\",\n    \"Zone\": \"ap-chengdu-1\",\n    \"VpcId\": \"vpc-jksnni36\",\n    \"SubnetId\": \"subnet-dz7wfk4r\",\n    \"SpecCode\": \"1c2g\",\n    \"Disk\": 20,\n    \"StorageNodeNum\": 3,\n    \"Replications\": 3,\n    \"FullReplications\": 3,\n    \"StorageNodeCpu\": 1,\n    \"StorageNodeMem\": 2,\n    \"PayMode\": \"0\",\n    \"Zones\": [\n        \"ap-chengdu-1\"\n    ],\n    \"InstanceType\": \"hybrid\",\n    \"StorageType\": \"CLOUD_HSSD\",\n    \"PrimaryInstanceRegion\": \"ap-chengdu\",\n    \"InstanceMode\": \"enhanced\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 4295043361,\n        \"InstanceId\": \"tdsql3-6e462513\",\n        \"RequestId\": \"329c5c1e-b337-4733-a46b-543c3ed59435\"\n    }\n}",
+        "title": "创建灾备"
       }
     ],
     "CreateUsers": [
@@ -238,6 +254,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpecs\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"HybridNodeSpecs\": [\n            {\n                \"StorageNodeMaxDisk\": 0,\n                \"StorageNodeMinNum\": 0,\n                \"StorageNodeMinDisk\": 0,\n                \"SpecCode\": \"1c2g\",\n                \"StorageNodeCpu\": 0,\n                \"StorageNodeMem\": 0,\n                \"StorageNodeMaxNum\": 0,\n                \"StorageType\": \"CLOUD_HSSD\"\n            }\n        ],\n        \"RequestId\": \"f2bed855-af44-46c8-bd47-e84fd52e5b16\"\n    }\n}",
         "title": "查询机型规格信息"
+      }
+    ],
+    "DescribeStandbyDBInstanceRelationDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandbyDBinstanceRelations\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsql3-da028619\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RelationInfos\": [\n            {\n                \"ConnType\": \"log_service\",\n                \"PrimaryInstanceId\": \"tdsql3-7a24fc49\",\n                \"PrimaryInstanceName\": \"tdsql3-7a24fc49\",\n                \"PrimaryRegion\": \"ap-chengdu\",\n                \"PrimaryStatus\": \"running\",\n                \"PrimaryVip\": \"192.168.1.76\",\n                \"PrimaryVport\": 3306,\n                \"PrimaryZones\": [\n                    \"ap-chengdu-1\"\n                ],\n                \"SecondaryInstanceId\": \"tdsql3-af792643\",\n                \"SecondaryInstanceName\": \"tdsql3-af792643\",\n                \"SecondaryRegion\": \"ap-chengdu\",\n                \"SecondaryStatus\": \"running\",\n                \"SecondaryVip\": \"192.168.1.57\",\n                \"SecondaryVport\": 3306,\n                \"SecondaryZones\": [\n                    \"ap-chengdu-1\"\n                ],\n                \"SyncMode\": \"async\",\n                \"SyncStatus\": 1,\n                \"SyncStatusDesc\": \"\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeStandbyDBinstanceRelations 实例"
       }
     ],
     "DescribeUserPrivileges": [

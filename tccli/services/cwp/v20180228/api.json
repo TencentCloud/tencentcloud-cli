@@ -32022,8 +32022,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键字(主机内网IP|进程名)</li>",
-          "example": "[{\"Name\": \"CreateEnd****\", \"Values\": [\"2024-11-01 10:0****\"]}]",
+          "document": "过滤条件。\n<li>ProcName - String - 是否必填：否 - 进程名(模糊匹配进程名或父进程名)</li>\n<li>MachineName - String - 是否必填：否 - 主机名称(模糊匹配)</li>\n<li>InstanceID - String - 是否必填：否 - 实例ID(模糊匹配)</li>\n<li>IP - String - 是否必填：否 - 主机IP(内网IP或公网IP,模糊匹配)</li>\n<li>Quuid - String - 是否必填：否 - 主机QUUID(支持多个)</li>\n<li>Uuid - String - 是否必填：否 - 主机UUID</li>\n<li>Status - String - 是否必填：否 - 处理状态(0:待处理 2:已加入白名单 3:已处理 4:已忽略)</li>\n<li>DetectBy - String - 是否必填：否 - 检测方式(0:行为分析 1:命令特征检测)</li>\n<li>ID - String - 是否必填：否 - 事件ID(支持多个)</li>\n<li>CreateBeginTime - String - 是否必填：否 - 发生开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 发生结束时间</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -32056,7 +32056,7 @@
         {
           "disabled": false,
           "document": "列表内容",
-          "example": "[{\"Id\": 230551659, \"Uuid\": \"f61638ac-659f-4322-9491-2a4dcab3****\", \"Quuid\": \"f61638ac-659f-4322-9491-2a4dcab3****\", \"Hostip\": \"172.18.****\", \"DstIp\": \"43.139.8****\", \"DstPort\": 9092, \"ProcessName\": \"bash\", \"FullPath\": \"/usr/bin/****\", \"CmdLine\": \"/bin/sh -c uname -p 2\\\\u003e /dev/****\", \"UserName\": \"0\", \"UserGroup\": \"0\", \"ParentProcName\": \"pytho****\", \"ParentProcUser\": \"0\", \"ParentProcGroup\": \"0\", \"ParentProcPath\": \"/data/anaconda3/bin/pytho****\", \"ProcTree\": \"bash(25605),python3.7(25604),bash(25603),bash(25579),bash(25578),bash(3477),login(1307),system****\", \"Status\": 3, \"CreateTime\": \"2023-11-17 16:4****\", \"MachineName\": \"sre-nginx-pre-sat****\", \"DetectBy\": 0, \"MachineExtraInfo\": {\"WanIP\": \"82.156.164****\", \"PrivateIP\": \"172.18.****\", \"NetworkType\": 0, \"NetworkName\": \"vpc-3gov****\", \"InstanceID\": \"ins-l2zw****\", \"HostName\": \"demo_****\"}, \"Pid\": 25605, \"RiskLevel\": 1}]",
+          "example": "无",
           "member": "ReverseShell",
           "name": "List",
           "output_required": true,
@@ -43893,7 +43893,7 @@
       "usage": "out"
     },
     "Filter": {
-      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n\n* 最多只能有5个Filter\n* 同一个Filter存在多个Values，Values值数量最多不能超过5个。\n",
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态、时间等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n\n* 最多只能有5个Filter\n* 同一个Filter存在多个Values，Values值数量最多不能超过5个。",
       "members": [
         {
           "disabled": false,
@@ -46963,7 +46963,7 @@
         {
           "disabled": false,
           "document": "公网IP",
-          "example": "1.1.1.1",
+          "example": "12.*.*.1",
           "member": "string",
           "name": "WanIP",
           "output_required": true,
@@ -46973,7 +46973,7 @@
         {
           "disabled": false,
           "document": "内网IP",
-          "example": "1.1.1.1",
+          "example": "192.*.*.1",
           "member": "string",
           "name": "PrivateIP",
           "output_required": true,
@@ -46993,7 +46993,7 @@
         {
           "disabled": false,
           "document": "网络名，vpc网络情况下会返回vpc_id",
-          "example": "vpc-9m7rhl6w",
+          "example": "vpc-****hl6w",
           "member": "string",
           "name": "NetworkName",
           "output_required": true,
@@ -47003,7 +47003,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-1s7mkggc",
+          "example": "ins-***kggc",
           "member": "string",
           "name": "InstanceID",
           "output_required": true,
@@ -47013,7 +47013,7 @@
         {
           "disabled": false,
           "document": "主机名",
-          "example": "VM-1",
+          "example": "VM-business",
           "member": "string",
           "name": "HostName",
           "output_required": true,
@@ -58696,7 +58696,7 @@
         {
           "disabled": false,
           "document": " 主机额外信息",
-          "example": "{'WanIP': '82.156.164****', 'PrivateIP': '172.18.****', 'NetworkType': 0, 'NetworkName': 'vpc-3gov****', 'InstanceID': 'ins-l2zw****', 'HostName': 'demo_****'}",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,

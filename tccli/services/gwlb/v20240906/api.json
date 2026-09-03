@@ -1,10 +1,31 @@
 {
   "actions": {
+    "AddGatewayAclRule": {
+      "document": "添加网关负载均衡ACL规则。\n- 单次请求的AclRules最多支持50条规则。\n- Type为all的规则支持通过Priority指定优先级，不指定时新增规则的优先级最高。",
+      "input": "AddGatewayAclRuleRequest",
+      "name": "添加网关负载均衡ACL规则",
+      "output": "AddGatewayAclRuleResponse",
+      "status": "online"
+    },
+    "AssociateGatewayAclGroup": {
+      "document": "网关负载均衡ACL组关联网关负载均衡实例。",
+      "input": "AssociateGatewayAclGroupRequest",
+      "name": "网关负载均衡ACL组关联网关负载均衡实例",
+      "output": "AssociateGatewayAclGroupResponse",
+      "status": "online"
+    },
     "AssociateTargetGroups": {
       "document": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。",
       "input": "AssociateTargetGroupsRequest",
       "name": "负载均衡关联目标组",
       "output": "AssociateTargetGroupsResponse",
+      "status": "online"
+    },
+    "CreateGatewayAclGroup": {
+      "document": "CreateGatewayAclGroup 接口用于创建网关负载均衡ACL组。\n网关负载均衡组可与网关负载均衡实例绑定（AssociateGatewayAclGroup），创建网关负载均衡组后可以添加ACL规则（AddGatewayAclRule）。",
+      "input": "CreateGatewayAclGroupRequest",
+      "name": "创建网关负载均衡ACL组",
+      "output": "CreateGatewayAclGroupResponse",
       "status": "online"
     },
     "CreateGatewayLoadBalancer": {
@@ -19,6 +40,20 @@
       "input": "CreateTargetGroupRequest",
       "name": "创建目标组",
       "output": "CreateTargetGroupResponse",
+      "status": "online"
+    },
+    "DeleteGatewayAclGroup": {
+      "document": "DeleteGatewayAclGroup接口用于删除网关负载均衡ACL组。",
+      "input": "DeleteGatewayAclGroupRequest",
+      "name": "删除网关负载均衡ACL组",
+      "output": "DeleteGatewayAclGroupResponse",
+      "status": "online"
+    },
+    "DeleteGatewayAclRule": {
+      "document": "删除网关负载均衡ACL规则。\n- 支持按规则ID（AclRuleIds）或按规则内容（AclRules）删除，两者至少填写一个。\n- AclRuleIds仅能定位Type为all的规则。\n- 删除不存在的规则不会报错。",
+      "input": "DeleteGatewayAclRuleRequest",
+      "name": "删除网关负载均衡ACL规则",
+      "output": "DeleteGatewayAclRuleResponse",
       "status": "online"
     },
     "DeleteGatewayLoadBalancer": {
@@ -40,6 +75,20 @@
       "input": "DeregisterTargetGroupInstancesRequest",
       "name": "解绑目标组中的实例",
       "output": "DeregisterTargetGroupInstancesResponse",
+      "status": "online"
+    },
+    "DescribeGatewayAclGroups": {
+      "document": "查询网关负载均衡ACL组。",
+      "input": "DescribeGatewayAclGroupsRequest",
+      "name": "查询网关负载均衡ACL组",
+      "output": "DescribeGatewayAclGroupsResponse",
+      "status": "online"
+    },
+    "DescribeGatewayAclRules": {
+      "document": "查询网关负载均衡ACL规则。\nType为all的规则按优先级升序返回，即返回顺序与规则实际生效顺序一致。",
+      "input": "DescribeGatewayAclRulesRequest",
+      "name": "查询网关负载均衡ACL规则",
+      "output": "DescribeGatewayAclRulesResponse",
       "status": "online"
     },
     "DescribeGatewayLoadBalancers": {
@@ -91,6 +140,13 @@
       "output": "DescribeTaskStatusResponse",
       "status": "online"
     },
+    "DisassociateGatewayAclGroup": {
+      "document": "网关负载均衡ACL组解关联网关负载均衡实例。",
+      "input": "DisassociateGatewayAclGroupRequest",
+      "name": "网关负载均衡ACL组解关联网关负载均衡实例",
+      "output": "DisassociateGatewayAclGroupResponse",
+      "status": "online"
+    },
     "DisassociateTargetGroups": {
       "document": "解除负载均衡和目标组的关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。",
       "input": "DisassociateTargetGroupsRequest",
@@ -103,6 +159,13 @@
       "input": "InquirePriceCreateGatewayLoadBalancerRequest",
       "name": "购买网关负载均衡询价",
       "output": "InquirePriceCreateGatewayLoadBalancerResponse",
+      "status": "online"
+    },
+    "ModifyGatewayAclGroup": {
+      "document": "ModifyGatewayAclGroup接口用于修改网关负载均衡ACL组的属性，目前仅支持修改名称。",
+      "input": "ModifyGatewayAclGroupRequest",
+      "name": "修改网关负载均衡ACL组",
+      "output": "ModifyGatewayAclGroupResponse",
       "status": "online"
     },
     "ModifyGatewayLoadBalancerAttribute": {
@@ -141,6 +204,281 @@
     "serviceShortName": "gwlb"
   },
   "objects": {
+    "AclRulesInput": {
+      "document": "网关负载均衡ACL规则录入\n- 当Type为in、out时，6元组仅SrcIp、DstIp、VpcId有效\n- 当Type为all时，6元组均有效\n- 当Type为all与非all的规则冲突时，Type为all的规则优先级更高",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型，支持 in、out、all。\n- in：表示进入网关负载均衡流量。\n- out：表示出网关负载均衡的流量。\n- all：不指定方向。",
+          "example": "all",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户的私有网络唯一ID。",
+          "example": "vpc-b5oj927d",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制行为：drop、bypass。\ndrop：丢弃报文。\nbypass：放通报文。",
+          "example": "bypass",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源IP。\n使用限制：Type为in、all时才可使用",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "SrcIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目的IP。\n使用限制：Type为out、all时才可使用。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "DstIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源端口。\n使用限制：Type为all才可使用。",
+          "example": "80",
+          "member": "int64",
+          "name": "SrcPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目的端口。\n使用限制：Type为all才可使用。",
+          "example": "80",
+          "member": "int64",
+          "name": "DstPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型：tcp、udp、all（tcp和udp）。\n使用限制：Type为all才可使用。",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，取值范围1~1000，数值越小优先级越高。\n- 仅Type为all的规则支持该字段，Type为in、out时传入将被忽略。\n- 不传时，新增的规则优先级最高（插入到规则列表首位）。\n- 优先级为ACL组内的动态序号，新增或删除规则会导致其余规则的优先级变化，请勿将其作为规则的唯一标识使用，规则的唯一标识为AclRuleId。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "AclRulesOutput": {
+      "document": "网关负载均衡ACL规则录入\n- 当Type为in、out时，6元组仅SrcIp、DstIp、VpcId有效\n- 当Type为all时，6元组均有效\n- 当Type为all与非all的规则冲突时，Type为all的规则优先级更高",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL规则唯一ID，可用于DeleteGatewayAclRule接口按ID删除规则。\n仅Type为all的规则返回有效值，其余场景返回空字符串。",
+          "example": "1024",
+          "member": "string",
+          "name": "AclRuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，数值越小优先级越高。\n仅Type为all的规则返回有效值，其余场景返回-1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型，支持 in、out、all。\n- in：表示进入网关负载均衡流量。\n- out：表示出网关负载均衡的流量。\n- all：不指定方向。",
+          "example": "all",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户的私有网络唯一ID。",
+          "example": "vpc-b5oj927d",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问控制行为：drop、bypass。\ndrop：丢弃报文。\nbypass：放通报文。",
+          "example": "bypass",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源IP。\n使用限制：Type为in、all时才可使用",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "SrcIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的IP。\n使用限制：Type为out、all时才可使用。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "DstIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端口。\n使用限制：Type为all才可使用。",
+          "example": "80",
+          "member": "int64",
+          "name": "SrcPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的端口。\n使用限制：Type为all才可使用。",
+          "example": "80",
+          "member": "int64",
+          "name": "DstPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议类型：tcp、udp、all（tcp和udp）。\n使用限制：Type为all才可使用。",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则创建的时间。",
+          "example": "2023-03-22 11:37:27",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AddGatewayAclRuleRequest": {
+      "document": "AddGatewayAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组唯一ID。",
+          "example": "gwlbacl-xxx",
+          "member": "string",
+          "name": "AclGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL规则列表，单次请求最多支持50条规则。",
+          "example": "无",
+          "member": "AclRulesInput",
+          "name": "AclRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddGatewayAclRuleResponse": {
+      "document": "AddGatewayAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateGatewayAclGroupRequest": {
+      "document": "AssociateGatewayAclGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例唯一ID。",
+          "example": "gwlb-xxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组唯一ID。",
+          "example": "gwlbacl-xxx",
+          "member": "string",
+          "name": "AclGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateGatewayAclGroupResponse": {
+      "document": "AssociateGatewayAclGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AssociateTargetGroupsRequest": {
       "document": "AssociateTargetGroups请求参数结构体",
       "members": [
@@ -193,6 +531,52 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateGatewayAclGroupRequest": {
+      "document": "CreateGatewayAclGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有网络唯一ID，需要与要绑定的网关负载均衡实例在同一个私有网络下。",
+          "example": "vpc-b5oj927d",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组名称，默认为default-name。",
+          "example": "gwlb-acl-group-prod",
+          "member": "string",
+          "name": "AclGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGatewayAclGroupResponse": {
+      "document": "CreateGatewayAclGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组唯一ID",
+          "example": "gwlbacl-auz9j7he",
+          "member": "string",
+          "name": "AclGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateGatewayLoadBalancerRequest": {
       "document": "CreateGatewayLoadBalancer请求参数结构体",
@@ -476,6 +860,78 @@
       ],
       "type": "object"
     },
+    "DeleteGatewayAclGroupRequest": {
+      "document": "DeleteGatewayAclGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组ID。",
+          "example": "[\"gwlbacl-auz9j7he\"]",
+          "member": "string",
+          "name": "AclGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayAclGroupResponse": {
+      "document": "DeleteGatewayAclGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayAclRuleRequest": {
+      "document": "DeleteGatewayAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组id",
+          "example": "gwlbacl-xxx",
+          "member": "string",
+          "name": "AclGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL规则列表，按规则内容删除。\n- AclRuleIds与AclRules至少填写一个，两者不互斥，可同时填写。\n- 一条入参匹配到多条规则时会全部删除。\n- AclRuleIds与AclRules的规则条数合计不超过50条。",
+          "example": "无",
+          "member": "AclRulesInput",
+          "name": "AclRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL规则ID列表，可通过DescribeGatewayAclRules接口查询。\n- AclRuleIds与AclRules至少填写一个，两者不互斥，可同时填写。\n- AclRuleIds仅能定位Type为all的规则，Type为in、out的规则请通过AclRules删除。\n- AclRuleIds与AclRules的规则条数合计不超过50条。",
+          "example": "[\"1024\"]",
+          "member": "string",
+          "name": "AclRuleIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayAclRuleResponse": {
+      "document": "DeleteGatewayAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteGatewayLoadBalancerRequest": {
       "document": "DeleteGatewayLoadBalancer请求参数结构体",
       "members": [
@@ -557,6 +1013,154 @@
     "DeregisterTargetGroupInstancesResponse": {
       "document": "DeregisterTargetGroupInstances返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayAclGroupsRequest": {
+      "document": "DescribeGatewayAclGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组id数组",
+          "example": "[\"gwlbacl-340vsp72\"]",
+          "member": "string",
+          "name": "AclGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回网关负载均衡ACL组的数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询网关负载均衡ACL组的过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为100。\nFilter.Name和Filter.Values皆为必填项。详细的过滤条件如下：\n- AclGroupName - String - 是否为必填：否 - （过滤条件）按照ACL规则名称过滤\n- VpcId - 是否为必填：否 - （过滤条件）按照私有网络唯一ID过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayAclGroupsResponse": {
+      "document": "DescribeGatewayAclGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询到的网关负载均衡组总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的网关负载均衡组详细信息列表",
+          "example": "无",
+          "member": "GatewayAclGroupSet",
+          "name": "GatewayAclGroupSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayAclRulesRequest": {
+      "document": "DescribeGatewayAclRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组id",
+          "example": "gwlbacl-xxx",
+          "member": "string",
+          "name": "AclGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回网关负载均衡ACL组的数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询网关负载均衡ACL规则的过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为100。 Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：\n- Type - 规则类型。\n- Action - 访问控制行为。\n- VpcId - 服务使用方的私有网络唯一ID。\n- SrcIp - 源IP\n- DstIp - 目的IP\n- SrcPort - 源端口\n- DstPort - 目的端口\n- Protocol - 协议类型",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayAclRulesResponse": {
+      "document": "DescribeGatewayAclRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL规则的数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的网关负载均衡ACL规则详情列表",
+          "example": "无",
+          "member": "AclRulesOutput",
+          "name": "GatewayAclRuleSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1031,6 +1635,42 @@
       ],
       "type": "object"
     },
+    "DisassociateGatewayAclGroupRequest": {
+      "document": "DisassociateGatewayAclGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡实例唯一ID。",
+          "example": "gwlb-xxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组唯一ID。",
+          "example": "gwlbacl-xxx",
+          "member": "string",
+          "name": "AclGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateGatewayAclGroupResponse": {
+      "document": "DisassociateGatewayAclGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisassociateTargetGroupsRequest": {
       "document": "DisassociateTargetGroups请求参数结构体",
       "members": [
@@ -1081,6 +1721,62 @@
         }
       ],
       "usage": "in"
+    },
+    "GatewayAclGroupSet": {
+      "document": "网关负载均衡ACL详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组唯一ID。",
+          "example": "gwlbacl-ryrlcpl2",
+          "member": "string",
+          "name": "AclGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组名称。",
+          "example": "gwlb-acl-group-prod",
+          "member": "string",
+          "name": "AclGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组所在私有网络唯一ID。",
+          "example": "vpc-b5oj927d",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组所关联的网关负载均衡实例列表。",
+          "example": "[\"gwlb-owlo****\"]",
+          "member": "string",
+          "name": "AssociatedInstances",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组的创建时间。",
+          "example": "2023-03-22 10:39:03",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GatewayLoadBalancer": {
       "document": "网关负载均衡实例的信息",
@@ -1380,6 +2076,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyGatewayAclGroupRequest": {
+      "document": "ModifyGatewayAclGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组ID。",
+          "example": "gwlbacl-340vsp72",
+          "member": "string",
+          "name": "AclGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关负载均衡ACL组名称。",
+          "example": "gwlb-acl-group-prod-v2",
+          "member": "string",
+          "name": "AclGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGatewayAclGroupResponse": {
+      "document": "ModifyGatewayAclGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyGatewayLoadBalancerAttributeRequest": {
       "document": "ModifyGatewayLoadBalancerAttribute请求参数结构体",

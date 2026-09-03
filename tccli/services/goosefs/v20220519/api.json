@@ -1434,123 +1434,133 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群类型, 可填goosefs",
+          "document": "<p>集群类型, 可填goosefs</p>",
           "example": "goosefsx",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "x_c60_r3c4fa1f",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2022-01-01T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群状态 ACTIVE(运行中), CREATING(创建中), DESTROYING(销毁中), FAIL(创建失败),Expanding(扩容中)",
+          "document": "<p>集群状态 ACTIVE(运行中), CREATING(创建中), DESTROYING(销毁中), FAIL(创建失败),Expanding(扩容中)</p>",
           "example": "Active",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群名",
+          "document": "<p>集群名</p>",
           "example": "ai_fs",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群备注描述",
+          "document": "<p>集群备注描述</p>",
           "example": "our test fs",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc ID",
+          "document": "<p>vpc ID</p>",
           "example": "vpc-a1b2c3d4",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-m1n1g1h1",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网所在的可用区",
+          "document": "<p>子网所在的可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Tag数组",
+          "document": "<p>Tag数组</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tag",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "更新属性时间",
+          "document": "<p>更新属性时间</p>",
           "example": "2022-01-01T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GooseFS集群属性",
+          "document": "<p>GooseFS集群属性</p>",
           "example": "无",
           "member": "GooseFSAttribute",
           "name": "GooseFSAttribute",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据迁移百分比，默认为100</p><p>默认值：100</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "MigrationPercentage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4521,7 +4531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Master,Worker,JobMaster,JobWorker",
+          "document": "<p>Master,Worker,JobMaster,JobWorker</p>",
           "example": "Master",
           "member": "string",
           "name": "ServiceName",
@@ -4531,8 +4541,8 @@
         },
         {
           "disabled": false,
-          "document": "节点服务加入时间",
-          "example": "1661950860",
+          "document": "<p>节点服务加入时间</p>",
+          "example": "2026-03-19T16:20:43+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -4541,8 +4551,8 @@
         },
         {
           "disabled": false,
-          "document": "节点服务状态更新时间",
-          "example": "1661950861",
+          "document": "<p>节点服务状态更新时间</p>",
+          "example": "2026-04-16T14:24:56+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
           "output_required": true,
@@ -4551,7 +4561,7 @@
         },
         {
           "disabled": false,
-          "document": "节点服务状态，Running/Stopped",
+          "document": "<p>节点服务状态，Running/Stopped</p>",
           "example": "Running",
           "member": "string",
           "name": "Status",
@@ -4561,7 +4571,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对服务进行保活",
+          "document": "<p>是否对服务进行保活</p>",
           "example": "false",
           "member": "bool",
           "name": "KeepAlive",
@@ -4571,7 +4581,7 @@
         },
         {
           "disabled": false,
-          "document": "配置是否更改，更改后需要重启服务",
+          "document": "<p>配置是否更改，更改后需要重启服务</p>",
           "example": "false",
           "member": "bool",
           "name": "ConfigChanged",
@@ -4581,7 +4591,7 @@
         },
         {
           "disabled": false,
-          "document": "是否主节点",
+          "document": "<p>是否主节点</p>",
           "example": "false",
           "member": "bool",
           "name": "IsLeaderMaster",
@@ -4591,7 +4601,7 @@
         },
         {
           "disabled": false,
-          "document": "服务是否被隔离，默认为 false",
+          "document": "<p>服务是否被隔离，默认为 false</p>",
           "example": "false",
           "member": "bool",
           "name": "ServiceExcluded",
@@ -4601,13 +4611,23 @@
         },
         {
           "disabled": false,
-          "document": "服务版本",
+          "document": "<p>服务版本</p>",
           "example": "GooseFS-1.4.4",
           "member": "string",
           "name": "CurrentVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁写</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ServiceWriteDisabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5623,8 +5643,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "总容量",
-          "example": "无",
+          "document": "<p>总容量</p>",
+          "example": "1024",
           "member": "uint64",
           "name": "Capacity",
           "output_required": false,
@@ -5634,8 +5654,8 @@
         },
         {
           "disabled": false,
-          "document": "机型",
-          "example": "无",
+          "document": "<p>机型</p>",
+          "example": "MEDIUM.6",
           "member": "string",
           "name": "MachineType",
           "output_required": false,
@@ -5645,14 +5665,25 @@
         },
         {
           "disabled": false,
-          "document": "节点类型",
-          "example": "无",
+          "document": "<p>节点类型</p>",
+          "example": "CVM",
           "member": "string",
           "name": "WorkerNodeType",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>副本数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "ReplicaNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

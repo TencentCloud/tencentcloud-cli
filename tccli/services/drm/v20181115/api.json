@@ -1066,6 +1066,15 @@
           "name": "PlaybackDurationSeconds",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许下发离线license</p><p>默认值：false</p><p>widevine方案，<br>当CanPersistent为true时，根据license request中请求的是online还是offline license自动匹配下发。<br>当CanPersistent为false时，只下发online license。</p><p>fairplay方案。<br>当CanPersistent为true时，只下发offline license。<br>当CanPersistent为false时，只下发online license。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CanPersistent",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

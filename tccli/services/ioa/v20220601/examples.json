@@ -142,10 +142,10 @@
     ],
     "CreateAccountVirtualGroup": [
       {
-        "document": "创建自定义用户组",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccountVirtualGroup\n<公共请求参数>\n\n{\n    \"VirtualGroupName\": \"自定义用户组1\",\n    \"Description\": \"描述\",\n    \"AccountGroupId\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VirtualGroupId\": 123\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "创建自定义用户组"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccountVirtualGroup\n<公共请求参数>\n\n{\n    \"VirtualGroupName\": \"研发三组\",\n    \"AccountGroupId\": 3338,\n    \"DomainInstanceId\": \"1\",\n    \"Description\": \"研发三组\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VirtualGroupId\": 167\n        },\n        \"RequestId\": \"3ea29182-75a6-4752-b507-04ed7dca7e52\"\n    }\n}",
+        "title": "创建一个虚拟分组"
       }
     ],
     "CreateAuthPolicy": [
@@ -166,10 +166,10 @@
     ],
     "CreateAuthSourceConfig": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuthSourceConfig\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"WelcomeText\": \"xx\",\n    \"TypeName\": \"xx\",\n    \"FactorTypes\": [\n        {\n            \"Name\": \"xx\",\n            \"PrimaryAuthAvailable\": true,\n            \"Platforms\": [\n                \"xx\"\n            ],\n            \"AdditionalAuthAvailable\": true,\n            \"ChallengeAuthAvailable\": true,\n            \"Type\": \"xx\"\n        }\n    ],\n    \"Type\": \"xx\",\n    \"Id\": \"xx\",\n    \"Name\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "示例1"
+        "document": "创建用户源",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuthSourceConfig\n<公共请求参数>\n\n{\n    \"Description\": \"abc\",\n    \"WelcomeText\": \"abc\",\n    \"TypeName\": \"abc\",\n    \"FactorTypes\": [\n        {\n            \"AdditionalAuthAvailable\": true,\n            \"ChallengeAuthAvailable\": true,\n            \"PrimaryAuthAvailable\": true,\n            \"Name\": \"abc\",\n            \"Platforms\": [\n                \"abc\"\n            ],\n            \"Type\": \"abc\"\n        }\n    ],\n    \"Type\": \"abc\",\n    \"Id\": \"abc\",\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建用户源"
       }
     ],
     "CreateBusinessResource": [
@@ -3240,10 +3240,10 @@
     ],
     "ModifyAuthSourceConfig": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuthSourceConfig\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"WelcomeText\": \"xx\",\n    \"TypeName\": \"xx\",\n    \"FactorTypes\": [\n        {\n            \"Name\": \"xx\",\n            \"PrimaryAuthAvailable\": true,\n            \"Platforms\": [\n                \"xx\"\n            ],\n            \"AdditionalAuthAvailable\": true,\n            \"ChallengeAuthAvailable\": true,\n            \"Type\": \"xx\"\n        }\n    ],\n    \"Type\": \"xx\",\n    \"Id\": \"xx\",\n    \"Name\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "示例1"
+        "document": "修改认证源",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuthSourceConfig\n<公共请求参数>\n\n{\n    \"Description\": \"abc\",\n    \"WelcomeText\": \"abc\",\n    \"TypeName\": \"abc\",\n    \"FactorTypes\": [\n        {\n            \"AdditionalAuthAvailable\": true,\n            \"ChallengeAuthAvailable\": true,\n            \"PrimaryAuthAvailable\": true,\n            \"Name\": \"abc\",\n            \"Platforms\": [\n                \"abc\"\n            ],\n            \"Type\": \"abc\"\n        }\n    ],\n    \"Type\": \"abc\",\n    \"Id\": \"abc\",\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改认证源"
       }
     ],
     "ModifyBusinessResource": [

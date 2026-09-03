@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateBatchVideoAnnotationJob": {
-      "document": "提交一个目录前缀创建批量标注任务。创建时校验输入桶连通性，后台自动列举前缀下全部视频逐个建立处理项（受配额上限控制，超限截断）。",
+      "document": "提交S3兼容存储桶数据源的目录前缀创建批量标注任务。创建后，服务端异步列举前缀下全部视频逐个建立处理项（受配额上限控制，超限截断）。",
       "input": "CreateBatchVideoAnnotationJobRequest",
       "name": "创建批量视频标注任务",
       "output": "CreateBatchVideoAnnotationJobResponse",
@@ -50,7 +50,7 @@
       "status": "online"
     },
     "CreateVideoAnnotationJob": {
-      "document": "提交单个视频创建标注任务。支持 S3 存储与 HTTP URL 两种输入源；通过后任务异步执行。",
+      "document": "提交单个视频创建标注任务。支持 S3兼容 存储与 HTTP URL 两种输入源；通过后任务异步执行。",
       "input": "CreateVideoAnnotationJobRequest",
       "name": "创建视频标注任务",
       "output": "CreateVideoAnnotationJobResponse",
@@ -686,7 +686,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>回调配置，不传则不回调</p>",
+          "document": "<p>回调信息，配置后当任务下子处理项状态从处理中变为其他状态时，服务端会向回调地址发送请求（退避重试三次，不保证回调一定送达，需保证目标地址接收服务有效），建议接收方做好幂等处理。回调请求格式如下：<br><strong>请求头</strong></p><table><thead><tr><th>名称</th><th>值</th></tr></thead><tbody><tr><td>X-Annotation-Signature</td><td>hex(HMAC-SHA256(请求体原始字节, CallbackInfo.Secret))</td></tr></tbody></table><p><strong>请求体</strong>（application/json）</p><table><thead><tr><th>参数名</th><th>类型</th><th>必选</th><th>描述</th></tr></thead><tbody><tr><td>JobId</td><td>string</td><td>是</td><td>任务 ID</td></tr><tr><td>TaskId</td><td>string</td><td>是</td><td>处理项 ID</td></tr><tr><td>FileName</td><td>string</td><td>是</td><td>视频文件名</td></tr><tr><td>Status</td><td>int</td><td>是</td><td>触发本次回调的处理项状态：3 超时，4 异常，5 待确认，6 成功</td></tr><tr><td>StatusChangedAt</td><td>int</td><td>是</td><td>状态变更时间，Unix 时间戳（秒）</td></tr><tr><td>RawResult</td><td>string</td><td>否</td><td>当前生效的结果 JSON 原文：成功=标注产物；待确认=原始标注；确认后=确认版内容。超时/异常无内容</td></tr></tbody></table>",
           "example": "无",
           "member": "CallbackInfo",
           "name": "CallbackInfo",
@@ -1004,7 +1004,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>回调信息</p>",
+          "document": "<p>回调信息，配置后当处理项状态从处理中变为其他状态时，服务端会向回调地址发送请求（退避重试三次，不保证回调一定送达，需保证目标地址接收服务有效），建议接收方做好幂等处理。回调请求格式如下：<br><strong>请求头</strong></p><table><thead><tr><th>名称</th><th>值</th></tr></thead><tbody><tr><td>X-Annotation-Signature</td><td>hex(HMAC-SHA256(请求体原始字节, CallbackInfo.Secret))</td></tr></tbody></table><p><strong>请求体</strong>（application/json）</p><table><thead><tr><th>参数名</th><th>类型</th><th>必选</th><th>描述</th></tr></thead><tbody><tr><td>JobId</td><td>string</td><td>是</td><td>任务 ID</td></tr><tr><td>TaskId</td><td>string</td><td>是</td><td>处理项 ID</td></tr><tr><td>FileName</td><td>string</td><td>是</td><td>视频文件名</td></tr><tr><td>Status</td><td>int</td><td>是</td><td>触发本次回调的处理项状态：3 超时，4 异常，5 待确认，6 成功</td></tr><tr><td>StatusChangedAt</td><td>int</td><td>是</td><td>状态变更时间，Unix 时间戳（秒）</td></tr><tr><td>RawResult</td><td>string</td><td>否</td><td>当前生效的结果 JSON 原文：成功=标注产物；待确认=原始标注；确认后=确认版内容。超时/异常无内容</td></tr></tbody></table>",
           "example": "无",
           "member": "CallbackInfo",
           "name": "CallbackInfo",
