@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli trtc DeleteRecognizeVocabV3 --cli-unfold-argument ```
+tccli trtc DeleteRecognizeVocabV3 --cli-unfold-argument  \
+    --VocabId 7bc538d6acb442f19dc3396dd7eacd66 \
+    --SdkAppId 1400000001
+```
 
 Output: 
 ```

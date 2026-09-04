@@ -8,7 +8,6 @@ Input:
 tccli billing DescribeBillResourceSummary --cli-unfold-argument  \
     --Offset 0 \
     --Limit 1 \
-    --PeriodType byPayTime \
     --Month 2022-01 \
     --NeedRecordNum 1
 ```

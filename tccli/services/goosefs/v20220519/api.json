@@ -2699,12 +2699,73 @@
       ],
       "type": "object"
     },
+    "LoadDataAttrs": {
+      "document": "数据预热任务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预热类型，枚举值 LoadByPath｜LoadByList</p>",
+          "example": "LoadByPath",
+          "member": "string",
+          "name": "LoadType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跳过相同文件，默认为 true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipIfExists",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热路径，入参单条挂载路径。入参数LoadType为LoadByPath，该参数不应为空</p>",
+          "example": "/cosn1/test/vdbench/testfile/read/1g/testdir1/vdb.1_1.dir/",
+          "member": "string",
+          "name": "LoadByPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过文件列表批量预热，入参为 cos://bucket-appid/ 开头的 COS 路径，且仅支持 txt 格式文件，长度不能超过255个字符。入参数LoadType为LoadByList，该参数不应为空</p>",
+          "example": "cos://bucket-appid/",
+          "member": "string",
+          "name": "LoadByList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>副本数配置，枚举值，可选值 SingleReplica（单副本，默认）｜MaxReplica（最大副本）</p>",
+          "example": "SpecificReplica",
+          "member": "string",
+          "name": "Replica",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LoadTaskAttrs": {
       "document": "预热任务参数",
       "members": [
         {
           "disabled": false,
-          "document": "预热任务 ID",
+          "document": "<p>预热任务 ID</p>",
           "example": "dd4bf5c2-24dd-45ea-b4c7-01539edd0227",
           "member": "string",
           "name": "TaskId",
@@ -2714,7 +2775,7 @@
         },
         {
           "disabled": false,
-          "document": "预热任务类型，枚举值，MetadataLoad｜DistributedLoad",
+          "document": "<p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad</p>",
           "example": "DistributedLoad",
           "member": "string",
           "name": "TaskType",
@@ -2724,7 +2785,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述，支持中文",
+          "document": "<p>任务描述，支持中文</p>",
           "example": "priority为0（小于最小值）测试",
           "member": "string",
           "name": "Description",
@@ -2734,7 +2795,7 @@
         },
         {
           "disabled": false,
-          "document": "任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1",
+          "document": "<p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>",
           "example": "666",
           "member": "uint64",
           "name": "Priority",
@@ -2744,7 +2805,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。",
+          "document": "<p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>",
           "example": "无",
           "member": "MetadataLoadAttrs",
           "name": "MetadataLoadAttrs",
@@ -2754,7 +2815,7 @@
         },
         {
           "disabled": false,
-          "document": "数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。",
+          "document": "<p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>",
           "example": "无",
           "member": "DistributedLoadAttrs",
           "name": "DistributedLoadAttrs",
@@ -2764,7 +2825,17 @@
         },
         {
           "disabled": false,
-          "document": "将任务执行报告写入 COS 的路径，如果不需要报告则入参空",
+          "document": "<p>仅预热数据参数。入参数TaskType为LoadData时，该参数不应为空。</p>",
+          "example": "无",
+          "member": "LoadDataAttrs",
+          "name": "LoadDataAttrs",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>",
           "example": "cos://**********-bj-**********/report/",
           "member": "string",
           "name": "ReportPath",
@@ -2774,7 +2845,7 @@
         },
         {
           "disabled": false,
-          "document": "枚举，Completed，Running，Waiting，Cancelled",
+          "document": "<p>枚举，Completed，Running，Waiting，Cancelled</p>",
           "example": "Running",
           "member": "string",
           "name": "State",
@@ -2784,7 +2855,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息 ",
+          "document": "<p>任务执行信息，打印预热文件成功个数，失败个数，预热耗时信息</p>",
           "example": "{\"SuccessfulPaths\":1,\"FailedPaths\":0,\"LoadingTime\":1,\"LoadingTraffic\":0}",
           "member": "string",
           "name": "TaskMessage",
@@ -2794,7 +2865,7 @@
         },
         {
           "disabled": false,
-          "document": "预热任务创建时间",
+          "document": "<p>预热任务创建时间</p>",
           "example": "2026-01-12T10:20:57+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -2804,7 +2875,7 @@
         },
         {
           "disabled": false,
-          "document": "预热任务变更时间",
+          "document": "<p>预热任务变更时间</p>",
           "example": "2026-01-12T10:27:56+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
@@ -2814,7 +2885,7 @@
         },
         {
           "disabled": false,
-          "document": "任务提交账号，子账号或服务角色 ID",
+          "document": "<p>任务提交账号，子账号或服务角色 ID</p>",
           "example": "10001*******",
           "member": "string",
           "name": "Requester",
@@ -2830,7 +2901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预热任务类型，枚举值，MetadataLoad｜DistributedLoad。",
+          "document": "<p>预热任务类型，枚举值，MetadataLoad｜DistributedLoad。</p>",
           "example": "DistributedLoad",
           "member": "string",
           "name": "TaskType",
@@ -2839,7 +2910,7 @@
         },
         {
           "disabled": false,
-          "document": "任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1",
+          "document": "<p>任务优先级，数值越高代表优先级越高，边界值 1-9999，默认值为 1</p>",
           "example": "666",
           "member": "uint64",
           "name": "Priority",
@@ -2848,7 +2919,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述，支持中文",
+          "document": "<p>任务描述，支持中文</p>",
           "example": "hello",
           "member": "string",
           "name": "Description",
@@ -2857,7 +2928,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。",
+          "document": "<p>元数据预热任务参数，用于仅预热元数据时入参。入参数TaskType为MetadataLoad时，该参数不应为空。</p>",
           "example": "无",
           "member": "MetadataLoadAttrs",
           "name": "MetadataLoadAttrs",
@@ -2866,7 +2937,7 @@
         },
         {
           "disabled": false,
-          "document": "数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。",
+          "document": "<p>数据预热任务参数。入参数TaskType为DistributedLoad时，该参数不应为空。</p>",
           "example": "无",
           "member": "DistributedLoadAttrs",
           "name": "DistributedLoadAttrs",
@@ -2875,12 +2946,21 @@
         },
         {
           "disabled": false,
-          "document": "将任务执行报告写入 COS 的路径，如果不需要报告则入参空",
+          "document": "<p>将任务执行报告写入 COS 的路径，如果不需要报告则入参空</p>",
           "example": "cos://**********-nj-**********/test.txt",
           "member": "string",
           "name": "ReportPath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅预热数据任务参数。入参数TaskType为LoadData时，该参数不应为空。</p>",
+          "example": "无",
+          "member": "LoadDataAttrs",
+          "name": "LoadDataAttrs",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"

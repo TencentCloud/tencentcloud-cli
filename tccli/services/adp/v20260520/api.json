@@ -5588,6 +5588,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP-APP调用信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationMcpApp",
+          "name": "McpApp",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5693,6 +5704,56 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationMcpApp": {
+      "document": "MCP App 内容，供历史会话重建可交互 App",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力边界：一次请求只能读该 plugin 的资源</p>",
+          "example": "418eee0b-4aa7-4aef-939b-3c48d404e846",
+          "member": "string",
+          "name": "PluginId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ui:// 资源，前端据此调 ReadMCPResource 拉 HTML</p>",
+          "example": "ui://overtime-list/overtime-list.html",
+          "member": "string",
+          "name": "ResourceUri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent-exec 侧 thread</p>",
+          "example": "b18c602d-054d-4f1a-ad9b-f785ba4d69c5",
+          "member": "string",
+          "name": "ThreadId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON：完整 CallToolResult 原文，供历史会话重建时重放</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"content\":[{\"text\":\"已打开加班记录查看页：37 张申请单、43 条明细、合计 345.49 小时。按类别：延时加班 84.54h，休息日加班 252.95h，节假日加班 8h。",
+          "member": "string",
+          "name": "ToolResult",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9203,22 +9264,22 @@
         },
         {
           "disabled": false,
-          "document": "<p>最近一次重置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ConversationResetInfo",
-          "name": "ResetInfo",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "<p>单次对话记录统计列表，与 message_list 通过 record_id / related_record_id 关联</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConversationRecordSummary",
           "name": "RecordSummaryList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次重置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationResetInfo",
+          "name": "ResetInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -11313,6 +11374,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持交互界面（MCP Apps），插件级标签，默认false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportsApps",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11337,6 +11409,73 @@
           "example": "无",
           "member": "ResponseParam",
           "name": "Outputs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具meta信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MCPToolMeta",
+          "name": "Meta",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持交互界面（MCP Apps），插件级标签  默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportsApps",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MCPToolMeta": {
+      "document": "对应 MCP 协议工具 _meta，承载 MCP Apps 工具的 UI 元信息（本期仅消费 resourceUri）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工具的 UI 扩展元信息，对应 MCP 协议的 _meta.ui，声明工具关联的交互式界面资源（ResourceUri）及调用方可见性（Visibility）。仅当工具支持 MCP Apps 或声明了可见性时返回；纯文本工具该字段为空。详见 MCPToolUIMeta 结构定义。</p>",
+          "example": "无",
+          "member": "MCPToolUIMeta",
+          "name": "Ui",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MCPToolUIMeta": {
+      "document": "对应 MCP 协议 _meta.ui，定义 MCP Apps 工具的交互界面元信息（本期仅消费 resourceUri，visibility）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>关联的 UI 资源 URI，ui:// scheme，格式为 ui://&lt;插件标识&gt;/&lt;资源名&gt;-&lt;版本&gt;。该字段是 MCP Apps 交互式界面的入口，非空时表示工具支持 Apps（&quot;文本 + 交互式界面&quot;展示），为空则为纯文本工具。由工具同步结果自动识别填充，不支持手工编辑。</p>",
+          "example": "ui://overtime-apply/mcp-app.html",
+          "member": "string",
+          "name": "ResourceUri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具的调用方可见性声明，取值范围：model（模型可调用）、app（应用界面可调用），可多选，如 [&quot;model&quot;,&quot;app&quot;]。与 ResourceUri 相互独立（SEP-1865），可单独存在，例如纯后端 app-only 工具为 [&quot;app&quot;]。当 ResourceUri 非空且本字段缺省时，按规范归一化为 [&quot;model&quot;,&quot;app&quot;]；存量非 Apps 工具保持为空。</p><p>枚举值：</p><ul><li>model： 支持model</li><li>app： 支持app</li></ul>",
+          "example": "[\"model\"]",
+          "member": "string",
+          "name": "Visibility",
           "output_required": false,
           "required": false,
           "type": "list",

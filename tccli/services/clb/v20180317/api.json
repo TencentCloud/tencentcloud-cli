@@ -16718,12 +16718,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>BYOK的自定义名字</p><p>入参限制：1～256个字符</p>",
+          "document": "<p>BYOK的自定义名字</p><p>入参限制：1～255个字符</p>",
           "example": "hello",
           "member": "string",
           "name": "ServiceProviderName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多协议 Api Base URL</p>",
+          "example": "无",
+          "member": "ApiBaseItem",
+          "name": "ApiBases",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

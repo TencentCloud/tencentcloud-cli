@@ -293,7 +293,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcp server id",
+          "document": "<p>mcp server id</p>",
           "example": "mcp-xxxxxxxx",
           "member": "string",
           "name": "ID",
@@ -303,8 +303,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "是否需要鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "<p>是否需要鉴权（已废弃，请勿使用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "NeedAuth",
@@ -314,8 +314,8 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "凭据代填的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "<p>凭据代填的ID（已废弃，请勿使用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "agc-xxxxxxxx",
           "member": "string",
           "name": "AgentCredentialID",
@@ -326,7 +326,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://127.0.0.1/_llmsgw_/sse/aga-05b85106/mcp-2fc41d77",
           "member": "string",
           "name": "SSEResourceIdentifier",
@@ -337,7 +337,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://127.0.0.1/_llmsgw_/mcp/aga-05b85106/mcp-2fc41d77",
           "member": "string",
           "name": "StreamableResourceIdentifier",
@@ -563,8 +563,8 @@
           "type": "object"
         },
         {
-          "disabled": false,
-          "document": "<p>是否要认证</p>",
+          "disabled": true,
+          "document": "<p>是否要认证（已废弃，请勿使用）</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedAuth",
@@ -572,8 +572,8 @@
           "type": "bool"
         },
         {
-          "disabled": false,
-          "document": "<p>凭据ID</p>",
+          "disabled": true,
+          "document": "<p>凭据ID（已废弃，请勿使用）</p>",
           "example": "agc-aca72fd4",
           "member": "string",
           "name": "AgentCredentialID",
@@ -1504,6 +1504,33 @@
           "name": "IgnoreHealthCheck",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1929,6 +1956,24 @@
           "name": "TaskComplexityRoute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3727,6 +3772,46 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据名称</p>",
+          "example": "测试凭据",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4555,6 +4640,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5295,7 +5400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间窗口，分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时间窗口，分钟</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "Interval",
@@ -5306,13 +5411,35 @@
         },
         {
           "disabled": false,
-          "document": "累计上限，k\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>累计上限，k</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li><li>timeRange： 时间范围</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "minute",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间区间配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRange",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -6070,6 +6197,33 @@
           "name": "IgnoreHealthCheck",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6504,6 +6658,24 @@
           "name": "TaskComplexityRoute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问域名</p>",
+          "example": "www.rio.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p>",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7922,6 +8094,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据ID</p>",
+          "example": "agc-********",
+          "member": "string",
+          "name": "CredentialID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据名称</p>",
+          "example": "测试凭据",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问协议</p><p>枚举值：</p><ul><li>http： http</li><li>https： https</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https",
+          "member": "string",
+          "name": "RequestProtocolType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8271,6 +8476,34 @@
       ],
       "usage": "both"
     },
+    "TimeRange": {
+      "document": "时间区间配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>起始时间</p><p>参数格式：格式：09:00:00</p>",
+          "example": "09:00:00",
+          "member": "string",
+          "name": "Start",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：格式：12:00:00</p>",
+          "example": "12:00:00",
+          "member": "string",
+          "name": "End",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TmsConfigDTO": {
       "document": "内容安全配置",
       "members": [
@@ -8397,7 +8630,7 @@
       "document": "Token限流配置",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "day",
           "member": "string",

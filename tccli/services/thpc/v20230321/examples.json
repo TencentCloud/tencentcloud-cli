@@ -32,6 +32,14 @@
         "title": "绑定计算节点到集群"
       }
     ],
+    "BindClusterVpc": [
+      {
+        "document": "为IDC集群绑定指定的VPC和子网。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindClusterVpc\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\",\n    \"VpcId\": \"vpc-aaaa1234\",\n    \"SubnetId\": \"subnet-bbbb5678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"hpc-12345678\",\n        \"VpcId\": \"vpc-aaaa1234\",\n        \"SubnetId\": \"subnet-bbbb5678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "绑定IDC集群VPC"
+      }
+    ],
     "CreateCluster": [
       {
         "document": "创建一个管控节点和两个计算节点的集群。调度器为：SLURM。",
@@ -114,10 +122,30 @@
     ],
     "DescribeClusterActivities": [
       {
+        "document": "按照队列名称进行过滤",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterActivities\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-k2uwxvhn\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"queue-name\",\n            \"Values\": [\n                \"compute\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterActivitySet\": [\n            {\n                \"ActivityId\": \"cha-m9uxy80u\",\n                \"ActivityStatus\": \"SUCCESSFUL\",\n                \"ActivityStatusCode\": \"ActivitySuccess\",\n                \"ActivityType\": \"CreateAndAddNodes\",\n                \"Cause\": \"AutoScaleOut\",\n                \"ClusterId\": \"hpc-k2uwxvhn\",\n                \"Description\": \"弹性扩容，创建实例并添加进集群，队列：compute 增加 2个节点，总共扩容2个节点。\",\n                \"EndTime\": \"2026-08-31T03:51:51Z\",\n                \"QueueName\": \"compute\",\n                \"RelatedNodeActivitySet\": [\n                    {\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\",\n                        \"NodeInstanceId\": \"ins-7236kgtn\"\n                    }\n                ],\n                \"ResultDetail\": \"Activity success.\",\n                \"StartTime\": \"2026-08-31T03:49:33Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4e4ec467-cfa6-4212-9c1f-0c548278a43e\"\n    }\n}",
+        "title": "查询队列的弹性伸缩历史记录"
+      },
+      {
         "document": "根据集群ID查询集群活动历史记录。",
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterActivities\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-0yd8fqsc\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"ClusterActivitySet\": [\n            {\n                \"ClusterId\": \"hpc-myd8fgsc\",\n                \"ActivityId\": \"cha-gvzj0zbd\",\n                \"ActivityType\": \"TerminateNodes\",\n                \"ActivityStatus\": \"SUCCESSFUL\",\n                \"ActivityStatusCode\": \"ActivitySuccess\",\n                \"ResultDetail\": \"Activity success.\",\n                \"Cause\": \"DeleteCluster\",\n                \"Description\": \"删除指定集群，销毁实例，销毁所有节点。\",\n                \"RelatedNodeActivitySet\": [\n                    {\n                        \"NodeInstanceId\": \"ins-1zll2of0\",\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\"\n                    },\n                    {\n                        \"NodeInstanceId\": \"ins-ig2bew40\",\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\"\n                    }\n                ],\n                \"StartTime\": \"2021-11-01T02:17:20Z\",\n                \"EndTime\": \"2021-11-01T02:17:38Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"7fa864e6-cf1a-4962-8aa9-f68abfa31a00\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterActivitySet\": [\n            {\n                \"ClusterId\": \"hpc-myd8fgsc\",\n                \"ActivityId\": \"cha-gvzj0zbd\",\n                \"ActivityType\": \"TerminateNodes\",\n                \"ActivityStatus\": \"SUCCESSFUL\",\n                \"ActivityStatusCode\": \"ActivitySuccess\",\n                \"ResultDetail\": \"Activity success.\",\n                \"Cause\": \"DeleteCluster\",\n                \"QueueName\": \"compute\",\n                \"Description\": \"删除指定集群，销毁实例，销毁所有节点。\",\n                \"RelatedNodeActivitySet\": [\n                    {\n                        \"NodeInstanceId\": \"ins-1zll2of0\",\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\"\n                    },\n                    {\n                        \"NodeInstanceId\": \"ins-ig2bew40\",\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\"\n                    }\n                ],\n                \"StartTime\": \"2021-11-01T02:17:20Z\",\n                \"EndTime\": \"2021-11-01T02:17:38Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"7fa864e6-cf1a-4962-8aa9-f68abfa31a00\"\n    }\n}",
         "title": "查询集群活动历史记录"
+      }
+    ],
+    "DescribeClusterDedicatedProxy": [
+      {
+        "document": "查询一个已开通专线代理的IDC集群的代理状态信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"EndPointId\": \"vpce-12345678\",\n        \"EndPointVip\": \"10.0.0.1\",\n        \"EndPointReady\": true,\n        \"EndPointStatus\": \"ACTIVE\",\n        \"LastKnownStatus\": \"ACTIVE\",\n        \"EndPointServiceId\": \"vpcsvc-xxx\",\n        \"VpcId\": \"vpc-aaaa1234\",\n        \"SubnetId\": \"subnet-bbbb5678\",\n        \"CreateTime\": \"2026-06-01 10:00:00\",\n        \"LastSyncTime\": \"2026-06-11 14:00:00\",\n        \"RealtimeQueryTime\": \"2026-06-11 14:56:39\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "查询已开通代理的IDC集群"
+      },
+      {
+        "document": "查询一个未开通专线代理的IDC集群。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-87654321\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": false,\n        \"EndPointReady\": false,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询未开通代理的IDC集群"
       }
     ],
     "DescribeClusterStorageOption": [
@@ -236,6 +264,44 @@
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"NodeIds\": [\n        \"node-8workmoi\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40c2e07e-8500-4460-8db8-666d0e791ee5\"\n    }\n}",
         "title": "从集群解绑计算节点"
+      }
+    ],
+    "DisableClusterDedicatedProxy": [
+      {
+        "document": "关闭IDC集群的专线/VPN代理，释放终端节点资源。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "关闭IDC集群专线代理"
+      }
+    ],
+    "EnableClusterDedicatedProxy": [
+      {
+        "document": "开启IDC集群的专线/VPN代理，在指定VPC和子网中创建终端节点。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\",\n    \"VpcId\": \"vpc-aaaa1234\",\n    \"SubnetId\": \"subnet-bbbb5678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndPointId\": \"vpce-12345678\",\n        \"EndPointVip\": \"10.0.0.1\",\n        \"EndPointReady\": true,\n        \"EndPointStatus\": \"ACTIVE\",\n        \"VpcId\": \"vpc-aaaa1234\",\n        \"SubnetId\": \"subnet-bbbb5678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "开启IDC集群专线代理"
+      }
+    ],
+    "GenerateRegisterCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateRegisterCode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-kywo***a\",\n    \"QueueName\": \"compute\",\n    \"ExpireSeconds\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireAt\": 1778041412,\n        \"RegisterCode\": \"***********************0*******3*m*w*SIs******l*********M****D*0**************9uI************md***9*****c3*********1*********j****A***A*N****DM**n******3**P*Jz*********m*****9*****vudEt-**7j*\",\n        \"RequestId\": \"c7be8eb1-046a-4b48-9b29-535543cb9a3f\"\n    }\n}",
+        "title": "为集群指定队列生成注册码"
+      }
+    ],
+    "GenerateRegisterCommand": [
+      {
+        "document": "为可直连的IDC集群生成节点注册命令。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateRegisterCommand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCommand\": \"curl -sSL http://xxx/register.sh | bash -s -- --code eyJ...\",\n        \"RegisterCode\": \"eyJhbGciOiJIUzI1NiJ9...\",\n        \"ExpireAt\": 1755676800,\n        \"Proxy\": false,\n        \"ClusterId\": \"hpc-12345678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "生成IDC集群节点注册命令（直连）"
+      },
+      {
+        "document": "为IDC集群生成经专线代理接入的节点注册命令。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateRegisterCommand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\",\n    \"Proxy\": true,\n    \"VpcId\": \"vpc-aaaa1234\",\n    \"SubnetId\": \"subnet-bbbb5678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCommand\": \"curl -sSL http://xxx/register.sh | bash -s -- --code eyJ...\",\n        \"RegisterCode\": \"eyJhbGciOiJIUzI1NiJ9...\",\n        \"ExpireAt\": 1755676800,\n        \"Proxy\": true,\n        \"EndPointVip\": \"10.0.0.1\",\n        \"EndPointStatus\": \"ACTIVE\",\n        \"ClusterId\": \"hpc-12345678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "生成IDC集群节点注册命令（走专线代理）"
       }
     ],
     "InquirePriceCreateWorkspaces": [

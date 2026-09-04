@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BreakStandbyDBInstanceRelation": {
+      "document": "本接口（BreakStandbyDBInstanceRelation）用于提供断开灾备实例主备连接功能",
+      "input": "BreakStandbyDBInstanceRelationRequest",
+      "name": "断开灾备实例主备连接",
+      "output": "BreakStandbyDBInstanceRelationResponse",
+      "status": "online"
+    },
     "CancelIsolateDBInstances": {
       "document": "本接口（CancelIsolateDBInstances）提供批量解除隔离实例功能",
       "input": "CancelIsolateDBInstancesRequest",
@@ -26,6 +33,13 @@
       "input": "CreateDBSBackupRequest",
       "name": "创建实例手工备份",
       "output": "CreateDBSBackupResponse",
+      "status": "online"
+    },
+    "CreateStandbyDBInstance": {
+      "document": "本接口（CreateStandbyDBInstances）提供批量创建灾备实例功能",
+      "input": "CreateStandbyDBInstanceRequest",
+      "name": "创建灾备实例",
+      "output": "CreateStandbyDBInstanceResponse",
       "status": "online"
     },
     "CreateUsers": {
@@ -187,6 +201,13 @@
       "input": "DescribeSpecsRequest",
       "name": "查询售卖组件规格",
       "output": "DescribeSpecsResponse",
+      "status": "online"
+    },
+    "DescribeStandbyDBInstanceRelationDetail": {
+      "document": "本接口（DescribeStandbyDBinstanceRelations）用于查询实例灾备连接关系",
+      "input": "DescribeStandbyDBInstanceRelationDetailRequest",
+      "name": "获取灾备实例关系详情",
+      "output": "DescribeStandbyDBInstanceRelationDetailResponse",
       "status": "online"
     },
     "DescribeUserPrivileges": {
@@ -1292,6 +1313,61 @@
       ],
       "usage": "out"
     },
+    "BreakStandbyDBInstanceRelationRequest": {
+      "document": "BreakStandbyDBInstanceRelation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备实例 ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制断开",
+          "example": "true",
+          "member": "bool",
+          "name": "IsForce",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": " 时延，单位是秒,0不检查",
+          "example": "10",
+          "member": "int64",
+          "name": "SyncDelay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BreakStandbyDBInstanceRelationResponse": {
+      "document": "BreakStandbyDBInstanceRelation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CancelIsolateDBInstancesRequest": {
       "document": "CancelIsolateDBInstances请求参数结构体",
       "members": [
@@ -2154,6 +2230,278 @@
           "name": "IsSuccess",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStandbyDBInstanceRequest": {
+      "document": "CreateStandbyDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主实例 id</p>",
+          "example": "\"tdsql3-18b89f70\"",
+          "member": "string",
+          "name": "PrimaryInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建实例区域</p>",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型vpcid</p>",
+          "example": "“vpc-o7ssr1vx”",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符型subnetid</p>",
+          "example": "\"subnet-s21doiba\"",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买规格</p>",
+          "example": "\"mini\"",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点磁盘容量，单位GB</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "Disk",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "StorageNodeNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点副本数量，最大为5，要求为奇数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Replications",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全能型副本数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "FullReplications",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称，要求长度1-60，允许包含中文、英文大小写、数字、-、_</p>",
+          "example": "\"my-instance\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间单位，y：年，m：月，d：日</p>",
+          "example": "\"m\"",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品的时间大小</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点CPU核数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageNodeCpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储节点内存大小</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "StorageNodeMem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式，0表示按需计费/后付费，1表示预付费</p>",
+          "example": "0",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义端口</p>",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多AZ可用区列表</p>",
+          "example": "[\"ap-chengdu-2\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用优惠卷</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优惠卷列表</p>",
+          "example": "[\"123fsase123\"]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例架构类型，19.0.0 起支持 &quot;hybrid&quot;&quot;</p>",
+          "example": "\"hybrid\"",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型,CLOUD_HSSD增强型SSD,CLOUD_TCS本地SSD盘</p>",
+          "example": "\"CLOUD_HSSD\"",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签键值对数组</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主实例地域</p>",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "PrimaryInstanceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例模式，normal:标准型；enhanced:加强型</p>",
+          "example": "enhanced",
+          "member": "string",
+          "name": "InstanceMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>dbaadmin密码</p>",
+          "example": "9#si1ol0",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定安全组id列表</p>",
+          "example": "[\"sg-53stx92s\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStandbyDBInstanceResponse": {
+      "document": "CreateStandbyDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID</p>",
+          "example": "\"tdsql3-267841d2\"",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "23",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4932,6 +5280,43 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStandbyDBInstanceRelationDetailRequest": {
+      "document": "DescribeStandbyDBInstanceRelationDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStandbyDBInstanceRelationDetailResponse": {
+      "document": "DescribeStandbyDBInstanceRelationDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "灾备关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StandbyDBInstanceRelation",
+          "name": "RelationInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7795,6 +8180,232 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StandbyDBInstanceRelation": {
+      "document": "灾备实例关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主实例 ID",
+          "example": "无",
+          "member": "string",
+          "name": "PrimaryInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PrimaryInstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主实例地域",
+          "example": "无",
+          "member": "string",
+          "name": "PrimaryRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主实例子网 IP",
+          "example": "无",
+          "member": "string",
+          "name": "PrimaryVip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主实例子网端口",
+          "example": "无",
+          "member": "int64",
+          "name": "PrimaryVport",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主实例可用区",
+          "example": "无",
+          "member": "string",
+          "name": "PrimaryZones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主实例运行状态",
+          "example": "无",
+          "member": "string",
+          "name": "PrimaryStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备实例 ID",
+          "example": "无",
+          "member": "string",
+          "name": "SecondaryInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecondaryInstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备实例地域",
+          "example": "无",
+          "member": "string",
+          "name": "SecondaryRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备实例子网 IP",
+          "example": "无",
+          "member": "string",
+          "name": "SecondaryVip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备实例子网端口",
+          "example": "无",
+          "member": "int64",
+          "name": "SecondaryVport",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备实例可用区",
+          "example": "无",
+          "member": "string",
+          "name": "SecondaryZones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备实例运行状态",
+          "example": "无",
+          "member": "string",
+          "name": "SecondaryStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接类型，log_service 或 raft",
+          "example": "无",
+          "member": "string",
+          "name": "ConnType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步类型，sync 或 async",
+          "example": "无",
+          "member": "string",
+          "name": "SyncMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步状态，1: 正在同步；2: 同步异常",
+          "example": "无",
+          "member": "int64",
+          "name": "SyncStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步状态描述，同步状态异常时的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SyncStatusDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "灾备状态描述，\"creating\" \"running\" \"modifying\"，无灾备关系时为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StandbyStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主实例版本",
+          "example": "无",
+          "member": "string",
+          "name": "PrimaryCreateVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备实例版本",
+          "example": "无",
+          "member": "string",
+          "name": "SecondaryCreateVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时延 单位为秒",
+          "example": "5",
+          "member": "int64",
+          "name": "SyncDelay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

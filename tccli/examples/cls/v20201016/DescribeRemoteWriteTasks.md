@@ -20,6 +20,8 @@ Output:
                 "AuthType": 0,
                 "CreateTime": "2023-09-07 11:16:50",
                 "Enable": 1,
+                "HasServicesLog": 2,
+                "InstanceId": "",
                 "LogsetId": "e1111113-e816-4ae8-a8f7-edde0e2fc963",
                 "Name": "111111111",
                 "NetType": 1,

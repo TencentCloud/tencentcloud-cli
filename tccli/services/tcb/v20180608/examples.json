@@ -846,6 +846,14 @@
         "title": "修改登录配置"
       }
     ],
+    "ModifyPGInstanceSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPGInstanceSpec\n<公共请求参数>\n\n{\n    \"EnvId\": \"*****-****-d7gpxb78091c30209\",\n    \"Cpu\": 1,\n    \"Memory\": 2,\n    \"Storage\": 30,\n    \"SwitchTag\": 1,\n    \"SwitchStartTime\": \"2026-08-26 20:15:00\",\n    \"SwitchEndTime\": \"2026-08-26 21:15:00\",\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"BillId\": \"219429\",\n        \"DealName\": \"\",\n        \"RequestId\": \"4bcb1dba-5360-4c46-a8b5-5406958ebc72\"\n    }\n}",
+        "title": "执行变配"
+      }
+    ],
     "ModifyProvider": [
       {
         "document": "修改谷歌认证源",

@@ -351,8 +351,8 @@
     "CreateRemoteWriteTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRemoteWriteTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\",\n    \"Target\": \"prometheus\",\n    \"RemoteWriteURL\": \"\",\n    \"AuthType\": 0,\n    \"NetType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc-dec-ff-ee\",\n        \"RequestId\": \"xxx-x-xx-xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRemoteWriteTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"80b2f456-f118-4243-ae7e-fdc1df2d1b31\",\n    \"Name\": \"remotewritetest\",\n    \"Target\": \"TencentCloud_Prometheus\",\n    \"RemoteWriteURL\": \"http://1*******6:90**/api/v1/prom/write\",\n    \"AuthType\": 1,\n    \"NetType\": 1,\n    \"VpcId\": \"vpc-****\",\n    \"AuthInfo\": {\n        \"Username\": \"1*********\",\n        \"Password\": \"z****X*~W*72*=***********Ga\",\n        \"Token\": \"\"\n    },\n    \"VirtualGatewayType\": 1025,\n    \"InstanceId\": \"prom-****6pmm\",\n    \"HasServicesLog\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"26b30377-ed59-4f46-bafd-74734da08e83\",\n        \"RequestId\": \"cfa7bf34-9f9a-4210-b6d2-0f5c20763f5d\"\n    }\n}",
         "title": "创建RemoteWrite 任务"
       }
     ],
@@ -1156,7 +1156,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteWriteTasks\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"AuthInfo\": null,\n                \"AuthType\": 0,\n                \"CreateTime\": \"2023-09-07 11:16:50\",\n                \"Enable\": 1,\n                \"LogsetId\": \"e1111113-e816-4ae8-a8f7-edde0e2fc963\",\n                \"Name\": \"111111111\",\n                \"NetType\": 1,\n                \"RemoteWriteURL\": \"http://10.2.10.27:8080/api/v1/write\",\n                \"Status\": 3,\n                \"Target\": \"Prometheus\",\n                \"TaskId\": \"a2d1111-afae-467e-8816-0bc405283bec\",\n                \"TopicId\": \"376011111-76e0-48c7-bfff-018afc9bca48\",\n                \"UpdateTime\": \"2024-10-30 21:01:35\",\n                \"VirtualGatewayType\": 0,\n                \"VpcId\": \"vpc-11111\"\n            }\n        ],\n        \"RequestId\": \"e02371b7-5ef0-4ae7-8a33-f703b9d5f564\",\n        \"TotalCount\": 6\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"AuthInfo\": null,\n                \"AuthType\": 0,\n                \"CreateTime\": \"2023-09-07 11:16:50\",\n                \"Enable\": 1,\n                \"HasServicesLog\": 2,\n                \"InstanceId\": \"\",\n                \"LogsetId\": \"e1111113-e816-4ae8-a8f7-edde0e2fc963\",\n                \"Name\": \"111111111\",\n                \"NetType\": 1,\n                \"RemoteWriteURL\": \"http://10.2.10.27:8080/api/v1/write\",\n                \"Status\": 3,\n                \"Target\": \"Prometheus\",\n                \"TaskId\": \"a2d1111-afae-467e-8816-0bc405283bec\",\n                \"TopicId\": \"376011111-76e0-48c7-bfff-018afc9bca48\",\n                \"UpdateTime\": \"2024-10-30 21:01:35\",\n                \"VirtualGatewayType\": 0,\n                \"VpcId\": \"vpc-11111\"\n            }\n        ],\n        \"RequestId\": \"e02371b7-5ef0-4ae7-8a33-f703b9d5f564\",\n        \"TotalCount\": 6\n    }\n}",
         "title": "获取RemoteWrite投递任务列表"
       }
     ],
@@ -1557,8 +1557,8 @@
     "ModifyRemoteWriteTask": [
       {
         "document": "修改RemoteWrite 任务详情",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRemoteWriteTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxx-xxx-xxx-xxx\",\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Enable\": 0,\n    \"Name\": \"test\",\n    \"NetType\": 1,\n    \"VpcId\": \"cls-xxxx\",\n    \"Target\": \"Prometheus\",\n    \"RemoteWriteURL\": \"http://127.0.0.1:80/api/v1/write\",\n    \"AuthType\": 1,\n    \"AuthInfo\": {\n        \"Username\": \"test\",\n        \"Password\": \"passwrod\",\n        \"Token\": \"\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRemoteWriteTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"d0f385dc-218b-4bda-bc7f-27d27c22fdd6\",\n    \"TopicId\": \"680640a3-96d9-476f-afbd-f4492773a21f\",\n    \"Enable\": 1,\n    \"NetType\": 3,\n    \"VpcId\": \"vpc-0******l\",\n    \"RemoteWriteURL\": \"http://****.**6:90**/api/v1/prom/write\",\n    \"VirtualGatewayType\": 1025\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7034f990-1f3b-484c-87dd-43b423d3aa70\"\n    }\n}",
         "title": "修改RemoteWrite 任务详情"
       }
     ],

@@ -91,6 +91,13 @@
       "output": "DescribeQuestionMarkAgentJobResponse",
       "status": "online"
     },
+    "DescribeQuestionSplitJob": {
+      "document": "异步试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置，是试卷切题的接口补充。主要解决试卷录题这类多页场景、单题跨页场景。需要 SubmitQuestionSplitOCRJob（提交任务）、DescribeQuestionSplitOCRJob（查询任务）两个接口配套使用，计费发生在提交任务后。",
+      "input": "DescribeQuestionSplitJobRequest",
+      "name": "异步试卷切题（查询任务）",
+      "output": "DescribeQuestionSplitJobResponse",
+      "status": "online"
+    },
     "DriverLicenseOCR": {
       "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍告警功能。同时支持识别交管12123 APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。\n\n默认接口请求频率限制：10次/秒。",
       "input": "DriverLicenseOCRRequest",
@@ -446,6 +453,13 @@
       "input": "SubmitQuestionMarkAgentJobRequest",
       "name": "试题批改Agent（提交任务）",
       "output": "SubmitQuestionMarkAgentJobResponse",
+      "status": "online"
+    },
+    "SubmitQuestionSplitJob": {
+      "document": "异步试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置，是试卷切题的接口补充。主要解决试卷录题这类多页场景、单题跨页场景。需要 SubmitQuestionSplitOCRJob（提交任务）、DescribeQuestionSplitOCRJob（查询任务）两个接口配套使用，计费发生在提交任务后。",
+      "input": "SubmitQuestionSplitJobRequest",
+      "name": "异步试卷切题（提交任务）",
+      "output": "SubmitQuestionSplitJobResponse",
       "status": "online"
     },
     "TableOCR": {
@@ -3419,6 +3433,73 @@
       ],
       "type": "object"
     },
+    "DescribeQuestionSplitJobRequest": {
+      "document": "DescribeQuestionSplitJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务唯一ID。由服务端生成。</p>",
+          "example": "1486557414219153408",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuestionSplitJobResponse": {
+      "document": "DescribeQuestionSplitJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>切题详情</p>",
+          "example": "无",
+          "member": "QuestionInfo",
+          "name": "QuestionInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>",
+          "example": "****",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>",
+          "example": "**",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态。</p><p>枚举值：</p><ul><li>WAIT： 等待中</li><li>RUN： 执行中</li><li>FAIL： 任务失败</li><li>DONE： 任务成功</li></ul>",
+          "example": "DONE",
+          "member": "string",
+          "name": "JobStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetailInformationOfAirTicketTupleList": {
       "document": "机票详细信息元组",
       "members": [
@@ -4975,7 +5056,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "元素内容，当type为figure时该字段内容为图片的位置",
+          "document": "<p>元素内容，当type为figure时该字段内容为图片的位置</p>",
           "example": "c>b>a",
           "member": "string",
           "name": "Text",
@@ -4985,7 +5066,7 @@
         },
         {
           "disabled": false,
-          "document": "元素坐标",
+          "document": "<p>元素坐标</p>",
           "example": "无",
           "member": "Polygon",
           "name": "Coord",
@@ -4995,7 +5076,7 @@
         },
         {
           "disabled": false,
-          "document": "元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)",
+          "document": "<p>元素group类型，包括multiple-choice(选择题)、fill-in-the-blank(填空题)、problem-solving(解答题)、arithmetic(算术题)</p>",
           "example": "选择题",
           "member": "string",
           "name": "GroupType",
@@ -5005,7 +5086,7 @@
         },
         {
           "disabled": false,
-          "document": "结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结果列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResultList",
           "name": "ResultList",
@@ -5015,10 +5096,20 @@
         },
         {
           "disabled": false,
-          "document": "元素索引",
+          "document": "<p>元素索引</p>",
           "example": "4",
           "member": "int64",
           "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元素所在页</p><p>单位：页</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -15306,7 +15397,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "题干\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>题干</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Element",
           "name": "Question",
@@ -15316,7 +15407,7 @@
         },
         {
           "disabled": false,
-          "document": "选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>选项</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Element",
           "name": "Option",
@@ -15326,7 +15417,7 @@
         },
         {
           "disabled": false,
-          "document": "插图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>插图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Element",
           "name": "Figure",
@@ -15336,7 +15427,7 @@
         },
         {
           "disabled": false,
-          "document": "表格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>表格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Element",
           "name": "Table",
@@ -15346,7 +15437,7 @@
         },
         {
           "disabled": false,
-          "document": "答案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>答案</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Element",
           "name": "Answer",
@@ -15356,7 +15447,7 @@
         },
         {
           "disabled": false,
-          "document": "解析",
+          "document": "<p>解析</p>",
           "example": "无",
           "member": "Element",
           "name": "Parse",
@@ -15366,13 +15457,23 @@
         },
         {
           "disabled": false,
-          "document": "整题的坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>整题的坐标，多页单题跨页/单页单题跨栏场景下，存在一道题有多个坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Polygon",
           "name": "Coord",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>",
+          "example": "[1, 2]",
+          "member": "int64",
+          "name": "CoordPageIndex",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16915,6 +17016,71 @@
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
           "member": "string",
           "name": "OriginalImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitQuestionSplitJobRequest": {
+      "document": "SubmitQuestionSplitJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>批量ImageUrl图片入口。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p><p>入参限制：要求pdf只能有一个url或base64</p>",
+          "example": "[\"https://example.com/image1.jpg\"]",
+          "member": "string",
+          "name": "ImageUrlList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>批量base64图片入口。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p><p>入参限制：要求pdf只能有一个url或base64</p>",
+          "example": "[ \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==\", \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPj/HwADBwIAMCbHYQAAAABJRU5ErkJggg==\" ]",
+          "member": "string",
+          "name": "ImageBase64List",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择切题模型</p><p>枚举值：</p><ul><li>youtu_crop： 轻量化切题模型，运算速度更快，适合常规切题</li><li>youtu_crop_pro： 属于切题精调大模型，针对双栏、跨栏等复杂版式识别精度大幅提升，但推理耗时更长</li></ul><p>默认值：youtu_crop</p>",
+          "example": "youtu_crop",
+          "member": "string",
+          "name": "ModelType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitQuestionSplitJobResponse": {
+      "document": "SubmitQuestionSplitJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务唯一ID。由服务端生成。</p>",
+          "example": "1334797167793684480",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PDF 转完之后的图片压缩包列表地址。</p>",
+          "example": "https://example.com/image1.jpg",
+          "member": "string",
+          "name": "ImageZipUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

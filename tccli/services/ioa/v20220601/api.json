@@ -56,6 +56,13 @@
       "output": "CreatePrivilegeCodeResponse",
       "status": "online"
     },
+    "DeleteAccountGroup": {
+      "document": "管理员在目录管理页面删除一个分组，私有化调用path为：capi/Assets/DeleteAccountGroup",
+      "input": "DeleteAccountGroupRequest",
+      "name": "删除账户分组或者目录",
+      "output": "DeleteAccountGroupResponse",
+      "status": "online"
+    },
     "DeleteAccountGroupResources": {
       "document": "删除账户组资源授权，私有化调用path为：capi/NGN/DeleteAccountGroupResources",
       "input": "DeleteAccountGroupResourcesRequest",
@@ -73,7 +80,7 @@
     "DescribeAccountGroups": {
       "document": "以分页的方式查询账号分组列表，私有化调用path为：/capi/Assets/DescribeAccountGroups",
       "input": "DescribeAccountGroupsRequest",
-      "name": "查询账号分组列表",
+      "name": "获取账号分组信息",
       "output": "DescribeAccountGroupsResponse",
       "status": "online"
     },
@@ -457,7 +464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终端名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cugnansu-NB1",
           "member": "string",
           "name": "DeviceName",
@@ -468,7 +475,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最近登录账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "win11",
           "member": "string",
           "name": "LastLoginAccount",
@@ -479,7 +486,7 @@
         },
         {
           "disabled": false,
-          "document": "终端用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终端用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cugnansu",
           "member": "string",
           "name": "DeviceUserName",
@@ -490,7 +497,7 @@
         },
         {
           "disabled": false,
-          "document": "软件版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>软件版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.280.1.4",
           "member": "string",
           "name": "Version",
@@ -501,7 +508,7 @@
         },
         {
           "disabled": false,
-          "document": "是否盗版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否盗版</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "PiracyRisk",
@@ -512,7 +519,7 @@
         },
         {
           "disabled": false,
-          "document": "盗版原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>盗版原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "未支持",
           "member": "string",
           "name": "PiracyReason",
@@ -523,7 +530,7 @@
         },
         {
           "disabled": false,
-          "document": "安装时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>安装时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025/07/17",
           "member": "string",
           "name": "InstallTime",
@@ -534,7 +541,7 @@
         },
         {
           "disabled": false,
-          "document": "用户目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "全网账户.OS",
           "member": "string",
           "name": "UserPath",
@@ -545,7 +552,7 @@
         },
         {
           "disabled": false,
-          "document": "所在分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所在分组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "全网终端.服务器",
           "member": "string",
           "name": "UserGroup",
@@ -556,7 +563,7 @@
         },
         {
           "disabled": false,
-          "document": "IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13.108.77.57",
           "member": "string",
           "name": "IP",
@@ -567,7 +574,7 @@
         },
         {
           "disabled": false,
-          "document": "MAC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>MAC</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "00:E0:4C:36:01:1A",
           "member": "string",
           "name": "MAC",
@@ -578,7 +585,7 @@
         },
         {
           "disabled": false,
-          "document": "使用时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用时长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "UseTime",
@@ -589,7 +596,7 @@
         },
         {
           "disabled": false,
-          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20543",
           "member": "int64",
           "name": "DeviceId",
@@ -600,7 +607,7 @@
         },
         {
           "disabled": false,
-          "document": "软件全名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>软件全名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Overwolf",
           "member": "string",
           "name": "FullSoftName",
@@ -611,7 +618,7 @@
         },
         {
           "disabled": false,
-          "document": "数据ID（唯一）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据ID（唯一）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1842703",
           "member": "int64",
           "name": "Id",
@@ -622,7 +629,7 @@
         },
         {
           "disabled": false,
-          "document": "该终端此款软件可升级到的目标版本号",
+          "document": "<p>该终端此款软件可升级到的目标版本号</p>",
           "example": "134.0.3124.66",
           "member": "string",
           "name": "NewVersion",
@@ -633,7 +640,7 @@
         },
         {
           "disabled": false,
-          "document": "该软件对应运营配置的可升级id",
+          "document": "<p>该软件对应运营配置的可升级id</p>",
           "example": "1310",
           "member": "int64",
           "name": "UpgradeSoftId",
@@ -644,7 +651,7 @@
         },
         {
           "disabled": false,
-          "document": "终端备注名",
+          "document": "<p>终端备注名</p>",
           "example": "windows",
           "member": "string",
           "name": "RemarkName",
@@ -655,7 +662,7 @@
         },
         {
           "disabled": false,
-          "document": "软件id",
+          "document": "<p>软件id</p>",
           "example": "123",
           "member": "int64",
           "name": "SoftwareId",
@@ -666,7 +673,7 @@
         },
         {
           "disabled": false,
-          "document": "0:win 2:mac",
+          "document": "<p>0:win 2:mac</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -677,7 +684,7 @@
         },
         {
           "disabled": false,
-          "document": "所有权",
+          "document": "<p>所有权</p>",
           "example": "未分类资产",
           "member": "string",
           "name": "AssetType",
@@ -1043,6 +1050,15 @@
           "name": "Scene",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称多语言</p>",
+          "example": "无",
+          "member": "I18nString",
+          "name": "NameI18n",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1481,6 +1497,30 @@
       ],
       "usage": "both"
     },
+    "DeleteAccountGroupRequest": {
+      "document": "DeleteAccountGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组或者目录id(只支持32位)</p>",
+          "example": "1048",
+          "member": "uint64",
+          "name": "AccountGroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAccountGroupResourcesRequest": {
       "document": "DeleteAccountGroupResources请求参数结构体",
       "members": [
@@ -1507,6 +1547,18 @@
     },
     "DeleteAccountGroupResourcesResponse": {
       "document": "DeleteAccountGroupResources返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountGroupResponse": {
+      "document": "DeleteAccountGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1593,7 +1645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号分组名全路径，点分格式",
+          "document": "<p>账号分组名全路径，点分格式</p>",
           "example": "全网账户.pf自建.集团.研发部.研发二组",
           "member": "string",
           "name": "NamePath",
@@ -1604,7 +1656,7 @@
         },
         {
           "disabled": false,
-          "document": "账号分组ID全路径，数组格式",
+          "document": "<p>账号分组ID全路径，数组格式</p>",
           "example": "[14632,82119,510943,510945,510948]",
           "member": "int64",
           "name": "IdPathArr",
@@ -1615,7 +1667,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展信息",
+          "document": "<p>扩展信息</p>",
           "example": "{\"salt\": \"5b52ea107e85a7b46d2c1b15a5faf722\"}",
           "member": "string",
           "name": "ExtraInfo",
@@ -1626,7 +1678,7 @@
         },
         {
           "disabled": false,
-          "document": "最后更新时间",
+          "document": "<p>最后更新时间</p>",
           "example": "2024-10-21 14:34:52",
           "member": "string",
           "name": "Utime",
@@ -1637,7 +1689,7 @@
         },
         {
           "disabled": false,
-          "document": "父分组ID",
+          "document": "<p>父分组ID</p>",
           "example": "510945",
           "member": "int64",
           "name": "ParentId",
@@ -1648,7 +1700,7 @@
         },
         {
           "disabled": false,
-          "document": "源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID",
+          "document": "<p>源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>",
           "example": "510948",
           "member": "string",
           "name": "OrgId",
@@ -1659,7 +1711,7 @@
         },
         {
           "disabled": false,
-          "document": "分组名称",
+          "document": "<p>分组名称</p>",
           "example": "研发二组",
           "member": "string",
           "name": "Name",
@@ -1670,7 +1722,7 @@
         },
         {
           "disabled": false,
-          "document": "分组ID",
+          "document": "<p>分组ID</p>",
           "example": "510948",
           "member": "int64",
           "name": "Id",
@@ -1681,7 +1733,7 @@
         },
         {
           "disabled": false,
-          "document": "分组描述",
+          "document": "<p>分组描述</p>",
           "example": "这是一个研发组",
           "member": "string",
           "name": "Description",
@@ -1692,7 +1744,7 @@
         },
         {
           "disabled": false,
-          "document": "同步数据源",
+          "document": "<p>同步数据源</p>",
           "example": "10006",
           "member": "int64",
           "name": "Source",
@@ -1703,7 +1755,7 @@
         },
         {
           "disabled": false,
-          "document": "账号分组ID全路径，点分格式",
+          "document": "<p>账号分组ID全路径，点分格式</p>",
           "example": "14632.82119.510943.510945.510948",
           "member": "string",
           "name": "IdPath",
@@ -1714,7 +1766,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-10-21 14:34:52",
           "member": "string",
           "name": "Itime",
@@ -1725,7 +1777,7 @@
         },
         {
           "disabled": false,
-          "document": "父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID",
+          "document": "<p>父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID</p>",
           "example": "510945",
           "member": "string",
           "name": "ParentOrgId",
@@ -1736,7 +1788,7 @@
         },
         {
           "disabled": false,
-          "document": "导入类型",
+          "document": "<p>导入类型</p>",
           "example": "ldap",
           "member": "string",
           "name": "ImportType",
@@ -1747,7 +1799,7 @@
         },
         {
           "disabled": false,
-          "document": "miniIAM id",
+          "document": "<p>miniIAM id</p>",
           "example": "13181605199t6Upte77k5AtsQ5VBagff",
           "member": "string",
           "name": "MiniIamId",
@@ -1758,7 +1810,7 @@
         },
         {
           "disabled": false,
-          "document": "该分组下含子组的所有用户总数",
+          "document": "<p>该分组下含子组的所有用户总数</p>",
           "example": "2",
           "member": "int64",
           "name": "UserTotal",
@@ -1769,7 +1821,7 @@
         },
         {
           "disabled": false,
-          "document": "是否叶子节点",
+          "document": "<p>是否叶子节点</p>",
           "example": "true",
           "member": "bool",
           "name": "IsLeaf",
@@ -1780,7 +1832,7 @@
         },
         {
           "disabled": false,
-          "document": "是否该账户的直接权限",
+          "document": "<p>是否该账户的直接权限</p>",
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
@@ -1791,7 +1843,7 @@
         },
         {
           "disabled": false,
-          "document": "最新一次同步任务的结果",
+          "document": "<p>最新一次同步任务的结果</p>",
           "example": "Success",
           "member": "string",
           "name": "LatestSyncResult",
@@ -1802,7 +1854,7 @@
         },
         {
           "disabled": false,
-          "document": "最新一次同步任务的结束时间",
+          "document": "<p>最新一次同步任务的结束时间</p>",
           "example": "2024-11-07T11:13:11+08:00",
           "member": "string",
           "name": "LatestSyncTime",
@@ -1813,7 +1865,7 @@
         },
         {
           "disabled": false,
-          "document": "分组名称数组",
+          "document": "<p>分组名称数组</p>",
           "example": "[\"全网账户\"]",
           "member": "string",
           "name": "NamePathArr",
@@ -1831,7 +1883,7 @@
         {
           "disabled": false,
           "document": "账户分响应对象集合",
-          "example": "复杂类型，示例参考接口示例部分",
+          "example": "无",
           "member": "DescribeAccountGroupsData",
           "name": "Items",
           "output_required": true,
@@ -1841,7 +1893,7 @@
         {
           "disabled": false,
           "document": "分页公共对象",
-          "example": "复杂类型，示例参考接口示例部分",
+          "example": "无",
           "member": "Paging",
           "name": "Page",
           "output_required": true,
@@ -1856,7 +1908,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（仅SaaS版本适用）搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Deepin",
@@ -1866,7 +1927,7 @@
         {
           "disabled": false,
           "document": "查询条件\n\n过滤参数\n1、Name，string类型，按分组名过滤\n是否必填：否\n操作符: like\n\n排序条件\n1、Itime，string类型，按分组创建时间排序\n是否必填：否\n2、Utime，string类型，按分组更新时间排序\n是否必填：否",
-          "example": "{     \"Filters\": [         {             \"Field\": \"Name\",             \"Operator\": \"like\",             \"Values\": [                 \"研发\"             ]         }     ] }",
+          "example": "无",
           "member": "Condition",
           "name": "Condition",
           "required": false,
@@ -1890,7 +1951,7 @@
         {
           "disabled": false,
           "document": "账号分组详情响应数据",
-          "example": "无，参考接口示例部分",
+          "example": "无",
           "member": "DescribeAccountGroupsPageResp",
           "name": "Data",
           "output_required": false,
@@ -3151,7 +3212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自增id，数据库中唯一",
+          "document": "<p>自增id，数据库中唯一</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -3162,7 +3223,7 @@
         },
         {
           "disabled": false,
-          "document": "节点分组名称",
+          "document": "<p>节点分组名称</p>",
           "example": "saaskb",
           "member": "string",
           "name": "GroupName",
@@ -3173,7 +3234,7 @@
         },
         {
           "disabled": false,
-          "document": "节点分组id",
+          "document": "<p>节点分组id</p>",
           "example": "ct9at4pgiv8f3vdmk9s0",
           "member": "string",
           "name": "GroupId",
@@ -3184,13 +3245,24 @@
         },
         {
           "disabled": false,
-          "document": "包含边缘节点数量",
+          "document": "<p>包含边缘节点数量</p>",
           "example": "8",
           "member": "int64",
           "name": "EdgeCount",
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组中英文</p>",
+          "example": "无",
+          "member": "I18nString",
+          "name": "GroupNameI18n",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3674,171 +3746,171 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>账号名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lucal_win2",
           "member": "string",
           "name": "UserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "计算机名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>计算机名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lucal_win-PC2",
           "member": "string",
           "name": "ComputerName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lucal_win-PC2",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "用户组IdPath\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>用户组IdPath</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8.3762",
           "member": "string",
           "name": "AccountGroupIdPath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "用户组id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>用户组id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "AccountGroupId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "终端组名path\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>终端组名path</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "全网终端.set2.set2-1",
           "member": "string",
           "name": "GroupNamePath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>Ip地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "113.108.77.69",
           "member": "string",
           "name": "Ip",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "用户组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>用户组名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ktest",
           "member": "string",
           "name": "AccountGroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "终端组IdPath\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>终端组IdPath</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.5.7",
           "member": "string",
           "name": "GroupIdPath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "唯一标识Mid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>唯一标识Mid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "928EBWA5184BEC838B96B29CE8105EC685A6DA6",
           "member": "string",
           "name": "Mid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "IOA账号名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>IOA账号名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lucal",
           "member": "string",
           "name": "IoaUserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "所在分组Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>所在分组Id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
           "member": "int64",
           "name": "GroupId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "所在分组Name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>所在分组Name</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "set2-1",
           "member": "string",
           "name": "GroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Mac地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>Mac地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00:E0:4C:36:01:1B",
           "member": "string",
           "name": "Mac",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "软件版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>软件版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.280.1.4",
           "member": "string",
           "name": "Version",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "用户组名Path\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>用户组名Path</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "全网账户.accountgroup",
           "member": "string",
           "name": "AccountGroupNamePath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "列表Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "<p>列表Id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -4645,7 +4717,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "组Id(只支持32位)",
+          "document": "<p>组Id(只支持32位)</p>",
           "example": "49017",
           "member": "int64",
           "name": "AccountGroupId",
@@ -4662,7 +4734,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "uid，数据库中唯一",
+          "document": "<p>uid，数据库中唯一</p>",
           "example": "1821470",
           "member": "int64",
           "name": "Id",
@@ -4673,7 +4745,7 @@
         },
         {
           "disabled": false,
-          "document": "账号，登录账号",
+          "document": "<p>账号，登录账号</p>",
           "example": "ethanhu",
           "member": "string",
           "name": "UserId",
@@ -4684,7 +4756,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "胡生",
           "member": "string",
           "name": "UserName",
@@ -4695,7 +4767,7 @@
         },
         {
           "disabled": false,
-          "document": "账号id，同Id字段",
+          "document": "<p>账号id，同Id字段</p>",
           "example": "1821470",
           "member": "int64",
           "name": "AccountId",
@@ -4706,7 +4778,7 @@
         },
         {
           "disabled": false,
-          "document": "账号所在的分组id",
+          "document": "<p>账号所在的分组id</p>",
           "example": "83210",
           "member": "int64",
           "name": "GroupId",
@@ -4717,7 +4789,7 @@
         },
         {
           "disabled": false,
-          "document": "账号所在的分组名称",
+          "document": "<p>账号所在的分组名称</p>",
           "example": "测试组",
           "member": "string",
           "name": "GroupName",
@@ -4728,7 +4800,7 @@
         },
         {
           "disabled": false,
-          "document": "账号所在的分组名称路径，用英文.分割",
+          "document": "<p>账号所在的分组名称路径，用英文.分割</p>",
           "example": "全网账户.测试组",
           "member": "string",
           "name": "NamePath",
@@ -4739,7 +4811,7 @@
         },
         {
           "disabled": false,
-          "document": "账号来源,0表示本地账号(只支持32位)",
+          "document": "<p>账号来源,0表示本地账号(只支持32位)</p>",
           "example": "91606",
           "member": "int64",
           "name": "Source",
@@ -4750,7 +4822,7 @@
         },
         {
           "disabled": false,
-          "document": "账号状态,0禁用，1启用(只支持32位)",
+          "document": "<p>账号状态,0禁用，1启用(只支持32位)</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -4761,7 +4833,7 @@
         },
         {
           "disabled": false,
-          "document": "账号的创建时间",
+          "document": "<p>账号的创建时间</p>",
           "example": "2024-11-07 19:31:26",
           "member": "string",
           "name": "Itime",
@@ -4772,7 +4844,7 @@
         },
         {
           "disabled": false,
-          "document": "账号的最后更新时间",
+          "document": "<p>账号的最后更新时间</p>",
           "example": "2024-11-07 19:31:26",
           "member": "string",
           "name": "Utime",
@@ -4783,8 +4855,8 @@
         },
         {
           "disabled": false,
-          "document": "账号的扩展信息，包含邮箱、手机号、身份证、职位等信息",
-          "example": "{\\\"email\\\": \\\"ethanhu@qq.com\\\", \\\"phone\\\": \\\"18900000001\\\", \\\"status\\\": 1, \\\"miniIAM_guid\\\": \\\"11694d30-0cf9-32bf-b5cd-b233c3e19d22\\\", \\\"iam_disable_account\\\": 0}",
+          "document": "<p>账号的扩展信息，包含邮箱、手机号、身份证、职位等信息</p>",
+          "example": "{\\\"****l*\"**\\**t*******q.com\\\", \\\"phon**** \\\"1890000*00**\",*\\\"*ta*us\\\"* *,*\\**iniIAM_guid\\\": \\\"116***3****f9-32bf-b5cd-**3*c*e1*d*2*** \\\"ia*****abl******unt\\\": 0}",
           "member": "string",
           "name": "ExtraInfo",
           "output_required": false,
@@ -4794,7 +4866,7 @@
         },
         {
           "disabled": false,
-          "document": "用户风险等级，枚举：none, low, middle, high",
+          "document": "<p>用户风险等级，枚举：none, low, middle, high</p>",
           "example": "low",
           "member": "string",
           "name": "RiskLevel",
@@ -4805,8 +4877,8 @@
         },
         {
           "disabled": false,
-          "document": "所属组",
-          "example": "[{\"AccountGroupId\":1, \"AccountGroupName\": \"全网账户\"}]",
+          "document": "<p>所属组</p>",
+          "example": "无",
           "member": "DescribeLocalAccountAccountGroupsData",
           "name": "AccountGroups",
           "output_required": false,
@@ -4816,7 +4888,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定手机端设备数",
+          "document": "<p>绑定手机端设备数</p>",
           "example": "1",
           "member": "int64",
           "name": "MobileBindNum",
@@ -4827,7 +4899,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定Pc端设备数",
+          "document": "<p>绑定Pc端设备数</p>",
           "example": "2",
           "member": "int64",
           "name": "PcBindNum",
@@ -4838,7 +4910,7 @@
         },
         {
           "disabled": false,
-          "document": "账号在线状态 1：在线 2：离线",
+          "document": "<p>账号在线状态 1：在线 2：离线</p>",
           "example": "1",
           "member": "int64",
           "name": "OnlineStatus",
@@ -4849,7 +4921,7 @@
         },
         {
           "disabled": false,
-          "document": "账号活跃状态 1：活跃 2：非活跃",
+          "document": "<p>账号活跃状态 1：活跃 2：非活跃</p>",
           "example": "1",
           "member": "int64",
           "name": "ActiveStatus",
@@ -4860,7 +4932,7 @@
         },
         {
           "disabled": false,
-          "document": "账号登录时间",
+          "document": "<p>账号登录时间</p>",
           "example": "2024-11-01 23:18:13",
           "member": "string",
           "name": "LoginTime",
@@ -4871,7 +4943,7 @@
         },
         {
           "disabled": false,
-          "document": "账号登出时间",
+          "document": "<p>账号登出时间</p>",
           "example": "2024-11-01 23:19:08",
           "member": "string",
           "name": "LogoutTime",
@@ -5164,7 +5236,7 @@
         {
           "disabled": false,
           "document": "账号根分组响应详情",
-          "example": "{       \"Description\": \"这里是该分组的描述\",       \"ExtraInfo\": \"{}\",       \"Id\": 14632,       \"IdPath\": \"14632\",       \"IdPathArr\": [         14632       ],       \"Import\": \"0\",       \"ImportEnable\": false,       \"ImportType\": \"zijian\",       \"Itime\": \"2023-04-18 23:01:11\",       \"MiniIamId\": \"1256733004o8vX5K5hVcGCeQKddLZNmf\",       \"Name\": \"全网账户\",       \"NamePath\": \"全网账户\",       \"OrgId\": \"0\",       \"ParentId\": 0,       \"ParentOrgId\": \"0\",       \"ReadOnly\": false,       \"Source\": 0,       \"Utime\": \"2023-04-18 23:01:11\"     }",
+          "example": "无",
           "member": "GetAccountGroupData",
           "name": "Data",
           "output_required": false,
@@ -5185,7 +5257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终端用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "lucal_win-PC7",
           "member": "string",
           "name": "UserName",
@@ -5195,7 +5267,7 @@
         },
         {
           "disabled": false,
-          "document": "mac地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>mac地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "B0:DC:EF:E7:37:EA",
           "member": "string",
           "name": "MacAddr",
@@ -5205,7 +5277,7 @@
         },
         {
           "disabled": false,
-          "document": "终端计算机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终端计算机名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "lucal_win",
           "member": "string",
           "name": "Name",
@@ -5215,7 +5287,7 @@
         },
         {
           "disabled": false,
-          "document": "终端组路径名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终端组路径名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "全网终端.分组1",
           "member": "string",
           "name": "GroupNamePath",
@@ -5225,7 +5297,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>IP地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "119.147.10.192",
           "member": "string",
           "name": "Ip",
@@ -5235,7 +5307,7 @@
         },
         {
           "disabled": false,
-          "document": "唯一标识Mid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>唯一标识Mid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8314BF3FD3FD738410C4FBB0DDDA48786800AB00",
           "member": "string",
           "name": "Mid",
@@ -5245,7 +5317,7 @@
         },
         {
           "disabled": false,
-          "document": "企业账户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>企业账户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "liming",
           "member": "string",
           "name": "IoaUserName",
@@ -5255,7 +5327,7 @@
         },
         {
           "disabled": false,
-          "document": "终端分组Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终端分组Id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "288661",
           "member": "int64",
           "name": "GroupId",
@@ -5265,7 +5337,7 @@
         },
         {
           "disabled": false,
-          "document": "终端组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终端组名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "分组1",
           "member": "string",
           "name": "GroupName",
@@ -5275,7 +5347,7 @@
         },
         {
           "disabled": false,
-          "document": "终端列表Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终端列表Id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11668634",
           "member": "int64",
           "name": "Id",
@@ -5285,7 +5357,7 @@
         },
         {
           "disabled": false,
-          "document": "软件数量(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>软件数量(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "SoftNum",
@@ -5295,7 +5367,7 @@
         },
         {
           "disabled": false,
-          "document": "盗版风险（1=风险;2=未知）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>盗版风险（1=风险;2=未知）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PiracyRisk",
@@ -5305,7 +5377,7 @@
         },
         {
           "disabled": false,
-          "document": "终端备注名",
+          "document": "<p>终端备注名</p>",
           "example": "windows",
           "member": "string",
           "name": "RemarkName",
@@ -6208,7 +6280,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备组id",
+          "document": "<p>设备组id</p>",
           "example": "7",
           "member": "int64",
           "name": "Id",
@@ -6219,7 +6291,7 @@
         },
         {
           "disabled": false,
-          "document": "设备组名称",
+          "document": "<p>设备组名称</p>",
           "example": "分组1",
           "member": "string",
           "name": "Name",
@@ -6230,7 +6302,7 @@
         },
         {
           "disabled": false,
-          "document": "设备组描述",
+          "document": "<p>设备组描述</p>",
           "example": "1部门",
           "member": "string",
           "name": "Description",
@@ -6241,7 +6313,7 @@
         },
         {
           "disabled": false,
-          "document": "父节点id",
+          "document": "<p>父节点id</p>",
           "example": "1",
           "member": "int64",
           "name": "ParentId",
@@ -6252,7 +6324,7 @@
         },
         {
           "disabled": false,
-          "document": "基于id的节点路径",
+          "document": "<p>基于id的节点路径</p>",
           "example": "1.7",
           "member": "string",
           "name": "IdPath",
@@ -6263,7 +6335,7 @@
         },
         {
           "disabled": false,
-          "document": "基于名称的节点路径",
+          "document": "<p>基于名称的节点路径</p>",
           "example": "全网终端.分组1",
           "member": "string",
           "name": "NamePath",
@@ -6274,7 +6346,7 @@
         },
         {
           "disabled": false,
-          "document": "分组锁定状态",
+          "document": "<p>分组锁定状态</p>",
           "example": "0",
           "member": "int64",
           "name": "Locked",
@@ -6285,7 +6357,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   ）",
+          "document": "<p>系统类型（0: win，1：linux，2: mac，4：android，5：ios   ）</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -6296,7 +6368,7 @@
         },
         {
           "disabled": false,
-          "document": "排序",
+          "document": "<p>排序</p>",
           "example": "0",
           "member": "int64",
           "name": "Sort",
@@ -6307,7 +6379,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动调整",
+          "document": "<p>是否自动调整</p>",
           "example": "0",
           "member": "int64",
           "name": "FromAuto",
@@ -6318,7 +6390,7 @@
         },
         {
           "disabled": false,
-          "document": "子节点数量",
+          "document": "<p>子节点数量</p>",
           "example": "2",
           "member": "int64",
           "name": "Count",
@@ -6329,7 +6401,7 @@
         },
         {
           "disabled": false,
-          "document": "图标",
+          "document": "<p>图标</p>",
           "example": "空字符串",
           "member": "string",
           "name": "Icon",
@@ -6340,7 +6412,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有ip",
+          "document": "<p>是否有ip</p>",
           "example": "0",
           "member": "int64",
           "name": "WithIp",
@@ -6351,7 +6423,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有组ip",
+          "document": "<p>是否有组ip</p>",
           "example": "false",
           "member": "bool",
           "name": "HasIp",
@@ -6362,7 +6434,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是叶子节点",
+          "document": "<p>是否是叶子节点</p>",
           "example": "false",
           "member": "bool",
           "name": "IsLeaf",
@@ -6373,7 +6445,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只读",
+          "document": "<p>是否只读</p>",
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
@@ -6384,7 +6456,7 @@
         },
         {
           "disabled": false,
-          "document": "对应绑定的账号id",
+          "document": "<p>对应绑定的账号id</p>",
           "example": "8",
           "member": "int64",
           "name": "BindAccount",
@@ -6395,7 +6467,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定账号的用户名",
+          "document": "<p>绑定账号的用户名</p>",
           "example": "张三",
           "member": "string",
           "name": "BindAccountName",
@@ -6750,7 +6822,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端自定义分组id",
+          "document": "<p>终端自定义分组id</p>",
           "example": "10307",
           "member": "int64",
           "name": "Id",
@@ -6761,7 +6833,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义分组名称",
+          "document": "<p>自定义分组名称</p>",
           "example": "自定义分组1",
           "member": "string",
           "name": "DeviceVirtualGroupName",
@@ -6772,7 +6844,7 @@
         },
         {
           "disabled": false,
-          "document": "设备数",
+          "document": "<p>设备数</p>",
           "example": "10",
           "member": "int64",
           "name": "DeviceCount",
@@ -6783,7 +6855,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）",
+          "document": "<p>系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）</p>",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -6794,7 +6866,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-05-23T15:58:40.411484+08:00",
           "member": "string",
           "name": "Itime",
@@ -6805,7 +6877,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2025-05-23T15:58:40.411484+08:00",
           "member": "string",
           "name": "Utime",
@@ -6929,6 +7001,16 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称多语言</p>",
+          "example": "无",
+          "member": "I18nString",
+          "name": "NameI18n",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7022,6 +7104,16 @@
           "example": "[\"SSO认证\"]",
           "member": "string",
           "name": "AuthMethods",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称多语言支持</p>",
+          "example": "无",
+          "member": "I18nString",
+          "name": "NameI18n",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -7264,7 +7356,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组名称全路径，点分格式",
+          "document": "<p>分组名称全路径，点分格式</p>",
           "example": "全网账户.pf自建",
           "member": "string",
           "name": "NamePath",
@@ -7275,7 +7367,7 @@
         },
         {
           "disabled": false,
-          "document": "分组ID全路径，数组格式",
+          "document": "<p>分组ID全路径，数组格式</p>",
           "example": "[14632,82119]",
           "member": "int64",
           "name": "IdPathArr",
@@ -7286,7 +7378,7 @@
         },
         {
           "disabled": false,
-          "document": "分组扩展信息",
+          "document": "<p>分组扩展信息</p>",
           "example": "{\"salt\": \"fa68afafytz186\"}",
           "member": "string",
           "name": "ExtraInfo",
@@ -7297,7 +7389,7 @@
         },
         {
           "disabled": false,
-          "document": "最后更新时间",
+          "document": "<p>最后更新时间</p>",
           "example": "2024-01-25 20:43:35",
           "member": "string",
           "name": "Utime",
@@ -7308,7 +7400,7 @@
         },
         {
           "disabled": false,
-          "document": "当前分组的父分组ID",
+          "document": "<p>当前分组的父分组ID</p>",
           "example": "14632",
           "member": "uint64",
           "name": "ParentId",
@@ -7319,7 +7411,7 @@
         },
         {
           "disabled": false,
-          "document": "源账号组ID，该字段仅适用于第三方同步的组织架构，通过OrgId-Id构成源组织架构分组ID-现组织架构分组ID映射关系",
+          "document": "<p>源账号组ID，该字段仅适用于第三方同步的组织架构，通过OrgId-Id构成源组织架构分组ID-现组织架构分组ID映射关系</p>",
           "example": "82119",
           "member": "string",
           "name": "OrgId",
@@ -7330,7 +7422,7 @@
         },
         {
           "disabled": false,
-          "document": "分组名称",
+          "document": "<p>分组名称</p>",
           "example": "pf自建",
           "member": "string",
           "name": "Name",
@@ -7341,7 +7433,7 @@
         },
         {
           "disabled": false,
-          "document": "分组ID",
+          "document": "<p>分组ID</p>",
           "example": "82119",
           "member": "uint64",
           "name": "Id",
@@ -7352,7 +7444,7 @@
         },
         {
           "disabled": false,
-          "document": "分组描述",
+          "document": "<p>分组描述</p>",
           "example": "这是一个自建分组",
           "member": "string",
           "name": "Description",
@@ -7363,7 +7455,7 @@
         },
         {
           "disabled": false,
-          "document": "分组导入源(只支持32位)",
+          "document": "<p>分组导入源(只支持32位)</p>",
           "example": "0",
           "member": "uint64",
           "name": "Source",
@@ -7374,7 +7466,7 @@
         },
         {
           "disabled": false,
-          "document": "分组ID全路径，点分格式",
+          "document": "<p>分组ID全路径，点分格式</p>",
           "example": "14632.82119",
           "member": "string",
           "name": "IdPath",
@@ -7385,7 +7477,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-01-25 20:43:35",
           "member": "string",
           "name": "Itime",
@@ -7396,7 +7488,7 @@
         },
         {
           "disabled": false,
-          "document": "父源账号组ID，该字段仅适用于第三方同步的组织架构",
+          "document": "<p>父源账号组ID，该字段仅适用于第三方同步的组织架构</p>",
           "example": "0",
           "member": "string",
           "name": "ParentOrgId",
@@ -7407,7 +7499,7 @@
         },
         {
           "disabled": false,
-          "document": "导入信息,json格式",
+          "document": "<p>导入信息,json格式</p>",
           "example": "{\"obsolete\": true}",
           "member": "string",
           "name": "Import",
@@ -7418,7 +7510,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启导入架构",
+          "document": "<p>是否开启导入架构</p>",
           "example": "true",
           "member": "bool",
           "name": "ImportEnable",
@@ -7429,7 +7521,7 @@
         },
         {
           "disabled": false,
-          "document": "导入类型",
+          "document": "<p>导入类型</p>",
           "example": "ldap",
           "member": "string",
           "name": "ImportType",
@@ -7440,7 +7532,7 @@
         },
         {
           "disabled": false,
-          "document": "miniIAMId，MiniIAM源才有",
+          "document": "<p>miniIAMId，MiniIAM源才有</p>",
           "example": "13181605199t6Upte77k5AtsQ5VBagff",
           "member": "string",
           "name": "MiniIamId",
@@ -7728,11 +7820,11 @@
       "type": "object"
     },
     "GrantedAccountGroupItem": {
-      "document": "GrantedAccountItem",
+      "document": "账号分组授权信息",
       "members": [
         {
           "disabled": false,
-          "document": "账户组Id",
+          "document": "<p>账户组Id</p>",
           "example": "96",
           "member": "uint64",
           "name": "AccountGroupId",
@@ -7743,7 +7835,7 @@
         },
         {
           "disabled": false,
-          "document": "分组名称",
+          "document": "<p>分组名称</p>",
           "example": "旧******删",
           "member": "string",
           "name": "Name",
@@ -7754,7 +7846,7 @@
         },
         {
           "disabled": false,
-          "document": "所属分组Id",
+          "document": "<p>所属分组Id</p>",
           "example": "[2]",
           "member": "uint64",
           "name": "IdPathArray",
@@ -7765,7 +7857,7 @@
         },
         {
           "disabled": false,
-          "document": "所属分组NamePathArray",
+          "document": "<p>所属分组NamePathArray</p>",
           "example": "[\"全网账*\"]",
           "member": "string",
           "name": "NamePathArray",
@@ -7776,7 +7868,7 @@
         },
         {
           "disabled": false,
-          "document": "目录id",
+          "document": "<p>目录id</p>",
           "example": "3",
           "member": "uint64",
           "name": "AccountCount",
@@ -7787,7 +7879,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "0",
           "member": "uint64",
           "name": "ExpireTime",
@@ -7798,7 +7890,7 @@
         },
         {
           "disabled": false,
-          "document": "关联id",
+          "document": "<p>关联id</p>",
           "example": "12",
           "member": "uint64",
           "name": "RelationId",
@@ -7982,6 +8074,34 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "I18nString": {
+      "document": "I18nString 国际化字符串（对齐云API平台已注册数据结构 ID:131745，用途：入参/出参） 使用方式：通常以 repeated I18nString 数组承载多语言，一条元素装一种语言。 出参示例：[{\"Lang\":\"zh-CN\",\"Value\":\"策略名\"},{\"Lang\":\"en-US\",\"Value\":\"Policy Name\"}] 入参约定：客户端至少提供 zh-CN 一条；后端建议在业务层调用 i18n.MustZhCn 校验。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>语言枚举</p><p>枚举值：</p><ul><li>zh-CN： 简体中文</li><li>en-US： 英文</li></ul>",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>这是一段业务字符串</p>",
+          "example": "数据安全中心",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8178,6 +8298,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称多语言</p>",
+          "example": "无",
+          "member": "I18nString",
+          "name": "NameI18n",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

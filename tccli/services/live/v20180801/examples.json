@@ -337,8 +337,8 @@
     "CreateLiveTranscodeTemplate": [
       {
         "document": "CreateLiveTranscodeTemplate 例子。",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Profile\": \"main\",\n    \"AudioBitrate\": \"500\",\n    \"Rotate\": \"0\",\n    \"Description\": \"transcode\",\n    \"TemplateName\": \"900m\",\n    \"VideoBitrate\": \"900\",\n    \"Vcodec\": \"h264\",\n    \"Height\": \"250\",\n    \"Width\": \"250\",\n    \"NeedAudio\": \"1\",\n    \"FpsToOrig\": \"0\",\n    \"Fps\": \"30\",\n    \"BitrateToOrig\": \"0\",\n    \"HeightToOrig\": \"0\",\n    \"NeedVideo\": \"1\",\n    \"Gop\": \"3\",\n    \"Acodec\": \"aac\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"jiang8\",\n    \"VideoBitrate\": 0,\n    \"Description\": \"\",\n    \"IsAdaptiveBitRate\": 1,\n    \"AdaptiveChildren\": [\n        {\n            \"TemplateName\": \"jiang9\",\n            \"Vcodec\": \"origin\",\n            \"VideoBitrate\": 3000,\n            \"Height\": 2000,\n            \"Fps\": 0,\n            \"Gop\": 0,\n            \"NeedVideo\": 1,\n            \"NeedAudio\": 1,\n            \"BitrateToOrig\": 0,\n            \"HeightToOrig\": 0,\n            \"FpsToOrig\": 0,\n            \"ShortEdgeAsHeight\": 0,\n            \"HlsContainerFormat\": \"ts\",\n            \"HlsMp4VideoCodecTag\": \"hev1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 8453014,\n        \"RequestId\": \"12306f18-9332-412f-bf15-e5b47f6fcaf1\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -1681,9 +1681,9 @@
     "ModifyLiveTranscodeTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 8436653,\n    \"NeedVideo\": 1,\n    \"AudienceDrivenTranscode\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd90ac5b-afae-4173-9582-99cd65b3e449\"\n    }\n}",
-        "title": "修改模板示例。"
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 8452765,\n    \"Vcodec\": \"origin\",\n    \"Acodec\": \"\",\n    \"Description\": \"\",\n    \"VideoBitrate\": 0,\n    \"Width\": 0,\n    \"NeedVideo\": 1,\n    \"NeedAudio\": 1,\n    \"Height\": 0,\n    \"Fps\": 0,\n    \"Gop\": 0,\n    \"Rotate\": 0,\n    \"Profile\": \"\",\n    \"BitrateToOrig\": 0,\n    \"HeightToOrig\": 0,\n    \"FpsToOrig\": 0,\n    \"AdaptBitratePercent\": 0.12,\n    \"ShortEdgeAsHeight\": 0,\n    \"DRMType\": \"\",\n    \"DRMTracks\": \"\",\n    \"IsAdaptiveBitRate\": 0,\n    \"AudienceDrivenTranscode\": 1,\n    \"AudienceThreshold\": 101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a8256df-cd2c-4a23-9516-1b2cd9a31b80\"\n    }\n}",
+        "title": "修改吗转码模版"
       }
     ],
     "ModifyOriginStreamInfo": [

@@ -1927,7 +1927,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>沙箱元数据名</p>",
+          "document": "<p>元数据名</p>",
           "example": "b",
           "member": "string",
           "name": "Name",
@@ -1938,7 +1938,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>沙箱元数据值</p>",
+          "document": "<p>元数据值</p>",
           "example": "b",
           "member": "string",
           "name": "Value",

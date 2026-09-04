@@ -8,6 +8,14 @@
         "title": "DMS元数据新增分区"
       }
     ],
+    "AddDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDeployment\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-20260731164626-fgja\",\n    \"DeploymentName\": \"aa3\",\n    \"Engine\": \"bb\",\n    \"Replicas\": 1,\n    \"ResourcePartitionId\": \"dlc-p-jhzmcfna\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AdvancedParams\": \"{\\\"EngineArgs\\\":[],\\\"ExtraFlags\\\":[],\\\"EnvVars\\\":[],\\\"RayOptions\\\":[]}\",\n        \"AppId\": 260200066,\n        \"AutoscalingEnabled\": false,\n        \"AvailableReplicas\": 0,\n        \"CreateTime\": 1786007512628,\n        \"DeploymentId\": \"deploy-20260806171152-j6cq\",\n        \"Engine\": \"bb\",\n        \"HeadHighAvailabilityEnabled\": true,\n        \"ModelStorageConfig\": \"{\\\"COSVolumes\\\":[{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"common-job-packages-251233710\\\",\\\"VolumeSubPath\\\":\\\"/builtin-models/chronos2/v1/\\\",\\\"MountPath\\\":\\\"/builtin-models/chronos2/v1\\\"}]}\",\n        \"ModelVersion\": \"v1\",\n        \"Name\": \"aa3\",\n        \"NeutrinoServeId\": \"rayserve-20260806171152-lk8j\",\n        \"Replicas\": 1,\n        \"ResourceConfig\": \"{\\\"workerBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"workerSpec\\\":1,\\\"headBillingItem\\\":\\\"\\\",\\\"headSpec\\\":1,\\\"gpu\\\":\\\"\\\",\\\"gpuNum\\\":0,\\\"cpu\\\":1,\\\"mem\\\":4,\\\"headCpu\\\":2,\\\"headMem\\\":4}\",\n        \"ResourcePartitionId\": \"dlc-p-jhzmcfna\",\n        \"ResourcePartitionName\": \"dlc-test-03-cpu-resource-new\",\n        \"ServiceId\": \"svc-20260731164626-fgja\",\n        \"Status\": \"Deploying\",\n        \"SubAccountUin\": \"700002655694\",\n        \"Uin\": \"700002655694\",\n        \"UpdateTime\": 1786007512628,\n        \"RequestId\": \"0175dcfd-cda0-4c5b-8ae4-7fefbcfdf70c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "AddOptimizerEngines": [
       {
         "document": "",
@@ -108,6 +116,14 @@
         "title": "绑定鉴权策略到工作组（对接TF场景）"
       }
     ],
+    "BindApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindApiKey\n<公共请求参数>\n\n{\n    \"ApiKeyIds\": [\n        \"apikey-20260606184322-7o1x\"\n    ],\n    \"ServiceId\": \"svc-20260606162551-ols8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedList\": [\n            {\n                \"ApiKeyId\": \"apikey-20260606184322-7o1x\",\n                \"Reason\": \"已被其他服务绑定\"\n            }\n        ],\n        \"SuccessList\": [],\n        \"RequestId\": \"643d163f-020f-4576-934c-c9d0cc8fcd76\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "BindWorkGroupsToUser": [
       {
         "document": "",
@@ -164,6 +180,22 @@
         "title": "test"
       }
     ],
+    "CancelTrainingJobInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTrainingJobInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rayjob-20260702185625-wona\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"CheckpointMountInfo\": {\n                \"Bucket\": \"common-job-packages-251233710\",\n                \"MountPath\": \"/shared\",\n                \"PlatformManaged\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"StorageType\": \"CFS\",\n                \"VolumeSubPath\": \"/checkpoints/cus04\"\n            },\n            \"CreateTime\": 1782989786623,\n            \"Creator\": \"700002655693\",\n            \"HistoryUrl\": \"https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/dlc-p-wdtiljwu/rayjob-20260702185625-wona/\",\n            \"InstanceId\": \"rayjob-20260702185625-wona\",\n            \"JobCreateTime\": 1782989788347,\n            \"JobRunningTime\": 4331589,\n            \"Priority\": 5,\n            \"SpecId\": \"raytrain-spec-thjiyg-rbou\",\n            \"SpecName\": \"cus04\",\n            \"Status\": \"CANCELLED\"\n        },\n        \"RequestId\": \"5c9e543c-fcb4-4846-b581-40facc8125e1\"\n    }\n}",
+        "title": "暂停（取消）实例"
+      }
+    ],
+    "CheckApiKeyName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckApiKeyName\n<公共请求参数>\n\n{\n    \"Name\": \"apices\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Exists\": false,\n        \"RequestId\": \"630245a2-c837-4524-8663-fdbf43ba3849\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "CheckDataEngineConfigPairsValidity": [
       {
         "document": "本接口用于检查引擎用户自定义参数的有效性。",
@@ -188,12 +220,28 @@
         "title": "查看集群镜像是否能够升级"
       }
     ],
+    "CheckJobSpecName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckJobSpecName\n<公共请求参数>\n\n{\n    \"SpecName\": \"aiidany\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Available\": false,\n        \"Reason\": \"配置名称 'aiidany' 在当前应用下已存在，请使用其他名称\",\n        \"RequestId\": \"ceb60424-cf0d-4fb3-a884-a84b106eaa52\"\n    }\n}",
+        "title": "校验specName是否有重名"
+      }
+    ],
     "CheckLockMetaData": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckLockMetaData\n<公共请求参数>\n\n{\n    \"LockId\": 1,\n    \"DatasourceConnectionName\": \"DataLakeCatalog\"\n}",
         "output": "{\n    \"Response\": {\n        \"LockId\": 1,\n        \"LockState\": \"ACQUIRED\",\n        \"RequestId\": \"********-****-****-****-842f5f01a127\"\n    }\n}",
         "title": "元数据锁检查"
+      }
+    ],
+    "CheckModelIdentifier": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckModelIdentifier\n<公共请求参数>\n\n{\n    \"ModelIdentifier\": \"test-aaa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Exists\": false,\n        \"RequestId\": \"dca36c93-9f9f-4fc0-a778-fe5db8387910\"\n    }\n}",
+        "title": "检查模型标识符是否重复"
       }
     ],
     "CheckModifyPartition": [
@@ -220,12 +268,36 @@
         "title": "Check Resource Name"
       }
     ],
+    "CheckServiceName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckServiceName\n<公共请求参数>\n\n{\n    \"ServiceName\": \"test-abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Exists\": false,\n        \"RequestId\": \"e46ed47c-1f20-4dab-849e-0da9a08f2dd4\"\n    }\n}",
+        "title": "检查推理服务名称是否重复"
+      }
+    ],
     "CopyJobSpec": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyJobSpec\n<公共请求参数>\n\n{\n    \"SpecId\": \"rayjobspec-tcfoqk-wrzu\",\n    \"NewName\": \"test1111\"\n}",
         "output": "{\n    \"Response\": {\n        \"AppId\": 260090589,\n        \"AutoscalerOptions\": \"{\\\"upscalingMode\\\":\\\"Default\\\",\\\"idleTimeoutSeconds\\\":60,\\\"resourceSpec\\\":\\\"small\\\",\\\"resources\\\":{\\\"cpu\\\":\\\"500m\\\",\\\"memory\\\":\\\"512Mi\\\"}}\",\n        \"Catalog\": \"{\\\"CFSVolumes\\\":[],\\\"COSVolumes\\\":[]}\",\n        \"CreateTime\": 1774408418323,\n        \"Description\": \"rayjob-spec desc\",\n        \"Entrypoint\": \"sleep 1\",\n        \"HasRunningJobs\": false,\n        \"Id\": \"rayjobspec-tcfqaq-hez2\",\n        \"Image\": \"ccr.ccs.tencentyun.com/tcray-xpark/xpark:0.0.0.dev0-ray2.54.0-py312-cpu\",\n        \"ImagePullPolicy\": \"IfNotPresent\",\n        \"ImagePullType\": \"Builtin\",\n        \"JobInstanceCount\": 0,\n        \"JobPackage\": \"https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260090589/20260324210556/b765a3a7-d630-46a5-bba3-866212d027d4.zip\",\n        \"JobPackageName\": \"test.zip\",\n        \"Name\": \"test1111\",\n        \"Queue\": \"default\",\n        \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"Head\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":2,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"PodNum\\\":1,\\\"HighAvailability\\\":false},\\\"Worker\\\":[{\\\"Name\\\":\\\"Worker01\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":2,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1}]}\",\n        \"ResourceConfigChanged\": false,\n        \"ResourceConfigId\": \"ccbe672e-44be-4518-bcdf-ff85189f7059\",\n        \"ResourcePartitionId\": \"dlc-p-ofvhyjzn\",\n        \"ResourcePartitionName\": \"甘露-测试04\",\n        \"RuntimeEnv\": \"{\\\"py_modules\\\":[\\\"/path/to/my_module\\\",\\\"s3://bucket/my_lib.zip\\\"],\\\"working_dir\\\":\\\"https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260090589/20260324210556/b765a3a7-d630-46a5-bba3-866212d027d4.zip\\\"}\",\n        \"Uin\": \"700002467852\",\n        \"UpdateTime\": 1774408418323,\n        \"RequestId\": \"77a17018-b964-419d-bc27-28065c537301\"\n    }\n}",
         "title": "复制作业配置"
+      }
+    ],
+    "CreateApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiKey\n<公共请求参数>\n\n{\n    \"Name\": \"chenfan_test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKey\": \"sk-*****************************************************\",\n        \"ApiKeyId\": \"apikey-20260615204858-736d\",\n        \"AppId\": 200000000,\n        \"CreateTime\": 1781527738362,\n        \"Name\": \"chenfan_test\",\n        \"Status\": \"Revoked\",\n        \"SubAccountUin\": \"7***********\",\n        \"Uin\": \"7***********\",\n        \"UpdateTime\": 1781527738362,\n        \"RequestId\": \"f55e63df-8774-4e56-8c79-bbfaa60b57d7\"\n    }\n}",
+        "title": "创建 API Key"
+      }
+    ],
+    "CreateBenchmarkTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBenchmarkTask\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-20260617111616-a3ol\",\n    \"ResourcePartitionId\": \"dlc-p-jhzmcfna\",\n    \"Queue\": \"default\",\n    \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n    \"Spec\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 260200066,\n        \"CreateTime\": 1784862009898,\n        \"DeploymentResources\": [],\n        \"InputTokens\": 256,\n        \"MaxConcurrency\": 16,\n        \"OutputTokens\": 1024,\n        \"RequestsPerSecond\": 5,\n        \"Resources\": {\n            \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n            \"Queue\": \"default\",\n            \"ResourcePartitionId\": \"dlc-p-jhzmcfna\",\n            \"Spec\": 2\n        },\n        \"ServiceId\": \"svc-20260617111616-a3ol\",\n        \"ServiceName\": \"dlc_mao_0617\",\n        \"Status\": \"Pending\",\n        \"SubAccountUin\": \"700002655694\",\n        \"TaskId\": \"bench-20260724110009-h4wb\",\n        \"TaskName\": \"benchmark-dlc_mao_0617-1784862009876\",\n        \"TotalPrompts\": 200,\n        \"Uin\": \"700002655694\",\n        \"UpdateTime\": 1784862009898,\n        \"UseGateway\": true,\n        \"RequestId\": \"46dd3a6a-3c50-4c4e-b48b-67a77be7568c\"\n    }\n}",
+        "title": "测试"
       }
     ],
     "CreateCHDFSBindingProduct": [
@@ -354,6 +426,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetaDatabase\n<公共请求参数>\n\n{\n    \"MetaDatabaseInfo\": {\n        \"Comment\": \"create by nick\",\n        \"DatabaseName\": \"testDB\"\n    },\n    \"DatasourceConnectionName\": \"DataLakeCatalog\"\n}",
         "output": "{\n    \"Response\": {\n        \"BatchId\": \"batch-45nyt3ee\",\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\",\n        \"TaskIdSet\": [\n            \"e9663251-3a14-423a-b003-13c77c3fae11\"\n        ]\n    }\n}",
         "title": "创建元数据库"
+      }
+    ],
+    "CreateMlflowServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMlflowServer\n<公共请求参数>\n\n{\n    \"ServerName\": \"dafse123\",\n    \"ResourcePartitionId\": \"dlc-p-axzbtgug\",\n    \"Image\": \"ccr.ccs.tencentyun.com/emr-image/mlflow:v3.12.0\",\n    \"StorageMode\": \"local\",\n    \"ResourceConfig\": {\n        \"PodCpu\": 2,\n        \"PodMem\": 8\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MlFlowServer\": {\n            \"AppId\": 260200065,\n            \"CreateTime\": 1785440445212,\n            \"Image\": \"ccr.ccs.tencentyun.com/emr-image/mlflow:v3.12.0\",\n            \"ResourceConfig\": \"{\\\"PodCpu\\\":2,\\\"PodMem\\\":8}\",\n            \"ResourcePartitionId\": \"dlc-p-axzbtgug\",\n            \"ServerId\": \"mlflow-7f72b80b\",\n            \"ServerName\": \"dafse123\",\n            \"Status\": \"CREATED\",\n            \"StorageMode\": \"local\",\n            \"TrackingUri\": \"http://mlflow-7f72b80b-mlflow-svc.dlc-p-axzbtgug.svc.cluster.local:5000\",\n            \"UiUrl\": \"https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/mlflow/mlflow-7f72b80b/\",\n            \"Uin\": \"700002655693\",\n            \"UpdateTime\": 1785440445212,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"env\",\n                    \"TagValue\": \"prod\"\n                }\n            ]\n        },\n        \"RequestId\": \"2ab821fb-d25e-4a68-8b93-ea4366e9edb0\"\n    }\n}",
+        "title": "创建MlFlowServer"
       }
     ],
     "CreateModelVersion": [
@@ -532,6 +612,14 @@
         "title": "创建tc-iceberg表"
       }
     ],
+    "CreateTrainingJobInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrainingJobInstance\n<公共请求参数>\n\n{\n    \"SpecId\": \"raytrain-spec-thjiyg-rbou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"CheckpointMountInfo\": {\n                \"Bucket\": \"common-job-packages-251233710\",\n                \"MountPath\": \"/shared\",\n                \"PlatformManaged\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"StorageType\": \"CFS\",\n                \"VolumeSubPath\": \"/checkpoints/cus04\"\n            },\n            \"CreateTime\": 1782989786622,\n            \"Creator\": \"700002655693\",\n            \"InstanceId\": \"rayjob-20260702185625-wona\",\n            \"JobCreateTime\": 1782989786622,\n            \"JobRunningTime\": 17,\n            \"Priority\": 5,\n            \"SpecId\": \"raytrain-spec-thjiyg-rbou\",\n            \"SpecName\": \"cus04\",\n            \"Status\": \"SUBMITTED\"\n        },\n        \"RequestId\": \"de80edb4-3d4e-44e4-a0a5-69dab5198717\"\n    }\n}",
+        "title": "基于训练作业配置创建训练实例"
+      }
+    ],
     "CreateUser": [
       {
         "document": "",
@@ -562,6 +650,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupName\": \"Group1\",\n    \"WorkGroupDescription\": \"testGroup\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"WorkGroupId\": 1,\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "创建工作组"
+      }
+    ],
+    "DeleteApiKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApiKey\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"apikey-migrated-00000003\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe348ede-cc66-4055-8fda-1d2c9b22f4fa\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
+    "DeleteBenchmarkTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBenchmarkTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"bench-20260615174239-b5ia\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2886b84b-ff53-4b4b-a5dd-80fb507709fe\"\n    }\n}",
+        "title": "测试"
       }
     ],
     "DeleteCHDFSBindingProduct": [
@@ -596,6 +700,22 @@
         "title": "删除数据脱敏策略"
       }
     ],
+    "DeleteDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"deploy-20260528211848-nsjk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6e508e0-aba5-4c68-ab72-804a87acb5ed\"\n    }\n}",
+        "title": "DeleteDeployment"
+      }
+    ],
+    "DeleteInferenceService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInferenceService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-migrated-00000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca558988-2137-4923-aff7-c60acc793e0d\"\n    }\n}",
+        "title": "删除推理服务（含所有部署）"
+      }
+    ],
     "DeleteJobSpec": [
       {
         "document": "",
@@ -618,6 +738,30 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMetaDatabase\n<公共请求参数>\n\n{\n    \"DatabaseName\": \"testDB\",\n    \"DatasourceConnectionName\": \"DataLakeCatalog\"\n}",
         "output": "{\n    \"Response\": {\n        \"BatchId\": \"batch-45nyt3ee\",\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\",\n        \"TaskIdSet\": [\n            \"e9663251-3a14-423a-b003-13c77c3fae11\"\n        ]\n    }\n}",
         "title": "删除元数据库"
+      }
+    ],
+    "DeleteMlflowServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMlflowServer\n<公共请求参数>\n\n{\n    \"ServerId\": \"mlflow-1aeea10f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c88bd71-1239-4e48-a2db-01256913d6a6\"\n    }\n}",
+        "title": "删除MlFlowServer"
+      }
+    ],
+    "DeleteModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModel\n<公共请求参数>\n\n{\n    \"ModelUid\": \"m-xgboost-test-6a0e6e51-2938\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeletedVersionCount\": 2,\n        \"RequestId\": \"ad46fc8f-8984-4519-9554-35fc1c305744\"\n    }\n}",
+        "title": "样例"
+      }
+    ],
+    "DeleteModelVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelVersion\n<公共请求参数>\n\n{\n    \"ModelUid\": \"m-xgboost-mao-6a2fc583-14cb\",\n    \"ModelVersion\": \"v4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelDeleted\": false,\n        \"RequestId\": \"6632a227-3b7a-4625-95aa-77c3d4652b61\"\n    }\n}",
+        "title": "删除模型版本"
       }
     ],
     "DeleteNativeSparkSession": [
@@ -714,6 +858,22 @@
         "title": "实例一"
       }
     ],
+    "DeleteTrainingJobInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrainingJobInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rayjob-20260714164222-1jrz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e5896e7-e9f6-4db2-9c37-fea3102aa400\"\n    }\n}",
+        "title": "删除训练作业实例（软删除本地元数据，仅终态实例可删除）"
+      }
+    ],
+    "DeleteTrainingJobSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrainingJobSpec\n<公共请求参数>\n\n{\n    \"SpecId\": \"raytrain-spec-tg20d4-zht4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0685f19-e10b-4df1-8f67-7170010716a1\"\n    }\n}",
+        "title": "删除训练作业配置"
+      }
+    ],
     "DeleteUser": [
       {
         "document": "",
@@ -752,6 +912,36 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAdvancedStoreLocation\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"BucketType\": \"cos\",\n        \"Enable\": 0,\n        \"HasLakeFs\": true,\n        \"LakeFsStatus\": \"bind\",\n        \"RequestId\": \"********-****-****-****-93d48f4f687c\",\n        \"StoreLocation\": \"cosn://xx/xx/xx\"\n    }\n}",
         "title": "查询高级设置"
+      }
+    ],
+    "DescribeBindablePrometheus": [
+      {
+        "document": "查询未绑定分支示例",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBindablePrometheus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Bound\": false,\n        \"TotalCount\": 2,\n        \"Instances\": [\n            {\n                \"InstanceId\": \"prom-aaaaaaaa\",\n                \"InstanceName\": \"prom-a\",\n                \"VpcId\": \"vpc-xxxxxxxx\",\n                \"SubnetId\": \"subnet-xxxxxxxx\",\n                \"InstanceStatus\": 2,\n                \"SameVpcWithTke\": true\n            },\n            {\n                \"InstanceId\": \"prom-bbbbbbbb\",\n                \"InstanceName\": \"prom-b\",\n                \"VpcId\": \"vpc-yyyyyyyy\",\n                \"SubnetId\": \"subnet-yyyyyyyy\",\n                \"InstanceStatus\": 2,\n                \"SameVpcWithTke\": false\n            }\n        ],\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询可绑定 Prometheus"
+      }
+    ],
+    "DescribeClsTopics": [
+      {
+        "document": "按名称模糊查询日志主题",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClsTopics\n<公共请求参数>\n\n{\n    \"TopicName\": \"ray\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"Topics\": [\n            {\n                \"TopicId\": \"acec1e06-8877-4e9d-9472-7247a45ae57f\",\n                \"TopicName\": \"ray-nexus\"\n            },\n            {\n                \"TopicId\": \"79f26370-b30e-44c5-9cb2-1eb7c202a9aa\",\n                \"TopicName\": \"neutrino-resourcemanager\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "按主题名模糊查询"
+      }
+    ],
+    "DescribeClusterEventLogSwitch": [
+      {
+        "document": "已开启事件日志分支",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterEventLogSwitch\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cls-xxxxxxxx\",\n        \"Enable\": true,\n        \"LogsetId\": \"d12706e7-ae3b-42cf-9dab-d41e71482193\",\n        \"TopicId\": \"ec5a1f8e-5234-419b-bf10-e5789e325bdf\",\n        \"TopicRegion\": \"ap-chengdu\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "已开启事件日志"
+      },
+      {
+        "document": "未开启事件日志分支",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterEventLogSwitch\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cls-xxxxxxxx\",\n        \"Enable\": false,\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "未开启事件日志"
       }
     ],
     "DescribeClusterGroup": [
@@ -912,6 +1102,14 @@
         "title": "test"
       }
     ],
+    "DescribeEmrClusterInfo": [
+      {
+        "document": "按 InstanceId 精确查询单个 EMR 集群的详细信息",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEmrClusterInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-40ybwbbn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"emr-40ybwbbn\",\n        \"ClusterName\": \"haosen-spark\",\n        \"CosBucket\": \"emr-default-gz-1373791987\",\n        \"TkeClusterId\": \"cls-mqlsa6eu\",\n        \"ResourceUsage\": {\n            \"Cpu\": \"2core\",\n            \"Mem\": \"4GB\"\n        },\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询 EMR 集群详细信息"
+      }
+    ],
     "DescribeEngineNetworks": [
       {
         "document": "查询引擎网络",
@@ -1008,6 +1206,54 @@
         "title": "MCP任务结果信息"
       }
     ],
+    "DescribeMlFlowConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMlFlowConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rayjob-20260721111631-qy5b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExperimentID\": \"v1-sft-sft-data-lora-62ck\",\n        \"MlFlowMode\": \"remote\",\n        \"MlFlowUrl\": \"http://mlflow-server.monitor.svc.cluster.local:5000/\",\n        \"RunID\": \"rayjob-20260721111631-qy5b\",\n        \"RequestId\": \"ce0f481b-5414-4446-8e67-7111e2a5a912\"\n    }\n}",
+        "title": "获取训练实例的 mlflow 信息"
+      }
+    ],
+    "DescribeMlflowServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMlflowServer\n<公共请求参数>\n\n{\n    \"ServerId\": \"mlflow-81f27279\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MlFlowServer\": {\n            \"AppId\": 260200065,\n            \"CreateTime\": 1785272859170,\n            \"Image\": \"ccr.ccs.tencentyun.com/emr-image/mlflow:v3.12.0\",\n            \"ResourcePartitionId\": \"dlc-p-ikzmoqyv\",\n            \"ServerId\": \"mlflow-81f27279\",\n            \"ServerName\": \"adfa\",\n            \"Status\": \"STOPPED\",\n            \"StorageConfig\": \"{\\\"fileSystemId\\\":\\\"cfs-99dt0xbn\\\",\\\"path\\\":\\\"/mlflow\\\",\\\"fsId\\\":\\\"2nd2knzl\\\",\\\"host\\\":\\\"10.0.0.2\\\"}\",\n            \"StorageMode\": \"cfs\",\n            \"TrackingUri\": \"http://mlflow-81f27279-mlflow-svc.dlc-p-ikzmoqyv.svc.cluster.local:5000\",\n            \"UiUrl\": \"https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/mlflow/mlflow-81f27279/\",\n            \"Uin\": \"700002655693\",\n            \"UpdateTime\": 1785273393502,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"env\",\n                    \"TagValue\": \"prod\"\n                }\n            ]\n        },\n        \"RequestId\": \"f99525c0-96fe-4383-bbd1-083498c4872e\"\n    }\n}",
+        "title": "查询MlFlowServer的详情"
+      }
+    ],
+    "DescribeMlflowServerEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMlflowServerEvents\n<公共请求参数>\n\n{\n    \"ServerId\": \"mlflow-7f72b80b\",\n    \"EventType\": \"Normal\",\n    \"PageSize\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"Y29udGV4dC1iNTk4ODcwNS05MmNkLTRhYmEtYmI0MC1lNGQzOGZlYjExODQxNzg1OTM2MzQ5NjUw\",\n        \"EndTime\": 1785936349184,\n        \"Events\": [\n            {\n                \"Component\": \"Pod\",\n                \"EventTime\": 1785931379000,\n                \"InvolvedObjectName\": \"mlflow-7f72b80b-mlflow-server-7b8b8b5486-85thx\",\n                \"Level\": \"Normal\",\n                \"Message\": \"{\\\"namespace\\\":\\\"dlc-p-axzbtgug\\\",\\\"name\\\":\\\"mlflow-7f72b80b-mlflow-server-7b8b8b5486-85thx\\\",\\\"podIP\\\":\\\"30.0.2.11\\\",\\\"scheduledTime\\\":\\\"2026-08-05T20:01:37+08:00\\\",\\\"setDuration\\\":\\\"1m21s\\\",\\\"assignedDuration\\\":\\\"1m20s\\\",\\\"cniTypes\\\":[\\\"tke-route-eni\\\"],\\\"staticMode\\\":true,\\\"staticIP\\\":false,\\\"nodeType\\\":\\\"Normal\\\",\\\"podUID\\\":\\\"4b3cae38-9c0f-4cbb-a809-d2593c021db2\\\"}\",\n                \"Reason\": \"SucceedSetPodIP\",\n                \"SourceComponent\": \"tke-eni-ipamd\"\n            }\n        ],\n        \"ListOver\": false,\n        \"StartTime\": 1785849949184,\n        \"RequestId\": \"2dfd613d-7553-4c5e-b550-32a9cdc5b91d\"\n    }\n}",
+        "title": "查询 MlFlow Server K8s 事件"
+      }
+    ],
+    "DescribeMlflowServerPods": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMlflowServerPods\n<公共请求参数>\n\n{\n    \"ServerId\": \"mlflow-fe2455ce\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CpuLimit\": \"4\",\n                \"CpuRequest\": \"1\",\n                \"CreateTime\": 1785244273000,\n                \"Image\": \"ccr.ccs.tencentyun.com/emr-image/mlflow:v3.12.0\",\n                \"MemoryLimit\": \"8Gi\",\n                \"MemoryRequest\": \"2Gi\",\n                \"Namespace\": \"dlc-p-ikzmoqyv\",\n                \"NodeName\": \"30.0.0.13\",\n                \"Phase\": \"Running\",\n                \"PodIp\": \"30.0.1.39\",\n                \"PodName\": \"mlflow-fe2455ce-mlflow-server-79469f5756-vbcks\",\n                \"StartTime\": 1785244344000,\n                \"Status\": \"Running\"\n            }\n        ],\n        \"RequestId\": \"3d5f30c4-2bdd-43d5-bdfe-f8ec9ebe6656\"\n    }\n}",
+        "title": "获取MlFLowServer的POD"
+      }
+    ],
+    "DescribeModelEngines": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelEngines\n<公共请求参数>\n\n{\n    \"ModelUid\": \"m-xgboost-mao-6a2fc583-14cb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Engines\": [\n            {\n                \"Capabilities\": {\n                    \"GpuOptional\": true,\n                    \"SupportsParallelConfig\": false,\n                    \"SupportsRemoteCode\": false\n                },\n                \"Description\": \"高性能梯度提升决策树框架，适用于表格数据分类与回归任务\",\n                \"Enabled\": true,\n                \"EngineId\": \"xgboost\",\n                \"Exclusive\": false,\n                \"ModelTypes\": [\n                    \"ML\"\n                ],\n                \"Name\": \"XGBoost\",\n                \"Tags\": [\n                    \"表格数据\"\n                ],\n                \"Version\": \"v3.2.0\"\n            }\n        ],\n        \"RequestId\": \"e2053422-9b23-4b0c-9b39-507b0c527f7f\"\n    }\n}",
+        "title": "获取模型可用的推理引擎列表"
+      }
+    ],
+    "DescribeModelTaskOptions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelTaskOptions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TaskOptions\": [\n            {\n                \"ModelType\": \"LLM\",\n                \"Tasks\": [\n                    \"Text Generation\"\n                ]\n            }\n        ],\n        \"RequestId\": \"8e95acf9-8a9e-4498-8023-c3a2e18ae933\"\n    }\n}",
+        "title": "获取模型任务类型选项"
+      }
+    ],
     "DescribeNativeSparkSessions": [
       {
         "document": "",
@@ -1102,6 +1348,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePartitions\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Partitions\": [\n            {\n                \"Name\": \"asfas\",\n                \"PartitionCode\": \"dlc-p-ogwlzmvs\",\n                \"PayMode\": 1,\n                \"QueueCount\": 1,\n                \"ResourceQuota\": [\n                    {\n                        \"Quota\": 32,\n                        \"ResourceSpec\": {\n                            \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                            \"InstanceType\": \"\",\n                            \"ResourceType\": \"CPU\"\n                        }\n                    }\n                ],\n                \"Status\": 11,\n                \"UpdateTime\": \"2026-03-19T15:12:19\"\n            }\n        ],\n        \"Total\": 10,\n        \"RequestId\": \"8160ca16-3a24-4779-a75c-d8e2e453815f\"\n    }\n}",
         "title": "DescribePartitions"
+      }
+    ],
+    "DescribePostTrainingPreset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostTrainingPreset\n<公共请求参数>\n\n{\n    \"Mode\": \"dpo\",\n    \"TrainingMode\": \"balanced\",\n    \"FineTuneType\": \"lora\",\n    \"ParameterSize\": 8\n}",
+        "output": "{\n    \"Response\": {\n        \"Resource\": {\n            \"Head\": {\n                \"GpuNum\": 0,\n                \"GpuType\": \"\",\n                \"Name\": \"head\",\n                \"PodCpu\": 2,\n                \"PodMem\": 8,\n                \"PodNum\": 1,\n                \"ResourceType\": \"CPU\",\n                \"Spec\": 1\n            },\n            \"Worker\": [\n                {\n                    \"GpuNum\": 2,\n                    \"GpuType\": \"A100\",\n                    \"MaxPodNum\": 1,\n                    \"MinPodNum\": 1,\n                    \"Name\": \"worker\",\n                    \"PodCpu\": 4,\n                    \"PodMem\": 16,\n                    \"ResourceType\": \"GPU\",\n                    \"Spec\": 1\n                }\n            ]\n        },\n        \"TrainingParams\": {\n            \"CutoffLen\": 4096,\n            \"Epochs\": 3,\n            \"GradientAccumulationSteps\": 4,\n            \"GradientCheckpointing\": true,\n            \"LearningRate\": 0.0001,\n            \"LoraRank\": 8,\n            \"PerDeviceBatchSize\": 2,\n            \"WarmupRatio\": 0.03\n        },\n        \"RequestId\": \"700c3a3d-7b35-4984-8614-8c628781e073\"\n    }\n}",
+        "title": "DPO LoRA 均衡模式"
+      }
+    ],
+    "DescribeRecommendedParams": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecommendedParams\n<公共请求参数>\n\n{\n    \"ModelUid\": \"m-xgboost-mao-6a2fc583-14cb\",\n    \"Engine\": \"vllm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AdvancedParams\": {\n            \"EngineArgs\": [],\n            \"EnvVars\": [],\n            \"GpuMemoryUtilization\": 0,\n            \"RayOptions\": []\n        },\n        \"Source\": \"default\",\n        \"RequestId\": \"9f2a4042-0fc4-4611-b091-486886322290\"\n    }\n}",
+        "title": "获取推荐的高级参数"
       }
     ],
     "DescribeResourceGroupUsageInfo": [
@@ -1364,6 +1626,38 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeThirdPartyAccessUser\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"584515f3-*-*-*-*\",\n        \"UserInfo\": {\n            \"AppId\": \"130****831\",\n            \"CreateTime\": \"2024-10-24T16:23:01+08:00\",\n            \"Id\": 5,\n            \"Uin\": \"1000****6626\"\n        }\n    }\n}",
         "title": "实例一"
+      }
+    ],
+    "DescribeTkeClusterImportInfo": [
+      {
+        "document": "根据 EmrClusterId 查询已导入的 TKE 集群详情，附带 CLB / Prometheus / CLS 名称",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTkeClusterImportInfo\n<公共请求参数>\n\n{\n    \"EmrClusterId\": \"emr-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PartitionName\": \"my-emr-tke-partition\",\n        \"EmrClusterId\": \"emr-xxxxxxxx\",\n        \"CosBucketId\": \"my-bucket-1250000000\",\n        \"PrometheusInstanceId\": \"prom-xxxxxxxx\",\n        \"PrometheusInstanceName\": \"my-prom-instance\",\n        \"LoadBalancerId\": \"lb-xxxxxxxx\",\n        \"LoadBalancerName\": \"my-clb\",\n        \"ContainerLogTopicId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n        \"ContainerLogTopicName\": \"container-logs\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询已导入的 TKE 集群详情"
+      }
+    ],
+    "DescribeTrainingCheckpoints": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrainingCheckpoints\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rayjob-20260702201005-qv05\",\n    \"SubPath\": \"sft_ray_training/checkpoint_2026-07-02_17-38-33.912702\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"LastModified\": 1782984917447,\n                \"Name\": \"checkpoint.pt\",\n                \"Path\": \"sft_ray_training/checkpoint_2026-07-02_17-38-33.912702/checkpoint.pt\",\n                \"Size\": 734261,\n                \"Type\": \"file\"\n            }\n        ],\n        \"MountPath\": \"/shared\",\n        \"SnapshotTimestamp\": 1783002347,\n        \"StoragePath\": \"/checkpoints/cus04\",\n        \"StorageType\": \"CFS\",\n        \"SubPath\": \"sft_ray_training/checkpoint_2026-07-02_17-38-33.912702/\",\n        \"RequestId\": \"efeae2fd-f3f0-4e55-90a7-da88132259e6\"\n    }\n}",
+        "title": "列出训练实例 Checkpoint 文件列表"
+      }
+    ],
+    "DescribeTrainingJobInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrainingJobInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rayjob-20260702185625-wona\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"CheckpointMountInfo\": {\n                \"Bucket\": \"common-job-packages-251233710\",\n                \"MountPath\": \"/shared\",\n                \"PlatformManaged\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"StorageType\": \"CFS\",\n                \"VolumeSubPath\": \"/checkpoints/cus04\"\n            },\n            \"CreateTime\": 1782989786623,\n            \"Creator\": \"700002655693\",\n            \"HistoryUrl\": \"https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/dlc-p-wdtiljwu/rayjob-20260702185625-wona/\",\n            \"InstanceId\": \"rayjob-20260702185625-wona\",\n            \"JobCreateTime\": 1782989788347,\n            \"JobRunningTime\": 4178486,\n            \"Priority\": 5,\n            \"SpecId\": \"raytrain-spec-thjiyg-rbou\",\n            \"SpecName\": \"cus04\",\n            \"Status\": \"RUNNING\"\n        },\n        \"RequestId\": \"ad334f05-c755-4404-84b1-b3225d3a8905\"\n    }\n}",
+        "title": "查看训练实例详情"
+      }
+    ],
+    "DescribeTrainingJobSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrainingJobSpec\n<公共请求参数>\n\n{\n    \"SpecId\": \"raytrain-spec-thjiim-4py9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Spec\": {\n            \"Catalog\": \"{\\\"CFSVolumes\\\":[{\\\"FileSystemId\\\":\\\"cfs-99dt0xbn\\\",\\\"VolumeSubPath\\\":\\\"/\\\",\\\"SubPathMode\\\":\\\"subPath\\\",\\\"SubPath\\\":\\\"checkpoints/cus04\\\",\\\"MountPath\\\":\\\"/shared\\\",\\\"FSId\\\":null,\\\"Host\\\":null,\\\"PersistVolumeName\\\":null,\\\"VpcId\\\":null,\\\"SubnetId\\\":null,\\\"Uin\\\":null,\\\"Region\\\":null,\\\"VolumeMountMode\\\":null,\\\"Source\\\":\\\"checkpoint\\\",\\\"AutoCreateSubDir\\\":true}],\\\"CFSTurboVolumes\\\":null,\\\"COSVolumes\\\":[{\\\"Region\\\":null,\\\"Bucket\\\":\\\"common-job-packages-251233710\\\",\\\"VolumeSubPath\\\":\\\"/checkpoints/cus_multi_mount_05\\\",\\\"SubPathMode\\\":null,\\\"SubPath\\\":null,\\\"MountPath\\\":\\\"/others\\\",\\\"PersistVolumeName\\\":null,\\\"VolumeMountMode\\\":null,\\\"Source\\\":\\\"dataset\\\"}],\\\"GooseFSVolumes\\\":null}\",\n            \"CheckpointMountInfo\": {\n                \"Bucket\": \"common-job-packages-251233710\",\n                \"MountPath\": \"/shared\",\n                \"PlatformManaged\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"StorageType\": \"CFS\",\n                \"VolumeSubPath\": \"/checkpoints/cus04\"\n            },\n            \"CodePackageUrl\": \"https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260200065/20260630194144/44a9489e-e60d-4d73-a048-8a5fe39b2d32.zip\",\n            \"CreateTime\": 1782983038773,\n            \"Creator\": \"700002655693\",\n            \"Description\": \"cus04 test\",\n            \"Entrypoint\": \"bash -c 'cd sft_demo && python -m sft_demo.train_local --storage-path /shared'\",\n            \"HasRunningInstances\": false,\n            \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-torch-lab\",\n            \"InstanceCount\": 0,\n            \"Kind\": \"CUSTOM_CODE\",\n            \"Priority\": 5,\n            \"Queue\": \"default\",\n            \"ResourceConfig\": \"{\\n  \\\"Head\\\": {\\n    \\\"Name\\\": \\\"default-head\\\",\\n    \\\"PodCpu\\\": 2,\\n    \\\"PodMem\\\": 8,\\n    \\\"GpuType\\\": \\\"\\\",\\n    \\\"GpuNum\\\": 0,\\n    \\\"Envs\\\": [],\\n    \\\"Labels\\\": [],\\n    \\\"PodNum\\\": 1,\\n    \\\"HighAvailability\\\": false\\n  },\\n  \\\"Worker\\\": [\\n    {\\n      \\\"Name\\\": \\\"default-worker\\\",\\n      \\\"PodCpu\\\": 2,\\n      \\\"PodMem\\\": 8,\\n      \\\"GpuType\\\": \\\"\\\",\\n      \\\"GpuNum\\\": 0,\\n      \\\"Envs\\\": [],\\n      \\\"Labels\\\": [],\\n      \\\"MinPodNum\\\": 1,\\n      \\\"MaxPodNum\\\": 1\\n    }\\n  ]\\n}\",\n            \"ResourcePartitionId\": \"dlc-p-wdtiljwu\",\n            \"RuntimeEnv\": \"{\\n  \\\"env_vars\\\": {\\n    \\\"LEARNING_RATE\\\": \\\"1e-4\\\",\\n    \\\"BATCH_SIZE\\\": \\\"32\\\"\\n  },\\n  \\\"pip\\\": []\\n}\",\n            \"SpecId\": \"raytrain-spec-thjiim-4py9\",\n            \"SpecName\": \"cus04\",\n            \"UpdateTime\": 1782983038773\n        },\n        \"RequestId\": \"429b510b-d079-4071-81a6-a4aebd72ce65\"\n    }\n}",
+        "title": "获取训练作业配置详情"
       }
     ],
     "DescribeUDFPolicy": [
@@ -1788,6 +2082,22 @@
         "title": "授权访问DLC元数据"
       }
     ],
+    "ImportExternalCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportExternalCluster\n<公共请求参数>\n\n{\n    \"PartitionName\": \"PartitionTest\",\n    \"ClusterType\": \"TKE\",\n    \"ClusterId\": \"cls-m6fgdp2o\",\n    \"CosBucketId\": \"aidanyxu-260209337\",\n    \"PrometheusInstanceId\": \"prom-8r1jdbdk\",\n    \"LoadBalancerId\": \"lb-1vuex1zi\",\n    \"NodeLabels\": [\n        {\n            \"Key\": \"testK\",\n            \"Value\": \"testV\"\n        }\n    ],\n    \"PartitionDescription\": \"PartitionDescriptionTest\",\n    \"TargetAppId\": 120779018,\n    \"TargetUin\": \"1808365191\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourcePoolCode\": \"dlc-3dc08527\",\n        \"ResourcePoolId\": 48,\n        \"WorkflowId\": 1558,\n        \"RequestId\": \"89736fa1-7b00-43b3-8b72-f5b4def4d861\"\n    }\n}",
+        "title": "ImportExternalCluster"
+      }
+    ],
+    "ImportTkeCluster": [
+      {
+        "document": "导入 EMR-TKE 集群并返回资源池 ID 与工作流 ID",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportTkeCluster\n<公共请求参数>\n\n{\n    \"PartitionName\": \"my-emr-tke-pool\",\n    \"EmrClusterId\": \"emr-xxxxxxxx\",\n    \"CosBucketId\": \"my-bucket-1250000000\",\n    \"PrometheusInstanceId\": \"prom-xxxxxxxx\",\n    \"LoadBalancerId\": \"lb-xxxxxxxx\",\n    \"ContainerLogTopicId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n    \"NodeLabels\": [\n        {\n            \"Key\": \"ray-nexus/pool\",\n            \"Value\": \"default\"\n        },\n        {\n            \"Key\": \"kubernetes.io/os\",\n            \"Value\": \"linux\"\n        }\n    ],\n    \"PartitionDescription\": \"default partition for EMR-TKE pool\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourcePoolId\": 1001,\n        \"ResourcePoolCode\": \"rp-abcdefgh\",\n        \"WorkflowId\": 200001,\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "导入 EMR-TKE 集群"
+      }
+    ],
     "InitializeTCLake": [
       {
         "document": "",
@@ -1804,12 +2114,60 @@
         "title": "启动指定资源组"
       }
     ],
+    "ListApiKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApiKeys\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 200,\n    \"StartTime\": 1781523096437,\n    \"EndTime\": 1781523996437,\n    \"Filters\": [\n        {\n            \"Name\": \"Keyword\",\n            \"Operator\": \"LIKE\",\n            \"Values\": [\n                \"xgboost-self-scale-test\"\n            ]\n        }\n    ],\n    \"SortFields\": [\n        {\n            \"Field\": \"CreateTime\",\n            \"Order\": \"DESC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ApiKey\": \"sk-proj-Q4nRCLNS61ab3zoYyfVTX9bdotCV27SSdQMHe6dCz0yo5Zaf\",\n                \"ApiKeyId\": \"apikey-20260615150836-trum\",\n                \"AppId\": 260200066,\n                \"CreateTime\": 1781507316105,\n                \"Name\": \"xgboost-self-scale-test-key-20260615150836-ocbz\",\n                \"ServiceId\": \"svc-20260615150835-n7pq\",\n                \"ServiceName\": \"xgboost-self-scale-test\",\n                \"Status\": \"Active\",\n                \"SubAccountUin\": \"700002655694\",\n                \"Uin\": \"700002655694\",\n                \"UpdateTime\": 1781507316105\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 200,\n        \"Total\": 1,\n        \"TotalPages\": 1,\n        \"RequestId\": \"c0d08fc7-d173-4b34-9946-ed5c512a507b\"\n    }\n}",
+        "title": "列出 API Key（全量分页）"
+      }
+    ],
+    "ListAvailableApiKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAvailableApiKeys\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ApiKey\": \"sk-proj-iXCM3DWle49o6vYuL4zKvk2mI8mpTCBcd05aMmIiJR6Cp5Kf\",\n                \"ApiKeyId\": \"apikey-20260615162055-v6s0\",\n                \"AppId\": 260200066,\n                \"CreateTime\": 1781511655412,\n                \"Name\": \"qzzhu_061501-key-20260615162055-zm6f\",\n                \"Status\": \"Revoked\",\n                \"SubAccountUin\": \"700002655694\",\n                \"Uin\": \"700002655694\",\n                \"UpdateTime\": 1781511966690\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 50,\n        \"Total\": 49,\n        \"TotalPages\": 1,\n        \"RequestId\": \"6b98ff6c-6918-4bf6-8d58-c555094f348d\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
+    "ListBenchmarkSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListBenchmarkSummary\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 50,\n    \"StartTime\": 0,\n    \"EndTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BenchmarkCount\": 4,\n                \"CreateTime\": 1781247433444,\n                \"EndToEndAvg\": 0,\n                \"EndToEndMedian\": 0,\n                \"EndToEndP99\": 0,\n                \"InputTokens\": 256,\n                \"InterTokenLatencyAvg\": 0,\n                \"InterTokenLatencyMedian\": 0,\n                \"InterTokenLatencyP99\": 0,\n                \"MaxConcurrency\": 16,\n                \"ModelName\": \"qwen2.5\",\n                \"ModelType\": \"LLM\",\n                \"OutputTokens\": 1024,\n                \"ParameterSize\": \"0.51B\",\n                \"Provider\": \"personal\",\n                \"RequestsPerSecond\": 5,\n                \"ServiceName\": \"svc-cjl-3\",\n                \"TaskName\": \"benchmark-svc-cjl-3-1781247433435\",\n                \"TimePerOutputTokenAvg\": 0,\n                \"TimePerOutputTokenMedian\": 0,\n                \"TimePerOutputTokenP99\": 0,\n                \"TimeToFirstTokenAvg\": 0,\n                \"TimeToFirstTokenMedian\": 0,\n                \"TimeToFirstTokenP99\": 0\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 50,\n        \"Total\": 2,\n        \"TotalPages\": 1,\n        \"RequestId\": \"e4871813-b228-437d-b5e7-9339fb0980f2\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
+    "ListBenchmarkTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListBenchmarkTasks\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-cjl-1-deploy-v2\",\n    \"Page\": 1,\n    \"PageSize\": 50,\n    \"StartTime\": 0,\n    \"EndTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"Page\": 1,\n        \"PageSize\": 50,\n        \"Total\": 0,\n        \"TotalPages\": 0,\n        \"RequestId\": \"460c5465-ed70-4239-b16e-69fb2fee83b9\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "ListClusterGroups": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListClusterGroups\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Page\": 1,\n        \"PageSize\": 10,\n        \"TotalPages\": 1,\n        \"Items\": [\n            {\n                \"Id\": \"rayclustergroup-h5l7xk-cw8w\",\n                \"Name\": \"生产环境集群组\",\n                \"Description\": \"用于生产环境的集群组\",\n                \"Config\": \"config-content\",\n                \"AppId\": 260090589,\n                \"Uin\": \"700002467852\",\n                \"SubAccountUin\": \"700002467852\",\n                \"CreateTime\": 1774256065032,\n                \"UpdateTime\": 1774256065032,\n                \"Deleted\": false\n            }\n        ],\n        \"RequestId\": \"dffa8e31-2df1-4f61-9e88-df82ec7d7ae8\"\n    }\n}",
         "title": "列出所有集群组"
+      }
+    ],
+    "ListDeploymentReplicas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDeploymentReplicas\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"deploy-20260608120438-6ctf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CpuLimit\": \"1\",\n                \"CpuRequest\": \"400m\",\n                \"CreateTime\": 1780891479000,\n                \"DeploymentId\": 77,\n                \"GpuCount\": 0,\n                \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:3.0.0.dev0-py311-cu125-extra-xgboost\",\n                \"MemoryLimit\": \"4Gi\",\n                \"MemoryRequest\": \"1.6Gi\",\n                \"Name\": \"rayserve-20260608120438-185z-mt9m9-default-worker-worker-rnb9v\",\n                \"Namespace\": \"dlc-p-mghaaeha\",\n                \"NodeIp\": \"30.0.0.113\",\n                \"NodeName\": \"30.0.0.113\",\n                \"NodeType\": \"worker\",\n                \"PodIp\": \"30.0.0.132\",\n                \"RestartCount\": 0,\n                \"StartTime\": 1780891485000,\n                \"Status\": \"Running\"\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 200,\n        \"Total\": 2,\n        \"TotalPages\": 1,\n        \"RequestId\": \"b031eb75-2ee3-44c9-8cb2-2ef3ce3f7b20\"\n    }\n}",
+        "title": "ListDeploymentReplicas"
+      }
+    ],
+    "ListDeployments": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDeployments\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-700002655694-zvrv\",\n    \"Page\": 1,\n    \"PageSize\": 100,\n    \"StartTime\": 1781510469000,\n    \"EndTime\": 1781514469000\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [],\n        \"Page\": 1,\n        \"PageSize\": 100,\n        \"Total\": 0,\n        \"TotalPages\": 0,\n        \"RequestId\": \"62103cd9-c7fc-47f9-8e09-8d4a5388d7f0\"\n    }\n}",
+        "title": "ListDeployments"
       }
     ],
     "ListExampleCategories": [
@@ -1900,6 +2258,22 @@
         "title": "lab列表"
       }
     ],
+    "ListMlflowServerTrainingInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListMlflowServerTrainingInstances\n<公共请求参数>\n\n{\n    \"ServerId\": \"mlflow-7f72b80b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BaseModelUid\": \"m-qwen35-zerodot8b-6a705b58-dc17\",\n                \"Catalog\": \"{\\\"CFSVolumes\\\":null,\\\"CFSTurboVolumes\\\":null,\\\"COSVolumes\\\":[{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"common-job-packages-251233710\\\",\\\"VolumeSubPath\\\":\\\"/models/m-qwen35-zerodot8b-6a705b58-dc17/v1/\\\",\\\"SubPathMode\\\":null,\\\"SubPath\\\":null,\\\"MountPath\\\":\\\"/models/m-qwen35-zerodot8b-6a705b58-dc17/v1\\\",\\\"PersistVolumeName\\\":\\\"rayjob-20260804152823-ptbk-cos-34c3f2811e7c39a470e20081757ac1fd\\\",\\\"VolumeMountMode\\\":\\\"ReadOnly\\\",\\\"Source\\\":null,\\\"Origin\\\":null},{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"qzzhu-260200065\\\",\\\"VolumeSubPath\\\":\\\"/datasets/sft/train80\\\",\\\"SubPathMode\\\":null,\\\"SubPath\\\":null,\\\"MountPath\\\":\\\"/datasets/sft/train80\\\",\\\"PersistVolumeName\\\":\\\"rayjob-20260804152823-ptbk-cos-b2e28c1aee9d748a30406f7227b4f91d\\\",\\\"VolumeMountMode\\\":null,\\\"Source\\\":\\\"dataset\\\",\\\"Origin\\\":\\\"cos_reference\\\"},{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"qzzhu-260200065\\\",\\\"VolumeSubPath\\\":\\\"/checkpoints/sft/train80-v3\\\",\\\"SubPathMode\\\":null,\\\"SubPath\\\":null,\\\"MountPath\\\":\\\"/checkpoints/sft/train80\\\",\\\"PersistVolumeName\\\":\\\"rayjob-20260804152823-ptbk-cos-c078294231fc46b0d4b59bf5c6f0cf45\\\",\\\"VolumeMountMode\\\":\\\"ReadWrite\\\",\\\"Source\\\":\\\"checkpoint\\\",\\\"Origin\\\":null}],\\\"GooseFSVolumes\\\":null}\",\n                \"CreateTime\": 1785828503572,\n                \"Creator\": \"700002655693\",\n                \"Entrypoint\": \"python /workspace/ray_post_training_entry.py --num-workers 1 --gpus-per-worker 1 --cpus-per-worker 20\",\n                \"HistoryUrl\": \"https://test-tcray-historyserver-guangzhou.cloud.tencent.com/history/dlc-p-axzbtgug/rayjob-20260804152823-ptbk/jobs/rayjob-20260804152823-ptbk/\",\n                \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cu125-torch2.10.0-tfm5.6\",\n                \"InstanceId\": \"rayjob-20260804152823-ptbk\",\n                \"JobCreateTime\": 1785828511904,\n                \"JobRunningTime\": 1045972,\n                \"Kind\": \"POST_TRAINING\",\n                \"Mode\": \"sft\",\n                \"Priority\": 5,\n                \"Queue\": \"default\",\n                \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"Head\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":4,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"Tolerations\\\":null,\\\"ResourceType\\\":\\\"CPU\\\",\\\"InstanceType\\\":\\\"\\\",\\\"Spec\\\":1,\\\"BillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"VideoMemory\\\":null,\\\"PodNum\\\":1,\\\"HighAvailability\\\":false,\\\"LabCu\\\":null},\\\"Worker\\\":[{\\\"Name\\\":\\\"WorkerGroup01\\\",\\\"PodCpu\\\":20,\\\"PodMem\\\":80,\\\"GpuType\\\":\\\"T4\\\",\\\"GpuNum\\\":1,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"Tolerations\\\":null,\\\"ResourceType\\\":\\\"GPU\\\",\\\"InstanceType\\\":\\\"GN7\\\",\\\"Spec\\\":1,\\\"BillingItem\\\":\\\"sv_dlc_gn7_gn75xlarge80\\\",\\\"VideoMemory\\\":null,\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1,\\\"EnableAutoScaling\\\":false}]}\",\n                \"ResourcePartitionId\": \"dlc-p-axzbtgug\",\n                \"ResourcePartitionName\": \"gpu-t4\",\n                \"RuntimeEnv\": \"{\\\"env_vars\\\":{\\\"TRAIN_CONFIG_YAML_B64\\\":\\\"IyDorq3nu4PphY3nva7vvJpTRlQgKOebkeedo+W+ruiwgykKIyDljaDkvY3nrKYgJHsuLi59IOeUsSBQb3N0VHJhaW5pbmdUZW1wbGF0ZVJlbmRlcmVyIOaMieeUqOaIt+ihqOWNlea4suafk+abv+aNouOAggojIOWOn+eUnyBIdWdnaW5nRmFjZSBUcmFpbmVyICsgdHJsLlNGVFRyYWluZXLvvIzkuI3kvp3otZYgTExhTUEtRmFjdG9yeeOAggoKIyMjIG1ldGhvZApzdGFnZTogc2Z0CmZpbmV0dW5pbmdfdHlwZTogbG9yYSAgICAgICAgICAgICAjIGZ1bGwgfCBsb3JhCmxvcmFfdGFyZ2V0OiBhbGwKbG9yYV9yYW5rOiA4CmxvcmFfYWxwaGE6IDE2CmxvcmFfZHJvcG91dDogMC4wNQoKIyMjIG1vZGVsCm1vZGVsX25hbWVfb3JfcGF0aDogL21vZGVscy9tLXF3ZW4zNS16ZXJvZG90OGItNmE3MDViNTgtZGMxNy92MQp0cnVzdF9yZW1vdGVfY29kZTogdHJ1ZQoKIyMjIGRhdGFzZXQKdHJhaW5fZmlsZTogICAgICAgICAgICAgICAgICAgICAgIyDmlbDmja7mlofku7blkI3miJbnu53lr7not6/lvoQKZGF0YXNldF9kaXI6IC9kYXRhc2V0cy9zZnQvdHJhaW44MApjdXRvZmZfbGVuOiA0MDk2Cm1heF9zYW1wbGVzOiAxMDAwMDAKcHJlcHJvY2Vzc2luZ19udW1fd29ya2VyczogMTYKCiMjIyBldmFsCmV2YWxfbW9kZTogc3BsaXQgICAgICAgICAgICAgICAgICAgICAgICMgbm9uZSB8IHNwbGl0IHwgc2VwYXJhdGUKZXZhbF9zcGxpdF9yYXRpbzogMC4wNiAgICAgICAgICAjIOS7hSBzcGxpdCDmqKHlvI/nlJ/mlYgKZXZhbF9maWxlOiAgICAgICAgICAgICAgICAgICAgICAgICAjIOS7hSBzZXBhcmF0ZSDmqKHlvI/nlJ/mlYgKZXZhbF9kYXRhc2V0X2RpcjogICAgICAgICAgICMg5LuFIHNlcGFyYXRlIOaooeW8j+eUn+aViAoKIyMjIG91dHB1dApvdXRwdXRfZGlyOiAvY2hlY2twb2ludHMvc2Z0L3RyYWluODAKIyDkuqflh7rmqKHlnovlkI3np7DvvIjnlKjkuo7lkI7nu63mqKHlnovms6jlhozvvIkKb3V0cHV0X21vZGVsX25hbWU6IApsb2dnaW5nX3N0ZXBzOiAxMApzYXZlX3N0cmF0ZWd5OiAiZXBvY2giCnNhdmVfc3RlcHM6IDEKc2F2ZV90b3RhbF9saW1pdDogMwojIOaWreeCuee7reiure+8mnRydWUg5pe25LuOIG91dHB1dF9kaXIg5Lit5pyA5pawIGNoZWNrcG9pbnQg5oGi5aSN6K6t57uDCnJlc3VtZV90cmFpbmluZzogZmFsc2UKIyDnlLHlubPlj7DmuLLmn5PvvIzlkK/nlKggTUxmbG93IOaXtuS4uiBbIm1sZmxvdyIsInRlbnNvcmJvYXJkIl3vvIzmnKrlkK/nlKjml7bkuLogdGVuc29yYm9hcmQKcmVwb3J0X3RvOiBbIm1sZmxvdyIsInRlbnNvcmJvYXJkIl0KcnVuX25hbWU6ICR7UlVOX05BTUV9CgojIyMgdHJhaW4KcGVyX2RldmljZV90cmFpbl9iYXRjaF9zaXplOiAxCmdyYWRpZW50X2FjY3VtdWxhdGlvbl9zdGVwczogNApncmFkaWVudF9jaGVja3BvaW50aW5nOiBmYWxzZQpsZWFybmluZ19yYXRlOiAxLjBFLTQKbnVtX3RyYWluX2Vwb2NoczogNApscl9zY2hlZHVsZXJfdHlwZTogY29zaW5lCndhcm11cF9yYXRpbzogMC4wMwpiZjE2OiB0cnVlCmRkcF90aW1lb3V0OiAxODAwMDAwMDAKCiMjIyBkZWVwc3BlZWQgKOa4suafk+e7k+aenOi3r+W+hO+8jOeUseWFpeWPo+iEmuacrCBiYXNlNjQg6Kej56CB5YaZ5Ye6KQpkZWVwc3BlZWQ6IC90bXAvdHJhaW4tY29uZmlnL2RzX3ozLmpzb24KCiMjIyBldmFsCnBlcl9kZXZpY2VfZXZhbF9iYXRjaF9zaXplOiAxCmV2YWxfc3RyYXRlZ3k6ICJlcG9jaCIgICAgICAgICAgICAgICAjICJubyIgfCAic3RlcHMiIHwgImVwb2NoIgpldmFsX3N0ZXBzOiA1MDAK\\\",\\\"DEEPSPEED_CONFIG_B64\\\":\\\"ewogICAgInRyYWluX2JhdGNoX3NpemUiOiAiYXV0byIsCiAgICAidHJhaW5fbWljcm9fYmF0Y2hfc2l6ZV9wZXJfZ3B1IjogImF1dG8iLAogICAgImJmMTYiOiB7ImVuYWJsZWQiOiAiYXV0byJ9LAogICAgImdyYWRpZW50X2NsaXBwaW5nIjogImF1dG8iLAogICAgInplcm9fb3B0aW1pemF0aW9uIjogewogICAgICAgICJvZmZsb2FkX29wdGltaXplciI6IHsiZGV2aWNlIjogIm5vbmUifSwKICAgICAgICAib3ZlcmxhcF9jb21tIjogdHJ1ZSwKICAgICAgICAic3RhZ2UiOiAzLAogICAgICAgICJzdWJfZ3JvdXBfc2l6ZSI6IDFFKzksCiAgICAgICAgImNvbnRpZ3VvdXNfZ3JhZGllbnRzIjogdHJ1ZSwKICAgICAgICAicmVkdWNlX2J1Y2tldF9zaXplIjogImF1dG8iLAogICAgICAgICJzdGFnZTNfZ2F0aGVyXzE2Yml0X3dlaWdodHNfb25fbW9kZWxfc2F2ZSI6IHRydWUsCiAgICAgICAgIm9mZmxvYWRfcGFyYW0iOiB7ImRldmljZSI6ICJub25lIn0sCiAgICAgICAgInN0YWdlM19wcmVmZXRjaF9idWNrZXRfc2l6ZSI6ICJhdXRvIiwKICAgICAgICAic3RhZ2UzX3BhcmFtX3BlcnNpc3RlbmNlX3RocmVzaG9sZCI6ICJhdXRvIiwKICAgICAgICAic3RhZ2UzX21heF9saXZlX3BhcmFtZXRlcnMiOiAxRSs5LAogICAgICAgICJzdGFnZTNfbWF4X3JldXNlX2Rpc3RhbmNlIjogMUUrOQogICAgfSwKICAgICJ6ZXJvX2FsbG93X3VudGVzdGVkX29wdGltaXplciI6IHRydWUsCiAgICAiZ3JhZGllbnRfYWNjdW11bGF0aW9uX3N0ZXBzIjogImF1dG8iLAogICAgImZwMTYiOiB7CiAgICAgICAgIm1pbl9sb3NzX3NjYWxlIjogMSwKICAgICAgICAiaW5pdGlhbF9zY2FsZV9wb3dlciI6IDE2LAogICAgICAgICJsb3NzX3NjYWxlIjogMCwKICAgICAgICAiZW5hYmxlZCI6ICJhdXRvIiwKICAgICAgICAibG9zc19zY2FsZV93aW5kb3ciOiAxMDAwLAogICAgICAgICJoeXN0ZXJlc2lzIjogMgogICAgfQp9Cg==\\\",\\\"NUM_WORKERS\\\":\\\"1\\\",\\\"GPUS_PER_WORKER\\\":\\\"1\\\",\\\"CPUS_PER_WORKER\\\":\\\"20\\\",\\\"NCCL_DEBUG\\\":\\\"WARN\\\",\\\"HF_HOME\\\":\\\"/workspace/cache/hf\\\",\\\"WANDB_DISABLED\\\":\\\"true\\\",\\\"MLFLOW_TRACKING_URI\\\":\\\"http://mlflow-7f72b80b-mlflow-svc.dlc-p-axzbtgug.svc.cluster.local:5000\\\",\\\"MLFLOW_EXPERIMENT_NAME\\\":\\\"sft-train80-qzzhu_checkpoints_v2_Clone\\\",\\\"MLFLOW_TAGS\\\":\\\"{\\\\\\\"job_id\\\\\\\":\\\\\\\"sft-train80-qzzhu_checkpoints_v2_Clone\\\\\\\",\\\\\\\"experiment_name\\\\\\\":\\\\\\\"sft-train80-qzzhu_checkpoints_v2_Clone\\\\\\\",\\\\\\\"mode\\\\\\\":\\\\\\\"sft\\\\\\\",\\\\\\\"finetune_type\\\\\\\":\\\\\\\"lora\\\\\\\",\\\\\\\"model\\\\\\\":\\\\\\\"v1\\\\\\\",\\\\\\\"source\\\\\\\":\\\\\\\"ray-nexus\\\\\\\"}\\\",\\\"HF_MLFLOW_LOG_ARTIFACTS\\\":\\\"false\\\",\\\"RAY_OVERRIDE_JOB_RUNTIME_ENV\\\":\\\"1\\\"}}\",\n                \"SpecId\": \"raytrain-spec-tj8i36-q65j\",\n                \"SpecName\": \"sft-train80-qzzhu_checkpoints_v2_Clone\",\n                \"Status\": \"SUCCEEDED\"\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 200,\n        \"Total\": 22,\n        \"TotalPages\": 1,\n        \"RequestId\": \"bb137fa3-26ee-4dd2-bab9-b9b627f814a1\"\n    }\n}",
+        "title": "返回MlFlow关联的训练实例列表"
+      }
+    ],
+    "ListMlflowServers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListMlflowServers\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 11,\n    \"StartTime\": 1782652942000,\n    \"EndTime\": 1785244942000\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AppId\": 260200065,\n                \"CreateTime\": 1785273000090,\n                \"Image\": \"ccr.ccs.tencentyun.com/emr-image/mlflow:v3.12.0\",\n                \"ResourcePartitionId\": \"dlc-p-ikzmoqyv\",\n                \"ServerId\": \"mlflow-547d4f86\",\n                \"ServerName\": \"demo02\",\n                \"Status\": \"CREATED\",\n                \"StorageConfig\": \"{\\\"fileSystemId\\\":\\\"cfs-99dt0xbn\\\",\\\"path\\\":\\\"/mlflow\\\",\\\"fsId\\\":\\\"2nd2knzl\\\",\\\"host\\\":\\\"10.0.0.2\\\"}\",\n                \"StorageMode\": \"cfs\",\n                \"TrackingUri\": \"http://mlflow-547d4f86-mlflow-svc.dlc-p-ikzmoqyv.svc.cluster.local:5000\",\n                \"UiUrl\": \"https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/mlflow/mlflow-547d4f86/\",\n                \"Uin\": \"700002655693\",\n                \"UpdateTime\": 1785273000090\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 11,\n        \"Total\": 8,\n        \"TotalPages\": 1,\n        \"RequestId\": \"ac1033b3-d2e1-4d0d-a215-4a87ccf084b2\"\n    }\n}",
+        "title": "查询MlFlow列表"
+      }
+    ],
     "ListModelVersions": [
       {
         "document": "",
@@ -1932,12 +2306,28 @@
         "title": "列出所有任务"
       }
     ],
+    "ListRegionLbs": [
+      {
+        "document": "分页查询同地域负载均衡列表",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRegionLbs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Lbs\": [\n            {\n                \"LoadBalancerId\": \"lb-xxxxxxxx\",\n                \"LoadBalancerName\": \"my-lb\",\n                \"LoadBalancerType\": \"OPEN\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "列出同地域 CLB"
+      }
+    ],
     "ListResourceConfigs": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListResourceConfigs\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 100,\n    \"StartTime\": 1771689600000,\n    \"EndTime\": 1774367999000\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AppId\": 260090589,\n                \"CreateTime\": 1773911414304,\n                \"Head\": {\n                    \"HighAvailability\": false,\n                    \"Name\": \"Head\",\n                    \"PodNum\": 1,\n                    \"ResourceType\": \"CPU\",\n                    \"Spec\": 1\n                },\n                \"Id\": \"ccbe672e-44be-4518-bcdf-ff85189f7059\",\n                \"Name\": \"aidanyxu\",\n                \"SubAccountUin\": \"700002467852\",\n                \"Type\": \"Ray\",\n                \"Uin\": \"700002467852\",\n                \"UpdateTime\": 1773911414307,\n                \"Worker\": [\n                    {\n                        \"MaxPodNum\": 1,\n                        \"MinPodNum\": 1,\n                        \"Name\": \"Worker01\",\n                        \"ResourceType\": \"CPU\",\n                        \"Spec\": 1\n                    }\n                ]\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 100,\n        \"Total\": 5,\n        \"TotalPages\": 1,\n        \"RequestId\": \"c296a82e-6a68-4f67-9edf-e7275635404d\"\n    }\n}",
         "title": "列出所有资源配置模板"
+      }
+    ],
+    "ListServiceApiKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListServiceApiKeys\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-20260615150835-n7pq\",\n    \"StartTime\": 1781507306105,\n    \"EndTime\": 1781507396105,\n    \"Page\": 1,\n    \"PageSize\": 200\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ApiKey\": \"sk-proj-Q4nRCLNS61ab3zoYyfVTX9bdotCV27SSdQMHe6dCz0yo5Zaf\",\n                \"ApiKeyId\": \"apikey-20260615150836-trum\",\n                \"AppId\": 260200066,\n                \"CreateTime\": 1781507316105,\n                \"Name\": \"xgboost-self-scale-test-key-20260615150836-ocbz\",\n                \"ServiceId\": \"svc-20260615150835-n7pq\",\n                \"ServiceName\": \"xgboost-self-scale-test\",\n                \"Status\": \"Active\",\n                \"SubAccountUin\": \"700002655694\",\n                \"Uin\": \"700002655694\",\n                \"UpdateTime\": 1781507316105\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 200,\n        \"Total\": 1,\n        \"TotalPages\": 1,\n        \"RequestId\": \"f95d41eb-5d67-4dde-a579-d46af86d1ca5\"\n    }\n}",
+        "title": "列出指定推理服务绑定的 API Key"
       }
     ],
     "ListTaskJobLogDetail": [
@@ -1954,6 +2344,30 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTaskJobLogName\n<公共请求参数>\n\n{\n    \"TaskId\": \"dasj-dasdjes0-dsak-dsa\",\n    \"BatchId\": \"eusj-2dks-dsad-edsaw2-dsa\"\n}",
         "output": "{\n    \"Response\": {\n        \"Names\": [\n            \"val1\",\n            \"val2\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "日志名称列表"
+      }
+    ],
+    "ListTkeCosBuckets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTkeCosBuckets\n<公共请求参数>\n\n{\n    \"BucketName\": \"aidanyxu-260209337\",\n    \"Limit\": 100,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Buckets\": [\n            \"aidanyxu-260209337\"\n        ],\n        \"RequestId\": \"31082488-5c57-45b8-a9f3-ac38a4dfa63a\"\n    }\n}",
+        "title": "获取cos 桶列表"
+      }
+    ],
+    "ListTrainingJobInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTrainingJobInstance\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 3,\n    \"Filters\": [\n        {\n            \"Name\": \"specId\",\n            \"Values\": [\n                \"raytrain-spec-tgpuaz-i3fg\"\n            ]\n        }\n    ],\n    \"SortFields\": [\n        {\n            \"Field\": \"createTime\",\n            \"Order\": \"desc\"\n        }\n    ],\n    \"StartTime\": 1767196800000,\n    \"EndTime\": 1782835200000\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": 1782127080564,\n                \"Creator\": \"700002655693\",\n                \"HistoryUrl\": \"https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/dlc-p-ikzmoqyv/rayjob-20260622191756-22su/\",\n                \"InstanceId\": \"rayjob-20260622191756-22su\",\n                \"JobCreateTime\": 1782127081636,\n                \"JobRunningTime\": 5053576,\n                \"Priority\": 5,\n                \"SpecId\": \"raytrain-spec-tgpuaz-i3fg\",\n                \"SpecName\": \"v1-sft-sft-data-lora-p13g\",\n                \"Status\": \"PENDING\"\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 3,\n        \"Total\": 9,\n        \"TotalPages\": 3,\n        \"RequestId\": \"031bdecf-1cad-4dda-a192-4d81852bdfcb\"\n    }\n}",
+        "title": "获取训练作业配置的列表"
+      }
+    ],
+    "ListTrainingJobSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTrainingJobSpec\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Catalog\": \"{\\\"CFSVolumes\\\":[{\\\"FileSystemId\\\":\\\"cfs-99dt0xbn\\\",\\\"VolumeSubPath\\\":\\\"/\\\",\\\"SubPathMode\\\":\\\"subPath\\\",\\\"SubPath\\\":\\\"checkpoints/cus04\\\",\\\"MountPath\\\":\\\"/shared\\\",\\\"FSId\\\":null,\\\"Host\\\":null,\\\"PersistVolumeName\\\":null,\\\"VpcId\\\":null,\\\"SubnetId\\\":null,\\\"Uin\\\":null,\\\"Region\\\":null,\\\"VolumeMountMode\\\":null,\\\"Source\\\":\\\"checkpoint\\\",\\\"AutoCreateSubDir\\\":true}],\\\"CFSTurboVolumes\\\":null,\\\"COSVolumes\\\":[{\\\"Region\\\":null,\\\"Bucket\\\":\\\"common-job-packages-251233710\\\",\\\"VolumeSubPath\\\":\\\"/checkpoints/cus_multi_mount_05\\\",\\\"SubPathMode\\\":null,\\\"SubPath\\\":null,\\\"MountPath\\\":\\\"/others\\\",\\\"PersistVolumeName\\\":null,\\\"VolumeMountMode\\\":null,\\\"Source\\\":\\\"dataset\\\"}],\\\"GooseFSVolumes\\\":null}\",\n                \"CheckpointMountInfo\": {\n                    \"Bucket\": \"common-job-packages-251233710\",\n                    \"MountPath\": \"/shared\",\n                    \"PlatformManaged\": true,\n                    \"Region\": \"ap-guangzhou\",\n                    \"StorageType\": \"CFS\",\n                    \"VolumeSubPath\": \"/checkpoints/cus04\"\n                },\n                \"CodePackageUrl\": \"https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260200065/20260630194144/44a9489e-e60d-4d73-a048-8a5fe39b2d32.zip\",\n                \"CreateTime\": 1782976174590,\n                \"Creator\": \"700002655693\",\n                \"Description\": \"cus04 test\",\n                \"Entrypoint\": \"bash -c 'cd sft_demo && python -m sft_demo.train_local --storage-path /shared'\",\n                \"HasRunningInstances\": false,\n                \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-torch-lab\",\n                \"InstanceCount\": 0,\n                \"Kind\": \"CUSTOM_CODE\",\n                \"Priority\": 5,\n                \"Queue\": \"default\",\n                \"ResourceConfig\": \"{\\n  \\\"Head\\\": {\\n    \\\"Name\\\": \\\"default-head\\\",\\n    \\\"PodCpu\\\": 2,\\n    \\\"PodMem\\\": 8,\\n    \\\"GpuType\\\": \\\"\\\",\\n    \\\"GpuNum\\\": 0,\\n    \\\"Envs\\\": [],\\n    \\\"Labels\\\": [],\\n    \\\"PodNum\\\": 1,\\n    \\\"HighAvailability\\\": false\\n  },\\n  \\\"Worker\\\": [\\n    {\\n      \\\"Name\\\": \\\"default-worker\\\",\\n      \\\"PodCpu\\\": 2,\\n      \\\"PodMem\\\": 8,\\n      \\\"GpuType\\\": \\\"\\\",\\n      \\\"GpuNum\\\": 0,\\n      \\\"Envs\\\": [],\\n      \\\"Labels\\\": [],\\n      \\\"MinPodNum\\\": 1,\\n      \\\"MaxPodNum\\\": 1\\n    }\\n  ]\\n}\",\n                \"ResourcePartitionId\": \"dlc-p-wdtiljwu\",\n                \"RuntimeEnv\": \"{\\n  \\\"env_vars\\\": {\\n    \\\"LEARNING_RATE\\\": \\\"1e-4\\\",\\n    \\\"BATCH_SIZE\\\": \\\"32\\\"\\n  },\\n  \\\"pip\\\": []\\n}\",\n                \"SpecId\": \"raytrain-spec-thjd7y-o9ls\",\n                \"SpecName\": \"cus04\",\n                \"UpdateTime\": 1782976174590\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 200,\n        \"Total\": 46,\n        \"TotalPages\": 1,\n        \"RequestId\": \"c8925ed5-50af-44a9-bdc4-89a5dfd423db\"\n    }\n}",
+        "title": "列出训练作业配置"
       }
     ],
     "LockMetaData": [
@@ -2042,6 +2456,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkAppForTDLC\n<公共请求参数>\n\n{\n    \"AppName\": \"test119\",\n    \"AppType\": 1,\n    \"DataEngine\": \"test01\",\n    \"AppFile\": \"lakefs://********************463247dbed0b3a1342652f033ad2d5e7dc673535b4e9bfd0ac8b@dl************************************************************************************026071******************************************************************************\",\n    \"RoleArn\": 1124,\n    \"AppDriverSize\": \"medium\",\n    \"AppExecutorSize\": \"medium\",\n    \"AppExecutorNums\": 1,\n    \"SparkAppId\": \"batch_e5648d1b-a626-439d-af4b-ea405b9da7a6\",\n    \"Eni\": \"eni-12345678\",\n    \"IsLocal\": \"lakefs\",\n    \"MainClass\": \"com.tencent.dlc.Test\",\n    \"AppConf\": \"spark.network.timeout=120s\\nspark.sql.shuffle.partitions=200\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"cosn://dlc-bucket001/jars/spark-sql-kafka-connector.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"cosn://dlc-bucket001/files/config.properties\",\n    \"IsLocalPythonFiles\": \"cos\",\n    \"AppPythonFiles\": \"\",\n    \"CmdArgs\": \"4\",\n    \"MaxRetries\": 5,\n    \"DataSource\": \"DataLakeCatalog\",\n    \"IsLocalArchives\": \"cos\",\n    \"AppArchives\": \"cosn://dlc-bucket001/archives/venv.tar.gz\",\n    \"SparkImage\": \"1.1.0\",\n    \"SparkImageVersion\": \"Spark 3.2.1.3\",\n    \"AppExecutorMaxNumbers\": 7,\n    \"SessionId\": \"550e8400-e29b-41d4-a716-446655440000\",\n    \"IsInherit\": 0,\n    \"IsSessionStarted\": false,\n    \"DependencyPackages\": [\n        {\n            \"PackageSource\": \"CosOrFile\",\n            \"PackageType\": \"pymodules\",\n            \"PackagePath\": \"lakefs://********************463247dbed0b3a1342652f033ad2d5e7dc673535b4e9*************************************************************************/.system/sparkAppJar/2026071***********************f********************\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"367f6eb3-bce0-470d-8b79-093e4fcc686e\"\n    }\n}",
         "title": "更新tdlc spark作业"
+      }
+    ],
+    "ModifyTrainingJobSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTrainingJobSpec\n<公共请求参数>\n\n{\n    \"SpecId\": \"raytrain-spec-tiogqf-yb6e\",\n    \"SpecName\": \"xxd\",\n    \"Description\": \"sadfafda\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Spec\": {\n            \"BaseModelName\": \"Qwen3.5-4B\",\n            \"BaseModelUid\": \"m-qwen3-5-4b-6a3218e7-7447\",\n            \"Catalog\": \"{\\\"CFSVolumes\\\":null,\\\"CFSTurboVolumes\\\":null,\\\"COSVolumes\\\":[{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"common-job-packages-251233710\\\",\\\"VolumeSubPath\\\":\\\"/builtin-models/Qwen3.5-4B/v1/\\\",\\\"SubPathMode\\\":null,\\\"SubPath\\\":null,\\\"MountPath\\\":\\\"/builtin-models/Qwen3.5-4B/v1\\\",\\\"PersistVolumeName\\\":null,\\\"VolumeMountMode\\\":\\\"ReadOnly\\\",\\\"Source\\\":null},{\\\"Region\\\":null,\\\"Bucket\\\":\\\"aidanyxu-cos-260200065\\\",\\\"VolumeSubPath\\\":\\\"\\\",\\\"SubPathMode\\\":null,\\\"SubPath\\\":null,\\\"MountPath\\\":\\\"/\\\",\\\"PersistVolumeName\\\":null,\\\"VolumeMountMode\\\":\\\"ReadWrite\\\",\\\"Source\\\":\\\"checkpoint\\\"},{\\\"Region\\\":null,\\\"Bucket\\\":\\\"aidanyxu-cos-260200065\\\",\\\"VolumeSubPath\\\":\\\"\\\",\\\"SubPathMode\\\":\\\"subPath\\\",\\\"SubPath\\\":\\\"\\\",\\\"MountPath\\\":\\\"\\\",\\\"PersistVolumeName\\\":null,\\\"VolumeMountMode\\\":null,\\\"Source\\\":\\\"dataset\\\"}],\\\"GooseFSVolumes\\\":null}\",\n            \"Checkpoint\": {\n                \"Catalog\": \"{\\\"CFSVolumes\\\":[],\\\"COSVolumes\\\":[{\\\"Bucket\\\":\\\"aidanyxu-cos-260200065\\\",\\\"VolumeSubPath\\\":\\\"\\\",\\\"SubPathMode\\\":\\\"subPath\\\",\\\"SubPath\\\":\\\"\\\",\\\"MountPath\\\":\\\"/\\\",\\\"VolumeMountMode\\\":\\\"ReadWrite\\\",\\\"Source\\\":\\\"checkpoint\\\"}],\\\"CFSTurboVolumes\\\":[],\\\"GooseFSVolumes\\\":[]}\",\n                \"MaxKeep\": 0,\n                \"OutputDir\": \"\",\n                \"SaveFreq\": 1,\n                \"SaveStrategy\": \"epoch\"\n            },\n            \"CheckpointMountInfo\": {\n                \"Bucket\": \"aidanyxu-cos-260200065\",\n                \"MountPath\": \"/\",\n                \"PlatformManaged\": false,\n                \"Region\": \"ap-guangzhou\",\n                \"StorageType\": \"COS\",\n                \"VolumeSubPath\": \"\"\n            },\n            \"CreateTime\": 1784893623242,\n            \"Creator\": \"700002655693\",\n            \"Description\": \"sadfafda\",\n            \"Entrypoint\": \"python /workspace/ray_post_training_entry.py --num-workers 1 --gpus-per-worker 0 --cpus-per-worker 1\",\n            \"HasRunningInstances\": false,\n            \"InstanceCount\": 0,\n            \"Kind\": \"POST_TRAINING\",\n            \"MlFlowConfig\": \"{\\\"MlFlowMode\\\":\\\"local\\\",\\\"MlFlowServerOptions\\\":{\\\"cors-allowed-origins\\\":\\\"*\\\"}}\",\n            \"Mode\": \"sft\",\n            \"OutputModelName\": \"\",\n            \"Priority\": 5,\n            \"Queue\": \"default\",\n            \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"Head\\\",\\\"ResourceType\\\":\\\"CPU\\\",\\\"BillingItem\\\":\\\"\\\",\\\"Spec\\\":2,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"HighAvailability\\\":false,\\\"PodNum\\\":1},\\\"Worker\\\":[{\\\"Name\\\":\\\"WorkerGroup01\\\",\\\"ResourceType\\\":\\\"CPU\\\",\\\"BillingItem\\\":\\\"\\\",\\\"Spec\\\":1,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1}]}\",\n            \"ResourceConfigId\": \"\",\n            \"ResourcePartitionId\": \"dlc-p-wdtiljwu\",\n            \"ResourcePartitionName\": \"leion\",\n            \"RuntimeEnv\": \"{\\\"env_vars\\\":{\\\"TRAIN_CONFIG_YAML_B64\\\":\\\"IyDorq3nu4PphY3nva7vvJpTRlQgKOebkeedo+W+ruiwgykKIyDljaDkvY3nrKYgJHsuLi59IOeUsSBQb3N0VHJhaW5pbmdUZW1wbGF0ZVJlbmRlcmVyIOaMieeUqOaIt+ihqOWNlea4suafk+abv+aNouOAggojIOWOn+eUnyBIdWdnaW5nRmFjZSBUcmFpbmVyICsgdHJsLlNGVFRyYWluZXLvvIzkuI3kvp3otZYgTExhTUEtRmFjdG9yeeOAggoKIyMjIG1ldGhvZApzdGFnZTogc2Z0CmZpbmV0dW5pbmdfdHlwZTogbG9yYSAgICAgICAgICAgICAjIGZ1bGwgfCBsb3JhCmxvcmFfdGFyZ2V0OiBhbGwKbG9yYV9yYW5rOiA4CmxvcmFfYWxwaGE6IDE2CmxvcmFfZHJvcG91dDogMC4wNQoKIyMjIG1vZGVsCm1vZGVsX25hbWVfb3JfcGF0aDogL2J1aWx0aW4tbW9kZWxzL1F3ZW4zLjUtNEIvdjEKdHJ1c3RfcmVtb3RlX2NvZGU6IHRydWUKCiMjIyBkYXRhc2V0CnRyYWluX2ZpbGU6ICAgICAgICAgICAgICAgICAgICAgICMg5pWw5o2u5paH5Lu25ZCN5oiW57ud5a+56Lev5b6ECmRhdGFzZXRfZGlyOiAvd29ya3NwYWNlL2RhdGEKY3V0b2ZmX2xlbjogNDA5NgptYXhfc2FtcGxlczogMTAwMDAwCnByZXByb2Nlc3NpbmdfbnVtX3dvcmtlcnM6IDE2CgojIyMgZXZhbApldmFsX21vZGU6IG5vbmUgICAgICAgICAgICAgICAgICAgICAgICMgbm9uZSB8IHNwbGl0IHwgc2VwYXJhdGUKZXZhbF9zcGxpdF9yYXRpbzogMC4wNSAgICAgICAgICAjIOS7hSBzcGxpdCDmqKHlvI/nlJ/mlYgKZXZhbF9maWxlOiAgICAgICAgICAgICAgICAgICAgICAgICAjIOS7hSBzZXBhcmF0ZSDmqKHlvI/nlJ/mlYgKZXZhbF9kYXRhc2V0X2RpcjogICAgICAgICAgICMg5LuFIHNlcGFyYXRlIOaooeW8j+eUn+aViAoKIyMjIG91dHB1dApvdXRwdXRfZGlyOiAvCiMg5Lqn5Ye65qih5Z6L5ZCN56ew77yI55So5LqO5ZCO57ut5qih5Z6L5rOo5YaM77yJCm91dHB1dF9tb2RlbF9uYW1lOiAKbG9nZ2luZ19zdGVwczogMTAKc2F2ZV9zdHJhdGVneTogImVwb2NoIgpzYXZlX3N0ZXBzOiAxCnNhdmVfdG90YWxfbGltaXQ6IDAKIyDmlq3ngrnnu63orq3vvJp0cnVlIOaXtuS7jiBvdXRwdXRfZGlyIOS4reacgOaWsCBjaGVja3BvaW50IOaBouWkjeiuree7gwpyZXN1bWVfdHJhaW5pbmc6IGZhbHNlCiMg55Sx5bmz5Y+w5riy5p+T77yM5ZCv55SoIE1MZmxvdyDml7bkuLogWyJtbGZsb3ciLCJ0ZW5zb3Jib2FyZCJd77yM5pyq5ZCv55So5pe25Li6IHRlbnNvcmJvYXJkCnJlcG9ydF90bzogWyJtbGZsb3ciLCJ0ZW5zb3Jib2FyZCJdCnJ1bl9uYW1lOiAke1JVTl9OQU1FfQoKIyMjIHRyYWluCnBlcl9kZXZpY2VfdHJhaW5fYmF0Y2hfc2l6ZTogMgpncmFkaWVudF9hY2N1bXVsYXRpb25fc3RlcHM6IDQKZ3JhZGllbnRfY2hlY2twb2ludGluZzogZmFsc2UKbGVhcm5pbmdfcmF0ZTogMS4wRS00Cm51bV90cmFpbl9lcG9jaHM6IDMKbHJfc2NoZWR1bGVyX3R5cGU6IGNvc2luZQp3YXJtdXBfcmF0aW86IDAuMDMKYmYxNjogdHJ1ZQpkZHBfdGltZW91dDogMTgwMDAwMDAwCgojIyMgZGVlcHNwZWVkICjmuLLmn5Pnu5Pmnpzot6/lvoTvvIznlLHlhaXlj6PohJrmnKwgYmFzZTY0IOino+eggeWGmeWHuikKZGVlcHNwZWVkOiAvdG1wL3RyYWluLWNvbmZpZy9kc196My5qc29uCgojIyMgZXZhbApwZXJfZGV2aWNlX2V2YWxfYmF0Y2hfc2l6ZTogMQpldmFsX3N0cmF0ZWd5OiAibm8iICAgICAgICAgICAgICAgIyAibm8iIHwgInN0ZXBzIiB8ICJlcG9jaCIKZXZhbF9zdGVwczogNTAwCg==\\\",\\\"DEEPSPEED_CONFIG_B64\\\":\\\"ewogICAgInRyYWluX2JhdGNoX3NpemUiOiAiYXV0byIsCiAgICAidHJhaW5fbWljcm9fYmF0Y2hfc2l6ZV9wZXJfZ3B1IjogImF1dG8iLAogICAgImJmMTYiOiB7ImVuYWJsZWQiOiAiYXV0byJ9LAogICAgImdyYWRpZW50X2NsaXBwaW5nIjogImF1dG8iLAogICAgInplcm9fb3B0aW1pemF0aW9uIjogewogICAgICAgICJvZmZsb2FkX29wdGltaXplciI6IHsiZGV2aWNlIjogIm5vbmUifSwKICAgICAgICAib3ZlcmxhcF9jb21tIjogdHJ1ZSwKICAgICAgICAic3RhZ2UiOiAzLAogICAgICAgICJzdWJfZ3JvdXBfc2l6ZSI6IDFFKzksCiAgICAgICAgImNvbnRpZ3VvdXNfZ3JhZGllbnRzIjogdHJ1ZSwKICAgICAgICAicmVkdWNlX2J1Y2tldF9zaXplIjogImF1dG8iLAogICAgICAgICJzdGFnZTNfZ2F0aGVyXzE2Yml0X3dlaWdodHNfb25fbW9kZWxfc2F2ZSI6IHRydWUsCiAgICAgICAgIm9mZmxvYWRfcGFyYW0iOiB7ImRldmljZSI6ICJub25lIn0sCiAgICAgICAgInN0YWdlM19wcmVmZXRjaF9idWNrZXRfc2l6ZSI6ICJhdXRvIiwKICAgICAgICAic3RhZ2UzX3BhcmFtX3BlcnNpc3RlbmNlX3RocmVzaG9sZCI6ICJhdXRvIiwKICAgICAgICAic3RhZ2UzX21heF9saXZlX3BhcmFtZXRlcnMiOiAxRSs5LAogICAgICAgICJzdGFnZTNfbWF4X3JldXNlX2Rpc3RhbmNlIjogMUUrOQogICAgfSwKICAgICJ6ZXJvX2FsbG93X3VudGVzdGVkX29wdGltaXplciI6IHRydWUsCiAgICAiZ3JhZGllbnRfYWNjdW11bGF0aW9uX3N0ZXBzIjogImF1dG8iLAogICAgImZwMTYiOiB7CiAgICAgICAgIm1pbl9sb3NzX3NjYWxlIjogMSwKICAgICAgICAiaW5pdGlhbF9zY2FsZV9wb3dlciI6IDE2LAogICAgICAgICJsb3NzX3NjYWxlIjogMCwKICAgICAgICAiZW5hYmxlZCI6ICJhdXRvIiwKICAgICAgICAibG9zc19zY2FsZV93aW5kb3ciOiAxMDAwLAogICAgICAgICJoeXN0ZXJlc2lzIjogMgogICAgfQp9Cg==\\\",\\\"NUM_WORKERS\\\":\\\"1\\\",\\\"GPUS_PER_WORKER\\\":\\\"0\\\",\\\"CPUS_PER_WORKER\\\":\\\"1\\\",\\\"NCCL_DEBUG\\\":\\\"WARN\\\",\\\"HF_HOME\\\":\\\"/workspace/cache/hf\\\",\\\"WANDB_DISABLED\\\":\\\"true\\\",\\\"MLFLOW_TRACKING_URI\\\":\\\"$MLFLOW_TRACKING_URI\\\",\\\"MLFLOW_EXPERIMENT_NAME\\\":\\\"xxd\\\",\\\"HF_MLFLOW_LOG_ARTIFACTS\\\":\\\"false\\\"}}\",\n            \"SpecId\": \"raytrain-spec-tiogqf-yb6e\",\n            \"SpecName\": \"xxd\",\n            \"Tags\": [],\n            \"TuningParams\": {\n                \"CutoffLen\": 4096,\n                \"DPOBeta\": 0.1,\n                \"DPOLoss\": \"sigmoid\",\n                \"Epochs\": 3,\n                \"FineTuneType\": \"lora\",\n                \"GradientAccumulationSteps\": 4,\n                \"GradientCheckPointing\": false,\n                \"LoraAlpha\": 16,\n                \"LoraDropout\": 0.05,\n                \"LoraRank\": 8,\n                \"LoraTarget\": \"all\",\n                \"LrScheduler\": \"cosine\",\n                \"PerDeviceBatchSize\": 2,\n                \"TrainingMode\": \"balanced\",\n                \"WarmupRatio\": 0.03\n            },\n            \"UpdateTime\": 1784893623242\n        },\n        \"RequestId\": \"72056b91-6068-4df5-a39e-a24fc8512bc6\"\n    }\n}",
+        "title": "更新训练作业配置"
       }
     ],
     "ModifyUser": [
@@ -2148,6 +2570,14 @@
         "title": "元数据心跳上报"
       }
     ],
+    "RerunBenchmarkTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RerunBenchmarkTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"bench-20260616142301-vxcv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKeyId\": \"apikey-20260616110430-f7i1\",\n        \"ApiKeyName\": \"m-qwen2-tangbo-test-key-20260616110430-dznt\",\n        \"AppId\": 260200066,\n        \"CreateTime\": 1781593674916,\n        \"InputTokens\": 128,\n        \"MaxConcurrency\": 2,\n        \"OutputTokens\": 64,\n        \"RequestsPerSecond\": 2,\n        \"ServiceId\": \"svc-20260616120346-s223\",\n        \"ServiceName\": \"m-qwen2-tangbo-test-\",\n        \"Status\": \"Pending\",\n        \"SubAccountUin\": \"700002655694\",\n        \"TaskId\": \"bench-20260616142301-vxcv\",\n        \"TaskName\": \"benchmark-m-qwen2-tangbo-test--1781590981220\",\n        \"TotalPrompts\": 5,\n        \"Uin\": \"700002655694\",\n        \"UpdateTime\": 1781593674919,\n        \"UseGateway\": true,\n        \"RequestId\": \"e1488fc7-1c69-4fcf-896f-a1e3401e34f8\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "RestartDataEngine": [
       {
         "document": "重启集群",
@@ -2156,12 +2586,28 @@
         "title": "重启集群"
       }
     ],
+    "RestartDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"deploy-20260731163057-hkf4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AdvancedParams\": \"{\\\"EngineArgs\\\":[],\\\"ExtraFlags\\\":[],\\\"EnvVars\\\":[],\\\"RayOptions\\\":[]}\",\n        \"AppId\": 260200066,\n        \"AutoscalingEnabled\": false,\n        \"AvailableReplicas\": 0,\n        \"CreateTime\": 1785486657741,\n        \"DeploymentId\": \"deploy-20260731163057-hkf4\",\n        \"Engine\": \"chronos\",\n        \"HeadHighAvailabilityEnabled\": true,\n        \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:3.0.0.dev0-py311-cu125-serve\",\n        \"ModelStorageConfig\": \"{\\\"COSVolumes\\\":[{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"common-job-packages-251233710\\\",\\\"VolumeSubPath\\\":\\\"/models/m-chronos2-personal-6a2ade93-88b9/v1/v1/\\\",\\\"MountPath\\\":\\\"/models/m-chronos2-personal-6a2ade93-88b9/v1/v1\\\"}]}\",\n        \"ModelVersion\": \"v1\",\n        \"Name\": \"m-chronos2-personal-11-22-2026073116-svc-deploy-1\",\n        \"NeutrinoServeId\": \"rayserve-20260806171307-rats\",\n        \"Queue\": \"default\",\n        \"Replicas\": 1,\n        \"ResourceConfig\": \"{\\\"workerBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"workerSpec\\\":1,\\\"headBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"headSpec\\\":1,\\\"gpu\\\":\\\"\\\",\\\"gpuNum\\\":0,\\\"cpu\\\":1,\\\"mem\\\":4,\\\"headCpu\\\":1,\\\"headMem\\\":4}\",\n        \"ResourcePartitionId\": \"dlc-p-jhzmcfna\",\n        \"ResourcePartitionName\": \"dlc-test-03-cpu-resource-new\",\n        \"ServiceId\": \"svc-20260731163057-ftnh\",\n        \"Status\": \"Deploying\",\n        \"SubAccountUin\": \"700002655694\",\n        \"Uin\": \"700002655694\",\n        \"UpdateTime\": 1786007587199,\n        \"RequestId\": \"ca495eb5-1531-46a4-a8c8-1cedcaba099f\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "RestartInferenceService": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartInferenceService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-20260615170317-kt6r\"\n}",
         "output": "{\n    \"Response\": {\n        \"ApiKeyAuthEnabled\": true,\n        \"ApiKeyAuthForceEnabled\": true,\n        \"AppId\": 260200066,\n        \"CreateTime\": 1781514197876,\n        \"DeploymentCount\": 2,\n        \"EndpointUrl\": \"https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/qzzhu_061503\",\n        \"HasRunningDeployment\": false,\n        \"ModelIdentifier\": \"qzzhu_061503\",\n        \"ModelName\": \"xgboost\",\n        \"ModelType\": \"ML\",\n        \"ModelUid\": \"m-xgboost-6a159272-99b2\",\n        \"ModelVersion\": \"v1\",\n        \"Name\": \"qzzhu_061503\",\n        \"ResourceConfig\": \"{\\\"workerBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"workerSpec\\\":1,\\\"headBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"headSpec\\\":1,\\\"gpu\\\":\\\"\\\",\\\"gpuNum\\\":0,\\\"cpu\\\":1,\\\"mem\\\":4,\\\"headCpu\\\":1,\\\"headMem\\\":4}\",\n        \"ServiceId\": \"svc-20260615170317-kt6r\",\n        \"SkipTlsVerify\": false,\n        \"Status\": \"Deploying\",\n        \"SubAccountUin\": \"700002655694\",\n        \"Uin\": \"700002655694\",\n        \"UnifiedV2EndpointUrl\": \"https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443\",\n        \"UpdateTime\": 1781523710617,\n        \"RequestId\": \"bf8066df-d560-49d0-8d44-cc65a87f2792\"\n    }\n}",
         "title": "重启推理服务（重启所有部署）"
+      }
+    ],
+    "ResumeTrainingJobInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeTrainingJobInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rayjob-20260702185625-wona\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"CheckpointMountInfo\": {\n                \"Bucket\": \"common-job-packages-251233710\",\n                \"MountPath\": \"/shared\",\n                \"PlatformManaged\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"StorageType\": \"CFS\",\n                \"VolumeSubPath\": \"/checkpoints/cus04\"\n            },\n            \"CreateTime\": 1782994206461,\n            \"Creator\": \"700002655693\",\n            \"InstanceId\": \"rayjob-20260702201005-qv05\",\n            \"JobCreateTime\": 1782994206461,\n            \"JobRunningTime\": 15,\n            \"SpecId\": \"raytrain-spec-thjiyg-rbou\",\n            \"SpecName\": \"cus04\",\n            \"Status\": \"SUBMITTED\"\n        },\n        \"RequestId\": \"942f175a-b297-4708-ae81-2f4e7d1f305e\"\n    }\n}",
+        "title": "断点续训（克隆实例）"
       }
     ],
     "RevokeDLCCatalogAccess": [
@@ -2204,12 +2650,36 @@
         "title": "StartLab"
       }
     ],
+    "StartMlflowServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMlflowServer\n<公共请求参数>\n\n{\n    \"ServerId\": \"mlflow-0b889ace\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MlFlowServer\": {\n            \"AppId\": 260200065,\n            \"CreateTime\": 1785337580188,\n            \"Image\": \"ccr.ccs.tencentyun.com/emr-image/mlflow:v3.12.0\",\n            \"ResourcePartitionId\": \"dlc-p-ikzmoqyv\",\n            \"ServerId\": \"mlflow-0b889ace\",\n            \"ServerName\": \"dfa\",\n            \"Status\": \"CREATING\",\n            \"StorageMode\": \"local\",\n            \"TrackingUri\": \"http://mlflow-0b889ace-mlflow-svc.dlc-p-ikzmoqyv.svc.cluster.local:5000\",\n            \"UiUrl\": \"https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/mlflow/mlflow-0b889ace/\",\n            \"Uin\": \"700002655693\",\n            \"UpdateTime\": 1785348543246,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"env\",\n                    \"TagValue\": \"prod\"\n                }\n            ]\n        },\n        \"RequestId\": \"cbcc7914-e0f0-4a31-a785-4445580abb44\"\n    }\n}",
+        "title": "启动MlFlowServer"
+      }
+    ],
     "StartRayCluster": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartRayCluster\n<公共请求参数>\n\n{\n    \"Id\": \"raycluster-20260602191330-yej4\"\n}",
         "output": "{\n    \"Response\": {\n        \"AdvancedOptions\": \"{\\\"spec.suspend\\\": \\\"true\\\"}\",\n        \"AppId\": 260200065,\n        \"Catalog\": \"{\\\"CFSVolumes\\\":[{\\\"FileSystemId\\\":\\\"cfs-eikhdf8b\\\",\\\"VolumeSubPath\\\":\\\"/\\\",\\\"SubPathMode\\\":\\\"subPath\\\",\\\"SubPath\\\":\\\"\\\",\\\"MountPath\\\":\\\"/d\\\",\\\"FSId\\\":\\\"enyuf3td\\\",\\\"Host\\\":\\\"10.0.0.2\\\",\\\"PersistVolumeName\\\":\\\"raycluster-20260602191330-yej4-cfs-ed05d9b0567ba7c87a52af666bcc09f3\\\",\\\"VpcId\\\":\\\"vpc-nocygw15\\\",\\\"SubnetId\\\":\\\"subnet-p1zbl2ns\\\",\\\"Uin\\\":\\\"700002655693\\\",\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"VolumeMountMode\\\":\\\"ReadOnly\\\"}],\\\"CFSTurboVolumes\\\":[],\\\"COSVolumes\\\":[],\\\"GooseFSVolumes\\\":[]}\",\n        \"CreateTime\": 1780402599177,\n        \"Description\": \"测试集群\",\n        \"GroupId\": \"rayclustergroup-tfh4u6-bcqz\",\n        \"GroupName\": \"group_test_sunny\",\n        \"Id\": \"raycluster-20260602191330-yej4\",\n        \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu\",\n        \"ImagePullPolicy\": \"Always\",\n        \"Name\": \"aidanyxu-test\",\n        \"Priority\": 5,\n        \"Queue\": \"default\",\n        \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"Head\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":4,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"Tolerations\\\":null,\\\"ResourceType\\\":\\\"CPU\\\",\\\"InstanceType\\\":\\\"\\\",\\\"Spec\\\":1,\\\"BillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"VideoMemory\\\":null,\\\"PodNum\\\":1,\\\"HighAvailability\\\":false},\\\"Worker\\\":[{\\\"Name\\\":\\\"WorkerGroup01\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":4,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"Tolerations\\\":null,\\\"ResourceType\\\":\\\"CPU\\\",\\\"InstanceType\\\":\\\"\\\",\\\"Spec\\\":1,\\\"BillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"VideoMemory\\\":null,\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1},{\\\"Name\\\":\\\"WorkerGroup02\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":4,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"Tolerations\\\":null,\\\"ResourceType\\\":\\\"CPU\\\",\\\"InstanceType\\\":\\\"\\\",\\\"Spec\\\":1,\\\"BillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"VideoMemory\\\":null,\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1}]}\",\n        \"ResourceConfigId\": \"cf82820d-22a9-458f-ae3f-108137ab55af\",\n        \"ResourcePartitionId\": \"dlc-p-ikzmoqyv\",\n        \"ResourcePartitionName\": \"test-pool-luke\",\n        \"Status\": \"STARTING\",\n        \"SubAccountUin\": \"700002655693\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"env\",\n                \"TagValue\": \"dev\"\n            }\n        ],\n        \"Type\": \"RAY_CLUSTER\",\n        \"Uin\": \"700002655693\",\n        \"RequestId\": \"c5cd481c-4fc1-4ca7-9a31-c20cd1c8bd59\"\n    }\n}",
         "title": "运行集群"
+      }
+    ],
+    "StopBenchmarkTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopBenchmarkTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"bench-20260616142301-vxcv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKeyId\": \"apikey-20260616110430-f7i1\",\n        \"ApiKeyName\": \"m-qwen2-tangbo-test-key-20260616110430-dznt\",\n        \"AppId\": 260200066,\n        \"CreateTime\": 1781595798061,\n        \"InputTokens\": 128,\n        \"MaxConcurrency\": 2,\n        \"OutputTokens\": 64,\n        \"RequestsPerSecond\": 2,\n        \"ServiceId\": \"svc-20260616120346-s223\",\n        \"ServiceName\": \"m-qwen2-tangbo-test-\",\n        \"Status\": \"Stopped\",\n        \"SubAccountUin\": \"700002655694\",\n        \"TaskId\": \"bench-20260616142301-vxcv\",\n        \"TaskName\": \"benchmark-m-qwen2-tangbo-test--1781590981220\",\n        \"TotalPrompts\": 5,\n        \"Uin\": \"700002655694\",\n        \"UpdateTime\": 1781595808406,\n        \"UseGateway\": true,\n        \"RequestId\": \"16433bbf-29c4-4dd6-a819-f90af901da7f\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
+    "StopDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"deploy-20260812163724-qglm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AdvancedParams\": \"{\\\"EngineArgs\\\":[{\\\"Key\\\":\\\"dtype\\\",\\\"Value\\\":\\\"auto\\\"},{\\\"Key\\\":\\\"max-num-seqs\\\",\\\"Value\\\":\\\"32\\\"},{\\\"Key\\\":\\\"max-model-len\\\",\\\"Value\\\":\\\"512\\\"}],\\\"ExtraFlags\\\":[],\\\"EnvVars\\\":[],\\\"RayOptions\\\":[]}\",\n        \"AppId\": 260200066,\n        \"AutoscalingEnabled\": false,\n        \"AvailableReplicas\": 0,\n        \"CreateTime\": 1786523844918,\n        \"DeploymentId\": \"deploy-20260812163724-qglm\",\n        \"Engine\": \"custom\",\n        \"HeadHighAvailabilityEnabled\": true,\n        \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:tcray2.56.1-py311-gpu-cu129-serve\",\n        \"ImagePullPolicy\": \"IfNotPresent\",\n        \"ImagePullType\": \"CUSTOM\",\n        \"ModelStorageConfig\": \"{\\\"COSVolumes\\\":[{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"common-job-packages-251233710\\\",\\\"VolumeSubPath\\\":\\\"/storageUri/\\\",\\\"MountPath\\\":\\\"/storageUri\\\"}]}\",\n        \"ModelVersion\": \"v1\",\n        \"Name\": \"thisismodelUid12345-2026081216-svc-deploy-1\",\n        \"Queue\": \"default\",\n        \"Replicas\": 1,\n        \"ResourceConfig\": \"{\\\"workerBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"workerSpec\\\":1,\\\"headBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"headSpec\\\":2,\\\"gpu\\\":\\\"\\\",\\\"gpuNum\\\":0,\\\"cpu\\\":1,\\\"mem\\\":4,\\\"headCpu\\\":2,\\\"headMem\\\":8}\",\n        \"ResourcePartitionId\": \"dlc-p-sclwuvta\",\n        \"ResourcePartitionName\": \"测试 partation\",\n        \"ServiceId\": \"svc-20260812163724-g9px\",\n        \"Status\": \"Stopped\",\n        \"SubAccountUin\": \"700002655694\",\n        \"Uin\": \"700002655694\",\n        \"UpdateTime\": 1786682033080,\n        \"RequestId\": \"5bda4ff8-9d3c-4117-a8c3-7cab028c93f1\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "StopInferenceService": [
@@ -2228,12 +2698,28 @@
         "title": "StopLab"
       }
     ],
+    "StopMlflowServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMlflowServer\n<公共请求参数>\n\n{\n    \"ServerId\": \"mlflow-81f27279\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f6b725f9-51e4-4eb5-a2de-d8c4be8c0f60\"\n    }\n}",
+        "title": "停止MlFlowServer"
+      }
+    ],
     "StopRayCluster": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopRayCluster\n<公共请求参数>\n\n{\n    \"Id\": \"raycluster-20260527110617-96zt\"\n}",
         "output": "{\n    \"Response\": {\n        \"AppId\": 260200065,\n        \"Catalog\": \"{\\\"CFSVolumes\\\":[],\\\"CFSTurboVolumes\\\":[],\\\"COSVolumes\\\":[{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"qzzhu-260200065\\\",\\\"VolumeSubPath\\\":\\\"/\\\",\\\"SubPathMode\\\":\\\"subPath\\\",\\\"SubPath\\\":\\\"\\\",\\\"MountPath\\\":\\\"/mnt/data\\\",\\\"PersistVolumeName\\\":\\\"raycluster-20260527110617-96zt-cos-df101a90c4f8e6ca5bce44d009081a69\\\",\\\"VolumeMountMode\\\":\\\"ReadOnly\\\"}],\\\"GooseFSVolumes\\\":[]}\",\n        \"CreateTime\": 1779851177634,\n        \"GroupId\": \"rayclustergroup-tfodxh-vwro\",\n        \"GroupName\": \"group-mao\",\n        \"HistoryUrl\": \"https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/dlc-p-bleurqnv/raycluster-20260527110617-96zt/\",\n        \"Id\": \"raycluster-20260527110617-96zt\",\n        \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu\",\n        \"Name\": \"mao\",\n        \"Queue\": \"mao-group\",\n        \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"Head\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":4,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"Tolerations\\\":null,\\\"ResourceType\\\":\\\"CPU\\\",\\\"InstanceType\\\":\\\"\\\",\\\"Spec\\\":1,\\\"BillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"VideoMemory\\\":null,\\\"PodNum\\\":1,\\\"HighAvailability\\\":false},\\\"Worker\\\":[{\\\"Name\\\":\\\"WorkerGroup01\\\",\\\"PodCpu\\\":1,\\\"PodMem\\\":4,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"ResourcesLabels\\\":[],\\\"Tolerations\\\":null,\\\"ResourceType\\\":\\\"CPU\\\",\\\"InstanceType\\\":\\\"\\\",\\\"Spec\\\":1,\\\"BillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"VideoMemory\\\":null,\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1}]}\",\n        \"ResourcePartitionId\": \"dlc-p-bleurqnv\",\n        \"ResourcePartitionName\": \"test_andrewmao\",\n        \"StartTime\": 1780112019613,\n        \"Status\": \"STOPPED\",\n        \"StopTime\": 1780111979837,\n        \"SubAccountUin\": \"700002655693\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"env\",\n                \"TagValue\": \"dev\"\n            }\n        ],\n        \"Type\": \"RAY_CLUSTER\",\n        \"Uin\": \"700002655693\",\n        \"RequestId\": \"ff8c29bc-c676-43ba-9071-18ca8c18d4b8\"\n    }\n}",
         "title": "停止集群"
+      }
+    ],
+    "SubmitTrainingJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTrainingJob\n<公共请求参数>\n\n{\n    \"SpecName\": \"cus0724-2\",\n    \"Description\": \"\",\n    \"Entrypoint\": \"bash -c 'cd sft_demo && python -m sft_demo.train_local --storage-path /shared'\",\n    \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-torch-lab\",\n    \"ImagePullType\": \"BuiltIn\",\n    \"ImagePullPolicy\": \"IfNotPresent\",\n    \"CodePackageUrl\": \"https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260200065/20260724134025/b5555d51-563c-4519-b5b5-c57c53e6b3eb.zip\",\n    \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"default-head\\\",\\\"PodCpu\\\":2,\\\"PodMem\\\":8,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"PodNum\\\":1,\\\"HighAvailability\\\":false},\\\"Worker\\\":[{\\\"Name\\\":\\\"default-worker\\\",\\\"PodCpu\\\":2,\\\"PodMem\\\":8,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1}]}\",\n    \"ResourcePartitionId\": \"dlc-p-wdtiljwu\",\n    \"Queue\": \"default\",\n    \"Catalog\": \"{\\\"COSVolumes\\\":[{\\\"VolumeSubPath\\\":\\\"/cus0724-2\\\",\\\"MountPath\\\":\\\"/shared\\\",\\\"Source\\\":\\\"checkpoint\\\",\\\"Bucket\\\":\\\"common-job-packages-251233710\\\"}]}\",\n    \"Priority\": 5,\n    \"Kind\": \"CUSTOM_CODE\",\n    \"OutputModelName\": \"model-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Spec\": {\n            \"Catalog\": \"{\\\"COSVolumes\\\":[{\\\"VolumeSubPath\\\":\\\"/cus0724-2\\\",\\\"MountPath\\\":\\\"/shared\\\",\\\"Source\\\":\\\"checkpoint\\\",\\\"Bucket\\\":\\\"common-job-packages-251233710\\\"}]}\",\n            \"CheckpointMountInfo\": {\n                \"Bucket\": \"common-job-packages-251233710\",\n                \"MountPath\": \"/shared\",\n                \"PlatformManaged\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"StorageType\": \"COS\",\n                \"VolumeSubPath\": \"/cus0724-2\"\n            },\n            \"CodePackageUrl\": \"https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260200065/20260724134025/b5555d51-563c-4519-b5b5-c57c53e6b3eb.zip\",\n            \"CreateTime\": 1784884416974,\n            \"Creator\": \"700002655693\",\n            \"Description\": \"\",\n            \"Entrypoint\": \"bash -c 'cd sft_demo && python -m sft_demo.train_local --storage-path /shared'\",\n            \"HasRunningInstances\": false,\n            \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-torch-lab\",\n            \"ImagePullPolicy\": \"IfNotPresent\",\n            \"ImagePullType\": \"BuiltIn\",\n            \"InstanceCount\": 0,\n            \"Kind\": \"CUSTOM_CODE\",\n            \"OutputModelName\": \"model-test\",\n            \"Priority\": 5,\n            \"Queue\": \"default\",\n            \"ResourceConfig\": \"{\\\"Head\\\":{\\\"Name\\\":\\\"default-head\\\",\\\"PodCpu\\\":2,\\\"PodMem\\\":8,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"PodNum\\\":1,\\\"HighAvailability\\\":false},\\\"Worker\\\":[{\\\"Name\\\":\\\"default-worker\\\",\\\"PodCpu\\\":2,\\\"PodMem\\\":8,\\\"GpuType\\\":\\\"\\\",\\\"GpuNum\\\":0,\\\"Envs\\\":[],\\\"Labels\\\":[],\\\"MinPodNum\\\":1,\\\"MaxPodNum\\\":1}]}\",\n            \"ResourcePartitionId\": \"dlc-p-wdtiljwu\",\n            \"ResourcePartitionName\": \"leion\",\n            \"SpecId\": \"raytrain-spec-tio9mo-n1jr\",\n            \"SpecName\": \"cus0724-2\",\n            \"UpdateTime\": 1784884416974\n        },\n        \"RequestId\": \"f3f6421b-da5b-4ab0-8860-15202a940ed6\"\n    }\n}",
+        "title": "训练任务统一提交入口"
       }
     ],
     "SuspendResumeDataEngine": [
@@ -2284,6 +2770,14 @@
         "title": "元数据解锁"
       }
     ],
+    "UpdateApiKeyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApiKeyStatus\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"apikey-migrated-00000003\",\n    \"Status\": \"Revoked\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKey\": \"sk-proj-xYd65Mh550ZBcQU7c91RnrfPseoZmyBsTSDfCPFErPa3iQhb\",\n        \"ApiKeyId\": \"apikey-migrated-00000003\",\n        \"AppId\": 260200066,\n        \"CreateTime\": 1779813850814,\n        \"Name\": \"sigma-token-1234\",\n        \"ServiceId\": \"svc-migrated-00000022\",\n        \"ServiceName\": \"xgboost-hhhh\",\n        \"Status\": \"Revoked\",\n        \"SubAccountUin\": \"700002655694\",\n        \"Uin\": \"700002655694\",\n        \"UpdateTime\": 1780747856084,\n        \"RequestId\": \"9294f5c7-aa98-4446-9b3d-745b7cfc83fa\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "UpdateClusterGroup": [
       {
         "document": "",
@@ -2314,6 +2808,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataMaskStrategy\n<公共请求参数>\n\n{\n    \"Strategy\": {\n        \"StrategyId\": \"c82f17bd-f577-4930-a8ef-83b9647259b8\",\n        \"StrategyName\": \"default_strategy\",\n        \"StrategyType\": \"\",\n        \"StrategyDesc\": \"\",\n        \"Groups\": [\n            {\n                \"WorkGroupId\": 225249,\n                \"StrategyType\": \"MASK_SHOW_LAST_4\"\n            },\n            {\n                \"WorkGroupId\": 225237,\n                \"StrategyType\": \"MASK_HASH\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d2dc2eb-0a9c-483b-9454-e7e8db604507\"\n    }\n}",
         "title": "更新数据脱敏策略"
+      }
+    ],
+    "UpdateDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"deploy-20260731163057-hkf4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoscalingEnabled\": false,\n        \"AvailableReplicas\": 0,\n        \"CreateTime\": 1785486657741,\n        \"DeploymentId\": \"deploy-20260731163057-hkf4\",\n        \"Engine\": \"chronos\",\n        \"HeadHighAvailabilityEnabled\": true,\n        \"Image\": \"ccr.ccs.tencentyun.com/emr-image/tcray:3.0.0.dev0-py311-cu125-serve\",\n        \"ModelStorageConfig\": \"{\\\"COSVolumes\\\":[{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Bucket\\\":\\\"common-job-packages-251233710\\\",\\\"VolumeSubPath\\\":\\\"/models/m-chronos2-personal-6a2ade93-88b9/v1/v1/\\\",\\\"MountPath\\\":\\\"/models/m-chronos2-personal-6a2ade93-88b9/v1/v1\\\"}]}\",\n        \"ModelVersion\": \"v1\",\n        \"Name\": \"m-chronos2-personal-11-22-2026073116-svc-deploy-1\",\n        \"Queue\": \"default\",\n        \"Replicas\": 1,\n        \"ResourceConfig\": \"{\\\"workerBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"workerSpec\\\":1,\\\"headBillingItem\\\":\\\"sv_dlc_standard_cu_standard_cu\\\",\\\"headSpec\\\":1,\\\"gpu\\\":\\\"\\\",\\\"gpuNum\\\":0,\\\"cpu\\\":1,\\\"mem\\\":4,\\\"headCpu\\\":1,\\\"headMem\\\":4}\",\n        \"ResourcePartitionId\": \"dlc-p-jhzmcfna\",\n        \"ResourcePartitionName\": \"dlc-test-03-cpu-resource-new\",\n        \"ServiceId\": \"svc-20260731163057-ftnh\",\n        \"Status\": \"Deploying\",\n        \"UpdateTime\": 1786007591243,\n        \"RequestId\": \"be1727f1-8667-4385-bc57-cd62a372a83a\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "UpdateEngineResourceGroupNetworkConfigInfo": [
@@ -2394,6 +2896,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRowFilter\n<公共请求参数>\n\n{\n    \"Policy\": {\n        \"Table\": \"TableName\",\n        \"Catalog\": \"COSDataCatalog\",\n        \"Operation\": \"ALL\",\n        \"Database\": \"DatabaseName\"\n    },\n    \"PolicyId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "更新行过滤策略信息"
+      }
+    ],
+    "UpdateServiceAuthConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServiceAuthConfig\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-20260606145826-3tlg\",\n    \"ApiKeyAuthEnabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiKeyAuthEnabled\": true,\n        \"ApiKeyAuthForceEnabled\": true,\n        \"AppId\": 260200066,\n        \"CreateTime\": 1780729106761,\n        \"DeploymentCount\": 1,\n        \"EndpointUrl\": \"https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/service/test-qwen35/v1\",\n        \"HasRunningDeployment\": false,\n        \"ModelIdentifier\": \"qwen35-4b\",\n        \"ModelName\": \"Qwen3.5-4B\",\n        \"ModelType\": \"LLM\",\n        \"ModelUid\": \"m-qwen3-5-4b-6a223aba-951c\",\n        \"ModelVersion\": \"v1\",\n        \"Name\": \"test-qwen35\",\n        \"ResourceConfig\": \"{\\\"workerBillingItem\\\":\\\"sv_dlc_gn7_gn75xlarge80\\\",\\\"workerSpec\\\":1,\\\"headBillingItem\\\":\\\"sv_dlc_postpay_cu_standard_cu\\\",\\\"headSpec\\\":1,\\\"gpu\\\":\\\"T4\\\",\\\"gpuNum\\\":1,\\\"cpu\\\":20,\\\"mem\\\":80,\\\"headCpu\\\":1,\\\"headMem\\\":4}\",\n        \"ServiceId\": \"svc-20260606145826-3tlg\",\n        \"SkipTlsVerify\": false,\n        \"Status\": \"Stopped\",\n        \"SubAccountUin\": \"700002655694\",\n        \"Uin\": \"700002655694\",\n        \"UnifiedEndpointUrl\": \"https://tcray-gateway.ap-guangzhou.cloud.tencent.com:443/v1\",\n        \"UpdateTime\": 1780731592425,\n        \"RequestId\": \"98dc439b-5f14-4bd4-be62-605c51609f23\"\n    }\n}",
+        "title": "更新推理服务的 API-Key 鉴权配置"
       }
     ],
     "UpdateStandardEngineResourceGroupBaseInfo": [

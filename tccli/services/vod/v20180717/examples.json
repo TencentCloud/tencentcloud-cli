@@ -24,6 +24,14 @@
         "title": "音色克隆"
       }
     ],
+    "CloneVoiceSync": [
+      {
+        "document": "同步音色克隆",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneVoiceSync\n<公共请求参数>\n\n{\n    \"AudioFileId\": \"966263******778501\",\n    \"LanguageBoost\": \"zh\",\n    \"ExtParam\": \"{\\\"text\\\": \\\"种子在土里沉默，是为了破土时的惊雷。\\\", \\\"tts_model\\\":\\\"minimax-speech-2.8-hd\\\"}\",\n    \"SubAppId\": \"221***\",\n    \"AudioUrl\": \"https://laurie-tmp-1300828900.cos.accelerate*******************************************Async-773ca8f1756ed5fd016988dccb91eaa9t.wav\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DemoAudio\": \"https://laurie-tmp-1300828900.cos.acce**************************************c3-41db-aa7a-29931e416b5b-preview.mp3\",\n        \"ExtInfo\": \"{\\\"audio_length\\\":0,\\\"word_count\\\":34}\",\n        \"VoiceId\": \"minimax_9*********d39-40d7\",\n        \"RequestId\": \"60f2d5dc-2dc3-41db-aa7a-29931e416b5b\"\n    }\n}",
+        "title": "同步音色克隆"
+      }
+    ],
     "CommitUpload": [
       {
         "document": "",
@@ -2330,6 +2338,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechAsync\n<公共请求参数>\n\n{\n    \"Text\": \"语音合成测试\",\n    \"VoiceId\": \"ttv-voice-20************26-qaFeULIp\",\n    \"SubAppId\": \"260***028\",\n    \"SessionId\": \"6bb56a09278***********6dab783eff\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"260085028-TextToSpeec********************5b37f06c0e0b890c60ct\",\n        \"RequestId\": \"e6dd5ca8-43f2-4bcd-9f4a-4e58e4cb4e19\"\n    }\n}",
         "title": "语音合成"
+      }
+    ],
+    "TextToSpeechSync": [
+      {
+        "document": "同步语音合成",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSync\n<公共请求参数>\n\n{\n    \"SubAppId\": \"221***\",\n    \"Text\": \"我怕我沒有機會跟你說一聲再見. 因為也許就再也見不到你. 明天我要離開熟悉的地方和你. 要分離我眼淚就掉下去. 我會牢牢記住你的臉我會珍惜你給的思念.\",\n    \"LanguageBoost\": \"zh\",\n    \"VoiceId\": \"minimax_7*********c6c-495b\",\n    \"Output\": {\n        \"Type\": \"url\"\n    },\n    \"ExtParam\": \"{\\n  \\\"model\\\": \\\"minimax-speech-2.8-hd\\\",\\n  \\\"stream\\\": false,\\n  \\\"voice_setting\\\": {\\n    \\\"speed\\\": 1.5,\\n    \\\"vol\\\": 1.0,\\n    \\\"pitch\\\": 0,\\n    \\\"emotion\\\": \\\"calm\\\",\\n    \\\"text_normalization\\\": true,\\n    \\\"latex_read\\\": false\\n  },\\n  \\\"audio_setting\\\": {\\n    \\\"sample_rate\\\": 32000,\\n    \\\"bitrate\\\": 128000,\\n    \\\"format\\\": \\\"mp3\\\",\\n    \\\"channel\\\": 1,\\n    \\\"force_cbr\\\": false\\n  },\\n  \\\"voice_modify\\\": {\\n    \\\"pitch\\\": 0,\\n    \\\"intensity\\\": 0,\\n    \\\"timbre\\\": 0,\\n    \\\"sound_effects\\\": \\\"\\\"\\n  },\\n  \\\"timbre_weights\\\": [\\n    { \\\"voice_id\\\": \\\"ttv-voice-2026081010451926-MJGKXATq\\\", \\\"weight\\\": 100 }\\n   ],\\n  \\\"subtitle_enable\\\": true,\\n  \\\"subtitle_type\\\": \\\"srt\\\"\\n}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioData\": \"UklGRnxuAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAATElTVF4EAABJTkZPSUNNVDwEAABBSUdDP********************************************************************************GIzZGFiODAwZjNlYzc4N2Q3MjZhMmQyNDYyIiwiUmVzZXJ2ZWRDb2RlMSI6IntcIlNlY3VyaXR5RGF0Y\",\n        \"AudioUrl\": \"https://tennyyang-test-1258344699.cos.ap-guangzh***********************************************-08-10/cda673d1-5bfb-4111-8572-1838b91ee267.mp3\",\n        \"ExtInfo\": \"{\\\"audio_length\\\":10188,\\\"audio_sample_rate\\\":32000,\\\"audio_size\\\":164724,\\\"bitrate\\\":128000,\\\"audio_format\\\":\\\"mp3\\\",\\\"audio_channel\\\":1,\\\"word_count\\\":66,\\\"invisible_character_ratio\\\":0,\\\"usage_characters\\\":75}\",\n        \"RequestId\": \"a40fdd09-c7dd-45d9-9621-800e6cefab1e\"\n    }\n}",
+        "title": "同步语音合成"
       }
     ],
     "UpdateAigcApiToken": [

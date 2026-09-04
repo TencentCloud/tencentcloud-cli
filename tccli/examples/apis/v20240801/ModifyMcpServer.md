@@ -39,7 +39,8 @@ tccli apis ModifyMcpServer --cli-unfold-argument  \
     --Timeout 60 \
     --McpSecurityRules.0.ID mr-2bdbbf32 \
     --McpSecurityRules.0.Act watch \
-    --McpSecurityRules.0.Status open
+    --McpSecurityRules.0.Status open \
+    --CredentialID agc-********
 ```
 
 Output: 

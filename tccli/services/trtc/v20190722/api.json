@@ -2271,12 +2271,48 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>词表名称（同 SdkAppId 下唯一）</p>",
+          "example": "vocab_name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>客户维度唯一标识</p>",
           "example": "1400000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "示例热词表",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>热词+权重数组</p>",
+          "example": "无",
+          "member": "HotWord",
+          "name": "WordWeights",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本形式热词</p>",
+          "example": "6IW+6K6v5LqRfDEw",
+          "member": "string",
+          "name": "WordWeightStr",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2284,6 +2320,16 @@
     "CreateRecognizeVocabV3Response": {
       "document": "CreateRecognizeVocabV3返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "731b2b426be8424a8b574f1ed142f105",
+          "member": "string",
+          "name": "VocabId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2561,7 +2607,26 @@
     },
     "DeleteRecognizeVocabV3Request": {
       "document": "DeleteRecognizeVocabV3请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "7bc538d6acb442f19dc3396dd7eacd66",
+          "member": "string",
+          "name": "VocabId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户维度唯一标识</p>",
+          "example": "1400000001",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DeleteRecognizeVocabV3Response": {
@@ -5061,12 +5126,51 @@
     },
     "DownloadRecognizeVocabV3Request": {
       "document": "DownloadRecognizeVocabV3请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "553fb7c43cd74c689cc92b8e04cf4648",
+          "member": "string",
+          "name": "VocabId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户维度唯一标识</p>",
+          "example": "1400706048",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DownloadRecognizeVocabV3Response": {
       "document": "DownloadRecognizeVocabV3返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "553fb7c43cd74c689cc92b8e04cf4648",
+          "member": "string",
+          "name": "VocabId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本形式热词</p>",
+          "example": "5bel5L2cfDEw",
+          "member": "string",
+          "name": "WordWeightStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5302,12 +5406,60 @@
     },
     "GetRecognizeVocabListV3Request": {
       "document": "GetRecognizeVocabListV3请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户维度唯一标识</p>",
+          "example": "1400000001",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "GetRecognizeVocabListV3Response": {
       "document": "GetRecognizeVocabListV3返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表列表</p>",
+          "example": "无",
+          "member": "Vocab",
+          "name": "VocabList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>词表个数</p><p>单位：个</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5319,12 +5471,101 @@
     },
     "GetRecognizeVocabV3Request": {
       "document": "GetRecognizeVocabV3请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "7bc538d6acb442f19dc3396dd7eacd66",
+          "member": "string",
+          "name": "VocabId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户维度唯一标识</p>",
+          "example": "1400000001",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "GetRecognizeVocabV3Response": {
       "document": "GetRecognizeVocabV3返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表名称</p>",
+          "example": "测试用户",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "测试更新",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "7bc538d6acb442f19dc3396dd7eacd66",
+          "member": "string",
+          "name": "VocabId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>热词+权重数组</p>",
+          "example": "无",
+          "member": "HotWord",
+          "name": "WordWeights",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-06-04T12:25:43+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-06-04T12:25:43+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否设置默认词表</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5333,6 +5574,34 @@
         }
       ],
       "type": "object"
+    },
+    "HotWord": {
+      "document": "热词的词和权重",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>热词</p>",
+          "example": "热词",
+          "member": "string",
+          "name": "Word",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权重</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Input": {
       "document": "拉流输入源",
@@ -6107,7 +6376,7 @@
         },
         {
           "disabled": false,
-          "document": "录制任务 key，标识一个录制任务；您可以通过该参数，将多个转推任务录制成一个文件。不指定该参数时，只录制当前转推任务。\n【限制长度为128字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线(_)和连词符(-)】",
+          "document": "录制任务标识 key，显式关联多个转推任务到一个录制任务；一般不需设置，默认录制本次转推内容。\n如果有特殊需求，比如将多段转推内容分时录制到同一个文件，可以通过设置此参数来控制。举例: 时间点10:00 发起转推任务:A + RecorderKey:abc，10:05分发起转推任务B+ RecorderKey:abc，那么录制文件会包含，转推A(10:00~10:05分的内容)+转推B的内容。\n【限制长度为128字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线(_)和连词符(-)】",
           "example": "test_recore_key_a",
           "member": "string",
           "name": "RecordKey",
@@ -8428,12 +8697,50 @@
     },
     "SetVocabStateV3Request": {
       "document": "SetVocabStateV3请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "ee4f1e71c7cc4060b1b9ad4726c3166b",
+          "member": "string",
+          "name": "VocabId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否设置为默认词表</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户维度唯一标识</p>",
+          "example": "1400000001",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "SetVocabStateV3Response": {
       "document": "SetVocabStateV3返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "ee4f1e71c7cc4060b1b9ad4726c3166b",
+          "member": "string",
+          "name": "VocabId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8999,7 +9306,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
+          "document": "<p>TRTC的<a href=\"https://cloud.tencent.com/document/product/647/46351#sdkappid\">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
@@ -9008,7 +9315,7 @@
         },
         {
           "disabled": false,
-          "document": "主房间信息RoomId，转推的TRTC房间所对应的RoomId。",
+          "document": "<p>主房间信息RoomId，转推的TRTC房间所对应的RoomId。</p>",
           "example": "room_1234",
           "member": "string",
           "name": "RoomId",
@@ -9017,7 +9324,7 @@
         },
         {
           "disabled": false,
-          "document": "主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。",
+          "document": "<p>主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RoomIdType",
@@ -9026,7 +9333,7 @@
         },
         {
           "disabled": false,
-          "document": "转推服务加入TRTC房间的机器人参数。",
+          "document": "<p>转推服务加入TRTC房间的机器人参数。</p>",
           "example": "无",
           "member": "AgentParams",
           "name": "AgentParams",
@@ -9035,7 +9342,7 @@
         },
         {
           "disabled": false,
-          "document": "是否转码，0表示无需转码，1表示需要转码。\nWithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。\n注：\n1，混流是必须转码的，这个参数需设置为1。\n2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。",
+          "document": "<p>是否转码，0表示无需转码，1表示需要转码。<br>WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。<br>注：<br>1，混流是必须转码的，这个参数需设置为1。<br>2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>",
           "example": "1",
           "member": "uint64",
           "name": "WithTranscoding",
@@ -9044,7 +9351,7 @@
         },
         {
           "disabled": false,
-          "document": "转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。",
+          "document": "<p>转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。</p>",
           "example": "无",
           "member": "McuAudioParams",
           "name": "AudioParams",
@@ -9053,7 +9360,7 @@
         },
         {
           "disabled": false,
-          "document": "转推流的视频编码参数，不填表示纯音频转推。",
+          "document": "<p>转推流的视频编码参数，不填表示纯音频转推。</p>",
           "example": "无",
           "member": "McuVideoParams",
           "name": "VideoParams",
@@ -9062,7 +9369,7 @@
         },
         {
           "disabled": false,
-          "document": "需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。",
+          "document": "<p>需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。</p>",
           "example": "无",
           "member": "SingleSubscribeParams",
           "name": "SingleSubscribeParams",
@@ -9071,7 +9378,7 @@
         },
         {
           "disabled": false,
-          "document": "转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。",
+          "document": "<p>转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。</p>",
           "example": "无",
           "member": "McuPublishCdnParam",
           "name": "PublishCdnParams",
@@ -9080,7 +9387,7 @@
         },
         {
           "disabled": false,
-          "document": "混流SEI参数",
+          "document": "<p>混流SEI参数</p>",
           "example": "无",
           "member": "McuSeiParams",
           "name": "SeiParams",
@@ -9089,7 +9396,7 @@
         },
         {
           "disabled": false,
-          "document": "回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。",
+          "document": "<p>回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。</p>",
           "example": "无",
           "member": "McuFeedBackRoomParams",
           "name": "FeedBackRoomParams",
@@ -9098,7 +9405,7 @@
         },
         {
           "disabled": false,
-          "document": "转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。",
+          "document": "<p>转推录制参数，<a href=\"https://cloud.tencent.com/document/product/647/111748\">参考文档</a>。</p>",
           "example": "无",
           "member": "McuRecordParams",
           "name": "RecordParams",
@@ -9113,7 +9420,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用于唯一标识转推任务，由腾讯云服务端生成，后续更新和停止请求都需要携带TaskID参数。",
+          "document": "<p>用于唯一标识转推任务，由腾讯云服务端生成，后续更新和停止请求都需要携带TaskID参数。</p>",
           "example": "-nHPekVU7h******sceOqAZ1YVQE.",
           "member": "string",
           "name": "TaskId",
@@ -10860,7 +11167,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
+          "document": "<p>TRTC的<a href=\"https://cloud.tencent.com/document/product/647/46351#sdkappid\">SdkAppId</a>，和转推的房间所对应的SdkAppId相同。</p>",
           "example": "1400000001",
           "member": "uint64",
           "name": "SdkAppId",
@@ -10869,7 +11176,7 @@
         },
         {
           "disabled": false,
-          "document": "唯一标识转推任务。",
+          "document": "<p>唯一标识转推任务。</p>",
           "example": "-nHPekVU7h******sceOqAZ1YVQE.",
           "member": "string",
           "name": "TaskId",
@@ -10878,7 +11185,7 @@
         },
         {
           "disabled": false,
-          "document": "客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。",
+          "document": "<p>客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。</p>",
           "example": "2",
           "member": "uint64",
           "name": "SequenceNumber",
@@ -10887,7 +11194,7 @@
         },
         {
           "disabled": false,
-          "document": "是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。",
+          "document": "<p>是否转码，0表示无需转码，1表示需要转码。 WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。 注： 1，混流是必须转码的，这个参数需设置为1。 2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。</p>",
           "example": "1",
           "member": "uint64",
           "name": "WithTranscoding",
@@ -10896,7 +11203,7 @@
         },
         {
           "disabled": false,
-          "document": "更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。",
+          "document": "<p>更新相关参数，只支持更新参与混音的主播列表参数，不支持更新Codec、采样率、码率和声道数。不填表示不更新此参数。</p>",
           "example": "无",
           "member": "McuAudioParams",
           "name": "AudioParams",
@@ -10905,7 +11212,7 @@
         },
         {
           "disabled": false,
-          "document": "更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。",
+          "document": "<p>更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。</p>",
           "example": "无",
           "member": "McuVideoParams",
           "name": "VideoParams",
@@ -10914,7 +11221,7 @@
         },
         {
           "disabled": false,
-          "document": "更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。",
+          "document": "<p>更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。</p>",
           "example": "无",
           "member": "SingleSubscribeParams",
           "name": "SingleSubscribeParams",
@@ -10923,7 +11230,7 @@
         },
         {
           "disabled": false,
-          "document": "更新转推的CDN参数。不填表示不更新此参数。",
+          "document": "<p>更新转推的CDN参数。不填表示不更新此参数。</p>",
           "example": "无",
           "member": "McuPublishCdnParam",
           "name": "PublishCdnParams",
@@ -10932,7 +11239,7 @@
         },
         {
           "disabled": false,
-          "document": "混流SEI参数",
+          "document": "<p>混流SEI参数</p>",
           "example": "无",
           "member": "McuSeiParams",
           "name": "SeiParams",
@@ -10941,7 +11248,7 @@
         },
         {
           "disabled": false,
-          "document": "回推房间信息",
+          "document": "<p>回推房间信息</p>",
           "example": "无",
           "member": "McuFeedBackRoomParams",
           "name": "FeedBackRoomParams",
@@ -10956,7 +11263,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转推任务唯一的String Id",
+          "document": "<p>转推任务唯一的String Id</p>",
           "example": "-nHPekVU7h******sceOqAZ1YVQE.",
           "member": "string",
           "name": "TaskId",
@@ -10975,12 +11282,77 @@
     },
     "UpdateRecognizeVocabV3Request": {
       "document": "UpdateRecognizeVocabV3请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "7bc538d6acb442f19dc3396dd7eacd66",
+          "member": "string",
+          "name": "VocabId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户维度唯一标识</p>",
+          "example": "1400000001",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>词表名称</p>",
+          "example": "vocabname",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>词表描述</p>",
+          "example": "描述文本",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>热词数组</p>",
+          "example": "无",
+          "member": "HotWord",
+          "name": "WordWeights",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>base64 编码的词表文本</p>",
+          "example": "6IW+6K6v5LqRfDEw",
+          "member": "string",
+          "name": "WordWeightStr",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "UpdateRecognizeVocabV3Response": {
       "document": "UpdateRecognizeVocabV3返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表 id</p>",
+          "example": "7bc538d6acb442f19dc3396dd7eacd66",
+          "member": "string",
+          "name": "VocabId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11437,6 +11809,82 @@
         }
       ],
       "usage": "in"
+    },
+    "Vocab": {
+      "document": "词表内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>热词表名称</p>",
+          "example": "test_hotword_id_1783572455",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>热词表描述</p>",
+          "example": "auto_test_hotword_id",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>热词表ID</p>",
+          "example": "2a97bbe7e0e845d9b7b4a1add442730e",
+          "member": "string",
+          "name": "VocabId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>词权重列表</p>",
+          "example": "无",
+          "member": "HotWord",
+          "name": "WordWeights",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>词表创建时间</p>",
+          "example": "2026-07-09T10:48:12+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>词表更新时间</p>",
+          "example": "2026-07-09T10:48:12+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Voice": {
       "document": "TTS的声音参数配置",

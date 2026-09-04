@@ -84,6 +84,13 @@
       "output": "DescribeAccountBalanceResponse",
       "status": "online"
     },
+    "DescribeAccountWarning": {
+      "document": "云api查余额告警阈值接口，支持传入uin",
+      "input": "DescribeAccountWarningRequest",
+      "name": "云api查余额告警阈值接口",
+      "output": "DescribeAccountWarningResponse",
+      "status": "online"
+    },
     "DescribeAllocateConditions": {
       "document": "查询资源目录筛选条件",
       "input": "DescribeAllocateConditionsRequest",
@@ -425,6 +432,13 @@
       "input": "DescribeVoucherUsageDetailsRequest",
       "name": "获取代金券使用记录",
       "output": "DescribeVoucherUsageDetailsResponse",
+      "status": "online"
+    },
+    "ModifyAccountWarning": {
+      "document": "云api设置余额告警阈值接口",
+      "input": "ModifyAccountWarningRequest",
+      "name": "云api设置余额告警阈值接口",
+      "output": "ModifyAccountWarningResponse",
       "status": "online"
     },
     "ModifyAllocationRule": {
@@ -10596,6 +10610,43 @@
       ],
       "type": "object"
     },
+    "DescribeAccountWarningRequest": {
+      "document": "DescribeAccountWarning请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccountWarningResponse": {
+      "document": "DescribeAccountWarning返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "余额阈值（单位：国内分、国际美分）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"957656954\"",
+          "member": "string",
+          "name": "Threshold",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启余额告警 1 开启 0 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”1“",
+          "member": "string",
+          "name": "Open",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAllocateConditionsRequest": {
       "document": "DescribeAllocateConditions请求参数结构体",
       "members": [
@@ -13375,7 +13426,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "document": "<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -13384,7 +13435,7 @@
         },
         {
           "disabled": false,
-          "document": "数量，最大值为1000",
+          "document": "<p>数量，最大值为1000</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -13393,7 +13444,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份",
+          "document": "<p>月份，格式为yyyy-mm。不能早于开通账单2.0的月份</p>",
           "example": "2018-08",
           "member": "string",
           "name": "Month",
@@ -13402,7 +13453,7 @@
         },
         {
           "disabled": true,
-          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
+          "document": "<p>周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往<a href=\"https://console.cloud.tencent.com/expense/bill/overview\">账单概览</a>页面顶部查看确认您的账单统计周期类型。</p>",
           "example": "byPayTime",
           "member": "string",
           "name": "PeriodType",
@@ -13411,7 +13462,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "document": "<p>是否需要访问列表的总记录数，用于前端分页<br>1-表示需要， 0-表示不需要</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedRecordNum",
@@ -13420,7 +13471,7 @@
         },
         {
           "disabled": false,
-          "document": "查询交易类型（请使用交易类型名称入参），入参示例枚举如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款 \n按量计费扣费 \n线下项目扣费 \n线下产品扣费 \n调账扣费 \n调账补偿 \n按量计费小时结 \n按量计费日结 \n按量计费月结 \n竞价实例小时结 \n线下项目调账补偿 \n线下产品调账补偿 \n优惠扣费 \n优惠补偿 \n按量计费迁入资源 \n按量计费迁出资源 \n包年包月迁入资源 \n包年包月迁出资源 \n预付费用 \n小时费用 \n预留实例退款 \n按量计费冲正 \n包年包月转按量 \n保底扣款 \n节省计划小时费用",
+          "document": "<p>查询交易类型（请使用交易类型名称入参），入参示例枚举如下：<br>包年包月新购<br>包年包月续费<br>包年包月配置变更<br>包年包月退款<br>按量计费扣费<br>线下项目扣费<br>线下产品扣费<br>调账扣费<br>调账补偿<br>按量计费小时结<br>按量计费日结<br>按量计费月结<br>竞价实例小时结<br>线下项目调账补偿<br>线下产品调账补偿<br>优惠扣费<br>优惠补偿<br>按量计费迁入资源<br>按量计费迁出资源<br>包年包月迁入资源<br>包年包月迁出资源<br>预付费用<br>小时费用<br>预留实例退款<br>按量计费冲正<br>包年包月转按量<br>保底扣款<br>节省计划小时费用</p>",
           "example": "按量计费扣费",
           "member": "string",
           "name": "ActionType",
@@ -13429,7 +13480,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指定资源信息",
+          "document": "<p>查询指定资源信息</p>",
           "example": "ins-1op7g2iz",
           "member": "string",
           "name": "ResourceId",
@@ -13438,7 +13489,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式 prePay/postPay",
+          "document": "<p>付费模式 prePay/postPay</p>",
           "example": "prePay",
           "member": "string",
           "name": "PayMode",
@@ -13447,7 +13498,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
+          "document": "<p>产品名称代码<br>备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a></p>",
           "example": "p_cvm",
           "member": "string",
           "name": "BusinessCode",
@@ -13456,7 +13507,7 @@
         },
         {
           "disabled": false,
-          "document": "支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN",
+          "document": "<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
@@ -13465,7 +13516,7 @@
         },
         {
           "disabled": false,
-          "document": "分账标签键，用户自定义（支持2021-01以后账单查询）",
+          "document": "<p>分账标签键，用户自定义（支持2021-01以后账单查询）</p>",
           "example": "province",
           "member": "string",
           "name": "TagKey",
@@ -13474,7 +13525,7 @@
         },
         {
           "disabled": false,
-          "document": "分账标签值，该参数为空表示该标签键下未设置标签值的记录\n（支持2021-01以后账单查询）",
+          "document": "<p>分账标签值，该参数为空表示该标签键下未设置标签值的记录<br>（支持2021-01以后账单查询）</p>",
           "example": "0",
           "member": "string",
           "name": "TagValue",
@@ -13489,8 +13540,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源汇总列表",
-          "example": "[{\"PayerUin\":\"909619400\",\"OwnerUin\":\"909619400\",\"OperateUin\":\"909619400\",\"BusinessCodeName\":\"COS 对象存储\",\"ProductCodeName\":\"COS 标准存储\",\"BusinessCode\":\"p_cos\",\"ProductCode\":\"sp_cos_std\",\"PayModeName\":\"按量计费\",\"ProjectName\":\"默认项目\",\"RegionName\":\"华东地区（上海）\",\"RegionId\":4,\"ZoneName\":\"上海一区\",\"ResourceId\":\"sta-19039\",\"ResourceName\":\"sta-3\",\"ActionTypeName\":\"按量计费日结\",\"OrderId\":\"12321-abdef-342132-aac23\",\"PayTime\":\"0000-00-00 00:00:00\",\"FeeBeginTime\":\"2024-11-01 00:00:00\",\"FeeEndTime\":\"2024-11-13 23:59:59\",\"BillMonth\":\"2024-11-01 00:00:00\",\"ConfigDesc\":\"COS 标准存储存储容量: 0.39 GB\",\"ExtendField1\":\"ef 1\",\"ExtendField2\":\"ef 2\",\"ExtendField3\":\"ef 3\",\"ExtendField4\":\"ef 4\",\"ExtendField5\":\"ef 5\",\"TotalCost\":\"0.00007068\",\"Discount\":\"0.232072\",\"ReduceType\":\"折扣\",\"RealTotalCost\":\"0.00124116\",\"VoucherPayAmount\":\"0.00000000\",\"CashPayAmount\":\"0.00000000\",\"IncentivePayAmount\":\"0.00114116\",\"TransferPayAmount\":\"0.00000000\",\"InstanceType\":\"it\",\"OriginalCostWithRI\":\"0.00000000\",\"SPDeduction\":\"0.00000000\",\"OriginalCostWithSP\":\"0.00000000\",\"Tags\":[]}]",
+          "document": "<p>资源汇总列表</p>",
+          "example": "无",
           "member": "BillResourceSummary",
           "name": "ResourceSummarySet",
           "output_required": true,
@@ -13499,7 +13550,7 @@
         },
         {
           "disabled": false,
-          "document": "资源汇总列表总数，入参NeedRecordNum为0时不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源汇总列表总数，入参NeedRecordNum为0时不返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "103",
           "member": "int64",
           "name": "Total",
@@ -17648,6 +17699,62 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyAccountWarningRequest": {
+      "document": "ModifyAccountWarning请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "余额阈值（单位：国内分、国际美分）",
+          "example": "10",
+          "member": "uint64",
+          "name": "Threshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启余额告警 1 开启 0 关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "Open",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountWarningResponse": {
+      "document": "ModifyAccountWarning返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "余额阈值（单位：国内分、国际美分）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"957656954\"",
+          "member": "string",
+          "name": "Threshold",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启余额告警 1 开启 0 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”1“",
+          "member": "string",
+          "name": "Open",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyAllocationRuleRequest": {
       "document": "ModifyAllocationRule请求参数结构体",

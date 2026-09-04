@@ -108,6 +108,14 @@
         "title": "查余额用例返回验证"
       }
     ],
+    "DescribeAccountWarning": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountWarning\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Threshold\": \"323\",\n        \"Open\": \"138999\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "云api查余额告警阈值接口示例"
+      }
+    ],
     "DescribeAllocateConditions": [
       {
         "document": "查询分账条件",
@@ -255,7 +263,7 @@
     "DescribeBillResourceSummary": [
       {
         "document": "获取账单资源汇总",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillResourceSummary\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"PeriodType\": \"byPayTime\",\n    \"Month\": \"2022-01\",\n    \"NeedRecordNum\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillResourceSummary\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"Month\": \"2022-01\",\n    \"NeedRecordNum\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ResourceSummarySet\": [\n            {\n                \"BusinessCodeName\": \"内容分发网络 CDN\",\n                \"ProductCodeName\": \"中国境外CDN\",\n                \"PayModeName\": \"按量计费\",\n                \"ProjectName\": \"默认项目\",\n                \"RegionName\": \"亚太地区（亚太一区）\",\n                \"ZoneName\": \"其他\",\n                \"ResourceId\": \"125391_sv_cdn_ux_AS1_1\",\n                \"ResourceName\": \"rName\",\n                \"ActionTypeName\": \"按量计费小时结\",\n                \"OrderId\": \"6074d5d00 \",\n                \"PayTime\": \"2020-09-22 00:00:00\",\n                \"FeeBeginTime\": \"2020-09-22 00:00:00\",\n                \"FeeEndTime\": \"2020-09-22 00:00:00\",\n                \"ConfigDesc\": \"config desc\",\n                \"ExtendField1\": \"6074d5d00 \",\n                \"ExtendField2\": \"6074d5d00\",\n                \"TotalCost\": \"4.84660512\",\n                \"Discount\": \"1\",\n                \"ReduceType\": \"折扣\",\n                \"RealTotalCost\": \"4.84660512\",\n                \"VoucherPayAmount\": \"0.00000000\",\n                \"CashPayAmount\": \"4.84660512\",\n                \"IncentivePayAmount\": \"0.00000000\",\n                \"TransferPayAmount\": \"0.00000000\",\n                \"ExtendField3\": \"extend file \",\n                \"ExtendField4\": \"extend file\",\n                \"ExtendField5\": \"extend file\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"tk_1\",\n                        \"TagValue\": \"tv_1\"\n                    }\n                ],\n                \"PayerUin\": \"909619400\",\n                \"OwnerUin\": \"909619400\",\n                \"OperateUin\": \"909619400\",\n                \"BusinessCode\": \"p_cdn\",\n                \"ProductCode\": \"sp_cdn_ov\",\n                \"RegionId\": 1001,\n                \"InstanceType\": \"it\",\n                \"OriginalCostWithRI\": \"0.00000000\",\n                \"SPDeduction\": \"0.00000000\",\n                \"OriginalCostWithSP\": \"0.00000000\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"6074d5d00-6074d5d00 \"\n    }\n}",
         "title": "获取账单资源汇总"
       }
@@ -552,6 +560,14 @@
         "input": "https://billing.tencentcloudapi.com/?Action=DescribeVoucherUsageDetails\n&Limit=10\n&Offset=1\n&VoucherId=\"abc\"\n&Operator=\"abc\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalUsedAmount\": 10000000,\n        \"TotalCount\": 1,\n        \"RequestId\": \"1820282306173927424\",\n        \"UsageRecords\": [\n            {\n                \"UsedAmount\": 10000000,\n                \"PayScene\": \"common\",\n                \"UsedTime\": \"2024-03-29 02:03:27\",\n                \"VoucherId\": \"VHPIUDFG9GUZDESWPR4W99\",\n                \"SeqId\": \"10071_2024032902_1300223973_1711649007\",\n                \"UsageDetails\": [\n                    {\n                        \"Action\": \"purchase\",\n                        \"BillingItemCode\": \"v_cvm_bandwidth\",\n                        \"SubProductName\": \"云服务器CVM-标准型S1\",\n                        \"SubProductEnName\": \"CVM Standard S1\",\n                        \"ProductName\": \"云服务器CVM\",\n                        \"ProductCode\": \"cvm\",\n                        \"SubBillingItemCode\": \"sv_cvm_bandwidth_prepay\",\n                        \"ProductEnName\": \"Cloud Virtual Machine(CVM)\",\n                        \"CalcUnit\": \"1\",\n                        \"SubProductCode\": \"p_cvm\"\n                    }\n                ],\n                \"PayMode\": \"postpay\"\n            }\n        ]\n    }\n}",
         "title": "获取代金券使用记录"
+      }
+    ],
+    "ModifyAccountWarning": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountWarning\n<公共请求参数>\n\n{\n    \"Threshold\": \"10\",\n    \"Open\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Threshold\": \"10\",\n        \"Open\": \"1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "云api查余额告警阈值接口示例"
       }
     ],
     "ModifyAllocationRule": [

@@ -1855,7 +1855,7 @@
         },
         {
           "disabled": false,
-          "document": "<ul><li><strong>产品推荐规格类型</strong><ul><li>GE.LD.T1：本地盘（通用 I 型）。</li><li>GE.CD.T1：云盘（通用 I 型）。</li></ul></li><li><strong>产品受限白名单规格类型</strong><ul><li>HIO10G：本地盘（高 IO 万兆型），已售罄，建议选择 GE.LD.T1。</li><li>HCD：云盘（云盘版），已售罄，建议选择 GE.CD.T1。</li></ul></li></ul>            <blockquote class=\"d-mod-explain\">              <div class=\"d-mod-title d-explain-title\">                <i class=\"d-icon-explain\"></i>说明：              </div>               <p> 受限白名单规格类型需白名单权限，如需开通，请<a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a>申请。</p>            </blockquote>            ",
+          "document": "<ul><li><strong>产品推荐规格类型</strong><ul><li>GE.LD.T2：本地盘（通用 II 型）。</li><li>EX.LD.T2：本地盘（独享 II 型）。</li><li>GE.CD.T1：云盘（通用 I 型）。</li></ul></li><li><strong>产品受限白名单规格类型</strong><ul><li>GE.LD.T1：本地盘（通用 I 型），预计将逐步售罄，建议选择 GE.LD.T2。</li><li>HIO10G：本地盘（高 IO 万兆型），已售罄，建议选择 GE.LD.T2。</li><li>HCD：云盘（云盘版），已售罄，建议选择 GE.CD.T1。</li></ul></li></ul>            <blockquote class=\"d-mod-explain\">              <div class=\"d-mod-title d-explain-title\">                <i class=\"d-icon-explain\"></i>说明：              </div>               <p> 受限白名单规格类型需白名单权限，如需开通，请<a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a>申请。</p>            </blockquote>            ",
           "example": "GE.LD.T2",
           "member": "string",
           "name": "MachineCode",
@@ -1954,7 +1954,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>安全组 ID。 请登录<a href=\"https://console.cloud.tencent.com/vpc/security-group\">安全组控制台</a>页面获取与数据库实例同地域的安全组 ID。</p>",
+          "document": "<p>安全组 ID。 请登录<a href=\"https://console.cloud.tencent.com/vpc/security-group\">安全组控制台</a>页面获取与数据库实例同地域的安全组 ID。</p><p>根据最新的云服务安全规则，所有实例均需绑定安全组。</p>",
           "example": "[\"sg-1s3c****\"]",
           "member": "string",
           "name": "SecurityGroup",
@@ -2281,7 +2281,7 @@
         },
         {
           "disabled": false,
-          "document": "<ul><li><strong>产品推荐规格类型</strong><ul><li>GE.LD.T1：本地盘（通用 I 型）。</li><li>GE.CD.T1：云盘（通用 I 型）。</li></ul></li><li><strong>产品受限白名单规格类型</strong><ul><li>HIO10G：本地盘（高 IO 万兆型），已售罄，建议选择 GE.LD.T1。</li><li>HCD：云盘（云盘版），已售罄，建议选择 GE.CD.T1。</li></ul></li></ul>            <blockquote class=\"d-mod-explain\">              <div class=\"d-mod-title d-explain-title\">                <i class=\"d-icon-explain\"></i>说明：              </div>               <p> 受限白名单规格类型需白名单权限，如需开通，请<a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a>申请。</p>            </blockquote>            ",
+          "document": "<ul><li><strong>产品推荐规格类型</strong><ul><li>GE.LD.T2：本地盘（通用 II 型）。</li><li>EX.LD.T2：本地盘（独享 II 型）。</li><li>GE.CD.T1：云盘（通用 I 型）。</li></ul></li><li><strong>产品受限白名单规格类型</strong><ul><li>GE.LD.T1：本地盘（通用 I 型），预计将逐步售罄，建议选择 GE.LD.T2</li><li>HIO10G：本地盘（高 IO 万兆型），已售罄，建议选择 GE.LD.T2。</li><li>HCD：云盘（云盘版），已售罄，建议选择 GE.CD.T1。</li></ul></li></ul>            <blockquote class=\"d-mod-explain\">              <div class=\"d-mod-title d-explain-title\">                <i class=\"d-icon-explain\"></i>说明：              </div>               <p> 受限白名单规格类型需白名单权限，如需开通，请<a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a>申请。</p>            </blockquote>            ",
           "example": "GE.LD.T2",
           "member": "string",
           "name": "MachineCode",
@@ -4348,7 +4348,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "document": "<p>实例 ID。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台</a>在实例列表复制实例 ID。</p>",
           "example": "cmgo-p8vnipr5",
           "member": "string",
           "name": "InstanceId",
@@ -4357,7 +4357,7 @@
         },
         {
           "disabled": false,
-          "document": "节点 ID。请登录 [MongoDB 控制台的节点管理](https://console.cloud.tencent.com/mongodb)复制节点 ID。",
+          "document": "<p>节点 ID。请登录 <a href=\"https://console.cloud.tencent.com/mongodb\">MongoDB 控制台的节点管理</a>复制节点 ID。</p>",
           "example": "[\"cmgo-6heje4jp_0-node-slave0\",\"cmgo-6heje4jp_1-node-slave0\"]",
           "member": "string",
           "name": "NodeIds",
@@ -4366,7 +4366,7 @@
         },
         {
           "disabled": false,
-          "document": "节点角色。可选值包括：\n- PRIMARY：主节点。\n- SECONDARY：从节点。\n- READONLY：只读节点。\n- ARBITER：仲裁节点。",
+          "document": "<p>节点角色。可选值包括：</p><ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>",
           "example": "[\"PRIMARY\"]",
           "member": "string",
           "name": "Roles",
@@ -4375,7 +4375,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数指定节点是否为 Hidden 节点，默认为 false。",
+          "document": "<p>该参数指定节点是否为 Hidden 节点，默认为 false。</p>",
           "example": "false",
           "member": "bool",
           "name": "OnlyHidden",
@@ -4384,7 +4384,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。",
+          "document": "<p>该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。</p>",
           "example": "10",
           "member": "int64",
           "name": "Priority",
@@ -4393,7 +4393,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数指定节点投票权。\n- 1：具有投票权。\n- 0：无投票权。",
+          "document": "<p>该参数指定节点投票权。</p><ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Votes",
@@ -4402,7 +4402,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标签。",
+          "document": "<p>节点标签。</p>",
           "example": "无",
           "member": "NodeTag",
           "name": "Tags",
@@ -4417,7 +4417,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Mongos节点属性。",
+          "document": "<p>Mongos节点属性。</p>",
           "example": "无",
           "member": "NodeProperty",
           "name": "Mongos",
@@ -4427,11 +4427,21 @@
         },
         {
           "disabled": false,
-          "document": "副本集节点信息。",
+          "document": "<p>副本集节点信息。</p>",
           "example": "无",
           "member": "ReplicateSetInfo",
           "name": "ReplicateSets",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Dynamo节点信息</p>",
+          "example": "无",
+          "member": "NodeProperty",
+          "name": "DynamoProxies",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6212,8 +6222,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>产品推荐规格类型：</p><ul><li>GE.LD.T1：本地盘（通用I型）。</li><li>GE.CD.T1：云盘（通用I型）。</li></ul><p>产品白名单规格类型：</p><ul><li>HIO10G：本地盘（高IO万兆型）。</li><li>HCD：云盘（云盘版）。</li></ul><p>注意：白名单规格类型为白名单控制，如若需要，请 <a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a> 申请</p>",
-          "example": "GE.LD.T1",
+          "document": "<p>产品推荐规格类型：</p><ul><li>GE.LD.T2：本地盘（通用II型）。</li><li>EX.LD.T2：本地盘（独享II型）。</li><li>GE.CD.T1：云盘（通用I型）。</li></ul><p>产品白名单规格类型：</p><ul><li>GE.LD.T1：本地盘（通用I型），预计将逐步售罄，建议选择 GE.LD.T2。</li><li>HIO10G：本地盘（高IO万兆型），已售罄，建议选择 GE.LD.T2。</li><li>HCD：云盘（云盘版），已售罄，建议选择 GE.CD.T1。</li></ul><p>注意：白名单规格类型为白名单控制，如若需要，请 <a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a> 申请</p>",
+          "example": "GE.LD.T2",
           "member": "string",
           "name": "MachineCode",
           "required": true,
@@ -8338,7 +8348,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例配置变更后的产品规格类型。该参数为空值时，默认取实例当前的产品规格类型。<br>当前支持的产品规格类型如下：<br>产品推荐规格类型：</p><ul><li>GE.LD.T2：本地盘（通用II型）。</li><li>GE.CD.T2：云盘（通用II型）。</li><li>EX.LD.T2：本地盘（独享II型）。</li></ul><p>产品白名单规格类型：</p><ul><li>GE.LD.T1：本地盘（通用I型），预计将逐步售罄，建议选择通用II型。</li><li>GE.CD.T1：云盘（通用I型），预计将逐步售罄，建议选择通用II型。</li><li>HIO10G：本地盘（高IO万兆型），已售罄，建议选择通用II型。</li><li>HCD：云盘（云盘版），已售罄，建议选择通用II型。</li></ul><p>注意：</p><ol><li>白名单规格类型为白名单控制，如若需要，请 <a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a> 申请</li><li>默认不能变更到白名单规格类型</li><li>产品推荐的规格类型之间不支持相互变更</li></ol>",
+          "document": "<p>实例配置变更后的产品规格类型。该参数为空值时，默认取实例当前的产品规格类型。<br>当前支持的产品规格类型如下：<br>产品推荐规格类型：</p><ul><li>GE.LD.T2：本地盘（通用II型）。</li><li>EX.LD.T2：本地盘（独享II型）。</li><li>GE.LD.T1：本地盘（通用I型）。</li></ul><p>产品白名单规格类型：</p><ul><li>GE.LD.T1：本地盘（通用I型），预计将逐步售罄。</li><li>HIO10G：本地盘（高IO万兆型），已售罄，建议选择 GE.LD.T1。</li><li>HCD：云盘（云盘版），已售罄，建议选择 GE.CD.T1。</li></ul><p>注意：</p><ol><li>白名单规格类型为白名单控制，如若需要，请 <a href=\"https://console.cloud.tencent.com/workorder/category\">提交工单</a> 申请</li><li>默认不能变更到白名单规格类型</li><li>产品推荐的规格类型之间不支持相互变更</li></ol>",
           "example": "GE.LD.T1",
           "member": "string",
           "name": "MachineCode",
@@ -8667,7 +8677,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点所在的可用区。",
+          "document": "<p>节点所在的可用区。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -8677,7 +8687,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称。",
+          "document": "<p>节点名称。</p>",
           "example": "cmgo-ocdv****_0-node-primary",
           "member": "string",
           "name": "NodeName",
@@ -8687,7 +8697,7 @@
         },
         {
           "disabled": false,
-          "document": "节点访问地址。",
+          "document": "<p>节点访问地址。</p>",
           "example": "10.4.0.7:30000",
           "member": "string",
           "name": "Address",
@@ -8697,7 +8707,7 @@
         },
         {
           "disabled": false,
-          "document": "节点公网访问外网地址(IP或域名，示例为IP方式)。",
+          "document": "<p>节点公网访问外网地址(IP或域名，示例为IP方式)。</p>",
           "example": "113.0.**.**:27017",
           "member": "string",
           "name": "WanServiceAddress",
@@ -8707,7 +8717,7 @@
         },
         {
           "disabled": false,
-          "document": "节点角色。\n- PRIMARY：主节点。\n- SECONDARY：从节点。\n- READONLY：只读节点。\n- ARBITER：仲裁节点。",
+          "document": "<p>节点角色。</p><ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>",
           "example": "PRIMARY",
           "member": "string",
           "name": "Role",
@@ -8717,7 +8727,7 @@
         },
         {
           "disabled": false,
-          "document": "节点是否为 Hidden 节点。\n- true：Hidden 节点。\n- false：非 Hidden 节点。",
+          "document": "<p>节点是否为 Hidden 节点。</p><ul><li>true：Hidden 节点。</li><li>false：非 Hidden 节点。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "Hidden",
@@ -8727,7 +8737,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态。\n- NORMAL：正常运行中。\n- STARTUP：正在启动。\n- STARTUP2：正在启动，处理中间数据。\n- RECOVERING：恢复中，暂不可用。\n- DOWN：已掉线。\n- UNKNOWN：未知状态。\n- ROLLBACK：回滚中。\n- REMOVED：已移除。",
+          "document": "<p>节点状态。</p><ul><li>NORMAL：正常运行中。</li><li>STARTUP：正在启动。</li><li>STARTUP2：正在启动，处理中间数据。</li><li>RECOVERING：恢复中，暂不可用。</li><li>DOWN：已掉线。</li><li>UNKNOWN：未知状态。</li><li>ROLLBACK：回滚中。</li><li>REMOVED：已移除。</li></ul>",
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
@@ -8737,7 +8747,7 @@
         },
         {
           "disabled": false,
-          "document": "主从同步延迟时间，单位：秒。",
+          "document": "<p>主从同步延迟时间，单位：秒。</p>",
           "example": "1",
           "member": "int64",
           "name": "SlaveDelay",
@@ -8747,7 +8757,7 @@
         },
         {
           "disabled": false,
-          "document": "节点优先级。其取值范围为[0,100]，数值越高，优先级越高。",
+          "document": "<p>节点优先级。其取值范围为[0,100]，数值越高，优先级越高。</p>",
           "example": "10",
           "member": "int64",
           "name": "Priority",
@@ -8757,7 +8767,7 @@
         },
         {
           "disabled": false,
-          "document": "节点投票权。\n- 1：具有投票权。\n- 0：无投票权。",
+          "document": "<p>节点投票权。</p><ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Votes",
@@ -8767,8 +8777,8 @@
         },
         {
           "disabled": false,
-          "document": "节点标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TagKey\":\"role-cmgo\",\"TagValue\":\"primary-secondary-group\"}]",
+          "document": "<p>节点标签。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NodeTag",
           "name": "Tags",
           "output_required": false,
@@ -8777,7 +8787,7 @@
         },
         {
           "disabled": false,
-          "document": "副本集 ID。",
+          "document": "<p>副本集 ID。</p>",
           "example": "cmgo-ocdv****_0",
           "member": "string",
           "name": "ReplicateSetId",
@@ -9203,7 +9213,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点属性",
+          "document": "<p>节点属性</p>",
           "example": "无",
           "member": "NodeProperty",
           "name": "Nodes",

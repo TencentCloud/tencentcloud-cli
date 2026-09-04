@@ -21,6 +21,13 @@
       "output": "BoundLicensesResponse",
       "status": "online"
     },
+    "CreateBatchVideoAnnotationJob": {
+      "document": "提交S3兼容存储桶数据源的目录前缀创建批量标注任务。创建后，服务端异步列举前缀下全部视频逐个建立处理项（受配额上限控制，超限截断）。",
+      "input": "CreateBatchVideoAnnotationJobRequest",
+      "name": "创建批量视频标注任务",
+      "output": "CreateBatchVideoAnnotationJobResponse",
+      "status": "online"
+    },
     "CreateCloudRecording": {
       "document": "启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。",
       "input": "CreateCloudRecordingRequest",
@@ -42,6 +49,27 @@
       "output": "CreateProjectResponse",
       "status": "online"
     },
+    "CreateVideoAnnotationJob": {
+      "document": "提交单个视频创建标注任务。支持 S3兼容 存储与 HTTP URL 两种输入源；通过后任务异步执行。",
+      "input": "CreateVideoAnnotationJobRequest",
+      "name": "创建视频标注任务",
+      "output": "CreateVideoAnnotationJobResponse",
+      "status": "online"
+    },
+    "DeleteAnnotationJob": {
+      "document": "删除整个任务并级联删除其全部处理项。",
+      "input": "DeleteAnnotationJobRequest",
+      "name": "删除标注任务",
+      "output": "DeleteAnnotationJobResponse",
+      "status": "online"
+    },
+    "DeleteAnnotationTask": {
+      "document": "删除任务下的单个处理项。",
+      "input": "DeleteAnnotationTaskRequest",
+      "name": "删除标注处理项",
+      "output": "DeleteAnnotationTaskResponse",
+      "status": "online"
+    },
     "DeleteCloudRecording": {
       "document": "成功开启录制后，可以使用此接口来停止录制任务。停止录制成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。",
       "input": "DeleteCloudRecordingRequest",
@@ -54,6 +82,27 @@
       "input": "DeleteProjectRequest",
       "name": "删除项目",
       "output": "DeleteProjectResponse",
+      "status": "online"
+    },
+    "DescribeAnnotationJobs": {
+      "document": "分页查询当前用户的任务列表，支持按状态、输入路径前缀过滤。注意任务的聚合状态由后台周期刷新，处理项全部完成后任务状态有短暂延迟。",
+      "input": "DescribeAnnotationJobsRequest",
+      "name": "查询标注任务列表",
+      "output": "DescribeAnnotationJobsResponse",
+      "status": "online"
+    },
+    "DescribeAnnotationResults": {
+      "document": "查询单个处理项的标注结果详情，返回结果的完整 JSON 原文。仅处理成功（或需确认场景）返回内容。",
+      "input": "DescribeAnnotationResultsRequest",
+      "name": "查询标注结果",
+      "output": "DescribeAnnotationResultsResponse",
+      "status": "online"
+    },
+    "DescribeAnnotationTasks": {
+      "document": "分页查询某任务下的处理项列表（每个视频一项），支持按文件名前缀、状态过滤。",
+      "input": "DescribeAnnotationTasksRequest",
+      "name": "查询标注处理项列表",
+      "output": "DescribeAnnotationTasksResponse",
       "status": "online"
     },
     "DescribeDeviceInfo": {
@@ -203,6 +252,13 @@
       "output": "ModifyProjectSecModeResponse",
       "status": "online"
     },
+    "RetryAnnotationTask": {
+      "document": "重跑超时或异常的处理项：重置回未处理状态重新等待执行，所属任务若为异常态自动恢复为处理中。其余状态不可重试。",
+      "input": "RetryAnnotationTaskRequest",
+      "name": "重试标注处理项",
+      "output": "RetryAnnotationTaskResponse",
+      "status": "online"
+    },
     "StartPublishLiveStream": {
       "document": "启动一个混流转推任务，将 TRTC 房间的多路音视频流混成一路音视频流，编码后推到直播 CDN 或者回推到 TRTC 房间。也支持不转码直接转推 TRTC 房间的单路流。启动成功后，会返回一个 SdkAppid 维度唯一的任务 Id（TaskId）。您需要保存该 TaskId，后续需要依赖此 TaskId 更新和结束任务。",
       "input": "StartPublishLiveStreamRequest",
@@ -225,6 +281,39 @@
     "serviceShortName": "trro"
   },
   "objects": {
+    "AnnotationContext": {
+      "document": "标注上下文",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务目标（整段视频的总目标）</p>",
+          "example": "把香蕉从盘子上夹起来",
+          "member": "string",
+          "name": "TaskGoal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键物体列表</p>",
+          "example": "[\"香蕉\"]",
+          "member": "string",
+          "name": "KeyObjects",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原子动词参考列表</p>",
+          "example": "[\"拿取\"]",
+          "member": "string",
+          "name": "AtomicVerbs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "BatchDeleteDevicesRequest": {
       "document": "BatchDeleteDevices请求参数结构体",
       "members": [
@@ -326,6 +415,75 @@
       ],
       "type": "object"
     },
+    "BatchS3SourceInfo": {
+      "document": "批量输入源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储桶名称</p>",
+          "example": "ai-annotation-test-input-1258344699",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储服务地址</p>",
+          "example": "cos-internal.ap-guangzhou.tencentcos.cn",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储区域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频目录前缀，如 video/，仅列举视频文件</p>",
+          "example": "batch-test/",
+          "member": "string",
+          "name": "Prefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问凭证，需对该桶有读取权限</p>",
+          "example": "无",
+          "member": "SecretInfo",
+          "name": "Secret",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名正则过滤规则，仅文件名匹配的文件会处理，不传不过滤</p>",
+          "example": "^1qLI.*\\.mp4$",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否腾讯云 COS：1 是，0 否。使用腾讯云 COS 时必须传 1</p><p>取值范围：[0, 1]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCos",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "BoundLicensesRequest": {
       "document": "BoundLicenses请求参数结构体",
       "members": [
@@ -370,6 +528,30 @@
         }
       ],
       "type": "object"
+    },
+    "CallbackInfo": {
+      "document": "回调配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回调地址</p>",
+          "example": "https://callback.example.com/annotation",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调签名密钥，用于回调请求的签名校验</p>",
+          "example": "*****************************",
+          "member": "string",
+          "name": "Secret",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CloudStorage": {
       "document": "云端录制文件上传到云存储的参数（对象存储cos）",
@@ -430,6 +612,88 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateBatchVideoAnnotationJobRequest": {
+      "document": "CreateBatchVideoAnnotationJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>批量输入源信息（目录前缀）</p>",
+          "example": "无",
+          "member": "BatchS3SourceInfo",
+          "name": "InputStorage",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注模式（当前仅开放精标注）</p><p>枚举值：</p><ul><li>3： 精标注</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "AnnotationType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注上下文信息</p>",
+          "example": "无",
+          "member": "AnnotationContext",
+          "name": "AnnotationContext",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注处理参数，预留字段，当前无效</p>",
+          "example": "无",
+          "member": "ProcessParams",
+          "name": "ProcessParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>批量结果输出存储信息，不传则不投递</p>",
+          "example": "无",
+          "member": "OutputStorage",
+          "name": "OutputStorage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调信息，配置后当任务下子处理项状态从处理中变为其他状态时，服务端会向回调地址发送请求（退避重试三次，不保证回调一定送达，需保证目标地址接收服务有效），建议接收方做好幂等处理。回调请求格式如下：<br><strong>请求头</strong></p><table><thead><tr><th>名称</th><th>值</th></tr></thead><tbody><tr><td>X-Annotation-Signature</td><td>hex(HMAC-SHA256(请求体原始字节, CallbackInfo.Secret))</td></tr></tbody></table><p><strong>请求体</strong>（application/json）</p><table><thead><tr><th>参数名</th><th>类型</th><th>必选</th><th>描述</th></tr></thead><tbody><tr><td>JobId</td><td>string</td><td>是</td><td>任务 ID</td></tr><tr><td>TaskId</td><td>string</td><td>是</td><td>处理项 ID</td></tr><tr><td>FileName</td><td>string</td><td>是</td><td>视频文件名</td></tr><tr><td>Status</td><td>int</td><td>是</td><td>触发本次回调的处理项状态：3 超时，4 异常，5 待确认，6 成功</td></tr><tr><td>StatusChangedAt</td><td>int</td><td>是</td><td>状态变更时间，Unix 时间戳（秒）</td></tr><tr><td>RawResult</td><td>string</td><td>否</td><td>当前生效的结果 JSON 原文：成功=标注产物；待确认=原始标注；确认后=确认版内容。超时/异常无内容</td></tr></tbody></table>",
+          "example": "无",
+          "member": "CallbackInfo",
+          "name": "CallbackInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchVideoAnnotationJobResponse": {
+      "document": "CreateBatchVideoAnnotationJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "3uixqpy6yywr",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCloudRecordingRequest": {
       "document": "CreateCloudRecording请求参数结构体",
@@ -640,6 +904,160 @@
       ],
       "type": "object"
     },
+    "CreateVideoAnnotationJobRequest": {
+      "document": "CreateVideoAnnotationJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入源类型：1 S3 兼容存储，2 HTTP URL</p><p>枚举值：</p><ul><li>1： S3 兼容存储</li><li>2： HTTP URL</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "InputType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注模式（当前仅开放精标注）</p><p>枚举值：</p><ul><li>3： 精标注</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "AnnotationType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>S3 存储输入源信息，InputType=1 时必填</p>",
+          "example": "无",
+          "member": "S3SourceInfo",
+          "name": "S3SourceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频 HTTP URL。InputType=2 时必填。格式如 https://example.com/video.mp4</p>",
+          "example": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+          "member": "string",
+          "name": "HttpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注上下文信息</p>",
+          "example": "无",
+          "member": "AnnotationContext",
+          "name": "AnnotationContext",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注处理参数，预留字段，当前无效</p>",
+          "example": "无",
+          "member": "ProcessParams",
+          "name": "ProcessParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果输出信息</p>",
+          "example": "无",
+          "member": "OutputInfo",
+          "name": "OutputInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调信息，配置后当处理项状态从处理中变为其他状态时，服务端会向回调地址发送请求（退避重试三次，不保证回调一定送达，需保证目标地址接收服务有效），建议接收方做好幂等处理。回调请求格式如下：<br><strong>请求头</strong></p><table><thead><tr><th>名称</th><th>值</th></tr></thead><tbody><tr><td>X-Annotation-Signature</td><td>hex(HMAC-SHA256(请求体原始字节, CallbackInfo.Secret))</td></tr></tbody></table><p><strong>请求体</strong>（application/json）</p><table><thead><tr><th>参数名</th><th>类型</th><th>必选</th><th>描述</th></tr></thead><tbody><tr><td>JobId</td><td>string</td><td>是</td><td>任务 ID</td></tr><tr><td>TaskId</td><td>string</td><td>是</td><td>处理项 ID</td></tr><tr><td>FileName</td><td>string</td><td>是</td><td>视频文件名</td></tr><tr><td>Status</td><td>int</td><td>是</td><td>触发本次回调的处理项状态：3 超时，4 异常，5 待确认，6 成功</td></tr><tr><td>StatusChangedAt</td><td>int</td><td>是</td><td>状态变更时间，Unix 时间戳（秒）</td></tr><tr><td>RawResult</td><td>string</td><td>否</td><td>当前生效的结果 JSON 原文：成功=标注产物；待确认=原始标注；确认后=确认版内容。超时/异常无内容</td></tr></tbody></table>",
+          "example": "无",
+          "member": "CallbackInfo",
+          "name": "CallbackInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoAnnotationJobResponse": {
+      "document": "CreateVideoAnnotationJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "3uixltd7dni3",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAnnotationJobRequest": {
+      "document": "DeleteAnnotationJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "3uemtd4p8nv8",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAnnotationJobResponse": {
+      "document": "DeleteAnnotationJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAnnotationTaskRequest": {
+      "document": "DeleteAnnotationTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处理项 ID</p>",
+          "example": "3uemtd4p8nv8_1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAnnotationTaskResponse": {
+      "document": "DeleteAnnotationTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCloudRecordingRequest": {
       "document": "DeleteCloudRecording请求参数结构体",
       "members": [
@@ -685,6 +1103,320 @@
     "DeleteProjectResponse": {
       "document": "DeleteProject返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnnotationJobsRequest": {
+      "document": "DescribeAnnotationJobs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移，默认 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 20，最大 100</p><p>取值范围：[10, 100]</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按任务状态过滤：1 处理中，2 异常，3 成功。不传查全部</p><p>枚举值：</p><ul><li>1： 处理中</li><li>2： 异常</li><li>3： 成功</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按输入路径前缀过滤，不传不过滤</p>",
+          "example": "ai-annotation-test-input",
+          "member": "string",
+          "name": "InputPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnnotationJobsResponse": {
+      "document": "DescribeAnnotationJobs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的任务总数</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务列表</p>",
+          "example": "无",
+          "member": "Job",
+          "name": "Jobs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnnotationResultsRequest": {
+      "document": "DescribeAnnotationResults请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处理项 ID</p>",
+          "example": "3uimegtqfkfv_1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnnotationResultsResponse": {
+      "document": "DescribeAnnotationResults返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处理项 ID</p>",
+          "example": "3uimegtqfkfv_1",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频文件名</p>",
+          "example": "1qLIfbvfNo_0003.mp4",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理项状态：1 未处理，2 处理中，3 超时，4 异常，5待确认，6 成功</p><p>枚举值：</p><ul><li>1： 未处理</li><li>2： 处理中</li><li>3： 超时</li><li>4： 异常</li><li>5： 待确认</li><li>6： 成功</li></ul>",
+          "example": "6",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因，成功为空</p>",
+          "example": "manual set for retry test",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注结果 JSON 原文，非成功状态为空</p>",
+          "example": "{schema,overview:{video_id,task_goal,duration_s,fps,key_objects,injected_context{task_goal,key_objects,atomic_verbs},scenes[]},subtasks[{idx,title,actions[{verb,object_labels,desc_hand_centric,desc_object_centric,atomic_actions[{verb,relations[]}]}]}]}",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注结果字节数</p>",
+          "example": "2741",
+          "member": "int64",
+          "name": "ResultSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，Unix 时间戳（秒）</p>",
+          "example": "1788345644",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间，Unix 时间戳（秒），进行中为 0</p>",
+          "example": "1788345702",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnnotationTasksRequest": {
+      "document": "DescribeAnnotationTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "3ueigpf29yac",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移，默认 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 20，最大 100</p><p>取值范围：[10, 100]</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按文件名前缀过滤，不传不过滤</p>",
+          "example": "1qLI",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按处理项状态过滤：1 未处理，2 处理中，3 超时，4 异常，5待确认，6 成功。不传查全部</p><p>枚举值：</p><ul><li>1： 未处理</li><li>2： 处理中</li><li>3： 超时</li><li>4： 异常</li><li>5： 待确认</li><li>6： 成功</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnnotationTasksResponse": {
+      "document": "DescribeAnnotationTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "3ueigpf29yac",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理项总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理项列表</p>",
+          "example": "无",
+          "member": "Task",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2466,6 +3198,102 @@
       ],
       "type": "object"
     },
+    "Job": {
+      "document": "任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "3uftmbjv551w",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型：1 单视频，2 批量</p><p>枚举值：</p><ul><li>1： 单视频</li><li>2： 批量</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "JobType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注模式：3 精标注</p><p>枚举值：</p><ul><li>3： 精标注</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "AnnotationType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态：1 处理中，2 异常，3 成功</p><p>枚举值：</p><ul><li>1： 处理中</li><li>2： 异常</li><li>3： 成功</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件列举状态：0 列举中，1 全部加载，2 超过数量上限截断（仅批量任务）</p><p>枚举值：</p><ul><li>0： 列举中</li><li>1： 全部加载</li><li>2： 超过数量上限截断（仅批量任务）</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "IngestStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入路径（S3源为桶名/对象路径：批量任务为目录前缀，单文件为文件完整路径；HTTP源为完整URL）</p>",
+          "example": "ai-annotation-test-input-1258344699/batch-test/",
+          "member": "string",
+          "name": "InputPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理项总数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，Unix 时间戳（秒）</p>",
+          "example": "1788176178",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间，Unix 时间戳（秒），未完成为 0</p>",
+          "example": "1788160830",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "License": {
       "document": "按授权查看的license列表",
       "members": [
@@ -2917,6 +3745,117 @@
       ],
       "usage": "out"
     },
+    "OutputInfo": {
+      "document": "单文件结果投递",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储桶名称</p>",
+          "example": "ai-annotation-test-copy-1258344699",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储服务地址</p>",
+          "example": "cos-internal.ap-guangzhou.tencentcos.cn",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储区域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出文件路径，如 output/result.json</p>",
+          "example": "annotation-result/1qLIfbvfNo_0003.json",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问凭证，需对该桶有写入权限</p>",
+          "example": "无",
+          "member": "SecretInfo",
+          "name": "Secret",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "OutputStorage": {
+      "document": "批量结果投递",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储桶名称</p>",
+          "example": "ai-annotation-test-copy-1258344699",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储服务地址</p>",
+          "example": "cos-internal.ap-guangzhou.tencentcos.cn",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储区域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问凭证，需对该桶有写权限</p>",
+          "example": "无",
+          "member": "SecretInfo",
+          "name": "Secret",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出目录前缀，不传写入桶根目录</p>",
+          "example": "batch-result/",
+          "member": "string",
+          "name": "Prefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出文件名规则，支持变量 $FileName、$FileType、$TaskId、$YYYY、$mm、$dd、$HH、$MM、$SS，须至少含一个变量，默认 $FileName_$TaskId.json</p>",
+          "example": "$YYYY$mm$dd_$FileName_$TaskId.json",
+          "member": "string",
+          "name": "NameRule",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "PolicyInfo": {
       "document": "权限信息",
       "members": [
@@ -2952,6 +3891,23 @@
         }
       ],
       "usage": "out"
+    },
+    "ProcessParams": {
+      "document": "标注处理参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标注处理模式，预留字段</p>",
+          "example": "*********************",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ProjectInfo": {
       "document": "项目信息",
@@ -3098,6 +4054,117 @@
         }
       ],
       "usage": "out"
+    },
+    "RetryAnnotationTaskRequest": {
+      "document": "RetryAnnotationTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处理项 ID，仅超时（3）或异常（4）状态可重试</p>",
+          "example": "3uen9jt0kd78_1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryAnnotationTaskResponse": {
+      "document": "RetryAnnotationTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "S3SourceInfo": {
+      "document": "单文件 COS 输入源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储桶名称</p>",
+          "example": "ai-annotation-test-input-1258344699",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储服务地址</p>",
+          "example": "cos-internal.ap-guangzhou.tencentcos.cn",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储区域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频文件路径</p>",
+          "example": "batch-test/1qLIfbvfNo_0003.mp4",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问凭证，需对该桶有读取权限</p>",
+          "example": "无",
+          "member": "SecretInfo",
+          "name": "Secret",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否腾讯云 COS：1 是，0 否。使用腾讯云 COS 时必须传 1</p><p>取值范围：[0, 1]</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCos",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "SecretInfo": {
+      "document": "访问凭证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密钥 ID</p>",
+          "example": "************************************",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥 Key</p>",
+          "example": "********************************",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "SessionDeviceDetail": {
       "document": "会话数据详单（按设备区分）",
@@ -3717,6 +4784,82 @@
         }
       ],
       "type": "object"
+    },
+    "Task": {
+      "document": "处理项信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>处理项 ID</p>",
+          "example": "3ueigpf29yac_1",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频文件名</p>",
+          "example": "07edUzd4-8_0152.mp4",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理项状态：1 未处理，2 处理中，3 超时，4 异常，5待确认，6 成功</p><p>枚举值：</p><ul><li>1： 未处理</li><li>2： 处理中</li><li>3： 超时</li><li>4： 异常</li><li>5： 待确认</li><li>6： 成功</li></ul>",
+          "example": "6",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频完整路径（S3源为桶名/文件key；HTTP源为完整URL）</p>",
+          "example": "ai-annotation-test-input-1258344699/batch-test/07edUzd4-8_0152.mp4",
+          "member": "string",
+          "name": "InputPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因，成功为空</p>",
+          "example": "stage2 semantic failed: VLM call timeout after 3 retries",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，Unix 时间戳（秒）</p>",
+          "example": "1788096931",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间，Unix 时间戳（秒），进行中为 0</p>",
+          "example": "1788096987",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VideoList": {
       "document": "原视频流参数列表",

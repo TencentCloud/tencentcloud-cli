@@ -3098,7 +3098,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>\n<li>DeLogo：智能擦除</li>\n<li>Description：大模型摘要</li>\n<li>Dubbing：智能译制</li>\n<li>VideoRemake: 视频去重</li>\n<li>VideoComprehension: 视频（音频）理解</li>\n<li>Cutout：视频抠图</li>\n<li>Reel：智能成片</li>",
+          "document": "<p>任务的类型，可以取的值有：</p><li>Classification：智能分类</li><li>Cover：智能封面</li><li>Tag：智能标签</li><li>FrameTag：智能按帧标签</li><li>Highlight：智能精彩集锦</li><li>DeLogo：智能擦除</li><li>Description：大模型摘要</li><li>Dubbing：智能译制</li><li>VideoRemake: 视频去重</li><li>VideoComprehension: 视频（音频）理解</li><li>Cutout：视频抠图</li><li>Reel：智能成片</li>",
           "example": "Classification",
           "member": "string",
           "name": "Type",
@@ -3108,7 +3108,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskClassificationResult",
           "name": "ClassificationTask",
@@ -3118,7 +3118,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskCoverResult",
           "name": "CoverTask",
@@ -3128,7 +3128,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskTagResult",
           "name": "TagTask",
@@ -3138,7 +3138,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskFrameTagResult",
           "name": "FrameTagTask",
@@ -3148,7 +3148,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskHighlightResult",
           "name": "HighlightTask",
@@ -3158,7 +3158,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskDelLogoResult",
           "name": "DeLogoTask",
@@ -3168,7 +3168,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskSegmentResult",
           "name": "SegmentTask",
@@ -3178,7 +3178,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskHeadTailResult",
           "name": "HeadTailTask",
@@ -3188,7 +3188,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskDescriptionResult",
           "name": "DescriptionTask",
@@ -3198,7 +3198,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskHorizontalToVerticalResult",
           "name": "HorizontalToVerticalTask",
@@ -3208,7 +3208,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析译制任务的查询结果，当任务类型为 Dubbing 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskDubbingResult",
           "name": "DubbingTask",
@@ -3218,7 +3218,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析去重任务的查询结果，当任务类型为 VideoRemake 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskVideoRemakeResult",
           "name": "VideoRemakeTask",
@@ -3228,7 +3228,7 @@
         },
         {
           "disabled": false,
-          "document": "视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskVideoComprehensionResult",
           "name": "VideoComprehensionTask",
@@ -3238,7 +3238,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskCutoutResult",
           "name": "CutoutTask",
@@ -3248,10 +3248,20 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskReelResult",
           "name": "ReelTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能分析通用任务的查询结果，当任务类型为Generic时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskGenericResult",
+          "name": "GenericTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -4189,6 +4199,114 @@
           "document": "<p>智能按帧标签任务输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskFrameTagOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskGenericInput": {
+      "document": "智能分析通用任务输入类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能分析模板 ID。</p>",
+          "example": "37",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展参数。</p>",
+          "example": "{\n  \"task_type\": \"bgmfix\",\n  \"bgmfix\": {}\n}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskGenericOutput": {
+      "document": "智能分析通用结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储位置。</p>",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务结果。</p>",
+          "example": "[{\"key\":\"bgmfix_result\",\"confidence\":1,\"extendInfo\":{\"videoUrl\":\"/bgmfix/b890afa71c3c776159ba44168c4a115b.mp4\"},\"specialInfo\":\"\"}]",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskGenericResult": {
+      "document": "智能分析通用结果类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。</p><p>枚举值：</p><ul><li>PROCESSING： 处理中</li><li>SUCCESS： 成功</li><li>FAIL： 失败</li></ul>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码，0：成功，其他值：失败。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能分析任务输入。</p>",
+          "example": "无",
+          "member": "AiAnalysisTaskGenericInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能分析任务输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskGenericOutput",
           "name": "Output",
           "output_required": true,
           "type": "object",
@@ -9185,6 +9303,67 @@
       ],
       "usage": "both"
     },
+    "AigcVideoReferenceSubjectInfo": {
+      "document": "参考主体信息。\n对于Vidu模型：\nId -> server_id， 通过主体创建接口获取的主体ID。\nname -> 主体ID， 后续通过@主体ID方式使用。\n\n对于Kling模型:\nid -> element_id， 主体ID, 通过主体创建接口获取的主体ID。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参考主体的 ID。</p>",
+          "example": "object",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体名称。</p>",
+          "example": "dog_object",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体音色ID。</p>",
+          "example": "voice_male",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体图片列表。</p>",
+          "example": "[\"https://aigc-test-1326893053.cos.ap-guan***o**m**cl**d.com/test_ef****_*e**_**man.png\"]",
+          "member": "string",
+          "name": "ImageUrls",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体视频列表。</p>",
+          "example": "[\"https://aigc-test-1326893053.cos.ap-guangz**u.****loud.com/test***fe*t**e****uman.mp4\"]",
+          "member": "string",
+          "name": "VideoUrls",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AigcVideoReferenceVideoInfo": {
       "document": "用于AIGC视频生成的参考视频素材。",
       "members": [
@@ -13191,8 +13370,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型名称。生音乐当前支持的模型: GL、MiniMaxMusic。</p>",
-          "example": "Tme",
+          "document": "<p>模型名称。生音乐当前支持的模型: GL、MiniMaxMusic、EL、Mureka。</p>",
+          "example": "MiniMaxMusic",
           "member": "string",
           "name": "ModelName",
           "required": false,
@@ -13200,7 +13379,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。<br>模型GL支持的版本号：3.0-clip、3.0-pro。<br>模型MiniMaxMusic支持的版本号：2.0、2.5、2.6。</p>",
+          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。模型GL支持的版本号：3.0-clip、3.0-pro。模型MiniMaxMusic支持的版本号：2.0、2.5、2.6， 3.0。模型EL支持的版本号: compose_v2、sound_t2s_v2。模型Mureka支持的版本号: song_8、song_9、song_9.5、instrumental_8、instrumental_9、instrumental_9.5。</p>",
           "example": "1.0",
           "member": "string",
           "name": "ModelVersion",
@@ -13218,7 +13397,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。</p>",
+          "document": "<p>生成音乐的描述。(注：最大支持2000字符)。</p>",
           "example": "生成一段音乐",
           "member": "string",
           "name": "Prompt",
@@ -13227,7 +13406,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>参考视频信息。仅部分模型支持。</p>",
+          "document": "<p>参考视频信息。仅部分模型支持。</p><ol><li>Kling的视频生音效。</li><li>EL的视频配背景音乐。</li></ol>",
           "example": "无",
           "member": "AigcAudioReferenceVideoInfo",
           "name": "VideoInfos",
@@ -13236,21 +13415,12 @@
         },
         {
           "disabled": false,
-          "document": "<p>传入参考音频信息。</p><p>比如传入音频生成音乐时需要传入。</p>",
+          "document": "<p>传入参考音频信息。</p><ol><li>MiniMaxMusic的翻唱功能使用。</li></ol><p>比如传入音频生成音乐时需要传入。</p>",
           "example": "无",
           "member": "AigcAudioReferenceAudioInfo",
           "name": "AudioInfos",
           "required": false,
           "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "<p>输出音频格式，默认不填。mp3、wav。</p>",
-          "example": "wav",
-          "member": "string",
-          "name": "OutputAudioFormat",
-          "required": false,
-          "type": "string"
         },
         {
           "disabled": false,
@@ -13272,7 +13442,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例MinimaxMusic模型传入歌词时：<br>{\"lyric\":{\"小马在快乐奔跑，花儿在开放\"}}</p><ol><li>MiniMaxMusic生纯音乐参数使用示例: &quot;AdditionalParameters&quot;:&quot;{\"is_instrumental\":true}&quot;</li></ol>",
+          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例MinimaxMusic模型传入歌词时：<br>{\"lyric\":{\"小马在快乐奔跑，花儿在开放\"}}</p><ol><li>MiniMaxMusic生纯音乐参数使用示例: &quot;AdditionalParameters&quot;:&quot;{\"is_instrumental\":true}&quot;。<br>支持的透传参数有: lyrics，is_instrumental，aigc_watermark，sample_rate，bitrate。</li><li>EL生音乐支持透传的参数有:<br>PromptInfluence，WithTimestamps，CompositionPlan，ForceInstrumental等参数。</li></ol>",
           "example": "{\"sequential_image_generation\":\"auto\"}",
           "member": "string",
           "name": "AdditionalParameters",
@@ -13548,6 +13718,15 @@
           "example": "无",
           "member": "AigcVideoReferenceAudioInfo",
           "name": "AudioInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体信息。</p>",
+          "example": "无",
+          "member": "AigcVideoReferenceSubjectInfo",
+          "name": "SubjectInfos",
           "required": false,
           "type": "list"
         },
@@ -14632,7 +14811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。",
+          "document": "<p>评测的原文件输入信息。目前输入对象的类型有 COS 和 URL。</p>",
           "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
@@ -14641,7 +14820,7 @@
         },
         {
           "disabled": false,
-          "document": "评测任务参数。",
+          "document": "<p>评测任务参数。</p>",
           "example": "无",
           "member": "EvaluationTaskInput",
           "name": "EvaluationTask",
@@ -14650,7 +14829,7 @@
         },
         {
           "disabled": false,
-          "document": "评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。",
+          "document": "<p>评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。目前输出对象存储位置的类型有COS。</p>",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -14659,8 +14838,8 @@
         },
         {
           "disabled": false,
-          "document": "评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。",
-          "example": "无",
+          "document": "<p>评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。</p>",
+          "example": "/movie/201907/",
           "member": "string",
           "name": "OutputDir",
           "required": false,
@@ -14668,7 +14847,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "document": "<p>任务的事件通知信息，不填代表不获取事件通知。</p>",
           "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
@@ -14677,8 +14856,8 @@
         },
         {
           "disabled": false,
-          "document": "任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
-          "example": "无",
+          "document": "<p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>",
+          "example": "0",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -14686,8 +14865,8 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
-          "example": "无",
+          "document": "<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>",
+          "example": "85c94a33-6227-43d5-8179-69b0602f6346",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -14695,8 +14874,8 @@
         },
         {
           "disabled": false,
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "无",
+          "document": "<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>",
+          "example": "userxxxx",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -14710,7 +14889,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID。",
+          "document": "<p>任务 ID。</p>",
           "example": "125xxx65-EvaluationTask-bffb15f07530b57",
           "member": "string",
           "name": "TaskId",
@@ -18641,6 +18820,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>直播状态</p><p>枚举值：</p><ul><li>LIVE： 直播中</li><li>PAUSED： 直播暂停</li><li>ENDED： 直播结束</li></ul>",
+          "example": "LIVE",
+          "member": "string",
+          "name": "LiveStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -21077,7 +21266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输出Id。",
+          "document": "<p>输出Id。</p>",
           "example": "AB342ED131CE",
           "member": "string",
           "name": "OutputId",
@@ -21087,7 +21276,7 @@
         },
         {
           "disabled": false,
-          "document": "输出名称。",
+          "document": "<p>输出名称。</p>",
           "example": "OutputName",
           "member": "string",
           "name": "OutputName",
@@ -21097,7 +21286,7 @@
         },
         {
           "disabled": false,
-          "document": "输出类型。",
+          "document": "<p>输出类型。</p>",
           "example": "Internet",
           "member": "string",
           "name": "OutputType",
@@ -21107,7 +21296,7 @@
         },
         {
           "disabled": false,
-          "document": "输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。",
+          "document": "<p>输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。</p>",
           "example": "Pinpoint",
           "member": "string",
           "name": "OutputKind",
@@ -21117,7 +21306,7 @@
         },
         {
           "disabled": false,
-          "document": "输出描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出描述。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Description",
           "member": "string",
           "name": "Description",
@@ -21127,7 +21316,7 @@
         },
         {
           "disabled": false,
-          "document": "输出协议。",
+          "document": "<p>输出协议。</p>",
           "example": "RTMP",
           "member": "string",
           "name": "Protocol",
@@ -21137,7 +21326,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的出口地址信息列表。",
+          "document": "<p>输出的出口地址信息列表。</p>",
           "example": "无",
           "member": "OutputAddress",
           "name": "OutputAddressList",
@@ -21147,7 +21336,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的地区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出的地区。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shanghai",
           "member": "string",
           "name": "OutputRegion",
@@ -21157,7 +21346,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的SRT配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出的SRT配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputSRTSettings",
           "name": "SRTSettings",
@@ -21167,7 +21356,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的RTP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出的RTP配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRTPSettings",
           "name": "RTPSettings",
@@ -21177,7 +21366,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的RTMP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出的RTMP配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRTMPSettings",
           "name": "RTMPSettings",
@@ -21187,7 +21376,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的RTMP拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出的RTMP拉流配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRTMPPullSettings",
           "name": "RTMPPullSettings",
@@ -21197,7 +21386,7 @@
         },
         {
           "disabled": false,
-          "document": "CIDR白名单列表。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CIDR白名单列表。<br>当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"0.0.0.0\"]",
           "member": "string",
           "name": "AllowIpList",
@@ -21207,7 +21396,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的RTSP拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出的RTSP拉流配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRTSPPullSettings",
           "name": "RTSPPullSettings",
@@ -21217,7 +21406,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的HLS拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出的HLS拉流配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputHLSPullSettings",
           "name": "HLSPullSettings",
@@ -21227,7 +21416,7 @@
         },
         {
           "disabled": false,
-          "document": "最大拉流并发数，最大为4，默认4。",
+          "document": "<p>最大拉流并发数，最大为4，默认4。</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxConcurrent",
@@ -21237,7 +21426,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的安全组 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>绑定的安全组 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"019202e96d9f09dc0f325e7f7a2a\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -21247,7 +21436,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区，output目前最多只支持一个。\t",
+          "document": "<p>可用区，output目前最多只支持一个。</p>",
           "example": "[\"ap-shanghai\"]",
           "member": "string",
           "name": "Zones",
@@ -21257,7 +21446,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的RIST配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出的RIST配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRISTSettings",
           "name": "RISTSettings",
@@ -21267,7 +21456,7 @@
         },
         {
           "disabled": true,
-          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+          "document": "<p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>",
           "example": "无",
           "member": "PidSelector",
           "name": "PidSelector",
@@ -21277,7 +21466,7 @@
         },
         {
           "disabled": false,
-          "document": "输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址",
+          "document": "<p>输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址</p>",
           "example": "无",
           "member": "StreamUrlDetail",
           "name": "StreamUrls",
@@ -21287,12 +21476,22 @@
         },
         {
           "disabled": false,
-          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+          "document": "<p>对于含有多个音/视频轨的流，可以指定需要使用的轨道</p>",
           "example": "无",
           "member": "StreamSelector",
           "name": "StreamSelector",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用或者禁用输出</p><p>枚举值：</p><ul><li>DISABLED： 禁用</li><li>ENABLED： 启用</li></ul>",
+          "example": "DISABLED",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

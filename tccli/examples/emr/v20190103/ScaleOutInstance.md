@@ -1,4 +1,4 @@
-**Example 1: 集群扩容**
+**Example 1: 扩容节点**
 
 
 
@@ -6,28 +6,32 @@ Input:
 
 ```
 tccli emr ScaleOutInstance --cli-unfold-argument  \
-    --InstanceId emr-5n3l5c83 \
     --TimeUnit s \
-    --CoreCount 1 \
+    --TimeSpan 3600 \
+    --InstanceId  \
     --PayMode 0 \
-    --TimeSpan 3600
+    --ClientToken karpenter-15efec48d3bf2fa2 \
+    --TaskCount 1 \
+    --HardwareResourceType HOST \
+    --ZoneId 100002 \
+    --SubnetId subnet-lrcxwbju \
+    --ResourceBaseType ComputeResource \
+    --ComputeResourceId emr-cr-j91kjr07
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BillId": "",
-        "ClientToken": "",
+        "BillId": "20260903326023549811631",
+        "ClientToken": "karpenter-15efec48d3bf2fa2",
         "DealNames": [
-            "20200309357833",
-            "20200309357834",
-            "20200309357835",
-            "20200309357836"
+            "20260903326023549811591"
         ],
         "FlowId": 0,
-        "InstanceId": "emr-5n3l5c83",
-        "RequestId": "f0f11d21-6d0d-4f73-9177-8ae4ec456068"
+        "InstanceId": "emr-4hf4h9np",
+        "TraceId": "1788433513-296027-78000019",
+        "RequestId": "7208d49e-5c16-48fd-aa6e-2b10078bfb43"
     }
 }
 ```

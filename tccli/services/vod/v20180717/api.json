@@ -21,6 +21,13 @@
       "output": "CloneVoiceAsyncResponse",
       "status": "online"
     },
+    "CloneVoiceSync": {
+      "document": "发起音色克隆任务，基于参考音频克隆生成专属音色，生成的音色可供后续语音合成使用。",
+      "input": "CloneVoiceSyncRequest",
+      "name": "同步语音克隆",
+      "output": "CloneVoiceSyncResponse",
+      "status": "online"
+    },
     "CommitUpload": {
       "document": "该接口用于确认媒体文件（和封面文件）上传到腾讯云点播的结果，并存储媒体信息，返回文件的播放地址和文件 ID。",
       "input": "CommitUploadRequest",
@@ -1629,6 +1636,13 @@
       "input": "TextToSpeechAsyncRequest",
       "name": "异步语音合成",
       "output": "TextToSpeechAsyncResponse",
+      "status": "online"
+    },
+    "TextToSpeechSync": {
+      "document": "发起语音合成任务，将文本合成为语音。",
+      "input": "TextToSpeechSyncRequest",
+      "name": "同步语音合成",
+      "output": "TextToSpeechSyncResponse",
       "status": "online"
     },
     "UpdateAigcApiToken": {
@@ -9677,7 +9691,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>目前支持的模型有 Vidu，其他模型暂不支持。</p>",
+          "document": "<p>是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>",
           "example": "Disabled",
           "member": "string",
           "name": "LogoAdd",
@@ -12750,6 +12764,108 @@
         }
       ],
       "usage": "out"
+    },
+    "CloneVoiceSyncRequest": {
+      "document": "CloneVoiceSync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>",
+          "example": "221***",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆音频base64编码。</p>",
+          "example": "UklGRkZAAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAATElTVBoAAA",
+          "member": "string",
+          "name": "AudioData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆音频Url，AudioData为空时有效</p>",
+          "example": "https://laurie-tmp-1300828900.cos.accelerate*******************************************Async-773ca8f1756ed5fd016988dccb91eaa9t.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆文件FileID，AudioData及AudioUrl为空时有效</p>",
+          "example": "966263******778501",
+          "member": "string",
+          "name": "AudioFileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>语言增强，如 \"zh\" \"en\" \"auto\"，默认 \"auto\"</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "LanguageBoost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步音色克隆拓展参数。<code>ExtParam</code> 支持的字段：</p><ul>  <li><code>text</code> (string)：试听合成文本，最大 <code>1000</code> 字符；非空时必须同时传 <code>tts_model</code>，克隆成功后返回试听音频 <code>DemoAudio</code>。</li>  <li><code>model</code> (string)：克隆模型，缺省 <code>minimax-voice-clone</code>。</li>  <li><code>tts_model</code> (string)：合成试听音频用的模型，可选 <code>minimax-speech-2.8-hd</code>、<code>minimax-speech-2.8-turbo</code>、<code>minimax-speech-2.6-hd</code>、<code>minimax-speech-2.6-turbo</code>、<code>minimax-speech-02-hd</code>、<code>minimax-speech-02-turbo</code>；<code>text</code> 非空时必填。</li>  <li><code>text_lang</code> (string)：试听文本语言。</li>  <li><code>voice_profile</code> (object)：音色画像，可选字段：    <ul>      <li><code>name</code> (string)：音色名称。</li>      <li><code>description</code> (string)：音色描述。</li>      <li><code>gender</code> (string)：性别，可选 <code>male</code> / <code>female</code> / <code>unknown</code>。</li>      <li><code>age</code> (string)：年龄段，可选 <code>child</code> / <code>teenager</code> / <code>youth</code> / <code>middle_aged</code> / <code>senior</code> / <code>unknown</code>。</li>      <li><code>languages</code> (string[])：支持语言，如 <code>[\"zh\", \"en\"]</code>。</li>      <li><code>labels</code> (string[])：音色标签，如 <code>[\"磁性\"]</code>。</li>      <li><code>scenes</code> (string[])：适用场景，如 <code>[\"解说\"]</code>。</li>    </ul>  </li></ul>",
+          "example": "{\"text\": \"种子在土里沉默，是为了破土时的惊雷。\", \"tts_model\":\"minimax-speech-2.8-hd\"}",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloneVoiceSyncResponse": {
+      "document": "CloneVoiceSync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>克隆得到的音色</p>",
+          "example": "minimax_9*********d39-40d7",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>试听音频</p>",
+          "example": "https://laurie-tmp-1300828900.cos.acce**************************************c3-41db-aa7a-29931e416b5b-preview.mp3",
+          "member": "string",
+          "name": "DemoAudio",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>拓展信息</p>",
+          "example": "{\"audio_length\":0,\"word_count\":34}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ColorEnhanceInfo": {
       "document": "色彩增强控制参数",
@@ -53835,6 +53951,125 @@
         }
       ],
       "usage": "out"
+    },
+    "TextToSpeechSyncOutputOption": {
+      "document": "同步语音合成输出参数设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合成结果输出类型</p><p>枚举值：</p><ul><li>hex： 音频base64编码</li><li>url： 音频url，有效期24小时</li></ul>",
+          "example": "url",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TextToSpeechSyncRequest": {
+      "document": "TextToSpeechSync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合成文本，语音合成时必填，文本长度不超过2000字节</p>",
+          "example": "种子在土里沉默，是为了破土时的惊雷。",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色Id，指定音色合成时填写，支持系统音色和设计、克隆音色。</p>",
+          "example": "minimax_7*********c6c-495b",
+          "member": "string",
+          "name": "VoiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>",
+          "example": "221***",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>语言增强，如 \"zh\" \"en\" \"auto\"，默认 \"auto\"</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "LanguageBoost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>",
+          "example": "无",
+          "member": "TextToSpeechSyncOutputOption",
+          "name": "Output",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步语音合成拓展参数。<code>ExtParam</code> 支持的字段：</p><ul>  <li><code>model</code> (string)：合成模型，可选 <code>minimax-speech-2.8-hd</code>、<code>minimax-speech-2.8-turbo</code>、<code>minimax-speech-2.6-hd</code>、<code>minimax-speech-2.6-turbo</code>、<code>minimax-speech-02-hd</code>、<code>minimax-speech-02-turbo</code>；默认 <code>minimax-speech-2.8-hd</code>。</li>  <li><code>voice_setting</code> (object)：音色微调，可选字段：    <ul>      <li><code>speed</code> (float)：语速，<code>[0.5, 2.0]</code>，默认 <code>1.0</code>。</li>      <li><code>vol</code> (float)：音量，<code>(0, 10]</code>，默认 <code>1.0</code>。</li>      <li><code>pitch</code> (int)：音调，<code>[-12, 12]</code>，默认 <code>0</code>。</li>      <li><code>emotion</code> (string)：情绪，可选 <code>happy</code> / <code>sad</code> / <code>angry</code> / <code>fearful</code> / <code>disgusted</code> / <code>surprised</code> / <code>calm</code> / <code>fluent</code> / <code>whisper</code>。</li>    </ul>  </li>  <li><code>audio_setting</code> (object)：音频输出参数，可选字段：    <ul>      <li><code>sample_rate</code> (int)：采样率，可选 <code>8000</code> / <code>16000</code> / <code>22050</code> / <code>24000</code> / <code>32000</code> / <code>44100</code>，默认 <code>16000</code>。</li>      <li><code>format</code> (string)：音频格式，可选 <code>mp3</code> / <code>wav</code>，默认 <code>wav</code>。</li>      <li><code>duration</code> (float)：目标时长（秒）。</li>      <li><code>cut_silence</code> (bool)：是否裁剪静音段。</li>    </ul>  </li></ul>",
+          "example": "{     \"model\": \"minimax-speech-2.8-hd\",     \"stream\": false,     \"voice_setting\": {         \"speed\": 1.0,         \"vol\": 1.0,         \"pitch\": 0,         \"emotion\": \"calm\",         \"text_normalization\": true,         \"latex_read\": false     } }",
+          "member": "string",
+          "name": "ExtParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextToSpeechSyncResponse": {
+      "document": "TextToSpeechSync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>合成音频的base64编码，wav格式。</p>",
+          "example": "UklGRnxuAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAATElTVF4EAABJTkZPSUNNVDwEAABBSUdDP********************************************************************************GIzZGFiODAwZjNlYzc4N2Q3MjZhMmQyNDYyIiwiUmVzZXJ2ZWRDb2RlMSI6IntcIlNlY3VyaXR5RGF0Y",
+          "member": "string",
+          "name": "AudioData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合成音频url，有效期24小时</p>",
+          "example": "https://tennyyang-test-1258344699.cos.ap-guangzh***********************************************-08-10/cda673d1-5bfb-4111-8572-1838b91ee267.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息，json字符串</p><p>duration: 结果音频时长，单位秒</p>",
+          "example": "{\"audio_length\":10188,\"audio_sample_rate\":32000,\"audio_size\":164724,\"bitrate\":128000,\"audio_format\":\"mp3\",\"audio_channel\":1,\"word_count\":66,\"invisible_character_ratio\":0,\"usage_characters\":75}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TextWatermarkTemplateInput": {
       "document": "文字水印模板",

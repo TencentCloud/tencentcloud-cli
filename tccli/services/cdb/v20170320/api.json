@@ -3847,7 +3847,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "售卖实例名称。\nZ3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。\nCVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。\nTKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。\nCLOUD_NATIVE_CLUSTER：表示云盘版标准型。\nCLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。\nECONOMICAL：表示经济型。",
+          "document": "<p>售卖实例名称。<br>Z3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。<br>CVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。<br>TKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。<br>CLOUD_NATIVE_CLUSTER：表示云盘版标准型。<br>CLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。<br>CLOUD_NATIVE_CLUSTER_ULTRA：表示云盘版旗舰型。<br>CLOUD_NATIVE_SINGLE_NODE：表示云盘版单节点<br>ECONOMICAL：表示经济型。</p>",
           "example": "Z3",
           "member": "string",
           "name": "TypeName",
@@ -3857,7 +3857,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎版本号",
+          "document": "<p>引擎版本号</p>",
           "example": "[\"5.6\",\"5.7\"]",
           "member": "string",
           "name": "EngineVersion",
@@ -3867,7 +3867,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖规格Id",
+          "document": "<p>售卖规格Id</p>",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ConfigIds",
@@ -17493,7 +17493,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "document": "<p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用<a href=\"https://cloud.tencent.com/document/api/236/15872\">查询实例列表</a> 接口获取，其值为输出参数中字段 InstanceId 的值。此接口不支持设置云盘版实例为只读。</p>",
           "example": "cdb-uns231ns",
           "member": "string",
           "name": "InstanceId",
@@ -17502,7 +17502,7 @@
         },
         {
           "disabled": false,
-          "document": "是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态",
+          "document": "<p>是否设置为只读。其中：1表示设置实例为只读，0表示解除只读状态</p>",
           "example": "0",
           "member": "int64",
           "name": "ReadOnly",

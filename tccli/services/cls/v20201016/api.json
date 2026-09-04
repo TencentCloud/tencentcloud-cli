@@ -3052,7 +3052,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/614/56454\">DescribeTopics</a></p>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicId",
@@ -3061,7 +3061,7 @@
         },
         {
           "disabled": false,
-          "document": "索引重建任务ID",
+          "document": "<p>索引重建任务ID</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/614/127535\">DescribeRebuildIndexTasks</a></p>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TaskId",
@@ -8675,7 +8675,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题 ID",
+          "document": "<p>日志主题 ID</p>",
           "example": "3b2e99eb-9665-4d67-ad52-e24dbd",
           "member": "string",
           "name": "TopicId",
@@ -8684,8 +8684,8 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
-          "example": "RemoteWrite任务",
+          "document": "<p>任务名称</p>",
+          "example": "remotewritetest",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8693,8 +8693,8 @@
         },
         {
           "disabled": false,
-          "document": "目标服务名称",
-          "example": "Prometheus",
+          "document": "<p>目标服务名称</p>",
+          "example": "TencentCloud_Prometheus",
           "member": "string",
           "name": "Target",
           "required": true,
@@ -8702,8 +8702,8 @@
         },
         {
           "disabled": false,
-          "document": "目标地址",
-          "example": "http://prometheus/api/v1/write",
+          "document": "<p>目标地址</p>",
+          "example": "http://10.******:90**/api/v1/prom/write",
           "member": "string",
           "name": "RemoteWriteURL",
           "required": true,
@@ -8711,8 +8711,8 @@
         },
         {
           "disabled": false,
-          "document": "鉴权类型\n0: 无鉴权\n1: basic_auth \n2: token",
-          "example": "0",
+          "document": "<p>鉴权类型<br>0: 无鉴权<br>1: basic_auth<br>2: token</p>",
+          "example": "1",
           "member": "uint64",
           "name": "AuthType",
           "required": true,
@@ -8720,8 +8720,8 @@
         },
         {
           "disabled": false,
-          "document": "网络类型： 1 内网 2外网",
-          "example": "无",
+          "document": "<p>网络类型： 1 内网 2外网</p>",
+          "example": "1",
           "member": "uint64",
           "name": "NetType",
           "required": true,
@@ -8729,8 +8729,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络id",
-          "example": "vpc-xxxx",
+          "document": "<p>私有网络id</p>",
+          "example": "vpc-****",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -8738,7 +8738,7 @@
         },
         {
           "disabled": false,
-          "document": "鉴权信息",
+          "document": "<p>鉴权信息</p>",
           "example": "无",
           "member": "RemoteWriteAuthInfo",
           "name": "AuthInfo",
@@ -8747,10 +8747,28 @@
         },
         {
           "disabled": false,
-          "document": "后端服务类型\n0 CVM\n1025 CLB",
-          "example": "无",
+          "document": "<p>后端服务类型<br>0 CVM<br>1025 CLB</p>",
+          "example": "1025",
           "member": "int64",
           "name": "VirtualGatewayType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云时序数据库实例ID</p>",
+          "example": "prom-hau86pmm",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
           "required": false,
           "type": "int"
         }
@@ -8762,7 +8780,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "remoteWrite任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>remoteWrite任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3b2e99eb-9665-4d67-ad52-e24dbd",
           "member": "string",
           "name": "TaskId",
@@ -14556,7 +14574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "document": "<p>要查询的日志主题Id。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a> 获取日志主题Id。</li></ul>",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
@@ -14565,7 +14583,7 @@
         },
         {
           "disabled": false,
-          "document": "日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。",
+          "document": "<p>日志时间,  即 <a href=\"https://cloud.tencent.com/document/product/614/56447\">检索分析日志</a> 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。</p>",
           "example": "2021-04-25 14:25:00.000",
           "member": "string",
           "name": "BTime",
@@ -14574,7 +14592,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。",
+          "document": "<p>日志包序号，即 <a href=\"https://cloud.tencent.com/document/product/614/56447\">检索分析日志</a> 接口返回信息中Results结构体中的PkgId。</p>",
           "example": "528C1318606EFEB8-1A7",
           "member": "string",
           "name": "PkgId",
@@ -14583,7 +14601,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。",
+          "document": "<p>日志包内一条日志的序号，即 <a href=\"https://cloud.tencent.com/document/product/614/56447\">检索分析日志</a> 接口返回信息中Results结构中的PkgLogId。</p>",
           "example": "65536",
           "member": "int64",
           "name": "PkgLogId",
@@ -14592,7 +14610,7 @@
         },
         {
           "disabled": false,
-          "document": "前${PrevLogs}条日志，默认值10。",
+          "document": "<p>前${PrevLogs}条日志，默认值10，最大100。</p>",
           "example": "10",
           "member": "int64",
           "name": "PrevLogs",
@@ -14601,7 +14619,7 @@
         },
         {
           "disabled": false,
-          "document": "后${NextLogs}条日志，默认值10。",
+          "document": "<p>后${NextLogs}条日志，默认值10，最大100。</p>",
           "example": "10",
           "member": "int64",
           "name": "NextLogs",
@@ -14610,7 +14628,7 @@
         },
         {
           "disabled": false,
-          "document": "检索语句，对日志上下文进行过滤，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a>构成，不支持SQL语句",
+          "document": "<p>检索语句，对日志上下文进行过滤，最大长度为12KB<br>语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a>构成，不支持SQL语句</p>",
           "example": "http_status:200",
           "member": "string",
           "name": "Query",
@@ -14619,7 +14637,7 @@
         },
         {
           "disabled": false,
-          "document": "上下文检索的开始时间，单位：毫秒级时间戳\n注意：\n- From为空时，表示上下文检索的开始时间不做限制\n- From和To非空时，From < To\n- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域",
+          "document": "<p>上下文检索的开始时间，单位：毫秒级时间戳<br>注意：</p><ul><li>From为空时，表示上下文检索的开始时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>",
           "example": "1716532075000",
           "member": "uint64",
           "name": "From",
@@ -14628,7 +14646,7 @@
         },
         {
           "disabled": false,
-          "document": "上下文检索的结束时间，单位：毫秒级时间戳。\n注意：\n- To为空时，表示上下文检索的结束时间不做限制\n- From和To非空时，From < To\n- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域",
+          "document": "<p>上下文检索的结束时间，单位：毫秒级时间戳。<br>注意：</p><ul><li>To为空时，表示上下文检索的结束时间不做限制</li><li>From和To非空时，From &lt; To</li></ul>",
           "example": "1716532085000",
           "member": "uint64",
           "name": "To",
@@ -14643,7 +14661,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志上下文信息集合",
+          "document": "<p>日志上下文信息集合</p>",
           "example": "无",
           "member": "LogContextInfo",
           "name": "LogContextInfos",
@@ -14653,7 +14671,7 @@
         },
         {
           "disabled": false,
-          "document": "上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。",
+          "document": "<p>上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。</p>",
           "example": "true",
           "member": "bool",
           "name": "PrevOver",
@@ -14663,7 +14681,7 @@
         },
         {
           "disabled": false,
-          "document": "下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。",
+          "document": "<p>下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。</p>",
           "example": "true",
           "member": "bool",
           "name": "NextOver",
@@ -23949,7 +23967,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "3b2e99eb-9665-4d67-ad52-e24dbd",
           "member": "string",
           "name": "TaskId",
@@ -23958,7 +23976,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id",
+          "document": "<p>日志主题id</p>",
           "example": "3b2e99eb-9665-4d67-ad52-e24dbd",
           "member": "string",
           "name": "TopicId",
@@ -23967,8 +23985,8 @@
         },
         {
           "disabled": false,
-          "document": "任务状态\n0 关闭 1 开启",
-          "example": "无",
+          "document": "<p>任务状态<br>0 关闭 1 开启</p>",
+          "example": "1",
           "member": "uint64",
           "name": "Enable",
           "required": false,
@@ -23976,7 +23994,7 @@
         },
         {
           "disabled": false,
-          "document": "RemoteWrite任务名称",
+          "document": "<p>RemoteWrite任务名称</p>",
           "example": "RemoteWrite任务",
           "member": "string",
           "name": "Name",
@@ -23985,8 +24003,8 @@
         },
         {
           "disabled": false,
-          "document": "1 内网 2外网",
-          "example": "无",
+          "document": "<p>1 内网 2外网</p>",
+          "example": "1",
           "member": "uint64",
           "name": "NetType",
           "required": false,
@@ -23994,7 +24012,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络id",
+          "document": "<p>私有网络id</p>",
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
@@ -24003,7 +24021,7 @@
         },
         {
           "disabled": false,
-          "document": "目标服务名称",
+          "document": "<p>目标服务名称</p>",
           "example": "Premotheus",
           "member": "string",
           "name": "Target",
@@ -24012,8 +24030,8 @@
         },
         {
           "disabled": false,
-          "document": "目标地址",
-          "example": "无",
+          "document": "<p>目标地址</p>",
+          "example": "http://10.0.0.6:9090/api/v1/prom/write",
           "member": "string",
           "name": "RemoteWriteURL",
           "required": false,
@@ -24021,8 +24039,8 @@
         },
         {
           "disabled": false,
-          "document": "0: 无鉴权 1: basic_auth 2: token\t",
-          "example": "无",
+          "document": "<p>0: 无鉴权 1: basic_auth 2: token</p>",
+          "example": "1",
           "member": "uint64",
           "name": "AuthType",
           "required": false,
@@ -24030,7 +24048,7 @@
         },
         {
           "disabled": false,
-          "document": "鉴权信息",
+          "document": "<p>鉴权信息</p>",
           "example": "无",
           "member": "RemoteWriteAuthInfo",
           "name": "AuthInfo",
@@ -24039,10 +24057,28 @@
         },
         {
           "disabled": false,
-          "document": "后端服务类型\n-1 没有\n0 CVM\n1025 CLB",
-          "example": "无",
+          "document": "<p>后端服务类型<br>-1 没有<br>0 CVM<br>1025 CLB</p>",
+          "example": "1025",
           "member": "int64",
           "name": "VirtualGatewayType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云时序数据库实例ID</p>",
+          "example": "vpc-p3m24spx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
           "required": false,
           "type": "int"
         }
@@ -27070,8 +27106,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxxxxxx",
+          "document": "<p>任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f700f7c6-a684-4c8c-92f2-2cbce4986547",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -27080,8 +27116,8 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx-xxx-xxx-xxx",
+          "document": "<p>日志主题ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "44183e5a-52c6-4c45-86c6-c183f8c9f241",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -27090,8 +27126,8 @@
         },
         {
           "disabled": false,
-          "document": "Remote Write任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx任务导入",
+          "document": "<p>Remote Write任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agentruntime",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -27100,8 +27136,8 @@
         },
         {
           "disabled": false,
-          "document": "网络类型\n1: 内网\n2:外网\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "<p>网络类型<br>1: 内网<br>2:外网</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "NetType",
           "output_required": true,
@@ -27110,8 +27146,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>私有网络id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-p3m24spx",
           "member": "string",
           "name": "VpcId",
           "output_required": false,
@@ -27120,7 +27156,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行状态\n1: 运行中\n2:暂停\n3: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务运行状态<br>1: 运行中<br>2:暂停<br>3: 失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -27130,7 +27166,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "CreateTime",
@@ -27140,7 +27176,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "UpdateTime",
@@ -27150,8 +27186,8 @@
         },
         {
           "disabled": false,
-          "document": "目标服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>目标服务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TencentCloud_Prometheus",
           "member": "string",
           "name": "Target",
           "output_required": true,
@@ -27160,8 +27196,8 @@
         },
         {
           "disabled": false,
-          "document": "目标地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>目标地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://********3:90**/api/v1/prom/write",
           "member": "string",
           "name": "RemoteWriteURL",
           "output_required": true,
@@ -27170,8 +27206,8 @@
         },
         {
           "disabled": false,
-          "document": "鉴权类型\n0: 无鉴权 1: basic_auth 2: token\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>鉴权类型<br>0: 无鉴权 1: basic_auth 2: token</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "AuthType",
           "output_required": false,
@@ -27180,7 +27216,7 @@
         },
         {
           "disabled": false,
-          "document": "鉴权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>鉴权信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RemoteWriteAuthInfo",
           "name": "AuthInfo",
@@ -27190,8 +27226,8 @@
         },
         {
           "disabled": false,
-          "document": "日志集\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>日志集</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "06d46412-e346-4c3f-ad3d-5d11b7250fd3",
           "member": "string",
           "name": "LogsetId",
           "output_required": true,
@@ -27200,8 +27236,8 @@
         },
         {
           "disabled": false,
-          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>任务状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Enable",
           "output_required": false,
@@ -27210,10 +27246,30 @@
         },
         {
           "disabled": false,
-          "document": "后端服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>后端服务类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1025",
           "member": "int64",
           "name": "VirtualGatewayType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>云时序数据库实例ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prom-2sqed246",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启投递服务日志。1：关闭，2：开启。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

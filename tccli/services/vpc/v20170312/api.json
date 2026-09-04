@@ -3413,6 +3413,7 @@
           "example": "[\"rule6-f3se1mki\"]",
           "member": "string",
           "name": "Ip6RuleSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9679,6 +9680,7 @@
           "example": "[\"ip6-90pt7p9q\"]",
           "member": "string",
           "name": "Ip6TranslatorSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

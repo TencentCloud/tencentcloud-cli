@@ -2652,7 +2652,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。</p>",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -2661,7 +2661,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
+          "document": "<p>服务产品类型，支持值包括 &quot;redis&quot; - 云数据库 Redis。</p>",
           "example": "redis",
           "member": "string",
           "name": "Product",
@@ -2670,7 +2670,7 @@
         },
         {
           "disabled": false,
-          "document": "分片节点序号列表。当列表为空时，选择所有分片节点。",
+          "document": "<p>分片节点序号列表。当列表为空时，选择所有分片节点。</p>",
           "example": "[1,2]",
           "member": "int64",
           "name": "ShardIds",
@@ -2679,12 +2679,21 @@
         },
         {
           "disabled": false,
-          "document": "Top Key前缀的分隔符列表。\n目前仅支持以下分割符：[\",\", \";\", \":\", \"_\", \"-\", \"+\", \"@\", \"=\", \"|\", \"#\", \".\"]，当列表为空时，默认选择所有分隔符。",
+          "document": "<p>Top Key前缀的分隔符列表。<br>目前仅支持以下分割符：[&quot;,&quot;, &quot;;&quot;, &quot;:&quot;, &quot;_&quot;, &quot;-&quot;, &quot;+&quot;, &quot;@&quot;, &quot;=&quot;, &quot;|&quot;, &quot;#&quot;, &quot;.&quot;]，当列表为空时，默认选择所有分隔符。</p>",
           "example": "[ \"+\", \"@\", \"#\", \".\"]",
           "member": "string",
           "name": "KeyDelimiterList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>历史备份文件ID</p>",
+          "example": "107958346-5452253-1011166842",
+          "member": "string",
+          "name": "BackupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2694,7 +2703,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "8001",
           "member": "int64",
           "name": "AsyncRequestId",
