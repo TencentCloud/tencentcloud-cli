@@ -3938,7 +3938,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发票代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>发票代码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13578",
           "member": "string",
           "name": "Code",
@@ -3948,7 +3948,7 @@
         },
         {
           "disabled": false,
-          "document": "发票号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>发票号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13131313131313131313",
           "member": "string",
           "name": "Number",
@@ -3958,7 +3958,7 @@
         },
         {
           "disabled": false,
-          "document": "开票日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>开票日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-10-12",
           "member": "string",
           "name": "Date",
@@ -3968,7 +3968,7 @@
         },
         {
           "disabled": false,
-          "document": "金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>金额</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "string",
           "name": "Amount",
@@ -3978,7 +3978,7 @@
         },
         {
           "disabled": false,
-          "document": "校验码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>校验码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1324",
           "member": "string",
           "name": "CheckCode",
@@ -3988,7 +3988,7 @@
         },
         {
           "disabled": false,
-          "document": "价税合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>价税合计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "string",
           "name": "Total",
@@ -3998,7 +3998,7 @@
         },
         {
           "disabled": false,
-          "document": "抵扣标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>抵扣标志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "DeductionMark",
@@ -4008,7 +4008,7 @@
         },
         {
           "disabled": false,
-          "document": "发票状态代码，0正常 1 未更新  2作废 3已红冲\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>发票状态代码，0正常 1 未更新  2作废 3已红冲</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "StateCode",
@@ -4018,7 +4018,7 @@
         },
         {
           "disabled": false,
-          "document": "购方识别号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>购方识别号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "913306043123412345",
           "member": "string",
           "name": "BuyerTaxCode",
@@ -4028,7 +4028,7 @@
         },
         {
           "disabled": false,
-          "document": "购方名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>购方名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx 公司",
           "member": "string",
           "name": "BuyerName",
@@ -4038,7 +4038,7 @@
         },
         {
           "disabled": false,
-          "document": "合计税额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>合计税额</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "string",
           "name": "Tax",
@@ -4048,7 +4048,7 @@
         },
         {
           "disabled": false,
-          "document": "国内国际标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>国内国际标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "国内",
           "member": "string",
           "name": "DomesticInternationalMark",
@@ -4058,7 +4058,7 @@
         },
         {
           "disabled": false,
-          "document": "旅客姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>旅客姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "张三",
           "member": "string",
           "name": "PassengerName",
@@ -4068,7 +4068,7 @@
         },
         {
           "disabled": false,
-          "document": "有效身份证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>有效身份证件号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "44500000000000000",
           "member": "string",
           "name": "PassengerNo",
@@ -4078,7 +4078,7 @@
         },
         {
           "disabled": false,
-          "document": "电子客票号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>电子客票号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1266578",
           "member": "string",
           "name": "ElectronicNumber",
@@ -4088,7 +4088,7 @@
         },
         {
           "disabled": false,
-          "document": "全电发票（航空运输电子客票行程单）详细信息\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>全电发票（航空运输电子客票行程单）详细信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ElectronicAirTransportDetail",
           "name": "ElectronicAirTransportDetails",
@@ -4098,7 +4098,7 @@
         },
         {
           "disabled": false,
-          "document": "票价",
+          "document": "<p>票价</p>",
           "example": "1100",
           "member": "string",
           "name": "Fare",
@@ -4108,7 +4108,7 @@
         },
         {
           "disabled": false,
-          "document": "燃油附加费",
+          "document": "<p>燃油附加费</p>",
           "example": "100",
           "member": "string",
           "name": "FuelSurcharge",
@@ -4118,7 +4118,7 @@
         },
         {
           "disabled": false,
-          "document": "增值税税额",
+          "document": "<p>增值税税额</p>",
           "example": "50",
           "member": "string",
           "name": "TaxAmount",
@@ -4128,7 +4128,7 @@
         },
         {
           "disabled": false,
-          "document": "民航发展基金",
+          "document": "<p>民航发展基金</p>",
           "example": "50",
           "member": "string",
           "name": "DevelopmentFund",
@@ -4144,8 +4144,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "航段序号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>航段序号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "FlightSegment",
           "output_required": false,
@@ -4154,8 +4154,8 @@
         },
         {
           "disabled": false,
-          "document": "始发站\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>始发站</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
           "member": "string",
           "name": "StationGetOn",
           "output_required": false,
@@ -4164,8 +4164,8 @@
         },
         {
           "disabled": false,
-          "document": "目的站\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>目的站</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "深圳",
           "member": "string",
           "name": "StationGetOff",
           "output_required": false,
@@ -4174,8 +4174,8 @@
         },
         {
           "disabled": false,
-          "document": "承运人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>承运人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
           "member": "string",
           "name": "Carrier",
           "output_required": false,
@@ -4184,8 +4184,8 @@
         },
         {
           "disabled": false,
-          "document": "航班号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>航班号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C1**",
           "member": "string",
           "name": "FlightNumber",
           "output_required": false,
@@ -4194,8 +4194,8 @@
         },
         {
           "disabled": false,
-          "document": "座位等级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>座位等级</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "普通舱",
           "member": "string",
           "name": "SeatLevel",
           "output_required": false,
@@ -4204,8 +4204,8 @@
         },
         {
           "disabled": false,
-          "document": "承运日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>承运日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-06-28",
           "member": "string",
           "name": "FlightDate",
           "output_required": false,
@@ -4214,8 +4214,8 @@
         },
         {
           "disabled": false,
-          "document": "起飞时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>起飞时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16:00",
           "member": "string",
           "name": "DepartureTime",
           "output_required": false,
@@ -4224,8 +4224,8 @@
         },
         {
           "disabled": false,
-          "document": "客票级别/客票类别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>客票级别/客票类别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "FareBasis",
           "output_required": false,
@@ -4594,8 +4594,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "购方名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>购方名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
           "member": "string",
           "name": "BuyerName",
           "output_required": false,
@@ -4604,8 +4604,8 @@
         },
         {
           "disabled": false,
-          "document": "购方识别号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>购方识别号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4********5",
           "member": "string",
           "name": "BuyerTaxCode",
           "output_required": false,
@@ -4614,8 +4614,8 @@
         },
         {
           "disabled": false,
-          "document": "发票号码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>发票号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4********5",
           "member": "string",
           "name": "Number",
           "output_required": false,
@@ -4624,8 +4624,8 @@
         },
         {
           "disabled": false,
-          "document": "开票日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>开票日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-06-28",
           "member": "string",
           "name": "Date",
           "output_required": false,
@@ -4634,8 +4634,8 @@
         },
         {
           "disabled": false,
-          "document": "价税合计（中文大写）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>价税合计（中文大写）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "string",
           "name": "TotalCN",
           "output_required": false,
@@ -4644,8 +4644,8 @@
         },
         {
           "disabled": false,
-          "document": "税额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>税额</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "Tax",
           "output_required": false,
@@ -4654,8 +4654,8 @@
         },
         {
           "disabled": false,
-          "document": "业务类型，0：退票，1:售票\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>业务类型，0：退票，1:售票</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "ServiceType",
           "output_required": false,
@@ -4664,8 +4664,8 @@
         },
         {
           "disabled": false,
-          "document": "出发时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>出发时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16:00",
           "member": "string",
           "name": "TimeGetOn",
           "output_required": false,
@@ -4674,8 +4674,8 @@
         },
         {
           "disabled": false,
-          "document": "车次\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>车次</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5*****6",
           "member": "string",
           "name": "TrainNumber",
           "output_required": false,
@@ -4684,8 +4684,8 @@
         },
         {
           "disabled": false,
-          "document": "发票代码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>发票代码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7****3",
           "member": "string",
           "name": "Code",
           "output_required": false,
@@ -4694,8 +4694,8 @@
         },
         {
           "disabled": false,
-          "document": "席别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>席别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "SeatType",
           "output_required": false,
@@ -4704,8 +4704,8 @@
         },
         {
           "disabled": false,
-          "document": "乘车日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>乘车日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16:00",
           "member": "string",
           "name": "DateGetOn",
           "output_required": false,
@@ -4714,8 +4714,8 @@
         },
         {
           "disabled": false,
-          "document": "车厢\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>车厢</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "09",
           "member": "string",
           "name": "TrainCabin",
           "output_required": false,
@@ -4724,8 +4724,8 @@
         },
         {
           "disabled": false,
-          "document": "出发站\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>出发站</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
           "member": "string",
           "name": "StationGetOn",
           "output_required": false,
@@ -4734,8 +4734,8 @@
         },
         {
           "disabled": false,
-          "document": "电子客票号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>电子客票号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5******3",
           "member": "string",
           "name": "ElectronicNumber",
           "output_required": false,
@@ -4744,8 +4744,8 @@
         },
         {
           "disabled": false,
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>姓名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
           "member": "string",
           "name": "PassengerName",
           "output_required": false,
@@ -4754,8 +4754,8 @@
         },
         {
           "disabled": false,
-          "document": "证件号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>证件号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "44***************3",
           "member": "string",
           "name": "PassengerNo",
           "output_required": false,
@@ -4764,8 +4764,8 @@
         },
         {
           "disabled": false,
-          "document": "金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>金额</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "string",
           "name": "Amount",
           "output_required": false,
@@ -4774,8 +4774,8 @@
         },
         {
           "disabled": false,
-          "document": "到达站\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>到达站</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "深圳",
           "member": "string",
           "name": "StationGetOff",
           "output_required": false,
@@ -4784,8 +4784,8 @@
         },
         {
           "disabled": false,
-          "document": "税率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>税率</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
           "member": "string",
           "name": "TaxRate",
           "output_required": false,
@@ -4794,8 +4794,8 @@
         },
         {
           "disabled": false,
-          "document": "席位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>席位</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Seat",
           "output_required": false,
@@ -4804,8 +4804,8 @@
         },
         {
           "disabled": false,
-          "document": "价税合计\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>价税合计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "string",
           "name": "Total",
           "output_required": false,
@@ -4814,8 +4814,8 @@
         },
         {
           "disabled": false,
-          "document": "校验码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>校验码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5**2",
           "member": "string",
           "name": "CheckCode",
           "output_required": false,
@@ -4824,13 +4824,63 @@
         },
         {
           "disabled": false,
-          "document": "发票状态代码，0正常 1 未更新  2作废 3已红冲\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>发票状态代码，0正常 1 未更新  2作废 3已红冲</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "string",
           "name": "StateCode",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发票类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "08",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>空调特征</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空调",
+          "member": "string",
+          "name": "AirConditionerFeature",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>票种，不替代 VatInvoice.Type。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "全价票",
+          "member": "string",
+          "name": "TicketType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始税率</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9%",
+          "member": "string",
+          "name": "OriginalTaxRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>全电发票号码，映射源字段 qdfphm。</p>",
+          "example": "24312000000012345678",
+          "member": "string",
+          "name": "FullElectronicNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11687,51 +11737,71 @@
       "members": [
         {
           "disabled": false,
-          "document": "通行费车牌号",
+          "document": "<p>通行费车牌号；数电通行费源字段 cph 写入该字段。</p>",
           "example": "京ADF3921",
           "member": "string",
           "name": "NumberPlate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通行费类型",
+          "document": "<p>通行费类型；数电通行费源字段 cllx 写入该字</p>",
           "example": "客车",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通行日期起",
+          "document": "<p>通行日期起</p>",
           "example": "20180114",
           "member": "string",
           "name": "PassDateBegin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通行日期止",
+          "document": "<p>通行日期止</p>",
           "example": "20180114",
           "member": "string",
           "name": "PassDateEnd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "税收分类编码",
+          "document": "<p>税收分类编码</p>",
           "example": "3040502020301001234",
           "member": "string",
           "name": "TaxClassifyCode",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通行费车牌号</p>",
+          "example": "粤A12345",
+          "member": "string",
+          "name": "CarType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通行费车辆类型</p>",
+          "example": "客车",
+          "member": "string",
+          "name": "PlateNumber",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14887,6 +14957,56 @@
         }
       ],
       "usage": "out"
+    },
+    "RedLetterInvoiceItem": {
+      "document": "红字发票信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>红字发票代码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0420021002",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>红字发票号码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22447000000000030827",
+          "member": "string",
+          "name": "Number",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>红字开票日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-03-28 00:00:00",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>红字发票状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ReflectDetailInfo": {
       "document": "反光点覆盖区域详情结果",
@@ -19847,241 +19967,351 @@
       "members": [
         {
           "disabled": false,
-          "document": "所属税局",
+          "document": "<p>所属税局</p>",
           "example": "吉林",
           "member": "string",
           "name": "TaxBureau",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "买方单位/个人",
+          "document": "<p>买方单位/个人</p>",
           "example": "刘超",
           "member": "string",
           "name": "Buyer",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "买方单位代码/身份证号码",
+          "document": "<p>买方单位代码/身份证号码</p>",
           "example": "230124****04280718",
           "member": "string",
           "name": "BuyerNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "买方单位/个人地址",
+          "document": "<p>买方单位/个人地址</p>",
           "example": "长春市二道区吉林大路高格蓝湾小区705室",
           "member": "string",
           "name": "BuyerAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "买方单位电话",
+          "document": "<p>买方单位电话</p>",
           "example": "158****2158",
           "member": "string",
           "name": "BuyerTel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "卖方单位/个人",
+          "document": "<p>卖方单位/个人</p>",
           "example": "郝小琼",
           "member": "string",
           "name": "Seller",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "卖方单位代码/身份证号码",
+          "document": "<p>卖方单位代码/身份证号码</p>",
           "example": "411081****11256858",
           "member": "string",
           "name": "SellerNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "卖方单位/个人地址",
+          "document": "<p>卖方单位/个人地址</p>",
           "example": "长春市绿园区上海绿地小区408室",
           "member": "string",
           "name": "SellerAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "卖方单位电话",
+          "document": "<p>卖方单位电话</p>",
           "example": "137****1002",
           "member": "string",
           "name": "SellerTel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车牌照号",
+          "document": "<p>车牌照号</p>",
           "example": "吉A****P",
           "member": "string",
           "name": "VehicleLicenseNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "登记证号",
+          "document": "<p>登记证号</p>",
           "example": "2200****5945",
           "member": "string",
           "name": "RegisterNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车架号/车辆识别代码",
+          "document": "<p>车架号/车辆识别代码</p>",
           "example": "LDCC53****1073689",
           "member": "string",
           "name": "VehicleIdentifyNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转入地车辆管理所名称",
+          "document": "<p>转入地车辆管理所名称</p>",
           "example": "长春市车辆管理所",
           "member": "string",
           "name": "ManagementOffice",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "车价合计",
+          "document": "<p>车价合计</p>",
           "example": "46000.00",
           "member": "string",
           "name": "VehicleTotalPrice",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经营、拍卖单位",
-          "example": "无",
+          "document": "<p>经营、拍卖单位</p>",
+          "example": "**公司",
           "member": "string",
           "name": "Auctioneer",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经营、拍卖单位地址",
-          "example": "无",
+          "document": "<p>经营、拍卖单位地址</p>",
+          "example": "**大楼",
           "member": "string",
           "name": "AuctioneerAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经营、拍卖单位纳税人识别号",
-          "example": "无",
+          "document": "<p>经营、拍卖单位纳税人识别号</p>",
+          "example": "2*****3",
           "member": "string",
           "name": "AuctioneerTaxpayerNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经营、拍卖单位开户银行、账号",
-          "example": "无",
+          "document": "<p>经营、拍卖单位开户银行、账号</p>",
+          "example": "4**************34",
           "member": "string",
           "name": "AuctioneerBankAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "经营、拍卖单位电话",
-          "example": "无",
+          "document": "<p>经营、拍卖单位电话</p>",
+          "example": "13******421",
           "member": "string",
           "name": "AuctioneerTel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "二手车市场",
+          "document": "<p>二手车市场</p>",
           "example": "长春市****二手车交易市场有限公司",
           "member": "string",
           "name": "Market",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "二手车市场纳税人识别号",
+          "document": "<p>二手车市场纳税人识别号</p>",
           "example": "91220101****Y58W6Y",
           "member": "string",
           "name": "MarketTaxpayerNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "二手车市场地址",
+          "document": "<p>二手车市场地址</p>",
           "example": "长春市二道区福安街以西、吉林大路104号",
           "member": "string",
           "name": "MarketAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "二手车市场开户银行账号",
+          "document": "<p>二手车市场开户银行账号</p>",
           "example": "中国工商银行股份有限公司长春二道支行42002217****0441272",
           "member": "string",
           "name": "MarketBankAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "二手车市场电话",
+          "document": "<p>二手车市场电话</p>",
           "example": "158****2158",
           "member": "string",
           "name": "MarketTel",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>车价合计中文大写</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "什元",
+          "member": "string",
+          "name": "VehicleTotalPriceCN",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发票风险等级</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "InvoiceRiskLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>车辆类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "小型轿车",
+          "member": "string",
+          "name": "CarType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>厂牌型号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "别克SGM7151LBA",
+          "member": "string",
+          "name": "PlateModel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>作废人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "王五",
+          "member": "string",
+          "name": "AbandonerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>作废日期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-04-10",
+          "member": "string",
+          "name": "AbandonDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开票方类型：1 经营单位，2 拍卖单位，03 二手车市场。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "IssuerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开票方纳税人识别号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "234***345345",
+          "member": "string",
+          "name": "IssuerTaxCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自行编码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "234***345345",
+          "member": "string",
+          "name": "CustomCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>商品编码</p>",
+          "example": "234***345345",
+          "member": "string",
+          "name": "TaxClassifyCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>零税率标识：空：非零税率，0：出口零税，1：免税，2：不征税，3 普通零税率</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ZeroTaxRateMark",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -20611,7 +20841,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发票代码",
+          "document": "<p>发票代码</p>",
           "example": "1300000000",
           "member": "string",
           "name": "Code",
@@ -20621,7 +20851,7 @@
         },
         {
           "disabled": false,
-          "document": "发票号码",
+          "document": "<p>发票号码</p>",
           "example": "04000000",
           "member": "string",
           "name": "Number",
@@ -20631,7 +20861,7 @@
         },
         {
           "disabled": false,
-          "document": "开票日期",
+          "document": "<p>开票日期</p>",
           "example": "20191211",
           "member": "string",
           "name": "Date",
@@ -20641,7 +20871,7 @@
         },
         {
           "disabled": false,
-          "document": "购方抬头\n通用机打发票类型时不返回",
+          "document": "<p>购方抬头<br>通用机打发票类型时不返回</p>",
           "example": "城区",
           "member": "string",
           "name": "BuyerName",
@@ -20651,7 +20881,7 @@
         },
         {
           "disabled": false,
-          "document": "购方税号\n通用机打发票类型时不返回",
+          "document": "<p>购方税号<br>通用机打发票类型时不返回</p>",
           "example": "92XXXXMAXXXXXX",
           "member": "string",
           "name": "BuyerTaxCode",
@@ -20661,7 +20891,7 @@
         },
         {
           "disabled": false,
-          "document": "购方地址电话\n通用机打发票类型做不返回",
+          "document": "<p>购方地址电话<br>通用机打发票类型做不返回</p>",
           "example": "栾城区北留营村15012345678",
           "member": "string",
           "name": "BuyerAddressPhone",
@@ -20671,7 +20901,7 @@
         },
         {
           "disabled": false,
-          "document": "购方银行账号\n通用机打发票类型时不返回",
+          "document": "<p>购方银行账号<br>通用机打发票类型时不返回</p>",
           "example": "中国农业银行股份有限公司",
           "member": "string",
           "name": "BuyerBankAccount",
@@ -20681,7 +20911,7 @@
         },
         {
           "disabled": false,
-          "document": "销方名称",
+          "document": "<p>销方名称</p>",
           "example": "石家庄市XXX石油经销有限公司",
           "member": "string",
           "name": "SellerName",
@@ -20691,7 +20921,7 @@
         },
         {
           "disabled": false,
-          "document": "销方税号",
+          "document": "<p>销方税号</p>",
           "example": "911301047981234567",
           "member": "string",
           "name": "SellerTaxCode",
@@ -20701,7 +20931,7 @@
         },
         {
           "disabled": false,
-          "document": "销方地址电话",
+          "document": "<p>销方地址电话</p>",
           "example": "石家庄市桥西区师范街xx号 0311-12345678",
           "member": "string",
           "name": "SellerAddressPhone",
@@ -20711,7 +20941,7 @@
         },
         {
           "disabled": false,
-          "document": "销方银行账号",
+          "document": "<p>销方银行账号</p>",
           "example": "911301047981234567",
           "member": "string",
           "name": "SellerBankAccount",
@@ -20721,8 +20951,8 @@
         },
         {
           "disabled": false,
-          "document": "备注",
-          "example": "空",
+          "document": "<p>备注</p>",
+          "example": "办公用品",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -20731,7 +20961,7 @@
         },
         {
           "disabled": false,
-          "document": "机器编码",
+          "document": "<p>机器编码</p>",
           "example": "661510100000",
           "member": "string",
           "name": "MachineNo",
@@ -20741,7 +20971,7 @@
         },
         {
           "disabled": false,
-          "document": "票种类型\n01：增值税专用发票，\n02：货运运输业增值税专用发票，\n03：机动车销售统一发票，\n04：增值税普通发票，\n08：增值税电子专用发票（含全电，全电仅新版接口支持），\n09：全电发票，\n0901：全电纸质发票(增值税专用发票)，\n0903：全电纸质(机动车销售统一发票)，\n0904：全电纸质发票(增值税普通发票)，\n0910：电子发票(普通发票)，\n0915：全电纸质(二手车销售统一发票)，\n0920：电子发票(增值税专用发票)，\n0930：电子发票(机动车销售统一发票)，\n0940：电子发票(二手车销售统一发票)，\n10：增值税电子普通发票（含全电，全电仅新版接口支持），\n11：增值税普通发票（卷式），\n14：增值税电子（通行费）发票，\n15：二手车销售统一发票，\n32：深圳区块链发票，\n61：电子发票（航空运输电子客票行程单），\n8208：电子发票(通行费发票)，\n83：电子发票(铁路电子客票)，\n100：区块链发票，\n101：财政票据，\n102：通用电子发票，\n103：车辆通行费\n\n\n\n",
+          "document": "<p>票种类型<br>01：增值税专用发票，<br>02：货运运输业增值税专用发票，<br>03：机动车销售统一发票，<br>04：增值税普通发票，<br>08：增值税电子专用发票（含全电，全电仅新版接口支持），<br>09：全电发票，<br>0901：全电纸质发票(增值税专用发票)，<br>0903：全电纸质(机动车销售统一发票)，<br>0904：全电纸质发票(增值税普通发票)，<br>0910：电子发票(普通发票)，<br>0915：全电纸质(二手车销售统一发票)，<br>0920：电子发票(增值税专用发票)，<br>0930：电子发票(机动车销售统一发票)，<br>0940：电子发票(二手车销售统一发票)，<br>10：增值税电子普通发票（含全电，全电仅新版接口支持），<br>11：增值税普通发票（卷式），<br>14：增值税电子（通行费）发票，<br>15：二手车销售统一发票，<br>32：深圳区块链发票，<br>61：电子发票（航空运输电子客票行程单），<br>8208：电子发票(通行费发票)，<br>83：电子发票(铁路电子客票)，<br>100：区块链发票，<br>101：财政票据，<br>102：通用电子发票，<br>103：车辆通行费</p>",
           "example": "01",
           "member": "string",
           "name": "Type",
@@ -20751,8 +20981,8 @@
         },
         {
           "disabled": false,
-          "document": "具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单",
-          "example": "无",
+          "document": "<p>具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单</p>",
+          "example": "01",
           "member": "string",
           "name": "ElectronicType",
           "output_required": true,
@@ -20761,7 +20991,7 @@
         },
         {
           "disabled": false,
-          "document": "检验码",
+          "document": "<p>检验码</p>",
           "example": "85518065011000000000",
           "member": "string",
           "name": "CheckCode",
@@ -20771,7 +21001,7 @@
         },
         {
           "disabled": false,
-          "document": "是否作废（红冲）是否作废（红冲）\nY：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲",
+          "document": "<p>是否作废（红冲）是否作废（红冲）<br>Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲</p>",
           "example": "否",
           "member": "string",
           "name": "IsAbandoned",
@@ -20781,7 +21011,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有销货清单 \nY: 有清单 N：无清单 \n卷票无",
+          "document": "<p>是否有销货清单<br>Y: 有清单 N：无清单<br>卷票无</p>",
           "example": "否",
           "member": "string",
           "name": "HasSellerList",
@@ -20791,8 +21021,8 @@
         },
         {
           "disabled": false,
-          "document": "销货清单标题",
-          "example": "无",
+          "document": "<p>销货清单标题</p>",
+          "example": "标题",
           "member": "string",
           "name": "SellerListTitle",
           "output_required": true,
@@ -20801,7 +21031,7 @@
         },
         {
           "disabled": false,
-          "document": "销货清单税额",
+          "document": "<p>销货清单税额</p>",
           "example": "99.9",
           "member": "string",
           "name": "SellerListTax",
@@ -20811,7 +21041,7 @@
         },
         {
           "disabled": false,
-          "document": "不含税金额",
+          "document": "<p>不含税金额</p>",
           "example": "129.0",
           "member": "string",
           "name": "AmountWithoutTax",
@@ -20821,7 +21051,7 @@
         },
         {
           "disabled": false,
-          "document": "税额",
+          "document": "<p>税额</p>",
           "example": "9.0",
           "member": "string",
           "name": "TaxAmount",
@@ -20831,7 +21061,7 @@
         },
         {
           "disabled": false,
-          "document": "含税金额",
+          "document": "<p>含税金额</p>",
           "example": "123.0",
           "member": "string",
           "name": "AmountWithTax",
@@ -20841,7 +21071,7 @@
         },
         {
           "disabled": false,
-          "document": "项目明细",
+          "document": "<p>项目明细</p>",
           "example": "无",
           "member": "VatInvoiceItem",
           "name": "Items",
@@ -20851,7 +21081,7 @@
         },
         {
           "disabled": false,
-          "document": "所属税局",
+          "document": "<p>所属税局</p>",
           "example": "深圳",
           "member": "string",
           "name": "TaxBureau",
@@ -20861,7 +21091,7 @@
         },
         {
           "disabled": false,
-          "document": "通行费标志:Y、是;N、否",
+          "document": "<p>通行费标志:Y、是;N、否</p>",
           "example": "N",
           "member": "string",
           "name": "TrafficFreeFlag",
@@ -20871,8 +21101,8 @@
         },
         {
           "disabled": false,
-          "document": "是否为红票\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>是否为红票</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "RedLetterInvoiceMark",
           "output_required": false,
@@ -20881,8 +21111,8 @@
         },
         {
           "disabled": false,
-          "document": "开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "IssuingTypeMark",
           "output_required": false,
@@ -20891,8 +21121,8 @@
         },
         {
           "disabled": false,
-          "document": "代开销售方名称",
-          "example": "无",
+          "document": "<p>代开销售方名称</p>",
+          "example": "用户",
           "member": "string",
           "name": "SellerAgentName",
           "output_required": false,
@@ -20901,10 +21131,160 @@
         },
         {
           "disabled": false,
-          "document": "代开销售方税号",
-          "example": "无",
+          "document": "<p>代开销售方税号</p>",
+          "example": "1312",
           "member": "string",
           "name": "SellerAgentTaxID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地区代码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "湖北",
+          "member": "string",
+          "name": "RegionCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>复核人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "覃丹",
+          "member": "string",
+          "name": "ReviewerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开票人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "王艳",
+          "member": "string",
+          "name": "IssuerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>收款人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "王艳",
+          "member": "string",
+          "name": "PayeeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开票机号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "MachineCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>税控码/密码区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "03>6*5-0<1/77+2-8",
+          "member": "string",
+          "name": "TaxControlCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>价税合计（中文大写）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "伍仟柒佰玖拾叁圆陆角",
+          "member": "string",
+          "name": "AmountWithTaxCN",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>税率</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9%",
+          "member": "string",
+          "name": "TaxRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>特殊票种代码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "83",
+          "member": "string",
+          "name": "SpecialTicketCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>红字发票信息列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RedLetterInvoiceItem",
+          "name": "RedLetterInvoices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>全电类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "FullElectronicType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>OFD版式文件下载链接</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://fp.hubei.chinatax.gov.cn:8088/api?action=getDoc&code=042002100213_05514484_20230410_F1I7G3D5&type=3",
+          "member": "string",
+          "name": "OfdUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>PDF版式文件下载链接</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://fp.hubei.chinatax.gov.cn:8088/api?action=getDoc&code=042002100213_05514484_20230410_F1I7G3D5&type=12",
+          "member": "string",
+          "name": "PdfUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>原发票代码，对应蓝字发票代码。</p>",
+          "example": "042002100213",
+          "member": "string",
+          "name": "OriginalCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原发票号码，对应蓝字发票号码。</p>",
+          "example": "05514484",
+          "member": "string",
+          "name": "OriginalNumber",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -21469,173 +21849,223 @@
       "members": [
         {
           "disabled": false,
-          "document": "行号",
+          "document": "<p>行号</p>",
           "example": "1",
           "member": "string",
           "name": "LineNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名称",
-          "example": "XX",
+          "document": "<p>名称</p>",
+          "example": "运输服务",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规格",
+          "document": "<p>规格</p>",
           "example": "N",
           "member": "string",
           "name": "Spec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "单位",
-          "example": "无",
+          "document": "<p>单位</p>",
+          "example": "个",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数量",
+          "document": "<p>数量</p>",
           "example": "1",
           "member": "string",
           "name": "Quantity",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "单价",
+          "document": "<p>单价</p>",
           "example": "1",
           "member": "string",
           "name": "UnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "不含税金额",
+          "document": "<p>不含税金额</p>",
           "example": "1",
           "member": "string",
           "name": "AmountWithoutTax",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "税率",
+          "document": "<p>税率</p>",
           "example": "3%",
           "member": "string",
           "name": "TaxRate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "税额",
+          "document": "<p>税额</p>",
           "example": "1",
           "member": "string",
           "name": "TaxAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "税收分类编码",
-          "example": "XXX",
+          "document": "<p>税收分类编码</p>",
+          "example": "3019902000000000000",
           "member": "string",
           "name": "TaxClassifyCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运输工具类型",
-          "example": "无",
+          "document": "<p>运输工具类型</p>",
+          "example": "轿车",
           "member": "string",
           "name": "VehicleType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运输工具牌号",
-          "example": "无",
+          "document": "<p>运输工具牌号</p>",
+          "example": "1",
           "member": "string",
           "name": "VehicleBrand",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "起始地",
-          "example": "无",
+          "document": "<p>起始地</p>",
+          "example": "广州",
           "member": "string",
           "name": "DeparturePlace",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "到达地",
-          "example": "无",
+          "document": "<p>到达地</p>",
+          "example": "深圳",
           "member": "string",
           "name": "ArrivalPlace",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运输货物名称",
-          "example": "无",
+          "document": "<p>运输货物名称</p>",
+          "example": "水果",
           "member": "string",
           "name": "TransportItemsName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "建筑服务发生地",
-          "example": "无",
+          "document": "<p>建筑服务发生地</p>",
+          "example": "广州",
           "member": "string",
           "name": "ConstructionPlace",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "建筑项目名称",
-          "example": "无",
+          "document": "<p>建筑项目名称</p>",
+          "example": "建筑",
           "member": "string",
           "name": "ConstructionName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始税率</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9%",
+          "member": "string",
+          "name": "OriginalTaxRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始税额</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "478.37",
+          "member": "string",
+          "name": "OriginalTaxAmount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>零税率标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ZeroTaxRateMark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>含税单价</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5793.60",
+          "member": "string",
+          "name": "TaxIncludedUnitPrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>含税金额</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5793.60",
+          "member": "float",
+          "name": "TaxIncludedAmount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -22371,7 +22801,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "车辆类型",
+          "document": "<p>车辆类型</p>",
           "example": "轿车",
           "member": "string",
           "name": "CarType",
@@ -22381,7 +22811,7 @@
         },
         {
           "disabled": false,
-          "document": "厂牌型号",
+          "document": "<p>厂牌型号</p>",
           "example": "斯柯达牌SVW71419AL",
           "member": "string",
           "name": "PlateModel",
@@ -22391,7 +22821,7 @@
         },
         {
           "disabled": false,
-          "document": "产地",
+          "document": "<p>产地</p>",
           "example": "上海",
           "member": "string",
           "name": "ProduceAddress",
@@ -22401,7 +22831,7 @@
         },
         {
           "disabled": false,
-          "document": "合格证号",
+          "document": "<p>合格证号</p>",
           "example": "WAE0X17041xxxxx",
           "member": "string",
           "name": "CertificateNo",
@@ -22411,8 +22841,8 @@
         },
         {
           "disabled": false,
-          "document": "进口证明书号",
-          "example": "无",
+          "document": "<p>进口证明书号</p>",
+          "example": "220120********12345",
           "member": "string",
           "name": "ImportNo",
           "output_required": true,
@@ -22421,7 +22851,7 @@
         },
         {
           "disabled": false,
-          "document": "LSVCA2NP9HN0xxxxx",
+          "document": "<p>LSVCA2NP9HN0xxxxx</p>",
           "example": "车架号码/车辆识别代号",
           "member": "string",
           "name": "VinNo",
@@ -22431,8 +22861,8 @@
         },
         {
           "disabled": false,
-          "document": "完税证书号",
-          "example": "无",
+          "document": "<p>完税证书号</p>",
+          "example": "2201*******2345678",
           "member": "string",
           "name": "PayTaxesNo",
           "output_required": true,
@@ -22441,7 +22871,7 @@
         },
         {
           "disabled": false,
-          "document": "吨位",
+          "document": "<p>吨位</p>",
           "example": "1.92",
           "member": "string",
           "name": "Tonnage",
@@ -22451,7 +22881,7 @@
         },
         {
           "disabled": false,
-          "document": "限乘人数",
+          "document": "<p>限乘人数</p>",
           "example": "5",
           "member": "string",
           "name": "LimitCount",
@@ -22461,7 +22891,7 @@
         },
         {
           "disabled": false,
-          "document": "发动机号码",
+          "document": "<p>发动机号码</p>",
           "example": "328xxx",
           "member": "string",
           "name": "EngineNo",
@@ -22471,8 +22901,8 @@
         },
         {
           "disabled": false,
-          "document": "商检单号",
-          "example": "无",
+          "document": "<p>商检单号</p>",
+          "example": "2201*****8",
           "member": "string",
           "name": "BizCheckFormNo",
           "output_required": true,
@@ -22481,7 +22911,7 @@
         },
         {
           "disabled": false,
-          "document": "主管税务机关代码",
+          "document": "<p>主管税务机关代码</p>",
           "example": "16101984500",
           "member": "string",
           "name": "TaxtationOrgCode",
@@ -22491,7 +22921,7 @@
         },
         {
           "disabled": false,
-          "document": "主管税务机关名称",
+          "document": "<p>主管税务机关名称</p>",
           "example": "高新技术产业开发区国家税务局新型工业园税务所",
           "member": "string",
           "name": "TaxtationOrgName",
@@ -22501,7 +22931,7 @@
         },
         {
           "disabled": false,
-          "document": "税率",
+          "document": "<p>税率</p>",
           "example": "17",
           "member": "string",
           "name": "MotorTaxRate",
@@ -22511,7 +22941,7 @@
         },
         {
           "disabled": false,
-          "document": "银行账号",
+          "document": "<p>银行账号</p>",
           "example": "宁夏银行西安分行营业部",
           "member": "string",
           "name": "MotorBankName",
@@ -22521,7 +22951,7 @@
         },
         {
           "disabled": false,
-          "document": "开户行",
+          "document": "<p>开户行</p>",
           "example": "5100014080000xxxx",
           "member": "string",
           "name": "MotorBankAccount",
@@ -22531,8 +22961,8 @@
         },
         {
           "disabled": false,
-          "document": "销售地址",
-          "example": "无",
+          "document": "<p>销售地址</p>",
+          "example": "广州",
           "member": "string",
           "name": "SellerAddress",
           "output_required": true,
@@ -22541,7 +22971,7 @@
         },
         {
           "disabled": false,
-          "document": "销售电话",
+          "document": "<p>销售电话</p>",
           "example": "10987765",
           "member": "string",
           "name": "SellerTel",
@@ -22551,8 +22981,8 @@
         },
         {
           "disabled": false,
-          "document": "购方身份证",
-          "example": "xx",
+          "document": "<p>购方身份证</p>",
+          "example": "10987765",
           "member": "string",
           "name": "BuyerNo",
           "output_required": true,

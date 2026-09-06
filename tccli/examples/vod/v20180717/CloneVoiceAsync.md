@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "TaskId": "260085028-CloneVoiceAsync-d56011ff47099d4f1788e0b7f851c1e1t",
+        "TaskId": "260085028-CloneVoice********************4f1788e0b7f851c1e1t",
         "RequestId": "ede949b5-2f8e-40e8-9fde-ee5cdb64d24b"
     }
 }

@@ -762,16 +762,16 @@
     ],
     "DescribeModelAssociations": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAssociations\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mo1nqzs5\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ModelAssociationSet\": [],\n        \"ModelRouterId\": \"cmr-mo1nqzs5\",\n        \"TotalCount\": 0,\n        \"RequestId\": \"ae6af60d-9352-4e66-bc81-7ffb1d31abcc\"\n    }\n}",
-        "title": "默认查询模型路由"
-      },
-      {
         "document": "查询已绑定可调度模型的模型路由实例详情",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAssociations\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mwmjm160\"\n}",
         "output": "{\n    \"Response\": {\n        \"ModelAssociationSet\": [\n            {\n                \"InputModalitiesUnion\": [\n                    \"text\"\n                ],\n                \"ModelName\": \"claude-Opus-4.8\",\n                \"ServiceProviders\": [\n                    {\n                        \"AccessType\": \"PublicCustom\",\n                        \"AssociationStatus\": \"Active\",\n                        \"InputModalities\": [\n                            \"text\"\n                        ],\n                        \"Order\": 1,\n                        \"Protocol\": \"anthropic\",\n                        \"Provider\": \"anthropic\",\n                        \"ServiceProviderId\": \"byok-fcf1iehy\",\n                        \"ServiceProviderName\": \"test-claude\",\n                        \"Weight\": 30\n                    }\n                ],\n                \"Type\": \"BYOK\"\n            }\n        ],\n        \"ModelRouterId\": \"cmr-mwmjm160\",\n        \"TotalCount\": 2,\n        \"RequestId\": \"34b80df0-61f8-40fe-9624-9dfe1250ce38\"\n    }\n}",
         "title": "查询已绑定可调度模型的模型路由实例详情"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAssociations\n<公共请求参数>\n\n{\n    \"ModelRouterId\": \"cmr-mo1nqzs5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAssociationSet\": [],\n        \"ModelRouterId\": \"cmr-mo1nqzs5\",\n        \"TotalCount\": 0,\n        \"RequestId\": \"ae6af60d-9352-4e66-bc81-7ffb1d31abcc\"\n    }\n}",
+        "title": "默认查询模型路由"
       }
     ],
     "DescribeModelKeys": [
@@ -1265,9 +1265,21 @@
     "ModifyModelAttributes": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelAttributes\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-kot39u7j\",\n    \"ServiceProviderName\": \"hello\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b521a934-0358-497a-8e3a-f1242424747c\"\n    }\n}",
-        "title": "修改BYOK的属性"
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelAttributes\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-gr0ec33g\",\n    \"ApiBases\": [\n        {\n            \"Protocol\": \"chat\",\n            \"ApiBase\": \"http://example11.com\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2df872c-1292-4252-8207-e9c9c11dce23\"\n    }\n}",
+        "title": "修改BYOK的ApiBase"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelAttributes\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-2a30o5mp\",\n    \"ServiceProviderName\": \"panda\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee81f905-88fa-4ace-bcb9-cd9ea6fd7ef4\"\n    }\n}",
+        "title": "修改BYOK的Name"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelAttributes\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"byok-m8qfiaju\",\n    \"ApiBase\": \"https://embedding-placeholder.example11.com\",\n    \"EndpointPath\": \"/emt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3cae64e-df42-4011-be0d-c9b651928648\"\n    }\n}",
+        "title": "非chat场景修改BYOK的ApiBase"
       }
     ],
     "ModifyModelRouterAttributes": [

@@ -24,6 +24,14 @@
         "title": "创建 DB Custom 国际站集群"
       }
     ],
+    "CreateDBCustomDisasterRecoverGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBCustomDisasterRecoverGroup\n<公共请求参数>\n\n{\n    \"Name\": \"置放群组测试\",\n    \"Type\": \"HOST\",\n    \"Strategy\": \"SPREAD\",\n    \"Affinity\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"CreatedTime\": \"2026-08-27T08:24:28Z\",\n        \"CurrentNum\": 0,\n        \"DisasterRecoverGroupId\": \"dbps-81aqu2cs\",\n        \"Name\": \"置放群组测试\",\n        \"NodeQuotaTotal\": 50,\n        \"Status\": \"Creating\",\n        \"Strategy\": \"SPREAD\",\n        \"Type\": \"HOST\",\n        \"RequestId\": \"1d913863-86cd-4d18-b071-27f5ef2781bd\"\n    }\n}",
+        "title": "创建置放群组"
+      }
+    ],
     "CreateDBCustomNodes": [
       {
         "document": "",
@@ -36,6 +44,22 @@
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBCustomNodes\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-shanghai-5\",\n    \"ImageId\": \"img-1tmhysjj\",\n    \"VpcId\": \"vpc-3kmj79e2\",\n    \"SubnetId\": \"subnet-pqebu78d\",\n    \"Period\": 1,\n    \"NodeType\": \"DB.AT5.8XLARGE128\",\n    \"NodeCount\": 1,\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-48hbnu45\"\n        ]\n    },\n    \"AutoRenew\": 2,\n    \"NodeName\": \"5*SSHKeyID+公共镜像\"\n}",
         "output": "{\n    \"Response\": {\n        \"NodeIds\": [\n            \"dbcn-z4z0rbc9\"\n        ],\n        \"TaskId\": 746,\n        \"RequestId\": \"7203009a-4d1e-42e1-a394-83f118bbc995\"\n    }\n}",
         "title": "创建节点（通过密钥登录节点）"
+      }
+    ],
+    "DeleteDBCustomDisasterRecoverGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDBCustomDisasterRecoverGroups\n<公共请求参数>\n\n{\n    \"DisasterRecoverGroupIds\": [\n        \"dbps-yma9bhy7\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 2441,\n        \"RequestId\": \"0d50191f-24fa-4539-bc18-fdd705d33d0b\"\n    }\n}",
+        "title": "删除置放群组"
+      }
+    ],
+    "DeleteDBCustomNodesDisasterRecoverGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDBCustomNodesDisasterRecoverGroup\n<公共请求参数>\n\n{\n    \"NodeIds\": [\n        \"dbcn-gfqtre45\"\n    ],\n    \"DisasterRecoverGroupIds\": [\n        \"dbps-afswz0ux\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100657,\n        \"RequestId\": \"d40006a6-ba3a-403a-88e1-0f6a1c04ba75\"\n    }\n}",
+        "title": "移除 DB Custom 节点的置放群组"
       }
     ],
     "DescribeDBCustomClusterDetail": [
@@ -92,6 +116,22 @@
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomClusters\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"Key\": \"DBCustomCluster\",\n            \"Value\": \"PRE-CLUSTER\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"ClusterDescription\": \"\",\n                \"ClusterId\": \"dbcc-nmtmsew8\",\n                \"ClusterLevel\": \"L500\",\n                \"ClusterName\": \"DBCustomPRE\",\n                \"ClusterNodeNum\": 0,\n                \"ClusterStatus\": \"Running\",\n                \"ClusterVersion\": \"1.32.2\",\n                \"CreatedTime\": \"2026-06-06T11:05:40Z\",\n                \"Region\": \"ap-shanghai\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"DBCustomCluster\",\n                        \"Value\": \"PRE-CLUSTER\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b5156a5a-122f-4d42-8322-06237ee54131\"\n    }\n}",
         "title": "查询 DB Cluster 集群列表"
+      }
+    ],
+    "DescribeDBCustomDisasterRecoverGroupQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomDisasterRecoverGroupQuota\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CurrentNum\": 1,\n        \"GroupQuota\": 50,\n        \"NodeInHostGroupQuota\": 50,\n        \"RequestId\": \"204a6569-ff99-4433-8b68-4640fd62e802\"\n    }\n}",
+        "title": "查询置放群组配额"
+      }
+    ],
+    "DescribeDBCustomDisasterRecoverGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCustomDisasterRecoverGroups\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"DisasterRecoverGroupSet\": [\n            {\n                \"Affinity\": 1,\n                \"CreatedTime\": \"2026-08-27T23:14:01Z\",\n                \"CurrentNum\": 0,\n                \"DisasterRecoverGroupId\": \"dbps-9u4mlmcx\",\n                \"Name\": \"置放群组\",\n                \"NodeIds\": [],\n                \"NodeQuotaTotal\": 50,\n                \"Status\": \"Available\",\n                \"Strategy\": \"SPREAD\",\n                \"Tags\": null,\n                \"Type\": \"HOST\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"ea6358e7-2baa-42d4-bd66-f25a7d4fe8e0\"\n    }\n}",
+        "title": "查询置放群组列表"
       }
     ],
     "DescribeDBCustomImages": [
@@ -244,6 +284,22 @@
         "title": "为 DB Custom 集群修改标签"
       }
     ],
+    "ModifyDBCustomDisasterRecoverGroupAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomDisasterRecoverGroupAttribute\n<公共请求参数>\n\n{\n    \"DisasterRecoverGroupId\": \"dbps-81aqu2cs\",\n    \"Name\": \"置放群组CD1\",\n    \"Affinity\": 6\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 2503,\n        \"RequestId\": \"76229e50-bdae-4ae9-a630-e1a98bdcd4c4\"\n    }\n}",
+        "title": "修改 DB Custom 置放群组的名称和亲和性"
+      }
+    ],
+    "ModifyDBCustomDisasterRecoverGroupTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomDisasterRecoverGroupTags\n<公共请求参数>\n\n{\n    \"DisasterRecoverGroupId\": \"dbps-xjelypsq\",\n    \"AddTags\": [\n        {\n            \"Key\": \"部门\",\n            \"Value\": \"数据库\"\n        }\n    ],\n    \"DeleteTagKeys\": [\n        \"DBCustom_置放群组\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"577aae7d-f0f8-48fa-83a1-d93efd1e1a5c\"\n    }\n}",
+        "title": "修改 DB Custom 置放群组的标签"
+      }
+    ],
     "ModifyDBCustomNodeAttributes": [
       {
         "document": "",
@@ -266,6 +322,14 @@
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomNodeTags\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-j4xd1241\",\n    \"AddTags\": [\n        {\n            \"Key\": \"测试标签Key\",\n            \"Value\": \"测试标签Value\"\n        }\n    ],\n    \"DeleteTagKeys\": [\n        \"testkey\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4c6c23f-62bb-4568-a107-141c65290f8c\"\n    }\n}",
         "title": "为 DB Custom 节点修改标签"
+      }
+    ],
+    "ModifyDBCustomNodesDisasterRecoverGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomNodesDisasterRecoverGroup\n<公共请求参数>\n\n{\n    \"NodeIds\": [\n        \"dbcn-jko09g54\"\n    ],\n    \"DisasterRecoverGroupIds\": [\n        \"dbps-afswz0ux\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100659,\n        \"RequestId\": \"46fa2486-5b43-4947-824d-a1291fbf71c8\"\n    }\n}",
+        "title": "修改 DB Custom 节点的置放群组"
       }
     ],
     "ModifyInstanceName": [

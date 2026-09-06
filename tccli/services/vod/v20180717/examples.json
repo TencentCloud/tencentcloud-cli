@@ -20,7 +20,7 @@
       {
         "document": "音色克隆",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneVoiceAsync\n<公共请求参数>\n\n{\n    \"SubAppId\": \"260***028\",\n    \"AudioUrl\": \"https://laurie-tmp-1300828900.cos.accelerate.m**********************************************136a4dea53b5db4493680d0d51bf33e2t-preview.mp3\",\n    \"LanguageBoost\": \"zh\",\n    \"ExtParam\": \"{ \\\"model\\\":\\\"minimax-speech-02-hd\\\", \\\"text\\\": \\\"种子在土里沉默是为了破土时的惊雷\\\" }\",\n    \"SessionId\": \"6bb56a09278***********6dab783efe\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"260085028-CloneVoiceAsync-d56011ff47099d4f1788e0b7f851c1e1t\",\n        \"RequestId\": \"ede949b5-2f8e-40e8-9fde-ee5cdb64d24b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"260085028-CloneVoice********************4f1788e0b7f851c1e1t\",\n        \"RequestId\": \"ede949b5-2f8e-40e8-9fde-ee5cdb64d24b\"\n    }\n}",
         "title": "音色克隆"
       }
     ],
@@ -342,7 +342,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeBase\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000,\n    \"Name\": \"新的知识库\",\n    \"Description\": \"这是我刚刚创建的知识库\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2f4e4d2-c1cf-4200-8cf2-259219c22406\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KnowledgeBaseId\": \"kb-**********\",\n        \"RequestId\": \"f2f4e4d2-c1cf-4200-8cf2-259219c22406\"\n    }\n}",
         "title": "创建新的知识库"
       }
     ],
@@ -1162,7 +1162,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeBases\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000,\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Name\": \"新的知识库\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2ae4af8-928f-4d98-9ef4-faaf7d5bdfdc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KnowledgeBaseSet\": [\n            {\n                \"CreateTime\": \"2026-06-18T17:08:36+08:00\",\n                \"Description\": \"这是我刚刚创建的知识库\",\n                \"KnowledgeBaseId\": \"kb-**********\",\n                \"Name\": \"新的知识库\",\n                \"Status\": \"active\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"e2ae4af8-928f-4d98-9ef4-faaf7d5bdfdc\"\n    }\n}",
         "title": "查询知识库信息"
       }
     ],
@@ -2343,8 +2343,8 @@
     "TextToSpeechSync": [
       {
         "document": "同步语音合成",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSync\n<公共请求参数>\n\n{\n    \"SubAppId\": \"221***\",\n    \"Text\": \"我怕我沒有機會跟你說一聲再見. 因為也許就再也見不到你. 明天我要離開熟悉的地方和你. 要分離我眼淚就掉下去. 我會牢牢記住你的臉我會珍惜你給的思念.\",\n    \"LanguageBoost\": \"zh\",\n    \"VoiceId\": \"minimax_7*********c6c-495b\",\n    \"Output\": {\n        \"Type\": \"url\"\n    },\n    \"ExtParam\": \"{\\n  \\\"model\\\": \\\"minimax-speech-2.8-hd\\\",\\n  \\\"stream\\\": false,\\n  \\\"voice_setting\\\": {\\n    \\\"speed\\\": 1.5,\\n    \\\"vol\\\": 1.0,\\n    \\\"pitch\\\": 0,\\n    \\\"emotion\\\": \\\"calm\\\",\\n    \\\"text_normalization\\\": true,\\n    \\\"latex_read\\\": false\\n  },\\n  \\\"audio_setting\\\": {\\n    \\\"sample_rate\\\": 32000,\\n    \\\"bitrate\\\": 128000,\\n    \\\"format\\\": \\\"mp3\\\",\\n    \\\"channel\\\": 1,\\n    \\\"force_cbr\\\": false\\n  },\\n  \\\"voice_modify\\\": {\\n    \\\"pitch\\\": 0,\\n    \\\"intensity\\\": 0,\\n    \\\"timbre\\\": 0,\\n    \\\"sound_effects\\\": \\\"\\\"\\n  },\\n  \\\"timbre_weights\\\": [\\n    { \\\"voice_id\\\": \\\"ttv-voice-2026081010451926-MJGKXATq\\\", \\\"weight\\\": 100 }\\n   ],\\n  \\\"subtitle_enable\\\": true,\\n  \\\"subtitle_type\\\": \\\"srt\\\"\\n}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AudioData\": \"UklGRnxuAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAATElTVF4EAABJTkZPSUNNVDwEAABBSUdDP********************************************************************************GIzZGFiODAwZjNlYzc4N2Q3MjZhMmQyNDYyIiwiUmVzZXJ2ZWRDb2RlMSI6IntcIlNlY3VyaXR5RGF0Y\",\n        \"AudioUrl\": \"https://tennyyang-test-1258344699.cos.ap-guangzh***********************************************-08-10/cda673d1-5bfb-4111-8572-1838b91ee267.mp3\",\n        \"ExtInfo\": \"{\\\"audio_length\\\":10188,\\\"audio_sample_rate\\\":32000,\\\"audio_size\\\":164724,\\\"bitrate\\\":128000,\\\"audio_format\\\":\\\"mp3\\\",\\\"audio_channel\\\":1,\\\"word_count\\\":66,\\\"invisible_character_ratio\\\":0,\\\"usage_characters\\\":75}\",\n        \"RequestId\": \"a40fdd09-c7dd-45d9-9621-800e6cefab1e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSync\n<公共请求参数>\n\n{\n    \"Text\": \"种子在土里沉默，是为了破土时的惊雷。\",\n    \"VoiceId\": \"minimax_5*********527-4dff\",\n    \"LanguageBoost\": \"zh\",\n    \"ExtParam\": \"{\\\"model\\\": \\\"minimax-speech-2.8-hd\\\", \\\"voice_setting\\\": {\\\"speed\\\": 2.0, \\\"vol\\\": 2.0}, \\\"audio_setting\\\": {\\\"sample_rate\\\": 32000, \\\"bitrate\\\": 128000, \\\"format\\\": \\\"mp3\\\"}}\",\n    \"SubAppId\": \"221***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioData\": \"\",\n        \"AudioUrl\": \"https://laurie-tmp-1300828900.cos.a***********************************b70-c745-4335-bbfc-b2f6c00ac0b2.mp3\",\n        \"ExtInfo\": \"{\\\"audio_format\\\":\\\"mp3\\\",\\\"audio_length\\\":1836,\\\"audio_sample_rate\\\":32000,\\\"audio_size\\\":0,\\\"word_count\\\":16}\",\n        \"RequestId\": \"a24cdb70-c745-4335-bbfc-b2f6c00ac0b2\"\n    }\n}",
         "title": "同步语音合成"
       }
     ],

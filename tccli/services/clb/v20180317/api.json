@@ -5282,6 +5282,24 @@
           "name": "HealthCheckConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型输出模态</p>",
+          "example": "embedding",
+          "member": "string",
+          "name": "Capability",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求后缀</p>",
+          "example": "/test_embedding",
+          "member": "string",
+          "name": "EndpointPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5473,6 +5491,15 @@
           "name": "Bandwidth",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Embedding 配置</p>",
+          "example": "无",
+          "member": "EmbeddingConfig",
+          "name": "EmbeddingConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8767,6 +8794,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型输出模态</p>",
+          "example": "chat",
+          "member": "string",
+          "name": "Capability",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10631,6 +10667,45 @@
         }
       ],
       "type": "object"
+    },
+    "EmbeddingConfig": {
+      "document": "embedding配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型内路由策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SimpleShuffle",
+          "member": "string",
+          "name": "RoutingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoutingStrategyArgs",
+          "name": "RoutingStrategyArgs",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>同一模型请求重试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "NumRetries",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ExclusiveCluster": {
       "document": "独占集群",
@@ -14003,7 +14078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型积分系数配置，包含 <code>InputCoefficient</code>、<code>InputCachedCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数默认为 25，缓存命中输入系数默认为 3，输出系数默认为 100。</p>",
+          "document": "<p>模型积分系数配置，包含 <code>InputCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p>未配置时输入系数和输出系数均返回 1。</p>",
           "example": "无",
           "member": "Coefficient",
           "name": "Coefficient",
@@ -14050,6 +14125,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型能力</p>",
+          "example": "chat",
+          "member": "string",
+          "name": "Capability",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14093,6 +14178,16 @@
           "example": "BYOK",
           "member": "string",
           "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出模态</p>",
+          "example": "chat",
+          "member": "string",
+          "name": "Capability",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -14427,6 +14522,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型输出模态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "embedding",
+          "member": "string",
+          "name": "Capability",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求后缀</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/embeddings",
+          "member": "string",
+          "name": "EndpointPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14788,6 +14903,16 @@
           "example": "无",
           "member": "ModelRouterBillingConfigOutput",
           "name": "BillingConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Embedding配置</p>",
+          "example": "无",
+          "member": "EmbeddingConfig",
+          "name": "EmbeddingConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -16664,7 +16789,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型积分系数配置。</p><p>必填，至少包含 <code>InputCoefficient</code>、<code>InputCachedCoefficient</code>、<code>OutputCoefficient</code> 中的一个字段，未传字段保持原值。</p><p><code>InputCoefficient</code> 为非缓存命中输入积分系数。</p><p><code>InputCachedCoefficient</code> 为缓存命中输入积分系数，用于 provider prompt cache 命中的输入 token。</p><p><code>OutputCoefficient</code> 为输出积分系数。</p><p>各字段取值范围：[0, 5000]，仅支持整数，0 表示该类 token 不计积分。</p>",
+          "document": "<p>模型积分系数配置。</p><p>必填，包含 <code>InputCoefficient</code> 和 <code>OutputCoefficient</code>。</p><p><code>InputCoefficient</code> 为输入积分系数。</p><p><code>OutputCoefficient</code> 为输出积分系数。</p><p>取值范围：[1, 200]，最多支持 1 位小数。</p>",
           "example": "无",
           "member": "Coefficient",
           "name": "Coefficient",
@@ -16673,7 +16798,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型别名列表。</p><p>不传 <code>ServiceProviderIds</code>（按 ModelAlias 账号维度修改）时支持数组批量，同一份 Coefficient 应用到多个别名。</p><p>传入 <code>ServiceProviderIds</code>（按 ServiceProvider 维度修改）时只能传 1 个别名，锁定唯一 model 别名；去重后不等于 1 个将返回 InvalidParameter。</p>",
+          "document": "<p>模型别名</p>",
           "example": "[\"gpt-4o\"]",
           "member": "string",
           "name": "ModelAliasNames",
@@ -16688,6 +16813,15 @@
           "name": "ServiceProviderIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型能力</p>",
+          "example": "embedding",
+          "member": "string",
+          "name": "Capability",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16710,7 +16844,7 @@
         {
           "disabled": false,
           "document": "<p>BYOK的ID</p><p>参数格式：byok-kot39u7j</p>",
-          "example": "byok-kot39u7j",
+          "example": "byok-gr0ec33g",
           "member": "string",
           "name": "ServiceProviderId",
           "required": true,
@@ -16733,6 +16867,24 @@
           "name": "ApiBases",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非chat输出模态的Api Base URL</p>",
+          "example": "https://embedding-placeholder.example11.com",
+          "member": "string",
+          "name": "ApiBase",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非chat输出模态的请求后缀</p>",
+          "example": "/emt",
+          "member": "string",
+          "name": "EndpointPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16805,6 +16957,24 @@
           "name": "Bandwidth",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型输出模态</p>",
+          "example": "embedding",
+          "member": "string",
+          "name": "Capability",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>embedding 模态配置</p>",
+          "example": "无",
+          "member": "EmbeddingConfig",
+          "name": "EmbeddingConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -21358,6 +21528,15 @@
           "example": "pnt-lbepdi5o",
           "member": "string",
           "name": "CMRPrivateNetworkTunnelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应模型的能力</p><p>枚举值：</p><ul><li>chat： 生文能力</li><li>embedding： 向量能力</li></ul>",
+          "example": "chat",
+          "member": "string",
+          "name": "Capability",
           "required": false,
           "type": "string"
         }

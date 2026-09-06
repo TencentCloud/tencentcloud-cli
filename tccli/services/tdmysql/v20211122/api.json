@@ -63,6 +63,13 @@
       "output": "DeleteUsersResponse",
       "status": "online"
     },
+    "DescribeDBCharsets": {
+      "document": "本接口（DescribeDBCharsets）提供查询支持字符集功能",
+      "input": "DescribeDBCharsetsRequest",
+      "name": "查询支持字符集",
+      "output": "DescribeDBCharsetsResponse",
+      "status": "online"
+    },
     "DescribeDBEngines": {
       "document": "本接口（DescribeDBEngines）用于获取DB引擎版本列表",
       "input": "DescribeDBEnginesRequest",
@@ -166,6 +173,20 @@
       "input": "DescribeFlowRequest",
       "name": "查询流程状态",
       "output": "DescribeFlowResponse",
+      "status": "online"
+    },
+    "DescribeFlowTypes": {
+      "document": "本接口（DescribeFlowTypes）用于获取所有任务类型",
+      "input": "DescribeFlowTypesRequest",
+      "name": "查询任务类型列表",
+      "output": "DescribeFlowTypesResponse",
+      "status": "online"
+    },
+    "DescribeInstanceDataReservedSpace": {
+      "document": "本接口（DescribeInstanceDataReservedSpace）提供查询实例数据保留空间",
+      "input": "DescribeInstanceDataReservedSpaceRequest",
+      "name": "查询实例数据保留空间",
+      "output": "DescribeInstanceDataReservedSpaceResponse",
       "status": "online"
     },
     "DescribeInstanceSSLStatus": {
@@ -287,6 +308,13 @@
       "output": "ModifyDBSBackupSetCommentResponse",
       "status": "online"
     },
+    "ModifyInstanceDataReservedSpace": {
+      "document": "本接口（ModifyInstanceDataReservedSpace）提供修改实例数据保留空间",
+      "input": "ModifyInstanceDataReservedSpaceRequest",
+      "name": "修改实例数据保留空间",
+      "output": "ModifyInstanceDataReservedSpaceResponse",
+      "status": "online"
+    },
     "ModifyInstanceName": {
       "document": "本接口（ModifyInstanceName）提供修改实例名称功能",
       "input": "ModifyInstanceNameRequest",
@@ -320,6 +348,13 @@
       "input": "ModifyUserPrivilegesRequest",
       "name": "修改用户权限",
       "output": "ModifyUserPrivilegesResponse",
+      "status": "online"
+    },
+    "ResetDbaAdminPrivileges": {
+      "document": "重置dbaadmin账号权限",
+      "input": "ResetDbaAdminPrivilegesRequest",
+      "name": "重置DbaAdmin权限",
+      "output": "ResetDbaAdminPrivilegesResponse",
       "status": "online"
     },
     "ResetUsersPassword": {
@@ -3002,6 +3037,23 @@
       ],
       "type": "object"
     },
+    "DescribeDBCharsetsRequest": {
+      "document": "DescribeDBCharsets请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDBCharsetsResponse": {
+      "document": "DescribeDBCharsets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBEnginesRequest": {
       "document": "DescribeDBEngines请求参数结构体",
       "members": [],
@@ -4747,6 +4799,110 @@
       ],
       "type": "object"
     },
+    "DescribeFlowTypesRequest": {
+      "document": "DescribeFlowTypes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFlowTypesResponse": {
+      "document": "DescribeFlowTypes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务类型信息，供前端下拉筛选使用</p>",
+          "example": "无",
+          "member": "FlowType",
+          "name": "FlowTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceDataReservedSpaceRequest": {
+      "document": "DescribeInstanceDataReservedSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-51780d0c",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceDataReservedSpaceResponse": {
+      "document": "DescribeInstanceDataReservedSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实际保留比例（%，单节点）</p>",
+          "example": "2",
+          "member": "float",
+          "name": "ReservedRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实际保留空间 GB（单节点）</p><p>单位：GB</p>",
+          "example": "1",
+          "member": "float",
+          "name": "ReservedSpaceGB",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户可用空间 GB（单节点）</p><p>单位：GB</p>",
+          "example": "49",
+          "member": "float",
+          "name": "UsableSpaceGB",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>true=旧版本（&lt;21.6.4.0），值取自老参数 tdstore_enter_readonly_threshold；false=新版本</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsLegacy",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内核版本号</p>",
+          "example": "21.6.4.0",
+          "member": "string",
+          "name": "KernelVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceSSLStatusRequest": {
       "document": "DescribeInstanceSSLStatus请求参数结构体",
       "members": [
@@ -5721,6 +5877,32 @@
         }
       ],
       "usage": "both"
+    },
+    "FlowType": {
+      "document": "任务类型信息，供前端下拉筛选使用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务类型名称，后续可以对 DescribeFlows 出参中的 FlowName 进行筛选</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FlowBatchCloneUsers",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型中文描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "批量克隆用户",
+          "member": "string",
+          "name": "FlowDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InstanceFilter": {
       "document": "实例列表过滤条件",
@@ -7162,6 +7344,52 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceDataReservedSpaceRequest": {
+      "document": "ModifyInstanceDataReservedSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-51780d0c",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拟修改的目标保留空间大小</p><p>单位：GB</p>",
+          "example": "5",
+          "member": "float",
+          "name": "ReservedSpaceGB",
+          "required": true,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceDataReservedSpaceResponse": {
+      "document": "ModifyInstanceDataReservedSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数下发 flow 任务 ID（复用 ModifyDBParameters 链路，异步 flow 但秒级生效）</p>",
+          "example": "75267",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceNameRequest": {
       "document": "ModifyInstanceName请求参数结构体",
       "members": [
@@ -7661,6 +7889,33 @@
         }
       ],
       "usage": "out"
+    },
+    "ResetDbaAdminPrivilegesRequest": {
+      "document": "ResetDbaAdminPrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "tdsql3-e0653a62",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetDbaAdminPrivilegesResponse": {
+      "document": "ResetDbaAdminPrivileges返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResetUserPasswordInfo": {
       "document": "重置密码的用户类型",

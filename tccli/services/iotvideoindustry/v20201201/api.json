@@ -8136,7 +8136,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "录像任务ID",
+          "document": "<p>录像任务ID</p>",
           "example": "taskid",
           "member": "string",
           "name": "RecordTaskId",
@@ -8146,7 +8146,7 @@
         },
         {
           "disabled": false,
-          "document": "录制计划ID",
+          "document": "<p>录制计划ID</p>",
           "example": "planid",
           "member": "string",
           "name": "RecordPlanId",
@@ -8156,7 +8156,7 @@
         },
         {
           "disabled": false,
-          "document": "本录制片段开始时间",
+          "document": "<p>本录制片段开始时间</p>",
           "example": "1611732169",
           "member": "int64",
           "name": "StartTime",
@@ -8166,7 +8166,7 @@
         },
         {
           "disabled": false,
-          "document": "本录制片段结束时间",
+          "document": "<p>本录制片段结束时间</p>",
           "example": "1611732269",
           "member": "int64",
           "name": "EndTime",
@@ -8176,7 +8176,7 @@
         },
         {
           "disabled": false,
-          "document": "录制模式",
+          "document": "<p>录制模式</p>",
           "example": "1",
           "member": "int64",
           "name": "EventId",
@@ -8186,7 +8186,7 @@
         },
         {
           "disabled": false,
-          "document": "本录制片段对应的录制文件URL",
+          "document": "<p>本录制片段对应的录制文件URL</p>",
           "example": "http://xx.mp4",
           "member": "string",
           "name": "VideoUrl",
@@ -8196,7 +8196,7 @@
         },
         {
           "disabled": false,
-          "document": "本录制片段当前的录制状态",
+          "document": "<p>本录制片段当前的录制状态</p>",
           "example": "0",
           "member": "int64",
           "name": "RecordStatus",
@@ -8206,7 +8206,7 @@
         },
         {
           "disabled": false,
-          "document": "场景ID",
+          "document": "<p>场景ID</p>",
           "example": "234354",
           "member": "int64",
           "name": "SceneId",
@@ -8216,7 +8216,7 @@
         },
         {
           "disabled": false,
-          "document": "告警ID",
+          "document": "<p>告警ID</p>",
           "example": "834",
           "member": "int64",
           "name": "WarnId",
@@ -8226,12 +8226,52 @@
         },
         {
           "disabled": false,
-          "document": "录制id，NVR下属设备有效",
+          "document": "<p>录制id，NVR下属设备有效</p>",
           "example": "1611732169_1611732269",
           "member": "string",
           "name": "RecordId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频自增ID</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InitID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p>",
+          "example": "1788476700",
+          "member": "int64",
+          "name": "ExpectDeleteTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>录制时长</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "RecordTimeLen",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小</p>",
+          "example": "1024",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

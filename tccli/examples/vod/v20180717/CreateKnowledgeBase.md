@@ -15,6 +15,7 @@ Output:
 ```
 {
     "Response": {
+        "KnowledgeBaseId": "kb-**********",
         "RequestId": "f2f4e4d2-c1cf-4200-8cf2-259219c22406"
     }
 }

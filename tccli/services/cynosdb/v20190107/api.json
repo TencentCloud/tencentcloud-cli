@@ -2238,7 +2238,7 @@
         },
         {
           "disabled": true,
-          "document": "<p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>",
+          "document": "<p>当前字段已废弃。当前版本不再传输该值。</p>",
           "example": "cynosmysql-grp-xxxxxxxx",
           "member": "string",
           "name": "InstanceGrpId",
@@ -14495,7 +14495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -14504,7 +14504,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -14513,7 +14513,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20,最大100",
+          "document": "<p>返回数量，默认20,最大100</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -14522,7 +14522,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称，通过该字段进行子串匹配</p>",
           "example": "db1",
           "member": "string",
           "name": "DbName",
@@ -14537,8 +14537,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库信息",
-          "example": " [{\"Status\": \"running\", \"UserHostPrivileges\": [], \"UpdateTime\": \"0001-01-01T00:00:00Z\", \"Description\": \"\", \"DbId\": 0, \"CharacterSet\": \"\", \"ClusterId\": \"\", \"DbName\": \"mysql\", \"Uin\": \"\", \"AppId\": 0, \"CollateRule\": \"\", \"CreateTime\": \"0001-01-01T00:00:00Z\"}]",
+          "document": "<p>数据库信息</p>",
+          "example": "无",
           "member": "DbInfo",
           "name": "DbInfos",
           "output_required": true,
@@ -14547,7 +14547,7 @@
         },
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -15998,7 +15998,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群级别，可空。例如 P0, P1</p>",
+          "document": "<p>集群级别。例如 P0, P1。若未指定可用区，针对于不支持亲和性的可用区将降级查询非亲和性资源。</p>",
           "example": "P0",
           "member": "string",
           "name": "ClusterLevel",
@@ -35210,12 +35210,62 @@
     },
     "TransferStoragePrepayToPostpayRequest": {
       "document": "TransferStoragePrepayToPostpay请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "cynosdbmysql-lhe8wbks",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "TransferStoragePrepayToPostpayResponse": {
       "document": "TransferStoragePrepayToPostpay返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>预付费总订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20260729988160920776551\"]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20260729988160920913001\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbmysql-lhe8wbks\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbmysql-lhe8wbks\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
