@@ -558,7 +558,7 @@
         {
           "disabled": false,
           "document": "<p>回调签名密钥，用于回调请求的签名校验</p>",
-          "example": "test-callback-secret-0f1e2d3c",
+          "example": "*****************************",
           "member": "string",
           "name": "Secret",
           "required": true,
@@ -4227,7 +4227,7 @@
         {
           "disabled": false,
           "document": "<p>密钥 ID</p>",
-          "example": "AKIDCHD0mNm282jICuQjplYDmDTXQBmBQo24",
+          "example": "************************************",
           "member": "string",
           "name": "SecretId",
           "required": true,
@@ -4236,7 +4236,7 @@
         {
           "disabled": false,
           "document": "<p>密钥 Key</p>",
-          "example": "sW1LUTmBQVRGvPxQlz87vX4WwCG8rplc",
+          "example": "********************************",
           "member": "string",
           "name": "SecretKey",
           "required": true,

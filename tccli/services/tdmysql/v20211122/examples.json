@@ -72,6 +72,14 @@
         "title": "批量删除用户"
       }
     ],
+    "DescribeDBCharsets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBCharsets\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a93d2900-ef72-11eb-ab93-0716f253da76\"\n    }\n}",
+        "title": "查询字符集"
+      }
+    ],
     "DescribeDBEngines": [
       {
         "document": "",
@@ -208,6 +216,22 @@
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlow\n<公共请求参数>\n\n{\n    \"FlowId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce9140d0-da19-497f-8a3b-d8f2ac27d52a\",\n        \"Status\": \"success\"\n    }\n}",
         "title": "查询flow状态"
+      }
+    ],
+    "DescribeFlowTypes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTypes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FlowTypes\": [\n            {\n                \"FlowDesc\": \"批量克隆用户\",\n                \"FlowName\": \"FlowBatchCloneUsers\"\n            }\n        ],\n        \"RequestId\": \"f47b403e-7be2-4699-8dee-1dcd309ce19d\"\n    }\n}",
+        "title": "任务类型描述和名称"
+      }
+    ],
+    "DescribeInstanceDataReservedSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDataReservedSpace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-51780d0c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsLegacy\": false,\n        \"KernelVersion\": \"21.6.4.0\",\n        \"ReservedRate\": 2,\n        \"ReservedSpaceGB\": 1,\n        \"UsableSpaceGB\": 49,\n        \"RequestId\": \"98b162aa-f038-4e06-a4bd-9a93b589fc3c\"\n    }\n}",
+        "title": "DescribeInstanceDataReservedSpace用法"
       }
     ],
     "DescribeInstanceSSLStatus": [
@@ -370,6 +394,14 @@
         "title": "修改备份集备注"
       }
     ],
+    "ModifyInstanceDataReservedSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceDataReservedSpace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-51780d0c\",\n    \"ReservedSpaceGB\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 75267,\n        \"RequestId\": \"cbc2b9ef-676f-4c84-abdb-71753660fa80\"\n    }\n}",
+        "title": "ModifyInstanceDataReservedSpace用法"
+      }
+    ],
     "ModifyInstanceName": [
       {
         "document": "",
@@ -408,6 +440,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserPrivileges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-0b2f04e0\",\n    \"Users\": [\n        {\n            \"UserName\": \"mysql.sys\",\n            \"Host\": \"localhost\"\n        }\n    ],\n    \"GlobalPrivileges\": [\n        \"SELECT\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c2c4b96-5807-4c63-b55c-78a93937d111\"\n    }\n}",
         "title": "1"
+      }
+    ],
+    "ResetDbaAdminPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetDbaAdminPrivileges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-e0653a62\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16a725e8-6712-414e-9edd-9b8ae769282c\"\n    }\n}",
+        "title": "重置dabadmin密码"
       }
     ],
     "ResetUsersPassword": [

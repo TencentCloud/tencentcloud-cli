@@ -21603,6 +21603,24 @@
           "name": "OnlyValidPeriod",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否查询已过期</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyExpiredPeriod",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示当前周期实际使用量</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedActualCycleCapacityUsed",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -24908,6 +24926,16 @@
           "name": "InUsage",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期实际使用量</p>",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "ActualCycleCapacityUsed",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

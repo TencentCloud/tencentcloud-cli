@@ -33855,6 +33855,50 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备所属分组名（多语言，中英文并列返回）</p>",
+          "example": "无",
+          "member": "I18nString",
+          "name": "GroupNameI18n",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备所属分组路径（多语言，中英文并列返回）</p>",
+          "example": "无",
+          "member": "I18NStringArray",
+          "name": "GroupNamePathI18n",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近登录账号部门名称（多语言，中英文并列返回）</p>",
+          "example": "无",
+          "member": "I18nString",
+          "name": "AccountGroupNameI18n",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备所属自定义分组（多语言，中英文并列返回）</p>",
+          "example": "无",
+          "member": "I18nString",
+          "name": "VirtualGroupNamesI18n",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
