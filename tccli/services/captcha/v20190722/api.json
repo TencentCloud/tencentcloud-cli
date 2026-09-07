@@ -1,5 +1,26 @@
 {
   "actions": {
+    "CreateCaptchaInfoInternational": {
+      "document": "新建验证码：您可以基于不同业务需求创建多个验证，每个验证配置不同的客户端类型、安全策略等。新建验证上限为50个。",
+      "input": "CreateCaptchaInfoInternationalRequest",
+      "name": "新建验证码国际",
+      "output": "CreateCaptchaInfoInternationalResponse",
+      "status": "online"
+    },
+    "CreateIpWhiteListInternational": {
+      "document": "新建IP白名单国际：您可以基于不同业务需求创建IP白名单。",
+      "input": "CreateIpWhiteListInternationalRequest",
+      "name": "新建IP白名单国际",
+      "output": "CreateIpWhiteListInternationalResponse",
+      "status": "online"
+    },
+    "DeleteIpWhiteListInternational": {
+      "document": "删除IP白名单国际：您可以基于不同业务需求删除IP白名单。",
+      "input": "DeleteIpWhiteListInternationalRequest",
+      "name": "删除IP白名单国际",
+      "output": "DeleteIpWhiteListInternationalResponse",
+      "status": "online"
+    },
     "DescribeCaptchaAppIdInfo": {
       "document": "查询安全验证码应用APPId信息",
       "input": "DescribeCaptchaAppIdInfoRequest",
@@ -19,6 +40,13 @@
       "input": "DescribeCaptchaDataSumRequest",
       "name": "安全验证码查询请求数据概况",
       "output": "DescribeCaptchaDataSumResponse",
+      "status": "online"
+    },
+    "DescribeCaptchaInfoListInternational": {
+      "document": "查询验证码列表信息，获取所有验证的CaptchaAppId、验证名称等信息国际。",
+      "input": "DescribeCaptchaInfoListInternationalRequest",
+      "name": "查询验证码列表国际",
+      "output": "DescribeCaptchaInfoListInternationalResponse",
       "status": "online"
     },
     "DescribeCaptchaMiniData": {
@@ -91,6 +119,13 @@
       "output": "DescribeCaptchaUserAllAppIdResponse",
       "status": "online"
     },
+    "DescribeIpWhiteListInternational": {
+      "document": "IP白名单列表国际：您可以基于不同业务需求查询Ip白名单列表。",
+      "input": "DescribeIpWhiteListInternationalRequest",
+      "name": "IP白名单列表国际",
+      "output": "DescribeIpWhiteListInternationalResponse",
+      "status": "online"
+    },
     "GetRequestStatistics": {
       "document": "查询单个CaptchaAppID验证的统计数据，包括：请求量、验证量、验证通过量、验证拦截量。",
       "input": "GetRequestStatisticsRequest",
@@ -117,6 +152,27 @@
       "input": "GetTotalTicketStatisticsRequest",
       "name": "查询全部票据校验统计数据",
       "output": "GetTotalTicketStatisticsResponse",
+      "status": "online"
+    },
+    "ModifyCaptchaInfoInternational": {
+      "document": "更改验证码配置：包括验证名称、提示语言、验证类型等基础、外观、安全配置。",
+      "input": "ModifyCaptchaInfoInternationalRequest",
+      "name": "更改验证码配置国际",
+      "output": "ModifyCaptchaInfoInternationalResponse",
+      "status": "online"
+    },
+    "ModifyIpWhiteListInternational": {
+      "document": "编辑IP白名单国际：您可以基于不同业务需求编辑IP白名单。",
+      "input": "ModifyIpWhiteListInternationalRequest",
+      "name": "编辑IP白名单国际",
+      "output": "ModifyIpWhiteListInternationalResponse",
+      "status": "online"
+    },
+    "RemoveCaptchaInfoInternational": {
+      "document": "删除验证码国际：删除后，使用该CaptchaAppId的验证场景，前端将无法加载验证码，后端票据校验将报错。请谨慎操作。",
+      "input": "RemoveCaptchaInfoInternationalRequest",
+      "name": "删除验证码国际",
+      "output": "RemoveCaptchaInfoInternationalResponse",
       "status": "online"
     },
     "UpdateCaptchaAppIdInfo": {
@@ -540,6 +596,331 @@
       ],
       "usage": "out"
     },
+    "CreateCaptchaInfoInternationalRequest": {
+      "document": "CreateCaptchaInfoInternational请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>验证码名称</p>",
+          "example": "官网验证码",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端类型</p><p>枚举值：</p><ul><li>web： web场景使用</li><li>android： android端使用</li><li>ios： ios端使用</li></ul><p>默认值：web</p>",
+          "example": "web",
+          "member": "string",
+          "name": "ChannelInfo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证等级</p><p>枚举值：</p><ul><li>1： 体验优先</li><li>2： 平衡</li><li>3： 安全优先</li></ul><p>默认值：1</p>",
+          "example": "“1”",
+          "member": "string",
+          "name": "VerifyRank",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证类型</p><p>枚举值：</p><ul><li>1： 无感验证 ,  UserSetCapType传入1，DisableInvisibleSwitch必须为2</li><li>2： 滑动</li><li>8： 图形点选</li><li>9： 语音</li></ul>",
+          "example": "“2”",
+          "member": "string",
+          "name": "UserSetCapType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拦截模式</p><p>枚举值：</p><ul><li>block： 打击模式</li><li>notify： 感知模式</li></ul><p>默认值：notify</p>",
+          "example": "“notify”",
+          "member": "string",
+          "name": "DefendMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签, key&amp;value格式</p>",
+          "example": "[\"aaa&bbb\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证机制</p><p>枚举值：</p><ul><li>0： 一键验证</li><li>1： 始终验证</li><li>2： 无感验证，DisableInvisibleSwitch传入2， UserSetCapType必须为1</li></ul>",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "DisableInvisibleSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>web域名</p><p>仅在ChannelInfo为web时传入有效</p>",
+          "example": "\"*******.com\"",
+          "member": "string",
+          "name": "VerifyDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>app BundleId</p><p>仅在ChannelInfo为ios时传入有效</p>",
+          "example": "\"com.*******",
+          "member": "string",
+          "name": "VerifyBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>app package</p><p>仅在ChannelInfo为android时传入有效</p>",
+          "example": "\"com.******\"",
+          "member": "string",
+          "name": "VerifyPackage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启captcha加密，0:关闭，1:开启</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckAppidSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启一次一密</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>仅在CheckAppidSwitch为1时允许传入1</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckIvSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>勾选框展示方式</p><p>枚举值：</p><ul><li>0： 简约版</li><li>1： 基础版</li><li>2： 隐形版</li></ul>",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "CheckBoxStyle",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCaptchaInfoInternationalResponse": {
+      "document": "CreateCaptchaInfoInternational返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果数据</p>",
+          "example": "179000008",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码状态码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIpWhiteListInternationalRequest": {
+      "document": "CreateIpWhiteListInternational请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ip白名单名称</p>",
+          "example": "内网测试",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>captchaAppid</p>",
+          "example": "179000003",
+          "member": "int64",
+          "name": "CaptchaAppid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ip数据</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息</p>",
+          "example": "内网测试ip加白",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIpWhiteListInternationalResponse": {
+      "document": "CreateIpWhiteListInternational返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果数据</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP白名单资源id</p>",
+          "example": "[2100000000]",
+          "member": "int64",
+          "name": "IdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码状态码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIpWhiteListInternationalRequest": {
+      "document": "DeleteIpWhiteListInternational请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>验证码appid</p>",
+          "example": "179000003",
+          "member": "int64",
+          "name": "CaptchaAppid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录编号</p>",
+          "example": "2147504735",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIpWhiteListInternationalResponse": {
+      "document": "DeleteIpWhiteListInternational返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果数据</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码状态码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCaptchaAppIdInfoRequest": {
       "document": "DescribeCaptchaAppIdInfo请求参数结构体",
       "members": [
@@ -716,6 +1097,268 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeCaptchaConsoleDataInternational": {
+      "document": "分页查询数据结果obj国际",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页数据数组</p>",
+          "example": "无",
+          "member": "DescribeCaptchaConsoleSubDataInternational",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页总数</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCaptchaConsoleSubDataInternational": {
+      "document": "验证码控制台查询接口v2版本国际",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>验证码id</p>",
+          "example": "2049848951",
+          "member": "int64",
+          "name": "CaptchaAppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证名称</p>",
+          "example": "\"web-1\"",
+          "member": "string",
+          "name": "AppName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名逗号分割</p>",
+          "example": "\"system\"",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>随机key</p>",
+          "example": "\"AHYCI\"",
+          "member": "string",
+          "name": "EncryptKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证场景</p><p>枚举值：</p><ul><li>1： 账号 </li><li>2： 短信</li><li>3： 活动</li><li>4： 评论</li><li>5： 数据保护</li><li>6： 其他</li></ul>",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "SceneType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证类型</p><p>枚举值：</p><ul><li>1： 无感验证，UserSetCapType传入1，DisableInvisibleSwitch必须为2</li><li>2： 滑动拼图</li><li>8： 图形点选</li><li>9： 语音验证</li></ul>",
+          "example": "13",
+          "member": "int64",
+          "name": "UserSetCapType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能免验证</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "NoVerifyRule",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>语言</p><p>枚举值：</p><ul><li>1： 自适应</li><li>2052： 简体</li><li>1028： 繁体</li><li>1033： 英文</li></ul>",
+          "example": "\"2052\"",
+          "member": "string",
+          "name": "CaptchaLanguage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证等级</p><p>枚举值：</p><ul><li>1： 体验优先</li><li>2： 平衡</li><li>3： 安全优先</li></ul><p>默认值：1</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VerifyRank",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端类型</p><p>枚举值：</p><ul><li>web： web场景使用</li><li>android： android端使用</li><li>ios： ios端使用</li></ul>",
+          "example": "\"web\"",
+          "member": "string",
+          "name": "ChannelInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>拦截模式</p><p>枚举值：</p><ul><li>block： 打击模式</li><li>notify： 感知模式</li></ul><p>默认值：notify</p>",
+          "example": "\"block\"",
+          "member": "string",
+          "name": "DefendMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2023-03-03T19:51:56+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2023-03-03T19:51:56+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启captchaAppid加密</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckAppidSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>",
+          "example": "[\"web&官网\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启一次一密</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckIvSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证机制</p><p>枚举值：</p><ul><li>0： 一键验证</li><li>1： 始终验证</li><li>2： 无感验证，DisableInvisibleSwitch传入2， UserSetCapType必须为1</li></ul>",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "DisableInvisibleSwitch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>web域名</p><p>仅在ChannelInfo为web时传入有效</p>",
+          "example": "\"www.abc.com\"",
+          "member": "string",
+          "name": "VerifyDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>app BundleId</p><p>仅在ChannelInfo为ios时传入有效</p>",
+          "example": "\"com.www.ss\"",
+          "member": "string",
+          "name": "VerifyBundleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>app package</p><p>仅在ChannelInfo为android时传入有效</p>",
+          "example": "\"com.www.ss\"",
+          "member": "string",
+          "name": "VerifyPackage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>勾选框展示方式</p><p>枚举值：</p><ul><li>0： 简约版</li><li>1： 基础版</li><li>2： 隐形版</li></ul>",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "CheckBoxStyle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户类型</p><p>枚举值：</p><ul><li>0： 普通用户</li><li>1： waf</li><li>2： EO</li></ul>",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "CustomerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeCaptchaDataRequest": {
       "document": "DescribeCaptchaData请求参数结构体",
@@ -935,6 +1578,162 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeCaptchaInfoListInternationalRequest": {
+      "document": "DescribeCaptchaInfoListInternational请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页参数-页号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页参数-每页数据量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询参数-行为验证类型</p><p>枚举值：</p><ul><li>1： 无感验证</li><li>2： 滑动拼图</li><li>8： 图形点选</li><li>9： 语音验证</li></ul>",
+          "example": "[\"3\"]",
+          "member": "string",
+          "name": "UserSetCapTypeArr",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询参数-风控等级</p><p>枚举值：</p><ul><li>1： 体验优先</li><li>2： 平衡</li><li>3： 安全优先</li></ul>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "VerifyRankArr",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询参数-客户端多选</p><p>枚举值：</p><ul><li>web： web类型</li><li>ios： ios类型</li><li>android： android类型</li></ul>",
+          "example": "[\"web\"]",
+          "member": "string",
+          "name": "ChannelInfoArr",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询参数-验证Id</p>",
+          "example": "179*****2",
+          "member": "string",
+          "name": "CaptchaAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询参数-验证名称</p>",
+          "example": "官网使用",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序参数</p><p>入参限制：desc:根据创建时间排倒叙; asc：根据创建时间排升序</p>",
+          "example": "无",
+          "member": "OrderByInternational",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaInfoListInternationalResponse": {
+      "document": "DescribeCaptchaInfoListInternational返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页查询后数据块</p>",
+          "example": "无",
+          "member": "DescribeCaptchaConsoleDataInternational",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码返回码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码返回信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaptchaIpWhiteListDataNew": {
+      "document": "Ip白名单分页查询数据结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据列表</p>",
+          "example": "无",
+          "member": "DescribeCaptchaWhiteListItem",
+          "name": "DataList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录总数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeCaptchaMiniDataRequest": {
       "document": "DescribeCaptchaMiniData请求参数结构体",
@@ -2105,6 +2904,194 @@
       ],
       "type": "object"
     },
+    "DescribeCaptchaWhiteListItem": {
+      "document": "验证码控制台ip白名单数据子项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>编号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>白名单名称</p>",
+          "example": "运维部测试",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定captcha</p>",
+          "example": "170000000",
+          "member": "int64",
+          "name": "CaptchaAppid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>ip地址</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态0:Ip加白；1:取消加白</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2025-11-20T14:43:23+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2025-11-23T13:29:29+08:00",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "运维部测试",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeIpWhiteListInternationalRequest": {
+      "document": "DescribeIpWhiteListInternational请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页长</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码appid</p>",
+          "example": "179000009",
+          "member": "int64",
+          "name": "CaptchaAppid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>白名单名称</p>",
+          "example": "\"官网测试\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ip地址</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP白名单配置状态</p><p>枚举值：</p><ul><li>0： 全部</li><li>1： 加白状态</li><li>2： 取消加白状态</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpWhiteListInternationalResponse": {
+      "document": "DescribeIpWhiteListInternational返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果数据</p>",
+          "example": "无",
+          "member": "DescribeCaptchaIpWhiteListDataNew",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码状态码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetRequestStatisticsRequest": {
       "document": "GetRequestStatistics请求参数结构体",
       "members": [
@@ -2469,6 +3456,279 @@
       ],
       "usage": "out"
     },
+    "ModifyCaptchaInfoInternationalRequest": {
+      "document": "ModifyCaptchaInfoInternational请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>验证码AppId</p>",
+          "example": "179****56",
+          "member": "string",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码名称</p>",
+          "example": "官网验证码",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>校验等级</p><p>枚举值：</p><ul><li>1： 体验优先</li><li>2： 平衡</li><li>3：  安全优先</li></ul><p>默认值：1</p>",
+          "example": "“1”",
+          "member": "string",
+          "name": "VerifyRank",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证方式</p><p>枚举值：</p><ul><li>1： 无感验证 ，UserSetCapType传入1，DisableInvisibleSwitch必须</li><li>2： 滑动拼图</li><li>8： 图形点选</li><li>9： 语音验证</li></ul>",
+          "example": "“1”",
+          "member": "string",
+          "name": "UserSetCapType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拦截模式</p><p>枚举值：</p><ul><li>notify： 感知模式</li><li>block： 打击模式</li></ul>",
+          "example": "”notify“",
+          "member": "string",
+          "name": "DefendMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启captcha加密，0:关闭，1:开启</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckAppidSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启一次一密</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul><p>仅在CheckAppidSwitch为1时允许传入1</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckIvSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证机制,&#39;0&#39; ,一键验证,&#39;1&#39; ,始终验证,&#39;2&#39;隐形验证</p><p>枚举值：</p><ul><li>0： 一键验证</li><li>1： 始终验证</li><li>2： 无感验证, DisableInvisibleSwitch传入2， UserSetCapType必须为1</li></ul>",
+          "example": "0",
+          "member": "string",
+          "name": "DisableInvisibleSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>web域名</p><p>仅在ChannelInfo为web时传入有效</p>",
+          "example": "“*******.com\"",
+          "member": "string",
+          "name": "VerifyDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>app BundleId</p><p>仅在ChannelInfo为ios时传入有效</p>",
+          "example": "\"com*******\"",
+          "member": "string",
+          "name": "VerifyBundleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>app package</p><p>仅在ChannelInfo为android时传入有效</p>",
+          "example": "com.*******",
+          "member": "string",
+          "name": "VerifyPackage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签, key&amp;value格式</p>",
+          "example": "[\"aaa&bbb\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>勾选框展示方式,&#39;0&#39; 简约模式: &#39;1&#39;,完整模式: &#39;2&#39; 没设置过</p>",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "CheckBoxStyle",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCaptchaInfoInternationalResponse": {
+      "document": "ModifyCaptchaInfoInternational返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果数据</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码状态码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpWhiteListInternationalRequest": {
+      "document": "ModifyIpWhiteListInternational请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ip白名单名称</p>",
+          "example": "内网测试",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录编号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码appid</p>",
+          "example": "179980764",
+          "member": "int64",
+          "name": "CaptchaAppid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP白名单状态</p><p>枚举值：</p><ul><li>0： 开启</li><li>1： 关闭</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息</p>",
+          "example": "内网测试加白",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpWhiteListInternationalResponse": {
+      "document": "ModifyIpWhiteListInternational返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果数据</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码状态码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderByInternational": {
+      "document": "用作前端排序处理通用参数国际",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建时间排序",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "OutputManageMarketingRiskValue": {
       "document": "拦截策略返回信息",
       "members": [
@@ -2628,6 +3888,63 @@
         }
       ],
       "usage": "both"
+    },
+    "RemoveCaptchaInfoInternationalRequest": {
+      "document": "RemoveCaptchaInfoInternational请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>验证码AppId</p>",
+          "example": "179*****0",
+          "member": "string",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveCaptchaInfoInternationalResponse": {
+      "document": "RemoveCaptchaInfoInternational返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果数据</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码状态码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证码信息</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RequestTrendObj": {
       "document": "验证码请求趋势图obj",

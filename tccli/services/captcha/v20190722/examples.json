@@ -1,5 +1,29 @@
 {
   "actions": {
+    "CreateCaptchaInfoInternational": [
+      {
+        "document": "创建验证码",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCaptchaInfo\n<公共请求参数>\n\n{\n    \"UserSetCapType\": \"13\",\n    \"AppName\": \"aaa\",\n    \"VerifyRank\": \"3\",\n    \"ChannelInfo\": \"web\",\n    \"VerifyDomain\": \"\\\"*******.com\\\"\",\n    \"VerifyBundleId\": \"\\\"com.*******\",\n    \"VerifyPackage\": \"\\\"com.******\\\"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63ade1a9-eae8-49d4-b8be-bf803bfffdbe\",\n        \"Data\": 179000008,\n        \"CaptchaCode\": 11000,\n        \"CaptchaMsg\": \"\"\n    }\n}",
+        "title": "请求和返回示例"
+      }
+    ],
+    "CreateIpWhiteListInternational": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIpWhiteList\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"CaptchaAppid\": 179000003,\n    \"Ip\": \"127.0.0.1\",\n    \"Comment\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 0,\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"\",\n        \"RequestId\": \"637bbeab-43c8-4074-96af-0d0e66f95ba0\",\n        \"IdList\": [\n            2100000000\n        ]\n    }\n}",
+        "title": "控制台新增Ip白名单"
+      }
+    ],
+    "DeleteIpWhiteListInternational": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIpWhiteList\n<公共请求参数>\n\n{\n    \"CaptchaAppid\": 179000003,\n    \"Id\": 210000992\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 0,\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\",\n        \"RequestId\": \"c634b435-7bfe-4f04-b447-b995a2dd8adb\"\n    }\n}",
+        "title": "删除Ip白名单"
+      }
+    ],
     "DescribeCaptchaAppIdInfo": [
       {
         "document": "",
@@ -21,6 +45,14 @@
         "document": "",
         "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaDataSum\n&CaptchaAppId=2010000000\n&Start=20191201\n&End=20191202\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7151640-8351-46d5-86f9-ce886cf37111\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"OK\",\n        \"GetSum\": 123,\n        \"VfySuccSum\": 112,\n        \"VfySum\": 110,\n        \"AttackSum\": 13,\n        \"CheckTicketSum\": 100,\n        \"TicketThroughputSum\": 90,\n        \"TicketInterceptSum\": 10\n    }\n}",
+        "title": "请求和返回示例"
+      }
+    ],
+    "DescribeCaptchaInfoListInternational": [
+      {
+        "document": "查询验证码列表信息",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaInfoList\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"179*****2\",\n    \"OrderBy\": {\n        \"CreateTime\": \"字符串\"\n    },\n    \"PageIndex\": \"整型\",\n    \"UserSetCapTypeArr\": [\n        \"字符串\"\n    ],\n    \"ChannelInfoArr\": [\n        \"字符串\"\n    ],\n    \"PageSize\": \"整型\",\n    \"AppName\": \"字符串\",\n    \"VerifyRankArr\": [\n        \"字符串\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b320902-54f3-4b70-8663-6e86e99dffff\",\n        \"Data\": {\n            \"DataList\": [],\n            \"Total\": 0,\n            \"PageIndex\": 0\n        },\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\"\n    }\n}",
         "title": "请求和返回示例"
       }
     ],
@@ -104,6 +136,14 @@
         "title": "请求和返回示例"
       }
     ],
+    "DescribeIpWhiteListInternational": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpWhiteList\n<公共请求参数>\n\n{\n    \"Name\": \"haha\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10,\n    \"CaptchaAppid\": 179000009\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c634b435-7bfe-4f04-b447-b995a2dd8adb\",\n        \"Data\": {\n            \"DataList\": [\n                {\n                    \"Id\": 173,\n                    \"Name\": \"formdata\",\n                    \"CaptchaAppid\": 199999290,\n                    \"Ip\": \"93.26.59.11\",\n                    \"Status\": 0,\n                    \"CreatedTime\": \"2024-01-30T08:01:59+08:00\",\n                    \"UpdatedTime\": \"2024-01-30T08:19:16+08:00\",\n                    \"Comment\": \"\"\n                },\n                {\n                    \"Id\": 170,\n                    \"Name\": \"formdata\",\n                    \"CaptchaAppid\": 199999290,\n                    \"Ip\": \"127.0.0.1\",\n                    \"Status\": 0,\n                    \"CreatedTime\": \"2024-01-30T07:41:29+08:00\",\n                    \"UpdatedTime\": \"2024-01-30T08:19:16+08:00\",\n                    \"Comment\": \"\"\n                }\n            ],\n            \"Total\": 2,\n            \"PageIndex\": 1\n        },\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\"\n    }\n}",
+        "title": "Ip白名单列表"
+      }
+    ],
     "GetRequestStatistics": [
       {
         "document": "查询单个CaptchaAppID验证数据",
@@ -133,6 +173,30 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTotalTicketStatistics\n<公共请求参数>\n\n{\n    \"EndTimeStr\": \"2022-08-14 14:00\",\n    \"StartTimeStr\": \"2022-05-14 10:00\",\n    \"Dimension\": \"3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6e4b75e504c43b88fd9db327df6d2b5\",\n        \"Data\": {\n            \"ActionTotal\": 0,\n            \"VerifyTotal\": 0,\n            \"VerifyThroughTotal\": 0,\n            \"VerifyInterceptTotal\": 0,\n            \"TicketTotal\": 2,\n            \"TicketThroughTotal\": 2,\n            \"TicketInterceptTotal\": 0,\n            \"RequestTrend\": [\n                {\n                    \"Ftime\": \"10-18 11:11\",\n                    \"RequestAction\": 0,\n                    \"RequestVerify\": 0,\n                    \"RequestThroughput\": 0,\n                    \"RequestIntercept\": 0\n                }\n            ],\n            \"InterceptPerTrend\": [\n                {\n                    \"Ftime\": \"10-18 11:11\",\n                    \"RequestInterceptPer\": 0,\n                    \"AnswerInterceptPer\": 0,\n                    \"PolicyInterceptPer\": 0\n                }\n            ],\n            \"TicketCheckTrend\": [\n                {\n                    \"Ftime\": \"10-18 11:11\",\n                    \"TicketCount\": 0,\n                    \"TicketThroughput\": 0,\n                    \"TicketIntercept\": 0\n                }\n            ]\n        },\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\"\n    }\n}",
+        "title": "请求和返回示例"
+      }
+    ],
+    "ModifyCaptchaInfoInternational": [
+      {
+        "document": "修改验证码信息",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCaptchaInfo\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"179****56\",\n    \"UserSetCapType\": \"\\\"17\\\"\",\n    \"AppName\": \"\\\"web-1\\\"\",\n    \"VerifyRank\": \"\\\"3\\\"\",\n    \"VerifyDomain\": \"“*******.com\\\"\",\n    \"VerifyBundleId\": \"\\\"com*******\\\"\",\n    \"VerifyPackage\": \"**\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b28640bd-7d81-4a6f-b659-be0a2a383f52\",\n        \"Data\": null,\n        \"CaptchaCode\": 11000,\n        \"CaptchaMsg\": \"\"\n    }\n}",
+        "title": "请求和返回示例"
+      }
+    ],
+    "ModifyIpWhiteListInternational": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIpWhiteList\n<公共请求参数>\n\n{\n    \"Name\": \"内网测试\",\n    \"Status\": 1,\n    \"Id\": 1,\n    \"Comment\": \"内网测试\",\n    \"CaptchaAppid\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 0,\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\",\n        \"RequestId\": \"c634b435-7bfe-4f04-b447-b995a2dd8adb\"\n    }\n}",
+        "title": "编辑Ip白名单"
+      }
+    ],
+    "RemoveCaptchaInfoInternational": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveCaptchaInfo\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"179*****0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c60fbe4a-80bb-48bb-8bdc-1ab7e64758c7\",\n        \"Data\": null,\n        \"CaptchaCode\": 12000,\n        \"CaptchaMsg\": \"\"\n    }\n}",
         "title": "请求和返回示例"
       }
     ],

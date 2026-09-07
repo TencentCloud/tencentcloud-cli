@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcr ModifyWebhookTrigger --cli-unfold-argument  \
     --RegistryId tcr-dg284imq \
-    --Trigger.Name tirgger \
+    --Trigger.Name trigger \
     --Trigger.Targets.0.Address http://www.baidu.com \
     --Trigger.Targets.0.Headers.0.Key k1 \
     --Trigger.Targets.0.Headers.0.Values v1 \

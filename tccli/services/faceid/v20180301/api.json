@@ -5554,6 +5554,15 @@
           "name": "EnableBotBgDetection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>终端侧SDK生成的设备相关的加密信息</p>",
+          "example": "AQhsbTNXrIy",
+          "member": "string",
+          "name": "MetaData",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

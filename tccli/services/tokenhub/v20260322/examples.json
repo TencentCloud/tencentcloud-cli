@@ -147,9 +147,9 @@
     "DescribeModelQuota": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelQuota\n<公共请求参数>\n\n{\n    \"ModelId\": \"deepseek-v3.2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ModelId\": \"deepseek-v3.2\",\n        \"RequestId\": \"8f6c89c0-b82c-4e4d-9f39-11d27eb449ca\",\n        \"TPMLimit\": 300000\n    }\n}",
-        "title": "正常响应"
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelQuota\n<公共请求参数>\n\n{\n    \"ModelId\": \"glm-5.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelId\": \"glm-5.2\",\n        \"RPMLimit\": 601,\n        \"RequestId\": \"cfa39e4e-d23a-409b-9488-1a4de77a16e2\",\n        \"TPMInputQuotaLimit\": 20000000,\n        \"TPMInputReserveLimit\": 10000000,\n        \"TPMLimit\": 5000000,\n        \"TPMOutputQuotaLimit\": 2000000,\n        \"TPMOutputReserveLimit\": 1000000\n    }\n}",
+        "title": "正常请求"
       }
     ],
     "DescribeTokenPlan": [

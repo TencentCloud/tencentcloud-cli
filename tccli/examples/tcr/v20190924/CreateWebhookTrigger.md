@@ -6,58 +6,46 @@ Input:
 
 ```
 tccli tcr CreateWebhookTrigger --cli-unfold-argument  \
-    --RegistryId tcr-dg284imq \
-    --Trigger.Id 5 \
-    --Trigger.Name trigger5 \
-    --Trigger.Description desc \
-    --Trigger.Targets.0.Address http://www.baidu.com \
-    --Trigger.Targets.0.Headers.0.Key k1 \
-    --Trigger.Targets.0.Headers.0.Values v1 \
-    --Trigger.Targets.0.Headers.1.Key k2 \
-    --Trigger.Targets.0.Headers.1.Values v2 \
-    --Trigger.EventTypes pushImage uploadChart \
-    --Trigger.Condition golang \
-    --Trigger.Enabled True \
-    --Trigger.NamespaceId 5 \
-    --Trigger.NamespaceName ns \
-    --Namespace ns
+    --Namespace ns1 \
+    --Trigger.Name trigger1 \
+    --Trigger.Enabled true \
+    --Trigger.EventTypes pullImage \
+    --Trigger.Targets.0.Headers.0.Values value1 \
+    --Trigger.Targets.0.Headers.0.Key X-Custom-Header \
+    --Trigger.Targets.0.Address http://httpbin.org/post \
+    --Trigger.Condition .* \
+    --Trigger.Description 触发器描述 \
+    --RegistryId tcr-7s2d14fn
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ee7ae0ad-4a6f-4b71-8566-7f3e6a624fce",
+        "RequestId": "6942d117-55bb-4aad-9ed0-af8fd4664402",
         "Trigger": {
-            "Condition": "golang",
-            "Description": "desc",
-            "Enabled": true,
-            "EventTypes": [
-                "pushImage",
-                "uploadChart"
-            ],
-            "Id": 6,
-            "Name": "trigger5",
-            "NamespaceId": 5,
+            "Id": 20,
+            "Name": "trigger1",
+            "NamespaceId": 30,
+            "Description": "触发器描述",
             "Targets": [
                 {
-                    "Address": "http://www.baidu.com",
+                    "Address": "http://httpbin.org/post",
                     "Headers": [
                         {
-                            "Key": "k1",
+                            "Key": "X-Custom-Header",
                             "Values": [
-                                "v1"
-                            ]
-                        },
-                        {
-                            "Key": "k2",
-                            "Values": [
-                                "v2"
+                                "value1"
                             ]
                         }
                     ]
                 }
-            ]
+            ],
+            "EventTypes": [
+                "pullImage"
+            ],
+            "Enabled": true,
+            "Condition": ".*"
         }
     }
 }

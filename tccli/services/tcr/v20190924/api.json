@@ -2758,7 +2758,7 @@
         {
           "disabled": false,
           "document": "实例 Id",
-          "example": "tcr-dg284imq",
+          "example": "tcr-7s2d14fn",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2767,7 +2767,7 @@
         {
           "disabled": false,
           "document": "触发器参数",
-          "example": "{\"Id\":5,\"Name\":\"trigger5\",\"Description\":\"desc\",\"Targets\":[]}",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
           "required": true,
@@ -2776,7 +2776,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "ns",
+          "example": "someNs",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -2790,6 +2790,15 @@
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "PreheatRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2800,9 +2809,10 @@
         {
           "disabled": false,
           "document": "新建的触发器",
-          "example": "{\"Id\":5,\"Name\":\"trigger5\",\"Description\":\"desc\",\"Targets\":[]}",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7473,7 +7483,7 @@
         {
           "disabled": false,
           "document": "Header Values",
-          "example": "value",
+          "example": "[\"value\"]",
           "member": "string",
           "name": "Values",
           "output_required": true,
@@ -9510,7 +9520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "<p>实例Id</p>",
           "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
@@ -9519,7 +9529,7 @@
         },
         {
           "disabled": false,
-          "document": "触发器参数",
+          "document": "<p>触发器参数</p>",
           "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
@@ -9528,11 +9538,29 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "<p>命名空间</p>",
           "example": "ns1",
           "member": "string",
           "name": "Namespace",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称，非空时创建的 webhook 将被隐藏</p>",
+          "example": "ags",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "PreheatRegion",
+          "required": false,
           "type": "string"
         }
       ],
@@ -12933,6 +12961,7 @@
           "example": "http://www.baidu.com",
           "member": "string",
           "name": "Address",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12940,9 +12969,10 @@
         {
           "disabled": false,
           "document": "自定义 Headers",
-          "example": "[{\"Key\":\"key1\",\"Values\":[\"v1\",\"v2\"]}]",
+          "example": "无",
           "member": "Header",
           "name": "Headers",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -12955,7 +12985,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "触发器名称",
+          "document": "<p>触发器名称</p>",
           "example": "tirgger",
           "member": "string",
           "name": "Name",
@@ -12966,8 +12996,8 @@
         },
         {
           "disabled": false,
-          "document": "触发器目标",
-          "example": "[{\"Address\":\"http://www.baidu.com\",\"Headers\":[{\"Key\":\"\",\"Values\":[\"undefined\"]}]}]",
+          "document": "<p>触发器目标</p>",
+          "example": "无",
           "member": "WebhookTarget",
           "name": "Targets",
           "output_required": true,
@@ -12977,7 +13007,7 @@
         },
         {
           "disabled": false,
-          "document": "触发动作",
+          "document": "<p>触发动作</p>",
           "example": "[\"pushImage\"]",
           "member": "string",
           "name": "EventTypes",
@@ -12988,7 +13018,7 @@
         },
         {
           "disabled": false,
-          "document": "触发规则",
+          "document": "<p>触发规则</p>",
           "example": "golang",
           "member": "string",
           "name": "Condition",
@@ -12999,7 +13029,7 @@
         },
         {
           "disabled": false,
-          "document": "启用触发器",
+          "document": "<p>启用触发器</p>",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -13010,7 +13040,7 @@
         },
         {
           "disabled": false,
-          "document": "触发器Id",
+          "document": "<p>触发器Id</p>",
           "example": "2",
           "member": "int64",
           "name": "Id",
@@ -13021,7 +13051,7 @@
         },
         {
           "disabled": false,
-          "document": "触发器描述",
+          "document": "<p>触发器描述</p>",
           "example": "desc",
           "member": "string",
           "name": "Description",
@@ -13032,7 +13062,7 @@
         },
         {
           "disabled": false,
-          "document": "触发器所属命名空间 Id",
+          "document": "<p>触发器所属命名空间 Id</p>",
           "example": "1",
           "member": "int64",
           "name": "NamespaceId",
@@ -13043,14 +13073,36 @@
         },
         {
           "disabled": false,
-          "document": "触发器所属命名空间名称",
+          "document": "<p>触发器所属命名空间名称</p>",
           "example": "ns1",
           "member": "string",
           "name": "NamespaceName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器所属产品类型：ags 为镜像预热，apparate 为镜像加速，普通 webhook 为空</p>",
+          "example": "ags",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "PreheatRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

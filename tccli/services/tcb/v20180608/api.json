@@ -3255,7 +3255,7 @@
           "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -17296,7 +17296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li><li>function： 云函数通道（第三方短信服务商），需要配置CloudFunction</li></ul>",
+          "document": "<p>短信验证码发送通道类型。</p><p>枚举值：</p><ul><li>default： 使用默认云开发短信包发送短信</li><li>apis： 使用云开发自定义 APIs 作为短信发送通道，需配合 Name 和 Method 参数使用。不传则不修改当前配置。</li><li>template： 自定义短信模板配置，需要配置TemplateProvider</li><li>function： 使用云函数作为短信发送通道，需配合 CloudFunction 参数使用</li></ul>",
           "example": "apis",
           "member": "string",
           "name": "Type",
@@ -17358,6 +17358,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义短信签名，仅 Type 为 default（默认云开发短信包通道）时生效，写入当前环境的短信模板配置（config_tpl）。</p><p>修改语义：</p><ul><li>不传或空串：不修改当前配置</li><li>\\\"-\\\"：清除自定义，恢复平台默认签名</li></ul><p>约束：2~12 个字符，不得包含 【】[] 括号字符。</p><p>注意：该字段只写不读，响应中不下发。</p>",
+          "example": "cloudbase",
+          "member": "string",
+          "name": "SignName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义短信模板文案，仅 Type 为 default（默认云开发短信包通道）时生效，写入当前环境的短信模板配置（config_tpl）。</p><p>修改语义：</p><ul><li>不传或空串：不修改当前配置</li><li>\\\"-\\\"：清除自定义，恢复平台默认文案</li></ul><p>约束：必须包含 {{.VerificationCode}} 验证码占位符，可选 {{.Usage}} 用途变量，最长 500 字符。</p><p>注意：该字段只写不读，响应中不下发；当前生效内容可通过 GetTplConfig 按语言查询。</p>",
+          "example": "验证码: {{.VerificationCode}}。",
+          "member": "string",
+          "name": "Template",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

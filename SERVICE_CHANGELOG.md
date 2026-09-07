@@ -1,10 +1,10 @@
-# Release 3.0.1488.1
+# Release 3.0.1489.1
 
-## 费用中心(billing) 版本：2018-07-09
+## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
 
-### 第 128 次发布
+### 第 41 次发布
 
-发布时间：2026-09-07 01:10:06
+发布时间：2026-09-08 01:13:40
 
 本次发布包含了以下内容：
 
@@ -12,116 +12,25 @@
 
 修改接口：
 
-* [DescribeMeasureResources](http://document.tencentcloudapi.woa.com/document/product/555/81765)
+* [ResetUser](http://document.tencentcloudapi.woa.com/document/product/1780/85283)
 
-	* 新增入参：OnlyExpiredPeriod, NeedActualCycleCapacityUsed
+	* 新增入参：ResetType
 
 
 修改数据结构：
 
-* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+* [AppAsset](http://document.tencentcloudapi.woa.com/document/product/1780/85236#AppAsset)
 
-	* 新增成员：ActualCycleCapacityUsed
-
-
-
-
-## 负载均衡(clb) 版本：2023-04-17
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 98 次发布
-
-发布时间：2026-09-07 01:14:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateModel](http://document.tencentcloudapi.woa.com/document/product/214/91024)
-
-	* 新增入参：Capability, EndpointPath
-
-* [CreateModelRouter](http://document.tencentcloudapi.woa.com/document/product/214/90910)
-
-	* 新增入参：EmbeddingConfig
-
-* [DescribeModelAssociations](http://document.tencentcloudapi.woa.com/document/product/214/91004)
-
-	* 新增入参：Capability
-
-* [ModifyModelAliasAttributes](http://document.tencentcloudapi.woa.com/document/product/214/91016)
-
-	* 新增入参：Capability
-
-* [ModifyModelAttributes](http://document.tencentcloudapi.woa.com/document/product/214/91015)
-
-	* 新增入参：ApiBase, EndpointPath
-
-* [ModifyModelRouterAttributes](http://document.tencentcloudapi.woa.com/document/product/214/90896)
-
-	* 新增入参：Capability, EmbeddingConfig
-
-* [TestServiceProviderConnection](http://document.tencentcloudapi.woa.com/document/product/214/91010)
-
-	* 新增入参：Capability
-
-
-新增数据结构：
-
-* [EmbeddingConfig](http://document.tencentcloudapi.woa.com/document/product/214/30694#EmbeddingConfig)
-
-修改数据结构：
-
-* [ModelAlias](http://document.tencentcloudapi.woa.com/document/product/214/30694#ModelAlias)
-
-	* 新增成员：Capability
-
-* [ModelAssociation](http://document.tencentcloudapi.woa.com/document/product/214/30694#ModelAssociation)
-
-	* 新增成员：Capability
-
-* [ModelKeyInfoItem](http://document.tencentcloudapi.woa.com/document/product/214/30694#ModelKeyInfoItem)
-
-	* 新增成员：Capability, EndpointPath
-
-* [ModelRouterDetail](http://document.tencentcloudapi.woa.com/document/product/214/30694#ModelRouterDetail)
-
-	* 新增成员：EmbeddingConfig
+	* 新增成员：ClientAppArgs
 
 
 
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+## 验证码(captcha) 版本：2019-07-22
 
-### 第 195 次发布
+### 第 14 次发布
 
-发布时间：2026-09-07 01:17:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [TransferStoragePrepayToPostpay](http://document.tencentcloudapi.woa.com/document/product/1003/92045)
-
-	* 新增入参：ClusterId
-
-	* 新增出参：BigDealIds, DealNames, ResourceIds, ClusterIds
-
-
-
-
-## 云数据库独享集群(dbdc) 版本：2020-10-29
-
-### 第 12 次发布
-
-发布时间：2026-09-07 01:19:21
+发布时间：2026-09-08 01:18:51
 
 本次发布包含了以下内容：
 
@@ -129,40 +38,30 @@
 
 新增接口：
 
-* [CreateDBCustomDisasterRecoverGroup](http://document.tencentcloudapi.woa.com/document/product/1671/92533)
-* [DeleteDBCustomDisasterRecoverGroups](http://document.tencentcloudapi.woa.com/document/product/1671/92532)
-* [DeleteDBCustomNodesDisasterRecoverGroup](http://document.tencentcloudapi.woa.com/document/product/1671/92531)
-* [DescribeDBCustomDisasterRecoverGroupQuota](http://document.tencentcloudapi.woa.com/document/product/1671/92530)
-* [DescribeDBCustomDisasterRecoverGroups](http://document.tencentcloudapi.woa.com/document/product/1671/92529)
-* [ModifyDBCustomDisasterRecoverGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/1671/92528)
-* [ModifyDBCustomDisasterRecoverGroupTags](http://document.tencentcloudapi.woa.com/document/product/1671/92527)
-* [ModifyDBCustomNodesDisasterRecoverGroup](http://document.tencentcloudapi.woa.com/document/product/1671/92526)
-
-修改接口：
-
-* [CreateDBCustomNodes](http://document.tencentcloudapi.woa.com/document/product/1671/90796)
-
-	* 新增入参：DisasterRecoverGroupIds
-
+* [CreateCaptchaInfoInternational](http://document.tencentcloudapi.woa.com/document/product/1110/92546)
+* [CreateIpWhiteListInternational](http://document.tencentcloudapi.woa.com/document/product/1110/92545)
+* [DeleteIpWhiteListInternational](http://document.tencentcloudapi.woa.com/document/product/1110/92544)
+* [DescribeCaptchaInfoListInternational](http://document.tencentcloudapi.woa.com/document/product/1110/92543)
+* [DescribeIpWhiteListInternational](http://document.tencentcloudapi.woa.com/document/product/1110/92542)
+* [ModifyCaptchaInfoInternational](http://document.tencentcloudapi.woa.com/document/product/1110/92541)
+* [ModifyIpWhiteListInternational](http://document.tencentcloudapi.woa.com/document/product/1110/92540)
+* [RemoveCaptchaInfoInternational](http://document.tencentcloudapi.woa.com/document/product/1110/92539)
 
 新增数据结构：
 
-* [DisasterRecoverGroup](http://document.tencentcloudapi.woa.com/document/product/1671/79408#DisasterRecoverGroup)
-
-修改数据结构：
-
-* [DBCustomNode](http://document.tencentcloudapi.woa.com/document/product/1671/79408#DBCustomNode)
-
-	* 新增成员：DisasterRecoverGroupId
+* [DescribeCaptchaConsoleDataInternational](http://document.tencentcloudapi.woa.com/document/product/1110/40481#DescribeCaptchaConsoleDataInternational)
+* [DescribeCaptchaConsoleSubDataInternational](http://document.tencentcloudapi.woa.com/document/product/1110/40481#DescribeCaptchaConsoleSubDataInternational)
+* [DescribeCaptchaIpWhiteListDataNew](http://document.tencentcloudapi.woa.com/document/product/1110/40481#DescribeCaptchaIpWhiteListDataNew)
+* [DescribeCaptchaWhiteListItem](http://document.tencentcloudapi.woa.com/document/product/1110/40481#DescribeCaptchaWhiteListItem)
+* [OrderByInternational](http://document.tencentcloudapi.woa.com/document/product/1110/40481#OrderByInternational)
 
 
 
+## Elasticsearch Service(es) 版本：2018-04-16
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+### 第 117 次发布
 
-### 第 158 次发布
-
-发布时间：2026-09-07 01:22:01
+发布时间：2026-09-08 01:45:36
 
 本次发布包含了以下内容：
 
@@ -170,56 +69,65 @@
 
 修改数据结构：
 
-* [NodeHardwareInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeHardwareInfo)
+* [CollectorOutputInstance](http://document.tencentcloudapi.woa.com/document/product/845/30634#CollectorOutputInstance)
 
-	* 新增成员：NodeGroupId, NodeGroupName
-
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 48 次发布
-
-发布时间：2026-09-07 01:27:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DeviceDetail](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DeviceDetail)
-
-	* 新增成员：GroupNameI18n, GroupNamePathI18n, AccountGroupNameI18n, VirtualGroupNamesI18n
+	* 新增成员：SesSpaceId
 
 
 
 
-## 物联网智能视频服务（行业版）(iotvideoindustry) 版本：2020-12-01
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 12 次发布
+### 第 245 次发布
 
-发布时间：2026-09-07 01:29:34
+发布时间：2026-09-08 01:46:42
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+<font color="#dd0000">**删除接口**：</font>
+
+* ChannelCreateConvertTaskApi
+* ChannelGetTaskResultApi
+
 修改数据结构：
 
-* [RecordTaskItem](http://document.tencentcloudapi.woa.com/document/product/1361/53754#RecordTaskItem)
+* [SignComponentConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#SignComponentConfig)
 
-	* 新增成员：InitID, ExpectDeleteTime, RecordTimeLen, FileSize
-
-
+	* 新增成员：AddSignComponentUseSealSize
 
 
-## TDSQL(tdmysql) 版本：2021-11-22
 
-### 第 4 次发布
 
-发布时间：2026-09-07 01:39:13
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 110 次发布
+
+发布时间：2026-09-08 01:48:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)
+
+	* 新增入参：MetaData
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 100 次发布
+
+发布时间：2026-09-08 02:05:03
 
 本次发布包含了以下内容：
 
@@ -227,15 +135,139 @@
 
 新增接口：
 
-* [DescribeDBCharsets](http://document.tencentcloudapi.woa.com/document/product/1820/92537)
-* [DescribeFlowTypes](http://document.tencentcloudapi.woa.com/document/product/1820/92538)
-* [DescribeInstanceDataReservedSpace](http://document.tencentcloudapi.woa.com/document/product/1820/92536)
-* [ModifyInstanceDataReservedSpace](http://document.tencentcloudapi.woa.com/document/product/1820/92535)
-* [ResetDbaAdminPrivileges](http://document.tencentcloudapi.woa.com/document/product/1820/92534)
+* [CreateLiveAvatarCloneFigure](http://document.tencentcloudapi.woa.com/document/product/267/92549)
+* [DeleteLiveAvatarCloneFigure](http://document.tencentcloudapi.woa.com/document/product/267/92548)
+* [DescribeLiveAvatarCloneFigureList](http://document.tencentcloudapi.woa.com/document/product/267/92547)
+
+修改接口：
+
+* [CreateLiveAvatarRoom](http://document.tencentcloudapi.woa.com/document/product/267/91285)
+
+	* 新增入参：AvatarKey, TimbreKey, LiveMode
+
+* [StartLiveAvatarRoom](http://document.tencentcloudapi.woa.com/document/product/267/91271)
+
+	* 新增入参：SessionProtocol, TrtcSdkAppId, TrtcUserSig, TrtcRoomId
+
 
 新增数据结构：
 
-* [FlowType](http://document.tencentcloudapi.woa.com/document/product/1820/91956#FlowType)
+* [LiveAvatarCloneFigureInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveAvatarCloneFigureInfo)
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 38 次发布
+
+发布时间：2026-09-08 02:09:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetFlowPackages](http://document.tencentcloudapi.woa.com/document/product/1385/82765)
+
+	* 新增入参：ActiveTimeStart, ActiveTimeEnd
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 65 次发布
+
+发布时间：2026-09-08 02:09:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ScaleDownDBInstanceCpu](http://document.tencentcloudapi.woa.com/document/product/240/92551)
+* [ScaleUpDBInstanceCpu](http://document.tencentcloudapi.woa.com/document/product/240/92550)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 69 次发布
+
+发布时间：2026-09-08 02:23:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/876/89198)
+
+	* <font color="#dd0000">**修改入参**：</font>EnvId
+
+
+修改数据结构：
+
+* [VerificationConfig](http://document.tencentcloudapi.woa.com/document/product/876/34822#VerificationConfig)
+
+	* 新增成员：SignName, Template
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 50 次发布
+
+发布时间：2026-09-08 02:27:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateWebhookTrigger](http://document.tencentcloudapi.woa.com/document/product/1141/43531)
+
+	* 新增入参：PreheatRegion
+
+* [ModifyWebhookTrigger](http://document.tencentcloudapi.woa.com/document/product/1141/43527)
+
+	* 新增入参：Product, PreheatRegion
+
+
+修改数据结构：
+
+* [WebhookTrigger](http://document.tencentcloudapi.woa.com/document/product/1141/41603#WebhookTrigger)
+
+	* 新增成员：Product, PreheatRegion
+
+
+
+
+## TokenHub(tokenhub) 版本：2026-03-22
+
+### 第 21 次发布
+
+发布时间：2026-09-08 02:38:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeModelQuota](http://document.tencentcloudapi.woa.com/document/product/1814/92392)
+
+	* 新增出参：TPMInputReservePostPaidLimit, TPMOutputReservePostPaidLimit
+
 
 
 

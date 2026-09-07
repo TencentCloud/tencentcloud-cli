@@ -1725,6 +1725,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>客户端工具启动参数</p>",
+          "example": "[\"--ignore--certificate-error\"]",
+          "member": "string",
+          "name": "ClientAppArgs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>应用资产url</p>",
           "example": "https://www.bhasset.com",
           "member": "string",
@@ -10874,12 +10884,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户ID集合",
+          "document": "<p>用户ID集合</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "IdSet",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重置类型</p><p>枚举值：</p><ul><li>0： 同时重置本地认证密码、OTP验证码</li><li>1： 仅重置本地认证密码</li><li>2： 仅重置OTP验证码</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ResetType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
