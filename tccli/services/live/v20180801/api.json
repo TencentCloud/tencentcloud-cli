@@ -147,6 +147,13 @@
       "output": "CreateCommonMixStreamResponse",
       "status": "online"
     },
+    "CreateLiveAvatarCloneFigure": {
+      "document": "调用该接口，用于创建数字人直播间/AIGC直播间话术。",
+      "input": "CreateLiveAvatarCloneFigureRequest",
+      "name": "创建数字人直播间克隆形象",
+      "output": "CreateLiveAvatarCloneFigureResponse",
+      "status": "online"
+    },
     "CreateLiveAvatarRoom": {
       "document": "调用该接口，用于创建数字人直播间。",
       "input": "CreateLiveAvatarRoomRequest",
@@ -362,6 +369,13 @@
       "input": "DeleteCasterOutputInfoRequest",
       "name": "删除导播台推流信息",
       "output": "DeleteCasterOutputInfoResponse",
+      "status": "online"
+    },
+    "DeleteLiveAvatarCloneFigure": {
+      "document": "调用该接口，用于删除已有的数字人直播间里面的话术。",
+      "input": "DeleteLiveAvatarCloneFigureRequest",
+      "name": "删除数字人直播间克隆形象",
+      "output": "DeleteLiveAvatarCloneFigureResponse",
       "status": "online"
     },
     "DeleteLiveAvatarRoom": {
@@ -698,6 +712,13 @@
       "input": "DescribeLiveAvatarBackgroundListRequest",
       "name": "查询直播数字人背景列表",
       "output": "DescribeLiveAvatarBackgroundListResponse",
+      "status": "online"
+    },
+    "DescribeLiveAvatarCloneFigureList": {
+      "document": "调用该接口，查询数字人直播间信息列表。",
+      "input": "DescribeLiveAvatarCloneFigureListRequest",
+      "name": "查询数字人直播间克隆形象",
+      "output": "DescribeLiveAvatarCloneFigureListResponse",
       "status": "online"
     },
     "DescribeLiveAvatarImageList": {
@@ -5965,12 +5986,113 @@
       ],
       "type": "object"
     },
+    "CreateLiveAvatarCloneFigureRequest": {
+      "document": "CreateLiveAvatarCloneFigure请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>形象克隆场景类型</p><p>枚举值：</p><ul><li>PHOTO： 图生数字人</li><li>GREEN_SCREEN： 绿幕数字人</li><li>REAL_SHOT： 实景数字人</li></ul>",
+          "example": "PHOTO",
+          "member": "string",
+          "name": "SceneType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆的形象的名字</p>",
+          "example": "电子女主播",
+          "member": "string",
+          "name": "FigureName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆的形象的url</p>",
+          "example": "https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81%E5%A5%B3%E4%B8%BB%E6%92%AD.png",
+          "member": "string",
+          "name": "MaterialUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNHNOWN： 不知道</li></ul>",
+          "example": "FEMALE",
+          "member": "string",
+          "name": "Gender",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权pdf</p>",
+          "example": "https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/%E6%95%B0%E5%AD%97%E4%BA%BA%E6%B5%8B%E8%AF%95/%E6%8E%88%E6%9D%83%E4%B9%A6-%E5%BC%A0%E4%B8%89V1.pdf",
+          "member": "string",
+          "name": "IdentityWrittenUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权视频</p>",
+          "example": "https://virtualhuman-cos-prod-1251316161.cos.accelerate.myqcloud.com/customer-pipeline/3397/e0db4b1e-11be-480c-994a-88f06d44d87e/idcard/identity_7501541565984051200.pdf",
+          "member": "string",
+          "name": "IdentityVideoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图生视频时，动作训练幅度大小</p><p>枚举值：</p><ul><li>0： 只有头部轻微动</li><li>1： 头部跟身体均动</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PhotoVersion",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveAvatarCloneFigureResponse": {
+      "document": "CreateLiveAvatarCloneFigure返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该图克隆形象生成的任务id</p>",
+          "example": "7501977621938212864",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该克隆形象返回的状态</p><p>枚举值：</p><ul><li>SUBMITTING： 已受理</li><li>CHECKING： 检查中</li><li>QUEUE： 排队中</li><li>MAKING： 训练中</li><li>CONFIRMING： 效果确认</li><li>SUCCESS： 成功</li><li>FAIL： 失败</li></ul>",
+          "example": "SUBMITTING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLiveAvatarRoomRequest": {
       "document": "CreateLiveAvatarRoom请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "直播间名称。",
+          "document": "<p>直播间名称。</p>",
           "example": "my live",
           "member": "string",
           "name": "Name",
@@ -5979,10 +6101,37 @@
         },
         {
           "disabled": false,
-          "document": "操作者。",
+          "document": "<p>操作者。</p>",
           "example": "admin",
           "member": "string",
           "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>形象ID</p>",
+          "example": "461d120836d649798cc5e1a3daa64c1d",
+          "member": "string",
+          "name": "AvatarKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色ID</p>",
+          "example": "live_stream_female1",
+          "member": "string",
+          "name": "TimbreKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间模式</p><p>枚举值：</p><ul><li>INTERACT： 交互模式</li><li>FREE： 自由模式</li><li>NORMAL： 普通模式</li></ul>",
+          "example": "INTERACT",
+          "member": "string",
+          "name": "LiveMode",
           "required": false,
           "type": "string"
         }
@@ -5994,7 +6143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间 ID。",
+          "document": "<p>数字人直播间 ID。</p>",
           "example": "10003",
           "member": "string",
           "name": "RoomId",
@@ -8816,6 +8965,33 @@
       ],
       "type": "object"
     },
+    "DeleteLiveAvatarCloneFigureRequest": {
+      "document": "DeleteLiveAvatarCloneFigure请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待查的克隆形象的TaskId</p>",
+          "example": "7501977621938212864",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveAvatarCloneFigureResponse": {
+      "document": "DeleteLiveAvatarCloneFigure返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLiveAvatarRoomRequest": {
       "document": "DeleteLiveAvatarRoom请求参数结构体",
       "members": [
@@ -11055,6 +11231,80 @@
           "name": "InfoList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarCloneFigureListRequest": {
+      "document": "DescribeLiveAvatarCloneFigureList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待查询的克隆形象的TaskId</p>",
+          "example": "7501606042561581056",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据状态查询克隆形象</p><p>枚举值：</p><ul><li>SUBMITTING： 已受理</li><li>CHECKING： 检查中</li><li>QUEUE： 排队中</li><li>MAKING： 训练中</li><li>CONFIRMING： 效果确认</li><li>SUCCESS： 成功</li><li>FAIL： 失败</li></ul>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>期望返回克隆形象的个数（最多20个）</p>",
+          "example": "10",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>期望返回克隆形象的起始偏移位置（默认为0）</p>",
+          "example": "0",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveAvatarCloneFigureListResponse": {
+      "document": "DescribeLiveAvatarCloneFigureList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>克隆形象列表</p>",
+          "example": "无",
+          "member": "LiveAvatarCloneFigureInfo",
+          "name": "CloneFigureList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆形象总个数</p><p>单位：个</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -17759,6 +18009,221 @@
       ],
       "type": "object"
     },
+    "LiveAvatarCloneFigureInfo": {
+      "document": "数字人直播间克隆形象信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>克隆形象任务ID</p>",
+          "example": "7501606042561581056",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景模式</p><p>枚举值：</p><ul><li>PHOTO： 图生形象</li><li>GREEN_SCREEN： 绿幕形象</li><li>REAL_SHOT： 实景形象</li></ul>",
+          "example": "PHOTO",
+          "member": "string",
+          "name": "SceneType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>形象名称</p>",
+          "example": "图生测试形象",
+          "member": "string",
+          "name": "FigureName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>性别：男或者女</p>",
+          "example": "UNKNOWN",
+          "member": "string",
+          "name": "Gender",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>SUCCESS： 成功</li><li>FAILED： 失败</li><li>PROCESSING： 生成中</li></ul>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进度条</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>克隆好的形象在系统的key</p>",
+          "example": "966163fdc71b4d31b031ae03ffe5587b",
+          "member": "string",
+          "name": "AvatarKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>形象的图像</p>",
+          "example": "https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81%E5%A5%B3%E4%B8%BB%E6%92%AD.png",
+          "member": "string",
+          "name": "FigureImg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因，成功时，该字段没值</p>",
+          "example": "LimitExceeded:超过配额限制",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练视频</p>",
+          "example": "https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/%E6%95%B0%E5%AD%97%E4%BA%BA%E6%B5%8B%E8%AF%95/%E6%95%B0%E5%AD%97%E4%BA%BA%E5%A5%B3%E4%B8%BB%E6%92%AD.png",
+          "member": "string",
+          "name": "MaterialUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该克隆音色创建的时间</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "2026-09-04 19:44:13",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：YYYY-MM</p>",
+          "example": "2026-09-04 19:49:04",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有续期</p>",
+          "example": "UNKNOWN",
+          "member": "string",
+          "name": "RenewStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否过期</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExpired",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效期时间</p><p>参数格式：YYYY-MM</p>",
+          "example": "2027-09-04 19:44:13",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否循环播放(实景克隆形象能使用)</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "NeedPlayback",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练幅度，0：表示只有有头部动；1表示头部和手势都有训练</p><p>单位：1</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PhotoVersion",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>待确认视频</p>",
+          "example": "https://virtualhuman-cos-test-1251316161.cos.ap-nanjing.myqcloud.com/prod/resource-manager/small/3397/39207/37838/model_49967_20260904161242/pv.mp4",
+          "member": "string",
+          "name": "ConfirmDemoUrls",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>形象克隆完成时间</p><p>参数格式：YYYY-MM</p>",
+          "example": "2026-09-04 20:44:13",
+          "member": "string",
+          "name": "EstimatedCompleteTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LiveCertDomainInfo": {
       "document": "用作批量绑定域名和证书。",
       "members": [
@@ -24038,6 +24503,42 @@
           "example": "AIGC",
           "member": "string",
           "name": "RoomType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>交互模式下的协议，支持rtmp和trtc，默认是rtmp</p>",
+          "example": "trtc",
+          "member": "string",
+          "name": "SessionProtocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用trtc协议时，在trtc的appid</p>",
+          "example": "1600098322",
+          "member": "string",
+          "name": "TrtcSdkAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>进入房间时需要用UserSign来校验权限</p>",
+          "example": "eJwtzE8LgjAcxvH3smth29pfoUNdKvEiBhV0KZz1o6y5qQXRe2*lx*fzheeNNmkedcahGNEIo-F-Q2HuDZTQM2GSKS6EHKovrkdroUAxERhjraaU9sW8LDgTnHNOQ*q1gepnUinJtJCDejiH86WdW*pPN02Sx6LdHiam9T7tSvcUNWV2dZFVnY*S3X6dZTP0*QKnjTIx",
+          "member": "string",
+          "name": "TrtcUserSig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要进入的房间</p>",
+          "example": "79059",
+          "member": "string",
+          "name": "TrtcRoomId",
           "required": false,
           "type": "string"
         }

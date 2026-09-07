@@ -6415,6 +6415,15 @@
           "name": "FourthZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性扩容参数（如果不传，则不开启）</p>",
+          "example": "无",
+          "member": "AutoStrategy",
+          "name": "AutoStrategy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6849,6 +6858,15 @@
           "name": "FourthZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性扩容参数（如果不传，则不开启）</p>",
+          "example": "无",
+          "member": "AutoStrategy",
+          "name": "AutoStrategy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

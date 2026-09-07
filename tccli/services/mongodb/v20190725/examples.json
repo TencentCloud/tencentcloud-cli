@@ -656,6 +656,22 @@
         "title": "回档实例"
       }
     ],
+    "ScaleDownDBInstanceCpu": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleDownDBInstanceCpu\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1750660112000525,\n        \"RequestId\": \"b0559152-9326-487f-aa65-f80e1d5d43db\"\n    }\n}",
+        "title": "弹性cpu恢复"
+      }
+    ],
+    "ScaleUpDBInstanceCpu": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleUpDBInstanceCpu\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"ExtraCpu\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1750660112000728,\n        \"RequestId\": \"5e89aab1-b2ad-43a9-b7ab-b113ada62309\"\n    }\n}",
+        "title": "弹性cpu扩容"
+      }
+    ],
     "SetAccountUserPrivilege": [
       {
         "document": "为当前实例的指定账号设置操作权限",

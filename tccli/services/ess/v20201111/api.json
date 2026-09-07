@@ -246,7 +246,7 @@
       "status": "online"
     },
     "CreateFlowByFiles": {
-      "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n## 传参方式指引\n\n| 签署方类型 | ApproverType | 需要提前准备的信息 | 对应 Approvers 关键字段 |\n|------|------|------|------|\n| 本企业员工（未认证加入） | 0 | 签署企业名、员工真实姓名、员工触达手机号、证件号（非必传） | OrganizationName + ApproverName + ApproverMobile |\n| 本企业员工（已认证加入） | 0 | 签署企业名、员工在电子签平台的 ID（UserId） | OrganizationName + UserId |\n| 他方企业员工 | 0 | 签署企业名、员工真实姓名、员工触达手机号、证件号（非必传） | OrganizationName + ApproverName + ApproverMobile |\n| 个人（自然人） | 1 | 个人真实姓名、个人触达手机号、身份证号（非必传） | ApproverName + ApproverMobile |\n\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/DescribeFileConvertTask)接口转换成pdf资源）<br/>\n\n## 整体流程图\n![image](https://qcloudimg.tencent-cloud.cn/raw/9bf547fe0bc738f9a97b4b619dea0633.svg)\n\n注：\n-  合同<font color=\"red\">发起后就会扣减合同的额度</font> , 只有撤销没有参与方签署过或只有自动签署签署过的合同，且<font color=\"red\">有撤销合同额度</font>的情形下，才会返还合同额度。（**过期，拒签，签署完成，解除完成等状态不会返还额度**）。具体可以参考[合同撤销返还额度说明](https://qian.tencent.com/developers/company/contract_cancel_quota)。\n- 支持的证件类型可以参考[支持的证件类型](https://qian.tencent.com/developers/company/id_card_support)。\n- 合同发起方需要【组织管理】->【角色管理】中拥有<font color=\"red\">接口发起合同</font>的权限\n![image](https://qcloudimg.tencent-cloud.cn/raw/c8553d1823ca1323e82c11f01c86e8cd.png)\n\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/ess_uploadfiles.mp4\" target=\"_blank\">上传用于合同发起的PDF文件代码编写示例</a><br>\n2.  <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/ess-CreateFlowByFiles.mp4\" target=\"_blank\">用PDF文件创建签署流程编写示例</a><br>",
+      "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n## 传参方式指引\n\n| 签署方类型 | ApproverType | 需要提前准备的信息 | 对应 Approvers 关键字段 |\n|------|------|------|------|\n| 本企业员工（未认证加入） | 0 | 签署企业名、员工真实姓名、员工触达手机号、证件号（非必传） | OrganizationName + ApproverName + ApproverMobile |\n| 本企业员工（已认证加入） | 0 | 签署企业名、员工在电子签平台的 ID（UserId） | OrganizationName + UserId |\n| 他方企业员工 | 0 | 签署企业名、员工真实姓名、员工触达手机号、证件号（非必传） | OrganizationName + ApproverName + ApproverMobile |\n| 个人（自然人） | 1 | 个人真实姓名、个人触达手机号、身份证号（非必传） | ApproverName + ApproverMobile |\n\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateFileConvertTask)接口转换成pdf资源）<br/>\n\n## 整体流程图\n![image](https://qcloudimg.tencent-cloud.cn/raw/9bf547fe0bc738f9a97b4b619dea0633.svg)\n\n注：\n-  合同<font color=\"red\">发起后就会扣减合同的额度</font> , 只有撤销没有参与方签署过或只有自动签署签署过的合同，且<font color=\"red\">有撤销合同额度</font>的情形下，才会返还合同额度。（**过期，拒签，签署完成，解除完成等状态不会返还额度**）。具体可以参考[合同撤销返还额度说明](https://qian.tencent.com/developers/company/contract_cancel_quota)。\n- 支持的证件类型可以参考[支持的证件类型](https://qian.tencent.com/developers/company/id_card_support)。\n- 合同发起方需要【组织管理】->【角色管理】中拥有<font color=\"red\">接口发起合同</font>的权限\n![image](https://qcloudimg.tencent-cloud.cn/raw/c8553d1823ca1323e82c11f01c86e8cd.png)\n\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/ess_uploadfiles.mp4\" target=\"_blank\">上传用于合同发起的PDF文件代码编写示例</a><br>\n2.  <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/ess-CreateFlowByFiles.mp4\" target=\"_blank\">用PDF文件创建签署流程编写示例</a><br>",
       "input": "CreateFlowByFilesRequest",
       "name": "用PDF文件创建签署流程",
       "output": "CreateFlowByFilesResponse",
@@ -1072,7 +1072,7 @@
       "status": "online"
     },
     "UploadFiles": {
-      "document": "此接口（UploadFiles）文件上传。<br/>\n\n适用场景：用于合同，印章的文件上传。文件上传以后，\n如果是PDF格式文件可配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>接口进行合同流程的发起\n如果是其他类型可以配合<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>接口转换成PDF文件\n\n注: \n1. 图片类型(png/jpg/jpeg)限制大小为5M以下, PDF/word/excel等其他格式限制大小为60M以下\n2. 调用此接口时需要设置单独的Domain请求域名，<font color=\"red\">联调开发环境为: file.test.ess.tencent.cn，正式环境需要设置为:file.ess.tencent.cn</font>，代码示例\n```\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");\n```\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/ess_uploadfiles.mp4\" target=\"_blank\">上传用于合同发起的PDF文件代码编写示例</a><br>",
+      "document": "此接口（UploadFiles）文件上传。<br/>\n\n适用场景：用于合同，印章的文件上传。文件上传以后，\n如果是PDF格式文件可配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>接口进行合同流程的发起\n如果是其他类型可以配合<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateFileConvertTask\" target=\"_blank\">创建文件转换任务</a>接口转换成PDF文件\n\n注: \n1. 图片类型(png/jpg/jpeg)限制大小为5M以下, PDF/word/excel等其他格式限制大小为60M以下\n2. 调用此接口时需要设置单独的Domain请求域名，<font color=\"red\">联调开发环境为: file.test.ess.tencent.cn，正式环境需要设置为:file.ess.tencent.cn</font>，代码示例\n```\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");\n```\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/ess_uploadfiles.mp4\" target=\"_blank\">上传用于合同发起的PDF文件代码编写示例</a><br>",
       "input": "UploadFilesRequest",
       "name": "上传文件",
       "output": "UploadFilesResponse",
@@ -5600,7 +5600,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>WEB嵌入的业务资源ID</p><p>当EmbedType取值</p><ul><li>为PREVIEW_SEAL_DETAIL，必填，取值为印章id。</li><li>为CREATE_TEMPLATE，非必填，取值为资源id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)*</li><li>为MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id。</li><li>为CREATE_CONTRACT_DRAFT_COOPEDIT，非必填，取值为资源 id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)*</li><li>为PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id。</li></ul><p>注意：</p><ol><li>CREATE_TEMPLATE中的BusinessId仅支持PDF文件类型， 如果您的文件不是PDF， 请使用接口<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\">创建文件转换任务</a> 和<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\">查询转换任务状态</a> 来进行转换成PDF资源。</li><li>CREATE_CONTRACT_DRAFT_COOPEDIT中的BusinessId仅支持DOC 和 DOCX 的文件，并且大小不能超过 10M。</li></ol>",
+          "document": "<p>WEB嵌入的业务资源ID</p><p>当EmbedType取值</p><ul><li>为PREVIEW_SEAL_DETAIL，必填，取值为印章id。</li><li>为CREATE_TEMPLATE，非必填，取值为资源id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)*</li><li>为MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id。</li><li>为CREATE_CONTRACT_DRAFT_COOPEDIT，非必填，取值为资源 id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)*</li><li>为PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id。</li></ul><p>注意：</p><ol><li>CREATE_TEMPLATE中的BusinessId仅支持PDF文件类型， 如果您的文件不是PDF， 请使用接口<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateFileConvertTask\">创建文件转换任务</a> 和<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/DescribeFileConvertTask\">查询转换任务状态</a> 来进行转换成PDF资源。</li><li>CREATE_CONTRACT_DRAFT_COOPEDIT中的BusinessId仅支持DOC 和 DOCX 的文件，并且大小不能超过 10M。</li></ol>",
           "example": "yDt1JUUc**77**o*U*****88eg49PTsN",
           "member": "string",
           "name": "BusinessId",
@@ -23006,12 +23006,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。\n\n- false 展示签署日期（默认）\n- true 不展示签署日期 \n![image](https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png)。",
+          "document": "<p>签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。</p><ul><li>false 展示签署日期（默认）</li><li>true 不展示签署日期<br><img src=\"https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png\" alt=\"image\">。</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "HideDate",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>【仅 SignBeanTag=1 时有效】 签署方自行添加签署印章类控件（SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL）时，「盖章区适配签署方印章尺寸」开关的控制策略</p><p>枚举值：</p><ul><li>0： 默认关闭，可开启。与现网一致</li><li>1： 关闭且置灰——按控件默认的4.2cm尺寸盖章，签署方无法开启开关</li><li>2： 默认开启且可修改——默认按印章实际尺寸盖章，签署方可手动关闭</li><li>3： 开启且置灰——强制按印章实际尺寸盖章，签署方不可修改</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AddSignComponentUseSealSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -24235,7 +24244,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>文件对应业务类型,可以选择的类型如下</p><p>枚举值：</p><ul><li>TEMPLATE： 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li><li>DOCUMENT： 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li>SEAL： 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li><li>ARCHIVE： 此文件用于归档文件夹，文件类型支持.pdf/.zip格式</li><li>BUSINESSLICENSE： 此文件用于上传营业执照，用于后续<a href=\"https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl\" target=\"_blank\">创建企业认证链接</a>认证企业的时候提供营业执照，文件类型支持.jpg/.jpeg/.png，限制8M以内</li></ul>",
+          "document": "<p>文件对应业务类型,可以选择的类型如下</p><p>枚举值：</p><ul><li>TEMPLATE： 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li><li>DOCUMENT： 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateFileConvertTask\" target=\"_blank\">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li>SEAL： 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li><li>ARCHIVE： 此文件用于归档文件夹，文件类型支持.pdf/.zip格式</li><li>BUSINESSLICENSE： 此文件用于上传营业执照，用于后续<a href=\"https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl\" target=\"_blank\">创建企业认证链接</a>认证企业的时候提供营业执照，文件类型支持.jpg/.jpeg/.png，限制8M以内</li></ul>",
           "example": "DOCUMENT",
           "member": "string",
           "name": "BusinessType",

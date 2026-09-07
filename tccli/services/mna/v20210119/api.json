@@ -2973,7 +2973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码，从1开始",
+          "document": "<p>页码，从1开始</p>",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -2982,7 +2982,7 @@
         },
         {
           "disabled": false,
-          "document": "每页个数",
+          "document": "<p>每页个数</p>",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -2991,7 +2991,7 @@
         },
         {
           "disabled": false,
-          "document": "流量包的唯一资源ID",
+          "document": "<p>流量包的唯一资源ID</p>",
           "example": "live-jjc000eABvgr",
           "member": "string",
           "name": "ResourceId",
@@ -3000,7 +3000,7 @@
         },
         {
           "disabled": false,
-          "document": "流量包绑定的设备ID",
+          "document": "<p>流量包绑定的设备ID</p>",
           "example": "mna-dev1",
           "member": "string",
           "name": "DeviceId",
@@ -3009,12 +3009,30 @@
         },
         {
           "disabled": false,
-          "document": "流量包状态，0：未生效，1：有效期内，2：已过期\n",
+          "document": "<p>流量包状态，0：未生效，1：有效期内，2：已过期</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效时间在此时间之后</p>",
+          "example": "2026-08-12 16:25:23",
+          "member": "string",
+          "name": "ActiveTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效时间在此时间之前</p>",
+          "example": "2026-08-13 16:25:23",
+          "member": "string",
+          "name": "ActiveTimeEnd",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3024,7 +3042,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量包列表",
+          "document": "<p>流量包列表</p>",
           "example": "无",
           "member": "FlowPackageInfo",
           "name": "PackageList",
@@ -3034,7 +3052,7 @@
         },
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "12",
           "member": "uint64",
           "name": "Total",

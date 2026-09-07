@@ -35855,7 +35855,7 @@
         {
           "disabled": false,
           "document": "IP 参数列表，json数组由IP，source，note，action，valid_ts组成。IP对应配置的IP地址，source固定为custom值，note为注释，action值42为黑名单，40为白名单，valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））",
-          "example": "[{ip:1.2.3.4,source:custom,note:test,action:42,valid_ts:165009}]",
+          "example": "[\"{\\\"ip\\\":\\\"1.2.3.4\\\",\\\"source\\\":\\\"custom\\\",\\\"note\\\":\\\"test\\\",\\\"action\\\":42,\\\"valid_ts\\\":1650095068}\"]",
           "member": "string",
           "name": "Items",
           "required": true,

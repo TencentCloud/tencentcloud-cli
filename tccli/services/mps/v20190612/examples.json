@@ -1680,6 +1680,14 @@
         "title": "修改内容审核模板，开启画面令人反感的信息的内容审核任务并指定分数阈值"
       }
     ],
+    "ModifyDocToVideoTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDocToVideoTaskStatus\n<公共请求参数>\n\n{\n    \"Input\": {\n        \"Action\": \"regenerate\",\n        \"Stage\": \"STAGE_1\",\n        \"SourceTaskId\": \"996190db-c567-d47b-1641-6216c7457036\",\n        \"Regenerate\": {\n            \"Scope\": \"full\",\n            \"Prompt\": \"压缩一下，第一页和第二页的内容合并到一起\",\n            \"SceneIds\": [\n                \"scene-3\"\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"72687c0b-19aa-f799-ddf9-716619c12eda\",\n        \"RequestId\": \"3e8e036a-0aae-4ad6-b321-dc91eb5f7261\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "ModifyImageSpriteTemplate": [
       {
         "document": "",

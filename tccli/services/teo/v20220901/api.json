@@ -1955,6 +1955,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名因合规问题产生的地区访问限制列表。</p>",
+          "example": "无",
+          "member": "ComplianceRestriction",
+          "name": "ComplianceRestrictions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6113,6 +6123,32 @@
         }
       ],
       "usage": "both"
+    },
+    "ComplianceRestriction": {
+      "document": "因政府法律法规、用户协议等规定，对资源进行地区访问限制信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下发访问限制的原因。</p><p>枚举值：</p><ul><li>ICP_RECORD_REQUIRED： 未备案；</li><li>GOVERNMENT_ORDER： 政府指令。</li></ul>",
+          "example": "GOVERNMENT_ORDER",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制访问地区的具体国家/地区码，使用“ISO 3166 国家/地区代码标准”。</p><p>参数格式：查看链接：https://www.iso.org/iso-3166-country-codes.html。</p>",
+          "example": "CN",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ComponentReference": {
       "document": "组件被引用的实例信息，用于展示该组件与边缘函数等资源的绑定关系。当边缘函数需要访问组件（如 KV 命名空间）时，会建立引用关系，通过此结构体可查看引用的具体实例详情及所属站点信息。",
@@ -20326,7 +20362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "函数 ID。",
+          "document": "<p>函数 ID。</p>",
           "example": "ef-jjhvk7ec",
           "member": "string",
           "name": "FunctionId",
@@ -20336,7 +20372,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "zone-293e7s5jne1",
           "member": "string",
           "name": "ZoneId",
@@ -20346,7 +20382,7 @@
         },
         {
           "disabled": false,
-          "document": "函数名字。",
+          "document": "<p>函数名字。</p>",
           "example": "example-function",
           "member": "string",
           "name": "Name",
@@ -20356,7 +20392,7 @@
         },
         {
           "disabled": false,
-          "document": "函数描述。",
+          "document": "<p>函数描述。</p>",
           "example": "鉴权函数",
           "member": "string",
           "name": "Remark",
@@ -20366,7 +20402,7 @@
         },
         {
           "disabled": false,
-          "document": "函数内容。",
+          "document": "<p>函数内容。</p>",
           "example": "addEventListener('fetch', e => {   const response = new Response('Hello World!');   e.respondWith(response); });",
           "member": "string",
           "name": "Content",
@@ -20376,7 +20412,7 @@
         },
         {
           "disabled": false,
-          "document": "函数默认域名。",
+          "document": "<p>函数默认域名。</p>",
           "example": "test1-zone-28v607hqabcd-1231525690.eo-edgefunctions.com",
           "member": "string",
           "name": "Domain",
@@ -20386,7 +20422,17 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "document": "<p>边缘函数默认域名因合规问题产生的地区访问限制列表。</p>",
+          "example": "无",
+          "member": "ComplianceRestriction",
+          "name": "DomainComplianceRestrictions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>",
           "example": "2017-09-17T16:30:58.410670+00:00",
           "member": "string",
           "name": "CreateTime",
@@ -20396,7 +20442,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "document": "<p>修改时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。</p>",
           "example": "2017-09-17T16:30:58.410670+00:00",
           "member": "string",
           "name": "UpdateTime",

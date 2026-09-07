@@ -2026,14 +2026,6 @@
         "title": "获取作业事件"
       }
     ],
-    "GetRayJobEventLog": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRayJobEventLog\n<公共请求参数>\n\n{\n    \"Id\": \"rayjob-1773632068-nksg\",\n    \"StartTime\": 1773625164000,\n    \"EndTime\": 1773635964000,\n    \"Page\": 1,\n    \"PageSize\": 2,\n    \"SortFields\": [\n        {\n            \"Field\": \"StartTime\",\n            \"Order\": \"asc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Component\": \"RayJob\",\n                \"EventTime\": 1773632143,\n                \"Level\": \"INFO\",\n                \"Message\": \"Job is running on remote cluster\"\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 2,\n        \"TotalCount\": 2,\n        \"TotalPages\": 1,\n        \"RequestId\": \"9bb194f1-6454-4818-93a3-bd926b9ef814\"\n    }\n}",
-        "title": "获取作业事件日志"
-      }
-    ],
     "GetRayJobHistory": [
       {
         "document": "",

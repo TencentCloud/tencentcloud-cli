@@ -1330,7 +1330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集器输出的实例类型（支持elasticsearch、logstash）",
+          "document": "<p>采集器输出的实例类型（支持elasticsearch、logstash）</p>",
           "example": "elasticsearch",
           "member": "string",
           "name": "Type",
@@ -1341,7 +1341,7 @@
         },
         {
           "disabled": false,
-          "document": "采集器输出的实例ID",
+          "document": "<p>采集器输出的实例ID</p>",
           "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1352,7 +1352,7 @@
         },
         {
           "disabled": false,
-          "document": "采集器输出到的ES实例的用户名",
+          "document": "<p>采集器输出到的ES实例的用户名</p>",
           "example": "elastic",
           "member": "string",
           "name": "ESUserName",
@@ -1363,7 +1363,7 @@
         },
         {
           "disabled": false,
-          "document": "采集器输出到的ES实例的密码",
+          "document": "<p>采集器输出到的ES实例的密码</p>",
           "example": "hiQ7*******hjko",
           "member": "string",
           "name": "ESUserPasswd",
@@ -1374,7 +1374,7 @@
         },
         {
           "disabled": false,
-          "document": "采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）",
+          "document": "<p>采集器输出到ES实例时，是否开启监控（1为开启，0为不开启，默认为0）</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableMonitoring",
@@ -1385,7 +1385,7 @@
         },
         {
           "disabled": false,
-          "document": "采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）",
+          "document": "<p>采集器输出到ES实例时，是否开启自动在kibana中生成Dashboard（1为开启，0为不开启，默认为0）</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableDashboard",
@@ -1396,7 +1396,7 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka实例的vip",
+          "document": "<p>Ckafka实例的vip</p>",
           "example": "1.1.1.1:9092",
           "member": "string",
           "name": "KafkaEndpoint",
@@ -1407,7 +1407,7 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka实例中的Topic",
+          "document": "<p>Ckafka实例中的Topic</p>",
           "example": "test_topic",
           "member": "string",
           "name": "KafkaTopic",
@@ -1418,7 +1418,7 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka实例的版本号",
+          "document": "<p>Ckafka实例的版本号</p>",
           "example": "1.1.1",
           "member": "string",
           "name": "KafkaVersion",
@@ -1429,8 +1429,8 @@
         },
         {
           "disabled": false,
-          "document": "topic id",
-          "example": "\t topic-xxxx",
+          "document": "<p>topic id</p>",
+          "example": "topic-xxxx",
           "member": "string",
           "name": "SesTopicId",
           "output_required": false,
@@ -1440,7 +1440,7 @@
         },
         {
           "disabled": false,
-          "document": "topic name",
+          "document": "<p>topic name</p>",
           "example": "123232-xxxxx",
           "member": "string",
           "name": "SesTopicName",
@@ -1451,7 +1451,7 @@
         },
         {
           "disabled": false,
-          "document": "topic address",
+          "document": "<p>topic address</p>",
           "example": "dip.tencentcloudmq.com:6000",
           "member": "string",
           "name": "SesTopicAddress",
@@ -1462,7 +1462,7 @@
         },
         {
           "disabled": false,
-          "document": "/",
+          "document": "<p>/</p>",
           "example": "iu8n1yd44zln",
           "member": "string",
           "name": "SesTopicUserName",
@@ -1473,7 +1473,7 @@
         },
         {
           "disabled": false,
-          "document": "/",
+          "document": "<p>/</p>",
           "example": "hiQ7*******hjko",
           "member": "string",
           "name": "SesTopicPasswd",
@@ -1484,13 +1484,24 @@
         },
         {
           "disabled": false,
-          "document": "/",
+          "document": "<p>/</p>",
           "example": "5044",
           "member": "uint64",
           "name": "LogstashListenPort",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>serverless 的 spaceid</p>",
+          "example": "space-66e77nxu",
+          "member": "string",
+          "name": "SesSpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

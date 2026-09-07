@@ -216,10 +216,22 @@
     ],
     "GetFlowPackages": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowPackages\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"PackageList\": [\n            {\n                \"ActiveTime\": 1734613941,\n                \"AppId\": 251198806,\n                \"CapacityRemain\": 50000,\n                \"CapacityRemainPrecise\": 50000,\n                \"CapacitySize\": 50000,\n                \"CreateTime\": 1734613920,\n                \"DeviceList\": [\n                    \"mna-6t5t54hcry\",\n                    \"mna-s72mu68gh3\"\n                ],\n                \"ExpireTime\": 1737292340,\n                \"ModifyStatus\": 0,\n                \"PackageType\": \"DEVICE_2_FLOW_50G\",\n                \"RenewFlag\": true,\n                \"ResourceId\": \"live-jjc000eABvgr_qt\",\n                \"Status\": 1,\n                \"TruncFlag\": false\n            }\n        ],\n        \"RequestId\": \"e6972818-74b2-4228-a5ec-70c11e37fe6c\",\n        \"Total\": 506\n    }\n}",
-        "title": "示例"
+        "document": "查询指定ResourceId的流量包",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowPackages\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"ResourceId\": \"mpe-00ja9uc_2Z26M6JHHc0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PackageList\": [\n            {\n                \"ActiveTime\": 1786523124,\n                \"AppId\": 260126599,\n                \"CapacityRemain\": 20000,\n                \"CapacityRemainPrecise\": 20000,\n                \"CapacitySize\": 20000,\n                \"CreateTime\": 1786523120,\n                \"DeviceList\": [\n                    \"mna-qz2oc2mbco\"\n                ],\n                \"ExpireTime\": 1789201523,\n                \"ModifyStatus\": 0,\n                \"PackageType\": \"DEVICE_1_FLOW_20G\",\n                \"RenewFlag\": true,\n                \"ResourceId\": \"mpe-00ja9uc_2Z26M6JHHc0\",\n                \"Status\": 1,\n                \"TruncFlag\": false\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"b4e42802-7a24-4388-acb6-ec6ecb04d626\"\n    }\n}",
+        "title": "查询指定流量包"
+      },
+      {
+        "document": "查询指定生效时间之后的流量包",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowPackages\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"ActiveTimeStart\": \"2026-08-12 16:25:23\",\n    \"ActiveTimeEnd\": \"2026-08-13 16:25:23\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PackageList\": [\n            {\n                \"ActiveTime\": 1786523124,\n                \"AppId\": 260126599,\n                \"CapacityRemain\": 20000,\n                \"CapacityRemainPrecise\": 20000,\n                \"CapacitySize\": 20000,\n                \"CreateTime\": 1786523120,\n                \"DeviceList\": [\n                    \"mna-qz2oc2mbco\"\n                ],\n                \"ExpireTime\": 1789201523,\n                \"ModifyStatus\": 0,\n                \"PackageType\": \"DEVICE_1_FLOW_20G\",\n                \"RenewFlag\": true,\n                \"ResourceId\": \"mpe-00ja9uc_2Z26M6JHHc0\",\n                \"Status\": 1,\n                \"TruncFlag\": false\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"9f591e4b-546a-4a8b-acb5-292c9651f62d\"\n    }\n}",
+        "title": "查询指定生效时间之后的流量包"
+      },
+      {
+        "document": "查询生效中的流量包",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowPackages\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PackageList\": [\n            {\n                \"ActiveTime\": 1786523124,\n                \"AppId\": 260126599,\n                \"CapacityRemain\": 20000,\n                \"CapacityRemainPrecise\": 20000,\n                \"CapacitySize\": 20000,\n                \"CreateTime\": 1786523120,\n                \"DeviceList\": [\n                    \"mna-qz2oc2mbco\"\n                ],\n                \"ExpireTime\": 1789201523,\n                \"ModifyStatus\": 0,\n                \"PackageType\": \"DEVICE_1_FLOW_20G\",\n                \"RenewFlag\": true,\n                \"ResourceId\": \"mpe-00ja9uc_2Z26M6JHHc0\",\n                \"Status\": 1,\n                \"TruncFlag\": false\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"56199b6d-980d-40b5-a0d5-c90d68ef8358\"\n    }\n}",
+        "title": "查询生效中的流量包"
       }
     ],
     "GetFlowStatistic": [
