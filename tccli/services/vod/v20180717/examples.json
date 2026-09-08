@@ -1033,7 +1033,7 @@
     "DescribeCurrentPlaylist": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DesribeCurrentPlaylistForCtrip\n<公共请求参数>\n\n{\n    \"RoundPlayId\": \"1323\",\n    \"SubAppId\": 123\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCurrentPlaylist\n<公共请求参数>\n\n{\n    \"RoundPlayId\": \"1323\",\n    \"SubAppId\": 123\n}",
         "output": "{\n    \"Response\": {\n        \"CurrentPlaylist\": [\n            {\n                \"ItemId\": \"a001\",\n                \"FileId\": \"528xxx5487985271487\",\n                \"StartPlayTime\": \"2024-07-25T10:12:00+08:00\",\n                \"Duration\": 100\n            }\n        ],\n        \"RequestId\": \"58759c60-aceb-4b02-b0ed-6c62bfea88cc\"\n    }\n}",
         "title": "查询轮播当前播放列表。"
       }

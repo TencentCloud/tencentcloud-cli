@@ -14985,7 +14985,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "扫描模式 0 全盘扫描, 1 快速扫描",
+          "document": "<p>扫描模式 0 全盘扫描, 1 快速扫描</p>",
           "example": "1",
           "member": "uint64",
           "name": "ScanPattern",
@@ -14994,7 +14994,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器分类：1:专业版服务器；2:自选服务器",
+          "document": "<p>服务器分类：1:专业版服务器；2:自选服务器</p>",
           "example": "1",
           "member": "int64",
           "name": "HostType",
@@ -15003,8 +15003,17 @@
         },
         {
           "disabled": false,
-          "document": "自选服务器时生效，主机quuid的string数组",
-          "example": "[\"a15a2cac-0bea-478d-a5d0-f54be8******\"\"]",
+          "document": "<p>自定义路径列表，仅ScanPattern=2/3时生效：2表示仅扫描这些路径，3表示扫描时排除这些路径。最少1条，最多200条</p>",
+          "example": "[\"/custom/path\"]",
+          "member": "string",
+          "name": "CustomPaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自选服务器时生效，主机quuid的string数组</p>",
+          "example": "[\"asd\"]",
           "member": "string",
           "name": "QuuidList",
           "required": false,
@@ -15012,7 +15021,7 @@
         },
         {
           "disabled": false,
-          "document": "超时时间单位 秒 默认3600 秒",
+          "document": "<p>超时时间单位 秒 默认3600 秒</p>",
           "example": "1",
           "member": "uint64",
           "name": "TimeoutPeriod",
@@ -15021,7 +15030,7 @@
         },
         {
           "disabled": false,
-          "document": "1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）",
+          "document": "<p>1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）</p>",
           "example": "2",
           "member": "uint64",
           "name": "EngineType",
@@ -15030,7 +15039,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启恶意进程查杀[0:未开启,1:开启]",
+          "document": "<p>是否开启恶意进程查杀[0:未开启,1:开启]</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableMemShellScan",
@@ -15045,7 +15054,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
@@ -28803,6 +28812,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>自定义路径列表，CheckPattern=2/3时生效</p>",
+          "example": "[\"/custom/path\"]",
+          "member": "string",
+          "name": "CustomPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>检测周期 开始时间</p>",
           "example": "00:00:00",
           "member": "string",
@@ -28849,6 +28868,16 @@
           "name": "MonitoringPattern",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>监控自定义路径列表，MonitoringPattern=2/3时生效</p>",
+          "example": "[\"/custom/path\"]",
+          "member": "string",
+          "name": "MonitorCustomPaths",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -50300,6 +50329,24 @@
           "name": "RealTimeMonitoring",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义路径列表，仅CheckPattern=2/3时生效：2表示仅检测这些路径，3表示检测时排除这些路径。最少1条，最多200条</p>",
+          "example": "[\"/custom/path\"]",
+          "member": "string",
+          "name": "CustomPaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>监控自定义路径列表，仅MonitoringPattern=2/3时生效：2表示仅监控这些路径，3表示监控时排除这些路径。最少1条，最多200条</p>",
+          "example": "[\"/custom/path\"]",
+          "member": "string",
+          "name": "MonitorCustomPaths",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,

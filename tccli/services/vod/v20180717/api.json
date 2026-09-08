@@ -22653,7 +22653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。</b></p>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -22662,7 +22662,7 @@
         },
         {
           "disabled": false,
-          "document": "轮播播单唯一标识。",
+          "document": "<p>轮播播单唯一标识。</p>",
           "example": "a12",
           "member": "string",
           "name": "RoundPlayId",
@@ -22671,7 +22671,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的播放列表的长度。最大10，默认值为5。",
+          "document": "<p>返回的播放列表的长度。最大10，默认值为5。</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -22686,7 +22686,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前播放列表信息。",
+          "document": "<p>当前播放列表信息。</p>",
           "example": "无",
           "member": "RoundPlayFilePlayInfo",
           "name": "CurrentPlaylist",

@@ -452,6 +452,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置内置 OSWorld</p>",
+          "example": "无",
+          "member": "OSWorldConfiguration",
+          "name": "OSWorldConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2087,6 +2098,23 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OSWorldConfiguration": {
+      "document": "OSWorld 内置版本配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定内置 OSWorld 版本</p><p>枚举值：</p><ul><li>osworld1： osworld v1</li><li>osworld2： osworld v2</li></ul><p>默认值：osworld1</p>",
+          "example": "osworld1",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

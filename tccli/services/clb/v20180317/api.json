@@ -21539,6 +21539,15 @@
           "name": "Capability",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>端点路径</p>",
+          "example": "/compatible-mode/v1",
+          "member": "string",
+          "name": "EndpointPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

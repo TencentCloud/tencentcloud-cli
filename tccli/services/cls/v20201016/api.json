@@ -280,6 +280,20 @@
       "output": "CreateRemoteWriteTaskResponse",
       "status": "online"
     },
+    "CreateResourceGraph": {
+      "document": "创建工作区。",
+      "input": "CreateResourceGraphRequest",
+      "name": "创建资源图谱",
+      "output": "CreateResourceGraphResponse",
+      "status": "online"
+    },
+    "CreateResourceGraphProductIngestTask": {
+      "document": "接入指定云产品。EBPF 类产品需提供 EBPFCollectRule，API 类产品仅需 Product。",
+      "input": "CreateResourceGraphProductIngestTaskRequest",
+      "name": "创建资源图谱的产品接入任务",
+      "output": "CreateResourceGraphProductIngestTaskResponse",
+      "status": "online"
+    },
     "CreateS3Recharge": {
       "document": "本接口用于创建aws导入任务",
       "input": "CreateS3RechargeRequest",
@@ -558,6 +572,20 @@
       "input": "DeleteRemoteWriteTaskRequest",
       "name": "删除RemoteWrite任务",
       "output": "DeleteRemoteWriteTaskResponse",
+      "status": "online"
+    },
+    "DeleteResourceGraph": {
+      "document": "删除工作区。删除前需确认是否级联清理已接入的云产品（待产品确认）。",
+      "input": "DeleteResourceGraphRequest",
+      "name": "删除资源图谱",
+      "output": "DeleteResourceGraphResponse",
+      "status": "online"
+    },
+    "DeleteResourceGraphProductIngestTask": {
+      "document": "删除产品接入任务",
+      "input": "DeleteResourceGraphProductIngestTaskRequest",
+      "name": "删除资源图谱的产品接入任务",
+      "output": "DeleteResourceGraphProductIngestTaskResponse",
       "status": "online"
     },
     "DeleteS3Recharge": {
@@ -973,6 +1001,76 @@
       "output": "DescribeRemoteWriteTasksResponse",
       "status": "online"
     },
+    "DescribeResourceGraphDetail": {
+      "document": "查询单个云产品接入的详情，包含基本信息、实例选择、eBPF 采集规则和关联的日志主题。",
+      "input": "DescribeResourceGraphDetailRequest",
+      "name": "查询资源图谱详情",
+      "output": "DescribeResourceGraphDetailResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphEntities": {
+      "document": "分页查询资源图谱实体列表。Filters 支持  Product / EntityClassName / Keyword 过滤；TagFilter 由于结构特殊（key 单选 + values 多选）独立成字段。",
+      "input": "DescribeResourceGraphEntitiesRequest",
+      "name": "查询实体列表",
+      "output": "DescribeResourceGraphEntitiesResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphEntityDependency": {
+      "document": "以指定实体为中心，按 Direction（上/下游/全部）+ Hop（跳数）查询依赖拓扑，同时返回拓扑图（节点+边）、4 张卡片汇总、列表区数据、产品 tag 汇总。",
+      "input": "DescribeResourceGraphEntityDependencyRequest",
+      "name": "查询实体依赖拓扑",
+      "output": "DescribeResourceGraphEntityDependencyResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphEntityDetail": {
+      "document": "查询单个实体的完整详情，包含基本信息、动态属性、标签、关联主题。",
+      "input": "DescribeResourceGraphEntityDetailRequest",
+      "name": "查询实体详情",
+      "output": "DescribeResourceGraphEntityDetailResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphFailureDetail": {
+      "document": "查询资源图谱失败详情",
+      "input": "DescribeResourceGraphFailureDetailRequest",
+      "name": "查询资源图谱失败详情",
+      "output": "DescribeResourceGraphFailureDetailResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphIngestTaskFailureDetail": {
+      "document": "查询资源图谱失败详情",
+      "input": "DescribeResourceGraphIngestTaskFailureDetailRequest",
+      "name": "查询资源图谱接入任务失败详情",
+      "output": "DescribeResourceGraphIngestTaskFailureDetailResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphProductIngestTaskDetail": {
+      "document": "查询单个云产品接入的详情，包含基本信息、实例选择、eBPF 采集规则和关联的日志主题。",
+      "input": "DescribeResourceGraphProductIngestTaskDetailRequest",
+      "name": "查询资源图谱的产品接入任务详情",
+      "output": "DescribeResourceGraphProductIngestTaskDetailResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphProductIngestTaskList": {
+      "document": "分页查询云产品接入列表，返回顶部 4 张卡片汇总 + 列表行。支持按 Status / CollectMethod / Product / Name 过滤。",
+      "input": "DescribeResourceGraphProductIngestTaskListRequest",
+      "name": "查询资源图谱的产品接入任务列表",
+      "output": "DescribeResourceGraphProductIngestTaskListResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphTkeClusterStatus": {
+      "document": "资源图谱tke集群接入状态",
+      "input": "DescribeResourceGraphTkeClusterStatusRequest",
+      "name": "查询资源图谱tke集群接入状态",
+      "output": "DescribeResourceGraphTkeClusterStatusResponse",
+      "status": "online"
+    },
+    "DescribeResourceGraphs": {
+      "document": "分页查询工作区列表，支持按 WorkAreaId / Name / Region 过滤。",
+      "input": "DescribeResourceGraphsRequest",
+      "name": "查询资源图谱列表",
+      "output": "DescribeResourceGraphsResponse",
+      "status": "online"
+    },
     "DescribeS3Recharges": {
       "document": "本接口用于获取cos导入配置",
       "input": "DescribeS3RechargesRequest",
@@ -1309,6 +1407,27 @@
       "output": "ModifyRemoteWriteTaskResponse",
       "status": "online"
     },
+    "ModifyResourceGraph": {
+      "document": "编辑工作区基本信息。支持改名（仍需保持租户内唯一）和修改描述，主题地域 Region 不可修改。",
+      "input": "ModifyResourceGraphRequest",
+      "name": "编辑资源图谱",
+      "output": "ModifyResourceGraphResponse",
+      "status": "online"
+    },
+    "ModifyResourceGraphEntityTopicsRelation": {
+      "document": "修改资源图谱实体与日志主题关系",
+      "input": "ModifyResourceGraphEntityTopicsRelationRequest",
+      "name": "修改资源图谱实体与日志主题关系",
+      "output": "ModifyResourceGraphEntityTopicsRelationResponse",
+      "status": "online"
+    },
+    "ModifyResourceGraphProductIngestTask": {
+      "document": "编辑已接入云产品的实例选择、eBPF 规则、日志主题配置。",
+      "input": "ModifyResourceGraphProductIngestTaskRequest",
+      "name": "编辑资源图谱的产品接入任务",
+      "output": "ModifyResourceGraphProductIngestTaskResponse",
+      "status": "online"
+    },
     "ModifyS3Recharge": {
       "document": "本接口用于修改aws导入任务",
       "input": "ModifyS3RechargeRequest",
@@ -1398,6 +1517,20 @@
       "input": "QueryRangeMetricRequest",
       "name": "指标查询（范围查询）",
       "output": "QueryRangeMetricResponse",
+      "status": "online"
+    },
+    "RetryResourceGraph": {
+      "document": "重试资源图谱",
+      "input": "RetryResourceGraphRequest",
+      "name": "重试资源图谱",
+      "output": "RetryResourceGraphResponse",
+      "status": "online"
+    },
+    "RetryResourceGraphProductIngestTask": {
+      "document": "重试初始化资源图谱工作区",
+      "input": "RetryResourceGraphProductIngestTaskRequest",
+      "name": "重试资源图谱接入任务",
+      "output": "RetryResourceGraphProductIngestTaskResponse",
       "status": "online"
     },
     "RetryShipperTask": {
@@ -4718,6 +4851,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数值类型自动转换开关</p><p>枚举值：</p><ul><li>true： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）会被自动转换为数值类型（int / float）。</li><li>false： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）为字符串。</li></ul><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoConvertNumber",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4799,7 +4943,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递规则ID",
+          "document": "<p>投递规则ID</p>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "ConsumerId",
@@ -4809,7 +4953,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicId",
@@ -4819,7 +4963,7 @@
         },
         {
           "disabled": false,
-          "document": "投递任务是否生效",
+          "document": "<p>投递任务是否生效</p>",
           "example": "true",
           "member": "bool",
           "name": "Effective",
@@ -4829,7 +4973,7 @@
         },
         {
           "disabled": false,
-          "document": "CKafka的描述",
+          "document": "<p>CKafka的描述</p>",
           "example": "无",
           "member": "Ckafka",
           "name": "Ckafka",
@@ -4839,7 +4983,7 @@
         },
         {
           "disabled": false,
-          "document": "是否投递日志的元数据信息",
+          "document": "<p>是否投递日志的元数据信息</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedContent",
@@ -4849,7 +4993,7 @@
         },
         {
           "disabled": false,
-          "document": "如果需要投递元数据信息，元数据信息的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>如果需要投递元数据信息，元数据信息的描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConsumerContent",
           "name": "Content",
@@ -4859,7 +5003,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Compression",
@@ -4869,7 +5013,7 @@
         },
         {
           "disabled": false,
-          "document": "投递任务创建毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>投递任务创建毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1662034960732",
           "member": "uint64",
           "name": "CreateTime",
@@ -4879,7 +5023,7 @@
         },
         {
           "disabled": false,
-          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>角色访问描述名 <a href=\"https://cloud.tencent.com/document/product/598/19381\">创建角色</a></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
           "member": "string",
           "name": "RoleArn",
@@ -4889,7 +5033,7 @@
         },
         {
           "disabled": false,
-          "document": "外部ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>外部ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "external_id_demo",
           "member": "string",
           "name": "ExternalId",
@@ -4899,7 +5043,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行状态。支持`0`,`1`,`2` - `0`: 停止 - `1`: 运行中 - `2`: 异常\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code> - <code>0</code>: 停止 - <code>1</code>: 运行中 - <code>2</code>: 异常</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "TaskStatus",
@@ -4909,12 +5053,22 @@
         },
         {
           "disabled": false,
-          "document": "高级配置",
+          "document": "<p>高级配置</p>",
           "example": "无",
           "member": "AdvancedConsumerConfiguration",
           "name": "AdvancedConfig",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -6661,7 +6815,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递任务绑定的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "document": "<p>投递任务绑定的日志主题Id。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a> 获取日志主题Id。</li></ul>",
           "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
           "member": "string",
           "name": "TopicId",
@@ -6670,7 +6824,7 @@
         },
         {
           "disabled": false,
-          "document": "是否投递日志的元数据信息，默认为 true。\n当NeedContent为true时：字段Content有效。\n当NeedContent为false时：字段Content无效。",
+          "document": "<p>是否投递日志的元数据信息，默认为 true。<br>当NeedContent为true时：字段Content有效。<br>当NeedContent为false时：字段Content无效。</p>",
           "example": "false",
           "member": "bool",
           "name": "NeedContent",
@@ -6679,7 +6833,7 @@
         },
         {
           "disabled": false,
-          "document": "如果需要投递元数据信息，元数据信息的描述",
+          "document": "<p>如果需要投递元数据信息，元数据信息的描述</p>",
           "example": "无",
           "member": "ConsumerContent",
           "name": "Content",
@@ -6688,7 +6842,7 @@
         },
         {
           "disabled": false,
-          "document": "CKafka的描述",
+          "document": "<p>CKafka的描述</p>",
           "example": "无",
           "member": "Ckafka",
           "name": "Ckafka",
@@ -6697,7 +6851,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]",
+          "document": "<p>投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]</p>",
           "example": "0",
           "member": "int64",
           "name": "Compression",
@@ -6706,7 +6860,7 @@
         },
         {
           "disabled": false,
-          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "document": "<p>角色访问描述名 <a href=\"https://cloud.tencent.com/document/product/598/19381\">创建角色</a></p>",
           "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
           "member": "string",
           "name": "RoleArn",
@@ -6715,7 +6869,7 @@
         },
         {
           "disabled": false,
-          "document": "外部ID",
+          "document": "<p>外部ID</p>",
           "example": "external_id_demo",
           "member": "string",
           "name": "ExternalId",
@@ -6724,12 +6878,21 @@
         },
         {
           "disabled": false,
-          "document": "高级配置项",
+          "document": "<p>高级配置项</p>",
           "example": "无",
           "member": "AdvancedConsumerConfiguration",
           "name": "AdvancedConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8788,6 +8951,152 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceGraphProductIngestTaskRequest": {
+      "document": "CreateResourceGraphProductIngestTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "649f38d6-3fe9-4412-a31c-ddb701f9e5a9",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务名称</p>",
+          "example": "产品接入任务-test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待接入的云产品；支持tke、cdb、mongodb、redis</p>",
+          "example": "cdb",
+          "member": "string",
+          "name": "CloudProduct",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例选择方案</p><p>枚举值：</p><ul><li>0： 所有示例</li><li>1： 按标签选择</li><li>2： 手动选择</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SelectionMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id。当选择方式使用“指定实例”时，需要填写</p>",
+          "example": "[\"cdb-a2gl13j5\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>eBPF 采集规则</p>",
+          "example": "无",
+          "member": "EBPFCollectRule",
+          "name": "EBPFCollectRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签。当实例选择方案使用“按标签选择”时，需要填写</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceGraphProductIngestTaskResponse": {
+      "document": "CreateResourceGraphProductIngestTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入任务id</p>",
+          "example": "2da784dd-1d37-4f98-9950-183b56b735b0",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务状态</p><p>枚举值：</p><ul><li>0： 初始化中</li><li>1： 正常</li><li>2： 接入失败</li><li>3： 删除中</li><li>4： 已删除</li><li>5： 删除失败</li><li>6： 修改中</li><li>7： 修改失败</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceGraphRequest": {
+      "document": "CreateResourceGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱名称</p>",
+          "example": "生产环境-test-2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源图谱描述</p>",
+          "example": "生产环境资源空间",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceGraphResponse": {
+      "document": "CreateResourceGraph返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11892,6 +12201,69 @@
       ],
       "type": "object"
     },
+    "DeleteResourceGraphProductIngestTaskRequest": {
+      "document": "DeleteResourceGraphProductIngestTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "649f38d6-3fe9-4412-a31c-ddb701f9e5a9",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务id</p>",
+          "example": "364f5096-24a1-4d0f-915d-330968625671",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceGraphProductIngestTaskResponse": {
+      "document": "DeleteResourceGraphProductIngestTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceGraphRequest": {
+      "document": "DeleteResourceGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待删除的资源图谱id</p>",
+          "example": "117464c6-1354-47bd-9ff0-a7a3dce5a2e5",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceGraphResponse": {
+      "document": "DeleteResourceGraph返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteS3RechargeRequest": {
       "document": "DeleteS3Recharge请求参数结构体",
       "members": [
@@ -13266,6 +13638,15 @@
           "name": "PartitionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取offset方式。 0 表示 fetch_offset，1 表示 list_offset",
+          "example": "无",
+          "member": "int64",
+          "name": "OffsetType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13324,7 +13705,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递任务绑定的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "document": "<p>投递任务绑定的日志主题Id。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a> 获取日志主题Id。</li></ul>",
           "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
           "member": "string",
           "name": "TopicId",
@@ -13339,7 +13720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递任务是否生效",
+          "document": "<p>投递任务是否生效</p>",
           "example": "true",
           "member": "bool",
           "name": "Effective",
@@ -13349,7 +13730,7 @@
         },
         {
           "disabled": false,
-          "document": "是否投递日志的元数据信息",
+          "document": "<p>是否投递日志的元数据信息</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedContent",
@@ -13359,7 +13740,7 @@
         },
         {
           "disabled": false,
-          "document": "如果需要投递元数据信息，元数据信息的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>如果需要投递元数据信息，元数据信息的描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConsumerContent",
           "name": "Content",
@@ -13369,7 +13750,7 @@
         },
         {
           "disabled": false,
-          "document": "CKafka的描述",
+          "document": "<p>CKafka的描述</p>",
           "example": "无",
           "member": "Ckafka",
           "name": "Ckafka",
@@ -13379,12 +13760,72 @@
         },
         {
           "disabled": false,
-          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
+          "document": "<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>",
           "example": "0",
           "member": "int64",
           "name": "Compression",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间</p>",
+          "example": "1729504453000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色访问描述名 <a href=\"https://cloud.tencent.com/document/product/598/19381\">创建角色</a></p>",
+          "example": "qcs::cam::uin/100020202020:roleName/10000010101010_to_CKafka",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部ID</p>",
+          "example": "ext*****ext",
+          "member": "string",
+          "name": "ExternalId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code>  - <code>0</code>: 停止 - <code>1</code>: 运行中 - <code>2</code>: 异常</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级配置</p>",
+          "example": "无",
+          "member": "AdvancedConsumerConfiguration",
+          "name": "AdvancedConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -15767,6 +16208,598 @@
       ],
       "type": "object"
     },
+    "DescribeResourceGraphDetailRequest": {
+      "document": "DescribeResourceGraphDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "92005fca-cbf5-45e9-8c55-a506d8ff7238",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphDetailResponse": {
+      "document": "DescribeResourceGraphDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱详情信息</p>",
+          "example": "无",
+          "member": "ResourceGraphDetailInfo",
+          "name": "ResourceGraphDetailInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphEntitiesRequest": {
+      "document": "DescribeResourceGraphEntities请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "test-yunapi-full",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<ul><li>Product 按【产品分组】精确匹配，可用参数：all / business_service / tke / cdb / redis / mongodb 。类型：String。必选：否</li><li>EntityClassName 按【实体类型】精确匹配，可用参数：all / app.service.application / tc.tke.cluster / tc.tkex.project / tc.cdb.instance / tc.redis.instance / tc.mongodb.instance / k8s.cluster / k8s.namespace / k8s.node / k8s.pod / k8s.ip / k8s.service / k8s.deployment / k8s.statefulset / k8s.statefulsetplus / k8s.daemonset / k8s.storageclass / k8s.persistentvolume / k8s.persistentvolumeclaim / k8s.secret。类型：String。必选：否</li><li>Name 按【实体名称】模糊匹配。类型：String。必选：否</li><li>ResourceId 按 【实体资源id】精确匹配。类型：String。必选：否</li></ul><p>注意：每次请求的 Filters 上限 10。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询偏移</p>",
+          "example": "db2a083497*******b***********40f",
+          "member": "string",
+          "name": "NextCursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页数量，默认 20，最大 100</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询开始时间</p><p>单位：毫秒</p>",
+          "example": "1782230000",
+          "member": "uint64",
+          "name": "FromTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间</p><p>单位：毫秒</p>",
+          "example": "1782231000",
+          "member": "uint64",
+          "name": "ToTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphEntitiesResponse": {
+      "document": "DescribeResourceGraphEntities返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页的游标，有值则下次分页请求原样带上，无值则表示无下一页</p>",
+          "example": "001fee59f00b6253231a932c4a8200b3",
+          "member": "string",
+          "name": "NextCursor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphEntityDependencyRequest": {
+      "document": "DescribeResourceGraphEntityDependency请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "test-yunapi-full",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体id</p>",
+          "example": "002b693f4f8cd075e2c6a750e6e58e2c",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>距离Entity的深度</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Depth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询范围-开始时间</p><p>单位：毫秒</p>",
+          "example": "1782230000",
+          "member": "uint64",
+          "name": "FromTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询范围-结束时间</p><p>单位：毫秒</p>",
+          "example": "1782231000",
+          "member": "uint64",
+          "name": "ToTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphEntityDependencyResponse": {
+      "document": "DescribeResourceGraphEntityDependency返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphEntityDetailRequest": {
+      "document": "DescribeResourceGraphEntityDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实体 ID</p>",
+          "example": "002b693f4f8cd075e2c6a750e6e58e2c",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "test-yunapi-full",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询范围-开始时间</p><p>单位：毫秒</p>",
+          "example": "1782230000",
+          "member": "uint64",
+          "name": "FromTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询范围-结束时间</p><p>单位：毫秒</p>",
+          "example": "1782231000",
+          "member": "uint64",
+          "name": "ToTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphEntityDetailResponse": {
+      "document": "DescribeResourceGraphEntityDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphFailureDetailRequest": {
+      "document": "DescribeResourceGraphFailureDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "5c4efe6f-84f3-4595-aafb-92a944411f42",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphFailureDetailResponse": {
+      "document": "DescribeResourceGraphFailureDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>失败详情信息</p>",
+          "example": "topicmgr: create logset ****",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次失败时间</p><p>单位：秒</p>",
+          "example": "1785160435",
+          "member": "int64",
+          "name": "LastFailedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RetryCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>首次失败时间</p><p>单位：秒</p>",
+          "example": "1785160435",
+          "member": "int64",
+          "name": "FirstFailedAt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引起失败的操作</p>",
+          "example": "create",
+          "member": "string",
+          "name": "Operation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphIngestTaskFailureDetailRequest": {
+      "document": "DescribeResourceGraphIngestTaskFailureDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "92005fca-cbf5-45e9-8c55-a506d8ff7238",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务id</p>",
+          "example": "e7a31fbb-1182-45ad-b756-cbb6597696a5",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphIngestTaskFailureDetailResponse": {
+      "document": "DescribeResourceGraphIngestTaskFailureDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入任务报错信息详情</p>",
+          "example": "TKE provision failed: ensure log-agent: tke-log-agent deployed version \"0.0.5\" is lower than base version \"2.0.8\" on cluster cls-dhf2fygk",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次失败时间</p><p>单位：秒</p>",
+          "example": "1785323250",
+          "member": "int64",
+          "name": "LastFailedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试次数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RetryCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第一次失败时间</p><p>单位：秒</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "FirstFailedAt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引起失败的操作</p>",
+          "example": "create",
+          "member": "string",
+          "name": "Operation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphProductIngestTaskDetailRequest": {
+      "document": "DescribeResourceGraphProductIngestTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "562b6948-5c9e-417f-9813-f359178fc5c6",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务id</p>",
+          "example": "e59f3af6-0cc7-47c2-9ff9-b38cc7298895",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphProductIngestTaskDetailResponse": {
+      "document": "DescribeResourceGraphProductIngestTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入任务详情</p>",
+          "example": "无",
+          "member": "ProductIngestTaskDetail",
+          "name": "ProductIngestTaskDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphProductIngestTaskListRequest": {
+      "document": "DescribeResourceGraphProductIngestTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "649f38d6-3fe9-4412-a31c-ddb701f9e5a9",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p><ul><li>taskId 按照【接入任务id】进行过滤，默认为模糊匹配。类型：String。必选：否 </li><li>product 按照【接入产品】进行过滤，默认为模糊匹配。类型：String。必选：否 </li><li>name 按照【接入任务名称】进行过滤，默认为模糊匹配。类型：String。必选：否 </li><li>status 按照【接入任务状态】进行过滤。类型：int。必选：否 ；0：初始化中；1：已接入；2：接入失败；3：删除中；5：删除失败<br>注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。</li></ul>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认 0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页单页数量，默认 20，最大 100</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphProductIngestTaskListResponse": {
+      "document": "DescribeResourceGraphProductIngestTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入任务列表</p>",
+          "example": "无",
+          "member": "ProductIngestTaskItem",
+          "name": "ProductIngestTaskItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选后总数</p>",
+          "example": "7",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphTkeClusterStatusRequest": {
+      "document": "DescribeResourceGraphTkeClusterStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待检测的tke集群id</p>",
+          "example": "[\"cls-3jcth2i3\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphTkeClusterStatusResponse": {
+      "document": "DescribeResourceGraphTkeClusterStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>已接入的tke集群信息</p>",
+          "example": "无",
+          "member": "ResourceGraphTkeClusterInfo",
+          "name": "ConnectedClusterInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>未接入的tke集群id</p>",
+          "example": "[\"cls-3jcth2i32\"]",
+          "member": "string",
+          "name": "UnconnectedClusterIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGraphsRequest": {
+      "document": "DescribeResourceGraphs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeResourceGraphsResponse": {
+      "document": "DescribeResourceGraphs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeS3RechargesRequest": {
       "document": "DescribeS3Recharges请求参数结构体",
       "members": [
@@ -17060,6 +18093,196 @@
           "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EBPFCollectFilters": {
+      "document": "eBPF 三维过滤器集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "进程名过滤",
+          "example": "无",
+          "member": "EBPFProcessNameFilter",
+          "name": "ProcessName",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的端点过滤",
+          "example": "无",
+          "member": "EBPFDestEndpointFilter",
+          "name": "DestEndpoint",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 过滤",
+          "example": "无",
+          "member": "EBPFDNSFilter",
+          "name": "DNS",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EBPFCollectRule": {
+      "document": "eBPF 采集规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>采集规则名称</p>",
+          "example": "default-ebpf-rule",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集对象</p><p>枚举值：</p><ul><li>1： 所有进程</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "TrackTarget",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>三维过滤器</p>",
+          "example": "无",
+          "member": "EBPFCollectFilters",
+          "name": "Filters",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EBPFDNSFilter": {
+      "document": "eBPF DNS 过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤模式</p><p>枚举值：</p><ul><li>0： 不过滤</li><li>1： 白名单</li><li>2： 黑名单</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名列表，支持 *.example.com 通配</p>",
+          "example": "[\"localhost\"]",
+          "member": "string",
+          "name": "Domains",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EBPFDestEndpointFilter": {
+      "document": "eBPF 目的 IP/端口过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤模式</p><p>枚举值：</p><ul><li>0： 不过滤</li><li>1： 白名单</li><li>2： 黑名单</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>端点列表</p>",
+          "example": "无",
+          "member": "EBPFEndpoint",
+          "name": "Endpoints",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EBPFEndpoint": {
+      "document": "eBPF 目的端点（IP + 可选端口）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标 IP，支持 IPv4/IPv6",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标端口（1-65535），为空表示仅按 IP 过滤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EBPFProcessNameFilter": {
+      "document": "eBPF 进程名过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤模式</p><p>枚举值：</p><ul><li>0： 不过滤</li><li>1： 白名单</li><li>2： 黑名单</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进程名列表</p>",
+          "example": "[\"nginx\"]",
+          "member": "string",
+          "name": "ProcessNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -19060,7 +20283,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消费数据格式。 0：原始内容；1：JSON。",
+          "document": "<p>消费数据格式。 0：原始内容；1：JSON。</p>",
           "example": "1",
           "member": "int64",
           "name": "Format",
@@ -19071,7 +20294,7 @@
         },
         {
           "disabled": false,
-          "document": "是否投递 TAG 信息\nFormat为0时，此字段不需要赋值",
+          "document": "<p>是否投递 TAG 信息<br>Format为0时，此字段不需要赋值</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableTag",
@@ -19082,8 +20305,8 @@
         },
         {
           "disabled": false,
-          "document": "元数据信息列表, 可选值为：\\_\\_SOURCE\\_\\_、\\_\\_FILENAME\\_\\_\n、\\_\\_TIMESTAMP\\_\\_、\\_\\_HOSTNAME\\_\\_、\\_\\_PKGID\\_\\_\nFormat为0时，此字段不需要赋值",
-          "example": "[\"\\_\\_HOSTNAME\\_\\_\"]",
+          "document": "<p>元数据信息列表, 可选值为：__SOURCE__、__FILENAME__<br>、__TIMESTAMP__、__HOSTNAME__、__PKGID__<br>Format为0时，此字段不需要赋值</p>",
+          "example": "[\"__HOSTNAME__\"]",
           "member": "string",
           "name": "MetaFields",
           "output_required": true,
@@ -19093,7 +20316,7 @@
         },
         {
           "disabled": false,
-          "document": "tag数据处理方式：1:不平铺（默认值）；2:平铺。\n\n不平铺示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n不平铺：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n\n平铺示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n平铺：`{\"__TAG__.fieldA\":200,\"__TAG__.fieldB\":\"text\"}`",
+          "document": "<p>tag数据处理方式：1:不平铺（默认值）；2:平铺。</p><p>不平铺示例：<br>TAG信息：<code>{&quot;__TAG__&quot;:{&quot;fieldA&quot;:200,&quot;fieldB&quot;:&quot;text&quot;}}</code><br>不平铺：<code>{&quot;__TAG__&quot;:{&quot;fieldA&quot;:200,&quot;fieldB&quot;:&quot;text&quot;}}</code></p><p>平铺示例：<br>TAG信息：<code>{&quot;__TAG__&quot;:{&quot;fieldA&quot;:200,&quot;fieldB&quot;:&quot;text&quot;}}</code><br>平铺：<code>{&quot;__TAG__.fieldA&quot;:200,&quot;__TAG__.fieldB&quot;:&quot;text&quot;}</code></p>",
           "example": "1",
           "member": "int64",
           "name": "TagTransaction",
@@ -19104,13 +20327,24 @@
         },
         {
           "disabled": false,
-          "document": "消费数据Json格式：\n1：不转义（默认格式）\n2：转义\n\n投递Json格式。\nJsonType为1：和原始日志一致，不转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n\nJsonType为2：转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\",\"b\":\"{\\\"b1\\\":\\\"b1b1\\\", \\\"c1\\\":\\\"c1c1\\\"}\"}`",
+          "document": "<p>消费数据Json格式：<br>1：不转义（默认格式）<br>2：转义</p><p>投递Json格式。<br>JsonType为1：和原始日志一致，不转义。示例：<br>日志原文：<code>{&quot;a&quot;:&quot;aa&quot;, &quot;b&quot;:{&quot;b1&quot;:&quot;b1b1&quot;, &quot;c1&quot;:&quot;c1c1&quot;}}</code><br>投递到Ckafka：<code>{&quot;a&quot;:&quot;aa&quot;, &quot;b&quot;:{&quot;b1&quot;:&quot;b1b1&quot;, &quot;c1&quot;:&quot;c1c1&quot;}}</code></p><p>JsonType为2：转义。示例：<br>日志原文：<code>{&quot;a&quot;:&quot;aa&quot;, &quot;b&quot;:{&quot;b1&quot;:&quot;b1b1&quot;, &quot;c1&quot;:&quot;c1c1&quot;}}</code><br>投递到Ckafka：<code>{&quot;a&quot;:&quot;aa&quot;,&quot;b&quot;:&quot;{\\&quot;b1\\&quot;:\\&quot;b1b1\\&quot;, \\&quot;c1\\&quot;:\\&quot;c1c1\\&quot;}&quot;}</code></p>",
           "example": "1",
           "member": "int64",
           "name": "JsonType",
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数值类型自动转换开关</p><p>枚举值：</p><ul><li>true： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）会被自动转换为数值类型（int / float）。</li><li>false： JSON 结构中第一层级的 value 中的数字字符串（如 &quot;123&quot; ）为字符串。</li></ul><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoConvertNumber",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -22111,7 +23345,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递任务绑定的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "document": "<p>投递任务绑定的日志主题Id。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a> 获取日志主题Id。</li></ul>",
           "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
           "member": "string",
           "name": "TopicId",
@@ -22120,7 +23354,7 @@
         },
         {
           "disabled": false,
-          "document": "投递任务是否生效，默认不生效",
+          "document": "<p>投递任务是否生效，默认不生效</p>",
           "example": "false",
           "member": "bool",
           "name": "Effective",
@@ -22129,7 +23363,7 @@
         },
         {
           "disabled": false,
-          "document": "是否投递日志的元数据信息，默认为 true。\n当NeedContent为true时：字段Content有效。\n当NeedContent为false时：字段Content无效。",
+          "document": "<p>是否投递日志的元数据信息，默认为 true。<br>当NeedContent为true时：字段Content有效。<br>当NeedContent为false时：字段Content无效。</p>",
           "example": "false",
           "member": "bool",
           "name": "NeedContent",
@@ -22138,7 +23372,7 @@
         },
         {
           "disabled": false,
-          "document": "如果需要投递元数据信息，元数据信息的描述",
+          "document": "<p>如果需要投递元数据信息，元数据信息的描述</p>",
           "example": "无",
           "member": "ConsumerContent",
           "name": "Content",
@@ -22147,7 +23381,7 @@
         },
         {
           "disabled": false,
-          "document": "CKafka的描述",
+          "document": "<p>CKafka的描述</p>",
           "example": "无",
           "member": "Ckafka",
           "name": "Ckafka",
@@ -22156,7 +23390,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]",
+          "document": "<p>投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]</p>",
           "example": "0",
           "member": "int64",
           "name": "Compression",
@@ -22165,7 +23399,7 @@
         },
         {
           "disabled": false,
-          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "document": "<p>角色访问描述名 <a href=\"https://cloud.tencent.com/document/product/598/19381\">创建角色</a></p>",
           "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
           "member": "string",
           "name": "RoleArn",
@@ -22174,7 +23408,7 @@
         },
         {
           "disabled": false,
-          "document": "外部ID",
+          "document": "<p>外部ID</p>",
           "example": "external_id_demo",
           "member": "string",
           "name": "ExternalId",
@@ -22183,12 +23417,21 @@
         },
         {
           "disabled": false,
-          "document": "高级配置",
+          "document": "<p>高级配置</p>",
           "example": "无",
           "member": "AdvancedConsumerConfiguration",
           "name": "AdvancedConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志预过滤-数据写入 ckafka 的原始数据进行预过滤处理</p>",
+          "example": "log_keep(op_str_eq(v(\"type\"), \"kibana_stats\"))",
+          "member": "string",
+          "name": "DSLFilter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -24096,6 +25339,177 @@
     },
     "ModifyRemoteWriteTaskResponse": {
       "document": "ModifyRemoteWriteTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceGraphEntityTopicsRelationRequest": {
+      "document": "ModifyResourceGraphEntityTopicsRelation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "badc7d81-70a6-4979-aa54-59ae51a4870a",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体id</p><p>仅支持手动关联tke以下实体：node、pod、deployment、statefulset、daemonset</p>",
+          "example": "6e465db7baf3477ae75a7efb5d0d64c7",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源图谱实体关联的topic</p>",
+          "example": "无",
+          "member": "ResourceGraphEntityRelatedTopic",
+          "name": "TopicInfos",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceGraphEntityTopicsRelationResponse": {
+      "document": "ModifyResourceGraphEntityTopicsRelation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceGraphProductIngestTaskRequest": {
+      "document": "ModifyResourceGraphProductIngestTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "649f38d6-3fe9-4412-a31c-ddb701f9e5a9",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待修改的任务id</p>",
+          "example": "364f5096-24a1-4d0f-915d-330968625671",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例选择方案</p><p>枚举值：</p><ul><li>0： 所有示例</li><li>1： 按标签选择</li><li>2： 手动选择</li></ul>",
+          "example": "2",
+          "member": "uint64",
+          "name": "SelectionMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id。当选择方式使用“指定实例”时，需要填写</p>",
+          "example": "[\"cdb-asdl12x\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>eBPF 采集规则（仅 EBPF 产品）</p>",
+          "example": "无",
+          "member": "EBPFCollectRule",
+          "name": "EBPFCollectRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签。当实例选择方案使用“按标签选择”时，需要填写</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceGraphProductIngestTaskResponse": {
+      "document": "ModifyResourceGraphProductIngestTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceGraphRequest": {
+      "document": "ModifyResourceGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待修改的资源图谱id</p>",
+          "example": "649f38d6-3fe9-4412-a31c-ddb701f9e5a9",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改后的资源图谱名称</p>",
+          "example": "生产环境-modify",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改后的资源图谱描述</p>",
+          "example": "生产环境资源空间",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceGraphResponse": {
+      "document": "ModifyResourceGraph返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26422,6 +27836,138 @@
       ],
       "usage": "both"
     },
+    "ProductIngestTaskDetail": {
+      "document": "产品接入任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入任务id</p>",
+          "example": "1be55c2f-9ef3-4194-8680-47df4076be7d",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务信息</p>",
+          "example": "无",
+          "member": "ProductIngestTaskItem",
+          "name": "ProductIngestTaskItem",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入实例选择方式</p><p>枚举值：</p><ul><li>0： 全部实例</li><li>1： 按标签筛选</li><li>2： 手动选择</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SelectionMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所选实例id列表</p>",
+          "example": "[\"cls-dhf2fygk\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所选接入实例所处范围标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>eBPF 采集规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EBPFCollectRule",
+          "name": "EBPFCollectRule",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductIngestTaskItem": {
+      "document": "数据接入列表行",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接入任务id</p>",
+          "example": "198b2725-ca0a-4058-9f94-864e7bfb3713",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务名称</p>",
+          "example": "faith-mongodb1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品分组</p>",
+          "example": "tke",
+          "member": "string",
+          "name": "Product",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>0： 接入中</li><li>1： 已接入</li><li>2： 接入失败</li><li>3： 删除中</li><li>4： 已删除</li><li>5： 删除失败</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务创建时间</p><p>单位：ms</p>",
+          "example": "1783324318",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务修改时间</p><p>单位：ms</p>",
+          "example": "1783324323",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryMetricRequest": {
       "document": "QueryMetric请求参数结构体",
       "members": [
@@ -27071,6 +28617,68 @@
       ],
       "usage": "both"
     },
+    "RelationLogset": {
+      "document": "工作区关联的日志集",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志集id</p>",
+          "example": "ff768190-a5b0-48d1-8a5a-78f148a56422",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集名称</p>",
+          "example": "graph-logset-34b7ad8b-fb4c-42de-a7e1-2442202bad02",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RelationTopic": {
+      "document": "工作区关联的Topic",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志主题id</p>",
+          "example": "d2800f1b-cb58-415b-b53a-99a130d6b462",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题名称</p>",
+          "example": "graph-entity-log-topic",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题类型</p><p>枚举值：</p><ul><li>entity： 实体主题</li><li>relation： 关系主题</li><li>ebpf： ebpf采集主题</li></ul>",
+          "example": "entity",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RemoteWriteAuthInfo": {
       "document": "Remote Write鉴权信息",
       "members": [
@@ -27285,6 +28893,283 @@
         }
       ],
       "usage": "out"
+    },
+    "ResourceGraphDetailInfo": {
+      "document": "资源图谱基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "5c4efe6f-84f3-4595-aafb-92a944411f42",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作区名称</p>",
+          "example": "graph-name",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作区描述</p>",
+          "example": "修改描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作区状态</p><p>枚举值：</p><ul><li>0： 初始化中</li><li>1： 成功</li><li>2： 失败</li><li>3： 删除中</li><li>4： 已删除</li><li>5： 删除失败</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已接入产品数量</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "AccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入的产品列表</p>",
+          "example": "[\"tke\"]",
+          "member": "string",
+          "name": "Products",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1785160418",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1785316923",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的日志集</p>",
+          "example": "无",
+          "member": "RelationLogset",
+          "name": "RelationLogset",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的topic</p>",
+          "example": "无",
+          "member": "RelationTopic",
+          "name": "RelationTopics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作区绑定的标签信息</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceGraphEntityRelatedTopic": {
+      "document": "资源图谱实体关联的日志主题信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志主题id</p>",
+          "example": "609b4f30-b3e4-46a0-94d1-7122bfd45b1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型</p><p>枚举值：</p><ul><li>bussinesslog： 业务日志</li></ul>",
+          "example": "bussinesslog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型</p><p>枚举值：</p><ul><li>0： 日志主题</li><li>1： 指标主题</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "BizType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ResourceGraphTkeClusterInfo": {
+      "document": "资源图谱tke集群接入信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>tke集群id</p>",
+          "example": "cls-3jcth2i3",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "29a76d21-8e44-4d35-928f-4987c4b333ea",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源图谱名称</p>",
+          "example": "graph-name",
+          "member": "string",
+          "name": "ResourceGraphName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源图谱接入任务id</p>",
+          "example": "e7a31fbb-1182-45ad-b756-cbb6597696a5",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源图谱接入任务名称</p>",
+          "example": "tke",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RetryResourceGraphProductIngestTaskRequest": {
+      "document": "RetryResourceGraphProductIngestTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "649f38d6-3fe9-4412-a31c-ddb701f9e5a9",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入任务id</p>",
+          "example": "364f5096-24a1-4d0f-915d-330968625671",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryResourceGraphProductIngestTaskResponse": {
+      "document": "RetryResourceGraphProductIngestTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryResourceGraphRequest": {
+      "document": "RetryResourceGraph请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源图谱id</p>",
+          "example": "5c4efe6f-84f3-4595-aafb-92a944411f42",
+          "member": "string",
+          "name": "ResourceGraphId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryResourceGraphResponse": {
+      "document": "RetryResourceGraph返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RetryShipperTaskRequest": {
       "document": "RetryShipperTask请求参数结构体",

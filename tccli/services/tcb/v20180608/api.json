@@ -140,13 +140,6 @@
       "output": "CreateUserResponse",
       "status": "online"
     },
-    "CreateVmInstance": {
-      "document": "创建虚拟服务器\n创建流程为先调用[DescribeVmSpec](https://cloud.tencent.com/document/product/876/129360)获取可购买的规格，同时调用[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)拉取镜像列表，选中一个规格和一个镜像后，调用[InquireVmPrice](https://cloud.tencent.com/document/product/876/129759)询价，如果价格可接受，调用此接口创建实例",
-      "input": "CreateVmInstanceRequest",
-      "name": "创建服务器实例",
-      "output": "CreateVmInstanceResponse",
-      "status": "online"
-    },
     "DeleteAIModel": {
       "document": "删除 AI 模型配置分组，支持批量删除。内置分组无法删除。分组删除后，该分组下的所有模型配置将同步移除，针对该分组模型的请求将会失败，请在删除前确认业务侧已停止对该分组的调用。\n\n注意：\n此操作不可逆，删除后数据无法恢复，请谨慎操作。\n\n删除前建议通过 [DescribeAIModelList]() 接口确认分组当前状态。",
       "input": "DeleteAIModelRequest",
@@ -208,13 +201,6 @@
       "input": "DeleteUsersRequest",
       "name": "删除tcb用户",
       "output": "DeleteUsersResponse",
-      "status": "online"
-    },
-    "DeleteVmInstance": {
-      "document": "销毁云服务器实例",
-      "input": "DeleteVmInstanceRequest",
-      "name": "销毁服务器实例",
-      "output": "DeleteVmInstanceResponse",
       "status": "online"
     },
     "DescribeAIModels": {
@@ -385,6 +371,13 @@
       "output": "DescribeGatewayVersionsResponse",
       "status": "online"
     },
+    "DescribeHTTPServiceCachePurgeTask": {
+      "document": "本接口DescribeHTTPServiceCachePurgeTask为只读查询，不修改任何缓存或环境资源，仅返回指定环境下域名缓存刷新任务的状态与时间等信息。通过PurgeHTTPServiceCache清除域名缓存后，可通过此接口传入任务id可查询清除任务状态、时间、缓存类型等信息。也可通过此接口查询历史任务记录。",
+      "input": "DescribeHTTPServiceCachePurgeTaskRequest",
+      "name": "查询HTTP访问服务缓存清除任务",
+      "output": "DescribeHTTPServiceCachePurgeTaskResponse",
+      "status": "online"
+    },
     "DescribeHTTPServiceRoute": {
       "document": "本接口DescribeHTTPServiceRoute用于查询环境下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。HTTP访问服务提供了默认域名，通过本接口可直接获取默认域名。前置需已开通 HTTP 访问服务；调用CreateHTTPServiceRoute或者ModifyHTTPServiceRoute后可使用本接口查询创建或者修改结果",
       "input": "DescribeHTTPServiceRouteRequest",
@@ -483,20 +476,6 @@
       "output": "DescribeUserListResponse",
       "status": "online"
     },
-    "DescribeVmInstances": {
-      "document": "查询环境下的云服务器列表",
-      "input": "DescribeVmInstancesRequest",
-      "name": "查询环境下的服务器实例",
-      "output": "DescribeVmInstancesResponse",
-      "status": "online"
-    },
-    "DescribeVmSpec": {
-      "document": "云服务器规格list",
-      "input": "DescribeVmSpecRequest",
-      "name": "获取VM规格",
-      "output": "DescribeVmSpecResponse",
-      "status": "online"
-    },
     "DestroyEnv": {
       "document": "本接口用于销毁云开发环境。\n云开发环境遵循腾讯云包年包月预付费产品生命周期，因此环境销毁需要分两步：\n1. 资源退费。此时会根据当前环境剩余有效期，自动退还相关费用(代金券不退)。退款后，环境进入隔离期。\n2. 环境删除。环境在进入隔离期后15天会自动删除。也可以通过本接口，指定 IsForce=true 来强制删除隔离期环境。\n\n**注意**⚠️\n  1. 环境退费后进入隔离期，则所有资源均无法访问，控制台无法操作和管理。\n  2. 环境被彻底删除后，所有数据均无法找回。请谨慎操作。\n\n可以通过接口 [tcb:DescribeBillingInfo](https://cloud.tencent.com/document/product/876/94390) 查询环境计费状态。",
       "input": "DestroyEnvRequest",
@@ -530,13 +509,6 @@
       "input": "GetProvidersRequest",
       "name": "获取三方认证源列表",
       "output": "GetProvidersResponse",
-      "status": "online"
-    },
-    "InquireVmPrice": {
-      "document": "查询服务器价格",
-      "input": "InquireVmPriceRequest",
-      "name": "查询云服务器价格",
-      "output": "InquireVmPriceResponse",
       "status": "online"
     },
     "ListPGUserMigrations": {
@@ -656,6 +628,13 @@
       "input": "PreviewPGUserMigrationsRequest",
       "name": "预览SQL migrations 在远端的执行计划，不实际执行 SQL",
       "output": "PreviewPGUserMigrationsResponse",
+      "status": "online"
+    },
+    "PurgeHTTPServiceCache": {
+      "document": "本接口PurgeHTTPServiceCache为异步操作，清除指定环境下 HTTPService 域名的缓存，操作不可逆，仅影响指定 Domain 的缓存命中，不影响源站数据。用于清除HTTP访问服务域名缓存。支持刷新CDN和EO两种类型。清除缓存后会生成任务id，通过DescribeHTTPServiceCachePurgeTask传入任务id可查询任务进度和详细信息。",
+      "input": "PurgeHTTPServiceCacheRequest",
+      "name": "清除HTTP服务域名缓存",
+      "output": "PurgeHTTPServiceCacheResponse",
       "status": "online"
     },
     "PushPGUserMigrations": {
@@ -3427,78 +3406,6 @@
       ],
       "type": "object"
     },
-    "CreateVmInstanceRequest": {
-      "document": "CreateVmInstance请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "free2-2gi6dzbde85f86a0",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务器类型：\nLightHouse = 轻量云服务器\nCVM = 云服务器",
-          "example": "LightHouse",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "轻量云服务器套餐ID。 当Type=LightHouse时必传",
-          "example": "bundle_rs_mc_med1_02",
-          "member": "string",
-          "name": "LightHouseBundleId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "轻量云服务器镜像ID。当Type=LightHouse时必传",
-          "example": "lhbp-3qjk6slu",
-          "member": "string",
-          "name": "LightHouseBlueprintId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务器别名",
-          "example": "my new lighthouse instance",
-          "member": "string",
-          "name": "InstanceName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "登录方式",
-          "example": "无",
-          "member": "VMLoginConfiguration",
-          "name": "LoginConfiguration",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateVmInstanceResponse": {
-      "document": "CreateVmInstance返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CustomLogConfig": {
       "document": "安全网关自定义日志配置",
       "members": [
@@ -4095,42 +4002,6 @@
           "type": "object",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteVmInstanceRequest": {
-      "document": "DeleteVmInstance请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "服务器实例id",
-          "example": "lhins-4amyetqm",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "环境id",
-          "example": "reinstate-3gle1iv1f6e5c582",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteVmInstanceResponse": {
-      "document": "DeleteVmInstance返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6587,6 +6458,125 @@
       ],
       "type": "object"
     },
+    "DescribeHTTPServiceCachePurgeTaskRequest": {
+      "document": "DescribeHTTPServiceCachePurgeTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "**********-1gz1k5qkc06a0da4",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTPService域名</p>",
+          "example": "*********************.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存类型</p><p>枚举值：</p><ul><li>EO： EO缓存</li><li>CDN： CDN缓存</li></ul><p>默认值：EO</p>",
+          "example": "EO",
+          "member": "string",
+          "name": "CacheType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务id，PurgeHTTPServiceCache返回的TaskId，可选</p>",
+          "example": "3uie7chtuyrn",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按刷新类型过滤</p><p>枚举值：</p><ul><li>PURGE_URL： URL 刷新</li><li>PURGE_PREFIX： 目录刷新</li><li>PURGE_HOST： Hostname 刷新</li></ul>",
+          "example": "PURGE_URL",
+          "member": "string",
+          "name": "PurgeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询开始时间，TaskId为空时，默认开始时间是7天前</p><p>参数格式：格式 YYYY-MM-DDTHH:mm:ss±HH:mmZ，时区为 UTC+0</p>",
+          "example": "2026-09-02T09:10:51Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间，TaskId为空时，默认结束时间是当前</p><p>参数格式：格式 YYYY-MM-DDTHH:mm:ss±HH:mmZ，时区为 UTC+0</p>",
+          "example": "2026-09-02T09:19:51Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。默认 0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页限制。默认20，最大值1000</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHTTPServiceCachePurgeTaskResponse": {
+      "document": "DescribeHTTPServiceCachePurgeTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务列表</p>",
+          "example": "无",
+          "member": "HTTPServiceCachePurgeTask",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名总数，分页查询使用总数判断是否已经拉取到所有数据</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHTTPServiceRouteRequest": {
       "document": "DescribeHTTPServiceRoute请求参数结构体",
       "members": [
@@ -7619,89 +7609,6 @@
       ],
       "type": "object"
     },
-    "DescribeVmInstancesRequest": {
-      "document": "DescribeVmInstances请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "test-lighthouse-3gb1eshz5a3811de",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务器类型： LightHouse = 轻量云服务器 CVM = 云服务器",
-          "example": "LightHouse",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVmInstancesResponse": {
-      "document": "DescribeVmInstances返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "主机实例列表",
-          "example": "无",
-          "member": "VmInstance",
-          "name": "InstanceList",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVmSpecRequest": {
-      "document": "DescribeVmSpec请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "类型：\nLightHouse = 轻量云服务器\nCVM = 云服务器",
-          "example": "LightHouse",
-          "member": "string",
-          "name": "Type",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVmSpecResponse": {
-      "document": "DescribeVmSpec返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "规格列表",
-          "example": "无",
-          "member": "VMSpec",
-          "name": "SpecList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DestroyEnvRequest": {
       "document": "DestroyEnv请求参数结构体",
       "members": [
@@ -8705,8 +8612,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要过滤的字段。过滤条件数量限制为10。",
-          "example": "",
+          "document": "<p>需要过滤的字段。过滤条件数量限制为10。</p>",
+          "example": "ServiceAlias",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -8716,8 +8623,8 @@
         },
         {
           "disabled": false,
-          "document": "字段的过滤值。",
-          "example": "",
+          "document": "<p>字段的过滤值。</p>",
+          "example": "[\"demo\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,
@@ -9055,6 +8962,102 @@
         }
       ],
       "usage": "both"
+    },
+    "HTTPServiceCachePurgeTask": {
+      "document": "清除任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>缓存类型</p><p>枚举值：</p><ul><li>EO： EO</li><li>TCBCDN： 云开发cdn</li></ul><p>默认值：EO</p>",
+          "example": "EO",
+          "member": "string",
+          "name": "CacheType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "3uie7chtuyrn",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>PROCESSING： 处理中</li><li>SUCCESS： 成功</li><li>FAILED： 失败</li><li>TIMEOUT： 超时</li><li>CANCELED： 取消</li></ul>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>刷新类型</p><p>枚举值：</p><ul><li>PURGE_URL： URL 刷新</li><li>PURGE_PREFIX： 目录刷新</li><li>PURGE_HOST： Hostname 刷新</li></ul>",
+          "example": "PURGE_URL",
+          "member": "string",
+          "name": "PurgeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>清除缓存分为直接删除和标记过期两种方式。URL 类型默认为“直接删除”，其它清除类型默认为“标记过期”</p><p>枚举值：</p><ul><li>INVALIDATE： 标记过期：节点缓存标记为过期，用户请求时回源校验，源站 304 则复用，200 则更新</li><li>DELETE： 直接删除：从节点直接删除缓存，用户下次请求强制回源拉新</li></ul>",
+          "example": "DELETE",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>刷新目标列表（URL / 前缀 / host）</p>",
+          "example": "[\"https://rgw11.woyaodaguaishou.cn/cloudbaseenv.json\"]",
+          "member": "string",
+          "name": "Targets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因</p>",
+          "example": "配额超限",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间</p><p>参数格式：格式 YYYY-MM-DDTHH:mm:ss±HH:mmZ，时区为 UTC+0</p>",
+          "example": "2026-09-02T06:50:59Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务更新时间</p><p>参数格式：格式 YYYY-MM-DDTHH:mm:ss±HH:mmZ，时区为 UTC+0</p>",
+          "example": "2026-09-02T06:51:09Z",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "HTTPServiceCacheRule": {
       "document": "HTTPService 缓存规则条目",
@@ -9943,111 +9946,6 @@
         }
       ],
       "usage": "out"
-    },
-    "InquireVmPriceRequest": {
-      "document": "InquireVmPrice请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "服务器类型：\nLightHouse = 轻量云服务器\nCVM = 云服务器",
-          "example": "LightHouse",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "轻量云服务器套餐ID。\n当Type=LightHouse时必传",
-          "example": "bundle_rs_mc_med1_02",
-          "member": "string",
-          "name": "LightHouseBundleId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "轻量云服务器镜像ID。当Type=LightHouse时必传",
-          "example": "lhbp-3qjk6slu",
-          "member": "string",
-          "name": "LightHouseBlueprintId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "InquireVmPriceResponse": {
-      "document": "InquireVmPrice返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "价格货币单位。取值范围CNY:人民币。USD:美元。",
-          "example": "CNY",
-          "member": "string",
-          "name": "Currency",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "原价（主机原始每月价格）",
-          "example": "40",
-          "member": "float",
-          "name": "OriginalPrice",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "折扣率",
-          "example": "100",
-          "member": "float",
-          "name": "Discount",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "折扣后每月价格",
-          "example": "40",
-          "member": "float",
-          "name": "DiscountPrice",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "折扣前每天资源点",
-          "example": "1333.3334",
-          "member": "float",
-          "name": "OriginalCredits",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "折扣后每天资源点",
-          "example": "1333.3334",
-          "member": "float",
-          "name": "DiscountCredits",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "KVPair": {
       "document": "键值对",
@@ -13464,6 +13362,89 @@
       ],
       "usage": "both"
     },
+    "PurgeHTTPServiceCacheRequest": {
+      "document": "PurgeHTTPServiceCache请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "**********-1gz1k5qkc06a0da4",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTPService域名</p>",
+          "example": "*********************.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Targets</p><p>参数格式：Targets 刷新目标列表，语义随 PurgeType 变化</p><p>入参限制：单次请求最多传 20 个 Target，单条 URL/prefix/host 最长 2048</p>",
+          "example": "[\"https://*********************.cn/cloudbaseenv.json\"]",
+          "member": "string",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要刷新的缓存类型：CDN 或 EO</p><p>枚举值：</p><ul><li>EO： EO缓存</li><li>CDN： CDN缓存</li></ul><p>默认值：EO</p>",
+          "example": "EO",
+          "member": "string",
+          "name": "CacheType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>PurgeType 刷新方式（purge 粒度），TCBCDN仅支持purge_url</p><p>枚举值：</p><ul><li>PURGE_URL： URL 列表（需含协议，如 https://a.com/b.jpg）</li><li>PURGE_PREFIX： URL 前缀列表（需含协议，如 https://a.com/dir/），仅EO支持</li><li>PURGE_HOST： Hostname 列表（可为 host 或 http(s)://host），仅EO支持</li></ul><p>默认值：PURGE_URL</p>",
+          "example": "PURGE_URL",
+          "member": "string",
+          "name": "PurgeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PurgeHTTPServiceCacheResponse": {
+      "document": "PurgeHTTPServiceCache返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>需要刷新的缓存类型：TCBCDN 或 EO</p><p>枚举值：</p><ul><li>EO： EO缓存</li><li>CDN： CDN缓存</li></ul>",
+          "example": "EO",
+          "member": "string",
+          "name": "CacheType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>刷新任务ID</p>",
+          "example": "3uk1onlg81ab",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PushPGUserMigrationsRequest": {
       "document": "PushPGUserMigrations请求参数结构体",
       "members": [
@@ -14966,176 +14947,6 @@
       ],
       "usage": "both"
     },
-    "VMLoginConfiguration": {
-      "document": "云服务器登录方式",
-      "members": [
-        {
-          "disabled": false,
-          "document": "登录方式。扫码登录时指定为 SCAN_LOGIN",
-          "example": "SCAN_LOGIN",
-          "member": "string",
-          "name": "LoginType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否自动生成密码",
-          "example": "YES",
-          "member": "string",
-          "name": "AutoGeneratePassword",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "指定密码登录",
-          "example": "jyyyyy!@12",
-          "member": "string",
-          "name": "Password",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "绑定密钥ID",
-          "example": "[\"lhkp-efloz5vs\"]",
-          "member": "string",
-          "name": "KeyIds",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "usage": "in"
-    },
-    "VMPrice": {
-      "document": "虚拟主机价格",
-      "members": [
-        {
-          "disabled": false,
-          "document": "价格货币单位。取值范围CNY:人民币。USD:美元。",
-          "example": "CNY",
-          "member": "string",
-          "name": "Currency",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "原始价格",
-          "example": "35",
-          "member": "float",
-          "name": "OriginalPrice",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "折扣率",
-          "example": "100",
-          "member": "float",
-          "name": "Discount",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "折扣后的价格",
-          "example": "35",
-          "member": "float",
-          "name": "DiscountPrice",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "折扣前每天资源点",
-          "example": "1152",
-          "member": "float",
-          "name": "OriginalCredits",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "折扣后每天所需资源点",
-          "example": "1152",
-          "member": "float",
-          "name": "DiscountCredits",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "VMSpec": {
-      "document": "VM规格",
-      "members": [
-        {
-          "disabled": false,
-          "document": "LightHouse=轻量云服务器\nCVM=云服务器",
-          "example": "LightHouse",
-          "member": "string",
-          "name": "Type",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "轻量云服务器规格。\n当Type=LightHouse时有效",
-          "example": "无",
-          "member": "VMSpecLightHouse",
-          "name": "LightHouseSpec",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "价格信息",
-          "example": "无",
-          "member": "VMPrice",
-          "name": "Price",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "VMSpecLightHouse": {
-      "document": "vm规格",
-      "members": [
-        {
-          "disabled": false,
-          "document": "LH主机的BundleId",
-          "example": "bundle_starter_mc_med2_03",
-          "member": "string",
-          "name": "BundleId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "主机配置详情json",
-          "example": "{\"BundleId\": \"bundle_starter_mc_med2_03\",\"Memory\":2,\"BundleTypeDescription\": \"入门型\"}",
-          "member": "string",
-          "name": "BundleConfig",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "ValueDetail": {
       "document": "资源用量明细结构",
       "members": [
@@ -15213,8 +15024,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "变量的名称",
-          "example": "",
+          "document": "<p>变量的名称</p>",
+          "example": "NODE_JS_VERSION",
           "member": "string",
           "name": "Key",
           "required": false,
@@ -15223,8 +15034,8 @@
         },
         {
           "disabled": false,
-          "document": "变量的值",
-          "example": "",
+          "document": "<p>变量的值</p>",
+          "example": "22",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -15487,45 +15298,6 @@
         }
       ],
       "type": "object"
-    },
-    "VmInstance": {
-      "document": "云主机实例",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例id",
-          "example": "lhins-20gnw292",
-          "member": "string",
-          "name": "InstanceId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例状态",
-          "example": "Running",
-          "member": "string",
-          "name": "Status",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例地域",
-          "example": "ap-shanghai",
-          "member": "string",
-          "name": "Region",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "WxGatewayCustomConfig": {
       "document": "安全网关自定义配置",

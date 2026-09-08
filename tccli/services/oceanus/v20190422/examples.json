@@ -218,6 +218,14 @@
         "title": "查询作业配置"
       }
     ],
+    "DescribeJobDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobDetail\n<公共请求参数>\n\n{\n    \"JobSerialId\": \"cql-2xvd\",\n    \"Path\": \"/overview\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"099s-xset-xasd-x2sd\",\n        \"Data\": \"{\\\"taskmanagers\\\":1,\\\"slots-total\\\":1,\\\"slots-available\\\":0,\\\"jobs-running\\\":1,\\\"jobs-finished\\\":0,\\\"jobs-cancelled\\\":0,\\\"jobs-failed\\\":0,\\\"flink-version\\\":\\\"1.13.6\\\",\\\"flink-commit\\\":\\\"9cfdad4\\\"}\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeJobEvents": [
       {
         "document": "",

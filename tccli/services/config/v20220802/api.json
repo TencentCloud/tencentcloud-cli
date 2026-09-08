@@ -5736,7 +5736,17 @@
     },
     "OpenConfigRecorderRequest": {
       "document": "OpenConfigRecorder请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>1:从控制中心调用</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "FromMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "OpenConfigRecorderResponse": {

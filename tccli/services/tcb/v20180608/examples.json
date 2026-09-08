@@ -220,14 +220,6 @@
         "title": "创建用户"
       }
     ],
-    "CreateVmInstance": [
-      {
-        "document": "创建LightHouse实例",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVmInstance\n<公共请求参数>\n\n{\n    \"EnvId\": \"free2-2gi6dzbde85f86a0\",\n    \"Type\": \"LightHouse\",\n    \"LightHouseBundleId\": \"bundle_rs_mc_med1_02\",\n    \"LightHouseBlueprintId\": \"lhbp-3qjk6slu\",\n    \"InstanceName\": \"my new lighthouse instance\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12f533b-bc0a-403a-97a5-0a5cb9299d25\"\n    }\n}",
-        "title": "创建LightHouse实例"
-      }
-    ],
     "DeleteAIModel": [
       {
         "document": "",
@@ -304,14 +296,6 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUsers\n<公共请求参数>\n\n{\n    \"EnvId\": \"testenv-123\",\n    \"Uids\": [\n        \"19837204372934434\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FailedCount\": 0,\n            \"SuccessCount\": 1\n        },\n        \"RequestId\": \"563b4e8e-7898-401d-95b1-c86bbaecc6b3\"\n    }\n}",
         "title": "删除用户"
-      }
-    ],
-    "DeleteVmInstance": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVmInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-4amyetqm\",\n    \"EnvId\": \"reinstate-3gle1iv1f6e5c582\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29aa6dd0-d8f9-479a-8e65-8c2c7ae48b54\"\n    }\n}",
-        "title": "删除云主机"
       }
     ],
     "DescribeAIModels": [
@@ -542,6 +526,14 @@
         "title": "查询网关版本信息接口实例"
       }
     ],
+    "DescribeHTTPServiceCachePurgeTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHTTPServiceCachePurgeTask\n<公共请求参数>\n\n{\n    \"EnvId\": \"**********-1gz1k5qkc06a0da4\",\n    \"Domain\": \"*********************.cn\",\n    \"StartTime\": \"2026-09-02T09:10:51Z\",\n    \"EndTime\": \"2026-09-02T09:19:51Z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"CacheType\": \"EO\",\n                \"CreateTime\": \"2026-09-02T09:17:51Z\",\n                \"Method\": \"DELETE\",\n                \"PurgeType\": \"PURGE_URL\",\n                \"Status\": \"SUCCESS\",\n                \"Targets\": [\n                    \"https://*********************.cn/cloudbaseenv.json\"\n                ],\n                \"TaskId\": \"3uijg0e6qmu2\",\n                \"UpdateTime\": \"2026-09-02T09:18:00Z\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"94229944-e6d8-4d82-8ed2-9607e6ba4792\"\n    }\n}",
+        "title": "按时间范围查询任务列表"
+      }
+    ],
     "DescribeHTTPServiceRoute": [
       {
         "document": "通过域名过滤查询单个域名信息",
@@ -678,22 +670,6 @@
         "title": "查询用户列表"
       }
     ],
-    "DescribeVmInstances": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVmInstances\n<公共请求参数>\n\n{\n    \"EnvId\": \"test-lighthouse-3gb1eshz5a3811de\",\n    \"Type\": \"LightHouse\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"InstanceId\": \"lhins-20gnw292\",\n                \"Region\": \"ap-shanghai\",\n                \"Status\": \"Running\"\n            }\n        ],\n        \"RequestId\": \"76629e26-4dd6-4d8f-a523-5ecc1ba9e979\"\n    }\n}",
-        "title": "查询环境下的云主机实例"
-      }
-    ],
-    "DescribeVmSpec": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVmSpec\n<公共请求参数>\n\n{\n    \"Type\": \"LightHouse\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SpecList\": [\n            {\n                \"LightHouseSpec\": {\n                    \"BundleConfig\": \"{\\\"BundleId\\\":\\\"bundle_starter_mc_med2_01\\\",\\\"Memory\\\":2,\\\"SystemDiskType\\\":\\\"CLOUD_SSD\\\",\\\"SystemDiskSize\\\":40,\\\"MonthlyTraffic\\\":200,\\\"SupportLinuxUnixPlatform\\\":true,\\\"SupportWindowsPlatform\\\":true,\\\"Price\\\":{\\\"InstancePrice\\\":{\\\"OriginalBundlePrice\\\":40,\\\"OriginalPrice\\\":40,\\\"Discount\\\":100,\\\"DiscountPrice\\\":40,\\\"Currency\\\":\\\"CNY\\\"}},\\\"CPU\\\":2,\\\"InternetMaxBandwidthOut\\\":3,\\\"InternetChargeType\\\":\\\"TRAFFIC_POSTPAID_BY_HOUR\\\",\\\"BundleSalesState\\\":\\\"AVAILABLE\\\",\\\"BundleType\\\":\\\"STARTER_BUNDLE\\\",\\\"BundleTypeDescription\\\":\\\"入门型\\\",\\\"BundleTypePriority\\\":20,\\\"BundleDisplayLabel\\\":\\\"NORMAL\\\",\\\"TrafficUnlimited\\\":false,\\\"BandwidthType\\\":\\\"BANDWIDTH\\\"}\",\n                    \"BundleId\": \"bundle_starter_mc_med2_01\"\n                },\n                \"Price\": {\n                    \"Currency\": \"CNY\",\n                    \"Discount\": 100,\n                    \"DiscountCredits\": 1333.3334,\n                    \"DiscountPrice\": 40,\n                    \"OriginalCredits\": 1333.3334,\n                    \"OriginalPrice\": 40\n                },\n                \"Type\": \"LightHouse\"\n            }\n        ],\n        \"RequestId\": \"435b540b-3677-4960-9f5c-3960f0d837c5\"\n    }\n}",
-        "title": "查询LightHouse规格"
-      }
-    ],
     "DestroyEnv": [
       {
         "document": "用于给云开发环境退款。\n退款后，环境会进入隔离期。通过接口 [DescribeBillingInfo](https://cloud.tencent.com/document/product/876/94390) 可以查到环境的计费状态。",
@@ -738,14 +714,6 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetProviders\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AutoSignUpWithProviderUser\": \"TRUE\",\n                \"Config\": {\n                    \"AuthorizationEndpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\",\n                    \"ClientId\": \"example\",\n                    \"ClientSecret\": \"example\",\n                    \"Issuer\": \"\",\n                    \"JwksUri\": \"\",\n                    \"RedirectUri\": \"\",\n                    \"RequestParametersMap\": {\n                        \"RegisterUserType\": \"externalUser\"\n                    },\n                    \"ResponseParametersMap\": {\n                        \"Email\": \"email\",\n                        \"Groups\": \"groups\",\n                        \"Name\": \"name\",\n                        \"PhoneNumber\": \"phone_number\",\n                        \"Picture\": \"picture\",\n                        \"Sub\": \"sub\",\n                        \"Username\": \"username\"\n                    },\n                    \"ResponseType\": \"\",\n                    \"SamlMetadata\": \"\",\n                    \"Scope\": \"email openid profile\",\n                    \"SignoutEndpoint\": \"\",\n                    \"TokenEndpoint\": \"https://oauth2.googleapis.com/token\",\n                    \"TokenEndpointAuthMethod\": \"CLIENT_SECRET_BASIC\",\n                    \"UserinfoEndpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\"\n                },\n                \"Description\": {\n                    \"Localized\": [],\n                    \"Message\": \"\"\n                },\n                \"Homepage\": \"\",\n                \"Id\": \"google\",\n                \"Name\": {\n                    \"Localized\": [],\n                    \"Message\": \"Google\"\n                },\n                \"On\": \"TRUE\",\n                \"Picture\": \"https://qcloudimg.tencent-cloud.cn/raw/f9131c00dcbcbccd5899a449d68da3ba.png\",\n                \"ProviderType\": \"OAUTH\",\n                \"TransparentMode\": \"FALSE\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"490fbbcb-c5e3-4037-b851-099e636768cc\"\n    }\n}",
         "title": "查询身份源列表"
-      }
-    ],
-    "InquireVmPrice": [
-      {
-        "document": "查询LightHouse实例价格",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquireVmPrice\n<公共请求参数>\n\n{\n    \"Type\": \"LightHouse\",\n    \"LightHouseBundleId\": \"bundle_rs_mc_med1_02\",\n    \"LightHouseBlueprintId\": \"lhbp-3qjk6slu\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"Discount\": 100,\n        \"DiscountCredits\": 1333.3334,\n        \"DiscountPrice\": 40,\n        \"OriginalCredits\": 1333.3334,\n        \"OriginalPrice\": 40,\n        \"RequestId\": \"6e898b9d-19e4-4a46-b26a-86f74a459ca6\"\n    }\n}",
-        "title": "查询价格"
       }
     ],
     "ListPGUserMigrations": [
@@ -924,6 +892,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PreviewPGUserMigrations\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-ethan06-d9gzgavrt1f14772b\",\n    \"Migrations\": [\n        {\n            \"Version\": \"20260526000000\",\n            \"Name\": \"test_init\",\n            \"Query\": \"CREATE TABLE IF NOT EXISTS public.test ( version BIGINT PRIMARY KEY, name TEXT NOT NULL);\",\n            \"Rollback\": \"DROP TABLE IF EXISTS public.test;\"\n        }\n    ],\n    \"Source\": \"cli\"\n}",
         "output": "{\n    \"Response\": {\n        \"Applied\": [\n            {\n                \"Checksum\": \"eeaf0dd9391ba7829bd12b47482fab4a0e031a040f00cfb6eafc5c23b9fcf791\",\n                \"Name\": \"test_init\",\n                \"Reason\": \"checksum_matched\",\n                \"Source\": \"cli\",\n                \"Status\": \"applied\",\n                \"Version\": \"20260526000000\"\n            }\n        ],\n        \"Conflicts\": null,\n        \"Executable\": true,\n        \"Pending\": null,\n        \"RequestId\": \"b2792e8a-da94-422e-9ef5-b4e60a46ec0f\"\n    }\n}",
         "title": "PreviewPGUserMigrations"
+      }
+    ],
+    "PurgeHTTPServiceCache": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PurgeHTTPServiceCache\n<公共请求参数>\n\n{\n    \"EnvId\": \"**********-1gz1k5qkc06a0da4\",\n    \"Domain\": \"*********************.cn\",\n    \"Targets\": [\n        \"https://*********************.cn/cloudbaseenv.json\"\n    ],\n    \"PurgeType\": \"PURGE_URL\",\n    \"CacheType\": \"EO\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CacheType\": \"EO\",\n        \"TaskId\": \"3uk1onlg81ab\",\n        \"RequestId\": \"f6f50b8b-6ada-42cb-9ae4-fa35d37c5cf0\"\n    }\n}",
+        "title": "清除EO缓存"
       }
     ],
     "PushPGUserMigrations": [

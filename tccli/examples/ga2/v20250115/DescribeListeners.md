@@ -36,7 +36,9 @@ Output:
                 "CreateTime": "2025-04-04 14:11:42",
                 "ListenerType": "Standard",
                 "Status": "ACTIVE",
-                "EndpointGroupCounts": 1
+                "EndpointGroupCounts": 1,
+                "IdleTimeout": 20,
+                "GetRealIpType": ""
             }
         ],
         "RequestId": "7ecf173c-1cd3-46a9-afe0-5c18fbd04202",

@@ -42,6 +42,20 @@
       "output": "CloseDBProxyAddressResponse",
       "status": "online"
     },
+    "CloseMem0Service": {
+      "document": "本接口（CloseMem0Service）用于关闭实例的Mem0服务",
+      "input": "CloseMem0ServiceRequest",
+      "name": "关闭实例Mem0服务",
+      "output": "CloseMem0ServiceResponse",
+      "status": "online"
+    },
+    "ClosePostgRESTService": {
+      "document": "本接口（ClosePostgRestService）用于关闭实例的PostgREST服务",
+      "input": "ClosePostgRESTServiceRequest",
+      "name": "关闭实例PostgREST服务",
+      "output": "ClosePostgRESTServiceResponse",
+      "status": "online"
+    },
     "CreateAccount": {
       "document": "此接口用于创建数据账号，返回的Oid为账号唯一标识。与数据库系统表pg_roles中记录的oid一致。",
       "input": "CreateAccountRequest",
@@ -441,6 +455,13 @@
       "output": "DescribeMaintainTimeWindowResponse",
       "status": "online"
     },
+    "DescribeMem0Service": {
+      "document": "本接口（DescribeMem0Service）用于查询某个实例的Mem0服务信息",
+      "input": "DescribeMem0ServiceRequest",
+      "name": "查询Mem0服务信息详情",
+      "output": "DescribeMem0ServiceResponse",
+      "status": "online"
+    },
     "DescribeOrders": {
       "document": "本接口（DescribeOrders）用于查询订单信息。",
       "input": "DescribeOrdersRequest",
@@ -467,6 +488,13 @@
       "input": "DescribeParamsEventRequest",
       "name": "查询参数修改事件",
       "output": "DescribeParamsEventResponse",
+      "status": "online"
+    },
+    "DescribePostgRESTService": {
+      "document": "本接口（DescribePostgRestService）用于查询某个实例的PostgREST服务信息",
+      "input": "DescribePostgRESTServiceRequest",
+      "name": "查询PostgREST服务信息详情",
+      "output": "DescribePostgRESTServiceResponse",
       "status": "online"
     },
     "DescribeProductConfig": {
@@ -777,6 +805,20 @@
       "output": "OpenDBExtranetAccessResponse",
       "status": "online"
     },
+    "OpenMem0Service": {
+      "document": "本接口（OpenMem0Service）用于开启实例Mem0服务",
+      "input": "OpenMem0ServiceRequest",
+      "name": "开启实例Mem0服务",
+      "output": "OpenMem0ServiceResponse",
+      "status": "online"
+    },
+    "OpenPostgRESTService": {
+      "document": "本接口（OpenPostgRestService）用于开启实例PostgREST服务",
+      "input": "OpenPostgRESTServiceRequest",
+      "name": "开启实例PostgREST服务",
+      "output": "OpenPostgRESTServiceResponse",
+      "status": "online"
+    },
     "RebalanceReadOnlyGroup": {
       "document": "本接口(RebalanceReadOnlyGroup)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。",
       "input": "RebalanceReadOnlyGroupRequest",
@@ -881,7 +923,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，形如postgres-lnp6j617",
+          "document": "<p>实例ID，形如postgres-lnp6j617</p>",
           "example": "postgres-lnp6j617",
           "member": "string",
           "name": "DBInstanceId",
@@ -891,7 +933,7 @@
         },
         {
           "disabled": false,
-          "document": "账号",
+          "document": "<p>账号</p>",
           "example": "test_user",
           "member": "string",
           "name": "UserName",
@@ -901,7 +943,7 @@
         },
         {
           "disabled": false,
-          "document": "账号备注",
+          "document": "<p>账号备注</p>",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -911,7 +953,7 @@
         },
         {
           "disabled": false,
-          "document": "账号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，5-锁定中，-1-删除中",
+          "document": "<p>账号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，5-锁定中，-1-删除中</p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -921,7 +963,7 @@
         },
         {
           "disabled": false,
-          "document": "账号创建时间",
+          "document": "<p>账号创建时间</p>",
           "example": "2024-06-06 21:00:12",
           "member": "datetime",
           "name": "CreateTime",
@@ -931,7 +973,7 @@
         },
         {
           "disabled": false,
-          "document": "账号最后一次更新时间",
+          "document": "<p>账号最后一次更新时间</p>",
           "example": "2024-06-06 22:00:12",
           "member": "datetime",
           "name": "UpdateTime",
@@ -941,7 +983,7 @@
         },
         {
           "disabled": false,
-          "document": "账号密码最近一次修改时间。\n\n此字段只在2025-10-31后才生效，之前无论是否修改密码，该值统一为默认值：0000-00-00 00:00:00\n同时仅通过云API或者管控控制台修改密码，才会更新该字段。",
+          "document": "<p>账号密码最近一次修改时间。</p><p>此字段只在2025-10-31后才生效，之前无论是否修改密码，该值统一为默认值：0000-00-00 00:00:00<br>同时仅通过云API或者管控控制台修改密码，才会更新该字段。</p>",
           "example": "2024-06-06 22:00:12",
           "member": "string",
           "name": "PasswordUpdateTime",
@@ -951,7 +993,7 @@
         },
         {
           "disabled": false,
-          "document": "账号类型。支持normal、tencentDBSuper。normal指代普通用户，tencentDBSuper为拥有pg_tencentdb_superuser角色的账号。",
+          "document": "<p>账号类型。支持normal、tencentDBSuper。normal指代普通用户，tencentDBSuper为拥有pg_tencentdb_superuser角色的账号。</p>",
           "example": "normal",
           "member": "string",
           "name": "UserType",
@@ -961,12 +1003,22 @@
         },
         {
           "disabled": false,
-          "document": "用户账号是否启用CAM验证",
+          "document": "<p>用户账号是否启用CAM验证</p>",
           "example": "true",
           "member": "bool",
           "name": "OpenCam",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该账号实际加入了哪些预设角色</p>",
+          "example": "[\"tencentdb_readwrite\"]",
+          "member": "string",
+          "name": "PGRoles",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2440,6 +2492,80 @@
           "disabled": false,
           "document": "<p>异步任务 ID，可通过 DescribeFlow 查询任务进度</p>",
           "example": "100282",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseMem0ServiceRequest": {
+      "document": "CloseMem0Service请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-a1tmanwv",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseMem0ServiceResponse": {
+      "document": "CloseMem0Service返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>关闭mem0服务任务ID</p>",
+          "example": "100234",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClosePostgRESTServiceRequest": {
+      "document": "ClosePostgRESTService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p><p>参数格式：postgres-0uwjmh8t</p>",
+          "example": "postgres-0uwjmh8t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClosePostgRESTServiceResponse": {
+      "document": "ClosePostgRESTService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>关闭PostgREST服务任务ID</p>",
+          "example": "100019",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -4819,7 +4945,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。",
+          "document": "<p>支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。</p>",
           "example": "database",
           "member": "string",
           "name": "ObjectType",
@@ -4830,8 +4956,8 @@
         },
         {
           "disabled": false,
-          "document": "所描述的数据库对象名称",
-          "example": "test_database\t",
+          "document": "<p>所描述的数据库对象名称，或者当ModifyType为grantRole / revokeRole时，必须等于顶层UserName</p>",
+          "example": "test_database",
           "member": "string",
           "name": "ObjectName",
           "output_required": true,
@@ -4841,7 +4967,7 @@
         },
         {
           "disabled": false,
-          "document": "所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。",
+          "document": "<p>所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。</p>",
           "example": "test_database",
           "member": "string",
           "name": "DatabaseName",
@@ -4852,7 +4978,7 @@
         },
         {
           "disabled": false,
-          "document": "所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。",
+          "document": "<p>所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。</p>",
           "example": "test_schema",
           "member": "string",
           "name": "SchemaName",
@@ -4863,7 +4989,7 @@
         },
         {
           "disabled": false,
-          "document": "所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。",
+          "document": "<p>所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。</p>",
           "example": "test_table",
           "member": "string",
           "name": "TableName",
@@ -4880,8 +5006,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库对象，当ObjectType为database时，DatabaseName/SchemaName/TableName可为空；当ObjectType为schema时，SchemaName/TableName可为空；当ObjectType为column时，TableName不可为空，其余情况均可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ObjectType\":\"table\",\"ObjectName\":\"test_table\",\"DatabaseName\":\"test_database\",\"SchemaName\":\"test_schema\"}",
+          "document": "<p>数据库对象，当ObjectType为database时，DatabaseName/SchemaName/TableName可为空；当ObjectType为schema时，SchemaName/TableName可为空；当ObjectType为column时，TableName不可为空，其余情况均可为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DatabaseObject",
           "name": "Object",
           "output_required": false,
@@ -4891,7 +5017,7 @@
         },
         {
           "disabled": false,
-          "document": "指定账号对数据库对象拥有的权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指定账号对数据库对象拥有的权限列表，或者角色权限修改</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"SELECT\"]",
           "member": "string",
           "name": "PrivilegeSet",
@@ -7974,6 +8100,153 @@
       ],
       "type": "object"
     },
+    "DescribeMem0ServiceRequest": {
+      "document": "DescribeMem0Service请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-l0jw845d",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMem0ServiceResponse": {
+      "document": "DescribeMem0Service返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>mem0服务运行状态</p><p>枚举值：</p><ul><li>running： mem0服务正常运行</li><li>none： 未开通</li><li>creating： 正在开通</li><li>deleting： mem0服务关闭中</li></ul>",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务创建时间</p>",
+          "example": "2026-07-09 10:48:03",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务最后更新时间</p>",
+          "example": "2026-07-09 10:48:03",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务访问地址</p>",
+          "example": "172.16.16.32:8000",
+          "member": "string",
+          "name": "InnerAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务使用的AgenticBase</p>",
+          "example": "agenticbase-2a7vajd1",
+          "member": "string",
+          "name": "AgenticBaseId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务使用的LLM提供方</p><p>枚举值：</p><ul><li>tokenhub： 腾讯云大模型服务平台TokenHub</li></ul>",
+          "example": "tokenhub",
+          "member": "string",
+          "name": "LLMMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务使用的LLM模型</p>",
+          "example": "auto",
+          "member": "string",
+          "name": "LLMModel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务当前使用的Embedding 模型</p>",
+          "example": "kinfra-text-embedding-0.6b",
+          "member": "string",
+          "name": "EmbeddingModel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Embedding 向量维度，目前固定1024</p>",
+          "example": "1024",
+          "member": "int64",
+          "name": "EmbeddingDims",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务使用的PG数据库</p>",
+          "example": "mem0",
+          "member": "string",
+          "name": "PGDatabaseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务使用的PG用户名</p>",
+          "example": "mem0_user",
+          "member": "string",
+          "name": "PGUserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0的网络状态</p>",
+          "example": "无",
+          "member": "DBInstanceNetInfo",
+          "name": "NetworkAccessList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOrdersRequest": {
       "document": "DescribeOrders请求参数结构体",
       "members": [
@@ -8238,6 +8511,73 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostgRESTServiceRequest": {
+      "document": "DescribePostgRESTService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p><p>参数格式：postgres-19nmz2xb</p>",
+          "example": "postgres-0uwjmh8t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostgRESTServiceResponse": {
+      "document": "DescribePostgRESTService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>PostgREST服务运行状态</p><p>枚举值：</p><ul><li>closed： 已关闭</li><li>creating： 创建中</li><li>running： 运行中</li></ul><p>默认值：closed</p>",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：2026-05-10 10:00:00</p>",
+          "example": "2026-05-11 15:15:50",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PostgREST服务网络连接信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DBInstanceNetInfo",
+          "name": "NetworkAccessList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>PostgREST服务JWT值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsfadlsfjkadsjfalkdfjads",
+          "member": "string",
+          "name": "JWTSecret",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11432,8 +11772,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "要修改的数据库对象及权限列表",
-          "example": "\"Object\":{\"ObjectType\":\"table\",\"ObjectName\":\"test_table\",\"DatabaseName\":\"test_database\",\"SchemaName\":\"test_schema\"},\"Privileges\":[\"SELECT\"]",
+          "document": "<p>要修改的数据库对象及权限列表</p>",
+          "example": "无",
           "member": "DatabasePrivilege",
           "name": "DatabasePrivilege",
           "output_required": false,
@@ -11443,7 +11783,7 @@
         },
         {
           "disabled": false,
-          "document": "修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。",
+          "document": "<p>修改的方式，当前仅支持grantObject、revokeObject、alterRole、grantRole、revoke，当前仅支持grantObject、revokeObject、alterRole、grantRole、revokeRole。gRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型、grantRole代表加入对应角色、revokeRole 代表移出对应角色。</p>",
           "example": "grantObject",
           "member": "string",
           "name": "ModifyType",
@@ -11454,7 +11794,7 @@
         },
         {
           "disabled": false,
-          "document": "当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。",
+          "document": "<p>当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsCascade",
@@ -11866,6 +12206,143 @@
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenMem0ServiceRequest": {
+      "document": "OpenMem0Service请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-paxanz0n",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgenticBaseID，开启Mem0服务前请先开通AgenticBase套餐</p>",
+          "example": "agenticbase-2a7vajd1",
+          "member": "string",
+          "name": "AgenticBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Mem0服务使用的LLM模型</p><p>枚举值：</p><ul><li>auto： 自动选择合适的模型</li><li>deepseek-v4-flash： deepseek-v4-flash</li><li>deepseek-v4-pro： deepseek-v4-pro</li><li>glm-5： glm-5</li><li>glm-5-turbo： glm-5-turbo</li><li>glm-5.1： glm-5.1</li><li>kimi-k2.5： kimi-k2.5</li><li>kimi-k2.6： kimi-k2.6</li><li>minimax-m2.5： minimax-m2.5</li><li>minimax-m2.7： minimax-m2.7</li></ul>",
+          "example": "auto",
+          "member": "string",
+          "name": "LLMModel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请前往腾讯云Tokenhub开通服务将ApiKey填入</p>",
+          "example": "sk-3BbaFnZZW4loMrhn0RhM8r1dgg7V9yJZqj1kkZTHp2aoEp54",
+          "member": "string",
+          "name": "EmbeddingApiKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenMem0ServiceResponse": {
+      "document": "OpenMem0Service返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开启Mem0服务任务ID</p>",
+          "example": "100264",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenPostgRESTServiceRequest": {
+      "document": "OpenPostgRESTService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "postgres-om193q01",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启外网</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableWanNet",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>PostgREST服务参数</p>",
+          "example": "无",
+          "member": "ParamEntry",
+          "name": "RestConfig",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC</p><p>参数格式：私有网络ID，形如vpc-e6w23k31。非必选，不传默认使用实例的vpc</p>",
+          "example": "vpc-a******r",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络子网ID，形如subnet-51lcif9y。非必选，不传则使用实例的子网</p>",
+          "example": "subnet-3******i",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenPostgRESTServiceResponse": {
+      "document": "OpenPostgRESTService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开启PostgREST服务任务ID</p>",
+          "example": "100314",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

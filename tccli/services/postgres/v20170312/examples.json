@@ -48,6 +48,22 @@
         "title": "删除指定Proxy的连接地址"
       }
     ],
+    "CloseMem0Service": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseMem0Service\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-a1tmanwv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100234,\n        \"RequestId\": \"e6f8f286-25e9-4ae3-8f05-4f9a8ac0aee9\"\n    }\n}",
+        "title": "关闭mem0服务"
+      }
+    ],
+    "ClosePostgRESTService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ClosePostgRESTService\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-0uwjmh8t\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100019,\n        \"RequestId\": \"7f044d27-c596-42a7-84d4-34b370733ef8\"\n    }\n}",
+        "title": "关闭实例PostgREST服务"
+      }
+    ],
     "CreateAccount": [
       {
         "document": "创建数据库普通账号",
@@ -618,6 +634,14 @@
         "title": "查询实例的维护时间窗口"
       }
     ],
+    "DescribeMem0Service": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMem0Service\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-l0jw845d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgenticBaseId\": \"agenticbase-2a7vajd1\",\n        \"CreateTime\": \"2026-07-09 10:48:03\",\n        \"EmbeddingDims\": 1024,\n        \"EmbeddingModel\": \"kinfra-text-embedding-0.6b\",\n        \"InnerAddress\": \"\",\n        \"LLMMode\": \"tokenhub\",\n        \"LLMModel\": \"auto\",\n        \"NetworkAccessList\": [],\n        \"PGDatabaseName\": \"mem0\",\n        \"PGUserName\": \"mem0_user\",\n        \"Status\": \"creating\",\n        \"UpdateTime\": \"2026-07-09 10:48:03\",\n        \"RequestId\": \"a660ca0b-2d26-45d1-9504-4c99522647c3\"\n    }\n}",
+        "title": "查询Mem0服务信息"
+      }
+    ],
     "DescribeOrders": [
       {
         "document": "查询订单信息",
@@ -648,6 +672,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamsEvent\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-nbvqjlhf\"\n}",
         "output": "{\n    \"Response\": {\n        \"EventItems\": [\n            {\n                \"EventCount\": 1,\n                \"EventDetail\": [\n                    {\n                        \"EffectiveTime\": \"0001-01-01 00:00:00\",\n                        \"EventLog\": \"\",\n                        \"ModifyTime\": \"2021-08-11 21:51:12\",\n                        \"NewValue\": \"off\",\n                        \"OldValue\": \"on\",\n                        \"Operator\": \"100130115276\",\n                        \"ParamName\": \"array_nulls\",\n                        \"State\": \"success\"\n                    }\n                ],\n                \"ParamName\": \"array_nulls\"\n            },\n            {\n                \"EventCount\": 1,\n                \"EventDetail\": [\n                    {\n                        \"EffectiveTime\": \"2021-08-16 15:33:41\",\n                        \"EventLog\": \"Pause: Paused. Internal error, in manual processing\",\n                        \"ModifyTime\": \"2021-08-16 15:28:13\",\n                        \"NewValue\": \"7\",\n                        \"OldValue\": \"8\",\n                        \"Operator\": \"100000115276\",\n                        \"ParamName\": \"max_worker_processes\",\n                        \"State\": \"paused\"\n                    }\n                ],\n                \"ParamName\": \"max_worker_processes\"\n            }\n        ],\n        \"RequestId\": \"\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "获取实例参数修改事件列表"
+      }
+    ],
+    "DescribePostgRESTService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostgRESTService\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-0uwjmh8t\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2026-05-11 15:15:50\",\n        \"JWTSecret\": \"dsfadlsfjkadsjfalkdfjads\",\n        \"NetworkAccessList\": [\n            {\n                \"Address\": \"\",\n                \"Ip\": \"10.0.0.7\",\n                \"NetType\": \"private\",\n                \"Port\": 3000,\n                \"ProtocolType\": \"postgrest\",\n                \"Status\": \"opened\",\n                \"SubnetId\": \"subnet-3hekhnki\",\n                \"VpcId\": \"vpc-a27ykb0r\"\n            }\n        ],\n        \"Status\": \"running\",\n        \"RequestId\": \"2066fe70-ca9d-4b1d-8c6d-76ac834251cf\"\n    }\n}",
+        "title": "查询PostgREST服务详情信息"
       }
     ],
     "DescribeProductConfig": [
@@ -1066,6 +1098,22 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 23515,\n        \"TaskId\": 23515,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "开通实例外网"
+      }
+    ],
+    "OpenMem0Service": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenMem0Service\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-paxanz0n\",\n    \"AgenticBaseId\": \"agenticbase-2a7vajd1\",\n    \"LLMModel\": \"auto\",\n    \"EmbeddingApiKey\": \"sk-3BbaFnZZW4loMrhn0RhM8r1dgg7V9yJZqj1kkZTHp2aoEp54\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100264,\n        \"RequestId\": \"d9165632-ad45-4426-803b-a6674f159c33\"\n    }\n}",
+        "title": "开启Mem0服务"
+      }
+    ],
+    "OpenPostgRESTService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenPostgRESTService\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-om193q01\",\n    \"EnableWanNet\": false,\n    \"VpcId\": \"vpc-a******r\",\n    \"SubnetId\": \"subnet-3******i\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100314,\n        \"RequestId\": \"0832f897-e24f-4855-8a20-2be46c2bdb5e\"\n    }\n}",
+        "title": "开启实例PostgREST服务"
       }
     ],
     "RebalanceReadOnlyGroup": [

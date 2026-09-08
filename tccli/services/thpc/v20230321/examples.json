@@ -148,6 +148,14 @@
         "title": "查询未开通代理的IDC集群"
       }
     ],
+    "DescribeClusterMonitorStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterMonitorStatus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorStatus\": \"DISABLED\",\n        \"PrometheusId\": \"prom-********\",\n        \"RequestId\": \"1b1ba87a-0565-4b48-bea1-5f85ee921abb\"\n    }\n}",
+        "title": "查询集群的监控状态"
+      }
+    ],
     "DescribeClusterStorageOption": [
       {
         "document": "查询集群ID为hpc-5lyv94lq的集群存储选项信息。",
@@ -274,12 +282,28 @@
         "title": "关闭IDC集群专线代理"
       }
     ],
+    "DisableClusterMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableClusterMonitor\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95320c3f-2a84-45bc-90e9-304dcf037f1c\"\n    }\n}",
+        "title": "关闭集群监控"
+      }
+    ],
     "EnableClusterDedicatedProxy": [
       {
         "document": "开启IDC集群的专线/VPN代理，在指定VPC和子网中创建终端节点。",
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\",\n    \"VpcId\": \"vpc-aaaa1234\",\n    \"SubnetId\": \"subnet-bbbb5678\"\n}",
         "output": "{\n    \"Response\": {\n        \"EndPointId\": \"vpce-12345678\",\n        \"EndPointVip\": \"10.0.0.1\",\n        \"EndPointReady\": true,\n        \"EndPointStatus\": \"ACTIVE\",\n        \"VpcId\": \"vpc-aaaa1234\",\n        \"SubnetId\": \"subnet-bbbb5678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
         "title": "开启IDC集群专线代理"
+      }
+    ],
+    "EnableClusterMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableClusterMonitor\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-********\",\n    \"PrometheusId\": \"prom-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0089c30e-f6b1-4e8e-9663-5ca0728e94d1\"\n    }\n}",
+        "title": "开启集群监控"
       }
     ],
     "GenerateRegisterCode": [

@@ -11397,7 +11397,7 @@
         {
           "disabled": false,
           "document": "<p>目标市场，默认不指定。可选north_america / europe / china / japan / korea / sea / brazil</p>",
-          "example": "China",
+          "example": "china",
           "member": "string",
           "name": "Market",
           "output_required": false,

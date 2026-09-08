@@ -16004,6 +16004,15 @@
           "name": "ClusterLevel",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

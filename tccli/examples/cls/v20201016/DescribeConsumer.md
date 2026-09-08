@@ -6,34 +6,39 @@ Input:
 
 ```
 tccli cls DescribeConsumer --cli-unfold-argument  \
-    --TopicId 871710c5-35cd-4d1e-8e79-2fa92c35d612
+    --TopicId bowwwang-json-test-1254139626
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ef9e67c9-8437-477a-8629-06555a3afbbc",
-        "Effective": true,
         "Ckafka": {
-            "Vip": "127.0.0.1",
-            "Vport": "9092",
-            "InstanceId": "ckafka-8b4az591",
-            "InstanceName": "kafka协议消费监控",
-            "TopicId": "topic-jmpmwejg",
-            "TopicName": "businesstest000"
+            "InstanceId": "ckafka-8j4ro593",
+            "InstanceName": "kafka协议消费***(******测试******",
+            "TopicId": "topic-78joudry",
+            "TopicName": "ri****st",
+            "Vip": "10.***.**",
+            "Vport": "90**"
         },
+        "Compression": 0,
         "Content": {
+            "AutoConvertNumber": false,
             "EnableTag": true,
+            "JsonType": 1,
             "MetaFields": [
                 "__SOURCE__"
             ],
-            "TagJsonNotTiled": true,
-            "TimestampAccuracy": 0,
-            "JsonType": 0
+            "TagJsonNotTiled": false,
+            "TimestampAccuracy": 2
         },
+        "CreateTime": 1729504453000,
+        "Effective": false,
+        "ExternalId": "",
         "NeedContent": true,
-        "Compression": 0
+        "RoleArn": "",
+        "TaskStatus": 0,
+        "RequestId": "530f50db-ae27-4438-8d6b-bca035faebc9"
     }
 }
 ```
