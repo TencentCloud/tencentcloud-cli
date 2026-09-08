@@ -5633,7 +5633,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消费组名称",
+          "document": "<p>消费组名称</p>",
           "example": "test_group",
           "member": "string",
           "name": "GroupId",
@@ -5642,7 +5642,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "document": "<p>消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>",
           "example": "test_ns",
           "member": "string",
           "name": "Namespace",
@@ -5651,7 +5651,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启消费",
+          "document": "<p>是否开启消费</p>",
           "example": "true",
           "member": "bool",
           "name": "ReadEnable",
@@ -5660,7 +5660,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启广播消费",
+          "document": "<p>是否开启广播消费</p>",
           "example": "true",
           "member": "bool",
           "name": "BroadcastEnable",
@@ -5669,7 +5669,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "rocketmq-4k4orqgq",
           "member": "string",
           "name": "ClusterId",
@@ -5678,7 +5678,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "test remark info.",
           "member": "string",
           "name": "Remark",
@@ -5687,7 +5687,7 @@
         },
         {
           "disabled": false,
-          "document": "Group类型（TCP/HTTP）",
+          "document": "<p>Group类型（TCP/HTTP）</p>",
           "example": "TCP",
           "member": "string",
           "name": "GroupType",
@@ -5696,7 +5696,7 @@
         },
         {
           "disabled": false,
-          "document": "Group最大重试次数",
+          "document": "<p>Group最大重试次数</p>",
           "example": "16",
           "member": "uint64",
           "name": "RetryMaxTimes",
@@ -5705,7 +5705,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagList",
@@ -6176,7 +6176,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "<p>主题名称</p>",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -6185,7 +6185,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。",
+          "document": "<p>主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。</p>",
           "example": "Normal",
           "member": "string",
           "name": "Type",
@@ -6194,7 +6194,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "rocketmq-4k4orqgq",
           "member": "string",
           "name": "ClusterId",
@@ -6203,7 +6203,7 @@
         },
         {
           "disabled": false,
-          "document": "主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "document": "<p>主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default</p>",
           "example": "test_ns",
           "member": "string",
           "name": "Namespace",
@@ -6212,7 +6212,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "info-mark",
           "member": "string",
           "name": "Remark",
@@ -6221,7 +6221,7 @@
         },
         {
           "disabled": false,
-          "document": "分区数，全局顺序无效",
+          "document": "<p>分区数，全局顺序无效</p>",
           "example": "3",
           "member": "int64",
           "name": "PartitionNum",
@@ -6230,7 +6230,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagList",

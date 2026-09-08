@@ -489,7 +489,7 @@
     "DescribeSourceTypes": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountGroups\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourceTypes\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SourceTypeSet\": [\n            {\n                \"Type\": \"dingding\",\n                \"Name\": \"钉钉\",\n                \"Source\": 1001,\n                \"Target\": \"mini_iam\"\n            }\n        ],\n        \"RequestId\": \"cf85w9eee-b651-4ff3q-9b49-173f9f55733f\"\n    }\n}",
         "title": "获取认证源信息"
       }
@@ -591,7 +591,7 @@
     "EnableIntranetAccess": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableIntranetAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sdfesaf\",\n    \"VpcId\": \"vpc-ewaesfx\",\n    \"SubnetId\": \"subnet-23seffse\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableIntranetAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sdfesaf\",\n    \"VpcId\": \"vpc-ewaesfx\",\n    \"SubnetId\": \"subnet-23seffse\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
         "title": "开通内网访问示例"
       }
@@ -747,7 +747,7 @@
     "ModifyUser": [
       {
         "document": "修改用户信息",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"zhangsan\",\n    \"GroupIdSet\": [\n        1,\n        2,\n        3\n    ],\n    \"Phone\": \"12***891\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"198****@qq.com\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"zhangsan\",\n    \"GroupIdSet\": [\n        1,\n        2,\n        3\n    ],\n    \"Phone\": \"12***891\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"198****@qq.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "修改用户信息"
       }

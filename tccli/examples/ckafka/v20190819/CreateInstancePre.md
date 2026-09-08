@@ -18,7 +18,7 @@ tccli ckafka CreateInstancePre --cli-unfold-argument  \
     --DiskSize 200 \
     --BandWidth 20 \
     --Partition 400 \
-    --DiskType CLOUD_BASIC \
+    --DiskType CLOUD_PREMIUM \
     --PublicNetworkMonthly 0 \
     --CustomSSLCertId TPNd2oBB
 ```

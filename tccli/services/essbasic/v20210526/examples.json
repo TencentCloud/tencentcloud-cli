@@ -741,15 +741,15 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Agent\": {\n        \"AppId\": \"yDwFdUUckpsw******yQ0af8bHosXQtb\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"CostTime\": 1695037514,\n                \"CostType\": 1,\n                \"CreateOrganizationName\": \"典子谦示例企业\",\n                \"FlowId\": \"yDwFdUUckps******uzcbXwoXbRF6ja3\",\n                \"FlowName\": \"典子谦示例合同\",\n                \"OperatorName\": \"张三;典子谦\",\n                \"QuotaName\": \"企业版运营礼包\",\n                \"QuotaType\": \"CloudEnterprise\",\n                \"Remark\": \"\",\n                \"FlowStatus\": \"ALL\",\n                \"UseCount\": 1\n            }\n        ],\n        \"RequestId\": \"s16992572741898xxxx\",\n        \"Total\": 1\n    }\n}",
-        "title": "查询某应用下渠道企业的消耗情况"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Agent\": {\n        \"AppId\": \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"CostTime\": 1695037514,\n                \"CostType\": 1,\n                \"CreateOrganizationName\": \"典子谦示例企业\",\n                \"FlowId\": \"yDwFdUUckps******uzcbXwoXbRF6ja3\",\n                \"FlowName\": \"典子谦示例合同\",\n                \"OperatorName\": \"张三;典子谦\",\n                \"QuotaName\": \"企业版运营礼包\",\n                \"QuotaType\": \"CloudEnterprise\",\n                \"Remark\": \"\",\n                \"FlowStatus\": \"ALL\",\n                \"UseCount\": 1\n            }\n        ],\n        \"RequestId\": \"s16992572741898xxxx\",\n        \"Total\": 1\n    }\n}",
         "title": "查询某个应用下某个子客的消耗情况"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Agent\": {\n        \"AppId\": \"yDwFdUUckpsw******yQ0af8bHosXQtb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"CostTime\": 1695037514,\n                \"CostType\": 1,\n                \"CreateOrganizationName\": \"典子谦示例企业\",\n                \"FlowId\": \"yDwFdUUckps******uzcbXwoXbRF6ja3\",\n                \"FlowName\": \"典子谦示例合同\",\n                \"OperatorName\": \"张三;典子谦\",\n                \"QuotaName\": \"企业版运营礼包\",\n                \"QuotaType\": \"CloudEnterprise\",\n                \"Remark\": \"\",\n                \"FlowStatus\": \"ALL\",\n                \"UseCount\": 1\n            }\n        ],\n        \"RequestId\": \"s16992572741898xxxx\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询某应用下渠道企业的消耗情况"
       }
     ],
     "ChannelDescribeEmployees": [
