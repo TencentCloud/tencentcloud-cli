@@ -7,8 +7,19 @@ import unittest
 
 import six
 
+try:
+    from unittest import mock
+except ImportError:
+    import mock
+
 import tccli.options_define as OptionsDefine
-from tccli.configure import ConfigureGetCommand, ConfigureListCommand, mask_secret
+from tccli.configure import (
+    BasicConfigure,
+    ConfigureCommand,
+    ConfigureGetCommand,
+    ConfigureListCommand,
+    mask_secret,
+)
 from tccli.utils import Utils
 
 
@@ -93,6 +104,71 @@ class TestConfigureSecretMasking(unittest.TestCase):
             "region = ap-guangzhou"
         ])
         self.assertEqual(Utils.load_json_msg(self.credential_path), self.credential)
+
+
+class TestConfigureDynamicCredentialMigration(unittest.TestCase):
+    """交互式 configure 切换动态凭证时的安全行为。"""
+
+    def setUp(self):
+        self.cli_path = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(self.cli_path)
+
+    def _create_command(self):
+        command = ConfigureCommand.__new__(ConfigureCommand)
+        BasicConfigure.__init__(command)
+        command.cli_path = self.cli_path
+        return command
+
+    def _credential_path(self, profile):
+        return os.path.join(self.cli_path, "%s.credential" % profile)
+
+    def _write_credential(self, profile, credential):
+        Utils.dump_json_msg(self._credential_path(profile), credential)
+
+    def _read_credential(self, profile):
+        return Utils.load_json_msg(self._credential_path(profile))
+
+    def test_dynamic_credential_switch_requires_confirmation(self):
+        old_credential = {
+            "type": "sso",
+            OptionsDefine.SecretId: "OLD_ID",
+            OptionsDefine.SecretKey: "OLD_KEY",
+            "sso": {"token": "old-token"},
+        }
+        self._write_credential("default", old_credential)
+        command = self._create_command()
+
+        with mock.patch.object(command, "_compat_input", return_value="n"):
+            with mock.patch.object(command, "_init_configure") as init_configure:
+                command._run_main(mock.Mock(), argparse.Namespace(profile="default"))
+
+        init_configure.assert_not_called()
+        self.assertEqual(self._read_credential("default"), old_credential)
+
+    def test_confirmed_dynamic_credential_switch_replaces_refresh_data(self):
+        for credential_type in ("sso", "oauth", "cvm-role"):
+            profile = credential_type
+            self._write_credential(profile, {
+                "type": credential_type,
+                OptionsDefine.SecretId: "OLD_ID",
+                OptionsDefine.SecretKey: "OLD_KEY",
+                "sso": {"token": "old-token"},
+            })
+            command = self._create_command()
+
+            with mock.patch.object(
+                    command, "_compat_input",
+                    side_effect=["y", "NEW_ID", "NEW_KEY", "", ""]):
+                with mock.patch.object(command, "_init_configure") as init_configure:
+                    command._run_main(mock.Mock(), argparse.Namespace(profile=profile))
+
+            init_configure.assert_called_once()
+            self.assertEqual(self._read_credential(profile), {
+                OptionsDefine.SecretId: "NEW_ID",
+                OptionsDefine.SecretKey: "NEW_KEY",
+            })
 
 
 if __name__ == "__main__":

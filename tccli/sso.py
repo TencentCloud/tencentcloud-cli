@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 import os
 import time
@@ -5,9 +6,12 @@ import uuid
 
 import requests
 
+from tccli.utils import Utils
+
 _API_ENDPOINT = "https://cli.cloud.tencent.com"
 _CRED_REFRESH_SAFE_DUR = 60 * 5
-_SKEY_REFRESH_SAFE_DUR = 3600 * 12 - 300
+_CRED_DEFAULT_DUR = 7200
+_SKEY_REFRESH_SAFE_DUR = 60 * 5  # STS 临时凭证最短有效期，低于此值需重新登录
 
 
 def maybe_refresh_credential(profile):
@@ -32,8 +36,9 @@ def maybe_refresh_credential(profile):
         sso_info = cred["sso"]
         site = sso_info["site"]
         sso_expires = sso_info["expiresAt"]
-        if sso_expires - now < _SKEY_REFRESH_SAFE_DUR:
-            # sso can't be refreshed if expired, re-login is required
+        sso_remaining = int(sso_expires - time.time())
+        if sso_remaining < _SKEY_REFRESH_SAFE_DUR:
+            # sso can't issue a credential with the minimum duration, re-login is required
             return
 
         saml_resp = gen_saml_response(
@@ -43,8 +48,9 @@ def maybe_refresh_credential(profile):
 
         role_arn = "qcs::cam::uin/%s:roleName/TencentCloudSSO-%s" % (sso_info["uin"], sso_info["roleConfigurationName"])
         principal_arn = "qcs::cam::uin/%s:saml-provider/TencentReservedSSO-%s" % (sso_info["uin"], sso_info["zoneId"])
+        refresh_dur = min(_CRED_DEFAULT_DUR, sso_remaining)
         cred = assume_role_with_saml(
-            saml_resp["SAMLResponse"], principal_arn, role_arn, "ses-%s" % uuid.uuid4(), 7200, site)
+            saml_resp["SAMLResponse"], principal_arn, role_arn, "ses-%s" % uuid.uuid4(), refresh_dur, site)
         save_credential(cred, sso_info, profile)
 
     except KeyError as e:
@@ -206,8 +212,7 @@ def save_credential(cred, sso_info, profile):
             "expiresAt": sso_info["expiresAt"],
         },
     }
-    with open(cred_path, "w") as cred_file:
-        json.dump(cred, cred_file, indent=4)
+    Utils.dump_json_msg(cred_path, cred)
 
 
 def cred_path_of_profile(profile):
